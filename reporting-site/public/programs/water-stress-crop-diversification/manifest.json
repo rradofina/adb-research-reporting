@@ -1,0 +1,128 @@
+{
+  "program": "water-stress-crop-diversification",
+  "permanent_url": "/program/water-stress-crop-diversification/evidence",
+  "generated_at": "2026-05-07T03:31:39.616Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1235,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.339Z",
+      "sha256": "96c0411035d90555956328754dbec43dfe0efc565240abfd397a5b405fa4c40f",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1695,
+      "size_human": "1.7 KB",
+      "mtime": "2026-04-27T03:42:21.355Z",
+      "sha256": "669dfeaae31696560b0114264cff9722692bfbce8c72792479bf23ee7f8f562f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1131,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-26T03:27:00.604Z",
+      "sha256": "b89a819f023cce3cdc7d64354c11c27fdb748cdf14fb40ab336c4c59338dd8ba",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 654,
+      "size_human": "654 B",
+      "mtime": "2026-04-26T03:27:05.696Z",
+      "sha256": "3489f6c701807744617eddc3666f4fa2f308c03ae721bc3568bc22c7e1f95eae",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 8627,
+      "size_human": "8.4 KB",
+      "mtime": "2026-04-26T03:23:12.461Z",
+      "sha256": "09c1c76930038997f07513ec8f9e5fb548b52a97199c01b05c8045247bba0858",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 409,
+      "size_human": "409 B",
+      "mtime": "2026-04-26T03:27:09.172Z",
+      "sha256": "6978ed5c1245a66fdaa462dea51834bab161d7806e21b6476a9ca120e6d8057f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 765,
+      "size_human": "765 B",
+      "mtime": "2026-04-26T03:27:34.452Z",
+      "sha256": "2ded0821ff573febddd0071556594187065362e3bd68c1f8bc6092490bf4d91d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 957,
+      "size_human": "957 B",
+      "mtime": "2026-04-26T03:27:15.336Z",
+      "sha256": "3b6ec04a01976fc5bab0cd27771bc98c172d562bd57b6aa9296c8612681a0607",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1528,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T03:27:25.740Z",
+      "sha256": "2fbc998bc7f2a28b3a5689bd8a9b863566998c1c3d76a5263f6b4712badcc25d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 826,
+      "size_human": "826 B",
+      "mtime": "2026-04-26T03:27:30.335Z",
+      "sha256": "0f9d22342c79b60344a151be88ca2dd8484d12ff01974ebb8c50484e40c73e03",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/water-stress-crop-adb-panel.csv",
+      "size": 3880,
+      "size_human": "3.8 KB",
+      "sha256": "9c60a3faec9925936f1e8341e8f40c3c4a1bf3464390e6e7b598bf234da19d9e"
+    },
+    {
+      "file": "generated/water-stress-crop-adb-panel.json",
+      "size": 17065,
+      "size_human": "16.7 KB",
+      "sha256": "7d64d4719c9c8a5a215d5b7c0407a1fa2bb8a4944b387211e98e4637e7c0dd33"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "water-crop-pressure-cluster",
+      "title": "Four DMCs hold the top of the water-stress + crop-pressure ranking — Afghanistan, Azerbaijan, Pakistan, Turkmenistan",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

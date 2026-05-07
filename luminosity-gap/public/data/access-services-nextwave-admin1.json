@@ -1,0 +1,1818 @@
+{
+  "metadata": {
+    "title": "Climate-Adjusted Access to Services - Next-Wave ADM1 Screening",
+    "generatedAt": "2026-04-23T07:35:28.369Z",
+    "script": "scripts/research/access-services-pipeline.ts",
+    "status": "computed_nextwave_admin1_screening_index",
+    "geography": "ADM1",
+    "caveat": "This is a next-wave admin-1 screening layer for Pakistan, Nepal, and Sri Lanka. It is not yet a road-network travel-time surface, flood disruption model, or facility catchment model.",
+    "method": "Computes national screening metrics and ADM1 service-pressure metrics for tractable high-readiness ADB economies using WDI, CCKP, geoBoundaries, WorldPop, and OSM/Overpass.",
+    "sources": [
+      "https://www.geoboundaries.org/api.html",
+      "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+      "https://overpass-api.de/",
+      "https://www.openstreetmap.org/copyright",
+      "https://climateknowledgeportal.worldbank.org/download-data"
+    ],
+    "populationCaveat": "ADM1 population uses WorldPop 2020 polygon statistics over geoBoundaries polygons; oversized polygons are summed across clipped tiles when required by the WorldPop API area allowance. National population uses latest available World Bank WDI values.",
+    "serviceCaveat": "OSM service counts depend on mapper coverage and tagging. Counts use OSM admin areas matched by ISO3166-2 where available and fall back to bounding boxes only if the area query fails.",
+    "cacheNote": "Network responses are cached under .cache/research/access-services unless ACCESS_REFRESH=1 is set.",
+    "selectionNote": "Pakistan, Nepal, and Sri Lanka were selected as a tractable next wave: high source readiness, policy relevance, and small enough ADM1 counts for reproducible local runs. Larger high-priority economies such as India, PRC, Indonesia, and Viet Nam should run as separate batches."
+  },
+  "summary": {
+    "admin1Units": 23,
+    "totalPopulation": 292290015,
+    "totalMappedServices": 46996,
+    "bboxFallbackCount": 0,
+    "highestStressAdmin": {
+      "countryName": "Pakistan",
+      "admin1Name": "Balochistan",
+      "admin1Code": "PK-BA",
+      "accessStressIndex": 95,
+      "bottleneck": "service load"
+    },
+    "populationSources": {
+      "psaOpenStatRegions": 0,
+      "worldPopStats": 23
+    },
+    "economiesComputed": 3,
+    "highestNationalStressEconomy": {
+      "name": "Pakistan",
+      "iso3": "PAK",
+      "accessStressIndex": 89,
+      "bottleneck": "service load"
+    }
+  },
+  "admin1": [
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-BA",
+      "admin1Name": "Balochistan",
+      "shapeId": "70912109B90439427603182",
+      "centroid": {
+        "lat": 28.460044,
+        "lon": 65.565304
+      },
+      "bbox": {
+        "minLon": 60.87688104972074,
+        "minLat": 24.910649912663416,
+        "maxLon": 70.25372658641288,
+        "maxLat": 32.009438411853296
+      },
+      "approxAreaSqKm": 353714.89,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 9136309,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 10 clipped polygon tiles because at least one ADM1 polygon exceeded the API area allowance."
+      },
+      "services": {
+        "health": 61,
+        "education": 49,
+        "markets": 33,
+        "total": 143,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:24:25Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 149776,
+        "peoplePerSchool": 186455,
+        "peoplePerMarket": 276858,
+        "healthFacilitiesPer100k": 0.67,
+        "schoolsPer100k": 0.54,
+        "marketsPer100k": 0.36,
+        "totalMappedServicesPerMillion": 15.65,
+        "totalServicesPer1000SqKm": 0.4,
+        "serviceLoadScore": 100,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 93.7,
+        "accessStressIndex": 95,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-GB",
+      "admin1Name": "Gilgit-Baltistan",
+      "shapeId": "70912109B54485417915534",
+      "centroid": {
+        "lat": 35.787927,
+        "lon": 75.177535
+      },
+      "bbox": {
+        "minLon": 72.54014021070219,
+        "minLat": 34.57207373131769,
+        "maxLon": 77.81493018957667,
+        "maxLat": 37.003781127497064
+      },
+      "approxAreaSqKm": 69037.5,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1125686,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 170,
+        "education": 917,
+        "markets": 38,
+        "total": 1125,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:24:25Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 6622,
+        "peoplePerSchool": 1228,
+        "peoplePerMarket": 29623,
+        "healthFacilitiesPer100k": 15.1,
+        "schoolsPer100k": 81.46,
+        "marketsPer100k": 3.38,
+        "totalMappedServicesPerMillion": 999.39,
+        "totalServicesPer1000SqKm": 16.3,
+        "serviceLoadScore": 3.9,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 30,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-IS",
+      "admin1Name": "Islamabad Capital Territory",
+      "shapeId": "70912109B38683933016378",
+      "centroid": {
+        "lat": 33.651032,
+        "lon": 73.038476
+      },
+      "bbox": {
+        "minLon": 72.78172831331108,
+        "minLat": 33.49108329265988,
+        "maxLon": 73.29522305420062,
+        "maxLat": 33.810981539666386
+      },
+      "approxAreaSqKm": 893.55,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 3015095,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 99,
+        "education": 275,
+        "markets": 41,
+        "total": 415,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T00:26:00Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 30456,
+        "peoplePerSchool": 10964,
+        "peoplePerMarket": 73539,
+        "healthFacilitiesPer100k": 3.28,
+        "schoolsPer100k": 9.12,
+        "marketsPer100k": 1.36,
+        "totalMappedServicesPerMillion": 137.64,
+        "totalServicesPer1000SqKm": 464.44,
+        "serviceLoadScore": 65.8,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 44.9,
+        "accessStressIndex": 70,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-JK",
+      "admin1Name": "Azad Kashmir",
+      "shapeId": "70912109B7720427584286",
+      "centroid": {
+        "lat": 33.942931,
+        "lon": 74.442621
+      },
+      "bbox": {
+        "minLon": 73.39051509769365,
+        "minLat": 32.79765509710512,
+        "maxLon": 75.49472734708945,
+        "maxLat": 35.088207682038956
+      },
+      "approxAreaSqKm": 12380.77,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 3885041,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 31,
+        "education": 41,
+        "markets": 3,
+        "total": 75,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:25:26Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 125324,
+        "peoplePerSchool": 94757,
+        "peoplePerMarket": 1295014,
+        "healthFacilitiesPer100k": 0.8,
+        "schoolsPer100k": 1.06,
+        "marketsPer100k": 0.08,
+        "totalMappedServicesPerMillion": 19.3,
+        "totalServicesPer1000SqKm": 6.06,
+        "serviceLoadScore": 100,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 92.3,
+        "accessStressIndex": 95,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-KP",
+      "admin1Name": "Khyber Pakhtunkhwa",
+      "shapeId": "70912109B89717923239242",
+      "centroid": {
+        "lat": 33.963945,
+        "lon": 71.680942
+      },
+      "bbox": {
+        "minLon": 69.24677565637148,
+        "minLat": 31.070376013442342,
+        "maxLon": 74.11510745964159,
+        "maxLat": 36.857514180335215
+      },
+      "approxAreaSqKm": 101585.29,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 37450031,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 6 clipped polygon tiles because at least one ADM1 polygon exceeded the API area allowance."
+      },
+      "services": {
+        "health": 290,
+        "education": 728,
+        "markets": 153,
+        "total": 1171,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:25:26Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 129138,
+        "peoplePerSchool": 51442,
+        "peoplePerMarket": 244771,
+        "healthFacilitiesPer100k": 0.77,
+        "schoolsPer100k": 1.94,
+        "marketsPer100k": 0.41,
+        "totalMappedServicesPerMillion": 31.27,
+        "totalServicesPer1000SqKm": 11.53,
+        "serviceLoadScore": 100,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 87.5,
+        "accessStressIndex": 94,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-PB",
+      "admin1Name": "Punjab",
+      "shapeId": "70912109B12169979015230",
+      "centroid": {
+        "lat": 30.885558,
+        "lon": 72.368314
+      },
+      "bbox": {
+        "minLon": 69.34051583243979,
+        "minLat": 27.708966339325173,
+        "maxLon": 75.39611234550841,
+        "maxLat": 34.062150424902256
+      },
+      "approxAreaSqKm": 200807.72,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 125831363,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 4 clipped polygon tiles because at least one ADM1 polygon exceeded the API area allowance."
+      },
+      "services": {
+        "health": 1103,
+        "education": 1472,
+        "markets": 242,
+        "total": 2817,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T08:38:02Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 114081,
+        "peoplePerSchool": 85483,
+        "peoplePerMarket": 519964,
+        "healthFacilitiesPer100k": 0.88,
+        "schoolsPer100k": 1.17,
+        "marketsPer100k": 0.19,
+        "totalMappedServicesPerMillion": 22.39,
+        "totalServicesPer1000SqKm": 14.03,
+        "serviceLoadScore": 100,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 91,
+        "accessStressIndex": 95,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "countryName": "Pakistan",
+      "admin1Code": "PK-SD",
+      "admin1Name": "Sindh",
+      "shapeId": "70912109B8393927546319",
+      "centroid": {
+        "lat": 26.100952,
+        "lon": 68.889958
+      },
+      "bbox": {
+        "minLon": 66.67194467470705,
+        "minLat": 23.731318744064822,
+        "maxLon": 71.10797174450045,
+        "maxLat": 28.470585021081888
+      },
+      "approxAreaSqKm": 138175.1,
+      "boundary": {
+        "boundaryID": "PAK-ADM1-70912109",
+        "boundaryYearRepresented": "2019",
+        "boundarySource": "geoBoundaries, Wikipedia",
+        "boundaryLicense": "Public Domain",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 49558714,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 4 clipped polygon tiles because at least one ADM1 polygon exceeded the API area allowance."
+      },
+      "services": {
+        "health": 1950,
+        "education": 1546,
+        "markets": 376,
+        "total": 3872,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:27:30Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 25415,
+        "peoplePerSchool": 32056,
+        "peoplePerMarket": 131805,
+        "healthFacilitiesPer100k": 3.93,
+        "schoolsPer100k": 3.12,
+        "marketsPer100k": 0.76,
+        "totalMappedServicesPerMillion": 78.13,
+        "totalServicesPer1000SqKm": 28.02,
+        "serviceLoadScore": 72.7,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "osmCompletenessRiskScore": 68.7,
+        "accessStressIndex": 77,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P1",
+      "admin1Name": "Province 1",
+      "shapeId": "38925275B86793894515453",
+      "centroid": {
+        "lat": 27.230449,
+        "lon": 87.17868
+      },
+      "bbox": {
+        "minLon": 86.15592472007238,
+        "minLat": 26.347837177231423,
+        "maxLon": 88.20143431877203,
+        "maxLat": 28.1130614101981
+      },
+      "approxAreaSqKm": 26116.73,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 8343981,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 277,
+        "education": 1671,
+        "markets": 25,
+        "total": 1973,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T08:38:02Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 30123,
+        "peoplePerSchool": 4993,
+        "peoplePerMarket": 333759,
+        "healthFacilitiesPer100k": 3.32,
+        "schoolsPer100k": 20.03,
+        "marketsPer100k": 0.3,
+        "totalMappedServicesPerMillion": 236.46,
+        "totalServicesPer1000SqKm": 75.55,
+        "serviceLoadScore": 57.4,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 5.4,
+        "accessStressIndex": 49,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P2",
+      "admin1Name": "Province 2",
+      "shapeId": "38925275B32852473043531",
+      "centroid": {
+        "lat": 26.942839,
+        "lon": 85.749241
+      },
+      "bbox": {
+        "minLon": 84.48389024690363,
+        "minLat": 26.422516785057482,
+        "maxLon": 87.01459212198569,
+        "maxLat": 27.46316161001672
+      },
+      "approxAreaSqKm": 9609.45,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 8094360,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 910,
+        "education": 3719,
+        "markets": 19,
+        "total": 4648,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:28:30Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 8895,
+        "peoplePerSchool": 2176,
+        "peoplePerMarket": 426019,
+        "healthFacilitiesPer100k": 11.24,
+        "schoolsPer100k": 45.95,
+        "marketsPer100k": 0.23,
+        "totalMappedServicesPerMillion": 574.23,
+        "totalServicesPer1000SqKm": 483.69,
+        "serviceLoadScore": 27.1,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 31,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P3",
+      "admin1Name": "Bagmati",
+      "shapeId": "38925275B1624743257395",
+      "centroid": {
+        "lat": 27.652714,
+        "lon": 85.245768
+      },
+      "bbox": {
+        "minLon": 83.91877313186824,
+        "minLat": 26.919143286570666,
+        "maxLon": 86.57276297181393,
+        "maxLat": 28.38628471534208
+      },
+      "approxAreaSqKm": 20337.98,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 10771729,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 1107,
+        "education": 7119,
+        "markets": 90,
+        "total": 8316,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T00:26:00Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 9731,
+        "peoplePerSchool": 1513,
+        "peoplePerMarket": 119686,
+        "healthFacilitiesPer100k": 10.28,
+        "schoolsPer100k": 66.09,
+        "marketsPer100k": 0.84,
+        "totalMappedServicesPerMillion": 772.02,
+        "totalServicesPer1000SqKm": 408.89,
+        "serviceLoadScore": 21.3,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 27,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P4",
+      "admin1Name": "Gandaki",
+      "shapeId": "38925275B44970447822435",
+      "centroid": {
+        "lat": 28.384591,
+        "lon": 84.037504
+      },
+      "bbox": {
+        "minLon": 82.8773535347847,
+        "minLat": 27.437823045655612,
+        "maxLon": 85.19765379796227,
+        "maxLat": 29.331358603309145
+      },
+      "approxAreaSqKm": 22029.78,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2334633,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 495,
+        "education": 2437,
+        "markets": 19,
+        "total": 2951,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:29:33Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4716,
+        "peoplePerSchool": 958,
+        "peoplePerMarket": 122875,
+        "healthFacilitiesPer100k": 21.2,
+        "schoolsPer100k": 104.38,
+        "marketsPer100k": 0.81,
+        "totalMappedServicesPerMillion": 1264.01,
+        "totalServicesPer1000SqKm": 133.96,
+        "serviceLoadScore": 16,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 24,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P5",
+      "admin1Name": "Lumbini",
+      "shapeId": "38925275B41812398098692",
+      "centroid": {
+        "lat": 28.099727,
+        "lon": 82.543982
+      },
+      "bbox": {
+        "minLon": 81.05942305723762,
+        "minLat": 27.330225784123076,
+        "maxLon": 84.02854074184054,
+        "maxLat": 28.869228169818356
+      },
+      "approxAreaSqKm": 19276.46,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 5273207,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 1042,
+        "education": 5805,
+        "markets": 92,
+        "total": 6939,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:30:36Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5061,
+        "peoplePerSchool": 908,
+        "peoplePerMarket": 57317,
+        "healthFacilitiesPer100k": 19.76,
+        "schoolsPer100k": 110.08,
+        "marketsPer100k": 1.74,
+        "totalMappedServicesPerMillion": 1315.9,
+        "totalServicesPer1000SqKm": 359.97,
+        "serviceLoadScore": 6.3,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 19,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P6",
+      "admin1Name": "Karnali",
+      "shapeId": "38925275B76883637113030",
+      "centroid": {
+        "lat": 29.299193,
+        "lon": 82.330743
+      },
+      "bbox": {
+        "minLon": 80.98105142992615,
+        "minLat": 28.151110104711286,
+        "maxLon": 83.68043546902189,
+        "maxLat": 30.447276505923647
+      },
+      "approxAreaSqKm": 30751.32,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1495319,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 432,
+        "education": 2233,
+        "markets": 78,
+        "total": 2743,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:30:36Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 3461,
+        "peoplePerSchool": 670,
+        "peoplePerMarket": 19171,
+        "healthFacilitiesPer100k": 28.89,
+        "schoolsPer100k": 149.33,
+        "marketsPer100k": 5.22,
+        "totalMappedServicesPerMillion": 1834.39,
+        "totalServicesPer1000SqKm": 89.2,
+        "serviceLoadScore": 0.6,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 15,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "countryName": "Nepal",
+      "admin1Code": "NP-P7",
+      "admin1Name": "Sudurpaschim",
+      "shapeId": "38925275B37881943378158",
+      "centroid": {
+        "lat": 29.320617,
+        "lon": 80.933403
+      },
+      "bbox": {
+        "minLon": 80.05858451523449,
+        "minLat": 28.394511115266123,
+        "maxLon": 81.80822236233283,
+        "maxLat": 30.246722959697298
+      },
+      "approxAreaSqKm": 19768.78,
+      "boundary": {
+        "boundaryID": "NPL-ADM1-38925275",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "Survey Department of Nepal, OCHA FISS",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 4582478,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 376,
+        "education": 2666,
+        "markets": 34,
+        "total": 3076,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 12187,
+        "peoplePerSchool": 1719,
+        "peoplePerMarket": 134779,
+        "healthFacilitiesPer100k": 8.21,
+        "schoolsPer100k": 58.18,
+        "marketsPer100k": 0.74,
+        "totalMappedServicesPerMillion": 671.25,
+        "totalServicesPer1000SqKm": 155.6,
+        "serviceLoadScore": 26.6,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 30,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-1",
+      "admin1Name": "Western Province",
+      "shapeId": "99731895B46623695729728",
+      "centroid": {
+        "lat": 6.827696,
+        "lon": 80.099086
+      },
+      "bbox": {
+        "minLon": 79.8168996,
+        "minLat": 6.3248628,
+        "maxLon": 80.3812714,
+        "maxLat": 7.3305292
+      },
+      "approxAreaSqKm": 3729.14,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 6174081,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 393,
+        "education": 1128,
+        "markets": 76,
+        "total": 1597,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 15710,
+        "peoplePerSchool": 5473,
+        "peoplePerMarket": 81238,
+        "healthFacilitiesPer100k": 6.37,
+        "schoolsPer100k": 18.27,
+        "marketsPer100k": 1.23,
+        "totalMappedServicesPerMillion": 258.66,
+        "totalServicesPer1000SqKm": 428.25,
+        "serviceLoadScore": 34.4,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 35,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-2",
+      "admin1Name": "Central Province",
+      "shapeId": "99731895B28050807675820",
+      "centroid": {
+        "lat": 7.381785,
+        "lon": 80.719337
+      },
+      "bbox": {
+        "minLon": 80.422148,
+        "minLat": 6.751222,
+        "maxLon": 81.016526,
+        "maxLat": 8.012348
+      },
+      "approxAreaSqKm": 5751.5,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2693768,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 166,
+        "education": 464,
+        "markets": 20,
+        "total": 650,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 16228,
+        "peoplePerSchool": 5806,
+        "peoplePerMarket": 134688,
+        "healthFacilitiesPer100k": 6.16,
+        "schoolsPer100k": 17.22,
+        "marketsPer100k": 0.74,
+        "totalMappedServicesPerMillion": 241.3,
+        "totalServicesPer1000SqKm": 113.01,
+        "serviceLoadScore": 43.9,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 3.5,
+        "accessStressIndex": 41,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-3",
+      "admin1Name": "Southern Province",
+      "shapeId": "99731895B60977758614393",
+      "centroid": {
+        "lat": 6.249529,
+        "lon": 80.847725
+      },
+      "bbox": {
+        "minLon": 79.98756813735636,
+        "minLat": 5.9190173,
+        "maxLon": 81.7078823,
+        "maxLat": 6.5800406
+      },
+      "approxAreaSqKm": 5567.85,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2586818,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 131,
+        "education": 450,
+        "markets": 67,
+        "total": 648,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:33:43Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 19747,
+        "peoplePerSchool": 5748,
+        "peoplePerMarket": 38609,
+        "healthFacilitiesPer100k": 5.06,
+        "schoolsPer100k": 17.4,
+        "marketsPer100k": 2.59,
+        "totalMappedServicesPerMillion": 250.5,
+        "totalServicesPer1000SqKm": 116.38,
+        "serviceLoadScore": 33,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 34,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-4",
+      "admin1Name": "Northern Province",
+      "shapeId": "99731895B93054189817547",
+      "centroid": {
+        "lat": 9.178869,
+        "lon": 80.307668
+      },
+      "bbox": {
+        "minLon": 79.6510158,
+        "minLat": 8.521947,
+        "maxLon": 80.9643192,
+        "maxLat": 9.8357907
+      },
+      "approxAreaSqKm": 9029.21,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 989720,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 15 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 193,
+        "education": 1161,
+        "markets": 27,
+        "total": 1381,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T00:26:00Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5128,
+        "peoplePerSchool": 852,
+        "peoplePerMarket": 36656,
+        "healthFacilitiesPer100k": 19.5,
+        "schoolsPer100k": 117.31,
+        "marketsPer100k": 2.73,
+        "totalMappedServicesPerMillion": 1395.34,
+        "totalServicesPer1000SqKm": 152.95,
+        "serviceLoadScore": 3.3,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 17,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-5",
+      "admin1Name": "Eastern Province",
+      "shapeId": "99731895B51072878877669",
+      "centroid": {
+        "lat": 7.751406,
+        "lon": 81.316001
+      },
+      "bbox": {
+        "minLon": 80.7530425,
+        "minLat": 6.5107297,
+        "maxLon": 81.8789602,
+        "maxLat": 8.99208280768036
+      },
+      "approxAreaSqKm": 9844.25,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1641191,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 218,
+        "education": 661,
+        "markets": 51,
+        "total": 930,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:35:49Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 7528,
+        "peoplePerSchool": 2483,
+        "peoplePerMarket": 32180,
+        "healthFacilitiesPer100k": 13.28,
+        "schoolsPer100k": 40.28,
+        "marketsPer100k": 3.11,
+        "totalMappedServicesPerMillion": 566.66,
+        "totalServicesPer1000SqKm": 94.47,
+        "serviceLoadScore": 9.2,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 21,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-6",
+      "admin1Name": "North Western Province",
+      "shapeId": "99731895B5260290378804",
+      "centroid": {
+        "lat": 7.912777,
+        "lon": 80.135328
+      },
+      "bbox": {
+        "minLon": 79.6927375,
+        "minLat": 7.2582185,
+        "maxLon": 80.5779194,
+        "maxLat": 8.567336
+      },
+      "approxAreaSqKm": 8089.08,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2537460,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 4 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 88,
+        "education": 284,
+        "markets": 45,
+        "total": 417,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T10:20:36Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 28835,
+        "peoplePerSchool": 8935,
+        "peoplePerMarket": 56388,
+        "healthFacilitiesPer100k": 3.47,
+        "schoolsPer100k": 11.19,
+        "marketsPer100k": 1.77,
+        "totalMappedServicesPerMillion": 164.34,
+        "totalServicesPer1000SqKm": 51.55,
+        "serviceLoadScore": 55,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 34.3,
+        "accessStressIndex": 51,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-7",
+      "admin1Name": "North Central Province",
+      "shapeId": "99731895B66209916164902",
+      "centroid": {
+        "lat": 8.28359,
+        "lon": 80.646181
+      },
+      "bbox": {
+        "minLon": 79.9523049,
+        "minLat": 7.646962,
+        "maxLon": 81.3400561,
+        "maxLat": 8.9202176
+      },
+      "approxAreaSqKm": 10689.42,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1393376,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 45,
+        "education": 191,
+        "markets": 13,
+        "total": 249,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T10:20:36Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 30964,
+        "peoplePerSchool": 7295,
+        "peoplePerMarket": 107183,
+        "healthFacilitiesPer100k": 3.23,
+        "schoolsPer100k": 13.71,
+        "marketsPer100k": 0.93,
+        "totalMappedServicesPerMillion": 178.7,
+        "totalServicesPer1000SqKm": 23.29,
+        "serviceLoadScore": 59.4,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 28.5,
+        "accessStressIndex": 53,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-8",
+      "admin1Name": "Uva Province",
+      "shapeId": "99731895B77537271836321",
+      "centroid": {
+        "lat": 6.960717,
+        "lon": 81.206547
+      },
+      "bbox": {
+        "minLon": 80.7759424,
+        "minLat": 6.296472,
+        "maxLon": 81.637151,
+        "maxLat": 7.624962
+      },
+      "approxAreaSqKm": 8669.14,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1340074,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 70,
+        "education": 299,
+        "markets": 15,
+        "total": 384,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 19144,
+        "peoplePerSchool": 4482,
+        "peoplePerMarket": 89338,
+        "healthFacilitiesPer100k": 5.22,
+        "schoolsPer100k": 22.31,
+        "marketsPer100k": 1.12,
+        "totalMappedServicesPerMillion": 286.55,
+        "totalServicesPer1000SqKm": 44.3,
+        "serviceLoadScore": 35.8,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 36,
+        "bottleneck": "rainfall change"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "countryName": "Sri Lanka",
+      "admin1Code": "LK-9",
+      "admin1Name": "Sabaragamuwa Province",
+      "shapeId": "99731895B16804022686405",
+      "centroid": {
+        "lat": 6.81224,
+        "lon": 80.549294
+      },
+      "bbox": {
+        "minLon": 80.1453682,
+        "minLat": 6.22795,
+        "maxLon": 80.9532207,
+        "maxLat": 7.3965295
+      },
+      "approxAreaSqKm": 4978,
+      "boundary": {
+        "boundaryID": "LKA-ADM1-99731895",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2035581,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 63,
+        "education": 392,
+        "markets": 21,
+        "total": 476,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:37:56Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 32311,
+        "peoplePerSchool": 5193,
+        "peoplePerMarket": 96932,
+        "healthFacilitiesPer100k": 3.09,
+        "schoolsPer100k": 19.26,
+        "marketsPer100k": 1.03,
+        "totalMappedServicesPerMillion": 233.84,
+        "totalServicesPer1000SqKm": 95.62,
+        "serviceLoadScore": 52.4,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "osmCompletenessRiskScore": 6.5,
+        "accessStressIndex": 46,
+        "bottleneck": "service load"
+      }
+    }
+  ],
+  "countries": [
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "centroid": {
+        "lat": 30.3753,
+        "lon": 69.3451
+      },
+      "bbox": {
+        "minLon": 60.8,
+        "minLat": 23.6,
+        "maxLon": 77.1,
+        "maxLat": 37.1
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 251269164,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PAK/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 770880,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PAK/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 60.8265631639095,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PAK/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 3704,
+        "education": 5028,
+        "markets": 886,
+        "total": 9618,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-23T06:17:02Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 26.89,
+        "futureTasmaxC": 28.4,
+        "heatDeltaC": 1.51,
+        "baselinePrecipMm": 429.64,
+        "futurePrecipPercentOfBaseline": 117.94,
+        "precipChangePct": 17.94,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 67837,
+        "peoplePerSchool": 49974,
+        "peoplePerMarket": 283600,
+        "healthFacilitiesPer100k": 1.47,
+        "schoolsPer100k": 2,
+        "marketsPer100k": 0.35,
+        "totalMappedServicesPerMillion": 38.28,
+        "equivalentHealthCatchmentRadiusKm": 8.14,
+        "equivalentSchoolCatchmentRadiusKm": 6.99,
+        "serviceLoadScore": 100,
+        "heatStressScore": 75.5,
+        "rainfallStressScore": 100,
+        "ruralExposureScore": 60.8,
+        "osmCompletenessRiskScore": 84.7,
+        "accessStressIndex": 89,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "name": "Nepal",
+      "centroid": {
+        "lat": 28.3949,
+        "lon": 84.124
+      },
+      "bbox": {
+        "minLon": 80,
+        "minLat": 26.3,
+        "maxLon": 88.2,
+        "maxLat": 30.5
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 29651054,
+        "sourceUrl": "https://api.worldbank.org/v2/country/NPL/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 143350,
+        "sourceUrl": "https://api.worldbank.org/v2/country/NPL/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 33.227656836971,
+        "sourceUrl": "https://api.worldbank.org/v2/country/NPL/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 4644,
+        "education": 25648,
+        "markets": 356,
+        "total": 30648,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-23T06:17:02Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 17.68,
+        "futureTasmaxC": 19.07,
+        "heatDeltaC": 1.39,
+        "baselinePrecipMm": 2067.87,
+        "futurePrecipPercentOfBaseline": 102.59,
+        "precipChangePct": 2.59,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 6385,
+        "peoplePerSchool": 1156,
+        "peoplePerMarket": 83289,
+        "healthFacilitiesPer100k": 15.66,
+        "schoolsPer100k": 86.5,
+        "marketsPer100k": 1.2,
+        "totalMappedServicesPerMillion": 1033.62,
+        "equivalentHealthCatchmentRadiusKm": 3.13,
+        "equivalentSchoolCatchmentRadiusKm": 1.33,
+        "serviceLoadScore": 11.5,
+        "heatStressScore": 69.5,
+        "rainfallStressScore": 17.3,
+        "ruralExposureScore": 33.2,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 27,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "centroid": {
+        "lat": 7.8731,
+        "lon": 80.7718
+      },
+      "bbox": {
+        "minLon": 79.6,
+        "minLat": 5.9,
+        "maxLon": 82,
+        "maxLat": 9.9
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 21916000,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LKA/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 61860,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LKA/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 79.7003002941314,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LKA/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 1367,
+        "education": 5029,
+        "markets": 335,
+        "total": 6731,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 30.38,
+        "futureTasmaxC": 31.31,
+        "heatDeltaC": 0.93,
+        "baselinePrecipMm": 1686.61,
+        "futurePrecipPercentOfBaseline": 107.49,
+        "precipChangePct": 7.49,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 16032,
+        "peoplePerSchool": 4358,
+        "peoplePerMarket": 65421,
+        "healthFacilitiesPer100k": 6.24,
+        "schoolsPer100k": 22.95,
+        "marketsPer100k": 1.53,
+        "totalMappedServicesPerMillion": 307.13,
+        "equivalentHealthCatchmentRadiusKm": 3.8,
+        "equivalentSchoolCatchmentRadiusKm": 1.98,
+        "serviceLoadScore": 28.7,
+        "heatStressScore": 46.5,
+        "rainfallStressScore": 49.9,
+        "ruralExposureScore": 79.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 40,
+        "bottleneck": "rural exposure"
+      }
+    }
+  ]
+}

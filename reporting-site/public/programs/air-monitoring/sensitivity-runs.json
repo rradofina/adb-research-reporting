@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-04-26T16:56:14.790867Z",
+  "program": "air-monitoring",
+  "metric": "PM2.5 observability-gap ranking",
+  "common_top5_across_metrics": [],
+  "runs": [
+    {
+      "label": "baseline_gap_score",
+      "top5": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 100.0
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 100.0
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 95.0
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 94.0
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 80.0
+        }
+      ]
+    },
+    {
+      "label": "alt_zero_monitors_above_guideline",
+      "top5": [
+        {
+          "iso3": "PNG",
+          "country": "Papua New Guinea",
+          "population": 10576502
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "population": 1400638
+        },
+        {
+          "iso3": "FJI",
+          "country": "Fiji",
+          "population": 928784
+        },
+        {
+          "iso3": "BRN",
+          "country": "Brunei Darussalam",
+          "population": 462721
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "population": 327777
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2780 @@
+{
+  "metadata": {
+    "title": "OpenAQ Pilot Monitor Aggregation",
+    "generatedAt": "2026-04-23T07:36:45.678Z",
+    "script": "scripts/research/fetch-openaq-pilots.ts",
+    "status": "computed",
+    "coverageScope": "ADB regional member economies, best-effort by ISO2 country code",
+    "source": "https://api.openaq.org/v3",
+    "economySource": "https://aric.adb.org/integrationindicators/groupings",
+    "populationSource": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL",
+    "pm25ExposureSource": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3",
+    "pm25ExposureIndicator": "EN.ATM.PM25.MC.M3",
+    "whoCityDatabaseSource": "https://cdn.who.int/media/docs/default-source/air-pollution-documents/air-quality-and-health/who_ambient_air_quality_database_version_2024_(v6.1).xlsx?download=true&sfvrsn=c504c0cd_3",
+    "whoCityDatabasePage": "https://www.who.int/publications/m/item/who-ambient-air-quality-database-%28update-jan-2024%29",
+    "whoPm25AnnualGuideline": 5,
+    "exports": {
+      "json": [
+        "src/data/generated/air-monitoring-openaq-pilots.json",
+        "public/data/air-monitoring-openaq-pilots.json"
+      ],
+      "csv": [
+        "research/air-monitoring/generated/openaq-adb-regional-economies.csv",
+        "public/data/air-monitoring-openaq-economies.csv"
+      ]
+    },
+    "no2ExposureStatus": "not_computed_locally; Sentinel-5P/TROPOMI NO2 requires an Earth Engine or Copernicus export step",
+    "screeningScoreNote": "PM2.5 observability gap score is a transparent first-pass national screening score: 65% WDI PM2.5 exposure pressure and 35% public PM2.5 monitor scarcity.",
+    "caveat": "OpenAQ only includes public providers it has discovered or received; absence from OpenAQ is not proof that a monitor does not exist. WDI PM2.5 exposure is national modeled exposure, not local monitor readings."
+  },
+  "summary": {
+    "economiesQueried": 50,
+    "economiesComputed": 50,
+    "economiesWithLocations": 35,
+    "economiesWithNoLocations": 15,
+    "economiesErrored": 0,
+    "totalPublicLocations": 7921,
+    "populationKnownEconomies": 47,
+    "totalPopulationKnown": 4492904965,
+    "populationInZeroLocationEconomies": 14343130,
+    "pm25ExposureKnownEconomies": 46,
+    "whoCityPm25KnownEconomies": 29,
+    "whoCityPm25Cities": 1620,
+    "whoPm25AnnualGuideline": 5,
+    "populationInAboveGuidelinePm25Economies": 4485380865,
+    "populationWithNoPublicPm25Monitor": 14343130,
+    "sparsePm25MonitoringEconomies": 7
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 2,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 2,
+      "parameterCoverage": {
+        "pm25": 2,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 42647492,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 46.0870936659706,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 1,
+        "latestYear": 2019,
+        "pm25CityMean": 119.77,
+        "pm25CityMedian": 119.77,
+        "pm25CityMax": 119.77,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -73.68,
+        "highestPm25City": {
+          "city": "Kabul/AFG",
+          "year": 2019,
+          "value": 119.77
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 21323746,
+        "peoplePerPm25Location": 21323746,
+        "populationInAboveGuidelinePm25Economy": 42647492,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 100,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "AM",
+      "iso3": "ARM",
+      "name": "Armenia",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 77,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 77,
+      "parameterCoverage": {
+        "pm25": 77,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 3033500,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 30.5796334750125,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 39396,
+        "peoplePerPm25Location": 39396,
+        "populationInAboveGuidelinePm25Economy": 3033500,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 57,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "AU",
+      "iso3": "AUS",
+      "name": "Australia",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 320,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 320,
+      "parameterCoverage": {
+        "pm25": 299,
+        "pm10": 225,
+        "no2": 84,
+        "o3": 77,
+        "so2": 68,
+        "co": 43
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 27196812,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 8.25171746070811,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 71,
+        "observations": 155,
+        "latestYear": 2019,
+        "pm25CityMean": 7.38,
+        "pm25CityMedian": 7.37,
+        "pm25CityMax": 17.2,
+        "citiesAboveWhoGuideline": 52,
+        "cityShareAboveWhoGuideline": 73.2,
+        "wdiMinusWhoCityMean": 0.87,
+        "highestPm25City": {
+          "city": "Armidale/AUS",
+          "year": 2019,
+          "value": 17.2
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 84990,
+        "peoplePerPm25Location": 90959,
+        "populationInAboveGuidelinePm25Economy": 27196812,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 16,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "AZ",
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 1,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 1,
+      "parameterCoverage": {
+        "pm25": 1,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 10202830,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 21.7269999756599,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 10202830,
+        "peoplePerPm25Location": 10202830,
+        "populationInAboveGuidelinePm25Economy": 10202830,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 75,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 20,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 20,
+      "parameterCoverage": {
+        "pm25": 20,
+        "pm10": 1,
+        "no2": 0,
+        "o3": 1,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 173562364,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 42.3813762359965,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 9,
+        "observations": 62,
+        "latestYear": 2019,
+        "pm25CityMean": 72.73,
+        "pm25CityMedian": 72.45,
+        "pm25CityMax": 102.7,
+        "citiesAboveWhoGuideline": 9,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -30.35,
+        "highestPm25City": {
+          "city": "Narayangonj/BGD",
+          "year": 2018,
+          "value": 102.7
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 8678118,
+        "peoplePerPm25Location": 8678118,
+        "populationInAboveGuidelinePm25Economy": 173562364,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 100,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "BT",
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 16,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 16,
+      "parameterCoverage": {
+        "pm25": 16,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 791524,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 23.9456576369223,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 49470,
+        "peoplePerPm25Location": 49470,
+        "populationInAboveGuidelinePm25Economy": 791524,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 45,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "BN",
+      "iso3": "BRN",
+      "name": "Brunei Darussalam",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 462721,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 7.59726503432135,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 462721,
+        "populationWithNoPublicPm25Monitor": 462721,
+        "pm25ObservabilityGapScore": 49,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 27,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 27,
+      "parameterCoverage": {
+        "pm25": 27,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 17638801,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 24.1436022803452,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 24,
+        "observations": 53,
+        "latestYear": 2021,
+        "pm25CityMean": 20.08,
+        "pm25CityMedian": 19,
+        "pm25CityMax": 37,
+        "citiesAboveWhoGuideline": 23,
+        "cityShareAboveWhoGuideline": 95.8,
+        "wdiMinusWhoCityMean": 4.06,
+        "highestPm25City": {
+          "city": "Siem Reap/KHM",
+          "year": 2021,
+          "value": 37
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 653289,
+        "peoplePerPm25Location": 653289,
+        "populationInAboveGuidelinePm25Economy": 17638801,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 49,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "CK",
+      "iso3": "COK",
+      "name": "Cook Islands",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": null,
+      "pm25Exposure": null,
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": null,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": null,
+        "pm25ObservabilityStatus": "no_population"
+      }
+    },
+    {
+      "iso2": "CN",
+      "iso3": "CHN",
+      "name": "China, People's Republic of",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 1881,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 1881,
+      "parameterCoverage": {
+        "pm25": 1880,
+        "pm10": 1857,
+        "no2": 1848,
+        "o3": 1851,
+        "so2": 1849,
+        "co": 1848
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 1408975000,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 34.8105237153218,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1104,
+        "observations": 3881,
+        "latestYear": 2020,
+        "pm25CityMean": 36.81,
+        "pm25CityMedian": 35.68,
+        "pm25CityMax": 120.35,
+        "citiesAboveWhoGuideline": 1104,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -2,
+        "highestPm25City": {
+          "city": "Hotan/CHN",
+          "year": 2016,
+          "value": 120.35
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 749056,
+        "peoplePerPm25Location": 749455,
+        "populationInAboveGuidelinePm25Economy": 1408975000,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 70,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "FJ",
+      "iso3": "FJI",
+      "name": "Fiji",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 928784,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.4187981716598,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 2,
+        "latestYear": 2015,
+        "pm25CityMean": 8.1,
+        "pm25CityMedian": 8.1,
+        "pm25CityMax": 8.1,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 4.32,
+        "highestPm25City": {
+          "city": "Suva/FJI",
+          "year": 2015,
+          "value": 8.1
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 928784,
+        "populationWithNoPublicPm25Monitor": 928784,
+        "pm25ObservabilityGapScore": 58,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "GE",
+      "iso3": "GEO",
+      "name": "Georgia",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 2,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 2,
+      "parameterCoverage": {
+        "pm25": 2,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 3699557,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 17.0438421058507,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 3,
+        "latestYear": 2017,
+        "pm25CityMean": 20,
+        "pm25CityMedian": 20,
+        "pm25CityMax": 20,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -2.96,
+        "highestPm25City": {
+          "city": "Tbilisi/GEO",
+          "year": 2017,
+          "value": 20
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 1849779,
+        "peoplePerPm25Location": 1849779,
+        "populationInAboveGuidelinePm25Economy": 3699557,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 45,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "HK",
+      "iso3": "HKG",
+      "name": "Hong Kong, China",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 25,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 25,
+      "parameterCoverage": {
+        "pm25": 25,
+        "pm10": 14,
+        "no2": 14,
+        "o3": 14,
+        "so2": 14,
+        "co": 8
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 7524100,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": null,
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 300964,
+        "peoplePerPm25Location": 300964,
+        "populationInAboveGuidelinePm25Economy": null,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": null,
+        "pm25ObservabilityStatus": "no_pm25_exposure"
+      }
+    },
+    {
+      "iso2": "IN",
+      "iso3": "IND",
+      "name": "India",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 723,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 723,
+      "parameterCoverage": {
+        "pm25": 713,
+        "pm10": 651,
+        "no2": 669,
+        "o3": 642,
+        "so2": 641,
+        "co": 662
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 1450935791,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 48.3948115195574,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 131,
+        "observations": 219,
+        "latestYear": 2020,
+        "pm25CityMean": 50.45,
+        "pm25CityMedian": 34.93,
+        "pm25CityMax": 220.41,
+        "citiesAboveWhoGuideline": 131,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -2.06,
+        "highestPm25City": {
+          "city": "Bhiwadi/IND",
+          "year": 2017,
+          "value": 220.41
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 2006827,
+        "peoplePerPm25Location": 2034973,
+        "populationInAboveGuidelinePm25Economy": 1450935791,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 79,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "ID",
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 39,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 39,
+      "parameterCoverage": {
+        "pm25": 35,
+        "pm10": 11,
+        "no2": 0,
+        "o3": 1,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 283487931,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 17.8814994983985,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 9,
+        "observations": 28,
+        "latestYear": 2021,
+        "pm25CityMean": 22.74,
+        "pm25CityMedian": 20.69,
+        "pm25CityMax": 42.65,
+        "citiesAboveWhoGuideline": 9,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -4.86,
+        "highestPm25City": {
+          "city": "Jakarta/IDN",
+          "year": 2016,
+          "value": 42.65
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 7268921,
+        "peoplePerPm25Location": 8099655,
+        "populationInAboveGuidelinePm25Economy": 283487931,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 68,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "JP",
+      "iso3": "JPN",
+      "name": "Japan",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 1624,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 1624,
+      "parameterCoverage": {
+        "pm25": 1131,
+        "pm10": 3,
+        "no2": 1470,
+        "o3": 0,
+        "so2": 835,
+        "co": 258
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 123975371,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.835201662985,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 24,
+        "observations": 79,
+        "latestYear": 2019,
+        "pm25CityMean": 10.65,
+        "pm25CityMedian": 10.64,
+        "pm25CityMax": 18,
+        "citiesAboveWhoGuideline": 24,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 2.19,
+        "highestPm25City": {
+          "city": "Chiyoda/JPN",
+          "year": 2011,
+          "value": 18
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 76340,
+        "peoplePerPm25Location": 109616,
+        "populationInAboveGuidelinePm25Economy": 123975371,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 25,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "KZ",
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 202,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 202,
+      "parameterCoverage": {
+        "pm25": 202,
+        "pm10": 2,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 20592571,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 20.0278724259165,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 2,
+        "latestYear": 2019,
+        "pm25CityMean": 21.77,
+        "pm25CityMedian": 21.77,
+        "pm25CityMax": 21.77,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -1.74,
+        "highestPm25City": {
+          "city": "Astana/KAZ",
+          "year": 2019,
+          "value": 21.77
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 101943,
+        "peoplePerPm25Location": 101943,
+        "populationInAboveGuidelinePm25Economy": 20592571,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 38,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "KI",
+      "iso3": "KIR",
+      "name": "Kiribati",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 134518,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 11.2568272545112,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 134518,
+        "populationWithNoPublicPm25Monitor": 134518,
+        "pm25ObservabilityGapScore": 56,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "KR",
+      "iso3": "KOR",
+      "name": "Korea, Republic of",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 765,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 765,
+      "parameterCoverage": {
+        "pm25": 765,
+        "pm10": 760,
+        "no2": 758,
+        "o3": 757,
+        "so2": 756,
+        "co": 756
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 51751065,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 25.9439899531653,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 24,
+        "observations": 91,
+        "latestYear": 2019,
+        "pm25CityMean": 24.03,
+        "pm25CityMedian": 23.15,
+        "pm25CityMax": 38.57,
+        "citiesAboveWhoGuideline": 24,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 1.91,
+        "highestPm25City": {
+          "city": "Bucheon/KOR",
+          "year": 2019,
+          "value": 38.57
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 67648,
+        "peoplePerPm25Location": 67648,
+        "populationInAboveGuidelinePm25Economy": 51751065,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 49,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "KG",
+      "iso3": "KGZ",
+      "name": "Kyrgyz Republic",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 96,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 96,
+      "parameterCoverage": {
+        "pm25": 96,
+        "pm10": 2,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 7221868,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 24.3817252281764,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 1,
+        "latestYear": 2019,
+        "pm25CityMean": 33.16,
+        "pm25CityMedian": 33.16,
+        "pm25CityMax": 33.16,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -8.78,
+        "highestPm25City": {
+          "city": "Bishkek/KGZ",
+          "year": 2019,
+          "value": 33.16
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 75228,
+        "peoplePerPm25Location": 75228,
+        "populationInAboveGuidelinePm25Economy": 7221868,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 46,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 162,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 162,
+      "parameterCoverage": {
+        "pm25": 162,
+        "pm10": 2,
+        "no2": 1,
+        "o3": 1,
+        "so2": 1,
+        "co": 1
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 7769819,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 22.3176670505669,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 1,
+        "latestYear": 2019,
+        "pm25CityMean": 25.77,
+        "pm25CityMedian": 25.77,
+        "pm25CityMax": 25.77,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -3.45,
+        "highestPm25City": {
+          "city": "Vientiane/LAO",
+          "year": 2019,
+          "value": 25.77
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 47962,
+        "peoplePerPm25Location": 47962,
+        "populationInAboveGuidelinePm25Economy": 7769819,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 42,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "MY",
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 18,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 18,
+      "parameterCoverage": {
+        "pm25": 18,
+        "pm10": 3,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 35557673,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 16.1938532237922,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 17,
+        "observations": 18,
+        "latestYear": 2019,
+        "pm25CityMean": 20.62,
+        "pm25CityMedian": 20.28,
+        "pm25CityMax": 29.81,
+        "citiesAboveWhoGuideline": 17,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -4.43,
+        "highestPm25City": {
+          "city": "Putrajaya/MYS",
+          "year": 2019,
+          "value": 29.81
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 1975426,
+        "peoplePerPm25Location": 1975426,
+        "populationInAboveGuidelinePm25Economy": 35557673,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 44,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "MV",
+      "iso3": "MDV",
+      "name": "Maldives",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 1,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 1,
+      "parameterCoverage": {
+        "pm25": 1,
+        "pm10": 1,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 527799,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.0123911668511,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 527799,
+        "peoplePerPm25Location": 527799,
+        "populationInAboveGuidelinePm25Economy": 527799,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 26,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "MH",
+      "iso3": "MHL",
+      "name": "Marshall Islands",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 37548,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 10.7256194470999,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 37548,
+        "populationWithNoPublicPm25Monitor": 37548,
+        "pm25ObservabilityGapScore": 55,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "FM",
+      "iso3": "FSM",
+      "name": "Micronesia, Federated States of",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 113160,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.1144203347628,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 113160,
+        "populationWithNoPublicPm25Monitor": 113160,
+        "pm25ObservabilityGapScore": 57,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "MN",
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 52,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 52,
+      "parameterCoverage": {
+        "pm25": 19,
+        "pm10": 27,
+        "no2": 41,
+        "o3": 8,
+        "so2": 41,
+        "co": 12
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 3524788,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 29.6547866481682,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 3,
+        "observations": 12,
+        "latestYear": 2019,
+        "pm25CityMean": 41,
+        "pm25CityMedian": 40,
+        "pm25CityMax": 60,
+        "citiesAboveWhoGuideline": 3,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -11.35,
+        "highestPm25City": {
+          "city": "Ulaanbaatar/MNG",
+          "year": 2019,
+          "value": 60
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 67784,
+        "peoplePerPm25Location": 185515,
+        "populationInAboveGuidelinePm25Economy": 3524788,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 56,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "MM",
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 3,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 3,
+      "parameterCoverage": {
+        "pm25": 3,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 1,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 54500091,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 32.3150340028667,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 4,
+        "latestYear": 2021,
+        "pm25CityMean": 28,
+        "pm25CityMedian": 28,
+        "pm25CityMax": 28,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 4.32,
+        "highestPm25City": {
+          "city": "Yangon/MMR",
+          "year": 2021,
+          "value": 28
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 18166697,
+        "peoplePerPm25Location": 18166697,
+        "populationInAboveGuidelinePm25Economy": 54500091,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 95,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "NR",
+      "iso3": "NRU",
+      "name": "Nauru",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 11947,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 6.06435493209495,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 11947,
+        "populationWithNoPublicPm25Monitor": 11947,
+        "pm25ObservabilityGapScore": 46,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "name": "Nepal",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 75,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 75,
+      "parameterCoverage": {
+        "pm25": 75,
+        "pm10": 2,
+        "no2": 0,
+        "o3": 2,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 29651054,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 45.7207706412594,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 4,
+        "observations": 14,
+        "latestYear": 2020,
+        "pm25CityMean": 45.51,
+        "pm25CityMedian": 43.83,
+        "pm25CityMax": 58.23,
+        "citiesAboveWhoGuideline": 4,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 0.21,
+        "highestPm25City": {
+          "city": "Phora Durbar Kathmandu/NPL",
+          "year": 2018,
+          "value": 58.23
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 395347,
+        "peoplePerPm25Location": 395347,
+        "populationInAboveGuidelinePm25Economy": 29651054,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 68,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "NZ",
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 47,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 47,
+      "parameterCoverage": {
+        "pm25": 46,
+        "pm10": 26,
+        "no2": 5,
+        "o3": 0,
+        "so2": 1,
+        "co": 1
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 5287500,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 6.48591499675774,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 13,
+        "observations": 64,
+        "latestYear": 2021,
+        "pm25CityMean": 8.99,
+        "pm25CityMedian": 8.69,
+        "pm25CityMax": 15,
+        "citiesAboveWhoGuideline": 12,
+        "cityShareAboveWhoGuideline": 92.3,
+        "wdiMinusWhoCityMean": -2.5,
+        "highestPm25City": {
+          "city": "Timaru/NZL",
+          "year": 2012,
+          "value": 15
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 112500,
+        "peoplePerPm25Location": 114946,
+        "populationInAboveGuidelinePm25Economy": 5287500,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 13,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "NU",
+      "iso3": "NIU",
+      "name": "Niue",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": null,
+      "pm25Exposure": null,
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": null,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": null,
+        "pm25ObservabilityStatus": "no_population"
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 383,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 383,
+      "parameterCoverage": {
+        "pm25": 383,
+        "pm10": 6,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 251269164,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 42.9981734249878,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 6,
+        "observations": 11,
+        "latestYear": 2020,
+        "pm25CityMean": 70.57,
+        "pm25CityMedian": 61.88,
+        "pm25CityMax": 123.88,
+        "citiesAboveWhoGuideline": 6,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -27.57,
+        "highestPm25City": {
+          "city": "Lahore/PAK",
+          "year": 2019,
+          "value": 123.88
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 656055,
+        "peoplePerPm25Location": 656055,
+        "populationInAboveGuidelinePm25Economy": 251269164,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 70,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "PW",
+      "iso3": "PLW",
+      "name": "Palau",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 17695,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 7.32770979431049,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 17695,
+        "populationWithNoPublicPm25Monitor": 17695,
+        "pm25ObservabilityGapScore": 49,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "PG",
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 10576502,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 17.3105425567239,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 10576502,
+        "populationWithNoPublicPm25Monitor": 10576502,
+        "pm25ObservabilityGapScore": 67,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "name": "Philippines",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 78,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 78,
+      "parameterCoverage": {
+        "pm25": 78,
+        "pm10": 6,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 115843670,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 20.2887417122616,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 15,
+        "observations": 22,
+        "latestYear": 2016,
+        "pm25CityMean": 28,
+        "pm25CityMedian": 29,
+        "pm25CityMax": 46,
+        "citiesAboveWhoGuideline": 15,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -7.71,
+        "highestPm25City": {
+          "city": "Nia Road/PHL",
+          "year": 2016,
+          "value": 46
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 1485175,
+        "peoplePerPm25Location": 1485175,
+        "populationInAboveGuidelinePm25Economy": 115843670,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 48,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "WS",
+      "iso3": "WSM",
+      "name": "Samoa",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 218019,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.5518952802963,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 218019,
+        "populationWithNoPublicPm25Monitor": 218019,
+        "pm25ObservabilityGapScore": 58,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "SG",
+      "iso3": "SGP",
+      "name": "Singapore",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 44,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 44,
+      "parameterCoverage": {
+        "pm25": 44,
+        "pm10": 2,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 6036860,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 13.8691955865476,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 12,
+        "latestYear": 2021,
+        "pm25CityMean": 12,
+        "pm25CityMedian": 12,
+        "pm25CityMax": 12,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 1.87,
+        "highestPm25City": {
+          "city": "Singapore/SGP",
+          "year": 2021,
+          "value": 12
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 137201,
+        "peoplePerPm25Location": 137201,
+        "populationInAboveGuidelinePm25Economy": 6036860,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 27,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "SB",
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 1,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 1,
+      "parameterCoverage": {
+        "pm25": 1,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 819198,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 13.9542830081778,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 819198,
+        "peoplePerPm25Location": 819198,
+        "populationInAboveGuidelinePm25Economy": 819198,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 32,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "subregion": "South Asia",
+      "status": "computed",
+      "publicLocations": 3,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 3,
+      "parameterCoverage": {
+        "pm25": 3,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 21916000,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 19.9644408635608,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 3,
+        "latestYear": 2019,
+        "pm25CityMean": 23.58,
+        "pm25CityMedian": 23.58,
+        "pm25CityMax": 23.58,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -3.62,
+        "highestPm25City": {
+          "city": "Colombo/LKA",
+          "year": 2019,
+          "value": 23.58
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 7305333,
+        "peoplePerPm25Location": 7305333,
+        "populationInAboveGuidelinePm25Economy": 21916000,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 72,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "TW",
+      "iso3": "TWN",
+      "name": "Taipei,China",
+      "subregion": "East Asia",
+      "status": "computed",
+      "publicLocations": 125,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 125,
+      "parameterCoverage": {
+        "pm25": 125,
+        "pm10": 119,
+        "no2": 117,
+        "o3": 116,
+        "so2": 117,
+        "co": 117
+      },
+      "freshnessShare": 0,
+      "population": null,
+      "pm25Exposure": null,
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": null,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": null,
+        "pm25ObservabilityStatus": "no_population"
+      }
+    },
+    {
+      "iso2": "TJ",
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 5,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 5,
+      "parameterCoverage": {
+        "pm25": 5,
+        "pm10": 3,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 10590927,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 37.0534062306267,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 1,
+        "latestYear": 2019,
+        "pm25CityMean": 71.52,
+        "pm25CityMedian": 71.52,
+        "pm25CityMax": 71.52,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -34.47,
+        "highestPm25City": {
+          "city": "Dushanbe/TJK",
+          "year": 2019,
+          "value": 71.52
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 2118185,
+        "peoplePerPm25Location": 2118185,
+        "populationInAboveGuidelinePm25Economy": 10590927,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 80,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "TH",
+      "iso3": "THA",
+      "name": "Thailand",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 637,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 637,
+      "parameterCoverage": {
+        "pm25": 604,
+        "pm10": 404,
+        "no2": 142,
+        "o3": 150,
+        "so2": 133,
+        "co": 122
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 71668011,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 31.0072016277159,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 48,
+        "observations": 79,
+        "latestYear": 2021,
+        "pm25CityMean": 21.01,
+        "pm25CityMedian": 22,
+        "pm25CityMax": 32,
+        "citiesAboveWhoGuideline": 48,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": 10,
+        "highestPm25City": {
+          "city": "Chiang Rai/THA",
+          "year": 2021,
+          "value": 32
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 112509,
+        "peoplePerPm25Location": 118656,
+        "populationInAboveGuidelinePm25Economy": 71668011,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 58,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 1400638,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 17.4104661970888,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 1400638,
+        "populationWithNoPublicPm25Monitor": 1400638,
+        "pm25ObservabilityGapScore": 67,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "TO",
+      "iso3": "TON",
+      "name": "Tonga",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 104175,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 12.4784129504796,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 104175,
+        "populationWithNoPublicPm25Monitor": 104175,
+        "pm25ObservabilityGapScore": 58,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "TR",
+      "iso3": "TUR",
+      "name": "Türkiye",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 406,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 406,
+      "parameterCoverage": {
+        "pm25": 202,
+        "pm10": 387,
+        "no2": 326,
+        "o3": 227,
+        "so2": 343,
+        "co": 233
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 85518661,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 21.6120469179783,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 100,
+        "observations": 326,
+        "latestYear": 2020,
+        "pm25CityMean": 21.5,
+        "pm25CityMedian": 19.92,
+        "pm25CityMax": 56.62,
+        "citiesAboveWhoGuideline": 99,
+        "cityShareAboveWhoGuideline": 99,
+        "wdiMinusWhoCityMean": 0.11,
+        "highestPm25City": {
+          "city": "Igdir/TUR",
+          "year": 2020,
+          "value": 56.62
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 210637,
+        "peoplePerPm25Location": 423360,
+        "populationInAboveGuidelinePm25Economy": 85518661,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 43,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "TM",
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 2,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 2,
+      "parameterCoverage": {
+        "pm25": 2,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 7494498,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 19.5997611438189,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 1,
+        "latestYear": 2019,
+        "pm25CityMean": 22.08,
+        "pm25CityMedian": 22.08,
+        "pm25CityMax": 22.08,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -2.48,
+        "highestPm25City": {
+          "city": "Ashgabat/TKM",
+          "year": 2019,
+          "value": 22.08
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 3747249,
+        "peoplePerPm25Location": 3747249,
+        "populationInAboveGuidelinePm25Economy": 7494498,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 63,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    },
+    {
+      "iso2": "TV",
+      "iso3": "TUV",
+      "name": "Tuvalu",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 9646,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 5.91780105591262,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 9646,
+        "populationWithNoPublicPm25Monitor": 9646,
+        "pm25ObservabilityGapScore": 46,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "UZ",
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "subregion": "Central and West Asia",
+      "status": "computed",
+      "publicLocations": 5,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 5,
+      "parameterCoverage": {
+        "pm25": 5,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 1,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 36361859,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 31.9604294559849,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 1,
+        "observations": 2,
+        "latestYear": 2019,
+        "pm25CityMean": 41.96,
+        "pm25CityMedian": 41.96,
+        "pm25CityMax": 41.96,
+        "citiesAboveWhoGuideline": 1,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -10,
+        "highestPm25City": {
+          "city": "Tashkent/UZB",
+          "year": 2019,
+          "value": 41.96
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 7272372,
+        "peoplePerPm25Location": 7272372,
+        "populationInAboveGuidelinePm25Economy": 36361859,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 94,
+        "pm25ObservabilityStatus": "sparse_public_pm25_monitoring"
+      }
+    },
+    {
+      "iso2": "VU",
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "subregion": "The Pacific",
+      "status": "computed",
+      "publicLocations": 0,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 0,
+      "parameterCoverage": {
+        "pm25": 0,
+        "pm10": 0,
+        "no2": 0,
+        "o3": 0,
+        "so2": 0,
+        "co": 0
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 327777,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 14.0824115364695,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "no_city_pm25",
+        "citiesWithPm25": 0,
+        "observations": 0,
+        "latestYear": null,
+        "pm25CityMean": null,
+        "pm25CityMedian": null,
+        "pm25CityMax": null,
+        "citiesAboveWhoGuideline": 0,
+        "cityShareAboveWhoGuideline": null,
+        "wdiMinusWhoCityMean": null,
+        "highestPm25City": null
+      },
+      "metrics": {
+        "peoplePerPublicLocation": null,
+        "peoplePerPm25Location": null,
+        "populationInAboveGuidelinePm25Economy": 327777,
+        "populationWithNoPublicPm25Monitor": 327777,
+        "pm25ObservabilityGapScore": 61,
+        "pm25ObservabilityStatus": "no_public_pm25_monitor"
+      }
+    },
+    {
+      "iso2": "VN",
+      "iso3": "VNM",
+      "name": "Viet Nam",
+      "subregion": "Southeast Asia",
+      "status": "computed",
+      "publicLocations": 54,
+      "freshLocations": 0,
+      "staleLocations": 0,
+      "unknownFreshness": 54,
+      "parameterCoverage": {
+        "pm25": 54,
+        "pm10": 38,
+        "no2": 37,
+        "o3": 5,
+        "so2": 5,
+        "co": 37
+      },
+      "freshnessShare": 0,
+      "population": {
+        "value": 100987686,
+        "year": 2024,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "pm25Exposure": {
+        "value": 20.8010641731194,
+        "year": 2020,
+        "source": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.PM25.MC.M3?format=json&per_page=20000&mrv=1",
+        "unit": "micrograms_per_cubic_meter",
+        "aboveWhoGuideline": true
+      },
+      "whoCityValidation": {
+        "status": "computed",
+        "citiesWithPm25": 6,
+        "observations": 15,
+        "latestYear": 2020,
+        "pm25CityMean": 27.44,
+        "pm25CityMedian": 25.85,
+        "pm25CityMax": 47.91,
+        "citiesAboveWhoGuideline": 6,
+        "cityShareAboveWhoGuideline": 100,
+        "wdiMinusWhoCityMean": -6.64,
+        "highestPm25City": {
+          "city": "Ha Noi/VNM",
+          "year": 2016,
+          "value": 47.91
+        }
+      },
+      "metrics": {
+        "peoplePerPublicLocation": 1870142,
+        "peoplePerPm25Location": 1870142,
+        "populationInAboveGuidelinePm25Economy": 100987686,
+        "populationWithNoPublicPm25Monitor": null,
+        "pm25ObservabilityGapScore": 52,
+        "pm25ObservabilityStatus": "public_pm25_monitoring_present"
+      }
+    }
+  ]
+}

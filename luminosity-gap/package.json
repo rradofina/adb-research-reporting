@@ -1,0 +1,47 @@
+{
+  "name": "luminosity-gap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3005",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "research:access": "tsx scripts/research/access-services-pipeline.ts && tsx scripts/research/access-services-scaleout.ts",
+    "research:access:scaleout": "tsx scripts/research/access-services-scaleout.ts",
+    "research:ookla": "tsx scripts/research/fetch-ookla-pilots.ts",
+    "research:openaq": "tsx scripts/research/fetch-openaq-pilots.ts",
+    "research:pipelines": "npm run research:access && npm run research:ookla && npm run research:openaq"
+  },
+  "dependencies": {
+    "@deck.gl/react": "^9.3.0",
+    "@supabase/supabase-js": "^2.103.2",
+    "d3": "^7.9.0",
+    "deck.gl": "^9.3.0",
+    "maplibre-gl": "^5.23.0",
+    "next": "16.2.4",
+    "papaparse": "^5.5.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-map-gl": "^8.1.1",
+    "read-excel-file": "^9.0.6",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "polygon-clipping": "^0.15.7",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "fast-xml-parser": "^5.7.1"
+  }
+}

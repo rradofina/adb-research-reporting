@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Climate-Adjusted Access to Services - Pilot Screening",
+    "generatedAt": "2026-04-23T07:35:28.205Z",
+    "script": "scripts/research/access-services-pipeline.ts",
+    "status": "computed_screening_index",
+    "caveat": "This is a first national screening index. It is not yet a travel-time raster or facility catchment model.",
+    "sources": [
+      "https://api.worldbank.org/v2",
+      "https://climateknowledgeportal.worldbank.org/download-data",
+      "https://overpass.kumi.systems/api/interpreter",
+      "https://www.openstreetmap.org/copyright"
+    ],
+    "method": "Counts mapped health, school, and market services; joins country population, land area, rural share, and climate deltas; computes a transparent access stress index for pilot prioritization."
+  },
+  "countries": [
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "name": "Philippines",
+      "centroid": {
+        "lat": 12.8797,
+        "lon": 121.774
+      },
+      "bbox": {
+        "minLon": 116.9,
+        "minLat": 4.5,
+        "maxLon": 127,
+        "maxLat": 21.3
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 115843670,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PHL/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 298170,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PHL/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 44.5479016784523,
+        "sourceUrl": "https://api.worldbank.org/v2/country/PHL/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 6520,
+        "education": 50253,
+        "markets": 2418,
+        "total": 59191,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-11T20:45:32Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 17767,
+        "peoplePerSchool": 2305,
+        "peoplePerMarket": 47909,
+        "healthFacilitiesPer100k": 5.63,
+        "schoolsPer100k": 43.38,
+        "marketsPer100k": 2.09,
+        "totalMappedServicesPerMillion": 510.96,
+        "equivalentHealthCatchmentRadiusKm": 3.82,
+        "equivalentSchoolCatchmentRadiusKm": 1.37,
+        "serviceLoadScore": 21.2,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "ruralExposureScore": 44.5,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 32,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "centroid": {
+        "lat": 23.685,
+        "lon": 90.3563
+      },
+      "bbox": {
+        "minLon": 88,
+        "minLat": 20.5,
+        "maxLon": 92.8,
+        "maxLat": 26.7
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 173562364,
+        "sourceUrl": "https://api.worldbank.org/v2/country/BGD/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 129980,
+        "sourceUrl": "https://api.worldbank.org/v2/country/BGD/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 67.3216803676693,
+        "sourceUrl": "https://api.worldbank.org/v2/country/BGD/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 3298,
+        "education": 8680,
+        "markets": 3741,
+        "total": 15719,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-23T05:58:33Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 52627,
+        "peoplePerSchool": 19996,
+        "peoplePerMarket": 46395,
+        "healthFacilitiesPer100k": 1.9,
+        "schoolsPer100k": 5,
+        "marketsPer100k": 2.16,
+        "totalMappedServicesPerMillion": 90.57,
+        "equivalentHealthCatchmentRadiusKm": 3.54,
+        "equivalentSchoolCatchmentRadiusKm": 2.18,
+        "serviceLoadScore": 84.7,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "ruralExposureScore": 67.3,
+        "osmCompletenessRiskScore": 63.8,
+        "accessStressIndex": 67,
+        "bottleneck": "service load"
+      }
+    }
+  ]
+}

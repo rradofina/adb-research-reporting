@@ -1,0 +1,128 @@
+{
+  "program": "remittance-resilience",
+  "permanent_url": "/program/remittance-resilience/evidence",
+  "generated_at": "2026-05-07T03:31:39.465Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 4197,
+      "size_human": "4.1 KB",
+      "mtime": "2026-05-05T07:55:21.787Z",
+      "sha256": "34d80a0b9246d41ba28157c8479e27d28e408a9596456ba4cea0c494b5a2d74b",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 4372,
+      "size_human": "4.3 KB",
+      "mtime": "2026-04-27T03:36:53.170Z",
+      "sha256": "cdfe684e08a4a35d487e48572fd17c855aebce4dc243ef189032d9ddf4f07034",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 5531,
+      "size_human": "5.4 KB",
+      "mtime": "2026-04-25T17:03:41.616Z",
+      "sha256": "b61b73a91490d3855fe81aebeb4a7b9d8a334b12b6a22653c9fd810670705251",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 2932,
+      "size_human": "2.9 KB",
+      "mtime": "2026-04-25T17:03:59.488Z",
+      "sha256": "1c806758852809b41422d722af11bac5302c09f5c6e139c07a20864b25c5907b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 10958,
+      "size_human": "10.7 KB",
+      "mtime": "2026-04-25T17:02:57.480Z",
+      "sha256": "b0956097af266f612052e97ddc809301d556598adc48577c82d7378b86a55381",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 1440,
+      "size_human": "1.4 KB",
+      "mtime": "2026-04-25T17:04:08.933Z",
+      "sha256": "136538fe62ed990e8c46f56fb13dadd6faa724c145a77356405f6ee1dade3cd9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 1865,
+      "size_human": "1.8 KB",
+      "mtime": "2026-04-25T17:06:21.722Z",
+      "sha256": "67d433266d715fa698458535582db8ea709decb22ccbf96f235d834bdf93aa8c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 6051,
+      "size_human": "5.9 KB",
+      "mtime": "2026-04-25T17:04:46.187Z",
+      "sha256": "5b9ce216e215b881549b2058a6b31691237d2278eaebafbf05944ddedffedca7",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 10522,
+      "size_human": "10.3 KB",
+      "mtime": "2026-04-25T17:05:44.728Z",
+      "sha256": "8ea7ec21021cd891ce25ad89b86b2d75cb9c5920c1e4de07ba7b9ca8c463d6b6",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 4722,
+      "size_human": "4.6 KB",
+      "mtime": "2026-04-25T17:06:08.837Z",
+      "sha256": "d89f030f1acea8340edf90ca10acb0063835d84ffbaf279fe06841bea51ff4e8",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/remittance-resilience-adb-panel.csv",
+      "size": 2363,
+      "size_human": "2.3 KB",
+      "sha256": "faa7f03767bdceeab0de91a633d4b28ca597cce9769387ffed7e3eac2086c91f"
+    },
+    {
+      "file": "generated/remittance-resilience-adb-panel.json",
+      "size": 32877,
+      "size_human": "32.1 KB",
+      "sha256": "1c9ab2b8f2cc87369d649be137903b60ff4df8732736e36fcd054680817c31ac"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "remittance-corridors-vulnerability-cluster",
+      "title": "Five DMCs persistently cluster as remittance-corridor-stress-exposed",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

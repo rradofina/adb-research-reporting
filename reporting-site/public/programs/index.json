@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-07T03:31:39.832Z",
+  "programs": [
+    "public-service-data-quality",
+    "remittance-resilience",
+    "migration-displacement-signals",
+    "climate-health-workdays",
+    "disaster-recovery-lag",
+    "grid-reliability-heat",
+    "port-hinterland-friction",
+    "water-stress-crop-diversification",
+    "social-protection-shock-coverage",
+    "school-heat-disruption",
+    "food-price-climate-transmission",
+    "coastal-informal-risk",
+    "flood-market-access",
+    "invisible-urbanization",
+    "access-services",
+    "air-monitoring",
+    "digital-performance",
+    "mpi-nighttime-lights"
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "generated_at": "2026-04-26T03:23:12.455313Z",
+  "program": "port-hinterland-friction",
+  "metric": "friction-exposure-index ranking",
+  "common_top5_across_runs": [
+    "CHN",
+    "IDN",
+    "IND",
+    "THA",
+    "VNM"
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 1.4491
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 0.9366
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 0.6554
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 0.6269
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 0.5425
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR",
+          "value": 0.5182
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.4539
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 0.4477
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.4239
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.4014
+        }
+      ]
+    },
+    {
+      "label": "imp_norm_minus50",
+      "imp_norm": 25.0,
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 2.6
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 1.8732
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 1.3109
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 1.2537
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 1.085
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR",
+          "value": 1.0365
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.9079
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 0.8953
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.8477
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.8028
+        }
+      ]
+    },
+    {
+      "label": "imp_norm_plus50",
+      "imp_norm": 75.0,
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 0.9661
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 0.6244
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 0.437
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 0.4179
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 0.3617
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR",
+          "value": 0.3455
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.3026
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 0.2984
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.2826
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.2676
+        }
+      ]
+    },
+    {
+      "label": "imp_cap_minus50",
+      "imp_cap": 1.0,
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 1.3
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 0.9366
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 0.6554
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 0.6269
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 0.5425
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR",
+          "value": 0.5182
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.4539
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 0.4477
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.4239
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.4014
+        }
+      ]
+    },
+    {
+      "label": "imp_cap_plus50",
+      "imp_cap": 3.0,
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 1.4491
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 0.9366
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 0.6554
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 0.6269
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 0.5425
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR",
+          "value": 0.5182
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.4539
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 0.4477
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.4239
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.4014
+        }
+      ]
+    }
+  ]
+}

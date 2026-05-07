@@ -1,0 +1,32 @@
+iso3,country,coastal,urban_pct,population,slum_pct_urban,slum_imputed,coastal_informal_risk_index
+PAK,Pakistan,1,39.2,251269164,56.0,False,184.19
+PHL,Philippines,1,55.5,115843670,35.9,False,160.41
+CHN,China,1,65.9,1408975000,26.3,False,158.68
+BGD,Bangladesh,1,32.7,173562364,51.5,False,138.69
+MMR,Myanmar,1,30.4,54500091,58.3,False,137.29
+TUV,Tuvalu,1,64.7,9646,50.9,False,131.26
+KHM,Cambodia,1,40.9,17638801,42.3,False,125.2
+AZE,Azerbaijan,1,58.6,10202830,26.9,False,110.54
+VNM,Viet Nam,1,38.5,100987686,32.5,False,100.13
+IDN,Indonesia,1,58.8,283487931,19.4,False,96.39
+BRN,Brunei Darussalam,1,74.9,462721,21.6,False,91.64
+MDV,Maldives,1,42.0,527799,34.8,False,83.74
+HKG,"Hong Kong, China",1,100.0,7524100,,True,68.76
+LKA,Sri Lanka,1,20.3,21916000,44.7,False,66.59
+TLS,Timor-Leste,1,28.7,1400638,33.9,False,59.76
+FJI,Fiji,1,59.1,928784,9.4,False,33.14
+WSM,Samoa,1,17.5,218019,34.6,False,32.32
+GEO,Georgia,1,61.1,3699557,7.1,False,28.4
+TKM,Turkmenistan,1,47.1,7494498,8.4,False,27.13
+PNG,Papua New Guinea,1,15.4,10576502,22.3,False,24.1
+KIR,Kiribati,1,62.5,134518,5.9,False,19.01
+IND,India,1,35.4,1450935791,5.4,False,17.54
+FSM,Micronesia,1,22.5,113160,,True,11.35
+THA,Thailand,1,61.9,71668011,2.0,False,9.72
+MHL,Marshall Islands,1,78.7,37548,2.4,False,8.55
+VUT,Vanuatu,1,22.3,327777,3.1,False,3.77
+SLB,Solomon Islands,1,30.7,819198,1.9,False,3.54
+NRU,Nauru,1,100.0,11947,0.6,False,2.44
+PLW,Palau,1,79.2,17695,0.6,False,2.08
+MYS,Malaysia,1,76.9,35557673,0.2,False,1.16
+TON,Tonga,1,21.2,104175,0.3,False,0.33

@@ -1,0 +1,503 @@
+{
+  "program": "port-hinterland-friction",
+  "claim_scope": "Hypothesis-stage structural-exposure. LPI × trade dependence combined for ADB DMCs.",
+  "framing_rule": "Friction-exposure flags where logistics bottlenecks meet high trade reliance. Not a country-quality rank.",
+  "sources": {
+    "wdi_lpi": {
+      "name": "World Bank Logistics Performance Index (via WDI)",
+      "indicators": [
+        "LP.LPI.OVRL.XQ",
+        "LP.LPI.INFR.XQ",
+        "LP.LPI.CUST.XQ"
+      ],
+      "url": "https://lpi.worldbank.org/",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    },
+    "wdi_imports": {
+      "name": "WDI NE.IMP.GNFS.CD — Imports of goods and services (current USD)",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/NE.IMP.GNFS.CD",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    }
+  },
+  "methodology": {
+    "friction_exposure_index": "(5 - LPI_overall) × min(sqrt(imports_B)/50, 2.0). LPI gap measures logistics-performance deficit; import-proxy measures trade dependence. Triage only."
+  },
+  "rows": [
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "lpi_overall": 3.7,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 4.0,
+      "lpi_customs": 3.3,
+      "imports_usd": 3106457704279.42,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 1.45
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "lpi_overall": 3.4,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 3.2,
+      "lpi_customs": 3.0,
+      "imports_usd": 856651130547.122,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.94
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "lpi_overall": 3.0,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.9,
+      "lpi_customs": 2.8,
+      "imports_usd": 268508401209.029,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.66
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "lpi_overall": 3.3,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 3.2,
+      "lpi_customs": 3.1,
+      "imports_usd": 339930322254.124,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.63
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "lpi_overall": 3.5,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 3.7,
+      "lpi_customs": 3.3,
+      "imports_usd": 326979087436.138,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.54
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "lpi_overall": 4.0,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 4.0,
+      "lpi_customs": 3.8,
+      "imports_usd": 671437801987.667,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.52
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "lpi_overall": 3.6,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 3.6,
+      "lpi_customs": 3.3,
+      "imports_usd": 255625703549.712,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.45
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "lpi_overall": 3.3,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 3.2,
+      "lpi_customs": 2.8,
+      "imports_usd": 178244920796.221,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.45
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "lpi_overall": 2.6,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.3,
+      "lpi_customs": 2.3,
+      "imports_usd": 77972815573.2438,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.42
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "lpi_overall": 2.42,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 2.2,
+      "lpi_customs": 2.12,
+      "imports_usd": 60515108025.9204,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.4
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "lpi_overall": 2.7,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.5,
+      "lpi_customs": 2.6,
+      "imports_usd": 72487044600.0899,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.39
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "lpi_overall": 2.6,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.4,
+      "lpi_customs": 2.6,
+      "imports_usd": 42781543618.7589,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.31
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "lpi_overall": 2.4,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.1,
+      "lpi_customs": 2.2,
+      "imports_usd": 28497892006.4196,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.28
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "lpi_overall": 2.3,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.4,
+      "lpi_customs": 2.2,
+      "imports_usd": 14495454762.0276,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.21
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "lpi_overall": 2.5,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.6,
+      "lpi_customs": 2.5,
+      "imports_usd": 15094573226.6612,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.19
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "lpi_overall": 2.7,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.3,
+      "lpi_customs": 2.6,
+      "imports_usd": 17815477928.6556,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.19
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "lpi_overall": 2.51,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 2.19,
+      "lpi_customs": 2.29,
+      "imports_usd": 14187827151.0516,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.19
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "lpi_overall": 2.8,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.4,
+      "lpi_customs": 2.5,
+      "imports_usd": 19126705844.0978,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.19
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "lpi_overall": 1.9,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 1.7,
+      "lpi_customs": 2.1,
+      "imports_usd": 8701650584.05282,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.18
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "lpi_overall": 2.5,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.3,
+      "lpi_customs": 2.5,
+      "imports_usd": 13537979922.1991,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.18
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "lpi_overall": 2.71,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 2.46,
+      "lpi_customs": 2.62,
+      "imports_usd": 9081237975.39983,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.14
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "lpi_overall": 2.5,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.5,
+      "lpi_customs": 2.2,
+      "imports_usd": 5931426226.59821,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.12
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "lpi_overall": 2.41,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 2.23,
+      "lpi_customs": 2.35,
+      "imports_usd": 5725230206.32391,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.12
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "lpi_overall": 2.67,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 2.72,
+      "lpi_customs": 2.4,
+      "imports_usd": 4986030514.21888,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.1
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "lpi_overall": 2.5,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.2,
+      "lpi_customs": 2.7,
+      "imports_usd": 1607335845.17133,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.06
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "lpi_overall": 2.8,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.6,
+      "lpi_customs": 2.4,
+      "imports_usd": 977101703.423479,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": 0.04
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 25016411764.7059,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "lpi_overall": 2.3,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.2,
+      "lpi_customs": 2.3,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 293469858.533235,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "lpi_overall": 2.4,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.3,
+      "lpi_customs": 2.3,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 210797443.389893,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 310000000.0,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "lpi_overall": 2.3,
+      "lpi_overall_year": 2018,
+      "lpi_infrastructure": 1.99,
+      "lpi_customs": 2.17,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 152175961.447859,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 222538085.9375,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "lpi_overall": 2.7,
+      "lpi_overall_year": 2022,
+      "lpi_infrastructure": 2.4,
+      "lpi_customs": 2.4,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 570854269.191884,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 1380581842.40055,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 383530877.162157,
+      "imports_usd_year": 2023,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": null,
+      "imports_usd_year": null,
+      "friction_exposure_index": null
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "lpi_overall": null,
+      "lpi_overall_year": null,
+      "lpi_infrastructure": null,
+      "lpi_customs": null,
+      "imports_usd": 571554063.482734,
+      "imports_usd_year": 2022,
+      "friction_exposure_index": null
+    }
+  ],
+  "generated_at": "2026-04-25T01:41:08Z"
+}

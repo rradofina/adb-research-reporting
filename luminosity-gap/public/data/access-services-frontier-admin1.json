@@ -1,0 +1,4061 @@
+{
+  "metadata": {
+    "title": "Climate-Adjusted Access to Services - Frontier ADM1 Screening",
+    "generatedAt": "2026-04-23T07:35:28.432Z",
+    "script": "scripts/research/access-services-pipeline.ts",
+    "status": "computed_frontier_admin1_screening_index",
+    "geography": "ADM1",
+    "caveat": "This is a frontier admin-1 screening layer for Cambodia, Lao PDR, and Timor-Leste. It is not yet a road-network travel-time surface, flood disruption model, or facility catchment model.",
+    "method": "Computes national screening metrics and ADM1 service-pressure metrics for a tractable Mekong and island-state batch using WDI, CCKP, geoBoundaries, WorldPop, and OSM/Overpass.",
+    "sources": [
+      "https://www.geoboundaries.org/api.html",
+      "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+      "https://overpass-api.de/",
+      "https://www.openstreetmap.org/copyright",
+      "https://climateknowledgeportal.worldbank.org/download-data"
+    ],
+    "populationCaveat": "ADM1 population uses WorldPop 2020 polygon statistics over geoBoundaries polygons; oversized polygons are summed across clipped tiles when required by the WorldPop API area allowance. National population uses latest available World Bank WDI values.",
+    "serviceCaveat": "OSM service counts depend on mapper coverage and tagging. Counts use OSM admin areas matched by ISO3166-2 where available and fall back to bounding boxes only if the area query fails.",
+    "cacheNote": "Network responses are cached under .cache/research/access-services unless ACCESS_REFRESH=1 is set.",
+    "selectionNote": "Cambodia, Lao PDR, and Timor-Leste were selected as the next computed batch because they are high-readiness ADB economies with manageable ADM1 counts and different access-risk geographies from the South Asia pilots."
+  },
+  "summary": {
+    "admin1Units": 56,
+    "totalPopulation": 28604890,
+    "totalMappedServices": 5962,
+    "bboxFallbackCount": 1,
+    "highestStressAdmin": {
+      "countryName": "Cambodia",
+      "admin1Name": "Pailin",
+      "admin1Code": "KH-24",
+      "accessStressIndex": 82,
+      "bottleneck": "service load"
+    },
+    "populationSources": {
+      "psaOpenStatRegions": 0,
+      "worldPopStats": 56
+    },
+    "economiesComputed": 3,
+    "highestNationalStressEconomy": {
+      "name": "Cambodia",
+      "iso3": "KHM",
+      "accessStressIndex": 47,
+      "bottleneck": "rural exposure"
+    }
+  },
+  "admin1": [
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-1",
+      "admin1Name": "Bantey Meanchey",
+      "shapeId": "37992800B60639331187871",
+      "centroid": {
+        "lat": 13.804082,
+        "lon": 102.888278
+      },
+      "bbox": {
+        "minLon": 102.3338282,
+        "minLat": 13.3579351,
+        "maxLon": 103.4427283,
+        "maxLat": 14.2502283
+      },
+      "approxAreaSqKm": 6169.46,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 968391,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 24,
+        "education": 113,
+        "markets": 4,
+        "total": 141,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 40350,
+        "peoplePerSchool": 8570,
+        "peoplePerMarket": 242098,
+        "healthFacilitiesPer100k": 2.48,
+        "schoolsPer100k": 11.67,
+        "marketsPer100k": 0.41,
+        "totalMappedServicesPerMillion": 145.6,
+        "totalServicesPer1000SqKm": 22.85,
+        "serviceLoadScore": 79.2,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 41.8,
+        "accessStressIndex": 64,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-10",
+      "admin1Name": "Kratie",
+      "shapeId": "37992800B82444097829687",
+      "centroid": {
+        "lat": 12.678375,
+        "lon": 106.194599
+      },
+      "bbox": {
+        "minLon": 105.5872061,
+        "minLat": 11.9494318,
+        "maxLon": 106.8019914,
+        "maxLat": 13.4073182
+      },
+      "approxAreaSqKm": 12038.75,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 457402,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 13,
+        "education": 45,
+        "markets": 5,
+        "total": 63,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 35185,
+        "peoplePerSchool": 10164,
+        "peoplePerMarket": 91480,
+        "healthFacilitiesPer100k": 2.84,
+        "schoolsPer100k": 9.84,
+        "marketsPer100k": 1.09,
+        "totalMappedServicesPerMillion": 137.73,
+        "totalServicesPer1000SqKm": 5.23,
+        "serviceLoadScore": 70.6,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 44.9,
+        "accessStressIndex": 60,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-11",
+      "admin1Name": "Mondulkiri",
+      "shapeId": "37992800B84760754839946",
+      "centroid": {
+        "lat": 12.739739,
+        "lon": 106.97095
+      },
+      "bbox": {
+        "minLon": 106.338587,
+        "minLat": 12.0619636,
+        "maxLon": 107.6033126,
+        "maxLat": 13.4175148
+      },
+      "approxAreaSqKm": 13713.81,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 158522,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 8,
+        "education": 21,
+        "markets": 5,
+        "total": 34,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T13:51:34Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 19815,
+        "peoplePerSchool": 7549,
+        "peoplePerMarket": 31704,
+        "healthFacilitiesPer100k": 5.05,
+        "schoolsPer100k": 13.25,
+        "marketsPer100k": 3.15,
+        "totalMappedServicesPerMillion": 214.48,
+        "totalServicesPer1000SqKm": 2.48,
+        "serviceLoadScore": 37.9,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 14.2,
+        "accessStressIndex": 37,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-12",
+      "admin1Name": "Phnom Penh",
+      "shapeId": "37992800B83627159640807",
+      "centroid": {
+        "lat": 11.574361,
+        "lon": 104.876758
+      },
+      "bbox": {
+        "minLon": 104.7126649,
+        "minLat": 11.4226617,
+        "maxLon": 105.0408513,
+        "maxLat": 11.7260612
+      },
+      "approxAreaSqKm": 683.32,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2585050,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 227,
+        "education": 416,
+        "markets": 113,
+        "total": 756,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:57:21Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 11388,
+        "peoplePerSchool": 6214,
+        "peoplePerMarket": 22877,
+        "healthFacilitiesPer100k": 8.78,
+        "schoolsPer100k": 16.09,
+        "marketsPer100k": 4.37,
+        "totalMappedServicesPerMillion": 292.45,
+        "totalServicesPer1000SqKm": 1106.36,
+        "serviceLoadScore": 23.8,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 28,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-13",
+      "admin1Name": "Preah Vihear",
+      "shapeId": "37992800B94509217911919",
+      "centroid": {
+        "lat": 13.746323,
+        "lon": 105.128624
+      },
+      "bbox": {
+        "minLon": 104.3579998,
+        "minLat": 13.0553454,
+        "maxLon": 105.8992487,
+        "maxLat": 14.4373009
+      },
+      "approxAreaSqKm": 14084.23,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 399443,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 8,
+        "education": 47,
+        "markets": 5,
+        "total": 60,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 49930,
+        "peoplePerSchool": 8499,
+        "peoplePerMarket": 79889,
+        "healthFacilitiesPer100k": 2,
+        "schoolsPer100k": 11.77,
+        "marketsPer100k": 1.25,
+        "totalMappedServicesPerMillion": 150.21,
+        "totalServicesPer1000SqKm": 4.26,
+        "serviceLoadScore": 78.2,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 39.9,
+        "accessStressIndex": 63,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-14",
+      "admin1Name": "Prey Veng",
+      "shapeId": "37992800B42158555562772",
+      "centroid": {
+        "lat": 11.365577,
+        "lon": 105.456551
+      },
+      "bbox": {
+        "minLon": 105.1039948,
+        "minLat": 10.8598854,
+        "maxLon": 105.8091078,
+        "maxLat": 11.8712687
+      },
+      "approxAreaSqKm": 4784.5,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 955591,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 8,
+        "education": 79,
+        "markets": 4,
+        "total": 91,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:58:21Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 119449,
+        "peoplePerSchool": 12096,
+        "peoplePerMarket": 238898,
+        "healthFacilitiesPer100k": 0.84,
+        "schoolsPer100k": 8.27,
+        "marketsPer100k": 0.42,
+        "totalMappedServicesPerMillion": 95.23,
+        "totalServicesPer1000SqKm": 19.02,
+        "serviceLoadScore": 100,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 61.9,
+        "accessStressIndex": 78,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-15",
+      "admin1Name": "Pursat",
+      "shapeId": "37992800B18682012537966",
+      "centroid": {
+        "lat": 12.466603,
+        "lon": 103.548055
+      },
+      "bbox": {
+        "minLon": 102.70351,
+        "minLat": 11.8432598,
+        "maxLon": 104.3925992,
+        "maxLat": 13.0899469
+      },
+      "approxAreaSqKm": 12596.75,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 453836,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 5,
+        "education": 70,
+        "markets": 10,
+        "total": 85,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 90767,
+        "peoplePerSchool": 6483,
+        "peoplePerMarket": 45384,
+        "healthFacilitiesPer100k": 1.1,
+        "schoolsPer100k": 15.42,
+        "marketsPer100k": 2.2,
+        "totalMappedServicesPerMillion": 187.29,
+        "totalServicesPer1000SqKm": 6.75,
+        "serviceLoadScore": 66.6,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 25.1,
+        "accessStressIndex": 55,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-16",
+      "admin1Name": "Ratanakiri Province",
+      "shapeId": "37992800B4485162085463",
+      "centroid": {
+        "lat": 13.931202,
+        "lon": 107.078934
+      },
+      "bbox": {
+        "minLon": 106.5301893,
+        "minLat": 13.1721622,
+        "maxLon": 107.6276788,
+        "maxLat": 14.6902424
+      },
+      "approxAreaSqKm": 11815.53,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 277726,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 7,
+        "education": 23,
+        "markets": 2,
+        "total": 32,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:00:24Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 39675,
+        "peoplePerSchool": 12075,
+        "peoplePerMarket": 138863,
+        "healthFacilitiesPer100k": 2.52,
+        "schoolsPer100k": 8.28,
+        "marketsPer100k": 0.72,
+        "totalMappedServicesPerMillion": 115.22,
+        "totalServicesPer1000SqKm": 2.71,
+        "serviceLoadScore": 88,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 53.9,
+        "accessStressIndex": 71,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-17",
+      "admin1Name": "Siem Reap",
+      "shapeId": "37992800B4812755629120",
+      "centroid": {
+        "lat": 13.371954,
+        "lon": 104.036214
+      },
+      "bbox": {
+        "minLon": 103.3892306,
+        "minLat": 12.7720495,
+        "maxLon": 104.6831968,
+        "maxLat": 13.9718578
+      },
+      "approxAreaSqKm": 11406.55,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1337231,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 53,
+        "education": 285,
+        "markets": 34,
+        "total": 372,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:01:34Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 25231,
+        "peoplePerSchool": 4692,
+        "peoplePerMarket": 39330,
+        "healthFacilitiesPer100k": 3.96,
+        "schoolsPer100k": 21.31,
+        "marketsPer100k": 2.54,
+        "totalMappedServicesPerMillion": 278.19,
+        "totalServicesPer1000SqKm": 32.61,
+        "serviceLoadScore": 35.2,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 34,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-18",
+      "admin1Name": "Preah Sihanouk",
+      "shapeId": "37992800B48601233133149",
+      "centroid": {
+        "lat": 10.674806,
+        "lon": 103.478699
+      },
+      "bbox": {
+        "minLon": 102.880269,
+        "minLat": 9.9135677,
+        "maxLon": 104.0771284,
+        "maxLat": 11.436044
+      },
+      "approxAreaSqKm": 2644.9,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 305920,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 12 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 18,
+        "education": 41,
+        "markets": 9,
+        "total": 68,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T15:21:00Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 16996,
+        "peoplePerSchool": 7461,
+        "peoplePerMarket": 33991,
+        "healthFacilitiesPer100k": 5.88,
+        "schoolsPer100k": 13.4,
+        "marketsPer100k": 2.94,
+        "totalMappedServicesPerMillion": 222.28,
+        "totalServicesPer1000SqKm": 25.71,
+        "serviceLoadScore": 35.1,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 11.1,
+        "accessStressIndex": 36,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-19",
+      "admin1Name": "Stung Treng",
+      "shapeId": "37992800B90729700897308",
+      "centroid": {
+        "lat": 13.85304,
+        "lon": 106.154292
+      },
+      "bbox": {
+        "minLon": 105.5194671,
+        "minLat": 13.114113,
+        "maxLon": 106.7891167,
+        "maxLat": 14.5919671
+      },
+      "approxAreaSqKm": 12060.78,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 172250,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 2,
+        "education": 12,
+        "markets": 2,
+        "total": 16,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:02:35Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 86125,
+        "peoplePerSchool": 14354,
+        "peoplePerMarket": 86125,
+        "healthFacilitiesPer100k": 1.16,
+        "schoolsPer100k": 6.97,
+        "marketsPer100k": 1.16,
+        "totalMappedServicesPerMillion": 92.89,
+        "totalServicesPer1000SqKm": 1.33,
+        "serviceLoadScore": 90.5,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 62.8,
+        "accessStressIndex": 73,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-2",
+      "admin1Name": "Battambang",
+      "shapeId": "37992800B82526494497621",
+      "centroid": {
+        "lat": 12.92533,
+        "lon": 103.109873
+      },
+      "bbox": {
+        "minLon": 102.3450807,
+        "minLat": 12.3712973,
+        "maxLon": 103.8746656,
+        "maxLat": 13.4793632
+      },
+      "approxAreaSqKm": 12185.23,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1971075,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 48,
+        "education": 99,
+        "markets": 13,
+        "total": 160,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 41064,
+        "peoplePerSchool": 19910,
+        "peoplePerMarket": 151621,
+        "healthFacilitiesPer100k": 2.44,
+        "schoolsPer100k": 5.02,
+        "marketsPer100k": 0.66,
+        "totalMappedServicesPerMillion": 81.17,
+        "totalServicesPer1000SqKm": 13.13,
+        "serviceLoadScore": 91.1,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 67.5,
+        "accessStressIndex": 74,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-20",
+      "admin1Name": "Svay Rieng",
+      "shapeId": "37992800B528078583451",
+      "centroid": {
+        "lat": 11.194217,
+        "lon": 105.892874
+      },
+      "bbox": {
+        "minLon": 105.5796471,
+        "minLat": 10.7889074,
+        "maxLon": 106.206101,
+        "maxLat": 11.5995257
+      },
+      "approxAreaSqKm": 2882.97,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 502367,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 5,
+        "education": 45,
+        "markets": 2,
+        "total": 52,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 100473,
+        "peoplePerSchool": 11164,
+        "peoplePerMarket": 251184,
+        "healthFacilitiesPer100k": 1,
+        "schoolsPer100k": 8.96,
+        "marketsPer100k": 0.4,
+        "totalMappedServicesPerMillion": 103.51,
+        "totalServicesPer1000SqKm": 18.04,
+        "serviceLoadScore": 97.3,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 58.6,
+        "accessStressIndex": 76,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-21",
+      "admin1Name": "Takeo",
+      "shapeId": "37992800B77204168518017",
+      "centroid": {
+        "lat": 10.935318,
+        "lon": 104.754287
+      },
+      "bbox": {
+        "minLon": 104.4102721,
+        "minLat": 10.517596,
+        "maxLon": 105.0983022,
+        "maxLat": 11.3530403
+      },
+      "approxAreaSqKm": 3507.31,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 938117,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 18,
+        "education": 191,
+        "markets": 17,
+        "total": 226,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:04:45Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 52118,
+        "peoplePerSchool": 4912,
+        "peoplePerMarket": 55183,
+        "healthFacilitiesPer100k": 1.92,
+        "schoolsPer100k": 20.36,
+        "marketsPer100k": 1.81,
+        "totalMappedServicesPerMillion": 240.91,
+        "totalServicesPer1000SqKm": 64.44,
+        "serviceLoadScore": 63,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 3.6,
+        "accessStressIndex": 51,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-22",
+      "admin1Name": "Oddar Meanchey",
+      "shapeId": "37992800B73119019658513",
+      "centroid": {
+        "lat": 14.158725,
+        "lon": 103.770217
+      },
+      "bbox": {
+        "minLon": 103.0318699,
+        "minLat": 13.8770812,
+        "maxLon": 104.5085632,
+        "maxLat": 14.4403696
+      },
+      "approxAreaSqKm": 6659.17,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1277653,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 4,
+        "education": 99,
+        "markets": 4,
+        "total": 107,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:04:45Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 319413,
+        "peoplePerSchool": 12906,
+        "peoplePerMarket": 319413,
+        "healthFacilitiesPer100k": 0.31,
+        "schoolsPer100k": 7.75,
+        "marketsPer100k": 0.31,
+        "totalMappedServicesPerMillion": 83.75,
+        "totalServicesPer1000SqKm": 16.07,
+        "serviceLoadScore": 100,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 66.5,
+        "accessStressIndex": 79,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-23",
+      "admin1Name": "Kep",
+      "shapeId": "37992800B18832544789315",
+      "centroid": {
+        "lat": 10.510126,
+        "lon": 104.345457
+      },
+      "bbox": {
+        "minLon": 104.2649742,
+        "minLat": 10.4293653,
+        "maxLon": 104.4259394,
+        "maxLat": 10.5908859
+      },
+      "approxAreaSqKm": 152.22,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 46111,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 2 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 4,
+        "education": 11,
+        "markets": 5,
+        "total": 20,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 11528,
+        "peoplePerSchool": 4192,
+        "peoplePerMarket": 9222,
+        "healthFacilitiesPer100k": 8.67,
+        "schoolsPer100k": 23.86,
+        "marketsPer100k": 10.84,
+        "totalMappedServicesPerMillion": 433.74,
+        "totalServicesPer1000SqKm": 131.39,
+        "serviceLoadScore": 16.2,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 24,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-24",
+      "admin1Name": "Pailin",
+      "shapeId": "37992800B9891185734672",
+      "centroid": {
+        "lat": 12.890262,
+        "lon": 102.619368
+      },
+      "bbox": {
+        "minLon": 102.4855418,
+        "minLat": 12.663855,
+        "maxLon": 102.7531951,
+        "maxLat": 13.1166697
+      },
+      "approxAreaSqKm": 1080.04,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 412952,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 4,
+        "education": 1,
+        "markets": 1,
+        "total": 6,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 103238,
+        "peoplePerSchool": 412952,
+        "peoplePerMarket": 412952,
+        "healthFacilitiesPer100k": 0.97,
+        "schoolsPer100k": 0.24,
+        "marketsPer100k": 0.24,
+        "totalMappedServicesPerMillion": 14.53,
+        "totalServicesPer1000SqKm": 5.56,
+        "serviceLoadScore": 100,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 94.2,
+        "accessStressIndex": 82,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-25",
+      "admin1Name": "Tbong Khmum",
+      "shapeId": "37992800B90014860566901",
+      "centroid": {
+        "lat": 11.950033,
+        "lon": 105.937563
+      },
+      "bbox": {
+        "minLon": 105.408445,
+        "minLat": 11.5995257,
+        "maxLon": 106.466681,
+        "maxLat": 12.3005412
+      },
+      "approxAreaSqKm": 4955,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 985395,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 7,
+        "education": 107,
+        "markets": 8,
+        "total": 122,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 140771,
+        "peoplePerSchool": 9209,
+        "peoplePerMarket": 123174,
+        "healthFacilitiesPer100k": 0.71,
+        "schoolsPer100k": 10.86,
+        "marketsPer100k": 0.81,
+        "totalMappedServicesPerMillion": 123.81,
+        "totalServicesPer1000SqKm": 24.62,
+        "serviceLoadScore": 87,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 50.5,
+        "accessStressIndex": 70,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-3",
+      "admin1Name": "Kampong Cham",
+      "shapeId": "37992800B62393256715912",
+      "centroid": {
+        "lat": 12.117878,
+        "lon": 105.297875
+      },
+      "bbox": {
+        "minLon": 104.8198072,
+        "minLat": 11.7344483,
+        "maxLon": 105.7759428,
+        "maxLat": 12.5013071
+      },
+      "approxAreaSqKm": 4563.87,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 950580,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 28,
+        "education": 159,
+        "markets": 20,
+        "total": 207,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:07:45Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 33949,
+        "peoplePerSchool": 5978,
+        "peoplePerMarket": 47529,
+        "healthFacilitiesPer100k": 2.95,
+        "schoolsPer100k": 16.73,
+        "marketsPer100k": 2.1,
+        "totalMappedServicesPerMillion": 217.76,
+        "totalServicesPer1000SqKm": 45.36,
+        "serviceLoadScore": 49.3,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 12.9,
+        "accessStressIndex": 44,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-4",
+      "admin1Name": "Kampong Chhnang",
+      "shapeId": "37992800B66153290508063",
+      "centroid": {
+        "lat": 12.170924,
+        "lon": 104.536607
+      },
+      "bbox": {
+        "minLon": 104.1712234,
+        "minLat": 11.7344035,
+        "maxLon": 104.9019904,
+        "maxLat": 12.6074435
+      },
+      "approxAreaSqKm": 5454.05,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 551823,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 2,
+        "education": 38,
+        "markets": 6,
+        "total": 46,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 275912,
+        "peoplePerSchool": 14522,
+        "peoplePerMarket": 91971,
+        "healthFacilitiesPer100k": 0.36,
+        "schoolsPer100k": 6.89,
+        "marketsPer100k": 1.09,
+        "totalMappedServicesPerMillion": 83.36,
+        "totalServicesPer1000SqKm": 8.43,
+        "serviceLoadScore": 91.4,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 66.7,
+        "accessStressIndex": 74,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-5",
+      "admin1Name": "Kampong Speu",
+      "shapeId": "37992800B46036584412355",
+      "centroid": {
+        "lat": 11.577426,
+        "lon": 104.282901
+      },
+      "bbox": {
+        "minLon": 103.7732264,
+        "minLat": 11.0780067,
+        "maxLon": 104.7925761,
+        "maxLat": 12.0768453
+      },
+      "approxAreaSqKm": 7001.27,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 902838,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 5,
+        "education": 85,
+        "markets": 7,
+        "total": 97,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:07:45Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 180568,
+        "peoplePerSchool": 10622,
+        "peoplePerMarket": 128977,
+        "healthFacilitiesPer100k": 0.55,
+        "schoolsPer100k": 9.41,
+        "marketsPer100k": 0.78,
+        "totalMappedServicesPerMillion": 107.44,
+        "totalServicesPer1000SqKm": 13.85,
+        "serviceLoadScore": 92.4,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 57,
+        "accessStressIndex": 73,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-6",
+      "admin1Name": "Kampong Thom",
+      "shapeId": "37992800B59838984331544",
+      "centroid": {
+        "lat": 12.819123,
+        "lon": 104.954022
+      },
+      "bbox": {
+        "minLon": 104.1734824,
+        "minLat": 12.1886895,
+        "maxLon": 105.7345622,
+        "maxLat": 13.4495556
+      },
+      "approxAreaSqKm": 12885.46,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 754382,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 12,
+        "education": 59,
+        "markets": 6,
+        "total": 77,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T02:42:41Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 62865,
+        "peoplePerSchool": 12786,
+        "peoplePerMarket": 125730,
+        "healthFacilitiesPer100k": 1.59,
+        "schoolsPer100k": 7.82,
+        "marketsPer100k": 0.8,
+        "totalMappedServicesPerMillion": 102.07,
+        "totalServicesPer1000SqKm": 5.98,
+        "serviceLoadScore": 96.4,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 59.2,
+        "accessStressIndex": 76,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-7",
+      "admin1Name": "Kampot",
+      "shapeId": "37992800B68844415613683",
+      "centroid": {
+        "lat": 10.788485,
+        "lon": 104.321458
+      },
+      "bbox": {
+        "minLon": 103.9158407,
+        "minLat": 10.4047436,
+        "maxLon": 104.727076,
+        "maxLat": 11.1722266
+      },
+      "approxAreaSqKm": 4742.05,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 783299,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 19,
+        "education": 61,
+        "markets": 8,
+        "total": 88,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:08:50Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 41226,
+        "peoplePerSchool": 12841,
+        "peoplePerMarket": 97912,
+        "healthFacilitiesPer100k": 2.43,
+        "schoolsPer100k": 7.79,
+        "marketsPer100k": 1.02,
+        "totalMappedServicesPerMillion": 112.35,
+        "totalServicesPer1000SqKm": 18.56,
+        "serviceLoadScore": 83.5,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 55.1,
+        "accessStressIndex": 68,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-8",
+      "admin1Name": "Kandal",
+      "shapeId": "37992800B57023840568534",
+      "centroid": {
+        "lat": 11.395237,
+        "lon": 104.97691
+      },
+      "bbox": {
+        "minLon": 104.656659,
+        "minLat": 10.8961613,
+        "maxLon": 105.2971605,
+        "maxLat": 11.8943134
+      },
+      "approxAreaSqKm": 3268.05,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1366009,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 30,
+        "education": 331,
+        "markets": 17,
+        "total": 378,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 45534,
+        "peoplePerSchool": 4127,
+        "peoplePerMarket": 80353,
+        "healthFacilitiesPer100k": 2.2,
+        "schoolsPer100k": 24.23,
+        "marketsPer100k": 1.24,
+        "totalMappedServicesPerMillion": 276.72,
+        "totalServicesPer1000SqKm": 115.67,
+        "serviceLoadScore": 59.7,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 49,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "countryName": "Cambodia",
+      "admin1Code": "KH-9",
+      "admin1Name": "Koh Kong",
+      "shapeId": "37992800B81044157598883",
+      "centroid": {
+        "lat": 11.466291,
+        "lon": 103.420294
+      },
+      "bbox": {
+        "minLon": 102.776033,
+        "minLat": 10.8164852,
+        "maxLon": 104.0645553,
+        "maxLat": 12.1160972
+      },
+      "approxAreaSqKm": 11064.77,
+      "boundary": {
+        "boundaryID": "KHM-ADM1-37992800",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 126436,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 5 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 1,
+        "education": 12,
+        "markets": 2,
+        "total": 15,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 126436,
+        "peoplePerSchool": 10536,
+        "peoplePerMarket": 63218,
+        "healthFacilitiesPer100k": 0.79,
+        "schoolsPer100k": 9.49,
+        "marketsPer100k": 1.58,
+        "totalMappedServicesPerMillion": 118.64,
+        "totalServicesPer1000SqKm": 1.36,
+        "serviceLoadScore": 82.4,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "osmCompletenessRiskScore": 52.5,
+        "accessStressIndex": 67,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-AT",
+      "admin1Name": "Attapeu",
+      "shapeId": "31783359B8999899719232",
+      "centroid": {
+        "lat": 14.790461,
+        "lon": 106.88047
+      },
+      "bbox": {
+        "minLon": 106.1694672,
+        "minLat": 14.2923152,
+        "maxLon": 107.5914722,
+        "maxLat": 15.2886074
+      },
+      "approxAreaSqKm": 9559.15,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 169987,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 41,
+        "education": 4,
+        "markets": 3,
+        "total": 48,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T16:08:00Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4146,
+        "peoplePerSchool": 42497,
+        "peoplePerMarket": 56662,
+        "healthFacilitiesPer100k": 24.12,
+        "schoolsPer100k": 2.35,
+        "marketsPer100k": 1.76,
+        "totalMappedServicesPerMillion": 282.37,
+        "totalServicesPer1000SqKm": 5.02,
+        "serviceLoadScore": 41.2,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 39,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-BK",
+      "admin1Name": "Bokeo",
+      "shapeId": "31783359B18099798035754",
+      "centroid": {
+        "lat": 20.307054,
+        "lon": 100.669806
+      },
+      "bbox": {
+        "minLon": 100.08432470000001,
+        "minLat": 19.7696277,
+        "maxLon": 101.25528809999999,
+        "maxLat": 20.8444812
+      },
+      "approxAreaSqKm": 6963.04,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 206032,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 50,
+        "education": 6,
+        "markets": 11,
+        "total": 67,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T16:08:00Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4121,
+        "peoplePerSchool": 34339,
+        "peoplePerMarket": 18730,
+        "healthFacilitiesPer100k": 24.27,
+        "schoolsPer100k": 2.91,
+        "marketsPer100k": 5.34,
+        "totalMappedServicesPerMillion": 325.19,
+        "totalServicesPer1000SqKm": 9.62,
+        "serviceLoadScore": 35.6,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 36,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-BL",
+      "admin1Name": "Bolikhamsai",
+      "shapeId": "31783359B52686694059818",
+      "centroid": {
+        "lat": 18.49547,
+        "lon": 104.034407
+      },
+      "bbox": {
+        "minLon": 102.8102281,
+        "minLat": 17.869779,
+        "maxLon": 105.2585865,
+        "maxLat": 19.12116
+      },
+      "approxAreaSqKm": 15623.59,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 403605,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 9,
+        "education": 10,
+        "markets": 6,
+        "total": 25,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T16:08:00Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 44845,
+        "peoplePerSchool": 40361,
+        "peoplePerMarket": 67268,
+        "healthFacilitiesPer100k": 2.23,
+        "schoolsPer100k": 2.48,
+        "marketsPer100k": 1.49,
+        "totalMappedServicesPerMillion": 61.94,
+        "totalServicesPer1000SqKm": 1.6,
+        "serviceLoadScore": 82.6,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 75.2,
+        "accessStressIndex": 71,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-CH",
+      "admin1Name": "Champasak",
+      "shapeId": "31783359B26227132251916",
+      "centroid": {
+        "lat": 14.689905,
+        "lon": 106.016847
+      },
+      "bbox": {
+        "minLon": 105.2055008,
+        "minLat": 13.9096752,
+        "maxLon": 106.8281934,
+        "maxLat": 15.4701345
+      },
+      "approxAreaSqKm": 14987.64,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 822516,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 49,
+        "education": 67,
+        "markets": 14,
+        "total": 130,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:16:01Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 16786,
+        "peoplePerSchool": 12276,
+        "peoplePerMarket": 58751,
+        "healthFacilitiesPer100k": 5.96,
+        "schoolsPer100k": 8.15,
+        "marketsPer100k": 1.7,
+        "totalMappedServicesPerMillion": 158.05,
+        "totalServicesPer1000SqKm": 8.67,
+        "serviceLoadScore": 53.3,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 36.8,
+        "accessStressIndex": 50,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-HO",
+      "admin1Name": "Houaphan",
+      "shapeId": "31783359B1064119540000",
+      "centroid": {
+        "lat": 20.293383,
+        "lon": 104.050639
+      },
+      "bbox": {
+        "minLon": 103.1075095,
+        "minLat": 19.6102015,
+        "maxLon": 104.9937678,
+        "maxLat": 20.9765648
+      },
+      "approxAreaSqKm": 17401.88,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 327122,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 22,
+        "education": 9,
+        "markets": 6,
+        "total": 37,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:16:01Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 14869,
+        "peoplePerSchool": 36347,
+        "peoplePerMarket": 54520,
+        "healthFacilitiesPer100k": 6.73,
+        "schoolsPer100k": 2.75,
+        "marketsPer100k": 1.83,
+        "totalMappedServicesPerMillion": 113.11,
+        "totalServicesPer1000SqKm": 2.13,
+        "serviceLoadScore": 50.7,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 54.8,
+        "accessStressIndex": 50,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-KH",
+      "admin1Name": "Khammouane",
+      "shapeId": "31783359B32687543126582",
+      "centroid": {
+        "lat": 17.583594,
+        "lon": 105.348272
+      },
+      "bbox": {
+        "minLon": 104.27056440000001,
+        "minLat": 16.9006317,
+        "maxLon": 106.4259802,
+        "maxLat": 18.2665555
+      },
+      "approxAreaSqKm": 16787.56,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 461888,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 25,
+        "education": 16,
+        "markets": 15,
+        "total": 56,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 18476,
+        "peoplePerSchool": 28868,
+        "peoplePerMarket": 30793,
+        "healthFacilitiesPer100k": 5.41,
+        "schoolsPer100k": 3.46,
+        "marketsPer100k": 3.25,
+        "totalMappedServicesPerMillion": 121.24,
+        "totalServicesPer1000SqKm": 3.34,
+        "serviceLoadScore": 50.8,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 51.5,
+        "accessStressIndex": 50,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-LM",
+      "admin1Name": "Luang Namtha",
+      "shapeId": "31783359B96178998933928",
+      "centroid": {
+        "lat": 20.933007,
+        "lon": 101.142819
+      },
+      "bbox": {
+        "minLon": 100.509407,
+        "minLat": 20.3015951,
+        "maxLon": 101.77623,
+        "maxLat": 21.564419
+      },
+      "approxAreaSqKm": 9596.38,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 208382,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 51,
+        "education": 17,
+        "markets": 9,
+        "total": 77,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:17:05Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4086,
+        "peoplePerSchool": 12258,
+        "peoplePerMarket": 23154,
+        "healthFacilitiesPer100k": 24.47,
+        "schoolsPer100k": 8.16,
+        "marketsPer100k": 4.32,
+        "totalMappedServicesPerMillion": 369.51,
+        "totalServicesPer1000SqKm": 8.02,
+        "serviceLoadScore": 36.2,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 36,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-LP",
+      "admin1Name": "Luang Prabang",
+      "shapeId": "31783359B8337285946490",
+      "centroid": {
+        "lat": 20.088799,
+        "lon": 102.561427
+      },
+      "bbox": {
+        "minLon": 101.72238389999998,
+        "minLat": 19.0422543,
+        "maxLon": 103.40046970000002,
+        "maxLat": 21.1353428
+      },
+      "approxAreaSqKm": 20050.07,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 492282,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 105,
+        "education": 46,
+        "markets": 23,
+        "total": 174,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:18:05Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4688,
+        "peoplePerSchool": 10702,
+        "peoplePerMarket": 21404,
+        "healthFacilitiesPer100k": 21.33,
+        "schoolsPer100k": 9.34,
+        "marketsPer100k": 4.67,
+        "totalMappedServicesPerMillion": 353.46,
+        "totalServicesPer1000SqKm": 8.68,
+        "serviceLoadScore": 31.7,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 34,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-OU",
+      "admin1Name": "Oudomxay",
+      "shapeId": "31783359B43569910510083",
+      "centroid": {
+        "lat": 20.518604,
+        "lon": 101.542287
+      },
+      "bbox": {
+        "minLon": 100.7271927,
+        "minLat": 19.816975299999978,
+        "maxLon": 102.3573817,
+        "maxLat": 21.220233
+      },
+      "approxAreaSqKm": 11793.42,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 376139,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 65,
+        "education": 44,
+        "markets": 8,
+        "total": 117,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:18:05Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5787,
+        "peoplePerSchool": 8549,
+        "peoplePerMarket": 47017,
+        "healthFacilitiesPer100k": 17.28,
+        "schoolsPer100k": 11.7,
+        "marketsPer100k": 2.13,
+        "totalMappedServicesPerMillion": 311.06,
+        "totalServicesPer1000SqKm": 9.92,
+        "serviceLoadScore": 29.3,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 33,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-PH",
+      "admin1Name": "Phongsaly",
+      "shapeId": "31783359B48269776417908",
+      "centroid": {
+        "lat": 21.673035,
+        "lon": 102.265359
+      },
+      "bbox": {
+        "minLon": 101.537844,
+        "minLat": 20.8431977,
+        "maxLon": 102.9928735,
+        "maxLat": 22.502872
+      },
+      "approxAreaSqKm": 15481.67,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 194483,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 42,
+        "education": 4,
+        "markets": 6,
+        "total": 52,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T17:34:00Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4631,
+        "peoplePerSchool": 48621,
+        "peoplePerMarket": 32414,
+        "healthFacilitiesPer100k": 21.6,
+        "schoolsPer100k": 2.06,
+        "marketsPer100k": 3.09,
+        "totalMappedServicesPerMillion": 267.38,
+        "totalServicesPer1000SqKm": 3.36,
+        "serviceLoadScore": 37.6,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 37,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-SL",
+      "admin1Name": "Salavan",
+      "shapeId": "31783359B10266600227606",
+      "centroid": {
+        "lat": 15.913544,
+        "lon": 106.249625
+      },
+      "bbox": {
+        "minLon": 105.342227,
+        "minLat": 15.2783359,
+        "maxLon": 107.15702360000002,
+        "maxLat": 16.5487512
+      },
+      "approxAreaSqKm": 10175.23,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 465899,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 31,
+        "education": 17,
+        "markets": 5,
+        "total": 53,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:19:05Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 15029,
+        "peoplePerSchool": 27406,
+        "peoplePerMarket": 93180,
+        "healthFacilitiesPer100k": 6.65,
+        "schoolsPer100k": 3.65,
+        "marketsPer100k": 1.07,
+        "totalMappedServicesPerMillion": 113.76,
+        "totalServicesPer1000SqKm": 5.21,
+        "serviceLoadScore": 56.6,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 54.5,
+        "accessStressIndex": 54,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-SV",
+      "admin1Name": "Savannakhet",
+      "shapeId": "31783359B41032705110141",
+      "centroid": {
+        "lat": 16.500105,
+        "lon": 105.7662
+      },
+      "bbox": {
+        "minLon": 104.733866,
+        "minLat": 15.8767606,
+        "maxLon": 106.7985347,
+        "maxLat": 17.1234495
+      },
+      "approxAreaSqKm": 21440.47,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1029929,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 33,
+        "education": 44,
+        "markets": 12,
+        "total": 89,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:19:05Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 31210,
+        "peoplePerSchool": 23407,
+        "peoplePerMarket": 85827,
+        "healthFacilitiesPer100k": 3.2,
+        "schoolsPer100k": 4.27,
+        "marketsPer100k": 1.17,
+        "totalMappedServicesPerMillion": 86.41,
+        "totalServicesPer1000SqKm": 4.15,
+        "serviceLoadScore": 71.7,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 65.4,
+        "accessStressIndex": 64,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-VI",
+      "admin1Name": "Vientiane",
+      "shapeId": "31783359B43191608929261",
+      "centroid": {
+        "lat": 18.613552,
+        "lon": 102.142439
+      },
+      "bbox": {
+        "minLon": 101.3863033,
+        "minLat": 17.8135368,
+        "maxLon": 102.8985747,
+        "maxLat": 19.4135669
+      },
+      "approxAreaSqKm": 12760.63,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 433854,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 39,
+        "education": 68,
+        "markets": 20,
+        "total": 127,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:20:09Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 11124,
+        "peoplePerSchool": 6380,
+        "peoplePerMarket": 21693,
+        "healthFacilitiesPer100k": 8.99,
+        "schoolsPer100k": 15.67,
+        "marketsPer100k": 4.61,
+        "totalMappedServicesPerMillion": 292.73,
+        "totalServicesPer1000SqKm": 9.95,
+        "serviceLoadScore": 23.9,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 29,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-VT",
+      "admin1Name": "Vientiane Capital",
+      "shapeId": "31783359B97264007138888",
+      "centroid": {
+        "lat": 18.120277,
+        "lon": 102.557174
+      },
+      "bbox": {
+        "minLon": 102.0115351,
+        "minLat": 17.803142,
+        "maxLon": 103.102812,
+        "maxLat": 18.437412
+      },
+      "approxAreaSqKm": 3572.78,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1034975,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 106,
+        "education": 274,
+        "markets": 40,
+        "total": 420,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 9764,
+        "peoplePerSchool": 3777,
+        "peoplePerMarket": 25874,
+        "healthFacilitiesPer100k": 10.24,
+        "schoolsPer100k": 26.47,
+        "marketsPer100k": 3.86,
+        "totalMappedServicesPerMillion": 405.81,
+        "totalServicesPer1000SqKm": 117.56,
+        "serviceLoadScore": 14.7,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 24,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-XA",
+      "admin1Name": "Xaignabouli",
+      "shapeId": "31783359B80437097027275",
+      "centroid": {
+        "lat": 18.701159,
+        "lon": 101.150316
+      },
+      "bbox": {
+        "minLon": 100.403966,
+        "minLat": 17.466794299999982,
+        "maxLon": 101.896665,
+        "maxLat": 19.935522700000035
+      },
+      "approxAreaSqKm": 15523.2,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 405489,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 62,
+        "education": 12,
+        "markets": 9,
+        "total": 83,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 6540,
+        "peoplePerSchool": 33791,
+        "peoplePerMarket": 45054,
+        "healthFacilitiesPer100k": 15.29,
+        "schoolsPer100k": 2.96,
+        "marketsPer100k": 2.22,
+        "totalMappedServicesPerMillion": 204.69,
+        "totalServicesPer1000SqKm": 5.35,
+        "serviceLoadScore": 41,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 18.1,
+        "accessStressIndex": 41,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-XE",
+      "admin1Name": "Xekong",
+      "shapeId": "31783359B64397225362620",
+      "centroid": {
+        "lat": 15.608942,
+        "lon": 106.96759
+      },
+      "bbox": {
+        "minLon": 106.3001803,
+        "minLat": 15.0283612,
+        "maxLon": 107.6349989,
+        "maxLat": 16.1895225
+      },
+      "approxAreaSqKm": 8300.2,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 144237,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 18,
+        "education": 6,
+        "markets": 2,
+        "total": 26,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:21:15Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 8013,
+        "peoplePerSchool": 24040,
+        "peoplePerMarket": 72119,
+        "healthFacilitiesPer100k": 12.48,
+        "schoolsPer100k": 4.16,
+        "marketsPer100k": 1.39,
+        "totalMappedServicesPerMillion": 180.26,
+        "totalServicesPer1000SqKm": 3.13,
+        "serviceLoadScore": 46.5,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 27.9,
+        "accessStressIndex": 45,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-XI",
+      "admin1Name": "Xiangkhouang",
+      "shapeId": "31783359B28405124024719",
+      "centroid": {
+        "lat": 19.417678,
+        "lon": 103.465794
+      },
+      "bbox": {
+        "minLon": 102.6510504,
+        "minLat": 18.7955583,
+        "maxLon": 104.2805378,
+        "maxLat": 20.0397976
+      },
+      "approxAreaSqKm": 12761.41,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 287442,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 14,
+        "education": 22,
+        "markets": 9,
+        "total": 45,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T04:52:45Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 20532,
+        "peoplePerSchool": 13066,
+        "peoplePerMarket": 31938,
+        "healthFacilitiesPer100k": 4.87,
+        "schoolsPer100k": 7.65,
+        "marketsPer100k": 3.13,
+        "totalMappedServicesPerMillion": 156.55,
+        "totalServicesPer1000SqKm": 3.53,
+        "serviceLoadScore": 53,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 37.4,
+        "accessStressIndex": 50,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "countryName": "Lao People's Democratic Republic",
+      "admin1Code": "LA-XN",
+      "admin1Name": "Xaisomboun",
+      "shapeId": "31783359B37921942896223",
+      "centroid": {
+        "lat": 18.883392,
+        "lon": 103.220958
+      },
+      "bbox": {
+        "minLon": 102.5424791,
+        "minLat": 18.4541896,
+        "maxLon": 103.8994364,
+        "maxLat": 19.3125936
+      },
+      "approxAreaSqKm": 7691.75,
+      "boundary": {
+        "boundaryID": "LAO-ADM1-31783359",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 93569,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 16,
+        "education": 6,
+        "markets": 3,
+        "total": 25,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "bbox_fallback",
+        "osmTimestamp": "2026-04-06T04:52:45Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5848,
+        "peoplePerSchool": 15595,
+        "peoplePerMarket": 31190,
+        "healthFacilitiesPer100k": 17.1,
+        "schoolsPer100k": 6.41,
+        "marketsPer100k": 3.21,
+        "totalMappedServicesPerMillion": 267.18,
+        "totalServicesPer1000SqKm": 3.25,
+        "serviceLoadScore": 38.2,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 38,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-AL",
+      "admin1Name": "Aileu",
+      "shapeId": "58719522B52176164477569",
+      "centroid": {
+        "lat": -8.713033,
+        "lon": 125.619976
+      },
+      "bbox": {
+        "minLon": 125.4624383,
+        "minLat": -8.8493544,
+        "maxLon": 125.7775144,
+        "maxLat": -8.5767107
+      },
+      "approxAreaSqKm": 661.9,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 69415,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 30,
+        "education": 76,
+        "markets": 7,
+        "total": 113,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:23:15Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 2314,
+        "peoplePerSchool": 913,
+        "peoplePerMarket": 9916,
+        "healthFacilitiesPer100k": 43.22,
+        "schoolsPer100k": 109.49,
+        "marketsPer100k": 10.08,
+        "totalMappedServicesPerMillion": 1627.89,
+        "totalServicesPer1000SqKm": 170.72,
+        "serviceLoadScore": 0,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 12,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-AN",
+      "admin1Name": "Ainaro",
+      "shapeId": "58719522B96669271034989",
+      "centroid": {
+        "lat": -9.026165,
+        "lon": 125.51624
+      },
+      "bbox": {
+        "minLon": 125.3258362,
+        "minLat": -9.2830770812716,
+        "maxLon": 125.7066445,
+        "maxLat": -8.7692536
+      },
+      "approxAreaSqKm": 1147.54,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 86062,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 9,
+        "education": 17,
+        "markets": 1,
+        "total": 27,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:23:15Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 9562,
+        "peoplePerSchool": 5062,
+        "peoplePerMarket": 86062,
+        "healthFacilitiesPer100k": 10.46,
+        "schoolsPer100k": 19.75,
+        "marketsPer100k": 1.16,
+        "totalMappedServicesPerMillion": 313.73,
+        "totalServicesPer1000SqKm": 23.53,
+        "serviceLoadScore": 27.6,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 28,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-BA",
+      "admin1Name": "Baucau",
+      "shapeId": "58719522B57750794760959",
+      "centroid": {
+        "lat": -8.55146,
+        "lon": 126.491302
+      },
+      "bbox": {
+        "minLon": 126.1824451659948,
+        "minLat": -8.6909726,
+        "maxLon": 126.800159,
+        "maxLat": -8.411948196501694
+      },
+      "approxAreaSqKm": 1552.79,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 136325,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 32,
+        "education": 110,
+        "markets": 29,
+        "total": 171,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:24:13Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4260,
+        "peoplePerSchool": 1239,
+        "peoplePerMarket": 4701,
+        "healthFacilitiesPer100k": 23.47,
+        "schoolsPer100k": 80.69,
+        "marketsPer100k": 21.27,
+        "totalMappedServicesPerMillion": 1254.36,
+        "totalServicesPer1000SqKm": 110.12,
+        "serviceLoadScore": 0.1,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 12,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-BO",
+      "admin1Name": "Bobonaro",
+      "shapeId": "58719522B64128847782213",
+      "centroid": {
+        "lat": -8.974465,
+        "lon": 125.184561
+      },
+      "bbox": {
+        "minLon": 124.931763,
+        "minLat": -9.208034,
+        "maxLon": 125.4373597,
+        "maxLat": -8.7408952
+      },
+      "approxAreaSqKm": 1352.91,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 105390,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 27,
+        "education": 101,
+        "markets": 7,
+        "total": 135,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:24:13Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 3903,
+        "peoplePerSchool": 1043,
+        "peoplePerMarket": 15056,
+        "healthFacilitiesPer100k": 25.62,
+        "schoolsPer100k": 95.83,
+        "marketsPer100k": 6.64,
+        "totalMappedServicesPerMillion": 1280.96,
+        "totalServicesPer1000SqKm": 99.78,
+        "serviceLoadScore": 0,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 12,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-CO",
+      "admin1Name": "Cova Lima",
+      "shapeId": "58719522B58123781478976",
+      "centroid": {
+        "lat": -9.315943,
+        "lon": 125.170684
+      },
+      "bbox": {
+        "minLon": 124.982087,
+        "minLat": -9.4630442,
+        "maxLon": 125.35928056678573,
+        "maxLat": -9.168842
+      },
+      "approxAreaSqKm": 810.55,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 53505,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 11,
+        "education": 30,
+        "markets": 15,
+        "total": 56,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:24:13Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4864,
+        "peoplePerSchool": 1784,
+        "peoplePerMarket": 3567,
+        "healthFacilitiesPer100k": 20.56,
+        "schoolsPer100k": 56.07,
+        "marketsPer100k": 28.03,
+        "totalMappedServicesPerMillion": 1046.63,
+        "totalServicesPer1000SqKm": 69.09,
+        "serviceLoadScore": 1.9,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 13,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-DI",
+      "admin1Name": "Dili",
+      "shapeId": "58719522B43373882655947",
+      "centroid": {
+        "lat": -8.371305,
+        "lon": 125.677107
+      },
+      "bbox": {
+        "minLon": 125.5013457,
+        "minLat": -8.6157121,
+        "maxLon": 125.8528682,
+        "maxLat": -8.1268989
+      },
+      "approxAreaSqKm": 346.99,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 314739,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 2 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 32,
+        "education": 102,
+        "markets": 14,
+        "total": 148,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:25:15Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 9836,
+        "peoplePerSchool": 3086,
+        "peoplePerMarket": 22481,
+        "healthFacilitiesPer100k": 10.17,
+        "schoolsPer100k": 32.41,
+        "marketsPer100k": 4.45,
+        "totalMappedServicesPerMillion": 470.23,
+        "totalServicesPer1000SqKm": 426.53,
+        "serviceLoadScore": 12.1,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 19,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-ER",
+      "admin1Name": "Ermera",
+      "shapeId": "58719522B37683587147705",
+      "centroid": {
+        "lat": -8.803833,
+        "lon": 125.355114
+      },
+      "bbox": {
+        "minLon": 125.1815868,
+        "minLat": -8.9900834,
+        "maxLon": 125.5286402,
+        "maxLat": -8.6175821
+      },
+      "approxAreaSqKm": 800.99,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 152785,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 16,
+        "education": 26,
+        "markets": 2,
+        "total": 44,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 9549,
+        "peoplePerSchool": 5876,
+        "peoplePerMarket": 76393,
+        "healthFacilitiesPer100k": 10.47,
+        "schoolsPer100k": 17.02,
+        "marketsPer100k": 1.31,
+        "totalMappedServicesPerMillion": 287.99,
+        "totalServicesPer1000SqKm": 54.93,
+        "serviceLoadScore": 28.8,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 29,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-LA",
+      "admin1Name": "Lautém",
+      "shapeId": "58719522B74673759114814",
+      "centroid": {
+        "lat": -8.540955,
+        "lon": 127.028644
+      },
+      "bbox": {
+        "minLon": 126.71535313944428,
+        "minLat": -8.7603313,
+        "maxLon": 127.3419339,
+        "maxLat": -8.3215795
+      },
+      "approxAreaSqKm": 1775.69,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 66922,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 2 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 15,
+        "education": 39,
+        "markets": 3,
+        "total": 57,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T04:52:45Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4461,
+        "peoplePerSchool": 1716,
+        "peoplePerMarket": 22307,
+        "healthFacilitiesPer100k": 22.41,
+        "schoolsPer100k": 58.28,
+        "marketsPer100k": 4.48,
+        "totalMappedServicesPerMillion": 851.74,
+        "totalServicesPer1000SqKm": 32.1,
+        "serviceLoadScore": 2.8,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 14,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-LI",
+      "admin1Name": "Liquiçá",
+      "shapeId": "58719522B91889916528445",
+      "centroid": {
+        "lat": -8.645595,
+        "lon": 125.313661
+      },
+      "bbox": {
+        "minLon": 125.0909621,
+        "minLat": -8.7537598,
+        "maxLon": 125.5363604,
+        "maxLat": -8.5374309
+      },
+      "approxAreaSqKm": 523.19,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 142577,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 14,
+        "education": 18,
+        "markets": 0,
+        "total": 32,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T04:52:45Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 10184,
+        "peoplePerSchool": 7921,
+        "peoplePerMarket": 142577,
+        "healthFacilitiesPer100k": 9.82,
+        "schoolsPer100k": 12.62,
+        "marketsPer100k": 0,
+        "totalMappedServicesPerMillion": 224.44,
+        "totalServicesPer1000SqKm": 61.16,
+        "serviceLoadScore": 45.9,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 10.2,
+        "accessStressIndex": 40,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-MF",
+      "admin1Name": "Manufahi",
+      "shapeId": "58719522B42816757733835",
+      "centroid": {
+        "lat": -8.99798,
+        "lon": 125.807293
+      },
+      "bbox": {
+        "minLon": 125.5416241,
+        "minLat": -9.195654132592344,
+        "maxLon": 126.07296165052388,
+        "maxLat": -8.8003054
+      },
+      "approxAreaSqKm": 1380.53,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 59266,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 20,
+        "education": 22,
+        "markets": 1,
+        "total": 43,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:26:16Z",
+        "osmAreasTimestamp": "2026-04-23T05:09:59Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 2963,
+        "peoplePerSchool": 2694,
+        "peoplePerMarket": 59266,
+        "healthFacilitiesPer100k": 33.75,
+        "schoolsPer100k": 37.12,
+        "marketsPer100k": 1.69,
+        "totalMappedServicesPerMillion": 725.54,
+        "totalServicesPer1000SqKm": 31.15,
+        "serviceLoadScore": 11.4,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 19,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-MT",
+      "admin1Name": "Manatuto",
+      "shapeId": "58719522B79491931293061",
+      "centroid": {
+        "lat": -8.761434,
+        "lon": 125.967458
+      },
+      "bbox": {
+        "minLon": 125.7144897,
+        "minLat": -9.04845266353528,
+        "maxLon": 126.2204264,
+        "maxLat": -8.4744151
+      },
+      "approxAreaSqKm": 1962.41,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 61114,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 22,
+        "education": 40,
+        "markets": 17,
+        "total": 79,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T07:27:21Z",
+        "osmAreasTimestamp": "2026-04-23T05:03:44Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 2778,
+        "peoplePerSchool": 1528,
+        "peoplePerMarket": 3595,
+        "healthFacilitiesPer100k": 36,
+        "schoolsPer100k": 65.45,
+        "marketsPer100k": 27.82,
+        "totalMappedServicesPerMillion": 1292.67,
+        "totalServicesPer1000SqKm": 40.26,
+        "serviceLoadScore": 1.1,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 13,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-OE",
+      "admin1Name": "Oecusse",
+      "shapeId": "58719522B69518090574338",
+      "centroid": {
+        "lat": -9.335612,
+        "lon": 124.262195
+      },
+      "bbox": {
+        "minLon": 124.0415703,
+        "minLat": -9.5041705,
+        "maxLon": 124.4828203,
+        "maxLat": -9.1670528
+      },
+      "approxAreaSqKm": 816.71,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 77069,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 14,
+        "education": 44,
+        "markets": 3,
+        "total": 61,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5505,
+        "peoplePerSchool": 1752,
+        "peoplePerMarket": 25690,
+        "healthFacilitiesPer100k": 18.17,
+        "schoolsPer100k": 57.09,
+        "marketsPer100k": 3.89,
+        "totalMappedServicesPerMillion": 791.5,
+        "totalServicesPer1000SqKm": 74.69,
+        "serviceLoadScore": 3.9,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 15,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "countryName": "Timor-Leste",
+      "admin1Code": "TL-VI",
+      "admin1Name": "Viqueque",
+      "shapeId": "58719522B88874257219633",
+      "centroid": {
+        "lat": -8.823944,
+        "lon": 126.393486
+      },
+      "bbox": {
+        "minLon": 126.0464257,
+        "minLat": -8.992990128541562,
+        "maxLon": 126.74054670771218,
+        "maxLat": -8.6548981
+      },
+      "approxAreaSqKm": 1820.27,
+      "boundary": {
+        "boundaryID": "TLS-ADM1-58719522",
+        "boundaryYearRepresented": "2017",
+        "boundarySource": "OpenStreetMap, Wambacher",
+        "boundaryLicense": "Open Data Commons Open Database License 1.0",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 81492,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 17,
+        "education": 9,
+        "markets": 0,
+        "total": 26,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-12T18:55:49Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 4794,
+        "peoplePerSchool": 9055,
+        "peoplePerMarket": 81492,
+        "healthFacilitiesPer100k": 20.86,
+        "schoolsPer100k": 11.04,
+        "marketsPer100k": 0,
+        "totalMappedServicesPerMillion": 319.05,
+        "totalServicesPer1000SqKm": 14.28,
+        "serviceLoadScore": 35.3,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 33,
+        "bottleneck": "heat stress"
+      }
+    }
+  ],
+  "countries": [
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "centroid": {
+        "lat": 12.5657,
+        "lon": 104.991
+      },
+      "bbox": {
+        "minLon": 102.3,
+        "minLat": 10.3,
+        "maxLon": 107.7,
+        "maxLat": 14.8
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 17638801,
+        "sourceUrl": "https://api.worldbank.org/v2/country/KHM/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 176520,
+        "sourceUrl": "https://api.worldbank.org/v2/country/KHM/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 59.1272966747271,
+        "sourceUrl": "https://api.worldbank.org/v2/country/KHM/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 560,
+        "education": 2446,
+        "markets": 308,
+        "total": 3314,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-06T02:42:41Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 31.87,
+        "futureTasmaxC": 33.02,
+        "heatDeltaC": 1.15,
+        "baselinePrecipMm": 1769.28,
+        "futurePrecipPercentOfBaseline": 104.01,
+        "precipChangePct": 4.01,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 31498,
+        "peoplePerSchool": 7211,
+        "peoplePerMarket": 57269,
+        "healthFacilitiesPer100k": 3.17,
+        "schoolsPer100k": 13.87,
+        "marketsPer100k": 1.75,
+        "totalMappedServicesPerMillion": 187.88,
+        "equivalentHealthCatchmentRadiusKm": 10.02,
+        "equivalentSchoolCatchmentRadiusKm": 4.79,
+        "serviceLoadScore": 52.2,
+        "heatStressScore": 57.5,
+        "rainfallStressScore": 26.7,
+        "ruralExposureScore": 59.1,
+        "osmCompletenessRiskScore": 24.8,
+        "accessStressIndex": 47,
+        "bottleneck": "rural exposure"
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "centroid": {
+        "lat": 19.8563,
+        "lon": 102.4955
+      },
+      "bbox": {
+        "minLon": 100.1,
+        "minLat": 13.9,
+        "maxLon": 107.7,
+        "maxLat": 22.6
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 7769819,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LAO/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 230800,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LAO/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 60.4447845598594,
+        "sourceUrl": "https://api.worldbank.org/v2/country/LAO/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 775,
+        "education": 670,
+        "markets": 200,
+        "total": 1645,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-23T06:54:13Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.91,
+        "futureTasmaxC": 29.18,
+        "heatDeltaC": 1.27,
+        "baselinePrecipMm": 1989.59,
+        "futurePrecipPercentOfBaseline": 104.36,
+        "precipChangePct": 4.36,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 10026,
+        "peoplePerSchool": 11597,
+        "peoplePerMarket": 38849,
+        "healthFacilitiesPer100k": 9.97,
+        "schoolsPer100k": 8.62,
+        "marketsPer100k": 2.57,
+        "totalMappedServicesPerMillion": 211.72,
+        "equivalentHealthCatchmentRadiusKm": 9.74,
+        "equivalentSchoolCatchmentRadiusKm": 10.47,
+        "serviceLoadScore": 42.3,
+        "heatStressScore": 63.5,
+        "rainfallStressScore": 29.1,
+        "ruralExposureScore": 60.4,
+        "osmCompletenessRiskScore": 15.3,
+        "accessStressIndex": 45,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "centroid": {
+        "lat": -8.8742,
+        "lon": 125.7275
+      },
+      "bbox": {
+        "minLon": 124,
+        "minLat": -9.7,
+        "maxLon": 127.4,
+        "maxLat": -8.1
+      },
+      "population": {
+        "indicator": "SP.POP.TOTL",
+        "year": 2024,
+        "value": 1400638,
+        "sourceUrl": "https://api.worldbank.org/v2/country/TLS/indicator/SP.POP.TOTL?format=json&per_page=100&date=2020:2025"
+      },
+      "landAreaSqKm": {
+        "indicator": "AG.LND.TOTL.K2",
+        "year": 2023,
+        "value": 14870,
+        "sourceUrl": "https://api.worldbank.org/v2/country/TLS/indicator/AG.LND.TOTL.K2?format=json&per_page=100&date=2020:2025"
+      },
+      "ruralPopulationShare": {
+        "indicator": "SP.RUR.TOTL.ZS",
+        "year": 2024,
+        "value": 71.3358925820426,
+        "sourceUrl": "https://api.worldbank.org/v2/country/TLS/indicator/SP.RUR.TOTL.ZS?format=json&per_page=100&date=2020:2025"
+      },
+      "services": {
+        "health": 258,
+        "education": 628,
+        "markets": 95,
+        "total": 981,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "osmTimestamp": "2026-04-12T13:51:34Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 27.79,
+        "futureTasmaxC": 28.85,
+        "heatDeltaC": 1.06,
+        "baselinePrecipMm": 1638.64,
+        "futurePrecipPercentOfBaseline": 97.05,
+        "precipChangePct": -2.95,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 5429,
+        "peoplePerSchool": 2230,
+        "peoplePerMarket": 14744,
+        "healthFacilitiesPer100k": 18.42,
+        "schoolsPer100k": 44.84,
+        "marketsPer100k": 6.78,
+        "totalMappedServicesPerMillion": 700.4,
+        "equivalentHealthCatchmentRadiusKm": 4.28,
+        "equivalentSchoolCatchmentRadiusKm": 2.75,
+        "serviceLoadScore": 3.8,
+        "heatStressScore": 53,
+        "rainfallStressScore": 19.7,
+        "ruralExposureScore": 71.3,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 25,
+        "bottleneck": "rural exposure"
+      }
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "program": "invisible-urbanization",
+  "claim_scope": "Hypothesis-stage screening: still-mostly-rural ADB DMCs with high urban-population growth, proxying for settlement growth that may not yet be reflected in urban classification. GHSL built-up-surface analysis is the §18.5 upgrade-pass.",
+  "framing_rule": "Sub-classification-lag pressure proxy. Constitution §13.3 / §14: not a country-quality ranking.",
+  "sources": {
+    "wdi_urban_pct": "WDI SP.URB.TOTL.IN.ZS",
+    "wdi_urban_pop_growth": "WDI SP.URB.GROW (% annual)",
+    "wdi_rural_pct": "WDI SP.RUR.TOTL.ZS",
+    "wdi_population": "WDI SP.POP.TOTL",
+    "license": "WDI: CC BY 4.0",
+    "retrieved_at": "2026-04-26"
+  },
+  "methodology": {
+    "invisible_urbanization_signal": "rural_share × urban_growth_rate × 10. Higher = more growth from a low-urbanization base. WDI growth-rate-only — no satellite cross-check yet. Triage only."
+  },
+  "rows": [
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "urban_pct": 15.4,
+      "urban_pop_growth_pct": 4.07,
+      "rural_pct": 84.6,
+      "population": 10576502,
+      "invisible_urbanization_signal": 34.41
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "urban_pct": 30.7,
+      "urban_pop_growth_pct": 4.52,
+      "rural_pct": 69.3,
+      "population": 819198,
+      "invisible_urbanization_signal": 31.36
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "urban_pct": 25.7,
+      "urban_pop_growth_pct": 3.73,
+      "rural_pct": 74.3,
+      "population": 42647492,
+      "invisible_urbanization_signal": 27.69
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "urban_pct": 39.6,
+      "urban_pop_growth_pct": 3.27,
+      "rural_pct": 60.4,
+      "population": 7769819,
+      "invisible_urbanization_signal": 19.75
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "urban_pct": 32.7,
+      "urban_pop_growth_pct": 2.82,
+      "rural_pct": 67.3,
+      "population": 173562364,
+      "invisible_urbanization_signal": 18.99
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "urban_pct": 22.3,
+      "urban_pop_growth_pct": 2.37,
+      "rural_pct": 77.7,
+      "population": 327777,
+      "invisible_urbanization_signal": 18.42
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "urban_pct": 42.6,
+      "urban_pop_growth_pct": 2.62,
+      "rural_pct": 57.4,
+      "population": 791524,
+      "invisible_urbanization_signal": 15.04
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "urban_pct": 39.2,
+      "urban_pop_growth_pct": 2.42,
+      "rural_pct": 60.8,
+      "population": 251269164,
+      "invisible_urbanization_signal": 14.71
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "urban_pct": 26.2,
+      "urban_pop_growth_pct": 1.88,
+      "rural_pct": 73.8,
+      "population": 10590927,
+      "invisible_urbanization_signal": 13.87
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "urban_pct": 35.4,
+      "urban_pop_growth_pct": 1.77,
+      "rural_pct": 64.6,
+      "population": 1450935791,
+      "invisible_urbanization_signal": 11.47
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyz Republic",
+      "urban_pct": 34.7,
+      "urban_pop_growth_pct": 1.75,
+      "rural_pct": 65.3,
+      "population": 7221868,
+      "invisible_urbanization_signal": 11.43
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "urban_pct": 62.5,
+      "urban_pop_growth_pct": 3.0,
+      "rural_pct": 37.5,
+      "population": 134518,
+      "invisible_urbanization_signal": 11.27
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "urban_pct": 40.9,
+      "urban_pop_growth_pct": 1.82,
+      "rural_pct": 59.1,
+      "population": 17638801,
+      "invisible_urbanization_signal": 10.78
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "urban_pct": 28.7,
+      "urban_pop_growth_pct": 1.41,
+      "rural_pct": 71.3,
+      "population": 1400638,
+      "invisible_urbanization_signal": 10.09
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "urban_pct": 51.0,
+      "urban_pop_growth_pct": 1.97,
+      "rural_pct": 49.0,
+      "population": 36361859,
+      "invisible_urbanization_signal": 9.68
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "urban_pct": 38.5,
+      "urban_pop_growth_pct": 1.57,
+      "rural_pct": 61.5,
+      "population": 100987686,
+      "invisible_urbanization_signal": 9.67
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "urban_pct": 47.1,
+      "urban_pop_growth_pct": 1.79,
+      "rural_pct": 52.9,
+      "population": 7494498,
+      "invisible_urbanization_signal": 9.48
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "urban_pct": 42.0,
+      "urban_pop_growth_pct": 1.51,
+      "rural_pct": 58.0,
+      "population": 527799,
+      "invisible_urbanization_signal": 8.77
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "urban_pct": 65.8,
+      "urban_pop_growth_pct": 2.48,
+      "rural_pct": 34.2,
+      "population": 3033500,
+      "invisible_urbanization_signal": 8.49
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "urban_pct": 58.8,
+      "urban_pop_growth_pct": 1.9,
+      "rural_pct": 41.2,
+      "population": 283487931,
+      "invisible_urbanization_signal": 7.83
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "urban_pct": 62.1,
+      "urban_pop_growth_pct": 1.79,
+      "rural_pct": 37.9,
+      "population": 20592571,
+      "invisible_urbanization_signal": 6.8
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "urban_pct": 55.5,
+      "urban_pop_growth_pct": 1.42,
+      "rural_pct": 44.5,
+      "population": 115843670,
+      "invisible_urbanization_signal": 6.32
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "urban_pct": 30.4,
+      "urban_pop_growth_pct": 0.9,
+      "rural_pct": 69.6,
+      "population": 54500091,
+      "invisible_urbanization_signal": 6.24
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "urban_pct": 71.0,
+      "urban_pop_growth_pct": 1.97,
+      "rural_pct": 29.0,
+      "population": 3524788,
+      "invisible_urbanization_signal": 5.71
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "urban_pct": 61.9,
+      "urban_pop_growth_pct": 1.47,
+      "rural_pct": 38.1,
+      "population": 71668011,
+      "invisible_urbanization_signal": 5.62
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "urban_pct": 59.1,
+      "urban_pop_growth_pct": 1.3,
+      "rural_pct": 40.9,
+      "population": 928784,
+      "invisible_urbanization_signal": 5.32
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "urban_pct": 17.5,
+      "urban_pop_growth_pct": 0.63,
+      "rural_pct": 82.5,
+      "population": 218019,
+      "invisible_urbanization_signal": 5.23
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "urban_pct": 22.5,
+      "urban_pop_growth_pct": 0.57,
+      "rural_pct": 77.5,
+      "population": 113160,
+      "invisible_urbanization_signal": 4.44
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "urban_pct": 76.9,
+      "urban_pop_growth_pct": 1.84,
+      "rural_pct": 23.1,
+      "population": 35557673,
+      "invisible_urbanization_signal": 4.24
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "urban_pct": 58.6,
+      "urban_pop_growth_pct": 0.59,
+      "rural_pct": 41.4,
+      "population": 10202830,
+      "invisible_urbanization_signal": 2.46
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "urban_pct": 74.9,
+      "urban_pop_growth_pct": 0.92,
+      "rural_pct": 25.1,
+      "population": 462721,
+      "invisible_urbanization_signal": 2.32
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "urban_pct": 20.3,
+      "urban_pop_growth_pct": 0.21,
+      "rural_pct": 79.7,
+      "population": 21916000,
+      "invisible_urbanization_signal": 1.69
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "urban_pct": 65.9,
+      "urban_pop_growth_pct": 0.43,
+      "rural_pct": 34.1,
+      "population": 1408975000,
+      "invisible_urbanization_signal": 1.47
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "urban_pct": 66.8,
+      "urban_pop_growth_pct": 0.2,
+      "rural_pct": 33.2,
+      "population": 29651054,
+      "invisible_urbanization_signal": 0.65
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "urban_pct": 61.1,
+      "urban_pop_growth_pct": 0.11,
+      "rural_pct": 38.9,
+      "population": 3699557,
+      "invisible_urbanization_signal": 0.42
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong, China",
+      "urban_pct": 100.0,
+      "urban_pop_growth_pct": -0.16,
+      "rural_pct": 0.0,
+      "population": 7524100,
+      "invisible_urbanization_signal": 0.0
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "urban_pct": 78.7,
+      "urban_pop_growth_pct": -2.87,
+      "rural_pct": 21.3,
+      "population": 37548,
+      "invisible_urbanization_signal": 0.0
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "urban_pct": 100.0,
+      "urban_pop_growth_pct": 0.6,
+      "rural_pct": 0.0,
+      "population": 11947,
+      "invisible_urbanization_signal": 0.0
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "urban_pct": 79.2,
+      "urban_pop_growth_pct": -0.11,
+      "rural_pct": 20.8,
+      "population": 17695,
+      "invisible_urbanization_signal": 0.0
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "urban_pct": 21.2,
+      "urban_pop_growth_pct": -0.39,
+      "rural_pct": 78.8,
+      "population": 104175,
+      "invisible_urbanization_signal": 0.0
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "urban_pct": 64.7,
+      "urban_pop_growth_pct": -0.64,
+      "rural_pct": 35.3,
+      "population": 9646,
+      "invisible_urbanization_signal": 0.0
+    }
+  ],
+  "generated_at": "2026-04-26T11:19:29Z"
+}

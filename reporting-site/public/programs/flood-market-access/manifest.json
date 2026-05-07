@@ -1,0 +1,128 @@
+{
+  "program": "flood-market-access",
+  "permanent_url": "/program/flood-market-access/evidence",
+  "generated_at": "2026-05-07T03:31:39.754Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1263,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.333Z",
+      "sha256": "d97f7dffd9057b68f5448cbd05e8f40751554d7e3ce548c011b18b7196dba4da",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1610,
+      "size_human": "1.6 KB",
+      "mtime": "2026-04-27T03:43:04.292Z",
+      "sha256": "68c5446592ea9dd1a0ba2aea201981c747857ea6b34474ff6ac3689e07cf7f61",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1106,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-26T11:21:52.995Z",
+      "sha256": "3c6c2e919a7b35c3d480dfc7cda4840d01071b5abc2909e4a239997377128541",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 686,
+      "size_human": "686 B",
+      "mtime": "2026-04-26T11:21:58.268Z",
+      "sha256": "25c5b4e26a2f4a25b541dcb134625f509b5be8a0c17f34ba3180b43d5e039e40",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 3763,
+      "size_human": "3.7 KB",
+      "mtime": "2026-04-26T11:20:16.402Z",
+      "sha256": "dd359ee7583c3bb99561f6f47f3c78aeecf8e0e0a157fec9b15e053d0443dca0",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 361,
+      "size_human": "361 B",
+      "mtime": "2026-04-26T11:22:00.830Z",
+      "sha256": "78da55e40d5974108680d225a15eac0beae810f866de0fcafb3306f4a71756ff",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 532,
+      "size_human": "532 B",
+      "mtime": "2026-04-26T11:22:21.203Z",
+      "sha256": "918ceec607f162819435464c81b35359b229abd782b648c696caba141618b05a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 842,
+      "size_human": "842 B",
+      "mtime": "2026-04-26T11:22:06.154Z",
+      "sha256": "c50eb5ea65e857f7bbb1f0e8f99002e41094a382b79fea59e497ec3042468933",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1493,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T11:22:15.286Z",
+      "sha256": "ca3228fba3d376416f503d414a45f250f52a26155c239105c17cbc5e5d95fbbc",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 530,
+      "size_human": "530 B",
+      "mtime": "2026-04-26T11:22:18.419Z",
+      "sha256": "f068040e02c9d8816de5408f8e756c9d2679a6f86790f1fddb7d451724fd086a",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/flood-market-access-adb-panel.csv",
+      "size": 2002,
+      "size_human": "2.0 KB",
+      "sha256": "7744172ee7f5b42d9e820b640f43c2aa5da3687b68134146bda728e1159de98d"
+    },
+    {
+      "file": "generated/flood-market-access-adb-panel.json",
+      "size": 12486,
+      "size_human": "12.2 KB",
+      "sha256": "447562ca8692b8ae789309f5091688212c84946807028854de025b23d4f420b1"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "flood-market-access-cluster",
+      "title": "Four DMCs hold the top of the flood-rural-exposure ranking — India, China, Indonesia, Afghanistan",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

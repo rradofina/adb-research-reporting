@@ -1,0 +1,128 @@
+{
+  "program": "social-protection-shock-coverage",
+  "permanent_url": "/program/social-protection-shock-coverage/evidence",
+  "generated_at": "2026-05-07T03:31:39.640Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1243,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.337Z",
+      "sha256": "fde7446f8f9c3ea6b3079fc54ffc8a24b496d92c05531d5d3ca43c87018d14a3",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 2342,
+      "size_human": "2.3 KB",
+      "mtime": "2026-04-27T03:38:17.580Z",
+      "sha256": "014723487c5877f236137705bd01c8d70e37b7d79e6c1cc3d4e68cb43e94ee12",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 992,
+      "size_human": "992 B",
+      "mtime": "2026-04-26T03:26:16.910Z",
+      "sha256": "22bd07e9fb4083c212e299a5cf8efec31babeb39bd77942ca652b88645d0dd63",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 409,
+      "size_human": "409 B",
+      "mtime": "2026-04-26T03:26:19.959Z",
+      "sha256": "785e1cfa4b8e8375f8d7450468dce03e85ef7bdd11dd96ea6d59c75e8c23cb7f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 3823,
+      "size_human": "3.7 KB",
+      "mtime": "2026-04-26T03:23:12.459Z",
+      "sha256": "28230511fd42f586eed0ca863cbab352200accc3b25930f8cbdba107aa18b301",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 371,
+      "size_human": "371 B",
+      "mtime": "2026-04-26T03:26:23.021Z",
+      "sha256": "5bbdfee299df2ce83ef98aa773b5bca0a0ff8d3ef09ffc5670da6022ea3fe658",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 520,
+      "size_human": "520 B",
+      "mtime": "2026-04-26T03:26:46.866Z",
+      "sha256": "5adc8ff1d625bfd7d022da6f26d50735d1723479f08dc25d3b3a94d7feabcc7e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 708,
+      "size_human": "708 B",
+      "mtime": "2026-04-26T03:26:28.398Z",
+      "sha256": "979d2c1ca9a04c984bdfa21fac80cae6cb7183df23608d6794a2d93b314eedf3",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1577,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T03:26:39.453Z",
+      "sha256": "deb85b59ef5454dd6954d5e9e4782d3700b4a67b4a4b5ed287c0cf5bb4c270a2",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 775,
+      "size_human": "775 B",
+      "mtime": "2026-04-26T03:26:44.010Z",
+      "sha256": "94756c74ab268182ced4c7662306e3bfd8761c94cd06d0029d491940ec0c4aea",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/social-protection-adb-panel.csv",
+      "size": 2443,
+      "size_human": "2.4 KB",
+      "sha256": "04f364cbcc7b8d7a98146fb521d608045f4effbb86be1f7c19d42204a507c06c"
+    },
+    {
+      "file": "generated/social-protection-adb-panel.json",
+      "size": 16090,
+      "size_human": "15.7 KB",
+      "sha256": "f62c02bfd9791b651fe77b1a51597d5bda6721b0118c86a952aed831178fc113"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "sp-shock-readiness-cluster",
+      "title": "Five DMCs hold the top of the shock-payment-readiness gap — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

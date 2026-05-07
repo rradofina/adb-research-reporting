@@ -1,0 +1,128 @@
+{
+  "program": "port-hinterland-friction",
+  "permanent_url": "/program/port-hinterland-friction/evidence",
+  "generated_at": "2026-05-07T03:31:39.592Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1211,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.336Z",
+      "sha256": "b3fcce8195891e3303f61f9c6ea6899ab56e4dd393ffdb031eb362b7fd0b5570",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 2091,
+      "size_human": "2.0 KB",
+      "mtime": "2026-04-27T03:38:02.801Z",
+      "sha256": "0d2ad83db19645341a946330107e441b764ade23d8ec723d118fe60b166c7b8c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1163,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-26T03:25:33.679Z",
+      "sha256": "7a7d6fbe878e4813fb34e9c817a6de5976580f77b3f6da2d93eb67d99a4648f4",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 567,
+      "size_human": "567 B",
+      "mtime": "2026-04-26T03:25:37.819Z",
+      "sha256": "84f40e4b8c4148ca3e8906c89a5b2f4e7b707b1b311897339797b3fe9b9338a9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 6244,
+      "size_human": "6.1 KB",
+      "mtime": "2026-04-26T03:23:12.456Z",
+      "sha256": "970496be4667cf96dc87e9493b75ab4705b034c4d37853db21907e554f1c2bf9",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 384,
+      "size_human": "384 B",
+      "mtime": "2026-04-26T03:25:41.546Z",
+      "sha256": "fe111cf0f07ff013cdb5032b0bb5038b2ae324d4455f19ccabc50e8a8139d5ec",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 626,
+      "size_human": "626 B",
+      "mtime": "2026-04-26T03:26:05.115Z",
+      "sha256": "39dfd7f10ff39fab3e878d24012c79a52609cc6c079b3be4cd96056b8cfa08dd",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 964,
+      "size_human": "964 B",
+      "mtime": "2026-04-26T03:25:47.968Z",
+      "sha256": "af182599bf00a751865e519603c617bb659be0fdc2456cadd27966a001148893",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1517,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T03:25:57.475Z",
+      "sha256": "a303be8bc905dd07e684a404779aee2c9c558e4f149b4347517d95d7f2237179",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 759,
+      "size_human": "759 B",
+      "mtime": "2026-04-26T03:26:01.956Z",
+      "sha256": "f69033a0f310fa5b5abdbba2d81e10f35bdf6f2b3469c6733d70df3801bfa65c",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/port-hinterland-friction-adb-panel.csv",
+      "size": 2284,
+      "size_human": "2.2 KB",
+      "sha256": "08267af522b5ebe7ab262babe1b1dfbd7f7acb679a8290279e7b0d7b7932f82f"
+    },
+    {
+      "file": "generated/port-hinterland-friction-adb-panel.json",
+      "size": 14050,
+      "size_human": "13.7 KB",
+      "sha256": "7dc5743fecb323527b4e31696a238da37359d9a74ce7cc7d8538eb420477b2c7"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "port-friction-trade-volume-cluster",
+      "title": "Five large coastal economies hold the top of the port-friction-exposure ranking",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

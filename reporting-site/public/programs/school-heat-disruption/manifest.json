@@ -1,0 +1,128 @@
+{
+  "program": "school-heat-disruption",
+  "permanent_url": "/program/school-heat-disruption/evidence",
+  "generated_at": "2026-05-07T03:31:39.665Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1338,
+      "size_human": "1.3 KB",
+      "mtime": "2026-04-24T08:05:49.334Z",
+      "sha256": "50fe6dcd5092422d22b993ebbefba2d82658d7f37a467cf411a34ccc1570888f",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1718,
+      "size_human": "1.7 KB",
+      "mtime": "2026-04-27T03:42:33.058Z",
+      "sha256": "acab0167714d842b4eec149048b949e278cc9be3d5274660a065f847dce27329",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1344,
+      "size_human": "1.3 KB",
+      "mtime": "2026-04-26T03:27:53.975Z",
+      "sha256": "fa8ea1c8e39a0edf7a64adc13f36abf218718966830736a3655ba5c40317c57d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 955,
+      "size_human": "955 B",
+      "mtime": "2026-04-26T03:28:00.515Z",
+      "sha256": "e5ff77a5adf18b9f65a2fc95e07f19b8ba4855fae38a3c692a3827402484dfb3",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 8538,
+      "size_human": "8.3 KB",
+      "mtime": "2026-04-26T03:23:12.458Z",
+      "sha256": "d7a97e6435b3216a1477cebd316da480a8fd960901e44ad6fdaf46796d731235",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 316,
+      "size_human": "316 B",
+      "mtime": "2026-04-26T03:28:03.665Z",
+      "sha256": "2eb0b3ea2f4b0020768652f14bebdab1293866503031df2ca77b107614001d1a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 771,
+      "size_human": "771 B",
+      "mtime": "2026-04-26T03:28:28.535Z",
+      "sha256": "01dc8583f17cbbc4d1b148d5946c85e8709d79b939799598576b0d663ddb7091",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 819,
+      "size_human": "819 B",
+      "mtime": "2026-04-26T03:28:09.524Z",
+      "sha256": "3c8f26f372a8cb205c1f9c6605e78e93e37ddf845aec8cda898f2ae1c59821b5",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1557,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T03:28:19.902Z",
+      "sha256": "48fad0434a73ec37a1eeacee51a507759d6f7d21206e819e03c3b5cf86da0f7f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 848,
+      "size_human": "848 B",
+      "mtime": "2026-04-26T03:28:24.941Z",
+      "sha256": "3fa3b77e0bfb037e5841b58379ac63675871f527e62b7fe562ccce8ac3aae289",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/school-heat-adb-panel.csv",
+      "size": 2405,
+      "size_human": "2.3 KB",
+      "sha256": "6a1175de1977d5db27b75af995004368276c565117b7463e7a1bf4607016dc03"
+    },
+    {
+      "file": "generated/school-heat-adb-panel.json",
+      "size": 12135,
+      "size_human": "11.9 KB",
+      "sha256": "b70493fb792607275b71dc2f1da5d8e04e8b9c28fe5ac0950256b05c624d064f"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "school-heat-honest-narrowing",
+      "title": "A negative result on the school-heat top-5 — only Cambodia survives",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

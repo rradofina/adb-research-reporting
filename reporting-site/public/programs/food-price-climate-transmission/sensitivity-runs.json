@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-04-27T00:24:28.493591Z",
+  "program": "food-price-climate-transmission",
+  "metric": "joint top-N intersection of CPI-inflation and ag-imports rankings",
+  "decision_rule": "Positive if a non-empty stable set is recovered across N choices in [3, 10].",
+  "runs": [
+    {
+      "label": "top_3_intersection",
+      "n": 3,
+      "set": [
+        "LAO",
+        "PAK"
+      ]
+    },
+    {
+      "label": "top_5_intersection",
+      "n": 5,
+      "set": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ]
+    },
+    {
+      "label": "top_8_intersection",
+      "n": 8,
+      "set": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ]
+    },
+    {
+      "label": "top_10_intersection",
+      "n": 10,
+      "set": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ]
+    }
+  ],
+  "common_set_across_runs": [
+    "LAO",
+    "PAK"
+  ]
+}

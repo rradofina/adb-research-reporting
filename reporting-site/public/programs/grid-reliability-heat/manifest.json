@@ -1,0 +1,128 @@
+{
+  "program": "grid-reliability-heat",
+  "permanent_url": "/program/grid-reliability-heat/evidence",
+  "generated_at": "2026-05-07T03:31:39.566Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1265,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.335Z",
+      "sha256": "66f8c02b2b351241017c1398dd53ffd07fbf205c0a8c0251d76aa4aba4514fcd",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1995,
+      "size_human": "1.9 KB",
+      "mtime": "2026-04-27T03:37:50.822Z",
+      "sha256": "71c9c0f9b5fd0c19b7e0b098481a9d1407bd0bd3ed73383e478317a966a9e511",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1361,
+      "size_human": "1.3 KB",
+      "mtime": "2026-04-26T03:24:45.447Z",
+      "sha256": "0f8fa301f11f258e81e75aa0d6946e25f2a375c380a2089dd45fd32d1d870933",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 700,
+      "size_human": "700 B",
+      "mtime": "2026-04-26T03:24:50.985Z",
+      "sha256": "4bfc931e94444b4f1f2cac567a0cb65dd6129eca6c1ee1aa0a11952a990cd894",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 3585,
+      "size_human": "3.5 KB",
+      "mtime": "2026-04-26T03:23:12.454Z",
+      "sha256": "9dd103358dd0e15182424500742cd9a757a9144513b7ec0123ea76a9d982598e",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 351,
+      "size_human": "351 B",
+      "mtime": "2026-04-26T03:24:53.802Z",
+      "sha256": "860fb1ee9996df696502ffbeeb1867f0db88d788189348d126ea3f61469caf1c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 634,
+      "size_human": "634 B",
+      "mtime": "2026-04-26T03:25:18.773Z",
+      "sha256": "389284c64019edec068f5b73f952dc61e20adcd10a49f084c7ad657ebca6f2d2",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 984,
+      "size_human": "984 B",
+      "mtime": "2026-04-26T03:25:01.328Z",
+      "sha256": "e4534ab6b8b9b7ed0c6f560f5294bc5c653a72c77d76d0d48a0aa3b8b7891e07",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1534,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T03:25:11.038Z",
+      "sha256": "fefb3019621f0640b6c8aad1c956310fac61348f67046108202706405a763442",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 660,
+      "size_human": "660 B",
+      "mtime": "2026-04-26T03:25:15.071Z",
+      "sha256": "1bded23b66c9af121651357a26b217452b6a6f4d2bd1df0369ae61957e4df338",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/grid-reliability-heat-adb-panel.csv",
+      "size": 2704,
+      "size_human": "2.6 KB",
+      "sha256": "e81a9d7e3d44a5b895058c76ba77e77a0103229c075662fe1d88174cda799787"
+    },
+    {
+      "file": "generated/grid-reliability-heat-adb-panel.json",
+      "size": 21974,
+      "size_human": "21.5 KB",
+      "sha256": "6ca7f8be9dcd764e9709402896595c4ba3623cf12882bf03a48f5d9956a0b519"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "single-fuel-grid-cluster",
+      "title": "Five DMCs run on a single fuel — Brunei, Bhutan, Mongolia, Nepal, Tajikistan",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

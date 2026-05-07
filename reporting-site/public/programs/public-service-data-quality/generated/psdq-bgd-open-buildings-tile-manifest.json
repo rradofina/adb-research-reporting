@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-04-29T07:28:26Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "source": {
+    "open_buildings_tiles": "https://openbuildings-public-dot-gweb-research.uw.r.appspot.com/public/tiles.geojson",
+    "open_buildings_thresholds": "https://storage.googleapis.com/open-buildings-data/v3/score_thresholds_s2_level_4.csv",
+    "boundary": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM0/geoBoundaries-BGD-ADM0.geojson",
+    "boundary_source": "geoBoundaries gbOpen BGD ADM0"
+  },
+  "method": "Intersect Google Open Buildings V3 tile polygons with Bangladesh ADM0; use point CSVs for nearest-facility building denominators.",
+  "tiles": [
+    {
+      "tile_id": "30b",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/30b_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/30b_buildings.csv.gz",
+      "polygon_size_mb_catalog": 324.7,
+      "point_size_mb_head": 83.42,
+      "confidence_threshold_80_precision": 0.73,
+      "confidence_threshold_85_precision": 0.758,
+      "confidence_threshold_90_precision": 0.809,
+      "building_count": 3455640,
+      "building_count_85_precision": 1574870,
+      "building_count_90_precision": 750390,
+      "num_samples": 8112
+    },
+    {
+      "tile_id": "375",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/375_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/375_buildings.csv.gz",
+      "polygon_size_mb_catalog": 3564.3,
+      "point_size_mb_head": 936.51,
+      "confidence_threshold_80_precision": 0.704,
+      "confidence_threshold_85_precision": 0.747,
+      "confidence_threshold_90_precision": 0.795,
+      "building_count": 38753840,
+      "building_count_85_precision": 20728736,
+      "building_count_90_precision": 11883430,
+      "num_samples": 28180
+    },
+    {
+      "tile_id": "39f",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/39f_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/39f_buildings.csv.gz",
+      "polygon_size_mb_catalog": 8423.8,
+      "point_size_mb_head": 2198.84,
+      "confidence_threshold_80_precision": 0.707,
+      "confidence_threshold_85_precision": 0.742,
+      "confidence_threshold_90_precision": 0.789,
+      "building_count": 87929503,
+      "building_count_85_precision": 49119609,
+      "building_count_90_precision": 28747341,
+      "num_samples": 39015
+    },
+    {
+      "tile_id": "3a1",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/3a1_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/3a1_buildings.csv.gz",
+      "polygon_size_mb_catalog": 1801.7,
+      "point_size_mb_head": 464.3,
+      "confidence_threshold_80_precision": 0.719,
+      "confidence_threshold_85_precision": 0.76,
+      "confidence_threshold_90_precision": 0.824,
+      "building_count": 18843400,
+      "building_count_85_precision": 8848733,
+      "building_count_90_precision": 3499869,
+      "num_samples": 3497
+    }
+  ],
+  "totals": {
+    "tile_count": 4,
+    "polygon_size_mb_catalog": 14114.5,
+    "point_size_mb_head": 3683.07,
+    "building_count_catalog": 148982383,
+    "building_count_85_precision_catalog": 80271948,
+    "building_count_90_precision_catalog": 44881030
+  },
+  "non_claim": "Tile-level catalog counts include areas outside Bangladesh where S2 tiles cross borders; downstream scripts filter points to the Bangladesh ADM0 polygon."
+}

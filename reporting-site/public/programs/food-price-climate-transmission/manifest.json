@@ -1,0 +1,140 @@
+{
+  "program": "food-price-climate-transmission",
+  "permanent_url": "/program/food-price-climate-transmission/evidence",
+  "generated_at": "2026-05-07T03:31:39.696Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1201,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.336Z",
+      "sha256": "f7c9589a5aca4f5e33b3ce11626894eb60caa57f085af7fc7882509b6a38c2a5",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1910,
+      "size_human": "1.9 KB",
+      "mtime": "2026-04-27T03:43:40.558Z",
+      "sha256": "6ce27144a7f4e71d78c9efb5040abcaf915ffdfa4c887a4205bff272f077d189",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1235,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-27T00:24:45.833Z",
+      "sha256": "6b83dfd2d7e855900cf4f4c55dddb3d705e9d964fc2183105665708bee18fde9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 1033,
+      "size_human": "1.0 KB",
+      "mtime": "2026-04-27T00:24:52.430Z",
+      "sha256": "e491dfe66c57c988f2048f79adf93d11e79e817242926e2f4acb8ecd38dbe84c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 908,
+      "size_human": "908 B",
+      "mtime": "2026-04-27T00:24:28.494Z",
+      "sha256": "ac6d740d6196dff7eafbb9e2472bdff05eacaa06954dc55dcf8b7baa60f65ebd",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 504,
+      "size_human": "504 B",
+      "mtime": "2026-04-27T00:24:56.294Z",
+      "sha256": "f4061afe9ff36131133e1a3322cb6c0a0744609f4c532d123c24a4daa05b0651",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 1105,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-27T00:25:21.794Z",
+      "sha256": "45e91cc9f14674b94dbfce38080af8305c178a106c950e919b99dc38f8b01238",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 901,
+      "size_human": "901 B",
+      "mtime": "2026-04-27T00:25:02.493Z",
+      "sha256": "07ec928a1ab8f169dffebb19585388a61bf96529f9d84df815be3d8d888e872d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1524,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-27T00:25:12.294Z",
+      "sha256": "70886421cffa681251be56be3c9092c852747cc0df49294203325a8b517a7134",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 862,
+      "size_human": "862 B",
+      "mtime": "2026-04-27T00:25:16.934Z",
+      "sha256": "95431688bab92c1f8dac68de33c6b527d09dcd3cc71dd18db125782eb7af9af6",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/food-price-adb-panel.csv",
+      "size": 2772,
+      "size_human": "2.7 KB",
+      "sha256": "f74255f3dfdd84066a2b88c98f741a58db1d657ca6a4de53cb7873f70b8b60e4"
+    },
+    {
+      "file": "generated/food-price-adb-panel.json",
+      "size": 13022,
+      "size_human": "12.7 KB",
+      "sha256": "04bbba27fa2f0bbff4b06326d6d9c4cf71cbfe19ae404258c1395a7515b458dc"
+    },
+    {
+      "file": "generated/food-price-reformulated-adb-panel.csv",
+      "size": 1954,
+      "size_human": "1.9 KB",
+      "sha256": "e83193c417aa48b7695843a6fbad27cc6fc4d5bfa57eb5a5f81e85407cd98c24"
+    },
+    {
+      "file": "generated/food-price-reformulated-adb-panel.json",
+      "size": 13045,
+      "size_human": "12.7 KB",
+      "sha256": "25615ae4f88f5cd46eaaca735f606cecf89279498a51f427f9498f80439fd2fe"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "food-price-joint-qualifier",
+      "title": "Two DMCs sit at the top of both food-price-stress rankings — Lao PDR and Pakistan",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

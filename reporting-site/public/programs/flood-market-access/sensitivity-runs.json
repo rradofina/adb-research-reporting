@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-04-26T11:20:16.402469Z",
+  "program": "flood-market-access",
+  "metric": "flood-market-access-index ranking + alt-metric stability",
+  "common_top5_across_metrics": [
+    "AFG",
+    "CHN",
+    "IDN",
+    "IND"
+  ],
+  "runs": [
+    {
+      "label": "baseline_full_index",
+      "top10": [
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 48.55
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 29.98
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 28.08
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 20.86
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 18.19
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 16.94
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 15.66
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 12.4
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 10.21
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 9.11
+        }
+      ]
+    },
+    {
+      "label": "alt_flood_events_only",
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 225
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 215
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 205
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 109
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 92
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 89
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 86
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 76
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 69
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 53
+        }
+      ]
+    },
+    {
+      "label": "alt_rural_x_floods",
+      "top10": [
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 132.43
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 88.58
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 76.73
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 68.36
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 54.11
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 52.89
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 48.51
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 42.24
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 30.96
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 28.96
+        }
+      ]
+    }
+  ]
+}

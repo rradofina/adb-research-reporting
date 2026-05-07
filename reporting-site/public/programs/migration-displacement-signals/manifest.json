@@ -1,0 +1,128 @@
+{
+  "program": "migration-displacement-signals",
+  "permanent_url": "/program/migration-displacement-signals/evidence",
+  "generated_at": "2026-05-07T03:31:39.492Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1149,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-24T08:05:49.338Z",
+      "sha256": "d172ccf99306c6be147c57c608b80e3115a0e47537d3583ace5baa68810c516e",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 2463,
+      "size_human": "2.4 KB",
+      "mtime": "2026-04-27T03:37:27.293Z",
+      "sha256": "ed29bb04de2aae0ac713d5cb96b27b319a9d59035badb87ec85c0f0198ae2aa3",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 3069,
+      "size_human": "3.0 KB",
+      "mtime": "2026-04-26T02:24:24.790Z",
+      "sha256": "87623606a9d893c5855f2f0d993203f7dee8fc82f38036cea17bc2874af8b558",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 2007,
+      "size_human": "2.0 KB",
+      "mtime": "2026-04-26T02:24:36.762Z",
+      "sha256": "3deef836308176336a2c061e12601ee64aca1de233ed9aa22833b04276e846e6",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 4881,
+      "size_human": "4.8 KB",
+      "mtime": "2026-04-26T02:21:47.634Z",
+      "sha256": "62c5d1d938b32e1542652983bc444f911fa625d9b3b93958c9748cc0678eb60f",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 734,
+      "size_human": "734 B",
+      "mtime": "2026-04-26T02:24:42.092Z",
+      "sha256": "36a0541998403bc340f16d145b4604665ac2379bbe3b173ec760bd3b56b30037",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 1232,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-26T02:25:38.570Z",
+      "sha256": "d345a80423f8463fcd5271b004b7b2f53e07a6973f7b77a9af61b2d2cfef0be0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 2270,
+      "size_human": "2.2 KB",
+      "mtime": "2026-04-26T02:24:56.803Z",
+      "sha256": "13b98a02139ddbef36edd408515c62f3e85f4ded03ec1b8b7f4fe471660715b7",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 3813,
+      "size_human": "3.7 KB",
+      "mtime": "2026-04-26T02:25:18.700Z",
+      "sha256": "c7650fcac461471476839b4589cb9d61643639854d4a055b6600c1fcea4a7f4c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 2645,
+      "size_human": "2.6 KB",
+      "mtime": "2026-04-26T02:25:31.619Z",
+      "sha256": "a3072d140e7e4d116365f4abb92620f23a15f227bacc03af327c3328a2f171fb",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/migration-displacement-adb-panel.csv",
+      "size": 1639,
+      "size_human": "1.6 KB",
+      "sha256": "cb352b1210d85f5e320289ca04e44c5b46ea6d7b5352dc9258af3c8d25890c2f"
+    },
+    {
+      "file": "generated/migration-displacement-adb-panel.json",
+      "size": 77117,
+      "size_human": "75.3 KB",
+      "sha256": "3d5dc9afd1fc1ad144d454b043d4374bfd4955ffd1b6fb22e4b13796b0c8ae5d"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "emigrant-stock-corridor-concentration",
+      "title": "Five DMCs hold the top of UN DESA's emigrant-stock ranking — and the corridor concentration splits the cluster in two",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

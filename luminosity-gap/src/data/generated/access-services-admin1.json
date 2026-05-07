@@ -1,0 +1,1741 @@
+{
+  "metadata": {
+    "title": "Climate-Adjusted Access to Services - ADM1 Screening",
+    "generatedAt": "2026-04-23T07:35:28.271Z",
+    "script": "scripts/research/access-services-pipeline.ts",
+    "status": "computed_admin1_screening_index",
+    "geography": "ADM1",
+    "caveat": "This is an admin-1 screening layer. It is not yet a road-network travel-time surface, flood disruption model, or facility catchment model.",
+    "method": "Joins ADM1 boundaries, population, OSM service counts, and national climate deltas; computes a transparent service-pressure and climate-stress screen for prioritizing deeper travel-time modeling.",
+    "sources": [
+      "https://www.geoboundaries.org/api.html",
+      "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+      "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+      "https://overpass-api.de/",
+      "https://www.openstreetmap.org/copyright",
+      "https://climateknowledgeportal.worldbank.org/download-data"
+    ],
+    "populationCaveat": "Philippines ADM1 population uses official PSA OpenSTAT 2020 regional census values. Non-Philippines ADM1 population uses WorldPop 2020 polygon statistics over geoBoundaries polygons; oversized polygons are summed across clipped tiles when required by the WorldPop API area allowance.",
+    "serviceCaveat": "OSM service counts depend on mapper coverage and tagging. Counts use OSM admin areas matched by ISO3166-2 where available and fall back to bounding boxes only if the area query fails.",
+    "cacheNote": "Network responses are cached under .cache/research/access-services unless ACCESS_REFRESH=1 is set."
+  },
+  "summary": {
+    "admin1Units": 25,
+    "totalPopulation": 272452114,
+    "totalMappedServices": 72299,
+    "bboxFallbackCount": 0,
+    "highestStressAdmin": {
+      "countryName": "Bangladesh",
+      "admin1Name": "Sylhet",
+      "admin1Code": "BD-G",
+      "accessStressIndex": 75,
+      "bottleneck": "service load"
+    },
+    "populationSources": {
+      "psaOpenStatRegions": 17,
+      "worldPopStats": 8
+    }
+  },
+  "admin1": [
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-00",
+      "admin1Name": "NCR",
+      "shapeId": "36201628B69282955287113",
+      "centroid": {
+        "lat": 14.568488,
+        "lon": 121.020755
+      },
+      "bbox": {
+        "minLon": 120.90647361100002,
+        "minLat": 14.351729568000053,
+        "maxLon": 121.13503641400007,
+        "maxLat": 14.785247081000023
+      },
+      "approxAreaSqKm": 601.52,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 13484462,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 1094,
+        "education": 1859,
+        "markets": 305,
+        "total": 3258,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 12326,
+        "peoplePerSchool": 7254,
+        "peoplePerMarket": 44211,
+        "healthFacilitiesPer100k": 8.11,
+        "schoolsPer100k": 13.79,
+        "marketsPer100k": 2.26,
+        "totalMappedServicesPerMillion": 241.61,
+        "totalServicesPer1000SqKm": 5416.28,
+        "serviceLoadScore": 31.3,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 3.4,
+        "accessStressIndex": 33,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-01",
+      "admin1Name": "Ilocos Region",
+      "shapeId": "36201628B64564033926366",
+      "centroid": {
+        "lat": 17.134497,
+        "lon": 120.363161
+      },
+      "bbox": {
+        "minLon": 119.74986852900008,
+        "minLat": 15.617769571000053,
+        "maxLon": 120.97645367700011,
+        "maxLat": 18.651224168000056
+      },
+      "approxAreaSqKm": 12362.07,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 5301139,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 307,
+        "education": 3142,
+        "markets": 130,
+        "total": 3579,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T05:59:36Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 17268,
+        "peoplePerSchool": 1687,
+        "peoplePerMarket": 40778,
+        "healthFacilitiesPer100k": 5.79,
+        "schoolsPer100k": 59.27,
+        "marketsPer100k": 2.45,
+        "totalMappedServicesPerMillion": 675.14,
+        "totalServicesPer1000SqKm": 289.51,
+        "serviceLoadScore": 17.7,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 24,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-02",
+      "admin1Name": "Cagayan Valley",
+      "shapeId": "36201628B63748016552864",
+      "centroid": {
+        "lat": 18.438087,
+        "lon": 121.648745
+      },
+      "bbox": {
+        "minLon": 120.76896590800004,
+        "minLat": 15.75441853700005,
+        "maxLon": 122.52852482300011,
+        "maxLat": 21.121755276000044
+      },
+      "approxAreaSqKm": 26418.78,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 3685744,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 168,
+        "education": 2757,
+        "markets": 73,
+        "total": 2998,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 21939,
+        "peoplePerSchool": 1337,
+        "peoplePerMarket": 50490,
+        "healthFacilitiesPer100k": 4.56,
+        "schoolsPer100k": 74.8,
+        "marketsPer100k": 1.98,
+        "totalMappedServicesPerMillion": 813.4,
+        "totalServicesPer1000SqKm": 113.48,
+        "serviceLoadScore": 22.6,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 27,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-03",
+      "admin1Name": "Central Luzon",
+      "shapeId": "36201628B47630810559445",
+      "centroid": {
+        "lat": 15.458395,
+        "lon": 121.014424
+      },
+      "bbox": {
+        "minLon": 119.7858732950001,
+        "minLat": 14.407534400000031,
+        "maxLon": 122.24297540200007,
+        "maxLat": 16.50925477800007
+      },
+      "approxAreaSqKm": 21396.92,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 12422172,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 1139,
+        "education": 4336,
+        "markets": 261,
+        "total": 5736,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:00:34Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 10906,
+        "peoplePerSchool": 2865,
+        "peoplePerMarket": 47595,
+        "healthFacilitiesPer100k": 9.17,
+        "schoolsPer100k": 34.91,
+        "marketsPer100k": 2.1,
+        "totalMappedServicesPerMillion": 461.75,
+        "totalServicesPer1000SqKm": 268.08,
+        "serviceLoadScore": 16.1,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 24,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-05",
+      "admin1Name": "Bicol Region",
+      "shapeId": "36201628B13149248482964",
+      "centroid": {
+        "lat": 13.110905,
+        "lon": 123.361747
+      },
+      "bbox": {
+        "minLon": 122.29864779700006,
+        "minLat": 11.720697691000055,
+        "maxLon": 124.42484701100011,
+        "maxLat": 14.501112956000043
+      },
+      "approxAreaSqKm": 17407.39,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 6082165,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 267,
+        "education": 3930,
+        "markets": 92,
+        "total": 4289,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:00:34Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 22780,
+        "peoplePerSchool": 1548,
+        "peoplePerMarket": 66110,
+        "healthFacilitiesPer100k": 4.39,
+        "schoolsPer100k": 64.62,
+        "marketsPer100k": 1.51,
+        "totalMappedServicesPerMillion": 705.18,
+        "totalServicesPer1000SqKm": 246.39,
+        "serviceLoadScore": 26.5,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 30,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-06",
+      "admin1Name": "Western Visayas",
+      "shapeId": "36201628B91065962446027",
+      "centroid": {
+        "lat": 10.826582,
+        "lon": 122.427693
+      },
+      "bbox": {
+        "minLon": 121.282674444,
+        "minLat": 9.444193230000053,
+        "maxLon": 123.57271133200004,
+        "maxLat": 12.208970570000076
+      },
+      "approxAreaSqKm": 20116.59,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 7954723,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 308,
+        "education": 3063,
+        "markets": 170,
+        "total": 3541,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:00:34Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 25827,
+        "peoplePerSchool": 2597,
+        "peoplePerMarket": 46792,
+        "healthFacilitiesPer100k": 3.87,
+        "schoolsPer100k": 38.51,
+        "marketsPer100k": 2.14,
+        "totalMappedServicesPerMillion": 445.14,
+        "totalServicesPer1000SqKm": 176.02,
+        "serviceLoadScore": 30.1,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 32,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-07",
+      "admin1Name": "Central Visayas",
+      "shapeId": "36201628B88329767373181",
+      "centroid": {
+        "lat": 10.281317,
+        "lon": 123.617146
+      },
+      "bbox": {
+        "minLon": 122.58891781600005,
+        "minLat": 9.03836771300007,
+        "maxLon": 124.64537464900002,
+        "maxLat": 11.524265307000064
+      },
+      "approxAreaSqKm": 14348.02,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 8081988,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 323,
+        "education": 3032,
+        "markets": 182,
+        "total": 3537,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-05T22:09:02Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 25022,
+        "peoplePerSchool": 2666,
+        "peoplePerMarket": 44407,
+        "healthFacilitiesPer100k": 4,
+        "schoolsPer100k": 37.52,
+        "marketsPer100k": 2.25,
+        "totalMappedServicesPerMillion": 437.64,
+        "totalServicesPer1000SqKm": 246.51,
+        "serviceLoadScore": 29.1,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 31,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-08",
+      "admin1Name": "Eastern Visayas",
+      "shapeId": "36201628B29919658129037",
+      "centroid": {
+        "lat": 11.296366,
+        "lon": 124.985856
+      },
+      "bbox": {
+        "minLon": 124.00261824800009,
+        "minLat": 9.89520022000005,
+        "maxLon": 125.96909464600003,
+        "maxLat": 12.697531307000077
+      },
+      "approxAreaSqKm": 20919.29,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 4547150,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 338,
+        "education": 4262,
+        "markets": 165,
+        "total": 4765,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 13453,
+        "peoplePerSchool": 1067,
+        "peoplePerMarket": 27558,
+        "healthFacilitiesPer100k": 7.43,
+        "schoolsPer100k": 93.73,
+        "marketsPer100k": 3.63,
+        "totalMappedServicesPerMillion": 1047.91,
+        "totalServicesPer1000SqKm": 227.78,
+        "serviceLoadScore": 10.3,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 20,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-09",
+      "admin1Name": "Zamboanga Peninsula",
+      "shapeId": "36201628B47773222326566",
+      "centroid": {
+        "lat": 7.710012,
+        "lon": 122.770555
+      },
+      "bbox": {
+        "minLon": 121.87488798000004,
+        "minLat": 6.559809032000032,
+        "maxLon": 123.666222005,
+        "maxLat": 8.86021452500006
+      },
+      "approxAreaSqKm": 14662.9,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 3875576,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 125,
+        "education": 2621,
+        "markets": 75,
+        "total": 2821,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-05T22:09:02Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 31005,
+        "peoplePerSchool": 1479,
+        "peoplePerMarket": 51674,
+        "healthFacilitiesPer100k": 3.23,
+        "schoolsPer100k": 67.63,
+        "marketsPer100k": 1.94,
+        "totalMappedServicesPerMillion": 727.89,
+        "totalServicesPer1000SqKm": 192.39,
+        "serviceLoadScore": 32.3,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 33,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-10",
+      "admin1Name": "Northern Mindanao",
+      "shapeId": "36201628B97761566458517",
+      "centroid": {
+        "lat": 8.329328,
+        "lon": 124.498654
+      },
+      "bbox": {
+        "minLon": 123.55382672300004,
+        "minLat": 7.400869115000035,
+        "maxLon": 125.443481087,
+        "maxLat": 9.25778741800002
+      },
+      "approxAreaSqKm": 17560.43,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 5022768,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 253,
+        "education": 2566,
+        "markets": 113,
+        "total": 2932,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 19853,
+        "peoplePerSchool": 1957,
+        "peoplePerMarket": 44449,
+        "healthFacilitiesPer100k": 5.04,
+        "schoolsPer100k": 51.09,
+        "marketsPer100k": 2.25,
+        "totalMappedServicesPerMillion": 583.74,
+        "totalServicesPer1000SqKm": 166.97,
+        "serviceLoadScore": 21.7,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 27,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-11",
+      "admin1Name": "Davao Region",
+      "shapeId": "36201628B90061603712355",
+      "centroid": {
+        "lat": 6.684482,
+        "lon": 125.825877
+      },
+      "bbox": {
+        "minLon": 125.0467900320001,
+        "minLat": 5.365733267000053,
+        "maxLon": 126.60496442700003,
+        "maxLat": 8.003230631000065
+      },
+      "approxAreaSqKm": 18907.06,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 5243536,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 376,
+        "education": 2278,
+        "markets": 89,
+        "total": 2743,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-05T22:09:02Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 13946,
+        "peoplePerSchool": 2302,
+        "peoplePerMarket": 58916,
+        "healthFacilitiesPer100k": 7.17,
+        "schoolsPer100k": 43.44,
+        "marketsPer100k": 1.7,
+        "totalMappedServicesPerMillion": 523.12,
+        "totalServicesPer1000SqKm": 145.08,
+        "serviceLoadScore": 19,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 25,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-12",
+      "admin1Name": "Soccsksargen",
+      "shapeId": "36201628B76469343449086",
+      "centroid": {
+        "lat": 6.603465,
+        "lon": 124.777392
+      },
+      "bbox": {
+        "minLon": 124.01621825500001,
+        "minLat": 5.568640287000051,
+        "maxLon": 125.5385663830001,
+        "maxLat": 7.638289207000071
+      },
+      "approxAreaSqKm": 18068.75,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 4360974,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 173,
+        "education": 2175,
+        "markets": 70,
+        "total": 2418,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:02:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 25208,
+        "peoplePerSchool": 2005,
+        "peoplePerMarket": 62300,
+        "healthFacilitiesPer100k": 3.97,
+        "schoolsPer100k": 49.87,
+        "marketsPer100k": 1.61,
+        "totalMappedServicesPerMillion": 554.46,
+        "totalServicesPer1000SqKm": 133.82,
+        "serviceLoadScore": 29.8,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 32,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-13",
+      "admin1Name": "Caraga",
+      "shapeId": "36201628B99380759663697",
+      "centroid": {
+        "lat": 9.195203,
+        "lon": 125.814585
+      },
+      "bbox": {
+        "minLon": 125.16978647600001,
+        "minLat": 7.918813413000066,
+        "maxLon": 126.4593839040001,
+        "maxLat": 10.471592963000035
+      },
+      "approxAreaSqKm": 18819.42,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 2804788,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 149,
+        "education": 2087,
+        "markets": 62,
+        "total": 2298,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:02:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 18824,
+        "peoplePerSchool": 1344,
+        "peoplePerMarket": 45239,
+        "healthFacilitiesPer100k": 5.31,
+        "schoolsPer100k": 74.41,
+        "marketsPer100k": 2.21,
+        "totalMappedServicesPerMillion": 819.31,
+        "totalServicesPer1000SqKm": 122.11,
+        "serviceLoadScore": 18.8,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 25,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-14",
+      "admin1Name": "ARMM",
+      "shapeId": "36201628B49646111072560",
+      "centroid": {
+        "lat": 6.375439,
+        "lon": 121.536017
+      },
+      "bbox": {
+        "minLon": 118.06429079200007,
+        "minLat": 4.587390601000038,
+        "maxLon": 125.00774339400004,
+        "maxLat": 8.163486510000041
+      },
+      "approxAreaSqKm": 12869.37,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 4944800,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 72,
+        "education": 961,
+        "markets": 38,
+        "total": 1071,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:02:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 68678,
+        "peoplePerSchool": 5145,
+        "peoplePerMarket": 130126,
+        "healthFacilitiesPer100k": 1.46,
+        "schoolsPer100k": 19.43,
+        "marketsPer100k": 0.77,
+        "totalMappedServicesPerMillion": 216.59,
+        "totalServicesPer1000SqKm": 83.22,
+        "serviceLoadScore": 74.8,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 13.4,
+        "accessStressIndex": 59,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-15",
+      "admin1Name": "CAR",
+      "shapeId": "36201628B92932511992503",
+      "centroid": {
+        "lat": 17.362016,
+        "lon": 121.045923
+      },
+      "bbox": {
+        "minLon": 120.44461437400003,
+        "minLat": 16.18025614000004,
+        "maxLon": 121.64723067800003,
+        "maxLat": 18.54377499800006
+      },
+      "approxAreaSqKm": 18260.91,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 1797660,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 146,
+        "education": 1938,
+        "markets": 56,
+        "total": 2140,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:02:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:18:12Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 12313,
+        "peoplePerSchool": 928,
+        "peoplePerMarket": 32101,
+        "healthFacilitiesPer100k": 8.12,
+        "schoolsPer100k": 107.81,
+        "marketsPer100k": 3.12,
+        "totalMappedServicesPerMillion": 1190.44,
+        "totalServicesPer1000SqKm": 117.19,
+        "serviceLoadScore": 9.8,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 20,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-40",
+      "admin1Name": "Calabarzon",
+      "shapeId": "36201628B13373758884154",
+      "centroid": {
+        "lat": 14.189429,
+        "lon": 121.639943
+      },
+      "bbox": {
+        "minLon": 120.48736857800009,
+        "minLat": 13.161969906000024,
+        "maxLon": 122.79251799700012,
+        "maxLat": 15.216888696000069
+      },
+      "approxAreaSqKm": 15908.31,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 16195042,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 1004,
+        "education": 4599,
+        "markets": 307,
+        "total": 5910,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:03:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 16131,
+        "peoplePerSchool": 3521,
+        "peoplePerMarket": 52753,
+        "healthFacilitiesPer100k": 6.2,
+        "schoolsPer100k": 28.4,
+        "marketsPer100k": 1.9,
+        "totalMappedServicesPerMillion": 364.93,
+        "totalServicesPer1000SqKm": 371.5,
+        "serviceLoadScore": 24.2,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 28,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "countryName": "Philippines",
+      "admin1Code": "PH-41",
+      "admin1Name": "Mimaropa",
+      "shapeId": "36201628B45254163682963",
+      "centroid": {
+        "lat": 10.702912,
+        "lon": 118.488276
+      },
+      "bbox": {
+        "minLon": 114.27790168600006,
+        "minLat": 7.506706648000034,
+        "maxLon": 122.69865023600005,
+        "maxLat": 13.899117207000074
+      },
+      "approxAreaSqKm": 26888.6,
+      "boundary": {
+        "boundaryID": "PHL-ADM1-36201628",
+        "boundaryYearRepresented": "2020",
+        "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+        "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/41af8f1/releaseData/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 3228558,
+        "sourceLabel": "Philippine Statistics Authority, 2020 Census of Population and Housing",
+        "sourceUrl": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+        "method": "Official PSA OpenSTAT 2020 Census total population by region, both sexes, all ages."
+      },
+      "services": {
+        "health": 159,
+        "education": 2294,
+        "markets": 100,
+        "total": 2553,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:03:45Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 28.9,
+        "futureTasmaxC": 29.94,
+        "heatDeltaC": 1.04,
+        "baselinePrecipMm": 2477.61,
+        "futurePrecipPercentOfBaseline": 105.23,
+        "precipChangePct": 5.23,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 20305,
+        "peoplePerSchool": 1407,
+        "peoplePerMarket": 32286,
+        "healthFacilitiesPer100k": 4.92,
+        "schoolsPer100k": 71.05,
+        "marketsPer100k": 3.1,
+        "totalMappedServicesPerMillion": 790.76,
+        "totalServicesPer1000SqKm": 94.95,
+        "serviceLoadScore": 18.5,
+        "heatStressScore": 52,
+        "rainfallStressScore": 34.9,
+        "osmCompletenessRiskScore": 0,
+        "accessStressIndex": 25,
+        "bottleneck": "heat stress"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-A",
+      "admin1Name": "Barisal",
+      "shapeId": "32408957B31852228482374",
+      "centroid": {
+        "lat": 22.416082,
+        "lon": 90.432653
+      },
+      "bbox": {
+        "minLon": 89.87499609461503,
+        "minLat": 21.786817021527497,
+        "maxLon": 90.99031032040165,
+        "maxLat": 23.0453466627298
+      },
+      "approxAreaSqKm": 9591.23,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 7764800,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 8 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 126,
+        "education": 887,
+        "markets": 435,
+        "total": 1448,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:04:43Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 61625,
+        "peoplePerSchool": 8754,
+        "peoplePerMarket": 17850,
+        "healthFacilitiesPer100k": 1.62,
+        "schoolsPer100k": 11.42,
+        "marketsPer100k": 5.6,
+        "totalMappedServicesPerMillion": 186.48,
+        "totalServicesPer1000SqKm": 150.97,
+        "serviceLoadScore": 69.9,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 25.4,
+        "accessStressIndex": 59,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-B",
+      "admin1Name": "Chittagong",
+      "shapeId": "32408957B94023193097291",
+      "centroid": {
+        "lat": 22.432932,
+        "lon": 91.633983
+      },
+      "bbox": {
+        "minLon": 90.57710978506611,
+        "minLat": 20.621471897086508,
+        "maxLon": 92.69085711810777,
+        "maxLat": 24.244391764102318
+      },
+      "approxAreaSqKm": 30567.93,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 30803202,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 8 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 467,
+        "education": 1371,
+        "markets": 768,
+        "total": 2606,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 65960,
+        "peoplePerSchool": 22468,
+        "peoplePerMarket": 40108,
+        "healthFacilitiesPer100k": 1.52,
+        "schoolsPer100k": 4.45,
+        "marketsPer100k": 2.49,
+        "totalMappedServicesPerMillion": 84.6,
+        "totalServicesPer1000SqKm": 85.25,
+        "serviceLoadScore": 83.7,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 66.2,
+        "accessStressIndex": 71,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-C",
+      "admin1Name": "Dhaka",
+      "shapeId": "32408957B77718829177955",
+      "centroid": {
+        "lat": 23.812968,
+        "lon": 90.256068
+      },
+      "bbox": {
+        "minLon": 89.25526666292177,
+        "minLat": 22.834360942228273,
+        "maxLon": 91.25687007700935,
+        "maxLat": 24.791575504241223
+      },
+      "approxAreaSqKm": 20963.44,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 45718238,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 1306,
+        "education": 2591,
+        "markets": 985,
+        "total": 4882,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:05:41Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 35006,
+        "peoplePerSchool": 17645,
+        "peoplePerMarket": 46414,
+        "healthFacilitiesPer100k": 2.86,
+        "schoolsPer100k": 5.67,
+        "marketsPer100k": 2.15,
+        "totalMappedServicesPerMillion": 106.78,
+        "totalServicesPer1000SqKm": 232.88,
+        "serviceLoadScore": 69.7,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 57.3,
+        "accessStressIndex": 62,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-D",
+      "admin1Name": "Khulna",
+      "shapeId": "32408957B3859287816056",
+      "centroid": {
+        "lat": 22.90554,
+        "lon": 89.268974
+      },
+      "bbox": {
+        "minLon": 88.55648727850598,
+        "minLat": 21.62259470373766,
+        "maxLon": 89.98146111898365,
+        "maxLat": 24.188484810306306
+      },
+      "approxAreaSqKm": 21551.14,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 16525524,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population summed over 2 polygon parts from the geoBoundaries ADM1 MultiPolygon."
+      },
+      "services": {
+        "health": 376,
+        "education": 1101,
+        "markets": 298,
+        "total": 1775,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-23T06:06:42Z",
+        "osmAreasTimestamp": "2026-04-23T03:19:10Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 43951,
+        "peoplePerSchool": 15010,
+        "peoplePerMarket": 55455,
+        "healthFacilitiesPer100k": 2.28,
+        "schoolsPer100k": 6.66,
+        "marketsPer100k": 1.8,
+        "totalMappedServicesPerMillion": 107.41,
+        "totalServicesPer1000SqKm": 82.36,
+        "serviceLoadScore": 79.9,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 57,
+        "accessStressIndex": 68,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-E",
+      "admin1Name": "Rajshani",
+      "shapeId": "32408957B27409320841034",
+      "centroid": {
+        "lat": 24.515779,
+        "lon": 88.919498
+      },
+      "bbox": {
+        "minLon": 88.02077967100234,
+        "minLat": 23.76021713551927,
+        "maxLon": 89.81821684189885,
+        "maxLat": 25.271341338488412
+      },
+      "approxAreaSqKm": 18551.25,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 20812822,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 362,
+        "education": 765,
+        "markets": 451,
+        "total": 1578,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T00:26:00Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 57494,
+        "peoplePerSchool": 27206,
+        "peoplePerMarket": 46148,
+        "healthFacilitiesPer100k": 1.74,
+        "schoolsPer100k": 3.68,
+        "marketsPer100k": 2.17,
+        "totalMappedServicesPerMillion": 75.82,
+        "totalServicesPer1000SqKm": 85.06,
+        "serviceLoadScore": 84.6,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 69.7,
+        "accessStressIndex": 72,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-F",
+      "admin1Name": "Rangpur",
+      "shapeId": "32408957B77489436868882",
+      "centroid": {
+        "lat": 25.824917,
+        "lon": 88.980028
+      },
+      "bbox": {
+        "minLon": 88.07737607821184,
+        "minLat": 25.028846405821753,
+        "maxLon": 89.8826791439746,
+        "maxLat": 26.620987730128093
+      },
+      "approxAreaSqKm": 16571.72,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 17931871,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 327,
+        "education": 800,
+        "markets": 362,
+        "total": 1489,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-11T23:06:11Z",
+        "osmAreasTimestamp": "2026-04-10T09:26:16Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 54838,
+        "peoplePerSchool": 22415,
+        "peoplePerMarket": 49536,
+        "healthFacilitiesPer100k": 1.82,
+        "schoolsPer100k": 4.46,
+        "marketsPer100k": 2.02,
+        "totalMappedServicesPerMillion": 83.04,
+        "totalServicesPer1000SqKm": 89.85,
+        "serviceLoadScore": 85.1,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 66.8,
+        "accessStressIndex": 72,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-G",
+      "admin1Name": "Sylhet",
+      "shapeId": "32408957B58397560032916",
+      "centroid": {
+        "lat": 24.604098,
+        "lon": 91.728333
+      },
+      "bbox": {
+        "minLon": 90.96695199121308,
+        "minLat": 23.991953764397294,
+        "maxLon": 92.48971499701167,
+        "maxLat": 25.216241568771977
+      },
+      "approxAreaSqKm": 12262.19,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 11985738,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 127,
+        "education": 521,
+        "markets": 158,
+        "total": 806,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-06T00:26:00Z",
+        "osmAreasTimestamp": "2026-04-05T02:54:04Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 94376,
+        "peoplePerSchool": 23005,
+        "peoplePerMarket": 75859,
+        "healthFacilitiesPer100k": 1.06,
+        "schoolsPer100k": 4.35,
+        "marketsPer100k": 1.32,
+        "totalMappedServicesPerMillion": 67.25,
+        "totalServicesPer1000SqKm": 65.73,
+        "serviceLoadScore": 89,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 73.1,
+        "accessStressIndex": 75,
+        "bottleneck": "service load"
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "countryName": "Bangladesh",
+      "admin1Code": "BD-H",
+      "admin1Name": "Mymensingh",
+      "shapeId": "32408957B83626866084602",
+      "centroid": {
+        "lat": 24.836244,
+        "lon": 90.460411
+      },
+      "bbox": {
+        "minLon": 89.66120421439649,
+        "minLat": 24.281602254328106,
+        "maxLon": 91.25961811544562,
+        "maxLat": 25.390885621165978
+      },
+      "approxAreaSqKm": 10465.03,
+      "boundary": {
+        "boundaryID": "BGD-ADM1-32408957",
+        "boundaryYearRepresented": "2015",
+        "boundarySource": "geoBoundaries, Wikimedia Commons",
+        "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "geometrySourceUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1_simplified.geojson"
+      },
+      "population": {
+        "year": 2020,
+        "value": 11876674,
+        "sourceLabel": "WorldPop Global Project population count",
+        "sourceUrl": "https://api.worldpop.org/v1/services/stats?dataset=wpgppop&year=2020",
+        "method": "WorldPop stats API total_population over the geoBoundaries ADM1 polygon."
+      },
+      "services": {
+        "health": 207,
+        "education": 642,
+        "markets": 277,
+        "total": 1126,
+        "sourceUrl": "https://overpass.kumi.systems/api/interpreter",
+        "queryMode": "osm_area_iso3166_2",
+        "osmTimestamp": "2026-04-21T17:01:53Z",
+        "osmAreasTimestamp": "2026-04-21T17:01:53Z"
+      },
+      "climate": {
+        "baselineTasmaxC": 29.88,
+        "futureTasmaxC": 30.83,
+        "heatDeltaC": 0.95,
+        "baselinePrecipMm": 2266.32,
+        "futurePrecipPercentOfBaseline": 108.24,
+        "precipChangePct": 8.24,
+        "sourceUrl": "https://climateknowledgeportal.worldbank.org/download-data"
+      },
+      "metrics": {
+        "peoplePerHealthFacility": 57375,
+        "peoplePerSchool": 18499,
+        "peoplePerMarket": 42876,
+        "healthFacilitiesPer100k": 1.74,
+        "schoolsPer100k": 5.41,
+        "marketsPer100k": 2.33,
+        "totalMappedServicesPerMillion": 94.81,
+        "totalServicesPer1000SqKm": 107.6,
+        "serviceLoadScore": 84.1,
+        "heatStressScore": 47.5,
+        "rainfallStressScore": 54.9,
+        "osmCompletenessRiskScore": 62.1,
+        "accessStressIndex": 71,
+        "bottleneck": "service load"
+      }
+    }
+  ]
+}

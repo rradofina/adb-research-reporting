@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-04-29T16:35:33Z",
+  "program": "public-service-data-quality",
+  "country": "Philippines",
+  "source": {
+    "open_buildings_tiles": "https://openbuildings-public-dot-gweb-research.uw.r.appspot.com/public/tiles.geojson",
+    "open_buildings_thresholds": "https://storage.googleapis.com/open-buildings-data/v3/score_thresholds_s2_level_4.csv",
+    "boundary": "https://data.humdata.org/dataset/caf116df-f984-4deb-85ca-41b349d3f313/resource/314cbaea-c7a0-4ce9-a4ea-e5af2a788ac1/download/phl_adm_psa_namria_20231106_gdb.gdb.zip",
+    "boundary_source": "HDX/OCHA Philippines subnational administrative boundaries, PSA/NAMRIA, validOn 2023-11-06"
+  },
+  "method": "Intersect Google Open Buildings V3 tile polygons with the PSA/NAMRIA Philippines ADM0 boundary; use point CSVs for city/municipality settlement denominators.",
+  "tiles": [
+    {
+      "tile_id": "323",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/323_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/323_buildings.csv.gz",
+      "polygon_size_mb_catalog": 165.0,
+      "point_size_mb_head": 41.38,
+      "confidence_threshold_80_precision": 0.784,
+      "confidence_threshold_85_precision": 0.845,
+      "confidence_threshold_90_precision": 0.92,
+      "building_count": 1675144,
+      "building_count_85_precision": 556650,
+      "building_count_90_precision": 81490,
+      "num_samples": 4340
+    },
+    {
+      "tile_id": "325",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/325_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/325_buildings.csv.gz",
+      "polygon_size_mb_catalog": 270.8,
+      "point_size_mb_head": 70.29,
+      "confidence_threshold_80_precision": 0.696,
+      "confidence_threshold_85_precision": 0.75,
+      "confidence_threshold_90_precision": 0.818,
+      "building_count": 2864942,
+      "building_count_85_precision": 1682659,
+      "building_count_90_precision": 766759,
+      "num_samples": 4551
+    },
+    {
+      "tile_id": "32f",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/32f_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/32f_buildings.csv.gz",
+      "polygon_size_mb_catalog": 491.5,
+      "point_size_mb_head": 127.14,
+      "confidence_threshold_80_precision": 0.716,
+      "confidence_threshold_85_precision": 0.766,
+      "confidence_threshold_90_precision": 0.83,
+      "building_count": 5189632,
+      "building_count_85_precision": 2564393,
+      "building_count_90_precision": 1082048,
+      "num_samples": 3361
+    },
+    {
+      "tile_id": "331",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/331_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/331_buildings.csv.gz",
+      "polygon_size_mb_catalog": 201.8,
+      "point_size_mb_head": 52.93,
+      "confidence_threshold_80_precision": 0.738,
+      "confidence_threshold_85_precision": 0.776,
+      "confidence_threshold_90_precision": 0.824,
+      "building_count": 2166371,
+      "building_count_85_precision": 879739,
+      "building_count_90_precision": 429653,
+      "num_samples": 2102
+    },
+    {
+      "tile_id": "339",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/339_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/339_buildings.csv.gz",
+      "polygon_size_mb_catalog": 1433.6,
+      "point_size_mb_head": 377.62,
+      "confidence_threshold_80_precision": 0.763,
+      "confidence_threshold_85_precision": 0.817,
+      "confidence_threshold_90_precision": 0.874,
+      "building_count": 15325418,
+      "building_count_85_precision": 4666004,
+      "building_count_90_precision": 1588999,
+      "num_samples": 10592
+    },
+    {
+      "tile_id": "33b",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/33b_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/33b_buildings.csv.gz",
+      "polygon_size_mb_catalog": 1019.2,
+      "point_size_mb_head": 270.61,
+      "confidence_threshold_80_precision": 0.754,
+      "confidence_threshold_85_precision": 0.799,
+      "confidence_threshold_90_precision": 0.849,
+      "building_count": 10854108,
+      "building_count_85_precision": 3723338,
+      "building_count_90_precision": 1679313,
+      "num_samples": 6564
+    },
+    {
+      "tile_id": "33d",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/33d_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/33d_buildings.csv.gz",
+      "polygon_size_mb_catalog": 3.6,
+      "point_size_mb_head": 0.89,
+      "confidence_threshold_80_precision": 0.668,
+      "confidence_threshold_85_precision": 0.668,
+      "confidence_threshold_90_precision": 0.668,
+      "building_count": 38837,
+      "building_count_85_precision": 36595,
+      "building_count_90_precision": 36595,
+      "num_samples": 49
+    },
+    {
+      "tile_id": "347",
+      "polygon_url": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip/347_buildings.csv.gz",
+      "point_url": "https://storage.googleapis.com/open-buildings-data/v3/points_s2_level_4_gzip/347_buildings.csv.gz",
+      "polygon_size_mb_catalog": 0.7,
+      "point_size_mb_head": 0.17
+    }
+  ],
+  "totals": {
+    "tile_count": 8,
+    "polygon_size_mb_catalog": 3586.2,
+    "point_size_mb_head": 941.03,
+    "building_count_catalog": 38114452,
+    "building_count_85_precision_catalog": 14109378,
+    "building_count_90_precision_catalog": 5664857
+  },
+  "non_claim": "Tile-level catalog counts include areas outside the Philippines where S2 tiles cross borders; downstream scripts assign points to PSA/NAMRIA ADM3 polygons."
+}

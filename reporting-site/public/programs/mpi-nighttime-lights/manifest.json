@@ -1,0 +1,19 @@
+{
+  "program": "mpi-nighttime-lights",
+  "permanent_url": "/program/mpi-nighttime-lights/evidence",
+  "generated_at": "2026-05-07T03:31:39.831Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 5194,
+      "size_human": "5.1 KB",
+      "mtime": "2026-04-24T10:05:29.107Z",
+      "sha256": "d5c013fa7762093c3622b3a61ed801c11af243a860a6b8c3b0f5437270d2869c",
+      "attestation_chain": null
+    }
+  ],
+  "generated_files": [],
+  "articles": []
+}

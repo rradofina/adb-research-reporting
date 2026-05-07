@@ -1,0 +1,3117 @@
+{
+  "program": "migration-displacement-signals",
+  "claim_scope": "Hypothesis-stage: structural migrant stock signal. UN DESA 2024 snapshot.",
+  "framing_rule": "Signal of mobility pressure, not country fragility.",
+  "sources": {
+    "undesa": {
+      "name": "UN DESA International Migrant Stock 2024",
+      "url": "https://www.un.org/development/desa/pd/content/international-migrant-stock",
+      "license": "CC BY 3.0 IGO",
+      "retrieved_at": "2026-04-25",
+      "year_used": 2024
+    }
+  },
+  "rows": [
+    {
+      "iso3": "IND",
+      "country": "India",
+      "immigrant_stock_2024": 4346401,
+      "emigrant_stock_2024": 18533845,
+      "net_migrant_stock_2024": -14187444,
+      "top_origins": [
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 2293959
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 768138
+        },
+        {
+          "origin_code": 524,
+          "origin_iso3": "NPL",
+          "origin_name": "Nepal",
+          "stock": 663518
+        },
+        {
+          "origin_code": 144,
+          "origin_iso3": "LKA",
+          "origin_name": "Sri Lanka",
+          "stock": 253869
+        },
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 132598
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 784,
+          "dest_iso3": null,
+          "dest_name": "United Arab Emirates",
+          "stock": 3248545
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 3165238
+        },
+        {
+          "dest_code": 682,
+          "dest_iso3": null,
+          "dest_name": "Saudi Arabia",
+          "stock": 1953496
+        },
+        {
+          "dest_code": 586,
+          "dest_iso3": "PAK",
+          "dest_name": "Pakistan",
+          "stock": 1597134
+        },
+        {
+          "dest_code": 414,
+          "dest_iso3": null,
+          "dest_name": "Kuwait",
+          "stock": 1231094
+        }
+      ]
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "immigrant_stock_2024": 1565013,
+      "emigrant_stock_2024": 11701619,
+      "net_migrant_stock_2024": -10136606,
+      "top_origins": [
+        {
+          "origin_code": 344,
+          "origin_iso3": "HKG",
+          "origin_name": "China, Hong Kong SAR",
+          "stock": 421605
+        },
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 367052
+        },
+        {
+          "origin_code": 158,
+          "origin_iso3": "TWN",
+          "origin_name": "China, Taiwan Province of China",
+          "stock": 170422
+        },
+        {
+          "origin_code": 704,
+          "origin_iso3": "VNM",
+          "origin_name": "Viet Nam",
+          "stock": 88254
+        },
+        {
+          "origin_code": 410,
+          "origin_iso3": null,
+          "origin_name": "Republic of Korea",
+          "stock": 65073
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 344,
+          "dest_iso3": "HKG",
+          "dest_name": "China, Hong Kong SAR",
+          "stock": 2490414
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 2488775
+        },
+        {
+          "dest_code": 392,
+          "dest_iso3": null,
+          "dest_name": "Japan",
+          "stock": 809893
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 771973
+        },
+        {
+          "dest_code": 410,
+          "dest_iso3": null,
+          "dest_name": "Republic of Korea",
+          "stock": 756684
+        }
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "immigrant_stock_2024": 2460253,
+      "emigrant_stock_2024": 8706947,
+      "net_migrant_stock_2024": -6246694,
+      "top_origins": [
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 1246705
+        },
+        {
+          "origin_code": 458,
+          "origin_iso3": "MYS",
+          "origin_name": "Malaysia",
+          "stock": 274253
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 219299
+        },
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 205947
+        },
+        {
+          "origin_code": 418,
+          "origin_iso3": "LAO",
+          "origin_name": "Lao People's Democratic Republic",
+          "stock": 118769
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 682,
+          "dest_iso3": null,
+          "dest_name": "Saudi Arabia",
+          "stock": 2362680
+        },
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 2293959
+        },
+        {
+          "dest_code": 784,
+          "dest_iso3": null,
+          "dest_name": "United Arab Emirates",
+          "stock": 1024949
+        },
+        {
+          "dest_code": 512,
+          "dest_iso3": null,
+          "dest_name": "Oman",
+          "stock": 737087
+        },
+        {
+          "dest_code": 414,
+          "dest_iso3": null,
+          "dest_name": "Kuwait",
+          "stock": 406077
+        }
+      ]
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "immigrant_stock_2024": 72948,
+      "emigrant_stock_2024": 7528994,
+      "net_migrant_stock_2024": -7456046,
+      "top_origins": [
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 69788
+        },
+        {
+          "origin_code": 762,
+          "origin_iso3": "TJK",
+          "origin_name": "Tajikistan",
+          "stock": 3011
+        },
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 149
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 364,
+          "dest_iso3": null,
+          "dest_name": "Iran (Islamic Republic of)",
+          "stock": 3752317
+        },
+        {
+          "dest_code": 586,
+          "dest_iso3": "PAK",
+          "dest_name": "Pakistan",
+          "stock": 1923453
+        },
+        {
+          "dest_code": 276,
+          "dest_iso3": null,
+          "dest_name": "Germany",
+          "stock": 358767
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 332053
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 199252
+        }
+      ]
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "immigrant_stock_2024": 68921,
+      "emigrant_stock_2024": 6988383,
+      "net_migrant_stock_2024": -6919462,
+      "top_origins": [
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 27676
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 19801
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 6469
+        },
+        {
+          "origin_code": 410,
+          "origin_iso3": null,
+          "origin_name": "Republic of Korea",
+          "stock": 4520
+        },
+        {
+          "origin_code": 392,
+          "origin_iso3": null,
+          "origin_name": "Japan",
+          "stock": 4492
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 2263697
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 835779
+        },
+        {
+          "dest_code": 682,
+          "dest_iso3": null,
+          "dest_name": "Saudi Arabia",
+          "stock": 755432
+        },
+        {
+          "dest_code": 784,
+          "dest_iso3": null,
+          "dest_name": "United Arab Emirates",
+          "stock": 528527
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 356833
+        }
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "immigrant_stock_2024": 3529752,
+      "emigrant_stock_2024": 6915057,
+      "net_migrant_stock_2024": -3385305,
+      "top_origins": [
+        {
+          "origin_code": 4,
+          "origin_iso3": "AFG",
+          "origin_name": "Afghanistan",
+          "stock": 1923453
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 1597134
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 3568
+        },
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 2297
+        },
+        {
+          "origin_code": 364,
+          "origin_iso3": null,
+          "origin_name": "Iran (Islamic Republic of)",
+          "stock": 2148
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 682,
+          "dest_iso3": null,
+          "dest_name": "Saudi Arabia",
+          "stock": 1937044
+        },
+        {
+          "dest_code": 784,
+          "dest_iso3": null,
+          "dest_name": "United Arab Emirates",
+          "stock": 932356
+        },
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 768138
+        },
+        {
+          "dest_code": 826,
+          "dest_iso3": null,
+          "dest_name": "United Kingdom*",
+          "stock": 703309
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 452748
+        }
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "immigrant_stock_2024": 68866,
+      "emigrant_stock_2024": 4320462,
+      "net_migrant_stock_2024": -4251596,
+      "top_origins": [
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 36301
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 28256
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 3207
+        },
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 1102
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 764,
+          "dest_iso3": "THA",
+          "dest_name": "Thailand",
+          "stock": 1708695
+        },
+        {
+          "dest_code": 50,
+          "dest_iso3": "BGD",
+          "dest_name": "Bangladesh",
+          "stock": 1246705
+        },
+        {
+          "dest_code": 156,
+          "dest_iso3": "CHN",
+          "dest_name": "China",
+          "stock": 367052
+        },
+        {
+          "dest_code": 458,
+          "dest_iso3": "MYS",
+          "dest_name": "Malaysia",
+          "stock": 308095
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 199585
+        }
+      ]
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "immigrant_stock_2024": 418736,
+      "emigrant_stock_2024": 3745148,
+      "net_migrant_stock_2024": -3326412,
+      "top_origins": [
+        {
+          "origin_code": 458,
+          "origin_iso3": "MYS",
+          "origin_name": "Malaysia",
+          "stock": 161013
+        },
+        {
+          "origin_code": 626,
+          "origin_iso3": "TLS",
+          "origin_name": "Timor-Leste",
+          "stock": 95603
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 82568
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 22758
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 10481
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 458,
+          "dest_iso3": "MYS",
+          "dest_name": "Malaysia",
+          "stock": 1761502
+        },
+        {
+          "dest_code": 784,
+          "dest_iso3": null,
+          "dest_name": "United Arab Emirates",
+          "stock": 298351
+        },
+        {
+          "dest_code": 158,
+          "dest_iso3": "TWN",
+          "dest_name": "China, Taiwan Province of China",
+          "stock": 292830
+        },
+        {
+          "dest_code": 50,
+          "dest_iso3": "BGD",
+          "dest_name": "Bangladesh",
+          "stock": 205947
+        },
+        {
+          "dest_code": 702,
+          "dest_iso3": null,
+          "dest_name": "Singapore",
+          "stock": 180437
+        }
+      ]
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "immigrant_stock_2024": 195821,
+      "emigrant_stock_2024": 3693537,
+      "net_migrant_stock_2024": -3497716,
+      "top_origins": [
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 83887
+        },
+        {
+          "origin_code": 410,
+          "origin_iso3": null,
+          "origin_name": "Republic of Korea",
+          "stock": 48707
+        },
+        {
+          "origin_code": 158,
+          "origin_iso3": "TWN",
+          "origin_name": "China, Taiwan Province of China",
+          "stock": 35177
+        },
+        {
+          "origin_code": 392,
+          "origin_iso3": null,
+          "origin_name": "Japan",
+          "stock": 27060
+        },
+        {
+          "origin_code": 116,
+          "origin_iso3": "KHM",
+          "origin_name": "Cambodia",
+          "stock": 990
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 1434631
+        },
+        {
+          "dest_code": 392,
+          "dest_iso3": null,
+          "dest_name": "Japan",
+          "stock": 589874
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 294435
+        },
+        {
+          "dest_code": 158,
+          "dest_iso3": "TWN",
+          "dest_name": "China, Taiwan Province of China",
+          "stock": 263078
+        },
+        {
+          "dest_code": 410,
+          "dest_iso3": null,
+          "dest_name": "Republic of Korea",
+          "stock": 260609
+        }
+      ]
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "immigrant_stock_2024": 1985693,
+      "emigrant_stock_2024": 2796572,
+      "net_migrant_stock_2024": -810879,
+      "top_origins": [
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 744161
+        },
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 552258
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 196398
+        },
+        {
+          "origin_code": 795,
+          "origin_iso3": "TKM",
+          "origin_name": "Turkmenistan",
+          "stock": 117117
+        },
+        {
+          "origin_code": 417,
+          "origin_iso3": "KGZ",
+          "origin_name": "Kyrgyzstan",
+          "stock": 100242
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 1321004
+        },
+        {
+          "dest_code": 276,
+          "dest_iso3": null,
+          "dest_name": "Germany",
+          "stock": 896268
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 228982
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 84823
+        },
+        {
+          "dest_code": 112,
+          "dest_iso3": null,
+          "dest_name": "Belarus",
+          "stock": 68126
+        }
+      ]
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "immigrant_stock_2024": 458924,
+      "emigrant_stock_2024": 2637195,
+      "net_migrant_stock_2024": -2178271,
+      "top_origins": [
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 412190
+        },
+        {
+          "origin_code": 64,
+          "origin_iso3": "BTN",
+          "origin_name": "Bhutan",
+          "stock": 26552
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 18757
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 1170
+        },
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 214
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 663518
+        },
+        {
+          "dest_code": 458,
+          "dest_iso3": "MYS",
+          "dest_name": "Malaysia",
+          "stock": 502596
+        },
+        {
+          "dest_code": 682,
+          "dest_iso3": null,
+          "dest_name": "Saudi Arabia",
+          "stock": 297561
+        },
+        {
+          "dest_code": 634,
+          "dest_iso3": null,
+          "dest_name": "Qatar",
+          "stock": 266580
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 264317
+        }
+      ]
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "immigrant_stock_2024": 3566509,
+      "emigrant_stock_2024": 2433875,
+      "net_migrant_stock_2024": 1132634,
+      "top_origins": [
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 1761502
+        },
+        {
+          "origin_code": 524,
+          "origin_iso3": "NPL",
+          "origin_name": "Nepal",
+          "stock": 502596
+        },
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 308095
+        },
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 282437
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 255520
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 702,
+          "dest_iso3": null,
+          "dest_name": "Singapore",
+          "stock": 1553249
+        },
+        {
+          "dest_code": 50,
+          "dest_iso3": "BGD",
+          "dest_name": "Bangladesh",
+          "stock": 274253
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 181202
+        },
+        {
+          "dest_code": 360,
+          "dest_iso3": "IDN",
+          "dest_name": "Indonesia",
+          "stock": 161013
+        },
+        {
+          "dest_code": 826,
+          "dest_iso3": null,
+          "dest_name": "United Kingdom*",
+          "stock": 66932
+        }
+      ]
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "immigrant_stock_2024": 1079134,
+      "emigrant_stock_2024": 2114480,
+      "net_migrant_stock_2024": -1035346,
+      "top_origins": [
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 865767
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 122908
+        },
+        {
+          "origin_code": 112,
+          "origin_iso3": null,
+          "origin_name": "Belarus",
+          "stock": 26170
+        },
+        {
+          "origin_code": 31,
+          "origin_iso3": "AZE",
+          "origin_name": "Azerbaijan",
+          "stock": 20079
+        },
+        {
+          "origin_code": 398,
+          "origin_iso3": "KAZ",
+          "origin_name": "Kazakhstan",
+          "stock": 13013
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 778041
+        },
+        {
+          "dest_code": 398,
+          "dest_iso3": "KAZ",
+          "dest_name": "Kazakhstan",
+          "stock": 744161
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 226478
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 128061
+        },
+        {
+          "dest_code": 795,
+          "dest_iso3": "TKM",
+          "dest_name": "Turkmenistan",
+          "stock": 66605
+        }
+      ]
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "immigrant_stock_2024": 38716,
+      "emigrant_stock_2024": 1492103,
+      "net_migrant_stock_2024": -1453387,
+      "top_origins": [
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 10957
+        },
+        {
+          "origin_code": 380,
+          "origin_iso3": null,
+          "origin_name": "Italy",
+          "stock": 5226
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 2509
+        },
+        {
+          "origin_code": 414,
+          "origin_iso3": null,
+          "origin_name": "Kuwait",
+          "stock": 1772
+        },
+        {
+          "origin_code": 784,
+          "origin_iso3": null,
+          "origin_name": "United Arab Emirates",
+          "stock": 1707
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 253869
+        },
+        {
+          "dest_code": 634,
+          "dest_iso3": null,
+          "dest_name": "Qatar",
+          "stock": 161747
+        },
+        {
+          "dest_code": 826,
+          "dest_iso3": null,
+          "dest_name": "United Kingdom*",
+          "stock": 160178
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 156876
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 140870
+        }
+      ]
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "immigrant_stock_2024": 3028860,
+      "emigrant_stock_2024": 1240250,
+      "net_migrant_stock_2024": 1788610,
+      "top_origins": [
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 2490414
+        },
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 145244
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 127244
+        },
+        {
+          "origin_code": 446,
+          "origin_iso3": null,
+          "origin_name": "China, Macao SAR",
+          "stock": 76947
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 20710
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 156,
+          "dest_iso3": "CHN",
+          "dest_name": "China",
+          "stock": 421605
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 268915
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 204515
+        },
+        {
+          "dest_code": 826,
+          "dest_iso3": null,
+          "dest_name": "United Kingdom*",
+          "stock": 142011
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 116517
+        }
+      ]
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "immigrant_stock_2024": 2906155,
+      "emigrant_stock_2024": 1178757,
+      "net_migrant_stock_2024": 1727398,
+      "top_origins": [
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 1708695
+        },
+        {
+          "origin_code": 116,
+          "origin_iso3": "KHM",
+          "origin_name": "Cambodia",
+          "stock": 375635
+        },
+        {
+          "origin_code": 418,
+          "origin_iso3": "LAO",
+          "origin_name": "Lao People's Democratic Republic",
+          "stock": 285819
+        },
+        {
+          "origin_code": 826,
+          "origin_iso3": null,
+          "origin_name": "United Kingdom*",
+          "stock": 116582
+        },
+        {
+          "origin_code": 392,
+          "origin_iso3": null,
+          "origin_name": "Japan",
+          "stock": 104515
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 307741
+        },
+        {
+          "dest_code": 410,
+          "dest_iso3": null,
+          "dest_name": "Republic of Korea",
+          "stock": 199861
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 109845
+        },
+        {
+          "dest_code": 158,
+          "dest_iso3": "TWN",
+          "dest_name": "China, Taiwan Province of China",
+          "stock": 80032
+        },
+        {
+          "dest_code": 458,
+          "dest_iso3": "MYS",
+          "dest_name": "Malaysia",
+          "stock": 70718
+        }
+      ]
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "immigrant_stock_2024": 1131146,
+      "emigrant_stock_2024": 832507,
+      "net_migrant_stock_2024": 298639,
+      "top_origins": [
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 292830
+        },
+        {
+          "origin_code": 704,
+          "origin_iso3": "VNM",
+          "origin_name": "Viet Nam",
+          "stock": 263078
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 249651
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 151810
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 80032
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 404256
+        },
+        {
+          "dest_code": 156,
+          "dest_iso3": "CHN",
+          "dest_name": "China",
+          "stock": 170422
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 64617
+        },
+        {
+          "dest_code": 392,
+          "dest_iso3": null,
+          "dest_name": "Japan",
+          "stock": 62144
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 61011
+        }
+      ]
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "immigrant_stock_2024": 179594,
+      "emigrant_stock_2024": 810116,
+      "net_migrant_stock_2024": -630522,
+      "top_origins": [
+        {
+          "origin_code": 51,
+          "origin_iso3": "ARM",
+          "origin_name": "Armenia",
+          "stock": 116637
+        },
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 19714
+        },
+        {
+          "origin_code": 268,
+          "origin_iso3": "GEO",
+          "origin_name": "Georgia",
+          "stock": 18215
+        },
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 8122
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 8108
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 308165
+        },
+        {
+          "dest_code": 51,
+          "dest_iso3": "ARM",
+          "dest_name": "Armenia",
+          "stock": 187421
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 117860
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 84792
+        },
+        {
+          "dest_code": 860,
+          "dest_iso3": "UZB",
+          "dest_name": "Uzbekistan",
+          "stock": 20079
+        }
+      ]
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "immigrant_stock_2024": 80561,
+      "emigrant_stock_2024": 778793,
+      "net_migrant_stock_2024": -698232,
+      "top_origins": [
+        {
+          "origin_code": 704,
+          "origin_iso3": "VNM",
+          "origin_name": "Viet Nam",
+          "stock": 41357
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 34957
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 1721
+        },
+        {
+          "origin_code": 250,
+          "origin_iso3": null,
+          "origin_name": "France*",
+          "stock": 311
+        },
+        {
+          "origin_code": 418,
+          "origin_iso3": "LAO",
+          "origin_name": "Lao People's Democratic Republic",
+          "stock": 294
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 764,
+          "dest_iso3": "THA",
+          "dest_name": "Thailand",
+          "stock": 375635
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 171380
+        },
+        {
+          "dest_code": 250,
+          "dest_iso3": null,
+          "dest_name": "France*",
+          "stock": 57402
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 43862
+        },
+        {
+          "dest_code": 410,
+          "dest_iso3": null,
+          "dest_name": "Republic of Korea",
+          "stock": 33452
+        }
+      ]
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "immigrant_stock_2024": 47557,
+      "emigrant_stock_2024": 660258,
+      "net_migrant_stock_2024": -612701,
+      "top_origins": [
+        {
+          "origin_code": 704,
+          "origin_iso3": "VNM",
+          "origin_name": "Viet Nam",
+          "stock": 21400
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 15137
+        },
+        {
+          "origin_code": 116,
+          "origin_iso3": "KHM",
+          "origin_name": "Cambodia",
+          "stock": 3871
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 3718
+        },
+        {
+          "origin_code": 104,
+          "origin_iso3": "MMR",
+          "origin_name": "Myanmar",
+          "stock": 3201
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 764,
+          "dest_iso3": "THA",
+          "dest_name": "Thailand",
+          "stock": 285819
+        },
+        {
+          "dest_code": 840,
+          "dest_iso3": null,
+          "dest_name": "United States of America*",
+          "stock": 176588
+        },
+        {
+          "dest_code": 50,
+          "dest_iso3": "BGD",
+          "dest_name": "Bangladesh",
+          "stock": 118769
+        },
+        {
+          "dest_code": 250,
+          "dest_iso3": null,
+          "dest_name": "France*",
+          "stock": 36591
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 13292
+        }
+      ]
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "immigrant_stock_2024": 259042,
+      "emigrant_stock_2024": 637604,
+      "net_migrant_stock_2024": -378562,
+      "top_origins": [
+        {
+          "origin_code": 31,
+          "origin_iso3": "AZE",
+          "origin_name": "Azerbaijan",
+          "stock": 187421
+        },
+        {
+          "origin_code": 268,
+          "origin_iso3": "GEO",
+          "origin_name": "Georgia",
+          "stock": 30983
+        },
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 19330
+        },
+        {
+          "origin_code": 760,
+          "origin_iso3": null,
+          "origin_name": "Syrian Arab Republic",
+          "stock": 6993
+        },
+        {
+          "origin_code": 364,
+          "origin_iso3": null,
+          "origin_name": "Iran (Islamic Republic of)",
+          "stock": 6793
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 340512
+        },
+        {
+          "dest_code": 31,
+          "dest_iso3": "AZE",
+          "dest_name": "Azerbaijan",
+          "stock": 116637
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 48740
+        },
+        {
+          "dest_code": 250,
+          "dest_iso3": null,
+          "dest_name": "France*",
+          "stock": 42785
+        },
+        {
+          "dest_code": 300,
+          "dest_iso3": null,
+          "dest_name": "Greece",
+          "stock": 15479
+        }
+      ]
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "immigrant_stock_2024": 190624,
+      "emigrant_stock_2024": 540573,
+      "net_migrant_stock_2024": -349949,
+      "top_origins": [
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 106559
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 25517
+        },
+        {
+          "origin_code": 398,
+          "origin_iso3": "KAZ",
+          "origin_name": "Kazakhstan",
+          "stock": 12333
+        },
+        {
+          "origin_code": 112,
+          "origin_iso3": null,
+          "origin_name": "Belarus",
+          "stock": 9480
+        },
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 8752
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 333664
+        },
+        {
+          "dest_code": 398,
+          "dest_iso3": "KAZ",
+          "dest_name": "Kazakhstan",
+          "stock": 100242
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 44361
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 27538
+        },
+        {
+          "dest_code": 762,
+          "dest_iso3": "TJK",
+          "dest_name": "Tajikistan",
+          "stock": 11382
+        }
+      ]
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "immigrant_stock_2024": 276478,
+      "emigrant_stock_2024": 514478,
+      "net_migrant_stock_2024": -238000,
+      "top_origins": [
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 235636
+        },
+        {
+          "origin_code": 4,
+          "origin_iso3": "AFG",
+          "origin_name": "Afghanistan",
+          "stock": 12467
+        },
+        {
+          "origin_code": 417,
+          "origin_iso3": "KGZ",
+          "origin_name": "Kyrgyzstan",
+          "stock": 11382
+        },
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 7583
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 1215
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 415676
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 30256
+        },
+        {
+          "dest_code": 398,
+          "dest_iso3": "KAZ",
+          "dest_name": "Kazakhstan",
+          "stock": 27922
+        },
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 11341
+        },
+        {
+          "dest_code": 860,
+          "dest_iso3": "UZB",
+          "dest_name": "Uzbekistan",
+          "stock": 11339
+        }
+      ]
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "immigrant_stock_2024": 78381,
+      "emigrant_stock_2024": 496486,
+      "net_migrant_stock_2024": -418105,
+      "top_origins": [
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 38308
+        },
+        {
+          "origin_code": 51,
+          "origin_iso3": "ARM",
+          "origin_name": "Armenia",
+          "stock": 13147
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 12544
+        },
+        {
+          "origin_code": 31,
+          "origin_iso3": "AZE",
+          "origin_name": "Azerbaijan",
+          "stock": 6191
+        },
+        {
+          "origin_code": 398,
+          "origin_iso3": "KAZ",
+          "origin_name": "Kazakhstan",
+          "stock": 1766
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 139333
+        },
+        {
+          "dest_code": 300,
+          "dest_iso3": null,
+          "dest_name": "Greece",
+          "stock": 90365
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 66350
+        },
+        {
+          "dest_code": 380,
+          "dest_iso3": null,
+          "dest_name": "Italy",
+          "stock": 33454
+        },
+        {
+          "dest_code": 51,
+          "dest_iso3": "ARM",
+          "dest_name": "Armenia",
+          "stock": 30983
+        }
+      ]
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "immigrant_stock_2024": 189691,
+      "emigrant_stock_2024": 365787,
+      "net_migrant_stock_2024": -176096,
+      "top_origins": [
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 74157
+        },
+        {
+          "origin_code": 860,
+          "origin_iso3": "UZB",
+          "origin_name": "Uzbekistan",
+          "stock": 66605
+        },
+        {
+          "origin_code": 398,
+          "origin_iso3": "KAZ",
+          "origin_name": "Kazakhstan",
+          "stock": 19875
+        },
+        {
+          "origin_code": 804,
+          "origin_iso3": null,
+          "origin_name": "Ukraine*",
+          "stock": 7905
+        },
+        {
+          "origin_code": 31,
+          "origin_iso3": "AZE",
+          "origin_name": "Azerbaijan",
+          "stock": 7551
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 792,
+          "dest_iso3": null,
+          "dest_name": "Türkiye",
+          "stock": 119955
+        },
+        {
+          "dest_code": 398,
+          "dest_iso3": "KAZ",
+          "dest_name": "Kazakhstan",
+          "stock": 117117
+        },
+        {
+          "dest_code": 643,
+          "dest_iso3": null,
+          "dest_name": "Russian Federation",
+          "stock": 87585
+        },
+        {
+          "dest_code": 804,
+          "dest_iso3": null,
+          "dest_name": "Ukraine*",
+          "stock": 23286
+        },
+        {
+          "dest_code": 112,
+          "dest_iso3": null,
+          "dest_name": "Belarus",
+          "stock": 5319
+        }
+      ]
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "immigrant_stock_2024": 12492,
+      "emigrant_stock_2024": 181025,
+      "net_migrant_stock_2024": -168533,
+      "top_origins": [
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 1979
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 1903
+        },
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 1425
+        },
+        {
+          "origin_code": 776,
+          "origin_iso3": "TON",
+          "origin_name": "Tonga",
+          "stock": 1389
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 1347
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 83435
+        },
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 70552
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 24028
+        },
+        {
+          "dest_code": 184,
+          "dest_iso3": "COK",
+          "dest_name": "Cook Islands*",
+          "stock": 568
+        },
+        {
+          "dest_code": 296,
+          "dest_iso3": "KIR",
+          "dest_name": "Kiribati",
+          "stock": 561
+        }
+      ]
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "immigrant_stock_2024": 21818,
+      "emigrant_stock_2024": 175596,
+      "net_migrant_stock_2024": -153778,
+      "top_origins": [
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 12085
+        },
+        {
+          "origin_code": 643,
+          "origin_iso3": null,
+          "origin_name": "Russian Federation",
+          "stock": 3420
+        },
+        {
+          "origin_code": 410,
+          "origin_iso3": null,
+          "origin_name": "Republic of Korea",
+          "stock": 2103
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 906
+        },
+        {
+          "origin_code": 408,
+          "origin_iso3": null,
+          "origin_name": "Dem. People's Republic of Korea",
+          "stock": 718
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 398,
+          "dest_iso3": "KAZ",
+          "dest_name": "Kazakhstan",
+          "stock": 75801
+        },
+        {
+          "dest_code": 410,
+          "dest_iso3": null,
+          "dest_name": "Republic of Korea",
+          "stock": 45698
+        },
+        {
+          "dest_code": 392,
+          "dest_iso3": null,
+          "dest_name": "Japan",
+          "stock": 20179
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 11188
+        },
+        {
+          "dest_code": 752,
+          "dest_iso3": null,
+          "dest_name": "Sweden",
+          "stock": 6866
+        }
+      ]
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "immigrant_stock_2024": 3479,
+      "emigrant_stock_2024": 119313,
+      "net_migrant_stock_2024": -115834,
+      "top_origins": [
+        {
+          "origin_code": 16,
+          "origin_iso3": null,
+          "origin_name": "American Samoa*",
+          "stock": 1250
+        },
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 1164
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 284
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 258
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 105
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 63075
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 38964
+        },
+        {
+          "dest_code": 16,
+          "dest_iso3": null,
+          "dest_name": "American Samoa*",
+          "stock": 15931
+        },
+        {
+          "dest_code": 300,
+          "dest_iso3": null,
+          "dest_name": "Greece",
+          "stock": 483
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 308
+        }
+      ]
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "immigrant_stock_2024": 7154,
+      "emigrant_stock_2024": 109613,
+      "net_migrant_stock_2024": -102459,
+      "top_origins": [
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 4066
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 927
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 547
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 366
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 298
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 360,
+          "dest_iso3": "IDN",
+          "dest_name": "Indonesia",
+          "stock": 95603
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 11546
+        },
+        {
+          "dest_code": 620,
+          "dest_iso3": null,
+          "dest_name": "Portugal",
+          "stock": 2215
+        },
+        {
+          "dest_code": 300,
+          "dest_iso3": null,
+          "dest_name": "Greece",
+          "stock": 231
+        },
+        {
+          "dest_code": 578,
+          "dest_iso3": null,
+          "dest_name": "Norway*",
+          "stock": 9
+        }
+      ]
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "immigrant_stock_2024": 51447,
+      "emigrant_stock_2024": 66145,
+      "net_migrant_stock_2024": -14698,
+      "top_origins": [
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 48810
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 986
+        },
+        {
+          "origin_code": 524,
+          "origin_iso3": "NPL",
+          "origin_name": "Nepal",
+          "stock": 780
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 147
+        },
+        {
+          "origin_code": 392,
+          "origin_iso3": null,
+          "origin_name": "Japan",
+          "stock": 137
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 524,
+          "dest_iso3": "NPL",
+          "dest_name": "Nepal",
+          "stock": 26552
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 25363
+        },
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 6555
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 6227
+        },
+        {
+          "dest_code": 208,
+          "dest_iso3": null,
+          "dest_name": "Denmark*",
+          "stock": 617
+        }
+      ]
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "immigrant_stock_2024": 998,
+      "emigrant_stock_2024": 53237,
+      "net_migrant_stock_2024": -52239,
+      "top_origins": [
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 450
+        },
+        {
+          "origin_code": 882,
+          "origin_iso3": "WSM",
+          "origin_name": "Samoa",
+          "stock": 208
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 169
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 109
+        },
+        {
+          "origin_code": 392,
+          "origin_iso3": null,
+          "origin_name": "Japan",
+          "stock": 62
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 29981
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 19464
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 1389
+        },
+        {
+          "dest_code": 16,
+          "dest_iso3": null,
+          "dest_name": "American Samoa*",
+          "stock": 1296
+        },
+        {
+          "dest_code": 324,
+          "dest_iso3": null,
+          "dest_name": "Guinea",
+          "stock": 901
+        }
+      ]
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "immigrant_stock_2024": 118709,
+      "emigrant_stock_2024": 46552,
+      "net_migrant_stock_2024": 72157,
+      "top_origins": [
+        {
+          "origin_code": 458,
+          "origin_iso3": "MYS",
+          "origin_name": "Malaysia",
+          "stock": 56375
+        },
+        {
+          "origin_code": 764,
+          "origin_iso3": "THA",
+          "origin_name": "Thailand",
+          "stock": 16790
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 15708
+        },
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 7195
+        },
+        {
+          "origin_code": 524,
+          "origin_iso3": "NPL",
+          "origin_name": "Nepal",
+          "stock": 6237
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 21878
+        },
+        {
+          "dest_code": 458,
+          "dest_iso3": "MYS",
+          "dest_name": "Malaysia",
+          "stock": 16887
+        },
+        {
+          "dest_code": 124,
+          "dest_iso3": null,
+          "dest_name": "Canada",
+          "stock": 4347
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 3357
+        },
+        {
+          "dest_code": 578,
+          "dest_iso3": null,
+          "dest_name": "Norway*",
+          "stock": 38
+        }
+      ]
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "immigrant_stock_2024": 30035,
+      "emigrant_stock_2024": 35050,
+      "net_migrant_stock_2024": -5015,
+      "top_origins": [
+        {
+          "origin_code": 360,
+          "origin_iso3": "IDN",
+          "origin_name": "Indonesia",
+          "stock": 13638
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 9250
+        },
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 1789
+        },
+        {
+          "origin_code": 826,
+          "origin_iso3": null,
+          "origin_name": "United Kingdom*",
+          "stock": 1626
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 1468
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 34316
+        },
+        {
+          "dest_code": 90,
+          "dest_iso3": "SLB",
+          "dest_name": "Solomon Islands",
+          "stock": 538
+        },
+        {
+          "dest_code": 548,
+          "dest_iso3": "VUT",
+          "dest_name": "Vanuatu",
+          "stock": 69
+        },
+        {
+          "dest_code": 882,
+          "dest_iso3": "WSM",
+          "dest_name": "Samoa",
+          "stock": 34
+        },
+        {
+          "dest_code": 184,
+          "dest_iso3": "COK",
+          "dest_name": "Cook Islands*",
+          "stock": 19
+        }
+      ]
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "immigrant_stock_2024": 4090,
+      "emigrant_stock_2024": 20288,
+      "net_migrant_stock_2024": -16198,
+      "top_origins": [
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 2718
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 568
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 459
+        },
+        {
+          "origin_code": 258,
+          "origin_iso3": null,
+          "origin_name": "French Polynesia*",
+          "stock": 138
+        },
+        {
+          "origin_code": 826,
+          "origin_iso3": null,
+          "origin_name": "United Kingdom*",
+          "stock": 106
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 12403
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 7834
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 33
+        },
+        {
+          "dest_code": 214,
+          "dest_iso3": null,
+          "dest_name": "Dominican Republic",
+          "stock": 9
+        },
+        {
+          "dest_code": 882,
+          "dest_iso3": "WSM",
+          "dest_name": "Samoa",
+          "stock": 9
+        }
+      ]
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "immigrant_stock_2024": 2420,
+      "emigrant_stock_2024": 15202,
+      "net_migrant_stock_2024": -12782,
+      "top_origins": [
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 677
+        },
+        {
+          "origin_code": 250,
+          "origin_iso3": null,
+          "origin_name": "France*",
+          "stock": 565
+        },
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 331
+        },
+        {
+          "origin_code": 540,
+          "origin_iso3": null,
+          "origin_name": "New Caledonia*",
+          "stock": 267
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 239
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 10208
+        },
+        {
+          "dest_code": 540,
+          "dest_iso3": null,
+          "dest_name": "New Caledonia*",
+          "stock": 4021
+        },
+        {
+          "dest_code": 710,
+          "dest_iso3": null,
+          "dest_name": "South Africa",
+          "stock": 230
+        },
+        {
+          "dest_code": 258,
+          "dest_iso3": null,
+          "dest_name": "French Polynesia*",
+          "stock": 210
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 190
+        }
+      ]
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "immigrant_stock_2024": 984,
+      "emigrant_stock_2024": 13568,
+      "net_migrant_stock_2024": -12584,
+      "top_origins": [
+        {
+          "origin_code": 585,
+          "origin_iso3": "PLW",
+          "origin_name": "Palau",
+          "stock": 292
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 179
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 130
+        },
+        {
+          "origin_code": 584,
+          "origin_iso3": "MHL",
+          "origin_name": "Marshall Islands",
+          "stock": 94
+        },
+        {
+          "origin_code": 580,
+          "origin_iso3": null,
+          "origin_name": "Northern Mariana Islands*",
+          "stock": 77
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 316,
+          "dest_iso3": null,
+          "dest_name": "Guam*",
+          "stock": 11767
+        },
+        {
+          "dest_code": 580,
+          "dest_iso3": null,
+          "dest_name": "Northern Mariana Islands*",
+          "stock": 1132
+        },
+        {
+          "dest_code": 585,
+          "dest_iso3": "PLW",
+          "dest_name": "Palau",
+          "stock": 421
+        },
+        {
+          "dest_code": 584,
+          "dest_iso3": "MHL",
+          "dest_name": "Marshall Islands",
+          "stock": 247
+        },
+        {
+          "dest_code": 324,
+          "dest_iso3": null,
+          "dest_name": "Guinea",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "immigrant_stock_2024": 1910,
+      "emigrant_stock_2024": 8352,
+      "net_migrant_stock_2024": -6442,
+      "top_origins": [
+        {
+          "origin_code": 598,
+          "origin_iso3": "PNG",
+          "origin_name": "Papua New Guinea",
+          "stock": 538
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 266
+        },
+        {
+          "origin_code": 296,
+          "origin_iso3": "KIR",
+          "origin_name": "Kiribati",
+          "stock": 253
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 188
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 114
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 7161
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 732
+        },
+        {
+          "dest_code": 598,
+          "dest_iso3": "PNG",
+          "dest_name": "Papua New Guinea",
+          "stock": 221
+        },
+        {
+          "dest_code": 548,
+          "dest_iso3": "VUT",
+          "dest_name": "Vanuatu",
+          "stock": 124
+        },
+        {
+          "dest_code": 520,
+          "dest_iso3": "NRU",
+          "dest_name": "Nauru",
+          "stock": 85
+        }
+      ]
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "immigrant_stock_2024": 2766,
+      "emigrant_stock_2024": 6306,
+      "net_migrant_stock_2024": -3540,
+      "top_origins": [
+        {
+          "origin_code": 520,
+          "origin_iso3": "NRU",
+          "origin_name": "Nauru",
+          "stock": 1675
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 561
+        },
+        {
+          "origin_code": 798,
+          "origin_iso3": "TUV",
+          "origin_name": "Tuvalu",
+          "stock": 329
+        },
+        {
+          "origin_code": 36,
+          "origin_iso3": null,
+          "origin_name": "Australia*",
+          "stock": 91
+        },
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 59
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 3015
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 1585
+        },
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 808
+        },
+        {
+          "dest_code": 520,
+          "dest_iso3": "NRU",
+          "dest_name": "Nauru",
+          "stock": 279
+        },
+        {
+          "dest_code": 584,
+          "dest_iso3": "MHL",
+          "dest_name": "Marshall Islands",
+          "stock": 276
+        }
+      ]
+    },
+    {
+      "iso3": "NIU",
+      "country": "Niue",
+      "immigrant_stock_2024": 530,
+      "emigrant_stock_2024": 4955,
+      "net_migrant_stock_2024": -4425,
+      "top_origins": [
+        {
+          "origin_code": 554,
+          "origin_iso3": null,
+          "origin_name": "New Zealand*",
+          "stock": 342
+        },
+        {
+          "origin_code": 776,
+          "origin_iso3": "TON",
+          "origin_name": "Tonga",
+          "stock": 47
+        },
+        {
+          "origin_code": 882,
+          "origin_iso3": "WSM",
+          "origin_name": "Samoa",
+          "stock": 44
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 39
+        },
+        {
+          "origin_code": 798,
+          "origin_iso3": "TUV",
+          "origin_name": "Tuvalu",
+          "stock": 35
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 554,
+          "dest_iso3": null,
+          "dest_name": "New Zealand*",
+          "stock": 3957
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 975
+        },
+        {
+          "dest_code": 184,
+          "dest_iso3": "COK",
+          "dest_name": "Cook Islands*",
+          "stock": 18
+        },
+        {
+          "dest_code": 882,
+          "dest_iso3": "WSM",
+          "dest_name": "Samoa",
+          "stock": 4
+        },
+        {
+          "dest_code": 68,
+          "dest_iso3": null,
+          "dest_name": "Bolivia (Plurinational State of)",
+          "stock": 1
+        }
+      ]
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "immigrant_stock_2024": 70178,
+      "emigrant_stock_2024": 2773,
+      "net_migrant_stock_2024": 67405,
+      "top_origins": [
+        {
+          "origin_code": 50,
+          "origin_iso3": "BGD",
+          "origin_name": "Bangladesh",
+          "stock": 43282
+        },
+        {
+          "origin_code": 356,
+          "origin_iso3": "IND",
+          "origin_name": "India",
+          "stock": 15642
+        },
+        {
+          "origin_code": 144,
+          "origin_iso3": "LKA",
+          "origin_name": "Sri Lanka",
+          "stock": 7912
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 1062
+        },
+        {
+          "origin_code": 586,
+          "origin_iso3": "PAK",
+          "origin_name": "Pakistan",
+          "stock": 353
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 144,
+          "dest_iso3": "LKA",
+          "dest_name": "Sri Lanka",
+          "stock": 1424
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 712
+        },
+        {
+          "dest_code": 356,
+          "dest_iso3": "IND",
+          "dest_name": "India",
+          "stock": 574
+        },
+        {
+          "dest_code": 690,
+          "dest_iso3": null,
+          "dest_name": "Seychelles",
+          "stock": 38
+        },
+        {
+          "dest_code": 208,
+          "dest_iso3": null,
+          "dest_name": "Denmark*",
+          "stock": 14
+        }
+      ]
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "immigrant_stock_2024": 5070,
+      "emigrant_stock_2024": 2674,
+      "net_migrant_stock_2024": 2396,
+      "top_origins": [
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 3095
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 498
+        },
+        {
+          "origin_code": 583,
+          "origin_iso3": "FSM",
+          "origin_name": "Micronesia (Fed. States of)",
+          "stock": 421
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 341
+        },
+        {
+          "origin_code": 580,
+          "origin_iso3": null,
+          "origin_name": "Northern Mariana Islands*",
+          "stock": 253
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 316,
+          "dest_iso3": null,
+          "dest_name": "Guam*",
+          "stock": 1601
+        },
+        {
+          "dest_code": 580,
+          "dest_iso3": null,
+          "dest_name": "Northern Mariana Islands*",
+          "stock": 572
+        },
+        {
+          "dest_code": 583,
+          "dest_iso3": "FSM",
+          "dest_name": "Micronesia (Fed. States of)",
+          "stock": 292
+        },
+        {
+          "dest_code": 300,
+          "dest_iso3": null,
+          "dest_name": "Greece",
+          "stock": 201
+        },
+        {
+          "dest_code": 324,
+          "dest_iso3": null,
+          "dest_name": "Guinea",
+          "stock": 7
+        }
+      ]
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "immigrant_stock_2024": 1489,
+      "emigrant_stock_2024": 2484,
+      "net_migrant_stock_2024": -995,
+      "top_origins": [
+        {
+          "origin_code": 364,
+          "origin_iso3": null,
+          "origin_name": "Iran (Islamic Republic of)",
+          "stock": 412
+        },
+        {
+          "origin_code": 296,
+          "origin_iso3": "KIR",
+          "origin_name": "Kiribati",
+          "stock": 279
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 265
+        },
+        {
+          "origin_code": 144,
+          "origin_iso3": "LKA",
+          "origin_name": "Sri Lanka",
+          "stock": 155
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 122
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 296,
+          "dest_iso3": "KIR",
+          "dest_name": "Kiribati",
+          "stock": 1675
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 782
+        },
+        {
+          "dest_code": 324,
+          "dest_iso3": null,
+          "dest_name": "Guinea",
+          "stock": 15
+        },
+        {
+          "dest_code": 798,
+          "dest_iso3": "TUV",
+          "dest_name": "Tuvalu",
+          "stock": 5
+        },
+        {
+          "dest_code": 882,
+          "dest_iso3": "WSM",
+          "dest_name": "Samoa",
+          "stock": 4
+        }
+      ]
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "immigrant_stock_2024": 131,
+      "emigrant_stock_2024": 1239,
+      "net_migrant_stock_2024": -1108,
+      "top_origins": [
+        {
+          "origin_code": 296,
+          "origin_iso3": "KIR",
+          "origin_name": "Kiribati",
+          "stock": 64
+        },
+        {
+          "origin_code": 242,
+          "origin_iso3": "FJI",
+          "origin_name": "Fiji",
+          "stock": 57
+        },
+        {
+          "origin_code": 520,
+          "origin_iso3": "NRU",
+          "origin_name": "Nauru",
+          "stock": 5
+        },
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 3
+        },
+        {
+          "origin_code": 882,
+          "origin_iso3": "WSM",
+          "origin_name": "Samoa",
+          "stock": 2
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 242,
+          "dest_iso3": "FJI",
+          "dest_name": "Fiji",
+          "stock": 428
+        },
+        {
+          "dest_code": 296,
+          "dest_iso3": "KIR",
+          "dest_name": "Kiribati",
+          "stock": 329
+        },
+        {
+          "dest_code": 36,
+          "dest_iso3": null,
+          "dest_name": "Australia*",
+          "stock": 290
+        },
+        {
+          "dest_code": 882,
+          "dest_iso3": "WSM",
+          "dest_name": "Samoa",
+          "stock": 55
+        },
+        {
+          "dest_code": 772,
+          "dest_iso3": null,
+          "dest_name": "Tokelau*",
+          "stock": 49
+        }
+      ]
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "immigrant_stock_2024": 2948,
+      "emigrant_stock_2024": 400,
+      "net_migrant_stock_2024": 2548,
+      "top_origins": [
+        {
+          "origin_code": 840,
+          "origin_iso3": null,
+          "origin_name": "United States of America*",
+          "stock": 1446
+        },
+        {
+          "origin_code": 608,
+          "origin_iso3": "PHL",
+          "origin_name": "Philippines",
+          "stock": 543
+        },
+        {
+          "origin_code": 156,
+          "origin_iso3": "CHN",
+          "origin_name": "China",
+          "stock": 319
+        },
+        {
+          "origin_code": 296,
+          "origin_iso3": "KIR",
+          "origin_name": "Kiribati",
+          "stock": 276
+        },
+        {
+          "origin_code": 583,
+          "origin_iso3": "FSM",
+          "origin_name": "Micronesia (Fed. States of)",
+          "stock": 247
+        }
+      ],
+      "top_destinations": [
+        {
+          "dest_code": 316,
+          "dest_iso3": null,
+          "dest_name": "Guam*",
+          "stock": 257
+        },
+        {
+          "dest_code": 583,
+          "dest_iso3": "FSM",
+          "dest_name": "Micronesia (Fed. States of)",
+          "stock": 94
+        },
+        {
+          "dest_code": 580,
+          "dest_iso3": null,
+          "dest_name": "Northern Mariana Islands*",
+          "stock": 45
+        },
+        {
+          "dest_code": 324,
+          "dest_iso3": null,
+          "dest_name": "Guinea",
+          "stock": 4
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-04-25T01:42:38Z"
+}

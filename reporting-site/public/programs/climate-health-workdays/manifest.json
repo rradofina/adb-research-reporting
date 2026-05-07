@@ -1,0 +1,128 @@
+{
+  "program": "climate-health-workdays",
+  "permanent_url": "/program/climate-health-workdays/evidence",
+  "generated_at": "2026-05-07T03:31:39.518Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1429,
+      "size_human": "1.4 KB",
+      "mtime": "2026-04-24T08:05:49.332Z",
+      "sha256": "ac06a2d0bdc3a6fd6d12577041b2d78193797595c780154f13014d8bac9acf30",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 3046,
+      "size_human": "3.0 KB",
+      "mtime": "2026-04-27T03:37:12.798Z",
+      "sha256": "88c3645b2a684884a202dec057475dc7cccf738359e9b992e22a1ce0c0ce8760",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 3230,
+      "size_human": "3.2 KB",
+      "mtime": "2026-04-26T02:22:32.419Z",
+      "sha256": "d20404e3802da3ad7a73344f8e320611776d874296d36915da463218555ad5e5",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 2330,
+      "size_human": "2.3 KB",
+      "mtime": "2026-04-26T02:22:48.083Z",
+      "sha256": "cb34c87d3cf7815ad0db4a29811bb997c495a00f7ab355fb85f26726268cd6e4",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 9074,
+      "size_human": "8.9 KB",
+      "mtime": "2026-04-26T02:21:47.528Z",
+      "sha256": "af1cac728526e874e8620747e6f4950eb29d193c4d53ea8eccbafa0156c63240",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 1062,
+      "size_human": "1.0 KB",
+      "mtime": "2026-04-26T02:22:55.936Z",
+      "sha256": "c5a76205bd6c2174c92f9dee3c3b8810135579ac14691494cc51d12dfe3b57dd",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 1507,
+      "size_human": "1.5 KB",
+      "mtime": "2026-04-26T02:23:58.444Z",
+      "sha256": "c085ff48fa5ea9d0e44e52fba79bcc8c705df2d52ddb985533be47f1ae02c5a7",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 2638,
+      "size_human": "2.6 KB",
+      "mtime": "2026-04-26T02:23:14.511Z",
+      "sha256": "fd0924bcdf388c7a01c6d50a7e77ddcb0244e57c007a2c6e57aa253827f19e6a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 3719,
+      "size_human": "3.6 KB",
+      "mtime": "2026-04-26T02:23:36.504Z",
+      "sha256": "e3de3533f3e412dc48de674944ac4711230960ad378f5592404fd2abffc9a77d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 2410,
+      "size_human": "2.4 KB",
+      "mtime": "2026-04-26T02:23:50.073Z",
+      "sha256": "1f4a1a7d36169b2ed8336dc671ad3b7f9149bb7968a5dfb7ad9e0b62d2481ee6",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/climate-health-workdays-adb-panel.csv",
+      "size": 4515,
+      "size_human": "4.4 KB",
+      "sha256": "61a5208f3a80ca5d942f07154d9465005ee2f6a078e3a7eb23c6704e8185a639"
+    },
+    {
+      "file": "generated/climate-health-workdays-adb-panel.json",
+      "size": 19263,
+      "size_human": "18.8 KB",
+      "sha256": "faaad5d34ac8f50b578f03246ec7ee62f8622d2f143e659a3ac5468ecb1ae88b"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "workday-loss-pressure-cluster",
+      "title": "Three DMCs persistently top the workday-loss pressure cluster",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

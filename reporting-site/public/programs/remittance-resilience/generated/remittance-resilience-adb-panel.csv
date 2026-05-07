@@ -1,0 +1,45 @@
+iso3,country,wdi_remittance_pct_gdp,wdi_year,rpw_period,rpw_corridors_observed,rpw_firms_observed,rpw_mean_cost_pct,rpw_median_cost_pct,rpw_min_cost_pct,rpw_max_cost_pct,fragility_index
+KGZ,Kyrgyz Republic,26.58,2022,2025_1Q,1,4,10.54,11.39,2.22,20.49,70.3
+WSM,Samoa,24.01,2024,2025_1Q,2,13,7.96,6.93,1.11,22.91,51.0
+TON,Tonga,42.61,2023,2025_1Q,2,15,7.51,6.97,-3.0,22.46,50.1
+VUT,Vanuatu,18.75,2022,2025_1Q,2,8,9.54,7.7,2.53,22.55,47.7
+NPL,Nepal,26.23,2024,2025_1Q,8,45,6.74,3.35,-76.0,57.0,44.9
+TJK,Tajikistan,47.89,2024,2025_1Q,1,1,2.95,2.95,2.95,2.95,19.7
+PAK,Pakistan,9.4,2024,2025_1Q,12,43,7.69,3.08,-305.0,99.0,19.3
+KHM,Cambodia,6.1,2024,2025_1Q,1,10,10.56,13.52,2.72,19.73,17.2
+MMR,Myanmar,3.4,2019,2025_1Q,3,12,28.16,15.3,-17.0,99.0,13.6
+BGD,Bangladesh,6.11,2024,2025_1Q,11,66,6.97,5.8,1.28,39.12,11.4
+PHL,Philippines,8.73,2024,2025_1Q,14,98,4.49,3.37,-201.0,96.0,10.4
+AFG,Afghanistan,3.95,2020,2025_1Q,4,4,8.99,8.77,4.09,15.29,9.5
+ARM,Armenia,4.92,2024,2025_1Q,1,4,6.68,7.07,3.39,10.65,8.8
+IND,India,3.52,2024,2025_1Q,20,122,8.46,3.26,-39.0,99.0,7.9
+LKA,Sri Lanka,6.79,2024,2025_1Q,11,44,4.17,3.44,-152.0,89.0,7.6
+LAO,Lao People's Democratic Republic,1.49,2024,2025_1Q,1,10,11.84,15.32,2.72,19.73,4.7
+THA,Thailand,1.8,2024,2025_1Q,7,33,6.15,4.35,1.08,30.24,2.9
+IDN,Indonesia,1.15,2024,2025_1Q,9,71,6.44,4.62,1.16,63.0,2.0
+MYS,Malaysia,0.38,2024,2025_1Q,2,23,13.65,4.2,1.06,98.0,1.4
+CHN,"China, People's Republic of",0.17,2024,2025_1Q,16,60,7.48,5.36,1.02,83.0,0.3
+AZE,Azerbaijan,1.82,2024,,0,,,,,,
+BTN,Bhutan,3.58,2023,,0,,,,,,
+BRN,Brunei Darussalam,,,,0,,,,,,
+COK,Cook Islands,,,,0,,,,,,
+GEO,Georgia,11.87,2024,,0,,,,,,
+HKG,"Hong Kong, China",0.11,2024,,0,,,,,,
+KAZ,Kazakhstan,0.08,2024,,0,,,,,,
+KIR,Kiribati,4.76,2024,,0,,,,,,
+MDV,Maldives,0.08,2024,,0,,,,,,
+MHL,Marshall Islands,23.06,2024,,0,,,,,,
+FSM,"Micronesia, Federated States of",,,,0,,,,,,
+MNG,Mongolia,2.22,2024,,0,,,,,,
+NRU,Nauru,1.37,2024,,0,,,,,,
+NIU,Niue,,,,0,,,,,,
+PLW,Palau,0.8,2023,,0,,,,,,
+PNG,Papua New Guinea,0.01,2024,,0,,,,,,
+SLB,Solomon Islands,6.01,2024,,0,,,,,,
+TPE,"Taipei,China",,,,0,,,,,,
+TLS,Timor-Leste,11.77,2024,,0,,,,,,
+TKM,Turkmenistan,,,,0,,,,,,
+TUV,Tuvalu,4.16,2023,,0,,,,,,
+UZB,Uzbekistan,14.42,2024,,0,,,,,,
+VNM,Viet Nam,,,2025_1Q,12,58,6.61,4.53,0.0,79.0,
+FJI,Fiji,7.11,2024,2025_1Q,2,17,-1.28,4.28,-134.0,21.02,-2.4

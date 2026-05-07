@@ -1,0 +1,51 @@
+iso2,iso3,name,subregion,status,population_year,population,public_locations,pm25_locations,pm10_locations,no2_locations,o3_locations,people_per_public_location,people_per_pm25_location,pm25_exposure_year,pm25_exposure_ugm3,pm25_above_who_guideline_5_ugm3,population_in_above_guideline_pm25_economy,population_with_no_public_pm25_monitor,pm25_observability_gap_score,pm25_observability_status,who_city_pm25_cities,who_city_pm25_mean,who_city_pm25_median,who_city_pm25_max,who_city_pm25_latest_year,who_city_pm25_above_guideline_share,wdi_minus_who_city_pm25_mean,who_highest_pm25_city,unknown_freshness
+AF,AFG,Afghanistan,South Asia,computed,2024,42647492,2,2,0,0,0,21323746,21323746,2020,46.0870936659706,true,42647492,,100,sparse_public_pm25_monitoring,1,119.77,119.77,119.77,2019,100,-73.68,Kabul/AFG (119.77),2
+AM,ARM,Armenia,Central and West Asia,computed,2024,3033500,77,77,0,0,0,39396,39396,2020,30.5796334750125,true,3033500,,57,public_pm25_monitoring_present,0,,,,,,,,77
+AU,AUS,Australia,The Pacific,computed,2024,27196812,320,299,225,84,77,84990,90959,2020,8.25171746070811,true,27196812,,16,public_pm25_monitoring_present,71,7.38,7.37,17.2,2019,73.2,0.87,Armidale/AUS (17.2),320
+AZ,AZE,Azerbaijan,Central and West Asia,computed,2024,10202830,1,1,0,0,0,10202830,10202830,2020,21.7269999756599,true,10202830,,75,sparse_public_pm25_monitoring,0,,,,,,,,1
+BD,BGD,Bangladesh,South Asia,computed,2024,173562364,20,20,1,0,1,8678118,8678118,2020,42.3813762359965,true,173562364,,100,sparse_public_pm25_monitoring,9,72.73,72.45,102.7,2019,100,-30.35,Narayangonj/BGD (102.7),20
+BT,BTN,Bhutan,South Asia,computed,2024,791524,16,16,0,0,0,49470,49470,2020,23.9456576369223,true,791524,,45,public_pm25_monitoring_present,0,,,,,,,,16
+BN,BRN,Brunei Darussalam,Southeast Asia,computed,2024,462721,0,0,0,0,0,,,2020,7.59726503432135,true,462721,462721,49,no_public_pm25_monitor,0,,,,,,,,0
+KH,KHM,Cambodia,Southeast Asia,computed,2024,17638801,27,27,0,0,0,653289,653289,2020,24.1436022803452,true,17638801,,49,public_pm25_monitoring_present,24,20.08,19,37,2021,95.8,4.06,Siem Reap/KHM (37),27
+CK,COK,Cook Islands,The Pacific,computed,,,0,0,0,0,0,,,,,,,,,no_population,0,,,,,,,,0
+CN,CHN,"China, People's Republic of",East Asia,computed,2024,1408975000,1881,1880,1857,1848,1851,749056,749455,2020,34.8105237153218,true,1408975000,,70,public_pm25_monitoring_present,1104,36.81,35.68,120.35,2020,100,-2,Hotan/CHN (120.35),1881
+FJ,FJI,Fiji,The Pacific,computed,2024,928784,0,0,0,0,0,,,2020,12.4187981716598,true,928784,928784,58,no_public_pm25_monitor,1,8.1,8.1,8.1,2015,100,4.32,Suva/FJI (8.1),0
+GE,GEO,Georgia,Central and West Asia,computed,2024,3699557,2,2,0,0,0,1849779,1849779,2020,17.0438421058507,true,3699557,,45,public_pm25_monitoring_present,1,20,20,20,2017,100,-2.96,Tbilisi/GEO (20),2
+HK,HKG,"Hong Kong, China",East Asia,computed,2024,7524100,25,25,14,14,14,300964,300964,,,,,,,no_pm25_exposure,0,,,,,,,,25
+IN,IND,India,South Asia,computed,2024,1450935791,723,713,651,669,642,2006827,2034973,2020,48.3948115195574,true,1450935791,,79,public_pm25_monitoring_present,131,50.45,34.93,220.41,2020,100,-2.06,Bhiwadi/IND (220.41),723
+ID,IDN,Indonesia,Southeast Asia,computed,2024,283487931,39,35,11,0,1,7268921,8099655,2020,17.8814994983985,true,283487931,,68,sparse_public_pm25_monitoring,9,22.74,20.69,42.65,2021,100,-4.86,Jakarta/IDN (42.65),39
+JP,JPN,Japan,East Asia,computed,2024,123975371,1624,1131,3,1470,0,76340,109616,2020,12.835201662985,true,123975371,,25,public_pm25_monitoring_present,24,10.65,10.64,18,2019,100,2.19,Chiyoda/JPN (18),1624
+KZ,KAZ,Kazakhstan,Central and West Asia,computed,2024,20592571,202,202,2,0,0,101943,101943,2020,20.0278724259165,true,20592571,,38,public_pm25_monitoring_present,1,21.77,21.77,21.77,2019,100,-1.74,Astana/KAZ (21.77),202
+KI,KIR,Kiribati,The Pacific,computed,2024,134518,0,0,0,0,0,,,2020,11.2568272545112,true,134518,134518,56,no_public_pm25_monitor,0,,,,,,,,0
+KR,KOR,"Korea, Republic of",East Asia,computed,2024,51751065,765,765,760,758,757,67648,67648,2020,25.9439899531653,true,51751065,,49,public_pm25_monitoring_present,24,24.03,23.15,38.57,2019,100,1.91,Bucheon/KOR (38.57),765
+KG,KGZ,Kyrgyz Republic,Central and West Asia,computed,2024,7221868,96,96,2,0,0,75228,75228,2020,24.3817252281764,true,7221868,,46,public_pm25_monitoring_present,1,33.16,33.16,33.16,2019,100,-8.78,Bishkek/KGZ (33.16),96
+LA,LAO,Lao People's Democratic Republic,Southeast Asia,computed,2024,7769819,162,162,2,1,1,47962,47962,2020,22.3176670505669,true,7769819,,42,public_pm25_monitoring_present,1,25.77,25.77,25.77,2019,100,-3.45,Vientiane/LAO (25.77),162
+MY,MYS,Malaysia,Southeast Asia,computed,2024,35557673,18,18,3,0,0,1975426,1975426,2020,16.1938532237922,true,35557673,,44,public_pm25_monitoring_present,17,20.62,20.28,29.81,2019,100,-4.43,Putrajaya/MYS (29.81),18
+MV,MDV,Maldives,South Asia,computed,2024,527799,1,1,1,0,0,527799,527799,2020,12.0123911668511,true,527799,,26,public_pm25_monitoring_present,0,,,,,,,,1
+MH,MHL,Marshall Islands,The Pacific,computed,2024,37548,0,0,0,0,0,,,2020,10.7256194470999,true,37548,37548,55,no_public_pm25_monitor,0,,,,,,,,0
+FM,FSM,"Micronesia, Federated States of",The Pacific,computed,2024,113160,0,0,0,0,0,,,2020,12.1144203347628,true,113160,113160,57,no_public_pm25_monitor,0,,,,,,,,0
+MN,MNG,Mongolia,East Asia,computed,2024,3524788,52,19,27,41,8,67784,185515,2020,29.6547866481682,true,3524788,,56,public_pm25_monitoring_present,3,41,40,60,2019,100,-11.35,Ulaanbaatar/MNG (60),52
+MM,MMR,Myanmar,Southeast Asia,computed,2024,54500091,3,3,0,0,1,18166697,18166697,2020,32.3150340028667,true,54500091,,95,sparse_public_pm25_monitoring,1,28,28,28,2021,100,4.32,Yangon/MMR (28),3
+NR,NRU,Nauru,The Pacific,computed,2024,11947,0,0,0,0,0,,,2020,6.06435493209495,true,11947,11947,46,no_public_pm25_monitor,0,,,,,,,,0
+NP,NPL,Nepal,South Asia,computed,2024,29651054,75,75,2,0,2,395347,395347,2020,45.7207706412594,true,29651054,,68,public_pm25_monitoring_present,4,45.51,43.83,58.23,2020,100,0.21,Phora Durbar Kathmandu/NPL (58.23),75
+NZ,NZL,New Zealand,The Pacific,computed,2024,5287500,47,46,26,5,0,112500,114946,2020,6.48591499675774,true,5287500,,13,public_pm25_monitoring_present,13,8.99,8.69,15,2021,92.3,-2.5,Timaru/NZL (15),47
+NU,NIU,Niue,The Pacific,computed,,,0,0,0,0,0,,,,,,,,,no_population,0,,,,,,,,0
+PK,PAK,Pakistan,South Asia,computed,2024,251269164,383,383,6,0,0,656055,656055,2020,42.9981734249878,true,251269164,,70,public_pm25_monitoring_present,6,70.57,61.88,123.88,2020,100,-27.57,Lahore/PAK (123.88),383
+PW,PLW,Palau,The Pacific,computed,2024,17695,0,0,0,0,0,,,2020,7.32770979431049,true,17695,17695,49,no_public_pm25_monitor,0,,,,,,,,0
+PG,PNG,Papua New Guinea,The Pacific,computed,2024,10576502,0,0,0,0,0,,,2020,17.3105425567239,true,10576502,10576502,67,no_public_pm25_monitor,0,,,,,,,,0
+PH,PHL,Philippines,Southeast Asia,computed,2024,115843670,78,78,6,0,0,1485175,1485175,2020,20.2887417122616,true,115843670,,48,public_pm25_monitoring_present,15,28,29,46,2016,100,-7.71,Nia Road/PHL (46),78
+WS,WSM,Samoa,The Pacific,computed,2024,218019,0,0,0,0,0,,,2020,12.5518952802963,true,218019,218019,58,no_public_pm25_monitor,0,,,,,,,,0
+SG,SGP,Singapore,Southeast Asia,computed,2024,6036860,44,44,2,0,0,137201,137201,2020,13.8691955865476,true,6036860,,27,public_pm25_monitoring_present,1,12,12,12,2021,100,1.87,Singapore/SGP (12),44
+SB,SLB,Solomon Islands,The Pacific,computed,2024,819198,1,1,0,0,0,819198,819198,2020,13.9542830081778,true,819198,,32,public_pm25_monitoring_present,0,,,,,,,,1
+LK,LKA,Sri Lanka,South Asia,computed,2024,21916000,3,3,0,0,0,7305333,7305333,2020,19.9644408635608,true,21916000,,72,sparse_public_pm25_monitoring,1,23.58,23.58,23.58,2019,100,-3.62,Colombo/LKA (23.58),3
+TW,TWN,"Taipei,China",East Asia,computed,,,125,125,119,117,116,,,,,,,,,no_population,0,,,,,,,,125
+TJ,TJK,Tajikistan,Central and West Asia,computed,2024,10590927,5,5,3,0,0,2118185,2118185,2020,37.0534062306267,true,10590927,,80,public_pm25_monitoring_present,1,71.52,71.52,71.52,2019,100,-34.47,Dushanbe/TJK (71.52),5
+TH,THA,Thailand,Southeast Asia,computed,2024,71668011,637,604,404,142,150,112509,118656,2020,31.0072016277159,true,71668011,,58,public_pm25_monitoring_present,48,21.01,22,32,2021,100,10,Chiang Rai/THA (32),637
+TL,TLS,Timor-Leste,Southeast Asia,computed,2024,1400638,0,0,0,0,0,,,2020,17.4104661970888,true,1400638,1400638,67,no_public_pm25_monitor,0,,,,,,,,0
+TO,TON,Tonga,The Pacific,computed,2024,104175,0,0,0,0,0,,,2020,12.4784129504796,true,104175,104175,58,no_public_pm25_monitor,0,,,,,,,,0
+TR,TUR,Türkiye,Central and West Asia,computed,2024,85518661,406,202,387,326,227,210637,423360,2020,21.6120469179783,true,85518661,,43,public_pm25_monitoring_present,100,21.5,19.92,56.62,2020,99,0.11,Igdir/TUR (56.62),406
+TM,TKM,Turkmenistan,Central and West Asia,computed,2024,7494498,2,2,0,0,0,3747249,3747249,2020,19.5997611438189,true,7494498,,63,public_pm25_monitoring_present,1,22.08,22.08,22.08,2019,100,-2.48,Ashgabat/TKM (22.08),2
+TV,TUV,Tuvalu,The Pacific,computed,2024,9646,0,0,0,0,0,,,2020,5.91780105591262,true,9646,9646,46,no_public_pm25_monitor,0,,,,,,,,0
+UZ,UZB,Uzbekistan,Central and West Asia,computed,2024,36361859,5,5,0,0,1,7272372,7272372,2020,31.9604294559849,true,36361859,,94,sparse_public_pm25_monitoring,1,41.96,41.96,41.96,2019,100,-10,Tashkent/UZB (41.96),5
+VU,VUT,Vanuatu,The Pacific,computed,2024,327777,0,0,0,0,0,,,2020,14.0824115364695,true,327777,327777,61,no_public_pm25_monitor,0,,,,,,,,0
+VN,VNM,Viet Nam,Southeast Asia,computed,2024,100987686,54,54,38,37,5,1870142,1870142,2020,20.8010641731194,true,100987686,,52,public_pm25_monitoring_present,6,27.44,25.85,47.91,2020,100,-6.64,Ha Noi/VNM (47.91),54

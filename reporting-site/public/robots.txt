@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Static research reporting site for ADB Development Blindspots Lab.
+# Public data; cite sources per /sources page.

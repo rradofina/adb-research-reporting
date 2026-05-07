@@ -1,0 +1,118 @@
+{
+  "program": "access-services",
+  "permanent_url": "/program/access-services/evidence",
+  "generated_at": "2026-05-07T03:31:39.800Z",
+  "artifacts": [
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1950,
+      "size_human": "1.9 KB",
+      "mtime": "2026-04-27T03:43:16.491Z",
+      "sha256": "139ce6edaed1c3c98787f4d2a9c703345394d84d0e6d45237c563651b21992a2",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1175,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-26T16:56:42.375Z",
+      "sha256": "242293aeaf8da38e6f1cf67ce14d26595572526855ba8f7b5be81ac9441da1a9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 566,
+      "size_human": "566 B",
+      "mtime": "2026-04-26T16:56:47.218Z",
+      "sha256": "262d41b97fb0f59759ff7a9a1fae7a3807dac889d9b2b3649ebee0fdc9f7b708",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 1769,
+      "size_human": "1.7 KB",
+      "mtime": "2026-04-26T16:56:14.787Z",
+      "sha256": "2f97b0c4a47b1b9d78f583af37869a2400ac827d0bca6d04521050745ef7ec6a",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 498,
+      "size_human": "498 B",
+      "mtime": "2026-04-26T16:56:50.724Z",
+      "sha256": "9755f59cb0059bc6fea715de98f7c3d0b2683303a5d5ae37d889efcc3afb0c48",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 644,
+      "size_human": "644 B",
+      "mtime": "2026-04-26T16:57:15.519Z",
+      "sha256": "d9f51f06f689665bf9b81e9898ed60938e0e33627eb94c5b99da96d405db15d0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 734,
+      "size_human": "734 B",
+      "mtime": "2026-04-26T16:56:55.324Z",
+      "sha256": "c629f6e51a530188e4a6831f3350d568e28aca13ae4c938a390fd3a75a1d66ad",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1598,
+      "size_human": "1.6 KB",
+      "mtime": "2026-04-26T16:57:07.417Z",
+      "sha256": "8e3744f7d93623a6aecef5c4baaf96c343c8a5a1fd4096961ea2c40a8b77bc2e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 678,
+      "size_human": "678 B",
+      "mtime": "2026-04-26T16:57:11.704Z",
+      "sha256": "8dc5b682321af3745b7213d554210d20995f0862fd75045aeab00782adf12721",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/access-services-adb-panel.csv",
+      "size": 559,
+      "size_human": "559 B",
+      "sha256": "0f8014e158c2c64ab97fb3619bc014e0a54ea4f52c5d021d674501b302f331e4"
+    },
+    {
+      "file": "generated/access-services-adb-panel.json",
+      "size": 3196,
+      "size_human": "3.1 KB",
+      "sha256": "f3aa05ff388e39b1aba43ae15006bd0a1d859d16c7b53f787c852139f2d3ba42"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "access-stress-pilot-cluster",
+      "title": "Four pilot DMCs hold the top of the access-stress ranking — Bangladesh, Cambodia, Lao PDR, Pakistan",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

@@ -1,0 +1,449 @@
+{
+  "program": "food-price-climate-transmission",
+  "claim_scope": "Hypothesis-stage macro-level food-price vulnerability. WDI only; climate-transmission (CHIRPS × local prices) NOT yet included.",
+  "framing_rule": "Structural exposure to food-price stress, not a country food-security ranking.",
+  "sources": {
+    "wdi": {
+      "indicators": [
+        "FP.CPI.TOTL.ZG (CPI inflation, annual %)",
+        "TM.VAL.AGRI.ZS.UN (agricultural imports % merchandise)",
+        "AG.PRD.FOOD.XD (food production index, 2014-2016=100)"
+      ],
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    }
+  },
+  "rows": [
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "cpi_inflation_pct": 2.76131569624097,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.89771523343481,
+      "ag_year": 2023,
+      "food_production_index": 77.75,
+      "food_price_vulnerability": 2.4
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "cpi_inflation_pct": 8.82506696804558,
+      "cpi_year": 2019,
+      "ag_imports_pct_merch": 0.543522629263886,
+      "ag_year": 2024,
+      "food_production_index": 76.96,
+      "food_price_vulnerability": 1.4
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "cpi_inflation_pct": 2.17245530514377,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.30715980394132,
+      "ag_year": 2024,
+      "food_production_index": 83.05,
+      "food_price_vulnerability": 1.4
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "cpi_inflation_pct": 2.45545072159028,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.29882138739868,
+      "ag_year": 2021,
+      "food_production_index": 97.32,
+      "food_price_vulnerability": 0.7
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "cpi_inflation_pct": 3.230563002681,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.72084578435904,
+      "ag_year": 2023,
+      "food_production_index": 97.78,
+      "food_price_vulnerability": 0.7
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "cpi_inflation_pct": 1.39979779674928,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.34971319988324,
+      "ag_year": 2024,
+      "food_production_index": 94.49,
+      "food_price_vulnerability": 0.3
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "cpi_inflation_pct": 4.32183948388033,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.690509845092173,
+      "ag_year": 2018,
+      "food_production_index": 100.49,
+      "food_price_vulnerability": 0.3
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "cpi_inflation_pct": 1.834100204499,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.54518194343355,
+      "ag_year": 2024,
+      "food_production_index": 102.8,
+      "food_price_vulnerability": 0.2
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "cpi_inflation_pct": 3.21260487006347,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.554009441120343,
+      "ag_year": 2024,
+      "food_production_index": 100.51,
+      "food_price_vulnerability": 0.2
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "cpi_inflation_pct": 1.36580540798037,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.31456589645742,
+      "ag_year": 2024,
+      "food_production_index": 104.2,
+      "food_price_vulnerability": 0.1
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "cpi_inflation_pct": 2.06284153005468,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.832579681263799,
+      "ag_year": 2023,
+      "food_production_index": 101.69,
+      "food_price_vulnerability": 0.1
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "cpi_inflation_pct": -0.42936004906973,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.88516325701979,
+      "ag_year": 2024,
+      "food_production_index": 99.24,
+      "food_price_vulnerability": -0.1
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "cpi_inflation_pct": -6.60118564073725,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.76945971582721,
+      "ag_year": 2019,
+      "food_production_index": 111.43,
+      "food_price_vulnerability": -0.0
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "cpi_inflation_pct": 0.269511978259125,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.696914598695895,
+      "ag_year": 2024,
+      "food_production_index": 83.87,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "cpi_inflation_pct": 2.21217188919901,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.3653443730014,
+      "ag_year": 2024,
+      "food_production_index": 129.02,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "cpi_inflation_pct": 10.4657482763412,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 6.03484299147945,
+      "ag_year": 2018,
+      "food_production_index": 125.2,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "cpi_inflation_pct": -0.38867416503646,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.0534647034378044,
+      "ag_year": 2024,
+      "food_production_index": 119.3,
+      "food_price_vulnerability": -0.0
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "cpi_inflation_pct": 0.808042016536654,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.97032761293108,
+      "ag_year": 2024,
+      "food_production_index": 123.74,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "cpi_inflation_pct": 0.218128938439177,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.65554162830592,
+      "ag_year": 2024,
+      "food_production_index": 111.75,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": null,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "cpi_inflation_pct": 3.89084237884105,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.356029566222083,
+      "ag_year": 2024,
+      "food_production_index": 139.65,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "cpi_inflation_pct": 1.10971758022096,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.820897679650684,
+      "ag_year": 2024,
+      "food_production_index": 113.64,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "cpi_inflation_pct": 1.72972119105914,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.0913335982064106,
+      "ag_year": 2024,
+      "food_production_index": 141.66,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "cpi_inflation_pct": 4.95303550973656,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.53605200655945,
+      "ag_year": 2024,
+      "food_production_index": 127.82,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "cpi_inflation_pct": 2.18151273615189,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.00572472129639,
+      "ag_year": 2024,
+      "food_production_index": 117.14,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "cpi_inflation_pct": 8.69082156104494,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.652593664193636,
+      "ag_year": 2024,
+      "food_production_index": 127.76,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "cpi_inflation_pct": 4.99760701207323,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.472382754979747,
+      "ag_year": 2024,
+      "food_production_index": 112.75,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "cpi_inflation_pct": 23.1305695942588,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 4.57200173262801,
+      "ag_year": 2023,
+      "food_production_index": 114.84,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 90.84,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "cpi_inflation_pct": 5.40874375479067,
+      "cpi_year": 2022,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 121.63,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "cpi_inflation_pct": 6.1977990165842,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.427672549448203,
+      "ag_year": 2023,
+      "food_production_index": 157.87,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 99.71,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "cpi_inflation_pct": 4.6850965426577,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.29279766517618,
+      "ag_year": 2022,
+      "food_production_index": 123.18,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "cpi_inflation_pct": 12.6325318530452,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 4.33946657692159,
+      "ag_year": 2024,
+      "food_production_index": 122.43,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "cpi_inflation_pct": 2.23172772921704,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.69551004982248,
+      "ag_year": 2018,
+      "food_production_index": null,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "cpi_inflation_pct": 0.602403921107917,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 0.510558309393381,
+      "ag_year": 2023,
+      "food_production_index": 100.55,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": null,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": 4.12170589324958,
+      "ag_year": 2023,
+      "food_production_index": 150.12,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 112.03,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "cpi_inflation_pct": null,
+      "cpi_year": null,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 110.82,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "cpi_inflation_pct": 9.62825465956682,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 1.89377211216791,
+      "ag_year": 2024,
+      "food_production_index": 114.43,
+      "food_price_vulnerability": 0.0
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "cpi_inflation_pct": 11.1825017088175,
+      "cpi_year": 2023,
+      "ag_imports_pct_merch": null,
+      "ag_year": null,
+      "food_production_index": 82.96,
+      "food_price_vulnerability": null
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "cpi_inflation_pct": 3.62109273885843,
+      "cpi_year": 2024,
+      "ag_imports_pct_merch": 2.5155735307542,
+      "ag_year": 2023,
+      "food_production_index": 113.65,
+      "food_price_vulnerability": 0.0
+    }
+  ],
+  "generated_at": "2026-04-25T01:54:57Z"
+}

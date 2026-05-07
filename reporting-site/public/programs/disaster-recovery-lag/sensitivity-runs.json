@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-04-26T03:23:12.451592Z",
+  "program": "disaster-recovery-lag",
+  "metric": "events-per-year ranking + alt-metric stability",
+  "common_top5_across_metrics": [
+    "CHN",
+    "IND"
+  ],
+  "runs": [
+    {
+      "label": "baseline_events_per_year",
+      "metric": "events_per_year",
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 25.58
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 15.69
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 15.54
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 14.85
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 7.69
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 6.12
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 6.08
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 5.62
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 5.24
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "value": 3.52
+        }
+      ]
+    },
+    {
+      "label": "metric_total_affected",
+      "metric": "total_affected",
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 1771174061
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 1146651046
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 247376088
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 181508696
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 102890514
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 87693689
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 49724762
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 46989450
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 37013554
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 20787609
+        }
+      ]
+    },
+    {
+      "label": "metric_total_damage_usd_adj",
+      "metric": "total_damage_usd_adj",
+      "top10": [
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 715643381558.0
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 162630948683.0
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 69165431042.0
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 55559165731.0
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 33904319326.0
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 33142454780.0
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 30490164301.0
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 15133477144.0
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 9457641871.0
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "value": 8565566146.0
+        }
+      ]
+    },
+    {
+      "label": "time_window_minus50_DEFERRED",
+      "note": "would require pipeline rerun with 2013-2025 window; deferred to \u00a718.5 upgrade-pass"
+    }
+  ]
+}

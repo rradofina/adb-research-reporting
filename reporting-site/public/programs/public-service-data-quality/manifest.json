@@ -1,0 +1,376 @@
+{
+  "program": "public-service-data-quality",
+  "permanent_url": "/program/public-service-data-quality/evidence",
+  "generated_at": "2026-05-07T03:31:39.436Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 14113,
+      "size_human": "13.8 KB",
+      "mtime": "2026-05-07T03:07:13.337Z",
+      "sha256": "de842c945f7e47f9b7b1438cda182eeb7c92d998e3808255130fed40b9b0e611",
+      "attestation_chain": null
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 7882,
+      "size_human": "7.7 KB",
+      "mtime": "2026-05-05T14:21:20.343Z",
+      "sha256": "3f8fa486ebaa6378d33f46230e2b60e95a75137430cf7ec62e05bf6c67be7447",
+      "attestation_chain": null
+    },
+    {
+      "key": "source_action",
+      "file": "SOURCE-ACTION.md",
+      "label": "Source action packet",
+      "size": 6590,
+      "size_human": "6.4 KB",
+      "mtime": "2026-05-05T14:21:20.342Z",
+      "sha256": "bd763bbd155be8af52cd05ea64ddf2b96a204f3e4635f8b2f22da216f92ca743",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 14551,
+      "size_human": "14.2 KB",
+      "mtime": "2026-04-25T14:48:29.469Z",
+      "sha256": "f94f6c0f5cbffae930bf1bbc4f1944442693701e2ad0e036a2af1ab17f057d7d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "scoring",
+      "file": "scoring.md",
+      "label": "Scoring rubric",
+      "size": 4246,
+      "size_human": "4.1 KB",
+      "mtime": "2026-04-24T23:18:36.677Z",
+      "sha256": "ee44d0d49e3678fd177fe3098d1ee305254e5fc6838d1c20e0ddc930ca2c626d",
+      "attestation_chain": null
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 8894,
+      "size_human": "8.7 KB",
+      "mtime": "2026-04-25T14:48:50.451Z",
+      "sha256": "5f699ba0185e6f597dd5e1951ac6f5df4bdf1827c9fd918e4b5462d96be3ee4a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 5277,
+      "size_human": "5.2 KB",
+      "mtime": "2026-04-25T14:03:42.507Z",
+      "sha256": "d7cf08652578c7ed73da2d65e4d460be8a9fd39b11bd6de794f6ed04bf570c30",
+      "attestation_chain": null
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 6205,
+      "size_human": "6.1 KB",
+      "mtime": "2026-04-25T14:02:55.283Z",
+      "sha256": "0cfaa62a91ae568279a45c480446da24a3d0aa86dcebd67b52868390d3d714f8",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 1974,
+      "size_human": "1.9 KB",
+      "mtime": "2026-04-25T13:36:30.089Z",
+      "sha256": "533d35d8b4c9ba1ddce59a67b8823c2c8d87f85899518a24348292e32b847ac0",
+      "attestation_chain": null
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 12391,
+      "size_human": "12.1 KB",
+      "mtime": "2026-05-05T14:15:22.777Z",
+      "sha256": "c5f1cd46169d542e83a4d9562e8fdb2fb9435369f0cf6b1a1c88f26bdf65613d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 22174,
+      "size_human": "21.7 KB",
+      "mtime": "2026-05-07T03:21:08.602Z",
+      "sha256": "cb2bbe4bbbb4afbb44cb8d9197fcccce2ccf1be9ad0becb05fbace2b2503d104",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 27689,
+      "size_human": "27.0 KB",
+      "mtime": "2026-05-07T03:30:48.332Z",
+      "sha256": "f31d1316c48877fbf866d14391ce51997277725f7dfe85b635f28021b95f3529",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 10738,
+      "size_human": "10.5 KB",
+      "mtime": "2026-05-07T03:31:29.831Z",
+      "sha256": "8ac5d2ea407f31981937748e3a59c102ac6cd626fd05d6ef26070fd031c0f1e0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 12824,
+      "size_human": "12.5 KB",
+      "mtime": "2026-05-07T03:07:55.033Z",
+      "sha256": "207d3df3b8badf5a1ddd02400a732a2dfa6a23f0e281926bc1dd784602477b4d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sr_to_pr",
+      "file": "SR-to-PR.md",
+      "label": "Gate request — SR → PR",
+      "size": 4844,
+      "size_human": "4.7 KB",
+      "mtime": "2026-04-25T13:39:15.246Z",
+      "sha256": "692ee564ede8346626d0ac49f82a03b5dfb2bc7baf675a481b4a488ee7ab6e33",
+      "attestation_chain": null
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/charts/psdq-choropleth-bgd-adm1.png",
+      "size": 176287,
+      "size_human": "172.2 KB",
+      "sha256": "e69a477f522db5afb5db363f37ebc8763d949e8423ad3d521cd4e20905ad3572"
+    },
+    {
+      "file": "generated/charts/psdq-choropleth-bgd-adm1.svg",
+      "size": 141689,
+      "size_human": "138.4 KB",
+      "sha256": "71897ffbaf9da64a63021186898a401f8fc2f44053b4f5a5085f8765dda6f1ad"
+    },
+    {
+      "file": "generated/charts/psdq-choropleth-phl-adm1.png",
+      "size": 199636,
+      "size_human": "195.0 KB",
+      "sha256": "5b207091ce58830c73b78fc29b1b3c11b384c3e6daaa20a5ffbfeb9ee0213b56"
+    },
+    {
+      "file": "generated/charts/psdq-choropleth-phl-adm1.svg",
+      "size": 1076300,
+      "size_human": "1.03 MB",
+      "sha256": "bfecd58d489f39bd580cce3415417890fbf747236d1cce84801bdb36799a48c9"
+    },
+    {
+      "file": "generated/charts/psdq-choropleth-phl-adm3-poverty.png",
+      "size": 349250,
+      "size_human": "341.1 KB",
+      "sha256": "2750b4a7ed3a477d5a0af8c650c88f94af1a10ec6465141747c44a2a0dbfa14b"
+    },
+    {
+      "file": "generated/charts/psdq-choropleth-phl-adm3-poverty.svg",
+      "size": 4342308,
+      "size_human": "4.14 MB",
+      "sha256": "396abcdb5d4e344ce1213b4357f7d35a87fc2b9f400d353b3e485b01310cd6de"
+    },
+    {
+      "file": "generated/psdq-bgd-admin-coordinate-summary.csv",
+      "size": 42806,
+      "size_human": "41.8 KB",
+      "sha256": "cc339ef87c91f5404459cc824ee9330618dbae7950f7d938b71b1cb8891b16f1"
+    },
+    {
+      "file": "generated/psdq-bgd-admin-coordinate-summary.json",
+      "size": 338171,
+      "size_human": "330.2 KB",
+      "sha256": "d828e2320b7a65d118416fe3283e7ddcaad363278be5204b324e967a35aaa35e"
+    },
+    {
+      "file": "generated/psdq-bgd-exposure-ranked-disagreement-summary.json",
+      "size": 17980,
+      "size_human": "17.6 KB",
+      "sha256": "401761ffe1056ff5ee901f802919fc84184782d51220b8d189e9a0eaf52307b3"
+    },
+    {
+      "file": "generated/psdq-bgd-exposure-ranked-disagreement.csv",
+      "size": 63369,
+      "size_human": "61.9 KB",
+      "sha256": "5749807fd3beb6942554fd265a89797c4011603a8b4a97ba5112407fc1522fee"
+    },
+    {
+      "file": "generated/psdq-bgd-exposure-road-context-summary.json",
+      "size": 19674,
+      "size_human": "19.2 KB",
+      "sha256": "77c69ffd16dd2582206b78145062e62673879b794dac2a6f05aed741a2cee520"
+    },
+    {
+      "file": "generated/psdq-bgd-exposure-road-context.csv",
+      "size": 95785,
+      "size_human": "93.5 KB",
+      "sha256": "58f3527759b5e31c27af03ba8c3c3126bb878ccb7987d15af6a7238f29055e56"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-coordinate-extract.csv",
+      "size": 7822984,
+      "size_human": "7.46 MB",
+      "sha256": "6e7cfef0f4583110be5549d4fb4d8482e6ae8ac36acdca1bade1805eaa6e4b91"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-coordinate-summary.json",
+      "size": 49572,
+      "size_human": "48.4 KB",
+      "sha256": "b031bc152cbc6d34a1698375f6e34db932daff565cec2ea0fe1d82ecbf78d2b0"
+    },
+    {
+      "file": "generated/psdq-bgd-open-buildings-admin-summary.csv",
+      "size": 49580,
+      "size_human": "48.4 KB",
+      "sha256": "cff1ea1d4979f0e4c71dae84913ef5babaad4e046a101ce1741dce0f3334c5ad"
+    },
+    {
+      "file": "generated/psdq-bgd-open-buildings-buffer-summary.json",
+      "size": 14142,
+      "size_human": "13.8 KB",
+      "sha256": "92c84b2b88b20c7139a779b34ad267539774c97c91f6dfd2af67fdca892c422e"
+    },
+    {
+      "file": "generated/psdq-bgd-open-buildings-facility-buffers.csv",
+      "size": 7116072,
+      "size_human": "6.79 MB",
+      "sha256": "fbb0213342e14cffb448905ec2e399a2d79a66035ff530dc701744a1d94b16c1"
+    },
+    {
+      "file": "generated/psdq-bgd-open-buildings-tile-manifest.csv",
+      "size": 1319,
+      "size_human": "1.3 KB",
+      "sha256": "f4d8f5fd21edad70708ce4484fa65e89a27870deaa45b2081b9d6c4ad20a4ccc"
+    },
+    {
+      "file": "generated/psdq-bgd-open-buildings-tile-manifest.json",
+      "size": 3872,
+      "size_human": "3.8 KB",
+      "sha256": "0c0018f61371127ae8ff08581b8331cb95de2f578afcfbe042315f07b8e4ded7"
+    },
+    {
+      "file": "generated/psdq-bgd-osm-health-upazila.csv",
+      "size": 43019,
+      "size_human": "42.0 KB",
+      "sha256": "879772625a73b10c7cdcad86d49a78567ef28c6412b4b99cc00d5879b93f0e7d"
+    },
+    {
+      "file": "generated/psdq-bgd-road-surface-summary.json",
+      "size": 18717,
+      "size_human": "18.3 KB",
+      "sha256": "e7a8156723b1f3ae73591b6f8420bd94ea05b2bcee793d2995c85ca540843e41"
+    },
+    {
+      "file": "generated/psdq-bgd-road-surface-upazila.csv",
+      "size": 80360,
+      "size_human": "78.5 KB",
+      "sha256": "258c5e14e3c1848a5078fc93ca657a5ccb107f0b2bf6c14498b3fab3a5fe7a98"
+    },
+    {
+      "file": "generated/psdq-catchment-readiness.json",
+      "size": 60500,
+      "size_human": "59.1 KB",
+      "sha256": "aee3865ea91666317591a6bc017a9363e067c93579af8153fb5c5ec1324e0add"
+    },
+    {
+      "file": "generated/psdq-phl-admin3-open-buildings-context-summary.json",
+      "size": 34637,
+      "size_human": "33.8 KB",
+      "sha256": "d66fb5bb6f6bda4534b89208fd32d9578b0734c05b0cebc3df7f18f9393be434"
+    },
+    {
+      "file": "generated/psdq-phl-admin3-open-buildings-context.csv",
+      "size": 276585,
+      "size_human": "270.1 KB",
+      "sha256": "7bb77ffee06cc5dfa5a267c321869023bc478a3c0d947eaa2ed4c9c8231ab290"
+    },
+    {
+      "file": "generated/psdq-phl-admin3-poverty-context-summary.json",
+      "size": 14092,
+      "size_human": "13.8 KB",
+      "sha256": "7e9b1a2f42b9c2cdc0e68f6af82577ac732f71e7dcac42f576db011d86e4b11a"
+    },
+    {
+      "file": "generated/psdq-phl-admin3-poverty-context.csv",
+      "size": 614130,
+      "size_human": "599.7 KB",
+      "sha256": "cf89539b8dacda5693bf19c1839809e7e075f295ff1211174be4e09a45dce8d4"
+    },
+    {
+      "file": "generated/psdq-phl-nhfr-barmm-ctymun-resolution.json",
+      "size": 16911,
+      "size_human": "16.5 KB",
+      "sha256": "1768925b8d0055fea4fa32ec809c67d3c8c9ae11a061c8cf665e987a82c8e9e5"
+    },
+    {
+      "file": "generated/psdq-phl-open-buildings-tile-manifest.csv",
+      "size": 2300,
+      "size_human": "2.2 KB",
+      "sha256": "e177291d329891117b7205281bc2faa6dc602924de9420061c5277784f3be841"
+    },
+    {
+      "file": "generated/psdq-phl-open-buildings-tile-manifest.json",
+      "size": 6360,
+      "size_human": "6.2 KB",
+      "sha256": "126de287251121bb1f2e22fc7976fa15c54425118fb82a4e478ff90f97043652"
+    },
+    {
+      "file": "generated/public-service-data-quality-BGD.csv",
+      "size": 1943,
+      "size_human": "1.9 KB",
+      "sha256": "ab7b8a3cec55c7e88908150f9b810b2443a7f6189f03bbeb8e6008e4c574ded2"
+    },
+    {
+      "file": "generated/public-service-data-quality-BGD.json",
+      "size": 6964,
+      "size_human": "6.8 KB",
+      "sha256": "c953ece060e94cb122242dd86e29765c0542a354932e3c68f7e0f6500cd7327f"
+    },
+    {
+      "file": "generated/public-service-data-quality-PHL.csv",
+      "size": 3415,
+      "size_human": "3.3 KB",
+      "sha256": "5b1da51865ff2cef018ed867c80845731dd49775ab9f4790e0cf2d85e1fea8d1"
+    },
+    {
+      "file": "generated/public-service-data-quality-PHL.json",
+      "size": 13520,
+      "size_human": "13.2 KB",
+      "sha256": "56af98aef9718bbcad49e9c7a6de8216077755ddf81129092110fa3fef845f95"
+    },
+    {
+      "file": "generated/public-service-data-quality-summary.json",
+      "size": 2039,
+      "size_human": "2.0 KB",
+      "sha256": "cdd864383a282aeeddabbb759bccd46b73b29373b88df9dcc7d0c457148b0ad6"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "measurement-gap-philippines-bangladesh",
+      "title": "The OSM-vs-registry gap in Philippine and Bangladeshi health facilities",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

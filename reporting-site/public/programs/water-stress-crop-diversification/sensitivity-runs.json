@@ -1,0 +1,404 @@
+{
+  "generated_at": "2026-04-26T03:23:12.460338Z",
+  "program": "water-stress-crop-diversification",
+  "metric": "water-crop-pressure-index ranking",
+  "common_top5_across_runs": [
+    "AFG",
+    "AZE",
+    "PAK",
+    "TKM"
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 79.37
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 75.32
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 54.4
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 41.27
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 31.96
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 23.9
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 15.41
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 15.31
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 14.71
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 12.76
+        }
+      ]
+    },
+    {
+      "label": "w_cap_minus50",
+      "w_cap": 50.0,
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 79.37
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 75.32
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 63.92
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 54.4
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 47.8
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 41.27
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 30.82
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 30.62
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 29.43
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 25.52
+        }
+      ]
+    },
+    {
+      "label": "w_cap_plus50",
+      "w_cap": 150.0,
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 79.37
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 75.32
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 41.27
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 38.81
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 21.31
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 15.93
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 10.27
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 10.21
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 9.81
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 8.51
+        }
+      ]
+    },
+    {
+      "label": "w_max_minus50",
+      "w_max": 0.75,
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 39.68
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 37.66
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 31.96
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 27.2
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 23.9
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 20.63
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 15.41
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 15.31
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 14.71
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 12.76
+        }
+      ]
+    },
+    {
+      "label": "w_max_plus50",
+      "w_max": 2.25,
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 119.05
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 112.98
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 61.9
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 58.22
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 31.96
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 23.9
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 15.41
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 15.31
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 14.71
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 12.76
+        }
+      ]
+    },
+    {
+      "label": "yield_base_minus50",
+      "yield_base": 1500.0,
+      "top10": [
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 64.91
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 37.66
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 27.2
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 20.63
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 20.33
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 14.43
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 11.95
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 11.71
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 7.71
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 7.17
+        }
+      ]
+    },
+    {
+      "label": "yield_base_plus50",
+      "yield_base": 4500.0,
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 91.24
+        },
+        {
+          "iso3": "TKM",
+          "country": "Turkmenistan",
+          "value": 79.37
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 62.14
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 61.9
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 31.96
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 28.94
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 19.54
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 19.14
+        },
+        {
+          "iso3": "ARM",
+          "country": "Armenia",
+          "value": 15.31
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 14.71
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "generated_at": "2026-04-26T03:23:12.457444Z",
+  "program": "school-heat-disruption",
+  "metric": "school-heat-pressure-index ranking",
+  "common_top5_across_runs": [
+    "KHM"
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 14.23
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 6.84
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 6.29
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 5.27
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 5.09
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 4.43
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 4.29
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 4.22
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 3.61
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 3.27
+        }
+      ]
+    },
+    {
+      "label": "tmax_floor_minus50",
+      "tmax_floor": 12.5,
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 38.78
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 31.06
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 23.49
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 22.68
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 22.08
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 21.03
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 20.26
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 20.16
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 16.86
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 14.8
+        }
+      ]
+    },
+    {
+      "label": "tmax_floor_plus50",
+      "tmax_floor": 37.5,
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 0.0
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.0
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 0.0
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 0.0
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 0.0
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 0.0
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 0.0
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 0.0
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 0.0
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "label": "tmax_cap_minus50",
+      "tmax_cap": 7.5,
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 28.45
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 13.68
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 12.58
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 10.54
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 10.19
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 8.86
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 8.59
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 8.44
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 7.22
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 6.54
+        }
+      ]
+    },
+    {
+      "label": "tmax_cap_plus50",
+      "tmax_cap": 22.5,
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 9.48
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 4.56
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 4.19
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 3.51
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 3.4
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 2.95
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 2.86
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 2.81
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 2.41
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 2.18
+        }
+      ]
+    },
+    {
+      "label": "ptr_cap_minus50",
+      "ptr_cap": 20.0,
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 20.47
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 13.66
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 11.52
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 10.54
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 8.86
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 8.59
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 8.44
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 7.22
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 6.93
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 6.54
+        }
+      ]
+    },
+    {
+      "label": "ptr_cap_plus50",
+      "ptr_cap": 60.0,
+      "top10": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 9.48
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 4.56
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 4.19
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 3.51
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 3.4
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 2.95
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 2.86
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 2.81
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 2.41
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 2.18
+        }
+      ]
+    }
+  ]
+}

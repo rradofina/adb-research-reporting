@@ -1,0 +1,128 @@
+{
+  "program": "disaster-recovery-lag",
+  "permanent_url": "/program/disaster-recovery-lag/evidence",
+  "generated_at": "2026-05-07T03:31:39.541Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1188,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.345Z",
+      "sha256": "4f5247c81ddfbcc3e931b69aa597e9f3479258ff9287ccd5d119491af013658d",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1984,
+      "size_human": "1.9 KB",
+      "mtime": "2026-04-27T03:37:39.789Z",
+      "sha256": "5532c692bd50adcd5e474054e8944425b58dea733ca2ea1d1b423334a733fed8",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1892,
+      "size_human": "1.8 KB",
+      "mtime": "2026-04-26T03:23:49.787Z",
+      "sha256": "46ba464b2e347843a03a22738c43af4dcb83f0808e96f84a777a04d5bea51221",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 920,
+      "size_human": "920 B",
+      "mtime": "2026-04-26T03:23:56.565Z",
+      "sha256": "a3f79f4d7c3b31dfcbe1ba8f36fd36d58ca8e4b7ec2850ba935aaed24d2c7ac0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 4156,
+      "size_human": "4.1 KB",
+      "mtime": "2026-04-26T03:23:12.452Z",
+      "sha256": "59a72f40cda1796119eafb3c2f4c615ae8b9ebf150d0c71f0a9d8a356a6e82e4",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 433,
+      "size_human": "433 B",
+      "mtime": "2026-04-26T03:23:59.946Z",
+      "sha256": "c2c1c101310f3bed6ca6a2477ea3a5cd8562827631370256f8c076da3896251d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 683,
+      "size_human": "683 B",
+      "mtime": "2026-04-26T03:24:27.897Z",
+      "sha256": "7315b4d0b858358ccd7d10baad75d6d13e61770591d1e7020a1db2020a4d551a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 1146,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-26T03:24:07.560Z",
+      "sha256": "dcd1fea6f29263d04a911019c368e6ac4cef446c54804eb8786c69d2c361c99d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1708,
+      "size_human": "1.7 KB",
+      "mtime": "2026-04-26T03:24:17.635Z",
+      "sha256": "da0206fb8b22c4c475d92bc1dc38a98b3d7462cc8d36403c3c1a13fea95a113c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 1068,
+      "size_human": "1.0 KB",
+      "mtime": "2026-04-26T03:24:23.505Z",
+      "sha256": "d6813b8ede922fc81ee992c6dea9529e9ce90bee257b4a2197c0e9ed0729ad93",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/disaster-recovery-lag-adb-panel.csv",
+      "size": 1977,
+      "size_human": "1.9 KB",
+      "sha256": "a420d43afdc5326068f68cf97857a82bc180b3bffca328d096eb44240274f13d"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-adb-panel.json",
+      "size": 24125,
+      "size_human": "23.6 KB",
+      "sha256": "5f7bb5bcd0cc68bf16cde4fd61e3234862d76c94d800e1ce5420f758448eb058"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "disaster-burden-cluster",
+      "title": "Two DMCs hold the top of every disaster-burden ranking — China and India",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

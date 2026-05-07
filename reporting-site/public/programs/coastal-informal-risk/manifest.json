@@ -1,0 +1,128 @@
+{
+  "program": "coastal-informal-risk",
+  "permanent_url": "/program/coastal-informal-risk/evidence",
+  "generated_at": "2026-05-07T03:31:39.725Z",
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 1243,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-24T08:05:49.334Z",
+      "sha256": "510a6e01e12bbd37e8fc91774b6541c1d2070704a74f27384765c6443603540f",
+      "attestation_chain": null
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 2028,
+      "size_human": "2.0 KB",
+      "mtime": "2026-04-27T03:42:45.325Z",
+      "sha256": "c94f0dc620846a233efde01b4ada2b515fd5005727db56f38e7adc44e590b4e9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 1238,
+      "size_human": "1.2 KB",
+      "mtime": "2026-04-26T11:20:35.333Z",
+      "sha256": "4080a0a5b2fac3cbd29128d546ccc2a6cdcbe90de3f033ed5b4abbddc90ec06e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 508,
+      "size_human": "508 B",
+      "mtime": "2026-04-26T11:20:39.941Z",
+      "sha256": "6a0cd8a6f3305bb7f216b18e486fee4855a9b33ea249b656607d9413cbb9bb81",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 3827,
+      "size_human": "3.7 KB",
+      "mtime": "2026-04-26T11:20:16.401Z",
+      "sha256": "378638d93e0162bff2550d677647f407668c2185e8b61ee990e5613545f7e9f2",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 515,
+      "size_human": "515 B",
+      "mtime": "2026-04-26T11:20:44.838Z",
+      "sha256": "ed7d78c2f934eff24fe3c8ad70d416ba8e51c3f064f08d3f402a5a96b4f0c1ae",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 538,
+      "size_human": "538 B",
+      "mtime": "2026-04-26T11:21:10.826Z",
+      "sha256": "a024dec5521df9ad90ebdb2743e9e63677dbbdab9cca60a306b8e7b0f105edd0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 846,
+      "size_human": "846 B",
+      "mtime": "2026-04-26T11:20:52.112Z",
+      "sha256": "b82b6758d4420adbc8b7a3f4dc49e2ca75e85a9ee0206b6e074b40b8b3f584c5",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1799,
+      "size_human": "1.8 KB",
+      "mtime": "2026-04-26T11:21:04.069Z",
+      "sha256": "d1dd6e986a45a174752aeecc658dede5f5b9b0b68a5cd6ba1d9890161f286259",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 665,
+      "size_human": "665 B",
+      "mtime": "2026-04-26T11:21:07.883Z",
+      "sha256": "fa47a5c6b3ff2664b5d3bf37714c5c3f3107b3e23d3ab401cff751c4c26762d6",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/coastal-informal-risk-adb-panel.csv",
+      "size": 1540,
+      "size_human": "1.5 KB",
+      "sha256": "f9c6a2269daf21da8ffc4142ef95d2c5f9b895ae6dd287475586bdf108be6710"
+    },
+    {
+      "file": "generated/coastal-informal-risk-adb-panel.json",
+      "size": 8739,
+      "size_human": "8.5 KB",
+      "sha256": "3ddbca76d4dc92d8ef7e7cf7aedfdc0c24c6b2ae68cf5a52e7faace49f6d859a"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "coastal-informal-cluster",
+      "title": "Five coastal DMCs hold the top of the urban-informal-pressure ranking — Pakistan, Philippines, China, Bangladesh, Myanmar",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "program": "invisible-urbanization",
+  "permanent_url": "/program/invisible-urbanization/evidence",
+  "generated_at": "2026-05-07T03:31:39.776Z",
+  "artifacts": [
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 1632,
+      "size_human": "1.6 KB",
+      "mtime": "2026-04-27T03:42:56.095Z",
+      "sha256": "7b270d39932aa8b5031887d1a44c241e49b7cb363ffbbb5b2af0ded4b626ba35",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 929,
+      "size_human": "929 B",
+      "mtime": "2026-04-26T11:21:17.400Z",
+      "sha256": "5846894196045f1e8d207934793fcdfcbb37bc5bd237657a790900b9eec7e793",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 569,
+      "size_human": "569 B",
+      "mtime": "2026-04-26T11:21:20.825Z",
+      "sha256": "0fbba514badafb06eec26b8aa8c82901a82eab903fd7b5e642583ef2b1ebcf71",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 3979,
+      "size_human": "3.9 KB",
+      "mtime": "2026-04-26T11:20:16.402Z",
+      "sha256": "692d97050b84f7b133d386556582716ddab876088e84bbab30754c80d04bd388",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 436,
+      "size_human": "436 B",
+      "mtime": "2026-04-26T11:21:24.666Z",
+      "sha256": "af7d441277a683532c38bfc795b086b05b197aadae174ba3aa6f12a59b2aa022",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 468,
+      "size_human": "468 B",
+      "mtime": "2026-04-26T11:21:45.819Z",
+      "sha256": "5eac99f119722a20286460301eae06b11cebf96f29a58bfa2421207f2dba6123",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 872,
+      "size_human": "872 B",
+      "mtime": "2026-04-26T11:21:30.402Z",
+      "sha256": "469708a1ac54f75c08260f0b0d814e454651cdbee1a490edfb4931364c1dc561",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1755,
+      "size_human": "1.7 KB",
+      "mtime": "2026-04-26T11:21:39.853Z",
+      "sha256": "38ee49076686467dc74bc12e930863f5162edb99abf546345aca37f88480bf18",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 634,
+      "size_human": "634 B",
+      "mtime": "2026-04-26T11:21:43.806Z",
+      "sha256": "bf7829c1af1ae75b51cdb807a98678e7a4f87ee48965855116e04a982fac1008",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/invisible-urbanization-adb-panel.csv",
+      "size": 1875,
+      "size_human": "1.8 KB",
+      "sha256": "072153aff9fef21431c9a01aaa33224475453a5bcea0f60562a56a707ebc570f"
+    },
+    {
+      "file": "generated/invisible-urbanization-adb-panel.json",
+      "size": 10514,
+      "size_human": "10.3 KB",
+      "sha256": "92d95ce09f1169d5af6c633eee749f3972d768f4898f596cc048273795629dc7"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "invisible-urbanization-cluster",
+      "title": "Five rural-base DMCs hold the top of the urban-growth signal — PNG, Solomon Islands, Afghanistan, Lao PDR, Bangladesh",
+      "attestation_chain": "ai-first"
+    }
+  ]
+}

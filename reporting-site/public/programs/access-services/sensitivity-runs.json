@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-04-26T16:56:14.787282Z",
+  "program": "access-services",
+  "metric": "country-level access-stress ranking + alt-aggregation stability",
+  "common_top5_across_metrics": [
+    "BGD",
+    "KHM",
+    "LAO",
+    "PAK"
+  ],
+  "runs": [
+    {
+      "label": "baseline_pop_weighted_stress",
+      "top5": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 90.31
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 68.14
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 58.68
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao People's Democratic Republic",
+          "value": 44.55
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 37.91
+        }
+      ]
+    },
+    {
+      "label": "alt_max_people_per_health_facility",
+      "top5": [
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 319413
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 149776
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 94376
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 68678
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao People's Democratic Republic",
+          "value": 44845
+        }
+      ]
+    }
+  ],
+  "note": "Pilot covers 8 DMCs only (PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS). Sensitivity scope is limited; the \u00a718.5 upgrade-pass extends to all 50 ADB DMCs."
+}

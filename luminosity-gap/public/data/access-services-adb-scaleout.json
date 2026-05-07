@@ -1,0 +1,2633 @@
+{
+  "metadata": {
+    "title": "Climate-Adjusted Access to Services - ADB Regional Scale-Out Readiness",
+    "generatedAt": "2026-04-23T07:35:30.527Z",
+    "script": "scripts/research/access-services-scaleout.ts",
+    "status": "computed_scaleout_readiness",
+    "coverageScope": "ADB regional member economies listed by ADB ARIC",
+    "caveat": "This artifact measures readiness and priority for scale-out. It does not compute service counts, travel time, or access stress for all economies.",
+    "method": "Checks WDI population/rural/land-area availability and geoBoundaries ADM0/ADM1 metadata for ADB regional member economies; scores source readiness and impact priority to rank where the access-services pipeline can expand next.",
+    "sources": [
+      "https://aric.adb.org/integrationindicators/groupings",
+      "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL",
+      "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS",
+      "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2",
+      "https://www.geoboundaries.org/api.html"
+    ],
+    "cacheNote": "Responses are cached under .cache/research/access-scaleout unless ACCESS_SCALE_REFRESH=1 is set.",
+    "exports": {
+      "json": [
+        "src/data/generated/access-services-adb-scaleout.json",
+        "public/data/access-services-adb-scaleout.json"
+      ],
+      "csv": [
+        "public/data/access-services-adb-scaleout.csv",
+        "research/access-services/generated/access-services-adb-scaleout.csv"
+      ]
+    }
+  },
+  "summary": {
+    "economiesAssessed": 50,
+    "adm1BoundaryAvailable": 48,
+    "adm0BoundaryAvailable": 49,
+    "populationKnown": 47,
+    "ruralShareKnown": 47,
+    "landAreaKnown": 47,
+    "admin1ScreeningCandidates": 46,
+    "sourceReviewRequired": 3,
+    "topCandidates": [
+      {
+        "iso3": "IND",
+        "name": "India",
+        "subregion": "South Asia",
+        "population": 1450935791,
+        "adm1Units": 36,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 87,
+        "scalePriorityScore": 93,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "BGD",
+        "name": "Bangladesh",
+        "subregion": "South Asia",
+        "population": 173562364,
+        "adm1Units": 8,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 81,
+        "scalePriorityScore": 90,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "PAK",
+        "name": "Pakistan",
+        "subregion": "South Asia",
+        "population": 251269164,
+        "adm1Units": 7,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 80,
+        "scalePriorityScore": 89,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "AFG",
+        "name": "Afghanistan",
+        "subregion": "South Asia",
+        "population": 42647492,
+        "adm1Units": 34,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "MMR",
+        "name": "Myanmar",
+        "subregion": "Southeast Asia",
+        "population": 54500091,
+        "adm1Units": 14,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 78,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "PNG",
+        "name": "Papua New Guinea",
+        "subregion": "The Pacific",
+        "population": 10576502,
+        "adm1Units": 22,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "LKA",
+        "name": "Sri Lanka",
+        "subregion": "South Asia",
+        "population": 21916000,
+        "adm1Units": 9,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "CHN",
+        "name": "China, People's Republic of",
+        "subregion": "East Asia",
+        "population": 1408975000,
+        "adm1Units": 34,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 76,
+        "scalePriorityScore": 87,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "VNM",
+        "name": "Viet Nam",
+        "subregion": "Southeast Asia",
+        "population": 100987686,
+        "adm1Units": 64,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 77,
+        "scalePriorityScore": 87,
+        "nextPipelineMode": "admin1_screening_candidate"
+      },
+      {
+        "iso3": "IDN",
+        "name": "Indonesia",
+        "subregion": "Southeast Asia",
+        "population": 283487931,
+        "adm1Units": 34,
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 74,
+        "scalePriorityScore": 86,
+        "nextPipelineMode": "admin1_screening_candidate"
+      }
+    ]
+  },
+  "economies": [
+    {
+      "iso2": "IN",
+      "iso3": "IND",
+      "name": "India",
+      "subregion": "South Asia",
+      "population": {
+        "value": 1450935791,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 64.6211027631611,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 2973190,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "IND-ADM0-67634026",
+          "boundaryYearRepresented": "2014",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/IND/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "IND-ADM1-1811400",
+          "boundaryYearRepresented": "2011",
+          "admUnitCount": 36,
+          "boundarySource": "DataMeet India community, Election Commission of India",
+          "boundaryLicense": "Creative Commons Attribution 2.5 India (CC BY 2.5 IN)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/IND/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 87,
+        "scalePriorityScore": 93,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "BD",
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "subregion": "South Asia",
+      "population": {
+        "value": 173562364,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 67.3216803676693,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 129980,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "BGD-ADM0-71232402",
+          "boundaryYearRepresented": "2015",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BGD/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "BGD-ADM1-32408957",
+          "boundaryYearRepresented": "2015",
+          "admUnitCount": 8,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BGD/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 81,
+        "scalePriorityScore": 90,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "PK",
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "subregion": "South Asia",
+      "population": {
+        "value": 251269164,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 60.8265631639095,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 770880,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "PAK-ADM0-80972501",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PAK/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "PAK-ADM1-70912109",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 7,
+          "boundarySource": "geoBoundaries, Wikipedia",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PAK/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 80,
+        "scalePriorityScore": 89,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "AF",
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "subregion": "South Asia",
+      "population": {
+        "value": 42647492,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 74.2992647363812,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 652230,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "AFG-ADM0-77858471",
+          "boundaryYearRepresented": "2014",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, ArcGIS Hub",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AFG/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "AFG-ADM1-12653393",
+          "boundaryYearRepresented": "2007",
+          "admUnitCount": 34,
+          "boundarySource": "Wikimedia, geoBoundaries",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AFG/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "MM",
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 54500091,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 69.5500915925864,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 652670,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "MMR-ADM0-35516675",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap",
+          "boundaryLicense": "Creative Commons Attribution-ShareAlike 2.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MMR/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "MMR-ADM1-20573499",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 14,
+          "boundarySource": "Myanmar Analytics Project, geoBoundaries",
+          "boundaryLicense": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MMR/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 78,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "PG",
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 10576502,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 84.5938183596667,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 452860,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "PNG-ADM0-50406891",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PNG/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "PNG-ADM1-602756",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 22,
+          "boundarySource": "Papua New Guinea National Statistics Office, OCHA ROAP",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PNG/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "LK",
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "subregion": "South Asia",
+      "population": {
+        "value": 21916000,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 79.7003002941314,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 61860,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "LKA-ADM0-54457186",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/LKA/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "LKA-ADM1-99731895",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 9,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/LKA/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 79,
+        "scalePriorityScore": 88,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "CN",
+      "iso3": "CHN",
+      "name": "China, People's Republic of",
+      "subregion": "East Asia",
+      "population": {
+        "value": 1408975000,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 34.1053019001675,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 9388210,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "CHN-ADM0-351020",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "CHN-ADM1-43563684",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 34,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 76,
+        "scalePriorityScore": 87,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "VN",
+      "iso3": "VNM",
+      "name": "Viet Nam",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 100987686,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 61.5099296569824,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 313429,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "VNM-ADM0-46766057",
+          "boundaryYearRepresented": "2016",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikipedia",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/VNM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "VNM-ADM1-63759600",
+          "boundaryYearRepresented": "2008",
+          "admUnitCount": 64,
+          "boundarySource": "geoBoundaries, Wikipedia",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/VNM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 77,
+        "scalePriorityScore": 87,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "ID",
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 283487931,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 41.2490364612003,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 1892555.47,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "IDN-ADM0-11942859",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "IDN-ADM1-65028918",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 34,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 74,
+        "scalePriorityScore": 86,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TJ",
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 10590927,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 73.8211936348452,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 138790,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TJK-ADM0-77803701",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TJK/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TJK-ADM1-86453995",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 5,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TJK/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 75,
+        "scalePriorityScore": 86,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "PH",
+      "iso3": "PHL",
+      "name": "Philippines",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 115843670,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 44.5479016784523,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 298170,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "PHL-ADM0-24100683",
+          "boundaryYearRepresented": "2020",
+          "admUnitCount": 1,
+          "boundarySource": "OCHA Philippines, National Mapping and Resource Information Authority",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PHL/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "PHL-ADM1-36201628",
+          "boundaryYearRepresented": "2020",
+          "admUnitCount": 17,
+          "boundarySource": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PHL/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 72,
+        "scalePriorityScore": 85,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "KH",
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 17638801,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 59.1272966747271,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 176520,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "KHM-ADM0-94605694",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KHM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "KHM-ADM1-37992800",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 25,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KHM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 71,
+        "scalePriorityScore": 84,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "KG",
+      "iso3": "KGZ",
+      "name": "Kyrgyz Republic",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 7221868,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 65.2780022134063,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 191800,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "KGZ-ADM0-96190653",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KGZ/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "KGZ-ADM1-38789647",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 7,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KGZ/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 71,
+        "scalePriorityScore": 84,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "UZ",
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 36361859,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 49.0013313293457,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 440650,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "UZB-ADM0-45261887",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/UZB/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "UZB-ADM1-4885205",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 14,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/UZB/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 70,
+        "scalePriorityScore": 84,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "LA",
+      "iso3": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 7769819,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 60.4447845598594,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 230800,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "LAO-ADM0-69401296",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/LAO/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "LAO-ADM1-31783359",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 18,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/LAO/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 69,
+        "scalePriorityScore": 83,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TH",
+      "iso3": "THA",
+      "name": "Thailand",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 71668011,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 38.1310661608679,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 510890,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "THA-ADM0-76911100",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/THA/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "THA-ADM1-36821470",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 77,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/THA/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 68,
+        "scalePriorityScore": 82,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TL",
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 1400638,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 71.3358925820426,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 14870,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TLS-ADM0-64751640",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TLS/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TLS-ADM1-58719522",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 13,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TLS/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 68,
+        "scalePriorityScore": 82,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TM",
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 7494498,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 52.9124746089706,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 469930,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TKM-ADM0-79246564",
+          "boundaryYearRepresented": "2007",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TKM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TKM-ADM1-27578892",
+          "boundaryYearRepresented": "2007",
+          "admUnitCount": 6,
+          "boundarySource": "geoBoundaries, Wikimedia",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TKM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 67,
+        "scalePriorityScore": 82,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "WS",
+      "iso3": "WSM",
+      "name": "Samoa",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 218019,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 82.4970884891982,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 2780,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "WSM-ADM0-28090321",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/WSM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "WSM-ADM1-40696546",
+          "boundaryYearRepresented": "2018",
+          "admUnitCount": 11,
+          "boundarySource": "Wikipedia",
+          "boundaryLicense": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/WSM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 66,
+        "scalePriorityScore": 81,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "SB",
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 819198,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 69.3382811437806,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 27990,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "SLB-ADM0-12472743",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Natural Earth",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/SLB/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "SLB-ADM1-17018030",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 10,
+          "boundarySource": "Natural Earth",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/SLB/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 66,
+        "scalePriorityScore": 81,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "VU",
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 327777,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 77.7133066639355,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 12190,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "VUT-ADM0-10589628",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/VUT/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "VUT-ADM1-32282491",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 6,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/VUT/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 66,
+        "scalePriorityScore": 81,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "AZ",
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 10202830,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 41.426204162283,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 82650,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "AZE-ADM0-83331535",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Sentinel-2 10-Meter Land Use/LandCover",
+          "boundaryLicense": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AZE/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "AZE-ADM1-63332228",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 2,
+          "boundarySource": "geoBoundaries, OpenStreetMap",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AZE/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 63,
+        "scalePriorityScore": 80,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "KZ",
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 20592571,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 37.927468415838,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 2699700,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "KAZ-ADM0-12445969",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KAZ/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "KAZ-ADM1-16772668",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 16,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KAZ/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 64,
+        "scalePriorityScore": 80,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "NP",
+      "iso3": "NPL",
+      "name": "Nepal",
+      "subregion": "South Asia",
+      "population": {
+        "value": 29651054,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 33.227656836971,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 143350,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "NPL-ADM0-63295607",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 1,
+          "boundarySource": "Geoboundaries, Open Data Nepal",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NPL/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "NPL-ADM1-38925275",
+          "boundaryYearRepresented": "2020",
+          "admUnitCount": 7,
+          "boundarySource": "Survey Department of Nepal, OCHA FISS",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NPL/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 64,
+        "scalePriorityScore": 80,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TO",
+      "iso3": "TON",
+      "name": "Tonga",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 104175,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 78.8494728874479,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 720,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TON-ADM0-98642404",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TON/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TON-ADM1-12702645",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 5,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TON/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 63,
+        "scalePriorityScore": 80,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "BT",
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "subregion": "South Asia",
+      "population": {
+        "value": 791524,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 57.4354750196588,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 38140,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "BTN-ADM0-95260433",
+          "boundaryYearRepresented": "2010",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia Commons; credit to author 'Babbage'",
+          "boundaryLicense": "Creative Commons Attribution 3.0 License",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BTN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "BTN-ADM1-66845921",
+          "boundaryYearRepresented": "2010",
+          "admUnitCount": 20,
+          "boundarySource": "geoBoundaries, Wikimedia Commons; credit to author 'Babbage'",
+          "boundaryLicense": "Creative Commons Attribution 3.0 License",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BTN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 61,
+        "scalePriorityScore": 79,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "KR",
+      "iso3": "KOR",
+      "name": "Korea, Republic of",
+      "subregion": "East Asia",
+      "population": {
+        "value": 51751065,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 18.8317471530314,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 97600,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "KOR-ADM0-49999745",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Natural Earth, geoBoundaries",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KOR/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "KOR-ADM1-68945753",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 17,
+          "boundarySource": "Natural Earth",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KOR/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 61,
+        "scalePriorityScore": 79,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "MY",
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 35557673,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 23.0829703351008,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 328550,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "MYS-ADM0-87038898",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MYS/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "MYS-ADM1-15666254",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 16,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MYS/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 61,
+        "scalePriorityScore": 79,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "FM",
+      "iso3": "FSM",
+      "name": "Micronesia, Federated States of",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 113160,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 77.5437169764579,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 700,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "FSM-ADM0-75748993",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 1,
+          "boundarySource": "OCHA ROP, Federated States of Micronesia Division of Statistics, 2010 Census of Population and Housing and Secretariat of the Pacific Community, Statistics for Development Division",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/FSM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "FSM-ADM1-64989084",
+          "boundaryYearRepresented": "2019",
+          "admUnitCount": 4,
+          "boundarySource": "OCHA ROP, Federated States of Micronesia Division of Statistics, 2010 Census of Population and Housing and Secretariat of the Pacific Community, Statistics for Development Division",
+          "boundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/FSM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 62,
+        "scalePriorityScore": 79,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "GE",
+      "iso3": "GEO",
+      "name": "Georgia",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 3699557,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 38.9210394906267,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 69490,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "GEO-ADM0-33476915",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Creative Commons Attribution-ShareAlike 2.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/GEO/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "GEO-ADM1-13066534",
+          "boundaryYearRepresented": "2015",
+          "admUnitCount": 12,
+          "boundarySource": "geoBoundaries, Wikimedia",
+          "boundaryLicense": "Creative Commons Attribution 3.0 License",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/GEO/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 60,
+        "scalePriorityScore": 78,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "MV",
+      "iso3": "MDV",
+      "name": "Maldives",
+      "subregion": "South Asia",
+      "population": {
+        "value": 527799,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 58.0017847282615,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 298,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "MDV-ADM0-21348113",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Sentinel-2 10-Meter Land Use/LandCover",
+          "boundaryLicense": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MDV/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "MDV-ADM1-51498476",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 21,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MDV/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 60,
+        "scalePriorityScore": 78,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "JP",
+      "iso3": "JPN",
+      "name": "Japan",
+      "subregion": "East Asia",
+      "population": {
+        "value": 123975371,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 7.8098281965469,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 364569.27,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "JPN-ADM0-22093344",
+          "boundaryYearRepresented": "2022",
+          "admUnitCount": 1,
+          "boundarySource": "Ministry of Land, Infrastructure, Transport and Tourism National Land Numerical Information Download Site",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/JPN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "JPN-ADM1-47310658",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 47,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/JPN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 59,
+        "scalePriorityScore": 77,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TR",
+      "iso3": "TUR",
+      "name": "Türkiye",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 85518661,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 10.6556877126113,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 769630,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TUR-ADM0-4540299",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Open Street Map",
+          "boundaryLicense": "Creative Commons Attribution-ShareAlike 2.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TUR/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TUR-ADM1-25984515",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 81,
+          "boundarySource": "Open Street Map",
+          "boundaryLicense": "Creative Commons Attribution-ShareAlike 2.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TUR/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 59,
+        "scalePriorityScore": 77,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "AM",
+      "iso3": "ARM",
+      "name": "Armenia",
+      "subregion": "Central and West Asia",
+      "population": {
+        "value": 3033500,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 34.1886328550099,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 28199.44,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "ARM-ADM0-83012948",
+          "boundaryYearRepresented": "2005",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Wikimedia",
+          "boundaryLicense": "Creative Commons Attribution 2.5 Generic",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/ARM/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "ARM-ADM1-6114869",
+          "boundaryYearRepresented": "2005",
+          "admUnitCount": 11,
+          "boundarySource": "geoBoundaries, Wikimedia",
+          "boundaryLicense": "Creative Commons Attribution 2.5 Generic",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/ARM/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 57,
+        "scalePriorityScore": 76,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "AU",
+      "iso3": "AUS",
+      "name": "Australia",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 27196812,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 12.3978530009554,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 7692020,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "AUS-ADM0-85198719",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "Australian Bureau of Statistics",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AUS/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "AUS-ADM1-82085004",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 9,
+          "boundarySource": "Australian Bureau of Statistics",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/AUS/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 56,
+        "scalePriorityScore": 76,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "FJ",
+      "iso3": "FJI",
+      "name": "Fiji",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 928784,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 40.9233397707543,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 18270,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "FJI-ADM0-17002246",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, OpenStreetMap",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/FJI/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "FJI-ADM1-53030831",
+          "boundaryYearRepresented": "2006",
+          "admUnitCount": 4,
+          "boundarySource": "geoBoundaries, Wikimedia Commons",
+          "boundaryLicense": "Creative Commons Attribution 2.5 Generic",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/FJI/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 56,
+        "scalePriorityScore": 76,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "MN",
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "subregion": "East Asia",
+      "population": {
+        "value": 3524788,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 29.0433959960938,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 1558499.786,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "MNG-ADM0-74336971",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MNG/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "MNG-ADM1-14279143",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 22,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MNG/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 56,
+        "scalePriorityScore": 76,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "NZ",
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 5287500,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 16.0629341166868,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 263310,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "NZL-ADM0-90488144",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "NZ Stats",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NZL/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "NZL-ADM1-40311993",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 17,
+          "boundarySource": "NZ Stats",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NZL/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 53,
+        "scalePriorityScore": 74,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "KI",
+      "iso3": "KIR",
+      "name": "Kiribati",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 134518,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 37.5379568724358,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 810,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "KIR-ADM0-77750713",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KIR/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "KIR-ADM1-97431129",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 3,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/KIR/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 49,
+        "scalePriorityScore": 72,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "BN",
+      "iso3": "BRN",
+      "name": "Brunei Darussalam",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 462721,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 25.1016866126303,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 5270,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "BRN-ADM0-51999400",
+          "boundaryYearRepresented": "2015",
+          "admUnitCount": 1,
+          "boundarySource": "Wikimedia Commons",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BRN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "BRN-ADM1-89281809",
+          "boundaryYearRepresented": "2011",
+          "admUnitCount": 4,
+          "boundarySource": "geoBoundaries, Wikimedia Commons; credit to user 'Tachymetre'",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/BRN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 48,
+        "scalePriorityScore": 71,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "SG",
+      "iso3": "SGP",
+      "name": "Singapore",
+      "subregion": "Southeast Asia",
+      "population": {
+        "value": 6036860,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 0,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 718,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "SGP-ADM0-21272760",
+          "boundaryYearRepresented": "2016",
+          "admUnitCount": 1,
+          "boundarySource": "Urban Redevelopment Authority, derived from ADM 3",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/SGP/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "SGP-ADM1-49756563",
+          "boundaryYearRepresented": "2016",
+          "admUnitCount": 5,
+          "boundarySource": "Urban Redevelopment Authority, derived from ADM 3",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/SGP/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 47,
+        "scalePriorityScore": 71,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "TV",
+      "iso3": "TUV",
+      "name": "Tuvalu",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 9646,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 35.2745206558709,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 30,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TUV-ADM0-95523829",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TUV/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TUV-ADM1-17741764",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 8,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TUV/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 40,
+        "scalePriorityScore": 67,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "MH",
+      "iso3": "MHL",
+      "name": "Marshall Islands",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 37548,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 21.2674339755888,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 180,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "MHL-ADM0-89087692",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MHL/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "MHL-ADM1-77969171",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 24,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/MHL/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 39,
+        "scalePriorityScore": 66,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "PW",
+      "iso3": "PLW",
+      "name": "Palau",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 17695,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 20.7904957121333,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 460,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "PLW-ADM0-91809328",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PLW/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "PLW-ADM1-51375826",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 16,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/PLW/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 37,
+        "scalePriorityScore": 65,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "NR",
+      "iso3": "NRU",
+      "name": "Nauru",
+      "subregion": "The Pacific",
+      "population": {
+        "value": 11947,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 0,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 20,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "NRU-ADM0-75428603",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 1,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NRU/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "NRU-ADM1-42797286",
+          "boundaryYearRepresented": "2005",
+          "admUnitCount": 14,
+          "boundarySource": "geoBoundaries, FreeMapViewer",
+          "boundaryLicense": "Public Domain",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NRU/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 100,
+        "impactPriorityScore": 28,
+        "scalePriorityScore": 60,
+        "nextPipelineMode": "admin1_screening_candidate",
+        "blockerNotes": []
+      }
+    },
+    {
+      "iso2": "HK",
+      "iso3": "HKG",
+      "name": "Hong Kong, China",
+      "subregion": "East Asia",
+      "population": {
+        "value": 7524100,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&mrv=1"
+      },
+      "ruralPopulationShare": {
+        "value": 0,
+        "year": 2024,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/SP.RUR.TOTL.ZS?format=json&per_page=20000&mrv=1"
+      },
+      "landAreaSqKm": {
+        "value": 1050,
+        "year": 2023,
+        "sourceUrl": "https://api.worldbank.org/v2/country/all/indicator/AG.LND.TOTL.K2?format=json&per_page=20000&mrv=1"
+      },
+      "boundaries": {
+        "adm0": {
+          "status": "error",
+          "boundaryID": null,
+          "boundaryYearRepresented": null,
+          "admUnitCount": null,
+          "boundarySource": null,
+          "boundaryLicense": null,
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/HKG/ADM0/",
+          "error": "HTTP 404: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<p>Additionally, a "
+        },
+        "adm1": {
+          "status": "error",
+          "boundaryID": null,
+          "boundaryYearRepresented": null,
+          "admUnitCount": null,
+          "boundarySource": null,
+          "boundaryLicense": null,
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/HKG/ADM1/",
+          "error": "HTTP 404: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<p>Additionally, a "
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 45,
+        "impactPriorityScore": 48,
+        "scalePriorityScore": 47,
+        "nextPipelineMode": "national_screening_candidate",
+        "blockerNotes": [
+          "No geoBoundaries ADM1 metadata"
+        ]
+      }
+    },
+    {
+      "iso2": "NU",
+      "iso3": "NIU",
+      "name": "Niue",
+      "subregion": "The Pacific",
+      "population": null,
+      "ruralPopulationShare": null,
+      "landAreaSqKm": null,
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "NIU-ADM0-98221342",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "raster2polygon from Sentinel-2 10m Land Cover where Image Year = 2021 / exclude gridcode = 1 (water) / dissolve / processed by IMB",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NIU/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "NIU-ADM1-93272968",
+          "boundaryYearRepresented": "2020",
+          "admUnitCount": 14,
+          "boundarySource": "Pacific Data Hub",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/NIU/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 55,
+        "impactPriorityScore": 12,
+        "scalePriorityScore": 31,
+        "nextPipelineMode": "source_review_required",
+        "blockerNotes": [
+          "No latest World Bank population value",
+          "No latest World Bank rural-share value",
+          "No latest World Bank land-area value"
+        ]
+      }
+    },
+    {
+      "iso2": "TW",
+      "iso3": "TWN",
+      "name": "Taipei,China",
+      "subregion": "East Asia",
+      "population": null,
+      "ruralPopulationShare": null,
+      "landAreaSqKm": null,
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "TWN-ADM0-7377636",
+          "boundaryYearRepresented": "2012",
+          "admUnitCount": 1,
+          "boundarySource": "geoBoundaries, Pixabay",
+          "boundaryLicense": "Pixabay License for Content",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TWN/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "available",
+          "boundaryID": "TWN-ADM1-90331920",
+          "boundaryYearRepresented": "2017",
+          "admUnitCount": 22,
+          "boundarySource": "OpenStreetMap, Wambacher",
+          "boundaryLicense": "Open Data Commons Open Database License 1.0",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/TWN/ADM1/",
+          "error": null
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 55,
+        "impactPriorityScore": 12,
+        "scalePriorityScore": 31,
+        "nextPipelineMode": "source_review_required",
+        "blockerNotes": [
+          "No latest World Bank population value",
+          "No latest World Bank rural-share value",
+          "No latest World Bank land-area value",
+          "World Bank WDI coverage may not include Taipei,China"
+        ]
+      }
+    },
+    {
+      "iso2": "CK",
+      "iso3": "COK",
+      "name": "Cook Islands",
+      "subregion": "The Pacific",
+      "population": null,
+      "ruralPopulationShare": null,
+      "landAreaSqKm": null,
+      "boundaries": {
+        "adm0": {
+          "status": "available",
+          "boundaryID": "COK-ADM0-34037180",
+          "boundaryYearRepresented": "2021",
+          "admUnitCount": 1,
+          "boundarySource": "raster2polygon from Sentinel-2 10m Land Cover where Image Year = 2021 / exclude gridcode = 1 (water) / dissolve / processed by IMB",
+          "boundaryLicense": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/COK/ADM0/",
+          "error": null
+        },
+        "adm1": {
+          "status": "error",
+          "boundaryID": null,
+          "boundaryYearRepresented": null,
+          "admUnitCount": null,
+          "boundarySource": null,
+          "boundaryLicense": null,
+          "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/COK/ADM1/",
+          "error": "HTTP 404: <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL was not found on this server.</p>\n<p>Additionally, a "
+        }
+      },
+      "metrics": {
+        "sourceReadinessScore": 15,
+        "impactPriorityScore": 12,
+        "scalePriorityScore": 13,
+        "nextPipelineMode": "source_review_required",
+        "blockerNotes": [
+          "No latest World Bank population value",
+          "No latest World Bank rural-share value",
+          "No latest World Bank land-area value",
+          "No geoBoundaries ADM1 metadata"
+        ]
+      }
+    }
+  ]
+}

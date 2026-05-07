@@ -1,0 +1,487 @@
+{
+  "generated_at": "2026-04-25T17:02:57.479588Z",
+  "program": "remittance-resilience",
+  "metric": "fragility-index ranking, top-10 ADB DMC composition",
+  "decision_rule": "Pre-registered \u00a78: positive if the top-5 set is stable across all \u00b150% suite rows.",
+  "common_top5_across_runs": [
+    "KGZ",
+    "NPL",
+    "TON",
+    "VUT",
+    "WSM"
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "dep_cap": 25.0,
+      "cost_cap": 15.0,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 70.27
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 50.97
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 50.07
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 47.7
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 44.93
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 19.67
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 19.28
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 17.18
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 13.6
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 11.36
+        }
+      ],
+      "top10_overlap_with_baseline": 10
+    },
+    {
+      "label": "dep_cap_minus50",
+      "dep_cap": 12.5,
+      "cost_cap": 15.0,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 70.27
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 63.6
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 53.07
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 50.07
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 44.93
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 38.55
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 34.36
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 27.2
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 22.71
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "fragility": 20.91
+        }
+      ],
+      "top10_overlap_with_baseline": 9
+    },
+    {
+      "label": "dep_cap_plus50",
+      "dep_cap": 37.5,
+      "cost_cap": 15.0,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 50.07
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 49.81
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 33.98
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 31.8
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 31.43
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 19.67
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 12.85
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 11.45
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 9.07
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 7.57
+        }
+      ],
+      "top10_overlap_with_baseline": 10
+    },
+    {
+      "label": "cost_cap_minus50",
+      "dep_cap": 25.0,
+      "cost_cap": 7.5,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 96.04
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 89.87
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 75.0
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 39.33
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 37.6
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 24.4
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 22.71
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "fragility": 20.91
+        }
+      ],
+      "top10_overlap_with_baseline": 9
+    },
+    {
+      "label": "cost_cap_plus50",
+      "dep_cap": 25.0,
+      "cost_cap": 22.5,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 46.84
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 33.98
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 33.38
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 31.8
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 29.96
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 13.6
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 13.11
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 12.85
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 11.45
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 7.57
+        }
+      ],
+      "top10_overlap_with_baseline": 10
+    },
+    {
+      "label": "both_minus50",
+      "dep_cap": 12.5,
+      "cost_cap": 7.5,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 100.0
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 89.87
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 75.2
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 48.8
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 45.43
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "fragility": 41.81
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 39.33
+        }
+      ],
+      "top10_overlap_with_baseline": 9
+    },
+    {
+      "label": "both_plus50",
+      "dep_cap": 37.5,
+      "cost_cap": 22.5,
+      "n_ranked": 21,
+      "top10": [
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 33.38
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 33.2
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 22.65
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 21.2
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 20.95
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 13.11
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 9.07
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 8.57
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 7.63
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "fragility": 5.05
+        }
+      ],
+      "top10_overlap_with_baseline": 10
+    },
+    {
+      "label": "additive_aggregation",
+      "dep_cap": 25.0,
+      "cost_cap": 15.0,
+      "aggregation": "additive (mean of normalized values)",
+      "top10": [
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyz Republic",
+          "fragility": 85.13
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "fragility": 75.03
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "fragility": 74.55
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "fragility": 72.47
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "fragility": 69.3
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "fragility": 59.83
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "fragility": 56.8
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "fragility": 47.4
+        },
+        {
+          "iso3": "MYS",
+          "country": "Malaysia",
+          "fragility": 46.26
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "fragility": 44.43
+        }
+      ],
+      "top10_overlap_with_baseline": 9
+    }
+  ]
+}

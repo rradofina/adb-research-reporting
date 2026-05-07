@@ -1,0 +1,30 @@
+{
+  "name": "adb-research-reporting",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Reporting site for the ADB Research governance stack (Constitution-governed, 17 programs). Runs on port 5173.",
+  "scripts": {
+    "predev": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
+    "dev": "vite --port 5173",
+    "prebuild": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
+    "build": "vite build",
+    "preview": "vite preview --port 5174"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.8"
+  }
+}

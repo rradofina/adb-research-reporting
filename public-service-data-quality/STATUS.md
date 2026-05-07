@@ -1,0 +1,256 @@
+# Public Service Data Quality — operating status
+
+This is the per-program operating state for `public-service-data-quality`.
+Repository-level focus and process rules live in `research/STATUS.md`,
+`research/factory.md`, and `CLAUDE.md`. This file holds only what is
+specific to PSDQ.
+
+Last updated: 2026-05-07.
+
+## Current
+
+| Field | Value |
+|---|---|
+| Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
+| Active stage | Stage 7 — Review loop closed under Mode A |
+| Active flagship | Yes (only PR program; see `research/wip-register.md`) |
+| Review mode | Mode A — AI-only review, default under §18 ACTIVE |
+| Attestation chain | `ai-first` |
+| Permanent archive | `/program/public-service-data-quality/evidence` |
+
+## Current output target
+
+A reviewer-credible PSDQ evidence package — working paper, program page,
+brief, blog post, social card, evidence packet — that a reader can
+understand, inspect, and cite at every depth, with the right caveats.
+
+## Last completed
+
+- **2026-05-07:** Browser-checked the three PSDQ public surfaces
+  (`/program/public-service-data-quality`, the article, and the evidence
+  page) at desktop (1280px) and mobile (375px). All three render the new
+  poverty-overlay numbers correctly: 1,642 ADM3 rows, 1,632 joined (1,597
+  SAE + 35 OpenSTAT), 10 explicit source-missing. Console: 0 errors. Fixed
+  one mobile regression on the Evidence page (rendered-markdown tables and
+  inline `<code>` were not constrained); added ~10 lines of additive CSS to
+  `reporting-site/src/index.css` giving rendered-markdown tables
+  `overflow-x: auto` and inline `<code>` `overflow-wrap: anywhere`. After
+  fix: document width 376 ≈ viewport 375, 33/33 markdown tables now
+  scrollable, 436/436 inline `<code>` blocks now wrap. All five gates pass;
+  `npm run build` succeeds in 7.00s.
+- **2026-05-05:** Owner manually downloaded the official PSA 2023 SAE
+  workbook and seeded the deterministic cache via
+  `python scripts/fetch-phl-sae-poverty.py --sae-xlsx <path>`. Generated
+  `psdq-phl-admin3-poverty-context.{csv,json}`: 1,597 SAE rows + 35
+  OpenSTAT direct-estimate rows joined, 10 ADM3 rows still source-missing
+  and not imputed.
+- **Earlier:** Hardened the PSA fetcher (`sites/default`, `system/files`,
+  `www` variants; Cloudflare blocker recorded as source-status). Added
+  `SOURCE-ACTION.md`, `REPRODUCE.md`, `upgrade-gap.md`. Updated the public
+  program page with a poverty-source-status panel that distinguishes SAE,
+  OpenSTAT direct-estimate, and source-missing rows. Updated the
+  reader-facing working paper to reflect the ADM3/upazila granular
+  upgrade, Bangladesh road context, and the reproducibility runbook.
+
+## Next focused work
+
+The current flagship has the working paper, program page, and evidence
+packet. The publication ladder defined in `research/factory.md` requires
+four more tiers before PSDQ counts as "finished for current issue" under
+the new loop standard:
+
+1. **PSDQ brief** — **done 2026-05-07**: `articles/_brief/public-service-data-quality.md`,
+   ~600 words including frontmatter, single chart (PHL ADM1 choropleth SVG).
+   Slug `public-service-data-quality-brief`, available at
+   `/findings/public-service-data-quality-brief`. Verified at desktop and
+   mobile (chart 712px / 277px respectively, zero overflow). All gates pass.
+   Co-amendment: extended `scripts/sync-articles.mjs` to recurse into
+   publication-ladder tier subdirectories (`articles/_brief/`, `_blog/`,
+   `_social/`, `_slides/`) and tag each entry with a `tier` field in
+   `index.json`.
+2. **PSDQ blog post** — **done 2026-05-07**:
+   `articles/_blog/public-service-data-quality.md`, ~750 words narrative
+   for the general dev-econ reader. Same chart as the brief (PHL ADM1
+   choropleth SVG) under the visualization-rule single-source-of-truth
+   principle. Slug `public-service-data-quality-blog`, available at
+   `/findings/public-service-data-quality-blog`. Verified at desktop and
+   mobile, all gates pass. Cites Macharia 2025, Sandefur & Glassman 2015,
+   South et al. 2021, Maina et al. 2019.
+3. **PSDQ social card** — **done 2026-05-07**:
+   `articles/_social/public-service-data-quality.md`. Tweet body 252/280
+   chars: "Two maps of the same country don't agree…". Same chart as
+   brief and blog (PHL ADM1 choropleth SVG). Includes alt text describing
+   the visual gradient and links back to brief, blog, working paper, and
+   evidence packet. Slug `public-service-data-quality-social`, available
+   at `/findings/public-service-data-quality-social`. All gates pass.
+4. **PSDQ slide deck** — **done 2026-05-07**:
+   - Source: `articles/_slides/public-service-data-quality.md` (Quarto
+     markdown, 11 slides, attestation chain `ai-first`).
+   - Build: `scripts/build-slides.mjs` regenerates the choropleths via
+     `build-choropleth.py` (single source of truth — same charts as
+     brief, blog, social, program page), then runs `quarto render
+     --to pptx` and moves the artifact into the program's public folder.
+   - Output: `reporting-site/public/programs/public-service-data-quality/public-service-data-quality-deck.pptx`
+     (~702 KB with embedded charts).
+   - Quarto 1.9.37 installed via winget at `C:\Program Files\Quarto\bin`.
+     Build passes 5/5 gates.
+   - Slide content covers: question · headline · PHL choropleth ·
+     BGD choropleth · ±50% sensitivity · ADM3 poverty overlay ·
+     why-it-matters · explicit non-claims · reproducibility ·
+     attestation chain.
+4. **Reviewer-ready source/method packet**: bundled `results.md`,
+   `sensitivity.md`, `limitations.md`, the poverty-context CSV, the
+   manifest, and a one-page cover letter — refresh from the 2026-04-25
+   packet at `review-packets/`.
+5. **Reviewer-ready packet** — **done 2026-05-07**:
+   `review-packets/public-service-data-quality-2026-05-07/` (folder, 90
+   files: 6 publication-tier + 75 program + 9 shared) and `.zip`
+   (6.1 MB, emailable). The packet bundles the full publication ladder
+   (working paper, brief, blog, social card, slide deck `.pptx` + source)
+   plus all program artifacts (literature, pre-reg, sensitivity,
+   limitations, reviews, generated CSVs, choropleth charts, scripts) plus
+   shared governance (Constitution, references.bib, red-team.md outreach
+   template, versions.json, manifest.sha256). Cover README orients the
+   reviewer by attention budget (2 min, 10 min, 20 min, 90 min). Built
+   by extended `scripts/build-review-packet.mjs` (now recurses into
+   generated/ subfolders, includes publication-ladder tiers, includes
+   the built `.pptx`). Co-amendment in `build-choropleth.py`: added
+   geometry simplification (0.005° ADM1, 0.001° ADM3) so SVG file sizes
+   are publishable (1.0 MB and 4.3 MB respectively, down from 336 MB
+   and 357 MB at full PSA/NAMRIA precision).
+6. **Resolve the 257 unresolved Philippines NHFR records** — **done
+   2026-05-07** (249 of 257 resolved, residue 8): all 257 were in BARMM
+   Maguindanao ctymuncode prefixes PH19087* and PH19088*, a code-vintage
+   mismatch where NHFR uses an older PSGC numbering and PSA/NAMRIA 2023
+   has reassigned the same barangays to modern ADM3 polygons. New
+   resolver `scripts/inspect-barmm-codes.py` extracts the barangay name
+   from each NHFR facility name (the prefix before "BARANGAY HEALTH
+   STATION", "RURAL HEALTH UNIT", etc.), looks the name up in PSA/NAMRIA
+   2023 ADM4 within ADM2 PH19087+PH19088, and takes the parent ADM3.
+   Per ctymuncode the resolution is the majority winner — every resolved
+   group had unanimous votes (share = 1.0). 17 of 18 ctymuncode groups
+   resolved; 249 of 257 records assigned to a specific ADM3. Resolver
+   wired into `scripts/build-phl-admin3-open-buildings-context.py` as
+   the `barmm_barangay_name_resolved` rule. Audit trail at
+   `generated/psdq-phl-nhfr-barmm-ctymun-resolution.json`. New ADM3 match
+   rate is 99.98% overall and 99.98% for clinical-tier records (was
+   99.42% / 99.31%). The remaining 8 records are all in a single
+   ctymuncode (1908807) whose facility names do not contain a recognizable
+   barangay name (e.g., "ABPI-SAMAMA MEDICAL LYING IN CLINIC AND
+   HOSPITAL"); they are kept explicitly unresolved as a source-quality
+   residue and are not imputed. Updated docs: `README.md`,
+   `upgrade-gap.md`, working paper, this file.
+6. **PSDQ choropleth map** — Python build **done 2026-05-07**:
+   `scripts/build-choropleth.py` produces three publication-ready
+   maps as PNG + SVG:
+   - `generated/charts/psdq-choropleth-phl-adm1.{png,svg}` — Philippines
+     OSM/NHFR clinical-tier ratio per ADM1 (17 regions). Includes the
+     DOH-NHFR ↔ PSA-PSGC code mapping (six regions use different codes
+     across the two systems).
+   - `generated/charts/psdq-choropleth-bgd-adm1.{png,svg}` — Bangladesh
+     OSM/DGHS clinical-tier ratio per ADM1 (8 divisions).
+   - `generated/charts/psdq-choropleth-phl-adm3-poverty.{png,svg}` —
+     PHL ADM3 official 2023 poverty incidence (1,632 of 1,642 polygons
+     joined to PSA SAE + OpenSTAT direct; 10 explicit source-missing).
+   Synced to `reporting-site/public/programs/public-service-data-quality/generated/charts/`.
+   Sub-steps status:
+   - **Done 2026-05-07**: Embedded the three choropleth SVGs into the
+     PSDQ program page as a "Spatial picture" section between the
+     header and the granularity-upgrade section. Verified at desktop
+     (1280px, two-column grid for ADM1 maps + full-width ADM3 poverty)
+     and mobile (375px, single-column stack, zero horizontal overflow,
+     zero console errors). Production build passes (84 modules, 537 KB
+     JS / 46 KB CSS). Same SVG files load on both surfaces; alt text
+     describes the visual story; captions cite the underlying CSV.
+   - **Pending**: Use the same script's logic as the chart in the
+     Quarto slide deck (Tier 6) and the brief (Tier 3). The slide-deck
+     and brief should call the same Python via Quarto code blocks, not
+     a separate render. The React component upgrade (`react-simple-maps`
+     for interactivity) is deferred until a program needs zoom/pan; the
+     static SVG is sufficient for PSDQ.
+
+Then the **review loop** (`research/factory.md`):
+
+6. Owner picks review mode (Mode A, B, or C). Default is Mode A.
+7. AI runs the chosen mode's review steps and iterates to convergence.
+8. Exit condition: AI self-convergence under Mode A; spot-check approval
+   + AI self-convergence under Mode B; owner final-final under Mode C.
+
+Only after the exit condition fires does AI move to the next program.
+
+### Mode A iteration — done 2026-05-07
+
+Owner picked Mode A (AI-only review, the §18 default). Iteration ran
+in three passes:
+
+1. **§9.1 self-review + §9.2 critique-pass** — added 2026-05-07
+   addendum to `review-internal.md`. 8 critique points raised against
+   the new artifacts; written responses to each. One self-found
+   correction (B.8 named the wrong top-5 ranking list — fixed in the
+   same iteration).
+2. **§9.3 red-team synthesis (continued)** — added 2026-05-07
+   addendum to `review-external.md`. 6 candidate-institution
+   objections on the new artifacts (KEMRI, HeiGIT, WB DECDG, OPHI,
+   PIDS, BIDS) with written responses. §18.4 explicit non-claim
+   reproduced verbatim.
+3. **AI second-opinion code review** (Mode A optional step) —
+   `feature-dev:code-reviewer` sub-agent in an independent session
+   reviewed the new code and flagged 3 critical + 4 important issues.
+   Resolved 3/3 critical and 3/4 important in the same iteration:
+   - BARMM crosswalk now enforces a 0.75 winner-share floor
+     (`barmm_resolver_admission_stats` records admitted/dropped/
+     skipped per crosswalk load)
+   - `inspect-barmm-codes.py` warnings are now scoped, not module-wide
+   - `retrieved_at` reads from `versions.json` (stable across clean
+     clones), not file mtime
+   - `build-choropleth.py` now fails loudly on unjoined polygons
+     (`_check_join_or_fail`) instead of producing all-grey maps
+   - `build-slides.mjs` now uses `execFileSync` with argv (no shell
+     interpolation)
+   - `build-review-packet.mjs` now exits non-zero if `versions.json`
+     missing
+   - exposure_proxy=0 collapse documented inline
+4. **`limitations.md` §7 added** — 6 new unresolved-residue items
+   carried over from the addendum (8-record BARMM residue, regex
+   pattern set, simplification tolerances, PSA workbook re-host,
+   caveat-loss across tiers, BGD ADM1 N=8).
+
+Exit condition: AI cannot find a further substantive critique on the
+listed artifacts. PSDQ is **ai-first finished for current issue**
+under Mode A. The artifact remains upgrade-eligible to human-final
+via §18.5 (owner-only steps: line-by-line paper reading, real
+reviewer contact, owner-signed commit).
+
+The 2026-05-07 review packet at
+`review-packets/public-service-data-quality-2026-05-07/` (and `.zip`,
+6.1 MB) reflects this state. The reviewer who receives this packet
+sees both the 2026-04-25 reviews and the 2026-05-07 Mode A addenda
+in `review-internal.md` and `review-external.md`.
+
+## Current blockers
+
+- **10 ADM3 rows still without a source match** in the Philippines poverty
+  overlay: Special Geographic Area rows, City of San Juan, Palawan Kalayaan.
+  Kept explicit and non-imputed.
+- **257 unresolved Philippines NHFR records** after direct-code + PSA PSGC
+  correspondence resolution. Below human-final threshold; needs targeted
+  source review before any human-final claim.
+- **Human-final maturity** is owner-only per §18.5: line-by-line paper
+  reading, external reviewer contact (Macharia / Zipf / PIDS / BIDS),
+  internal review with Arturo, owner-signed commit. Cannot be reached
+  through AI-only review (Mode A).
+- **India and Indonesia extensions** are scope-gated until a public
+  facility-registry path exists (India) or owner-provisioned SATUSEHAT
+  access exists (Indonesia).
+
+## Handoff prompt
+
+Use this to continue a fresh session focused on PSDQ:
+
+```text
+Read research/STATUS.md and public-service-data-quality/STATUS.md, plus
+CLAUDE.md and research/factory.md. PSDQ is the active flagship. Continue
+the publication-ladder build and the review-loop steps listed in
+public-service-data-quality/STATUS.md. State the chosen review mode
+before iterating; default is Mode A under §18 ACTIVE.
+```

@@ -1,0 +1,9 @@
+iso3,admin1_code,admin1_name,population_2020,osm_health,registry_principal,registry_clinical,registry_all,delta_osm_minus_principal,delta_osm_minus_clinical,delta_osm_minus_all,ratio_osm_to_principal,ratio_osm_to_clinical,ratio_osm_to_all,osm_per_100k,registry_principal_per_100k,osm_timestamp,registry_retrieved_at,registry_source_url
+BGD,BD-A,Barisal,7764800,126,464,2017,2885,-338,-1891,-2759,0.2716,0.0625,0.0437,1.62,5.98,2026-04-23T06:04:43Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-B,Chittagong,30803202,467,1338,5172,7480,-871,-4705,-7013,0.349,0.0903,0.0624,1.52,4.34,2026-04-11T23:06:11Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-C,Dhaka,45718238,1306,2611,6508,9977,-1305,-5202,-8671,0.5002,0.2007,0.1309,2.86,5.71,2026-04-23T06:05:41Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-D,Khulna,16525524,376,1086,3573,4821,-710,-3197,-4445,0.3462,0.1052,0.078,2.28,6.57,2026-04-23T06:06:42Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-E,Rajshani,20812822,362,1157,3805,5219,-795,-3443,-4857,0.3129,0.0951,0.0694,1.74,5.56,2026-04-06T00:26:00Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-F,Rangpur,17931871,327,641,3185,4025,-314,-2858,-3698,0.5101,0.1027,0.0812,1.82,3.57,2026-04-11T23:06:11Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-G,Sylhet,11985738,127,338,1626,2226,-211,-1499,-2099,0.3757,0.0781,0.0571,1.06,2.82,2026-04-06T00:26:00Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json
+BGD,BD-H,Mymensingh,11876674,207,391,2106,2788,-184,-1899,-2581,0.5294,0.0983,0.0742,1.74,3.29,2026-04-21T17:01:53Z,2026-04-25,https://hrm.dghs.gov.bd/public/facility-registry/facilities/datatable/json

@@ -1,0 +1,329 @@
+{
+  "program": "coastal-informal-risk",
+  "claim_scope": "Hypothesis-stage screening result combining WDI urban share, population, and slum prevalence (where available) for ADB DMCs with a coastline. Slum data is sparse; imputed at 10% where missing (flagged per row). Sub-national LECZ analysis is the §18.5 upgrade-pass.",
+  "framing_rule": "Coastal-zone informal-settlement structural-pressure proxy. Constitution §13.3 / §14: not a country-quality ranking.",
+  "sources": {
+    "wdi_urban_pct": "WDI SP.URB.TOTL.IN.ZS",
+    "wdi_population": "WDI SP.POP.TOTL",
+    "wdi_slum_pct": "WDI EN.POP.SLUM.UR.ZS (sparse — many NAs)",
+    "coastal_flag": "manual ADB-DMC roster",
+    "license": "WDI: CC BY 4.0",
+    "retrieved_at": "2026-04-26"
+  },
+  "methodology": {
+    "coastal_informal_risk_index": "log10(population) × (urban_pct/100) × (slum_pct/100) × 100. Slum imputed at 10% where missing. Triage only."
+  },
+  "rows": [
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "coastal": 1,
+      "urban_pct": 39.2,
+      "population": 251269164,
+      "slum_pct_urban": 56.0,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 184.19
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "coastal": 1,
+      "urban_pct": 55.5,
+      "population": 115843670,
+      "slum_pct_urban": 35.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 160.41
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "coastal": 1,
+      "urban_pct": 65.9,
+      "population": 1408975000,
+      "slum_pct_urban": 26.3,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 158.68
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "coastal": 1,
+      "urban_pct": 32.7,
+      "population": 173562364,
+      "slum_pct_urban": 51.5,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 138.69
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "coastal": 1,
+      "urban_pct": 30.4,
+      "population": 54500091,
+      "slum_pct_urban": 58.3,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 137.29
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "coastal": 1,
+      "urban_pct": 64.7,
+      "population": 9646,
+      "slum_pct_urban": 50.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 131.26
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "coastal": 1,
+      "urban_pct": 40.9,
+      "population": 17638801,
+      "slum_pct_urban": 42.3,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 125.2
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "coastal": 1,
+      "urban_pct": 58.6,
+      "population": 10202830,
+      "slum_pct_urban": 26.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 110.54
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "coastal": 1,
+      "urban_pct": 38.5,
+      "population": 100987686,
+      "slum_pct_urban": 32.5,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 100.13
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "coastal": 1,
+      "urban_pct": 58.8,
+      "population": 283487931,
+      "slum_pct_urban": 19.4,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 96.39
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "coastal": 1,
+      "urban_pct": 74.9,
+      "population": 462721,
+      "slum_pct_urban": 21.6,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 91.64
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "coastal": 1,
+      "urban_pct": 42.0,
+      "population": 527799,
+      "slum_pct_urban": 34.8,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 83.74
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong, China",
+      "coastal": 1,
+      "urban_pct": 100.0,
+      "population": 7524100,
+      "slum_pct_urban": null,
+      "slum_imputed": true,
+      "coastal_informal_risk_index": 68.76
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "coastal": 1,
+      "urban_pct": 20.3,
+      "population": 21916000,
+      "slum_pct_urban": 44.7,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 66.59
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "coastal": 1,
+      "urban_pct": 28.7,
+      "population": 1400638,
+      "slum_pct_urban": 33.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 59.76
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "coastal": 1,
+      "urban_pct": 59.1,
+      "population": 928784,
+      "slum_pct_urban": 9.4,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 33.14
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "coastal": 1,
+      "urban_pct": 17.5,
+      "population": 218019,
+      "slum_pct_urban": 34.6,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 32.32
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "coastal": 1,
+      "urban_pct": 61.1,
+      "population": 3699557,
+      "slum_pct_urban": 7.1,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 28.4
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "coastal": 1,
+      "urban_pct": 47.1,
+      "population": 7494498,
+      "slum_pct_urban": 8.4,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 27.13
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "coastal": 1,
+      "urban_pct": 15.4,
+      "population": 10576502,
+      "slum_pct_urban": 22.3,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 24.1
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "coastal": 1,
+      "urban_pct": 62.5,
+      "population": 134518,
+      "slum_pct_urban": 5.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 19.01
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "coastal": 1,
+      "urban_pct": 35.4,
+      "population": 1450935791,
+      "slum_pct_urban": 5.4,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 17.54
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "coastal": 1,
+      "urban_pct": 22.5,
+      "population": 113160,
+      "slum_pct_urban": null,
+      "slum_imputed": true,
+      "coastal_informal_risk_index": 11.35
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "coastal": 1,
+      "urban_pct": 61.9,
+      "population": 71668011,
+      "slum_pct_urban": 2.0,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 9.72
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "coastal": 1,
+      "urban_pct": 78.7,
+      "population": 37548,
+      "slum_pct_urban": 2.4,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 8.55
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "coastal": 1,
+      "urban_pct": 22.3,
+      "population": 327777,
+      "slum_pct_urban": 3.1,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 3.77
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "coastal": 1,
+      "urban_pct": 30.7,
+      "population": 819198,
+      "slum_pct_urban": 1.9,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 3.54
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "coastal": 1,
+      "urban_pct": 100.0,
+      "population": 11947,
+      "slum_pct_urban": 0.6,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 2.44
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "coastal": 1,
+      "urban_pct": 79.2,
+      "population": 17695,
+      "slum_pct_urban": 0.6,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 2.08
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "coastal": 1,
+      "urban_pct": 76.9,
+      "population": 35557673,
+      "slum_pct_urban": 0.2,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 1.16
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "coastal": 1,
+      "urban_pct": 21.2,
+      "population": 104175,
+      "slum_pct_urban": 0.3,
+      "slum_imputed": false,
+      "coastal_informal_risk_index": 0.33
+    }
+  ],
+  "generated_at": "2026-04-26T11:19:25Z"
+}

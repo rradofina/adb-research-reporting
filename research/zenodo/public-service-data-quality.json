@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developers.zenodo.org/#representation",
+  "metadata": {
+    "title": "Public Service Data Quality — replication archive (PHL + BGD pilot, 2026-04-25)",
+    "upload_type": "dataset",
+    "publication_type": null,
+    "publication_date": "2026-04-25",
+    "creators": [
+      {
+        "name": "Adofina, Raymond",
+        "affiliation": "Asian Development Bank",
+        "orcid": ""
+      }
+    ],
+    "description": "Replication archive for the Public Service Data Quality program (Program 13 in the Blindspots Lab register). Includes the frozen pre-registration, computed disagreement artifacts for the Philippines (DOH National Health Facility Registry v2.0, 44,267 active facilities) and Bangladesh (DGHS Facility Registry, 39,421 active facilities), the +/-50 percent sensitivity suite at scripts/sensitivity.py, and the manifest.sha256 pinning every committed cache file. A clean clone of the upstream repository at the frozen commit reproduces every value in this archive without any API key or live network call. Governed by CONSTITUTION.md at the upstream repository.",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "Asian Development Bank",
+      "developing member economies",
+      "measurement gap",
+      "OpenStreetMap",
+      "national health facility registry",
+      "Philippines",
+      "Bangladesh",
+      "data quality",
+      "administrative data"
+    ],
+    "communities": [
+      { "identifier": "" }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/rradofina/adb-research",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "10.1038/s41597-019-0142-2",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.12688/wellcomeopenres.16075.2",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1186/s12916-025-04023-z",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1080/00220388.2014.968138",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1016/j.jdeveco.2024.103449",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      },
+      {
+        "identifier": "10.1038/s41467-023-39698-6",
+        "relation": "isReferencedBy",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "1.0.0-ai-first",
+    "language": "eng",
+    "notes": "Published under CONSTITUTION.md section 18 (AI-First Operating Mode), ACTIVE 2026-04-25. Attestation chain: ai-first. Literature, pre-registration, internal review (section 9.1+9.2 AI critique-pass), and external red-team review (section 18.4 AI synthesis from KEMRI-Wellcome / WorldPop, HeiGIT, World Bank DECDG / SPI, OPHI Oxford, PIDS Manila, BIDS Dhaka -- no individual reviewer contacted) are AI-attested rather than human-attested. Sensitivity at +/-50 percent per section 6.6 is in the included sensitivity.md and sensitivity-runs.json (deterministic, non-suspendable; passing for both PHL and BGD with 0 critical failures). Banned-words, DMC-framing, citations, composite-headline, and WIP-cap checks passing. The article is at articles/measurement-gap-philippines-bangladesh.md. The artifact is upgrade-eligible to a human-final attestation chain via section 18.5."
+  }
+}

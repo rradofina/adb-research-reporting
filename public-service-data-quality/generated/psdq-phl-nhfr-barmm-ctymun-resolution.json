@@ -1,0 +1,510 @@
+{
+  "generated_by": "scripts/inspect-barmm-codes.py",
+  "purpose": "Deterministic crosswalk from NHFR BARMM Maguindanao ctymuncodes (older PSGC vintage) to PSA/NAMRIA 2023 ADM3 PCODEs, via barangay-name lookup against PSA/NAMRIA ADM4 within ADM2 PH19087+PH19088.",
+  "framing": "Code-vintage crosswalk only. The rule is: take the barangay name from the NHFR facility name suffix pattern, look it up in PSA/NAMRIA ADM4 within BARMM Maguindanao, take the parent ADM3. Per ctymuncode the rule is the majority winner across that group's records.",
+  "non_imputation": "No new poverty, building, or service quantity is generated. Only the spatial assignment of NHFR records to PSA/NAMRIA ADM3 is changed for the resolved cases.",
+  "summary": {
+    "total_nhfr_records_in_19087_19088": 525,
+    "directly_matched_records": 268,
+    "ctymuncodes_unmatched_directly": 18,
+    "ctymuncodes_resolved_by_barangay_name": 17,
+    "records_resolved_by_barangay_name": 146
+  },
+  "resolution": {
+    "1908701": {
+      "attempted_pcode": "PH1908701",
+      "n_nhfr_records": 15,
+      "name_resolved_count": 10,
+      "psa_adm3_pcode": "PH1908718",
+      "psa_adm3_name": "Barira",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908718": 10
+      },
+      "sample_resolved_barangays": [
+        "KOROSOYAN -> Barira",
+        "LAMIN -> Barira",
+        "LIPA -> Barira"
+      ],
+      "sample_facilities": [
+        "KOROSOYAN BARANGAY HEALTH STATION",
+        "LAMIN BARANGAY HEALTH STATION",
+        "LIONG BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "LIONG BARANGAY HEALTH STATION",
+        "POBLACION BARANGAY HEALTH STATION",
+        "POBLACION BARIRA BARANGAY HEALTH STATION",
+        "BARIRA RURAL HEALTH UNIT",
+        "BARIRA RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908704": {
+      "attempted_pcode": "PH1908704",
+      "n_nhfr_records": 12,
+      "name_resolved_count": 8,
+      "psa_adm3_pcode": "PH1908730",
+      "psa_adm3_name": "Datu Blah T. Sinsuat",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908730": 8
+      },
+      "sample_resolved_barangays": [
+        "KINIMI -> Datu Blah T. Sinsuat",
+        "LAGUITAN -> Datu Blah T. Sinsuat",
+        "LAPAKEN -> Datu Blah T. Sinsuat"
+      ],
+      "sample_facilities": [
+        "KINIMI BARANGAY HEALTH STATION",
+        "LAGUITAN BARANGAY HEALTH STATION",
+        "LAPAKEN BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "TAMBAK BARANGAY HEALTH STATION",
+        "DATU BLAH T. SINSUAT BARANGAY HEALTH STATION",
+        "DATU BLAH T. SINSUAT RURAL HEALTH UNIT",
+        "DATU BLAH T. SINSUAT RURAL HEALTH UNIT"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908705": {
+      "attempted_pcode": "PH1908705",
+      "n_nhfr_records": 40,
+      "name_resolved_count": 27,
+      "psa_adm3_pcode": "PH1908707",
+      "psa_adm3_name": "Datu Odin Sinsuat (Dinaig)",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908707": 27
+      },
+      "sample_resolved_barangays": [
+        "AMBOLODTO -> Datu Odin Sinsuat (Dinaig)",
+        "KENEBEKA -> Datu Odin Sinsuat (Dinaig)",
+        "KURINTEM -> Datu Odin Sinsuat (Dinaig)"
+      ],
+      "sample_facilities": [
+        "AMBOLODTO BARANGAY HEALTH STATION",
+        "KAKAR BARANGAY HEALTH STATION",
+        "KENEBEKA BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "KAKAR BARANGAY HEALTH STATION",
+        "MAMA RON PAANAKAN AND MIDWIFE CLINIC",
+        "NEKITAN BARANGAY HEALTH STATION",
+        "BADAK BARANGAY HEALTH STATION",
+        "BAGOENGED BARANGAY HEALTH STATION"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908706": {
+      "attempted_pcode": "PH1908706",
+      "n_nhfr_records": 12,
+      "name_resolved_count": 5,
+      "psa_adm3_pcode": "PH1908714",
+      "psa_adm3_name": "Kabuntalan (Tumbao)",
+      "winner_share": 0.8,
+      "all_adm3_votes": {
+        "PH1908712": 1,
+        "PH1908714": 4
+      },
+      "sample_resolved_barangays": [
+        "KABUNTALAN -> Sultan Kudarat (Nuling)",
+        "MAITONG -> Kabuntalan (Tumbao)",
+        "MATILAK -> Kabuntalan (Tumbao)"
+      ],
+      "sample_facilities": [
+        "KABUNTALAN RURAL HEALTH UNIT",
+        "KABUNTALAN RURAL HEALTH UNIT BIRTHING HOME",
+        "KATIDTUAN BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "KABUNTALAN RURAL HEALTH UNIT BIRTHING HOME",
+        "KATIDTUAN BARANGAY HEALTH STATION",
+        "MOTHER KABUNTALAN BARANGAY HEALTH STATION",
+        "POBLACION BARANGAY HEALTH STATION",
+        "BUTIREN BARANGAY HEALTH STATION"
+      ],
+      "rule": "name-resolved-majority"
+    },
+    "1908708": {
+      "attempted_pcode": "PH1908708",
+      "n_nhfr_records": 7,
+      "name_resolved_count": 5,
+      "psa_adm3_pcode": "PH1908734",
+      "psa_adm3_name": "Northern Kabuntalan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908734": 5
+      },
+      "sample_resolved_barangays": [
+        "PAULINO LABIO -> Northern Kabuntalan",
+        "DAMATOG -> Northern Kabuntalan",
+        "GAYONGA -> Northern Kabuntalan"
+      ],
+      "sample_facilities": [
+        "NORTHERN KABUNTALAN RURAL HEALTH UNIT",
+        "NORTHERN KABUNTALAN RURAL HEALTH UNIT BIRTHING HOME",
+        "PAULINO LABIO BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "NORTHERN KABUNTALAN RURAL HEALTH UNIT",
+        "NORTHERN KABUNTALAN RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908710": {
+      "attempted_pcode": "PH1908710",
+      "n_nhfr_records": 36,
+      "name_resolved_count": 23,
+      "psa_adm3_pcode": "PH1908712",
+      "psa_adm3_name": "Sultan Kudarat (Nuling)",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908712": 23
+      },
+      "sample_resolved_barangays": [
+        "ALAMADA -> Sultan Kudarat (Nuling)",
+        "LADIA -> Sultan Kudarat (Nuling)",
+        "LIMBO -> Sultan Kudarat (Nuling)"
+      ],
+      "sample_facilities": [
+        "ALAMADA BARANGAY HEALTH STATION",
+        "AQUISHA AMARAH BIRTHING CLINIC",
+        "KAKAR BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "AQUISHA AMARAH BIRTHING CLINIC",
+        "KAKAR BARANGAY HEALTH STATION",
+        "KATIDTUAN BARANGAY HEALTH STATION",
+        "MATENGEN BARANGY HEALTH STATION",
+        "MULAOG BARANGAY HEALTH STATION"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908713": {
+      "attempted_pcode": "PH1908713",
+      "n_nhfr_records": 23,
+      "name_resolved_count": 16,
+      "psa_adm3_pcode": "PH1908715",
+      "psa_adm3_name": "Upi",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908715": 16
+      },
+      "sample_resolved_barangays": [
+        "KABAKABA -> Upi",
+        "KIBLEG -> Upi",
+        "KIBUCAY -> Upi"
+      ],
+      "sample_facilities": [
+        "KABAKABA BARANGAY HEALTH STATION",
+        "KIBLEG BARANGAY HEALTH STATION",
+        "KIBUCAY BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "KINITAAN BARANGAY HEALTH STATION",
+        "KINITAAN BIRTHING CLINIC",
+        "NANGI BIRTHING CLINIC",
+        "NORTH UPI RURAL HEALTH UNIT BIRTHING HOME",
+        "UPI AMBULATORY HEALTH CARE CENTER"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908802": {
+      "attempted_pcode": "PH1908802",
+      "n_nhfr_records": 7,
+      "name_resolved_count": 2,
+      "psa_adm3_pcode": "PH1908803",
+      "psa_adm3_name": "Buluan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908803": 2
+      },
+      "sample_resolved_barangays": [
+        "MASLABENG -> Buluan",
+        "DIGAL -> Buluan"
+      ],
+      "sample_facilities": [
+        "MAGRI\u00d1A CLINIC AND HOSPITAL",
+        "MANANGAN CLINIC AND HOSPITAL",
+        "MASLABENG BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "MAGRI\u00d1A CLINIC AND HOSPITAL",
+        "MANANGAN CLINIC AND HOSPITAL",
+        "BULUAN DISTRICT HOSPITAL",
+        "BULUAN RURAL HEALTH UNIT",
+        "BULUAN RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908804": {
+      "attempted_pcode": "PH1908804",
+      "n_nhfr_records": 9,
+      "name_resolved_count": 3,
+      "psa_adm3_pcode": "PH1908831",
+      "psa_adm3_name": "Datu Anggal Midtimbang",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908831": 3
+      },
+      "sample_resolved_barangays": [
+        "ADAON -> Datu Anggal Midtimbang",
+        "MAPAYAG -> Datu Anggal Midtimbang",
+        "BRAR -> Datu Anggal Midtimbang"
+      ],
+      "sample_facilities": [
+        "ADAON BARANGAY HEALTH STATION",
+        "JHALILNOR HOSPITAL",
+        "MAPAYAG BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "JHALILNOR HOSPITAL",
+        "MAPAYAG BARANGAY HEALTH STATION BIRTHING HOME",
+        "NUNANGEN BARANGAY HEALTH STATION",
+        "TUGAL BARANGAY HEALTH STATION",
+        "DATU ANGGAL MIDTIMBANG RURAL HEALTH UNIT"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908807": {
+      "attempted_pcode": "PH1908807",
+      "n_nhfr_records": 8,
+      "name_resolved_count": 0,
+      "rule": "unresolved",
+      "sample_facilities": [
+        "ABPI-SAMAMA MEDICAL LYING IN CLINIC AND HOSPITAL",
+        "LIONG BARANGAY HEALTH STATION",
+        "MAGASLONG BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "ABPI-SAMAMA MEDICAL LYING IN CLINIC AND HOSPITAL",
+        "LIONG BARANGAY HEALTH STATION",
+        "MAGASLONG BARANGAY HEALTH STATION",
+        "BUAYAN BARANGAY HEALTH STATION",
+        "DAMABALAS BARANGAY HEALTH STATION"
+      ]
+    },
+    "1908809": {
+      "attempted_pcode": "PH1908809",
+      "n_nhfr_records": 16,
+      "name_resolved_count": 6,
+      "psa_adm3_pcode": "PH1908826",
+      "psa_adm3_name": "Datu Saudi-Ampatuan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908826": 6
+      },
+      "sample_resolved_barangays": [
+        "KITANGO -> Datu Saudi-Ampatuan",
+        "KITAPOK -> Datu Saudi-Ampatuan",
+        "MADIA -> Datu Saudi-Ampatuan"
+      ],
+      "sample_facilities": [
+        "AKAS BIRTHING HOME AND CLINIC",
+        "KITANGO BARANGAY HEALTH STATION",
+        "KITAPOK BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "AKAS BIRTHING HOME AND CLINIC",
+        "MAHMAL BIRTHING CLINIC",
+        "MONERA PAANAKAN MIDWIFE CLINIC",
+        "SAIDA UTTO BIRTHING HOME",
+        "BAINAZLAH BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908811": {
+      "attempted_pcode": "PH1908811",
+      "n_nhfr_records": 26,
+      "name_resolved_count": 16,
+      "psa_adm3_pcode": "PH1908819",
+      "psa_adm3_name": "Gen. S.K. Pendatun",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908819": 16
+      },
+      "sample_resolved_barangays": [
+        "KALADTURAN -> Gen. S.K. Pendatun",
+        "KULASI -> Gen. S.K. Pendatun",
+        "LASANGAN -> Gen. S.K. Pendatun"
+      ],
+      "sample_facilities": [
+        "KALADTURAN BARANGAY HEALTH STATION",
+        "KULASI BARANGAY HEALTH STATION",
+        "LAOLAO BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "LAOLAO BARANGAY HEALTH STATION",
+        "PANOSOLEN BARANGAY HEALTH STATION BIRTHING HOME",
+        "RAMCOR BARANGAY HEALTH STATION BIRTHING HOME",
+        "SAID BIRTHING HOME",
+        "ZST BIRTHING CLINIC"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908812": {
+      "attempted_pcode": "PH1908812",
+      "n_nhfr_records": 6,
+      "name_resolved_count": 3,
+      "psa_adm3_pcode": "PH1908825",
+      "psa_adm3_name": "Guindulungan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908825": 3
+      },
+      "sample_resolved_barangays": [
+        "AHAN -> Guindulungan",
+        "MACASAMPEN -> Guindulungan",
+        "BAGAN -> Guindulungan"
+      ],
+      "sample_facilities": [
+        "AHAN BARANGAY HEALTH STATION",
+        "MACASAMPEN BARANGAY HEALTH STATION",
+        "BAGAN BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "GUINDULUNGAN DOCTORS HOSPITAL",
+        "GUINDULUNGAN RURAL HEALTH UNIT",
+        "GUINDULUNGAN RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908814": {
+      "attempted_pcode": "PH1908814",
+      "n_nhfr_records": 3,
+      "name_resolved_count": 1,
+      "psa_adm3_pcode": "PH1908832",
+      "psa_adm3_name": "Mangudadatu",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908832": 1
+      },
+      "sample_resolved_barangays": [
+        "PANAPAN -> Mangudadatu"
+      ],
+      "sample_facilities": [
+        "MANGUDADATU RURAL HEALTH UNIT",
+        "MANGUDADATU RURAL HEALTH UNIT BIRTHING HOME",
+        "PANAPAN BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "MANGUDADATU RURAL HEALTH UNIT",
+        "MANGUDADATU RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908815": {
+      "attempted_pcode": "PH1908815",
+      "n_nhfr_records": 7,
+      "name_resolved_count": 3,
+      "psa_adm3_pcode": "PH1908822",
+      "psa_adm3_name": "Pagagawan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908822": 3
+      },
+      "sample_resolved_barangays": [
+        "PAGAGAWAN -> Pagagawan",
+        "BULIT -> Pagagawan",
+        "DUNGGUAN -> Pagagawan"
+      ],
+      "sample_facilities": [
+        "LIMBALOD BARANGAY HEALTH STATION",
+        "PAGAGAWAN BARANGAY HEALTH STATION",
+        "TALITAY BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "LIMBALOD BARANGAY HEALTH STATION",
+        "TALITAY BARANGAY HEALTH STATION",
+        "DATU MONTAWAL RURAL HEALTH UNIT",
+        "DATU MONTAWAL RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908818": {
+      "attempted_pcode": "PH1908818",
+      "n_nhfr_records": 7,
+      "name_resolved_count": 5,
+      "psa_adm3_pcode": "PH1908833",
+      "psa_adm3_name": "Pandag",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908833": 5
+      },
+      "sample_resolved_barangays": [
+        "KABULING -> Pandag",
+        "KAYAGA -> Pandag",
+        "LEPAK -> Pandag"
+      ],
+      "sample_facilities": [
+        "KABULING BARANGAY HEALTH STATION",
+        "KAYAGA BARANGAY HEALTH STATION",
+        "LEPAK BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "PANDAG RURAL HEALTH UNIT BIRTHING HOME",
+        "WILADA BIRTHIHG CLINIC"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908821": {
+      "attempted_pcode": "PH1908821",
+      "n_nhfr_records": 11,
+      "name_resolved_count": 5,
+      "psa_adm3_pcode": "PH1908837",
+      "psa_adm3_name": "Shariff Saydona Mustapha",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908837": 5
+      },
+      "sample_resolved_barangays": [
+        "LINANTANGAN -> Shariff Saydona Mustapha",
+        "PAMALIAN -> Shariff Saydona Mustapha",
+        "PIKEG -> Shariff Saydona Mustapha"
+      ],
+      "sample_facilities": [
+        "AL-HEDAYAH BIRTHING HOME",
+        "LINANTANGAN BARANGAY HEALTH STATION",
+        "PAGATIN 1 BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "AL-HEDAYAH BIRTHING HOME",
+        "PAGATIN 1 BARANGAY HEALTH STATION",
+        "BAKAT BARANGAY HEALTH STATION",
+        "BANGSAMORO MATERNITY AND BIRTHING CLINIC",
+        "SHARIFF SAYDONA MUSTAPHA RURAL HEALTH UNIT"
+      ],
+      "rule": "name-resolved"
+    },
+    "1908824": {
+      "attempted_pcode": "PH1908824",
+      "n_nhfr_records": 12,
+      "name_resolved_count": 8,
+      "psa_adm3_pcode": "PH1908816",
+      "psa_adm3_name": "Talayan",
+      "winner_share": 1.0,
+      "all_adm3_votes": {
+        "PH1908816": 8
+      },
+      "sample_resolved_barangays": [
+        "KATIBPUAN -> Talayan",
+        "LINAMUNAN -> Talayan",
+        "TALAYAN -> Talayan"
+      ],
+      "sample_facilities": [
+        "KATIBPUAN BARANGAY HEALTH STATION",
+        "KIDATE BARANGAY HEALTH STATION",
+        "LINAMUNAN BARANGAY HEALTH STATION"
+      ],
+      "unresolved_facility_names": [
+        "KIDATE BARANGAY HEALTH STATION",
+        "NORJHALIL BIRTHING HOME AND MIDWIFE CLINIC",
+        "SOUTH BINANGGA BARANGAY HEALTH STATION",
+        "TALAYAN RURAL HEALTH UNIT BIRTHING HOME"
+      ],
+      "rule": "name-resolved"
+    }
+  }
+}

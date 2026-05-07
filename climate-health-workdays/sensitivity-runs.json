@@ -1,0 +1,414 @@
+{
+  "generated_at": "2026-04-26T02:21:47.512541Z",
+  "program": "climate-health-workdays",
+  "metric": "workday-loss-pressure-index ranking, top-5 ADB DMC composition",
+  "decision_rule": "Pre-registered: positive if the top-5 set composition changes by <= 1 entry in any single +/-50% perturbation.",
+  "common_top5_across_runs": [
+    "AFG",
+    "BGD",
+    "IND"
+  ],
+  "runs": [
+    {
+      "label": "baseline",
+      "industry_weight": 0.5,
+      "pm25_floor": 5.0,
+      "pm25_cap": 45.0,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 55.67
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 53.08
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 44.59
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 41.49
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 37.58
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 35.29
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 33.03
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 27.94
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 25.2
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 23.18
+        }
+      ],
+      "top5_overlap_with_baseline": 5
+    },
+    {
+      "label": "industry_weight_minus50",
+      "industry_weight": 0.25,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 51.33
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 46.96
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 40.88
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 36.17
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 34.5
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 30.28
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 28.27
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 27.23
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 19.97
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 19.96
+        }
+      ],
+      "top5_overlap_with_baseline": 5
+    },
+    {
+      "label": "industry_weight_plus50",
+      "industry_weight": 0.75,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 60.02
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 59.19
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 48.31
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 46.81
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 42.31
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 40.65
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 35.79
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 30.43
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 28.66
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 26.4
+        }
+      ],
+      "top5_overlap_with_baseline": 4
+    },
+    {
+      "label": "pm25_floor_minus50",
+      "pm25_floor": 2.5,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 59.06
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 55.04
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 47.58
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 44.22
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 40.51
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 37.46
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 36.06
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 31.98
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 27.31
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 25.41
+        }
+      ],
+      "top5_overlap_with_baseline": 5
+    },
+    {
+      "label": "pm25_floor_plus50",
+      "pm25_floor": 7.5,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 52.29
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 50.02
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 41.61
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 38.76
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 34.65
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 33.12
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 30.01
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 23.91
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 23.08
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 20.95
+        }
+      ],
+      "top5_overlap_with_baseline": 5
+    },
+    {
+      "label": "pm25_cap_minus50",
+      "pm25_cap": 22.5,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 60.98
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 55.89
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 55.04
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 54.42
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 53.68
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 52.76
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 49.14
+        },
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "index": 42.91
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "index": 41.16
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 40.11
+        }
+      ],
+      "top5_overlap_with_baseline": 3
+    },
+    {
+      "label": "pm25_cap_plus50",
+      "pm25_cap": 67.5,
+      "top10": [
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "index": 37.12
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "index": 35.38
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "index": 29.73
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "index": 27.66
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "index": 25.05
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "index": 23.53
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "index": 22.02
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "index": 18.63
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "index": 16.8
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "index": 15.46
+        }
+      ],
+      "top5_overlap_with_baseline": 5
+    }
+  ]
+}

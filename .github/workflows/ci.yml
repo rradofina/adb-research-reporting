@@ -1,0 +1,76 @@
+name: CI — research integrity checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-checks:
+    name: Research integrity (Constitution gates)
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Banned words (§14)
+        run: node scripts/check-banned-words.mjs
+
+      - name: DMC framing (§13.3)
+        run: node scripts/check-dmc-framing.mjs
+
+      - name: Citations — no bare URLs in research outputs (§5.3)
+        run: node scripts/check-citations.mjs
+
+      - name: Composite-headline guard (§6.4)
+        run: node scripts/check-composite-headline.mjs
+
+      - name: WIP cap (§8.1)
+        run: node scripts/check-wip.mjs
+
+      - name: Manifest hash check (§11)
+        run: node scripts/verify-manifest.mjs
+
+      - name: Source freshness (informational)
+        run: node scripts/check-versions.mjs 365
+        continue-on-error: true
+
+  reporting-site-build:
+    name: Reporting site — build
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: reporting-site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: reporting-site/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build

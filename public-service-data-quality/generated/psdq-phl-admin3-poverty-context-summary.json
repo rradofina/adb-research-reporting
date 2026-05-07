@@ -1,0 +1,306 @@
+{
+  "generated_at": "2026-05-07T03:05:40Z",
+  "program": "public-service-data-quality",
+  "country": "Philippines",
+  "unit": "PSA/NAMRIA ADM3 city/municipality",
+  "status": "sae_city_municipal_join",
+  "sources": {
+    "base_context": "generated/psdq-phl-admin3-open-buildings-context.csv",
+    "psa_sae_page_url": "https://psa.gov.ph/statistics/poverty-sae/stat-tables",
+    "psa_sae_attachment_url": "https://psa.gov.ph/sites/default/files/phdsd/2_2023%20SAE_with%20PSGC_noHUC_06Feb2026.xlsx",
+    "psa_sae_cached_path": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-phl-2023-sae-with-psgc-nohuc.xlsx",
+    "psa_sae_cached": true,
+    "openstat_api_url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1E/FY/0041E3DF02A.px",
+    "openstat_cached_csv": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-openstat-fy-poverty-direct-2023.csv",
+    "source_status_cache": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-phl-poverty-source-status.json"
+  },
+  "method": "PSA SAE rows are keyed by PSGC/correspondence codes to the existing PSA/NAMRIA ADM3 context table when the SAE Excel is cached. PSA OpenSTAT direct-estimate city rows are joined by normalized city name as an official supplemental source for HUC/direct-estimate units. No poverty value is imputed for unmatched ADM3 rows.",
+  "admin3_rows": 1642,
+  "rows_with_poverty": 1632,
+  "rows_with_sae_poverty": 1597,
+  "rows_with_openstat_direct_poverty": 35,
+  "rows_without_poverty": 10,
+  "poverty_join_status_counts": {
+    "sae_psgc_match": 1597,
+    "openstat_direct_city_name_match": 35,
+    "no_poverty_table_match": 10
+  },
+  "remaining_poverty_source_missing": [
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Carmen",
+      "adm3_pcode": "PH1909901",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Kabacan",
+      "adm3_pcode": "PH1909902",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Midsayap I",
+      "adm3_pcode": "PH1909903",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Midsayap II",
+      "adm3_pcode": "PH1909904",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Pigkawayan",
+      "adm3_pcode": "PH1909905",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Pikit I",
+      "adm3_pcode": "PH1909906",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Pikit II",
+      "adm3_pcode": "PH1909907",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "adm2_name": "Special Geographic Area",
+      "adm3_name": "Special Geographic Area - Pikit III",
+      "adm3_pcode": "PH1909908",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "Mimaropa Region",
+      "adm2_name": "Palawan",
+      "adm3_name": "Kalayaan",
+      "adm3_pcode": "PH1705321",
+      "poverty_join_status": "no_poverty_table_match"
+    },
+    {
+      "adm1_name": "National Capital Region (NCR)",
+      "adm2_name": "Metropolitan Manila Second District",
+      "adm3_name": "City of San Juan",
+      "adm3_pcode": "PH1307405",
+      "poverty_join_status": "no_poverty_table_match"
+    }
+  ],
+  "sae_rows_parsed": 1597,
+  "sae_rows_unmatched": 14,
+  "openstat_direct_rows_matched": 35,
+  "openstat_direct_rows_unmatched": 0,
+  "top_gap_poverty_context_p85_proxy": [
+    {
+      "adm3_name": "Zamboanga City",
+      "adm3_pcode": "PH0907332",
+      "adm2_name": "Zamboanga del Sur",
+      "adm1_name": "Region IX (Zamboanga Peninsula)",
+      "poverty_incidence_2023": 11.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.8075,
+      "buildings_p85": 182679,
+      "underobserved_buildings_adm3_p85_proxy": 147513,
+      "gap_poverty_context_p85_proxy": 16226.0
+    },
+    {
+      "adm3_name": "Davao City",
+      "adm3_pcode": "PH1102402",
+      "adm2_name": "Davao del Sur",
+      "adm1_name": "Region XI (Davao Region)",
+      "poverty_incidence_2023": 12.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.361,
+      "buildings_p85": 365408,
+      "underobserved_buildings_adm3_p85_proxy": 131912,
+      "gap_poverty_context_p85_proxy": 15829.0
+    },
+    {
+      "adm3_name": "Cotabato City",
+      "adm3_pcode": "PH1908703",
+      "adm2_name": "Maguindanao del Norte",
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "poverty_incidence_2023": 45.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.7,
+      "buildings_p85": 37708,
+      "underobserved_buildings_adm3_p85_proxy": 26396,
+      "gap_poverty_context_p85_proxy": 11878.0
+    },
+    {
+      "adm3_name": "Cagayan de Oro City (Capital)",
+      "adm3_pcode": "PH1004305",
+      "adm2_name": "Misamis Oriental",
+      "adm1_name": "Region X (Northern Mindanao)",
+      "poverty_incidence_2023": 10.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.7219,
+      "buildings_p85": 137572,
+      "underobserved_buildings_adm3_p85_proxy": 99313,
+      "gap_poverty_context_p85_proxy": 9931.0
+    },
+    {
+      "adm3_name": "Butuan City (Capital)",
+      "adm3_pcode": "PH1600202",
+      "adm2_name": "Agusan del Norte",
+      "adm1_name": "Region XIII (Caraga)",
+      "poverty_incidence_2023": 17.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.8248,
+      "buildings_p85": 67303,
+      "underobserved_buildings_adm3_p85_proxy": 55512,
+      "gap_poverty_context_p85_proxy": 9437.0
+    },
+    {
+      "adm3_name": "City of Mati (Capital)",
+      "adm3_pcode": "PH1102509",
+      "adm2_name": "Davao Oriental",
+      "adm1_name": "Region XI (Davao Region)",
+      "poverty_incidence_2023": 30.3935,
+      "poverty_source_type": "psa_sae_2023_city_municipal",
+      "registry_gap_share": 0.881,
+      "buildings_p85": 32648,
+      "underobserved_buildings_adm3_p85_proxy": 28763,
+      "gap_poverty_context_p85_proxy": 8742.0
+    },
+    {
+      "adm3_name": "Iligan City",
+      "adm3_pcode": "PH1003504",
+      "adm2_name": "Lanao del Norte",
+      "adm1_name": "Region X (Northern Mindanao)",
+      "poverty_incidence_2023": 16.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.7059,
+      "buildings_p85": 76872,
+      "underobserved_buildings_adm3_p85_proxy": 54264,
+      "gap_poverty_context_p85_proxy": 8682.0
+    },
+    {
+      "adm3_name": "Sindangan",
+      "adm3_pcode": "PH0907218",
+      "adm2_name": "Zamboanga del Norte",
+      "adm1_name": "Region IX (Zamboanga Peninsula)",
+      "poverty_incidence_2023": 42.3404,
+      "poverty_source_type": "psa_sae_2023_city_municipal",
+      "registry_gap_share": 0.9508,
+      "buildings_p85": 20804,
+      "underobserved_buildings_adm3_p85_proxy": 19780,
+      "gap_poverty_context_p85_proxy": 8375.0
+    },
+    {
+      "adm3_name": "Datu Odin Sinsuat (Dinaig)",
+      "adm3_pcode": "PH1908707",
+      "adm2_name": "Maguindanao del Norte",
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "poverty_incidence_2023": 39.7946,
+      "poverty_source_type": "psa_sae_2023_city_municipal",
+      "registry_gap_share": 1.0,
+      "buildings_p85": 20515,
+      "underobserved_buildings_adm3_p85_proxy": 20515,
+      "gap_poverty_context_p85_proxy": 8164.0
+    },
+    {
+      "adm3_name": "Sultan Kudarat (Nuling)",
+      "adm3_pcode": "PH1908712",
+      "adm2_name": "Maguindanao del Norte",
+      "adm1_name": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "poverty_incidence_2023": 44.1739,
+      "poverty_source_type": "psa_sae_2023_city_municipal",
+      "registry_gap_share": 0.9524,
+      "buildings_p85": 18945,
+      "underobserved_buildings_adm3_p85_proxy": 18043,
+      "gap_poverty_context_p85_proxy": 7970.0
+    },
+    {
+      "adm3_name": "General Santos City (Dadiangas)",
+      "adm3_pcode": "PH1206303",
+      "adm2_name": "South Cotabato",
+      "adm1_name": "Region XII (Soccsksargen)",
+      "poverty_incidence_2023": 8.0,
+      "poverty_source_type": "psa_openstat_direct_2023",
+      "registry_gap_share": 0.6327,
+      "buildings_p85": 139714,
+      "underobserved_buildings_adm3_p85_proxy": 88397,
+      "gap_poverty_context_p85_proxy": 7072.0
+    },
+    {
+      "adm3_name": "City of Malaybalay (Capital)",
+      "adm3_pcode": "PH1001312",
+      "adm2_name": "Bukidnon",
+      "adm1_name": "Region X (Northern Mindanao)",
+      "poverty_incidence_2023": 22.9191,
+      "poverty_source_type": "psa_sae_2023_city_municipal",
+      "registry_gap_share": 0.7722,
+      "buildings_p85": 37617,
+      "underobserved_buildings_adm3_p85_proxy": 29048,
+      "gap_poverty_context_p85_proxy": 6658.0
+    }
+  ],
+  "openstat_direct_unmatched": [],
+  "source_status": {
+    "generated_at": "2026-05-05T14:21:01Z",
+    "program": "public-service-data-quality",
+    "country": "Philippines",
+    "preferred_source": {
+      "name": "PSA 2023 City- and Municipal-level Small Area Poverty Estimates",
+      "source_page_url": "https://psa.gov.ph/statistics/poverty-sae/stat-tables",
+      "release_url": "https://psa.gov.ph/statistics/poverty?page=7&pagina=2",
+      "press_release_pdf_url": "https://psa.gov.ph/sites/default/files/phdsd/PressReleaseon-2023SAE_rev.pdf",
+      "attachment_label": "2_2023 SAE_with PSGC_noHUC_06Feb2026.xlsx",
+      "attachment_size_listed": "361.31 KB",
+      "attachment_urls": [
+        "https://psa.gov.ph/sites/default/files/phdsd/2_2023%20SAE_with%20PSGC_noHUC_06Feb2026.xlsx",
+        "https://psa.gov.ph/system/files/phdsd/2_2023%20SAE_with%20PSGC_noHUC_06Feb2026.xlsx",
+        "https://www.psa.gov.ph/sites/default/files/phdsd/2_2023%20SAE_with%20PSGC_noHUC_06Feb2026.xlsx",
+        "https://www.psa.gov.ph/system/files/phdsd/2_2023%20SAE_with%20PSGC_noHUC_06Feb2026.xlsx"
+      ],
+      "manual_cache_path": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-phl-2023-sae-with-psgc-nohuc.xlsx",
+      "cached": true,
+      "manual_resolution": "Download the listed Excel attachment from the PSA page in a normal browser, then run `python public-service-data-quality/scripts/fetch-phl-sae-poverty.py --sae-xlsx <downloaded-xlsx>` to seed the deterministic cache."
+    },
+    "preferred_source_attempts": [
+      {
+        "source_url": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-phl-2023-sae-with-psgc-nohuc.xlsx",
+        "status": "already_cached",
+        "bytes": 369977,
+        "cached_path": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-phl-2023-sae-with-psgc-nohuc.xlsx"
+      }
+    ],
+    "preferred_source_blocker": null,
+    "direct_estimate_source": {
+      "name": "PSA OpenSTAT Table 2a direct poverty estimates",
+      "api_url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1E/FY/0041E3DF02A.px",
+      "title": "Table 2a. Annual Per Capita Poverty Threshold and Poverty Incidence Among Population with Measures of Precision,  by Region, Province and Highly Urbanized Cities:  2018, 2021, and 2023",
+      "cached_meta": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-openstat-fy-poverty-direct-meta.json",
+      "cached_csv": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\public-service-data-quality\\.cache\\psa-openstat-fy-poverty-direct-2023.csv",
+      "rows": 142,
+      "bytes": 8062
+    },
+    "openstat_sae_alternative_search": {
+      "searched_at": "2026-05-05T14:21:01Z",
+      "searched_paths": [
+        "1E/FY",
+        "3D",
+        "3E/CH",
+        "3I/G01"
+      ],
+      "matches": [],
+      "errors": [],
+      "note": "No OpenSTAT city/municipality SAE endpoint was found in the poverty-relevant branches if matches is empty."
+    },
+    "license_note": "PSA government-site content is public domain unless otherwise stated; verify attachment-level terms before redistribution.",
+    "non_claim": "OpenSTAT direct estimates are not a substitute for the city/municipality SAE table outside HUC/direct-estimate units."
+  },
+  "non_claim": "This is an equity-context screen. Poverty incidence is not inferred from buildings, registry gaps, or OSM. The gap_poverty_context_p85_proxy multiplies an existing measurement-gap building proxy by official poverty incidence only where a poverty source joined; it is not affected population, demand, access, or welfare loss."
+}

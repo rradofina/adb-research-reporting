@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-04-26T11:20:16.401758Z",
+  "program": "invisible-urbanization",
+  "metric": "invisible-urbanization-signal ranking",
+  "note": "Multiplicative scalar does not change rank order \u2014 rank-stability is trivial under this perturbation. The honest claim is the rank order, not the score magnitude.",
+  "common_top5_across_runs": [
+    "AFG",
+    "BGD",
+    "LAO",
+    "PNG",
+    "SLB"
+  ],
+  "runs": [
+    {
+      "label": "baseline_mult_10",
+      "top10": [
+        {
+          "iso3": "PNG",
+          "country": "Papua New Guinea",
+          "value": 34.43
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 31.32
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 27.71
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 19.75
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 18.98
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "value": 18.41
+        },
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "value": 15.04
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 14.71
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 13.87
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 11.43
+        }
+      ]
+    },
+    {
+      "label": "mult_minus50_5",
+      "top10": [
+        {
+          "iso3": "PNG",
+          "country": "Papua New Guinea",
+          "value": 17.22
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 15.66
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 13.86
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 9.88
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 9.49
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "value": 9.21
+        },
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "value": 7.52
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 7.36
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 6.94
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 5.72
+        }
+      ]
+    },
+    {
+      "label": "mult_plus50_15",
+      "top10": [
+        {
+          "iso3": "PNG",
+          "country": "Papua New Guinea",
+          "value": 51.65
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 46.99
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 41.57
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 29.63
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 28.47
+        },
+        {
+          "iso3": "VUT",
+          "country": "Vanuatu",
+          "value": 27.62
+        },
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "value": 22.56
+        },
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 22.07
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 20.81
+        },
+        {
+          "iso3": "IND",
+          "country": "India",
+          "value": 17.15
+        }
+      ]
+    }
+  ]
+}

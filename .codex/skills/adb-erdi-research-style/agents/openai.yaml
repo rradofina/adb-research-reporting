@@ -1,0 +1,4 @@
+interface:
+  display_name: "ADB ERDI Research Style"
+  short_description: "Write data-led ADB/ERDI-style research narratives."
+  default_prompt: "Use the ADB ERDI research style to revise this research article, chart narrative, or evidence-page copy."

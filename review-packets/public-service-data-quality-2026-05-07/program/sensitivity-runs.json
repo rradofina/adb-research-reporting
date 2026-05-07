@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-04-25T13:35:29.350002Z",
+  "country": "PHL",
+  "metric": "clinical-tier OSM/registry ratio",
+  "baseline_value": 0.17118635002139496,
+  "runs": [
+    {
+      "label": "baseline",
+      "factype_set_size": 19,
+      "country_clinical_ratio": 0.17118635002139496,
+      "gradient": {
+        "bottom_quintile_mean": 0.07215684823969859,
+        "top_quintile_mean": 0.3954098262300679,
+        "ratio_top_to_bottom": 5.479865541196475,
+        "k": 3,
+        "n": 17
+      },
+      "min_admin1_ratio": 0.06445837063563116,
+      "max_admin1_ratio": 0.6353077816492451
+    },
+    {
+      "label": "clinical_set_minus50",
+      "factype_set_size": 10,
+      "country_clinical_ratio": 0.17257090477731046,
+      "gradient": {
+        "bottom_quintile_mean": 0.07240653014363647,
+        "top_quintile_mean": 0.4091779782159608,
+        "ratio_top_to_bottom": 5.651119828615649,
+        "k": 3,
+        "n": 17
+      },
+      "min_admin1_ratio": 0.06463195691202872,
+      "max_admin1_ratio": 0.671990171990172
+    },
+    {
+      "label": "clinical_set_plus50",
+      "factype_set_size": 28,
+      "country_clinical_ratio": 0.14485505442530947,
+      "gradient": {
+        "bottom_quintile_mean": 0.06727735542365416,
+        "top_quintile_mean": 0.2669121292434829,
+        "ratio_top_to_bottom": 3.967339791564381,
+        "k": 3,
+        "n": 17
+      },
+      "min_admin1_ratio": 0.06282722513089005,
+      "max_admin1_ratio": 0.3469711385981605
+    },
+    {
+      "label": "gradient_quintile_minus50_pct10",
+      "gradient": {
+        "bottom_quintile_mean": 0.06845169502027354,
+        "top_quintile_mean": 0.4788483431314439,
+        "ratio_top_to_bottom": 6.995419806472608,
+        "k": 2,
+        "n": 17
+      },
+      "country_clinical_ratio": 0.17118635002139496
+    },
+    {
+      "label": "gradient_quintile_plus50_pct30",
+      "gradient": {
+        "bottom_quintile_mean": 0.07988668568875823,
+        "top_quintile_mean": 0.3286102974862333,
+        "ratio_top_to_bottom": 4.113455135271382,
+        "k": 5,
+        "n": 17
+      },
+      "country_clinical_ratio": 0.17118635002139496
+    },
+    {
+      "label": "falsification_threshold_minus50_pct5",
+      "country_clinical_ratio": 0.17118635002139496,
+      "admin1_within_threshold": 0
+    },
+    {
+      "label": "falsification_threshold_baseline_pct10",
+      "country_clinical_ratio": 0.17118635002139496,
+      "admin1_within_threshold": 0
+    },
+    {
+      "label": "falsification_threshold_plus50_pct15",
+      "country_clinical_ratio": 0.17118635002139496,
+      "admin1_within_threshold": 0
+    },
+    {
+      "label": "nir_mapping_dropped",
+      "country_clinical_ratio": 0.178743961352657
+    }
+  ],
+  "bgd_generated_at": "2026-04-25T14:02:55.283662Z",
+  "bgd_baseline_value": 0.1178193769648471,
+  "bgd_runs": [
+    {
+      "label": "bgd_baseline",
+      "principal_keyword_count": 3,
+      "community_keyword_count": 5,
+      "country_clinical_ratio": 0.1178193769648471,
+      "gradient": {
+        "bottom_quintile_mean": 0.07028739722201387,
+        "top_quintile_mean": 0.15295489406910498,
+        "ratio_top_to_bottom": 2.1761354113878015,
+        "k": 2,
+        "n": 8
+      },
+      "min_admin1_ratio": 0.06246901338621715,
+      "max_admin1_ratio": 0.2006760909649662,
+      "admin1_within_pct10": 0
+    },
+    {
+      "label": "bgd_community_keywords_minus50",
+      "community_keyword_count": 2,
+      "country_clinical_ratio": 0.11823755063994551,
+      "gradient": {
+        "bottom_quintile_mean": 0.0705720328562294,
+        "top_quintile_mean": 0.15347117586958473,
+        "ratio_top_to_bottom": 2.1746741543103756,
+        "k": 2,
+        "n": 8
+      },
+      "admin1_within_pct10": 0
+    },
+    {
+      "label": "bgd_community_keywords_plus50",
+      "community_keyword_count": 8,
+      "country_clinical_ratio": 0.11602054457187082,
+      "gradient": {
+        "bottom_quintile_mean": 0.0688937793478828,
+        "top_quintile_mean": 0.15105546672937242,
+        "ratio_top_to_bottom": 2.1925849932924977,
+        "k": 2,
+        "n": 8
+      },
+      "admin1_within_pct10": 0
+    },
+    {
+      "label": "bgd_principal_keywords_minus50",
+      "principal_keyword_count": 1,
+      "country_clinical_ratio": 0.11847966661876706,
+      "gradient": {
+        "bottom_quintile_mean": 0.07054255497486364,
+        "top_quintile_mean": 0.15407898348954863,
+        "ratio_top_to_bottom": 2.1841990773434765,
+        "k": 2,
+        "n": 8
+      },
+      "admin1_within_pct10": 0
+    },
+    {
+      "label": "bgd_principal_keywords_plus50",
+      "principal_keyword_count": 5,
+      "country_clinical_ratio": 0.11780254322046006,
+      "gradient": {
+        "bottom_quintile_mean": 0.07028739722201387,
+        "top_quintile_mean": 0.1529086624401006,
+        "ratio_top_to_bottom": 2.175477660057811,
+        "k": 2,
+        "n": 8
+      },
+      "admin1_within_pct10": 0
+    },
+    {
+      "label": "bgd_quintile_minus50_pct10",
+      "gradient": {
+        "bottom_quintile_mean": 0.06246901338621715,
+        "top_quintile_mean": 0.2006760909649662,
+        "ratio_top_to_bottom": 3.21241012282807,
+        "k": 1,
+        "n": 8
+      },
+      "country_clinical_ratio": 0.1178193769648471
+    },
+    {
+      "label": "bgd_quintile_plus50_pct30",
+      "gradient": {
+        "bottom_quintile_mean": 0.07028739722201387,
+        "top_quintile_mean": 0.15295489406910498,
+        "ratio_top_to_bottom": 2.1761354113878015,
+        "k": 2,
+        "n": 8
+      },
+      "country_clinical_ratio": 0.1178193769648471
+    },
+    {
+      "label": "bgd_falsification_threshold_pct5",
+      "country_clinical_ratio": 0.1178193769648471,
+      "admin1_within_threshold": 0
+    },
+    {
+      "label": "bgd_falsification_threshold_pct10",
+      "country_clinical_ratio": 0.1178193769648471,
+      "admin1_within_threshold": 0
+    },
+    {
+      "label": "bgd_falsification_threshold_pct15",
+      "country_clinical_ratio": 0.1178193769648471,
+      "admin1_within_threshold": 0
+    }
+  ]
+}

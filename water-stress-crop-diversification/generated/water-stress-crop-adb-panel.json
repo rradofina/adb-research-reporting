@@ -1,0 +1,498 @@
+{
+  "program": "water-stress-crop-diversification",
+  "claim_scope": "Hypothesis-stage water-crop pressure composite. WDI indicators. Triage only.",
+  "framing_rule": "Water × crop × rural-share pressure signal, not a country ranking.",
+  "sources": {
+    "wdi": {
+      "indicators": [
+        "ER.H2O.FWTL.ZS (freshwater withdrawal % internal resources)",
+        "AG.LND.AGRI.ZS (agricultural land % area)",
+        "AG.LND.ARBL.ZS (arable land % area)",
+        "AG.YLD.CREL.KG (cereal yield kg/ha)",
+        "SP.RUR.TOTL.ZS (rural population %)"
+      ],
+      "url": "https://api.worldbank.org/v2/country/all/indicator/...",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    }
+  },
+  "methodology": {
+    "water_crop_pressure_index": "min(water_withdrawal/100, 1.5) × min(3000/max(yield,100), 1.0) × rural_pct/100, × 100. Higher = more water/yield/rural stress combined. Triage only."
+  },
+  "rows": [
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "water_withdrawal_pct_resources": 1867.97153024911,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 84.2215632115421,
+      "arable_land_pct": 3.38675802779137,
+      "cereal_yield_kg_per_ha": 1834.2,
+      "rural_population_pct": 52.9124746089706,
+      "water_crop_pressure_index": 79.4
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "water_withdrawal_pct_resources": 326.0,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 46.6933893731839,
+      "arable_land_pct": 39.2538397675384,
+      "cereal_yield_kg_per_ha": 3634.0,
+      "rural_population_pct": 60.8265631639095,
+      "water_crop_pressure_index": 75.3
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "water_withdrawal_pct_resources": 160.52988293284,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 57.8294010889292,
+      "arable_land_pct": 25.307924984876,
+      "cereal_yield_kg_per_ha": 3427.0,
+      "rural_population_pct": 41.426204162283,
+      "water_crop_pressure_index": 54.4
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "water_withdrawal_pct_resources": 262.545899632803,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 58.0551458073301,
+      "arable_land_pct": 9.14331101781459,
+      "cereal_yield_kg_per_ha": 5343.6,
+      "rural_population_pct": 49.0013313293457,
+      "water_crop_pressure_index": 41.3
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "water_withdrawal_pct_resources": 43.0159066808059,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 58.4395075356853,
+      "arable_land_pct": 12.0294987964368,
+      "cereal_yield_kg_per_ha": 2358.6,
+      "rural_population_pct": 74.2992647363812,
+      "water_crop_pressure_index": 32.0
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "water_withdrawal_pct_resources": 44.7786998616874,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 60.0604064994165,
+      "arable_land_pct": 51.752057554344,
+      "cereal_yield_kg_per_ha": 3632.5,
+      "rural_population_pct": 64.6211027631611,
+      "water_crop_pressure_index": 23.9
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "water_withdrawal_pct_resources": 24.5189393939394,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 48.6081474296799,
+      "arable_land_pct": 22.1791141286777,
+      "cereal_yield_kg_per_ha": 3804.3,
+      "rural_population_pct": 79.7003002941314,
+      "water_crop_pressure_index": 15.4
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "water_withdrawal_pct_resources": 44.787869951888,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 58.5933621376878,
+      "arable_land_pct": 15.6598854445336,
+      "cereal_yield_kg_per_ha": 1961.1,
+      "rural_population_pct": 34.1886328550099,
+      "water_crop_pressure_index": 15.3
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "water_withdrawal_pct_resources": 38.7972027972028,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 79.3664851650183,
+      "arable_land_pct": 10.9899988887654,
+      "cereal_yield_kg_per_ha": 1529.5,
+      "rural_population_pct": 37.927468415838,
+      "water_crop_pressure_index": 14.7
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "water_withdrawal_pct_resources": 34.1619047619048,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 72.311124788429,
+      "arable_land_pct": 60.6277888905986,
+      "cereal_yield_kg_per_ha": 5408.0,
+      "rural_population_pct": 67.3216803676693,
+      "water_crop_pressure_index": 12.8
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "water_withdrawal_pct_resources": 15.7510729613734,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 54.0085714285714,
+      "arable_land_pct": 6.70690823774765,
+      "cereal_yield_kg_per_ha": 2798.6,
+      "rural_population_pct": 65.2780022134063,
+      "water_crop_pressure_index": 10.3
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "water_withdrawal_pct_resources": 14.2665855143031,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 22.9589778076664,
+      "arable_land_pct": 7.49831876260928,
+      "cereal_yield_kg_per_ha": 2129.4,
+      "rural_population_pct": 71.3358925820426,
+      "water_crop_pressure_index": 10.2
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "water_withdrawal_pct_resources": 25.5253663533918,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 43.7980778641195,
+      "arable_land_pct": 30.9953218892521,
+      "cereal_yield_kg_per_ha": 3071.7,
+      "rural_population_pct": 38.1310661608679,
+      "water_crop_pressure_index": 9.5
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "water_withdrawal_pct_resources": 15.6666666666667,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 19.7986577181208,
+      "arable_land_pct": 13.4228187919463,
+      "cereal_yield_kg_per_ha": 2441.6,
+      "rural_population_pct": 58.0017847282615,
+      "water_crop_pressure_index": 9.1
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "water_withdrawal_pct_resources": 16.7065868263473,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 27.9465379350097,
+      "arable_land_pct": 6.08401181641329,
+      "cereal_yield_kg_per_ha": 4123.9,
+      "rural_population_pct": 73.8211936348452,
+      "water_crop_pressure_index": 9.0
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "water_withdrawal_pct_resources": 22.7761393355962,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 39.2147376279795,
+      "arable_land_pct": 21.4673179571769,
+      "cereal_yield_kg_per_ha": 5995.3,
+      "rural_population_pct": 61.5099296569824,
+      "water_crop_pressure_index": 7.0
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "water_withdrawal_pct_resources": 19.0056142943633,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 42.6689472448603,
+      "arable_land_pct": 18.7476942683704,
+      "cereal_yield_kg_per_ha": 3869.2,
+      "rural_population_pct": 44.5479016784523,
+      "water_crop_pressure_index": 6.6
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "water_withdrawal_pct_resources": 20.2097479469587,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 55.4326117545304,
+      "arable_land_pct": 11.5492836227566,
+      "cereal_yield_kg_per_ha": 6418.1,
+      "rural_population_pct": 34.1053019001675,
+      "water_crop_pressure_index": 3.2
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "water_withdrawal_pct_resources": 11.0286322881062,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 29.1258057551148,
+      "arable_land_pct": 9.3962387268892,
+      "cereal_yield_kg_per_ha": 5828.8,
+      "rural_population_pct": 41.2490364612003,
+      "water_crop_pressure_index": 2.3
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "water_withdrawal_pct_resources": 3.313821300359,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 19.9140944121838,
+      "arable_land_pct": 16.8650803622045,
+      "cereal_yield_kg_per_ha": 3779.1,
+      "rural_population_pct": 69.5500915925864,
+      "water_crop_pressure_index": 1.8
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "water_withdrawal_pct_resources": 3.86029411764706,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 9.90987868284229,
+      "arable_land_pct": 5.30329289428076,
+      "cereal_yield_kg_per_ha": 4196.4,
+      "rural_population_pct": 60.4447845598594,
+      "water_crop_pressure_index": 1.7
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "water_withdrawal_pct_resources": 4.79167507568113,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 26.1185908615277,
+      "arable_land_pct": 12.5831880013952,
+      "cereal_yield_kg_per_ha": 3344.3,
+      "rural_population_pct": 33.227656836971,
+      "water_crop_pressure_index": 1.4
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "water_withdrawal_pct_resources": 1.81094527363184,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 34.8648294810786,
+      "arable_land_pct": 23.3409228416044,
+      "cereal_yield_kg_per_ha": 3722.1,
+      "rural_population_pct": 59.1272966747271,
+      "water_crop_pressure_index": 0.9
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "water_withdrawal_pct_resources": 2.22497849647342,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 34.1329687724852,
+      "arable_land_pct": 4.37473017700389,
+      "cereal_yield_kg_per_ha": 2568.5,
+      "rural_population_pct": 38.9210394906267,
+      "water_crop_pressure_index": 0.9
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "water_withdrawal_pct_resources": 1.32873563218391,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 68.9555729589301,
+      "arable_land_pct": 0.733569879360895,
+      "cereal_yield_kg_per_ha": 1295.5,
+      "rural_population_pct": 29.0433959960938,
+      "water_crop_pressure_index": 0.4
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "water_withdrawal_pct_resources": 1.08235294117647,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 2.5426944971537,
+      "arable_land_pct": 0.759013282732448,
+      "cereal_yield_kg_per_ha": 2466.7,
+      "rural_population_pct": 25.1016866126303,
+      "water_crop_pressure_index": 0.3
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "water_withdrawal_pct_resources": 0.433205128205128,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 13.8175144205558,
+      "arable_land_pct": 2.62191924488726,
+      "cereal_yield_kg_per_ha": 3552.3,
+      "rural_population_pct": 57.4354750196588,
+      "water_crop_pressure_index": 0.2
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "water_withdrawal_pct_resources": 1.15637931034483,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 26.0873535230558,
+      "arable_land_pct": 2.38715568406635,
+      "cereal_yield_kg_per_ha": 3523.7,
+      "rural_population_pct": 23.0829703351008,
+      "water_crop_pressure_index": 0.2
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "water_withdrawal_pct_resources": 0.297373029772329,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 17.0552818828681,
+      "arable_land_pct": 4.20361247947455,
+      "cereal_yield_kg_per_ha": 4109.1,
+      "rural_population_pct": 40.9233397707543,
+      "water_crop_pressure_index": 0.1
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": null,
+      "arable_land_pct": null,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": null,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 3.80952380952381,
+      "arable_land_pct": 1.9047619047619,
+      "cereal_yield_kg_per_ha": 2059.0,
+      "rural_population_pct": 0.0,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 41.9753086419753,
+      "arable_land_pct": 2.46913580246914,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 37.5379568724358,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 38.8888888888889,
+      "arable_land_pct": 2.77777777777778,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 21.2674339755888,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 7.14285714285714,
+      "arable_land_pct": 2.85714285714286,
+      "cereal_yield_kg_per_ha": 1715.7,
+      "rural_population_pct": 77.5437169764579,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 20.0,
+      "arable_land_pct": null,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 0.0,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 9.34782608695652,
+      "arable_land_pct": 0.652173913043478,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 20.7904957121333,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "water_withdrawal_pct_resources": 0.0489513108614232,
+      "water_withdrawal_year": 2022,
+      "agri_land_pct": 3.10250408514773,
+      "arable_land_pct": 0.728702027116548,
+      "cereal_yield_kg_per_ha": 4787.4,
+      "rural_population_pct": 84.5938183596667,
+      "water_crop_pressure_index": 0.0
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 17.5647482014388,
+      "arable_land_pct": 3.85251798561151,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 82.4970884891982,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 3.90139335476956,
+      "arable_land_pct": 0.821722043586995,
+      "cereal_yield_kg_per_ha": 1900.5,
+      "rural_population_pct": 69.3382811437806,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": null,
+      "arable_land_pct": null,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": null,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 48.6111111111111,
+      "arable_land_pct": 27.7777777777778,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 78.8494728874479,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 60.0,
+      "arable_land_pct": null,
+      "cereal_yield_kg_per_ha": null,
+      "rural_population_pct": 35.2745206558709,
+      "water_crop_pressure_index": null
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "water_withdrawal_pct_resources": null,
+      "water_withdrawal_year": null,
+      "agri_land_pct": 15.3404429860541,
+      "arable_land_pct": 1.64068908941756,
+      "cereal_yield_kg_per_ha": 636.2,
+      "rural_population_pct": 77.7133066639355,
+      "water_crop_pressure_index": null
+    }
+  ],
+  "generated_at": "2026-04-25T01:45:19Z"
+}

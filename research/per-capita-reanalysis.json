@@ -1,0 +1,50 @@
+{
+  "disaster-recovery-lag": {
+    "absolute_top5_total_affected": [
+      "CHN",
+      "IND",
+      "PHL",
+      "BGD",
+      "PAK"
+    ],
+    "alternative_events_per_year_top5": [
+      "CHN",
+      "IDN",
+      "IND",
+      "PHL",
+      "VNM"
+    ]
+  },
+  "flood-market-access": {
+    "absolute_top5_index": [
+      "IND",
+      "IDN",
+      "CHN",
+      "AFG",
+      "PAK"
+    ],
+    "per_capita_top5_events_per_million": [
+      "MHL",
+      "KIR",
+      "FSM",
+      "FJI",
+      "SLB"
+    ]
+  },
+  "coastal-informal-risk": {
+    "absolute_top5_index": [
+      "PAK",
+      "PHL",
+      "CHN",
+      "BGD",
+      "MMR"
+    ],
+    "per_capita_top5_urban_x_slum": [
+      "TUV",
+      "PAK",
+      "PHL",
+      "MMR",
+      "CHN"
+    ]
+  }
+}

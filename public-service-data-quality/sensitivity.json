@@ -1,0 +1,44 @@
+{
+  "$schema_version": "1",
+  "description": "Sensitivity manifest for the generic harness scripts/sensitivity-run.mjs. The Python script scripts/sensitivity.py implements the actual computation per pre-registration.md section 6. The JSON below records the parameter inventory so the harness can re-invoke at +/-50 percent.",
+  "pipeline": "scripts/sensitivity.py",
+  "runner": "python",
+  "parameters": [
+    {
+      "name": "clinical_factype_set_cardinality",
+      "baseline": 19,
+      "unit": "factypes",
+      "minus50_value": 10,
+      "plus50_value": 28,
+      "selection_rule": "top-N most-common factypes among the union of PRINCIPAL and CLINICAL"
+    },
+    {
+      "name": "rural_urban_quintile_pct",
+      "baseline": 20,
+      "unit": "percent of ADM1 units",
+      "minus50_value": 10,
+      "plus50_value": 30
+    },
+    {
+      "name": "falsification_within_pct",
+      "baseline": 10,
+      "unit": "percent",
+      "minus50_value": 5,
+      "plus50_value": 15
+    },
+    {
+      "name": "nir_provcode_split",
+      "baseline": "manual_4_splits",
+      "minus50_value": "no_splits",
+      "plus50_value": "n/a"
+    },
+    {
+      "name": "adm1_polygon_dilate_km",
+      "baseline": 0,
+      "unit": "km",
+      "minus50_value": 0,
+      "plus50_value": 2.5,
+      "notes": "Requires a live OSM Overpass rerun with ADM1 polygon dilate; not run in the offline sensitivity suite."
+    }
+  ]
+}

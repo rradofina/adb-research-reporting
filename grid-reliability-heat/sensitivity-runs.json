@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-04-26T03:23:12.453750Z",
+  "program": "grid-reliability-heat",
+  "metric": "fuel-Herfindahl ranking + single-fuel-threshold stability",
+  "common_top5_across_metrics": [
+    "BRN",
+    "BTN",
+    "MNG",
+    "NPL",
+    "TJK"
+  ],
+  "runs": [
+    {
+      "label": "baseline_herfindahl",
+      "top10": [
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "value": 1.0
+        },
+        {
+          "iso3": "BRN",
+          "country": "Brunei Darussalam",
+          "value": 1.0
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "value": 0.9032
+        },
+        {
+          "iso3": "MNG",
+          "country": "Mongolia",
+          "value": 0.7971
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 0.7962
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 0.7389
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyzstan",
+          "value": 0.6758
+        },
+        {
+          "iso3": "AFG",
+          "country": "Afghanistan",
+          "value": 0.6539
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 0.5959
+        },
+        {
+          "iso3": "THA",
+          "country": "Thailand",
+          "value": 0.5612
+        }
+      ]
+    },
+    {
+      "label": "smallest_total_capacity",
+      "note": "smallest grids",
+      "top10": [
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong SAR, China",
+          "value": 0
+        },
+        {
+          "iso3": "KIR",
+          "country": "Kiribati",
+          "value": 0
+        },
+        {
+          "iso3": "MDV",
+          "country": "Maldives",
+          "value": 0
+        },
+        {
+          "iso3": "MHL",
+          "country": "Marshall Islands",
+          "value": 0
+        },
+        {
+          "iso3": "FSM",
+          "country": "Micronesia, Fed. Sts.",
+          "value": 0
+        },
+        {
+          "iso3": "WSM",
+          "country": "Samoa",
+          "value": 0
+        },
+        {
+          "iso3": "SLB",
+          "country": "Solomon Islands",
+          "value": 0
+        },
+        {
+          "iso3": "TLS",
+          "country": "Timor-Leste",
+          "value": 0
+        },
+        {
+          "iso3": "TON",
+          "country": "Tonga",
+          "value": 0
+        },
+        {
+          "iso3": "TUV",
+          "country": "Tuvalu",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "label": "single_fuel_threshold_test",
+      "note": "DMCs with top_fuel_share >= 80%",
+      "top10": [
+        {
+          "iso3": "BTN",
+          "country": "Bhutan",
+          "value": 1.0
+        },
+        {
+          "iso3": "BRN",
+          "country": "Brunei Darussalam",
+          "value": 1.0
+        },
+        {
+          "iso3": "NPL",
+          "country": "Nepal",
+          "value": 0.949
+        },
+        {
+          "iso3": "MNG",
+          "country": "Mongolia",
+          "value": 0.8894
+        },
+        {
+          "iso3": "TJK",
+          "country": "Tajikistan",
+          "value": 0.8848
+        },
+        {
+          "iso3": "KAZ",
+          "country": "Kazakhstan",
+          "value": 0.8518
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyzstan",
+          "value": 0.8008
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+iso3,country,subregion,population,pm25_locations,pm25_exposure_ugm3,pm25_above_who_guideline_5_ugm3,pm25_observability_gap_score,pm25_observability_status
+AFG,Afghanistan,South Asia,42647492,2,46.09,True,100.0,sparse_public_pm25_monitoring
+BGD,Bangladesh,South Asia,173562364,20,42.38,True,100.0,sparse_public_pm25_monitoring
+MMR,Myanmar,Southeast Asia,54500091,3,32.32,True,95.0,sparse_public_pm25_monitoring
+UZB,Uzbekistan,Central and West Asia,36361859,5,31.96,True,94.0,sparse_public_pm25_monitoring
+TJK,Tajikistan,Central and West Asia,10590927,5,37.05,True,80.0,public_pm25_monitoring_present
+IND,India,South Asia,1450935791,713,48.39,True,79.0,public_pm25_monitoring_present
+AZE,Azerbaijan,Central and West Asia,10202830,1,21.73,True,75.0,sparse_public_pm25_monitoring
+LKA,Sri Lanka,South Asia,21916000,3,19.96,True,72.0,sparse_public_pm25_monitoring
+CHN,"China, People's Republic of",East Asia,1408975000,1880,34.81,True,70.0,public_pm25_monitoring_present
+PAK,Pakistan,South Asia,251269164,383,43.0,True,70.0,public_pm25_monitoring_present
+IDN,Indonesia,Southeast Asia,283487931,35,17.88,True,68.0,sparse_public_pm25_monitoring
+NPL,Nepal,South Asia,29651054,75,45.72,True,68.0,public_pm25_monitoring_present
+PNG,Papua New Guinea,The Pacific,10576502,0,17.31,True,67.0,no_public_pm25_monitor
+TLS,Timor-Leste,Southeast Asia,1400638,0,17.41,True,67.0,no_public_pm25_monitor
+TKM,Turkmenistan,Central and West Asia,7494498,2,19.6,True,63.0,public_pm25_monitoring_present
+VUT,Vanuatu,The Pacific,327777,0,14.08,True,61.0,no_public_pm25_monitor
+FJI,Fiji,The Pacific,928784,0,12.42,True,58.0,no_public_pm25_monitor
+WSM,Samoa,The Pacific,218019,0,12.55,True,58.0,no_public_pm25_monitor
+THA,Thailand,Southeast Asia,71668011,604,31.01,True,58.0,public_pm25_monitoring_present
+TON,Tonga,The Pacific,104175,0,12.48,True,58.0,no_public_pm25_monitor
+ARM,Armenia,Central and West Asia,3033500,77,30.58,True,57.0,public_pm25_monitoring_present
+FSM,"Micronesia, Federated States of",The Pacific,113160,0,12.11,True,57.0,no_public_pm25_monitor
+KIR,Kiribati,The Pacific,134518,0,11.26,True,56.0,no_public_pm25_monitor
+MNG,Mongolia,East Asia,3524788,19,29.65,True,56.0,public_pm25_monitoring_present
+MHL,Marshall Islands,The Pacific,37548,0,10.73,True,55.0,no_public_pm25_monitor
+VNM,Viet Nam,Southeast Asia,100987686,54,20.8,True,52.0,public_pm25_monitoring_present
+BRN,Brunei Darussalam,Southeast Asia,462721,0,7.6,True,49.0,no_public_pm25_monitor
+KHM,Cambodia,Southeast Asia,17638801,27,24.14,True,49.0,public_pm25_monitoring_present
+KOR,"Korea, Republic of",East Asia,51751065,765,25.94,True,49.0,public_pm25_monitoring_present
+PLW,Palau,The Pacific,17695,0,7.33,True,49.0,no_public_pm25_monitor
+PHL,Philippines,Southeast Asia,115843670,78,20.29,True,48.0,public_pm25_monitoring_present
+KGZ,Kyrgyz Republic,Central and West Asia,7221868,96,24.38,True,46.0,public_pm25_monitoring_present
+NRU,Nauru,The Pacific,11947,0,6.06,True,46.0,no_public_pm25_monitor
+TUV,Tuvalu,The Pacific,9646,0,5.92,True,46.0,no_public_pm25_monitor
+BTN,Bhutan,South Asia,791524,16,23.95,True,45.0,public_pm25_monitoring_present
+GEO,Georgia,Central and West Asia,3699557,2,17.04,True,45.0,public_pm25_monitoring_present
+MYS,Malaysia,Southeast Asia,35557673,18,16.19,True,44.0,public_pm25_monitoring_present
+TUR,Türkiye,Central and West Asia,85518661,202,21.61,True,43.0,public_pm25_monitoring_present
+LAO,Lao People's Democratic Republic,Southeast Asia,7769819,162,22.32,True,42.0,public_pm25_monitoring_present
+KAZ,Kazakhstan,Central and West Asia,20592571,202,20.03,True,38.0,public_pm25_monitoring_present
+SLB,Solomon Islands,The Pacific,819198,1,13.95,True,32.0,public_pm25_monitoring_present
+SGP,Singapore,Southeast Asia,6036860,44,13.87,True,27.0,public_pm25_monitoring_present
+MDV,Maldives,South Asia,527799,1,12.01,True,26.0,public_pm25_monitoring_present
+JPN,Japan,East Asia,123975371,1131,12.84,True,25.0,public_pm25_monitoring_present
+AUS,Australia,The Pacific,27196812,299,8.25,True,16.0,public_pm25_monitoring_present
+NZL,New Zealand,The Pacific,5287500,46,6.49,True,13.0,public_pm25_monitoring_present
+COK,Cook Islands,The Pacific,0,0,0,False,0,no_population
+HKG,"Hong Kong, China",East Asia,7524100,25,0,False,0,no_pm25_exposure
+NIU,Niue,The Pacific,0,0,0,False,0,no_population
+TWN,"Taipei,China",East Asia,0,125,0,False,0,no_population

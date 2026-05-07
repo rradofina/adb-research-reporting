@@ -1,0 +1,73 @@
+# --- Secrets ----------------------------------------------------------------
+.env
+.env.*
+!.env.local.example
+*.json.key
+adb-research-*.json
+
+# --- Source caches ----------------------------------------------------------
+# Every program has its own .cache/ for upstream-fetched source data.
+# These are public-source reproducible via the program's scripts/ — see the
+# README.md inside each .cache/ for the regenerate path. They are git-ignored
+# because (a) some are very large (Open Buildings tiles ~4.6 GB, PSA/NAMRIA
+# .gdb 807 MB, BGD road .gpkg 310 MB, BGD public-facility JSON pages ~2.5 GB)
+# and (b) git is not the right artifact store for binary mirrors of public
+# data. Reproducibility per CONSTITUTION.md §11 is preserved via the
+# fetch scripts + manifest.sha256 hashes; a reviewer rehydrates the cache
+# from public sources by running the scripts.
+**/.cache/*
+!**/.cache/README.md
+
+# --- Generated artifacts that are reproducible ------------------------------
+# Build outputs that re-emerge from npm install / npm run build / quarto
+# render. Source-of-record for each is checked in (markdown source for
+# slides, React source for the site, Python sources for charts).
+node_modules/
+.next/
+**/.next/
+**/tsconfig.tsbuildinfo
+reporting-site/dist/
+reporting-site/dev-server.*.log
+reporting-site/.playwright-mcp/
+reporting-site/*.png
+reporting-site/*.jpg
+reporting-site/*.jpeg
+.playwright-mcp/
+psdq-spatial-desktop.jpg
+psdq-spatial-section-desktop.png
+psdq-evidence-mobile-after-fix.png
+psdq-program-desktop.png
+psdq-poverty-panel.png
+psdq-poverty-panel-mobile.png
+psdq-source-check.png
+luminosity-gap/.next/
+luminosity-gap/tsconfig.tsbuildinfo
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# --- Quarto -----------------------------------------------------------------
+**/_quarto.yml.bak
+**/.quarto/
+**/*_files/
+
+# --- OS / editor ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.shared.json
+
+# --- Misc -------------------------------------------------------------------
+*.log
+!luminosity-gap/scripts/**/*.log

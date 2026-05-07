@@ -1,0 +1,18 @@
+iso3,admin1_code,admin1_name,population_2020,osm_health,registry_principal,registry_clinical,registry_all,delta_osm_minus_principal,delta_osm_minus_clinical,delta_osm_minus_all,ratio_osm_to_principal,ratio_osm_to_clinical,ratio_osm_to_all,osm_per_100k,registry_principal_per_100k,osm_timestamp,registry_retrieved_at,registry_source_url
+PHL,PH-00,NCR,13484462,1094,1233,1722,3183,-139,-628,-2089,0.8873,0.6353,0.3437,8.11,9.14,2026-04-11T23:06:11Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-01,Ilocos Region,5301139,307,449,2715,3098,-142,-2408,-2791,0.6837,0.1131,0.0991,5.79,8.47,2026-04-23T05:59:36Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-02,Cagayan Valley,3685744,168,331,2319,2592,-163,-2151,-2424,0.5076,0.0724,0.0648,4.56,8.98,2026-04-11T23:06:11Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-03,Central Luzon,12422172,1139,972,3533,4616,167,-2394,-3477,1.1718,0.3224,0.2468,9.17,7.82,2026-04-23T06:00:34Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-05,Bicol Region,6082165,267,520,3183,3399,-253,-2916,-3132,0.5135,0.0839,0.0786,4.39,8.55,2026-04-23T06:00:34Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-06,Western Visayas,7954723,308,464,2820,3312,-156,-2512,-3004,0.6638,0.1092,0.093,3.87,5.83,2026-04-23T06:00:34Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-07,Central Visayas,8081988,323,584,3260,3715,-261,-2937,-3392,0.5531,0.0991,0.0869,4.0,7.23,2026-04-05T22:09:02Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-08,Eastern Visayas,4547150,338,484,1479,1640,-146,-1141,-1302,0.6983,0.2285,0.2061,7.43,10.64,2026-04-11T23:06:11Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-09,Zamboanga Peninsula,3875576,125,331,1571,1688,-206,-1446,-1563,0.3776,0.0796,0.0741,3.23,8.54,2026-04-05T22:09:02Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-10,Northern Mindanao,5022768,253,411,1986,2148,-158,-1733,-1895,0.6156,0.1274,0.1178,5.04,8.18,2026-04-11T23:06:11Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-11,Davao Region,5243536,376,344,1646,2039,32,-1270,-1663,1.093,0.2284,0.1844,7.17,6.56,2026-04-05T22:09:02Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-12,Soccsksargen,4360974,173,326,1475,1680,-153,-1302,-1507,0.5307,0.1173,0.103,3.97,7.48,2026-04-23T06:02:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-13,Caraga,2804788,149,267,1458,1578,-118,-1309,-1429,0.5581,0.1022,0.0944,5.31,9.52,2026-04-23T06:02:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-14,ARMM,4944800,72,326,1117,1147,-254,-1045,-1075,0.2209,0.0645,0.0628,1.46,6.59,2026-04-23T06:02:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-15,CAR,1797660,146,254,1238,1392,-108,-1092,-1246,0.5748,0.1179,0.1049,8.12,14.13,2026-04-23T06:02:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-40,Calabarzon,16195042,1004,1264,4396,5457,-260,-3392,-4453,0.7943,0.2284,0.184,6.2,7.8,2026-04-23T06:03:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities
+PHL,PH-41,Mimaropa,3228558,159,229,1474,1583,-70,-1315,-1424,0.6943,0.1079,0.1004,4.92,7.09,2026-04-23T06:03:45Z,2026-04-25,https://nhfr.doh.gov.ph/api/list/v_activefacilities

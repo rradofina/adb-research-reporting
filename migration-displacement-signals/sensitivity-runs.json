@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-04-26T02:21:47.633862Z",
+  "program": "migration-displacement-signals",
+  "headline": "Five ADB DMCs persistently rank in the top five emigrant-stock economies regardless of metric choice (raw stock vs net stock); the corridor concentration in their top-3 destinations exceeds 50 percent in every case.",
+  "runs": [
+    {
+      "label": "baseline_emigrant_stock_top5",
+      "metric": "emigrant_stock_2024",
+      "top5": [
+        [
+          "IND",
+          "India",
+          18533845
+        ],
+        [
+          "CHN",
+          "China",
+          11701619
+        ],
+        [
+          "BGD",
+          "Bangladesh",
+          8706947
+        ],
+        [
+          "AFG",
+          "Afghanistan",
+          7528994
+        ],
+        [
+          "PHL",
+          "Philippines",
+          6988383
+        ]
+      ]
+    },
+    {
+      "label": "top_n_minus50_top3",
+      "metric": "emigrant_stock_2024",
+      "top_n": 3,
+      "top3": [
+        [
+          "IND",
+          "India",
+          18533845
+        ],
+        [
+          "CHN",
+          "China",
+          11701619
+        ],
+        [
+          "BGD",
+          "Bangladesh",
+          8706947
+        ]
+      ]
+    },
+    {
+      "label": "top_n_plus50_top8",
+      "metric": "emigrant_stock_2024",
+      "top_n": 8,
+      "top8": [
+        [
+          "IND",
+          "India",
+          18533845
+        ],
+        [
+          "CHN",
+          "China",
+          11701619
+        ],
+        [
+          "BGD",
+          "Bangladesh",
+          8706947
+        ],
+        [
+          "AFG",
+          "Afghanistan",
+          7528994
+        ],
+        [
+          "PHL",
+          "Philippines",
+          6988383
+        ],
+        [
+          "PAK",
+          "Pakistan",
+          6915057
+        ],
+        [
+          "MMR",
+          "Myanmar",
+          4320462
+        ],
+        [
+          "IDN",
+          "Indonesia",
+          3745148
+        ]
+      ]
+    },
+    {
+      "label": "metric_net_migrant_stock_top5",
+      "metric": "net_migrant_stock_2024 (most-negative first)",
+      "top5": [
+        [
+          "IND",
+          "India",
+          -14187444
+        ],
+        [
+          "CHN",
+          "China",
+          -10136606
+        ],
+        [
+          "AFG",
+          "Afghanistan",
+          -7456046
+        ],
+        [
+          "PHL",
+          "Philippines",
+          -6919462
+        ],
+        [
+          "BGD",
+          "Bangladesh",
+          -6246694
+        ]
+      ]
+    },
+    {
+      "label": "metric_emigrant_share_top5",
+      "metric": "emigrant / (emigrant + immigrant)",
+      "top5": [
+        [
+          "AFG",
+          "Afghanistan",
+          0.9904
+        ],
+        [
+          "PHL",
+          "Philippines",
+          0.9902
+        ],
+        [
+          "MMR",
+          "Myanmar",
+          0.9843
+        ],
+        [
+          "TON",
+          "Tonga",
+          0.9816
+        ],
+        [
+          "LKA",
+          "Sri Lanka",
+          0.9747
+        ]
+      ]
+    },
+    {
+      "label": "corridor_concentration_top5_dmc",
+      "method": "share of emigrant stock captured by top-N destinations, per top-5 emigrant DMC",
+      "n_2": [
+        [
+          "IND",
+          0.3461
+        ],
+        [
+          "CHN",
+          0.4255
+        ],
+        [
+          "BGD",
+          0.5348
+        ],
+        [
+          "AFG",
+          0.7539
+        ],
+        [
+          "PHL",
+          0.4435
+        ]
+      ],
+      "n_3": [
+        [
+          "IND",
+          0.4515
+        ],
+        [
+          "CHN",
+          0.4947
+        ],
+        [
+          "BGD",
+          0.6525
+        ],
+        [
+          "AFG",
+          0.8015
+        ],
+        [
+          "PHL",
+          0.5516
+        ]
+      ],
+      "n_5": [
+        [
+          "IND",
+          0.6041
+        ],
+        [
+          "CHN",
+          0.6254
+        ],
+        [
+          "BGD",
+          0.7838
+        ],
+        [
+          "AFG",
+          0.8721
+        ],
+        [
+          "PHL",
+          0.6783
+        ]
+      ]
+    },
+    {
+      "label": "set_stability_check",
+      "baseline_top5": [
+        "AFG",
+        "BGD",
+        "CHN",
+        "IND",
+        "PHL"
+      ],
+      "net_migrant_top5": [
+        "AFG",
+        "BGD",
+        "CHN",
+        "IND",
+        "PHL"
+      ],
+      "emigrant_share_top5": [
+        "AFG",
+        "LKA",
+        "MMR",
+        "PHL",
+        "TON"
+      ],
+      "intersection_baseline_and_net": [
+        "AFG",
+        "BGD",
+        "CHN",
+        "IND",
+        "PHL"
+      ]
+    }
+  ]
+}

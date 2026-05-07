@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developers.zenodo.org/#representation",
+  "metadata": {
+    "title": "{program-title} — replication archive ({YYYY-MM-DD})",
+    "upload_type": "dataset",
+    "publication_type": null,
+    "publication_date": "YYYY-MM-DD",
+    "creators": [
+      {
+        "name": "Adofina, Raymond",
+        "affiliation": "Asian Development Bank",
+        "orcid": ""
+      }
+    ],
+    "description": "Replication archive for {program-title}. Includes the frozen pre-registration, computed artifacts in /generated/, the sensitivity table, and the manifest.sha256. A clean clone of the upstream repository at commit {hash} reproduces every value in this archive without any API key or live network call. Governed by the Constitution at the upstream repository (CONSTITUTION.md).",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "Asian Development Bank",
+      "developing member economies",
+      "measurement gap",
+      "{program-keyword}"
+    ],
+    "communities": [
+      { "identifier": "" }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/rradofina/adb-research",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      }
+    ],
+    "version": "1.0.0",
+    "language": "eng",
+    "notes": "Frozen at commit {hash}. Sensitivity at ±50 percent per Constitution §6.6 is in the included sensitivity.md. External red-team review is in review-external.md. Banned-words and DMC-framing checks pass at this commit."
+  }
+}

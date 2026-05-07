@@ -1,0 +1,499 @@
+{
+  "program": "food-price-climate-transmission",
+  "claim_scope": "Reformulated food-price vulnerability: DMCs in the top-N of BOTH WDI CPI inflation AND ag-imports-share-of-merchandise. Joint qualifier, not a composite score.",
+  "framing_rule": "Joint food-price vulnerability qualifier. Constitution \u00a713.3 / \u00a714.",
+  "sources": {
+    "wdi_cpi": "WDI FP.CPI.TOTL.ZG (CC BY 4.0)",
+    "wdi_ag_imports": "WDI TM.VAL.AGRI.ZS.UN (CC BY 4.0)",
+    "retrieved_at": "2026-04-27"
+  },
+  "methodology": {
+    "joint_qualifier_topN": "DMC qualifies if it is in the top-N of CPI inflation AND in the top-N of ag-imports-share. Set-based, not score-based."
+  },
+  "qualifying_top5": [
+    "LAO",
+    "PAK",
+    "BGD"
+  ],
+  "qualifying_top8": [
+    "LAO",
+    "PAK",
+    "BGD"
+  ],
+  "rows": [
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "cpi_inflation_pct": 23.13,
+      "ag_imports_pct_merch": 4.57,
+      "cpi_rank": 1,
+      "imp_rank": 2,
+      "max_rank": 2,
+      "joint_qualifier_top5": true,
+      "joint_qualifier_top8": true
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "cpi_inflation_pct": 12.63,
+      "ag_imports_pct_merch": 4.34,
+      "cpi_rank": 2,
+      "imp_rank": 3,
+      "max_rank": 3,
+      "joint_qualifier_top5": true,
+      "joint_qualifier_top8": true
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "cpi_inflation_pct": 10.47,
+      "ag_imports_pct_merch": 6.03,
+      "cpi_rank": 4,
+      "imp_rank": 1,
+      "max_rank": 4,
+      "joint_qualifier_top5": true,
+      "joint_qualifier_top8": true
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "cpi_inflation_pct": 9.63,
+      "ag_imports_pct_merch": 1.89,
+      "cpi_rank": 5,
+      "imp_rank": 12,
+      "max_rank": 12,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "cpi_inflation_pct": 3.62,
+      "ag_imports_pct_merch": 2.52,
+      "cpi_rank": 15,
+      "imp_rank": 8,
+      "max_rank": 15,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "cpi_inflation_pct": 3.23,
+      "ag_imports_pct_merch": 1.72,
+      "cpi_rank": 16,
+      "imp_rank": 15,
+      "max_rank": 16,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "cpi_inflation_pct": 2.76,
+      "ag_imports_pct_merch": 2.9,
+      "cpi_rank": 18,
+      "imp_rank": 6,
+      "max_rank": 18,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "cpi_inflation_pct": 4.95,
+      "ag_imports_pct_merch": 1.54,
+      "cpi_rank": 11,
+      "imp_rank": 18,
+      "max_rank": 18,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "cpi_inflation_pct": 2.46,
+      "ag_imports_pct_merch": 2.3,
+      "cpi_rank": 19,
+      "imp_rank": 10,
+      "max_rank": 19,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "cpi_inflation_pct": 2.23,
+      "ag_imports_pct_merch": 1.7,
+      "cpi_rank": 20,
+      "imp_rank": 16,
+      "max_rank": 20,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "cpi_inflation_pct": 2.21,
+      "ag_imports_pct_merch": 1.37,
+      "cpi_rank": 21,
+      "imp_rank": 19,
+      "max_rank": 21,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "cpi_inflation_pct": 2.18,
+      "ag_imports_pct_merch": 2.01,
+      "cpi_rank": 22,
+      "imp_rank": 11,
+      "max_rank": 22,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "cpi_inflation_pct": 4.69,
+      "ag_imports_pct_merch": 1.29,
+      "cpi_rank": 12,
+      "imp_rank": 22,
+      "max_rank": 22,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "cpi_inflation_pct": 2.17,
+      "ag_imports_pct_merch": 2.31,
+      "cpi_rank": 23,
+      "imp_rank": 9,
+      "max_rank": 23,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "cpi_inflation_pct": 2.06,
+      "ag_imports_pct_merch": 0.83,
+      "cpi_rank": 24,
+      "imp_rank": 23,
+      "max_rank": 24,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "cpi_inflation_pct": 1.83,
+      "ag_imports_pct_merch": 1.55,
+      "cpi_rank": 25,
+      "imp_rank": 17,
+      "max_rank": 25,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "cpi_inflation_pct": 4.32,
+      "ag_imports_pct_merch": 0.69,
+      "cpi_rank": 13,
+      "imp_rank": 26,
+      "max_rank": 26,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "cpi_inflation_pct": 1.4,
+      "ag_imports_pct_merch": 1.35,
+      "cpi_rank": 27,
+      "imp_rank": 20,
+      "max_rank": 27,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "cpi_inflation_pct": 8.69,
+      "ag_imports_pct_merch": 0.65,
+      "cpi_rank": 7,
+      "imp_rank": 27,
+      "max_rank": 27,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "cpi_inflation_pct": 3.21,
+      "ag_imports_pct_merch": 0.55,
+      "cpi_rank": 17,
+      "imp_rank": 28,
+      "max_rank": 28,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "cpi_inflation_pct": 1.37,
+      "ag_imports_pct_merch": 1.31,
+      "cpi_rank": 28,
+      "imp_rank": 21,
+      "max_rank": 28,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "cpi_inflation_pct": 8.83,
+      "ag_imports_pct_merch": 0.54,
+      "cpi_rank": 6,
+      "imp_rank": 29,
+      "max_rank": 29,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "cpi_inflation_pct": 1.11,
+      "ag_imports_pct_merch": 0.82,
+      "cpi_rank": 29,
+      "imp_rank": 24,
+      "max_rank": 29,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "cpi_inflation_pct": 0.81,
+      "ag_imports_pct_merch": 2.97,
+      "cpi_rank": 30,
+      "imp_rank": 5,
+      "max_rank": 30,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "cpi_inflation_pct": 5.0,
+      "ag_imports_pct_merch": 0.47,
+      "cpi_rank": 10,
+      "imp_rank": 31,
+      "max_rank": 31,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "cpi_inflation_pct": 0.6,
+      "ag_imports_pct_merch": 0.51,
+      "cpi_rank": 31,
+      "imp_rank": 30,
+      "max_rank": 31,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "cpi_inflation_pct": 0.27,
+      "ag_imports_pct_merch": 0.7,
+      "cpi_rank": 32,
+      "imp_rank": 25,
+      "max_rank": 32,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "cpi_inflation_pct": 6.2,
+      "ag_imports_pct_merch": 0.43,
+      "cpi_rank": 8,
+      "imp_rank": 32,
+      "max_rank": 32,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "cpi_inflation_pct": 0.22,
+      "ag_imports_pct_merch": 2.66,
+      "cpi_rank": 33,
+      "imp_rank": 7,
+      "max_rank": 33,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "cpi_inflation_pct": 3.89,
+      "ag_imports_pct_merch": 0.36,
+      "cpi_rank": 14,
+      "imp_rank": 33,
+      "max_rank": 33,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "cpi_inflation_pct": 1.73,
+      "ag_imports_pct_merch": 0.09,
+      "cpi_rank": 26,
+      "imp_rank": 34,
+      "max_rank": 34,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "cpi_inflation_pct": -0.43,
+      "ag_imports_pct_merch": 1.89,
+      "cpi_rank": 35,
+      "imp_rank": 13,
+      "max_rank": 35,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "cpi_inflation_pct": -0.39,
+      "ag_imports_pct_merch": 0.05,
+      "cpi_rank": 34,
+      "imp_rank": 35,
+      "max_rank": 35,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "cpi_inflation_pct": -6.6,
+      "ag_imports_pct_merch": 1.77,
+      "cpi_rank": 36,
+      "imp_rank": 14,
+      "max_rank": 36,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "cpi_inflation_pct": 5.41,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": 9,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": 4.12,
+      "cpi_rank": null,
+      "imp_rank": 4,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "cpi_inflation_pct": null,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": null,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "cpi_inflation_pct": 11.18,
+      "ag_imports_pct_merch": null,
+      "cpi_rank": 3,
+      "imp_rank": null,
+      "max_rank": null,
+      "joint_qualifier_top5": false,
+      "joint_qualifier_top8": false
+    }
+  ],
+  "generated_at": "2026-04-27T00:24:28Z"
+}

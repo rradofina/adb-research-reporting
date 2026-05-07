@@ -1,0 +1,85 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Raymond Adofina (and co-authors as named in individual
+program folders; see CONSTITUTION.md §13.4)
+
+This license covers the research content in this repository: markdown
+articles under `articles/`, the per-program narrative documents
+(`README.md`, `results.md`, `limitations.md`, `literature.md`,
+`pre-registration.md`, `sensitivity.md`, `review-*.md`, `upgrade-gap.md`,
+`SOURCE-ACTION.md`, `STATUS.md`, etc.), generated CSVs, JSON, and PNG/SVG
+chart files under `{program}/generated/`, and `CONSTITUTION.md` itself
+along with the other governance documents (`CLAUDE.md`, `AGENTS.md`,
+`research/factory.md`, etc.).
+
+The accompanying source code is released separately under the MIT License;
+see LICENSE.
+
+You are free to:
+
+  * Share — copy and redistribute the material in any medium or format
+  * Adapt — remix, transform, and build upon the material for any purpose,
+    even commercially.
+
+The licensor cannot revoke these freedoms as long as you follow the license
+terms.
+
+Under the following terms:
+
+  * Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+
+  * No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+Notices:
+
+  * You do not have to comply with the license for elements of the material
+    in the public domain or where your use is permitted by an applicable
+    exception or limitation.
+  * No warranties are given. The license may not give you all of the
+    permissions necessary for your intended use. For example, other rights
+    such as publicity, privacy, or moral rights may limit how you use the
+    material.
+
+Full license text:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Suggested citation when using research artifacts from this repository:
+
+> Adofina, R. (2026). [Title of artifact]. Blindspots Lab. Available at
+> [URL]. CC BY 4.0. Attestation chain at the time of citation:
+> [ai-first | ai-first; owner-spot-checked | human-final].
+
+Per CONSTITUTION.md §18.2 (honest labeling), citations should name the
+attestation chain of the artifact at the time of citation. The lab updates
+attestation chains as programs progress through the review-loop modes.
+
+Note on third-party data:
+
+This repository's research artifacts are derived in part from third-party
+public data sources whose own licenses apply to their unaltered content.
+Notable upstream sources used (non-exhaustive; see `versions.json` and
+each program's `REPRODUCE.md` for the full list):
+
+  * OpenStreetMap data (© OpenStreetMap contributors, ODbL).
+  * Department of Health Philippines NHFR (Republic Act 9485 disclosure).
+  * Bangladesh DGHS Facility Registry (public dashboard).
+  * Philippine Statistics Authority (PSA) — Small Area Estimates and
+    OpenSTAT direct-estimate tables (public domain unless otherwise stated).
+  * PSA/NAMRIA administrative boundaries (public).
+  * geoBoundaries (CC BY 4.0).
+  * Google Open Buildings (CC BY 4.0).
+  * HeiGIT/HDX road surface data (ODbL).
+  * UN DESA International Migrant Stock (public).
+  * World Bank Remittance Prices Worldwide (CC BY 4.0).
+  * World Bank World Development Indicators (CC BY 4.0).
+  * EM-DAT (CRED, terms-of-use).
+
+Where derivative outputs include or are based on third-party data, the
+relevant upstream license applies to the original source material; this
+repository's CC BY 4.0 license applies to the lab's own analysis,
+narrative, and presentation.

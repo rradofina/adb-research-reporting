@@ -1,0 +1,90 @@
+{
+  "program": "access-services",
+  "claim_scope": "Hypothesis-stage screening: country-level pop-weighted access-stress index from ADM1 OSM amenity counts \u00d7 WorldPop / national-census population, across 8 ADB DMC pilots (PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS).",
+  "framing_rule": "Service-access measurement-gap signal. Constitution \u00a713.3 / \u00a714.",
+  "sources": {
+    "osm_amenity_counts": "luminosity-gap/research/access-services pipeline; OSM via Overpass; geoBoundaries gbOpen ADM1",
+    "population": "PSA 2020 Census + WorldPop 2024",
+    "license": "OSM ODbL; geoBoundaries CC BY 4.0",
+    "retrieved_at": "2026-04-23"
+  },
+  "methodology": {
+    "access_stress_index": "Composite of {service_load_score, osm_completeness_risk_score} per ADM1 (legacy formulation), aggregated to country with population-weighted mean."
+  },
+  "rows": [
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "n_adm1_units": 7,
+      "total_population": 230002239,
+      "population_weighted_access_stress": 90.31,
+      "worst_adm1_people_per_health_facility": 149776,
+      "worst_adm1_name": "Balochistan"
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "n_adm1_units": 8,
+      "total_population": 163418869,
+      "population_weighted_access_stress": 68.14,
+      "worst_adm1_people_per_health_facility": 94376,
+      "worst_adm1_name": "Sylhet"
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "n_adm1_units": 25,
+      "total_population": 19640399,
+      "population_weighted_access_stress": 58.68,
+      "worst_adm1_people_per_health_facility": 319413,
+      "worst_adm1_name": "Oddar Meanchey"
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao People's Democratic Republic",
+      "n_adm1_units": 18,
+      "total_population": 7557830,
+      "population_weighted_access_stress": 44.55,
+      "worst_adm1_people_per_health_facility": 44845,
+      "worst_adm1_name": "Bolikhamsai"
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "n_adm1_units": 9,
+      "total_population": 21392069,
+      "population_weighted_access_stress": 37.91,
+      "worst_adm1_people_per_health_facility": 32311,
+      "worst_adm1_name": "Sabaragamuwa Province"
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "n_adm1_units": 7,
+      "total_population": 40895707,
+      "population_weighted_access_stress": 30.97,
+      "worst_adm1_people_per_health_facility": 30123,
+      "worst_adm1_name": "Province 1"
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "n_adm1_units": 17,
+      "total_population": 109033245,
+      "population_weighted_access_stress": 29.48,
+      "worst_adm1_people_per_health_facility": 68678,
+      "worst_adm1_name": "ARMM"
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "n_adm1_units": 13,
+      "total_population": 1406661,
+      "population_weighted_access_stress": 21.08,
+      "worst_adm1_people_per_health_facility": 10184,
+      "worst_adm1_name": "Liqui\u00e7\u00e1"
+    }
+  ],
+  "n_adm1_total": 104,
+  "generated_at": "2026-04-26T16:56:14Z"
+}

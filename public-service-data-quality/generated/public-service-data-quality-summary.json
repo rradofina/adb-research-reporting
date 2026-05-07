@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-04-25T00:14:21Z",
+  "program": "public-service-data-quality",
+  "claim_scope": "Hypothesis-stage screening result (multi-DMC pilot: PHL, BGD). Owner sign-off pending.",
+  "framing_rule": "Measurement-gap signal, not country quality ranking (CONSTITUTION.md §13.3 §14).",
+  "countries": [
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "source": "DOH National Health Facility Registry v2.0",
+      "totals": {
+        "osm_health": 6401,
+        "registry_principal": 8789,
+        "registry_clinical": 37392,
+        "registry_all": 44267,
+        "ratio_osm_to_principal": 0.7283,
+        "ratio_osm_to_clinical": 0.1712,
+        "ratio_osm_to_all": 0.1446
+      },
+      "num_admin1": 17,
+      "admin1_min_ratio_clinical": 0.0645,
+      "admin1_max_ratio_clinical": 0.6353,
+      "worst_admin1": "ARMM",
+      "best_admin1": "NCR"
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "source": "DGHS Facility Registry (Central HRIS)",
+      "totals": {
+        "osm_health": 3298,
+        "registry_principal": 8026,
+        "registry_clinical": 27992,
+        "registry_all": 39421,
+        "ratio_osm_to_principal": 0.4109,
+        "ratio_osm_to_clinical": 0.1178,
+        "ratio_osm_to_all": 0.0837
+      },
+      "num_admin1": 8,
+      "admin1_min_ratio_clinical": 0.0625,
+      "admin1_max_ratio_clinical": 0.2007,
+      "worst_admin1": "Barisal",
+      "best_admin1": "Dhaka"
+    }
+  ],
+  "interpretation": "OSM amenity=hospital/clinic/doctors counts are compared to each country's official national registry across three facility-type tiers (principal: hospitals + main clinics; clinical: adds community-level primary care; all: adds labs, dental, drug-testing, diagnostic). The clinical-tier ratio is the most defensible apples-to-apples measure. Consistent with the program's first testable claim: OSM materially under-counts official facilities, with the gap systematically larger in rural and low-HDI ADM1 units."
+}

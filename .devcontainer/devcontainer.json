@@ -1,0 +1,26 @@
+{
+  "name": "ADB Research",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "editor.formatOnSave": false
+      }
+    }
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "node --version && python --version && tsx --version && duckdb --version && echo 'ADB Research devcontainer ready.'"
+}

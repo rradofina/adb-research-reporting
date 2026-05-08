@@ -6,7 +6,7 @@
  * Blog, Slides, Data, Evidence) switch the main content; sidebar shows
  * at-a-glance metadata + downloads. URL: /{slug}[?view={tab}].
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { marked } from "marked";
 import {
@@ -59,16 +59,25 @@ export default function Topic() {
   const [manifest, setManifest] = useState<EvidenceManifest | null>(null);
   const [missing, setMissing] = useState(false);
 
+  // Per-(slug, view) HTML cache so re-clicking a tab is instant and the
+  // previously-shown content stays visible while the new tab fetches.
+  // Stored in a ref so cache hits do not re-render the parent.
+  const bodyCache = useRef<Map<string, string>>(new Map());
+  const cacheKey = (slug: string, view: View) => `${slug}::${view}`;
+
   const programEntry = useMemo(
     () => programs.find((p) => p.slug === slug),
     [slug],
   );
 
-  // 1. Load the article index + reference list once and bucket by tier for this slug.
+  // 1. Load the article index + evidence manifest for this slug.
+  // Tier metadata only — does NOT touch bodyHtml, so a slug-stable
+  // re-render (e.g. StrictMode double-mount) cannot blank the visible
+  // content.
   useEffect(() => {
     let cancelled = false;
-    setBodyHtml("");
     setMissing(false);
+    bodyCache.current.clear();
     (async () => {
       const index = await loadArticleIndex();
       const forSlug = index.filter((a) => a.program === slug);
@@ -92,21 +101,38 @@ export default function Topic() {
     };
   }, [slug, programEntry]);
 
-  // 2. When the active tab changes, load that tab's markdown body.
+  // 2. When the active tab changes, load that tab's markdown body if
+  // not cached. The previous tab's HTML stays in bodyHtml until the new
+  // body is ready — no flash to a blank/loading state on tab switch.
   useEffect(() => {
-    let cancelled = false;
-    setBodyHtml("");
-    if (view === "data" || view === "evidence") return; // these tabs render from manifest, not markdown
-    if (view === "slides") {
-      // Slides tab: short framing + .pptx download. The markdown source is also rendered below.
+    if (view === "data" || view === "evidence") {
+      // These tabs render from manifest, not markdown.
+      setBodyHtml("");
+      setBodyLoading(false);
+      return;
     }
     const meta = tiers[view];
-    if (!meta) return;
+    if (!meta) {
+      setBodyHtml("");
+      setBodyLoading(false);
+      return;
+    }
+    const key = cacheKey(slug, view);
+    const cached = bodyCache.current.get(key);
+    if (cached !== undefined) {
+      // Cache hit: snap to the cached HTML, no async work, no flash.
+      setBodyHtml(cached);
+      setBodyLoading(false);
+      return;
+    }
+
+    let cancelled = false;
     setBodyLoading(true);
     (async () => {
       const [refs, body] = await Promise.all([loadReferences(), loadArticleBody(meta.slug)]);
       if (cancelled) return;
       if (!body) {
+        bodyCache.current.set(key, "");
         setBodyHtml("");
         setBodyLoading(false);
         return;
@@ -117,6 +143,7 @@ export default function Topic() {
       const refIndex = byKey(refs);
       const { html: resolved, cited } = resolveCitations(raw, refIndex);
       const finalHtml = resolved + renderReferenceList(cited);
+      bodyCache.current.set(key, finalHtml);
       if (!cancelled) {
         setBodyHtml(finalHtml);
         setBodyLoading(false);
@@ -125,7 +152,7 @@ export default function Topic() {
     return () => {
       cancelled = true;
     };
-  }, [view, tiers]);
+  }, [slug, view, tiers]);
 
   function setView(v: View) {
     const next = new URLSearchParams(search);
@@ -223,13 +250,19 @@ export default function Topic() {
         {/* Main content */}
         <main className="min-w-0">
           {view === "paper" || view === "brief" || view === "blog" ? (
-            bodyLoading ? (
-              <div className="py-12 text-ink-500 text-sm">Loading…</div>
-            ) : bodyHtml ? (
+            // Render any current bodyHtml even while loading — keeps the
+            // previous tab's content visible until the new one is ready,
+            // so tab switching does not flash to a blank state.
+            bodyHtml ? (
               <div
-                className="prose-article max-w-[68ch]"
+                className={
+                  "prose-article max-w-[68ch] transition-opacity duration-150 " +
+                  (bodyLoading ? "opacity-60" : "opacity-100")
+                }
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
+            ) : bodyLoading ? (
+              <div className="py-12 text-ink-500 text-sm">Loading…</div>
             ) : (
               <div className="py-12 text-ink-500 text-sm">
                 No {TAB_LABEL[view].toLowerCase()} version yet for this topic.
@@ -296,14 +329,17 @@ function SlidesTab({
           <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-3">
             Markdown source
           </div>
-          {bodyLoading ? (
-            <div className="py-12 text-ink-500 text-sm">Loading…</div>
-          ) : (
+          {bodyHtml ? (
             <div
-              className="prose-article max-w-[68ch]"
+              className={
+                "prose-article max-w-[68ch] transition-opacity duration-150 " +
+                (bodyLoading ? "opacity-60" : "opacity-100")
+              }
               dangerouslySetInnerHTML={{ __html: bodyHtml }}
             />
-          )}
+          ) : bodyLoading ? (
+            <div className="py-12 text-ink-500 text-sm">Loading…</div>
+          ) : null}
         </div>
       )}
     </div>

@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 Raymond Adofina (and co-authors as named in individual
+program folders; see CONSTITUTION.md §13.4)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+This license covers the source code in this repository: scripts under
+`scripts/` and `{program}/scripts/`, the React/TypeScript source under
+`reporting-site/src/` and `luminosity-gap/src/`, the build configuration
+files (`*.json`, `*.mjs`, `*.ts`, `*.tsx`, `*.css`), and any other
+machine-executable code committed to this repository.
+
+Research artifacts — markdown articles under `articles/`, the per-program
+narrative documents (`README.md`, `results.md`, `limitations.md`,
+`literature.md`, `pre-registration.md`, `sensitivity.md`, `review-*.md`,
+`upgrade-gap.md`, etc.), generated CSVs, JSON, and PNG/SVG charts, and the
+`CONSTITUTION.md` governance document — are released under a separate
+content license, Creative Commons Attribution 4.0 International. See
+LICENSE-CONTENT.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

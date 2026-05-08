@@ -29,7 +29,7 @@ const ROOTS = [
   "articles",
 ];
 const EXTS = [".md", ".tsx", ".ts", ".mdx"];
-const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist", "build", ".next", ".vercel", "generated", "review-packets"]);
+const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist", "build", ".next", ".vercel", "generated", "review-packets", "_archive", "public"]);
 const EXCLUDE_FILES = new Set([
   "research/style-guide.md",
   "scripts/check-dmc-framing.mjs",

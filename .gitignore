@@ -33,13 +33,11 @@ reporting-site/*.png
 reporting-site/*.jpg
 reporting-site/*.jpeg
 .playwright-mcp/
-psdq-spatial-desktop.jpg
-psdq-spatial-section-desktop.png
-psdq-evidence-mobile-after-fix.png
-psdq-program-desktop.png
-psdq-poverty-panel.png
-psdq-poverty-panel-mobile.png
-psdq-source-check.png
+# Root-level browser-check screenshot artifacts (Playwright session output)
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
 luminosity-gap/.next/
 luminosity-gap/tsconfig.tsbuildinfo
 

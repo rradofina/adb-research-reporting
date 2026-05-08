@@ -17,7 +17,7 @@ const ROOTS = [
   "luminosity-gap/research",
 ];
 const EXTS = [".md", ".mdx"];
-const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist"]);
+const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist", "review-packets", "_archive", "public"]);
 
 const RESEARCH_FILE_PATTERN = /(results\.md|article\.md|brief\.md)$/i;
 const ARTICLE_GLOB = /\barticles\b/;

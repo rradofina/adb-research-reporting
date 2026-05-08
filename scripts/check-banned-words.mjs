@@ -55,6 +55,17 @@ const EXCLUDE_DIRS = new Set([
   // review packets are verbatim file snapshots; the source files are
   // already checked at their canonical paths.
   "review-packets",
+  // _archive holds frozen historical artifacts; the live source is
+  // checked at its canonical path.
+  "_archive",
+  // reporting-site/public/docs holds verbatim sync of CONSTITUTION.md
+  // and other governance docs (sync-docs.mjs); checking them again
+  // produces false positives because §14 of the Constitution names
+  // the very banned words it prohibits.
+  "docs",
+  // reporting-site/public/articles is the synced article output from
+  // sync-articles.mjs; the source files in articles/ are already scanned.
+  "public",
 ]);
 const EXCLUDE_FILES = new Set([
   // The style guide itself lists banned words — must not flag itself.

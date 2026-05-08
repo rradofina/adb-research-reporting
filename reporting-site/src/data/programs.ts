@@ -10,8 +10,11 @@ export interface ProgramEntry {
   href?: string;
 }
 
-// Snapshot of the issue status register as of 2026-04-27.
-// Keep in sync with the article frontmatter and evidence packets.
+// Snapshot of the issue status register as of 2026-05-07.
+// Keep in sync with research/wip-register.md, CONSTITUTION.md §15, and the
+// article frontmatter. 9 programs were demoted PR/SR → PP on 2026-05-07
+// because their original advancement was a single composite-index screening
+// only — see CONSTITUTION.md §16 amendment of 2026-05-07 for rationale.
 export const programs: ProgramEntry[] = [
   {
     id: 0,
@@ -61,10 +64,10 @@ export const programs: ProgramEntry[] = [
     id: 5,
     slug: "climate-health-workdays",
     title: "Climate-health workday loss",
-    status: "PR",
+    status: "PP",
     summary:
       "WDI outdoor-labor share × PM2.5 exposure for 44 ADB DMCs. AFG 55.7 (26M exposed); IND 53.1 (798.6M exposed outdoor workers in above-WHO-guideline PM2.5); BGD 44.6 (93M); PAK 41.5 (123M). Heat exposure (CCKP tasmax) NOT yet included.",
-    note: "Finished for current issue under AI-first; heat layer remains the human-final upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07: original advancement was single composite-index screening only; awaits the new program loop.",
     href: "/program/climate-health-workdays",
   },
   {
@@ -81,10 +84,10 @@ export const programs: ProgramEntry[] = [
     id: 7,
     slug: "disaster-recovery-lag",
     title: "Disaster recovery lag",
-    status: "PR",
+    status: "PP",
     summary:
       "EM-DAT (CRED) burden layer 2000–2025 for 38 ADB DMCs. CHN: 25.6 events/yr, 1.77B affected. IND: 15.5/yr, 1.15B. PHL: 14.9/yr. IDN: 15.7/yr. NOT yet a recovery-lag metric — that requires event-timestamped indicator-recovery curves.",
-    note: "Finished for current issue under AI-first; recovery-lag curves remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/disaster-recovery-lag",
   },
   {
@@ -111,30 +114,30 @@ export const programs: ProgramEntry[] = [
     id: 10,
     slug: "grid-reliability-heat",
     title: "Grid reliability under heat",
-    status: "PR",
+    status: "PP",
     summary:
       "WRI Global Power Plant DB v1.3.0 + WDI electricity access for 39 ADB DMCs. 7,071 plants, 39 fuel-concentration profiles. Single-fuel grids: BTN 100% Hydro, BRN 100% Gas, NPL 95%, MNG 89% Coal, TJK 88% Hydro, KAZ 85% Coal. NOT yet a heat-stress reliability metric — that requires ERA5 × outage data.",
-    note: "Finished for current issue under AI-first; heat-reliability outage data remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/grid-reliability-heat",
   },
   {
     id: 11,
     slug: "migration-displacement-signals",
     title: "Migration and displacement signals",
-    status: "PR",
+    status: "PP",
     summary:
       "UN DESA International Migrant Stock 2024 per ADB DMC. IND 18.5M emigrants (top dest UAE, US); CHN 11.7M; BGD 8.7M; AFG 7.5M (Iran, Pakistan); PHL 7.0M (US, Canada); PAK 6.9M (Saudi, UAE); MMR 4.3M (Thailand).",
-    note: "Finished for current issue under AI-first; displacement-flow extensions remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/migration-displacement-signals",
   },
   {
     id: 12,
     slug: "port-hinterland-friction",
     title: "Port-hinterland trade friction",
-    status: "PR",
+    status: "PP",
     summary:
       "WB LPI (Logistics Performance Index) × WDI imports USD across ADB DMCs. Top friction exposure: CHN (1.45), IND (0.94), IDN (0.66), VNM (0.63), THA (0.54). Landlocked DMCs (AFG, UZB, KGZ, TJK, LAO, MNG) have structurally different story.",
-    note: "Finished for current issue under AI-first; port and inland-node data remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/port-hinterland-friction",
   },
   {
@@ -143,48 +146,48 @@ export const programs: ProgramEntry[] = [
     title: "Public service data quality",
     status: "PR",
     summary:
-      "OSM health-amenity counts compared to DOH NHFR (PHL) and DGHS Facility Registry (BGD). The flagship now adds PHL ADM3 Open Buildings context, BGD upazila settlement/road context, and an owner-downloaded official Philippines PSA SAE poverty overlay.",
-    note: "Flagship paper. Finished for current issue under AI-first; human-final review remains the upgrade path.",
-    href: "/program/public-service-data-quality",
+      "OSM health-amenity counts compared to DOH NHFR (PHL) and DGHS Facility Registry (BGD). 17.1% (PHL) and 11.8% (BGD) clinical-tier match. 9.8× rural-urban gradient. Now with ADM3 Open Buildings context, road context, PSA SAE poverty overlay, and the BARMM barangay-name resolver (249 of 257 unresolved records resolved).",
+    note: "Active flagship. ai-first finished for current issue 2026-05-07 under Mode A. Human-final review remains the upgrade path under §18.5.",
+    href: "/public-service-data-quality",
   },
   {
     id: 14,
     slug: "remittance-resilience",
     title: "Remittance resilience gaps",
-    status: "PR",
+    status: "PP",
     summary:
       "WDI BX.TRF.PWKR.DT.GD.ZS dependence × RPW Q1 2025 inbound transfer cost across 44 ADB DMCs. Top 5 fragile: Kyrgyz Republic (70.3), Samoa (51.0), Tonga (50.1), Vanuatu (47.7), Nepal (44.9). Tonga at 42.6% remittance dependence is striking.",
-    note: "Flagship paper. Finished for current issue under AI-first; volume-weighted corridor costs remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/remittance-resilience",
   },
   {
     id: 15,
     slug: "school-heat-disruption",
     title: "School heat disruption",
-    status: "SR",
+    status: "PP",
     summary:
       "WDI school-age share × Primary PTR × CCKP historical tasmax per 32 ADB DMCs. Top pressure: KHM 14.2 (5.3M children, 31.9°C, PTR 41.7). BGD 6.8 (48.6M). IND 6.3 (357M children). Future-period tasmax (2040-2059 SSP2-4.5) would amplify meaningfully.",
-    note: "Screening result only; heat-learning functional form remains the upgrade path.",
+    note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/school-heat-disruption",
   },
   {
     id: 16,
     slug: "social-protection-shock-coverage",
     title: "Social protection shock coverage",
-    status: "PR",
+    status: "PP",
     summary:
       "WDI ASPIRE SP coverage × Findex account ownership × poverty for ADB DMCs. Top readiness gap: PAK 18.0 (23% poverty, 22% SP, 21% accounts); VUT 13.6 (19.5% poverty, 30% SP); MMR 7.1; LAO 5.7 (only 2% SP coverage).",
-    note: "Finished for current issue under AI-first; adequacy and delivery-speed data remain the upgrade path.",
+    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/social-protection-shock-coverage",
   },
   {
     id: 17,
     slug: "water-stress-crop-diversification",
     title: "Water stress and crop concentration",
-    status: "SR",
+    status: "PP",
     summary:
       "WDI water × yield × rural composite. Turkmenistan at 1,868% freshwater withdrawal (rel. to internal resources — transboundary-reliant), Pakistan 326%, Uzbekistan 263%, Azerbaijan 161%. Top index: TKM 79.4, PAK 75.3, AZE 54.4.",
-    note: "Screening result only; basin and crop-calendar data remain the upgrade path.",
+    note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/water-stress-crop-diversification",
   },
 ];

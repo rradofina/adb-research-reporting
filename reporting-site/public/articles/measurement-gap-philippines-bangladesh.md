@@ -177,6 +177,8 @@ Ghalavand and colleagues 2024 [@ghalavand2024dataquality] this is a
 
 ## Philippines
 
+![Philippines choropleth: OSM-to-NHFR clinical-tier ratio per ADM1 region. NCR shows the highest ratio (about 0.6); BARMM and the rural Mindanao regions show the lowest (about 0.07).](/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg)
+
 OSM captures **17.1 percent** of the Philippines clinical-tier
 registry country-wide. Across the 17 ADM1 regions, the ratio ranges
 from **6.5 percent (BARMM)** to **63.5 percent (NCR)** — a 9.8x
@@ -201,6 +203,8 @@ the gap there is not attributable to either side alone.
 
 ## Bangladesh
 
+![Bangladesh choropleth: OSM-to-DGHS clinical-tier ratio per ADM1 division. Dhaka (centre) shows the highest ratio (about 0.20); Sylhet and Barisal show the lowest (about 0.06 to 0.08).](/programs/public-service-data-quality/generated/charts/psdq-choropleth-bgd-adm1.svg)
+
 OSM captures **11.8 percent** of the Bangladesh clinical-tier
 registry. The principal-tier ratio (CC-excluded: hospitals + main
 clinics) is 41 percent — the bulk of the headline gap is the
@@ -224,6 +228,8 @@ inside a region or division. The current evidence package adds three
 local-readiness layers while keeping the same non-claim discipline.
 
 ## Philippines ADM3 and poverty-source status
+
+![Philippines ADM3 choropleth: official 2023 poverty incidence at city/municipality level from PSA Small Area Estimates plus PSA OpenSTAT direct estimates. Highest poverty concentrations in BARMM, the Cordillera, and parts of Eastern Visayas. Ten polygons stay gray, marking source-missing rows that were not imputed.](/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm3-poverty.svg)
 
 The Philippine pipeline now assigns Google Open Buildings points to
 1,642 PSA/NAMRIA ADM3 city/municipality polygons. It processes

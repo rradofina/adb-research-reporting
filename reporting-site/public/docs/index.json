@@ -1,0 +1,86 @@
+[
+  {
+    "file": "constitution.md",
+    "source": "CONSTITUTION.md",
+    "size": 69069,
+    "size_human": "67.5 KB"
+  },
+  {
+    "file": "operating-rules.md",
+    "source": "CLAUDE.md",
+    "size": 11602,
+    "size_human": "11.3 KB"
+  },
+  {
+    "file": "agents.md",
+    "source": "AGENTS.md",
+    "size": 2597,
+    "size_human": "2.5 KB"
+  },
+  {
+    "file": "repo-readme.md",
+    "source": "README.md",
+    "size": 9934,
+    "size_human": "9.7 KB"
+  },
+  {
+    "file": "license.txt",
+    "source": "LICENSE",
+    "size": 1941,
+    "size_human": "1.9 KB"
+  },
+  {
+    "file": "license-content.txt",
+    "source": "LICENSE-CONTENT",
+    "size": 3720,
+    "size_human": "3.6 KB"
+  },
+  {
+    "file": "factory.md",
+    "source": "research/factory.md",
+    "size": 15048,
+    "size_human": "14.7 KB"
+  },
+  {
+    "file": "status.md",
+    "source": "research/STATUS.md",
+    "size": 6270,
+    "size_human": "6.1 KB"
+  },
+  {
+    "file": "wip-register.md",
+    "source": "research/wip-register.md",
+    "size": 8663,
+    "size_human": "8.5 KB"
+  },
+  {
+    "file": "red-team.md",
+    "source": "red-team.md",
+    "size": 9293,
+    "size_human": "9.1 KB"
+  },
+  {
+    "file": "data-access-audit.md",
+    "source": "data-access-audit.md",
+    "size": 76725,
+    "size_human": "74.9 KB"
+  },
+  {
+    "file": "sources.md",
+    "source": "sources.md",
+    "size": 8270,
+    "size_human": "8.1 KB"
+  },
+  {
+    "file": "versions.json",
+    "source": "versions.json",
+    "size": 5386,
+    "size_human": "5.3 KB"
+  },
+  {
+    "file": "manifest.sha256",
+    "source": "manifest.sha256",
+    "size": 84877,
+    "size_human": "82.9 KB"
+  }
+]

@@ -13,7 +13,7 @@ import path from "node:path";
 const ROOTS = ["articles", "luminosity-gap/research"];
 const TARGET_PATTERNS = [/results\.md$/i, /\.md$/i];
 const EXTS = [".md", ".mdx"];
-const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist"]);
+const EXCLUDE_DIRS = new Set(["node_modules", ".git", ".cache", "dist", "review-packets", "_archive", "public"]);
 
 const FORBIDDEN = /\b(composite|index|score|rank|ranking|leaderboard)\b/i;
 const ALLOW_RX = /<!--\s*style-guide:allow\s+composite-headline\s*-->/i;

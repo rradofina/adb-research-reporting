@@ -1031,7 +1031,8 @@
 
   /* Mobile-safe rendered markdown for Evidence and Article bodies.
      Wide tables scroll inside their column instead of expanding the page;
-     long inline file paths in <code> wrap at any character. */
+     long inline file paths in <code> wrap at any character; embedded
+     images respect their parent container's width. */
   .prose-article > table,
   .ed-paper-body > table {
     display: block;
@@ -1042,6 +1043,11 @@
   .ed-paper-body :not(pre) > code {
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+  .prose-article img,
+  .ed-paper-body img {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Inline BibTeX citation: "Maina et al. 2019⁴" */

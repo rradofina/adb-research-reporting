@@ -74,6 +74,10 @@ const EXCLUDE_FILES = new Set([
   // Constitution lists them as banned by name.
   "CONSTITUTION.md",
   "CLAUDE.md",
+  // Skill files are meta-content for AI assistants and legitimately
+  // list banned words for instructional purposes (the avoid-list).
+  ".claude/skills/arturo-martinez-style.md",
+  ".codex/skills/adb-erdi-research-style/SKILL.md",
 ]);
 
 function walk(dir, out = []) {

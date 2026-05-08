@@ -77,6 +77,7 @@ const EXCLUDE_FILES = new Set([
   // Skill files are meta-content for AI assistants and legitimately
   // list banned words for instructional purposes (the avoid-list).
   ".claude/skills/arturo-martinez-style.md",
+  ".claude/skills/wb-decdg-spi-style.md",
   ".codex/skills/adb-erdi-research-style/SKILL.md",
 ]);
 

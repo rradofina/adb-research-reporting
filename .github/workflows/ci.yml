@@ -40,8 +40,13 @@ jobs:
       - name: WIP cap (§8.1)
         run: node scripts/check-wip.mjs
 
-      - name: Manifest hash check (§11)
-        run: node scripts/verify-manifest.mjs
+      # Manifest hash check (§11) is intentionally not run in CI.
+      # The committed manifest covers per-program .cache/ files which
+      # are gitignored (~8 GB total of public-source mirrors,
+      # rehydratable via the per-program fetch scripts). CI does not
+      # check out the caches, so the manifest verification is
+      # structurally a local-developer integrity check rather than a
+      # CI gate. Run it locally with `node scripts/verify-manifest.mjs`.
 
       - name: Source freshness (informational)
         run: node scripts/check-versions.mjs 365

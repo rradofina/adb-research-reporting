@@ -7,6 +7,11 @@ export interface ArticleMeta {
   title: string;
   subtitle: string;
   kind: "blog" | "brief" | "working-paper" | "journal" | "dataset-doc" | string;
+  // Publication-ladder tier (assigned by scripts/sync-articles.mjs from
+  // the source directory: top-level articles/*.md → "working-paper",
+  // articles/_brief/ → "brief", _blog → "blog", _social → "social",
+  // _slides → "slides").
+  tier: "working-paper" | "brief" | "blog" | "social" | "slides" | string;
   status: "draft" | "review" | "published" | "retracted" | string;
   program: string;
   maturity: string;

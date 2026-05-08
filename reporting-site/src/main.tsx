@@ -24,46 +24,6 @@ import Docs from "./pages/Docs";
 import NotFound from "./pages/NotFound";
 import "./index.css";
 
-// Redirect /findings/:slug → /:slug?view={tier}.
-const TIER_SLUG_RE = /^(.+?)-(brief|blog|social|deck)$/;
-function FindingsRedirect() {
-  const { slug = "" } = useParams();
-  const m = slug.match(TIER_SLUG_RE);
-  if (m) {
-    const program = m[1];
-    const tierSlug = m[2];
-    const view = tierSlug === "deck" ? "slides" : tierSlug;
-    return <Navigate to={`/${program}?view=${view}`} replace />;
-  }
-  const fallback: Record<string, string> = {
-    "measurement-gap-philippines-bangladesh": "public-service-data-quality",
-    "remittance-corridors-vulnerability-cluster": "remittance-resilience",
-    "workday-loss-pressure-cluster": "climate-health-workdays",
-    "emigrant-stock-corridor-concentration": "migration-displacement-signals",
-    "disaster-burden-cluster": "disaster-recovery-lag",
-    "single-fuel-grid-cluster": "grid-reliability-heat",
-    "port-friction-trade-volume-cluster": "port-hinterland-friction",
-    "sp-shock-readiness-cluster": "social-protection-shock-coverage",
-    "water-crop-pressure-cluster": "water-stress-crop-diversification",
-    "school-heat-honest-narrowing": "school-heat-disruption",
-    "access-stress-pilot-cluster": "access-services",
-    "pm25-observability-gap-cluster": "air-monitoring",
-    "invisible-urbanization-cluster": "invisible-urbanization",
-    "coastal-informal-cluster": "coastal-informal-risk",
-    "flood-market-access-cluster": "flood-market-access",
-    "food-price-joint-qualifier": "food-price-climate-transmission",
-    "per-capita-shifts-the-cluster": "remittance-resilience",
-    "joint-vulnerability-cluster": "remittance-resilience",
-    "the-first-issue": "public-service-data-quality",
-    "about-the-lab": "public-service-data-quality",
-    "reading-the-program-register": "public-service-data-quality",
-  };
-  if (fallback[slug]) {
-    return <Navigate to={`/${fallback[slug]}`} replace />;
-  }
-  return <Navigate to="/" replace />;
-}
-
 function ProgramEvidenceRedirect() {
   const { slug = "" } = useParams();
   return <Navigate to={`/${slug}?view=evidence`} replace />;
@@ -102,9 +62,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
           {/* === Backward-compat redirects (must come BEFORE /:slug) === */}
           <Route path="/findings" element={<Navigate to="/" replace />} />
-          <Route path="/findings/:slug" element={<FindingsRedirect />} />
+          <Route path="/findings/:slug" element={<Navigate to="/" replace />} />
           <Route path="/articles" element={<Navigate to="/" replace />} />
-          <Route path="/articles/:slug" element={<FindingsRedirect />} />
+          <Route path="/articles/:slug" element={<Navigate to="/" replace />} />
           <Route path="/program/:slug/evidence" element={<ProgramEvidenceRedirect />} />
           <Route path="/program/:slug" element={<ProgramRedirect />} />
           <Route path="/research" element={<Navigate to="/" replace />} />

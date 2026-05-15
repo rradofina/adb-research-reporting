@@ -39,29 +39,29 @@ export default function Home() {
   return (
     <div className="home-page">
       {/* Hero */}
-      <section className="home-hero pb-10 mb-12 border-b border-ink-200">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+      <section className="home-hero">
+        <h1 className="home-title">
           ADB AI Research
         </h1>
-        <p className="mt-5 text-lg text-ink-600 leading-relaxed measure-wide-copy">
+        <p className="home-lede measure-wide-copy">
           Public-data measurement-gap research on Asian Development Bank
           developing member economies. AI-attested under a written
           constitution. Open code, open data.
         </p>
-        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs uppercase tracking-[0.18em] text-ink-500">
+        <div className="home-meta">
           <span>17 topics in the register</span>
           <span>·</span>
           <span>1 active flagship</span>
           <span>·</span>
-          <Link to="/about" className="underline underline-offset-4 hover:text-ink-900">
+          <Link to="/about" className="token-link">
             About
           </Link>
           <span>·</span>
-          <Link to="/docs" className="underline underline-offset-4 hover:text-ink-900">
+          <Link to="/docs" className="token-link">
             All documents
           </Link>
           <span>·</span>
-          <Link to="/constitution" className="underline underline-offset-4 hover:text-ink-900">
+          <Link to="/constitution" className="token-link">
             Constitution
           </Link>
           <span>·</span>
@@ -69,7 +69,7 @@ export default function Home() {
             href="https://github.com/rradofina/adb-research-reporting"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4 hover:text-ink-900"
+            className="token-link"
           >
             GitHub →
           </a>
@@ -81,29 +81,29 @@ export default function Home() {
         const list = grouped[key];
         if (!list || list.length === 0) return null;
         return (
-          <section key={key} className="home-group mb-12">
-            <h2 className="text-sm uppercase tracking-[0.2em] text-ink-500">
+          <section key={key} className="home-group">
+            <h2 className="section-label">
               {SECTION_LABEL[key]}
             </h2>
-            <p className="mt-2 text-sm text-ink-600 measure-wide-copy">{SECTION_DESC[key]}</p>
-            <ul className="mt-6 space-y-1">
+            <p className="section-desc measure-wide-copy">{SECTION_DESC[key]}</p>
+            <ul className="topic-list">
               {list.map((p) => (
                 <li key={p.slug}>
                   <Link
                     to={`/${p.slug}`}
-                    className="topic-card block group py-5 px-4 -mx-4 rounded transition-colors hover:bg-paper-50"
+                    className="topic-card"
                   >
-                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <h3 className="text-lg font-semibold text-ink-900 group-hover:text-crimson transition-colors">
+                    <div className="topic-title-row">
+                      <h3 className="topic-title">
                         {p.title}
                       </h3>
                       <MaturityChip status={p.status as Maturity} />
                     </div>
-                    <p className="mt-2 text-sm text-ink-600 leading-relaxed measure-fill">
+                    <p className="topic-copy measure-fill">
                       {p.summary}
                     </p>
                     {p.note && (
-                      <p className="mt-2 text-xs text-ink-500 italic measure-fill">{p.note}</p>
+                      <p className="topic-note measure-fill">{p.note}</p>
                     )}
                   </Link>
                 </li>
@@ -114,13 +114,13 @@ export default function Home() {
       })}
 
       {/* Footer note */}
-      <section className="mt-16 pt-8 border-t border-ink-200 text-sm text-ink-600">
-        <p className="leading-relaxed">
+      <section className="home-footer-note">
+        <p>
           Every empirical number on this site traces to a committed script
           and a public source. Every artifact carries an{" "}
-          <code className="font-mono text-xs">attestation_chain</code> field
+          <code className="inline-code-token">attestation_chain</code> field
           recording which review path produced it. See{" "}
-          <Link to="/about" className="underline underline-offset-4">
+          <Link to="/about" className="token-link">
             About
           </Link>{" "}
           for the constitutional model and what AI-first attestation means

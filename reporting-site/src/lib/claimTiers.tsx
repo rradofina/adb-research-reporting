@@ -9,18 +9,18 @@ export const maturityLabels: Record<Maturity, string> = {
 };
 
 export const maturityColor: Record<Maturity, string> = {
-  H: "bg-ink-200 text-ink-700",
-  PP: "bg-signal-info/10 text-signal-info",
-  SR: "bg-signal-warn/10 text-signal-warn",
-  PR: "bg-signal-ok/10 text-signal-ok",
-  Ret: "bg-ink-100 text-ink-500",
+  H: "maturity-chip-h",
+  PP: "maturity-chip-pp",
+  SR: "maturity-chip-sr",
+  PR: "maturity-chip-pr",
+  Ret: "maturity-chip-ret",
 };
 
 export function MaturityChip({ status }: { status: Maturity }) {
   return (
     <span
       className={
-        "inline-block rounded px-2 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider " +
+        "maturity-chip " +
         maturityColor[status]
       }
     >

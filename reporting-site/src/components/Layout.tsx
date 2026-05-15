@@ -10,25 +10,24 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col bg-paper">
+    <div className="site-page">
       {/* Header */}
-      <header className="border-b border-ink-200 bg-paper">
-        <div className="site-shell h-16 flex items-center justify-between gap-6">
-          <Link to="/" className="flex items-baseline gap-2 group">
-            <span className="text-lg font-semibold tracking-tight text-ink-900">
+      <header className="site-header">
+        <div className="site-shell site-header-row">
+          <Link to="/" className="site-brand">
+            <span className="site-brand-title">
               ADB AI Research
             </span>
-            <span className="hidden sm:inline text-xs uppercase tracking-[0.18em] text-ink-500 group-hover:text-ink-700">
+            <span className="site-brand-kicker">
               measurement gaps · public data
             </span>
           </Link>
-          <nav className="flex items-center gap-5 text-sm">
+          <nav className="site-nav">
             <NavLink
               to="/"
               end
               className={({ isActive }) =>
-                "py-2 text-ink-700 hover:text-ink-900 " +
-                (isActive ? "text-ink-900 font-medium" : "")
+                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
               Topics
@@ -36,8 +35,7 @@ export default function Layout() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                "py-2 text-ink-700 hover:text-ink-900 " +
-                (isActive ? "text-ink-900 font-medium" : "")
+                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
               About
@@ -46,7 +44,7 @@ export default function Layout() {
               href="https://github.com/rradofina/adb-research-reporting"
               target="_blank"
               rel="noreferrer"
-              className="py-2 text-ink-700 hover:text-ink-900"
+              className="site-nav-link"
             >
               GitHub ↗
             </a>
@@ -55,28 +53,27 @@ export default function Layout() {
       </header>
 
       {/* Main content */}
-      <main className="site-shell flex-1 py-10 lg:py-14">
+      <main className="site-shell site-main">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer className="mt-20 border-t border-ink-200 bg-paper">
-        <div className="site-shell py-10 grid sm:grid-cols-2 gap-6 text-sm text-ink-600">
-          <div className="leading-relaxed max-w-prose">
+      <footer className="site-footer">
+        <div className="site-shell site-footer-row">
+          <div className="site-footer-copy">
             ADB AI Research — public-data measurement-gap research on
             Asian Development Bank developing member economies.
             AI-attested under a written constitution.
           </div>
-          <div className="flex flex-wrap items-start sm:justify-end gap-x-5 gap-y-2 text-xs uppercase tracking-[0.18em]">
-            <Link to="/about" className="hover:text-ink-900">About</Link>
-            <Link to="/docs" className="hover:text-ink-900">Docs</Link>
-            <Link to="/constitution" className="hover:text-ink-900">Constitution</Link>
-            <Link to="/license" className="hover:text-ink-900">License</Link>
+          <div className="site-footer-links">
+            <Link to="/about">About</Link>
+            <Link to="/docs">Docs</Link>
+            <Link to="/constitution">Constitution</Link>
+            <Link to="/license">License</Link>
             <a
               href="https://github.com/rradofina/adb-research-reporting"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-ink-900"
             >
               GitHub
             </a>

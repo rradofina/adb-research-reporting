@@ -51,7 +51,9 @@ for (const [src, dest] of DOCS) {
   });
 }
 
-fs.writeFileSync(path.join(DEST, "index.json"), JSON.stringify(index, null, 2));
+fs.writeFileSync(path.join(DEST, "_index.json"), JSON.stringify(index, null, 2));
+const staleIndex = path.join(DEST, "index.json");
+if (fs.existsSync(staleIndex)) fs.unlinkSync(staleIndex);
 console.log(`Synced ${index.length} doc(s) → ${DEST}/`);
 
 function humanBytes(n) {

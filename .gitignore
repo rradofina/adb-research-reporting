@@ -69,3 +69,5 @@ Thumbs.db
 # --- Misc -------------------------------------------------------------------
 *.log
 !luminosity-gap/scripts/**/*.log
+
+.vercel

@@ -2,7 +2,7 @@
 // scripts/sync-articles.mjs
 // Copies articles from /articles/*.md (source-of-truth) to
 // reporting-site/public/articles/ for runtime fetching, and produces
-// a public/articles/index.json with frontmatter for the listings page.
+// a public/articles/_index.json with frontmatter for the listings page.
 //
 // Run automatically via `npm run prebuild` in reporting-site.
 
@@ -141,5 +141,7 @@ for (const { src, origFilename, tier } of sources) {
 
 index.sort((a, b) => (b.updated_at ?? "").localeCompare(a.updated_at ?? ""));
 
-fs.writeFileSync(path.join(DEST, "index.json"), JSON.stringify(index, null, 2));
+fs.writeFileSync(path.join(DEST, "_index.json"), JSON.stringify(index, null, 2));
+const staleIndex = path.join(DEST, "index.json");
+if (fs.existsSync(staleIndex)) fs.unlinkSync(staleIndex);
 console.log(`Synced ${sources.length} article(s) → ${DEST}/`);

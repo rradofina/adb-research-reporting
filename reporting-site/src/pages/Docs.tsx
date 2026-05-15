@@ -124,36 +124,36 @@ const SECTIONS: Array<{
 
 export default function Docs() {
   return (
-    <div className="docs-index max-w-[68ch]">
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">All documents</h1>
-      <p className="mt-4 text-ink-600 leading-relaxed">
+    <div className="docs-index page-narrow">
+      <h1 className="page-title">All documents</h1>
+      <p className="page-intro">
         Every binding document the lab operates under is readable here.
         Same content as the upstream GitHub repository — anyone visiting
         the site can read the rules without leaving for a code host.
       </p>
 
       {SECTIONS.map((section) => (
-        <section key={section.label} className="mt-12">
-          <h2 className="text-sm uppercase tracking-[0.2em] text-ink-500">
+        <section key={section.label} className="page-section">
+          <h2 className="section-label">
             {section.label}
           </h2>
-          <p className="mt-2 text-sm text-ink-600">{section.blurb}</p>
-          <ul className="mt-5 space-y-1">
+          <p className="section-desc">{section.blurb}</p>
+          <ul className="page-card-list">
             {section.items.map((item) => (
               <li key={item.slug}>
                 <Link
                   to={`/${item.slug}`}
-                  className="block py-4 px-4 -mx-4 rounded transition-colors hover:bg-paper-50 group"
+                  className="page-card"
                 >
-                  <div className="flex flex-wrap items-baseline justify-between gap-3">
-                    <span className="text-base font-semibold text-ink-900 group-hover:text-crimson transition-colors">
+                  <div className="page-card-row">
+                    <span className="page-card-title">
                       {item.title}
                     </span>
-                    <span className="text-xs text-ink-500 font-mono">
+                    <span className="page-card-path">
                       {item.githubPath}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-ink-600 leading-relaxed">
+                  <p className="page-card-copy">
                     {item.description}
                   </p>
                 </Link>

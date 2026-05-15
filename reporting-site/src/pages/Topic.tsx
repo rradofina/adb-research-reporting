@@ -163,10 +163,10 @@ export default function Topic() {
 
   if (missing) {
     return (
-      <div className="py-16 text-center">
-        <div className="text-xs uppercase tracking-[0.2em] text-ink-500">404</div>
-        <h1 className="mt-3 text-2xl font-semibold">No topic at /{slug}</h1>
-        <Link to="/" className="mt-6 inline-block text-sm underline underline-offset-4">
+      <div className="not-found-page">
+        <div className="not-found-code">404</div>
+        <h1 className="not-found-title">No topic at /{slug}</h1>
+        <Link to="/" className="not-found-link">
           ← Back to all topics
         </Link>
       </div>
@@ -189,24 +189,24 @@ export default function Topic() {
   return (
     <article className="topic-page">
       {/* Header */}
-      <header className="border-b border-ink-200 pb-8 mb-8">
+      <header className="topic-header">
         <Link
           to="/"
-          className="inline-block text-xs uppercase tracking-[0.2em] text-ink-500 hover:text-ink-700"
+          className="topic-back-link"
         >
           ← All topics
         </Link>
-        <h1 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight max-w-4xl leading-tight">
+        <h1 className="topic-title-page">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 text-ink-600 leading-relaxed max-w-3xl">{subtitle}</p>
+          <p className="topic-subtitle">{subtitle}</p>
         )}
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-500">
+        <div className="topic-meta">
           <MaturityChip status={status} />
           <span>·</span>
           <span>
-            attestation: <code className="font-mono">{attestation}</code>
+            attestation: <code className="inline-code-token">{attestation}</code>
           </span>
           {updated && (
             <>
@@ -224,17 +224,14 @@ export default function Topic() {
       </header>
 
       {/* Tab strip */}
-      <nav className="topic-tabs mb-8 flex flex-wrap gap-1 border-b border-ink-200">
+      <nav className="topic-tabs">
         {TAB_ORDER.filter((t) => availableTabs.has(t)).map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setView(t)}
             className={
-              "py-3 px-4 text-sm font-medium transition-colors -mb-px border-b-2 " +
-              (view === t
-                ? "border-ink-900 text-ink-900"
-                : "border-transparent text-ink-500 hover:text-ink-700 hover:border-ink-300")
+              "topic-tab " + (view === t ? "topic-tab-active" : "")
             }
           >
             {TAB_LABEL[t]}
@@ -246,9 +243,9 @@ export default function Topic() {
            their content's intrinsic width on narrow viewports — without
            it, a long inline code path or a wide image makes the column
            overflow the viewport. */}
-      <div className="topic-grid grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="topic-grid">
         {/* Main content */}
-        <main className="min-w-0">
+        <main className="topic-main">
           {view === "paper" || view === "brief" || view === "blog" ? (
             // Render any current bodyHtml even while loading — keeps the
             // previous tab's content visible until the new one is ready,
@@ -256,15 +253,15 @@ export default function Topic() {
             bodyHtml ? (
               <div
                 className={
-                  "prose-article max-w-[68ch] transition-opacity duration-150 " +
-                  (bodyLoading ? "opacity-60" : "opacity-100")
+                  "prose-article topic-body-narrow " +
+                  (bodyLoading ? "topic-body-pending" : "")
                 }
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
             ) : bodyLoading ? (
-              <div className="py-12 text-ink-500 text-sm">Loading…</div>
+              <div className="loading-message">Loading…</div>
             ) : (
-              <div className="py-12 text-ink-500 text-sm">
+              <div className="loading-message">
                 No {TAB_LABEL[view].toLowerCase()} version yet for this topic.
               </div>
             )
@@ -280,7 +277,7 @@ export default function Topic() {
         </main>
 
         {/* Sidebar */}
-        <aside className="topic-sidebar text-sm">
+        <aside className="topic-sidebar">
           <Sidebar
             slug={slug}
             tiers={tiers}
@@ -309,9 +306,9 @@ function SlidesTab({
   const pptxUrl = `/programs/${slug}/${slug}-deck.pptx`;
   return (
     <div>
-      <div className="border border-ink-200 bg-paper-50 p-6 mb-6">
-        <h2 className="text-lg font-semibold mb-2">Slide deck (.pptx)</h2>
-        <p className="text-sm text-ink-600 leading-relaxed">
+      <div className="topic-panel">
+        <h2 className="topic-panel-title">Slide deck (.pptx)</h2>
+        <p className="topic-panel-copy">
           The deck is built deterministically from the markdown source via
           Quarto. Charts are regenerated from the same CSVs the working paper
           cites — so the slide chart cannot drift from the paper's chart.
@@ -319,26 +316,26 @@ function SlidesTab({
         <a
           href={pptxUrl}
           download
-          className="mt-4 inline-block rounded border border-ink-900 bg-ink-900 text-paper px-4 py-2 text-sm font-medium hover:bg-ink-700"
+          className="download-button"
         >
           Download {slug}-deck.pptx
         </a>
       </div>
       {sourceMeta && (
         <div>
-          <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-3">
+          <div className="topic-section-label">
             Markdown source
           </div>
           {bodyHtml ? (
             <div
               className={
-                "prose-article max-w-[68ch] transition-opacity duration-150 " +
-                (bodyLoading ? "opacity-60" : "opacity-100")
+                "prose-article topic-body-narrow " +
+                (bodyLoading ? "topic-body-pending" : "")
               }
               dangerouslySetInnerHTML={{ __html: bodyHtml }}
             />
           ) : bodyLoading ? (
-            <div className="py-12 text-ink-500 text-sm">Loading…</div>
+            <div className="loading-message">Loading…</div>
           ) : null}
         </div>
       )}
@@ -348,11 +345,11 @@ function SlidesTab({
 
 function DataTab({ manifest, slug }: { manifest: EvidenceManifest | null; slug: string }) {
   if (!manifest) {
-    return <div className="py-12 text-ink-500 text-sm">Loading data…</div>;
+    return <div className="loading-message">Loading data…</div>;
   }
   const files = manifest.generated_files || [];
   if (files.length === 0) {
-    return <div className="py-12 text-ink-500 text-sm">No generated data files for this topic.</div>;
+    return <div className="loading-message">No generated data files for this topic.</div>;
   }
   // Bucket: charts vs CSVs vs JSON
   const charts = files.filter((f) => f.file.includes("/charts/"));
@@ -363,19 +360,19 @@ function DataTab({ manifest, slug }: { manifest: EvidenceManifest | null; slug: 
   );
   const Section = ({ label, items }: { label: string; items: typeof files }) =>
     items.length > 0 ? (
-      <section className="mb-8">
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-3">{label}</div>
-        <ul className="space-y-1.5">
+      <section className="topic-section">
+        <div className="topic-section-label">{label}</div>
+        <ul className="file-list">
           {items.map((f) => (
-            <li key={f.file} className="text-sm">
+            <li key={f.file} className="file-list-item">
               <a
                 href={`/programs/${slug}/${f.file}`}
                 download
-                className="text-ink-900 underline underline-offset-4 hover:text-crimson font-mono text-xs"
+                className="file-link"
               >
                 {f.file}
               </a>
-              <span className="ml-2 text-ink-500">{f.size_human}</span>
+              <span className="file-size">{f.size_human}</span>
             </li>
           ))}
         </ul>
@@ -383,8 +380,8 @@ function DataTab({ manifest, slug }: { manifest: EvidenceManifest | null; slug: 
     ) : null;
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-2">Generated data and charts</h2>
-      <p className="text-sm text-ink-600 mb-8 max-w-prose">
+      <h2 className="content-title">Generated data and charts</h2>
+      <p className="content-copy">
         Every file below is a deterministic output of a committed script.
         Click to download. The full audit trail (manifest, SHA-256 hashes,
         retrieval timestamps) is on the Evidence tab.
@@ -399,59 +396,59 @@ function DataTab({ manifest, slug }: { manifest: EvidenceManifest | null; slug: 
 
 function EvidenceTab({ manifest, slug }: { manifest: EvidenceManifest | null; slug: string }) {
   if (!manifest) {
-    return <div className="py-12 text-ink-500 text-sm">Loading evidence packet…</div>;
+    return <div className="loading-message">Loading evidence packet…</div>;
   }
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-2">Evidence packet</h2>
-      <p className="text-sm text-ink-600 mb-6 max-w-prose">
+      <h2 className="content-title">Evidence packet</h2>
+      <p className="content-copy">
         The full reproducibility bundle: every artifact, every script, every
         generated file, with SHA-256 hashes. A reviewer can reproduce the
         result from a clean clone using the runbook below.
       </p>
-      <div className="grid sm:grid-cols-2 gap-4 mb-8">
+      <div className="resource-grid">
         <a
           href={`/_archive/review-packets/${slug}-2026-05-07.zip`}
           download
-          className="block rounded border border-ink-300 hover:border-ink-900 p-4 transition-colors"
+          className="resource-card"
         >
-          <div className="text-xs uppercase tracking-[0.18em] text-ink-500">Reviewer packet</div>
-          <div className="mt-1 font-medium">Download .zip</div>
-          <div className="mt-1 text-xs text-ink-500">~6 MB · all 7 tiers + governance</div>
+          <div className="topic-section-label">Reviewer packet</div>
+          <div className="resource-title">Download .zip</div>
+          <div className="resource-note">~6 MB · all 7 tiers + governance</div>
         </a>
         <a
           href={`/programs/${slug}/${slug}-deck.pptx`}
           download
-          className="block rounded border border-ink-300 hover:border-ink-900 p-4 transition-colors"
+          className="resource-card"
         >
-          <div className="text-xs uppercase tracking-[0.18em] text-ink-500">Slide deck</div>
-          <div className="mt-1 font-medium">Download .pptx</div>
-          <div className="mt-1 text-xs text-ink-500">ADB internal format</div>
+          <div className="topic-section-label">Slide deck</div>
+          <div className="resource-title">Download .pptx</div>
+          <div className="resource-note">ADB internal format</div>
         </a>
       </div>
-      <section className="mb-8">
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-3">
+      <section className="topic-section">
+        <div className="topic-section-label">
           Documentation files
         </div>
-        <ul className="space-y-1.5">
+        <ul className="file-list">
           {(manifest.artifacts || []).map((a) => (
-            <li key={a.key} className="text-sm">
+            <li key={a.key} className="file-list-item">
               <a
                 href={`/programs/${slug}/${a.file}`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-ink-900 underline underline-offset-4 hover:text-crimson font-mono text-xs"
+                className="file-link"
               >
                 {a.file}
               </a>
-              <span className="ml-2 text-ink-500">{a.label} · {a.size_human}</span>
+              <span className="file-size">{a.label} · {a.size_human}</span>
             </li>
           ))}
         </ul>
       </section>
       <section>
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-2">Permanent URL</div>
-        <code className="font-mono text-sm break-all">
+        <div className="topic-section-label">Permanent URL</div>
+        <code className="permanent-url">
           {manifest.permanent_url}
         </code>
       </section>
@@ -475,32 +472,32 @@ function Sidebar({
   attestation: string;
 }) {
   return (
-    <div className="space-y-6 lg:sticky lg:top-6">
+    <div className="sidebar-stack">
       <section>
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-2">At a glance</div>
-        <dl className="text-sm space-y-2">
+        <div className="sidebar-label">At a glance</div>
+        <dl className="sidebar-list">
           {published && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-ink-500">Published</dt>
-              <dd className="font-mono">{published}</dd>
+            <div className="sidebar-row">
+              <dt>Published</dt>
+              <dd>{published}</dd>
             </div>
           )}
           {updated && (
-            <div className="flex justify-between gap-3">
-              <dt className="text-ink-500">Updated</dt>
-              <dd className="font-mono">{updated}</dd>
+            <div className="sidebar-row">
+              <dt>Updated</dt>
+              <dd>{updated}</dd>
             </div>
           )}
-          <div className="flex justify-between gap-3">
-            <dt className="text-ink-500">Attestation</dt>
-            <dd className="font-mono">{attestation}</dd>
+          <div className="sidebar-row">
+            <dt>Attestation</dt>
+            <dd>{attestation}</dd>
           </div>
         </dl>
       </section>
 
       <section>
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-2">Available formats</div>
-        <ul className="text-sm space-y-1">
+        <div className="sidebar-label">Available formats</div>
+        <ul className="sidebar-list">
           {tiers.paper && <li>Working paper</li>}
           {tiers.brief && <li>One-page brief</li>}
           {tiers.blog && <li>Blog post</li>}
@@ -510,7 +507,7 @@ function Sidebar({
               <a
                 href={`/programs/${slug}/${slug}-deck.pptx`}
                 download
-                className="underline underline-offset-4 hover:text-crimson"
+                className="token-link"
               >
                 .pptx
               </a>
@@ -521,8 +518,8 @@ function Sidebar({
 
       {manifest && (manifest.generated_files || []).length > 0 && (
         <section>
-          <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-2">Top data files</div>
-          <ul className="text-xs space-y-1">
+          <div className="sidebar-label">Top data files</div>
+          <ul className="sidebar-data-list">
             {(manifest.generated_files || [])
               .filter((f) => f.file.endsWith(".csv") || f.file.endsWith(".json"))
               .slice(0, 5)
@@ -531,7 +528,7 @@ function Sidebar({
                   <a
                     href={`/programs/${slug}/${f.file}`}
                     download
-                    className="font-mono text-ink-700 underline underline-offset-4 hover:text-crimson break-all"
+                    className="file-link"
                   >
                     {f.file.replace(/^generated\//, "")}
                   </a>
@@ -541,7 +538,7 @@ function Sidebar({
               <li>
                 <Link
                   to={`/${slug}?view=data`}
-                  className="text-ink-500 underline underline-offset-4"
+                  className="token-link"
                 >
                   All {manifest.generated_files.length} →
                 </Link>
@@ -552,14 +549,14 @@ function Sidebar({
       )}
 
       <section>
-        <div className="text-xs uppercase tracking-[0.18em] text-ink-500 mb-2">Reproduce</div>
-        <ul className="text-xs space-y-1">
+        <div className="sidebar-label">Reproduce</div>
+        <ul className="sidebar-data-list">
           <li>
             <a
               href={`/programs/${slug}/REPRODUCE.md`}
               target="_blank"
               rel="noreferrer"
-              className="text-ink-700 underline underline-offset-4 font-mono"
+              className="file-link"
             >
               REPRODUCE.md
             </a>
@@ -569,7 +566,7 @@ function Sidebar({
               href={`https://github.com/rradofina/adb-research-reporting/tree/main/${slug}`}
               target="_blank"
               rel="noreferrer"
-              className="text-ink-700 underline underline-offset-4 font-mono"
+              className="file-link"
             >
               {slug}/ on GitHub
             </a>

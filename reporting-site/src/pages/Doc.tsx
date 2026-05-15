@@ -145,10 +145,10 @@ export default function Doc({ name }: DocProps) {
 
   if (missing || !info) {
     return (
-      <div className="py-16 text-center">
-        <div className="text-xs uppercase tracking-[0.2em] text-ink-500">404</div>
-        <h1 className="mt-3 text-2xl font-semibold">No document at /{name}</h1>
-        <Link to="/docs" className="mt-6 inline-block text-sm underline underline-offset-4">
+      <div className="not-found-page">
+        <div className="not-found-code">404</div>
+        <h1 className="not-found-title">No document at /{name}</h1>
+        <Link to="/docs" className="not-found-link">
           ← All documents
         </Link>
       </div>
@@ -156,25 +156,25 @@ export default function Doc({ name }: DocProps) {
   }
 
   return (
-    <article className="doc-page max-w-[68ch]">
-      <div className="mb-8 pb-6 border-b border-ink-200">
+    <article className="doc-page">
+      <div className="doc-header">
         <Link
           to="/docs"
-          className="inline-block text-xs uppercase tracking-[0.2em] text-ink-500 hover:text-ink-700"
+          className="doc-back-link"
         >
           ← All documents
         </Link>
-        <h1 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
+        <h1 className="doc-title page-title">
           {info.title}
         </h1>
-        <p className="mt-3 text-ink-600 leading-relaxed">{info.blurb}</p>
-        <p className="mt-3 text-xs text-ink-500 font-mono">
+        <p className="page-intro">{info.blurb}</p>
+        <p className="doc-source">
           Source:{" "}
           <a
             href={`https://github.com/rradofina/adb-research-reporting/blob/main/${sourcePathForFile(info.file)}`}
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4 hover:text-ink-900"
+            className="token-link"
           >
             {sourcePathForFile(info.file)}
           </a>{" "}
@@ -182,10 +182,10 @@ export default function Doc({ name }: DocProps) {
         </p>
       </div>
       {loading ? (
-        <div className="py-12 text-ink-500 text-sm">Loading…</div>
+        <div className="loading-message">Loading…</div>
       ) : (
         <div
-          className="prose-article max-w-none"
+          className="prose-article doc-body"
           dangerouslySetInnerHTML={{ __html: body }}
         />
       )}

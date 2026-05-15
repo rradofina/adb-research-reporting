@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="about-page max-w-[68ch]">
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">About this site</h1>
+    <div className="about-page page-narrow">
+      <h1 className="page-title">About this site</h1>
 
-      <section className="mt-8 prose-article">
+      <section className="page-section prose-article">
         <p>
           <strong>ADB AI Research</strong> is a research lab producing
           measurement-gap research on Asian Development Bank developing
@@ -158,11 +158,11 @@ export default function About() {
         </p>
       </section>
 
-      <div className="mt-12 pt-6 border-t border-ink-200 text-sm flex flex-wrap items-center justify-between gap-4">
-        <Link to="/" className="underline underline-offset-4 text-ink-500 hover:text-ink-900">
+      <div className="page-footer-links">
+        <Link to="/" className="token-link">
           ← Back to topics
         </Link>
-        <Link to="/docs" className="underline underline-offset-4 text-ink-500 hover:text-ink-900">
+        <Link to="/docs" className="token-link">
           Browse all documents →
         </Link>
       </div>

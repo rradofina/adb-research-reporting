@@ -13,7 +13,7 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col bg-paper">
       {/* Header */}
       <header className="border-b border-ink-200 bg-paper">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between gap-6">
+        <div className="site-shell h-16 flex items-center justify-between gap-6">
           <Link to="/" className="flex items-baseline gap-2 group">
             <span className="text-lg font-semibold tracking-tight text-ink-900">
               ADB AI Research
@@ -55,13 +55,13 @@ export default function Layout() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 max-w-[1200px] w-full mx-auto px-6 lg:px-10 py-10 lg:py-14">
+      <main className="site-shell flex-1 py-10 lg:py-14">
         <Outlet />
       </main>
 
       {/* Footer */}
       <footer className="mt-20 border-t border-ink-200 bg-paper">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-10 grid sm:grid-cols-2 gap-6 text-sm text-ink-600">
+        <div className="site-shell py-10 grid sm:grid-cols-2 gap-6 text-sm text-ink-600">
           <div className="leading-relaxed max-w-prose">
             ADB AI Research — public-data measurement-gap research on
             Asian Development Bank developing member economies.

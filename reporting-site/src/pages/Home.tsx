@@ -43,7 +43,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
           ADB AI Research
         </h1>
-        <p className="mt-5 text-lg text-ink-600 leading-relaxed max-w-[1050px]">
+        <p className="mt-5 text-lg text-ink-600 leading-relaxed measure-wide-copy">
           Public-data measurement-gap research on Asian Development Bank
           developing member economies. AI-attested under a written
           constitution. Open code, open data.
@@ -85,7 +85,7 @@ export default function Home() {
             <h2 className="text-sm uppercase tracking-[0.2em] text-ink-500">
               {SECTION_LABEL[key]}
             </h2>
-            <p className="mt-2 text-sm text-ink-600 max-w-[1050px]">{SECTION_DESC[key]}</p>
+            <p className="mt-2 text-sm text-ink-600 measure-wide-copy">{SECTION_DESC[key]}</p>
             <ul className="mt-6 space-y-1">
               {list.map((p) => (
                 <li key={p.slug}>
@@ -99,11 +99,11 @@ export default function Home() {
                       </h3>
                       <MaturityChip status={p.status as Maturity} />
                     </div>
-                    <p className="mt-2 text-sm text-ink-600 leading-relaxed max-w-none">
+                    <p className="mt-2 text-sm text-ink-600 leading-relaxed measure-fill">
                       {p.summary}
                     </p>
                     {p.note && (
-                      <p className="mt-2 text-xs text-ink-500 italic max-w-none">{p.note}</p>
+                      <p className="mt-2 text-xs text-ink-500 italic measure-fill">{p.note}</p>
                     )}
                   </Link>
                 </li>

@@ -1,7 +1,27 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-05-08T06:29:53.096Z",
+  "generated_at": "2026-05-28T17:55:48.960Z",
+  "hero": {
+    "png": "generated/charts/public-service-data-quality-thumbnail.png",
+    "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
+    "json": "generated/charts/public-service-data-quality-thumbnail.json",
+    "title": "Where the official health-facility map goes dark",
+    "caption": "OpenStreetMap recovers only 17% of Philippine and 12% of Bangladeshi clinical-tier facilities in the official registries.",
+    "headline_number": "PHL 17.1% · BGD 11.8% clinical-tier match",
+    "visual_form": "two-up choropleth (PHL ADM1 + BGD ADM1)",
+    "source": "DOH NHFR (PHL), DGHS Facility Registry (BGD), OpenStreetMap",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T18:37:53+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "bf34019478706b3c4f3eaf9d59355adb5e1158be9ecc009dac622dfc99a954b9",
+      "svg": "2417ae237bbef3047cdd765496a064c31fddf349052af5d99aef314e0c0c17fa"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -190,6 +210,24 @@
       "size": 4342308,
       "size_human": "4.14 MB",
       "sha256": "396abcdb5d4e344ce1213b4357f7d35a87fc2b9f400d353b3e485b01310cd6de"
+    },
+    {
+      "file": "generated/charts/public-service-data-quality-thumbnail.json",
+      "size": 1293,
+      "size_human": "1.3 KB",
+      "sha256": "2f1769da58506f1d3fda8acc606ff1755abcfc495a99b1dc80727c7a253acaf4"
+    },
+    {
+      "file": "generated/charts/public-service-data-quality-thumbnail.png",
+      "size": 183127,
+      "size_human": "178.8 KB",
+      "sha256": "bf34019478706b3c4f3eaf9d59355adb5e1158be9ecc009dac622dfc99a954b9"
+    },
+    {
+      "file": "generated/charts/public-service-data-quality-thumbnail.svg",
+      "size": 974384,
+      "size_human": "951.5 KB",
+      "sha256": "2417ae237bbef3047cdd765496a064c31fddf349052af5d99aef314e0c0c17fa"
     },
     {
       "file": "generated/psdq-bgd-admin-coordinate-summary.csv",

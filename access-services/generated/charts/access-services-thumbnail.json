@@ -1,0 +1,27 @@
+{
+  "program": "access-services",
+  "title": "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
+  "caption": "104 ADM1 units across 8 DMCs \u00b7 ranked by population per OSM-tagged health amenity in each DMC's worst-served region. Numbers are OSM-coverage gaps, not actual facility counts \u2014 OSM under-counts the official registry by 5\u201310\u00d7 per PSDQ.",
+  "headline_number": "Oddar Meanchey, Cambodia 319 k people / OSM-tagged amenity",
+  "visual_form": "horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
+  "source": "WDI + geoBoundaries + WorldPop + OSM Overpass",
+  "inputs": [
+    "generated/access-services-adb-panel.csv"
+  ],
+  "script": "access-services/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T18:45:30+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "access-services-thumbnail.png",
+    "svg": "access-services-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437",
+    "svg": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+  }
+}

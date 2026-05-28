@@ -1,0 +1,27 @@
+{
+  "program": "air-monitoring",
+  "title": "Above the air-quality guideline, below the monitor count",
+  "caption": "14.3 M people across 13 ADB DMCs live above the WHO PM2.5 guideline with no public monitor. Concentrated: Papua New Guinea and Timor-Leste = 84% of the total.",
+  "headline_number": "14.3M people \u00b7 13 economies \u00b7 0 PM2.5 monitors",
+  "visual_form": "Asia-Pacific map (above-guideline / zero-monitor economies)",
+  "source": "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1",
+  "inputs": [
+    "generated/air-monitoring-adb-panel.csv"
+  ],
+  "script": "air-monitoring/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:27:09+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "air-monitoring-thumbnail.png",
+    "svg": "air-monitoring-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9",
+    "svg": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+  }
+}

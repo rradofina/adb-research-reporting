@@ -33,10 +33,26 @@ export interface ArticleRef {
   attestation_chain: string;
 }
 
+export interface HeroVisual {
+  png: string;
+  svg: string;
+  json: string;
+  title: string;
+  caption: string;
+  headline_number: string | null;
+  visual_form: string;
+  source: string;
+  attestation_chain: string;
+  generated_at: string;
+  dimensions: { width: number; height: number };
+  sha256: { png: string; svg: string };
+}
+
 export interface EvidenceManifest {
   program: string;
   permanent_url: string;
   generated_at: string;
+  hero: HeroVisual | null;
   artifacts: ArtifactMeta[];
   generated_files: GeneratedFile[];
   scripts?: ScriptFile[];

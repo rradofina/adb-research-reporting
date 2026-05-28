@@ -1,7 +1,27 @@
 {
   "program": "coastal-informal-risk",
   "permanent_url": "/program/coastal-informal-risk/evidence",
-  "generated_at": "2026-05-08T06:29:53.253Z",
+  "generated_at": "2026-05-28T17:55:49.359Z",
+  "hero": {
+    "png": "generated/charts/coastal-informal-risk-thumbnail.png",
+    "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
+    "json": "generated/charts/coastal-informal-risk-thumbnail.json",
+    "title": "Coastal-informal pressure concentrates in five economies",
+    "caption": "Pakistan, Philippines, China, Bangladesh, Myanmar — stable top-5 by population-scaled informal-urban-pressure proxy.",
+    "headline_number": "Myanmar 58% slum-share of urban population",
+    "visual_form": "Asia-Pacific map (top-5 highlighted, color = slum-urban %)",
+    "source": "WDI slum / urban / population shares",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T18:40:47+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081",
+      "svg": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/coastal-informal-risk-thumbnail.json",
+      "size": 1095,
+      "size_human": "1.1 KB",
+      "sha256": "4a6606cae813df2c9042822fa98f14b201527ee832cc122f182dc3d196fc34f0"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-thumbnail.png",
+      "size": 189167,
+      "size_human": "184.7 KB",
+      "sha256": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-thumbnail.svg",
+      "size": 1040176,
+      "size_human": "1015.8 KB",
+      "sha256": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+    },
     {
       "file": "generated/coastal-informal-risk-adb-panel.csv",
       "size": 1540,

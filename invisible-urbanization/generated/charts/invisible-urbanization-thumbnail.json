@@ -1,0 +1,27 @@
+{
+  "program": "invisible-urbanization",
+  "title": "Urban growth from a rural base",
+  "caption": "Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, Bangladesh \u2014 low urban share + fast urban growth, the cities satellite imagery would expect to see expanding fastest.",
+  "headline_number": "Solomon Islands 4.5%/yr urban growth",
+  "visual_form": "two-axis scatter (urban % \u00d7 urban growth %)",
+  "source": "WDI urban share + urban growth",
+  "inputs": [
+    "generated/invisible-urbanization-adb-panel.csv"
+  ],
+  "script": "invisible-urbanization/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:27:02+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "invisible-urbanization-thumbnail.png",
+    "svg": "invisible-urbanization-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "c0154676f033a17d4c736afcfed088a03506f97825952a4eddc9e2b60a2ccc98",
+    "svg": "ca28517312c2d7b57379040ac5c1d3d45eef8ab918fb3e8ec0b45ea3dc6ddda0"
+  }
+}

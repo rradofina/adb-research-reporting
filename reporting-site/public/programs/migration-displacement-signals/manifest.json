@@ -1,7 +1,27 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/program/migration-displacement-signals/evidence",
-  "generated_at": "2026-05-08T06:29:53.129Z",
+  "generated_at": "2026-05-28T17:55:49.033Z",
+  "hero": {
+    "png": "generated/charts/migration-displacement-signals-thumbnail.png",
+    "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
+    "json": "generated/charts/migration-displacement-signals-thumbnail.json",
+    "title": "Five origins, 53M emigrants, Gulf and US destinations",
+    "caption": "India 18.5M · China 11.7M · Bangladesh 8.7M · Afghanistan 7.5M · Philippines 7.0M — the stable top-5 emigrant-origin cluster (UN DESA 2024). Top-9 destinations capture 91% of these flows.",
+    "headline_number": "18.5M emigrants from India",
+    "visual_form": "chord diagram (5 ADB DMC origins × top-9 destinations)",
+    "source": "UN DESA International Migrant Stock 2024 (CC BY 3.0 IGO)",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:26:44+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9",
+      "svg": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/migration-displacement-signals-thumbnail.json",
+      "size": 1226,
+      "size_human": "1.2 KB",
+      "sha256": "4c768305ad65520dd76843aad3c17a5c10f726870c5bc65204d0369146543ff5"
+    },
+    {
+      "file": "generated/charts/migration-displacement-signals-thumbnail.png",
+      "size": 354739,
+      "size_human": "346.4 KB",
+      "sha256": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9"
+    },
+    {
+      "file": "generated/charts/migration-displacement-signals-thumbnail.svg",
+      "size": 101196,
+      "size_human": "98.8 KB",
+      "sha256": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+    },
     {
       "file": "generated/migration-displacement-adb-panel.csv",
       "size": 1639,

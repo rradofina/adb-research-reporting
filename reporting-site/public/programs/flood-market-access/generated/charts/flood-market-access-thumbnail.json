@@ -1,0 +1,27 @@
+{
+  "program": "flood-market-access",
+  "title": "Four economies absorb the flood-event burden",
+  "caption": "India 9.0/yr \u00b7 China 8.6/yr \u00b7 Indonesia 8.2/yr \u00b7 Afghanistan 3.7/yr \u2014 stable top-4 across \u00b150 % sensitivity.",
+  "headline_number": "China 9.0 flood events/yr",
+  "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
+  "source": "EM-DAT 2000\u20132025 + WDI rural share",
+  "inputs": [
+    "generated/flood-market-access-adb-panel.csv"
+  ],
+  "script": "flood-market-access/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T15:41:26+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "flood-market-access-thumbnail.png",
+    "svg": "flood-market-access-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
+    "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+  }
+}

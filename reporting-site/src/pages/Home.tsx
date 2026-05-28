@@ -1,57 +1,97 @@
 /**
- * Home.tsx — simple title + topic list.
+ * Home.tsx — visual-first thumbnail gallery.
  *
- * Replaces the previous editorial multi-section home with a clean
- * one-screen orientation: site title, one-sentence description, list
- * of topics. Each topic links to /{slug} for the unified topic page.
+ * Per `research/visual-first-refactor.md` (2026-05-19), the home page
+ * is a grid of 16:9 hero cards. Each card is a click-through to the
+ * program's topic page, with:
+ *   - the program's hero PNG (1600×900, sha256-pinned by sync-evidence)
+ *     when the program has rendered a thumbnail
+ *   - an honest placeholder card when it has not (programs still in
+ *     Stage 1 framing render the placeholder so the gallery cannot
+ *     pretend they're finished — §18.2 honest labeling)
+ *
+ * Data: one fetch to /programs/heroes.json which the sync-evidence
+ * script aggregates from each program's manifest.json.
  */
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
-import { MaturityChip, type Maturity } from "../lib/claimTiers";
+import { MaturityChip, maturityLabels, type Maturity } from "../lib/claimTiers";
+import type { HeroVisual } from "../lib/evidence";
+
+interface HeroIndexEntry {
+  slug: string;
+  hero: HeroVisual | null;
+}
+
+interface HeroIndex {
+  generated_at: string;
+  heroes: HeroIndexEntry[];
+}
 
 const ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
 
-const SECTION_LABEL: Record<Maturity, string> = {
-  PR: "Active flagship",
-  SR: "Screening result · awaiting re-evaluation",
-  PP: "Prepared pipelines",
-  H: "Open hypotheses",
-  Ret: "Retired",
-};
-
-const SECTION_DESC: Record<Maturity, string> = {
-  PR: "Publication-Ready under §18 ai-first attestation. The current focused work.",
-  SR: "Earned the SR label in an earlier sprint; awaits re-evaluation under the new program loop.",
-  PP: "Prepared pipelines waiting for the new program loop to run end-to-end. Source plan and scaffolding committed.",
-  H: "Hypothesis-stage. README and literature scan committed; no pipeline yet.",
-  Ret: "Retired programs.",
-};
+function statusRank(status: Maturity): number {
+  const i = ORDER.indexOf(status);
+  return i < 0 ? ORDER.length : i;
+}
 
 export default function Home() {
-  // Group programs by maturity, with PR first.
-  const grouped: Record<Maturity, typeof programs> = {} as any;
-  for (const p of programs) {
-    const k = p.status as Maturity;
-    if (!grouped[k]) grouped[k] = [] as any;
-    grouped[k].push(p);
-  }
+  const [heroIndex, setHeroIndex] = useState<Record<string, HeroVisual | null>>({});
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("/programs/heroes.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: HeroIndex | null) => {
+        if (!data) {
+          setLoaded(true);
+          return;
+        }
+        const map: Record<string, HeroVisual | null> = {};
+        for (const entry of data.heroes) {
+          map[entry.slug] = entry.hero;
+        }
+        setHeroIndex(map);
+        setLoaded(true);
+      })
+      .catch(() => setLoaded(true));
+  }, []);
+
+  // Sort programs: PR first, then SR/PP/H/Ret. Within a status group,
+  // programs with a rendered hero come first, then placeholders.
+  const sortedPrograms = [...programs].sort((a, b) => {
+    const sa = statusRank(a.status as Maturity);
+    const sb = statusRank(b.status as Maturity);
+    if (sa !== sb) return sa - sb;
+    const ha = heroIndex[a.slug] ? 0 : 1;
+    const hb = heroIndex[b.slug] ? 0 : 1;
+    if (ha !== hb) return ha - hb;
+    return a.id - b.id;
+  });
+
+  const heroesRendered = Object.values(heroIndex).filter(Boolean).length;
+  const totalPrograms = programs.length;
 
   return (
     <div className="home-page">
-      {/* Hero */}
+      {/* Hero strip */}
       <section className="home-hero">
-        <h1 className="home-title">
-          ADB AI Research
-        </h1>
+        <p className="kicker kicker-crimson home-kicker">
+          Measurement-gap research
+        </p>
+        <h1 className="home-title">ADB AI Research</h1>
         <p className="home-lede measure-wide-copy">
           Public-data measurement-gap research on Asian Development Bank
-          developing member economies. AI-attested under a written
-          constitution. Open code, open data.
+          developing member economies. Every program produces a single
+          headline visual you can verify in one image. AI-attested under a
+          written constitution. Open code, open data.
         </p>
         <div className="home-meta">
-          <span>17 topics in the register</span>
-          <span>·</span>
-          <span>1 active flagship</span>
+          <span>
+            {totalPrograms} programs · {loaded ? heroesRendered : "…"} with
+            rendered hero
+          </span>
           <span>·</span>
           <Link to="/about" className="token-link">
             About
@@ -76,50 +116,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Topic groups */}
-      {ORDER.map((key) => {
-        const list = grouped[key];
-        if (!list || list.length === 0) return null;
-        return (
-          <section key={key} className="home-group">
-            <h2 className="section-label">
-              {SECTION_LABEL[key]}
-            </h2>
-            <p className="section-desc measure-wide-copy">{SECTION_DESC[key]}</p>
-            <ul className="topic-list">
-              {list.map((p) => (
-                <li key={p.slug}>
-                  <Link
-                    to={`/${p.slug}`}
-                    className="topic-card"
-                  >
-                    <div className="topic-title-row">
-                      <h3 className="topic-title">
-                        {p.title}
-                      </h3>
-                      <MaturityChip status={p.status as Maturity} />
-                    </div>
-                    <p className="topic-copy measure-fill">
-                      {p.summary}
-                    </p>
-                    {p.note && (
-                      <p className="topic-note measure-fill">{p.note}</p>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      {/* Thumbnail grid */}
+      <section className="hero-grid">
+        {sortedPrograms.map((p) => {
+          const hero = heroIndex[p.slug] || null;
+          const maturity = p.status as Maturity;
+          const heroPng = hero
+            ? `/programs/${p.slug}/${hero.png}`
+            : null;
+          return (
+            <Link
+              key={p.slug}
+              to={`/${p.slug}`}
+              className={`hero-card${hero ? "" : " hero-card-empty"}`}
+            >
+              <div className="hero-card-thumb">
+                {hero && heroPng ? (
+                  <img
+                    src={heroPng}
+                    alt={hero.title}
+                    loading="lazy"
+                    width={hero.dimensions?.width || 1600}
+                    height={hero.dimensions?.height || 900}
+                  />
+                ) : (
+                  <div className="hero-card-placeholder">
+                    <span className="hero-card-placeholder-label">
+                      Hero pending
+                    </span>
+                    <span className="hero-card-placeholder-status">
+                      {maturityLabels[maturity]}
+                    </span>
+                  </div>
+                )}
+                <div className="hero-card-chips">
+                  <MaturityChip status={maturity} />
+                  {hero && (
+                    <span
+                      className="attestation-chip"
+                      title="attestation_chain set per CONSTITUTION.md §18.2"
+                    >
+                      {hero.attestation_chain}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="hero-card-body">
+                <h3 className="hero-card-title">
+                  {hero?.title || p.title}
+                </h3>
+                <p className="hero-card-caption">
+                  {hero?.caption || p.summary}
+                </p>
+                {hero?.headline_number && (
+                  <p className="hero-card-headline-number">
+                    {hero.headline_number}
+                  </p>
+                )}
+              </div>
+            </Link>
+          );
+        })}
+      </section>
 
       {/* Footer note */}
       <section className="home-footer-note">
         <p>
           Every empirical number on this site traces to a committed script
-          and a public source. Every artifact carries an{" "}
-          <code className="inline-code-token">attestation_chain</code> field
-          recording which review path produced it. See{" "}
+          and a public source. Every hero visual carries an{" "}
+          <code className="inline-code-token">attestation_chain</code>{" "}
+          burned into the image so a screenshot retains the labeling. See{" "}
           <Link to="/about" className="token-link">
             About
           </Link>{" "}

@@ -3,34 +3,50 @@
 @tailwind utilities;
 
 /* =========================================================
-   The Blindspots Lab — design system
-   Editorial publication / scholarly journal hybrid.
+   ADB AI Research — design system
+   Institutional identity, ground-truthed from adb.org:
+   white surfaces, near-black text (#212529), ADB web blue
+   (#007DB8) as the single signature accent, humanist sans
+   (Source Sans 3 ≈ ADB's Ideal Sans). Token NAMES are kept
+   stable; only their VALUES carry the ADB palette, so every
+   page re-skins coherently.
    ========================================================= */
 
 @layer base {
   :root {
     color-scheme: light;
-    --paper: #f6f3ec;
-    --paper-deep: #ece6d6;
-    --ink: #1a1814;
-    --ink-soft: #4a4438;
-    --ink-faint: #5d574b;
-    --rule: rgba(26, 24, 20, 0.18);
-    --rule-soft: rgba(26, 24, 20, 0.08);
-    --crimson: #7a1c20;
-    --sage: #3a5a4c;
-    --ochre: #c8893d;
-    --signal-info: #2a3a52;
-    --signal-warn: #9a682a;
-    --chip-muted-bg: rgba(26, 24, 20, 0.08);
+    /* Surfaces */
+    --paper: #ffffff;
+    --paper-deep: #f4f5f6;
+    --surface: #ffffff;
+    --surface-sunk: #f4f5f6;
+    /* Text */
+    --ink: #212529;
+    --ink-soft: #464f58;
+    --ink-faint: #687582;
+    --rule: rgba(33, 37, 41, 0.16);
+    --rule-soft: rgba(33, 37, 41, 0.08);
+    /* Accents — names kept for back-compat, values are ADB.
+       --crimson = primary accent (ADB blue), --sage = positive
+       (ADB green), --ochre = highlight (ADB gold). */
+    --crimson: #007db8;
+    --accent: #007db8;
+    --accent-strong: #005f8c;
+    --navy: #002569;
+    --sage: #5a8227;
+    --ochre: #b07d12;
+    --gold: #fbb00e;
+    --signal-info: #007db8;
+    --signal-warn: #9c6b02;
+    --chip-muted-bg: rgba(33, 37, 41, 0.07);
     --chip-muted-fg: var(--ink-soft);
-    --chip-soft-bg: rgba(26, 24, 20, 0.06);
+    --chip-soft-bg: rgba(33, 37, 41, 0.05);
     --chip-soft-fg: var(--ink-faint);
-    --chip-info-bg: rgba(42, 58, 82, 0.1);
+    --chip-info-bg: rgba(0, 125, 184, 0.1);
     --chip-info-fg: var(--signal-info);
-    --chip-warn-bg: rgba(154, 104, 42, 0.1);
+    --chip-warn-bg: rgba(156, 107, 2, 0.12);
     --chip-warn-fg: var(--signal-warn);
-    --chip-ok-bg: rgba(58, 90, 76, 0.1);
+    --chip-ok-bg: rgba(90, 130, 39, 0.12);
     --chip-ok-fg: var(--sage);
     --layout-site-max: 1200px;
     --layout-pad-inline: 1.5rem;
@@ -103,8 +119,8 @@
     --type-panel-title: 1.125rem;
     --type-not-found-title: 1.5rem;
     --line-tight: 1.15;
-    --line-copy: 1.625;
-    --track-tight: -0.01em;
+    --line-copy: 1.6;
+    --track-tight: -0.015em;
     --track-site-kicker: 0.18em;
     --track-section: 0.2em;
     --track-chip: 0.05em;
@@ -117,34 +133,24 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: "Source Serif 4", ui-serif, Georgia, serif;
-    font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Subtle paper grain — adds atmosphere without noise overload */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-      radial-gradient(circle at 20% 0%, rgba(122, 28, 32, 0.04), transparent 60%),
-      radial-gradient(circle at 100% 100%, rgba(58, 90, 76, 0.04), transparent 55%);
-  }
   #root { position: relative; z-index: 1; }
 
   ::selection {
-    background: rgba(122, 28, 32, 0.18);
+    background: rgba(0, 125, 184, 0.2);
     color: var(--ink);
   }
 
   h1, h2, h3, h4 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
-    font-feature-settings: "ss01" 1, "ss02" 1;
-    letter-spacing: -0.01em;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI",
+      Arial, sans-serif;
+    letter-spacing: var(--track-tight);
   }
 
   /* Tailwind reset undoes margin on headings; we set rhythm in components */
@@ -186,8 +192,12 @@
   }
 
   .site-header {
+    border-top: 3px solid var(--accent);
     border-bottom: 1px solid var(--rule);
     background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 50;
   }
 
   .site-header-row {
@@ -200,8 +210,23 @@
 
   .site-brand {
     display: flex;
-    align-items: baseline;
-    gap: var(--gap-site-brand);
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .site-brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+    flex: none;
   }
 
   .site-brand-title {
@@ -240,15 +265,18 @@
     display: inline-block;
     padding-block: 0.5rem;
     color: var(--ink-soft);
+    border-bottom: 2px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
   }
 
-  .site-nav-link:hover,
+  .site-nav-link:hover {
+    color: var(--accent);
+  }
+
   .site-nav-link-active {
     color: var(--ink);
-  }
-
-  .site-nav-link-active {
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-semibold);
+    border-bottom-color: var(--accent);
   }
 
   .site-main {
@@ -313,9 +341,13 @@
     border-bottom: 1px solid var(--rule);
   }
 
+  .home-kicker {
+    margin-bottom: 0.625rem;
+  }
+
   .home-title {
     font-size: var(--type-home-title);
-    font-weight: var(--weight-semibold);
+    font-weight: 700;
     line-height: var(--line-tight);
     letter-spacing: var(--track-tight);
   }
@@ -414,6 +446,194 @@
     color: var(--ink-faint);
     font-size: var(--type-copy-xs);
     font-style: italic;
+  }
+
+  /* === Topic-page hero (visual-first refactor) === */
+
+  .topic-hero {
+    margin: 1.5rem 0 1rem;
+    padding: 0;
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-interactive);
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .topic-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .topic-hero-caption {
+    padding: 0.875rem 1rem;
+    background: var(--paper-deep);
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .topic-hero-caption-text {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: var(--line-copy);
+  }
+
+  .topic-hero-caption-meta {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+
+  /* === Hero grid (visual-first home page) === */
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 720px) {
+    .hero-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem 1.75rem;
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .hero-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2.25rem 1.75rem;
+    }
+  }
+
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-interactive);
+    overflow: hidden;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--rule);
+    box-shadow: 0 8px 24px -12px rgba(26, 24, 20, 0.18);
+  }
+
+  .hero-card-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #ffffff;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .hero-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        var(--paper-deep) 0,
+        var(--paper-deep) 12px,
+        var(--paper) 12px,
+        var(--paper) 24px
+      );
+    color: var(--ink-faint);
+  }
+
+  .hero-card-placeholder-label {
+    font-size: var(--type-copy-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--ink-soft);
+  }
+
+  .hero-card-placeholder-status {
+    font-size: var(--type-copy-xs);
+    color: var(--ink-faint);
+  }
+
+  .hero-card-chips {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .attestation-chip {
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-interactive);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    font-size: var(--type-chip);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--track-chip);
+    text-transform: lowercase;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .hero-card-body {
+    padding: 1rem 1.125rem 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .hero-card-title {
+    color: var(--ink);
+    font-size: 1.0625rem;
+    font-weight: var(--weight-semibold);
+    line-height: 1.3;
+  }
+
+  .hero-card:hover .hero-card-title {
+    color: var(--crimson);
+  }
+
+  .hero-card-caption {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-sm);
+    line-height: var(--line-copy);
+  }
+
+  .hero-card-headline-number {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--rule-soft);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
   }
 
   .home-footer-note {
@@ -872,75 +1092,69 @@
   }
 
   .masthead-display {
-    font-family: "Fraunces", serif;
-    font-variation-settings: "opsz" 144, "SOFT" 25;
+    font-family: "Source Sans 3", system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 0.92;
+    letter-spacing: -0.025em;
+    line-height: 0.96;
   }
 
   .display-xl {
-    font-family: "Fraunces", serif;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.02;
   }
 
   .display-lg {
-    font-family: "Fraunces", serif;
-    font-variation-settings: "opsz" 96, "SOFT" 30;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    line-height: 1.05;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.018em;
+    line-height: 1.08;
   }
 
   .display-md {
-    font-family: "Fraunces", serif;
-    font-variation-settings: "opsz" 48, "SOFT" 30;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    line-height: 1.15;
   }
 
   .display-italic {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-weight: 350;
-    font-variation-settings: "opsz" 144;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--ink-faint);
   }
 
+  /* Category kicker — ADB uses small, tracked, colored sans labels */
   .kicker {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-faint);
   }
 
-  .kicker-crimson { color: var(--crimson); }
+  .kicker-crimson { color: var(--accent); }
   .kicker-sage { color: var(--sage); }
   .kicker-ochre { color: var(--ochre); }
 
   .lede {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, sans-serif;
     font-size: 1.25rem;
     line-height: 1.55;
     color: var(--ink-soft);
     font-weight: 400;
   }
 
-  /* Drop cap for opening paragraph */
+  /* Drop cap retired for the ADB corporate identity — opening paragraphs
+     read as clean institutional body copy, not editorial display. */
   .dropcap::first-letter {
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-variation-settings: "opsz" 144, "SOFT" 0;
-    float: left;
-    font-size: 4.4rem;
-    line-height: 0.82;
-    margin: 0.32rem 0.5rem -0.1rem 0;
-    color: var(--crimson);
+    font: inherit;
+    float: none;
+    color: inherit;
+    margin: 0;
   }
 
   /* Hairlines and rules */
@@ -952,25 +1166,23 @@
     padding-top: 4px;
   }
 
-  /* Editorial number marker (e.g., "№ 03") */
+  /* Number marker (e.g., "№ 03") */
   .numeral {
-    font-family: "Fraunces", serif;
+    font-family: "Source Sans 3", system-ui, sans-serif;
     font-weight: 300;
-    font-variation-settings: "opsz" 144;
-    font-style: italic;
+    font-style: normal;
     color: var(--ink-faint);
   }
 
   /* Pull-quote */
   .pullquote {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-weight: 300;
-    font-variation-settings: "opsz" 96;
-    font-size: 1.65rem;
-    line-height: 1.3;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.55rem;
+    line-height: 1.35;
     color: var(--ink);
-    border-left: 2px solid var(--crimson);
+    border-left: 3px solid var(--accent);
     padding-left: 1.5rem;
   }
 
@@ -1018,11 +1230,11 @@
   /* ---------- Heatmap cells ---------- */
 
   .heat-0 { background: transparent; color: var(--ink-faint); }
-  .heat-1 { background: rgba(200, 137, 61, 0.10); }
-  .heat-2 { background: rgba(200, 137, 61, 0.22); }
-  .heat-3 { background: rgba(200, 137, 61, 0.40); }
-  .heat-4 { background: rgba(154, 60, 50, 0.55); color: #faf6ef; }
-  .heat-5 { background: rgba(122, 28, 32, 0.92); color: #f6f3ec; }
+  .heat-1 { background: rgba(0, 125, 184, 0.10); }
+  .heat-2 { background: rgba(0, 125, 184, 0.24); }
+  .heat-3 { background: rgba(0, 125, 184, 0.45); }
+  .heat-4 { background: rgba(0, 95, 140, 0.72); color: #ffffff; }
+  .heat-5 { background: rgba(0, 37, 105, 0.94); color: #ffffff; }
 
   /* ---------- Decorative chips ---------- */
 
@@ -1122,7 +1334,7 @@
     max-width: 760px;
     margin: 0 auto;
     padding: 3.5rem 1.5rem 5rem;
-    font-family: "Source Serif 4", "Source Serif Pro", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     color: var(--ink);
   }
 
@@ -1151,7 +1363,7 @@
   }
 
   .ed-paper-title {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-variation-settings: "opsz" 144, "SOFT" 25;
     font-size: clamp(2rem, 4.2vw, 2.95rem);
@@ -1162,7 +1374,7 @@
   }
 
   .ed-paper-subtitle {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-style: italic;
     font-weight: 350;
     font-variation-settings: "opsz" 96;
@@ -1176,13 +1388,13 @@
     margin-bottom: 2.6rem;
   }
   .ed-paper-authors {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 1.05rem;
     color: var(--ink);
     margin-bottom: 0.18rem;
   }
   .ed-paper-affiliation {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-style: italic;
     font-size: 0.9rem;
     color: var(--ink-faint);
@@ -1229,13 +1441,12 @@
     font-weight: 500;
   }
   .ed-paper-abstract p {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.65;
     color: var(--ink);
     margin: 0;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
   }
 
   .ed-paper-reading-hook {
@@ -1297,7 +1508,7 @@
     padding-top: 0.2rem;
   }
   .ed-paper-meta dd {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     color: var(--ink);
     margin: 0;
   }
@@ -1312,7 +1523,7 @@
 
   /* Disclaimer */
   .ed-paper-disclaimer {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-style: italic;
     font-size: 0.82rem;
     line-height: 1.55;
@@ -1338,7 +1549,7 @@
 
   /* === Body — auto-numbered sections === */
   .ed-paper-body {
-    font-family: "Source Serif 4", "Source Serif Pro", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 1.02rem;
     line-height: 1.72;
     color: var(--ink);
@@ -1346,7 +1557,7 @@
   }
 
   .ed-paper-body > h1 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-variation-settings: "opsz" 96, "SOFT" 25;
     font-size: clamp(1.35rem, 2.3vw, 1.7rem);
@@ -1366,9 +1577,9 @@
   }
 
   .ed-paper-body > h2 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
-    font-weight: 500;
-    font-style: italic;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
     font-size: 1.18rem;
     line-height: 1.25;
     color: var(--ink);
@@ -1376,7 +1587,7 @@
   }
 
   .ed-paper-body > h3 {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-size: 1.05rem;
     color: var(--ink);
@@ -1385,8 +1596,7 @@
 
   .ed-paper-body > p {
     margin: 0 0 1.1rem 0;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
     text-indent: 0;
   }
   .ed-paper-body > h1 + p,
@@ -1395,8 +1605,7 @@
     text-indent: 0;
   }
   .ed-paper-body > p + p {
-    text-indent: 1.4em;
-    margin-top: -0.3rem;
+    text-indent: 0;
   }
 
   .ed-paper-body > ul,
@@ -1469,7 +1678,7 @@
     border-bottom: 1.5px solid var(--ink);
   }
   .ed-paper-body table thead th {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-style: italic;
     text-align: left;
@@ -1515,7 +1724,7 @@
     border-top: 2px solid var(--ink);
   }
   .ed-paper-body .article-references h2 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 1.3rem;
@@ -1546,20 +1755,19 @@
     margin-top: 1rem;
   }
   .ed-paper-appendix h2 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--ink);
     margin: 0 0 0.85rem 0;
   }
   .ed-paper-appendix p {
-    font-family: "Source Serif 4", serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 0.95rem;
     line-height: 1.65;
     color: var(--ink-soft);
     margin: 0 0 0.85rem 0;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
   }
   .ed-paper-appendix a {
     color: var(--crimson);
@@ -1727,13 +1935,13 @@
      in <Article />. Targets raw element selectors because the markdown
      renderer doesn't get class names. */
   .prose-article {
-    font-family: "Source Serif 4", "Source Serif Pro", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 1.075rem;
     line-height: 1.72;
     color: var(--ink);
   }
   .prose-article > h1 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     font-size: clamp(1.6rem, 2.4vw, 2.1rem);
     margin-top: 3rem;
@@ -1742,7 +1950,7 @@
     color: var(--ink);
   }
   .prose-article > h2 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 500;
     font-size: clamp(1.3rem, 2vw, 1.65rem);
     margin-top: 2.5rem;
@@ -1751,7 +1959,7 @@
     color: var(--ink);
   }
   .prose-article > h3 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 500;
     font-size: 1.18rem;
     margin-top: 2rem;
@@ -1761,17 +1969,7 @@
   .prose-article > p {
     margin-bottom: 1.4rem;
   }
-  .prose-article > p:first-of-type::first-letter {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
-    font-style: italic;
-    font-weight: 700;
-    float: left;
-    font-size: 4.2em;
-    line-height: 0.9;
-    padding-right: 0.18em;
-    padding-top: 0.08em;
-    color: var(--crimson);
-  }
+  /* Drop cap retired for ADB corporate identity. */
   .prose-article > ul,
   .prose-article > ol {
     margin: 0 0 1.4rem 1.6rem;
@@ -1890,7 +2088,7 @@
     border-top: 1px solid var(--rule);
   }
   .article-references h2 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: -0.005em;
@@ -1904,7 +2102,7 @@
   }
   .article-references ol > li {
     margin-bottom: 1.1rem;
-    font-family: "Source Serif 4", "Source Serif Pro", ui-serif, Georgia, serif;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 0.92rem;
     line-height: 1.6;
     color: var(--ink-soft);

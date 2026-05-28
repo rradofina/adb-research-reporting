@@ -1,7 +1,27 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/program/disaster-recovery-lag/evidence",
-  "generated_at": "2026-05-08T06:29:53.154Z",
+  "generated_at": "2026-05-28T17:55:49.095Z",
+  "hero": {
+    "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
+    "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
+    "json": "generated/charts/disaster-recovery-lag-thumbnail.json",
+    "title": "Recorded disasters per year, 2000–2025",
+    "caption": "China 25.6 EM-DAT-recorded disasters per year, 1.77 B person-event exposures (may double-count people across events). India, Philippines, Bangladesh follow.",
+    "headline_number": "China 25.6 recorded disasters per year",
+    "visual_form": "horizontal ranked bar (events per year, person-events as secondary)",
+    "source": "EM-DAT (CRED) 2000–2025",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T18:43:12+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708",
+      "svg": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/disaster-recovery-lag-thumbnail.json",
+      "size": 1114,
+      "size_human": "1.1 KB",
+      "sha256": "4e56dda34e41ea89adb111ca4beaba1d57cc345e8144aefd4881c08fceeda087"
+    },
+    {
+      "file": "generated/charts/disaster-recovery-lag-thumbnail.png",
+      "size": 129478,
+      "size_human": "126.4 KB",
+      "sha256": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708"
+    },
+    {
+      "file": "generated/charts/disaster-recovery-lag-thumbnail.svg",
+      "size": 135199,
+      "size_human": "132.0 KB",
+      "sha256": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+    },
     {
       "file": "generated/disaster-recovery-lag-adb-panel.csv",
       "size": 1977,

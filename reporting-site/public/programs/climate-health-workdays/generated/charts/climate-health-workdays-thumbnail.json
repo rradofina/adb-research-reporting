@@ -1,0 +1,27 @@
+{
+  "program": "climate-health-workdays",
+  "title": "Outdoor-labor share \u00d7 annual PM2.5 exposure",
+  "caption": "India 55% of employment in agri + industry, country-mean PM2.5 at 48 \u00b5g/m\u00b3 \u2014 nearly 10\u00d7 the WHO 5 \u00b5g/m\u00b3 guideline. Bubble area = population \u00d7 outdoor-labor share, NOT a working-age labor-force count.",
+  "headline_number": "India 55% outdoor employment",
+  "visual_form": "bubble scatter (PM2.5 \u00d7 outdoor share, area = pop \u00d7 outdoor share)",
+  "source": "WDI PM2.5 + employment + population",
+  "inputs": [
+    "generated/climate-health-workdays-adb-panel.csv"
+  ],
+  "script": "climate-health-workdays/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:26:56+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "climate-health-workdays-thumbnail.png",
+    "svg": "climate-health-workdays-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42",
+    "svg": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+  }
+}

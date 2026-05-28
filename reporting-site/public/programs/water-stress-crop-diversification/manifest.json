@@ -1,7 +1,27 @@
 {
   "program": "water-stress-crop-diversification",
   "permanent_url": "/program/water-stress-crop-diversification/evidence",
-  "generated_at": "2026-05-08T06:29:53.197Z",
+  "generated_at": "2026-05-28T17:55:49.195Z",
+  "hero": {
+    "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
+    "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
+    "json": "generated/charts/water-stress-crop-diversification-thumbnail.json",
+    "title": "Withdrawals beyond the renewable line",
+    "caption": "Turkmenistan 1,868% — Pakistan, Uzbekistan, Azerbaijan, Iran each draw beyond 100 % of internal renewable water, relying on transboundary rivers.",
+    "headline_number": "Turkmenistan 18.7× internal renewable water resources",
+    "visual_form": "horizontal ranked bar (top 10 ADB DMCs)",
+    "source": "World Bank WDI ER.H2O.FWTL.ZS",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:26:53+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e",
+      "svg": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/water-stress-crop-diversification-thumbnail.json",
+      "size": 1139,
+      "size_human": "1.1 KB",
+      "sha256": "012214d3a4432277d721ecde0336eda93e3bee6e54b558df28cd81e6315183c2"
+    },
+    {
+      "file": "generated/charts/water-stress-crop-diversification-thumbnail.png",
+      "size": 104049,
+      "size_human": "101.6 KB",
+      "sha256": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e"
+    },
+    {
+      "file": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
+      "size": 115248,
+      "size_human": "112.5 KB",
+      "sha256": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+    },
     {
       "file": "generated/water-stress-crop-adb-panel.csv",
       "size": 3880,

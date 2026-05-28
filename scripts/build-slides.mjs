@@ -22,9 +22,24 @@ const REPO_ROOT = path.resolve(__dirname, "..");
 const slug = process.argv[2] || "public-service-data-quality";
 const slideSrc = path.join(REPO_ROOT, "articles", "_slides", `${slug}.md`);
 const programDir = path.join(REPO_ROOT, slug);
-const chartScript = path.join(programDir, "scripts", "build-choropleth.py");
 const destDir = path.join(REPO_ROOT, "reporting-site", "public", "programs", slug);
 const destPptx = path.join(destDir, `${slug}-deck.pptx`);
+
+// Find the program's chart-build script. Convention: `scripts/build-*.py`
+// whose filename contains "chart" or "choropleth" (the two patterns used in
+// the lab so far). This lets a new program ship its own build-*.py without
+// modifying this script.
+function findChartScript() {
+  const fixed = path.join(programDir, "scripts", "build-choropleth.py");
+  if (fs.existsSync(fixed)) return fixed;
+  const scriptsDir = path.join(programDir, "scripts");
+  if (!fs.existsSync(scriptsDir)) return null;
+  const candidates = fs.readdirSync(scriptsDir)
+    .filter((f) => f.startsWith("build-") && f.endsWith(".py"))
+    .filter((f) => f.toLowerCase().includes("chart") || f.toLowerCase().includes("choropleth"));
+  return candidates.length > 0 ? path.join(scriptsDir, candidates[0]) : null;
+}
+const chartScript = findChartScript();
 
 if (!fs.existsSync(slideSrc)) {
   console.error(`No slide source at ${slideSrc}`);
@@ -58,11 +73,11 @@ console.log(`Using quarto at: ${quarto === "quarto" ? "PATH" : quarto}`);
 // drift from the working paper's chart). execFileSync passes argv as a
 // list — slug-bearing paths are not interpolated into a shell string, so
 // odd characters in slug cannot inject.
-if (fs.existsSync(chartScript)) {
+if (chartScript && fs.existsSync(chartScript)) {
   console.log(`\n[1/2] Regenerating charts via ${path.relative(REPO_ROOT, chartScript)}`);
   execFileSync("python", [chartScript], { stdio: "inherit", cwd: REPO_ROOT });
 } else {
-  console.log(`\n[1/2] No build-choropleth.py for ${slug}; skipping chart refresh.`);
+  console.log(`\n[1/2] No build-*chart*.py / build-choropleth.py for ${slug}; skipping chart refresh.`);
 }
 
 // Step 2 — Quarto render in place, then move to final destination.

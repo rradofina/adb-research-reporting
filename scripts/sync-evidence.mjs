@@ -160,10 +160,40 @@ function syncProgram(slug) {
   // Compute permanent-URL placeholder for §10.3
   const permanentUrl = `/program/${slug}/evidence`;
 
+  // Hero visual (visual-first refactor, 2026-05-19). Each program may produce
+  // generated/charts/{slug}-thumbnail.{png,svg,json}; if all three exist, the
+  // manifest exposes a `hero` block the React site reads.
+  let hero = null;
+  const heroJson = path.join(dir, "generated", "charts", `${slug}-thumbnail.json`);
+  const heroPng = path.join(dir, "generated", "charts", `${slug}-thumbnail.png`);
+  const heroSvg = path.join(dir, "generated", "charts", `${slug}-thumbnail.svg`);
+  if (fs.existsSync(heroJson) && fs.existsSync(heroPng) && fs.existsSync(heroSvg)) {
+    try {
+      const sidecar = JSON.parse(fs.readFileSync(heroJson, "utf8"));
+      hero = {
+        png: `generated/charts/${slug}-thumbnail.png`,
+        svg: `generated/charts/${slug}-thumbnail.svg`,
+        json: `generated/charts/${slug}-thumbnail.json`,
+        title: sidecar.title,
+        caption: sidecar.caption,
+        headline_number: sidecar.headline_number,
+        visual_form: sidecar.visual_form,
+        source: sidecar.source,
+        attestation_chain: sidecar.attestation_chain || "ai-first",
+        generated_at: sidecar.generated_at,
+        dimensions: sidecar.dimensions,
+        sha256: sidecar.sha256,
+      };
+    } catch (err) {
+      console.warn(`  hero sidecar parse failed for ${slug}: ${err.message}`);
+    }
+  }
+
   const manifest = {
     program: slug,
     permanent_url: permanentUrl,
     generated_at: new Date().toISOString(),
+    hero,
     artifacts: included,
     generated_files: generatedIncluded,
     articles,
@@ -185,6 +215,27 @@ fs.writeFileSync(
     generated_at: new Date().toISOString(),
     programs: results.filter((r) => r.found).map((r) => r.slug),
   }, null, 2)}\n`,
+);
+
+// Aggregate heroes for the visual-first home page (added 2026-05-19).
+// Lets the home page do ONE fetch instead of 18 manifest.json loads.
+const heroes = [];
+for (const r of results.filter((x) => x.found)) {
+  const manifestPath = path.join(DEST_ROOT, r.slug, "manifest.json");
+  if (!fs.existsSync(manifestPath)) continue;
+  try {
+    const m = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    heroes.push({
+      slug: r.slug,
+      hero: m.hero || null,
+    });
+  } catch {
+    heroes.push({ slug: r.slug, hero: null });
+  }
+}
+fs.writeFileSync(
+  path.join(DEST_ROOT, "heroes.json"),
+  `${JSON.stringify({ generated_at: new Date().toISOString(), heroes }, null, 2)}\n`,
 );
 
 console.log(`Synced ${results.filter((r) => r.found).length}/${results.length} programs:`);

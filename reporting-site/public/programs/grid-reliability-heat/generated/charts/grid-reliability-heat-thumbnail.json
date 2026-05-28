@@ -1,0 +1,27 @@
+{
+  "program": "grid-reliability-heat",
+  "title": "Six grids: single-fuel capacity concentration",
+  "caption": "Bhutan 100 % hydro \u00b7 Brunei Darussalam 100 % gas \u00b7 six DMCs above 85 % single-fuel.",
+  "headline_number": "Bhutan 100% hydro",
+  "visual_form": "horizontal ranked bar (top 10 by single-fuel share)",
+  "source": "WRI Global Power Plant DB v1.3.0",
+  "inputs": [
+    "generated/grid-reliability-heat-adb-panel.csv"
+  ],
+  "script": "grid-reliability-heat/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:26:49+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "grid-reliability-heat-thumbnail.png",
+    "svg": "grid-reliability-heat-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801",
+    "svg": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+  }
+}

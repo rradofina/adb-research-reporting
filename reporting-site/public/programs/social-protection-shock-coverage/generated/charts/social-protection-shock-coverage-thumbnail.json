@@ -1,0 +1,27 @@
+{
+  "program": "social-protection-shock-coverage",
+  "title": "Where a shock-response payment cannot reach",
+  "caption": "Pakistan: 23% in poverty, 22% covered by social protection, 21% holding a financial account. A shock payment must travel one of the last two rails.",
+  "headline_number": "Pakistan 23% \u00b7 22% \u00b7 21%",
+  "visual_form": "triple horizontal bar (poverty / SP / accounts, top-8 readiness gap)",
+  "source": "WDI poverty + ASPIRE SP + Findex accounts",
+  "inputs": [
+    "generated/social-protection-adb-panel.csv"
+  ],
+  "script": "social-protection-shock-coverage/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:26:59+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "social-protection-shock-coverage-thumbnail.png",
+    "svg": "social-protection-shock-coverage-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5",
+    "svg": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+  }
+}

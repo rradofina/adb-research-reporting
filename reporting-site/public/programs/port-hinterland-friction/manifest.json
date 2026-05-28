@@ -1,7 +1,27 @@
 {
   "program": "port-hinterland-friction",
   "permanent_url": "/program/port-hinterland-friction/evidence",
-  "generated_at": "2026-05-08T06:29:53.183Z",
+  "generated_at": "2026-05-28T17:55:49.162Z",
+  "hero": {
+    "png": "generated/charts/port-hinterland-friction-thumbnail.png",
+    "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
+    "json": "generated/charts/port-hinterland-friction-thumbnail.json",
+    "title": "Volume of imports versus logistics performance",
+    "caption": "China $3.11 T (LPI 3.70) and India $857B (LPI 3.40) dominate imports volume; Cambodia (LPI 2.40) and Kazakhstan have the weakest logistics. Volume-leaders and logistics-laggards are not the same DMCs.",
+    "headline_number": "China $3.11 T imports · LPI 3.70",
+    "visual_form": "bubble scatter (LPI × imports, log-imports axis)",
+    "source": "WB LPI 2023 + WDI NE.IMP.GNFS.CD",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:27:14+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639",
+      "svg": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/port-hinterland-friction-thumbnail.json",
+      "size": 1165,
+      "size_human": "1.1 KB",
+      "sha256": "3040b24e22587bbc67da8f122914a61ec1e26fde906243f9e70e22d2d0f24397"
+    },
+    {
+      "file": "generated/charts/port-hinterland-friction-thumbnail.png",
+      "size": 134916,
+      "size_human": "131.8 KB",
+      "sha256": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639"
+    },
+    {
+      "file": "generated/charts/port-hinterland-friction-thumbnail.svg",
+      "size": 164644,
+      "size_human": "160.8 KB",
+      "sha256": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+    },
     {
       "file": "generated/port-hinterland-friction-adb-panel.csv",
       "size": 2284,

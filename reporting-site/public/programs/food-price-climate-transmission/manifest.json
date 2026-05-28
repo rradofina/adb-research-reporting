@@ -1,7 +1,27 @@
 {
   "program": "food-price-climate-transmission",
   "permanent_url": "/program/food-price-climate-transmission/evidence",
-  "generated_at": "2026-05-08T06:29:53.239Z",
+  "generated_at": "2026-05-28T17:55:49.319Z",
+  "hero": {
+    "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
+    "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
+    "json": "generated/charts/food-price-climate-transmission-thumbnail.json",
+    "title": "Two economies with high CPI inflation AND ag-import exposure",
+    "caption": "Lao PDR (CPI 23.1 %, ag-imports 4.6 % of merchandise) and Pakistan (12.6 % / 4.3 %) are the only DMCs that clear both axes — stable across every N from 3 to 10.",
+    "headline_number": "LAO 23.1% CPI · 4.6% ag-imports",
+    "visual_form": "two-axis scatter (CPI × ag-import share)",
+    "source": "WDI CPI inflation + agricultural-import share",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:28:55+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5",
+      "svg": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/food-price-climate-transmission-thumbnail.json",
+      "size": 1162,
+      "size_human": "1.1 KB",
+      "sha256": "dc1fa38d59222c8005313592cbe1216390baca8c1cf194314cd2078d812f4869"
+    },
+    {
+      "file": "generated/charts/food-price-climate-transmission-thumbnail.png",
+      "size": 103971,
+      "size_human": "101.5 KB",
+      "sha256": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5"
+    },
+    {
+      "file": "generated/charts/food-price-climate-transmission-thumbnail.svg",
+      "size": 144475,
+      "size_human": "141.1 KB",
+      "sha256": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+    },
     {
       "file": "generated/food-price-adb-panel.csv",
       "size": 2772,

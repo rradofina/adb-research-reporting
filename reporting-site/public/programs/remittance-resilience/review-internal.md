@@ -146,3 +146,120 @@ Documented in `limitations.md` per §9.3 / §18.4.
 | Date closed | 2026-04-26 |
 | Reviewer chain | §18 AI critique-pass |
 | Upgrade-eligible | yes |
+
+---
+
+## 6. 2026-05-12 Mode A addendum — full-ladder self-critique
+
+The 2026-04-26 critique-pass covered the working paper alone. The
+2026-05-12 pass covers the full publication ladder built this session
+(brief, blog, social, slide deck) and the polish applied to the
+working paper. Six critique points were raised against the
+2026-05-12 artifacts; each is recorded with the written response.
+
+### 6.1 Stale maturity-label on the working paper
+
+**Critique.** The working paper frontmatter carried `maturity: PR`
+since 2026-04-26, but the wip-register has remittance-resilience at
+PP after the 2026-05-07 demotion of all SR-under-§18 programs. The
+article's claim of PR was therefore inconsistent with the standing
+register at the time of the polish pass.
+
+**Response.** Honesty correction applied 2026-05-12. Frontmatter
+changed to `maturity: PP`. The brief, blog, social, and slide-deck
+sources written this session use `maturity: PP` from the start.
+`updated_at: 2026-04-26` → `2026-05-12`.
+
+### 6.2 "5–8 corridors per DMC" was wrong
+
+**Critique.** The article's *§5 Three patterns inside the cluster*
+section described the Pacific small-sample caveat as resting on "5–8
+corridors per DMC" — but the panel CSV shows TON, VUT, and WSM are
+each observed at **two corridors only**, KGZ at **one corridor**, and
+NPL at **eight corridors**. The "5–8" range was both numerically
+incorrect and obscured the severity of the small-sample issue for
+four of the five top-set members.
+
+**Response.** Paragraph rewritten with the actual per-DMC corridor
+counts. The human-final upgrade condition was also revised: a
+"≥ 10 corridors" gate now removes four of five top-set members, not
+the three the earlier draft implied.
+
+### 6.3 SDG 10.c.1 target was reported as 5%, actual is 3%
+
+**Critique.** The headline table in the working paper showed
+*"Cost vs SDG 10.c.1 (5%)"* with multipliers calibrated against 5%.
+SDG 10.c.1 actually targets *less than 3 percent* remittance cost.
+The numerical multipliers (2.1×, 1.6×, 1.5×, 1.9×, 1.3×) were the
+ratios against the wrong reference value.
+
+**Response.** Reference value corrected to 3%; multipliers recalibrated
+(3.5×, 2.7×, 2.5×, 3.2×, 2.2×). The chart's reference line and the
+brief / blog / slide-deck text all use the corrected SDG target.
+
+### 6.4 Pearson ρ was reported with the wrong sign
+
+**Critique.** The article's *§6 Sensitivity suite* paragraph said
+*"the dependence axis and the cost axis are weakly positively
+correlated across the 44 rankable DMCs (Pearson ρ ≈ +0.18)"*.
+Recomputed 2026-05-12: the correlation across the 21 DMCs that
+actually have both axes observed is ρ ≈ **−0.22** (ρ ≈ **−0.28**
+excluding Fiji's negative-mean outlier). The earlier figure was wrong
+in both magnitude and sign. The interpretation in the same paragraph
+(*"the multiplicative aggregation is not double-counting a single
+underlying signal"*) was directionally correct — non-redundancy holds
+under either positive or negative correlation — but the underlying
+fact was wrong.
+
+**Response.** Paragraph rewritten with the corrected Pearson and the
+revised interpretation: the negative correlation makes the joint
+screen more, not less, informative — it highlights economies that
+defy the population-level tendency for dependence and observed cost
+to vary inversely.
+
+### 6.5 "44 rankable DMCs" was wrong
+
+**Critique.** Three places in the published ladder — the working
+paper §6 paragraph, the brief abstract, and the blog intro —
+described the screen as running across "44 rankable DMCs". The
+panel CSV does have 44 rows, but only **21** have both WDI
+dependence and an RPW Q1 2025 corridor cost observation; the chart
+visualizes **20** (Fiji excluded as an outlier-driven negative-mean
+artifact). The "44" figure conflated total panel rows with rankable
+rows.
+
+**Response.** Corrected in all three places to "21 DMCs with both
+axes observed". The working paper §3 text now explains the
+20-versus-21 distinction (Fiji exclusion) explicitly.
+
+### 6.6 Chart caption does not mention the Fiji exclusion
+
+**Critique.** The chart shows 20 bubbles; the panel has 21 rankable
+rows. A reviewer asking "where's Fiji?" gets no answer on the chart
+itself.
+
+**Response.** Acknowledged. The working-paper §3 source-note
+paragraph (added 2026-05-12) now states the 21-versus-20 distinction
+explicitly. A future iteration could add a "+1 DMC excluded (Fiji)"
+annotation directly on the chart; deferred to the §18.5 upgrade pass
+as a per-program visualization improvement, not a Mode-A blocker.
+
+## 7. 2026-05-12 Mode A — exit condition
+
+After applying the six corrections above, the AI critique-pass
+cannot find a further substantive critique on the 2026-05-12 ladder.
+Optional AI second-opinion code review (factory.md Mode A step 5)
+was **not** run in this session — the build-fragility-chart.py
+script is small enough (≈150 lines) that the value of an independent
+sub-agent pass is bounded; the omission is recorded here honestly
+rather than skipped silently.
+
+| Field | Value |
+|---|---|
+| All 6 self-critique points addressed in writing | yes |
+| Honesty corrections applied to live artifacts | yes (all 5 tiers + chart) |
+| Optional AI second-opinion code review run | no — explicitly skipped, recorded |
+| Unresolved items added to `limitations.md` | no new items; existing Fiji-exclusion note covers §6.6 |
+| Date closed | 2026-05-12 |
+| Reviewer chain | §18 AI critique-pass, full-ladder addendum |
+| Upgrade-eligible | yes (path to human-final in `articles/remittance-corridors-vulnerability-cluster.md` §upgrade) |

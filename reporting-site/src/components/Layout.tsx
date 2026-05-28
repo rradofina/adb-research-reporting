@@ -15,6 +15,9 @@ export default function Layout() {
       <header className="site-header">
         <div className="site-shell site-header-row">
           <Link to="/" className="site-brand">
+            <span className="site-brand-mark" aria-hidden="true">
+              A
+            </span>
             <span className="site-brand-title">
               ADB AI Research
             </span>
@@ -31,6 +34,14 @@ export default function Layout() {
               }
             >
               Topics
+            </NavLink>
+            <NavLink
+              to="/native-charts"
+              className={({ isActive }) =>
+                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
+              }
+            >
+              Native charts
             </NavLink>
             <NavLink
               to="/about"

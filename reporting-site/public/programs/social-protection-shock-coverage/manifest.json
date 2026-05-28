@@ -1,7 +1,27 @@
 {
   "program": "social-protection-shock-coverage",
   "permanent_url": "/program/social-protection-shock-coverage/evidence",
-  "generated_at": "2026-05-08T06:29:53.212Z",
+  "generated_at": "2026-05-28T17:55:49.228Z",
+  "hero": {
+    "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
+    "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
+    "json": "generated/charts/social-protection-shock-coverage-thumbnail.json",
+    "title": "Where a shock-response payment cannot reach",
+    "caption": "Pakistan: 23% in poverty, 22% covered by social protection, 21% holding a financial account. A shock payment must travel one of the last two rails.",
+    "headline_number": "Pakistan 23% · 22% · 21%",
+    "visual_form": "triple horizontal bar (poverty / SP / accounts, top-8 readiness gap)",
+    "source": "WDI poverty + ASPIRE SP + Findex accounts",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:26:59+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5",
+      "svg": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/social-protection-shock-coverage-thumbnail.json",
+      "size": 1155,
+      "size_human": "1.1 KB",
+      "sha256": "b6cef3721164ba58e7e403001033b621dff7002bc411d81feb8af19f35fe07cc"
+    },
+    {
+      "file": "generated/charts/social-protection-shock-coverage-thumbnail.png",
+      "size": 104102,
+      "size_human": "101.7 KB",
+      "sha256": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5"
+    },
+    {
+      "file": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
+      "size": 117613,
+      "size_human": "114.9 KB",
+      "sha256": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+    },
     {
       "file": "generated/social-protection-adb-panel.csv",
       "size": 2443,

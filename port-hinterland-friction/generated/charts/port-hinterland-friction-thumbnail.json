@@ -1,0 +1,27 @@
+{
+  "program": "port-hinterland-friction",
+  "title": "Volume of imports versus logistics performance",
+  "caption": "China $3.11 T (LPI 3.70) and India $857B (LPI 3.40) dominate imports volume; Cambodia (LPI 2.40) and Kazakhstan have the weakest logistics. Volume-leaders and logistics-laggards are not the same DMCs.",
+  "headline_number": "China $3.11 T imports \u00b7 LPI 3.70",
+  "visual_form": "bubble scatter (LPI \u00d7 imports, log-imports axis)",
+  "source": "WB LPI 2023 + WDI NE.IMP.GNFS.CD",
+  "inputs": [
+    "generated/port-hinterland-friction-adb-panel.csv"
+  ],
+  "script": "port-hinterland-friction/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:27:14+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "port-hinterland-friction-thumbnail.png",
+    "svg": "port-hinterland-friction-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639",
+    "svg": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+  }
+}

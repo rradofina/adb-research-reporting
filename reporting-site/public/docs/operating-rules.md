@@ -75,7 +75,8 @@ breaking the Constitution.
 - Emailing or otherwise contacting an external reviewer (forbidden under
   §18.4 explicit non-claim).
 - Human-final attestation (§18.5) — every step of it: line-by-line paper
-  reading by the owner, real internal review with Arturo, owner-signed commit.
+  reading by the owner, real internal review by an owner-designated reviewer,
+  owner-signed commit.
 - Any change to `CONSTITUTION.md` §18 itself (follow §16 amendment procedure).
 
 **Soft barriers — these are part of the work, do not stop to ask.**

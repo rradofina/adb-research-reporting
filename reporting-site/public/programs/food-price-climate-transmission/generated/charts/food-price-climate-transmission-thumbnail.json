@@ -1,0 +1,27 @@
+{
+  "program": "food-price-climate-transmission",
+  "title": "Two economies with high CPI inflation AND ag-import exposure",
+  "caption": "Lao PDR (CPI 23.1 %, ag-imports 4.6 % of merchandise) and Pakistan (12.6 % / 4.3 %) are the only DMCs that clear both axes \u2014 stable across every N from 3 to 10.",
+  "headline_number": "LAO 23.1% CPI \u00b7 4.6% ag-imports",
+  "visual_form": "two-axis scatter (CPI \u00d7 ag-import share)",
+  "source": "WDI CPI inflation + agricultural-import share",
+  "inputs": [
+    "generated/food-price-adb-panel.csv"
+  ],
+  "script": "food-price-climate-transmission/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:28:55+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "food-price-climate-transmission-thumbnail.png",
+    "svg": "food-price-climate-transmission-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5",
+    "svg": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+  }
+}

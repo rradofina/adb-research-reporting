@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Topic from "./pages/Topic";
+import NativeCharts from "./pages/NativeCharts";
 import About from "./pages/About";
 import Doc from "./pages/Doc";
 import Docs from "./pages/Docs";
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route element={<Layout />}>
           {/* === Top-level surfaces === */}
           <Route path="/" element={<Home />} />
+          <Route path="/native-charts" element={<NativeCharts />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Docs />} />
 

@@ -1,0 +1,381 @@
+{
+  "generated_at": "2026-05-28T17:55:49.553Z",
+  "heroes": [
+    {
+      "slug": "public-service-data-quality",
+      "hero": {
+        "png": "generated/charts/public-service-data-quality-thumbnail.png",
+        "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
+        "json": "generated/charts/public-service-data-quality-thumbnail.json",
+        "title": "Where the official health-facility map goes dark",
+        "caption": "OpenStreetMap recovers only 17% of Philippine and 12% of Bangladeshi clinical-tier facilities in the official registries.",
+        "headline_number": "PHL 17.1% · BGD 11.8% clinical-tier match",
+        "visual_form": "two-up choropleth (PHL ADM1 + BGD ADM1)",
+        "source": "DOH NHFR (PHL), DGHS Facility Registry (BGD), OpenStreetMap",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T18:37:53+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "bf34019478706b3c4f3eaf9d59355adb5e1158be9ecc009dac622dfc99a954b9",
+          "svg": "2417ae237bbef3047cdd765496a064c31fddf349052af5d99aef314e0c0c17fa"
+        }
+      }
+    },
+    {
+      "slug": "remittance-resilience",
+      "hero": {
+        "png": "generated/charts/remittance-resilience-thumbnail.png",
+        "svg": "generated/charts/remittance-resilience-thumbnail.svg",
+        "json": "generated/charts/remittance-resilience-thumbnail.json",
+        "title": "Five economies where remittances are the economy",
+        "caption": "Tonga 42.6%, Kyrgyz Republic 26.6%, Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8% — all carry remittance cost above the SDG 10.c.1 5% cap.",
+        "headline_number": "Tonga 42.6% of GDP",
+        "visual_form": "Asia-Pacific map with five cluster economies highlighted",
+        "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:27:18+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "8bd408bade4a31026a525b43548f69a6805cb0155f3d727388c9be3a47978110",
+          "svg": "81ea9d7af5aecc731ae8852269218087e232e9cc5392d61934479a74a9b30888"
+        }
+      }
+    },
+    {
+      "slug": "migration-displacement-signals",
+      "hero": {
+        "png": "generated/charts/migration-displacement-signals-thumbnail.png",
+        "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
+        "json": "generated/charts/migration-displacement-signals-thumbnail.json",
+        "title": "Five origins, 53M emigrants, Gulf and US destinations",
+        "caption": "India 18.5M · China 11.7M · Bangladesh 8.7M · Afghanistan 7.5M · Philippines 7.0M — the stable top-5 emigrant-origin cluster (UN DESA 2024). Top-9 destinations capture 91% of these flows.",
+        "headline_number": "18.5M emigrants from India",
+        "visual_form": "chord diagram (5 ADB DMC origins × top-9 destinations)",
+        "source": "UN DESA International Migrant Stock 2024 (CC BY 3.0 IGO)",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:26:44+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9",
+          "svg": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+        }
+      }
+    },
+    {
+      "slug": "climate-health-workdays",
+      "hero": {
+        "png": "generated/charts/climate-health-workdays-thumbnail.png",
+        "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
+        "json": "generated/charts/climate-health-workdays-thumbnail.json",
+        "title": "Outdoor-labor share × annual PM2.5 exposure",
+        "caption": "India 55% of employment in agri + industry, country-mean PM2.5 at 48 µg/m³ — nearly 10× the WHO 5 µg/m³ guideline. Bubble area = population × outdoor-labor share, NOT a working-age labor-force count.",
+        "headline_number": "India 55% outdoor employment",
+        "visual_form": "bubble scatter (PM2.5 × outdoor share, area = pop × outdoor share)",
+        "source": "WDI PM2.5 + employment + population",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:26:56+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42",
+          "svg": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+        }
+      }
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "hero": {
+        "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
+        "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
+        "json": "generated/charts/disaster-recovery-lag-thumbnail.json",
+        "title": "Recorded disasters per year, 2000–2025",
+        "caption": "China 25.6 EM-DAT-recorded disasters per year, 1.77 B person-event exposures (may double-count people across events). India, Philippines, Bangladesh follow.",
+        "headline_number": "China 25.6 recorded disasters per year",
+        "visual_form": "horizontal ranked bar (events per year, person-events as secondary)",
+        "source": "EM-DAT (CRED) 2000–2025",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T18:43:12+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708",
+          "svg": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+        }
+      }
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "hero": {
+        "png": "generated/charts/grid-reliability-heat-thumbnail.png",
+        "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
+        "json": "generated/charts/grid-reliability-heat-thumbnail.json",
+        "title": "Six grids: single-fuel capacity concentration",
+        "caption": "Bhutan 100 % hydro · Brunei Darussalam 100 % gas · six DMCs above 85 % single-fuel.",
+        "headline_number": "Bhutan 100% hydro",
+        "visual_form": "horizontal ranked bar (top 10 by single-fuel share)",
+        "source": "WRI Global Power Plant DB v1.3.0",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:26:49+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801",
+          "svg": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+        }
+      }
+    },
+    {
+      "slug": "port-hinterland-friction",
+      "hero": {
+        "png": "generated/charts/port-hinterland-friction-thumbnail.png",
+        "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
+        "json": "generated/charts/port-hinterland-friction-thumbnail.json",
+        "title": "Volume of imports versus logistics performance",
+        "caption": "China $3.11 T (LPI 3.70) and India $857B (LPI 3.40) dominate imports volume; Cambodia (LPI 2.40) and Kazakhstan have the weakest logistics. Volume-leaders and logistics-laggards are not the same DMCs.",
+        "headline_number": "China $3.11 T imports · LPI 3.70",
+        "visual_form": "bubble scatter (LPI × imports, log-imports axis)",
+        "source": "WB LPI 2023 + WDI NE.IMP.GNFS.CD",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:27:14+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639",
+          "svg": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+        }
+      }
+    },
+    {
+      "slug": "water-stress-crop-diversification",
+      "hero": {
+        "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
+        "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
+        "json": "generated/charts/water-stress-crop-diversification-thumbnail.json",
+        "title": "Withdrawals beyond the renewable line",
+        "caption": "Turkmenistan 1,868% — Pakistan, Uzbekistan, Azerbaijan, Iran each draw beyond 100 % of internal renewable water, relying on transboundary rivers.",
+        "headline_number": "Turkmenistan 18.7× internal renewable water resources",
+        "visual_form": "horizontal ranked bar (top 10 ADB DMCs)",
+        "source": "World Bank WDI ER.H2O.FWTL.ZS",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:26:53+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e",
+          "svg": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+        }
+      }
+    },
+    {
+      "slug": "social-protection-shock-coverage",
+      "hero": {
+        "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
+        "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
+        "json": "generated/charts/social-protection-shock-coverage-thumbnail.json",
+        "title": "Where a shock-response payment cannot reach",
+        "caption": "Pakistan: 23% in poverty, 22% covered by social protection, 21% holding a financial account. A shock payment must travel one of the last two rails.",
+        "headline_number": "Pakistan 23% · 22% · 21%",
+        "visual_form": "triple horizontal bar (poverty / SP / accounts, top-8 readiness gap)",
+        "source": "WDI poverty + ASPIRE SP + Findex accounts",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:26:59+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5",
+          "svg": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+        }
+      }
+    },
+    {
+      "slug": "school-heat-disruption",
+      "hero": {
+        "png": "generated/charts/school-heat-disruption-thumbnail.png",
+        "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
+        "json": "generated/charts/school-heat-disruption-thumbnail.json",
+        "title": "Cambodia: one DMC clears the school-heat gate",
+        "caption": "Cambodia: 5.3M children 0–14, primary PTR 41.7, historical-period tasmax 31.9°C. Top-5 ranking fails ±50 % sensitivity; only Cambodia is stable.",
+        "headline_number": "Cambodia 5.3M children · PTR 41.7 · tasmax 31.9°C",
+        "visual_form": "single-country triple-card (children, PTR, tasmax)",
+        "source": "WDI + CCKP historical tasmax",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T15:38:05+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70",
+          "svg": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+        }
+      }
+    },
+    {
+      "slug": "food-price-climate-transmission",
+      "hero": {
+        "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
+        "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
+        "json": "generated/charts/food-price-climate-transmission-thumbnail.json",
+        "title": "Two economies with high CPI inflation AND ag-import exposure",
+        "caption": "Lao PDR (CPI 23.1 %, ag-imports 4.6 % of merchandise) and Pakistan (12.6 % / 4.3 %) are the only DMCs that clear both axes — stable across every N from 3 to 10.",
+        "headline_number": "LAO 23.1% CPI · 4.6% ag-imports",
+        "visual_form": "two-axis scatter (CPI × ag-import share)",
+        "source": "WDI CPI inflation + agricultural-import share",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:28:55+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5",
+          "svg": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+        }
+      }
+    },
+    {
+      "slug": "coastal-informal-risk",
+      "hero": {
+        "png": "generated/charts/coastal-informal-risk-thumbnail.png",
+        "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
+        "json": "generated/charts/coastal-informal-risk-thumbnail.json",
+        "title": "Coastal-informal pressure concentrates in five economies",
+        "caption": "Pakistan, Philippines, China, Bangladesh, Myanmar — stable top-5 by population-scaled informal-urban-pressure proxy.",
+        "headline_number": "Myanmar 58% slum-share of urban population",
+        "visual_form": "Asia-Pacific map (top-5 highlighted, color = slum-urban %)",
+        "source": "WDI slum / urban / population shares",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T18:40:47+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081",
+          "svg": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+        }
+      }
+    },
+    {
+      "slug": "flood-market-access",
+      "hero": {
+        "png": "generated/charts/flood-market-access-thumbnail.png",
+        "svg": "generated/charts/flood-market-access-thumbnail.svg",
+        "json": "generated/charts/flood-market-access-thumbnail.json",
+        "title": "Four economies absorb the flood-event burden",
+        "caption": "India 9.0/yr · China 8.6/yr · Indonesia 8.2/yr · Afghanistan 3.7/yr — stable top-4 across ±50 % sensitivity.",
+        "headline_number": "China 9.0 flood events/yr",
+        "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
+        "source": "EM-DAT 2000–2025 + WDI rural share",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T15:41:26+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
+          "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+        }
+      }
+    },
+    {
+      "slug": "invisible-urbanization",
+      "hero": {
+        "png": "generated/charts/invisible-urbanization-thumbnail.png",
+        "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
+        "json": "generated/charts/invisible-urbanization-thumbnail.json",
+        "title": "Urban growth from a rural base",
+        "caption": "Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, Bangladesh — low urban share + fast urban growth, the cities satellite imagery would expect to see expanding fastest.",
+        "headline_number": "Solomon Islands 4.5%/yr urban growth",
+        "visual_form": "two-axis scatter (urban % × urban growth %)",
+        "source": "WDI urban share + urban growth",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:27:02+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "c0154676f033a17d4c736afcfed088a03506f97825952a4eddc9e2b60a2ccc98",
+          "svg": "ca28517312c2d7b57379040ac5c1d3d45eef8ab918fb3e8ec0b45ea3dc6ddda0"
+        }
+      }
+    },
+    {
+      "slug": "access-services",
+      "hero": {
+        "png": "generated/charts/access-services-thumbnail.png",
+        "svg": "generated/charts/access-services-thumbnail.svg",
+        "json": "generated/charts/access-services-thumbnail.json",
+        "title": "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
+        "caption": "104 ADM1 units across 8 DMCs · ranked by population per OSM-tagged health amenity in each DMC's worst-served region. Numbers are OSM-coverage gaps, not actual facility counts — OSM under-counts the official registry by 5–10× per PSDQ.",
+        "headline_number": "Oddar Meanchey, Cambodia 319 k people / OSM-tagged amenity",
+        "visual_form": "horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
+        "source": "WDI + geoBoundaries + WorldPop + OSM Overpass",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T18:45:30+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437",
+          "svg": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+        }
+      }
+    },
+    {
+      "slug": "air-monitoring",
+      "hero": {
+        "png": "generated/charts/air-monitoring-thumbnail.png",
+        "svg": "generated/charts/air-monitoring-thumbnail.svg",
+        "json": "generated/charts/air-monitoring-thumbnail.json",
+        "title": "Above the air-quality guideline, below the monitor count",
+        "caption": "14.3 M people across 13 ADB DMCs live above the WHO PM2.5 guideline with no public monitor. Concentrated: Papua New Guinea and Timor-Leste = 84% of the total.",
+        "headline_number": "14.3M people · 13 economies · 0 PM2.5 monitors",
+        "visual_form": "Asia-Pacific map (above-guideline / zero-monitor economies)",
+        "source": "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-05-19T20:27:09+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9",
+          "svg": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+        }
+      }
+    },
+    {
+      "slug": "digital-performance",
+      "hero": null
+    },
+    {
+      "slug": "mpi-nighttime-lights",
+      "hero": null
+    }
+  ]
+}

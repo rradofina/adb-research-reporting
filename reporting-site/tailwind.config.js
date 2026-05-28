@@ -4,26 +4,40 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // Display: Fraunces — characterful serif with optical-sizing,
-        // designed for editorial presence at large sizes.
+        // ADB uses a system-ui body stack with "Ideal Sans" headings.
+        // Source Sans 3 is the closest free humanist substitute; we pair it
+        // with ADB's exact system-ui fallback so the render degrades the way
+        // adb.org does.
+        sans: [
+          '"Source Sans 3"',
+          "system-ui",
+          "-apple-system",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          "sans-serif",
+        ],
+        // Display + serif keys repoint to the same sans so any legacy
+        // `font-display` / `font-serif` usage stays on-brand (full ADB
+        // corporate identity has no editorial serif).
         display: [
-          '"Fraunces"',
-          "ui-serif",
-          "Georgia",
-          "Cambria",
-          "Times New Roman",
-          "serif",
+          '"Source Sans 3"',
+          "system-ui",
+          "-apple-system",
+          '"Segoe UI"',
+          "Arial",
+          "sans-serif",
         ],
-        // Body: Source Serif 4 — long-form readability + subtle elegance.
         serif: [
-          '"Source Serif 4"',
-          '"Source Serif Pro"',
-          "ui-serif",
-          "Georgia",
-          "Cambria",
-          "serif",
+          '"Source Sans 3"',
+          "system-ui",
+          "-apple-system",
+          '"Segoe UI"',
+          "Arial",
+          "sans-serif",
         ],
-        // Mono: JetBrains Mono — clear data tables and metadata stamps.
+        // Mono: JetBrains Mono — data tables, code, and attestation stamps.
         mono: [
           '"JetBrains Mono"',
           "ui-monospace",
@@ -31,66 +45,69 @@ export default {
           "Consolas",
           "monospace",
         ],
-        // Fallback sans for stamps and meta where serif is too soft.
-        sans: [
-          '"Source Serif 4"',
-          "ui-serif",
-          "Georgia",
-          "serif",
-        ],
       },
       colors: {
-        // Paper — warm off-white, a printed page, not a screen
+        // ----- ADB palette (ground-truthed from adb.org computed styles) -----
+        // Surfaces — white page, light-grey sunk panels (no warm paper)
         paper: {
-          DEFAULT: "#f6f3ec",
-          50: "#fbf9f4",
-          100: "#f6f3ec",
-          200: "#ece6d6",
-          300: "#dcd4be",
-          400: "#bcb195",
-          500: "#8e8467",
+          DEFAULT: "#ffffff",
+          50: "#ffffff",
+          100: "#f8f9fa",
+          200: "#f4f5f6",
+          300: "#ebedef",
+          400: "#d7dbdf",
+          500: "#adb5bd",
         },
-        // Ink — warm-black for body, with shaded variants
+        // Ink — ADB near-black text + slate shades
         ink: {
-          DEFAULT: "#1a1814",
-          50: "#5d574b",
-          100: "#4a4438",
-          200: "#3a342a",
-          300: "#2a261e",
-          400: "#1a1814",
-          500: "#0f0d0a",
-          // legacy aliases used in older components (kept so we don't break existing pages)
-          700: "#3a342a",
-          900: "#1a1814",
+          DEFAULT: "#212529",
+          50: "#687582",
+          100: "#464f58",
+          200: "#343b41",
+          300: "#2a2f34",
+          400: "#212529",
+          500: "#16191c",
+          // legacy aliases used in older components
+          700: "#343b41",
+          900: "#212529",
         },
-        // Crimson — deep editorial accent, used sparingly
+        // "crimson" key is the PRIMARY ACCENT slot — now ADB web blue #007DB8
         crimson: {
-          DEFAULT: "#7a1c20",
-          50: "#a8201a",
-          100: "#7a1c20",
-          200: "#5a161a",
+          DEFAULT: "#007db8",
+          50: "#3aa0d0",
+          100: "#007db8",
+          200: "#005f8c",
         },
-        // Sage — muted teal for data
+        // "sage" key is the POSITIVE/SECONDARY accent — now ADB green
         sage: {
-          DEFAULT: "#3a5a4c",
-          50: "#7da595",
-          100: "#5a8472",
-          200: "#3a5a4c",
-          300: "#243a31",
+          DEFAULT: "#5a8227",
+          50: "#8aad5a",
+          100: "#5a8227",
+          200: "#3f5d1a",
+          300: "#2c4112",
         },
-        // Ochre — warm accent for highlights
+        // "ochre" key is the WARM HIGHLIGHT — now ADB gold/amber
         ochre: {
-          DEFAULT: "#c8893d",
-          50: "#dfac72",
-          100: "#c8893d",
-          200: "#9a682a",
+          DEFAULT: "#b07d12",
+          50: "#fdd886",
+          100: "#fbb00e",
+          200: "#9c6b02",
         },
-        // Sparing semantic chips
+        // ADB-named keys for new components
+        navy: "#002569",
+        sky: "#57caff",
+        gold: "#fbb00e",
+        slate: {
+          DEFAULT: "#687582",
+          700: "#464f58",
+          900: "#343b41",
+        },
+        // Semantic chips, ADB-aligned
         signal: {
-          urgent: "#7a1c20",
-          warn: "#9a682a",
-          ok: "#3a5a4c",
-          info: "#2a3a52",
+          urgent: "#d43f16",
+          warn: "#9c6b02",
+          ok: "#5a8227",
+          info: "#007db8",
         },
       },
       letterSpacing: {
@@ -102,7 +119,7 @@ export default {
         wide: "84ch",
       },
       boxShadow: {
-        card: "0 1px 0 rgba(26,24,20,0.06), 0 6px 24px -16px rgba(26,24,20,0.18)",
+        card: "0 1px 2px rgba(33,37,41,0.06), 0 8px 24px -16px rgba(33,37,41,0.22)",
       },
     },
   },

@@ -1,7 +1,27 @@
 {
   "program": "flood-market-access",
   "permanent_url": "/program/flood-market-access/evidence",
-  "generated_at": "2026-05-08T06:29:53.267Z",
+  "generated_at": "2026-05-28T17:55:49.410Z",
+  "hero": {
+    "png": "generated/charts/flood-market-access-thumbnail.png",
+    "svg": "generated/charts/flood-market-access-thumbnail.svg",
+    "json": "generated/charts/flood-market-access-thumbnail.json",
+    "title": "Four economies absorb the flood-event burden",
+    "caption": "India 9.0/yr · China 8.6/yr · Indonesia 8.2/yr · Afghanistan 3.7/yr — stable top-4 across ±50 % sensitivity.",
+    "headline_number": "China 9.0 flood events/yr",
+    "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
+    "source": "EM-DAT 2000–2025 + WDI rural share",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T15:41:26+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
+      "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/flood-market-access-thumbnail.json",
+      "size": 1068,
+      "size_human": "1.0 KB",
+      "sha256": "f193b33f1da9b507b73dee180f97fd9953a05168724ddbf91bbb70d0e493cf23"
+    },
+    {
+      "file": "generated/charts/flood-market-access-thumbnail.png",
+      "size": 196259,
+      "size_human": "191.7 KB",
+      "sha256": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24"
+    },
+    {
+      "file": "generated/charts/flood-market-access-thumbnail.svg",
+      "size": 1103798,
+      "size_human": "1.05 MB",
+      "sha256": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+    },
     {
       "file": "generated/flood-market-access-adb-panel.csv",
       "size": 2002,

@@ -1,7 +1,27 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-05-08T06:29:53.314Z",
+  "generated_at": "2026-05-28T17:55:49.536Z",
+  "hero": {
+    "png": "generated/charts/air-monitoring-thumbnail.png",
+    "svg": "generated/charts/air-monitoring-thumbnail.svg",
+    "json": "generated/charts/air-monitoring-thumbnail.json",
+    "title": "Above the air-quality guideline, below the monitor count",
+    "caption": "14.3 M people across 13 ADB DMCs live above the WHO PM2.5 guideline with no public monitor. Concentrated: Papua New Guinea and Timor-Leste = 84% of the total.",
+    "headline_number": "14.3M people · 13 economies · 0 PM2.5 monitors",
+    "visual_form": "Asia-Pacific map (above-guideline / zero-monitor economies)",
+    "source": "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:27:09+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9",
+      "svg": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+    }
+  },
   "artifacts": [
     {
       "key": "literature",
@@ -106,6 +126,24 @@
       "size": 18899,
       "size_human": "18.5 KB",
       "sha256": "5940f570c4db5fcf76d90462577e97879f28e8fabd20d7b059a6b05f7e1515ad"
+    },
+    {
+      "file": "generated/charts/air-monitoring-thumbnail.json",
+      "size": 1112,
+      "size_human": "1.1 KB",
+      "sha256": "b87f82967eead5763fdfbf357cccad63cf5ef079ab04a7421f76838632f6eb08"
+    },
+    {
+      "file": "generated/charts/air-monitoring-thumbnail.png",
+      "size": 184643,
+      "size_human": "180.3 KB",
+      "sha256": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9"
+    },
+    {
+      "file": "generated/charts/air-monitoring-thumbnail.svg",
+      "size": 969764,
+      "size_human": "947.0 KB",
+      "sha256": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
     }
   ],
   "articles": [

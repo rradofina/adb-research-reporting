@@ -1,7 +1,8 @@
 {
   "program": "mpi-nighttime-lights",
   "permanent_url": "/program/mpi-nighttime-lights/evidence",
-  "generated_at": "2026-05-08T06:29:53.321Z",
+  "generated_at": "2026-05-28T17:55:49.546Z",
+  "hero": null,
   "artifacts": [
     {
       "key": "readme",

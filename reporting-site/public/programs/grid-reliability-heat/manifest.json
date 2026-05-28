@@ -1,7 +1,27 @@
 {
   "program": "grid-reliability-heat",
   "permanent_url": "/program/grid-reliability-heat/evidence",
-  "generated_at": "2026-05-08T06:29:53.169Z",
+  "generated_at": "2026-05-28T17:55:49.126Z",
+  "hero": {
+    "png": "generated/charts/grid-reliability-heat-thumbnail.png",
+    "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
+    "json": "generated/charts/grid-reliability-heat-thumbnail.json",
+    "title": "Six grids: single-fuel capacity concentration",
+    "caption": "Bhutan 100 % hydro · Brunei Darussalam 100 % gas · six DMCs above 85 % single-fuel.",
+    "headline_number": "Bhutan 100% hydro",
+    "visual_form": "horizontal ranked bar (top 10 by single-fuel share)",
+    "source": "WRI Global Power Plant DB v1.3.0",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:26:49+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801",
+      "svg": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/grid-reliability-heat-thumbnail.json",
+      "size": 1020,
+      "size_human": "1020 B",
+      "sha256": "8f106d23d395c1e006f73c0728e0dd83c737c211cd11d1e5fe72c4c74bf530c6"
+    },
+    {
+      "file": "generated/charts/grid-reliability-heat-thumbnail.png",
+      "size": 107958,
+      "size_human": "105.4 KB",
+      "sha256": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801"
+    },
+    {
+      "file": "generated/charts/grid-reliability-heat-thumbnail.svg",
+      "size": 115454,
+      "size_human": "112.7 KB",
+      "sha256": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+    },
     {
       "file": "generated/grid-reliability-heat-adb-panel.csv",
       "size": 2704,

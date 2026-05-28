@@ -1,7 +1,27 @@
 {
   "program": "school-heat-disruption",
   "permanent_url": "/program/school-heat-disruption/evidence",
-  "generated_at": "2026-05-08T06:29:53.225Z",
+  "generated_at": "2026-05-28T17:55:49.264Z",
+  "hero": {
+    "png": "generated/charts/school-heat-disruption-thumbnail.png",
+    "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
+    "json": "generated/charts/school-heat-disruption-thumbnail.json",
+    "title": "Cambodia: one DMC clears the school-heat gate",
+    "caption": "Cambodia: 5.3M children 0–14, primary PTR 41.7, historical-period tasmax 31.9°C. Top-5 ranking fails ±50 % sensitivity; only Cambodia is stable.",
+    "headline_number": "Cambodia 5.3M children · PTR 41.7 · tasmax 31.9°C",
+    "visual_form": "single-country triple-card (children, PTR, tasmax)",
+    "source": "WDI + CCKP historical tasmax",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T15:38:05+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70",
+      "svg": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/school-heat-disruption-thumbnail.json",
+      "size": 1122,
+      "size_human": "1.1 KB",
+      "sha256": "9cce3a3bba2120c65d50301b0d9d8e26284e45aee053edabc67a86095bcb62af"
+    },
+    {
+      "file": "generated/charts/school-heat-disruption-thumbnail.png",
+      "size": 95518,
+      "size_human": "93.3 KB",
+      "sha256": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70"
+    },
+    {
+      "file": "generated/charts/school-heat-disruption-thumbnail.svg",
+      "size": 121578,
+      "size_human": "118.7 KB",
+      "sha256": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+    },
     {
       "file": "generated/school-heat-adb-panel.csv",
       "size": 2405,

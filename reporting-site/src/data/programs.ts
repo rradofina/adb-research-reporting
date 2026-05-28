@@ -66,7 +66,7 @@ export const programs: ProgramEntry[] = [
     title: "Climate-health workday loss",
     status: "PP",
     summary:
-      "WDI outdoor-labor share × PM2.5 exposure for 44 ADB DMCs. AFG 55.7 (26M exposed); IND 53.1 (798.6M exposed outdoor workers in above-WHO-guideline PM2.5); BGD 44.6 (93M); PAK 41.5 (123M). Heat exposure (CCKP tasmax) NOT yet included.",
+      "India's employment is 55 % outdoor (agri + industry); its country-mean annual PM2.5 is 48 µg/m³, nearly 10× the WHO 5 µg/m³ guideline. Pakistan, Bangladesh, Afghanistan, China sit on the same outdoor-labor × PM2.5 frontier. The panel's exposure proxy multiplies population by outdoor-labor share (not labor-force) — read it as a frontier, not a worker count. Heat exposure (CCKP tasmax) not yet included.",
     note: "Demoted PR → PP on 2026-05-07: original advancement was single composite-index screening only; awaits the new program loop.",
     href: "/program/climate-health-workdays",
   },
@@ -136,7 +136,7 @@ export const programs: ProgramEntry[] = [
     title: "Port-hinterland trade friction",
     status: "PP",
     summary:
-      "WB LPI (Logistics Performance Index) × WDI imports USD across ADB DMCs. Top friction exposure: CHN (1.45), IND (0.94), IDN (0.66), VNM (0.63), THA (0.54). Landlocked DMCs (AFG, UZB, KGZ, TJK, LAO, MNG) have structurally different story.",
+      "China $3.11 T (LPI 3.70 of 5) and India $857 B (LPI 3.40) of annual imports together carry most of the region's friction-weighted trade. Bangladesh LPI 2.60 and Kazakhstan 2.70 are the weakest logistics among the coastal-access DMCs. Landlocked DMCs (AFG, UZB, KGZ, TJK, LAO, MNG) have a structurally different story.",
     note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/port-hinterland-friction",
   },
@@ -156,7 +156,7 @@ export const programs: ProgramEntry[] = [
     title: "Remittance resilience gaps",
     status: "PP",
     summary:
-      "WDI BX.TRF.PWKR.DT.GD.ZS dependence × RPW Q1 2025 inbound transfer cost across 44 ADB DMCs. Top 5 fragile: Kyrgyz Republic (70.3), Samoa (51.0), Tonga (50.1), Vanuatu (47.7), Nepal (44.9). Tonga at 42.6% remittance dependence is striking.",
+      "Tonga 42.6 %, Kyrgyz Republic 26.6 %, Nepal 26.2 %, Samoa 24.0 %, Vanuatu 18.8 % — five small economies where remittances are the economy, all paying corridor cost above the SDG 10.c.1 5 % cap. The same five sit in the most-fragile cluster across every ±50 % perturbation.",
     note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/remittance-resilience",
   },
@@ -166,7 +166,7 @@ export const programs: ProgramEntry[] = [
     title: "School heat disruption",
     status: "PP",
     summary:
-      "WDI school-age share × Primary PTR × CCKP historical tasmax per 32 ADB DMCs. Top pressure: KHM 14.2 (5.3M children, 31.9°C, PTR 41.7). BGD 6.8 (48.6M). IND 6.3 (357M children). Future-period tasmax (2040-2059 SSP2-4.5) would amplify meaningfully.",
+      "Cambodia is the single DMC that clears the screen under ±50 % sensitivity — 5.3 M children 0–14, primary pupil-teacher ratio 41.7 (highest in the screen), historical-period tasmax 31.9 °C. Top-5 ranking fails sensitivity; future-period tasmax (2040–2059 SSP2-4.5) would amplify the gradient.",
     note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/school-heat-disruption",
   },
@@ -176,7 +176,7 @@ export const programs: ProgramEntry[] = [
     title: "Social protection shock coverage",
     status: "PP",
     summary:
-      "WDI ASPIRE SP coverage × Findex account ownership × poverty for ADB DMCs. Top readiness gap: PAK 18.0 (23% poverty, 22% SP, 21% accounts); VUT 13.6 (19.5% poverty, 30% SP); MMR 7.1; LAO 5.7 (only 2% SP coverage).",
+      "Pakistan combines 23 % poverty headcount, 22 % any-social-protection coverage, and 21 % Findex account ownership — the widest gap in the panel between people in need and the two rails a shock-response payment can travel. Lao PDR sits at 2 % SP coverage; Myanmar account ownership 48 %.",
     note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/social-protection-shock-coverage",
   },
@@ -186,7 +186,7 @@ export const programs: ProgramEntry[] = [
     title: "Water stress and crop concentration",
     status: "PP",
     summary:
-      "WDI water × yield × rural composite. Turkmenistan at 1,868% freshwater withdrawal (rel. to internal resources — transboundary-reliant), Pakistan 326%, Uzbekistan 263%, Azerbaijan 161%. Top index: TKM 79.4, PAK 75.3, AZE 54.4.",
+      "Turkmenistan withdraws 18.7× its internal renewable water resources (1,868 %, transboundary-reliant). Pakistan 326 %, Uzbekistan 263 %, Azerbaijan 161 % are also above the renewability line. The withdrawal gradient outlines a transboundary-water vulnerability cluster across Central and South Asia.",
     note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
     href: "/program/water-stress-crop-diversification",
   },

@@ -1,7 +1,27 @@
 {
   "program": "invisible-urbanization",
   "permanent_url": "/program/invisible-urbanization/evidence",
-  "generated_at": "2026-05-08T06:29:53.283Z",
+  "generated_at": "2026-05-28T17:55:49.460Z",
+  "hero": {
+    "png": "generated/charts/invisible-urbanization-thumbnail.png",
+    "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
+    "json": "generated/charts/invisible-urbanization-thumbnail.json",
+    "title": "Urban growth from a rural base",
+    "caption": "Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, Bangladesh — low urban share + fast urban growth, the cities satellite imagery would expect to see expanding fastest.",
+    "headline_number": "Solomon Islands 4.5%/yr urban growth",
+    "visual_form": "two-axis scatter (urban % × urban growth %)",
+    "source": "WDI urban share + urban growth",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:27:02+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "c0154676f033a17d4c736afcfed088a03506f97825952a4eddc9e2b60a2ccc98",
+      "svg": "ca28517312c2d7b57379040ac5c1d3d45eef8ab918fb3e8ec0b45ea3dc6ddda0"
+    }
+  },
   "artifacts": [
     {
       "key": "literature",
@@ -95,6 +115,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/invisible-urbanization-thumbnail.json",
+      "size": 1110,
+      "size_human": "1.1 KB",
+      "sha256": "112508cb36b7134e7ddf431e241de777d534139683403ad379e22f1175d5cfc3"
+    },
+    {
+      "file": "generated/charts/invisible-urbanization-thumbnail.png",
+      "size": 125305,
+      "size_human": "122.4 KB",
+      "sha256": "c0154676f033a17d4c736afcfed088a03506f97825952a4eddc9e2b60a2ccc98"
+    },
+    {
+      "file": "generated/charts/invisible-urbanization-thumbnail.svg",
+      "size": 144018,
+      "size_human": "140.6 KB",
+      "sha256": "ca28517312c2d7b57379040ac5c1d3d45eef8ab918fb3e8ec0b45ea3dc6ddda0"
+    },
     {
       "file": "generated/invisible-urbanization-adb-panel.csv",
       "size": 1875,

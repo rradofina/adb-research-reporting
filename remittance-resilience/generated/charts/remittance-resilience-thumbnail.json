@@ -1,0 +1,27 @@
+{
+  "program": "remittance-resilience",
+  "title": "Five economies where remittances are the economy",
+  "caption": "Tonga 42.6%, Kyrgyz Republic 26.6%, Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8% \u2014 all carry remittance cost above the SDG 10.c.1 5% cap.",
+  "headline_number": "Tonga 42.6% of GDP",
+  "visual_form": "Asia-Pacific map with five cluster economies highlighted",
+  "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025",
+  "inputs": [
+    "generated/remittance-resilience-adb-panel.csv"
+  ],
+  "script": "remittance-resilience/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T20:27:18+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "remittance-resilience-thumbnail.png",
+    "svg": "remittance-resilience-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "8bd408bade4a31026a525b43548f69a6805cb0155f3d727388c9be3a47978110",
+    "svg": "81ea9d7af5aecc731ae8852269218087e232e9cc5392d61934479a74a9b30888"
+  }
+}

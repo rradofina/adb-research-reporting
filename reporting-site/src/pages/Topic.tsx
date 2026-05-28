@@ -19,6 +19,7 @@ import { loadReferences, byKey, resolveCitations, renderReferenceList } from "..
 import { loadEvidenceManifest, type EvidenceManifest } from "../lib/evidence";
 import { programs } from "../data/programs";
 import { MaturityChip } from "../lib/claimTiers";
+import { RemittanceMapHero } from "../components/charts/RemittanceMapHero";
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -222,6 +223,47 @@ export default function Topic() {
           )}
         </div>
       </header>
+
+      {/* Hero visual (visual-first refactor, 2026-05-19). When the
+          program has a rendered hero, show it above the tab strip. The
+          same image users clicked from the home gallery. */}
+      {manifest?.hero &&
+        (() => {
+          const hero = manifest.hero;
+          const pngHero = (
+            <figure className="topic-hero">
+              <img
+                src={`/programs/${slug}/${hero.png}`}
+                alt={hero.title}
+                width={hero.dimensions?.width || 1600}
+                height={hero.dimensions?.height || 900}
+                loading="eager"
+              />
+              <figcaption className="topic-hero-caption">
+                <span className="topic-hero-caption-text">{hero.caption}</span>
+                <span className="topic-hero-caption-meta">
+                  <span>{hero.visual_form}</span>
+                  <span>·</span>
+                  <span>{hero.source}</span>
+                  <span>·</span>
+                  <span>
+                    attestation:{" "}
+                    <code className="inline-code-token">
+                      {hero.attestation_chain}
+                    </code>
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          );
+          // Remittance flagship: render the native interactive map in place
+          // of the static PNG (PNG remains the fallback while data loads).
+          return slug === "remittance-resilience" ? (
+            <RemittanceMapHero hero={hero} fallback={pngHero} />
+          ) : (
+            pngHero
+          );
+        })()}
 
       {/* Tab strip */}
       <nav className="topic-tabs">

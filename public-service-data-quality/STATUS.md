@@ -5,7 +5,7 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to PSDQ.
 
-Last updated: 2026-05-07.
+Last updated: 2026-05-12.
 
 ## Current
 
@@ -13,7 +13,7 @@ Last updated: 2026-05-07.
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
 | Active stage | Stage 7 — Review loop closed under Mode A |
-| Active flagship | Yes (only PR program; see `research/wip-register.md`) |
+| Active flagship | No, as of 2026-05-12 — rotated out; `remittance-resilience` is the new active flagship per `research/STATUS.md`. PSDQ remains available for §18.5 owner-led human-final upgrade and for opportunistic polish. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | `/program/public-service-data-quality/evidence` |
@@ -26,6 +26,40 @@ understand, inspect, and cite at every depth, with the right caveats.
 
 ## Last completed
 
+- **2026-05-12:** ADB/ERDI-style polish pass on PSDQ public surfaces under
+  the new `/goal` skill's flagship bar. Three live-surface edits + one
+  governance alignment, no claim change. **Live edits** (shipped to the
+  site via `articles/measurement-gap-philippines-bangladesh.md` →
+  `reporting-site/public/articles/`, verified in viewport at 1280px and
+  375px): (1) article subtitle tightened from a dense two-sentence
+  tongue-twister using the stale "screening result" label to a
+  finding+benchmark formulation matching the working-paper convention; (2)
+  article abstract restructured to lead with the 17.1% / 11.8% headline
+  numbers and the 9.8× within-country gradient (NCR 63.5% vs BARMM 6.5%)
+  before the upgrade-pass and attestation context; (3) article opening of
+  "# The question" rewritten from textbook-pedagogical ("Two questions sit
+  underneath any planning exercise") to stakes-led ADB/ERDI register
+  ("Project teams that build facility catchments, service-coverage maps,
+  and travel-time isochrones routinely combine public maps with official
+  registries… A planner who treats the gap as noise will treat coverage
+  problems as present-but-small when they are present-and-systematic").
+  The Topic.tsx page renders the article-frontmatter `title` as h1 and
+  `subtitle` as the prominently-displayed hook beneath it — so the
+  finding-led hook lives in the subtitle, with the descriptive title above
+  matching ADB working-paper convention. **Governance alignment**:
+  `CLAUDE.md` hard-walls table line 78 changed from "real internal review
+  with Arturo" to "real internal review by an owner-designated reviewer"
+  — aligns with `/goal` skill's standing wording, makes the human-final
+  hard-wall structural rather than personnel-specific.
+  **Non-shipping edit (reverted)**: I initially also edited the h1 +
+  subhead on `reporting-site/src/pages/ProgramPSDQ.tsx`, but viewport
+  verification revealed `ProgramPSDQ.tsx` is orphan code — not imported
+  by the router; the live `/<slug>` route is served by Topic.tsx. The
+  ProgramPSDQ edit was reverted to its pre-pass state to keep the diff
+  history honest. All five gates pass; `sync-articles.mjs` re-synced 25
+  articles; `npm run build` succeeds in 4.80s. Mode A exit condition
+  unchanged; PSDQ remains **ai-first finished for current issue** under
+  the same attestation chain.
 - **2026-05-07:** Browser-checked the three PSDQ public surfaces
   (`/program/public-service-data-quality`, the article, and the evidence
   page) at desktop (1280px) and mobile (375px). All three render the new

@@ -1,7 +1,7 @@
 ---
 slug: measurement-gap-philippines-bangladesh
 title: The OSM-vs-registry gap in Philippine and Bangladeshi health facilities
-subtitle: A two-DMC screening result. OpenStreetMap captures 17.1 percent of the Philippine national registry and 11.8 percent of the Bangladeshi one; the current upgrade moves the evidence below ADM1 into Philippine city/municipality and Bangladeshi upazila views.
+subtitle: OpenStreetMap covers 17.1 percent of the Philippine national health-facility registry and 11.8 percent of the Bangladeshi one — both well below the 30 percent fit-for-planning threshold. The current upgrade drills below ADM1 into Philippine city/municipality and Bangladeshi upazila views, keeping source gaps explicit.
 kind: working-paper
 status: draft
 attestation_chain: ai-first
@@ -13,25 +13,26 @@ topics: [measurement-gap, public-service-data-quality, OSM, health-facility-regi
 program: public-service-data-quality
 maturity: PR
 abstract: >
-  Across the 17 administrative regions of the Philippines and the 8
-  divisions of Bangladesh, OpenStreetMap-mapped health facilities
-  capture roughly 17.1 percent and 11.8 percent of the official
-  national registry's clinical-tier facilities respectively. Both
-  ratios fall below the 30-percent fit-for-planning threshold from
-  Macharia and colleagues 2025. The within-country gradient is steep
-  in the Philippines: 5.5x between top and bottom rural-share
-  quintiles. The Bangladesh division-level gradient is illustrative
-  (N=8) and directionally consistent. No administrative unit in
-  either country has OSM-vs-registry agreement within 10 percent.
-  The pattern survives every parameter in a +/-50 percent sensitivity
-  suite. The upgrade pass adds a Philippine ADM3 Open Buildings
-  denominator, Bangladeshi facility-buffer and road-context layers, and
-  an owner-downloaded official Philippines PSA SAE poverty overlay that
-  leaves remaining source gaps explicit. This article is published under
-  CONSTITUTION.md §18 (AI-First Operating Mode): the literature,
-  pre-registration, internal review, and red-team review are
-  AI-attested rather than human-attested. The article is upgrade-
-  eligible to a human-final attestation chain.
+  OpenStreetMap captures 17.1 percent of the Philippine clinical-tier
+  national health-facility registry and 11.8 percent of the
+  Bangladeshi one — both pilots well below the 30-percent
+  fit-for-planning threshold of Macharia and colleagues 2025. The
+  gap is steep within the Philippines: a 9.8x best-to-worst gradient
+  across 17 administrative regions (63.5 percent in NCR, 6.5 percent
+  in BARMM) and a 5.5x gradient between the top and bottom
+  rural-share quintiles. The Bangladesh division-level gradient is
+  directionally consistent but illustrative only (N=8). No
+  administrative unit in either country agrees within 10 percent;
+  the pattern survives every parameter in a plus-or-minus 50 percent
+  sensitivity suite. The upgrade pass adds a Philippine ADM3 Open
+  Buildings denominator, Bangladeshi facility-buffer and road-context
+  layers, and an owner-downloaded official Philippines PSA Small Area
+  Estimates poverty overlay — keeping 10 source-missing ADM3 rows
+  and 8 unresolved BARMM facility records explicit and non-imputed.
+  Published under CONSTITUTION.md §18 (AI-First Operating Mode): the
+  literature, pre-registration, internal review, and red-team review
+  are AI-attested. The article is upgrade-eligible to a human-final
+  attestation chain via §18.5.
 doi:
 published_at: 2026-04-25
 updated_at: 2026-05-05
@@ -53,17 +54,20 @@ review_internal_chain: ai-critique-pass under §18 (§9.1 + §9.2)
 
 # The question
 
-Two questions sit underneath any planning exercise that uses public
-maps. First: how many facilities are there? Second: where are they?
-Public maps and administrative registries answer both questions, and
-when they disagree, the disagreement is rarely random. Sandefur and
-Glassman 2015 [@sandefur2015badata] documented that household-survey
-counts and administrative-record counts of African school enrollments
-diverge in directions that correlate with reporting incentives, not
-with random measurement noise. Markhof, Wollburg, and Zezza 2025
+Project teams that build facility catchments, service-coverage maps,
+and travel-time isochrones routinely combine public maps with official
+registries. When the two sources disagree — and they do — the
+disagreement is typically absorbed into the analysis as if it were
+random measurement noise. It is not random. Sandefur and Glassman 2015
+[@sandefur2015badata] documented that household-survey counts and
+administrative-record counts of African school enrollments diverge in
+directions that correlate with reporting incentives, not with
+measurement noise. Markhof, Wollburg, and Zezza 2025
 [@markhof2025records] documented a 9-percentage-point persistent gap
 between phone-survey and administrative COVID-vaccination coverage in
-LMICs that survives correction for respondent-selection effects.
+LMICs that survives correction for respondent-selection effects. A
+planner who treats the gap as noise will treat coverage problems as
+present-but-small when they are present-and-systematic.
 
 The corresponding question for facility lists in the Asia-Pacific has
 not been answered with consistent methodology. The African-side

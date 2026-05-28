@@ -220,3 +220,133 @@ is part of the §18.5 upgrade-pass.
 | Upgrade-eligible | yes |
 | Date closed | 2026-04-26 |
 | Reviewer chain | §18 AI synthesis under §18.4 |
+
+---
+
+## 9. 2026-05-12 Mode A addendum — §18.4 red-team synthesis against the full ladder
+
+The 2026-04-26 synthesis covered the working paper. The 2026-05-12
+synthesis covers the full publication ladder added this session
+(brief, blog, social card, slide deck) and the polished working
+paper. Synthesized against the same six candidate institutions
+(KNOMAD, World Bank Payment Systems Development Group, IZA migration
+cluster, Pacific Community Statistics for Development Division, Nepal
+Rastra Bank Research Department, OSCE Academy in Bishkek). The §18.4
+explicit non-claim in §6 of this file applies verbatim to this
+addendum: no individual reviewer was contacted.
+
+### 9.1 KNOMAD methodological-position objection — addendum
+
+**Synthesized objection.** A KNOMAD reader would observe that the
+2026-05-12 chart's bubble-size encoding makes the small-sample issue
+visually loud — which is honest — but the same chart anchors
+attention on the cost-axis mean, when KNOMAD's own methodology
+emphasizes corridor-weighted cost. The artifact should not be
+distributed to ADB country teams as "the remittance-corridor view"
+without an explicit caveat that volume-weighted cost is the right
+measure and is not in the screen.
+
+**Response.** The brief's *Why it matters for project preparation*
+paragraph, the blog's *Why this is not a country ranking* section,
+and the slide deck's *Honest limits* slide all state the
+volume-weighted-cost limitation explicitly. The working paper §3
+source-note and §7 upgrade-path table state it twice. The artifact
+labels itself a triage instrument, not a corridor-flow analysis.
+
+### 9.2 World Bank PSDG — addendum
+
+**Synthesized objection.** PSDG's published guidance treats
+publicly-quoted prices as one input among many, and would note that
+relying on RPW alone — especially for thin corridors with 1–2
+observed prices — over-reports the cost a typical sender pays
+because promotional pricing, discount cards, and informal channels
+all shift the realized cost down. The brief and blog should not
+imply the published cost is the user-paid cost.
+
+**Response.** The brief explicitly says *"the published cost is an
+upper bound on what households actually pay if they substitute into
+informal channels"*. The working paper's limitations note on informal
+corridors carries the same caveat. The corrected SDG 10.c.1 reference
+(3%, not 5%) means the chart now shows the genuine policy reference
+line.
+
+### 9.3 IZA migration cluster — addendum
+
+**Synthesized objection.** A standard IZA objection to a static
+country-level remittance screen is that migration is a stock variable
+with a long latency: the GCC corridor concentration for NPL today is
+the result of two decades of bilateral migration policy, not a
+remittance phenomenon per se.
+
+**Response.** The slide deck's *Three patterns inside the set* slide
+explicitly names the migration policy context (GCC corridors dominate
+inbound flow; non-GCC corridors at higher cost pull the destination
+mean up). The blog makes the same point. The artifact frames the
+corridor pattern as co-produced by migration corridors and pricing
+structure, not as a remittance-only finding.
+
+### 9.4 Pacific Community SDD — addendum
+
+**Synthesized objection.** SPC SDD would observe that the
+2026-05-12 chart's small-sample bubbles for TON, VUT, WSM (two
+corridors each) are too thin a basis for the published-cost figures
+to be treated as comparable across Pacific economies.
+
+**Response.** The brief's *"It does NOT claim"* section, the blog's
+small-sample paragraph, and the slide deck's *Three patterns* slide
+each explicitly state the Pacific two-corridor observation. The
+corrected per-DMC corridor counts (KGZ=1, TON/VUT/WSM=2, NPL=8) are
+now consistent across all five tiers.
+
+### 9.5 Nepal Rastra Bank — addendum
+
+**Synthesized objection.** NRB's quarterly bulletins document that
+Nepal's actual cost structure is dominated by GCC corridors at
+moderate cost; the RPW destination-mean conflates GCC with higher-cost
+Malaysia/Korea corridors. An NRB reader would object that NPL's
+appearance in the top-five rests on the destination-mean
+methodology.
+
+**Response.** The working paper *Three patterns* section explicitly
+states this. The corrected Pearson sign (−0.22, weakly negative)
+strengthens rather than weakens NPL's placement: NPL's combination
+of moderate dependence and moderate cost is genuinely co-occurring,
+not an artifact of axis-redundancy.
+
+### 9.6 OSCE Academy in Bishkek — addendum
+
+**Synthesized objection.** OSCE-Bishkek's monographs on KGZ–Russia
+labor migration would dispute the headline cost figure (10.5%) as
+unrepresentative: the Russia–Kyrgyz corridor is anomalously low
+(~2–3%) due to EAEU banking integration.
+
+**Response.** The working paper's *Three patterns* section is
+explicit on this point. The chart shows KGZ as the smallest bubble
+(one corridor observed), which is the visually loud signal that the
+destination mean is not corridor-flow-weighted. The §7 upgrade-path
+table names volume-weighted cost as the first human-final upgrade.
+
+### 9.7 Unresolved residue after 2026-05-12 addendum
+
+| Synthesized objection | Resolution status | Treatment |
+|---|---|---|
+| Volume-weighted corridor cost not in screen | unresolved | §18.5 upgrade-pass; named in `limitations.md` |
+| Household receipt concentration not measured | unresolved | §18.5 upgrade-pass; named in `limitations.md` |
+| Informal corridor share not measured | unresolved | named in `limitations.md`; partial cost-upper-bound treatment |
+| Chart does not annotate Fiji exclusion | acknowledged, deferred | per-program visualization improvement; not a Mode-A blocker |
+
+## 10. 2026-05-12 Mode A — exit condition (red-team synthesis side)
+
+After the addendum above, no further substantive synthesized
+objection can be raised against the 2026-05-12 ladder that is not
+already in `limitations.md`. The §18.4 explicit non-claim (§6 of
+this file) applies verbatim to this addendum.
+
+| Field | Value |
+|---|---|
+| Synthesis addendum complete | yes (6 candidate institutions covered, 2026-05-12) |
+| Each new objection responded to | yes |
+| §18.4 explicit non-claim recorded | yes (§6 verbatim) |
+| Upgrade-eligible | yes |
+| Date closed | 2026-05-12 |
+| Reviewer chain | §18 AI synthesis under §18.4, full-ladder addendum |

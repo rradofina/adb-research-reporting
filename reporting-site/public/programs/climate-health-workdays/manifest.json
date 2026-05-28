@@ -1,7 +1,27 @@
 {
   "program": "climate-health-workdays",
   "permanent_url": "/program/climate-health-workdays/evidence",
-  "generated_at": "2026-05-08T06:29:53.142Z",
+  "generated_at": "2026-05-28T17:55:49.063Z",
+  "hero": {
+    "png": "generated/charts/climate-health-workdays-thumbnail.png",
+    "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
+    "json": "generated/charts/climate-health-workdays-thumbnail.json",
+    "title": "Outdoor-labor share × annual PM2.5 exposure",
+    "caption": "India 55% of employment in agri + industry, country-mean PM2.5 at 48 µg/m³ — nearly 10× the WHO 5 µg/m³ guideline. Bubble area = population × outdoor-labor share, NOT a working-age labor-force count.",
+    "headline_number": "India 55% outdoor employment",
+    "visual_form": "bubble scatter (PM2.5 × outdoor share, area = pop × outdoor share)",
+    "source": "WDI PM2.5 + employment + population",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T20:26:56+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42",
+      "svg": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+    }
+  },
   "artifacts": [
     {
       "key": "readme",
@@ -105,6 +125,24 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/climate-health-workdays-thumbnail.json",
+      "size": 1213,
+      "size_human": "1.2 KB",
+      "sha256": "b1d6d9f746c693fb6aed89975ae70e7d32ffc3647facff923b652fd20fc21aca"
+    },
+    {
+      "file": "generated/charts/climate-health-workdays-thumbnail.png",
+      "size": 145516,
+      "size_human": "142.1 KB",
+      "sha256": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42"
+    },
+    {
+      "file": "generated/charts/climate-health-workdays-thumbnail.svg",
+      "size": 182313,
+      "size_human": "178.0 KB",
+      "sha256": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+    },
     {
       "file": "generated/climate-health-workdays-adb-panel.csv",
       "size": 4515,

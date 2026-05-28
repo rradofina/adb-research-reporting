@@ -1,7 +1,27 @@
 {
   "program": "access-services",
   "permanent_url": "/program/access-services/evidence",
-  "generated_at": "2026-05-08T06:29:53.299Z",
+  "generated_at": "2026-05-28T17:55:49.497Z",
+  "hero": {
+    "png": "generated/charts/access-services-thumbnail.png",
+    "svg": "generated/charts/access-services-thumbnail.svg",
+    "json": "generated/charts/access-services-thumbnail.json",
+    "title": "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
+    "caption": "104 ADM1 units across 8 DMCs · ranked by population per OSM-tagged health amenity in each DMC's worst-served region. Numbers are OSM-coverage gaps, not actual facility counts — OSM under-counts the official registry by 5–10× per PSDQ.",
+    "headline_number": "Oddar Meanchey, Cambodia 319 k people / OSM-tagged amenity",
+    "visual_form": "horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
+    "source": "WDI + geoBoundaries + WorldPop + OSM Overpass",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-05-19T18:45:30+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437",
+      "svg": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+    }
+  },
   "artifacts": [
     {
       "key": "literature",
@@ -106,6 +126,24 @@
       "size": 3196,
       "size_human": "3.1 KB",
       "sha256": "f3aa05ff388e39b1aba43ae15006bd0a1d859d16c7b53f787c852139f2d3ba42"
+    },
+    {
+      "file": "generated/charts/access-services-thumbnail.json",
+      "size": 1220,
+      "size_human": "1.2 KB",
+      "sha256": "fa21946e27decbb7124bab1c585350fad347fc53a06ec345658c0cb3a2ec3bce"
+    },
+    {
+      "file": "generated/charts/access-services-thumbnail.png",
+      "size": 112840,
+      "size_human": "110.2 KB",
+      "sha256": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437"
+    },
+    {
+      "file": "generated/charts/access-services-thumbnail.svg",
+      "size": 126873,
+      "size_human": "123.9 KB",
+      "sha256": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
     }
   ],
   "articles": [

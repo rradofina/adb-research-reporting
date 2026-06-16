@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-05-28T17:55:48.960Z",
+  "generated_at": "2026-06-16T16:19:44.071Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -372,6 +372,18 @@
       "size": 6360,
       "size_human": "6.2 KB",
       "sha256": "126de287251121bb1f2e22fc7976fa15c54425118fb82a4e478ff90f97043652"
+    },
+    {
+      "file": "generated/psdq-tier-decomposition.csv",
+      "size": 1585,
+      "size_human": "1.5 KB",
+      "sha256": "10f78609dd54a6a76a336bca10f8215ede6c6cdc5c831d3453952813e3932de6"
+    },
+    {
+      "file": "generated/psdq-tier-decomposition.json",
+      "size": 8823,
+      "size_human": "8.6 KB",
+      "sha256": "0a9afc1c25d3abfa36bf4927ad2631c4351671291e93b09fe0da5b478228f133"
     },
     {
       "file": "generated/public-service-data-quality-BGD.csv",

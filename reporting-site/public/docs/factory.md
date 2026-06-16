@@ -27,10 +27,124 @@ Each program should eventually contain the same artifact set:
 Generated data belongs in `generated/`. Raw public-source caches belong in
 `.cache/` only when the source license allows committed cache storage.
 
+## Data-first hook triage
+
+**Principle.** A program earns attention only when public data reveal a
+specific, visual, non-generic measurement problem. The factory should not begin
+by producing a polished essay around a broad topic. It should begin by finding
+the data object that makes the topic legible: a map, corridor network, scatter,
+ranked gap, small multiple, timeline, source-disagreement table, or comparable
+visual structure. The research question is then reverse-designed from what the
+data can honestly show.
+
+**Operationalization.** Before a new or revived program enters the full
+standard loop, run a hook triage:
+
+1. **Find the public data object.** Name the dataset, source institution,
+   access route, license, unit of analysis, period, and retrieval path.
+2. **Build the rough visual first.** Use a committed script to produce the
+   simplest chart/table/map that exposes the structure. This may be ugly; it
+   must be traceable.
+3. **Ask the hook question.** What is visible here that the conventional data
+   view misses? What is the decision problem? What is the exact unit where the
+   gap appears?
+4. **Reverse-design the research frame.** Write the question, contribution,
+   method, caveat, and publication plan around the observed data structure, not
+   around the initial topic label.
+5. **Ditch or defer weak hooks.** If the best visual is only a country ranking,
+   a composite leaderboard, a generic trend line, or a topic summary, write a
+   short defer note and move on. Do not spend publication-ladder effort trying
+   to make a weak hook look important.
+
+Hook triage is exploratory. It may inspect public data and build screening
+artifacts, but it does not authorize a headline claim, maturity promotion, or
+publication-ready language. The first testable claim, falsification condition,
+source notes, limitations, sensitivity checks, and evidence packet still have
+to be written before the result can leave the screening lane.
+
+### New-topic creation mode
+
+Use this mode when the owner asks to create or refactor research topics rather
+than deepen the current flagship.
+
+1. **Separate repair from creation.** Existing-program repair hooks can be
+   useful, but they are not new topics unless they introduce a new evidence
+   question or source object.
+2. **Require a source object per topic.** Every candidate must name the public
+   dataset, unit, period or expected vintage, access route, likely license,
+   and source caveat before it receives a rank.
+3. **Require a visual object per topic.** Every candidate must name the first
+   chart, map, matrix, network, small multiple, or source-disagreement table.
+   Topics without a visual object stay in brainstorming notes, not in the hook
+   bank.
+4. **Run sprints outside program folders first.** Store exploratory new-topic
+   scripts and outputs under `research/topic-sprints/` until a hook earns a
+   full program package. This prevents a rough sprint from being mistaken for
+   a maturity label or publication surface.
+5. **Promote only by evidence.** A new-topic L2 sprint can promote a hook to a
+   program prospectus candidate only when a committed script produces a rough
+   table or visual and the sprint note records source sanity, visual QA,
+   caveats, and a kill/defer decision.
+6. **Keep failures.** If a hook fails, record why. A failed data pull, generic
+   visual, blocked license, or uninteresting chart is useful selection
+   evidence.
+
+## Nested goal levels
+
+Use a goal stack so a session does not confuse discovery, evidence-building,
+and publication polish.
+
+| Level | Purpose | Typical work | Do not advance until |
+|---|---|---|---|
+| L0 — Lab | Keep the research factory honest | Governance, gates, status, process edits | The repo still enforces public data, traceability, labels, and gates |
+| L1 — Research Discovery | Build the hook bank | Scan public datasets, compare candidate joins, write hook cards | Each candidate has data object, first visual, question, AI role, and kill/defer condition |
+| L2 — Hook Sprint | Test one candidate quickly | Fetch/reuse data, write rough script, emit first visual/table | The visual reveals a specific measurement gap or the hook is ditched |
+| L3 — Program Package | Build reproducible evidence | Program artifacts, deterministic pipeline, sensitivity, limitations | Important numbers trace to scripts, sources, generated artifacts, and retrieval records |
+| L4 — Publication Surface | Make the package legible | Article, program page, brief, blog, social card, deck, evidence packet | Gates pass; site builds; public surfaces are checked where relevant |
+| L5 — Human-Final Upgrade | Owner-attested release | Owner line review, real reviewer comments, owner-signed commit | §18.5 owner-only steps are complete |
+
+The factory can move downward only when the current level's exit condition is
+met. Weak hooks should stop at L2 with a defer note. Strong hooks should not
+skip L3 just because a visual looks compelling.
+
+## Showcase report loop
+
+Use this loop when the owner asks for a 10-20 report ADB/ERDI-aligned
+showcase. The showcase is not a shortcut around the program ladder. It is an
+additional reader-facing quality gate for the strongest L2/L3 candidates.
+
+1. **Batch, do not flood.** Work in batches of 3-5 candidates. Keep a larger
+   hook bank, but build only the strongest surfaces.
+2. **Evidence first.** A report candidate needs a public-source pipeline,
+   generated table or JSON, retrieval/source record, sprint or program note,
+   and source caveats before it receives a showcase surface.
+3. **Visual concept first viewport.** The first screen should make the
+   measurement problem visible through evidence: source disagreement,
+   market-month heatmaps, catchment maps, before/after states, timelines,
+   corridor flows, or interactive small multiples. Do not use decorative
+   visuals to compensate for weak data.
+4. **ADB/ERDI narrative shape.** Each report starts with the policy problem,
+   explains the data gap, introduces the source upgrade, explains the method
+   in plain language, shows the chart, names what the result does and does not
+   mean, and ends with an operational use case.
+5. **Interactivity must clarify evidence.** Animation, sliders, or toggles are
+   allowed only when they expose time, geography, source disagreement, or
+   sensitivity. They are not a maturity promotion.
+6. **Screenshot QA is mandatory.** Every showcase surface needs desktop and
+   mobile screenshots, no console errors, no page-level horizontal overflow,
+   readable chart labels, visible caveats, and working controls before it can
+   count as a report prototype.
+7. **Promotion remains honest.** A showcase prototype can be visually strong
+   while still being only a Program Prospectus candidate. It does not become a
+   public claim until L3/L4 program gates and review loop requirements are
+   satisfied.
+
 ## Standard loop
 
+Once hook triage produces a specific data object worth developing:
+
 1. **Frame the question.** Define the policy-relevant measurement gap and the
-   exact unit of analysis.
+   exact unit of analysis, using the hook visual as the starting object.
 2. **Scan the literature.** Separate established findings, known datasets,
    common methods, and the new contribution.
 3. **Pre-register the method.** Write the indicator definitions, exclusions,

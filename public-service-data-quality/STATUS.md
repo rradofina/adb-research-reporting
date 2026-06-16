@@ -26,6 +26,20 @@ understand, inspect, and cite at every depth, with the right caveats.
 
 ## Last completed
 
+- **2026-06-16:** Added a showcase-native PSDQ source-disagreement visual
+  uplift at `/showcase/psdq-source-disagreement`. The surface reads the
+  committed Bangladesh exposure-ranked disagreement CSV/JSON and the PSDQ
+  national summary from `reporting-site/public/programs/public-service-data-quality/generated/`.
+  It frames the registry-map problem as source QA before service-access
+  mapping, not as a facility-quality, access, or ground-truth claim. The
+  interactive workbench ranks upazila rows by Open Buildings under-observed
+  proxy, registry gap share, or lowest OSM/registry ratio, with division and
+  focus controls. Browser QA captured desktop/mobile first-view and visual
+  screenshots under `reporting-site/qa/`; checks confirmed 16 rendered SVG
+  rows, working metric toggle, no page-level horizontal overflow, mobile chart
+  overflow contained in the chart scroller, and zero page errors. Console
+  output contained only existing Vite/React Router development warnings.
+  Maturity label unchanged.
 - **2026-05-12:** ADB/ERDI-style polish pass on PSDQ public surfaces under
   the new `/goal` skill's flagship bar. Three live-surface edits + one
   governance alignment, no claim change. **Live edits** (shipped to the

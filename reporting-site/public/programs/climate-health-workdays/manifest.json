@@ -1,7 +1,7 @@
 {
   "program": "climate-health-workdays",
   "permanent_url": "/program/climate-health-workdays/evidence",
-  "generated_at": "2026-05-28T17:55:49.063Z",
+  "generated_at": "2026-06-16T16:19:44.939Z",
   "hero": {
     "png": "generated/charts/climate-health-workdays-thumbnail.png",
     "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
@@ -154,6 +154,12 @@
       "size": 19263,
       "size_human": "18.8 KB",
       "sha256": "faaad5d34ac8f50b578f03246ec7ee62f8622d2f143e659a3ac5468ecb1ae88b"
+    },
+    {
+      "file": "generated/climate-health-workdays-deepening.json",
+      "size": 17199,
+      "size_human": "16.8 KB",
+      "sha256": "028abb69f08a8708de2aa164739ce1c1bcabdb07ef4f6922dd160ac0a0503b1b"
     }
   ],
   "articles": [

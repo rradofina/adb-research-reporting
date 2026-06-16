@@ -1,0 +1,31 @@
+iso3,country,world_region,survey,survey_year,mpi_value,headcount_ratio_pct,health_pct,education_pct,living_std_pct,ntl_blind_dim_pct,ntl_visible_dim_pct,ntl_plausible_ind_pct,ntl_blind_ind_pct,living_blind_ind_pct,has_null_indicator
+TKM,Turkmenistan,Europe and Central Asia,MICS,2019,0.000849,0.249,82.4,15.5,2.1,97.9,2.1,2.1,97.9,0.0,True
+MDV,Maldives,South Asia,DHS,2016-2017,0.002654,0.772,80.69,15.13,4.17,95.83,4.17,2.59,97.41,1.58,False
+UZB,Uzbekistan,Europe and Central Asia,MICS,2021-2022,0.006104,1.73,94.45,0.0,5.55,94.45,5.55,2.8,97.2,2.74,True
+KAZ,Kazakhstan,Europe and Central Asia,MICS,2015,0.001611,0.453,90.44,3.11,6.44,93.56,6.44,3.32,96.68,3.12,False
+THA,Thailand,East Asia and the Pacific,MICS,2022,0.001817,0.491,31.25,54.01,14.74,85.26,14.74,6.44,93.56,8.3,False
+BTN,Bhutan,South Asia,BLSS,2022,0.038604,9.793,65.4,17.53,17.08,82.92,17.08,11.63,88.37,5.45,True
+KGZ,Kyrgyzstan,Europe and Central Asia,MICS,2018,0.001426,0.393,64.6,17.85,17.54,82.46,17.54,1.43,98.57,16.12,False
+TUV,Tuvalu,East Asia and the Pacific,MICS,2019-2020,0.008085,2.114,36.45,43.59,19.96,80.04,19.96,12.19,87.81,7.77,False
+TON,Tonga,East Asia and the Pacific,MICS,2019,0.003336,0.875,38.21,40.7,21.09,78.91,21.09,13.79,86.21,7.29,False
+CHN,China,East Asia and the Pacific,CFPS,2014,0.016067,3.885,35.25,39.19,25.57,74.43,25.57,3.11,96.89,22.46,True
+TJK,Tajikistan,Europe and Central Asia,DHS,2017,0.029006,7.445,47.76,26.47,25.78,74.22,25.78,11.66,88.34,14.11,False
+GEO,Georgia,Europe and Central Asia,MICS,2018,0.001245,0.34,47.14,23.76,29.09,70.91,29.09,9.26,90.74,19.83,False
+ARM,Armenia,Europe and Central Asia,DHS,2015-2016,0.00069,0.191,33.11,36.77,30.11,69.89,30.11,5.85,94.15,24.27,False
+KHM,Cambodia,East Asia and the Pacific,DHS,2021-2022,0.070368,16.645,21.54,47.96,30.5,69.5,30.5,10.18,89.82,20.33,False
+PAK,Pakistan,South Asia,DHS,2017-2018,0.198247,38.332,27.62,41.31,31.07,68.93,31.07,14.01,85.99,17.06,False
+WSM,Samoa,East Asia and the Pacific,MICS,2019-2020,0.0246,6.288,36.9,31.18,31.93,68.07,31.93,17.19,82.81,14.74,False
+AFG,Afghanistan,South Asia,MICS,2022-2023,0.360305,64.883,24.09,42.51,33.4,66.6,33.4,19.85,80.15,13.56,True
+VNM,Viet Nam,East Asia and the Pacific,MICS,2020-2021,0.007729,1.919,22.86,40.74,36.4,63.6,36.4,13.22,86.78,23.18,True
+IDN,Indonesia,East Asia and the Pacific,DHS,2017,0.014011,3.619,34.74,26.77,38.49,61.51,38.49,15.05,84.95,23.44,True
+LAO,Lao PDR,East Asia and the Pacific,MICS,2017,0.108333,23.072,21.49,39.67,38.84,61.16,38.84,12.93,87.07,25.91,False
+IND,India,South Asia,DHS,2019-2021,0.068811,16.393,32.16,28.17,39.67,60.33,39.67,17.19,82.81,22.49,False
+NPL,Nepal,South Asia,DHS,2022,0.085204,20.066,28.84,30.57,40.59,59.41,40.59,20.34,79.66,20.25,False
+PHL,Philippines,East Asia and the Pacific,DHS,2022,0.015788,3.887,24.63,32.68,42.69,57.31,42.69,20.66,79.34,22.03,True
+LKA,Sri Lanka,South Asia,SLDHS,2016,0.011185,2.921,32.52,24.44,43.04,56.96,43.04,16.59,83.41,26.44,False
+FJI,Fiji,East Asia and the Pacific,MICS,2021,0.005758,1.511,38.01,17.4,44.59,55.41,44.59,25.49,74.51,19.11,False
+BGD,Bangladesh,South Asia,MICS,2019,0.10406,24.641,17.28,37.63,45.09,54.91,45.09,23.54,76.46,21.55,False
+TLS,Timor-Leste,East Asia and the Pacific,DHS,2016,0.221514,48.254,29.29,23.15,47.56,52.44,47.56,22.85,77.15,24.71,False
+MMR,Myanmar,East Asia and the Pacific,DHS,2015-2016,0.175846,38.316,18.5,32.28,49.23,50.77,49.23,24.43,75.57,24.8,False
+MNG,Mongolia,East Asia and the Pacific,MICS,2018,0.028127,7.258,21.09,26.8,52.11,47.89,52.11,15.11,84.89,37.0,False
+PNG,Papua New Guinea,East Asia and the Pacific,DHS,2016-2018,0.263291,56.629,4.61,30.06,65.34,34.66,65.34,33.27,66.73,32.07,True

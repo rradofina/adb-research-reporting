@@ -1,7 +1,7 @@
 {
   "program": "invisible-urbanization",
   "permanent_url": "/program/invisible-urbanization/evidence",
-  "generated_at": "2026-05-28T17:55:49.460Z",
+  "generated_at": "2026-06-16T16:19:47.431Z",
   "hero": {
     "png": "generated/charts/invisible-urbanization-thumbnail.png",
     "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
@@ -144,6 +144,18 @@
       "size": 10514,
       "size_human": "10.3 KB",
       "sha256": "92d95ce09f1169d5af6c633eee749f3972d768f4898f596cc048273795629dc7"
+    },
+    {
+      "file": "generated/invisible-urbanization-tautology.csv",
+      "size": 210,
+      "size_human": "210 B",
+      "sha256": "5667b23479bd96e2c0b27a31fe8eae58796c1067209c2740ed7093e601ada8e2"
+    },
+    {
+      "file": "generated/invisible-urbanization-tautology.json",
+      "size": 5472,
+      "size_human": "5.3 KB",
+      "sha256": "43de905a6e0be53060f878efdc8985ca6c3d32b50098892369c73961b3b1c903"
     }
   ],
   "articles": [

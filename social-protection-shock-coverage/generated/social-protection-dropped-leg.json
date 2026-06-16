@@ -1,0 +1,795 @@
+{
+  "program": "social-protection-shock-coverage",
+  "analysis": "dropped-leg artifact — true value-ranked order vs the headline five",
+  "claim_scope": "Deepening of the readiness-gap screen. Recomputes the identical shock_payment_readiness_gap that process-sp.py produces (most-recent WDI year per indicator; one-legged average for economies missing a component) for every economy with at least the poverty leg, then ranks by value and flags every economy excluded from the named five purely for missing a WDI leg. Triage measure (CONSTITUTION.md §6.4); a measurement/observability question (§13.3), not a country ranking.",
+  "source": {
+    "name": "World Bank WDI (ASPIRE per_allsp.cov_pop_tot; Global Findex 2021 FX.OWN.TOTL.ZS; poverty SI.POV.DDAY $2.15/day 2017 PPP)",
+    "license": "CC BY 4.0",
+    "retrieved_at": "2026-04-25 (program cache)",
+    "wall_note": "Network blocked; all values re-read from the committed program cache, identical to the headline pipeline source."
+  },
+  "headline_five": [
+    "BGD",
+    "LAO",
+    "MMR",
+    "PAK",
+    "PHL"
+  ],
+  "lowest_ranked_headline_member": {
+    "iso3": "BGD",
+    "gap": 2.7,
+    "value_rank": 7
+  },
+  "value_ranked_order": [
+    {
+      "rank": 1,
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "gap": 18.0,
+      "legs_present": "both",
+      "in_headline_five": true
+    },
+    {
+      "rank": 2,
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "gap": 13.6,
+      "legs_present": "sp-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 3,
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "gap": 7.1,
+      "legs_present": "both",
+      "in_headline_five": true
+    },
+    {
+      "rank": 4,
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "gap": 5.7,
+      "legs_present": "both",
+      "in_headline_five": true
+    },
+    {
+      "rank": 5,
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "gap": 3.7,
+      "legs_present": "acc-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 6,
+      "iso3": "PHL",
+      "country": "Philippines",
+      "gap": 2.8,
+      "legs_present": "both",
+      "in_headline_five": true
+    },
+    {
+      "rank": 7,
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "gap": 2.7,
+      "legs_present": "both",
+      "in_headline_five": true
+    },
+    {
+      "rank": 8,
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "gap": 2.2,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 9,
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "gap": 1.8,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 10,
+      "iso3": "GEO",
+      "country": "Georgia",
+      "gap": 1.3,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 11,
+      "iso3": "IND",
+      "country": "India",
+      "gap": 1.2,
+      "legs_present": "acc-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 12,
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "gap": 1.1,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 13,
+      "iso3": "NPL",
+      "country": "Nepal",
+      "gap": 1.1,
+      "legs_present": "acc-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 14,
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "gap": 1.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 15,
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "gap": 0.8,
+      "legs_present": "sp-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 16,
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "gap": 0.4,
+      "legs_present": "sp-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 17,
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "gap": 0.4,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 18,
+      "iso3": "ARM",
+      "country": "Armenia",
+      "gap": 0.3,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 19,
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "gap": 0.0,
+      "legs_present": "sp-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 20,
+      "iso3": "CHN",
+      "country": "China",
+      "gap": 0.0,
+      "legs_present": "acc-only",
+      "in_headline_five": false
+    },
+    {
+      "rank": 21,
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "gap": 0.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 22,
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "gap": 0.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 23,
+      "iso3": "MDV",
+      "country": "Maldives",
+      "gap": 0.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 24,
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "gap": 0.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    },
+    {
+      "rank": 25,
+      "iso3": "THA",
+      "country": "Thailand",
+      "gap": 0.0,
+      "legs_present": "both",
+      "in_headline_five": false
+    }
+  ],
+  "excluded_but_outrank_lowest_headline": [
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "gap": 13.6,
+      "value_rank": 2,
+      "legs_present": "sp-only",
+      "excluded_purely_for_missing_leg": true
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "gap": 3.7,
+      "value_rank": 5,
+      "legs_present": "acc-only",
+      "excluded_purely_for_missing_leg": true
+    }
+  ],
+  "excluded_for_missing_leg_count": 2,
+  "imputation_variant": {
+    "rule": "impute missing leg at rankable-set (both-legs) mean of that leg",
+    "mean_sp_coverage_pct": 52.5312,
+    "mean_findex_account_pct": 62.6882,
+    "imputed_top5": [
+      "PAK",
+      "VUT",
+      "MMR",
+      "LAO",
+      "TJK"
+    ],
+    "entered_vs_headline": [
+      "VUT",
+      "TJK"
+    ],
+    "dropped_vs_headline": [
+      "BGD",
+      "PHL"
+    ],
+    "rows": [
+      {
+        "rank": 1,
+        "iso3": "PAK",
+        "country": "Pakistan",
+        "gap_imputed": 18.0,
+        "gap_committed": 18.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 2,
+        "iso3": "VUT",
+        "country": "Vanuatu",
+        "gap_imputed": 10.4,
+        "gap_committed": 13.6,
+        "legs_present": "sp-only"
+      },
+      {
+        "rank": 3,
+        "iso3": "MMR",
+        "country": "Myanmar",
+        "gap_imputed": 7.1,
+        "gap_committed": 7.1,
+        "legs_present": "both"
+      },
+      {
+        "rank": 4,
+        "iso3": "LAO",
+        "country": "Lao PDR",
+        "gap_imputed": 5.7,
+        "gap_committed": 5.7,
+        "legs_present": "both"
+      },
+      {
+        "rank": 5,
+        "iso3": "TJK",
+        "country": "Tajikistan",
+        "gap_imputed": 3.3,
+        "gap_committed": 3.7,
+        "legs_present": "acc-only"
+      },
+      {
+        "rank": 6,
+        "iso3": "PHL",
+        "country": "Philippines",
+        "gap_imputed": 2.8,
+        "gap_committed": 2.8,
+        "legs_present": "both"
+      },
+      {
+        "rank": 7,
+        "iso3": "BGD",
+        "country": "Bangladesh",
+        "gap_imputed": 2.7,
+        "gap_committed": 2.7,
+        "legs_present": "both"
+      },
+      {
+        "rank": 8,
+        "iso3": "IDN",
+        "country": "Indonesia",
+        "gap_imputed": 2.2,
+        "gap_committed": 2.2,
+        "legs_present": "both"
+      },
+      {
+        "rank": 9,
+        "iso3": "IND",
+        "country": "India",
+        "gap_imputed": 1.9,
+        "gap_committed": 1.2,
+        "legs_present": "acc-only"
+      },
+      {
+        "rank": 10,
+        "iso3": "UZB",
+        "country": "Uzbekistan",
+        "gap_imputed": 1.8,
+        "gap_committed": 1.8,
+        "legs_present": "both"
+      },
+      {
+        "rank": 11,
+        "iso3": "GEO",
+        "country": "Georgia",
+        "gap_imputed": 1.3,
+        "gap_committed": 1.3,
+        "legs_present": "both"
+      },
+      {
+        "rank": 12,
+        "iso3": "KGZ",
+        "country": "Kyrgyzstan",
+        "gap_imputed": 1.1,
+        "gap_committed": 1.1,
+        "legs_present": "both"
+      },
+      {
+        "rank": 13,
+        "iso3": "NPL",
+        "country": "Nepal",
+        "gap_imputed": 1.1,
+        "gap_committed": 1.1,
+        "legs_present": "acc-only"
+      },
+      {
+        "rank": 14,
+        "iso3": "LKA",
+        "country": "Sri Lanka",
+        "gap_imputed": 1.0,
+        "gap_committed": 1.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 15,
+        "iso3": "MHL",
+        "country": "Marshall Islands",
+        "gap_imputed": 0.8,
+        "gap_committed": 0.8,
+        "legs_present": "sp-only"
+      },
+      {
+        "rank": 16,
+        "iso3": "KIR",
+        "country": "Kiribati",
+        "gap_imputed": 0.4,
+        "gap_committed": 0.4,
+        "legs_present": "sp-only"
+      },
+      {
+        "rank": 17,
+        "iso3": "VNM",
+        "country": "Viet Nam",
+        "gap_imputed": 0.4,
+        "gap_committed": 0.4,
+        "legs_present": "both"
+      },
+      {
+        "rank": 18,
+        "iso3": "ARM",
+        "country": "Armenia",
+        "gap_imputed": 0.3,
+        "gap_committed": 0.3,
+        "legs_present": "both"
+      },
+      {
+        "rank": 19,
+        "iso3": "BTN",
+        "country": "Bhutan",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "sp-only"
+      },
+      {
+        "rank": 20,
+        "iso3": "CHN",
+        "country": "China",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "acc-only"
+      },
+      {
+        "rank": 21,
+        "iso3": "KAZ",
+        "country": "Kazakhstan",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 22,
+        "iso3": "MYS",
+        "country": "Malaysia",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 23,
+        "iso3": "MDV",
+        "country": "Maldives",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 24,
+        "iso3": "MNG",
+        "country": "Mongolia",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "both"
+      },
+      {
+        "rank": 25,
+        "iso3": "THA",
+        "country": "Thailand",
+        "gap_imputed": 0.0,
+        "gap_committed": 0.0,
+        "legs_present": "both"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "poverty_pct": 23.0,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 22.0928,
+      "sp_year": 2018,
+      "findex_account_pct": 20.9806,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 18.0,
+      "in_headline_five": true
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "poverty_pct": 19.5,
+      "poverty_year": 2019,
+      "sp_coverage_pct": 30.352,
+      "sp_year": 2019,
+      "findex_account_pct": null,
+      "findex_year": null,
+      "legs_present": "sp-only",
+      "shock_payment_readiness_gap": 13.6,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "poverty_pct": 10.3,
+      "poverty_year": 2017,
+      "sp_coverage_pct": 13.9684,
+      "sp_year": 2017,
+      "findex_account_pct": 47.791,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 7.1,
+      "in_headline_five": true
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "poverty_pct": 7.1,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 2.1592,
+      "sp_year": 2018,
+      "findex_account_pct": 37.32,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 5.7,
+      "in_headline_five": true
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "poverty_pct": 6.1,
+      "poverty_year": 2024,
+      "sp_coverage_pct": null,
+      "sp_year": null,
+      "findex_account_pct": 39.4882,
+      "findex_year": 2021,
+      "legs_present": "acc-only",
+      "shock_payment_readiness_gap": 3.7,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "poverty_pct": 5.3,
+      "poverty_year": 2023,
+      "sp_coverage_pct": 43.0411,
+      "sp_year": 2018,
+      "findex_account_pct": 51.3718,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 2.8,
+      "in_headline_five": true
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "poverty_pct": 5.9,
+      "poverty_year": 2022,
+      "sp_coverage_pct": 55.5564,
+      "sp_year": 2022,
+      "findex_account_pct": 52.8061,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 2.7,
+      "in_headline_five": true
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "poverty_pct": 5.4,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 65.093,
+      "sp_year": 2022,
+      "findex_account_pct": 51.7553,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 2.2,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "poverty_pct": 2.7,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 25.4578,
+      "sp_year": 2018,
+      "findex_account_pct": 44.1348,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 1.8,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "poverty_pct": 4.2,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 65.9739,
+      "sp_year": 2021,
+      "findex_account_pct": 70.4987,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 1.3,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "poverty_pct": 5.3,
+      "poverty_year": 2022,
+      "sp_coverage_pct": null,
+      "sp_year": null,
+      "findex_account_pct": 77.5291,
+      "findex_year": 2021,
+      "legs_present": "acc-only",
+      "shock_payment_readiness_gap": 1.2,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "poverty_pct": 2.2,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 55.1526,
+      "sp_year": 2020,
+      "findex_account_pct": 45.0948,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 1.1,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "poverty_pct": 2.4,
+      "poverty_year": 2022,
+      "sp_coverage_pct": null,
+      "sp_year": null,
+      "findex_account_pct": 54.0027,
+      "findex_year": 2021,
+      "legs_present": "acc-only",
+      "shock_payment_readiness_gap": 1.1,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "poverty_pct": 2.7,
+      "poverty_year": 2019,
+      "sp_coverage_pct": 37.5004,
+      "sp_year": 2019,
+      "findex_account_pct": 89.2707,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 1.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "poverty_pct": 2.1,
+      "poverty_year": 2019,
+      "sp_coverage_pct": 62.732,
+      "sp_year": 2019,
+      "findex_account_pct": null,
+      "findex_year": null,
+      "legs_present": "sp-only",
+      "shock_payment_readiness_gap": 0.8,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "poverty_pct": 0.9,
+      "poverty_year": 2023,
+      "sp_coverage_pct": 51.7177,
+      "sp_year": 2019,
+      "findex_account_pct": null,
+      "findex_year": null,
+      "legs_present": "sp-only",
+      "shock_payment_readiness_gap": 0.4,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "poverty_pct": 1.6,
+      "poverty_year": 2022,
+      "sp_coverage_pct": 89.4056,
+      "sp_year": 2020,
+      "findex_account_pct": 56.2658,
+      "findex_year": 2022,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.4,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "poverty_pct": 0.8,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 75.295,
+      "sp_year": 2022,
+      "findex_account_pct": 55.3477,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.3,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "poverty_pct": 0.0,
+      "poverty_year": 2022,
+      "sp_coverage_pct": 8.971,
+      "sp_year": 2022,
+      "findex_account_pct": null,
+      "findex_year": null,
+      "legs_present": "sp-only",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "poverty_pct": 0.0,
+      "poverty_year": 2022,
+      "sp_coverage_pct": null,
+      "sp_year": null,
+      "findex_account_pct": 88.709,
+      "findex_year": 2021,
+      "legs_present": "acc-only",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "poverty_pct": 0.0,
+      "poverty_year": 2021,
+      "sp_coverage_pct": 57.2609,
+      "sp_year": 2021,
+      "findex_account_pct": 81.1085,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "poverty_pct": 0.0,
+      "poverty_year": 2021,
+      "sp_coverage_pct": 76.6754,
+      "sp_year": 2016,
+      "findex_account_pct": 88.3749,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "poverty_pct": 0.0,
+      "poverty_year": 2019,
+      "sp_coverage_pct": 28.6075,
+      "sp_year": 2019,
+      "findex_account_pct": 79.5464,
+      "findex_year": 2017,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "poverty_pct": 0.4,
+      "poverty_year": 2022,
+      "sp_coverage_pct": 92.6014,
+      "sp_year": 2020,
+      "findex_account_pct": 98.455,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "poverty_pct": 0.0,
+      "poverty_year": 2024,
+      "sp_coverage_pct": 87.1883,
+      "sp_year": 2021,
+      "findex_account_pct": 95.577,
+      "findex_year": 2021,
+      "legs_present": "both",
+      "shock_payment_readiness_gap": 0.0,
+      "in_headline_five": false
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-05-29T02:01:27Z"
+}

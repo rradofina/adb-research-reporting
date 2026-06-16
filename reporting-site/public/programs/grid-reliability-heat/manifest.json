@@ -1,7 +1,7 @@
 {
   "program": "grid-reliability-heat",
   "permanent_url": "/program/grid-reliability-heat/evidence",
-  "generated_at": "2026-05-28T17:55:49.126Z",
+  "generated_at": "2026-06-16T16:19:45.413Z",
   "hero": {
     "png": "generated/charts/grid-reliability-heat-thumbnail.png",
     "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
@@ -142,6 +142,18 @@
       "size": 115454,
       "size_human": "112.7 KB",
       "sha256": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+    },
+    {
+      "file": "generated/grid-generation-deepening.csv",
+      "size": 2445,
+      "size_human": "2.4 KB",
+      "sha256": "ae31e1d43e4c206e212b644e117db27f5ddc8ad4933796dd73368c0b75a69eb0"
+    },
+    {
+      "file": "generated/grid-generation-deepening.json",
+      "size": 11578,
+      "size_human": "11.3 KB",
+      "sha256": "71d25de21b3b870d03b9339d6571b47457c13e7fe73de5c0f78965317eb4fde8"
     },
     {
       "file": "generated/grid-reliability-heat-adb-panel.csv",

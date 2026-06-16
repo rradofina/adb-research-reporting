@@ -1,7 +1,7 @@
 {
   "program": "coastal-informal-risk",
   "permanent_url": "/program/coastal-informal-risk/evidence",
-  "generated_at": "2026-05-28T17:55:49.359Z",
+  "generated_at": "2026-06-16T16:19:46.906Z",
   "hero": {
     "png": "generated/charts/coastal-informal-risk-thumbnail.png",
     "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
@@ -142,6 +142,18 @@
       "size": 1040176,
       "size_human": "1015.8 KB",
       "sha256": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+    },
+    {
+      "file": "generated/coastal-drop-population-deepening.csv",
+      "size": 1938,
+      "size_human": "1.9 KB",
+      "sha256": "fef76facafabedf92ce30d1ae749e07895219b7623270337166b5a03fea06168"
+    },
+    {
+      "file": "generated/coastal-drop-population-deepening.json",
+      "size": 12590,
+      "size_human": "12.3 KB",
+      "sha256": "7bd308e47b8d3cb77f9e4bdd956179e3d37342ff4e530cbd70d204d74e62d50b"
     },
     {
       "file": "generated/coastal-informal-risk-adb-panel.csv",

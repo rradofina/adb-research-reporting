@@ -1,7 +1,7 @@
 {
   "program": "school-heat-disruption",
   "permanent_url": "/program/school-heat-disruption/evidence",
-  "generated_at": "2026-05-28T17:55:49.264Z",
+  "generated_at": "2026-06-16T16:19:46.367Z",
   "hero": {
     "png": "generated/charts/school-heat-disruption-thumbnail.png",
     "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
@@ -154,6 +154,12 @@
       "size": 12135,
       "size_human": "11.9 KB",
       "sha256": "b70493fb792607275b71dc2f1da5d8e04e8b9c28fe5ac0950256b05c624d064f"
+    },
+    {
+      "file": "generated/school-heat-sensitivity-audit.json",
+      "size": 4106,
+      "size_human": "4.0 KB",
+      "sha256": "6238e1207fd1fc2586ae2b84d03245f73367f7fcbe93803403a82edc0bbb9602"
     }
   ],
   "articles": [

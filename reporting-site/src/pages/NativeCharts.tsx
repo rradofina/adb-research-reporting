@@ -110,7 +110,7 @@ export default function NativeCharts() {
           <ChartFrame
             kicker="Map · dependence"
             title={sidecar?.title || "Five economies where remittances are the economy"}
-            subtitle="Choropleth = remittances as a share of GDP (WDI, latest year). The five-economy cluster is the program's stable corridor-cost × dependence set. Tajikistan is the single most remittance-dependent economy shown but sits outside the cluster — only one RPW corridor / one firm priced it."
+            subtitle="Choropleth = remittances as a share of GDP (WDI, latest year). The five-economy cluster is the repaired baseline corridor-cost x dependence set. Four remain common across the +/-50% sensitivity suite; Tajikistan is shown separately because only one RPW corridor / one firm priced it."
             headline={{ value: model.headline, label: "of Tonga's GDP comes from remittances" }}
             source={source}
             attestation={attestation}

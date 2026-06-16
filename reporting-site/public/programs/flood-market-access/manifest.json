@@ -1,7 +1,7 @@
 {
   "program": "flood-market-access",
   "permanent_url": "/program/flood-market-access/evidence",
-  "generated_at": "2026-05-28T17:55:49.410Z",
+  "generated_at": "2026-06-16T16:19:47.191Z",
   "hero": {
     "png": "generated/charts/flood-market-access-thumbnail.png",
     "svg": "generated/charts/flood-market-access-thumbnail.svg",
@@ -142,6 +142,18 @@
       "size": 1103798,
       "size_human": "1.05 MB",
       "sha256": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+    },
+    {
+      "file": "generated/flood-decompose-deepening.csv",
+      "size": 2608,
+      "size_human": "2.5 KB",
+      "sha256": "4d3ed00c36846260853bebd77147fce75a287b8a96a594ed2174f9a5391f0dc2"
+    },
+    {
+      "file": "generated/flood-decompose-deepening.json",
+      "size": 18628,
+      "size_human": "18.2 KB",
+      "sha256": "29d5b9890cb9447b54bfbbd9397985375d8ea1bdfab51134d3329809c2b0ca3b"
     },
     {
       "file": "generated/flood-market-access-adb-panel.csv",

@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-social
 title: Remittance-resilience — social card
-subtitle: Tweet-length summary of the stable top-five remittance-corridor-stress set for ADB DMCs.
+subtitle: Tweet-length summary of the repaired remittance corridor-cost weighting result for ADB DMCs.
 kind: social
 tier: social
 status: draft
@@ -14,10 +14,11 @@ topics: [remittances, corridor-cost]
 program: remittance-resilience
 maturity: PP
 abstract: >
-  Five ADB DMCs sit in the top five of a joint remittance-dependence ×
-  inbound-cost screen and stay there across the full ±50 percent
-  sensitivity suite — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa.
-  The set is the headline; rank inside the set is not.
+  Five ADB DMCs sit in the repaired baseline and flow-weighted top five
+  of a joint remittance-dependence x inbound-cost screen. Four remain
+  common across the full +/-50 percent sensitivity suite after parser
+  repair; Nepal is cap-sensitive but remains in the flow-weighted top
+  five.
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
@@ -25,16 +26,16 @@ dmc_framing_check: passing
 
 # Tweet-length post (≤ 280 chars)
 
-> Five ADB DMCs sit in the upper-right of the remittance-corridor map
-> and stay there. KGZ, NPL, TON, VUT, WSM are the top-five exposure
-> set across the full ±50% sensitivity suite. The set is the headline;
-> rank inside it is not. Triage tool, not a country ranking.
+> Remittance screen repair: KGZ, NPL, TON, VUT, WSM stay in the
+> flow-weighted top five, but only KGZ, TON, VUT, WSM are common across
+> the full +/-50% sensitivity suite. Nepal moves up after flow
+> weighting. Triage tool, not a country ranking.
 
-*Character count: 274 / 280.*
+*Character count: 265 / 280.*
 
 # Chart
 
-![Dot-plot of 20 ADB DMCs in remittance-dependence × inbound-cost space. Five red bubbles in the upper-right — Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa — mark the stable top-five set. Bubble size = number of RPW corridors observed; small bubbles for Pacific entries and KGZ flag the small-sample caveat. Pre-registered caps and SDG 10.c.1 target shown as reference lines.](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
+![Dot-plot of 20 ADB DMCs in remittance-dependence x inbound-cost space. Red bubbles mark the four-economy sensitivity core; Nepal is highlighted as the repaired baseline top-five member that is cap-sensitive but remains in median-cost and flow-weighted top-five checks. Bubble size = number of RPW corridors observed. Pre-registered caps and SDG 10.c.1 target shown as reference lines.](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
 
 # Links
 

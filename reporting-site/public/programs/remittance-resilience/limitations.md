@@ -32,10 +32,11 @@ unresolved synthesized objections from `review-external.md` §5.
   Asia and Russia → Central Asia. The fragility figure is an upper
   bound on what households actually pay if they use informal
   channels.
-- **Pacific small-sample uncertainty.** TON, VUT, WSM each have
-  approximately 5–8 RPW corridor observations. The mean cost has
-  wide sampling uncertainty. The §18.5 upgrade-pass restricts the
-  top-5 to DMCs with ≥ 10 corridor observations.
+- **Small-sample uncertainty in most top-five entries.** KGZ has 1
+  observed RPW corridor; TON, VUT, and WSM have 2 each. Nepal is the
+  only repaired baseline top-five entry with 8 corridors. The mean
+  cost has wide sampling uncertainty, and the §18.5 upgrade-pass
+  restricts the top-five to DMCs with >= 10 corridor observations.
 - **Myanmar exceptional cost.** MMR's 28.16% mean transfer cost
   reflects post-2021 sanctions / FX friction and is not comparable
   to ordinary corridor pricing. Excluded from the headline cluster.

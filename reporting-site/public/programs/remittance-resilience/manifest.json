@@ -1,25 +1,25 @@
 {
   "program": "remittance-resilience",
   "permanent_url": "/program/remittance-resilience/evidence",
-  "generated_at": "2026-05-28T17:55:49.003Z",
+  "generated_at": "2026-06-16T16:19:44.436Z",
   "hero": {
     "png": "generated/charts/remittance-resilience-thumbnail.png",
     "svg": "generated/charts/remittance-resilience-thumbnail.svg",
     "json": "generated/charts/remittance-resilience-thumbnail.json",
     "title": "Five economies where remittances are the economy",
-    "caption": "Tonga 42.6%, Kyrgyz Republic 26.6%, Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8% — all carry remittance cost above the SDG 10.c.1 5% cap.",
+    "caption": "Tonga 42.6%, Kyrgyz Republic 26.6%, Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8% — all carry remittance cost above the SDG 10.c.1 3% reference line in the repaired baseline.",
     "headline_number": "Tonga 42.6% of GDP",
     "visual_form": "Asia-Pacific map with five cluster economies highlighted",
     "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:27:18+00:00",
+    "generated_at": "2026-06-16T14:28:23+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "8bd408bade4a31026a525b43548f69a6805cb0155f3d727388c9be3a47978110",
-      "svg": "81ea9d7af5aecc731ae8852269218087e232e9cc5392d61934479a74a9b30888"
+      "png": "96b92787bdffa6bdf6df0957f21564f10626baf6e54b759399a459a680397933",
+      "svg": "3346fe992c6e80bd41963e6b187aaba145e5f505586a2161d516a28cf35db3e5"
     }
   },
   "artifacts": [
@@ -27,10 +27,10 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 4197,
-      "size_human": "4.1 KB",
-      "mtime": "2026-05-05T07:55:21.787Z",
-      "sha256": "34d80a0b9246d41ba28157c8479e27d28e408a9596456ba4cea0c494b5a2d74b",
+      "size": 4381,
+      "size_human": "4.3 KB",
+      "mtime": "2026-06-16T14:41:59.562Z",
+      "sha256": "34388f8ad0143c4b8d50ff14313406e9514e8d652beecdec73b65af02f84d47f",
       "attestation_chain": null
     },
     {
@@ -57,121 +57,157 @@
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 2932,
-      "size_human": "2.9 KB",
-      "mtime": "2026-04-25T17:03:59.488Z",
-      "sha256": "1c806758852809b41422d722af11bac5302c09f5c6e139c07a20864b25c5907b",
+      "size": 3197,
+      "size_human": "3.1 KB",
+      "mtime": "2026-06-16T14:41:59.556Z",
+      "sha256": "4bdb1227de5c57d517d2cea08f18772a71aa2931b291d0c1eab5490c238f1c51",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
       "file": "sensitivity-runs.json",
       "label": "Sensitivity-run output",
-      "size": 10958,
-      "size_human": "10.7 KB",
-      "mtime": "2026-04-25T17:02:57.480Z",
-      "sha256": "b0956097af266f612052e97ddc809301d556598adc48577c82d7378b86a55381",
+      "size": 11415,
+      "size_human": "11.1 KB",
+      "mtime": "2026-06-16T14:40:28.501Z",
+      "sha256": "a5c6978614e48327e835320a77a534577e119c7446b459cb195a3313ef633dee",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 1440,
-      "size_human": "1.4 KB",
-      "mtime": "2026-04-25T17:04:08.933Z",
-      "sha256": "136538fe62ed990e8c46f56fb13dadd6faa724c145a77356405f6ee1dade3cd9",
+      "size": 1764,
+      "size_human": "1.7 KB",
+      "mtime": "2026-06-16T14:41:59.559Z",
+      "sha256": "37d6ff1052f458702c536a8e16fce08b0f2d7adfe08cc155f7bb3038225e5448",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 1865,
-      "size_human": "1.8 KB",
-      "mtime": "2026-04-25T17:06:21.722Z",
-      "sha256": "67d433266d715fa698458535582db8ea709decb22ccbf96f235d834bdf93aa8c",
+      "size": 3784,
+      "size_human": "3.7 KB",
+      "mtime": "2026-06-16T14:41:59.554Z",
+      "sha256": "93d746e71e50f0f099b11d0e0b83bdb5f14bec1ad40bf584b88d55c4f2a0126f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 11660,
-      "size_human": "11.4 KB",
-      "mtime": "2026-05-12T01:46:30.917Z",
-      "sha256": "e08c42f065b9a73ba1df89f620c99ba1d0acb04d59a9587e8a38b8fdc0a0eb82",
+      "size": 11864,
+      "size_human": "11.6 KB",
+      "mtime": "2026-06-16T14:58:38.412Z",
+      "sha256": "1fe65847bda3d64aee9b93c4bbe78b199df0f26e2cb8011ea8182be50243e317",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 16851,
+      "size": 16876,
       "size_human": "16.5 KB",
-      "mtime": "2026-05-12T01:47:33.846Z",
-      "sha256": "92c9a411ba28202b5db0fbc697b66310d846e39d8c08f1673e99ed1062c120bc",
+      "mtime": "2026-06-16T14:59:30.176Z",
+      "sha256": "e91a4fce41d047bf4f35885a8c34d34980660fc4fcb354eb3d429e86902856bd",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 4722,
-      "size_human": "4.6 KB",
-      "mtime": "2026-04-25T17:06:08.837Z",
-      "sha256": "d89f030f1acea8340edf90ca10acb0063835d84ffbaf279fe06841bea51ff4e8",
+      "size": 4809,
+      "size_human": "4.7 KB",
+      "mtime": "2026-06-16T14:58:17.484Z",
+      "sha256": "aa6572a1a76fb31c6abe41b841a6e22f11ab56fc0dfbc4b05a3951af286245cc",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/remittance-flow-weighting-sprint.png",
+      "size": 153327,
+      "size_human": "149.7 KB",
+      "sha256": "2e79764f7da0d0877f79f45358035f36ae1035a22861831b87af87de60afa477"
+    },
+    {
+      "file": "generated/charts/remittance-flow-weighting-sprint.svg",
+      "size": 89921,
+      "size_human": "87.8 KB",
+      "sha256": "062dfb1e577b8fd09ff46663b477cab71d0907105511ef7771ecd7e363b3a42b"
+    },
+    {
       "file": "generated/charts/remittance-fragility-scatter.png",
-      "size": 196976,
-      "size_human": "192.4 KB",
-      "sha256": "7924f1c5b433b3ed9026429d3bf80c76fd18a042dac114b626be085602d9384b"
+      "size": 204759,
+      "size_human": "200.0 KB",
+      "sha256": "1ebcc268f9b0ad19dc489d36ec41d1a29303328277c693706a93853c8280e221"
     },
     {
       "file": "generated/charts/remittance-fragility-scatter.svg",
-      "size": 143286,
-      "size_human": "139.9 KB",
-      "sha256": "ecdc0eea658974996a96ace4b91044649dfff91c5d9d11cff9fd09f621e2daa9"
+      "size": 147377,
+      "size_human": "143.9 KB",
+      "sha256": "4529715fed989967233d9ecd51c52a908dd676b600249a1d3c4e68e4ce327fe9"
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.json",
-      "size": 1093,
+      "size": 1129,
       "size_human": "1.1 KB",
-      "sha256": "2b24a140fd1eb6b9dfe0524ca19d4d8ceb555de8a9664ffc4f02795bc36a3220"
+      "sha256": "c7c13ed31ac8a0d853f2dccddf70e37e2e8bc059dd49c06e0e9e70acf9f39d76"
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.png",
-      "size": 174519,
-      "size_human": "170.4 KB",
-      "sha256": "8bd408bade4a31026a525b43548f69a6805cb0155f3d727388c9be3a47978110"
+      "size": 171044,
+      "size_human": "167.0 KB",
+      "sha256": "96b92787bdffa6bdf6df0957f21564f10626baf6e54b759399a459a680397933"
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.svg",
-      "size": 941981,
-      "size_human": "919.9 KB",
-      "sha256": "81ea9d7af5aecc731ae8852269218087e232e9cc5392d61934479a74a9b30888"
+      "size": 937199,
+      "size_human": "915.2 KB",
+      "sha256": "3346fe992c6e80bd41963e6b187aaba145e5f505586a2161d516a28cf35db3e5"
+    },
+    {
+      "file": "generated/remittance-flow-weighting-sprint.csv",
+      "size": 3672,
+      "size_human": "3.6 KB",
+      "sha256": "17e6d5cb078f70381e4a844687b2c6303ee910afb0bd80660e3de4086aa6cbde"
+    },
+    {
+      "file": "generated/remittance-flow-weighting-sprint.json",
+      "size": 33897,
+      "size_human": "33.1 KB",
+      "sha256": "1bea6927f51fcb92ef1c82d67ccecf386199145034df2360456e8c5fe029ae62"
+    },
+    {
+      "file": "generated/remittance-median-deepening.csv",
+      "size": 1769,
+      "size_human": "1.7 KB",
+      "sha256": "6a7f09f48ae3ed83bbce016306989989c03a390fd0b8269da5b1185e7ae7238b"
+    },
+    {
+      "file": "generated/remittance-median-deepening.json",
+      "size": 11160,
+      "size_human": "10.9 KB",
+      "sha256": "944510775053b664f22575f6b70c936b97220df28993f4e121bc67d45d3f4f9d"
     },
     {
       "file": "generated/remittance-resilience-adb-panel.csv",
-      "size": 2363,
-      "size_human": "2.3 KB",
-      "sha256": "faa7f03767bdceeab0de91a633d4b28ca597cce9769387ffed7e3eac2086c91f"
+      "size": 2531,
+      "size_human": "2.5 KB",
+      "sha256": "d6d67ed337cb46f0e329d7d0297f5bb1002214961c9ed5e4b2ee5a4aa8057d81"
     },
     {
       "file": "generated/remittance-resilience-adb-panel.json",
-      "size": 32877,
-      "size_human": "32.1 KB",
-      "sha256": "1c9ab2b8f2cc87369d649be137903b60ff4df8732736e36fcd054680817c31ac"
+      "size": 36217,
+      "size_human": "35.4 KB",
+      "sha256": "b07aec3b702b407db3b1e9aba3ce3128834d800539c4af432c3a1dfea8e2d6a3"
     }
   ],
   "articles": [
     {
       "slug": "remittance-corridors-vulnerability-cluster",
-      "title": "Five DMCs persistently cluster as remittance-corridor-stress-exposed",
+      "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
       "attestation_chain": "ai-first"
     }
   ]

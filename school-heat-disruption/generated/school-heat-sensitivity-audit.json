@@ -1,0 +1,143 @@
+{
+  "program": "school-heat-disruption",
+  "analysis": "top-1 robustness audit of the school-heat-pressure index",
+  "claim_scope": "Re-reads the committed sensitivity-runs.json and reports, run by run, KHM's rank, the top economy, and whether the run discriminates (not an all-zeros tie). Strips degenerate and rank-losing runs and restates across how many discriminating runs KHM is actually #1. Triage measure (CONSTITUTION.md §6.4); the object is the unobserved in-session thermal exposure of school-age children (§13.3), not a country quality ranking.",
+  "source": {
+    "name": "school-heat-disruption/sensitivity-runs.json (committed)",
+    "runs_generated_at": "2026-04-26T03:23:12.457444Z",
+    "upstream": "perturbation harness over the on-disk WDI (SE.PRM.ENRL.TC.ZS, SP.POP.0014.TO.ZS, SP.POP.TOTL) + CCKP CMIP6 tasmax 1995-2014 panel; no network"
+  },
+  "file_claim_common_top5_across_runs": [
+    "KHM"
+  ],
+  "counts": {
+    "runs_total": 7,
+    "degenerate_all_zero": 1,
+    "rank_losing_for_khm": 1,
+    "discriminating": 6,
+    "khm_top1_counting_all_runs": 5,
+    "khm_top1_among_discriminating": 5,
+    "runs_after_stripping_degenerate_and_rank_losing": 5
+  },
+  "degenerate_labels": [
+    "tmax_floor_plus50"
+  ],
+  "rank_losing_labels": [
+    "tmax_floor_minus50"
+  ],
+  "khm_top1_labels": [
+    "baseline",
+    "tmax_cap_minus50",
+    "tmax_cap_plus50",
+    "ptr_cap_minus50",
+    "ptr_cap_plus50"
+  ],
+  "headline_every_perturbation_true": false,
+  "per_run": [
+    {
+      "label": "baseline",
+      "knob": {},
+      "top_iso": "KHM",
+      "top_value": 14.23,
+      "khm_rank": 1,
+      "khm_value": 14.23,
+      "all_zero": false,
+      "khm_is_top1": true,
+      "discriminating": true,
+      "verdict": "KHM #1 (discriminating)",
+      "n_reported": 10
+    },
+    {
+      "label": "tmax_floor_minus50",
+      "knob": {
+        "tmax_floor": 12.5
+      },
+      "top_iso": "PAK",
+      "top_value": 38.78,
+      "khm_rank": 2,
+      "khm_value": 31.06,
+      "all_zero": false,
+      "khm_is_top1": false,
+      "discriminating": true,
+      "verdict": "RANK-LOSING for KHM (top = PAK)",
+      "n_reported": 10
+    },
+    {
+      "label": "tmax_floor_plus50",
+      "knob": {
+        "tmax_floor": 37.5
+      },
+      "top_iso": "KHM",
+      "top_value": 0.0,
+      "khm_rank": 1,
+      "khm_value": 0.0,
+      "all_zero": true,
+      "khm_is_top1": false,
+      "discriminating": false,
+      "verdict": "DEGENERATE (all-zeros tie; cannot discriminate)",
+      "n_reported": 10
+    },
+    {
+      "label": "tmax_cap_minus50",
+      "knob": {
+        "tmax_cap": 7.5
+      },
+      "top_iso": "KHM",
+      "top_value": 28.45,
+      "khm_rank": 1,
+      "khm_value": 28.45,
+      "all_zero": false,
+      "khm_is_top1": true,
+      "discriminating": true,
+      "verdict": "KHM #1 (discriminating)",
+      "n_reported": 10
+    },
+    {
+      "label": "tmax_cap_plus50",
+      "knob": {
+        "tmax_cap": 22.5
+      },
+      "top_iso": "KHM",
+      "top_value": 9.48,
+      "khm_rank": 1,
+      "khm_value": 9.48,
+      "all_zero": false,
+      "khm_is_top1": true,
+      "discriminating": true,
+      "verdict": "KHM #1 (discriminating)",
+      "n_reported": 10
+    },
+    {
+      "label": "ptr_cap_minus50",
+      "knob": {
+        "ptr_cap": 20.0
+      },
+      "top_iso": "KHM",
+      "top_value": 20.47,
+      "khm_rank": 1,
+      "khm_value": 20.47,
+      "all_zero": false,
+      "khm_is_top1": true,
+      "discriminating": true,
+      "verdict": "KHM #1 (discriminating)",
+      "n_reported": 10
+    },
+    {
+      "label": "ptr_cap_plus50",
+      "knob": {
+        "ptr_cap": 60.0
+      },
+      "top_iso": "KHM",
+      "top_value": 9.48,
+      "khm_rank": 1,
+      "khm_value": 9.48,
+      "all_zero": false,
+      "khm_is_top1": true,
+      "discriminating": true,
+      "verdict": "KHM #1 (discriminating)",
+      "n_reported": 10
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-04T09:14:15Z"
+}

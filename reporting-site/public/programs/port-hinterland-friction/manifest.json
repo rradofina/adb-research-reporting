@@ -1,7 +1,7 @@
 {
   "program": "port-hinterland-friction",
   "permanent_url": "/program/port-hinterland-friction/evidence",
-  "generated_at": "2026-05-28T17:55:49.162Z",
+  "generated_at": "2026-06-16T16:19:45.662Z",
   "hero": {
     "png": "generated/charts/port-hinterland-friction-thumbnail.png",
     "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
@@ -154,6 +154,12 @@
       "size": 14050,
       "size_human": "13.7 KB",
       "sha256": "7dc5743fecb323527b4e31696a238da37359d9a74ce7cc7d8538eb420477b2c7"
+    },
+    {
+      "file": "generated/port-hinterland-inert-parameter.json",
+      "size": 7431,
+      "size_human": "7.3 KB",
+      "sha256": "f6f925e0b54b70faae756500c49d99536b65128656610cc46e0576453502194b"
     }
   ],
   "articles": [

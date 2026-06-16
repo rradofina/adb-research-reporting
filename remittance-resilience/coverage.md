@@ -2,46 +2,56 @@
 
 `attestation_chain: ai-first`
 
-Last refresh: 2026-04-26.
+Last refresh: 2026-06-16.
 
 ---
 
-## DMCs in pre-registration scope
+## DMCs in Pre-Registration Scope
 
-50 ADB regional developing member economies (full roster).
+50 ADB regional developing member economies.
 
-## DMCs covered (with both WDI + RPW)
+## Repaired Panel Coverage
 
 | Coverage class | Count | Note |
-|---|---|---|
-| Both WDI and RPW (rankable) | 44 | The fragility ranking applies to these. |
-| WDI only (no RPW destination) | 4 | No inbound RPW corridor data; cannot compute fragility. |
-| RPW only (no WDI year in window) | 1 | Cannot compute dependence axis. |
-| Neither | 1 | Out of scope for this gate. |
+|---|---:|---|
+| DMCs with WDI remittance/GDP | 37 | Latest available WDI value per DMC. |
+| DMCs with RPW destination corridors | 22 | Latest-period RPW Q1 2025 destination coverage. |
+| DMCs with both axes observed | 21 | Rankable in the repaired dependence x observed-cost screen. |
 
-(Numbers from `generated/remittance-resilience-adb-panel.json` totals.)
+Numbers come from `generated/remittance-resilience-adb-panel.json`.
 
-## Top-5 most-fragile (set is stable per `sensitivity.md` §1)
+## Repaired Baseline Top Five
 
-| Rank | ISO3 | DMC | Dependence (% GDP) | Mean cost % | Fragility |
-|---|---|---|---|---|---|
-| 1 | KGZ | Kyrgyz Republic | 26.58 | 10.54 | 70.3 |
-| 2 | WSM | Samoa | 24.01 | 7.96 | 51.0 |
-| 3 | TON | Tonga | 42.61 | 7.51 | 50.1 |
-| 4 | VUT | Vanuatu | 18.75 | 9.54 | 47.7 |
-| 5 | NPL | Nepal | 26.23 | 6.74 | 44.9 |
+| Rank | ISO3 | DMC | Dependence (% GDP) | Mean cost % | Fragility | RPW corridors | Negative RPW quotes |
+|---|---|---|---:|---:|---:|---:|---:|
+| 1 | KGZ | Kyrgyz Republic | 26.58 | 10.54 | 70.3 | 1 | 0 |
+| 2 | WSM | Samoa | 24.01 | 7.96 | 51.0 | 2 | 0 |
+| 3 | TON | Tonga | 42.61 | 7.57 | 50.5 | 2 | 1 |
+| 4 | NPL | Nepal | 26.23 | 7.31 | 48.7 | 8 | 1 |
+| 5 | VUT | Vanuatu | 18.75 | 9.54 | 47.7 | 2 | 0 |
 
-## DMCs not yet covered (RPW destination gap)
+## Flow-Weighting Coverage
 
-| ISO3 | DMC | Reason |
-|---|---|---|
-| (small Pacific economies and selected) | (no inbound RPW corridor in latest period) | RPW does not publish destination corridors for very small markets. |
+`scripts/sprint-flow-weighted-cost.py` matched 140 of 142 latest-period
+ADB-DMC-bound RPW corridors to the World Bank/KNOMAD 2021 bilateral
+remittance matrix. The missing RPW corridor-flow joins are:
 
-## Coverage summary
+| Source | Destination |
+|---|---|
+| New Zealand | Vanuatu |
+| Oman | Nepal |
+
+Low matched-flow coverage below 25 percent is flagged for Kyrgyz Republic,
+Tajikistan, Armenia, and Afghanistan in
+`generated/remittance-flow-weighting-sprint.json`.
+
+## Coverage Summary
 
 | Field | Value |
-|---|---|
+|---|---:|
 | In scope | 50 |
-| Rankable (both axes available) | 44 |
-| Coverage rate | 88% |
-| Last refresh | 2026-04-26 |
+| With WDI axis | 37 |
+| With RPW axis | 22 |
+| Rankable with both axes | 21 |
+| RPW latest-period corridors in flow sprint | 142 |
+| RPW corridors matched to KNOMAD flows | 140 |

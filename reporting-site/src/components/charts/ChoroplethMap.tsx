@@ -50,8 +50,15 @@ export function ChoroplethMap({
   const gradId = useId();
 
   const W = width || 820;
-  const H = Math.round(viewHeight(ASIA_PACIFIC_VIEW, W));
-  const project = makeProjector(ASIA_PACIFIC_VIEW, W, H);
+  const PAD_TOP = 4;
+  const PAD_BOTTOM = 40; // room for bottom-row Pacific callout labels (TON/VUT) + legend
+  const mapH = Math.round(viewHeight(ASIA_PACIFIC_VIEW, W));
+  const H = mapH + PAD_TOP + PAD_BOTTOM;
+  const baseProject = makeProjector(ASIA_PACIFIC_VIEW, W, mapH);
+  const project = (lon: number, lat: number): [number, number] => {
+    const [px, py] = baseProject(lon, lat);
+    return [px, py + PAD_TOP];
+  };
 
   const vals = Object.values(values);
   const dMin = domain?.[0] ?? 0;
@@ -76,7 +83,7 @@ export function ChoroplethMap({
   // Legend geometry (bottom-left, in-map)
   const legW = Math.min(150, W * 0.32);
   const legX = 14;
-  const legY = H - 30;
+  const legY = H - 26; // in the bottom padding band, below the map area
 
   if (!width) return <div ref={host} style={{ width: "100%", minHeight: 240 }} />;
 
@@ -126,7 +133,8 @@ export function ChoroplethMap({
           const dx = c.labelDx ?? 14;
           const dy = c.labelDy ?? -10;
           const lx = mx + dx;
-          const ly = my + dy;
+          // clamp so the value line (ly+14) and any note (ly+27) stay on-canvas
+          const ly = Math.min(Math.max(my + dy, 14), H - 31);
           const anchor = c.anchor ?? (dx < 0 ? "end" : "start");
           const excluded = c.kind === "excluded";
           const v = values[c.iso3];
@@ -212,7 +220,7 @@ export function ChoroplethMap({
       </svg>
 
       {hover && tipRows(hover.iso3) && (
-        <HoverCard x={hover.x} y={hover.y} containerWidth={W}>
+        <HoverCard x={hover.x} y={hover.y} containerWidth={W} containerHeight={H}>
           <TipTitle>{hoverName}</TipTitle>
           {tipRows(hover.iso3)!.map((t) => (
             <TipRow key={t.k} k={t.k} v={t.v} accent={t.accent} />

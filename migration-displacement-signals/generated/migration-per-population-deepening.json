@@ -1,0 +1,552 @@
+{
+  "program": "migration-displacement-signals",
+  "analysis": "emigrant stock as a share of origin population vs absolute emigrant stock",
+  "claim_scope": "Deepening of the absolute emigrant-stock screen. Recomputes the ranking on emigrant stock divided by origin population. Numerator: UN DESA International Migrant Stock 2024 emigrant_stock_2024 (committed panel). Denominator: World Bank WDI SP.POP.TOTL mid-year 2024, read from an on-disk sibling-program cache (school-heat-disruption). Measurement/observability framing per CONSTITUTION.md §13.3, not a fragility or 'migrates-too-much' ranking. Share withheld where WDI reports no population for the economy.",
+  "sources": {
+    "numerator": {
+      "name": "UN DESA International Migrant Stock 2024",
+      "field": "emigrant_stock_2024",
+      "license": "CC BY 3.0 IGO",
+      "via": "generated/migration-displacement-adb-panel.json"
+    },
+    "denominator": {
+      "name": "World Bank WDI Population, total",
+      "indicator": "SP.POP.TOTL",
+      "year": "2024",
+      "license": "CC BY 4.0",
+      "via_on_disk": "school-heat-disruption/.cache/wdi_pop.json",
+      "wall_note": "WDI population not committed in this program's own .cache/; read from sibling-program cache on disk. No network."
+    }
+  },
+  "absolute_top5": [
+    "IND",
+    "CHN",
+    "BGD",
+    "AFG",
+    "PHL"
+  ],
+  "share_top5": [
+    "WSM",
+    "TON",
+    "ARM",
+    "NRU",
+    "FJI"
+  ],
+  "survivors_in_both_top5": [],
+  "dropped_from_top5_on_share": [
+    "IND",
+    "CHN",
+    "BGD",
+    "AFG",
+    "PHL"
+  ],
+  "entered_top5_on_share": [
+    "WSM",
+    "TON",
+    "ARM",
+    "NRU",
+    "FJI"
+  ],
+  "absolute_top5_position_on_share_ranking": [
+    [
+      "IND",
+      36,
+      1.28
+    ],
+    [
+      "CHN",
+      39,
+      0.83
+    ],
+    [
+      "BGD",
+      25,
+      5.02
+    ],
+    [
+      "AFG",
+      6,
+      17.65
+    ],
+    [
+      "PHL",
+      23,
+      6.03
+    ]
+  ],
+  "rows_by_share": [
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "emigrant_stock_2024": 119313,
+      "population_total": 218019,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.54726,
+      "emigrant_pct_of_population": 54.73,
+      "rank_absolute": 27,
+      "rank_share": 1
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "emigrant_stock_2024": 53237,
+      "population_total": 104175,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.511034,
+      "emigrant_pct_of_population": 51.1,
+      "rank_absolute": 30,
+      "rank_share": 2
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "emigrant_stock_2024": 637604,
+      "population_total": 3033500,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.210188,
+      "emigrant_pct_of_population": 21.02,
+      "rank_absolute": 20,
+      "rank_share": 3
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "emigrant_stock_2024": 2484,
+      "population_total": 11947,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.207918,
+      "emigrant_pct_of_population": 20.79,
+      "rank_absolute": 39,
+      "rank_share": 4
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "emigrant_stock_2024": 181025,
+      "population_total": 928784,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.194905,
+      "emigrant_pct_of_population": 19.49,
+      "rank_absolute": 25,
+      "rank_share": 5
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "emigrant_stock_2024": 7528994,
+      "population_total": 42647492,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.17654,
+      "emigrant_pct_of_population": 17.65,
+      "rank_absolute": 4,
+      "rank_share": 6
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "emigrant_stock_2024": 1240250,
+      "population_total": 7524100,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.164837,
+      "emigrant_pct_of_population": 16.48,
+      "rank_absolute": 15,
+      "rank_share": 7
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "emigrant_stock_2024": 2674,
+      "population_total": 17695,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.151116,
+      "emigrant_pct_of_population": 15.11,
+      "rank_absolute": 38,
+      "rank_share": 8
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "emigrant_stock_2024": 2796572,
+      "population_total": 20592571,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.135805,
+      "emigrant_pct_of_population": 13.58,
+      "rank_absolute": 10,
+      "rank_share": 9
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "emigrant_stock_2024": 496486,
+      "population_total": 3699557,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.134201,
+      "emigrant_pct_of_population": 13.42,
+      "rank_absolute": 23,
+      "rank_share": 10
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "emigrant_stock_2024": 1239,
+      "population_total": 9646,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.128447,
+      "emigrant_pct_of_population": 12.84,
+      "rank_absolute": 40,
+      "rank_share": 11
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "emigrant_stock_2024": 13568,
+      "population_total": 113160,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.119901,
+      "emigrant_pct_of_population": 11.99,
+      "rank_absolute": 34,
+      "rank_share": 12
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "emigrant_stock_2024": 46552,
+      "population_total": 462721,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.100605,
+      "emigrant_pct_of_population": 10.06,
+      "rank_absolute": 31,
+      "rank_share": 13
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "emigrant_stock_2024": 2637195,
+      "population_total": 29651054,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.088941,
+      "emigrant_pct_of_population": 8.89,
+      "rank_absolute": 11,
+      "rank_share": 14
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "emigrant_stock_2024": 660258,
+      "population_total": 7769819,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.084977,
+      "emigrant_pct_of_population": 8.5,
+      "rank_absolute": 19,
+      "rank_share": 15
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "emigrant_stock_2024": 66145,
+      "population_total": 791524,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.083567,
+      "emigrant_pct_of_population": 8.36,
+      "rank_absolute": 29,
+      "rank_share": 16
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "emigrant_stock_2024": 810116,
+      "population_total": 10202830,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.079401,
+      "emigrant_pct_of_population": 7.94,
+      "rank_absolute": 17,
+      "rank_share": 17
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "emigrant_stock_2024": 4320462,
+      "population_total": 54500091,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.079274,
+      "emigrant_pct_of_population": 7.93,
+      "rank_absolute": 7,
+      "rank_share": 18
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "emigrant_stock_2024": 109613,
+      "population_total": 1400638,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.078259,
+      "emigrant_pct_of_population": 7.83,
+      "rank_absolute": 28,
+      "rank_share": 19
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "emigrant_stock_2024": 540573,
+      "population_total": 7221868,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.074852,
+      "emigrant_pct_of_population": 7.49,
+      "rank_absolute": 21,
+      "rank_share": 20
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "emigrant_stock_2024": 2433875,
+      "population_total": 35557673,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.068449,
+      "emigrant_pct_of_population": 6.84,
+      "rank_absolute": 12,
+      "rank_share": 21
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "emigrant_stock_2024": 1492103,
+      "population_total": 21916000,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.068083,
+      "emigrant_pct_of_population": 6.81,
+      "rank_absolute": 14,
+      "rank_share": 22
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "emigrant_stock_2024": 6988383,
+      "population_total": 115843670,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.060326,
+      "emigrant_pct_of_population": 6.03,
+      "rank_absolute": 5,
+      "rank_share": 23
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "emigrant_stock_2024": 2114480,
+      "population_total": 36361859,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.058151,
+      "emigrant_pct_of_population": 5.82,
+      "rank_absolute": 13,
+      "rank_share": 24
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "emigrant_stock_2024": 8706947,
+      "population_total": 173562364,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.050166,
+      "emigrant_pct_of_population": 5.02,
+      "rank_absolute": 3,
+      "rank_share": 25
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "emigrant_stock_2024": 175596,
+      "population_total": 3524788,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.049817,
+      "emigrant_pct_of_population": 4.98,
+      "rank_absolute": 26,
+      "rank_share": 26
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "emigrant_stock_2024": 365787,
+      "population_total": 7494498,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.048807,
+      "emigrant_pct_of_population": 4.88,
+      "rank_absolute": 24,
+      "rank_share": 27
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "emigrant_stock_2024": 514478,
+      "population_total": 10590927,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.048577,
+      "emigrant_pct_of_population": 4.86,
+      "rank_absolute": 22,
+      "rank_share": 28
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "emigrant_stock_2024": 6306,
+      "population_total": 134518,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.046878,
+      "emigrant_pct_of_population": 4.69,
+      "rank_absolute": 36,
+      "rank_share": 29
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "emigrant_stock_2024": 15202,
+      "population_total": 327777,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.046379,
+      "emigrant_pct_of_population": 4.64,
+      "rank_absolute": 33,
+      "rank_share": 30
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "emigrant_stock_2024": 778793,
+      "population_total": 17638801,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.044152,
+      "emigrant_pct_of_population": 4.42,
+      "rank_absolute": 18,
+      "rank_share": 31
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "emigrant_stock_2024": 3693537,
+      "population_total": 100987686,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.036574,
+      "emigrant_pct_of_population": 3.66,
+      "rank_absolute": 9,
+      "rank_share": 32
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "emigrant_stock_2024": 6915057,
+      "population_total": 251269164,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.027521,
+      "emigrant_pct_of_population": 2.75,
+      "rank_absolute": 6,
+      "rank_share": 33
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "emigrant_stock_2024": 1178757,
+      "population_total": 71668011,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.016447,
+      "emigrant_pct_of_population": 1.64,
+      "rank_absolute": 16,
+      "rank_share": 34
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "emigrant_stock_2024": 3745148,
+      "population_total": 283487931,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.013211,
+      "emigrant_pct_of_population": 1.32,
+      "rank_absolute": 8,
+      "rank_share": 35
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "emigrant_stock_2024": 18533845,
+      "population_total": 1450935791,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.012774,
+      "emigrant_pct_of_population": 1.28,
+      "rank_absolute": 1,
+      "rank_share": 36
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "emigrant_stock_2024": 400,
+      "population_total": 37548,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.010653,
+      "emigrant_pct_of_population": 1.07,
+      "rank_absolute": 41,
+      "rank_share": 37
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "emigrant_stock_2024": 8352,
+      "population_total": 819198,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.010195,
+      "emigrant_pct_of_population": 1.02,
+      "rank_absolute": 35,
+      "rank_share": 38
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "emigrant_stock_2024": 11701619,
+      "population_total": 1408975000,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.008305,
+      "emigrant_pct_of_population": 0.83,
+      "rank_absolute": 2,
+      "rank_share": 39
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "emigrant_stock_2024": 2773,
+      "population_total": 527799,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.005254,
+      "emigrant_pct_of_population": 0.53,
+      "rank_absolute": 37,
+      "rank_share": 40
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "emigrant_stock_2024": 35050,
+      "population_total": 10576502,
+      "population_year": "2024",
+      "emigrant_share_of_population": 0.003314,
+      "emigrant_pct_of_population": 0.33,
+      "rank_absolute": 32,
+      "rank_share": 41
+    }
+  ],
+  "rows_withheld_no_population": [
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "emigrant_stock_2024": 832507,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "emigrant_stock_2024": 20288,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    },
+    {
+      "iso3": "NIU",
+      "country": "Niue",
+      "emigrant_stock_2024": 4955,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-05-29T02:00:55Z"
+}

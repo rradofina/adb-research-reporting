@@ -4,9 +4,9 @@
   "type": "module",
   "description": "Reporting site for the ADB Research governance stack (Constitution-governed, 17 programs). Runs on port 5173.",
   "scripts": {
-    "predev": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references','sync-docs']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
+    "predev": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references','sync-docs','sync-topic-sprints','build-deepenings-index']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
     "dev": "vite --port 5173",
-    "prebuild": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references','sync-docs']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
+    "prebuild": "node -e \"const fs=require('node:fs'),cp=require('node:child_process'); for (const s of ['sync-articles','sync-evidence','sync-references','sync-docs','sync-topic-sprints','build-deepenings-index']) { if (fs.existsSync('../scripts/'+s+'.mjs')) cp.execSync('node ../scripts/'+s+'.mjs', {stdio:'inherit'}); else console.log('skip '+s+' (upstream scripts/ not present)'); }\"",
     "build": "vite build",
     "preview": "vite preview --port 5174"
   },

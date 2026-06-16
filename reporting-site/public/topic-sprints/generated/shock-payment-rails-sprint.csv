@@ -1,0 +1,43 @@
+iso3,country,events_per_year_2000_2025,total_events_2000_2025,total_affected_2000_2025,sp_coverage_pct,sp_coverage_year,account_ownership_pct,account_ownership_year,digital_payment_use_pct,digital_payment_use_year,government_payment_account_use_pct,government_payment_account_use_year,active_account_pct,active_account_year,poverty_headcount_215_pct,poverty_year,account_minus_digital_payment_pct,sp_minus_government_payment_account_pct,has_disaster_data,has_digital_payment_use,has_government_payment_account_use,has_plot_value
+AFG,Afghanistan,6.08,158,37013554,,,9.6538,2021,4.7141,2021,,,10.0681,2017,,,4.9397,,True,True,False,True
+ARM,Armenia,1.1,11,436615,75.295,2022,71.3735,2024,40.3372,2021,3.4686,2021,40.4605,2017,0.8,2024,31.0362,71.8263,True,True,True,True
+AZE,Azerbaijan,1.8,9,132293,64.6436,2015,56.3047,2024,10.3882,2017,3.5653,2014,27.0562,2017,,,45.9164,61.0783,True,True,True,True
+BGD,Bangladesh,5.62,146,181508696,55.5564,2022,43.284,2024,40.5785,2021,,,39.665,2017,5.9,2022,2.7055,,True,True,False,True
+BTN,Bhutan,1.4,7,21530,8.971,2022,33.6659,2014,12.913,2014,,,28.243,2014,0.0,2022,20.753,,True,True,False,True
+BRN,Brunei Darussalam,0.0,0,0,,,,,,,,,,,,,,,True,False,False,False
+KHM,Cambodia,1.48,34,16105372,,,39.0314,2024,19.058,2021,3.0394,2021,16.8081,2017,,,19.9734,,True,True,True,True
+CHN,China,25.58,665,1771174061,,,89.383,2024,84.5417,2021,9.0988,2021,68.1998,2017,0.0,2022,4.8414,,True,True,True,True
+COK,Cook Islands,,,,,,,,,,,,,,,,,,False,False,False,False
+FJI,Fiji,1.75,28,1505376,,,,,,,,,,,4.7,2019,,,True,False,False,False
+GEO,Georgia,1.32,25,1300622,65.9739,2021,78.8236,2024,46.1776,2021,10.5276,2021,51.6853,2017,4.2,2024,32.646,55.4463,True,True,True,True
+HKG,Hong Kong SAR,,,,,,97.308,2024,86.5139,2021,25.0276,2021,91.7204,2017,,,10.7942,,False,True,True,False
+IND,India,15.54,404,1146651046,,,89.0248,2024,24.6886,2021,5.9777,2021,41.3392,2017,5.3,2022,64.3362,,True,True,True,True
+IDN,Indonesia,15.69,408,46989450,65.093,2022,56.3278,2024,29.1273,2021,10.6157,2021,34.1362,2017,5.4,2024,27.2006,54.4773,True,True,True,True
+KAZ,Kazakhstan,1.24,21,387552,57.2609,2021,87.0486,2024,66.6446,2021,10.4491,2021,53.2984,2017,0.0,2021,20.404,46.8117,True,True,True,True
+KIR,Kiribati,1.0,3,1805,51.7177,2019,,,,,,,,,0.9,2023,,,True,False,False,False
+KGZ,Kyrgyzstan,1.44,26,2192014,55.1526,2020,72.2642,2024,25.9675,2021,,,33.9697,2017,2.2,2024,46.2967,,True,True,False,True
+LAO,Lao PDR,1.68,32,4501961,2.1592,2018,37.6502,2024,15.899,2021,,,20.2603,2017,7.1,2024,21.7512,,True,True,False,True
+MYS,Malaysia,3.52,81,3495667,76.6754,2016,88.6918,2024,65.5111,2021,38.4001,2021,69.2348,2017,0.0,2021,23.1807,38.2753,True,True,True,True
+MDV,Maldives,1.0,4,31983,28.6075,2019,79.5464,2017,60.5956,2017,9.0603,2017,,,0.0,2019,18.9508,19.5472,True,True,True,True
+MHL,Marshall Islands,1.14,8,66280,62.732,2019,,,,,,,,,2.1,2019,,,True,False,False,False
+FSM,"Micronesia, Fed. Sts.",1.12,9,267032,,,,,,,,,,,,,,,True,False,False,False
+MNG,Mongolia,2.0,30,5606015,92.6014,2020,98.2787,2024,90.7599,2021,82.9092,2021,84.9249,2017,0.4,2022,7.5189,9.6922,True,True,True,True
+MMR,Myanmar,2.7,62,10444213,13.9684,2017,47.791,2021,37.25,2021,0.9211,2021,16.0098,2017,10.3,2017,10.5411,13.0473,True,True,True,True
+NRU,Nauru,,,,,,,,,,,,,,,,,,False,False,False,False
+NPL,Nepal,3.08,80,15158926,,,59.9911,2024,18.7754,2021,7.5182,2021,30.9173,2017,2.4,2022,41.2157,,True,True,True,True
+PAK,Pakistan,6.12,159,102890514,22.0928,2018,27.296,2024,14.8963,2021,,,18.5635,2017,23.0,2024,12.3997,,True,True,False,True
+PLW,Palau,,,,,,,,,,,,,,,,,,False,False,False,False
+PNG,Papua New Guinea,2.35,54,3810654,,,,,,,,,,,,,,,True,False,False,False
+PHL,Philippines,14.85,386,247376088,43.0411,2018,50.1824,2024,38.5315,2021,6.564,2021,29.8859,2017,5.3,2023,11.6509,36.4771,True,True,True,True
+WSM,Samoa,1.0,7,18287,,,,,,,,,,,,,,,True,False,False,False
+SLB,Solomon Islands,1.43,20,326834,,,,,,,,,,,,,,,True,False,False,False
+LKA,Sri Lanka,3.08,80,20787609,37.5004,2019,81.6921,2024,43.4859,2021,4.8585,2021,48.2238,2017,2.7,2019,38.2062,32.6419,True,True,True,True
+TJK,Tajikistan,2.32,58,6419959,,,54.5194,2024,22.7524,2021,7.4767,2017,37.6393,2017,6.1,2024,31.767,,True,True,True,True
+THA,Thailand,5.24,131,87693689,87.1883,2021,91.825,2024,80.1299,2021,49.1664,2021,65.2439,2017,0.0,2024,11.6951,38.0219,True,True,True,True
+TLS,Timor-Leste,1.25,10,288039,,,,,,,,,,,,,,,True,False,False,False
+TON,Tonga,1.2,12,225189,,,,,,,,,,,0.4,2021,,,True,False,False,False
+TKM,Turkmenistan,1.0,1,0,,,40.5764,2017,9.2742,2017,1.518,2017,34.382,2017,,,31.3022,,True,True,True,True
+TUV,Tuvalu,1.0,4,20317,,,,,,,,,,,,,,,True,False,False,False
+UZB,Uzbekistan,1.0,6,671817,25.4578,2018,59.6584,2024,39.3227,2021,4.1432,2021,33.8016,2017,2.7,2024,20.3357,21.3146,True,True,True,True
+VUT,Vanuatu,1.62,26,1153288,30.352,2019,,,,,,,,,19.5,2019,,,True,False,False,False
+VNM,Viet Nam,7.69,200,49724762,89.4056,2020,70.5508,2024,16.0971,2017,0.8536,2017,25.0738,2017,1.6,2022,54.4536,88.5521,True,True,True,True

@@ -3,31 +3,39 @@ import { C, FONT_MONO, FONT_SANS } from "../../lib/charts/tokens";
 
 /**
  * HoverCard — an absolutely-positioned tooltip box. The parent must be
- * position:relative. x/y are pixel coords within the parent; the card
- * flips left when near the right edge so it never overflows.
+ * position:relative. x/y are pixel coords within the parent; the card flips
+ * left near the right edge and clamps vertically so it never spills off the
+ * top or bottom of the chart.
  */
 export function HoverCard({
   x,
   y,
   containerWidth,
+  containerHeight,
   children,
 }: {
   x: number;
   y: number;
   containerWidth: number;
+  containerHeight?: number;
   children: ReactNode;
 }) {
   const CARD_W = 188;
   const flip = x + CARD_W + 18 > containerWidth;
   const left = flip ? x - CARD_W - 14 : x + 14;
+  // translateY(-50%) centres the card on `top`; clamp so neither half leaves
+  // the chart box when hovering a point/bar near the top or bottom edge.
+  const top = containerHeight ? Math.max(14, Math.min(y, containerHeight - 14)) : y;
   return (
     <div
       role="tooltip"
       style={{
         position: "absolute",
         left: Math.max(2, left),
-        top: y,
+        top,
         width: CARD_W,
+        maxHeight: 220,
+        overflow: "hidden",
         transform: "translateY(-50%)",
         pointerEvents: "none",
         background: C.paper,

@@ -1,7 +1,7 @@
 {
   "program": "access-services",
   "permanent_url": "/program/access-services/evidence",
-  "generated_at": "2026-05-28T17:55:49.497Z",
+  "generated_at": "2026-06-16T16:19:47.680Z",
   "hero": {
     "png": "generated/charts/access-services-thumbnail.png",
     "svg": "generated/charts/access-services-thumbnail.svg",
@@ -115,6 +115,18 @@
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/access-osm-completeness-deepening-phl.csv",
+      "size": 1227,
+      "size_human": "1.2 KB",
+      "sha256": "a2d0fe9480dc54933a2dd3bfb202f57d627242d2829d97066081fa9f94beae3f"
+    },
+    {
+      "file": "generated/access-osm-completeness-deepening.json",
+      "size": 13108,
+      "size_human": "12.8 KB",
+      "sha256": "f2281891fc0e7b11001677d9dbeeb9f32e8fe189de2ef246fae87819dd35e9e5"
+    },
     {
       "file": "generated/access-services-adb-panel.csv",
       "size": 559,

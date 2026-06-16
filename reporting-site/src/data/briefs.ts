@@ -420,13 +420,13 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     question:
       "Which DMCs combine high remittance dependence with costly inbound corridors?",
     output:
-      "Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa remain the stable top-5 set under sensitivity testing.",
+      "The repaired baseline top five are Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa; four remain common across the +/-50% sensitivity suite after parser repair, while the same five remain in the flow-weighted top five.",
     chartTitle: "Remittance fragility index",
     sourceNote: "World Bank WDI remittance share and Remittance Prices Worldwide Q1 2025.",
     caveat:
       "This is corridor-cost exposure, not household-level resilience.",
     nextStep:
-      "Add flow-weighted corridor costs and household microdata on remittance receipt concentration.",
+      "Convert the flow-weighting sprint into the formal remittance repair pass and add household microdata on remittance receipt concentration.",
     granularity: {
       currentUnit: "Country destination mean cost and remittance dependence",
       targetUnit: "Bilateral corridor, household survey region, remittance-receiving household group",

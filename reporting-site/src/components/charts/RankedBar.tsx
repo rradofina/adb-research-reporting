@@ -23,6 +23,8 @@ export function RankedBar({ data, unit = "", reference, valueDp }: RankedBarProp
   const [host, width] = useContainerWidth();
   const [hover, setHover] = useState<{ i: number; x: number; y: number } | null>(null);
 
+  if (!data.length) return <div ref={host} style={{ width: "100%", minHeight: 60 }} />;
+
   const rows = data;
   const W = width || 680;
   const rowH = 32;
@@ -125,7 +127,7 @@ export function RankedBar({ data, unit = "", reference, valueDp }: RankedBarProp
         })}
       </svg>
       {hover && rows[hover.i]?.tip && (
-        <HoverCard x={hover.x} y={hover.y} containerWidth={W}>
+        <HoverCard x={hover.x} y={hover.y} containerWidth={W} containerHeight={H}>
           <TipTitle>{rows[hover.i].label}</TipTitle>
           {rows[hover.i].tip!.map((t) => (
             <TipRow key={t.k} k={t.k} v={t.v} accent={t.accent} />

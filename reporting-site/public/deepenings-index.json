@@ -1,0 +1,173 @@
+{
+  "generated_by": "scripts/build-deepenings-index.mjs",
+  "note": "Deterministic scan of committed deepening triplets; findings extracted verbatim from each deepened-results.md.",
+  "counts": {
+    "total": 18,
+    "computed": 17,
+    "walls": 1
+  },
+  "rows": [
+    {
+      "slug": "access-services",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "access-osm-completeness-deepening.json",
+      "finding": "For the one cluster member where this repository can fully check it (the Philippines), the access screen is substantially ranking OSM completeness rather than health access: 16 of 17 regions re-rank on correction, the screen's worst-access…"
+    },
+    {
+      "slug": "air-monitoring",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "air-monitoring-concentration-deepening.json",
+      "finding": "The ~14.3M 'unmonitored' headline is 83.5% just two economies (PNG 73.7%, Timor-Leste 9.8%); whether any monitoring gap survives once development is controlled cannot be settled on-disk (no HDI/GDP series cached — a named wall)."
+    },
+    {
+      "slug": "climate-health-workdays",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "climate-health-workdays-deepening.json",
+      "finding": "The index is labor-share-driven, and the exposure count is inflated by non-workers."
+    },
+    {
+      "slug": "coastal-informal-risk",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "coastal-drop-population-deepening.json",
+      "finding": "The published top-5 is much more a log-population × urban-share ranking lightly tinted by slum share than a ranking of coastal-informal risk: removing the size term alone drops China from 3rd to 5th, evicts Bangladesh, and lifts a…"
+    },
+    {
+      "slug": "digital-performance",
+      "title": "Deepened result",
+      "outcome": "wall",
+      "has_script": true,
+      "has_artifact": false,
+      "artifact": null,
+      "finding": "A genuine data wall: the Ookla speed pull (~2.6 GB), WorldPop, and an official-coverage claim are not on disk, so no numbers can be produced yet — a runnable pipeline stub is committed that refuses to invent them."
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "disaster-recovery-lag-metric-falsification.json",
+      "finding": "The pre-registered falsification condition fires under three of the five metrics. The top-2 set is [CHN, IND] only on total affected and total damage — and those are exactly the two axes the program's own critique flags as inflated by…"
+    },
+    {
+      "slug": "flood-market-access",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "flood-decompose-deepening.json",
+      "finding": "The index correlates r=0.94 with raw EM-DAT event count and only r=0.15 with rural share — it ranks country size and disaster-reporting density, with no road, market, or flood footprint anywhere in it."
+    },
+    {
+      "slug": "food-price-climate-transmission",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "food-price-coverage-deepening.json",
+      "finding": "\"LAO + PAK stable across N\" is substantially a fact about which two economies carried both numbers in compatible vintages — not a robust fact about food prices."
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "grid-generation-deepening.json",
+      "finding": "Fuel concentration is higher on generation than on installed capacity for 18 of 22 grids — Tajikistan goes 0.80→1.00 as its thermal backup barely runs; the screen had the right worry and the wrong variable."
+    },
+    {
+      "slug": "invisible-urbanization",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "invisible-urbanization-tautology.json",
+      "finding": "The \"±50% stable\" claim demonstrates only that multiplying every score by the same positive number preserves their order. That is a property of multiplication, not a property of the data, the signal, or the five DMCs."
+    },
+    {
+      "slug": "migration-displacement-signals",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "migration-per-population-deepening.json",
+      "finding": "Re-ranking on intensity rather than count collapses the absolute top-5 completely."
+    },
+    {
+      "slug": "mpi-nighttime-lights",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "mpi-dimension-decomposition.json",
+      "finding": "For 28 of 30 ADB economies, a majority of the MPI sits in dimensions a nighttime-lights signal is structurally blind to under both readings."
+    },
+    {
+      "slug": "port-hinterland-friction",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "port-hinterland-inert-parameter.json",
+      "finding": "One of the two parameters the robustness test perturbs is disconnected from the output."
+    },
+    {
+      "slug": "public-service-data-quality",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "psdq-tier-decomposition.json",
+      "finding": "The 80-point clinical-tier gap is largely a statement about the BHS denominator, not about the facilities a patient would seek."
+    },
+    {
+      "slug": "remittance-resilience",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "remittance-median-deepening.json",
+      "finding": "The five-economy cluster survives a robust median cost (membership unchanged), but the recompute exposed a real normalization bug in the committed pipeline that manufactures the −305% quotes."
+    },
+    {
+      "slug": "school-heat-disruption",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "school-heat-sensitivity-audit.json",
+      "finding": "Cambodia is genuinely #1 in only 5 of 7 committed sensitivity runs — it loses one to Pakistan and 'passes' another only via an all-zeros tie — so 'KHM #1 across every perturbation' is false."
+    },
+    {
+      "slug": "social-protection-shock-coverage",
+      "title": "Deepened result",
+      "outcome": "computed",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "social-protection-dropped-leg.json",
+      "finding": "The headline five is not the five highest readiness-gap values. By the panel's own metric the five highest are PAK, VUT, MMR, LAO, TJK — and two of those (Vanuatu, Tajikistan) are dropped from the published cluster solely because one of…"
+    },
+    {
+      "slug": "water-stress-crop-diversification",
+      "title": "Deepened result",
+      "outcome": "computed + frontier wall",
+      "has_script": true,
+      "has_artifact": true,
+      "artifact": "water-stress-denominator-deepening.json",
+      "finding": "The headline top-4 is not ordered by water stress. Among the four above-100% economies the index is built on, the water term is a flat, saturated 1.5 for all of them, so their internal ordering is decided by cereal yield and rural share."
+    }
+  ]
+}

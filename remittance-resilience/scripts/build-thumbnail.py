@@ -2,10 +2,10 @@
 
 Per `research/visual-first-refactor.md`, each program produces one
 1600x900 hero visual (PNG + SVG + sidecar JSON). For
-remittance-resilience the headline is that five small ADB DMCs
-(Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa) sit in the top-five
-across every ±50% perturbation of the fragility screen, and that
-Tonga's 42.6 % remittance share of GDP is the largest in the cluster.
+remittance-resilience the repaired baseline screen highlights five small ADB
+DMCs (Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa), while the sensitivity
+core is narrower after the 2026-06-16 parser repair. Tonga's 42.6 %
+remittance share of GDP is the largest in the highlighted set.
 
 The hero visual conveys this with an Asia-Pacific map: the five
 cluster economies are shown in color (sequential viridis_r over
@@ -43,8 +43,9 @@ GEN = PROGRAM_ROOT / "generated"
 CHARTS = GEN / "charts"
 PANEL_CSV = GEN / "remittance-resilience-adb-panel.csv"
 
-# The named cluster from results.md §1 — stable across the entire ±50%
-# sensitivity suite per sensitivity-runs.json.
+# Repaired baseline top-five set. The sensitivity-common set is narrower after
+# the 2026-06-16 parser repair, so the thumbnail must not imply all-row
+# stability for all five economies.
 CLUSTER = ("KGZ", "NPL", "TON", "VUT", "WSM")
 
 
@@ -127,15 +128,13 @@ def main() -> int:
         ha="left", va="top",
     )
     fig.text(
-        0.04, 0.88,
-        "Stable across every ±50 % perturbation of the screen. "
-        f"Tajikistan ({tjk_pct:.0f}% of GDP) is the largest in the panel "
-        f"but excluded — only {tjk_corridors} RPW corridor / "
-        f"{tjk_firms} firm observed makes a corridor-cost read unreliable. "
-        f"Tonga, Vanuatu, Samoa each have 5–8 RPW corridors only — wide "
-        f"sampling uncertainty.",
-        fontsize=11.5, color=tl.COLOR_INK_MUTED, ha="left", va="top",
-        wrap=True,
+        0.04, 0.875,
+        "Repaired baseline top-five; four remain common across the +/-50% suite.\n"
+        f"Tajikistan ({tjk_pct:.0f}% of GDP) is largest in the panel but excluded: "
+        f"{tjk_corridors} RPW corridor / {tjk_firms} firm. "
+        "KGZ has one priced corridor; TON, VUT, and WSM have two each.",
+        fontsize=10.5, color=tl.COLOR_INK_MUTED, ha="left", va="top",
+        linespacing=1.25,
     )
 
     # Headline number (top-right) — Tonga 42.6 %
@@ -145,7 +144,7 @@ def main() -> int:
         ha="right", va="top",
     )
     fig.text(
-        0.96, 0.84, f"of {headline_country}'s GDP\ncomes from remittances",
+        0.96, 0.825, f"of {headline_country}'s GDP\ncomes from remittances",
         fontsize=12, color=tl.COLOR_INK_MUTED,
         ha="right", va="top",
     )
@@ -186,10 +185,10 @@ def main() -> int:
         ax.annotate(
             f"Tajikistan\n{tjk_pct:.0f}% — excluded\n"
             f"(only {tjk_corridors} corridor / {tjk_firms} firm in RPW)",
-            xy=(pt.x, pt.y), xytext=(-30, -50),
+            xy=(pt.x, pt.y), xytext=(-70, -30),
             textcoords="offset points",
             fontsize=9, color=tl.COLOR_INK_MUTED,
-            ha="left", va="top", fontstyle="italic",
+            ha="right", va="top", fontstyle="italic",
             arrowprops=dict(arrowstyle="-", color=tl.COLOR_INK_SOFT,
                             lw=0.7, shrinkA=4, shrinkB=4),
         )
@@ -259,7 +258,7 @@ def main() -> int:
         caption=(
             f"{headline_country} {headline_pct:.1f}%, Kyrgyz Republic 26.6%, "
             f"Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8% — all carry remittance "
-            f"cost above the SDG 10.c.1 5% cap."
+            f"cost above the SDG 10.c.1 3% reference line in the repaired baseline."
         ),
         headline_number=f"{headline_country} {headline_pct:.1f}% of GDP",
         source="World Bank WDI + Remittance Prices Worldwide Q1 2025",

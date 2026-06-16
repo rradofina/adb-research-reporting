@@ -1,7 +1,7 @@
 {
   "program": "social-protection-shock-coverage",
   "permanent_url": "/program/social-protection-shock-coverage/evidence",
-  "generated_at": "2026-05-28T17:55:49.228Z",
+  "generated_at": "2026-06-16T16:19:46.129Z",
   "hero": {
     "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
     "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
@@ -154,6 +154,18 @@
       "size": 16090,
       "size_human": "15.7 KB",
       "sha256": "f62c02bfd9791b651fe77b1a51597d5bda6721b0118c86a952aed831178fc113"
+    },
+    {
+      "file": "generated/social-protection-dropped-leg.csv",
+      "size": 1686,
+      "size_human": "1.6 KB",
+      "sha256": "151b9eee82f3391d28a7422bfdee241eb569cfbee2fed24be234150ab1e536a7"
+    },
+    {
+      "file": "generated/social-protection-dropped-leg.json",
+      "size": 20093,
+      "size_human": "19.6 KB",
+      "sha256": "96b72eaab4204c48dfe1e4e8cb83e2aaec3c463ea0ab3ce2f0e3719e944a8d87"
     }
   ],
   "articles": [

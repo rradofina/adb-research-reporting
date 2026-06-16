@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-16T16:19:49.116Z",
+  "source": "research/topic-sprints",
+  "files": [
+    {
+      "file": "generated/charts/nepal-market-climate-prices-heatmap.png",
+      "source": "research/topic-sprints/generated/charts/nepal-market-climate-prices-heatmap.png",
+      "size": 196616,
+      "size_human": "192.0 KB",
+      "sha256": "b6cb3cdef522fccd52d310b3e188964288724611b0969d643d18881610547b3d"
+    },
+    {
+      "file": "generated/charts/nepal-market-climate-prices-heatmap.svg",
+      "source": "research/topic-sprints/generated/charts/nepal-market-climate-prices-heatmap.svg",
+      "size": 138204,
+      "size_human": "135.0 KB",
+      "sha256": "1ed4a837b145db00328f4945f821eaf5379e100e1aca4f9cf0d732b4405722f5"
+    },
+    {
+      "file": "generated/charts/shock-payment-rails-scatter.png",
+      "source": "research/topic-sprints/generated/charts/shock-payment-rails-scatter.png",
+      "size": 253683,
+      "size_human": "247.7 KB",
+      "sha256": "6e4eb7e60761bf26033b6c08f628af5fad041f071d86544e17181702799c071e"
+    },
+    {
+      "file": "generated/charts/shock-payment-rails-scatter.svg",
+      "source": "research/topic-sprints/generated/charts/shock-payment-rails-scatter.svg",
+      "size": 148337,
+      "size_human": "144.9 KB",
+      "sha256": "005d6f4dd7fc35c26284c6e0bc29844ce53556c5750492dc5f892d4b5f86de4b"
+    },
+    {
+      "file": "generated/charts/wdi-data-freshness-heatmap.png",
+      "source": "research/topic-sprints/generated/charts/wdi-data-freshness-heatmap.png",
+      "size": 322715,
+      "size_human": "315.2 KB",
+      "sha256": "1d852aa2b2463609c7e18bc6f647b7e4c1e524b4a1607abc44d858388eeacc77"
+    },
+    {
+      "file": "generated/charts/wdi-data-freshness-heatmap.svg",
+      "source": "research/topic-sprints/generated/charts/wdi-data-freshness-heatmap.svg",
+      "size": 275857,
+      "size_human": "269.4 KB",
+      "sha256": "4a60515c75757a00d40d6e545c64791a038a0d18437e70e41cb45096f9134d8c"
+    },
+    {
+      "file": "generated/nepal-market-climate-prices-sprint.csv",
+      "source": "research/topic-sprints/generated/nepal-market-climate-prices-sprint.csv",
+      "size": 137658,
+      "size_human": "134.4 KB",
+      "sha256": "8a83c22400b1686779398e3d82bb84ab71e5c1f02c32fd8f7f2141ab0336897e"
+    },
+    {
+      "file": "generated/nepal-market-climate-prices-sprint.json",
+      "source": "research/topic-sprints/generated/nepal-market-climate-prices-sprint.json",
+      "size": 681081,
+      "size_human": "665.1 KB",
+      "sha256": "b476c0d97789bcc615b7a86758f4ad191818ba73b221c6cf0b7857dc59898ffb"
+    },
+    {
+      "file": "generated/shock-payment-rails-sprint.csv",
+      "source": "research/topic-sprints/generated/shock-payment-rails-sprint.csv",
+      "size": 5030,
+      "size_human": "4.9 KB",
+      "sha256": "59b1cb7ffbde42d88114dd7e982dc3975a820c5df317039c1a1d83766cb7bfc4"
+    },
+    {
+      "file": "generated/shock-payment-rails-sprint.json",
+      "source": "research/topic-sprints/generated/shock-payment-rails-sprint.json",
+      "size": 67962,
+      "size_human": "66.4 KB",
+      "sha256": "04e3c67c74c2d5b7849c6e2df710e3d92d551615b1a7f2a795146ad24f58f0f8"
+    },
+    {
+      "file": "generated/wdi-data-freshness-sprint.csv",
+      "source": "research/topic-sprints/generated/wdi-data-freshness-sprint.csv",
+      "size": 50833,
+      "size_human": "49.6 KB",
+      "sha256": "3450ee03ce1d7715a4cf6bcd18b6f233ed48cc0bf0dcf53db9d296252c76d529"
+    },
+    {
+      "file": "generated/wdi-data-freshness-sprint.json",
+      "source": "research/topic-sprints/generated/wdi-data-freshness-sprint.json",
+      "size": 196778,
+      "size_human": "192.2 KB",
+      "sha256": "c4f04495ff8b1e6ffcaca66df7561a6dd640ed87eb46eb819bb5e1b0da85f137"
+    },
+    {
+      "file": "reports/nepal-market-climate-prices-sprint.md",
+      "source": "research/topic-sprints/nepal-market-climate-prices-sprint.md",
+      "size": 5050,
+      "size_human": "4.9 KB",
+      "sha256": "6832e28204727a19195d952df92e56d6ce79d1e3fb5347fa7c7b947f0483bc0b"
+    },
+    {
+      "file": "reports/shock-payment-rails-sprint.md",
+      "source": "research/topic-sprints/shock-payment-rails-sprint.md",
+      "size": 5444,
+      "size_human": "5.3 KB",
+      "sha256": "4545f14d299e1b1518cf5d4a98d17f8d9f2c7e363b0126a8ea095b4448b8e57a"
+    },
+    {
+      "file": "reports/wdi-data-freshness-sprint.md",
+      "source": "research/topic-sprints/wdi-data-freshness-sprint.md",
+      "size": 4573,
+      "size_human": "4.5 KB",
+      "sha256": "a6f9bc5d63ac319621b1b142266b4b115baa17ba6a70d2ec2c36e58444a52ca2"
+    }
+  ]
+}

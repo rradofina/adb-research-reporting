@@ -2,66 +2,77 @@
 
 `attestation_chain: ai-first`
 
-Run on 2026-04-26 by `scripts/sensitivity.py` against the committed
-RPW + WDI artifacts. Per `CONSTITUTION.md` §6.6 every arbitrary
-numeric in `pre-registration.md` §6 is tested at ±50%. Run artifact:
+Run on 2026-06-16 by `scripts/sensitivity.py` against the repaired RPW +
+WDI artifacts. Per `CONSTITUTION.md` §6.6, every arbitrary numeric in
+`pre-registration.md` §6 is tested at +/-50 percent. Run artifact:
 `sensitivity-runs.json`.
 
 ---
 
-## 1. Test matrix
+## 1. Test Matrix
 
-Headline: **top-5 most-fragile DMCs by fragility-index ranking**.
-Decision-rule (per `pre-registration.md` §8): positive if the top-5
-composition changes by ≤ 1 entry in every perturbation row.
+Headline being tested: **top-five DMC composition in the repaired
+remittance-dependence x observed-cost triage screen**.
 
-| Parameter | Pre-registered | -50% test | +50% test | Top-5 change | Top-10 overlap with baseline | Decision-rule preserved? |
-|---|---|---|---|---|---|---|
-| Dependence cap (`dep_cap`) | 25.0 | 12.5 | 37.5 | 0 entries | 9–10 / 10 | yes |
-| Cost cap (`cost_cap`) | 15.0 | 7.5 | 22.5 | 0 entries | 9–10 / 10 | yes |
-| Both caps simultaneously | (25, 15) | (12.5, 7.5) | (37.5, 22.5) | 0 entries | 9–10 / 10 | yes |
-| Aggregation operator | multiplicative | — | additive | 0 entries (KGZ, NPL, TON, VUT, WSM all preserved) | 9 / 10 | yes |
-| Corridor-inclusion threshold | all observations | min 3 quotes | min 10 quotes | TODO (not yet run) | TODO | TODO |
+Decision rule from `pre-registration.md` §8: positive if the top-five
+composition changes by no more than one entry in any single perturbation
+row. The stricter "common across every row" set is reported separately and
+is not the same as the repaired baseline top five.
 
-**Common top-5 across every perturbation row computed:**
+| Run | Top five | Entry changes vs baseline | Top-10 overlap |
+|---|---|---:|---:|
+| baseline | KGZ, WSM, TON, NPL, VUT | 0 | 10 |
+| dep_cap_minus50 | KGZ, VUT, PAK, WSM, TON | 1 | 9 |
+| dep_cap_plus50 | TON, KGZ, NPL, WSM, VUT | 0 | 10 |
+| cost_cap_minus50 | KGZ, TON, NPL, WSM, VUT | 0 | 9 |
+| cost_cap_plus50 | KGZ, WSM, TON, NPL, VUT | 0 | 10 |
+| both_minus50 | KGZ, WSM, TON, VUT, NPL | 0 | 8 |
+| both_plus50 | TON, KGZ, NPL, WSM, VUT | 0 | 10 |
+| additive_aggregation | KGZ, TON, WSM, NPL, VUT | 0 | 9 |
 
-`['KGZ', 'NPL', 'TON', 'VUT', 'WSM']`
+**Common top-five set across every computed row:**
 
-The set is identical across all 8 computed perturbation rows. The
-decision rule from `pre-registration.md` §8 (≤ 1 entry change permitted)
-is satisfied with margin (0 entries change).
+`['KGZ', 'TON', 'VUT', 'WSM']`
 
-## 2. Replication ranges (for the article)
+The repaired sensitivity result therefore narrows the reader-facing
+language. The five-economy baseline should not be described as identical
+across every row. Nepal is cap-sensitive in `dep_cap_minus50`, where
+Pakistan enters the top five, but the maximum entry change is one.
 
-| Metric | Baseline | Min across sensitivity suite | Max across sensitivity suite |
-|---|---|---|---|
-| Top-5 set composition | KGZ, NPL, TON, VUT, WSM | identical (0 entries change) | identical (0 entries change) |
-| Top-10 set overlap with baseline | 10 / 10 | 9 / 10 (additive aggregation) | 10 / 10 |
-
-## 3. Robustness checks beyond ±50%
+## 2. Robustness Checks Beyond +/-50 Percent
 
 Completed:
+
 - **Multiplicative vs additive aggregation.** Switch to additive
-  aggregation `(n_dep + n_cost) / 2 * 100` keeps the top-5 identical
-  (overlap 5/5; top-10 overlap 9/10). The set finding is not an
-  artifact of the multiplicative operator.
+  aggregation `(n_dep + n_cost) / 2 * 100` preserves the repaired
+  baseline top-five membership, with rank reordering.
+- **Median-cost deepening.** `scripts/deepen-median-cost.py` preserves
+  the same five-economy set under both median-over-quotes and
+  median-of-corridor-medians cost.
+- **Corridor-flow weighting sprint.** `scripts/sprint-flow-weighted-cost.py`
+  preserves the same five-economy top-five set after joining RPW Q1 2025
+  corridor prices to World Bank/KNOMAD 2021 bilateral flow estimates, but
+  changes the order: KGZ, NPL, VUT, WSM, TON.
 
-TODO (deferred to §18.5 upgrade-pass):
-- **Minimum corridor sample size.** Recompute fragility with a
-  minimum of 3 / 10 RPW corridor observations per DMC. Some Pacific
-  micro-states have very few corridors; tighter thresholds may drop
-  them from the ranking.
-- **Time-window subsampling.** Recompute fragility with the latest 2
-  years of RPW vs. the latest 4 years to test whether 2025-Q1 alone
-  drives the ranking.
-- **Leave-one-out by DMC.** 50 reruns dropping each DMC; reports
-  whether any one DMC's removal materially shifts the ranking.
+Deferred to a later upgrade pass:
 
-## 4. Owner attestation
+- **Minimum corridor sample size.** Recompute with minimum 3 / 10 RPW
+  corridor observations per DMC. Several small economies have very few
+  corridors; tighter thresholds may drop them from the ranking.
+- **Time-window subsampling.** Recompute with the latest 2 years of RPW
+  versus the latest 4 years to test whether 2025-Q1 alone drives the
+  observed-cost axis.
+- **Leave-one-out by DMC.** Rerun after dropping each DMC; report whether
+  any one DMC's removal materially shifts the ranking.
+
+## 3. Attestation
 
 | Field | Value |
 |---|---|
-| Sensitivity suite run | yes (2026-04-26) |
-| Critical failures resolved | yes (no failures; top-5 set stable across all ±50% rows) |
+| Sensitivity suite run | yes (2026-06-16) |
+| Parser repair reflected | yes |
+| Critical claim correction | old all-five all-row stability wording superseded |
+| Maximum entry change vs baseline | 1 |
+| Common top-five across all runs | KGZ, TON, VUT, WSM |
 | Reviewer chain | §18 AI-first under §18.1 |
 | Upgrade-eligible | yes |

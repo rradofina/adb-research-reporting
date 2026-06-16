@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-brief
-title: Five DMCs persistently cluster as remittance-corridor-stress-exposed
-subtitle: A one-page brief on a cap-stable, aggregation-stable top-five set across the ±50 percent sensitivity suite.
+title: Five DMCs remain in the repaired remittance corridor-cost set
+subtitle: A one-page brief on the repaired baseline top-five set, the narrower sensitivity core, and the flow-weighted corridor-cost check.
 kind: brief
 tier: brief
 status: draft
@@ -16,12 +16,13 @@ maturity: PP
 abstract: >
   Across the 21 ADB regional developing member economies with both the WDI
   remittance-dependence series and an RPW Q1 2025 corridor cost observed, five economies
-  — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the top five
-  of a joint remittance-dependence × inbound-cost ranking, and remain in the
-  top five in every row of a ±50 percent sensitivity suite on the
-  pre-registered caps, including a switch from multiplicative to additive
-  aggregation. The set is the headline. The internal rank inside the set
-  is not robust enough to treat as policy information.
+  — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the repaired
+  baseline top five of a joint remittance-dependence x inbound-cost screen.
+  After the 2026-06-16 RPW parser repair, the common set across the full
+  +/-50 percent sensitivity suite narrows to four economies: Kyrgyz Republic,
+  Tonga, Vanuatu, and Samoa. Nepal is cap-sensitive in one row, but remains in
+  the median-cost and flow-weighted top-five checks. The set is a triage
+  signal, not a country ranking or household exposure estimate.
 references:
   - wb2024rpw
   - ratha2024migration
@@ -39,42 +40,44 @@ published cost of remitting into a destination — but they are not
 aggregated into a single ADB-DMC view. A planner who reads them
 separately treats each as a single-axis problem; the economies exposed
 on both axes do not announce themselves. The screen below produces a
-joint view for triage use and asks a narrow question: does any small
-set of DMCs persistently sit at the top of the joint ranking across the
-arbitrary choices the screen forces?
+joint view for triage use and asks a narrower measurement question:
+what changes once the cost axis is repaired, checked against medians,
+and weighted by estimated bilateral remittance flows?
 
 # What we found
 
-Five DMCs sit in the top five of the joint-exposure screen in every row
-of the ±50 percent sensitivity suite:
+Five DMCs sit in the repaired baseline top five of the joint-exposure
+screen. Four remain common across the full +/-50 percent sensitivity
+suite after the parser repair, while Nepal remains in the top-five set
+under the median-cost and flow-weighted checks:
 
 - **Kyrgyz Republic** — 26.6% remittance/GDP × 10.5% mean cost
   ([@wb2024rpw] Q1 2025; one observed corridor — small-sample caveat).
 - **Samoa** — 24.0% × 8.0% (two corridors).
 - **Tonga** — 42.6% × 7.5% (two corridors).
 - **Vanuatu** — 18.8% × 9.5% (two corridors).
-- **Nepal** — 26.2% × 6.7% (eight corridors).
+- **Nepal** — 26.2% × 7.3% in the repaired baseline (eight corridors);
+  flow weighting raises the observed-cost read and moves Nepal from
+  fifth to second in the flow-weighted screen.
 
-Top-10 overlap with baseline ranges from 9 of 10 (under additive
-aggregation) to 10 of 10 (in every cap perturbation). The
-pre-registered decision rule — *at most one entry change in any single
-perturbation* — is satisfied with margin.
+The previous all-row top-five stability wording is superseded by the
+repaired artifacts. The honest result is a five-economy baseline and
+flow-weighted set, plus a four-economy sensitivity core.
 
-![Dot-plot of 20 rankable ADB DMCs in dependence × cost space. The horizontal axis is personal remittances received as a share of GDP (WDI, latest year); the vertical axis is mean inbound transfer cost as a percent (RPW Q1 2025). Five red bubbles in the upper-right region — KGZ, NPL, TON, VUT, WSM — mark the stable top-five set. Bubble size scales with the number of RPW corridors observed: TON, VUT, WSM appear as small bubbles (two corridors each), KGZ as the smallest (one corridor), NPL is the only top-five entry with eight corridors. Dashed reference lines show the pre-registered dependence cap (25% of GDP) and cost cap (15%); the dotted reference line shows SDG target 10.c.1 (3% cost).](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
+![Dot-plot of 21 rankable ADB DMCs in dependence x cost space. The horizontal axis is personal remittances received as a share of GDP (WDI, latest year); the vertical axis is mean inbound transfer cost as a percent (RPW Q1 2025). Red bubbles mark the four-economy sensitivity core — KGZ, TON, VUT, WSM. Nepal is shown as the repaired baseline top-five member that is cap-sensitive in the +/-50 percent suite but remains in the median-cost and flow-weighted top five. Bubble size scales with the number of RPW corridors observed. Dashed reference lines show the pre-registered dependence cap (25% of GDP) and cost cap (15%); the dotted reference line shows SDG target 10.c.1 (3% cost).](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
 
 # Why it matters for project preparation
 
-When dependence and observed cost combine persistently across plausible
-modeling choices, the joint screen is a defensible **triage** instrument
-— it tells a project pipeline which economies deserve deeper corridor
-audits first. It does not tell a planner what the household-level cost
-incidence is, whether informal corridors substitute for the formal ones
-RPW observes, or whether volume-weighted corridor cost would re-order
-the set. Those questions require central-bank corridor flows, IMF
-DOTS, or LSMS/DHS receipt-concentration data — none of which this
-screen consumes. SDG target 10.c.1 [@un2015sdg10c1] asks countries to
-reduce average remittance costs below 3 percent; every member of the
-top-five sits more than twice that target on the observed-cost axis.
+When dependence and observed cost combine across the repaired baseline,
+median-cost check, and flow-weighted check, the joint screen is a
+defensible **triage** instrument — it tells a project pipeline which
+economies deserve deeper corridor audits first. It does not tell a
+planner what the household-level cost incidence is, whether informal
+corridors substitute for the formal ones RPW observes, or whether the
+2021 KNOMAD flow matrix captures current household exposure. SDG target
+10.c.1 [@un2015sdg10c1] asks countries to reduce average remittance
+costs below 3 percent; the repaired baseline top-five all sit above
+that reference line on the observed-cost axis.
 
 # What this brief does NOT claim
 

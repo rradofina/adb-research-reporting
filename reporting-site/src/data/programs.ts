@@ -156,8 +156,8 @@ export const programs: ProgramEntry[] = [
     title: "Remittance resilience gaps",
     status: "PP",
     summary:
-      "Tonga 42.6 %, Kyrgyz Republic 26.6 %, Nepal 26.2 %, Samoa 24.0 %, Vanuatu 18.8 % — five small economies where remittances are the economy, all paying corridor cost above the SDG 10.c.1 5 % cap. The same five sit in the most-fragile cluster across every ±50 % perturbation.",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
+      "Tonga 42.6 %, Kyrgyz Republic 26.6 %, Nepal 26.2 %, Samoa 24.0 %, Vanuatu 18.8 % -- five economies where remittances are central to GDP and observed RPW corridor costs sit above the SDG 10.c.1 3 % reference line. The repaired baseline top five survive median and flow-weighted checks as a set; the +/-50 % sensitivity common core narrows to four.",
+    note: "Demoted PR -> PP on 2026-05-07; reopened for parser repair and flow-weighted corridor-cost deepening.",
     href: "/program/remittance-resilience",
   },
   {

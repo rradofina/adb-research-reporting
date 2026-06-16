@@ -19,6 +19,14 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Topic from "./pages/Topic";
 import NativeCharts from "./pages/NativeCharts";
+import NativeDeepenings from "./pages/NativeDeepenings";
+import Showcase from "./pages/Showcase";
+import ShowcaseDataFreshness from "./pages/ShowcaseDataFreshness";
+import ShowcaseShockPayment from "./pages/ShowcaseShockPayment";
+import ShowcasePSDQ from "./pages/ShowcasePSDQ";
+import ShowcaseRemittanceFlow from "./pages/ShowcaseRemittanceFlow";
+import ShowcaseAirMonitoring from "./pages/ShowcaseAirMonitoring";
+import ShowcaseAccessCompleteness from "./pages/ShowcaseAccessCompleteness";
 import About from "./pages/About";
 import Doc from "./pages/Doc";
 import Docs from "./pages/Docs";
@@ -43,6 +51,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           {/* === Top-level surfaces === */}
           <Route path="/" element={<Home />} />
           <Route path="/native-charts" element={<NativeCharts />} />
+          <Route path="/deepenings" element={<NativeDeepenings />} />
+          <Route path="/showcase" element={<Showcase />} />
+          <Route path="/showcase/data-freshness" element={<ShowcaseDataFreshness />} />
+          <Route path="/showcase/shock-payment-rails" element={<ShowcaseShockPayment />} />
+          <Route path="/showcase/psdq-source-disagreement" element={<ShowcasePSDQ />} />
+          <Route path="/showcase/remittance-flow-weighting" element={<ShowcaseRemittanceFlow />} />
+          <Route path="/showcase/air-monitoring-observability" element={<ShowcaseAirMonitoring />} />
+          <Route path="/showcase/access-map-completeness" element={<ShowcaseAccessCompleteness />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Docs />} />
 

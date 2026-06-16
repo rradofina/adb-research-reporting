@@ -1,7 +1,7 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/program/migration-displacement-signals/evidence",
-  "generated_at": "2026-05-28T17:55:49.033Z",
+  "generated_at": "2026-06-16T16:19:44.692Z",
   "hero": {
     "png": "generated/charts/migration-displacement-signals-thumbnail.png",
     "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
@@ -154,6 +154,18 @@
       "size": 77117,
       "size_human": "75.3 KB",
       "sha256": "3d5dc9afd1fc1ad144d454b043d4374bfd4955ffd1b6fb22e4b13796b0c8ae5d"
+    },
+    {
+      "file": "generated/migration-per-population-deepening.csv",
+      "size": 1995,
+      "size_human": "1.9 KB",
+      "sha256": "ce788acefc05575ded39c3a0c3e1b843e7cce0ac28f92986b9296b0200a2f4ab"
+    },
+    {
+      "file": "generated/migration-per-population-deepening.json",
+      "size": 15833,
+      "size_human": "15.5 KB",
+      "sha256": "264b3873c73834a64970d6ec64ffb0b827379f9bb021c13a807ec25ebe53c5cd"
     }
   ],
   "articles": [

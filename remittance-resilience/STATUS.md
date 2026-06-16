@@ -5,14 +5,14 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to remittance-resilience.
 
-Last updated: 2026-05-12.
+Last updated: 2026-06-16.
 
 ## Current
 
 | Field | Value |
 |---|---|
-| Maturity label | PP (demoted from SR-under-§18 on 2026-05-07; **ai-first finished for current issue** as of 2026-05-12 under Mode A — see Last completed below; promotion to higher labels requires §18.5 owner-led steps) |
-| Active stage | Stage 7 — Review loop closed under Mode A (2026-05-12) |
+| Maturity label | PP (demoted from SR-under-§18 on 2026-05-07; **ai-first finished for current issue** as of 2026-05-12 under Mode A, reopened for a repair/deepening pass after the 2026-05-29 median-cost audit; promotion to higher labels requires §18.5 owner-led steps) |
+| Active stage | L3 parser repair complete; L4 flow-weighting showcase prototype built and verified; formal ladder/review re-close next |
 | Active flagship | **Yes**, as of 2026-05-12 (rotated in from PSDQ) |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -20,18 +20,75 @@ Last updated: 2026-05-12.
 
 ## Current output target
 
-A reviewer-credible remittance-resilience evidence package matching the
-PSDQ-grade bar — working paper, program page, brief, blog post, social
-card, slide deck, and evidence packet — that a reader can understand,
-inspect, and cite at every depth, with the right caveats. The headline
-frame is **corridor-concentration risk as a measurement gap**, not a
-country ranking: which DMCs depend on remittance flows that travel
-through few-and-expensive corridors, where "few-and-expensive" is the
-disagreement between official cost statistics and corridor-weighted
-exposure.
+Repair and sharpen the remittance-resilience package so it no longer reads as
+a generic "fragility index" result. The current repaired version fixes the RPW
+negative-cost normalization defect, regenerates the panel/sensitivity/median
+artifacts, adds the public KNOMAD corridor-flow sprint, and ships a verified
+showcase prototype at `/showcase/remittance-flow-weighting`. The remaining
+program-level work is to formalize flow weighting inside the L3/L4 ladder,
+rebuild the review packet, and make every tier carry the repaired claim:
+baseline five, common sensitivity core of four, Nepal cap-sensitive, same
+top-five set after flow weighting but changed order.
 
 ## Last completed
 
+- **2026-06-16 (parser repair + flow-weighting showcase):**
+  `scripts/process-remittance.py` and `scripts/deepen-median-cost.py` now
+  normalize RPW costs by multiplying only nonnegative fractional values in
+  `[0, 1]` by 100; already-percentage negative quotes are not scaled again.
+  `scripts/sensitivity.py` now reports both the repaired baseline top-five
+  and the common top-five set across rows, plus the maximum top-five entry
+  change against baseline. Regenerated artifacts show baseline top five
+  `KGZ`, `WSM`, `TON`, `NPL`, `VUT`; common full-suite sensitivity core
+  `KGZ`, `TON`, `VUT`, `WSM`; and maximum top-five entry change of 1
+  (`PAK` replaces `NPL` when the dependence cap is halved). The median-cost
+  deepening keeps the same five-economy set. The KNOMAD-flow sprint matches
+  140 of 142 latest-period ADB-DMC-bound RPW corridors; flow weighting keeps
+  the same top-five set but changes order to `KGZ`, `NPL`, `VUT`, `WSM`,
+  `TON`, with low matched-flow coverage flagged for `KGZ`, `TJK`, `ARM`, and
+  `AFG`. Publication surfaces repaired this session include the program
+  README/results/sensitivity/coverage files, brief/blog/social/slides,
+  working paper, review notes, native chart metadata, and reporting-site data
+  summaries. New report surface:
+  `/showcase/remittance-flow-weighting`, with desktop and mobile screenshots
+  saved under `reporting-site/qa/`. Browser QA confirmed expected title,
+  22 scatter points, 13 side-panel bars, 40 sensitivity cells, working mode
+  toggles, zero page-level horizontal overflow, chart overflow contained
+  inside chart scrollers on mobile, no error overlay, and no browser errors
+  beyond existing Vite/React Router development warnings. Verification:
+  `npm run build` passed; five gates passed; `check-versions` reported no
+  source older than 180 days. This is a verified showcase prototype and
+  repair pass, not a maturity promotion or human-final closure.
+- **2026-06-16 (L2 hook sprint):**
+  `scripts/sprint-flow-weighted-cost.py` joined RPW Q1 2025 corridor prices
+  to the World Bank/KNOMAD 2021 bilateral remittance matrix and latest
+  available WDI remittance-dependence values. The sprint matched 140 of 142
+  ADB-DMC-bound latest-period RPW corridors to KNOMAD flows; the missing
+  RPW corridors are New Zealand -> Vanuatu and Oman -> Nepal. The equal-
+  weighted top group (`KGZ`, `WSM`, `TON`, `VUT`, `NPL`) remains the same
+  after flow weighting (`KGZ`, `NPL`, `VUT`, `WSM`, `TON`), but Nepal and
+  Vanuatu move upward enough to require repair before further public
+  reframing. Visual QA was performed on
+  `generated/charts/remittance-flow-weighting-sprint.png`: it renders,
+  labels the equal-weighted and flow-weighted axes, shows the SDG 10.c.1 3%
+  guide, and carries the source/vintage caveat. The generated JSON now flags
+  low matched-flow coverage below 25% for KGZ, TJK, ARM, and AFG. Decision:
+  promote the hook to the L3 repair pass, not to a public claim or maturity
+  promotion. Sprint note:
+  `l2-flow-weighting-sprint.md`.
+- **2026-05-29 (deepening pass, now binding for next work):**
+  `scripts/deepen-median-cost.py` recomputed the screen on median corridor
+  costs using the cached RPW Q1 2025 workbook and WDI remittance-dependence
+  series. The cluster membership {KGZ, TON, WSM, VUT, NPL} survived both
+  median-over-quotes and median-of-corridor-medians; Samoa and Tonga swapped
+  rank only. The pass also found a real upstream defect in
+  `scripts/process-remittance.py`: `raw*100 if raw<=1 else raw` multiplies
+  already-percentage negative values again, manufacturing extreme minima such
+  as -305% for Pakistan. The defect does not drive the top-five cluster, but
+  it corrupts `min_cost_pct` and any quote-pool statistic that uses those
+  negatives. The highest-value unresolved keystone is still volume-weighting:
+  test whether the cluster survives when each corridor is weighted by actual
+  bilateral remittance flow rather than counted equally.
 - **2026-05-12 (end of session):** Full Mode A publication-ladder
   build + review-loop close. Six tiers built or polished and one
   governance loop fired. **Tier 1 (working paper):** subtitle and
@@ -118,9 +175,9 @@ exposure.
 - `pre-registration.md` — first testable claim + falsification condition.
 - `scoring.md` — §3.3 rubric score.
 - `coverage.md` — DMC and source coverage.
-- `sensitivity.md` — ±50% suite outputs; top-5 set {KGZ, NPL, TON, VUT,
-  WSM} stable across every perturbation including
-  multiplicative→additive aggregation switch.
+- `sensitivity.md` — repaired ±50% suite outputs; baseline top five
+  {KGZ, WSM, TON, NPL, VUT}, common full-suite core
+  {KGZ, TON, VUT, WSM}, maximum top-five entry change of 1.
 - `results.md` — main result.
 - `limitations.md` — non-claims (composite triage, not headline; missing
   outbound-cost validation; Russia-route corridor concentration).
@@ -134,25 +191,38 @@ exposure.
   `.cache/wdi_remittance_pct_gdp.json`.
 - `articles/remittance-corridors-vulnerability-cluster.md` — Tier 1
   working paper draft.
+- `deep-questions.md` — AI-generated research agenda identifying the
+  volume-weighting question as the keystone.
+- `scripts/deepen-median-cost.py` and
+  `generated/remittance-median-deepening.{json,csv}` — robust-cost deepening
+  that keeps the same cluster but identifies the cost-normalization repair.
 
 ## Next focused work
 
-Build the publication ladder + close the Mode A review loop. In order:
+Finish the formal L3/L4 re-close before calling remittance done:
 
-1. **Audit the existing working paper** (`articles/remittance-corridors-vulnerability-cluster.md`) against the goal-skill's ADB/ERDI-style bar. The PSDQ pass found three recurring polish targets — opening register, headline placement, subtitle density. Apply equivalent polish before downstream tiers inherit it.
-2. **Per-program visualization.** The argument needs probably 1–2 charts: a corridor-cost distribution (e.g., violin or strip plot by destination DMC, sorted by dependence) and/or a Sankey of origin→destination corridor concentration. Write a Python build script (mirroring PSDQ's `build-choropleth.py`) that reads `generated/remittance-resilience-adb-panel.csv` and emits PNG + SVG. Reused by every downstream tier.
-3. **Tier 2 — program page.** Add `reporting-site/public/programs/remittance-resilience/` with synced generated artifacts; the live `/<slug>` route is served by `Topic.tsx` automatically once the article frontmatter has the right slug.
-4. **Tier 3 — brief.** `articles/_brief/remittance-resilience.md` (~500 words, single chart).
-5. **Tier 4 — blog post.** `articles/_blog/remittance-resilience.md` (~750 words, narrative for dev-econ reader).
-6. **Tier 5 — social card.** `articles/_social/remittance-resilience.md` (≤280 chars + alt text).
-7. **Tier 6 — slide deck.** `articles/_slides/remittance-resilience.md` (Quarto markdown, 8–15 slides, charts from the same Python script via Quarto code blocks). Built to `.pptx` via `scripts/build-slides.mjs`.
-8. **Tier 7 — evidence packet.** Built by `scripts/build-review-packet.mjs` once tiers 1–6 are in.
-9. **Mode A review loop.** §9.1 self-review + §9.2 critique-pass + §9.3 AI red-team synthesis (KNOMAD, WB M&R, ADBI, IOM) + optional AI second-opinion code review. Iterate until self-convergence.
-10. **End-of-task hygiene each iteration.** Five gates + `npm run build` + viewport-check at 1280 / 375 + per-program STATUS update.
+1. **Promote the flow-weighting sprint into formal program evidence.**
+   Decide whether `scripts/sprint-flow-weighted-cost.py` remains an L2 sprint
+   or becomes a named L3 sensitivity module. If it becomes L3, add the
+   decision rule and coverage thresholds to `pre-registration.md` or a clearly
+   dated addendum.
+2. **Rebuild the full review packet.** The showcase and public tiers are
+   repaired, but the Mode A packet should be rebuilt after the flow-weighting
+   status is settled so the archive reflects the 2026-06-16 evidence.
+3. **Run a final contradiction audit.** Search all remittance public surfaces
+   for superseded wording: "all five stable in every row", SDG 5% benchmark,
+   and "5-8 corridors". Historical audit notes may mention old errors only
+   when they are clearly marked as corrected.
+4. **Then continue the showcase goal.** Once the remittance packet is no
+   longer internally contradictory, continue the 10-20 report queue from
+   `research/hook-bank.md` with the next data-first candidate batch.
 
 ## Current blockers
 
-- None at AI-first depth. Owner-gated upgrades for §18.5 human-final:
+- None at AI-first depth for the parser repair and median-cost update.
+  The corridor-volume-weighting keystone depends on a public bilateral
+  remittance-flow source; treat a failed fetch as a named data wall, not as
+  permission to infer weights. Owner-gated upgrades for §18.5 human-final:
   - Real KNOMAD / WB M&R / IOM reviewer contact (not AI synthesis).
   - Owner line-by-line read of the working paper and re-attestation.
   - Owner-designated internal review.
@@ -164,8 +234,9 @@ Use this to continue a fresh session focused on remittance-resilience:
 ```text
 Read research/STATUS.md and remittance-resilience/STATUS.md, plus
 CLAUDE.md and research/factory.md. remittance-resilience is the active
-flagship as of 2026-05-12 (rotated in from PSDQ). Continue the
-publication-ladder build listed in remittance-resilience/STATUS.md.
-State the chosen review mode before iterating; default is Mode A under
-§18 ACTIVE.
+flagship as of 2026-05-12 (rotated in from PSDQ). Start with the
+repair/deepening pass listed in remittance-resilience/STATUS.md: cost-parser
+fix, regenerated evidence, then the corridor-volume-weighting keystone if the
+public bilateral flow source can be retrieved. State the chosen review mode
+before iterating; default is Mode A under §18 ACTIVE.
 ```

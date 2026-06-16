@@ -11,7 +11,7 @@
  */
 import { num, type Panel, type PanelRow } from "./data";
 
-export const SDG_CAP = 5;
+export const SDG_CAP = 3;
 
 export interface Callout {
   iso3: string;

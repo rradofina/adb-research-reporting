@@ -44,6 +44,22 @@ export default function Layout() {
               Native charts
             </NavLink>
             <NavLink
+              to="/deepenings"
+              className={({ isActive }) =>
+                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
+              }
+            >
+              Deepenings
+            </NavLink>
+            <NavLink
+              to="/showcase"
+              className={({ isActive }) =>
+                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
+              }
+            >
+              Showcase
+            </NavLink>
+            <NavLink
               to="/about"
               className={({ isActive }) =>
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")

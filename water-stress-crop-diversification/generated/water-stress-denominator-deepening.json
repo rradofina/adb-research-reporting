@@ -1,0 +1,155 @@
+{
+  "program": "water-stress-crop-diversification",
+  "analysis": "denominator artifact + term decomposition of the water-crop-pressure index",
+  "claim_scope": "Deepening of the committed water-crop-pressure screen. Demonstrates arithmetically that the headline's first term divides withdrawal by INTERNAL-only renewable water (ER.H2O.FWTL.ZS), so every value above 100% is a transboundary/fossil-aquifer denominator artifact, not domestic over-use; and that the rural-population multiplier, not water, promotes Afghanistan (43% withdrawal, below the cap) into the top-4. Triage measure (CONSTITUTION.md 6.4), not a country ranking. Measurement / observability-gap framing (13.3).",
+  "source": {
+    "name": "World Bank WDI (program cache)",
+    "indicators": [
+      "ER.H2O.FWTL.ZS (freshwater withdrawal % of INTERNAL renewable resources)",
+      "AG.YLD.CREL.KG (cereal yield kg/ha)",
+      "SP.RUR.TOTL.ZS (rural population %)",
+      "AG.LND.AGRI.ZS (agricultural land % area)",
+      "AG.LND.ARBL.ZS (arable land % area)"
+    ],
+    "license": "CC BY 4.0",
+    "lastupdated": {
+      "water": "2026-04-08",
+      "yield": "2026-04-08",
+      "rural": "2026-04-08"
+    },
+    "retrieved_at": "2026-04-25 (program cache)"
+  },
+  "reproduced_baseline_top4_raw_index": [
+    "TKM",
+    "PAK",
+    "AZE",
+    "UZB"
+  ],
+  "prereg_headline_top4_intersection_of_top5": [
+    "AFG",
+    "AZE",
+    "PAK",
+    "TKM"
+  ],
+  "baseline_fifth": {
+    "iso3": "AFG",
+    "index": 32.0
+  },
+  "afg_per_run_position": {
+    "baseline": 5,
+    "w_cap_minus50": 3,
+    "w_cap_plus50": 5,
+    "w_max_minus50": 3,
+    "w_max_plus50": 5,
+    "yield_base_minus50": 5,
+    "yield_base_plus50": 5
+  },
+  "over_100pct_internal_denominator": [
+    {
+      "iso3": "TKM",
+      "withdrawal_pct_internal": 1867.97153024911,
+      "water_term": 1.5,
+      "saturated_at_ceiling": true
+    },
+    {
+      "iso3": "PAK",
+      "withdrawal_pct_internal": 326.0,
+      "water_term": 1.5,
+      "saturated_at_ceiling": true
+    },
+    {
+      "iso3": "UZB",
+      "withdrawal_pct_internal": 262.545899632803,
+      "water_term": 1.5,
+      "saturated_at_ceiling": true
+    },
+    {
+      "iso3": "AZE",
+      "withdrawal_pct_internal": 160.52988293284,
+      "water_term": 1.5,
+      "saturated_at_ceiling": true
+    }
+  ],
+  "afghanistan_inversion": {
+    "withdrawal_pct": 43.0159066808059,
+    "below_cap": true,
+    "water_term": 0.4302,
+    "water_term_saturated": false,
+    "rural_pct": 74.2992647363812,
+    "yield_term": 1.0,
+    "index": 32.0
+  },
+  "rural_counterfactual": {
+    "top4_rural_dropped": [
+      "TKM",
+      "AZE",
+      "PAK",
+      "UZB"
+    ],
+    "top4_rural_flat": [
+      "TKM",
+      "AZE",
+      "PAK",
+      "UZB"
+    ],
+    "afg_rank_rural_dropped": 6,
+    "afg_rank_rural_flat": 6,
+    "afg_ejected_when_rural_dropped": true,
+    "high_withdrawal_set": [
+      "TKM",
+      "PAK",
+      "UZB",
+      "AZE"
+    ]
+  },
+  "land_use_proxy_NOT_crop_diversity": [
+    {
+      "iso3": "TKM",
+      "arable_pct_land": 3.38675802779137,
+      "agri_pct_land": 84.2215632115421,
+      "arable_over_agri": 0.0402,
+      "rank_low_to_high": 2
+    },
+    {
+      "iso3": "PAK",
+      "arable_pct_land": 39.2538397675384,
+      "agri_pct_land": 46.6933893731839,
+      "arable_over_agri": 0.8407,
+      "rank_low_to_high": 37
+    },
+    {
+      "iso3": "AZE",
+      "arable_pct_land": 25.307924984876,
+      "agri_pct_land": 57.8294010889292,
+      "arable_over_agri": 0.4376,
+      "rank_low_to_high": 25
+    },
+    {
+      "iso3": "UZB",
+      "arable_pct_land": 9.14331101781459,
+      "agri_pct_land": 58.0551458073301,
+      "arable_over_agri": 0.1575,
+      "rank_low_to_high": 11
+    },
+    {
+      "iso3": "AFG",
+      "arable_pct_land": 12.0294987964368,
+      "agri_pct_land": 58.4395075356853,
+      "arable_over_agri": 0.2058,
+      "rank_low_to_high": 13
+    },
+    {
+      "iso3": "IND",
+      "arable_pct_land": 51.752057554344,
+      "agri_pct_land": 60.0604064994165,
+      "arable_over_agri": 0.8617,
+      "rank_low_to_high": 39
+    }
+  ],
+  "data_walls": {
+    "aquastat_trwr": "Keystone option (1) — recompute stress on TOTAL renewable water (internal+external) — NOT runnable on-disk. Needs FAO AQUASTAT variable 4188 'Total renewable water resources (10^9 m3/yr)' and 4263 'Total water withdrawal' (or 4549 'TWW as % of TRWR') from the AQUASTAT Main Database CSV bulk export, per-country, latest 5-yr window. None of these is in .cache (cache holds 5 WDI series only). Until pulled, TKM/PAK/UZB/AZE above-100% values mix domestic scarcity with upstream geography.",
+    "faostat_crop_area": "Keystone option (3) — the Shannon-equitability / Herfindahl crop-diversity index the program name promises — NOT runnable on-disk. Needs FAOSTAT 'Crops and livestock products' (QCL) Area harvested (element 5312, ha) by item by country, to build harvested-area shares. Not in .cache. The cached arable/agri land split is a land-USE proxy only and does not measure crop mix."
+  },
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-05-29T02:01:12Z"
+}

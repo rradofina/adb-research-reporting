@@ -1,7 +1,7 @@
 {
   "program": "food-price-climate-transmission",
   "permanent_url": "/program/food-price-climate-transmission/evidence",
-  "generated_at": "2026-05-28T17:55:49.319Z",
+  "generated_at": "2026-06-16T16:19:46.628Z",
   "hero": {
     "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
     "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
@@ -154,6 +154,18 @@
       "size": 13022,
       "size_human": "12.7 KB",
       "sha256": "04bbba27fa2f0bbff4b06326d6d9c4cf71cbfe19ae404258c1395a7515b458dc"
+    },
+    {
+      "file": "generated/food-price-coverage-deepening.csv",
+      "size": 2137,
+      "size_human": "2.1 KB",
+      "sha256": "d8e99888ef532447e3ba31c137300d7be845d710caede54658a902067c8974ea"
+    },
+    {
+      "file": "generated/food-price-coverage-deepening.json",
+      "size": 4289,
+      "size_human": "4.2 KB",
+      "sha256": "99aa817d6e275ee2d99dc526824c190cd61dbe4450e36fc46a0fb8102172c07e"
     },
     {
       "file": "generated/food-price-reformulated-adb-panel.csv",

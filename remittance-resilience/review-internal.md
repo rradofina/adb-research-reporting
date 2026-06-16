@@ -17,7 +17,7 @@ written comments.
 ## 1. What was reviewed
 
 - `pre-registration.md` (§18 AI-frozen 2026-04-26)
-- `sensitivity.md` and `sensitivity-runs.json` (8 perturbation rows + additive aggregation; common top-5 stable)
+- `sensitivity.md` and `sensitivity-runs.json` (8 perturbation rows + additive aggregation; repaired common top-five core is KGZ, TON, VUT, WSM; maximum top-five entry change is one)
 - `coverage.md`
 - `generated/remittance-resilience-adb-panel.{json,csv}`
 - `articles/remittance-corridors-vulnerability-cluster.md`
@@ -27,20 +27,22 @@ written comments.
 ### 2.1 The fragility index is a composite — Constitution §6.4 risk
 
 Composite indices are triage only. The article must not headline the
-fragility score itself; it must headline the **set** finding. The
-draft article does this — the headline is "five DMCs are stable in
-the top-5 across every perturbation" — but a careless edit could
-slide back into "the most fragile DMC is KGZ at 70.3 fragility."
-Watch for this in any future revision.
+fragility score itself; it must headline the **set and caveat**
+finding. After the 2026-06-16 parser repair, the correct current
+wording is: repaired baseline top five = KGZ, WSM, TON, NPL, VUT;
+common full-suite sensitivity core = KGZ, TON, VUT, WSM; maximum
+top-five entry change in any stress row = one. A careless edit could
+slide back into either "the most fragile DMC is KGZ at 70.3
+fragility" or the superseded "all five stable in every row" wording.
+Watch for both in any future revision.
 
 ### 2.2 Pacific small islands are over-represented because RPW corridor coverage is thin
 
 Three of the five top-5 DMCs (TON, VUT, WSM) are Pacific small islands
-with very few RPW corridors as destinations. The mean transfer cost
-in those corridors may be a small-sample artifact; with 3-5 quotes
-per DMC the standard error on the mean is large. The minimum-corridor
-sensitivity row in `sensitivity.md` §3 is TODO; it should run before
-PR-grade publication.
+with very few RPW corridors as destinations; KGZ also has only one
+observed RPW corridor. The mean transfer cost in those corridors may
+be a small-sample artifact. The minimum-corridor check should be shown
+beside any PR-grade publication.
 
 ### 2.3 The dependence axis uses national-level WDI
 

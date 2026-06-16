@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-blog
-title: Five economies sit in the upper-right of the remittance-corridor map — and they stay there
-subtitle: A set-not-rank result for ADB developing member economies whose dependence on remittance flows runs into the highest published transfer costs.
+title: Five economies stay in the flow-weighted remittance corridor-cost set
+subtitle: A repaired set-and-measurement result for ADB developing member economies whose remittance dependence meets high observed corridor costs.
 kind: blog
 tier: blog
 status: draft
@@ -15,11 +15,11 @@ program: remittance-resilience
 maturity: PP
 abstract: >
   Five ADB developing member economies — Kyrgyz Republic, Nepal, Tonga,
-  Vanuatu, and Samoa — sit in the top five of a joint dependence × cost
-  ranking for remittances, and stay there across the full ±50 percent
-  sensitivity suite. The result is reported as a stable set, not a rank,
-  because the rank inside the set is not robust to the same perturbations
-  that leave set-membership stable. The screen is a triage instrument for
+  Vanuatu, and Samoa — sit in the repaired baseline top five of a joint
+  dependence x cost screen for remittances. After parser repair, four of
+  those economies remain common across the full +/-50 percent sensitivity
+  suite; Nepal remains in the median-cost and flow-weighted top-five checks
+  but is cap-sensitive in one suite row. The screen is a triage instrument for
   where corridor-cost work deserves attention first; it is not a household
   exposure measure and not a country-quality ranking.
 references:
@@ -54,26 +54,26 @@ that requires a joint view.
 # The numbers, as a set
 
 When you build a joint screen across the 21 ADB developing member
-economies with both axes observed, five economies persistently sit in
-the top five:
+economies with both axes observed, five economies sit in the repaired
+baseline top five:
 
 - **Kyrgyz Republic** — 26.6% of GDP from remittances, 10.5% mean
   corridor cost.
 - **Samoa** — 24.0% of GDP, 8.0% cost.
 - **Tonga** — 42.6% of GDP, 7.5% cost.
 - **Vanuatu** — 18.8% of GDP, 9.5% cost.
-- **Nepal** — 26.2% of GDP, 6.7% cost.
+- **Nepal** — 26.2% of GDP, 7.3% cost.
 
-The result is reported as a set, not a rank. The five economies remain
-the top five when the dependence cap moves from 12.5% to 37.5%, when
-the cost cap moves from 7.5% to 22.5%, when both caps move together,
-and when the index aggregation switches from multiplicative to
-additive. Top-10 overlap with baseline ranges from 9 of 10 to 10 of 10
-across every row of the suite. The rank-order inside the set is not
-robust to the same perturbations, so the artifact a reader should cite
-is the set, not the table order.
+The result is reported as a set-and-measurement result, not a rank.
+After the 2026-06-16 RPW parser repair, Kyrgyz Republic, Tonga,
+Vanuatu, and Samoa remain common across the full +/-50 percent
+sensitivity suite. Nepal is the important caveat: it is in the repaired
+baseline top five and remains in the median-cost and flow-weighted
+top-five checks, but it is cap-sensitive in one perturbation row. That
+is why the next version of the program leads with the weighting
+question, not with an all-row stability claim.
 
-![Dot-plot of 20 rankable ADB developing member economies in dependence × cost space. The horizontal axis is personal remittances received as a share of GDP from the World Bank WDI series; the vertical axis is mean inbound transfer cost as a percent from the World Bank Remittance Prices Worldwide Q1 2025 dataset. Five red bubbles in the upper-right region — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — mark the stable top-five set. Bubble size scales with the number of RPW corridors observed: Tonga, Vanuatu, and Samoa appear as small bubbles (two corridors each), Kyrgyz Republic as the smallest (one corridor), Nepal is the only top-five entry with eight corridors. Dashed reference lines show the pre-registered dependence cap (25 percent of GDP) and cost cap (15 percent); the dotted reference line shows SDG target 10.c.1 (3 percent cost).](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
+![Dot-plot of 21 rankable ADB developing member economies in dependence x cost space. The horizontal axis is personal remittances received as a share of GDP from the World Bank WDI series; the vertical axis is mean inbound transfer cost as a percent from the World Bank Remittance Prices Worldwide Q1 2025 dataset. Red bubbles mark the four-economy sensitivity core; Nepal is highlighted as the repaired baseline top-five member that is cap-sensitive but remains in the median-cost and flow-weighted top-five checks. Bubble size scales with RPW corridors observed. Dashed reference lines show the pre-registered dependence cap (25 percent of GDP) and cost cap (15 percent); the dotted reference line shows SDG target 10.c.1 (3 percent cost).](/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg)
 
 # Why this is not a country ranking
 
@@ -89,14 +89,12 @@ about the small-sample members can simply look at the chart: the
 bubbles for KGZ, TON, VUT, and WSM are small.
 
 Second, the headline cost is a destination-level mean across all
-observed corridors. Some of those corridors carry most of the actual
-flow; some carry almost none. For the Kyrgyz Republic, the
-Russia–Kyrgyz corridor is anomalously low (~2–3 percent) because of
-MTO competition and EAEU banking integration; the non-Russia corridors
-that drag the destination mean up account for a small share of actual
-inbound flow. Volume-weighted cost would be the more appropriate
-measure; the data to compute it (central-bank corridor flows, IMF
-DOTS) is not in RPW.
+observed corridors. Some of those corridors carry most of the estimated
+flow; some carry almost none. The repair pass now joins RPW corridors
+to the World Bank/KNOMAD 2021 bilateral flow matrix for a public
+flow-weighted check. It keeps the same five economies in the
+flow-weighted top five, but the order changes enough that the
+measurement choice has to be shown rather than hidden.
 
 Third, informal corridors — hawala/hundi/undocumented MTO use — are
 common in GCC → South Asia and Russia → Central Asia routes
@@ -122,8 +120,10 @@ central-bank flow series).
 
 # What's next
 
-The full working paper documents the method, the sensitivity suite,
-the limitations, and the upgrade path to a human-final attestation at
+The full working paper and public tiers are being repaired around the
+new parser and flow-weighting artifacts. They document the method, the
+sensitivity suite, the limitations, and the upgrade path to a
+human-final attestation at
 `articles/remittance-corridors-vulnerability-cluster.md`. The
 reproducibility runbook and committed scripts live in
 `remittance-resilience/`. This blog post carries an `ai-first`

@@ -6,13 +6,13 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-05-29.
+Last updated: 2026-06-16.
 
 ## Current focus
 
 | Field | Value |
 |---|---|
-| Active flagship | `remittance-resilience` (PP; **ai-first finished for current issue** as of 2026-05-12 under Mode A; corridor-concentration cluster) |
+| Active flagship | `remittance-resilience` (PP; **ai-first finished for current issue** as of 2026-05-12 under Mode A; reopened for repair/deepening pass: RPW cost-normalization fix + corridor-volume-weighting keystone) |
 | Per-program board | [`remittance-resilience/STATUS.md`](../remittance-resilience/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -104,6 +104,7 @@ Generic across programs. Use these in chat updates and handoffs.
 | `research/wip-register.md` | Maturity register (which program at which label) |
 | `CONSTITUTION.md` §15 | Program register of record |
 | `research/TODO-NEXT-SESSION.md` | Backlog of useful future work (cross-program) |
+| `research/hook-bank.md` | Data-first shortlist for non-generic topic hooks |
 | `research/factory.md` | Process manual: program loop, publication ladder, review loop |
 | `CLAUDE.md` | Operating rules for AI assistants |
 
@@ -142,6 +143,360 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-16 (access map-completeness showcase prototype):** Seventh
+  ADB/ERDI showcase report prototype added at
+  `/showcase/access-map-completeness`, reading
+  `access-services/generated/access-osm-completeness-deepening.json`,
+  `access-services/generated/access-osm-completeness-deepening-phl.csv`, and
+  `access-services/generated/access-services-adb-panel.json`. The
+  access-services deepening script was rerun on 2026-06-16 and confirms the
+  identity check that PSDQ's ARMM population divided by OSM health points
+  reproduces the access panel's ARMM people-per-facility value exactly. For
+  the Philippines, 16 of 17 ADM1 regions change rank once the denominator
+  switches from OSM health points to the official clinical registry; ARMM
+  moves from 68,678 people per OSM facility to 4,427 people per registry
+  facility, while NCR becomes the highest registry-denominator load. The
+  Philippine rank correlation between OSM capture and OSM people-per-facility
+  is -0.8105; the log-log R2 is 0.5372. Bangladesh shows the same sign more
+  weakly in the available 8-division check. The showcase surface uses a
+  desktop rank-flip chart, a completeness scatter with fitted log-log guide,
+  a correction-wall chart for the 8-economy cluster, and a mobile-specific
+  rank-shift summary after screenshot QA showed the full slope chart cropped
+  too much on a narrow viewport. Browser QA saved desktop/mobile first-view
+  and evidence-view screenshots under `reporting-site/qa/`; checks confirmed
+  expected title, `16/17` and `-0.81` hero stats, 17 rank lines, 34 rank dots,
+  17 scatter points, one fitted line, 8 correction-wall bars, 2 corrected
+  dots, active mode toggles, no page-level horizontal overflow, and no fresh
+  browser errors beyond existing Vite/React Router development warnings.
+  `npm run build`, the five gates, and `check-versions` passed before status
+  handoff. This counts as the seventh verified showcase prototype, not a
+  maturity promotion. The next `access-services` loop is official-registry
+  expansion for PAK/KHM/LAO/NPL/LKA/TLS and a public travel-time/friction
+  denominator before any access-ranking claim.
+- **2026-06-16 (air-monitoring observability showcase prototype):** Sixth
+  ADB/ERDI showcase report prototype added at
+  `/showcase/air-monitoring-observability`, reading
+  `air-monitoring/generated/air-monitoring-concentration-deepening.json` and
+  `air-monitoring/generated/air-monitoring-adb-panel.json`. The deepening
+  script now fetches/caches public World Bank WDI GDP per capita and replaces
+  the earlier false "network blocked" wall with a descriptive GDP-adjusted
+  monitor-density check. Current generated evidence shows 13 ADB-region
+  economies above the WHO PM2.5 guideline with no visible public PM2.5 monitor
+  in the OpenAQ panel; 83.5% of that zero-monitor population is in Papua New
+  Guinea and Timor-Leste. The GDP partial frame covers 33 monitored economies,
+  with Azerbaijan, Indonesia, Sri Lanka, Myanmar, and Bangladesh showing the
+  largest positive monitor-density residuals relative to GDP per capita.
+  Browser QA saved desktop and mobile first-view/evidence-view screenshots
+  under `reporting-site/qa/`; checks confirmed the expected title, 13
+  zero-monitor bars, 33 residual points, 46 exposure-panel points, active mode
+  toggles, one fitted GDP line, no browser errors, no page-level horizontal
+  overflow, and mobile SVG sizing repaired after visual inspection. `npm run build`,
+  the five gates, and `check-versions` passed. This counts as the
+  sixth verified showcase prototype, not a maturity promotion. The next
+  `air-monitoring` loop should move from national observability screening to
+  station catchments with gridded population/PM2.5 and regulatory-inventory
+  validation before any stronger monitoring-gap claim.
+- **2026-06-16 (remittance flow-weighting showcase prototype):** Fifth
+  ADB/ERDI showcase report prototype added at
+  `/showcase/remittance-flow-weighting`, reading
+  `remittance-resilience/generated/remittance-flow-weighting-sprint.{json,csv}`,
+  `remittance-resilience/generated/remittance-median-deepening.{json,csv}`,
+  and `remittance-resilience/sensitivity-runs.json`. The remittance repair
+  pass fixed the RPW cost-normalization defect, regenerated the main panel,
+  sensitivity runs, median-cost deepening, fragility chart, thumbnail, and
+  synced site evidence. The repaired baseline top five are `KGZ`, `WSM`,
+  `TON`, `NPL`, `VUT`; the common full-suite sensitivity core is `KGZ`,
+  `TON`, `VUT`, `WSM`; the maximum top-five entry change is 1 because `PAK`
+  replaces `NPL` when the dependence cap is halved. The flow-weighting sprint
+  matches 140 of 142 latest-period ADB-DMC-bound RPW corridors to public
+  World Bank/KNOMAD 2021 bilateral-flow estimates; flow weighting keeps the
+  same five-economy set but changes order to `KGZ`, `NPL`, `VUT`, `WSM`,
+  `TON`, with low matched-flow coverage flagged for `KGZ`, `TJK`, `ARM`, and
+  `AFG`. Browser QA saved desktop/mobile first-view and evidence-view
+  screenshots under `reporting-site/qa/`; checks confirmed the expected
+  title, 22 scatter points, 13 side-panel bars, 40 sensitivity cells, working
+  mode toggles, no error overlay, no page-level horizontal overflow, mobile
+  chart overflow contained inside chart scrollers, and no browser errors
+  beyond existing Vite/React Router development warnings. `npm run build`,
+  the five gates, and `check-versions` passed. This counts as the fifth
+  verified showcase prototype, not a maturity promotion. The active
+  remittance program still needs a formal flow-weighting L3 decision and
+  rebuilt review packet before it can be re-closed as finished for the
+  current issue.
+- **2026-06-16 (PSDQ showcase visual uplift):** Fourth ADB/ERDI showcase
+  prototype added at `/showcase/psdq-source-disagreement`, reading committed
+  PSDQ artifacts
+  `public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.{csv,json}`
+  and `public-service-data-quality-summary.json`. The first viewport frames
+  the non-generic question "When the Map and Registry Disagree" and shows DGHS
+  clinical-registry counts versus OSM health features for the top exposure
+  rows. The interactive evidence view is a registry-vs-OSM disagreement
+  workbench: 16 ranked upazila rows, an OSM-visible registry-share strip,
+  DGHS/OSM counts, an Open Buildings 3 km p85 under-observed-building proxy,
+  division filter, focus selector, and metric toggle for exposure proxy, gap
+  share, and lowest OSM/registry ratio. Browser QA saved
+  `showcase-psdq-desktop.png`, `showcase-psdq-desktop-visual.png`,
+  `showcase-psdq-mobile.png`, and `showcase-psdq-mobile-visual.png` under
+  `reporting-site/qa/`; checks confirmed the expected title, 16 SVG rows,
+  sprint-derived hero stats, working metric toggle, no page-level horizontal
+  overflow, mobile chart overflow contained inside the chart scroller, and
+  zero page errors. Console output contained only existing Vite/React Router
+  development warnings. This is a source-QA visual uplift for a finished PSDQ
+  issue, not a facility-access claim, service-quality claim, ground-truth
+  judgment, or maturity promotion. Next showcase loop should either repair
+  remittance flow-weighting for a showcase-safe corridor report or start the
+  next evidence-first topic sprint from `research/hook-bank.md`.
+- **2026-06-16 (shock-payment showcase prototype):** Third ADB/ERDI
+  showcase prototype added at `/showcase/shock-payment-rails`, reading the
+  synced shock-payment rails sprint JSON and rendering an evidence-led report
+  on disaster exposure versus observable payment-use rails. The first viewport
+  now shows account ownership versus electronic payment use for high-exposure
+  rows, rather than a generic dashboard card. The interactive evidence view
+  renders a disaster-frequency by electronic-payment-use scatter with 26
+  plotted rows plus a concept-gap bar panel for account-minus-payment-use and
+  ASPIRE-coverage-minus-government-payment-account-use gaps. Browser QA saved
+  screenshots under `reporting-site/qa/` for desktop/mobile first view and
+  desktop/mobile visual view; checks confirmed the expected title, one scatter,
+  one gap chart, 26 plotted points, 12 bars, sprint-derived hero stats, working
+  gap toggle and economy selector, no framework overlay, no page-level
+  horizontal overflow, mobile chart overflow contained inside chart scrollers,
+  and zero page errors. Console output contained only existing Vite/React
+  Router development warnings. This is still a prototype report and program
+  prospectus candidate, not a readiness index, public claim, or maturity
+  promotion. Next showcase loop is remittance parser/flow-weight repair before
+  a showcase-safe remittance report, or PSDQ source-disagreement visual uplift.
+- **2026-06-16 (data-freshness showcase prototype):** Second ADB/ERDI
+  showcase prototype added at `/showcase/data-freshness`, reading the synced
+  WDI data-freshness sprint JSON and rendering an interactive 42-DMC by
+  9-indicator source-vintage matrix from the generated artifact. The report
+  frame follows the ADB/ERDI pattern: planning problem, hidden data-vintage
+  gap, World Bank WDI source upgrade, plain-English relative-lag method,
+  visual result, non-claim box, operational use, and reproduce links. Browser
+  QA saved screenshots under `reporting-site/qa/` for desktop/mobile first
+  view and desktop/mobile matrix view; checks confirmed the expected title,
+  one matrix with 378 cells, sprint-derived hero stats, focus-control update,
+  no framework overlay, no page-level horizontal overflow, mobile matrix
+  overflow contained inside the chart scroller, and zero page errors. Console
+  output contained only existing Vite/React Router development warnings. This
+  is still a prototype report and program prospectus candidate, not a public
+  claim or maturity promotion. Next showcase loop is either shock-payment
+  rails report design or L3 packaging of one of the two prototypes.
+- **2026-06-16 (ADB/ERDI showcase goal opened):** Owner started a new
+  persistent goal to build a 10-20 report ADB/ERDI-aligned research showcase,
+  with emotionally compelling but institutionally credible evidence surfaces.
+  This explicitly broadens the session from remittance-only repair to a
+  goal-directed showcase batch while preserving honest maturity labels.
+  `research/factory.md` now has a "Showcase report loop" requiring evidence
+  first, ADB/ERDI narrative shape, interactivity only when it clarifies
+  evidence, screenshot QA, and no maturity promotion from visual polish alone.
+  `research/hook-bank.md` now has an ADB/ERDI showcase queue for the first
+  five candidates. First prototype surface added at `/showcase` in
+  `reporting-site/`, reading the synced Nepal market-climate sprint JSON and
+  rendering a native interactive market-month heatmap. New sync script
+  `scripts/sync-topic-sprints.mjs` publishes topic-sprint generated files and
+  sprint notes into `reporting-site/public/topic-sprints/`. Browser QA saved
+  screenshots under `reporting-site/qa/` and checked desktop/mobile render,
+  heatmap render, no framework overlay, no page-level horizontal overflow, and
+  working animation control. This is a showcase prototype, not a public claim
+  or maturity promotion; next loop is L3 packaging for the Nepal report or
+  design of the next showcase surface.
+- **2026-06-16 (market-climate new-topic sprint):** Third new-topic L2
+  sprint completed under `research/topic-sprints/`. New script
+  `research/topic-sprints/scripts/sprint-nepal-market-climate-prices.py`
+  fetches WFP Nepal food-price and market CSV resources from HDX, pulls NASA
+  POWER monthly point data at selected market coordinates, and writes
+  `research/topic-sprints/generated/nepal-market-climate-prices-sprint.csv`,
+  `research/topic-sprints/generated/nepal-market-climate-prices-sprint.json`,
+  and a visually checked aligned heatmap at
+  `research/topic-sprints/generated/charts/nepal-market-climate-prices-heatmap.png`.
+  The generated artifact records 2,011 retained WFP rice price rows, 36
+  markets before selection, 12 selected markets, 1,008 market-month cells,
+  937 rows with both price anomaly and lagged precipitation anomaly, and 26
+  dry-price-spike screen cells. Decision: promote "market-level climate price
+  transmission" to a program prospectus candidate, not to a causal climate
+  claim. This closes the current top-three new-topic L2 sprint batch; next
+  action is to choose one promoted prospectus for L3 program packaging or
+  start a new L1 shortlist batch.
+- **2026-06-16 (shock-payment new-topic sprint):** Second new-topic L2
+  sprint completed under `research/topic-sprints/`. New script
+  `research/topic-sprints/scripts/sprint-shock-payment-rails.py` joins the
+  existing ASPIRE/Findex/WDI social-protection panel, the EM-DAT/HDX disaster
+  exposure panel, and fresh World Bank API payment-use indicators. It writes
+  `research/topic-sprints/generated/shock-payment-rails-sprint.csv`,
+  `research/topic-sprints/generated/shock-payment-rails-sprint.json`, and a
+  visually checked two-panel chart at
+  `research/topic-sprints/generated/charts/shock-payment-rails-scatter.png`.
+  The generated artifact records 42 DMC rows, 38 rows with disaster-event
+  frequency, 27 rows with digital-payment-use data, 21 rows with
+  government-payment account-use data, and 26 plotted rows. Decision: promote
+  "shock-payment rails after disasters" to a program prospectus candidate,
+  not to a public claim or readiness index. The next strongest new-topic
+  sprint was market-level climate price transmission.
+- **2026-06-16 (new-topic creation loop):** Owner clarified that `/goal
+  research` means refactoring topic creation and generating stronger **new**
+  data-first research topics, not only repairing remittance or other existing
+  programs. `research/factory.md` now has a "New-topic creation mode" that
+  separates repair hooks from new topics and stores exploratory scripts under
+  `research/topic-sprints/` until a hook earns a full program package.
+  `research/hook-bank.md` now has a separate new-topic shortlist with public
+  datasets, first visuals, non-generic questions, source caveats, AI roles,
+  kill/defer conditions, and a new-topic L2 sprint queue. First new-topic L2
+  sprint completed: `research/topic-sprints/scripts/sprint-wdi-data-freshness.py`
+  pulls selected World Bank WDI series, writes a 42 DMC by 9 indicator
+  freshness matrix, and renders
+  `research/topic-sprints/generated/charts/wdi-data-freshness-heatmap.png`.
+  The generated artifact records 378 cells, 19 missing cells, and 13 cells
+  three or more years behind the indicator's own latest public reference
+  year. Visual QA and source sanity are recorded in
+  `research/topic-sprints/wdi-data-freshness-sprint.md`. Decision: promote
+  "public data freshness blind spots" to a program prospectus candidate, not
+  to a public claim or maturity label. The goal remains active because more
+  top new-topic candidates still need L2 sprints.
+- **2026-06-16 (later):** `/goal research` completed its first L1 -> L2
+  loop. `research/hook-bank.md` is now a ranked data-first hook bank with 15
+  candidates, subjective triage scores, public data objects, first-visual
+  plans, non-generic questions, AI roles, and kill/defer conditions. Top
+  three L2 candidates are remittance flow weighting, PSDQ district/catchment
+  validation, and a road-quality/access pilot. The first L2 sprint was run on
+  remittance flow weighting:
+  `remittance-resilience/scripts/sprint-flow-weighted-cost.py` joined RPW Q1
+  2025 corridor prices to the World Bank/KNOMAD 2021 bilateral remittance
+  matrix and WDI remittance-dependence values, wrote CSV/JSON plus a PNG/SVG
+  rough visual, and recorded visual/source sanity in
+  `remittance-resilience/l2-flow-weighting-sprint.md`. Decision: promote the
+  hook into the remittance-resilience L3 repair pass, not into a public claim
+  or maturity promotion. The active flagship remains `remittance-resilience`;
+  next work is parser repair, regenerated evidence, formal flow-weighting
+  integration, publication re-sync, gates, build, and browser check.
+- **2026-06-16:** `/goal` sharpened from a generic research-factory reminder
+  into an operating bar for non-generic flagship work: one evidence spine,
+  program-native visuals, visible caveats, traceable artifacts, and a
+  concrete current repair bar for `remittance-resilience`. `research/factory.md`
+  now starts with a **data-first hook triage** before the standard loop:
+  find the public data object, build the rough visual first, ask what it makes
+  visible, reverse-design the research frame from that object, and ditch/defer
+  weak hooks that only produce generic rankings or topic summaries. A nested
+  goal stack now governs `/goal` and `research/factory.md`: L0 lab, L1 research
+  discovery, L2 hook sprint, L3 program package, L4 publication surface, L5
+  human-final upgrade. The active flagship remains `remittance-resilience`,
+  but the next session should not polish the old Mode A ladder as if complete.
+  It should start with the
+  May 2026 deepening finding: fix the RPW negative-cost normalization defect
+  in `process-remittance.py`, regenerate the panel/sensitivity/median-cost
+  artifacts and charts, then attempt the public bilateral-flow weighting
+  keystone or record the exact data wall. `research/hook-bank.md` added as
+  the `/goal research` output: a data-first candidate list ranked by public
+  data object, first visual, non-generic question, AI assist, and kill/defer
+  condition. `remittance-resilience/STATUS.md` now carries the active
+  repair/deepening plan.
+- **2026-05-29 (later, deepening pass — all 18):** Owner-directed real
+  deepening across the whole portfolio ("aren't we outputting real data,
+  charts, narratives, analysis? add that to the goal — full suite on all").
+  After the deep-questions pass, each program now also has a `deepen-*.py`
+  script, a generated artifact, and a `deepened-results.md` narrative.
+  **Binding rule honored:** every number is computed by a committed script
+  from data **already on disk** — the program `.cache/` raw public sources
+  (the committed fetch scripts had populated them; outbound network is
+  blocked this session) and committed `generated/` panels. No AI-supplied
+  figures; owner-gated/uncached keystones are named as walls, not faked.
+  Real findings (each traces to its artifact): **grid** — fuel concentration
+  is *higher* on generation than capacity (TJK 0.80→1.00; idle thermal
+  backup), the screen had the right worry and wrong variable; **migration**
+  — re-ranking by share-of-population collapses the entire absolute top-5
+  (CHN #2→#39), it was a population ranking; **disaster** — the
+  pre-registered kill-condition *fires*: by deaths the top-2 is IDN+MMR, IND
+  falls #2→#4; **social-protection** — VUT/TJK enter the top-5 and PHL/BGD
+  drop once dropped legs are imputed (completeness artifact);
+  **port-hinterland** — the imports-cap parameter is inert (max proxy 1.11 vs
+  2.0), half the ±50% pass is hollow; **food-price** — "LAO+PAK stable" is a
+  coverage artifact and the import axis is raw materials not food;
+  **remittance** — the cluster *survives* a robust median cost (good news),
+  but a real normalization bug in `process-remittance.py` (`raw*100 if
+  raw<=1`) manufactures the −305% quotes; **access** — the access ranking is
+  the inverse of OSM mapping completeness (ρ=−0.81); **invisible-urban** —
+  the ±50% sweep is a rank-preserving tautology (Spearman 1.0, 0 inversions);
+  **school-heat** — "KHM #1 across every perturbation" is false (loses one
+  run, one is all-zeros); **coastal** — dropping population reorders the
+  top-5; **climate-health** — at the flagged cap the index collapses to an
+  outdoor-labor ranking, and "exposed workers" was ×total-pop not labor
+  force; **PSDQ** — principal-tier OSM exceeds the registry (Central Luzon
+  117%), so the gap is largely the unmapped-BHS denominator; **water-stress**
+  — the top-4 saturate the water term, ordered by yield×rural;
+  **air-monitoring** — 83.5% of the "14.3M unmonitored" is PNG+Timor-Leste;
+  **mpi-nighttime-lights** (owner-led, not advanced) — 28/30 economies hold a
+  majority of MPI in health+education, bounding the eventual NTL axis to
+  ~14–31%. Named walls (owner action to close): IMF bilateral remittance
+  matrix; FAO AQUASTAT TRWR + FAOSTAT crop areas; WDI employment-to-pop and
+  HDI/GDP-per-capita level series; DHS/MICS microdata (PSDQ validation);
+  GHSL/DEM/surge + GLOFAS/Sentinel-1 rasters (coastal, flood,
+  invisible-urban); Earth Engine OAuth + VIIRS Black Marble (MPI); the
+  ~2.6 GB Ookla pull (digital-performance — runnable stub committed, refuses
+  to invent). Several deepenings produce real grounds to **revise headlines**
+  (disaster, school-heat, port, the size/completeness-artifact clusters); the
+  subagents correctly did *not* silently rewrite `results.md`/`pre-
+  registration.md` — headline retraction and maturity demotion are left for
+  owner review. 5 gates pass; active flagship unchanged; no maturity label
+  moved.
+- **2026-05-29 (later, deep-questions pass):** Owner-directed deep
+  research-questions pass across the whole portfolio ("write all the
+  remaining research deeply, ask all questions, no holds barred"). Wrote a
+  `{program}/deep-questions.md` for all 18 programs (~42k words) plus a
+  portfolio synthesis at `research/deep-questions.md`. These are
+  AI-generated research **agendas, not findings** — each asks the specific,
+  falsifiable, data-grounded questions the screening result never asked
+  (sections: falsifiers/keystone, mechanism, decision-grade estimand,
+  frontier, the existential question, data-needs table, keystone). The
+  synthesis names seven recurring structural patterns: national-unit vs
+  sub-national phenomenon; cluster = data-availability; hollow ±50%
+  robustness; title-vs-construct gap; no independent-outcome validation; no
+  mechanism; size/reporting as signal. Verified cracks worth acting on:
+  `port-hinterland-friction`'s imports-cap parameter is inert (never binds
+  below ~$10T imports; largest is $3.11T), so its ±50% pass is partly
+  hollow; `disaster-recovery-lag`'s pre-registered kill-condition is
+  *already met* (by the deaths metric the top-2 is IDN+CHN, not CHN+IND);
+  `school-heat-disruption`'s "KHM #1 across every perturbation" is
+  contradicted by its own `sensitivity-runs.json` (one run zeros all 32
+  economies; KHM is #2 in another); `water-stress` and `flood-market-access`
+  indices contain no diversification / no road-market-flood term despite
+  their names; `access-services` likely ranks OSM completeness, contradicting
+  sibling `public-service-data-quality` on data already in the repo. No
+  empirical claims were made or changed; no maturity labels moved.
+  Verification: 5 gates pass (banned-words 454 files, dmc-framing 459);
+  `npm run build` clean. Suggested next step (owner): pick one program and
+  answer its keystone — most are blocked only by reaching for public data
+  already named in the file.
+- **2026-05-29 (later):** Native-chart rendering layer added
+  (owner-requested proof of concept; "beautiful charts natively…
+  maps charts etc"). Program heroes can now render as interactive
+  in-browser SVG instead of a static matplotlib PNG, reading the SAME
+  committed `generated/*.json` a reviewer downloads on the Data tab — so
+  the visual is *more* auditable than a raster, not less. Scope:
+  - New deterministic basemap builder `scripts/build-webmap.mjs` →
+    committed `reporting-site/public/geo/asia-pacific.geojson` (152 KB;
+    Asia+Oceania, Pacific-centered at lon0=125, simplified from the
+    vendored Natural Earth 50m) + `asia-pacific-centroids.json`. A
+    geometry transform of a public-domain source; introduces no numbers.
+  - New primitives in `reporting-site/src/lib/charts/` + components in
+    `reporting-site/src/components/charts/` (`ChoroplethMap`, `Scatter`,
+    `RankedBar`, `ChartFrame`, tooltip, responsive hook). Themed to the
+    rebrand's ADB tokens; `attestation_chain` rendered as real text
+    (§18.2) rather than burned into pixels.
+  - Showcase at `/native-charts` renders the remittance map + scatter +
+    ranked bar from `remittance-resilience-adb-panel.json`, with a toggle
+    to compare against the current PNG. Cluster derived from the committed
+    panel (top-5 by the triage composite — selection only, never
+    headlined, §6.4); headline number + TJK exclusion annotation derived
+    from data, not hard-coded.
+  - `Topic.tsx` shows the native map as the remittance hero in-context;
+    every other program still renders its PNG (slug-guarded), and the
+    native hero falls back to the PNG while data loads or on any error —
+    no regression for the other 15 programs.
+  - Verification: `npm run build` clean; browser-checked 1280 desktop +
+    375 mobile, zero console errors, zero horizontal overflow (fixed a
+    mobile SVG-overflow bug — charts now scale to their container); five
+    gates pass. Publication-surface capability, not a per-program
+    advancement; active flagship unchanged. Per-program roll-out happens
+    as each program reaches publication stage.
 - **2026-05-29:** ADB visual-identity rebrand of `reporting-site`
   (owner-requested; "make the styling and feel like ADB"). Refactored
   the design **primitives** only — every page reads from these via

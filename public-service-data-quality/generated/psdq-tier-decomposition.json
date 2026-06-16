@@ -1,0 +1,336 @@
+{
+  "program": "public-service-data-quality",
+  "analysis": "tier decomposition — principal vs clinical OSM/registry ratio",
+  "claim_scope": "Deepening of the clinical-tier headline (OSM ~17.1% of NHFR-clinical). Reads the gap on the principal tier and the clinical tier side by side from the committed PHL/BGD panels, and re-derives the Barangay Health Station (factype 20) share of the clinical denominator straight from the raw committed NHFR cache. Decomposes the gap into a definitional-denominator component (the community-post tier neither enumeration convention shares) and a genuine-mapping component (the residual gap on the patient-facing principal tier). Triage / measurement-gap diagnostic per CONSTITUTION.md §6.4 and §13.3, not a country-quality ranking.",
+  "sources": {
+    "phl_panel": "generated/public-service-data-quality-PHL.json (process-multi-country.py)",
+    "bgd_panel": "generated/public-service-data-quality-BGD.json (process-multi-country.py)",
+    "bhs_rederivation": ".cache/nhfr_p*.json (23 pages, 44267 active rows)",
+    "osm": "access-services panel, Overpass amenity=hospital|clinic|doctors, ODbL",
+    "license_nhfr": "DOH NHFR v2.0; public-information disclosure framing under RA 9485"
+  },
+  "phl_national": {
+    "osm_health": 6401,
+    "registry_principal": 8789,
+    "registry_clinical": 37392,
+    "bhs_factype20_count": 27052,
+    "registry_clinical_excluding_bhs": 10340,
+    "bhs_share_of_clinical_pct": 72.3,
+    "bhs_share_of_clinical_missing_pct": 87.3,
+    "ratio_osm_to_clinical_pct": 17.1,
+    "ratio_osm_to_clinical_excl_bhs_pct": 61.9,
+    "ratio_osm_to_principal_pct": 72.8
+  },
+  "phl_principal_tier_over_100pct": [
+    {
+      "region": "Central Luzon",
+      "ratio_pct": 117.2,
+      "osm": 1139,
+      "registry_principal": 972
+    },
+    {
+      "region": "Davao Region",
+      "ratio_pct": 109.3,
+      "osm": 376,
+      "registry_principal": 344
+    }
+  ],
+  "bgd_principal_tier_over_100pct": [],
+  "phl_gradient": {
+    "clinical": {
+      "worst": "ARMM",
+      "worst_pct": 6.5,
+      "best": "NCR",
+      "best_pct": 63.5,
+      "ratio": 9.8
+    },
+    "principal": {
+      "worst": "ARMM",
+      "worst_pct": 22.1,
+      "best": "Central Luzon",
+      "best_pct": 117.2,
+      "ratio": 5.3
+    }
+  },
+  "phl_rows": [
+    {
+      "code": "PH-03",
+      "name": "Central Luzon",
+      "osm": 1139,
+      "reg_prin": 972,
+      "reg_clin": 3533,
+      "ratio_prin": 1.1718,
+      "ratio_clin": 0.3224,
+      "prin_over_100": true,
+      "prin_over_clin": 3.63
+    },
+    {
+      "code": "PH-11",
+      "name": "Davao Region",
+      "osm": 376,
+      "reg_prin": 344,
+      "reg_clin": 1646,
+      "ratio_prin": 1.093,
+      "ratio_clin": 0.2284,
+      "prin_over_100": true,
+      "prin_over_clin": 4.79
+    },
+    {
+      "code": "PH-00",
+      "name": "NCR",
+      "osm": 1094,
+      "reg_prin": 1233,
+      "reg_clin": 1722,
+      "ratio_prin": 0.8873,
+      "ratio_clin": 0.6353,
+      "prin_over_100": false,
+      "prin_over_clin": 1.4
+    },
+    {
+      "code": "PH-40",
+      "name": "Calabarzon",
+      "osm": 1004,
+      "reg_prin": 1264,
+      "reg_clin": 4396,
+      "ratio_prin": 0.7943,
+      "ratio_clin": 0.2284,
+      "prin_over_100": false,
+      "prin_over_clin": 3.48
+    },
+    {
+      "code": "PH-08",
+      "name": "Eastern Visayas",
+      "osm": 338,
+      "reg_prin": 484,
+      "reg_clin": 1479,
+      "ratio_prin": 0.6983,
+      "ratio_clin": 0.2285,
+      "prin_over_100": false,
+      "prin_over_clin": 3.06
+    },
+    {
+      "code": "PH-41",
+      "name": "Mimaropa",
+      "osm": 159,
+      "reg_prin": 229,
+      "reg_clin": 1474,
+      "ratio_prin": 0.6943,
+      "ratio_clin": 0.1079,
+      "prin_over_100": false,
+      "prin_over_clin": 6.43
+    },
+    {
+      "code": "PH-01",
+      "name": "Ilocos Region",
+      "osm": 307,
+      "reg_prin": 449,
+      "reg_clin": 2715,
+      "ratio_prin": 0.6837,
+      "ratio_clin": 0.1131,
+      "prin_over_100": false,
+      "prin_over_clin": 6.05
+    },
+    {
+      "code": "PH-06",
+      "name": "Western Visayas",
+      "osm": 308,
+      "reg_prin": 464,
+      "reg_clin": 2820,
+      "ratio_prin": 0.6638,
+      "ratio_clin": 0.1092,
+      "prin_over_100": false,
+      "prin_over_clin": 6.08
+    },
+    {
+      "code": "PH-10",
+      "name": "Northern Mindanao",
+      "osm": 253,
+      "reg_prin": 411,
+      "reg_clin": 1986,
+      "ratio_prin": 0.6156,
+      "ratio_clin": 0.1274,
+      "prin_over_100": false,
+      "prin_over_clin": 4.83
+    },
+    {
+      "code": "PH-15",
+      "name": "CAR",
+      "osm": 146,
+      "reg_prin": 254,
+      "reg_clin": 1238,
+      "ratio_prin": 0.5748,
+      "ratio_clin": 0.1179,
+      "prin_over_100": false,
+      "prin_over_clin": 4.88
+    },
+    {
+      "code": "PH-13",
+      "name": "Caraga",
+      "osm": 149,
+      "reg_prin": 267,
+      "reg_clin": 1458,
+      "ratio_prin": 0.5581,
+      "ratio_clin": 0.1022,
+      "prin_over_100": false,
+      "prin_over_clin": 5.46
+    },
+    {
+      "code": "PH-07",
+      "name": "Central Visayas",
+      "osm": 323,
+      "reg_prin": 584,
+      "reg_clin": 3260,
+      "ratio_prin": 0.5531,
+      "ratio_clin": 0.0991,
+      "prin_over_100": false,
+      "prin_over_clin": 5.58
+    },
+    {
+      "code": "PH-12",
+      "name": "Soccsksargen",
+      "osm": 173,
+      "reg_prin": 326,
+      "reg_clin": 1475,
+      "ratio_prin": 0.5307,
+      "ratio_clin": 0.1173,
+      "prin_over_100": false,
+      "prin_over_clin": 4.52
+    },
+    {
+      "code": "PH-05",
+      "name": "Bicol Region",
+      "osm": 267,
+      "reg_prin": 520,
+      "reg_clin": 3183,
+      "ratio_prin": 0.5135,
+      "ratio_clin": 0.0839,
+      "prin_over_100": false,
+      "prin_over_clin": 6.12
+    },
+    {
+      "code": "PH-02",
+      "name": "Cagayan Valley",
+      "osm": 168,
+      "reg_prin": 331,
+      "reg_clin": 2319,
+      "ratio_prin": 0.5076,
+      "ratio_clin": 0.0724,
+      "prin_over_100": false,
+      "prin_over_clin": 7.01
+    },
+    {
+      "code": "PH-09",
+      "name": "Zamboanga Peninsula",
+      "osm": 125,
+      "reg_prin": 331,
+      "reg_clin": 1571,
+      "ratio_prin": 0.3776,
+      "ratio_clin": 0.0796,
+      "prin_over_100": false,
+      "prin_over_clin": 4.74
+    },
+    {
+      "code": "PH-14",
+      "name": "ARMM",
+      "osm": 72,
+      "reg_prin": 326,
+      "reg_clin": 1117,
+      "ratio_prin": 0.2209,
+      "ratio_clin": 0.0645,
+      "prin_over_100": false,
+      "prin_over_clin": 3.42
+    }
+  ],
+  "bgd_rows": [
+    {
+      "code": "BD-H",
+      "name": "Mymensingh",
+      "osm": 207,
+      "reg_prin": 391,
+      "reg_clin": 2106,
+      "ratio_prin": 0.5294,
+      "ratio_clin": 0.0983,
+      "prin_over_100": false,
+      "prin_over_clin": 5.39
+    },
+    {
+      "code": "BD-F",
+      "name": "Rangpur",
+      "osm": 327,
+      "reg_prin": 641,
+      "reg_clin": 3185,
+      "ratio_prin": 0.5101,
+      "ratio_clin": 0.1027,
+      "prin_over_100": false,
+      "prin_over_clin": 4.97
+    },
+    {
+      "code": "BD-C",
+      "name": "Dhaka",
+      "osm": 1306,
+      "reg_prin": 2611,
+      "reg_clin": 6508,
+      "ratio_prin": 0.5002,
+      "ratio_clin": 0.2007,
+      "prin_over_100": false,
+      "prin_over_clin": 2.49
+    },
+    {
+      "code": "BD-G",
+      "name": "Sylhet",
+      "osm": 127,
+      "reg_prin": 338,
+      "reg_clin": 1626,
+      "ratio_prin": 0.3757,
+      "ratio_clin": 0.0781,
+      "prin_over_100": false,
+      "prin_over_clin": 4.81
+    },
+    {
+      "code": "BD-B",
+      "name": "Chittagong",
+      "osm": 467,
+      "reg_prin": 1338,
+      "reg_clin": 5172,
+      "ratio_prin": 0.349,
+      "ratio_clin": 0.0903,
+      "prin_over_100": false,
+      "prin_over_clin": 3.86
+    },
+    {
+      "code": "BD-D",
+      "name": "Khulna",
+      "osm": 376,
+      "reg_prin": 1086,
+      "reg_clin": 3573,
+      "ratio_prin": 0.3462,
+      "ratio_clin": 0.1052,
+      "prin_over_100": false,
+      "prin_over_clin": 3.29
+    },
+    {
+      "code": "BD-E",
+      "name": "Rajshani",
+      "osm": 362,
+      "reg_prin": 1157,
+      "reg_clin": 3805,
+      "ratio_prin": 0.3129,
+      "ratio_clin": 0.0951,
+      "prin_over_100": false,
+      "prin_over_clin": 3.29
+    },
+    {
+      "code": "BD-A",
+      "name": "Barisal",
+      "osm": 126,
+      "reg_prin": 464,
+      "reg_clin": 2017,
+      "ratio_prin": 0.2716,
+      "ratio_clin": 0.0625,
+      "prin_over_100": false,
+      "prin_over_clin": 4.35
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-05-29T02:01:26Z"
+}

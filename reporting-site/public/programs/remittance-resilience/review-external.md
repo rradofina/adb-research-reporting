@@ -62,10 +62,10 @@ equivalent paths under `remittance-resilience/`, including
 > should publish the corridor table (`expensive_corridors_top50` in
 > the JSON) prominently, not just the destination ranking.
 
-> **Objection 3.2.2.** The 5% cost benchmark from SDG 10.c.1 is the
+> **Objection 3.2.2.** The 3% cost benchmark from SDG 10.c.1 is the
 > standard reference. The article should map each top-5 DMC's mean
-> cost to the SDG benchmark explicitly: KGZ 10.5% (2.1× SDG), TON
-> 7.5% (1.5× SDG), etc.
+> cost to the SDG benchmark explicitly: KGZ 10.5% (3.5× SDG), TON
+> 7.6% (2.5× SDG), etc.
 
 ### 3.3 From C-3 (IZA migration cluster), synthesized
 
@@ -79,11 +79,11 @@ equivalent paths under `remittance-resilience/`, including
 ### 3.4 From C-4 (SPC, Pacific), synthesized
 
 > **Objection 3.4.1.** Pacific micro-states have very few RPW
-> corridors (Tonga's RPW corridor count is around 5–8; Vanuatu
-> similar). The mean cost across so few corridors has wide
-> sampling uncertainty. The article should report a confidence
-> interval on the mean cost or restrict the top-5 claim to DMCs
-> with at least 10 corridor observations.
+> corridors (Tonga, Vanuatu, and Samoa have two observed corridors
+> each in the repaired Q1 2025 panel). The mean cost across so few
+> corridors has wide sampling uncertainty. The article should report
+> a confidence interval on the mean cost or restrict the top-5 claim
+> to DMCs with at least 10 corridor observations.
 
 > **Objection 3.4.2.** Tonga and Samoa receive the bulk of their
 > remittances from a small set of sources (US, NZ, AU). The
@@ -140,8 +140,8 @@ destination-ranked table.
 ### 4.4 Response to C-2.2 (SDG 10.c.1 benchmark)
 
 Accepted. Article body maps each top-5 DMC's mean cost to the SDG
-10.c.1 benchmark (5%): KGZ 10.5% (2.1× SDG), WSM 7.96% (1.6×),
-TON 7.51% (1.5×), VUT 9.54% (1.9×), NPL 6.74% (1.3×).
+10.c.1 benchmark (3%): KGZ 10.5% (3.5× SDG), WSM 8.0% (2.7×),
+TON 7.6% (2.5×), NPL 7.3% (2.4×), VUT 9.5% (3.2×).
 
 ### 4.5 Response to C-3.1 (household concentration)
 

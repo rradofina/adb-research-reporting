@@ -38,6 +38,18 @@ ADB_DMCS = {
 }
 
 
+def normalize_rpw_cost(raw):
+    """Normalize RPW's mixed fractional/percentage convention.
+
+    RPW rows can appear as either fractions (0.05 for 5%) or percentages
+    (5.0 for 5%). The old parser multiplied every value <= 1 by 100, which
+    also magnified already-percentage negative observations. Keep negative
+    diagnostics visible, but only scale nonnegative fractional values.
+    """
+    value = float(raw)
+    return value * 100 if 0 <= value <= 1 else value
+
+
 def load_rpw():
     """Load RPW main dataset; return list of corridor observations."""
     print("Loading RPW xlsx (~49 MB; takes ~20 sec)...")
@@ -65,7 +77,8 @@ def load_rpw():
             "firm_type": row[cols["firm_type"]],
             "payment": row[cols["payment instrument"]],
             "access_point": row[cols["access point"]],
-            "cost_pct": float(cost) * 100 if cost <= 1 else float(cost),  # normalize: file mixes 0.05 and 5.0
+            "raw_cost": float(cost),
+            "cost_pct": normalize_rpw_cost(cost),
             "amount_usd": row[cols["cc1 denomination amount"]],
         })
     print(f"  {len(obs)} ADB-DMC-bound observations loaded")
@@ -116,6 +129,8 @@ def main():
         rpw_obs = by_dst.get(iso3, [])
         wdi_entry = wdi.get(iso3)
         costs = [o["cost_pct"] for o in rpw_obs]
+        negative_quotes = sum(1 for cost in costs if cost < 0)
+        sub1pct_quotes = sum(1 for cost in costs if 0 <= cost < 1)
         corridors = sorted(set((o["src"], o["dst"]) for o in rpw_obs))
         firms = len(set(o["firm"] for o in rpw_obs))
 
@@ -132,7 +147,7 @@ def main():
         # Cap at 1.0; combine multiplicatively × 100.
         if wdi_entry and mean_cost is not None:
             dep_norm = min((wdi_entry["value"] or 0) / 25.0, 1.0)
-            cost_norm = min(mean_cost / 15.0, 1.0)
+            cost_norm = max(0.0, min(mean_cost / 15.0, 1.0))
             fragility = round((dep_norm * cost_norm) * 100, 1)
         else:
             fragility = None
@@ -144,6 +159,8 @@ def main():
             "rpw_period": latest if rpw_obs else None,
             "rpw_corridors_observed": len(corridors),
             "rpw_firms_observed": firms if firms > 0 else None,
+            "rpw_negative_quotes": negative_quotes if rpw_obs else None,
+            "rpw_sub1pct_quotes": sub1pct_quotes if rpw_obs else None,
             "rpw_mean_cost_pct": mean_cost,
             "rpw_median_cost_pct": median_cost,
             "rpw_min_cost_pct": min_cost,
@@ -220,7 +237,14 @@ def main():
                 "Multiplicative combination of normalized dependence and "
                 "normalized inbound transfer cost: "
                 "min(wdi_pct_gdp / 25.0, 1.0) × min(mean_cost_pct / 15.0, 1.0) × 100. "
-                "Score 0–100. Triage measure, not a final risk rating."
+                "The cost axis is floored at zero if a negative quote artifact produces "
+                "a negative mean. Score 0–100. Triage measure, not a final risk rating."
+            ),
+            "rpw_cost_normalization": (
+                "RPW costs are normalized by multiplying only nonnegative fractional "
+                "values in [0, 1] by 100. Negative observations remain on their source "
+                "scale and are counted in rpw_negative_quotes; they are not multiplied "
+                "again."
             ),
         },
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

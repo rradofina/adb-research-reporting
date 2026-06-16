@@ -2,12 +2,13 @@
 
 Principle. The visualization rule in `research/factory.md` requires that each
 program has 1–2 visualizations its argument actually needs, defined once, used
-across every publication tier. Remittance-resilience's argument is that five
-DMCs (KGZ, NPL, TON, VUT, WSM) sit in the top five of a joint dependence × cost
-ranking and stay there across the ±50 percent sensitivity suite. The single
+across every publication tier. After the 2026-06-16 parser repair,
+remittance-resilience's argument is narrower: five DMCs (KGZ, NPL, TON, VUT,
+WSM) sit in the repaired baseline top five, while four of them (KGZ, TON, VUT,
+WSM) are common across the ±50 percent sensitivity suite. The single
 visualization that conveys this across attention budgets is a dependence × cost
-scatter with the top-five set highlighted and the pre-registered caps drawn as
-reference lines.
+scatter with the baseline top-five set highlighted and the pre-registered caps
+drawn as reference lines.
 
 Outputs (PNG raster + SVG vector):
   generated/charts/remittance-fragility-scatter.{png,svg}
@@ -26,6 +27,7 @@ What this does NOT do:
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 import matplotlib.patches as mpatches
@@ -36,13 +38,15 @@ GEN = ROOT / "generated"
 CHARTS = GEN / "charts"
 CHARTS.mkdir(parents=True, exist_ok=True)
 PANEL_CSV = GEN / "remittance-resilience-adb-panel.csv"
+SENSITIVITY_JSON = ROOT / "sensitivity-runs.json"
 
-# Pre-registered top-5 set (stable across the full ±50% sensitivity suite,
-# including a multiplicative→additive aggregation switch).
-TOP5 = {"KGZ", "NPL", "TON", "VUT", "WSM"}
+# Repaired baseline top-five set. Sensitivity common set is read from
+# sensitivity-runs.json when available.
+BASELINE_TOP5 = {"KGZ", "NPL", "TON", "VUT", "WSM"}
 
-# Pre-registered caps used in the fragility-index calibration. Both were
-# perturbed at ±50%; the top-5 set did not change in any row of the suite.
+# Pre-registered caps used in the fragility-index calibration. After the
+# 2026-06-16 parser repair, Nepal is cap-sensitive in one row of the suite,
+# while KGZ, TON, VUT, and WSM remain common across all rows.
 DEP_CAP = 25.0  # % GDP
 COST_CAP = 15.0  # %
 
@@ -99,6 +103,14 @@ def load_panel() -> list[dict]:
     return rows
 
 
+def load_common_top_set() -> set[str]:
+    if not SENSITIVITY_JSON.exists():
+        return set()
+    with SENSITIVITY_JSON.open(encoding="utf-8") as f:
+        payload = json.load(f)
+    return set(payload.get("common_top5_across_runs") or [])
+
+
 def build_scatter(rows: list[dict]) -> plt.Figure:
     fig, ax = plt.subplots(figsize=(11.0, 7.5))
 
@@ -120,8 +132,11 @@ def build_scatter(rows: list[dict]) -> plt.Figure:
     def size_for(c: int) -> float:
         return max(40.0, min(420.0, 30.0 + 30.0 * c))
 
-    top5_rows = [r for r in rows if r["iso3"] in TOP5]
-    other_rows = [r for r in rows if r["iso3"] not in TOP5]
+    common_top = load_common_top_set()
+    baseline_rows = [r for r in rows if r["iso3"] in BASELINE_TOP5]
+    common_rows = [r for r in baseline_rows if r["iso3"] in common_top]
+    cap_sensitive_rows = [r for r in baseline_rows if r["iso3"] not in common_top]
+    other_rows = [r for r in rows if r["iso3"] not in BASELINE_TOP5]
 
     ax.scatter(
         [r["wdi"] for r in other_rows],
@@ -130,25 +145,34 @@ def build_scatter(rows: list[dict]) -> plt.Figure:
         c="#bbcedd", edgecolor="#5e7c95", linewidth=0.6, alpha=0.85, zorder=3,
     )
 
-    ax.scatter(
-        [r["wdi"] for r in top5_rows],
-        [r["cost"] for r in top5_rows],
-        s=[size_for(r["corridors"]) for r in top5_rows],
-        c="#c0392b", edgecolor="#5a1a12", linewidth=1.0, alpha=0.95, zorder=5,
-    )
+    if common_rows:
+        ax.scatter(
+            [r["wdi"] for r in common_rows],
+            [r["cost"] for r in common_rows],
+            s=[size_for(r["corridors"]) for r in common_rows],
+            c="#c0392b", edgecolor="#5a1a12", linewidth=1.0, alpha=0.95, zorder=5,
+        )
+    if cap_sensitive_rows:
+        ax.scatter(
+            [r["wdi"] for r in cap_sensitive_rows],
+            [r["cost"] for r in cap_sensitive_rows],
+            s=[size_for(r["corridors"]) for r in cap_sensitive_rows],
+            c="#FBB00E", edgecolor="#7a4d00", linewidth=1.0, alpha=0.95, zorder=5,
+        )
 
     # Inline labels.
     for r in rows:
         if r["iso3"] not in NOTABLE:
             continue
-        in_top5 = r["iso3"] in TOP5
+        in_top5 = r["iso3"] in BASELINE_TOP5
+        in_common = r["iso3"] in common_top
         ax.annotate(
             r["iso3"],
             xy=(r["wdi"], r["cost"]),
             xytext=(8 if in_top5 else 6, 4 if in_top5 else 3),
             textcoords="offset points",
             fontsize=9.5 if in_top5 else 8,
-            color="#5a1a12" if in_top5 else "#33445a",
+            color="#5a1a12" if in_common else "#7a4d00" if in_top5 else "#33445a",
             fontweight="semibold" if in_top5 else "normal",
             zorder=6,
         )
@@ -163,21 +187,22 @@ def build_scatter(rows: list[dict]) -> plt.Figure:
 
     # Title and subtitle.
     fig.suptitle(
-        "Where remittance dependence and corridor cost both run high",
+        "Where remittance dependence and observed corridor cost both run high",
         fontsize=14, fontweight="semibold", x=0.125, ha="left", y=0.965,
     )
     fig.text(
         0.125, 0.925,
-        "Five DMCs — Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa — sit in the top five of the joint exposure "
-        "screen and stay there across the ±50% sensitivity suite. Bubble size = RPW corridors observed; small "
-        "bubbles (Pacific entries and KGZ) carry a small-sample caveat.",
+        "The repaired baseline top five are Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa. Four "
+        "of those remain common across the ±50% sensitivity suite; Nepal is cap-sensitive but remains "
+        "in the median-cost and flow-weighted top five. Bubble size = RPW corridors observed.",
         fontsize=9, color="#444", ha="left", va="top", wrap=True,
     )
 
     # Legend.
-    top5_patch = mpatches.Patch(color="#c0392b", label="Stable top-5 set (set is the headline; rank inside is not)")
+    top5_patch = mpatches.Patch(color="#c0392b", label="Common sensitivity core: KGZ, TON, VUT, WSM")
+    cap_patch = mpatches.Patch(color="#FBB00E", label="Baseline top-five, cap-sensitive: NPL")
     other_patch = mpatches.Patch(color="#bbcedd", label="Other rankable ADB DMCs")
-    ax.legend(handles=[top5_patch, other_patch], loc="upper right", fontsize=9, framealpha=0.95)
+    ax.legend(handles=[top5_patch, cap_patch, other_patch], loc="upper right", fontsize=9, framealpha=0.95)
 
     # Source footer (single-line wrap).
     fig.text(0.125, 0.015, SOURCE_FOOTER, fontsize=7, color="#7f8c8d", ha="left", va="bottom", wrap=True)

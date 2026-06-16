@@ -1,7 +1,7 @@
 {
   "program": "water-stress-crop-diversification",
   "permanent_url": "/program/water-stress-crop-diversification/evidence",
-  "generated_at": "2026-05-28T17:55:49.195Z",
+  "generated_at": "2026-06-16T16:19:45.898Z",
   "hero": {
     "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
     "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
@@ -154,6 +154,18 @@
       "size": 17065,
       "size_human": "16.7 KB",
       "sha256": "7d64d4719c9c8a5a215d5b7c0407a1fa2bb8a4944b387211e98e4637e7c0dd33"
+    },
+    {
+      "file": "generated/water-stress-denominator-deepening.csv",
+      "size": 3200,
+      "size_human": "3.1 KB",
+      "sha256": "019945af2e6c0b7a57b9b670e430ffda331ffa8be284cda0ec8d850c0c991276"
+    },
+    {
+      "file": "generated/water-stress-denominator-deepening.json",
+      "size": 5230,
+      "size_human": "5.1 KB",
+      "sha256": "6e6de7a9d6ae0adaa67f8a06cdc787459f282bf99a60e576b3635e5dbd5e59c4"
     }
   ],
   "articles": [

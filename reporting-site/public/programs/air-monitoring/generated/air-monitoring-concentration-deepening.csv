@@ -1,0 +1,14 @@
+iso3,country,subregion,population,pm25_exposure_ugm3,share_of_zero_monitor_pop,cumulative_share
+PNG,Papua New Guinea,The Pacific,10576502,17.31,0.7374,0.7374
+TLS,Timor-Leste,Southeast Asia,1400638,17.41,0.0977,0.8351
+FJI,Fiji,The Pacific,928784,12.42,0.0648,0.8999
+BRN,Brunei Darussalam,Southeast Asia,462721,7.6,0.0323,0.9322
+VUT,Vanuatu,The Pacific,327777,14.08,0.0229,0.9551
+WSM,Samoa,The Pacific,218019,12.55,0.0152,0.9703
+KIR,Kiribati,The Pacific,134518,11.26,0.0094,0.9797
+FSM,"Micronesia, Federated States of",The Pacific,113160,12.11,0.0079,0.9876
+TON,Tonga,The Pacific,104175,12.48,0.0073,0.9949
+MHL,Marshall Islands,The Pacific,37548,10.73,0.0026,0.9975
+PLW,Palau,The Pacific,17695,7.33,0.0012,0.9987
+NRU,Nauru,The Pacific,11947,6.06,0.0008,0.9995
+TUV,Tuvalu,The Pacific,9646,5.92,0.0007,1.0002

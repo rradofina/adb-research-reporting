@@ -1,0 +1,116 @@
+{
+  "program": "disaster-recovery-lag",
+  "analysis": "metric-falsification: does the committed top-2 survive deaths and per-capita?",
+  "claim_scope": "Deepening of the burden-ranking screen. Re-runs the pre-registered top-2 stability test (pre-registration.md S2) under two metrics the committed sensitivity matrix omitted: total deaths, and events-per-million-population. Triage measure (CONSTITUTION.md S6.4); measurement/observability gap framing (S13.3), not a country ranking.",
+  "headline_top2": [
+    "CHN",
+    "IND"
+  ],
+  "kill_condition": "Retract if the top-2 set composition changes by >=1 entry under any alternative metric (pre-registration.md S2).",
+  "metrics_top5": {
+    "events_per_year (committed)": [
+      "CHN",
+      "IDN",
+      "IND",
+      "PHL",
+      "VNM"
+    ],
+    "total_affected (committed)": [
+      "CHN",
+      "IND",
+      "PHL",
+      "BGD",
+      "PAK"
+    ],
+    "total_damage_usd_adj (committed)": [
+      "CHN",
+      "IND",
+      "THA",
+      "PAK",
+      "IDN"
+    ],
+    "total_deaths (DEEPENING)": [
+      "IDN",
+      "MMR",
+      "CHN",
+      "IND",
+      "PAK"
+    ],
+    "events_per_million_pop (DEEPENING, cross-program WDI join)": [
+      "TUV",
+      "MHL",
+      "TON",
+      "FSM",
+      "VUT"
+    ]
+  },
+  "kill_condition_by_metric": {
+    "events_per_year (committed)": {
+      "top2": [
+        "CHN",
+        "IDN"
+      ],
+      "differs_from_headline_top2": true,
+      "kill_condition_fires": true
+    },
+    "total_affected (committed)": {
+      "top2": [
+        "CHN",
+        "IND"
+      ],
+      "differs_from_headline_top2": false,
+      "kill_condition_fires": false
+    },
+    "total_damage_usd_adj (committed)": {
+      "top2": [
+        "CHN",
+        "IND"
+      ],
+      "differs_from_headline_top2": false,
+      "kill_condition_fires": false
+    },
+    "total_deaths (DEEPENING)": {
+      "top2": [
+        "IDN",
+        "MMR"
+      ],
+      "differs_from_headline_top2": true,
+      "kill_condition_fires": true
+    },
+    "events_per_million_pop (DEEPENING, cross-program WDI join)": {
+      "top2": [
+        "TUV",
+        "MHL"
+      ],
+      "differs_from_headline_top2": true,
+      "kill_condition_fires": true
+    }
+  },
+  "kill_condition_fires_overall": true,
+  "deaths_top2": [
+    "IDN",
+    "MMR"
+  ],
+  "sources": {
+    "emdat": {
+      "name": "EM-DAT — The International Disaster Database (CRED, UCLouvain)",
+      "file": ".cache/emdat_country_profiles.xlsx",
+      "vintage": "2026-04-24",
+      "rows_total": 6499,
+      "rows_in_filter": 1767,
+      "fields": "Total Events, Total Affected, Total Deaths, Total Damage (USD, adjusted)",
+      "note_threshold": "EM-DAT entry requires >=10 deaths OR >=100 affected OR a declared state of emergency / international appeal.",
+      "recompute_equals_committed_panel": true
+    },
+    "population": {
+      "name": "World Bank WDI SP.POP.TOTL (Population, total)",
+      "file": "climate-health-workdays/.cache/wdi_pop.json (CROSS-PROGRAM on-disk join)",
+      "lastupdated": "2026-04-08",
+      "denominator_year": "2024 (latest available in cache)",
+      "wall_note": "Population is NOT in EM-DAT and NOT in this program's committed panel. The per-million metric uses a 2024 single-year denominator from a sibling program's WDI cache applied to a 2000-2025 event count; it is an on-disk recompute, not a fetch, and is a cross-program join rather than this program's own lineage. Treat events-per-million as indicative of the per-capita INVERSION, not as a final calibrated rate."
+    }
+  },
+  "framing_rule": "Burden/observability gap, not country fragility ranking (S13.3).",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-16T16:22:21Z"
+}

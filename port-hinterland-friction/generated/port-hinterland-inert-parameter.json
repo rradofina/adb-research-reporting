@@ -1,0 +1,309 @@
+{
+  "program": "port-hinterland-friction",
+  "analysis": "inert imports-cap parameter (deep-questions.md §1.1 keystone)",
+  "claim_scope": "Deepening of the ±50% robustness claim. Tests whether the imports cap (2.0) — one of the two parameters sensitivity.md perturbs — is connected to the output. Triage measure (CONSTITUTION.md §6.4), not a country-quality ranking; observability-gap framing per §13.3.",
+  "source": {
+    "name": "World Bank LPI (via WDI) + WDI imports NE.IMP.GNFS.CD",
+    "files": "wdi_imports.json, wdi_lpi_overall.json (program cache)",
+    "license": "CC BY 4.0",
+    "retrieved_at": "2026-04-25 (program cache)"
+  },
+  "baseline_params": {
+    "divisor": 50.0,
+    "cap": 2.0
+  },
+  "imports_to_reach_cap_usd_trillions": 10.0,
+  "max_proxy_observed": 1.1147,
+  "dmcs_reaching_cap_baseline": 0,
+  "rankable_dmc_count": 26,
+  "proxy_by_dmc": [
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "imports_usd": 3106457704279.42,
+      "imports_b": 3106.46,
+      "proxy_uncapped": 1.1147,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "imports_usd": 856651130547.122,
+      "imports_b": 856.65,
+      "proxy_uncapped": 0.5854,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "imports_usd": 671437801987.667,
+      "imports_b": 671.44,
+      "proxy_uncapped": 0.5182,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "imports_usd": 339930322254.124,
+      "imports_b": 339.93,
+      "proxy_uncapped": 0.3687,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "imports_usd": 326979087436.138,
+      "imports_b": 326.98,
+      "proxy_uncapped": 0.3617,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "imports_usd": 268508401209.029,
+      "imports_b": 268.51,
+      "proxy_uncapped": 0.3277,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "imports_usd": 255625703549.712,
+      "imports_b": 255.63,
+      "proxy_uncapped": 0.3198,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "imports_usd": 178244920796.221,
+      "imports_b": 178.24,
+      "proxy_uncapped": 0.267,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "imports_usd": 77972815573.2438,
+      "imports_b": 77.97,
+      "proxy_uncapped": 0.1766,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "imports_usd": 72487044600.0899,
+      "imports_b": 72.49,
+      "proxy_uncapped": 0.1703,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "imports_usd": 60515108025.9204,
+      "imports_b": 60.52,
+      "proxy_uncapped": 0.1556,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "imports_usd": 42781543618.7589,
+      "imports_b": 42.78,
+      "proxy_uncapped": 0.1308,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "imports_usd": 28497892006.4196,
+      "imports_b": 28.5,
+      "proxy_uncapped": 0.1068,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "imports_usd": 19126705844.0978,
+      "imports_b": 19.13,
+      "proxy_uncapped": 0.0875,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "imports_usd": 17815477928.6556,
+      "imports_b": 17.82,
+      "proxy_uncapped": 0.0844,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "imports_usd": 15094573226.6612,
+      "imports_b": 15.09,
+      "proxy_uncapped": 0.0777,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "imports_usd": 14495454762.0276,
+      "imports_b": 14.5,
+      "proxy_uncapped": 0.0761,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "imports_usd": 14187827151.0516,
+      "imports_b": 14.19,
+      "proxy_uncapped": 0.0753,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "imports_usd": 13537979922.1991,
+      "imports_b": 13.54,
+      "proxy_uncapped": 0.0736,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "imports_usd": 9081237975.39983,
+      "imports_b": 9.08,
+      "proxy_uncapped": 0.0603,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "imports_usd": 8701650584.05282,
+      "imports_b": 8.7,
+      "proxy_uncapped": 0.059,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "imports_usd": 5931426226.59821,
+      "imports_b": 5.93,
+      "proxy_uncapped": 0.0487,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "imports_usd": 5725230206.32391,
+      "imports_b": 5.73,
+      "proxy_uncapped": 0.0479,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "imports_usd": 4986030514.21888,
+      "imports_b": 4.99,
+      "proxy_uncapped": 0.0447,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "imports_usd": 1607335845.17133,
+      "imports_b": 1.61,
+      "proxy_uncapped": 0.0254,
+      "hits_cap_2_0": false
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "imports_usd": 977101703.423479,
+      "imports_b": 0.98,
+      "proxy_uncapped": 0.0198,
+      "hits_cap_2_0": false
+    }
+  ],
+  "baseline_top5": [
+    "CHN",
+    "IND",
+    "IDN",
+    "VNM",
+    "THA"
+  ],
+  "committed_panel_top5": [
+    "CHN",
+    "IND",
+    "IDN",
+    "VNM",
+    "THA"
+  ],
+  "cap_perturbation": {
+    "1.0": {
+      "top5": [
+        "CHN",
+        "IND",
+        "IDN",
+        "VNM",
+        "THA"
+      ],
+      "overlap_with_baseline": 5,
+      "rows_truncated": [
+        "CHN"
+      ]
+    },
+    "2.0": {
+      "top5": [
+        "CHN",
+        "IND",
+        "IDN",
+        "VNM",
+        "THA"
+      ],
+      "overlap_with_baseline": 5,
+      "rows_truncated": []
+    },
+    "3.0": {
+      "top5": [
+        "CHN",
+        "IND",
+        "IDN",
+        "VNM",
+        "THA"
+      ],
+      "overlap_with_baseline": 5,
+      "rows_truncated": []
+    }
+  },
+  "binding_cap_test": {
+    "divisor": 25.0,
+    "cap": 2.0,
+    "chn_proxy": 2.2294,
+    "rows_truncated": [
+      "CHN"
+    ],
+    "top5": [
+      "CHN",
+      "IND",
+      "IDN",
+      "VNM",
+      "THA"
+    ],
+    "overlap_with_baseline": 5,
+    "chn_index_uncapped": 2.9,
+    "chn_index_capped": 2.6
+  },
+  "import_volume_top5": [
+    "CHN",
+    "IND",
+    "HKG",
+    "VNM",
+    "THA"
+  ],
+  "friction_top5_equals_volume_top5_set": false,
+  "friction_top5_equals_volume_top5_order": false,
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-05-29T02:01:56Z"
+}

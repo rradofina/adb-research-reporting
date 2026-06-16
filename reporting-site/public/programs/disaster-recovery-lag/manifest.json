@@ -1,7 +1,7 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/program/disaster-recovery-lag/evidence",
-  "generated_at": "2026-05-28T17:55:49.095Z",
+  "generated_at": "2026-06-16T16:19:45.183Z",
   "hero": {
     "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
     "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
@@ -154,6 +154,18 @@
       "size": 24125,
       "size_human": "23.6 KB",
       "sha256": "5f7bb5bcd0cc68bf16cde4fd61e3234862d76c94d800e1ce5420f758448eb058"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-metric-falsification.csv",
+      "size": 2596,
+      "size_human": "2.5 KB",
+      "sha256": "7dfed7fc769c554ff098a3aee0aee1fbdb8859943fdd47f72d924224d9e0a69e"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-metric-falsification.json",
+      "size": 3821,
+      "size_human": "3.7 KB",
+      "sha256": "6d8a74fbef6d02129bc4e3718eb695d479da40d72dfe5dd7f977d4f91c439477"
     }
   ],
   "articles": [

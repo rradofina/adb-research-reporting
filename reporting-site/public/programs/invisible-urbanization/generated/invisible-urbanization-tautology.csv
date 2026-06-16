@@ -1,0 +1,4 @@
+multiplier,spearman_vs_baseline,pairwise_rank_inversions_vs_baseline,top5,top5_changes_vs_baseline
+5.0,1.0,0,PNG|SLB|AFG|LAO|BGD,none
+10.0,1.0,0,PNG|SLB|AFG|LAO|BGD,none
+15.0,1.0,0,PNG|SLB|AFG|LAO|BGD,none

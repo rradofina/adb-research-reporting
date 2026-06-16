@@ -1,8 +1,8 @@
 [
   {
     "slug": "remittance-corridors-vulnerability-cluster",
-    "title": "Five DMCs persistently cluster as remittance-corridor-stress-exposed",
-    "subtitle": "A cap-stable, aggregation-stable top-five set — Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa — across the full ±50 percent sensitivity suite.",
+    "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
+    "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
     "kind": "working-paper",
     "tier": "working-paper",
     "status": "draft",
@@ -20,12 +20,12 @@
       "VUT",
       "WSM"
     ],
-    "abstract": "The fragility screen for remittance-corridor stress combines a country-level dependence axis (WDI personal-remittances-as-percent- of-GDP) with a destination-aggregated mean transfer cost (RPW Q1 2025). Across all 50 ADB regional DMCs, five economies — Kyrgyz Republic, Nepal, Tonga, Vanuatu, Samoa — sit in the top five of the ranking and remain there in every row of a +/-50 percent sensitivity suite on both arbitrary cap parameters and under a switch from multiplicative to additive aggregation. The set is the headline. The article reports the set, the sensitivity ranges, and the limitations the screen cannot establish — household-level exposure, resilience proper, volume-weighted cost. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
+    "abstract": "The repaired remittance-corridor stress screen combines a country- level dependence axis (WDI personal-remittances-as-percent-of-GDP) with destination-aggregated transfer-cost evidence from World Bank Remittance Prices Worldwide Q1 2025. The parser now treats negative already-percentage RPW quotes as percentages rather than multiplying them by 100. In the repaired baseline, Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu form the top-five screen. Across the full +/-50 percent sensitivity suite, the common core is narrower: Kyrgyz Republic, Tonga, Vanuatu, and Samoa appear in every row, while Nepal is cap-sensitive when the dependence cap is halved. A public KNOMAD bilateral-flow sprint keeps the same five-economy set but changes the order, moving Nepal higher after flow weighting. The article reports the set, the narrower sensitivity core, and the limitations the screen cannot establish — household-level exposure, resilience proper, and transaction-volume incidence. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
     "authors": [
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-05-12",
+    "updated_at": "2026-06-16",
     "doi": "",
     "file": "remittance-corridors-vulnerability-cluster.md",
     "attestation_chain": "ai-first",
@@ -735,8 +735,8 @@
   },
   {
     "slug": "remittance-resilience-brief",
-    "title": "Five DMCs persistently cluster as remittance-corridor-stress-exposed",
-    "subtitle": "A one-page brief on a cap-stable, aggregation-stable top-five set across the ±50 percent sensitivity suite.",
+    "title": "Five DMCs remain in the repaired remittance corridor-cost set",
+    "subtitle": "A one-page brief on the repaired baseline top-five set, the narrower sensitivity core, and the flow-weighted corridor-cost check.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -754,7 +754,7 @@
       "VUT",
       "WSM"
     ],
-    "abstract": "Across the 21 ADB regional developing member economies with both the WDI remittance-dependence series and an RPW Q1 2025 corridor cost observed, five economies — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the top five of a joint remittance-dependence × inbound-cost ranking, and remain in the top five in every row of a ±50 percent sensitivity suite on the pre-registered caps, including a switch from multiplicative to additive aggregation. The set is the headline. The internal rank inside the set is not robust enough to treat as policy information.",
+    "abstract": "Across the 21 ADB regional developing member economies with both the WDI remittance-dependence series and an RPW Q1 2025 corridor cost observed, five economies — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the repaired baseline top five of a joint remittance-dependence x inbound-cost screen. After the 2026-06-16 RPW parser repair, the common set across the full +/-50 percent sensitivity suite narrows to four economies: Kyrgyz Republic, Tonga, Vanuatu, and Samoa. Nepal is cap-sensitive in one row, but remains in the median-cost and flow-weighted top-five checks. The set is a triage signal, not a country ranking or household exposure estimate.",
     "authors": [
       "Raymond Adofina"
     ],
@@ -801,8 +801,8 @@
   },
   {
     "slug": "remittance-resilience-blog",
-    "title": "Five economies sit in the upper-right of the remittance-corridor map — and they stay there",
-    "subtitle": "A set-not-rank result for ADB developing member economies whose dependence on remittance flows runs into the highest published transfer costs.",
+    "title": "Five economies stay in the flow-weighted remittance corridor-cost set",
+    "subtitle": "A repaired set-and-measurement result for ADB developing member economies whose remittance dependence meets high observed corridor costs.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -820,7 +820,7 @@
       "VUT",
       "WSM"
     ],
-    "abstract": "Five ADB developing member economies — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the top five of a joint dependence × cost ranking for remittances, and stay there across the full ±50 percent sensitivity suite. The result is reported as a stable set, not a rank, because the rank inside the set is not robust to the same perturbations that leave set-membership stable. The screen is a triage instrument for where corridor-cost work deserves attention first; it is not a household exposure measure and not a country-quality ranking.",
+    "abstract": "Five ADB developing member economies — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa — sit in the repaired baseline top five of a joint dependence x cost screen for remittances. After parser repair, four of those economies remain common across the full +/-50 percent sensitivity suite; Nepal remains in the median-cost and flow-weighted top-five checks but is cap-sensitive in one suite row. The screen is a triage instrument for where corridor-cost work deserves attention first; it is not a household exposure measure and not a country-quality ranking.",
     "authors": [
       "Raymond Adofina"
     ],
@@ -866,7 +866,7 @@
   {
     "slug": "remittance-resilience-social",
     "title": "Remittance-resilience — social card",
-    "subtitle": "Tweet-length summary of the stable top-five remittance-corridor-stress set for ADB DMCs.",
+    "subtitle": "Tweet-length summary of the repaired remittance corridor-cost weighting result for ADB DMCs.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -883,7 +883,7 @@
       "VUT",
       "WSM"
     ],
-    "abstract": "Five ADB DMCs sit in the top five of a joint remittance-dependence × inbound-cost screen and stay there across the full ±50 percent sensitivity suite — Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa. The set is the headline; rank inside the set is not.",
+    "abstract": "Five ADB DMCs sit in the repaired baseline and flow-weighted top five of a joint remittance-dependence x inbound-cost screen. Four remain common across the full +/-50 percent sensitivity suite after parser repair; Nepal is cap-sensitive but remains in the flow-weighted top five.",
     "authors": [
       "Raymond Adofina"
     ],
@@ -928,8 +928,8 @@
   },
   {
     "slug": "remittance-resilience-deck",
-    "title": "\"Five DMCs persistently cluster as remittance-corridor-stress-exposed\"",
-    "subtitle": "\"A cap-stable, aggregation-stable top-five set across the ±50% sensitivity suite — ADB DMCs, AI-first under §18\"",
+    "title": "\"Five DMCs in the repaired remittance corridor-cost set\"",
+    "subtitle": "\"A repaired baseline, narrower sensitivity core, and flow-weighted corridor-cost check — ADB DMCs, AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",

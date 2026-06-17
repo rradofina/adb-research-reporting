@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-06-16.
+Last updated: 2026-06-17.
 
 ## Current focus
 
@@ -49,8 +49,10 @@ overrides priority by editing this list.
    remittance-resilience.
 4. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
    2.5-cap sensitivity flagged top-5 → top-3 honest narrowing.
-5. **`disaster-recovery-lag`** — top-2 set {CHN, IND} stable across
-   events/affected/damage burden metrics.
+5. **`disaster-recovery-lag`** — metric-falsification deepening shows the
+   original {CHN, IND} top-two is not robust: it holds for affected and
+   damage, but changes under events/year, deaths, and events per million.
+   It still lacks an actual recovery-lag metric.
 6. **`grid-reliability-heat`** — top-5 single-fuel set {BTN, BRN, MNG,
    NPL, TJK} stable.
 7. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
@@ -143,6 +145,63 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (20-report showcase batch completed):** Owner directed the
+  showcase loop not to stop at reports 9-12, so the report bench was expanded
+  to 20 public-data surfaces. `reporting-site/src/data/showcaseReports.ts`
+  now registers all 20 reports; reports 9-20 use a new artifact-driven
+  route, `reporting-site/src/pages/ShowcaseEvidenceAudit.tsx`, mounted at
+  `/showcase/:reportSlug`. The new report set covers grid generation
+  concentration, migration denominator switching, MPI/night-light blind
+  spots, coastal population-denominator effects, flood index decomposition,
+  climate-health cap saturation, food-price coverage traps, social-protection
+  dropped legs, water-stress denominator artifacts, invisible-urbanization
+  tautology, port inert parameters, and school-heat sensitivity auditing.
+  Each new route fetches only its committed public JSON artifact from
+  `reporting-site/public/programs/.../generated/` and renders an audit-specific
+  visual type: rank bridge, blind/visible stack, coverage funnel, sensitivity
+  lane, parameter wall, tautology lane, or component card. Homepage and
+  `/showcase` copy now read from the shared registry and present the full
+  20-report queue. QA saved desktop and mobile screenshots for home plus all
+  new report routes under `reporting-site/qa/` using the `*-20.png` suffix.
+  CDP checks confirmed 20 home report cards; for every route 9-20, 3 hero
+  stats, expected visual rows, 20 queue rows, no JSON load errors, and no
+  page-level horizontal overflow at desktop. A mobile queue auto-placement
+  overflow was caught and fixed; the mobile rerun confirmed width `375/375`
+  and overflow count 0 for home and all report routes 9-20. `npm run build`
+  passed after the fix. These 20 surfaces are still showcase/evidence-audit
+  outputs, not maturity-label promotions or publication-ready claims. Next
+  loop should critique which 2-3 reports deserve L3 strengthening first,
+  rather than adding a 21st surface by default.
+- **2026-06-17 (front-page report bench + disaster metric-falsification
+  showcase):** Homepage refactored from the older topic-thumbnail gallery
+  into a report-first ADB/ERDI showcase bench. New shared report registry
+  `reporting-site/src/data/showcaseReports.ts` drives both `/` and the
+  `/showcase` queue so the 10-20 report goal does not drift across pages.
+  The first viewport now shows the active report queue and target state; the
+  older 18-program hero gallery remains below as the evidence archive rather
+  than the lead surface. Eighth showcase prototype added and verified at
+  `/showcase/disaster-metric-falsification`, reading
+  `disaster-recovery-lag/generated/disaster-recovery-lag-metric-falsification.{json,csv}`.
+  Generated evidence shows 1,767 EM-DAT rows in the 2000-2025 DMC filter; the
+  pre-registered top-two kill condition fires for 3 of 5 metrics. Original
+  CHN+IND holds for affected and damage, but changes to CHN+IDN for
+  events/year, IDN+MMR for deaths, and TUV+MHL for events per million. The
+  report now uses a mobile-native ranked bar list so narrow viewports do not
+  crop chart values. Browser QA saved final home screenshots
+  `home-report-refactor-desktop-final.png` and
+  `home-report-refactor-mobile-final.png`, plus disaster screenshots
+  `showcase-disaster-desktop-verified.png`,
+  `showcase-disaster-mobile-verified.png`, and
+  `showcase-disaster-mobile-chart-final.png` under `reporting-site/qa/`.
+  Checks confirmed 8 report cards, 18 program cards, expected disaster hero
+  stats `3/5` and `1,767`, five mobile metric bars, no page-level horizontal
+  overflow at 375px, and no browser errors beyond known Vite/React Router
+  development warnings. `npm run build`, the five gates, and
+  `check-versions` passed. This counts as the eighth verified showcase
+  prototype and a publication-surface refactor, not a maturity promotion. The
+  next-loop guidance in this note is superseded by the 20-report batch note
+  above; current next work is critique and L3 strengthening before adding more
+  surfaces.
 - **2026-06-16 (access map-completeness showcase prototype):** Seventh
   ADB/ERDI showcase report prototype added at
   `/showcase/access-map-completeness`, reading

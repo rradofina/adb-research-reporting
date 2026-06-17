@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-06-16.
+Last updated: 2026-06-17.
 
 ## Current focus
 
@@ -49,8 +49,10 @@ overrides priority by editing this list.
    remittance-resilience.
 4. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
    2.5-cap sensitivity flagged top-5 → top-3 honest narrowing.
-5. **`disaster-recovery-lag`** — top-2 set {CHN, IND} stable across
-   events/affected/damage burden metrics.
+5. **`disaster-recovery-lag`** — metric-falsification deepening shows the
+   original {CHN, IND} top-two is not robust: it holds for affected and
+   damage, but changes under events/year, deaths, and events per million.
+   It still lacks an actual recovery-lag metric.
 6. **`grid-reliability-heat`** — top-5 single-fuel set {BTN, BRN, MNG,
    NPL, TJK} stable.
 7. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
@@ -143,6 +145,36 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (front-page report bench + disaster metric-falsification
+  showcase):** Homepage refactored from the older topic-thumbnail gallery
+  into a report-first ADB/ERDI showcase bench. New shared report registry
+  `reporting-site/src/data/showcaseReports.ts` drives both `/` and the
+  `/showcase` queue so the 10-20 report goal does not drift across pages.
+  The first viewport now shows the active report queue and target state; the
+  older 18-program hero gallery remains below as the evidence archive rather
+  than the lead surface. Eighth showcase prototype added and verified at
+  `/showcase/disaster-metric-falsification`, reading
+  `disaster-recovery-lag/generated/disaster-recovery-lag-metric-falsification.{json,csv}`.
+  Generated evidence shows 1,767 EM-DAT rows in the 2000-2025 DMC filter; the
+  pre-registered top-two kill condition fires for 3 of 5 metrics. Original
+  CHN+IND holds for affected and damage, but changes to CHN+IDN for
+  events/year, IDN+MMR for deaths, and TUV+MHL for events per million. The
+  report now uses a mobile-native ranked bar list so narrow viewports do not
+  crop chart values. Browser QA saved final home screenshots
+  `home-report-refactor-desktop-final.png` and
+  `home-report-refactor-mobile-final.png`, plus disaster screenshots
+  `showcase-disaster-desktop-verified.png`,
+  `showcase-disaster-mobile-verified.png`, and
+  `showcase-disaster-mobile-chart-final.png` under `reporting-site/qa/`.
+  Checks confirmed 8 report cards, 18 program cards, expected disaster hero
+  stats `3/5` and `1,767`, five mobile metric bars, no page-level horizontal
+  overflow at 375px, and no browser errors beyond known Vite/React Router
+  development warnings. `npm run build`, the five gates, and
+  `check-versions` passed. This counts as the eighth verified showcase
+  prototype and a publication-surface refactor, not a maturity promotion. The
+  next loop should either start report #9 from `research/hook-bank.md`
+  (road-quality/access is the strongest new visual candidate) or formalize
+  one existing prototype into L3 evidence before adding more surfaces.
 - **2026-06-16 (access map-completeness showcase prototype):** Seventh
   ADB/ERDI showcase report prototype added at
   `/showcase/access-map-completeness`, reading

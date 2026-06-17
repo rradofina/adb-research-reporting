@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { showcaseReports } from "../data/showcaseReports";
 
 interface SprintCoverage {
   raw_price_rows_kept: number;
@@ -52,51 +53,6 @@ interface SprintData {
     dry_price_spike_screen_top12: MarketClimateRow[];
   };
 }
-
-const REPORT_BATCH = [
-  {
-    title: "Market-level climate price transmission",
-    status: "Prototype report in progress",
-    path: "research/topic-sprints/nepal-market-climate-prices-sprint.md",
-    href: "/showcase",
-  },
-  {
-    title: "Public data freshness blind spots",
-    status: "Prototype report at /showcase/data-freshness",
-    path: "research/topic-sprints/wdi-data-freshness-sprint.md",
-    href: "/showcase/data-freshness",
-  },
-  {
-    title: "Shock-payment rails after disasters",
-    status: "Prototype report at /showcase/shock-payment-rails",
-    path: "research/topic-sprints/shock-payment-rails-sprint.md",
-    href: "/showcase/shock-payment-rails",
-  },
-  {
-    title: "Remittance corridors after flow weighting",
-    status: "Prototype report at /showcase/remittance-flow-weighting",
-    path: "remittance-resilience/l2-flow-weighting-sprint.md",
-    href: "/showcase/remittance-flow-weighting",
-  },
-  {
-    title: "Public service data quality source disagreement",
-    status: "Prototype report at /showcase/psdq-source-disagreement",
-    path: "public-service-data-quality/STATUS.md",
-    href: "/showcase/psdq-source-disagreement",
-  },
-  {
-    title: "Air-monitoring observability",
-    status: "Prototype report at /showcase/air-monitoring-observability",
-    path: "air-monitoring/deepened-results.md",
-    href: "/showcase/air-monitoring-observability",
-  },
-  {
-    title: "Access map-completeness audit",
-    status: "Prototype report at /showcase/access-map-completeness",
-    path: "access-services/deepened-results.md",
-    href: "/showcase/access-map-completeness",
-  },
-];
 
 function pct(value: number | null | undefined, digits = 0) {
   if (value === null || value === undefined || Number.isNaN(value)) return "missing";
@@ -289,7 +245,9 @@ export default function Showcase() {
       <section className="showcase-section">
         <div className="showcase-section-copy">
           <p className="kicker">Showcase queue</p>
-          <h2>First batch: five candidates, five prototype surfaces.</h2>
+          <h2>
+            First batch: {showcaseReports.length} candidates, {showcaseReports.length} report surfaces.
+          </h2>
           <p>
             The showcase is deliberately batch-based. Reports enter only after
             the evidence package, visual concept, caveats, and visual QA are
@@ -297,14 +255,14 @@ export default function Showcase() {
           </p>
         </div>
         <div className="showcase-queue">
-          {REPORT_BATCH.map((item, index) => (
-            <div className="showcase-queue-row" key={item.title}>
+          {showcaseReports.map((item, index) => (
+            <div className="showcase-queue-row" key={item.href}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>
-                {item.href ? <Link to={item.href}>{item.title}</Link> : item.title}
+                <Link to={item.href}>{item.shortTitle}</Link>
               </strong>
-              <em>{item.status}</em>
-              <code>{item.path}</code>
+              <em>{item.statusLabel}</em>
+              <code>{item.evidencePath}</code>
             </div>
           ))}
         </div>

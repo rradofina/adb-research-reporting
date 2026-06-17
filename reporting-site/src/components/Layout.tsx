@@ -22,7 +22,7 @@ export default function Layout() {
               ADB AI Research
             </span>
             <span className="site-brand-kicker">
-              measurement gaps · public data
+              report bench - public data
             </span>
           </Link>
           <nav className="site-nav">
@@ -33,7 +33,7 @@ export default function Layout() {
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
-              Topics
+              Reports
             </NavLink>
             <NavLink
               to="/native-charts"
@@ -41,7 +41,7 @@ export default function Layout() {
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
-              Native charts
+              Charts
             </NavLink>
             <NavLink
               to="/deepenings"
@@ -49,7 +49,7 @@ export default function Layout() {
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
-              Deepenings
+              Deepening checks
             </NavLink>
             <NavLink
               to="/showcase"

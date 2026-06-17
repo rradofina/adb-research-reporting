@@ -1,7 +1,7 @@
 # Research hook bank
 
 `attestation_chain: ai-first`
-Date: 2026-06-16
+Date: 2026-06-17
 
 Purpose: keep a ranked list of **data-first research hooks** before the repo
 commits to another full publication ladder. This is not a claim register and
@@ -72,9 +72,10 @@ batch.
 
 ## ADB/ERDI showcase queue
 
-Goal: build 10-20 reader-facing reports, but only after each candidate has a
-public-data evidence spine and a visual that reveals a specific measurement
-problem. This is a report-quality queue, not a maturity promotion register.
+Goal: maintain a 20-report reader-facing bench, but only where each candidate
+has a public-data evidence spine and a visual that reveals a specific
+measurement problem. This is a report-quality queue, not a maturity promotion
+register.
 
 | Batch | Report candidate | Evidence base | Showcase visual concept | Current report status | Next loop |
 |---:|---|---|---|---|---|
@@ -85,21 +86,29 @@ problem. This is a report-quality queue, not a maturity promotion register.
 | 1 | PSDQ source disagreement | `public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.{csv,json}` plus PSDQ national summary | Interactive registry-vs-OSM disagreement workbench with Open Buildings exposure proxy | Prototype surface at `/showcase/psdq-source-disagreement`; desktop/mobile screenshot QA complete | L3 validation package: facility-level matching sample, registry-vintage notes, source-ground-truth falsifier |
 | 2 | Air-monitoring observability | `air-monitoring/deepened-results.md`, `air-monitoring/generated/air-monitoring-concentration-deepening.json`, and `air-monitoring/generated/air-monitoring-adb-panel.json` | Zero-monitor population concentration stack plus GDP-adjusted monitor-density residual scatter and exposure/monitor-count panel | Prototype surface at `/showcase/air-monitoring-observability`; desktop/mobile screenshot QA complete | L3 catchment package: station-radius sensitivity, gridded population/PM2.5 denominators, OpenAQ-vs-regulatory inventory validation |
 | 2 | Access map-completeness audit | `access-services/deepened-results.md`, `access-services/generated/access-osm-completeness-deepening.json`, and `access-services/generated/access-services-adb-panel.json` | Rank-flip chart showing OSM people-per-facility versus registry people-per-facility, plus correction wall for uncorrected cluster rows | Prototype surface at `/showcase/access-map-completeness`; desktop/mobile screenshot QA complete | L3 validation package: official registry joins for PAK/KHM/LAO/NPL/LKA/TLS, public travel-time/friction denominator, map-completeness falsifier |
+| 2 | Disaster metric falsification | `disaster-recovery-lag/deepened-results.md` and `disaster-recovery-lag/generated/disaster-recovery-lag-metric-falsification.{json,csv}` | Metric-switch report showing where the original CHN+IND top-two holds and where deaths, events/year, and per-capita burden break it | Prototype surface at `/showcase/disaster-metric-falsification`; desktop/mobile screenshot QA complete with mobile-native ranked bars | L3 recovery-lag package: event-timestamped recovery curves, exposure denominator, and source-reporting falsifiers before any recovery-speed claim |
+| 3 | Power-fuel concentration audit | `grid-reliability-heat/generated/grid-generation-deepening.{json,csv}` | Capacity-versus-generation rank bridge with generation-coverage gate | Evidence-audit surface at `/showcase/grid-generation-mismatch`; desktop/mobile CDP screenshot QA complete | L3 reliability package: outage/reserve-margin or heat-stress evidence before reliability language |
+| 3 | Emigration denominator switch | `migration-displacement-signals/generated/migration-per-population-deepening.{json,csv}` | Absolute emigrant-stock rank versus population-share rank bridge | Evidence-audit surface at `/showcase/migration-denominator-switch`; desktop/mobile CDP screenshot QA complete | L3 migration package: corridor composition, remittance/refugee split, and denominator source caveats |
+| 3 | MPI night-light blind spot | `mpi-nighttime-lights/generated/mpi-dimension-decomposition.{json,csv}` | NTL-blind versus plausibly visible MPI dimension stack | Evidence-audit surface at `/showcase/mpi-nightlight-blindspot`; desktop/mobile CDP screenshot QA complete | Owner-led L3 path only: VIIRS/GEE join, admin crosswalk, and coauthor attestation |
+| 3 | Coastal population-denominator audit | `coastal-informal-risk/generated/coastal-drop-population-deepening.{json,csv}` | Headline rank versus no-population rank bridge | Evidence-audit surface at `/showcase/coastal-population-denominator`; desktop/mobile CDP screenshot QA complete | L3 coastal package: GHSL/DEM/surge footprint before exposure language |
+| 3 | Flood component decomposition | `flood-market-access/generated/flood-decompose-deepening.{json,csv}` | Committed flood proxy versus per-capita/event-count decomposition bridge | Evidence-audit surface at `/showcase/flood-component-decomposition`; desktop/mobile CDP screenshot QA complete | L3 access package: roads, market/service points, flood footprint, and travel-time falsifier |
+| 3 | Climate-health measurement repair | `climate-health-workdays/generated/climate-health-workdays-deepening.json` | PM2.5-cap sensitivity lanes against outdoor-labor-share rank | Evidence-audit surface at `/showcase/climate-health-measurement-repair`; desktop/mobile CDP screenshot QA complete | L3 health package: labor-force denominator, heat exposure, and causal non-claim repair |
+| 3 | Food-price coverage trap | `food-price-climate-transmission/generated/food-price-coverage-deepening.{json,csv}` | CPI/import indicator coverage funnel plus common-vintage top sets | Evidence-audit surface at `/showcase/food-price-coverage-trap`; desktop/mobile CDP screenshot QA complete | L3 food-price package: household/market price exposure and missing-data sensitivity before vulnerability language |
+| 3 | Social-protection dropped leg | `social-protection-shock-coverage/generated/social-protection-dropped-leg.{json,csv}` | Value-rank ledger with missing-leg flags | Evidence-audit surface at `/showcase/social-protection-dropped-leg`; desktop/mobile CDP screenshot QA complete | L3 shock-coverage package: payment-channel metadata and beneficiary-reach validation |
+| 3 | Water denominator artifact | `water-stress-crop-diversification/generated/water-stress-denominator-deepening.{json,csv}` | Saturated internal-water denominator cards plus rural counterfactual | Evidence-audit surface at `/showcase/water-stress-denominator`; desktop/mobile CDP screenshot QA complete | L3 water/crop package: total-renewable-water and crop-area denominators before crop-diversity language |
+| 3 | Invisible urbanization tautology | `invisible-urbanization/generated/invisible-urbanization-tautology.{json,csv}` | Rank-preserving multiplier lanes plus input-perturbation boundary card | Evidence-audit surface at `/showcase/invisible-urban-tautology`; desktop/mobile CDP screenshot QA complete | L3 urban package: satellite/built-up layer and classification-history evidence |
+| 3 | Port inert-parameter audit | `port-hinterland-friction/generated/port-hinterland-inert-parameter.json` | Import-cap binding wall and top-five invariance lanes | Evidence-audit surface at `/showcase/port-inert-parameter`; desktop/mobile CDP screenshot QA complete | L3 port package: actual hinterland friction, travel time, or logistics-performance source |
+| 3 | School heat top-one audit | `school-heat-disruption/generated/school-heat-sensitivity-audit.json` | Sensitivity-run ledger separating discriminating, degenerate, and rank-losing runs | Evidence-audit surface at `/showcase/school-heat-sensitivity`; desktop/mobile CDP screenshot QA complete | L3 school package: school geocodes, school calendars, enrollment denominators, and indoor/heat-exposure caveats |
 
-The first seven prototypes intentionally start with the Nepal market-climate,
-WDI data-freshness, shock-payment rails, PSDQ source-disagreement, and
-remittance flow-weighting, air-monitoring observability, and access
-map-completeness evidence because each has an immediate visual object and a
-clear non-claim: local climate alignment is observable but not yet causal, WDI
-freshness is a public-source observability screen rather than a score of
-statistical agency performance, payment-use rails are visible only as
-concept-separated public proxies rather than evidence that emergency transfers
-arrived, registry-map disagreement is a source-QA screen rather than a
-facility-access or service-quality result, flow-weighted remittance costs are a
-corridor-weighting sensitivity rather than household transaction incidence,
-air-monitor visibility is a public-source observability screen rather than a
-pollution ranking or regulatory audit, and access map-completeness is a
-source-audit result rather than travel-time access or service-quality evidence.
+The 20-report bench intentionally mixes bespoke L2 surfaces and artifact-driven
+audit pages. The first eight reports are prototype surfaces around market
+climate alignment, data freshness, payment rails, PSDQ source disagreement,
+remittance flow weighting, air-monitoring observability, access map
+completeness, and disaster metric falsification. Reports 9-20 are evidence
+audits that make a measurement problem visible before a program claim is
+widened. The common non-claim is explicit: these surfaces do not promote a
+maturity label, do not replace the underlying scripts, and do not turn
+screening proxies into performance rankings.
 
 ## L1 ranking snapshot
 
@@ -170,8 +179,10 @@ Pick the next hook by expected **visual distinctiveness per unit of data work**:
 4. Does it have a clear falsifier or kill condition?
 5. Can it produce a reader-facing artifact with receipts, not just a map?
 
-After the first seven prototype reports, the next strongest loop is either a
-road-quality/access pilot as the next new visual object, or an L3 upgrade of
-PSDQ, remittance, air-monitoring, or access-services where the existing prototype needs
-validation rather than another surface. The shared originality lane is still
-public-source joins at a more useful geography.
+After the 20-report bench, the next strongest loop is critique and L3
+strengthening, not adding another surface by default. The best candidates are
+PSDQ, remittance, air-monitoring, access-services, disaster recovery-lag, or one
+of the artifact audits whose visual exposes a fixable measurement flaw. A new
+road-quality/access pilot remains a strong new visual object, but it should
+start only if the owner chooses a new-topic loop over strengthening the current
+bench.

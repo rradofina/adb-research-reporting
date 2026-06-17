@@ -27,6 +27,8 @@ import ShowcasePSDQ from "./pages/ShowcasePSDQ";
 import ShowcaseRemittanceFlow from "./pages/ShowcaseRemittanceFlow";
 import ShowcaseAirMonitoring from "./pages/ShowcaseAirMonitoring";
 import ShowcaseAccessCompleteness from "./pages/ShowcaseAccessCompleteness";
+import ShowcaseDisasterMetric from "./pages/ShowcaseDisasterMetric";
+import ShowcaseEvidenceAudit from "./pages/ShowcaseEvidenceAudit";
 import About from "./pages/About";
 import Doc from "./pages/Doc";
 import Docs from "./pages/Docs";
@@ -59,6 +61,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/showcase/remittance-flow-weighting" element={<ShowcaseRemittanceFlow />} />
           <Route path="/showcase/air-monitoring-observability" element={<ShowcaseAirMonitoring />} />
           <Route path="/showcase/access-map-completeness" element={<ShowcaseAccessCompleteness />} />
+          <Route path="/showcase/disaster-metric-falsification" element={<ShowcaseDisasterMetric />} />
+          <Route path="/showcase/:reportSlug" element={<ShowcaseEvidenceAudit />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Docs />} />
 

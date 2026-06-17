@@ -145,6 +145,49 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (showcase depth-standard pass):** Added bench-level
+  `operationalUse`, `falsifier`, and `limitation` metadata for all 20
+  showcase reports in `reporting-site/src/data/showcaseReports.ts`. The
+  homepage now shows five report-depth rows per card: visual, operational
+  use, falsifier, evidence path, and source stack. The dynamic artifact-audit
+  route adds operational use and falsifier readouts and carries the limitation
+  into the caveat list. Focused browser QA saved
+  `home-depth-desktop.png`, `home-depth-mobile.png`, and
+  `showcase-20-school-depth-mobile.png`; checks confirmed 20 cards, 100 home
+  fact rows, expected audit stats, and zero horizontal overflow at 1440px and
+  375px. `npm run build` passed, and the six gates
+  (`check-citations`, `check-composite-headline`, `check-wip`,
+  `check-dmc-framing`, `check-banned-words`, `check-versions`) passed. This
+  improves report-depth coverage but does not close the full showcase goal:
+  selected reports still need L3 evidence strengthening and more bespoke
+  narrative/visual polishing before publication-ready status.
+- **2026-06-17 (20-report showcase batch completed):** Owner directed the
+  showcase loop not to stop at reports 9-12, so the report bench was expanded
+  to 20 public-data surfaces. `reporting-site/src/data/showcaseReports.ts`
+  now registers all 20 reports; reports 9-20 use a new artifact-driven
+  route, `reporting-site/src/pages/ShowcaseEvidenceAudit.tsx`, mounted at
+  `/showcase/:reportSlug`. The new report set covers grid generation
+  concentration, migration denominator switching, MPI/night-light blind
+  spots, coastal population-denominator effects, flood index decomposition,
+  climate-health cap saturation, food-price coverage traps, social-protection
+  dropped legs, water-stress denominator artifacts, invisible-urbanization
+  tautology, port inert parameters, and school-heat sensitivity auditing.
+  Each new route fetches only its committed public JSON artifact from
+  `reporting-site/public/programs/.../generated/` and renders an audit-specific
+  visual type: rank bridge, blind/visible stack, coverage funnel, sensitivity
+  lane, parameter wall, tautology lane, or component card. Homepage and
+  `/showcase` copy now read from the shared registry and present the full
+  20-report queue. QA saved desktop and mobile screenshots for home plus all
+  new report routes under `reporting-site/qa/` using the `*-20.png` suffix.
+  CDP checks confirmed 20 home report cards; for every route 9-20, 3 hero
+  stats, expected visual rows, 20 queue rows, no JSON load errors, and no
+  page-level horizontal overflow at desktop. A mobile queue auto-placement
+  overflow was caught and fixed; the mobile rerun confirmed width `375/375`
+  and overflow count 0 for home and all report routes 9-20. `npm run build`
+  passed after the fix. These 20 surfaces are still showcase/evidence-audit
+  outputs, not maturity-label promotions or publication-ready claims. Next
+  loop should critique which 2-3 reports deserve L3 strengthening first,
+  rather than adding a 21st surface by default.
 - **2026-06-17 (front-page report bench + disaster metric-falsification
   showcase):** Homepage refactored from the older topic-thumbnail gallery
   into a report-first ADB/ERDI showcase bench. New shared report registry
@@ -172,9 +215,9 @@ by leaving the board in a state the next session can read.
   development warnings. `npm run build`, the five gates, and
   `check-versions` passed. This counts as the eighth verified showcase
   prototype and a publication-surface refactor, not a maturity promotion. The
-  next loop should either start report #9 from `research/hook-bank.md`
-  (road-quality/access is the strongest new visual candidate) or formalize
-  one existing prototype into L3 evidence before adding more surfaces.
+  next-loop guidance in this note is superseded by the 20-report batch note
+  above; current next work is critique and L3 strengthening before adding more
+  surfaces.
 - **2026-06-16 (access map-completeness showcase prototype):** Seventh
   ADB/ERDI showcase report prototype added at
   `/showcase/access-map-completeness`, reading

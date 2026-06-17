@@ -8,7 +8,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
-import { showcaseReports, verifiedShowcaseReports } from "../data/showcaseReports";
+import {
+  getShowcaseReportDepth,
+  showcaseReports,
+  verifiedShowcaseReports,
+} from "../data/showcaseReports";
 import { MaturityChip, maturityLabels, type Maturity } from "../lib/claimTiers";
 import type { HeroVisual } from "../lib/evidence";
 
@@ -131,30 +135,41 @@ export default function Home() {
           </p>
         </div>
         <div className="home-report-grid">
-          {showcaseReports.map((report) => (
-            <Link to={report.href} className="home-report-card" key={report.href}>
-              <span className="home-report-number">
-                {String(report.id).padStart(2, "0")}
-              </span>
-              <span className="home-report-status">{report.statusLabel}</span>
-              <h3>{report.shortTitle}</h3>
-              <p>{report.deck}</p>
-              <dl className="home-report-facts">
-                <div>
-                  <dt>Visual</dt>
-                  <dd>{report.visual}</dd>
-                </div>
-                <div>
-                  <dt>Evidence</dt>
-                  <dd>{report.evidencePath}</dd>
-                </div>
-                <div>
-                  <dt>Source stack</dt>
-                  <dd>{report.sourceNote}</dd>
-                </div>
-              </dl>
-            </Link>
-          ))}
+          {showcaseReports.map((report) => {
+            const depth = getShowcaseReportDepth(report);
+            return (
+              <Link to={report.href} className="home-report-card" key={report.href}>
+                <span className="home-report-number">
+                  {String(report.id).padStart(2, "0")}
+                </span>
+                <span className="home-report-status">{report.statusLabel}</span>
+                <h3>{report.shortTitle}</h3>
+                <p>{report.deck}</p>
+                <dl className="home-report-facts">
+                  <div>
+                    <dt>Visual</dt>
+                    <dd>{report.visual}</dd>
+                  </div>
+                  <div>
+                    <dt>Operational use</dt>
+                    <dd>{depth.operationalUse}</dd>
+                  </div>
+                  <div>
+                    <dt>Falsifier</dt>
+                    <dd>{depth.falsifier}</dd>
+                  </div>
+                  <div>
+                    <dt>Evidence</dt>
+                    <dd>{report.evidencePath}</dd>
+                  </div>
+                  <div>
+                    <dt>Source stack</dt>
+                    <dd>{report.sourceNote}</dd>
+                  </div>
+                </dl>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

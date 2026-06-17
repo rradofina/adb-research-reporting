@@ -145,6 +145,22 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (showcase depth-standard pass):** Added bench-level
+  `operationalUse`, `falsifier`, and `limitation` metadata for all 20
+  showcase reports in `reporting-site/src/data/showcaseReports.ts`. The
+  homepage now shows five report-depth rows per card: visual, operational
+  use, falsifier, evidence path, and source stack. The dynamic artifact-audit
+  route adds operational use and falsifier readouts and carries the limitation
+  into the caveat list. Focused browser QA saved
+  `home-depth-desktop.png`, `home-depth-mobile.png`, and
+  `showcase-20-school-depth-mobile.png`; checks confirmed 20 cards, 100 home
+  fact rows, expected audit stats, and zero horizontal overflow at 1440px and
+  375px. `npm run build` passed, and the six gates
+  (`check-citations`, `check-composite-headline`, `check-wip`,
+  `check-dmc-framing`, `check-banned-words`, `check-versions`) passed. This
+  improves report-depth coverage but does not close the full showcase goal:
+  selected reports still need L3 evidence strengthening and more bespoke
+  narrative/visual polishing before publication-ready status.
 - **2026-06-17 (20-report showcase batch completed):** Owner directed the
   showcase loop not to stop at reports 9-12, so the report bench was expanded
   to 20 public-data surfaces. `reporting-site/src/data/showcaseReports.ts`

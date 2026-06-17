@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   findShowcaseReportBySlug,
+  getShowcaseReportDepth,
   showcaseReports,
   type ShowcaseAuditKind,
   type ShowcaseReport,
@@ -171,7 +172,11 @@ function sourceFacts(report: ShowcaseReport, data: JsonValue): Fact[] {
 }
 
 function baseCaveats(report: ShowcaseReport, data: JsonValue) {
-  const caveats = [report.audit?.nonClaim || "This report does not widen the claim beyond the evidence artifact."];
+  const depth = getShowcaseReportDepth(report);
+  const caveats = [
+    report.audit?.nonClaim || "This report does not widen the claim beyond the evidence artifact.",
+    depth.limitation,
+  ];
   if (data.claim_scope) caveats.push(String(data.claim_scope));
   return unique(caveats);
 }
@@ -780,6 +785,7 @@ export default function ShowcaseEvidenceAudit() {
 
   if (!report || !report.audit) return <NotFound />;
 
+  const depth = getShowcaseReportDepth(report);
   const nextReport =
     showcaseReports.find((item) => item.id === report.id + 1) ||
     showcaseReports.find((item) => item.id === 1);
@@ -858,6 +864,14 @@ export default function ShowcaseEvidenceAudit() {
             </p>
           </div>
           <div className="showcase-fact-list audit-readouts">
+            <div>
+              <span>Operational use</span>
+              <strong>{depth.operationalUse}</strong>
+            </div>
+            <div>
+              <span>Falsifier</span>
+              <strong>{depth.falsifier}</strong>
+            </div>
             {model.readouts.map((fact) => (
               <div key={fact.label}>
                 <span>{fact.label}</span>

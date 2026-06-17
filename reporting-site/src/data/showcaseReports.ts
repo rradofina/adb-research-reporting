@@ -36,6 +36,12 @@ export interface ShowcaseReport {
   audit?: ShowcaseAudit;
 }
 
+export interface ShowcaseReportDepth {
+  operationalUse: string;
+  falsifier: string;
+  limitation: string;
+}
+
 export const showcaseReports: ShowcaseReport[] = [
   {
     id: 1,
@@ -427,6 +433,113 @@ export const verifiedShowcaseReports = showcaseReports.filter(
 export const showcaseAuditReports = showcaseReports.filter(
   (report): report is ShowcaseReport & { audit: ShowcaseAudit } => Boolean(report.audit),
 );
+
+export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
+  1: {
+    operationalUse: "Screen market-months where local climate checks should precede national food-price interpretation.",
+    falsifier: "If spikes stay synchronized after local rainfall, commodity, import, exchange-rate, and fuel checks, the local-weather hook weakens.",
+    limitation: "One rice series, uneven WFP market coverage, and modeled NASA POWER point climate cannot establish causality.",
+  },
+  2: {
+    operationalUse: "Help statisticians and operations teams see which dashboard indicators are too stale for current comparison.",
+    falsifier: "If lag patterns disappear after indicator-specific update schedules are applied, the freshness concern is overstated.",
+    limitation: "Freshness is not statistical-agency performance; indicators have different revision calendars and reporting duties.",
+  },
+  3: {
+    operationalUse: "Separate account ownership from active digital-payment and social-protection rails before shock-transfer planning.",
+    falsifier: "If verified shock-payment channel data show high delivery through the same populations, the proxy gap narrows.",
+    limitation: "Findex and ASPIRE are public proxies with vintage mismatch; they do not observe emergency transfers arriving.",
+  },
+  4: {
+    operationalUse: "Target registry, map, and building-footprint validation where service-access analysis depends on facility visibility.",
+    falsifier: "If facility-level audits show registry and OSM differences are mostly duplicate naming or harmless classification, the gap weakens.",
+    limitation: "Source disagreement is not a service-quality or travel-time result and does not prove facilities are absent.",
+  },
+  5: {
+    operationalUse: "Help remittance teams decide when equal-weighted corridor prices hide exposure in high-flow corridors.",
+    falsifier: "If corridor flow weights are too sparse, stale, or inconsistent with observed transactions, the flow-weighted comparison cannot lead.",
+    limitation: "Bilateral flows are estimates and do not observe household remittance transactions or informal channels.",
+  },
+  6: {
+    operationalUse: "Prioritize where ground-monitor observability checks should accompany satellite or modeled PM2.5 use.",
+    falsifier: "If regulatory inventories or local station lists fill the apparent zero-monitor gaps, the public-source gap shrinks.",
+    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy by itself.",
+  },
+  7: {
+    operationalUse: "Flag geographies where OSM health amenities are too incomplete to support access or catchment planning.",
+    falsifier: "If official registry joins do not change local facility-load ranks, the map-completeness concern is weaker.",
+    limitation: "OSM completeness is not actual service availability, capacity, quality, or travel-time access.",
+  },
+  8: {
+    operationalUse: "Prevent recovery-lag narratives from reusing a disaster burden pair that fails under alternate metrics.",
+    falsifier: "If a true event-level recovery-lag metric restores the same priority pair, the metric-falsification warning narrows.",
+    limitation: "EM-DAT burden screens do not measure recovery speed, reconstruction, household loss, or service restoration.",
+  },
+  9: {
+    operationalUse: "Show energy teams when capacity-based fuel concentration should be checked against actual generation coverage.",
+    falsifier: "If outage, reserve-margin, or heat-stress data do not align with fuel concentration, reliability language should be removed.",
+    limitation: "Fuel-Herfindahl values are triage metrics and do not observe outages, dispatch constraints, or grid resilience.",
+  },
+  10: {
+    operationalUse: "Help migration analysts choose whether absolute stock or population-share exposure is the policy denominator.",
+    falsifier: "If corridor composition or remittance/refugee splits point to a different exposure unit, the share ranking should not lead.",
+    limitation: "Emigrant stock shares are not welfare, fragility, or migration-quality measures.",
+  },
+  11: {
+    operationalUse: "Keep night-light poverty work from overclaiming before the blind MPI dimensions are visible.",
+    falsifier: "If an owner-led VIIRS join predicts health and education deprivation independently, the blind-spot warning can be narrowed.",
+    limitation: "The page computes MPI-side decomposition only; it does not run a night-light model.",
+  },
+  12: {
+    operationalUse: "Distinguish small-economy coastal informal-settlement questions from country-size-driven proxy rankings.",
+    falsifier: "If GHSL, DEM, and surge-footprint overlays do not confirm no-population entrants, the proxy should be downgraded.",
+    limitation: "The screen does not locate informal settlements inside coastal hazard zones.",
+  },
+  13: {
+    operationalUse: "Stop flood-market-access claims when the proxy is mostly event counts and population size.",
+    falsifier: "If road-network flood isolation produces the same priority set, the access claim gains support.",
+    limitation: "The current artifact contains no road network, market point, travel time, or flood footprint.",
+  },
+  14: {
+    operationalUse: "Help health and labor teams see when a cap choice turns a pollution-pressure proxy into a labor-share proxy.",
+    falsifier: "If labor-force denominators and heat-exposure data keep the same ranking after cap changes, the repair is less material.",
+    limitation: "The index is not a causal lost-workday estimate and does not observe worker heat exposure.",
+  },
+  15: {
+    operationalUse: "Show food-price analysts whether the vulnerability screen is driven by countries with both public indicators.",
+    falsifier: "If household or market price data keep the same high-risk group after missing-data repair, the coverage warning narrows.",
+    limitation: "The joint CPI/imports screen is not a food-security or household-exposure ranking.",
+  },
+  16: {
+    operationalUse: "Make missing social-protection or payment legs visible before excluding economies from shock-readiness screens.",
+    falsifier: "If payment-channel and beneficiary data validate the headline five after one-leg repair, the missingness concern weakens.",
+    limitation: "The public legs do not certify emergency payment delivery, identity readiness, or beneficiary reach.",
+  },
+  17: {
+    operationalUse: "Warn water and agriculture teams when internal-water denominators create above-100-percent stress artifacts.",
+    falsifier: "If total renewable water and crop-area denominators preserve the same priority set, the denominator warning narrows.",
+    limitation: "The current proxy is not crop diversification and omits basin, crop-area, and transboundary water detail.",
+  },
+  18: {
+    operationalUse: "Prevent scalar sensitivity sweeps from being treated as robustness evidence for urbanization proxies.",
+    falsifier: "If a satellite built-up layer and classification history confirm the same top set, the topic can be rebuilt.",
+    limitation: "The artifact uses WDI rural share and urban growth only; it does not observe invisible urban expansion.",
+  },
+  19: {
+    operationalUse: "Show transport teams when a sensitivity parameter is inert because observed import proxies never reach the cap.",
+    falsifier: "If actual hinterland travel-time or logistics data change under the parameter, the sensitivity test becomes meaningful.",
+    limitation: "The proxy is not port performance, hinterland friction, or logistics reliability by itself.",
+  },
+  20: {
+    operationalUse: "Keep the school-heat claim to the runs that discriminate after all-zero and rank-losing cases are removed.",
+    falsifier: "If school geocodes, calendars, and enrollment denominators change the top-one result, the national proxy should be replaced.",
+    limitation: "The artifact does not observe classrooms, indoor temperatures, school calendars, or enrolled pupils exposed to heat.",
+  },
+};
+
+export function getShowcaseReportDepth(report: ShowcaseReport) {
+  return showcaseReportDepth[report.id];
+}
 
 export function findShowcaseReportBySlug(slug: string) {
   return showcaseReports.find((report) => report.href === `/showcase/${slug}`);

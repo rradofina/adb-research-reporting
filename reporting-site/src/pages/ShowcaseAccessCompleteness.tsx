@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface AccessRegionRow {
   admin1_name: string;
@@ -256,6 +257,8 @@ export default function ShowcaseAccessCompleteness() {
           the screen into an official access statistic.
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={7} />
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">

@@ -1147,9 +1147,9 @@
 
   .home-report-card {
     display: grid;
-    grid-template-rows: auto auto auto minmax(5.75rem, auto) 1fr;
+    grid-template-rows: auto auto auto auto minmax(5.75rem, auto) 1fr;
     gap: 0.65rem;
-    min-height: 22rem;
+    min-height: 25rem;
     padding: 1rem;
     border: 1px solid var(--rule-soft);
     border-top: 4px solid var(--accent);
@@ -1183,6 +1183,35 @@
     color: var(--ink-soft);
     background: var(--paper-deep);
     font-size: var(--type-copy-xs);
+  }
+
+  .home-report-stage {
+    width: fit-content;
+    padding: 0.2rem 0.45rem;
+    border: 1px solid rgba(0, 125, 184, 0.2);
+    border-radius: var(--radius-interactive);
+    color: var(--accent-strong);
+    background: rgba(0, 125, 184, 0.08);
+    font-size: var(--type-copy-xs);
+    font-weight: var(--weight-semibold);
+  }
+
+  .home-report-stage-l3-candidate {
+    color: #3f5d1d;
+    background: rgba(90, 130, 39, 0.12);
+    border-color: rgba(90, 130, 39, 0.24);
+  }
+
+  .home-report-stage-owner-gated {
+    color: #7a4d00;
+    background: rgba(251, 176, 14, 0.16);
+    border-color: rgba(176, 125, 18, 0.28);
+  }
+
+  .home-report-stage-evidence-audit {
+    color: #7a1b1e;
+    background: rgba(155, 34, 38, 0.08);
+    border-color: rgba(155, 34, 38, 0.22);
   }
 
   .home-report-card h3 {

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import {
   findShowcaseReportBySlug,
   getShowcaseReportDepth,
+  getShowcaseReportQuality,
   showcaseReports,
   type ShowcaseAuditKind,
   type ShowcaseReport,
@@ -173,9 +174,11 @@ function sourceFacts(report: ShowcaseReport, data: JsonValue): Fact[] {
 
 function baseCaveats(report: ShowcaseReport, data: JsonValue) {
   const depth = getShowcaseReportDepth(report);
+  const quality = getShowcaseReportQuality(report);
   const caveats = [
     report.audit?.nonClaim || "This report does not widen the claim beyond the evidence artifact.",
     depth.limitation,
+    quality.publicationGap,
   ];
   if (data.claim_scope) caveats.push(String(data.claim_scope));
   return unique(caveats);
@@ -786,6 +789,7 @@ export default function ShowcaseEvidenceAudit() {
   if (!report || !report.audit) return <NotFound />;
 
   const depth = getShowcaseReportDepth(report);
+  const quality = getShowcaseReportQuality(report);
   const nextReport =
     showcaseReports.find((item) => item.id === report.id + 1) ||
     showcaseReports.find((item) => item.id === 1);
@@ -803,6 +807,7 @@ export default function ShowcaseEvidenceAudit() {
           <div className="showcase-meta">
             <span>{report.statusLabel}</span>
             <span>{report.audit.programSlug}</span>
+            <span>{quality.readinessLabel}</span>
             <span>{report.audit.kind.replaceAll("-", " ")}</span>
             <span>not a widened claim</span>
           </div>
@@ -865,12 +870,24 @@ export default function ShowcaseEvidenceAudit() {
           </div>
           <div className="showcase-fact-list audit-readouts">
             <div>
+              <span>Current QA stage</span>
+              <strong>{quality.readinessLabel}</strong>
+            </div>
+            <div>
+              <span>QA summary</span>
+              <strong>{quality.qaSummary}</strong>
+            </div>
+            <div>
               <span>Operational use</span>
               <strong>{depth.operationalUse}</strong>
             </div>
             <div>
               <span>Falsifier</span>
               <strong>{depth.falsifier}</strong>
+            </div>
+            <div>
+              <span>Next upgrade</span>
+              <strong>{quality.nextUpgrade}</strong>
             </div>
             {model.readouts.map((fact) => (
               <div key={fact.label}>
@@ -936,7 +953,9 @@ export default function ShowcaseEvidenceAudit() {
               <strong>
                 <Link to={item.href}>{item.shortTitle}</Link>
               </strong>
-              <em>{item.statusLabel}</em>
+              <em>
+                {item.statusLabel} - {getShowcaseReportQuality(item).readinessLabel}
+              </em>
               <code>{item.evidencePath}</code>
             </div>
           ))}

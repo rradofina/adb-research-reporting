@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { showcaseReports } from "../data/showcaseReports";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
+import { getShowcaseReportQuality, showcaseReports } from "../data/showcaseReports";
 
 interface SprintCoverage {
   raw_price_rows_kept: number;
@@ -242,6 +243,8 @@ export default function Showcase() {
         </div>
       </section>
 
+      <ShowcaseQualityPanel reportId={1} />
+
       <section className="showcase-section">
         <div className="showcase-section-copy">
           <p className="kicker">Showcase queue</p>
@@ -261,7 +264,9 @@ export default function Showcase() {
               <strong>
                 <Link to={item.href}>{item.shortTitle}</Link>
               </strong>
-              <em>{item.statusLabel}</em>
+              <em>
+                {item.statusLabel} - {getShowcaseReportQuality(item).readinessLabel}
+              </em>
               <code>{item.evidencePath}</code>
             </div>
           ))}

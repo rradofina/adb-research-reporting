@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import {
   getShowcaseReportDepth,
+  getShowcaseReportQuality,
   showcaseReports,
   verifiedShowcaseReports,
 } from "../data/showcaseReports";
@@ -68,6 +69,9 @@ export default function Home() {
   const heroesRendered = Object.values(heroIndex).filter(Boolean).length;
   const totalPrograms = programs.length;
   const verifiedCount = verifiedShowcaseReports.length;
+  const l3CandidateCount = showcaseReports.filter(
+    (report) => getShowcaseReportQuality(report).readiness === "l3-candidate",
+  ).length;
 
   return (
     <div className="home-page home-showcase-page">
@@ -95,11 +99,11 @@ export default function Home() {
           <div className="home-panel-stats">
             <div>
               <span className="home-showcase-stat">{verifiedCount}</span>
-              <span>verified reports</span>
+              <span>screenshot-checked</span>
             </div>
             <div>
-              <span className="home-showcase-stat">{showcaseReports.length}</span>
-              <span>report set</span>
+              <span className="home-showcase-stat">{l3CandidateCount}</span>
+              <span>L3 candidates</span>
             </div>
             <div>
               <span className="home-showcase-stat">
@@ -137,12 +141,16 @@ export default function Home() {
         <div className="home-report-grid">
           {showcaseReports.map((report) => {
             const depth = getShowcaseReportDepth(report);
+            const quality = getShowcaseReportQuality(report);
             return (
               <Link to={report.href} className="home-report-card" key={report.href}>
                 <span className="home-report-number">
                   {String(report.id).padStart(2, "0")}
                 </span>
                 <span className="home-report-status">{report.statusLabel}</span>
+                <span className={`home-report-stage home-report-stage-${quality.readiness}`}>
+                  {quality.readinessLabel}
+                </span>
                 <h3>{report.shortTitle}</h3>
                 <p>{report.deck}</p>
                 <dl className="home-report-facts">
@@ -157,6 +165,10 @@ export default function Home() {
                   <div>
                     <dt>Falsifier</dt>
                     <dd>{depth.falsifier}</dd>
+                  </div>
+                  <div>
+                    <dt>Next upgrade</dt>
+                    <dd>{quality.nextUpgrade}</dd>
                   </div>
                   <div>
                     <dt>Evidence</dt>

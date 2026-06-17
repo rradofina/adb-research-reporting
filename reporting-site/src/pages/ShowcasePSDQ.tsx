@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface PsdqExposureRow {
   division_name: string;
@@ -334,6 +335,8 @@ export default function ShowcasePSDQ() {
           </Link>
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={4} />
 
       <section className="showcase-section showcase-two-col">
         <div>

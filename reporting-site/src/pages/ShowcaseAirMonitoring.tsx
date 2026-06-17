@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface ZeroMonitorRow {
   iso3: string;
@@ -373,6 +374,8 @@ export default function ShowcaseAirMonitoring() {
           </p>
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={6} />
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">

@@ -145,6 +145,34 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (showcase readiness ladder):** Added explicit report-readiness
+  metadata for all 20 showcase reports in
+  `reporting-site/src/data/showcaseReports.ts`: L2 prototype, L3 candidate,
+  evidence audit, and owner-gated. The homepage now separates
+  screenshot-checked routes from the five L3 candidates, adds one stage chip
+  per report card, and shows the next upgrade alongside the visual,
+  operational use, falsifier, evidence path, and source stack. `/showcase`
+  and dynamic audit route queues now display both surface status and readiness
+  stage. New portfolio audit artifact:
+  `research/showcase-quality-audit.md`, with stage definitions, current
+  distribution, report-by-report publication gaps, and the next deepening
+  order. Browser QA saved `home-readiness-desktop.png`,
+  `home-readiness-mobile.png`, `showcase-queue-readiness-desktop.png`,
+  `showcase-queue-readiness-mobile.png`, and
+  `showcase-20-readiness-mobile.png`; checks confirmed 20 home cards, 120
+  home fact rows, 20 stage chips, 20 queue rows, readiness labels visible,
+  expected audit stats on report #20, and zero page-level horizontal overflow
+  at desktop and mobile widths. This is a readiness-governance improvement,
+  not a maturity promotion. Follow-up implementation audit found that the
+  readiness ladder was global on the homepage and queue, and complete on
+  dynamic audit pages 9-20, but not yet visible inside the older static report
+  pages 1-8. Added `ShowcaseQualityPanel` and wired it into all eight static
+  routes so every report surface now shows current QA stage, operational use,
+  falsifier, publication gap, next upgrade, evidence path, and source stack.
+  Focused mobile browser QA on `/showcase/remittance-flow-weighting` confirmed
+  the shared panel, next-upgrade text, and zero horizontal overflow; build and
+  source audit cover the remaining static routes. Screenshot saved:
+  `showcase-remittance-readiness-panel-mobile.png`.
 - **2026-06-17 (showcase depth-standard pass):** Added bench-level
   `operationalUse`, `falsifier`, and `limitation` metadata for all 20
   showcase reports in `reporting-site/src/data/showcaseReports.ts`. The

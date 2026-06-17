@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface ShockCoverage {
   dmc_rows: number;
@@ -284,6 +285,8 @@ export default function ShowcaseShockPayment() {
           </a>
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={3} />
 
       <section className="showcase-section showcase-two-col">
         <div>

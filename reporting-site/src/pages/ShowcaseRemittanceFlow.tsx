@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface FlowCoverageFlag {
   iso3: string;
@@ -317,6 +318,8 @@ export default function ShowcaseRemittanceFlow() {
           </Link>
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={5} />
 
       <section className="showcase-section showcase-two-col">
         <div>

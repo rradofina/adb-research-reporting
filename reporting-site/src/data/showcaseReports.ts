@@ -42,6 +42,20 @@ export interface ShowcaseReportDepth {
   limitation: string;
 }
 
+export type ShowcaseReadiness =
+  | "prototype"
+  | "l3-candidate"
+  | "evidence-audit"
+  | "owner-gated";
+
+export interface ShowcaseReportQuality {
+  readiness: ShowcaseReadiness;
+  readinessLabel: string;
+  qaSummary: string;
+  publicationGap: string;
+  nextUpgrade: string;
+}
+
 export const showcaseReports: ShowcaseReport[] = [
   {
     id: 1,
@@ -537,8 +551,155 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
   },
 };
 
+export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
+  1: {
+    readiness: "prototype",
+    readinessLabel: "L2 prototype",
+    qaSummary: "Public sprint artifact, interactive heatmap, caveats, screenshots, and build/gates are in place.",
+    publicationGap: "Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers before a program claim.",
+    nextUpgrade: "Convert the Nepal sprint into an L3 market-price package with commodity, import, fuel, and rainfall-source checks.",
+  },
+  2: {
+    readiness: "prototype",
+    readinessLabel: "L2 prototype",
+    qaSummary: "WDI freshness matrix has a public API artifact, interactive matrix, caveats, screenshots, and build/gates.",
+    publicationGap: "Needs indicator-specific refresh expectations and non-applicability rules before a statistical-capacity brief.",
+    nextUpgrade: "Write the freshness inclusion protocol and rerun the matrix with source-specific refresh cadence labels.",
+  },
+  3: {
+    readiness: "prototype",
+    readinessLabel: "L2 prototype",
+    qaSummary: "Shock-payment rails joins public disaster, payment-use, and social-protection proxies with a checked visual surface.",
+    publicationGap: "Needs payment-channel metadata, ID/source vintage checks, and event-case validation before readiness language.",
+    nextUpgrade: "Add a payment-channel source scan and rerun the sprint with vintage and emergency-transfer non-claim checks.",
+  },
+  4: {
+    readiness: "l3-candidate",
+    readinessLabel: "L3 candidate",
+    qaSummary: "Bespoke PSDQ source-disagreement surface is tied to a mature program spine and public evidence artifacts.",
+    publicationGap: "Needs facility-level matching sample, registry-vintage notes, and an independent validation layer for the report bench.",
+    nextUpgrade: "Package the BGD source-disagreement report with matching strata, validation notes, and a chart caption audit.",
+  },
+  5: {
+    readiness: "l3-candidate",
+    readinessLabel: "L3 candidate",
+    qaSummary: "Flow-weighting sprint and remittance program artifacts make this one of the strongest repair-to-publication candidates.",
+    publicationGap: "Needs formal L3 repair decision, parser coverage notes, and a review packet before the claim can be reclosed.",
+    nextUpgrade: "Move the flow-weighting sprint into remittance L3 with coverage panel, sensitivity notes, and review-loop response.",
+  },
+  6: {
+    readiness: "l3-candidate",
+    readinessLabel: "L3 candidate",
+    qaSummary: "Air-monitoring has deepening artifacts plus a bespoke observability report with multiple checked visual panels.",
+    publicationGap: "Needs station-radius sensitivity, regulatory inventory comparison, and gridded population/PM2.5 denominator validation.",
+    nextUpgrade: "Build the air-monitor catchment package around station-radius sensitivity and OpenAQ-versus-regulatory source checks.",
+  },
+  7: {
+    readiness: "l3-candidate",
+    readinessLabel: "L3 candidate",
+    qaSummary: "Access map-completeness has registry comparison artifacts and a strong source-audit visual surface.",
+    publicationGap: "Needs additional official registry joins and a travel-time or catchment denominator before access language.",
+    nextUpgrade: "Extend registry joins for the priority economies and add a public friction/travel-time validation plan.",
+  },
+  8: {
+    readiness: "l3-candidate",
+    readinessLabel: "L3 candidate",
+    qaSummary: "Disaster metric-falsification has a bespoke route and clear kill-condition evidence across alternate burden metrics.",
+    publicationGap: "Needs event-timestamped recovery curves and exposure denominators before any recovery-lag claim.",
+    nextUpgrade: "Build a recovery-lag source plan and event-level recovery proxy before reusing the disaster hook as a report.",
+  },
+  9: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route compares capacity and generation concentration and keeps generation coverage visible.",
+    publicationGap: "Needs outage, reserve-margin, dispatch, or heat-stress evidence before reliability framing.",
+    nextUpgrade: "Search for public outage/reserve-margin proxies and decide whether the fuel-concentration result can graduate.",
+  },
+  10: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route shows the denominator switch from absolute emigrant stock to population-share exposure.",
+    publicationGap: "Needs corridor composition, remittance/refugee split, and literature scan before a migration report.",
+    nextUpgrade: "Build a corridor-type falsifier that separates labor, refugee, family, and remittance-relevant migration signals.",
+  },
+  11: {
+    readiness: "owner-gated",
+    readinessLabel: "Owner-gated",
+    qaSummary: "MPI-side decomposition is public and checked, but the night-light join is explicitly owner-gated.",
+    publicationGap: "Needs owner-led Earth Engine/VIIRS access and coauthor attestation before advancing beyond decomposition.",
+    nextUpgrade: "Keep as a transparent methods note until owner-led NTL ingestion and coauthored review are cleared.",
+  },
+  12: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route exposes how dropping population changes the coastal informal-risk proxy.",
+    publicationGap: "Needs settlement footprints, elevation, and surge-zone overlay before coastal exposure language.",
+    nextUpgrade: "Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer.",
+  },
+  13: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route decomposes the flood-market-access proxy and shows the per-capita rank break.",
+    publicationGap: "Needs roads, markets or services, flood footprint, and travel-time logic before access framing.",
+    nextUpgrade: "Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note.",
+  },
+  14: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route shows cap saturation and labor-share drift in the climate-health workday proxy.",
+    publicationGap: "Needs labor-force denominator repair and heat exposure evidence before workday-loss interpretation.",
+    nextUpgrade: "Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart.",
+  },
+  15: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route foregrounds indicator coverage and common-vintage instability in the food-price screen.",
+    publicationGap: "Needs household or market price exposure evidence before vulnerability language.",
+    nextUpgrade: "Join a market-price or household-expenditure source for one DMC and keep WDI coverage as the source audit.",
+  },
+  16: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route makes missing social-protection/payment legs visible before exclusion.",
+    publicationGap: "Needs payment-channel or beneficiary delivery data before shock-readiness interpretation.",
+    nextUpgrade: "Search public payment-channel metadata and rebuild the screen as coverage-versus-payment-rail observability.",
+  },
+  17: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route exposes internal-water denominator artifacts and the rural multiplier effect.",
+    publicationGap: "Needs total-renewable-water, basin, and crop-area data before water-crop diversification framing.",
+    nextUpgrade: "Rebuild the water screen around AQUASTAT/FAOSTAT or demote the current index to a denominator caution.",
+  },
+  18: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route shows the scalar robustness sweep is rank-preserving and not real sensitivity evidence.",
+    publicationGap: "Needs satellite/built-up layer and classification history before invisible-urbanization framing.",
+    nextUpgrade: "Select one pilot geography and replace the WDI-only proxy with GHSL or settlement-layer evidence.",
+  },
+  19: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route shows the import-cap sensitivity knob is largely inert in observed data.",
+    publicationGap: "Needs actual hinterland travel-time, logistics, or port-performance source before friction language.",
+    nextUpgrade: "Search for public port/hinterland travel-time proxies and decide whether the cap audit becomes a methods note.",
+  },
+  20: {
+    readiness: "evidence-audit",
+    readinessLabel: "Evidence audit",
+    qaSummary: "Artifact route narrows school-heat sensitivity to discriminating runs and names degenerate/rank-losing cases.",
+    publicationGap: "Needs school geocodes, calendars, enrollment, and local heat exposure before school-disruption claims.",
+    nextUpgrade: "Pick a public school-location pilot or keep the current route as a sensitivity-audit caution.",
+  },
+};
+
 export function getShowcaseReportDepth(report: ShowcaseReport) {
   return showcaseReportDepth[report.id];
+}
+
+export function getShowcaseReportQuality(report: ShowcaseReport) {
+  return showcaseReportQuality[report.id];
 }
 
 export function findShowcaseReportBySlug(slug: string) {

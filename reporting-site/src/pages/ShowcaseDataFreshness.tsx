@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 interface FreshnessCoverage {
   dmc_count: number;
@@ -280,6 +281,8 @@ export default function ShowcaseDataFreshness() {
           </a>
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={2} />
 
       <section className="showcase-section showcase-two-col">
         <div>

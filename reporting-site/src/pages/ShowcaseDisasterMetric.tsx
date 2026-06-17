@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
 
 type MetricField = "events_per_year" | "affected" | "damage" | "deaths" | "events_per_million";
 
@@ -346,6 +347,8 @@ export default function ShowcaseDisasterMetric() {
           this program's own data lineage.
         </div>
       </section>
+
+      <ShowcaseQualityPanel reportId={8} />
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">

@@ -193,6 +193,30 @@ The ledger keeps all 71 flagged rows open while separating them into:
 This is not human validation. It is the row-level worklist for the next public
 source review.
 
+## Candidate-Resolution Addendum
+
+The first row-level public-source pass is now structured in
+`facility-validation-candidate-resolution.md`. The script
+`scripts/resolve-bgd-facility-candidate-rows.py` reads the AI review ledger,
+the OSM-candidates CSV, and the AI review summary, then separates the 8
+candidate-resolution rows into narrower lanes.
+
+All 8 rows remain open:
+
+| Candidate-resolution lane | Rows |
+|---|---:|
+| Probable same-facility alias or campus | 1 |
+| Probable same-site classification conflict | 2 |
+| Possible alias requiring name check | 2 |
+| Local-script candidate requiring name check | 1 |
+| Ambiguous nearby candidate | 1 |
+| Weak nearby OSM signal | 1 |
+
+This is not human validation and does not close any row as a confirmed
+same-facility match. It makes the next review step more specific: alias/campus
+checks, type-conflict checks, possible aliases, a local-script name check, and
+weak or ambiguous nearby features.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -215,6 +239,7 @@ python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.
 python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py
+python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
 ```
 
 Outputs:
@@ -230,12 +255,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coded-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is row-level public-source resolution from the AI review
-ledger. Start with the 8 candidate-resolution rows, then coordinate-source
-repair, then the high-exposure public-map-gap checks. Until that review exists,
-the correct publication use is source QA before service-access mapping, not a
-statement about facility availability, service quality, or validated
-catchments.
+The next upgrade is public-source confirmation within the candidate-resolution
+lanes, followed by coordinate-source repair and the high-exposure public-map-gap
+checks. Until that review exists, the correct publication use is source QA
+before service-access mapping, not a statement about facility availability,
+service quality, or validated catchments.

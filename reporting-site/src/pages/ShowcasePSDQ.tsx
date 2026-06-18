@@ -234,6 +234,38 @@ interface PsdqAiReviewSummary {
   non_claim: string;
 }
 
+interface PsdqCandidateResolutionCount {
+  name: string;
+  rows: number;
+}
+
+interface PsdqCandidateResolutionGroupCount {
+  sample_group: string;
+  rows: number;
+  probable_same_facility_alias_or_campus: number;
+  probable_same_site_classification_conflict: number;
+  possible_alias_requires_name_check: number;
+  local_script_candidate_requires_name_check: number;
+  ambiguous_nearby_candidate: number;
+  weak_nearby_osm_signal: number;
+}
+
+interface PsdqCandidateResolutionSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  resolution_scope: {
+    candidate_resolution_rows_reviewed: number;
+    rows_closed_as_confirmed_same_facility: number;
+    rows_retained_open: number;
+    rows_with_local_script_candidate: number;
+  };
+  candidate_resolution_code_counts: PsdqCandidateResolutionCount[];
+  candidate_resolution_counts_by_group: PsdqCandidateResolutionGroupCount[];
+  evidence_strength_counts: PsdqCandidateResolutionCount[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -369,6 +401,8 @@ export default function ShowcasePSDQ() {
   const [validationSample, setValidationSample] = useState<PsdqValidationSample | null>(null);
   const [codedSummary, setCodedSummary] = useState<PsdqValidationCodedSummary | null>(null);
   const [aiReviewSummary, setAiReviewSummary] = useState<PsdqAiReviewSummary | null>(null);
+  const [candidateResolutionSummary, setCandidateResolutionSummary] =
+    useState<PsdqCandidateResolutionSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -399,18 +433,32 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`AI review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`candidate resolution HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
       }),
     ])
-      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, codedPayload, aiReviewPayload, csvText]) => {
+      .then(([
+        summaryPayload,
+        nationalPayload,
+        strataPayload,
+        validationSamplePayload,
+        codedPayload,
+        aiReviewPayload,
+        candidateResolutionPayload,
+        csvText,
+      ]) => {
         setSummary(summaryPayload);
         setNational(nationalPayload);
         setStrata(strataPayload);
         setValidationSample(validationSamplePayload);
         setCodedSummary(codedPayload);
         setAiReviewSummary(aiReviewPayload);
+        setCandidateResolutionSummary(candidateResolutionPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -505,6 +553,8 @@ export default function ShowcasePSDQ() {
       {codedSummary && <PsdqValidationCodedPanel summary={codedSummary} />}
 
       {aiReviewSummary && <PsdqAiReviewPanel summary={aiReviewSummary} />}
+
+      {candidateResolutionSummary && <PsdqCandidateResolutionPanel summary={candidateResolutionSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -1077,6 +1127,214 @@ function aiReviewBucketMeaning(bucket: string) {
     unresolved_public_source_check: "Available public artifacts do not support a stable row code.",
   };
   return meanings[bucket] || bucket.replaceAll("_", " ");
+}
+
+const CANDIDATE_RESOLUTION_ORDER = [
+  "probable_same_facility_alias_or_campus",
+  "probable_same_site_classification_conflict",
+  "possible_alias_requires_name_check",
+  "local_script_candidate_requires_name_check",
+  "ambiguous_nearby_candidate",
+  "weak_nearby_osm_signal",
+] as const;
+
+const CANDIDATE_RESOLUTION_LABELS: Record<string, string> = {
+  probable_same_facility_alias_or_campus: "Alias/campus signal",
+  probable_same_site_classification_conflict: "Same-site type conflict",
+  possible_alias_requires_name_check: "Possible alias",
+  local_script_candidate_requires_name_check: "Local-script name gap",
+  ambiguous_nearby_candidate: "Ambiguous nearby",
+  weak_nearby_osm_signal: "Weak nearby signal",
+};
+
+function candidateResolutionColor(code: string) {
+  const colors: Record<string, string> = {
+    probable_same_facility_alias_or_campus: "#005F73",
+    probable_same_site_classification_conflict: "#007DB8",
+    possible_alias_requires_name_check: "#D97706",
+    local_script_candidate_requires_name_check: "#0F766E",
+    ambiguous_nearby_candidate: "#4A5568",
+    weak_nearby_osm_signal: "#A0AEC0",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function candidateResolutionCount(summary: PsdqCandidateResolutionSummary, code: string) {
+  return summary.candidate_resolution_code_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function PsdqCandidateResolutionPanel({ summary }: { summary: PsdqCandidateResolutionSummary }) {
+  const aliasSignals =
+    candidateResolutionCount(summary, "probable_same_facility_alias_or_campus") +
+    candidateResolutionCount(summary, "possible_alias_requires_name_check");
+  const typeConflicts = candidateResolutionCount(summary, "probable_same_site_classification_conflict");
+  const weakOrAmbiguous =
+    candidateResolutionCount(summary, "ambiguous_nearby_candidate") +
+    candidateResolutionCount(summary, "weak_nearby_osm_signal");
+
+  return (
+    <section className="showcase-section psdq-candidate-resolution-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Candidate-resolution pass</p>
+          <h2>The eight candidate cases are no longer one blurry queue.</h2>
+          <p>
+            The second pass reads the AI review ledger and ranked OSM
+            candidates, then sorts the 8 row-level candidate cases into review
+            lanes. It keeps every row open: the value is a sharper worklist,
+            not a same-facility decision.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Candidate rows reviewed</span>
+            <strong>{formatNumber(summary.resolution_scope.candidate_resolution_rows_reviewed)} rows</strong>
+          </div>
+          <div>
+            <span>Confirmed same-facility closures</span>
+            <strong>{formatNumber(summary.resolution_scope.rows_closed_as_confirmed_same_facility)} rows</strong>
+          </div>
+          <div>
+            <span>Alias or campus checks</span>
+            <strong>{formatNumber(aliasSignals)} rows still need public-name confirmation</strong>
+          </div>
+          <div>
+            <span>Type-conflict checks</span>
+            <strong>{formatNumber(typeConflicts)} rows need classification review</strong>
+          </div>
+          <div>
+            <span>Weak or ambiguous signals</span>
+            <strong>{formatNumber(weakOrAmbiguous)} rows should not be treated as matches</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-resolution-grid">
+        {CANDIDATE_RESOLUTION_ORDER.filter((code) => candidateResolutionCount(summary, code) > 0).map((code) => (
+          <div key={code}>
+            <span>{CANDIDATE_RESOLUTION_LABELS[code]}</span>
+            <strong>{formatNumber(candidateResolutionCount(summary, code))}</strong>
+            <em>{candidateResolutionMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqCandidateResolutionChart groups={summary.candidate_resolution_counts_by_group} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ candidate-resolution lane legend">
+        {CANDIDATE_RESOLUTION_ORDER.filter((code) => candidateResolutionCount(summary, code) > 0).map((code) => (
+          <span key={code}>
+            <i style={{ background: candidateResolutionColor(code) }} /> {CANDIDATE_RESOLUTION_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the candidate pass</p>
+        <code>python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-candidate-resolution.md" download>
+          Download candidate-resolution note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json" download>
+          Download candidate-resolution summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution.csv" download>
+          Download candidate-resolution CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function candidateResolutionMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    probable_same_facility_alias_or_campus: "Very close, category-compatible, but still open.",
+    probable_same_site_classification_conflict: "Nearby feature, type conflict unresolved.",
+    possible_alias_requires_name_check: "Name signal exists; public name source needed.",
+    local_script_candidate_requires_name_check: "Close non-Latin OSM name needs source check.",
+    ambiguous_nearby_candidate: "Mixed distance, name, or type evidence.",
+    weak_nearby_osm_signal: "Nearby feature exists, but row match is weak.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function PsdqCandidateResolutionChart({ groups }: { groups: PsdqCandidateResolutionGroupCount[] }) {
+  const width = 1040;
+  const rowHeight = 58;
+  const headerHeight = 54;
+  const height = headerHeight + groups.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 230;
+  const barWidth = 540;
+  const countX = 805;
+
+  return (
+    <svg
+      className="psdq-coded-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Candidate-resolution lanes by PSDQ sample group"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Eight candidate cases, kept open by review lane
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS row queued for candidate-level public-source resolution
+      </text>
+      <text x={barX} y={52} className="psdq-chart-head">
+        Lane mix
+      </text>
+      <text x={countX} y={52} className="psdq-chart-head">
+        Alias / type / weak
+      </text>
+
+      {groups.map((group, index) => {
+        const y = headerHeight + index * rowHeight;
+        let x = barX;
+        return (
+          <g key={group.sample_group}>
+            <text x={labelX} y={y + 18} className="psdq-row-label">
+              {sampleGroupLabel(group.sample_group)}
+            </text>
+            <text x={labelX} y={y + 36} className="psdq-row-sub">
+              {formatNumber(group.rows)} candidate rows
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={24} fill="#eef2f5" />
+            {CANDIDATE_RESOLUTION_ORDER.map((code) => {
+              const value = Number(group[code] || 0);
+              const segmentWidth = group.rows > 0 ? (value / group.rows) * barWidth : 0;
+              const segment = (
+                <rect
+                  key={code}
+                  x={x}
+                  y={y}
+                  width={Math.max(0, segmentWidth)}
+                  height={24}
+                  fill={candidateResolutionColor(code)}
+                >
+                  <title>{`${sampleGroupLabel(group.sample_group)}: ${formatNumber(value)} ${CANDIDATE_RESOLUTION_LABELS[code]}`}</title>
+                </rect>
+              );
+              x += segmentWidth;
+              return segment;
+            })}
+            <text x={countX} y={y + 17} className="psdq-value">
+              {formatNumber(group.probable_same_facility_alias_or_campus + group.possible_alias_requires_name_check)} /{" "}
+              {formatNumber(group.probable_same_site_classification_conflict)} /{" "}
+              {formatNumber(group.ambiguous_nearby_candidate + group.weak_nearby_osm_signal)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
 }
 
 function PsdqAiReviewBucketChart({ groups }: { groups: PsdqAiReviewGroupCount[] }) {

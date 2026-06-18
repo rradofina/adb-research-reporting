@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `120f4c8a8b78…`
-- `program/STATUS.md`  `1d7a8084a044…`
-- `program/REPRODUCE.md`  `262c72bff4e0…`
+- `program/README.md`  `674db111ad98…`
+- `program/STATUS.md`  `37bca0a16090…`
+- `program/REPRODUCE.md`  `77a5d262183e…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,10 +81,11 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `158c3ad9f08b…`
+- `program/source-disagreement-l3-module.md`  `e85045b33f21…`
 - `program/facility-validation-sample.md`  `426a18b29d9e…`
-- `program/facility-validation-coded-screen.md`  `250ccf9c0900…`
-- `program/facility-validation-ai-review.md`  `15c5af5decba…`
+- `program/facility-validation-coded-screen.md`  `0d6e2d7b81f1…`
+- `program/facility-validation-ai-review.md`  `31a8f8096642…`
+- `program/facility-validation-candidate-resolution.md`  `6f4f5fbd8dc2…`
 - `program/limitations.md`  `8ac5d2ea407f…`
 - `program/upgrade-gap.md`  `207d3df3b8ba…`
 - `program/catchment-upgrade.md`  `4f85675317f0…`
@@ -111,6 +112,8 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-facility-coordinate-summary.json`  `b031bc152cbc…`
 - `program/generated/psdq-bgd-facility-validation-ai-review-summary.json`  `3f636b7dbdc0…`
 - `program/generated/psdq-bgd-facility-validation-ai-review.csv`  `9170cf0d2a6d…`
+- `program/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`  `5b176dcc92a6…`
+- `program/generated/psdq-bgd-facility-validation-candidate-resolution.csv`  `9a9dde9e93fa…`
 - `program/generated/psdq-bgd-facility-validation-coded-screen.csv`  `ff3da51e9bf2…`
 - `program/generated/psdq-bgd-facility-validation-coded-summary.json`  `0c9c01426078…`
 - `program/generated/psdq-bgd-facility-validation-coding-sheet.csv`  `cdb9950c61c8…`
@@ -168,6 +171,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/process-bgd.py`  `12886ad8bf46…`
 - `program/scripts/process-disagreement.py`  `b8e60d278ff4…`
 - `program/scripts/process-multi-country.py`  `6256f065f18c…`
+- `program/scripts/resolve-bgd-facility-candidate-rows.py`  `2d859452774e…`
 - `program/scripts/review-bgd-facility-validation-flags.py`  `c9aa5e6653f9…`
 - `program/scripts/sensitivity-bgd.py`  `2665382bf7e4…`
 - `program/scripts/sensitivity.py`  `8c1597d71737…`
@@ -188,4 +192,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-18T18:27:31.881Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-18T18:41:39.620Z by `scripts/build-review-packet.mjs`.

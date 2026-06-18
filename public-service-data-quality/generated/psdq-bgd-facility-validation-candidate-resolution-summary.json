@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-06-18T18:33:06Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "attestation_chain": "ai-first",
+  "status": "ai_public_source_candidate_resolution_not_human_validation",
+  "goal_level": "L3 candidate-resolution pass",
+  "unit": "sampled DGHS row queued for candidate-level public-source resolution",
+  "source_inputs": [
+    {
+      "path": "generated\\psdq-bgd-facility-validation-ai-review.csv",
+      "role": "AI public-source row-review ledger; source of the eight queued candidate rows"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-osm-candidates.csv",
+      "role": "ranked OSM health candidates within 500 meters of sampled DGHS coordinates"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-ai-review-summary.json",
+      "role": "AI review scope, public-source metadata, and non-claim"
+    }
+  ],
+  "public_validation_sources": [
+    {
+      "source": "DGHS public facilities JSON endpoint",
+      "role": "Registry row, facility name, type, coordinate, and sampled coding unit.",
+      "local_artifact": "generated\\psdq-bgd-facility-validation-coding-sheet.csv"
+    },
+    {
+      "source": "OpenStreetMap Overpass",
+      "role": "Public OSM health candidates from the cached all-Bangladesh Overpass pull, filtered within 500 meters of valid DGHS coordinates.",
+      "query_template": "area[\"ISO3166-1\"=\"BD\"][admin_level=2]; nwr[\"amenity\"~\"^(hospital|clinic|doctors)$\"](area); out center tags;",
+      "local_artifact": ".cache\\bgd_osm_health_features_overpass.json",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "source": "geoBoundaries BGD ADM3",
+      "role": "Coordinate plausibility check against expected sampled upazila geometry.",
+      "local_artifact": ".cache\\geo\\geoBoundaries-BGD-ADM3.geojson"
+    }
+  ],
+  "resolution_scope": {
+    "candidate_resolution_rows_reviewed": 8,
+    "rows_closed_as_confirmed_same_facility": 0,
+    "rows_retained_open": 8,
+    "rows_with_local_script_candidate": 1
+  },
+  "candidate_resolution_code_counts": [
+    {
+      "name": "probable_same_facility_alias_or_campus",
+      "rows": 1
+    },
+    {
+      "name": "probable_same_site_classification_conflict",
+      "rows": 2
+    },
+    {
+      "name": "possible_alias_requires_name_check",
+      "rows": 2
+    },
+    {
+      "name": "local_script_candidate_requires_name_check",
+      "rows": 1
+    },
+    {
+      "name": "ambiguous_nearby_candidate",
+      "rows": 1
+    },
+    {
+      "name": "weak_nearby_osm_signal",
+      "rows": 1
+    }
+  ],
+  "candidate_resolution_counts_by_group": [
+    {
+      "sample_group": "comparison_mid_ratio",
+      "rows": 3,
+      "probable_same_facility_alias_or_campus": 0,
+      "probable_same_site_classification_conflict": 1,
+      "possible_alias_requires_name_check": 1,
+      "local_script_candidate_requires_name_check": 0,
+      "ambiguous_nearby_candidate": 1,
+      "weak_nearby_osm_signal": 0
+    },
+    {
+      "sample_group": "osm_ge_registry",
+      "rows": 5,
+      "probable_same_facility_alias_or_campus": 1,
+      "probable_same_site_classification_conflict": 1,
+      "possible_alias_requires_name_check": 1,
+      "local_script_candidate_requires_name_check": 1,
+      "ambiguous_nearby_candidate": 0,
+      "weak_nearby_osm_signal": 1
+    }
+  ],
+  "evidence_strength_counts": [
+    {
+      "name": "low_public_source_signal",
+      "rows": 1
+    },
+    {
+      "name": "low_to_medium_public_source_signal",
+      "rows": 1
+    },
+    {
+      "name": "medium_high_public_source_signal",
+      "rows": 1
+    },
+    {
+      "name": "medium_low_public_source_signal",
+      "rows": 3
+    },
+    {
+      "name": "medium_public_source_signal",
+      "rows": 2
+    }
+  ],
+  "non_claim": "This is an AI-first public-source candidate-resolution pass over the eight rows already queued by the AI review ledger. It is not human validation, not ground truth, not a facility-quality assessment, and not a service-access estimate.",
+  "outputs": {
+    "resolution_csv": "generated\\psdq-bgd-facility-validation-candidate-resolution.csv",
+    "summary_json": "generated\\psdq-bgd-facility-validation-candidate-resolution-summary.json"
+  }
+}

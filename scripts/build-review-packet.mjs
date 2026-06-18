@@ -66,6 +66,7 @@ const PROGRAM_FILES = [
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",
   "facility-validation-ai-review.md",
+  "facility-validation-candidate-resolution.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

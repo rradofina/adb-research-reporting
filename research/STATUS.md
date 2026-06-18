@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, and AI public-source review ledger added 2026-06-19; next loop is row-level public-source resolution) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, and 8-row candidate-resolution pass added 2026-06-19; next loop is public-source confirmation inside candidate lanes) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -148,6 +148,31 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ candidate-resolution pass):** Added
+  `public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py`,
+  generated `psdq-bgd-facility-validation-candidate-resolution.csv` and
+  `psdq-bgd-facility-validation-candidate-resolution-summary.json`, and wrote
+  `public-service-data-quality/facility-validation-candidate-resolution.md`.
+  The pass reads the AI review ledger, OSM-candidates CSV, and AI review
+  summary, keeps all 8 candidate-resolution rows open, and separates them into
+  1 probable alias/campus lane, 2 same-site classification-conflict lanes, 2
+  possible aliases, 1 local-script name gap, 1 ambiguous nearby candidate, and
+  1 weak nearby OSM signal. The showcase route
+  `/showcase/psdq-source-disagreement` now fetches the candidate-resolution
+  summary JSON, shows the lane grid/chart, and links the new note and
+  downloads. README, REPRODUCE, hook bank, quality audit,
+  sync/review-packet inclusion, source-disagreement L3 note, and per-program
+  status were updated. This is AI public-source candidate resolution, not
+  human validation, a maturity promotion, or a human-final upgrade.
+  Verification passed: new script and program-script `py_compile`, production
+  site build, six deterministic gates, review-packet rebuild, and agent-browser
+  desktop/mobile QA at 1365px and 375px with no page-level horizontal overflow
+  and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-candidate-resolution-desktop.png` and
+  `reporting-site/qa/showcase-psdq-candidate-resolution-mobile.png`. Rebuilt
+  `review-packets/public-service-data-quality-2026-06-18/` plus zip. Next PSDQ
+  loop is public-source confirmation inside these candidate lanes, then
+  coordinate-source repair and high-exposure public-map-gap checks.
 - **2026-06-19 (PSDQ AI public-source review ledger):** Added
   `public-service-data-quality/scripts/review-bgd-facility-validation-flags.py`,
   generated `psdq-bgd-facility-validation-ai-review.csv` and
@@ -167,8 +192,8 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-psdq-ai-review-desktop.png` and
   `reporting-site/qa/showcase-psdq-ai-review-mobile.png`. This is AI
   public-source row review, not human validation, a maturity promotion, or a
-  human-final upgrade. Next PSDQ loop is row-level public-source resolution,
-  starting with the 8 candidate-resolution rows.
+  human-final upgrade. This queue is now superseded by the candidate-resolution
+  pass; next PSDQ loop is public-source confirmation inside those lanes.
 - **2026-06-19 (PSDQ automated facility-validation coded screen):** Added
   `public-service-data-quality/scripts/code-bgd-facility-validation-sample.py`,
   generated the coded-screen CSV, OSM-candidates CSV, and coded-summary JSON,

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, and AI public-source review ledger added; row-level public-source resolution is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, and 8-row candidate-resolution pass added; public-source confirmation inside the candidate lanes is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -28,6 +28,29 @@ preserve the existing PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh candidate-resolution pass for the
+  PSDQ facility-validation flags. New no-network script
+  `scripts/resolve-bgd-facility-candidate-rows.py` reads the AI review ledger,
+  OSM-candidates CSV, and AI review summary, then writes
+  `generated/psdq-bgd-facility-validation-candidate-resolution.csv` and
+  `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`.
+  The pass keeps all 8 candidate-resolution rows open while separating them
+  into 1 probable alias/campus lane, 2 same-site classification-conflict lanes,
+  2 possible aliases, 1 local-script name gap, 1 ambiguous nearby candidate,
+  and 1 weak nearby OSM signal. Added
+  `facility-validation-candidate-resolution.md`, updated README, REPRODUCE,
+  evidence sync/review-packet inclusion, the L3 note, and
+  `/showcase/psdq-source-disagreement`. This is AI public-source candidate
+  resolution, not human validation, a maturity promotion, or a human-final
+  upgrade. Verification passed: new script and program-script `py_compile`,
+  production site build, six deterministic gates, review-packet rebuild, and
+  agent-browser desktop/mobile QA at 1365px and 375px with no page-level
+  horizontal overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-candidate-resolution-desktop.png` and
+  `reporting-site/qa/showcase-psdq-candidate-resolution-mobile.png`. Rebuilt
+  review packet folder and zip:
+  `review-packets/public-service-data-quality-2026-06-18/` and
+  `review-packets/public-service-data-quality-2026-06-18.zip`.
 - **2026-06-19:** Added the Bangladesh AI public-source review ledger for the
   PSDQ facility-validation flags. New no-network script
   `scripts/review-bgd-facility-validation-flags.py` reads the coded-screen
@@ -195,11 +218,14 @@ preserve the existing PR maturity label without implying human-final review.
 
 Current loop:
 
-1. Resolve the row-level public-source queue opened by
-   `generated/psdq-bgd-facility-validation-ai-review-summary.json` and
-   `generated/psdq-bgd-facility-validation-ai-review.csv`.
-2. Start with the 8 candidate-resolution rows, then coordinate-source repair
-   rows, then high-exposure public-map-gap checks.
+1. Use the 8-row candidate-resolution pass in
+   `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
+   and `generated/psdq-bgd-facility-validation-candidate-resolution.csv` as
+   the immediate worklist.
+2. Public-source confirm the alias/campus, classification-conflict,
+   possible-alias, local-script name-gap, ambiguous, and weak-nearby lanes;
+   then move to coordinate-source repair rows and high-exposure public-map-gap
+   checks.
 3. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
    facility lists or owner-only credentials. Stop if validation requires
    non-public access.

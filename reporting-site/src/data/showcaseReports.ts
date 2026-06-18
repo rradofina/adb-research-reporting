@@ -100,9 +100,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
     statusLabel: "L3 evidence module",
-    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, and an automated public-source coded screen before access maps are trusted.",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated public-source screening, AI review, and candidate-resolution lanes before access maps are trusted.",
     evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
-    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, and coded-screen chart",
+    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, and candidate-resolution lanes",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, and an automated 76-row public-source coded screen.",
-    publicationGap: "Needs manual public-source review, registry-vintage notes, and independent validation before stronger access-map use.",
-    nextUpgrade: "Manually review the 71 flagged rows and compare manual labels against the automated coded screen before revising the source-disagreement claim.",
+    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, and an 8-row candidate-resolution pass.",
+    publicationGap: "Needs public-source confirmation within candidate lanes, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Confirm the candidate-resolution lanes against public DGHS/OSM evidence, then proceed to coordinate repair and high-exposure map-gap checks before revising the source-disagreement claim.",
   },
   5: {
     readiness: "l3-candidate",

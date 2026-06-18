@@ -226,6 +226,24 @@ Expected outputs:
 
 The output status is `ai_public_source_row_review_not_human_validation`.
 
+## Bangladesh facility-validation candidate-resolution pass
+
+This step does not fetch data and does not validate facilities. It reads the
+AI review ledger, the OSM candidate table, and the AI review summary, then
+separates the 8 candidate-resolution rows into narrower public-source lanes.
+All rows remain open after the pass.
+
+```bash
+python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-candidate-resolution.csv`
+- `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
+
+The output status is `ai_public_source_candidate_resolution_not_human_validation`.
+
 ## Publication sync
 
 After generated outputs or evidence prose changes, refresh the public evidence
@@ -271,7 +289,8 @@ For a reader or reviewer, the reproducibility chain is:
    `results.md`, `limitations.md`, `catchment-upgrade.md`,
    `source-disagreement-l3-module.md`, `facility-validation-sample.md`,
    `facility-validation-coded-screen.md`,
-   `facility-validation-ai-review.md`, and `upgrade-gap.md`.
+   `facility-validation-ai-review.md`,
+   `facility-validation-candidate-resolution.md`, and `upgrade-gap.md`.
 2. Source and pipeline code: `public-service-data-quality/scripts/`.
 3. Generated artifacts: `public-service-data-quality/generated/`.
 4. Public evidence bundle:

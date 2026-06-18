@@ -110,7 +110,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use the ledger as the worklist for the next public-source row review. Resolve
-the 8 candidate-resolution rows first, then coordinate-source repair rows, then
-the high-exposure public-map-gap checks. Keep unresolved rows unresolved unless
-public DGHS or OSM evidence supports a row-level label.
+The first public-source candidate-resolution pass now lives in
+`facility-validation-candidate-resolution.md`. Use that 8-row lane split as
+the next worklist: public-source confirmation of alias/campus,
+classification-conflict, possible-alias, and local-script name-gap rows, then
+coordinate-source repair rows, then high-exposure public-map-gap checks. Keep
+unresolved rows unresolved unless public DGHS or OSM evidence supports a
+row-level label.

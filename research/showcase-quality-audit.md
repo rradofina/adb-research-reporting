@@ -37,7 +37,7 @@ candidates before adding new surfaces.
 | 1 | Market-level climate price transmission | L2 prototype | Public WFP/NASA POWER sprint, interactive market-month heatmap, and clear non-causal caveat | Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers | Convert the Nepal sprint into an L3 market-price package |
 | 2 | Public data freshness blind spots | L2 prototype | Public WDI API matrix makes stale and missing indicator vintages visible | Needs indicator-specific refresh expectations and non-applicability rules | Add source-specific refresh cadence labels |
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
-| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, and a checked route | Needs row-level public-source resolution, registry-vintage notes, and independent validation before stronger access-map use | Resolve the 8 candidate-resolution rows first, then coordinate-source repair and high-exposure public-map-gap checks |
+| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, and a checked route | Needs public-source confirmation within candidate lanes, registry-vintage notes, and independent validation before stronger access-map use | Confirm candidate-resolution lanes against public DGHS/OSM evidence, then proceed to coordinate-source repair and high-exposure public-map-gap checks |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
@@ -131,11 +131,22 @@ candidates before adding new surfaces.
   six gates, review-packet rebuild, and desktop/mobile browser QA. Screenshots:
   `reporting-site/qa/showcase-psdq-ai-review-desktop.png` and
   `reporting-site/qa/showcase-psdq-ai-review-mobile.png`.
+- PSDQ report #4 then received the first candidate-resolution pass.
+  New script `public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py`
+  reads the AI review ledger, OSM-candidates CSV, and AI review summary. It
+  writes `generated/psdq-bgd-facility-validation-candidate-resolution.csv` and
+  `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`.
+  The pass keeps all 8 candidate-resolution rows open while splitting them
+  into 1 probable alias/campus lane, 2 same-site classification-conflict
+  lanes, 2 possible aliases, 1 local-script name gap, 1 ambiguous nearby
+  candidate, and 1 weak nearby OSM signal. This is AI public-source candidate
+  resolution, not human validation.
 
 ## Next deepening order
 
-1. PSDQ source disagreement, row-level public-source resolution from the AI
-   review ledger.
+1. PSDQ source disagreement, public-source confirmation inside the
+   candidate-resolution lanes, then coordinate-source repair and high-exposure
+   public-map-gap checks.
 2. Air-monitoring observability, because the visual hook is strong and the
    next source upgrade is concrete.
 3. Access map-completeness, because official registry joins can turn a source

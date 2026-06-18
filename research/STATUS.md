@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, and 40-row targeted public-map inspection packet added 2026-06-19; next loop is public-source/manual confirmation of the first inspection rows) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, and 12-row public-source confirmation pass added 2026-06-19; next loop is continuing public-source/manual confirmation beyond the first 12 rows) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -35,9 +35,10 @@ overrides priority by editing this list.
    L3 module, validation-sample design, automated coded screen, AI
    public-source review ledger, candidate-resolution pass, public-source tag
    scan, coordinate-repair triage, public-map-gap triage, and public-map-gap
-   row-evidence ledger plus targeted public-map inspection packet added
-   2026-06-19*. Current work is public-source/manual confirmation of the first
-   inspection rows, without changing the maturity label.
+   row-evidence ledger plus targeted public-map inspection and first-row
+   public-source confirmation packets added 2026-06-19*. Current work is
+   continuing public-source/manual confirmation beyond the first 12 rows,
+   without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -150,6 +151,31 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ first-row public-source confirmation):** Added
+  `public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py`,
+  generated
+  `psdq-bgd-facility-validation-public-source-confirmation.csv` and
+  `psdq-bgd-facility-validation-public-source-confirmation-summary.json`, and
+  wrote
+  `public-service-data-quality/facility-validation-public-source-confirmation.md`.
+  The live public-source pass reads the targeted inspection summary and
+  retrieves public DGHS profile pages plus public OSM API feature records for
+  the first 12 inspection rows. It retrieves 12 DGHS profiles and 12 OSM API
+  records, records DGHS profile token support for all 12 rows, records 2 rows
+  with live OSM candidate-name score at or above 0.75, and keeps all 12 rows
+  open with 0 AI closures and 0 AI reclassifications. This is public-source
+  confirmation, not human validation, a maturity promotion, or a human-final
+  upgrade. Verification passed: confirmation script rerun, new script
+  `py_compile`, program-script `py_compile`, production site build, six
+  deterministic gates plus `git diff --check`, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with no page-level horizontal
+  overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-public-source-confirmation-desktop.png`,
+  `reporting-site/qa/showcase-psdq-public-source-confirmation-desktop-chart.png`,
+  `reporting-site/qa/showcase-psdq-public-source-confirmation-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-public-source-confirmation-mobile-list.png`.
+  Next PSDQ loop is continuing public-source/manual confirmation beyond the
+  first 12 rows.
 - **2026-06-19 (PSDQ targeted public-map inspection):** Added
   `public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py`,
   generated
@@ -171,8 +197,8 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-psdq-public-map-inspection-desktop.png`,
   `reporting-site/qa/showcase-psdq-public-map-inspection-mobile.png`, and
   `reporting-site/qa/showcase-psdq-public-map-inspection-mobile-queue.png`.
-  Next PSDQ loop is public-source/manual confirmation of the first inspection
-  rows.
+  This queue is now followed by the first-row public-source confirmation note
+  above.
 - **2026-06-19 (PSDQ public-map-gap row evidence):** Added
   `public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py`,
   generated `psdq-bgd-facility-validation-public-map-gap-evidence.csv` and

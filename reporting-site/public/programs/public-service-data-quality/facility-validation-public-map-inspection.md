@@ -123,9 +123,11 @@ the previous row-evidence ledger.
 
 ## Next Statistical Upgrade
 
-The next upgrade is public-source/manual confirmation of the first inspection
-rows.
-Start with the Narayanganj Sadar source-repair rows, then Gazipur Sadar and
-Pabna Sadar facility-specific candidates, then the zero-OSM upazila queue. A
+The first public-source confirmation packet is now documented in
+`facility-validation-public-source-confirmation.md`. It retrieves public DGHS
+profile pages and public OSM API feature records for the first 12 inspection
+rows, while keeping all 12 rows open.
+
+The next upgrade is to continue that confirmation beyond the first 12 rows. A
 row should be closed or reclassified only when a public map feature, DGHS
 source correction, or other public official source supports the change.

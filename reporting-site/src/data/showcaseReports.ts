@@ -100,9 +100,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
     statusLabel: "L3 evidence module",
-    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, richer public-source tag checks, coordinate-repair triage, public-map-gap lanes, row-level evidence, and a targeted public-map inspection queue before access maps are trusted.",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, richer public-source tag checks, coordinate-repair triage, public-map-gap lanes, row-level evidence, a targeted public-map inspection queue, and first-row public-source confirmation before access maps are trusted.",
     evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
-    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, public-source tag-support lanes, coordinate-repair distance ledger, public-map-gap upazila queue, row-evidence reviewer queue, and targeted public-map inspection cards",
+    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, public-source tag-support lanes, coordinate-repair distance ledger, public-map-gap upazila queue, row-evidence reviewer queue, targeted public-map inspection cards, and first-row public-source confirmation scores",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, and a 40-row targeted public-map inspection packet.",
-    publicationGap: "Needs public-source/manual confirmation of the first inspection rows, registry-vintage notes, and independent validation before stronger access-map use.",
-    nextUpgrade: "Use the targeted inspection packet to confirm or keep open the first Narayanganj Sadar, Gazipur Sadar, Pabna Sadar, and zero-OSM upazila rows.",
+    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, and a 12-row public-source confirmation pass.",
+    publicationGap: "Needs public-source/manual confirmation beyond the first 12 rows, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Continue confirmation beyond the first 12 targeted inspection rows, starting with named-upazila candidates and zero-OSM context rows that remain open.",
   },
   5: {
     readiness: "l3-candidate",

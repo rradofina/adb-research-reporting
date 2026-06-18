@@ -72,6 +72,7 @@ const PROGRAM_FILES = [
   "facility-validation-public-map-gap.md",
   "facility-validation-public-map-gap-evidence.md",
   "facility-validation-public-map-inspection.md",
+  "facility-validation-public-source-confirmation.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

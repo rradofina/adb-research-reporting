@@ -345,6 +345,32 @@ This addendum makes the review queue more actionable without changing the
 claim. The evidence still supports a source-disagreement workbench, not a
 facility-quality, service-access, or ground-truth result.
 
+## First-Row Public-Source Confirmation Addendum
+
+The first public-source confirmation packet now lives in
+`facility-validation-public-source-confirmation.md`. The script
+`scripts/confirm-bgd-facility-public-map-first-rows.py` reads the targeted
+inspection summary and retrieves public DGHS profile pages plus public OSM API
+feature records for the first 12 inspection rows.
+
+The pass checks 12 first-row cases. It retrieves 12 DGHS public profiles and
+12 OSM API feature records. All 12 rows show DGHS profile token support, and 2
+rows have live OSM candidate-name scores at or above 0.75. All 12 rows remain
+open; 0 are closed as resolved and 0 are reclassified as same-facility
+matches.
+
+The first 12 rows split into:
+
+| Public-source confirmation lane | Rows |
+|---|---:|
+| Candidate feature retrieved but name conflict remains | 7 |
+| Source-repair public sources retrieved, still open | 2 |
+| Zero-OSM context candidate outside upazila, still open | 2 |
+| Possible same-facility candidate needing manual location check | 1 |
+
+This confirms that the first DGHS and OSM source links are live, while keeping
+the substantive row decision separate from API reachability and name support.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -373,6 +399,7 @@ python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repair
 python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py
 python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py
 python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py
+python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 ```
 
 Outputs:
@@ -400,11 +427,12 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is public-source/manual confirmation of the first inspection
-rows. Start with the Narayanganj Sadar source-repair rows, then Gazipur Sadar
-and Pabna Sadar facility-specific candidates, then the zero-OSM upazila queue.
-Close or reclassify a row only if a public source supports the change;
-otherwise keep it open with the specific unresolved source question.
+The next upgrade is to continue public-source/manual confirmation beyond the
+first 12 rows while preserving the lane separation. Close or reclassify a row
+only if a public source supports the change; otherwise keep it open with the
+specific unresolved source question.

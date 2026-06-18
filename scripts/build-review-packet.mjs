@@ -65,6 +65,7 @@ const PROGRAM_FILES = [
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",
+  "facility-validation-ai-review.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

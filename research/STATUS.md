@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, and automated coded screen added 2026-06-19; next loop is manual public-source review) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, and AI public-source review ledger added 2026-06-19; next loop is row-level public-source resolution) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -32,10 +32,10 @@ overrides priority by editing this list.
 
 1. **`public-service-data-quality`** — *current active flagship; PR and
    ai-first finished for current issue 2026-05-07; BGD source-disagreement
-   L3 module, validation-sample design, and automated coded screen added
-   2026-06-19*. Current work is to manually review the flagged sampled DGHS
-   facility rows against public DGHS and OSM evidence without changing the
-   maturity label.
+   L3 module, validation-sample design, automated coded screen, and AI
+   public-source review ledger added 2026-06-19*. Current work is to resolve
+   the row-level public-source queue against public DGHS and OSM evidence
+   without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -148,6 +148,27 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ AI public-source review ledger):** Added
+  `public-service-data-quality/scripts/review-bgd-facility-validation-flags.py`,
+  generated `psdq-bgd-facility-validation-ai-review.csv` and
+  `psdq-bgd-facility-validation-ai-review-summary.json`, and wrote
+  `public-service-data-quality/facility-validation-ai-review.md`. The ledger
+  keeps all 71 flagged sampled DGHS rows open while separating the queue into
+  40 public-map-gap checks, 23 coordinate-source repairs, 6 name/type
+  resolution rows, and 2 nearby-OSM-without-registry-match rows. The showcase
+  route `/showcase/psdq-source-disagreement` now fetches the AI review summary
+  JSON, shows an AI public-source review workstream panel/chart, and links the
+  new note and downloads. README, REPRODUCE, hook bank, quality audit,
+  sync/review-packet inclusion, and per-program status were updated. Rebuilt
+  `review-packets/public-service-data-quality-2026-06-18/` plus zip.
+  Verification passed: new script and program-script `py_compile`, production
+  site build, six deterministic gates, and agent-browser desktop/mobile QA
+  with no page-level horizontal overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-ai-review-desktop.png` and
+  `reporting-site/qa/showcase-psdq-ai-review-mobile.png`. This is AI
+  public-source row review, not human validation, a maturity promotion, or a
+  human-final upgrade. Next PSDQ loop is row-level public-source resolution,
+  starting with the 8 candidate-resolution rows.
 - **2026-06-19 (PSDQ automated facility-validation coded screen):** Added
   `public-service-data-quality/scripts/code-bgd-facility-validation-sample.py`,
   generated the coded-screen CSV, OSM-candidates CSV, and coded-summary JSON,
@@ -165,8 +186,8 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-psdq-coded-screen-desktop.png` and
   `reporting-site/qa/showcase-psdq-coded-screen-mobile.png`. This is
   automated public-source triage, not manual validation, a maturity promotion,
-  or human-final upgrade. Next PSDQ loop is manual public-source review of the
-  71 flagged rows.
+  or human-final upgrade. The follow-on AI public-source review ledger was
+  completed in the next operational note.
 - **2026-06-19 (PSDQ facility-validation sample design):** Added
   `public-service-data-quality/scripts/design-bgd-facility-validation-sample.py`,
   generated the Bangladesh validation-sample JSON, sampled-upazila CSV,

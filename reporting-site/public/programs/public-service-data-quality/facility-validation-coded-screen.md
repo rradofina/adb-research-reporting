@@ -112,6 +112,8 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Run a manual public-source review on the 71 rows flagged for manual review,
-record reviewer notes row by row, and compare the manual labels with the
-automated screen before revising any PSDQ source-disagreement claim.
+Use `facility-validation-ai-review.md` as the next worklist. Resolve the 8
+candidate-resolution rows first, then coordinate-source repair rows, then the
+high-exposure public-map-gap checks. Record reviewer notes row by row and
+compare any public-source labels with the automated screen before revising any
+PSDQ source-disagreement claim.

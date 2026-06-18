@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample and automated coded screen added; manual public-source review is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, and AI public-source review ledger added; row-level public-source resolution is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -22,12 +22,34 @@ Last updated: 2026-06-19.
 
 A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
-matching strata, validation sample, automated coded screen, and caveats, make
-the source upgrade clear in the public surface, and preserve the existing PR
-maturity label without implying human-final review.
+matching strata, validation sample, automated coded screen, AI row-review
+ledger, and caveats, make the source upgrade clear in the public surface, and
+preserve the existing PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh AI public-source review ledger for the
+  PSDQ facility-validation flags. New no-network script
+  `scripts/review-bgd-facility-validation-flags.py` reads the coded-screen
+  CSV, OSM-candidates CSV, and coded-summary JSON, then writes
+  `generated/psdq-bgd-facility-validation-ai-review.csv` and
+  `generated/psdq-bgd-facility-validation-ai-review-summary.json`. The ledger
+  keeps all 71 flagged rows open while separating them into 40 public-map-gap
+  checks, 23 coordinate-source repairs, 6 name/type resolution rows, and 2
+  nearby-OSM-without-registry-match rows. Added
+  `facility-validation-ai-review.md`, updated README, REPRODUCE,
+  evidence sync/review-packet inclusion, hook bank, quality audit, and
+  `/showcase/psdq-source-disagreement`. This is AI public-source review, not
+  human validation, a maturity promotion, or a human-final upgrade.
+  Verification passed: new script and program-script `py_compile`, production
+  site build, six deterministic gates, and browser QA at 1365px desktop and
+  375px mobile with no page-level horizontal overflow and no page errors.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-ai-review-desktop.png` and
+  `reporting-site/qa/showcase-psdq-ai-review-mobile.png`. Rebuilt review
+  packet folder and zip:
+  `review-packets/public-service-data-quality-2026-06-18/` and
+  `review-packets/public-service-data-quality-2026-06-18.zip`.
 - **2026-06-19:** Added the automated Bangladesh facility-validation coded
   screen for the PSDQ source-disagreement L3 module. New no-network script
   `scripts/code-bgd-facility-validation-sample.py` reads the 76-row validation
@@ -173,18 +195,20 @@ maturity label without implying human-final review.
 
 Current loop:
 
-1. Manually review the 71 rows flagged in
-   `generated/psdq-bgd-facility-validation-coded-summary.json` and
-   `generated/psdq-bgd-facility-validation-coded-screen.csv`.
-2. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
+1. Resolve the row-level public-source queue opened by
+   `generated/psdq-bgd-facility-validation-ai-review-summary.json` and
+   `generated/psdq-bgd-facility-validation-ai-review.csv`.
+2. Start with the 8 candidate-resolution rows, then coordinate-source repair
+   rows, then high-exposure public-map-gap checks.
+3. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
    facility lists or owner-only credentials. Stop if validation requires
    non-public access.
-3. Record reviewer notes row by row and compare manual labels with the
+4. Record reviewer notes row by row and compare any public-source labels with the
    automated coded-screen labels before changing any source-disagreement
    claim.
-4. If public evidence is insufficient, keep the row unresolved rather than
+5. If public evidence is insufficient, keep the row unresolved rather than
    forcing a same-facility or missing-map code.
-5. Rerun sync/build/gates/browser QA after any public-surface change.
+6. Rerun sync/build/gates/browser QA after any public-surface change.
 
 Historical publication-ladder closeout remains below for context.
 

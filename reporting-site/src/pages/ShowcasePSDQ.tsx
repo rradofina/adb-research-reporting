@@ -200,6 +200,40 @@ interface PsdqValidationCodedSummary {
   non_claim: string;
 }
 
+interface PsdqAiReviewCount {
+  name: string;
+  rows: number;
+}
+
+interface PsdqAiReviewGroupCount {
+  sample_group: string;
+  rows: number;
+  public_map_gap_at_valid_coordinate: number;
+  registry_coordinate_repair: number;
+  candidate_name_or_type_resolution: number;
+  nearby_osm_without_registry_match: number;
+  unresolved_public_source_check: number;
+}
+
+interface PsdqAiReviewSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  review_scope: {
+    coded_rows: number;
+    flagged_rows_reviewed: number;
+    unflagged_rows_not_reopened: number;
+    candidate_resolution_rows: number;
+    rows_with_no_osm_health_candidate_500m: number;
+    coordinate_source_issue_rows: number;
+  };
+  ai_review_bucket_counts: PsdqAiReviewCount[];
+  ai_review_priority_counts: PsdqAiReviewCount[];
+  validation_code_counts_in_review_queue: PsdqAiReviewCount[];
+  ai_review_bucket_counts_by_group: PsdqAiReviewGroupCount[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -334,6 +368,7 @@ export default function ShowcasePSDQ() {
   const [strata, setStrata] = useState<PsdqSourceStrata | null>(null);
   const [validationSample, setValidationSample] = useState<PsdqValidationSample | null>(null);
   const [codedSummary, setCodedSummary] = useState<PsdqValidationCodedSummary | null>(null);
+  const [aiReviewSummary, setAiReviewSummary] = useState<PsdqAiReviewSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -360,17 +395,22 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`coded validation HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`AI review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
       }),
     ])
-      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, codedPayload, csvText]) => {
+      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, codedPayload, aiReviewPayload, csvText]) => {
         setSummary(summaryPayload);
         setNational(nationalPayload);
         setStrata(strataPayload);
         setValidationSample(validationSamplePayload);
         setCodedSummary(codedPayload);
+        setAiReviewSummary(aiReviewPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -463,6 +503,8 @@ export default function ShowcasePSDQ() {
       {validationSample && <PsdqValidationSamplePanel sample={validationSample} />}
 
       {codedSummary && <PsdqValidationCodedPanel summary={codedSummary} />}
+
+      {aiReviewSummary && <PsdqAiReviewPanel summary={aiReviewSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -781,7 +823,7 @@ function PsdqValidationCodedPanel({ summary }: { summary: PsdqValidationCodedSum
             The coded screen filters the cached Bangladesh OSM health-feature
             pull within 500 meters of each sampled DGHS coordinate and checks
             whether the coordinate sits inside the sampled upazila boundary.
-            The result is a manual-review queue, not a final validation claim.
+            The result is a flagged source-review queue, not a final validation claim.
           </p>
         </div>
         <div className="showcase-fact-list">
@@ -798,7 +840,7 @@ function PsdqValidationCodedPanel({ summary }: { summary: PsdqValidationCodedSum
             <strong>{formatNumber(validationCount(summary, "registry_coordinate_issue"))} rows</strong>
           </div>
           <div>
-            <span>Manual review queue</span>
+            <span>Flagged review queue</span>
             <strong>{formatNumber(summary.screen_summary.manual_review_recommended_rows)} rows</strong>
           </div>
         </div>
@@ -904,6 +946,205 @@ function PsdqValidationCodeChart({ groups }: { groups: PsdqValidationGroupCount[
             <text x={countX} y={y + 17} className="psdq-value">
               {formatNumber(group.missing_public_map_point)} / {formatNumber(group.registry_coordinate_issue)} /{" "}
               {formatNumber(group.confirmed_same_facility)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+const AI_REVIEW_BUCKET_ORDER = [
+  "public_map_gap_at_valid_coordinate",
+  "registry_coordinate_repair",
+  "candidate_name_or_type_resolution",
+  "nearby_osm_without_registry_match",
+  "unresolved_public_source_check",
+] as const;
+
+const AI_REVIEW_BUCKET_LABELS: Record<string, string> = {
+  public_map_gap_at_valid_coordinate: "Public-map gap",
+  registry_coordinate_repair: "Coordinate repair",
+  candidate_name_or_type_resolution: "Name/type resolution",
+  nearby_osm_without_registry_match: "Nearby OSM, no match",
+  unresolved_public_source_check: "Unresolved source",
+};
+
+function aiReviewBucketColor(bucket: string) {
+  const colors: Record<string, string> = {
+    public_map_gap_at_valid_coordinate: "#9B2226",
+    registry_coordinate_repair: "#D97706",
+    candidate_name_or_type_resolution: "#007DB8",
+    nearby_osm_without_registry_match: "#4A5568",
+    unresolved_public_source_check: "#A0AEC0",
+  };
+  return colors[bucket] || "#6c757d";
+}
+
+function aiReviewCount(summary: PsdqAiReviewSummary, bucket: string) {
+  return summary.ai_review_bucket_counts.find((item) => item.name === bucket)?.rows || 0;
+}
+
+function PsdqAiReviewPanel({ summary }: { summary: PsdqAiReviewSummary }) {
+  const priorityOne =
+    summary.ai_review_priority_counts.find((item) => item.name === "priority_1_candidate_resolution")?.rows || 0;
+  const highExposureGap =
+    summary.ai_review_priority_counts.find((item) => item.name === "priority_1_high_exposure_map_gap")?.rows || 0;
+
+  return (
+    <section className="showcase-section psdq-ai-review-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">AI public-source review ledger</p>
+          <h2>The 71-row queue now has named evidence workstreams.</h2>
+          <p>
+            The AI review pass does not close the validation task. It reads the
+            automated coded screen and OSM candidate table, then separates the
+            flagged rows into workstreams a reviewer can act on: public-map
+            absence at a usable coordinate, registry-coordinate repair,
+            name/type resolution, and nearby OSM features without a registry
+            name match.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Flagged rows reviewed</span>
+            <strong>{formatNumber(summary.review_scope.flagged_rows_reviewed)} rows remain open</strong>
+          </div>
+          <div>
+            <span>Candidate-resolution first</span>
+            <strong>{formatNumber(priorityOne)} rows have OSM candidates that need name/type inspection</strong>
+          </div>
+          <div>
+            <span>High-exposure map gaps</span>
+            <strong>{formatNumber(highExposureGap)} rows have no OSM health point in high-gap groups</strong>
+          </div>
+          <div>
+            <span>Coordinate-source repair</span>
+            <strong>{formatNumber(summary.review_scope.coordinate_source_issue_rows)} rows before map matching</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-ai-review-grid">
+        {AI_REVIEW_BUCKET_ORDER.filter((bucket) => aiReviewCount(summary, bucket) > 0).map((bucket) => (
+          <div key={bucket}>
+            <span>{AI_REVIEW_BUCKET_LABELS[bucket]}</span>
+            <strong>{formatNumber(aiReviewCount(summary, bucket))}</strong>
+            <em>{aiReviewBucketMeaning(bucket)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqAiReviewBucketChart groups={summary.ai_review_bucket_counts_by_group} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ AI review bucket legend">
+        {AI_REVIEW_BUCKET_ORDER.filter((bucket) => aiReviewCount(summary, bucket) > 0).map((bucket) => (
+          <span key={bucket}>
+            <i style={{ background: aiReviewBucketColor(bucket) }} /> {AI_REVIEW_BUCKET_LABELS[bucket]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the review ledger</p>
+        <code>python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-ai-review.md" download>
+          Download AI review note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review-summary.json" download>
+          Download AI review summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review.csv" download>
+          Download row-review CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function aiReviewBucketMeaning(bucket: string) {
+  const meanings: Record<string, string> = {
+    public_map_gap_at_valid_coordinate: "No pinned OSM health feature within 500m.",
+    registry_coordinate_repair: "Coordinate missing or outside expected upazila.",
+    candidate_name_or_type_resolution: "Nearby candidate exists, but name or class is unresolved.",
+    nearby_osm_without_registry_match: "OSM health feature nearby, weak row-level match.",
+    unresolved_public_source_check: "Available public artifacts do not support a stable row code.",
+  };
+  return meanings[bucket] || bucket.replaceAll("_", " ");
+}
+
+function PsdqAiReviewBucketChart({ groups }: { groups: PsdqAiReviewGroupCount[] }) {
+  const width = 1040;
+  const rowHeight = 58;
+  const headerHeight = 54;
+  const height = headerHeight + groups.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 230;
+  const barWidth = 540;
+  const countX = 805;
+
+  return (
+    <svg
+      className="psdq-coded-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="AI public-source review buckets by PSDQ sample group"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        AI review workstreams for flagged rows
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS row still requiring review; source: AI review summary JSON
+      </text>
+      <text x={barX} y={52} className="psdq-chart-head">
+        Workstream mix
+      </text>
+      <text x={countX} y={52} className="psdq-chart-head">
+        Map gap / coordinate / candidate
+      </text>
+
+      {groups.map((group, index) => {
+        const y = headerHeight + index * rowHeight;
+        let x = barX;
+        return (
+          <g key={group.sample_group}>
+            <text x={labelX} y={y + 18} className="psdq-row-label">
+              {sampleGroupLabel(group.sample_group)}
+            </text>
+            <text x={labelX} y={y + 36} className="psdq-row-sub">
+              {formatNumber(group.rows)} flagged rows
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={24} fill="#eef2f5" />
+            {AI_REVIEW_BUCKET_ORDER.map((bucket) => {
+              const value = Number(group[bucket] || 0);
+              const segmentWidth = group.rows > 0 ? (value / group.rows) * barWidth : 0;
+              const segment = (
+                <rect
+                  key={bucket}
+                  x={x}
+                  y={y}
+                  width={Math.max(0, segmentWidth)}
+                  height={24}
+                  fill={aiReviewBucketColor(bucket)}
+                >
+                  <title>{`${sampleGroupLabel(group.sample_group)}: ${formatNumber(value)} ${AI_REVIEW_BUCKET_LABELS[bucket]}`}</title>
+                </rect>
+              );
+              x += segmentWidth;
+              return segment;
+            })}
+            <text x={countX} y={y + 17} className="psdq-value">
+              {formatNumber(group.public_map_gap_at_valid_coordinate)} /{" "}
+              {formatNumber(group.registry_coordinate_repair)} /{" "}
+              {formatNumber(group.candidate_name_or_type_resolution + group.nearby_osm_without_registry_match)}
             </text>
           </g>
         );

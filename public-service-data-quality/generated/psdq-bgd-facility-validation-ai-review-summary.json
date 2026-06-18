@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-06-18T18:19:55Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "attestation_chain": "ai-first",
+  "status": "ai_public_source_row_review_not_human_validation",
+  "goal_level": "L3 AI public-source review ledger",
+  "unit": "sampled DGHS clinical facility row flagged by automated public-source screen",
+  "source_inputs": [
+    {
+      "path": "generated\\psdq-bgd-facility-validation-coded-screen.csv",
+      "role": "automated validation-code screen and coordinate status"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-osm-candidates.csv",
+      "role": "ranked OSM health candidates within 500 meters of sampled DGHS coordinates"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-coded-summary.json",
+      "role": "screen summary, public-source metadata, and non-claim"
+    }
+  ],
+  "public_validation_sources": [
+    {
+      "source": "DGHS public facilities JSON endpoint",
+      "role": "Registry row, facility name, type, coordinate, and sampled coding unit.",
+      "local_artifact": "generated\\psdq-bgd-facility-validation-coding-sheet.csv"
+    },
+    {
+      "source": "OpenStreetMap Overpass",
+      "role": "Public OSM health candidates from the cached all-Bangladesh Overpass pull, filtered within 500 meters of valid DGHS coordinates.",
+      "query_template": "area[\"ISO3166-1\"=\"BD\"][admin_level=2]; nwr[\"amenity\"~\"^(hospital|clinic|doctors)$\"](area); out center tags;",
+      "local_artifact": ".cache\\bgd_osm_health_features_overpass.json",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "source": "geoBoundaries BGD ADM3",
+      "role": "Coordinate plausibility check against expected sampled upazila geometry.",
+      "local_artifact": ".cache\\geo\\geoBoundaries-BGD-ADM3.geojson"
+    }
+  ],
+  "review_scope": {
+    "coded_rows": 76,
+    "flagged_rows_reviewed": 71,
+    "unflagged_rows_not_reopened": 5,
+    "candidate_resolution_rows": 8,
+    "rows_with_no_osm_health_candidate_500m": 40,
+    "coordinate_source_issue_rows": 23
+  },
+  "ai_review_bucket_counts": [
+    {
+      "name": "public_map_gap_at_valid_coordinate",
+      "rows": 40
+    },
+    {
+      "name": "registry_coordinate_repair",
+      "rows": 23
+    },
+    {
+      "name": "candidate_name_or_type_resolution",
+      "rows": 6
+    },
+    {
+      "name": "nearby_osm_without_registry_match",
+      "rows": 2
+    }
+  ],
+  "ai_review_priority_counts": [
+    {
+      "name": "priority_1_candidate_resolution",
+      "rows": 8
+    },
+    {
+      "name": "priority_1_high_exposure_map_gap",
+      "rows": 30
+    },
+    {
+      "name": "priority_2_coordinate_source_check",
+      "rows": 23
+    },
+    {
+      "name": "priority_3_public_map_gap_spot_check",
+      "rows": 10
+    }
+  ],
+  "validation_code_counts_in_review_queue": [
+    {
+      "name": "missing_public_map_point",
+      "rows": 40
+    },
+    {
+      "name": "registry_coordinate_issue",
+      "rows": 23
+    },
+    {
+      "name": "classification_mismatch",
+      "rows": 3
+    },
+    {
+      "name": "probable_duplicate_or_alias",
+      "rows": 3
+    },
+    {
+      "name": "osm_only_candidate",
+      "rows": 2
+    }
+  ],
+  "ai_review_bucket_counts_by_group": [
+    {
+      "sample_group": "comparison_mid_ratio",
+      "rows": 19,
+      "public_map_gap_at_valid_coordinate": 9,
+      "registry_coordinate_repair": 7,
+      "candidate_name_or_type_resolution": 3,
+      "nearby_osm_without_registry_match": 0,
+      "unresolved_public_source_check": 0
+    },
+    {
+      "sample_group": "high_exposure_gap",
+      "rows": 18,
+      "public_map_gap_at_valid_coordinate": 12,
+      "registry_coordinate_repair": 6,
+      "candidate_name_or_type_resolution": 0,
+      "nearby_osm_without_registry_match": 0,
+      "unresolved_public_source_check": 0
+    },
+    {
+      "sample_group": "osm_ge_registry",
+      "rows": 14,
+      "public_map_gap_at_valid_coordinate": 1,
+      "registry_coordinate_repair": 8,
+      "candidate_name_or_type_resolution": 3,
+      "nearby_osm_without_registry_match": 2,
+      "unresolved_public_source_check": 0
+    },
+    {
+      "sample_group": "zero_osm_high_proxy",
+      "rows": 20,
+      "public_map_gap_at_valid_coordinate": 18,
+      "registry_coordinate_repair": 2,
+      "candidate_name_or_type_resolution": 0,
+      "nearby_osm_without_registry_match": 0,
+      "unresolved_public_source_check": 0
+    }
+  ],
+  "non_claim": "This is an AI-first public-source row-review ledger over the automated coded screen. It is not a human validation pass, not ground truth, not a facility-quality assessment, and not a service-access estimate.",
+  "outputs": {
+    "review_csv": "generated\\psdq-bgd-facility-validation-ai-review.csv",
+    "summary_json": "generated\\psdq-bgd-facility-validation-ai-review-summary.json"
+  }
+}

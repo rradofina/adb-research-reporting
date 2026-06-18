@@ -138,11 +138,11 @@ The sample is split across four groups:
 | Mid-ratio comparison | 5 | 20 | 18 |
 
 This addendum is a sample design, not a validation result. The coding-sheet
-outcome fields are intentionally blank. The next empirical step is to code
-each row using public DGHS and OSM evidence, then summarize whether observed
-disagreement is mostly duplicate naming, classification mismatch, registry
-coordinate uncertainty, missing public-map points, OSM-only candidates, or
-unresolved public-source evidence.
+outcome fields were intentionally blank at the sample-design stage. The
+follow-on coded screen and AI review ledger now separate the flagged rows into
+duplicate/name questions, classification mismatch, registry-coordinate
+uncertainty, missing public-map points, nearby OSM features without a registry
+name match, and unresolved public-source evidence.
 
 ## Automated Coded-Screen Addendum
 
@@ -174,6 +174,25 @@ questions, coordinate issues, missing public-map points, and OSM-only
 candidates. That pattern supports source-QA language and argues against a
 single universal undercount claim.
 
+## AI Review-Ledger Addendum
+
+The flagged rows are now structured in `facility-validation-ai-review.md`. The
+script `scripts/review-bgd-facility-validation-flags.py` reads the coded-screen
+CSV, OSM-candidates CSV, and coded-summary JSON, then writes a row-level
+AI/public-source review ledger.
+
+The ledger keeps all 71 flagged rows open while separating them into:
+
+| AI review workstream | Rows |
+|---|---:|
+| Public-map gap at valid coordinate | 40 |
+| Registry coordinate repair | 23 |
+| Name/type resolution | 6 |
+| Nearby OSM without registry-name match | 2 |
+
+This is not human validation. It is the row-level worklist for the next public
+source review.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -195,6 +214,7 @@ python public-service-data-quality/scripts/build-bgd-road-surface-context.py --s
 python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py
 python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py
+python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py
 ```
 
 Outputs:
@@ -208,11 +228,14 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coded-screen.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-osm-candidates.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coded-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a manual public-source review of the 71 rows flagged for
-manual review, followed by a comparison between manual labels and the
-automated coded screen. Until that review exists, the correct publication use
-is source QA before service-access mapping, not a statement about facility
-availability, service quality, or validated catchments.
+The next upgrade is row-level public-source resolution from the AI review
+ledger. Start with the 8 candidate-resolution rows, then coordinate-source
+repair, then the high-exposure public-map-gap checks. Until that review exists,
+the correct publication use is source QA before service-access mapping, not a
+statement about facility availability, service quality, or validated
+catchments.

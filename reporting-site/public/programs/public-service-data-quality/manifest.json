@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-06-18T19:33:44.732Z",
+  "generated_at": "2026-06-18T19:51:01.377Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,20 +27,20 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 24226,
-      "size_human": "23.7 KB",
-      "mtime": "2026-06-18T19:26:10.386Z",
-      "sha256": "7de5eb8ac2a5c88f8c77c3c560fe3f348cac0735a9baa645af25227a9f3fab03",
+      "size": 25548,
+      "size_human": "24.9 KB",
+      "mtime": "2026-06-18T19:39:51.060Z",
+      "sha256": "91f909fef73b112b016c01ed098cbda94467e5d9c608d720fb7cd3b7a5ff3660",
       "attestation_chain": null
     },
     {
       "key": "reproduce",
       "file": "REPRODUCE.md",
       "label": "Reproducibility guide",
-      "size": 15937,
-      "size_human": "15.6 KB",
-      "mtime": "2026-06-18T19:26:22.605Z",
-      "sha256": "4ebf7a6e4412d22bd135bcb6ce628ab9800c2ad620e3173dbf6fa86310438b13",
+      "size": 17275,
+      "size_human": "16.9 KB",
+      "mtime": "2026-06-18T19:40:13.269Z",
+      "sha256": "4216dff643a33bfc2e69ae237913a7cf6337c4a0ea5ae5a918e0d8bcc5607d65",
       "attestation_chain": null
     },
     {
@@ -127,10 +127,10 @@
       "key": "source_disagreement_l3",
       "file": "source-disagreement-l3-module.md",
       "label": "Source-disagreement L3 module",
-      "size": 16986,
-      "size_human": "16.6 KB",
-      "mtime": "2026-06-18T19:26:37.646Z",
-      "sha256": "9b4e1a3e33a7f81fd37191acadbf0b30a5eb7e65e7f6b874a31e3ad51627d2dc",
+      "size": 17934,
+      "size_human": "17.5 KB",
+      "mtime": "2026-06-18T19:40:29.484Z",
+      "sha256": "ea78dd5594a6647fe8d2eac46abee4ff0583eccdbc0f11ecf1b9f1e0069b79de",
       "attestation_chain": "ai-first"
     },
     {
@@ -147,40 +147,40 @@
       "key": "facility_validation_coded_screen",
       "file": "facility-validation-coded-screen.md",
       "label": "Facility-validation coded screen",
-      "size": 5596,
+      "size": 5668,
       "size_human": "5.5 KB",
-      "mtime": "2026-06-18T19:27:17.421Z",
-      "sha256": "3194c67d154268bd1359441a56958c2855429a3e894e608d0617b136326c394d",
+      "mtime": "2026-06-18T19:45:14.583Z",
+      "sha256": "d6aea923491d0288530552f1ba0b5f1f7199bca22b85f7d9bd36c2618a241ce0",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_ai_review",
       "file": "facility-validation-ai-review.md",
       "label": "Facility-validation AI review ledger",
-      "size": 5501,
+      "size": 5525,
       "size_human": "5.4 KB",
-      "mtime": "2026-06-18T19:26:43.585Z",
-      "sha256": "f8e1b30cc97d046a7a84bf48ffba3ddd6eaf82a5f8930dca16f1c856bcbd5649",
+      "mtime": "2026-06-18T19:45:14.586Z",
+      "sha256": "81795860097c5a41928bc06a1c6b42c3e5ad9595e5d95dc19cc5178d30f8a15f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_candidate_resolution",
       "file": "facility-validation-candidate-resolution.md",
       "label": "Facility-validation candidate-resolution pass",
-      "size": 5801,
-      "size_human": "5.7 KB",
-      "mtime": "2026-06-18T19:27:07.655Z",
-      "sha256": "95bb2b12ac905bea3a8c8c362ff2b3434073984134a618c53ccfc9fef782dc1f",
+      "size": 5965,
+      "size_human": "5.8 KB",
+      "mtime": "2026-06-18T19:45:14.584Z",
+      "sha256": "ebce2a1c0941c8a4adb4a112e98a179314923b4bd6ea3187ba647f78198c0bb0",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_candidate_public_source_check",
       "file": "facility-validation-candidate-public-source-check.md",
       "label": "Facility-validation candidate public-source check",
-      "size": 6193,
-      "size_human": "6.0 KB",
-      "mtime": "2026-06-18T19:27:03.879Z",
-      "sha256": "95f358b92b10153a9cb26ad627b84f813838527597f06629addfab3c0792e5e5",
+      "size": 6278,
+      "size_human": "6.1 KB",
+      "mtime": "2026-06-18T19:45:14.585Z",
+      "sha256": "e6cb363671cfc1fe624cc75d5591f5679cac7a26f6abbf254264a59ba26da491",
       "attestation_chain": "ai-first"
     },
     {
@@ -197,10 +197,20 @@
       "key": "facility_validation_public_map_gap",
       "file": "facility-validation-public-map-gap.md",
       "label": "Facility-validation public-map-gap triage",
-      "size": 6653,
-      "size_human": "6.5 KB",
-      "mtime": "2026-06-18T19:22:08.817Z",
-      "sha256": "8fa3cc889b9fe8d957803ea75a9db03382d7d8adf721311db49d1a70e20d2e58",
+      "size": 6527,
+      "size_human": "6.4 KB",
+      "mtime": "2026-06-18T19:40:34.660Z",
+      "sha256": "72d0358eb4773bfa845f7b65b5737a9a47bf96fe9be500e5ce439fd270984051",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "facility_validation_public_map_gap_evidence",
+      "file": "facility-validation-public-map-gap-evidence.md",
+      "label": "Facility-validation public-map-gap row evidence",
+      "size": 6032,
+      "size_human": "5.9 KB",
+      "mtime": "2026-06-18T19:39:11.916Z",
+      "sha256": "15366c002603353c0b907338e114c38a4aaeda8779d45fe11d70028edb4373a9",
       "attestation_chain": "ai-first"
     },
     {
@@ -428,6 +438,18 @@
       "size": 26260,
       "size_human": "25.6 KB",
       "sha256": "d0347d049cdeb9685637521c23c95ca515a8d16d61f73ba53572f622984e757c"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json",
+      "size": 43745,
+      "size_human": "42.7 KB",
+      "sha256": "ca2de90a8b7bfc0db9608985136dfac6795d05b3a83a99571bc07e07bd9b1f9b"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv",
+      "size": 113743,
+      "size_human": "111.1 KB",
+      "sha256": "aaf0b7c65aec86f0ebddb17a1886061a522dc3501c5fe157e1195b54c8c614f3"
     },
     {
       "file": "generated/psdq-bgd-facility-validation-public-map-gap-summary.json",

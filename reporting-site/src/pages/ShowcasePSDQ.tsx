@@ -401,6 +401,68 @@ interface PsdqPublicMapGapSummary {
   non_claim: string;
 }
 
+interface PsdqPublicMapGapEvidenceUpazilaRow {
+  join_key: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  row_evidence_rows: number;
+  priority_1_rows: number;
+  active_clinical_facilities: number;
+  osm_health: number;
+  registry_minus_osm_clinical: number;
+  registry_gap_share: number;
+  underobserved_buildings_3km_p85_proxy: number;
+  source_repair_before_row_absence: number;
+  possible_match_or_buffer_review: number;
+  row_level_public_map_absence_review: number;
+  upazila_level_public_map_observability_review: number;
+}
+
+interface PsdqPublicMapGapEvidenceCardRow {
+  row_evidence_id: string;
+  evidence_rank: number;
+  facility_name: string;
+  upazila_name: string;
+  district_name: string;
+  priority_scope: string;
+  public_map_gap_lane_label: string;
+  row_evidence_tier: string;
+  row_evidence_decision: string;
+  row_evidence_reader_status: string;
+  dghs_public_profile_url: string;
+  registry_coordinate_osm_inspection_url: string;
+  nearest_same_upazila_osm_health_url: string;
+  best_same_upazila_name_osm_url: string;
+  active_clinical_facilities: string;
+  osm_health: string;
+  underobserved_buildings_3km_p85_proxy: string;
+  row_evidence_note: string;
+}
+
+interface PsdqPublicMapGapEvidenceSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  row_evidence_scope: {
+    rows_with_row_evidence: number;
+    priority_1_high_exposure_rows: number;
+    priority_3_spot_check_rows: number;
+    rows_with_dghs_public_profile_url: number;
+    rows_with_registry_coordinate_osm_inspection_url: number;
+    rows_with_same_upazila_osm_feature_url: number;
+    rows_with_best_name_osm_feature_url: number;
+    rows_kept_open: number;
+    rows_closed_as_resolved: number;
+  };
+  row_evidence_tier_counts: PsdqCandidateResolutionCount[];
+  row_evidence_decision_counts: PsdqCandidateResolutionCount[];
+  public_map_gap_lane_counts: PsdqCandidateResolutionCount[];
+  upazila_evidence_rows: PsdqPublicMapGapEvidenceUpazilaRow[];
+  row_card_rows: PsdqPublicMapGapEvidenceCardRow[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -542,6 +604,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqCandidatePublicSourceCheckSummary | null>(null);
   const [coordinateRepairSummary, setCoordinateRepairSummary] = useState<PsdqCoordinateRepairSummary | null>(null);
   const [publicMapGapSummary, setPublicMapGapSummary] = useState<PsdqPublicMapGapSummary | null>(null);
+  const [publicMapGapEvidenceSummary, setPublicMapGapEvidenceSummary] =
+    useState<PsdqPublicMapGapEvidenceSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -588,6 +652,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`public map gap HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`public map gap evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -604,6 +672,7 @@ export default function ShowcasePSDQ() {
         candidatePublicSourceCheckPayload,
         coordinateRepairPayload,
         publicMapGapPayload,
+        publicMapGapEvidencePayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -616,6 +685,7 @@ export default function ShowcasePSDQ() {
         setCandidatePublicSourceCheckSummary(candidatePublicSourceCheckPayload);
         setCoordinateRepairSummary(coordinateRepairPayload);
         setPublicMapGapSummary(publicMapGapPayload);
+        setPublicMapGapEvidenceSummary(publicMapGapEvidencePayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -720,6 +790,8 @@ export default function ShowcasePSDQ() {
       {coordinateRepairSummary && <PsdqCoordinateRepairPanel summary={coordinateRepairSummary} />}
 
       {publicMapGapSummary && <PsdqPublicMapGapPanel summary={publicMapGapSummary} />}
+
+      {publicMapGapEvidenceSummary && <PsdqPublicMapGapEvidencePanel summary={publicMapGapEvidenceSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -2160,6 +2232,311 @@ function PsdqPublicMapGapQueueChart({ rows }: { rows: PsdqPublicMapGapUpazilaRow
         );
       })}
     </svg>
+  );
+}
+
+const ROW_EVIDENCE_TIER_ORDER = [
+  "source_repair_before_row_absence",
+  "possible_match_or_buffer_review",
+  "row_level_public_map_absence_review",
+  "upazila_level_public_map_observability_review",
+] as const;
+
+const ROW_EVIDENCE_TIER_LABELS: Record<string, string> = {
+  source_repair_before_row_absence: "Source repair first",
+  possible_match_or_buffer_review: "Match or buffer review",
+  row_level_public_map_absence_review: "Row-level absence review",
+  upazila_level_public_map_observability_review: "Upazila observability",
+};
+
+function rowEvidenceColor(code: string) {
+  const colors: Record<string, string> = {
+    source_repair_before_row_absence: "#002569",
+    possible_match_or_buffer_review: "#FBB00E",
+    row_level_public_map_absence_review: "#007DB8",
+    upazila_level_public_map_observability_review: "#9B2226",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function rowEvidenceCount(summary: PsdqPublicMapGapEvidenceSummary, code: string) {
+  return summary.row_evidence_tier_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function rowEvidenceMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    source_repair_before_row_absence: "Duplicate coordinate or far same-name signal comes before map absence language.",
+    possible_match_or_buffer_review: "The row could change under wider matching or alias inspection.",
+    row_level_public_map_absence_review: "Same-upazila OSM exists, but not at the sampled DGHS coordinate.",
+    upazila_level_public_map_observability_review: "The pinned health-feature cache has no joined OSM health feature in the upazila.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPublicMapGapEvidencePanel({ summary }: { summary: PsdqPublicMapGapEvidenceSummary }) {
+  return (
+    <section className="showcase-section psdq-row-evidence-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Row-level public-source evidence</p>
+          <h2>The inspection queue now tells reviewers what source to open.</h2>
+          <p>
+            The row-evidence pass keeps all public-map-gap rows open, but it
+            stops treating them as one bucket. Every row gets a DGHS source
+            note, public profile link, OSM coordinate-inspection link, OSM
+            feature or absence note, and a reviewer action.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows with row evidence</span>
+            <strong>
+              {formatNumber(summary.row_evidence_scope.rows_with_row_evidence)} rows;{" "}
+              {formatNumber(summary.row_evidence_scope.rows_closed_as_resolved)} closed
+            </strong>
+          </div>
+          <div>
+            <span>Priority-1 coverage</span>
+            <strong>{formatNumber(summary.row_evidence_scope.priority_1_high_exposure_rows)} high-exposure rows</strong>
+          </div>
+          <div>
+            <span>DGHS source links</span>
+            <strong>{formatNumber(summary.row_evidence_scope.rows_with_dghs_public_profile_url)} profile URLs</strong>
+          </div>
+          <div>
+            <span>Map inspection links</span>
+            <strong>{formatNumber(summary.row_evidence_scope.rows_with_registry_coordinate_osm_inspection_url)} OSM coordinate views</strong>
+          </div>
+          <div>
+            <span>Same-upazila OSM links</span>
+            <strong>{formatNumber(summary.row_evidence_scope.rows_with_same_upazila_osm_feature_url)} rows</strong>
+          </div>
+          <div>
+            <span>Rows kept open</span>
+            <strong>{formatNumber(summary.row_evidence_scope.rows_kept_open)} source-review rows</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-row-evidence-grid">
+        {ROW_EVIDENCE_TIER_ORDER.map((code) => (
+          <div key={code}>
+            <span>{ROW_EVIDENCE_TIER_LABELS[code]}</span>
+            <strong>{formatNumber(rowEvidenceCount(summary, code))}</strong>
+            <em>{rowEvidenceMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqPublicMapGapEvidenceQueueChart rows={summary.upazila_evidence_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ row-evidence tier legend">
+        {ROW_EVIDENCE_TIER_ORDER.map((code) => (
+          <span key={code}>
+            <i style={{ background: rowEvidenceColor(code) }} /> {ROW_EVIDENCE_TIER_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="psdq-row-evidence-cards" aria-label="Top PSDQ row-evidence cards">
+        {summary.row_card_rows.slice(0, 8).map((row) => (
+          <article key={row.row_evidence_id} className="psdq-row-evidence-card">
+            <div>
+              <span>#{formatNumber(row.evidence_rank)} · {row.priority_scope.replaceAll("_", " ")}</span>
+              <h3>{row.facility_name}</h3>
+              <p>{row.upazila_name}, {row.district_name}</p>
+            </div>
+            <div className="psdq-row-evidence-tier" style={{ borderColor: rowEvidenceColor(row.row_evidence_tier) }}>
+              {ROW_EVIDENCE_TIER_LABELS[row.row_evidence_tier] || row.row_evidence_tier.replaceAll("_", " ")}
+            </div>
+            <p>{row.row_evidence_reader_status}</p>
+            <p className="psdq-row-evidence-note">{row.row_evidence_note}</p>
+            <div className="psdq-row-evidence-links">
+              {row.dghs_public_profile_url && (
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+              )}
+              {row.registry_coordinate_osm_inspection_url && (
+                <a href={row.registry_coordinate_osm_inspection_url} target="_blank" rel="noreferrer">
+                  OSM coordinate
+                </a>
+              )}
+              {row.nearest_same_upazila_osm_health_url && (
+                <a href={row.nearest_same_upazila_osm_health_url} target="_blank" rel="noreferrer">
+                  Nearest OSM health
+                </a>
+              )}
+              {row.best_same_upazila_name_osm_url && (
+                <a href={row.best_same_upazila_name_osm_url} target="_blank" rel="noreferrer">
+                  Best name signal
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the row-evidence ledger</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-public-map-gap-evidence.md" download>
+          Download row-evidence note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json" download>
+          Download row-evidence summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv" download>
+          Download row-evidence CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function rowEvidenceTierValue(row: PsdqPublicMapGapEvidenceUpazilaRow, code: string) {
+  return Number(row[code as keyof PsdqPublicMapGapEvidenceUpazilaRow] || 0);
+}
+
+function PsdqPublicMapGapEvidenceQueueChart({ rows }: { rows: PsdqPublicMapGapEvidenceUpazilaRow[] }) {
+  const width = 1040;
+  const rowHeight = 46;
+  const headerHeight = 64;
+  const height = headerHeight + rows.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 240;
+  const barWidth = 310;
+  const priorityX = 590;
+  const clinicalX = 675;
+  const osmX = 760;
+  const proxyX = 955;
+
+  return (
+    <>
+      <svg
+        className="psdq-coded-chart psdq-row-evidence-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="img"
+        aria-label="Public-map-gap row-evidence queue by upazila"
+      >
+        <text x={0} y={18} className="showcase-heatmap-title">
+          Row-evidence queue, public-source action by upazila
+        </text>
+        <text x={0} y={38} className="showcase-heatmap-year">
+          Unit: sampled DGHS row kept open; source: row-evidence summary JSON
+        </text>
+        <text x={barX} y={58} className="psdq-chart-head">
+          Evidence tier mix
+        </text>
+        <text x={priorityX} y={58} className="psdq-chart-head">
+          P1
+        </text>
+        <text x={clinicalX} y={58} className="psdq-chart-head">
+          DGHS
+        </text>
+        <text x={osmX} y={58} className="psdq-chart-head">
+          OSM
+        </text>
+        <text x={proxyX} y={58} className="psdq-chart-head" textAnchor="end">
+          Under-observed proxy
+        </text>
+
+        {rows.map((row, index) => {
+          const y = headerHeight + index * rowHeight;
+          let x = barX;
+          return (
+            <g key={row.join_key}>
+              <text x={labelX} y={y + 15} className="psdq-row-label">
+                {row.upazila_name}
+              </text>
+              <text x={labelX} y={y + 31} className="psdq-row-sub">
+                {row.district_name}, {row.division_name}
+              </text>
+              <rect x={barX} y={y} width={barWidth} height={22} fill="#eef2f5" />
+              {ROW_EVIDENCE_TIER_ORDER.map((code) => {
+                const value = rowEvidenceTierValue(row, code);
+                const segmentWidth = row.row_evidence_rows > 0 ? (value / row.row_evidence_rows) * barWidth : 0;
+                const segment = (
+                  <rect
+                    key={code}
+                    x={x}
+                    y={y}
+                    width={Math.max(0, segmentWidth)}
+                    height={22}
+                    fill={rowEvidenceColor(code)}
+                  >
+                    <title>{`${row.upazila_name}: ${formatNumber(value)} ${ROW_EVIDENCE_TIER_LABELS[code]}`}</title>
+                  </rect>
+                );
+                x += segmentWidth;
+                return segment;
+              })}
+              <text x={barX + barWidth + 12} y={y + 16} className="psdq-value">
+                {formatNumber(row.row_evidence_rows)}
+              </text>
+              <text x={priorityX} y={y + 16} className="psdq-value">
+                {formatNumber(row.priority_1_rows)}
+              </text>
+              <text x={clinicalX} y={y + 16} className="psdq-value">
+                {formatNumber(row.active_clinical_facilities)}
+              </text>
+              <text x={osmX} y={y + 16} className="psdq-value">
+                {formatNumber(row.osm_health)}
+              </text>
+              <text x={proxyX} y={y + 16} className="psdq-value" textAnchor="end">
+                {formatNumber(row.underobserved_buildings_3km_p85_proxy)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="psdq-row-evidence-mobile-list" aria-label="Mobile public-map-gap row-evidence queue">
+        <div>
+          <strong>Row-evidence queue by upazila</strong>
+          <span>Unit: sampled DGHS row kept open</span>
+        </div>
+        {rows.map((row) => (
+          <article key={row.join_key}>
+            <div>
+              <strong>{row.upazila_name}</strong>
+              <span>{row.district_name}, {row.division_name}</span>
+            </div>
+            <div className="psdq-row-evidence-mobile-bar" aria-label={`${row.upazila_name} evidence tier mix`}>
+              {ROW_EVIDENCE_TIER_ORDER.map((code) => {
+                const value = rowEvidenceTierValue(row, code);
+                if (value <= 0) {
+                  return null;
+                }
+                return (
+                  <i
+                    key={code}
+                    title={`${formatNumber(value)} ${ROW_EVIDENCE_TIER_LABELS[code]}`}
+                    style={{
+                      background: rowEvidenceColor(code),
+                      width: `${Math.max(8, (value / row.row_evidence_rows) * 100)}%`,
+                    }}
+                  />
+                );
+              })}
+            </div>
+            <div className="psdq-row-evidence-mobile-metrics">
+              <span><b>{formatNumber(row.row_evidence_rows)}</b> rows</span>
+              <span><b>{formatNumber(row.priority_1_rows)}</b> P1</span>
+              <span><b>{formatNumber(row.active_clinical_facilities)}</b> DGHS</span>
+              <span><b>{formatNumber(row.osm_health)}</b> OSM</span>
+              <span><b>{formatNumber(row.underobserved_buildings_3km_p85_proxy)}</b> proxy</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </>
   );
 }
 

@@ -129,10 +129,8 @@ public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-ga
 
 ## Next Statistical Upgrade
 
-The next PSDQ loop should take the highest-exposure open rows in this public
-map-gap ledger and add row-level public-source evidence: DGHS profile page,
-OSM feature page, same-site name evidence, and a clear reason for keeping,
-reclassifying, or excluding the row. Rows in zero-OSM expected upazilas should
-be checked separately from rows with same-upazila OSM signals, because the
-first is an upazila-level observability gap and the second is a row-level match
-problem.
+The row-level public-source evidence pass is now documented in
+`facility-validation-public-map-gap-evidence.md`. The next PSDQ loop should
+use that evidence ledger for targeted public-map inspection: close or
+reclassify a row only if a public source supports the change; otherwise keep
+the row open with the specific unresolved source question.

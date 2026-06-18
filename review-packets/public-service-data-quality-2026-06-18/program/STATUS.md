@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, and 40-row public-map-gap triage added; row-level public-source evidence for the highest-exposure open public-map-gap rows is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, and 40-row public-map-gap row-evidence ledger added; targeted public-map inspection from the row-evidence ledger is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -24,11 +24,36 @@ A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
 matching strata, validation sample, automated coded screen, AI row-review
 ledger, candidate/source checks, coordinate-repair triage, public-map-gap
-triage, and caveats, make the source upgrade clear in the public surface, and
-preserve the existing PR maturity label without implying human-final review.
+triage, row-evidence notes, and caveats, make the source upgrade clear in the
+public surface, and preserve the existing PR maturity label without implying
+human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh public-map-gap row-evidence ledger for
+  the PSDQ facility-validation flags. New no-network script
+  `scripts/build-bgd-facility-public-map-gap-row-evidence.py` reads the
+  public-map-gap triage CSV and summary JSON, then writes
+  `generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv` and
+  `generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`.
+  The ledger gives all 40 open map-gap rows a DGHS source note, public profile
+  URL, OSM coordinate-inspection URL, OSM feature or absence note, and
+  keep-open reviewer action. It covers all 30 priority-1 high-exposure rows;
+  all 40 rows remain open. Evidence tiers: 4 source-repair-first rows, 3
+  possible match or buffer-review rows, 15 row-level public-map absence-review
+  rows, and 18 upazila-level public-map observability rows. Added
+  `facility-validation-public-map-gap-evidence.md`, updated README, REPRODUCE,
+  evidence sync/review-packet inclusion, L3 note, and previous public-map-gap
+  note. This is row-level public-source evidence, not human validation, a
+  maturity promotion, or a human-final upgrade. Verification passed:
+  row-evidence script rerun, program-script `py_compile`, production site build,
+  six deterministic gates, `git diff --check`, and agent-browser desktop/mobile
+  QA at 1440x1100 and 390x900 with no page-level horizontal overflow and no
+  page errors. The mobile row-evidence chart was revised from a cropped wide
+  SVG into a compact upazila list before final QA. Screenshots:
+  `reporting-site/qa/showcase-psdq-row-evidence-desktop.png`,
+  `reporting-site/qa/showcase-psdq-row-evidence-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-row-evidence-mobile-chart.png`.
 - **2026-06-19:** Added the Bangladesh public-map-gap triage for the PSDQ
   facility-validation flags. New no-network script
   `scripts/triage-bgd-facility-public-map-gaps.py` reads the AI review
@@ -288,21 +313,21 @@ preserve the existing PR maturity label without implying human-final review.
 
 Current loop:
 
-1. Use the public-map-gap triage in
-   `generated/psdq-bgd-facility-validation-public-map-gap-summary.json` and
-   `generated/psdq-bgd-facility-validation-public-map-gap.csv` to select the
-   highest-exposure open rows for row-level public-source evidence.
-2. For each selected row, add a DGHS profile/source note, OSM feature page or
-   absence note, same-site name or alias evidence where available, and a clear
-   reason for keeping, reclassifying, or excluding the row.
-3. Keep zero-OSM expected-upazila cases separate from same-upazila name-signal
-   and 500m-to-1km buffer-sensitive rows; the first is an upazila-level public
-   observability gap, while the others are row-level matching questions.
-4. Use only public DGHS rows, OSM/Overpass evidence, and other public official
-   pages. Do not use private facility lists or owner-only credentials. Stop if
-   validation requires non-public access.
-5. If public evidence is insufficient, keep the row unresolved rather than
-   forcing a same-facility or missing-map code.
+1. Use the row-evidence ledger in
+   `generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`
+   and `generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`
+   to inspect the highest-priority open rows.
+2. Start with Gazipur Sadar, Narayanganj Sadar, Pabna Sadar, and the
+   zero-OSM upazila queue because those rows carry the largest exposure or
+   clearest source-classification problem.
+3. Keep source-repair-first rows separate from row-level public-map absence
+   candidates and upazila-level public-map observability cases.
+4. Use only public DGHS rows, OSM/Overpass evidence, public map inspection
+   links, and other public official pages. Do not use private facility lists or
+   owner-only credentials. Stop if validation requires non-public access.
+5. Close or reclassify a row only if public evidence supports the change. If
+   public evidence is insufficient, keep the row unresolved and record the
+   specific source question.
 6. Rerun sync/build/gates/browser QA after any public-surface change.
 
 Historical publication-ladder closeout remains below for context.

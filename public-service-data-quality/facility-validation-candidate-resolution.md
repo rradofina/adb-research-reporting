@@ -123,5 +123,8 @@ weak nearby features against public DGHS, OSM, or other official public pages
 before changing any source-disagreement claim. The coordinate-source repair
 triage now lives in `facility-validation-coordinate-repair.md`, and the
 public-map-gap triage now lives in
-`facility-validation-public-map-gap.md`. The next upgrade is row-level
-public-source evidence for the highest-exposure open public-map-gap rows.
+`facility-validation-public-map-gap.md`. The row-level public-source evidence
+ledger for the open public-map-gap rows now lives in
+`facility-validation-public-map-gap-evidence.md`. The next upgrade is targeted
+public-map inspection from that ledger before changing any row-level or
+source-disagreement claim.

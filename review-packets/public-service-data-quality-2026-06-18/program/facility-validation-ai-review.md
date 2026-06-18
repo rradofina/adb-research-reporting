@@ -115,9 +115,10 @@ The first richer public-source tag scan now lives in
 source-repair triage now lives in `facility-validation-coordinate-repair.md`.
 The public-map-gap triage now lives in
 `facility-validation-public-map-gap.md`. Together these passes narrow the
-ledger before any row is read as a candidate OSM absence case. The next PSDQ
-loop should add row-level public-source evidence for the highest-exposure open
-public-map-gap rows: DGHS profile/source note, OSM feature or absence note,
-same-site name evidence where available, and a clear reason for keeping,
-reclassifying, or excluding the row. Keep unresolved rows unresolved unless
-public evidence supports a row-level label.
+ledger before any row is read as a candidate OSM absence case. The row-level
+public-source evidence ledger now lives in
+`facility-validation-public-map-gap-evidence.md`: it records DGHS profile
+links, OSM coordinate links, feature or absence notes, and the reason each row
+remains open. The next PSDQ loop should run targeted public-map inspection from
+that ledger. Keep unresolved rows unresolved unless public evidence supports a
+row-level label.

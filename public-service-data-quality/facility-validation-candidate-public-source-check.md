@@ -128,6 +128,7 @@ The next source-repair step now lives in
 `facility-validation-coordinate-repair.md`. It keeps the same caution: no row
 is closed by AI-only evidence. The follow-on public-map-gap triage now lives in
 `facility-validation-public-map-gap.md`, and it keeps all 40 map-gap rows open.
-The next loop should add row-level public-source evidence for the
-highest-exposure open rows against public DGHS, OSM, and other official public
-pages before changing any source-disagreement claim.
+The row-level public-source evidence ledger now lives in
+`facility-validation-public-map-gap-evidence.md`; it keeps all 40 rows open and
+records DGHS and OSM inspection links. The next loop should perform targeted
+public-map inspection before changing any source-disagreement claim.

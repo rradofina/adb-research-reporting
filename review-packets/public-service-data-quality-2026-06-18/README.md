@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `7de5eb8ac2a5…`
-- `program/STATUS.md`  `975494b8e77e…`
-- `program/REPRODUCE.md`  `4ebf7a6e4412…`
+- `program/README.md`  `91f909fef73b…`
+- `program/STATUS.md`  `a3a468b61414…`
+- `program/REPRODUCE.md`  `4216dff643a3…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,14 +81,15 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `9b4e1a3e33a7…`
+- `program/source-disagreement-l3-module.md`  `ea78dd5594a6…`
 - `program/facility-validation-sample.md`  `426a18b29d9e…`
-- `program/facility-validation-coded-screen.md`  `3194c67d1542…`
-- `program/facility-validation-ai-review.md`  `f8e1b30cc97d…`
-- `program/facility-validation-candidate-resolution.md`  `95bb2b12ac90…`
-- `program/facility-validation-candidate-public-source-check.md`  `95f358b92b10…`
+- `program/facility-validation-coded-screen.md`  `d6aea923491d…`
+- `program/facility-validation-ai-review.md`  `81795860097c…`
+- `program/facility-validation-candidate-resolution.md`  `ebce2a1c0941…`
+- `program/facility-validation-candidate-public-source-check.md`  `e6cb363671cf…`
 - `program/facility-validation-coordinate-repair.md`  `faa04e0448fc…`
-- `program/facility-validation-public-map-gap.md`  `8fa3cc889b9f…`
+- `program/facility-validation-public-map-gap.md`  `72d0358eb477…`
+- `program/facility-validation-public-map-gap-evidence.md`  `15366c002603…`
 - `program/limitations.md`  `8ac5d2ea407f…`
 - `program/upgrade-gap.md`  `207d3df3b8ba…`
 - `program/catchment-upgrade.md`  `4f85675317f0…`
@@ -125,6 +126,8 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`  `34eb05ae6939…`
 - `program/generated/psdq-bgd-facility-validation-coordinate-repair.csv`  `158436c4bcfe…`
 - `program/generated/psdq-bgd-facility-validation-osm-candidates.csv`  `d0347d049cde…`
+- `program/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`  `ca2de90a8b7b…`
+- `program/generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`  `aaf0b7c65aec…`
 - `program/generated/psdq-bgd-facility-validation-public-map-gap-summary.json`  `5d12b68e7986…`
 - `program/generated/psdq-bgd-facility-validation-public-map-gap.csv`  `23e4596a3c58…`
 - `program/generated/psdq-bgd-facility-validation-sample-facilities.csv`  `866de878eae2…`
@@ -158,6 +161,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/audit-catchment-readiness.py`  `bb030f0c65e0…`
 - `program/scripts/build-bgd-exposure-ranked-disagreement.py`  `1171943a92b8…`
 - `program/scripts/build-bgd-facility-extract.py`  `bc7a0a7751e3…`
+- `program/scripts/build-bgd-facility-public-map-gap-row-evidence.py`  `dc3093edc317…`
 - `program/scripts/build-bgd-road-surface-context.py`  `dd5e729be664…`
 - `program/scripts/build-bgd-source-disagreement-strata.py`  `e6e8c541d683…`
 - `program/scripts/build-choropleth.py`  `afee4e2effe2…`
@@ -204,4 +208,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-18T19:32:56.558Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-18T19:51:13.695Z by `scripts/build-review-packet.mjs`.

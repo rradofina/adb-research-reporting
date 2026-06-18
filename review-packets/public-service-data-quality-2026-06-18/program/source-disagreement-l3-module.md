@@ -290,10 +290,32 @@ All 40 public-map-gap rows remain open:
 The triage keeps the interpretation narrow. Thirty rows are priority-1
 high-exposure checks, but the output does not close any row as a confirmed OSM
 absence. The zero-OSM lane is an upazila-level public-map observability signal.
-The same-name and 500m-to-1km lanes are row-level matching problems. The next
-useful evidence is public-source detail on the highest-exposure open rows:
-DGHS profile links, OSM feature links or absence notes, same-site name
-evidence, and a reason for keeping, reclassifying, or excluding each row.
+The same-name and 500m-to-1km lanes are row-level matching problems.
+
+## Public-Map-Gap Row-Evidence Addendum
+
+The row-level public-source evidence is now structured in
+`facility-validation-public-map-gap-evidence.md`. The script
+`scripts/build-bgd-facility-public-map-gap-row-evidence.py` reads the
+public-map-gap triage CSV and summary JSON, then writes a source-evidence note
+for every open row. It does not fetch new data, cache full DGHS profile HTML,
+or close rows.
+
+All 40 public-map-gap rows now have a DGHS source note, public profile URL,
+OSM coordinate-inspection URL, OSM feature or absence note, and keep-open
+reviewer action. The row-evidence tiers are:
+
+| Row-evidence tier | Rows |
+|---|---:|
+| Source repair before row absence | 4 |
+| Possible match or buffer review | 3 |
+| Row-level public-map absence review | 15 |
+| Upazila-level public-map observability review | 18 |
+
+This is the first row-readable evidence layer. It separates source-repair
+questions from map-absence candidates, and it keeps zero-OSM expected-upazila
+cases out of facility-specific language unless a row-level public source
+supports that interpretation.
 
 ## What It Does Not Mean
 
@@ -321,6 +343,7 @@ python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.p
 python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
 python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py
 python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py
+python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py
 ```
 
 Outputs:
@@ -344,14 +367,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is row-level public-source evidence for the highest-exposure
-open public-map-gap rows. Each row needs a DGHS profile/source note, OSM
-feature or absence note, same-site name/alias evidence where available, and a
-reason for keeping the row open, reclassifying it, or excluding it from
-facility-specific public-map absence language. Until that evidence exists, the
-correct publication use is source QA before service-access mapping, not a
-statement about facility availability, service quality, or validated
-catchments.
+The next upgrade is targeted public-map inspection using the row-evidence
+ledger. Start with the priority-1 rows in Gazipur Sadar, Narayanganj Sadar,
+Pabna Sadar, and the zero-OSM upazila queue. Close or reclassify a row only if
+a public source supports the change; otherwise keep it open with the specific
+unresolved source question.

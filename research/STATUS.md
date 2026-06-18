@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, and richer public-source tag scan added 2026-06-19; next loop is public-source confirmation inside the four source-check lanes) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, and 23-row coordinate-repair triage added 2026-06-19; next loop is high-exposure public-map-gap checks after excluding or annotating coordinate-source failures) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -32,10 +32,11 @@ overrides priority by editing this list.
 
 1. **`public-service-data-quality`** — *current active flagship; PR and
    ai-first finished for current issue 2026-05-07; BGD source-disagreement
-   L3 module, validation-sample design, automated coded screen, and AI
-   public-source review ledger added 2026-06-19*. Current work is to resolve
-   the row-level public-source queue against public DGHS and OSM evidence
-   without changing the maturity label.
+   L3 module, validation-sample design, automated coded screen, AI
+   public-source review ledger, candidate-resolution pass, public-source tag
+   scan, and coordinate-repair triage added 2026-06-19*. Current work is to
+   inspect high-exposure public-map-gap rows after excluding or annotating
+   coordinate-source failures, without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -148,6 +149,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ coordinate-repair triage):** Added
+  `public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py`,
+  generated `psdq-bgd-facility-validation-coordinate-repair.csv` and
+  `psdq-bgd-facility-validation-coordinate-repair-summary.json`, and wrote
+  `public-service-data-quality/facility-validation-coordinate-repair.md`. The
+  no-network triage reads the AI review ledger, coded-screen CSV, public
+  geoBoundaries ADM3, cached all-Bangladesh OSM health features, and cached
+  DGHS public DataTables rows. It keeps all 23 coordinate-repair rows open:
+  7 missing coordinates, 2 reused sampled coordinates, 6 other-ADM3
+  coordinates near an OSM health feature, 5 other-ADM3 coordinates without a
+  nearby OSM health feature, and 3 outside the public ADM3 polygons used here.
+  Sixteen usable suspect coordinates fall outside the expected sampled upazila;
+  4 are at least 50 kilometers away and the largest measured distance is 351.4
+  kilometers. The showcase route `/showcase/psdq-source-disagreement` now
+  fetches the coordinate-repair summary JSON, shows a coordinate-repair panel
+  and distance ledger, and links the new note/downloads. README, REPRODUCE,
+  hook bank, quality audit, sync/review-packet inclusion, source-disagreement
+  L3 note, showcase registry, and per-program status were updated. This is
+  source-repair triage, not human validation, a maturity promotion, or a
+  human-final upgrade. Verification passed: new script `py_compile`,
+  production site build, six deterministic gates, and agent-browser
+  desktop/mobile QA at 1365px and 375px with no page-level horizontal overflow
+  and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-coordinate-repair-desktop.png` and
+  `reporting-site/qa/showcase-psdq-coordinate-repair-mobile.png`. Next PSDQ
+  loop is high-exposure public-map-gap checks after excluding or annotating
+  missing, reused, wrong-admin, and boundary-mismatch registry coordinates.
 - **2026-06-19 (PSDQ candidate public-source tag scan):** Added
   `public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py`,
   generated `psdq-bgd-facility-validation-candidate-public-source-check.csv`

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, and richer public-source tag scan added; public-source confirmation inside the four source-check lanes is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, and 23-row coordinate-repair triage added; high-exposure public-map-gap checks are the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -23,11 +23,35 @@ Last updated: 2026-06-19.
 A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
 matching strata, validation sample, automated coded screen, AI row-review
-ledger, and caveats, make the source upgrade clear in the public surface, and
-preserve the existing PR maturity label without implying human-final review.
+ledger, coordinate-repair triage, and caveats, make the source upgrade clear in
+the public surface, and preserve the existing PR maturity label without
+implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh coordinate-repair triage for the PSDQ
+  facility-validation flags. New no-network script
+  `scripts/triage-bgd-facility-coordinate-repairs.py` reads the AI review
+  ledger, coded-screen CSV, public geoBoundaries ADM3, cached all-Bangladesh
+  OSM health features, and cached DGHS public DataTables rows, then writes
+  `generated/psdq-bgd-facility-validation-coordinate-repair.csv` and
+  `generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`.
+  The triage keeps all 23 coordinate-repair rows open: 7 missing coordinates,
+  2 reused sampled coordinates, 6 other-ADM3 coordinates near an OSM health
+  feature, 5 other-ADM3 coordinates without a nearby OSM health feature, and
+  3 outside the public ADM3 polygons used here. Sixteen usable suspect
+  coordinates fall outside the expected sampled upazila; 4 are at least 50
+  kilometers away and the largest measured distance is 351.4 kilometers. Added
+  `facility-validation-coordinate-repair.md`, updated README, REPRODUCE,
+  evidence sync/review-packet inclusion, L3 note, hook bank, quality audit,
+  showcase registry, and `/showcase/psdq-source-disagreement`. This is
+  source-repair triage, not human validation, a maturity promotion, or a
+  human-final upgrade. Verification passed: new script `py_compile`,
+  production site build, six deterministic gates, and agent-browser
+  desktop/mobile QA at 1365px and 375px with no page-level horizontal overflow
+  and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-coordinate-repair-desktop.png` and
+  `reporting-site/qa/showcase-psdq-coordinate-repair-mobile.png`.
 - **2026-06-19:** Added the Bangladesh candidate public-source check for the
   PSDQ facility-validation flags. New no-network script
   `scripts/check-bgd-facility-candidate-public-sources.py` reads the
@@ -240,15 +264,15 @@ preserve the existing PR maturity label without implying human-final review.
 
 Current loop:
 
-1. Use the 8-row candidate-resolution pass in
-   `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
-   and
-   `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
-   as the immediate worklist.
-2. Public-source confirm the strong same-site OSM tag-support rows,
-   same-site type/label conflicts, coordinate/function conflicts, and weak
-   nearby-feature rows; then move to coordinate-source repair rows and
-   high-exposure public-map-gap checks.
+1. Use the coordinate-repair triage in
+   `generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`
+   and `generated/psdq-bgd-facility-validation-coordinate-repair.csv` to
+   exclude or annotate missing, reused, wrong-admin, and boundary-mismatch
+   registry coordinates before reading public-map absence as an OSM gap.
+2. Move next to the 40 public-map-gap rows in
+   `generated/psdq-bgd-facility-validation-ai-review.csv`, prioritizing
+   high-exposure groups and rows whose DGHS coordinate remains usable after
+   the coordinate triage.
 3. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
    facility lists or owner-only credentials. Stop if validation requires
    non-public access.

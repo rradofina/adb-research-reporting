@@ -241,6 +241,31 @@ nearby OSM candidate with `name:en = Aichi Medical College Hospital`, but the
 candidate is 277.7 meters away, so the row remains a coordinate/function
 conflict rather than a closed same-site match.
 
+## Coordinate-Repair Addendum
+
+The registry-coordinate repair rows are now structured in
+`facility-validation-coordinate-repair.md`. The script
+`scripts/triage-bgd-facility-coordinate-repairs.py` reads the AI review ledger,
+the coded-screen CSV, public geoBoundaries ADM3, cached all-Bangladesh OSM
+health features, and cached DGHS public DataTables rows.
+
+All 23 coordinate-repair rows remain open:
+
+| Coordinate-repair lane | Rows |
+|---|---:|
+| Missing registry coordinate | 7 |
+| Reused sampled coordinate | 2 |
+| Other public ADM3 and near an OSM health feature | 6 |
+| Other public ADM3 and no nearby OSM health feature | 5 |
+| Outside public ADM3 boundary | 3 |
+
+The distance check is the useful caution. Sixteen rows have usable coordinates
+that fall outside the expected sampled upazila. Four of those suspect
+coordinates are at least 50 kilometers from the named upazila, and the largest
+measured distance is 351.4 kilometers. This means the high-exposure
+public-map-gap rows should not be interpreted until the coordinate queue has
+been separated from true map-absence candidates.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -265,6 +290,7 @@ python public-service-data-quality/scripts/code-bgd-facility-validation-sample.p
 python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py
 python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
 python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
+python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py
 ```
 
 Outputs:
@@ -284,11 +310,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is public-source confirmation within the four source-check
-lanes, followed by coordinate-source repair and the high-exposure public-map-gap
-checks. Until that review exists, the correct publication use is source QA
-before service-access mapping, not a statement about facility availability,
-service quality, or validated catchments.
+The next upgrade is high-exposure public-map-gap checking after excluding or
+annotating rows with missing, reused, or wrong-admin registry coordinates.
+Until that review exists, the correct publication use is source QA before
+service-access mapping, not a statement about facility availability, service
+quality, or validated catchments.

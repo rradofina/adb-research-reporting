@@ -100,9 +100,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
     statusLabel: "L3 evidence module",
-    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, and richer public-source tag checks before access maps are trusted.",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, richer public-source tag checks, and coordinate-repair triage before access maps are trusted.",
     evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
-    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, and public-source tag-support lanes",
+    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, public-source tag-support lanes, and coordinate-repair distance ledger",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, and a richer public-source tag scan.",
-    publicationGap: "Needs public-source confirmation within the four source-check lanes, registry-vintage notes, and independent validation before stronger access-map use.",
-    nextUpgrade: "Confirm same-site tag support, same-site type/label conflicts, coordinate/function conflicts, and weak nearby-feature rows before moving to coordinate repair and high-exposure map-gap checks.",
+    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, and a 23-row coordinate-repair triage.",
+    publicationGap: "Needs high-exposure public-map-gap checks, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Inspect high-exposure public-map-gap rows after excluding or annotating missing, reused, and wrong-admin registry coordinates.",
   },
   5: {
     readiness: "l3-candidate",

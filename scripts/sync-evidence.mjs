@@ -63,6 +63,7 @@ const ARTIFACTS = [
   { key: "facility_validation_ai_review", file: "facility-validation-ai-review.md", label: "Facility-validation AI review ledger" },
   { key: "facility_validation_candidate_resolution", file: "facility-validation-candidate-resolution.md", label: "Facility-validation candidate-resolution pass" },
   { key: "facility_validation_candidate_public_source_check", file: "facility-validation-candidate-public-source-check.md", label: "Facility-validation candidate public-source check" },
+  { key: "facility_validation_coordinate_repair", file: "facility-validation-coordinate-repair.md", label: "Facility-validation coordinate-repair triage" },
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },

@@ -111,9 +111,11 @@ Outputs:
 ## Next Statistical Upgrade
 
 The first richer public-source tag scan now lives in
-`facility-validation-candidate-public-source-check.md`. Use that four-lane
-source-check artifact as the next worklist: same-site OSM tag support,
-same-site type/label conflicts, coordinate/function conflicts, and weak nearby
-features. Then move to coordinate-source repair rows and high-exposure
-public-map-gap checks. Keep unresolved rows unresolved unless public DGHS or
-OSM evidence supports a row-level label.
+`facility-validation-candidate-public-source-check.md`, and the coordinate
+source-repair triage now lives in `facility-validation-coordinate-repair.md`.
+Together they narrow the ledger before the 40 public-map-gap rows are read as
+candidate OSM absence cases. The next PSDQ loop should use the coordinate
+triage to exclude missing, reused, or wrong-admin registry coordinates, then
+inspect the high-exposure public-map-gap rows against public DGHS, OSM, and
+other official public pages. Keep unresolved rows unresolved unless public
+evidence supports a row-level label.

@@ -1,0 +1,280 @@
+{
+  "generated_at": "2026-06-18T19:01:33Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "attestation_chain": "ai-first",
+  "status": "ai_public_source_coordinate_repair_triage_not_human_validation",
+  "goal_level": "L3 coordinate-source repair triage",
+  "unit": "sampled DGHS row already queued for registry-coordinate repair",
+  "source_inputs": [
+    {
+      "path": "generated\\psdq-bgd-facility-validation-ai-review.csv",
+      "role": "AI public-source review ledger; coordinate-repair worklist"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-coded-screen.csv",
+      "role": "sampled DGHS rows and exact-coordinate reuse check"
+    },
+    {
+      "path": ".cache\\geo\\geoBoundaries-BGD-ADM3.geojson",
+      "role": "public ADM3/upazila boundary check"
+    },
+    {
+      "path": ".cache\\bgd_osm_health_features_overpass.json",
+      "role": "cached public OSM health-feature nearest-neighbor check",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "path_pattern": ".cache\\bgd_dghs_p*.json",
+      "role": "cached DGHS public DataTables registry rows, including public profile, name, type, and active status"
+    }
+  ],
+  "repair_scope": {
+    "coordinate_repair_rows_checked": 23,
+    "missing_registry_coordinate_rows": 7,
+    "valid_coordinate_rows": 16,
+    "valid_coordinates_outside_expected_upazila": 16,
+    "rows_inside_other_public_adm3": 13,
+    "rows_outside_public_adm3_boundary": 3,
+    "rows_with_nearest_osm_health_feature_within_500m": 6,
+    "rows_with_duplicate_sample_coordinate": 2,
+    "rows_at_least_50km_from_expected_upazila": 4,
+    "max_distance_to_expected_upazila_km": 351.4,
+    "median_distance_to_expected_upazila_km": 13.1,
+    "rows_closed_as_coordinate_repaired": 0,
+    "rows_retained_open": 23
+  },
+  "coordinate_repair_code_counts": [
+    {
+      "name": "missing_registry_coordinate_requires_source_retrieval",
+      "rows": 7
+    },
+    {
+      "name": "coordinate_reused_by_multiple_sampled_rows",
+      "rows": 2
+    },
+    {
+      "name": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "rows": 6
+    },
+    {
+      "name": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "rows": 5
+    },
+    {
+      "name": "coordinate_outside_public_adm3_boundary",
+      "rows": 3
+    }
+  ],
+  "coordinate_repair_counts_by_group": [
+    {
+      "sample_group": "comparison_mid_ratio",
+      "rows": 7,
+      "missing_registry_coordinate_requires_source_retrieval": 2,
+      "coordinate_reused_by_multiple_sampled_rows": 0,
+      "coordinate_in_other_public_upazila_near_osm_health_feature": 1,
+      "coordinate_in_other_public_upazila_no_near_osm_health_feature": 3,
+      "coordinate_outside_public_adm3_boundary": 1
+    },
+    {
+      "sample_group": "high_exposure_gap",
+      "rows": 6,
+      "missing_registry_coordinate_requires_source_retrieval": 0,
+      "coordinate_reused_by_multiple_sampled_rows": 2,
+      "coordinate_in_other_public_upazila_near_osm_health_feature": 2,
+      "coordinate_in_other_public_upazila_no_near_osm_health_feature": 2,
+      "coordinate_outside_public_adm3_boundary": 0
+    },
+    {
+      "sample_group": "osm_ge_registry",
+      "rows": 8,
+      "missing_registry_coordinate_requires_source_retrieval": 5,
+      "coordinate_reused_by_multiple_sampled_rows": 0,
+      "coordinate_in_other_public_upazila_near_osm_health_feature": 2,
+      "coordinate_in_other_public_upazila_no_near_osm_health_feature": 0,
+      "coordinate_outside_public_adm3_boundary": 1
+    },
+    {
+      "sample_group": "zero_osm_high_proxy",
+      "rows": 2,
+      "missing_registry_coordinate_requires_source_retrieval": 0,
+      "coordinate_reused_by_multiple_sampled_rows": 0,
+      "coordinate_in_other_public_upazila_near_osm_health_feature": 1,
+      "coordinate_in_other_public_upazila_no_near_osm_health_feature": 0,
+      "coordinate_outside_public_adm3_boundary": 1
+    }
+  ],
+  "evidence_strength_counts": [
+    {
+      "name": "high_for_boundary_mismatch",
+      "rows": 3
+    },
+    {
+      "name": "high_for_missing_coordinate_only",
+      "rows": 7
+    },
+    {
+      "name": "high_for_registry_coordinate_reuse",
+      "rows": 2
+    },
+    {
+      "name": "medium_for_wrong_admin_coordinate",
+      "rows": 5
+    },
+    {
+      "name": "medium_high_for_wrong_admin_coordinate",
+      "rows": 6
+    }
+  ],
+  "distance_chart_rows": [
+    {
+      "review_id": "PSDQ-BGD-AI-057",
+      "facility_name": "MAMATA MATRE SHADAN",
+      "expected_upazila": "Patenga",
+      "observed_public_adm3_names": "",
+      "distance_to_expected_upazila_km": 351.4,
+      "coordinate_repair_code": "coordinate_outside_public_adm3_boundary",
+      "nearest_osm_health_distance_m": 67464.9
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-047",
+      "facility_name": "Kushtia Medical College",
+      "expected_upazila": "Kushtia Sadar",
+      "observed_public_adm3_names": "Gulshan",
+      "distance_to_expected_upazila_km": 123.9,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 277.9
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-042",
+      "facility_name": "Adarsha clinic",
+      "expected_upazila": "Panchagarh Sadar",
+      "observed_public_adm3_names": "Mitha Pukur",
+      "distance_to_expected_upazila_km": 94.6,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 3938.1
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-051",
+      "facility_name": "Algi(madhabdi) Union Health Sub Center",
+      "expected_upazila": "Narsingdi Sadar",
+      "observed_public_adm3_names": "Bhanga",
+      "distance_to_expected_upazila_km": 84.5,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 3355.5
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-048",
+      "facility_name": "Arpara Community Clinic , Kushtia Sadar",
+      "expected_upazila": "Kushtia Sadar",
+      "observed_public_adm3_names": "Bagha",
+      "distance_to_expected_upazila_km": 40.6,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 9595.6
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-061",
+      "facility_name": "LAMB  Hospital",
+      "expected_upazila": "Parbatipur",
+      "observed_public_adm3_names": "",
+      "distance_to_expected_upazila_km": 26.1,
+      "coordinate_repair_code": "coordinate_outside_public_adm3_boundary",
+      "nearest_osm_health_distance_m": 25965.2
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-044",
+      "facility_name": "Bajrapara Community Clinic , Panchgarh Sadar",
+      "expected_upazila": "Panchagarh Sadar",
+      "observed_public_adm3_names": "",
+      "distance_to_expected_upazila_km": 19.0,
+      "coordinate_repair_code": "coordinate_outside_public_adm3_boundary",
+      "nearest_osm_health_distance_m": 12070.0
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-043",
+      "facility_name": "Baguladangi Community Clinic , Panchgarh Sadar",
+      "expected_upazila": "Panchagarh Sadar",
+      "observed_public_adm3_names": "Thakurgaon Sadar",
+      "distance_to_expected_upazila_km": 14.0,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 6758.9
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-039",
+      "facility_name": "Arko clinic & diagnostic center",
+      "expected_upazila": "Durgapur",
+      "observed_public_adm3_names": "Netrokona Sadar",
+      "distance_to_expected_upazila_km": 12.2,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 467.1
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-045",
+      "facility_name": "ANOWER CLINIC AND DIAGNOSTIC CENTRE",
+      "expected_upazila": "Gurudaspur",
+      "observed_public_adm3_names": "Natore Sadar",
+      "distance_to_expected_upazila_km": 11.5,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 2687.7
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-060",
+      "facility_name": "Baldiyara  Community Clinic ,pirganj",
+      "expected_upazila": "Pirganj",
+      "observed_public_adm3_names": "Thakurgaon Sadar",
+      "distance_to_expected_upazila_km": 9.0,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 358.0
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-049",
+      "facility_name": "Narsingdi 100 Bed Zilla Hospital",
+      "expected_upazila": "Narsingdi Sadar",
+      "observed_public_adm3_names": "Shibpur",
+      "distance_to_expected_upazila_km": 6.8,
+      "coordinate_repair_code": "coordinate_reused_by_multiple_sampled_rows",
+      "nearest_osm_health_distance_m": 7314.8
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-050",
+      "facility_name": "Narsingdi District Hospital",
+      "expected_upazila": "Narsingdi Sadar",
+      "observed_public_adm3_names": "Shibpur",
+      "distance_to_expected_upazila_km": 6.8,
+      "coordinate_repair_code": "coordinate_reused_by_multiple_sampled_rows",
+      "nearest_osm_health_distance_m": 7314.8
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-055",
+      "facility_name": "Ahsania Mission Cancer and General Hospital",
+      "expected_upazila": "Kafrul",
+      "observed_public_adm3_names": "Tejgaon Ind. Area",
+      "distance_to_expected_upazila_km": 1.8,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 367.8
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-046",
+      "facility_name": "Azampur Union Health Sub Center",
+      "expected_upazila": "Gazipur Sadar",
+      "observed_public_adm3_names": "Uttara",
+      "distance_to_expected_upazila_km": 1.5,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 268.6
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-056",
+      "facility_name": "Al-Helal  Specialized Hospital Limited",
+      "expected_upazila": "Kafrul",
+      "observed_public_adm3_names": "Pallabi",
+      "distance_to_expected_upazila_km": 0.2,
+      "coordinate_repair_code": "coordinate_in_other_public_upazila_near_osm_health_feature",
+      "nearest_osm_health_distance_m": 65.6
+    }
+  ],
+  "non_claim": "This is an AI-first public-source coordinate-repair triage over sampled DGHS rows. It compares registry coordinates with public geoBoundaries ADM3 polygons and cached OSM health features. It is not human validation, not ground truth, not a facility-quality assessment, and not a service-access estimate.",
+  "outputs": {
+    "coordinate_repair_csv": "generated\\psdq-bgd-facility-validation-coordinate-repair.csv",
+    "summary_json": "generated\\psdq-bgd-facility-validation-coordinate-repair-summary.json"
+  }
+}

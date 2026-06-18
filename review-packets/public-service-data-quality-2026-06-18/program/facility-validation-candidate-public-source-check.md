@@ -124,9 +124,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use this source-check artifact as the immediate row-level worklist. The next
-step is public-source confirmation of the four lanes, starting with the two
-strong same-site OSM tag-support rows, then same-site label/type conflicts,
-then coordinate/function conflicts, then weak nearby features. Keep unresolved
-rows unresolved unless public DGHS, OSM history, or another official public
-source supports a row-level label.
+The next source-repair step now lives in
+`facility-validation-coordinate-repair.md`. It keeps the same caution: no row
+is closed by AI-only evidence. Use the coordinate-repair ledger before reading
+the 40 public-map-gap rows, because a missing or wrong-admin registry
+coordinate can create a false public-map absence. After coordinate repair, the
+next loop is high-exposure public-map-gap checks against public DGHS, OSM, and
+other official public pages.

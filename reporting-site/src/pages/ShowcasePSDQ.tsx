@@ -292,6 +292,52 @@ interface PsdqCandidatePublicSourceCheckSummary {
   non_claim: string;
 }
 
+interface PsdqCoordinateRepairGroupCount {
+  sample_group: string;
+  rows: number;
+  missing_registry_coordinate_requires_source_retrieval: number;
+  coordinate_reused_by_multiple_sampled_rows: number;
+  coordinate_in_other_public_upazila_near_osm_health_feature: number;
+  coordinate_in_other_public_upazila_no_near_osm_health_feature: number;
+  coordinate_outside_public_adm3_boundary: number;
+}
+
+interface PsdqCoordinateRepairDistanceRow {
+  review_id: string;
+  facility_name: string;
+  expected_upazila: string;
+  observed_public_adm3_names: string;
+  distance_to_expected_upazila_km: number;
+  coordinate_repair_code: string;
+  nearest_osm_health_distance_m: number;
+}
+
+interface PsdqCoordinateRepairSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  repair_scope: {
+    coordinate_repair_rows_checked: number;
+    missing_registry_coordinate_rows: number;
+    valid_coordinate_rows: number;
+    valid_coordinates_outside_expected_upazila: number;
+    rows_inside_other_public_adm3: number;
+    rows_outside_public_adm3_boundary: number;
+    rows_with_nearest_osm_health_feature_within_500m: number;
+    rows_with_duplicate_sample_coordinate: number;
+    rows_at_least_50km_from_expected_upazila: number;
+    max_distance_to_expected_upazila_km: number | null;
+    median_distance_to_expected_upazila_km: number | null;
+    rows_closed_as_coordinate_repaired: number;
+    rows_retained_open: number;
+  };
+  coordinate_repair_code_counts: PsdqCandidateResolutionCount[];
+  coordinate_repair_counts_by_group: PsdqCoordinateRepairGroupCount[];
+  evidence_strength_counts: PsdqCandidateResolutionCount[];
+  distance_chart_rows: PsdqCoordinateRepairDistanceRow[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -431,6 +477,7 @@ export default function ShowcasePSDQ() {
     useState<PsdqCandidateResolutionSummary | null>(null);
   const [candidatePublicSourceCheckSummary, setCandidatePublicSourceCheckSummary] =
     useState<PsdqCandidatePublicSourceCheckSummary | null>(null);
+  const [coordinateRepairSummary, setCoordinateRepairSummary] = useState<PsdqCoordinateRepairSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -469,6 +516,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`candidate public source check HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`coordinate repair HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -483,6 +534,7 @@ export default function ShowcasePSDQ() {
         aiReviewPayload,
         candidateResolutionPayload,
         candidatePublicSourceCheckPayload,
+        coordinateRepairPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -493,6 +545,7 @@ export default function ShowcasePSDQ() {
         setAiReviewSummary(aiReviewPayload);
         setCandidateResolutionSummary(candidateResolutionPayload);
         setCandidatePublicSourceCheckSummary(candidatePublicSourceCheckPayload);
+        setCoordinateRepairSummary(coordinateRepairPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -593,6 +646,8 @@ export default function ShowcasePSDQ() {
       {candidatePublicSourceCheckSummary && (
         <PsdqCandidatePublicSourceCheckPanel summary={candidatePublicSourceCheckSummary} />
       )}
+
+      {coordinateRepairSummary && <PsdqCoordinateRepairPanel summary={coordinateRepairSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -1570,6 +1625,224 @@ function PsdqPublicSourceCheckChart({ groups }: { groups: PsdqCandidatePublicSou
                   group.name_support_but_coordinate_or_function_conflict,
               )} /{" "}
               {formatNumber(group.nearby_features_do_not_support_registry_name)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+const COORDINATE_REPAIR_ORDER = [
+  "missing_registry_coordinate_requires_source_retrieval",
+  "coordinate_reused_by_multiple_sampled_rows",
+  "coordinate_in_other_public_upazila_near_osm_health_feature",
+  "coordinate_in_other_public_upazila_no_near_osm_health_feature",
+  "coordinate_outside_public_adm3_boundary",
+] as const;
+
+const COORDINATE_REPAIR_LABELS: Record<string, string> = {
+  missing_registry_coordinate_requires_source_retrieval: "Missing coordinate",
+  coordinate_reused_by_multiple_sampled_rows: "Reused coordinate",
+  coordinate_in_other_public_upazila_near_osm_health_feature: "Other ADM3 + OSM clue",
+  coordinate_in_other_public_upazila_no_near_osm_health_feature: "Other ADM3, no OSM clue",
+  coordinate_outside_public_adm3_boundary: "Outside ADM3 boundary",
+};
+
+function coordinateRepairColor(code: string) {
+  const colors: Record<string, string> = {
+    missing_registry_coordinate_requires_source_retrieval: "#4A5568",
+    coordinate_reused_by_multiple_sampled_rows: "#002569",
+    coordinate_in_other_public_upazila_near_osm_health_feature: "#007DB8",
+    coordinate_in_other_public_upazila_no_near_osm_health_feature: "#D97706",
+    coordinate_outside_public_adm3_boundary: "#9B2226",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function coordinateRepairCount(summary: PsdqCoordinateRepairSummary, code: string) {
+  return summary.coordinate_repair_code_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function PsdqCoordinateRepairPanel({ summary }: { summary: PsdqCoordinateRepairSummary }) {
+  const validRows = summary.repair_scope.valid_coordinate_rows;
+  const maxDistance = summary.repair_scope.max_distance_to_expected_upazila_km;
+
+  return (
+    <section className="showcase-section psdq-coordinate-repair-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Coordinate-source repair</p>
+          <h2>The next failure mode is the registry coordinate itself.</h2>
+          <p>
+            The coordinate triage pass reads the 23 rows already flagged for
+            registry-coordinate repair and checks whether each coordinate can
+            support map matching. It separates missing coordinates, reused
+            coordinates, and coordinates that fall in another public ADM3 before
+            the report treats a row as a public-map absence case.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Coordinate-repair rows checked</span>
+            <strong>{formatNumber(summary.repair_scope.coordinate_repair_rows_checked)} rows; all remain open</strong>
+          </div>
+          <div>
+            <span>Missing registry coordinates</span>
+            <strong>{formatNumber(summary.repair_scope.missing_registry_coordinate_rows)} rows need a public coordinate source</strong>
+          </div>
+          <div>
+            <span>Outside named upazila</span>
+            <strong>{formatNumber(validRows)} usable coordinates fall outside the expected public ADM3</strong>
+          </div>
+          <div>
+            <span>Nearby OSM clue</span>
+            <strong>
+              {formatNumber(summary.repair_scope.rows_with_nearest_osm_health_feature_within_500m)} suspect coordinates sit within 500m of an OSM health point
+            </strong>
+          </div>
+          <div>
+            <span>Exact-coordinate reuse</span>
+            <strong>{formatNumber(summary.repair_scope.rows_with_duplicate_sample_coordinate)} sampled rows reuse a coordinate</strong>
+          </div>
+          <div>
+            <span>Largest public-boundary mismatch</span>
+            <strong>
+              {maxDistance === null ? "missing" : `${formatNumber(maxDistance, 1)} km`} from the named sampled upazila
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-coordinate-grid">
+        {COORDINATE_REPAIR_ORDER.filter((code) => coordinateRepairCount(summary, code) > 0).map((code) => (
+          <div key={code}>
+            <span>{COORDINATE_REPAIR_LABELS[code]}</span>
+            <strong>{formatNumber(coordinateRepairCount(summary, code))}</strong>
+            <em>{coordinateRepairMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqCoordinateRepairDistanceChart rows={summary.distance_chart_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ coordinate-repair lane legend">
+        {COORDINATE_REPAIR_ORDER.filter((code) => coordinateRepairCount(summary, code) > 0).map((code) => (
+          <span key={code}>
+            <i style={{ background: coordinateRepairColor(code) }} /> {COORDINATE_REPAIR_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the coordinate-repair triage</p>
+        <code>python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-coordinate-repair.md" download>
+          Download coordinate-repair note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json" download>
+          Download coordinate-repair summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair.csv" download>
+          Download coordinate-repair CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function coordinateRepairMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    missing_registry_coordinate_requires_source_retrieval: "No usable lat/lon for map matching.",
+    coordinate_reused_by_multiple_sampled_rows: "The same coordinate appears on multiple sampled facility rows.",
+    coordinate_in_other_public_upazila_near_osm_health_feature: "The coordinate falls in another ADM3 and near a public OSM health feature.",
+    coordinate_in_other_public_upazila_no_near_osm_health_feature: "The coordinate falls in another ADM3 with no nearby OSM health clue.",
+    coordinate_outside_public_adm3_boundary: "The coordinate is outside the public Bangladesh ADM3 polygons used here.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function shortChartLabel(value: string, limit = 32) {
+  if (value.length <= limit) return value;
+  return `${value.slice(0, limit - 1)}...`;
+}
+
+function PsdqCoordinateRepairDistanceChart({ rows }: { rows: PsdqCoordinateRepairDistanceRow[] }) {
+  const width = 1040;
+  const rowHeight = 34;
+  const headerHeight = 72;
+  const bottomPadding = 38;
+  const height = headerHeight + rows.length * rowHeight + bottomPadding;
+  const labelX = 0;
+  const axisX = 360;
+  const axisWidth = 560;
+  const countX = 940;
+  const maxDistance = Math.max(1, ...rows.map((row) => Number(row.distance_to_expected_upazila_km || 0)));
+  const ticks = [0, 50, 100, 200, Math.ceil(maxDistance / 50) * 50].filter(
+    (tick, index, arr) => tick <= Math.ceil(maxDistance / 50) * 50 && arr.indexOf(tick) === index,
+  );
+  const scale = (value: number) => axisX + (Math.min(value, maxDistance) / maxDistance) * axisWidth;
+
+  return (
+    <svg
+      className="psdq-coded-chart psdq-coordinate-distance-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Distance from suspect registry coordinates to the named sampled upazila"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Suspect registry coordinates, distance back to named upazila
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS row with usable but wrong-admin coordinate; source: coordinate-repair summary JSON
+      </text>
+      <text x={axisX} y={60} className="psdq-chart-head">
+        Kilometers from expected public ADM3/upazila
+      </text>
+      <line x1={axisX} x2={axisX + axisWidth} y1={headerHeight - 8} y2={headerHeight - 8} stroke="#b6c2cc" />
+      {ticks.map((tick) => (
+        <g key={tick}>
+          <line
+            x1={scale(tick)}
+            x2={scale(tick)}
+            y1={headerHeight - 14}
+            y2={height - bottomPadding + 4}
+            stroke={tick === 0 ? "#8796a5" : "#dde4ea"}
+          />
+          <text x={scale(tick)} y={height - 10} textAnchor="middle" className="psdq-row-sub">
+            {formatNumber(tick)}
+          </text>
+        </g>
+      ))}
+
+      {rows.map((row, index) => {
+        const distance = Number(row.distance_to_expected_upazila_km || 0);
+        const y = headerHeight + index * rowHeight + 10;
+        const x = scale(distance);
+        const observed = row.observed_public_adm3_names || "outside public ADM3";
+        return (
+          <g key={`${row.review_id}-${row.facility_name}`}>
+            <text x={labelX} y={y - 2} className="psdq-row-label">
+              {shortChartLabel(row.facility_name)}
+            </text>
+            <text x={labelX} y={y + 14} className="psdq-row-sub">
+              {shortChartLabel(`${row.expected_upazila} -> ${observed}`, 42)}
+            </text>
+            <line x1={axisX} x2={x} y1={y + 2} y2={y + 2} stroke={coordinateRepairColor(row.coordinate_repair_code)} strokeWidth={3} />
+            <circle cx={x} cy={y + 2} r={5.5} fill={coordinateRepairColor(row.coordinate_repair_code)}>
+              <title>
+                {`${row.facility_name}: ${formatNumber(distance, 1)} km from ${row.expected_upazila}; observed ${observed}; nearest OSM health ${formatNumber(Number(row.nearest_osm_health_distance_m || 0), 0)}m`}
+              </title>
+            </circle>
+            <text x={countX} y={y + 6} className="psdq-value" textAnchor="end">
+              {formatNumber(distance, 1)} km
             </text>
           </g>
         );

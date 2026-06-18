@@ -38,6 +38,9 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/design-bgd-facility-validation-sample.py` — designs the Bangladesh facility-level validation sample and blank coding sheet from the L3 strata and DGHS facility-coordinate extract
 - `scripts/code-bgd-facility-validation-sample.py` — codes the Bangladesh validation sample with the cached all-Bangladesh OSM health-feature pull and geoBoundaries ADM3 coordinate checks
 - `scripts/review-bgd-facility-validation-flags.py` — converts the flagged Bangladesh coded-screen rows into an AI public-source row-review ledger and workstream summary
+- `scripts/resolve-bgd-facility-candidate-rows.py` — separates the candidate-resolution subset of the Bangladesh validation ledger into narrower public-source lanes
+- `scripts/check-bgd-facility-candidate-public-sources.py` — scans richer public OSM tags and DGHS public registry fields for the 8 candidate-resolution rows
+- `scripts/triage-bgd-facility-coordinate-repairs.py` — separates the 23 Bangladesh coordinate-repair rows by missing, reused, wrong-admin, and boundary-mismatch coordinate signals
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -75,6 +78,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json` — chart-ready candidate-resolution lane counts and non-claim metadata
 - `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv` — AI public-source scan of richer OSM tags and DGHS public registry fields for the 8 candidate rows
 - `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json` — chart-ready public-source check lanes and non-claim metadata
+- `generated/psdq-bgd-facility-validation-coordinate-repair.csv` — AI public-source coordinate-repair triage for the 23 registry-coordinate repair rows
+- `generated/psdq-bgd-facility-validation-coordinate-repair-summary.json` — chart-ready coordinate-repair lanes, distance ledger, and non-claim metadata
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -205,6 +210,16 @@ Current audit result:
   with coordinate/function conflicts, and 2 nearby-feature rows without
   registry-name support. This is AI public-source evidence scanning, not human
   validation.
+- **BGD coordinate-repair triage:** the no-network coordinate pass reads the AI
+  review ledger, coded-screen CSV, public geoBoundaries ADM3, cached
+  all-Bangladesh OSM health features, and cached DGHS DataTables rows. It
+  writes `generated/psdq-bgd-facility-validation-coordinate-repair.csv` and
+  `generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`.
+  The triage keeps all 23 coordinate-repair rows open: 7 rows have no usable
+  coordinate, 2 reuse an exact sampled coordinate, 6 sit in another public ADM3
+  and within 500 meters of an OSM health feature, 5 sit in another public ADM3
+  without a nearby OSM health feature, and 3 fall outside the public ADM3
+  polygons used here. This is source-repair triage, not human validation.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.

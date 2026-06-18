@@ -199,7 +199,7 @@ export default function ShowcaseRemittanceFlow() {
           </p>
           <div className="showcase-meta">
             <span>{flow?.attestation_chain || "ai-first"}</span>
-            <span>L3 repair pass in progress</span>
+            <span>L3 flow-weighting module</span>
             <span>Flow-weighted sensitivity, not a risk rating</span>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function ShowcaseRemittanceFlow() {
             The flow-weighted top five contain the same five economies as the
             equal-weighted screen, but their ordering changes. Nepal moves
             upward because matched higher-flow corridors carry higher observed
-            costs in the sprint; Vanuatu also rises. That is the report hook:
+            costs in the module; Vanuatu also rises. That is the report hook:
             the finding is about the cost measure, not a generic remittance
             dependence leaderboard.
           </p>
@@ -299,13 +299,15 @@ export default function ShowcaseRemittanceFlow() {
             2025 quotes. The join does not observe which providers households
             used, which fee schedule applied, or whether a corridor's matched
             flow coverage captures the whole market. Four economies in the
-            sprint have matched-flow coverage below 25 percent and need source
+            module have matched-flow coverage below 25 percent and need source
             validation before any stronger claim.
           </p>
         </div>
         <div className="showcase-source-box">
-          <p className="showcase-source-title">Reproduce the repair pass</p>
+          <p className="showcase-source-title">Reproduce the L3 repair module</p>
           <code>python remittance-resilience/scripts/process-remittance.py</code>
+          <code>python remittance-resilience/scripts/sensitivity.py</code>
+          <code>python remittance-resilience/scripts/deepen-median-cost.py</code>
           <code>python remittance-resilience/scripts/sprint-flow-weighted-cost.py</code>
           <a href="/programs/remittance-resilience/generated/remittance-flow-weighting-sprint.json" download>
             Download flow-weighting JSON
@@ -500,7 +502,7 @@ function RemittanceExplorer({
       <p className="remittance-method-note">
         Source method: {data.method.normalization_note} RPW costs are public
         quoted corridor prices; KNOMAD flows are 2021 estimates in US$ million.
-        Missing RPW corridor-flow joins in this sprint:{" "}
+        Missing RPW corridor-flow joins in this module:{" "}
         {data.missing_corridors.map((row) => `${row.source_iso3}->${row.dest_iso3}`).join(", ")}.
       </p>
     </section>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T14:40:28.498427Z",
+  "generated_at": "2026-06-17T12:38:48.072791Z",
   "program": "remittance-resilience",
   "metric": "fragility-index ranking, top-10 ADB DMC composition",
   "decision_rule": "Pre-registered \u00a78: positive if the top-5 composition changes by <= 1 entry in any single \u00b150% suite row; the common top-five set is reported separately.",

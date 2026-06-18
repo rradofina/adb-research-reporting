@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T12:21:30.825Z",
+  "generated_at": "2026-06-18T17:29:32.969Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -36,14 +36,14 @@
         "visual_form": "Asia-Pacific map with five cluster economies highlighted",
         "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-06-16T14:28:23+00:00",
+        "generated_at": "2026-06-17T13:00:30+00:00",
         "dimensions": {
           "width": 1600,
           "height": 900
         },
         "sha256": {
           "png": "96b92787bdffa6bdf6df0957f21564f10626baf6e54b759399a459a680397933",
-          "svg": "3346fe992c6e80bd41963e6b187aaba145e5f505586a2161d516a28cf35db3e5"
+          "svg": "ad4e8896ce207e22ebaa4f43b3b11b77e129c69b0170ad833bc7dbb37718580a"
         }
       }
     },

@@ -115,6 +115,11 @@ substitutes in this panel; the multiplicative aggregation is a
 defensible joint-stress measure. Article body now reports this
 correlation.
 
+**Superseded note, 2026-05-12.** This response is retained as part of the
+initial review history, but the statistic was corrected in §6.4 below. The
+current figure is ρ ≈ -0.22 across 21 DMCs with both axes observed, not +0.18
+across 44 rows.
+
 ### 3.5 Response to §2.5 (Myanmar special case)
 
 Accepted. Myanmar is flagged in `limitations.md` and removed from
@@ -265,3 +270,73 @@ rather than skipped silently.
 | Date closed | 2026-05-12 |
 | Reviewer chain | §18 AI critique-pass, full-ladder addendum |
 | Upgrade-eligible | yes (path to human-final in `articles/remittance-corridors-vulnerability-cluster.md` §upgrade) |
+
+---
+
+## 8. 2026-06-17 Mode A addendum — flow-weighting L3 re-close
+
+This pass reviewed the 2026-06-17 L3 flow-weighting formalization:
+`flow-weighting-l3-module.md`, `pre-registration.md` §12,
+`scripts/sprint-flow-weighted-cost.py`,
+`generated/remittance-flow-weighting-sprint.{json,csv}`,
+`results.md`, `sensitivity.md`, `coverage.md`, `limitations.md`, and the
+showcase route at `/showcase/remittance-flow-weighting`.
+
+### 8.1 Critique: 2021 flow estimates are time-mismatched with 2025 prices
+
+The module joins World Bank/KNOMAD 2021 bilateral-flow estimates to RPW Q1
+2025 price quotes. That is a useful public-source sensitivity check, but it is
+not current transaction incidence.
+
+**Response.** `pre-registration.md` §12, `limitations.md`, and
+`flow-weighting-l3-module.md` now state the time mismatch and prohibit
+household-transaction or maturity-promotion language.
+
+### 8.2 Critique: Kyrgyz Republic remains thin despite ranking first
+
+KGZ remains first after flow weighting, but the row still has one matched RPW
+corridor and 13.75 percent matched-flow coverage. Without that caveat, the
+flow-weighted result could look stronger than it is.
+
+**Response.** The L3 module keeps KGZ in the result but labels it as a
+validation priority. The generated JSON flags low matched-flow coverage below
+25 percent, and `limitations.md` now says the KGZ row remains a validation
+priority rather than a household-cost claim.
+
+### 8.3 Critique: "same top five" could be overread as confirmation
+
+The same five-economy set survives, but the order changes materially:
+`KGZ`, `WSM`, `TON`, `NPL`, `VUT` becomes `KGZ`, `NPL`, `VUT`, `WSM`, `TON`.
+That should not be summarized as simple confirmation of the equal-weighted
+ranking.
+
+**Response.** `pre-registration.md` §12 records the interpretation rule: keep
+set-membership language only if the same set survives, but show order/cost
+movement and coverage caveats. `results.md` and the article now follow that
+rule.
+
+### 8.4 Critique: Pacific small-sample risk is not solved
+
+VUT, TON, and WSM still have very few observed RPW corridors. Flow weighting
+does not produce a confidence interval or a transaction-level denominator.
+
+**Response.** The limitations section keeps the minimum-corridor caveat.
+Human-final upgrade remains contingent on corridor validation and household or
+central-bank evidence, not on the public KNOMAD sensitivity alone.
+
+### 8.5 Re-close decision
+
+The flow-weighting evidence is properly implemented as an L3 sensitivity
+module, not as a headline or maturity promotion. The remaining blockers are
+human-final upgrades: real reviewer contact, owner line review, central-bank
+or transaction validation where available, and household receipt concentration
+evidence.
+
+| Field | Value |
+|---|---|
+| Flow-weighting L3 addendum recorded | yes |
+| Coverage gate explicit | yes, 140/142 RPW corridors matched |
+| Low matched-flow caveats visible | yes |
+| Maturity promotion | no |
+| Date re-closed | 2026-06-17 |
+| Reviewer chain | §18 AI critique-pass, repair addendum |

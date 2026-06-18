@@ -20,12 +20,12 @@
       "VUT",
       "WSM"
     ],
-    "abstract": "The repaired remittance-corridor stress screen combines a country- level dependence axis (WDI personal-remittances-as-percent-of-GDP) with destination-aggregated transfer-cost evidence from World Bank Remittance Prices Worldwide Q1 2025. The parser now treats negative already-percentage RPW quotes as percentages rather than multiplying them by 100. In the repaired baseline, Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu form the top-five screen. Across the full +/-50 percent sensitivity suite, the common core is narrower: Kyrgyz Republic, Tonga, Vanuatu, and Samoa appear in every row, while Nepal is cap-sensitive when the dependence cap is halved. A public KNOMAD bilateral-flow sprint keeps the same five-economy set but changes the order, moving Nepal higher after flow weighting. The article reports the set, the narrower sensitivity core, and the limitations the screen cannot establish — household-level exposure, resilience proper, and transaction-volume incidence. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
+    "abstract": "The repaired remittance-corridor stress screen combines a country- level dependence axis (WDI personal-remittances-as-percent-of-GDP) with destination-aggregated transfer-cost evidence from World Bank Remittance Prices Worldwide Q1 2025. The parser now treats negative already-percentage RPW quotes as percentages rather than multiplying them by 100. In the repaired baseline, Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu form the top-five screen. Across the full +/-50 percent sensitivity suite, the common core is narrower: Kyrgyz Republic, Tonga, Vanuatu, and Samoa appear in every row, while Nepal is cap-sensitive when the dependence cap is halved. A public KNOMAD bilateral-flow L3 module keeps the same five-economy set but changes the order, moving Nepal higher after flow weighting. The article reports the set, the narrower sensitivity core, and the limitations the screen cannot establish — household-level exposure, resilience proper, and transaction-volume incidence. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
     "authors": [
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-06-16",
+    "updated_at": "2026-06-17",
     "doi": "",
     "file": "remittance-corridors-vulnerability-cluster.md",
     "attestation_chain": "ai-first",

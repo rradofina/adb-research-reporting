@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-06-17.
+Last updated: 2026-06-19.
 
 ## Current focus
 
@@ -31,13 +31,14 @@ current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
 1. **`remittance-resilience`** — *current active flagship; ai-first
-   finished for current issue 2026-05-12*. Top-5 corridor cluster
-   {KGZ, NPL, TON, VUT, WSM} stable across ±50% sensitivity. Full
-   publication ladder (tiers 1–7) shipped under Mode A in this
-   session, with 5 honesty corrections caught and applied. Available
-   for §18.5 owner-led human-final upgrade. The next session may
-   either polish/upgrade remittance-resilience further, or rotate to
-   #2 in this queue.
+   finished for current issue 2026-05-12; reopened for the 2026-06-17
+   parser/flow-weighting repair*. Repaired baseline top five are KGZ,
+   WSM, TON, NPL, and VUT; common full-suite sensitivity core is KGZ,
+   TON, VUT, and WSM; the public KNOMAD flow-weighting L3 module keeps
+   the same five-economy set but changes order to KGZ, NPL, VUT, WSM,
+   TON. Current work is verification and contradiction audit after the
+   L3 re-close, not a maturity promotion. Human-final remains §18.5
+   owner-led.
 2. **`access-services`** — 8-DMC climate-adjusted access pilot done;
    top-4 narrowing {BGD, KHM, LAO, PAK} stable. Travel-time isochrones
    are §18.5 owner-gated, so AI-doable depth is bounded — clean Mode A
@@ -145,6 +146,27 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-17 (remittance flow-weighting L3 re-close):** Current active
+  flagship repair was formalized instead of leaving the showcase report as an
+  L2 sprint. Added `remittance-resilience/flow-weighting-l3-module.md` and
+  `pre-registration.md` §12 with a 90% corridor-match gate, interpretation
+  rule, non-claims, and no maturity promotion. Updated the flow-weighting
+  script/generated JSON to `goal_level: L3 sensitivity module`, recording the
+  repaired program baseline order (`KGZ`, `WSM`, `TON`, `NPL`, `VUT`), the
+  matched-corridor quote order (`KGZ`, `WSM`, `TON`, `VUT`, `NPL`), and the
+  flow-weighted order (`KGZ`, `NPL`, `VUT`, `WSM`, `TON`) after matching
+  140/142 latest-period RPW corridors to public KNOMAD bilateral-flow
+  estimates. Updated results, sensitivity, coverage, limitations, review
+  addenda, article, showcase registry, and route copy; rebuilt
+  `review-packets/remittance-resilience-2026-06-18/` plus zip. This is an L3
+  repair/governance improvement for report #5, not publication-ready or
+  human-final status. Closeout verification completed 2026-06-19: production
+  site build passed, six gates passed, targeted post-sync contradiction search
+  found only historical correction notes, and Chrome/CDP QA on
+  `/showcase/remittance-flow-weighting` passed at 1365px and 375px with no
+  page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-remittance-l3-desktop.png` and
+  `reporting-site/qa/showcase-remittance-l3-mobile.png`.
 - **2026-06-17 (showcase readiness ladder):** Added explicit report-readiness
   metadata for all 20 showcase reports in
   `reporting-site/src/data/showcaseReports.ts`: L2 prototype, L3 candidate,

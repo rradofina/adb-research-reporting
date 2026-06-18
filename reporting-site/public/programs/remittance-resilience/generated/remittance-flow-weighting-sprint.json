@@ -1,10 +1,10 @@
 {
   "attestation_chain": "ai-first",
-  "goal_level": "L2 hook sprint",
+  "goal_level": "L3 sensitivity module",
   "hook": "Remittance corridors after flow weighting",
-  "status": "promote_to_L3_repair_pass",
-  "decision": "The hook is not generic: 140 of 142 ADB-DMC-bound RPW latest-period corridors join to public KNOMAD bilateral-flow estimates, and flow weighting changes both costs and rank order enough to require a full remittance-resilience repair pass before public reframing.",
-  "created_at": "2026-06-16T14:16:46.249854+00:00",
+  "status": "formal_l3_repair_module",
+  "decision": "The L3 module satisfies the corridor-match coverage gate: 140 of 142 ADB-DMC-bound RPW latest-period corridors join to public KNOMAD bilateral-flow estimates. Flow weighting keeps the repaired top-five set unchanged but changes the order and observed costs, so reader-facing copy must report both the equal-weighted baseline and the flow-weighted sensitivity caveats.",
+  "created_at": "2026-06-17T12:58:30.371644+00:00",
   "sources": {
     "rpw": {
       "name": "World Bank Remittance Prices Worldwide",
@@ -31,18 +31,27 @@
       "KNOMAD-flow-weighted mean of RPW corridor mean costs"
     ],
     "flow_units": "US$ million, 2021",
-    "normalization_note": "RPW costs use the corrected sprint parser: multiply by 100 only for nonnegative fractional values in [0, 1]; do not multiply already-percentage negative values."
+    "coverage_gate": "Treat as an L3 sensitivity module only if at least 90% of latest-period ADB-DMC-bound RPW corridors match to public KNOMAD bilateral-flow estimates.",
+    "normalization_note": "RPW costs use the corrected parser: multiply by 100 only for nonnegative fractional values in [0, 1]; do not multiply already-percentage negative values."
+  },
+  "decision_rule": {
+    "coverage_gate": "matched_rpw_corridors / rpw_corridors_latest_period >= 0.90",
+    "coverage_gate_result": 0.9859,
+    "interpretation_gate": "If the flow-weighted top-five set differs from the repaired baseline by more than one entry, retract or reframe the equal-weighted baseline. If the same set survives but order or costs change, keep set-membership language but show the order/cost movement and coverage caveats.",
+    "interpretation_gate_result": "Same top-five set survives; order changes from ['KGZ', 'WSM', 'TON', 'VUT', 'NPL'] to ['KGZ', 'NPL', 'VUT', 'WSM', 'TON'] inside the matched-corridor flow module. The repaired program baseline order is ['KGZ', 'WSM', 'TON', 'NPL', 'VUT'].",
+    "maturity_effect": "No maturity promotion and no household-exposure claim."
   },
   "source_sanity": {
     "rpw": "RPW is a corridor price-quote source. The Q1 2025 workbook does not provide household transaction volumes, so equal weighting treats each observed corridor equally.",
-    "knomad": "The bilateral matrix supplies 2021 analytic flow estimates in US$ million. It is suitable for a flow-weighting sprint, but it is not transaction microdata and is four years older than the RPW price period used here.",
+    "knomad": "The bilateral matrix supplies 2021 analytic flow estimates in US$ million. It is suitable for a public-source L3 sensitivity module, but it is not transaction microdata and is four years older than the RPW price period used here.",
     "wdi": "The remittance-dependence denominator uses the latest available WDI BX.TRF.PWKR.DT.GD.ZS value per economy, so years vary across DMCs.",
-    "use_limit": "This sprint can decide whether the hook deserves an L3 repair pass. It cannot by itself support a public headline or maturity promotion."
+    "use_limit": "This module can support the repaired program's sensitivity and caveat language. It cannot by itself support a public headline, household exposure estimate, or maturity promotion."
   },
   "coverage": {
     "latest_rpw_period": "2025_1Q",
     "rpw_corridors_latest_period": 142,
     "matched_rpw_corridors": 140,
+    "matched_rpw_corridor_share": 0.9859,
     "unmatched_rpw_corridors": 2,
     "knomad_partner_names_unmatched": [
       "Czech Republic",
@@ -77,6 +86,13 @@
     ]
   },
   "ranking_test": {
+    "repaired_program_baseline_top5": [
+      "KGZ",
+      "WSM",
+      "TON",
+      "NPL",
+      "VUT"
+    ],
     "quote_top5": [
       "KGZ",
       "WSM",

@@ -1,7 +1,7 @@
 {
   "program": "remittance-resilience",
   "permanent_url": "/program/remittance-resilience/evidence",
-  "generated_at": "2026-06-17T12:21:30.448Z",
+  "generated_at": "2026-06-18T17:29:32.491Z",
   "hero": {
     "png": "generated/charts/remittance-resilience-thumbnail.png",
     "svg": "generated/charts/remittance-resilience-thumbnail.svg",
@@ -12,14 +12,14 @@
     "visual_form": "Asia-Pacific map with five cluster economies highlighted",
     "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-06-16T14:28:23+00:00",
+    "generated_at": "2026-06-17T13:00:30+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
       "png": "96b92787bdffa6bdf6df0957f21564f10626baf6e54b759399a459a680397933",
-      "svg": "3346fe992c6e80bd41963e6b187aaba145e5f505586a2161d516a28cf35db3e5"
+      "svg": "ad4e8896ce207e22ebaa4f43b3b11b77e129c69b0170ad833bc7dbb37718580a"
     }
   },
   "artifacts": [
@@ -27,10 +27,10 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 4381,
-      "size_human": "4.3 KB",
-      "mtime": "2026-06-16T14:41:59.562Z",
-      "sha256": "34388f8ad0143c4b8d50ff14313406e9514e8d652beecdec73b65af02f84d47f",
+      "size": 4571,
+      "size_human": "4.5 KB",
+      "mtime": "2026-06-17T12:28:42.335Z",
+      "sha256": "fb563ddad83c06435847f809bee9df75746294fe47728cfd30f34f8803d29cc3",
       "attestation_chain": null
     },
     {
@@ -47,20 +47,20 @@
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 5531,
-      "size_human": "5.4 KB",
-      "mtime": "2026-04-25T17:03:41.616Z",
-      "sha256": "b61b73a91490d3855fe81aebeb4a7b9d8a334b12b6a22653c9fd810670705251",
+      "size": 8048,
+      "size_human": "7.9 KB",
+      "mtime": "2026-06-17T12:53:50.416Z",
+      "sha256": "ed03b5c107bf2ddd71faf0761f44310776cbf5e5c2f7ad482cbf1855ceea8514",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 3197,
-      "size_human": "3.1 KB",
-      "mtime": "2026-06-16T14:41:59.556Z",
-      "sha256": "4bdb1227de5c57d517d2cea08f18772a71aa2931b291d0c1eab5490c238f1c51",
+      "size": 3494,
+      "size_human": "3.4 KB",
+      "mtime": "2026-06-17T12:28:11.625Z",
+      "sha256": "2212125681bf49dba73eb2f65def24fc801edb4035a5781b72d0e5b383da1a60",
       "attestation_chain": "ai-first"
     },
     {
@@ -69,73 +69,73 @@
       "label": "Sensitivity-run output",
       "size": 11415,
       "size_human": "11.1 KB",
-      "mtime": "2026-06-16T14:40:28.501Z",
-      "sha256": "a5c6978614e48327e835320a77a534577e119c7446b459cb195a3313ef633dee",
+      "mtime": "2026-06-17T12:38:48.074Z",
+      "sha256": "28f795899ab9ac4bde2d6147f595a4a4db70a7e0d6e8039147c66fdffb669527",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 1764,
-      "size_human": "1.7 KB",
-      "mtime": "2026-06-16T14:41:59.559Z",
-      "sha256": "37d6ff1052f458702c536a8e16fce08b0f2d7adfe08cc155f7bb3038225e5448",
+      "size": 1907,
+      "size_human": "1.9 KB",
+      "mtime": "2026-06-17T12:28:19.791Z",
+      "sha256": "6141c8917043450a0a179883b8cc49371084fa37d51fe5cc10328e55687653ea",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 3784,
-      "size_human": "3.7 KB",
-      "mtime": "2026-06-16T14:41:59.554Z",
-      "sha256": "93d746e71e50f0f099b11d0e0b83bdb5f14bec1ad40bf584b88d55c4f2a0126f",
+      "size": 4120,
+      "size_human": "4.0 KB",
+      "mtime": "2026-06-17T12:28:01.542Z",
+      "sha256": "bc2ec8f22a94d148627e64fc36c65a4e1104d8fae0194bcc0debe37012959683",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 11864,
-      "size_human": "11.6 KB",
-      "mtime": "2026-06-16T14:58:38.412Z",
-      "sha256": "1fe65847bda3d64aee9b93c4bbe78b199df0f26e2cb8011ea8182be50243e317",
+      "size": 15154,
+      "size_human": "14.8 KB",
+      "mtime": "2026-06-17T13:03:25.336Z",
+      "sha256": "aba36de8a9c0786179408af24999354fb7515ee549826b1d57ac1bde348811cb",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 16876,
-      "size_human": "16.5 KB",
-      "mtime": "2026-06-16T14:59:30.176Z",
-      "sha256": "e91a4fce41d047bf4f35885a8c34d34980660fc4fcb354eb3d429e86902856bd",
+      "size": 20477,
+      "size_human": "20.0 KB",
+      "mtime": "2026-06-17T12:30:18.477Z",
+      "sha256": "1f0ce5703ded13990c4444107949bc5dc75849f1c385c5d03b6e50bdfaa4951d",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 4809,
-      "size_human": "4.7 KB",
-      "mtime": "2026-06-16T14:58:17.484Z",
-      "sha256": "aa6572a1a76fb31c6abe41b841a6e22f11ab56fc0dfbc4b05a3951af286245cc",
+      "size": 5629,
+      "size_human": "5.5 KB",
+      "mtime": "2026-06-17T13:03:19.654Z",
+      "sha256": "c3833e260a5c1e9d97f1c580caaabbec92976a0045a05ecabe4e8297051d1a78",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
       "file": "generated/charts/remittance-flow-weighting-sprint.png",
-      "size": 153327,
+      "size": 153261,
       "size_human": "149.7 KB",
-      "sha256": "2e79764f7da0d0877f79f45358035f36ae1035a22861831b87af87de60afa477"
+      "sha256": "36ac33c5e69d137088d74c9c1de96c36cb2e8c0143466bb57a8562fcf426d0dc"
     },
     {
       "file": "generated/charts/remittance-flow-weighting-sprint.svg",
-      "size": 89921,
-      "size_human": "87.8 KB",
-      "sha256": "062dfb1e577b8fd09ff46663b477cab71d0907105511ef7771ecd7e363b3a42b"
+      "size": 89343,
+      "size_human": "87.2 KB",
+      "sha256": "1ae079c6a51a7de553cdefc47e1d2586835789dde79867fff79c07087faf0503"
     },
     {
       "file": "generated/charts/remittance-fragility-scatter.png",
@@ -145,15 +145,15 @@
     },
     {
       "file": "generated/charts/remittance-fragility-scatter.svg",
-      "size": 147377,
-      "size_human": "143.9 KB",
-      "sha256": "4529715fed989967233d9ecd51c52a908dd676b600249a1d3c4e68e4ce327fe9"
+      "size": 145359,
+      "size_human": "142.0 KB",
+      "sha256": "571d672962f5536d2e612fc48505e93cde2935be65b49aec9a85bdb004401c25"
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.json",
       "size": 1129,
       "size_human": "1.1 KB",
-      "sha256": "c7c13ed31ac8a0d853f2dccddf70e37e2e8bc059dd49c06e0e9e70acf9f39d76"
+      "sha256": "a360affefbc895cf9d79692521b2d10f58c33afadd88a051064dfb34ac3ee1d2"
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.png",
@@ -163,9 +163,9 @@
     },
     {
       "file": "generated/charts/remittance-resilience-thumbnail.svg",
-      "size": 937199,
-      "size_human": "915.2 KB",
-      "sha256": "3346fe992c6e80bd41963e6b187aaba145e5f505586a2161d516a28cf35db3e5"
+      "size": 905684,
+      "size_human": "884.5 KB",
+      "sha256": "01c4f42c79e755e24c2ca869389a243f9f7a68118cc3587a44cd6f657077bdaa"
     },
     {
       "file": "generated/remittance-flow-weighting-sprint.csv",
@@ -175,9 +175,9 @@
     },
     {
       "file": "generated/remittance-flow-weighting-sprint.json",
-      "size": 33897,
-      "size_human": "33.1 KB",
-      "sha256": "1bea6927f51fcb92ef1c82d67ccecf386199145034df2360456e8c5fe029ae62"
+      "size": 35207,
+      "size_human": "34.4 KB",
+      "sha256": "dae15767469c17cea031d2b2c17f4ab3ee5a15f5ac63f32e2ab6703ca24dbd8b"
     },
     {
       "file": "generated/remittance-median-deepening.csv",
@@ -189,7 +189,7 @@
       "file": "generated/remittance-median-deepening.json",
       "size": 11160,
       "size_human": "10.9 KB",
-      "sha256": "944510775053b664f22575f6b70c936b97220df28993f4e121bc67d45d3f4f9d"
+      "sha256": "d38d93450438dd5b640e1e41069b23084cf33661784d719677b484fccad46e25"
     },
     {
       "file": "generated/remittance-resilience-adb-panel.csv",
@@ -201,7 +201,7 @@
       "file": "generated/remittance-resilience-adb-panel.json",
       "size": 36217,
       "size_human": "35.4 KB",
-      "sha256": "b07aec3b702b407db3b1e9aba3ce3128834d800539c4af432c3a1dfea8e2d6a3"
+      "sha256": "3dcefac24e81ecc3c66d859c01be50b1a825a79e9930180b7239534dfd830888"
     }
   ],
   "articles": [

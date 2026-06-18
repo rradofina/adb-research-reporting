@@ -2,10 +2,11 @@
 
 `attestation_chain: ai-first`
 
-Run on 2026-06-16 by `scripts/sensitivity.py` against the repaired RPW +
-WDI artifacts. Per `CONSTITUTION.md` §6.6, every arbitrary numeric in
-`pre-registration.md` §6 is tested at +/-50 percent. Run artifact:
-`sensitivity-runs.json`.
+Run on 2026-06-17 against the repaired RPW + WDI artifacts and the formal
+flow-weighting L3 module. Per `CONSTITUTION.md` §6.6, every arbitrary
+numeric in `pre-registration.md` §6 is tested at +/-50 percent. Run artifact:
+`sensitivity-runs.json`; flow-weighting artifact:
+`generated/remittance-flow-weighting-sprint.json`.
 
 ---
 
@@ -49,10 +50,13 @@ Completed:
 - **Median-cost deepening.** `scripts/deepen-median-cost.py` preserves
   the same five-economy set under both median-over-quotes and
   median-of-corridor-medians cost.
-- **Corridor-flow weighting sprint.** `scripts/sprint-flow-weighted-cost.py`
+- **Corridor-flow weighting L3 module.** `scripts/sprint-flow-weighted-cost.py`
   preserves the same five-economy top-five set after joining RPW Q1 2025
   corridor prices to World Bank/KNOMAD 2021 bilateral flow estimates, but
-  changes the order: KGZ, NPL, VUT, WSM, TON.
+  changes the order: KGZ, NPL, VUT, WSM, TON. The module passes the
+  `pre-registration.md` §12 corridor-match gate with 140 of 142 RPW corridors
+  matched, while still flagging low matched-flow coverage below 25 percent for
+  KGZ, TJK, ARM, and AFG.
 
 Deferred to a later upgrade pass:
 

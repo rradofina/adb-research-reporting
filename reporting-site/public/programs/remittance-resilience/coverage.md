@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Last refresh: 2026-06-16.
+Last refresh: 2026-06-17.
 
 ---
 
@@ -32,9 +32,11 @@ Numbers come from `generated/remittance-resilience-adb-panel.json`.
 
 ## Flow-Weighting Coverage
 
-`scripts/sprint-flow-weighted-cost.py` matched 140 of 142 latest-period
-ADB-DMC-bound RPW corridors to the World Bank/KNOMAD 2021 bilateral
-remittance matrix. The missing RPW corridor-flow joins are:
+`scripts/sprint-flow-weighted-cost.py` now serves as the L3 flow-weighting
+sensitivity module. It matched 140 of 142 latest-period ADB-DMC-bound RPW
+corridors to the World Bank/KNOMAD 2021 bilateral remittance matrix, clearing
+the 90 percent corridor-match gate recorded in `pre-registration.md` §12. The
+missing RPW corridor-flow joins are:
 
 | Source | Destination |
 |---|---|

@@ -16,6 +16,12 @@ macro-dependence measurement signal per §13.3, not a country-quality ranking.
 
 Artifact: `generated/remittance-median-deepening.{json,csv}`.
 
+Status update, 2026-06-17: the flow-weighting keystone described below has
+since been partially answered with the public World Bank/KNOMAD 2021
+bilateral remittance matrix. The formal current record is
+`flow-weighting-l3-module.md` and `pre-registration.md` §12. The historical
+data-wall section remains below to preserve the 2026-05-29 audit trail.
+
 ## The question
 
 The committed cluster {KGZ, WSM, TON, VUT, NPL} ranks on a *destination-mean*
@@ -129,19 +135,19 @@ the right (robust) statistic, the cluster is the same five economies.
   The median fixes the outlier problem; it does not manufacture corridor
   breadth that the RPW coverage does not have.
 
-## Data wall — the volume-weighting keystone (§1.1) cannot be computed on disk
+## Historical data wall — the volume-weighting keystone (§1.1) could not be computed on disk in this pass
 
 The program cache holds three files: the RPW workbook, a small
 `wb_remittance_inflows.xlsx`, and the WDI %GDP JSON. None of them carries a
 **bilateral** remittance flow matrix (source-economy → destination-economy
 dollar volumes). The IMF/World Bank bilateral remittance matrix that §1.1
-requires is a separate public dataset that is **not** in `.cache/`, and
-outbound network is blocked for this pass, so corridor flow shares cannot be
-constructed here. This deepening therefore answers the robustness question
-(§1.2) in full and leaves the volume-weighting question (§1.1) as the next
-fetch-gated step. The honest status: the cluster survives a robust central
-tendency; whether it survives flow-weighting is undetermined and is the
-single highest-value remaining test.
+required was a separate public dataset that was **not** in `.cache/` during
+this pass, and outbound network was blocked for this pass, so corridor flow
+shares could not be constructed here. This historical deepening therefore
+answered the robustness question (§1.2) in full and left the flow-weighting
+question (§1.1) as the next fetch-gated step. The later 2026-06-17 L3 module
+finds that the same five-economy set survives public KNOMAD flow weighting,
+with order changes and low matched-flow coverage caveats.
 
 ## Reproduce
 

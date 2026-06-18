@@ -198,7 +198,7 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "climate-health-workdays",
     articleSlug: "workday-loss-pressure-cluster",
     domain: "Health",
-    finish: "publication-ready",
+    finish: "program-prospectus",
     question:
       "Which DMCs combine high outdoor-labor exposure with above-guideline PM2.5 pressure?",
     output:
@@ -420,18 +420,18 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     question:
       "Which DMCs combine high remittance dependence with costly inbound corridors?",
     output:
-      "The repaired baseline top five are Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa; four remain common across the +/-50% sensitivity suite after parser repair, while the same five remain in the flow-weighted top five.",
-    chartTitle: "Remittance fragility index",
-    sourceNote: "World Bank WDI remittance share and Remittance Prices Worldwide Q1 2025.",
+      "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; four remain common across the +/-50% sensitivity suite after parser repair, while the same five remain in the flow-weighted top five.",
+    chartTitle: "Remittance corridor stress screen",
+    sourceNote: "World Bank WDI remittance share, Remittance Prices Worldwide Q1 2025, and World Bank/KNOMAD 2021 bilateral flows.",
     caveat:
       "This is corridor-cost exposure, not household-level resilience.",
     nextStep:
-      "Convert the flow-weighting sprint into the formal remittance repair pass and add household microdata on remittance receipt concentration.",
+      "Use the rebuilt L3 packet as sensitivity evidence, then add household microdata or central-bank validation before any stronger remittance-price claim.",
     granularity: {
       currentUnit: "Country destination mean cost and remittance dependence",
       targetUnit: "Bilateral corridor, household survey region, remittance-receiving household group",
       gap:
-        "RPW mean cost is unweighted and household exposure is not observed.",
+        "RPW destination means are source-sensitive, KNOMAD flows are 2021 estimates, and household exposure is not observed.",
       upgradeData:
         "Central-bank corridor flow data, RPW microdata, LSMS/DHS/national household surveys, and migrant corridor histories.",
     },

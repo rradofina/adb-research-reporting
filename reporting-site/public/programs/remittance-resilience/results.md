@@ -2,9 +2,9 @@
 
 `attestation_chain: ai-first`
 
-Status: **Repair/deepening result — 2026-06-16.** The RPW cost parser
+Status: **Repair/deepening result — 2026-06-17.** The RPW cost parser
 has been repaired, the panel and sensitivity suite have been regenerated,
-and the corridor-flow-weighting sprint has been run against public
+and the corridor-flow-weighting L3 module has been run against public
 World Bank/KNOMAD bilateral remittance-flow estimates. This is a triage
 result, not a country ranking or household exposure estimate.
 
@@ -56,9 +56,16 @@ in `[0, 1]`; do not multiply already-percentage negative values.
 | KNOMAD-flow-weighted cost | Top five: KGZ, NPL, VUT, WSM, TON | Same five economies; Nepal rises from fifth to second. |
 
 Flow weighting matched 140 of 142 latest-period ADB-DMC-bound RPW corridors
-to the public World Bank/KNOMAD 2021 bilateral remittance matrix. Low
-matched-flow coverage below 25 percent is flagged for KGZ, TJK, ARM, and
-AFG in `generated/remittance-flow-weighting-sprint.json`.
+to the public World Bank/KNOMAD 2021 bilateral remittance matrix, clearing
+the 90 percent L3 corridor-match coverage gate recorded in
+`pre-registration.md` §12. Low matched-flow coverage below 25 percent is
+flagged for KGZ, TJK, ARM, and AFG in
+`generated/remittance-flow-weighting-sprint.json`.
+
+The decision rule is therefore: keep the repaired five-economy set, but show
+the flow-weighted order and the low-coverage caveats wherever the result is
+used. This is not a maturity promotion and not a household transaction-cost
+claim.
 
 ## 4. Reproduction
 

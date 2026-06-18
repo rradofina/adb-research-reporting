@@ -350,3 +350,83 @@ this file) applies verbatim to this addendum.
 | Upgrade-eligible | yes |
 | Date closed | 2026-05-12 |
 | Reviewer chain | §18 AI synthesis under §18.4, full-ladder addendum |
+
+---
+
+## 11. 2026-06-17 red-team addendum — flow-weighting repair
+
+This addendum covers the public KNOMAD flow-weighting module added after the
+RPW parser repair. The §18.4 non-claim in §6 applies verbatim: no individual
+reviewer was contacted; the objections below are AI-synthesized from public
+methodological positions.
+
+### 11.1 KNOMAD / World Bank Migration and Remittances
+
+**Synthesized objection.** A KNOMAD reader would accept public bilateral-flow
+estimates as a better sensitivity layer than equal corridor weights, but would
+object if the analysis described the 2021 matrix as current transaction
+volume or treated it as household incidence.
+
+**Response.** The new L3 module uses the KNOMAD matrix only as a
+public-source sensitivity weight. `pre-registration.md` §12 and
+`limitations.md` explicitly prohibit household transaction-cost language.
+
+### 11.2 World Bank Payment Systems Development Group
+
+**Synthesized objection.** PSDG would still ask for corridor-specific
+validation and provider/channel information. A bilateral-flow weight does not
+show which provider price a household actually paid, whether informal channels
+were used, or whether corridor fees varied within the quarter.
+
+**Response.** The repair does not claim provider-level incidence. It turns the
+old equal-weight limitation into a visible sensitivity check and keeps
+central-bank or corridor records as the human-final upgrade.
+
+### 11.3 Nepal Rastra Bank
+
+**Synthesized objection.** Nepal moving from fifth to second under flow
+weighting strengthens the case for a Nepal corridor audit, but a national
+central-bank reader would still ask whether the dominant GCC corridors,
+Malaysia, and Korea align with local corridor records.
+
+**Response.** The article now describes Nepal as the example where
+flow-weighting changes interpretation inside the same set. It does not assert
+that KNOMAD-flow-weighted RPW prices equal NRB-observed household costs.
+
+### 11.4 OSCE Academy in Bishkek
+
+**Synthesized objection.** The KGZ result remains vulnerable because matched
+coverage is low. A Central Asia migration researcher would still question any
+KGZ headline if the Russia corridor dominates actual flows but RPW coverage is
+one observed destination corridor.
+
+**Response.** Accepted. `limitations.md` now says the public flow-weighting
+module only partially responds to this objection. KGZ remains first in the
+screen, but the result is explicitly treated as a validation priority.
+
+### 11.5 Pacific Community Statistics for Development
+
+**Synthesized objection.** Tonga, Samoa, and Vanuatu still rest on small RPW
+corridor samples. Flow weighting can change order but cannot make a two-corridor
+sample precise.
+
+**Response.** The Pacific small-sample limitation remains unresolved for
+human-final purposes. The publication surface shows the result as triage, not
+as a final country or household estimate.
+
+## 12. 2026-06-17 red-team re-close
+
+After the addendum above, the remaining substantive objections are the named
+limitations already carried in the program: transaction-volume validation,
+central-bank or corridor records, informal-channel incidence, household receipt
+concentration, real external review, and owner attestation. No maturity label
+changes in this pass.
+
+| Field | Value |
+|---|---|
+| Flow-weighting red-team addendum complete | yes |
+| §18.4 non-claim preserved | yes |
+| Individual reviewers contacted | no |
+| Remaining objections moved to limitations / human-final path | yes |
+| Date re-closed | 2026-06-17 |
+| Reviewer chain | §18 AI synthesis under §18.4, flow-weighting addendum |

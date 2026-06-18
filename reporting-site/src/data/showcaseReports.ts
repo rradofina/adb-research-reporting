@@ -113,7 +113,7 @@ export const showcaseReports: ShowcaseReport[] = [
     status: "verified",
     statusLabel: "Prototype report",
     deck: "RPW remittance prices are rechecked with public bilateral-flow weights so corridor-cost exposure is not counted equally by default.",
-    evidencePath: "remittance-resilience/l2-flow-weighting-sprint.md",
+    evidencePath: "remittance-resilience/flow-weighting-l3-module.md",
     visual: "Equal-weighted versus flow-weighted corridor-cost scatter",
     sourceNote: "World Bank RPW, KNOMAD bilateral flows, and WDI remittance dependence",
   },
@@ -583,9 +583,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   5: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Flow-weighting sprint and remittance program artifacts make this one of the strongest repair-to-publication candidates.",
-    publicationGap: "Needs formal L3 repair decision, parser coverage notes, and a review packet before the claim can be reclosed.",
-    nextUpgrade: "Move the flow-weighting sprint into remittance L3 with coverage panel, sensitivity notes, and review-loop response.",
+    qaSummary: "Flow-weighting L3 module and remittance program artifacts make this one of the strongest repair-to-publication candidates.",
+    publicationGap: "Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use.",
+    nextUpgrade: "Validate corridor rows against central-bank or transaction sources where available; keep the L3 module as a sensitivity result until then.",
   },
   6: {
     readiness: "l3-candidate",

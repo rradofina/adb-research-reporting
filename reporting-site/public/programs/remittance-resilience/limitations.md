@@ -2,8 +2,8 @@
 
 `attestation_chain: ai-first`
 
-Status: §18 AI-finalized 2026-04-26. Updated to incorporate the
-unresolved synthesized objections from `review-external.md` §5.
+Status: §18 AI-finalized 2026-04-26. Updated 2026-06-17 to incorporate
+the parser repair and the public KNOMAD flow-weighting L3 module.
 
 ---
 
@@ -40,11 +40,15 @@ unresolved synthesized objections from `review-external.md` §5.
 - **Myanmar exceptional cost.** MMR's 28.16% mean transfer cost
   reflects post-2021 sanctions / FX friction and is not comparable
   to ordinary corridor pricing. Excluded from the headline cluster.
-- **Volume-weighting unavailable.** RPW publishes corridor cost but
-  not corridor flow volume. The mean cost is equal-weighted across
-  corridors; a volume-weighted estimate (more appropriate for
-  policy use) requires IMF-DOTS or central-bank corridor flow data
-  not in scope here.
+- **Flow weighting is public but still indirect.** The L3 module joins
+  RPW Q1 2025 quoted corridor costs to World Bank/KNOMAD 2021 bilateral
+  flow estimates. It improves the equal-weighted corridor screen, but it
+  is not household transaction microdata, does not observe informal
+  channels, and mixes a 2021 flow matrix with 2025 prices.
+- **Transaction-volume weighting remains unavailable.** RPW publishes
+  corridor cost but not provider-level or household transaction volumes.
+  Central-bank corridor data or household microdata would still be needed
+  before the result can be read as actual remittance-cost incidence.
 
 ## 3. Method-side limitations
 
@@ -62,11 +66,13 @@ unresolved synthesized objections from `review-external.md` §5.
 
 ## 4. DMC-coverage limitations
 
-- 6 of 50 DMCs are not rankable: 4 lack RPW destination corridors,
-  1 lacks WDI in window, 1 lacks both. See `coverage.md` §3.
-- The 44 rankable DMCs cover the great majority of remittance flow
-  in the ADB region but miss several Pacific micro-states for which
-  RPW does not publish destination corridors.
+- 21 of 50 ADB regional DMCs have both a WDI remittance/GDP observation and
+  at least one RPW Q1 2025 destination-corridor cost observation. The
+  remaining DMCs are not rankable in the repaired two-axis screen. See
+  `coverage.md`.
+- RPW destination coverage misses several Pacific micro-states and other DMCs;
+  the absence of a current RPW destination row is a source-coverage gap, not
+  evidence of low corridor-cost stress.
 
 ## 5. Synthesized reviewer objections quoted verbatim
 
@@ -93,6 +99,12 @@ was contacted.** Upgrade-eligible.
 > for KGZ is dragged up by non-Russia corridors that account for a
 > small share of actual flow. Volume-weighted cost is the more
 > appropriate measure.
+
+The 2026-06-17 L3 flow-weighting module partially responds to this objection
+with public KNOMAD bilateral-flow estimates. It does not close it fully:
+Kyrgyz Republic still has one matched RPW corridor and 13.75 percent
+matched-flow coverage in the current artifact, so the KGZ row remains a
+validation priority rather than a household-cost claim.
 
 ### 5.4 From C-3 (IZA), synthesized
 

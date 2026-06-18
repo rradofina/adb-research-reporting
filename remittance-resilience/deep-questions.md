@@ -9,6 +9,12 @@ question is meant to be specific enough to be answered, falsifiable, and
 tied to a named public dataset — not a generic prompt. Where a question
 would dissolve or transform the headline, it says so.
 
+Status update, 2026-06-17: question 1.1 has now been partially answered with
+the public World Bank/KNOMAD 2021 bilateral remittance matrix in
+`flow-weighting-l3-module.md`. The same five-economy set survives, but order
+changes and low matched-flow coverage remain central caveats. This file
+remains the broader research agenda, not the current result record.
+
 ---
 
 ## 0. Where the screen currently stops

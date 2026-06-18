@@ -131,3 +131,52 @@ This pre-registration is AI-drafted and AI-frozen under §18.1. Every
 artifact in this program carries `attestation_chain: ai-first`. A
 subsequent owner-attestation upgrade-pass under §18.5 converts the
 chain to `mixed` or `human-final`.
+
+## 12. 2026-06-17 L3 flow-weighting addendum
+
+This addendum does not rewrite the frozen 2026-04-26 claim. It records the
+post-repair decision rule for using public bilateral-flow estimates as an L3
+sensitivity module after the RPW cost-normalization defect was repaired.
+
+### 12.1 Public sources
+
+| Source | Unit | Period used | Local artifact |
+|---|---|---:|---|
+| World Bank Remittance Prices Worldwide | Source-destination corridor price quotes | 2025 Q1 | `.cache/rpw_dataset_2011_2025_q1.xlsx` |
+| World Bank/KNOMAD bilateral remittance matrix, `WB.KNOMAD.BRE` | Bilateral flow estimates, US$ million | 2021 | `.cache/WB-KNOMAD-bilateral-remittance-matrix-2021.xlsx` |
+| WDI `BX.TRF.PWKR.DT.GD.ZS` | Personal remittances received, percent of GDP | latest available year by economy | `.cache/wdi_remittance_pct_gdp.json` |
+
+The unit of analysis is the receiving ADB DMC, aggregating observed RPW
+source-to-destination corridors.
+
+### 12.2 Coverage gate
+
+The flow-weighting module is treated as L3 sensitivity evidence only if at
+least 90 percent of latest-period ADB-DMC-bound RPW corridors match to public
+KNOMAD bilateral-flow estimates. Destination rows with matched-flow coverage
+below 25 percent must be flagged wherever the result is interpreted.
+
+The current run passes the corridor-match gate: 140 of 142 RPW corridors match
+to KNOMAD flow estimates. Low matched-flow coverage is still flagged for KGZ,
+TJK, ARM, and AFG in `generated/remittance-flow-weighting-sprint.json`.
+
+### 12.3 Interpretation rule
+
+- If the flow-weighted top-five set differs from the repaired equal-weighted
+  baseline by more than one entry, retract or reframe the equal-weighted
+  baseline.
+- If the same set survives but order or observed costs change, keep
+  set-membership language but show the order/cost movement and coverage
+  caveats.
+- No result from this module may be described as household transaction cost,
+  informal-channel incidence, country performance, or a maturity promotion.
+
+### 12.4 Current decision
+
+The repaired equal-weighted baseline top five are `KGZ`, `WSM`, `TON`, `NPL`,
+and `VUT`. Inside the matched-corridor flow module, the equal-weighted quote
+order is `KGZ`, `WSM`, `TON`, `VUT`, `NPL`; the flow-weighted top five are
+`KGZ`, `NPL`, `VUT`, `WSM`, and `TON`. The same set survives, but the order
+changes. Reader-facing copy must therefore report the repaired five-economy
+set, the four-economy full-suite sensitivity core, Nepal's cap sensitivity,
+and the flow-weighted order change together.

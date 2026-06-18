@@ -4,6 +4,11 @@
 Date: 2026-06-16
 Goal level: L2 hook sprint
 
+Current status: promoted into the formal L3 sensitivity module on
+2026-06-17. See `flow-weighting-l3-module.md` and `pre-registration.md` §12
+for the binding coverage gate and interpretation rule. This file remains the
+historical L2 discovery note.
+
 ## Decision
 
 Promote this hook into the remittance-resilience L3 repair pass.

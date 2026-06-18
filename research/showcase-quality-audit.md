@@ -1,7 +1,7 @@
 # Showcase quality audit
 
 `attestation_chain: ai-first`
-Date: 2026-06-17
+Date: 2026-06-19
 
 Purpose: keep the 20-report ADB/ERDI showcase honest. A route with a good
 visual is not automatically publication ready. This audit records the current
@@ -38,7 +38,7 @@ candidates before adding new surfaces.
 | 2 | Public data freshness blind spots | L2 prototype | Public WDI API matrix makes stale and missing indicator vintages visible | Needs indicator-specific refresh expectations and non-applicability rules | Add source-specific refresh cadence labels |
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ program spine plus source-disagreement visual and public artifacts | Needs facility-level matching sample and independent validation layer | Package BGD source-disagreement with matching strata and validation notes |
-| 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting sprint directly repairs a current flagship claim | Needs parser coverage notes and formal review-loop response | Move sprint into remittance L3 package |
+| 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
@@ -76,14 +76,20 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-remittance-readiness-panel-mobile.png`. The full
   multi-route browser batch should be rerun later if the browser CLI stops
   timing out on long loops.
+- Remittance report #5 received a second focused L3 closeout pass on
+  2026-06-19 after the flow-weighting module was formalized. The review packet
+  and zip were rebuilt, the public route was rebuilt, six gates passed,
+  targeted contradiction search found no live stale L2/volume-weighting
+  language, and Chrome/CDP QA passed at desktop and 375px mobile. Screenshots:
+  `reporting-site/qa/showcase-remittance-l3-desktop.png` and
+  `reporting-site/qa/showcase-remittance-l3-mobile.png`.
 
 ## Next deepening order
 
-1. Remittance flow weighting, because it repairs the active flagship.
-2. PSDQ source disagreement, because the program spine is already mature.
-3. Air-monitoring observability, because the visual hook is strong and the
+1. PSDQ source disagreement, because the program spine is already mature.
+2. Air-monitoring observability, because the visual hook is strong and the
    next source upgrade is concrete.
-4. Access map-completeness, because official registry joins can turn a source
+3. Access map-completeness, because official registry joins can turn a source
    audit into a defensible planning note.
-5. Disaster metric falsification, only after a true recovery-lag source object
+4. Disaster metric falsification, only after a true recovery-lag source object
    exists.

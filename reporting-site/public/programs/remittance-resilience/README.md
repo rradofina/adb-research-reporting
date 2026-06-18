@@ -1,8 +1,8 @@
 # Remittance Resilience Gaps (Program 14)
 
-**Status (2026-06-16):** Program Prospectus / ai-first repair pass in
+**Status (2026-06-17):** Program Prospectus / ai-first repair pass in
 progress. The earlier "finished for current issue" surface has been
-reopened because the RPW parser repair and corridor-flow-weighting sprint
+reopened because the RPW parser repair and corridor-flow-weighting L3 module
 changed the honest reader-facing claim. Human-final review is still required
 before any external submission or peer-reviewed claim.
 
@@ -14,13 +14,16 @@ before any external submission or peer-reviewed claim.
 - `scripts/deepen-median-cost.py` — recomputes the screen using robust
   median cost measures
 - `scripts/sprint-flow-weighted-cost.py` — joins RPW corridors to public
-  World Bank/KNOMAD bilateral remittance-flow estimates
+  World Bank/KNOMAD bilateral remittance-flow estimates as the formal L3
+  flow-weighting sensitivity module
 - `.cache/rpw_dataset_2011_2025_q1.xlsx` — World Bank Remittance Prices
   Worldwide Q1 2025 dataset
 - `.cache/wdi_remittance_pct_gdp.json` — WDI
   `BX.TRF.PWKR.DT.GD.ZS`
 - `.cache/WB-KNOMAD-bilateral-remittance-matrix-2021.xlsx` — public
-  bilateral remittance-flow matrix used in the flow-weighting sprint
+  bilateral remittance-flow matrix used in the flow-weighting module
+- `flow-weighting-l3-module.md` — coverage gate, decision rule, result, and
+  non-claims for the flow-weighted sensitivity check
 - `generated/remittance-resilience-adb-panel.{json,csv}`
 - `generated/remittance-median-deepening.{json,csv}`
 - `generated/remittance-flow-weighting-sprint.{json,csv}`
@@ -68,7 +71,7 @@ and are no longer multiplied by 100.
 - **WDI BX.TRF.PWKR.DT.GD.ZS** — personal remittances received (% GDP).
   Latest available year per economy.
 - **World Bank/KNOMAD bilateral remittance matrix** — 2021 bilateral flow
-  estimates used for the public flow-weighting sprint.
+  estimates used for the public flow-weighting L3 module.
 
 ## Reproduce
 
@@ -84,7 +87,7 @@ python remittance-resilience/scripts/build-thumbnail.py
 ## Caveats
 
 1. RPW covers monitored public price quotes, not every remittance transfer.
-2. The flow-weighting sprint combines 2021 KNOMAD flow estimates with Q1
+2. The flow-weighting module combines 2021 KNOMAD flow estimates with Q1
    2025 RPW prices. It is a public-source sensitivity, not transaction
    microdata.
 3. Matched-flow coverage below 25 percent is flagged for KGZ, TJK, ARM, and

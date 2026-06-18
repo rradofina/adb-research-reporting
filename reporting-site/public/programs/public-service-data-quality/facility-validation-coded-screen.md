@@ -112,10 +112,11 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use `facility-validation-ai-review.md` and
-`facility-validation-candidate-resolution.md` as the current worklists. The 8
-candidate-resolution rows have been split into public-source lanes; confirm
-those lanes first, then move to coordinate-source repair rows and high-exposure
-public-map-gap checks. Record reviewer notes row by row and compare any
-public-source labels with the automated screen before revising any PSDQ
-source-disagreement claim.
+Use `facility-validation-ai-review.md`,
+`facility-validation-candidate-resolution.md`, and
+`facility-validation-candidate-public-source-check.md` as the current
+worklists. The 8 candidate-resolution rows have been split into four
+public-source check lanes; confirm those lanes first, then move to
+coordinate-source repair rows and high-exposure public-map-gap checks. Record
+reviewer notes row by row and compare any public-source labels with the
+automated screen before revising any PSDQ source-disagreement claim.

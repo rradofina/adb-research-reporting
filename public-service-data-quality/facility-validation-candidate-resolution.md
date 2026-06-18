@@ -115,8 +115,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use this pass as the first row-level review queue. Resolve the alias/campus,
-classification-conflict, possible-alias, and local-script name checks against
-public DGHS, OSM, or other official public pages before changing any
-source-disagreement claim. Then move to coordinate-source repair rows, followed
-by high-exposure public-map-gap checks.
+The first richer public-source tag scan now lives in
+`facility-validation-candidate-public-source-check.md`. Use that source-check
+artifact as the immediate row-level worklist. Confirm same-site OSM tag
+support, same-site type/label conflicts, coordinate/function conflicts, and
+weak nearby features against public DGHS, OSM, or other official public pages
+before changing any source-disagreement claim. Then move to coordinate-source
+repair rows, followed by high-exposure public-map-gap checks.

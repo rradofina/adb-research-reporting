@@ -110,10 +110,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-The first public-source candidate-resolution pass now lives in
-`facility-validation-candidate-resolution.md`. Use that 8-row lane split as
-the next worklist: public-source confirmation of alias/campus,
-classification-conflict, possible-alias, and local-script name-gap rows, then
-coordinate-source repair rows, then high-exposure public-map-gap checks. Keep
-unresolved rows unresolved unless public DGHS or OSM evidence supports a
-row-level label.
+The first richer public-source tag scan now lives in
+`facility-validation-candidate-public-source-check.md`. Use that four-lane
+source-check artifact as the next worklist: same-site OSM tag support,
+same-site type/label conflicts, coordinate/function conflicts, and weak nearby
+features. Then move to coordinate-source repair rows and high-exposure
+public-map-gap checks. Keep unresolved rows unresolved unless public DGHS or
+OSM evidence supports a row-level label.

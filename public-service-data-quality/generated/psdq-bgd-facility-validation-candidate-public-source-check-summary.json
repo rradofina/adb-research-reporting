@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-06-18T18:48:47Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "attestation_chain": "ai-first",
+  "status": "ai_public_source_candidate_check_not_human_validation",
+  "goal_level": "L3 public-source confirmation scan",
+  "unit": "sampled DGHS row already queued for candidate-level public-source resolution",
+  "source_inputs": [
+    {
+      "path": "generated\\psdq-bgd-facility-validation-candidate-resolution.csv",
+      "role": "candidate-resolution row worklist"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-osm-candidates.csv",
+      "role": "ranked OSM health candidates within 500 meters of sampled DGHS coordinates"
+    },
+    {
+      "path": ".cache\\bgd_osm_health_features_overpass.json",
+      "role": "cached full OSM tags for Bangladesh health features",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "path_pattern": ".cache\\bgd_dghs_p*.json",
+      "role": "cached DGHS public DataTables registry rows, including Bangla name, active status, and public/private status"
+    }
+  ],
+  "public_validation_sources": [
+    {
+      "source": "DGHS public facilities JSON endpoint",
+      "role": "Registry row, facility name, type, coordinate, and sampled coding unit.",
+      "local_artifact": "generated\\psdq-bgd-facility-validation-coding-sheet.csv"
+    },
+    {
+      "source": "OpenStreetMap Overpass",
+      "role": "Public OSM health candidates from the cached all-Bangladesh Overpass pull, filtered within 500 meters of valid DGHS coordinates.",
+      "query_template": "area[\"ISO3166-1\"=\"BD\"][admin_level=2]; nwr[\"amenity\"~\"^(hospital|clinic|doctors)$\"](area); out center tags;",
+      "local_artifact": ".cache\\bgd_osm_health_features_overpass.json",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "source": "geoBoundaries BGD ADM3",
+      "role": "Coordinate plausibility check against expected sampled upazila geometry.",
+      "local_artifact": ".cache\\geo\\geoBoundaries-BGD-ADM3.geojson"
+    }
+  ],
+  "confirmation_scope": {
+    "candidate_rows_checked": 8,
+    "rows_closed_as_confirmed_same_facility": 0,
+    "rows_retained_open": 8,
+    "rows_with_specific_osm_name_tag_support": 5,
+    "rows_with_best_public_name_within_50m": 3
+  },
+  "public_source_check_code_counts": [
+    {
+      "name": "strong_same_site_osm_tag_support_requires_human_confirmation",
+      "rows": 2
+    },
+    {
+      "name": "same_site_type_or_label_conflict_requires_public_label_check",
+      "rows": 2
+    },
+    {
+      "name": "name_support_but_coordinate_or_function_conflict",
+      "rows": 2
+    },
+    {
+      "name": "nearby_features_do_not_support_registry_name",
+      "rows": 2
+    }
+  ],
+  "public_source_check_counts_by_resolution_lane": [
+    {
+      "candidate_resolution_code": "ambiguous_nearby_candidate",
+      "rows": 1,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 0,
+      "same_site_type_or_label_conflict_requires_public_label_check": 0,
+      "name_support_but_coordinate_or_function_conflict": 0,
+      "nearby_features_do_not_support_registry_name": 1
+    },
+    {
+      "candidate_resolution_code": "local_script_candidate_requires_name_check",
+      "rows": 1,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 1,
+      "same_site_type_or_label_conflict_requires_public_label_check": 0,
+      "name_support_but_coordinate_or_function_conflict": 0,
+      "nearby_features_do_not_support_registry_name": 0
+    },
+    {
+      "candidate_resolution_code": "possible_alias_requires_name_check",
+      "rows": 2,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 0,
+      "same_site_type_or_label_conflict_requires_public_label_check": 0,
+      "name_support_but_coordinate_or_function_conflict": 2,
+      "nearby_features_do_not_support_registry_name": 0
+    },
+    {
+      "candidate_resolution_code": "probable_same_facility_alias_or_campus",
+      "rows": 1,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 1,
+      "same_site_type_or_label_conflict_requires_public_label_check": 0,
+      "name_support_but_coordinate_or_function_conflict": 0,
+      "nearby_features_do_not_support_registry_name": 0
+    },
+    {
+      "candidate_resolution_code": "probable_same_site_classification_conflict",
+      "rows": 2,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 0,
+      "same_site_type_or_label_conflict_requires_public_label_check": 2,
+      "name_support_but_coordinate_or_function_conflict": 0,
+      "nearby_features_do_not_support_registry_name": 0
+    },
+    {
+      "candidate_resolution_code": "weak_nearby_osm_signal",
+      "rows": 1,
+      "strong_same_site_osm_tag_support_requires_human_confirmation": 0,
+      "same_site_type_or_label_conflict_requires_public_label_check": 0,
+      "name_support_but_coordinate_or_function_conflict": 0,
+      "nearby_features_do_not_support_registry_name": 1
+    }
+  ],
+  "evidence_strength_counts": [
+    {
+      "name": "low_public_source_signal",
+      "rows": 2
+    },
+    {
+      "name": "medium_high_public_source_signal",
+      "rows": 2
+    },
+    {
+      "name": "medium_public_source_signal",
+      "rows": 2
+    },
+    {
+      "name": "medium_public_source_signal_with_conflict",
+      "rows": 2
+    }
+  ],
+  "non_claim": "This is an AI-first public-source evidence scan over the eight candidate-resolution rows. It uses cached public DGHS and OSM/Overpass artifacts only. It is not human validation, not ground truth, not a facility-quality assessment, and not a service-access estimate.",
+  "outputs": {
+    "check_csv": "generated\\psdq-bgd-facility-validation-candidate-public-source-check.csv",
+    "summary_json": "generated\\psdq-bgd-facility-validation-candidate-public-source-check-summary.json"
+  }
+}

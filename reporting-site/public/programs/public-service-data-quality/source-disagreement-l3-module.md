@@ -217,6 +217,30 @@ same-facility match. It makes the next review step more specific: alias/campus
 checks, type-conflict checks, possible aliases, a local-script name check, and
 weak or ambiguous nearby features.
 
+## Public-Source Check Addendum
+
+The candidate rows are now checked against richer public OSM tags in
+`facility-validation-candidate-public-source-check.md`. The script
+`scripts/check-bgd-facility-candidate-public-sources.py` reads the
+candidate-resolution CSV, the OSM-candidates CSV, the pinned all-Bangladesh
+OSM/Overpass health-feature cache, and cached DGHS public DataTables rows.
+
+All 8 rows remain open:
+
+| Public-source check lane | Rows |
+|---|---:|
+| Strong same-site OSM tag support, still requiring human confirmation | 2 |
+| Same-site type or label conflict requiring public label check | 2 |
+| Name support with coordinate or function conflict | 2 |
+| Nearby features do not support the registry name | 2 |
+
+The richer tags matter. The Ahsania row, for example, is not just a weak
+English-string match: the nearby OSM hospital carries `name:en = Ahsania
+mission cancer hospital` in the pinned cache. The Aichi row similarly has a
+nearby OSM candidate with `name:en = Aichi Medical College Hospital`, but the
+candidate is 277.7 meters away, so the row remains a coordinate/function
+conflict rather than a closed same-site match.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -240,6 +264,7 @@ python public-service-data-quality/scripts/design-bgd-facility-validation-sample
 python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py
 python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
+python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
 ```
 
 Outputs:
@@ -257,10 +282,12 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is public-source confirmation within the candidate-resolution
+The next upgrade is public-source confirmation within the four source-check
 lanes, followed by coordinate-source repair and the high-exposure public-map-gap
 checks. Until that review exists, the correct publication use is source QA
 before service-access mapping, not a statement about facility availability,

@@ -266,6 +266,32 @@ interface PsdqCandidateResolutionSummary {
   non_claim: string;
 }
 
+interface PsdqCandidatePublicSourceCheckGroupCount {
+  candidate_resolution_code: string;
+  rows: number;
+  strong_same_site_osm_tag_support_requires_human_confirmation: number;
+  same_site_type_or_label_conflict_requires_public_label_check: number;
+  name_support_but_coordinate_or_function_conflict: number;
+  nearby_features_do_not_support_registry_name: number;
+}
+
+interface PsdqCandidatePublicSourceCheckSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  confirmation_scope: {
+    candidate_rows_checked: number;
+    rows_closed_as_confirmed_same_facility: number;
+    rows_retained_open: number;
+    rows_with_specific_osm_name_tag_support: number;
+    rows_with_best_public_name_within_50m: number;
+  };
+  public_source_check_code_counts: PsdqCandidateResolutionCount[];
+  public_source_check_counts_by_resolution_lane: PsdqCandidatePublicSourceCheckGroupCount[];
+  evidence_strength_counts: PsdqCandidateResolutionCount[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -403,6 +429,8 @@ export default function ShowcasePSDQ() {
   const [aiReviewSummary, setAiReviewSummary] = useState<PsdqAiReviewSummary | null>(null);
   const [candidateResolutionSummary, setCandidateResolutionSummary] =
     useState<PsdqCandidateResolutionSummary | null>(null);
+  const [candidatePublicSourceCheckSummary, setCandidatePublicSourceCheckSummary] =
+    useState<PsdqCandidatePublicSourceCheckSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -437,6 +465,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`candidate resolution HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`candidate public source check HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -450,6 +482,7 @@ export default function ShowcasePSDQ() {
         codedPayload,
         aiReviewPayload,
         candidateResolutionPayload,
+        candidatePublicSourceCheckPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -459,6 +492,7 @@ export default function ShowcasePSDQ() {
         setCodedSummary(codedPayload);
         setAiReviewSummary(aiReviewPayload);
         setCandidateResolutionSummary(candidateResolutionPayload);
+        setCandidatePublicSourceCheckSummary(candidatePublicSourceCheckPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -555,6 +589,10 @@ export default function ShowcasePSDQ() {
       {aiReviewSummary && <PsdqAiReviewPanel summary={aiReviewSummary} />}
 
       {candidateResolutionSummary && <PsdqCandidateResolutionPanel summary={candidateResolutionSummary} />}
+
+      {candidatePublicSourceCheckSummary && (
+        <PsdqCandidatePublicSourceCheckPanel summary={candidatePublicSourceCheckSummary} />
+      )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -1329,6 +1367,209 @@ function PsdqCandidateResolutionChart({ groups }: { groups: PsdqCandidateResolut
               {formatNumber(group.probable_same_facility_alias_or_campus + group.possible_alias_requires_name_check)} /{" "}
               {formatNumber(group.probable_same_site_classification_conflict)} /{" "}
               {formatNumber(group.ambiguous_nearby_candidate + group.weak_nearby_osm_signal)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+const PUBLIC_SOURCE_CHECK_ORDER = [
+  "strong_same_site_osm_tag_support_requires_human_confirmation",
+  "same_site_type_or_label_conflict_requires_public_label_check",
+  "name_support_but_coordinate_or_function_conflict",
+  "nearby_features_do_not_support_registry_name",
+] as const;
+
+const PUBLIC_SOURCE_CHECK_LABELS: Record<string, string> = {
+  strong_same_site_osm_tag_support_requires_human_confirmation: "Same-site tag support",
+  same_site_type_or_label_conflict_requires_public_label_check: "Type/label conflict",
+  name_support_but_coordinate_or_function_conflict: "Name plus conflict",
+  nearby_features_do_not_support_registry_name: "No registry-name support",
+};
+
+function publicSourceCheckColor(code: string) {
+  const colors: Record<string, string> = {
+    strong_same_site_osm_tag_support_requires_human_confirmation: "#005F73",
+    same_site_type_or_label_conflict_requires_public_label_check: "#D97706",
+    name_support_but_coordinate_or_function_conflict: "#007DB8",
+    nearby_features_do_not_support_registry_name: "#4A5568",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function publicSourceCheckCount(summary: PsdqCandidatePublicSourceCheckSummary, code: string) {
+  return summary.public_source_check_code_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function PsdqCandidatePublicSourceCheckPanel({ summary }: { summary: PsdqCandidatePublicSourceCheckSummary }) {
+  const strongSupport = publicSourceCheckCount(
+    summary,
+    "strong_same_site_osm_tag_support_requires_human_confirmation",
+  );
+  const unresolved =
+    publicSourceCheckCount(summary, "nearby_features_do_not_support_registry_name") +
+    publicSourceCheckCount(summary, "name_support_but_coordinate_or_function_conflict");
+
+  return (
+    <section className="showcase-section psdq-public-source-check-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Richer public-source tag scan</p>
+          <h2>The strongest evidence is still a worklist, not a closure.</h2>
+          <p>
+            The next pass reads full OSM tags and cached DGHS registry fields.
+            It uses `name:en`, `name:bn`, address, operator, website,
+            emergency, and healthcare tags to separate same-site evidence from
+            coordinate, function, and nearby-feature conflicts.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows checked</span>
+            <strong>{formatNumber(summary.confirmation_scope.candidate_rows_checked)} candidate rows</strong>
+          </div>
+          <div>
+            <span>Rows closed</span>
+            <strong>{formatNumber(summary.confirmation_scope.rows_closed_as_confirmed_same_facility)} same-facility closures</strong>
+          </div>
+          <div>
+            <span>Specific OSM name-tag support</span>
+            <strong>{formatNumber(summary.confirmation_scope.rows_with_specific_osm_name_tag_support)} rows</strong>
+          </div>
+          <div>
+            <span>Same-site tag support</span>
+            <strong>{formatNumber(strongSupport)} rows still need confirmation</strong>
+          </div>
+          <div>
+            <span>Still unresolved</span>
+            <strong>{formatNumber(unresolved)} rows have conflict or weak name support</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-source-check-grid">
+        {PUBLIC_SOURCE_CHECK_ORDER.filter((code) => publicSourceCheckCount(summary, code) > 0).map((code) => (
+          <div key={code}>
+            <span>{PUBLIC_SOURCE_CHECK_LABELS[code]}</span>
+            <strong>{formatNumber(publicSourceCheckCount(summary, code))}</strong>
+            <em>{publicSourceCheckMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqPublicSourceCheckChart groups={summary.public_source_check_counts_by_resolution_lane} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ public-source check lane legend">
+        {PUBLIC_SOURCE_CHECK_ORDER.map((code) => (
+          <span key={code}>
+            <i style={{ background: publicSourceCheckColor(code) }} /> {PUBLIC_SOURCE_CHECK_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the source check</p>
+        <code>python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-candidate-public-source-check.md" download>
+          Download public-source check note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json" download>
+          Download public-source check summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check.csv" download>
+          Download public-source check CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function publicSourceCheckMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    strong_same_site_osm_tag_support_requires_human_confirmation: "OSM tags support the sampled name at same-site distance.",
+    same_site_type_or_label_conflict_requires_public_label_check: "The point is close, but the public labels differ.",
+    name_support_but_coordinate_or_function_conflict: "Name support exists, but distance or function blocks closure.",
+    nearby_features_do_not_support_registry_name: "Nearby OSM features do not support the registry name.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPublicSourceCheckChart({ groups }: { groups: PsdqCandidatePublicSourceCheckGroupCount[] }) {
+  const width = 1040;
+  const rowHeight = 58;
+  const headerHeight = 54;
+  const height = headerHeight + groups.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 285;
+  const barWidth = 500;
+  const countX = 820;
+
+  return (
+    <svg
+      className="psdq-coded-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Public-source check lanes by PSDQ candidate-resolution lane"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Public-source tag support for the eight open candidate rows
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS row; source: cached DGHS registry rows and pinned OSM tags
+      </text>
+      <text x={barX} y={52} className="psdq-chart-head">
+        Source-check mix
+      </text>
+      <text x={countX} y={52} className="psdq-chart-head">
+        Strong / conflict / weak
+      </text>
+
+      {groups.map((group, index) => {
+        const y = headerHeight + index * rowHeight;
+        let x = barX;
+        return (
+          <g key={group.candidate_resolution_code}>
+            <text x={labelX} y={y + 18} className="psdq-row-label">
+              {CANDIDATE_RESOLUTION_LABELS[group.candidate_resolution_code] || group.candidate_resolution_code.replaceAll("_", " ")}
+            </text>
+            <text x={labelX} y={y + 36} className="psdq-row-sub">
+              {formatNumber(group.rows)} candidate rows
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={24} fill="#eef2f5" />
+            {PUBLIC_SOURCE_CHECK_ORDER.map((code) => {
+              const value = Number(group[code] || 0);
+              const segmentWidth = group.rows > 0 ? (value / group.rows) * barWidth : 0;
+              const segment = (
+                <rect
+                  key={code}
+                  x={x}
+                  y={y}
+                  width={Math.max(0, segmentWidth)}
+                  height={24}
+                  fill={publicSourceCheckColor(code)}
+                >
+                  <title>{`${group.candidate_resolution_code}: ${formatNumber(value)} ${PUBLIC_SOURCE_CHECK_LABELS[code]}`}</title>
+                </rect>
+              );
+              x += segmentWidth;
+              return segment;
+            })}
+            <text x={countX} y={y + 17} className="psdq-value">
+              {formatNumber(group.strong_same_site_osm_tag_support_requires_human_confirmation)} /{" "}
+              {formatNumber(
+                group.same_site_type_or_label_conflict_requires_public_label_check +
+                  group.name_support_but_coordinate_or_function_conflict,
+              )} /{" "}
+              {formatNumber(group.nearby_features_do_not_support_registry_name)}
             </text>
           </g>
         );

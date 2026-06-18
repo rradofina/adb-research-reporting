@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, and 8-row candidate-resolution pass added 2026-06-19; next loop is public-source confirmation inside candidate lanes) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, and richer public-source tag scan added 2026-06-19; next loop is public-source confirmation inside the four source-check lanes) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -148,6 +148,32 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ candidate public-source tag scan):** Added
+  `public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py`,
+  generated `psdq-bgd-facility-validation-candidate-public-source-check.csv`
+  and
+  `psdq-bgd-facility-validation-candidate-public-source-check-summary.json`,
+  and wrote
+  `public-service-data-quality/facility-validation-candidate-public-source-check.md`.
+  The scan reads the candidate-resolution CSV, OSM-candidates CSV, pinned
+  all-Bangladesh OSM tags, and cached DGHS public DataTables rows. It keeps
+  all 8 candidate rows open while separating them into 2 strong same-site OSM
+  tag-support rows, 2 same-site type/label conflicts, 2 name-support rows with
+  coordinate/function conflicts, and 2 nearby-feature rows without registry-name
+  support. The showcase route `/showcase/psdq-source-disagreement` now fetches
+  the source-check summary JSON, shows a public-source tag-support panel/chart,
+  and links the new note and downloads. README, REPRODUCE, hook bank, quality
+  audit, sync/review-packet inclusion, source-disagreement L3 note, and
+  per-program status were updated. This is AI public-source evidence scanning,
+  not human validation, a maturity promotion, or a human-final upgrade.
+  Verification passed: new script and program-script `py_compile`, production
+  site build, six deterministic gates, and agent-browser desktop/mobile QA at
+  1365px and 375px with no page-level horizontal overflow and no page errors.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-public-source-check-desktop.png` and
+  `reporting-site/qa/showcase-psdq-public-source-check-mobile.png`. Next PSDQ
+  loop is public-source confirmation inside these four source-check lanes, then
+  coordinate-source repair and high-exposure public-map-gap checks.
 - **2026-06-19 (PSDQ candidate-resolution pass):** Added
   `public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py`,
   generated `psdq-bgd-facility-validation-candidate-resolution.csv` and
@@ -170,9 +196,9 @@ by leaving the board in a state the next session can read.
   and no page errors. Screenshots:
   `reporting-site/qa/showcase-psdq-candidate-resolution-desktop.png` and
   `reporting-site/qa/showcase-psdq-candidate-resolution-mobile.png`. Rebuilt
-  `review-packets/public-service-data-quality-2026-06-18/` plus zip. Next PSDQ
-  loop is public-source confirmation inside these candidate lanes, then
-  coordinate-source repair and high-exposure public-map-gap checks.
+  `review-packets/public-service-data-quality-2026-06-18/` plus zip. This
+  candidate-resolution queue is now superseded by the richer public-source tag
+  scan in the operational note above.
 - **2026-06-19 (PSDQ AI public-source review ledger):** Added
   `public-service-data-quality/scripts/review-bgd-facility-validation-flags.py`,
   generated `psdq-bgd-facility-validation-ai-review.csv` and

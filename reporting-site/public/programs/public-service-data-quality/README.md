@@ -73,6 +73,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-ai-review-summary.json` — chart-ready review workstream counts, priority counts, and non-claim metadata
 - `generated/psdq-bgd-facility-validation-candidate-resolution.csv` — AI public-source candidate-resolution pass over the 8 row-level candidate cases
 - `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json` — chart-ready candidate-resolution lane counts and non-claim metadata
+- `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv` — AI public-source scan of richer OSM tags and DGHS public registry fields for the 8 candidate rows
+- `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json` — chart-ready public-source check lanes and non-claim metadata
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -191,6 +193,17 @@ Current audit result:
   alias/campus lane, 2 same-site classification-conflict lanes, 2 possible
   aliases, 1 local-script name gap, 1 ambiguous nearby candidate, and 1 weak
   nearby OSM signal. This is AI public-source candidate resolution, not human
+  validation.
+- **BGD candidate public-source check:** the no-network source check reads the
+  candidate-resolution CSV, OSM candidate table, cached all-Bangladesh OSM
+  tags, and cached DGHS DataTables rows. It writes
+  `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
+  and
+  `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`.
+  The check keeps all 8 rows open while separating them into 2 strong same-site
+  OSM tag-support rows, 2 same-site type/label conflicts, 2 name-support rows
+  with coordinate/function conflicts, and 2 nearby-feature rows without
+  registry-name support. This is AI public-source evidence scanning, not human
   validation.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE

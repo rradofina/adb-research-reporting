@@ -244,6 +244,25 @@ Expected outputs:
 
 The output status is `ai_public_source_candidate_resolution_not_human_validation`.
 
+## Bangladesh facility-validation candidate public-source check
+
+This step does not fetch data and does not validate facilities. It reads the
+candidate-resolution CSV, the OSM candidate table, the pinned all-Bangladesh
+OSM/Overpass health-feature cache, and cached DGHS public DataTables rows. It
+checks richer public tags such as `name:en`, `name:bn`, address, operator,
+website, emergency, and healthcare fields.
+
+```bash
+python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
+- `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
+
+The output status is `ai_public_source_candidate_check_not_human_validation`.
+
 ## Publication sync
 
 After generated outputs or evidence prose changes, refresh the public evidence
@@ -290,7 +309,9 @@ For a reader or reviewer, the reproducibility chain is:
    `source-disagreement-l3-module.md`, `facility-validation-sample.md`,
    `facility-validation-coded-screen.md`,
    `facility-validation-ai-review.md`,
-   `facility-validation-candidate-resolution.md`, and `upgrade-gap.md`.
+   `facility-validation-candidate-resolution.md`,
+   `facility-validation-candidate-public-source-check.md`, and
+   `upgrade-gap.md`.
 2. Source and pipeline code: `public-service-data-quality/scripts/`.
 3. Generated artifacts: `public-service-data-quality/generated/`.
 4. Public evidence bundle:

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, and 8-row candidate-resolution pass added; public-source confirmation inside the candidate lanes is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, and richer public-source tag scan added; public-source confirmation inside the four source-check lanes is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -28,6 +28,28 @@ preserve the existing PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh candidate public-source check for the
+  PSDQ facility-validation flags. New no-network script
+  `scripts/check-bgd-facility-candidate-public-sources.py` reads the
+  candidate-resolution CSV, OSM-candidates CSV, pinned all-Bangladesh OSM tags,
+  and cached DGHS DataTables rows, then writes
+  `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
+  and
+  `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`.
+  The scan keeps all 8 candidate rows open while separating them into 2 strong
+  same-site OSM tag-support rows, 2 same-site type/label conflicts, 2
+  name-support rows with coordinate/function conflicts, and 2 nearby-feature
+  rows without registry-name support. Added
+  `facility-validation-candidate-public-source-check.md`, updated README,
+  REPRODUCE, evidence sync/review-packet inclusion, the L3 note, hook bank,
+  quality audit, and `/showcase/psdq-source-disagreement`. This is AI
+  public-source evidence scanning, not human validation, a maturity promotion,
+  or a human-final upgrade. Verification passed: new script and program-script
+  `py_compile`, production site build, six deterministic gates, and
+  agent-browser desktop/mobile QA at 1365px and 375px with no page-level
+  horizontal overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-public-source-check-desktop.png` and
+  `reporting-site/qa/showcase-psdq-public-source-check-mobile.png`.
 - **2026-06-19:** Added the Bangladesh candidate-resolution pass for the
   PSDQ facility-validation flags. New no-network script
   `scripts/resolve-bgd-facility-candidate-rows.py` reads the AI review ledger,
@@ -219,13 +241,14 @@ preserve the existing PR maturity label without implying human-final review.
 Current loop:
 
 1. Use the 8-row candidate-resolution pass in
-   `generated/psdq-bgd-facility-validation-candidate-resolution-summary.json`
-   and `generated/psdq-bgd-facility-validation-candidate-resolution.csv` as
-   the immediate worklist.
-2. Public-source confirm the alias/campus, classification-conflict,
-   possible-alias, local-script name-gap, ambiguous, and weak-nearby lanes;
-   then move to coordinate-source repair rows and high-exposure public-map-gap
-   checks.
+   `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
+   and
+   `generated/psdq-bgd-facility-validation-candidate-public-source-check.csv`
+   as the immediate worklist.
+2. Public-source confirm the strong same-site OSM tag-support rows,
+   same-site type/label conflicts, coordinate/function conflicts, and weak
+   nearby-feature rows; then move to coordinate-source repair rows and
+   high-exposure public-map-gap checks.
 3. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
    facility lists or owner-only credentials. Stop if validation requires
    non-public access.

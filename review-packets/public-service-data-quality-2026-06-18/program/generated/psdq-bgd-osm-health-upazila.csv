@@ -1,0 +1,545 @@
+division_name_geo,district_name_geo,upazila_name_geo,shape_id,join_key,osm_health,osm_hospital,osm_clinic,osm_doctors
+Rangpur,Rangpur,Rangpur Sadar,5055444B60964273253151,rangpur|rangpur sadar,108,48,59,1
+Dhaka,Dhaka,Pallabi,5055444B7396550141885,dhaka|pallabi,99,40,42,17
+Dhaka,Dhaka,Mohammadpur,5055444B96237484517929,dhaka|mohammadpur,96,36,47,13
+Chittagong,Chittagong,Kotwali,5055444B43057747226647,chattogram|kotwali,71,53,7,11
+Dhaka,Dhaka,Kafrul,5055444B63983691041165,dhaka|kafrul,63,11,14,38
+Dhaka,Dhaka,Savar,5055444B14680374784380,dhaka|savar,60,56,4,0
+Khulna,Satkhira,Satkhira Sadar,5055444B68417393184011,satkhira|satkhira sadar,60,18,40,2
+Dhaka,Gazipur,Gazipur Sadar,5055444B30367199884921,gazipur|gazipur sadar,58,53,2,3
+Rajshani,Bogra,Bogra Sadar,5055444B83464339159312,bogura|bogura sadar,57,49,6,2
+Dhaka,Tangail,Tangail Sadar,5055444B87492899662704,tangail|tangail sadar,55,49,5,1
+Dhaka,Dhaka,Gulshan,5055444B56461784969328,dhaka|gulshan,47,20,20,7
+Dhaka,Dhaka,Khilgaon,5055444B61701169401467,dhaka|khilgaon,44,11,26,7
+Mymensingh,Mymensingh,Mymensingh Sadar,5055444B90775494635734,mymensingh|mymensingh sadar,43,41,2,0
+Dhaka,Dhaka,Dhanmondi,5055444B44526348177341,dhaka|dhanmondi,41,28,8,5
+Chittagong,Cox's Bazar,Ukhia,5055444B67012705011880,coxs bazar|ukhia,37,17,19,1
+Dhaka,Dhaka,Adabor,5055444B49102485932636,dhaka|adabor,37,10,11,16
+Dhaka,Dhaka,Kalabagan,5055444B44586905762707,dhaka|kalabagan,34,21,9,4
+Dhaka,Dhaka,Ramna,5055444B66987540891927,dhaka|ramna,34,23,8,3
+Dhaka,Dhaka,Sher-e-bangla Nagar,5055444B71144810702424,dhaka|sher e bangla nagar,34,31,3,0
+Khulna,Bagerhat,Bagerhat Sadar,5055444B68778321552411,bagerhat|bagerhat sadar,33,11,21,1
+Rajshani,Rajshahi,Boalia,5055444B84943606791974,rajshahi|boalia,32,15,17,0
+Dhaka,Dhaka,Mirpur,5055444B1093476169518,dhaka|mirpur,29,21,4,4
+Mymensingh,Sherpur,Sherpur Sadar,5055444B8502207940741,sherpur|sherpur sadar,29,28,0,1
+Sylhet,Sylhet,Sylhet Sadar,5055444B38529052727167,sylhet|sylhet sadar,27,21,2,4
+Rajshani,Rajshahi,Rajpara,5055444B47903202093493,rajshahi|rajpara,26,12,14,0
+Dhaka,Dhaka,Shahbagh,5055444B26697181188091,dhaka|shahbagh,25,24,1,0
+Khulna,Bagerhat,Sarankhola,5055444B91761091581926,bagerhat|sarankhola,25,3,21,1
+Khulna,Jessore,Kotwali,5055444B46202498291187,jashore|jashore sadar,25,20,4,1
+Rajshani,Bogra,Shajahanpur,5055444B26369547392038,bogura|shajahanpur,25,22,2,1
+Rangpur,Dinajpur,Dinajpur Sadar,5055444B62353958062010,dinajpur|dinajpur sadar,25,19,4,2
+Rangpur,Nilphamari,Nilphamari Sadar,5055444B81704367582691,nilphamari|nilphamari sadar,25,23,0,2
+Rajshani,Naogaon,Naogaon Sadar,5055444B48392577301269,naogaon|naogaon sadar,23,11,12,0
+Rangpur,Kurigram,Raumari,5055444B84227309830947,kurigram|raumari,23,1,22,0
+Chittagong,Chittagong,Panchlaish,5055444B64565543707518,chattogram|panchlaish,21,17,4,0
+Mymensingh,Jamalpur,Jamalpur Sadar,5055444B56108573685352,jamalpur|jamalpur sadar,21,20,1,0
+Rajshani,Natore,Natore Sadar,5055444B49495174582406,natore|natore sadar,21,8,11,2
+Chittagong,Comilla,Comilla Adarsha Sadar,5055444B48258460974709,cumilla|cumilla adarsha sadar,20,18,2,0
+Dhaka,Manikganj,Manikganj Sadar,5055444B26017737484602,manikganj|manikganj sadar,20,20,0,0
+Khulna,Khulna,Dacope,5055444B27282750635430,khulna|dacope,20,1,19,0
+Barisal,Barisal,Barisal Sadar (Kotwali),5055444B73276272307545,barishal|barishal sadar,19,15,4,0
+Chittagong,Chittagong,Khulshi,5055444B97703922589889,chattogram|khulshi,18,18,0,0
+Dhaka,Dhaka,Motijheel,5055444B92723626214353,dhaka|motijheel,18,14,4,0
+Khulna,Khulna,Khulna Sadar,5055444B15799752378337,khulna|khulna sadar,18,6,9,3
+Rangpur,Nilphamari,Saidpur,5055444B15265131690562,nilphamari|saidpur,18,16,2,0
+Dhaka,Dhaka,Jatrabari,5055444B25595964672870,dhaka|jatrabari,17,17,0,0
+Dhaka,Dhaka,Sabujbagh,5055444B47617762942552,dhaka|sabujbagh,17,11,6,0
+Dhaka,Munshiganj,Munshiganj Sadar,5055444B71946296416416,munshiganj|munshiganj sadar,17,3,14,0
+Dhaka,Dhaka,Keraniganj,5055444B13645595955380,dhaka|keraniganj,16,14,2,0
+Dhaka,Dhaka,Sutrapur,5055444B49503871645568,dhaka|sutrapur,16,11,1,4
+Dhaka,Dhaka,Uttara,5055444B45163668529800,dhaka|uttara,16,13,1,2
+Rajshani,Bogra,Sherpur,5055444B70149320100288,bogura|sherpur,16,14,1,1
+Barisal,Bhola,Daulatkhan,5055444B15230519967712,bhola|daulatkhan,15,3,12,0
+Chittagong,Chittagong,Sitakunda,5055444B64235181700103,chattogram|sitakunda,15,12,2,1
+Dhaka,Dhaka,Gendaria,5055444B38357461991586,dhaka|gendaria,15,8,7,0
+Dhaka,Gazipur,Kaliakair,5055444B52699552656375,gazipur|kaliakair,15,15,0,0
+Dhaka,Gazipur,Sreepur,5055444B53188311171075,gazipur|sreepur,15,13,1,1
+Mymensingh,Netrakona,Netrokona Sadar,5055444B11666029706524,netrakona|netrakona sadar,15,2,13,0
+Barisal,Bhola,Bhola Sadar,5055444B7097225858324,bhola|bhola sadar,14,2,12,0
+Chittagong,Cox's Bazar,Cox's Bazar Sadar,5055444B44088891115489,coxs bazar|coxs bazar sadar,14,13,0,1
+Dhaka,Faridpur,Faridpur Sadar,5055444B21946407329202,faridpur|faridpur sadar,14,14,0,0
+Dhaka,Tangail,Kalihati,5055444B56749671391085,tangail|kalihati,14,14,0,0
+Chittagong,Chittagong,Double Mooring,5055444B66556337069640,chattogram|double mooring,13,9,3,1
+Chittagong,Cox's Bazar,Chakaria,5055444B84996258897066,coxs bazar|chakaria,13,12,1,0
+Dhaka,Dhaka,Badda,5055444B32230680322744,dhaka|badda,13,7,5,1
+Rajshani,Naogaon,Patnitala,5055444B91431094862758,naogaon|patnitala,13,7,5,1
+Rangpur,Panchagarh,Panchagarh Sadar,5055444B34393793043573,panchagarh|panchagarh sadar,13,7,5,1
+Barisal,Barguna,Barguna Sadar,5055444B33820531733438,barguna|barguna sadar,12,1,11,0
+Chittagong,Chittagong,Hathazari,5055444B98016911778597,chattogram|hathazari,12,8,2,2
+Chittagong,Chittagong,Mirsharai,5055444B69190373788059,chattogram|mirsharai,12,10,2,0
+Chittagong,Chittagong,Patenga,5055444B40707250714885,chattogram|patenga,12,10,1,1
+Chittagong,Feni,Feni Sadar,5055444B40138424940148,feni|feni sadar,12,10,2,0
+Dhaka,Dhaka,Cantonment,5055444B56407900252664,dhaka|cantonment,12,4,4,4
+Dhaka,Dhaka,Paltan,5055444B25185864846738,dhaka|paltan,12,3,9,0
+Dhaka,Dhaka,Tejgaon,5055444B91995345267504,dhaka|tejgaon,12,9,2,1
+Khulna,Khulna,Sonadanga,5055444B25330959395307,khulna|sonadanga,12,6,5,1
+Rajshani,Sirajganj,Sirajganj Sadar,5055444B98549548680688,sirajganj|sirajganj sadar,12,9,2,1
+Chittagong,Chittagong,Bayejid Bostami,5055444B75251324769772,chattogram|bayejid bostami,11,9,1,1
+Chittagong,Chittagong,Chittagong Port,5055444B96751245569599,chattogram|chattogram port,11,11,0,0
+Dhaka,Kishoreganj,Kishoreganj Sadar,5055444B23116047472537,kishoreganj|kishoreganj sadar,11,2,9,0
+Dhaka,Tangail,Mirzapur,5055444B21231975915207,tangail|mirzapur,11,10,1,0
+Khulna,Khulna,Koyra,5055444B74268178694093,khulna|koyra,11,0,11,0
+Khulna,Narail,Kalia,5055444B27555215453497,narail|kalia,11,1,6,4
+Mymensingh,Sherpur,Nalitabari,5055444B16793155331867,sherpur|nalitabari,11,10,0,1
+Rajshani,Naogaon,Mahadebpur,5055444B79967096461469,naogaon|mahadebpur,11,7,1,3
+Rangpur,Dinajpur,Birampur,5055444B79507658875525,dinajpur|birampur,11,4,6,1
+Rangpur,Gaibandha,Gobindaganj,5055444B10956713741536,gaibandha|gobindaganj,11,11,0,0
+Sylhet,Habiganj,Habiganj Sadar,5055444B24382626124582,habiganj|habiganj sadar,11,8,3,0
+Sylhet,Maulvibazar,Maulvi Bazar Sadar,5055444B59699637370048,maulvibazar|maulvibazar sadar,11,5,5,1
+Barisal,Patuakhali,Galachipa,5055444B92476324318819,patuakhali|galachipa,10,4,6,0
+Barisal,Patuakhali,Patuakhali Sadar,5055444B33989432035169,patuakhali|patuakhali sadar,10,6,4,0
+Chittagong,Comilla,Chauddagram,5055444B9070330767349,cumilla|chauddagram,10,8,2,0
+Dhaka,Dhaka,Hazaribagh,5055444B79082430711641,dhaka|hazaribagh,10,5,5,0
+Dhaka,Dhaka,Lalbagh,5055444B37083431015696,dhaka|lalbagh,10,8,1,1
+Dhaka,Munshiganj,Serajdikhan,5055444B42865599243727,munshiganj|serajdikhan,10,8,1,1
+Mymensingh,Mymensingh,Muktagachha,5055444B43282791113331,mymensingh|muktagacha,10,10,0,0
+Dhaka,Dhaka,Bangshal,5055444B3033227423351,dhaka|bangshal,9,8,1,0
+Dhaka,Madaripur,Madaripur Sadar,5055444B75961082304780,madaripur|madaripur sadar,9,8,1,0
+Dhaka,Tangail,Dhanbari,5055444B25808786190602,tangail|dhanbari,9,7,1,1
+Khulna,Khulna,Dighalia,5055444B20721684317964,khulna|dighalia,9,3,4,2
+Khulna,Meherpur,Meherpur Sadar,5055444B46245287013568,meherpur|meherpur sadar,9,4,5,0
+Mymensingh,Mymensingh,Bhaluka,5055444B10360406555635,mymensingh|bhaluka,9,8,1,0
+Rajshani,Natore,Baraigram,5055444B50551499462707,natore|baraigram,9,7,2,0
+Barisal,Bhola,Burhanuddin,5055444B893784701157,bhola|borhanuddin,8,1,7,0
+Chittagong,Chittagong,Halishahar,5055444B67671348239307,chattogram|halishahar,8,6,1,1
+Chittagong,Chittagong,Raozan,5055444B26554901820582,chattogram|raozan,8,5,1,2
+Dhaka,Dhaka,New Market,5055444B9752476477947,dhaka|new market,8,4,1,3
+Khulna,Bagerhat,Morrelganj,5055444B56461064683403,bagerhat|morrelganj,8,0,8,0
+Khulna,Jhenaidah,Jhenaidah Sadar,5055444B48976868209107,jhenaidah|jhenaidah sadar,8,6,1,1
+Khulna,Magura,Magura Sadar,5055444B78521168573013,magura|magura sadar,8,1,7,0
+Mymensingh,Mymensingh,Phulpur,5055444B96560704124015,mymensingh|phulpur,8,8,0,0
+Mymensingh,Netrakona,Madan,5055444B11405319731642,netrakona|madan,8,3,5,0
+Rajshani,Sirajganj,Ullah Para,5055444B69566265360354,sirajganj|ullahpara,8,8,0,0
+Rangpur,Panchagarh,Boda,5055444B728279832924,panchagarh|boda,8,7,0,1
+Rangpur,Thakurgaon,Thakurgaon Sadar,5055444B92466625108630,thakurgaon|thakurgaon sadar,8,7,1,0
+,Maulvibazar,Juri,5055444B59468636811398,maulvibazar|juri,7,7,0,0
+Chittagong,Comilla,Muradnagar,5055444B46038543043233,cumilla|muradnagar,7,5,2,0
+Dhaka,Dhaka,Rampura,5055444B30627422876303,dhaka|rampura,7,2,5,0
+Dhaka,Tangail,Bhuapur,5055444B16297383305925,tangail|bhuapur,7,6,0,1
+Dhaka,Tangail,Madhupur,5055444B31553273158599,tangail|madhupur,7,7,0,0
+Khulna,Bagerhat,Chitalmari,5055444B77604595910958,bagerhat|chitalmari,7,2,5,0
+Khulna,Bagerhat,Mongla,5055444B32061612470944,bagerhat|mongla,7,2,5,0
+Khulna,Khulna,Khan Jahan Ali,5055444B24865476374111,khulna|khan jahan ali,7,4,3,0
+Khulna,Satkhira,Kalaroa,5055444B76251255413943,satkhira|kalaroa,7,2,5,0
+Mymensingh,Mymensingh,Haluaghat,5055444B66377868060311,mymensingh|haluaghat,7,4,2,1
+Rajshani,Pabna,Bera,5055444B90956087424891,pabna|bera,7,1,5,1
+Sylhet,Sunamganj,Sulla,5055444B90768873722388,sunamganj|sulla,7,1,6,0
+Sylhet,Sylhet,Beani Bazar,5055444B74522241895423,sylhet|beanibazar,7,7,0,0
+Chittagong,Chittagong,Chandgaon,5055444B37030351476694,chattogram|chandgaon,6,5,0,1
+Chittagong,Comilla,Barura,5055444B91077345667431,cumilla|barura,6,3,3,0
+Dhaka,Dhaka,Dhamrai,5055444B39396107660312,dhaka|dhamrai,6,6,0,0
+Dhaka,Shariatpur,Shariatpur Sadar,5055444B47272791978719,shariatpur|shariatpur sadar,6,6,0,0
+Dhaka,Tangail,Ghatail,5055444B57482053594042,tangail|ghatail,6,6,0,0
+Khulna,Khulna,Khalishpur,5055444B34358039659895,khulna|khalishpur,6,5,1,0
+Khulna,Kushtia,Kushtia Sadar,5055444B28612098242790,kushtia|kushtia sadar,6,5,1,0
+Mymensingh,Mymensingh,Trishal,5055444B56674431526223,mymensingh|trishal,6,6,0,0
+Rajshani,Natore,Lalpur,5055444B7503946702912,natore|lalpur,6,4,2,0
+Rangpur,Kurigram,Char Rajibpur,5055444B63634660661381,kurigram|rajibpur,6,0,6,0
+Rangpur,Rangpur,Pirganj,5055444B35718531117283,rangpur|pirganj,6,5,0,1
+,Noakhali,Noakhali Sadar (Sudharam),5055444B59544750070179,noakhali|noakhali sadar,5,5,0,0
+Chittagong,Chittagong,Anowara,5055444B66497559634365,chattogram|anowara,5,3,2,0
+Chittagong,Chittagong,Fatikchhari,5055444B95801532899797,chattogram|fatikchari,5,5,0,0
+Chittagong,Comilla,Manoharganj,5055444B22432577988520,cumilla|monoharganj,5,3,2,0
+Dhaka,Dhaka,Biman Bandar,5055444B57714745100095,dhaka|biman bandar,5,4,1,0
+Dhaka,Gopalganj,Gopalganj Sadar,5055444B13443177435533,gopalganj|gopalganj sadar,5,5,0,0
+Dhaka,Gopalganj,Muksudpur,5055444B82620831567558,gopalganj|muksudpur,5,4,1,0
+Dhaka,Madaripur,Rajoir,5055444B47802764053873,madaripur|rajoir,5,5,0,0
+Dhaka,Manikganj,Shibalaya,5055444B74745553133953,manikganj|shibalaya,5,5,0,0
+Dhaka,Narayanganj,Narayanganj Sadar,5055444B24324023791660,narayanganj|narayanganj sadar,5,4,0,1
+Dhaka,Rajbari,Rajbari Sadar,5055444B85021187940919,rajbari|rajbari sadar,5,1,3,1
+Khulna,Jessore,Chaugachha,5055444B52558284836839,jashore|chaugacha,5,3,2,0
+Khulna,Khulna,Batiaghata,5055444B76424346984523,khulna|batiaghata,5,2,3,0
+Khulna,Khulna,Paikgachha,5055444B32742026242546,khulna|paikgacha,5,2,3,0
+Khulna,Narail,Narail Sadar,5055444B86380402084799,narail|narail sadar,5,5,0,0
+Mymensingh,Mymensingh,Ishwarganj,5055444B3881119476901,mymensingh|ishwarganj,5,4,0,1
+Mymensingh,Netrakona,Durgapur,5055444B76788625169588,netrakona|durgapur,5,4,1,0
+Rajshani,Bogra,Shibganj,5055444B6771742340057,bogura|shibganj,5,5,0,0
+Rajshani,Naogaon,Badalgachhi,5055444B60678935174681,naogaon|badalgachhi,5,5,0,0
+Rajshani,Natore,Gurudaspur,5055444B53518678954927,natore|gurudaspur,5,3,2,0
+Rajshani,Natore,Singra,5055444B99745031093411,natore|singra,5,4,1,0
+Rangpur,Kurigram,Chilmari,5055444B31518469261205,kurigram|chilmari,5,1,4,0
+Sylhet,Sunamganj,Tahirpur,5055444B95452950620517,sunamganj|tahirpur,5,1,4,0
+Sylhet,Sylhet,Companiganj,5055444B34344695185666,sylhet|companiganj,5,5,0,0
+Barisal,Barguna,Amtali,5055444B15057296288923,barguna|amtali,4,1,3,0
+Barisal,Barguna,Patharghata,5055444B56621242326739,barguna|patharghata,4,1,3,0
+Chittagong,Bandarban,Rowangchhari,5055444B74571408942121,bandarban|rowangchari,4,3,1,0
+Chittagong,Chittagong,Boalkhali,5055444B39554160616851,chattogram|boalkhali,4,3,1,0
+Chittagong,Chittagong,Lohagara,5055444B32629504836566,chattogram|lohagara,4,4,0,0
+Chittagong,Chittagong,Pahartali,5055444B18185339389693,chattogram|pahartali,4,2,2,0
+Chittagong,Chittagong,Patiya,5055444B19774112487674,chattogram|patiya,4,4,0,0
+Chittagong,Comilla,Comilla Sadar Dakshin,5055444B83041215814881,cumilla|cumilla sadar dakshin,4,4,0,0
+Chittagong,Noakhali,Hatiya,5055444B26590135153615,noakhali|hatiya,4,1,3,0
+Dhaka,Dhaka,Darus Salam,5055444B58026692506241,dhaka|darus salam,4,4,0,0
+Dhaka,Dhaka,Kamrangir Char,5055444B25875561692739,dhaka|kamrangir char,4,2,2,0
+Dhaka,Dhaka,Turag,5055444B30733148378014,dhaka|turag,4,2,1,1
+Dhaka,Kishoreganj,Bhairab,5055444B14711722116105,kishoreganj|bhairab,4,4,0,0
+Dhaka,Manikganj,Ghior,5055444B67168337318866,manikganj|ghior,4,4,0,0
+Dhaka,Manikganj,Singair,5055444B61145755581844,manikganj|singair,4,4,0,0
+Dhaka,Narsingdi,Narsingdi Sadar,5055444B56950685480062,narsingdi|narsingdi sadar,4,4,0,0
+Dhaka,Shariatpur,Naria,5055444B74474908989262,shariatpur|naria,4,2,2,0
+Khulna,Bagerhat,Fakirhat,5055444B5933683148381,bagerhat|fakirhat,4,1,3,0
+Khulna,Khulna,Dumuria,5055444B11044248230769,khulna|dumuria,4,2,2,0
+Mymensingh,Sherpur,Nakla,5055444B95271208193973,sherpur|nakla,4,2,1,1
+Rajshani,Bogra,Nandigram,5055444B95396653214812,bogura|nandigram,4,4,0,0
+Rajshani,Nawabganj,Nawabganj Sadar,5055444B78695242801039,chapainawabganj|chapainawabganj sadar,4,2,2,0
+Rajshani,Nawabganj,Shibganj,5055444B62264346581700,chapainawabganj|shibganj,4,2,1,1
+Rajshani,Pabna,Pabna Sadar,5055444B21601893255114,pabna|pabna sadar,4,4,0,0
+Rajshani,Sirajganj,Belkuchi,5055444B61751715276638,sirajganj|belkuchi,4,3,1,0
+Rangpur,Dinajpur,Birganj,5055444B22722799866654,dinajpur|birganj,4,4,0,0
+Rangpur,Lalmonirhat,Kaliganj,5055444B80538323098735,lalmonirhat|kaliganj,4,0,4,0
+Rangpur,Panchagarh,Debiganj,5055444B68978005941657,panchagarh|debiganj,4,3,0,1
+Rangpur,Rangpur,Mitha Pukur,5055444B64460137576377,rangpur|mithapukur,4,3,0,1
+Rangpur,Rangpur,Taraganj,5055444B41041723149943,rangpur|taraganj,4,4,0,0
+Sylhet,Maulvibazar,Barlekha,5055444B82170766050132,maulvibazar|barlekha,4,4,0,0
+Sylhet,Maulvibazar,Sreemangal,5055444B61286165049189,maulvibazar|sreemangal,4,4,0,0
+Sylhet,Sunamganj,Derai,5055444B19243019661723,sunamganj|derai,4,1,3,0
+Barisal,Barisal,Wazirpur,5055444B71045315974475,barishal|wazirpur,3,1,2,0
+Barisal,Patuakhali,Dashmina,5055444B84377812112263,patuakhali|dashmina,3,1,2,0
+Chittagong,Bandarban,Naikhongchhari,5055444B3274428108722,bandarban|naikhongchari,3,3,0,0
+Chittagong,Brahamanbaria,Ashuganj,5055444B32932838704208,brahmanbaria|ashuganj,3,3,0,0
+Chittagong,Chittagong,Satkania,5055444B15331282943417,chattogram|satkania,3,3,0,0
+Chittagong,Cox's Bazar,Ramu,5055444B73950402088749,coxs bazar|ramu,3,3,0,0
+Chittagong,Cox's Bazar,Teknaf,5055444B37552741338938,coxs bazar|teknaf,3,3,0,0
+Chittagong,Lakshmipur,Lakshmipur Sadar,5055444B13201052505859,lakshmipur|lakshmipur sadar,3,3,0,0
+Chittagong,Lakshmipur,Roypur,5055444B1613484588697,lakshmipur|raipur,3,3,0,0
+Dhaka,Dhaka,Dohar,5055444B89474781080787,dhaka|dohar,3,3,0,0
+Dhaka,Dhaka,Shyampur,5055444B82614645252879,dhaka|shyampur,3,2,1,0
+Dhaka,Kishoreganj,Mithamain,5055444B44243630461995,kishoreganj|mithamain,3,1,2,0
+Dhaka,Madaripur,Shib Char,5055444B86703057545377,madaripur|shibchar,3,2,1,0
+Dhaka,Manikganj,Saturia,5055444B13608186326056,manikganj|saturia,3,3,0,0
+Dhaka,Munshiganj,Sreenagar,5055444B3417610497527,munshiganj|sreenagar,3,2,0,1
+Dhaka,Rajbari,Goalandaghat,5055444B47253162871751,rajbari|goalanda,3,3,0,0
+Dhaka,Rajbari,Pangsha,5055444B93889096596285,rajbari|pangsha,3,1,2,0
+Dhaka,Shariatpur,Zanjira,5055444B37868983096118,shariatpur|zanjira,3,2,0,1
+Dhaka,Tangail,Basail,5055444B21032011714269,tangail|basail,3,1,2,0
+Dhaka,Tangail,Delduar,5055444B15353027914244,tangail|delduar,3,3,0,0
+Dhaka,Tangail,Nagarpur,5055444B94760569525433,tangail|nagarpur,3,2,0,1
+Dhaka,Tangail,Sakhipur,5055444B2662823308468,tangail|sakhipur,3,1,2,0
+Khulna,Bagerhat,Kachua,5055444B45763883342001,bagerhat|kachua,3,1,2,0
+Khulna,Jessore,Jhikargachha,5055444B85710752222432,jashore|jhikargacha,3,2,1,0
+Khulna,Khulna,Rupsa,5055444B36775211946071,khulna|rupsa,3,1,2,0
+Khulna,Satkhira,Kaliganj,5055444B41249726663470,satkhira|kaliganj,3,2,1,0
+Khulna,Satkhira,Shyamnagar,5055444B91970115546789,satkhira|shyamnagar,3,2,1,0
+Khulna,Satkhira,Tala,5055444B51023191617559,satkhira|tala,3,2,1,0
+Mymensingh,Jamalpur,Bakshiganj,5055444B53302442828,jamalpur|bakshiganj,3,2,1,0
+Mymensingh,Sherpur,Jhenaigati,5055444B69691307586178,sherpur|jhenaigati,3,3,0,0
+Rajshani,Naogaon,Dhamoirhat,5055444B49062995436606,naogaon|dhamoirhat,3,3,0,0
+Rajshani,Nawabganj,Gomastapur,5055444B89693136712968,chapainawabganj|gomastapur,3,3,0,0
+Rajshani,Pabna,Bhangura,5055444B89119170954251,pabna|bhangura,3,2,1,0
+Rajshani,Rajshahi,Charghat,5055444B52811201124670,rajshahi|charghat,3,3,0,0
+Rajshani,Sirajganj,Tarash,5055444B40057720303666,sirajganj|tarash,3,3,0,0
+Rangpur,Dinajpur,Fulbari,5055444B44901139304438,dinajpur|fulbari,3,2,0,1
+Rangpur,Gaibandha,Palashbari,5055444B31221494753785,gaibandha|palashbari,3,3,0,0
+Rangpur,Nilphamari,Dimla,5055444B48556909875029,nilphamari|dimla,3,3,0,0
+Sylhet,Maulvibazar,Kulaura,5055444B34645993170454,maulvibazar|kulaura,3,3,0,0
+Sylhet,Sunamganj,Bishwambarpur,5055444B29430612429174,sunamganj|bishwambarpur,3,3,0,0
+Sylhet,Sunamganj,Dakshin Sunamganj,5055444B18079460407879,sunamganj|shantiganj,3,3,0,0
+Sylhet,Sylhet,Zakiganj,5055444B92630668918235,sylhet|zakiganj,3,2,1,0
+Barisal,Jhalokati,Jhalokati Sadar,5055444B65755720973040,jhalokathi|jhalokathi sadar,2,2,0,0
+Barisal,Pirojpur,Kawkhali,5055444B7582936934927,pirojpur|kawkhali,2,0,2,0
+Chittagong,Bandarban,Lama,5055444B8807227421792,bandarban|lama,2,1,1,0
+Chittagong,Bandarban,Thanchi,5055444B32847645930703,bandarban|thanchi,2,2,0,0
+Chittagong,Brahamanbaria,Akhaura,5055444B62959054248390,brahmanbaria|akhaura,2,2,0,0
+Chittagong,Brahamanbaria,Brahmanbaria Sadar,5055444B14183911871917,brahmanbaria|brahmanbaria sadar,2,2,0,0
+Chittagong,Chandpur,Kachua,5055444B26000063371605,chandpur|kachua,2,2,0,0
+Chittagong,Chittagong,Bakalia,5055444B62979600608461,chattogram|bakalia,2,1,0,1
+Chittagong,Comilla,Burichang,5055444B51169249412494,cumilla|burichang,2,2,0,0
+Chittagong,Comilla,Chandina,5055444B69698146690678,cumilla|chandina,2,2,0,0
+Chittagong,Comilla,Laksam,5055444B78219247274360,cumilla|laksam,2,2,0,0
+Chittagong,Comilla,Nangalkot,5055444B76725439062785,cumilla|nangalkot,2,1,1,0
+Chittagong,Cox's Bazar,Kutubdia,5055444B6774293613253,coxs bazar|kutubdia,2,0,0,2
+Chittagong,Feni,Daganbhuiyan,5055444B99414305730014,feni|daganbhuiyan,2,2,0,0
+Chittagong,Lakshmipur,Ramganj,5055444B57812164143880,lakshmipur|ramganj,2,2,0,0
+Chittagong,Noakhali,Begumganj,5055444B21927885992688,noakhali|begumganj,2,2,0,0
+Chittagong,Noakhali,Senbagh,5055444B94204865824830,noakhali|senbagh,2,1,1,0
+Chittagong,Noakhali,Sonaimuri,5055444B89790535635406,noakhali|sonaimuri,2,2,0,0
+Chittagong,Rangamati,Baghai Chhari,5055444B27929495018112,rangamati|baghaichari,2,2,0,0
+Chittagong,Rangamati,Rangamati Sadar,5055444B57589177592395,rangamati|rangamati sadar,2,2,0,0
+Dhaka,Dhaka,Chak Bazar,5055444B82655553221044,dhaka|chak bazar,2,2,0,0
+Dhaka,Dhaka,Dakshinkhan,5055444B54932712585204,dhaka|dakshinkhan,2,2,0,0
+Dhaka,Dhaka,Demra,5055444B14528909504793,dhaka|demra,2,2,0,0
+Dhaka,Dhaka,Khilkhet,5055444B65231246155988,dhaka|khilkhet,2,2,0,0
+Dhaka,Dhaka,Kotwali,5055444B96747808832933,dhaka|kotwali,2,1,1,0
+Dhaka,Dhaka,Shah Ali,5055444B88449011386405,dhaka|shah ali,2,1,1,0
+Dhaka,Dhaka,Tejgaon Ind. Area,5055444B57500985162038,dhaka|tejgaon ind area,2,2,0,0
+Dhaka,Faridpur,Bhanga,5055444B5119414311829,faridpur|bhanga,2,2,0,0
+Dhaka,Gopalganj,Kashiani,5055444B44426403332782,gopalganj|kashiani,2,1,1,0
+Dhaka,Kishoreganj,Katiadi,5055444B24455875774794,kishoreganj|katiadi,2,2,0,0
+Dhaka,Kishoreganj,Kuliar Char,5055444B4949777620192,kishoreganj|kuliarchar,2,2,0,0
+Dhaka,Kishoreganj,Pakundia,5055444B2198312346565,kishoreganj|pakundia,2,1,0,1
+Dhaka,Manikganj,Daulatpur,5055444B23473824839920,manikganj|daulatpur,2,2,0,0
+Dhaka,Munshiganj,Tongibari,5055444B54809057308219,munshiganj|tongibari,2,1,1,0
+Dhaka,Narayanganj,Rupganj,5055444B98720015841654,narayanganj|rupganj,2,2,0,0
+Dhaka,Narsingdi,Belabo,5055444B29598599915126,narsingdi|belabo,2,1,1,0
+Dhaka,Narsingdi,Manohardi,5055444B30201395073710,narsingdi|manohardi,2,2,0,0
+Dhaka,Shariatpur,Bhedarganj,5055444B15524173324977,shariatpur|bhedarganj,2,2,0,0
+Dhaka,Tangail,Gopalpur,5055444B71793030218448,tangail|gopalpur,2,2,0,0
+Khulna,Bagerhat,Rampal,5055444B66391023963948,bagerhat|rampal,2,1,1,0
+Khulna,Chuadanga,Chuadanga Sadar,5055444B67851108717142,chuadanga|chuadanga sadar,2,2,0,0
+Khulna,Jessore,Bagher Para,5055444B50671922094556,jashore|bagherpara,2,2,0,0
+Khulna,Jhenaidah,Kotchandpur,5055444B95278477608214,jhenaidah|kotchandpur,2,2,0,0
+Khulna,Jhenaidah,Shailkupa,5055444B71336622802607,jhenaidah|shailkupa,2,2,0,0
+Khulna,Khulna,Daulatpur,5055444B46757628050002,khulna|daulatpur,2,0,2,0
+Khulna,Khulna,Phultala,5055444B58469671805988,khulna|phultala,2,1,1,0
+Khulna,Narail,Lohagara,5055444B42901183691580,narail|lohagara,2,1,0,1
+Mymensingh,Jamalpur,Sarishabari,5055444B77410212597117,jamalpur|sarishabari,2,1,1,0
+Mymensingh,Mymensingh,Dhobaura,5055444B86250199527476,mymensingh|dhobaura,2,2,0,0
+Mymensingh,Mymensingh,Gauripur,5055444B70908799520391,mymensingh|gauripur,2,2,0,0
+Rajshani,Bogra,Adamdighi,5055444B58770697674534,bogura|adamdighi,2,2,0,0
+Rajshani,Bogra,Dhunat,5055444B75599042311563,bogura|dhunat,2,2,0,0
+Rajshani,Joypurhat,Joypurhat Sadar,5055444B93992233540184,joypurhat|joypurhat sadar,2,1,1,0
+Rajshani,Naogaon,Raninagar,5055444B30475124532663,naogaon|raninagar,2,2,0,0
+Rajshani,Pabna,Faridpur,5055444B5426320976059,pabna|faridpur,2,2,0,0
+Rajshani,Pabna,Ishwardi,5055444B93250488853616,pabna|ishwardi,2,1,0,1
+Rajshani,Pabna,Santhia,5055444B30152429816544,pabna|santhia,2,2,0,0
+Rajshani,Rajshahi,Tanore,5055444B20385993089689,rajshahi|tanore,2,2,0,0
+Rajshani,Sirajganj,Chauhali,5055444B20988672766215,sirajganj|chauhali,2,2,0,0
+Rangpur,Dinajpur,Kaharole,5055444B76754438754784,dinajpur|kaharole,2,2,0,0
+Rangpur,Dinajpur,Nawabganj,5055444B29878683718336,dinajpur|nawabganj,2,2,0,0
+Rangpur,Gaibandha,Gaibandha Sadar,5055444B3189341921764,gaibandha|gaibandha sadar,2,2,0,0
+Rangpur,Gaibandha,Sadullapur,5055444B23601063726349,gaibandha|sadullapur,2,2,0,0
+Rangpur,Jamalpur,Dewanganj,5055444B37852279213101,jamalpur|dewanganj,2,2,0,0
+Rangpur,Lalmonirhat,Patgram,5055444B98087879130234,lalmonirhat|patgram,2,2,0,0
+Rangpur,Nilphamari,Domar,5055444B45421324298866,nilphamari|domar,2,2,0,0
+Rangpur,Nilphamari,Kishoreganj,5055444B13115177631970,nilphamari|kishoreganj,2,2,0,0
+Rangpur,Rangpur,Gangachara,5055444B51911213656614,rangpur|gangachara,2,2,0,0
+Rangpur,Thakurgaon,Ranisankail,5055444B74943148977386,thakurgaon|ranisankail,2,2,0,0
+Sylhet,Habiganj,Nabiganj,5055444B95626234950113,habiganj|nabiganj,2,2,0,0
+Sylhet,Sylhet,Fenchuganj,5055444B87277518835017,sylhet|fenchuganj,2,2,0,0
+Sylhet,Sylhet,Gowainghat,5055444B62684954860182,sylhet|gowainghat,2,1,1,0
+,Bhola,Manpura,5055444B7100787207450,bhola|manpura,1,1,0,0
+Barisal,Barguna,Betagi,5055444B49366988279383,barguna|betagi,1,1,0,0
+Barisal,Barisal,Agailjhara,5055444B95524802719487,barishal|agailjhara,1,1,0,0
+Barisal,Barisal,Babuganj,5055444B11753174954303,barishal|babuganj,1,0,1,0
+Barisal,Barisal,Bakerganj,5055444B60675040208225,barishal|bakerganj,1,1,0,0
+Barisal,Barisal,Gaurnadi,5055444B66414754271755,barishal|gaurnadi,1,1,0,0
+Barisal,Barisal,Mehendiganj,5055444B74768834499877,barishal|mehendiganj,1,1,0,0
+Barisal,Barisal,Muladi,5055444B40910797955149,barishal|muladi,1,1,0,0
+Barisal,Bhola,Char Fasson,5055444B66059160751289,bhola|charfession,1,1,0,0
+Barisal,Bhola,Lalmohan,5055444B5187624990089,bhola|lalmohan,1,1,0,0
+Barisal,Jhalokati,Nalchity,5055444B67892409347150,jhalokathi|nalchity,1,1,0,0
+Barisal,Jhalokati,Rajapur,5055444B90978043630705,jhalokathi|rajapur,1,1,0,0
+Barisal,Patuakhali,Bauphal,5055444B39294686315052,patuakhali|bauphal,1,1,0,0
+Barisal,Patuakhali,Dumki,5055444B35753624845680,patuakhali|dumki,1,1,0,0
+Barisal,Patuakhali,Kala Para,5055444B33791215686777,patuakhali|kalapara,1,1,0,0
+Barisal,Patuakhali,Mirzaganj,5055444B29956220315136,patuakhali|mirzaganj,1,1,0,0
+Barisal,Pirojpur,Bhandaria,5055444B55847146222236,pirojpur|bhandaria,1,1,0,0
+Barisal,Pirojpur,Mathbaria,5055444B80501500491091,pirojpur|mathbaria,1,1,0,0
+Barisal,Pirojpur,Pirojpur Sadar,5055444B11684382381514,pirojpur|pirojpur sadar,1,1,0,0
+Chittagong,Bandarban,Alikadam,5055444B70145349624714,bandarban|alikadam,1,1,0,0
+Chittagong,Bandarban,Ruma,5055444B15740177551005,bandarban|ruma,1,1,0,0
+Chittagong,Brahamanbaria,Banchharampur,5055444B96018438653421,brahmanbaria|banchharampur,1,1,0,0
+Chittagong,Brahamanbaria,Nabinagar,5055444B46982243115028,brahmanbaria|nabinagar,1,1,0,0
+Chittagong,Brahamanbaria,Nasirnagar,5055444B53942313768557,brahmanbaria|nasirnagar,1,1,0,0
+Chittagong,Brahamanbaria,Sarail,5055444B36413802235947,brahmanbaria|sarail,1,1,0,0
+Chittagong,Chandpur,Chandpur Sadar,5055444B35741244965074,chandpur|chandpur sadar,1,1,0,0
+Chittagong,Chandpur,Faridganj,5055444B71558155368166,chandpur|faridganj,1,1,0,0
+Chittagong,Chandpur,Haim Char,5055444B97119696275156,chandpur|haimchar,1,1,0,0
+Chittagong,Chandpur,Hajiganj,5055444B37219354955474,chandpur|hajiganj,1,1,0,0
+Chittagong,Chandpur,Matlab Dakshin,5055444B79931584238091,chandpur|matlab dakshin,1,1,0,0
+Chittagong,Chandpur,Shahrasti,5055444B68903355888510,chandpur|shahrasti,1,1,0,0
+Chittagong,Chittagong,Chandanaish,5055444B97657491175799,chattogram|chandanaish,1,1,0,0
+Chittagong,Chittagong,Rangunia,5055444B52491986806664,chattogram|rangunia,1,1,0,0
+Chittagong,Comilla,Brahman Para,5055444B87015491124884,cumilla|brahmanpara,1,1,0,0
+Chittagong,Comilla,Daudkandi,5055444B33374130329407,cumilla|daudkandi,1,1,0,0
+Chittagong,Comilla,Debidwar,5055444B86934116157766,cumilla|debidwar,1,1,0,0
+Chittagong,Comilla,Homna,5055444B68305043582994,cumilla|homna,1,1,0,0
+Chittagong,Feni,Chhagalnaiya,5055444B26511265806420,feni|chhagalnaiya,1,1,0,0
+Chittagong,Feni,Parshuram,5055444B3242961930205,feni|parshuram,1,1,0,0
+Chittagong,Feni,Sonagazi,5055444B14188015816574,feni|sonagazi,1,1,0,0
+Chittagong,Khagrachhari,Dighinala,5055444B92856865175572,khagrachari|dighinala,1,1,0,0
+Chittagong,Khagrachhari,Khagrachhari Sadar,5055444B92688731308594,khagrachari|khagrachari sadar,1,1,0,0
+Chittagong,Khagrachhari,Manikchhari,5055444B84634680798783,khagrachari|manikchari,1,1,0,0
+Chittagong,Khagrachhari,Matiranga,5055444B50883090324101,khagrachari|matiranga,1,1,0,0
+Chittagong,Khagrachhari,Panchhari,5055444B74503201942965,khagrachari|panchhari,1,1,0,0
+Chittagong,Noakhali,Chatkhil,5055444B29892543857449,noakhali|chatkhil,1,1,0,0
+Chittagong,Rangamati,Kaptai,5055444B98244501145639,rangamati|kaptai,1,1,0,0
+Chittagong,Rangamati,Kawkhali (Betbunia),5055444B19367082920466,rangamati|kawkhali,1,0,1,0
+Dhaka,Dhaka,Kadamtali,5055444B98895982185439,dhaka|kadamtali,1,1,0,0
+Dhaka,Dhaka,Uttar Khan,5055444B65870568835453,dhaka|uttar khan,1,1,0,0
+Dhaka,Faridpur,Alfadanga,5055444B55670429127605,faridpur|alfadanga,1,1,0,0
+Dhaka,Faridpur,Boalmari,5055444B63302256730709,faridpur|boalmari,1,1,0,0
+Dhaka,Faridpur,Madhukhali,5055444B21452508615420,faridpur|madhukhali,1,1,0,0
+Dhaka,Gazipur,Kapasia,5055444B15486218196636,gazipur|kapasia,1,1,0,0
+Dhaka,Gopalganj,Kotali Para,5055444B41131729628640,gopalganj|kotalipara,1,1,0,0
+Dhaka,Gopalganj,Tungi Para,5055444B95964430529833,gopalganj|tungipara,1,1,0,0
+Dhaka,Kishoreganj,Bajitpur,5055444B13058474946517,kishoreganj|bajitpur,1,1,0,0
+Dhaka,Kishoreganj,Hossainpur,5055444B58039681953949,kishoreganj|hossainpur,1,1,0,0
+Dhaka,Kishoreganj,Karimganj,5055444B80392478978834,kishoreganj|karimganj,1,1,0,0
+Dhaka,Kishoreganj,Nikli,5055444B31777377596981,kishoreganj|nikli,1,1,0,0
+Dhaka,Kishoreganj,Tarail,5055444B72148073143785,kishoreganj|tarail,1,1,0,0
+Dhaka,Madaripur,Kalkini,5055444B57411868126880,madaripur|kalkini,1,1,0,0
+Dhaka,Manikganj,Harirampur,5055444B53451019672150,manikganj|harirampur,1,1,0,0
+Dhaka,Munshiganj,Gazaria,5055444B82094787312382,munshiganj|gazaria,1,1,0,0
+Dhaka,Narayanganj,Bandar,5055444B32271374417544,narayanganj|bandar,1,1,0,0
+Dhaka,Narsingdi,Palash,5055444B96134179230312,narsingdi|palash,1,1,0,0
+Dhaka,Narsingdi,Shibpur,5055444B16111921801,narsingdi|shibpur,1,1,0,0
+Dhaka,Rajbari,Balia Kandi,5055444B27992117808883,rajbari|baliakandi,1,1,0,0
+Dhaka,Shariatpur,Damudya,5055444B78904096490349,shariatpur|damudya,1,1,0,0
+Dhaka,Shariatpur,Gosairhat,5055444B74969054630595,shariatpur|gosairhat,1,1,0,0
+Khulna,Bagerhat,Mollahat,5055444B47603984491155,bagerhat|mollahat,1,1,0,0
+Khulna,Chuadanga,Alamdanga,5055444B84155048182974,chuadanga|alamdanga,1,1,0,0
+Khulna,Chuadanga,Damurhuda,5055444B42162342633446,chuadanga|damurhuda,1,1,0,0
+Khulna,Jessore,Abhaynagar,5055444B52925985874339,jashore|abhaynagar,1,1,0,0
+Khulna,Jessore,Keshabpur,5055444B35284050445786,jashore|keshabpur,1,1,0,0
+Khulna,Jessore,Manirampur,5055444B69742529684169,jashore|monirampur,1,1,0,0
+Khulna,Jhenaidah,Harinakunda,5055444B20021225888412,jhenaidah|harinakunda,1,1,0,0
+Khulna,Jhenaidah,Kaliganj,5055444B90064357882675,jhenaidah|kaliganj,1,1,0,0
+Khulna,Jhenaidah,Maheshpur,5055444B40942545652713,jhenaidah|maheshpur,1,0,1,0
+Khulna,Khulna,Terokhada,5055444B83461070324075,khulna|terokhada,1,1,0,0
+Khulna,Kushtia,Daulatpur,5055444B53912976326946,kushtia|daulatpur,1,1,0,0
+Khulna,Kushtia,Khoksa,5055444B67450707106328,kushtia|khoksa,1,1,0,0
+Khulna,Kushtia,Kumarkhali,5055444B47909201503305,kushtia|kumarkhali,1,1,0,0
+Khulna,Magura,Shalikha,5055444B40078895461279,magura|shalikha,1,1,0,0
+Khulna,Meherpur,Gangni,5055444B93126942536388,meherpur|gangni,1,1,0,0
+Khulna,Meherpur,Mujib Nagar,5055444B97958802920528,meherpur|mujibnagar,1,1,0,0
+Khulna,Satkhira,Assasuni,5055444B75161647827572,satkhira|assasuni,1,0,1,0
+Mymensingh,Jamalpur,Islampur,5055444B8648993873034,jamalpur|islampur,1,1,0,0
+Mymensingh,Jamalpur,Madarganj,5055444B83620057326875,jamalpur|madarganj,1,1,0,0
+Mymensingh,Jamalpur,Melandaha,5055444B58797813051725,jamalpur|melandaha,1,1,0,0
+Mymensingh,Mymensingh,Fulbaria,5055444B78175035306518,mymensingh|fulbaria,1,0,1,0
+Mymensingh,Mymensingh,Gaffargaon,5055444B28348959120095,mymensingh|gaffargaon,1,1,0,0
+Mymensingh,Mymensingh,Nandail,5055444B36065227637036,mymensingh|nandail,1,1,0,0
+Mymensingh,Netrakona,Atpara,5055444B38720066295886,netrakona|atpara,1,1,0,0
+Mymensingh,Netrakona,Barhatta,5055444B42611772267022,netrakona|barhatta,1,1,0,0
+Mymensingh,Netrakona,Kalmakanda,5055444B66227675822918,netrakona|kalmakanda,1,1,0,0
+Mymensingh,Netrakona,Kendua,5055444B31571719417761,netrakona|kendua,1,1,0,0
+Mymensingh,Netrakona,Khaliajuri,5055444B19619959781410,netrakona|khaliajuri,1,1,0,0
+Rajshani,Bogra,Dhupchanchia,5055444B62446820117735,bogura|dhupchanchia,1,1,0,0
+Rajshani,Bogra,Gabtali,5055444B85005696436554,bogura|gabtali,1,1,0,0
+Rajshani,Bogra,Kahaloo,5055444B94680478371785,bogura|kahaloo,1,1,0,0
+Rajshani,Bogra,Sariakandi,5055444B56899132484318,bogura|sariakandi,1,1,0,0
+Rajshani,Bogra,Sonatola,5055444B64677126820268,bogura|sonatola,1,1,0,0
+Rajshani,Joypurhat,Akkelpur,5055444B76477721024576,joypurhat|akkelpur,1,1,0,0
+Rajshani,Joypurhat,Panchbibi,5055444B1649196171252,joypurhat|panchbibi,1,1,0,0
+Rajshani,Naogaon,Niamatpur,5055444B35482632168622,naogaon|niamatpur,1,1,0,0
+Rajshani,Naogaon,Porsha,5055444B54487127643063,naogaon|porsha,1,1,0,0
+Rajshani,Naogaon,Sapahar,5055444B68995178117667,naogaon|sapahar,1,1,0,0
+Rajshani,Nawabganj,Bholahat,5055444B5224825785279,chapainawabganj|bholahat,1,1,0,0
+Rajshani,Nawabganj,Nachole,5055444B4211226512154,chapainawabganj|nachole,1,1,0,0
+Rajshani,Pabna,Chatmohar,5055444B40727855162076,pabna|chatmohar,1,1,0,0
+Rajshani,Pabna,Sujanagar,5055444B66896198128187,pabna|sujanagar,1,1,0,0
+Rajshani,Rajshahi,Godagari,5055444B45852065441553,rajshahi|godagari,1,1,0,0
+Rajshani,Rajshahi,Matihar,5055444B51642868289665,rajshahi|matihar,1,0,0,1
+Rajshani,Rajshahi,Mohanpur,5055444B74655378820598,rajshahi|mohanpur,1,1,0,0
+Rajshani,Rajshahi,Paba,5055444B6547949128734,rajshahi|paba,1,0,0,1
+Rajshani,Rajshahi,Puthia,5055444B90282468448704,rajshahi|puthia,1,0,1,0
+Rajshani,Rajshahi,Shah Makhdum,5055444B12266298386193,rajshahi|shah makhdum,1,0,1,0
+Rajshani,Sirajganj,Kamarkhanda,5055444B74368179000930,sirajganj|kamarkhanda,1,1,0,0
+Rajshani,Sirajganj,Royganj,5055444B16102075953805,sirajganj|royganj,1,1,0,0
+Rajshani,Sirajganj,Shahjadpur,5055444B61931792811678,sirajganj|shahjadpur,1,0,1,0
+Rangpur,Dinajpur,Bochaganj,5055444B39806235806178,dinajpur|bochaganj,1,1,0,0
+Rangpur,Dinajpur,Hakimpur,5055444B56333063181641,dinajpur|hakimpur,1,1,0,0
+Rangpur,Dinajpur,Khansama,5055444B43604682805019,dinajpur|khansama,1,1,0,0
+Rangpur,Gaibandha,Saghatta,5055444B53491444498319,gaibandha|saghata,1,1,0,0
+Rangpur,Gaibandha,Sundarganj,5055444B52225315755922,gaibandha|sundarganj,1,1,0,0
+Rangpur,Kurigram,Bhurungamari,5055444B87531326935884,kurigram|bhurungamari,1,1,0,0
+Rangpur,Kurigram,Kurigram Sadar,5055444B50958574054556,kurigram|kurigram sadar,1,1,0,0
+Rangpur,Kurigram,Nageshwari,5055444B88377635255294,kurigram|nageshwari,1,1,0,0
+Rangpur,Kurigram,Ulipur,5055444B25253769673904,kurigram|ulipur,1,1,0,0
+Rangpur,Lalmonirhat,Hatibandha,5055444B78670664180744,lalmonirhat|hatibandha,1,1,0,0
+Rangpur,Lalmonirhat,Lalmonirhat Sadar,5055444B31815132153948,lalmonirhat|lalmonirhat sadar,1,1,0,0
+Rangpur,Panchagarh,Atwari,5055444B48705627763179,panchagarh|atwari,1,1,0,0
+Rangpur,Rangpur,Badarganj,5055444B71688043167729,rangpur|badarganj,1,1,0,0
+Rangpur,Thakurgaon,Baliadangi,5055444B48916414184469,thakurgaon|baliadangi,1,1,0,0
+Sylhet,Habiganj,Ajmiriganj,5055444B99945132628682,habiganj|ajmiriganj,1,1,0,0
+Sylhet,Habiganj,Baniachong,5055444B40412060728075,habiganj|baniachong,1,1,0,0
+Sylhet,Habiganj,Chunarughat,5055444B46183445583986,habiganj|chunarughat,1,1,0,0
+Sylhet,Habiganj,Madhabpur,5055444B26771557951521,habiganj|madhabpur,1,1,0,0
+Sylhet,Maulvibazar,Kamalganj,5055444B17952966104219,maulvibazar|kamalganj,1,1,0,0
+Sylhet,Maulvibazar,Rajnagar,5055444B11792824344189,maulvibazar|rajnagar,1,1,0,0
+Sylhet,Sunamganj,Chhatak,5055444B94988032496724,sunamganj|chhatak,1,1,0,0
+Sylhet,Sunamganj,Dowarabazar,5055444B64610175900905,sunamganj|dowarabazar,1,1,0,0
+Sylhet,Sunamganj,Jagannathpur,5055444B57165749218775,sunamganj|jagannathpur,1,1,0,0
+Sylhet,Sunamganj,Jamalganj,5055444B62205139742422,sunamganj|jamalganj,1,1,0,0
+Sylhet,Sunamganj,Sunamganj Sadar,5055444B97560692768354,sunamganj|sunamganj sadar,1,1,0,0
+Sylhet,Sylhet,Balaganj,5055444B42219902295699,sylhet|balaganj,1,1,0,0
+Sylhet,Sylhet,Bishwanath,5055444B7917442502790,sylhet|bishwanath,1,1,0,0
+Sylhet,Sylhet,Dakshin Surma,5055444B91315333896705,sylhet|dakshin surma,1,1,0,0
+Sylhet,Sylhet,Golabganj,5055444B69213858716566,sylhet|golapganj,1,1,0,0
+Sylhet,Sylhet,Jaintiapur,5055444B19736672664555,sylhet|jaintiapur,1,1,0,0
+Sylhet,Sylhet,Kanaighat,5055444B41434433148091,sylhet|kanaighat,1,1,0,0
+,Kurigram,Phulbari,5055444B25764140823276,kurigram|phulbari,0,0,0,0
+,Noakhali,Companiganj,5055444B56228986539746,noakhali|companiganj,0,0,0,0
+,Noakhali,Kabirhat,5055444B43660249750517,noakhali|kabirhat,0,0,0,0
+Barisal,Barguna,Bamna,5055444B77373604613442,barguna|bamna,0,0,0,0
+Barisal,Barisal,Banari Para,5055444B41993390999306,barishal|banari para,0,0,0,0
+Barisal,Barisal,Hizla,5055444B36389182328145,barishal|hizla,0,0,0,0
+Barisal,Bhola,Tazumuddin,5055444B2612720248468,bhola|tazumuddin,0,0,0,0
+Barisal,Jhalokati,Kanthalia,5055444B40108237642327,jhalokathi|kanthalia,0,0,0,0
+Barisal,Pirojpur,Nazirpur,5055444B52021808696745,pirojpur|nazirpur,0,0,0,0
+Barisal,Pirojpur,Nesarabad (Swarupkati),5055444B29300824944570,pirojpur|nesarabad,0,0,0,0
+Barisal,Pirojpur,Zianagar,5055444B71206516737064,pirojpur|zianagar,0,0,0,0
+Chittagong,Bandarban,Bandarban Sadar,5055444B74490098108798,bandarban|bandarban sadar,0,0,0,0
+Chittagong,Brahamanbaria,Bijoynagar,5055444B37995463425931,brahmanbaria|bijoynagar,0,0,0,0
+Chittagong,Brahamanbaria,Kasba,5055444B61264629124243,brahmanbaria|kasba,0,0,0,0
+Chittagong,Chandpur,Matlab Uttar,5055444B59303037542676,chandpur|matlab uttar,0,0,0,0
+Chittagong,Chittagong,Banshkhali,5055444B49096359165052,chattogram|banshkhali,0,0,0,0
+Chittagong,Chittagong,Sandwip,5055444B38303257659951,chattogram|sandwip,0,0,0,0
+Chittagong,Comilla,Meghna,5055444B22662076450588,cumilla|meghna,0,0,0,0
+Chittagong,Comilla,Titas,5055444B67482191059434,cumilla|titas,0,0,0,0
+Chittagong,Cox's Bazar,Maheshkhali,5055444B67374732574136,coxs bazar|maheshkhali,0,0,0,0
+Chittagong,Cox's Bazar,Pekua,5055444B9589532337582,coxs bazar|pekua,0,0,0,0
+Chittagong,Feni,Fulgazi,5055444B33879349571627,feni|fulgazi,0,0,0,0
+Chittagong,Khagrachhari,Lakshmichhari,5055444B76771399523865,khagrachari|lakshmichhari,0,0,0,0
+Chittagong,Khagrachhari,Mahalchhari,5055444B90687829441345,khagrachari|mahalchhari,0,0,0,0
+Chittagong,Khagrachhari,Ramgarh,5055444B38799821527712,khagrachari|ramgarh,0,0,0,0
+Chittagong,Lakshmipur,Kamalnagar,5055444B78094476092411,lakshmipur|kamalnagar,0,0,0,0
+Chittagong,Lakshmipur,Ramgati,5055444B89015715919581,lakshmipur|ramgati,0,0,0,0
+Chittagong,Noakhali,Subarnachar,5055444B25255559930535,noakhali|subarnachar,0,0,0,0
+Chittagong,Rangamati,Barkal,5055444B37824837156541,rangamati|barkal,0,0,0,0
+Chittagong,Rangamati,Belai Chhari,5055444B29897435624834,rangamati|belai chhari,0,0,0,0
+Chittagong,Rangamati,Jurai Chhari,5055444B74589798981468,rangamati|jurai chhari,0,0,0,0
+Chittagong,Rangamati,Langadu,5055444B82968761851300,rangamati|langadu,0,0,0,0
+Chittagong,Rangamati,Naniarchar,5055444B1204952470090,rangamati|naniarchar,0,0,0,0
+Chittagong,Rangamati,Rajasthali,5055444B15060771373546,rangamati|rajasthali,0,0,0,0
+Dhaka,Dhaka,Nawabganj,5055444B6233610222310,dhaka|nawabganj,0,0,0,0
+Dhaka,Faridpur,Char Bhadrasan,5055444B75331922255178,faridpur|char bhadrasan,0,0,0,0
+Dhaka,Faridpur,Nagarkanda,5055444B32574655365855,faridpur|nagarkanda,0,0,0,0
+Dhaka,Faridpur,Sadarpur,5055444B68847835082367,faridpur|sadarpur,0,0,0,0
+Dhaka,Faridpur,Saltha,5055444B68654289756116,faridpur|saltha,0,0,0,0
+Dhaka,Gazipur,Kaliganj,5055444B61428192086039,gazipur|kaliganj,0,0,0,0
+Dhaka,Kishoreganj,Austagram,5055444B71886622986948,kishoreganj|austagram,0,0,0,0
+Dhaka,Kishoreganj,Itna,5055444B52552217694509,kishoreganj|itna,0,0,0,0
+Dhaka,Munshiganj,Lohajang,5055444B16433505042831,munshiganj|lohajang,0,0,0,0
+Dhaka,Narayanganj,Araihazar,5055444B13859636437629,narayanganj|araihazar,0,0,0,0
+Dhaka,Narayanganj,Sonargaon,5055444B64704613710909,narayanganj|sonargaon,0,0,0,0
+Dhaka,Narsingdi,Roypura,5055444B39659813181832,narsingdi|roypura,0,0,0,0
+Dhaka,Rajbari,Kalukhali,5055444B5247362700203,rajbari|kalukhali,0,0,0,0
+Khulna,Chuadanga,Jiban Nagar,5055444B6466456665233,chuadanga|jiban nagar,0,0,0,0
+Khulna,Jessore,Sharsha,5055444B18695908729515,jashore|sharsha,0,0,0,0
+Khulna,Kushtia,Bheramara,5055444B14686967042049,kushtia|bheramara,0,0,0,0
+Khulna,Kushtia,Mirpur,5055444B311297956594,kushtia|mirpur,0,0,0,0
+Khulna,Magura,Mohammadpur,5055444B50148309792291,magura|mohammadpur,0,0,0,0
+Khulna,Magura,Sreepur,5055444B72092725021808,magura|sreepur,0,0,0,0
+Khulna,Satkhira,Debhata,5055444B7317208084306,satkhira|debhata,0,0,0,0
+Mymensingh,Netrakona,Mohanganj,5055444B90444582723877,netrakona|mohanganj,0,0,0,0
+Mymensingh,Netrakona,Purbadhala,5055444B54942136795919,netrakona|purbadhala,0,0,0,0
+Mymensingh,Sherpur,Sreebardi,5055444B4323491857941,sherpur|sreebardi,0,0,0,0
+Rajshani,Joypurhat,Kalai,5055444B30865127714111,joypurhat|kalai,0,0,0,0
+Rajshani,Joypurhat,Khetlal,5055444B82593576675649,joypurhat|khetlal,0,0,0,0
+Rajshani,Naogaon,Atrai,5055444B3575688139772,naogaon|atrai,0,0,0,0
+Rajshani,Naogaon,Manda,5055444B25908372106798,naogaon|manda,0,0,0,0
+Rajshani,Natore,Bagati Para,5055444B5068099947740,natore|bagati para,0,0,0,0
+Rajshani,Pabna,Atgharia,5055444B13262596743861,pabna|atgharia,0,0,0,0
+Rajshani,Rajshahi,Bagha,5055444B95183901987528,rajshahi|bagha,0,0,0,0
+Rajshani,Rajshahi,Baghmara,5055444B7328601552159,rajshahi|baghmara,0,0,0,0
+Rajshani,Rajshahi,Durgapur,5055444B93638080796536,rajshahi|durgapur,0,0,0,0
+Rajshani,Sirajganj,Kazipur,5055444B60898734615082,sirajganj|kazipur,0,0,0,0
+Rangpur,Dinajpur,Biral,5055444B78948578275311,dinajpur|biral,0,0,0,0
+Rangpur,Dinajpur,Chirirbandar,5055444B51943841593923,dinajpur|chirirbandar,0,0,0,0
+Rangpur,Dinajpur,Ghoraghat,5055444B96277257106353,dinajpur|ghoraghat,0,0,0,0
+Rangpur,Dinajpur,Parbatipur,5055444B76537033079747,dinajpur|parbatipur,0,0,0,0
+Rangpur,Gaibandha,Fulchhari,5055444B23049188583489,gaibandha|fulchhari,0,0,0,0
+Rangpur,Kurigram,Rajarhat,5055444B93678014899997,kurigram|rajarhat,0,0,0,0
+Rangpur,Lalmonirhat,Aditmari,5055444B32465848615946,lalmonirhat|aditmari,0,0,0,0
+Rangpur,Nilphamari,Jaldhaka,5055444B28351243268521,nilphamari|jaldhaka,0,0,0,0
+Rangpur,Panchagarh,Tentulia,5055444B24539740757234,panchagarh|tentulia,0,0,0,0
+Rangpur,Rangpur,Kaunia,5055444B28911251557363,rangpur|kaunia,0,0,0,0
+Rangpur,Rangpur,Pirgachha,5055444B86740606942965,rangpur|pirgachha,0,0,0,0
+Rangpur,Thakurgaon,Haripur,5055444B33565614058430,thakurgaon|haripur,0,0,0,0
+Rangpur,Thakurgaon,Pirganj,5055444B42154785912558,thakurgaon|pirganj,0,0,0,0
+Sylhet,Habiganj,Bahubal,5055444B50852908884979,habiganj|bahubal,0,0,0,0
+Sylhet,Habiganj,Lakhai,5055444B57247897751497,habiganj|lakhai,0,0,0,0
+Sylhet,Sunamganj,Dharampasha,5055444B99906709627914,sunamganj|dharampasha,0,0,0,0

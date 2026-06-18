@@ -12,11 +12,11 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `remittance-resilience` (PP; **ai-first finished for current issue** as of 2026-05-12 under Mode A; reopened for repair/deepening pass: RPW cost-normalization fix + corridor-volume-weighting keystone) |
-| Per-program board | [`remittance-resilience/STATUS.md`](../remittance-resilience/STATUS.md) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module added 2026-06-19; next loop is facility-level validation-sample design) |
+| Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `public-service-data-quality` (PR, ai-first finished 2026-05-07; polish-pass viewport-verified 2026-05-12; available for §18.5 owner-led human-final upgrade) |
+| Previous flagship | `remittance-resilience` (PP, L3 flow-weighting repair closed under Mode A in commit `225d4d2`; available for §18.5 owner-led human-final upgrade) |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -30,53 +30,54 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-1. **`remittance-resilience`** — *current active flagship; ai-first
-   finished for current issue 2026-05-12; reopened for the 2026-06-17
-   parser/flow-weighting repair*. Repaired baseline top five are KGZ,
-   WSM, TON, NPL, and VUT; common full-suite sensitivity core is KGZ,
-   TON, VUT, and WSM; the public KNOMAD flow-weighting L3 module keeps
-   the same five-economy set but changes order to KGZ, NPL, VUT, WSM,
-   TON. Current work is verification and contradiction audit after the
-   L3 re-close, not a maturity promotion. Human-final remains §18.5
-   owner-led.
-2. **`access-services`** — 8-DMC climate-adjusted access pilot done;
+1. **`public-service-data-quality`** — *current active flagship; PR and
+   ai-first finished for current issue 2026-05-07; BGD source-disagreement
+   L3 module added 2026-06-19*. Current work is to design a public-source
+   facility-level validation sample for high-gap rows, zero-OSM rows, and
+   OSM-above-registry counterexamples without changing the maturity label.
+2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
+   in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
+   and VUT; the public KNOMAD flow-weighting L3 module keeps the same
+   five-economy set but changes order to KGZ, NPL, VUT, WSM, TON.
+   Human-final remains §18.5 owner-led.
+3. **`access-services`** — 8-DMC climate-adjusted access pilot done;
    top-4 narrowing {BGD, KHM, LAO, PAK} stable. Travel-time isochrones
    are §18.5 owner-gated, so AI-doable depth is bounded — clean Mode A
    finish.
-3. **`migration-displacement-signals`** — top-5 emigrant-stock cluster
+4. **`migration-displacement-signals`** — top-5 emigrant-stock cluster
    {IND, CHN, BGD, AFG, PHL} stable across alternative definitions;
    article exists at
    `articles/emigrant-stock-corridor-concentration.md`; same gap as
    remittance-resilience.
-4. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
+5. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
    2.5-cap sensitivity flagged top-5 → top-3 honest narrowing.
-5. **`disaster-recovery-lag`** — metric-falsification deepening shows the
+6. **`disaster-recovery-lag`** — metric-falsification deepening shows the
    original {CHN, IND} top-two is not robust: it holds for affected and
    damage, but changes under events/year, deaths, and events per million.
    It still lacks an actual recovery-lag metric.
-6. **`grid-reliability-heat`** — top-5 single-fuel set {BTN, BRN, MNG,
+7. **`grid-reliability-heat`** — top-5 single-fuel set {BTN, BRN, MNG,
    NPL, TJK} stable.
-7. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
+8. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
    IND, IDN, THA, VNM} stable.
-8. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,
+9. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,
    PHL} stable.
-9. **`water-stress-crop-diversification`** — top-4 narrowing {AFG, AZE,
+10. **`water-stress-crop-diversification`** — top-4 narrowing {AFG, AZE,
    PAK, TKM}; UZB perturbation-sensitive — narrower headline.
-10. **`school-heat-disruption`** — honest narrowing to top-1 (KHM only);
+11. **`school-heat-disruption`** — honest narrowing to top-1 (KHM only);
     top-5 fails ±50% gate. Smallest-claim flagship candidate.
-11. **`food-price-climate-transmission`** — sensitivity-gate failure on
+12. **`food-price-climate-transmission`** — sensitivity-gate failure on
     composite; index needs reformulation before ladder build.
-12. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
+13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
     modeled-extent is §18.5 owner-gated.
-13. **`air-monitoring`** — ground-station coverage vs satellite AOD;
+14. **`air-monitoring`** — ground-station coverage vs satellite AOD;
     pipeline ready.
-14. **`invisible-urbanization`** — settlement growth vs admin urban
+15. **`invisible-urbanization`** — settlement growth vs admin urban
     boundaries; pipeline ready.
-15. **`coastal-informal-risk`** — informal coastal settlements vs
+16. **`coastal-informal-risk`** — informal coastal settlements vs
     storm-surge exposure; pipeline ready.
-16. **`digital-performance`** — broadband coverage vs official
+17. **`digital-performance`** — broadband coverage vs official
     connectivity claims; folder mostly empty (Stage 1 framing needed).
-17. **`mpi-nighttime-lights`** — Program 0, co-authored with Arturo; H
+18. **`mpi-nighttime-lights`** — Program 0, co-authored with Arturo; H
     stage; owner-led not AI-led (different review path).
 
 Promotions and demotions are recorded in `research/wip-register.md`. The
@@ -146,6 +147,29 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ source-disagreement L3 module):** Added
+  `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`,
+  generated `psdq-bgd-source-disagreement-strata.{json,csv}`, and wrote
+  `public-service-data-quality/source-disagreement-l3-module.md`. The
+  showcase route `/showcase/psdq-source-disagreement` now reads the L3 strata
+  JSON, shows ratio buckets and validation residues before the interactive
+  workbench, and links the L3 note plus strata downloads. Registry copy,
+  hook bank, sync/review-packet inclusion, README, REPRODUCE, and
+  per-program status were updated. Rebuilt
+  `review-packets/public-service-data-quality-2026-06-18/` plus zip
+  (UTC-dated by script). Verification passed: strata script, `npm run build`,
+  six gates, and agent-browser desktop/mobile QA with no page-level horizontal
+  overflow or page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-l3-desktop.png` and
+  `reporting-site/qa/showcase-psdq-l3-mobile.png`. This is an L3 evidence
+  module for report #4, not a maturity promotion or human-final upgrade. Next
+  PSDQ loop is facility-level validation-sample design.
+- **2026-06-19 (rotation to PSDQ source-disagreement deepening):** After
+  commit `225d4d2` closed the remittance L3 flow-weighting repair, the active
+  flagship rotated to `public-service-data-quality` because
+  `research/showcase-quality-audit.md` now lists PSDQ source disagreement as
+  the next L3 candidate. The work is a focused evidence/public-surface
+  deepening of the existing PR program, not a maturity promotion.
 - **2026-06-17 (remittance flow-weighting L3 re-close):** Current active
   flagship repair was formalized instead of leaving the showcase report as an
   L2 sprint. Added `remittance-resilience/flow-weighting-l3-module.md` and

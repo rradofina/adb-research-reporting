@@ -3759,6 +3759,28 @@
     border: 1px solid var(--rule);
   }
 
+  .psdq-validation-section {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .psdq-strata-chart-wrap {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .psdq-strata-chart {
+    min-width: 760px;
+    max-width: none;
+  }
+
+  .psdq-validation-readout {
+    margin-top: 0;
+  }
+
   .psdq-method-note {
     max-width: 84rem;
     margin-top: 1rem;

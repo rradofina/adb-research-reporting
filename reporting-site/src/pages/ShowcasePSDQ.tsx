@@ -52,6 +52,91 @@ interface PsdqExposureSummary {
   non_claim: string;
 }
 
+interface PsdqStrataRow {
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  join_key: string;
+  active_clinical_facilities: number;
+  osm_health: number;
+  osm_to_active_clinical_ratio: number | null;
+  registry_minus_osm_clinical: number;
+  registry_gap_share: number;
+  buildings_nearest_3km_p85: number;
+  underobserved_buildings_3km_p85_proxy: number;
+  has_open_buildings_denominator: number;
+  has_osm_boundary_match: number;
+  total_road_km?: number;
+  classified_surface_share?: number;
+  classified_unpaved_share?: number;
+  road_context_score?: number;
+}
+
+interface PsdqRatioStratum {
+  bucket: string;
+  label: string;
+  row_count: number;
+  share_of_registry_rows: number | null;
+  active_clinical_facilities: number;
+  share_of_active_clinical_facilities: number | null;
+  osm_health: number;
+  osm_to_active_clinical_ratio: number | null;
+  registry_minus_osm_clinical: number;
+  buildings_nearest_3km_p85: number;
+  underobserved_buildings_3km_p85_proxy: number;
+}
+
+interface PsdqSourceStrata {
+  generated_at: string;
+  goal_level: string;
+  status: string;
+  coverage: {
+    registry_admin_rows: number;
+    csv_registry_rows: number;
+    rows_with_open_buildings_denominator: number;
+    share_with_open_buildings_denominator: number | null;
+    registry_rows_with_joined_osm_features: number;
+    share_with_joined_osm_features: number | null;
+    osm_elements_retrieved: number;
+    osm_elements_assigned_to_boundary: number;
+    osm_features_joined_to_registry: number;
+    osm_features_not_joined_to_registry: number;
+    active_clinical_facilities: number;
+    osm_health_joined: number;
+    registry_minus_osm_clinical: number;
+    buildings_nearest_3km_p85: number;
+    underobserved_buildings_3km_p85_proxy: number;
+    rows_with_road_context: number;
+    share_with_road_context: number | null;
+    rows_with_surface_context: number;
+    share_with_surface_context: number | null;
+  };
+  validation_strata: {
+    rows_missing_open_buildings_denominator: number;
+    share_missing_open_buildings_denominator: number | null;
+    registry_rows_without_joined_osm_features: number;
+    share_without_joined_osm_features: number | null;
+    rows_with_zero_osm_health_features: number;
+    share_with_zero_osm_health_features: number | null;
+    rows_where_osm_equals_or_exceeds_registry: number;
+    share_where_osm_equals_or_exceeds_registry: number | null;
+    rows_with_zero_gap_or_osm_ge_registry: number;
+    share_with_zero_gap_or_osm_ge_registry: number | null;
+    rows_with_positive_registry_minus_osm_gap: number;
+    rows_eligible_for_road_context: number;
+    rows_eligible_for_road_surface_score: number;
+    min_classified_surface_km_for_score: number;
+    min_classified_surface_share_for_score: number;
+  };
+  ratio_strata: PsdqRatioStratum[];
+  top_lists: {
+    top_exposure_gap_upazilas: PsdqStrataRow[];
+    top_zero_osm_high_proxy_upazilas: PsdqStrataRow[];
+    top_osm_equals_or_exceeds_registry_upazilas: PsdqStrataRow[];
+    top_road_context_upazilas: PsdqStrataRow[];
+  };
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -84,6 +169,17 @@ const METRIC_OPTIONS: Array<{ id: MetricMode; label: string }> = [
   { id: "gap", label: "Gap share" },
   { id: "ratio", label: "Lowest OSM / registry" },
 ];
+
+const STRATA_LABELS: Record<string, string> = {
+  no_clinical_registry: "No clinical registry",
+  zero_osm: "Zero OSM",
+  gt0_to_5pct: ">0 to <5%",
+  "5_to_10pct": "5 to <10%",
+  "10_to_20pct": "10 to <20%",
+  "20_to_50pct": "20 to <50%",
+  "50_to_100pct": "50 to <100%",
+  osm_ge_registry: "OSM >= registry",
+};
 
 const ALL_DIVISIONS = "All divisions";
 
@@ -172,6 +268,7 @@ function parseCsvLine(line: string) {
 
 export default function ShowcasePSDQ() {
   const [summary, setSummary] = useState<PsdqExposureSummary | null>(null);
+  const [strata, setStrata] = useState<PsdqSourceStrata | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -186,14 +283,19 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`national HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.json").then((r) => {
+        if (!r.ok) throw new Error(`strata HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
       }),
     ])
-      .then(([summaryPayload, nationalPayload, csvText]) => {
+      .then(([summaryPayload, nationalPayload, strataPayload, csvText]) => {
         setSummary(summaryPayload);
         setNational(nationalPayload);
+        setStrata(strataPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -218,7 +320,7 @@ export default function ShowcasePSDQ() {
           </p>
           <div className="showcase-meta">
             <span>ai-first</span>
-            <span>Finished issue visual uplift</span>
+            <span>L3 source-disagreement module</span>
             <span>Measurement gap, not facility quality</span>
           </div>
         </div>
@@ -229,9 +331,11 @@ export default function ShowcasePSDQ() {
               <div className="psdq-hero-stats">
                 <div>
                   <span className="showcase-stat-value">
-                    {summary.exposure.registry_admin_rows}
+                    {strata
+                      ? `${strata.coverage.rows_with_open_buildings_denominator}/${strata.coverage.registry_admin_rows}`
+                      : summary.exposure.registry_admin_rows}
                   </span>
-                  <span className="showcase-stat-label">registry-matched upazila rows</span>
+                  <span className="showcase-stat-label">rows with building denominator</span>
                 </div>
                 <div>
                   <span className="showcase-stat-value">
@@ -239,6 +343,22 @@ export default function ShowcasePSDQ() {
                   </span>
                   <span className="showcase-stat-label">under-observed building proxy</span>
                 </div>
+                {strata && (
+                  <>
+                    <div>
+                      <span className="showcase-stat-value">
+                        {formatNumber(strata.validation_strata.rows_with_zero_osm_health_features)}
+                      </span>
+                      <span className="showcase-stat-label">zero-OSM rows to validate</span>
+                    </div>
+                    <div>
+                      <span className="showcase-stat-value">
+                        {formatNumber(strata.validation_strata.rows_where_osm_equals_or_exceeds_registry)}
+                      </span>
+                      <span className="showcase-stat-label">OSM &gt;= registry rows</span>
+                    </div>
+                  </>
+                )}
               </div>
             </>
           ) : (
@@ -263,6 +383,8 @@ export default function ShowcasePSDQ() {
         </div>
       </section>
 
+      {strata && <PsdqValidationPanel strata={strata} />}
+
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
       <section className="showcase-section showcase-two-col">
@@ -270,7 +392,7 @@ export default function ShowcasePSDQ() {
           <p className="kicker">What the first visual suggests</p>
           <h2>The largest planning risk is not only the largest facility gap.</h2>
           <p>
-            The exposure-ranked view pairs the registry-map disagreement with
+            The L3 source-disagreement view pairs the registry-map disagreement with
             Google Open Buildings p85 denominators near coordinate-ready
             facilities. That makes the visual operational: a small public-map
             ratio matters more where many buildings sit near the facilities
@@ -324,6 +446,16 @@ export default function ShowcasePSDQ() {
         <div className="showcase-source-box">
           <p className="showcase-source-title">Reproduce the deepening</p>
           <code>python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreement.py</code>
+          <code>python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py</code>
+          <a href="/programs/public-service-data-quality/source-disagreement-l3-module.md" download>
+            Download L3 evidence note
+          </a>
+          <a href="/programs/public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.json" download>
+            Download strata JSON
+          </a>
+          <a href="/programs/public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.csv" download>
+            Download strata CSV
+          </a>
           <a href="/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement-summary.json" download>
             Download summary JSON
           </a>
@@ -351,14 +483,186 @@ export default function ShowcasePSDQ() {
           </p>
         </div>
         <div className="showcase-source-box">
-          <Link to="/showcase">Market-climate prototype</Link>
-          <Link to="/showcase/data-freshness">Data-freshness prototype</Link>
-          <Link to="/showcase/shock-payment-rails">Shock-payment prototype</Link>
+          <p className="showcase-source-title">Related source QA reports</p>
+          <Link to="/showcase/access-map-completeness">Access map-completeness audit</Link>
+          <Link to="/showcase/remittance-flow-weighting">Remittance flow-weighting module</Link>
+          <Link to="/showcase/air-monitoring-observability">Air-monitoring observability</Link>
           <Link to="/factory">Factory rules</Link>
         </div>
       </section>
     </article>
   );
+}
+
+function PsdqValidationPanel({ strata }: { strata: PsdqSourceStrata }) {
+  const zeroOsmRow = strata.top_lists.top_zero_osm_high_proxy_upazilas[0];
+  const counterExample = strata.top_lists.top_osm_equals_or_exceeds_registry_upazilas[0];
+  const roadRow = strata.top_lists.top_road_context_upazilas[0];
+
+  return (
+    <section className="showcase-section psdq-validation-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Source validation stack</p>
+          <h2>The useful result is the QA ledger behind the map.</h2>
+          <p>
+            The L3 module does not ask a reader to trust a chart by eye. It
+            exposes the rows that can support an exposure screen, the rows that
+            still need source validation, and the counterexamples where OSM
+            equals or exceeds the registry count.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Open Buildings coverage</span>
+            <strong>
+              {formatNumber(strata.coverage.rows_with_open_buildings_denominator)} of{" "}
+              {formatNumber(strata.coverage.registry_admin_rows)} registry rows have the denominator
+            </strong>
+          </div>
+          <div>
+            <span>OSM feature-join residue</span>
+            <strong>
+              {formatNumber(strata.validation_strata.registry_rows_without_joined_osm_features)} rows
+              have no joined OSM feature row; {formatNumber(strata.coverage.osm_features_not_joined_to_registry)} OSM features
+              stay outside registry rows
+            </strong>
+          </div>
+          <div>
+            <span>Counterexample guardrail</span>
+            <strong>
+              {formatNumber(strata.validation_strata.rows_where_osm_equals_or_exceeds_registry)} rows have OSM
+              counts equal to or above the active registry count
+            </strong>
+          </div>
+          <div>
+            <span>Road context eligibility</span>
+            <strong>
+              {formatNumber(strata.validation_strata.rows_eligible_for_road_surface_score)} rows meet the
+              classified-road threshold for the road-context score
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-strata-chart-wrap">
+        <PsdqStrataChart strata={strata.ratio_strata} />
+      </div>
+
+      <div className="showcase-month-readout psdq-validation-readout">
+        <div>
+          <span>Zero-OSM validation row</span>
+          <strong>
+            {zeroOsmRow
+              ? `${zeroOsmRow.upazila_name}, ${zeroOsmRow.district_name}: ${formatNumber(zeroOsmRow.active_clinical_facilities)} DGHS clinical and ${formatNumber(zeroOsmRow.underobserved_buildings_3km_p85_proxy)} proxy`
+              : "No zero-OSM row in the current artifact"}
+          </strong>
+        </div>
+        <div>
+          <span>OSM-above-registry row</span>
+          <strong>
+            {counterExample
+              ? `${counterExample.upazila_name}, ${counterExample.district_name}: ${formatNumber(counterExample.osm_health)} OSM / ${formatNumber(counterExample.active_clinical_facilities)} DGHS`
+              : "No OSM-above-registry row in the current artifact"}
+          </strong>
+        </div>
+        <div>
+          <span>Road-context top row</span>
+          <strong>
+            {roadRow
+              ? `${roadRow.upazila_name}, ${roadRow.district_name}: score ${formatNumber(roadRow.road_context_score)}`
+              : "Road-context artifact not loaded"}
+          </strong>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PsdqStrataChart({ strata }: { strata: PsdqRatioStratum[] }) {
+  const width = 1040;
+  const rowHeight = 38;
+  const headerHeight = 58;
+  const bottom = 20;
+  const height = headerHeight + strata.length * rowHeight + bottom;
+  const labelX = 0;
+  const barX = 210;
+  const barWidth = 250;
+  const activeX = 500;
+  const osmX = 650;
+  const proxyX = 780;
+  const maxRows = Math.max(1, ...strata.map((row) => row.row_count));
+
+  return (
+    <svg
+      className="psdq-strata-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Bangladesh PSDQ ratio strata and validation buckets"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Ratio strata used as validation gates
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: DGHS registry upazila row; source: generated PSDQ L3 strata JSON
+      </text>
+      <text x={barX} y={54} className="psdq-chart-head">
+        Rows
+      </text>
+      <text x={activeX} y={54} className="psdq-chart-head">
+        DGHS clinical
+      </text>
+      <text x={osmX} y={54} className="psdq-chart-head">
+        OSM health
+      </text>
+      <text x={proxyX} y={54} className="psdq-chart-head">
+        Under-observed proxy
+      </text>
+
+      {strata.map((row, index) => {
+        const y = headerHeight + index * rowHeight;
+        const rowWidth = (row.row_count / maxRows) * barWidth;
+        return (
+          <g key={row.bucket}>
+            <text x={labelX} y={y + 16} className="psdq-row-label">
+              {STRATA_LABELS[row.bucket] || row.label}
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={18} fill="#eef2f5" />
+            <rect
+              x={barX}
+              y={y}
+              width={Math.max(1, rowWidth)}
+              height={18}
+              fill={strataBucketColor(row.bucket)}
+            >
+              <title>{`${row.label}: ${formatNumber(row.row_count)} rows`}</title>
+            </rect>
+            <text x={barX + barWidth + 12} y={y + 14} className="psdq-value">
+              {formatNumber(row.row_count)}
+            </text>
+            <text x={activeX} y={y + 14} className="psdq-value">
+              {formatNumber(row.active_clinical_facilities)}
+            </text>
+            <text x={osmX} y={y + 14} className="psdq-value">
+              {formatNumber(row.osm_health)}
+            </text>
+            <text x={proxyX} y={y + 14} className="psdq-value">
+              {formatNumber(row.underobserved_buildings_3km_p85_proxy)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+function strataBucketColor(bucket: string) {
+  if (bucket === "zero_osm") return "#9b2226";
+  if (bucket === "osm_ge_registry") return "#5A8227";
+  if (bucket === "no_clinical_registry") return "#6c757d";
+  return "#007DB8";
 }
 
 function PsdqHeroRails({ rows }: { rows: PsdqExposureRow[] }) {

@@ -99,10 +99,10 @@ export const showcaseReports: ShowcaseReport[] = [
     shortTitle: "Public service data quality source disagreement",
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
-    statusLabel: "Prototype report",
-    deck: "Official health-facility registries are checked against OSM and building context before service-access maps are trusted.",
-    evidencePath: "public-service-data-quality/STATUS.md",
-    visual: "Ranked registry-versus-OSM disagreement workbench",
+    statusLabel: "L3 evidence module",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, and building/road-context coverage before access maps are trusted.",
+    evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
+    visual: "Ranked registry-versus-OSM workbench plus ratio-strata validation ledger",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Bespoke PSDQ source-disagreement surface is tied to a mature program spine and public evidence artifacts.",
-    publicationGap: "Needs facility-level matching sample, registry-vintage notes, and an independent validation layer for the report bench.",
-    nextUpgrade: "Package the BGD source-disagreement report with matching strata, validation notes, and a chart caption audit.",
+    qaSummary: "BGD source-disagreement route now reads a formal L3 strata artifact, evidence note, and validation-led UI.",
+    publicationGap: "Needs facility-level matching sample, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Design the facility-level validation sample and test high-gap rows against duplicates, classification, and vintage differences.",
   },
   5: {
     readiness: "l3-candidate",

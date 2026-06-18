@@ -62,6 +62,7 @@ const PROGRAM_FILES = [
   "leave-one-out-runs.json",
   "coverage.md",
   "results.md",
+  "source-disagreement-l3-module.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",
@@ -98,7 +99,11 @@ function copyAndHash(src, dest) {
   if (!fs.existsSync(src)) return null;
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(src, dest);
-  return sha256(src);
+  if (path.extname(dest).toLowerCase() === ".svg") {
+    const text = fs.readFileSync(dest, "utf8");
+    fs.writeFileSync(dest, text.replace(/[ \t]+(\r?\n)/g, "$1"));
+  }
+  return sha256(dest);
 }
 
 const programIncluded = [];

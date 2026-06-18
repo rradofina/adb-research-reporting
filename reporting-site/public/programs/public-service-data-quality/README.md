@@ -34,6 +34,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/compute-bgd-open-buildings-facility-buffers.py` — computes nearest-facility Open Buildings counts at 1/3/5 km using all/p85/p90 confidence modes
 - `scripts/build-bgd-exposure-ranked-disagreement.py` — assigns Bangladesh OSM health features to ADM3/upazila polygons and joins OSM, DGHS, and Open Buildings into an exposure-ranked gap screen
 - `scripts/build-bgd-road-surface-context.py` — aggregates the HeiGIT/HDX Bangladesh road-surface GeoPackage to upazilas and joins it to the exposure-ranked PSDQ screen
+- `scripts/build-bgd-source-disagreement-strata.py` — packages the Bangladesh exposure and road-context outputs into L3 ratio strata, validation residues, and top validation rows for the showcase report
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -57,6 +58,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-road-surface-summary.json` — chart-ready road-surface summary
 - `generated/psdq-bgd-exposure-road-context.csv` — exposure-ranked PSDQ table joined to road-surface context
 - `generated/psdq-bgd-exposure-road-context-summary.json` — chart-ready service-gap plus road-context summary
+- `generated/psdq-bgd-source-disagreement-strata.{json,csv}` — L3 source-disagreement ratio buckets, validation residues, and top rows for the showcase report
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -136,6 +138,14 @@ Current audit result:
   classified road length and at least 10% classified-surface coverage. The
   score is a triage context layer, not a travel-time, poverty, or road-access
   estimate.
+- **BGD source-disagreement L3 strata:** the no-network packaging pass reads
+  the exposure-ranked table and road-context summary, then writes
+  `generated/psdq-bgd-source-disagreement-strata.{json,csv}`. The current
+  artifact covers 572 DGHS registry upazila rows; 561 have an Open Buildings
+  denominator; 115 active-registry rows have zero OSM health features; 21 rows
+  have OSM counts equal to or above the active registry count; 234 rows meet
+  the road-surface scoring threshold. This is a source-validation ledger for
+  `/showcase/psdq-source-disagreement`, not an access or quality result.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -156,6 +166,7 @@ python public-service-data-quality/scripts/download-bgd-open-buildings-points.py
 python public-service-data-quality/scripts/compute-bgd-open-buildings-facility-buffers.py --chunk-size 500000 --workers 4
 python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreement.py
 python public-service-data-quality/scripts/build-bgd-road-surface-context.py --skip-download
+python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

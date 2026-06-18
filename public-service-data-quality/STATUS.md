@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample design added; public-source coding pass is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample and automated coded screen added; manual public-source review is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -22,12 +22,32 @@ Last updated: 2026-06-19.
 
 A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
-matching strata, validation sample, and caveats, make the source upgrade clear
-in the public surface, and preserve the existing PR maturity label without
-implying human-final review.
+matching strata, validation sample, automated coded screen, and caveats, make
+the source upgrade clear in the public surface, and preserve the existing PR
+maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the automated Bangladesh facility-validation coded
+  screen for the PSDQ source-disagreement L3 module. New no-network script
+  `scripts/code-bgd-facility-validation-sample.py` reads the 76-row validation
+  sheet, cached all-Bangladesh OSM health-feature pull, and geoBoundaries ADM3,
+  then writes `generated/psdq-bgd-facility-validation-coded-screen.csv`,
+  `generated/psdq-bgd-facility-validation-osm-candidates.csv`, and
+  `generated/psdq-bgd-facility-validation-coded-summary.json`. The automated
+  screen codes 40 rows as missing public-map points, 23 as registry coordinate
+  issues, 5 as confirmed same-facility matches, 3 as probable aliases, 3 as
+  classification mismatches, and 2 as OSM-only candidates. Added
+  `facility-validation-coded-screen.md`, updated the L3 note, README,
+  REPRODUCE, evidence sync/review-packet inclusion, showcase registry, hook
+  bank, quality audit, and `/showcase/psdq-source-disagreement`. The route now
+  fetches the coded-summary JSON, shows a grouped coded-screen chart, and
+  links the coded-screen downloads. This is automated triage, not manual
+  validation, a maturity promotion, or a human-final upgrade. Browser QA
+  passed at 1365px desktop and 375px mobile with no page-level horizontal
+  overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-coded-screen-desktop.png` and
+  `reporting-site/qa/showcase-psdq-coded-screen-mobile.png`.
 - **2026-06-19:** Added the Bangladesh facility-validation sample design for
   the PSDQ source-disagreement L3 module. New no-network script
   `scripts/design-bgd-facility-validation-sample.py` reads the L3 strata,
@@ -153,16 +173,17 @@ implying human-final review.
 
 Current loop:
 
-1. Execute the public-source coding pass against
-   `generated/psdq-bgd-facility-validation-coding-sheet.csv`.
+1. Manually review the 71 rows flagged in
+   `generated/psdq-bgd-facility-validation-coded-summary.json` and
+   `generated/psdq-bgd-facility-validation-coded-screen.csv`.
 2. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
    facility lists or owner-only credentials. Stop if validation requires
    non-public access.
-3. Code each sampled row as confirmed same facility, probable duplicate or
-   alias, classification mismatch, registry coordinate issue, missing
-   public-map point, OSM-only candidate, or unresolved public-source evidence.
-4. Generate a deterministic coded-output artifact and summarize validation
-   codes by sample group before changing any source-disagreement claim.
+3. Record reviewer notes row by row and compare manual labels with the
+   automated coded-screen labels before changing any source-disagreement
+   claim.
+4. If public evidence is insufficient, keep the row unresolved rather than
+   forcing a same-facility or missing-map code.
 5. Rerun sync/build/gates/browser QA after any public-surface change.
 
 Historical publication-ladder closeout remains below for context.

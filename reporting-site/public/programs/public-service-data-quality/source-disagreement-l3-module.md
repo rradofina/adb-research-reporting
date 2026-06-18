@@ -144,6 +144,36 @@ disagreement is mostly duplicate naming, classification mismatch, registry
 coordinate uncertainty, missing public-map points, OSM-only candidates, or
 unresolved public-source evidence.
 
+## Automated Coded-Screen Addendum
+
+The first public-source coding screen is now packaged in
+`facility-validation-coded-screen.md`. The script
+`scripts/code-bgd-facility-validation-sample.py` reads the 76-row coding sheet,
+filters the cached all-Bangladesh OSM health-feature pull within 500 meters of
+sampled DGHS coordinates, and checks coordinate plausibility against
+geoBoundaries ADM3.
+
+The automated screen is not a manual validation pass. It codes the 76 sampled
+DGHS rows as follows:
+
+| Validation code | Rows |
+|---|---:|
+| Confirmed same facility | 5 |
+| Probable duplicate or alias | 3 |
+| Classification mismatch | 3 |
+| Registry coordinate issue | 23 |
+| Missing public-map point | 40 |
+| OSM-only candidate | 2 |
+| Unresolved public sources | 0 |
+
+The group pattern is the useful caution. In the zero-OSM sample, 18 of 20
+sampled rows are valid-coordinate DGHS rows with no cached OSM health feature
+within 500 meters. In the OSM-equals-or-exceeds-registry group, the automated
+screen finds a mixed pattern of confirmed matches, aliases, classification
+questions, coordinate issues, missing public-map points, and OSM-only
+candidates. That pattern supports source-QA language and argues against a
+single universal undercount claim.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -164,6 +194,7 @@ python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreemen
 python public-service-data-quality/scripts/build-bgd-road-surface-context.py --skip-download
 python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py
 python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
+python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py
 ```
 
 Outputs:
@@ -174,10 +205,14 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-sample-upazilas.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-sample-facilities.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coding-sheet.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-coded-screen.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-osm-candidates.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-coded-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a public-source coding pass against the 76-row facility
-validation sheet. Until coded outcomes exist, the correct publication use is
-source QA before service-access mapping, not a statement about facility
+The next upgrade is a manual public-source review of the 71 rows flagged for
+manual review, followed by a comparison between manual labels and the
+automated coded screen. Until that review exists, the correct publication use
+is source QA before service-access mapping, not a statement about facility
 availability, service quality, or validated catchments.

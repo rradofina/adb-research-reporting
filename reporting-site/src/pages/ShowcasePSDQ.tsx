@@ -164,6 +164,42 @@ interface PsdqValidationSample {
   non_claim: string;
 }
 
+interface PsdqValidationCodeCount {
+  validation_code: string;
+  rows: number;
+}
+
+interface PsdqValidationGroupCount {
+  sample_group: string;
+  rows: number;
+  confirmed_same_facility: number;
+  probable_duplicate_or_alias: number;
+  classification_mismatch: number;
+  registry_coordinate_issue: number;
+  missing_public_map_point: number;
+  osm_only_candidate: number;
+  unresolved_public_sources: number;
+}
+
+interface PsdqValidationCodedSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  screen_summary: {
+    coded_rows: number;
+    osm_candidate_rows: number;
+    manual_review_recommended_rows: number;
+    rows_with_any_osm_candidate_500m: number;
+    rows_with_valid_coordinate: number;
+    rows_inside_expected_upazila: number;
+  };
+  validation_code_counts: PsdqValidationCodeCount[];
+  validation_code_counts_by_group: PsdqValidationGroupCount[];
+  overpass_status_counts: Record<string, number>;
+  coordinate_boundary_status_counts: Record<string, number>;
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -297,6 +333,7 @@ export default function ShowcasePSDQ() {
   const [summary, setSummary] = useState<PsdqExposureSummary | null>(null);
   const [strata, setStrata] = useState<PsdqSourceStrata | null>(null);
   const [validationSample, setValidationSample] = useState<PsdqValidationSample | null>(null);
+  const [codedSummary, setCodedSummary] = useState<PsdqValidationCodedSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -319,16 +356,21 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`validation sample HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coded-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`coded validation HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
       }),
     ])
-      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, csvText]) => {
+      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, codedPayload, csvText]) => {
         setSummary(summaryPayload);
         setNational(nationalPayload);
         setStrata(strataPayload);
         setValidationSample(validationSamplePayload);
+        setCodedSummary(codedPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -419,6 +461,8 @@ export default function ShowcasePSDQ() {
       {strata && <PsdqValidationPanel strata={strata} />}
 
       {validationSample && <PsdqValidationSamplePanel sample={validationSample} />}
+
+      {codedSummary && <PsdqValidationCodedPanel summary={codedSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -686,6 +730,185 @@ function PsdqValidationSamplePanel({ sample }: { sample: PsdqValidationSample })
         </p>
       </div>
     </section>
+  );
+}
+
+const VALIDATION_CODE_ORDER = [
+  "missing_public_map_point",
+  "registry_coordinate_issue",
+  "confirmed_same_facility",
+  "probable_duplicate_or_alias",
+  "classification_mismatch",
+  "osm_only_candidate",
+  "unresolved_public_sources",
+] as const;
+
+const VALIDATION_CODE_LABELS: Record<string, string> = {
+  confirmed_same_facility: "Confirmed",
+  probable_duplicate_or_alias: "Probable alias",
+  classification_mismatch: "Class mismatch",
+  registry_coordinate_issue: "Coordinate issue",
+  missing_public_map_point: "Missing map point",
+  osm_only_candidate: "OSM-only",
+  unresolved_public_sources: "Unresolved",
+};
+
+function validationCodeColor(code: string) {
+  const colors: Record<string, string> = {
+    confirmed_same_facility: "#5A8227",
+    probable_duplicate_or_alias: "#007DB8",
+    classification_mismatch: "#7A4E15",
+    registry_coordinate_issue: "#D97706",
+    missing_public_map_point: "#9B2226",
+    osm_only_candidate: "#4A5568",
+    unresolved_public_sources: "#A0AEC0",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function validationCount(summary: PsdqValidationCodedSummary, code: string) {
+  return summary.validation_code_counts.find((item) => item.validation_code === code)?.rows || 0;
+}
+
+function PsdqValidationCodedPanel({ summary }: { summary: PsdqValidationCodedSummary }) {
+  return (
+    <section className="showcase-section psdq-coded-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Automated coded screen</p>
+          <h2>The first source check separates map absence from coordinate problems.</h2>
+          <p>
+            The coded screen filters the cached Bangladesh OSM health-feature
+            pull within 500 meters of each sampled DGHS coordinate and checks
+            whether the coordinate sits inside the sampled upazila boundary.
+            The result is a manual-review queue, not a final validation claim.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows coded</span>
+            <strong>{formatNumber(summary.screen_summary.coded_rows)} sampled DGHS rows</strong>
+          </div>
+          <div>
+            <span>Missing public-map point</span>
+            <strong>{formatNumber(validationCount(summary, "missing_public_map_point"))} rows</strong>
+          </div>
+          <div>
+            <span>Registry coordinate issue</span>
+            <strong>{formatNumber(validationCount(summary, "registry_coordinate_issue"))} rows</strong>
+          </div>
+          <div>
+            <span>Manual review queue</span>
+            <strong>{formatNumber(summary.screen_summary.manual_review_recommended_rows)} rows</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqValidationCodeChart groups={summary.validation_code_counts_by_group} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ validation code legend">
+        {VALIDATION_CODE_ORDER.filter((code) => validationCount(summary, code) > 0).map((code) => (
+          <span key={code}>
+            <i style={{ background: validationCodeColor(code) }} /> {VALIDATION_CODE_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the coded screen</p>
+        <code>python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-coded-screen.md" download>
+          Download coded-screen note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coded-summary.json" download>
+          Download coded summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coded-screen.csv" download>
+          Download coded screen CSV
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-osm-candidates.csv" download>
+          Download OSM candidates CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqValidationCodeChart({ groups }: { groups: PsdqValidationGroupCount[] }) {
+  const width = 1040;
+  const rowHeight = 58;
+  const headerHeight = 54;
+  const height = headerHeight + groups.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 230;
+  const barWidth = 540;
+  const countX = 805;
+
+  return (
+    <svg
+      className="psdq-coded-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Automated validation codes by PSDQ sample group"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Automated validation-code screen
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS facility row; source: coded validation summary JSON
+      </text>
+      <text x={barX} y={52} className="psdq-chart-head">
+        Code mix
+      </text>
+      <text x={countX} y={52} className="psdq-chart-head">
+        Missing / coordinate / confirmed
+      </text>
+
+      {groups.map((group, index) => {
+        const y = headerHeight + index * rowHeight;
+        let x = barX;
+        return (
+          <g key={group.sample_group}>
+            <text x={labelX} y={y + 18} className="psdq-row-label">
+              {sampleGroupLabel(group.sample_group)}
+            </text>
+            <text x={labelX} y={y + 36} className="psdq-row-sub">
+              {formatNumber(group.rows)} sampled rows
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={24} fill="#eef2f5" />
+            {VALIDATION_CODE_ORDER.map((code) => {
+              const value = Number(group[code] || 0);
+              const segmentWidth = group.rows > 0 ? (value / group.rows) * barWidth : 0;
+              const segment = (
+                <rect
+                  key={code}
+                  x={x}
+                  y={y}
+                  width={Math.max(0, segmentWidth)}
+                  height={24}
+                  fill={validationCodeColor(code)}
+                >
+                  <title>{`${sampleGroupLabel(group.sample_group)}: ${formatNumber(value)} ${VALIDATION_CODE_LABELS[code]}`}</title>
+                </rect>
+              );
+              x += segmentWidth;
+              return segment;
+            })}
+            <text x={countX} y={y + 17} className="psdq-value">
+              {formatNumber(group.missing_public_map_point)} / {formatNumber(group.registry_coordinate_issue)} /{" "}
+              {formatNumber(group.confirmed_same_facility)}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
   );
 }
 

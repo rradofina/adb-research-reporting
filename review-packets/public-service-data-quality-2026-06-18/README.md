@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `3e12cb44b1ed…`
-- `program/STATUS.md`  `8a818a119fae…`
-- `program/REPRODUCE.md`  `7e3e1240ebc0…`
+- `program/README.md`  `844d103f2394…`
+- `program/STATUS.md`  `b038df1ce784…`
+- `program/REPRODUCE.md`  `1d1e95dbeff6…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,8 +81,9 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `bc2b8947537a…`
-- `program/facility-validation-sample.md`  `e1c17c3995a7…`
+- `program/source-disagreement-l3-module.md`  `d68d7cdfda0a…`
+- `program/facility-validation-sample.md`  `426a18b29d9e…`
+- `program/facility-validation-coded-screen.md`  `012544ccd776…`
 - `program/limitations.md`  `8ac5d2ea407f…`
 - `program/upgrade-gap.md`  `207d3df3b8ba…`
 - `program/catchment-upgrade.md`  `4f85675317f0…`
@@ -107,7 +108,10 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-exposure-road-context.csv`  `58f3527759b5…`
 - `program/generated/psdq-bgd-facility-coordinate-extract.csv`  `6e7cfef0f458…`
 - `program/generated/psdq-bgd-facility-coordinate-summary.json`  `b031bc152cbc…`
+- `program/generated/psdq-bgd-facility-validation-coded-screen.csv`  `ff3da51e9bf2…`
+- `program/generated/psdq-bgd-facility-validation-coded-summary.json`  `0c9c01426078…`
 - `program/generated/psdq-bgd-facility-validation-coding-sheet.csv`  `cdb9950c61c8…`
+- `program/generated/psdq-bgd-facility-validation-osm-candidates.csv`  `d0347d049cde…`
 - `program/generated/psdq-bgd-facility-validation-sample-facilities.csv`  `866de878eae2…`
 - `program/generated/psdq-bgd-facility-validation-sample-upazilas.csv`  `d5d76eb5d54d…`
 - `program/generated/psdq-bgd-facility-validation-sample.json`  `114abfa96b17…`
@@ -145,6 +149,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/build-phl-admin3-open-buildings-context.py`  `baa57e9a5e75…`
 - `program/scripts/build-phl-admin3-poverty-context.py`  `2e07dbbb486a…`
 - `program/scripts/build-thumbnail.py`  `a967e9acc16e…`
+- `program/scripts/code-bgd-facility-validation-sample.py`  `3d82c1452223…`
 - `program/scripts/compute-bgd-open-buildings-facility-buffers.py`  `b8916cab9fe7…`
 - `program/scripts/deepen-tier-decomposition.py`  `ffd440ac9868…`
 - `program/scripts/design-bgd-facility-validation-sample.py`  `c7eca1cd58ce…`
@@ -179,4 +184,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-18T17:58:15.588Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-18T18:15:09.419Z by `scripts/build-review-packet.mjs`.

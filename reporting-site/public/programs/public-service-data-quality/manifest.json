@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-06-18T17:58:27.941Z",
+  "generated_at": "2026-06-18T18:14:41.403Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,20 +27,20 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 16486,
-      "size_human": "16.1 KB",
-      "mtime": "2026-06-18T17:53:28.926Z",
-      "sha256": "3e12cb44b1edd76b6a5a1e0df48ca064057fa88c4b0f64a6cf08f3b8bb4b325b",
+      "size": 17822,
+      "size_human": "17.4 KB",
+      "mtime": "2026-06-18T18:10:49.514Z",
+      "sha256": "844d103f2394e4fbe19bd4cd7bd35f0527699a4220c85fc8841f587ef35b6c93",
       "attestation_chain": null
     },
     {
       "key": "reproduce",
       "file": "REPRODUCE.md",
       "label": "Reproducibility guide",
-      "size": 9515,
-      "size_human": "9.3 KB",
-      "mtime": "2026-06-18T17:53:37.699Z",
-      "sha256": "7e3e1240ebc0ebf612942cf8d6a076cd6c91a01afc0d3366d24a21bc7d2d0cdc",
+      "size": 10566,
+      "size_human": "10.3 KB",
+      "mtime": "2026-06-18T18:10:59.959Z",
+      "sha256": "1d1e95dbeff6349307a868374be4b4ca27a18e91968fcef0e42da164fc19e7a5",
       "attestation_chain": null
     },
     {
@@ -127,20 +127,30 @@
       "key": "source_disagreement_l3",
       "file": "source-disagreement-l3-module.md",
       "label": "Source-disagreement L3 module",
-      "size": 8530,
-      "size_human": "8.3 KB",
-      "mtime": "2026-06-18T17:52:55.163Z",
-      "sha256": "bc2b8947537a37776db76427a6d7f1a99f95f210fabead42426abb314249bd84",
+      "size": 10202,
+      "size_human": "10.0 KB",
+      "mtime": "2026-06-18T18:11:20.718Z",
+      "sha256": "d68d7cdfda0a8775c44886d46290191da73e5619821de06b5b48ff56e07678a3",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_sample",
       "file": "facility-validation-sample.md",
       "label": "Facility-validation sample design",
-      "size": 7207,
-      "size_human": "7.0 KB",
-      "mtime": "2026-06-18T17:52:41.623Z",
-      "sha256": "e1c17c3995a752180acc4544b6391ed485c28abe30035e2d5f24c133814a1c16",
+      "size": 7298,
+      "size_human": "7.1 KB",
+      "mtime": "2026-06-18T18:11:07.938Z",
+      "sha256": "426a18b29d9e3b4ab5461fa4ae2284f1968bf22cc6d62a64b60c8feec4c4eab3",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "facility_validation_coded_screen",
+      "file": "facility-validation-coded-screen.md",
+      "label": "Facility-validation coded screen",
+      "size": 5237,
+      "size_human": "5.1 KB",
+      "mtime": "2026-06-18T18:10:22.065Z",
+      "sha256": "012544ccd776f414a5292cc77ded86b0ad638f553d555ce95da935ec551316ec",
       "attestation_chain": "ai-first"
     },
     {
@@ -298,10 +308,28 @@
       "sha256": "b031bc152cbc6d34a1698375f6e34db932daff565cec2ea0fe1d82ecbf78d2b0"
     },
     {
+      "file": "generated/psdq-bgd-facility-validation-coded-screen.csv",
+      "size": 52789,
+      "size_human": "51.6 KB",
+      "sha256": "ff3da51e9bf241998f9fdd8dbf1c9199b1c257ce25050eda546ee5fc08987e43"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-coded-summary.json",
+      "size": 5181,
+      "size_human": "5.1 KB",
+      "sha256": "0c9c0142607860a3ee7af1c3ee259cd04e920b871cb7bdb96adb3fc75d5f752a"
+    },
+    {
       "file": "generated/psdq-bgd-facility-validation-coding-sheet.csv",
       "size": 28147,
       "size_human": "27.5 KB",
       "sha256": "cdb9950c61c87a6230c698ab2e171dc0b805df476acac08d2c890d646b69bbef"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-osm-candidates.csv",
+      "size": 26260,
+      "size_human": "25.6 KB",
+      "sha256": "d0347d049cdeb9685637521c23c95ca515a8d16d61f73ba53572f622984e757c"
     },
     {
       "file": "generated/psdq-bgd-facility-validation-sample-facilities.csv",

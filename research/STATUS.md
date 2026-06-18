@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module and validation-sample design added 2026-06-19; next loop is public-source facility coding) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, and automated coded screen added 2026-06-19; next loop is manual public-source review) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -32,9 +32,10 @@ overrides priority by editing this list.
 
 1. **`public-service-data-quality`** — *current active flagship; PR and
    ai-first finished for current issue 2026-05-07; BGD source-disagreement
-   L3 module and validation-sample design added 2026-06-19*. Current work is
-   to code the sampled DGHS facility rows against public DGHS and OSM evidence
-   without changing the maturity label.
+   L3 module, validation-sample design, and automated coded screen added
+   2026-06-19*. Current work is to manually review the flagged sampled DGHS
+   facility rows against public DGHS and OSM evidence without changing the
+   maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -147,6 +148,25 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ automated facility-validation coded screen):** Added
+  `public-service-data-quality/scripts/code-bgd-facility-validation-sample.py`,
+  generated the coded-screen CSV, OSM-candidates CSV, and coded-summary JSON,
+  and wrote `public-service-data-quality/facility-validation-coded-screen.md`.
+  The automated screen uses the cached all-Bangladesh OSM health-feature pull
+  and geoBoundaries ADM3 to classify the 76 sampled DGHS rows: 40 missing
+  public-map points, 23 registry coordinate issues, 5 confirmed same-facility
+  matches, 3 probable aliases, 3 classification mismatches, and 2 OSM-only
+  candidates. The showcase route `/showcase/psdq-source-disagreement` now
+  fetches the coded-summary JSON, shows a grouped coded-screen chart, and
+  links the coded-screen downloads. README, REPRODUCE, hook bank, quality
+  audit, sync/review-packet inclusion, and per-program status were updated.
+  Browser QA passed at 1365px desktop and 375px mobile with no page-level
+  horizontal overflow or page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-coded-screen-desktop.png` and
+  `reporting-site/qa/showcase-psdq-coded-screen-mobile.png`. This is
+  automated public-source triage, not manual validation, a maturity promotion,
+  or human-final upgrade. Next PSDQ loop is manual public-source review of the
+  71 flagged rows.
 - **2026-06-19 (PSDQ facility-validation sample design):** Added
   `public-service-data-quality/scripts/design-bgd-facility-validation-sample.py`,
   generated the Bangladesh validation-sample JSON, sampled-upazila CSV,
@@ -163,7 +183,8 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-psdq-validation-sample-desktop.png` and
   `reporting-site/qa/showcase-psdq-validation-sample-mobile.png`. This is a
   sample design, not validation outcomes, a maturity promotion, or human-final
-  upgrade. Next PSDQ loop is the public-source facility coding pass.
+  upgrade. The follow-on automated coded screen was completed in the next
+  operational note.
 - **2026-06-19 (PSDQ source-disagreement L3 module):** Added
   `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`,
   generated `psdq-bgd-source-disagreement-strata.{json,csv}`, and wrote

@@ -141,6 +141,8 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Execute the public-source coding pass against the 76-row sheet, summarize the
-distribution of validation codes by sample group, and update the L3 module
-only after the coded outcomes are generated from a committed artifact.
+The automated public-source coding screen is now documented in
+`facility-validation-coded-screen.md`. The next upgrade is manual public-source
+review of the rows flagged for manual review, followed by a comparison between
+manual labels and the automated screen before any PSDQ source-disagreement
+claim is revised.

@@ -119,6 +119,31 @@ story. The operational use is validation prioritization: select facility rows,
 source names, and upazilas for follow-up before using the facility layer in a
 travel-time, catchment, or access map.
 
+## Facility-Validation Sample Addendum
+
+The next source-QA step is now packaged as a deterministic sample design in
+`facility-validation-sample.md`. The script
+`scripts/design-bgd-facility-validation-sample.py` reads the L3 strata, the
+exposure-ranked disagreement table, and the DGHS facility-coordinate extract.
+It writes a 20-upazila validation sample and a 76-row coding sheet. Of the 76
+sampled DGHS facility rows, 69 are coordinate-ready.
+
+The sample is split across four groups:
+
+| Group | Upazila rows | Facility rows | Coordinate-ready facility rows |
+|---|---:|---:|---:|
+| High exposure gap | 5 | 20 | 20 |
+| Zero OSM, high proxy | 5 | 20 | 20 |
+| OSM equals or exceeds registry | 5 | 16 | 11 |
+| Mid-ratio comparison | 5 | 20 | 18 |
+
+This addendum is a sample design, not a validation result. The coding-sheet
+outcome fields are intentionally blank. The next empirical step is to code
+each row using public DGHS and OSM evidence, then summarize whether observed
+disagreement is mostly duplicate naming, classification mismatch, registry
+coordinate uncertainty, missing public-map points, OSM-only candidates, or
+unresolved public-source evidence.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -138,17 +163,21 @@ travel-time, catchment, or access map.
 python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreement.py
 python public-service-data-quality/scripts/build-bgd-road-surface-context.py --skip-download
 python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py
+python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
 ```
 
 Outputs:
 
 - `public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.json`
 - `public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-sample.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-sample-upazilas.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-sample-facilities.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-coding-sheet.csv`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a facility-level validation sample. The sample should test
-whether high-gap rows are caused by duplicate naming, classification
-differences, registry vintage, missing public-map points, or actual facility
-geocoding gaps. Until then, the correct publication use is source QA before
-service-access mapping.
+The next upgrade is a public-source coding pass against the 76-row facility
+validation sheet. Until coded outcomes exist, the correct publication use is
+source QA before service-access mapping, not a statement about facility
+availability, service quality, or validated catchments.

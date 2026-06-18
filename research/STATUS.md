@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module added 2026-06-19; next loop is facility-level validation-sample design) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module and validation-sample design added 2026-06-19; next loop is public-source facility coding) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -32,9 +32,9 @@ overrides priority by editing this list.
 
 1. **`public-service-data-quality`** — *current active flagship; PR and
    ai-first finished for current issue 2026-05-07; BGD source-disagreement
-   L3 module added 2026-06-19*. Current work is to design a public-source
-   facility-level validation sample for high-gap rows, zero-OSM rows, and
-   OSM-above-registry counterexamples without changing the maturity label.
+   L3 module and validation-sample design added 2026-06-19*. Current work is
+   to code the sampled DGHS facility rows against public DGHS and OSM evidence
+   without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -147,6 +147,23 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ facility-validation sample design):** Added
+  `public-service-data-quality/scripts/design-bgd-facility-validation-sample.py`,
+  generated the Bangladesh validation-sample JSON, sampled-upazila CSV,
+  sampled-facility CSV, and blank coding sheet, and wrote
+  `public-service-data-quality/facility-validation-sample.md`. The design
+  covers 20 upazilas and 76 DGHS facility rows, with 69 coordinate-ready rows.
+  The showcase route `/showcase/psdq-source-disagreement` now fetches the
+  sample JSON, shows a validation-sample panel, and links the blank coding
+  sheet. README, REPRODUCE, hook bank, quality audit, sync/review-packet
+  inclusion, and per-program status were updated. Verification passed:
+  validation-sample script and `py_compile`, `npm run build`, six gates, and
+  agent-browser desktop/mobile QA with no page-level horizontal overflow or
+  page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-validation-sample-desktop.png` and
+  `reporting-site/qa/showcase-psdq-validation-sample-mobile.png`. This is a
+  sample design, not validation outcomes, a maturity promotion, or human-final
+  upgrade. Next PSDQ loop is the public-source facility coding pass.
 - **2026-06-19 (PSDQ source-disagreement L3 module):** Added
   `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`,
   generated `psdq-bgd-source-disagreement-strata.{json,csv}`, and wrote
@@ -162,8 +179,9 @@ by leaving the board in a state the next session can read.
   overflow or page errors. Screenshots:
   `reporting-site/qa/showcase-psdq-l3-desktop.png` and
   `reporting-site/qa/showcase-psdq-l3-mobile.png`. This is an L3 evidence
-  module for report #4, not a maturity promotion or human-final upgrade. Next
-  PSDQ loop is facility-level validation-sample design.
+  module for report #4, not a maturity promotion or human-final upgrade. The
+  follow-on validation-sample design was completed in the next operational
+  note.
 - **2026-06-19 (rotation to PSDQ source-disagreement deepening):** After
   commit `225d4d2` closed the remittance L3 flow-weighting repair, the active
   flagship rotated to `public-service-data-quality` because

@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `370e26b6a1c2…`
-- `program/STATUS.md`  `4ff7ff16729e…`
-- `program/REPRODUCE.md`  `58335cf29f4a…`
+- `program/README.md`  `3e12cb44b1ed…`
+- `program/STATUS.md`  `8a818a119fae…`
+- `program/REPRODUCE.md`  `7e3e1240ebc0…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,7 +81,8 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `99600fc2d870…`
+- `program/source-disagreement-l3-module.md`  `bc2b8947537a…`
+- `program/facility-validation-sample.md`  `e1c17c3995a7…`
 - `program/limitations.md`  `8ac5d2ea407f…`
 - `program/upgrade-gap.md`  `207d3df3b8ba…`
 - `program/catchment-upgrade.md`  `4f85675317f0…`
@@ -106,6 +107,10 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-exposure-road-context.csv`  `58f3527759b5…`
 - `program/generated/psdq-bgd-facility-coordinate-extract.csv`  `6e7cfef0f458…`
 - `program/generated/psdq-bgd-facility-coordinate-summary.json`  `b031bc152cbc…`
+- `program/generated/psdq-bgd-facility-validation-coding-sheet.csv`  `cdb9950c61c8…`
+- `program/generated/psdq-bgd-facility-validation-sample-facilities.csv`  `866de878eae2…`
+- `program/generated/psdq-bgd-facility-validation-sample-upazilas.csv`  `d5d76eb5d54d…`
+- `program/generated/psdq-bgd-facility-validation-sample.json`  `114abfa96b17…`
 - `program/generated/psdq-bgd-open-buildings-admin-summary.csv`  `cff1ea1d4979…`
 - `program/generated/psdq-bgd-open-buildings-buffer-summary.json`  `92c84b2b88b2…`
 - `program/generated/psdq-bgd-open-buildings-facility-buffers.csv`  `fbb0213342e1…`
@@ -142,6 +147,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/build-thumbnail.py`  `a967e9acc16e…`
 - `program/scripts/compute-bgd-open-buildings-facility-buffers.py`  `b8916cab9fe7…`
 - `program/scripts/deepen-tier-decomposition.py`  `ffd440ac9868…`
+- `program/scripts/design-bgd-facility-validation-sample.py`  `c7eca1cd58ce…`
 - `program/scripts/download-bgd-open-buildings-points.py`  `2fad4159cad8…`
 - `program/scripts/download-phl-open-buildings-points.py`  `5d030fc8df99…`
 - `program/scripts/fetch-bgd-public-facilities.py`  `299e5597f30d…`
@@ -173,4 +179,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-18T17:46:06.292Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-18T17:58:15.588Z by `scripts/build-review-packet.mjs`.

@@ -137,6 +137,33 @@ interface PsdqSourceStrata {
   };
 }
 
+interface PsdqValidationSampleGroup {
+  sample_group: string;
+  upazila_count: number;
+  facility_rows: number;
+  coordinate_ready_facility_rows: number;
+}
+
+interface PsdqValidationCode {
+  code: string;
+  meaning: string;
+}
+
+interface PsdqValidationSample {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  sample_summary: {
+    sampled_upazilas: number;
+    sampled_facility_rows: number;
+    coordinate_ready_facility_rows: number;
+    coding_sheet_rows: number;
+    groups: PsdqValidationSampleGroup[];
+  };
+  validation_codes: PsdqValidationCode[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -269,6 +296,7 @@ function parseCsvLine(line: string) {
 export default function ShowcasePSDQ() {
   const [summary, setSummary] = useState<PsdqExposureSummary | null>(null);
   const [strata, setStrata] = useState<PsdqSourceStrata | null>(null);
+  const [validationSample, setValidationSample] = useState<PsdqValidationSample | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -287,15 +315,20 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`strata HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-sample.json").then((r) => {
+        if (!r.ok) throw new Error(`validation sample HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
       }),
     ])
-      .then(([summaryPayload, nationalPayload, strataPayload, csvText]) => {
+      .then(([summaryPayload, nationalPayload, strataPayload, validationSamplePayload, csvText]) => {
         setSummary(summaryPayload);
         setNational(nationalPayload);
         setStrata(strataPayload);
+        setValidationSample(validationSamplePayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -384,6 +417,8 @@ export default function ShowcasePSDQ() {
       </section>
 
       {strata && <PsdqValidationPanel strata={strata} />}
+
+      {validationSample && <PsdqValidationSamplePanel sample={validationSample} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -577,6 +612,91 @@ function PsdqValidationPanel({ strata }: { strata: PsdqSourceStrata }) {
       </div>
     </section>
   );
+}
+
+function PsdqValidationSamplePanel({ sample }: { sample: PsdqValidationSample }) {
+  return (
+    <section className="showcase-section psdq-sample-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Facility validation sample</p>
+          <h2>The next task is bounded before anyone starts matching by eye.</h2>
+          <p>
+            The sample design turns the upazila-level source ledger into a
+            public-source coding sheet. It selects rows from high-gap,
+            zero-OSM, OSM-above-registry, and comparison groups, then leaves
+            the validation outcomes blank until a reviewer checks DGHS rows
+            against public OSM evidence.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Sampled upazilas</span>
+            <strong>{formatNumber(sample.sample_summary.sampled_upazilas)} rows across four groups</strong>
+          </div>
+          <div>
+            <span>Coding sheet size</span>
+            <strong>{formatNumber(sample.sample_summary.coding_sheet_rows)} DGHS facility rows</strong>
+          </div>
+          <div>
+            <span>Coordinate-ready review rows</span>
+            <strong>{formatNumber(sample.sample_summary.coordinate_ready_facility_rows)} rows include DGHS coordinates</strong>
+          </div>
+          <div>
+            <span>Artifact status</span>
+            <strong>{sample.status.replaceAll("_", " ")}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-sample-grid" aria-label="PSDQ facility validation sample groups">
+        {sample.sample_summary.groups.map((group) => (
+          <div key={group.sample_group}>
+            <span>{sampleGroupLabel(group.sample_group)}</span>
+            <strong>{formatNumber(group.upazila_count)} upazilas</strong>
+            <em>
+              {formatNumber(group.facility_rows)} DGHS rows;{" "}
+              {formatNumber(group.coordinate_ready_facility_rows)} coordinate-ready
+            </em>
+          </div>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Reproduce and code the sample</p>
+        <code>python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-sample.md" download>
+          Download validation sample note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-sample.json" download>
+          Download sample JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-sample-upazilas.csv" download>
+          Download upazila sample CSV
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-sample-facilities.csv" download>
+          Download facility sample CSV
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-coding-sheet.csv" download>
+          Download blank coding sheet
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {sample.non_claim} Validation codes available:{" "}
+          {sample.validation_codes.map((item) => item.code).join(", ")}.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function sampleGroupLabel(group: string) {
+  const labels: Record<string, string> = {
+    high_exposure_gap: "High exposure gap",
+    zero_osm_high_proxy: "Zero OSM, high proxy",
+    osm_ge_registry: "OSM >= registry",
+    comparison_mid_ratio: "Mid-ratio comparison",
+  };
+  return labels[group] || group.replaceAll("_", " ");
 }
 
 function PsdqStrataChart({ strata }: { strata: PsdqRatioStratum[] }) {

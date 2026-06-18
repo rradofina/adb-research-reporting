@@ -58,6 +58,7 @@ const ARTIFACTS = [
   { key: "coverage", file: "coverage.md", label: "Coverage" },
   { key: "results", file: "results.md", label: "Results" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
+  { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },

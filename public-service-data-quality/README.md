@@ -35,6 +35,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-exposure-ranked-disagreement.py` — assigns Bangladesh OSM health features to ADM3/upazila polygons and joins OSM, DGHS, and Open Buildings into an exposure-ranked gap screen
 - `scripts/build-bgd-road-surface-context.py` — aggregates the HeiGIT/HDX Bangladesh road-surface GeoPackage to upazilas and joins it to the exposure-ranked PSDQ screen
 - `scripts/build-bgd-source-disagreement-strata.py` — packages the Bangladesh exposure and road-context outputs into L3 ratio strata, validation residues, and top validation rows for the showcase report
+- `scripts/design-bgd-facility-validation-sample.py` — designs the Bangladesh facility-level validation sample and blank coding sheet from the L3 strata and DGHS facility-coordinate extract
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -59,6 +60,10 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-exposure-road-context.csv` — exposure-ranked PSDQ table joined to road-surface context
 - `generated/psdq-bgd-exposure-road-context-summary.json` — chart-ready service-gap plus road-context summary
 - `generated/psdq-bgd-source-disagreement-strata.{json,csv}` — L3 source-disagreement ratio buckets, validation residues, and top rows for the showcase report
+- `generated/psdq-bgd-facility-validation-sample.json` — deterministic Bangladesh validation-sample design, public-source stack, and non-claim
+- `generated/psdq-bgd-facility-validation-sample-upazilas.csv` — 20 sampled upazila rows across high-gap, zero-OSM, OSM-above-registry, and comparison groups
+- `generated/psdq-bgd-facility-validation-sample-facilities.csv` — 76 sampled DGHS facility rows selected for public-source review
+- `generated/psdq-bgd-facility-validation-coding-sheet.csv` — blank validation coding sheet with suggested public OSM checks where coordinates are available
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -146,6 +151,12 @@ Current audit result:
   have OSM counts equal to or above the active registry count; 234 rows meet
   the road-surface scoring threshold. This is a source-validation ledger for
   `/showcase/psdq-source-disagreement`, not an access or quality result.
+- **BGD facility-validation sample design:** the no-network sample pass reads
+  the L3 strata, exposure-ranked table, and DGHS facility-coordinate extract.
+  It writes `generated/psdq-bgd-facility-validation-sample.json`, two sample
+  CSVs, and a blank coding sheet with 20 sampled upazila rows and 76 DGHS
+  facility rows. Of the sampled facility rows, 69 are coordinate-ready. This
+  is a public-source validation workplan, not a validation result.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -167,6 +178,7 @@ python public-service-data-quality/scripts/compute-bgd-open-buildings-facility-b
 python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreement.py
 python public-service-data-quality/scripts/build-bgd-road-surface-context.py --skip-download
 python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py
+python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

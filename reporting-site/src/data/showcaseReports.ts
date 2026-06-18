@@ -100,9 +100,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
     statusLabel: "L3 evidence module",
-    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, and building/road-context coverage before access maps are trusted.",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, and a facility-level validation sample before access maps are trusted.",
     evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
-    visual: "Ranked registry-versus-OSM workbench plus ratio-strata validation ledger",
+    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, and validation-sample panel",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "BGD source-disagreement route now reads a formal L3 strata artifact, evidence note, and validation-led UI.",
-    publicationGap: "Needs facility-level matching sample, registry-vintage notes, and independent validation before stronger access-map use.",
-    nextUpgrade: "Design the facility-level validation sample and test high-gap rows against duplicates, classification, and vintage differences.",
+    qaSummary: "BGD source-disagreement route reads formal L3 strata plus a deterministic 20-upazila, 76-row validation-sample design.",
+    publicationGap: "Needs the public-source coding pass, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Code the sampled facility rows against public DGHS and OSM evidence, then summarize duplicates, classification, coordinate, and missing-map outcomes.",
   },
   5: {
     readiness: "l3-candidate",

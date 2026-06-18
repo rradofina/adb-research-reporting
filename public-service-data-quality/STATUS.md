@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module added; facility-level validation sample is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample design added; public-source coding pass is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -22,12 +22,33 @@ Last updated: 2026-06-19.
 
 A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
-matching strata and validation caveats, make the source upgrade clear in the
-public surface, and preserve the existing PR maturity label without implying
-human-final review.
+matching strata, validation sample, and caveats, make the source upgrade clear
+in the public surface, and preserve the existing PR maturity label without
+implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh facility-validation sample design for
+  the PSDQ source-disagreement L3 module. New no-network script
+  `scripts/design-bgd-facility-validation-sample.py` reads the L3 strata,
+  exposure-ranked disagreement table, and DGHS facility-coordinate extract,
+  then writes `generated/psdq-bgd-facility-validation-sample.json`,
+  `generated/psdq-bgd-facility-validation-sample-upazilas.csv`,
+  `generated/psdq-bgd-facility-validation-sample-facilities.csv`, and
+  `generated/psdq-bgd-facility-validation-coding-sheet.csv`. The design
+  covers 20 sampled upazilas and 76 DGHS facility rows; 69 sampled facility
+  rows are coordinate-ready. Added `facility-validation-sample.md`, updated
+  the source-disagreement L3 note, README, REPRODUCE, evidence sync and
+  review-packet inclusion, showcase registry, hook bank, quality audit, and
+  `/showcase/psdq-source-disagreement`. The route now fetches the sample JSON,
+  shows a validation-sample panel, and links the blank coding sheet. This is
+  not a validation outcome, maturity promotion, or human-final upgrade.
+  Verification completed so far: sample script and `py_compile` passed;
+  `npm run build` passed; six deterministic gates passed; browser QA passed at
+  1365px desktop and 375px mobile with no page-level horizontal overflow and
+  no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-validation-sample-desktop.png` and
+  `reporting-site/qa/showcase-psdq-validation-sample-mobile.png`.
 - **2026-06-19:** Added the Bangladesh source-disagreement L3 evidence module
   for the showcase bench. New no-network script
   `scripts/build-bgd-source-disagreement-strata.py` reads the existing BGD
@@ -132,18 +153,16 @@ human-final review.
 
 Current loop:
 
-1. Design a facility-level validation sample for the Bangladesh L3 module:
-   high exposure-proxy rows, zero-OSM rows, OSM-above-registry rows, and a
-   small set of ordinary rows.
-2. Define the validation coding sheet before looking up individual facilities:
-   duplicate naming, facility classification mismatch, registry vintage,
-   missing public-map point, coordinate uncertainty, and unresolved source
-   conflict.
-3. Identify public validation sources only. Do not use private facility lists
-   or owner-only credentials. Stop if validation requires non-public access.
-4. If public validation is feasible, add a deterministic sample artifact and
-   update the L3 note. If not, add a source-gap note and keep the showcase at
-   source-QA status.
+1. Execute the public-source coding pass against
+   `generated/psdq-bgd-facility-validation-coding-sheet.csv`.
+2. Use only public DGHS rows and OSM/Overpass evidence. Do not use private
+   facility lists or owner-only credentials. Stop if validation requires
+   non-public access.
+3. Code each sampled row as confirmed same facility, probable duplicate or
+   alias, classification mismatch, registry coordinate issue, missing
+   public-map point, OSM-only candidate, or unresolved public-source evidence.
+4. Generate a deterministic coded-output artifact and summarize validation
+   codes by sample group before changing any source-disagreement claim.
 5. Rerun sync/build/gates/browser QA after any public-surface change.
 
 Historical publication-ladder closeout remains below for context.

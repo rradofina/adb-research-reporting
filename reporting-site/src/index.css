@@ -3764,6 +3764,55 @@
     gap: 1rem;
   }
 
+  .psdq-sample-section {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .psdq-sample-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-sample-grid > div {
+    min-width: 0;
+    border-top: 3px solid var(--accent);
+    padding: 0.9rem 0 0;
+  }
+
+  .psdq-sample-grid span {
+    display: block;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .psdq-sample-grid strong {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--ink);
+    font-size: var(--type-copy-lg);
+    font-weight: var(--weight-semibold);
+    line-height: 1.12;
+  }
+
+  .psdq-sample-grid em {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .psdq-sample-downloads .psdq-method-note {
+    margin-top: 0.25rem;
+    padding-top: 0.75rem;
+  }
+
   .psdq-strata-chart-wrap {
     overflow-x: auto;
     max-width: 100%;
@@ -4977,6 +5026,10 @@
     }
 
     .psdq-hero-stats {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .psdq-sample-grid {
       grid-template-columns: minmax(0, 1fr);
     }
 

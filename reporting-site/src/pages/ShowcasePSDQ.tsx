@@ -338,6 +338,69 @@ interface PsdqCoordinateRepairSummary {
   non_claim: string;
 }
 
+interface PsdqPublicMapGapGroupCount {
+  sample_group: string;
+  rows: number;
+  valid_coordinate_reused_within_sample_public_map_gap: number;
+  same_upazila_specific_name_signal_far_from_registry_coordinate: number;
+  same_upazila_specific_name_signal_outside_500m: number;
+  threshold_sensitive_same_upazila_osm_500_1000m: number;
+  zero_osm_in_expected_public_upazila: number;
+  same_upazila_osm_present_but_not_at_facility: number;
+  no_nearby_same_upazila_osm_health_signal_within_3km: number;
+}
+
+interface PsdqPublicMapGapUpazilaRow {
+  join_key: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  public_map_gap_rows: number;
+  active_clinical_facilities: number;
+  osm_health: number;
+  registry_minus_osm_clinical: number;
+  registry_gap_share: number;
+  underobserved_buildings_3km_p85_proxy: number;
+  coordinate_repair_rows_same_upazila: number;
+  valid_coordinate_reused_within_sample_public_map_gap: number;
+  same_upazila_specific_name_signal_far_from_registry_coordinate: number;
+  same_upazila_specific_name_signal_outside_500m: number;
+  threshold_sensitive_same_upazila_osm_500_1000m: number;
+  zero_osm_in_expected_public_upazila: number;
+  same_upazila_osm_present_but_not_at_facility: number;
+  no_nearby_same_upazila_osm_health_signal_within_3km: number;
+}
+
+interface PsdqPublicMapGapSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  public_map_gap_scope: {
+    public_map_gap_rows_checked: number;
+    priority_1_high_exposure_rows: number;
+    priority_3_spot_check_rows: number;
+    rows_with_valid_coordinate: number;
+    rows_inside_expected_upazila: number;
+    rows_with_duplicate_sample_coordinate: number;
+    rows_in_upazilas_with_coordinate_repair_flags: number;
+    rows_in_zero_osm_expected_upazilas: number;
+    rows_with_same_upazila_osm_health_features: number;
+    rows_with_same_upazila_specific_name_signal_outside_500m: number;
+    rows_with_same_upazila_specific_name_signal_far_from_registry_coordinate: number;
+    rows_threshold_sensitive_500m_to_1km: number;
+    rows_with_nearest_any_osm_health_within_1km: number;
+    rows_with_nearest_any_osm_health_beyond_3km: number;
+    rows_with_nearest_same_upazila_osm_health_beyond_3km: number;
+    rows_closed_as_resolved: number;
+    rows_retained_open: number;
+  };
+  public_map_gap_code_counts: PsdqCandidateResolutionCount[];
+  public_map_gap_counts_by_group: PsdqPublicMapGapGroupCount[];
+  evidence_strength_counts: PsdqCandidateResolutionCount[];
+  upazila_queue_rows: PsdqPublicMapGapUpazilaRow[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -478,6 +541,7 @@ export default function ShowcasePSDQ() {
   const [candidatePublicSourceCheckSummary, setCandidatePublicSourceCheckSummary] =
     useState<PsdqCandidatePublicSourceCheckSummary | null>(null);
   const [coordinateRepairSummary, setCoordinateRepairSummary] = useState<PsdqCoordinateRepairSummary | null>(null);
+  const [publicMapGapSummary, setPublicMapGapSummary] = useState<PsdqPublicMapGapSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -520,6 +584,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`coordinate repair HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`public map gap HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -535,6 +603,7 @@ export default function ShowcasePSDQ() {
         candidateResolutionPayload,
         candidatePublicSourceCheckPayload,
         coordinateRepairPayload,
+        publicMapGapPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -546,6 +615,7 @@ export default function ShowcasePSDQ() {
         setCandidateResolutionSummary(candidateResolutionPayload);
         setCandidatePublicSourceCheckSummary(candidatePublicSourceCheckPayload);
         setCoordinateRepairSummary(coordinateRepairPayload);
+        setPublicMapGapSummary(publicMapGapPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -648,6 +718,8 @@ export default function ShowcasePSDQ() {
       )}
 
       {coordinateRepairSummary && <PsdqCoordinateRepairPanel summary={coordinateRepairSummary} />}
+
+      {publicMapGapSummary && <PsdqPublicMapGapPanel summary={publicMapGapSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -1843,6 +1915,246 @@ function PsdqCoordinateRepairDistanceChart({ rows }: { rows: PsdqCoordinateRepai
             </circle>
             <text x={countX} y={y + 6} className="psdq-value" textAnchor="end">
               {formatNumber(distance, 1)} km
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+const PUBLIC_MAP_GAP_ORDER = [
+  "valid_coordinate_reused_within_sample_public_map_gap",
+  "same_upazila_specific_name_signal_far_from_registry_coordinate",
+  "same_upazila_specific_name_signal_outside_500m",
+  "threshold_sensitive_same_upazila_osm_500_1000m",
+  "zero_osm_in_expected_public_upazila",
+  "same_upazila_osm_present_but_not_at_facility",
+  "no_nearby_same_upazila_osm_health_signal_within_3km",
+] as const;
+
+const PUBLIC_MAP_GAP_LABELS: Record<string, string> = {
+  valid_coordinate_reused_within_sample_public_map_gap: "Reused valid coordinate",
+  same_upazila_specific_name_signal_far_from_registry_coordinate: "Far same-name signal",
+  same_upazila_specific_name_signal_outside_500m: "Name signal outside 500m",
+  threshold_sensitive_same_upazila_osm_500_1000m: "500m to 1km sensitive",
+  zero_osm_in_expected_public_upazila: "Zero OSM in upazila",
+  same_upazila_osm_present_but_not_at_facility: "OSM present, not facility",
+  no_nearby_same_upazila_osm_health_signal_within_3km: "No same-upazila OSM within 3km",
+};
+
+function publicMapGapColor(code: string) {
+  const colors: Record<string, string> = {
+    valid_coordinate_reused_within_sample_public_map_gap: "#002569",
+    same_upazila_specific_name_signal_far_from_registry_coordinate: "#7A4E15",
+    same_upazila_specific_name_signal_outside_500m: "#007DB8",
+    threshold_sensitive_same_upazila_osm_500_1000m: "#FBB00E",
+    zero_osm_in_expected_public_upazila: "#9B2226",
+    same_upazila_osm_present_but_not_at_facility: "#D97706",
+    no_nearby_same_upazila_osm_health_signal_within_3km: "#4A5568",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function publicMapGapCount(summary: PsdqPublicMapGapSummary, code: string) {
+  return summary.public_map_gap_code_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function PsdqPublicMapGapPanel({ summary }: { summary: PsdqPublicMapGapSummary }) {
+  const outsideBufferNameSignals =
+    summary.public_map_gap_scope.rows_with_same_upazila_specific_name_signal_far_from_registry_coordinate +
+    summary.public_map_gap_scope.rows_with_same_upazila_specific_name_signal_outside_500m;
+
+  return (
+    <section className="showcase-section psdq-public-map-gap-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Public-map-gap triage</p>
+          <h2>The 40 missing-map rows now have an inspection queue.</h2>
+          <p>
+            After separating coordinate-source failures, the public-map-gap
+            pass keeps every valid-coordinate row open and sorts it by what a
+            reviewer should check next: duplicate coordinates, same-upazila
+            name signals, matching-radius sensitivity, zero-OSM upazilas, or
+            row-level absence from nearby public-map health features.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Public-map-gap rows checked</span>
+            <strong>
+              {formatNumber(summary.public_map_gap_scope.public_map_gap_rows_checked)} rows;{" "}
+              {formatNumber(summary.public_map_gap_scope.rows_closed_as_resolved)} closed
+            </strong>
+          </div>
+          <div>
+            <span>Priority-1 queue</span>
+            <strong>{formatNumber(summary.public_map_gap_scope.priority_1_high_exposure_rows)} high-exposure rows</strong>
+          </div>
+          <div>
+            <span>Zero-OSM expected upazilas</span>
+            <strong>{formatNumber(summary.public_map_gap_scope.rows_in_zero_osm_expected_upazilas)} rows</strong>
+          </div>
+          <div>
+            <span>Coordinate reuse warning</span>
+            <strong>{formatNumber(summary.public_map_gap_scope.rows_with_duplicate_sample_coordinate)} rows reuse a sampled coordinate</strong>
+          </div>
+          <div>
+            <span>Name support outside buffer</span>
+            <strong>{formatNumber(outsideBufferNameSignals)} rows need row-level source review</strong>
+          </div>
+          <div>
+            <span>Coordinate-repair overlap</span>
+            <strong>{formatNumber(summary.public_map_gap_scope.rows_in_upazilas_with_coordinate_repair_flags)} rows sit in upazilas with repair flags</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-public-map-gap-grid">
+        {PUBLIC_MAP_GAP_ORDER.filter((code) => publicMapGapCount(summary, code) > 0).map((code) => (
+          <div key={code}>
+            <span>{PUBLIC_MAP_GAP_LABELS[code]}</span>
+            <strong>{formatNumber(publicMapGapCount(summary, code))}</strong>
+            <em>{publicMapGapMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqPublicMapGapQueueChart rows={summary.upazila_queue_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ public-map-gap lane legend">
+        {PUBLIC_MAP_GAP_ORDER.filter((code) => publicMapGapCount(summary, code) > 0).map((code) => (
+          <span key={code}>
+            <i style={{ background: publicMapGapColor(code) }} /> {PUBLIC_MAP_GAP_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the public-map-gap triage</p>
+        <code>python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-public-map-gap.md" download>
+          Download public-map-gap note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-summary.json" download>
+          Download public-map-gap summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap.csv" download>
+          Download public-map-gap CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function publicMapGapMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    valid_coordinate_reused_within_sample_public_map_gap: "Valid coordinate, but another sampled row uses it.",
+    same_upazila_specific_name_signal_far_from_registry_coordinate: "Strong same-upazila name support appears far from the registry coordinate.",
+    same_upazila_specific_name_signal_outside_500m: "Specific same-upazila OSM name support sits outside the original buffer.",
+    threshold_sensitive_same_upazila_osm_500_1000m: "An OSM health feature appears just outside the 500m rule.",
+    zero_osm_in_expected_public_upazila: "The pinned OSM pull has no joined health feature in that upazila.",
+    same_upazila_osm_present_but_not_at_facility: "The upazila has mapped health features, but not at the sampled coordinate.",
+    no_nearby_same_upazila_osm_health_signal_within_3km: "No same-upazila OSM health clue sits within 3km.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPublicMapGapQueueChart({ rows }: { rows: PsdqPublicMapGapUpazilaRow[] }) {
+  const width = 1040;
+  const rowHeight = 46;
+  const headerHeight = 64;
+  const height = headerHeight + rows.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 240;
+  const barWidth = 310;
+  const clinicalX = 590;
+  const osmX = 675;
+  const proxyX = 760;
+  const repairX = 955;
+
+  return (
+    <svg
+      className="psdq-coded-chart psdq-public-map-gap-chart"
+      viewBox={`0 0 ${width} ${height}`}
+      width={width}
+      height={height}
+      role="img"
+      aria-label="Public-map-gap upazila queue after coordinate screening"
+    >
+      <text x={0} y={18} className="showcase-heatmap-title">
+        Public-map-gap queue, upazila context after coordinate screening
+      </text>
+      <text x={0} y={38} className="showcase-heatmap-year">
+        Unit: sampled DGHS row still open; source: public-map-gap summary JSON
+      </text>
+      <text x={barX} y={58} className="psdq-chart-head">
+        Open-row lane mix
+      </text>
+      <text x={clinicalX} y={58} className="psdq-chart-head">
+        DGHS
+      </text>
+      <text x={osmX} y={58} className="psdq-chart-head">
+        OSM
+      </text>
+      <text x={proxyX} y={58} className="psdq-chart-head">
+        Under-observed proxy
+      </text>
+      <text x={repairX} y={58} className="psdq-chart-head" textAnchor="end">
+        Repair flags
+      </text>
+
+      {rows.map((row, index) => {
+        const y = headerHeight + index * rowHeight;
+        let x = barX;
+        return (
+          <g key={row.join_key}>
+            <text x={labelX} y={y + 15} className="psdq-row-label">
+              {row.upazila_name}
+            </text>
+            <text x={labelX} y={y + 31} className="psdq-row-sub">
+              {row.district_name}, {row.division_name}
+            </text>
+            <rect x={barX} y={y} width={barWidth} height={22} fill="#eef2f5" />
+            {PUBLIC_MAP_GAP_ORDER.map((code) => {
+              const value = Number(row[code] || 0);
+              const segmentWidth = row.public_map_gap_rows > 0 ? (value / row.public_map_gap_rows) * barWidth : 0;
+              const segment = (
+                <rect
+                  key={code}
+                  x={x}
+                  y={y}
+                  width={Math.max(0, segmentWidth)}
+                  height={22}
+                  fill={publicMapGapColor(code)}
+                >
+                  <title>{`${row.upazila_name}: ${formatNumber(value)} ${PUBLIC_MAP_GAP_LABELS[code]}`}</title>
+                </rect>
+              );
+              x += segmentWidth;
+              return segment;
+            })}
+            <text x={barX + barWidth + 12} y={y + 16} className="psdq-value">
+              {formatNumber(row.public_map_gap_rows)}
+            </text>
+            <text x={clinicalX} y={y + 16} className="psdq-value">
+              {formatNumber(row.active_clinical_facilities)}
+            </text>
+            <text x={osmX} y={y + 16} className="psdq-value">
+              {formatNumber(row.osm_health)}
+            </text>
+            <text x={proxyX} y={y + 16} className="psdq-value">
+              {formatNumber(row.underobserved_buildings_3km_p85_proxy)}
+            </text>
+            <text x={repairX} y={y + 16} className="psdq-value" textAnchor="end">
+              {row.coordinate_repair_rows_same_upazila > 0
+                ? formatNumber(row.coordinate_repair_rows_same_upazila)
+                : "none"}
             </text>
           </g>
         );

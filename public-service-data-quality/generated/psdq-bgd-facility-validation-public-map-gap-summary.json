@@ -1,0 +1,874 @@
+{
+  "generated_at": "2026-06-18T19:28:32Z",
+  "program": "public-service-data-quality",
+  "country": "Bangladesh",
+  "attestation_chain": "ai-first",
+  "status": "ai_public_source_public_map_gap_triage_not_human_validation",
+  "goal_level": "L3 public-map-gap triage",
+  "unit": "sampled DGHS row already marked as public-map gap at a valid coordinate",
+  "source_inputs": [
+    {
+      "path": "generated\\psdq-bgd-facility-validation-ai-review.csv",
+      "role": "AI public-source review ledger; public-map-gap worklist"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-coded-screen.csv",
+      "role": "sampled DGHS rows and exact-coordinate reuse check"
+    },
+    {
+      "path": "generated\\psdq-bgd-facility-validation-coordinate-repair.csv",
+      "role": "same-upazila coordinate-repair warning counts"
+    },
+    {
+      "path": "generated\\psdq-bgd-exposure-ranked-disagreement.csv",
+      "role": "upazila-level registry, OSM, and Open Buildings context"
+    },
+    {
+      "path": "generated\\psdq-bgd-osm-health-upazila.csv",
+      "role": "upazila-level OSM health-feature counts assigned to geoBoundaries ADM3"
+    },
+    {
+      "path": ".cache\\bgd_osm_health_features_overpass.json",
+      "role": "cached public OSM health-feature nearest-neighbor and same-upazila name-signal check",
+      "timestamp_osm_base": "2026-04-29T09:11:39Z"
+    },
+    {
+      "path_pattern": ".cache\\bgd_dghs_p*.json",
+      "role": "cached DGHS public DataTables registry rows, including public profile, name, type, and active status"
+    }
+  ],
+  "public_map_gap_scope": {
+    "public_map_gap_rows_checked": 40,
+    "priority_1_high_exposure_rows": 30,
+    "priority_3_spot_check_rows": 10,
+    "rows_with_valid_coordinate": 40,
+    "rows_inside_expected_upazila": 40,
+    "rows_with_duplicate_sample_coordinate": 2,
+    "rows_in_upazilas_with_coordinate_repair_flags": 18,
+    "rows_in_zero_osm_expected_upazilas": 18,
+    "rows_with_same_upazila_osm_health_features": 22,
+    "rows_with_same_upazila_specific_name_signal_outside_500m": 1,
+    "rows_with_same_upazila_specific_name_signal_far_from_registry_coordinate": 2,
+    "rows_threshold_sensitive_500m_to_1km": 2,
+    "rows_with_nearest_any_osm_health_within_1km": 2,
+    "rows_with_nearest_any_osm_health_beyond_3km": 32,
+    "rows_with_nearest_same_upazila_osm_health_beyond_3km": 14,
+    "rows_closed_as_resolved": 0,
+    "rows_retained_open": 40
+  },
+  "public_map_gap_code_counts": [
+    {
+      "name": "valid_coordinate_reused_within_sample_public_map_gap",
+      "rows": 2
+    },
+    {
+      "name": "same_upazila_specific_name_signal_far_from_registry_coordinate",
+      "rows": 2
+    },
+    {
+      "name": "same_upazila_specific_name_signal_outside_500m",
+      "rows": 1
+    },
+    {
+      "name": "threshold_sensitive_same_upazila_osm_500_1000m",
+      "rows": 2
+    },
+    {
+      "name": "zero_osm_in_expected_public_upazila",
+      "rows": 18
+    },
+    {
+      "name": "same_upazila_osm_present_but_not_at_facility",
+      "rows": 3
+    },
+    {
+      "name": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "rows": 12
+    }
+  ],
+  "public_map_gap_counts_by_group": [
+    {
+      "sample_group": "comparison_mid_ratio",
+      "rows": 9,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 2,
+      "same_upazila_specific_name_signal_outside_500m": 1,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 6
+    },
+    {
+      "sample_group": "high_exposure_gap",
+      "rows": 12,
+      "valid_coordinate_reused_within_sample_public_map_gap": 2,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 1,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 3,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 6
+    },
+    {
+      "sample_group": "osm_ge_registry",
+      "rows": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 1,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "sample_group": "zero_osm_high_proxy",
+      "rows": 18,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 18,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    }
+  ],
+  "evidence_strength_counts": [
+    {
+      "name": "high_for_coordinate_reuse_annotation",
+      "rows": 2
+    },
+    {
+      "name": "high_for_upazila_level_public_map_absence",
+      "rows": 18
+    },
+    {
+      "name": "medium_for_buffer_sensitivity",
+      "rows": 2
+    },
+    {
+      "name": "medium_for_coordinate_or_name_source_warning",
+      "rows": 2
+    },
+    {
+      "name": "medium_for_facility_specific_public_map_gap",
+      "rows": 3
+    },
+    {
+      "name": "medium_for_possible_outside_buffer_match",
+      "rows": 1
+    },
+    {
+      "name": "medium_high_for_facility_specific_public_map_absence",
+      "rows": 12
+    }
+  ],
+  "upazila_queue_rows": [
+    {
+      "join_key": "narayanganj|narayanganj sadar",
+      "division_name": "Dhaka",
+      "district_name": "Narayanganj",
+      "upazila_name": "Narayanganj Sadar",
+      "public_map_gap_rows": 4,
+      "active_clinical_facilities": 141,
+      "osm_health": 5,
+      "registry_minus_osm_clinical": 136,
+      "registry_gap_share": 0.9645,
+      "underobserved_buildings_3km_p85_proxy": 139961,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 2,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 1,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 1
+    },
+    {
+      "join_key": "narayanganj|sonargaon",
+      "division_name": "Dhaka",
+      "district_name": "Narayanganj",
+      "upazila_name": "Sonargaon",
+      "public_map_gap_rows": 4,
+      "active_clinical_facilities": 79,
+      "osm_health": 0,
+      "registry_minus_osm_clinical": 79,
+      "registry_gap_share": 1.0,
+      "underobserved_buildings_3km_p85_proxy": 70633,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 4,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "jashore|sharsha",
+      "division_name": "Khulna",
+      "district_name": "Jashore",
+      "upazila_name": "Sharsha",
+      "public_map_gap_rows": 4,
+      "active_clinical_facilities": 80,
+      "osm_health": 0,
+      "registry_minus_osm_clinical": 80,
+      "registry_gap_share": 1.0,
+      "underobserved_buildings_3km_p85_proxy": 64431,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 4,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "narayanganj|araihazar",
+      "division_name": "Dhaka",
+      "district_name": "Narayanganj",
+      "upazila_name": "Araihazar",
+      "public_map_gap_rows": 4,
+      "active_clinical_facilities": 74,
+      "osm_health": 0,
+      "registry_minus_osm_clinical": 74,
+      "registry_gap_share": 1.0,
+      "underobserved_buildings_3km_p85_proxy": 63684,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 4,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "gazipur|gazipur sadar",
+      "division_name": "Dhaka",
+      "district_name": "Gazipur",
+      "upazila_name": "Gazipur Sadar",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 197,
+      "osm_health": 58,
+      "registry_minus_osm_clinical": 139,
+      "registry_gap_share": 0.7056,
+      "underobserved_buildings_3km_p85_proxy": 172755,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 1,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 2
+    },
+    {
+      "join_key": "pabna|pabna sadar",
+      "division_name": "Rajshahi",
+      "district_name": "Pabna",
+      "upazila_name": "Pabna Sadar",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 144,
+      "osm_health": 4,
+      "registry_minus_osm_clinical": 140,
+      "registry_gap_share": 0.9722,
+      "underobserved_buildings_3km_p85_proxy": 107948,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 2,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 1
+    },
+    {
+      "join_key": "thakurgaon|pirganj",
+      "division_name": "Rangpur",
+      "district_name": "Thakurgaon",
+      "upazila_name": "Pirganj",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 51,
+      "osm_health": 0,
+      "registry_minus_osm_clinical": 51,
+      "registry_gap_share": 1.0,
+      "underobserved_buildings_3km_p85_proxy": 61258,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 3,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "dinajpur|parbatipur",
+      "division_name": "Rangpur",
+      "district_name": "Dinajpur",
+      "upazila_name": "Parbatipur",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 63,
+      "osm_health": 0,
+      "registry_minus_osm_clinical": 63,
+      "registry_gap_share": 1.0,
+      "underobserved_buildings_3km_p85_proxy": 59965,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 3,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "netrakona|durgapur",
+      "division_name": "Mymensingh",
+      "district_name": "Netrakona",
+      "upazila_name": "Durgapur",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 47,
+      "osm_health": 5,
+      "registry_minus_osm_clinical": 42,
+      "registry_gap_share": 0.8936,
+      "underobserved_buildings_3km_p85_proxy": 26142,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 1,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 2
+    },
+    {
+      "join_key": "pabna|bera",
+      "division_name": "Rajshahi",
+      "district_name": "Pabna",
+      "upazila_name": "Bera",
+      "public_map_gap_rows": 3,
+      "active_clinical_facilities": 55,
+      "osm_health": 7,
+      "registry_minus_osm_clinical": 48,
+      "registry_gap_share": 0.8727,
+      "underobserved_buildings_3km_p85_proxy": 25451,
+      "coordinate_repair_rows_same_upazila": 0,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 1,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 2
+    },
+    {
+      "join_key": "natore|gurudaspur",
+      "division_name": "Rajshahi",
+      "district_name": "Natore",
+      "upazila_name": "Gurudaspur",
+      "public_map_gap_rows": 2,
+      "active_clinical_facilities": 38,
+      "osm_health": 5,
+      "registry_minus_osm_clinical": 33,
+      "registry_gap_share": 0.8684,
+      "underobserved_buildings_3km_p85_proxy": 26495,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 2
+    },
+    {
+      "join_key": "kushtia|kushtia sadar",
+      "division_name": "Khulna",
+      "district_name": "Kushtia",
+      "upazila_name": "Kushtia Sadar",
+      "public_map_gap_rows": 1,
+      "active_clinical_facilities": 108,
+      "osm_health": 6,
+      "registry_minus_osm_clinical": 102,
+      "registry_gap_share": 0.9444,
+      "underobserved_buildings_3km_p85_proxy": 113031,
+      "coordinate_repair_rows_same_upazila": 2,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 1
+    },
+    {
+      "join_key": "narsingdi|narsingdi sadar",
+      "division_name": "Dhaka",
+      "district_name": "Narsingdi",
+      "upazila_name": "Narsingdi Sadar",
+      "public_map_gap_rows": 1,
+      "active_clinical_facilities": 123,
+      "osm_health": 4,
+      "registry_minus_osm_clinical": 119,
+      "registry_gap_share": 0.9675,
+      "underobserved_buildings_3km_p85_proxy": 100219,
+      "coordinate_repair_rows_same_upazila": 3,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 1
+    },
+    {
+      "join_key": "dhaka|demra",
+      "division_name": "Dhaka",
+      "district_name": "Dhaka",
+      "upazila_name": "Demra",
+      "public_map_gap_rows": 1,
+      "active_clinical_facilities": 20,
+      "osm_health": 2,
+      "registry_minus_osm_clinical": 18,
+      "registry_gap_share": 0.9,
+      "underobserved_buildings_3km_p85_proxy": 25377,
+      "coordinate_repair_rows_same_upazila": 2,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 1,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 0,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    },
+    {
+      "join_key": "chattogram|kotwali",
+      "division_name": "Chattogram",
+      "district_name": "Chattogram",
+      "upazila_name": "Kotwali",
+      "public_map_gap_rows": 1,
+      "active_clinical_facilities": 18,
+      "osm_health": 71,
+      "registry_minus_osm_clinical": 0,
+      "registry_gap_share": 0.0,
+      "underobserved_buildings_3km_p85_proxy": 0,
+      "coordinate_repair_rows_same_upazila": 1,
+      "valid_coordinate_reused_within_sample_public_map_gap": 0,
+      "same_upazila_specific_name_signal_far_from_registry_coordinate": 0,
+      "same_upazila_specific_name_signal_outside_500m": 0,
+      "threshold_sensitive_same_upazila_osm_500_1000m": 1,
+      "zero_osm_in_expected_public_upazila": 0,
+      "same_upazila_osm_present_but_not_at_facility": 0,
+      "no_nearby_same_upazila_osm_health_signal_within_3km": 0
+    }
+  ],
+  "review_row_chart_rows": [
+    {
+      "review_id": "PSDQ-BGD-AI-012",
+      "facility_name": "Narayanganj 300 Bed Hospital",
+      "upazila_name": "Narayanganj Sadar",
+      "join_key": "narayanganj|narayanganj sadar",
+      "public_map_gap_code": "valid_coordinate_reused_within_sample_public_map_gap",
+      "nearest_same_upazila_osm_health_distance_m": 1129.9,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.7857
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-013",
+      "facility_name": "Narayanganj General (Victoria) Hospital",
+      "upazila_name": "Narayanganj Sadar",
+      "join_key": "narayanganj|narayanganj sadar",
+      "public_map_gap_code": "valid_coordinate_reused_within_sample_public_map_gap",
+      "nearest_same_upazila_osm_health_distance_m": 1129.9,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 1.0
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-062",
+      "facility_name": "Durgapur Upazila Health Complex",
+      "upazila_name": "Durgapur",
+      "join_key": "netrakona|durgapur",
+      "public_map_gap_code": "same_upazila_specific_name_signal_far_from_registry_coordinate",
+      "nearest_same_upazila_osm_health_distance_m": 205709.1,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 1.0
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-065",
+      "facility_name": "Bera Upazila Health Complex",
+      "upazila_name": "Bera",
+      "join_key": "pabna|bera",
+      "public_map_gap_code": "same_upazila_specific_name_signal_far_from_registry_coordinate",
+      "nearest_same_upazila_osm_health_distance_m": 16503.1,
+      "same_upazila_osm_health_count": 7,
+      "best_same_upazila_name_score": 0.9818
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-068",
+      "facility_name": "Aichi Medical College & Hospital Ltd.",
+      "upazila_name": "Demra",
+      "join_key": "dhaka|demra",
+      "public_map_gap_code": "same_upazila_specific_name_signal_outside_500m",
+      "nearest_same_upazila_osm_health_distance_m": 2286.9,
+      "same_upazila_osm_health_count": 2,
+      "best_same_upazila_name_score": 1.0
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-010",
+      "facility_name": "KPJ SPECIALIZED HOSPITAL & NURSING COLLEGE",
+      "upazila_name": "Gazipur Sadar",
+      "join_key": "gazipur|gazipur sadar",
+      "public_map_gap_code": "threshold_sensitive_same_upazila_osm_500_1000m",
+      "nearest_same_upazila_osm_health_distance_m": 911.6,
+      "same_upazila_osm_health_count": 58,
+      "best_same_upazila_name_score": 0.5412
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-071",
+      "facility_name": "Chattogram 250 bed General Hospital",
+      "upazila_name": "Kotwali",
+      "join_key": "chattogram|kotwali",
+      "public_map_gap_code": "threshold_sensitive_same_upazila_osm_500_1000m",
+      "nearest_same_upazila_osm_health_distance_m": 612.7,
+      "same_upazila_osm_health_count": 71,
+      "best_same_upazila_name_score": 0.7143
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-021",
+      "facility_name": "Sonargaon Upazila Health Complex",
+      "upazila_name": "Sonargaon",
+      "join_key": "narayanganj|sonargaon",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-022",
+      "facility_name": "ABUL BASHAR HOSPITAL & LAB",
+      "upazila_name": "Sonargaon",
+      "join_key": "narayanganj|sonargaon",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-023",
+      "facility_name": "Baradi Union Health Sub Center",
+      "upazila_name": "Sonargaon",
+      "join_key": "narayanganj|sonargaon",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-024",
+      "facility_name": "Baragaon Community Clinic , Sonargaon",
+      "upazila_name": "Sonargaon",
+      "join_key": "narayanganj|sonargaon",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-025",
+      "facility_name": "Sharsha Upazila Health Complex",
+      "upazila_name": "Sharsha",
+      "join_key": "jashore|sharsha",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-026",
+      "facility_name": "Al- Modina (Pvt) Hospital & Diagnostic Centre",
+      "upazila_name": "Sharsha",
+      "join_key": "jashore|sharsha",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-027",
+      "facility_name": "Agrabhulot Community Clinic ,sharsa",
+      "upazila_name": "Sharsha",
+      "join_key": "jashore|sharsha",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-028",
+      "facility_name": "Amlai Community Clinic ,sharsa",
+      "upazila_name": "Sharsha",
+      "join_key": "jashore|sharsha",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-029",
+      "facility_name": "Monohargram 20 bed Hospital",
+      "upazila_name": "Araihazar",
+      "join_key": "narayanganj|araihazar",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-030",
+      "facility_name": "A TO Z DIGITAL HOSPITAL",
+      "upazila_name": "Araihazar",
+      "join_key": "narayanganj|araihazar",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-031",
+      "facility_name": "Araihazar Union Health Center",
+      "upazila_name": "Araihazar",
+      "join_key": "narayanganj|araihazar",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-032",
+      "facility_name": "Baherchar Community Clinic , Araihazar",
+      "upazila_name": "Araihazar",
+      "join_key": "narayanganj|araihazar",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-033",
+      "facility_name": "MOBARAK ALI EYE HOSPITAL",
+      "upazila_name": "Pirganj",
+      "join_key": "thakurgaon|pirganj",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-034",
+      "facility_name": "PIRGANJ DIABETES & GENERAL HOSPITAL(AN INISTITUTE OF PIRGANJ DIABETIC ASSOCIATION)",
+      "upazila_name": "Pirganj",
+      "join_key": "thakurgaon|pirganj",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-035",
+      "facility_name": "Beldahi Community Clinic ,Pirganj",
+      "upazila_name": "Pirganj",
+      "join_key": "thakurgaon|pirganj",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-036",
+      "facility_name": "Parbatipur Upazila Health Complex",
+      "upazila_name": "Parbatipur",
+      "join_key": "dinajpur|parbatipur",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-037",
+      "facility_name": "Arajidebipur Community Clinic , Parbatipur",
+      "upazila_name": "Parbatipur",
+      "join_key": "dinajpur|parbatipur",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-038",
+      "facility_name": "Asurkot Community Clinic , Parbatipur",
+      "upazila_name": "Parbatipur",
+      "join_key": "dinajpur|parbatipur",
+      "public_map_gap_code": "zero_osm_in_expected_public_upazila",
+      "nearest_same_upazila_osm_health_distance_m": "",
+      "same_upazila_osm_health_count": 0,
+      "best_same_upazila_name_score": ""
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-014",
+      "facility_name": "Alirtek Community Clinic , Narayanganj Sadar",
+      "upazila_name": "Narayanganj Sadar",
+      "join_key": "narayanganj|narayanganj sadar",
+      "public_map_gap_code": "same_upazila_osm_present_but_not_at_facility",
+      "nearest_same_upazila_osm_health_distance_m": 2377.4,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.4
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-017",
+      "facility_name": "Pabna 250 bed General Hospital",
+      "upazila_name": "Pabna Sadar",
+      "join_key": "pabna|pabna sadar",
+      "public_map_gap_code": "same_upazila_osm_present_but_not_at_facility",
+      "nearest_same_upazila_osm_health_distance_m": 2921.7,
+      "same_upazila_osm_health_count": 4,
+      "best_same_upazila_name_score": 0.7451
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-019",
+      "facility_name": "Balrampur Community Clinic ,pabna Sadar",
+      "upazila_name": "Pabna Sadar",
+      "join_key": "pabna|pabna sadar",
+      "public_map_gap_code": "same_upazila_osm_present_but_not_at_facility",
+      "nearest_same_upazila_osm_health_distance_m": 2962.8,
+      "same_upazila_osm_health_count": 4,
+      "best_same_upazila_name_score": 0.386
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-009",
+      "facility_name": "Gazipur District Hospital",
+      "upazila_name": "Gazipur Sadar",
+      "join_key": "gazipur|gazipur sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 4478.6,
+      "same_upazila_osm_health_count": 58,
+      "best_same_upazila_name_score": 0.6667
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-011",
+      "facility_name": "Argariya Community Clinic , Gazipur Sadar",
+      "upazila_name": "Gazipur Sadar",
+      "join_key": "gazipur|gazipur sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 5406.1,
+      "same_upazila_osm_health_count": 58,
+      "best_same_upazila_name_score": 0.4533
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-063",
+      "facility_name": "Barabatra Community Clinic , Durgapur",
+      "upazila_name": "Durgapur",
+      "join_key": "netrakona|durgapur",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 10354.6,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.4407
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-064",
+      "facility_name": "Bhaduya Community Clinic , Durgapur",
+      "upazila_name": "Durgapur",
+      "join_key": "netrakona|durgapur",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 7554.5,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.5263
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-066",
+      "facility_name": "Batiyakhara Community Clinic, Bera",
+      "upazila_name": "Bera",
+      "join_key": "pabna|bera",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 8573.8,
+      "same_upazila_osm_health_count": 7,
+      "best_same_upazila_name_score": 0.4194
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-067",
+      "facility_name": "Bhuiyan Para Community Clinic ,bera",
+      "upazila_name": "Bera",
+      "join_key": "pabna|bera",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 20659.1,
+      "same_upazila_osm_health_count": 7,
+      "best_same_upazila_name_score": 0.44
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-015",
+      "facility_name": "Char Bayragadi Community Clinic , Narayanganj Sadar",
+      "upazila_name": "Narayanganj Sadar",
+      "join_key": "narayanganj|narayanganj sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 4446.6,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.3636
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-016",
+      "facility_name": "Astanagar Community Clinic ,kushtia Sadar",
+      "upazila_name": "Kushtia Sadar",
+      "join_key": "kushtia|kushtia sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 9773.1,
+      "same_upazila_osm_health_count": 6,
+      "best_same_upazila_name_score": 0.3562
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-018",
+      "facility_name": "Babur Bagan Community Clinic , Pabna Sadar",
+      "upazila_name": "Pabna Sadar",
+      "join_key": "pabna|pabna sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 3276.0,
+      "same_upazila_osm_health_count": 4,
+      "best_same_upazila_name_score": 0.4068
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-069",
+      "facility_name": "Bakibegpur Community Clinic ,gurudashpur",
+      "upazila_name": "Gurudaspur",
+      "join_key": "natore|gurudaspur",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 12882.4,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.3846
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-070",
+      "facility_name": "Bergangarampur Community Clinic ,gurudashpur",
+      "upazila_name": "Gurudaspur",
+      "join_key": "natore|gurudaspur",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 5005.7,
+      "same_upazila_osm_health_count": 5,
+      "best_same_upazila_name_score": 0.3929
+    },
+    {
+      "review_id": "PSDQ-BGD-AI-020",
+      "facility_name": "Amdia Union Health Sub Center",
+      "upazila_name": "Narsingdi Sadar",
+      "join_key": "narsingdi|narsingdi sadar",
+      "public_map_gap_code": "no_nearby_same_upazila_osm_health_signal_within_3km",
+      "nearest_same_upazila_osm_health_distance_m": 9638.0,
+      "same_upazila_osm_health_count": 4,
+      "best_same_upazila_name_score": 0.3019
+    }
+  ],
+  "non_claim": "This is an AI-first public-source triage over sampled DGHS rows already marked as public-map gaps at valid registry coordinates. It uses cached public DGHS, geoBoundaries, and OSM/Overpass artifacts only. It is not human validation, not ground truth, not a facility-quality assessment, and not a service-access estimate.",
+  "outputs": {
+    "public_map_gap_csv": "generated\\psdq-bgd-facility-validation-public-map-gap.csv",
+    "summary_json": "generated\\psdq-bgd-facility-validation-public-map-gap-summary.json"
+  }
+}

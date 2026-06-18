@@ -121,5 +121,7 @@ artifact as the immediate row-level worklist. Confirm same-site OSM tag
 support, same-site type/label conflicts, coordinate/function conflicts, and
 weak nearby features against public DGHS, OSM, or other official public pages
 before changing any source-disagreement claim. The coordinate-source repair
-triage now lives in `facility-validation-coordinate-repair.md`; use it before
-moving to high-exposure public-map-gap checks.
+triage now lives in `facility-validation-coordinate-repair.md`, and the
+public-map-gap triage now lives in
+`facility-validation-public-map-gap.md`. The next upgrade is row-level
+public-source evidence for the highest-exposure open public-map-gap rows.

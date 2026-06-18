@@ -266,6 +266,35 @@ measured distance is 351.4 kilometers. This means the high-exposure
 public-map-gap rows should not be interpreted until the coordinate queue has
 been separated from true map-absence candidates.
 
+## Public-Map-Gap Addendum
+
+The valid-coordinate public-map-gap rows are now structured in
+`facility-validation-public-map-gap.md`. The script
+`scripts/triage-bgd-facility-public-map-gaps.py` reads the AI review ledger,
+the coded-screen CSV, the coordinate-repair CSV, exposure-ranked upazila
+context, the OSM upazila table, cached all-Bangladesh OSM health features, and
+cached DGHS public DataTables rows.
+
+All 40 public-map-gap rows remain open:
+
+| Public-map-gap lane | Rows |
+|---|---:|
+| Reused valid coordinate | 2 |
+| Same-upazila name signal far from coordinate | 2 |
+| Same-upazila name signal outside 500 m | 1 |
+| Same-upazila OSM 500-1,000 m away | 2 |
+| Zero OSM in expected public upazila | 18 |
+| Same-upazila OSM present, not at facility | 3 |
+| No same-upazila OSM signal within 3 km | 12 |
+
+The triage keeps the interpretation narrow. Thirty rows are priority-1
+high-exposure checks, but the output does not close any row as a confirmed OSM
+absence. The zero-OSM lane is an upazila-level public-map observability signal.
+The same-name and 500m-to-1km lanes are row-level matching problems. The next
+useful evidence is public-source detail on the highest-exposure open rows:
+DGHS profile links, OSM feature links or absence notes, same-site name
+evidence, and a reason for keeping, reclassifying, or excluding each row.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -291,6 +320,7 @@ python public-service-data-quality/scripts/review-bgd-facility-validation-flags.
 python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
 python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
 python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py
+python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py
 ```
 
 Outputs:
@@ -312,11 +342,16 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is high-exposure public-map-gap checking after excluding or
-annotating rows with missing, reused, or wrong-admin registry coordinates.
-Until that review exists, the correct publication use is source QA before
-service-access mapping, not a statement about facility availability, service
-quality, or validated catchments.
+The next upgrade is row-level public-source evidence for the highest-exposure
+open public-map-gap rows. Each row needs a DGHS profile/source note, OSM
+feature or absence note, same-site name/alias evidence where available, and a
+reason for keeping the row open, reclassifying it, or excluding it from
+facility-specific public-map absence language. Until that evidence exists, the
+correct publication use is source QA before service-access mapping, not a
+statement about facility availability, service quality, or validated
+catchments.

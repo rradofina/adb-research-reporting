@@ -114,9 +114,10 @@ Outputs:
 
 Use `facility-validation-ai-review.md`,
 `facility-validation-candidate-resolution.md`, and
-`facility-validation-candidate-public-source-check.md` as the current
-worklists. The 8 candidate-resolution rows have been split into four
-public-source check lanes; confirm those lanes first, then move to
-coordinate-source repair rows and high-exposure public-map-gap checks. Record
-reviewer notes row by row and compare any public-source labels with the
-automated screen before revising any PSDQ source-disagreement claim.
+`facility-validation-candidate-public-source-check.md` for the candidate
+workstream, `facility-validation-coordinate-repair.md` for coordinate-source
+repair, and `facility-validation-public-map-gap.md` for the 40 public-map-gap
+rows. The next upgrade is row-level public-source evidence for the
+highest-exposure open public-map-gap rows. Record reviewer notes row by row and
+compare any public-source labels with the automated screen before revising any
+PSDQ source-disagreement claim.

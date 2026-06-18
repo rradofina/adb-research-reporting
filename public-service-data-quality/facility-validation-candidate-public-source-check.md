@@ -126,8 +126,8 @@ Outputs:
 
 The next source-repair step now lives in
 `facility-validation-coordinate-repair.md`. It keeps the same caution: no row
-is closed by AI-only evidence. Use the coordinate-repair ledger before reading
-the 40 public-map-gap rows, because a missing or wrong-admin registry
-coordinate can create a false public-map absence. After coordinate repair, the
-next loop is high-exposure public-map-gap checks against public DGHS, OSM, and
-other official public pages.
+is closed by AI-only evidence. The follow-on public-map-gap triage now lives in
+`facility-validation-public-map-gap.md`, and it keeps all 40 map-gap rows open.
+The next loop should add row-level public-source evidence for the
+highest-exposure open rows against public DGHS, OSM, and other official public
+pages before changing any source-disagreement claim.

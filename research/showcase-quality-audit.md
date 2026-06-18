@@ -37,7 +37,7 @@ candidates before adding new surfaces.
 | 1 | Market-level climate price transmission | L2 prototype | Public WFP/NASA POWER sprint, interactive market-month heatmap, and clear non-causal caveat | Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers | Convert the Nepal sprint into an L3 market-price package |
 | 2 | Public data freshness blind spots | L2 prototype | Public WDI API matrix makes stale and missing indicator vintages visible | Needs indicator-specific refresh expectations and non-applicability rules | Add source-specific refresh cadence labels |
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
-| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, and a checked route | Needs high-exposure public-map-gap checks, registry-vintage notes, and independent validation before stronger access-map use | Inspect high-exposure public-map-gap rows after excluding or annotating missing, reused, and wrong-admin registry coordinates |
+| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, and a checked route | Needs row-level public-source evidence, registry-vintage notes, and independent validation before stronger access-map use | Add row-level public DGHS/OSM/source evidence for the highest-exposure open public-map-gap rows |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
@@ -165,12 +165,28 @@ candidates before adding new surfaces.
   feature, 5 other-ADM3 coordinates without a nearby OSM health feature, and 3
   outside the public ADM3 polygons used here. This is source-repair triage,
   not human validation.
+- PSDQ report #4 then received a public-map-gap triage.
+  New script `public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py`
+  reads the AI review ledger, coded-screen CSV, coordinate-repair CSV,
+  exposure-ranked table, OSM upazila table, cached all-Bangladesh OSM health
+  features, and cached DGHS public DataTables rows. It writes
+  `generated/psdq-bgd-facility-validation-public-map-gap.csv` and
+  `generated/psdq-bgd-facility-validation-public-map-gap-summary.json`. The
+  triage keeps all 40 public-map-gap rows open: 30 priority-1 high-exposure
+  rows, 18 zero-OSM expected-upazila rows, 2 reused valid-coordinate rows, 2
+  far same-upazila name-signal rows, 1 same-upazila name signal outside 500
+  meters, 2 buffer-sensitive rows, 3 OSM-present-not-at-facility rows, and 12
+  no-same-upazila-OSM-signal-within-3km rows. This is public-source triage,
+  not human validation. Verification passed: production build, six gates, and
+  desktop/mobile browser QA with no page-level horizontal overflow and no page
+  errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-public-map-gap-desktop.png` and
+  `reporting-site/qa/showcase-psdq-public-map-gap-mobile.png`.
 
 ## Next deepening order
 
-1. PSDQ source disagreement, high-exposure public-map-gap checks after
-   excluding or annotating missing, reused, and wrong-admin registry
-   coordinates.
+1. PSDQ source disagreement, row-level public DGHS/OSM/source evidence for the
+   highest-exposure open public-map-gap rows.
 2. Air-monitoring observability, because the visual hook is strong and the
    next source upgrade is concrete.
 3. Access map-completeness, because official registry joins can turn a source

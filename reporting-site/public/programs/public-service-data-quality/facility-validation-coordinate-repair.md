@@ -118,10 +118,11 @@ public-service-data-quality/generated/psdq-bgd-facility-validation-coordinate-re
 
 ## Next Statistical Upgrade
 
-The next PSDQ loop should use this coordinate-repair ledger before moving to
-the 40 public-map-gap rows. Rows with missing coordinates need public DGHS or
-official source retrieval. Rows with valid but wrong-admin coordinates need a
-row-level source note: whether the coordinate points to another public facility,
-a shared campus, a copied placeholder, or an unrepaired registry location. Only
-after that repair pass should the high-exposure public-map-gap rows be read as
-candidate OSM absence cases.
+The next PSDQ layer now lives in `facility-validation-public-map-gap.md`. It
+uses this coordinate-repair ledger to keep duplicate-coordinate and
+wrong-admin warnings visible before the 40 public-map-gap rows are interpreted.
+The next statistical upgrade after that triage is row-level public-source
+evidence for the highest-exposure open rows: DGHS profile/source note, OSM
+feature or absence note, same-site name evidence where available, and a reason
+for keeping, reclassifying, or excluding the row from facility-specific
+public-map absence language.

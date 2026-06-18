@@ -41,6 +41,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/resolve-bgd-facility-candidate-rows.py` — separates the candidate-resolution subset of the Bangladesh validation ledger into narrower public-source lanes
 - `scripts/check-bgd-facility-candidate-public-sources.py` — scans richer public OSM tags and DGHS public registry fields for the 8 candidate-resolution rows
 - `scripts/triage-bgd-facility-coordinate-repairs.py` — separates the 23 Bangladesh coordinate-repair rows by missing, reused, wrong-admin, and boundary-mismatch coordinate signals
+- `scripts/triage-bgd-facility-public-map-gaps.py` — separates the 40 Bangladesh public-map-gap rows by duplicate-coordinate, same-upazila name-signal, buffer-sensitivity, zero-OSM-upazila, and no-nearby-OSM lanes
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -80,6 +81,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-candidate-public-source-check-summary.json` — chart-ready public-source check lanes and non-claim metadata
 - `generated/psdq-bgd-facility-validation-coordinate-repair.csv` — AI public-source coordinate-repair triage for the 23 registry-coordinate repair rows
 - `generated/psdq-bgd-facility-validation-coordinate-repair-summary.json` — chart-ready coordinate-repair lanes, distance ledger, and non-claim metadata
+- `generated/psdq-bgd-facility-validation-public-map-gap.csv` — AI public-source public-map-gap triage for the 40 valid-coordinate map-gap rows
+- `generated/psdq-bgd-facility-validation-public-map-gap-summary.json` — chart-ready public-map-gap lanes, upazila queue, and non-claim metadata
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -220,6 +223,20 @@ Current audit result:
   and within 500 meters of an OSM health feature, 5 sit in another public ADM3
   without a nearby OSM health feature, and 3 fall outside the public ADM3
   polygons used here. This is source-repair triage, not human validation.
+- **BGD public-map-gap triage:** the no-network map-gap pass reads the AI
+  review ledger, coded-screen CSV, coordinate-repair CSV, exposure-ranked
+  table, OSM upazila table, cached all-Bangladesh OSM health features, and
+  cached DGHS public rows. It writes
+  `generated/psdq-bgd-facility-validation-public-map-gap.csv` and
+  `generated/psdq-bgd-facility-validation-public-map-gap-summary.json`. The
+  triage keeps all 40 public-map-gap rows open: 30 are priority-1
+  high-exposure rows, 18 sit in zero-OSM expected upazilas, 2 reuse a valid
+  sampled coordinate, 2 have a far same-upazila name signal, 1 has a
+  same-upazila name signal outside 500 meters, 2 are 500m-to-1km
+  buffer-sensitive, 3 have OSM present in the upazila but not at the sampled
+  facility, and 12 have no same-upazila OSM health signal within 3 kilometers.
+  This is public-source triage, not human validation or proof that a facility
+  is absent from OSM.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -244,6 +261,10 @@ python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.
 python public-service-data-quality/scripts/design-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/code-bgd-facility-validation-sample.py
 python public-service-data-quality/scripts/review-bgd-facility-validation-flags.py
+python public-service-data-quality/scripts/resolve-bgd-facility-candidate-rows.py
+python public-service-data-quality/scripts/check-bgd-facility-candidate-public-sources.py
+python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py
+python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

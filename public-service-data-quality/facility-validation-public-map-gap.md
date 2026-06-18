@@ -130,7 +130,9 @@ public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-ga
 ## Next Statistical Upgrade
 
 The row-level public-source evidence pass is now documented in
-`facility-validation-public-map-gap-evidence.md`. The next PSDQ loop should
-use that evidence ledger for targeted public-map inspection: close or
+`facility-validation-public-map-gap-evidence.md`, and the targeted
+public-map inspection packet is now documented in
+`facility-validation-public-map-inspection.md`. The next PSDQ loop should use
+the inspection packet for public-source/manual confirmation: close or
 reclassify a row only if a public source supports the change; otherwise keep
 the row open with the specific unresolved source question.

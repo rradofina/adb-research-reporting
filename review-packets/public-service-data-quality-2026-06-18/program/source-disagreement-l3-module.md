@@ -317,6 +317,34 @@ questions from map-absence candidates, and it keeps zero-OSM expected-upazila
 cases out of facility-specific language unless a row-level public source
 supports that interpretation.
 
+## Targeted Public-Map Inspection Addendum
+
+The targeted public-map inspection packet is now structured in
+`facility-validation-public-map-inspection.md`. The script
+`scripts/inspect-bgd-facility-public-map-targets.py` reads the row-evidence
+ledger, public ADM3 boundaries, and the pinned all-Bangladesh OSM/Overpass
+health-feature cache. It then ranks candidate public-map features and records
+what evidence would be needed before a row could be closed or reclassified.
+
+The pass inspects all 40 row-evidence records. It marks 10 named-upazila start
+rows, 18 zero-OSM queue rows, 22 rows with same-upazila candidate public-map
+feature links, and 6 rows with specific-name signals among candidate features.
+All 40 rows remain open; 0 are closed as resolved and 0 are reclassified as
+same-facility matches.
+
+The inspection lanes are:
+
+| Inspection lane | Rows |
+|---|---:|
+| Source repair first | 4 |
+| Possible public-map match or buffer case | 3 |
+| Facility-specific public-map absence candidate | 15 |
+| Upazila public-map observability gap | 18 |
+
+This addendum makes the review queue more actionable without changing the
+claim. The evidence still supports a source-disagreement workbench, not a
+facility-quality, service-access, or ground-truth result.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -344,6 +372,7 @@ python public-service-data-quality/scripts/check-bgd-facility-candidate-public-s
 python public-service-data-quality/scripts/triage-bgd-facility-coordinate-repairs.py
 python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.py
 python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py
+python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py
 ```
 
 Outputs:
@@ -369,11 +398,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is targeted public-map inspection using the row-evidence
-ledger. Start with the priority-1 rows in Gazipur Sadar, Narayanganj Sadar,
-Pabna Sadar, and the zero-OSM upazila queue. Close or reclassify a row only if
-a public source supports the change; otherwise keep it open with the specific
-unresolved source question.
+The next upgrade is public-source/manual confirmation of the first inspection
+rows. Start with the Narayanganj Sadar source-repair rows, then Gazipur Sadar
+and Pabna Sadar facility-specific candidates, then the zero-OSM upazila queue.
+Close or reclassify a row only if a public source supports the change;
+otherwise keep it open with the specific unresolved source question.

@@ -118,7 +118,9 @@ Use `facility-validation-ai-review.md`,
 workstream, `facility-validation-coordinate-repair.md` for coordinate-source
 repair, and `facility-validation-public-map-gap.md` for the 40 public-map-gap
 rows. The row-level public-source evidence ledger now lives in
-`facility-validation-public-map-gap-evidence.md`. The next upgrade is targeted
-public-map inspection for the highest-exposure open rows, using the DGHS
-profile links, OSM coordinate links, and nearest-feature notes before revising
-any PSDQ source-disagreement claim.
+`facility-validation-public-map-gap-evidence.md`, and the targeted public-map
+inspection packet now lives in
+`facility-validation-public-map-inspection.md`. The next upgrade is
+public-source/manual confirmation of the first inspection rows, using the DGHS
+profile links, OSM coordinate links, and candidate-feature notes before
+revising any PSDQ source-disagreement claim.

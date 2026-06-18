@@ -66,6 +66,7 @@ const ARTIFACTS = [
   { key: "facility_validation_coordinate_repair", file: "facility-validation-coordinate-repair.md", label: "Facility-validation coordinate-repair triage" },
   { key: "facility_validation_public_map_gap", file: "facility-validation-public-map-gap.md", label: "Facility-validation public-map-gap triage" },
   { key: "facility_validation_public_map_gap_evidence", file: "facility-validation-public-map-gap-evidence.md", label: "Facility-validation public-map-gap row evidence" },
+  { key: "facility_validation_public_map_inspection", file: "facility-validation-public-map-inspection.md", label: "Facility-validation targeted public-map inspection" },
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },

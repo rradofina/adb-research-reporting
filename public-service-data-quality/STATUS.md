@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, and 40-row public-map-gap row-evidence ledger added; targeted public-map inspection from the row-evidence ledger is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, and 40-row targeted public-map inspection packet added; public-source/manual confirmation of the first inspection rows is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -24,12 +24,41 @@ A reviewer-credible PSDQ source-disagreement package for the showcase bench:
 start from the Bangladesh exposure-ranked registry-map visual, package the
 matching strata, validation sample, automated coded screen, AI row-review
 ledger, candidate/source checks, coordinate-repair triage, public-map-gap
-triage, row-evidence notes, and caveats, make the source upgrade clear in the
-public surface, and preserve the existing PR maturity label without implying
-human-final review.
+triage, row-evidence notes, targeted public-map inspection queue, and caveats,
+make the source upgrade clear in the public surface, and preserve the existing
+PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh targeted public-map inspection packet
+  for the PSDQ facility-validation public-map-gap rows. New no-network script
+  `scripts/inspect-bgd-facility-public-map-targets.py` reads the 40-row
+  row-evidence ledger and summary, the pinned all-Bangladesh OSM/Overpass
+  health-feature cache, and public geoBoundaries ADM1/ADM2/ADM3 caches, then
+  writes
+  `generated/psdq-bgd-facility-validation-public-map-inspection.csv` and
+  `generated/psdq-bgd-facility-validation-public-map-inspection-summary.json`.
+  The packet inspects all 40 open rows, covers all 30 priority-1 rows, creates
+  a 10-row named-upazila start queue and an 18-row zero-OSM upazila queue,
+  records 22 same-upazila candidate public-map feature links and 6
+  specific-name signals, and keeps all 40 rows open with 0 AI closures and 0
+  AI reclassifications. Inspection lanes: 4 source-repair-first rows, 3
+  possible public-map match or buffer cases, 15 facility-specific public-map
+  absence candidates, and 18 upazila public-map observability gaps. Added
+  `facility-validation-public-map-inspection.md`, wired evidence sync and
+  review-packet inclusion, updated README/REPRODUCE/L3 notes and the showcase
+  registry, and added the inspection panel to
+  `/showcase/psdq-source-disagreement`. This is targeted public-map
+  inspection, not human validation, a row closure, a maturity promotion, or a
+  human-final upgrade. Verification passed: inspection script rerun, new
+  script `py_compile`, program-script `py_compile`, production site build,
+  six deterministic gates plus `git diff --check`, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with no page-level horizontal
+  overflow and no page errors. The mobile inspection chart uses a compact
+  queue list instead of the desktop SVG. Screenshots:
+  `reporting-site/qa/showcase-psdq-public-map-inspection-desktop.png`,
+  `reporting-site/qa/showcase-psdq-public-map-inspection-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-public-map-inspection-mobile-queue.png`.
 - **2026-06-19:** Added the Bangladesh public-map-gap row-evidence ledger for
   the PSDQ facility-validation flags. New no-network script
   `scripts/build-bgd-facility-public-map-gap-row-evidence.py` reads the
@@ -313,15 +342,17 @@ human-final review.
 
 Current loop:
 
-1. Use the row-evidence ledger in
-   `generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`
-   and `generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`
-   to inspect the highest-priority open rows.
-2. Start with Gazipur Sadar, Narayanganj Sadar, Pabna Sadar, and the
-   zero-OSM upazila queue because those rows carry the largest exposure or
-   clearest source-classification problem.
-3. Keep source-repair-first rows separate from row-level public-map absence
-   candidates and upazila-level public-map observability cases.
+1. Use the targeted inspection packet in
+   `generated/psdq-bgd-facility-validation-public-map-inspection-summary.json`
+   and `generated/psdq-bgd-facility-validation-public-map-inspection.csv` to
+   confirm or keep open the first public-map rows.
+2. Start with Narayanganj Sadar source-repair rows, then Gazipur Sadar and
+   Pabna Sadar named-upazila candidates, then the zero-OSM upazila queue
+   because those rows carry the clearest source-classification or
+   observability question.
+3. Keep source-repair-first rows separate from possible same-facility public
+   map matches, facility-specific absence candidates, and upazila-level public
+   map observability cases.
 4. Use only public DGHS rows, OSM/Overpass evidence, public map inspection
    links, and other public official pages. Do not use private facility lists or
    owner-only credentials. Stop if validation requires non-public access.

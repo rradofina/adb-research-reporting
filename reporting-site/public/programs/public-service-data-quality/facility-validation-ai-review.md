@@ -119,6 +119,9 @@ ledger before any row is read as a candidate OSM absence case. The row-level
 public-source evidence ledger now lives in
 `facility-validation-public-map-gap-evidence.md`: it records DGHS profile
 links, OSM coordinate links, feature or absence notes, and the reason each row
-remains open. The next PSDQ loop should run targeted public-map inspection from
-that ledger. Keep unresolved rows unresolved unless public evidence supports a
-row-level label.
+remains open. The targeted public-map inspection packet now lives in
+`facility-validation-public-map-inspection.md`: it keeps all 40 rows open and
+separates source-repair, possible-match, facility-absence, and upazila-level
+observability lanes. The next PSDQ loop should confirm or keep open the first
+inspection rows using public sources. Keep unresolved rows unresolved unless
+public evidence supports a row-level label.

@@ -130,5 +130,8 @@ is closed by AI-only evidence. The follow-on public-map-gap triage now lives in
 `facility-validation-public-map-gap.md`, and it keeps all 40 map-gap rows open.
 The row-level public-source evidence ledger now lives in
 `facility-validation-public-map-gap-evidence.md`; it keeps all 40 rows open and
-records DGHS and OSM inspection links. The next loop should perform targeted
-public-map inspection before changing any source-disagreement claim.
+records DGHS and OSM inspection links. The targeted public-map inspection
+packet now lives in `facility-validation-public-map-inspection.md`; it keeps
+all 40 rows open and separates the confirmation queue. The next loop should
+confirm or keep open the first inspection rows before changing any
+source-disagreement claim.

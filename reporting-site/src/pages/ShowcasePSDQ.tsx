@@ -463,6 +463,73 @@ interface PsdqPublicMapGapEvidenceSummary {
   non_claim: string;
 }
 
+interface PsdqPublicMapInspectionUpazilaRow {
+  join_key: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  inspection_rows: number;
+  priority_1_rows: number;
+  source_repair_first: number;
+  possible_public_map_match_or_buffer_case: number;
+  facility_specific_public_map_absence_candidate: number;
+  upazila_public_map_observability_gap: number;
+  start_here_rows: number;
+  active_clinical_facilities: number;
+  osm_health: number;
+  underobserved_buildings_3km_p85_proxy: number;
+}
+
+interface PsdqPublicMapInspectionCardRow {
+  inspection_id: string;
+  inspection_rank: number;
+  focus_class: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  priority_scope: string;
+  inspection_lane: string;
+  inspection_decision: string;
+  closure_eligibility: string;
+  public_cache_finding: string;
+  evidence_needed_to_close_or_reclassify: string;
+  dghs_public_profile_url: string;
+  registry_coordinate_osm_inspection_url: string;
+  candidate_feature_1_url: string;
+  candidate_feature_1_name: string;
+  candidate_feature_1_distance_m: number;
+  candidate_feature_1_name_score: number;
+  candidate_feature_1_tags_compact: string;
+}
+
+interface PsdqPublicMapInspectionSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  unit: string;
+  inspection_scope: {
+    rows_inspected: number;
+    priority_1_rows_inspected: number;
+    start_here_named_upazila_rows: number;
+    start_here_zero_osm_upazila_rows: number;
+    rows_with_candidate_public_map_feature: number;
+    rows_with_same_upazila_candidate_public_map_feature: number;
+    rows_with_specific_name_signal_in_candidate_features: number;
+    rows_kept_open: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  inspection_lane_counts: PsdqCandidateResolutionCount[];
+  focus_class_counts: PsdqCandidateResolutionCount[];
+  closure_eligibility_counts: PsdqCandidateResolutionCount[];
+  reclassification_candidate_counts: PsdqCandidateResolutionCount[];
+  upazila_inspection_rows: PsdqPublicMapInspectionUpazilaRow[];
+  row_card_rows: PsdqPublicMapInspectionCardRow[];
+  inspection_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -606,6 +673,8 @@ export default function ShowcasePSDQ() {
   const [publicMapGapSummary, setPublicMapGapSummary] = useState<PsdqPublicMapGapSummary | null>(null);
   const [publicMapGapEvidenceSummary, setPublicMapGapEvidenceSummary] =
     useState<PsdqPublicMapGapEvidenceSummary | null>(null);
+  const [publicMapInspectionSummary, setPublicMapInspectionSummary] =
+    useState<PsdqPublicMapInspectionSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -656,6 +725,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`public map gap evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`public map inspection HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -673,6 +746,7 @@ export default function ShowcasePSDQ() {
         coordinateRepairPayload,
         publicMapGapPayload,
         publicMapGapEvidencePayload,
+        publicMapInspectionPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -686,6 +760,7 @@ export default function ShowcasePSDQ() {
         setCoordinateRepairSummary(coordinateRepairPayload);
         setPublicMapGapSummary(publicMapGapPayload);
         setPublicMapGapEvidenceSummary(publicMapGapEvidencePayload);
+        setPublicMapInspectionSummary(publicMapInspectionPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -792,6 +867,8 @@ export default function ShowcasePSDQ() {
       {publicMapGapSummary && <PsdqPublicMapGapPanel summary={publicMapGapSummary} />}
 
       {publicMapGapEvidenceSummary && <PsdqPublicMapGapEvidencePanel summary={publicMapGapEvidenceSummary} />}
+
+      {publicMapInspectionSummary && <PsdqPublicMapInspectionPanel summary={publicMapInspectionSummary} />}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
 
@@ -2530,6 +2607,343 @@ function PsdqPublicMapGapEvidenceQueueChart({ rows }: { rows: PsdqPublicMapGapEv
               <span><b>{formatNumber(row.row_evidence_rows)}</b> rows</span>
               <span><b>{formatNumber(row.priority_1_rows)}</b> P1</span>
               <span><b>{formatNumber(row.active_clinical_facilities)}</b> DGHS</span>
+              <span><b>{formatNumber(row.osm_health)}</b> OSM</span>
+              <span><b>{formatNumber(row.underobserved_buildings_3km_p85_proxy)}</b> proxy</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </>
+  );
+}
+
+const PUBLIC_MAP_INSPECTION_LANE_ORDER = [
+  "source_repair_first",
+  "possible_public_map_match_or_buffer_case",
+  "facility_specific_public_map_absence_candidate",
+  "upazila_public_map_observability_gap",
+] as const;
+
+const PUBLIC_MAP_INSPECTION_LANE_LABELS: Record<string, string> = {
+  source_repair_first: "Source repair first",
+  possible_public_map_match_or_buffer_case: "Possible map match or buffer case",
+  facility_specific_public_map_absence_candidate: "Facility-specific absence candidate",
+  upazila_public_map_observability_gap: "Upazila observability gap",
+};
+
+function publicMapInspectionColor(code: string) {
+  const colors: Record<string, string> = {
+    source_repair_first: "#002569",
+    possible_public_map_match_or_buffer_case: "#FBB00E",
+    facility_specific_public_map_absence_candidate: "#007DB8",
+    upazila_public_map_observability_gap: "#9B2226",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function publicMapInspectionCount(summary: PsdqPublicMapInspectionSummary, code: string) {
+  return summary.inspection_lane_counts.find((item) => item.name === code)?.rows || 0;
+}
+
+function publicMapInspectionMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    source_repair_first: "Coordinate or duplicate-row questions must be resolved before map absence language.",
+    possible_public_map_match_or_buffer_case: "A mapped candidate exists outside the original rule and needs alias or buffer review.",
+    facility_specific_public_map_absence_candidate: "The row is a candidate for manual public-map absence review, not closure.",
+    upazila_public_map_observability_gap: "The upazila-level public-map layer is sparse enough that row-level absence is too strong.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function publicMapInspectionLaneValue(row: PsdqPublicMapInspectionUpazilaRow, code: string) {
+  return Number(row[code as keyof PsdqPublicMapInspectionUpazilaRow] || 0);
+}
+
+function focusClassLabel(code: string) {
+  const labels: Record<string, string> = {
+    start_here_named_upazila: "Start with named-upazila rows",
+    start_here_zero_osm_upazila_queue: "Zero-OSM upazila queue",
+    priority_1_follow_on: "Priority-1 follow-on",
+    priority_3_spot_check_backstop: "Priority-3 backstop",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPublicMapInspectionPanel({ summary }: { summary: PsdqPublicMapInspectionSummary }) {
+  return (
+    <section className="showcase-section psdq-public-map-inspection-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Targeted public-map inspection</p>
+          <h2>The queue is sharper, but no row is closed by AI.</h2>
+          <p>
+            This pass takes the 40 row-evidence records and asks what a
+            reviewer should open first. It ranks public-map candidates, keeps
+            source-repair rows out of absence claims, separates zero-OSM
+            upazilas from facility-specific rows, and records what evidence
+            would be needed before any row is closed or reclassified.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows inspected</span>
+            <strong>
+              {formatNumber(summary.inspection_scope.rows_inspected)} rows;{" "}
+              {formatNumber(summary.inspection_scope.rows_closed_as_resolved)} closed
+            </strong>
+          </div>
+          <div>
+            <span>Priority-1 coverage</span>
+            <strong>{formatNumber(summary.inspection_scope.priority_1_rows_inspected)} high-exposure rows</strong>
+          </div>
+          <div>
+            <span>Start-here named rows</span>
+            <strong>{formatNumber(summary.inspection_scope.start_here_named_upazila_rows)} rows with same-upazila review value</strong>
+          </div>
+          <div>
+            <span>Zero-OSM upazila queue</span>
+            <strong>{formatNumber(summary.inspection_scope.start_here_zero_osm_upazila_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Same-upazila candidates</span>
+            <strong>{formatNumber(summary.inspection_scope.rows_with_same_upazila_candidate_public_map_feature)} candidate links</strong>
+          </div>
+          <div>
+            <span>Specific-name signals</span>
+            <strong>{formatNumber(summary.inspection_scope.rows_with_specific_name_signal_in_candidate_features)} rows</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-public-map-inspection-grid">
+        {PUBLIC_MAP_INSPECTION_LANE_ORDER.map((code) => (
+          <div key={code}>
+            <span>{PUBLIC_MAP_INSPECTION_LANE_LABELS[code]}</span>
+            <strong>{formatNumber(publicMapInspectionCount(summary, code))}</strong>
+            <em>{publicMapInspectionMeaning(code)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-inspection-focus-strip" aria-label="PSDQ public-map inspection focus classes">
+        {summary.focus_class_counts.map((item) => (
+          <div key={item.name}>
+            <span>{focusClassLabel(item.name)}</span>
+            <strong>{formatNumber(item.rows)}</strong>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqPublicMapInspectionQueueChart rows={summary.upazila_inspection_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ public-map inspection lane legend">
+        {PUBLIC_MAP_INSPECTION_LANE_ORDER.map((code) => (
+          <span key={code}>
+            <i style={{ background: publicMapInspectionColor(code) }} /> {PUBLIC_MAP_INSPECTION_LANE_LABELS[code]}
+          </span>
+        ))}
+      </div>
+
+      <div className="psdq-public-map-inspection-cards" aria-label="Top PSDQ targeted public-map inspection rows">
+        {summary.row_card_rows.slice(0, 12).map((row) => (
+          <article key={row.inspection_id} className="psdq-public-map-inspection-card">
+            <div>
+              <span>#{formatNumber(row.inspection_rank)} · {focusClassLabel(row.focus_class)}</span>
+              <h3>{row.facility_name}</h3>
+              <p>{row.upazila_name}, {row.district_name} · {row.facility_type_name}</p>
+            </div>
+            <div
+              className="psdq-row-evidence-tier"
+              style={{ borderColor: publicMapInspectionColor(row.inspection_lane) }}
+            >
+              {PUBLIC_MAP_INSPECTION_LANE_LABELS[row.inspection_lane] || row.inspection_lane.replaceAll("_", " ")}
+            </div>
+            <dl className="psdq-inspection-candidate">
+              <div>
+                <dt>Candidate</dt>
+                <dd>{row.candidate_feature_1_name || "No named candidate"}</dd>
+              </div>
+              <div>
+                <dt>Distance</dt>
+                <dd>{formatNumber(row.candidate_feature_1_distance_m, 0)} m</dd>
+              </div>
+              <div>
+                <dt>Name score</dt>
+                <dd>{formatNumber(row.candidate_feature_1_name_score, 2)}</dd>
+              </div>
+            </dl>
+            <p>{row.public_cache_finding}</p>
+            <p className="psdq-row-evidence-note">{row.evidence_needed_to_close_or_reclassify}</p>
+            <div className="psdq-row-evidence-links">
+              {row.dghs_public_profile_url && (
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+              )}
+              {row.registry_coordinate_osm_inspection_url && (
+                <a href={row.registry_coordinate_osm_inspection_url} target="_blank" rel="noreferrer">
+                  OSM coordinate
+                </a>
+              )}
+              {row.candidate_feature_1_url && (
+                <a href={row.candidate_feature_1_url} target="_blank" rel="noreferrer">
+                  Candidate feature
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the targeted public-map inspection packet</p>
+        <code>python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-public-map-inspection.md" download>
+          Download inspection note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection-summary.json" download>
+          Download inspection summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection.csv" download>
+          Download inspection CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqPublicMapInspectionQueueChart({ rows }: { rows: PsdqPublicMapInspectionUpazilaRow[] }) {
+  const width = 1040;
+  const rowHeight = 46;
+  const headerHeight = 64;
+  const height = headerHeight + rows.length * rowHeight + 26;
+  const labelX = 0;
+  const barX = 240;
+  const barWidth = 310;
+  const priorityX = 590;
+  const clinicalX = 675;
+  const osmX = 760;
+  const proxyX = 955;
+
+  return (
+    <>
+      <svg
+        className="psdq-coded-chart psdq-public-map-inspection-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="img"
+        aria-label="Targeted public-map inspection queue by upazila"
+      >
+        <text x={0} y={18} className="showcase-heatmap-title">
+          Targeted public-map inspection queue
+        </text>
+        <text x={0} y={38} className="showcase-heatmap-year">
+          Unit: sampled DGHS row kept open; source: inspection summary JSON
+        </text>
+        <text x={barX} y={58} className="psdq-chart-head">
+          Inspection lane mix
+        </text>
+        <text x={priorityX} y={58} className="psdq-chart-head">
+          P1
+        </text>
+        <text x={clinicalX} y={58} className="psdq-chart-head">
+          DGHS
+        </text>
+        <text x={osmX} y={58} className="psdq-chart-head">
+          OSM
+        </text>
+        <text x={proxyX} y={58} className="psdq-chart-head" textAnchor="end">
+          Under-observed proxy
+        </text>
+
+        {rows.map((row, index) => {
+          const y = headerHeight + index * rowHeight;
+          let x = barX;
+          return (
+            <g key={row.join_key}>
+              <text x={labelX} y={y + 15} className="psdq-row-label">
+                {row.upazila_name}
+              </text>
+              <text x={labelX} y={y + 31} className="psdq-row-sub">
+                {row.district_name}, {row.division_name}
+              </text>
+              <rect x={barX} y={y} width={barWidth} height={22} fill="#eef2f5" />
+              {PUBLIC_MAP_INSPECTION_LANE_ORDER.map((code) => {
+                const value = publicMapInspectionLaneValue(row, code);
+                const segmentWidth = row.inspection_rows > 0 ? (value / row.inspection_rows) * barWidth : 0;
+                const segment = (
+                  <rect
+                    key={code}
+                    x={x}
+                    y={y}
+                    width={Math.max(0, segmentWidth)}
+                    height={22}
+                    fill={publicMapInspectionColor(code)}
+                  >
+                    <title>{`${row.upazila_name}: ${formatNumber(value)} ${PUBLIC_MAP_INSPECTION_LANE_LABELS[code]}`}</title>
+                  </rect>
+                );
+                x += segmentWidth;
+                return segment;
+              })}
+              <text x={barX + barWidth + 12} y={y + 16} className="psdq-value">
+                {formatNumber(row.inspection_rows)}
+              </text>
+              <text x={priorityX} y={y + 16} className="psdq-value">
+                {formatNumber(row.priority_1_rows)}
+              </text>
+              <text x={clinicalX} y={y + 16} className="psdq-value">
+                {formatNumber(row.active_clinical_facilities)}
+              </text>
+              <text x={osmX} y={y + 16} className="psdq-value">
+                {formatNumber(row.osm_health)}
+              </text>
+              <text x={proxyX} y={y + 16} className="psdq-value" textAnchor="end">
+                {formatNumber(row.underobserved_buildings_3km_p85_proxy)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="psdq-public-map-inspection-mobile-list" aria-label="Mobile targeted public-map inspection queue">
+        <div>
+          <strong>Inspection queue by upazila</strong>
+          <span>Unit: sampled DGHS row kept open</span>
+        </div>
+        {rows.map((row) => (
+          <article key={row.join_key}>
+            <div>
+              <strong>{row.upazila_name}</strong>
+              <span>{row.district_name}, {row.division_name}</span>
+            </div>
+            <div className="psdq-public-map-inspection-mobile-bar" aria-label={`${row.upazila_name} inspection lane mix`}>
+              {PUBLIC_MAP_INSPECTION_LANE_ORDER.map((code) => {
+                const value = publicMapInspectionLaneValue(row, code);
+                if (value <= 0) {
+                  return null;
+                }
+                return (
+                  <i
+                    key={code}
+                    title={`${formatNumber(value)} ${PUBLIC_MAP_INSPECTION_LANE_LABELS[code]}`}
+                    style={{
+                      background: publicMapInspectionColor(code),
+                      width: `${Math.max(8, (value / row.inspection_rows) * 100)}%`,
+                    }}
+                  />
+                );
+              })}
+            </div>
+            <div className="psdq-row-evidence-mobile-metrics">
+              <span><b>{formatNumber(row.inspection_rows)}</b> rows</span>
+              <span><b>{formatNumber(row.priority_1_rows)}</b> P1</span>
+              <span><b>{formatNumber(row.start_here_rows)}</b> start</span>
               <span><b>{formatNumber(row.osm_health)}</b> OSM</span>
               <span><b>{formatNumber(row.underobserved_buildings_3km_p85_proxy)}</b> proxy</span>
             </div>

@@ -120,8 +120,10 @@ public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-ga
 
 ## Next Statistical Upgrade
 
-The next PSDQ loop should use the row-evidence ledger for targeted public-map
-inspection. Start with the priority-1 rows in Gazipur Sadar, Narayanganj
-Sadar, Pabna Sadar, and the zero-OSM upazila queue. Close a row only if a
-public source supports the closure. Otherwise keep the row open and record the
-specific unresolved source question.
+The targeted public-map inspection packet is now documented in
+`facility-validation-public-map-inspection.md`. The next PSDQ loop should use
+that inspection packet for public-source/manual confirmation. Start with the
+Narayanganj Sadar source-repair rows, then Gazipur Sadar and Pabna Sadar
+facility-specific candidates, then the zero-OSM upazila queue. Close a row
+only if a public source supports the closure. Otherwise keep the row open and
+record the specific unresolved source question.

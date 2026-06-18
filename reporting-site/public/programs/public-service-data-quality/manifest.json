@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-06-18T19:51:01.377Z",
+  "generated_at": "2026-06-18T20:12:18.206Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,20 +27,20 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 25548,
-      "size_human": "24.9 KB",
-      "mtime": "2026-06-18T19:39:51.060Z",
-      "sha256": "91f909fef73b112b016c01ed098cbda94467e5d9c608d720fb7cd3b7a5ff3660",
+      "size": 26877,
+      "size_human": "26.2 KB",
+      "mtime": "2026-06-18T20:00:44.174Z",
+      "sha256": "b31a805cefcabbfd903b5333716665f4bc8469da7a47be550aa1e4559c9f6956",
       "attestation_chain": null
     },
     {
       "key": "reproduce",
       "file": "REPRODUCE.md",
       "label": "Reproducibility guide",
-      "size": 17275,
-      "size_human": "16.9 KB",
-      "mtime": "2026-06-18T19:40:13.269Z",
-      "sha256": "4216dff643a33bfc2e69ae237913a7cf6337c4a0ea5ae5a918e0d8bcc5607d65",
+      "size": 18609,
+      "size_human": "18.2 KB",
+      "mtime": "2026-06-18T20:00:57.477Z",
+      "sha256": "333448e53a83c9ddc3e1aec09cdc33a06291f96e69c8bf72580282a9493d6ac5",
       "attestation_chain": null
     },
     {
@@ -127,10 +127,10 @@
       "key": "source_disagreement_l3",
       "file": "source-disagreement-l3-module.md",
       "label": "Source-disagreement L3 module",
-      "size": 17934,
-      "size_human": "17.5 KB",
-      "mtime": "2026-06-18T19:40:29.484Z",
-      "sha256": "ea78dd5594a6647fe8d2eac46abee4ff0583eccdbc0f11ecf1b9f1e0069b79de",
+      "size": 19522,
+      "size_human": "19.1 KB",
+      "mtime": "2026-06-18T20:01:23.860Z",
+      "sha256": "01d5202c2a94e355c0b0be132da2894d5354631134f60c0f2a31d387f457088d",
       "attestation_chain": "ai-first"
     },
     {
@@ -147,40 +147,40 @@
       "key": "facility_validation_coded_screen",
       "file": "facility-validation-coded-screen.md",
       "label": "Facility-validation coded screen",
-      "size": 5668,
-      "size_human": "5.5 KB",
-      "mtime": "2026-06-18T19:45:14.583Z",
-      "sha256": "d6aea923491d0288530552f1ba0b5f1f7199bca22b85f7d9bd36c2618a241ce0",
+      "size": 5774,
+      "size_human": "5.6 KB",
+      "mtime": "2026-06-18T20:06:51.917Z",
+      "sha256": "7842413f6f2bd382f08daa651be16dc1494c9adadf372ff4efe710455811e7eb",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_ai_review",
       "file": "facility-validation-ai-review.md",
       "label": "Facility-validation AI review ledger",
-      "size": 5525,
-      "size_human": "5.4 KB",
-      "mtime": "2026-06-18T19:45:14.586Z",
-      "sha256": "81795860097c5a41928bc06a1c6b42c3e5ad9595e5d95dc19cc5178d30f8a15f",
+      "size": 5772,
+      "size_human": "5.6 KB",
+      "mtime": "2026-06-18T20:06:47.462Z",
+      "sha256": "dec4cb84cca82276aa59874046ceb62fc767d1f42e24a6731ad51077c64b1814",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_candidate_resolution",
       "file": "facility-validation-candidate-resolution.md",
       "label": "Facility-validation candidate-resolution pass",
-      "size": 5965,
-      "size_human": "5.8 KB",
-      "mtime": "2026-06-18T19:45:14.584Z",
-      "sha256": "ebce2a1c0941c8a4adb4a112e98a179314923b4bd6ea3187ba647f78198c0bb0",
+      "size": 6087,
+      "size_human": "5.9 KB",
+      "mtime": "2026-06-18T20:06:56.104Z",
+      "sha256": "d8296dac16c9f6dfc3a015f3367cdda4adfef62a478f8a57b71730013bc1e794",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_candidate_public_source_check",
       "file": "facility-validation-candidate-public-source-check.md",
       "label": "Facility-validation candidate public-source check",
-      "size": 6278,
-      "size_human": "6.1 KB",
-      "mtime": "2026-06-18T19:45:14.585Z",
-      "sha256": "e6cb363671cfc1fe624cc75d5591f5679cac7a26f6abbf254264a59ba26da491",
+      "size": 6453,
+      "size_human": "6.3 KB",
+      "mtime": "2026-06-18T20:07:00.347Z",
+      "sha256": "de5cdfed79c22a8283fad2f087629673674fdf587fa68cbf71bba1ab23e1b720",
       "attestation_chain": "ai-first"
     },
     {
@@ -197,20 +197,30 @@
       "key": "facility_validation_public_map_gap",
       "file": "facility-validation-public-map-gap.md",
       "label": "Facility-validation public-map-gap triage",
-      "size": 6527,
-      "size_human": "6.4 KB",
-      "mtime": "2026-06-18T19:40:34.660Z",
-      "sha256": "72d0358eb4773bfa845f7b65b5737a9a47bf96fe9be500e5ce439fd270984051",
+      "size": 6646,
+      "size_human": "6.5 KB",
+      "mtime": "2026-06-18T20:01:23.861Z",
+      "sha256": "ac3eeaed6a0edc0f503fe41b48bb9689b0d982f0e5787d1600e30ac91a7f027f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "facility_validation_public_map_gap_evidence",
       "file": "facility-validation-public-map-gap-evidence.md",
       "label": "Facility-validation public-map-gap row evidence",
-      "size": 6032,
+      "size": 6183,
+      "size_human": "6.0 KB",
+      "mtime": "2026-06-18T20:01:23.862Z",
+      "sha256": "adb93b914cf5db56377ac61ffacc99b4bed38d5957344f2737fde44df37c4150",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "facility_validation_public_map_inspection",
+      "file": "facility-validation-public-map-inspection.md",
+      "label": "Facility-validation targeted public-map inspection",
+      "size": 5995,
       "size_human": "5.9 KB",
-      "mtime": "2026-06-18T19:39:11.916Z",
-      "sha256": "15366c002603353c0b907338e114c38a4aaeda8779d45fe11d70028edb4373a9",
+      "mtime": "2026-06-18T20:07:16.190Z",
+      "sha256": "7b05c967fed96fe3ef0737ceaeab9e6985127395ceedf683323278a48639ceae",
       "attestation_chain": "ai-first"
     },
     {
@@ -462,6 +472,18 @@
       "size": 109230,
       "size_human": "106.7 KB",
       "sha256": "23e4596a3c5823ce115965b47427d5dffade592b716ebeeb2f0880e9410ce671"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-public-map-inspection-summary.json",
+      "size": 34017,
+      "size_human": "33.2 KB",
+      "sha256": "f6a3a27b28b997e59209dfcb4464dbefda32b84d4059e346d2c915d06a9a46e6"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-public-map-inspection.csv",
+      "size": 149140,
+      "size_human": "145.6 KB",
+      "sha256": "a2063fd5f93b79da6ca66a14db042998f24fd011810686619fa4862bdba9afe2"
     },
     {
       "file": "generated/psdq-bgd-facility-validation-sample-facilities.csv",

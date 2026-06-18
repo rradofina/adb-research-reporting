@@ -125,6 +125,8 @@ triage now lives in `facility-validation-coordinate-repair.md`, and the
 public-map-gap triage now lives in
 `facility-validation-public-map-gap.md`. The row-level public-source evidence
 ledger for the open public-map-gap rows now lives in
-`facility-validation-public-map-gap-evidence.md`. The next upgrade is targeted
-public-map inspection from that ledger before changing any row-level or
-source-disagreement claim.
+`facility-validation-public-map-gap-evidence.md`, and the targeted public-map
+inspection packet now lives in
+`facility-validation-public-map-inspection.md`. The next upgrade is
+public-source/manual confirmation of the first inspection rows before changing
+any row-level or source-disagreement claim.

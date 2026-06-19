@@ -3942,6 +3942,18 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .psdq-lower-name-conflict-clusters {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    scroll-margin-top: 8rem;
+  }
+
+  .psdq-lower-name-conflict-section,
+  .psdq-lower-name-conflict-grid {
+    scroll-margin-top: 8rem;
+  }
+
   .psdq-zero-osm-division-grid {
     display: grid;
     gap: 0.75rem;
@@ -4524,6 +4536,70 @@
     font-size: var(--type-copy-xs);
     font-weight: 800;
     padding: 0.3rem 0.4rem;
+  }
+
+  .psdq-lower-name-conflict-clusters article {
+    min-width: 0;
+    display: grid;
+    gap: 0.55rem;
+    border: 1px solid var(--line);
+    padding: 0.85rem;
+    background: #fff;
+  }
+
+  .psdq-lower-name-conflict-clusters article div {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-lower-name-conflict-clusters span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-lower-name-conflict-clusters strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-lower-name-conflict-clusters em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+  }
+
+  .psdq-lower-name-conflict-clusters i {
+    display: block;
+    height: 0.65rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-lower-name-conflict-clusters b {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #9B2226, #002569);
+  }
+
+  .psdq-lower-name-conflict-clusters p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-lower-name-conflict-clusters a {
+    width: fit-content;
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
   }
 
   .psdq-zero-osm-division-grid article {
@@ -7343,6 +7419,7 @@
     .psdq-public-source-decision-ledger-grid,
     .psdq-possible-same-facility-grid,
     .psdq-priority-name-conflict-grid,
+    .psdq-lower-name-conflict-clusters,
     .psdq-zero-osm-division-grid,
     .psdq-zero-osm-grid,
     .psdq-zero-osm-targeted-strip,

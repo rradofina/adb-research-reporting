@@ -478,6 +478,41 @@ row resolution. These rows stay open until public alias evidence, a public
 location source, source-owner clarification, or human validation resolves the
 name conflict.
 
+## Lower-Priority Name-Conflict Spot-Check Addendum
+
+The lower-priority name-conflict spot check now lives in
+`facility-validation-lower-priority-name-conflict-review.md`. The script
+`scripts/build-bgd-facility-lower-priority-name-conflict-review.py` reads the
+targeted-row confirmation CSV and decision-ledger summary without fetching new
+data. It isolates the six deferred lower-priority rows where a public OSM
+candidate is visible but the name conflict remains unresolved.
+
+The pass covers the 6 lower-priority name-conflict rows deferred by the
+decision ledger:
+
+| Lower-priority spot-check signal | Rows |
+|---|---:|
+| DGHS profiles retrieved | 6 |
+| OSM API records retrieved | 6 |
+| Unique public-map candidate features | 4 |
+| Rows sharing reused candidate features | 4 |
+| Candidate features reused by multiple rows | 2 |
+| Candidate name score at least 0.50 | 1 |
+| Candidate name score at least 0.70 | 0 |
+| Candidate distance at least 5 km | 6 |
+| Candidate distance at least 10 km | 3 |
+| Public alias/location sources found | 0 |
+| Closures allowed | 0 |
+| Same-facility reclassifications allowed | 0 |
+| Map-absence uses allowed | 0 |
+
+The practical rule is that repeated public-map candidates are a warning sign,
+not a shortcut. `momotaz clinic` appears for two Gurudaspur community-clinic
+rows, and `Broadbank Clinic Quatere` appears for two Durgapur community-clinic
+rows. Those repeated candidates show public-map context; they do not establish
+that the DGHS rows are closed, duplicated, absent from the map, or represented
+by the retrieved feature.
+
 ## Zero-OSM Upazila Observability Review Addendum
 
 The zero-OSM upazila observability review now lives in
@@ -698,6 +733,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
@@ -742,6 +778,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`

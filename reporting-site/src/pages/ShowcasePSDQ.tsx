@@ -849,6 +849,130 @@ interface PsdqPriorityNameConflictReviewSummary {
   non_claim: string;
 }
 
+interface PsdqLowerPriorityNameConflictReviewRow {
+  lower_priority_name_conflict_review_id: string;
+  evidence_rank: number;
+  evidence_method: string;
+  status: string;
+  confirmation_id: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  priority_scope: string;
+  focus_class: string;
+  inspection_lane: string;
+  public_source_confirmation_lane: string;
+  dghs_profile_id: string;
+  dghs_public_profile_url: string;
+  dghs_profile_http_status: number | string;
+  dghs_profile_retrieved: boolean | string;
+  dghs_profile_facility_token_coverage: number | string;
+  candidate_feature_url: string;
+  candidate_osm_api_url: string;
+  candidate_osm_api_http_status: number | string;
+  candidate_osm_api_retrieved: boolean | string;
+  candidate_osm_type: string;
+  candidate_osm_id: string;
+  candidate_osm_name_from_api: string;
+  candidate_osm_lat: number | string;
+  candidate_osm_lon: number | string;
+  candidate_osm_tags_compact: string;
+  candidate_name_score_from_live_tags: number | string;
+  candidate_distance_m_from_inspection: number | string;
+  name_conflict_score_class: string;
+  candidate_distance_band: string;
+  candidate_contains_admin_place_name: boolean | string;
+  candidate_reused_in_spot_check: boolean | string;
+  candidate_spot_check_cluster_rows: number | string;
+  spot_check_review_class: string;
+  public_alias_or_location_source_found_by_current_artifacts: boolean | string;
+  minimum_evidence_to_close: string;
+  minimum_evidence_to_reclassify_as_same_facility: string;
+  minimum_evidence_to_keep_as_name_conflict: string;
+  review_action: string;
+  row_closure_allowed_by_current_public_evidence: boolean | string;
+  same_facility_reclassification_allowed_by_current_public_evidence: boolean | string;
+  map_absence_language_allowed_by_current_public_evidence: boolean | string;
+  external_contact_made: boolean | string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+  source_basis: string;
+  non_claim: string;
+}
+
+interface PsdqLowerPriorityNameConflictCluster {
+  candidate_cluster_id: string;
+  candidate_osm_name_from_api: string;
+  candidate_feature_url: string;
+  candidate_osm_api_url: string;
+  candidate_osm_tags_compact: string;
+  spot_check_rows: number;
+  districts: string;
+  upazilas: string;
+  facility_names: string;
+  min_candidate_distance_m: number;
+  max_candidate_distance_m: number;
+  min_candidate_name_score: number;
+  max_candidate_name_score: number;
+  repeated_candidate_in_spot_check: boolean;
+}
+
+interface PsdqLowerPriorityNameConflictUpazilaRow {
+  district_name: string;
+  upazila_name: string;
+  spot_check_rows: number;
+  candidate_names: string;
+  min_candidate_distance_m: number;
+  max_candidate_distance_m: number;
+  max_candidate_name_score: number;
+}
+
+interface PsdqLowerPriorityNameConflictReviewSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  lower_priority_name_conflict_scope: {
+    targeted_confirmation_rows: number;
+    decision_ledger_deferred_lower_priority_name_conflict_rows: number;
+    lower_priority_name_conflict_rows: number;
+    dghs_profiles_retrieved: number;
+    osm_api_records_retrieved: number;
+    unique_candidate_features: number;
+    candidate_features_reused_by_multiple_rows: number;
+    rows_sharing_reused_candidate_features: number;
+    spot_check_districts: number;
+    spot_check_upazilas: number;
+    rows_with_candidate_name_score_at_least_0_50: number;
+    rows_with_candidate_name_score_at_least_0_70: number;
+    rows_with_candidate_distance_5km_or_more: number;
+    rows_with_candidate_distance_10km_or_more: number;
+    rows_where_candidate_contains_admin_place_name: number;
+    public_alias_or_location_sources_found_by_current_artifacts: number;
+    min_candidate_distance_m: number | null;
+    max_candidate_distance_m: number | null;
+    min_candidate_name_score: number | null;
+    max_candidate_name_score: number | null;
+    external_contacts_made: number;
+    rows_allowed_for_closure: number;
+    rows_allowed_for_same_facility_reclassification: number;
+    rows_allowed_for_map_absence_language: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  spot_check_review_class_counts: PsdqCandidateResolutionCount[];
+  name_conflict_score_class_counts: PsdqCandidateResolutionCount[];
+  candidate_distance_band_counts: PsdqCandidateResolutionCount[];
+  candidate_clusters: PsdqLowerPriorityNameConflictCluster[];
+  upazila_rows: PsdqLowerPriorityNameConflictUpazilaRow[];
+  review_rows: PsdqLowerPriorityNameConflictReviewRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqZeroOsmObservabilityReviewRow {
   zero_osm_observability_review_id: string;
   evidence_rank: number;
@@ -1498,6 +1622,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPossibleSameFacilityReviewSummary | null>(null);
   const [priorityNameConflictReviewSummary, setPriorityNameConflictReviewSummary] =
     useState<PsdqPriorityNameConflictReviewSummary | null>(null);
+  const [lowerPriorityNameConflictReviewSummary, setLowerPriorityNameConflictReviewSummary] =
+    useState<PsdqLowerPriorityNameConflictReviewSummary | null>(null);
   const [zeroOsmObservabilityReviewSummary, setZeroOsmObservabilityReviewSummary] =
     useState<PsdqZeroOsmObservabilityReviewSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
@@ -1586,6 +1712,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`priority name-conflict review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`lower-priority name-conflict review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json").then((r) => {
         if (!r.ok) throw new Error(`zero-OSM upazila observability review HTTP ${r.status}`);
         return r.json();
@@ -1637,6 +1767,7 @@ export default function ShowcasePSDQ() {
         publicSourceDecisionLedgerPayload,
         possibleSameFacilityReviewPayload,
         priorityNameConflictReviewPayload,
+        lowerPriorityNameConflictReviewPayload,
         zeroOsmObservabilityReviewPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
@@ -1663,6 +1794,7 @@ export default function ShowcasePSDQ() {
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
         setPossibleSameFacilityReviewSummary(possibleSameFacilityReviewPayload);
         setPriorityNameConflictReviewSummary(priorityNameConflictReviewPayload);
+        setLowerPriorityNameConflictReviewSummary(lowerPriorityNameConflictReviewPayload);
         setZeroOsmObservabilityReviewSummary(zeroOsmObservabilityReviewPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
@@ -1797,6 +1929,10 @@ export default function ShowcasePSDQ() {
 
       {priorityNameConflictReviewSummary && (
         <PsdqPriorityNameConflictReviewPanel summary={priorityNameConflictReviewSummary} />
+      )}
+
+      {lowerPriorityNameConflictReviewSummary && (
+        <PsdqLowerPriorityNameConflictReviewPanel summary={lowerPriorityNameConflictReviewSummary} />
       )}
 
       {zeroOsmObservabilityReviewSummary && (
@@ -5019,6 +5155,220 @@ function PsdqPriorityNameConflictReviewPanel({ summary }: { summary: PsdqPriorit
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv" download>
           Download priority name-conflict CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function lowerPriorityNameConflictColor(code: string) {
+  const colors: Record<string, string> = {
+    repeated_candidate_pair_context_only: "#9B2226",
+    single_candidate_10km_or_more_context_only: "#002569",
+    partial_name_support_still_unresolved: "#007DB8",
+    different_name_spot_check_still_unresolved: "#5A8227",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function lowerPriorityNameConflictLabel(code: string) {
+  const labels: Record<string, string> = {
+    repeated_candidate_pair_context_only: "Repeated candidate, context only",
+    single_candidate_10km_or_more_context_only: "Single candidate 10 km+",
+    partial_name_support_still_unresolved: "Partial name support unresolved",
+    different_name_spot_check_still_unresolved: "Different-name spot check unresolved",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function PsdqLowerPriorityNameConflictReviewPanel({ summary }: { summary: PsdqLowerPriorityNameConflictReviewSummary }) {
+  const scope = summary.lower_priority_name_conflict_scope;
+  const maxDistance = Math.max(
+    1,
+    ...summary.review_rows.map((row) => Number(row.candidate_distance_m_from_inspection || 0))
+  );
+  const maxClusterRows = Math.max(1, ...summary.candidate_clusters.map((row) => row.spot_check_rows));
+  const minDistance = scope.min_candidate_distance_m;
+  const maxDistanceScope = scope.max_candidate_distance_m;
+  const minScore = scope.min_candidate_name_score;
+  const maxScore = scope.max_candidate_name_score;
+
+  return (
+    <section className="showcase-section psdq-lower-name-conflict-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Lower-priority name-conflict spot check</p>
+          <h2>Six backstop rows repeat the same warning: candidate retrieval is not row resolution.</h2>
+          <p>
+            The spot check looks beyond the high-exposure queue. Two public-map
+            candidates each appear for two DGHS community-clinic rows, and every
+            candidate remains at least 5 km from the inspection point.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows reviewed</span>
+            <strong>{formatNumber(scope.lower_priority_name_conflict_rows)}</strong>
+          </div>
+          <div>
+            <span>Candidate features</span>
+            <strong>{formatNumber(scope.unique_candidate_features)}</strong>
+          </div>
+          <div>
+            <span>Rows on reused candidates</span>
+            <strong>{formatNumber(scope.rows_sharing_reused_candidate_features)} rows</strong>
+          </div>
+          <div>
+            <span>Distance range</span>
+            <strong>
+              {formatNumber((minDistance ?? 0) / 1000, 1)}-{formatNumber((maxDistanceScope ?? 0) / 1000, 1)} km
+            </strong>
+          </div>
+          <div>
+            <span>Name score range</span>
+            <strong>{formatNumber(minScore ?? 0, 2)}-{formatNumber(maxScore ?? 0, 2)}</strong>
+          </div>
+          <div>
+            <span>5 km or more</span>
+            <strong>{formatNumber(scope.rows_with_candidate_distance_5km_or_more)} rows</strong>
+          </div>
+          <div>
+            <span>Alias/location sources</span>
+            <strong>{formatNumber(scope.public_alias_or_location_sources_found_by_current_artifacts)}</strong>
+          </div>
+          <div>
+            <span>Closure / reclass / map absence</span>
+            <strong>
+              {formatNumber(scope.rows_allowed_for_closure)} /{" "}
+              {formatNumber(scope.rows_allowed_for_same_facility_reclassification)} /{" "}
+              {formatNumber(scope.rows_allowed_for_map_absence_language)}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-lower-name-conflict-clusters">
+        {summary.candidate_clusters.map((cluster) => {
+          const width = Math.max(8, Math.min(100, (cluster.spot_check_rows / maxClusterRows) * 100));
+          return (
+            <article key={cluster.candidate_cluster_id}>
+              <div>
+                <span>{cluster.candidate_cluster_id}</span>
+                <strong>{cluster.candidate_osm_name_from_api || "Unnamed OSM feature"}</strong>
+                <em>{cluster.upazilas}, {cluster.districts}</em>
+              </div>
+              <i aria-label={`${cluster.candidate_osm_name_from_api} reused-candidate row bar`}>
+                <b style={{ width: `${width}%` }} />
+              </i>
+              <p>
+                {formatNumber(cluster.spot_check_rows)} spot-check row{cluster.spot_check_rows === 1 ? "" : "s"};
+                distance {formatNumber(cluster.min_candidate_distance_m / 1000, 1)}-{formatNumber(cluster.max_candidate_distance_m / 1000, 1)} km;
+                name score {formatNumber(cluster.min_candidate_name_score, 2)}-{formatNumber(cluster.max_candidate_name_score, 2)}.
+              </p>
+              <p>{cluster.facility_names}</p>
+              <a href={cluster.candidate_feature_url} target="_blank" rel="noreferrer">
+                Map feature
+              </a>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-priority-name-conflict-grid psdq-lower-name-conflict-grid">
+        {summary.review_rows.map((row) => {
+          const color = lowerPriorityNameConflictColor(row.spot_check_review_class);
+          const score = Number(row.candidate_name_score_from_live_tags || 0);
+          const distance = Number(row.candidate_distance_m_from_inspection || 0);
+          const scoreWidth = Math.max(4, Math.min(100, score * 100));
+          const distanceWidth = Math.max(4, Math.min(100, (distance / maxDistance) * 100));
+          return (
+            <article key={row.lower_priority_name_conflict_review_id} style={{ borderColor: color }}>
+              <div className="psdq-priority-name-conflict-card-head">
+                <span>{row.lower_priority_name_conflict_review_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.upazila_name}, {row.district_name}</em>
+              </div>
+              <div className="psdq-priority-name-conflict-class" style={{ background: color }}>
+                {lowerPriorityNameConflictLabel(row.spot_check_review_class)}
+              </div>
+              <div className="psdq-priority-name-conflict-links">
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS {row.dghs_profile_http_status}
+                </a>
+                <a href={row.candidate_osm_api_url} target="_blank" rel="noreferrer">
+                  OSM API {row.candidate_osm_api_http_status}
+                </a>
+                <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                  Map feature
+                </a>
+              </div>
+              <div className="psdq-priority-name-conflict-candidate">
+                <span>Candidate</span>
+                <strong>{row.candidate_osm_name_from_api || "Unnamed OSM feature"}</strong>
+                <em>{row.candidate_osm_type} {row.candidate_osm_id}; {row.candidate_osm_tags_compact}</em>
+              </div>
+              <div className="psdq-priority-name-conflict-pair">
+                <div>
+                  <span>Name support</span>
+                  <strong>{formatNumber(score, 2)}</strong>
+                  <i aria-label="Name-score bar">
+                    <b style={{ width: `${scoreWidth}%`, background: color }} />
+                  </i>
+                </div>
+                <div>
+                  <span>Distance</span>
+                  <strong>{formatNumber(distance / 1000, 1)} km</strong>
+                  <i aria-label="Distance bar">
+                    <b style={{ width: `${distanceWidth}%`, background: "#002569" }} />
+                  </i>
+                </div>
+              </div>
+              <div className="psdq-priority-name-conflict-distance">
+                {priorityNameConflictDistanceLabel(row.candidate_distance_band)}
+              </div>
+              <div className="psdq-priority-name-conflict-flags">
+                <span>{asBoolean(row.candidate_reused_in_spot_check) ? `${formatNumber(Number(row.candidate_spot_check_cluster_rows || 0))} rows share candidate` : "single candidate"}</span>
+                <span>{asBoolean(row.public_alias_or_location_source_found_by_current_artifacts) ? "alias source found" : "0 alias source"}</span>
+              </div>
+              <p>{row.review_action}</p>
+              <div className="psdq-priority-name-conflict-gates">
+                <div>
+                  <span>Reclassify only if</span>
+                  <p>{row.minimum_evidence_to_reclassify_as_same_facility}</p>
+                </div>
+                <div>
+                  <span>Keep as name conflict only if</span>
+                  <p>{row.minimum_evidence_to_keep_as_name_conflict}</p>
+                </div>
+              </div>
+              <div className="psdq-priority-name-conflict-status">
+                <span>spot check</span>
+                <span>0 closed</span>
+                <span>0 reclassified</span>
+                <span>0 map absence uses</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the lower-priority name-conflict spot check</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-lower-priority-name-conflict-review.md" download>
+          Download lower-priority name-conflict review note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json" download>
+          Download lower-priority name-conflict summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review.csv" download>
+          Download lower-priority name-conflict CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

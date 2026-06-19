@@ -75,6 +75,11 @@ workbook and Codex seeded the canonical cache.
   priority-1 name-conflict candidates, carries forward name-score, distance,
   admin-place-name, and alias-source evidence, and keeps all rows open. It is
   not human validation.
+- The Bangladesh lower-priority name-conflict spot check is a no-network pass
+  over the targeted-row confirmation packet and decision-ledger summary. It
+  isolates the six deferred lower-priority name-conflict candidates, carries
+  forward repeated-candidate, name-score, distance, and alias-source evidence,
+  and keeps all rows open. It is not human validation.
 - The Bangladesh zero-OSM upazila observability review is a no-network pass
   over the exposure-ranked disagreement table, exposure summary, targeted
   public-map inspection queue, and decision-ledger summary. It isolates
@@ -223,6 +228,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
@@ -549,6 +555,32 @@ at least 10 kilometers from the inspection point; 4 candidate names contain an
 admin place name; and the current artifacts contain 0 public alias or location
 sources. It allows 0 closures, 0 same-facility reclassifications, and 0
 map-absence uses.
+
+## Bangladesh facility-validation lower-priority name-conflict spot check
+
+This step does not fetch data. It reads the targeted-row public-source
+confirmation CSV and decision-ledger summary JSON, then isolates the six
+deferred lower-priority rows where a public OSM candidate is visible but the
+name conflict remains unresolved.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review.csv`
+- `generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json`
+
+The output status is `ai_lower_priority_name_conflict_review_not_validation`.
+The current pass reviews 6 lower-priority name-conflict rows. All 6 have DGHS
+profile and OSM API evidence retrieved; 4 rows share reused public-map
+candidate features; all 6 candidates are at least 5 kilometers from the
+inspection point; 3 candidates are at least 10 kilometers from the inspection
+point; 1 has a candidate name score at least 0.50; 0 have a candidate name
+score at least 0.70; and the current artifacts contain 0 public alias or
+location sources. It allows 0 closures, 0 same-facility reclassifications, and
+0 map-absence uses.
 
 ## Bangladesh facility-validation zero-OSM upazila observability review
 

@@ -49,6 +49,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-facility-public-source-decision-ledger.py` — converts the 40-row public-source confirmation packet into a no-network reviewer decision ledger
 - `scripts/build-bgd-facility-possible-same-facility-review.py` — builds a no-contact review packet for the three possible same-facility public-map candidates and blocks premature closure/reclassification
 - `scripts/build-bgd-facility-priority-name-conflict-review.py` — builds a no-contact review packet for the nine priority-1 name-conflict rows and blocks premature closure/reclassification
+- `scripts/build-bgd-facility-lower-priority-name-conflict-review.py` — builds a no-contact spot-check packet for the six deferred lower-priority name-conflict rows and repeated candidate features
 - `scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` — builds a no-contact upazila-level observability packet for active-registry rows with zero joined OSM health features and blocks facility-level absence language
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
@@ -111,6 +112,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json` — chart-ready name-score, distance, retrieval, and keep-open counts for possible same-facility rows
 - `generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv` — no-contact review gates for the nine priority-1 name-conflict public-map candidates
 - `generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json` — chart-ready name-score, distance, admin-place, alias-source, and keep-open counts for priority name-conflict rows
+- `generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review.csv` — no-contact spot-check gates for the six deferred lower-priority name-conflict public-map candidates
+- `generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json` — chart-ready repeated-candidate, name-score, distance, alias-source, and keep-open counts for lower-priority name-conflict rows
 - `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv` — upazila-level zero-OSM observability review for active-registry rows, including targeted inspection queue links
 - `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json` — chart-ready zero-OSM upazila counts, class counts, division rows, and keep-open gates
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
@@ -337,6 +340,15 @@ Current audit result:
   0.70; 6 candidates are at least 5 kilometers from the inspection point; and
   the current artifacts contain 0 public alias or location sources. It allows
   0 closures, 0 same-facility reclassifications, and 0 map-absence uses.
+- **BGD lower-priority name-conflict spot check:** the no-network review reads
+  the targeted-row confirmation CSV and decision-ledger summary, then isolates
+  the 6 deferred lower-priority name-conflict public-map candidates. All 6
+  rows have DGHS profile and OSM API evidence retrieved; 4 rows share reused
+  public-map candidate features; all 6 candidates are at least 5 kilometers
+  from the inspection point; 3 are at least 10 kilometers away; 1 name score is
+  at least 0.50; 0 name scores are at least 0.70; and the current artifacts
+  contain 0 public alias or location sources. It allows 0 closures, 0
+  same-facility reclassifications, and 0 map-absence uses.
 - **BGD zero-OSM upazila observability review:** the no-network review reads
   the exposure-ranked disagreement table, exposure summary, targeted
   public-map inspection CSV, and decision-ledger summary. It isolates 115
@@ -426,6 +438,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py

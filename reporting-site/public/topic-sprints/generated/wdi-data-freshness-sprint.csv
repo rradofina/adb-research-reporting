@@ -1,379 +1,379 @@
-iso3,country,indicator_code,indicator_short,indicator_label,policy_surface,latest_year,indicator_global_latest_year,relative_lag_years,calendar_age_years,value,missing,stale_ge_3_years
-AFG,Afghanistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,42647492.0,False,False
-ARM,Armenia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,3033500.0,False,False
-AZE,Azerbaijan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,10202830.0,False,False
-BGD,Bangladesh,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,173562364.0,False,False
-BTN,Bhutan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,791524.0,False,False
-BRN,Brunei Darussalam,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,462721.0,False,False
-KHM,Cambodia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,17638801.0,False,False
-CHN,"China, People's Republic of",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,1408975000.0,False,False
-COK,Cook Islands,SP.POP.TOTL,Population,"Population, total",denominator,,2024,,,,True,False
-FJI,Fiji,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,928784.0,False,False
-GEO,Georgia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,3699557.0,False,False
-HKG,"Hong Kong, China",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,7524100.0,False,False
-IND,India,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,1450935791.0,False,False
-IDN,Indonesia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,283487931.0,False,False
-KAZ,Kazakhstan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,20592571.0,False,False
-KIR,Kiribati,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,134518.0,False,False
-KGZ,Kyrgyz Republic,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,7221868.0,False,False
-LAO,Lao People's Democratic Republic,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,7769819.0,False,False
-MYS,Malaysia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,35557673.0,False,False
-MDV,Maldives,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,527799.0,False,False
-MHL,Marshall Islands,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,37548.0,False,False
-FSM,"Micronesia, Federated States of",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,113160.0,False,False
-MNG,Mongolia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,3524788.0,False,False
-MMR,Myanmar,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,54500091.0,False,False
-NRU,Nauru,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,11947.0,False,False
-NPL,Nepal,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,29651054.0,False,False
-PAK,Pakistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,251269164.0,False,False
-PLW,Palau,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,17695.0,False,False
-PNG,Papua New Guinea,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,10576502.0,False,False
-PHL,Philippines,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,115843670.0,False,False
-WSM,Samoa,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,218019.0,False,False
-SLB,Solomon Islands,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,819198.0,False,False
-LKA,Sri Lanka,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,21916000.0,False,False
-TJK,Tajikistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,10590927.0,False,False
-THA,Thailand,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,71668011.0,False,False
-TLS,Timor-Leste,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,1400638.0,False,False
-TON,Tonga,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,104175.0,False,False
-TKM,Turkmenistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,7494498.0,False,False
-TUV,Tuvalu,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,9646.0,False,False
-UZB,Uzbekistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,36361859.0,False,False
-VUT,Vanuatu,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,327777.0,False,False
-VNM,Viet Nam,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,100987686.0,False,False
-AFG,Afghanistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,14.985763,False,False
-ARM,Armenia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,9.321192,False,False
-AZE,Azerbaijan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.271135,False,False
-BGD,Bangladesh,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2.170146,False,False
-BTN,Bhutan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.415516,False,False
-BRN,Brunei Darussalam,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2.228607,False,False
-KHM,Cambodia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.617068,False,False
-CHN,"China, People's Republic of",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,5.943889,False,False
-COK,Cook Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,,2024,,,,True,False
-FJI,Fiji,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,3.615242,False,False
-GEO,Georgia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,6.857589,False,False
-HKG,"Hong Kong, China",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,,2024,,,,True,False
-IND,India,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,3.33944,False,False
-IDN,Indonesia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2.702399,False,False
-KAZ,Kazakhstan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,3.767015,False,False
-KIR,Kiribati,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,10.945256,False,False
-KGZ,Kyrgyz Republic,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.503445,False,False
-LAO,Lao People's Democratic Republic,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,1.326516,False,False
-MYS,Malaysia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,3.9576,False,False
-MDV,Maldives,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,9.249736,False,False
-MHL,Marshall Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,13.40529,False,False
-FSM,"Micronesia, Federated States of",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,12.880876,False,False
-MNG,Mongolia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,6.072075,False,False
-MMR,Myanmar,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.457484,False,False
-NRU,Nauru,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,18.21076,False,False
-NPL,Nepal,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,6.158437,False,False
-PAK,Pakistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2.519883,False,False
-PLW,Palau,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,10.854682,False,False
-PNG,Papua New Guinea,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2.870814,False,False
-PHL,Philippines,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,5.101225,False,False
-WSM,Samoa,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,6.781033,False,False
-SLB,Solomon Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,5.363662,False,False
-LKA,Sri Lanka,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,3.683138,False,False
-TJK,Tajikistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,7.437899,False,False
-THA,Thailand,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.537877,False,False
-TLS,Timor-Leste,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,9.597795,False,False
-TON,Tonga,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,7.360378,False,False
-TKM,Turkmenistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,5.497891,False,False
-TUV,Tuvalu,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,27.089685,False,False
-UZB,Uzbekistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,6.743129,False,False
-VUT,Vanuatu,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.118668,False,False
-VNM,Viet Nam,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,4.561095,False,False
-AFG,Afghanistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,112.230904,False,False
-ARM,Armenia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,101.990554,False,False
-AZE,Azerbaijan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,105.625024,False,False
-BGD,Bangladesh,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,106.49131,False,False
-BTN,Bhutan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,114.881124,False,False
-BRN,Brunei Darussalam,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,94.820787,False,False
-KHM,Cambodia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,108.971333,False,False
-CHN,"China, People's Republic of",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,99.644963,False,False
-COK,Cook Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,,2025,,,,True,False
-FJI,Fiji,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,110.377231,False,False
-GEO,Georgia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,99.356021,False,False
-HKG,"Hong Kong, China",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,103.152956,False,False
-IND,India,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,111.033783,False,False
-IDN,Indonesia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,100.371429,False,False
-KAZ,Kazakhstan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,97.332988,False,False
-KIR,Kiribati,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,95.2685,False,False
-KGZ,Kyrgyz Republic,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,98.953543,False,False
-LAO,Lao People's Democratic Republic,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,93.143525,False,False
-MYS,Malaysia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,90.359559,False,False
-MDV,Maldives,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,99.714538,False,False
-MHL,Marshall Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,101.801289,False,False
-FSM,"Micronesia, Federated States of",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,82.15982,False,False
-MNG,Mongolia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,92.340079,False,False
-MMR,Myanmar,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2018,2025,7,8,120.214569,False,True
-NRU,Nauru,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,94.401331,False,False
-NPL,Nepal,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,128.558747,False,False
-PAK,Pakistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,83.726068,False,False
-PLW,Palau,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,106.937269,False,False
-PNG,Papua New Guinea,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,121.090488,False,False
-PHL,Philippines,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,94.033091,False,False
-WSM,Samoa,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,101.043324,False,False
-SLB,Solomon Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,81.844576,False,False
-LKA,Sri Lanka,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,91.451142,False,False
-TJK,Tajikistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,95.757141,False,False
-THA,Thailand,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,100.728168,False,False
-TLS,Timor-Leste,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,119.652693,False,False
-TON,Tonga,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,108.789986,False,False
-TKM,Turkmenistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,95.692178,False,False
-TUV,Tuvalu,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,101.138952,False,False
-UZB,Uzbekistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,120.864047,False,False
-VUT,Vanuatu,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,112.491972,False,False
-VNM,Viet Nam,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,106.332886,False,False
-AFG,Afghanistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,13.351,False,False
-ARM,Armenia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,12.871,False,False
-AZE,Azerbaijan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.457,False,False
-BGD,Bangladesh,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.778,False,False
-BTN,Bhutan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.227,False,False
-BRN,Brunei Darussalam,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.277,False,False
-KHM,Cambodia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,0.263,False,False
-CHN,"China, People's Republic of",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.615,False,False
-COK,Cook Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-FJI,Fiji,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.347,False,False
-GEO,Georgia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,12.097,False,False
-HKG,"Hong Kong, China",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,2.799,False,False
-IND,India,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.219,False,False
-IDN,Indonesia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.237,False,False
-KAZ,Kazakhstan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.771,False,False
-KIR,Kiribati,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-KGZ,Kyrgyz Republic,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.526,False,False
-LAO,Lao People's Democratic Republic,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1.187,False,False
-MYS,Malaysia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.764,False,False
-MDV,Maldives,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.514,False,False
-MHL,Marshall Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-FSM,"Micronesia, Federated States of",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-MNG,Mongolia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.233,False,False
-MMR,Myanmar,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,3.047,False,False
-NRU,Nauru,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-NPL,Nepal,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,10.465,False,False
-PAK,Pakistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.42,False,False
-PLW,Palau,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-PNG,Papua New Guinea,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,2.571,False,False
-PHL,Philippines,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,2.235,False,False
-WSM,Samoa,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.996,False,False
-SLB,Solomon Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1.431,False,False
-LKA,Sri Lanka,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.005,False,False
-TJK,Tajikistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,6.931,False,False
-THA,Thailand,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,0.781,False,False
-TLS,Timor-Leste,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1.592,False,False
-TON,Tonga,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,2.008,False,False
-TKM,Turkmenistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.267,False,False
-TUV,Tuvalu,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,,True,False
-UZB,Uzbekistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,4.622,False,False
-VUT,Vanuatu,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,5.073,False,False
-VNM,Viet Nam,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1.523,False,False
-AFG,Afghanistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,85.3,False,False
-ARM,Armenia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-AZE,Azerbaijan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-BGD,Bangladesh,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,99.5,False,False
-BTN,Bhutan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-BRN,Brunei Darussalam,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-KHM,Cambodia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,95.0,False,False
-CHN,"China, People's Republic of",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-COK,Cook Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,,2023,,,,True,False
-FJI,Fiji,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,99.3,False,False
-GEO,Georgia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-HKG,"Hong Kong, China",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-IND,India,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,99.5,False,False
-IDN,Indonesia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,99.4,False,False
-KAZ,Kazakhstan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-KIR,Kiribati,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,95.9,False,False
-KGZ,Kyrgyz Republic,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-LAO,Lao People's Democratic Republic,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,96.5,False,False
-MYS,Malaysia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-MDV,Maldives,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-MHL,Marshall Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-FSM,"Micronesia, Federated States of",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,86.9,False,False
-MNG,Mongolia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-MMR,Myanmar,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,76.8,False,False
-NRU,Nauru,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-NPL,Nepal,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,94.0,False,False
-PAK,Pakistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,95.6,False,False
-PLW,Palau,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-PNG,Papua New Guinea,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,20.5,False,False
-PHL,Philippines,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,98.0,False,False
-WSM,Samoa,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-SLB,Solomon Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,81.3,False,False
-LKA,Sri Lanka,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-TJK,Tajikistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-THA,Thailand,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-TLS,Timor-Leste,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-TON,Tonga,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-TKM,Turkmenistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-TUV,Tuvalu,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-UZB,Uzbekistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,100.0,False,False
-VUT,Vanuatu,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,61.6,False,False
-VNM,Viet Nam,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,99.8,False,False
-AFG,Afghanistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,16.094999,False,False
-ARM,Armenia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,81.339302,False,False
-AZE,Azerbaijan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,90.800002,False,False
-BGD,Bangladesh,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,53.421713,False,False
-BTN,Bhutan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,91.277397,False,False
-BRN,Brunei Darussalam,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,96.298288,False,False
-KHM,Cambodia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,68.475304,False,False
-CHN,"China, People's Republic of",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,91.6,False,False
-COK,Cook Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,,2025,,,,True,False
-FJI,Fiji,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,74.7052,False,False
-GEO,Georgia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,83.798557,False,False
-HKG,"Hong Kong, China",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,95.75537,False,False
-IND,India,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,70.0,False,False
-IDN,Indonesia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,72.780755,False,False
-KAZ,Kazakhstan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,93.391673,False,False
-KIR,Kiribati,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,89.4403,False,False
-KGZ,Kyrgyz Republic,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,92.028603,False,False
-LAO,Lao People's Democratic Republic,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,65.592697,False,False
-MYS,Malaysia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,98.020606,False,False
-MDV,Maldives,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,85.239998,False,False
-MHL,Marshall Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,65.915802,False,False
-FSM,"Micronesia, Federated States of",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,39.523602,False,False
-MNG,Mongolia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,85.123497,False,False
-MMR,Myanmar,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2020,2025,5,6,45.447701,False,True
-NRU,Nauru,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,83.011703,False,False
-NPL,Nepal,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,46.321899,False,False
-PAK,Pakistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,57.253,False,False
-PLW,Palau,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,83.925499,False,False
-PNG,Papua New Guinea,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,18.8116,False,False
-PHL,Philippines,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,67.263009,False,False
-WSM,Samoa,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2014,2025,11,12,21.200001,False,True
-SLB,Solomon Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,29.040701,False,False
-LKA,Sri Lanka,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,54.59,False,False
-TJK,Tajikistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,55.7934,False,False
-THA,Thailand,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,90.867188,False,False
-TLS,Timor-Leste,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2021,2025,4,5,35.042,False,True
-TON,Tonga,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,67.441704,False,False
-TKM,Turkmenistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2016,2025,9,10,17.990299,False,True
-TUV,Tuvalu,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2017,2025,8,9,35.200001,False,True
-UZB,Uzbekistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,89.505501,False,False
-VUT,Vanuatu,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2015,2025,10,11,22.3514,False,True
-VNM,Viet Nam,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,84.15,False,False
-AFG,Afghanistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,46.087094,False,False
-ARM,Armenia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,30.579633,False,False
-AZE,Azerbaijan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,21.727,False,False
-BGD,Bangladesh,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,42.381376,False,False
-BTN,Bhutan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,23.945658,False,False
-BRN,Brunei Darussalam,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,7.597265,False,False
-KHM,Cambodia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,24.143602,False,False
-CHN,"China, People's Republic of",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,34.810524,False,False
-COK,Cook Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,,2020,,,,True,False
-FJI,Fiji,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,12.418798,False,False
-GEO,Georgia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,17.043842,False,False
-HKG,"Hong Kong, China",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,,2020,,,,True,False
-IND,India,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,48.394812,False,False
-IDN,Indonesia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,17.881499,False,False
-KAZ,Kazakhstan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,20.027872,False,False
-KIR,Kiribati,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,11.256827,False,False
-KGZ,Kyrgyz Republic,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,24.381725,False,False
-LAO,Lao People's Democratic Republic,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,22.317667,False,False
-MYS,Malaysia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,16.193853,False,False
-MDV,Maldives,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,12.012391,False,False
-MHL,Marshall Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,10.725619,False,False
-FSM,"Micronesia, Federated States of",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,12.11442,False,False
-MNG,Mongolia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,29.654787,False,False
-MMR,Myanmar,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,32.315034,False,False
-NRU,Nauru,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6.064355,False,False
-NPL,Nepal,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,45.720771,False,False
-PAK,Pakistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,42.998173,False,False
-PLW,Palau,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,7.32771,False,False
-PNG,Papua New Guinea,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,17.310543,False,False
-PHL,Philippines,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,20.288742,False,False
-WSM,Samoa,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,12.551895,False,False
-SLB,Solomon Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,13.954283,False,False
-LKA,Sri Lanka,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,19.964441,False,False
-TJK,Tajikistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,37.053406,False,False
-THA,Thailand,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,31.007202,False,False
-TLS,Timor-Leste,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,17.410466,False,False
-TON,Tonga,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,12.478413,False,False
-TKM,Turkmenistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,19.599761,False,False
-TUV,Tuvalu,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,5.917801,False,False
-UZB,Uzbekistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,31.960429,False,False
-VUT,Vanuatu,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,14.082412,False,False
-VNM,Viet Nam,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,20.801064,False,False
-AFG,Afghanistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,34.743247,False,False
-ARM,Armenia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,7.805886,False,False
-AZE,Azerbaijan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,5.657171,False,False
-BGD,Bangladesh,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,11.164801,False,False
-BTN,Bhutan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,14.993109,False,False
-BRN,Brunei Darussalam,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,1.174477,False,False
-KHM,Cambodia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,16.576873,False,False
-CHN,"China, People's Republic of",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,6.775999,False,False
-COK,Cook Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,,2024,,,,True,False
-FJI,Fiji,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,13.190028,False,False
-GEO,Georgia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,5.485443,False,False
-HKG,"Hong Kong, China",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,0.037448,False,False
-IND,India,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,16.285434,False,False
-IDN,Indonesia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,12.608666,False,False
-KAZ,Kazakhstan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,3.882292,False,False
-KIR,Kiribati,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,27.187006,False,False
-KGZ,Kyrgyz Republic,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,8.607604,False,False
-LAO,Lao People's Democratic Republic,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,16.771884,False,False
-MYS,Malaysia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,8.128468,False,False
-MDV,Maldives,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,3.841959,False,False
-MHL,Marshall Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,19.584916,False,False
-FSM,"Micronesia, Federated States of",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,22.789771,False,False
-MNG,Mongolia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,7.290952,False,False
-MMR,Myanmar,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,20.834177,False,False
-NRU,Nauru,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,,2024,,,,True,False
-NPL,Nepal,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,21.872012,False,False
-PAK,Pakistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,23.743286,False,False
-PLW,Palau,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,3.040625,False,False
-PNG,Papua New Guinea,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,16.959591,False,False
-PHL,Philippines,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,9.082527,False,False
-WSM,Samoa,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,9.795031,False,False
-SLB,Solomon Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,29.72599,False,False
-LKA,Sri Lanka,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,8.299686,False,False
-TJK,Tajikistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,22.858862,False,False
-THA,Thailand,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,8.711127,False,False
-TLS,Timor-Leste,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,20.16052,False,False
-TON,Tonga,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,18.958926,False,False
-TKM,Turkmenistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,12.166743,False,False
-TUV,Tuvalu,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2015,2024,9,11,15.916327,False,True
-UZB,Uzbekistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,18.325983,False,False
-VUT,Vanuatu,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2022,2024,2,4,24.30527,False,False
-VNM,Viet Nam,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,11.863491,False,False
-AFG,Afghanistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2020,2024,4,6,3.953297,False,True
-ARM,Armenia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,4.924688,False,False
-AZE,Azerbaijan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,1.818828,False,False
-BGD,Bangladesh,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,6.114947,False,False
-BTN,Bhutan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,3.582516,False,False
-BRN,Brunei Darussalam,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,,2024,,,,True,False
-KHM,Cambodia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,6.100876,False,False
-CHN,"China, People's Republic of",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.167579,False,False
-COK,Cook Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,,2024,,,,True,False
-FJI,Fiji,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,7.107651,False,False
-GEO,Georgia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,11.870481,False,False
-HKG,"Hong Kong, China",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.112463,False,False
-IND,India,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,3.521186,False,False
-IDN,Indonesia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,1.148633,False,False
-KAZ,Kazakhstan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.082606,False,False
-KIR,Kiribati,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,4.761341,False,False
-KGZ,Kyrgyz Republic,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2022,2024,2,4,26.577561,False,False
-LAO,Lao People's Democratic Republic,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,1.494197,False,False
-MYS,Malaysia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.380194,False,False
-MDV,Maldives,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.080043,False,False
-MHL,Marshall Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,23.06322,False,False
-FSM,"Micronesia, Federated States of",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2014,2024,10,12,7.432848,False,True
-MNG,Mongolia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2.217678,False,False
-MMR,Myanmar,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2019,2024,5,7,3.4013,False,True
-NRU,Nauru,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,1.374706,False,False
-NPL,Nepal,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,26.225458,False,False
-PAK,Pakistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,9.396345,False,False
-PLW,Palau,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,0.801494,False,False
-PNG,Papua New Guinea,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,0.012157,False,False
-PHL,Philippines,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,8.72571,False,False
-WSM,Samoa,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,24.006325,False,False
-SLB,Solomon Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,6.008899,False,False
-LKA,Sri Lanka,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,6.792038,False,False
-TJK,Tajikistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,47.885211,False,False
-THA,Thailand,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,1.795983,False,False
-TLS,Timor-Leste,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,11.769243,False,False
-TON,Tonga,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,42.610422,False,False
-TKM,Turkmenistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,1996,2024,28,30,0.185811,False,True
-TUV,Tuvalu,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,4.163059,False,False
-UZB,Uzbekistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,14.421099,False,False
-VUT,Vanuatu,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2022,2024,2,4,18.75096,False,False
-VNM,Viet Nam,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2004,2024,20,22,5.084986,False,True
+iso3,country,indicator_code,indicator_short,indicator_label,policy_surface,latest_year,indicator_global_latest_year,relative_lag_years,calendar_age_years,indicator_source_calendar_age_years,indicator_source_context,refresh_status,protocol_review_cell,value,missing,stale_ge_3_years
+AFG,Afghanistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,42647492.0,False,False
+ARM,Armenia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3033500.0,False,False
+AZE,Azerbaijan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,10202830.0,False,False
+BGD,Bangladesh,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,173562364.0,False,False
+BTN,Bhutan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,791524.0,False,False
+BRN,Brunei Darussalam,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,462721.0,False,False
+KHM,Cambodia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,17638801.0,False,False
+CHN,"China, People's Republic of",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1408975000.0,False,False
+COK,Cook Islands,SP.POP.TOTL,Population,"Population, total",denominator,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+FJI,Fiji,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,928784.0,False,False
+GEO,Georgia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3699557.0,False,False
+HKG,"Hong Kong, China",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7524100.0,False,False
+IND,India,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1450935791.0,False,False
+IDN,Indonesia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,283487931.0,False,False
+KAZ,Kazakhstan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,20592571.0,False,False
+KIR,Kiribati,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,134518.0,False,False
+KGZ,Kyrgyz Republic,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7221868.0,False,False
+LAO,Lao People's Democratic Republic,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7769819.0,False,False
+MYS,Malaysia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,35557673.0,False,False
+MDV,Maldives,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,527799.0,False,False
+MHL,Marshall Islands,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,37548.0,False,False
+FSM,"Micronesia, Federated States of",SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,113160.0,False,False
+MNG,Mongolia,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3524788.0,False,False
+MMR,Myanmar,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,54500091.0,False,False
+NRU,Nauru,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,11947.0,False,False
+NPL,Nepal,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,29651054.0,False,False
+PAK,Pakistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,251269164.0,False,False
+PLW,Palau,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,17695.0,False,False
+PNG,Papua New Guinea,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,10576502.0,False,False
+PHL,Philippines,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,115843670.0,False,False
+WSM,Samoa,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,218019.0,False,False
+SLB,Solomon Islands,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,819198.0,False,False
+LKA,Sri Lanka,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,21916000.0,False,False
+TJK,Tajikistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,10590927.0,False,False
+THA,Thailand,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,71668011.0,False,False
+TLS,Timor-Leste,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1400638.0,False,False
+TON,Tonga,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,104175.0,False,False
+TKM,Turkmenistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7494498.0,False,False
+TUV,Tuvalu,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,9646.0,False,False
+UZB,Uzbekistan,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,36361859.0,False,False
+VUT,Vanuatu,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,327777.0,False,False
+VNM,Viet Nam,SP.POP.TOTL,Population,"Population, total",denominator,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,100987686.0,False,False
+AFG,Afghanistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,14.985763,False,False
+ARM,Armenia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,9.321192,False,False
+AZE,Azerbaijan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.271135,False,False
+BGD,Bangladesh,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,2.170146,False,False
+BTN,Bhutan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.415516,False,False
+BRN,Brunei Darussalam,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,2.228607,False,False
+KHM,Cambodia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.617068,False,False
+CHN,"China, People's Republic of",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,5.943889,False,False
+COK,Cook Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+FJI,Fiji,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.615242,False,False
+GEO,Georgia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,6.857589,False,False
+HKG,"Hong Kong, China",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+IND,India,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.33944,False,False
+IDN,Indonesia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,2.702399,False,False
+KAZ,Kazakhstan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.767015,False,False
+KIR,Kiribati,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,10.945256,False,False
+KGZ,Kyrgyz Republic,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.503445,False,False
+LAO,Lao People's Democratic Republic,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,1.326516,False,False
+MYS,Malaysia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.9576,False,False
+MDV,Maldives,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,9.249736,False,False
+MHL,Marshall Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,13.40529,False,False
+FSM,"Micronesia, Federated States of",SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,12.880876,False,False
+MNG,Mongolia,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,6.072075,False,False
+MMR,Myanmar,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.457484,False,False
+NRU,Nauru,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,18.21076,False,False
+NPL,Nepal,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,6.158437,False,False
+PAK,Pakistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,2.519883,False,False
+PLW,Palau,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,10.854682,False,False
+PNG,Papua New Guinea,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,2.870814,False,False
+PHL,Philippines,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,5.101225,False,False
+WSM,Samoa,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,6.781033,False,False
+SLB,Solomon Islands,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,5.363662,False,False
+LKA,Sri Lanka,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.683138,False,False
+TJK,Tajikistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,7.437899,False,False
+THA,Thailand,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.537877,False,False
+TLS,Timor-Leste,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,9.597795,False,False
+TON,Tonga,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,7.360378,False,False
+TKM,Turkmenistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,5.497891,False,False
+TUV,Tuvalu,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,27.089685,False,False
+UZB,Uzbekistan,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,6.743129,False,False
+VUT,Vanuatu,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.118668,False,False
+VNM,Viet Nam,SH.XPD.CHEX.GD.ZS,Health spend,Current health expenditure (% GDP),health finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.561095,False,False
+AFG,Afghanistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,1,near-current global series,protocol_review,True,112.230904,False,False
+ARM,Armenia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,101.990554,False,False
+AZE,Azerbaijan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,105.625024,False,False
+BGD,Bangladesh,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,106.49131,False,False
+BTN,Bhutan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,114.881124,False,False
+BRN,Brunei Darussalam,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,94.820787,False,False
+KHM,Cambodia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,108.971333,False,False
+CHN,"China, People's Republic of",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,99.644963,False,False
+COK,Cook Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+FJI,Fiji,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,110.377231,False,False
+GEO,Georgia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,99.356021,False,False
+HKG,"Hong Kong, China",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,103.152956,False,False
+IND,India,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,111.033783,False,False
+IDN,Indonesia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,100.371429,False,False
+KAZ,Kazakhstan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,97.332988,False,False
+KIR,Kiribati,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,95.2685,False,False
+KGZ,Kyrgyz Republic,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,98.953543,False,False
+LAO,Lao People's Democratic Republic,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,93.143525,False,False
+MYS,Malaysia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,90.359559,False,False
+MDV,Maldives,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,99.714538,False,False
+MHL,Marshall Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,101.801289,False,False
+FSM,"Micronesia, Federated States of",SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,82.15982,False,False
+MNG,Mongolia,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,92.340079,False,False
+MMR,Myanmar,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2018,2025,7,8,1,near-current global series,stale_alert,True,120.214569,False,True
+NRU,Nauru,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,94.401331,False,False
+NPL,Nepal,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,128.558747,False,False
+PAK,Pakistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,83.726068,False,False
+PLW,Palau,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,106.937269,False,False
+PNG,Papua New Guinea,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,1,near-current global series,protocol_review,True,121.090488,False,False
+PHL,Philippines,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,94.033091,False,False
+WSM,Samoa,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,101.043324,False,False
+SLB,Solomon Islands,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,81.844576,False,False
+LKA,Sri Lanka,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,1,near-current global series,protocol_review,True,91.451142,False,False
+TJK,Tajikistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,95.757141,False,False
+THA,Thailand,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,100.728168,False,False
+TLS,Timor-Leste,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2023,2025,2,3,1,near-current global series,protocol_review,True,119.652693,False,False
+TON,Tonga,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,108.789986,False,False
+TKM,Turkmenistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,95.692178,False,False
+TUV,Tuvalu,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,101.138952,False,False
+UZB,Uzbekistan,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,120.864047,False,False
+VUT,Vanuatu,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,112.491972,False,False
+VNM,Viet Nam,SE.PRM.ENRR,Primary enrol.,"Primary school enrollment, gross (%)",education planning,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,106.332886,False,False
+AFG,Afghanistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,13.351,False,False
+ARM,Armenia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,12.871,False,False
+AZE,Azerbaijan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.457,False,False
+BGD,Bangladesh,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.778,False,False
+BTN,Bhutan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.227,False,False
+BRN,Brunei Darussalam,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.277,False,False
+KHM,Cambodia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,0.263,False,False
+CHN,"China, People's Republic of",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.615,False,False
+COK,Cook Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+FJI,Fiji,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.347,False,False
+GEO,Georgia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,12.097,False,False
+HKG,"Hong Kong, China",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,2.799,False,False
+IND,India,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.219,False,False
+IDN,Indonesia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.237,False,False
+KAZ,Kazakhstan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.771,False,False
+KIR,Kiribati,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+KGZ,Kyrgyz Republic,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.526,False,False
+LAO,Lao People's Democratic Republic,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,1.187,False,False
+MYS,Malaysia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.764,False,False
+MDV,Maldives,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.514,False,False
+MHL,Marshall Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+FSM,"Micronesia, Federated States of",SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+MNG,Mongolia,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.233,False,False
+MMR,Myanmar,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,3.047,False,False
+NRU,Nauru,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+NPL,Nepal,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,10.465,False,False
+PAK,Pakistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.42,False,False
+PLW,Palau,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+PNG,Papua New Guinea,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,2.571,False,False
+PHL,Philippines,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,2.235,False,False
+WSM,Samoa,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.996,False,False
+SLB,Solomon Islands,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,1.431,False,False
+LKA,Sri Lanka,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.005,False,False
+TJK,Tajikistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,6.931,False,False
+THA,Thailand,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,0.781,False,False
+TLS,Timor-Leste,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,1.592,False,False
+TON,Tonga,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,2.008,False,False
+TKM,Turkmenistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.267,False,False
+TUV,Tuvalu,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+UZB,Uzbekistan,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,4.622,False,False
+VUT,Vanuatu,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,5.073,False,False
+VNM,Viet Nam,SL.UEM.TOTL.ZS,Unemployment,"Unemployment, total (% labor force)",labor market,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,1.523,False,False
+AFG,Afghanistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,85.3,False,False
+ARM,Armenia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+AZE,Azerbaijan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+BGD,Bangladesh,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,99.5,False,False
+BTN,Bhutan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+BRN,Brunei Darussalam,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+KHM,Cambodia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,95.0,False,False
+CHN,"China, People's Republic of",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+COK,Cook Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,,2023,,,3,standard-lag global series,missing_public_field,True,,True,False
+FJI,Fiji,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,99.3,False,False
+GEO,Georgia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+HKG,"Hong Kong, China",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+IND,India,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,99.5,False,False
+IDN,Indonesia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,99.4,False,False
+KAZ,Kazakhstan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+KIR,Kiribati,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,95.9,False,False
+KGZ,Kyrgyz Republic,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+LAO,Lao People's Democratic Republic,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,96.5,False,False
+MYS,Malaysia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+MDV,Maldives,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+MHL,Marshall Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+FSM,"Micronesia, Federated States of",EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,86.9,False,False
+MNG,Mongolia,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+MMR,Myanmar,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,76.8,False,False
+NRU,Nauru,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+NPL,Nepal,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,94.0,False,False
+PAK,Pakistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,95.6,False,False
+PLW,Palau,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+PNG,Papua New Guinea,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,20.5,False,False
+PHL,Philippines,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,98.0,False,False
+WSM,Samoa,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+SLB,Solomon Islands,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,81.3,False,False
+LKA,Sri Lanka,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+TJK,Tajikistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+THA,Thailand,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+TLS,Timor-Leste,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+TON,Tonga,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+TKM,Turkmenistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+TUV,Tuvalu,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+UZB,Uzbekistan,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,100.0,False,False
+VUT,Vanuatu,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,61.6,False,False
+VNM,Viet Nam,EG.ELC.ACCS.ZS,Electricity,Access to electricity (% population),energy access,2023,2023,0,3,3,standard-lag global series,latest_for_indicator,False,99.8,False,False
+AFG,Afghanistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,16.094999,False,False
+ARM,Armenia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,81.339302,False,False
+AZE,Azerbaijan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,90.800002,False,False
+BGD,Bangladesh,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,53.421713,False,False
+BTN,Bhutan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,91.277397,False,False
+BRN,Brunei Darussalam,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,96.298288,False,False
+KHM,Cambodia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,68.475304,False,False
+CHN,"China, People's Republic of",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,91.6,False,False
+COK,Cook Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,,2025,,,1,near-current global series,missing_public_field,True,,True,False
+FJI,Fiji,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,74.7052,False,False
+GEO,Georgia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,83.798557,False,False
+HKG,"Hong Kong, China",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,95.75537,False,False
+IND,India,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2025,2025,0,1,1,near-current global series,latest_for_indicator,False,70.0,False,False
+IDN,Indonesia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,72.780755,False,False
+KAZ,Kazakhstan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,93.391673,False,False
+KIR,Kiribati,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,89.4403,False,False
+KGZ,Kyrgyz Republic,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,92.028603,False,False
+LAO,Lao People's Democratic Republic,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,65.592697,False,False
+MYS,Malaysia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,98.020606,False,False
+MDV,Maldives,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,85.239998,False,False
+MHL,Marshall Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,65.915802,False,False
+FSM,"Micronesia, Federated States of",IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,39.523602,False,False
+MNG,Mongolia,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,85.123497,False,False
+MMR,Myanmar,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2020,2025,5,6,1,near-current global series,stale_alert,True,45.447701,False,True
+NRU,Nauru,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,83.011703,False,False
+NPL,Nepal,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,46.321899,False,False
+PAK,Pakistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,57.253,False,False
+PLW,Palau,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,83.925499,False,False
+PNG,Papua New Guinea,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,18.8116,False,False
+PHL,Philippines,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,67.263009,False,False
+WSM,Samoa,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2014,2025,11,12,1,near-current global series,stale_alert,True,21.200001,False,True
+SLB,Solomon Islands,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,29.040701,False,False
+LKA,Sri Lanka,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,54.59,False,False
+TJK,Tajikistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,55.7934,False,False
+THA,Thailand,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,90.867188,False,False
+TLS,Timor-Leste,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2021,2025,4,5,1,near-current global series,stale_alert,True,35.042,False,True
+TON,Tonga,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,67.441704,False,False
+TKM,Turkmenistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2016,2025,9,10,1,near-current global series,stale_alert,True,17.990299,False,True
+TUV,Tuvalu,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2017,2025,8,9,1,near-current global series,stale_alert,True,35.200001,False,True
+UZB,Uzbekistan,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,89.505501,False,False
+VUT,Vanuatu,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2015,2025,10,11,1,near-current global series,stale_alert,True,22.3514,False,True
+VNM,Viet Nam,IT.NET.USER.ZS,Internet use,Individuals using the Internet (% population),digital access,2024,2025,1,2,1,near-current global series,one_reference_year_watch,False,84.15,False,False
+AFG,Afghanistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,46.087094,False,False
+ARM,Armenia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,30.579633,False,False
+AZE,Azerbaijan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,21.727,False,False
+BGD,Bangladesh,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,42.381376,False,False
+BTN,Bhutan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,23.945658,False,False
+BRN,Brunei Darussalam,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,7.597265,False,False
+KHM,Cambodia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,24.143602,False,False
+CHN,"China, People's Republic of",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,34.810524,False,False
+COK,Cook Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,,2020,,,6,older global production vintage,missing_public_field,True,,True,False
+FJI,Fiji,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,12.418798,False,False
+GEO,Georgia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,17.043842,False,False
+HKG,"Hong Kong, China",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,,2020,,,6,older global production vintage,missing_public_field,True,,True,False
+IND,India,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,48.394812,False,False
+IDN,Indonesia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,17.881499,False,False
+KAZ,Kazakhstan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,20.027872,False,False
+KIR,Kiribati,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,11.256827,False,False
+KGZ,Kyrgyz Republic,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,24.381725,False,False
+LAO,Lao People's Democratic Republic,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,22.317667,False,False
+MYS,Malaysia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,16.193853,False,False
+MDV,Maldives,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,12.012391,False,False
+MHL,Marshall Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,10.725619,False,False
+FSM,"Micronesia, Federated States of",EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,12.11442,False,False
+MNG,Mongolia,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,29.654787,False,False
+MMR,Myanmar,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,32.315034,False,False
+NRU,Nauru,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,6.064355,False,False
+NPL,Nepal,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,45.720771,False,False
+PAK,Pakistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,42.998173,False,False
+PLW,Palau,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,7.32771,False,False
+PNG,Papua New Guinea,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,17.310543,False,False
+PHL,Philippines,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,20.288742,False,False
+WSM,Samoa,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,12.551895,False,False
+SLB,Solomon Islands,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,13.954283,False,False
+LKA,Sri Lanka,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,19.964441,False,False
+TJK,Tajikistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,37.053406,False,False
+THA,Thailand,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,31.007202,False,False
+TLS,Timor-Leste,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,17.410466,False,False
+TON,Tonga,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,12.478413,False,False
+TKM,Turkmenistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,19.599761,False,False
+TUV,Tuvalu,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,5.917801,False,False
+UZB,Uzbekistan,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,31.960429,False,False
+VUT,Vanuatu,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,14.082412,False,False
+VNM,Viet Nam,EN.ATM.PM25.MC.M3,PM2.5,"PM2.5 air pollution, mean annual exposure",environmental health,2020,2020,0,6,6,older global production vintage,latest_for_indicator,False,20.801064,False,False
+AFG,Afghanistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,34.743247,False,False
+ARM,Armenia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7.805886,False,False
+AZE,Azerbaijan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,5.657171,False,False
+BGD,Bangladesh,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,11.164801,False,False
+BTN,Bhutan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,14.993109,False,False
+BRN,Brunei Darussalam,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.174477,False,False
+KHM,Cambodia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,16.576873,False,False
+CHN,"China, People's Republic of",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,6.775999,False,False
+COK,Cook Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+FJI,Fiji,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,13.190028,False,False
+GEO,Georgia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,5.485443,False,False
+HKG,"Hong Kong, China",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.037448,False,False
+IND,India,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,16.285434,False,False
+IDN,Indonesia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,12.608666,False,False
+KAZ,Kazakhstan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3.882292,False,False
+KIR,Kiribati,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,27.187006,False,False
+KGZ,Kyrgyz Republic,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,8.607604,False,False
+LAO,Lao People's Democratic Republic,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,16.771884,False,False
+MYS,Malaysia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,8.128468,False,False
+MDV,Maldives,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3.841959,False,False
+MHL,Marshall Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,19.584916,False,False
+FSM,"Micronesia, Federated States of",NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,22.789771,False,False
+MNG,Mongolia,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7.290952,False,False
+MMR,Myanmar,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,20.834177,False,False
+NRU,Nauru,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+NPL,Nepal,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,21.872012,False,False
+PAK,Pakistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,23.743286,False,False
+PLW,Palau,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.040625,False,False
+PNG,Papua New Guinea,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,16.959591,False,False
+PHL,Philippines,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,9.082527,False,False
+WSM,Samoa,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,9.795031,False,False
+SLB,Solomon Islands,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,29.72599,False,False
+LKA,Sri Lanka,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,8.299686,False,False
+TJK,Tajikistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,22.858862,False,False
+THA,Thailand,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,8.711127,False,False
+TLS,Timor-Leste,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,20.16052,False,False
+TON,Tonga,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,18.958926,False,False
+TKM,Turkmenistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,12.166743,False,False
+TUV,Tuvalu,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2015,2024,9,11,2,standard-lag global series,stale_alert,True,15.916327,False,True
+UZB,Uzbekistan,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,18.325983,False,False
+VUT,Vanuatu,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2022,2024,2,4,2,standard-lag global series,protocol_review,True,24.30527,False,False
+VNM,Viet Nam,NV.AGR.TOTL.ZS,Agriculture,"Agriculture, forestry, and fishing, value added (% GDP)",structural change,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,11.863491,False,False
+AFG,Afghanistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2020,2024,4,6,2,standard-lag global series,stale_alert,True,3.953297,False,True
+ARM,Armenia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,4.924688,False,False
+AZE,Azerbaijan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.818828,False,False
+BGD,Bangladesh,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,6.114947,False,False
+BTN,Bhutan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,3.582516,False,False
+BRN,Brunei Darussalam,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+KHM,Cambodia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,6.100876,False,False
+CHN,"China, People's Republic of",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.167579,False,False
+COK,Cook Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,,2024,,,2,standard-lag global series,missing_public_field,True,,True,False
+FJI,Fiji,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,7.107651,False,False
+GEO,Georgia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,11.870481,False,False
+HKG,"Hong Kong, China",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.112463,False,False
+IND,India,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,3.521186,False,False
+IDN,Indonesia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.148633,False,False
+KAZ,Kazakhstan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.082606,False,False
+KIR,Kiribati,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,4.761341,False,False
+KGZ,Kyrgyz Republic,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2022,2024,2,4,2,standard-lag global series,protocol_review,True,26.577561,False,False
+LAO,Lao People's Democratic Republic,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.494197,False,False
+MYS,Malaysia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.380194,False,False
+MDV,Maldives,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.080043,False,False
+MHL,Marshall Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,23.06322,False,False
+FSM,"Micronesia, Federated States of",BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2014,2024,10,12,2,standard-lag global series,stale_alert,True,7.432848,False,True
+MNG,Mongolia,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,2.217678,False,False
+MMR,Myanmar,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2019,2024,5,7,2,standard-lag global series,stale_alert,True,3.4013,False,True
+NRU,Nauru,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.374706,False,False
+NPL,Nepal,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,26.225458,False,False
+PAK,Pakistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,9.396345,False,False
+PLW,Palau,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,0.801494,False,False
+PNG,Papua New Guinea,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,0.012157,False,False
+PHL,Philippines,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,8.72571,False,False
+WSM,Samoa,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,24.006325,False,False
+SLB,Solomon Islands,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,6.008899,False,False
+LKA,Sri Lanka,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,6.792038,False,False
+TJK,Tajikistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,47.885211,False,False
+THA,Thailand,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,1.795983,False,False
+TLS,Timor-Leste,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,11.769243,False,False
+TON,Tonga,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,42.610422,False,False
+TKM,Turkmenistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,1996,2024,28,30,2,standard-lag global series,stale_alert,True,0.185811,False,True
+TUV,Tuvalu,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2023,2024,1,3,2,standard-lag global series,one_reference_year_watch,False,4.163059,False,False
+UZB,Uzbekistan,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2024,2024,0,2,2,standard-lag global series,latest_for_indicator,False,14.421099,False,False
+VUT,Vanuatu,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2022,2024,2,4,2,standard-lag global series,protocol_review,True,18.75096,False,False
+VNM,Viet Nam,BX.TRF.PWKR.DT.GD.ZS,Remittances,Personal remittances received (% GDP),migration finance,2004,2024,20,22,2,standard-lag global series,stale_alert,True,5.084986,False,True

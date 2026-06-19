@@ -52,6 +52,15 @@ The script produced a 42 DMC by 9 indicator matrix, or 378 cells. It records
 19 missing cells and 13 cells that are 3 or more years behind the indicator's
 own latest public reference year.
 
+The 2026-06-20 protocol pass adds a stricter source-review layer. It keeps
+the original 13 strict stale-alert cells, but also labels missing public
+fields and cells two relative reference years behind as protocol-review cells.
+That produces 39 protocol-review cells in the current generated JSON. The
+same pass records the indicator-level source context derived from the WDI API
+pull: 3 near-current global series, 5 standard-lag global series, and 1 older
+global production vintage. All 9 indicator records in this pass were retrieved
+from the live WDI API rather than cache fallback.
+
 The selected indicators are not a final theory of development measurement.
 They are deliberately broad enough for topic triage: population, health
 spending, primary enrollment, unemployment, electricity access, internet use,
@@ -79,6 +88,26 @@ What the chart makes visible:
 - PM2.5 looks uniformly old by calendar year, but not stale in the relative
   matrix because the indicator's own latest public reference year is older.
   That distinction is the main methodological hook.
+
+## Protocol Upgrade
+
+The protocol upgrade does not infer non-applicability from memory. Missing
+public WDI cells remain coverage-review cells until indicator documentation or
+source-specific metadata can justify exclusion. Observed cells are classified
+from the committed script as:
+
+- `latest_for_indicator` when the DMC has the indicator's latest public
+  reference year;
+- `one_reference_year_watch` when the DMC is one relative reference year
+  behind;
+- `protocol_review` when the DMC is two relative reference years behind;
+- `stale_alert` when the DMC is three or more relative reference years behind;
+- `missing_public_field` when the pulled WDI series has no public value for the
+  DMC.
+
+This creates a better L3 handoff because the next program package can separate
+true stale alerts from missingness, watch-list cells, older global production
+vintages, and unresolved non-applicability questions.
 
 ## What This Does Not Mean
 

@@ -76,9 +76,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/data-freshness",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "A 42-economy by 9-indicator WDI vintage matrix shows where planning data are current, stale, or missing.",
+    deck: "A 42-economy by 9-indicator WDI vintage matrix now separates latest, watch, protocol-review, stale-alert, and missing public cells before any dashboard comparison.",
     evidencePath: "research/topic-sprints/wdi-data-freshness-sprint.md",
-    visual: "Interactive economy-indicator freshness matrix",
+    visual: "Interactive economy-indicator freshness matrix with source-context protocol status",
     sourceNote: "World Bank WDI API retrieval and source-vintage fields",
   },
   {
@@ -562,9 +562,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   2: {
     readiness: "prototype",
     readinessLabel: "L2 prototype",
-    qaSummary: "WDI freshness matrix has a public API artifact, interactive matrix, caveats, screenshots, and build/gates.",
-    publicationGap: "Needs indicator-specific refresh expectations and non-applicability rules before a statistical-capacity brief.",
-    nextUpgrade: "Write the freshness inclusion protocol and rerun the matrix with source-specific refresh cadence labels.",
+    qaSummary: "WDI freshness matrix has a public API artifact, interactive matrix, caveats, screenshots, build/gates, and a generated protocol layer that labels latest, watch, protocol-review, stale-alert, and missing public cells.",
+    publicationGap: "Needs full indicator documentation, source-specific non-applicability evidence, and a pre-registered inclusion protocol before a statistical-capacity brief.",
+    nextUpgrade: "Promote the protocol into an L3 package by attaching indicator documentation, non-applicability rules, and sensitivity checks for the review thresholds.",
   },
   3: {
     readiness: "prototype",

@@ -7,7 +7,9 @@ interface FreshnessCoverage {
   indicator_count: number;
   matrix_cells: number;
   missing_cells: number;
+  protocol_review_cells: number;
   stale_cells_ge_3_years: number;
+  source_context_counts: Record<string, number>;
 }
 
 interface IndicatorSummary {
@@ -15,10 +17,14 @@ interface IndicatorSummary {
   indicator_short: string;
   policy_surface: string;
   global_latest_reference_year: number;
+  source_calendar_age_years: number;
+  source_context: string;
   dmc_count: number;
   dmc_observed_count: number;
   dmc_missing_count: number;
+  dmc_protocol_review_count: number;
   dmc_stale_count_ge_3_years: number;
+  refresh_status_counts: Record<string, number>;
   median_relative_lag_years: number | null;
 }
 
@@ -33,6 +39,15 @@ interface FreshnessRow {
   indicator_global_latest_year: number;
   relative_lag_years: number | null;
   calendar_age_years: number | null;
+  indicator_source_calendar_age_years: number;
+  indicator_source_context: string;
+  refresh_status:
+    | "latest_for_indicator"
+    | "one_reference_year_watch"
+    | "protocol_review"
+    | "stale_alert"
+    | "missing_public_field";
+  protocol_review_cell: boolean;
   value: number | null;
   missing: boolean;
   stale_ge_3_years: boolean;
@@ -61,6 +76,8 @@ interface FreshnessData {
   source_sanity: {
     unit: string;
     relative_lag: string;
+    refresh_protocol: string;
+    non_applicability_rule: string;
     important_caveat: string;
     use_limit: string;
   };
@@ -71,6 +88,7 @@ interface EconomySummary {
   country: string;
   missing: number;
   stale: number;
+  protocolReview: number;
   observed: number;
   maxLag: number;
 }
@@ -95,10 +113,10 @@ function formatLag(value: number | null | undefined) {
 
 function cellFill(row: FreshnessRow | undefined) {
   if (!row || row.missing) return "#d7dde3";
-  const lag = row.relative_lag_years ?? 0;
-  if (lag <= 0) return "#007DB8";
-  if (lag <= 2) return mix("#f7f7f7", "#5A8227", 0.42 + lag * 0.16);
-  return mix("#FBB00E", "#9b2226", Math.min(1, (lag - 3) / 7));
+  if (row.refresh_status === "latest_for_indicator") return "#007DB8";
+  if (row.refresh_status === "one_reference_year_watch") return "#5A8227";
+  if (row.refresh_status === "protocol_review") return "#FBB00E";
+  return "#9b2226";
 }
 
 function cellText(row: FreshnessRow | undefined) {
@@ -106,21 +124,12 @@ function cellText(row: FreshnessRow | undefined) {
   return String(row.latest_year ?? "M");
 }
 
-function mix(a: string, b: string, t: number) {
-  const pa = parseHex(a);
-  const pb = parseHex(b);
-  const clamped = Math.max(0, Math.min(1, t));
-  const c = pa.map((x, i) => Math.round(x + (pb[i] - x) * clamped));
-  return `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
-}
-
-function parseHex(hex: string) {
-  const clean = hex.replace("#", "");
-  return [
-    parseInt(clean.slice(0, 2), 16),
-    parseInt(clean.slice(2, 4), 16),
-    parseInt(clean.slice(4, 6), 16),
-  ];
+function formatStatus(status: FreshnessRow["refresh_status"] | undefined) {
+  if (status === "latest_for_indicator") return "latest for indicator";
+  if (status === "one_reference_year_watch") return "one-reference-year watch";
+  if (status === "protocol_review") return "protocol review";
+  if (status === "stale_alert") return "stale alert";
+  return "missing public field";
 }
 
 export default function ShowcaseDataFreshness() {
@@ -141,9 +150,17 @@ export default function ShowcaseDataFreshness() {
   const mostStaleIndicator = data?.indicator_summary
     .slice()
     .sort((a, b) => b.dmc_stale_count_ge_3_years - a.dmc_stale_count_ge_3_years)[0];
+  const mostProtocolIndicator = data?.indicator_summary
+    .slice()
+    .sort((a, b) => b.dmc_protocol_review_count - a.dmc_protocol_review_count)[0];
   const mostMissingIndicator = data?.indicator_summary
     .slice()
     .sort((a, b) => b.dmc_missing_count - a.dmc_missing_count)[0];
+  const sourceContextSummary = data
+    ? Object.entries(data.coverage.source_context_counts)
+        .map(([label, count]) => `${count} ${label}`)
+        .join("; ")
+    : "";
 
   return (
     <article className="showcase-page">
@@ -186,7 +203,15 @@ export default function ShowcaseDataFreshness() {
                   {data.coverage.stale_cells_ge_3_years}
                 </span>
                 <span className="showcase-stat-label">
-                  cells at least three relative years behind
+                  strict stale-alert cells
+                </span>
+              </div>
+              <div>
+                <span className="showcase-stat-value">
+                  {data.coverage.protocol_review_cells}
+                </span>
+                <span className="showcase-stat-label">
+                  missing or lagged cells needing protocol review
                 </span>
               </div>
             </>
@@ -229,11 +254,21 @@ export default function ShowcaseDataFreshness() {
         <div className="showcase-fact-list">
           {mostStaleIndicator && (
             <div>
-              <span>Most stale indicator in the sprint</span>
+              <span>Strict stale-alert indicator</span>
               <strong>
                 {mostStaleIndicator.indicator_short}:{" "}
                 {mostStaleIndicator.dmc_stale_count_ge_3_years} cells at least
                 three relative years behind
+              </strong>
+            </div>
+          )}
+          {mostProtocolIndicator && (
+            <div>
+              <span>Most protocol-review cells</span>
+              <strong>
+                {mostProtocolIndicator.indicator_short}:{" "}
+                {mostProtocolIndicator.dmc_protocol_review_count} missing,
+                protocol-review, or stale-alert cells
               </strong>
             </div>
           )}
@@ -254,6 +289,39 @@ export default function ShowcaseDataFreshness() {
           )}
         </div>
       </section>
+
+      {data && (
+        <section className="showcase-section showcase-two-col">
+          <div>
+            <p className="kicker">Refresh protocol</p>
+            <h2>The stricter layer separates source vintage from stale alerts.</h2>
+            <p>
+              The upgraded sprint keeps missing cells in a review lane rather
+              than treating them as zero, and it does not infer
+              non-applicability from memory. Observed cells are labeled latest,
+              watch, protocol review, or stale alert against the indicator's
+              own latest public reference year.
+            </p>
+          </div>
+          <div className="showcase-fact-list">
+            <div>
+              <span>Protocol-review cells</span>
+              <strong>
+                {data.coverage.protocol_review_cells} cells are missing,
+                two relative years behind, or strict stale alerts
+              </strong>
+            </div>
+            <div>
+              <span>Indicator source contexts</span>
+              <strong>{sourceContextSummary}</strong>
+            </div>
+            <div>
+              <span>Non-applicability rule</span>
+              <strong>{data.source_sanity.non_applicability_rule}</strong>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="showcase-section showcase-two-col">
         <div>
@@ -331,12 +399,14 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
         country: row.country,
         missing: 0,
         stale: 0,
+        protocolReview: 0,
         observed: 0,
         maxLag: 0,
       };
       if (row.missing) current.missing += 1;
       else current.observed += 1;
       if (row.stale_ge_3_years) current.stale += 1;
+      if (row.protocol_review_cell) current.protocolReview += 1;
       if (row.relative_lag_years !== null) {
         current.maxLag = Math.max(current.maxLag, row.relative_lag_years);
       }
@@ -347,8 +417,8 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
       return summaries.sort((a, b) => a.country.localeCompare(b.country));
     }
     return summaries.sort((a, b) => {
-      const signalA = a.missing * 100 + a.stale * 20 + a.maxLag;
-      const signalB = b.missing * 100 + b.stale * 20 + b.maxLag;
+      const signalA = a.missing * 100 + a.protocolReview * 30 + a.stale * 25 + a.maxLag;
+      const signalB = b.missing * 100 + b.protocolReview * 30 + b.stale * 25 + b.maxLag;
       return signalB - signalA || a.country.localeCompare(b.country);
     });
   }, [data.rows, sortMode]);
@@ -364,8 +434,8 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
     selectedColumnRows
       .slice()
       .sort((a, b) => {
-        const scoreA = Number(a.missing) * 100 + Number(a.stale_ge_3_years) * 30 + (a.relative_lag_years || 0);
-        const scoreB = Number(b.missing) * 100 + Number(b.stale_ge_3_years) * 30 + (b.relative_lag_years || 0);
+        const scoreA = Number(a.missing) * 100 + Number(a.protocol_review_cell) * 35 + Number(a.stale_ge_3_years) * 30 + (a.relative_lag_years || 0);
+        const scoreB = Number(b.missing) * 100 + Number(b.protocol_review_cell) * 35 + Number(b.stale_ge_3_years) * 30 + (b.relative_lag_years || 0);
         return scoreB - scoreA;
       })
       .map((row) => ({ row, country: row.country }))[0];
@@ -377,10 +447,9 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
           <p className="kicker">Interactive evidence view</p>
           <h2>Read the source vintage before reading the value.</h2>
           <p>
-            Each cell is one ADB DMC by one WDI indicator. Blue cells are
-            current relative to that indicator's latest public reference year;
-            gold and red cells are behind; gray cells are missing in the sprint
-            pull.
+            Each cell is one ADB DMC by one WDI indicator. The color encodes
+            the protocol status: latest, one-reference-year watch, protocol
+            review, stale alert, or missing public field.
           </p>
         </div>
         <div className="showcase-controls" aria-label="Freshness matrix controls">
@@ -426,9 +495,10 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
       </div>
 
       <div className="freshness-legend" aria-label="Freshness color legend">
-        <span><i style={{ background: "#007DB8" }} /> Current</span>
-        <span><i style={{ background: mix("#f7f7f7", "#5A8227", 0.58) }} /> 1-2 years behind</span>
-        <span><i style={{ background: mix("#FBB00E", "#9b2226", 0.55) }} /> 3+ years behind</span>
+        <span><i style={{ background: "#007DB8" }} /> Latest</span>
+        <span><i style={{ background: "#5A8227" }} /> Watch</span>
+        <span><i style={{ background: "#FBB00E" }} /> Protocol review</span>
+        <span><i style={{ background: "#9b2226" }} /> Stale alert</span>
         <span><i style={{ background: "#d7dde3" }} /> Missing</span>
       </div>
 
@@ -437,7 +507,8 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
           <span>Focus indicator</span>
           <strong>
             {selectedIndicator.indicator_short}: latest public reference year{" "}
-            {selectedIndicator.global_latest_reference_year}
+            {selectedIndicator.global_latest_reference_year};{" "}
+            {selectedIndicator.source_context}
           </strong>
         </div>
         <div>
@@ -445,7 +516,8 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
           <strong>
             {selectedIndicator.dmc_observed_count} observed,{" "}
             {selectedIndicator.dmc_missing_count} missing,{" "}
-            {selectedIndicator.dmc_stale_count_ge_3_years} stale
+            {selectedIndicator.dmc_protocol_review_count} protocol-review,{" "}
+            {selectedIndicator.dmc_stale_count_ge_3_years} stale-alert
           </strong>
         </div>
         <div>
@@ -453,8 +525,8 @@ function FreshnessExplorer({ data }: { data: FreshnessData }) {
           <strong>
             {strongestCell
               ? `${strongestCell.country}: ${strongestCell.row.missing
-                  ? "missing"
-                  : `${strongestCell.row.latest_year}, ${formatLag(strongestCell.row.relative_lag_years)}`}`
+                  ? "missing public field"
+                  : `${strongestCell.row.latest_year}, ${formatLag(strongestCell.row.relative_lag_years)}, ${formatStatus(strongestCell.row.refresh_status)}`}`
               : "Select a cell"}
           </strong>
         </div>
@@ -549,8 +621,8 @@ function FreshnessMatrix({
                       {row
                         ? `${economy.country}, ${indicator.indicator_short}: ${
                             row.missing
-                              ? "missing"
-                              : `${row.latest_year}, ${formatLag(row.relative_lag_years)}`
+                              ? "missing public field"
+                              : `${row.latest_year}, ${formatLag(row.relative_lag_years)}, ${formatStatus(row.refresh_status)}`
                           }`
                         : `${economy.country}, ${indicator.indicator_short}: missing`}
                     </title>

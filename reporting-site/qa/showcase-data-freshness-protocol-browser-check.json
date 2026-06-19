@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-06-19T16:35:04.7136553Z",
+  "server_url": "http://127.0.0.1:5176",
+  "route": "/showcase/data-freshness",
+  "checks": [
+    {
+      "viewport": "1280x900",
+      "screenshot": "reporting-site/qa/showcase-data-freshness-protocol-desktop.png",
+      "grid_screenshot": "reporting-site/qa/showcase-data-freshness-protocol-grid-desktop.png",
+      "title": "When Public Data Are Present but Stale",
+      "hero_stats": [
+        378,
+        19,
+        13,
+        39
+      ],
+      "legend": [
+        "Latest",
+        "Watch",
+        "Protocol review",
+        "Stale alert",
+        "Missing"
+      ],
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 1265,
+      "client_width": 1265
+    },
+    {
+      "viewport": "375x900",
+      "screenshot": "reporting-site/qa/showcase-data-freshness-protocol-mobile.png",
+      "grid_screenshot": "reporting-site/qa/showcase-data-freshness-protocol-grid-mobile.png",
+      "title": "When Public Data Are Present but Stale",
+      "hero_stats": [
+        378,
+        19,
+        13,
+        39
+      ],
+      "legend": [
+        "Latest",
+        "Watch",
+        "Protocol review",
+        "Stale alert",
+        "Missing"
+      ],
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 360,
+      "client_width": 360
+    }
+  ],
+  "console_errors": [],
+  "build": "npm run build passed; Vite chunk-size warning remains existing warning",
+  "data_artifact": "research/topic-sprints/generated/wdi-data-freshness-sprint.json",
+  "protocol_summary": {
+    "matrix_cells": 378,
+    "missing_cells": 19,
+    "strict_stale_alert_cells": 13,
+    "protocol_review_cells": 39,
+    "source_contexts": [
+      "3 near-current global series",
+      "5 standard-lag global series",
+      "1 older global production vintage"
+    ]
+  }
+}

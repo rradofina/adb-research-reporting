@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T16:17:25.632Z",
+  "generated_at": "2026-06-19T16:36:42.810Z",
   "source": "research/topic-sprints",
   "files": [
     {
@@ -40,9 +40,9 @@
     {
       "file": "generated/charts/wdi-data-freshness-heatmap.svg",
       "source": "research/topic-sprints/generated/charts/wdi-data-freshness-heatmap.svg",
-      "size": 275857,
-      "size_human": "269.4 KB",
-      "sha256": "4a60515c75757a00d40d6e545c64791a038a0d18437e70e41cb45096f9134d8c"
+      "size": 274715,
+      "size_human": "268.3 KB",
+      "sha256": "ec825244ef43fc1783e77e4048da0185bd173fd13414978ccb835a4d168dc172"
     },
     {
       "file": "generated/nepal-market-climate-prices-sprint.csv",
@@ -75,16 +75,16 @@
     {
       "file": "generated/wdi-data-freshness-sprint.csv",
       "source": "research/topic-sprints/generated/wdi-data-freshness-sprint.csv",
-      "size": 50833,
-      "size_human": "49.6 KB",
-      "sha256": "3450ee03ce1d7715a4cf6bcd18b6f233ed48cc0bf0dcf53db9d296252c76d529"
+      "size": 72557,
+      "size_human": "70.9 KB",
+      "sha256": "9b0e08639c3bf798b443447addf176d2c01c4a36ffccd867aaf4212e8344497b"
     },
     {
       "file": "generated/wdi-data-freshness-sprint.json",
       "source": "research/topic-sprints/generated/wdi-data-freshness-sprint.json",
-      "size": 196778,
-      "size_human": "192.2 KB",
-      "sha256": "c4f04495ff8b1e6ffcaca66df7561a6dd640ed87eb46eb819bb5e1b0da85f137"
+      "size": 281389,
+      "size_human": "274.8 KB",
+      "sha256": "ea9d826a99fbde2dbb831b3d407f5e9d89e159380fcb68ea1087b590e19d6f44"
     },
     {
       "file": "reports/nepal-market-climate-prices-sprint.md",
@@ -103,9 +103,9 @@
     {
       "file": "reports/wdi-data-freshness-sprint.md",
       "source": "research/topic-sprints/wdi-data-freshness-sprint.md",
-      "size": 4573,
-      "size_human": "4.5 KB",
-      "sha256": "a6f9bc5d63ac319621b1b142266b4b115baa17ba6a70d2ec2c36e58444a52ca2"
+      "size": 6069,
+      "size_human": "5.9 KB",
+      "sha256": "0f780cd9d055b17a7bd6d74dc8099af2bfdaf82b729d1bf0c92ef71ca30d5525"
     }
   ]
 }

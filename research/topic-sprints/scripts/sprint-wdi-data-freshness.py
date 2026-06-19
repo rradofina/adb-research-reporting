@@ -147,13 +147,23 @@ def fetch_indicator(indicator):
     code = indicator["code"]
     url = f"{API_BASE}/{code}?format=json&per_page=20000"
     cache_path = f"{CACHE}/wdi-{code}.json"
-    with urlopen(url, timeout=90) as response:
-        payload = json.load(response)
-    with open(cache_path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False)
+    retrieval_status = "live_api"
+    retrieval_error = None
+    try:
+        with urlopen(url, timeout=90) as response:
+            payload = json.load(response)
+        with open(cache_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False)
+    except Exception as exc:
+        if not os.path.exists(cache_path):
+            raise
+        retrieval_status = "cache_reused_after_fetch_error"
+        retrieval_error = f"{type(exc).__name__}: {exc}"
+        with open(cache_path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
     if not isinstance(payload, list) or len(payload) < 2:
         raise ValueError(f"Unexpected WDI payload for {code}")
-    return url, cache_path, payload[0], payload[1]
+    return url, cache_path, payload[0], payload[1], retrieval_status, retrieval_error
 
 
 def latest_by_iso(rows):
@@ -176,6 +186,27 @@ def latest_by_iso(rows):
                 "country_api_name": row["country"]["value"],
             }
     return latest, global_latest_year
+
+
+def source_context(global_latest_year):
+    age = CURRENT_YEAR - global_latest_year
+    if age <= 1:
+        return "near-current global series"
+    if age <= 3:
+        return "standard-lag global series"
+    return "older global production vintage"
+
+
+def refresh_status(relative_lag, missing):
+    if missing:
+        return "missing_public_field"
+    if relative_lag == 0:
+        return "latest_for_indicator"
+    if relative_lag == 1:
+        return "one_reference_year_watch"
+    if relative_lag == 2:
+        return "protocol_review"
+    return "stale_alert"
 
 
 def write_heatmap(rows, economy_summary):
@@ -264,6 +295,10 @@ def write_heatmap(rows, economy_summary):
     fig.savefig(png_path, dpi=180)
     fig.savefig(svg_path)
     plt.close(fig)
+    with open(svg_path, "r", encoding="utf-8") as f:
+        svg_lines = [line.rstrip() for line in f]
+    with open(svg_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(svg_lines) + "\n")
     return png_path, svg_path
 
 
@@ -273,8 +308,10 @@ def main():
     source_records = []
 
     for indicator in INDICATORS:
-        url, cache_path, meta, api_rows = fetch_indicator(indicator)
+        url, cache_path, meta, api_rows, retrieval_status, retrieval_error = fetch_indicator(indicator)
         latest, global_latest_year = latest_by_iso(api_rows)
+        source_age = CURRENT_YEAR - global_latest_year
+        context = source_context(global_latest_year)
         source_records.append({
             "code": indicator["code"],
             "label": indicator["label"],
@@ -283,7 +320,17 @@ def main():
             "cache_path": cache_path.replace("D:/Users/Raymond/OneDrive/Desktop/ADB/Research/", ""),
             "api_total": meta.get("total"),
             "api_lastupdated": meta.get("lastupdated"),
+            "retrieval_status": retrieval_status,
+            "retrieval_error": retrieval_error,
             "global_latest_reference_year": global_latest_year,
+            "source_calendar_age_years": source_age,
+            "source_context": context,
+            "cell_review_rule": (
+                "Missing cells are coverage-review cells. Observed cells are "
+                "compared with this indicator's own latest public reference "
+                "year: relative lag 0 = latest, 1 = watch, 2 = protocol "
+                "review, and 3 or more = stale alert."
+            ),
         })
         for iso3, country in sorted(ADB_DMCS.items(), key=lambda x: x[1]):
             entry = latest.get(iso3)
@@ -299,6 +346,7 @@ def main():
                 value = None
                 latest_year = None
                 missing = True
+            status = refresh_status(relative_lag, missing)
             rows.append({
                 "iso3": iso3,
                 "country": country,
@@ -310,6 +358,14 @@ def main():
                 "indicator_global_latest_year": global_latest_year,
                 "relative_lag_years": relative_lag,
                 "calendar_age_years": calendar_age,
+                "indicator_source_calendar_age_years": source_age,
+                "indicator_source_context": context,
+                "refresh_status": status,
+                "protocol_review_cell": status in {
+                    "missing_public_field",
+                    "protocol_review",
+                    "stale_alert",
+                },
                 "value": round(value, 6) if value is not None else None,
                 "missing": missing,
                 "stale_ge_3_years": bool(relative_lag is not None and relative_lag >= 3),
@@ -325,6 +381,7 @@ def main():
             "indicator_count": len(cells),
             "observed_indicator_count": sum(1 for r in cells if not r["missing"]),
             "missing_indicator_count": sum(1 for r in cells if r["missing"]),
+            "protocol_review_indicator_count": sum(1 for r in cells if r["protocol_review_cell"]),
             "stale_indicator_count_ge_3_years": sum(1 for r in cells if r["stale_ge_3_years"]),
             "max_relative_lag_years": max(observed_lags) if observed_lags else None,
             "median_relative_lag_years": round(statistics.median(observed_lags), 2)
@@ -342,10 +399,27 @@ def main():
             "global_latest_reference_year": next(
                 s["global_latest_reference_year"] for s in source_records if s["code"] == indicator["code"]
             ),
+            "source_calendar_age_years": next(
+                s["source_calendar_age_years"] for s in source_records if s["code"] == indicator["code"]
+            ),
+            "source_context": next(
+                s["source_context"] for s in source_records if s["code"] == indicator["code"]
+            ),
             "dmc_count": len(cells),
             "dmc_observed_count": sum(1 for r in cells if not r["missing"]),
             "dmc_missing_count": sum(1 for r in cells if r["missing"]),
+            "dmc_protocol_review_count": sum(1 for r in cells if r["protocol_review_cell"]),
             "dmc_stale_count_ge_3_years": sum(1 for r in cells if r["stale_ge_3_years"]),
+            "refresh_status_counts": {
+                status: sum(1 for r in cells if r["refresh_status"] == status)
+                for status in [
+                    "latest_for_indicator",
+                    "one_reference_year_watch",
+                    "protocol_review",
+                    "stale_alert",
+                    "missing_public_field",
+                ]
+            },
             "median_relative_lag_years": round(statistics.median(observed_lags), 2)
             if observed_lags else None,
         })
@@ -360,6 +434,11 @@ def main():
 
     missing_cells = sum(1 for r in rows if r["missing"])
     stale_cells = sum(1 for r in rows if r["stale_ge_3_years"])
+    protocol_review_cells = sum(1 for r in rows if r["protocol_review_cell"])
+    source_context_counts = {
+        context: sum(1 for s in source_records if s["source_context"] == context)
+        for context in sorted(set(s["source_context"] for s in source_records))
+    }
     total_cells = len(rows)
     strongest_economy_flags = sorted(
         economy_summary.values(),
@@ -403,6 +482,19 @@ def main():
                 "reference year in the API pull, not against a single universal "
                 "calendar year."
             ),
+            "refresh_protocol": (
+                "The protocol is a screening layer, not a factual claim about "
+                "national statistical performance. Missing cells are coverage "
+                "review cells; observed cells are latest, watch, protocol "
+                "review, or stale alert based on relative lag from that "
+                "indicator's own latest public reference year."
+            ),
+            "non_applicability_rule": (
+                "This sprint does not infer non-applicability from memory. "
+                "Missing public WDI fields stay as coverage-review cells until "
+                "indicator documentation or source-specific metadata can explain "
+                "why the cell should be excluded."
+            ),
             "important_caveat": (
                 "A stale or missing WDI field is an observability issue for this "
                 "public dashboard; it is not a judgment about an economy's "
@@ -430,7 +522,9 @@ def main():
             "indicator_count": len(INDICATORS),
             "matrix_cells": total_cells,
             "missing_cells": missing_cells,
+            "protocol_review_cells": protocol_review_cells,
             "stale_cells_ge_3_years": stale_cells,
+            "source_context_counts": source_context_counts,
         },
         "indicator_summary": indicator_summary,
         "economy_flags_top10_for_visual_sorting_only": strongest_economy_flags,

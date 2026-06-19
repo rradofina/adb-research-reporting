@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T16:25:46.109Z
+Generated: 2026-06-19T16:37:09.881Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 268
-- QA browser-check JSON files in reporting-site/qa: 9
+- QA screenshot files in reporting-site/qa: 274
+- QA browser-check JSON files in reporting-site/qa: 10
 - Verification failures: 0
 
 ## Readiness Mix
@@ -34,7 +34,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | ID | Report | Readiness | Route | Evidence | Audit data | Next upgrade |
 |---:|---|---|---|---|---|---|
 | 1 | Market-level climate price transmission | L2 prototype | ok | ok | n/a | Convert the Nepal sprint into an L3 market-price package with commodity, import, fuel, and rainfall-source checks. |
-| 2 | Public data freshness blind spots | L2 prototype | ok | ok | n/a | Write the freshness inclusion protocol and rerun the matrix with source-specific refresh cadence labels. |
+| 2 | Public data freshness blind spots | L2 prototype | ok | ok | n/a | Promote the protocol into an L3 package by attaching indicator documentation, non-applicability rules, and sensitivity checks f... |
 | 3 | Shock-payment rails after disasters | L2 prototype | ok | ok | n/a | Add a payment-channel source scan and rerun the sprint with vintage and emergency-transfer non-claim checks. |
 | 4 | Public service data quality source disagreement | L3 candidate | ok | ok | n/a | Advance the next decision-ledger class only through public evidence, or stop at owner-only source-owner contact and human locat... |
 | 5 | Remittance corridors after flow weighting | L3 candidate | ok | ok | n/a | Validate corridor rows against central-bank or transaction sources where available; keep the L3 module as a sensitivity result ... |

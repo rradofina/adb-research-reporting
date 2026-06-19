@@ -67,6 +67,12 @@ MIN_MONTHS_PER_MARKET = 70
 SELECTED_MARKET_COUNT = 12
 DRY_SPIKE_PRICE_ANOMALY_PCT = 20.0
 DRY_SPIKE_RAIN_Z = -1.0
+WET_SPIKE_RAIN_Z = 1.0
+HOT_SPIKE_TEMPERATURE_Z = 1.0
+BROAD_PRICE_WAVE_MARKET_SHARE = 0.5
+BROAD_PRICE_WAVE_DRY_SHARE_MAX = 0.34
+COMMODITY_INVENTORY_MIN_MARKETS = 8
+COMMODITY_INVENTORY_MIN_MARKET_MONTHS = 300
 
 
 def repo_rel(path: Path) -> str:
@@ -136,6 +142,12 @@ def parse_float(value):
     if math.isnan(parsed) or math.isinf(parsed):
         return None
     return parsed
+
+
+def round_or_none(value, digits: int = 4):
+    if value is None:
+        return None
+    return round(float(value), digits)
 
 
 def median(values: list[float]) -> float:
@@ -223,6 +235,103 @@ def build_price_panel(price_rows: list[dict]) -> tuple[dict, dict, dict]:
         "raw_price_rows_kept": raw_rows_kept,
         "market_month_price_cells": len(monthly_prices),
         "market_count_before_selection": len(market_month_counts),
+    }
+
+
+def build_commodity_inventory(price_rows: list[dict]) -> dict:
+    groups = {}
+    skipped_rows = 0
+    for row in price_rows:
+        price = parse_float(row.get("price"))
+        if price is None or price <= 0:
+            skipped_rows += 1
+            continue
+        try:
+            dt = parse_date(row["date"])
+        except (KeyError, ValueError):
+            skipped_rows += 1
+            continue
+        if dt.year < PRICE_START_YEAR or dt.year > PRICE_END_YEAR:
+            continue
+        key = (
+            row.get("commodity") or "missing",
+            row.get("unit") or "missing",
+            row.get("pricetype") or "missing",
+            row.get("priceflag") or "missing",
+        )
+        if key not in groups:
+            groups[key] = {
+                "commodity": key[0],
+                "unit": key[1],
+                "pricetype": key[2],
+                "priceflag": key[3],
+                "category": row.get("category"),
+                "raw_rows": 0,
+                "markets": set(),
+                "market_months": set(),
+                "years": set(),
+            }
+        record = groups[key]
+        market_id = row.get("market_id")
+        record["raw_rows"] += 1
+        if market_id:
+            record["markets"].add(market_id)
+            record["market_months"].add((market_id, month_key(dt)))
+        record["years"].add(dt.year)
+
+    records = []
+    for record in groups.values():
+        eligible = (
+            record["pricetype"] == PRICE_TYPE
+            and record["priceflag"] == PRICE_FLAG
+            and len(record["markets"]) >= COMMODITY_INVENTORY_MIN_MARKETS
+            and len(record["market_months"]) >= COMMODITY_INVENTORY_MIN_MARKET_MONTHS
+        )
+        records.append({
+            "commodity": record["commodity"],
+            "category": record["category"],
+            "unit": record["unit"],
+            "pricetype": record["pricetype"],
+            "priceflag": record["priceflag"],
+            "raw_rows": record["raw_rows"],
+            "market_count": len(record["markets"]),
+            "market_month_cells": len(record["market_months"]),
+            "year_min": min(record["years"]) if record["years"] else None,
+            "year_max": max(record["years"]) if record["years"] else None,
+            "eligible_for_next_pass": eligible,
+            "current_sprint_series": (
+                record["commodity"] == COMMODITY
+                and record["unit"] == UNIT
+                and record["pricetype"] == PRICE_TYPE
+                and record["priceflag"] == PRICE_FLAG
+            ),
+        })
+
+    records.sort(
+        key=lambda r: (
+            not r["current_sprint_series"],
+            not r["eligible_for_next_pass"],
+            -r["market_month_cells"],
+            r["commodity"],
+            r["unit"],
+        )
+    )
+    candidate_records = [r for r in records if r["eligible_for_next_pass"]]
+    current = next((r for r in records if r["current_sprint_series"]), None)
+    return {
+        "scope": (
+            "WFP Nepal food-price CSV rows with positive prices in the "
+            f"{PRICE_START_YEAR}-{PRICE_END_YEAR} sprint window."
+        ),
+        "candidate_rule": (
+            f"Retail/actual series with at least {COMMODITY_INVENTORY_MIN_MARKETS} "
+            f"markets and {COMMODITY_INVENTORY_MIN_MARKET_MONTHS} market-month cells."
+        ),
+        "total_series": len(records),
+        "candidate_series_count": len(candidate_records),
+        "skipped_rows": skipped_rows,
+        "current_sprint_series": current,
+        "top_candidate_series": candidate_records[:12],
     }
 
 
@@ -361,6 +470,33 @@ def build_joined_rows(monthly_prices, selected_markets, climate_by_market):
                 and price_anomaly >= DRY_SPIKE_PRICE_ANOMALY_PCT
                 and precip_z <= DRY_SPIKE_RAIN_Z
             )
+            price_spike = (
+                price_anomaly is not None
+                and price_anomaly >= DRY_SPIKE_PRICE_ANOMALY_PCT
+            )
+            wet_price_spike = (
+                price_spike
+                and precip_z is not None
+                and precip_z >= WET_SPIKE_RAIN_Z
+            )
+            hot_price_spike = (
+                price_spike
+                and temp_z is not None
+                and temp_z >= HOT_SPIKE_TEMPERATURE_Z
+            )
+            non_dry_price_spike = price_spike and not dry_price_spike
+            if dry_price_spike:
+                weather_alignment_status = "dry_lag_price_spike"
+            elif price_spike and precip_z is None:
+                weather_alignment_status = "price_spike_missing_rain_lag"
+            elif wet_price_spike:
+                weather_alignment_status = "wet_lag_price_spike"
+            elif price_spike:
+                weather_alignment_status = "price_spike_not_dry_aligned"
+            elif price_anomaly is None:
+                weather_alignment_status = "missing_price"
+            else:
+                weather_alignment_status = "not_price_spike"
             rows.append({
                 "country": COUNTRY,
                 "iso3": ISO3,
@@ -373,21 +509,100 @@ def build_joined_rows(monthly_prices, selected_markets, climate_by_market):
                 "month": key,
                 "commodity": COMMODITY,
                 "unit": UNIT,
-                "retail_price_npr": round(price, 4) if price is not None else None,
-                "price_anomaly_pct": round(price_anomaly, 4)
-                if price_anomaly is not None else None,
+                "retail_price_npr": round_or_none(price),
+                "price_anomaly_pct": round_or_none(price_anomaly),
                 "lagged_precipitation_month": lag_key,
-                "lagged_power_prectotcorr_mm_day": round(float(precip_lag), 4)
-                if precip_lag is not None else None,
-                "lagged_precipitation_z": round(precip_z, 4)
-                if precip_z is not None else None,
-                "lagged_power_t2m_c": round(float(temp_lag), 4)
-                if temp_lag is not None else None,
-                "lagged_temperature_z": round(temp_z, 4)
-                if temp_z is not None else None,
+                "lagged_power_prectotcorr_mm_day": round_or_none(precip_lag),
+                "lagged_precipitation_z": round_or_none(precip_z),
+                "lagged_power_t2m_c": round_or_none(temp_lag),
+                "lagged_temperature_z": round_or_none(temp_z),
+                "price_spike_screen": price_spike,
                 "dry_price_spike_screen": dry_price_spike,
+                "non_dry_price_spike_screen": non_dry_price_spike,
+                "wet_price_spike_screen": wet_price_spike,
+                "hot_price_spike_screen": hot_price_spike,
+                "weather_alignment_status": weather_alignment_status,
             })
     return rows
+
+
+def build_month_signal_ledger(rows: list[dict], selected_markets: list[dict]) -> list[dict]:
+    selected_market_count = len(selected_markets)
+    broad_min_count = max(4, math.ceil(selected_market_count * BROAD_PRICE_WAVE_MARKET_SHARE))
+    ledger = []
+    for key in month_range(PRICE_START_YEAR, PRICE_END_YEAR):
+        month_rows = [r for r in rows if r["month"] == key]
+        priced_rows = [r for r in month_rows if r["price_anomaly_pct"] is not None]
+        joined_rows = [
+            r for r in month_rows
+            if r["price_anomaly_pct"] is not None
+            and r["lagged_precipitation_z"] is not None
+        ]
+        price_spikes = [r for r in month_rows if r["price_spike_screen"]]
+        dry_spikes = [r for r in month_rows if r["dry_price_spike_screen"]]
+        non_dry_spikes = [r for r in month_rows if r["non_dry_price_spike_screen"]]
+        wet_spikes = [r for r in month_rows if r["wet_price_spike_screen"]]
+        hot_spikes = [r for r in month_rows if r["hot_price_spike_screen"]]
+        spike_values = [
+            r["price_anomaly_pct"] for r in price_spikes
+            if r["price_anomaly_pct"] is not None
+        ]
+        dry_share = len(dry_spikes) / len(price_spikes) if price_spikes else None
+        spike_share = len(price_spikes) / selected_market_count if selected_market_count else None
+        max_dry_count_for_broad = math.floor(len(price_spikes) * BROAD_PRICE_WAVE_DRY_SHARE_MAX)
+        if (
+            len(price_spikes) >= broad_min_count
+            and len(dry_spikes) <= max(1, max_dry_count_for_broad)
+        ):
+            signal_class = "broad_price_wave_not_local_dryness"
+            plain_english = (
+                "Many selected markets have price spikes, but few line up "
+                "with dry lagged precipitation."
+            )
+        elif price_spikes and len(dry_spikes) >= 2 and dry_share is not None and dry_share >= 0.5:
+            signal_class = "dry_aligned_cluster"
+            plain_english = (
+                "Several price spikes line up with dry lagged precipitation, "
+                "so the local-weather screen remains live for this month."
+            )
+        elif price_spikes:
+            signal_class = "mixed_or_sparse_price_spike_screen"
+            plain_english = (
+                "At least one price spike appears, but the month is not a "
+                "broad wave and not a dry-aligned cluster."
+            )
+        else:
+            signal_class = "no_price_spike_screen"
+            plain_english = "No selected market clears the price-spike screen."
+
+        top_market = None
+        if price_spikes:
+            top_market = max(
+                price_spikes,
+                key=lambda r: r["price_anomaly_pct"] if r["price_anomaly_pct"] is not None else -999,
+            )
+
+        ledger.append({
+            "month": key,
+            "selected_market_count": selected_market_count,
+            "priced_market_count": len(priced_rows),
+            "joined_market_count": len(joined_rows),
+            "price_spike_count": len(price_spikes),
+            "price_spike_share": round_or_none(spike_share, 4),
+            "dry_price_spike_count": len(dry_spikes),
+            "non_dry_price_spike_count": len(non_dry_spikes),
+            "wet_price_spike_count": len(wet_spikes),
+            "hot_price_spike_count": len(hot_spikes),
+            "dry_share_among_price_spikes": round_or_none(dry_share, 4),
+            "median_price_spike_anomaly_pct": round_or_none(median(spike_values))
+            if spike_values else None,
+            "top_market": top_market["market"] if top_market else None,
+            "top_market_price_anomaly_pct": round_or_none(top_market["price_anomaly_pct"])
+            if top_market else None,
+            "signal_class": signal_class,
+            "plain_english": plain_english,
+        })
+    return ledger
 
 
 def matrix_for(rows, markets, months, field):
@@ -529,6 +744,7 @@ def write_outputs(
     selected_markets,
     source_records,
     raw_coverage,
+    commodity_inventory,
     png_path,
     svg_path,
 ):
@@ -545,6 +761,22 @@ def write_outputs(
         and r["lagged_precipitation_z"] is not None
     ]
     dry_spikes = [r for r in rows if r["dry_price_spike_screen"]]
+    price_spikes = [r for r in rows if r["price_spike_screen"]]
+    non_dry_spikes = [r for r in rows if r["non_dry_price_spike_screen"]]
+    wet_spikes = [r for r in rows if r["wet_price_spike_screen"]]
+    hot_spikes = [r for r in rows if r["hot_price_spike_screen"]]
+    month_signal_ledger = build_month_signal_ledger(rows, selected_markets)
+    broad_price_wave_months = [
+        row for row in month_signal_ledger
+        if row["signal_class"] == "broad_price_wave_not_local_dryness"
+    ]
+    dry_aligned_months = [
+        row for row in month_signal_ledger
+        if row["signal_class"] == "dry_aligned_cluster"
+    ]
+    signal_class_counts = defaultdict(int)
+    for row in month_signal_ledger:
+        signal_class_counts[row["signal_class"]] += 1
     top_price_spikes = sorted(
         rows_with_join,
         key=lambda r: -r["price_anomaly_pct"],
@@ -565,7 +797,15 @@ def write_outputs(
         "selected_market_month_cells": len(rows),
         "rows_with_price_anomaly": len(rows_with_price),
         "rows_with_price_and_lagged_precipitation": len(rows_with_join),
+        "price_spike_screen_count": len(price_spikes),
         "dry_price_spike_screen_count": len(dry_spikes),
+        "non_dry_price_spike_screen_count": len(non_dry_spikes),
+        "wet_price_spike_screen_count": len(wet_spikes),
+        "hot_price_spike_screen_count": len(hot_spikes),
+        "broad_price_wave_month_count": len(broad_price_wave_months),
+        "dry_aligned_cluster_month_count": len(dry_aligned_months),
+        "commodity_inventory_total_series": commodity_inventory["total_series"],
+        "commodity_inventory_candidate_series": commodity_inventory["candidate_series_count"],
     }
 
     status = (
@@ -614,6 +854,22 @@ def write_outputs(
                 "controls, market-access variables, import/exchange-rate "
                 "checks, and event validation."
             ),
+            "falsifier_screen": (
+                "The broad-wave screen counts months where at least half of "
+                "selected markets have a price anomaly of at least 20 percent "
+                "but no more than roughly one-third of those spikes line up "
+                "with dry lagged precipitation."
+            ),
+        },
+        "method_thresholds": {
+            "price_spike_anomaly_pct": DRY_SPIKE_PRICE_ANOMALY_PCT,
+            "dry_lagged_precipitation_z": DRY_SPIKE_RAIN_Z,
+            "wet_lagged_precipitation_z": WET_SPIKE_RAIN_Z,
+            "hot_lagged_temperature_z": HOT_SPIKE_TEMPERATURE_Z,
+            "broad_price_wave_market_share": BROAD_PRICE_WAVE_MARKET_SHARE,
+            "broad_price_wave_max_dry_share": BROAD_PRICE_WAVE_DRY_SHARE_MAX,
+            "commodity_inventory_min_markets": COMMODITY_INVENTORY_MIN_MARKETS,
+            "commodity_inventory_min_market_months": COMMODITY_INVENTORY_MIN_MARKET_MONTHS,
         },
         "first_visual": {
             "type": "aligned_heatmap",
@@ -628,10 +884,40 @@ def write_outputs(
             },
         },
         "coverage": coverage,
+        "commodity_inventory": commodity_inventory,
+        "rainfall_source_comparison": {
+            "primary_source": "NASA POWER monthly point API, PRECTOTCORR",
+            "primary_status": "joined_to_market_coordinates",
+            "alternative_source_status": "not_yet_joined",
+            "required_upgrade": (
+                "Compare the same market coordinates and months with CHIRPS, "
+                "ERA5, or public gauge data before any rainfall-source claim."
+            ),
+        },
         "selected_markets": selected_markets,
         "triage_summaries": {
             "top_price_spikes": top_price_spikes,
             "dry_price_spike_screen_top12": strongest_dry_spikes,
+            "month_signal_class_counts": dict(signal_class_counts),
+            "month_signal_ledger": month_signal_ledger,
+            "top_broad_price_wave_months": sorted(
+                broad_price_wave_months,
+                key=lambda r: (
+                    -r["price_spike_count"],
+                    r["dry_price_spike_count"],
+                    -(r["median_price_spike_anomaly_pct"] or -999),
+                    r["month"],
+                ),
+            )[:12],
+            "top_dry_aligned_months": sorted(
+                dry_aligned_months,
+                key=lambda r: (
+                    -r["dry_price_spike_count"],
+                    -r["price_spike_count"],
+                    -(r["median_price_spike_anomaly_pct"] or -999),
+                    r["month"],
+                ),
+            )[:12],
         },
         "rows": rows,
     }
@@ -652,6 +938,7 @@ def main():
 
     market_lookup = build_market_lookup(market_rows)
     monthly_prices, market_seen, raw_coverage = build_price_panel(price_rows)
+    commodity_inventory = build_commodity_inventory(price_rows)
     selected_markets = select_markets(monthly_prices, market_lookup, market_seen)
     if len(selected_markets) < 4:
         raise ValueError("Not enough markets for the L2 sprint visual")
@@ -713,6 +1000,7 @@ def main():
         selected_markets,
         source_records,
         raw_coverage,
+        commodity_inventory,
         png_path,
         svg_path,
     )
@@ -726,7 +1014,14 @@ def main():
         "Rows with price and lagged precipitation: "
         f"{coverage['rows_with_price_and_lagged_precipitation']}"
     )
+    print(f"Price spike screen count: {coverage['price_spike_screen_count']}")
     print(f"Dry price-spike screen count: {coverage['dry_price_spike_screen_count']}")
+    print(f"Non-dry price-spike screen count: {coverage['non_dry_price_spike_screen_count']}")
+    print(f"Broad price-wave months: {coverage['broad_price_wave_month_count']}")
+    print(
+        "Commodity inventory candidate series: "
+        f"{coverage['commodity_inventory_candidate_series']}"
+    )
     print(f"Decision: {payload['status']}")
     print(f"Wrote {csv_path}")
     print(f"Wrote {json_path}")

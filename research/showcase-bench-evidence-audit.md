@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T17:00:46.596Z
+Generated: 2026-06-19T17:19:06.362Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 277
-- QA browser-check JSON files in reporting-site/qa: 11
+- QA screenshot files in reporting-site/qa: 282
+- QA browser-check JSON files in reporting-site/qa: 12
 - Verification failures: 0
 
 ## Readiness Mix
@@ -33,7 +33,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 
 | ID | Report | Readiness | Route | Evidence | Audit data | Next upgrade |
 |---:|---|---|---|---|---|---|
-| 1 | Market-level climate price transmission | L2 prototype | ok | ok | n/a | Convert the Nepal sprint into an L3 market-price package with commodity, import, fuel, and rainfall-source checks. |
+| 1 | Market-level climate price transmission | L2 prototype | ok | ok | n/a | Convert the Nepal sprint into an L3 market-price package by expanding the 21 candidate commodity series and adding import, fuel... |
 | 2 | Public data freshness blind spots | L2 prototype | ok | ok | n/a | Promote the protocol into an L3 package by attaching indicator documentation, non-applicability rules, and sensitivity checks f... |
 | 3 | Shock-payment rails after disasters | L2 prototype | ok | ok | n/a | Map the Findex 2025 payment/G2P variables into the generator, then rerun the sprint with event-transfer non-claim checks and on... |
 | 4 | Public service data quality source disagreement | L3 candidate | ok | ok | n/a | Advance the next decision-ledger class only through public evidence, or stop at owner-only source-owner contact and human locat... |

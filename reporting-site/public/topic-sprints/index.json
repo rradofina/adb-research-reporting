@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T17:00:27.071Z",
+  "generated_at": "2026-06-19T17:21:06.914Z",
   "source": "research/topic-sprints",
   "files": [
     {
@@ -12,9 +12,9 @@
     {
       "file": "generated/charts/nepal-market-climate-prices-heatmap.svg",
       "source": "research/topic-sprints/generated/charts/nepal-market-climate-prices-heatmap.svg",
-      "size": 138204,
-      "size_human": "135.0 KB",
-      "sha256": "1ed4a837b145db00328f4945f821eaf5379e100e1aca4f9cf0d732b4405722f5"
+      "size": 133895,
+      "size_human": "130.8 KB",
+      "sha256": "cbec664ae652ca81fe026ee1b88a0e6d17211da0c1f5bf7a11baa6e35c96d5b6"
     },
     {
       "file": "generated/charts/shock-payment-rails-scatter.png",
@@ -47,16 +47,16 @@
     {
       "file": "generated/nepal-market-climate-prices-sprint.csv",
       "source": "research/topic-sprints/generated/nepal-market-climate-prices-sprint.csv",
-      "size": 137658,
-      "size_human": "134.4 KB",
-      "sha256": "8a83c22400b1686779398e3d82bb84ab71e5c1f02c32fd8f7f2141ab0336897e"
+      "size": 180010,
+      "size_human": "175.8 KB",
+      "sha256": "4664af06e08b3199578a16d6efe6e0be9a3057b6fa5bf24e8dbf8bdf4b15381e"
     },
     {
       "file": "generated/nepal-market-climate-prices-sprint.json",
       "source": "research/topic-sprints/generated/nepal-market-climate-prices-sprint.json",
-      "size": 681081,
-      "size_human": "665.1 KB",
-      "sha256": "b476c0d97789bcc615b7a86758f4ad191818ba73b221c6cf0b7857dc59898ffb"
+      "size": 981187,
+      "size_human": "958.2 KB",
+      "sha256": "d391833c17f702696d9b4cdbf3314e124d0288af85d1d5cfefe0656cbeca4b0b"
     },
     {
       "file": "generated/shock-payment-rails-sprint.csv",
@@ -89,9 +89,9 @@
     {
       "file": "reports/nepal-market-climate-prices-sprint.md",
       "source": "research/topic-sprints/nepal-market-climate-prices-sprint.md",
-      "size": 5050,
-      "size_human": "4.9 KB",
-      "sha256": "6832e28204727a19195d952df92e56d6ce79d1e3fb5347fa7c7b947f0483bc0b"
+      "size": 6814,
+      "size_human": "6.7 KB",
+      "sha256": "d9c275eab5d9bc352f8c8338023830b38f0b9488be3fee59316df983a16b6e68"
     },
     {
       "file": "reports/shock-payment-rails-sprint.md",

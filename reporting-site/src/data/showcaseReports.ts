@@ -64,10 +64,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Nepal market-month rice prices joined to point climate data to separate local weather signals from broader price waves.",
+    deck: "Nepal market-month rice prices joined to point climate data, now with a generated ledger that counts broad price-wave months against dry local-rainfall alignment.",
     evidencePath: "research/topic-sprints/nepal-market-climate-prices-sprint.md",
-    visual: "Animated market-month price and precipitation heatmaps",
-    sourceNote: "WFP food-price rows and NASA POWER point climate API",
+    visual: "Animated market-month heatmaps, price-wave signal strip, broad-wave ledger, and commodity source audit",
+    sourceNote: "WFP food-price rows, commodity inventory, and NASA POWER point climate API",
   },
   {
     id: 2,
@@ -450,9 +450,9 @@ export const showcaseAuditReports = showcaseReports.filter(
 
 export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
   1: {
-    operationalUse: "Screen market-months where local climate checks should precede national food-price interpretation.",
-    falsifier: "If spikes stay synchronized after local rainfall, commodity, import, exchange-rate, and fuel checks, the local-weather hook weakens.",
-    limitation: "One rice series, uneven WFP market coverage, and modeled NASA POWER point climate cannot establish causality.",
+    operationalUse: "Screen market-months where broad price waves need non-climate controls before local-weather interpretation.",
+    falsifier: "If commodity expansion, import, exchange-rate, fuel, and market-access checks explain the broad-wave months, the local-weather hook narrows to the dry-aligned subset.",
+    limitation: "The lead chart still uses one rice series, uneven WFP market coverage, and modeled NASA POWER point climate; it cannot establish causality.",
   },
   2: {
     operationalUse: "Help statisticians and operations teams see which dashboard indicators are too stale for current comparison.",
@@ -555,9 +555,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   1: {
     readiness: "prototype",
     readinessLabel: "L2 prototype",
-    qaSummary: "Public sprint artifact, interactive heatmap, caveats, screenshots, and build/gates are in place.",
-    publicationGap: "Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers before a program claim.",
-    nextUpgrade: "Convert the Nepal sprint into an L3 market-price package with commodity, import, fuel, and rainfall-source checks.",
+    qaSummary: "Public sprint artifact now includes interactive heatmaps, a generated broad-wave falsifier ledger, commodity inventory, caveats, screenshots, and build/gates.",
+    publicationGap: "Needs full commodity expansion, alternative rainfall source, and external price controls before a program claim.",
+    nextUpgrade: "Convert the Nepal sprint into an L3 market-price package by expanding the 21 candidate commodity series and adding import, fuel, exchange-rate, market-access, and rainfall-source checks.",
   },
   2: {
     readiness: "prototype",

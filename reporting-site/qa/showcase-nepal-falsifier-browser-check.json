@@ -1,0 +1,44 @@
+{
+  "route": "/showcase",
+  "qa_label": "nepal-market-climate-falsifier-ledger",
+  "checked_at_local_date": "2026-06-20",
+  "dev_server": "http://127.0.0.1:5176",
+  "data_packet": "/topic-sprints/generated/nepal-market-climate-prices-sprint.json",
+  "expected_generated_counts": {
+    "price_spike_screen_count": 259,
+    "non_dry_price_spike_screen_count": 233,
+    "dry_price_spike_screen_count": 26,
+    "broad_price_wave_month_count": 25,
+    "commodity_inventory_candidate_series": 21
+  },
+  "desktop_check": {
+    "viewport": 1365,
+    "body_scroll_width": 1350,
+    "hero_values": ["259", "233", "26", "25"],
+    "ledger_rows": 8,
+    "commodity_rows": 8,
+    "signal_strip_rects": 85,
+    "page_errors": 0
+  },
+  "mobile_check": {
+    "viewport": 360,
+    "body_scroll_width": 345,
+    "hero_values": ["259", "233", "26", "25"],
+    "ledger_rows": 8,
+    "commodity_rows": 8,
+    "signal_strip_rects": 85,
+    "page_errors": 0
+  },
+  "visual_checks": {
+    "desktop_hero": "reporting-site/qa/showcase-nepal-falsifier-desktop.png",
+    "desktop_explorer": "reporting-site/qa/showcase-nepal-falsifier-explorer-desktop.png",
+    "desktop_ledger": "reporting-site/qa/showcase-nepal-falsifier-ledger-desktop.png",
+    "mobile_hero": "reporting-site/qa/showcase-nepal-falsifier-mobile.png",
+    "mobile_ledger": "reporting-site/qa/showcase-nepal-falsifier-ledger-mobile.png"
+  },
+  "notes": [
+    "Desktop and mobile browser sessions reported no page errors.",
+    "Console warnings are existing React Router future-flag development warnings.",
+    "Production build passed with the existing Vite chunk-size warning."
+  ]
+}

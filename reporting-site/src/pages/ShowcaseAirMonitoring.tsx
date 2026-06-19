@@ -409,6 +409,53 @@ interface MonitorGradeGate {
   reader_use: string;
 }
 
+interface OfficialOpenAQGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface OfficialOpenAQCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  official_coordinate_rows: number;
+  openaq_coordinate_rows: number;
+  near_and_name_overlap_candidate_rows: number;
+  near_only_candidate_rows: number;
+  name_overlap_not_near_candidate_rows: number;
+  official_coordinate_without_openaq_candidate_rows: number;
+  unique_near_openaq_candidate_ids: number;
+  openaq_rows_not_used_as_near_candidate: number;
+  validated_same_station_rows: number;
+}
+
+interface OfficialOpenAQSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    official_coordinate_rows_audited: number;
+    countries_with_official_coordinate_rows: number;
+    openaq_coordinate_rows_in_official_coordinate_countries: number;
+    near_and_name_overlap_candidate_rows: number;
+    near_only_candidate_rows: number;
+    name_overlap_not_near_candidate_rows: number;
+    official_coordinate_without_openaq_candidate_rows: number;
+    unique_near_openaq_candidate_rows: number;
+    openaq_rows_not_used_as_near_candidate: number;
+    validated_same_station_rows: number;
+    station_radius_reconciliation_ready: boolean;
+  };
+  evidence_gate_counts: OfficialOpenAQGate[];
+  country_rows: OfficialOpenAQCountryRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -509,6 +556,7 @@ export default function ShowcaseAirMonitoring() {
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
+  const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -540,6 +588,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`regulator station HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-official-openaq-reconciliation-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`official OpenAQ reconciliation HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -552,6 +604,7 @@ export default function ShowcaseAirMonitoring() {
         stationMetadataPayload,
         regulatorSourcePayload,
         regulatorStationPayload,
+        officialOpenAQPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -560,6 +613,7 @@ export default function ShowcaseAirMonitoring() {
         setStationMetadata(stationMetadataPayload);
         setRegulatorSource(regulatorSourcePayload);
         setRegulatorStation(regulatorStationPayload);
+        setOfficialOpenAQ(officialOpenAQPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -672,6 +726,8 @@ export default function ShowcaseAirMonitoring() {
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
       <AirRegulatorStationPanel summary={regulatorStation} />
+
+      <AirOfficialOpenAQPanel summary={officialOpenAQ} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1408,6 +1464,187 @@ function AirRegulatorStationPanel({ summary }: { summary: RegulatorStationSummar
         </>
       ) : (
         <p className="showcase-loading">Loading official station-source extraction...</p>
+      )}
+    </section>
+  );
+}
+
+function AirOfficialOpenAQPanel({ summary }: { summary: OfficialOpenAQSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = [...(summary?.country_rows ?? [])].sort(
+    (a, b) => b.official_coordinate_rows - a.official_coordinate_rows,
+  );
+  const totalRows = Math.max(1, counts?.official_coordinate_rows_audited ?? 0);
+  const lanes = counts
+    ? [
+        {
+          key: "near-name",
+          label: "Near + name",
+          rows: counts.near_and_name_overlap_candidate_rows,
+          detail: "candidate only; still not a same-station join",
+          tone: "strong",
+        },
+        {
+          key: "near",
+          label: "Near only",
+          rows: counts.near_only_candidate_rows,
+          detail: "within 5 km, without name overlap",
+          tone: "near",
+        },
+        {
+          key: "name",
+          label: "Name only",
+          rows: counts.name_overlap_not_near_candidate_rows,
+          detail: "name signal without the proximity signal",
+          tone: "name",
+        },
+        {
+          key: "none",
+          label: "No candidate",
+          rows: counts.official_coordinate_without_openaq_candidate_rows,
+          detail: "official coordinate rows needing source review",
+          tone: "none",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-official-openaq-section" aria-label="Official to OpenAQ reconciliation audit">
+      <div className="air-official-openaq-head">
+        <div>
+          <p className="kicker kicker-blue">Official/OpenAQ reconciliation</p>
+          <h2>A candidate join is still not a station crosswalk.</h2>
+          <p>
+            The audit turns the proximity diagnostic into a reconciliation
+            ladder. It keeps official station rows and OpenAQ rows separate
+            unless both signals are visible, and even then the row remains a
+            candidate until a station ID or source crosswalk validates it.
+          </p>
+        </div>
+        <div className="air-official-openaq-nonclaim">
+          <strong>Validated joins remain zero</strong>
+          <p>
+            {formatNumber(counts?.validated_same_station_rows ?? 0)} rows are
+            validated same-station joins. Catchment analysis should wait until
+            candidates become documented station crosswalk rows.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-official-openaq-stat-grid">
+            <div>
+              <span>Official coordinates</span>
+              <strong>{formatNumber(counts.official_coordinate_rows_audited)}</strong>
+              <em>{formatNumber(counts.countries_with_official_coordinate_rows)} economies</em>
+            </div>
+            <div>
+              <span>OpenAQ coordinates</span>
+              <strong>{formatNumber(counts.openaq_coordinate_rows_in_official_coordinate_countries)}</strong>
+              <em>same official-coordinate economies</em>
+            </div>
+            <div>
+              <span>Near + name candidates</span>
+              <strong>{formatNumber(counts.near_and_name_overlap_candidate_rows)}</strong>
+              <em>most plausible lane</em>
+            </div>
+            <div>
+              <span>One-signal candidates</span>
+              <strong>
+                {formatNumber(counts.near_only_candidate_rows + counts.name_overlap_not_near_candidate_rows)}
+              </strong>
+              <em>review queue, not joins</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_rows)}</strong>
+              <em>station-radius blocked</em>
+            </div>
+          </div>
+
+          <div className="air-official-openaq-lanes" aria-label="Official to OpenAQ reconciliation lanes">
+            {lanes.map((lane) => {
+              const width = lane.rows > 0 ? `${Math.max(5, (lane.rows / totalRows) * 100)}%` : "0%";
+              return (
+                <article key={lane.key} className={`air-official-openaq-lane air-official-openaq-lane-${lane.tone}`}>
+                  <div>
+                    <span>{lane.label}</span>
+                    <strong>{formatNumber(lane.rows)}</strong>
+                  </div>
+                  <div className="air-official-openaq-track">
+                    <i style={{ width }} />
+                  </div>
+                  <p>{lane.detail}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-official-openaq-country-grid">
+            {rows.map((row) => (
+              <article key={row.iso3} className="air-official-openaq-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.validated_same_station_rows)} validated</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Official</dt>
+                    <dd>{formatNumber(row.official_coordinate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>OpenAQ</dt>
+                    <dd>{formatNumber(row.openaq_coordinate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Near+name</dt>
+                    <dd>{formatNumber(row.near_and_name_overlap_candidate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>One signal</dt>
+                    <dd>{formatNumber(row.near_only_candidate_rows + row.name_overlap_not_near_candidate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>No candidate</dt>
+                    <dd>{formatNumber(row.official_coordinate_without_openaq_candidate_rows)}</dd>
+                  </div>
+                </dl>
+                <p>
+                  {formatNumber(row.openaq_rows_not_used_as_near_candidate)} OpenAQ rows are not used as a near
+                  candidate by any official coordinate row.
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-official-openaq-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-official-openaq-gate air-official-openaq-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-official-openaq-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/official-openaq-reconciliation.md" download>
+              Audit note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-reconciliation-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-reconciliation.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading official-to-OpenAQ reconciliation audit...</p>
       )}
     </section>
   );

@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, monitor-grade evidence audit, and public source/reconciliation walls complete; complete monitor-grade classification and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -25,7 +25,8 @@ keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
 upgrade queue, show the monitor-grade evidence ladder honestly, and do not
 imply station-radius, complete monitor-grade, or regulatory-inventory
-validation until official method tables and catchment methods are added.
+  validation until official method tables, station crosswalks, and catchment
+  methods are added.
 
 ## Last completed
 
@@ -152,6 +153,27 @@ validation until official method tables and catchment methods are added.
   `reporting-site/qa/showcase-air-monitor-grade-mobile.png`,
   `reporting-site/qa/showcase-air-monitor-grade-mobile-ladder.png`, and
   `reporting-site/qa/showcase-air-monitor-grade-mobile-gates.png`.
+- **2026-06-19:** Added the official-to-OpenAQ reconciliation audit. New script
+  `scripts/reconcile-official-openaq-stations.py` reads the official
+  station-source extraction and OpenAQ station metadata artifacts, then writes
+  `generated/air-monitoring-official-openaq-reconciliation.csv` and
+  `generated/air-monitoring-official-openaq-reconciliation-summary.json`. The
+  audit covers 230 official coordinate rows and 82 OpenAQ coordinate rows in
+  the same five economies, then classifies 13 near-plus-name candidate rows, 9
+  near-only candidate rows, 22 name-only-not-near candidate rows, and 186
+  official coordinate rows without either candidate signal. It records 0
+  validated same-station joins and 0 station-radius-ready join rows. Wrote
+  `official-openaq-reconciliation.md`. This is a candidate reconciliation
+  queue, not a station crosswalk.
+- **2026-06-19:** Added the official/OpenAQ reconciliation ladder to the public
+  showcase route. Browser QA at 1440x1100 and 390x1000 confirmed 5
+  reconciliation stat cards, 4 lane cards, 5 country cards, 6 evidence gates,
+  3 download links, no page or section horizontal overflow, and no
+  console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-official-openaq-desktop.png`,
+  `reporting-site/qa/showcase-air-official-openaq-mobile.png`,
+  `reporting-site/qa/showcase-air-official-openaq-mobile-lanes.png`, and
+  `reporting-site/qa/showcase-air-official-openaq-mobile-gates.png`.
 
 ## Next focused work
 
@@ -159,9 +181,9 @@ validation until official method tables and catchment methods are added.
    station-owner, or regulator sources distinguish reference-grade/regulatory
    monitors from low-cost or other public feeds, and confirm current-status
    scope for the Bangladesh method-standard signal.
-2. Deepen official-to-OpenAQ reconciliation for the 230 official coordinate
-   rows: match IDs/names where possible, keep proximity-only rows marked as
-   candidates, and explain official rows that have no nearby OpenAQ PM2.5 row.
+2. Validate the 13 near-plus-name official/OpenAQ candidate rows first, then
+   review the 31 one-signal candidates with station IDs, source-owner
+   documentation, or current-status pages where public sources exist.
 3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
@@ -179,8 +201,9 @@ validation until official method tables and catchment methods are added.
   distinguish reference-grade/regulatory monitors from low-cost or other public
   feeds.
 - The official station-source extraction provides 230 public coordinate rows,
-  but the 22-within-5-kilometers OpenAQ comparison is only a proximity
-  diagnostic, not a validated same-station join.
+  but the official-to-OpenAQ reconciliation audit still has 0 validated
+  same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22
+  name-only-not-near rows are candidates, not station crosswalk rows.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

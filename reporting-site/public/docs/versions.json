@@ -77,6 +77,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Monitor-grade evidence audit for the 239 official-source rows from the air-monitoring station-extraction pass. The audit verifies Bangladesh method-standard language and Sri Lanka sensor-under-test language, then separates method-standard signals, automatic or official-portal provenance, sensor-under-test caution rows, plan-only rows, and rows with no public grade language."
     },
+    "air_monitoring_official_openaq_reconciliation": {
+      "script": "air-monitoring/scripts/reconcile-official-openaq-stations.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Official-to-OpenAQ reconciliation audit for the 230 official coordinate rows from the air-monitoring station-extraction pass. The audit cross-tabulates nearest-OpenAQ within-5-kilometer signals and name-overlap signals, while keeping all rows as candidates until station IDs, documented crosswalks, or source-owner/current-status evidence validates a join."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -143,6 +148,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_monitor_grade_evidence pin after auditing official station rows for public method-standard, automatic/portal-only, sensor-under-test, plan-only, and missing-grade evidence."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_official_openaq_reconciliation pin after cross-tabulating official coordinate rows against OpenAQ proximity and name-overlap candidate signals."
     }
   ]
 }

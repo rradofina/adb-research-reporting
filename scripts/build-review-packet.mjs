@@ -67,6 +67,7 @@ const PROGRAM_FILES = [
   "regulator-source-inventory.md",
   "regulator-station-extraction.md",
   "monitor-grade-evidence.md",
+  "official-openaq-reconciliation.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

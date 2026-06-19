@@ -32,6 +32,9 @@ Regulator-source discovery and station-source extraction:
 Monitor-grade evidence audit:
 `generated/air-monitoring-monitor-grade-evidence-summary.json` and
 `generated/air-monitoring-monitor-grade-evidence.csv`.
+Official-to-OpenAQ reconciliation audit:
+`generated/air-monitoring-official-openaq-reconciliation-summary.json` and
+`generated/air-monitoring-official-openaq-reconciliation.csv`.
 
 ## The two questions
 
@@ -178,6 +181,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   reconciliation, not station coverage: OpenAQ visibility is not the same
   object as the public regulator map. Complete monitor-grade classification
   rows remain 0 and station-radius coverage remains not computed.
+- **New official-to-OpenAQ reconciliation audit:** the audit cross-tabulates
+  the 230 official coordinate rows against the existing nearest-OpenAQ
+  within-5-kilometer diagnostic and the extraction pass's name-overlap signal.
+  It finds 13 near-plus-name candidate rows, 9 near-only candidate rows, 22
+  name-only-not-near candidate rows, 186 official coordinate rows without
+  either candidate signal, 82 OpenAQ coordinate rows in the same five
+  official-coordinate economies, 69 OpenAQ rows not used as a near candidate,
+  and 0 validated same-station joins. The source story is now a candidate
+  reconciliation queue, not a merged station crosswalk.
 - **New monitor-grade evidence audit:** the audit covers all 239
   official-source rows from the station-extraction pass. It finds 31
   source-specific method-standard signal rows in Bangladesh, 138 automatic or
@@ -226,5 +238,6 @@ python air-monitoring/scripts/build-metadata-readiness-audit.py
 python air-monitoring/scripts/fetch-openaq-station-metadata.py
 python air-monitoring/scripts/build-regulator-source-inventory.py
 python air-monitoring/scripts/extract-regulator-station-evidence.py
+python air-monitoring/scripts/reconcile-official-openaq-stations.py
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
 ```

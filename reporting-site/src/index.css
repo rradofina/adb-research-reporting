@@ -8447,6 +8447,316 @@
     text-decoration: underline;
   }
 
+  .air-official-openaq-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.065), rgba(255, 255, 255, 0.98) 38%),
+      #ffffff;
+  }
+
+  .air-official-openaq-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .air-official-openaq-head h2 {
+    max-width: 18ch;
+  }
+
+  .air-official-openaq-nonclaim {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid #007db8;
+    background: #f3f9fc;
+  }
+
+  .air-official-openaq-nonclaim strong,
+  .air-official-openaq-stat-grid span,
+  .air-official-openaq-lane span,
+  .air-official-openaq-gate span,
+  .air-official-openaq-downloads span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-official-openaq-nonclaim strong {
+    color: #005f86;
+    font-size: var(--type-copy-sm);
+  }
+
+  .air-official-openaq-nonclaim p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.55;
+  }
+
+  .air-official-openaq-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-official-openaq-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-official-openaq-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .air-official-openaq-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-official-openaq-lanes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-official-openaq-lane {
+    display: grid;
+    grid-template-rows: auto auto minmax(3.1rem, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-official-openaq-lane > div:first-child {
+    display: grid;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  .air-official-openaq-lane strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .air-official-openaq-lane p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-official-openaq-track {
+    position: relative;
+    min-width: 0;
+    height: 0.72rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #edf2f4;
+  }
+
+  .air-official-openaq-track i {
+    display: block;
+    height: 100%;
+    background: #007db8;
+  }
+
+  .air-official-openaq-lane-strong {
+    border-top-color: #5a8227;
+  }
+
+  .air-official-openaq-lane-strong .air-official-openaq-track i {
+    background: #5a8227;
+  }
+
+  .air-official-openaq-lane-near {
+    border-top-color: #007db8;
+  }
+
+  .air-official-openaq-lane-name {
+    border-top-color: #fbb00e;
+  }
+
+  .air-official-openaq-lane-name .air-official-openaq-track i {
+    background: #fbb00e;
+  }
+
+  .air-official-openaq-lane-none {
+    border-top-color: #9b2226;
+  }
+
+  .air-official-openaq-lane-none .air-official-openaq-track i {
+    background: #9b2226;
+  }
+
+  .air-official-openaq-country-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-official-openaq-country {
+    display: grid;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #007db8;
+    background: #ffffff;
+  }
+
+  .air-official-openaq-country > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.55rem;
+    align-items: baseline;
+    min-width: 0;
+  }
+
+  .air-official-openaq-country span {
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .air-official-openaq-country strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.12;
+  }
+
+  .air-official-openaq-country b {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(0, 125, 184, 0.2);
+    color: #005f86;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-official-openaq-country dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  .air-official-openaq-country dl div {
+    min-width: 0;
+  }
+
+  .air-official-openaq-country dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-official-openaq-country dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .air-official-openaq-country p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-official-openaq-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-official-openaq-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-official-openaq-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-official-openaq-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-official-openaq-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-official-openaq-gate strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-official-openaq-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1rem;
+  }
+
+  .air-official-openaq-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-official-openaq-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-official-openaq-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-official-openaq-downloads a:hover {
+    text-decoration: underline;
+  }
+
   .air-monitor-grade-section {
     display: grid;
     gap: 1.15rem;
@@ -8788,6 +9098,10 @@
     .air-regulator-station-stat-grid,
     .air-regulator-station-country-grid,
     .air-regulator-station-gate-grid,
+    .air-official-openaq-stat-grid,
+    .air-official-openaq-lanes,
+    .air-official-openaq-country-grid,
+    .air-official-openaq-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -8800,6 +9114,7 @@
     .air-regulator-head,
     .air-regulator-source-grid,
     .air-regulator-station-head,
+    .air-official-openaq-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
       grid-template-columns: minmax(0, 1fr);
@@ -9610,6 +9925,10 @@
       scroll-margin-top: 10.5rem;
     }
 
+    .air-official-openaq-section {
+      scroll-margin-top: 10.5rem;
+    }
+
     .air-monitor-grade-section {
       scroll-margin-top: 10.5rem;
     }
@@ -9762,6 +10081,10 @@
     .air-regulator-station-stat-grid,
     .air-regulator-station-country-grid,
     .air-regulator-station-gate-grid,
+    .air-official-openaq-stat-grid,
+    .air-official-openaq-lanes,
+    .air-official-openaq-country-grid,
+    .air-official-openaq-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -9774,6 +10097,8 @@
     .air-station-gate,
     .air-regulator-gate,
     .air-regulator-station-gate,
+    .air-official-openaq-gate,
+    .air-official-openaq-lane,
     .air-monitor-grade-gate,
     .air-monitor-grade-ladder-card {
       grid-template-rows: auto;
@@ -9781,6 +10106,7 @@
 
     .air-official-reconciliation,
     .air-regulator-station-head,
+    .air-official-openaq-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -9805,6 +10131,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .air-official-openaq-country dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .air-monitor-grade-country dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -9817,6 +10147,7 @@
     .air-station-downloads,
     .air-regulator-downloads,
     .air-regulator-station-downloads,
+    .air-official-openaq-downloads,
     .air-monitor-grade-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);

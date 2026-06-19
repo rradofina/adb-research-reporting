@@ -27,6 +27,12 @@
   22 official coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row
   as a screening diagnostic. This is not a validated station join, not
   monitor-grade validation, and not station-radius coverage.
+- Official-to-OpenAQ same-station validation. The 2026-06-19 reconciliation
+  audit cross-tabulates the 230 official coordinate rows against OpenAQ
+  proximity and name-overlap signals. It finds 13 near-plus-name candidate
+  rows, 9 near-only candidate rows, 22 name-only-not-near candidate rows, 186
+  official coordinate rows without either candidate signal, and 0 validated
+  same-station joins. Candidate rows are not station crosswalk rows.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

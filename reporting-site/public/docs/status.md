@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction/reconciliation wall, and monitor-grade evidence ladder exist; station-radius and complete monitor-grade claims remain blocked until method sources and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -46,13 +46,18 @@ overrides priority by editing this list.
    economies, keeps 6 station name-only rows, 1 count-only row, and 2
    plan-count-only rows separate, and finds 22 coordinate rows within 5
    kilometers of an OpenAQ PM2.5 row as a screening diagnostic. The
+   official-to-OpenAQ reconciliation audit covers the 230 official coordinate
+   rows and 82 OpenAQ coordinate rows in the same five economies, classifying
+   13 near-plus-name candidate rows, 9 near-only candidate rows, 22
+   name-only-not-near candidate rows, 186 official coordinate rows without
+   either candidate signal, and 0 validated same-station joins. The
    monitor-grade evidence audit covers 239 official-source rows and finds 31
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
-   rows, 65 rows with no public grade language, and 0 complete
-   monitor-grade classification rows. Next AI-doable loop is non-Bangladesh
-   monitor-grade source validation and stricter official/OpenAQ reconciliation
-   before any station-radius or catchment claim.
+   rows, 65 rows with no public grade language, and 0 complete monitor-grade
+   classification rows. Next AI-doable loop is candidate station-crosswalk
+   validation and non-Bangladesh monitor-grade source validation before any
+   station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -167,6 +172,25 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring official-to-OpenAQ reconciliation audit):**
+  Added `air-monitoring/scripts/reconcile-official-openaq-stations.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-official-openaq-reconciliation.csv`
+  and
+  `air-monitoring/generated/air-monitoring-official-openaq-reconciliation-summary.json`,
+  and wrote `air-monitoring/official-openaq-reconciliation.md`. The audit uses
+  the official station-source extraction's nearest-OpenAQ within-5-kilometer
+  diagnostic and name-overlap signal rather than inventing a new fuzzy-match
+  threshold. It covers 230 official coordinate rows and 82 OpenAQ coordinate
+  rows in the same five economies, then classifies 13 near-plus-name candidate
+  rows, 9 near-only candidate rows, 22 name-only-not-near candidate rows, 186
+  official coordinate rows without either candidate signal, 69 OpenAQ rows not
+  used as a near candidate, and 0 validated same-station joins. The public
+  route now renders an official/OpenAQ reconciliation ladder; station-radius
+  claims remain blocked until candidate rows become documented crosswalk rows.
+  Browser QA passed at 1440x1100 and 390x1000 with 5 stat cards, 4 lane cards,
+  5 country cards, 6 evidence gates, 3 download links, no page or section
+  horizontal overflow, and no console/page errors.
 - **2026-06-19 (air-monitoring monitor-grade evidence audit):** Added
   `air-monitoring/scripts/audit-monitor-grade-evidence.py`, generated
   `air-monitoring/generated/air-monitoring-monitor-grade-evidence.csv` and

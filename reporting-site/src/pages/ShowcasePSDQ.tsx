@@ -941,6 +941,67 @@ interface PsdqCorrectionRecordFollowupSummary {
   non_claim: string;
 }
 
+interface PsdqClarificationPacketRow {
+  clarification_packet_id: string;
+  evidence_rank: number;
+  evidence_method: string;
+  status: string;
+  correction_followup_evidence_id: string;
+  public_explanation_evidence_id: string;
+  official_coordinate_evidence_id: string;
+  source_repair_evidence_id: string;
+  decision_id: string;
+  inspection_id: string;
+  facility_name: string;
+  dghs_profile_id: string;
+  dghs_organization_code: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  linked_or_sibling_codes_csv: string;
+  linked_other_district_code: string;
+  linked_other_district_name: string;
+  linked_other_district_division: string;
+  linked_other_district_district: string;
+  linked_other_district_upazila: string;
+  linked_other_district_coordinate_distance_m: number | string;
+  clarification_issue_class: string;
+  clarification_issue_label: string;
+  clarification_question: string;
+  human_review_prompt: string;
+  public_evidence_basis: string;
+  dghs_profile_url: string;
+  dghs_dashboard_target_detail_url: string;
+  dghs_dashboard_linked_detail_url: string;
+  external_contact_made: boolean | string;
+  owner_action_required_to_contact_source: boolean | string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+  packet_use_boundary: string;
+  non_claim: string;
+}
+
+interface PsdqClarificationPacketSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  clarification_scope: {
+    targeted_rows: number;
+    rows_requiring_source_owner_clarification: number;
+    rows_requiring_human_location_validation_if_no_source_owner_response: number;
+    public_correction_or_coordinate_source_records_found: number;
+    external_contacts_made: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  clarification_issue_class_counts: PsdqCandidateResolutionCount[];
+  packet_rows: PsdqClarificationPacketRow[];
+  packet_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -1101,6 +1162,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPublicExplanationEvidenceSummary | null>(null);
   const [correctionRecordFollowupSummary, setCorrectionRecordFollowupSummary] =
     useState<PsdqCorrectionRecordFollowupSummary | null>(null);
+  const [clarificationPacketSummary, setClarificationPacketSummary] =
+    useState<PsdqClarificationPacketSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1183,6 +1246,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`source repair correction-record follow-up HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair clarification packet HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -1208,6 +1275,7 @@ export default function ShowcasePSDQ() {
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
         correctionRecordFollowupPayload,
+        clarificationPacketPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -1229,6 +1297,7 @@ export default function ShowcasePSDQ() {
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
         setCorrectionRecordFollowupSummary(correctionRecordFollowupPayload);
+        setClarificationPacketSummary(clarificationPacketPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1364,6 +1433,10 @@ export default function ShowcasePSDQ() {
 
       {correctionRecordFollowupSummary && (
         <PsdqCorrectionRecordFollowupPanel summary={correctionRecordFollowupSummary} />
+      )}
+
+      {clarificationPacketSummary && (
+        <PsdqClarificationPacketPanel summary={clarificationPacketSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -4269,6 +4342,24 @@ function correctionRecordFollowupLabel(code: string) {
   return labels[code] || code.replaceAll("_", " ");
 }
 
+function clarificationPacketColor(code: string) {
+  if (code.includes("cross_district")) return "#A33A2A";
+  if (code.includes("shared_coordinate")) return "#007DB8";
+  return "#6c757d";
+}
+
+function clarificationPacketLabel(code: string) {
+  const labels: Record<string, string> = {
+    source_owner_cross_district_coordinate_clarification:
+      "Source-owner cross-district question",
+    source_owner_shared_coordinate_clarification:
+      "Source-owner shared-coordinate question",
+    source_owner_unresolved_coordinate_clarification:
+      "Unresolved coordinate question",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
 function dghsProfileUrl(profileId: string) {
   return `https://hrm.dghs.gov.bd/public/facility-registry/facilities/${profileId}/profile?tab=at-a-glance`;
 }
@@ -4835,6 +4926,165 @@ function PsdqCorrectionRecordFollowupPanel({ summary }: { summary: PsdqCorrectio
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv" download>
           Download correction-record CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqClarificationPacketPanel({ summary }: { summary: PsdqClarificationPacketSummary }) {
+  const maxDistance = Math.max(
+    1,
+    ...summary.packet_rows.map((row) => Number(row.linked_other_district_coordinate_distance_m || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-clarification-packet-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Clarification packet</p>
+          <h2>The public record now becomes three exact source questions.</h2>
+          <p>
+            The packet turns the unresolved Narayanganj and Durgapur source
+            repair rows into source-owner questions and human-review prompts.
+            It records the public evidence basis, but it does not contact any
+            source owner, validate a coordinate, close a row, or reclassify a
+            facility pair.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Targeted rows</span>
+            <strong>{formatNumber(summary.clarification_scope.targeted_rows)}</strong>
+          </div>
+          <div>
+            <span>Source-owner questions</span>
+            <strong>{formatNumber(summary.clarification_scope.rows_requiring_source_owner_clarification)}</strong>
+          </div>
+          <div>
+            <span>Human review prompts</span>
+            <strong>{formatNumber(summary.clarification_scope.rows_requiring_human_location_validation_if_no_source_owner_response)}</strong>
+          </div>
+          <div>
+            <span>Correction records found</span>
+            <strong>{formatNumber(summary.clarification_scope.public_correction_or_coordinate_source_records_found)}</strong>
+          </div>
+          <div>
+            <span>External contacts made</span>
+            <strong>{formatNumber(summary.clarification_scope.external_contacts_made)}</strong>
+          </div>
+          <div>
+            <span>Closed / reclassified</span>
+            <strong>
+              {formatNumber(summary.clarification_scope.rows_closed_as_resolved)} /{" "}
+              {formatNumber(summary.clarification_scope.rows_reclassified_as_same_facility)}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-clarification-packet-grid">
+        {summary.packet_rows.map((row) => {
+          const color = clarificationPacketColor(row.clarification_issue_class);
+          const linkedDistance = Number(row.linked_other_district_coordinate_distance_m || 0);
+          const signalWidth = linkedDistance > 0
+            ? Math.max(8, Math.min(100, (linkedDistance / maxDistance) * 100))
+            : 62;
+          const linkedCodes = row.linked_or_sibling_codes_csv.split(",").filter(Boolean);
+          const linkedOrSibling = row.linked_other_district_code || linkedCodes[0] || "";
+          const linkedUrl = row.dghs_dashboard_linked_detail_url || (linkedOrSibling ? dghsDashboardDetailUrl(linkedOrSibling) : "");
+          const evidenceBits = row.public_evidence_basis.split("; ").filter(Boolean);
+          return (
+            <article key={row.clarification_packet_id} style={{ borderColor: color }}>
+              <div className="psdq-clarification-packet-card-head">
+                <span>{row.clarification_packet_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>DGHS code {row.dghs_organization_code} / {row.division_name} / {row.district_name}</em>
+              </div>
+              <div className="psdq-clarification-packet-class" style={{ background: color }}>
+                {clarificationPacketLabel(row.clarification_issue_class)}
+              </div>
+              <div className="psdq-clarification-packet-links">
+                <a href={row.dghs_profile_url} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+                <a href={row.dghs_dashboard_target_detail_url} target="_blank" rel="noreferrer">
+                  Target dashboard
+                </a>
+                {linkedUrl && (
+                  <a href={linkedUrl} target="_blank" rel="noreferrer">
+                    Linked dashboard
+                  </a>
+                )}
+              </div>
+              <div className="psdq-clarification-packet-route">
+                <div className="psdq-clarification-packet-node">
+                  <span>Target official code</span>
+                  <strong>{row.dghs_organization_code}</strong>
+                  <em>{row.upazila_name}, {row.district_name}</em>
+                </div>
+                <div className="psdq-clarification-packet-rail" aria-label="Clarification packet evidence path">
+                  <i style={{ width: `${signalWidth}%`, background: color }} />
+                </div>
+                <div className="psdq-clarification-packet-node">
+                  <span>{row.linked_other_district_code ? "Linked official code" : "Sibling official code"}</span>
+                  <strong>
+                    {linkedDistance > 0
+                      ? `${linkedOrSibling} / ${formatNumber(linkedDistance)} m`
+                      : linkedOrSibling || "No linked code"}
+                  </strong>
+                  <em>
+                    {row.linked_other_district_code
+                      ? `${row.linked_other_district_district}, ${row.linked_other_district_upazila}`
+                      : "Shared official-coordinate question"}
+                  </em>
+                </div>
+              </div>
+              <div className="psdq-clarification-packet-metrics">
+                <span><b>{asBoolean(row.external_contact_made) ? "yes" : "no"}</b> external contact</span>
+                <span><b>{asBoolean(row.owner_action_required_to_contact_source) ? "yes" : "no"}</b> owner action</span>
+                <span><b>{formatNumber(Number(row.rows_closed_as_resolved || 0))}</b> rows closed</span>
+              </div>
+              <div className="psdq-clarification-packet-question">
+                <span>Source-owner question</span>
+                <p>{row.clarification_question}</p>
+              </div>
+              <div className="psdq-clarification-packet-question">
+                <span>Human-review prompt</span>
+                <p>{row.human_review_prompt}</p>
+              </div>
+              <div className="psdq-clarification-packet-status">
+                <span>0 contacts</span>
+                <span>0 closed</span>
+                <span>0 reclassified</span>
+              </div>
+              <div className="psdq-clarification-packet-sources" aria-label="Clarification packet evidence basis">
+                {evidenceBits.map((item) => (
+                  <code key={`${row.clarification_packet_id}-${item}`}>{item}</code>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the clarification packet</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-source-repair-clarification-packet.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-clarification-packet.md" download>
+          Download clarification packet note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json" download>
+          Download clarification packet summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet.csv" download>
+          Download clarification packet CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

@@ -527,6 +527,32 @@ checked official pages still do not expose a public correction record. The
 Narayanganj cases remain distinct official records sharing one official
 coordinate, again without a public correction record.
 
+## Source-Repair Clarification Packet Addendum
+
+The clarification packet now lives in
+`facility-validation-source-repair-clarification-packet.md`. The script
+`scripts/build-bgd-facility-source-repair-clarification-packet.py` is a
+no-network pass over the correction-record follow-up output. It does not
+contact DGHS, any facility, or any external reviewer. It only turns the public
+evidence trail into bounded source-owner and human-review questions.
+
+The packet covers 3 unresolved rows:
+
+| Clarification packet signal | Rows |
+|---|---:|
+| Targeted unresolved rows | 3 |
+| Source-owner clarification questions | 3 |
+| Human-validation prompts if no source-owner response | 3 |
+| Public correction or coordinate-source records found | 0 |
+| External contacts made by AI | 0 |
+| Rows closed as resolved | 0 |
+| Rows reclassified as same-facility | 0 |
+
+The packet keeps the two Narayanganj rows as shared-coordinate questions and
+the Durgapur row as a same-name cross-district source-owner question. It makes
+the next reviewer action explicit without using the rows as map-absence cases
+or same-facility matches.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -562,6 +588,7 @@ python public-service-data-quality/scripts/attach-bgd-facility-source-repair-pub
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
 python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py
+python public-service-data-quality/scripts/build-bgd-facility-source-repair-clarification-packet.py
 ```
 
 Outputs:
@@ -603,11 +630,15 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a source-owner clarification or human-review packet for
-the unresolved Durgapur and Narayanganj rows. Close or reclassify a row only if
-a public official source, source-owner response, or human validation explains
-the coordinate, source correction, duplicate record, or facility identity;
-otherwise keep it open with the specific unresolved source question.
+The next AI-doable upgrade is an internal review checklist or registry-vintage
+note that keeps these three rows separate from map-absence language. The next
+substantive evidence upgrade is owner-only source-owner contact or human
+location validation. Close or reclassify a row only if a public official
+source, source-owner response, or human validation explains the coordinate,
+source correction, duplicate record, or facility identity; otherwise keep it
+open with the specific unresolved source question.

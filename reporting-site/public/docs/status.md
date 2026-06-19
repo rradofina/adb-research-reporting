@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, and 3-row correction-record follow-up added 2026-06-19; next loop is a source-owner clarification or human-review packet for the Durgapur conflict and shared-coordinate Narayanganj rows) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, and 3-row no-contact clarification packet added 2026-06-19; next AI-doable loop is an internal review checklist or registry-vintage note while owner-only source contact or human validation remains the substantive source-repair wall) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -39,11 +39,13 @@ overrides priority by editing this list.
    public-source confirmation, 40-row targeted public-source confirmation,
    16-row public-source decision-ledger, 4-row source-repair public-evidence
    attachment, 4-row official-coordinate evidence, 4-row public-explanation
-   search, and 3-row correction-record follow-up packets added 2026-06-19*.
-   Current work is a source-owner clarification or human-review packet for the
-   same-name cross-district Durgapur conflict and the shared-coordinate
-   Narayanganj records, before any same-facility or map-absence language,
-   without changing the maturity label.
+   search, 3-row correction-record follow-up, and 3-row no-contact
+   clarification packet added 2026-06-19*. Current work is an internal review
+   checklist or registry-vintage note that keeps the same-name cross-district
+   Durgapur conflict and the shared-coordinate Narayanganj records out of
+   same-facility or map-absence language. Owner-only source contact or human
+   validation remains the substantive source-repair wall. No maturity label
+   changes.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -156,6 +158,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ source-repair clarification packet):** Added
+  `public-service-data-quality/scripts/build-bgd-facility-source-repair-clarification-packet.py`,
+  generated
+  `psdq-bgd-facility-validation-source-repair-clarification-packet.csv`
+  and
+  `psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json`,
+  and wrote
+  `public-service-data-quality/facility-validation-source-repair-clarification-packet.md`.
+  The no-network packet reads the source-repair correction-record follow-up CSV,
+  targets the 2 shared-coordinate Narayanganj rows plus the Durgapur same-name
+  cross-district conflict, and creates 3 source-owner or human-review
+  questions. It records 0 external contacts, carries forward 0 public
+  correction or coordinate-source records found, closes 0 rows, and
+  reclassifies 0 rows. This is a no-contact clarification packet, not
+  source-owner response, human validation, ground truth, coordinate correction,
+  row closure, same-facility reclassification, maturity promotion, or a
+  human-final upgrade. Verification passed: clarification script rerun,
+  program-script `py_compile`, evidence/reference sync, production site build,
+  six deterministic gates plus `git diff --check`, review packet and zip
+  rebuild, and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with 3
+  rendered cards, no page-level horizontal overflow, no page errors, Durgapur
+  and linked code `10000470` visible, and only existing React Router
+  development warnings. Screenshots:
+  `reporting-site/qa/showcase-psdq-clarification-packet-desktop.png`,
+  `reporting-site/qa/showcase-psdq-clarification-packet-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-clarification-packet-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-clarification-packet-mobile-cards.png`.
 - **2026-06-19 (PSDQ source-repair correction-record follow-up):** Added
   `public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py`,
   generated

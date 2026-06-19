@@ -93,8 +93,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-The next useful step is a source-owner clarification packet or human-review
-request for the unresolved Narayanganj and Durgapur rows. Until a public
-correction record, source-owner clarification, or human validation is available,
-the rows should remain open and should not be folded into same-facility or
-map-absence language.
+The next step now lives in
+`facility-validation-source-repair-clarification-packet.md`. It converts the
+unresolved Narayanganj and Durgapur rows into source-owner questions and
+human-review prompts without contacting anyone or closing any row. Until a
+public correction record, source-owner clarification, or human validation is
+available, the rows should remain open and should not be folded into
+same-facility or map-absence language.

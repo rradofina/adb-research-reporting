@@ -12830,7 +12830,7 @@
 
   .access-hero-stats {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     padding-top: 0.85rem;
     border-top: 1px solid var(--rule-soft);
@@ -12881,7 +12881,8 @@
 
   .access-rank-chart,
   .access-scatter-chart,
-  .access-cluster-chart {
+  .access-cluster-chart,
+  .access-cambodia-chart {
     width: 100%;
     min-width: 650px;
     height: auto;
@@ -12889,6 +12890,10 @@
   }
 
   .access-mobile-rank-summary {
+    display: none;
+  }
+
+  .access-cambodia-mobile {
     display: none;
   }
 
@@ -13029,10 +13034,88 @@
     opacity: 0.72;
   }
 
+  .access-cluster-partial {
+    fill: #5a8227;
+    opacity: 0.76;
+  }
+
   .access-corrected-dot {
     fill: #fbb00e;
     stroke: var(--ink);
     stroke-width: 1;
+  }
+
+  .access-partial-dot {
+    fill: #5a8227;
+    stroke: var(--ink);
+    stroke-width: 1;
+  }
+
+  .access-cambodia-source {
+    align-items: start;
+    scroll-margin-top: 6.5rem;
+  }
+
+  .access-source-grid {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .access-source-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .access-source-stats div {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .access-source-stats span {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .access-source-stats p,
+  .access-source-warning {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+  }
+
+  .access-cambodia-ledger {
+    scroll-margin-top: 6.5rem;
+  }
+
+  .access-cambodia-osm {
+    fill: #9b2226;
+    opacity: 0.72;
+  }
+
+  .access-cambodia-gov {
+    fill: #007db8;
+    opacity: 0.78;
+  }
+
+  .access-cambodia-missing {
+    stroke: #6b7280;
+    stroke-width: 2;
+    stroke-dasharray: 5 4;
+  }
+
+  .access-cambodia-chart .is-focus .access-cambodia-osm,
+  .access-cambodia-chart .is-focus .access-cambodia-gov {
+    opacity: 1;
+    stroke: #fbb00e;
+    stroke-width: 1.6;
   }
 
   /* Disaster metric-falsification showcase */
@@ -13964,24 +14047,32 @@
       grid-template-columns: minmax(0, 1fr);
     }
 
+    .access-source-stats {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .access-rank-chart,
     .access-scatter-chart,
-    .access-cluster-chart {
+    .access-cluster-chart,
+    .access-cambodia-chart {
       min-width: 590px;
     }
 
-    .access-mobile-rank-summary {
+    .access-mobile-rank-summary,
+    .access-cambodia-mobile {
       display: grid;
       gap: 0.75rem;
     }
 
-    .access-mobile-rank-summary p {
+    .access-mobile-rank-summary p,
+    .access-cambodia-mobile p {
       margin: 0 0 0.25rem;
       color: var(--ink);
       font-weight: 700;
     }
 
-    .access-mobile-rank-summary div {
+    .access-mobile-rank-summary div,
+    .access-cambodia-mobile div {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 0.25rem 0.75rem;
@@ -13990,7 +14081,8 @@
       border-bottom: 1px solid var(--rule-soft);
     }
 
-    .access-mobile-rank-summary span {
+    .access-mobile-rank-summary span,
+    .access-cambodia-mobile span {
       color: var(--ink);
       font-weight: 700;
       min-width: 0;
@@ -13998,25 +14090,29 @@
     }
 
     .access-mobile-rank-summary strong,
-    .access-mobile-rank-summary em {
+    .access-mobile-rank-summary em,
+    .access-cambodia-mobile strong {
       color: var(--ink);
       font-family: "JetBrains Mono", ui-monospace, monospace;
       font-size: 0.9rem;
       font-style: normal;
     }
 
-    .access-mobile-rank-summary i {
+    .access-mobile-rank-summary i,
+    .access-cambodia-mobile i {
       grid-column: 1 / -1;
       display: block;
       height: 0.45rem;
       background: #9b2226;
     }
 
-    .access-mobile-rank-summary .is-focus i {
+    .access-mobile-rank-summary .is-focus i,
+    .access-cambodia-mobile .is-focus i {
       background: #fbb00e;
     }
 
-    .access-rank-chart {
+    .access-rank-chart,
+    .access-cambodia-chart {
       display: none;
     }
 

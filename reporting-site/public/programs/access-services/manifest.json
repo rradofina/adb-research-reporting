@@ -1,7 +1,7 @@
 {
   "program": "access-services",
   "permanent_url": "/program/access-services/evidence",
-  "generated_at": "2026-06-19T17:00:26.287Z",
+  "generated_at": "2026-06-19T18:22:14.474Z",
   "hero": {
     "png": "generated/charts/access-services-thumbnail.png",
     "svg": "generated/charts/access-services-thumbnail.svg",
@@ -116,6 +116,24 @@
   ],
   "generated_files": [
     {
+      "file": "generated/access-cambodia-health-facility-source-audit.csv",
+      "size": 5802,
+      "size_human": "5.7 KB",
+      "sha256": "5089ddfc9672d613578cff3c6b305826cdac044ff13fe4693379215af8722cdc"
+    },
+    {
+      "file": "generated/access-cambodia-health-facility-source-audit.json",
+      "size": 51586,
+      "size_human": "50.4 KB",
+      "sha256": "5aa098378fa97aafe95c7ca695b5099ec05f65b5ffc8b134d60df2a631eb2b10"
+    },
+    {
+      "file": "generated/access-cambodia-health-facility-source-names.csv",
+      "size": 3901,
+      "size_human": "3.8 KB",
+      "sha256": "6ddc1d7522f986ab93f6313dd8d4bb3098a47176cd4b29d51380afb5271c0cb9"
+    },
+    {
       "file": "generated/access-osm-completeness-deepening-phl.csv",
       "size": 1227,
       "size_human": "1.2 KB",
@@ -125,7 +143,7 @@
       "file": "generated/access-osm-completeness-deepening.json",
       "size": 13108,
       "size_human": "12.8 KB",
-      "sha256": "f2281891fc0e7b11001677d9dbeeb9f32e8fe189de2ef246fae87819dd35e9e5"
+      "sha256": "7cb18fad6eda1506cba110d72ac663dcb01cfabd05ef5ab58797846cd97ff89c"
     },
     {
       "file": "generated/access-services-adb-panel.csv",

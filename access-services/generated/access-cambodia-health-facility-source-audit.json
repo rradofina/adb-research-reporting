@@ -1,0 +1,1440 @@
+{
+  "program": "access-services",
+  "analysis": "Cambodia public health-facility source audit for OSM access-map completeness",
+  "claim_scope": "Source-discovery and partial source-join audit. Compares Cambodia OSM health amenities from the committed access ADM1 panel with the public 2010 HDX/MoH/OCHA government health center, health post, and referral hospital point layers. Not a travel-time access measure, not service capacity, and not a complete 2026 all-provider clinical registry.",
+  "sources": {
+    "hdx_package_api": "https://data.humdata.org/api/3/action/package_show?id=cambodia-health",
+    "hdx_dataset_page": "https://data.humdata.org/dataset/cambodia-health",
+    "hdx_resource": {
+      "name": "health_facility.zip",
+      "id": "f30b0f4b-1c40-45f3-986d-2820375ea8dd",
+      "format": "SHP",
+      "url": "https://data.humdata.org/dataset/1803994d-6218-4b98-ac3a-30c7f85c6dbc/resource/f30b0f4b-1c40-45f3-986d-2820375ea8dd/download/health_facility.zip",
+      "created": "2015-10-16T11:42:57.265747",
+      "last_modified": "2018-08-16T07:19:10.973967"
+    },
+    "odc_dataset_page": "https://data.opendevelopmentcambodia.net/en/dataset/health-facility-of-cambodia-2010",
+    "odc_context": "ODC describes the Cambodia health-facility dataset as originally established by the Ministry of Health and contributed by OCHA to HDX, with separate ODC national-hospital resources. The numeric join in this artifact uses the HDX package ZIP only.",
+    "access_adm1_panel": "luminosity-gap\\research\\access-services\\generated\\access-services-computed-admin1.csv",
+    "license_note": "HDX/ODC source page reports Creative Commons Attribution / CC BY context; see source pages."
+  },
+  "retrieval": {
+    "package_api": {
+      "url": "https://data.humdata.org/api/3/action/package_show?id=cambodia-health",
+      "cache_path": "access-services\\.cache\\khm-health-facility\\hdx-cambodia-health-package.json",
+      "retrieved_at": "2026-06-19T18:19:47Z",
+      "from_cache": true,
+      "bytes": 5286,
+      "sha256": "7a63c00729e5d288fedd31978d35f5611e9c2cbae447f915540efeb59588cf52"
+    },
+    "health_facility_zip": {
+      "url": "https://data.humdata.org/dataset/1803994d-6218-4b98-ac3a-30c7f85c6dbc/resource/f30b0f4b-1c40-45f3-986d-2820375ea8dd/download/health_facility.zip",
+      "cache_path": "access-services\\.cache\\khm-health-facility\\health_facility.zip",
+      "retrieved_at": "2026-06-19T18:19:47Z",
+      "from_cache": true,
+      "bytes": 97504,
+      "sha256": "f4e97c595ba7a20698cf8cefb4b71a76a5eb38d45badf9dcfdf48cde12dd3506",
+      "name": "health_facility.zip",
+      "format": "SHP",
+      "resource_id": "f30b0f4b-1c40-45f3-986d-2820375ea8dd",
+      "created": "2015-10-16T11:42:57.265747",
+      "last_modified": "2018-08-16T07:19:10.973967"
+    }
+  },
+  "method": {
+    "facility_layers_counted": [
+      "health_center",
+      "health_post",
+      "referral_hospital"
+    ],
+    "context_layers_not_counted_as_facilities": [
+      "operational_district"
+    ],
+    "name_normalization": {
+      "Banteay Mean Chey": "Banteay Meanchey",
+      "Banteay Meanchey": "Banteay Meanchey",
+      "Bantey Meanchey": "Banteay Meanchey",
+      "Battam Bang": "Battambang",
+      "Battambang": "Battambang",
+      "Kampong Spueu": "Kampong Speu",
+      "Kampong Speu": "Kampong Speu",
+      "Kaoh Kong": "Koh Kong",
+      "Koh Kong": "Koh Kong",
+      "Mondul Kiri": "Mondulkiri",
+      "Mondulkiri": "Mondulkiri",
+      "Oddar Mean chey": "Oddar Meanchey",
+      "Oddar Meanchey": "Oddar Meanchey",
+      "Oddor Meanchey": "Oddar Meanchey",
+      "Preah Sihanouk": "Preah Sihanouk",
+      "Ratanak Kiri": "Ratanakiri Province",
+      "Ratanakiri Province": "Ratanakiri Province",
+      "Sihaknouk Vill": "Preah Sihanouk",
+      "Sihanoukville": "Preah Sihanouk",
+      "Siem Reap": "Siem Reap",
+      "Siemreap": "Siem Reap",
+      "Stung  Treng": "Stung Treng",
+      "Stung Treng": "Stung Treng"
+    },
+    "caveats": [
+      "The HDX source vintage is 2010 while the access-panel OSM timestamp is 2026.",
+      "The HDX package is a government/public-facility inventory, not a complete all-provider registry.",
+      "Operational District points are administrative context and are not counted as facilities.",
+      "One access-panel province has no distinct PNAME match in the 2010 source and needs a boundary-year crosswalk.",
+      "Where OSM exceeds the public-facility source count, interpret the result as scope/vintage mismatch, not over-mapping proof."
+    ]
+  },
+  "summary": {
+    "access_khm_rows": 25,
+    "joined_rows": 24,
+    "unmatched_rows": 1,
+    "unmatched_admin1_names": [
+      "Tbong Khmum"
+    ],
+    "source_normalized_provinces": 24,
+    "source_layer_totals": {
+      "health_center": 956,
+      "health_post": 89,
+      "operational_district": 77,
+      "referral_hospital": 76
+    },
+    "government_facilities_2010_included_total": 1121,
+    "operational_district_points_2010_context_total": 77,
+    "osm_health_facilities_access_panel_total": 560,
+    "national_osm_to_government_facility_ratio": 0.4996,
+    "rank_changed_after_2010_inventory": 21,
+    "rank_joined_total": 24,
+    "oddar_meanchey": {
+      "osm_health_facilities": 4,
+      "government_facilities_2010_included": 17,
+      "osm_people_per_health_facility": 319413,
+      "government_people_per_facility_2010": 75156,
+      "osm_load_to_government_load_ratio": 4.25,
+      "rank_osm": 1,
+      "rank_government": 2
+    },
+    "phnom_penh_scope_warning": {
+      "osm_health_facilities": 227,
+      "government_facilities_2010_included": 22,
+      "osm_to_government_facility_ratio": 10.3182,
+      "note": "OSM count exceeds the 2010 public-facility inventory; interpret as scope/vintage mismatch."
+    },
+    "largest_osm_load_ratios": [
+      {
+        "admin1_name": "Kampong Chhnang",
+        "osm_health_facilities": 2,
+        "government_facilities_2010_included": 39,
+        "osm_people_per_health_facility": 275912,
+        "government_people_per_facility_2010": 14149,
+        "osm_load_to_government_load_ratio": 19.5
+      },
+      {
+        "admin1_name": "Koh Kong",
+        "osm_health_facilities": 1,
+        "government_facilities_2010_included": 17,
+        "osm_people_per_health_facility": 126436,
+        "government_people_per_facility_2010": 7437,
+        "osm_load_to_government_load_ratio": 17.0
+      },
+      {
+        "admin1_name": "Prey Veng",
+        "osm_health_facilities": 8,
+        "government_facilities_2010_included": 97,
+        "osm_people_per_health_facility": 119449,
+        "government_people_per_facility_2010": 9851,
+        "osm_load_to_government_load_ratio": 12.13
+      },
+      {
+        "admin1_name": "Kampong Speu",
+        "osm_health_facilities": 5,
+        "government_facilities_2010_included": 53,
+        "osm_people_per_health_facility": 180568,
+        "government_people_per_facility_2010": 17035,
+        "osm_load_to_government_load_ratio": 10.6
+      },
+      {
+        "admin1_name": "Svay Rieng",
+        "osm_health_facilities": 5,
+        "government_facilities_2010_included": 40,
+        "osm_people_per_health_facility": 100473,
+        "government_people_per_facility_2010": 12559,
+        "osm_load_to_government_load_ratio": 8.0
+      },
+      {
+        "admin1_name": "Pursat",
+        "osm_health_facilities": 5,
+        "government_facilities_2010_included": 37,
+        "osm_people_per_health_facility": 90767,
+        "government_people_per_facility_2010": 12266,
+        "osm_load_to_government_load_ratio": 7.4
+      },
+      {
+        "admin1_name": "Stung Treng",
+        "osm_health_facilities": 2,
+        "government_facilities_2010_included": 14,
+        "osm_people_per_health_facility": 86125,
+        "government_people_per_facility_2010": 12304,
+        "osm_load_to_government_load_ratio": 7.0
+      },
+      {
+        "admin1_name": "Kampong Cham",
+        "osm_health_facilities": 28,
+        "government_facilities_2010_included": 145,
+        "osm_people_per_health_facility": 33949,
+        "government_people_per_facility_2010": 6556,
+        "osm_load_to_government_load_ratio": 5.18
+      }
+    ]
+  },
+  "rows": [
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-1",
+      "admin1_name": "Bantey Meanchey",
+      "normalized_admin1_name": "Banteay Meanchey",
+      "population_year": 2020,
+      "population": 968391,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 24,
+      "osm_schools": 113,
+      "osm_markets": 4,
+      "osm_people_per_health_facility": 40350,
+      "access_stress_index": 64.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 55,
+      "government_health_posts_2010": 11,
+      "government_referral_hospitals_2010": 5,
+      "operational_district_points_2010_context": 4,
+      "government_facilities_2010_included": 71,
+      "government_people_per_facility_2010": 13639,
+      "osm_to_government_facility_ratio": 0.338,
+      "osm_load_to_government_load_ratio": 2.96,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 16,
+      "rank_government_health_load_2010_joined_only": 12,
+      "rank_shift_after_2010_inventory": 4
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-10",
+      "admin1_name": "Kratie",
+      "normalized_admin1_name": "Kratie",
+      "population_year": 2020,
+      "population": 457402,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 13,
+      "osm_schools": 45,
+      "osm_markets": 5,
+      "osm_people_per_health_facility": 35185,
+      "access_stress_index": 60.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 26,
+      "government_health_posts_2010": 11,
+      "government_referral_hospitals_2010": 2,
+      "operational_district_points_2010_context": 2,
+      "government_facilities_2010_included": 39,
+      "government_people_per_facility_2010": 11728,
+      "osm_to_government_facility_ratio": 0.3333,
+      "osm_load_to_government_load_ratio": 3.0,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 18,
+      "rank_government_health_load_2010_joined_only": 18,
+      "rank_shift_after_2010_inventory": 0
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-11",
+      "admin1_name": "Mondulkiri",
+      "normalized_admin1_name": "Mondulkiri",
+      "population_year": 2020,
+      "population": 158522,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 8,
+      "osm_schools": 21,
+      "osm_markets": 5,
+      "osm_people_per_health_facility": 19815,
+      "access_stress_index": 37.0,
+      "osm_timestamp": "2026-04-12T13:51:34Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 6,
+      "government_health_posts_2010": 10,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 17,
+      "government_people_per_facility_2010": 9325,
+      "osm_to_government_facility_ratio": 0.4706,
+      "osm_load_to_government_load_ratio": 2.12,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 21,
+      "rank_government_health_load_2010_joined_only": 21,
+      "rank_shift_after_2010_inventory": 0
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-12",
+      "admin1_name": "Phnom Penh",
+      "normalized_admin1_name": "Phnom Penh",
+      "population_year": 2020,
+      "population": 2585050,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 227,
+      "osm_schools": 416,
+      "osm_markets": 113,
+      "osm_people_per_health_facility": 11388,
+      "access_stress_index": 28.0,
+      "osm_timestamp": "2026-04-23T06:57:21Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 17,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 5,
+      "operational_district_points_2010_context": 4,
+      "government_facilities_2010_included": 22,
+      "government_people_per_facility_2010": 117502,
+      "osm_to_government_facility_ratio": 10.3182,
+      "osm_load_to_government_load_ratio": 0.1,
+      "join_note": "OSM count exceeds the 2010 public-facility inventory; interpret as scope/vintage mismatch.",
+      "rank_osm_health_load_joined_only": 24,
+      "rank_government_health_load_2010_joined_only": 1,
+      "rank_shift_after_2010_inventory": 23
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-13",
+      "admin1_name": "Preah Vihear",
+      "normalized_admin1_name": "Preah Vihear",
+      "population_year": 2020,
+      "population": 399443,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 8,
+      "osm_schools": 47,
+      "osm_markets": 5,
+      "osm_people_per_health_facility": 49930,
+      "access_stress_index": 63.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 13,
+      "government_health_posts_2010": 18,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 32,
+      "government_people_per_facility_2010": 12483,
+      "osm_to_government_facility_ratio": 0.25,
+      "osm_load_to_government_load_ratio": 4.0,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 12,
+      "rank_government_health_load_2010_joined_only": 14,
+      "rank_shift_after_2010_inventory": -2
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-14",
+      "admin1_name": "Prey Veng",
+      "normalized_admin1_name": "Prey Veng",
+      "population_year": 2020,
+      "population": 955591,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 8,
+      "osm_schools": 79,
+      "osm_markets": 4,
+      "osm_people_per_health_facility": 119449,
+      "access_stress_index": 78.0,
+      "osm_timestamp": "2026-04-23T06:58:21Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 90,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 7,
+      "operational_district_points_2010_context": 7,
+      "government_facilities_2010_included": 97,
+      "government_people_per_facility_2010": 9851,
+      "osm_to_government_facility_ratio": 0.0825,
+      "osm_load_to_government_load_ratio": 12.13,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 5,
+      "rank_government_health_load_2010_joined_only": 20,
+      "rank_shift_after_2010_inventory": -15
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-15",
+      "admin1_name": "Pursat",
+      "normalized_admin1_name": "Pursat",
+      "population_year": 2020,
+      "population": 453836,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 5,
+      "osm_schools": 70,
+      "osm_markets": 10,
+      "osm_people_per_health_facility": 90767,
+      "access_stress_index": 55.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 32,
+      "government_health_posts_2010": 3,
+      "government_referral_hospitals_2010": 2,
+      "operational_district_points_2010_context": 2,
+      "government_facilities_2010_included": 37,
+      "government_people_per_facility_2010": 12266,
+      "osm_to_government_facility_ratio": 0.1351,
+      "osm_load_to_government_load_ratio": 7.4,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 8,
+      "rank_government_health_load_2010_joined_only": 16,
+      "rank_shift_after_2010_inventory": -8
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-16",
+      "admin1_name": "Ratanakiri Province",
+      "normalized_admin1_name": "Ratanakiri Province",
+      "population_year": 2020,
+      "population": 277726,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 7,
+      "osm_schools": 23,
+      "osm_markets": 2,
+      "osm_people_per_health_facility": 39675,
+      "access_stress_index": 71.0,
+      "osm_timestamp": "2026-04-23T07:00:24Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 10,
+      "government_health_posts_2010": 14,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 25,
+      "government_people_per_facility_2010": 11109,
+      "osm_to_government_facility_ratio": 0.28,
+      "osm_load_to_government_load_ratio": 3.57,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 17,
+      "rank_government_health_load_2010_joined_only": 19,
+      "rank_shift_after_2010_inventory": -2
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-17",
+      "admin1_name": "Siem Reap",
+      "normalized_admin1_name": "Siem Reap",
+      "population_year": 2020,
+      "population": 1337231,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 53,
+      "osm_schools": 285,
+      "osm_markets": 34,
+      "osm_people_per_health_facility": 25231,
+      "access_stress_index": 34.0,
+      "osm_timestamp": "2026-04-23T07:01:34Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 64,
+      "government_health_posts_2010": 5,
+      "government_referral_hospitals_2010": 4,
+      "operational_district_points_2010_context": 4,
+      "government_facilities_2010_included": 73,
+      "government_people_per_facility_2010": 18318,
+      "osm_to_government_facility_ratio": 0.726,
+      "osm_load_to_government_load_ratio": 1.38,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 20,
+      "rank_government_health_load_2010_joined_only": 6,
+      "rank_shift_after_2010_inventory": 14
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-18",
+      "admin1_name": "Preah Sihanouk",
+      "normalized_admin1_name": "Preah Sihanouk",
+      "population_year": 2020,
+      "population": 305920,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 18,
+      "osm_schools": 41,
+      "osm_markets": 9,
+      "osm_people_per_health_facility": 16996,
+      "access_stress_index": 36.0,
+      "osm_timestamp": "2026-04-12T15:21:00Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 12,
+      "government_health_posts_2010": 1,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 14,
+      "government_people_per_facility_2010": 21851,
+      "osm_to_government_facility_ratio": 1.2857,
+      "osm_load_to_government_load_ratio": 0.78,
+      "join_note": "OSM count exceeds the 2010 public-facility inventory; interpret as scope/vintage mismatch.",
+      "rank_osm_health_load_joined_only": 22,
+      "rank_government_health_load_2010_joined_only": 5,
+      "rank_shift_after_2010_inventory": 17
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-19",
+      "admin1_name": "Stung Treng",
+      "normalized_admin1_name": "Stung Treng",
+      "population_year": 2020,
+      "population": 172250,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 2,
+      "osm_schools": 12,
+      "osm_markets": 2,
+      "osm_people_per_health_facility": 86125,
+      "access_stress_index": 73.0,
+      "osm_timestamp": "2026-04-23T07:02:35Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 10,
+      "government_health_posts_2010": 3,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 14,
+      "government_people_per_facility_2010": 12304,
+      "osm_to_government_facility_ratio": 0.1429,
+      "osm_load_to_government_load_ratio": 7.0,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 9,
+      "rank_government_health_load_2010_joined_only": 15,
+      "rank_shift_after_2010_inventory": -6
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-2",
+      "admin1_name": "Battambang",
+      "normalized_admin1_name": "Battambang",
+      "population_year": 2020,
+      "population": 1971075,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 48,
+      "osm_schools": 99,
+      "osm_markets": 13,
+      "osm_people_per_health_facility": 41064,
+      "access_stress_index": 74.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 74,
+      "government_health_posts_2010": 3,
+      "government_referral_hospitals_2010": 4,
+      "operational_district_points_2010_context": 5,
+      "government_facilities_2010_included": 81,
+      "government_people_per_facility_2010": 24334,
+      "osm_to_government_facility_ratio": 0.5926,
+      "osm_load_to_government_load_ratio": 1.69,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 15,
+      "rank_government_health_load_2010_joined_only": 4,
+      "rank_shift_after_2010_inventory": 11
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-20",
+      "admin1_name": "Svay Rieng",
+      "normalized_admin1_name": "Svay Rieng",
+      "population_year": 2020,
+      "population": 502367,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 5,
+      "osm_schools": 45,
+      "osm_markets": 2,
+      "osm_people_per_health_facility": 100473,
+      "access_stress_index": 76.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 37,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 3,
+      "operational_district_points_2010_context": 3,
+      "government_facilities_2010_included": 40,
+      "government_people_per_facility_2010": 12559,
+      "osm_to_government_facility_ratio": 0.125,
+      "osm_load_to_government_load_ratio": 8.0,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 7,
+      "rank_government_health_load_2010_joined_only": 13,
+      "rank_shift_after_2010_inventory": -6
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-21",
+      "admin1_name": "Takeo",
+      "normalized_admin1_name": "Takeo",
+      "population_year": 2020,
+      "population": 938117,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 18,
+      "osm_schools": 191,
+      "osm_markets": 17,
+      "osm_people_per_health_facility": 52118,
+      "access_stress_index": 51.0,
+      "osm_timestamp": "2026-04-23T07:04:45Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 71,
+      "government_health_posts_2010": 2,
+      "government_referral_hospitals_2010": 5,
+      "operational_district_points_2010_context": 5,
+      "government_facilities_2010_included": 78,
+      "government_people_per_facility_2010": 12027,
+      "osm_to_government_facility_ratio": 0.2308,
+      "osm_load_to_government_load_ratio": 4.33,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 11,
+      "rank_government_health_load_2010_joined_only": 17,
+      "rank_shift_after_2010_inventory": -6
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-22",
+      "admin1_name": "Oddar Meanchey",
+      "normalized_admin1_name": "Oddar Meanchey",
+      "population_year": 2020,
+      "population": 1277653,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 4,
+      "osm_schools": 99,
+      "osm_markets": 4,
+      "osm_people_per_health_facility": 319413,
+      "access_stress_index": 79.0,
+      "osm_timestamp": "2026-04-23T07:04:45Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 13,
+      "government_health_posts_2010": 2,
+      "government_referral_hospitals_2010": 2,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 17,
+      "government_people_per_facility_2010": 75156,
+      "osm_to_government_facility_ratio": 0.2353,
+      "osm_load_to_government_load_ratio": 4.25,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 1,
+      "rank_government_health_load_2010_joined_only": 2,
+      "rank_shift_after_2010_inventory": -1
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-23",
+      "admin1_name": "Kep",
+      "normalized_admin1_name": "Kep",
+      "population_year": 2020,
+      "population": 46111,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 4,
+      "osm_schools": 11,
+      "osm_markets": 5,
+      "osm_people_per_health_facility": 11528,
+      "access_stress_index": 24.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 4,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 5,
+      "government_people_per_facility_2010": 9222,
+      "osm_to_government_facility_ratio": 0.8,
+      "osm_load_to_government_load_ratio": 1.25,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 23,
+      "rank_government_health_load_2010_joined_only": 22,
+      "rank_shift_after_2010_inventory": 1
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-24",
+      "admin1_name": "Pailin",
+      "normalized_admin1_name": "Pailin",
+      "population_year": 2020,
+      "population": 412952,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 4,
+      "osm_schools": 1,
+      "osm_markets": 1,
+      "osm_people_per_health_facility": 103238,
+      "access_stress_index": 82.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 5,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 1,
+      "operational_district_points_2010_context": 1,
+      "government_facilities_2010_included": 6,
+      "government_people_per_facility_2010": 68825,
+      "osm_to_government_facility_ratio": 0.6667,
+      "osm_load_to_government_load_ratio": 1.5,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 6,
+      "rank_government_health_load_2010_joined_only": 3,
+      "rank_shift_after_2010_inventory": 3
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-25",
+      "admin1_name": "Tbong Khmum",
+      "normalized_admin1_name": "Tbong Khmum",
+      "population_year": 2020,
+      "population": 985395,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 7,
+      "osm_schools": 107,
+      "osm_markets": 8,
+      "osm_people_per_health_facility": 140771,
+      "access_stress_index": 70.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "no_2010_source_province_match",
+      "government_health_centers_2010": 0,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 0,
+      "operational_district_points_2010_context": 0,
+      "government_facilities_2010_included": 0,
+      "government_people_per_facility_2010": null,
+      "osm_to_government_facility_ratio": null,
+      "osm_load_to_government_load_ratio": null,
+      "join_note": "Not present as a distinct PNAME in the 2010 source; needs boundary-year crosswalk.",
+      "rank_osm_health_load_joined_only": null,
+      "rank_government_health_load_2010_joined_only": null,
+      "rank_shift_after_2010_inventory": null
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-3",
+      "admin1_name": "Kampong Cham",
+      "normalized_admin1_name": "Kampong Cham",
+      "population_year": 2020,
+      "population": 950580,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 28,
+      "osm_schools": 159,
+      "osm_markets": 20,
+      "osm_people_per_health_facility": 33949,
+      "access_stress_index": 44.0,
+      "osm_timestamp": "2026-04-23T07:07:45Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 134,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 11,
+      "operational_district_points_2010_context": 10,
+      "government_facilities_2010_included": 145,
+      "government_people_per_facility_2010": 6556,
+      "osm_to_government_facility_ratio": 0.1931,
+      "osm_load_to_government_load_ratio": 5.18,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 19,
+      "rank_government_health_load_2010_joined_only": 24,
+      "rank_shift_after_2010_inventory": -5
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-4",
+      "admin1_name": "Kampong Chhnang",
+      "normalized_admin1_name": "Kampong Chhnang",
+      "population_year": 2020,
+      "population": 551823,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 2,
+      "osm_schools": 38,
+      "osm_markets": 6,
+      "osm_people_per_health_facility": 275912,
+      "access_stress_index": 74.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 34,
+      "government_health_posts_2010": 3,
+      "government_referral_hospitals_2010": 2,
+      "operational_district_points_2010_context": 3,
+      "government_facilities_2010_included": 39,
+      "government_people_per_facility_2010": 14149,
+      "osm_to_government_facility_ratio": 0.0513,
+      "osm_load_to_government_load_ratio": 19.5,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 2,
+      "rank_government_health_load_2010_joined_only": 11,
+      "rank_shift_after_2010_inventory": -9
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-5",
+      "admin1_name": "Kampong Speu",
+      "normalized_admin1_name": "Kampong Speu",
+      "population_year": 2020,
+      "population": 902838,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 5,
+      "osm_schools": 85,
+      "osm_markets": 7,
+      "osm_people_per_health_facility": 180568,
+      "access_stress_index": 73.0,
+      "osm_timestamp": "2026-04-23T07:07:45Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 50,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 3,
+      "operational_district_points_2010_context": 3,
+      "government_facilities_2010_included": 53,
+      "government_people_per_facility_2010": 17035,
+      "osm_to_government_facility_ratio": 0.0943,
+      "osm_load_to_government_load_ratio": 10.6,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 3,
+      "rank_government_health_load_2010_joined_only": 7,
+      "rank_shift_after_2010_inventory": -4
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-6",
+      "admin1_name": "Kampong Thom",
+      "normalized_admin1_name": "Kampong Thom",
+      "population_year": 2020,
+      "population": 754382,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 12,
+      "osm_schools": 59,
+      "osm_markets": 6,
+      "osm_people_per_health_facility": 62865,
+      "access_stress_index": 76.0,
+      "osm_timestamp": "2026-04-06T02:42:41Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 50,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 3,
+      "operational_district_points_2010_context": 3,
+      "government_facilities_2010_included": 53,
+      "government_people_per_facility_2010": 14234,
+      "osm_to_government_facility_ratio": 0.2264,
+      "osm_load_to_government_load_ratio": 4.42,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 10,
+      "rank_government_health_load_2010_joined_only": 10,
+      "rank_shift_after_2010_inventory": 0
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-7",
+      "admin1_name": "Kampot",
+      "normalized_admin1_name": "Kampot",
+      "population_year": 2020,
+      "population": 783299,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 19,
+      "osm_schools": 61,
+      "osm_markets": 8,
+      "osm_people_per_health_facility": 41226,
+      "access_stress_index": 68.0,
+      "osm_timestamp": "2026-04-23T07:08:50Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 48,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 4,
+      "operational_district_points_2010_context": 4,
+      "government_facilities_2010_included": 52,
+      "government_people_per_facility_2010": 15063,
+      "osm_to_government_facility_ratio": 0.3654,
+      "osm_load_to_government_load_ratio": 2.74,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 14,
+      "rank_government_health_load_2010_joined_only": 8,
+      "rank_shift_after_2010_inventory": 6
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-8",
+      "admin1_name": "Kandal",
+      "normalized_admin1_name": "Kandal",
+      "population_year": 2020,
+      "population": 1366009,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 30,
+      "osm_schools": 331,
+      "osm_markets": 17,
+      "osm_people_per_health_facility": 45534,
+      "access_stress_index": 49.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 89,
+      "government_health_posts_2010": 0,
+      "government_referral_hospitals_2010": 5,
+      "operational_district_points_2010_context": 8,
+      "government_facilities_2010_included": 94,
+      "government_people_per_facility_2010": 14532,
+      "osm_to_government_facility_ratio": 0.3191,
+      "osm_load_to_government_load_ratio": 3.13,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 13,
+      "rank_government_health_load_2010_joined_only": 9,
+      "rank_shift_after_2010_inventory": 4
+    },
+    {
+      "iso3": "KHM",
+      "admin1_code": "KH-9",
+      "admin1_name": "Koh Kong",
+      "normalized_admin1_name": "Koh Kong",
+      "population_year": 2020,
+      "population": 126436,
+      "population_source": "WorldPop Global Project population count",
+      "osm_health_facilities": 1,
+      "osm_schools": 12,
+      "osm_markets": 2,
+      "osm_people_per_health_facility": 126436,
+      "access_stress_index": 67.0,
+      "osm_timestamp": "2026-04-21T17:01:53Z",
+      "source_join_status": "joined_public_facility_inventory",
+      "government_health_centers_2010": 12,
+      "government_health_posts_2010": 3,
+      "government_referral_hospitals_2010": 2,
+      "operational_district_points_2010_context": 2,
+      "government_facilities_2010_included": 17,
+      "government_people_per_facility_2010": 7437,
+      "osm_to_government_facility_ratio": 0.0588,
+      "osm_load_to_government_load_ratio": 17.0,
+      "join_note": "",
+      "rank_osm_health_load_joined_only": 4,
+      "rank_government_health_load_2010_joined_only": 23,
+      "rank_shift_after_2010_inventory": -19
+    }
+  ],
+  "raw_source_name_summary": [
+    {
+      "layer": "health_center",
+      "raw_province_name": "Banteay Mean Chey",
+      "normalized_province_name": "Banteay Meanchey",
+      "rows": 7
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Banteay Meanchey",
+      "normalized_province_name": "Banteay Meanchey",
+      "rows": 48
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Battambang",
+      "normalized_province_name": "Battambang",
+      "rows": 74
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampong Cham",
+      "normalized_province_name": "Kampong Cham",
+      "rows": 134
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampong Chhnang",
+      "normalized_province_name": "Kampong Chhnang",
+      "rows": 34
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampong Speu",
+      "normalized_province_name": "Kampong Speu",
+      "rows": 47
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampong Spueu",
+      "normalized_province_name": "Kampong Speu",
+      "rows": 3
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampong Thom",
+      "normalized_province_name": "Kampong Thom",
+      "rows": 50
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kampot",
+      "normalized_province_name": "Kampot",
+      "rows": 48
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kandal",
+      "normalized_province_name": "Kandal",
+      "rows": 89
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kaoh Kong",
+      "normalized_province_name": "Koh Kong",
+      "rows": 4
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kep",
+      "normalized_province_name": "Kep",
+      "rows": 4
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Koh Kong",
+      "normalized_province_name": "Koh Kong",
+      "rows": 8
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Kratie",
+      "normalized_province_name": "Kratie",
+      "rows": 26
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Mondul Kiri",
+      "normalized_province_name": "Mondulkiri",
+      "rows": 6
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Oddar Mean chey",
+      "normalized_province_name": "Oddar Meanchey",
+      "rows": 1
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Oddar Meanchey",
+      "normalized_province_name": "Oddar Meanchey",
+      "rows": 12
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Pailin",
+      "normalized_province_name": "Pailin",
+      "rows": 5
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Phnom Penh",
+      "normalized_province_name": "Phnom Penh",
+      "rows": 17
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Preah Vihear",
+      "normalized_province_name": "Preah Vihear",
+      "rows": 13
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Prey Veng",
+      "normalized_province_name": "Prey Veng",
+      "rows": 90
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Pursat",
+      "normalized_province_name": "Pursat",
+      "rows": 32
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Ratanak Kiri",
+      "normalized_province_name": "Ratanakiri Province",
+      "rows": 10
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Siemreap",
+      "normalized_province_name": "Siem Reap",
+      "rows": 64
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Sihanoukville",
+      "normalized_province_name": "Preah Sihanouk",
+      "rows": 12
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Stung  Treng",
+      "normalized_province_name": "Stung Treng",
+      "rows": 2
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Stung Treng",
+      "normalized_province_name": "Stung Treng",
+      "rows": 8
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Svay Rieng",
+      "normalized_province_name": "Svay Rieng",
+      "rows": 37
+    },
+    {
+      "layer": "health_center",
+      "raw_province_name": "Takeo",
+      "normalized_province_name": "Takeo",
+      "rows": 71
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Banteay Meanchey",
+      "normalized_province_name": "Banteay Meanchey",
+      "rows": 11
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Battam Bang",
+      "normalized_province_name": "Battambang",
+      "rows": 3
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Kampong Chhnang",
+      "normalized_province_name": "Kampong Chhnang",
+      "rows": 3
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Koh Kong",
+      "normalized_province_name": "Koh Kong",
+      "rows": 3
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Kratie",
+      "normalized_province_name": "Kratie",
+      "rows": 11
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Mondul Kiri",
+      "normalized_province_name": "Mondulkiri",
+      "rows": 10
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Oddor Meanchey",
+      "normalized_province_name": "Oddar Meanchey",
+      "rows": 2
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Preah Vihear",
+      "normalized_province_name": "Preah Vihear",
+      "rows": 18
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Pursat",
+      "normalized_province_name": "Pursat",
+      "rows": 3
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Ratanak Kiri",
+      "normalized_province_name": "Ratanakiri Province",
+      "rows": 14
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Siem Reap",
+      "normalized_province_name": "Siem Reap",
+      "rows": 5
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Sihaknouk Vill",
+      "normalized_province_name": "Preah Sihanouk",
+      "rows": 1
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Stung Treng",
+      "normalized_province_name": "Stung Treng",
+      "rows": 3
+    },
+    {
+      "layer": "health_post",
+      "raw_province_name": "Takeo",
+      "normalized_province_name": "Takeo",
+      "rows": 2
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Banteay Meanchey",
+      "normalized_province_name": "Banteay Meanchey",
+      "rows": 4
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Battambang",
+      "normalized_province_name": "Battambang",
+      "rows": 5
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kampong Cham",
+      "normalized_province_name": "Kampong Cham",
+      "rows": 10
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kampong Chhnang",
+      "normalized_province_name": "Kampong Chhnang",
+      "rows": 3
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kampong Speu",
+      "normalized_province_name": "Kampong Speu",
+      "rows": 3
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kampong Thom",
+      "normalized_province_name": "Kampong Thom",
+      "rows": 3
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kampot",
+      "normalized_province_name": "Kampot",
+      "rows": 4
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kandal",
+      "normalized_province_name": "Kandal",
+      "rows": 8
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kep",
+      "normalized_province_name": "Kep",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Koh Kong",
+      "normalized_province_name": "Koh Kong",
+      "rows": 2
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Kratie",
+      "normalized_province_name": "Kratie",
+      "rows": 2
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Mondul Kiri",
+      "normalized_province_name": "Mondulkiri",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Oddar Meanchey",
+      "normalized_province_name": "Oddar Meanchey",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Pailin",
+      "normalized_province_name": "Pailin",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Phnom Penh",
+      "normalized_province_name": "Phnom Penh",
+      "rows": 4
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Preah Vihear",
+      "normalized_province_name": "Preah Vihear",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Prey Veng",
+      "normalized_province_name": "Prey Veng",
+      "rows": 7
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Pursat",
+      "normalized_province_name": "Pursat",
+      "rows": 2
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Ratanak Kiri",
+      "normalized_province_name": "Ratanakiri Province",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Siemreap",
+      "normalized_province_name": "Siem Reap",
+      "rows": 4
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Sihanoukville",
+      "normalized_province_name": "Preah Sihanouk",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Stung Treng",
+      "normalized_province_name": "Stung Treng",
+      "rows": 1
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Svay Rieng",
+      "normalized_province_name": "Svay Rieng",
+      "rows": 3
+    },
+    {
+      "layer": "operational_district",
+      "raw_province_name": "Takeo",
+      "normalized_province_name": "Takeo",
+      "rows": 5
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Banteay Meanchey",
+      "normalized_province_name": "Banteay Meanchey",
+      "rows": 5
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Battambang",
+      "normalized_province_name": "Battambang",
+      "rows": 4
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kampong Cham",
+      "normalized_province_name": "Kampong Cham",
+      "rows": 11
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kampong Chhnang",
+      "normalized_province_name": "Kampong Chhnang",
+      "rows": 2
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kampong Speu",
+      "normalized_province_name": "Kampong Speu",
+      "rows": 3
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kampong Thom",
+      "normalized_province_name": "Kampong Thom",
+      "rows": 3
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kampot",
+      "normalized_province_name": "Kampot",
+      "rows": 4
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kandal",
+      "normalized_province_name": "Kandal",
+      "rows": 5
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kep",
+      "normalized_province_name": "Kep",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Koh Kong",
+      "normalized_province_name": "Koh Kong",
+      "rows": 2
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Kratie",
+      "normalized_province_name": "Kratie",
+      "rows": 2
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Mondul Kiri",
+      "normalized_province_name": "Mondulkiri",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Oddar Meanchey",
+      "normalized_province_name": "Oddar Meanchey",
+      "rows": 2
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Pailin",
+      "normalized_province_name": "Pailin",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Phnom Penh",
+      "normalized_province_name": "Phnom Penh",
+      "rows": 5
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Preah Vihear",
+      "normalized_province_name": "Preah Vihear",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Prey Veng",
+      "normalized_province_name": "Prey Veng",
+      "rows": 7
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Pursat",
+      "normalized_province_name": "Pursat",
+      "rows": 2
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Ratanak Kiri",
+      "normalized_province_name": "Ratanakiri Province",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Siemreap",
+      "normalized_province_name": "Siem Reap",
+      "rows": 4
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Sihanoukville",
+      "normalized_province_name": "Preah Sihanouk",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Stung Treng",
+      "normalized_province_name": "Stung Treng",
+      "rows": 1
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Svay Rieng",
+      "normalized_province_name": "Svay Rieng",
+      "rows": 3
+    },
+    {
+      "layer": "referral_hospital",
+      "raw_province_name": "Takeo",
+      "normalized_province_name": "Takeo",
+      "rows": 5
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T18:19:47Z"
+}

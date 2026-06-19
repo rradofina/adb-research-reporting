@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-06-19.
+Last updated: 2026-06-20.
 
 ## Current focus
 
@@ -273,6 +273,71 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (access map-completeness Cambodia source audit):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/access-map-completeness` from a no-registry Cambodia warning to a
+  testable public-source row. Added
+  `access-services/scripts/audit-cambodia-health-facility-source.py`, cache
+  regeneration notes under `access-services/.cache/README.md`, generated
+  `access-cambodia-health-facility-source-audit.{json,csv}` plus the raw-name
+  summary CSV, registered `hdx_cambodia_health_facility_2010` in
+  `versions.json`, and surfaced the evidence in the access deepening note,
+  showcase registry, downloads, correction-wall visual, and a new Cambodia
+  source ledger. The script retrieves the public HDX Cambodia Health
+  Facilities package API and `health_facility.zip`, records ZIP SHA-256
+  `f4e97c595ba7a20698cf8cefb4b71a76a5eb38d45badf9dcfdf48cde12dd3506`,
+  counts only 2010 government health centers, health posts, and referral
+  hospitals, and keeps operational-district points as context only. Current
+  results: 24/25 Cambodia ADM1 access rows join to the 2010 source; 1,121
+  public-source facilities are counted; 21/24 joined rows re-rank; Oddar
+  Meanchey changes from 4 OSM health points and 319,413 people per point to
+  17 public-source facilities and 75,156 people per facility (4.25x load
+  difference); Phnom Penh remains a scope/vintage warning because OSM has 227
+  health points versus 22 facilities in the 2010 public inventory. This is a
+  partial source-scope audit, not a complete current all-provider registry,
+  service-capacity measure, travel-time result, maturity promotion, or
+  human-final upgrade. Remaining access blockers: Pakistan and Lao still need
+  comparable registry/source joins; Cambodia still needs boundary-year,
+  national-hospital, current-provider, and catchment/friction checks before it
+  can support an access claim. Verification: `py_compile`, the Cambodia audit
+  script, and `deepen-osm-completeness.py` reran; `npm run build` passed with
+  the existing chunk-size warning; repository gates
+  `check-banned-words`, `check-dmc-framing`, `check-citations`,
+  `check-composite-headline`, `check-wip`, `verify-showcase-bench`, and
+  `check-versions` passed; Chrome CDP QA passed at 1365x900 and 375x820 with
+  no page-level overflow, no blocking console errors, no network failures,
+  three hero stats, four Cambodia source cards, and the `KHM 75,156 HDX
+  partial` correction-wall label. QA record:
+  `reporting-site/qa/showcase-access-cambodia-browser-check.json`;
+  screenshots: `showcase-access-cambodia-desktop.png`,
+  `showcase-access-cambodia-source-desktop.png`,
+  `showcase-access-cambodia-cluster-desktop.png`,
+  `showcase-access-cambodia-mobile.png`,
+  `showcase-access-cambodia-source-mobile.png`, and
+  `showcase-access-cambodia-cluster-mobile.png`.
+- **2026-06-20 (remittance flow-weighting confidence ledger):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/remittance-flow-weighting` with a generated evidence-confidence
+  ledger rather than a prose-only caveat. The L3 module now emits row-level
+  confidence classes, a top-five confidence rail, coverage-absence rows, and
+  source-vintage counts from
+  `remittance-resilience/scripts/sprint-flow-weighted-cost.py`. Current
+  generated counts: 21 rankable economies, 5/5 repaired baseline top-five
+  economies still in the flow-weighted top five, 1 flow-weighted top-five row
+  below 25% matched-flow coverage, 2 flow-weighted top-five rows with one
+  matched RPW corridor, and 15 DMCs with KNOMAD inbound flow but no
+  latest-period RPW quote coverage. This is a reader-facing evidence and UI
+  repair only, not a maturity promotion. Verification: remittance script rerun,
+  `npm run build` passed with the existing chunk-size warning, Chrome CDP QA
+  passed at 1365x900 and 375x820 with no page-level horizontal overflow, no
+  console errors, no network failures, 5 confidence cards, 14 ledger rows, 6
+  absence rows, and hero values `140/142`, `5/5`, `1`. QA record:
+  `reporting-site/qa/showcase-remittance-confidence-browser-check.json`;
+  screenshots:
+  `reporting-site/qa/showcase-remittance-confidence-desktop.png`,
+  `reporting-site/qa/showcase-remittance-confidence-ledger-desktop.png`,
+  `reporting-site/qa/showcase-remittance-confidence-mobile.png`, and
+  `reporting-site/qa/showcase-remittance-confidence-ledger-mobile.png`.
 - **2026-06-19 (home report-bench readiness map):** Added a compact
   20-slot readiness map to the first viewport of `/`, using the shared
   showcase registry and explicit stage colors for L2 prototype, L3 candidate,

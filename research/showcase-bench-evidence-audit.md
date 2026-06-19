@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T17:43:00.712Z
+Generated: 2026-06-19T18:25:21.454Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 286
-- QA browser-check JSON files in reporting-site/qa: 13
+- QA screenshot files in reporting-site/qa: 292
+- QA browser-check JSON files in reporting-site/qa: 14
 - Verification failures: 0
 
 ## Readiness Mix
@@ -39,7 +39,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 4 | Public service data quality source disagreement | L3 candidate | ok | ok | n/a | Advance the next decision-ledger class only through public evidence, or stop at owner-only source-owner contact and human locat... |
 | 5 | Remittance corridors after flow weighting | L3 candidate | ok | ok | n/a | Validate corridor rows against central-bank or transaction sources where available; keep the L3 module as a sensitivity result ... |
 | 6 | Air-monitoring observability | L3 candidate | ok | ok | n/a | For BMKG, find station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia... |
-| 7 | Access map-completeness audit | L3 candidate | ok | ok | n/a | Extend registry joins for the priority economies and add a public friction/travel-time validation plan. |
+| 7 | Access map-completeness audit | L3 candidate | ok | ok | n/a | Extend registry joins for Pakistan and Lao, finish the Cambodia source-scope checks, and add a public friction/travel-time vali... |
 | 8 | Disaster metric falsification | L3 candidate | ok | ok | n/a | Build a recovery-lag source plan and event-level recovery proxy before reusing the disaster hook as a report. |
 | 9 | Power-fuel concentration audit | Evidence audit | ok | ok | ok | Search for public outage/reserve-margin proxies and decide whether the fuel-concentration result can graduate. |
 | 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Build a corridor-type falsifier that separates labor, refugee, family, and remittance-relevant migration signals. |

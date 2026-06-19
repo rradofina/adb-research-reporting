@@ -1,0 +1,164 @@
+{
+  "checked_at": "2026-06-19T18:19:21.911Z",
+  "url": "http://127.0.0.1:5176/showcase/access-map-completeness",
+  "pass": true,
+  "results": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1365,
+        "height": 900,
+        "mobile": false
+      },
+      "topMetrics": {
+        "title": "ADB AI Research",
+        "viewport": {
+          "width": 1365,
+          "height": 900
+        },
+        "pageOverflow": false,
+        "scrollWidth": 1350,
+        "clientWidth": 1350,
+        "heroStats": [
+          "16/17",
+          "-0.81",
+          "4 to 17"
+        ],
+        "modeButtons": [
+          "Rank flip",
+          "Completeness signal",
+          "Correction wall"
+        ],
+        "hasCambodiaSource": true,
+        "sourceCards": 4,
+        "sourceStatsColumns": "554px 554px",
+        "downloadLinks": [
+          "Download deepening JSON",
+          "Download Philippine correction CSV",
+          "Download Cambodia source audit JSON",
+          "Download Cambodia source audit CSV",
+          "Download original access panel",
+          "Program evidence"
+        ],
+        "textChecks": {
+          "oddar": true,
+          "hdx": true,
+          "sourceScope": true,
+          "cambodiaFalls": true
+        },
+        "overflowingElements": []
+      },
+      "clusterMetrics": {
+        "clusterText": "Interactive evidence viewThe result changes when the denominator changes.The rank-flip view compares OSM people-per-facility with registry people-per-facility for all Philippine regions. The scatter asks whether the OSM access score is mostly a mapping completeness signal. The correction wall shows which cross-country extremes can and cannot be corrected from data already on disk.Rank flipCompleteness signalCorrection wallThe largest access-screen numbers are the least correctable100,000200,000300,000PAKno registry joinBGD11,117 correctedKHM75,156 HDX partialLAOno registry joinLKAno registry joinNPLno registry joinPHL11,758 correctedTLSno registry joinpeople per health facility in worst ADM1 unitCross-economy correction wall6 of 8 worst-unit rows cannot be corrected from PSDQ yetCorrectable rowsBGD, PHLPhilippines national correction68,678 to 11,758Bangladesh national correction94,376 to 11,117Cambodia HDX partial check319,413 to 75,156The uncorrectable rows are not evidence that the access screen is wrong. Cambodia now has a public-source partial check, but Pakistan and Lao still need comparable registry sources before the cross-economy ordering can be treated as an access result.",
+        "hasHdxPartial": true,
+        "hasNoRegistryJoin": true
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "networkFailures": []
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 375,
+        "height": 820,
+        "mobile": true
+      },
+      "topMetrics": {
+        "title": "ADB AI Research",
+        "viewport": {
+          "width": 375,
+          "height": 820
+        },
+        "pageOverflow": false,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "heroStats": [
+          "16/17",
+          "-0.81",
+          "4 to 17"
+        ],
+        "modeButtons": [
+          "Rank flip",
+          "Completeness signal",
+          "Correction wall"
+        ],
+        "hasCambodiaSource": true,
+        "sourceCards": 4,
+        "sourceStatsColumns": "327px",
+        "downloadLinks": [
+          "Download deepening JSON",
+          "Download Philippine correction CSV",
+          "Download Cambodia source audit JSON",
+          "Download Cambodia source audit CSV",
+          "Download original access panel",
+          "Program evidence"
+        ],
+        "textChecks": {
+          "oddar": true,
+          "hdx": true,
+          "sourceScope": true,
+          "cambodiaFalls": true
+        },
+        "overflowingElements": []
+      },
+      "clusterMetrics": {
+        "clusterText": "Interactive evidence viewThe result changes when the denominator changes.The rank-flip view compares OSM people-per-facility with registry people-per-facility for all Philippine regions. The scatter asks whether the OSM access score is mostly a mapping completeness signal. The correction wall shows which cross-country extremes can and cannot be corrected from data already on disk.Rank flipCompleteness signalCorrection wallThe largest access-screen numbers are the least correctable100,000200,000300,000PAKno registry joinBGD11,117 correctedKHM75,156 HDX partialLAOno registry joinLKAno registry joinNPLno registry joinPHL11,758 correctedTLSno registry joinpeople per health facility in worst ADM1 unitCross-economy correction wall6 of 8 worst-unit rows cannot be corrected from PSDQ yetCorrectable rowsBGD, PHLPhilippines national correction68,678 to 11,758Bangladesh national correction94,376 to 11,117Cambodia HDX partial check319,413 to 75,156The uncorrectable rows are not evidence that the access screen is wrong. Cambodia now has a public-source partial check, but Pakistan and Lao still need comparable registry sources before the cross-economy ordering can be treated as an access result.",
+        "hasHdxPartial": true,
+        "hasNoRegistryJoin": true
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "networkFailures": []
+    }
+  ],
+  "blockingConsole": [],
+  "screenshots": [
+    "showcase-access-cambodia-desktop.png",
+    "showcase-access-cambodia-source-desktop.png",
+    "showcase-access-cambodia-cluster-desktop.png",
+    "showcase-access-cambodia-mobile.png",
+    "showcase-access-cambodia-source-mobile.png",
+    "showcase-access-cambodia-cluster-mobile.png"
+  ]
+}

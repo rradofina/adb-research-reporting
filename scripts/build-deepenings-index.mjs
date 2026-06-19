@@ -49,6 +49,10 @@ const OVERRIDE = {
     "A genuine data wall: the Ookla speed pull (~2.6 GB), WorldPop, and an official-coverage claim are not on disk, so no numbers can be produced yet — a runnable pipeline stub is committed that refuses to invent them.",
 };
 
+const ARTIFACT_OVERRIDE = {
+  "access-services": "access-osm-completeness-deepening.json",
+};
+
 /** Pull the finding under the first "finding" heading (excluding "not a
  * finding"); gather paragraphs + list items, trim at a sentence boundary. */
 function extractFinding(md) {
@@ -111,8 +115,13 @@ function main() {
     const artifacts = fs.existsSync(genDir)
       ? fs.readdirSync(genDir).filter((f) => f.endsWith(".json") && ARTIFACT_RX.test(f))
       : [];
+    artifacts.sort();
 
     const hasArtifact = artifacts.length > 0;
+    const preferredArtifact = ARTIFACT_OVERRIDE[slug];
+    const artifact = preferredArtifact && artifacts.includes(preferredArtifact)
+      ? preferredArtifact
+      : artifacts[0] || null;
     const declaresWall = /data wall/i.test(md);
     const outcome = !hasArtifact
       ? "wall" // no real artifact produced (owner-gated source not on disk)
@@ -126,7 +135,7 @@ function main() {
       outcome,
       has_script: scripts.length > 0,
       has_artifact: hasArtifact,
-      artifact: artifacts[0] || null,
+      artifact,
       finding: OVERRIDE[slug] ?? extractFinding(md),
     });
   }

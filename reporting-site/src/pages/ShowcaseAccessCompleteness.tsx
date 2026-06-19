@@ -59,6 +59,68 @@ interface AccessDeepening {
   cluster_worst_adm1_corrected: ClusterRow[];
 }
 
+interface CambodiaAuditRow {
+  admin1_name: string;
+  source_join_status: string;
+  population: number;
+  osm_health_facilities: number;
+  osm_people_per_health_facility: number;
+  government_health_centers_2010: number;
+  government_health_posts_2010: number;
+  government_referral_hospitals_2010: number;
+  operational_district_points_2010_context: number;
+  government_facilities_2010_included: number;
+  government_people_per_facility_2010: number | null;
+  osm_to_government_facility_ratio: number | null;
+  osm_load_to_government_load_ratio: number | null;
+  rank_osm_health_load_joined_only: number | null;
+  rank_government_health_load_2010_joined_only: number | null;
+  rank_shift_after_2010_inventory: number | null;
+  join_note: string;
+}
+
+interface AccessCambodiaAudit {
+  attestation_chain: string;
+  generated_at: string;
+  claim_scope: string;
+  summary: {
+    access_khm_rows: number;
+    joined_rows: number;
+    unmatched_rows: number;
+    unmatched_admin1_names: string[];
+    government_facilities_2010_included_total: number;
+    operational_district_points_2010_context_total: number;
+    osm_health_facilities_access_panel_total: number;
+    national_osm_to_government_facility_ratio: number;
+    rank_changed_after_2010_inventory: number;
+    rank_joined_total: number;
+    oddar_meanchey: {
+      osm_health_facilities: number;
+      government_facilities_2010_included: number;
+      osm_people_per_health_facility: number;
+      government_people_per_facility_2010: number;
+      osm_load_to_government_load_ratio: number;
+      rank_osm: number;
+      rank_government: number;
+    };
+    phnom_penh_scope_warning: {
+      osm_health_facilities: number;
+      government_facilities_2010_included: number;
+      osm_to_government_facility_ratio: number;
+      note: string;
+    };
+    largest_osm_load_ratios: Array<{
+      admin1_name: string;
+      osm_health_facilities: number;
+      government_facilities_2010_included: number;
+      osm_people_per_health_facility: number;
+      government_people_per_facility_2010: number;
+      osm_load_to_government_load_ratio: number;
+    }>;
+  };
+  rows: CambodiaAuditRow[];
+}
+
 type AccessMode = "flip" | "scatter" | "cluster";
 
 const ACCESS_MODES: Array<{ id: AccessMode; label: string }> = [
@@ -85,9 +147,15 @@ function regionByName(rows: AccessRegionRow[], name: string) {
   return rows.find((row) => row.admin1_name === name);
 }
 
+function cambodiaRowByName(rows: CambodiaAuditRow[], name: string) {
+  return rows.find((row) => row.admin1_name === name);
+}
+
 export default function ShowcaseAccessCompleteness() {
   const [data, setData] = useState<AccessDeepening | null>(null);
+  const [cambodia, setCambodia] = useState<AccessCambodiaAudit | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [cambodiaError, setCambodiaError] = useState<string | null>(null);
   const [mode, setMode] = useState<AccessMode>("flip");
   const [focus, setFocus] = useState("ARMM");
 
@@ -99,6 +167,16 @@ export default function ShowcaseAccessCompleteness() {
       })
       .then((payload: AccessDeepening) => setData(payload))
       .catch((err) => setError(String(err)));
+  }, []);
+
+  useEffect(() => {
+    fetch("/programs/access-services/generated/access-cambodia-health-facility-source-audit.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload: AccessCambodiaAudit) => setCambodia(payload))
+      .catch((err) => setCambodiaError(String(err)));
   }, []);
 
   const sortedRegions = useMemo(
@@ -120,7 +198,8 @@ export default function ShowcaseAccessCompleteness() {
             Philippines registry join shows why that is risky: the screen's
             worst-access region is also the worst-mapped region, and the
             regional order nearly flips once the official registry denominator
-            is used.
+            is used. A Cambodia source pass now tests the largest unresolved
+            row against a public HDX/MoH/OCHA facility inventory.
           </p>
           <div className="showcase-meta">
             <span>{data?.attestation_chain || "ai-first"}</span>
@@ -144,6 +223,14 @@ export default function ShowcaseAccessCompleteness() {
                     {data.phl_internal_contradiction.spearman_rho.toFixed(2)}
                   </span>
                   <span className="showcase-stat-label">rank correlation between mapping capture and OSM load</span>
+                </div>
+                <div>
+                  <span className="showcase-stat-value">
+                    {cambodia
+                      ? `${cambodia.summary.oddar_meanchey.osm_health_facilities} to ${cambodia.summary.oddar_meanchey.government_facilities_2010_included}`
+                      : "--"}
+                  </span>
+                  <span className="showcase-stat-label">Oddar Meanchey OSM points versus 2010 public-source facilities</span>
                 </div>
               </div>
             </>
@@ -169,8 +256,10 @@ export default function ShowcaseAccessCompleteness() {
         <div className="showcase-note">
           <strong>Source upgrade.</strong> The report joins the access panel's
           OSM health-point numerator to PSDQ registry capture rates from DOH
-          NHFR and the Bangladesh DGHS registry. No modeled number is supplied
-          by AI; the script recomputes the panel from committed JSON files.
+          NHFR and the Bangladesh DGHS registry, then adds a Cambodia HDX
+          public-facility source audit for the largest unresolved row. No
+          modeled number is supplied by AI; the scripts recompute the panels
+          from public source files and committed artifacts.
         </div>
       </section>
 
@@ -222,20 +311,93 @@ export default function ShowcaseAccessCompleteness() {
             ) : mode === "scatter" ? (
               <CompletenessScatter rows={data.phl_rows} focus={focus} />
             ) : (
-              <ClusterCorrectionChart rows={data.cluster_worst_adm1_corrected} />
+              <ClusterCorrectionChart rows={data.cluster_worst_adm1_corrected} cambodia={cambodia} />
             )}
           </div>
           <div className="access-side-panel">
             {!data ? (
               <p className="showcase-loading">Loading readout...</p>
             ) : mode === "cluster" ? (
-              <ClusterReadout data={data} />
+              <ClusterReadout data={data} cambodia={cambodia} />
             ) : (
               <RegionReadout row={focusRegion} data={data} />
             )}
           </div>
         </div>
       </section>
+
+      <section className="showcase-section access-cambodia-source" data-access-cambodia-source>
+        <div className="showcase-section-copy">
+          <p className="kicker kicker-crimson">Cambodia source extension</p>
+          <h2>Oddar Meanchey stops being a wall and becomes a testable source row.</h2>
+          <p>
+            The new audit retrieves the public HDX Cambodia Health Facilities
+            package, parses government health centers, health posts, and
+            referral hospitals, and joins those counts to the Cambodia ADM1
+            OSM panel. It does not make a travel-time claim, and it does not
+            treat a 2010 public-facility inventory as a complete current
+            clinical registry.
+          </p>
+        </div>
+        {cambodia ? (
+          <div className="access-source-grid">
+            <div className="access-source-stats" aria-label="Cambodia source audit summary">
+              <div>
+                <span>{cambodia.summary.joined_rows}/{cambodia.summary.access_khm_rows}</span>
+                <p>Cambodia ADM1 rows joined to the 2010 source</p>
+              </div>
+              <div>
+                <span>{formatNumber(cambodia.summary.government_facilities_2010_included_total)}</span>
+                <p>health centers, posts, and referral hospitals counted</p>
+              </div>
+              <div>
+                <span>{cambodia.summary.rank_changed_after_2010_inventory}/{cambodia.summary.rank_joined_total}</span>
+                <p>joined rows re-rank after the denominator changes</p>
+              </div>
+              <div>
+                <span>{cambodia.summary.oddar_meanchey.osm_load_to_government_load_ratio.toFixed(2)}x</span>
+                <p>Oddar Meanchey OSM load versus 2010 public-source load</p>
+              </div>
+            </div>
+            <div className="showcase-note access-source-warning">
+              <strong>Source-scope warning.</strong> Phnom Penh has{" "}
+              {formatNumber(cambodia.summary.phnom_penh_scope_warning.osm_health_facilities)}
+              {" "}OSM health points versus{" "}
+              {formatNumber(cambodia.summary.phnom_penh_scope_warning.government_facilities_2010_included)}
+              {" "}facilities in the 2010 public inventory. That is a scope and
+              vintage mismatch, not proof that either source is the full health
+              system.
+            </div>
+          </div>
+        ) : (
+          <p className="showcase-loading">{cambodiaError || "Loading Cambodia source audit..."}</p>
+        )}
+      </section>
+
+      {cambodia && (
+        <section className="showcase-explorer access-cambodia-ledger">
+          <div className="showcase-explorer-head">
+            <div>
+              <p className="kicker kicker-blue">Public-source ledger</p>
+              <h2>The Cambodia row changes, but the access claim still waits.</h2>
+              <p>
+                The chart compares the highest Cambodia OSM people-per-health-
+                point rows with the 2010 public-facility denominator. Some
+                extreme OSM values collapse; others stay high; one row needs a
+                boundary-year crosswalk.
+              </p>
+            </div>
+          </div>
+          <div className="access-evidence-grid">
+            <div className="access-main-chart">
+              <CambodiaFacilityLedger audit={cambodia} />
+            </div>
+            <div className="access-side-panel">
+              <CambodiaSourceReadout audit={cambodia} />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">
@@ -247,14 +409,17 @@ export default function ShowcaseAccessCompleteness() {
             the Philippines, the region flagged by the OSM screen is the same
             region with the lowest OSM capture against the official clinical
             registry. The screen becomes useful only when it is read as a
-            map-completeness-aware triage layer.
+            map-completeness-aware triage layer. Cambodia extends that lesson:
+            the most dramatic unresolved value drops when a public facility
+            source is counted, but the source vintage and scope still stop an
+            access claim.
           </p>
         </div>
         <div className="showcase-note">
-          <strong>Non-claim.</strong> Registry counts are not functioning
-          capacity, service quality, travel time, staffing, or utilization.
-          The correction removes one map-coverage confound; it does not turn
-          the screen into an official access statistic.
+          <strong>Non-claim.</strong> Registry and public-facility counts are
+          not functioning capacity, service quality, travel time, staffing, or
+          utilization. The correction removes one map-coverage confound; it
+          does not turn the screen into an official access statistic.
         </div>
       </section>
 
@@ -278,6 +443,12 @@ export default function ShowcaseAccessCompleteness() {
           </a>
           <a href="/programs/access-services/generated/access-osm-completeness-deepening-phl.csv" download>
             Download Philippine correction CSV
+          </a>
+          <a href="/programs/access-services/generated/access-cambodia-health-facility-source-audit.json" download>
+            Download Cambodia source audit JSON
+          </a>
+          <a href="/programs/access-services/generated/access-cambodia-health-facility-source-audit.csv" download>
+            Download Cambodia source audit CSV
           </a>
           <a href="/programs/access-services/generated/access-services-adb-panel.json" download>
             Download original access panel
@@ -486,7 +657,7 @@ function CompletenessScatter({ rows, focus }: { rows: AccessRegionRow[]; focus: 
   );
 }
 
-function ClusterCorrectionChart({ rows }: { rows: ClusterRow[] }) {
+function ClusterCorrectionChart({ rows, cambodia }: { rows: ClusterRow[]; cambodia: AccessCambodiaAudit | null }) {
   const width = 760;
   const height = 430;
   const margin = { top: 50, right: 150, bottom: 52, left: 88 };
@@ -511,6 +682,16 @@ function ClusterCorrectionChart({ rows }: { rows: ClusterRow[] }) {
         {rows.map((row, index) => {
           const yy = y(index);
           const corrected = row.corrected_people_per_facility;
+          const cambodiaPartial =
+            row.iso3 === "KHM"
+              ? cambodia?.summary.oddar_meanchey.government_people_per_facility_2010 ?? null
+              : null;
+          const shownCorrection = corrected ?? cambodiaPartial;
+          const label = corrected
+            ? `${formatNumber(corrected)} corrected`
+            : cambodiaPartial
+              ? `${formatNumber(cambodiaPartial)} HDX partial`
+              : "no registry join";
           return (
             <g key={row.iso3}>
               <text x={margin.left - 12} y={yy + 14} textAnchor="end" className="access-rank-label">
@@ -521,13 +702,24 @@ function ClusterCorrectionChart({ rows }: { rows: ClusterRow[] }) {
                 y={yy}
                 width={Math.max(2, x(row.osm_worst_people_per_facility) - margin.left)}
                 height={16}
-                className={corrected ? "access-cluster-bar" : "access-cluster-bar access-cluster-wall"}
+                className={
+                  corrected
+                    ? "access-cluster-bar"
+                    : cambodiaPartial
+                      ? "access-cluster-bar access-cluster-partial"
+                      : "access-cluster-bar access-cluster-wall"
+                }
               />
-              {corrected && (
-                <circle cx={x(corrected)} cy={yy + 8} r={5} className="access-corrected-dot" />
+              {shownCorrection && (
+                <circle
+                  cx={x(shownCorrection)}
+                  cy={yy + 8}
+                  r={5}
+                  className={corrected ? "access-corrected-dot" : "access-partial-dot"}
+                />
               )}
               <text x={x(row.osm_worst_people_per_facility) + 8} y={yy + 13} className="access-point-label">
-                {corrected ? `${formatNumber(corrected)} corrected` : "no registry join"}
+                {label}
               </text>
             </g>
           );
@@ -537,6 +729,159 @@ function ClusterCorrectionChart({ rows }: { rows: ClusterRow[] }) {
         </text>
       </svg>
     </div>
+  );
+}
+
+function CambodiaFacilityLedger({ audit }: { audit: AccessCambodiaAudit }) {
+  const rows = useMemo(
+    () =>
+      [...audit.rows]
+        .sort((a, b) => b.osm_people_per_health_facility - a.osm_people_per_health_facility)
+        .slice(0, 10),
+    [audit.rows],
+  );
+  const mobileRows = rows.slice(0, 6);
+  const width = 820;
+  const rowGap = 34;
+  const margin = { top: 62, right: 182, bottom: 52, left: 154 };
+  const height = margin.top + margin.bottom + rowGap * rows.length;
+  const max = Math.max(...rows.map((row) => row.osm_people_per_health_facility));
+  const x = (value: number) => margin.left + (value / max) * (width - margin.left - margin.right);
+  const barWidth = (value: number) => Math.max(2, x(value) - margin.left);
+  const oddar = cambodiaRowByName(audit.rows, "Oddar Meanchey");
+
+  return (
+    <div className="access-chart-wrap">
+      <div className="access-cambodia-mobile" aria-label="Mobile Cambodia public-source ledger">
+        <p>Cambodia OSM load versus 2010 public-source load</p>
+        {mobileRows.map((row) => (
+          <div key={row.admin1_name} className={row.admin1_name === "Oddar Meanchey" ? "is-focus" : ""}>
+            <span>{row.admin1_name}</span>
+            <strong>
+              {row.government_people_per_facility_2010
+                ? `${formatNumber(row.osm_people_per_health_facility)} to ${formatNumber(row.government_people_per_facility_2010)}`
+                : "needs crosswalk"}
+            </strong>
+            <i style={{ width: `${Math.max(6, Math.min(100, (row.osm_people_per_health_facility / max) * 100))}%` }} />
+          </div>
+        ))}
+      </div>
+      <svg className="access-cambodia-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Cambodia OSM health load against 2010 public health facility source">
+        <text x={margin.left} y={24} className="access-chart-title">
+          Cambodia: OSM denominator versus 2010 public-facility source
+        </text>
+        <text x={margin.left} y={44} className="access-chart-subtitle">
+          Top rows by OSM people per health point; shorter blue bar uses health centers, posts, and referral hospitals
+        </text>
+        {[100000, 200000, 300000].map((tick) => (
+          <g key={tick}>
+            <line x1={x(tick)} x2={x(tick)} y1={margin.top - 12} y2={height - margin.bottom + 6} className="access-grid" />
+            <text x={x(tick)} y={height - 18} textAnchor="middle" className="access-tick">
+              {formatNumber(tick)}
+            </text>
+          </g>
+        ))}
+        <g>
+          <rect x={margin.left} y={margin.top - 35} width={18} height={8} className="access-cambodia-osm" />
+          <text x={margin.left + 24} y={margin.top - 28} className="access-tick">
+            OSM people per health point
+          </text>
+          <rect x={margin.left + 214} y={margin.top - 35} width={18} height={8} className="access-cambodia-gov" />
+          <text x={margin.left + 238} y={margin.top - 28} className="access-tick">
+            2010 public-source people per facility
+          </text>
+        </g>
+        {rows.map((row, index) => {
+          const y0 = margin.top + index * rowGap;
+          const isOddar = row.admin1_name === "Oddar Meanchey";
+          const publicLoad = row.government_people_per_facility_2010;
+          return (
+            <g key={row.admin1_name} className={isOddar ? "is-focus" : ""}>
+              <text x={margin.left - 12} y={y0 + 15} textAnchor="end" className="access-rank-label">
+                {row.admin1_name}
+              </text>
+              <rect
+                x={margin.left}
+                y={y0}
+                width={barWidth(row.osm_people_per_health_facility)}
+                height={11}
+                className="access-cambodia-osm"
+              />
+              {publicLoad ? (
+                <rect
+                  x={margin.left}
+                  y={y0 + 14}
+                  width={barWidth(publicLoad)}
+                  height={11}
+                  className="access-cambodia-gov"
+                />
+              ) : (
+                <line
+                  x1={margin.left}
+                  x2={margin.left + 85}
+                  y1={y0 + 19}
+                  y2={y0 + 19}
+                  className="access-cambodia-missing"
+                />
+              )}
+              <text x={x(row.osm_people_per_health_facility) + 8} y={y0 + 9} className="access-point-label">
+                {formatNumber(row.osm_people_per_health_facility)}
+              </text>
+              <text
+                x={publicLoad ? x(publicLoad) + 8 : margin.left + 92}
+                y={y0 + 23}
+                className="access-point-label"
+              >
+                {publicLoad ? formatNumber(publicLoad) : "needs crosswalk"}
+              </text>
+            </g>
+          );
+        })}
+        <text x={width / 2} y={height - 8} textAnchor="middle" className="access-axis-label">
+          people per health point or public-source facility
+        </text>
+        {oddar && (
+          <text x={width - margin.right + 30} y={margin.top + 14} className="access-chart-subtitle">
+            Oddar: {formatNumber(oddar.osm_health_facilities)} OSM / {formatNumber(oddar.government_facilities_2010_included)} public
+          </text>
+        )}
+      </svg>
+    </div>
+  );
+}
+
+function CambodiaSourceReadout({ audit }: { audit: AccessCambodiaAudit }) {
+  const oddar = audit.summary.oddar_meanchey;
+  const tbong = audit.summary.unmatched_admin1_names.join(", ");
+  return (
+    <>
+      <p className="kicker kicker-blue">Cambodia source readout</p>
+      <h3>{formatNumber(oddar.osm_people_per_health_facility)} falls to {formatNumber(oddar.government_people_per_facility_2010)}</h3>
+      <dl className="access-readout">
+        <div>
+          <dt>Oddar OSM health points</dt>
+          <dd>{formatNumber(oddar.osm_health_facilities)}</dd>
+        </div>
+        <div>
+          <dt>Oddar public-source facilities</dt>
+          <dd>{formatNumber(oddar.government_facilities_2010_included)}</dd>
+        </div>
+        <div>
+          <dt>Rows with rank changes</dt>
+          <dd>{audit.summary.rank_changed_after_2010_inventory}/{audit.summary.rank_joined_total}</dd>
+        </div>
+        <div>
+          <dt>Boundary crosswalk gap</dt>
+          <dd>{tbong || "none"}</dd>
+        </div>
+      </dl>
+      <p>
+        The audit improves the evidence because it supplies a public source
+        for Cambodia's biggest unresolved row. It also withholds the access
+        claim because the source is 2010, public-sector scoped, and not a
+        travel-time or service-capacity denominator.
+      </p>
+    </>
   );
 }
 
@@ -575,7 +920,7 @@ function RegionReadout({ row, data }: { row?: AccessRegionRow; data: AccessDeepe
   );
 }
 
-function ClusterReadout({ data }: { data: AccessDeepening }) {
+function ClusterReadout({ data, cambodia }: { data: AccessDeepening; cambodia: AccessCambodiaAudit | null }) {
   const correctable = data.cluster_worst_adm1_corrected.filter((row) => row.corrected_people_per_facility);
   const uncorrectable = data.cluster_worst_adm1_corrected.length - correctable.length;
   const phl = data.cluster_worst_adm1_corrected.find((row) => row.iso3 === "PHL");
@@ -597,11 +942,21 @@ function ClusterReadout({ data }: { data: AccessDeepening }) {
           <dt>Bangladesh national correction</dt>
           <dd>{formatNumber(bgd?.osm_worst_people_per_facility)} to {formatNumber(bgd?.corrected_people_per_facility)}</dd>
         </div>
+        {cambodia && (
+          <div>
+            <dt>Cambodia HDX partial check</dt>
+            <dd>
+              {formatNumber(cambodia.summary.oddar_meanchey.osm_people_per_health_facility)} to{" "}
+              {formatNumber(cambodia.summary.oddar_meanchey.government_people_per_facility_2010)}
+            </dd>
+          </div>
+        )}
       </dl>
       <p>
-        The uncorrectable rows are not evidence that the access screen is
-        wrong. They are the next source task: fetch official registries before
-        treating the cross-economy ordering as an access result.
+        The uncorrectable rows are not evidence that the access screen is wrong.
+        Cambodia now has a public-source partial check, but Pakistan and Lao
+        still need comparable registry sources before the cross-economy ordering
+        can be treated as an access result.
       </p>
     </>
   );

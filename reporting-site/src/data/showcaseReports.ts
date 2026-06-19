@@ -136,10 +136,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/access-map-completeness",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "OSM health amenities are checked against official registry denominators before population-per-facility maps are interpreted.",
+    deck: "OSM health amenities are checked against official registry denominators and a Cambodia HDX/MoH/OCHA public-facility source before population-per-facility maps are interpreted.",
     evidencePath: "access-services/deepened-results.md",
-    visual: "Rank-flip chart, completeness scatter, and correction wall",
-    sourceNote: "OSM, official clinical registries, WorldPop, and sibling PSDQ artifacts",
+    visual: "Rank-flip chart, completeness scatter, correction wall, and Cambodia source-scope ledger",
+    sourceNote: "OSM, official clinical registries, WorldPop, sibling PSDQ artifacts, and HDX Cambodia Health Facilities",
   },
   {
     id: 8,
@@ -482,7 +482,7 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
   7: {
     operationalUse: "Flag geographies where OSM health amenities are too incomplete to support access or catchment planning.",
     falsifier: "If official registry joins do not change local facility-load ranks, the map-completeness concern is weaker.",
-    limitation: "OSM completeness is not actual service availability, capacity, quality, or travel-time access.",
+    limitation: "OSM completeness is not actual service availability, capacity, quality, or travel-time access; the Cambodia HDX layer is a 2010 public-facility inventory, not a complete current all-provider registry.",
   },
   8: {
     operationalUse: "Prevent recovery-lag narratives from reusing a disaster burden pair that fails under alternate metrics.",
@@ -597,9 +597,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   7: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Access map-completeness has registry comparison artifacts and a strong source-audit visual surface.",
-    publicationGap: "Needs additional official registry joins and a travel-time or catchment denominator before access language.",
-    nextUpgrade: "Extend registry joins for the priority economies and add a public friction/travel-time validation plan.",
+    qaSummary: "Access map-completeness has registry comparison artifacts, a Cambodia public-facility source audit, and a strong source-audit visual surface.",
+    publicationGap: "Needs comparable official/current registry joins for Pakistan and Lao, Cambodia boundary-year and national-hospital source checks, and a travel-time or catchment denominator before access language.",
+    nextUpgrade: "Extend registry joins for Pakistan and Lao, finish the Cambodia source-scope checks, and add a public friction/travel-time validation plan.",
   },
   8: {
     readiness: "l3-candidate",

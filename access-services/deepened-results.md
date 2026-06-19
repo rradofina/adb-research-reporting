@@ -111,14 +111,51 @@ drops five places once corrected, and Dhaka rises six.
 | PHL | ARMM | 68,678 | 17.12% | 11,758 | PHL national clinical (PSDQ) |
 | TLS | Liquiçá | 10,184 | — | **uncorrectable** | no registry join in PSDQ |
 
-The two correctable worst-units collapse by 6–8× (ARMM 68,678 → 11,758
-nationally, or → 4,427 on its own region rate; Sylhet 94,376 → 11,117). The
-three numbers a reader actually remembers — Cambodia's Oddar Meanchey
-(319,413), Pakistan's Balochistan (149,776), and Lao's Bolikhamsai — are
-exactly the ones with **no registry join in PSDQ**, so the deepening cannot
-correct them. They sit in precisely the thinly-populated, rural, border
-provinces where PSDQ found OSM under-maps most, which is the reason to
-distrust them, not to trust them.
+The two PSDQ-correctable worst-units collapse by 6-8x (ARMM 68,678 to
+11,758 nationally, or to 4,427 on its own region rate; Sylhet 94,376 to
+11,117). In the first pass, the three numbers a reader actually remembers -
+Cambodia's Oddar Meanchey (319,413), Pakistan's Balochistan (149,776), and
+Lao's Bolikhamsai - had no PSDQ registry join. That was a source wall, not a
+finding.
+
+## Cambodia source extension
+
+A follow-up script now tests the highest unresolved row against a public
+Cambodia source. `scripts/audit-cambodia-health-facility-source.py` retrieves
+the HDX Cambodia Health Facilities package, whose source page describes a
+2010 Ministry of Health / OCHA public-facility inventory. The script parses
+the government health center, health post, and referral hospital point layers,
+keeps operational-district points as context only, and joins the province
+counts to the committed Cambodia ADM1 OSM panel.
+
+This is **not** a complete clinical registry correction. The source vintage
+is 2010, the OSM panel is 2026, the HDX package is a government/public-
+facility inventory rather than an all-provider registry, and the ODC page
+documents separate national-hospital resources not counted in the HDX ZIP.
+It is still useful because it turns the Cambodia wall from "no source" into
+a row-level source-scope audit.
+
+| Cambodia check | Generated result |
+|---|---:|
+| Cambodia ADM1 rows in access panel | 25 |
+| Rows joined to the 2010 public-facility inventory | 24 |
+| Joined rows that re-rank after the 2010 inventory denominator | 21 |
+| HDX health centers + posts + referral hospitals counted | 1,121 |
+| Access-panel OSM health points | 560 |
+| Oddar Meanchey OSM health points | 4 |
+| Oddar Meanchey 2010 public-source facilities counted | 17 |
+| Oddar Meanchey people per health point, OSM denominator | 319,413 |
+| Oddar Meanchey people per facility, 2010 public-source denominator | 75,156 |
+
+Oddar Meanchey remains a high-load row after this partial correction, but
+the memorable 319,413 value falls by 4.25x once the public 2010 facility
+inventory is counted. Several other Cambodia rows show an even stronger map-
+coverage signal: Kampong Chhnang falls from 275,912 people per OSM point to
+14,149 people per public-source facility, and Koh Kong falls from 126,436 to
+7,437. The same ledger also prevents overcorrection: Phnom Penh has 227 OSM
+health points versus 22 facilities in the 2010 public inventory, so that row
+is a source-scope/vintage mismatch, not evidence that the public inventory is
+the complete current denominator.
 
 ## The finding
 
@@ -139,13 +176,12 @@ R² = 0.54 / Spearman ρ = −0.81. The screen's "worst access" partly means
   people-per-(registry)-facility by 6–16× and do so most in the rural
   units that top the screen. The screen is a map-completeness-aware access
   *triage*, not an access ranking.
-- **Does not settle (the cluster headline):** the four-economy top-4
-  rests on PAK, KHM, LAO worst-units that **cannot be corrected from data
-  on disk** — PSDQ has no Pakistan, Cambodia, Lao, Nepal, Sri Lanka, or
-  Timor-Leste registry join. Whether BGD and PAK survive a registry
-  correction (the test that would *strengthen* the finding) is unanswerable
-  until those registries are fetched. So this pass dissolves the PHL part
-  of the story and leaves the cross-country ranking explicitly unproven.
+- **Does not settle (the cluster headline):** the four-economy top-4 still
+  rests on PAK, KHM, and LAO worst-units that lack comparable all-provider
+  registry joins. The Cambodia extension improves KHM from "no source" to
+  "partial public-facility source audit," but it is not a complete current
+  registry or a travel-time denominator. Whether PAK, KHM, and LAO survive a
+  comparable registry correction remains unproven.
 - **Honestly bounded:** the registry "denominator" is itself a count, not
   functioning capacity — a registry hospital and a registry health post
   count as one each, same as OSM. Correcting the *count* undercount does
@@ -163,15 +199,14 @@ R² = 0.54 / Spearman ρ = −0.81. The screen's "worst access" partly means
   disk** and was not fetched or validated in this sprint. **Owner-gated or
   separate public-source retrieval needed.**
 - **Correcting the cluster headline (§1.1 for PAK/KHM/LAO/NPL/LKA/TLS):**
-  needs each country's official health-facility registry (Cambodia HIS /
-  WHO master list, Pakistan, etc.) joined in PSDQ. Those are public but
-  **not yet fetched or joined** in this repository. The single highest-value
-  next source task is a Cambodia facility list, to test whether Oddar
-  Meanchey's 319,413 is a real extreme or the most under-mapped unit in the
-  panel.
+  now has a Cambodia public-source first pass, but still needs comparable
+  official/current facility registries for Pakistan and Lao, a boundary-year
+  crosswalk for the unmatched Cambodia row, and a national-hospital/source-
+  scope check before the KHM denominator is treated as complete.
 
 ## Reproduce
 
 ```bash
 PYTHONIOENCODING=utf-8 python access-services/scripts/deepen-osm-completeness.py
+PYTHONIOENCODING=utf-8 python access-services/scripts/audit-cambodia-health-facility-source.py
 ```

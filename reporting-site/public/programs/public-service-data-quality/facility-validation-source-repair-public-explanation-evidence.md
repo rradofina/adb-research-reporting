@@ -92,8 +92,11 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-The next useful step is a correction-record search targeted at the one
-same-name cross-district Durgapur conflict and the two shared-coordinate
-Narayanganj records. If no public correction record exists, the rows should
-remain open until a human reviewer can verify the facility locations or an
-official source owner can clarify the coordinates.
+The correction-record follow-up now lives in
+`facility-validation-source-repair-correction-record-followup.md`. It checked
+the one same-name cross-district Durgapur conflict and the two
+shared-coordinate Narayanganj records against public DGHS registry, Health
+Dashboard, and government health portal pages. It found 0 public correction or
+coordinate-source records, so those rows remain open until a human reviewer can
+verify the facility locations or an official source owner can clarify the
+coordinates.

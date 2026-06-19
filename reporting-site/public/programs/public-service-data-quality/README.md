@@ -50,6 +50,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
+- `scripts/followup-bgd-facility-source-repair-correction-records.py` — checks targeted DGHS registry, Health Dashboard, and government health portal pages for correction records on the Durgapur and Narayanganj source-repair rows
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -107,6 +108,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json` — chart-ready official-coordinate exposure, distance, and keep-open counts
 - `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv` — public official-page explanation search for the four source-repair-first coordinates
 - `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json` — chart-ready explanation-search counts, same-name conflicts, and keep-open actions
+- `generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv` — targeted public correction-record follow-up for the Durgapur conflict and shared-coordinate Narayanganj rows
+- `generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json` — chart-ready correction-record counts, DGHS dashboard confirmations, and keep-open actions
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -329,6 +332,15 @@ Current audit result:
   coordinate, 1 Netrakona Durgapur row has a same-name Rajshahi DGHS registry
   sibling whose coordinate is 747.0 meters away, and 0 rows are closed or
   reclassified.
+- **BGD source-repair correction-record follow-up:** the live targeted
+  follow-up reads the public-explanation evidence, selects the 3 unresolved
+  shared-coordinate or same-name cross-district rows, and checks public DGHS
+  registry pages, DGHS Health Dashboard pages, and public government health
+  portals for correction records or coordinate-source notes. It checks and
+  retrieves 20 official sources, finds 0 public correction or coordinate-source
+  records, confirms target DGHS dashboard codes for all 3 rows, confirms the
+  linked Rajshahi Durgapur dashboard code for the Durgapur conflict, and closes
+  or reclassifies 0 rows.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -365,6 +377,7 @@ python public-service-data-quality/scripts/build-bgd-facility-public-source-deci
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
+python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

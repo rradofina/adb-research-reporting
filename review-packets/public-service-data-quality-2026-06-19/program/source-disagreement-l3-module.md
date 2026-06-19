@@ -499,6 +499,34 @@ Netrakona Durgapur row is a same-name cross-district official-registry
 conflict because its coordinate is 747.0 meters from the separate Rajshahi
 Durgapur official record.
 
+## Source-Repair Correction-Record Follow-Up Addendum
+
+The correction-record follow-up now lives in
+`facility-validation-source-repair-correction-record-followup.md`. The script
+`scripts/followup-bgd-facility-source-repair-correction-records.py` targets the
+three rows that still need a public correction-record check after the
+public-explanation pass: the two shared-coordinate Narayanganj records and the
+same-name cross-district Durgapur conflict.
+
+The pass covers 3 source-repair rows:
+
+| Correction-record follow-up signal | Rows or pages |
+|---|---:|
+| Targeted rows checked | 3 |
+| Official sources checked | 20 |
+| Official sources retrieved | 20 |
+| Public correction or coordinate-source records found | 0 |
+| Rows with DGHS dashboard target-code confirmation | 3 |
+| Rows with linked other-district dashboard-code confirmation | 1 |
+| Rows closed as resolved | 0 |
+| Rows reclassified as same-facility | 0 |
+
+The Durgapur case is now more specific: public DGHS dashboard pages confirm the
+Netrakona code `10002304` and the linked Rajshahi code `10000470`, but the
+checked official pages still do not expose a public correction record. The
+Narayanganj cases remain distinct official records sharing one official
+coordinate, again without a public correction record.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -533,6 +561,7 @@ python public-service-data-quality/scripts/build-bgd-facility-public-source-deci
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
+python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py
 ```
 
 Outputs:
@@ -572,11 +601,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a targeted correction-record follow-up for the one
-same-name cross-district Durgapur conflict and the two shared-coordinate
-Narayanganj records. Close or reclassify a row only if a public official source
-explains the coordinate, source correction, duplicate record, or facility
-identity; otherwise keep it open with the specific unresolved source question.
+The next upgrade is a source-owner clarification or human-review packet for
+the unresolved Durgapur and Narayanganj rows. Close or reclassify a row only if
+a public official source, source-owner response, or human validation explains
+the coordinate, source correction, duplicate record, or facility identity;
+otherwise keep it open with the specific unresolved source question.

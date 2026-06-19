@@ -78,6 +78,7 @@ const PROGRAM_FILES = [
   "facility-validation-source-repair-public-evidence.md",
   "facility-validation-source-repair-official-coordinate-evidence.md",
   "facility-validation-source-repair-public-explanation-evidence.md",
+  "facility-validation-source-repair-correction-record-followup.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

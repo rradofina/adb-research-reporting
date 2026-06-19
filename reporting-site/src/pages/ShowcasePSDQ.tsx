@@ -884,6 +884,63 @@ interface PsdqPublicExplanationEvidenceSummary {
   non_claim: string;
 }
 
+interface PsdqCorrectionRecordFollowupRow {
+  correction_followup_evidence_id: string;
+  evidence_rank: number;
+  status: string;
+  public_explanation_evidence_id: string;
+  official_coordinate_evidence_id: string;
+  source_repair_evidence_id: string;
+  decision_id: string;
+  inspection_id: string;
+  facility_name: string;
+  dghs_profile_id: string;
+  dghs_organization_code: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  shared_official_profile_coordinate_rows: number | string;
+  linked_other_district_code: string;
+  linked_other_district_name: string;
+  linked_other_district_division: string;
+  linked_other_district_district: string;
+  linked_other_district_upazila: string;
+  linked_other_district_coordinate_distance_m: number | string;
+  targeted_reason: string;
+  official_sources_checked: number | string;
+  official_sources_retrieved: number | string;
+  official_source_statuses: string;
+  dashboard_menu_contains_target_code: boolean | string;
+  dashboard_menu_contains_linked_other_district_code: boolean | string;
+  public_correction_or_coordinate_source_record_found: boolean | string;
+  correction_source_kinds: string;
+  correction_followup_evidence_class: string;
+  correction_followup_reviewer_action: string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+}
+
+interface PsdqCorrectionRecordFollowupSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  selection_rule: string;
+  correction_followup_scope: {
+    targeted_rows: number;
+    official_sources_checked: number;
+    official_sources_retrieved: number;
+    public_correction_or_coordinate_source_records_found: number;
+    rows_with_dashboard_target_code_confirmation: number;
+    rows_with_dashboard_linked_other_district_code_confirmation: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  correction_followup_evidence_class_counts: PsdqCandidateResolutionCount[];
+  evidence_rows: PsdqCorrectionRecordFollowupRow[];
+  evidence_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -1042,6 +1099,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqOfficialCoordinateEvidenceSummary | null>(null);
   const [publicExplanationEvidenceSummary, setPublicExplanationEvidenceSummary] =
     useState<PsdqPublicExplanationEvidenceSummary | null>(null);
+  const [correctionRecordFollowupSummary, setCorrectionRecordFollowupSummary] =
+    useState<PsdqCorrectionRecordFollowupSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1120,6 +1179,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`source repair public explanation evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair correction-record follow-up HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -1144,6 +1207,7 @@ export default function ShowcasePSDQ() {
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
+        correctionRecordFollowupPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -1164,6 +1228,7 @@ export default function ShowcasePSDQ() {
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
+        setCorrectionRecordFollowupSummary(correctionRecordFollowupPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1295,6 +1360,10 @@ export default function ShowcasePSDQ() {
 
       {publicExplanationEvidenceSummary && (
         <PsdqPublicExplanationEvidencePanel summary={publicExplanationEvidenceSummary} />
+      )}
+
+      {correctionRecordFollowupSummary && (
+        <PsdqCorrectionRecordFollowupPanel summary={correctionRecordFollowupSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -4179,6 +4248,41 @@ function publicExplanationEvidenceLabel(code: string) {
   return labels[code] || code.replaceAll("_", " ");
 }
 
+function correctionRecordFollowupColor(code: string) {
+  if (code.includes("cross_district")) return "#A33A2A";
+  if (code.includes("shared_coordinate")) return "#007DB8";
+  if (code.includes("correction_record_found")) return "#5A8227";
+  return "#6c757d";
+}
+
+function correctionRecordFollowupLabel(code: string) {
+  const labels: Record<string, string> = {
+    no_correction_record_dashboard_confirms_cross_district_pair:
+      "Dashboard confirms cross-district pair",
+    no_correction_record_dashboard_confirms_distinct_shared_coordinate_records:
+      "Dashboard confirms distinct shared-coordinate records",
+    no_correction_record_found:
+      "No public correction record",
+    public_correction_record_found:
+      "Public correction record found",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function dghsProfileUrl(profileId: string) {
+  return `https://hrm.dghs.gov.bd/public/facility-registry/facilities/${profileId}/profile?tab=at-a-glance`;
+}
+
+function dghsDashboardDetailUrl(code: string) {
+  const urls: Record<string, string> = {
+    "10000425": "https://dashboard.dghs.gov.bd/pages/hss_scoring_facility_detail.php?facility_code=10000425&level=28&month=7&rank=61&year=2025",
+    "10000427": "https://dashboard.dghs.gov.bd/pages/hss_scoring_facility_detail.php?facility_code=10000427&level=28&month=5&rank=11&year=2025",
+    "10002304": "https://dashboard.dghs.gov.bd/pages/hss_scoring_facility_detail.php?facility_code=10002304&level=29&month=5&rank=49&year=2025",
+    "10000470": "https://dashboard.dghs.gov.bd/pages/hss_scoring_facility_detail.php?facility_code=10000470&level=29&month=1&rank=&year=2025",
+  };
+  return urls[code] || `https://dashboard.dghs.gov.bd/pages/hss_scoring_facility_detail.php?facility_code=${code}`;
+}
+
 function firstUrl(value: string) {
   return String(value || "").split(" | ").find(Boolean) || "";
 }
@@ -4573,6 +4677,164 @@ function PsdqPublicExplanationEvidencePanel({ summary }: { summary: PsdqPublicEx
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv" download>
           Download public-explanation CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqCorrectionRecordFollowupPanel({ summary }: { summary: PsdqCorrectionRecordFollowupSummary }) {
+  const maxSources = Math.max(
+    1,
+    ...summary.evidence_rows.map((row) => Number(row.official_sources_retrieved || 0))
+  );
+  const maxDistance = Math.max(
+    1,
+    ...summary.evidence_rows.map((row) => Number(row.linked_other_district_coordinate_distance_m || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-correction-followup-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Correction-record follow-up</p>
+          <h2>The dashboard confirms the records, but still gives no correction trail.</h2>
+          <p>
+            The follow-up narrows the search to the unresolved Narayanganj
+            shared-coordinate rows and the Durgapur same-name cross-district
+            conflict. Public DGHS registry and Health Dashboard pages confirm
+            the official codes, but the checked pages do not expose a public
+            correction or coordinate-source record.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Targeted rows</span>
+            <strong>{formatNumber(summary.correction_followup_scope.targeted_rows)}</strong>
+          </div>
+          <div>
+            <span>Official sources retrieved</span>
+            <strong>
+              {formatNumber(summary.correction_followup_scope.official_sources_retrieved)} /{" "}
+              {formatNumber(summary.correction_followup_scope.official_sources_checked)}
+            </strong>
+          </div>
+          <div>
+            <span>Correction records found</span>
+            <strong>{formatNumber(summary.correction_followup_scope.public_correction_or_coordinate_source_records_found)}</strong>
+          </div>
+          <div>
+            <span>Target codes confirmed</span>
+            <strong>{formatNumber(summary.correction_followup_scope.rows_with_dashboard_target_code_confirmation)} rows</strong>
+          </div>
+          <div>
+            <span>Linked code confirmed</span>
+            <strong>{formatNumber(summary.correction_followup_scope.rows_with_dashboard_linked_other_district_code_confirmation)} row</strong>
+          </div>
+          <div>
+            <span>Rows closed</span>
+            <strong>{formatNumber(summary.correction_followup_scope.rows_closed_as_resolved)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-correction-followup-grid">
+        {summary.evidence_rows.map((row) => {
+          const color = correctionRecordFollowupColor(row.correction_followup_evidence_class);
+          const linkedDistance = Number(row.linked_other_district_coordinate_distance_m || 0);
+          const sourcesRetrieved = Number(row.official_sources_retrieved || 0);
+          const signalWidth = linkedDistance > 0
+            ? Math.max(6, Math.min(100, (linkedDistance / maxDistance) * 100))
+            : Math.max(6, Math.min(100, (sourcesRetrieved / maxSources) * 100));
+          const sourceStatuses = row.official_source_statuses.split(" | ").filter(Boolean).slice(0, 4);
+          return (
+            <article key={row.correction_followup_evidence_id} style={{ borderColor: color }}>
+              <div className="psdq-correction-followup-card-head">
+                <span>{row.correction_followup_evidence_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>DGHS code {row.dghs_organization_code} / {row.division_name} / {row.district_name}</em>
+              </div>
+              <div className="psdq-correction-followup-class" style={{ background: color }}>
+                {correctionRecordFollowupLabel(row.correction_followup_evidence_class)}
+              </div>
+              <div className="psdq-correction-followup-links">
+                <a href={dghsProfileUrl(row.dghs_profile_id)} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+                <a href={dghsDashboardDetailUrl(row.dghs_organization_code)} target="_blank" rel="noreferrer">
+                  Dashboard code
+                </a>
+                {row.linked_other_district_code && (
+                  <a href={dghsDashboardDetailUrl(row.linked_other_district_code)} target="_blank" rel="noreferrer">
+                    Linked code
+                  </a>
+                )}
+              </div>
+              <div className="psdq-correction-followup-route">
+                <div className="psdq-correction-followup-node">
+                  <span>Target official code</span>
+                  <strong>{row.dghs_organization_code}</strong>
+                  <em>
+                    {asBoolean(row.dashboard_menu_contains_target_code)
+                      ? "Dashboard menu confirms target code"
+                      : "Target code not confirmed in dashboard menu"}
+                  </em>
+                </div>
+                <div className="psdq-correction-followup-rail" aria-label="Correction-record follow-up evidence intensity">
+                  <i style={{ width: `${signalWidth}%`, background: color }} />
+                </div>
+                <div className="psdq-correction-followup-node">
+                  <span>{row.linked_other_district_code ? "Linked official code" : "Correction-record result"}</span>
+                  <strong>
+                    {row.linked_other_district_code
+                      ? `${row.linked_other_district_code} / ${formatNumber(linkedDistance)} m`
+                      : "0 public records"}
+                  </strong>
+                  <em>
+                    {row.linked_other_district_code
+                      ? `${row.linked_other_district_district}, ${row.linked_other_district_upazila}`
+                      : "No public correction or coordinate-source record"}
+                  </em>
+                </div>
+              </div>
+              <div className="psdq-correction-followup-metrics">
+                <span><b>{formatNumber(Number(row.official_sources_checked || 0))}</b> sources checked</span>
+                <span><b>{formatNumber(sourcesRetrieved)}</b> sources retrieved</span>
+                <span><b>{asBoolean(row.public_correction_or_coordinate_source_record_found) ? "yes" : "no"}</b> correction found</span>
+              </div>
+              <p>{row.correction_followup_reviewer_action}</p>
+              <div className="psdq-correction-followup-status">
+                <span>{asBoolean(row.dashboard_menu_contains_target_code) ? "Target code confirmed" : "Target code not confirmed"}</span>
+                <span>{row.linked_other_district_code ? "Linked code checked" : "Shared coordinate checked"}</span>
+                <span>0 closed</span>
+              </div>
+              <div className="psdq-correction-followup-sources" aria-label="Official source retrieval statuses">
+                {sourceStatuses.map((status) => (
+                  <code key={`${row.correction_followup_evidence_id}-${status}`}>{status}</code>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the correction-record follow-up</p>
+        <code>python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-correction-record-followup.md" download>
+          Download correction-record follow-up note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json" download>
+          Download correction-record summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv" download>
+          Download correction-record CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-06-19T02:04:49.313Z",
+  "generated_at": "2026-06-19T02:25:00.067Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,20 +27,20 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 34140,
-      "size_human": "33.3 KB",
-      "mtime": "2026-06-19T02:00:39.443Z",
-      "sha256": "14f5462f7a0279bcf423b4d846dbd078b90886c23ddb8ad2af56d075c7c193e8",
+      "size": 35503,
+      "size_human": "34.7 KB",
+      "mtime": "2026-06-19T02:16:19.938Z",
+      "sha256": "f71e79135eade171af2717ed9fafc264946ebe3847ef135c52a02ee315ac0ace",
       "attestation_chain": null
     },
     {
       "key": "reproduce",
       "file": "REPRODUCE.md",
       "label": "Reproducibility guide",
-      "size": 27388,
-      "size_human": "26.7 KB",
-      "mtime": "2026-06-19T02:01:04.425Z",
-      "sha256": "8f402056fb86ea0af7e5573539ae0081fd4467ac0e6a225cddaae997536727e5",
+      "size": 28982,
+      "size_human": "28.3 KB",
+      "mtime": "2026-06-19T02:16:19.939Z",
+      "sha256": "2ff8041e602b2ee578a37a33bc42f28c8aae3065b94627434ec987d9adb0549e",
       "attestation_chain": null
     },
     {
@@ -127,10 +127,10 @@
       "key": "source_disagreement_l3",
       "file": "source-disagreement-l3-module.md",
       "label": "Source-disagreement L3 module",
-      "size": 28332,
-      "size_human": "27.7 KB",
-      "mtime": "2026-06-19T02:01:21.974Z",
-      "sha256": "bc71c06df971e80f51f6a60a74894ff5f29db7ef06bd027c86d05ea41ed762a1",
+      "size": 29952,
+      "size_human": "29.3 KB",
+      "mtime": "2026-06-19T02:16:19.940Z",
+      "sha256": "bbc0e83e2fbe54f64281c825d4a459ccf4eb6c4f957f8afcf5834bd83378af08",
       "attestation_chain": "ai-first"
     },
     {
@@ -277,10 +277,20 @@
       "key": "facility_validation_source_repair_public_explanation_evidence",
       "file": "facility-validation-source-repair-public-explanation-evidence.md",
       "label": "Facility-validation source-repair public explanation evidence",
-      "size": 4340,
+      "size": 4501,
+      "size_human": "4.4 KB",
+      "mtime": "2026-06-19T02:16:19.940Z",
+      "sha256": "8ad9950749bd2e6448f2029e9f52734c2c29bc00d7e2495ef4b13ecf5e2f8b35",
+      "attestation_chain": null
+    },
+    {
+      "key": "facility_validation_source_repair_correction_record_followup",
+      "file": "facility-validation-source-repair-correction-record-followup.md",
+      "label": "Facility-validation source-repair correction-record follow-up",
+      "size": 4251,
       "size_human": "4.2 KB",
-      "mtime": "2026-06-19T01:59:38.129Z",
-      "sha256": "bf2ad6114d416400848b5fe6fa3b1917377a5d4699ca88ab7e9e05987d8d5b44",
+      "mtime": "2026-06-19T02:15:46.790Z",
+      "sha256": "c29d9edb43ed32fd9a98a569333bc7376817f290fbb89135807c704e7a19f1bd",
       "attestation_chain": null
     },
     {
@@ -598,6 +608,18 @@
       "size": 95299,
       "size_human": "93.1 KB",
       "sha256": "114abfa96b17c43499aec087f1cd5f8253e0bc3ac4a3531c9b06df65b7264a36"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json",
+      "size": 11535,
+      "size_human": "11.3 KB",
+      "sha256": "87bbeec1e7d4e00e1667e2b906c76dd1ecef2aa4014e98276e15c389d0da7475"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-source-repair-correction-record-followup.csv",
+      "size": 5597,
+      "size_human": "5.5 KB",
+      "sha256": "fa076c3a4ee9ceac38461d96620018366310f57809f0dee0744cd3661eb5fcad"
     },
     {
       "file": "generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json",

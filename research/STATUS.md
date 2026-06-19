@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, and 4-row public-explanation search added 2026-06-19; next loop is targeted correction-record follow-up for the Durgapur conflict and shared-coordinate Narayanganj rows) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, and 3-row correction-record follow-up added 2026-06-19; next loop is a source-owner clarification or human-review packet for the Durgapur conflict and shared-coordinate Narayanganj rows) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -38,11 +38,12 @@ overrides priority by editing this list.
    row-evidence ledger, targeted public-map inspection, first-row
    public-source confirmation, 40-row targeted public-source confirmation,
    16-row public-source decision-ledger, 4-row source-repair public-evidence
-   attachment, 4-row official-coordinate evidence, and 4-row
-   public-explanation search packets added 2026-06-19*. Current work is a
-   targeted correction-record follow-up for the same-name cross-district
-   Durgapur conflict and the shared-coordinate Narayanganj records, before any
-   same-facility or map-absence language, without changing the maturity label.
+   attachment, 4-row official-coordinate evidence, 4-row public-explanation
+   search, and 3-row correction-record follow-up packets added 2026-06-19*.
+   Current work is a source-owner clarification or human-review packet for the
+   same-name cross-district Durgapur conflict and the shared-coordinate
+   Narayanganj records, before any same-facility or map-absence language,
+   without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -155,6 +156,34 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ source-repair correction-record follow-up):** Added
+  `public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py`,
+  generated
+  `psdq-bgd-facility-validation-source-repair-correction-record-followup.csv`
+  and
+  `psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json`,
+  and wrote
+  `public-service-data-quality/facility-validation-source-repair-correction-record-followup.md`.
+  The live public-source follow-up reads the source-repair public-explanation
+  evidence CSV, selects the two shared-coordinate Narayanganj records and the
+  Durgapur same-name cross-district conflict, and checks public DGHS registry
+  pages, DGHS Health Dashboard pages, and public government health portals for
+  correction records or coordinate-source notes. It checks 20 public official
+  sources and retrieves all 20; finds 0 public correction or coordinate-source
+  records; confirms the DGHS dashboard target code for all 3 targeted rows;
+  confirms the linked Rajshahi Durgapur dashboard code for the Durgapur
+  conflict; and closes or reclassifies 0 rows. This is public correction-record
+  follow-up, not human validation, ground truth, coordinate correction, row
+  closure, same-facility reclassification, maturity promotion, or a human-final
+  upgrade. Verification passed: correction-record script rerun, program-script
+  `py_compile`, evidence/reference sync, production site build, six
+  deterministic gates plus `git diff --check`, review packet and zip rebuild,
+  and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with no
+  page-level horizontal overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-correction-followup-desktop.png`,
+  `reporting-site/qa/showcase-psdq-correction-followup-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-correction-followup-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-correction-followup-mobile-cards.png`.
 - **2026-06-19 (PSDQ source-repair public-explanation evidence):** Added
   `public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py`,
   generated

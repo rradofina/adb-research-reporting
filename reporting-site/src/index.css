@@ -9631,6 +9631,352 @@
     text-decoration: underline;
   }
 
+  .air-one-signal-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.08), rgba(255, 255, 255, 0.98) 43%),
+      #ffffff;
+  }
+
+  .air-one-signal-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .air-one-signal-head h2 {
+    max-width: 27ch;
+  }
+
+  .air-one-signal-callout {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid #007db8;
+    background: #eef7fb;
+  }
+
+  .air-one-signal-callout span,
+  .air-one-signal-stat-grid span,
+  .air-one-signal-lane span,
+  .air-one-signal-country span,
+  .air-one-signal-row span,
+  .air-one-signal-source span,
+  .air-one-signal-gate span,
+  .air-one-signal-downloads span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-one-signal-callout strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .air-one-signal-callout p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+  }
+
+  .air-one-signal-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-one-signal-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #007db8;
+    background: #ffffff;
+  }
+
+  .air-one-signal-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .air-one-signal-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-one-signal-lanes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-one-signal-lane {
+    display: grid;
+    grid-template-rows: auto auto minmax(3.6rem, 1fr) auto;
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #007db8;
+    background: #ffffff;
+  }
+
+  .air-one-signal-lane-name_overlap_not_near_candidate {
+    border-top-color: #fbb00e;
+  }
+
+  .air-one-signal-lane-monitor_grade_provenance_only {
+    border-top-color: #5a8227;
+  }
+
+  .air-one-signal-lane > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-one-signal-lane strong,
+  .air-one-signal-country strong,
+  .air-one-signal-row strong,
+  .air-one-signal-source strong,
+  .air-one-signal-gate strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .air-one-signal-lane b,
+  .air-one-signal-country b,
+  .air-one-signal-row b,
+  .air-one-signal-source b,
+  .air-one-signal-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-one-signal-lane p,
+  .air-one-signal-row p,
+  .air-one-signal-source p,
+  .air-one-signal-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .air-one-signal-lane small {
+    color: var(--ink-faint);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-one-signal-track {
+    height: 0.7rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #edf2f4;
+  }
+
+  .air-one-signal-track i {
+    display: block;
+    height: 100%;
+    background: #007db8;
+  }
+
+  .air-one-signal-lane-name_overlap_not_near_candidate .air-one-signal-track i {
+    background: #fbb00e;
+  }
+
+  .air-one-signal-lane-monitor_grade_provenance_only .air-one-signal-track i {
+    background: #5a8227;
+  }
+
+  .air-one-signal-country-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-one-signal-country {
+    display: grid;
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-one-signal-country > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-one-signal-country span {
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 800;
+  }
+
+  .air-one-signal-country dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-one-signal-country dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-one-signal-country dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .air-one-signal-row-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-one-signal-row {
+    display: grid;
+    grid-template-rows: auto minmax(4.2rem, 1fr) auto;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #007db8;
+    background: #ffffff;
+  }
+
+  .air-one-signal-row > div {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-one-signal-row-name_overlap_not_near_candidate {
+    border-left-color: #fbb00e;
+  }
+
+  .air-one-signal-row-monitor_grade_provenance_only {
+    border-left-color: #5a8227;
+  }
+
+  .air-one-signal-row small {
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-one-signal-row-name_overlap_not_near_candidate small {
+    color: #8a6100;
+  }
+
+  .air-one-signal-row-monitor_grade_provenance_only small {
+    color: #3f641d;
+  }
+
+  .air-one-signal-source-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-one-signal-source {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(3.4rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-one-signal-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-one-signal-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.7rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-one-signal-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-one-signal-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-one-signal-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-one-signal-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .air-one-signal-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-one-signal-downloads a:hover {
+    text-decoration: underline;
+  }
+
   .air-monitor-grade-section {
     display: grid;
     gap: 1.15rem;
@@ -9994,6 +10340,12 @@
     .air-public-feed-scan-country-grid,
     .air-public-feed-scan-row-grid,
     .air-public-feed-scan-source-grid,
+    .air-one-signal-stat-grid,
+    .air-one-signal-lanes,
+    .air-one-signal-country-grid,
+    .air-one-signal-row-grid,
+    .air-one-signal-source-grid,
+    .air-one-signal-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -10012,6 +10364,7 @@
     .air-openaq-evidence-head,
     .air-crosswalk-scan-head,
     .air-public-feed-scan-head,
+    .air-one-signal-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
       grid-template-columns: minmax(0, 1fr);
@@ -11001,6 +11354,12 @@
     .air-public-feed-scan-country-grid,
     .air-public-feed-scan-row-grid,
     .air-public-feed-scan-source-grid,
+    .air-one-signal-stat-grid,
+    .air-one-signal-lanes,
+    .air-one-signal-country-grid,
+    .air-one-signal-row-grid,
+    .air-one-signal-source-grid,
+    .air-one-signal-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -11022,6 +11381,10 @@
     .air-crosswalk-scan-source,
     .air-public-feed-scan-row,
     .air-public-feed-scan-source,
+    .air-one-signal-lane,
+    .air-one-signal-row,
+    .air-one-signal-source,
+    .air-one-signal-gate,
     .air-monitor-grade-gate,
     .air-monitor-grade-ladder-card {
       grid-template-rows: auto;
@@ -11034,6 +11397,7 @@
     .air-openaq-evidence-head,
     .air-crosswalk-scan-head,
     .air-public-feed-scan-head,
+    .air-one-signal-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -11072,6 +11436,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .air-one-signal-country dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .air-metadata-queue-card dl {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -11085,6 +11453,7 @@
     .air-openaq-evidence-downloads,
     .air-crosswalk-scan-downloads,
     .air-public-feed-scan-downloads,
+    .air-one-signal-downloads,
     .air-monitor-grade-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);

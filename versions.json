@@ -102,6 +102,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Public source scan for the 7 OpenAQ candidate worksheet rows not marked isMonitor. The scan retrieves 10 public source URLs, screens all 7 rows as public-feed nearby rows that are not join-ready, and keeps validated same-station joins and station-radius-ready rows at 0."
     },
+    "air_monitoring_one_signal_review_queue": {
+      "script": "air-monitoring/scripts/build-one-signal-review-queue.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "One-signal review queue after the near-plus-name candidate source scans. The queue combines 9 near-only official/OpenAQ rows, 22 name-only-not-near rows, and 138 automatic or official-portal monitor-grade provenance-only rows while keeping validated same-station joins, complete monitor-grade classifications, and station-radius-ready rows at 0."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -188,6 +193,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_official_openaq_candidate_public_feed_source_scan pin after public-source screening all 7 not-isMonitor candidate rows as public-feed nearby rows with zero validated joins."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_one_signal_review_queue pin after combining the weaker near-only, name-only-not-near, and monitor-grade provenance-only air-monitoring review lanes."
     }
   ]
 }

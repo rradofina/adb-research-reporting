@@ -715,6 +715,88 @@ interface CandidatePublicFeedSourceScanSummary {
   non_claim: string;
 }
 
+interface OneSignalLaneRow {
+  signal_lane: string;
+  label: string;
+  status: string;
+  rows: number;
+  countries: number;
+  minimum_distance_km: number | null;
+  maximum_distance_km: number | null;
+  reader_use: string;
+}
+
+interface OneSignalCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  queue_items: number;
+  unique_official_station_keys: number;
+  near_only_rows: number;
+  name_only_not_near_rows: number;
+  monitor_grade_provenance_only_rows: number;
+  validated_same_station_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_join_ready_rows: number;
+}
+
+interface OneSignalSourceRow {
+  source_key: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_url_present: boolean;
+  queue_items: number;
+  near_only_rows: number;
+  name_only_not_near_rows: number;
+  monitor_grade_provenance_only_rows: number;
+}
+
+interface OneSignalQueueRow {
+  one_signal_id: string;
+  signal_lane: string;
+  review_priority: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_station_id: string;
+  source_station_name: string;
+  source_station_type: string;
+  nearest_openaq_location_name: string;
+  nearest_openaq_distance_km: number | "";
+  missing_second_signal: string;
+  grade_evidence_category: string;
+  reader_use: string;
+}
+
+interface OneSignalReviewQueueSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    near_plus_name_candidate_rows_already_source_screened: number;
+    one_signal_queue_items: number;
+    unique_official_station_keys: number;
+    countries_with_queue_items: number;
+    near_only_candidate_rows: number;
+    name_overlap_not_near_candidate_rows: number;
+    monitor_grade_provenance_only_rows: number;
+    validated_same_station_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_join_ready_rows: number;
+  };
+  lane_rows: OneSignalLaneRow[];
+  country_rows: OneSignalCountryRow[];
+  source_rows: OneSignalSourceRow[];
+  evidence_gate_counts: MonitorGradeGate[];
+  queue_rows: OneSignalQueueRow[];
+  display_rows: OneSignalQueueRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -823,6 +905,8 @@ export default function ShowcaseAirMonitoring() {
     useState<CandidateCrosswalkSourceScanSummary | null>(null);
   const [candidatePublicFeedSourceScan, setCandidatePublicFeedSourceScan] =
     useState<CandidatePublicFeedSourceScanSummary | null>(null);
+  const [oneSignalReviewQueue, setOneSignalReviewQueue] =
+    useState<OneSignalReviewQueueSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -874,6 +958,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`official OpenAQ candidate public-feed source scan HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-one-signal-review-queue-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`one-signal review queue HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -891,6 +979,7 @@ export default function ShowcaseAirMonitoring() {
         officialOpenAQCandidateEvidencePayload,
         candidateCrosswalkSourceScanPayload,
         candidatePublicFeedSourceScanPayload,
+        oneSignalReviewQueuePayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -904,6 +993,7 @@ export default function ShowcaseAirMonitoring() {
         setOfficialOpenAQCandidateEvidence(officialOpenAQCandidateEvidencePayload);
         setCandidateCrosswalkSourceScan(candidateCrosswalkSourceScanPayload);
         setCandidatePublicFeedSourceScan(candidatePublicFeedSourceScanPayload);
+        setOneSignalReviewQueue(oneSignalReviewQueuePayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1026,6 +1116,8 @@ export default function ShowcaseAirMonitoring() {
       <AirCandidateCrosswalkSourceScanPanel summary={candidateCrosswalkSourceScan} />
 
       <AirCandidatePublicFeedSourceScanPanel summary={candidatePublicFeedSourceScan} />
+
+      <AirOneSignalReviewQueuePanel summary={oneSignalReviewQueue} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1584,6 +1676,19 @@ function gradeCategoryLabel(category: string) {
       return "no public grade language";
     default:
       return sentenceCaseStatus(category);
+  }
+}
+
+function oneSignalLaneLabel(lane: string) {
+  switch (lane) {
+    case "near_only_candidate":
+      return "Near only";
+    case "name_overlap_not_near_candidate":
+      return "Name only, not near";
+    case "monitor_grade_provenance_only":
+      return "Official or automatic only";
+    default:
+      return sentenceCaseStatus(lane);
   }
 }
 
@@ -2513,6 +2618,192 @@ function AirCandidatePublicFeedSourceScanPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading candidate public-feed source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirOneSignalReviewQueuePanel({
+  summary,
+}: {
+  summary: OneSignalReviewQueueSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const laneRows = summary?.lane_rows ?? [];
+  const countryRows = [...(summary?.country_rows ?? [])].sort((a, b) => b.queue_items - a.queue_items);
+  const sourceRows = [...(summary?.source_rows ?? [])].sort((a, b) => b.queue_items - a.queue_items).slice(0, 8);
+  const sampleRows = summary
+    ? summary.lane_rows.flatMap((lane) =>
+        summary.queue_rows.filter((row) => row.signal_lane === lane.signal_lane).slice(0, 5),
+      )
+    : [];
+  const maxLaneRows = Math.max(1, ...laneRows.map((row) => row.rows));
+
+  return (
+    <section className="showcase-section air-one-signal-section" aria-label="One-signal review queue">
+      <div className="air-one-signal-head">
+        <div>
+          <p className="kicker kicker-blue">One-signal queue</p>
+          <h2>The easy candidate lane is gone. What remains is one signal short.</h2>
+          <p>
+            After the 13 near-plus-name rows were source-screened, the review
+            queue moves to weaker evidence: proximity without a name signal,
+            name overlap without proximity, and official or automatic station
+            provenance without complete grade documentation.
+          </p>
+        </div>
+        <div className="air-one-signal-callout">
+          <span>Review wall</span>
+          <strong>{formatNumber(counts?.one_signal_queue_items ?? 0)}</strong>
+          <p>items still outside station-radius and complete grade claims</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-one-signal-stat-grid">
+            <div>
+              <span>Already screened</span>
+              <strong>{formatNumber(counts.near_plus_name_candidate_rows_already_source_screened)}</strong>
+              <em>near-plus-name rows</em>
+            </div>
+            <div>
+              <span>Queue items</span>
+              <strong>{formatNumber(counts.one_signal_queue_items)}</strong>
+              <em>{formatNumber(counts.unique_official_station_keys)} official station keys</em>
+            </div>
+            <div>
+              <span>Countries</span>
+              <strong>{formatNumber(counts.countries_with_queue_items)}</strong>
+              <em>with unresolved one-signal rows</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>classifications</em>
+            </div>
+            <div>
+              <span>Radius-ready</span>
+              <strong>{formatNumber(counts.station_radius_join_ready_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-one-signal-lanes" aria-label="One-signal evidence lanes">
+            {laneRows.map((lane) => {
+              const width = lane.rows > 0 ? `${Math.max(5, (lane.rows / maxLaneRows) * 100)}%` : "0%";
+              return (
+                <article key={lane.signal_lane} className={`air-one-signal-lane air-one-signal-lane-${lane.signal_lane}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(lane.status)}</span>
+                    <strong>{lane.label}</strong>
+                    <b>{formatNumber(lane.rows)} rows / {formatNumber(lane.countries)} countries</b>
+                  </div>
+                  <div className="air-one-signal-track">
+                    <i style={{ width }} />
+                  </div>
+                  <p>{lane.reader_use}</p>
+                  {lane.minimum_distance_km !== null && lane.maximum_distance_km !== null ? (
+                    <small>
+                      {formatNumber(lane.minimum_distance_km, 3)}-{formatNumber(lane.maximum_distance_km, 3)} km
+                    </small>
+                  ) : (
+                    <small>no distance test in this lane</small>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-one-signal-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-one-signal-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.queue_items)} queue items</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Near</dt>
+                    <dd>{formatNumber(row.near_only_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Name</dt>
+                    <dd>{formatNumber(row.name_only_not_near_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(row.monitor_grade_provenance_only_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Ready</dt>
+                    <dd>{formatNumber(row.station_radius_join_ready_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-one-signal-row-grid">
+            {sampleRows.map((row) => (
+              <article key={row.one_signal_id} className={`air-one-signal-row air-one-signal-row-${row.signal_lane}`}>
+                <div>
+                  <span>{oneSignalLaneLabel(row.signal_lane)}</span>
+                  <strong>{row.country} · {row.source_station_name || row.source_station_id || "official row"}</strong>
+                  <b>{row.nearest_openaq_location_name || gradeCategoryLabel(row.grade_evidence_category)}</b>
+                </div>
+                <p>{row.missing_second_signal}</p>
+                <small>
+                  {row.nearest_openaq_distance_km !== "" && typeof row.nearest_openaq_distance_km === "number"
+                    ? `${formatNumber(row.nearest_openaq_distance_km, 3)} km from nearest OpenAQ row`
+                    : sentenceCaseStatus(row.review_priority)}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-one-signal-source-grid">
+            {sourceRows.map((source) => (
+              <article key={source.source_key} className="air-one-signal-source">
+                <span>{source.iso3}</span>
+                <strong>{source.source_name}</strong>
+                <b>{formatNumber(source.queue_items)} queue items</b>
+                <p>
+                  {formatNumber(source.near_only_rows)} near-only;{" "}
+                  {formatNumber(source.name_only_not_near_rows)} name-only;{" "}
+                  {formatNumber(source.monitor_grade_provenance_only_rows)} grade-provenance-only.
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-one-signal-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-one-signal-gate air-one-signal-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-one-signal-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/one-signal-review-queue.md" download>
+              Queue note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-one-signal-review-queue-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-one-signal-review-queue.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading one-signal review queue...</p>
       )}
     </section>
   );

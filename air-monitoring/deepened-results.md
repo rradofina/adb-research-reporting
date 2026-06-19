@@ -50,6 +50,9 @@ Official/OpenAQ candidate public-feed source scan:
 `generated/air-monitoring-official-openaq-candidate-public-feed-source-scan-summary.json`
 and
 `generated/air-monitoring-official-openaq-candidate-public-feed-source-scan.csv`.
+One-signal review queue:
+`generated/air-monitoring-one-signal-review-queue-summary.json` and
+`generated/air-monitoring-one-signal-review-queue.csv`.
 
 ## The two questions
 
@@ -237,6 +240,13 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   owner/provider matches, 0 source-owner crosswalk rows, 0 documented
   co-location rows, 0 validated same-station joins, and 0 station-radius-ready
   rows.
+- **New one-signal review queue:** after the 13 near-plus-name candidates are
+  source-screened, the queue combines the weaker unresolved lanes: 9 near-only
+  official/OpenAQ rows, 22 name-only-not-near rows, and 138 automatic or
+  official-portal monitor-grade provenance-only rows. It covers 169 review
+  items across 149 unique official station keys and 8 economies, while keeping
+  validated same-station joins, complete monitor-grade classifications, and
+  station-radius-ready rows at 0.
 - **New monitor-grade evidence audit:** the audit covers all 239
   official-source rows from the station-extraction pass. It finds 31
   source-specific method-standard signal rows in Bangladesh, 138 automatic or

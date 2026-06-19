@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -25,10 +25,10 @@ keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
 upgrade queue, show the official/OpenAQ candidate review queue, public OpenAQ
 metadata evidence, `isMonitor` crosswalk source-scan decisions, public-feed
-source-scan decisions, and monitor-grade evidence ladder honestly, and do not
-imply station-radius, complete monitor-grade, or regulatory-inventory
-validation until official method tables, station crosswalks, and catchment
-methods are added.
+source-scan decisions, the one-signal review queue, and monitor-grade evidence
+ladder honestly, and do not imply station-radius, complete monitor-grade, or
+regulatory-inventory validation until official method tables, station
+crosswalks, and catchment methods are added.
 
 ## Last completed
 
@@ -265,13 +265,34 @@ methods are added.
   `reporting-site/qa/showcase-air-public-feed-source-scan-desktop.png`,
   `reporting-site/qa/showcase-air-public-feed-source-scan-mobile.png`, and
   `reporting-site/qa/showcase-air-public-feed-source-scan-mobile-sources.png`.
+- **2026-06-19:** Added the one-signal review queue. New no-network script
+  `scripts/build-one-signal-review-queue.py` reads the official/OpenAQ
+  reconciliation audit, monitor-grade evidence audit, and prior candidate
+  source-scan summaries, then writes
+  `generated/air-monitoring-one-signal-review-queue.csv` and
+  `generated/air-monitoring-one-signal-review-queue-summary.json`. The queue
+  excludes the 13 near-plus-name candidates already source-screened, then
+  combines 9 near-only official/OpenAQ rows, 22 name-only-not-near rows, and
+  138 automatic or official-portal monitor-grade provenance-only rows. It
+  records 169 review items across 149 unique official station keys and 8
+  economies, with 0 validated same-station joins, 0 complete monitor-grade
+  classifications, and 0 station-radius-ready rows. Wrote
+  `one-signal-review-queue.md`. This is a triage wall, not a catchment layer.
+- **2026-06-19:** Added the one-signal review queue panel to the public
+  showcase route. Chrome CDP QA at 1440x1100 and 390x1000 confirmed 5
+  one-signal stat cards, 3 lane cards, 8 country cards, 15 row cards, 8 source
+  cards, 5 evidence gates, 3 download links, no page or section horizontal
+  overflow, no text overflow, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-one-signal-desktop.png`,
+  `reporting-site/qa/showcase-air-one-signal-mobile.png`, and
+  `reporting-site/qa/showcase-air-one-signal-mobile-rows.png`.
 
 ## Next focused work
 
-1. Review the broader one-signal candidate queue: near-only rows,
-   name-only-not-near rows, and monitor-grade one-signal official rows. Keep
-   rows outside station-radius joins unless source-owner documentation,
-   current-status pages, or documented co-location evidence names both records.
+1. Resolve the one-signal queue where public evidence exists: shared station
+   IDs, source-owner crosswalks, current-status pages, documented co-location,
+   or station-owner/regulator method documentation. Keep every unresolved row
+   outside station-radius joins.
 2. Deepen non-Bangladesh monitor-grade documentation where public official,
    station-owner, or regulator sources distinguish reference-grade/regulatory
    monitors from low-cost or other public feeds, and confirm current-status
@@ -305,12 +326,11 @@ methods are added.
   station-ID overlaps, 0 exact official-agency owner/provider matches, 0
   explicit crosswalk rows, 0 validated same-station joins, and 0
   station-radius-ready rows.
-- The candidate crosswalk source scan screens the 6 OpenAQ `isMonitor` rows as
-  separate nearby stations using public source evidence, but did not review
-  the not-`isMonitor` public-feed caution rows.
 - The candidate public-feed source scan screens the 7 not-`isMonitor` rows as
-  nearby public-feed rows that are not join-ready, but the broader one-signal
-  candidate queue still needs row-level source review.
+  nearby public-feed rows that are not join-ready.
+- The one-signal review queue converts the weaker unresolved lanes into 169
+  review items, but it still records 0 validated same-station joins, 0 complete
+  monitor-grade classifications, and 0 station-radius-ready rows.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

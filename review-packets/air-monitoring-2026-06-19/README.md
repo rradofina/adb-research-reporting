@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `bd995aa29edd…`
+- `program/STATUS.md`  `a65b28105374…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -81,7 +81,8 @@ website is Tier 2 and is not included here).
 - `program/official-openaq-candidate-public-evidence.md`  `4a26808ac815…`
 - `program/official-openaq-candidate-crosswalk-source-scan.md`  `5dd3c81fcdeb…`
 - `program/official-openaq-candidate-public-feed-source-scan.md`  `7a627b81a080…`
-- `program/limitations.md`  `c519abd16dcd…`
+- `program/one-signal-review-queue.md`  `df187fe6d954…`
+- `program/limitations.md`  `7604d48b7ec8…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -102,6 +103,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-official-openaq-candidate-review.csv`  `ecedea01ca17…`
 - `program/generated/air-monitoring-official-openaq-reconciliation-summary.json`  `195c17128543…`
 - `program/generated/air-monitoring-official-openaq-reconciliation.csv`  `c9e9eff78f0d…`
+- `program/generated/air-monitoring-one-signal-review-queue-summary.json`  `0c79a09f812e…`
+- `program/generated/air-monitoring-one-signal-review-queue.csv`  `4f8ac6dbed7d…`
 - `program/generated/air-monitoring-openaq-station-metadata-summary.json`  `c864848a3cef…`
 - `program/generated/air-monitoring-openaq-station-metadata.csv`  `7c61c2a0ba4e…`
 - `program/generated/air-monitoring-regulator-source-inventory-summary.json`  `52be4c018fa8…`
@@ -115,6 +118,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/audit-official-openaq-candidate-public-evidence.py`  `65df72c733de…`
 - `program/scripts/build-metadata-readiness-audit.py`  `868c73ab91e8…`
 - `program/scripts/build-official-openaq-candidate-review.py`  `3c6c54513f78…`
+- `program/scripts/build-one-signal-review-queue.py`  `4be11f591ba7…`
 - `program/scripts/build-regulator-source-inventory.py`  `a14135438dc3…`
 - `program/scripts/build-thumbnail.py`  `9f0a3f2395e3…`
 - `program/scripts/deepen-concentration-and-hdi.py`  `d8dc35e3018b…`
@@ -133,7 +137,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `db8b89b65e1e…`
+- `shared/versions.json`  `a86b8d7f2632…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -143,4 +147,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T09:04:09.076Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T09:21:21.592Z by `scripts/build-review-packet.mjs`.

@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, a public OpenAQ metadata evidence attachment, a public source scan that screens the 6 OpenAQ `isMonitor` candidate rows as separate nearby stations, a public-feed source scan that screens the 7 not-`isMonitor` rows as nearby public-feed rows that are not join-ready, and monitor-grade evidence audit make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, complete monitor-grade classification, and gridded population/PM2.5 denominators before station-radius or catchment language | Review the broader one-signal station-crosswalk queue, deepen non-Bangladesh monitor-grade documentation, then build a declared catchment denominator only if the source comparison survives |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, a public OpenAQ metadata evidence attachment, a public source scan that screens the 6 OpenAQ `isMonitor` candidate rows as separate nearby stations, a public-feed source scan that screens the 7 not-`isMonitor` rows as nearby public-feed rows that are not join-ready, a 169-item one-signal review queue, and monitor-grade evidence audit make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, complete monitor-grade classification, and gridded population/PM2.5 denominators before station-radius or catchment language | Resolve the one-signal queue with source-owner crosswalk or method documentation, deepen non-Bangladesh monitor-grade evidence, then build a declared catchment denominator only if the source comparison survives |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
@@ -626,6 +626,26 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-air-public-feed-source-scan-desktop.png`,
   `reporting-site/qa/showcase-air-public-feed-source-scan-mobile.png`, and
   `reporting-site/qa/showcase-air-public-feed-source-scan-mobile-sources.png`.
+- Air-monitoring report #6 then received a one-signal review queue. New
+  no-network script `air-monitoring/scripts/build-one-signal-review-queue.py`
+  reads the official/OpenAQ reconciliation audit, monitor-grade evidence
+  audit, and prior candidate source-scan summaries. It writes
+  `generated/air-monitoring-one-signal-review-queue.csv` and
+  `generated/air-monitoring-one-signal-review-queue-summary.json`. The queue
+  excludes the 13 near-plus-name candidates already source-screened, then
+  combines 9 near-only official/OpenAQ rows, 22 name-only-not-near rows, and
+  138 automatic or official-portal monitor-grade provenance-only rows. It
+  keeps validated same-station joins, complete monitor-grade classifications,
+  and station-radius-ready rows at 0. The public route now renders the
+  one-signal review wall. Chrome CDP QA passed at 1440x1100 and 390x1000 with
+  5 stat cards, 3 lane cards, 8 country cards, 15 row cards, 8 source cards, 5
+  evidence gates, 3 download links, no page or section horizontal overflow, no
+  text overflow, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-one-signal-desktop.png`,
+  `reporting-site/qa/showcase-air-one-signal-mobile.png`, and
+  `reporting-site/qa/showcase-air-one-signal-mobile-rows.png`. This is a
+  triage artifact, not a validated station crosswalk, complete grade
+  classification, or catchment layer.
 - Air-monitoring report #6 then received a monitor-grade evidence audit. New
   script `air-monitoring/scripts/audit-monitor-grade-evidence.py` reads all
   239 official-source rows from the station-extraction pass, verifies
@@ -783,8 +803,10 @@ candidates before adding new surfaces.
 ## Next deepening order
 
 1. Air-monitoring observability, because the station-coordinate source pass is
-   now public and the next source upgrade is concrete: regulator inventories,
-   monitor-grade validation, and only then a declared catchment denominator.
+   now public and the next source upgrade is concrete: resolve the
+   one-signal queue with public crosswalk or method documentation, deepen
+   non-Bangladesh monitor-grade validation, and only then add a declared
+   catchment denominator.
 2. PSDQ source disagreement remains strong but owner-gated: source-owner
    clarification or human review is needed for the unresolved Durgapur
    same-name cross-district coordinate conflict and shared-coordinate

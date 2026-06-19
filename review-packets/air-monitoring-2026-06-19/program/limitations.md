@@ -59,6 +59,13 @@
   0 shared station-ID rows, 0 source-owner crosswalk rows, 0 current-status
   crosswalk rows, 0 documented co-location rows, 0 validated joins, and 0
   station-radius-ready rows.
+- One-signal review queue. The 2026-06-19 queue starts after the 13
+  near-plus-name candidates have been source-screened. It combines 9 near-only
+  official/OpenAQ rows, 22 name-only-not-near rows, and 138 automatic or
+  official-portal monitor-grade provenance-only rows. It records 169 review
+  items across 149 unique official station keys and 8 economies, but still has
+  0 validated same-station joins, 0 complete monitor-grade classifications,
+  and 0 station-radius-ready rows.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

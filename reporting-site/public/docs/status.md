@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -66,13 +66,19 @@ overrides priority by editing this list.
    public-feed source scan retrieves 10 public source URLs and screens all 7
    not-`isMonitor` candidate rows as public-feed nearby rows that are not
    join-ready, again keeping validated joins and radius-ready rows at 0. The
+   one-signal review queue then combines 9 near-only official/OpenAQ rows, 22
+   name-only-not-near rows, and 138 automatic or official-portal
+   monitor-grade provenance-only rows into 169 review items across 149 unique
+   official station keys and 8 economies, while keeping validated
+   same-station joins, complete monitor-grade classifications, and
+   station-radius-ready rows at 0. The
    monitor-grade evidence audit covers 239 official-source rows and finds 31
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
    rows, 65 rows with no public grade language, and 0 complete monitor-grade
-   classification rows. Next AI-doable loop is candidate station-crosswalk
-   validation and non-Bangladesh monitor-grade source validation before any
-   station-radius or catchment claim.
+   classification rows. Next AI-doable loop is resolving one-signal rows with
+   public crosswalk or method documentation and non-Bangladesh monitor-grade
+   source validation before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -187,6 +193,26 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring one-signal review queue):** Added
+  `air-monitoring/scripts/build-one-signal-review-queue.py`, generated
+  `air-monitoring/generated/air-monitoring-one-signal-review-queue.csv` and
+  `air-monitoring/generated/air-monitoring-one-signal-review-queue-summary.json`,
+  and wrote `air-monitoring/one-signal-review-queue.md`. The queue excludes
+  the 13 near-plus-name candidates already source-screened, then combines 9
+  near-only official/OpenAQ rows, 22 name-only-not-near rows, and 138
+  automatic or official-portal monitor-grade provenance-only rows. It records
+  169 review items across 149 unique official station keys and 8 economies,
+  with 0 validated same-station joins, 0 complete monitor-grade
+  classifications, and 0 station-radius-ready rows. The public route now
+  renders the one-signal review wall. Chrome CDP QA passed at 1440x1100 and
+  390x1000 with 5 stat cards, 3 lane cards, 8 country cards, 15 row cards, 8
+  source cards, 5 evidence gates, 3 download links, no page or section
+  horizontal overflow, no text overflow, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-one-signal-desktop.png`,
+  `reporting-site/qa/showcase-air-one-signal-mobile.png`, and
+  `reporting-site/qa/showcase-air-one-signal-mobile-rows.png`. Next work is
+  source-owner crosswalk, current-status, documented co-location, or
+  station-owner/regulator method documentation for this queue.
 - **2026-06-19 (air-monitoring candidate public-feed source scan):** Added
   `air-monitoring/source-inputs/candidate-public-feed-source-seed.csv`,
   `air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources.py`,

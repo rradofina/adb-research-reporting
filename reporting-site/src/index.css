@@ -7726,17 +7726,293 @@
     text-decoration: underline;
   }
 
+  .air-regulator-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(155, 34, 38, 0.06), rgba(255, 255, 255, 0.98) 38%),
+      #ffffff;
+  }
+
+  .air-regulator-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .air-regulator-head h2 {
+    max-width: 16ch;
+  }
+
+  .air-regulator-nonclaim {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid #9b2226;
+    background: #fff8f5;
+  }
+
+  .air-regulator-nonclaim strong,
+  .air-regulator-stat-grid span,
+  .air-regulator-zero-grid span,
+  .air-regulator-gate span,
+  .air-regulator-downloads span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-regulator-nonclaim strong {
+    color: #7a1b1e;
+    font-size: var(--type-copy-sm);
+  }
+
+  .air-regulator-nonclaim p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.55;
+  }
+
+  .air-regulator-stat-grid,
+  .air-regulator-zero-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .air-regulator-stat-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .air-regulator-zero-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .air-regulator-stat-grid > div,
+  .air-regulator-zero-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-regulator-stat-grid strong,
+  .air-regulator-zero-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .air-regulator-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-regulator-source-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr 1.1fr;
+    gap: 0.8rem;
+    align-items: start;
+  }
+
+  .air-regulator-group {
+    display: grid;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-regulator-group-official {
+    border-top-color: #5a8227;
+  }
+
+  .air-regulator-group-regulator-page,
+  .air-regulator-group-partner {
+    border-top-color: #fbb00e;
+  }
+
+  .air-regulator-group-gap {
+    border-top-color: #9b2226;
+  }
+
+  .air-regulator-group-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .air-regulator-group-head h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-regulator-group-head strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.05rem;
+  }
+
+  .air-regulator-country-stack {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .air-regulator-country {
+    display: grid;
+    gap: 0.32rem;
+    min-width: 0;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .air-regulator-country:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .air-regulator-country > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.55rem;
+    align-items: baseline;
+  }
+
+  .air-regulator-country span {
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .air-regulator-country strong {
+    color: var(--ink);
+    font-size: 0.9rem;
+    line-height: 1.15;
+  }
+
+  .air-regulator-country b {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(155, 34, 38, 0.22);
+    color: #7a1b1e;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-regulator-country p,
+  .air-regulator-country em {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-regulator-country em {
+    color: var(--ink-faint);
+    font-style: normal;
+  }
+
+  .air-regulator-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-regulator-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-regulator-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-regulator-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-regulator-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-regulator-gate strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-regulator-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1rem;
+  }
+
+  .air-regulator-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-regulator-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-regulator-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-regulator-downloads a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 1180px) {
     .air-metadata-stat-grid,
     .air-metadata-gate-grid,
     .air-metadata-queue,
     .air-station-stat-grid,
-    .air-station-gate-grid {
+    .air-station-gate-grid,
+    .air-regulator-stat-grid,
+    .air-regulator-zero-grid,
+    .air-regulator-gate-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .air-metadata-queue-layout,
-    .air-station-layout {
+    .air-station-layout,
+    .air-regulator-head,
+    .air-regulator-source-grid {
       grid-template-columns: minmax(0, 1fr);
     }
   }
@@ -8537,6 +8813,10 @@
       scroll-margin-top: 10.5rem;
     }
 
+    .air-regulator-section {
+      scroll-margin-top: 10.5rem;
+    }
+
     .showcase-hero {
       min-height: auto;
       padding-top: 0.5rem;
@@ -8677,13 +8957,18 @@
     .air-metadata-gate-grid,
     .air-metadata-queue,
     .air-station-stat-grid,
-    .air-station-gate-grid {
+    .air-station-gate-grid,
+    .air-regulator-stat-grid,
+    .air-regulator-zero-grid,
+    .air-regulator-source-grid,
+    .air-regulator-gate-grid {
       grid-template-columns: minmax(0, 1fr);
     }
 
     .air-metadata-gate,
     .air-metadata-queue-card,
-    .air-station-gate {
+    .air-station-gate,
+    .air-regulator-gate {
       grid-template-rows: auto;
     }
 
@@ -8692,7 +8977,8 @@
     }
 
     .air-metadata-downloads,
-    .air-station-downloads {
+    .air-station-downloads,
+    .air-regulator-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       align-items: start;

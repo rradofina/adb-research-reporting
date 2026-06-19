@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, and OpenAQ station-metadata source-access pass exist; station-radius, monitor-grade, and regulatory-inventory claims remain blocked until catchment denominators and regulator sources are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, and regulator-source wall exist; station-radius, monitor-grade, and regulatory-inventory claims remain blocked until official station tables, monitor-grade sources, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -37,9 +37,12 @@ overrides priority by editing this list.
    economies. The metadata-readiness audit made the station-level wall
    explicit; the OpenAQ station-metadata source pass and public station panel
    now supply 101 coordinate rows for 11 upgrade-queue economies, record 2
-   coordinate-QC exclusions, and keep 13 economies at OpenAQ-visible zero. Next
-   AI-doable loop is regulator-inventory and monitor-grade source validation
-   before any station-radius or catchment claim.
+   coordinate-QC exclusions, and keep 13 economies at OpenAQ-visible zero. The
+   regulator-source discovery pass identifies 9 official inventory or
+   air-quality portal candidates, 6 official station-count claim rows, and 0
+   monitor-grade classification rows, now surfaced in a public source wall.
+   Next AI-doable loop is station-table extraction and monitor-grade source
+   validation before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -212,6 +215,30 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`. Next loop
   is to collect regulator inventories and monitor-grade sources before any
   no-monitor-on-ground or catchment-coverage claim.
+- **2026-06-19 (air-monitoring regulator-source discovery):** Added
+  `air-monitoring/source-inputs/regulator-source-inventory-seed.csv`,
+  `air-monitoring/scripts/build-regulator-source-inventory.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-regulator-source-inventory.csv` and
+  `air-monitoring/generated/air-monitoring-regulator-source-inventory-summary.json`,
+  and wrote `air-monitoring/regulator-source-inventory.md`. The pass covers
+  24 upgrade-queue economies, identifies 11 official regulator or portal
+  source candidates, 9 official station-inventory or air-quality portal
+  candidates, 6 official station-count claim rows, 0 monitor-grade
+  classification rows, and 11 targeted-search gaps. Among the 13 zero-OpenAQ
+  economies, it finds 1 official inventory or portal candidate, 2 official
+  regulator pages with no station inventory found, 1 development-partner
+  monitoring reference, and 9 targeted-search gaps. The public showcase route
+  now renders the regulator-source wall; Chrome CDP QA at 1440x1100 and
+  390x900 confirmed 5 stat cards, 4 zero-grid cells, 4 source groups, 24
+  country rows, 5 evidence gates, 3 download links, no page or section
+  horizontal overflow, and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-regulator-source-desktop.png` and
+  `reporting-site/qa/showcase-air-regulator-source-mobile.png`. This is source
+  discovery, not regulator validation, not monitor-grade validation, not proof
+  of no monitor outside OpenAQ, and not station-radius population coverage.
+  Next loop is station-table or portal extraction from official source
+  candidates.
 - **2026-06-19 (rotation to air-monitoring):** Rotated the active flagship
   from `public-service-data-quality` to `air-monitoring` after PSDQ received
   the 10-stage evidence ladder in commit `8913943` and returned to the

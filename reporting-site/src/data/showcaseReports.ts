@@ -124,10 +124,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, station-metadata readiness, and a fetched OpenAQ coordinate source package before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/station-metadata-source-access.md",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, and regulator-source candidates before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/regulator-source-inventory.md",
     visual: "Zero-monitor exposure bars, GDP residual scatter, exposure panel, metadata-readiness wall, and OpenAQ station-coordinate map",
-    sourceNote: "OpenAQ v3 locations, WHO ambient air quality database, WDI, and committed station-metadata source artifacts",
+    sourceNote: "OpenAQ v3 locations, public regulator/official portal source candidates, WHO ambient air quality database, WDI, and committed source artifacts",
   },
   {
     id: 7,
@@ -590,9 +590,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, and a bespoke observability report with concentration, residual, exposure, gate, and coordinate panels.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, and source-wall panels.",
     publicationGap: "Needs monitor-grade validation, regulatory inventory comparison, and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
-    nextUpgrade: "Collect regulator inventories for the zero-OpenAQ and positive-residual queue, then build a declared catchment denominator if the source comparison survives.",
+    nextUpgrade: "Extract official station tables from regulator/portal candidates, validate monitor grade where public, then build a declared catchment denominator if the source comparison survives.",
   },
   7: {
     readiness: "l3-candidate",

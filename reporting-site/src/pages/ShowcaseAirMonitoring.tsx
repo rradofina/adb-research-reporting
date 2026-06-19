@@ -268,6 +268,69 @@ interface StationMetadataSummary {
   non_claim: string;
 }
 
+interface RegulatorSourceGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface RegulatorSourceCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  subregion: string;
+  upgrade_queue_class: string;
+  openaq_pm25_rows: number;
+  openaq_zero_pm25_rows: boolean;
+  source_name: string;
+  agency: string;
+  url: string;
+  source_tier: string;
+  source_class: string;
+  official_source_candidate: boolean;
+  official_station_inventory_or_portal: boolean;
+  station_inventory_signal: string;
+  monitor_grade_signal_present: boolean;
+  pm25_signal_present: boolean;
+  official_station_count_claim: string;
+  official_station_count_claim_present: boolean;
+  source_note: string;
+  next_validation_step: string;
+  retrieval_status: string;
+  http_status: number | null;
+}
+
+interface RegulatorSourceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    economies_targeted: number;
+    economies_with_official_source_candidate: number;
+    economies_with_official_station_inventory_or_portal: number;
+    economies_with_official_station_count_claim: number;
+    economies_with_monitor_grade_signal: number;
+    economies_with_pm25_signal: number;
+    zero_openaq_economies_targeted: number;
+    zero_openaq_economies_with_official_station_inventory_or_portal: number;
+    zero_openaq_economies_with_official_regulator_page_no_station_inventory: number;
+    zero_openaq_economies_with_development_partner_monitoring_reference: number;
+    zero_openaq_economies_not_found_in_targeted_search: number;
+    economies_not_found_in_targeted_search: number;
+    development_partner_or_secondary_reference_rows: number;
+    url_rows: number;
+    url_rows_retrieved: number;
+    url_rows_with_retrieval_error: number;
+  };
+  evidence_gate_counts: RegulatorSourceGate[];
+  country_rows: RegulatorSourceCountryRow[];
+  non_claim: string;
+}
+
 type AirMode = "concentration" | "residual" | "exposure";
 
 const MODES: Array<{ id: AirMode; label: string }> = [
@@ -316,6 +379,7 @@ function sentenceCaseStatus(value: string) {
 
 function gateTone(status: string) {
   if (status === "available" || status === "computed") return "available";
+  if (status === "partly_available") return "pending";
   if (status === "not_yet_collected" || status.includes("not_collected")) return "pending";
   return "blocked";
 }
@@ -325,6 +389,7 @@ export default function ShowcaseAirMonitoring() {
   const [panel, setPanel] = useState<AirPanelData | null>(null);
   const [metadataReadiness, setMetadataReadiness] = useState<MetadataReadinessSummary | null>(null);
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
+  const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
   const [error, setError] = useState<string | null>(null);
@@ -347,12 +412,17 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`station metadata HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-regulator-source-inventory-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`regulator source HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
-      .then(([deepeningPayload, panelPayload, metadataPayload, stationMetadataPayload]) => {
+      .then(([deepeningPayload, panelPayload, metadataPayload, stationMetadataPayload, regulatorSourcePayload]) => {
         setDeepening(deepeningPayload);
         setPanel(panelPayload);
         setMetadataReadiness(metadataPayload);
         setStationMetadata(stationMetadataPayload);
+        setRegulatorSource(regulatorSourcePayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -459,6 +529,8 @@ export default function ShowcaseAirMonitoring() {
       <AirMetadataReadinessPanel summary={metadataReadiness} />
 
       <AirStationMetadataPanel summary={stationMetadata} />
+
+      <AirRegulatorSourcePanel summary={regulatorSource} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -839,6 +911,159 @@ function AirStationMetadataPanel({ summary }: { summary: StationMetadataSummary 
         </>
       ) : (
         <p className="showcase-loading">Loading OpenAQ station metadata...</p>
+      )}
+    </section>
+  );
+}
+
+function AirRegulatorSourcePanel({ summary }: { summary: RegulatorSourceSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.country_rows ?? [];
+  const groups = [
+    {
+      key: "official",
+      title: "Official inventory or portal",
+      rows: rows.filter((row) => row.official_station_inventory_or_portal),
+    },
+    {
+      key: "regulator-page",
+      title: "Regulator page, no inventory found",
+      rows: rows.filter((row) => row.source_class === "official_regulator_page_no_station_inventory"),
+    },
+    {
+      key: "partner",
+      title: "Development-partner reference",
+      rows: rows.filter((row) => row.source_class === "development_partner_monitoring_reference"),
+    },
+    {
+      key: "gap",
+      title: "Targeted-search gap",
+      rows: rows.filter((row) => row.source_class === "not_found_in_targeted_search"),
+    },
+  ];
+
+  return (
+    <section className="showcase-section air-regulator-section" aria-label="Regulator source inventory discovery">
+      <div className="air-regulator-head">
+        <div>
+          <p className="kicker kicker-crimson">Regulator-source wall</p>
+          <h2>Official sources start to answer what OpenAQ cannot.</h2>
+          <p>
+            The discovery pass checks whether each upgrade-queue economy has a
+            public regulator, official portal, government project, or partner
+            source that can be inspected before the report treats OpenAQ as a
+            coverage statement.
+          </p>
+        </div>
+        <div className="air-regulator-nonclaim">
+          <strong>Still not validation</strong>
+          <p>
+            A source candidate is not a reconciled station table. Monitor-grade
+            classification remains at zero rows until official station metadata
+            distinguishes regulatory or reference monitors from other feeds.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-regulator-stat-grid">
+            <div>
+              <span>Official source candidates</span>
+              <strong>{formatNumber(counts.economies_with_official_source_candidate)}</strong>
+              <em>of {formatNumber(counts.economies_targeted)} upgrade-queue economies</em>
+            </div>
+            <div>
+              <span>Inventory or portal candidates</span>
+              <strong>{formatNumber(counts.economies_with_official_station_inventory_or_portal)}</strong>
+              <em>not yet reconciled to OpenAQ rows</em>
+            </div>
+            <div>
+              <span>Station-count claims</span>
+              <strong>{formatNumber(counts.economies_with_official_station_count_claim)}</strong>
+              <em>need station-table extraction</em>
+            </div>
+            <div>
+              <span>Zero-OpenAQ search gaps</span>
+              <strong>{formatNumber(counts.zero_openaq_economies_not_found_in_targeted_search)}</strong>
+              <em>not proof that no monitor exists</em>
+            </div>
+            <div>
+              <span>Monitor-grade rows</span>
+              <strong>{formatNumber(counts.economies_with_monitor_grade_signal)}</strong>
+              <em>classification still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-regulator-zero-grid">
+            <div>
+              <span>Zero-OpenAQ official portal</span>
+              <strong>{formatNumber(counts.zero_openaq_economies_with_official_station_inventory_or_portal)}</strong>
+            </div>
+            <div>
+              <span>Regulator page, no inventory</span>
+              <strong>{formatNumber(counts.zero_openaq_economies_with_official_regulator_page_no_station_inventory)}</strong>
+            </div>
+            <div>
+              <span>Partner monitoring reference</span>
+              <strong>{formatNumber(counts.zero_openaq_economies_with_development_partner_monitoring_reference)}</strong>
+            </div>
+            <div>
+              <span>Still targeted-search gaps</span>
+              <strong>{formatNumber(counts.zero_openaq_economies_not_found_in_targeted_search)}</strong>
+            </div>
+          </div>
+
+          <div className="air-regulator-source-grid">
+            {groups.map((group) => (
+              <article key={group.key} className={`air-regulator-group air-regulator-group-${group.key}`}>
+                <div className="air-regulator-group-head">
+                  <h3>{group.title}</h3>
+                  <strong>{formatNumber(group.rows.length)}</strong>
+                </div>
+                <div className="air-regulator-country-stack">
+                  {group.rows.map((row) => (
+                    <div key={row.iso3} className="air-regulator-country">
+                      <div>
+                        <span>{row.iso3}</span>
+                        <strong>{row.country}</strong>
+                        {row.openaq_zero_pm25_rows ? <b>zero OpenAQ</b> : null}
+                      </div>
+                      <p>{row.source_name}</p>
+                      <em>{row.official_station_count_claim || row.next_validation_step}</em>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-regulator-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-regulator-gate air-regulator-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-regulator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/regulator-source-inventory.md" download>
+              Source note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-regulator-source-inventory-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-regulator-source-inventory.csv" download>
+              Inventory CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading regulator-source inventory...</p>
       )}
     </section>
   );

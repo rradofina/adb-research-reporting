@@ -14,6 +14,12 @@
   2 rows whose coordinates fell outside broad target-country bounds. It still
   has 0 monitor-grade rows, 0 regulator-inventory rows, and 0 station-radius
   coverage rows.
+- Regulator-source completeness. The 2026-06-19 regulator-source discovery
+  pass identifies 9 official station-inventory or air-quality portal
+  candidates and 6 official station-count claim rows across the 24-economy
+  upgrade queue, but it still has 0 monitor-grade classification rows and 11
+  targeted-search gaps. These are source candidates, not validated regulator
+  inventories.
 
 ## Source-side
 
@@ -23,6 +29,9 @@
 - OpenAQ station metadata fetched on 2026-06-19 is an OpenAQ-visible source
   record. It does not prove that the 13 zero-OpenAQ PM2.5 economies have no
   monitor outside OpenAQ.
+- Official regulator or portal links found in the discovery pass require
+  station-table extraction and reconciliation before they can override or
+  validate OpenAQ station rows.
 
 ## Method-side
 

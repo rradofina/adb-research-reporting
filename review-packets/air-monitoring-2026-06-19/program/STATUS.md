@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package and station map complete; regulator-inventory validation next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, and public source wall complete; official station-table extraction next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -22,9 +22,10 @@ Last updated: 2026-06-19.
 Build a reviewer-credible air-monitoring observability package for the
 showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
 keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
-package and coordinate map now available for the upgrade queue, and do not
-imply station-radius, monitor-grade, or regulatory-inventory validation until
-those sources and methods are added.
+package, coordinate map, and regulator-source discovery now available for the
+upgrade queue, and do not imply station-radius, monitor-grade, or
+regulatory-inventory validation until official station tables and catchment
+methods are added.
 
 ## Last completed
 
@@ -89,14 +90,40 @@ those sources and methods are added.
   `reporting-site/qa/showcase-air-station-metadata-desktop-map.png`,
   `reporting-site/qa/showcase-air-station-metadata-mobile.png`, and
   `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`.
+- **2026-06-19:** Added the regulator-source inventory discovery pass. New
+  seed file `source-inputs/regulator-source-inventory-seed.csv` and script
+  `scripts/build-regulator-source-inventory.py` join public source candidates
+  to the 24-economy OpenAQ upgrade queue, check URL retrieval status, and
+  write `generated/air-monitoring-regulator-source-inventory.csv` and
+  `generated/air-monitoring-regulator-source-inventory-summary.json`. The
+  pass covers 24 economies, identifies 11 official regulator or portal source
+  candidates, 9 official station-inventory or air-quality portal candidates,
+  6 official station-count claim rows, 0 monitor-grade classification rows,
+  and 11 targeted-search gaps. Among the 13 zero-OpenAQ economies, it finds
+  1 official inventory or portal candidate, 2 official regulator pages with
+  no station inventory found, 1 development-partner monitoring reference, and
+  9 targeted-search gaps. Wrote `regulator-source-inventory.md` and added the
+  public regulator-source wall to `/showcase/air-monitoring-observability`.
+  Browser QA at 1440x1100 and 390x900 confirmed 5 stat cards, 4 zero-grid
+  cells, 4 source groups, 24 country rows, 5 evidence gates, 3 download links,
+  no page or section horizontal overflow, and no console/page errors.
+  Screenshots: `reporting-site/qa/showcase-air-regulator-source-desktop.png`
+  and `reporting-site/qa/showcase-air-regulator-source-mobile.png`. This is
+  source discovery, not regulator validation, not monitor-grade validation,
+  not proof of no monitor outside OpenAQ, and not station-radius population
+  coverage.
 
 ## Next focused work
 
-1. Collect national regulator inventory references for the zero-public-monitor
-   and positive-GDP-residual queue rows.
-2. Validate monitor grade where public station-owner or regulator sources
+1. Extract station tables or portal data from the 9 official inventory/portal
+   candidates and compare station names, coordinates, and pollutant coverage
+   against OpenAQ rows.
+2. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
+   gaps, especially the 9 zero-OpenAQ economies with no official inventory
+   candidate found in the first pass.
+3. Validate monitor grade where public station-owner or regulator sources
    distinguish reference-grade/regulatory monitors from low-cost feeds.
-3. Only after regulator sources and denominators exist, build station-radius or catchment
+4. Only after regulator sources and denominators exist, build station-radius or catchment
    sensitivity with gridded population/PM2.5 denominators.
 
 ## Current blockers
@@ -104,7 +131,10 @@ those sources and methods are added.
 - Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs,
   but still needs a declared catchment method and gridded population/PM2.5
   denominators.
-- Monitor-grade claims need a station-level source that distinguishes
-  reference-grade/regulatory monitors from low-cost or other public feeds.
-- Treating OpenAQ-visible zero as no monitor on the ground requires regulator
-  inventory cross-checks.
+- Monitor-grade claims still have 0 classification rows and need a
+  station-level source that distinguishes reference-grade/regulatory monitors
+  from low-cost or other public feeds.
+- Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
+  the regulator-source discovery pass found only 1 official inventory/portal
+  candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ
+  economies as targeted-search gaps.

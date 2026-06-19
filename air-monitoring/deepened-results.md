@@ -153,6 +153,14 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   and 0 station-radius coverage rows. Thirteen economies in the queue remain
   at zero OpenAQ PM2.5 rows, which is still an OpenAQ-visible zero rather than
   proof of no monitor on the ground.
+- **New regulator-source discovery:** the public-source search layer covers
+  all 24 upgrade-queue economies and identifies 9 official station-inventory
+  or air-quality portal candidates, 6 official station-count claim rows, 0
+  monitor-grade classification rows, and 11 targeted-search gaps. Among the 13
+  zero-OpenAQ economies, 1 now has an official inventory or portal candidate,
+  2 have official regulator pages with no station inventory found, 1 has a
+  development-partner monitoring reference, and 9 remain targeted-search gaps.
+  This is a source queue for validation, not validation itself.
 
 ## Bounds
 

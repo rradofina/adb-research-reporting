@@ -483,6 +483,28 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-air-station-metadata-desktop-map.png`,
   `reporting-site/qa/showcase-air-station-metadata-mobile.png`, and
   `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`.
+- Air-monitoring report #6 then received a regulator-source inventory
+  discovery pass. New seed file
+  `air-monitoring/source-inputs/regulator-source-inventory-seed.csv` and
+  script `air-monitoring/scripts/build-regulator-source-inventory.py` join
+  public source candidates to the OpenAQ upgrade queue and write
+  `generated/air-monitoring-regulator-source-inventory.csv` and
+  `generated/air-monitoring-regulator-source-inventory-summary.json`. The pass
+  covers 24 upgrade-queue economies, identifies 11 official regulator or
+  portal source candidates, 9 official station-inventory or air-quality portal
+  candidates, 6 official station-count claim rows, 0 monitor-grade
+  classification rows, and 11 targeted-search gaps. Among the 13 zero-OpenAQ
+  economies, it finds 1 official inventory or portal candidate, 2 official
+  regulator pages with no station inventory found, 1 development-partner
+  monitoring reference, and 9 targeted-search gaps. The public showcase route
+  now renders the regulator-source wall; Chrome CDP QA at 1440x1100 and
+  390x900 confirmed 5 stat cards, 4 zero-grid cells, 4 source groups, 24
+  country rows, 5 evidence gates, 3 download links, no page or section
+  horizontal overflow, and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-regulator-source-desktop.png` and
+  `reporting-site/qa/showcase-air-regulator-source-mobile.png`. This is source
+  discovery, not regulator validation, not monitor-grade validation, not proof
+  of no monitor outside OpenAQ, and not station-radius population coverage.
 - PSDQ report #4 then received a source-repair public-evidence attachment
   pass. New no-network script
   `public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py`

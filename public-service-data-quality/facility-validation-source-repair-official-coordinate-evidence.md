@@ -92,6 +92,9 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Search for public official correction records, registry change logs, or facility
-pages that explain why the exposed DGHS profile coordinate is shared or distant.
-Without that source, these rows should stay in the source-repair queue.
+The first public explanation search now lives in
+`facility-validation-source-repair-public-explanation-evidence.md`. It found 0
+explicit coordinate-source or coordinate-correction explanations, identified the
+same-name cross-district Durgapur conflict, and kept all 4 rows open. The next
+upgrade is a targeted correction-record follow-up for that Durgapur conflict
+and the shared-coordinate Narayanganj records.

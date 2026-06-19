@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, and 4-row official-coordinate evidence added; correction records or source explanations for source-repair rows are the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, and 4-row public-explanation search added; targeted correction-record follow-up for the Durgapur conflict and shared-coordinate Narayanganj rows is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -27,12 +27,45 @@ ledger, candidate/source checks, coordinate-repair triage, public-map-gap
 triage, row-evidence notes, targeted public-map inspection queue, first-row
 public-source confirmation, 40-row targeted public-source confirmation,
 public-source decision ledger, source-repair public evidence, official-coordinate
-evidence, and caveats,
+evidence, public-explanation search, and caveats,
 make the source upgrade clear in the public surface, and preserve the existing
 PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh source-repair public-explanation
+  evidence search for the PSDQ facility-validation source-repair queue. New
+  live public-source script
+  `scripts/search-bgd-facility-source-repair-public-explanations.py` reads
+  `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`,
+  joins cached DGHS public registry records, checks live DGHS profile tabs, and
+  fetches linked official government health portals where available. It writes
+  `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv`
+  and
+  `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json`.
+  The pass checks 4 source-repair rows, 8 live DGHS profile tabs, and 6
+  official portal URLs; retrieves 5 official portal pages; finds 0 explicit
+  public coordinate-source or coordinate-correction explanations; records 2
+  rows sharing one official profile coordinate; records 1 row with a
+  same-name cross-district DGHS registry sibling; and records 1 row where that
+  same-name other-district coordinate is within 2 kilometers. The Netrakona
+  Durgapur row is 747.0 meters from the separate Rajshahi Durgapur official
+  record. All 4 source-repair rows remain open with 0 AI closures and 0 AI
+  reclassifications. Added
+  `facility-validation-source-repair-public-explanation-evidence.md`, wired
+  evidence sync and review-packet inclusion, updated README/REPRODUCE/L3
+  notes, and added the public-explanation panel to the showcase surface. This
+  is public-source explanation evidence, not human validation, a coordinate
+  correction, a row closure, a maturity promotion, or a human-final upgrade.
+  Verification passed: public-explanation script rerun, program-script
+  `py_compile`, production site build, six deterministic gates plus
+  `git diff --check`, review packet and zip rebuild, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with no page-level horizontal
+  overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-public-explanation-desktop.png`,
+  `reporting-site/qa/showcase-psdq-public-explanation-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-public-explanation-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-public-explanation-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh source-repair official-coordinate
   evidence pass for the PSDQ facility-validation source-repair queue. New live
   public-source script
@@ -498,12 +531,13 @@ PR maturity label without implying human-final review.
 
 Current loop:
 
-1. Use the source-repair official-coordinate packet in
-   `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json`
+1. Use the source-repair public-explanation packet in
+   `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json`
    and
-   `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`
-   to search for public correction records, source explanations, or official
-   facility pages explaining the 4 source-repair-first coordinates.
+   `generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv`
+   to run a targeted correction-record follow-up for the same-name
+   cross-district Durgapur conflict and the shared-coordinate Narayanganj
+   records.
 2. Keep source-repair-first rows before any map-absence or same-facility
    language because coordinate/source repair changes the interpretation.
 3. Keep zero-OSM upazila observability rows separate from row-level absence
@@ -513,8 +547,9 @@ Current loop:
    map matches, facility-specific absence candidates, and upazila-level public
    map observability cases.
 5. Use only public DGHS rows, OSM/Overpass evidence, public map inspection
-   links, and other public official pages. Do not use private facility lists or
-   owner-only credentials. Stop if validation requires non-public access.
+   links, public government health portals, and other public official pages. Do
+   not use private facility lists or owner-only credentials. Stop if validation
+   requires non-public access.
 6. Close or reclassify a row only if public evidence supports the change. If
    public evidence is insufficient, keep the row unresolved and record the
    specific source question.

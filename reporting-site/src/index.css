@@ -3834,6 +3834,11 @@
     gap: 1rem;
   }
 
+  .psdq-public-explanation-section {
+    display: grid;
+    gap: 1rem;
+  }
+
   .psdq-sample-grid {
     display: grid;
     gap: 0.75rem;
@@ -3901,6 +3906,12 @@
   }
 
   .psdq-official-coordinate-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-public-explanation-grid {
     display: grid;
     gap: 0.85rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -4188,6 +4199,155 @@
   }
 
   .psdq-official-coordinate-status span {
+    color: var(--ink);
+    background: #f5f7f9;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .psdq-public-explanation-grid article {
+    min-width: 0;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 0.9rem;
+    background: #fff;
+  }
+
+  .psdq-public-explanation-card-head {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-public-explanation-card-head span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-public-explanation-card-head strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-public-explanation-card-head em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-public-explanation-class {
+    width: fit-content;
+    max-width: 100%;
+    color: #fff;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .psdq-public-explanation-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .psdq-public-explanation-links a {
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .psdq-public-explanation-route {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .psdq-public-explanation-node {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .psdq-public-explanation-node span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-public-explanation-node strong {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-public-explanation-node em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-public-explanation-rail {
+    height: 0.55rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-public-explanation-rail i {
+    display: block;
+    height: 100%;
+  }
+
+  .psdq-public-explanation-metrics {
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psdq-public-explanation-metrics span {
+    min-width: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+  }
+
+  .psdq-public-explanation-metrics b {
+    display: block;
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-public-explanation-grid article p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .psdq-public-explanation-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-public-explanation-status span {
     color: var(--ink);
     background: #f5f7f9;
     font-size: var(--type-copy-xs);
@@ -5973,6 +6133,7 @@
     .psdq-public-source-decision-ledger-grid,
     .psdq-source-repair-evidence-grid,
     .psdq-official-coordinate-grid,
+    .psdq-public-explanation-grid,
     .psdq-inspection-focus-strip {
       grid-template-columns: minmax(0, 1fr);
     }

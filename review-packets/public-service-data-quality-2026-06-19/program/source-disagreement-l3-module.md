@@ -470,6 +470,35 @@ same-facility matches. The result exposes the official coordinate now visible
 on the DGHS profile pages, but it does not explain why that coordinate is
 shared or distant.
 
+## Source-Repair Public Explanation Addendum
+
+The public-explanation evidence pass now lives in
+`facility-validation-source-repair-public-explanation-evidence.md`. The script
+`scripts/search-bgd-facility-source-repair-public-explanations.py` checks the
+four source-repair rows against live DGHS profile tabs, cached DGHS registry
+records, and linked public government health portals.
+
+The pass covers the same 4 source-repair rows:
+
+| Public-explanation evidence signal | Rows |
+|---|---:|
+| Source-repair rows checked | 4 |
+| Live DGHS profile tabs checked | 8 |
+| Official portal URLs checked | 6 |
+| Official portal pages retrieved | 5 |
+| Explicit coordinate-source or correction explanations found | 0 |
+| Rows sharing one official profile coordinate | 2 |
+| Rows with same-name cross-district DGHS registry record | 1 |
+| Rows with same-name other-district coordinate within 2 km | 1 |
+
+All 4 rows remain open; 0 are closed as resolved and 0 are reclassified as
+same-facility matches. The useful new signal is not closure. It is triage:
+two Narayanganj records are shared-coordinate questions, Bera is an
+official-profile-plus-portal case without a coordinate explanation, and the
+Netrakona Durgapur row is a same-name cross-district official-registry
+conflict because its coordinate is 747.0 meters from the separate Rajshahi
+Durgapur official record.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -503,6 +532,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
+python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
 ```
 
 Outputs:
@@ -540,11 +570,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a public correction-record or source-explanation search for
-the 4 source-repair-first coordinates. Close or reclassify a row only if a
-public official source explains the coordinate, source correction, duplicate
-record, or facility identity; otherwise keep it open with the specific
-unresolved source question.
+The next upgrade is a targeted correction-record follow-up for the one
+same-name cross-district Durgapur conflict and the two shared-coordinate
+Narayanganj records. Close or reclassify a row only if a public official source
+explains the coordinate, source correction, duplicate record, or facility
+identity; otherwise keep it open with the specific unresolved source question.

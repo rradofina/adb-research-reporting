@@ -77,6 +77,7 @@ const PROGRAM_FILES = [
   "facility-validation-public-source-decision-ledger.md",
   "facility-validation-source-repair-public-evidence.md",
   "facility-validation-source-repair-official-coordinate-evidence.md",
+  "facility-validation-source-repair-public-explanation-evidence.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

@@ -808,6 +808,82 @@ interface PsdqOfficialCoordinateEvidenceSummary {
   non_claim: string;
 }
 
+interface PsdqPublicExplanationEvidenceRow {
+  public_explanation_evidence_id: string;
+  evidence_rank: number;
+  status: string;
+  official_coordinate_evidence_id: string;
+  source_repair_evidence_id: string;
+  decision_id: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  dghs_profile_id: string;
+  dghs_organization_code: string;
+  dghs_public_profile_url: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  registry_lat: number | string;
+  registry_lon: number | string;
+  registry_mailing_address: string;
+  registry_village_or_street: string;
+  registry_house_number: string;
+  registry_union_name: string;
+  registry_website_url: string;
+  registry_updated_at: string;
+  profile_last_updated_at: string;
+  profile_detail_lat: number | string;
+  profile_detail_lon: number | string;
+  official_gov_portal_urls_checked: string;
+  official_gov_portal_statuses: string;
+  official_gov_portal_pages_retrieved: number | string;
+  official_gov_portal_coordinate_terms_found: number | string;
+  official_gov_portal_correction_terms_found: number | string;
+  source_pages_checked: number | string;
+  same_name_dghs_registry_records: number | string;
+  same_name_cross_district_dghs_registry_records: number | string;
+  shared_official_profile_coordinate_rows: number | string;
+  nearest_same_name_other_district_code: string;
+  nearest_same_name_other_district_name: string;
+  nearest_same_name_other_district_division: string;
+  nearest_same_name_other_district_district: string;
+  nearest_same_name_other_district_upazila: string;
+  nearest_same_name_other_district_lat: number | string;
+  nearest_same_name_other_district_lon: number | string;
+  nearest_same_name_other_district_coordinate_distance_m: number | string;
+  nearest_same_name_other_district_profile_url: string;
+  explicit_coordinate_source_or_correction_explanation_found: boolean | string;
+  public_explanation_evidence_class: string;
+  public_explanation_reviewer_action: string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+}
+
+interface PsdqPublicExplanationEvidenceSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  selection_rule: string;
+  public_explanation_scope: {
+    source_repair_rows: number;
+    live_dghs_profile_tabs_checked: number;
+    rows_with_profile_detail_coordinates: number;
+    official_gov_portal_urls_checked: number;
+    official_gov_portal_pages_retrieved: number;
+    explicit_coordinate_source_or_correction_explanations_found: number;
+    rows_with_shared_official_profile_coordinate: number;
+    rows_with_same_name_cross_district_dghs_registry_record: number;
+    rows_with_same_name_other_district_coordinate_within_2km: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  public_explanation_evidence_class_counts: PsdqCandidateResolutionCount[];
+  evidence_rows: PsdqPublicExplanationEvidenceRow[];
+  evidence_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -964,6 +1040,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
     useState<PsdqOfficialCoordinateEvidenceSummary | null>(null);
+  const [publicExplanationEvidenceSummary, setPublicExplanationEvidenceSummary] =
+    useState<PsdqPublicExplanationEvidenceSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1038,6 +1116,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`source repair official coordinate evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair public explanation evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -1061,6 +1143,7 @@ export default function ShowcasePSDQ() {
         publicSourceDecisionLedgerPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
+        publicExplanationEvidencePayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -1080,6 +1163,7 @@ export default function ShowcasePSDQ() {
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
+        setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1207,6 +1291,10 @@ export default function ShowcasePSDQ() {
 
       {officialCoordinateEvidenceSummary && (
         <PsdqOfficialCoordinateEvidencePanel summary={officialCoordinateEvidenceSummary} />
+      )}
+
+      {publicExplanationEvidenceSummary && (
+        <PsdqPublicExplanationEvidencePanel summary={publicExplanationEvidenceSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -4068,6 +4156,33 @@ function officialCoordinateEvidenceLabel(code: string) {
   return labels[code] || code.replaceAll("_", " ");
 }
 
+function publicExplanationEvidenceColor(code: string) {
+  if (code.includes("cross_district")) return "#A33A2A";
+  if (code.includes("shared_coordinate")) return "#007DB8";
+  if (code.includes("gov_portal")) return "#5A8227";
+  return "#6c757d";
+}
+
+function publicExplanationEvidenceLabel(code: string) {
+  const labels: Record<string, string> = {
+    official_same_name_cross_district_coordinate_conflict_no_correction_record:
+      "Same-name cross-district conflict",
+    official_shared_coordinate_across_distinct_records_no_explanation:
+      "Shared coordinate, no explanation",
+    official_profile_and_gov_portal_no_coordinate_explanation:
+      "Official pages, no coordinate note",
+    official_profile_exposes_coordinate_no_public_explanation:
+      "Official coordinate, no explanation",
+    public_coordinate_source_or_correction_explanation_found:
+      "Public explanation found",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function firstUrl(value: string) {
+  return String(value || "").split(" | ").find(Boolean) || "";
+}
+
 function formatCoordinate(value: number | string) {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed.toFixed(5) : String(value);
@@ -4314,6 +4429,150 @@ function PsdqOfficialCoordinateEvidencePanel({ summary }: { summary: PsdqOfficia
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv" download>
           Download official-coordinate CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqPublicExplanationEvidencePanel({ summary }: { summary: PsdqPublicExplanationEvidenceSummary }) {
+  const maxConflictDistance = Math.max(
+    1,
+    ...summary.evidence_rows.map((row) => Number(row.nearest_same_name_other_district_coordinate_distance_m || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-public-explanation-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Public explanation search</p>
+          <h2>The official trail makes one row more suspicious, not more settled.</h2>
+          <p>
+            The next loop checks the live DGHS profile tabs, cached official
+            registry records, and linked government health portals for public
+            coordinate-source or correction notes. No explicit explanation is
+            exposed. The strongest new clue is structural: the Netrakona
+            Durgapur coordinate sits within one kilometer of a separate Rajshahi
+            Durgapur official record.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Source-repair rows</span>
+            <strong>{formatNumber(summary.public_explanation_scope.source_repair_rows)}</strong>
+          </div>
+          <div>
+            <span>DGHS profile tabs checked</span>
+            <strong>{formatNumber(summary.public_explanation_scope.live_dghs_profile_tabs_checked)}</strong>
+          </div>
+          <div>
+            <span>Official portal pages retrieved</span>
+            <strong>{formatNumber(summary.public_explanation_scope.official_gov_portal_pages_retrieved)}</strong>
+          </div>
+          <div>
+            <span>Explicit explanations found</span>
+            <strong>{formatNumber(summary.public_explanation_scope.explicit_coordinate_source_or_correction_explanations_found)}</strong>
+          </div>
+          <div>
+            <span>Cross-district conflict rows</span>
+            <strong>{formatNumber(summary.public_explanation_scope.rows_with_same_name_other_district_coordinate_within_2km)}</strong>
+          </div>
+          <div>
+            <span>Rows closed</span>
+            <strong>{formatNumber(summary.public_explanation_scope.rows_closed_as_resolved)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-public-explanation-grid">
+        {summary.evidence_rows.map((row) => {
+          const color = publicExplanationEvidenceColor(row.public_explanation_evidence_class);
+          const conflictDistance = Number(row.nearest_same_name_other_district_coordinate_distance_m || 0);
+          const conflictWidth = row.nearest_same_name_other_district_code
+            ? Math.max(4, Math.min(100, (conflictDistance / maxConflictDistance) * 100))
+            : Math.max(4, Math.min(100, (Number(row.shared_official_profile_coordinate_rows || 0) / 2) * 100));
+          const portalUrl = firstUrl(row.official_gov_portal_urls_checked);
+          return (
+            <article key={row.public_explanation_evidence_id} style={{ borderColor: color }}>
+              <div className="psdq-public-explanation-card-head">
+                <span>{row.public_explanation_evidence_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>DGHS code {row.dghs_organization_code} / {row.division_name} / {row.district_name}</em>
+              </div>
+              <div className="psdq-public-explanation-class" style={{ background: color }}>
+                {publicExplanationEvidenceLabel(row.public_explanation_evidence_class)}
+              </div>
+              <div className="psdq-public-explanation-links">
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+                {portalUrl && (
+                  <a href={portalUrl} target="_blank" rel="noreferrer">
+                    Official portal
+                  </a>
+                )}
+                {row.nearest_same_name_other_district_profile_url && (
+                  <a href={row.nearest_same_name_other_district_profile_url} target="_blank" rel="noreferrer">
+                    Sibling record
+                  </a>
+                )}
+              </div>
+              <div className="psdq-public-explanation-route">
+                <div className="psdq-public-explanation-node">
+                  <span>Current official record</span>
+                  <strong>{formatCoordinate(row.registry_lat)}, {formatCoordinate(row.registry_lon)}</strong>
+                  <em>{row.registry_mailing_address || row.registry_village_or_street}</em>
+                </div>
+                <div className="psdq-public-explanation-rail" aria-label="Public explanation evidence intensity">
+                  <i style={{ width: `${conflictWidth}%`, background: color }} />
+                </div>
+                <div className="psdq-public-explanation-node">
+                  <span>{row.nearest_same_name_other_district_code ? "Nearest same-name official record" : "Public explanation result"}</span>
+                  <strong>
+                    {row.nearest_same_name_other_district_code
+                      ? `${row.nearest_same_name_other_district_code} / ${formatNumber(conflictDistance)} m`
+                      : `${formatNumber(Number(row.shared_official_profile_coordinate_rows || 0))} shared coordinate rows`}
+                  </strong>
+                  <em>
+                    {row.nearest_same_name_other_district_code
+                      ? `${row.nearest_same_name_other_district_district}, ${row.nearest_same_name_other_district_upazila}`
+                      : "No public coordinate-source or correction explanation"}
+                  </em>
+                </div>
+              </div>
+              <div className="psdq-public-explanation-metrics">
+                <span><b>{formatNumber(Number(row.source_pages_checked || 0))}</b> pages checked</span>
+                <span><b>{formatNumber(Number(row.official_gov_portal_pages_retrieved || 0))}</b> portals retrieved</span>
+                <span><b>{row.profile_last_updated_at || "not parsed"}</b> profile update</span>
+              </div>
+              <p>{row.public_explanation_reviewer_action}</p>
+              <div className="psdq-public-explanation-status">
+                <span>{asBoolean(row.explicit_coordinate_source_or_correction_explanation_found) ? "Explanation found" : "No explicit explanation"}</span>
+                <span>{formatNumber(Number(row.same_name_dghs_registry_records || 0))} same-name official records</span>
+                <span>0 closed</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the public-explanation search</p>
+        <code>python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-public-explanation-evidence.md" download>
+          Download public-explanation evidence note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence-summary.json" download>
+          Download public-explanation summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv" download>
+          Download public-explanation CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

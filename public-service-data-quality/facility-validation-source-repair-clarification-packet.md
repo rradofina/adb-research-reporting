@@ -100,7 +100,10 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-The next AI-doable step is an internal review checklist or registry-vintage note
-that keeps these three rows separate from map-absence language. The next
-substantive evidence upgrade is owner-only source-owner contact or human
-location validation. Until that exists, all three rows remain open.
+The next AI-doable step now lives in
+`facility-validation-source-repair-registry-vintage-review.md`. It attaches
+public DGHS profile update timestamps to the same three unresolved rows and
+keeps them blocked from closure, same-facility reclassification, and
+map-absence language. The next substantive evidence upgrade is owner-only
+source-owner contact or human location validation. Until that exists, all three
+rows remain open.

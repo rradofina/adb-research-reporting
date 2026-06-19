@@ -75,6 +75,7 @@ const ARTIFACTS = [
   { key: "facility_validation_source_repair_public_explanation_evidence", file: "facility-validation-source-repair-public-explanation-evidence.md", label: "Facility-validation source-repair public explanation evidence" },
   { key: "facility_validation_source_repair_correction_record_followup", file: "facility-validation-source-repair-correction-record-followup.md", label: "Facility-validation source-repair correction-record follow-up" },
   { key: "facility_validation_source_repair_clarification_packet", file: "facility-validation-source-repair-clarification-packet.md", label: "Facility-validation source-repair clarification packet" },
+  { key: "facility_validation_source_repair_registry_vintage_review", file: "facility-validation-source-repair-registry-vintage-review.md", label: "Facility-validation source-repair registry-vintage review" },
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },

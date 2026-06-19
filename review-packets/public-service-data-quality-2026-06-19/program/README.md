@@ -52,6 +52,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
 - `scripts/followup-bgd-facility-source-repair-correction-records.py` — checks targeted DGHS registry, Health Dashboard, and government health portal pages for correction records on the Durgapur and Narayanganj source-repair rows
 - `scripts/build-bgd-facility-source-repair-clarification-packet.py` — builds a no-contact source-owner and human-review question packet for the unresolved Durgapur and Narayanganj source-repair rows
+- `scripts/build-bgd-facility-source-repair-registry-vintage-review.py` — joins clarification rows to public profile update timestamps and correction-record status to block premature closure, reclassification, or map-absence language
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -113,6 +114,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json` — chart-ready correction-record counts, DGHS dashboard confirmations, and keep-open actions
 - `generated/psdq-bgd-facility-validation-source-repair-clarification-packet.csv` — no-contact clarification questions and human-review prompts for the unresolved Durgapur and Narayanganj rows
 - `generated/psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json` — chart-ready clarification-packet counts, issue classes, public links, and non-claim metadata
+- `generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review.csv` — profile-update timestamp and review-gate checklist for the unresolved Durgapur and Narayanganj rows
+- `generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json` — chart-ready registry-vintage counts, age range, keep-open gates, and non-claim metadata
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -350,6 +353,12 @@ Current audit result:
   cross-district Durgapur question. It makes 0 external contacts, closes 0
   rows, reclassifies 0 rows, and keeps all three rows out of map-absence or
   same-facility language until source-owner clarification or human validation.
+- **BGD source-repair registry-vintage review:** the no-network review joins
+  the clarification packet to public DGHS profile timestamps and the
+  correction-record follow-up. All 3 unresolved rows have profile update
+  timestamps that were 1 to 12 days old at public-explanation retrieval, but
+  0 public correction or coordinate-source records were found. The review
+  allows 0 closures, 0 same-facility reclassifications, and 0 map-absence uses.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -388,6 +397,7 @@ python public-service-data-quality/scripts/explain-bgd-facility-source-repair-of
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
 python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py
 python public-service-data-quality/scripts/build-bgd-facility-source-repair-clarification-packet.py
+python public-service-data-quality/scripts/build-bgd-facility-source-repair-registry-vintage-review.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

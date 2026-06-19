@@ -3849,6 +3849,11 @@
     gap: 1rem;
   }
 
+  .psdq-registry-vintage-section {
+    display: grid;
+    gap: 1rem;
+  }
+
   .psdq-sample-grid {
     display: grid;
     gap: 0.75rem;
@@ -3934,6 +3939,12 @@
   }
 
   .psdq-clarification-packet-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psdq-registry-vintage-grid {
     display: grid;
     gap: 0.85rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4724,6 +4735,184 @@
     line-height: 1.25;
     overflow-wrap: anywhere;
     padding: 0.3rem 0.35rem;
+  }
+
+  .psdq-registry-vintage-grid article {
+    min-width: 0;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 0.9rem;
+    background: #fff;
+  }
+
+  .psdq-registry-vintage-card-head {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-registry-vintage-card-head span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-registry-vintage-card-head strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-card-head em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-class {
+    width: fit-content;
+    max-width: 100%;
+    color: #fff;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .psdq-registry-vintage-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .psdq-registry-vintage-links a {
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .psdq-registry-vintage-route {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .psdq-registry-vintage-node {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .psdq-registry-vintage-node span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-registry-vintage-node strong {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-node em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-rail {
+    height: 0.55rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-registry-vintage-rail i {
+    display: block;
+    height: 100%;
+  }
+
+  .psdq-registry-vintage-metrics {
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psdq-registry-vintage-metrics span {
+    min-width: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+  }
+
+  .psdq-registry-vintage-metrics b {
+    display: block;
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-grid article > p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-gates {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .psdq-registry-vintage-gates div {
+    display: grid;
+    gap: 0.2rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .psdq-registry-vintage-gates span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-registry-vintage-gates p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-registry-vintage-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-registry-vintage-status span {
+    color: var(--ink);
+    background: #f5f7f9;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    padding: 0.3rem 0.4rem;
   }
 
   .psdq-sample-grid > div,
@@ -6507,6 +6696,7 @@
     .psdq-public-explanation-grid,
     .psdq-correction-followup-grid,
     .psdq-clarification-packet-grid,
+    .psdq-registry-vintage-grid,
     .psdq-inspection-focus-strip {
       grid-template-columns: minmax(0, 1fr);
     }

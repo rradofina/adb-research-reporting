@@ -1002,6 +1002,72 @@ interface PsdqClarificationPacketSummary {
   non_claim: string;
 }
 
+interface PsdqRegistryVintageReviewRow {
+  registry_vintage_review_id: string;
+  evidence_rank: number;
+  evidence_method: string;
+  status: string;
+  clarification_packet_id: string;
+  correction_followup_evidence_id: string;
+  public_explanation_evidence_id: string;
+  official_coordinate_evidence_id: string;
+  source_repair_evidence_id: string;
+  facility_name: string;
+  dghs_profile_id: string;
+  dghs_organization_code: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  linked_or_sibling_codes_csv: string;
+  linked_other_district_code: string;
+  linked_other_district_district: string;
+  linked_other_district_upazila: string;
+  linked_other_district_coordinate_distance_m: number | string;
+  clarification_issue_class: string;
+  clarification_issue_label: string;
+  profile_last_updated_at: string;
+  profile_update_age_days_at_public_explanation_retrieval: number | string;
+  registry_updated_at_from_cached_dghs_row: string;
+  profile_timestamp_found: boolean | string;
+  public_explanation_retrieved_at: string;
+  official_sources_checked: number | string;
+  official_sources_retrieved: number | string;
+  public_correction_or_coordinate_source_record_found: boolean | string;
+  external_contact_made: boolean | string;
+  row_closure_allowed_by_current_public_evidence: boolean | string;
+  same_facility_reclassification_allowed_by_current_public_evidence: boolean | string;
+  map_absence_language_allowed_by_current_public_evidence: boolean | string;
+  minimum_evidence_to_close: string;
+  minimum_evidence_to_reclassify: string;
+  map_absence_language_gate: string;
+  registry_vintage_review_action: string;
+  non_claim: string;
+}
+
+interface PsdqRegistryVintageReviewSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  registry_vintage_scope: {
+    targeted_rows: number;
+    rows_with_profile_update_timestamp: number;
+    rows_with_profile_update_age_14_days_or_less_at_public_explanation_retrieval: number;
+    public_correction_or_coordinate_source_records_found: number;
+    external_contacts_made: number;
+    rows_allowed_for_closure: number;
+    rows_allowed_for_same_facility_reclassification: number;
+    rows_allowed_for_map_absence_language: number;
+    min_profile_update_age_days_at_public_explanation_retrieval: number | null;
+    max_profile_update_age_days_at_public_explanation_retrieval: number | null;
+  };
+  clarification_issue_class_counts: PsdqCandidateResolutionCount[];
+  review_rows: PsdqRegistryVintageReviewRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -1164,6 +1230,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqCorrectionRecordFollowupSummary | null>(null);
   const [clarificationPacketSummary, setClarificationPacketSummary] =
     useState<PsdqClarificationPacketSummary | null>(null);
+  const [registryVintageReviewSummary, setRegistryVintageReviewSummary] =
+    useState<PsdqRegistryVintageReviewSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1250,6 +1318,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`source repair clarification packet HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair registry-vintage review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -1276,6 +1348,7 @@ export default function ShowcasePSDQ() {
         publicExplanationEvidencePayload,
         correctionRecordFollowupPayload,
         clarificationPacketPayload,
+        registryVintageReviewPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -1298,6 +1371,7 @@ export default function ShowcasePSDQ() {
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
         setCorrectionRecordFollowupSummary(correctionRecordFollowupPayload);
         setClarificationPacketSummary(clarificationPacketPayload);
+        setRegistryVintageReviewSummary(registryVintageReviewPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1437,6 +1511,10 @@ export default function ShowcasePSDQ() {
 
       {clarificationPacketSummary && (
         <PsdqClarificationPacketPanel summary={clarificationPacketSummary} />
+      )}
+
+      {registryVintageReviewSummary && (
+        <PsdqRegistryVintageReviewPanel summary={registryVintageReviewSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -5085,6 +5163,164 @@ function PsdqClarificationPacketPanel({ summary }: { summary: PsdqClarificationP
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet.csv" download>
           Download clarification packet CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqRegistryVintageReviewPanel({ summary }: { summary: PsdqRegistryVintageReviewSummary }) {
+  const maxAge = Math.max(
+    1,
+    ...summary.review_rows.map((row) => Number(row.profile_update_age_days_at_public_explanation_retrieval || 0))
+  );
+  const minAge = summary.registry_vintage_scope.min_profile_update_age_days_at_public_explanation_retrieval;
+  const maxAgeScope = summary.registry_vintage_scope.max_profile_update_age_days_at_public_explanation_retrieval;
+
+  return (
+    <section className="showcase-section psdq-registry-vintage-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Registry-vintage review</p>
+          <h2>Recent profile timestamps still do not close the coordinate question.</h2>
+          <p>
+            The review joins the clarification packet to public DGHS profile
+            update timestamps and correction-record status. The unresolved rows
+            look current enough to deserve review, but profile recency is not a
+            coordinate-source record or human validation.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Targeted rows</span>
+            <strong>{formatNumber(summary.registry_vintage_scope.targeted_rows)}</strong>
+          </div>
+          <div>
+            <span>Profile timestamps</span>
+            <strong>{formatNumber(summary.registry_vintage_scope.rows_with_profile_update_timestamp)}</strong>
+          </div>
+          <div>
+            <span>14 days or less</span>
+            <strong>{formatNumber(summary.registry_vintage_scope.rows_with_profile_update_age_14_days_or_less_at_public_explanation_retrieval)}</strong>
+          </div>
+          <div>
+            <span>Age range at retrieval</span>
+            <strong>{minAge ?? "n/a"}-{maxAgeScope ?? "n/a"} days</strong>
+          </div>
+          <div>
+            <span>Correction records found</span>
+            <strong>{formatNumber(summary.registry_vintage_scope.public_correction_or_coordinate_source_records_found)}</strong>
+          </div>
+          <div>
+            <span>Closure / map absence allowed</span>
+            <strong>
+              {formatNumber(summary.registry_vintage_scope.rows_allowed_for_closure)} /{" "}
+              {formatNumber(summary.registry_vintage_scope.rows_allowed_for_map_absence_language)}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-registry-vintage-grid">
+        {summary.review_rows.map((row) => {
+          const color = clarificationPacketColor(row.clarification_issue_class);
+          const age = Number(row.profile_update_age_days_at_public_explanation_retrieval || 0);
+          const ageWidth = Math.max(8, Math.min(100, (age / maxAge) * 100));
+          const linkedCodes = row.linked_or_sibling_codes_csv.split(",").filter(Boolean);
+          const linkedOrSibling = row.linked_other_district_code || linkedCodes[0] || "";
+          return (
+            <article key={row.registry_vintage_review_id} style={{ borderColor: color }}>
+              <div className="psdq-registry-vintage-card-head">
+                <span>{row.registry_vintage_review_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>DGHS code {row.dghs_organization_code} / {row.division_name} / {row.district_name}</em>
+              </div>
+              <div className="psdq-registry-vintage-class" style={{ background: color }}>
+                {row.clarification_issue_label}
+              </div>
+              <div className="psdq-registry-vintage-links">
+                <a href={dghsProfileUrl(row.dghs_profile_id)} target="_blank" rel="noreferrer">
+                  DGHS profile
+                </a>
+                <a href={dghsDashboardDetailUrl(row.dghs_organization_code)} target="_blank" rel="noreferrer">
+                  Target dashboard
+                </a>
+                {linkedOrSibling && (
+                  <a href={dghsDashboardDetailUrl(linkedOrSibling)} target="_blank" rel="noreferrer">
+                    Linked dashboard
+                  </a>
+                )}
+              </div>
+              <div className="psdq-registry-vintage-route">
+                <div className="psdq-registry-vintage-node">
+                  <span>Profile last updated</span>
+                  <strong>{row.profile_last_updated_at || "not parsed"}</strong>
+                  <em>{formatNumber(age)} days old at public-explanation retrieval</em>
+                </div>
+                <div className="psdq-registry-vintage-rail" aria-label="Profile update age relative to oldest targeted row">
+                  <i style={{ width: `${ageWidth}%`, background: color }} />
+                </div>
+                <div className="psdq-registry-vintage-node">
+                  <span>{row.linked_other_district_code ? "Linked official code" : "Sibling official code"}</span>
+                  <strong>
+                    {row.linked_other_district_code && row.linked_other_district_coordinate_distance_m
+                      ? `${linkedOrSibling} / ${formatNumber(Number(row.linked_other_district_coordinate_distance_m))} m`
+                      : linkedOrSibling || "No linked code"}
+                  </strong>
+                  <em>
+                    {row.linked_other_district_code
+                      ? `${row.linked_other_district_district}, ${row.linked_other_district_upazila}`
+                      : "Shared official-coordinate question"}
+                  </em>
+                </div>
+              </div>
+              <div className="psdq-registry-vintage-metrics">
+                <span><b>{asBoolean(row.public_correction_or_coordinate_source_record_found) ? "yes" : "no"}</b> correction record</span>
+                <span><b>{asBoolean(row.row_closure_allowed_by_current_public_evidence) ? "yes" : "no"}</b> closure allowed</span>
+                <span><b>{asBoolean(row.map_absence_language_allowed_by_current_public_evidence) ? "yes" : "no"}</b> map absence allowed</span>
+              </div>
+              <p>{row.registry_vintage_review_action}</p>
+              <div className="psdq-registry-vintage-gates">
+                <div>
+                  <span>Minimum evidence to close</span>
+                  <p>{row.minimum_evidence_to_close}</p>
+                </div>
+                <div>
+                  <span>Minimum evidence to reclassify</span>
+                  <p>{row.minimum_evidence_to_reclassify}</p>
+                </div>
+                <div>
+                  <span>Map-absence gate</span>
+                  <p>{row.map_absence_language_gate}</p>
+                </div>
+              </div>
+              <div className="psdq-registry-vintage-status">
+                <span>timestamp is context</span>
+                <span>0 closed</span>
+                <span>0 map-absence uses</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the registry-vintage review</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-source-repair-registry-vintage-review.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-registry-vintage-review.md" download>
+          Download registry-vintage review note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json" download>
+          Download registry-vintage summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review.csv" download>
+          Download registry-vintage CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

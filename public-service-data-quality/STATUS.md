@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, and 3-row no-contact clarification packet added; owner-only source contact or human validation remains the substantive source-repair wall; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair wall; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -28,12 +28,44 @@ triage, row-evidence notes, targeted public-map inspection queue, first-row
 public-source confirmation, 40-row targeted public-source confirmation,
 public-source decision ledger, source-repair public evidence, official-coordinate
 evidence, public-explanation search, correction-record follow-up,
-clarification packet, and caveats, make the source upgrade clear in the public
-surface, and preserve the existing PR maturity label without implying
-human-final review.
+clarification packet, registry-vintage review, and caveats, make the source
+upgrade clear in the public surface, and preserve the existing PR maturity
+label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh source-repair registry-vintage review
+  for the unresolved PSDQ facility-validation source-repair queue. New
+  no-network script
+  `scripts/build-bgd-facility-source-repair-registry-vintage-review.py` reads
+  the clarification packet, public-explanation evidence CSV, and
+  correction-record follow-up CSV, then writes
+  `generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review.csv`
+  and
+  `generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json`.
+  The review covers the same 3 unresolved rows; all 3 have DGHS profile update
+  timestamps; those timestamps were 1 to 12 days old at public-explanation
+  retrieval; 0 public correction or coordinate-source records were found; and
+  0 rows are allowed for closure, same-facility reclassification, or
+  map-absence language. Added
+  `facility-validation-source-repair-registry-vintage-review.md`, wired
+  evidence sync and review-packet inclusion, updated README/REPRODUCE/L3 notes,
+  hook bank, showcase quality audit, showcase registry metadata, and added the
+  registry-vintage panel to `/showcase/psdq-source-disagreement`. This is a
+  no-contact review packet, not source-owner response, human validation, ground
+  truth, coordinate correction, row closure, same-facility reclassification, a
+  maturity promotion, or a human-final upgrade. Verification passed:
+  registry-vintage script rerun, program-script `py_compile`, evidence and
+  reference sync, production site build, six deterministic gates plus
+  `git diff --check`, and agent-browser desktop/mobile QA at 1440x1100 and
+  390x900 with 3 rendered cards, no page-level horizontal overflow, no page
+  errors, Durgapur and linked code `10000470` visible, the 1-12 day age range
+  visible, and only existing Vite / React Router development warnings.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-registry-vintage-review-desktop.png`,
+  `reporting-site/qa/showcase-psdq-registry-vintage-review-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-registry-vintage-review-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-registry-vintage-review-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh source-repair clarification packet for
   the unresolved PSDQ facility-validation source-repair queue. New no-network
   script
@@ -594,10 +626,11 @@ human-final review.
 
 Current loop:
 
-1. Prepare an internal review checklist or registry-vintage note for the
-   unresolved Durgapur same-name cross-district coordinate conflict and the two
-   shared-coordinate Narayanganj rows, unless the owner takes the owner-only
-   source-contact or human-validation path.
+1. Owner-only source-owner contact or human location validation is now the
+   substantive source-repair wall for the unresolved Durgapur same-name
+   cross-district coordinate conflict and the two shared-coordinate
+   Narayanganj rows. AI must not contact DGHS, any facility, or any external
+   reviewer.
 2. Keep source-repair-first rows before any map-absence or same-facility
    language because coordinate/source repair changes the interpretation.
 3. Keep zero-OSM upazila observability rows separate from row-level absence

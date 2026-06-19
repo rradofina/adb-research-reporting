@@ -553,6 +553,33 @@ the Durgapur row as a same-name cross-district source-owner question. It makes
 the next reviewer action explicit without using the rows as map-absence cases
 or same-facility matches.
 
+## Source-Repair Registry-Vintage Review Addendum
+
+The registry-vintage review now lives in
+`facility-validation-source-repair-registry-vintage-review.md`. The script
+`scripts/build-bgd-facility-source-repair-registry-vintage-review.py` is a
+no-network pass over the clarification packet, public-explanation evidence, and
+correction-record follow-up. It asks whether recent DGHS profile update
+timestamps are enough to close or reclassify the unresolved rows.
+
+The pass covers 3 unresolved rows:
+
+| Registry-vintage review signal | Rows or days |
+|---|---:|
+| Targeted unresolved rows | 3 |
+| Rows with profile update timestamp | 3 |
+| Rows with profile timestamp 14 days old or less at retrieval | 3 |
+| Public correction or coordinate-source records found | 0 |
+| Rows allowed for closure | 0 |
+| Rows allowed for same-facility reclassification | 0 |
+| Rows allowed for map-absence language | 0 |
+| Profile-update age range at public-explanation retrieval | 1-12 days |
+
+The review keeps the interpretation narrow. Recent profile activity makes the
+rows worth source review, but it does not prove the coordinate source or
+correction history. The three rows remain blocked from map-absence and
+same-facility language until source-owner clarification or human validation.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -589,6 +616,7 @@ python public-service-data-quality/scripts/explain-bgd-facility-source-repair-of
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
 python public-service-data-quality/scripts/followup-bgd-facility-source-repair-correction-records.py
 python public-service-data-quality/scripts/build-bgd-facility-source-repair-clarification-packet.py
+python public-service-data-quality/scripts/build-bgd-facility-source-repair-registry-vintage-review.py
 ```
 
 Outputs:
@@ -632,13 +660,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-correction-record-followup-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-clarification-packet-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json`
 
 ## Next Statistical Upgrade
 
-The next AI-doable upgrade is an internal review checklist or registry-vintage
-note that keeps these three rows separate from map-absence language. The next
-substantive evidence upgrade is owner-only source-owner contact or human
-location validation. Close or reclassify a row only if a public official
+The next substantive evidence upgrade is owner-only source-owner contact or
+human location validation. Close or reclassify a row only if a public official
 source, source-owner response, or human validation explains the coordinate,
 source correction, duplicate record, or facility identity; otherwise keep it
 open with the specific unresolved source question.

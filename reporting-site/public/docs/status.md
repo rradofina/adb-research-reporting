@@ -273,6 +273,55 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (climate-health labor denominator and heat-source wall):** In
+  the owner-directed 20-report showcase loop, upgraded
+  `/showcase/climate-health-measurement-repair` from a cap-saturation-only
+  audit into a cap, observed-denominator, and heat-source readiness wall.
+  Added
+  `climate-health-workdays/scripts/audit-labor-heat-source-readiness.py`,
+  cache regeneration notes under `climate-health-workdays/.cache/README.md`,
+  generated `climate-health-workdays-denominator-source-audit.json`,
+  `climate-health-labor-heat-source-readiness.json`, observed-denominator and
+  source-readiness CSV companions, and registered
+  `climate_health_labor_heat_source_readiness_public_metadata` in
+  `versions.json`. The audit fetches public WDI employment-to-population 15+,
+  total population, and ages 0-14 share, joins observed denominator fields for
+  34/34 rankable DMCs, cuts India from 798.6M total-population outdoor
+  exposure to 320.67M observed employed-15+ outdoor workers, cuts Afghanistan
+  from 26.0M to 4.82M, and verifies 34/34 baseline plus 34/34 future CCKP
+  national tasmax rows. It keeps `analysis_ready_heat_workday_loss: false`: no
+  gridded heat or WBGT layer, worker-location surface, sectoral work-hours
+  schedule, observed lost-workday outcome, or causal heat-health estimate is
+  produced. Verification in this pass reran the climate-health scripts, synced
+  public artifacts, built the reporting site, ran the deterministic gates and
+  showcase verifier, and browser-checked desktop plus 390px mobile with no page
+  errors, failed requests, or page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-climate-labor-source-desktop.png` and
+  `reporting-site/qa/showcase-climate-labor-source-mobile.png`.
+- **2026-06-20 (flood access source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/flood-component-decomposition` from a rank-flip-only audit into a
+  decomposition plus public access source-readiness wall. Added
+  `flood-market-access/scripts/audit-access-source-readiness.py`, cache
+  regeneration notes under `flood-market-access/.cache/README.md`, generated
+  `flood-decomposition-access-source-audit.json`,
+  `flood-access-source-readiness.json`, and source/link CSV companions, and
+  registered `flood_access_source_readiness_public_metadata` in
+  `versions.json`. The audit verifies 109 Geofabrik `.osm.pbf` links including
+  65 latest extract links, one HDX/WFP food-prices CSV resource whose sampled
+  header has no coordinate fields, 5,221 WorldPop dataset rows including 861
+  panel rows across all 41 flood-panel economies, and public Global Flood
+  Database / NASA flood-product metadata including 913 GFD Earth Engine events
+  for 2000-2018. It keeps `analysis_ready_network_join: false`: no road
+  extract is downloaded, no market points are geocoded, no population raster is
+  downloaded, no observed flood footprint is exported, no road edges are cut,
+  no travel time is routed, and no population-weighted access-loss estimate is
+  produced. Verification in this pass reran the flood scripts, synced public
+  artifacts, built the reporting site, ran the deterministic gates and
+  showcase verifier, and browser-checked desktop plus 390px mobile with no page
+  errors, failed requests, or page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-flood-access-source-desktop.png` and
+  `reporting-site/qa/showcase-flood-access-source-mobile.png`.
 - **2026-06-20 (coastal spatial source-readiness wall):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/coastal-population-denominator` from a no-population rank bridge

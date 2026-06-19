@@ -3,20 +3,26 @@
 `attestation_chain: ai-first`
 
 This answers the keystone in `deep-questions.md` §1.1 (cap-saturation) and
-§3.2 (wrong denominator) with two linked recomputations. Every
-WDI-derived number below is produced by
+§3.2 (wrong denominator) with two linked recomputations plus one source
+readiness pass. The cap-saturation numbers are produced by
 `scripts/deepen-cap-and-laborforce.py` from the committed World Development
-Indicators cache (CC BY 4.0) — the same source the headline uses,
-re-read from the program cache and the committed
-`generated/climate-health-workdays-adb-panel.json`. No new data, no
-network, no AI-supplied figures. Per `CONSTITUTION.md` §6.4 the index is a
+Indicators cache (CC BY 4.0). The denominator repair is produced by
+`scripts/audit-labor-heat-source-readiness.py`, which fetches public WDI
+employment-to-population, total population, and age-share fields, then checks
+the public CCKP national tasmax route. No empirical number below comes from
+model memory. Per `CONSTITUTION.md` §6.4 the index is a
 triage instrument, not a country ranking; per §13.3 this is a
 measurement-and-construct gap, not a country-deficiency ranking — the
 top-of-table DMCs are *less observed* (national-mean, partly interpolated
 PM2.5) and *more structurally exposed* (high outdoor-labor share), not
 "worse."
 
-Artifact: `generated/climate-health-workdays-deepening.json`.
+Artifacts:
+
+- `generated/climate-health-workdays-deepening.json`
+- `generated/climate-health-workdays-denominator-source-audit.json`
+- `generated/climate-health-labor-denominator-observed.csv`
+- `generated/climate-health-labor-heat-source-readiness-sources.csv`
 
 ## The question
 
@@ -29,8 +35,8 @@ question: is the top-3's stability an artifact of the ramp ceiling erasing
 the very variable the index claims to measure — so the index is a
 labor-structure ranking wearing an air-quality costume? And separately:
 the `exposed_outdoor_millions` column multiplies a *share of employment* by
-*total population* — does correcting it to a labor-force base deflate
-India's 798.6M?
+*total population* — does correcting it to an employed-15+ base deflate the
+large exposed-worker counts?
 
 ## Recompute (a) — cap-saturation
 
@@ -91,40 +97,41 @@ then set *only* by outdoor-labor share. Air this high paired with a rank
 this low means the ranking is being driven by labor structure, not air
 quality, even before the perturbation that the pre-registration flags.
 
-## Recompute (b) — the labor-force denominator
+## Recompute (b) — the observed labor denominator
 
 The committed panel computes
 `exposed_outdoor_millions = outdoor_labor_share/100 × TOTAL population`. But
 the WDI employment-share series are "% of total **employment**," so the
-correct base is the **employed labor force**
-(`total_population × employment-to-population ratio`), not headcount.
-Multiplying a share-of-employment by total population counts infants,
-schoolchildren, and retirees as exposed outdoor workers.
+correct base is employed people, not headcount. The repair uses three public
+WDI fields: employment-to-population ratio, 15+ (`SL.EMP.TOTL.SP.ZS`, latest
+2025), total population (`SP.POP.TOTL`, latest 2024), and population ages
+0–14 share (`SP.POP.0014.TO.ZS`, latest 2024). The script derives
+population 15+, applies the 15+ employment-to-population ratio, then applies
+the committed outdoor employment share.
 
-| ISO | outdoor % | pop (M) | published (× total pop) | e/p = 0.40 | e/p = 0.50 | e/p = 0.60 |
-|---|---|---|---|---|---|---|
-| AFG | 61.0 | 42.6 | 26.0 | 10.4 | 13.0 | 15.6 |
-| IND | 55.0 | 1450.9 | 798.6 | 319.2 | 399.0 | 478.8 |
-| BGD | 53.7 | 173.6 | 93.2 | 37.3 | 46.6 | 55.9 |
+| ISO | outdoor % | pop (M) | ages 0–14 % | emp/pop 15+ % | published (× total pop, M) | observed employed 15+ (M) | observed outdoor workers (M) | published / observed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| AFG | 61.0 | 42.6 | 42.89 | 32.46 | 26.0 | 7.91 | 4.82 | 5.39× |
+| IND | 55.0 | 1450.9 | 24.62 | 53.31 | 798.6 | 583.03 | 320.67 | 2.49× |
+| BGD | 53.7 | 173.6 | 27.99 | 56.57 | 93.2 | 70.71 | 37.97 | 2.45× |
 
-India's published **798.6M shrinks to 319–479M** once a labor-force base
-replaces total population — the published figure is **1.67×–2.5×** the
-labor-force count, because children and retirees sit inside the
-total-population base. The overcount is not uniform: it scales with how far
-each DMC's employment-to-population ratio sits below 1, so the denominator
-error redistributes the absolute exposed-worker burden across the top-3,
-not just rescales it.
+The old India line is the clearest scale warning: **798.6M** total-population
+outdoor exposure becomes **320.67M** observed employed-15+ outdoor workers
+under the public WDI denominator repair. Afghanistan is more distorted:
+26.0M becomes **4.82M**, a **5.39×** total-population overstatement, because
+the 15+ employment-to-population ratio is low and the child share is high.
+Across all 34 rankable rows, the total-population formula is **1.73×–5.39×**
+the observed employed-15+ outdoor count.
 
-**Wall (honest bound).** The employment-to-population ratio
-(WDI `SL.EMP.TOTL.SP.ZS`) is **not on disk** in this program's `.cache`
-(only `SL.AGR.EMPL.ZS`, `SL.IND.EMPL.ZS`, `EN.ATM.PM25.MC.M3`,
-`SP.URB.TOTL.IN.ZS`, `SP.POP.TOTL` are cached), and the network is blocked,
-so a per-DMC observed ratio cannot be retrieved here. The 0.40 / 0.50 / 0.60
-values are **labelled script assumptions, not WDI data** — they bound the
-correction rather than assert it. Only the outdoor share and total
-population in the table are WDI-on-disk numbers. Replacing the assumed band
-with each DMC's actual WDI employment-to-population ratio is a one-indicator
-fetch and is the obvious next step once the network is available.
+## Heat-source wall
+
+The new audit also checks whether a heat source is public before the page
+continues using heat-workday language. CCKP national tasmax values are
+reachable for **34/34** rankable DMCs in both the 1995–2014 historical period
+and the 2040–2059 SSP2-4.5 period; the parsed national tasmax delta spans
+**0.78°C–1.89°C**. That is only source readiness. The artifact still has
+**no** gridded heat or WBGT layer, no worker-location surface, no sectoral
+work-hours schedule, and no observed lost-workday outcome.
 
 ## The finding
 
@@ -139,10 +146,10 @@ share is low. The defensible contribution is therefore the set-stability
 claim *as a labor-structure signal cross-screened by an air-pressure floor*,
 not a statement that AFG/IND/BGD have the worst air. (b) The
 `exposed_outdoor_millions` column overstates exposed workers by counting the
-whole population; on a labor-force base India's figure is roughly 1.7×–2.5×
-too high. Neither finding overturns the screen — both sharpen what it is
-honestly measuring and confirm the "triage / hypothesis-stage" label the
-program was born with.
+whole population; the observed WDI repair cuts India from 798.6M to
+320.67M and Afghanistan from 26.0M to 4.82M. Neither finding overturns the
+screen — both sharpen what it is honestly measuring and confirm the
+"triage / hypothesis-stage" label the program was born with.
 
 ## What this does and does not settle
 
@@ -173,12 +180,15 @@ program was born with.
     cap-saturation finding actually *reduces* the stakes of that input,
     because once the labor axis governs the order, the exact AFG PM2.5
     value matters less to the ranking than its labor share does.
-  - **The denominator wall** above: the corrected worker count is bounded by
-    an assumed employment-to-population band, not an observed one, until
-    `SL.EMP.TOTL.SP.ZS` is fetched.
+  - **The remaining heat wall** above: public CCKP tasmax is now visible,
+    but national climate means are not worker-level exposure. The analysis
+    still needs gridded heat or WBGT, worker-location or sectoral work-hours
+    denominators, and observed lost-workday outcomes before any heat-health
+    burden interpretation.
 
 ## Reproduce
 
 ```bash
 python climate-health-workdays/scripts/deepen-cap-and-laborforce.py
+python climate-health-workdays/scripts/audit-labor-heat-source-readiness.py
 ```

@@ -1,22 +1,22 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T20:10:20.444Z",
+  "generated_at": "2026-06-19T20:27:54.737Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 328,
-    "browserChecks": 20
+    "screenshots": 334,
+    "browserChecks": 21
   },
   "summary": {
     "reports_total": 20,
     "verified_reports": 20,
     "audit_reports": 12,
-    "audit_csv_declared": 9,
+    "audit_csv_declared": 10,
     "evidence_paths_present": 20,
     "routes_covered": 20,
     "audit_data_present": 12,
-    "audit_csv_present": 9,
+    "audit_csv_present": 10,
     "depth_records_present": 20,
     "quality_records_present": 20,
     "readiness_counts": {
@@ -335,19 +335,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "climate-health-workdays/generated/climate-health-workdays-deepening.json",
+      "evidencePath": "climate-health-workdays/generated/climate-health-workdays-denominator-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/climate-health-workdays/generated/climate-health-workdays-deepening.json",
+      "auditDataUrl": "/programs/climate-health-workdays/generated/climate-health-workdays-denominator-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": null,
-      "auditCsvExists": null,
+      "auditCsvUrl": "/programs/climate-health-workdays/generated/climate-health-labor-denominator-observed.csv",
+      "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart."
+      "nextUpgrade": "Build one DMC heat-work-hours pilot using gridded heat, sectoral work schedules, and a defensible worker denominator; keep the current page as a measurement repair until then."
     },
     {
       "id": 15,

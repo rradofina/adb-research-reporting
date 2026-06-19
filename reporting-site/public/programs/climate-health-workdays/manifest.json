@@ -1,7 +1,7 @@
 {
   "program": "climate-health-workdays",
   "permanent_url": "/program/climate-health-workdays/evidence",
-  "generated_at": "2026-06-19T20:05:34.663Z",
+  "generated_at": "2026-06-19T20:24:51.702Z",
   "hero": {
     "png": "generated/charts/climate-health-workdays-thumbnail.png",
     "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
@@ -144,6 +144,24 @@
       "sha256": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
     },
     {
+      "file": "generated/climate-health-labor-denominator-observed.csv",
+      "size": 18391,
+      "size_human": "18.0 KB",
+      "sha256": "b6e3415023c617463918a7a1e72a0a1e74c43b49c2db703e9ef19c1ff635a09d"
+    },
+    {
+      "file": "generated/climate-health-labor-heat-source-readiness-sources.csv",
+      "size": 1088,
+      "size_human": "1.1 KB",
+      "sha256": "f34e8d83a892c273341605058cc1e592008222a7bd31d54226e32811a4a4a589"
+    },
+    {
+      "file": "generated/climate-health-labor-heat-source-readiness.json",
+      "size": 158160,
+      "size_human": "154.5 KB",
+      "sha256": "3b1757b44b86f40e2f87de6a62502a924caf33275cc369df82de3443518ea281"
+    },
+    {
       "file": "generated/climate-health-workdays-adb-panel.csv",
       "size": 4515,
       "size_human": "4.4 KB",
@@ -159,7 +177,13 @@
       "file": "generated/climate-health-workdays-deepening.json",
       "size": 17199,
       "size_human": "16.8 KB",
-      "sha256": "028abb69f08a8708de2aa164739ce1c1bcabdb07ef4f6922dd160ac0a0503b1b"
+      "sha256": "54c4d634ccf2581dfef42cdedfd8ec53a4aea23c545413d188253d744221d40b"
+    },
+    {
+      "file": "generated/climate-health-workdays-denominator-source-audit.json",
+      "size": 241102,
+      "size_human": "235.5 KB",
+      "sha256": "aef4f94129d5d463d662a74a1c3b7fd3888fda32eb0f1a7ef4f966d1bd5de2dd"
     }
   ],
   "articles": [

@@ -735,6 +735,13 @@ function buildFloodModel(report: ShowcaseReport, data: JsonValue): AuditModel {
 
 function buildClimateHealthModel(report: ShowcaseReport, data: JsonValue): AuditModel {
   const cap = data.cap_saturation || {};
+  const sourceAudit = data.labor_heat_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.labor_heat_source_readiness);
+  const top3Observed = safeRows(sourceAudit.top3_observed_denominator_rows);
+  const top3ByIso = rowByIso(top3Observed);
+  const india = top3ByIso.get("IND") || {};
+  const afg = top3ByIso.get("AFG") || {};
   const rows = safeRows(cap.rows).slice(0, 9);
   const laneRows = rows.map((row) => ({
     key: String(row.iso3),
@@ -745,25 +752,96 @@ function buildClimateHealthModel(report: ShowcaseReport, data: JsonValue): Audit
     note: `PM2.5 ${formatFlexible(row.pm25_ugm3, 1)}; outdoor labor ${formatPct(row.outdoor_labor_share_pct, 1)}`,
     status: numberValue(row.pressure_cap22_5) >= 1 ? "flag" : "survived",
   })) as LaneRow[];
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Source-audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "Observed WDI denominator", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  if (sourceAudit.sources?.world_bank_cckp_api_base) {
+    sourceTrail.push({ label: "CCKP tasmax API", value: String(sourceAudit.sources.world_bank_cckp_api_base) });
+  }
+  const componentCards = hasSourceAudit ? [
+    {
+      key: "wdi-denominator",
+      value: `${formatNumber(sourceSummary.wdi_denominator_rows_joined)}/${formatNumber(sourceSummary.rankable_dmcs)}`,
+      label: "Observed WDI denominator joined",
+      note: "Employment-to-population 15+, total population, and ages 0-14 share derive employed 15+ persons before applying outdoor employment share.",
+      status: "survived",
+    },
+    {
+      key: "india-denominator",
+      value: `${formatNumber(india.observed_exposed_outdoor_worker_millions, 2)}M`,
+      label: "India observed outdoor workers",
+      note: `The old total-population formula is ${formatNumber(india.published_exposed_outdoor_millions_x_total_pop, 1)}M, or ${formatFlexible(india.published_to_observed_worker_ratio, 2)}x the observed employed-15+ count.`,
+      status: "flag",
+    },
+    {
+      key: "afg-denominator",
+      value: `${formatFlexible(afg.published_to_observed_worker_ratio, 2)}x`,
+      label: "AFG total-population overstatement",
+      note: `${formatNumber(afg.published_exposed_outdoor_millions_x_total_pop, 1)}M becomes ${formatNumber(afg.observed_exposed_outdoor_worker_millions, 2)}M after WDI 15+ employment and age-share denominators.`,
+      status: "flag",
+    },
+    {
+      key: "cckp-source",
+      value: `${formatNumber(sourceSummary.cckp_baseline_and_future_rows)}/${formatNumber(sourceSummary.rankable_dmcs)}`,
+      label: "CCKP tasmax rows visible",
+      note: `National tasmax source rows parse for baseline and SSP2-4.5 future periods; delta range ${formatFlexible(sourceSummary.cckp_tasmax_delta_min_c, 2)}-${formatFlexible(sourceSummary.cckp_tasmax_delta_max_c, 2)} C.`,
+      status: "survived",
+    },
+    {
+      key: "worker-heat-join",
+      value: "0",
+      label: "Worker heat-loss joins",
+      note: "No gridded heat/WBGT, worker locations, work-hour schedule, or observed lost-workday outcome is joined.",
+      status: "dropped",
+    },
+  ] as ComponentCard[] : undefined;
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: formatNumber(cap.n_pressure_saturated_cap22_5), label: "saturated at tighter cap" },
+      { value: `${formatNumber(sourceSummary.wdi_denominator_rows_joined)}/${formatNumber(sourceSummary.rankable_dmcs)}`, label: "observed WDI denominators" },
+      { value: `${formatFlexible(sourceSummary.india_published_to_observed_worker_ratio, 2)}x`, label: "India total-pop overstatement" },
+      { value: String(sourceSummary.analysis_ready_heat_workday_loss), label: "analysis-ready heat loss" },
+    ] : [
       { value: formatNumber(cap.n_pressure_saturated_cap22_5), label: "saturated at tighter cap" },
       { value: formatFlexible(cap.spearman_index_cap22_5_vs_labor_share, 3), label: "rank correlation with labor share" },
       { value: formatNumber(cap.rankable_dmcs), label: "rankable DMCs" },
     ],
-    chartTitle: "Tighten the cap and the pressure index drifts toward labor share.",
-    chartDeck: "Each lane shows the same economy under baseline PM2.5 cap, tighter cap, and outdoor-labor-share rank.",
+    chartTitle: hasSourceAudit
+      ? "The cap problem now sits beside the denominator repair and the heat-source wall."
+      : "Tighten the cap and the pressure index drifts toward labor share.",
+    chartDeck: hasSourceAudit
+      ? "Lanes show how rank moves as the PM2.5 cap tightens. Cards show the observed WDI worker denominator and which heat-workday joins still do not exist."
+      : "Each lane shows the same economy under baseline PM2.5 cap, tighter cap, and outdoor-labor-share rank.",
     laneRows,
+    componentCards,
     readouts: [
       { label: "Baseline versus tight-cap Spearman", value: formatFlexible(cap.spearman_index_cap45_vs_cap22_5, 3) },
       { label: "Baseline versus labor-share Spearman", value: formatFlexible(cap.spearman_index_cap45_vs_labor_share, 3) },
-      { label: "Denominator wall", value: data.denominator_correction?.wall_note || "labor-force denominator correction documented in artifact" },
+      {
+        label: "Denominator wall",
+        value: data.denominator_correction_observed?.wall_note || data.denominator_correction?.wall_note || "labor-force denominator correction documented in artifact",
+      },
       { label: "Parameter pair", value: `baseline cap ${formatFlexible(data.params?.baseline_cap)}; tight cap ${formatFlexible(data.params?.saturating_cap)}` },
+      ...(hasSourceAudit ? [
+        { label: "WDI denominator vintages", value: `emp/pop ${sourceSummary.wdi_employment_to_population_latest_year_span}; population ${sourceSummary.wdi_population_latest_year_span}; ages 0-14 ${sourceSummary.wdi_pop_0_14_latest_year_span}` },
+        { label: "Top-3 observed denominator joined", value: `${formatNumber(sourceSummary.top3_denominator_rows_joined)}/3` },
+        { label: "India observed outdoor worker count", value: `${formatNumber(sourceSummary.india_observed_exposed_outdoor_worker_millions, 2)}M` },
+        { label: "CCKP baseline/future rows", value: `${formatNumber(sourceSummary.cckp_baseline_tasmax_rows)}/${formatNumber(sourceSummary.cckp_future_tasmax_rows)}` },
+        { label: "Worker heat-exposure join", value: sourceSummary.worker_heat_exposure_join_built ? "joined" : "not joined" },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.climate_health_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }

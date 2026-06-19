@@ -47,7 +47,7 @@ candidates before adding new surfaces.
 | 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition now sits beside a public NASA CMR Black Marble source-readiness wall, so the owner-gated NTL join is explicit rather than hand-waved | Needs authenticated raster access, population-weighted zonal statistics, subnational MPI crosswalks, flare masking, and coauthor attestation before any NTL x MPI claim | Keep as methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared |
 | 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge now sits beside a GHSL/NASADEM/Aqueduct source-readiness wall, so the proxy cannot overclaim storm-surge exposure | Needs raster download, return-period choice, low-elevation derivation, settlement-footprint overlay, and exposed-population denominator | Choose one-coast pilot and join settlement, elevation, population, informality, and coastal-hazard cells |
 | 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size, and the new Geofabrik/WFP/WorldPop/GFD/NASA source wall keeps every routed-access join flag false | Needs downloaded and routed road graph, geocoded markets/services, population raster weights, observed flood footprint, cut road edges, and travel-time recomputation | Build one-DMC flooded-network pilot from the visible source stack or demote to methods caution |
-| 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking | Needs labor-force denominator and heat exposure evidence | Repair denominator and lead with cap sensitivity |
+| 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking, the observed WDI denominator repair cuts India from 798.6M to 320.67M outdoor workers, and the CCKP source wall keeps worker heat joins at zero | Needs gridded heat or WBGT, worker-location or hours-worked denominators, and observed lost-workday outcomes before workday-loss interpretation | Build one-DMC heat-work-hours pilot; keep this page as measurement repair until the heat/work-hours/outcome object exists |
 | 15 | Food-price coverage trap | Evidence audit | Coverage funnel foregrounds missing CPI/import indicator legs | Needs household or market price exposure evidence | Join a market-price or household-expenditure source |
 | 16 | Social-protection dropped leg | Evidence audit | Missing-leg ledger shows why some economies disappear from the headline | Needs payment-channel or beneficiary delivery data | Rebuild as coverage-versus-payment-rail observability |
 | 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards expose above-100-percent artifacts | Needs total-renewable-water, basin, and crop-area data | Rebuild with AQUASTAT/FAOSTAT or demote to denominator caution |
@@ -153,6 +153,19 @@ candidates before adding new surfaces.
   extract is downloaded, no market points are geocoded, no population raster is
   downloaded, no observed flood footprint is exported, no road edges are cut,
   no travel time is routed, and no population-weighted access-loss estimate is
+  produced.
+- Climate-health report #14 received an observed labor-denominator and
+  heat-source readiness wall on 2026-06-20. New script
+  `climate-health-workdays/scripts/audit-labor-heat-source-readiness.py`
+  queries public WDI employment-to-population 15+, total population, and ages
+  0-14 share, then checks CCKP national tasmax for the 1995-2014 historical
+  and 2040-2059 SSP2-4.5 periods. The audit joins observed denominator fields
+  for 34/34 rankable DMCs, cuts India from 798.6M total-population outdoor
+  exposure to 320.67M observed employed-15+ outdoor workers, cuts Afghanistan
+  from 26.0M to 4.82M, and parses CCKP baseline/future tasmax rows for 34/34
+  rankable DMCs. It still records `analysis_ready_heat_workday_loss: false`:
+  no gridded heat or WBGT layer, worker-location surface, sectoral work-hours
+  schedule, observed lost-workday outcome, or causal heat-health estimate is
   produced.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`

@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:28:40.342Z",
+  "generated_at": "2026-06-19T19:37:58.114Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 310,
-    "browserChecks": 17
+    "screenshots": 316,
+    "browserChecks": 18
   },
   "summary": {
     "reports_total": 20,
@@ -266,19 +266,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "owner-gated",
       "readinessLabel": "Owner-gated",
-      "evidencePath": "mpi-nighttime-lights/generated/mpi-dimension-decomposition.json",
+      "evidencePath": "mpi-nighttime-lights/generated/mpi-nightlight-blindspot-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/mpi-nighttime-lights/generated/mpi-dimension-decomposition.json",
+      "auditDataUrl": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-blindspot-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/mpi-nighttime-lights/generated/mpi-dimension-decomposition.csv",
+      "auditCsvUrl": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-source-readiness-collections.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Keep as a transparent methods note until owner-led NTL ingestion and coauthored review are cleared."
+      "nextUpgrade": "Keep as a transparent methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared."
     },
     {
       "id": 12,

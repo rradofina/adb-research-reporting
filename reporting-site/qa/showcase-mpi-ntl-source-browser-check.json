@@ -1,0 +1,144 @@
+{
+  "targetUrl": "http://127.0.0.1:5176/showcase/mpi-nightlight-blindspot",
+  "checkedAt": "2026-06-19T19:37:44.577Z",
+  "browser": "system Chrome via Playwright headless",
+  "results": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900,
+      "metrics": {
+        "title": "When Night Lights Cannot See the Poverty Dimension",
+        "url": "http://127.0.0.1:5176/showcase/mpi-nightlight-blindspot",
+        "pageOverflow": false,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When Night Lights Cannot See the Poverty Dimension": true,
+          "69.0%": true,
+          "Current Black Marble collections": true,
+          "C3860061042-LAADS": true,
+          "not joined": true,
+          "This does not download radiance rasters": true
+        },
+        "requiredCardPresence": {
+          "Current Black Marble collections": true,
+          "Current collection start": true,
+          "Samples with HTTPS data links": true,
+          "Analysis-ready raster join": true
+        },
+        "cards": [
+          {
+            "value": "2",
+            "label": "Current Black Marble collections"
+          },
+          {
+            "value": "2012-01-01",
+            "label": "Current collection start"
+          },
+          {
+            "value": "2/2",
+            "label": "Samples with HTTPS data links"
+          },
+          {
+            "value": "not joined",
+            "label": "Analysis-ready raster join"
+          }
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download MPI + NTL source audit JSON",
+            "href": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-blindspot-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-source-readiness-collections.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/mpi-nighttime-lights"
+          }
+        ],
+        "visualScreenshot": true,
+        "claimScreenshot": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 820,
+      "metrics": {
+        "title": "When Night Lights Cannot See the Poverty Dimension",
+        "url": "http://127.0.0.1:5176/showcase/mpi-nightlight-blindspot",
+        "pageOverflow": false,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When Night Lights Cannot See the Poverty Dimension": true,
+          "69.0%": true,
+          "Current Black Marble collections": true,
+          "C3860061042-LAADS": true,
+          "not joined": true,
+          "This does not download radiance rasters": true
+        },
+        "requiredCardPresence": {
+          "Current Black Marble collections": true,
+          "Current collection start": true,
+          "Samples with HTTPS data links": true,
+          "Analysis-ready raster join": true
+        },
+        "cards": [
+          {
+            "value": "2",
+            "label": "Current Black Marble collections"
+          },
+          {
+            "value": "2012-01-01",
+            "label": "Current collection start"
+          },
+          {
+            "value": "2/2",
+            "label": "Samples with HTTPS data links"
+          },
+          {
+            "value": "not joined",
+            "label": "Analysis-ready raster join"
+          }
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download MPI + NTL source audit JSON",
+            "href": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-blindspot-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/mpi-nighttime-lights/generated/mpi-nightlight-source-readiness-collections.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/mpi-nighttime-lights"
+          }
+        ],
+        "visualScreenshot": true,
+        "claimScreenshot": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    "showcase-mpi-ntl-source-desktop.png",
+    "showcase-mpi-ntl-source-desktop-visual.png",
+    "showcase-mpi-ntl-source-desktop-claim.png",
+    "showcase-mpi-ntl-source-mobile.png",
+    "showcase-mpi-ntl-source-mobile-visual.png",
+    "showcase-mpi-ntl-source-mobile-claim.png"
+  ]
+}

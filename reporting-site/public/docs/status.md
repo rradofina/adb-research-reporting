@@ -327,6 +327,33 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-migration-corridor-type-desktop-visual.png`,
   `reporting-site/qa/showcase-migration-corridor-type-mobile.png`, and
   `reporting-site/qa/showcase-migration-corridor-type-mobile-visual.png`.
+- **2026-06-20 (MPI/nighttime-lights source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/mpi-nightlight-blindspot` from an MPI-only blindness
+  decomposition into a public CMR source-readiness wall for the owner-gated
+  NTL side. Added
+  `mpi-nighttime-lights/scripts/audit-ntl-source-readiness.py`, cache
+  regeneration notes under `mpi-nighttime-lights/.cache/README.md`, generated
+  `mpi-nightlight-blindspot-source-audit.json`,
+  `mpi-nightlight-source-readiness.json`, and collection/granule-link CSV
+  companions, and registered `nasa_black_marble_mpi_ntl_cmr` in
+  `versions.json`. The audit queries NASA CMR for VNP46A3 and VNP46A4,
+  finds 4 collection rows, 2 current v2 collection candidates
+  (`C3860061042-LAADS` monthly and `C3860065683-LAADS` yearly), CMR current
+  collection coverage starting on 2012-01-01, 2 sample granules checked, and
+  2/2 sample granules with HTTPS data links. It explicitly keeps
+  `analysis_ready_raster_join` false: no radiance raster was downloaded, no
+  Earthdata or Earth Engine authentication was attempted, no population-
+  weighted zonal statistic or subnational MPI crosswalk was computed, no gas-
+  flare mask was applied, and no NTL x MPI model was estimated. Verification
+  in this pass reran the MPI decomposition and CMR source-readiness scripts,
+  synced public artifacts, built the reporting site, and browser-checked
+  desktop plus 375px mobile with zero console errors, zero network errors, and
+  zero page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-mpi-ntl-source-desktop.png`,
+  `reporting-site/qa/showcase-mpi-ntl-source-desktop-visual.png`,
+  `reporting-site/qa/showcase-mpi-ntl-source-mobile.png`, and
+  `reporting-site/qa/showcase-mpi-ntl-source-mobile-visual.png`.
 - **2026-06-20 (disaster metric-falsification source-readiness audit):** In
   the owner-directed 20-report showcase loop, upgraded
   `/showcase/disaster-metric-falsification` from a metric-switch route into a

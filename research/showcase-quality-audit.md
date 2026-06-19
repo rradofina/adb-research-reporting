@@ -44,7 +44,7 @@ candidates before adding new surfaces.
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge now has a public World Bank reliability-proxy source wall | Needs direct outage, reserve-margin, dispatch, seasonal generation, or heat-stress evidence | Choose high-concentration rows and search for regulator outage or dispatch records beyond the proxy wall |
 | 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks now include a UNHCR forced-displacement corridor-type falsifier: Afghanistan is the forced-displacement-majority exception, while the share top five is not | Needs labor, family, student, temporary-work, visa, and deployment corridor evidence before migration-purpose interpretation | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR forced-displacement layer |
-| 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition shows what night lights cannot directly see | Needs owner-led VIIRS/Earth Engine access and coauthor attestation | Keep as methods note until owner-gated access clears |
+| 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition now sits beside a public NASA CMR Black Marble source-readiness wall, so the owner-gated NTL join is explicit rather than hand-waved | Needs authenticated raster access, population-weighted zonal statistics, subnational MPI crosswalks, flare masking, and coauthor attestation before any NTL x MPI claim | Keep as methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared |
 | 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge prevents a size-driven coastal proxy from overclaiming | Needs settlement footprints, elevation, and surge-zone overlay | Choose one-coast pilot and join settlement/hazard layers |
 | 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size | Needs roads, markets/services, flood footprint, and travel-time logic | Build one-DMC flooded-network pilot or demote to methods caution |
 | 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking | Needs labor-force denominator and heat exposure evidence | Repair denominator and lead with cap sensitivity |
@@ -106,6 +106,19 @@ candidates before adding new surfaces.
   share top five has 0/5 forced-displacement-majority rows. This sharpens the
   denominator-switch story but remains a forced-displacement-only layer, not a
   labor, family, student, temporary-work, welfare, or fragility classification.
+- MPI/nighttime-lights report #11 received a NASA CMR source-readiness wall on
+  2026-06-20. New script
+  `mpi-nighttime-lights/scripts/audit-ntl-source-readiness.py` queries public
+  CMR collection and sample-granule metadata for Black Marble VNP46A3 and
+  VNP46A4, writes raw-response hashes, and emits a combined
+  `mpi-nightlight-blindspot-source-audit.json`. The audit finds 4 collection
+  rows, 2 current v2 collection candidates (`C3860061042-LAADS` for monthly
+  VNP46A3 and `C3860065683-LAADS` for yearly VNP46A4), current collection
+  coverage starting on 2012-01-01, and 2/2 sample granules with HTTPS data
+  links. It still records `analysis_ready_raster_join: false`: no raster is
+  downloaded, no Earthdata or Earth Engine authentication is attempted, no
+  zonal statistic is computed, no subnational MPI crosswalk is built, and no
+  NTL x MPI model is estimated.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`
   reads the existing BGD exposure and road-context artifacts and writes

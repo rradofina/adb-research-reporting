@@ -424,6 +424,16 @@ function buildMigrationModel(report: ShowcaseReport, data: JsonValue): AuditMode
 }
 
 function buildMpiModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.ntl_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.ntl_source_readiness);
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "CMR retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceSummary.current_collection_ids) {
+    sourceTrail.push({ label: "Black Marble current IDs", value: Object.entries(sourceSummary.current_collection_ids).map(([key, value]) => `${key} ${value}`).join("; ") });
+  }
   const rows = safeRows(data.rows_by_ntl_blind_dimension)
     .slice(0, 10)
     .map((row) => ({
@@ -439,19 +449,60 @@ function buildMpiModel(report: ShowcaseReport, data: JsonValue): AuditModel {
     stats: [
       { value: formatNumber(data.n_adb_economies), label: "ADB economies scoped" },
       { value: formatPct(data.mean_ntl_blind_dim_pct, 1), label: "mean dimension share blind to NTL" },
-      { value: formatNumber(safeRows(data.majority_ntl_blind_both_readings).length), label: "majority-blind in both readings" },
+      hasSourceAudit
+        ? { value: formatNumber(sourceSummary.current_collection_candidates), label: "current Black Marble collections" }
+        : { value: formatNumber(safeRows(data.majority_ntl_blind_both_readings).length), label: "majority-blind in both readings" },
     ],
-    chartTitle: "The satellite can illuminate places, but not all poverty dimensions.",
-    chartDeck: "Each bar decomposes MPI weight into dimensions structurally blind or plausibly visible to nighttime radiance.",
+    chartTitle: hasSourceAudit
+      ? "The MPI blind spot is visible before the raster join."
+      : "The satellite can illuminate places, but not all poverty dimensions.",
+    chartDeck: hasSourceAudit
+      ? "Bars show what nighttime radiance cannot see inside MPI; cards show that public Black Marble metadata exists while the analysis-ready join is still absent."
+      : "Each bar decomposes MPI weight into dimensions structurally blind or plausibly visible to nighttime radiance.",
     stackRows: rows,
+    componentCards: hasSourceAudit ? [
+      {
+        key: "collections",
+        value: formatNumber(sourceSummary.current_collection_candidates),
+        label: "Current Black Marble collections",
+        note: Object.entries(sourceSummary.current_collection_ids || {}).map(([key, value]) => `${key}: ${value}`).join("; "),
+        status: "survived",
+      },
+      {
+        key: "start-date",
+        value: String(sourceSummary.earliest_current_collection_start || "").slice(0, 10),
+        label: "Current collection start",
+        note: "Earliest time_start among the current v2 VNP46A3/VNP46A4 CMR collection rows.",
+        status: "survived",
+      },
+      {
+        key: "sample-links",
+        value: `${formatNumber(sourceSummary.sample_granules_with_https_data_links)}/${formatNumber(sourceSummary.sample_granules_checked)}`,
+        label: "Samples with HTTPS data links",
+        note: "Latest sample granule metadata was checked for each current collection; no raster was downloaded.",
+        status: "survived",
+      },
+      {
+        key: "analysis-ready",
+        value: sourceSummary.analysis_ready_raster_join ? "ready" : "not joined",
+        label: "Analysis-ready raster join",
+        note: "No authenticated pull, zonal statistic, population weighting, subnational MPI crosswalk, or flare mask is committed here.",
+        status: "flag",
+      },
+    ] : undefined,
     readouts: [
       { label: "Median blind dimension share", value: formatPct(data.median_ntl_blind_dim_pct, 1) },
       { label: "Mean blind indicator share", value: formatPct(data.mean_ntl_blind_ind_pct, 1) },
       { label: "Residual check", value: data.decomposition_residual_check?.rule || "dimension shares checked" },
       { label: "NTL data wall", value: String(data.ntl_data_wall || "Owner-gated VIIRS join not computed here.") },
+      ...(hasSourceAudit ? [
+        { label: "Latest monthly sample", value: String(sourceSummary.latest_sample_granule_start?.VNP46A3 || "") },
+        { label: "Latest yearly sample", value: String(sourceSummary.latest_sample_granule_start?.VNP46A4 || "") },
+        { label: "Owner-gated next step", value: strings(sourceSummary.owner_gated_or_unfinished_steps).join(" ") },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data).concat(String(data.co_authorship || "")),
+    sourceFacts: sourceTrail,
+    caveats: baseCaveats(report, data).concat(String(data.co_authorship || ""), hasSourceAudit ? String(sourceAudit.claim_scope || "") : ""),
     generatedAt: data.generated_at,
   };
 }
@@ -1219,6 +1270,14 @@ function AuditVisual({ model }: { model: AuditModel }) {
     return (
       <div className="audit-visual-grid">
         <RankAuditVisual model={model} />
+        <ComponentVisual model={model} />
+      </div>
+    );
+  }
+  if (model.stackRows && model.componentCards) {
+    return (
+      <div className="audit-visual-grid">
+        <StackedBlindnessVisual model={model} />
         <ComponentVisual model={model} />
       </div>
     );

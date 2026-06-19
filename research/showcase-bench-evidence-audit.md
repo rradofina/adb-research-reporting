@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T19:28:40.342Z
+Generated: 2026-06-19T19:37:58.114Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 310
-- QA browser-check JSON files in reporting-site/qa: 17
+- QA screenshot files in reporting-site/qa: 316
+- QA browser-check JSON files in reporting-site/qa: 18
 - Verification failures: 0
 
 ## Readiness Mix
@@ -43,7 +43,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 8 | Disaster metric falsification | L3 candidate | ok | ok | n/a | Build the event-date join and one pilot radiance extraction; keep the current report as source readiness until an actual recove... |
 | 9 | Grid reliability proxy source wall | Evidence audit | ok | ok | ok | Pick 1-2 high-concentration rows and search for regulator outage records, seasonal dispatch, or reserve-margin evidence beyond ... |
 | 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR force... |
-| 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion and coauthored review are cleared. |
+| 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared. |
 | 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer. |
 | 13 | Flood access decomposition | Evidence audit | ok | ok | ok | Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note. |
 | 14 | Climate-health sensitivity repair | Evidence audit | ok | ok | ok | Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart. |

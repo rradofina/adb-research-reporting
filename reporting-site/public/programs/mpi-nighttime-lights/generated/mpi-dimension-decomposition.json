@@ -2,7 +2,7 @@
   "program": "mpi-nighttime-lights",
   "analysis": "Dimensional scope of an eventual NTL x MPI join: share of each ADB economy's MPI arising in dimensions a nighttime-radiance signal is structurally blind to (health + education), under a generous dimension reading and an honest indicator reading.",
   "co_authorship": "Program 0, co-authored with Arturo Martinez Jr (ADB), owner-led. This scopes the joint study; it does not advance the program, freeze a claim under CONSTITUTION.md §6.1, or supersede the co-authored track. The NTL side is not computed here (see wall).",
-  "ntl_data_wall": "The NTL x MPI join itself is owner-gated and NOT runnable here: NASA Black Marble VNP46A4 / VIIRS DNB ingestion via Google Earth Engine requires OAuth on the owner's Earth Engine + Google Cloud credentials (a §2 hard wall: account on the owner's identity), plus geoBoundaries ADM1/ADM2 and a WorldPop/GHSL population denominator. Network is blocked in this session. Only the MPI side — already on disk — is computed.",
+  "ntl_data_wall": "The NTL x MPI join itself is owner-gated and NOT runnable here: NASA Black Marble VNP46A4 / VIIRS DNB ingestion via Google Earth Engine requires OAuth on the owner's Earth Engine + Google Cloud credentials (a §2 hard wall: account on the owner's identity), plus geoBoundaries ADM1/ADM2 and a WorldPop/GHSL population denominator. Only the MPI side — already on disk — is computed by this script; run audit-ntl-source-readiness.py for public NASA CMR metadata without an NTL x MPI join.",
   "source": {
     "name": "OPHI Global MPI 2024",
     "table": "Table 1 National Results (1.1 / 1.2 / 1.3)",
@@ -678,5 +678,5 @@
     }
   ],
   "attestation_chain": "ai-first",
-  "generated_at": "2026-05-29T02:01:27Z"
+  "generated_at": "2026-06-19T19:36:50Z"
 }

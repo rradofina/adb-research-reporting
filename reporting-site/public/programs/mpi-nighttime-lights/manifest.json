@@ -1,7 +1,7 @@
 {
   "program": "mpi-nighttime-lights",
   "permanent_url": "/program/mpi-nighttime-lights/evidence",
-  "generated_at": "2026-06-19T19:27:35.530Z",
+  "generated_at": "2026-06-19T19:36:55.597Z",
   "hero": null,
   "artifacts": [
     {
@@ -24,9 +24,33 @@
     },
     {
       "file": "generated/mpi-dimension-decomposition.json",
-      "size": 20100,
-      "size_human": "19.6 KB",
-      "sha256": "a38064c6483ce00f8eae10d3ca61c2c15b871a1f35681b5fbdc2f3400778cd33"
+      "size": 20169,
+      "size_human": "19.7 KB",
+      "sha256": "0153283684958a9b5952d11e4736f019c2ab31515d243f5947b2663f71791b90"
+    },
+    {
+      "file": "generated/mpi-nightlight-blindspot-source-audit.json",
+      "size": 36229,
+      "size_human": "35.4 KB",
+      "sha256": "e300a80968ca188f02ca281acca1ca0d783f253cf01bbf227fba9751aa8f344a"
+    },
+    {
+      "file": "generated/mpi-nightlight-source-readiness-collections.csv",
+      "size": 803,
+      "size_human": "803 B",
+      "sha256": "b87dcca4d0cda1f24830036dce11b89c328d8853f85922296ac886eba57060fc"
+    },
+    {
+      "file": "generated/mpi-nightlight-source-readiness-granule-links.csv",
+      "size": 4043,
+      "size_human": "3.9 KB",
+      "sha256": "aadefd7d8a6b7caa8635eb284a0ca3d46007af0319793817af3fc5d7c2037093"
+    },
+    {
+      "file": "generated/mpi-nightlight-source-readiness.json",
+      "size": 15264,
+      "size_human": "14.9 KB",
+      "sha256": "160402924356697489872aaa4dbf394f73444820a51b7b424069f15ca3e3b247"
     }
   ],
   "articles": []

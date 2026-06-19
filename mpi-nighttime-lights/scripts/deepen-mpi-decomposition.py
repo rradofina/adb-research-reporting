@@ -163,8 +163,9 @@ def main():
             "Engine requires OAuth on the owner's Earth Engine + Google Cloud "
             "credentials (a §2 hard wall: account on the owner's identity), "
             "plus geoBoundaries ADM1/ADM2 and a WorldPop/GHSL population "
-            "denominator. Network is blocked in this session. Only the MPI "
-            "side — already on disk — is computed."
+            "denominator. Only the MPI side — already on disk — is computed "
+            "by this script; run audit-ntl-source-readiness.py for public "
+            "NASA CMR metadata without an NTL x MPI join."
         ),
         "source": {
             "name": src["source"],

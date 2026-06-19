@@ -1,8 +1,8 @@
 {
   "program": "mpi-nighttime-lights",
-  "analysis": "Dimensional scope of an eventual NTL x MPI join: share of each ADB economy's MPI arising in dimensions a nighttime-radiance signal is structurally blind to (health + education), under a generous dimension reading and an honest indicator reading.",
+  "analysis": "MPI dimension decomposition plus Black Marble source-readiness audit",
   "co_authorship": "Program 0, co-authored with Arturo Martinez Jr (ADB), owner-led. This scopes the joint study; it does not advance the program, freeze a claim under CONSTITUTION.md §6.1, or supersede the co-authored track. The NTL side is not computed here (see wall).",
-  "ntl_data_wall": "The NTL x MPI join itself is owner-gated and NOT runnable here: NASA Black Marble VNP46A4 / VIIRS DNB ingestion via Google Earth Engine requires OAuth on the owner's Earth Engine + Google Cloud credentials (a §2 hard wall: account on the owner's identity), plus geoBoundaries ADM1/ADM2 and a WorldPop/GHSL population denominator. Only the MPI side — already on disk — is computed by this script; run audit-ntl-source-readiness.py for public NASA CMR metadata without an NTL x MPI join.",
+  "ntl_data_wall": "Public NASA CMR metadata and sample Black Marble data links are visible, but this repository still has no authenticated raster pull, no population-weighted zonal statistics, no subnational MPI crosswalk, and no coauthor attestation for the owner-led NTL x MPI track.",
   "source": {
     "name": "OPHI Global MPI 2024",
     "table": "Table 1 National Results (1.1 / 1.2 / 1.3)",
@@ -678,5 +678,402 @@
     }
   ],
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:36:50Z"
+  "generated_at": "2026-06-19T19:36:50Z",
+  "ntl_source_readiness": {
+    "program": "mpi-nighttime-lights",
+    "analysis": "Black Marble nighttime-lights source-readiness audit for MPI blind-spot decomposition",
+    "claim_scope": "Source-readiness and methods-wall audit. NASA CMR metadata confirms public Black Marble collection and sample granule records for the nighttime-lights side, while the actual raster download, zonal statistics, and MPI join remain uncomputed and owner-gated.",
+    "retrieved_at": "2026-06-19T19:36:50Z",
+    "sources": {
+      "nasa_cmr_collections": "https://cmr.earthdata.nasa.gov/search/collections.json",
+      "nasa_cmr_granules": "https://cmr.earthdata.nasa.gov/search/granules.json",
+      "queried_short_names": [
+        "VNP46A3",
+        "VNP46A4"
+      ],
+      "black_marble_project_page": "https://www.earthdata.nasa.gov/data/projects/black-marble"
+    },
+    "summary": {
+      "short_names_queried": [
+        "VNP46A3",
+        "VNP46A4"
+      ],
+      "collections_found": 4,
+      "current_collection_candidates": 2,
+      "current_collection_ids": {
+        "VNP46A3": "C3860061042-LAADS",
+        "VNP46A4": "C3860065683-LAADS"
+      },
+      "current_versions": {
+        "VNP46A3": "2",
+        "VNP46A4": "2"
+      },
+      "earliest_current_collection_start": "2012-01-01T00:00:00.000Z",
+      "sample_granules_checked": 2,
+      "sample_granules_with_https_data_links": 2,
+      "sample_granules_with_s3_links": 2,
+      "latest_sample_granule_start": {
+        "VNP46A3": "2026-05-01T00:00:00.000Z",
+        "VNP46A4": "2025-01-01T00:00:00.000Z"
+      },
+      "latest_sample_granule_updated": {
+        "VNP46A3": "2026-06-13T10:38:28.850Z",
+        "VNP46A4": "2026-03-18T02:04:29.080Z"
+      },
+      "mpi_economies_scoped": 30,
+      "mean_ntl_blind_dim_pct": 69.01,
+      "mean_ntl_blind_ind_pct": 86.4,
+      "analysis_ready_raster_join": false,
+      "owner_gated_or_unfinished_steps": [
+        "Earthdata/LAADS or Earth Engine authenticated raster access was not attempted.",
+        "No VIIRS/Black Marble raster was downloaded or archived by this script.",
+        "No geoBoundaries ADM1/ADM2, WorldPop, or GHSL zonal statistic was computed here.",
+        "No subnational MPI to nighttime-lights join or poverty model is estimated.",
+        "Coauthor/owner decision remains required before this owner-led Program 0 track advances."
+      ]
+    },
+    "collection_rows": [
+      {
+        "short_name": "VNP46A3",
+        "version_id": "2",
+        "concept_id": "C3860061042-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Monthly L3 Global 15 arc second Linear Lat Lon Grid V2",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 0,
+        "documentation_links": 3
+      },
+      {
+        "short_name": "VNP46A3",
+        "version_id": "1",
+        "concept_id": "C2062201748-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Monthly L3 Global 15 arc-second Linear Lat Lon Grid",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 1,
+        "documentation_links": 2
+      },
+      {
+        "short_name": "VNP46A4",
+        "version_id": "2",
+        "concept_id": "C3860065683-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Yearly L3 Global 15 arc second Linear Lat Lon Grid V2",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 0,
+        "documentation_links": 3
+      },
+      {
+        "short_name": "VNP46A4",
+        "version_id": "1",
+        "concept_id": "C2062213246-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Yearly L3 Global 15 arc-second Linear Lat Lon Grid",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 1,
+        "documentation_links": 2
+      }
+    ],
+    "current_collection_rows": [
+      {
+        "short_name": "VNP46A3",
+        "version_id": "2",
+        "concept_id": "C3860061042-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Monthly L3 Global 15 arc second Linear Lat Lon Grid V2",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 0,
+        "documentation_links": 3
+      },
+      {
+        "short_name": "VNP46A4",
+        "version_id": "2",
+        "concept_id": "C3860065683-LAADS",
+        "title": "VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Yearly L3 Global 15 arc second Linear Lat Lon Grid V2",
+        "time_start": "2012-01-01T00:00:00.000Z",
+        "time_end": null,
+        "updated": null,
+        "data_links": 2,
+        "https_data_links": 2,
+        "s3_links": 0,
+        "service_links": 0,
+        "documentation_links": 3
+      }
+    ],
+    "sample_granule_rows": [
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "title": "LAADS:9838588813",
+        "time_start": "2026-05-01T00:00:00.000Z",
+        "time_end": "2026-06-01T00:00:00.000Z",
+        "updated": "2026-06-13T10:38:28.850Z",
+        "data_links": 3,
+        "https_data_links": 3,
+        "s3_links": 1,
+        "service_links": 1,
+        "documentation_links": 4
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "title": "LAADS:9498625049",
+        "time_start": "2025-01-01T00:00:00.000Z",
+        "time_end": "2026-01-01T00:00:00.000Z",
+        "updated": "2026-03-18T02:04:29.080Z",
+        "data_links": 3,
+        "https_data_links": 3,
+        "s3_links": 1,
+        "service_links": 1,
+        "documentation_links": 4
+      }
+    ],
+    "sample_granule_link_rows": [
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": "application/x-hdf5",
+        "title": null,
+        "href": "https://data.laadsdaac.earthdatacloud.nasa.gov/prod-lads/VNP46A3/VNP46A3.A2026121.h00v01.002.2026163131741.h5",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+        "type": "application/x-hdf5",
+        "title": null,
+        "href": "s3://prod-lads/VNP46A3/VNP46A3.A2026121.h00v01.002.2026163131741.h5",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/service#",
+        "type": "text/html",
+        "title": "This file may be accessed using OPeNDAP directly from this link (OPENDAP DATA)",
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/opendap/RemoteResources/laads/allData/5200/VNP46A3/2026/121/VNP46A3.A2026121.h00v01.002.2026163131741.h5.html",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": "text/html",
+        "title": "A link to Data set landing page (Data Set Landing Page)",
+        "href": "http://doi.org/10.5067/VIIRS/VNP46A3.002",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/api/v2/content/archives/Document Archive/Science Data Product Documentation/Black-Marble_v2.0_UG_2024.pdf",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/viirs/VIIRS_Black_Marble_ATBD_v1.1_July_2020.pdf",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5200/VNP46A3/",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://www.earthdata.nasa.gov/data/projects/black-marble?tempAccess=PQ81CJc0-wU8_bo0eHoDDsTUtmUPtqal-lCTOvYiCmU",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS",
+        "granule_id": "G4215194727-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": null,
+        "title": null,
+        "href": "https://search.earthdata.nasa.gov/search/granules?p=C3860061042-LAADS",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": "application/x-hdf5",
+        "title": null,
+        "href": "https://data.laadsdaac.earthdatacloud.nasa.gov/prod-lads/VNP46A4/VNP46A4.A2025001.h09v01.002.2026076173827.h5",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+        "type": "application/x-hdf5",
+        "title": null,
+        "href": "s3://prod-lads/VNP46A4/VNP46A4.A2025001.h09v01.002.2026076173827.h5",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/service#",
+        "type": "text/html",
+        "title": "This file may be accessed using OPeNDAP directly from this link (OPENDAP DATA)",
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/opendap/RemoteResources/laads/allData/5200/VNP46A4/2025/001/VNP46A4.A2025001.h09v01.002.2026076173827.h5.html",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": "text/html",
+        "title": "A link to Data set landing page (Data Set Landing Page)",
+        "href": "http://doi.org/10.5067/VIIRS/VNP46A4.002",
+        "inherited": false
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/api/v2/content/archives/Document Archive/Science Data Product Documentation/Black-Marble_v2.0_UG_2024.pdf",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/api/v2/content/archives/Document Archive/Science Data Product Documentation/Product Generation Algorithms/VIIRS_Black_Marble_ATBD_v1.1_July_2020.pdf",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": null,
+        "title": null,
+        "href": "https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5200/VNP46A4",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "type": null,
+        "title": null,
+        "href": "https://www.earthdata.nasa.gov/data/projects/black-marble?tempAccess=PQ81CJc0-wU8_bo0eHoDDsTUtmUPtqal-lCTOvYiCmU",
+        "inherited": true
+      },
+      {
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS",
+        "granule_id": "G4088296591-LAADS",
+        "rel": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "type": null,
+        "title": null,
+        "href": "https://search.earthdata.nasa.gov/search/granules?p=C3860065683-LAADS",
+        "inherited": true
+      }
+    ],
+    "cache_records": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VNP46A3&page_size=10",
+        "cache_path": ".cache\\ntl-source-readiness\\collections_VNP46A3.json",
+        "bytes": 7377,
+        "sha256": "97aae9add1ffc20fa6772d6b4220b00b164edd11e8e020ef4fed1a80a412c75c",
+        "fetch_mode": "live",
+        "query_type": "collections",
+        "short_name": "VNP46A3"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VNP46A4&page_size=10",
+        "cache_path": ".cache\\ntl-source-readiness\\collections_VNP46A4.json",
+        "bytes": 7372,
+        "sha256": "62db9b645bfa8a57fd9d9a03715dfdcd49b7626b5b1f6dc09d58ab75c93d9fa2",
+        "fetch_mode": "live",
+        "query_type": "collections",
+        "short_name": "VNP46A4"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3860061042-LAADS&page_size=1&sort_key%5B%5D=-start_date",
+        "cache_path": ".cache\\ntl-source-readiness\\granules_C3860061042-LAADS.json",
+        "bytes": 2859,
+        "sha256": "a80a4e68b356a8ed8aed562e7e2f639671753c0d22ff89f988f5e75f8fb8f9d7",
+        "fetch_mode": "live",
+        "query_type": "sample_granule",
+        "short_name": "VNP46A3",
+        "concept_id": "C3860061042-LAADS"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C3860065683-LAADS&page_size=1&sort_key%5B%5D=-start_date",
+        "cache_path": ".cache\\ntl-source-readiness\\granules_C3860065683-LAADS.json",
+        "bytes": 2925,
+        "sha256": "ece36f6d443835dac5b859fa1b6b5a1b125a96e06e9c6da4a26bc2391ca18e04",
+        "fetch_mode": "live",
+        "query_type": "sample_granule",
+        "short_name": "VNP46A4",
+        "concept_id": "C3860065683-LAADS"
+      }
+    ],
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-06-19T19:36:50Z"
+  },
+  "claim_scope": "Dimensional scope of an eventual NTL x MPI join: share of each ADB economy's MPI arising in dimensions a nighttime-radiance signal is structurally blind to (health + education), under a generous dimension reading and an honest indicator reading. The source-readiness layer confirms CMR metadata and sample links only; it does not compute an NTL x MPI join."
 }

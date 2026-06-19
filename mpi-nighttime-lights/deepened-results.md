@@ -154,19 +154,36 @@ without the NTL data.
 
 ## The data wall (owner-gated)
 
-The NTL x MPI join itself is **not runnable in this session** and is not an
-AI-doable step. It requires:
+The NTL x MPI join itself is **not computed here** and is not an AI-doable
+advancement of the co-authored track. The source-readiness layer can now say
+what is publicly visible before the owner-gated join:
+
+- `scripts/audit-ntl-source-readiness.py` queries NASA CMR metadata for
+  Black Marble monthly and yearly nighttime-lights products. The current v2
+  collection candidates are **VNP46A3** (`C3860061042-LAADS`) and
+  **VNP46A4** (`C3860065683-LAADS`), both starting on 2012-01-01 in CMR.
+- The audit checks one latest sample granule for each current collection. The
+  sample monthly row starts on 2026-05-01 and the sample yearly row starts on
+  2025-01-01; both sample rows expose HTTPS data links and S3 links in CMR.
+- This is still **not** an analysis-ready MPI x nighttime-lights join. The
+  script does not download HDF5 rasters, authenticate to Earthdata or Earth
+  Engine, compute population-weighted zonal statistics, crosswalk subnational
+  MPI units, mask gas flares, or estimate a poverty model.
+
+The remaining owner-gated or unfinished steps are:
 
 - **NASA Black Marble VNP46A4** (annual) or **VIIRS DNB** composites
-  ingested through **Google Earth Engine**, which needs **OAuth on the
-  owner's Earth Engine + Google Cloud credentials** — a `CONSTITUTION.md` §2
-  hard wall (API access on the owner's identity, per `CLAUDE.md` "Hard
-  walls"). AI cannot authenticate this without impersonating the owner.
+  ingested through authenticated Earthdata/LAADS access or **Google Earth
+  Engine**, which needs **OAuth on the owner's Earth Engine + Google Cloud
+  credentials** if the owner-led track uses Earth Engine — a
+  `CONSTITUTION.md` §2 hard wall (API access on the owner's identity, per
+  `CLAUDE.md` "Hard walls"). AI cannot authenticate this without
+  impersonating the owner.
 - **geoBoundaries ADM1/ADM2** polygons and a **WorldPop / GHSL** population
   denominator for population-weighted zonal statistics (§2.2 of the deep
-  questions), both requiring network retrieval — **blocked** in this session.
+  questions), neither joined to Black Marble here.
 - **EOG VIIRS gas-flare product** for the flare mask the deep questions §2.3
-  flag as mandatory before any off-diagonal claim — also network-gated.
+  flag as mandatory before any off-diagonal claim.
 
 These are owner actions, not AI gate-actions. Per the co-authorship note in
 `NEGATIVE-RESULT.md` and §13.4, the decision to build the NTL side in this
@@ -178,4 +195,5 @@ say about the join.
 
 ```bash
 python mpi-nighttime-lights/scripts/deepen-mpi-decomposition.py
+python mpi-nighttime-lights/scripts/audit-ntl-source-readiness.py
 ```

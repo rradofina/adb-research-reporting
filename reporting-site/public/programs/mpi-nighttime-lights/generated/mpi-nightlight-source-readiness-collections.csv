@@ -1,0 +1,5 @@
+short_name,version_id,concept_id,title,time_start,time_end,updated,data_links,https_data_links,s3_links,service_links,documentation_links
+VNP46A3,2,C3860061042-LAADS,VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Monthly L3 Global 15 arc second Linear Lat Lon Grid V2,2012-01-01T00:00:00.000Z,,,2,2,0,0,3
+VNP46A3,1,C2062201748-LAADS,VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Monthly L3 Global 15 arc-second Linear Lat Lon Grid,2012-01-01T00:00:00.000Z,,,2,2,0,1,2
+VNP46A4,2,C3860065683-LAADS,VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Yearly L3 Global 15 arc second Linear Lat Lon Grid V2,2012-01-01T00:00:00.000Z,,,2,2,0,0,3
+VNP46A4,1,C2062213246-LAADS,VIIRS/NPP Lunar BRDF-Adjusted Nighttime Lights Yearly L3 Global 15 arc-second Linear Lat Lon Grid,2012-01-01T00:00:00.000Z,,,2,2,0,1,2

@@ -63,6 +63,7 @@ const PROGRAM_FILES = [
   "coverage.md",
   "results.md",
   "metadata-readiness-audit.md",
+  "station-metadata-source-access.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

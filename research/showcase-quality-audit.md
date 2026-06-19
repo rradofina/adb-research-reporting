@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, and a metadata-readiness audit make the monitoring observability gap and station-level evidence wall legible | Needs station coordinates, monitor grade/owner, first-seen or vintage metadata, regulatory-inventory comparison, and gridded population/PM2.5 denominators | Fetch and version station-level OpenAQ/regulatory metadata before any station-radius or catchment package |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, and an OpenAQ station-metadata source pass make the monitoring observability gap and remaining evidence gates legible | Needs monitor-grade validation, regulatory-inventory comparison, and gridded population/PM2.5 denominators before station-radius or catchment language | Collect regulator inventories for the zero-OpenAQ and positive-residual queue, then build a declared catchment denominator if the source comparison survives |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
@@ -460,6 +460,29 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-cards.png`,
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-gates.png`, and
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-queue.png`.
+- Air-monitoring report #6 then received an OpenAQ station-metadata
+  source-access pass on 2026-06-19. New script
+  `air-monitoring/scripts/fetch-openaq-station-metadata.py` reads the
+  committed upgrade queue and queries the OpenAQ v3 `locations` endpoint for
+  PM2.5 station metadata. It writes
+  `generated/air-monitoring-openaq-station-metadata.csv` and
+  `generated/air-monitoring-openaq-station-metadata-summary.json`. The pass
+  computes 24 target economies with 0 API errors, 11 economies with OpenAQ
+  PM2.5 station rows, 13 economies with zero OpenAQ PM2.5 station rows, 101
+  station rows, 101 coordinate rows, 101 owner/provider rows, 93 first-seen
+  rows, 2 coordinate-QC exclusions, 0 monitor-grade rows, and 0
+  regulator-inventory rows. The public route now renders a station-source
+  panel with the coordinate map, country counts, zero-OpenAQ strip, gate cards,
+  and note/JSON/CSV links. This is source access, not station-radius coverage,
+  regulator validation, or proof of no monitor outside OpenAQ. Browser QA
+  passed at 1440x1100 and 390x900 with 5 station stat cards, 101 map dots, 11
+  country rows, 13 zero-OpenAQ chips, 7 evidence gate cards, the 2
+  coordinate-QC exclusions visible, no page/section/map horizontal overflow,
+  no out-of-bounds SVG station dots, and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-station-metadata-desktop.png`,
+  `reporting-site/qa/showcase-air-station-metadata-desktop-map.png`,
+  `reporting-site/qa/showcase-air-station-metadata-mobile.png`, and
+  `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`.
 - PSDQ report #4 then received a source-repair public-evidence attachment
   pass. New no-network script
   `public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py`
@@ -596,9 +619,9 @@ candidates before adding new surfaces.
 
 ## Next deepening order
 
-1. Air-monitoring observability, because the metadata-readiness wall is now
-   public and the next source upgrade is concrete: station coordinates,
-   monitor grade/owner, station vintage, and regulator inventories.
+1. Air-monitoring observability, because the station-coordinate source pass is
+   now public and the next source upgrade is concrete: regulator inventories,
+   monitor-grade validation, and only then a declared catchment denominator.
 2. PSDQ source disagreement remains strong but owner-gated: source-owner
    clarification or human review is needed for the unresolved Durgapur
    same-name cross-district coordinate conflict and shared-coordinate

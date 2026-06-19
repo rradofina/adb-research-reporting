@@ -124,10 +124,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, and a station-metadata readiness gate before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/metadata-readiness-audit.md",
-    visual: "Zero-monitor exposure bars, GDP residual scatter, exposure panel, and metadata-readiness gate wall",
-    sourceNote: "OpenAQ, WHO ambient air quality database, WDI, and the committed metadata-readiness audit",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, station-metadata readiness, and a fetched OpenAQ coordinate source package before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/station-metadata-source-access.md",
+    visual: "Zero-monitor exposure bars, GDP residual scatter, exposure panel, metadata-readiness wall, and OpenAQ station-coordinate map",
+    sourceNote: "OpenAQ v3 locations, WHO ambient air quality database, WDI, and committed station-metadata source artifacts",
   },
   {
     id: 7,
@@ -475,9 +475,9 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
     limitation: "Bilateral flows are estimates and do not observe household remittance transactions or informal channels.",
   },
   6: {
-    operationalUse: "Prioritize where station-coordinate, monitor-grade, vintage, and regulator-inventory checks should accompany satellite or modeled PM2.5 use.",
+    operationalUse: "Prioritize where OpenAQ station-coordinate checks, monitor-grade classification, and regulator-inventory checks should accompany satellite or modeled PM2.5 use.",
     falsifier: "If regulatory inventories or local station lists fill the apparent zero-monitor gaps, the public-source gap shrinks.",
-    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the current audit has no station-coordinate, grade, vintage, or regulator-inventory rows.",
+    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the current source pass has coordinates but no monitor-grade, regulator-inventory, or catchment-coverage rows.",
   },
   7: {
     operationalUse: "Flag geographies where OSM health amenities are too incomplete to support access or catchment planning.",
@@ -590,9 +590,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, and a bespoke observability report with concentration, residual, exposure, and evidence-gate panels.",
-    publicationGap: "Needs station coordinates, monitor grade/owner, first-seen or vintage metadata, regulatory inventory comparison, and gridded population/PM2.5 denominator validation.",
-    nextUpgrade: "Fetch and version station-level OpenAQ/regulatory metadata before building any station-radius or catchment package.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, and a bespoke observability report with concentration, residual, exposure, gate, and coordinate panels.",
+    publicationGap: "Needs monitor-grade validation, regulatory inventory comparison, and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
+    nextUpgrade: "Collect regulator inventories for the zero-OpenAQ and positive-residual queue, then build a declared catchment denominator if the source comparison survives.",
   },
   7: {
     readiness: "l3-candidate",

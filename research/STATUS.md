@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening and a metadata-readiness audit exist; station-radius, monitor-grade, station-vintage, and regulatory-inventory claims remain blocked until station-level sources are fetched and versioned) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, and OpenAQ station-metadata source-access pass exist; station-radius, monitor-grade, and regulatory-inventory claims remain blocked until catchment denominators and regulator sources are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -34,10 +34,12 @@ overrides priority by editing this list.
    existing deepening proves the zero-monitor population headline is
    concentrated in Papua New Guinea and Timor-Leste and that monitor-density
    patterns are strongly confounded with GDP per capita among monitored
-   economies. The metadata-readiness audit now makes the station-level wall
-   explicit; next AI-doable loop is to fetch and version station coordinates,
-   monitor grade/owner, first-seen or vintage metadata, and regulatory
-   inventories before any station-radius or catchment claim.
+   economies. The metadata-readiness audit made the station-level wall
+   explicit; the OpenAQ station-metadata source pass and public station panel
+   now supply 101 coordinate rows for 11 upgrade-queue economies, record 2
+   coordinate-QC exclusions, and keep 13 economies at OpenAQ-visible zero. Next
+   AI-doable loop is regulator-inventory and monitor-grade source validation
+   before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -180,6 +182,36 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-queue.png`.
   Next AI-doable work is station-level source collection, not station-radius
   claims.
+- **2026-06-19 (air-monitoring OpenAQ station-metadata source access):**
+  Added `air-monitoring/scripts/fetch-openaq-station-metadata.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-openaq-station-metadata.csv` and
+  `air-monitoring/generated/air-monitoring-openaq-station-metadata-summary.json`,
+  wrote `air-monitoring/station-metadata-source-access.md`, and added
+  `air-monitoring/.cache/README.md`. The script reads the committed
+  metadata-readiness upgrade queue, queries the OpenAQ v3 `locations`
+  endpoint with `parameters_id=2` for the 24 non-panel-context economies, and
+  uses a configured local API key without printing or committing it. The pass
+  computed all 24 target economies with 0 API errors, 11 economies with OpenAQ
+  PM2.5 station rows, 13 economies with zero OpenAQ PM2.5 station rows, 101
+  OpenAQ PM2.5 station rows, 101 coordinate rows, 101 owner/provider rows, 93
+  first-seen rows, 2 coordinate-QC exclusions, 0 monitor-grade rows, 0
+  regulator-inventory rows, and station-radius analysis still not ready. Raw
+  API responses are cached under
+  `.cache/openaq-station-metadata/` and intentionally git-ignored; committed
+  reproducibility is the script plus generated CSV/JSON retrieval records.
+  The public route now renders the station-source panel with 5 station stat
+  cards, 101 map dots, 11 country rows, 13 zero-OpenAQ chips, 7 evidence gate
+  cards, note/JSON/CSV downloads, and the 2 coordinate-QC exclusions. Browser
+  QA at 1440x1100 and 390x900 found no page, section, or map horizontal
+  overflow, no out-of-bounds SVG station dots, and no console/page errors.
+  Screenshots:
+  `reporting-site/qa/showcase-air-station-metadata-desktop.png`,
+  `reporting-site/qa/showcase-air-station-metadata-desktop-map.png`,
+  `reporting-site/qa/showcase-air-station-metadata-mobile.png`, and
+  `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`. Next loop
+  is to collect regulator inventories and monitor-grade sources before any
+  no-monitor-on-ground or catchment-coverage claim.
 - **2026-06-19 (rotation to air-monitoring):** Rotated the active flagship
   from `public-service-data-quality` to `air-monitoring` after PSDQ received
   the 10-stage evidence ladder in commit `8913943` and returned to the

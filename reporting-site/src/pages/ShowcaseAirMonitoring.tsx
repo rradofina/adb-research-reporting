@@ -183,6 +183,91 @@ interface MetadataReadinessSummary {
   non_claim: string;
 }
 
+interface StationMetadataGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationMetadataCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  subregion: string;
+  upgrade_queue_class: string;
+  query_status: string;
+  pm25_locations_in_committed_panel: number;
+  openaq_pm25_locations_fetched: number;
+  station_coordinate_rows: number;
+  owner_or_provider_rows: number;
+  monitor_grade_rows: number;
+  first_seen_rows: number;
+  last_seen_rows: number;
+  pages_cached: number;
+  query_variant: string | null;
+  error: string | null;
+}
+
+interface StationMetadataStationRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  subregion: string;
+  upgrade_queue_class: string;
+  query_status: string;
+  openaq_location_id: string | null;
+  openaq_location_name: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  station_coordinate_available: boolean;
+  owner_name: string | null;
+  provider_name: string | null;
+  owner_or_provider_available: boolean;
+  monitor_grade_available: boolean;
+  first_seen: string | null;
+  first_seen_available: boolean;
+  last_seen: string | null;
+  last_seen_available: boolean;
+  is_mobile: boolean | null;
+  is_monitor: boolean | null;
+  pm25_sensor_count: number;
+  station_radius_analysis_ready: boolean;
+}
+
+interface StationMetadataSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  source_docs: string[];
+  coverage_counts: {
+    economies_targeted: number;
+    economies_computed: number;
+    economies_with_api_error: number;
+    economies_blocked_by_api_key: number;
+    economies_with_openaq_pm25_locations: number;
+    economies_with_zero_openaq_pm25_locations: number;
+    openaq_pm25_location_rows: number;
+    station_coordinate_rows: number;
+    owner_or_provider_rows: number;
+    monitor_grade_rows: number;
+    first_seen_rows: number;
+    last_seen_rows: number;
+    excluded_coordinate_qc_rows: number;
+    pages_cached: number;
+    station_radius_coordinate_input_available: boolean;
+    station_radius_analysis_ready: boolean;
+  };
+  evidence_gate_counts: StationMetadataGate[];
+  country_rows: StationMetadataCountryRow[];
+  station_rows: StationMetadataStationRow[];
+  non_claim: string;
+}
+
 type AirMode = "concentration" | "residual" | "exposure";
 
 const MODES: Array<{ id: AirMode; label: string }> = [
@@ -230,8 +315,8 @@ function sentenceCaseStatus(value: string) {
 }
 
 function gateTone(status: string) {
-  if (status === "available") return "available";
-  if (status === "not_yet_collected") return "pending";
+  if (status === "available" || status === "computed") return "available";
+  if (status === "not_yet_collected" || status.includes("not_collected")) return "pending";
   return "blocked";
 }
 
@@ -239,6 +324,7 @@ export default function ShowcaseAirMonitoring() {
   const [deepening, setDeepening] = useState<DeepeningData | null>(null);
   const [panel, setPanel] = useState<AirPanelData | null>(null);
   const [metadataReadiness, setMetadataReadiness] = useState<MetadataReadinessSummary | null>(null);
+  const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
   const [error, setError] = useState<string | null>(null);
@@ -257,11 +343,16 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`metadata readiness HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-openaq-station-metadata-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`station metadata HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
-      .then(([deepeningPayload, panelPayload, metadataPayload]) => {
+      .then(([deepeningPayload, panelPayload, metadataPayload, stationMetadataPayload]) => {
         setDeepening(deepeningPayload);
         setPanel(panelPayload);
         setMetadataReadiness(metadataPayload);
+        setStationMetadata(stationMetadataPayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -366,6 +457,8 @@ export default function ShowcaseAirMonitoring() {
       </section>
 
       <AirMetadataReadinessPanel summary={metadataReadiness} />
+
+      <AirStationMetadataPanel summary={stationMetadata} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -490,6 +583,15 @@ export default function ShowcaseAirMonitoring() {
           </a>
           <a href="/programs/air-monitoring/generated/air-monitoring-metadata-readiness-audit-summary.json" download>
             Metadata audit JSON
+          </a>
+          <a href="/programs/air-monitoring/station-metadata-source-access.md" download>
+            Station metadata note
+          </a>
+          <a href="/programs/air-monitoring/generated/air-monitoring-openaq-station-metadata-summary.json" download>
+            Station metadata JSON
+          </a>
+          <a href="/programs/air-monitoring/generated/air-monitoring-openaq-station-metadata.csv" download>
+            Station metadata CSV
           </a>
           <Link to="/air-monitoring?view=evidence">Program evidence</Link>
         </div>
@@ -620,6 +722,217 @@ function AirMetadataReadinessPanel({ summary }: { summary: MetadataReadinessSumm
         <p className="showcase-loading">Loading metadata-readiness audit...</p>
       )}
     </section>
+  );
+}
+
+function AirStationMetadataPanel({ summary }: { summary: StationMetadataSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const countryRows = summary?.country_rows ?? [];
+  const stationRows = summary?.station_rows ?? [];
+  const countriesWithStations = countryRows
+    .filter((row) => row.openaq_pm25_locations_fetched > 0)
+    .sort((a, b) => b.openaq_pm25_locations_fetched - a.openaq_pm25_locations_fetched);
+  const zeroCountries = countryRows.filter((row) => row.openaq_pm25_locations_fetched === 0);
+
+  return (
+    <section className="showcase-section air-station-section" aria-label="OpenAQ station metadata source access">
+      <div className="air-station-head">
+        <div>
+          <p className="kicker kicker-blue">Station-source access</p>
+          <h2>OpenAQ returns station coordinates, but not the final coverage claim.</h2>
+          <p>
+            The source pass queries OpenAQ v3 for the same 24 upgrade-queue
+            economies. It turns the station-metadata wall into a map-ready
+            coordinate extract while keeping monitor-grade, regulator inventory,
+            and station-radius coverage outside the claim.
+          </p>
+        </div>
+        <div className="air-station-nonclaim">
+          <strong>Still not proven</strong>
+          <p>
+            A zero in OpenAQ is still only OpenAQ-visible zero. Owner/provider
+            fields are provenance, not monitor-grade validation.
+            {counts
+              ? ` ${formatNumber(counts.excluded_coordinate_qc_rows)} rows were also excluded before mapping because coordinates fell outside broad target-country bounds.`
+              : " Coordinate plausibility checks are applied before mapping."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-station-stat-grid">
+            <div>
+              <span>OpenAQ PM2.5 rows</span>
+              <strong>{formatNumber(counts.openaq_pm25_location_rows)}</strong>
+              <em>{formatNumber(counts.station_coordinate_rows)} have coordinates</em>
+            </div>
+            <div>
+              <span>Economies with rows</span>
+              <strong>{formatNumber(counts.economies_with_openaq_pm25_locations)}</strong>
+              <em>of {formatNumber(counts.economies_targeted)} upgrade-queue economies</em>
+            </div>
+            <div>
+              <span>Still zero in OpenAQ</span>
+              <strong>{formatNumber(counts.economies_with_zero_openaq_pm25_locations)}</strong>
+              <em>requires regulator inventory cross-check</em>
+            </div>
+            <div>
+              <span>Station-radius ready</span>
+              <strong>{counts.station_radius_analysis_ready ? "yes" : "no"}</strong>
+              <em>monitor-grade rows: {formatNumber(counts.monitor_grade_rows)}</em>
+            </div>
+            <div>
+              <span>Coordinate QC exclusions</span>
+              <strong>{formatNumber(counts.excluded_coordinate_qc_rows)}</strong>
+              <em>outside broad target-country bounds</em>
+            </div>
+          </div>
+
+          <div className="air-station-layout">
+            <StationCoordinateMap rows={stationRows} countryRows={countryRows} />
+            <div className="air-station-country-list">
+              <h3>Where OpenAQ returned rows</h3>
+              {countriesWithStations.map((row) => (
+                <div key={row.iso3} className="air-station-country-row">
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.openaq_pm25_locations_fetched)}</b>
+                  <em>{formatNumber(row.first_seen_rows)} first-seen</em>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-station-zero-strip">
+            <span>Zero OpenAQ PM2.5 rows after v3 query</span>
+            <div>
+              {zeroCountries.map((row) => (
+                <b key={row.iso3}>{row.iso3}</b>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-station-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-station-gate air-station-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-station-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-metadata-source-access.md" download>
+              Source-access note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-openaq-station-metadata-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-openaq-station-metadata.csv" download>
+              Station CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading OpenAQ station metadata...</p>
+      )}
+    </section>
+  );
+}
+
+function StationCoordinateMap({
+  rows,
+  countryRows,
+}: {
+  rows: StationMetadataStationRow[];
+  countryRows: StationMetadataCountryRow[];
+}) {
+  const plotted = rows.filter(
+    (row) =>
+      row.latitude !== null &&
+      row.longitude !== null &&
+      Number.isFinite(row.latitude) &&
+      Number.isFinite(row.longitude),
+  );
+  const width = 820;
+  const height = 430;
+  const lonMin = 42;
+  const lonMax = 145;
+  const latMin = -12;
+  const latMax = 45;
+  const x = (lon: number) => ((lon - lonMin) / (lonMax - lonMin)) * width;
+  const y = (lat: number) => height - ((lat - latMin) / (latMax - latMin)) * height;
+  const maxCountry = Math.max(1, ...countryRows.map((row) => row.openaq_pm25_locations_fetched));
+  const countryCounts = new Map(countryRows.map((row) => [row.iso3, row.openaq_pm25_locations_fetched]));
+
+  return (
+    <div className="air-station-map-wrap">
+      <svg viewBox={`0 0 ${width} ${height}`} className="air-station-map" role="img" aria-label="OpenAQ PM2.5 station coordinates for upgrade-queue economies">
+        <defs>
+          <radialGradient id="airStationGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
+            <stop offset="55%" stopColor="#007db8" stopOpacity="0.75" />
+            <stop offset="100%" stopColor="#007db8" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <rect x="0" y="0" width={width} height={height} rx="0" className="air-map-bg" />
+        {[50, 70, 90, 110, 130].map((lon) => (
+          <g key={`lon-${lon}`}>
+            <line x1={x(lon)} x2={x(lon)} y1={0} y2={height} className="air-map-grid" />
+            <text x={x(lon) + 4} y={height - 10} className="air-map-tick">
+              {lon}E
+            </text>
+          </g>
+        ))}
+        {[-10, 0, 15, 30, 45].map((lat) => (
+          <g key={`lat-${lat}`}>
+            <line x1={0} x2={width} y1={y(lat)} y2={y(lat)} className="air-map-grid" />
+            <text x={8} y={y(lat) - 5} className="air-map-tick">
+              {lat} deg
+            </text>
+          </g>
+        ))}
+        <path
+          d={`M ${x(60)} ${y(36)} C ${x(76)} ${y(30)}, ${x(88)} ${y(24)}, ${x(96)} ${y(16)} S ${x(113)} ${y(2)}, ${x(126)} ${y(-6)}`}
+          className="air-map-region-line"
+        />
+        {plotted.map((row) => {
+          const lon = row.longitude ?? 0;
+          const lat = row.latitude ?? 0;
+          const countryCount = countryCounts.get(row.iso3) ?? 1;
+          const radius = 3.2 + (countryCount / maxCountry) * 5.5;
+          return (
+            <g key={`${row.iso3}-${row.openaq_location_id}`}>
+              <circle cx={x(lon)} cy={y(lat)} r={radius + 8} className="air-station-glow" />
+              <circle
+                cx={x(lon)}
+                cy={y(lat)}
+                r={radius}
+                className={row.is_monitor ? "air-station-dot air-station-monitor" : "air-station-dot air-station-sensor"}
+              />
+            </g>
+          );
+        })}
+        {["BGD", "IDN", "MYS", "AFG", "UZB"].map((iso) => {
+          const station = plotted.find((row) => row.iso3 === iso);
+          if (!station || station.latitude === null || station.longitude === null) return null;
+          return (
+            <text key={iso} x={x(station.longitude) + 10} y={y(station.latitude) - 8} className="air-map-label">
+              {iso}
+            </text>
+          );
+        })}
+      </svg>
+      <div className="air-station-map-legend">
+        <span><b className="legend-dot monitor" /> OpenAQ isMonitor row</span>
+        <span><b className="legend-dot sensor" /> Other public PM2.5 sensor row</span>
+        <span>{formatNumber(plotted.length)} coordinate rows, no catchment radius applied</span>
+      </div>
+    </div>
   );
 }
 

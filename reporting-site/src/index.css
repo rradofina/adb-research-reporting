@@ -7381,14 +7381,362 @@
     text-decoration: underline;
   }
 
+  .air-station-section {
+    display: grid;
+    gap: 1.25rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.07), rgba(255, 255, 255, 0.96) 42%),
+      #ffffff;
+  }
+
+  .air-station-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  @media (min-width: 980px) {
+    .air-station-head {
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 0.38fr);
+    }
+  }
+
+  .air-station-head h2 {
+    margin: 0 0 0.65rem;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 2vw, 2.3rem);
+    line-height: 1.05;
+  }
+
+  .air-station-head p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy);
+    line-height: var(--line-copy);
+  }
+
+  .air-station-nonclaim {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 1rem;
+    border-left: 4px solid #fbb00e;
+    background: #fffbed;
+  }
+
+  .air-station-nonclaim strong {
+    color: #7a5a00;
+    font-size: var(--type-copy-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .air-station-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-station-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-station-stat-grid span,
+  .air-station-gate span,
+  .air-station-zero-strip span,
+  .air-station-downloads span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .air-station-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .air-station-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-station-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
+    gap: 0.9rem;
+    align-items: stretch;
+  }
+
+  .air-station-map-wrap {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-station-map {
+    display: block;
+    width: 100%;
+    aspect-ratio: 82 / 43;
+  }
+
+  .air-map-bg {
+    fill: #edf5f8;
+  }
+
+  .air-map-grid {
+    stroke: rgba(0, 37, 105, 0.12);
+    stroke-width: 1;
+  }
+
+  .air-map-tick {
+    fill: var(--ink-faint);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+  }
+
+  .air-map-region-line {
+    fill: none;
+    stroke: rgba(0, 37, 105, 0.22);
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+
+  .air-station-glow {
+    fill: url(#airStationGlow);
+    opacity: 0.28;
+  }
+
+  .air-station-dot {
+    stroke: #ffffff;
+    stroke-width: 1.4;
+  }
+
+  .air-station-monitor {
+    fill: #007db8;
+  }
+
+  .air-station-sensor {
+    fill: #9b2226;
+  }
+
+  .air-map-label {
+    fill: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 800;
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 4;
+  }
+
+  .air-station-map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.85rem;
+    align-items: center;
+    padding: 0 0.85rem 0.85rem;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-right: 0.3rem;
+    border-radius: 999px;
+    vertical-align: -0.08rem;
+  }
+
+  .legend-dot.monitor {
+    background: #007db8;
+  }
+
+  .legend-dot.sensor {
+    background: #9b2226;
+  }
+
+  .air-station-country-list {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--rule-soft);
+    background: var(--paper-deep);
+  }
+
+  .air-station-country-list h3 {
+    margin: 0 0 0.25rem;
+    color: var(--ink);
+    font-size: 1.05rem;
+  }
+
+  .air-station-country-row {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+    gap: 0.4rem 0.65rem;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .air-station-country-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .air-station-country-row span {
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .air-station-country-row strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 0.9rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-station-country-row b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .air-station-country-row em {
+    grid-column: 2 / 4;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+  }
+
+  .air-station-zero-strip {
+    display: grid;
+    gap: 0.6rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid rgba(155, 34, 38, 0.22);
+    background: #fff8f5;
+  }
+
+  .air-station-zero-strip div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .air-station-zero-strip b {
+    display: inline-grid;
+    place-items: center;
+    min-width: 2.35rem;
+    height: 2rem;
+    padding: 0 0.45rem;
+    background: #ffffff;
+    color: #7a1b1e;
+    border: 1px solid rgba(155, 34, 38, 0.26);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+  }
+
+  .air-station-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-station-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-station-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-station-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-station-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-station-gate strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-station-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1rem;
+  }
+
+  .air-station-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-station-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-station-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-station-downloads a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 1180px) {
     .air-metadata-stat-grid,
     .air-metadata-gate-grid,
-    .air-metadata-queue {
+    .air-metadata-queue,
+    .air-station-stat-grid,
+    .air-station-gate-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .air-metadata-queue-layout {
+    .air-metadata-queue-layout,
+    .air-station-layout {
       grid-template-columns: minmax(0, 1fr);
     }
   }
@@ -8185,6 +8533,10 @@
       gap: 2.75rem;
     }
 
+    .air-station-section {
+      scroll-margin-top: 10.5rem;
+    }
+
     .showcase-hero {
       min-height: auto;
       padding-top: 0.5rem;
@@ -8323,12 +8675,15 @@
 
     .air-metadata-stat-grid,
     .air-metadata-gate-grid,
-    .air-metadata-queue {
+    .air-metadata-queue,
+    .air-station-stat-grid,
+    .air-station-gate-grid {
       grid-template-columns: minmax(0, 1fr);
     }
 
     .air-metadata-gate,
-    .air-metadata-queue-card {
+    .air-metadata-queue-card,
+    .air-station-gate {
       grid-template-rows: auto;
     }
 
@@ -8336,10 +8691,20 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .air-metadata-downloads {
+    .air-metadata-downloads,
+    .air-station-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       align-items: start;
+    }
+
+    .air-station-map-legend {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-station-country-row {
+      grid-template-columns: 2.4rem minmax(0, 1fr) auto;
     }
 
     .access-hero-stats {

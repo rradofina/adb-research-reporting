@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | Public metadata-readiness wall complete; station-level source package next |
+| Active stage | OpenAQ station-metadata source package and station map complete; regulator-inventory validation next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -21,9 +21,10 @@ Last updated: 2026-06-19.
 
 Build a reviewer-credible air-monitoring observability package for the
 showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
-keep the GDP-confound caveat visible, make the station-level metadata wall
-explicit, and do not imply station-radius, monitor-grade, station-vintage, or
-regulatory-inventory validation until those sources are fetched and versioned.
+keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
+package and coordinate map now available for the upgrade queue, and do not
+imply station-radius, monitor-grade, or regulatory-inventory validation until
+those sources and methods are added.
 
 ## Last completed
 
@@ -58,21 +59,52 @@ regulatory-inventory validation until those sources are fetched and versioned.
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-cards.png`,
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-gates.png`, and
   `reporting-site/qa/showcase-air-metadata-readiness-mobile-queue.png`.
+- **2026-06-19:** Added the OpenAQ station-metadata source-access pass. New
+  script `scripts/fetch-openaq-station-metadata.py` reads
+  `generated/air-monitoring-metadata-readiness-audit.csv`, selects the 24
+  non-panel-context upgrade-queue economies, queries the OpenAQ v3 `locations`
+  endpoint with `parameters_id=2`, caches raw responses locally under the
+  git-ignored `.cache/openaq-station-metadata/`, and writes committed
+  artifacts `generated/air-monitoring-openaq-station-metadata.csv` and
+  `generated/air-monitoring-openaq-station-metadata-summary.json`. The pass
+  computed all 24 economies with 0 API errors, 11 economies with OpenAQ PM2.5
+  station rows, 13 economies with zero OpenAQ PM2.5 station rows, 101 PM2.5
+  station rows, 101 coordinate rows, 101 owner/provider rows, 93 first-seen
+  rows, 2 coordinate-QC exclusions, 0 monitor-grade rows, 0
+  regulator-inventory rows, and station-radius analysis still not ready. Wrote
+  `station-metadata-source-access.md` and `.cache/README.md`. This is source
+  access, not monitor-grade validation, not a regulatory inventory, not proof
+  of no monitor outside OpenAQ, and not station-radius population coverage.
+- **2026-06-19:** Added the station-source panel to the public showcase route
+  at `/showcase/air-monitoring-observability`. The panel renders 5 station
+  stat cards, 101 map dots, 11 country rows, 13 zero-OpenAQ chips, 7 evidence
+  gate cards, note/JSON/CSV downloads, and the 2 coordinate-QC exclusions.
+  Verification passed: station-fetch script rerun, script `py_compile`,
+  evidence/doc/reference sync, production site build, six deterministic gates,
+  `git diff --check` with only CRLF warnings, secret-name scan with no
+  committed key values, and Chrome CDP desktop/mobile QA at 1440x1100 and
+  390x900. Browser QA found no page, section, or map horizontal overflow, no
+  out-of-bounds SVG station dots, and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-station-metadata-desktop.png`,
+  `reporting-site/qa/showcase-air-station-metadata-desktop-map.png`,
+  `reporting-site/qa/showcase-air-station-metadata-mobile.png`, and
+  `reporting-site/qa/showcase-air-station-metadata-mobile-map.png`.
 
 ## Next focused work
 
-1. Fetch and version public station-level metadata: coordinates, monitor
-   grade/owner where available, and first-seen or station-vintage fields.
-2. Collect national regulator inventory references for the zero-public-monitor
+1. Collect national regulator inventory references for the zero-public-monitor
    and positive-GDP-residual queue rows.
-3. Only after those sources exist, build station-radius or catchment
+2. Validate monitor grade where public station-owner or regulator sources
+   distinguish reference-grade/regulatory monitors from low-cost feeds.
+3. Only after regulator sources and denominators exist, build station-radius or catchment
    sensitivity with gridded population/PM2.5 denominators.
 
 ## Current blockers
 
-- Station-radius or catchment analysis needs station-level coordinates.
+- Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs,
+  but still needs a declared catchment method and gridded population/PM2.5
+  denominators.
 - Monitor-grade claims need a station-level source that distinguishes
   reference-grade/regulatory monitors from low-cost or other public feeds.
-- Station-vintage claims need first-seen or time-series station metadata.
 - Treating OpenAQ-visible zero as no monitor on the ground requires regulator
   inventory cross-checks.

@@ -21,6 +21,9 @@ Artifact: `generated/air-monitoring-concentration-deepening.{json,csv}`.
 Metadata-readiness audit:
 `generated/air-monitoring-metadata-readiness-audit-summary.json` and
 `generated/air-monitoring-metadata-readiness-audit.csv`.
+Station-metadata source-access pass:
+`generated/air-monitoring-openaq-station-metadata-summary.json` and
+`generated/air-monitoring-openaq-station-metadata.csv`.
 
 ## The two questions
 
@@ -142,6 +145,14 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   0 regulatory-inventory rows in the committed artifacts. Station-radius,
   monitor-grade, station-vintage, and regulatory-inventory claims are therefore
   not ready.
+- **New source-access result:** the OpenAQ station-metadata fetch covers all
+  24 upgrade-queue economies and returns 101 OpenAQ PM2.5 station rows, 101
+  station-coordinate rows, 101 owner/provider rows, and 93 first-seen rows
+  after excluding 2 rows whose coordinates fell outside broad target-country
+  bounds. It still returns 0 monitor-grade rows, 0 regulator-inventory rows,
+  and 0 station-radius coverage rows. Thirteen economies in the queue remain
+  at zero OpenAQ PM2.5 rows, which is still an OpenAQ-visible zero rather than
+  proof of no monitor on the ground.
 
 ## Bounds
 
@@ -180,4 +191,5 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
 ```bash
 python air-monitoring/scripts/deepen-concentration-and-hdi.py
 python air-monitoring/scripts/build-metadata-readiness-audit.py
+python air-monitoring/scripts/fetch-openaq-station-metadata.py
 ```

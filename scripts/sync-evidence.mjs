@@ -58,6 +58,7 @@ const ARTIFACTS = [
   { key: "coverage", file: "coverage.md", label: "Coverage" },
   { key: "results", file: "results.md", label: "Results" },
   { key: "air_monitoring_metadata_readiness_audit", file: "metadata-readiness-audit.md", label: "Air-monitoring metadata-readiness audit" },
+  { key: "air_monitoring_station_metadata_source_access", file: "station-metadata-source-access.md", label: "Air-monitoring OpenAQ station-metadata source access" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
   { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "facility_validation_coded_screen", file: "facility-validation-coded-screen.md", label: "Facility-validation coded screen" },

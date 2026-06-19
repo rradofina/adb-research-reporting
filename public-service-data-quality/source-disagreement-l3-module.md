@@ -794,6 +794,35 @@ rows worth source review, but it does not prove the coordinate source or
 correction history. The three rows remain blocked from map-absence and
 same-facility language until source-owner clarification or human validation.
 
+## Facility-Validation Evidence Ladder Addendum
+
+The evidence ladder now lives in
+`facility-validation-evidence-ladder.md`. The script
+`scripts/build-bgd-facility-evidence-ladder.py` is a no-network pass over
+committed facility-validation summary JSON files. It does not fetch new data
+and it does not validate any row. It gives the showcase page and the review
+packet a compact way to follow the evidence chain.
+
+The ladder covers 10 stages:
+
+| Evidence ladder signal | Rows or files |
+|---|---:|
+| Input summary artifacts | 10 |
+| Ladder stages | 10 |
+| Sampled facility rows | 76 |
+| Targeted public-source rows | 40 |
+| Human-gated handoff rows | 39 |
+| AI closure-audit rows | 39 |
+| Rows AI-actionable without human/source-owner evidence | 0 |
+| Keep-open-only terminal rows | 39 |
+| Human- or source-owner wall rows | 39 |
+
+The ladder is not a statistical attrition funnel because the unit changes
+across stages. It starts with upazila registry rows, narrows to sampled
+facility rows, then ends with blank worksheet and audit rows. Its purpose is
+reader orientation, not source repair, closure, reclassification, or
+facility-level absence language.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -832,6 +861,7 @@ python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-o
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
 python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
+python public-service-data-quality/scripts/build-bgd-facility-evidence-ladder.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -885,6 +915,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-evidence-ladder.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-evidence-ladder-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

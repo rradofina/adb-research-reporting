@@ -100,6 +100,10 @@ workbook and Codex seeded the canonical cache.
   blank human-review fields permit AI closure, same-facility reclassification,
   map-absence language, or coordinate correction. It is a keep-open audit, not
   validation.
+- The Bangladesh facility-validation evidence ladder is a no-network pass over
+  committed summary JSON files. It emits a 10-stage reader-navigation artifact
+  from source-disagreement strata through the AI closure audit. It is not a
+  statistical funnel and not validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -247,6 +251,7 @@ python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-o
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
 python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
+python public-service-data-quality/scripts/build-bgd-facility-evidence-ladder.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -692,6 +697,27 @@ same-facility reclassifications, 0 AI map-absence uses, 0 AI coordinate
 corrections, 0 rows actionable without human or source-owner evidence, and 39
 keep-open-only rows.
 
+## Bangladesh facility-validation evidence ladder
+
+This step does not fetch data. It reads committed summary JSON files and emits
+a stage-by-stage reader ladder from source-disagreement strata through the AI
+closure audit. The counts are stage counts, not a statistical attrition funnel.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-evidence-ladder.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-evidence-ladder.csv`
+- `generated/psdq-bgd-facility-validation-evidence-ladder-summary.json`
+
+The output status is `ai_evidence_ladder_not_validation`. The current pass
+reads 10 summary artifacts and emits 10 stages. It records 76 sampled facility
+rows, 40 targeted public-source rows, 39 human-gated handoff rows, 39
+AI-closure-audit rows, 0 rows actionable without human or source-owner
+evidence, 39 keep-open-only rows, and 39 human- or source-owner wall rows.
+
 ## Bangladesh facility-validation source-repair public evidence
 
 This step does not fetch data. It reads the public-source decision ledger and
@@ -896,6 +922,7 @@ For a reader or reviewer, the reproducibility chain is:
    `facility-validation-priority-name-conflict-review.md`,
    `facility-validation-lower-priority-name-conflict-review.md`,
    `facility-validation-zero-osm-upazila-observability-review.md`,
+   `facility-validation-evidence-ladder.md`,
    `facility-validation-human-gated-handoff.md`,
    `facility-validation-human-validation-worksheet.md`,
    `facility-validation-ai-closure-audit.md`, and

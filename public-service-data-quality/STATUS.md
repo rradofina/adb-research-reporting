@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 39-row AI closure audit, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 39-row AI closure audit, 10-stage evidence ladder, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -33,6 +33,7 @@ zero-OSM upazila observability review,
 human-gated handoff matrix,
 human-validation worksheet,
 AI closure audit,
+evidence ladder,
 public-explanation search, correction-record follow-up,
 clarification packet, registry-vintage review, and caveats, make the source
 upgrade clear in the public surface, and preserve the existing PR maturity
@@ -40,6 +41,34 @@ label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh facility-validation evidence ladder for
+  the PSDQ source-disagreement showcase. New no-network script
+  `scripts/build-bgd-facility-evidence-ladder.py` reads 10 committed summary
+  JSON artifacts, then writes
+  `generated/psdq-bgd-facility-validation-evidence-ladder.csv` and
+  `generated/psdq-bgd-facility-validation-evidence-ladder-summary.json`.
+  The ladder emits 10 stages and records 76 sampled facility rows, 40
+  targeted public-source rows, 39 human-gated handoff rows, 39 AI
+  closure-audit rows, 0 rows actionable without human or source-owner
+  evidence, 39 keep-open-only terminal rows, and 39 human- or source-owner
+  wall rows. Added `facility-validation-evidence-ladder.md`, wired evidence
+  sync and review-packet inclusion, updated README/REPRODUCE/L3 notes, hook
+  bank, showcase quality audit, showcase registry metadata, and added the
+  evidence-ladder panel to `/showcase/psdq-source-disagreement`. This is a
+  reader-navigation artifact, not a statistical funnel, source-owner response,
+  human validation, ground truth, coordinate correction, row closure,
+  same-facility reclassification, map-absence validation, a maturity
+  promotion, or a human-final upgrade. Verification passed: ladder script
+  rerun, script `py_compile`, evidence and reference sync, production site
+  build, six deterministic gates plus `git diff --check`, review packet and
+  zip rebuild, and Chrome CDP desktop/mobile QA at 1440x1100 and 390x900 with
+  10 ladder stage cards, 4 summary cards, note/JSON/CSV links visible, no
+  page-level or ladder-section horizontal overflow, no page errors, and only
+  existing React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-psdq-evidence-ladder-desktop.png`,
+  `reporting-site/qa/showcase-psdq-evidence-ladder-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-evidence-ladder-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-evidence-ladder-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh AI closure audit for the PSDQ
   facility-validation handoff queue. New no-network script
   `scripts/build-bgd-facility-ai-closure-audit.py` reads

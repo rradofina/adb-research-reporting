@@ -1248,6 +1248,58 @@ interface PsdqAiClosureAuditSummary {
   non_claim: string;
 }
 
+interface PsdqEvidenceLadderStage {
+  stage_order: number;
+  stage_id: string;
+  stage_label: string;
+  source_summary_path: string;
+  unit: string;
+  row_count: number;
+  supporting_rows: number;
+  stage_type: string;
+  reader_use: string;
+  primary_gate: string;
+  keep_open_rows: number;
+  closed_rows: number;
+  reclassified_rows: number;
+  map_absence_rows: number;
+  coordinate_correction_rows: number;
+  human_or_source_owner_wall_rows: number;
+  ai_actionable_rows: number;
+  caveat: string;
+}
+
+interface PsdqEvidenceLadderSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  ladder_scope: {
+    stages: number;
+    input_summary_files: number;
+    sampled_facility_rows: number;
+    targeted_public_source_rows: number;
+    human_gated_handoff_rows: number;
+    ai_closure_audit_rows: number;
+    ai_actionable_without_human_or_source_owner_rows: number;
+    keep_open_only_rows: number;
+    human_or_source_owner_wall_rows: number;
+  };
+  stage_rows: PsdqEvidenceLadderStage[];
+  terminal_gate: {
+    stage_id: string;
+    stage_label: string;
+    row_count: number;
+    ai_actionable_rows: number;
+    keep_open_rows: number;
+    human_or_source_owner_wall_rows: number;
+    primary_gate: string;
+  };
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqSourceRepairEvidenceRow {
   evidence_id: string;
   evidence_rank: number;
@@ -1801,6 +1853,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqZeroOsmObservabilityReviewSummary | null>(null);
   const [humanGatedHandoffSummary, setHumanGatedHandoffSummary] =
     useState<PsdqHumanGatedHandoffSummary | null>(null);
+  const [evidenceLadderSummary, setEvidenceLadderSummary] =
+    useState<PsdqEvidenceLadderSummary | null>(null);
   const [aiClosureAuditSummary, setAiClosureAuditSummary] =
     useState<PsdqAiClosureAuditSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
@@ -1901,6 +1955,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`human-gated handoff HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-evidence-ladder-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`evidence ladder HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json").then((r) => {
         if (!r.ok) throw new Error(`AI closure audit HTTP ${r.status}`);
         return r.json();
@@ -1955,6 +2013,7 @@ export default function ShowcasePSDQ() {
         lowerPriorityNameConflictReviewPayload,
         zeroOsmObservabilityReviewPayload,
         humanGatedHandoffPayload,
+        evidenceLadderPayload,
         aiClosureAuditPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
@@ -1984,6 +2043,7 @@ export default function ShowcasePSDQ() {
         setLowerPriorityNameConflictReviewSummary(lowerPriorityNameConflictReviewPayload);
         setZeroOsmObservabilityReviewSummary(zeroOsmObservabilityReviewPayload);
         setHumanGatedHandoffSummary(humanGatedHandoffPayload);
+        setEvidenceLadderSummary(evidenceLadderPayload);
         setAiClosureAuditSummary(aiClosureAuditPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
@@ -2079,6 +2139,10 @@ export default function ShowcasePSDQ() {
       </section>
 
       {strata && <PsdqValidationPanel strata={strata} />}
+
+      {evidenceLadderSummary && (
+        <PsdqEvidenceLadderPanel summary={evidenceLadderSummary} />
+      )}
 
       {validationSample && <PsdqValidationSamplePanel sample={validationSample} />}
 
@@ -2349,6 +2413,166 @@ function PsdqValidationPanel({ strata }: { strata: PsdqSourceStrata }) {
               : "Road-context artifact not loaded"}
           </strong>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function evidenceLadderStageColor(stageType: string) {
+  if (stageType.includes("source_disagreement")) return "#005E7C";
+  if (stageType.includes("sample")) return "#007DB8";
+  if (stageType.includes("automated")) return "#5A8227";
+  if (stageType.includes("ai")) return "#8A6A00";
+  if (stageType.includes("public")) return "#9B2226";
+  if (stageType.includes("human")) return "#002569";
+  return "#6c757d";
+}
+
+function evidenceLadderStageKind(stageType: string) {
+  if (stageType.includes("human")) return "human gate";
+  if (stageType.includes("ai")) return "AI gate";
+  if (stageType.includes("public")) return "public source";
+  if (stageType.includes("automated")) return "automated screen";
+  if (stageType.includes("sample")) return "sample design";
+  if (stageType.includes("source_disagreement")) return "source context";
+  return stageType.replaceAll("_", " ");
+}
+
+function PsdqEvidenceLadderPanel({ summary }: { summary: PsdqEvidenceLadderSummary }) {
+  const scope = summary.ladder_scope;
+  const terminal = summary.terminal_gate;
+  const stages = summary.stage_rows.slice().sort((a, b) => a.stage_order - b.stage_order);
+
+  return (
+    <section className="showcase-section psdq-evidence-ladder-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Evidence ladder</p>
+          <h2>The reader can now see where the AI loop stops.</h2>
+          <p>
+            The ladder reads committed summaries and turns the PSDQ facility
+            review into a stage-by-stage evidence map. It is not a funnel: the
+            unit changes from upazila registry rows to sampled facility rows to
+            worksheet rows.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Stage summaries read</span>
+            <strong>
+              {formatNumber(scope.input_summary_files)} files, {formatNumber(scope.stages)} stages
+            </strong>
+          </div>
+          <div>
+            <span>Validation sample</span>
+            <strong>{formatNumber(scope.sampled_facility_rows)} sampled facility rows</strong>
+          </div>
+          <div>
+            <span>Terminal audit</span>
+            <strong>{formatNumber(scope.ai_closure_audit_rows)} worksheet rows audited</strong>
+          </div>
+          <div>
+            <span>AI-actionable now</span>
+            <strong>{formatNumber(scope.ai_actionable_without_human_or_source_owner_rows)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-evidence-ladder-summary-grid">
+        <article>
+          <span>Targeted public-source rows</span>
+          <strong>{formatNumber(scope.targeted_public_source_rows)}</strong>
+          <p>rows with retrieved public-source context</p>
+        </article>
+        <article>
+          <span>Human-gated handoff</span>
+          <strong>{formatNumber(scope.human_gated_handoff_rows)}</strong>
+          <p>rows requiring source-owner or human action</p>
+        </article>
+        <article>
+          <span>Keep-open terminal rows</span>
+          <strong>{formatNumber(scope.keep_open_only_rows)}</strong>
+          <p>only current allowed language</p>
+        </article>
+        <article>
+          <span>Human/source-owner wall</span>
+          <strong>{formatNumber(scope.human_or_source_owner_wall_rows)}</strong>
+          <p>rows blocked from AI closure or reclassification</p>
+        </article>
+      </div>
+
+      <div className="psdq-evidence-ladder-rail" aria-label="PSDQ facility-validation evidence ladder">
+        {stages.map((stage) => {
+          const color = evidenceLadderStageColor(stage.stage_type);
+          return (
+            <article key={stage.stage_id} style={{ borderColor: color }}>
+              <div className="psdq-evidence-ladder-card-head">
+                <span>Stage {stage.stage_order}</span>
+                <strong>{stage.stage_label}</strong>
+                <em>{evidenceLadderStageKind(stage.stage_type)}</em>
+              </div>
+              <div className="psdq-evidence-ladder-row-count" style={{ color }}>
+                <b>{formatNumber(stage.row_count)}</b>
+                <span>{stage.unit}</span>
+              </div>
+              <p>{stage.reader_use}</p>
+              <div className="psdq-evidence-ladder-chips">
+                <span>support {formatNumber(stage.supporting_rows)}</span>
+                <span>keep-open {formatNumber(stage.keep_open_rows)}</span>
+                {stage.human_or_source_owner_wall_rows > 0 && (
+                  <span>wall {formatNumber(stage.human_or_source_owner_wall_rows)}</span>
+                )}
+                {stage.ai_actionable_rows > 0 ? (
+                  <span>AI-actionable {formatNumber(stage.ai_actionable_rows)}</span>
+                ) : (
+                  <span>AI-actionable 0</span>
+                )}
+              </div>
+              <div className="psdq-evidence-ladder-gate">
+                <span>Gate</span>
+                <p>{stage.primary_gate}</p>
+              </div>
+              <code>{stage.source_summary_path}</code>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-evidence-ladder-terminal">
+        <div>
+          <span>{terminal.stage_label}</span>
+          <strong>{terminal.primary_gate}</strong>
+          <p>
+            {formatNumber(terminal.keep_open_rows)} rows remain keep-open only;
+            {` ${formatNumber(terminal.ai_actionable_rows)} `}rows are AI-actionable
+            without human or source-owner evidence.
+          </p>
+        </div>
+        <div className="psdq-evidence-ladder-terminal-metrics">
+          <span>audit rows {formatNumber(terminal.row_count)}</span>
+          <span>wall rows {formatNumber(terminal.human_or_source_owner_wall_rows)}</span>
+          <span>status {summary.status.replaceAll("_", " ")}</span>
+        </div>
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the evidence ladder</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-evidence-ladder.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-evidence-ladder.md" download>
+          Download evidence-ladder note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-evidence-ladder-summary.json" download>
+          Download evidence-ladder summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-evidence-ladder.csv" download>
+          Download evidence-ladder CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
       </div>
     </section>
   );

@@ -3840,6 +3840,12 @@
     scroll-margin-top: 8rem;
   }
 
+  .psdq-evidence-ladder-section {
+    display: grid;
+    gap: 1rem;
+    scroll-margin-top: 8rem;
+  }
+
   .psdq-human-gated-handoff-section {
     display: grid;
     gap: 1rem;
@@ -3983,6 +3989,18 @@
     display: grid;
     gap: 0.65rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-evidence-ladder-summary-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-evidence-ladder-rail {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .psdq-human-gated-group-grid {
@@ -5059,6 +5077,138 @@
   .psdq-human-gated-evidence div {
     border-top: 1px solid var(--rule-soft);
     padding-top: 0.6rem;
+  }
+
+  .psdq-evidence-ladder-summary-grid article,
+  .psdq-evidence-ladder-rail article {
+    min-width: 0;
+    display: grid;
+    gap: 0.65rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .psdq-evidence-ladder-summary-grid article {
+    min-height: 8.25rem;
+    padding: 0.85rem;
+    border-top: 4px solid #005E7C;
+  }
+
+  .psdq-evidence-ladder-rail article {
+    border-left: 4px solid var(--accent);
+    padding: 0.85rem;
+  }
+
+  .psdq-evidence-ladder-card-head,
+  .psdq-evidence-ladder-row-count,
+  .psdq-evidence-ladder-gate {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-evidence-ladder-summary-grid span,
+  .psdq-evidence-ladder-card-head span,
+  .psdq-evidence-ladder-row-count span,
+  .psdq-evidence-ladder-gate span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-evidence-ladder-summary-grid strong,
+  .psdq-evidence-ladder-card-head strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-evidence-ladder-summary-grid strong {
+    font-family: var(--font-mono);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 0.95;
+  }
+
+  .psdq-evidence-ladder-card-head em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-evidence-ladder-row-count b {
+    font-family: var(--font-mono);
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    line-height: 1;
+  }
+
+  .psdq-evidence-ladder-summary-grid p,
+  .psdq-evidence-ladder-rail article > p,
+  .psdq-evidence-ladder-gate p,
+  .psdq-evidence-ladder-terminal p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.4;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-evidence-ladder-chips,
+  .psdq-evidence-ladder-terminal-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-evidence-ladder-chips span,
+  .psdq-evidence-ladder-terminal-metrics span {
+    color: var(--ink);
+    background: #eef2f5;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .psdq-evidence-ladder-gate {
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 0.6rem;
+  }
+
+  .psdq-evidence-ladder-rail code {
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-xs);
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-evidence-ladder-terminal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.45fr);
+    gap: 1rem;
+    align-items: center;
+    border-left: 4px solid #5A8227;
+    padding: 1rem;
+    background: #f7faf4;
+  }
+
+  .psdq-evidence-ladder-terminal span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-evidence-ladder-terminal strong {
+    display: block;
+    margin: 0.25rem 0 0.35rem;
+    color: var(--ink);
+    font-size: var(--type-h3);
+    line-height: 1.1;
   }
 
   .psdq-ai-closure-gate-grid article,
@@ -7820,6 +7970,9 @@
     .psdq-zero-osm-division-grid,
     .psdq-zero-osm-grid,
     .psdq-zero-osm-targeted-strip,
+    .psdq-evidence-ladder-summary-grid,
+    .psdq-evidence-ladder-rail,
+    .psdq-evidence-ladder-terminal,
     .psdq-human-gated-group-grid,
     .psdq-human-gated-upazila-grid,
     .psdq-human-gated-row-grid,

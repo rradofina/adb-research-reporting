@@ -79,6 +79,7 @@ const PROGRAM_FILES = [
   "facility-validation-priority-name-conflict-review.md",
   "facility-validation-lower-priority-name-conflict-review.md",
   "facility-validation-zero-osm-upazila-observability-review.md",
+  "facility-validation-evidence-ladder.md",
   "facility-validation-human-gated-handoff.md",
   "facility-validation-human-validation-worksheet.md",
   "facility-validation-ai-closure-audit.md",

@@ -74,6 +74,7 @@ const ARTIFACTS = [
   { key: "facility_validation_priority_name_conflict_review", file: "facility-validation-priority-name-conflict-review.md", label: "Facility-validation priority name-conflict review" },
   { key: "facility_validation_lower_priority_name_conflict_review", file: "facility-validation-lower-priority-name-conflict-review.md", label: "Facility-validation lower-priority name-conflict review" },
   { key: "facility_validation_zero_osm_upazila_observability_review", file: "facility-validation-zero-osm-upazila-observability-review.md", label: "Facility-validation zero-OSM upazila observability review" },
+  { key: "facility_validation_evidence_ladder", file: "facility-validation-evidence-ladder.md", label: "Facility-validation evidence ladder" },
   { key: "facility_validation_human_gated_handoff", file: "facility-validation-human-gated-handoff.md", label: "Facility-validation human-gated handoff matrix" },
   { key: "facility_validation_human_validation_worksheet", file: "facility-validation-human-validation-worksheet.md", label: "Facility-validation human-validation worksheet" },
   { key: "facility_validation_ai_closure_audit", file: "facility-validation-ai-closure-audit.md", label: "Facility-validation AI closure audit" },

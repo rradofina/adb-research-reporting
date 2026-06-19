@@ -54,6 +54,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-facility-human-gated-handoff.py` — consolidates source-repair, possible same-facility, name-conflict, and zero-OSM rows into one no-contact human-gated handoff matrix
 - `scripts/build-bgd-facility-human-validation-worksheet.py` — converts the human-gated handoff matrix into a blank human-validation worksheet with row-class evidence rules
 - `scripts/build-bgd-facility-ai-closure-audit.py` — audits the human-validation worksheet to confirm which rows, if any, AI can close from current public evidence alone
+- `scripts/build-bgd-facility-evidence-ladder.py` — summarizes the committed facility-validation summaries into a 10-stage reader evidence ladder
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
@@ -125,6 +126,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json` — worksheet scope, group counts, role counts, and prefilled no-closure gate counts
 - `generated/psdq-bgd-facility-validation-ai-closure-audit.csv` — row-level audit of whether current public evidence permits AI closure, reclassification, map-absence language, or coordinate correction
 - `generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json` — chart-ready audit-wall counts, decision gates, and keep-open-only counts
+- `generated/psdq-bgd-facility-validation-evidence-ladder.csv` — 10-stage reader evidence ladder from source-disagreement strata through the AI closure audit
+- `generated/psdq-bgd-facility-validation-evidence-ladder-summary.json` — chart-ready ladder scope, stage counts, terminal gate, and non-claim metadata
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json` — chart-ready source-repair attachment counts, evidence classes, and candidate groups
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv` — official DGHS profile coordinate evidence for the four source-repair-first rows

@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -23,10 +23,10 @@ Build a reviewer-credible air-monitoring observability package for the
 showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
 keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
-upgrade queue, show the official/OpenAQ candidate review queue and
-monitor-grade evidence ladder honestly, and do not imply station-radius,
-complete monitor-grade, or regulatory-inventory validation until official
-method tables, station crosswalks, and catchment methods are added.
+upgrade queue, show the official/OpenAQ candidate review queue, public OpenAQ
+metadata evidence, and monitor-grade evidence ladder honestly, and do not imply
+station-radius, complete monitor-grade, or regulatory-inventory validation until
+official method tables, station crosswalks, and catchment methods are added.
 
 ## Last completed
 
@@ -192,6 +192,27 @@ method tables, station crosswalks, and catchment methods are added.
   `reporting-site/qa/showcase-air-openaq-candidate-desktop.png`,
   `reporting-site/qa/showcase-air-openaq-candidate-mobile.png`, and
   `reporting-site/qa/showcase-air-openaq-candidate-mobile-gates.png`.
+- **2026-06-19:** Added the official/OpenAQ candidate public-evidence audit.
+  New script `scripts/audit-official-openaq-candidate-public-evidence.py`
+  reads the 13-row candidate worksheet and OpenAQ station-metadata artifact,
+  then writes
+  `generated/air-monitoring-official-openaq-candidate-public-evidence.csv` and
+  `generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json`.
+  The audit records 13 rows with OpenAQ owner/provider metadata, 6 OpenAQ
+  `isMonitor` true rows, 7 rows not marked `isMonitor`, 11 first-seen rows, 11
+  last-seen rows, 0 exact station-ID overlaps, 0 exact official-agency
+  owner/provider matches, 0 explicit crosswalk rows, 0 validated same-station
+  joins, and 0 station-radius-ready rows. Wrote
+  `official-openaq-candidate-public-evidence.md`. This is a public-evidence
+  attachment, not station validation or monitor-grade certification.
+- **2026-06-19:** Added the candidate public-evidence panel to the public
+  showcase route. Browser QA at 1440x1100 and 390x1000 confirmed 5 public
+  evidence stat cards, 2 evidence-lane cards, 4 country cards, 6 row cards,
+  5 evidence gates, 3 download links, no page or section horizontal overflow,
+  and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-openaq-candidate-evidence-desktop.png`,
+  `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile.png`, and
+  `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile-gates.png`.
 
 ## Next focused work
 
@@ -199,11 +220,12 @@ method tables, station crosswalks, and catchment methods are added.
    station-owner, or regulator sources distinguish reference-grade/regulatory
    monitors from low-cost or other public feeds, and confirm current-status
    scope for the Bangladesh method-standard signal.
-2. Review the 13 near-plus-name official/OpenAQ candidate worksheet rows
-   against station IDs, documented crosswalks, source-owner/current-status
-   pages, or documented co-location evidence; keep rows open unless public
-   evidence supports one of the worksheet decisions. Then review the 31
-   one-signal candidates.
+2. Use the candidate public-evidence audit to prioritize row-level public
+   station-crosswalk search: first the 6 OpenAQ `isMonitor` true rows without
+   crosswalks, then the 7 not-`isMonitor` public-feed caution rows. Keep rows
+   open unless station IDs, documented crosswalks, source-owner/current-status
+   pages, or documented co-location evidence support one of the worksheet
+   decisions. Then review the 31 one-signal candidates.
 3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
@@ -228,6 +250,11 @@ method tables, station crosswalks, and catchment methods are added.
   but it still records 0 station-ID crosswalk rows, 0 public current-status
   confirmation rows, 0 validated same-station joins, and 0 station-radius-ready
   rows.
+- The candidate public-evidence audit sharpens the review queue with OpenAQ
+  owner/provider and `isMonitor` metadata, but it still records 0 exact
+  station-ID overlaps, 0 exact official-agency owner/provider matches, 0
+  explicit crosswalk rows, 0 validated same-station joins, and 0
+  station-radius-ready rows.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

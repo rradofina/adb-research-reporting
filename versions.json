@@ -87,6 +87,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Review worksheet for the 13 near-plus-name official/OpenAQ candidate rows from the reconciliation audit. The worksheet adds source metadata, row-level review questions, allowed decisions, and minimum validation evidence while keeping 0 rows validated and 0 rows station-radius-ready."
     },
+    "air_monitoring_official_openaq_candidate_public_evidence": {
+      "script": "air-monitoring/scripts/audit-official-openaq-candidate-public-evidence.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Public-evidence attachment for the 13 official/OpenAQ candidate worksheet rows. The audit joins OpenAQ owner/provider, isMonitor, sensor-count, and vintage metadata to each candidate row, while keeping explicit crosswalk evidence, validated same-station joins, and station-radius-ready rows at 0."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -161,6 +166,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_official_openaq_candidate_review pin after converting the 13 near-plus-name official/OpenAQ candidate rows into a review worksheet with zero validated joins."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_official_openaq_candidate_public_evidence pin after attaching OpenAQ owner/provider, isMonitor, and vintage metadata to the 13 candidate worksheet rows."
     }
   ]
 }

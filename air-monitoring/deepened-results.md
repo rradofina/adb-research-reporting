@@ -38,6 +38,10 @@ Official-to-OpenAQ reconciliation audit:
 Official/OpenAQ candidate review worksheet:
 `generated/air-monitoring-official-openaq-candidate-review-summary.json` and
 `generated/air-monitoring-official-openaq-candidate-review.csv`.
+Official/OpenAQ candidate public-evidence audit:
+`generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json`
+and
+`generated/air-monitoring-official-openaq-candidate-public-evidence.csv`.
 
 ## The two questions
 
@@ -200,6 +204,14 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   crosswalk rows, 0 public current-status confirmation rows, 0 validated
   same-station joins, and 0 station-radius-ready rows. The source story is now
   more actionable for review, but still not a station crosswalk.
+- **New candidate public-evidence audit:** the audit attaches OpenAQ
+  owner/provider, `isMonitor`, sensor-count, and first/last-seen metadata to
+  the 13 candidate worksheet rows. It finds 13 rows with OpenAQ owner/provider
+  metadata, 6 OpenAQ `isMonitor` true rows, 7 rows not marked `isMonitor`, 11
+  first-seen rows, 11 last-seen rows, 0 exact station-ID overlaps, 0 exact
+  official-agency owner/provider matches, 0 explicit crosswalk rows, 0
+  validated same-station joins, and 0 station-radius-ready rows. The source
+  story is now sharper, but the crosswalk still remains empty.
 - **New monitor-grade evidence audit:** the audit covers all 239
   official-source rows from the station-extraction pass. It finds 31
   source-specific method-standard signal rows in Bangladesh, 138 automatic or
@@ -250,5 +262,6 @@ python air-monitoring/scripts/build-regulator-source-inventory.py
 python air-monitoring/scripts/extract-regulator-station-evidence.py
 python air-monitoring/scripts/reconcile-official-openaq-stations.py
 python air-monitoring/scripts/build-official-openaq-candidate-review.py
+python air-monitoring/scripts/audit-official-openaq-candidate-public-evidence.py
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
 ```

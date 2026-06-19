@@ -39,6 +39,13 @@
   evidence, 0 rows with public current-status confirmation, 0 validated
   same-station joins, and 0 station-radius-ready rows. The worksheet is a
   review queue, not validation.
+- Candidate public-evidence attachment. The 2026-06-19 candidate
+  public-evidence audit joins OpenAQ owner/provider, `isMonitor`, sensor-count,
+  and first/last-seen metadata to the 13 worksheet rows. It finds 13 rows with
+  OpenAQ owner/provider metadata, 6 OpenAQ `isMonitor` true rows, 7 rows not
+  marked `isMonitor`, 0 exact station-ID overlaps, 0 exact official-agency
+  owner/provider matches, 0 explicit crosswalk rows, 0 validated joins, and 0
+  station-radius-ready rows.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

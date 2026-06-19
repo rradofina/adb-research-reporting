@@ -69,6 +69,7 @@ const PROGRAM_FILES = [
   "monitor-grade-evidence.md",
   "official-openaq-reconciliation.md",
   "official-openaq-candidate-review.md",
+  "official-openaq-candidate-public-evidence.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

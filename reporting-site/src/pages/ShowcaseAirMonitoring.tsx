@@ -518,6 +518,75 @@ interface OfficialOpenAQCandidateSummary {
   non_claim: string;
 }
 
+interface OfficialOpenAQCandidateEvidenceGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface OfficialOpenAQCandidateEvidenceLane {
+  lane: string;
+  rows: number;
+}
+
+interface OfficialOpenAQCandidateEvidenceCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  candidate_rows: number;
+  openaq_is_monitor_true_rows: number;
+  openaq_is_monitor_false_rows: number;
+  rows_with_owner_or_provider: number;
+  rows_with_first_seen: number;
+  crosswalk_like_public_signal_rows: number;
+  validated_same_station_rows: number;
+  station_radius_join_ready_rows: number;
+}
+
+interface OfficialOpenAQCandidateEvidenceRow {
+  candidate_review_id: string;
+  iso3: string;
+  country: string;
+  source_station_name: string;
+  nearest_openaq_location_name: string;
+  openaq_owner_name: string;
+  openaq_provider_name: string;
+  openaq_is_monitor: boolean;
+  candidate_public_evidence_lane: string;
+  reader_use: string;
+}
+
+interface OfficialOpenAQCandidateEvidenceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    candidate_rows_audited: number;
+    countries_with_candidates: number;
+    unique_openaq_candidate_ids: number;
+    rows_with_openaq_owner_or_provider: number;
+    rows_with_openaq_is_monitor_true: number;
+    rows_with_openaq_is_monitor_false: number;
+    rows_with_first_seen: number;
+    rows_with_last_seen: number;
+    rows_with_station_id_exact_overlap: number;
+    rows_with_official_agency_exact_in_openaq_owner_or_provider: number;
+    rows_with_explicit_crosswalk_evidence: number;
+    validated_same_station_rows: number;
+    station_radius_join_ready_rows: number;
+    keep_open_rows: number;
+  };
+  evidence_lane_counts: OfficialOpenAQCandidateEvidenceLane[];
+  evidence_gate_counts: OfficialOpenAQCandidateEvidenceGate[];
+  country_rows: OfficialOpenAQCandidateEvidenceCountryRow[];
+  candidate_rows: OfficialOpenAQCandidateEvidenceRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -620,6 +689,8 @@ export default function ShowcaseAirMonitoring() {
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
   const [officialOpenAQCandidate, setOfficialOpenAQCandidate] = useState<OfficialOpenAQCandidateSummary | null>(null);
+  const [officialOpenAQCandidateEvidence, setOfficialOpenAQCandidateEvidence] =
+    useState<OfficialOpenAQCandidateEvidenceSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -659,6 +730,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`official OpenAQ candidate review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`official OpenAQ candidate evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -673,6 +748,7 @@ export default function ShowcaseAirMonitoring() {
         regulatorStationPayload,
         officialOpenAQPayload,
         officialOpenAQCandidatePayload,
+        officialOpenAQCandidateEvidencePayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -683,6 +759,7 @@ export default function ShowcaseAirMonitoring() {
         setRegulatorStation(regulatorStationPayload);
         setOfficialOpenAQ(officialOpenAQPayload);
         setOfficialOpenAQCandidate(officialOpenAQCandidatePayload);
+        setOfficialOpenAQCandidateEvidence(officialOpenAQCandidateEvidencePayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -799,6 +876,8 @@ export default function ShowcaseAirMonitoring() {
       <AirOfficialOpenAQPanel summary={officialOpenAQ} />
 
       <AirOfficialOpenAQCandidatePanel summary={officialOpenAQCandidate} />
+
+      <AirOfficialOpenAQCandidateEvidencePanel summary={officialOpenAQCandidateEvidence} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1905,6 +1984,155 @@ function AirOfficialOpenAQCandidatePanel({ summary }: { summary: OfficialOpenAQC
         </>
       ) : (
         <p className="showcase-loading">Loading official/OpenAQ candidate review worksheet...</p>
+      )}
+    </section>
+  );
+}
+
+function AirOfficialOpenAQCandidateEvidencePanel({
+  summary,
+}: {
+  summary: OfficialOpenAQCandidateEvidenceSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const countryRows = [...(summary?.country_rows ?? [])].sort((a, b) => b.candidate_rows - a.candidate_rows);
+  const evidenceRows = [...(summary?.candidate_rows ?? [])]
+    .sort((a, b) => Number(b.openaq_is_monitor) - Number(a.openaq_is_monitor))
+    .slice(0, 6);
+  const laneRows = summary?.evidence_lane_counts ?? [];
+
+  return (
+    <section className="showcase-section air-openaq-evidence-section" aria-label="Official OpenAQ candidate public evidence audit">
+      <div className="air-openaq-evidence-head">
+        <div>
+          <p className="kicker kicker-blue">Candidate public evidence</p>
+          <h2>OpenAQ metadata sharpens the queue, but does not close it.</h2>
+          <p>
+            This pass attaches owner/provider, isMonitor, sensor-count, and
+            vintage fields to the 13 candidate rows. The split helps reviewers
+            decide what to inspect next while keeping validated joins at zero.
+          </p>
+        </div>
+        <div className="air-openaq-evidence-nonclaim">
+          <strong>No crosswalk found</strong>
+          <p>
+            Crosswalk rows: {formatNumber(counts?.rows_with_explicit_crosswalk_evidence ?? 0)}.
+            Validated joins: {formatNumber(counts?.validated_same_station_rows ?? 0)}.
+            Radius-ready rows: {formatNumber(counts?.station_radius_join_ready_rows ?? 0)}.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-openaq-evidence-stat-grid">
+            <div>
+              <span>Candidate rows</span>
+              <strong>{formatNumber(counts.candidate_rows_audited)}</strong>
+              <em>{formatNumber(counts.unique_openaq_candidate_ids)} OpenAQ IDs</em>
+            </div>
+            <div>
+              <span>Owner/provider</span>
+              <strong>{formatNumber(counts.rows_with_openaq_owner_or_provider)}</strong>
+              <em>metadata present</em>
+            </div>
+            <div>
+              <span>isMonitor true</span>
+              <strong>{formatNumber(counts.rows_with_openaq_is_monitor_true)}</strong>
+              <em>not grade certification</em>
+            </div>
+            <div>
+              <span>Not isMonitor</span>
+              <strong>{formatNumber(counts.rows_with_openaq_is_monitor_false)}</strong>
+              <em>nearby public-feed caution</em>
+            </div>
+            <div>
+              <span>Explicit crosswalk</span>
+              <strong>{formatNumber(counts.rows_with_explicit_crosswalk_evidence)}</strong>
+              <em>still missing</em>
+            </div>
+          </div>
+
+          <div className="air-openaq-evidence-lanes">
+            {laneRows.map((lane) => (
+              <article key={lane.lane} className={`air-openaq-evidence-lane air-openaq-evidence-lane-${lane.lane}`}>
+                <span>{sentenceCaseStatus(lane.lane)}</span>
+                <strong>{formatNumber(lane.rows)}</strong>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-evidence-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-openaq-evidence-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.candidate_rows)} candidates</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Monitor</dt>
+                    <dd>{formatNumber(row.openaq_is_monitor_true_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Not monitor</dt>
+                    <dd>{formatNumber(row.openaq_is_monitor_false_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>First seen</dt>
+                    <dd>{formatNumber(row.rows_with_first_seen)}</dd>
+                  </div>
+                  <div>
+                    <dt>Crosswalk</dt>
+                    <dd>{formatNumber(row.crosswalk_like_public_signal_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-evidence-row-grid">
+            {evidenceRows.map((row) => (
+              <article key={row.candidate_review_id} className={row.openaq_is_monitor ? "air-openaq-evidence-row is-monitor" : "air-openaq-evidence-row"}>
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.nearest_openaq_location_name}</strong>
+                  <b>{row.openaq_is_monitor ? "isMonitor" : "not isMonitor"}</b>
+                </div>
+                <p>
+                  {row.openaq_provider_name || row.openaq_owner_name || "Owner/provider missing"}; official row: {row.source_station_name}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-evidence-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-openaq-evidence-gate air-openaq-evidence-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-evidence-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/official-openaq-candidate-public-evidence.md" download>
+              Evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-public-evidence.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading candidate public-evidence audit...</p>
       )}
     </section>
   );

@@ -64,6 +64,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },
   { key: "air_monitoring_official_openaq_reconciliation", file: "official-openaq-reconciliation.md", label: "Air-monitoring official-to-OpenAQ reconciliation audit" },
   { key: "air_monitoring_official_openaq_candidate_review", file: "official-openaq-candidate-review.md", label: "Air-monitoring official/OpenAQ candidate review worksheet" },
+  { key: "air_monitoring_official_openaq_candidate_public_evidence", file: "official-openaq-candidate-public-evidence.md", label: "Air-monitoring official/OpenAQ candidate public-evidence audit" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
   { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "facility_validation_coded_screen", file: "facility-validation-coded-screen.md", label: "Facility-validation coded screen" },

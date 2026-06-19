@@ -63,7 +63,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `bd4f72e023d1…`
+- `program/STATUS.md`  `f5b2eff192ff…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -77,7 +77,8 @@ website is Tier 2 and is not included here).
 - `program/monitor-grade-evidence.md`  `8559a7d7843e…`
 - `program/official-openaq-reconciliation.md`  `e22bc653e9c1…`
 - `program/official-openaq-candidate-review.md`  `66c351c3de50…`
-- `program/limitations.md`  `49d4dcf85900…`
+- `program/official-openaq-candidate-public-evidence.md`  `4a26808ac815…`
+- `program/limitations.md`  `212caf598b07…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -88,6 +89,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-metadata-readiness-audit.csv`  `c7aa9c572539…`
 - `program/generated/air-monitoring-monitor-grade-evidence-summary.json`  `25793d7087a8…`
 - `program/generated/air-monitoring-monitor-grade-evidence.csv`  `df7e2a3eb887…`
+- `program/generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json`  `fb5141e6223b…`
+- `program/generated/air-monitoring-official-openaq-candidate-public-evidence.csv`  `098fc2fb224b…`
 - `program/generated/air-monitoring-official-openaq-candidate-review-summary.json`  `770987d49d80…`
 - `program/generated/air-monitoring-official-openaq-candidate-review.csv`  `ecedea01ca17…`
 - `program/generated/air-monitoring-official-openaq-reconciliation-summary.json`  `195c17128543…`
@@ -102,6 +105,7 @@ website is Tier 2 and is not included here).
 - `program/generated/charts/air-monitoring-thumbnail.png`  `9ceb5b95e31f…`
 - `program/generated/charts/air-monitoring-thumbnail.svg`  `e47dcfcd7bc0…`
 - `program/scripts/audit-monitor-grade-evidence.py`  `57f5cac1bf0e…`
+- `program/scripts/audit-official-openaq-candidate-public-evidence.py`  `65df72c733de…`
 - `program/scripts/build-metadata-readiness-audit.py`  `868c73ab91e8…`
 - `program/scripts/build-official-openaq-candidate-review.py`  `3c6c54513f78…`
 - `program/scripts/build-regulator-source-inventory.py`  `a14135438dc3…`
@@ -117,7 +121,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `1392c2e89cda…`
+- `shared/versions.json`  `4b8838c7d255…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -127,4 +131,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T08:08:04.878Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T08:22:46.961Z by `scripts/build-review-packet.mjs`.

@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T21:56:15.114Z
+Generated: 2026-06-19T22:13:08.532Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -15,11 +15,11 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Evidence paths present: 20/20
 - Static route coverage: 20/20
 - Audit JSON artifacts present: 12/12
-- Declared audit CSV companions present: 11/11
+- Declared audit CSV companions present: 12/12
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 364
-- QA browser-check JSON files in reporting-site/qa: 26
+- QA screenshot files in reporting-site/qa: 370
+- QA browser-check JSON files in reporting-site/qa: 27
 - Verification failures: 0
 
 ## Readiness Mix
@@ -52,7 +52,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 17 | Water denominator artifact | Evidence audit | ok | ok | ok | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note. |
 | 18 | Invisible urbanization tautology | Evidence audit | ok | ok | ok | Select one pilot geography and build the GHSL/SMOD x boundary overlay, or keep the current route as a source-readiness caution ... |
 | 19 | Port hinterland inert parameter | Evidence audit | ok | ok | ok | Build one corridor-level port-to-hinterland pilot, or keep the current route as a proxy/source-readiness caution note. |
-| 20 | School heat top-one audit | Evidence audit | ok | ok | ok | Pick a public school-location pilot or keep the current route as a sensitivity-audit caution. |
+| 20 | School heat source wall | Evidence audit | ok | ok | ok | Build a one-country school calendar x daily heat x school-location pilot, then test whether the Cambodia top-one narrowing surv... |
 
 ## Failure List
 

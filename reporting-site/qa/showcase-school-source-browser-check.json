@@ -1,0 +1,75 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/school-heat-sensitivity",
+  "checked_at": "2026-06-19T22:10:24.609Z",
+  "pass": true,
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "audit": {
+        "title": "When School Heat Is Not Yet a School-Day Object",
+        "missing": [],
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowNodes": [],
+        "componentCards": 6,
+        "laneRows": 7,
+        "sourceRows": 10,
+        "downloadLinks": 2,
+        "queueRows": 20,
+        "heroStats": 3,
+        "hasLoadingError": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshots": {
+        "full": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-desktop.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-desktop-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-desktop-claim.png"
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "audit": {
+        "title": "When School Heat Is Not Yet a School-Day Object",
+        "missing": [],
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "horizontalOverflow": false,
+        "overflowNodes": [],
+        "componentCards": 6,
+        "laneRows": 7,
+        "sourceRows": 10,
+        "downloadLinks": 2,
+        "queueRows": 20,
+        "heroStats": 3,
+        "hasLoadingError": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "screenshots": {
+        "full": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-mobile.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-mobile-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-school-source-mobile-claim.png"
+      }
+    }
+  ]
+}

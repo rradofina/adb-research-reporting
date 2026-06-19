@@ -127,6 +127,41 @@ not robust.
   this pass; the pass resolves only whether the *existing* runs support the
   *existing* top-1 headline. They do not, as stated.
 
+## 2026-06-20 source-readiness wall
+
+The next pass keeps the top-one correction above, then asks whether the public
+source stack is ready for the actual school-day exposure object. It is not.
+
+Artifact: `generated/school-heat-source-audit.json`.
+
+The new script `scripts/audit-school-heat-source-readiness.py` writes:
+
+- `generated/school-heat-source-readiness.json`
+- `generated/school-heat-source-readiness-sources.csv`
+- `generated/school-heat-khm-pak-source-readiness.csv`
+
+Generated facts from the new source wall:
+
+- WDI metadata and latest values are reachable for **5 of 5** checked
+  indicators: the three old proxy inputs plus primary duration and primary
+  gross enrollment context.
+- CCKP country tasmax rows are reachable for **2 of 2** target economies:
+  Cambodia (KHM) and Pakistan (PAK).
+- OSM Overpass `amenity=school` count visibility is reachable for **2 of 2**
+  target economies: **2,451** Cambodia school features and **5,043** Pakistan
+  school features in the returned count response. These are source-visibility
+  counts, not cleaned school-location evidence.
+- The UNICEF 2024 climate-related school-disruption PDF source pointer is
+  reachable, but no country-date closure table is parsed from it.
+- The analysis-ready joins remain **false** for school calendars, daily
+  school-day heat or WBGT, school-location heat overlays, enrollment-weighted
+  exposure, and closure/attendance/learning outcomes.
+
+The honest interpretation is therefore narrower than a school-disruption
+claim: the Cambodia top-one result is an index-internal sensitivity finding,
+and the public source wall now names what would be needed before the article
+could talk about children losing instructional time from heat.
+
 ## Recommended honesty correction (not run here)
 
 `results.md` and `sensitivity.md` should be demoted from "every
@@ -141,8 +176,9 @@ the owner sees the audit before the headline changes.
 
 ```bash
 python school-heat-disruption/scripts/deepen-sensitivity-audit.py
+python school-heat-disruption/scripts/audit-school-heat-source-readiness.py
 ```
 
 Reads `school-heat-disruption/sensitivity-runs.json`, writes
 `school-heat-disruption/generated/school-heat-sensitivity-audit.json`,
-and prints the per-run table and the honest re-statement to stdout.
+then writes the source-readiness JSON and CSV artifacts listed above.

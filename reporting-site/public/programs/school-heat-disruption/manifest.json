@@ -1,7 +1,7 @@
 {
   "program": "school-heat-disruption",
   "permanent_url": "/program/school-heat-disruption/evidence",
-  "generated_at": "2026-06-19T21:56:07.340Z",
+  "generated_at": "2026-06-19T22:12:48.877Z",
   "hero": {
     "png": "generated/charts/school-heat-disruption-thumbnail.png",
     "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
@@ -27,10 +27,10 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1338,
-      "size_human": "1.3 KB",
-      "mtime": "2026-04-24T08:05:49.334Z",
-      "sha256": "50fe6dcd5092422d22b993ebbefba2d82658d7f37a467cf411a34ccc1570888f",
+      "size": 2002,
+      "size_human": "2.0 KB",
+      "mtime": "2026-06-19T22:12:30.071Z",
+      "sha256": "76b08bf0112bb6344321277cffe4a4d626918ac5e6977b9b410b6ae3ffadc6f3",
       "attestation_chain": null
     },
     {
@@ -156,10 +156,34 @@
       "sha256": "b70493fb792607275b71dc2f1da5d8e04e8b9c28fe5ac0950256b05c624d064f"
     },
     {
+      "file": "generated/school-heat-khm-pak-source-readiness.csv",
+      "size": 1109,
+      "size_human": "1.1 KB",
+      "sha256": "efdb7947f43d9dea5d388229ab6d31ca87af6be2cb8a6d50ed74e8936545e7e2"
+    },
+    {
       "file": "generated/school-heat-sensitivity-audit.json",
       "size": 4106,
       "size_human": "4.0 KB",
-      "sha256": "6238e1207fd1fc2586ae2b84d03245f73367f7fcbe93803403a82edc0bbb9602"
+      "sha256": "c41c139f51195960bc40fd66ea4c05fc13e779bbbc1db45bba8b8bd2a385dc2c"
+    },
+    {
+      "file": "generated/school-heat-source-audit.json",
+      "size": 44820,
+      "size_human": "43.8 KB",
+      "sha256": "11eac671a5c69813ccdfbede105d8fe9952785b731bb62ef75fc4dda2764544f"
+    },
+    {
+      "file": "generated/school-heat-source-readiness-sources.csv",
+      "size": 4783,
+      "size_human": "4.7 KB",
+      "sha256": "1581ef38d2741ef7ff6c982bb1ecd93b2957a3ac59e5e960f0cef47940092e5e"
+    },
+    {
+      "file": "generated/school-heat-source-readiness.json",
+      "size": 38454,
+      "size_human": "37.6 KB",
+      "sha256": "8263d07701a4dff7999fb70b389cab686717573832c7cb19bdb8c58f7d73b848"
     }
   ],
   "articles": [

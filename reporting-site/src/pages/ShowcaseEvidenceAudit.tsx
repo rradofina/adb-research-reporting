@@ -1459,6 +1459,9 @@ function buildPortModel(report: ShowcaseReport, data: JsonValue): AuditModel {
 }
 
 function buildSchoolHeatModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.school_heat_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.school_heat_source_readiness);
   const counts = data.counts || {};
   const laneRows = safeRows(data.per_run).map((row) => {
     let status: LaneRow["status"] = "survived";
@@ -1474,25 +1477,111 @@ function buildSchoolHeatModel(report: ShowcaseReport, data: JsonValue): AuditMod
       status,
     };
   }) as LaneRow[];
+  const targetRows = safeRows(sourceAudit.target_country_rows);
+  const osmCounts = targetRows
+    .map((row) => `${row.iso3} ${formatNumber(row.osm_school_count_total)}`)
+    .join("; ");
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "School source audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  if (sourceAudit.sources?.overpass_endpoint) {
+    sourceTrail.push({ label: "OSM source endpoint", value: String(sourceAudit.sources.overpass_endpoint) });
+  }
+  if (sourceAudit.sources?.unicef_disruption_pdf) {
+    sourceTrail.push({ label: "UNICEF disruption source", value: String(sourceAudit.sources.unicef_disruption_pdf) });
+  }
+
+  const componentCards = hasSourceAudit ? [
+    {
+      key: "wdi-stack",
+      value: `${formatNumber(sourceSummary.wdi_metadata_records_reachable)}/${formatNumber(sourceSummary.wdi_indicators_requested)}`,
+      label: "WDI source stack",
+      note: "Old proxy inputs plus school-system context metadata resolve through public WDI.",
+      status: "survived",
+    },
+    {
+      key: "cckp-targets",
+      value: `${formatNumber(sourceSummary.cckp_target_rows_with_value)}/${formatNumber(sourceSummary.target_country_rows)}`,
+      label: "CCKP KHM/PAK tasmax",
+      note: "The top-one and rank-losing challenger both have public CCKP annual tasmax rows.",
+      status: "survived",
+    },
+    {
+      key: "osm-school-count",
+      value: formatNumber(sourceSummary.osm_school_count_total_targets),
+      label: "OSM school-count visibility",
+      note: `${osmCounts || "target counts unavailable"}. Counts are source visibility, not a cleaned school-location exposure model.`,
+      status: "flag",
+    },
+    {
+      key: "calendar",
+      value: String(sourceSummary.analysis_ready_school_calendar_join),
+      label: "school calendar join",
+      note: "No national term-date table is parsed and joined to heat days.",
+      status: "dropped",
+    },
+    {
+      key: "school-day-heat",
+      value: String(sourceSummary.analysis_ready_school_day_heat_join),
+      label: "school-day heat join",
+      note: "No daily in-session heat or WBGT series is computed.",
+      status: "dropped",
+    },
+    {
+      key: "closure-outcome",
+      value: String(sourceSummary.analysis_ready_closure_outcome_join),
+      label: "closure outcome join",
+      note: "No closure, attendance, or learning outcome panel is joined.",
+      status: "dropped",
+    },
+  ] as ComponentCard[] : undefined;
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: `${counts.khm_top1_among_discriminating}/${counts.discriminating}`, label: "KHM top-one discriminating runs" },
+      { value: `${formatNumber(sourceSummary.cckp_target_rows_with_value)}/${formatNumber(sourceSummary.target_country_rows)}`, label: "CCKP target rows" },
+      { value: String(sourceSummary.analysis_ready_school_day_heat_join), label: "school-day heat join" },
+    ] : [
       { value: `${counts.khm_top1_among_discriminating}/${counts.discriminating}`, label: "KHM top-one among discriminating runs" },
       { value: formatNumber(counts.degenerate_all_zero), label: "degenerate all-zero runs" },
       { value: formatNumber(counts.rank_losing_for_khm), label: "rank-losing runs" },
     ],
-    chartTitle: "The narrow claim survives only after bad runs are named.",
-    chartDeck: "The run ledger separates discriminating KHM top-one runs from an all-zero tie and a rank-losing perturbation.",
+    chartTitle: hasSourceAudit
+      ? "The top-one survives, but the school-day object is still missing."
+      : "The narrow claim survives only after bad runs are named.",
+    chartDeck: hasSourceAudit
+      ? "The run ledger still names the all-zero and rank-losing cases. The cards show which public source layers are visible before any school-disruption claim is widened."
+      : "The run ledger separates discriminating KHM top-one runs from an all-zero tie and a rank-losing perturbation.",
     laneRows,
+    componentCards,
     readouts: [
       { label: "File claim common top five", value: strings(data.file_claim_common_top5_across_runs).join(", ") },
       { label: "Degenerate labels", value: strings(data.degenerate_labels).join(", ") || "none" },
       { label: "Rank-losing labels", value: strings(data.rank_losing_labels).join(", ") || "none" },
       { label: "KHM top-one labels", value: strings(data.khm_top1_labels).join(", ") || "none" },
+      ...(hasSourceAudit ? [
+        { label: "Baseline top one", value: String(sourceSummary.baseline_top1) },
+        { label: "Rank-losing challenger", value: String(sourceSummary.rank_losing_challenger) },
+        { label: "WDI metadata records reachable", value: `${formatNumber(sourceSummary.wdi_metadata_records_reachable)}/${formatNumber(sourceSummary.wdi_indicators_requested)}` },
+        { label: "CCKP target rows with value", value: `${formatNumber(sourceSummary.cckp_target_rows_with_value)}/${formatNumber(sourceSummary.target_country_rows)}` },
+        { label: "OSM target school counts", value: osmCounts || "not available" },
+        { label: "UNICEF disruption source reachable", value: String(sourceSummary.unicef_disruption_source_reachable) },
+        { label: "School calendar join", value: String(sourceSummary.analysis_ready_school_calendar_join) },
+        { label: "School-location heat overlay", value: String(sourceSummary.analysis_ready_school_location_join) },
+        { label: "Closure outcome join", value: String(sourceSummary.analysis_ready_closure_outcome_join) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.school_heat_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }

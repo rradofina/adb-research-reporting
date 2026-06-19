@@ -53,7 +53,7 @@ candidates before adding new surfaces.
 | 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards now sit beside WDI/AQUASTAT available-water stress, FAOSTAT harvested-area crop mix, and a national diagnostic variant | Needs basin allocation, crop-specific water requirements, irrigation command areas, GRACE depletion, and subnational rural exposure before water-crop exposure language | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note |
 | 18 | Invisible urbanization tautology | Evidence audit | Rank-preserving scalar sweep now sits beside a WDI/GHSL/SMOD/geoBoundaries source wall: GHSL metadata and top-five ADM2 boundary metadata are reachable, but the built-up/boundary overlay is still false | Needs GHSL raster or Earth Engine export, administrative-boundary intersection, classification-history ledger, and population-weighted built-up or SMOD zonal statistic | Build one GHSL/SMOD x boundary pilot, or keep the current route as a source-readiness caution note |
 | 19 | Port inert-parameter audit | Evidence audit | Cap-binding wall now sits beside a WDI logistics, container-port, and freight-proxy source wall: all rankable rows have at least one public freight proxy, but direct port-performance and hinterland travel-time joins remain false | Needs port-level dwell/turnaround/productivity data, port-to-inland OD network, corridor travel-time surface, customs release time, trucking cost, or inland terminal performance evidence | Build one corridor-level port-to-hinterland pilot, or keep the current route as a proxy/source-readiness caution note |
-| 20 | School heat top-one audit | Evidence audit | Sensitivity ledger names discriminating, degenerate, and rank-losing runs | Needs school geocodes, calendars, enrollment, and local heat exposure | Pick a public school-location pilot or keep as sensitivity caution |
+| 20 | School heat source wall | Evidence audit | Sensitivity ledger now sits beside WDI, CCKP, OSM school-count, and UNICEF source visibility, while every school-day and outcome join remains false | Needs national school calendars, daily school-day heat or WBGT, cleaned school geocodes, enrollment-weighted exposure, and observed closure, attendance, or learning outcomes | Build a one-country school calendar x daily heat x school-location pilot, then retest the Cambodia top-one result on in-session exposure |
 
 ## Current QA evidence
 
@@ -1212,6 +1212,46 @@ the QA scroll operation occluding the inspected section. Screenshots:
 `reporting-site/qa/showcase-port-source-mobile.png`,
 `reporting-site/qa/showcase-port-source-mobile-visual.png`, and
 `reporting-site/qa/showcase-port-source-mobile-claim.png`.
+
+## 2026-06-20 — Report 20 school-heat source wall
+
+Report 20 now uses
+`school-heat-disruption/generated/school-heat-source-audit.json` instead of
+the older sensitivity-only artifact. The new source-readiness pass adds
+`school-heat-disruption/scripts/audit-school-heat-source-readiness.py`, records
+cache regeneration notes under `school-heat-disruption/.cache/README.md`, and
+writes `school-heat-source-readiness.json`,
+`school-heat-source-readiness-sources.csv`, and
+`school-heat-khm-pak-source-readiness.csv`. It preserves the sensitivity
+ledger while checking public WDI, CCKP, OSM Overpass, and UNICEF source
+visibility for the actual school-day exposure object.
+
+The generated audit records the same narrowed sensitivity result: Cambodia is
+top one in 5 of 6 discriminating runs, with 1 all-zero degenerate run and 1
+rank-losing run where Pakistan is top. The new source wall records 5/5 WDI
+metadata records reachable; 2/2 CCKP Cambodia/Pakistan tasmax rows with
+values; 2/2 OSM target rows with school-count visibility; 2,451 Cambodia OSM
+school features; 5,043 Pakistan OSM school features; and a reachable UNICEF
+2024 climate-related school-disruption source pointer.
+
+The analysis-ready school-disruption object remains false: no school calendar,
+daily school-day heat or WBGT series, school-location heat overlay,
+enrollment-weighted exposure, or closure/attendance/learning outcome is joined.
+The Cambodia top-one result is therefore an index-internal sensitivity finding,
+not a school-disruption measurement.
+
+Verification in this pass reran the school-heat scripts, synced public
+artifacts, built the reporting site, ran the showcase verifier, ran all
+deterministic gates, and browser-checked desktop 1280x900 plus mobile 390x844.
+Browser QA found all required source-wall text, 6 source cards, 7 sensitivity
+lanes, 10 source rows, 2 download links, 20 queue rows, no page errors, no
+failed requests, and no page-level horizontal overflow. Screenshots:
+`reporting-site/qa/showcase-school-source-desktop.png`,
+`reporting-site/qa/showcase-school-source-desktop-visual.png`,
+`reporting-site/qa/showcase-school-source-desktop-claim.png`,
+`reporting-site/qa/showcase-school-source-mobile.png`,
+`reporting-site/qa/showcase-school-source-mobile-visual.png`, and
+`reporting-site/qa/showcase-school-source-mobile-claim.png`.
 
 ## Next deepening order
 

@@ -1,22 +1,22 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T21:56:15.114Z",
+  "generated_at": "2026-06-19T22:13:08.532Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 364,
-    "browserChecks": 26
+    "screenshots": 370,
+    "browserChecks": 27
   },
   "summary": {
     "reports_total": 20,
     "verified_reports": 20,
     "audit_reports": 12,
-    "audit_csv_declared": 11,
+    "audit_csv_declared": 12,
     "evidence_paths_present": 20,
     "routes_covered": 20,
     "audit_data_present": 12,
-    "audit_csv_present": 11,
+    "audit_csv_present": 12,
     "depth_records_present": 20,
     "quality_records_present": 20,
     "readiness_counts": {
@@ -466,26 +466,26 @@
     },
     {
       "id": 20,
-      "title": "When Every Perturbation Includes an All-Zero Tie",
-      "shortTitle": "School heat top-one audit",
+      "title": "When School Heat Is Not Yet a School-Day Object",
+      "shortTitle": "School heat source wall",
       "href": "/showcase/school-heat-sensitivity",
       "status": "verified",
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "school-heat-disruption/generated/school-heat-sensitivity-audit.json",
+      "evidencePath": "school-heat-disruption/generated/school-heat-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/school-heat-disruption/generated/school-heat-sensitivity-audit.json",
+      "auditDataUrl": "/programs/school-heat-disruption/generated/school-heat-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": null,
-      "auditCsvExists": null,
+      "auditCsvUrl": "/programs/school-heat-disruption/generated/school-heat-source-readiness-sources.csv",
+      "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Pick a public school-location pilot or keep the current route as a sensitivity-audit caution."
+      "nextUpgrade": "Build a one-country school calendar x daily heat x school-location pilot, then test whether the Cambodia top-one narrowing survives on in-session exposure rather than annual national heat."
     }
   ],
   "failures": []

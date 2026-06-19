@@ -32,6 +32,19 @@ learning quality physically harder even when official access looks adequate.
 - `generated/school-heat-disruption-adb-screen.csv`
 - Country and ADM1 heat-learning pressure map
 - Documentation on whether school-location data is observed or inferred
+- `generated/school-heat-sensitivity-audit.json`
+- `generated/school-heat-source-audit.json`
+- `generated/school-heat-source-readiness-sources.csv`
+- `generated/school-heat-khm-pak-source-readiness.csv`
+
+## Current Evidence Boundary
+
+The current showcase evidence is a source-readiness wall, not a
+school-disruption result. It preserves the Cambodia top-one sensitivity
+narrowing, checks public WDI, CCKP, OSM, and UNICEF source visibility, and
+keeps the real analysis-ready joins false until school calendars, daily
+school-day heat or WBGT, cleaned school geocodes, enrollment-weighted
+exposure, and observed closure, attendance, or learning outcomes are joined.
 
 ## Reproducibility Notes
 

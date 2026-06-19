@@ -273,6 +273,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (school-heat source-readiness wall):** In the owner-directed
+  20-report showcase loop, upgraded `/showcase/school-heat-sensitivity` from
+  a sensitivity-only audit into a WDI/CCKP/OSM/UNICEF source-readiness wall.
+  Added
+  `school-heat-disruption/scripts/audit-school-heat-source-readiness.py`,
+  cache regeneration notes under `school-heat-disruption/.cache/README.md`,
+  generated `school-heat-source-audit.json`,
+  `school-heat-source-readiness.json`,
+  `school-heat-source-readiness-sources.csv`, and
+  `school-heat-khm-pak-source-readiness.csv`, and registered
+  `school_heat_source_readiness_public_metadata` in `versions.json`. The audit
+  preserves the narrowed sensitivity result (KHM top one in 5 of 6
+  discriminating runs; 1 all-zero degenerate run; 1 rank-losing PAK run) and
+  adds source visibility: 5/5 WDI metadata records reachable, 2/2 CCKP
+  Cambodia/Pakistan tasmax rows with values, 2/2 OSM target rows with
+  school-count visibility, 2,451 Cambodia OSM school features, 5,043 Pakistan
+  OSM school features, and a reachable UNICEF climate-related
+  school-disruption source pointer. The analysis-ready school-disruption wall
+  remains false: no school calendar, daily school-day heat or WBGT,
+  school-location heat overlay, enrollment-weighted exposure, or
+  closure/attendance/learning outcome is joined. Verification in this pass
+  reran the school-heat scripts, synced public artifacts, built the reporting
+  site, ran the deterministic gates and showcase verifier, and browser-checked
+  desktop plus 390px mobile with no page errors, failed requests, or
+  page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-school-source-desktop.png` and
+  `reporting-site/qa/showcase-school-source-mobile.png`.
 - **2026-06-20 (water-stress source-upgrade wall):** In the owner-directed
   20-report showcase loop, upgraded `/showcase/water-stress-denominator` from
   a denominator-only caution into a WDI/AQUASTAT plus FAOSTAT source wall.

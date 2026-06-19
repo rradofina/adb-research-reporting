@@ -1,0 +1,1025 @@
+{
+  "program": "coastal-informal-risk",
+  "analysis": "coastal denominator rerank plus spatial source-readiness wall",
+  "claim_scope": "Deepening of the population-scaled coastal-informal screen. Recomputes the committed index from panel inputs (confirming the formula), then re-ranks on urban_pct x slum_pct with the log10(population) term removed. Triage measure (CONSTITUTION.md §6.4), not a country-quality ranking; measurement-gap framing (§13.3). The true risk object — informal-settlement footprint inside the surge zone — requires GHSL/DEM/surge rasters not on disk and is NOT computed here. The source-readiness layer verifies public settlement, elevation, and coastal-hazard metadata only; it does not compute the settlement-footprint-in-surge-zone exposure object.",
+  "source": {
+    "name": "WDI via committed panel coastal-informal-risk-adb-panel.csv",
+    "fields": "urban_pct (SP.URB.TOTL.IN.ZS), population (SP.POP.TOTL), slum_pct_urban (EN.POP.SLUM.UR.ZS)",
+    "license": "CC BY 4.0",
+    "retrieved_at": "2026-04-26 (program panel)"
+  },
+  "formula_check": {
+    "formula": "log10(population) x (urban_pct/100) x (slum_pct/100) x 100",
+    "max_abs_error_recomputed_vs_committed": 0.258624
+  },
+  "headline_top5": [
+    "PAK",
+    "PHL",
+    "CHN",
+    "BGD",
+    "MMR"
+  ],
+  "nopop_top5": [
+    "TUV",
+    "PAK",
+    "PHL",
+    "MMR",
+    "CHN"
+  ],
+  "expected_nopop_top5_from_deep_questions": [
+    "TUV",
+    "PAK",
+    "PHL",
+    "MMR",
+    "CHN"
+  ],
+  "nopop_top5_matches_expected": true,
+  "dropped_from_top5_when_pop_removed": [
+    "BGD"
+  ],
+  "entered_top5_when_pop_removed": [
+    "TUV"
+  ],
+  "china_rank_headline": 3,
+  "china_rank_nopop": 5,
+  "sensitivity_check": {
+    "panel_rows_imputed": 2,
+    "panel_rows_total": 31,
+    "imputed_isos": [
+      "HKG",
+      "FSM"
+    ],
+    "headline_top5_slum_imputed": {
+      "PAK": false,
+      "PHL": false,
+      "CHN": false,
+      "BGD": false,
+      "MMR": false
+    },
+    "top5_members_perturbation_can_move": [],
+    "sensitivity_runs_common_top5": [
+      "BGD",
+      "CHN",
+      "MMR",
+      "PAK",
+      "PHL"
+    ]
+  },
+  "rows": [
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "urban_pct": 39.2,
+      "population": 251269164,
+      "slum_pct_used": 56.0,
+      "slum_imputed": false,
+      "headline_index": 184.4,
+      "rank_headline": 1,
+      "nopop_score": 21.95,
+      "rank_nopop": 2,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "urban_pct": 55.5,
+      "population": 115843670,
+      "slum_pct_used": 35.9,
+      "slum_imputed": false,
+      "headline_index": 160.67,
+      "rank_headline": 2,
+      "nopop_score": 19.92,
+      "rank_nopop": 3,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "urban_pct": 65.9,
+      "population": 1408975000,
+      "slum_pct_used": 26.3,
+      "slum_imputed": false,
+      "headline_index": 158.57,
+      "rank_headline": 3,
+      "nopop_score": 17.33,
+      "rank_nopop": 5,
+      "rank_shift_headline_to_nopop": -2
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "urban_pct": 32.7,
+      "population": 173562364,
+      "slum_pct_used": 51.5,
+      "slum_imputed": false,
+      "headline_index": 138.76,
+      "rank_headline": 4,
+      "nopop_score": 16.84,
+      "rank_nopop": 7,
+      "rank_shift_headline_to_nopop": -3
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "urban_pct": 30.4,
+      "population": 54500091,
+      "slum_pct_used": 58.3,
+      "slum_imputed": false,
+      "headline_index": 137.11,
+      "rank_headline": 5,
+      "nopop_score": 17.72,
+      "rank_nopop": 4,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "urban_pct": 64.7,
+      "population": 9646,
+      "slum_pct_used": 50.9,
+      "slum_imputed": false,
+      "headline_index": 131.21,
+      "rank_headline": 6,
+      "nopop_score": 32.93,
+      "rank_nopop": 1,
+      "rank_shift_headline_to_nopop": 5
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "urban_pct": 40.9,
+      "population": 17638801,
+      "slum_pct_used": 42.3,
+      "slum_imputed": false,
+      "headline_index": 125.37,
+      "rank_headline": 7,
+      "nopop_score": 17.3,
+      "rank_nopop": 6,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "urban_pct": 58.6,
+      "population": 10202830,
+      "slum_pct_used": 26.9,
+      "slum_imputed": false,
+      "headline_index": 110.48,
+      "rank_headline": 8,
+      "nopop_score": 15.76,
+      "rank_nopop": 9,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "urban_pct": 38.5,
+      "population": 100987686,
+      "slum_pct_used": 32.5,
+      "slum_imputed": false,
+      "headline_index": 100.15,
+      "rank_headline": 9,
+      "nopop_score": 12.51,
+      "rank_nopop": 11,
+      "rank_shift_headline_to_nopop": -2
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "urban_pct": 58.8,
+      "population": 283487931,
+      "slum_pct_used": 19.4,
+      "slum_imputed": false,
+      "headline_index": 96.42,
+      "rank_headline": 10,
+      "nopop_score": 11.41,
+      "rank_nopop": 12,
+      "rank_shift_headline_to_nopop": -2
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "urban_pct": 74.9,
+      "population": 462721,
+      "slum_pct_used": 21.6,
+      "slum_imputed": false,
+      "headline_index": 91.66,
+      "rank_headline": 11,
+      "nopop_score": 16.18,
+      "rank_nopop": 8,
+      "rank_shift_headline_to_nopop": 3
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "urban_pct": 42.0,
+      "population": 527799,
+      "slum_pct_used": 34.8,
+      "slum_imputed": false,
+      "headline_index": 83.64,
+      "rank_headline": 12,
+      "nopop_score": 14.62,
+      "rank_nopop": 10,
+      "rank_shift_headline_to_nopop": 2
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong, China",
+      "urban_pct": 100.0,
+      "population": 7524100,
+      "slum_pct_used": 10.0,
+      "slum_imputed": true,
+      "headline_index": 68.76,
+      "rank_headline": 13,
+      "nopop_score": 10.0,
+      "rank_nopop": 13,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "urban_pct": 20.3,
+      "population": 21916000,
+      "slum_pct_used": 44.7,
+      "slum_imputed": false,
+      "headline_index": 66.61,
+      "rank_headline": 14,
+      "nopop_score": 9.07,
+      "rank_nopop": 15,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "urban_pct": 28.7,
+      "population": 1400638,
+      "slum_pct_used": 33.9,
+      "slum_imputed": false,
+      "headline_index": 59.8,
+      "rank_headline": 15,
+      "nopop_score": 9.73,
+      "rank_nopop": 14,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "urban_pct": 59.1,
+      "population": 928784,
+      "slum_pct_used": 9.4,
+      "slum_imputed": false,
+      "headline_index": 33.15,
+      "rank_headline": 16,
+      "nopop_score": 5.56,
+      "rank_nopop": 17,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "urban_pct": 17.5,
+      "population": 218019,
+      "slum_pct_used": 34.6,
+      "slum_imputed": false,
+      "headline_index": 32.32,
+      "rank_headline": 17,
+      "nopop_score": 6.05,
+      "rank_nopop": 16,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "urban_pct": 61.1,
+      "population": 3699557,
+      "slum_pct_used": 7.1,
+      "slum_imputed": false,
+      "headline_index": 28.49,
+      "rank_headline": 18,
+      "nopop_score": 4.34,
+      "rank_nopop": 18,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "urban_pct": 47.1,
+      "population": 7494498,
+      "slum_pct_used": 8.4,
+      "slum_imputed": false,
+      "headline_index": 27.2,
+      "rank_headline": 19,
+      "nopop_score": 3.96,
+      "rank_nopop": 19,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "urban_pct": 15.4,
+      "population": 10576502,
+      "slum_pct_used": 22.3,
+      "slum_imputed": false,
+      "headline_index": 24.12,
+      "rank_headline": 20,
+      "nopop_score": 3.43,
+      "rank_nopop": 21,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "urban_pct": 62.5,
+      "population": 134518,
+      "slum_pct_used": 5.9,
+      "slum_imputed": false,
+      "headline_index": 18.91,
+      "rank_headline": 21,
+      "nopop_score": 3.69,
+      "rank_nopop": 20,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "urban_pct": 35.4,
+      "population": 1450935791,
+      "slum_pct_used": 5.4,
+      "slum_imputed": false,
+      "headline_index": 17.51,
+      "rank_headline": 22,
+      "nopop_score": 1.91,
+      "rank_nopop": 23,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "urban_pct": 22.5,
+      "population": 113160,
+      "slum_pct_used": 10.0,
+      "slum_imputed": true,
+      "headline_index": 11.37,
+      "rank_headline": 23,
+      "nopop_score": 2.25,
+      "rank_nopop": 22,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "urban_pct": 61.9,
+      "population": 71668011,
+      "slum_pct_used": 2.0,
+      "slum_imputed": false,
+      "headline_index": 9.72,
+      "rank_headline": 24,
+      "nopop_score": 1.24,
+      "rank_nopop": 25,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "urban_pct": 78.7,
+      "population": 37548,
+      "slum_pct_used": 2.4,
+      "slum_imputed": false,
+      "headline_index": 8.64,
+      "rank_headline": 25,
+      "nopop_score": 1.89,
+      "rank_nopop": 24,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "urban_pct": 22.3,
+      "population": 327777,
+      "slum_pct_used": 3.1,
+      "slum_imputed": false,
+      "headline_index": 3.81,
+      "rank_headline": 26,
+      "nopop_score": 0.69,
+      "rank_nopop": 26,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "urban_pct": 30.7,
+      "population": 819198,
+      "slum_pct_used": 1.9,
+      "slum_imputed": false,
+      "headline_index": 3.45,
+      "rank_headline": 27,
+      "nopop_score": 0.58,
+      "rank_nopop": 28,
+      "rank_shift_headline_to_nopop": -1
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "urban_pct": 100.0,
+      "population": 11947,
+      "slum_pct_used": 0.6,
+      "slum_imputed": false,
+      "headline_index": 2.45,
+      "rank_headline": 28,
+      "nopop_score": 0.6,
+      "rank_nopop": 27,
+      "rank_shift_headline_to_nopop": 1
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "urban_pct": 79.2,
+      "population": 17695,
+      "slum_pct_used": 0.6,
+      "slum_imputed": false,
+      "headline_index": 2.02,
+      "rank_headline": 29,
+      "nopop_score": 0.48,
+      "rank_nopop": 29,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "urban_pct": 76.9,
+      "population": 35557673,
+      "slum_pct_used": 0.2,
+      "slum_imputed": false,
+      "headline_index": 1.16,
+      "rank_headline": 30,
+      "nopop_score": 0.15,
+      "rank_nopop": 30,
+      "rank_shift_headline_to_nopop": 0
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "urban_pct": 21.2,
+      "population": 104175,
+      "slum_pct_used": 0.3,
+      "slum_imputed": false,
+      "headline_index": 0.32,
+      "rank_headline": 31,
+      "nopop_score": 0.06,
+      "rank_nopop": 31,
+      "rank_shift_headline_to_nopop": 0
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T19:45:06Z",
+  "coastal_source_readiness": {
+    "program": "coastal-informal-risk",
+    "analysis": "coastal informal-risk spatial source-readiness audit",
+    "claim_scope": "Source-readiness wall for the spatial layers needed after the no-population denominator audit. Public metadata/index pages are visible for settlement, elevation, and coastal-hazard inputs, but the analysis-ready overlay remains uncomputed. This is not a storm-surge exposure or informal-settlement footprint result.",
+    "retrieved_at": "2026-06-19T19:45:06Z",
+    "sources": {
+      "ghsl_download_page": "https://human-settlement.emergency.copernicus.eu/download.php",
+      "ghsl_catalog_page": "https://data.jrc.ec.europa.eu/collection/ghsl",
+      "nasadem_cmr_collections": "https://cmr.earthdata.nasa.gov/search/collections.json",
+      "nasadem_cmr_granules": "https://cmr.earthdata.nasa.gov/search/granules.json",
+      "wri_aqueduct_floods_v2_index": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html"
+    },
+    "summary": {
+      "spatial_source_layers_checked": 3,
+      "ghsl_built_settlement_link_candidates": 2,
+      "nasadem_concept_id": "C2763264762-LPCLOUD",
+      "nasadem_sample_https_data_links": 9,
+      "nasadem_sample_s3_links": 3,
+      "nasadem_sample_protected_https_data_links": 3,
+      "wri_coastal_links": 820,
+      "wri_coastal_tif_links": 410,
+      "wri_coastal_return_period_tokens": [
+        "0001_5",
+        "0002_0",
+        "0005_0",
+        "0010_0",
+        "0025_0",
+        "0050_0",
+        "0100_0",
+        "0250_0",
+        "0500_0",
+        "1000_0"
+      ],
+      "analysis_ready_overlay": false,
+      "raster_layers_downloaded": 0,
+      "settlement_elevation_surge_joined": false,
+      "no_population_top5": [
+        "TUV",
+        "PAK",
+        "PHL",
+        "MMR",
+        "CHN"
+      ],
+      "entered_top5_when_pop_removed": [
+        "TUV"
+      ],
+      "dropped_from_top5_when_pop_removed": [
+        "BGD"
+      ],
+      "owner_gated_or_unfinished_steps": [
+        "No GHSL or other settlement raster tile is downloaded, mosaicked, or classified.",
+        "No NASADEM tile is downloaded and no low-elevation band is derived.",
+        "No WRI Aqueduct coastal GeoTIFF is downloaded, clipped, or assigned a return period.",
+        "No CRS harmonization, resampling, population weighting, informality mask, or zonal statistic is computed.",
+        "No settlement-level, coastline-level, or exposed-population result is produced."
+      ]
+    },
+    "source_rows": [
+      {
+        "layer_role": "settlement_footprint",
+        "source_name": "GHSL/JRC Global Human Settlement Layer",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/download.php",
+        "key_id": "GHS_BUILT_S metadata candidates",
+        "public_metadata_reachable": true,
+        "candidate_links": 2,
+        "sample_data_links": 0,
+        "status": "metadata page reachable; settlement/built-up links visible; no raster tile pulled",
+        "notes": "Download page has 2 GHS_BUILT_S link candidates; catalog page has GHSL text=True. No GHSL raster is downloaded or mosaicked here."
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT",
+        "source_url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=NASADEM_HGT&page_size=5",
+        "key_id": "C2763264762-LPCLOUD",
+        "public_metadata_reachable": true,
+        "candidate_links": 1,
+        "sample_data_links": 9,
+        "status": "CMR collection and sample-granule metadata reachable; raster access not attempted",
+        "notes": "Concept C2763264762-LPCLOUD has cloud_hosted=True and sample HTTPS data links=9; protected HTTPS data links=3."
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "source_url": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html",
+        "key_id": "inuncoast coastal inundation depth files",
+        "public_metadata_reachable": true,
+        "candidate_links": 820,
+        "sample_data_links": 410,
+        "status": "coastal hazard-map index reachable; no return period selected or raster downloaded",
+        "notes": "820 unique inuncoast links, including 410 GeoTIFF links and 410 pickle links; return-period tokens visible: 10."
+      },
+      {
+        "layer_role": "analysis_ready_overlay",
+        "source_name": "Settlement x elevation x coastal-hazard overlay",
+        "source_url": "",
+        "key_id": "not_computed",
+        "public_metadata_reachable": false,
+        "candidate_links": 0,
+        "sample_data_links": 0,
+        "status": "not joined",
+        "notes": "No GHSL, NASADEM, WRI coastal hazard, population, or informality-mask raster overlay is computed here."
+      }
+    ],
+    "nasadem_detail": {
+      "collection_rows": [
+        {
+          "short_name": "NASADEM_HGT",
+          "version_id": "001",
+          "concept_id": "C2763264762-LPCLOUD",
+          "title": "NASADEM Merged DEM Global 1 arc second V001",
+          "time_start": "2000-02-11T00:00:00.000Z",
+          "time_end": "2000-02-21T23:59:59.000Z",
+          "updated": "2020-02-13T00:00:00.000Z",
+          "cloud_hosted": true,
+          "online_access_flag": true,
+          "data_center": "LPCLOUD",
+          "processing_level_id": "3",
+          "boxes": "-56 -180 60 180"
+        }
+      ],
+      "sample_granule_rows": [
+        {
+          "granule_id": "G2816769882-LPCLOUD",
+          "title": "NASADEM_HGT_s01w047",
+          "time_start": "2000-02-11T00:00:00.000Z",
+          "updated": "2018-09-12T13:26:39.688Z",
+          "data_links": 10,
+          "https_data_links": 9,
+          "s3_links": 3,
+          "protected_https_data_links": 3,
+          "documentation_links": 8
+        }
+      ],
+      "concept_id": "C2763264762-LPCLOUD",
+      "title": "NASADEM Merged DEM Global 1 arc second V001",
+      "time_start": "2000-02-11T00:00:00.000Z",
+      "updated": "2020-02-13T00:00:00.000Z",
+      "data_links": 10,
+      "https_data_links": 9,
+      "s3_links": 3,
+      "protected_https_data_links": 3,
+      "documentation_links": 8
+    },
+    "sample_link_rows": [
+      {
+        "layer_role": "settlement_footprint",
+        "source_name": "GHSL/JRC download page",
+        "href": "https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A.txt?t=1603983376",
+        "rel_or_label": "Metadata information (1.04 KB)",
+        "file_type": "txt",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "settlement_footprint",
+        "source_name": "GHSL/JRC download page",
+        "href": "https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A_tile_schema.zip?t=1617195881",
+        "rel_or_label": "Index shapefile (294.61 KB)",
+        "file_type": "zip",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "settlement_footprint",
+        "source_name": "GHSL/JRC download page",
+        "href": "https://human-settlement.emergency.copernicus.eu/documents/GHSL_Data_Package_2023.pdf?t=1727170839",
+        "rel_or_label": "",
+        "file_type": "pdf",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "file_type": "zip",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+        "file_type": "zip",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "http://dx.doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "file_type": "001",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+        "file_type": "xml",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+        "file_type": "xml",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://data.lpdaac.earthdatacloud.nasa.gov/s3credentials",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/browse#",
+        "file_type": "jpg",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "s3://lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/browse#",
+        "file_type": "jpg",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264762-LPCLOUD",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+        "file_type": "001",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://www.earthdata.nasa.gov/centers/lp-daac",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://lpdaac.usgs.gov/documents/2237/NASADEM_User_Guide_V13.pdf",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "file_type": "pdf",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://lpdaac.usgs.gov/documents/642/DEM_Comparison_Guide.pdf",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+        "file_type": "pdf",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://appeears.earthdatacloud.nasa.gov/",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264764-LPCLOUD",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "elevation_dem",
+        "source_name": "NASA CMR NASADEM_HGT sample granule",
+        "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264768-LPCLOUD",
+        "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+        "file_type": "",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0001_5.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0001_5.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0002_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0002_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0005_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0005_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0010_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0010_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0025_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0025_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0050_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0050_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0100_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0100_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0250_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0250_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0500_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp0500_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.pickle",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp1000_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.tif",
+        "rel_or_label": "inuncoast_historical_nosub_hist_rp1000_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.pickle",
+        "rel_or_label": "inuncoast_historical_wtsub_hist_rp0001_5.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.tif",
+        "rel_or_label": "inuncoast_historical_wtsub_hist_rp0001_5.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.pickle",
+        "rel_or_label": "inuncoast_historical_wtsub_hist_rp0002_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.tif",
+        "rel_or_label": "inuncoast_historical_wtsub_hist_rp0002_0.tif",
+        "file_type": "tif",
+        "selected_for_analysis": false
+      },
+      {
+        "layer_role": "coastal_hazard",
+        "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+        "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0005_0.pickle",
+        "rel_or_label": "inuncoast_historical_wtsub_hist_rp0005_0.pickle",
+        "file_type": "pickle",
+        "selected_for_analysis": false
+      }
+    ],
+    "cache_records": [
+      {
+        "url": "https://human-settlement.emergency.copernicus.eu/download.php",
+        "cache_path": ".cache\\coastal-spatial-source-readiness\\ghsl_download_page.html",
+        "bytes": 26368,
+        "sha256": "f1a201f3cf984c626a36c0cb65bdb4047ee563ce43241c16503f7d4cdd6d1187",
+        "status_code": 200,
+        "fetch_mode": "live",
+        "query_type": "ghsl_download_page"
+      },
+      {
+        "url": "https://data.jrc.ec.europa.eu/collection/ghsl",
+        "cache_path": ".cache\\coastal-spatial-source-readiness\\ghsl_catalog_page.html",
+        "bytes": 37832,
+        "sha256": "beb6d3c95f1cf632086b002b319b8f92f02b0feb1738524cbabef77eb37a8510",
+        "status_code": 200,
+        "fetch_mode": "live",
+        "query_type": "ghsl_catalog_page"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=NASADEM_HGT&page_size=5",
+        "cache_path": ".cache\\coastal-spatial-source-readiness\\nasadem_hgt_collections.json",
+        "bytes": 24254,
+        "sha256": "d19e0593a34e5199f7243f8cadee11e3174164177d350aaa0407b086d41bd697",
+        "status_code": 200,
+        "fetch_mode": "live",
+        "query_type": "cmr_collections",
+        "short_name": "NASADEM_HGT"
+      },
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2763264762-LPCLOUD&page_size=1&sort_key%5B%5D=-start_date",
+        "cache_path": ".cache\\coastal-spatial-source-readiness\\nasadem_hgt_granules_C2763264762-LPCLOUD.json",
+        "bytes": 4145,
+        "sha256": "1d26a7c2747d8c55b09223772c3df75811c140142d786a3d45bb7944f128d6f8",
+        "status_code": 200,
+        "fetch_mode": "live",
+        "query_type": "cmr_sample_granule",
+        "concept_id": "C2763264762-LPCLOUD"
+      },
+      {
+        "url": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html",
+        "cache_path": ".cache\\coastal-spatial-source-readiness\\wri_aqueduct_floods_v2_index.html",
+        "bytes": 253692,
+        "sha256": "5110345845fa052e03047b9ec44037afe88628d557230b0300f7f0b58e30e92c",
+        "status_code": 200,
+        "fetch_mode": "live",
+        "query_type": "wri_aqueduct_floods_v2_index"
+      }
+    ],
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-06-19T19:45:06Z"
+  },
+  "coastal_data_wall": "Public GHSL/JRC, NASADEM CMR, and WRI Aqueduct coastal-hazard source pages are reachable, but this repository still has no downloaded rasters, no selected return period, no low-elevation mask, no settlement-footprint overlay, and no exposed-population estimate."
+}

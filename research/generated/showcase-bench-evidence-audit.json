@@ -1,6 +1,6 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:37:58.114Z",
+  "generated_at": "2026-06-19T19:48:56.963Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
@@ -289,19 +289,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "coastal-informal-risk/generated/coastal-drop-population-deepening.json",
+      "evidencePath": "coastal-informal-risk/generated/coastal-denominator-spatial-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/coastal-informal-risk/generated/coastal-drop-population-deepening.json",
+      "auditDataUrl": "/programs/coastal-informal-risk/generated/coastal-denominator-spatial-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/coastal-informal-risk/generated/coastal-drop-population-deepening.csv",
+      "auditCsvUrl": "/programs/coastal-informal-risk/generated/coastal-spatial-source-readiness-sources.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer."
+      "nextUpgrade": "Choose a one-coast pilot, pull the named raster layers, and join settlement, elevation, population, informality, and coastal-hazard cells."
     },
     {
       "id": 13,

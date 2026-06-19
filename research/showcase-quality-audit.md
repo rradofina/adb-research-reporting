@@ -45,7 +45,7 @@ candidates before adding new surfaces.
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge now has a public World Bank reliability-proxy source wall | Needs direct outage, reserve-margin, dispatch, seasonal generation, or heat-stress evidence | Choose high-concentration rows and search for regulator outage or dispatch records beyond the proxy wall |
 | 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks now include a UNHCR forced-displacement corridor-type falsifier: Afghanistan is the forced-displacement-majority exception, while the share top five is not | Needs labor, family, student, temporary-work, visa, and deployment corridor evidence before migration-purpose interpretation | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR forced-displacement layer |
 | 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition now sits beside a public NASA CMR Black Marble source-readiness wall, so the owner-gated NTL join is explicit rather than hand-waved | Needs authenticated raster access, population-weighted zonal statistics, subnational MPI crosswalks, flare masking, and coauthor attestation before any NTL x MPI claim | Keep as methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared |
-| 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge prevents a size-driven coastal proxy from overclaiming | Needs settlement footprints, elevation, and surge-zone overlay | Choose one-coast pilot and join settlement/hazard layers |
+| 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge now sits beside a GHSL/NASADEM/Aqueduct source-readiness wall, so the proxy cannot overclaim storm-surge exposure | Needs raster download, return-period choice, low-elevation derivation, settlement-footprint overlay, and exposed-population denominator | Choose one-coast pilot and join settlement, elevation, population, informality, and coastal-hazard cells |
 | 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size | Needs roads, markets/services, flood footprint, and travel-time logic | Build one-DMC flooded-network pilot or demote to methods caution |
 | 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking | Needs labor-force denominator and heat exposure evidence | Repair denominator and lead with cap sensitivity |
 | 15 | Food-price coverage trap | Evidence audit | Coverage funnel foregrounds missing CPI/import indicator legs | Needs household or market price exposure evidence | Join a market-price or household-expenditure source |
@@ -119,6 +119,25 @@ candidates before adding new surfaces.
   downloaded, no Earthdata or Earth Engine authentication is attempted, no
   zonal statistic is computed, no subnational MPI crosswalk is built, and no
   NTL x MPI model is estimated.
+- Coastal report #12 received a spatial source-readiness wall on 2026-06-20.
+  New script
+  `coastal-informal-risk/scripts/audit-coastal-spatial-source-readiness.py`
+  queries GHSL/JRC download/catalog pages, NASA CMR metadata for
+  `NASADEM_HGT`, and the WRI Aqueduct Floods v2 coastal-hazard index, then
+  emits `coastal-denominator-spatial-source-audit.json`. The audit finds 2
+  GHSL/JRC `GHS_BUILT_S` link candidates, NASADEM concept
+  `C2763264762-LPCLOUD` with 9 sample HTTPS data links in CMR metadata, and
+  820 WRI coastal-hazard links including 410 GeoTIFF links. It still records
+  `analysis_ready_overlay: false`: no rasters are downloaded, no return
+  period is selected, no low-elevation band is derived, no
+  settlement/elevation/surge overlay is computed, and no exposed-population
+  estimate is produced. Browser QA passed at 1440px desktop and 390px mobile
+  with no page errors, no failed requests, and no page-level horizontal
+  overflow. Screenshots:
+  `reporting-site/qa/showcase-coastal-spatial-source-desktop.png`,
+  `reporting-site/qa/showcase-coastal-spatial-source-desktop-visual.png`,
+  `reporting-site/qa/showcase-coastal-spatial-source-mobile.png`, and
+  `reporting-site/qa/showcase-coastal-spatial-source-mobile-visual.png`.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`
   reads the existing BGD exposure and road-context artifacts and writes

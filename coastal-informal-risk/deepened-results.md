@@ -12,7 +12,10 @@ network, no AI-supplied figures. Per `CONSTITUTION.md` §6.4 the index is a
 triage measure, not a country-quality ranking; per §13.3 the framing is a
 measurement / observability gap, not a deficiency ranking of any economy.
 
-Artifact: `generated/coastal-drop-population-deepening.{json,csv}`.
+Artifacts: `generated/coastal-drop-population-deepening.{json,csv}` and
+`generated/coastal-denominator-spatial-source-audit.json`, with the public
+source-readiness tables in
+`generated/coastal-spatial-source-readiness-{sources,links}.csv`.
 
 ## The question
 
@@ -109,20 +112,25 @@ none of the five members, because none of their slum values are imputed.
   object, and the sub-national exposure it claims to be about cannot be recovered
   from national rates at all.
 - **The precise data wall.** Answering §1.1 — the slum *footprint inside the
-  surge zone* — requires three raster layers that are **not on disk** in this
-  repository: a built-up-settlement footprint (GHSL `GHS-BUILT-S` or the World
-  Settlement Footprint), a low-elevation band (CoastalDEM or MERIT DEM at ≤10 m),
-  and a coastal-surge depth layer (Aqueduct Floods coastal, or Deltares GLOFRIS).
-  The intersection `(built-up ∩ ≤2 m surge depth) × WorldPop count × informality
-  mask` would convert the rank into a sub-national headcount with a return period
-  and a place. Those layers are public, but fetching them is blocked in this
-  environment (no network); none is present in the program cache. This is a real
-  data wall, not a method gap — the recomputation here exhausts what the
-  on-disk national panel can support, and the spatial intersection is the
-  §18.5 upgrade-pass that begins the moment those rasters are available locally.
+  surge zone* — requires three spatial layers that are now source-audited but
+  still **not analysis-ready** in this repository: a built-up-settlement
+  footprint, an elevation or low-elevation band, and a coastal-surge depth
+  layer. `scripts/audit-coastal-spatial-source-readiness.py` checks public
+  source metadata and index pages, finding **2 GHSL/JRC `GHS_BUILT_S` link
+  candidates**, NASADEM concept **`C2763264762-LPCLOUD`** with **9 sample HTTPS
+  data links** in CMR metadata, and **820 WRI Aqueduct coastal-hazard links**,
+  including **410 GeoTIFF links**. The same artifact records
+  `analysis_ready_overlay: false`: no GHSL raster is downloaded or mosaicked, no
+  NASADEM tile is converted into a low-elevation band, no WRI coastal GeoTIFF or
+  return period is selected, and no settlement/elevation/surge/population
+  overlay is computed. The intersection
+  `(built-up footprint ∩ coastal inundation depth) × population × informality
+  mask` remains the upgrade pass; the current result is a denominator caution
+  plus a source-readiness wall, not a storm-surge exposure estimate.
 
 ## Reproduce
 
 ```bash
 python coastal-informal-risk/scripts/deepen-drop-population.py
+python coastal-informal-risk/scripts/audit-coastal-spatial-source-readiness.py
 ```

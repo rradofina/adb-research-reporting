@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T19:37:58.114Z
+Generated: 2026-06-19T19:48:56.963Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -44,7 +44,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 9 | Grid reliability proxy source wall | Evidence audit | ok | ok | ok | Pick 1-2 high-concentration rows and search for regulator outage records, seasonal dispatch, or reserve-margin evidence beyond ... |
 | 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR force... |
 | 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared. |
-| 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer. |
+| 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot, pull the named raster layers, and join settlement, elevation, population, informality, and coastal-ha... |
 | 13 | Flood access decomposition | Evidence audit | ok | ok | ok | Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note. |
 | 14 | Climate-health sensitivity repair | Evidence audit | ok | ok | ok | Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart. |
 | 15 | Food price coverage trap | Evidence audit | ok | ok | ok | Join a market-price or household-expenditure source for one DMC and keep WDI coverage as the source audit. |

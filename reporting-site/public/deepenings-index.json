@@ -40,7 +40,7 @@
       "outcome": "computed + frontier wall",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "coastal-drop-population-deepening.json",
+      "artifact": "coastal-denominator-spatial-source-audit.json",
       "finding": "The published top-5 is much more a log-population × urban-share ranking lightly tinted by slum share than a ranking of coastal-informal risk: removing the size term alone drops China from 3rd to 5th, evicts Bangladesh, and lifts a…"
     },
     {

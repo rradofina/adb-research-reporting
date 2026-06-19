@@ -510,6 +510,9 @@ function buildMpiModel(report: ShowcaseReport, data: JsonValue): AuditModel {
 function buildCoastalModel(report: ShowcaseReport, data: JsonValue): AuditModel {
   const headlineTop = strings(data.headline_top5);
   const noPopTop = strings(data.nopop_top5);
+  const readiness = data.coastal_source_readiness || {};
+  const readinessSummary = readiness.summary || {};
+  const hasReadiness = Boolean(readinessSummary.spatial_source_layers_checked);
   const rows = safeRows(data.rows)
     .slice(0, 8)
     .map((row) => ({
@@ -531,20 +534,64 @@ function buildCoastalModel(report: ShowcaseReport, data: JsonValue): AuditModel 
       { value: strings(data.entered_top5_when_pop_removed).join(", ") || "none", label: "entered without population" },
       { value: strings(data.dropped_from_top5_when_pop_removed).join(", ") || "none", label: "dropped without population" },
       { value: `${data.china_rank_headline}->${data.china_rank_nopop}`, label: "China rank shift" },
+      ...(hasReadiness ? [
+        { value: formatNumber(readinessSummary.wri_coastal_tif_links), label: "WRI coastal GeoTIFF links" },
+      ] : []),
     ],
-    chartTitle: "Removing the size term lets the small-island signal appear.",
-    chartDeck: "The bridge keeps the original population-scaled top set beside the no-population audit rank.",
+    chartTitle: "The small-island signal appears before the spatial overlay exists.",
+    chartDeck: "The bridge keeps the population-scaled rank beside the no-population rank, while the source wall shows the settlement, elevation, and surge inputs are not yet joined.",
     leftLabel: "Population-scaled screen",
     rightLabel: "No-population screen",
     rows,
+    componentCards: hasReadiness ? [
+      {
+        key: "ghsl",
+        value: formatNumber(readinessSummary.ghsl_built_settlement_link_candidates),
+        label: "GHSL built links",
+        note: "GHS_BUILT_S metadata candidates are visible on the GHSL/JRC download page; no settlement raster tile is pulled.",
+        status: "survived",
+      },
+      {
+        key: "nasadem",
+        value: String(readinessSummary.nasadem_concept_id || "missing"),
+        label: "NASADEM concept",
+        note: `${formatNumber(readinessSummary.nasadem_sample_https_data_links)} sample HTTPS data links in CMR; ${formatNumber(readinessSummary.nasadem_sample_protected_https_data_links)} are protected data links.`,
+        status: "survived",
+      },
+      {
+        key: "aqueduct",
+        value: `${formatNumber(readinessSummary.wri_coastal_tif_links)}/${formatNumber(readinessSummary.wri_coastal_links)}`,
+        label: "Aqueduct coastal files",
+        note: "WRI Aqueduct Floods v2 inuncoast links are visible, but no return period or GeoTIFF is selected.",
+        status: "survived",
+      },
+      {
+        key: "overlay",
+        value: readinessSummary.analysis_ready_overlay ? "ready" : "not joined",
+        label: "Analysis-ready overlay",
+        note: "No settlement, elevation, coastal hazard, population, or informality-mask raster intersection is computed.",
+        status: "flag",
+      },
+    ] : undefined,
     readouts: [
       { label: "Headline top five", value: headlineTop.join(", ") },
       { label: "No-population top five", value: noPopTop.join(", ") },
       { label: "Formula check", value: `max error ${formatFlexible(data.formula_check?.max_abs_error_recomputed_vs_committed)}` },
       { label: "Sensitivity note", value: strings(data.sensitivity_check?.top5_members_perturbation_can_move).join(", ") || "no movement listed" },
+      ...(hasReadiness ? [
+        { label: "Spatial source layers checked", value: formatNumber(readinessSummary.spatial_source_layers_checked) },
+        { label: "Return-period tokens visible", value: strings(readinessSummary.wri_coastal_return_period_tokens).join(", ") },
+        { label: "Analysis-ready overlay", value: readinessSummary.analysis_ready_overlay ? "ready" : "not joined" },
+        { label: "Unfinished spatial steps", value: strings(readinessSummary.owner_gated_or_unfinished_steps).join(" ") },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceFacts(report, data).concat(hasReadiness ? [
+      { label: "Spatial source audit", value: String(readiness.claim_scope || "") },
+    ] : []),
+    caveats: baseCaveats(report, data).concat(hasReadiness ? [
+      String(readiness.claim_scope || ""),
+      String(data.coastal_data_wall || ""),
+    ] : []),
     generatedAt: data.generated_at,
   };
 }

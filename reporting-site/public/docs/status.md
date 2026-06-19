@@ -273,6 +273,28 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (coastal spatial source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/coastal-population-denominator` from a no-population rank bridge
+  into a denominator audit plus public spatial source-readiness wall. Added
+  `coastal-informal-risk/scripts/audit-coastal-spatial-source-readiness.py`,
+  cache regeneration notes under `coastal-informal-risk/.cache/README.md`,
+  generated `coastal-denominator-spatial-source-audit.json`,
+  `coastal-spatial-source-readiness.json`, and source/link CSV companions, and
+  registered `coastal_spatial_source_readiness_public_metadata` in
+  `versions.json`. The audit verifies 2 GHSL/JRC `GHS_BUILT_S` link
+  candidates, NASADEM concept `C2763264762-LPCLOUD` with 9 sample HTTPS data
+  links in CMR metadata, and 820 WRI Aqueduct coastal-hazard links including
+  410 GeoTIFF links. It keeps `analysis_ready_overlay: false`: no rasters are
+  downloaded, no return period is selected, no low-elevation band is derived,
+  no settlement/elevation/surge overlay is computed, and no exposed-population
+  estimate is produced. Verification in this pass reran the coastal scripts,
+  synced public artifacts, built the reporting site, ran the deterministic
+  gates and showcase verifier, and browser-checked desktop plus 390px mobile
+  with no page errors, failed requests, or page-level horizontal overflow.
+  Screenshots:
+  `reporting-site/qa/showcase-coastal-spatial-source-desktop.png` and
+  `reporting-site/qa/showcase-coastal-spatial-source-mobile.png`.
 - **2026-06-20 (grid reliability proxy source-wall audit):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/grid-generation-mismatch` from a capacity-versus-generation

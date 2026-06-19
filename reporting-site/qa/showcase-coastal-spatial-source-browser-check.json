@@ -1,0 +1,81 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/coastal-population-denominator",
+  "checkedAt": "2026-06-19T19:51:36.888Z",
+  "failures": [],
+  "results": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "url": "http://127.0.0.1:5176/showcase/coastal-population-denominator",
+      "missing": [],
+      "rankRows": 8,
+      "componentCards": [
+        "GHSL built links2GHS_BUILT_S metadata candidates are visible on the GHSL/JRC download page; no settlement raster tile is pulled.",
+        "NASADEM conceptC2763264762-LPCLOUD9 sample HTTPS data links in CMR; 3 are protected data links.",
+        "Aqueduct coastal files410/820WRI Aqueduct Floods v2 inuncoast links are visible, but no return period or GeoTIFF is selected.",
+        "Analysis-ready overlaynot joinedNo settlement, elevation, coastal hazard, population, or informality-mask raster intersection is computed."
+      ],
+      "consoleMessages": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "offenders": []
+      },
+      "screenshots": {
+        "full": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-desktop.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-desktop-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-desktop-claim.png"
+      }
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "url": "http://127.0.0.1:5176/showcase/coastal-population-denominator",
+      "missing": [],
+      "rankRows": 8,
+      "componentCards": [
+        "GHSL built links2GHS_BUILT_S metadata candidates are visible on the GHSL/JRC download page; no settlement raster tile is pulled.",
+        "NASADEM conceptC2763264762-LPCLOUD9 sample HTTPS data links in CMR; 3 are protected data links.",
+        "Aqueduct coastal files410/820WRI Aqueduct Floods v2 inuncoast links are visible, but no return period or GeoTIFF is selected.",
+        "Analysis-ready overlaynot joinedNo settlement, elevation, coastal hazard, population, or informality-mask raster intersection is computed."
+      ],
+      "consoleMessages": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "pageErrors": [],
+      "requestFailures": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "offenders": []
+      },
+      "screenshots": {
+        "full": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-mobile.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-mobile-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-coastal-spatial-source-mobile-claim.png"
+      }
+    }
+  ]
+}

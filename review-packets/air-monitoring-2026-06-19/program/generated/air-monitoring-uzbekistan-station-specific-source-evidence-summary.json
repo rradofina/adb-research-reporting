@@ -1,0 +1,431 @@
+{
+  "generated_at": "2026-06-19T11:33:21Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_uzbekistan_station_specific_source_evidence",
+  "method": "air_monitoring_uzbekistan_station_specific_source_evidence_v1",
+  "goal_level": "L3 Uzbekistan station-specific source scan",
+  "coverage_counts": {
+    "target_uzbekistan_station_rows": 28,
+    "sources_retrieved": 16,
+    "official_region_pages_retrieved": 14,
+    "official_region_station_rows_parsed": 93,
+    "official_region_table_match_rows": 28,
+    "unique_official_region_table_match_rows": 28,
+    "official_region_horiba_context_rows": 22,
+    "official_region_recent_update_within_30_days_rows": 0,
+    "official_region_updating_data_status_rows": 6,
+    "official_event_note_match_rows": 2,
+    "station_specific_equipment_context_rows": 22,
+    "target_station_id_named_in_non_api_source_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "source_records": [
+    {
+      "source_key": "uzhydromet_main_map",
+      "source_role": "official_regional_table_discovery",
+      "url": "https://monitoring.meteo.uz/en/map",
+      "final_url": "https://monitoring.meteo.uz/en/map",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 170927,
+      "sha256": "296cd82ebdea0b1cb5254921c2c0da06e7d477e5b3ea22e61a6937d8caf784dd"
+    },
+    {
+      "source_key": "uzhydromet_region_Tashkent city",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 70089,
+      "sha256": "21c8764f48222517545225264cea8074bbd3c660a159d8a310023543243952cb"
+    },
+    {
+      "source_key": "uzhydromet_region_The Republic of Karakalpakstan",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/respublika-karakalpakstan",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/respublika-karakalpakstan",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 43628,
+      "sha256": "4f1b1cfec0ef6f50904984d78c7c98c07040b89c7f1d49dbd2cca4353ae5ab8e"
+    },
+    {
+      "source_key": "uzhydromet_region_Khorezm region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/horezmskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/horezmskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 43553,
+      "sha256": "b767ebda3b3a5c1c6d8b7bdf2501166f441e44e6356fca20119acb716ca4dc7a"
+    },
+    {
+      "source_key": "uzhydromet_region_Ferghana region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/ferganskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/ferganskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 50061,
+      "sha256": "bb9175dd5ed30ced20d4749ab33e8530bcb122a1a2da8bcff2ca45b5990031b2"
+    },
+    {
+      "source_key": "uzhydromet_region_Tashkent region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 62724,
+      "sha256": "3770e67c6cb0001a2876ae24976306354a85ef71aafb193f2e37a374a19dc9ad"
+    },
+    {
+      "source_key": "uzhydromet_region_Syrdarya region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/syrdarinskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/syrdarinskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 43568,
+      "sha256": "955762258d9e6e95fe6b1a1852453d10d4c1ca3e1d08f1d616f6fc54a400ff7e"
+    },
+    {
+      "source_key": "uzhydromet_region_Surkhandarya region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/surhandarinskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/surhandarinskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 46337,
+      "sha256": "88822c2a8dac6b018f8011df5a9b9f0711c97fabf9949115dd254c622f409c0d"
+    },
+    {
+      "source_key": "uzhydromet_region_Samarkand region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/samarkandskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/samarkandskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 46357,
+      "sha256": "f1fb35c900c7b83fee6e84c438c9a6140ee2417ee8092744d5da9494c165dd64"
+    },
+    {
+      "source_key": "uzhydromet_region_Namangan region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/namanganskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/namanganskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 44792,
+      "sha256": "8c62aae42ad487ac3dfcd3cf0b329183a74e1a65c68cd65a97d28934b89c7035"
+    },
+    {
+      "source_key": "uzhydromet_region_Navoi region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/navoijskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/navoijskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 44504,
+      "sha256": "53248734a8868002c151a311d2cdd55e4827fc47bded6e59abee21827f90b64d"
+    },
+    {
+      "source_key": "uzhydromet_region_Kashkadarya region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/kashkadarinskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/kashkadarinskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 47582,
+      "sha256": "8e3cc674b6af1002dd30542f18d908b793a808ac0cc1d8e4e9946f2965cfe76e"
+    },
+    {
+      "source_key": "uzhydromet_region_Djizzak region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/dzhizakskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/dzhizakskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 40815,
+      "sha256": "3c44cd6662fded9e95c2d357cdc40a2e262b8101e42af8b80a7dc83f26bccdd6"
+    },
+    {
+      "source_key": "uzhydromet_region_Bukhara region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/buharskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/buharskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 46075,
+      "sha256": "fc168379ff3d44478d4b4cc9d12f2bf2cc8c4a5c03bca4db3e86243a7f05bc5a"
+    },
+    {
+      "source_key": "uzhydromet_region_Andijan region",
+      "source_role": "official_regional_station_table",
+      "url": "https://monitoring.meteo.uz/en/map/regions/andizhanskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/andizhanskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 44749,
+      "sha256": "c9513e84888e98a4ceb4fdac413e9c55796cf67b5ac06e2cc3b8d01ce0390751"
+    },
+    {
+      "source_key": "gov_uz_eco_tashkent_pm25_event",
+      "source_role": "official_station_event_note",
+      "url": "https://gov.uz/oz/eco/news/view/87646",
+      "final_url": "https://gov.uz/oz/eco/news/view/87646",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 185778,
+      "sha256": "720a2ca6d1e453435b60ecf4f1f45923aecb182b0aaedd70b552212f5493c88e"
+    }
+  ],
+  "match_quality_rows": [
+    {
+      "official_region_table_match_quality": "duplicate_name_address_resolved_to_updating_status",
+      "rows": 1
+    },
+    {
+      "official_region_table_match_quality": "unique_by_name_address_and_update_date",
+      "rows": 22
+    },
+    {
+      "official_region_table_match_quality": "unique_name_address_match",
+      "rows": 5
+    }
+  ],
+  "decision_rows": [
+    {
+      "source_scan_decision": "station_specific_event_context_keep_open",
+      "rows": 2
+    },
+    {
+      "source_scan_decision": "station_specific_table_context_keep_open",
+      "rows": 26
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "gate": "Official regional station-table match",
+      "status": "available",
+      "rows": 28,
+      "reader_use": "Target rows have official station-specific table rows on Uzhydromet regional pages."
+    },
+    {
+      "gate": "Unique station-table match",
+      "status": "available",
+      "rows": 28,
+      "reader_use": "Rows matched without unresolved duplicate-name ambiguity."
+    },
+    {
+      "gate": "Station-specific equipment context",
+      "status": "partly_available",
+      "rows": 22,
+      "reader_use": "Official table or event text names Horiba/automatic station context, but not complete grade classification."
+    },
+    {
+      "gate": "Official table update within 30 days",
+      "status": "partly_available",
+      "rows": 0,
+      "reader_use": "Recent official table timestamps are follow-up priority, not explicit current-status certification."
+    },
+    {
+      "gate": "Official event-note station mention",
+      "status": "partly_available",
+      "rows": 2,
+      "reader_use": "The official ecology note names station-specific event readings for two Tashkent stations."
+    },
+    {
+      "gate": "Target station ID named outside API",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "The official web tables expose display row numbers, not the internal target station IDs."
+    },
+    {
+      "gate": "Current-status confirmed",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No source states that each target station is currently active/current as of the scan date."
+    },
+    {
+      "gate": "Complete monitor-grade classification",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station-specific Horiba context is not a complete reference-grade classification."
+    },
+    {
+      "gate": "Station-radius grade assumptions",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until station-grade assumptions are validated."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "source_station_id": "107",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha",
+      "official_region_name": "Tashkent city",
+      "official_region_display_row_id": "14",
+      "official_region_row_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "official_region_row_address": "Uzgidromet, Yunusabad district (reference point: Observation site, observatory)",
+      "official_region_row_auto": "",
+      "official_region_row_updated_raw": "Updating data",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "108",
+      "api_alias": "avtomaticheskaja-ctantsija-monitoringa-atmosfernogo-vozduha",
+      "official_region_name": "Tashkent city",
+      "official_region_display_row_id": "15",
+      "official_region_row_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "official_region_row_address": "Uzgidromet, Yunusabad district (reference point: Observation site, observatory)",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "714",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Syrdarya region",
+      "official_region_display_row_id": "3",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "г.Гулистан, махалля \" Буюк Келажак\". Сырдарьинское управление по гидрометеорологии.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "715",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Djizzak region",
+      "official_region_display_row_id": "1",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "г.Джизак, махалля \"Зилол\" ул. Овланий, дом 2. Джизакское управление по гидрометеорологии.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "716",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Samarkand region",
+      "official_region_display_row_id": "5",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "г.Самарканд, Университетский бульвар, 17. Международный университет туризма и культурного наследия.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "717",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Surkhandarya region",
+      "official_region_display_row_id": "5",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "г.Термез, ул. Ат -Термизий. Дворец искусств.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "718",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "The Republic of Karakalpakstan",
+      "official_region_display_row_id": "3",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "Республика Каракалпакстан, г.Нукус, ул. Алмазар, дом 223. Университет Бердаха.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "719",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Khorezm region",
+      "official_region_display_row_id": "3",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "г.Ургенч, ул. Ж. Мангуберды, дом 2. Хорезмское управление по гидрометеорологии.",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "720",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Tashkent city",
+      "official_region_display_row_id": "16",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "ТТЗ-4 массив",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "25.02.2024, 17:43",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "721",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Kashkadarya region",
+      "official_region_display_row_id": "6",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "Qarshi",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "11.03.2024, 14:52",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "722",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Navoi region",
+      "official_region_display_row_id": "4",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "Навоий",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "22.03.2024, 20:32",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    },
+    {
+      "source_station_id": "723",
+      "api_alias": "avtomaticheskaja-stantsija-monitoringa-atmosfernogo-vozduha-beta-",
+      "official_region_name": "Bukhara region",
+      "official_region_display_row_id": "5",
+      "official_region_row_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_row_address": "Бухоро",
+      "official_region_row_auto": "horiba",
+      "official_region_row_updated_raw": "22.03.2024, 20:33",
+      "official_event_note_terms": "",
+      "source_scan_decision": "station_specific_table_context_keep_open"
+    }
+  ],
+  "non_claim": "This scan checks official station-specific web rows and official event text for target-row context. It does not certify a target station as currently operating, reference-grade, complete monitor-grade, or station-radius-ready."
+}

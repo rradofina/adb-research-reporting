@@ -65,6 +65,18 @@ Monitor-grade station method-evidence audit:
 `generated/air-monitoring-monitor-grade-station-method-evidence-summary.json`
 and
 `generated/air-monitoring-monitor-grade-station-method-evidence.csv`.
+Uzbekistan station current/method scan:
+`generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json`
+and
+`generated/air-monitoring-uzbekistan-station-current-method-scan.csv`.
+Uzbekistan method-policy source scan:
+`generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json`
+and
+`generated/air-monitoring-uzbekistan-method-policy-source-scan.csv`.
+Uzbekistan station-specific source evidence scan:
+`generated/air-monitoring-uzbekistan-station-specific-source-evidence-summary.json`
+and
+`generated/air-monitoring-uzbekistan-station-specific-source-evidence.csv`.
 
 ## The two questions
 
@@ -307,6 +319,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   However, none of the retrieved sources names a target station ID from the
   28-row Uzbekistan queue. The result explains why source-policy context is
   useful for interpretation but still not station-level closure.
+- **New Uzbekistan station-specific source evidence scan:** the seeded source
+  scan retrieves the official Uzhydromet map, 14 official regional
+  station-table pages, and one official gov.uz ecology note. It parses 93
+  regional station rows, matches all 28 target Uzbekistan rows to official
+  regional table rows, finds 22 rows where the table carries Horiba station
+  context, 6 rows with `Updating data` status, and 2 target rows also named in
+  the official gov.uz event note. It still finds 0 non-API public sources
+  naming internal target station IDs, 0 current-status confirmed rows, 0
+  complete monitor-grade classification rows, and 0 station-radius-ready rows.
 
 ## Bounds
 
@@ -357,4 +378,7 @@ python air-monitoring/scripts/audit-monitor-grade-evidence.py
 python air-monitoring/scripts/scan-monitor-grade-source-validation.py
 python air-monitoring/scripts/build-monitor-grade-station-review-queue.py
 python air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py
+python air-monitoring/scripts/scan-uzbekistan-station-current-method-evidence.py
+python air-monitoring/scripts/scan-uzbekistan-method-policy-sources.py
+python air-monitoring/scripts/scan-uzbekistan-station-specific-source-evidence.py
 ```

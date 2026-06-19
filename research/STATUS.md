@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, and Uzbekistan current/method wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, and Uzbekistan station-specific source wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -99,10 +99,18 @@ overrides priority by editing this list.
    current-status confirmed, complete grade, or station-radius-ready rows. The
    Uzbekistan method-policy source scan retrieves 4 public source-policy rows
    with method/equipment and cadence/status context, but 0 sources name a target
-   station ID from the 28-row queue. Next AI-doable loop is station-owner or
-   regulator documentation that explicitly names Uzbekistan station IDs or
-   station-specific equipment/status tables, then the 38 Indonesia and Georgia
-   portal/API rows, before any station-radius or catchment claim.
+   station ID from the 28-row queue. The Uzbekistan station-specific source
+   evidence scan then retrieves the official Uzhydromet map, 14 official
+   regional station-table pages, and one official gov.uz ecology note; parses
+   93 station rows; matches all 28 target rows to official regional table rows;
+   finds 22 Horiba table-context rows, 6 `Updating data` rows, and 2 official
+   event-note station matches; and still keeps non-API internal target station
+   IDs, current-status confirmation, complete monitor-grade classification, and
+   station-radius readiness at 0. Next AI-doable loop is station-owner or
+   regulator documentation that explicitly names internal Uzbekistan station
+   IDs, current operating status, or station-specific certification beyond the
+   official regional station table, then the 38 Indonesia and Georgia portal/API
+   rows, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -292,6 +300,31 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-method-policy-evidence-mobile.png`,
   `reporting-site/qa/showcase-air-method-policy-data-desktop.png`, and
   `reporting-site/qa/showcase-air-method-policy-data-mobile.png`.
+- **2026-06-19 (air-monitoring Uzbekistan station-specific source evidence):**
+  Added
+  `air-monitoring/source-inputs/uzbekistan-station-specific-source-seed.csv`,
+  `air-monitoring/scripts/scan-uzbekistan-station-specific-source-evidence.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-station-specific-source-evidence.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-station-specific-source-evidence-summary.json`,
+  and wrote `air-monitoring/uzbekistan-station-specific-source-evidence.md`.
+  The scan retrieves the official Uzhydromet map, 14 official regional
+  station-table pages, and one official gov.uz ecology note; parses 93 station
+  rows; matches all 28 target Uzbekistan rows to official regional table rows;
+  finds 22 Horiba table-context rows, 6 `Updating data` rows, and 2 official
+  event-note station matches. It keeps non-API internal target station ID rows,
+  current-status confirmed rows, complete monitor-grade classification rows,
+  and station-radius-ready rows at 0. Chrome CDP QA at 1440x1100 and 390x1000
+  confirmed the home report card, evidence-tab note link, and data-tab CSV/JSON
+  links are visible, with no page-level horizontal overflow and no
+  console/runtime errors. Screenshots:
+  `reporting-site/qa/showcase-station-specific-home-desktop.png`,
+  `reporting-site/qa/showcase-station-specific-home-mobile.png`,
+  `reporting-site/qa/showcase-air-station-specific-evidence-desktop.png`,
+  `reporting-site/qa/showcase-air-station-specific-evidence-mobile.png`,
+  `reporting-site/qa/showcase-air-station-specific-data-desktop.png`, and
+  `reporting-site/qa/showcase-air-station-specific-data-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

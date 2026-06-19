@@ -87,7 +87,14 @@ all 28 with HORIBA markers, but only 5 API reading dates within 30 days, 22
 older than 365 days, 13 negative or sentinel raw PM2.5 values, and still 0
 explicit current-status confirmed rows. A follow-on source-policy scan retrieves
 4 public official or technical sources with method/equipment and cadence/status
-context, but 0 sources name a target station ID from the 28-row queue.
+context, but 0 sources name a target station ID from the 28-row queue. The
+station-specific source scan retrieves the official Uzhydromet map, 14 official
+regional station-table pages, and one official gov.uz ecology note; parses 93
+station rows; matches all 28 target rows to official regional table rows; finds
+22 Horiba table-context rows, 6 `Updating data` rows, and 2 official event-note
+station matches; and still keeps non-API internal target station IDs,
+current-status confirmation, complete monitor-grade classification, and
+station-radius readiness at 0.
 
 | Batch | Report candidate | Evidence base | Showcase visual concept | Current report status | Next loop |
 |---:|---|---|---|---|---|

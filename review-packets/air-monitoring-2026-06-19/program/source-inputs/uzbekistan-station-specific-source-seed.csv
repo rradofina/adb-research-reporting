@@ -1,0 +1,3 @@
+source_key,source_name,source_role,url,content_type_hint,expected_terms,station_terms,source_note
+uzhydromet_main_map,Uzhydromet public air-quality map,official_regional_table_discovery,https://monitoring.meteo.uz/en/map,html,Interactive map||Regions||Data of Horiba,horiba||Updated||No observations,Official map page used to discover regional station-table pages.
+gov_uz_eco_tashkent_pm25_event,Government ecology PM2.5 event note,official_station_event_note,https://gov.uz/oz/eco/news/view/87646,html,O'zgidromet||Horiba||PM2.5,Uchtepa||Yangi O'zbekiston||Horiba,Official gov.uz ecology note naming two Tashkent Horiba stations during a PM2.5 event.

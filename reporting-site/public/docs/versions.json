@@ -135,6 +135,12 @@
       "retrieved_on": "2026-06-19",
       "notes": "Seeded public source-policy scan for Uzbekistan method, equipment, reading-cadence, and station-status context. It scans 5 public official or technical sources, retrieves 4, finds 4 source rows with method/equipment context and 4 with cadence/status context, but 0 source rows naming a target station ID from the 28-row queue and still 0 current-status confirmed, complete monitor-grade, or station-radius-ready rows."
     },
+    "air_monitoring_uzbekistan_station_specific_source_evidence": {
+      "script": "air-monitoring/scripts/scan-uzbekistan-station-specific-source-evidence.py",
+      "seed": "air-monitoring/source-inputs/uzbekistan-station-specific-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "notes": "Official Uzbekistan station-specific source scan. It retrieves the Uzhydromet main map, 14 official regional station-table pages, and one gov.uz ecology note; parses 93 regional station rows; matches all 28 target Uzbekistan rows to official regional station-table rows; finds 22 rows where the regional table carries Horiba station context and 2 rows also named in the official gov.uz event note; but 0 non-API sources name the internal target station IDs and 0 rows are current-status confirmed, complete monitor-grade, or station-radius-ready."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -249,6 +255,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_uzbekistan_method_policy_source_scan pin after scanning public Uzbekistan source-policy pages for method, equipment, reading-cadence, target-station-ID, and status context."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_uzbekistan_station_specific_source_evidence pin after scanning official Uzhydromet regional station-table pages and an official gov.uz ecology note for station-specific Uzbekistan target-row evidence."
     }
   ]
 }

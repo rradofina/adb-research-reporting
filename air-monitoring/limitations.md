@@ -98,6 +98,16 @@
   current-status confirmed rows, 0 station-method classified rows, 0 complete
   monitor-grade classification rows, and 0 station-radius grade-assumption-ready
   rows.
+- Uzbekistan station-specific source evidence. The 2026-06-19 station-specific
+  source scan retrieves the official Uzhydromet map, 14 official regional
+  station-table pages, and one official gov.uz ecology note; parses 93 station
+  rows; matches all 28 target Uzbekistan rows to official regional
+  station-table rows; finds 22 rows with Horiba table context, 6 rows with
+  `Updating data` status, and 2 official event-note station matches. It still
+  records 0 non-API public sources naming internal target station IDs, 0
+  current-status confirmed rows, 0 complete monitor-grade classification rows,
+  and 0 station-radius-ready rows. Station-specific table context is not
+  current-status, station-ID, or grade closure.
 
 ## Source-side
 
@@ -136,6 +146,12 @@
   with method/equipment and cadence/status context, but 0 retrieved sources
   name a target station ID from the 28-row queue. These sources help explain
   the monitoring network, but they do not certify the exact target rows.
+- Official station-specific web rows are still not internal station-ID or
+  current-status closure. The Uzbekistan station-specific source evidence scan
+  finds official regional table rows for all 28 target rows, but those pages
+  expose display row numbers rather than the internal target station IDs and do
+  not certify that the target stations are currently operating or complete
+  monitor-grade.
 
 ## Method-side
 

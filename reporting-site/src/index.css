@@ -167,6 +167,36 @@
     --audit-sky: #9db7c7;
   }
 
+  .audit-stacked-blindness {
+    --audit-blue: #005e7c;
+    --audit-red: #8f3148;
+    --audit-green: #587b2b;
+    --audit-gold: #a86e0d;
+  }
+
+  .audit-coverage-funnel {
+    --audit-blue: #006b75;
+    --audit-red: #9b2226;
+    --audit-green: #5a8227;
+    --audit-gold: #c17716;
+  }
+
+  .audit-sensitivity-lanes {
+    --audit-blue: #355f8c;
+    --audit-red: #9b2226;
+    --audit-green: #4f7d3a;
+    --audit-gold: #b07d12;
+  }
+
+  .audit-parameter-audit,
+  .audit-tautology-audit,
+  .audit-component-audit {
+    --audit-blue: #005e7c;
+    --audit-red: #9b2226;
+    --audit-green: #5a8227;
+    --audit-gold: #b07d12;
+  }
+
   .audit-hero {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -181,12 +211,73 @@
     max-width: 14ch;
   }
 
+  .audit-hero-brief {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+
+  @media (min-width: 780px) {
+    .audit-hero-brief {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .audit-hero-brief article {
+    min-width: 0;
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+    padding: 0.8rem 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid var(--audit-blue);
+    background: #ffffff;
+  }
+
+  .audit-hero-brief article:nth-child(2) {
+    border-top-color: var(--audit-red);
+  }
+
+  .audit-hero-brief article:nth-child(3) {
+    border-top-color: var(--audit-gold);
+  }
+
+  .audit-hero-brief span,
+  .audit-hero-route span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .audit-hero-brief p,
+  .audit-hero-route p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.38;
+  }
+
   .audit-hero-panel {
     border-left-color: var(--audit-red);
   }
 
   .audit-hero-panel .showcase-stat-value {
     font-size: clamp(1.8rem, 3vw, 2.65rem);
+  }
+
+  .audit-hero-route {
+    gap: 0.4rem;
+  }
+
+  .audit-hero-route code {
+    overflow-wrap: anywhere;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
   }
 
   .audit-question h2 {
@@ -785,6 +876,14 @@
   @media (max-width: 700px) {
     .audit-hero-panel .showcase-stat-value {
       font-size: 1.65rem;
+    }
+
+    .audit-hero-brief {
+      margin-top: 1rem;
+    }
+
+    .audit-hero-brief article {
+      padding: 0.7rem;
     }
 
     .audit-nav-card {

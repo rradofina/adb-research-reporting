@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-06-19T16:21:04.8959517Z",
+  "server_url": "http://127.0.0.1:5176",
+  "routes": [
+    {
+      "route": "/showcase/grid-generation-mismatch",
+      "viewport": "1280x900",
+      "screenshot": "reporting-site/qa/showcase-evidence-audit-hero-desktop-refresh.png",
+      "title": "When Power Capacity and Generation Tell Different Stories",
+      "audit_hero_brief_cards": 3,
+      "audit_hero_route_present": true,
+      "stat_values": 3,
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 1265,
+      "client_width": 1265
+    },
+    {
+      "route": "/showcase/school-heat-sensitivity",
+      "viewport": "375x900",
+      "screenshot": "reporting-site/qa/showcase-evidence-audit-hero-mobile-refresh.png",
+      "title": "When Every Perturbation Includes an All-Zero Tie",
+      "audit_hero_brief_cards": 3,
+      "audit_hero_route_present": true,
+      "stat_values": 3,
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 360,
+      "client_width": 360
+    },
+    {
+      "route": "/",
+      "viewport": "1280x900",
+      "screenshot": "reporting-site/qa/home-audit-refresh-desktop.png",
+      "title": "Reports built backward from data.",
+      "report_map_cells": 20,
+      "report_cards": 20,
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 1265,
+      "client_width": 1265
+    },
+    {
+      "route": "/",
+      "viewport": "375x900",
+      "screenshot": "reporting-site/qa/home-audit-refresh-mobile.png",
+      "title": "Reports built backward from data.",
+      "report_map_cells": 20,
+      "report_cards": 20,
+      "error_overlay": false,
+      "horizontal_overflow": false,
+      "scroll_width": 360,
+      "client_width": 360
+    }
+  ],
+  "console_errors": [],
+  "build": "npm run build passed; Vite chunk-size warning remains existing warning"
+}

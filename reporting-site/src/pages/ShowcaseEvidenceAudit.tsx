@@ -860,6 +860,11 @@ export default function ShowcaseEvidenceAudit() {
   const previousReport =
     showcaseReports.find((item) => item.id === report.id - 1) ||
     showcaseReports[showcaseReports.length - 1];
+  const heroChecks = [
+    { label: "Use", body: depth.operationalUse },
+    { label: "Falsifier", body: depth.falsifier },
+    { label: "Gate", body: quality.publicationGap },
+  ];
 
   return (
     <article className={`showcase-page audit-showcase audit-${report.audit.kind}`}>
@@ -875,15 +880,31 @@ export default function ShowcaseEvidenceAudit() {
             <span>{report.audit.kind.replaceAll("-", " ")}</span>
             <span>not a widened claim</span>
           </div>
+          <div className="audit-hero-brief" aria-label="Audit decision spine">
+            {heroChecks.map((item) => (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
         <div className="showcase-hero-panel audit-hero-panel" aria-label="Report evidence summary">
           {model ? (
-            model.stats.map((stat) => (
-              <div key={`${stat.label}-${stat.value}`}>
-                <span className="showcase-stat-value">{stat.value}</span>
-                <span className="showcase-stat-label">{stat.label}</span>
+            <>
+              {model.stats.map((stat) => (
+                <div key={`${stat.label}-${stat.value}`}>
+                  <span className="showcase-stat-value">{stat.value}</span>
+                  <span className="showcase-stat-label">{stat.label}</span>
+                </div>
+              ))}
+              <div className="audit-hero-route">
+                <span>Evidence artifact</span>
+                <code>{report.audit.dataUrl}</code>
+                <span>Source stack</span>
+                <p>{report.sourceNote}</p>
               </div>
-            ))
+            </>
           ) : (
             <span className="showcase-loading">
               {error ? `Could not load evidence JSON: ${error}` : "Loading evidence packet..."}

@@ -292,6 +292,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   current-status evidence. It still records 0 current-status confirmed rows, 0
   station-method classified rows, 0 complete monitor-grade classification rows,
   and 0 station-radius grade-assumption-ready rows.
+- **New Uzbekistan station current/method scan:** the networked scan re-checks
+  the 28 Uzbekistan exact-row instrument-hint rows against the public
+  Uzhydromet maps API by station ID. It finds all 28 target station IDs in the
+  API and all 28 with station-level HORIBA markers, but only 5 API reading
+  dates within 30 days, 1 between 31 and 90 days, and 22 older than 365 days.
+  It also records 15 positive raw PM2.5 values, 12 negative raw values, and 1
+  sentinel value. The result strengthens station-presence and instrument-marker
+  evidence, but it keeps current-status confirmation, complete monitor-grade
+  classification, and station-radius readiness at 0.
 
 ## Bounds
 

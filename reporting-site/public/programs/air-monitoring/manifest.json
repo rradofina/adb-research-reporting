@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T10:25:09.295Z",
+  "generated_at": "2026-06-19T10:49:55.946Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -224,6 +224,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_uzbekistan_station_current_method_scan",
+      "file": "uzbekistan-station-current-method-scan.md",
+      "label": "Air-monitoring Uzbekistan station current/method scan",
+      "size": 3785,
+      "size_human": "3.7 KB",
+      "mtime": "2026-06-19T10:33:52.346Z",
+      "sha256": "3e83cd66bfa31a1fe28ee978ab280c1ba25bed86dfd5fbbe230ee41f37257b16",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -247,10 +257,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 8610,
-      "size_human": "8.4 KB",
-      "mtime": "2026-06-19T10:21:34.618Z",
-      "sha256": "3738d56d066a1e6ebad79031ec536ef56a541260aad41880a34ad4da19233079",
+      "size": 9080,
+      "size_human": "8.9 KB",
+      "mtime": "2026-06-19T10:42:40.799Z",
+      "sha256": "8395852b506359a7b4a30339eed4db2c0ac9f13fa860ff3ed8ef40cf33f8afff",
       "attestation_chain": "ai-first"
     }
   ],
@@ -446,6 +456,18 @@
       "size": 230088,
       "size_human": "224.7 KB",
       "sha256": "109f03865c0533bce854a9c2c72f8d317f7d072f9085f7f9ca32ee95c89b94f9"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json",
+      "size": 16562,
+      "size_human": "16.2 KB",
+      "sha256": "747149f5515da65256cdd54b01178d6cedaa80ac5980f11d4ea30939f44d4314"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-station-current-method-scan.csv",
+      "size": 32602,
+      "size_human": "31.8 KB",
+      "sha256": "8b8d67400a95bdc1c2e0ca18a6fb5008f0872e073409a1ad5cd6691c6b039703"
     },
     {
       "file": "generated/charts/air-monitoring-thumbnail.json",

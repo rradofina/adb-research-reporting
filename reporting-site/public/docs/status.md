@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, and exact station method-evidence wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, and Uzbekistan current/method wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -92,10 +92,15 @@ overrides priority by editing this list.
    portal/API rows, flags 37 positive raw live PM2.5 values plus 29 negative,
    sentinel, or missing raw-value rows, and still keeps current-status
    confirmed, station-method classified, complete grade, and
-   station-radius-ready rows at 0. Next
-   AI-doable loop is public station-level current-status/method evidence for
-   the 28 Uzbekistan instrument-hint rows first, then the 38 Indonesia and
-   Georgia portal/API rows, before any station-radius or catchment claim.
+   station-radius-ready rows at 0. The Uzbekistan station current/method scan
+   then finds all 28 target instrument-hint station IDs in the public API with
+   HORIBA markers, but only 5 reading dates within 30 days, 22 older than 365
+   days, 13 negative or sentinel raw PM2.5 values, and still 0 explicit
+   current-status confirmed, complete grade, or station-radius-ready rows. Next
+   AI-doable loop is station-owner/regulator documentation for Uzbekistan
+   reading-date policy, station status, calibration/certification, and method
+   applicability, then the 38 Indonesia and Georgia portal/API rows, before any
+   station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -234,10 +239,34 @@ by leaving the board in a state the next session can read.
   future-flag warnings. Screenshots:
   `reporting-site/qa/showcase-air-grade-method-desktop.png`,
   `reporting-site/qa/showcase-air-grade-method-mobile.png`, and
-  `reporting-site/qa/showcase-air-grade-method-mobile-rows.png`. Next work is
-  station-level current-status/method evidence for the 28 Uzbekistan
-  instrument-hint rows first, then the 38 Indonesia and Georgia portal/API
-  rows, before any station-radius or catchment claim.
+  `reporting-site/qa/showcase-air-grade-method-mobile-rows.png`.
+- **2026-06-19 (air-monitoring Uzbekistan station current/method scan):**
+  Added
+  `air-monitoring/scripts/scan-uzbekistan-station-current-method-evidence.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-station-current-method-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json`,
+  and wrote `air-monitoring/uzbekistan-station-current-method-scan.md`. The
+  networked scan fetches the public Uzhydromet maps API and joins the 28
+  Uzbekistan exact-row instrument-hint rows by station ID. It finds all 28
+  target station IDs in the API and all 28 with station-level HORIBA markers,
+  but only 5 API reading dates within 30 days, 1 between 31 and 90 days, and 22
+  older than 365 days. It also records 15 positive raw PM2.5 values, 12
+  negative raw values, 1 sentinel value, and still 0 explicit current-status
+  confirmed rows, complete monitor-grade rows, or station-radius-ready rows. The
+  public route now renders a Uzbekistan current/method panel. Chrome headless
+  QA at 1440x1100 and 390x1000 confirmed 6 stat cards, 3 age cards, 12 sample
+  station row cards, 9 evidence gates, 3 download links, the 22 stale-date and
+  5 within-30-day counts, no page or section horizontal overflow, no text
+  overflow, and no page errors beyond existing React Router future-flag
+  warnings. Screenshots:
+  `reporting-site/qa/showcase-air-uzb-current-desktop.png`,
+  `reporting-site/qa/showcase-air-uzb-current-mobile.png`, and
+  `reporting-site/qa/showcase-air-uzb-current-mobile-rows.png`. Next work is
+  station-owner/regulator documentation for Uzbekistan reading-date policy, station status,
+  calibration/certification, and method applicability, then the 38 Indonesia and
+  Georgia portal/API rows.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

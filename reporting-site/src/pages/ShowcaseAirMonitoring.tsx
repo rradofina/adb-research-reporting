@@ -1032,6 +1032,68 @@ interface MonitorGradeStationMethodEvidenceSummary {
   non_claim: string;
 }
 
+interface UzbekistanCurrentMethodAgeRow {
+  api_reading_age_lane: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanCurrentMethodGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanCurrentMethodSampleRow {
+  method_evidence_id: string;
+  source_station_id: string;
+  source_station_name: string;
+  api_station_name: string;
+  api_reading_date_iso: string;
+  api_reading_age_days: number | "";
+  api_reading_age_lane: string;
+  api_pm25_value_raw: string;
+  api_pm25_value_status: string;
+  api_method_marker_terms: string;
+  review_decision: string;
+  reader_use: string;
+}
+
+interface UzbekistanCurrentMethodSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_uzbekistan_instrument_hint_rows: number;
+    api_station_rows_returned: number;
+    target_station_rows_found_in_current_api: number;
+    station_level_horiba_marker_rows: number;
+    api_reading_date_rows: number;
+    api_reading_within_7_days_rows: number;
+    api_reading_within_30_days_rows: number;
+    api_reading_within_90_days_rows: number;
+    api_reading_older_than_365_days_rows: number;
+    positive_raw_pm25_value_rows: number;
+    zero_raw_pm25_value_rows: number;
+    negative_raw_pm25_value_rows: number;
+    sentinel_raw_pm25_value_rows: number;
+    missing_raw_pm25_value_rows: number;
+    current_api_presence_confirmed_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  age_lane_rows: UzbekistanCurrentMethodAgeRow[];
+  evidence_gate_counts: UzbekistanCurrentMethodGate[];
+  station_sample_rows: UzbekistanCurrentMethodSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1148,6 +1210,8 @@ export default function ShowcaseAirMonitoring() {
     useState<MonitorGradeStationReviewSummary | null>(null);
   const [monitorGradeStationMethodEvidence, setMonitorGradeStationMethodEvidence] =
     useState<MonitorGradeStationMethodEvidenceSummary | null>(null);
+  const [uzbekistanCurrentMethod, setUzbekistanCurrentMethod] =
+    useState<UzbekistanCurrentMethodSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1215,6 +1279,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`monitor grade station method evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan station current method scan HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -1236,6 +1304,7 @@ export default function ShowcaseAirMonitoring() {
         monitorGradeSourceValidationPayload,
         monitorGradeStationReviewPayload,
         monitorGradeStationMethodEvidencePayload,
+        uzbekistanCurrentMethodPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -1253,6 +1322,7 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGradeSourceValidation(monitorGradeSourceValidationPayload);
         setMonitorGradeStationReview(monitorGradeStationReviewPayload);
         setMonitorGradeStationMethodEvidence(monitorGradeStationMethodEvidencePayload);
+        setUzbekistanCurrentMethod(uzbekistanCurrentMethodPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1383,6 +1453,8 @@ export default function ShowcaseAirMonitoring() {
       <AirMonitorGradeStationReviewPanel summary={monitorGradeStationReview} />
 
       <AirMonitorGradeStationMethodEvidencePanel summary={monitorGradeStationMethodEvidence} />
+
+      <AirUzbekistanCurrentMethodPanel summary={uzbekistanCurrentMethod} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -3632,6 +3704,153 @@ function AirMonitorGradeStationMethodEvidencePanel({
         </>
       ) : (
         <p className="showcase-loading">Loading monitor-grade station method-evidence audit...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanCurrentMethodPanel({
+  summary,
+}: {
+  summary: UzbekistanCurrentMethodSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const ageRows = summary?.age_lane_rows ?? [];
+  const sampleRows = summary?.station_sample_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rawValueIssueRows = counts
+    ? counts.negative_raw_pm25_value_rows + counts.sentinel_raw_pm25_value_rows + counts.missing_raw_pm25_value_rows
+    : 0;
+  const totalTargetRows = Math.max(1, counts?.target_uzbekistan_instrument_hint_rows ?? 0);
+
+  return (
+    <section className="showcase-section air-uzb-current-section" aria-label="Uzbekistan station current and method scan">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-blue">Uzbekistan current-method scan</p>
+          <h2>The rows are present; the dates are not current.</h2>
+          <p>
+            The scan re-checks the 28 Uzbekistan instrument-hint station rows
+            against the public Uzhydromet maps API. The station IDs and HORIBA
+            markers remain visible, but most target rows have old reading dates
+            or raw-value cautions.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout">
+          <span>Older than 365 days</span>
+          <strong>{formatNumber(counts?.api_reading_older_than_365_days_rows ?? 0)}</strong>
+          <p>API presence is not current operating status</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid">
+            <div>
+              <span>Target rows</span>
+              <strong>{formatNumber(counts.target_uzbekistan_instrument_hint_rows)}</strong>
+              <em>Uzbekistan instrument hints</em>
+            </div>
+            <div>
+              <span>API rows found</span>
+              <strong>{formatNumber(counts.target_station_rows_found_in_current_api)}</strong>
+              <em>{formatNumber(counts.api_station_rows_returned)} API rows returned</em>
+            </div>
+            <div>
+              <span>HORIBA markers</span>
+              <strong>{formatNumber(counts.station_level_horiba_marker_rows)}</strong>
+              <em>station-level marker fields</em>
+            </div>
+            <div>
+              <span>Within 30 days</span>
+              <strong>{formatNumber(counts.api_reading_within_30_days_rows)}</strong>
+              <em>{formatNumber(counts.api_reading_within_7_days_rows)} within 7 days</em>
+            </div>
+            <div>
+              <span>Raw issues</span>
+              <strong>{formatNumber(rawValueIssueRows)}</strong>
+              <em>negative, sentinel, or missing</em>
+            </div>
+            <div>
+              <span>Grade-ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-uzb-current-age-grid">
+            {ageRows.map((row) => (
+              <article key={row.api_reading_age_lane} className={`air-uzb-current-age air-uzb-current-age-${row.api_reading_age_lane}`}>
+                <div>
+                  <span>{sentenceCaseStatus(row.api_reading_age_lane)}</span>
+                  <strong>{formatNumber(row.rows)} rows</strong>
+                </div>
+                <div className="air-uzb-current-track">
+                  <i style={{ width: row.rows > 0 ? `${Math.max(4, (row.rows / totalTargetRows) * 100)}%` : "0%" }} />
+                </div>
+                <p>{row.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-row-grid">
+            {sampleRows.slice(0, 12).map((row) => (
+              <article key={row.method_evidence_id} className={`air-uzb-current-row air-uzb-current-row-${row.api_reading_age_lane}`}>
+                <div>
+                  <span>UZB · {row.source_station_id}</span>
+                  <strong>{row.api_station_name || row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.api_reading_age_lane)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Date</dt>
+                    <dd>{row.api_reading_date_iso || "missing"}</dd>
+                  </div>
+                  <div>
+                    <dt>Age</dt>
+                    <dd>{row.api_reading_age_days === "" ? "n/a" : `${formatNumber(row.api_reading_age_days)}d`}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.api_pm25_value_raw || "n/a"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <small>
+                  {sentenceCaseStatus(row.api_pm25_value_status)}
+                  {" · "}
+                  {row.api_method_marker_terms ? "HORIBA marker" : "method marker missing"}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-station-current-method-scan.md" download>
+              Uzbekistan scan note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-station-current-method-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan station current/method scan...</p>
       )}
     </section>
   );

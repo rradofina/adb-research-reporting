@@ -124,6 +124,13 @@
   Georgia remain exact public PM2.5 portal/API rows. None of these rows is a
   complete monitor-grade classification without current-status and
   station-owner or regulator confirmation.
+- API presence is not current status. The Uzbekistan station current/method
+  scan finds all 28 target station IDs in the public Uzhydromet maps API with
+  HORIBA markers, but only 5 have API reading dates within 30 days and 22 have
+  reading dates older than 365 days. It also finds 12 negative raw PM2.5 values
+  and 1 sentinel value. The API rows are station-presence and follow-up
+  evidence, not current operating status or complete monitor-grade
+  classification.
 
 ## Method-side
 

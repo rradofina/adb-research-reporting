@@ -81,7 +81,11 @@ Current focus addendum: the Air-monitoring observability row now includes a
 66-row exact station method-evidence audit with raw live-value sanity flags:
 37 positive raw live PM2.5 values, 12 negative raw values, 1 sentinel value,
 16 missing raw values, 0 complete monitor-grade classification rows, and 0
-station-radius-ready rows.
+station-radius-ready rows. It now also includes a 28-row Uzbekistan
+current/method scan that finds all 28 target station IDs in the public API and
+all 28 with HORIBA markers, but only 5 API reading dates within 30 days, 22
+older than 365 days, 13 negative or sentinel raw PM2.5 values, and still 0
+explicit current-status confirmed rows.
 
 | Batch | Report candidate | Evidence base | Showcase visual concept | Current report status | Next loop |
 |---:|---|---|---|---|---|

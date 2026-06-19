@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `d855f173c88c…`
+- `program/STATUS.md`  `eddf3dd886cd…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -85,7 +85,8 @@ website is Tier 2 and is not included here).
 - `program/monitor-grade-source-validation-scan.md`  `b6a20db700f7…`
 - `program/monitor-grade-station-review-queue.md`  `b4a6aeab25a2…`
 - `program/monitor-grade-station-method-evidence.md`  `fbfac3f8e157…`
-- `program/limitations.md`  `3738d56d066a…`
+- `program/uzbekistan-station-current-method-scan.md`  `3e83cd66bfa3…`
+- `program/limitations.md`  `8395852b5063…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -120,6 +121,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-regulator-source-inventory.csv`  `5a4a21ed017a…`
 - `program/generated/air-monitoring-regulator-station-extraction-summary.json`  `52da12112b68…`
 - `program/generated/air-monitoring-regulator-station-extraction.csv`  `109f03865c05…`
+- `program/generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json`  `747149f5515d…`
+- `program/generated/air-monitoring-uzbekistan-station-current-method-scan.csv`  `8b8d67400a95…`
 - `program/generated/charts/air-monitoring-thumbnail.json`  `b87f82967eea…`
 - `program/generated/charts/air-monitoring-thumbnail.png`  `9ceb5b95e31f…`
 - `program/generated/charts/air-monitoring-thumbnail.svg`  `e47dcfcd7bc0…`
@@ -139,6 +142,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/scan-monitor-grade-source-validation.py`  `222cbabff00f…`
 - `program/scripts/scan-official-openaq-candidate-crosswalk-sources.py`  `988d701d01a6…`
 - `program/scripts/scan-official-openaq-candidate-public-feed-sources.py`  `d2ec39679996…`
+- `program/scripts/scan-uzbekistan-station-current-method-evidence.py`  `5bb39ec0f642…`
 - `program/source-inputs/candidate-crosswalk-public-source-seed.csv`  `f8c24b78e130…`
 - `program/source-inputs/candidate-public-feed-source-seed.csv`  `65a5cdf1a6c2…`
 - `program/source-inputs/monitor-grade-source-validation-seed.csv`  `c0a34b18db10…`
@@ -150,7 +154,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `87fcbd5dc327…`
+- `shared/versions.json`  `c8aab0426069…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -160,4 +164,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T10:28:39.784Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T10:50:29.698Z by `scripts/build-review-packet.mjs`.

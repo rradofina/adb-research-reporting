@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station status/method documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -358,13 +358,37 @@ current-status sources, and catchment methods are added.
   `reporting-site/qa/showcase-air-grade-method-desktop.png`,
   `reporting-site/qa/showcase-air-grade-method-mobile.png`, and
   `reporting-site/qa/showcase-air-grade-method-mobile-rows.png`.
+- **2026-06-19:** Added the Uzbekistan station current/method scan. New
+  networked script
+  `scripts/scan-uzbekistan-station-current-method-evidence.py` fetches the
+  public Uzhydromet maps API and joins the 28 Uzbekistan exact-row
+  instrument-hint rows by station ID. It writes
+  `generated/air-monitoring-uzbekistan-station-current-method-scan.csv` and
+  `generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json`.
+  The scan finds all 28 target station IDs in the API and all 28 with
+  station-level HORIBA markers, but only 5 API reading dates within 30 days, 1
+  between 31 and 90 days, and 22 older than 365 days. It also records 15
+  positive raw PM2.5 values, 12 negative raw values, 1 sentinel value, and
+  still 0 explicit current-status confirmed rows, complete monitor-grade rows,
+  or station-radius-ready rows. Wrote
+  `uzbekistan-station-current-method-scan.md` and added the public showcase
+  panel. Chrome headless QA at 1440x1100 and 390x1000 confirmed 6 stat cards,
+  3 age cards, 12 sample station row cards, 9 evidence gates, 3 download links,
+  the 22 stale-date and 5 within-30-day counts, no page or section horizontal
+  overflow, no text overflow, and no page errors beyond existing React Router
+  future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-air-uzb-current-desktop.png`,
+  `reporting-site/qa/showcase-air-uzb-current-mobile.png`, and
+  `reporting-site/qa/showcase-air-uzb-current-mobile-rows.png`.
 
 ## Next focused work
 
 1. For the 28 Uzbekistan exact-row instrument-hint rows, search for public
-   station-level current-status pages, station-owner documentation, instrument
-   tables, or regulator method tables that name the exact station row. Keep
-   every unresolved row outside station-radius joins.
+   station-owner or regulator documentation that explains station status,
+   instrument method, calibration/certification, and reading-date policy. Start
+   with the 22 target rows whose API reading dates are older than 365 days and
+   the 13 rows with negative or sentinel raw PM2.5 values. Keep every unresolved
+   row outside station-radius joins.
 2. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, search for
    public station-owner or regulator method tables that connect the
    source-level method language to the exact station rows.
@@ -405,6 +429,11 @@ current-status sources, and catchment methods are added.
   current-status confirmed rows, 0 station-method classified rows, 0 complete
   monitor-grade classification rows, and 0 station-radius
   grade-assumption-ready rows.
+- The Uzbekistan station current/method scan confirms that the 28 exact-row
+  instrument-hint station IDs still appear in the public API with HORIBA
+  markers, but 22 target rows have API reading dates older than 365 days and 13
+  rows have negative or sentinel raw PM2.5 values. API presence is therefore not
+  current-status evidence.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

@@ -1,0 +1,286 @@
+{
+  "generated_at": "2026-06-19T10:33:19Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_uzbekistan_station_current_method_scan",
+  "method": "air_monitoring_uzbekistan_station_current_method_scan_v1",
+  "goal_level": "L3 Uzbekistan station current/method source scan",
+  "source_records": [
+    {
+      "url": "https://monitoring.meteo.uz/api/maps",
+      "final_url": "https://monitoring.meteo.uz/api/maps",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/json; charset=UTF-8",
+      "retrieval_bytes": 192606,
+      "sha256": "f2204d6896415ea2ed347b6a5fb903f2a8b2af2e796397a2956d51a64c534884",
+      "role": "public Uzhydromet maps API used to re-check target station rows by station ID",
+      "source_page_url": "https://monitoring.meteo.uz/en/map"
+    }
+  ],
+  "coverage_counts": {
+    "target_uzbekistan_instrument_hint_rows": 28,
+    "api_station_rows_returned": 93,
+    "target_station_rows_found_in_current_api": 28,
+    "station_level_horiba_marker_rows": 28,
+    "api_reading_date_rows": 28,
+    "api_reading_within_7_days_rows": 0,
+    "api_reading_within_30_days_rows": 5,
+    "api_reading_within_90_days_rows": 6,
+    "api_reading_older_than_365_days_rows": 22,
+    "positive_raw_pm25_value_rows": 15,
+    "zero_raw_pm25_value_rows": 0,
+    "negative_raw_pm25_value_rows": 12,
+    "sentinel_raw_pm25_value_rows": 1,
+    "missing_raw_pm25_value_rows": 0,
+    "current_api_presence_confirmed_rows": 28,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "age_lane_rows": [
+    {
+      "api_reading_age_lane": "within_30_days",
+      "rows": 5,
+      "reader_use": "Recent API reading, but still not an explicit station-status statement."
+    },
+    {
+      "api_reading_age_lane": "within_90_days",
+      "rows": 1,
+      "reader_use": "Stale for current-status use; keep as API-presence evidence only."
+    },
+    {
+      "api_reading_age_lane": "older_than_365_days",
+      "rows": 22,
+      "reader_use": "Very old reading date; do not treat API presence as active status."
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "gate": "Target station row found in live API",
+      "status": "available",
+      "rows": 28,
+      "reader_use": "The 28 target station IDs are still present in the public Uzhydromet API response."
+    },
+    {
+      "gate": "Station-level HORIBA marker",
+      "status": "partly_available",
+      "rows": 28,
+      "reader_use": "The station row carries HORIBA marker fields, but this is not complete reference-method classification."
+    },
+    {
+      "gate": "API reading date within 30 days",
+      "status": "partly_available",
+      "rows": 5,
+      "reader_use": "Recent enough for follow-up priority, but still not an explicit active/current station-status statement."
+    },
+    {
+      "gate": "API reading date older than 365 days",
+      "status": "caution",
+      "rows": 22,
+      "reader_use": "Very old API reading dates show why API presence cannot be treated as current operating status."
+    },
+    {
+      "gate": "Positive raw PM2.5 value",
+      "status": "partly_available",
+      "rows": 15,
+      "reader_use": "A nonnegative raw value is a sanity signal only, not status or grade certification."
+    },
+    {
+      "gate": "Negative or sentinel raw PM2.5 value",
+      "status": "caution",
+      "rows": 13,
+      "reader_use": "Negative and sentinel values require source-specific QA before any current-reading interpretation."
+    },
+    {
+      "gate": "Current-status confirmed",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No target row has an explicit active/current station-status statement."
+    },
+    {
+      "gate": "Complete monitor-grade classification",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No target row has complete station-level method/grade classification."
+    },
+    {
+      "gate": "Station-radius grade assumptions",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until station-grade assumptions are validated."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-719",
+      "source_station_id": "719",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "0.005",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-718",
+      "source_station_id": "718",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "0.006",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-717",
+      "source_station_id": "717",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "0.003",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-716",
+      "source_station_id": "716",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-0.004",
+      "api_pm25_value_status": "negative_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-715",
+      "source_station_id": "715",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-9999",
+      "api_pm25_value_status": "sentinel_minus_9999",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-714",
+      "source_station_id": "714",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "0.005",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-108",
+      "source_station_id": "108",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "api_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "api_reading_date_iso": "2023-03-06",
+      "api_reading_age_days": 1201,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-0.001",
+      "api_pm25_value_status": "negative_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-720",
+      "source_station_id": "720",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2024-02-25",
+      "api_reading_age_days": 845,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-0.002",
+      "api_pm25_value_status": "negative_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-721",
+      "source_station_id": "721",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2024-03-11",
+      "api_reading_age_days": 830,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "0.001",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-727",
+      "source_station_id": "727",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2024-03-22",
+      "api_reading_age_days": 819,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "9.642",
+      "api_pm25_value_status": "positive_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-726",
+      "source_station_id": "726",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2024-03-22",
+      "api_reading_age_days": 819,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-0.002",
+      "api_pm25_value_status": "negative_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    },
+    {
+      "method_evidence_id": "UZB-row_level_instrument_hint-725",
+      "source_station_id": "725",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "api_reading_date_iso": "2024-03-22",
+      "api_reading_age_days": 819,
+      "api_reading_age_lane": "older_than_365_days",
+      "api_pm25_value_raw": "-0.001",
+      "api_pm25_value_status": "negative_raw_value",
+      "api_method_marker_terms": "is_horiba|Si=horiba|source_station_type=HORIBA",
+      "review_decision": "api_row_present_but_reading_date_not_current_keep_open",
+      "reader_use": "Use as station-presence evidence with a stale-reading caution. The API still names the station and HORIBA marker, but the reading date is not current-status proof."
+    }
+  ],
+  "non_claim": "This scan checks public Uzhydromet API station rows for station presence, HORIBA markers, reading-date age, and raw-value sanity. It does not certify current operating status, reference-grade method, monitor-grade classification, or station-radius coverage readiness."
+}

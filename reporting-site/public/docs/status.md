@@ -96,11 +96,13 @@ overrides priority by editing this list.
    then finds all 28 target instrument-hint station IDs in the public API with
    HORIBA markers, but only 5 reading dates within 30 days, 22 older than 365
    days, 13 negative or sentinel raw PM2.5 values, and still 0 explicit
-   current-status confirmed, complete grade, or station-radius-ready rows. Next
-   AI-doable loop is station-owner/regulator documentation for Uzbekistan
-   reading-date policy, station status, calibration/certification, and method
-   applicability, then the 38 Indonesia and Georgia portal/API rows, before any
-   station-radius or catchment claim.
+   current-status confirmed, complete grade, or station-radius-ready rows. The
+   Uzbekistan method-policy source scan retrieves 4 public source-policy rows
+   with method/equipment and cadence/status context, but 0 sources name a target
+   station ID from the 28-row queue. Next AI-doable loop is station-owner or
+   regulator documentation that explicitly names Uzbekistan station IDs or
+   station-specific equipment/status tables, then the 38 Indonesia and Georgia
+   portal/API rows, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -267,6 +269,29 @@ by leaving the board in a state the next session can read.
   station-owner/regulator documentation for Uzbekistan reading-date policy, station status,
   calibration/certification, and method applicability, then the 38 Indonesia and
   Georgia portal/API rows.
+- **2026-06-19 (air-monitoring Uzbekistan method-policy source scan):** Added
+  `air-monitoring/source-inputs/uzbekistan-method-policy-source-seed.csv`,
+  `air-monitoring/scripts/scan-uzbekistan-method-policy-sources.py`, generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-method-policy-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json`,
+  and wrote `air-monitoring/uzbekistan-method-policy-source-scan.md`. The scan
+  checks 5 public official or technical sources and retrieves 4. It finds 4
+  source rows with method/equipment context and 4 with reading-cadence or status
+  context, but 0 source rows naming a target station ID from the 28-row queue.
+  It keeps current-status confirmed rows, complete monitor-grade rows, and
+  station-radius-ready rows at 0. Next work is a stricter station-ID or
+  station-specific equipment/status source search for Uzbekistan before any
+  grade or catchment promotion. Chrome/Playwright QA at 1440x1100 and 390x1000
+  confirmed the home report card, evidence note, and data-tab CSV/JSON are
+  visible, with no console errors and no horizontal overflow beyond existing
+  React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-method-policy-home-desktop.png`,
+  `reporting-site/qa/showcase-method-policy-home-mobile.png`,
+  `reporting-site/qa/showcase-air-method-policy-evidence-desktop.png`,
+  `reporting-site/qa/showcase-air-method-policy-evidence-mobile.png`,
+  `reporting-site/qa/showcase-air-method-policy-data-desktop.png`, and
+  `reporting-site/qa/showcase-air-method-policy-data-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

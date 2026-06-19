@@ -129,6 +129,12 @@
       "retrieved_on": "2026-06-19",
       "notes": "Public Uzhydromet maps API scan for the 28 Uzbekistan exact-row instrument-hint station rows. It finds all 28 target station IDs in the API, all 28 with station-level HORIBA markers, 5 API reading dates within 30 days, 22 API reading dates older than 365 days, 15 positive raw PM2.5 values, 12 negative raw values, 1 sentinel value, and still 0 explicit current-status confirmed, complete monitor-grade, or station-radius-ready rows."
     },
+    "air_monitoring_uzbekistan_method_policy_source_scan": {
+      "script": "air-monitoring/scripts/scan-uzbekistan-method-policy-sources.py",
+      "seed": "air-monitoring/source-inputs/uzbekistan-method-policy-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "notes": "Seeded public source-policy scan for Uzbekistan method, equipment, reading-cadence, and station-status context. It scans 5 public official or technical sources, retrieves 4, finds 4 source rows with method/equipment context and 4 with cadence/status context, but 0 source rows naming a target station ID from the 28-row queue and still 0 current-status confirmed, complete monitor-grade, or station-radius-ready rows."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -239,6 +245,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_uzbekistan_station_current_method_scan pin after checking the 28 Uzbekistan instrument-hint station rows against the public Uzhydromet maps API for station presence, HORIBA markers, reading-date age, and raw-value sanity."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_uzbekistan_method_policy_source_scan pin after scanning public Uzbekistan source-policy pages for method, equipment, reading-cadence, target-station-ID, and status context."
     }
   ]
 }

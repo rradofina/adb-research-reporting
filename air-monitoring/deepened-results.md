@@ -301,6 +301,12 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   sentinel value. The result strengthens station-presence and instrument-marker
   evidence, but it keeps current-status confirmation, complete monitor-grade
   classification, and station-radius readiness at 0.
+- **New Uzbekistan method-policy source scan:** the seeded source scan retrieves
+  4 of 5 public official or technical sources and finds source-level method,
+  equipment, reading-cadence, or status context in all 4 retrieved sources.
+  However, none of the retrieved sources names a target station ID from the
+  28-row Uzbekistan queue. The result explains why source-policy context is
+  useful for interpretation but still not station-level closure.
 
 ## Bounds
 

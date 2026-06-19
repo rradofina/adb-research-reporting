@@ -131,6 +131,11 @@
   and 1 sentinel value. The API rows are station-presence and follow-up
   evidence, not current operating status or complete monitor-grade
   classification.
+- Source-policy context is not station-level closure. The Uzbekistan
+  method-policy source scan retrieves 4 public official or technical sources
+  with method/equipment and cadence/status context, but 0 retrieved sources
+  name a target station ID from the 28-row queue. These sources help explain
+  the monitoring network, but they do not certify the exact target rows.
 
 ## Method-side
 

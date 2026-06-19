@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-06-19T10:58:10Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_uzbekistan_method_policy_source_scan",
+  "method": "air_monitoring_uzbekistan_method_policy_source_scan_v1",
+  "goal_level": "L3 Uzbekistan method/status source-policy scan",
+  "coverage_counts": {
+    "sources_scanned": 5,
+    "sources_retrieved": 4,
+    "target_station_rows_in_queue": 28,
+    "method_or_equipment_context_sources": 4,
+    "reading_cadence_or_status_context_sources": 4,
+    "target_station_level_sources": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "source_role_rows": [
+    {
+      "source_role": "development_partner_context",
+      "sources": 1,
+      "retrieved_sources": 1,
+      "method_context_sources": 1,
+      "cadence_context_sources": 1,
+      "target_station_level_sources": 0
+    },
+    {
+      "source_role": "official_monitoring_policy",
+      "sources": 1,
+      "retrieved_sources": 1,
+      "method_context_sources": 1,
+      "cadence_context_sources": 1,
+      "target_station_level_sources": 0
+    },
+    {
+      "source_role": "official_public_map",
+      "sources": 1,
+      "retrieved_sources": 1,
+      "method_context_sources": 1,
+      "cadence_context_sources": 1,
+      "target_station_level_sources": 0
+    },
+    {
+      "source_role": "official_technical_presentation",
+      "sources": 1,
+      "retrieved_sources": 0,
+      "method_context_sources": 0,
+      "cadence_context_sources": 0,
+      "target_station_level_sources": 0
+    },
+    {
+      "source_role": "technical_report",
+      "sources": 1,
+      "retrieved_sources": 1,
+      "method_context_sources": 1,
+      "cadence_context_sources": 1,
+      "target_station_level_sources": 0
+    }
+  ],
+  "source_lane_rows": [
+    {
+      "source_policy_evidence_lane": "retrieval_failed",
+      "rows": 1
+    },
+    {
+      "source_policy_evidence_lane": "source_level_method_and_cadence_context",
+      "rows": 4
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "gate": "Public source retrieved",
+      "status": "available",
+      "rows": 4,
+      "reader_use": "Retrieved public source text can be inspected for method/status context."
+    },
+    {
+      "gate": "Method or equipment context",
+      "status": "partly_available",
+      "rows": 4,
+      "reader_use": "Source-level method or equipment terms appear, but this is not station-level certification."
+    },
+    {
+      "gate": "Reading cadence or status context",
+      "status": "partly_available",
+      "rows": 4,
+      "reader_use": "Some sources discuss observation cadence or continuous monitoring, but target station rows still need named confirmation."
+    },
+    {
+      "gate": "Target station ID named",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No retrieved source names a target station ID from the 28-row queue."
+    },
+    {
+      "gate": "Complete monitor-grade classification",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No source closes complete station-level method/grade classification for the target rows."
+    },
+    {
+      "gate": "Station-radius grade assumptions",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until station-grade assumptions are validated."
+    }
+  ],
+  "source_sample_rows": [
+    {
+      "source_key": "uzhydromet_monitoring_page",
+      "source_name": "Uzhydromet air pollution monitoring page",
+      "source_role": "official_monitoring_policy",
+      "retrieved": true,
+      "matched_method_terms": "state standards|guidelines|monitoring",
+      "matched_current_terms": "stationary observation points|daily|3 times a day",
+      "matched_caution_terms": "",
+      "target_station_id_mentions": 0,
+      "target_station_name_mentions": 3,
+      "source_policy_evidence_lane": "source_level_method_and_cadence_context",
+      "reader_use": "Useful source-level method/cadence context, but no target station row is named."
+    },
+    {
+      "source_key": "uzhydromet_public_map_page",
+      "source_name": "Uzhydromet public air-quality map page",
+      "source_role": "official_public_map",
+      "retrieved": true,
+      "matched_method_terms": "automatic stations|pollution observation points",
+      "matched_current_terms": "3 times a day|7:00|13:00|19:00",
+      "matched_caution_terms": "",
+      "target_station_id_mentions": 0,
+      "target_station_name_mentions": 14,
+      "source_policy_evidence_lane": "source_level_method_and_cadence_context",
+      "reader_use": "Useful source-level method/cadence context, but no target station row is named."
+    },
+    {
+      "source_key": "unece_uzbekistan_air_quality_automation",
+      "source_name": "UNECE Uzbekistan air quality automation presentation",
+      "source_role": "official_technical_presentation",
+      "retrieved": false,
+      "matched_method_terms": "",
+      "matched_current_terms": "",
+      "matched_caution_terms": "",
+      "target_station_id_mentions": 0,
+      "target_station_name_mentions": 0,
+      "source_policy_evidence_lane": "retrieval_failed",
+      "reader_use": "Source retrieval failed; do not use it for method or current-status interpretation."
+    },
+    {
+      "source_key": "world_bank_tashkent_air_quality_report",
+      "source_name": "World Bank Tashkent air quality report",
+      "source_role": "technical_report",
+      "retrieved": true,
+      "matched_method_terms": "automatic reference grade stations|manual stations|continuous monitoring",
+      "matched_current_terms": "continuous monitoring",
+      "matched_caution_terms": "",
+      "target_station_id_mentions": 0,
+      "target_station_name_mentions": 2,
+      "source_policy_evidence_lane": "source_level_method_and_cadence_context",
+      "reader_use": "Useful source-level method/cadence context, but no target station row is named."
+    },
+    {
+      "source_key": "undp_aral_sea_monitoring_system",
+      "source_name": "UNDP Aral Sea air quality monitoring system press release",
+      "source_role": "development_partner_context",
+      "retrieved": true,
+      "matched_method_terms": "automatic measurement|meteorological parameters",
+      "matched_current_terms": "24/7 automatic measurement",
+      "matched_caution_terms": "",
+      "target_station_id_mentions": 0,
+      "target_station_name_mentions": 0,
+      "source_policy_evidence_lane": "source_level_method_and_cadence_context",
+      "reader_use": "Useful source-level method/cadence context, but no target station row is named."
+    }
+  ],
+  "non_claim": "This source-policy scan checks public pages for method, station-status, and reading-cadence context. It does not certify any target station row as current, reference-grade, complete monitor-grade, or station-radius-ready."
+}

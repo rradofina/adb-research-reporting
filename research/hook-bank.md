@@ -85,7 +85,9 @@ station-radius-ready rows. It now also includes a 28-row Uzbekistan
 current/method scan that finds all 28 target station IDs in the public API and
 all 28 with HORIBA markers, but only 5 API reading dates within 30 days, 22
 older than 365 days, 13 negative or sentinel raw PM2.5 values, and still 0
-explicit current-status confirmed rows.
+explicit current-status confirmed rows. A follow-on source-policy scan retrieves
+4 public official or technical sources with method/equipment and cadence/status
+context, but 0 sources name a target station ID from the 28-row queue.
 
 | Batch | Report candidate | Evidence base | Showcase visual concept | Current report status | Next loop |
 |---:|---|---|---|---|---|

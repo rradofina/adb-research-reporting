@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T10:49:55.946Z",
+  "generated_at": "2026-06-19T11:14:08.621Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -234,6 +234,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_uzbekistan_method_policy_source_scan",
+      "file": "uzbekistan-method-policy-source-scan.md",
+      "label": "Air-monitoring Uzbekistan method-policy source scan",
+      "size": 3289,
+      "size_human": "3.2 KB",
+      "mtime": "2026-06-19T10:58:51.502Z",
+      "sha256": "e4437366159a7a8b1069837b2be8840050e858cf807971ccf392e73273db7e02",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -257,10 +267,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 9080,
-      "size_human": "8.9 KB",
-      "mtime": "2026-06-19T10:42:40.799Z",
-      "sha256": "8395852b506359a7b4a30339eed4db2c0ac9f13fa860ff3ed8ef40cf33f8afff",
+      "size": 9452,
+      "size_human": "9.2 KB",
+      "mtime": "2026-06-19T11:00:16.719Z",
+      "sha256": "816db04007940db0d926632a1336472467dd4ea7305c6f700cfdcd4eb399b93d",
       "attestation_chain": "ai-first"
     }
   ],
@@ -456,6 +466,18 @@
       "size": 230088,
       "size_human": "224.7 KB",
       "sha256": "109f03865c0533bce854a9c2c72f8d317f7d072f9085f7f9ca32ee95c89b94f9"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json",
+      "size": 7119,
+      "size_human": "7.0 KB",
+      "sha256": "97268656c32f7a5a43b6ad2a9579d7c4868efa5a6fd10c0ef61bf0b854f2f0de"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-method-policy-source-scan.csv",
+      "size": 6863,
+      "size_human": "6.7 KB",
+      "sha256": "895513fceb6f85b7edca230db4df0b522d87f914efc27928b8e7964bcf3c1d6a"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-station-current-method-scan-summary.json",

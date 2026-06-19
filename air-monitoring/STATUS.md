@@ -380,12 +380,34 @@ current-status sources, and catchment methods are added.
   `reporting-site/qa/showcase-air-uzb-current-desktop.png`,
   `reporting-site/qa/showcase-air-uzb-current-mobile.png`, and
   `reporting-site/qa/showcase-air-uzb-current-mobile-rows.png`.
+- **2026-06-19:** Added the Uzbekistan method-policy source scan. New seeded
+  source file `source-inputs/uzbekistan-method-policy-source-seed.csv` and
+  script `scripts/scan-uzbekistan-method-policy-sources.py` scan 5 public
+  official or technical sources for method, equipment, reading-cadence,
+  target-station-ID, and station-status context. The scan retrieves 4 sources,
+  finds 4 source rows with method/equipment context and 4 with cadence/status
+  context, but 0 source rows naming a target station ID from the 28-row queue.
+  It still keeps current-status confirmed rows, complete monitor-grade rows,
+  and station-radius-ready rows at 0. Wrote
+  `uzbekistan-method-policy-source-scan.md`. Synced the note and generated
+  CSV/JSON into the public evidence packet and refreshed the review packet.
+  Chrome/Playwright QA at 1440x1100 and 390x1000 confirmed the home report
+  card mentions the source scan, the evidence tab exposes the note, the data
+  tab exposes the CSV/JSON, and no page or body horizontal overflow or console
+  errors appear beyond existing React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-method-policy-home-desktop.png`,
+  `reporting-site/qa/showcase-method-policy-home-mobile.png`,
+  `reporting-site/qa/showcase-air-method-policy-evidence-desktop.png`,
+  `reporting-site/qa/showcase-air-method-policy-evidence-mobile.png`,
+  `reporting-site/qa/showcase-air-method-policy-data-desktop.png`, and
+  `reporting-site/qa/showcase-air-method-policy-data-mobile.png`.
 
 ## Next focused work
 
 1. For the 28 Uzbekistan exact-row instrument-hint rows, search for public
-   station-owner or regulator documentation that explains station status,
-   instrument method, calibration/certification, and reading-date policy. Start
+   station-owner or regulator documentation that explicitly names station IDs
+   or station-specific equipment/status tables. Existing source-policy pages
+   explain monitoring/cadence context but do not name target station IDs. Start
    with the 22 target rows whose API reading dates are older than 365 days and
    the 13 rows with negative or sentinel raw PM2.5 values. Keep every unresolved
    row outside station-radius joins.
@@ -434,6 +456,10 @@ current-status sources, and catchment methods are added.
   markers, but 22 target rows have API reading dates older than 365 days and 13
   rows have negative or sentinel raw PM2.5 values. API presence is therefore not
   current-status evidence.
+- The Uzbekistan method-policy source scan finds source-level method/equipment
+  and cadence/status context in 4 retrieved public sources, but 0 sources name a
+  target station ID from the 28-row queue. Source-policy context is therefore
+  not station-level closure.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

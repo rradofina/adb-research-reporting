@@ -1,0 +1,4 @@
+source_station_id,review_focus,expected_station_name,region_slug,reader_question
+107,stale_detail_measurement,Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси,gorod-tashkent,"Do the official API, language detail pages, and regional table now agree enough to clear the stale Yunusabad blocker?"
+728,sentinel_pm25_value,Sergili,gorod-tashkent,"Do the official API, language detail pages, and regional table explain or clear the Sergili PM2.5 sentinel blocker?"
+737,stale_detail_measurement,Akhangaran,tashkentskaja-oblast,"Do the official API, language detail pages, and regional table now agree enough to clear the stale Akhangaran blocker?"

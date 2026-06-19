@@ -76,6 +76,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_uzbekistan_station_specific_source_evidence", file: "uzbekistan-station-specific-source-evidence.md", label: "Air-monitoring Uzbekistan station-specific source evidence" },
   { key: "air_monitoring_uzbekistan_status_certification_source_scan", file: "uzbekistan-status-certification-source-scan.md", label: "Air-monitoring Uzbekistan status/certification source scan" },
   { key: "air_monitoring_uzbekistan_blocker_row_followup", file: "uzbekistan-blocker-row-followup.md", label: "Air-monitoring Uzbekistan blocker-row follow-up" },
+  { key: "air_monitoring_uzbekistan_endpoint_consistency", file: "uzbekistan-endpoint-consistency.md", label: "Air-monitoring Uzbekistan endpoint consistency check" },
   { key: "air_monitoring_indonesia_georgia_row_method_source_scan", file: "indonesia-georgia-row-method-source-scan.md", label: "Air-monitoring Indonesia/Georgia row-method source scan" },
   { key: "air_monitoring_station_code_status_method_source_scan", file: "station-code-status-method-source-scan.md", label: "Air-monitoring station-code status/method source scan" },
   { key: "air_monitoring_station_grade_decision_ledger", file: "station-grade-decision-ledger.md", label: "Air-monitoring station-grade decision ledger" },

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T23:04:17.673Z",
+  "generated_at": "2026-06-19T23:24:30.363Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -271,6 +271,16 @@
       "size_human": "2.9 KB",
       "mtime": "2026-06-19T12:41:56.820Z",
       "sha256": "032201fbb6f68465286fbbaa9415b4f5f33e3fd437210bfe649d5b296eebc959",
+      "attestation_chain": null
+    },
+    {
+      "key": "air_monitoring_uzbekistan_endpoint_consistency",
+      "file": "uzbekistan-endpoint-consistency.md",
+      "label": "Air-monitoring Uzbekistan endpoint consistency check",
+      "size": 3374,
+      "size_human": "3.3 KB",
+      "mtime": "2026-06-19T23:14:57.806Z",
+      "sha256": "5c4e96d86450a8750272c70d2feb24a657422a22ae320036845fc37a5b24f078",
       "attestation_chain": null
     },
     {
@@ -684,6 +694,18 @@
       "size": 5741,
       "size_human": "5.6 KB",
       "sha256": "282ff688036b8af51e145103bc5da07a9c8085182835e81cf2b5339676ee1d2b"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+      "size": 32269,
+      "size_human": "31.5 KB",
+      "sha256": "27dda422d9014aa619bf12e939f8095346f4eb4df7e450ad23e0122f7273ac6d"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-endpoint-consistency.csv",
+      "size": 4185,
+      "size_human": "4.1 KB",
+      "sha256": "a9b50533d363696c3459a24d3d5a9eacd420cad29446a42e010db0c2c31d8427"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json",

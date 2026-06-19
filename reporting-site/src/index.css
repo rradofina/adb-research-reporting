@@ -12311,6 +12311,12 @@
       #ffffff;
   }
 
+  .air-uzb-endpoint-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.1), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
   .air-uzb-current-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -12339,6 +12345,11 @@
   .air-uzb-blocker-section .air-uzb-current-callout {
     border-left-color: #9b2226;
     background: #fff6e4;
+  }
+
+  .air-uzb-endpoint-section .air-uzb-current-callout {
+    border-left-color: #005f89;
+    background: #eef8fb;
   }
 
   .air-uzb-current-callout span,
@@ -12370,10 +12381,16 @@
     color: #7b1115;
   }
 
+  .air-uzb-endpoint-section .air-uzb-current-callout strong {
+    color: #005f89;
+  }
+
   .air-uzb-current-callout p,
   .air-uzb-current-age p,
   .air-uzb-current-row p,
-  .air-uzb-current-gate p {
+  .air-uzb-current-gate p,
+  .air-uzb-endpoint-mismatch p,
+  .air-uzb-endpoint-row p {
     margin: 0;
     color: var(--ink-soft);
     font-size: var(--type-copy-sm);
@@ -12409,6 +12426,10 @@
 
   .air-uzb-blocker-section .air-uzb-current-stat-grid > div {
     border-top-color: #fbb00e;
+  }
+
+  .air-uzb-endpoint-section .air-uzb-current-stat-grid > div {
+    border-top-color: #005f89;
   }
 
   .air-uzb-current-stat-grid strong {
@@ -12548,6 +12569,74 @@
     background: #9b2226;
   }
 
+  .air-uzb-endpoint-mismatch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-uzb-endpoint-mismatch {
+    display: grid;
+    grid-template-rows: auto auto minmax(2.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #005f89;
+    background: #ffffff;
+  }
+
+  .air-uzb-endpoint-mismatch-pm25 {
+    border-top-color: #fbb00e;
+  }
+
+  .air-uzb-endpoint-mismatch-region {
+    border-top-color: #9b2226;
+  }
+
+  .air-uzb-endpoint-mismatch > div:first-child,
+  .air-uzb-endpoint-row-title {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-uzb-endpoint-mismatch span,
+  .air-uzb-endpoint-row span,
+  .air-uzb-endpoint-card span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-endpoint-mismatch strong,
+  .air-uzb-endpoint-row-title strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-endpoint-section .air-uzb-current-track {
+    background: #dbeff7;
+  }
+
+  .air-uzb-endpoint-section .air-uzb-current-track i {
+    background: #005f89;
+  }
+
+  .air-uzb-endpoint-mismatch-pm25 .air-uzb-current-track i {
+    background: #fbb00e;
+  }
+
+  .air-uzb-endpoint-mismatch-region .air-uzb-current-track i {
+    background: #9b2226;
+  }
+
   .air-uzb-current-row-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -12575,7 +12664,80 @@
     color: #7b1115;
   }
 
+  .air-uzb-endpoint-row-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-uzb-endpoint-row {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(5.2rem, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #005f89;
+    background: #ffffff;
+  }
+
+  .air-uzb-endpoint-row-title b,
+  .air-uzb-endpoint-card b,
+  .air-uzb-endpoint-card em {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-endpoint-card-grid {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .air-uzb-endpoint-card {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+    padding: 0.55rem 0.65rem;
+    border-left: 3px solid #9db7c7;
+    background: #f7fbfc;
+  }
+
+  .air-uzb-endpoint-card strong {
+    min-width: 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    line-height: 1.28;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-endpoint-card-available {
+    border-left-color: #5a8227;
+    background: #f3f8eb;
+  }
+
+  .air-uzb-endpoint-card-pending {
+    border-left-color: #fbb00e;
+    background: #fff8e8;
+  }
+
+  .air-uzb-endpoint-card-blocked {
+    border-left-color: #9b2226;
+    background: #fff3f0;
+  }
+
   .air-uzb-current-row dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-uzb-endpoint-row dl {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.4rem;
@@ -12589,7 +12751,23 @@
     letter-spacing: 0.06em;
   }
 
+  .air-uzb-endpoint-row dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
   .air-uzb-current-row dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-endpoint-row dd {
     margin: 0.1rem 0 0;
     color: var(--ink);
     font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -14455,6 +14633,9 @@
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
     .air-uzb-current-gate-grid,
+    .air-uzb-endpoint-mismatch-grid,
+    .air-uzb-endpoint-row-grid,
+    .air-uzb-endpoint-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -14510,6 +14691,8 @@
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
+    .air-uzb-endpoint-mismatch,
+    .air-uzb-endpoint-row,
     .air-monitor-grade-gate,
     .air-monitor-grade-ladder-card {
       grid-template-rows: auto;
@@ -14615,7 +14798,8 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .air-uzb-current-row dl {
+    .air-uzb-current-row dl,
+    .air-uzb-endpoint-row dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

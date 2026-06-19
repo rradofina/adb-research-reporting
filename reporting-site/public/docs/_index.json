@@ -44,7 +44,7 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 187196,
+    "size": 187234,
     "size_human": "182.8 KB"
   },
   {
@@ -74,8 +74,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 55853,
-    "size_human": "54.5 KB"
+    "size": 57185,
+    "size_human": "55.8 KB"
   },
   {
     "file": "manifest.sha256",

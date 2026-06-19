@@ -1,6 +1,6 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T23:04:39.531Z",
+  "generated_at": "2026-06-19T23:25:00.468Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/georgia-report-export-ladder.md",
+      "evidencePath": "air-monitoring/uzbekistan-endpoint-consistency.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",
@@ -163,7 +163,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "For BMKG, move beyond visible station-page telemetry by finding station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia, find verified report/status evidence beyond the tested not-verified report/export surface; for Uzbekistan, resolve exact blockers/status/certification before any catchment denominator is promoted."
+      "nextUpgrade": "For BMKG, move beyond visible station-page telemetry by finding station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia, find verified report/status evidence beyond the tested not-verified report/export surface; for Uzbekistan, find an official correction/status/grade record that resolves the exact endpoint disagreements before any catchment denominator is promoted."
     },
     {
       "id": 7,

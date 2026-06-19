@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, Georgia report/export verification ladder, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, Georgia report/export verification ladder, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -31,11 +31,12 @@ station-level monitor-grade review queue, the exact station method-evidence
 audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
-Indonesia/Georgia row-method source scan, the station-code status/method
-source scan, the station-grade decision ledger, the station-method
-classification audit, the BMKG operation/maintenance source scan, the BMKG
-station-specific status audit, the Georgia report-verification source scan, and
-the Georgia report/export verification ladder honestly, and do not imply
+Uzbekistan endpoint-consistency check, the Indonesia/Georgia row-method source
+scan, the station-code status/method source scan, the station-grade decision
+ledger, the station-method classification audit, the BMKG operation/maintenance
+source scan, the BMKG station-specific status audit, the Georgia
+report-verification source scan, and the Georgia report/export verification
+ladder honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
@@ -475,6 +476,21 @@ grade-basis evidence, and catchment methods are added.
   Evidence/Data tabs, and desktop/mobile route panel, writing
   `reporting-site/qa/showcase-air-blocker-followup-desktop.png` and
   `reporting-site/qa/showcase-air-blocker-followup-mobile.png`.
+- **2026-06-19:** Added the Uzbekistan endpoint-consistency check. New target
+  seed `source-inputs/uzbekistan-endpoint-consistency-targets.csv` and script
+  `scripts/scan-uzbekistan-endpoint-consistency.py` compare the same 3
+  blocker rows across the public Uzhydromet maps API, English/Russian/Uzbek
+  station-detail pages, and English/Russian/Uzbek regional rows. The scan
+  writes `generated/air-monitoring-uzbekistan-endpoint-consistency.csv` and
+  `generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json`,
+  retrieves 16 of 16 official source routes, finds 9 of 9 language detail
+  pages and 9 language regional rows, records 3 cross-language detail
+  agreement rows, 3 API/detail date mismatches, 2 API/detail PM2.5 mismatches,
+  3 region/detail status mismatches, and 3 unresolved blocker rows. Public
+  endpoint-resolution, current-status confirmed, station-method classified,
+  complete monitor-grade, and station-radius-ready rows remain 0. Wrote
+  `uzbekistan-endpoint-consistency.md` and wired a public official endpoint
+  disagreement wall.
 - **2026-06-19:** Added the Indonesia/Georgia row-method source scan. New
   seed `source-inputs/indonesia-georgia-row-method-source-seed.csv` and script
   `scripts/scan-indonesia-georgia-row-method-sources.py` scan the 38 exact
@@ -643,12 +659,14 @@ grade-basis evidence, and catchment methods are added.
 
 ## Next focused work
 
-1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up now
-   proves the exact official row blocker remains unresolved: 107 and 737 are
-   stale detail pages whose regional rows say `Updating data`, while 728 is a
-   recent `Sergili` detail page with PM2.5 equal to `-9999`. The remaining
-   AI-doable Uzbekistan work is not another broad scan; it is public
-   station-owner or regulator correction/status evidence that explicitly
+1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up and
+   endpoint-consistency check now prove the exact official row blocker remains
+   unresolved across official surfaces: 107 and 737 are stale detail pages
+   whose regional rows say `Updating data`, 728 is a recent `Sergili` detail
+   page with PM2.5 equal to `-9999`, and the public API/detail/region endpoint
+   set has 3 date/status mismatches plus 2 PM2.5 mismatches. The remaining
+   AI-doable Uzbekistan work is not another broad or endpoint scrape; it is
+   public station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
 2. For the 22 BMKG rows, the station-specific status audit now proves the exact
@@ -674,7 +692,8 @@ grade-basis evidence, and catchment methods are added.
    calibration certificates, public current-status records, or official
    grade-basis evidence before any row is promoted to complete monitor-grade.
    For Uzbekistan, instrument hints and exact blocker rows remain outside grade
-   promotion until exact blockers, status, and certification are resolved.
+   promotion until exact blockers, endpoint disagreements, status, and
+   certification are resolved.
 5. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
@@ -792,6 +811,13 @@ grade-basis evidence, and catchment methods are added.
   detail pages whose regional rows say `Updating data`, and 728 is a recent
   `Sergili` detail page with PM2.5 equal to `-9999`. It records 0 public
   blocker-resolution rows and 0 station-radius-ready rows.
+- The Uzbekistan endpoint-consistency check retrieves 16 official API/detail
+  and regional source routes for the same 3 blocker rows, finds 9 of 9 language
+  detail pages and 9 language regional rows, and records 3 API/detail date
+  mismatches, 2 API/detail PM2.5 mismatches, 3 region/detail status
+  mismatches, and 3 unresolved blocker rows. It records 0 public endpoint
+  resolution rows, 0 current-status confirmed rows, 0 complete monitor-grade
+  rows, and 0 station-radius-ready rows.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

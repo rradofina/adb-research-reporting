@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-06-19T23:26:55.789Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "results": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1100
+      },
+      "ok": true,
+      "counts": {
+        "statCards": 6,
+        "mismatchCards": 3,
+        "stationRows": 3,
+        "endpointCards": 9,
+        "gateCards": 10,
+        "downloadLinks": 3,
+        "bodyOverflow": 0,
+        "sectionOverflow": 0
+      },
+      "missingText": [],
+      "linkStatuses": [
+        {
+          "text": "Endpoint note",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/uzbekistan-endpoint-consistency.md",
+          "status": 200
+        },
+        {
+          "text": "Summary JSON",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+          "status": 200
+        },
+        {
+          "text": "Row CSV",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency.csv",
+          "status": 200
+        }
+      ],
+      "overflowingChildren": [],
+      "pageErrors": [],
+      "hardConsole": [],
+      "requestFailures": [],
+      "consoleSummary": {
+        "debug": 2,
+        "info": 1,
+        "warning": 2
+      }
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 1000
+      },
+      "ok": true,
+      "counts": {
+        "statCards": 6,
+        "mismatchCards": 3,
+        "stationRows": 3,
+        "endpointCards": 9,
+        "gateCards": 10,
+        "downloadLinks": 3,
+        "bodyOverflow": 0,
+        "sectionOverflow": 0
+      },
+      "missingText": [],
+      "linkStatuses": [
+        {
+          "text": "Endpoint note",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/uzbekistan-endpoint-consistency.md",
+          "status": 200
+        },
+        {
+          "text": "Summary JSON",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+          "status": 200
+        },
+        {
+          "text": "Row CSV",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency.csv",
+          "status": 200
+        }
+      ],
+      "overflowingChildren": [],
+      "pageErrors": [],
+      "hardConsole": [],
+      "requestFailures": [],
+      "consoleSummary": {
+        "debug": 2,
+        "info": 1,
+        "warning": 2
+      }
+    }
+  ]
+}

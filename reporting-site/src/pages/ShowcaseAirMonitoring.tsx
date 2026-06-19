@@ -1210,6 +1210,80 @@ interface UzbekistanBlockerFollowupSummary {
   reader_warning: string;
 }
 
+interface UzbekistanEndpointConsistencyGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanEndpointCard {
+  endpoint: string;
+  routes: number;
+  date_or_status: string;
+  pm25: string;
+  signal: string;
+  tone: string;
+}
+
+interface UzbekistanEndpointConsistencyRow {
+  source_station_id: string;
+  source_station_name: string;
+  review_focus: string;
+  detail_updated_dates: string;
+  detail_pm25_values: string;
+  detail_cross_language_consistent: boolean;
+  detail_any_stale_over_30_days: boolean;
+  detail_any_pm25_sentinel: boolean;
+  api_date_iso: string;
+  api_pm25_value: string;
+  api_pm25_value_status: string;
+  region_updated_values: string;
+  region_auto_values: string;
+  api_detail_date_mismatch: boolean;
+  api_detail_pm25_mismatch: boolean;
+  region_detail_status_mismatch: boolean;
+  endpoint_disagreement_count: number;
+  endpoint_decision: string;
+  reader_use: string;
+  endpoint_cards: UzbekistanEndpointCard[];
+}
+
+interface UzbekistanEndpointConsistencySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_blocker_rows: number;
+    source_routes_seeded: number;
+    source_routes_retrieved: number;
+    api_sources_retrieved: number;
+    language_detail_pages_seeded: number;
+    language_detail_pages_retrieved: number;
+    language_region_rows_found: number;
+    cross_language_detail_consistent_rows: number;
+    api_detail_date_mismatch_rows: number;
+    api_detail_pm25_mismatch_rows: number;
+    region_detail_status_mismatch_rows: number;
+    official_endpoint_disagreement_rows: number;
+    detail_stale_over_30_days_rows: number;
+    detail_pm25_sentinel_rows: number;
+    unresolved_blocker_rows: number;
+    public_endpoint_resolution_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  evidence_gate_counts: UzbekistanEndpointConsistencyGate[];
+  station_rows: UzbekistanEndpointConsistencyRow[];
+  non_claim: string;
+}
+
 interface IndonesiaGeorgiaRowMethodSourceGate {
   gate: string;
   status: string;
@@ -1924,6 +1998,8 @@ export default function ShowcaseAirMonitoring() {
     useState<UzbekistanStatusCertificationSummary | null>(null);
   const [uzbekistanBlockerFollowup, setUzbekistanBlockerFollowup] =
     useState<UzbekistanBlockerFollowupSummary | null>(null);
+  const [uzbekistanEndpointConsistency, setUzbekistanEndpointConsistency] =
+    useState<UzbekistanEndpointConsistencySummary | null>(null);
   const [indonesiaGeorgiaRowMethodSource, setIndonesiaGeorgiaRowMethodSource] =
     useState<IndonesiaGeorgiaRowMethodSourceSummary | null>(null);
   const [stationCodeStatusMethod, setStationCodeStatusMethod] =
@@ -2066,6 +2142,26 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan endpoint consistency HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setUzbekistanEndpointConsistency(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -2359,6 +2455,8 @@ export default function ShowcaseAirMonitoring() {
       <AirUzbekistanStatusCertificationPanel summary={uzbekistanStatusCertification} />
 
       <AirUzbekistanBlockerFollowupPanel summary={uzbekistanBlockerFollowup} />
+
+      <AirUzbekistanEndpointConsistencyPanel summary={uzbekistanEndpointConsistency} />
 
       <AirIndonesiaGeorgiaRowMethodSourcePanel summary={indonesiaGeorgiaRowMethodSource} />
 
@@ -5170,6 +5268,177 @@ function AirUzbekistanBlockerFollowupPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan blocker-row follow-up...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanEndpointConsistencyPanel({
+  summary,
+}: {
+  summary: UzbekistanEndpointConsistencySummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.station_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const total = Math.max(1, counts?.target_blocker_rows ?? rows.length);
+  const mismatchRows = counts?.official_endpoint_disagreement_rows ?? 0;
+  const mismatchStats = counts
+    ? [
+        {
+          key: "date",
+          label: "API/date mismatch",
+          rows: counts.api_detail_date_mismatch_rows,
+          detail: "API date differs from detail page",
+        },
+        {
+          key: "pm25",
+          label: "PM2.5 mismatch",
+          rows: counts.api_detail_pm25_mismatch_rows,
+          detail: "API and detail values diverge",
+        },
+        {
+          key: "region",
+          label: "Region/detail mismatch",
+          rows: counts.region_detail_status_mismatch_rows,
+          detail: "regional row conflicts with detail page",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-uzb-current-section air-uzb-endpoint-section" aria-label="Uzbekistan official endpoint consistency check">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-blue">Uzbekistan endpoint consistency</p>
+          <h2>The same station ID tells three stories.</h2>
+          <p>
+            This check compares the maps API, language detail pages, and
+            language regional rows for IDs 107, 728, and 737. The detail pages
+            agree across languages, but the official endpoint set still does
+            not give a public correction or grade/status closure.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout air-uzb-endpoint-callout">
+          <span>Public endpoint resolutions</span>
+          <strong>{formatNumber(counts?.public_endpoint_resolution_rows ?? 0)}</strong>
+          <p>{formatNumber(mismatchRows)} of {formatNumber(total)} rows still disagree across official surfaces</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid air-uzb-endpoint-stat-grid">
+            <div>
+              <span>Source routes</span>
+              <strong>{formatNumber(counts.source_routes_retrieved)}</strong>
+              <em>of {formatNumber(counts.source_routes_seeded)} official routes</em>
+            </div>
+            <div>
+              <span>Detail pages</span>
+              <strong>{formatNumber(counts.language_detail_pages_retrieved)}</strong>
+              <em>English, Russian, Uzbek</em>
+            </div>
+            <div>
+              <span>Detail agreement</span>
+              <strong>{formatNumber(counts.cross_language_detail_consistent_rows)}</strong>
+              <em>same date and PM2.5 across languages</em>
+            </div>
+            <div>
+              <span>Endpoint mismatch</span>
+              <strong>{formatNumber(counts.official_endpoint_disagreement_rows)}</strong>
+              <em>target rows</em>
+            </div>
+            <div>
+              <span>Sentinel detail</span>
+              <strong>{formatNumber(counts.detail_pm25_sentinel_rows)}</strong>
+              <em>PM2.5 blocker row</em>
+            </div>
+            <div>
+              <span>Radius ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>claim remains closed</em>
+            </div>
+          </div>
+
+          <div className="air-uzb-endpoint-mismatch-grid">
+            {mismatchStats.map((item) => (
+              <article key={item.key} className={`air-uzb-endpoint-mismatch air-uzb-endpoint-mismatch-${item.key}`}>
+                <div>
+                  <span>{item.label}</span>
+                  <strong>{formatNumber(item.rows)} rows</strong>
+                </div>
+                <div className="air-uzb-current-track">
+                  <i style={{ width: item.rows > 0 ? `${Math.max(4, (item.rows / total) * 100)}%` : "0%" }} />
+                </div>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-endpoint-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-uzb-endpoint-row">
+                <div className="air-uzb-endpoint-row-title">
+                  <span>UZB · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.endpoint_decision)}</b>
+                </div>
+                <div className="air-uzb-endpoint-card-grid">
+                  {row.endpoint_cards.map((card) => (
+                    <div key={card.endpoint} className={`air-uzb-endpoint-card air-uzb-endpoint-card-${gateTone(card.tone)}`}>
+                      <span>{card.endpoint}</span>
+                      <strong>{card.date_or_status || "n/a"}</strong>
+                      <em>{card.pm25 ? `PM2.5 ${card.pm25}` : `${formatNumber(card.routes)} routes`}</em>
+                      <b>{sentenceCaseStatus(card.signal)}</b>
+                    </div>
+                  ))}
+                </div>
+                <dl>
+                  <div>
+                    <dt>Date mismatch</dt>
+                    <dd>{row.api_detail_date_mismatch ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5 mismatch</dt>
+                    <dd>{row.api_detail_pm25_mismatch ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Region mismatch</dt>
+                    <dd>{row.region_detail_status_mismatch ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid air-uzb-endpoint-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-endpoint-consistency.md" download>
+              Endpoint note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-endpoint-consistency.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan endpoint consistency check...</p>
       )}
     </section>
   );

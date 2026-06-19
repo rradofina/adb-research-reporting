@@ -1,7 +1,7 @@
 {
   "program": "water-stress-crop-diversification",
   "permanent_url": "/program/water-stress-crop-diversification/evidence",
-  "generated_at": "2026-06-19T20:56:51.765Z",
+  "generated_at": "2026-06-19T21:24:43.667Z",
   "hero": {
     "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
     "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
@@ -163,9 +163,33 @@
     },
     {
       "file": "generated/water-stress-denominator-deepening.json",
-      "size": 5230,
-      "size_human": "5.1 KB",
-      "sha256": "6e6de7a9d6ae0adaa67f8a06cdc787459f282bf99a60e576b3635e5dbd5e59c4"
+      "size": 5042,
+      "size_human": "4.9 KB",
+      "sha256": "1ee33d4fda3ffcc46a595276fc3771618ce37d7b057334f60aa1115202883303"
+    },
+    {
+      "file": "generated/water-stress-denominator-source-audit.json",
+      "size": 139841,
+      "size_human": "136.6 KB",
+      "sha256": "68e20af8e44c2e5946b915c24f96811ffca05bdffe5368b5bcd2e4ac6883db6d"
+    },
+    {
+      "file": "generated/water-stress-source-readiness-sources.csv",
+      "size": 1767,
+      "size_human": "1.7 KB",
+      "sha256": "7f5e095ccdaaf912d78ead7c478fd061715fbb89fefcf46f7a7cfa85fdcce14a"
+    },
+    {
+      "file": "generated/water-stress-source-readiness.json",
+      "size": 125961,
+      "size_human": "123.0 KB",
+      "sha256": "8d6d55d35099767e54e580184cd4c7145661a8d596fa2e1435de5f3cb32e0926"
+    },
+    {
+      "file": "generated/water-stress-source-variant-rerank.csv",
+      "size": 6411,
+      "size_human": "6.3 KB",
+      "sha256": "846297f41b04229ccf903ef80eee3d8f2c905cf7086034e9a5eb9406824daaa3"
     }
   ],
   "articles": [

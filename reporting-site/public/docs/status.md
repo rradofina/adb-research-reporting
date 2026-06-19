@@ -273,6 +273,32 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (water-stress source-upgrade wall):** In the owner-directed
+  20-report showcase loop, upgraded `/showcase/water-stress-denominator` from
+  a denominator-only caution into a WDI/AQUASTAT plus FAOSTAT source wall.
+  Added
+  `water-stress-crop-diversification/scripts/audit-water-source-readiness.py`,
+  cache regeneration notes under
+  `water-stress-crop-diversification/.cache/README.md`, generated
+  `water-stress-denominator-source-audit.json`,
+  `water-stress-source-readiness.json`,
+  `water-stress-source-variant-rerank.csv`, and
+  `water-stress-source-readiness-sources.csv`, and registered
+  `water_stress_source_readiness_public_metadata` in `versions.json`. The
+  audit keeps the internal-over-100 set TKM, PAK, UZB, and AZE visible, adds
+  available-water stress top five TKM, UZB, PAK, LKA, and TJK, adds FAOSTAT
+  crop-HHI top five TUV, KIR, FSM, NRU, and VUT, and computes a diagnostic
+  national source-upgraded top five of TKM, AFG, LKA, PAK, and UZB. It records
+  893,484 global FAOSTAT Area harvested rows and 20,193 aggregate rows
+  excluded before crop-share calculation. The analysis-ready basin/crop wall
+  remains false: no basin allocation, crop-specific water requirements,
+  irrigation command areas, GRACE depletion, or subnational rural exposure is
+  joined. Verification in this pass reran the water-stress scripts, synced
+  public artifacts, built the reporting site, ran the deterministic gates and
+  showcase verifier, and browser-checked desktop plus 390px mobile with no
+  page errors, failed requests, or page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-water-source-desktop.png` and
+  `reporting-site/qa/showcase-water-source-mobile.png`.
 - **2026-06-20 (social-protection source-object repair):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/social-protection-dropped-leg` from a dropped-leg-only audit into

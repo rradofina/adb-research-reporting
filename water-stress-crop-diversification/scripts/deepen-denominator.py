@@ -18,9 +18,11 @@ This script does what the on-disk data supports, in the keystone's priority
 order:
 
   (1) AQUASTAT TOTAL renewable water (internal+external) recompute — the
-      preferred test — is NOT runnable: no AQUASTAT file is in the program
-      cache. A precise wall-note names the exact file needed. (deep-questions
-      section 1.1)
+      preferred test — is NOT runnable in this denominator-only script. The
+      source-upgrade path now lives in `audit-water-source-readiness.py`, which
+      fetches WDI/AQUASTAT available-water stress and FAOSTAT crop-area data.
+      This script remains the committed arithmetic decomposition of the old
+      internal-denominator index. (deep-questions section 1.1)
 
   (2) The denominator artifact is demonstrated ARITHMETICALLY instead, fully
       on-disk: every DMC whose withdrawal share exceeds 100% is listed (these
@@ -34,8 +36,8 @@ order:
 
   (3) The Shannon/Herfindahl CROP-diversity index the program name promises
       (deep-questions section 1.2) needs FAOSTAT crop harvested areas, which
-      are NOT in the cache. A wall-note names the file. As the closest on-disk
-      proxy the cache DOES support, we compute an arable-share-of-agricultural
+      this denominator-only script does not read. As the closest on-disk
+      proxy the old WDI cache supports, we compute an arable-share-of-agricultural
       -land concentration signal from the two cached WDI land series and check
       — clearly labelled a proxy, NOT the FAOSTAT crop-mix index — whether it
       even crudely singles out the top-4.
@@ -226,7 +228,8 @@ def main():
     print("(3) CROP-DIVERSITY TERM — the program name promises a diversification")
     print("    index; the committed metric has none (it uses a cereal-yield")
     print("    penalty). The real Shannon/Herfindahl over FAOSTAT crop")
-    print("    harvested-area shares is NOT computable: no FAOSTAT file on disk.")
+    print("    harvested-area shares is not computed by this denominator-only script.")
+    print("    Run audit-water-source-readiness.py for the source-upgraded crop ledger.")
     print("    Closest on-disk PROXY (crude, NOT the crop-mix index): arable")
     print("    land as a share of agricultural land (low arable share = pasture/")
     print("    rangeland-dominated land use, the cache's only land-mix signal).")
@@ -317,21 +320,19 @@ def main():
         "data_walls": {
             "aquastat_trwr": (
                 "Keystone option (1) — recompute stress on TOTAL renewable water "
-                "(internal+external) — NOT runnable on-disk. Needs FAO AQUASTAT "
-                "variable 4188 'Total renewable water resources (10^9 m3/yr)' and "
-                "4263 'Total water withdrawal' (or 4549 'TWW as % of TRWR') from "
-                "the AQUASTAT Main Database CSV bulk export, per-country, latest "
-                "5-yr window. None of these is in .cache (cache holds 5 WDI series "
-                "only). Until pulled, TKM/PAK/UZB/AZE above-100% values mix "
-                "domestic scarcity with upstream geography."
+                "(internal+external) — is not part of this denominator-only "
+                "script. The source-upgrade path now lives in "
+                "`audit-water-source-readiness.py`, which fetches WDI/AQUASTAT "
+                "available-water stress. The old internal-denominator values "
+                "still mix domestic scarcity with upstream geography."
             ),
             "faostat_crop_area": (
                 "Keystone option (3) — the Shannon-equitability / Herfindahl crop-"
-                "diversity index the program name promises — NOT runnable on-disk. "
-                "Needs FAOSTAT 'Crops and livestock products' (QCL) Area harvested "
-                "(element 5312, ha) by item by country, to build harvested-area "
-                "shares. Not in .cache. The cached arable/agri land split is a "
-                "land-USE proxy only and does not measure crop mix."
+                "diversity index the program name promises — is not part of this "
+                "denominator-only script. Run `audit-water-source-readiness.py` "
+                "for the FAOSTAT Area harvested crop-mix ledger. The cached "
+                "arable/agri land split is a land-USE proxy only and does not "
+                "measure crop mix."
             ),
         },
         "attestation_chain": "ai-first",
@@ -351,10 +352,8 @@ def main():
 
     print("\n" + "=" * 78)
     print("DATA WALLS (cannot compute on-disk; exact source named in JSON):")
-    print("  - AQUASTAT TRWR (keystone option 1): FAO AQUASTAT vars 4188/4263/4549")
-    print("    not in cache — only 5 WDI series on disk.")
-    print("  - FAOSTAT crop harvested area (keystone option 3): FAOSTAT QCL element")
-    print("    5312 (Area harvested, ha) by item — not in cache.")
+    print("  - AQUASTAT/available-water upgrade: run audit-water-source-readiness.py.")
+    print("  - FAOSTAT crop harvested-area upgrade: run audit-water-source-readiness.py.")
     print("=" * 78)
     print(f"Wrote {OUT}/water-stress-denominator-deepening.json + .csv")
 

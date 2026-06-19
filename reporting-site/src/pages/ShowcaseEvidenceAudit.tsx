@@ -1103,6 +1103,9 @@ function buildSocialProtectionModel(report: ShowcaseReport, data: JsonValue): Au
 }
 
 function buildWaterModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.water_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.water_source_readiness);
   const over = safeRows(data.over_100pct_internal_denominator);
   const cards: ComponentCard[] = over.map((row) => ({
     key: String(row.iso3),
@@ -1120,25 +1123,98 @@ function buildWaterModel(report: ShowcaseReport, data: JsonValue): AuditModel {
       status: "dropped",
     });
   }
+  const availableTop5 = strings(sourceSummary.available_stress_top5);
+  const cropTop5 = strings(sourceSummary.crop_hhi_top5);
+  const sourceVariantTop5 = strings(sourceSummary.source_variant_top5);
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Source-audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  if (sourceAudit.sources?.faostat_domain) {
+    sourceTrail.push({ label: "FAOSTAT source", value: `${sourceAudit.sources.faostat_domain}; ${sourceAudit.sources.faostat_element || "Area harvested"}` });
+  }
+  if (hasSourceAudit) {
+    cards.push(
+      {
+        key: "available-stress",
+        value: availableTop5.join(", ") || "none",
+        label: "Available-water stress top five",
+        note: "WDI/AQUASTAT water stress uses available freshwater resources rather than the old internal-only denominator.",
+        status: "flag",
+      },
+      {
+        key: "crop-mix",
+        value: cropTop5.join(", ") || "none",
+        label: "FAOSTAT crop-HHI top five",
+        note: `${formatNumber(sourceSummary.crop_mix_country_rows)} economies have usable 2024 harvested-area crop-mix rows.`,
+        status: "flag",
+      },
+      {
+        key: "source-variant",
+        value: sourceVariantTop5.join(", ") || "none",
+        label: "Source-upgraded national variant",
+        note: `${formatNumber(sourceSummary.source_variant_overlap_old_raw_top4)} of the old raw top four remain; this is a diagnostic variant, not a headline ranking.`,
+        status: "survived",
+      },
+      {
+        key: "faostat-rows",
+        value: formatNumber(sourceSummary.faostat_area_harvested_rows),
+        label: "FAOSTAT Area harvested rows",
+        note: `${formatNumber(sourceSummary.faostat_aggregate_rows_excluded)} aggregate rows excluded before crop-share calculation.`,
+        status: "survived",
+      },
+      {
+        key: "basin-overlay",
+        value: String(sourceSummary.analysis_ready_basin_crop_overlay),
+        label: "Basin/crop overlay",
+        note: "No basin allocation, crop-water requirement, irrigation command area, GRACE depletion, or subnational rural exposure is joined.",
+        status: "dropped",
+      },
+    );
+  }
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: formatNumber(sourceSummary.internal_over100_count), label: "above 100% internal denominator" },
+      { value: formatNumber(sourceSummary.available_stress_latest_rows), label: "available-water stress rows" },
+      { value: formatNumber(sourceSummary.crop_mix_country_rows), label: "FAOSTAT crop-mix rows" },
+      { value: String(sourceSummary.analysis_ready_basin_crop_overlay), label: "analysis-ready basin/crop overlay" },
+    ] : [
       { value: formatNumber(over.length), label: "above 100% internal denominator" },
       { value: `#${data.rural_counterfactual?.afg_rank_rural_dropped || "?"}`, label: "AFG rank without rural multiplier" },
       { value: strings(data.rural_counterfactual?.high_withdrawal_set).join(", "), label: "high-withdrawal set" },
     ],
-    chartTitle: "The water signal is partly a denominator signal.",
-    chartDeck: "Cards separate over-100-percent internal-water denominators from Afghanistan's rural-population multiplier effect.",
+    chartTitle: hasSourceAudit
+      ? "The source upgrade separates water stress from crop mix."
+      : "The water signal is partly a denominator signal.",
+    chartDeck: hasSourceAudit
+      ? "Cards keep the old internal-denominator artifact visible, then add WDI/AQUASTAT available-water stress, FAOSTAT harvested-area crop concentration, and the missing basin/crop overlay."
+      : "Cards separate over-100-percent internal-water denominators from Afghanistan's rural-population multiplier effect.",
     componentCards: cards,
     readouts: [
       { label: "Baseline raw-index top four", value: strings(data.reproduced_baseline_top4_raw_index).join(", ") },
       { label: "Pre-registered headline top four", value: strings(data.prereg_headline_top4_intersection_of_top5).join(", ") },
       { label: "Top four when rural term is dropped", value: strings(data.rural_counterfactual?.top4_rural_dropped).join(", ") },
       { label: "Data walls", value: Object.values(data.data_walls || {}).join(" ") || "AQUASTAT and FAOSTAT extensions documented in artifact." },
+      ...(hasSourceAudit ? [
+        { label: "Available-water stress top five", value: availableTop5.join(", ") || "none" },
+        { label: "FAOSTAT crop-HHI top five", value: cropTop5.join(", ") || "none" },
+        { label: "Source-upgraded variant top five", value: sourceVariantTop5.join(", ") || "none" },
+        { label: "Overlap with old raw top four", value: formatNumber(sourceSummary.source_variant_overlap_old_raw_top4) },
+        { label: "Overlap with pre-registered top four", value: formatNumber(sourceSummary.source_variant_overlap_prereg_top4) },
+        { label: "Basin/crop overlay built", value: String(sourceSummary.analysis_ready_basin_crop_overlay) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.water_crop_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }
@@ -1574,11 +1650,11 @@ export default function ShowcaseEvidenceAudit() {
         <section className="showcase-section showcase-two-col">
           <div>
             <p className="kicker">Limits and reproducibility</p>
-            <h2>Trust comes from the source trail, not the chart style.</h2>
+            <h2>Trust comes from the source trail.</h2>
             <p>
-              The visual uses the generated artifact named below, and the
-              caveats remain in the reading path. That keeps the emotional
-              force of the chart tied to a reproducible source record.
+              The evidence path below names the generated artifact, companion
+              table, source stack, attestation chain, and caveats before the
+              reader treats the result as usable.
             </p>
             <div className="audit-caveat-list">
               {model.caveats.filter(Boolean).map((caveat) => (

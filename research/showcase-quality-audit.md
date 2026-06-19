@@ -50,7 +50,7 @@ candidates before adding new surfaces.
 | 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking, the observed WDI denominator repair cuts India from 798.6M to 320.67M outdoor workers, and the CCKP source wall keeps worker heat joins at zero | Needs gridded heat or WBGT, worker-location or hours-worked denominators, and observed lost-workday outcomes before workday-loss interpretation | Build one-DMC heat-work-hours pilot; keep this page as measurement repair until the heat/work-hours/outcome object exists |
 | 15 | Food-price coverage trap | Evidence audit | Coverage funnel foregrounds missing CPI/import indicator legs | Needs household or market price exposure evidence | Join a market-price or household-expenditure source |
 | 16 | Social-protection dropped leg | Evidence audit | Missing-leg ledger shows why some economies disappear from the headline | Needs payment-channel or beneficiary delivery data | Rebuild as coverage-versus-payment-rail observability |
-| 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards expose above-100-percent artifacts | Needs total-renewable-water, basin, and crop-area data | Rebuild with AQUASTAT/FAOSTAT or demote to denominator caution |
+| 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards now sit beside WDI/AQUASTAT available-water stress, FAOSTAT harvested-area crop mix, and a national diagnostic variant | Needs basin allocation, crop-specific water requirements, irrigation command areas, GRACE depletion, and subnational rural exposure before water-crop exposure language | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note |
 | 18 | Invisible urbanization tautology | Evidence audit | Rank-preserving scalar sweep is visibly not a robustness test | Needs satellite/built-up layer and classification history | Select one pilot and replace the WDI-only proxy |
 | 19 | Port inert-parameter audit | Evidence audit | Cap-binding wall shows an inert sensitivity knob | Needs actual hinterland travel-time, logistics, or port-performance source | Search for public port/hinterland travel-time proxies |
 | 20 | School heat top-one audit | Evidence audit | Sensitivity ledger names discriminating, degenerate, and rank-losing runs | Needs school geocodes, calendars, enrollment, and local heat exposure | Pick a public school-location pilot or keep as sensitivity caution |
@@ -1085,6 +1085,46 @@ and no page-level horizontal overflow. Screenshots:
 `reporting-site/qa/showcase-social-protection-source-mobile.png`,
 `reporting-site/qa/showcase-social-protection-source-mobile-visual.png`, and
 `reporting-site/qa/showcase-social-protection-source-mobile-claim.png`.
+
+## 2026-06-20 — Report 17 water-stress source upgrade
+
+Report 17 now uses
+`water-stress-crop-diversification/generated/water-stress-denominator-source-audit.json`
+instead of the older denominator-only artifact. The new source-readiness pass
+adds
+`water-stress-crop-diversification/scripts/audit-water-source-readiness.py`,
+records cache regeneration notes under
+`water-stress-crop-diversification/.cache/README.md`, and writes
+`water-stress-source-readiness.json`,
+`water-stress-source-variant-rerank.csv`, and
+`water-stress-source-readiness-sources.csv`. The audit documents the old
+internal-renewable-water denominator, fetches WDI/AQUASTAT available-water
+stress, parses FAOSTAT 2024 Area harvested crop rows, and builds a crop-mix
+HHI ledger. Key generated facts: the internal-over-100 set remains TKM, PAK,
+UZB, and AZE; available-water stress top five are TKM, UZB, PAK, LKA, and
+TJK; FAOSTAT crop-HHI top five are TUV, KIR, FSM, NRU, and VUT; the
+source-upgraded national variant top five are TKM, AFG, LKA, PAK, and UZB;
+and overlap with both the old raw top four and the pre-registered top four is
+3. The source-upgraded score is diagnostic, not a headline ranking.
+
+The analysis-ready basin/crop overlay remains false: no basin allocation,
+crop-specific water requirements, irrigation command areas, GRACE depletion,
+or subnational rural exposure is joined. FAOSTAT source handling is recorded
+in the generated artifact, including 893,484 global Area harvested rows and
+20,193 aggregate rows excluded before crop-share calculation.
+
+Verification in this pass reran the water-stress scripts, synced public
+artifacts, built the reporting site, ran all deterministic gates and the
+showcase verifier, and browser-checked desktop 1280x900 plus mobile 390x844.
+Browser QA found all required source-wall text, 5 source-wall terms, 2 download
+links, no page errors, no failed requests, and no page-level horizontal
+overflow. Screenshots:
+`reporting-site/qa/showcase-water-source-desktop.png`,
+`reporting-site/qa/showcase-water-source-desktop-visual.png`,
+`reporting-site/qa/showcase-water-source-desktop-claim.png`,
+`reporting-site/qa/showcase-water-source-mobile.png`,
+`reporting-site/qa/showcase-water-source-mobile-visual.png`, and
+`reporting-site/qa/showcase-water-source-mobile-claim.png`.
 
 ## Next deepening order
 

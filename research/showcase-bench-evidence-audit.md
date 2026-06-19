@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T20:57:19.759Z
+Generated: 2026-06-19T21:25:48.171Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 10/10
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 346
-- QA browser-check JSON files in reporting-site/qa: 23
+- QA screenshot files in reporting-site/qa: 352
+- QA browser-check JSON files in reporting-site/qa: 24
 - Verification failures: 0
 
 ## Readiness Mix
@@ -49,7 +49,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 14 | Climate-health sensitivity repair | Evidence audit | ok | ok | ok | Build one DMC heat-work-hours pilot using gridded heat, sectoral work schedules, and a defensible worker denominator; keep the ... |
 | 15 | Food price coverage trap | Evidence audit | ok | ok | ok | Join a market-price or household-expenditure source for one DMC and keep WDI coverage as the source audit. |
 | 16 | Social-protection dropped leg | Evidence audit | ok | ok | ok | Search public payment-channel metadata and rebuild the screen as coverage-versus-payment-rail observability. |
-| 17 | Water denominator artifact | Evidence audit | ok | ok | ok | Rebuild the water screen around AQUASTAT/FAOSTAT or demote the current index to a denominator caution. |
+| 17 | Water denominator artifact | Evidence audit | ok | ok | ok | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note. |
 | 18 | Invisible urbanization tautology | Evidence audit | ok | ok | ok | Select one pilot geography and replace the WDI-only proxy with GHSL or settlement-layer evidence. |
 | 19 | Port hinterland inert parameter | Evidence audit | ok | ok | ok | Search for public port/hinterland travel-time proxies and decide whether the cap audit becomes a methods note. |
 | 20 | School heat top-one audit | Evidence audit | ok | ok | ok | Pick a public school-location pilot or keep the current route as a sensitivity-audit caution. |

@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-06-19T21:25:39.029Z",
+  "targetUrl": "http://127.0.0.1:5176/showcase/water-stress-denominator",
+  "checks": [
+    {
+      "prefix": "showcase-water-source-desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "url": "http://127.0.0.1:5176/showcase/water-stress-denominator",
+      "status": 200,
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "metrics": {
+        "viewportWidth": 1280,
+        "documentScrollWidth": 1280,
+        "bodyScrollWidth": 1280,
+        "horizontalOverflow": false,
+        "overflowing": [],
+        "h1": "When Water Stress Exceeds 100 Percent",
+        "h2s": [
+          "Does the water-crop screen survive when internal-water stress is replaced by available-water stress and cereal yield is replaced by crop-mix evidence?",
+          "Start with the decision, then show the measurement break.",
+          "The source upgrade separates water stress from crop mix.",
+          "The available-water-stress top five are TKM, UZB, PAK, LKA, and TJK; FAOSTAT crop-HHI concentration points to TUV, KIR, FSM, NRU, and VUT; the source-upgraded national variant keeps only three of the old raw top-four rows.",
+          "Trust comes from the source trail.",
+          "Twenty slots, one evidence rule."
+        ],
+        "sourceWallTermsVisible": [
+          "available-water stress top five",
+          "faostat crop-hhi top five",
+          "source-upgraded national variant",
+          "faostat area harvested rows",
+          "basin/crop overlay"
+        ],
+        "sourceWallTermCount": 5,
+        "linkCount": 37,
+        "downloadLinks": [
+          {
+            "text": "Download water source audit JSON",
+            "href": "/programs/water-stress-crop-diversification/generated/water-stress-denominator-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/water-stress-crop-diversification/generated/water-stress-source-variant-rerank.csv"
+          }
+        ],
+        "downloadLinkCount": 2
+      },
+      "screenshots": {
+        "fullPage": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-desktop.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-desktop-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-desktop-claim.png",
+        "visualCaptured": true,
+        "claimCaptured": true
+      }
+    },
+    {
+      "prefix": "showcase-water-source-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:5176/showcase/water-stress-denominator",
+      "status": 200,
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "metrics": {
+        "viewportWidth": 390,
+        "documentScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": [],
+        "h1": "When Water Stress Exceeds 100 Percent",
+        "h2s": [
+          "Does the water-crop screen survive when internal-water stress is replaced by available-water stress and cereal yield is replaced by crop-mix evidence?",
+          "Start with the decision, then show the measurement break.",
+          "The source upgrade separates water stress from crop mix.",
+          "The available-water-stress top five are TKM, UZB, PAK, LKA, and TJK; FAOSTAT crop-HHI concentration points to TUV, KIR, FSM, NRU, and VUT; the source-upgraded national variant keeps only three of the old raw top-four rows.",
+          "Trust comes from the source trail.",
+          "Twenty slots, one evidence rule."
+        ],
+        "sourceWallTermsVisible": [
+          "available-water stress top five",
+          "faostat crop-hhi top five",
+          "source-upgraded national variant",
+          "faostat area harvested rows",
+          "basin/crop overlay"
+        ],
+        "sourceWallTermCount": 5,
+        "linkCount": 37,
+        "downloadLinks": [
+          {
+            "text": "Download water source audit JSON",
+            "href": "/programs/water-stress-crop-diversification/generated/water-stress-denominator-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/water-stress-crop-diversification/generated/water-stress-source-variant-rerank.csv"
+          }
+        ],
+        "downloadLinkCount": 2
+      },
+      "screenshots": {
+        "fullPage": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-mobile.png",
+        "visual": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-mobile-visual.png",
+        "claim": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-water-source-mobile-claim.png",
+        "visualCaptured": true,
+        "claimCaptured": true
+      }
+    }
+  ]
+}

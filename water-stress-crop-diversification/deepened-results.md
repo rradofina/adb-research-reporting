@@ -171,3 +171,50 @@ Both datasets are public; the wall is retrieval, not access.
 ```bash
 python water-stress-crop-diversification/scripts/deepen-denominator.py
 ```
+
+## 2026-06-20 source-upgrade pass: available water stress plus FAOSTAT crop mix
+
+The denominator-only result above is now paired with
+`scripts/audit-water-source-readiness.py`, which writes
+`generated/water-stress-denominator-source-audit.json`,
+`generated/water-stress-source-readiness.json`,
+`generated/water-stress-source-variant-rerank.csv`, and
+`generated/water-stress-source-readiness-sources.csv`.
+
+The source-upgrade pass fetches live World Bank WDI metadata and values for
+the old internal-water denominator (`ER.H2O.FWTL.ZS`), the WDI/AQUASTAT
+available-water stress indicator (`ER.H2O.FWST.ZS`), total withdrawals
+(`ER.H2O.FWTL.K3`), internal freshwater resources (`ER.H2O.INTR.K3`), and
+rural population share (`SP.RUR.TOTL.ZS`). It also fetches the public FAOSTAT
+Crops and Livestock Products bulk ZIP and filters Area harvested rows into a
+national crop-mix ledger.
+
+Generated facts from the new audit:
+
+| Check | Result |
+|---|---|
+| Old raw top four | TKM, PAK, AZE, UZB |
+| Pre-registered top four | AFG, AZE, PAK, TKM |
+| Available-water stress top five | TKM, UZB, PAK, LKA, TJK |
+| FAOSTAT crop-HHI top five | TUV, KIR, FSM, NRU, VUT |
+| Source-upgraded national variant top five | TKM, AFG, LKA, PAK, UZB |
+| Source variant overlap with old raw top four | 3 rows |
+| Source variant overlap with pre-registered top four | 3 rows |
+| WDI available-water stress rows | 30 DMC rows, latest-year span 2022 |
+| FAOSTAT crop-mix rows | 41 DMC rows, 2024 crop year |
+| FAOSTAT Area harvested rows screened | 893,484 total rows; 122,520 DMC rows |
+
+This is a real source improvement over the earlier data wall, but it is still
+not an analysis-ready crop-water exposure measure. The upgraded variant is
+national. It does not assign transboundary water by basin, does not join crop-
+specific water requirements, does not identify irrigation command areas, does
+not use GRACE depletion, and does not place rural exposure inside water-stress
+or crop areas. Those are the next data objects before this can become a
+water-crop diversification result rather than a source-repair audit.
+
+Reproduce both layers:
+
+```bash
+python water-stress-crop-diversification/scripts/deepen-denominator.py
+python water-stress-crop-diversification/scripts/audit-water-source-readiness.py
+```

@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T20:57:19.759Z",
+  "generated_at": "2026-06-19T21:25:48.171Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 346,
-    "browserChecks": 23
+    "screenshots": 352,
+    "browserChecks": 24
   },
   "summary": {
     "reports_total": 20,
@@ -404,19 +404,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "water-stress-crop-diversification/generated/water-stress-denominator-deepening.json",
+      "evidencePath": "water-stress-crop-diversification/generated/water-stress-denominator-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/water-stress-crop-diversification/generated/water-stress-denominator-deepening.json",
+      "auditDataUrl": "/programs/water-stress-crop-diversification/generated/water-stress-denominator-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/water-stress-crop-diversification/generated/water-stress-denominator-deepening.csv",
+      "auditCsvUrl": "/programs/water-stress-crop-diversification/generated/water-stress-source-variant-rerank.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Rebuild the water screen around AQUASTAT/FAOSTAT or demote the current index to a denominator caution."
+      "nextUpgrade": "Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note."
     },
     {
       "id": 18,

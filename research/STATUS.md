@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, and BMKG operation/maintenance source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, and Georgia report-verification source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -149,10 +149,16 @@ overrides priority by editing this list.
    BMKG rows, and still keeps station-specific inspection logs,
    station-specific calibration certificates, current-status confirmed,
    calibration-status, complete-grade, and station-radius-ready counts at 0.
-   Next AI-doable loop is station-specific inspection/calibration/status and
-   official grade-basis evidence for the 22 BMKG rows, plus exact station
-   method/status/certification tables for Georgia and Uzbekistan, before any
-   station-radius or catchment claim.
+   The Georgia report-verification source scan then retrieves the official May
+   2026 `air.gov.ge` monthly report route, AQI method note, and monitoring
+   network catalog, finds all 16 target station codes and PM2.5 report rows,
+   records 16 not-verified report-label rows, and keeps verified-report
+   closure, station-method classification, current-status confirmed,
+   complete-grade, and station-radius-ready counts at 0. Next AI-doable loop is
+   station-specific inspection/calibration/status and official grade-basis
+   evidence for the 22 BMKG rows, a verified report export or exact
+   method/status table for Georgia, plus exact station method/status/certification
+   tables for Uzbekistan, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -536,6 +542,28 @@ by leaving the board in a state the next session can read.
   output, and no page errors. Screenshots:
   `reporting-site/qa/showcase-air-bmkg-operation-desktop.png` and
   `reporting-site/qa/showcase-air-bmkg-operation-mobile.png`.
+- **2026-06-19 (air-monitoring Georgia report-verification source scan):**
+  Added `air-monitoring/scripts/scan-georgia-report-verification-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json`,
+  and wrote `air-monitoring/georgia-report-verification-source-scan.md`. The
+  networked scan reads the 16 Georgia rows from the station-method
+  classification audit, retrieves the official May 2026 `air.gov.ge` monthly
+  report route for all 16 target station codes plus the AQI method note and
+  monitoring-network catalog, finds 16 station-code rows, 16 PM2.5 report rows,
+  16 report-page `Not Verified Data` caution rows, 16 AQI-note live-data
+  verification caution rows, and 16 source-level network-instrument context
+  rows, while keeping verified-report closure, station-method classification,
+  current-status confirmed, complete monitor-grade, and station-radius-ready
+  rows at 0. The public route now renders a Georgia report-verification panel.
+  Agent-browser QA passed at 1440x1100 and 390x1000 with 6 stat cards, 1
+  decision lane, 16 sample row cards, 9 gate cards, 3 download links, no page
+  or section horizontal overflow, no overflowing mobile children, no console
+  output, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-georgia-report-desktop.png` and
+  `reporting-site/qa/showcase-air-georgia-report-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

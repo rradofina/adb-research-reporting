@@ -10958,6 +10958,39 @@
     background: linear-gradient(90deg, #5a8227, #fbb00e);
   }
 
+  .air-georgia-report-section {
+    background:
+      linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-georgia-report-callout {
+    border-left-color: #9b2226;
+    background: #fff7e0;
+  }
+
+  .air-georgia-report-stat-grid > div {
+    border-top-color: #fbb00e;
+  }
+
+  .air-georgia-report-lane,
+  .air-georgia-report-row,
+  .air-georgia-report-gate {
+    border-top-color: #fbb00e;
+  }
+
+  .air-georgia-report-row {
+    border-left-color: #9b2226;
+  }
+
+  .air-georgia-report-track {
+    background: #fff0bf;
+  }
+
+  .air-georgia-report-track i {
+    background: linear-gradient(90deg, #fbb00e, #9b2226);
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -11977,6 +12010,10 @@
     .air-bmkg-operation-bridge,
     .air-bmkg-operation-gate-grid,
     .air-bmkg-operation-row-grid,
+    .air-georgia-report-stat-grid,
+    .air-georgia-report-bridge,
+    .air-georgia-report-gate-grid,
+    .air-georgia-report-row-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -12006,6 +12043,7 @@
     .air-decision-ledger-head,
     .air-method-classification-head,
     .air-bmkg-operation-head,
+    .air-georgia-report-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
@@ -13034,6 +13072,10 @@
     .air-bmkg-operation-bridge,
     .air-bmkg-operation-gate-grid,
     .air-bmkg-operation-row-grid,
+    .air-georgia-report-stat-grid,
+    .air-georgia-report-bridge,
+    .air-georgia-report-gate-grid,
+    .air-georgia-report-row-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -13082,6 +13124,9 @@
     .air-bmkg-operation-lane,
     .air-bmkg-operation-row,
     .air-bmkg-operation-gate,
+    .air-georgia-report-lane,
+    .air-georgia-report-row,
+    .air-georgia-report-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -13104,6 +13149,7 @@
     .air-decision-ledger-head,
     .air-method-classification-head,
     .air-bmkg-operation-head,
+    .air-georgia-report-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
@@ -13183,6 +13229,7 @@
     .air-decision-ledger-downloads,
     .air-method-classification-downloads,
     .air-bmkg-operation-downloads,
+    .air-georgia-report-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

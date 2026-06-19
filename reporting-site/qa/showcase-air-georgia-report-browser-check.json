@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-06-19T16:09:43Z",
+  "route": "http://127.0.0.1:5175/showcase/air-monitoring-observability",
+  "tool": "agent-browser",
+  "section_selector": ".air-georgia-report-section",
+  "checks": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "section_visible": true,
+      "heading_rendered": true,
+      "expected_counts_visible": {
+        "georgia_rows_16": true,
+        "zero_gate_visible": true,
+        "not_verified_label_visible": true
+      },
+      "rendered_counts": {
+        "stat_cards": 6,
+        "decision_lanes": 1,
+        "sample_row_cards": 16,
+        "gate_cards": 9,
+        "download_links": 3
+      },
+      "overflow": {
+        "page_horizontal_overflow": false,
+        "section_horizontal_overflow": false
+      },
+      "screenshot": "reporting-site/qa/showcase-air-georgia-report-desktop.png"
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "section_visible": true,
+      "heading_rendered": true,
+      "expected_counts_visible": {
+        "georgia_rows_16": true,
+        "zero_gate_visible": true,
+        "not_verified_label_visible": true
+      },
+      "rendered_counts": {
+        "stat_cards": 6,
+        "decision_lanes": 1,
+        "sample_row_cards": 16,
+        "gate_cards": 9,
+        "download_links": 3
+      },
+      "overflow": {
+        "page_horizontal_overflow": false,
+        "section_horizontal_overflow": false,
+        "overflowing_panel_children": 0
+      },
+      "screenshot": "reporting-site/qa/showcase-air-georgia-report-mobile.png"
+    }
+  },
+  "browser_logs": {
+    "console_output": "",
+    "page_errors": "",
+    "network_requests": "No requests captured"
+  },
+  "result": "pass"
+}

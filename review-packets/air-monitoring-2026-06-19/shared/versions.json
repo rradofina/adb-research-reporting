@@ -196,6 +196,14 @@
       ],
       "notes": "BMKG operation/maintenance source scan for the 22 Indonesia BMKG rows already method-classified as BAM. It retrieves 4 public BMKG context sources and 22 exact station-detail pages, records daily-inspection SOP, maintenance/check, calibration-procedure, BAM calibration service/tariff, and regional BAM-1020 model context for all 22 rows, and keeps station-specific inspection logs, station-specific calibration certificates, current-status confirmed, calibration-status, complete monitor-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_georgia_report_verification_source_scan": {
+      "script": "air-monitoring/scripts/scan-georgia-report-verification-sources.py",
+      "retrieved_on": "2026-06-19",
+      "derives_from": [
+        "air_monitoring_station_method_classification_audit"
+      ],
+      "notes": "Georgia report verification source scan for the 16 Georgia rows from the station-method classification audit. It retrieves the official May 2026 air.gov.ge monthly report route, AQI method note, and monitoring-network catalog, finds all 16 target station codes and PM2.5 report rows, records 16 not-verified report-label rows, and keeps verified-report closure, station-method classification, current-status confirmed, complete monitor-grade, and station-radius-ready rows at zero."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -338,6 +346,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_bmkg_operation_maintenance_source_scan pin after retrieving BMKG daily-inspection SOP, regulation, calibration-tariff, model-note, and 22 exact station-detail sources while keeping station-specific status, calibration, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_georgia_report_verification_source_scan pin after finding all 16 target Georgia station codes and PM2.5 report rows in the official May 2026 report route, while preserving the not-verified caution and keeping verified closure at zero."
     }
   ]
 }

@@ -1600,6 +1600,60 @@ interface BmkgOperationMaintenanceSummary {
   non_claim: string;
 }
 
+interface GeorgiaReportVerificationGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaReportVerificationDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaReportVerificationSampleRow {
+  source_station_id: string;
+  source_station_name: string;
+  station_code_in_monthly_report: boolean;
+  pm25_column_in_monthly_report: boolean;
+  monthly_report_not_verified_label_present: boolean;
+  report_verification_decision: string;
+}
+
+interface GeorgiaReportVerificationSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  report_month: string;
+  coverage_counts: {
+    target_georgia_rows: number;
+    source_records: number;
+    source_records_retrieved: number;
+    station_code_in_monthly_report_rows: number;
+    station_name_or_alias_in_monthly_report_rows: number;
+    pm25_column_in_monthly_report_rows: number;
+    monthly_report_not_verified_label_rows: number;
+    monthly_report_verified_label_without_not_verified_rows: number;
+    aqi_note_live_data_unverified_caution_rows: number;
+    aqi_note_verified_reports_claim_rows: number;
+    network_catalog_instrument_context_rows: number;
+    current_measurement_recent_from_prior_audit_rows: number;
+    verified_report_closure_available_rows: number;
+    station_method_classified_rows: number;
+    current_status_confirmed_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: GeorgiaReportVerificationDecision[];
+  evidence_gate_counts: GeorgiaReportVerificationGate[];
+  station_sample_rows: GeorgiaReportVerificationSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1732,6 +1786,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationMethodClassificationSummary | null>(null);
   const [bmkgOperationMaintenance, setBmkgOperationMaintenance] =
     useState<BmkgOperationMaintenanceSummary | null>(null);
+  const [georgiaReportVerification, setGeorgiaReportVerification] =
+    useState<GeorgiaReportVerificationSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1960,6 +2016,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaReportVerification(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -2101,6 +2177,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationMethodClassificationPanel summary={stationMethodClassification} />
 
       <AirBmkgOperationMaintenancePanel summary={bmkgOperationMaintenance} />
+
+      <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -5759,6 +5837,125 @@ function AirBmkgOperationMaintenancePanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG operation/maintenance source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaReportVerificationPanel({
+  summary,
+}: {
+  summary: GeorgiaReportVerificationSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.station_sample_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-report-section" aria-label="Georgia report verification source scan">
+      <div className="air-grade-method-head air-georgia-report-head">
+        <div>
+          <p className="kicker kicker-blue">Georgia report verification scan</p>
+          <h2>Official report rows still fail the verification gate.</h2>
+          <p>
+            The live Georgia data were already caution-labeled. This pass
+            checks the official monthly report route for exact station codes,
+            PM2.5 columns, and whether the report page removes that caution.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-report-callout">
+          <span>Verified closures</span>
+          <strong>{formatNumber(counts?.verified_report_closure_available_rows ?? 0)}</strong>
+          <p>Report rows exist, but the fetched page still says not verified.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-report-stat-grid">
+            <div>
+              <span>Georgia rows tested</span>
+              <strong>{formatNumber(counts.target_georgia_rows)}</strong>
+              <em>report month {summary.report_month}</em>
+            </div>
+            <div>
+              <span>Station codes in report</span>
+              <strong>{formatNumber(counts.station_code_in_monthly_report_rows)}</strong>
+              <em>exact report-route rows</em>
+            </div>
+            <div>
+              <span>PM2.5 report rows</span>
+              <strong>{formatNumber(counts.pm25_column_in_monthly_report_rows)}</strong>
+              <em>official monthly table columns</em>
+            </div>
+            <div>
+              <span>Not-verified label</span>
+              <strong>{formatNumber(counts.monthly_report_not_verified_label_rows)}</strong>
+              <em>caution retained</em>
+            </div>
+            <div>
+              <span>AQI note caution</span>
+              <strong>{formatNumber(counts.aqi_note_live_data_unverified_caution_rows)}</strong>
+              <em>live automatic data not verified</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>no grade promotions</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-report-bridge" aria-label="Georgia report verification decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-report-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-report-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-report-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-report-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid air-georgia-report-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-grade-method-row air-georgia-report-row">
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                </div>
+                <p>{row.pm25_column_in_monthly_report ? "PM2.5 report row found" : "PM2.5 report row not found"}</p>
+                <em>
+                  code {row.station_code_in_monthly_report ? "yes" : "no"} /
+                  not verified {row.monthly_report_not_verified_label_present ? "yes" : "no"}
+                </em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-georgia-report-downloads">
+            <a href="/programs/air-monitoring/georgia-report-verification-source-scan.md">Read the note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json">Download JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan.csv">Download CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia report verification source scan...</p>
       )}
     </section>
   );

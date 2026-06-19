@@ -1,0 +1,324 @@
+{
+  "generated_at": "2026-06-19T16:02:05Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_georgia_report_verification_source_scan",
+  "method": "air_monitoring_georgia_report_verification_source_scan_v1",
+  "goal_level": "L3 Georgia report verification source scan",
+  "report_month": "2026-05",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\georgia-report-verification-source-seed.csv",
+      "role": "public Georgia report, AQI method-note, and monitoring-network source seed"
+    },
+    {
+      "path": "generated\\air-monitoring-station-method-classification-audit.csv",
+      "role": "16 Georgia rows from the station-method classification audit"
+    }
+  ],
+  "coverage_counts": {
+    "target_georgia_rows": 16,
+    "source_records": 3,
+    "source_records_retrieved": 3,
+    "station_code_in_monthly_report_rows": 16,
+    "station_name_or_alias_in_monthly_report_rows": 16,
+    "pm25_column_in_monthly_report_rows": 16,
+    "monthly_report_not_verified_label_rows": 16,
+    "monthly_report_verified_label_without_not_verified_rows": 0,
+    "aqi_note_live_data_unverified_caution_rows": 16,
+    "aqi_note_verified_reports_claim_rows": 16,
+    "network_catalog_instrument_context_rows": 16,
+    "current_measurement_recent_from_prior_audit_rows": 15,
+    "verified_report_closure_available_rows": 0,
+    "station_method_classified_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "decision_counts": [
+    {
+      "decision": "monthly_report_pm25_present_but_not_verified_keep_open",
+      "rows": 16
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Official Georgia report/method sources retrieved",
+      "rows": 3,
+      "reader_use": "The scan retrieved the report page, AQI method note, and monitoring-network catalog."
+    },
+    {
+      "status": "available",
+      "gate": "Station code appears in monthly report",
+      "rows": 16,
+      "reader_use": "The official report route exposes exact station codes for the target rows."
+    },
+    {
+      "status": "available",
+      "gate": "PM2.5 column appears in monthly report",
+      "rows": 16,
+      "reader_use": "The report table includes PM2.5 columns for the target station-code rows."
+    },
+    {
+      "status": "caution",
+      "gate": "Monthly report carries Not Verified Data label",
+      "rows": 16,
+      "reader_use": "The report route still carries a not-verified label in the fetched page."
+    },
+    {
+      "status": "partly_available",
+      "gate": "AQI note distinguishes live data and reports",
+      "rows": 16,
+      "reader_use": "The AQI note says live automatic-station data are not verified and verified data are available in reports."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Network instrument catalog context",
+      "rows": 16,
+      "reader_use": "The network catalog gives source-level instrument context, not station-specific method/status closure."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified report closure",
+      "rows": 0,
+      "reader_use": "No target row is promoted because the fetched report page carries a not-verified label."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station method/status/grade closure",
+      "rows": 0,
+      "reader_use": "No station-code method table, current-status certificate, or complete monitor-grade row was found."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-radius grade assumptions",
+      "rows": 0,
+      "reader_use": "Catchment/radius analysis remains blocked until method/status/grade evidence closes."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "source_station_id": "01005",
+      "source_station_name": "Tazakendi (working in test mode)",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "AGMS",
+      "source_station_name": "Tbilisi - Davit Agmashenebeli Ave. № 73a",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "BTUM",
+      "source_station_name": "Batumi - T. Abuseridze Street №1",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "KUTS",
+      "source_station_name": "Kutaisi - Lado Asatiani St.№98",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "KZBG",
+      "source_station_name": "Tbilisi - Kazbegi Ave. near Vaso Godziashvili Garden",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN01",
+      "source_station_name": "Tbilisi - Marshal Gelovani Avenue №34",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN02",
+      "source_station_name": "Rustavi - Friendship Ave. №35a",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN03",
+      "source_station_name": "Batumi - Batumi Central Park, 6 May Park",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN04",
+      "source_station_name": "Kutaisi-Ninoshvili Street and D.Aghmashenebeli Ave.",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN05",
+      "source_station_name": "Zugdidi - Rustaveli Street №192",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN06",
+      "source_station_name": "Mestia town",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN07",
+      "source_station_name": "Telavi-Kvirike Didi Street №43",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "ORN08",
+      "source_station_name": "Akhaltsikhe-Aspindza Street №18",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "RST18",
+      "source_station_name": "Rustavi - Batumi Street No. 19",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "TSRT",
+      "source_station_name": "Tbilisi - Akaki Tsereteli ave. №105",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    },
+    {
+      "source_station_id": "VRKT",
+      "source_station_name": "Tbilisi - Varketili 3, IIIa m/d, near №325",
+      "station_code_in_monthly_report": true,
+      "pm25_column_in_monthly_report": true,
+      "monthly_report_not_verified_label_present": true,
+      "report_verification_decision": "monthly_report_pm25_present_but_not_verified_keep_open"
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "airgov_monthly_report_2026_05_all_targets",
+      "source_name": "Air.gov.ge monthly report for all 16 target station codes in May 2026",
+      "source_role": "official_monthly_report",
+      "url": "https://air.gov.ge/en/reports_page?date_from=2026-05&report_type=monthly&station=01005%2CAGMS%2CBTUM%2CKUTS%2CKZBG%2CORN01%2CORN02%2CORN03%2CORN04%2CORN05%2CORN06%2CORN07%2CORN08%2CRST18%2CTSRT%2CVRKT",
+      "final_url": "https://air.gov.ge/en/reports_page?date_from=2026-05&report_type=monthly&station=01005%2CAGMS%2CBTUM%2CKUTS%2CKZBG%2CORN01%2CORN02%2CORN03%2CORN04%2CORN05%2CORN06%2CORN07%2CORN08%2CRST18%2CTSRT%2CVRKT",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 301601,
+      "sha256": "40c33ecd35e368d14f744545b8dbbf6b6aaf5c2189801f2c47dde2dbe4a477ab",
+      "matched_expected_terms": [
+        "Reports",
+        "Air Quality",
+        "Generate Report",
+        "National Environmental Agency"
+      ],
+      "matched_pm25_terms": [
+        "PM2.5",
+        "PM10"
+      ],
+      "matched_verification_terms": [
+        "Verified Data"
+      ],
+      "matched_caution_terms": [
+        "Not Verified Data"
+      ],
+      "retrieval_error": "",
+      "source_note": "Official air.gov.ge monthly report route for the 16 target station codes. Use to test whether report tables include station codes and PM2.5, and whether they carry a verified or not-verified label."
+    },
+    {
+      "source_key": "airgov_air_quality_index_method_note",
+      "source_name": "Air.gov.ge air-quality index method note",
+      "source_role": "official_index_method_note",
+      "url": "https://air.gov.ge/en/pages/11/11",
+      "final_url": "https://air.gov.ge/en/pages/11/11",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 36538,
+      "sha256": "9f5e0f4ff36b95a002e7ff608a6780975c7d40560bb75970ac5ceccda0ebcbd2",
+      "matched_expected_terms": [
+        "Air Quality Index",
+        "automatic air quality monitoring stations",
+        "PM2.5"
+      ],
+      "matched_pm25_terms": [
+        "PM2.5",
+        "automatic air quality monitoring stations"
+      ],
+      "matched_verification_terms": [
+        "Verified data is available in the reports"
+      ],
+      "matched_caution_terms": [
+        "not verified",
+        "Hourly data will be displayed with 10 minutes delay"
+      ],
+      "retrieval_error": "",
+      "source_note": "Official method/index note used to distinguish live data from verified report data."
+    },
+    {
+      "source_key": "airgov_monitoring_network_catalog",
+      "source_name": "Air.gov.ge atmospheric air-quality monitoring network",
+      "source_role": "official_network_catalog",
+      "url": "https://air.gov.ge/en/pages/14/14",
+      "final_url": "https://air.gov.ge/en/pages/14/14",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 26515,
+      "sha256": "d0af34af849681c67c29631a1d8bceed41a6c55d6a348ad5d352ea28183ae49f",
+      "matched_expected_terms": [
+        "Monitoring Network",
+        "automatic stations",
+        "PM-712"
+      ],
+      "matched_pm25_terms": [
+        "PM-712",
+        "Fidas 200"
+      ],
+      "matched_verification_terms": [
+        "automatic stations"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official monitoring-network page used as source-level instrument catalog context, not station-specific method/status closure."
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-georgia-report-verification-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-georgia-report-verification-source-scan-summary.json"
+  },
+  "non_claim": "This scan checks whether official air.gov.ge report pages provide verified station-code PM2.5 evidence for the 16 Georgia target rows. It does not certify station method, current status, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+}

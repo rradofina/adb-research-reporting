@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T15:52:44.865Z",
+  "generated_at": "2026-06-19T16:10:36.921Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -324,6 +324,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_georgia_report_verification_source_scan",
+      "file": "georgia-report-verification-source-scan.md",
+      "label": "Air-monitoring Georgia report verification source scan",
+      "size": 2726,
+      "size_human": "2.7 KB",
+      "mtime": "2026-06-19T16:02:29.247Z",
+      "sha256": "52712a59d50413792136b437ae17f60c77692327d3efa3230ee6ef332e421c29",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -390,6 +400,18 @@
       "size": 34736,
       "size_human": "33.9 KB",
       "sha256": "414eecf9ff391851f1a4deee59696a0e84aa26365f60fe928db361b0b22ecf13"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-report-verification-source-scan-summary.json",
+      "size": 14016,
+      "size_human": "13.7 KB",
+      "sha256": "b81b5eff961aa92c784b05fd09efd7f15350c2813a797b5e938cba36a637da36"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-report-verification-source-scan.csv",
+      "size": 17605,
+      "size_human": "17.2 KB",
+      "sha256": "2db75da8fa272872fd6e1c3952f21292456afa5946d77159111366086d1c571d"
     },
     {
       "file": "generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json",

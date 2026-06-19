@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `d5ccda2c054e…`
+- `program/STATUS.md`  `db19adada617…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -95,6 +95,7 @@ website is Tier 2 and is not included here).
 - `program/station-grade-decision-ledger.md`  `383fe4ed27de…`
 - `program/station-method-classification-audit.md`  `6d629a7f6117…`
 - `program/bmkg-operation-maintenance-source-scan.md`  `64876929f8af…`
+- `program/georgia-report-verification-source-scan.md`  `52712a59d504…`
 - `program/limitations.md`  `443353d0f8d4…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
@@ -104,6 +105,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-bmkg-operation-maintenance-source-scan.csv`  `20680efcede7…`
 - `program/generated/air-monitoring-concentration-deepening.csv`  `50c52a4d3bea…`
 - `program/generated/air-monitoring-concentration-deepening.json`  `414eecf9ff39…`
+- `program/generated/air-monitoring-georgia-report-verification-source-scan-summary.json`  `b81b5eff961a…`
+- `program/generated/air-monitoring-georgia-report-verification-source-scan.csv`  `2db75da8fa27…`
 - `program/generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json`  `54b8cf070976…`
 - `program/generated/air-monitoring-indonesia-georgia-row-method-source-scan.csv`  `4a216b54fec0…`
 - `program/generated/air-monitoring-metadata-readiness-audit-summary.json`  `987a6fb62839…`
@@ -169,6 +172,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/fetch-openaq-station-metadata.py`  `52311cd5e082…`
 - `program/scripts/reconcile-official-openaq-stations.py`  `849137bed27f…`
 - `program/scripts/scan-bmkg-operation-maintenance-sources.py`  `ee7817dba368…`
+- `program/scripts/scan-georgia-report-verification-sources.py`  `19721fae95ff…`
 - `program/scripts/scan-indonesia-georgia-row-method-sources.py`  `52114b8fb72e…`
 - `program/scripts/scan-monitor-grade-source-validation.py`  `222cbabff00f…`
 - `program/scripts/scan-official-openaq-candidate-crosswalk-sources.py`  `988d701d01a6…`
@@ -182,6 +186,7 @@ website is Tier 2 and is not included here).
 - `program/source-inputs/bmkg-operation-maintenance-source-seed.csv`  `951c52fab9b2…`
 - `program/source-inputs/candidate-crosswalk-public-source-seed.csv`  `f8c24b78e130…`
 - `program/source-inputs/candidate-public-feed-source-seed.csv`  `65a5cdf1a6c2…`
+- `program/source-inputs/georgia-report-verification-source-seed.csv`  `701fead4338b…`
 - `program/source-inputs/indonesia-georgia-row-method-source-seed.csv`  `b80f97d56eb6…`
 - `program/source-inputs/monitor-grade-source-validation-seed.csv`  `c0a34b18db10…`
 - `program/source-inputs/regulator-source-inventory-seed.csv`  `53c155ad76dd…`
@@ -198,7 +203,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `02d3e31c34de…`
+- `shared/versions.json`  `55a30b5af0ff…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -208,4 +213,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T15:52:45.810Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T16:10:27.278Z by `scripts/build-review-packet.mjs`.

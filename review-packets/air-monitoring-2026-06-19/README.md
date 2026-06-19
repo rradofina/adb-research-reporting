@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `1ea6cc7bfee0…`
+- `program/STATUS.md`  `448f980f961c…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -87,7 +87,8 @@ website is Tier 2 and is not included here).
 - `program/monitor-grade-station-method-evidence.md`  `fbfac3f8e157…`
 - `program/uzbekistan-station-current-method-scan.md`  `3e83cd66bfa3…`
 - `program/uzbekistan-method-policy-source-scan.md`  `e4437366159a…`
-- `program/uzbekistan-station-specific-source-evidence.md`  `74764285aa85…`
+- `program/uzbekistan-station-specific-source-evidence.md`  `a70f3565c7f0…`
+- `program/uzbekistan-status-certification-source-scan.md`  `2467dd4f9979…`
 - `program/limitations.md`  `443353d0f8d4…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
@@ -129,6 +130,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-uzbekistan-station-current-method-scan.csv`  `8b8d67400a95…`
 - `program/generated/air-monitoring-uzbekistan-station-specific-source-evidence-summary.json`  `361bcbf60bbc…`
 - `program/generated/air-monitoring-uzbekistan-station-specific-source-evidence.csv`  `d017d5fee3fc…`
+- `program/generated/air-monitoring-uzbekistan-status-certification-source-scan-summary.json`  `42967f2db521…`
+- `program/generated/air-monitoring-uzbekistan-status-certification-source-scan.csv`  `1e705a3b2feb…`
 - `program/generated/charts/air-monitoring-thumbnail.json`  `b87f82967eea…`
 - `program/generated/charts/air-monitoring-thumbnail.png`  `9ceb5b95e31f…`
 - `program/generated/charts/air-monitoring-thumbnail.svg`  `e47dcfcd7bc0…`
@@ -151,12 +154,14 @@ website is Tier 2 and is not included here).
 - `program/scripts/scan-uzbekistan-method-policy-sources.py`  `e7a213aca655…`
 - `program/scripts/scan-uzbekistan-station-current-method-evidence.py`  `5bb39ec0f642…`
 - `program/scripts/scan-uzbekistan-station-specific-source-evidence.py`  `b387a3b56c4b…`
+- `program/scripts/scan-uzbekistan-status-certification-sources.py`  `8f2feb0905d6…`
 - `program/source-inputs/candidate-crosswalk-public-source-seed.csv`  `f8c24b78e130…`
 - `program/source-inputs/candidate-public-feed-source-seed.csv`  `65a5cdf1a6c2…`
 - `program/source-inputs/monitor-grade-source-validation-seed.csv`  `c0a34b18db10…`
 - `program/source-inputs/regulator-source-inventory-seed.csv`  `53c155ad76dd…`
 - `program/source-inputs/uzbekistan-method-policy-source-seed.csv`  `9f1588f0231a…`
 - `program/source-inputs/uzbekistan-station-specific-source-seed.csv`  `e0779527d470…`
+- `program/source-inputs/uzbekistan-status-certification-source-seed.csv`  `05676fb82e1e…`
 
 ### Shared governance
 
@@ -164,7 +169,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `5458165f4898…`
+- `shared/versions.json`  `038c1843daa2…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -174,4 +179,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T11:54:24.544Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T12:33:25.676Z by `scripts/build-review-packet.mjs`.

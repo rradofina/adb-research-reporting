@@ -1094,6 +1094,70 @@ interface UzbekistanCurrentMethodSummary {
   non_claim: string;
 }
 
+interface UzbekistanStatusCertificationGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanStatusCertificationSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  retrieved: boolean;
+  matched_method_terms: string[];
+  matched_current_terms: string[];
+  matched_certification_terms: string[];
+  matched_calibration_terms: string[];
+  source_note: string | null;
+}
+
+interface UzbekistanStatusCertificationSampleRow {
+  source_station_id: string;
+  source_station_name: string;
+  official_region_name: string;
+  official_detail_updated_iso: string;
+  official_detail_pm25_value: string;
+  additional_exact_station_source_keys: string;
+  additional_context_source_keys: string;
+  source_scan_decision: string;
+}
+
+interface UzbekistanStatusCertificationSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_uzbekistan_station_rows: number;
+    source_urls_seeded: number;
+    source_urls_retrieved: number;
+    source_urls_failed: number;
+    source_level_method_context_sources: number;
+    source_level_current_context_sources: number;
+    source_level_certification_context_sources: number;
+    source_level_calibration_context_sources: number;
+    additional_exact_station_source_mention_rows: number;
+    tashkent_reference_grade_context_candidate_rows: number;
+    district_commissioning_context_candidate_rows: number;
+    regional_realtime_network_context_candidate_rows: number;
+    official_detail_recent_measurement_rows: number;
+    stale_detail_measurement_followup_rows: number;
+    sentinel_detail_measurement_followup_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  source_records: UzbekistanStatusCertificationSourceRecord[];
+  evidence_gate_counts: UzbekistanStatusCertificationGate[];
+  station_sample_rows: UzbekistanStatusCertificationSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1212,6 +1276,8 @@ export default function ShowcaseAirMonitoring() {
     useState<MonitorGradeStationMethodEvidenceSummary | null>(null);
   const [uzbekistanCurrentMethod, setUzbekistanCurrentMethod] =
     useState<UzbekistanCurrentMethodSummary | null>(null);
+  const [uzbekistanStatusCertification, setUzbekistanStatusCertification] =
+    useState<UzbekistanStatusCertificationSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1283,6 +1349,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`Uzbekistan station current method scan HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-status-certification-source-scan-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan status certification source scan HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -1305,6 +1375,7 @@ export default function ShowcaseAirMonitoring() {
         monitorGradeStationReviewPayload,
         monitorGradeStationMethodEvidencePayload,
         uzbekistanCurrentMethodPayload,
+        uzbekistanStatusCertificationPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -1323,6 +1394,7 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGradeStationReview(monitorGradeStationReviewPayload);
         setMonitorGradeStationMethodEvidence(monitorGradeStationMethodEvidencePayload);
         setUzbekistanCurrentMethod(uzbekistanCurrentMethodPayload);
+        setUzbekistanStatusCertification(uzbekistanStatusCertificationPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1455,6 +1527,8 @@ export default function ShowcaseAirMonitoring() {
       <AirMonitorGradeStationMethodEvidencePanel summary={monitorGradeStationMethodEvidence} />
 
       <AirUzbekistanCurrentMethodPanel summary={uzbekistanCurrentMethod} />
+
+      <AirUzbekistanStatusCertificationPanel summary={uzbekistanStatusCertification} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -3851,6 +3925,233 @@ function AirUzbekistanCurrentMethodPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan station current/method scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanStatusCertificationPanel({
+  summary,
+}: {
+  summary: UzbekistanStatusCertificationSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const gates = summary?.evidence_gate_counts ?? [];
+  const stationRows = summary?.station_sample_rows ?? [];
+  const sourceRows = summary?.source_records ?? [];
+  const targetRows = Math.max(1, counts?.target_uzbekistan_station_rows ?? 0);
+  const sourceRowsTotal = Math.max(1, counts?.source_urls_seeded ?? 0);
+  const contextCandidateRows = counts
+    ? counts.tashkent_reference_grade_context_candidate_rows
+      + counts.district_commissioning_context_candidate_rows
+      + counts.regional_realtime_network_context_candidate_rows
+    : 0;
+  const followupRows = counts
+    ? counts.stale_detail_measurement_followup_rows + counts.sentinel_detail_measurement_followup_rows
+    : 0;
+  const ladder = counts
+    ? [
+        {
+          key: "operating",
+          label: "Operating or online context",
+          rows: counts.source_level_current_context_sources,
+          denominator: sourceRowsTotal,
+          detail: "source rows, not station-status closure",
+        },
+        {
+          key: "reference",
+          label: "Reference-grade or standards context",
+          rows: counts.source_level_certification_context_sources,
+          denominator: sourceRowsTotal,
+          detail: "source-level context unless station IDs are named",
+        },
+        {
+          key: "maintenance",
+          label: "Maintenance or training context",
+          rows: counts.source_level_calibration_context_sources,
+          denominator: sourceRowsTotal,
+          detail: "helps review queue, not per-station calibration",
+        },
+        {
+          key: "exact",
+          label: "Additional exact station mentions",
+          rows: counts.additional_exact_station_source_mention_rows,
+          denominator: targetRows,
+          detail: "Uchtepa and Yangi O'zbekiston event context",
+        },
+        {
+          key: "context",
+          label: "Weaker context candidates",
+          rows: contextCandidateRows,
+          denominator: targetRows,
+          detail: "Tashkent, Almazar, and Aral Sea context only",
+        },
+        {
+          key: "followup",
+          label: "Follow-up blockers",
+          rows: followupRows,
+          denominator: targetRows,
+          detail: "stale timestamps or sentinel PM2.5",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-uzb-current-section air-uzb-status-section" aria-label="Uzbekistan status and certification source scan">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-sage">Uzbekistan status/certification scan</p>
+          <h2>The source context improves; the grade gate stays closed.</h2>
+          <p>
+            This pass checks public regulator, owner, development-partner, and
+            technical sources after the station-detail ID gate. The result is a
+            stronger source ladder, not a station-radius permission slip.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout">
+          <span>Current-status confirmed</span>
+          <strong>{formatNumber(counts?.current_status_confirmed_rows ?? 0)}</strong>
+          <p>Source-level context cannot certify exact station operation</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.source_urls_retrieved)}</strong>
+              <em>{formatNumber(counts.source_urls_seeded)} seeded URLs</em>
+            </div>
+            <div>
+              <span>Method context</span>
+              <strong>{formatNumber(counts.source_level_method_context_sources)}</strong>
+              <em>source rows</em>
+            </div>
+            <div>
+              <span>Operating context</span>
+              <strong>{formatNumber(counts.source_level_current_context_sources)}</strong>
+              <em>online, real-time, or commissioned</em>
+            </div>
+            <div>
+              <span>Exact station mentions</span>
+              <strong>{formatNumber(counts.additional_exact_station_source_mention_rows)}</strong>
+              <em>event context only</em>
+            </div>
+            <div>
+              <span>Follow-up blockers</span>
+              <strong>{formatNumber(followupRows)}</strong>
+              <em>stale or sentinel rows</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>radius still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-uzb-current-age-grid">
+            {ladder.map((step) => (
+              <article key={step.key} className={`air-uzb-current-age air-uzb-status-ladder-${step.key}`}>
+                <div>
+                  <span>{step.label}</span>
+                  <strong>{formatNumber(step.rows)} rows</strong>
+                </div>
+                <div className="air-uzb-current-track">
+                  <i style={{ width: step.rows > 0 ? `${Math.max(4, (step.rows / step.denominator) * 100)}%` : "0%" }} />
+                </div>
+                <p>{step.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-row-grid">
+            {stationRows.slice(0, 14).map((row) => (
+              <article key={`${row.source_station_id}-${row.source_scan_decision}`} className="air-uzb-current-row air-uzb-status-row">
+                <div>
+                  <span>UZB · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.source_scan_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Updated</dt>
+                    <dd>{row.official_detail_updated_iso || "missing"}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.official_detail_pm25_value || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>Region</dt>
+                    <dd>{row.official_region_name || "n/a"}</dd>
+                  </div>
+                </dl>
+                <p>
+                  Exact source: {row.additional_exact_station_source_keys || "none"}.
+                  {" "}Context: {row.additional_context_source_keys || "none"}.
+                </p>
+                <small>current-status and complete-grade fields remain false</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-row-grid">
+            {sourceRows.slice(0, 6).map((source) => (
+              <article key={source.source_key} className="air-uzb-current-row air-uzb-status-source">
+                <div>
+                  <span>{source.source_role}</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{source.retrieved ? "retrieved" : "not retrieved"}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(source.matched_method_terms.length)}</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{formatNumber(source.matched_current_terms.length)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(source.matched_certification_terms.length)}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note || "Source note recorded in the generated summary."}</p>
+                <small>
+                  {source.matched_certification_terms.slice(0, 2).join(" · ") || "no certification term"}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-status-certification-source-scan.md" download>
+              Status/certification note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-status-certification-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-status-certification-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan status/certification source scan...</p>
       )}
     </section>
   );

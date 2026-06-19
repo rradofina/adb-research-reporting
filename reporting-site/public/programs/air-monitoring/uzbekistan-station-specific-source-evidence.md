@@ -10,8 +10,8 @@ context?
 
 ## Finding
 
-The scan finds station-specific context, but not station-ID or current-status
-closure.
+The scan closes the station-ID evidence gate for this 28-row Uzbekistan queue,
+but not current-status or monitor-grade closure.
 
 The script retrieves the official Uzhydromet public map, discovers and retrieves
 14 official regional station-table pages, parses 93 station rows, follows the

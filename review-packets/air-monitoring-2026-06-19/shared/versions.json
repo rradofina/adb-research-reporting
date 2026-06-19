@@ -141,6 +141,12 @@
       "retrieved_on": "2026-06-19",
       "notes": "Official Uzbekistan station-specific source scan. It retrieves the Uzhydromet main map, 14 official regional station-table pages, 28 official station-detail pages, and one gov.uz ecology note; parses 93 regional station rows; matches all 28 target Uzbekistan rows to official regional station-table rows; finds 28 station-detail URLs whose numeric path matches the internal target station ID, 26 detail measurements within 30 days, 22 rows where the regional table carries Horiba station context, 2 rows also named in the official gov.uz event note, and 1 negative sentinel detail PM2.5 value; but 0 rows are current-status confirmed, complete monitor-grade, or station-radius-ready."
     },
+    "air_monitoring_uzbekistan_status_certification_source_scan": {
+      "script": "air-monitoring/scripts/scan-uzbekistan-status-certification-sources.py",
+      "seed": "air-monitoring/source-inputs/uzbekistan-status-certification-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "notes": "Seeded public source scan for Uzbekistan station-status, certification, maintenance, calibration, and reference-grade context after the station-ID gate. It retrieves 7 public sources, finds source-level method context in 6 sources, operating or online context in 7 sources, certification or standards context in 3 sources, maintenance/training context in 1 source, 2 additional exact station event mentions, 2 stale station-detail follow-up rows, 1 sentinel detail PM2.5 row, and still 0 current-status confirmed, station-method classified, complete monitor-grade, or station-radius-ready rows."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -259,6 +265,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_uzbekistan_station_specific_source_evidence pin after scanning official Uzhydromet regional station-table pages and an official gov.uz ecology note for station-specific Uzbekistan target-row evidence."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_uzbekistan_status_certification_source_scan pin after scanning public Uzbekistan station-status, certification, maintenance, calibration, and reference-grade context sources while keeping current-status, complete-grade, and station-radius readiness at zero."
     }
   ]
 }

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, and Uzbekistan station-specific source wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, and Uzbekistan status/certification wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -107,12 +107,17 @@ overrides priority by editing this list.
    numeric path matches the internal target station ID, 26 detail measurements
    within 30 days, 22 Horiba table-context rows, 6 `Updating data` rows, 2
    official event-note station matches, and 1 negative sentinel detail PM2.5
-   value; and still keeps current-status confirmation, complete monitor-grade
-   classification, and station-radius readiness at 0. Next AI-doable loop is
-   station-owner or regulator documentation that explicitly states current
-   operating status, calibration/status records, or station-specific
-   certification beyond the official regional table and detail pages, then the
-   38 Indonesia and Georgia portal/API rows, before any station-radius or
+   value. The Uzbekistan status/certification source scan then retrieves 7
+   public source URLs, finds 6 source rows with method/equipment context, 7
+   with operating or online context, 3 with source-level standards or
+   reference-grade context, 1 with maintenance/training context, 2 additional
+   exact station event mentions, 4 weaker context candidate rows, 2 stale
+   station-detail follow-up rows, and 1 sentinel PM2.5 follow-up row; and still
+   keeps current-status confirmation, station-method classification, complete
+   monitor-grade classification, and station-radius readiness at 0. Next
+   AI-doable loop is exact row-level station-owner or regulator documentation
+   for the 2 stale detail rows, the 1 sentinel detail row, then the 38
+   Indonesia and Georgia portal/API rows, before any station-radius or
    catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
@@ -330,6 +335,32 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-station-specific-evidence-mobile.png`,
   `reporting-site/qa/showcase-air-station-specific-data-desktop.png`, and
   `reporting-site/qa/showcase-air-station-specific-data-mobile.png`.
+- **2026-06-19 (air-monitoring Uzbekistan status/certification source scan):**
+  Added
+  `air-monitoring/source-inputs/uzbekistan-status-certification-source-seed.csv`,
+  `air-monitoring/scripts/scan-uzbekistan-status-certification-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-status-certification-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-status-certification-source-scan-summary.json`,
+  and wrote
+  `air-monitoring/uzbekistan-status-certification-source-scan.md`. The scan
+  retrieves 7 public source URLs after the Uzbekistan station-ID gate and finds
+  6 source rows with method/equipment context, 7 with operating or online
+  context, 3 with source-level standards or reference-grade context, 1 with
+  maintenance/training context, 2 additional exact station event mentions, 2
+  Tashkent Uzhydromet reference-grade context candidate rows, 1 Almazar
+  district commissioning context candidate, 1 Karakalpakstan/Aral Sea regional
+  24/7 network context candidate, 2 stale station-detail follow-up rows, and 1
+  sentinel PM2.5 follow-up row. It still records 0 current-status confirmed
+  rows, 0 station-method classified rows, 0 complete monitor-grade rows, and 0
+  station-radius-ready rows. Public surface QA now checks the home card, the
+  topic Evidence/Data tabs, and the `/showcase/air-monitoring-observability`
+  wall with Chrome CDP at desktop and mobile widths, writing
+  `reporting-site/qa/showcase-air-status-certification-desktop.png` and
+  `reporting-site/qa/showcase-air-status-certification-mobile.png`; no
+  horizontal overflow or route-level browser errors were observed beyond
+  dev-server notices.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

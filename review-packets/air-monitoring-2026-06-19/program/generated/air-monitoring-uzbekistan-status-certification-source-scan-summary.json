@@ -1,0 +1,502 @@
+{
+  "generated_at": "2026-06-19T12:32:13Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_uzbekistan_status_certification_source_scan",
+  "method": "air_monitoring_uzbekistan_status_certification_source_scan_v1",
+  "goal_level": "L3 Uzbekistan status/certification source scan",
+  "coverage_counts": {
+    "target_uzbekistan_station_rows": 28,
+    "source_urls_seeded": 7,
+    "source_urls_retrieved": 7,
+    "source_urls_failed": 0,
+    "source_level_method_context_sources": 6,
+    "source_level_current_context_sources": 7,
+    "source_level_certification_context_sources": 3,
+    "source_level_calibration_context_sources": 1,
+    "additional_exact_station_source_mention_rows": 2,
+    "tashkent_reference_grade_context_candidate_rows": 2,
+    "district_commissioning_context_candidate_rows": 1,
+    "regional_realtime_network_context_candidate_rows": 1,
+    "official_detail_recent_measurement_rows": 26,
+    "stale_detail_measurement_followup_rows": 2,
+    "sentinel_detail_measurement_followup_rows": 1,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "source_records": [
+    {
+      "source_key": "uzhydromet_public_map_network_scope",
+      "source_name": "Uzhydromet public air-quality map",
+      "source_role": "official_network_scope",
+      "url": "https://monitoring.meteo.uz/en/map",
+      "final_url": "https://monitoring.meteo.uz/en/map",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 170927,
+      "sha256": "ac16144d6f1caa92b214f3ad39f3db68c5dcd128ae43fead6f39161b9f39b9c5",
+      "matched_expected_terms": [
+        "23 automatic stations",
+        "66 stationary pollution observation points",
+        "PM 2.5",
+        "Data of Horiba"
+      ],
+      "matched_method_terms": [
+        "PM 2.5",
+        "Air Pollution Index",
+        "integrated assessment"
+      ],
+      "matched_current_terms": [
+        "observations",
+        "conducted",
+        "daily",
+        "automatic stations"
+      ],
+      "matched_certification_terms": [],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Official map page establishes the national observation frame and public station-page route but does not certify complete station grade."
+    },
+    {
+      "source_key": "world_bank_tashkent_aqm_text",
+      "source_name": "World Bank Tashkent air-quality assessment text",
+      "source_role": "independent_reference_grade_context",
+      "url": "https://documents1.worldbank.org/curated/en/099061424075531584/txt/P177108-ec9e93ac-4651-4a71-81d3-40144918d6cd.txt",
+      "final_url": "https://documents1.worldbank.org/curated/en/099061424075531584/txt/P177108-ec9e93ac-4651-4a71-81d3-40144918d6cd.txt",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/plain;charset=utf-8",
+      "retrieval_bytes": 447370,
+      "sha256": "b665d8d25e5886ce73c58d6e02d2d60d832e78d39de91cf338551d010da6566d",
+      "matched_expected_terms": [
+        "automatic reference grade stations",
+        "international monitoring standards",
+        "Uzhydromet"
+      ],
+      "matched_method_terms": [
+        "reference grade",
+        "continuous monitoring"
+      ],
+      "matched_current_terms": [
+        "started monitoring PM 2.5",
+        "became operational",
+        "continuous monitoring"
+      ],
+      "matched_certification_terms": [
+        "meet international monitoring standards",
+        "reference grade"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [
+        "missing"
+      ],
+      "source_note": "Independent technical report supports Tashkent source-level reference-grade context but does not name Uzhydromet station IDs 107 or 108."
+    },
+    {
+      "source_key": "gov_uz_tashkent_report_presented",
+      "source_name": "Government page on Tashkent air-quality report",
+      "source_role": "official_policy_standard_context",
+      "url": "https://gov.uz/en/eco/news/view/23971",
+      "final_url": "https://gov.uz/en/eco/news/view/23971",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 183713,
+      "sha256": "8010c489e5b9661b2f0716ed3294a316744ab9c6d37eae7e736c5c87e9a6553c",
+      "matched_expected_terms": [
+        "PM2.5 Standard",
+        "Air Quality Assessment",
+        "World Bank"
+      ],
+      "matched_method_terms": [
+        "PM2.5",
+        "WHO"
+      ],
+      "matched_current_terms": [
+        "standard",
+        "monitoring",
+        "air quality"
+      ],
+      "matched_certification_terms": [
+        "WHO recommendations"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Official government page records PM2.5 standard and report context; it is not station-specific."
+    },
+    {
+      "source_key": "gov_uz_eco_event_en",
+      "source_name": "Government ecology PM2.5 event note",
+      "source_role": "official_exact_station_event_context",
+      "url": "https://gov.uz/en/eco/news/view/87646",
+      "final_url": "https://gov.uz/en/eco/news/view/87646",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 179121,
+      "sha256": "e1e36cd662ce6f2a42b5848441fc855e3bee8af8c9e4a256451398eb4d63f223",
+      "matched_expected_terms": [
+        "Horiba automatic station",
+        "Uchtepa",
+        "Yangi Uzbekistan",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Horiba automatic station",
+        "PM2.5"
+      ],
+      "matched_current_terms": [
+        "recorded",
+        "readings from automatic stations"
+      ],
+      "matched_certification_terms": [],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [
+        "forecast"
+      ],
+      "source_note": "Official ecology note names Uchtepa and Yangi Uzbekistan automatic-station event readings."
+    },
+    {
+      "source_key": "gov_uz_automatic_stations_tashkent_districts",
+      "source_name": "Government page on commissioned Tashkent automatic stations",
+      "source_role": "official_commissioning_and_maintenance_context",
+      "url": "https://gov.uz/en/eco/news/view/39737",
+      "final_url": "https://gov.uz/en/eco/news/view/39737",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 201781,
+      "sha256": "b3c730549dcae3b0efbfae4bc791f1e8d409cbf875672c5106c2d92519758d63",
+      "matched_expected_terms": [
+        "installed and commissioned",
+        "automatic air monitoring stations",
+        "Almazar"
+      ],
+      "matched_method_terms": [
+        "high-precision air pollution measurement",
+        "patented technologies"
+      ],
+      "matched_current_terms": [
+        "installed and commissioned",
+        "operation and maintenance"
+      ],
+      "matched_certification_terms": [
+        "high-precision"
+      ],
+      "matched_calibration_terms": [
+        "maintenance",
+        "software",
+        "training"
+      ],
+      "matched_caution_terms": [],
+      "source_note": "Official government page states two Tashkent district stations were commissioned and staff trained, but not public station IDs."
+    },
+    {
+      "source_key": "undp_aral_air_quality_2025",
+      "source_name": "UNDP Aral Sea region air-quality monitoring launch",
+      "source_role": "development_partner_realtime_network_context",
+      "url": "https://www.undp.org/uzbekistan/press-releases/climate-justice-action-undp-launches-air-quality-monitoring-system-aral-sea-region",
+      "final_url": "https://www.undp.org/uzbekistan/press-releases/climate-justice-action-undp-launches-air-quality-monitoring-system-aral-sea-region",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 67880,
+      "sha256": "28c00996009b933f63053ca6a0a9ea16d6976a24f962971c984121e28891a824",
+      "matched_expected_terms": [
+        "17 automatic air quality monitoring stations",
+        "Aral Sea region",
+        "24/7 automatic measurement",
+        "real time"
+      ],
+      "matched_method_terms": [
+        "automatic measurement",
+        "PM2.5",
+        "PM10"
+      ],
+      "matched_current_terms": [
+        "24/7",
+        "real time",
+        "launched"
+      ],
+      "matched_certification_terms": [],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Development-partner page supports Aral Sea regional 24/7 automatic network context, not exact target station grade."
+    },
+    {
+      "source_key": "dgov_weather_observation_portal",
+      "source_name": "Digital Government single weather observation portal",
+      "source_role": "official_digital_portal_context",
+      "url": "https://dgov.uz/en/solution/detail/27/",
+      "final_url": "https://dgov.uz/en/solution/detail/27/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 28682,
+      "sha256": "99cd2c06b456e64023545ebad9639c9e8c71df2a8b929100f970e779b1044dff",
+      "matched_expected_terms": [
+        "current weather",
+        "atmospheric",
+        "automatic stations online"
+      ],
+      "matched_method_terms": [],
+      "matched_current_terms": [
+        "current",
+        "online",
+        "automatic stations"
+      ],
+      "matched_certification_terms": [],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Official digital-government page describes online current atmospheric data at automatic stations but not exact monitor grade."
+    }
+  ],
+  "decision_rows": [
+    {
+      "source_scan_decision": "district_commissioning_context_candidate_keep_open",
+      "rows": 1
+    },
+    {
+      "source_scan_decision": "exact_station_event_context_keep_open",
+      "rows": 2
+    },
+    {
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open",
+      "rows": 20
+    },
+    {
+      "source_scan_decision": "reference_grade_context_candidate_keep_open",
+      "rows": 1
+    },
+    {
+      "source_scan_decision": "regional_realtime_network_context_candidate_keep_open",
+      "rows": 1
+    },
+    {
+      "source_scan_decision": "sentinel_measurement_follow_up_keep_blocked",
+      "rows": 1
+    },
+    {
+      "source_scan_decision": "stale_detail_measurement_follow_up_keep_blocked",
+      "rows": 2
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "gate": "Seeded source URLs retrieved",
+      "status": "available",
+      "rows": 7,
+      "reader_use": "Retrieved public sources can be inspected for operating, grade, commissioning, and maintenance context."
+    },
+    {
+      "gate": "Source-level operating or online context",
+      "status": "partly_available",
+      "rows": 7,
+      "reader_use": "Some public sources discuss observation, online, real-time, or commissioned automatic-station context."
+    },
+    {
+      "gate": "Source-level reference-grade or standards context",
+      "status": "partly_available",
+      "rows": 3,
+      "reader_use": "Reference-grade or standards language is source-level unless exact station IDs are named."
+    },
+    {
+      "gate": "Maintenance or calibration context",
+      "status": "partly_available",
+      "rows": 1,
+      "reader_use": "Maintenance/training context helps the review queue but is not a calibration record for each station."
+    },
+    {
+      "gate": "Additional exact station source mention",
+      "status": "partly_available",
+      "rows": 2,
+      "reader_use": "Official event context names two stations but does not certify ongoing status or grade."
+    },
+    {
+      "gate": "Additional station-context candidate",
+      "status": "partly_available",
+      "rows": 4,
+      "reader_use": "Context candidates help prioritize follow-up but do not close station-level certification."
+    },
+    {
+      "gate": "Stale detail measurement follow-up",
+      "status": "caution",
+      "rows": 2,
+      "reader_use": "Rows with detail timestamps older than 30 days stay out of current-status closure."
+    },
+    {
+      "gate": "Sentinel detail measurement follow-up",
+      "status": "caution",
+      "rows": 1,
+      "reader_use": "Rows with negative sentinel PM2.5 values stay out of current-status closure."
+    },
+    {
+      "gate": "Current-status confirmed",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No public source explicitly confirms current operation for each target station row."
+    },
+    {
+      "gate": "Complete monitor-grade classification",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No public source gives complete station-level monitor-grade classification for the 28 target rows."
+    },
+    {
+      "gate": "Station-radius grade assumptions",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until station-grade assumptions are validated."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "source_station_id": "107",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-05-01",
+      "official_detail_pm25_value": "13.698",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "world_bank_tashkent_aqm_text",
+      "source_scan_decision": "stale_detail_measurement_follow_up_keep_blocked"
+    },
+    {
+      "source_station_id": "108",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "8.44",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "world_bank_tashkent_aqm_text",
+      "source_scan_decision": "reference_grade_context_candidate_keep_open"
+    },
+    {
+      "source_station_id": "718",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "The Republic of Karakalpakstan",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "44.177",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "undp_aral_air_quality_2025",
+      "source_scan_decision": "regional_realtime_network_context_candidate_keep_open"
+    },
+    {
+      "source_station_id": "728",
+      "source_station_name": "Sergili",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-16",
+      "official_detail_pm25_value": "-9999",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "sentinel_measurement_follow_up_keep_blocked"
+    },
+    {
+      "source_station_id": "729",
+      "source_station_name": "Yangi O'zbekiston",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "11.98",
+      "additional_exact_station_source_keys": "gov_uz_eco_event_en",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "exact_station_event_context_keep_open"
+    },
+    {
+      "source_station_id": "733",
+      "source_station_name": "Uchtepa",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-03",
+      "official_detail_pm25_value": "8.61",
+      "additional_exact_station_source_keys": "gov_uz_eco_event_en",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "exact_station_event_context_keep_open"
+    },
+    {
+      "source_station_id": "734",
+      "source_station_name": "Almazar",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "7.55",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "gov_uz_automatic_stations_tashkent_districts",
+      "source_scan_decision": "district_commissioning_context_candidate_keep_open"
+    },
+    {
+      "source_station_id": "737",
+      "source_station_name": "Akhangaran",
+      "official_region_name": "Tashkent region",
+      "official_detail_updated_iso": "2026-05-10",
+      "official_detail_pm25_value": "14.56",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "stale_detail_measurement_follow_up_keep_blocked"
+    },
+    {
+      "source_station_id": "714",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Syrdarya region",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "0.081",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    },
+    {
+      "source_station_id": "715",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Djizzak region",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "6.956",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    },
+    {
+      "source_station_id": "716",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Samarkand region",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "12.26",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    },
+    {
+      "source_station_id": "717",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Surkhandarya region",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "16.491",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    },
+    {
+      "source_station_id": "719",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Khorezm region",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "6.902",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    },
+    {
+      "source_station_id": "720",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "official_region_name": "Tashkent city",
+      "official_detail_updated_iso": "2026-06-19",
+      "official_detail_pm25_value": "32.189",
+      "additional_exact_station_source_keys": "",
+      "additional_context_source_keys": "",
+      "source_scan_decision": "recent_detail_measurement_no_grade_keep_open"
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-uzbekistan-status-certification-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-uzbekistan-status-certification-source-scan-summary.json"
+  },
+  "non_claim": "This scan checks public source language for station-status, maintenance, calibration, and reference-grade context. It does not certify any target station as currently operating, complete monitor-grade, or station-radius-ready."
+}

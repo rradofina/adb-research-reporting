@@ -10791,6 +10791,12 @@
       #ffffff;
   }
 
+  .air-uzb-status-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.08), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
   .air-uzb-current-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -10809,6 +10815,11 @@
     padding: 1rem 1.1rem;
     border-left: 4px solid #9b2226;
     background: #fff3f0;
+  }
+
+  .air-uzb-status-section .air-uzb-current-callout {
+    border-left-color: #007db8;
+    background: #edf8fd;
   }
 
   .air-uzb-current-callout span,
@@ -10830,6 +10841,10 @@
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: 2.25rem;
     line-height: 1;
+  }
+
+  .air-uzb-status-section .air-uzb-current-callout strong {
+    color: #005f89;
   }
 
   .air-uzb-current-callout p,
@@ -10865,6 +10880,10 @@
     border-top: 4px solid #9b2226;
   }
 
+  .air-uzb-status-section .air-uzb-current-stat-grid > div {
+    border-top-color: #007db8;
+  }
+
   .air-uzb-current-stat-grid strong {
     color: var(--ink);
     font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -10897,6 +10916,18 @@
 
   .air-uzb-current-age-within_90_days {
     border-top-color: #fbb00e;
+  }
+
+  .air-uzb-status-ladder-operating,
+  .air-uzb-status-ladder-reference,
+  .air-uzb-status-ladder-maintenance,
+  .air-uzb-status-ladder-exact,
+  .air-uzb-status-ladder-context {
+    border-top-color: #007db8;
+  }
+
+  .air-uzb-status-ladder-followup {
+    border-top-color: #9b2226;
   }
 
   .air-uzb-current-age > div:first-child,
@@ -10946,6 +10977,18 @@
 
   .air-uzb-current-age-within_90_days .air-uzb-current-track i {
     background: #fbb00e;
+  }
+
+  .air-uzb-status-section .air-uzb-current-track {
+    background: #dbeff7;
+  }
+
+  .air-uzb-status-section .air-uzb-current-track i {
+    background: #007db8;
+  }
+
+  .air-uzb-status-ladder-followup .air-uzb-current-track i {
+    background: #9b2226;
   }
 
   .air-uzb-current-row-grid {

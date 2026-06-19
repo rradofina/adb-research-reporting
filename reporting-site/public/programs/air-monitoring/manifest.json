@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T11:53:50.692Z",
+  "generated_at": "2026-06-19T12:33:17.198Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -247,10 +247,20 @@
       "key": "air_monitoring_uzbekistan_station_specific_source_evidence",
       "file": "uzbekistan-station-specific-source-evidence.md",
       "label": "Air-monitoring Uzbekistan station-specific source evidence",
-      "size": 5063,
-      "size_human": "4.9 KB",
-      "mtime": "2026-06-19T11:49:26.151Z",
-      "sha256": "74764285aa851e0c72e2476e7ba763041990d404cdc552d8fbf5c7b660532580",
+      "size": 5104,
+      "size_human": "5.0 KB",
+      "mtime": "2026-06-19T12:11:40.299Z",
+      "sha256": "a70f3565c7f062a89e31380ecf2285fa6085289c93ff299bad6b2007718e4647",
+      "attestation_chain": null
+    },
+    {
+      "key": "air_monitoring_uzbekistan_status_certification_source_scan",
+      "file": "uzbekistan-status-certification-source-scan.md",
+      "label": "Air-monitoring Uzbekistan status/certification source scan",
+      "size": 5085,
+      "size_human": "5.0 KB",
+      "mtime": "2026-06-19T12:11:40.300Z",
+      "sha256": "2467dd4f99795f74639e98af710780bb9252282d1a7ad448f0da7eb26653e243",
       "attestation_chain": null
     },
     {
@@ -512,6 +522,18 @@
       "size": 43904,
       "size_human": "42.9 KB",
       "sha256": "d017d5fee3fcc76f0e91e66319aee9a2ecb5a05e72b0eec4d31dd294d7e25381"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-status-certification-source-scan-summary.json",
+      "size": 21003,
+      "size_human": "20.5 KB",
+      "sha256": "42967f2db521614c3b6e31483c5325c7f8c51c6690067b2d14a74c4586774190"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-status-certification-source-scan.csv",
+      "size": 24880,
+      "size_human": "24.3 KB",
+      "sha256": "1e705a3b2febf0bbf3e5331cef0debb9632aa9637f677a15bec98d47b75ed405"
     },
     {
       "file": "generated/charts/air-monitoring-thumbnail.json",

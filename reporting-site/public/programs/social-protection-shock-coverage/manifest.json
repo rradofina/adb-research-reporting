@@ -1,7 +1,7 @@
 {
   "program": "social-protection-shock-coverage",
   "permanent_url": "/program/social-protection-shock-coverage/evidence",
-  "generated_at": "2026-06-19T20:46:33.321Z",
+  "generated_at": "2026-06-19T20:56:51.797Z",
   "hero": {
     "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
     "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
@@ -156,6 +156,12 @@
       "sha256": "f62c02bfd9791b651fe77b1a51597d5bda6721b0118c86a952aed831178fc113"
     },
     {
+      "file": "generated/social-protection-dropped-leg-source-audit.json",
+      "size": 110529,
+      "size_human": "107.9 KB",
+      "sha256": "ff1e5ce20962e629451f867d214e6d4c1a05bd1abd05cece1af4996480216cbb"
+    },
+    {
       "file": "generated/social-protection-dropped-leg.csv",
       "size": 1686,
       "size_human": "1.6 KB",
@@ -165,7 +171,25 @@
       "file": "generated/social-protection-dropped-leg.json",
       "size": 20093,
       "size_human": "19.6 KB",
-      "sha256": "96b72eaab4204c48dfe1e4e8cb83e2aaec3c463ea0ab3ce2f0e3719e944a8d87"
+      "sha256": "ae25b6d233f0fbd307002ed87beaddb871ba7c378dfac007088d1e962318b89e"
+    },
+    {
+      "file": "generated/social-protection-social-safety-net-rerank.csv",
+      "size": 4445,
+      "size_human": "4.3 KB",
+      "sha256": "dba2380d337e677de8d0440f608a0becb0168b4b285890a27c46ee8386f73133"
+    },
+    {
+      "file": "generated/social-protection-source-readiness-sources.csv",
+      "size": 1739,
+      "size_human": "1.7 KB",
+      "sha256": "41752940817929f547ebf6b62dc0b2e3e4fcc2971ff9ea0347b1b996b442b1ae"
+    },
+    {
+      "file": "generated/social-protection-source-readiness.json",
+      "size": 84619,
+      "size_human": "82.6 KB",
+      "sha256": "72b528b8281e6367b297a264c5e8847bdde849846705a4b5f046aac4e033ff6f"
     }
   ],
   "articles": [

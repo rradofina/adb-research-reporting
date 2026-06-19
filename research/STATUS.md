@@ -273,6 +273,30 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (social-protection source-object repair):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/social-protection-dropped-leg` from a dropped-leg-only audit into
+  an ASPIRE/Findex/poverty source-object wall. Added
+  `social-protection-shock-coverage/scripts/audit-social-protection-source-readiness.py`,
+  cache regeneration notes under
+  `social-protection-shock-coverage/.cache/README.md`, generated
+  `social-protection-dropped-leg-source-audit.json`,
+  `social-protection-source-readiness.json`,
+  `social-protection-social-safety-net-rerank.csv`, and
+  `social-protection-source-readiness-sources.csv`, and registered
+  `social_protection_source_readiness_public_metadata` in `versions.json`.
+  The audit documents that the old coverage leg is WDI/ASPIRE all social
+  protection and labor coverage, not shock-payment delivery; the narrower
+  ASPIRE social safety-net variant produces PNG, SLB, TLS, FSM, and TKM with
+  zero overlap against the named headline five; current WDI metadata names
+  `SI.POV.DDAY` as $3.00/day 2021 PPP while older prose says $2.15/day 2017
+  PPP; and the analysis-ready shock-payment wall remains false: no emergency
+  program registry, beneficiary roster, payment-rail use, delivery-speed
+  record, or shock-event trigger is joined. Verification in this pass reran
+  the social-protection scripts, synced public artifacts, built the reporting
+  site, ran the deterministic gates and showcase verifier, and browser-checked
+  desktop plus 390px mobile with no page errors, failed requests, or
+  page-level horizontal overflow.
 - **2026-06-20 (food-price food-import source repair):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/food-price-coverage-trap` from a coverage-only audit into a

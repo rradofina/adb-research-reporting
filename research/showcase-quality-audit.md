@@ -1051,6 +1051,41 @@ failed requests, and no page-level horizontal overflow. Screenshots:
 `reporting-site/qa/showcase-food-price-food-import-mobile-visual.png`, and
 `reporting-site/qa/showcase-food-price-food-import-mobile-claim.png`.
 
+## 2026-06-20 — Report 16 social-protection source-object repair
+
+Report 16 now uses
+`social-protection-shock-coverage/generated/social-protection-dropped-leg-source-audit.json`
+instead of the older dropped-leg-only artifact. The new source-readiness pass
+adds
+`social-protection-shock-coverage/scripts/audit-social-protection-source-readiness.py`,
+records cache regeneration notes under
+`social-protection-shock-coverage/.cache/README.md`, and writes
+`social-protection-source-readiness.json`,
+`social-protection-social-safety-net-rerank.csv`, and
+`social-protection-source-readiness-sources.csv`. The audit documents that the
+old coverage leg is WDI/ASPIRE all social protection and labor coverage, not
+shock-payment delivery; fetches the narrower ASPIRE social safety-net coverage
+leg; and records the current WDI `SI.POV.DDAY` label as $3.00/day 2021 PPP
+while older prose labels it $2.15/day 2017 PPP. Key generated facts: the old
+value top five are PAK, VUT, MMR, LAO, and TJK; the social safety-net variant
+top five are PNG, SLB, TLS, FSM, and TKM; overlap with the named headline
+five is 0; and emergency program registries, beneficiary rosters, payment-rail
+use, delivery-speed records, shock-event triggers, and analysis-ready
+shock-payment coverage remain uncomputed.
+
+Verification in this pass reran the social-protection scripts, synced public
+artifacts, built the reporting site, ran all deterministic gates and the
+showcase verifier, and browser-checked desktop 1440x1100 plus mobile 390x900.
+Browser QA found 9 rank rows, 5 component cards, 8 source rows, 2 download
+links, all required source-object text, no page errors, no failed requests,
+and no page-level horizontal overflow. Screenshots:
+`reporting-site/qa/showcase-social-protection-source-desktop.png`,
+`reporting-site/qa/showcase-social-protection-source-desktop-visual.png`,
+`reporting-site/qa/showcase-social-protection-source-desktop-claim.png`,
+`reporting-site/qa/showcase-social-protection-source-mobile.png`,
+`reporting-site/qa/showcase-social-protection-source-mobile-visual.png`, and
+`reporting-site/qa/showcase-social-protection-source-mobile-claim.png`.
+
 ## Next deepening order
 
 1. Air-monitoring observability, because the station-coordinate source pass is

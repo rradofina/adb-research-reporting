@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T20:46:58.603Z",
+  "generated_at": "2026-06-19T20:57:19.759Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 340,
-    "browserChecks": 22
+    "screenshots": 346,
+    "browserChecks": 23
   },
   "summary": {
     "reports_total": 20,
@@ -381,13 +381,13 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "social-protection-shock-coverage/generated/social-protection-dropped-leg.json",
+      "evidencePath": "social-protection-shock-coverage/generated/social-protection-dropped-leg-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/social-protection-shock-coverage/generated/social-protection-dropped-leg.json",
+      "auditDataUrl": "/programs/social-protection-shock-coverage/generated/social-protection-dropped-leg-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/social-protection-shock-coverage/generated/social-protection-dropped-leg.csv",
+      "auditCsvUrl": "/programs/social-protection-shock-coverage/generated/social-protection-social-safety-net-rerank.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,

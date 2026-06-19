@@ -1,0 +1,44 @@
+iso3,country,old_value_rank,old_gap,old_legs_present,headline_member,all_sp_live_rank,all_sp_live_gap,all_sp_coverage_pct,all_sp_year,safety_net_rank,safety_net_gap,safety_net_coverage_pct,safety_net_year,findex_account_pct,findex_year,poverty_headcount_pct,poverty_year,poverty_gap_pct,poverty_gap_year,safety_net_in_top5,safety_net_legs_present
+PNG,Papua New Guinea,,,,False,1,50.0,4.2437,2009,1,50.4,3.355,2009,,,52.2,2009,22.0,2009,True,safety-net-only
+SLB,Solomon Islands,,,,False,2,39.6,1.6645,2005,2,39.6,1.6645,2005,,,40.3,2012,12.8,2012,True,safety-net-only
+TLS,Timor-Leste,,,,False,3,28.5,35.3284,2011,3,28.5,35.209,2011,,,44.0,2014,11.2,2014,True,safety-net-only
+FSM,Micronesia,,,,False,5,20.3,22.2954,2000,4,24.5,6.2543,2000,,,26.1,2013,9.0,2013,True,safety-net-only
+TKM,Turkmenistan,,,,False,4,20.9,,,5,20.9,,,40.5764,2017,35.1,1998,11.1,1998,True,account-only
+PAK,Pakistan,1,18.0,both,True,6,17.3,22.0928,2018,6,18.7,10.2624,2018,27.296,2024,23.0,2024,5.2,2024,False,both
+MMR,Myanmar,3,7.1,both,True,8,7.1,13.9684,2017,7,7.4,8.7785,2017,47.791,2021,10.3,2017,1.8,2017,False,both
+LAO,Lao PDR,4,5.7,both,True,9,5.7,2.1592,2018,8,4.4,,,37.6502,2024,7.1,2024,1.5,2024,False,account-only
+TJK,Tajikistan,5,3.7,acc-only,False,10,3.2,39.2887,2011,9,4.1,9.7499,2011,54.5194,2024,6.1,2024,1.1,2024,False,both
+FJI,Fiji,,,,False,12,3.0,37.111,2013,10,3.3,30.3275,2013,,,4.7,2019,0.8,2019,False,safety-net-only
+BGD,Bangladesh,7,2.7,both,True,11,3.0,55.5564,2022,11,3.0,54.3724,2022,43.284,2024,5.9,2022,1.0,2022,False,both
+PHL,Philippines,6,2.8,both,True,14,2.8,43.0411,2018,12,3.0,34.8885,2018,50.1824,2024,5.3,2023,1.0,2023,False,both
+IDN,Indonesia,8,2.2,both,False,15,1.6,65.093,2022,13,1.8,54.5552,2022,56.3278,2024,4.0,2025,0.6,2025,False,both
+MHL,Marshall Islands,15,0.8,sp-only,False,22,0.8,62.732,2019,14,1.8,14.8655,2019,,,2.1,2019,0.4,2019,False,safety-net-only
+UZB,Uzbekistan,9,1.8,both,False,16,1.3,25.4578,2018,15,1.5,7.043,2018,59.6584,2024,2.3,2025,0.8,2025,False,both
+KGZ,Kyrgyzstan,12,1.1,both,False,21,0.8,55.1526,2020,16,1.3,9.8845,2020,72.2642,2024,2.2,2024,0.3,2024,False,both
+GEO,Georgia,10,1.3,both,False,17,1.2,65.9739,2021,17,1.2,65.9739,2021,78.8236,2024,4.2,2024,0.9,2024,False,both
+LKA,Sri Lanka,14,1.0,both,False,19,1.1,37.5004,2019,18,1.2,29.9858,2019,81.6921,2024,2.7,2019,0.4,2019,False,both
+NPL,Nepal,13,1.1,acc-only,False,18,1.2,43.4854,2010,19,1.2,40.1376,2010,59.9911,2024,2.4,2022,0.3,2022,False,both
+IND,India,11,1.2,acc-only,False,20,0.9,77.1844,2011,20,1.0,74.8956,2011,89.0248,2024,5.3,2022,0.8,2022,False,both
+KIR,Kiribati,16,0.4,sp-only,False,23,0.4,51.7177,2019,21,0.8,16.5637,2019,,,0.9,2023,0.1,2023,False,safety-net-only
+ARM,Armenia,18,0.3,both,False,25,0.2,75.295,2022,22,0.3,42.0072,2022,71.3735,2024,0.8,2024,0.1,2024,False,both
+VNM,Viet Nam,17,0.4,both,False,24,0.3,89.4056,2020,23,0.3,88.2227,2020,70.5508,2024,1.6,2022,0.4,2022,False,both
+AZE,Azerbaijan,,,,False,26,0.0,64.6436,2015,24,0.0,26.9149,2015,56.3047,2024,0.0,2005,0.0,2005,False,both
+BTN,Bhutan,19,0.0,sp-only,False,27,0.0,8.971,2022,25,0.0,7.2348,2022,33.6659,2014,0.0,2022,0.0,2022,False,both
+CHN,China,20,0.0,acc-only,False,28,0.0,63.053,2013,26,0.0,43.8132,2013,89.383,2024,0.0,2022,0.0,2022,False,both
+KAZ,Kazakhstan,21,0.0,both,False,29,0.0,57.2609,2021,27,0.0,27.6325,2021,87.0486,2024,0.0,2021,0.0,2021,False,both
+MDV,Maldives,23,0.0,both,False,30,0.0,28.6075,2019,28,0.0,25.5006,2019,79.5464,2017,0.0,2019,0.0,2019,False,both
+MNG,Mongolia,24,0.0,both,False,31,0.0,92.6014,2020,29,0.0,87.0955,2020,98.2787,2024,0.4,2022,0.1,2022,False,both
+MYS,Malaysia,22,0.0,both,False,32,0.0,76.6754,2016,30,0.0,75.6442,2016,88.6918,2024,0.0,2021,0.0,2021,False,both
+THA,Thailand,25,0.0,both,False,33,0.0,87.1883,2021,31,0.0,87.0573,2021,91.825,2024,0.0,2024,0.0,2024,False,both
+VUT,Vanuatu,2,13.6,sp-only,False,7,13.6,30.352,2019,,,,,,,19.5,2019,4.9,2019,False,
+AFG,Afghanistan,,,,False,,,,,,,,,,,,,,,False,
+BRN,Brunei Darussalam,,,,False,,,,,,,,,,,,,,,False,
+KHM,Cambodia,,,,False,,,,,,,,,,,,,,,False,
+COK,Cook Islands,,,,False,,,,,,,,,,,,,,,False,
+HKG,Hong Kong SAR,,,,False,,,,,,,,,,,,,,,False,
+NRU,Nauru,,,,False,,,,,,,,,,,,,1.3,2012,False,
+PLW,Palau,,,,False,,,,,,,,,,,,,,,False,
+WSM,Samoa,,,,False,13,3.0,33.6381,2008,,,,,,,4.5,2013,0.7,2013,False,
+TWN,Taiwan,,,,False,,,,,,,,,,,,,,,False,
+TON,Tonga,,,,False,,,,,,,,,,,,,0.1,2021,False,
+TUV,Tuvalu,,,,False,,,,,,,,,,,,,1.7,2010,False,

@@ -157,7 +157,7 @@
       "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "social-protection-dropped-leg.json",
+      "artifact": "social-protection-dropped-leg-source-audit.json",
       "finding": "The headline five is not the five highest readiness-gap values. By the panel's own metric the five highest are PAK, VUT, MMR, LAO, TJK — and two of those (Vanuatu, Tajikistan) are dropped from the published cluster solely because one of…"
     },
     {

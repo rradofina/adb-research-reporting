@@ -2,23 +2,67 @@
 
 `attestation_chain: ai-first`
 
-This answers the keystone in `deep-questions.md` §1.1 (and §7) with a real
-recomputation. Every number below is produced by
-`scripts/deepen-include-partial.py` from the committed World Bank WDI cache —
-ASPIRE social-protection coverage (`per_allsp.cov_pop_tot`), Global Findex 2021
-account ownership (`FX.OWN.TOTL.ZS` [@wb2022findex]), and the `$2.15/day`
-poverty headcount (`SI.POV.DDAY`), all CC BY 4.0 — re-read from the program
-cache. It is the same source, the same loader (most-recent year per indicator
-per economy), and the same one-legged-average formula the headline pipeline
-`process-sp.py` uses. No new data, no network, no AI-supplied figures
-(network was blocked; values are re-read from the committed cache identical to
-the headline source). The readiness-gap is a triage measure per
-CONSTITUTION.md §6.4, not a country quality ranking; per §13.3 the object here
-is whether the index *observes* shock-payment capacity at all — a
+This answers the keystone in `deep-questions.md` §1.1 (and §7) with two real
+recomputations. `scripts/deepen-include-partial.py` reproduces the dropped-leg
+ledger from the committed World Bank WDI cache: ASPIRE all social-protection
+coverage (`per_allsp.cov_pop_tot`), Global Findex account ownership
+(`FX.OWN.TOTL.ZS` [@wb2022findex]), and WDI poverty headcount
+(`SI.POV.DDAY`). The new
+`scripts/audit-social-protection-source-readiness.py` fetches current public
+WDI metadata/data for the all-SP leg, the narrower ASPIRE social safety-net
+leg (`per_sa_allsa.cov_pop_tot`), Findex, and poverty indicators. No empirical
+number below comes from model memory. The readiness-gap is a triage measure
+per CONSTITUTION.md §6.4, not a country quality ranking; per §13.3 the object
+here is whether the index *observes* shock-payment capacity at all — a
 measurement / observability gap, not a statement that any economy is
 under-protected.
 
-Artifact: `generated/social-protection-dropped-leg.{json,csv}`.
+Artifacts:
+
+- `generated/social-protection-dropped-leg.{json,csv}`
+- `generated/social-protection-dropped-leg-source-audit.json`
+- `generated/social-protection-social-safety-net-rerank.csv`
+- `generated/social-protection-source-readiness-sources.csv`
+
+## Source repair: all social protection is not shock-payment delivery
+
+The dropped-leg audit remains valid: by the old value-ranked order, the top
+five are PAK, VUT, MMR, LAO, and TJK, while the named headline five are BGD,
+LAO, MMR, PAK, and PHL. The source audit adds a second question: even if the
+missing-leg filter is made visible, does the coverage leg measure the thing
+the title implies?
+
+It does not. The old coverage leg is WDI/ASPIRE
+`per_allsp.cov_pop_tot`, "coverage of social protection and labor programs,"
+not an emergency cash-transfer delivery measure. The live WDI metadata pull
+finds **35** roster economies with latest all-SP coverage values, **30** with
+latest social safety-net coverage values, **27** with latest Findex account
+ownership values, **36** with poverty headcount values, and **36** with
+poverty-gap values. Replacing the all-SP leg with the narrower social
+safety-net coverage leg is a stress test, not a new headline. It produces a
+top five of **PNG, SLB, TLS, FSM, TKM** with **zero overlap** with the named
+headline five. All five enter relative to the headline set; BGD, LAO, MMR,
+PAK, and PHL all drop.
+
+That result is a warning about source objects and vintage, not a replacement
+ranking. The social safety-net top rows are mostly one-legged and often old:
+Papua New Guinea combines 2009 poverty with 2009 safety-net coverage; Solomon
+Islands combines 2012 poverty with 2005 safety-net coverage; Timor-Leste
+combines 2014 poverty with 2011 coverage; Micronesia combines 2013 poverty
+with 2000 coverage; Turkmenistan enters through a 1998 poverty value and a
+2017 account-ownership value. The point is not that this is a better top five;
+it is that the current result is highly sensitive to which public proxy is
+called "coverage."
+
+The source audit also catches a label drift. Current WDI metadata names
+`SI.POV.DDAY` as **"Poverty headcount ratio at $3.00 a day (2021 PPP)"**,
+while older program prose labels the same indicator as `$2.15/day 2017 PPP`.
+That mismatch must be visible anywhere the poverty denominator is shown.
+
+The analysis-ready object is still missing: no emergency-transfer program
+registry, beneficiary roster, payment-rail use table, delivery-speed record,
+or shock-event trigger is joined. The combined artifact is therefore a source
+and observability audit, not a shock-payment delivery estimate.
 
 ## The question
 

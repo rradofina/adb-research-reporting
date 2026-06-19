@@ -984,6 +984,9 @@ function buildFoodCoverageModel(report: ShowcaseReport, data: JsonValue): AuditM
 }
 
 function buildSocialProtectionModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.social_protection_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.social_protection_source_readiness);
   const headline = strings(data.headline_five);
   const excluded = new Set(safeRows(data.excluded_but_outrank_lowest_headline).map((row) => String(row.iso3)));
   const rows = safeRows(data.value_ranked_order)
@@ -1004,27 +1007,97 @@ function buildSocialProtectionModel(report: ShowcaseReport, data: JsonValue): Au
         intensity: excluded.has(iso) ? 92 : headlineRank >= 0 ? 44 : 70,
       };
     }) as RankRow[];
+  const safetyTop5 = strings(sourceSummary.safety_net_variant_top5);
+  const oldTop5 = strings(sourceSummary.old_value_top5);
+  const safetyEntered = strings(sourceSummary.safety_net_entered_vs_headline);
+  const safetyDropped = strings(sourceSummary.safety_net_dropped_vs_headline);
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Source-audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  const componentCards = hasSourceAudit ? [
+    {
+      key: "all-sp",
+      value: formatNumber(sourceSummary.all_sp_latest_rows),
+      label: "All-SP coverage rows",
+      note: "The old coverage leg is all social protection and labor coverage, not emergency cash-transfer delivery.",
+      status: "flag",
+    },
+    {
+      key: "safety-net",
+      value: safetyTop5.join(", ") || "none",
+      label: "Safety-net variant top five",
+      note: `${formatNumber(sourceSummary.safety_net_headline_overlap_count)} of the named headline five remain; this is a source-object stress test, not a replacement headline.`,
+      status: "flag",
+    },
+    {
+      key: "poverty-line",
+      value: "$3.00",
+      label: "Current WDI poverty line",
+      note: "Current SI.POV.DDAY metadata says $3.00/day 2021 PPP while older program prose says $2.15/day 2017 PPP.",
+      status: "flag",
+    },
+    {
+      key: "account-proxy",
+      value: formatNumber(sourceSummary.account_latest_rows),
+      label: "Findex account rows",
+      note: "Account ownership is availability of an account, not active payment-rail use or last-mile delivery.",
+      status: "flag",
+    },
+    {
+      key: "delivery-object",
+      value: "0",
+      label: "Shock-payment delivery joins",
+      note: "No emergency program registry, beneficiary roster, payment rail, delivery-speed record, or shock-event trigger is joined; the delivery object is not joined.",
+      status: "dropped",
+    },
+  ] as ComponentCard[] : undefined;
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: formatNumber(data.excluded_for_missing_leg_count), label: "one-legged rows outrank headline tail" },
+      { value: formatNumber(sourceSummary.safety_net_headline_overlap_count), label: "headline overlap under safety-net leg" },
+      { value: formatNumber(sourceSummary.safety_net_latest_rows), label: "safety-net coverage rows" },
+      { value: String(sourceSummary.analysis_ready_shock_payment_coverage), label: "analysis-ready delivery object" },
+    ] : [
       { value: formatNumber(data.excluded_for_missing_leg_count), label: "excluded rows outrank lowest headline" },
       { value: `${data.lowest_ranked_headline_member?.iso3 || "?"} #${data.lowest_ranked_headline_member?.value_rank || "?"}`, label: "lowest headline member by value rank" },
       { value: strings(data.imputation_variant?.entered_vs_headline).join(", ") || "none", label: "entered under imputation variant" },
     ],
-    chartTitle: "Missing one leg can hide a higher-ranked economy.",
-    chartDeck: "The ledger shows value rank before the headline filter removes one-legged observations.",
+    chartTitle: hasSourceAudit
+      ? "Changing the source object changes the whole top set."
+      : "Missing one leg can hide a higher-ranked economy.",
+    chartDeck: hasSourceAudit
+      ? "The rank ledger still shows the dropped-leg problem. The cards add the source wall: all-SP is not shock-payment delivery, the narrower safety-net variant reorders the set, and no beneficiary payment object is joined."
+      : "The ledger shows value rank before the headline filter removes one-legged observations.",
     leftLabel: "Value-ranked order",
     rightLabel: "Headline inclusion",
     rows,
+    componentCards,
     readouts: [
       { label: "Headline five", value: headline.join(", ") },
       { label: "Excluded but higher than lowest headline", value: safeRows(data.excluded_but_outrank_lowest_headline).map((row) => String(row.iso3)).join(", ") },
       { label: "Imputed top five", value: strings(data.imputation_variant?.imputed_top5).join(", ") },
       { label: "Dropped under imputation", value: strings(data.imputation_variant?.dropped_vs_headline).join(", ") || "none" },
+      ...(hasSourceAudit ? [
+        { label: "Old value top five", value: oldTop5.join(", ") || "none" },
+        { label: "Safety-net variant top five", value: safetyTop5.join(", ") || "none" },
+        { label: "Entered under safety-net leg", value: safetyEntered.join(", ") || "none" },
+        { label: "Dropped under safety-net leg", value: safetyDropped.join(", ") || "none" },
+        { label: "Poverty metadata label", value: String(sourceSummary.poverty_indicator_current_name || "not parsed") },
+        { label: "Delivery object built", value: String(sourceSummary.analysis_ready_shock_payment_coverage) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.social_protection_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }

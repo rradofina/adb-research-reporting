@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair and possible same-facility wall) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, and priority name-conflict wall) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -38,14 +38,16 @@ overrides priority by editing this list.
    row-evidence ledger, targeted public-map inspection, first-row
    public-source confirmation, 40-row targeted public-source confirmation,
    16-row public-source decision-ledger, 3-row possible same-facility review,
-   4-row source-repair public-evidence attachment, 4-row official-coordinate
-   evidence, 4-row public-explanation search, 3-row correction-record
-   follow-up, 3-row no-contact clarification packet, and 3-row
+   9-row priority name-conflict review, 4-row source-repair public-evidence
+   attachment, 4-row official-coordinate evidence, 4-row public-explanation
+   search, 3-row correction-record follow-up, 3-row no-contact clarification
+   packet, and 3-row
    registry-vintage review added 2026-06-19*. Owner-only source contact or
-   human validation is now the substantive source-repair and possible
-   same-facility wall for the same-name cross-district Durgapur conflict,
-   the shared-coordinate Narayanganj records, and the possible same-facility
-   candidates. No maturity label changes.
+   human validation is now the substantive source-repair, possible
+   same-facility, and priority name-conflict wall for the same-name
+   cross-district Durgapur conflict, the shared-coordinate Narayanganj
+   records, the possible same-facility candidates, and the priority
+   name-conflict candidates. No maturity label changes.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -158,6 +160,37 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ priority name-conflict review):** Added
+  `public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py`,
+  generated
+  `psdq-bgd-facility-validation-priority-name-conflict-review.csv`
+  and
+  `psdq-bgd-facility-validation-priority-name-conflict-review-summary.json`,
+  and wrote
+  `public-service-data-quality/facility-validation-priority-name-conflict-review.md`.
+  The no-network review reads the public-source decision ledger and
+  targeted-row confirmation CSV for the 9 priority-1 name-conflict public-map
+  candidates. All 9 rows have DGHS profiles and OSM API records retrieved; 1
+  row has candidate name score at least 0.70; 6 candidates are at least 5
+  kilometers from the inspection point; 1 candidate is at least 10 kilometers
+  from the inspection point; 4 candidate names contain an admin place name; and
+  the current artifacts contain 0 public alias/location sources. It allows 0
+  closures, 0 same-facility reclassifications, and 0 map-absence uses. This is
+  a no-contact evidence gate, not source-owner response, human validation,
+  ground truth, coordinate correction, row closure, same-facility
+  reclassification, maturity promotion, or a human-final upgrade. Verification
+  passed: priority name-conflict script rerun, program-script `py_compile`,
+  evidence/reference/docs sync, production site build, six deterministic gates
+  plus `git diff --check`, review packet and zip rebuild, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with 9 rendered cards, no
+  page-level or card-level horizontal overflow, no page errors, no console
+  messages, Pabna, Narsingdi, `0 alias source`, and `0 closed` visible.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-priority-name-conflict-review-desktop.png`,
+  `reporting-site/qa/showcase-psdq-priority-name-conflict-review-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-priority-name-conflict-review-mobile.png`,
+  and
+  `reporting-site/qa/showcase-psdq-priority-name-conflict-review-mobile-cards.png`.
 - **2026-06-19 (PSDQ possible same-facility review):** Added
   `public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py`,
   generated

@@ -76,6 +76,7 @@ const PROGRAM_FILES = [
   "facility-validation-public-source-confirmation-targeted-rows.md",
   "facility-validation-public-source-decision-ledger.md",
   "facility-validation-possible-same-facility-review.md",
+  "facility-validation-priority-name-conflict-review.md",
   "facility-validation-source-repair-public-evidence.md",
   "facility-validation-source-repair-official-coordinate-evidence.md",
   "facility-validation-source-repair-public-explanation-evidence.md",

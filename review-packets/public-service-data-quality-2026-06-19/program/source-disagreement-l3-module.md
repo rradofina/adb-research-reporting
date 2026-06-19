@@ -449,6 +449,35 @@ row has a name score of 1.0000, but the public candidate is still 2.3 km from
 the inspection point, so the row remains open until identity and location are
 validated together.
 
+## Priority Name-Conflict Review Addendum
+
+The priority name-conflict review now lives in
+`facility-validation-priority-name-conflict-review.md`. The script
+`scripts/build-bgd-facility-priority-name-conflict-review.py` reads the
+decision ledger and targeted-row confirmation CSV without fetching new data.
+It isolates the nine priority-1 rows where a public OSM candidate is visible
+but the name conflict remains unresolved.
+
+The pass covers the 9 priority-1 name-conflict rows in the decision ledger:
+
+| Priority name-conflict signal | Rows |
+|---|---:|
+| DGHS profiles retrieved | 9 |
+| OSM API records retrieved | 9 |
+| Candidate name score at least 0.70 | 1 |
+| Candidate distance at least 5 km | 6 |
+| Candidate distance at least 10 km | 1 |
+| Candidate name contains admin place name | 4 |
+| Public alias/location sources found | 0 |
+| Closures allowed | 0 |
+| Same-facility reclassifications allowed | 0 |
+| Map-absence uses allowed | 0 |
+
+The practical rule is that a nearby mapped hospital is reviewer context, not
+row resolution. These rows stay open until public alias evidence, a public
+location source, source-owner clarification, or human validation resolves the
+name conflict.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -638,6 +667,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
+python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -679,6 +709,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

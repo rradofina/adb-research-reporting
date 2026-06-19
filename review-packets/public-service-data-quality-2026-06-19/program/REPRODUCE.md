@@ -70,6 +70,11 @@ workbook and Codex seeded the canonical cache.
   possible same-facility public-map candidates, carries forward name-score and
   distance evidence, and keeps closure/reclassification blocked. It is not
   human validation.
+- The Bangladesh priority name-conflict review is a no-network pass over the
+  decision ledger and targeted-row confirmation packet. It isolates the nine
+  priority-1 name-conflict candidates, carries forward name-score, distance,
+  admin-place-name, and alias-source evidence, and keeps all rows open. It is
+  not human validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -211,6 +216,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
+python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -511,6 +517,31 @@ current pass reviews 3 possible same-facility rows. All 3 have DGHS profile
 and OSM API evidence retrieved; 1 has a name score at least 0.95; all 3
 candidates are at least 2 kilometers from the inspection point. It allows 0
 closures, 0 same-facility reclassifications, and 0 map-absence uses.
+
+## Bangladesh facility-validation priority name-conflict review
+
+This step does not fetch data. It reads the public-source decision ledger and
+the targeted-row public-source confirmation CSV, then isolates the nine
+priority-1 rows where a public OSM candidate is visible but the name conflict
+remains unresolved.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv`
+- `generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json`
+
+The output status is `ai_priority_name_conflict_review_not_validation`. The
+current pass reviews 9 priority name-conflict rows. All 9 have DGHS profile
+and OSM API evidence retrieved; 1 has a candidate name score at least 0.70; 6
+candidates are at least 5 kilometers from the inspection point; 1 candidate is
+at least 10 kilometers from the inspection point; 4 candidate names contain an
+admin place name; and the current artifacts contain 0 public alias or location
+sources. It allows 0 closures, 0 same-facility reclassifications, and 0
+map-absence uses.
 
 ## Bangladesh facility-validation source-repair public evidence
 

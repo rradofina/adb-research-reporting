@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -30,8 +30,8 @@ ladder, the non-Bangladesh monitor-grade source-validation scan, the
 station-level monitor-grade review queue, the exact station method-evidence
 audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
-status/certification source scan, and the Uzbekistan blocker-row follow-up
-honestly, and do not imply
+status/certification source scan, the Uzbekistan blocker-row follow-up, and
+the Indonesia/Georgia row-method source scan honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until official method tables, station crosswalks, station-level
 current-status sources, and catchment methods are added.
@@ -471,6 +471,20 @@ current-status sources, and catchment methods are added.
   Evidence/Data tabs, and desktop/mobile route panel, writing
   `reporting-site/qa/showcase-air-blocker-followup-desktop.png` and
   `reporting-site/qa/showcase-air-blocker-followup-mobile.png`.
+- **2026-06-19:** Added the Indonesia/Georgia row-method source scan. New
+  seed `source-inputs/indonesia-georgia-row-method-source-seed.csv` and script
+  `scripts/scan-indonesia-georgia-row-method-sources.py` scan the 38 exact
+  PM2.5 portal/API rows left open by the exact station method-evidence audit.
+  The scan writes
+  `generated/air-monitoring-indonesia-georgia-row-method-source-scan.csv` and
+  `generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json`,
+  retrieves 29 of 29 seeded or expanded source URLs, including 22 BMKG
+  station-detail pages, finds 22 Indonesia same-page method-context candidates
+  and 9 Georgia station-alias context candidates, and still records 0
+  current-status confirmed rows, 0 station-method classified rows, 0 complete
+  monitor-grade rows, and 0 station-radius-ready rows. Wrote
+  `indonesia-georgia-row-method-source-scan.md` and wired the public
+  Indonesia/Georgia method-context wall.
 
 ## Next focused work
 
@@ -482,9 +496,13 @@ current-status sources, and catchment methods are added.
    station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, search for
-   public station-owner or regulator method tables that connect the
-   source-level method language to the exact station rows.
+2. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, the first
+   source scan finds useful context but no closure: 22 Indonesia BMKG
+   station-detail pages carry same-page PM2.5 display and Beta Attenuation
+   Monitoring language, while 9 Georgia rows have station-alias context. The
+   next useful work is a stricter public station-owner or regulator table that
+   gives station-code method class, current status, calibration/status, and
+   complete monitor-grade classification for the exact rows.
 3. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
@@ -522,6 +540,12 @@ current-status sources, and catchment methods are added.
   current-status confirmed rows, 0 station-method classified rows, 0 complete
   monitor-grade classification rows, and 0 station-radius
   grade-assumption-ready rows.
+- The Indonesia/Georgia row-method source scan retrieves 29 public source URLs
+  and improves the 38 exact PM2.5 portal/API row lane with 22 BMKG same-page
+  method-context candidates and 9 Georgia station-alias context candidates, but
+  it still records 0 current-status confirmed rows, 0 station-method classified
+  rows, 0 complete monitor-grade classification rows, and 0 station-radius-ready
+  rows.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

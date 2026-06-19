@@ -1210,6 +1210,95 @@ interface UzbekistanBlockerFollowupSummary {
   reader_warning: string;
 }
 
+interface IndonesiaGeorgiaRowMethodSourceGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface IndonesiaGeorgiaRowMethodSourceCountryRow {
+  iso3: string;
+  country: string;
+  target_rows: number;
+  source_urls_retrieved: number;
+  source_urls_seeded_or_expanded: number;
+  prior_exact_pm25_rows: number;
+  positive_prior_raw_value_rows: number;
+  missing_prior_raw_value_rows: number;
+  same_page_method_context_candidate_rows: number;
+  same_page_current_context_candidate_rows: number;
+  station_context_candidate_rows: number;
+  current_status_confirmed_rows: number;
+  station_method_classified_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface IndonesiaGeorgiaRowMethodSourceDecision {
+  decision: string;
+  rows: number;
+}
+
+interface IndonesiaGeorgiaRowMethodSourceRecord {
+  source_key: string;
+  source_role: string;
+  iso3: string;
+  url: string;
+  retrieved: boolean;
+  expanded_for_station_id: string;
+  matched_method_terms: string[];
+  matched_current_terms: string[];
+  matched_standard_terms: string[];
+  source_note: string;
+}
+
+interface IndonesiaGeorgiaRowMethodSourceSampleRow {
+  iso3: string;
+  source_station_id: string;
+  source_station_name: string;
+  exact_live_pm25_value_status: string;
+  exact_station_detail_timestamp_raw: string;
+  same_page_method_context_candidate: boolean;
+  station_alias_context_source_keys: string;
+  source_scan_decision: string;
+}
+
+interface IndonesiaGeorgiaRowMethodSourceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_indonesia_georgia_rows: number;
+    target_indonesia_rows: number;
+    target_georgia_rows: number;
+    source_urls_seeded_or_expanded: number;
+    source_urls_retrieved: number;
+    source_urls_failed: number;
+    prior_exact_pm25_rows: number;
+    positive_prior_raw_value_rows: number;
+    missing_prior_raw_value_rows: number;
+    exact_station_detail_retrieved_rows: number;
+    exact_station_detail_recent_within_30_days_rows: number;
+    same_page_method_context_candidate_rows: number;
+    same_page_current_context_candidate_rows: number;
+    station_context_candidate_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  country_rows: IndonesiaGeorgiaRowMethodSourceCountryRow[];
+  decision_counts: IndonesiaGeorgiaRowMethodSourceDecision[];
+  evidence_gate_counts: IndonesiaGeorgiaRowMethodSourceGate[];
+  source_records: IndonesiaGeorgiaRowMethodSourceRecord[];
+  station_sample_rows: IndonesiaGeorgiaRowMethodSourceSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1332,6 +1421,8 @@ export default function ShowcaseAirMonitoring() {
     useState<UzbekistanStatusCertificationSummary | null>(null);
   const [uzbekistanBlockerFollowup, setUzbekistanBlockerFollowup] =
     useState<UzbekistanBlockerFollowupSummary | null>(null);
+  const [indonesiaGeorgiaRowMethodSource, setIndonesiaGeorgiaRowMethodSource] =
+    useState<IndonesiaGeorgiaRowMethodSourceSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1458,6 +1549,26 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Indonesia/Georgia row method source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setIndonesiaGeorgiaRowMethodSource(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
@@ -1591,6 +1702,8 @@ export default function ShowcaseAirMonitoring() {
       <AirUzbekistanStatusCertificationPanel summary={uzbekistanStatusCertification} />
 
       <AirUzbekistanBlockerFollowupPanel summary={uzbekistanBlockerFollowup} />
+
+      <AirIndonesiaGeorgiaRowMethodSourcePanel summary={indonesiaGeorgiaRowMethodSource} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -4386,6 +4499,200 @@ function AirUzbekistanBlockerFollowupPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan blocker-row follow-up...</p>
+      )}
+    </section>
+  );
+}
+
+function AirIndonesiaGeorgiaRowMethodSourcePanel({
+  summary,
+}: {
+  summary: IndonesiaGeorgiaRowMethodSourceSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const countries = summary?.country_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sourceRecords = (summary?.source_records ?? []).filter((source) => !source.expanded_for_station_id);
+  const sampleRows = summary?.station_sample_rows ?? [];
+  const total = Math.max(1, counts?.target_indonesia_georgia_rows ?? 0);
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-row-method-section" aria-label="Indonesia and Georgia row method source scan">
+      <div className="air-grade-method-head">
+        <div>
+          <p className="kicker kicker-crimson">Indonesia/Georgia source scan</p>
+          <h2>Better row context, still no grade closure.</h2>
+          <p>
+            The next loop checks the 38 exact PM2.5 portal/API rows outside
+            Uzbekistan. Indonesia gains same-page BMKG method context; Georgia
+            remains source and station-alias context only.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-row-method-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>Station-radius assumptions remain blocked in both countries</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid">
+            <div>
+              <span>Target rows</span>
+              <strong>{formatNumber(counts.target_indonesia_georgia_rows)}</strong>
+              <em>{formatNumber(counts.target_indonesia_rows)} IDN, {formatNumber(counts.target_georgia_rows)} GEO</em>
+            </div>
+            <div>
+              <span>Sources</span>
+              <strong>{formatNumber(counts.source_urls_retrieved)}</strong>
+              <em>{formatNumber(counts.source_urls_seeded_or_expanded)} seeded or expanded URLs</em>
+            </div>
+            <div>
+              <span>BMKG context</span>
+              <strong>{formatNumber(counts.same_page_method_context_candidate_rows)}</strong>
+              <em>same-page method candidates</em>
+            </div>
+            <div>
+              <span>Georgia context</span>
+              <strong>{formatNumber(countries.find((row) => row.iso3 === "GEO")?.station_context_candidate_rows ?? 0)}</strong>
+              <em>station-alias candidates</em>
+            </div>
+            <div>
+              <span>Current status</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>explicit closures</em>
+            </div>
+            <div>
+              <span>Radius ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge" aria-label="Indonesia and Georgia row-method source decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className={`air-grade-method-lane air-row-method-lane air-row-method-lane-${decision.decision}`}>
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+                <p>
+                  {decision.decision.includes("bmkg")
+                    ? "Exact BMKG detail pages now carry same-page PM2.5 display and Beta Attenuation language."
+                    : decision.decision.includes("georgia")
+                      ? "Georgia rows have station or place context, but not station-code method closure."
+                      : "Country source context exists, but it is still not connected enough for row closure."}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-country-grid">
+            {countries.map((row) => (
+              <article key={row.iso3} className="air-grade-method-country air-row-method-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.target_rows)} target rows</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Sources</dt>
+                    <dd>{formatNumber(row.source_urls_retrieved)}</dd>
+                  </div>
+                  <div>
+                    <dt>Prior exact</dt>
+                    <dd>{formatNumber(row.prior_exact_pm25_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Raw +</dt>
+                    <dd>{formatNumber(row.positive_prior_raw_value_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Same page</dt>
+                    <dd>{formatNumber(row.same_page_method_context_candidate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Context</dt>
+                    <dd>{formatNumber(row.station_context_candidate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(row.complete_monitor_grade_classification_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-source-grid">
+            {sourceRecords.map((source) => (
+              <article key={source.source_key} className="air-grade-method-source air-row-method-source">
+                <div>
+                  <span>{source.iso3} source</span>
+                  <strong>{source.source_key}</strong>
+                  <b>{sentenceCaseStatus(source.source_role)}</b>
+                </div>
+                <p>{source.source_note}</p>
+                <small>
+                  Method {formatNumber(source.matched_method_terms.length)} · Current {formatNumber(source.matched_current_terms.length)} · Standard {formatNumber(source.matched_standard_terms.length)}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid">
+            {sampleRows.map((row) => (
+              <article key={`${row.iso3}-${row.source_station_id}`} className="air-grade-method-row air-row-method-row">
+                <div>
+                  <span>{row.iso3} · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.source_scan_decision)}</b>
+                </div>
+                <p>
+                  {row.same_page_method_context_candidate
+                    ? `BMKG detail page timestamp: ${row.exact_station_detail_timestamp_raw || "not parsed"}.`
+                    : row.station_alias_context_source_keys
+                      ? `Context source keys: ${row.station_alias_context_source_keys}.`
+                      : "Only source-level context was found for this row."}
+                </p>
+                <small>{sentenceCaseStatus(row.exact_live_pm25_value_status)}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/indonesia-georgia-row-method-source-scan.md" download>
+              Source scan note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Indonesia/Georgia row-method source scan...</p>
       )}
     </section>
   );

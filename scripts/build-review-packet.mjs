@@ -81,6 +81,7 @@ const PROGRAM_FILES = [
   "uzbekistan-station-specific-source-evidence.md",
   "uzbekistan-status-certification-source-scan.md",
   "uzbekistan-blocker-row-followup.md",
+  "indonesia-georgia-row-method-source-scan.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

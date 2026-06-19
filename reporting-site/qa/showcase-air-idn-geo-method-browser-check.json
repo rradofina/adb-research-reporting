@@ -1,0 +1,177 @@
+{
+  "url": "http://127.0.0.1:5175/showcase/air-monitoring-observability",
+  "desktop": {
+    "viewport": "desktop",
+    "screenshotPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-idn-geo-method-desktop.png",
+    "result": {
+      "found": true,
+      "heading": "Better row context, still no grade closure.",
+      "hasTargetRows38": true,
+      "hasSources29": true,
+      "hasBmkg22": true,
+      "hasGeorgia9": true,
+      "hasZeroClosure": true,
+      "statCards": [
+        {
+          "label": "Target rows",
+          "value": "38",
+          "note": "22 IDN, 16 GEO"
+        },
+        {
+          "label": "Sources",
+          "value": "29",
+          "note": "29 seeded or expanded URLs"
+        },
+        {
+          "label": "BMKG context",
+          "value": "22",
+          "note": "same-page method candidates"
+        },
+        {
+          "label": "Georgia context",
+          "value": "9",
+          "note": "station-alias candidates"
+        },
+        {
+          "label": "Current status",
+          "value": "0",
+          "note": "explicit closures"
+        },
+        {
+          "label": "Radius ready",
+          "value": "0",
+          "note": "still blocked"
+        }
+      ],
+      "decisionCards": [
+        "exact bmkg detail method context keep not grade ready22 rowsExact BMKG detail pages now carry same-page PM2.5 display and Beta Attenuation language.",
+        "georgia station alias context keep not grade ready9 rowsGeorgia rows have station or place context, but not station-code method closure.",
+        "source level context only keep open7 rowsCountry source context exists, but it is still not connected enough for row closure."
+      ],
+      "countryCards": [
+        "GEOGeorgia16 target rowsSources4Prior exact16Raw +0Same page0Context9Grade0",
+        "IDNIndonesia22 target rowsSources25Prior exact22Raw +22Same page22Context22Grade0"
+      ],
+      "links": [
+        {
+          "text": "Source scan note",
+          "href": "/programs/air-monitoring/indonesia-georgia-row-method-source-scan.md"
+        },
+        {
+          "text": "Summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json"
+        },
+        {
+          "text": "Row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan.csv"
+        }
+      ],
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 1100,
+        "bodyScrollWidth": 1440,
+        "docScrollWidth": 1440,
+        "clientWidth": 1440
+      },
+      "panelHeight": 3265,
+      "overflowEls": [],
+      "sampleText": "Indonesia/Georgia source scanBetter row context, still no grade closure.The next loop checks the 38 exact PM2.5 portal/API rows outside Uzbekistan. Indonesia gains same-page BMKG method context; Georgia remains source and station-alias context only.Complete grade rows0Station-radius assumptions remain blocked in both countriesTarget rows3822 IDN, 16 GEOSources2929 seeded or expanded URLsBMKG context22same-page method candidatesGeorgia context9station-alias candidatesCurrent status0explicit closuresRadius ready0still blockedexact bmkg detail method context keep not grade ready22 rowsExact BMKG detail pages now carry same-page PM2.5 display and Beta Attenuation language.georgia station alias context keep not grade ready9 rowsGeorgia rows have station or place context, but not station-code method closure.source level context only keep open7 rowsCountry source context exists, but it is still not connected enough for row closure.GEOGeorgia16 target rowsSources4Prior exact16Raw +0Same page0Context9Grade0IDNIndonesia22 target rowsSources25Prior exact22Raw +22Same page22Context22Grade0IDN sourcebmkg_pm25_portalofficial pm25 portalBMKG public PM2.5 portal with station links and portal-level method language.Method 3 · Current 3 · Standard 0IDN sourcebmkg_sumsel_pm25_methodofficial method contextBMKG regional PM2.5 method context page.Method 3 · Current 0 · Standard 1IDN sourcebmkg_observation_regulation_2019official observation regulationBMKG 2019 air-quality observation and data-management regulation.Method 2 · Current 3 · Standard 2GEO sourceairgov_homeofficial air quality portalOfficial air.gov.ge portal context for current pollutant display by monitoring station.Method 0 · Current 3 · Standard 1GEO sourcenea_mestia_stationofficial station newsNEA news item for the Mestia auto"
+    },
+    "errors": [],
+    "failedRequests": [],
+    "clip": {
+      "x": 0,
+      "y": 33567,
+      "width": 1440,
+      "height": 3289,
+      "scale": 1
+    }
+  },
+  "mobile": {
+    "viewport": "mobile",
+    "screenshotPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-idn-geo-method-mobile.png",
+    "result": {
+      "found": true,
+      "heading": "Better row context, still no grade closure.",
+      "hasTargetRows38": true,
+      "hasSources29": true,
+      "hasBmkg22": true,
+      "hasGeorgia9": true,
+      "hasZeroClosure": true,
+      "statCards": [
+        {
+          "label": "Target rows",
+          "value": "38",
+          "note": "22 IDN, 16 GEO"
+        },
+        {
+          "label": "Sources",
+          "value": "29",
+          "note": "29 seeded or expanded URLs"
+        },
+        {
+          "label": "BMKG context",
+          "value": "22",
+          "note": "same-page method candidates"
+        },
+        {
+          "label": "Georgia context",
+          "value": "9",
+          "note": "station-alias candidates"
+        },
+        {
+          "label": "Current status",
+          "value": "0",
+          "note": "explicit closures"
+        },
+        {
+          "label": "Radius ready",
+          "value": "0",
+          "note": "still blocked"
+        }
+      ],
+      "decisionCards": [
+        "exact bmkg detail method context keep not grade ready22 rowsExact BMKG detail pages now carry same-page PM2.5 display and Beta Attenuation language.",
+        "georgia station alias context keep not grade ready9 rowsGeorgia rows have station or place context, but not station-code method closure.",
+        "source level context only keep open7 rowsCountry source context exists, but it is still not connected enough for row closure."
+      ],
+      "countryCards": [
+        "GEOGeorgia16 target rowsSources4Prior exact16Raw +0Same page0Context9Grade0",
+        "IDNIndonesia22 target rowsSources25Prior exact22Raw +22Same page22Context22Grade0"
+      ],
+      "links": [
+        {
+          "text": "Source scan note",
+          "href": "/programs/air-monitoring/indonesia-georgia-row-method-source-scan.md"
+        },
+        {
+          "text": "Summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan-summary.json"
+        },
+        {
+          "text": "Row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-indonesia-georgia-row-method-source-scan.csv"
+        }
+      ],
+      "viewport": {
+        "innerWidth": 390,
+        "innerHeight": 1000,
+        "bodyScrollWidth": 390,
+        "docScrollWidth": 390,
+        "clientWidth": 390
+      },
+      "panelHeight": 8016,
+      "overflowEls": [],
+      "sampleText": "Indonesia/Georgia source scanBetter row context, still no grade closure.The next loop checks the 38 exact PM2.5 portal/API rows outside Uzbekistan. Indonesia gains same-page BMKG method context; Georgia remains source and station-alias context only.Complete grade rows0Station-radius assumptions remain blocked in both countriesTarget rows3822 IDN, 16 GEOSources2929 seeded or expanded URLsBMKG context22same-page method candidatesGeorgia context9station-alias candidatesCurrent status0explicit closuresRadius ready0still blockedexact bmkg detail method context keep not grade ready22 rowsExact BMKG detail pages now carry same-page PM2.5 display and Beta Attenuation language.georgia station alias context keep not grade ready9 rowsGeorgia rows have station or place context, but not station-code method closure.source level context only keep open7 rowsCountry source context exists, but it is still not connected enough for row closure.GEOGeorgia16 target rowsSources4Prior exact16Raw +0Same page0Context9Grade0IDNIndonesia22 target rowsSources25Prior exact22Raw +22Same page22Context22Grade0IDN sourcebmkg_pm25_portalofficial pm25 portalBMKG public PM2.5 portal with station links and portal-level method language.Method 3 · Current 3 · Standard 0IDN sourcebmkg_sumsel_pm25_methodofficial method contextBMKG regional PM2.5 method context page.Method 3 · Current 0 · Standard 1IDN sourcebmkg_observation_regulation_2019official observation regulationBMKG 2019 air-quality observation and data-management regulation.Method 2 · Current 3 · Standard 2GEO sourceairgov_homeofficial air quality portalOfficial air.gov.ge portal context for current pollutant display by monitoring station.Method 0 · Current 3 · Standard 1GEO sourcenea_mestia_stationofficial station newsNEA news item for the Mestia auto"
+    },
+    "errors": [],
+    "failedRequests": [],
+    "clip": {
+      "x": 0,
+      "y": 90514,
+      "width": 390,
+      "height": 8040,
+      "scale": 1
+    }
+  }
+}

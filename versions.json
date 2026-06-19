@@ -153,6 +153,12 @@
       "retrieved_on": "2026-06-19",
       "notes": "Exact row-level follow-up for the 3 Uzbekistan blocker rows left by the status/certification scan. It retrieves 2 official regional table pages and 3 exact official station-detail pages, finds 2 stale detail rows with regional Updating data status and 1 recent Sergili row with a -9999 PM2.5 sentinel, and still resolves 0 public blockers, 0 current-status confirmations, 0 complete monitor-grade rows, and 0 station-radius-ready rows."
     },
+    "air_monitoring_indonesia_georgia_row_method_source_scan": {
+      "script": "air-monitoring/scripts/scan-indonesia-georgia-row-method-sources.py",
+      "seed": "air-monitoring/source-inputs/indonesia-georgia-row-method-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "notes": "Seeded and expanded public source scan for the 38 Indonesia and Georgia exact PM2.5 portal/API rows. It retrieves 29 of 29 source URLs, including 22 BMKG station-detail pages, finds 22 Indonesia same-page method-context candidates and 9 Georgia station-alias context candidates, and still keeps current-status confirmed, station-method classified, complete monitor-grade, and station-radius-ready rows at 0."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -275,6 +281,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_uzbekistan_status_certification_source_scan pin after scanning public Uzbekistan station-status, certification, maintenance, calibration, and reference-grade context sources while keeping current-status, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_indonesia_georgia_row_method_source_scan pin after scanning 38 exact Indonesia/Georgia PM2.5 portal/API rows against seeded public source and station-detail pages while keeping current-status, station-method classified, complete-grade, and station-radius readiness at zero."
     }
   ]
 }

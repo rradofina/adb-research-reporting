@@ -10511,6 +10511,27 @@
       #ffffff;
   }
 
+  .air-row-method-section {
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.1), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-row-method-callout {
+    border-left-color: #5a8227;
+    background: #f1f7ea;
+  }
+
+  .air-row-method-lane {
+    border-top-color: #5a8227;
+  }
+
+  .air-row-method-country,
+  .air-row-method-source,
+  .air-row-method-row {
+    border-left-color: #5a8227;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);

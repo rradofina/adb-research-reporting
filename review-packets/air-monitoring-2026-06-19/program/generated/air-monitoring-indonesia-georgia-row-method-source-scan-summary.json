@@ -1,0 +1,1264 @@
+{
+  "generated_at": "2026-06-19T13:08:23Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_indonesia_georgia_row_method_source_scan",
+  "method": "air_monitoring_indonesia_georgia_row_method_source_scan_v1",
+  "goal_level": "L3 Indonesia/Georgia row-method source scan",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\indonesia-georgia-row-method-source-seed.csv",
+      "role": "seeded Indonesia and Georgia public source URLs, including BMKG station-detail URL template"
+    },
+    {
+      "path": "generated\\air-monitoring-monitor-grade-station-method-evidence.csv",
+      "role": "exact station method-evidence audit; source of the 38 target rows"
+    }
+  ],
+  "coverage_counts": {
+    "target_indonesia_georgia_rows": 38,
+    "target_indonesia_rows": 22,
+    "target_georgia_rows": 16,
+    "source_urls_seeded_or_expanded": 29,
+    "source_urls_retrieved": 29,
+    "source_urls_failed": 0,
+    "prior_exact_pm25_rows": 38,
+    "positive_prior_raw_value_rows": 22,
+    "missing_prior_raw_value_rows": 16,
+    "exact_station_detail_retrieved_rows": 22,
+    "exact_station_detail_recent_within_30_days_rows": 22,
+    "same_page_method_context_candidate_rows": 22,
+    "same_page_current_context_candidate_rows": 22,
+    "station_context_candidate_rows": 31,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "country_rows": [
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "target_rows": 16,
+      "source_urls_retrieved": 4,
+      "source_urls_seeded_or_expanded": 4,
+      "prior_exact_pm25_rows": 16,
+      "positive_prior_raw_value_rows": 0,
+      "missing_prior_raw_value_rows": 16,
+      "same_page_method_context_candidate_rows": 0,
+      "same_page_current_context_candidate_rows": 0,
+      "station_context_candidate_rows": 9,
+      "current_status_confirmed_rows": 0,
+      "station_method_classified_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "target_rows": 22,
+      "source_urls_retrieved": 25,
+      "source_urls_seeded_or_expanded": 25,
+      "prior_exact_pm25_rows": 22,
+      "positive_prior_raw_value_rows": 22,
+      "missing_prior_raw_value_rows": 0,
+      "same_page_method_context_candidate_rows": 22,
+      "same_page_current_context_candidate_rows": 22,
+      "station_context_candidate_rows": 22,
+      "current_status_confirmed_rows": 0,
+      "station_method_classified_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    }
+  ],
+  "decision_counts": [
+    {
+      "decision": "exact_bmkg_detail_method_context_keep_not_grade_ready",
+      "rows": 22
+    },
+    {
+      "decision": "georgia_station_alias_context_keep_not_grade_ready",
+      "rows": 9
+    },
+    {
+      "decision": "source_level_context_only_keep_open",
+      "rows": 7
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Seeded and expanded source URLs retrieved",
+      "rows": 29,
+      "reader_use": "Retrieved source text can be inspected for station rows, method terms, current-display terms, and standards context."
+    },
+    {
+      "status": "available",
+      "gate": "Prior exact PM2.5 portal/API rows",
+      "rows": 38,
+      "reader_use": "The previous exact-row audit already confirms PM2.5 row presence for these Indonesia and Georgia targets."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Exact station-detail method context candidates",
+      "rows": 22,
+      "reader_use": "BMKG station-detail pages place station names, current PM2.5 display, and Beta Attenuation Monitoring text on the same public page."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Station or alias context candidates",
+      "rows": 31,
+      "reader_use": "Some sources name exact station rows or recognizable station/place aliases; this is context, not grade closure."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Source-level method or standard context",
+      "rows": 38,
+      "reader_use": "Country-level method and standards language is useful for the evidence ladder but remains insufficient for station-radius assumptions."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Current-status confirmed",
+      "rows": 0,
+      "reader_use": "A current PM2.5 display is not the same as a public station-status certification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station method classified",
+      "rows": 0,
+      "reader_use": "No public source gives a complete station-level method table for all 38 exact rows."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade classification",
+      "rows": 0,
+      "reader_use": "No public source classifies the 38 exact rows as complete monitor-grade records."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-radius grade assumptions",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until current status, method class, and complete grade are public and row-level."
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "bmkg_pm25_portal",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_portal",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 200225,
+      "sha256": "c4d79d78eabc1fb5f438c86f01cb55e08a8837210e36b274487e5ea426bc280d",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "PM2.5",
+        "BMKG",
+        "Konsentrasi"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "WIB",
+        "Kategori",
+        "Lihat Detail"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG public PM2.5 portal with station links and portal-level method language."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_bjb2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_bjb2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_bjb2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132931,
+      "sha256": "b3ee4600b691627405c987dfdb465b1c7b132864a00ff53e47898fdc7fe99dc5",
+      "expanded_for_station_id": "pm25_bjb2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_btm2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_btm2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_btm2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132864,
+      "sha256": "f4935717609b35dff8d5cdcf71981db4bef3f8ca9e107afffa1672e824d7f522",
+      "expanded_for_station_id": "pm25_btm2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_idp2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_idp2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_idp2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133026,
+      "sha256": "1120063e66d2e8c1e3d66128780f28653568a9d8d949f6c9606dcaea8d4c1b0c",
+      "expanded_for_station_id": "pm25_idp2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_jm3",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132918,
+      "sha256": "7c3c6a24bec6a886116f59a75091873096aa0a8b9dc92820997e14f0223452dc",
+      "expanded_for_station_id": "pm25_jm3",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_jm4",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm4",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm4",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132936,
+      "sha256": "b3e0e94be9020d9b0d948ab63d42749395036300aaade7a37025a8c74daaf963",
+      "expanded_for_station_id": "pm25_jm4",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_kmy3",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_kmy3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_kmy3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132932,
+      "sha256": "150ae90f7878bd83105c7da944eac5229c8ecd0f648c7ba10615c1c4349a0ce1",
+      "expanded_for_station_id": "pm25_kmy3",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_ktb2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ktb2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ktb2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133042,
+      "sha256": "a6015875aec6abc79acc808a91d47ab30d9ab26022fcbb2270f8fa131da3bcaa",
+      "expanded_for_station_id": "pm25_ktb2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_mdn2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mdn2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mdn2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132878,
+      "sha256": "ab417c9bafbdce79d5e02a9c0ea39ff7333f0d8a827c3f45395e85adb2d70142",
+      "expanded_for_station_id": "pm25_mdn2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_mrs",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mrs",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mrs",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132874,
+      "sha256": "9236bd56688cdc7dbcb50041d56e675aa0e17c1a212e5532b191afd2ff6dd4a6",
+      "expanded_for_station_id": "pm25_mrs",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_msg",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_msg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_msg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132919,
+      "sha256": "6d9afffc1120123fe14b9c638e694eb8fb61c8161935024093e9349f7a8e6751",
+      "expanded_for_station_id": "pm25_msg",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_pbb",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pbb",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pbb",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132917,
+      "sha256": "e6fc02cb52c7f10138380dad80e6c47edb262cb2d8aa766af9490f5e2056e928",
+      "expanded_for_station_id": "pm25_pbb",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_pk2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pk2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pk2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133037,
+      "sha256": "b289b7ff8b2213f6f1f3db65492efaa46a62a1062df5af14e0c3eb66f89c5e79",
+      "expanded_for_station_id": "pm25_pk2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_pl3",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pl3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pl3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133189,
+      "sha256": "fe1500b9b960f013506003dc8f3a44a2c00d38b0b9ec7c8ecaf7e0af4a012780",
+      "expanded_for_station_id": "pm25_pl3",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_plb4",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_plb4",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_plb4",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133134,
+      "sha256": "90d53fb501b732d2e918fc3c9b32325cf9f2820e6b3c22b6ff9dc09f0b3475bd",
+      "expanded_for_station_id": "pm25_plb4",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_pr2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pr2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pr2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133036,
+      "sha256": "740a0cd5ed2428ee7dd6748db3202cea3db06cd5aac0931c38cb16345fefb4bd",
+      "expanded_for_station_id": "pm25_pr2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_ptn2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ptn2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ptn2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133016,
+      "sha256": "36e6c722378332956e7eacf777cb0e556d922f0301c8e91b223c21b22c198baf",
+      "expanded_for_station_id": "pm25_ptn2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_sm2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_sm2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_sm2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133027,
+      "sha256": "98fd450158ef00583f5f9e449a4fd2e9f7efa9f92a806b3fa73299f2901fa8c1",
+      "expanded_for_station_id": "pm25_sm2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_smg",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_smg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_smg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132915,
+      "sha256": "bcdc11eb99c84448943be3ce9c45ce1a8c6cc3047c73498bf39d7f90e013f3e9",
+      "expanded_for_station_id": "pm25_smg",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_spd",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_spd",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_spd",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132878,
+      "sha256": "2accbe7029b1ffcb797e71d8a70c12e44e0bbd705116ec33d315d7a87f4235b6",
+      "expanded_for_station_id": "pm25_spd",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_srg",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_srg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_srg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132866,
+      "sha256": "c9b1276e8819680cc7602f5d25f88aa3f91531920dab8eb407e499d7b8ccc3e7",
+      "expanded_for_station_id": "pm25_srg",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_tj2",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_tj2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_tj2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133078,
+      "sha256": "c2caf3652155d7e9d41d7ddf9be059bf9f9aed988e23eed9f3886fa66d112dc1",
+      "expanded_for_station_id": "pm25_tj2",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_template_pm25_yky",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_pm25_station_detail_template",
+      "iso3": "IDN",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_yky",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_yky",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132879,
+      "sha256": "f7502f9909f45a3923c6a5adb166e2312b5e74c16a4977b4698b694c8d8fd7f5",
+      "expanded_for_station_id": "pm25_yky",
+      "matched_expected_terms": [
+        "PM2.5",
+        "Kualitas udara",
+        "Kategori"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "Grafik riwayat",
+        "WIB",
+        "Kategori"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG station-detail URL template expanded for each target Indonesia station ID."
+    },
+    {
+      "source_key": "bmkg_sumsel_pm25_method",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_method_context",
+      "iso3": "IDN",
+      "url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "final_url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 157703,
+      "sha256": "30ef89dee905a3aa3c7525b1ff2fc67497bdfa229321def6128891c74243cceb",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "BAM-1020",
+        "Beta Attenuation Monitor",
+        "PM 2.5"
+      ],
+      "matched_method_terms": [
+        "BAM",
+        "Beta Attenuation",
+        "BAM-1020"
+      ],
+      "matched_current_terms": [],
+      "matched_standard_terms": [
+        "NAB"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG regional PM2.5 method context page."
+    },
+    {
+      "source_key": "bmkg_observation_regulation_2019",
+      "source_name": "Konsentrasi Partikulat PM2.5",
+      "source_role": "official_observation_regulation",
+      "iso3": "IDN",
+      "url": "https://jdih.bmkg.go.id/common/dokumen/perbanno.11tahun2019.pdf",
+      "final_url": "https://jdih.bmkg.go.id/storage/common/dokumen/perbanno.11tahun2019.pdf",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 3900183,
+      "sha256": "d4d351fe8599d23823effd6caf97ef78f222524aae9680d4e0bd08ca27df8f05",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "PM2,5",
+        "peralatan otomatis"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "BAM"
+      ],
+      "matched_current_terms": [
+        "setiap hari",
+        "real time",
+        "kalibrasi berkala"
+      ],
+      "matched_standard_terms": [
+        "quality control",
+        "Lampiran II"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "BMKG 2019 air-quality observation and data-management regulation."
+    },
+    {
+      "source_key": "airgov_home",
+      "source_name": "Modern ambient air quality monitoring station opened in Mestia",
+      "source_role": "official_air_quality_portal",
+      "iso3": "GEO",
+      "url": "https://air.gov.ge/en/",
+      "final_url": "https://air.gov.ge/en/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 99849,
+      "sha256": "b7dc27a3b11182aa32fa87a915012fc29f402de7329ca206ce6c2a4694114874",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "PM2.5",
+        "monitoring station",
+        "pollutants"
+      ],
+      "matched_method_terms": [],
+      "matched_current_terms": [
+        "current state",
+        "monitoring hour",
+        "each monitoring station"
+      ],
+      "matched_standard_terms": [
+        "index"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official air.gov.ge portal context for current pollutant display by monitoring station."
+    },
+    {
+      "source_key": "nea_mestia_station",
+      "source_name": "Modern ambient air quality monitoring station opened in Mestia",
+      "source_role": "official_station_news",
+      "iso3": "GEO",
+      "url": "https://nea.gov.ge/En/News/1287",
+      "final_url": "https://nea.gov.ge/En/News/1287",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34524,
+      "sha256": "bff93ccc70833c68030c12e3d0a973db05c030799bcafb43e32aa928b1352cd5",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "automatic station",
+        "ambient air quality monitoring",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "modern standard equipment",
+        "complete data"
+      ],
+      "matched_current_terms": [
+        "24 hours",
+        "operating throughout the country"
+      ],
+      "matched_standard_terms": [
+        "standard equipment"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "NEA news item for the Mestia automatic station and national network counts."
+    },
+    {
+      "source_key": "geo_tbilisi_air_quality_plan",
+      "source_name": "Modern ambient air quality monitoring station opened in Mestia",
+      "source_role": "official_air_quality_plan",
+      "iso3": "GEO",
+      "url": "https://mepa.gov.ge/En/Files/ViewFile/55289",
+      "final_url": "https://mepa.gov.ge/En/Files/ViewFile/55289",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 1684274,
+      "sha256": "1471d231bc10cad8dad7be7621afcd30c0fd23edcee65df566b56af71e012d91",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "Tbilisi",
+        "automatic stations",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "automatic stations",
+        "continuously"
+      ],
+      "matched_current_terms": [
+        "continuously"
+      ],
+      "matched_standard_terms": [
+        "Georgian standards",
+        "EU directives"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official Tbilisi air-quality management plan with automatic-station and PM2.5 context."
+    },
+    {
+      "source_key": "nea_network_assessment",
+      "source_name": "Modern ambient air quality monitoring station opened in Mestia",
+      "source_role": "official_network_assessment",
+      "iso3": "GEO",
+      "url": "https://nea.gov.ge/Ge/Download/File/1332",
+      "final_url": "https://nea.gov.ge/Ge/Download/File/1332",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 455283,
+      "sha256": "582825ce7870fa11b395328f4ccb7a1edf140253948387459d76f43c5258ab16",
+      "expanded_for_station_id": "",
+      "matched_expected_terms": [
+        "EU Directive",
+        "2008/50/EC",
+        "measuring instruments"
+      ],
+      "matched_method_terms": [
+        "EU Directive",
+        "2008/50/EC",
+        "CAFE",
+        "measuring instruments"
+      ],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "NEA-hosted network assessment context for monitoring design and standards language."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_bjb2",
+      "source_station_name": "Banjarbaru",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_btm2",
+      "source_station_name": "Batam",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_idp2",
+      "source_station_name": "Indrapuri",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_jm3",
+      "source_station_name": "Kota Jambi",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_jm4",
+      "source_station_name": "Muaro Jambi",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_kmy3",
+      "source_station_name": "Kemayoran",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_ktb2",
+      "source_station_name": "Kototabang",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_mdn2",
+      "source_station_name": "Medan",
+      "exact_live_pm25_value_status": "positive_raw_value",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 18.00 WIB",
+      "same_page_method_context_candidate": true,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "exact_bmkg_detail_method_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "AGMS",
+      "source_station_name": "Tbilisi - Davit Agmashenebeli Ave. № 73a",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "geo_tbilisi_air_quality_plan",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "KZBG",
+      "source_station_name": "Tbilisi - Kazbegi Ave. near Vaso Godziashvili Garden",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "airgov_home|geo_tbilisi_air_quality_plan",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN01",
+      "source_station_name": "Tbilisi - Marshal Gelovani Avenue №34",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "geo_tbilisi_air_quality_plan",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN05",
+      "source_station_name": "Zugdidi - Rustaveli Street №192",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "airgov_home",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN06",
+      "source_station_name": "Mestia town",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "airgov_home|nea_mestia_station",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN07",
+      "source_station_name": "Telavi-Kvirike Didi Street №43",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "airgov_home",
+      "source_scan_decision": "georgia_station_alias_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "01005",
+      "source_station_name": "Tazakendi (working in test mode)",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "source_level_context_only_keep_open"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "BTUM",
+      "source_station_name": "Batumi - T. Abuseridze Street №1",
+      "exact_live_pm25_value_status": "missing_raw_value",
+      "exact_station_detail_timestamp_raw": "",
+      "same_page_method_context_candidate": false,
+      "station_alias_context_source_keys": "",
+      "source_scan_decision": "source_level_context_only_keep_open"
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-indonesia-georgia-row-method-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-indonesia-georgia-row-method-source-scan-summary.json"
+  },
+  "non_claim": "This scan checks public Indonesia and Georgia source language for exact-row method, operating, and station-context evidence. It does not certify any station as currently operating, complete monitor-grade, or station-radius-ready."
+}

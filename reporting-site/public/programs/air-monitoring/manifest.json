@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T14:03:29.850Z",
+  "generated_at": "2026-06-19T15:01:24.412Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -294,6 +294,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_station_grade_decision_ledger",
+      "file": "station-grade-decision-ledger.md",
+      "label": "Air-monitoring station-grade decision ledger",
+      "size": 6088,
+      "size_human": "5.9 KB",
+      "mtime": "2026-06-19T14:48:53.647Z",
+      "sha256": "383fe4ed27dec0d0e20b9aa5ab82bef238f73a3c953fb279452dbe6f598eef42",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -540,6 +550,18 @@
       "size": 57387,
       "size_human": "56.0 KB",
       "sha256": "2b382f70164f49696da36b220f1b978852af09a48045b24bd8504b4fcc59a6a5"
+    },
+    {
+      "file": "generated/air-monitoring-station-grade-decision-ledger-summary.json",
+      "size": 18447,
+      "size_human": "18.0 KB",
+      "sha256": "53a0e0f33dc820fb1470feb3b01b96fc99578bcba29541f86b5549f0f942308b"
+    },
+    {
+      "file": "generated/air-monitoring-station-grade-decision-ledger.csv",
+      "size": 69541,
+      "size_human": "67.9 KB",
+      "sha256": "18b5f22d345550dc8d02d22990c99cbf9e3d6252610619cd47e3a57ade9ad79d"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",

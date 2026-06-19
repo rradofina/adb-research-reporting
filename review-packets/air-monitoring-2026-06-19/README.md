@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `4aa3dbef460b…`
+- `program/STATUS.md`  `2b83a198101b…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -92,6 +92,7 @@ website is Tier 2 and is not included here).
 - `program/uzbekistan-blocker-row-followup.md`  `032201fbb6f6…`
 - `program/indonesia-georgia-row-method-source-scan.md`  `886896170c19…`
 - `program/station-code-status-method-source-scan.md`  `b19e2da4023a…`
+- `program/station-grade-decision-ledger.md`  `383fe4ed27de…`
 - `program/limitations.md`  `443353d0f8d4…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
@@ -131,6 +132,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-regulator-station-extraction.csv`  `109f03865c05…`
 - `program/generated/air-monitoring-station-code-status-method-source-scan-summary.json`  `2d4981bb728a…`
 - `program/generated/air-monitoring-station-code-status-method-source-scan.csv`  `2b382f70164f…`
+- `program/generated/air-monitoring-station-grade-decision-ledger-summary.json`  `53a0e0f33dc8…`
+- `program/generated/air-monitoring-station-grade-decision-ledger.csv`  `18b5f22d3455…`
 - `program/generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json`  `f28133711283…`
 - `program/generated/air-monitoring-uzbekistan-blocker-row-followup.csv`  `282ff688036b…`
 - `program/generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json`  `97268656c32f…`
@@ -152,6 +155,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/build-official-openaq-candidate-review.py`  `3c6c54513f78…`
 - `program/scripts/build-one-signal-review-queue.py`  `4be11f591ba7…`
 - `program/scripts/build-regulator-source-inventory.py`  `a14135438dc3…`
+- `program/scripts/build-station-grade-decision-ledger.py`  `fe4a999a87da…`
 - `program/scripts/build-thumbnail.py`  `9f0a3f2395e3…`
 - `program/scripts/deepen-concentration-and-hdi.py`  `d8dc35e3018b…`
 - `program/scripts/extract-regulator-station-evidence.py`  `6dab12a1e816…`
@@ -184,7 +188,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `435b5d8d08fb…`
+- `shared/versions.json`  `8bda169d3305…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -194,4 +198,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T14:03:30.607Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T14:55:15.446Z by `scripts/build-review-packet.mjs`.

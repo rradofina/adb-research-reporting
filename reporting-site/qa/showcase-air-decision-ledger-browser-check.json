@@ -1,0 +1,216 @@
+{
+  "checked_at": "2026-06-19T15:06:06.286Z",
+  "url": "http://127.0.0.1:5175/showcase/air-monitoring-observability",
+  "checks": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "screenshot": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-air-decision-ledger-desktop.png",
+      "panel": {
+        "found": true,
+        "heading": "The blocker is now row-level, not vague.",
+        "rect": {
+          "x": 160,
+          "y": 40525.578125,
+          "width": 1120,
+          "height": 3240.140625
+        },
+        "absoluteTop": 40525.578125,
+        "textChecks": {
+          "decision66": true,
+          "exact66": true,
+          "pm25Evidence66": true,
+          "method50": true,
+          "caution16": true,
+          "gradeZero": true,
+          "radiusZero": true,
+          "downloadLinks": true
+        },
+        "statText": [
+          "66",
+          "66",
+          "66",
+          "50",
+          "16",
+          "0"
+        ],
+        "radiusText": "0",
+        "decisionCards": [
+          [
+            "STATION CODE CONTEXT NOT GRADE READY",
+            "37 rows",
+            ""
+          ],
+          [
+            "STATION SPECIFIC CONTEXT NOT GRADE READY",
+            "13 rows",
+            ""
+          ],
+          [
+            "RAW VALUE SANITY OPEN",
+            "12 rows",
+            ""
+          ],
+          [
+            "BLOCKED TEST MODE OR STALE SENTINEL",
+            "4 rows",
+            ""
+          ]
+        ],
+        "rowCards": 16,
+        "gateCards": 10,
+        "links": [
+          "Ledger note",
+          "Summary JSON",
+          "Row CSV"
+        ],
+        "pageOverflow": false,
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "overflowEls": [],
+        "screenshotClip": {
+          "x": 0,
+          "y": 40525.578125,
+          "width": 1440,
+          "height": 1100,
+          "scale": 1
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "exceptions": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000,
+        "deviceScaleFactor": 2,
+        "mobile": true
+      },
+      "screenshot": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-air-decision-ledger-mobile.png",
+      "panel": {
+        "found": true,
+        "heading": "The blocker is now row-level, not vague.",
+        "rect": {
+          "x": 24,
+          "y": 107477.828125,
+          "width": 342,
+          "height": 8015.90625
+        },
+        "absoluteTop": 107477.828125,
+        "textChecks": {
+          "decision66": true,
+          "exact66": true,
+          "pm25Evidence66": true,
+          "method50": true,
+          "caution16": true,
+          "gradeZero": true,
+          "radiusZero": true,
+          "downloadLinks": true
+        },
+        "statText": [
+          "66",
+          "66",
+          "66",
+          "50",
+          "16",
+          "0"
+        ],
+        "radiusText": "0",
+        "decisionCards": [
+          [
+            "STATION CODE CONTEXT NOT GRADE READY",
+            "37 rows",
+            ""
+          ],
+          [
+            "STATION SPECIFIC CONTEXT NOT GRADE READY",
+            "13 rows",
+            ""
+          ],
+          [
+            "RAW VALUE SANITY OPEN",
+            "12 rows",
+            ""
+          ],
+          [
+            "BLOCKED TEST MODE OR STALE SENTINEL",
+            "4 rows",
+            ""
+          ]
+        ],
+        "rowCards": 16,
+        "gateCards": 10,
+        "links": [
+          "Ledger note",
+          "Summary JSON",
+          "Row CSV"
+        ],
+        "pageOverflow": false,
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "overflowEls": [],
+        "screenshotClip": {
+          "x": 0,
+          "y": 107477.828125,
+          "width": 390,
+          "height": 1000,
+          "scale": 1
+        }
+      },
+      "consoleMessages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "exceptions": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ]
+}

@@ -1392,6 +1392,85 @@ interface StationCodeStatusMethodSummary {
   non_claim: string;
 }
 
+interface StationGradeDecisionLedgerGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationGradeDecisionLedgerCountryRow {
+  iso3: string;
+  country: string;
+  decision_rows: number;
+  exact_station_code_or_id_source_rows: number;
+  station_method_context_rows: number;
+  operating_or_current_context_rows: number;
+  raw_value_sanity_issue_rows: number;
+  test_mode_or_blocker_rows: number;
+  current_status_confirmed_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface StationGradeDecisionLedgerDecision {
+  decision_lane: string;
+  rows: number;
+  reader_use: string;
+  minimum_public_evidence_needed: string;
+}
+
+interface StationGradeDecisionLedgerSampleRow {
+  iso3: string;
+  source_station_id: string;
+  source_station_name: string;
+  decision_lane: string;
+  row_evidence_lane: string;
+  raw_value_sanity_issue_present: boolean;
+  test_mode_or_blocker_present: boolean;
+  source_threads: string;
+  reader_use: string;
+}
+
+interface StationGradeDecisionLedgerSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    decision_rows: number;
+    uzbekistan_rows: number;
+    georgia_rows: number;
+    indonesia_rows: number;
+    exact_official_row_found_rows: number;
+    exact_station_code_or_id_source_rows: number;
+    pm25_row_or_equipment_rows: number;
+    row_level_instrument_hint_rows: number;
+    station_method_context_rows: number;
+    station_code_context_rows: number;
+    station_specific_context_rows: number;
+    operating_or_current_context_rows: number;
+    status_or_certification_context_rows: number;
+    calibration_or_maintenance_context_rows: number;
+    raw_value_sanity_issue_rows: number;
+    test_mode_or_blocker_rows: number;
+    stale_or_sentinel_blocker_rows: number;
+    station_method_table_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  country_rows: StationGradeDecisionLedgerCountryRow[];
+  decision_counts: StationGradeDecisionLedgerDecision[];
+  evidence_gate_counts: StationGradeDecisionLedgerGate[];
+  sample_rows: StationGradeDecisionLedgerSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1518,6 +1597,8 @@ export default function ShowcaseAirMonitoring() {
     useState<IndonesiaGeorgiaRowMethodSourceSummary | null>(null);
   const [stationCodeStatusMethod, setStationCodeStatusMethod] =
     useState<StationCodeStatusMethodSummary | null>(null);
+  const [stationGradeDecisionLedger, setStationGradeDecisionLedger] =
+    useState<StationGradeDecisionLedgerSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1686,6 +1767,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-grade-decision-ledger-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Station-grade decision ledger HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationGradeDecisionLedger(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -1821,6 +1922,8 @@ export default function ShowcaseAirMonitoring() {
       <AirIndonesiaGeorgiaRowMethodSourcePanel summary={indonesiaGeorgiaRowMethodSource} />
 
       <AirStationCodeStatusMethodPanel summary={stationCodeStatusMethod} />
+
+      <AirStationGradeDecisionLedgerPanel summary={stationGradeDecisionLedger} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -5014,6 +5117,181 @@ function AirStationCodeStatusMethodPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading station-code status/method source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationGradeDecisionLedgerPanel({
+  summary,
+}: {
+  summary: StationGradeDecisionLedgerSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const countries = summary?.country_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sampleRows = summary?.sample_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const countryTotal = Math.max(1, countries.reduce((sum, row) => sum + row.decision_rows, 0));
+  const cautionRows =
+    gates.find((gate) => gate.gate === "Raw-value or blocker caution")?.rows ??
+    ((counts?.raw_value_sanity_issue_rows ?? 0) + (counts?.test_mode_or_blocker_rows ?? 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-decision-ledger-section" aria-label="Station-grade decision ledger">
+      <div className="air-grade-method-head air-decision-ledger-head">
+        <div>
+          <p className="kicker kicker-crimson">Station-grade decision ledger</p>
+          <h2>The blocker is now row-level, not vague.</h2>
+          <p>
+            The ledger turns the exact station evidence into one decision row
+            per method-context station. It shows where station-code, detail-ID,
+            method, operating, and QA clues exist, then keeps grade and radius
+            assumptions at zero.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-decision-ledger-callout">
+          <span>Radius-ready rows</span>
+          <strong>{formatNumber(counts?.station_radius_grade_assumption_ready_rows ?? 0)}</strong>
+          <p>All rows still require explicit current-status and grade closure</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-decision-ledger-stat-grid">
+            <div>
+              <span>Decision rows</span>
+              <strong>{formatNumber(counts.decision_rows)}</strong>
+              <em>{formatNumber(counts.uzbekistan_rows)} UZB, {formatNumber(counts.indonesia_rows)} IDN, {formatNumber(counts.georgia_rows)} GEO</em>
+            </div>
+            <div>
+              <span>Exact source trail</span>
+              <strong>{formatNumber(counts.exact_station_code_or_id_source_rows)}</strong>
+              <em>code, detail ID, or official row</em>
+            </div>
+            <div>
+              <span>PM2.5 evidence</span>
+              <strong>{formatNumber(counts.pm25_row_or_equipment_rows)}</strong>
+              <em>row or equipment context</em>
+            </div>
+            <div>
+              <span>Method context</span>
+              <strong>{formatNumber(counts.station_method_context_rows)}</strong>
+              <em>not method-class closure</em>
+            </div>
+            <div>
+              <span>Caution rows</span>
+              <strong>{formatNumber(cautionRows)}</strong>
+              <em>raw-value or blocker rows</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>no promotions</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-decision-ledger-bridge" aria-label="Station-grade ledger decision lanes">
+            {decisions.map((decision) => (
+              <article key={decision.decision_lane} className={`air-grade-method-lane air-decision-ledger-lane air-decision-ledger-lane-${decision.decision_lane}`}>
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision_lane)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-decision-ledger-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+                <p>{decision.reader_use}</p>
+                <small>{decision.minimum_public_evidence_needed}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-country-grid air-decision-ledger-country-grid">
+            {countries.map((row) => (
+              <article key={row.iso3} className="air-grade-method-country air-decision-ledger-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.decision_rows)} decision rows</b>
+                </div>
+                <div className="air-grade-method-track air-decision-ledger-track">
+                  <i style={{ width: `${Math.max(5, (row.decision_rows / countryTotal) * 100)}%` }} />
+                </div>
+                <dl>
+                  <div>
+                    <dt>Exact</dt>
+                    <dd>{formatNumber(row.exact_station_code_or_id_source_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.station_method_context_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Current ctx</dt>
+                    <dd>{formatNumber(row.operating_or_current_context_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>QA issue</dt>
+                    <dd>{formatNumber(row.raw_value_sanity_issue_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Blocker</dt>
+                    <dd>{formatNumber(row.test_mode_or_blocker_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(row.complete_monitor_grade_classification_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid air-decision-ledger-row-grid">
+            {sampleRows.map((row) => (
+              <article key={`${row.iso3}-${row.source_station_id}`} className={`air-grade-method-row air-decision-ledger-row air-decision-ledger-row-${row.decision_lane}`}>
+                <div>
+                  <span>{row.iso3} · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.decision_lane)}</b>
+                </div>
+                <p>{row.reader_use}</p>
+                <small>
+                  {sentenceCaseStatus(row.row_evidence_lane)} · {row.raw_value_sanity_issue_present ? "raw-value caution" : "raw-value open"} · {row.test_mode_or_blocker_present ? "blocker present" : "no explicit blocker"}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-decision-ledger-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-decision-ledger-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-decision-ledger-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-grade-decision-ledger.md" download>
+              Ledger note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-grade-decision-ledger-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-grade-decision-ledger.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-grade decision ledger...</p>
       )}
     </section>
   );

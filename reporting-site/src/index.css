@@ -10821,6 +10821,58 @@
     background: linear-gradient(90deg, #fbb00e, #007db8);
   }
 
+  .air-decision-ledger-section {
+    background:
+      linear-gradient(180deg, rgba(155, 34, 38, 0.09), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-decision-ledger-callout {
+    border-left-color: #9b2226;
+    background: #fff3f0;
+  }
+
+  .air-decision-ledger-stat-grid > div {
+    border-top-color: #9b2226;
+  }
+
+  .air-decision-ledger-lane,
+  .air-decision-ledger-row,
+  .air-decision-ledger-gate {
+    border-top-color: #9b2226;
+  }
+
+  .air-decision-ledger-country,
+  .air-decision-ledger-row {
+    border-left-color: #9b2226;
+  }
+
+  .air-decision-ledger-track {
+    background: #f4d7d4;
+  }
+
+  .air-decision-ledger-track i {
+    background: linear-gradient(90deg, #9b2226, #fbb00e);
+  }
+
+  .air-decision-ledger-lane-raw_value_sanity_open,
+  .air-decision-ledger-row-raw_value_sanity_open {
+    border-top-color: #fbb00e;
+    border-left-color: #fbb00e;
+  }
+
+  .air-decision-ledger-lane-station_code_context_not_grade_ready,
+  .air-decision-ledger-row-station_code_context_not_grade_ready {
+    border-top-color: #007db8;
+    border-left-color: #007db8;
+  }
+
+  .air-decision-ledger-lane-station_specific_context_not_grade_ready,
+  .air-decision-ledger-row-station_specific_context_not_grade_ready {
+    border-top-color: #5a8227;
+    border-left-color: #5a8227;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -10955,6 +11007,7 @@
   }
 
   .air-grade-method-lane b,
+  .air-grade-method-lane small,
   .air-grade-method-country b,
   .air-grade-method-source b,
   .air-grade-method-row b,
@@ -11825,6 +11878,11 @@
     .air-grade-method-source-grid,
     .air-grade-method-row-grid,
     .air-grade-method-gate-grid,
+    .air-decision-ledger-stat-grid,
+    .air-decision-ledger-bridge,
+    .air-decision-ledger-country-grid,
+    .air-decision-ledger-row-grid,
+    .air-decision-ledger-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -11851,6 +11909,7 @@
     .air-grade-source-head,
     .air-grade-station-head,
     .air-grade-method-head,
+    .air-decision-ledger-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
@@ -12865,6 +12924,11 @@
     .air-grade-method-source-grid,
     .air-grade-method-row-grid,
     .air-grade-method-gate-grid,
+    .air-decision-ledger-stat-grid,
+    .air-decision-ledger-bridge,
+    .air-decision-ledger-country-grid,
+    .air-decision-ledger-row-grid,
+    .air-decision-ledger-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -12904,6 +12968,9 @@
     .air-grade-method-source,
     .air-grade-method-row,
     .air-grade-method-gate,
+    .air-decision-ledger-lane,
+    .air-decision-ledger-row,
+    .air-decision-ledger-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -12923,6 +12990,7 @@
     .air-grade-source-head,
     .air-grade-station-head,
     .air-grade-method-head,
+    .air-decision-ledger-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
@@ -12999,6 +13067,7 @@
     .air-grade-source-downloads,
     .air-grade-station-downloads,
     .air-grade-method-downloads,
+    .air-decision-ledger-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

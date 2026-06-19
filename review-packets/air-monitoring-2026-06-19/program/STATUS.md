@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -31,8 +31,8 @@ station-level monitor-grade review queue, the exact station method-evidence
 audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
-Indonesia/Georgia row-method source scan, and the station-code status/method
-source scan honestly, and do not imply
+Indonesia/Georgia row-method source scan, the station-code status/method
+source scan, and the station-grade decision ledger honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until official method tables, station crosswalks, station-level
 current-status sources, and catchment methods are added.
@@ -502,6 +502,20 @@ current-status sources, and catchment methods are added.
   classified rows, 0 complete monitor-grade rows, and 0 station-radius-ready
   rows. Wrote `station-code-status-method-source-scan.md` and wired a public
   station-code status/method wall.
+- **2026-06-19:** Added the station-grade decision ledger. New no-network
+  script `scripts/build-station-grade-decision-ledger.py` joins the 66 exact
+  station method-evidence rows to the Uzbekistan station-specific,
+  status/certification, blocker follow-up, Indonesia/Georgia row-method, and
+  station-code status/method scans. It writes
+  `generated/air-monitoring-station-grade-decision-ledger.csv` and
+  `generated/air-monitoring-station-grade-decision-ledger-summary.json`,
+  records 66 exact official row/source-trail rows, 66 PM2.5 row/equipment
+  rows, 50 method-context rows, 66 operating/current-context rows, 16
+  raw-value or blocker caution rows, and keeps station method-table rows,
+  calibration/status rows, current-status confirmed rows, station-method
+  classified rows, complete monitor-grade rows, and station-radius-ready rows
+  at 0. Wrote `station-grade-decision-ledger.md` and wired a public
+  station-grade decision wall.
 
 ## Next focused work
 
@@ -513,7 +527,11 @@ current-status sources, and catchment methods are added.
    station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, the
+2. Use the 66-row station-grade decision ledger as the next source-targeting
+   wall. It shows exact source trails and PM2.5 evidence for all 66 rows, but
+   16 rows carry raw-value or blocker cautions and 0 rows have current-status,
+   station-method, complete-grade, or station-radius closure.
+3. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, the
    station-code scan improves the Georgia lane from alias context to 16 exact
    `air.gov.ge` station-code API rows with PM2.5 equipment/substance rows and
    15 operating-description context rows. Indonesia remains 22 exact BMKG
@@ -522,16 +540,16 @@ current-status sources, and catchment methods are added.
    public station-owner or regulator method/status/certification table that
    gives station-level method class, current status, calibration/status, and
    complete monitor-grade classification for the exact rows.
-3. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
+4. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
-4. Deepen the 70 official-context-only rows only after the method-context lane
+5. Deepen the 70 official-context-only rows only after the method-context lane
    is exhausted; official portal provenance alone is not enough for grade
    language.
-5. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
+6. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
-6. Only after regulator sources and denominators exist, build station-radius or catchment
+7. Only after regulator sources and denominators exist, build station-radius or catchment
    sensitivity with gridded population/PM2.5 denominators.
 
 ## Current blockers
@@ -573,6 +591,12 @@ current-status sources, and catchment methods are added.
   table rows, 0 calibration/status rows, 0 current-status confirmed rows, 0
   station-method classified rows, 0 complete monitor-grade classification
   rows, and 0 station-radius-ready rows.
+- The station-grade decision ledger joins the 66 exact method-context rows
+  across Uzbekistan, Indonesia, and Georgia, records 66 exact source trails and
+  PM2.5 row/equipment rows, 50 method-context rows, 16 raw-value or blocker
+  caution rows, and still keeps station method-table, calibration/status,
+  current-status confirmed, station-method classified, complete monitor-grade,
+  and station-radius-ready rows at 0.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

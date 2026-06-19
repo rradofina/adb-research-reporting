@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, and station-code status/method wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, and station-grade decision ledger exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -132,7 +132,11 @@ overrides priority by editing this list.
    keeping 1 Georgia test-mode row, 22 Indonesia BMKG payload rows, and 3
    Uzbekistan blockers visible; station method-table, calibration/status,
    current-status confirmed, complete-grade, and station-radius-ready counts
-   remain 0. Next AI-doable loop is exact station-level
+   remain 0. The station-grade decision ledger then joins all 66 exact
+   method-context rows into row-level decision lanes, records 66 exact source
+   trails, 50 method-context rows, and 16 raw-value or blocker caution rows,
+   while keeping current-status, station-method, complete-grade, and
+   station-radius-ready counts at 0. Next AI-doable loop is exact station-level
    method/status/certification evidence, before any station-radius or catchment
    claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
@@ -249,6 +253,36 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (home report-bench readiness map):** Added a compact
+  20-slot readiness map to the first viewport of `/`, using the shared
+  showcase registry and explicit stage colors for L2 prototype, L3 candidate,
+  evidence audit, and owner-gated reports. This keeps the front page from
+  reading like a generic topic gallery and makes the portfolio shape visible
+  before the report cards. This is a UI/UX and navigation repair only, not a
+  maturity promotion. Browser QA checked desktop and mobile home viewports:
+  2/2 passes, 20 map tiles, 4 legend entries, 20 report cards, 4 distinct
+  stage colors, no horizontal overflow, and no console/network/runtime errors.
+  QA record: `reporting-site/qa/home-showcase-report-map-browser-check.json`;
+  screenshots: `reporting-site/qa/home-showcase-report-map-desktop.png` and
+  `reporting-site/qa/home-showcase-report-map-mobile.png`.
+- **2026-06-19 (shared evidence-audit showcase route refactor):**
+  Refactored the shared `/showcase/:reportSlug` route used by reports 9-20
+  so each artifact-driven report now renders a four-part evidence spine
+  (decision problem, measurement doubt, test added, publication gate) and a
+  four-part claim ladder (allowed finding, non-claim, falsifier, next
+  upgrade). This is a reader-facing UI/UX repair only, not a maturity
+  promotion. Browser QA checked all 12 shared audit routes across desktop and
+  mobile viewports, with 24/24 passes, no horizontal overflow, no console
+  errors, no network failures, and no missing source/caveat sections. QA
+  record:
+  `reporting-site/qa/showcase-evidence-audit-shared-route-browser-check.json`;
+  screenshots:
+  `reporting-site/qa/showcase-evidence-audit-migration-desktop-spine.png`,
+  `reporting-site/qa/showcase-evidence-audit-migration-mobile-spine.png`,
+  `reporting-site/qa/showcase-evidence-audit-food-desktop-visual.png`,
+  `reporting-site/qa/showcase-evidence-audit-food-mobile-visual.png`,
+  `reporting-site/qa/showcase-evidence-audit-water-desktop-claim.png`, and
+  `reporting-site/qa/showcase-evidence-audit-school-mobile-claim.png`.
 - **2026-06-19 (air-monitoring monitor-grade station method-evidence audit):**
   Added
   `air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py`,
@@ -429,6 +463,20 @@ by leaving the board in a state the next session can read.
   current-status confirmed, station-method classified, complete monitor-grade,
   and station-radius-ready rows at 0. The public route now renders a
   station-code status/method wall.
+- **2026-06-19 (air-monitoring station-grade decision ledger):** Added
+  `air-monitoring/scripts/build-station-grade-decision-ledger.py`, generated
+  `air-monitoring/generated/air-monitoring-station-grade-decision-ledger.csv`
+  and
+  `air-monitoring/generated/air-monitoring-station-grade-decision-ledger-summary.json`,
+  and wrote `air-monitoring/station-grade-decision-ledger.md`. The no-network
+  ledger joins the 66 exact station method-evidence rows to the committed
+  Uzbekistan, Indonesia/Georgia, and station-code follow-up scans, records 66
+  exact official row/source-trail rows, 66 PM2.5 row/equipment rows, 50
+  method-context rows, 66 operating/current-context rows, 16 raw-value or
+  blocker caution rows, and keeps station method-table rows,
+  calibration/status rows, current-status confirmed rows, station-method
+  classified rows, complete monitor-grade rows, and station-radius-ready rows
+  at 0. The public route now renders a station-grade decision ledger panel.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

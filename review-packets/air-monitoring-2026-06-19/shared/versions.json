@@ -165,6 +165,19 @@
       "retrieved_on": "2026-06-19",
       "notes": "Strict station-code/status source scan for 41 unresolved rows: 16 Georgia air.gov.ge station-code API rows, 22 Indonesia BMKG PM2.5 portal payload rows, and 3 Uzbekistan blocker rows carried forward from the exact blocker follow-up. It finds 41 exact station code or ID rows, 16 Georgia PM2.5 equipment rows, 15 Georgia operating-description context rows, 1 Georgia test-mode row, 22 Indonesia BMKG station-code payload rows, 3 unresolved Uzbekistan blockers, and still 0 station method-table, current-status confirmed, complete monitor-grade, or station-radius-ready rows."
     },
+    "air_monitoring_station_grade_decision_ledger": {
+      "script": "air-monitoring/scripts/build-station-grade-decision-ledger.py",
+      "retrieved_on": "2026-06-19",
+      "derives_from": [
+        "air_monitoring_monitor_grade_station_method_evidence",
+        "air_monitoring_uzbekistan_station_specific_source_evidence",
+        "air_monitoring_uzbekistan_status_certification_source_scan",
+        "air_monitoring_uzbekistan_blocker_row_followup",
+        "air_monitoring_indonesia_georgia_row_method_source_scan",
+        "air_monitoring_station_code_status_method_source_scan"
+      ],
+      "notes": "No-network station-grade decision ledger for the 66 exact method-context station rows. It joins committed source-scan artifacts into row-level decision lanes, records 66 exact source rows, 50 method-context rows, 16 raw-value or blocker cautions, and keeps current-status confirmed, station-method classified, complete monitor-grade, and station-radius-ready rows at zero."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -295,6 +308,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_station_code_status_method_source_scan pin after scanning 41 unresolved station-code/status rows across Georgia, Indonesia, and Uzbekistan while keeping station method-table, current-status, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_station_grade_decision_ledger pin after joining the committed exact-row method evidence and follow-up scans into a 66-row station-grade decision ledger with zero current-status, complete-grade, and station-radius-ready rows."
     }
   ]
 }

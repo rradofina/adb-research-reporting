@@ -3819,6 +3819,11 @@
     gap: 1rem;
   }
 
+  .psdq-public-source-decision-ledger-section {
+    display: grid;
+    gap: 1rem;
+  }
+
   .psdq-sample-grid {
     display: grid;
     gap: 0.75rem;
@@ -3873,6 +3878,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .psdq-public-source-decision-ledger-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .psdq-sample-grid > div,
   .psdq-ai-review-grid > div,
   .psdq-resolution-grid > div,
@@ -3881,7 +3892,8 @@
   .psdq-public-map-gap-grid > div,
   .psdq-row-evidence-grid > div,
   .psdq-public-map-inspection-grid > div,
-  .psdq-public-source-confirmation-grid > div {
+  .psdq-public-source-confirmation-grid > div,
+  .psdq-public-source-decision-ledger-grid > div {
     min-width: 0;
     border-top: 3px solid var(--accent);
     padding: 0.9rem 0 0;
@@ -3895,7 +3907,8 @@
   .psdq-public-map-gap-grid span,
   .psdq-row-evidence-grid span,
   .psdq-public-map-inspection-grid span,
-  .psdq-public-source-confirmation-grid span {
+  .psdq-public-source-confirmation-grid span,
+  .psdq-public-source-decision-ledger-grid span {
     display: block;
     color: var(--ink-faint);
     font-size: var(--type-copy-xs);
@@ -3912,7 +3925,8 @@
   .psdq-public-map-gap-grid strong,
   .psdq-row-evidence-grid strong,
   .psdq-public-map-inspection-grid strong,
-  .psdq-public-source-confirmation-grid strong {
+  .psdq-public-source-confirmation-grid strong,
+  .psdq-public-source-decision-ledger-grid strong {
     display: block;
     margin-top: 0.35rem;
     color: var(--ink);
@@ -3929,7 +3943,8 @@
   .psdq-public-map-gap-grid em,
   .psdq-row-evidence-grid em,
   .psdq-public-map-inspection-grid em,
-  .psdq-public-source-confirmation-grid em {
+  .psdq-public-source-confirmation-grid em,
+  .psdq-public-source-decision-ledger-grid em {
     display: block;
     margin-top: 0.4rem;
     color: var(--ink-soft);
@@ -3980,6 +3995,10 @@
     min-width: 1040px;
   }
 
+  .psdq-public-source-decision-ledger-chart {
+    min-width: 1040px;
+  }
+
   .psdq-row-evidence-mobile-list {
     display: none;
   }
@@ -3993,6 +4012,10 @@
   }
 
   .psdq-targeted-source-confirmation-mobile-list {
+    display: none;
+  }
+
+  .psdq-public-source-decision-ledger-mobile-list {
     display: none;
   }
 
@@ -4213,9 +4236,14 @@
     gap: 0.85rem;
   }
 
+  .psdq-public-source-decision-ledger-mobile-list {
+    gap: 0.85rem;
+  }
+
   .psdq-row-evidence-mobile-list > div:first-child,
   .psdq-public-map-inspection-mobile-list > div:first-child,
-  .psdq-public-source-confirmation-mobile-list > div:first-child {
+  .psdq-public-source-confirmation-mobile-list > div:first-child,
+  .psdq-public-source-decision-ledger-mobile-list > div:first-child {
     display: grid;
     gap: 0.25rem;
     padding-bottom: 0.65rem;
@@ -4231,7 +4259,8 @@
 
   .psdq-row-evidence-mobile-list > div:first-child strong,
   .psdq-public-map-inspection-mobile-list > div:first-child strong,
-  .psdq-public-source-confirmation-mobile-list > div:first-child strong {
+  .psdq-public-source-confirmation-mobile-list > div:first-child strong,
+  .psdq-public-source-decision-ledger-mobile-list > div:first-child strong {
     color: var(--ink);
     font-size: var(--type-copy-sm);
     line-height: 1.2;
@@ -4245,7 +4274,8 @@
 
   .psdq-row-evidence-mobile-list > div:first-child span,
   .psdq-public-map-inspection-mobile-list > div:first-child span,
-  .psdq-public-source-confirmation-mobile-list > div:first-child span {
+  .psdq-public-source-confirmation-mobile-list > div:first-child span,
+  .psdq-public-source-decision-ledger-mobile-list > div:first-child span {
     color: var(--ink-faint);
     font-size: var(--type-copy-xs);
     line-height: 1.25;
@@ -4259,7 +4289,8 @@
 
   .psdq-row-evidence-mobile-list article,
   .psdq-public-map-inspection-mobile-list article,
-  .psdq-public-source-confirmation-mobile-list article {
+  .psdq-public-source-confirmation-mobile-list article,
+  .psdq-public-source-decision-ledger-mobile-list article {
     min-width: 0;
     display: grid;
     gap: 0.5rem;
@@ -4277,7 +4308,8 @@
 
   .psdq-row-evidence-mobile-list article:last-child,
   .psdq-public-map-inspection-mobile-list article:last-child,
-  .psdq-public-source-confirmation-mobile-list article:last-child {
+  .psdq-public-source-confirmation-mobile-list article:last-child,
+  .psdq-public-source-decision-ledger-mobile-list article:last-child {
     padding-bottom: 0;
     border-bottom: 0;
   }
@@ -4289,7 +4321,8 @@
 
   .psdq-row-evidence-mobile-list article strong,
   .psdq-public-map-inspection-mobile-list article strong,
-  .psdq-public-source-confirmation-mobile-list article strong {
+  .psdq-public-source-confirmation-mobile-list article strong,
+  .psdq-public-source-decision-ledger-mobile-list article strong {
     display: block;
     color: var(--ink);
     font-size: var(--type-copy-sm);
@@ -4305,7 +4338,8 @@
 
   .psdq-row-evidence-mobile-list article span,
   .psdq-public-map-inspection-mobile-list article span,
-  .psdq-public-source-confirmation-mobile-list article span {
+  .psdq-public-source-confirmation-mobile-list article span,
+  .psdq-public-source-decision-ledger-mobile-list article span {
     display: block;
     color: var(--ink-faint);
     font-size: var(--type-copy-xs);
@@ -5625,6 +5659,7 @@
     .psdq-public-map-inspection-cards,
     .psdq-public-source-confirmation-grid,
     .psdq-public-source-confirmation-cards,
+    .psdq-public-source-decision-ledger-grid,
     .psdq-inspection-focus-strip {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -5632,14 +5667,16 @@
     .psdq-row-evidence-chart,
     .psdq-public-map-inspection-chart,
     .psdq-public-source-confirmation-chart,
-    .psdq-targeted-source-confirmation-chart {
+    .psdq-targeted-source-confirmation-chart,
+    .psdq-public-source-decision-ledger-chart {
       display: none;
     }
 
     .psdq-row-evidence-mobile-list,
     .psdq-public-map-inspection-mobile-list,
     .psdq-public-source-confirmation-mobile-list,
-    .psdq-targeted-source-confirmation-mobile-list {
+    .psdq-targeted-source-confirmation-mobile-list,
+    .psdq-public-source-decision-ledger-mobile-list {
       display: grid;
     }
 

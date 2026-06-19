@@ -399,6 +399,30 @@ the targeted queue. The remaining work is source classification: separating
 upazila-level observability gaps from row-level name conflicts, source-repair
 cases, and possible same-facility public-map candidates.
 
+## Public-Source Decision Ledger Addendum
+
+The public-source decision ledger now lives in
+`facility-validation-public-source-decision-ledger.md`. The script
+`scripts/build-bgd-facility-public-source-decision-ledger.py` reads the
+targeted-row confirmation CSV/JSON and builds the next reviewer queue without
+fetching new data.
+
+The ledger selects 16 rows from the 40-row confirmation packet:
+
+| Decision track | Rows |
+|---|---:|
+| Source repair first | 4 |
+| Possible same-facility location review | 3 |
+| Priority-1 name-conflict review | 9 |
+
+It defers 18 zero-OSM upazila observability rows and 6 lower-priority
+name-conflict spot checks. All 40 targeted rows remain open; 0 are closed as
+resolved and 0 are reclassified as same-facility matches.
+
+This makes the review queue narrower and more operational. It does not make
+the evidence human-validated, and it does not turn source reachability into a
+row outcome.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -429,6 +453,7 @@ python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row
 python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
+python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 ```
 
 Outputs:
@@ -460,6 +485,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
 
 ## Next Statistical Upgrade
 

@@ -98,7 +98,9 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use the targeted-row confirmation packet to build a decision ledger for the
-rows with plausible same-facility signals and for the source-repair rows. Keep
-zero-OSM upazila cases separate from facility-specific absence candidates, and
-close or reclassify a row only when public evidence supports the change.
+The next pass is now recorded in
+`facility-validation-public-source-decision-ledger.md`. It uses this
+targeted-row confirmation packet to select the 3 possible same-facility rows,
+the 4 source-repair rows, and the 9 priority-1 name-conflict rows for reviewer
+decisions while keeping zero-OSM upazila cases separate from row-level evidence.
+Close or reclassify a row only when public evidence supports the change.

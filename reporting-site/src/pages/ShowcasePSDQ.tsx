@@ -615,6 +615,68 @@ interface PsdqTargetedSourceConfirmationSummary {
   non_claim: string;
 }
 
+interface PsdqPublicSourceDecisionLedgerRow {
+  decision_id: string;
+  decision_rank: number;
+  confirmation_id: string;
+  inspection_id: string;
+  facility_name: string;
+  district_name: string;
+  upazila_name: string;
+  priority_scope: string;
+  public_source_confirmation_lane: string;
+  decision_track: string;
+  decision_track_label: string;
+  decision_action: string;
+  decision_question: string;
+  closure_or_reclassification_gate: string;
+  candidate_osm_name_from_api: string;
+  candidate_name_score_from_live_tags: number | string;
+  candidate_distance_m_from_inspection: number | string;
+  dghs_public_profile_url: string;
+  candidate_feature_url: string;
+  candidate_osm_api_url: string;
+}
+
+interface PsdqPublicSourceDecisionLedgerUpazilaRow {
+  district_name: string;
+  upazila_name: string;
+  decision_rows: number;
+  priority_1_rows: number;
+  source_repair_first_rows: number;
+  possible_same_facility_rows: number;
+  high_exposure_name_conflict_rows: number;
+  max_candidate_name_score: number;
+  nearest_candidate_distance_m: number;
+}
+
+interface PsdqPublicSourceDecisionLedgerSummary {
+  generated_at: string;
+  source_retrieved_at: string;
+  status: string;
+  goal_level: string;
+  selection_rule: string;
+  decision_scope: {
+    targeted_confirmation_rows: number;
+    decision_ledger_rows: number;
+    source_repair_rows: number;
+    possible_same_facility_rows: number;
+    high_exposure_name_conflict_rows: number;
+    deferred_zero_osm_context_rows: number;
+    deferred_lower_priority_name_conflict_rows: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  decision_track_counts: Array<{ name: string; label: string; rows: number }>;
+  priority_scope_counts: PsdqCandidateResolutionCount[];
+  confirmation_lane_counts_in_ledger: PsdqCandidateResolutionCount[];
+  deferred_scope_counts: PsdqCandidateResolutionCount[];
+  upazila_decision_rows: PsdqPublicSourceDecisionLedgerUpazilaRow[];
+  decision_rows: PsdqPublicSourceDecisionLedgerRow[];
+  decision_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -660,6 +722,7 @@ const STRATA_LABELS: Record<string, string> = {
 };
 
 const ALL_DIVISIONS = "All divisions";
+const PSDQ_PRIORITY_1 = "priority_1_high_exposure";
 
 function formatNumber(value: number | null | undefined, digits = 0) {
   if (value === null || value === undefined || Number.isNaN(value)) return "missing";
@@ -764,6 +827,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPublicSourceConfirmationSummary | null>(null);
   const [targetedSourceConfirmationSummary, setTargetedSourceConfirmationSummary] =
     useState<PsdqTargetedSourceConfirmationSummary | null>(null);
+  const [publicSourceDecisionLedgerSummary, setPublicSourceDecisionLedgerSummary] =
+    useState<PsdqPublicSourceDecisionLedgerSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -826,6 +891,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`targeted source confirmation HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`public source decision ledger HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -846,6 +915,7 @@ export default function ShowcasePSDQ() {
         publicMapInspectionPayload,
         publicSourceConfirmationPayload,
         targetedSourceConfirmationPayload,
+        publicSourceDecisionLedgerPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -862,6 +932,7 @@ export default function ShowcasePSDQ() {
         setPublicMapInspectionSummary(publicMapInspectionPayload);
         setPublicSourceConfirmationSummary(publicSourceConfirmationPayload);
         setTargetedSourceConfirmationSummary(targetedSourceConfirmationPayload);
+        setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -977,6 +1048,10 @@ export default function ShowcasePSDQ() {
 
       {targetedSourceConfirmationSummary && (
         <PsdqTargetedSourceConfirmationPanel summary={targetedSourceConfirmationSummary} />
+      )}
+
+      {publicSourceDecisionLedgerSummary && (
+        <PsdqPublicSourceDecisionLedgerPanel summary={publicSourceDecisionLedgerSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -3557,6 +3632,241 @@ function PsdqTargetedSourceConfirmationUpazilaChart({ rows }: { rows: PsdqTarget
                 <span><b>{formatNumber(row.rows)}</b> rows</span>
                 <span><b>{formatNumber(row.dghs_profiles_retrieved)}</b> DGHS</span>
                 <span><b>{formatNumber(row.rows_with_candidate_name_score_at_least_0_75)}</b> 0.75+</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+function decisionLedgerColor(code: string) {
+  const colors: Record<string, string> = {
+    source_repair_first: "#002569",
+    possible_same_facility_location_review: "#FBB00E",
+    high_exposure_name_conflict_review: "#007DB8",
+    lower_priority_name_conflict_deferred: "#8796a5",
+    zero_osm_upazila_observability_deferred: "#9B2226",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function decisionLedgerMeaning(code: string) {
+  const meanings: Record<string, string> = {
+    source_repair_first: "Resolve coordinate or source repair before any map-absence label.",
+    possible_same_facility_location_review: "Check identity and location before any same-facility reclassification.",
+    high_exposure_name_conflict_review: "Keep in the high-exposure queue until a public alias or location source resolves the name conflict.",
+  };
+  return meanings[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPublicSourceDecisionLedgerPanel({ summary }: { summary: PsdqPublicSourceDecisionLedgerSummary }) {
+  return (
+    <section className="showcase-section psdq-public-source-decision-ledger-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Public-source decision ledger</p>
+          <h2>The next 16 rows are a review queue, not a closure list.</h2>
+          <p>
+            After source retrieval, the ledger narrows the next public-source
+            work to rows where a reviewer can ask a row-level question. It
+            keeps zero-OSM upazila context out of the decision queue and keeps
+            all rows open until public evidence supports a change.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows read</span>
+            <strong>{formatNumber(summary.decision_scope.targeted_confirmation_rows)} targeted confirmations</strong>
+          </div>
+          <div>
+            <span>Decision ledger</span>
+            <strong>
+              {formatNumber(summary.decision_scope.decision_ledger_rows)} rows;{" "}
+              {formatNumber(summary.decision_scope.rows_closed_as_resolved)} closed
+            </strong>
+          </div>
+          <div>
+            <span>Source repair first</span>
+            <strong>{formatNumber(summary.decision_scope.source_repair_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Possible same facility</span>
+            <strong>{formatNumber(summary.decision_scope.possible_same_facility_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Priority-1 name conflict</span>
+            <strong>{formatNumber(summary.decision_scope.high_exposure_name_conflict_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Deferred context</span>
+            <strong>
+              {formatNumber(summary.decision_scope.deferred_zero_osm_context_rows + summary.decision_scope.deferred_lower_priority_name_conflict_rows)} rows
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-public-source-decision-ledger-grid">
+        {summary.decision_track_counts.map((item) => (
+          <div key={item.name}>
+            <span>{item.label}</span>
+            <strong>{formatNumber(item.rows)}</strong>
+            <em>{decisionLedgerMeaning(item.name)}</em>
+          </div>
+        ))}
+        {summary.deferred_scope_counts.map((item) => (
+          <div key={item.name}>
+            <span>{item.name === "zero_osm_upazila_observability_deferred" ? "Zero-OSM context deferred" : "Lower-priority name conflicts deferred"}</span>
+            <strong>{formatNumber(item.rows)}</strong>
+            <em>{item.name === "zero_osm_upazila_observability_deferred" ? "Upazila observability context, not row-level evidence." : "Spot-check rows wait behind the priority-1 queue."}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqDecisionLedgerRowChart rows={summary.decision_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ public-source decision ledger legend">
+        {summary.decision_track_counts.map((item) => (
+          <span key={item.name}>
+            <i style={{ background: decisionLedgerColor(item.name) }} /> {item.label}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the public-source decision ledger</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-public-source-decision-ledger.md" download>
+          Download decision-ledger note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json" download>
+          Download decision-ledger summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv" download>
+          Download decision-ledger CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqDecisionLedgerRowChart({ rows }: { rows: PsdqPublicSourceDecisionLedgerRow[] }) {
+  const width = 1040;
+  const rowHeight = 44;
+  const headerHeight = 66;
+  const height = headerHeight + rows.length * rowHeight + 30;
+  const labelX = 0;
+  const trackX = 330;
+  const trackWidth = 240;
+  const scoreX = 600;
+  const scoreWidth = 170;
+  const distanceX = 820;
+  const distanceBarWidth = 125;
+  const maxDistance = Math.max(1, ...rows.map((row) => Number(row.candidate_distance_m_from_inspection || 0)));
+
+  return (
+    <>
+      <svg
+        className="psdq-coded-chart psdq-public-source-decision-ledger-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="img"
+        aria-label="Public-source decision ledger rows"
+      >
+        <text x={0} y={18} className="showcase-heatmap-title">
+          Decision ledger: row-level reviewer questions
+        </text>
+        <text x={0} y={38} className="showcase-heatmap-year">
+          Unit: selected targeted inspection row; source: public-source decision ledger summary JSON
+        </text>
+        <text x={trackX} y={58} className="psdq-chart-head">
+          Decision track
+        </text>
+        <text x={scoreX} y={58} className="psdq-chart-head">
+          OSM name score
+        </text>
+        <text x={distanceX} y={58} className="psdq-chart-head">
+          Candidate distance
+        </text>
+
+        {rows.map((row, index) => {
+          const y = headerHeight + index * rowHeight;
+          const score = Math.max(0, Math.min(1, Number(row.candidate_name_score_from_live_tags || 0)));
+          const distance = Math.max(0, Number(row.candidate_distance_m_from_inspection || 0));
+          const distanceWidth = Math.max(2, (distance / maxDistance) * distanceBarWidth);
+          return (
+            <g key={row.decision_id}>
+              <text x={labelX} y={y + 15} className="psdq-row-label">
+                {shortChartLabel(row.facility_name, 40)}
+              </text>
+              <text x={labelX} y={y + 31} className="psdq-row-sub">
+                {row.upazila_name}, {row.district_name}
+              </text>
+              <rect
+                x={trackX}
+                y={y}
+                width={trackWidth}
+                height={22}
+                fill={decisionLedgerColor(row.decision_track)}
+              >
+                <title>{row.decision_track_label}</title>
+              </rect>
+              <rect x={scoreX} y={y} width={scoreWidth} height={22} fill="#eef2f5" />
+              <rect
+                x={scoreX}
+                y={y}
+                width={Math.max(2, score * scoreWidth)}
+                height={22}
+                fill={score >= 0.75 ? "#5A8227" : "#007DB8"}
+              />
+              <text x={scoreX + scoreWidth + 12} y={y + 16} className="psdq-value">
+                {formatNumber(score, 2)}
+              </text>
+              <rect x={distanceX} y={y} width={distanceBarWidth} height={22} fill="#eef2f5" />
+              <rect x={distanceX} y={y} width={distanceWidth} height={22} fill="#5A8227" />
+              <text x={distanceX + distanceBarWidth + 12} y={y + 16} className="psdq-value">
+                {formatNumber(distance / 1000, 1)} km
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="psdq-public-source-decision-ledger-mobile-list" aria-label="Mobile public-source decision ledger rows">
+        <div>
+          <strong>Decision ledger rows</strong>
+          <span>Unit: selected row kept open</span>
+        </div>
+        {rows.map((row) => {
+          const score = Number(row.candidate_name_score_from_live_tags || 0);
+          const distanceKm = Number(row.candidate_distance_m_from_inspection || 0) / 1000;
+          return (
+            <article key={row.decision_id}>
+              <div>
+                <strong>{row.facility_name}</strong>
+                <span>{row.upazila_name}, {row.district_name}</span>
+              </div>
+              <div
+                className="psdq-row-evidence-tier"
+                style={{ borderColor: decisionLedgerColor(row.decision_track) }}
+              >
+                {row.decision_track_label}
+              </div>
+              <span>Candidate: {row.candidate_osm_name_from_api || "unnamed OSM feature"}</span>
+              <div className="psdq-row-evidence-mobile-metrics">
+                <span><b>{formatNumber(score, 2)}</b> score</span>
+                <span><b>{formatNumber(distanceKm, 1)} km</b> distance</span>
+                <span><b>{row.priority_scope === PSDQ_PRIORITY_1 ? "yes" : "no"}</b> priority-1</span>
               </div>
             </article>
           );

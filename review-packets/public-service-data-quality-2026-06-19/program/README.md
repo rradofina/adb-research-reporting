@@ -46,6 +46,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/inspect-bgd-facility-public-map-targets.py` — builds the targeted public-map inspection packet with candidate OSM feature links and closure/reclassification requirements for the 40 row-evidence records
 - `scripts/confirm-bgd-facility-public-map-first-rows.py` — retrieves public DGHS profile pages and public OSM API feature records for the first 12 targeted inspection rows
 - `scripts/confirm-bgd-facility-public-map-targeted-rows.py` — retrieves public DGHS profile pages and public OSM API feature records for all 40 targeted inspection rows
+- `scripts/build-bgd-facility-public-source-decision-ledger.py` — converts the 40-row public-source confirmation packet into a no-network reviewer decision ledger
 - `scripts/prepare-phl-open-buildings-manifest.py` — builds the Philippines-intersecting Google Open Buildings tile manifest using the HDX/OCHA PSA/NAMRIA boundary package
 - `scripts/download-phl-open-buildings-points.py` — resumable downloader for the eight Philippines-intersecting Google Open Buildings point shards
 - `scripts/build-phl-admin3-open-buildings-context.py` — assigns Open Buildings and OSM health features to PSA/NAMRIA ADM3 city/municipality polygons and joins NHFR counts using direct boundary codes plus PSA PSGC correspondence codes
@@ -95,6 +96,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-public-source-confirmation-summary.json` — chart-ready confirmation lanes, retrieval counts, and first-row source cards
 - `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv` — targeted-row public-source confirmation ledger with DGHS profile and OSM API retrieval status for all 40 inspection rows
 - `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json` — chart-ready targeted-row confirmation lanes, retrieval counts, and upazila confirmation rows
+- `generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv` — no-network public-source decision ledger for possible same-facility, source-repair, and priority-1 name-conflict rows
+- `generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json` — chart-ready decision-track counts, defer counts, and reviewer decision rows
 - `generated/psdq-phl-open-buildings-tile-manifest.{json,csv}` — eight Philippines-intersecting Open Buildings V3 point shards and precision thresholds
 - `generated/psdq-phl-admin3-open-buildings-context.csv` — PSA/NAMRIA ADM3 city/municipality table with Open Buildings, PSGC-resolved NHFR, and OSM health counts
 - `generated/psdq-phl-admin3-open-buildings-context-summary.json` — chart-ready Philippines ADM3 denominator and code-match summary
@@ -286,6 +289,13 @@ Current audit result:
   source-repair rows, and 3 possible same-facility rows requiring manual
   location or official-source confirmation. This is public-source
   confirmation, not human validation or row closure.
+- **BGD public-source decision ledger:** the no-network decision pass reads
+  the targeted-row confirmation CSV/JSON and selects 16 reviewer decision
+  rows: 4 source-repair rows, 3 possible same-facility rows, and 9 priority-1
+  name-conflict rows. It defers 18 zero-OSM upazila observability rows and 6
+  lower-priority name-conflict spot checks. It keeps all 40 targeted rows open
+  with 0 AI closures and 0 AI reclassifications. This is a public-source
+  reviewer queue, not human validation or a row outcome table.
 - **Poverty overlay status:** Philippines now has an official poverty-context
   artifact using the owner-manually downloaded PSA 2023 city/municipality SAE
   Excel plus PSA OpenSTAT 2023 direct estimates for HUC/direct-estimate rows.
@@ -318,6 +328,7 @@ python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row
 python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
+python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/prepare-phl-open-buildings-manifest.py
 python public-service-data-quality/scripts/download-phl-open-buildings-points.py
 python public-service-data-quality/scripts/build-phl-admin3-open-buildings-context.py --chunk-size 500000 --workers 4

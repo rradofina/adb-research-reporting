@@ -1182,6 +1182,132 @@
     white-space: nowrap;
   }
 
+  .home-panel-map {
+    display: grid;
+    gap: 0.55rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .home-report-map {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  .home-report-map-cell {
+    min-width: 0;
+    aspect-ratio: 1.22;
+    display: grid;
+    align-content: space-between;
+    gap: 0.25rem;
+    padding: 0.38rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 5px solid var(--accent);
+    color: var(--ink);
+    background: #ffffff;
+    text-decoration: none;
+  }
+
+  .home-report-map-cell:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .home-report-map-cell span,
+  .home-report-map-cell i {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    line-height: 1;
+  }
+
+  .home-report-map-cell span {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 750;
+  }
+
+  .home-report-map-cell i {
+    justify-self: end;
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    font-style: normal;
+  }
+
+  .home-report-map-prototype {
+    background: rgba(0, 125, 184, 0.06);
+  }
+
+  .home-report-map-prototype i {
+    color: #005f8c;
+  }
+
+  .home-report-map-l3-candidate {
+    border-top-color: #5a8227;
+    background: rgba(90, 130, 39, 0.13);
+  }
+
+  .home-report-map-l3-candidate i {
+    color: #3f6618;
+  }
+
+  .home-report-map-evidence-audit {
+    border-top-color: #9b2226;
+    background: rgba(155, 34, 38, 0.11);
+  }
+
+  .home-report-map-evidence-audit i {
+    color: #7a1b1e;
+  }
+
+  .home-report-map-owner-gated {
+    border-top-color: #b07d12;
+    background: rgba(176, 125, 18, 0.14);
+  }
+
+  .home-report-map-owner-gated i {
+    color: #7b560d;
+  }
+
+  .home-report-map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+  }
+
+  .home-report-map-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .home-report-map-legend-item::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-top: 4px solid var(--accent);
+    background: rgba(0, 125, 184, 0.08);
+  }
+
+  .home-report-map-legend-l3-candidate::before {
+    border-top-color: #5a8227;
+    background: rgba(90, 130, 39, 0.12);
+  }
+
+  .home-report-map-legend-evidence-audit::before {
+    border-top-color: #9b2226;
+    background: rgba(155, 34, 38, 0.1);
+  }
+
+  .home-report-map-legend-owner-gated::before {
+    border-top-color: #b07d12;
+    background: rgba(176, 125, 18, 0.12);
+  }
+
   .home-panel-reports {
     display: grid;
     gap: 0;
@@ -1464,6 +1590,19 @@
 
     .home-panel-reports {
       padding-top: 0.65rem;
+    }
+
+    .home-panel-map {
+      gap: 0.45rem;
+      padding-top: 0.65rem;
+    }
+
+    .home-report-map {
+      gap: 0.28rem;
+    }
+
+    .home-report-map-cell {
+      padding: 0.32rem;
     }
 
     .home-panel-reports a {

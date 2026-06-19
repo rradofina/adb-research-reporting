@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-06-19T14:36:40.533Z",
+  "base_url": "http://127.0.0.1:5175/",
+  "viewport_checks": 2,
+  "passed": 2,
+  "failed": [],
+  "screenshots": [
+    "reporting-site/qa/home-showcase-report-map-desktop.png",
+    "reporting-site/qa/home-showcase-report-map-mobile.png"
+  ],
+  "checks": [
+    {
+      "viewport": "desktop",
+      "pass": true,
+      "state": {
+        "title": "Reports built backward from data.",
+        "mapTiles": 20,
+        "legendItems": 4,
+        "reportCards": 20,
+        "stageCodes": [
+          "L2",
+          "L2",
+          "L2",
+          "L3",
+          "L3",
+          "L3",
+          "L3",
+          "L3",
+          "EA",
+          "EA",
+          "OG",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA"
+        ],
+        "stageColors": [
+          "rgb(0, 125, 184)",
+          "rgb(0, 125, 184)",
+          "rgb(0, 125, 184)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(155, 34, 38)",
+          "rgb(155, 34, 38)",
+          "rgb(176, 125, 18)",
+          "rgb(155, 34, 38)"
+        ],
+        "distinctStageColors": [
+          "rgb(0, 125, 184)",
+          "rgb(90, 130, 39)",
+          "rgb(155, 34, 38)",
+          "rgb(176, 125, 18)"
+        ],
+        "horizontalOverflow": false,
+        "overflow": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshot": "reporting-site/qa/home-showcase-report-map-desktop.png"
+    },
+    {
+      "viewport": "mobile",
+      "pass": true,
+      "state": {
+        "title": "Reports built backward from data.",
+        "mapTiles": 20,
+        "legendItems": 4,
+        "reportCards": 20,
+        "stageCodes": [
+          "L2",
+          "L2",
+          "L2",
+          "L3",
+          "L3",
+          "L3",
+          "L3",
+          "L3",
+          "EA",
+          "EA",
+          "OG",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA",
+          "EA"
+        ],
+        "stageColors": [
+          "rgb(0, 125, 184)",
+          "rgb(0, 125, 184)",
+          "rgb(0, 125, 184)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(90, 130, 39)",
+          "rgb(155, 34, 38)",
+          "rgb(155, 34, 38)",
+          "rgb(176, 125, 18)",
+          "rgb(155, 34, 38)"
+        ],
+        "distinctStageColors": [
+          "rgb(0, 125, 184)",
+          "rgb(90, 130, 39)",
+          "rgb(155, 34, 38)",
+          "rgb(176, 125, 18)"
+        ],
+        "horizontalOverflow": false,
+        "overflow": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshot": "reporting-site/qa/home-showcase-report-map-mobile.png"
+    }
+  ]
+}

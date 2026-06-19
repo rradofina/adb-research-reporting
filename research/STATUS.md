@@ -249,6 +249,18 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (home report-bench readiness map):** Added a compact
+  20-slot readiness map to the first viewport of `/`, using the shared
+  showcase registry and explicit stage colors for L2 prototype, L3 candidate,
+  evidence audit, and owner-gated reports. This keeps the front page from
+  reading like a generic topic gallery and makes the portfolio shape visible
+  before the report cards. This is a UI/UX and navigation repair only, not a
+  maturity promotion. Browser QA checked desktop and mobile home viewports:
+  2/2 passes, 20 map tiles, 4 legend entries, 20 report cards, 4 distinct
+  stage colors, no horizontal overflow, and no console/network/runtime errors.
+  QA record: `reporting-site/qa/home-showcase-report-map-browser-check.json`;
+  screenshots: `reporting-site/qa/home-showcase-report-map-desktop.png` and
+  `reporting-site/qa/home-showcase-report-map-mobile.png`.
 - **2026-06-19 (shared evidence-audit showcase route refactor):**
   Refactored the shared `/showcase/:reportSlug` route used by reports 9-20
   so each artifact-driven report now renders a four-part evidence spine

@@ -28,6 +28,42 @@ interface HeroIndex {
 }
 
 const ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
+const readinessCode = {
+  prototype: "L2",
+  "l3-candidate": "L3",
+  "evidence-audit": "EA",
+  "owner-gated": "OG",
+} as const;
+
+const readinessClass = {
+  prototype: "home-report-map-prototype",
+  "l3-candidate": "home-report-map-l3-candidate",
+  "evidence-audit": "home-report-map-evidence-audit",
+  "owner-gated": "home-report-map-owner-gated",
+} as const;
+
+const readinessLegend = [
+  {
+    key: "prototype",
+    label: "L2 prototype",
+    className: "home-report-map-legend-prototype",
+  },
+  {
+    key: "l3-candidate",
+    label: "L3 candidate",
+    className: "home-report-map-legend-l3-candidate",
+  },
+  {
+    key: "evidence-audit",
+    label: "Evidence audit",
+    className: "home-report-map-legend-evidence-audit",
+  },
+  {
+    key: "owner-gated",
+    label: "Owner-gated",
+    className: "home-report-map-legend-owner-gated",
+  },
+] as const;
 
 function statusRank(status: Maturity): number {
   const i = ORDER.indexOf(status);
@@ -110,6 +146,36 @@ export default function Home() {
                 {loaded ? heroesRendered : "..."}
               </span>
               <span>archive visuals</span>
+            </div>
+          </div>
+          <div className="home-panel-map" aria-label="Twenty-report readiness map">
+            <span className="home-panel-label">Report bench map</span>
+            <div className="home-report-map">
+              {showcaseReports.map((report) => {
+                const quality = getShowcaseReportQuality(report);
+                return (
+                  <Link
+                    to={report.href}
+                    className={`home-report-map-cell ${readinessClass[quality.readiness]}`}
+                    key={report.href}
+                    aria-label={`${String(report.id).padStart(2, "0")} ${report.shortTitle}: ${quality.readinessLabel}`}
+                    title={`${String(report.id).padStart(2, "0")} ${report.shortTitle}: ${quality.readinessLabel}`}
+                  >
+                    <span>{String(report.id).padStart(2, "0")}</span>
+                    <i>{readinessCode[quality.readiness]}</i>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="home-report-map-legend" aria-label="Readiness legend">
+              {readinessLegend.map((item) => (
+                <span
+                  className={`home-report-map-legend-item ${item.className}`}
+                  key={item.key}
+                >
+                  {item.label}
+                </span>
+              ))}
             </div>
           </div>
           <div className="home-panel-reports">

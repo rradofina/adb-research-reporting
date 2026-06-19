@@ -112,6 +112,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Source-validation scan for the non-Bangladesh monitor-grade provenance-only lane. The scan retrieves 14 seeded public source URLs across 7 economies, covers all 138 provenance-only queue rows, finds method/equipment or standard context in 7 source rows, official/automatic context in 6 source rows, caution language in 1 source row, and keeps complete monitor-grade classifications and station-radius grade-assumption-ready rows at 0."
     },
+    "air_monitoring_monitor_grade_station_review_queue": {
+      "script": "air-monitoring/scripts/build-monitor-grade-station-review-queue.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "No-network station-review queue derived from the one-signal review queue and monitor-grade source-validation scan. It assigns all 138 provenance-only station rows to review lanes: 66 method-context rows needing station confirmation, 2 caution-blocked rows, 70 official-context-only rows, and still 0 complete monitor-grade or station-radius-ready rows."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -206,6 +211,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_monitor_grade_source_validation_scan pin after checking 14 public source URLs for non-Bangladesh monitor-grade method, equipment, standard, official-context, and caution language."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_monitor_grade_station_review_queue pin after projecting source-level method/context clues onto 138 station-review rows while keeping complete grade and station-radius readiness at zero."
     }
   ]
 }

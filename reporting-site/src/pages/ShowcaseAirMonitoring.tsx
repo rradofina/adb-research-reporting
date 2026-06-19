@@ -854,6 +854,86 @@ interface MonitorGradeSourceValidationSummary {
   non_claim: string;
 }
 
+interface MonitorGradeStationReviewLaneRow {
+  station_review_lane: string;
+  label: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface MonitorGradeStationReviewCountryRow {
+  iso3: string;
+  country: string;
+  station_rows_reviewed: number;
+  method_context_needs_station_confirmation_rows: number;
+  caution_blocks_grade_rows: number;
+  official_context_only_rows: number;
+  current_status_confirmed_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface MonitorGradeStationReviewSourceGroupRow {
+  source_group_key: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_rows_reviewed: number;
+  station_rows_reviewed: number;
+  station_review_lane: string;
+  method_context_needs_station_confirmation_rows: number;
+  caution_blocks_grade_rows: number;
+  official_context_only_rows: number;
+  matched_method_terms: string;
+  matched_caution_terms: string;
+  source_keys: string;
+  reader_use: string;
+}
+
+interface MonitorGradeStationReviewSampleRow {
+  station_review_id: string;
+  station_review_lane: string;
+  station_review_priority: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_station_id: string;
+  source_station_name: string;
+  source_station_type: string;
+  matched_method_terms: string;
+  matched_caution_terms: string;
+  station_review_question: string;
+  minimum_station_evidence: string;
+}
+
+interface MonitorGradeStationReviewSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    station_rows_reviewed: number;
+    economies_reviewed: number;
+    source_groups_reviewed: number;
+    source_rows_joined: number;
+    method_context_needs_station_confirmation_rows: number;
+    caution_blocks_grade_rows: number;
+    official_context_only_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  lane_rows: MonitorGradeStationReviewLaneRow[];
+  country_rows: MonitorGradeStationReviewCountryRow[];
+  source_group_rows: MonitorGradeStationReviewSourceGroupRow[];
+  station_sample_rows: MonitorGradeStationReviewSampleRow[];
+  evidence_gate_counts: MonitorGradeGate[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -966,6 +1046,8 @@ export default function ShowcaseAirMonitoring() {
     useState<OneSignalReviewQueueSummary | null>(null);
   const [monitorGradeSourceValidation, setMonitorGradeSourceValidation] =
     useState<MonitorGradeSourceValidationSummary | null>(null);
+  const [monitorGradeStationReview, setMonitorGradeStationReview] =
+    useState<MonitorGradeStationReviewSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1025,6 +1107,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`monitor grade source validation HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-review-queue-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`monitor grade station review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -1044,6 +1130,7 @@ export default function ShowcaseAirMonitoring() {
         candidatePublicFeedSourceScanPayload,
         oneSignalReviewQueuePayload,
         monitorGradeSourceValidationPayload,
+        monitorGradeStationReviewPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -1059,6 +1146,7 @@ export default function ShowcaseAirMonitoring() {
         setCandidatePublicFeedSourceScan(candidatePublicFeedSourceScanPayload);
         setOneSignalReviewQueue(oneSignalReviewQueuePayload);
         setMonitorGradeSourceValidation(monitorGradeSourceValidationPayload);
+        setMonitorGradeStationReview(monitorGradeStationReviewPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1185,6 +1273,8 @@ export default function ShowcaseAirMonitoring() {
       <AirOneSignalReviewQueuePanel summary={oneSignalReviewQueue} />
 
       <AirMonitorGradeSourceValidationPanel summary={monitorGradeSourceValidation} />
+
+      <AirMonitorGradeStationReviewPanel summary={monitorGradeStationReview} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1773,6 +1863,19 @@ function monitorGradeSourceLaneLabel(lane: string) {
       return "retrieval failed";
     case "source_context_only_no_grade_language":
       return "no grade language";
+    default:
+      return sentenceCaseStatus(lane);
+  }
+}
+
+function monitorGradeStationLaneLabel(lane: string) {
+  switch (lane) {
+    case "method_context_needs_station_confirmation":
+      return "method context";
+    case "caution_blocks_grade":
+      return "caution blocks grade";
+    case "official_context_only":
+      return "official context only";
     default:
       return sentenceCaseStatus(lane);
   }
@@ -3035,6 +3138,176 @@ function AirMonitorGradeSourceValidationPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading monitor-grade source-validation scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirMonitorGradeStationReviewPanel({
+  summary,
+}: {
+  summary: MonitorGradeStationReviewSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const totalRows = Math.max(1, counts?.station_rows_reviewed ?? 0);
+  const countryRows = [...(summary?.country_rows ?? [])].sort(
+    (a, b) => b.station_rows_reviewed - a.station_rows_reviewed,
+  );
+  const sourceGroups = summary?.source_group_rows ?? [];
+  const sampleRows = summary?.station_sample_rows ?? [];
+
+  return (
+    <section className="showcase-section air-grade-station-section" aria-label="Monitor-grade station-review queue">
+      <div className="air-grade-station-head">
+        <div>
+          <p className="kicker kicker-blue">Station review queue</p>
+          <h2>Method context is not yet station status.</h2>
+          <p>
+            The row-level queue projects source-validation clues back onto the
+            138 provenance-only station rows. It shows where method context is
+            worth reviewing, where caution language blocks grade promotion, and
+            where official portal context is still the only public signal.
+          </p>
+        </div>
+        <div className="air-grade-station-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>station-level current status is still missing</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-station-stat-grid">
+            <div>
+              <span>Station rows</span>
+              <strong>{formatNumber(counts.station_rows_reviewed)}</strong>
+              <em>{formatNumber(counts.economies_reviewed)} economies</em>
+            </div>
+            <div>
+              <span>Method review</span>
+              <strong>{formatNumber(counts.method_context_needs_station_confirmation_rows)}</strong>
+              <em>needs station confirmation</em>
+            </div>
+            <div>
+              <span>Caution</span>
+              <strong>{formatNumber(counts.caution_blocks_grade_rows)}</strong>
+              <em>blocked rows</em>
+            </div>
+            <div>
+              <span>Official only</span>
+              <strong>{formatNumber(counts.official_context_only_rows)}</strong>
+              <em>weaker evidence lane</em>
+            </div>
+            <div>
+              <span>Radius-ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>still zero</em>
+            </div>
+          </div>
+
+          <div className="air-grade-station-lanes" aria-label="Station review lanes">
+            {summary.lane_rows.map((lane) => (
+              <article key={lane.station_review_lane} className={`air-grade-station-lane air-grade-station-lane-${lane.station_review_lane}`}>
+                <div>
+                  <span>{monitorGradeStationLaneLabel(lane.station_review_lane)}</span>
+                  <strong>{formatNumber(lane.rows)} rows</strong>
+                </div>
+                <div className="air-grade-station-track">
+                  <i style={{ width: `${Math.max(4, (lane.rows / totalRows) * 100)}%` }} />
+                </div>
+                <p>{lane.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-station-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-grade-station-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.station_rows_reviewed)} station rows</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.method_context_needs_station_confirmation_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Caution</dt>
+                    <dd>{formatNumber(row.caution_blocks_grade_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Official</dt>
+                    <dd>{formatNumber(row.official_context_only_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Ready</dt>
+                    <dd>{formatNumber(row.station_radius_grade_assumption_ready_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-station-source-grid">
+            {sourceGroups.map((source) => (
+              <article key={source.source_group_key} className={`air-grade-station-source air-grade-station-source-${source.station_review_lane}`}>
+                <div>
+                  <span>{source.iso3} · {formatNumber(source.source_rows_reviewed)} source rows</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{monitorGradeStationLaneLabel(source.station_review_lane)}</b>
+                </div>
+                <p>{source.reader_use}</p>
+                <small>
+                  {formatNumber(source.station_rows_reviewed)} station rows ·{" "}
+                  {source.matched_caution_terms || source.matched_method_terms || source.source_keys}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-station-row-grid">
+            {sampleRows.slice(0, 12).map((row) => (
+              <article key={row.station_review_id} className={`air-grade-station-row air-grade-station-row-${row.station_review_lane}`}>
+                <div>
+                  <span>{row.iso3} · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{monitorGradeStationLaneLabel(row.station_review_lane)}</b>
+                </div>
+                <p>{row.station_review_question}</p>
+                <small>{row.matched_caution_terms || row.matched_method_terms || row.source_station_type}</small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-station-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-grade-station-gate air-grade-station-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-station-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/monitor-grade-station-review-queue.md" download>
+              Station review note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-review-queue-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-review-queue.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading monitor-grade station-review queue...</p>
       )}
     </section>
   );

@@ -81,6 +81,12 @@
   complete monitor-grade classification rows and 0 station-radius
   grade-assumption-ready rows. Source-level method terms are not station-level
   current grade certification.
+- Monitor-grade station review. The 2026-06-19 no-network station-review queue
+  assigns all 138 provenance-only rows to row-level review lanes: 66
+  method-context rows needing station confirmation, 2 caution-blocked rows,
+  and 70 official-context-only rows. It still records 0 current-status
+  confirmed rows, 0 station-method classified rows, 0 complete monitor-grade
+  classification rows, and 0 station-radius grade-assumption-ready rows.
 
 ## Source-side
 

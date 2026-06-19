@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `b0d224fdd76c…`
+- `program/STATUS.md`  `ee1dd1a9abca…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -83,7 +83,8 @@ website is Tier 2 and is not included here).
 - `program/official-openaq-candidate-public-feed-source-scan.md`  `7a627b81a080…`
 - `program/one-signal-review-queue.md`  `df187fe6d954…`
 - `program/monitor-grade-source-validation-scan.md`  `b6a20db700f7…`
-- `program/limitations.md`  `f7878315bbc0…`
+- `program/monitor-grade-station-review-queue.md`  `b4a6aeab25a2…`
+- `program/limitations.md`  `6091cf850c54…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -96,6 +97,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-monitor-grade-evidence.csv`  `df7e2a3eb887…`
 - `program/generated/air-monitoring-monitor-grade-source-validation-scan-summary.json`  `8535f7596a82…`
 - `program/generated/air-monitoring-monitor-grade-source-validation-scan.csv`  `d2ffe6b2790e…`
+- `program/generated/air-monitoring-monitor-grade-station-review-queue-summary.json`  `bfec8151b994…`
+- `program/generated/air-monitoring-monitor-grade-station-review-queue.csv`  `1e4d266e38bb…`
 - `program/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json`  `1c1e1c8b4b35…`
 - `program/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv`  `71cebe893149…`
 - `program/generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json`  `fb5141e6223b…`
@@ -120,6 +123,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/audit-monitor-grade-evidence.py`  `57f5cac1bf0e…`
 - `program/scripts/audit-official-openaq-candidate-public-evidence.py`  `65df72c733de…`
 - `program/scripts/build-metadata-readiness-audit.py`  `868c73ab91e8…`
+- `program/scripts/build-monitor-grade-station-review-queue.py`  `6b1630ba0f25…`
 - `program/scripts/build-official-openaq-candidate-review.py`  `3c6c54513f78…`
 - `program/scripts/build-one-signal-review-queue.py`  `4be11f591ba7…`
 - `program/scripts/build-regulator-source-inventory.py`  `a14135438dc3…`
@@ -142,7 +146,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `49141a03d225…`
+- `shared/versions.json`  `7b80c2e651fe…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -152,4 +156,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T09:40:57.134Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T09:55:39.964Z by `scripts/build-review-packet.mjs`.

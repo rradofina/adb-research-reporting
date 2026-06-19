@@ -1,7 +1,7 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/program/disaster-recovery-lag/evidence",
-  "generated_at": "2026-06-19T17:00:25.985Z",
+  "generated_at": "2026-06-19T18:48:33.089Z",
   "hero": {
     "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
     "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
@@ -153,7 +153,7 @@
       "file": "generated/disaster-recovery-lag-adb-panel.json",
       "size": 24125,
       "size_human": "23.6 KB",
-      "sha256": "5f7bb5bcd0cc68bf16cde4fd61e3234862d76c94d800e1ce5420f758448eb058"
+      "sha256": "ce58ac7986b1133aced8319fdd9788d41f430989b662dd924bc2da816352267c"
     },
     {
       "file": "generated/disaster-recovery-lag-metric-falsification.csv",
@@ -165,7 +165,25 @@
       "file": "generated/disaster-recovery-lag-metric-falsification.json",
       "size": 3821,
       "size_human": "3.7 KB",
-      "sha256": "ee9bfd7d59d7d46de983f676a270e5a33f5425cafcde4608fbceaa530494cd29"
+      "sha256": "89eff20d8a997008c8e6f4d4ef9f3db21fb026facf1d73c35c9eba6cf03429c5"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-recovery-source-readiness-country.csv",
+      "size": 3655,
+      "size_human": "3.6 KB",
+      "sha256": "4cb024f0c8a9aa514dd3c594df55982662ccec1da283f4032a814203bbbfad91"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-recovery-source-readiness-events.csv",
+      "size": 86499,
+      "size_human": "84.5 KB",
+      "sha256": "f6fb98bcb1994ec20fbca28cb0f5b658db41c8205bd7433e61e468da49b2c6a9"
+    },
+    {
+      "file": "generated/disaster-recovery-lag-recovery-source-readiness.json",
+      "size": 291210,
+      "size_human": "284.4 KB",
+      "sha256": "cff7a0603baaee973ceb0671b48812b5bc17c64245dafe4b29d9376d94df1ebe"
     }
   ],
   "articles": [

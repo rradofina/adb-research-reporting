@@ -1,0 +1,610 @@
+iso3,country,gdis_id,disasterno,year,disastertype,locations,admin_levels,adm1_sample,adm2_sample,readiness_lane
+PHL,Philippines,5364,2014-0479,2014,storm,39,L1:38; L2:1,Agusan Del Norte; Agusan Del Sur; Aklan; Albay; Antique; Bataan,Caraga; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5328,2012-0260,2012,storm,35,L1:35,Aklan; Antique; Bataan; Batangas; Benguet; Bulacan,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5357,2014-0227,2014,storm,34,L1:23; L2:11,Albay; Aurora; Bataan; Batangas; Biliran; Bulacan,Kalookan City; Malabon; Mandaluyong; Marikina; Muntinlupa; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5365,2014-0497,2014,storm,33,L1:32; L2:1,Agusan Del Norte; Agusan Del Sur; Aklan; Antique; Bohol; Bukidnon,Caraga; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5349,2013-0434,2013,flood,31,L1:29; L2:2,Aklan; Antique; Biliran; Bukidnon; Camiguin; Capiz,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5361,2014-0390,2014,storm,31,L1:31,Aklan; Antique; Apayao; Aurora; Bataan; Benguet,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-262,2016-0271,2016,flood,30,L2:30,Bihar; Uttar Pradesh,Allahabad; Araria; Ballia; Banda; Begusarai; Bhagalpur,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4472,2013-0456,2013,flood,29,L3:29,Central; East; Far-Western; Mid-Western; West,Bagmati; Bheri; Dhaualagiri; Janakpur; Karnali; Koshi,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5371,2015-0283,2015,flood,28,L2:20; L1:8,Apayao; Bataan; Batangas; Benguet; Bulacan; Cavite,Atok; Baguio City; Bakun; Botolan; Candelaria; Conner,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,92,2014-0134,2014,flood,27,L1:27,Badakhshan; Badghis; Baghlan; Balkh; Bamyan; Daykundi,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-280,2017-0517,2017,flood,26,L2:25; L3:1,Uttar Pradesh,Ambedkar Nagar; Azamgarh; Bahraich; Ballia; Balrampur; Barabanki,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5346,2013-0274,2013,flood,25,L2:19; L1:6,Abra; Bataan; Benguet; Bulacan; Cavite; Laguna,Bacoor; Binangonan; Bontoc; Floridablanca; Imus; Kawit,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5354,2014-0020,2014,storm,22,L1:20; L2:2,Agusan Del Norte; Agusan Del Sur; Bukidnon; Camiguin; Compostela Valley; Davao Del Norte,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6269,2013-0431,2013,flood,22,L1:22,Ang Thong; Chachoengsao; Chai Nat; Chanthaburi; Chiang Rai; Nakhon Nayok,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5339,2012-0540,2012,storm,21,L1:21,Aklan; Albay; Antique; Bohol; Camarines Norte; Camarines Sur,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-276,2017-0289,2017,flood,20,L2:20,Assam,Barpeta; Bongaigaon; Cachar; Chirang; Darrang; Dhemaji,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-119,2017-0187,2017,flood,19,L1:19,Beijing; Fujian; Gansu; Guangdong; Hebei; Heilongjiang,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2936,2012-0179,2012,flood,19,L2:18; L1:1,Arunachal Pradesh; Assam,Barpeta; Bongaigaon; Chirang; Darrang; Dhemaji; Dhubri,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,01-882,2013-0338,2013,flood,19,L2:19,Bokeo; Bolikhamxai; Houaphan; Khammouan; Oudomxai; Vientiane,Beng; Bolikhanh; Feuang; Hinboon; Houixai; Kasy,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,87,2013-0151,2013,earthquake,18,L2:18,Badghis; Kunar; Nangarhar; Wardak,Achin; Bati Kot; Chaparhar; Chawkay; Dih Bala; Goshta,needs_emdat_event_date_and_black_marble_extraction
+KHM,Cambodia,960,2013-0380,2013,flood,18,L1:15; L2:3,Banteay Meanchey; Batdambang; Kampong Cham; Kampong Chhnang; Kampong Thum; Kampot,Choam Khsant; Kampot; Kracheh; NA; Pailin,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5327,2012-0602,2012,flood,18,L1:16; L2:2,Bukidnon; Camiguin; Davao Del Sur; Davao Oriental; Lanao Del Norte; Lanao Del Sur,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5344,2013-0340,2013,flood,18,L1:16; L2:2,Bukidnon; Camiguin; Davao Del Sur; Davao Oriental; Lanao Del Norte; Lanao Del Sur,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,05-700,2015-9410,2015,drought,18,L2:16; L1:2,Central; Chimbu; East New Britain; Eastern Highlands; Enga; Manus,Chuave; Goilala; Goroka; Gumine; Henganofi; Ialibu-Pangia,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-265,2016-0276,2016,flood,17,L2:17,Madhya Pradesh,Agar Malwa; Bhopal; Damoh; Harda; Hoshangabad; Jabalpur,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-128,2015-0317,2015,flood,17,L2:13; L1:4,Assam; Gujarat; Madhya Pradesh; Manipur; Odisha; Rajasthan,Banas Kantha; Darrang; Dhemaji; Dhubri; Goalpara; Jalpaiguri,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5329,2012-0272,2012,flood,17,L1:17,Bataan; Batangas; Bulacan; Cavite; Ilocos Sur; Iloilo,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-130,2015-0406,2015,flood,16,L2:15; L3:1,Assam,Barpeta; Bongaigaon; Cachar; Darrang; Dhemaji; Dibrugarh,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5345,2013-0272,2013,storm,16,L1:16,Aurora; Bataan; Batanes; Bulacan; Cagayan; Ilocos Norte,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,2-Jun,2015-0476,2015,earthquake,15,L1:14; L2:1,Badakhshan; Baghlan; Ghazni; Kabul; Kapisa; Khost,NA; Panjsher,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,641,2014-0290,2014,flood,15,L2:15,Dhaka; Rajshahi; Rangpur; Sylhet,Bogra; Faridpur; Gaibandha; Jamalpur; Kurigram; Lalmonirhat,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-94,2016-0236,2016,flood,15,L1:15,Anhui; Chongqing; Fujian; Gansu; Guangxi; Guizhou,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5342,2013-0378,2013,storm,15,L1:15,Agusan Del Norte; Bukidnon; Compostela Valley; Davao Del Norte; Davao Del Sur; Davao Oriental,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6267,2012-0375,2012,flood,15,L1:15,Ang Thong; Chachoengsao; Chai Nat; Chaiyaphum; Chon Buri; Nakhon Pathom,NA,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,632,2012-0082,2012,storm,14,L2:12; L1:2,Barisal; Chittagong; Dhaka; Khulna; Rajshahi; Rangpur,Bhola; Chuadanga; Comilla; Faridpur; Jamalpur; Jessore,needs_emdat_event_date_and_black_marble_extraction
+MYS,Malaysia,4070,2014-0494,2014,flood,14,L1:14,Johor; Kedah; Kelantan; Kuala Lumpur; Melaka; Negeri Sembilan,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6275,2014-0522,2014,flood,14,L1:14,Chumphon; Krabi; Nakhon Si Thammarat; Narathiwat; Pattani; Phangnga,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-104,2016-0373,2016,storm,13,L1:13,Fujian; Guizhou; Hebei; Heilongjiang; Henan; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1583,2012-0173,2012,flood,13,L1:13,Chongqing; Fujian; Guangdong; Guangxi; Guizhou; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-75,2015-0395,2015,flood,13,L1:13,Chongqing; Gansu; Guizhou; Hebei; Henan; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-266,2016-0304,2016,flood,13,L2:10; L3:3,Chhattisgarh; Gujarat; Maharashtra,Chhota Udaipur; Kolhapur; Nashik; Navsari; Pune; Raigarh,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-309,2015-0226,2015,landslide,13,L2:13,Assam,Barpeta; Bongaigaon; Darrang; Dhemaji; Dibrugarh; Goalpara,needs_emdat_event_date_and_black_marble_extraction
+IND,India,05-409,2015-9618,2015,drought,13,L1:13,Andhra Pradesh; Assam; Bihar; Chhattisgarh; Himachal Pradesh; Jharkhand,NA,needs_emdat_event_date_and_black_marble_extraction
+LKA,Sri Lanka,5912,2013-0220,2013,flood,13,L1:13,Colombo; Galle; Gampaha; Hambantota; Kalutara; Kandy,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5320,2012-0009,2012,flood,13,L1:11; L2:2,Agusan Del Sur; Aklan; Antique; Capiz; Compostela Valley; Davao Del Norte,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5347,2013-0373,2013,storm,13,L2:10; L1:3,Aurora; Batangas; Benguet; Catanduanes; Guimaras; Ilocos Norte,Bacarra; Bago City; Caramoran; Dagupan; Dingalan; Jordan,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5363,2014-0474,2014,storm,13,L1:11; L2:2,Bohol; Cebu; Davao Del Sur; Davao Oriental; Dinagat Islands; Misamis Occidental,Caraga; Davao City; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-109,2016-0340,2016,storm,12,L1:12,Fujian; Gansu; Guangxi; Guizhou; Hebei; Henan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-138,2018-0210,2018,flood,12,L1:12,Chongqing; Gansu; Guizhou; Hebei; Henan; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-62,2015-0219,2015,flood,12,L1:12,Anhui; Fujian; Guangdong; Guangxi; Guizhou; Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-268,2017-0294,2017,flood,12,L2:12,Gujarat; Rajasthan; West Bengal,Banas Kantha; Barmer; Jalor; Kolkata; Navsari; Pali,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-253,2013-0208,2013,extreme temperature,12,L2:11; L3:1,Andhra Pradesh; Telangana,Adilabad; East Godavari; Guntur; Karimnagar; Khammam; Krishna,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,06-208,2015-0476,2015,earthquake,12,L3:8; L2:2; L1:2,Azad Kashmir; F.C.T.; N.W.F.P.; Punjab,Dera Ghazi Khan; Faisalabad; Gujranwala; Islamabad; Lahore; Multan,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-110,2017-0463,2017,flood,11,L2:8; L3:2; L1:1,Anhui; Chongqing; Hebei; Henan; Hubei; Shaanxi,Ankang; Cangzhou; Chongqing; NA; Nanyang; Panzhihua,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-120,2017-0245,2017,flood,11,L1:11,Anhui; Chongqing; Guangdong; Guangxi; Guizhou; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-154,2016-0162,2016,landslide,11,L1:10; L2:1,Chongqing; Fujian; Guangdong; Guangxi; Guizhou; Hubei,NA; Sanming,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-98,2016-0241,2016,flood,11,L1:11,Anhui; Chongqing; Guangxi; Guizhou; Henan; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-99,2016-0233,2016,flood,11,L1:11,Anhui; Chongqing; Fujian; Guangdong; Guangxi; Guizhou,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-134,2015-0504,2015,flood,11,L2:9; L3:1; L1:1,Andhra Pradesh; Puducherry; Tamil Nadu,Chennai; Chittoor; Cuddalore; Kancheepuram; NA; Nagappattinam,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2946,2013-0282,2013,flood,11,L2:11,Assam,Chirang; Dhemaji; Golaghat; Jorhat; Kamrup; Karimganj,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2947,2013-0260,2013,flood,11,L2:11,Uttar Pradesh,Bahraich; Barabanki; Basti; Faizabad; Gonda; Gorakhpur,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2960,2014-0408,2014,flood,11,L2:8; L1:3,Assam; Bihar; Uttar Pradesh; Uttarakhand,Azamgarh; Balrampur; Barabanki; Faizabad; Gonda; Lakhimpur Kheri,needs_emdat_event_date_and_black_marble_extraction
+LKA,Sri Lanka,5910,2013-0039,2013,flood,11,L1:11,Ampara; Batticaloa; Jaffna; Kandy; Kilinochchi; Mannar,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-500,2017-0243,2017,flood,11,L3:8; L2:2; L1:1,Azad Kashmir; Baluchistan; F.A.T.A.; N.W.F.P.; Punjab; Sind,F.A.T.A.; Faisalabad; Kalat; Karachi; Malakand; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5340,2013-0036,2013,storm,11,L1:11,Compostela Valley; Davao Del Norte; Davao Del Sur; Marinduque; Occidental Mindoro; Oriental Mindoro,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7382,2013-0433,2013,storm,11,L1:10; L2:1,Bac Giang; Da Nang; Ha Tinh; Hai Phong; Nghe An; Quang Nam,Hai Chau; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-100,2016-0257,2016,flood,10,L1:10,Beijing; Hebei; Heilongjiang; Henan; Jilin; Liaoning,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-133,2017-0372,2017,flood,10,L1:7; L2:3,Gansu; Heilongjiang; Henan; Hubei; Jilin; Liaoning,Chengdu; Deyang; Luzhou; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-135,2018-0050,2018,storm,10,L1:9; L3:1,Anhui; Chongqing; Guizhou; Henan; Hubei; Hunan,NA; Yuncheng,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-142,2018-0198,2018,flood,10,L1:10,Anhui; Chongqing; Fujian; Gansu; Guizhou; Henan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-193,2015-9328,2015,drought,10,L1:10,Hebei; Heilongjiang; Jilin; Liaoning; Nei Mongol; Ningxia Hui,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-88,2016-0137,2016,flood,10,L1:10,Anhui; Fujian; Guangdong; Guangxi; Guizhou; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-95,2016-0230,2016,storm,10,L1:10,Gansu; Guangdong; Guangxi; Hainan; Hebei; Henan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-96,2016-0238,2016,flood,10,L1:10,Anhui; Chongqing; Guizhou; Henan; Hubei; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-59,2015-0214,2015,storm,10,L1:10,Anhui; Guangdong; Guangxi; Guizhou; Hubei; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-78,2015-0457,2015,flood,10,L1:10,Chongqing; Guangdong; Guangxi; Guizhou; Hainan; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-264,2016-0267,2016,flood,10,L2:10,Assam,Barpeta; Bongaigaon; Darrang; Dhubri; Goalpara; Golaghat,needs_emdat_event_date_and_black_marble_extraction
+LKA,Sri Lanka,5909,2012-0537,2012,flood,10,L1:10,Badulla; Batticaloa; Galle; Hambantota; Kandy; Kurunegala,NA,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4478,2015-0144,2015,earthquake,10,L3:10,Central; West,Bagmati; Gandaki; Janakpur,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,01-1082,2012-0363,2012,flood,10,L3:7; L1:3,Azad Kashmir; Baluchistan; N.W.F.P.; Northern Areas; Punjab; Sind,Dera Ghazi Khan; Hyderabad; Larkana; NA; Nasirabad; Sukkur,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5355,2014-0055,2014,storm,10,L1:9; L2:1,Agusan Del Norte; Antique; Biliran; Cebu; Davao Oriental; Dinagat Islands,Caraga; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-118,2017-0169,2017,flood,9,L1:9,Chongqing; Fujian; Guangdong; Guangxi; Guizhou; Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-121,2017-0254,2017,flood,9,L1:9,Chongqing; Fujian; Guizhou; Hubei; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-127,2017-0264,2017,flood,9,L1:9,Guangdong; Guangxi; Guizhou; Hubei; Hunan; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,03-130,2016-0023,2016,extreme temperature,9,L2:4; L1:4; L3:1,Beijing; Hainan; Heilongjiang; Hunan; Jilin; Nei Mongol,Changchun; Changsha; Daxing'anling; Harbin; Hulunbuir; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1660,2014-0323,2014,flood,9,L1:9,Gansu; Guizhou; Hebei; Hunan; Nei Mongol; Ningxia Hui,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3219,2014-0473,2014,flood,9,L1:9,Aceh; Bangka Belitung; Bengkulu; Jambi; Lampung; Riau,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-271,2017-0508,2017,storm,9,L2:7; L3:1; L1:1,Andhra Pradesh; Kerala; Lakshadweep; Tamil Nadu,Chittoor; Ernakulam; Kanniyakumari; Kozhikode; NA; Nellore,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-283,2018-0431,2018,storm,9,L2:9,Tamil Nadu,Chennai; Dindigul; Madurai; Nagappattinam; Pudukkottai; Ramanathapuram,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-499,2017-0181,2017,storm,9,L3:8; L2:1,Punjab,Bahawalpur; Dera Ghazi Khan; Faisalabad; Gujranwala; Lahore; Multan,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4772,2014-0343,2014,flood,9,L3:8; L2:1,Azad Kashmir; Northern Areas; Punjab,Azad Kashmir; Faisalabad; Gujranwala; Lahore; Northern Areas; Rawalpindi,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5356,2014-0250,2014,flood,9,L2:8; L1:1,Maguindanao; Sultan Kudarat,Ampatuan; Barira; Datu Odin Sinsuat; Kabuntalan; Mamasapano; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-122,2017-0284,2017,storm,8,L1:8,Gansu; Hebei; Heilongjiang; Jilin; Liaoning; Ningxia Hui,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-128,2017-0476,2017,flood,8,L1:8,Chongqing; Guangxi; Guizhou; Henan; Hubei; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-134,2017-0398,2017,flood,8,L2:4; L3:2; L1:2,Chongqing; Hubei; Shaanxi; Shanxi; Sichuan,Ankang; Chongqing; Hanzhong; NA; Suizhou Shi; Xianyang,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3217,2014-0038,2014,flood,8,L2:5; L1:3,Banten; Jakarta Raya; Jawa Barat; Jawa Tengah; Jawa Timur; Yogyakarta,Demak; Indramayu; Jombang; Kudus; NA; Subang,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-278,2017-0265,2017,storm,8,L2:7; L3:1,Bihar; Uttar Pradesh,Agra; Araria; Gaya; Nalanda; Patna; Rohtas,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-126,2015-0333,2015,flood,8,L1:8,Arunachal Pradesh; Haryana; Himachal Pradesh; Jammu And Kashmir; Punjab; Rajasthan,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2945,2013-0192,2013,flood,8,L1:8,Bihar; Gujarat; Himachal Pradesh; Karnataka; Kerala; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5334,2012-0434,2012,storm,8,L1:8,Aurora; Bataan; Bulacan; Metropolitan Manila; Nueva Ecija; Pampanga,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5350,2013-0430,2013,storm,8,L1:8,Aurora; Bulacan; Nueva Ecija; Nueva Vizcaya; Pampanga; Pangasinan,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5368,2015-0176,2015,storm,8,L2:8,Cagayan; Isabela,Aparri; Benito Soliven; Buguey; Dinapigue; Gonzaga; Maconacon,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5370,2015-0278,2015,storm,8,L1:8,Abra; Benguet; Ilocos Norte; Ilocos Sur; Kalinga; La Union,NA,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,643,2015-0213,2015,storm,7,L2:7,Dhaka; Khulna; Rangpur; Sylhet,Bagerhat; Dinajpur; Gaibandha; Jamalpur; Mymensingh; Sherpur,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,01-380,2014-0180,2014,flood,7,L1:7,Chongqing; Guangdong; Guangxi; Guizhou; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-117,2017-0214,2017,storm,7,L1:7,Chongqing; Guangxi; Guizhou; Hubei; Hunan; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-129,2017-0352,2017,storm,7,L1:4; L2:2; L3:1,Fujian; Guangdong; Guangxi; Guizhou; Yunnan,Jiangmen; NA; Shenzhen; Zhuhai,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1602,2013-0084,2013,storm,7,L1:7,Fujian; Guangdong; Guizhou; Hubei; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1639,2014-0110,2014,storm,7,L1:7,Chongqing; Fujian; Guangdong; Guangxi; Guizhou; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1646,2014-0212,2014,flood,7,L1:7,Chongqing; Fujian; Guangdong; Guangxi; Guizhou; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1659,2014-0321,2014,flood,7,L1:7,Fujian; Guangdong; Guangxi; Guizhou; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-90,2016-0194,2016,flood,7,L1:7,Fujian; Guangdong; Guangxi; Guizhou; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-92,2016-0198,2016,flood,7,L1:7,Anhui; Guizhou; Hubei; Hunan; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-52,2015-0131,2015,storm,7,L1:7,Chongqing; Guizhou; Henan; Jiangxi; Shaanxi; Shanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-64,2015-0247,2015,flood,7,L1:7,Chongqing; Fujian; Guangdong; Guizhou; Hubei; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,02-192,2016-0041,2016,storm,7,L2:5; L1:2,Central; Eastern; Northern; Western,Bua; Cakaudrove; Lau; Lomaiviti; Macuata; NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3199,2012-0426,2012,flood,7,L1:7,Gorontalo; Sulawesi Barat; Sulawesi Selatan; Sulawesi Tengah; Sulawesi Tenggara; Sulawesi Utara,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-256,2016-0002,2016,earthquake,7,L2:7,Assam; Manipur,Bishnupur; Imphal East; Imphal West; Kamrup; Senapati; Tamenglong,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-282,2018-0385,2018,storm,7,L2:6; L3:1,Andhra Pradesh; Madhya Pradesh; Odisha,Gajapati; Ganjam; Guna; Kandhamal; Puri; Rayagada,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-297,2018-0345,2018,flood,7,L2:6; L1:1,Assam; West Bengal,Barpeta; Darrang; Dhemaji; Golaghat; NA; Sivasagar,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-252,2012-0538,2012,extreme temperature,7,L1:7,Bihar; Haryana; Himachal Pradesh; Jammu And Kashmir; Punjab; Rajasthan,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-258,2016-0133,2016,extreme temperature,7,L1:7,Andhra Pradesh; Bihar; Jharkhand; Odisha; Rajasthan; Tamil Nadu,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2948,2013-0345,2013,flood,7,L2:5; L1:2,Assam; Madhya Pradesh; Uttar Pradesh,Bhopal; Hoshangabad; Jabalpur; NA; Narsimhapur; Seoni,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,02-391,2016-0316,2016,flood,7,L1:6; L2:1,Bokeo; Houaphan; Louangphrabang; Oudomxai; Saravan; Xaignabouri,NA; Saravane,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4476,2014-0272,2014,flood,7,L3:7,Central; Mid-Western,Bagmati; Bheri; Gandaki; Rapti,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5343,2013-0258,2013,storm,7,L1:7,Albay; Camarines Norte; Camarines Sur; Catanduanes; Masbate; Metropolitan Manila,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5351,2013-0395,2013,earthquake,7,L1:7,Bohol; Cebu; Guimaras; Iloilo; Negros Occidental; Negros Oriental,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5353,2013-0433,2013,storm,7,L1:7,Aklan; Capiz; Cebu; Iloilo; Leyte; Palawan,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6272,2014-0159,2014,earthquake,7,L1:7,Chiang Rai; Lampang; Lamphun; Mae Hong Son; Nan; Phayao,Mueang Phrae; NA,needs_emdat_event_date_and_black_marble_extraction
+TUV,Tuvalu,6423,2015-0093,2015,storm,7,L1:7,Nanumanga; Nanumea; Niutao; Nui; Nukufetau; Nukulaelae,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7383,2013-0443,2013,flood,7,L1:6; L2:1,Binh Dinh; Da Nang; Gia Lai; Kon Tum; Phu Yen; Quang Nam,Hai Chau; NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,21-Apr,2015-0151,2015,landslide,6,L1:4; L2:2,Badakhshan; Baghlan; Balkh; Faryab; Jawzjan; Sari Pul,Khwahan; NA; Sar-I-Pul City,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-105,2016-0376,2016,flood,6,L1:6,Chongqing; Guangxi; Guizhou; Hunan; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-123,2017-0286,2017,storm,6,L1:5; L3:1,Anhui; Chongqing; Guangxi; Guizhou; Sichuan; Yunnan,Huangshan; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-189,2013-9062,2013,drought,6,L1:6,Gansu; Qinghai; Shaanxi; Shanxi; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-194,2016-9369,2016,drought,6,L1:6,Gansu; Heilongjiang; Jilin; Nei Mongol; Ningxia Hui; Shanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1642,2014-0133,2014,storm,6,L1:6,Guangxi; Hunan; Jiangxi; Qinghai; Shaanxi; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1674,2015-0185,2015,flood,6,L1:6,Fujian; Guangdong; Guangxi; Guizhou; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1677,2015-0240,2015,flood,6,L1:6,Anhui; Chongqing; Guizhou; Hubei; Jiangsu; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-89,2016-0140,2016,storm,6,L1:6,Guangxi; Guizhou; Henan; Hubei; Shaanxi; Shandong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-56,2018-0348,2018,storm,6,L1:6,Anhui; Henan; Jiangsu; Shandong; Shanghai; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-60,2018-0474,2018,storm,6,L1:6,Guangxi; Guizhou; Hubei; Hunan; Jiangxi; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-67,2015-0251,2015,storm,6,L1:6,Gansu; Heilongjiang; Nei Mongol; Ningxia Hui; Qinghai; Shaanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-73,2015-0334,2015,storm,6,L1:6,Gansu; Hebei; Henan; Hubei; Nei Mongol; Shaanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,Jul-80,2018-0194,2018,storm,6,L2:6,Central; Eastern; Northern; Western,Ba; Lomaiviti; Macuata; Nadroga/Navosa; Ra; Rewa,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3188,2012-0558,2012,storm,6,L1:6,Banten; Jakarta Raya; Jawa Barat; Jawa Tengah; Jawa Timur; Yogyakarta,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3215,2014-0018,2014,flood,6,L2:6,Sulawesi Utara,Kepulauan Sangihe; Manado; Minahasa; Minahasa Selatan; Minahasa Utara; Tomohon,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3216,2014-0057,2014,flood,6,L1:6,Banten; Jakarta Raya; Jawa Barat; Jawa Tengah; Jawa Timur; Yogyakarta,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-277,2017-0180,2017,flood,6,L2:3; L1:3,Assam; Jharkhand; Manipur; Nagaland,Darrang; Karimganj; Lakhimpur; NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-294,2018-0202,2018,storm,6,L1:6,Assam; Manipur; Mizoram; Tripura; Uttar Pradesh; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2950,2013-0401,2013,storm,6,L1:6,Andhra Pradesh; Bihar; Chhattisgarh; Jharkhand; Odisha; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-488,2016-0553,2016,flood,6,L1:5; L3:1,Azad Kashmir; Baluchistan; F.A.T.A.; N.W.F.P.; Northern Areas; Punjab,F.A.T.A.; NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-497,2017-0045,2017,flood,6,L3:6,Baluchistan,Makran; Quetta; Sibi,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4769,2013-0381,2013,earthquake,6,L3:6,Baluchistan,Kalat; Makran; Quetta,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5324,2012-0396,2012,flood,6,L1:6,Aklan; Antique; Capiz; Guimaras; Iloilo; Negros Occidental,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5358,2014-0240,2014,storm,6,L1:5; L2:1,Batanes; Cagayan; Isabela; Nueva Vizcaya; Quirino; Rizal,NA; Rodriguez,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5366,2015-0017,2015,storm,6,L1:6,Catanduanes; Cebu; Eastern Samar; Metropolitan Manila; Samar; Sorsogon,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,01-1101,2013-0028,2013,flood,6,L1:6,Central; Jiwaka; Morobe; National Capital District; Sandaun; Western Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7374,2012-0406,2012,storm,6,L1:6,Hai Phong; Nam Dinh; Nghe An; Ninh Binh; Thai Binh; Thanh Hoa,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7380,2013-0419,2013,storm,6,L1:6,Ha Tinh; Nghe An; Quang Binh; Quang Tri; Thanh Hoa; Thua Thien Hue,NA,needs_emdat_event_date_and_black_marble_extraction
+VUT,Vanuatu,7203,2015-0093,2015,storm,6,L1:6,Malampa; Penama; Sanma; Shefa; Tafea; Torba,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,1-Feb,2016-0135,2016,flood,5,L1:5,Badghis; Baghlan; Daykundi; Samangan; Takhar,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,18-Apr,2015-0054,2015,landslide,5,L1:4; L2:1,Badakhshan; Bamyan; Laghman; Nangarhar; Panjshir,NA; Panjsher,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,6-Feb,2017-0071,2017,storm,5,L2:4; L1:1,Faryab; Kabul; Laghman,Andkhoy; Bilchiragh; Dawlat Shah; NA; Pashtun Kot,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,86,2013-0148,2013,flood,5,L1:5,Badakhshan; Hirat; Kandahar; Kunduz; Parwan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,89,2013-0279,2013,flood,5,L1:5,Kabul; Khost; Kunar; Nangarhar; Paktya,NA,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,635,2012-0385,2012,storm,5,L3:4; L2:1,Barisal; Chittagong; Dhaka,Bhola; Chittagong; Gazipur; Noakhali,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,01-382,2014-0389,2014,flood,5,L1:5,Chongqing; Guizhou; Hubei; Shaanxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-108,2016-0350,2016,storm,5,L2:3; L3:2,Fujian; Hebei; Henan; Zhejiang,Lishui; Pingdingshan; Quanzhou; Quzhou; Shijiazhuang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-114,2017-0143,2017,storm,5,L1:5,Chongqing; Henan; Hubei; Shaanxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-125,2017-0287,2017,flood,5,L1:5,Henan; Hubei; Jiangsu; Shaanxi; Shandong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-130,2017-0485,2017,storm,5,L1:5,Fujian; Guangdong; Guangxi; Hainan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-141,2018-0201,2018,storm,5,L1:5,Fujian; Guangdong; Hainan; Jiangxi; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1596,2012-0610,2012,flood,5,L1:5,Hebei; Heilongjiang; Jilin; Liaoning; Shandong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1607,2013-0200,2013,flood,5,L1:5,Guangdong; Guizhou; Hubei; Jiangxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1617,2013-0249,2013,storm,5,L1:5,Anhui; Fujian; Guangdong; Jiangxi; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1618,2013-0262,2013,flood,5,L1:5,Gansu; Heilongjiang; Jilin; Sichuan; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1641,2014-0132,2014,storm,5,L1:5,Anhui; Chongqing; Guizhou; Hubei; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1663,2014-0389,2014,flood,5,L1:5,Chongqing; Guizhou; Hubei; Shaanxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-87,2016-0095,2016,flood,5,L1:5,Guangdong; Guangxi; Guizhou; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-93,2016-0235,2016,storm,5,L1:4; L2:1,Beijing; Jiangsu; Jilin; Liaoning; Xinjiang Uygur,NA; Yancheng,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-97,2016-0209,2016,storm,5,L1:5,Beijing; Jiangsu; Jilin; Liaoning; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-52,2018-0287,2018,storm,5,L1:5,Hebei; Jiangsu; Shandong; Shanghai; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2285,2012-0165,2012,flood,5,L2:4; L1:1,Kakheti; Mtskheta-Mtianeti; Tbilisi,Dusheti; Gurjaani; Lagodekhi; Mtskheta; NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2290,2014-0365,2014,flood,5,L2:5,Ajaria; Guria,Batumi; Chokhatauri; Kobuleti; Lanchkhuti; Ozurgeti,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-292,2018-0199,2018,storm,5,L1:5,Kerala; Maharashtra; Mizoram; Rajasthan; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-127,2015-0413,2015,flood,5,L2:4; L1:1,Arunachal Pradesh; Assam,Dhemaji; Kokrajhar; Lakhimpur; NA; Sonitpur,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2952,2013-0515,2013,storm,5,L2:5,Andhra Pradesh,East Godavari; Guntur; Krishna; Visakhapatnam; West Godavari,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2967,2015-0164,2015,storm,5,L2:5,Bihar,Madhepura; Madhubani; Purnia; Sitamarhi; Supaul,needs_emdat_event_date_and_black_marble_extraction
+KAZ,Kazakhstan,3724,2012-0059,2012,flood,5,L2:5,South Kazakhstan,Baydibekskiy; Kazygurtskiy; Ordabasynskiy; Sayramskiy; Tolebiyskiy,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,02-395,2018-0305,2018,storm,5,L1:5,Attapu; Champasak; Khammouan; Oudomxai; Savannakhet,NA,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,3900,2013-0417,2013,flood,5,L1:5,Attapu; Champasak; Saravan; Savannakhet; Xekong,NA,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4421,2012-0417,2012,earthquake,5,L3:3; L2:2,Mandalay; Sagaing,Kyaukse; Pyin-Oo-Lwin; Shwebo,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4422,2013-0263,2013,flood,5,L1:4; L2:1,Ayeyarwady; Kayin; Mon; Rakhine; Tanintharyi,Mergui; NA,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4425,2015-0253,2015,flood,5,L1:5,Ayeyarwady; Bago; Kayin; Rakhine; Tanintharyi,NA,needs_emdat_event_date_and_black_marble_extraction
+MYS,Malaysia,4069,2013-0535,2013,flood,5,L1:5,Johor; Kelantan; Kuala Lumpur; Pahang; Trengganu,NA,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4473,2013-0576,2013,flood,5,L3:5,Central; East,Koshi; Mechi; Narayani; Sagarmatha,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,06-207,2015-0291,2015,flood,5,L1:5,Azad Kashmir; Baluchistan; N.W.F.P.; Punjab; Sind,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4768,2013-0276,2013,flood,5,L1:4; L3:1,Baluchistan; N.W.F.P.; Northern Areas; Punjab; Sind,NA; Northern Areas,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5341,2013-0019,2013,flood,5,L1:5,Bukidnon; Camiguin; Lanao Del Norte; Misamis Occidental; Misamis Oriental,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5360,2014-0414,2014,flood,5,L2:3; L1:2,Bukidnon; Misamis Oriental; Quezon,Cagayan De Oro; El Salvador; Lagonglong; NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,06-213,2015-0097,2015,flood,5,L1:5,Madang; Milne Bay; Morobe; National Capital District; West New Britain,NA,needs_emdat_event_date_and_black_marble_extraction
+SLB,Solomon Islands,5693,2014-0091,2014,flood,5,L1:5,Guadalcanal; Honiara; Isabel; Makira Ulawa; Malaita,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6270,2013-0533,2013,flood,5,L1:5,Nakhon Si Thammarat; Narathiwat; Phatthalung; Songkhla; Trang,NA,needs_emdat_event_date_and_black_marble_extraction
+TJK,Tajikistan,6143,2015-0194,2015,flood,5,L2:5,Khatlon; Tadzhikistan Territories,Jilikul; Khuroson; Qabodiyon; Rudaki; Vakhsh,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7378,2013-0417,2013,flood,5,L1:5,Dak Lak; Kon Tum; Quang Nam; Quang Ngai; Quang Tri,NA,needs_emdat_event_date_and_black_marble_extraction
+VUT,Vanuatu,7202,2014-0096,2014,storm,5,L1:3; L2:2,Malampa; Penama; Sanma; Shefa; Torba,East Ambae; NA; South Santo,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,7-Feb,2017-0288,2017,flood,4,L2:3; L1:1,Badakhshan; Kabul; Nangarhar; Paktika,Khaki Jabar; NA; Rodat; Sarobi,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,84,2012-0164,2012,earthquake,4,L2:3; L1:1,Baghlan; Kabul,Burka; Khost Wa Firing; NA; Nahrin,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,85,2012-0226,2012,flood,4,L2:3; L1:1,Badakhshan; Ghor,Chaghcharan; NA; Shahrak; Tulak,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,90,2013-0343,2013,flood,4,L2:4,Ghazni; Kabul; Wardak,Chak; Jaghatu; Paghman; Sayid Abad,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,91,2014-0084,2014,storm,4,L1:4,Faryab; Jawzjan; Kabul; Kunduz,NA,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,639,2014-0135,2014,storm,4,L2:4,Dhaka; Rajshahi; Sylhet,Naogaon; Netrakona; Sunamganj; Tangail,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-191,2014-9265,2014,drought,4,L1:3; L2:1,Henan; Shaanxi; Shandong; Sichuan,NA; Nanchong,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1603,2013-0089,2013,storm,4,L1:4,Guangdong; Guangxi; Hainan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1610,2013-0219,2013,flood,4,L1:4,Anhui; Hubei; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1623,2013-0272,2013,storm,4,L1:4,Guangdong; Guangxi; Hainan; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1651,2014-0266,2014,flood,4,L1:4,Fujian; Guangdong; Guizhou; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1652,2014-0406,2014,flood,4,L1:4,Guangxi; Guizhou; Xinjiang Uygur; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1653,2014-0267,2014,flood,4,L1:4,Guizhou; Hunan; Jiangxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1654,2014-0227,2014,storm,4,L1:4,Guangdong; Guangxi; Hainan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1655,2014-0269,2014,storm,4,L1:4,Guizhou; Heilongjiang; Shaanxi; Shanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1657,2014-0281,2014,earthquake,4,L1:3; L2:1,Guangdong; Guizhou; Sichuan; Yunnan,NA; Qujing,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1675,2015-0220,2015,flood,4,L1:4,Chongqing; Fujian; Guizhou; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1676,2015-0248,2015,flood,4,L1:4,Gansu; Guizhou; Hubei; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-40,2018-0053,2018,storm,4,L1:4,Anhui; Hubei; Hunan; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-53,2018-0347,2018,storm,4,L1:4,Anhui; Jiangsu; Shandong; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-56,2015-0162,2015,storm,4,L1:4,Guangxi; Guizhou; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-57,2015-0163,2015,storm,4,L1:4,Gansu; Guizhou; Shaanxi; Shanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-76,2015-0339,2015,storm,4,L1:4,Anhui; Fujian; Jiangxi; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-77,2015-0397,2015,flood,4,L1:4,Chongqing; Guizhou; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,2164,2012-0024,2012,flood,4,L2:4,Central; Western,Ba; Nadroga/Navosa; Ra; Tailevu,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2288,2013-0256,2013,flood,4,L1:4,Ajaria; Guria; Mtskheta-Mtianeti; Samegrelo-Zemo Svaneti,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3209,2013-0364,2013,flood,4,L2:4,Aceh; Gorontalo; Kalimantan Barat; Kalimantan Timur,Bone Bolango; Nagan Raya; Penajam Paser Utara; Sekadau,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3212,2013-0553,2013,flood,4,L2:4,Jawa Timur,Bojonegoro; Gresik; Mojokerto; Tuban,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-260,2016-0237,2016,storm,4,L1:4,Bihar; Jharkhand; Madhya Pradesh; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-261,2016-0239,2016,flood,4,L2:2; L1:2,Arunachal Pradesh; Assam; Uttarakhand,Chamoli; NA; Pithoragarh,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-269,2017-0290,2017,flood,4,L2:4,Manipur,Bishnupur; Imphal East; Imphal West; Thoubal,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-287,2018-0149,2018,storm,4,L1:4,Andhra Pradesh; Bihar; Uttar Pradesh; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-254,2014-0047,2014,extreme temperature,4,L1:3; L3:1,Jammu And Kashmir; NCT Of Delhi; Uttar Pradesh; Uttarakhand,NA; West,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-259,2017-0144,2017,extreme temperature,4,L1:4,Andhra Pradesh; Maharashtra; Odisha; Telangana,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-131,2015-0450,2015,storm,4,L2:3; L1:1,Andhra Pradesh; Jharkhand; Odisha,Deoghar; Malkangiri; NA; Nabarangapur,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2961,2014-0391,2014,flood,4,L2:3; L3:1,Assam; Meghalaya,Goalpara; Kamrup; South West Garo Hills; West Garo Hills,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2968,2015-0144,2015,earthquake,4,L1:4,Bihar; Sikkim; Uttar Pradesh; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2970,2015-0249,2015,flood,4,L2:3; L1:1,Gujarat; Maharashtra,Amreli; NA; Rajkot; Surat,needs_emdat_event_date_and_black_marble_extraction
+KAZ,Kazakhstan,3726,2015-0154,2015,flood,4,L1:3; L2:1,Aqmola; East Kazakhstan; Pavlodar; Qaraghandy,Bukhar-Zhyrauskiy; NA,needs_emdat_event_date_and_black_marble_extraction
+KGZ,Kyrgyzstan,3886,2012-0416,2012,flood,4,L1:4,Batken; Jalal-Abad; Naryn; Osh,NA,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,06-168,2015-0324,2015,flood,4,L1:4,Bolikhamxai; Houaphan; Khammouan; Louang Namtha,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-490,2016-0112,2016,flood,4,L3:2; L1:2,Azad Kashmir; N.W.F.P.; Northern Areas,Hazara; Malakand; NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-491,2016-0229,2016,storm,4,L2:2; L1:2,Azad Kashmir; F.C.T.; N.W.F.P.; Punjab,Islamabad; NA; Rawalpindi,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-496,2016-0554,2016,flood,4,L2:2; L3:1; L1:1,Baluchistan; Sind,Hyderabad; Karachi; Mirpur Khas; NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,04-508,2017-0025,2017,landslide,4,L3:2; L2:1; L1:1,Baluchistan; F.A.T.A.; N.W.F.P.,Dera Ismail Khan; F.A.T.A.; Malakand; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5322,2012-0042,2012,flood,4,L2:2; L1:2,Agusan Del Norte; Davao Oriental; Lanao Del Norte; Negros Occidental,Caraga; Jabonga; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5325,2012-0172,2012,flood,4,L1:3; L2:1,Maguindanao; North Cotabato; Sarangani; Sultan Kudarat,Glan; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5362,2014-0330,2014,storm,4,L2:2; L1:2,Metropolitan Manila; Pampanga; Pangasinan,Dagupan; Lingayen; NA,needs_emdat_event_date_and_black_marble_extraction
+TJK,Tajikistan,6144,2015-0286,2015,flood,4,L2:4,Gorno-Badakhshan; Tadzhikistan Territories,Rasht; Rushon; Shughnon; Vanj,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7372,2012-0294,2012,storm,4,L1:4,Hai Phong; Quang Ninh; Vinh Phuc; Yen Bai,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7373,2012-0351,2012,flood,4,L1:4,Ha Tinh; Nghe An; Ninh Binh; Thanh Hoa,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7375,2013-0266,2013,flood,4,L1:4,Lao Cai; Quang Ninh; Son La; Tuyen Quang,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7381,2013-0430,2013,storm,4,L1:4,Da Nang; Quang Nam; Quang Ngai; Thua Thien Hue,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,14-Apr,2012-0013,2012,landslide,3,L2:3,Badakhshan,Ishkashim; Khwahan; Shahri Buzurg,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,2-Feb,2016-0112,2016,flood,3,L1:3,Daykundi; Ghazni; Uruzgan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,5-Feb,2017-0038,2017,storm,3,L1:2; L2:1,Baghlan; Bamyan; Jawzjan,Darzab; NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,83,2012-0154,2012,flood,3,L2:3,Balkh; Jawzjan; Samangan,Khulm; Khwaja Du Koh; Shortepa,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,88,2013-0178,2013,flood,3,L1:3,Baghlan; Balkh; Ghor,NA,needs_emdat_event_date_and_black_marble_extraction
+AZE,Azerbaijan,413,2012-0191,2012,earthquake,3,L2:3,Shaki-Zaqatala,Balaken; Qax; Zaqatala,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,633,2012-0175,2012,flood,3,L2:2; L1:1,Chittagong; Sylhet,Bandarban; Cox'S Bazar; NA,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,638,2013-0138,2013,storm,3,L2:3,Barisal,Bhola; Borgona; Patuakhali,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,645,2015-0293,2015,flood,3,L1:3,Barisal; Chittagong; Khulna,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,01-378,2012-0282,2012,storm,3,L1:3,Fujian; Hubei; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-126,2017-0261,2017,flood,3,L1:3,Beijing; Hebei; Tianjin,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-136,2018-0118,2018,storm,3,L1:3,Anhui; Jiangxi; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-140,2018-0252,2018,flood,3,L2:3,Gansu,Pingliang; Tianshui; Zhangye,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-143,2018-0250,2018,flood,3,L2:3,Sichuan,Deyang; Guangyuan; Mianyang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-152,2014-0572,2014,landslide,3,L2:1; L3:1; L1:1,Chongqing; Sichuan; Yunnan,Dazhou; NA; Wenshan Zhuang And Miao,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-192,2014-9408,2014,drought,3,L1:3,Jilin; Liaoning; Nei Mongol,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-195,2017-9206,2017,drought,3,L1:3,Hebei; Liaoning; Nei Mongol,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1580,2012-0197,2012,flood,3,L1:3,Gansu; Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1590,2012-0259,2012,storm,3,L1:3,Fujian; Guangdong; Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1591,2012-0581,2012,flood,3,L1:3,Heilongjiang; Nei Mongol; Shanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1593,2012-0260,2012,storm,3,L1:3,Fujian; Hubei; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1600,2013-0065,2013,storm,3,L1:3,Anhui; Hubei; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1606,2013-0199,2013,flood,3,L1:3,Guangxi; Guizhou; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1616,2013-0261,2013,storm,3,L1:3,Fujian; Guangdong; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1622,2013-0317,2013,flood,3,L1:3,Heilongjiang; Henan; Liaoning,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1627,2013-0416,2013,flood,3,L1:3,Gansu; Shandong; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1630,2013-0429,2013,storm,3,L1:3,Fujian; Shanghai; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1634,2013-0554,2013,flood,3,L1:3,Hainan; Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1638,2014-0107,2014,storm,3,L1:3,Henan; Sichuan; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1656,2014-0240,2014,storm,3,L1:3,Fujian; Jiangxi; Shandong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1661,2014-0344,2014,flood,3,L1:3,Chongqing; Guizhou; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1679,2015-0255,2015,flood,3,L1:3,Anhui; Jiangsu; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1683,2015-0303,2015,flood,3,L1:3,Anhui; Fujian; Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-82,2016-0038,2016,flood,3,L1:3,Fujian; Guangdong; Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-83,2016-0363,2016,storm,3,L1:3,Guangdong; Guangxi; Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-45,2018-0211,2018,flood,3,L1:3,Fujian; Guangdong; Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-51,2015-0125,2015,earthquake,3,L3:3,Yunnan,Lincang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-80,2015-0490,2015,storm,3,L1:3,Guangdong; Guangxi; Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-83,2015-0534,2015,storm,3,L1:3,Beijing; Nei Mongol; Tianjin,NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2286,2012-0550,2012,storm,3,L1:3,Kakheti; Mtskheta-Mtianeti; Samtskhe-Javakheti,NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2289,2013-0309,2013,flood,3,L1:3,Guria; Imereti; Tbilisi,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3218,2014-0081,2014,flood,3,L2:2; L1:1,Papua,Jayapura; Kota Jayapura; Papua,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-258,2016-0139,2016,flood,3,L1:3,Arunachal Pradesh; Assam; Nagaland,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-259,2016-0234,2016,storm,3,L2:3,Bihar,Muzaffarpur; Patna; Siwan,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-273,2017-0569,2017,storm,3,L2:3,Bihar,Jamui; Samastipur; Vaishali,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-279,2017-0342,2017,flood,3,L1:2; L2:1,Bihar; Uttar Pradesh; West Bengal,Araria; NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-289,2018-0214,2018,storm,3,L1:3,Bihar; Jharkhand; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-291,2018-0209,2018,storm,3,L1:3,Tripura; Uttar Pradesh; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-293,2018-0205,2018,flood,3,L1:3,Assam; Gujarat; Maharashtra,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-251,2012-0015,2012,extreme temperature,3,L2:2; L3:1,Andhra Pradesh; Telangana,Guntur; Karimnagar; Visakhapatnam,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-255,2014-0523,2014,extreme temperature,3,L1:3,Himachal Pradesh; Uttar Pradesh; Uttarakhand,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-257,2015-0189,2015,extreme temperature,3,L1:2; L3:1,Andhra Pradesh; NCT Of Delhi; Odisha,NA; West,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-133,2015-0476,2015,earthquake,3,L1:2; L3:1,Jammu And Kashmir; NCT Of Delhi; Punjab,NA; West,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2940,2012-0382,2012,flood,3,L1:3,Arunachal Pradesh; Assam; Sikkim,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2951,2013-0400,2013,flood,3,L1:3,Andhra Pradesh; Odisha; West Bengal,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2955,2014-0182,2014,storm,3,L3:1; L2:1; L1:1,NCT Of Delhi; Uttar Pradesh; West Bengal,Ghaziabad; NA; West,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2962,2014-0392,2014,storm,3,L1:2; L2:1,Andhra Pradesh; Chhattisgarh; Odisha,NA; Visakhapatnam,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2963,2015-0126,2015,storm,3,L1:3,Jammu And Kashmir; Rajasthan; Uttarakhand,NA,needs_emdat_event_date_and_black_marble_extraction
+LKA,Sri Lanka,5913,2014-0181,2014,flood,3,L1:3,Colombo; Gampaha; Kalutara,NA,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4426,2015-0294,2015,flood,3,L1:3,Mandalay; Sagaing; Shan,NA,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4477,2014-0416,2014,storm,3,L3:2; L2:1,Mid-Western; West,Dhaualagiri; Gandaki,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,01-1083,2015-0282,2015,flood,3,L1:2; L3:1,Azad Kashmir; N.W.F.P.; Punjab,Malakand; NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-489,2016-0100,2016,earthquake,3,L1:2; L3:1,F.A.T.A.; N.W.F.P.; Northern Areas,F.A.T.A.; NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,06-206,2015-0333,2015,flood,3,L2:2; L1:1,Azad Kashmir; F.C.T.; Punjab,Islamabad; NA; Rawalpindi,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4766,2013-0068,2013,flood,3,L1:3,Azad Kashmir; N.W.F.P.; Punjab,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4767,2013-0099,2013,earthquake,3,L3:2; L2:1,Baluchistan; Sind,Kalat; Karachi; Quetta,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4773,2015-0124,2015,flood,3,L1:3,F.A.T.A.; N.W.F.P.; Punjab,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5323,2012-0078,2012,flood,3,L1:2; L2:1,Agusan Del Norte; Sultan Kudarat; Surigao Del Norte,Lambayong; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5352,2013-0437,2013,storm,3,L1:3,Apayao; Cagayan; Ilocos Norte,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5359,2014-0571,2014,flood,3,L2:2; L1:1,Maguindanao; North Cotabato,NA; Pikit; Tulunan,needs_emdat_event_date_and_black_marble_extraction
+TJK,Tajikistan,6140,2012-0151,2012,earthquake,3,L2:3,Tadzhikistan Territories,Nurobod; Rasht; Tavildara,needs_emdat_event_date_and_black_marble_extraction
+TJK,Tajikistan,6141,2014-0122,2014,flood,3,L2:3,Khatlon,Kulob; Shurobod; Vose,needs_emdat_event_date_and_black_marble_extraction
+TJK,Tajikistan,6142,2014-0204,2014,flood,3,L1:2; L2:1,Khatlon; Leninabad; Tadzhikistan Territories,NA; Vahdat,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,7-Mar,2012-0050,2012,extreme temperature,2,L1:2,Badakhshan; Daykundi,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,80,2012-0573,2012,flood,2,L1:2,Balkh; Ghazni,NA,needs_emdat_event_date_and_black_marble_extraction
+ARM,Armenia,Apr-34,2016-0482,2016,landslide,2,L1:2,Gegharkunik; Shirak,NA,needs_emdat_event_date_and_black_marble_extraction
+AZE,Azerbaijan,414,2012-0545,2012,earthquake,2,L2:2,Shaki-Zaqatala,Qax; Zaqatala,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,637,2013-0090,2013,storm,2,L2:2,Rajshahi,Naogaon; Natore,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,644,2015-0253,2015,flood,2,L2:2,Chittagong,Bandarban; Cox'S Bazar,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-102,2016-0379,2016,storm,2,L2:1; L1:1,Guangdong; Hainan,NA; Zhanjiang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-107,2016-0389,2016,flood,2,L1:2,Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-112,2017-0110,2017,storm,2,L1:2,Henan; Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-145,2018-0305,2018,storm,2,L2:1; L1:1,Guangdong; Hainan,NA; Zhanjiang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1578,2012-0570,2012,storm,2,L1:2,Guangdong; Guizhou,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1581,2012-0136,2012,flood,2,L1:2,Gansu; Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1584,2012-0190,2012,earthquake,2,L1:2,Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1592,2012-0283,2012,storm,2,L1:2,Jiangsu; Shandong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1595,2012-0294,2012,storm,2,L1:2,Guangdong; Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1597,2012-0350,2012,earthquake,2,L1:2,Guizhou; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1601,2013-0081,2013,earthquake,2,L1:2,Jiangsu; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1604,2013-0116,2013,earthquake,2,L1:2,Jiangxi; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1611,2013-0221,2013,flood,2,L1:2,Gansu; Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1614,2013-0258,2013,storm,2,L1:2,Guangxi; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1619,2013-0242,2013,earthquake,2,L1:2,Gansu; Shaanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1620,2013-0264,2013,flood,2,L1:2,Shandong; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1624,2013-0273,2013,flood,2,L1:2,Nei Mongol; Qinghai,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1626,2013-0314,2013,earthquake,2,L1:2,Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1637,2014-0086,2014,earthquake,2,L1:2,Hebei; Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1648,2014-0213,2014,storm,2,L1:2,Fujian; Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1650,2014-0217,2014,flood,2,L1:2,Sichuan; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1665,2014-0449,2014,earthquake,2,L1:2,Sichuan; Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-91,2016-0536,2016,earthquake,2,L1:1; L3:1,Hunan; Yunnan,Changde; NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-53,2015-0132,2015,storm,2,L1:2,Xinjiang Uygur; Xizang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-54,2015-0105,2015,storm,2,L1:2,Hunan; Jiangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-79,2015-0458,2015,storm,2,L1:2,Fujian; Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3189,2012-0561,2012,storm,2,L1:2,Sulawesi Selatan; Sumatera Utara,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3192,2012-0266,2012,flood,2,L2:2,Jakarta Raya; Maluku,Ambon; Jakarta Pusat,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3194,2012-0398,2012,earthquake,2,L2:2,Sulawesi Tengah,Donggala; Parigi Moutong,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3195,2012-0432,2012,flood,2,L2:2,Sulawesi Tengah,Palu; Parigi Moutong,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3197,2012-0377,2012,earthquake,2,L2:2,Jawa Barat,Kota Bogor; Tasikmalaya,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3200,2012-0539,2012,flood,2,L2:2,Nusa Tenggara Barat; Sumatera Barat,Dompu; Solok Selatan,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3204,2013-0063,2013,flood,2,L2:2,Riau; Sulawesi Utara,Manado; Rokan Hulu,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3206,2013-0126,2013,flood,2,L1:2,Jawa Tengah; Jawa Timur,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3207,2013-0235,2013,earthquake,2,L2:2,Aceh,Aceh Tengah; Bener Meriah,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3208,2013-0267,2013,flood,2,L2:1; L1:1,Lampung; Maluku,Ambon; NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3214,2014-0056,2014,flood,2,L1:1; L2:1,Banten; Jakarta Raya,NA; Tangerang,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-257,2016-0485,2016,storm,2,L2:1; L1:1,Andhra Pradesh; Tamil Nadu,Chennai; NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-263,2016-0554,2016,flood,2,L2:2,Assam,Golaghat; Jorhat,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-267,2016-0391,2016,flood,2,L1:2,Andhra Pradesh; Telangana,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-274,2017-0152,2017,storm,2,L1:2,Manipur; Mizoram,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-281,2017-0364,2017,flood,2,L2:2,Maharashtra,Mumbai Suburban; Thane,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-284,2018-0137,2018,storm,2,L1:2,Rajasthan; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-286,2018-0150,2018,storm,2,L1:2,Rajasthan; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-296,2018-0267,2018,flood,2,L1:2,Rajasthan; Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-298,2018-0295,2018,flood,2,L2:1; L3:1,Kerala,Alappuzha; Thrissur,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-300,2018-0372,2018,flood,2,L1:2,Haryana; Punjab,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,07-100,2018-9372,2018,drought,2,L1:2,Karnataka; Maharashtra,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,07-121,2018-0473,2018,storm,2,L1:2,Andhra Pradesh; Odisha,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2937,2012-0334,2012,flood,2,L1:2,Uttar Pradesh; Uttarakhand,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2939,2012-0354,2012,flood,2,L2:2,Uttarakhand,Bageshwar; Rudraprayag,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2941,2012-0425,2012,storm,2,L1:2,Andhra Pradesh; Tamil Nadu,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2943,2013-0140,2013,earthquake,2,L2:2,Jammu And Kashmir,Doda; Kishtwar,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2949,2013-0482,2013,storm,2,L1:2,Bihar; Jharkhand,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2953,2014-0551,2014,storm,2,L2:1; L1:1,Andhra Pradesh; Telangana,Hyderabad; NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2954,2014-0106,2014,storm,2,L1:1; L2:1,Jammu And Kashmir; Rajasthan,Jaipur; NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2957,2014-0268,2014,flood,2,L1:2,Himachal Pradesh; Uttarakhand,NA,needs_emdat_event_date_and_black_marble_extraction
+KAZ,Kazakhstan,3725,2014-0123,2014,flood,2,L2:1; L1:1,East Kazakhstan; Qaraghandy,Kokpektinskiy; NA,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4420,2012-0319,2012,flood,2,L2:2,Kayin,Hpa-An; Kawkareik,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4424,2015-0118,2015,storm,2,L1:2,Kachin; Sagaing,NA,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4474,2014-0246,2014,flood,2,L3:2,Central,Bagmati,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4479,2015-0175,2015,earthquake,2,L3:2,Central,Bagmati; Janakpur,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-495,2016-0375,2016,flood,2,L1:2,Baluchistan; Sind,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-498,2017-0145,2017,storm,2,L1:2,N.W.F.P.; Punjab,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,03-378,2015-0232,2015,extreme temperature,2,L1:2,Punjab; Sind,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4764,2012-0475,2012,flood,2,L1:2,Azad Kashmir; N.W.F.P.,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4777,2015-0282,2015,flood,2,L3:1; L1:1,N.W.F.P.; Punjab,Malakand; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5335,2012-0374,2012,storm,2,L2:1; L1:1,Metropolitan Manila; Zamboanga Del Norte,Muntinlupa; NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5336,2012-0463,2012,storm,2,L1:2,Occidental Mindoro; Zambales,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5338,2012-0500,2012,storm,2,L1:2,Compostela Valley; Davao Oriental,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5348,2013-0418,2013,flood,2,L2:2,Palawan; Zambales,Busuanga; Olongapo,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5367,2015-0105,2015,storm,2,L1:2,Aurora; Isabela,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5369,2015-0279,2015,flood,2,L1:2,Basilan; Tawi-Tawi,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,02-506,2018-0317,2018,earthquake,2,L1:2,Hela; Southern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,05-701,2018-0017,2018,volcanic activity,2,L1:2,Bougainville; Eastern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,06-214,2015-0093,2015,storm,2,L1:2,Madang; West New Britain,NA,needs_emdat_event_date_and_black_marble_extraction
+SLB,Solomon Islands,5694,2015-0093,2015,storm,2,L1:2,Malaita; Temotu,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6273,2014-0345,2014,flood,2,L1:2,Phra Nakhon Si Ayutthaya; Sukhothai,NA,needs_emdat_event_date_and_black_marble_extraction
+TON,Tonga,6298,2014-0001,2014,storm,2,L1:2,Ha'apai; Vava'u,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7386,2014-0474,2014,storm,2,L1:2,Binh Dinh; Phu Yen,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,1-Jun,2015-0581,2015,flood,1,L1:1,Faryab,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,10-Feb,2018-0350,2018,flood,1,L1:1,Kunar,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,15-Apr,2012-0563,2012,landslide,1,L1:1,Nuristan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,16-Apr,2012-0067,2012,landslide,1,L1:1,Badakhshan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,17-Apr,2013-0414,2013,landslide,1,L2:1,Badakhshan,Zebak,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,19-Apr,2015-0059,2015,landslide,1,L1:1,Badakhshan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,20-Apr,2015-0058,2015,landslide,1,L1:1,Badakhshan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,22-Apr,2017-0026,2017,landslide,1,L1:1,Nuristan,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,23-Apr,2017-0027,2017,landslide,1,L2:1,Badakhshan,Darwaz,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,24-Apr,2018-0189,2018,landslide,1,L1:1,Panjshir,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,25-Apr,2018-0242,2018,landslide,1,L1:1,Panjshir,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,3-Feb,2016-0191,2016,flood,1,L2:1,Badakhshan,Baharak,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,3-Jun,2015-0571,2015,earthquake,1,L2:1,Badakhshan,Ishkashim,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,4-Feb,2016-0309,2016,flood,1,L1:1,Khost,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,79,2012-0102,2012,flood,1,L1:1,Kunduz,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,81,2012-0183,2012,flood,1,L1:1,Takhar,NA,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,82,2012-0143,2012,flood,1,L2:1,Sari Pul,Kohistanat,needs_emdat_event_date_and_black_marble_extraction
+AFG,Afghanistan,93,2014-0185,2014,flood,1,L1:1,Baghlan,NA,needs_emdat_event_date_and_black_marble_extraction
+ARM,Armenia,15-Jul,2018-0480,2018,storm,1,L1:1,Shirak,NA,needs_emdat_event_date_and_black_marble_extraction
+ARM,Armenia,23-Mar,2013-0568,2013,extreme temperature,1,L1:1,Erevan,NA,needs_emdat_event_date_and_black_marble_extraction
+ARM,Armenia,267,2013-0194,2013,storm,1,L1:1,Armavir,NA,needs_emdat_event_date_and_black_marble_extraction
+AZE,Azerbaijan,Mar-35,2012-0019,2012,extreme temperature,1,L2:1,Absheron,Baki,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,636,2013-0085,2013,storm,1,L3:1,Chittagong,Brahamanbaria,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,640,2014-0244,2014,storm,1,L2:1,Dhaka,Faridpur,needs_emdat_event_date_and_black_marble_extraction
+BGD,Bangladesh,642,2015-0118,2015,storm,1,L2:1,Rajshahi,Bogra,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,01-377,2012-0200,2012,flood,1,L1:1,Shaanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-101,2016-0256,2016,storm,1,L1:1,Fujian,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-103,2016-0371,2016,storm,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-106,2016-0342,2016,storm,1,L1:1,Fujian,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-111,2017-0513,2017,earthquake,1,L3:1,Xizang,Nyingtri,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-113,2017-0113,2017,earthquake,1,L3:1,Yunnan,Dali Bai,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-115,2017-0568,2017,flood,1,L3:1,Shaanxi,Yulin,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-116,2017-0124,2017,earthquake,1,L3:1,Shanxi,Yuncheng,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-124,2017-0281,2017,storm,1,L1:1,Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-131,2017-0326,2017,storm,1,L1:1,Fujian,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-132,2017-0331,2017,earthquake,1,L3:1,Sichuan,Ngawa Tibetan And Qiang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-137,2018-0215,2018,earthquake,1,L1:1,Jilin,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-144,2018-0323,2018,earthquake,1,L2:1,Yunnan,Yuxi,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,02-147,2018-0341,2018,storm,1,L2:1,Guangdong,Shenzhen,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,03-128,2012-0559,2012,extreme temperature,1,L1:1,Xizang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,03-129,2013-0582,2013,extreme temperature,1,L1:1,Shanghai,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-147,2012-0455,2012,landslide,1,L2:1,Yunnan,Kunming,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-148,2013-0167,2013,landslide,1,L3:1,Xizang,Lhasa,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-149,2013-0565,2013,landslide,1,L3:1,Guizhou,Tongren,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-150,2013-0245,2013,landslide,1,L2:1,Sichuan,Chengdu,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-151,2014-0337,2014,landslide,1,L3:1,Guizhou,Qiannan Buyei And Miao,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-153,2015-0510,2015,landslide,1,L2:1,Zhejiang,Lishui,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-155,2016-0250,2016,landslide,1,L2:1,Guizhou,Bijie,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-156,2016-0255,2016,landslide,1,L3:1,Xinjiang Uygur,Ili Kazakh,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-157,2017-0044,2017,landslide,1,L3:1,Hubei,Xiangfan,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-158,2017-0201,2017,landslide,1,L3:1,Sichuan,Ngawa Tibetan And Qiang,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-159,2017-0363,2017,landslide,1,L2:1,Guizhou,Bijie,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,04-160,2017-0332,2017,landslide,1,L3:1,Sichuan,Liangshan Yi,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,05-190,2013-0018,2013,mass movement (dry),1,L2:1,Yunnan,Zhaotong,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1577,2012-0604,2012,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1585,2012-0338,2012,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1586,2012-0477,2012,flood,1,L1:1,Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1587,2012-0199,2012,flood,1,L1:1,Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1588,2012-0397,2012,earthquake,1,L1:1,Jiangsu,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1589,2012-0292,2012,flood,1,L1:1,Beijing,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1594,2012-0603,2012,flood,1,L1:1,Shaanxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1599,2012-0536,2012,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1608,2013-0201,2013,flood,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1615,2013-0259,2013,flood,1,L1:1,Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1621,2013-0341,2013,storm,1,L1:1,Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1625,2013-0306,2013,storm,1,L1:1,Fujian,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1628,2013-0373,2013,storm,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1631,2013-0433,2013,storm,1,L1:1,Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1632,2013-0470,2013,earthquake,1,L1:1,Jilin,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1633,2013-0581,2013,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1635,2013-0555,2013,earthquake,1,L1:1,Hubei,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1640,2014-0129,2014,earthquake,1,L1:1,Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1643,2014-0549,2014,flood,1,L1:1,Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1644,2014-0173,2014,earthquake,1,L1:1,Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1645,2014-0177,2014,earthquake,1,L1:1,Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1647,2014-0550,2014,flood,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1658,2014-0555,2014,storm,1,L1:1,Guizhou,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1662,2014-0292,2014,storm,1,L1:1,Chongqing,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1664,2014-0330,2014,storm,1,L1:1,Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1666,2014-0464,2014,earthquake,1,L1:1,Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1668,2014-0544,2014,earthquake,1,L1:1,Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1669,2015-0078,2015,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1671,2015-0144,2015,earthquake,1,L1:1,Xizang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1678,2015-0252,2015,storm,1,L1:1,Hainan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1680,2015-0271,2015,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1681,2015-0278,2015,storm,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,1682,2015-0244,2015,storm,1,L1:1,Zhejiang,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-84,2016-0364,2016,storm,1,L1:1,Guangdong,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-85,2016-0480,2016,earthquake,1,L1:1,Xinjiang Uygur,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Feb-86,2016-0526,2016,earthquake,1,L2:1,Xinjiang Uygur,Shihezi,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-43,2018-0159,2018,flood,1,L1:1,Guangxi,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jul-50,2018-0285,2018,storm,1,L1:1,Fujian,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-55,2015-0160,2015,storm,1,L1:1,Sichuan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-60,2015-0175,2015,earthquake,1,L2:1,Xizang,Shigatse,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-81,2015-0491,2015,storm,1,L1:1,Yunnan,NA,needs_emdat_event_date_and_black_marble_extraction
+CHN,China,Jun-82,2015-0533,2015,flood,1,L1:1,Hunan,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,02-193,2016-0141,2016,storm,1,L1:1,Western,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,02-194,2018-0101,2018,storm,1,L1:1,Western,NA,needs_emdat_event_date_and_black_marble_extraction
+FJI,Fiji,2165,2012-0069,2012,flood,1,L1:1,Western,NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2287,2013-0502,2013,storm,1,L1:1,Ajaria,NA,needs_emdat_event_date_and_black_marble_extraction
+GEO,Georgia,2291,2015-0227,2015,flood,1,L1:1,Tbilisi,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3190,2012-0097,2012,earthquake,1,L2:1,Aceh,Simeulue,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3191,2012-0575,2012,flood,1,L1:1,Maluku Utara,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3193,2012-0582,2012,flood,1,L2:1,Maluku,Ambon,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3196,2012-0376,2012,earthquake,1,L2:1,Sulawesi Barat,Mamuju,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3198,2012-0378,2012,flood,1,L2:1,Sumatera Barat,Padang,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3201,2013-0034,2013,flood,1,L1:1,Sulawesi Selatan,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3202,2013-0007,2013,flood,1,L1:1,Jakarta Raya,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3203,2013-0020,2013,earthquake,1,L1:1,Aceh,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3205,2013-0560,2013,flood,1,L2:1,Nusa Tenggara Timur,Belu,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3210,2013-0428,2013,flood,1,L2:1,Sumatera Utara,Langkat,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3211,2013-0436,2013,earthquake,1,L1:1,Aceh,NA,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3213,2013-0541,2013,flood,1,L2:1,Sumatera Utara,Tebingtinggi,needs_emdat_event_date_and_black_marble_extraction
+IDN,Indonesia,3220,2015-0077,2015,flood,1,L1:1,Jakarta Raya,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,01-748,2012-0322,2012,flood,1,L1:1,Rajasthan,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,01-749,2014-0343,2014,flood,1,L1:1,Jammu And Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-270,2017-0495,2017,flood,1,L2:1,Tamil Nadu,Chennai,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-272,2017-0570,2017,storm,1,L2:1,West Bengal,Maldah,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-275,2017-0257,2017,flood,1,L1:1,Gujarat,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-285,2018-0138,2018,storm,1,L2:1,West Bengal,Kolkata,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-288,2018-0213,2018,flood,1,L1:1,Tripura,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-290,2018-0216,2018,flood,1,L3:1,Karnataka,Dakshina Kannada,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-295,2018-0286,2018,flood,1,L1:1,Odisha,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,02-299,2018-0370,2018,flood,1,L1:1,Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-256,2014-0520,2014,extreme temperature,1,L2:1,Uttar Pradesh,Muzaffarnagar,needs_emdat_event_date_and_black_marble_extraction
+IND,India,03-260,2018-0049,2018,extreme temperature,1,L1:1,NCT Of Delhi,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-308,2014-0270,2014,landslide,1,L2:1,Maharashtra,Pune,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-310,2016-0195,2016,landslide,1,L1:1,Uttarakhand,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-311,2016-0049,2016,landslide,1,L1:1,Jammu And Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-312,2017-0046,2017,landslide,1,L2:1,Jammu And Kashmir,Ganderbal,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-313,2017-0483,2017,landslide,1,L2:1,Himachal Pradesh,Mandi,needs_emdat_event_date_and_black_marble_extraction
+IND,India,04-314,2017-0266,2017,landslide,1,L2:1,Arunachal Pradesh,Papum Pare,needs_emdat_event_date_and_black_marble_extraction
+IND,India,05-408,2012-0049,2012,mass movement (dry),1,L1:1,Jammu And Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-122,2015-0207,2015,flood,1,L2:1,Tamil Nadu,Virudunagar,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-123,2015-0600,2015,storm,1,L1:1,Andhra Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-129,2015-0374,2015,flood,1,L1:1,Assam,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,06-132,2015-0604,2015,storm,1,L1:1,Maharashtra,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2938,2012-0322,2012,flood,1,L1:1,Rajasthan,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2942,2013-0090,2013,storm,1,L1:1,Uttar Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2944,2013-0138,2013,storm,1,L1:1,Andhra Pradesh,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2956,2014-0218,2014,flood,1,L1:1,Assam,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2958,2014-0313,2014,flood,1,L1:1,Odisha,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2959,2014-0409,2014,flood,1,L1:1,Odisha,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2964,2015-0107,2015,flood,1,L1:1,Jammu And Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2965,2015-0118,2015,storm,1,L1:1,Tripura,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2969,2015-0175,2015,earthquake,1,L1:1,Bihar,NA,needs_emdat_event_date_and_black_marble_extraction
+IND,India,2971,2015-0253,2015,flood,1,L3:1,West Bengal,Darjiling,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,02-392,2017-0281,2017,storm,1,L1:1,Bolikhamxai,NA,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,02-394,2018-0222,2018,flood,1,L2:1,Attapu,Sanamxay,needs_emdat_event_date_and_black_marble_extraction
+LAO,Lao PDR,06-169,2015-0460,2015,flood,1,L2:1,Louangphrabang,Nan,needs_emdat_event_date_and_black_marble_extraction
+LKA,Sri Lanka,5914,2014-0495,2014,flood,1,L1:1,Mullaitivu,NA,needs_emdat_event_date_and_black_marble_extraction
+MMR,Myanmar,4423,2014-0412,2014,flood,1,L2:1,Shan,Tarchilaik,needs_emdat_event_date_and_black_marble_extraction
+MYS,Malaysia,4071,2015-0021,2015,flood,1,L1:1,Sarawak,NA,needs_emdat_event_date_and_black_marble_extraction
+MYS,Malaysia,4072,2015-0216,2015,earthquake,1,L1:1,Sabah,NA,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4471,2012-0186,2012,flood,1,L3:1,West,Gandaki,needs_emdat_event_date_and_black_marble_extraction
+NPL,Nepal,4475,2014-0268,2014,flood,1,L1:1,Far-Western,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-492,2016-0240,2016,flood,1,L3:1,N.W.F.P.,Malakand,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-493,2016-0270,2016,flood,1,L3:1,F.A.T.A.,F.A.T.A.,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,02-494,2016-0387,2016,flood,1,L2:1,Sind,Karachi,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,03-377,2014-0546,2014,extreme temperature,1,L3:1,Sind,Mirpur Khas,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,04-506,2012-0511,2012,landslide,1,L1:1,Azad Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,04-507,2012-0084,2012,landslide,1,L1:1,Azad Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,05-679,2015-0454,2015,mass movement (dry),1,L2:1,Sind,Karachi,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,06-205,2015-0288,2015,flood,1,L1:1,N.W.F.P.,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,06-209,2015-0571,2015,earthquake,1,L3:1,F.A.T.A.,F.A.T.A.,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4765,2012-0325,2012,flood,1,L1:1,Azad Kashmir,NA,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4770,2013-0484,2013,earthquake,1,L3:1,Baluchistan,Kalat,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4771,2014-0322,2014,storm,1,L2:1,N.W.F.P.,Peshawar,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4775,2015-0145,2015,flood,1,L2:1,N.W.F.P.,Peshawar,needs_emdat_event_date_and_black_marble_extraction
+PAK,Pakistan,4776,2015-0215,2015,flood,1,L3:1,Baluchistan,Kalat,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,4858,2013-0408,2013,storm,1,L1:1,Cordillera,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5321,2012-0031,2012,earthquake,1,L2:1,Negros Oriental,Tayasan,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5326,2012-0171,2012,flood,1,L2:1,Sultan Kudarat,Kalamansig,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5331,2012-0296,2012,storm,1,L1:1,La Union,NA,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5332,2012-0431,2012,earthquake,1,L2:1,Eastern Samar,Guiuan,needs_emdat_event_date_and_black_marble_extraction
+PHL,Philippines,5333,2012-0321,2012,earthquake,1,L2:1,Bukidnon,Maramag,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,01-1103,2014-0405,2014,flood,1,L1:1,Gulf,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,02-504,2018-0055,2018,earthquake,1,L1:1,Southern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,02-505,2018-0316,2018,earthquake,1,L1:1,Southern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,04-519,2012-0052,2012,landslide,1,L1:1,Southern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,05-699,2014-0410,2014,volcanic activity,1,L1:1,Bougainville,NA,needs_emdat_event_date_and_black_marble_extraction
+PNG,Papua New Guinea,4842,2012-0349,2012,flood,1,L1:1,Southern Highlands,NA,needs_emdat_event_date_and_black_marble_extraction
+SLB,Solomon Islands,5690,2012-0242,2012,flood,1,L1:1,Makira Ulawa,NA,needs_emdat_event_date_and_black_marble_extraction
+SLB,Solomon Islands,5691,2013-0029,2013,earthquake,1,L1:1,Temotu,NA,needs_emdat_event_date_and_black_marble_extraction
+SLB,Solomon Islands,5692,2013-0420,2013,flood,1,L1:1,Guadalcanal,NA,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6268,2013-0263,2013,flood,1,L2:1,Tak,Mae Sot,needs_emdat_event_date_and_black_marble_extraction
+THA,Thailand,6274,2014-0471,2014,flood,1,L1:1,Trang,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7384,2014-0227,2014,storm,1,L1:1,Quang Ninh,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7387,2015-0252,2015,storm,1,L1:1,Son La,NA,needs_emdat_event_date_and_black_marble_extraction
+VNM,Viet Nam,7388,2015-0292,2015,flood,1,L2:1,Quang Ninh,Ha Long,needs_emdat_event_date_and_black_marble_extraction

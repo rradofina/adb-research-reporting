@@ -1,0 +1,39 @@
+iso3,country,gdis_locations_2000_2018,gdis_unique_ids_2000_2018,gdis_unique_disasternos_2000_2018,gdis_locations_black_marble_window_2012_2018,gdis_unique_ids_black_marble_window_2012_2018,gdis_unique_disasternos_black_marble_window_2012_2018,top_disaster_types_2012_2018,dominant_admin_levels_2012_2018,readiness_lane
+CHN,China,1528,531,524,847,215,214,flood:429; storm:299; earthquake:49,L1:773; L2:47; L3:27,gdis_viirs_overlap_geometry_queue
+IND,India,1685,304,302,545,114,113,flood:330; storm:118; extreme temperature:45,L2:344; L1:182; L3:19,gdis_viirs_overlap_geometry_queue
+PHL,Philippines,2174,209,209,572,51,51,storm:368; flood:194; earthquake:10,L1:462; L2:110,gdis_viirs_overlap_geometry_queue
+AFG,Afghanistan,405,114,112,148,39,39,flood:73; earthquake:38; landslide:23,L1:97; L2:51,gdis_viirs_overlap_geometry_queue
+PAK,Pakistan,315,105,104,137,39,38,flood:85; earthquake:26; storm:16,L3:69; L1:50; L2:18,gdis_viirs_overlap_geometry_queue
+IDN,Indonesia,494,145,145,88,33,33,flood:70; earthquake:10; storm:8,L2:44; L1:44,gdis_viirs_overlap_geometry_queue
+BGD,Bangladesh,333,77,77,61,13,13,storm:38; flood:23,L2:50; L1:6; L3:5,gdis_viirs_overlap_geometry_queue
+VNM,Viet Nam,375,81,81,56,13,13,storm:35; flood:21,L1:53; L2:3,gdis_viirs_overlap_geometry_queue
+PNG,Papua New Guinea,84,35,35,41,12,12,drought:18; flood:13; earthquake:4,L1:25; L2:16,gdis_viirs_overlap_geometry_queue
+NPL,Nepal,228,21,21,60,9,9,flood:45; earthquake:12; storm:3,L3:58; L1:1; L2:1,gdis_viirs_overlap_geometry_queue
+THA,Thailand,392,51,51,67,8,8,flood:60; earthquake:7,L1:66; L2:1,gdis_viirs_overlap_geometry_queue
+LAO,Lao PDR,83,16,16,43,8,8,flood:37; storm:6,L2:22; L1:21,gdis_viirs_overlap_geometry_queue
+MMR,Myanmar,66,20,20,23,7,7,flood:16; earthquake:5; storm:2,L1:14; L2:6; L3:3,gdis_viirs_overlap_geometry_queue
+GEO,Georgia,37,14,14,22,7,7,flood:18; storm:4,L1:13; L2:9,gdis_viirs_overlap_geometry_queue
+FJI,Fiji,62,21,21,20,6,6,storm:15; flood:5,L2:15; L1:5,gdis_viirs_overlap_geometry_queue
+LKA,Sri Lanka,211,30,30,38,5,5,flood:38,L1:38,gdis_viirs_overlap_geometry_queue
+TJK,Tajikistan,73,28,28,18,5,5,flood:15; earthquake:3,L2:16; L1:2,gdis_viirs_overlap_geometry_queue
+SLB,Solomon Islands,35,13,13,10,5,5,flood:7; storm:2; earthquake:1,L1:10,gdis_viirs_overlap_geometry_queue
+MYS,Malaysia,118,32,32,21,4,4,flood:20; earthquake:1,L1:21,gdis_viirs_overlap_geometry_queue
+ARM,Armenia,17,6,6,5,4,4,storm:2; landslide:2; extreme temperature:1,L1:5,gdis_viirs_overlap_geometry_queue
+KAZ,Kazakhstan,28,9,9,11,3,3,flood:11,L2:7; L1:4,gdis_viirs_overlap_geometry_queue
+AZE,Azerbaijan,41,9,9,6,3,3,earthquake:5; extreme temperature:1,L2:6,gdis_viirs_overlap_geometry_queue
+VUT,Vanuatu,28,11,11,11,2,2,storm:11,L1:9; L2:2,gdis_viirs_overlap_geometry_queue
+KHM,Cambodia,74,9,9,18,1,1,flood:18,L1:15; L2:3,gdis_viirs_overlap_geometry_queue
+TUV,Tuvalu,7,1,1,7,1,1,storm:7,L1:7,gdis_viirs_overlap_geometry_queue
+KGZ,Kyrgyzstan,20,7,7,4,1,1,flood:4,L1:4,gdis_viirs_overlap_geometry_queue
+TON,Tonga,7,5,5,2,1,1,storm:2,L1:2,gdis_viirs_overlap_geometry_queue
+BRN,Brunei Darussalam,0,0,0,0,0,0,,,no_gdis_viirs_overlap
+BTN,Bhutan,6,3,3,0,0,0,,,no_gdis_viirs_overlap
+FSM,"Micronesia, Fed. Sts.",0,0,0,0,0,0,,,no_gdis_viirs_overlap
+KIR,Kiribati,0,0,0,0,0,0,,,no_gdis_viirs_overlap
+MDV,Maldives,0,0,0,0,0,0,,,no_gdis_viirs_overlap
+MHL,Marshall Islands,0,0,0,0,0,0,,,no_gdis_viirs_overlap
+MNG,Mongolia,23,3,3,0,0,0,,,no_gdis_viirs_overlap
+TKM,Turkmenistan,1,1,1,0,0,0,,,no_gdis_viirs_overlap
+TLS,Timor-Leste,17,3,3,0,0,0,,,no_gdis_viirs_overlap
+UZB,Uzbekistan,5,3,3,0,0,0,,,no_gdis_viirs_overlap
+WSM,Samoa,13,2,2,0,0,0,,,no_gdis_viirs_overlap

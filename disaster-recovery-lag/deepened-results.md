@@ -18,6 +18,10 @@ measurement/observability gap, not a country-quality ranking.
 
 Artifact: `generated/disaster-recovery-lag-metric-falsification.{json,csv}`.
 
+Source-readiness artifact:
+`generated/disaster-recovery-lag-recovery-source-readiness.{json,csv}` plus
+`generated/disaster-recovery-lag-recovery-source-readiness-events.csv`.
+
 ## The question
 
 `results.md`, `sensitivity.md`, and `pre-registration.md` §2 claim the
@@ -122,8 +126,47 @@ and per-capita are admitted, and should be retired in favor of that wording.
   metric carries no such caveat — it is computed entirely from this program's
   own EM-DAT cache.
 
+## Source-readiness check for a true recovery-lag metric
+
+The metric-falsification result does not answer the program's title question.
+To move toward recovery lag, the pipeline now checks the source bridge that
+would be needed before any post-event recovery curve can be estimated.
+
+`scripts/audit-recovery-source-readiness.py` reads three public-source lanes:
+
+1. The committed EM-DAT country-profiles workbook already used by the program.
+2. The GDIS 1960-2018 disaster-location CSV, downloaded through the PRIO mirror
+   and cross-checked against NASA CMR/SEDAC metadata pinned in `versions.json`.
+3. NASA CMR metadata for Black Marble VNP46A3 monthly nighttime lights.
+
+The result is a readiness object, not a recovery estimate:
+
+| Source gate | What the audit finds | Publication consequence |
+|---|---|---|
+| Current EM-DAT cache | 1,767 ADB-DMC rows in the 2000-2025 filter, but no disaster identifier, month/day, latitude, longitude, or location field | It can support country burden screens, not event recovery curves |
+| GDIS event geography | 39,953 location rows, 9,924 GDIS ids, and 9,018 `disasterno` values for 1960-2018 | It supplies a public event-geography queue through 2018 |
+| Black Marble VNP46A3 | NASA CMR reports version 2 with monthly coverage starting 2012-01-01 | The feasible public pilot window is 2012-2018 |
+| GDIS x Black Marble overlap | 2,881 ADB-DMC location rows, 609 unique GDIS ids, and 565 unique `disasterno` values in 27 economies | The next step is an event-level join and radiance extraction, not a headline |
+
+The strongest immediate queue is not a country leaderboard. It is a set of
+event-geography rows that can be reviewed before a satellite extraction is
+attempted. The top overlap by unique `disasterno` values is China (214), India
+(113), Philippines (51), Afghanistan (39), Pakistan (38), and Indonesia (33).
+The top event-location rows are mostly multi-province Philippine storms and
+South Asian floods, which are better candidates for a public pilot than a
+single national burden rank.
+
+The blocker is now specific. The current EM-DAT cache is aggregate
+country-year-disaster-type data. A recovery-lag metric still needs either an
+event-level EM-DAT table with `disasterno` and dates, or a documented public
+event-date source that can join to GDIS `disasterno`, plus Black Marble
+extraction over GDIS footprints or a declared affected-area proxy. Until that
+exists, the honest report title remains metric falsification and source
+readiness, not recovery lag.
+
 ## Reproduce
 
 ```bash
 python disaster-recovery-lag/scripts/deepen-metric-falsification.py
+python disaster-recovery-lag/scripts/audit-recovery-source-readiness.py
 ```

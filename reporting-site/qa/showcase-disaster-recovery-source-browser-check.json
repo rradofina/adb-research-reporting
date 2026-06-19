@@ -1,0 +1,109 @@
+{
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T18:48:21.237Z",
+  "url": "http://127.0.0.1:5176/showcase/disaster-metric-falsification",
+  "cdp": "http://127.0.0.1:9223",
+  "summary": {
+    "viewports": 2,
+    "screenshots": [
+      "showcase-disaster-recovery-source-desktop.png",
+      "showcase-disaster-recovery-source-bridge-desktop.png",
+      "showcase-disaster-recovery-source-chart-desktop.png",
+      "showcase-disaster-recovery-source-mobile.png",
+      "showcase-disaster-recovery-source-bridge-mobile.png",
+      "showcase-disaster-recovery-source-chart-mobile.png"
+    ],
+    "failures": [],
+    "pass": true
+  },
+  "results": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "loaded": true,
+      "interactionText": true,
+      "checks": {
+        "loadedText": true,
+        "hasKillCount": true,
+        "hasEmdatRows": true,
+        "hasDisasternoCount": true,
+        "hasGdisIds": true,
+        "hasLocations": true,
+        "heroStatsSeparated": true,
+        "hasGateCards": 4,
+        "hasOverlapRows": 8,
+        "hasDownloads": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": false,
+        "viewport": {
+          "width": 1280,
+          "height": 900,
+          "scrollWidth": 1280,
+          "bodyScrollWidth": 1280
+        }
+      },
+      "consoleErrors": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "networkFailures": [],
+      "httpErrors": [],
+      "screenshots": [
+        "showcase-disaster-recovery-source-desktop.png",
+        "showcase-disaster-recovery-source-bridge-desktop.png",
+        "showcase-disaster-recovery-source-chart-desktop.png"
+      ]
+    },
+    {
+      "label": "mobile",
+      "width": 375,
+      "height": 820,
+      "loaded": true,
+      "interactionText": true,
+      "checks": {
+        "loadedText": true,
+        "hasKillCount": true,
+        "hasEmdatRows": true,
+        "hasDisasternoCount": true,
+        "hasGdisIds": true,
+        "hasLocations": true,
+        "heroStatsSeparated": true,
+        "hasGateCards": 4,
+        "hasOverlapRows": 8,
+        "hasDownloads": true,
+        "bridgeVisible": true,
+        "horizontalOverflow": false,
+        "viewport": {
+          "width": 375,
+          "height": 820,
+          "scrollWidth": 375,
+          "bodyScrollWidth": 375
+        }
+      },
+      "consoleErrors": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ],
+      "networkFailures": [],
+      "httpErrors": [],
+      "screenshots": [
+        "showcase-disaster-recovery-source-mobile.png",
+        "showcase-disaster-recovery-source-bridge-mobile.png",
+        "showcase-disaster-recovery-source-chart-mobile.png"
+      ]
+    }
+  ]
+}

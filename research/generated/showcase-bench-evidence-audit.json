@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T18:25:21.454Z",
+  "generated_at": "2026-06-19T18:49:32.067Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 292,
-    "browserChecks": 14
+    "screenshots": 298,
+    "browserChecks": 15
   },
   "summary": {
     "reports_total": 20,
@@ -209,7 +209,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Build a recovery-lag source plan and event-level recovery proxy before reusing the disaster hook as a report."
+      "nextUpgrade": "Build the event-date join and one pilot radiance extraction; keep the current report as source readiness until an actual recovery curve exists."
     },
     {
       "id": 9,

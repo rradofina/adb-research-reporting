@@ -57,6 +57,48 @@ interface DisasterRow {
   events_per_million: number | null;
 }
 
+interface RecoveryCountryRow {
+  iso3: string;
+  country: string;
+  gdis_locations_2000_2018: number;
+  gdis_unique_ids_2000_2018: number;
+  gdis_unique_disasternos_2000_2018: number;
+  gdis_locations_black_marble_window_2012_2018: number;
+  gdis_unique_ids_black_marble_window_2012_2018: number;
+  gdis_unique_disasternos_black_marble_window_2012_2018: number;
+  top_disaster_types_2012_2018: string;
+  dominant_admin_levels_2012_2018: string;
+  readiness_lane: string;
+}
+
+interface RecoveryPayload {
+  attestation_chain: string;
+  generated_at: string;
+  claim_scope: string;
+  summary: {
+    gdis_locations_total_csv: number;
+    gdis_unique_ids_total_csv: number;
+    gdis_unique_disasternos_total_csv: number;
+    adb_locations_black_marble_window_2012_2018: number;
+    adb_unique_ids_black_marble_window_2012_2018: number;
+    adb_unique_disasternos_black_marble_window_2012_2018: number;
+    countries_with_gdis_viirs_overlap: number;
+    current_emdat_rows_in_adb_2000_2025_filter: number;
+    current_emdat_has_disaster_identifier: boolean;
+    current_emdat_has_month_day: boolean;
+    current_emdat_has_location_geometry: boolean;
+    black_marble_vnp46a3_time_start: string;
+    black_marble_vnp46a3_version: string;
+    recovery_curve_ready: boolean;
+    top_overlap_countries: RecoveryCountryRow[];
+  };
+  source_gates: {
+    gate: string;
+    status: string;
+    finding: string;
+  }[];
+}
+
 const METRICS: DisasterMetricDef[] = [
   {
     key: "events_per_year (committed)",
@@ -180,6 +222,7 @@ function rowByIso(rows: DisasterRow[], iso: string) {
 
 export default function ShowcaseDisasterMetric() {
   const [data, setData] = useState<DisasterPayload | null>(null);
+  const [recovery, setRecovery] = useState<RecoveryPayload | null>(null);
   const [rows, setRows] = useState<DisasterRow[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [metricKey, setMetricKey] = useState(METRICS[0].key);
@@ -194,10 +237,15 @@ export default function ShowcaseDisasterMetric() {
         if (!r.ok) throw new Error(`CSV HTTP ${r.status}`);
         return r.text();
       }),
+      fetch("/programs/disaster-recovery-lag/generated/disaster-recovery-lag-recovery-source-readiness.json").then((r) => {
+        if (!r.ok) throw new Error(`Recovery JSON HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
-      .then(([payload, csvText]: [DisasterPayload, string]) => {
+      .then(([payload, csvText, recoveryPayload]: [DisasterPayload, string, RecoveryPayload]) => {
         setData(payload);
         setRows(parseDisasterCsv(csvText));
+        setRecovery(recoveryPayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -219,13 +267,15 @@ export default function ShowcaseDisasterMetric() {
           <p className="showcase-lede">
             The original disaster screen treated China and India as a
             metric-robust top-two. The deepening reruns the program's own
-            pre-registered kill condition with deaths and per-capita event
-            frequency. Three of five metrics change the top-two set.
+            pre-registered kill condition, then checks whether public event
+            geography and nighttime-light sources are ready for a true
+            recovery-lag metric. The answer is sharper: the top-two breaks,
+            and the recovery object is still a source-join problem.
           </p>
           <div className="showcase-meta">
             <span>{data?.attestation_chain || "ai-first"}</span>
-            <span>Metric falsification sprint</span>
-            <span>Triage, not a country ranking</span>
+            <span>Metric falsification + source-readiness sprint</span>
+            <span>Recovery queue, not a country ranking</span>
           </div>
         </div>
         <div className="showcase-hero-panel disaster-hero-panel" aria-label="Disaster metric falsification summary">
@@ -250,6 +300,12 @@ export default function ShowcaseDisasterMetric() {
                 <div>
                   <span className="showcase-stat-value">{formatNumber(data.sources.emdat.rows_in_filter)}</span>
                   <span className="showcase-stat-label">EM-DAT rows in the 2000-2025 DMC filter</span>
+                </div>
+                <div>
+                  <span className="showcase-stat-value">
+                    {recovery ? formatNumber(recovery.summary.adb_unique_disasternos_black_marble_window_2012_2018) : "..." }
+                  </span>
+                  <span className="showcase-stat-label">GDIS disaster numbers in the Black Marble overlap window</span>
                 </div>
               </div>
             </>
@@ -276,9 +332,12 @@ export default function ShowcaseDisasterMetric() {
           country-profiles workbook from the program cache and asserts equality
           with the committed panel before reporting any ranking. The per-capita
           view adds a clearly labeled World Bank WDI population denominator from
-          an on-disk sibling cache.
+          an on-disk sibling cache. A second script adds a GDIS x Black Marble
+          source-readiness queue, while keeping recovery-speed claims blocked.
         </div>
       </section>
+
+      <RecoveryReadinessPanel recovery={recovery} error={error} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -342,9 +401,9 @@ export default function ShowcaseDisasterMetric() {
         </div>
         <div className="showcase-note">
           <strong>Non-claim.</strong> None of these metrics measures recovery
-          speed. A recovery-lag result would need post-event indicator recovery
-          curves joined to event timing, plus a population denominator inside
-          this program's own data lineage.
+          speed. The source-readiness audit shows a public event-geography
+          queue, but the current EM-DAT workbook lacks the event identifier,
+          date, and geometry fields needed for recovery curves.
         </div>
       </section>
 
@@ -369,6 +428,12 @@ export default function ShowcaseDisasterMetric() {
           <a href="/programs/disaster-recovery-lag/generated/disaster-recovery-lag-metric-falsification.csv" download>
             Download metric CSV
           </a>
+          <a href="/programs/disaster-recovery-lag/generated/disaster-recovery-lag-recovery-source-readiness.json" download>
+            Download source-readiness JSON
+          </a>
+          <a href="/programs/disaster-recovery-lag/generated/disaster-recovery-lag-recovery-source-readiness-events.csv" download>
+            Download event queue CSV
+          </a>
           <a href="/programs/disaster-recovery-lag/deepened-results.md" target="_blank" rel="noreferrer">
             Read deepening note
           </a>
@@ -376,6 +441,106 @@ export default function ShowcaseDisasterMetric() {
         </div>
       </section>
     </article>
+  );
+}
+
+function RecoveryReadinessPanel({
+  recovery,
+  error,
+}: {
+  recovery: RecoveryPayload | null;
+  error: string | null;
+}) {
+  if (!recovery) {
+    return (
+      <section className="disaster-source-bridge">
+        <p className="showcase-loading">{error || "Loading recovery source-readiness audit..."}</p>
+      </section>
+    );
+  }
+
+  const bars = recovery.summary.top_overlap_countries.slice(0, 8);
+  const max = Math.max(...bars.map((row) => row.gdis_unique_disasternos_black_marble_window_2012_2018), 1);
+  const gateClass = (status: string) =>
+    status.includes("block") || status.includes("not_ready") ? "blocked" : "usable";
+
+  return (
+    <section className="disaster-source-bridge" data-qa="recovery-source-bridge">
+      <div className="disaster-source-head">
+        <p className="kicker kicker-blue">Recovery source-readiness</p>
+        <h2>The source object is a bridge, not a curve.</h2>
+        <p>
+          GDIS supplies geocoded EM-DAT event locations through 2018, and NASA
+          Black Marble monthly lights start in 2012. That creates a visible
+          2012-2018 pilot queue, but the current EM-DAT cache is still aggregate
+          country-year data.
+        </p>
+      </div>
+
+      <div className="disaster-source-grid">
+        <div className="disaster-gate-grid">
+          {recovery.source_gates.map((gate) => (
+            <div key={gate.gate} className={`disaster-gate-card ${gateClass(gate.status)}`}>
+              <span>{gate.status.replaceAll("_", " ")}</span>
+              <strong>{gate.gate}</strong>
+              <p>{gate.finding}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="disaster-overlap-panel">
+          <div className="disaster-overlap-head">
+            <div>
+              <h3>GDIS x Black Marble overlap queue</h3>
+              <p>
+                2012-2018, ADB DMCs; bars show unique <code>disasterno</code> values.
+              </p>
+            </div>
+            <strong>{formatNumber(recovery.summary.adb_locations_black_marble_window_2012_2018)}</strong>
+          </div>
+          <div className="disaster-overlap-bars">
+            {bars.map((row) => {
+              const value = row.gdis_unique_disasternos_black_marble_window_2012_2018;
+              return (
+                <div key={row.iso3} className="disaster-overlap-row">
+                  <div>
+                    <strong>{row.iso3}</strong>
+                    <span>{row.country}</span>
+                  </div>
+                  <i>
+                    <b style={{ width: `${Math.max(3, (value / max) * 100)}%` }} />
+                  </i>
+                  <em>{formatNumber(value)}</em>
+                  <small>
+                    {formatNumber(row.gdis_locations_black_marble_window_2012_2018)} locations{" "}
+                    &middot;{" "}
+                    {row.top_disaster_types_2012_2018 || "type mix missing"}
+                  </small>
+                </div>
+              );
+            })}
+          </div>
+          <div className="disaster-queue-strip" aria-label="Recovery source-readiness totals">
+            <span>
+              <strong>{formatNumber(recovery.summary.adb_unique_ids_black_marble_window_2012_2018)}</strong>
+              GDIS ids
+            </span>
+            <span>
+              <strong>{formatNumber(recovery.summary.adb_unique_disasternos_black_marble_window_2012_2018)}</strong>
+              disaster numbers
+            </span>
+            <span>
+              <strong>{formatNumber(recovery.summary.countries_with_gdis_viirs_overlap)}</strong>
+              economies
+            </span>
+            <span>
+              <strong>{recovery.summary.recovery_curve_ready ? "ready" : "blocked"}</strong>
+              curve status
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

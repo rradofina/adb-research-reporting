@@ -273,6 +273,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (disaster metric-falsification source-readiness audit):** In
+  the owner-directed 20-report showcase loop, upgraded
+  `/showcase/disaster-metric-falsification` from a metric-switch route into a
+  metric-falsification plus recovery-source-readiness report. Added
+  `disaster-recovery-lag/scripts/audit-recovery-source-readiness.py`, cache
+  regeneration notes under `disaster-recovery-lag/.cache/README.md`, generated
+  `disaster-recovery-lag-recovery-source-readiness.{json,csv}` and the event
+  queue CSV, registered `gdis_geocoded_disasters_1960_2018` and
+  `nasa_black_marble_vnp46a3_cmr` in `versions.json`, and surfaced the source
+  bridge in `deepened-results.md`, the showcase registry, downloads, and a new
+  recovery-readiness visual wall. The audit confirms the current EM-DAT
+  country-profiles cache has 1,767 ADB-DMC rows in the 2000-2025 filter but
+  lacks disaster identifier, month/day, latitude, longitude, and location
+  fields, so it supports burden screens but not recovery curves. GDIS supplies
+  39,953 location rows, 9,924 GDIS ids, and 9,018 `disasterno` values for
+  1960-2018; NASA CMR identifies Black Marble VNP46A3 version 2 with coverage
+  starting 2012-01-01. The resulting ADB-DMC 2012-2018 overlap has 2,881
+  location rows, 609 unique GDIS ids, 565 unique `disasterno` values, and 27
+  economies with overlap; top `disasterno` counts are CHN 214, IND 113, PHL
+  51, AFG 39, PAK 38, and IDN 33. This is a public event-geography queue and a
+  source-readiness object, not a recovery-lag estimate. Verification in this
+  pass: `process-disaster.py`, `deepen-metric-falsification.py`, the new audit
+  script, public evidence/reference/doc sync, production `npm run build`, and
+  Chrome CDP desktop/mobile screenshot QA all passed; final deterministic
+  gates are run in the same handoff pass. Active flagship remains unchanged
+  because this is an owner-directed showcase-loop override, not a silent
+  flagship rotation.
 - **2026-06-20 (access map-completeness Cambodia source audit):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/access-map-completeness` from a no-registry Cambodia warning to a

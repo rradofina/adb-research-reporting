@@ -148,10 +148,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/disaster-metric-falsification",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "A pre-registered disaster-burden pair is tested against alternate EM-DAT metrics before any recovery-lag narrative is reused.",
+    deck: "A pre-registered disaster-burden pair is tested against alternate EM-DAT metrics, then checked against a public GDIS x Black Marble source-readiness queue before any recovery-lag narrative is reused.",
     evidencePath: "disaster-recovery-lag/deepened-results.md",
-    visual: "Metric-switch bars for events, affected, damage, deaths, and per-capita burden",
-    sourceNote: "EM-DAT country profiles with WDI population denominators",
+    visual: "Metric-switch bars, recovery source gates, and GDIS x Black Marble overlap bars",
+    sourceNote: "EM-DAT country profiles, WDI population denominators, GDIS geocoded disaster locations, and NASA Black Marble VNP46A3 CMR metadata",
   },
   {
     id: 9,
@@ -485,9 +485,9 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
     limitation: "OSM completeness is not actual service availability, capacity, quality, or travel-time access; the Cambodia HDX layer is a 2010 public-facility inventory, not a complete current all-provider registry.",
   },
   8: {
-    operationalUse: "Prevent recovery-lag narratives from reusing a disaster burden pair that fails under alternate metrics.",
-    falsifier: "If a true event-level recovery-lag metric restores the same priority pair, the metric-falsification warning narrows.",
-    limitation: "EM-DAT burden screens do not measure recovery speed, reconstruction, household loss, or service restoration.",
+    operationalUse: "Prevent recovery-lag narratives from reusing a disaster burden pair that fails under alternate metrics, while showing the event-geography queue needed for a real recovery pilot.",
+    falsifier: "If an event-level EM-DAT/date join plus Black Marble extraction restores the same priority pair, the metric-falsification warning narrows.",
+    limitation: "EM-DAT burden screens and the GDIS overlap queue do not measure recovery speed, reconstruction, household loss, or service restoration.",
   },
   9: {
     operationalUse: "Show energy teams when capacity-based fuel concentration should be checked against actual generation coverage.",
@@ -604,9 +604,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   8: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Disaster metric-falsification has a bespoke route and clear kill-condition evidence across alternate burden metrics.",
-    publicationGap: "Needs event-timestamped recovery curves and exposure denominators before any recovery-lag claim.",
-    nextUpgrade: "Build a recovery-lag source plan and event-level recovery proxy before reusing the disaster hook as a report.",
+    qaSummary: "Disaster metric-falsification now has a bespoke route, clear kill-condition evidence across alternate burden metrics, and a generated GDIS x Black Marble source-readiness object.",
+    publicationGap: "Needs an event-level EM-DAT/date join and Black Marble extraction over GDIS footprints or an accepted affected-area proxy before any recovery-lag claim.",
+    nextUpgrade: "Build the event-date join and one pilot radiance extraction; keep the current report as source readiness until an actual recovery curve exists.",
   },
   9: {
     readiness: "evidence-audit",

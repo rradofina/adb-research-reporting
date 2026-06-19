@@ -934,6 +934,92 @@ interface MonitorGradeStationReviewSummary {
   non_claim: string;
 }
 
+interface MonitorGradeStationMethodEvidenceLaneRow {
+  row_evidence_lane: string;
+  label: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface MonitorGradeStationMethodEvidenceCountryRow {
+  iso3: string;
+  country: string;
+  station_rows_reviewed: number;
+  exact_official_rows_found: number;
+  exact_pm25_signal_rows: number;
+  row_level_instrument_hint_rows: number;
+  row_level_pm25_portal_or_api_rows: number;
+  exact_live_pm25_value_populated_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface MonitorGradeStationMethodEvidenceSourceGroupRow {
+  source_group_key: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  station_rows_reviewed: number;
+  row_evidence_lane: string;
+  exact_source_evidence_type: string;
+  exact_source_station_type: string;
+  row_level_instrument_hint_rows: number;
+  row_level_pm25_portal_or_api_rows: number;
+  source_level_method_terms: string;
+  row_level_method_hint_terms: string;
+  reader_use: string;
+}
+
+interface MonitorGradeStationMethodEvidenceSampleRow {
+  method_evidence_id: string;
+  station_review_id: string;
+  row_evidence_lane: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_station_id: string;
+  source_station_name: string;
+  source_station_type: string;
+  exact_source_evidence_type: string;
+  exact_source_station_type: string;
+  exact_pm25_signal: boolean;
+  source_level_method_terms: string;
+  row_level_method_hint_terms: string;
+  reader_use: string;
+}
+
+interface MonitorGradeStationMethodEvidenceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    method_context_station_rows_reviewed: number;
+    economies_reviewed: number;
+    source_groups_reviewed: number;
+    exact_official_rows_found: number;
+    exact_official_rows_missing: number;
+    exact_pm25_signal_rows: number;
+    exact_coordinate_rows: number;
+    exact_live_pm25_value_populated_rows: number;
+    public_current_row_observed_rows: number;
+    row_level_instrument_hint_rows: number;
+    row_level_pm25_portal_or_api_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  evidence_lane_rows: MonitorGradeStationMethodEvidenceLaneRow[];
+  country_rows: MonitorGradeStationMethodEvidenceCountryRow[];
+  source_group_rows: MonitorGradeStationMethodEvidenceSourceGroupRow[];
+  station_sample_rows: MonitorGradeStationMethodEvidenceSampleRow[];
+  evidence_gate_counts: MonitorGradeGate[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1048,6 +1134,8 @@ export default function ShowcaseAirMonitoring() {
     useState<MonitorGradeSourceValidationSummary | null>(null);
   const [monitorGradeStationReview, setMonitorGradeStationReview] =
     useState<MonitorGradeStationReviewSummary | null>(null);
+  const [monitorGradeStationMethodEvidence, setMonitorGradeStationMethodEvidence] =
+    useState<MonitorGradeStationMethodEvidenceSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1111,6 +1199,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`monitor grade station review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-method-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`monitor grade station method evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -1131,6 +1223,7 @@ export default function ShowcaseAirMonitoring() {
         oneSignalReviewQueuePayload,
         monitorGradeSourceValidationPayload,
         monitorGradeStationReviewPayload,
+        monitorGradeStationMethodEvidencePayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -1147,6 +1240,7 @@ export default function ShowcaseAirMonitoring() {
         setOneSignalReviewQueue(oneSignalReviewQueuePayload);
         setMonitorGradeSourceValidation(monitorGradeSourceValidationPayload);
         setMonitorGradeStationReview(monitorGradeStationReviewPayload);
+        setMonitorGradeStationMethodEvidence(monitorGradeStationMethodEvidencePayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1275,6 +1369,8 @@ export default function ShowcaseAirMonitoring() {
       <AirMonitorGradeSourceValidationPanel summary={monitorGradeSourceValidation} />
 
       <AirMonitorGradeStationReviewPanel summary={monitorGradeStationReview} />
+
+      <AirMonitorGradeStationMethodEvidencePanel summary={monitorGradeStationMethodEvidence} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1876,6 +1972,19 @@ function monitorGradeStationLaneLabel(lane: string) {
       return "caution blocks grade";
     case "official_context_only":
       return "official context only";
+    default:
+      return sentenceCaseStatus(lane);
+  }
+}
+
+function monitorGradeMethodLaneLabel(lane: string) {
+  switch (lane) {
+    case "row_level_instrument_hint":
+      return "instrument hint";
+    case "row_level_pm25_portal_or_api":
+      return "PM2.5 portal/API";
+    case "exact_row_not_found":
+      return "row not found";
     default:
       return sentenceCaseStatus(lane);
   }
@@ -3308,6 +3417,188 @@ function AirMonitorGradeStationReviewPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading monitor-grade station-review queue...</p>
+      )}
+    </section>
+  );
+}
+
+function AirMonitorGradeStationMethodEvidencePanel({
+  summary,
+}: {
+  summary: MonitorGradeStationMethodEvidenceSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const totalRows = Math.max(1, counts?.method_context_station_rows_reviewed ?? 0);
+  const laneRows = summary?.evidence_lane_rows ?? [];
+  const countryRows = [...(summary?.country_rows ?? [])].sort(
+    (a, b) => b.station_rows_reviewed - a.station_rows_reviewed,
+  );
+  const sourceGroups = summary?.source_group_rows ?? [];
+  const sampleRows = summary?.station_sample_rows ?? [];
+
+  return (
+    <section className="showcase-section air-grade-method-section" aria-label="Monitor-grade station method-evidence audit">
+      <div className="air-grade-method-head">
+        <div>
+          <p className="kicker kicker-blue">Exact-row method audit</p>
+          <h2>Exact rows sharpen the queue without closing it.</h2>
+          <p>
+            The audit joins the 66 method-context station rows back to exact
+            official extraction rows. It separates rows where the official row
+            carries instrument wording from rows where the public evidence is
+            still only a PM2.5 portal or API record.
+          </p>
+        </div>
+        <div className="air-grade-method-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>exact-row evidence improves review priority, not station-radius readiness</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid">
+            <div>
+              <span>Method-context rows</span>
+              <strong>{formatNumber(counts.method_context_station_rows_reviewed)}</strong>
+              <em>{formatNumber(counts.economies_reviewed)} economies</em>
+            </div>
+            <div>
+              <span>Exact official rows</span>
+              <strong>{formatNumber(counts.exact_official_rows_found)}</strong>
+              <em>{formatNumber(counts.exact_official_rows_missing)} missing joins</em>
+            </div>
+            <div>
+              <span>PM2.5 signal</span>
+              <strong>{formatNumber(counts.exact_pm25_signal_rows)}</strong>
+              <em>{formatNumber(counts.exact_coordinate_rows)} coordinate rows</em>
+            </div>
+            <div>
+              <span>Instrument hints</span>
+              <strong>{formatNumber(counts.row_level_instrument_hint_rows)}</strong>
+              <em>exact row wording</em>
+            </div>
+            <div>
+              <span>Portal/API rows</span>
+              <strong>{formatNumber(counts.row_level_pm25_portal_or_api_rows)}</strong>
+              <em>not method classification</em>
+            </div>
+            <div>
+              <span>Radius-ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge" aria-label="Exact row evidence bridge">
+            {laneRows.map((lane) => (
+              <article key={lane.row_evidence_lane} className={`air-grade-method-lane air-grade-method-lane-${lane.row_evidence_lane}`}>
+                <div>
+                  <span>{monitorGradeMethodLaneLabel(lane.row_evidence_lane)}</span>
+                  <strong>{formatNumber(lane.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track">
+                  <i style={{ width: lane.rows > 0 ? `${Math.max(4, (lane.rows / totalRows) * 100)}%` : "0%" }} />
+                </div>
+                <p>{lane.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-grade-method-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.station_rows_reviewed)} station rows</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Exact</dt>
+                    <dd>{formatNumber(row.exact_official_rows_found)}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{formatNumber(row.exact_pm25_signal_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Hints</dt>
+                    <dd>{formatNumber(row.row_level_instrument_hint_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Portal/API</dt>
+                    <dd>{formatNumber(row.row_level_pm25_portal_or_api_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Ready</dt>
+                    <dd>{formatNumber(row.station_radius_grade_assumption_ready_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-source-grid">
+            {sourceGroups.map((source) => (
+              <article key={source.source_group_key} className={`air-grade-method-source air-grade-method-source-${source.row_evidence_lane}`}>
+                <div>
+                  <span>{source.iso3} · {source.exact_source_evidence_type}</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{monitorGradeMethodLaneLabel(source.row_evidence_lane)}</b>
+                </div>
+                <p>{source.reader_use}</p>
+                <small>
+                  {formatNumber(source.station_rows_reviewed)} rows ·{" "}
+                  {source.row_level_method_hint_terms || source.source_level_method_terms || source.exact_source_station_type}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid">
+            {sampleRows.slice(0, 12).map((row) => (
+              <article key={row.method_evidence_id} className={`air-grade-method-row air-grade-method-row-${row.row_evidence_lane}`}>
+                <div>
+                  <span>{row.iso3} · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{monitorGradeMethodLaneLabel(row.row_evidence_lane)}</b>
+                </div>
+                <p>{row.reader_use}</p>
+                <small>
+                  {row.row_level_method_hint_terms || row.source_level_method_terms || row.exact_source_station_type}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/monitor-grade-station-method-evidence.md" download>
+              Method-evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-method-evidence-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-station-method-evidence.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading monitor-grade station method-evidence audit...</p>
       )}
     </section>
   );

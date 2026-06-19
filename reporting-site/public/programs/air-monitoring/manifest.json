@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T09:54:43.112Z",
+  "generated_at": "2026-06-19T10:12:35.206Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -214,6 +214,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_monitor_grade_station_method_evidence",
+      "file": "monitor-grade-station-method-evidence.md",
+      "label": "Air-monitoring monitor-grade station method-evidence audit",
+      "size": 3432,
+      "size_human": "3.4 KB",
+      "mtime": "2026-06-19T10:03:42.929Z",
+      "sha256": "e0b61cad29468571430b21105b72a47b04d9352393cca195f318632b2f509d4e",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -237,10 +247,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 7422,
-      "size_human": "7.2 KB",
-      "mtime": "2026-06-19T09:53:53.040Z",
-      "sha256": "6091cf850c54cc7fb8337c94029d5a4ecff13847bda38fdc8e494aa946f1da9f",
+      "size": 8401,
+      "size_human": "8.2 KB",
+      "mtime": "2026-06-19T10:06:49.152Z",
+      "sha256": "55c1606b05ca3a75d424d85cb0d53a18d95f6af447b9db5f617ace831390184f",
       "attestation_chain": "ai-first"
     }
   ],
@@ -304,6 +314,18 @@
       "size": 11963,
       "size_human": "11.7 KB",
       "sha256": "d2ffe6b2790e347407ee06847c9f0c5b72c9f47b30a60018a3b401ae30b57ec3"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-station-method-evidence-summary.json",
+      "size": 26734,
+      "size_human": "26.1 KB",
+      "sha256": "f94e82a88ef5a3f9d46881207e8b09a0847136a30d4d093aa76a486349c1e751"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-station-method-evidence.csv",
+      "size": 70246,
+      "size_human": "68.6 KB",
+      "sha256": "1fcba272bee9102e09c43c6724ccc1535874a6284c10c09d800856562bfaf954"
     },
     {
       "file": "generated/air-monitoring-monitor-grade-station-review-queue-summary.json",

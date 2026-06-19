@@ -70,6 +70,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_one_signal_review_queue", file: "one-signal-review-queue.md", label: "Air-monitoring one-signal review queue" },
   { key: "air_monitoring_monitor_grade_source_validation_scan", file: "monitor-grade-source-validation-scan.md", label: "Air-monitoring monitor-grade source-validation scan" },
   { key: "air_monitoring_monitor_grade_station_review_queue", file: "monitor-grade-station-review-queue.md", label: "Air-monitoring monitor-grade station-review queue" },
+  { key: "air_monitoring_monitor_grade_station_method_evidence", file: "monitor-grade-station-method-evidence.md", label: "Air-monitoring monitor-grade station method-evidence audit" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
   { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "facility_validation_coded_screen", file: "facility-validation-coded-screen.md", label: "Facility-validation coded screen" },

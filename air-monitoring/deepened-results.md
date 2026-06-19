@@ -61,6 +61,10 @@ Monitor-grade station-review queue:
 `generated/air-monitoring-monitor-grade-station-review-queue-summary.json`
 and
 `generated/air-monitoring-monitor-grade-station-review-queue.csv`.
+Monitor-grade station method-evidence audit:
+`generated/air-monitoring-monitor-grade-station-method-evidence-summary.json`
+and
+`generated/air-monitoring-monitor-grade-station-method-evidence.csv`.
 
 ## The two questions
 
@@ -277,6 +281,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   only. It still records 0 current-status confirmed rows, 0 station-method
   classified rows, 0 complete monitor-grade classification rows, and 0
   station-radius grade-assumption-ready rows.
+- **New monitor-grade station method-evidence audit:** the no-network audit
+  filters the station-review queue to the 66 method-context rows and joins
+  each one back to an exact official extraction row by economy, source name,
+  and station ID. It finds 66 exact official rows with PM2.5 signal and
+  coordinates, including 28 exact-row instrument hints in Uzbekistan and 38
+  official PM2.5 portal/API rows in Indonesia and Georgia. It still records 0
+  current-status confirmed rows, 0 station-method classified rows, 0 complete
+  monitor-grade classification rows, and 0 station-radius
+  grade-assumption-ready rows.
 
 ## Bounds
 
@@ -326,4 +339,5 @@ python air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
 python air-monitoring/scripts/scan-monitor-grade-source-validation.py
 python air-monitoring/scripts/build-monitor-grade-station-review-queue.py
+python air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py
 ```

@@ -75,6 +75,7 @@ const PROGRAM_FILES = [
   "one-signal-review-queue.md",
   "monitor-grade-source-validation-scan.md",
   "monitor-grade-station-review-queue.md",
+  "monitor-grade-station-method-evidence.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, and monitor-grade station-review wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, and exact station method-evidence wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -86,9 +86,14 @@ overrides priority by editing this list.
    rows needing station confirmation, 2 caution-blocked rows, 70
    official-context-only rows, and still 0 current-status confirmed,
    station-method classified, complete grade, or station-radius-ready rows.
-   Next AI-doable loop is public station-level current-status/method evidence
-   for the 66 method-context rows, before any station-radius or catchment
-   claim.
+   The station method-evidence audit then joins the 66 method-context rows to
+   exact official extraction rows, finds 66 exact rows with PM2.5 signal and
+   coordinates, separates 28 exact-row instrument hints from 38 exact PM2.5
+   portal/API rows, and still keeps current-status confirmed, station-method
+   classified, complete grade, and station-radius-ready rows at 0. Next
+   AI-doable loop is public station-level current-status/method evidence for
+   the 28 Uzbekistan instrument-hint rows first, then the 38 Indonesia and
+   Georgia portal/API rows, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -203,6 +208,32 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring monitor-grade station method-evidence audit):**
+  Added
+  `air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-monitor-grade-station-method-evidence.csv`
+  and
+  `air-monitoring/generated/air-monitoring-monitor-grade-station-method-evidence-summary.json`,
+  and wrote `air-monitoring/monitor-grade-station-method-evidence.md`. The
+  no-network audit reads the station-review queue plus the official
+  station-source extraction, reviews the 66 method-context station rows, finds
+  66 exact official station rows with PM2.5 signal and coordinates, separates
+  28 exact-row instrument hints from 38 exact PM2.5 portal/API rows, and keeps
+  current-status confirmed rows, station-method classified rows, complete
+  monitor-grade classifications, and station-radius grade-assumption-ready rows
+  at 0. The public route now renders a monitor-grade station method-evidence
+  wall. Chrome CDP QA passed at 1440x1100 and 390x1000 with 6 stat cards, 3
+  lane cards, 3 country cards, 3 source-group cards, 12 sample station row
+  cards, 6 evidence gates, 3 download links, no page or section horizontal
+  overflow, no text overflow, and no page errors beyond existing React Router
+  future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-air-grade-method-desktop.png`,
+  `reporting-site/qa/showcase-air-grade-method-mobile.png`, and
+  `reporting-site/qa/showcase-air-grade-method-mobile-rows.png`. Next work is
+  station-level current-status/method evidence for the 28 Uzbekistan
+  instrument-hint rows first, then the 38 Indonesia and Georgia portal/API
+  rows, before any station-radius or catchment claim.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

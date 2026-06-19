@@ -124,9 +124,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, official station-table extraction, official/OpenAQ reconciliation, a 13-row candidate review worksheet, public OpenAQ metadata evidence, isMonitor source screening, public-feed source screening, a 169-item one-signal review queue, monitor-grade source-language evidence, a 14-source monitor-grade source-validation scan, and a 138-row station-review queue before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/monitor-grade-station-review-queue.md",
-    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, official-source bars, official/OpenAQ reconciliation ladder, candidate station-crosswalk worksheet, public-evidence attachment, isMonitor source-scan decisions, public-feed source-scan decisions, one-signal review wall, monitor-grade evidence ladder, monitor-grade source-validation wall, and station-review wall",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, official station-table extraction, official/OpenAQ reconciliation, a 13-row candidate review worksheet, public OpenAQ metadata evidence, isMonitor source screening, public-feed source screening, a 169-item one-signal review queue, monitor-grade source-language evidence, a 14-source monitor-grade source-validation scan, a 138-row station-review queue, and a 66-row exact station method-evidence audit before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/monitor-grade-station-method-evidence.md",
+    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, official-source bars, official/OpenAQ reconciliation ladder, candidate station-crosswalk worksheet, public-evidence attachment, isMonitor source-scan decisions, public-feed source-scan decisions, one-signal review wall, monitor-grade evidence ladder, monitor-grade source-validation wall, station-review wall, and exact station method-evidence bridge",
     sourceNote: "OpenAQ v3 locations, public regulator and official portal station tables/APIs, Bangladesh, Sri Lanka, BMKG, Uzhydromet, NEA, CEA, Brunei, Malaysia, and Tajikistan source-language checks, WHO ambient air quality database, WDI, and committed source artifacts",
   },
   {
@@ -475,9 +475,9 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
     limitation: "Bilateral flows are estimates and do not observe household remittance transactions or informal channels.",
   },
   6: {
-    operationalUse: "Prioritize where OpenAQ station-coordinate checks, source-level method review, station-level current-status checks, monitor-grade classification, and regulator-inventory checks should accompany satellite or modeled PM2.5 use.",
+    operationalUse: "Prioritize where OpenAQ station-coordinate checks, exact station-row method review, station-level current-status checks, monitor-grade classification, and regulator-inventory checks should accompany satellite or modeled PM2.5 use.",
     falsifier: "If regulatory inventories or local station lists fill the apparent zero-monitor gaps, the public-source gap shrinks.",
-    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the reconciliation audit has candidate rows but zero validated joins, and source-validation still leaves complete monitor-grade classification plus catchment coverage at zero.",
+    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the reconciliation audit has candidate rows but zero validated joins, and the exact-row method audit still leaves complete monitor-grade classification plus catchment coverage at zero.",
   },
   7: {
     operationalUse: "Flag geographies where OSM health amenities are too incomplete to support access or catchment planning.",
@@ -590,9 +590,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, public OpenAQ metadata evidence for those candidates, public source scans that screen the 6 OpenAQ isMonitor rows and the 7 not-isMonitor public-feed rows as not join-ready, a 169-item one-signal review queue, monitor-grade evidence audit, a 14-source monitor-grade source-validation scan, a 138-row station-review queue, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, candidate-reconciliation, review-queue, public-evidence, source-scan, public-feed, one-signal, grade-evidence, source-validation, and station-review panels.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, public OpenAQ metadata evidence for those candidates, public source scans that screen the 6 OpenAQ isMonitor rows and the 7 not-isMonitor public-feed rows as not join-ready, a 169-item one-signal review queue, monitor-grade evidence audit, a 14-source monitor-grade source-validation scan, a 138-row station-review queue, a 66-row exact station method-evidence audit, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, candidate-reconciliation, review-queue, public-evidence, source-scan, public-feed, one-signal, grade-evidence, source-validation, station-review, and exact-row method-evidence panels.",
     publicationGap: "Needs validated station crosswalk rows, station-level complete monitor-grade classification across sources, and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
-    nextUpgrade: "Resolve the 66 method-context station-review rows with exact station-level current-status/method documentation where public evidence permits, keep the 2 caution rows blocked unless clarified, then add catchment denominators only if the source comparison survives.",
+    nextUpgrade: "Search public station-owner or regulator pages for current-status/method documentation on the 28 Uzbekistan instrument-hint rows first, then resolve the 38 Indonesia/Georgia PM2.5 portal/API rows without promoting any catchment denominator until grade evidence is complete.",
   },
   7: {
     readiness: "l3-candidate",

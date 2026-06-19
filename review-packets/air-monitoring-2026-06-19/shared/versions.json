@@ -117,6 +117,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "No-network station-review queue derived from the one-signal review queue and monitor-grade source-validation scan. It assigns all 138 provenance-only station rows to review lanes: 66 method-context rows needing station confirmation, 2 caution-blocked rows, 70 official-context-only rows, and still 0 complete monitor-grade or station-radius-ready rows."
     },
+    "air_monitoring_monitor_grade_station_method_evidence": {
+      "script": "air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "No-network station-row method-evidence audit derived from the station-review queue and official station-source extraction. It reviews the 66 method-context rows, finds 66 exact official station rows, 28 exact-row instrument hints, 38 PM2.5 portal/API rows without instrument wording on the exact row, and still 0 complete monitor-grade or station-radius-ready rows."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -215,6 +220,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_monitor_grade_station_review_queue pin after projecting source-level method/context clues onto 138 station-review rows while keeping complete grade and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_monitor_grade_station_method_evidence pin after joining the 66 method-context station-review rows to exact official extraction rows while keeping complete grade and station-radius readiness at zero."
     }
   ]
 }

@@ -87,6 +87,14 @@
   and 70 official-context-only rows. It still records 0 current-status
   confirmed rows, 0 station-method classified rows, 0 complete monitor-grade
   classification rows, and 0 station-radius grade-assumption-ready rows.
+- Monitor-grade station method evidence. The 2026-06-19 no-network
+  method-evidence audit joins the 66 method-context station-review rows back to
+  exact official station-source extraction rows. It finds 66 exact official
+  rows with PM2.5 signal and coordinates, 28 exact-row instrument hints, and
+  38 official PM2.5 portal/API rows without instrument wording on the exact
+  row. It still records 0 current-status confirmed rows, 0 station-method
+  classified rows, 0 complete monitor-grade classification rows, and 0
+  station-radius grade-assumption-ready rows.
 
 ## Source-side
 
@@ -107,6 +115,12 @@
   Uzhydromet, NEA, CEA, Brunei, Malaysia, and Tajikistan sources can support
   a review queue, but they do not certify every covered station row without
   station-level current-status and method evidence.
+- Exact station-row method hints are not certification. The method-evidence
+  audit makes Uzbekistan the strongest follow-up lane because the exact
+  official rows carry `automatic HORIBA marker` wording, while Indonesia and
+  Georgia remain exact public PM2.5 portal/API rows. None of these rows is a
+  complete monitor-grade classification without current-status and
+  station-owner or regulator confirmation.
 
 ## Method-side
 

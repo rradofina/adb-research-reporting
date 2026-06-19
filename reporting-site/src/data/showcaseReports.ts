@@ -124,9 +124,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, official station-table extraction, official/OpenAQ candidate reconciliation, and monitor-grade source-language evidence before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/official-openaq-reconciliation.md",
-    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, official-source bars, official/OpenAQ reconciliation ladder, and monitor-grade evidence ladder",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, official station-table extraction, official/OpenAQ reconciliation, a 13-row candidate review worksheet, and monitor-grade source-language evidence before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/official-openaq-candidate-review.md",
+    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, official-source bars, official/OpenAQ reconciliation ladder, candidate station-crosswalk worksheet, and monitor-grade evidence ladder",
     sourceNote: "OpenAQ v3 locations, public regulator and official portal station tables/APIs, Bangladesh and Sri Lanka official source-language checks, WHO ambient air quality database, WDI, and committed source artifacts",
   },
   {
@@ -590,7 +590,7 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, monitor-grade evidence audit, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, candidate-reconciliation, and grade-evidence panels.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, monitor-grade evidence audit, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, candidate-reconciliation, review-queue, and grade-evidence panels.",
     publicationGap: "Needs validated station crosswalk rows, complete monitor-grade classification across sources, and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
     nextUpgrade: "Validate the near-plus-name candidate rows, deepen non-Bangladesh monitor-grade documentation, then build a declared catchment denominator only if the source comparison survives.",
   },

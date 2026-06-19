@@ -35,6 +35,9 @@ Monitor-grade evidence audit:
 Official-to-OpenAQ reconciliation audit:
 `generated/air-monitoring-official-openaq-reconciliation-summary.json` and
 `generated/air-monitoring-official-openaq-reconciliation.csv`.
+Official/OpenAQ candidate review worksheet:
+`generated/air-monitoring-official-openaq-candidate-review-summary.json` and
+`generated/air-monitoring-official-openaq-candidate-review.csv`.
 
 ## The two questions
 
@@ -190,6 +193,13 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   official-coordinate economies, 69 OpenAQ rows not used as a near candidate,
   and 0 validated same-station joins. The source story is now a candidate
   reconciliation queue, not a merged station crosswalk.
+- **New official/OpenAQ candidate review worksheet:** the worksheet filters
+  the strongest reconciliation lane into 13 near-plus-name candidate rows
+  across 4 economies, then adds source metadata, row-level review questions,
+  allowed decisions, and minimum validation evidence. It records 0 station-ID
+  crosswalk rows, 0 public current-status confirmation rows, 0 validated
+  same-station joins, and 0 station-radius-ready rows. The source story is now
+  more actionable for review, but still not a station crosswalk.
 - **New monitor-grade evidence audit:** the audit covers all 239
   official-source rows from the station-extraction pass. It finds 31
   source-specific method-standard signal rows in Bangladesh, 138 automatic or
@@ -239,5 +249,6 @@ python air-monitoring/scripts/fetch-openaq-station-metadata.py
 python air-monitoring/scripts/build-regulator-source-inventory.py
 python air-monitoring/scripts/extract-regulator-station-evidence.py
 python air-monitoring/scripts/reconcile-official-openaq-stations.py
+python air-monitoring/scripts/build-official-openaq-candidate-review.py
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
 ```

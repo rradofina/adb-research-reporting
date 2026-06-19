@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -23,10 +23,10 @@ Build a reviewer-credible air-monitoring observability package for the
 showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
 keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
-upgrade queue, show the monitor-grade evidence ladder honestly, and do not
-imply station-radius, complete monitor-grade, or regulatory-inventory
-  validation until official method tables, station crosswalks, and catchment
-  methods are added.
+upgrade queue, show the official/OpenAQ candidate review queue and
+monitor-grade evidence ladder honestly, and do not imply station-radius,
+complete monitor-grade, or regulatory-inventory validation until official
+method tables, station crosswalks, and catchment methods are added.
 
 ## Last completed
 
@@ -174,6 +174,24 @@ imply station-radius, complete monitor-grade, or regulatory-inventory
   `reporting-site/qa/showcase-air-official-openaq-mobile.png`,
   `reporting-site/qa/showcase-air-official-openaq-mobile-lanes.png`, and
   `reporting-site/qa/showcase-air-official-openaq-mobile-gates.png`.
+- **2026-06-19:** Added the official/OpenAQ candidate review worksheet. New
+  script `scripts/build-official-openaq-candidate-review.py` reads the
+  official/OpenAQ reconciliation audit and station-source extraction artifacts,
+  filters the 13 near-plus-name candidate rows across 4 economies, and writes
+  `generated/air-monitoring-official-openaq-candidate-review.csv` and
+  `generated/air-monitoring-official-openaq-candidate-review-summary.json`.
+  The worksheet records 0 rows with station-ID crosswalk evidence, 0 rows with
+  public current-status confirmation, 0 validated same-station joins, and 0
+  station-radius-ready rows. Wrote `official-openaq-candidate-review.md`.
+  This is a review queue, not validation or catchment evidence.
+- **2026-06-19:** Added the candidate review worksheet panel to the public
+  showcase route. Browser QA at 1440x1100 and 390x1000 confirmed 4 candidate
+  stat cards, 4 review-flow cards, 4 country cards, 6 row cards, 5 evidence
+  gates, 3 download links, no page or section horizontal overflow, and no
+  console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-openaq-candidate-desktop.png`,
+  `reporting-site/qa/showcase-air-openaq-candidate-mobile.png`, and
+  `reporting-site/qa/showcase-air-openaq-candidate-mobile-gates.png`.
 
 ## Next focused work
 
@@ -181,9 +199,11 @@ imply station-radius, complete monitor-grade, or regulatory-inventory
    station-owner, or regulator sources distinguish reference-grade/regulatory
    monitors from low-cost or other public feeds, and confirm current-status
    scope for the Bangladesh method-standard signal.
-2. Validate the 13 near-plus-name official/OpenAQ candidate rows first, then
-   review the 31 one-signal candidates with station IDs, source-owner
-   documentation, or current-status pages where public sources exist.
+2. Review the 13 near-plus-name official/OpenAQ candidate worksheet rows
+   against station IDs, documented crosswalks, source-owner/current-status
+   pages, or documented co-location evidence; keep rows open unless public
+   evidence supports one of the worksheet decisions. Then review the 31
+   one-signal candidates.
 3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
@@ -204,6 +224,10 @@ imply station-radius, complete monitor-grade, or regulatory-inventory
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22
   name-only-not-near rows are candidates, not station crosswalk rows.
+- The candidate review worksheet makes the 13 near-plus-name rows reviewable,
+  but it still records 0 station-ID crosswalk rows, 0 public current-status
+  confirmation rows, 0 validated same-station joins, and 0 station-radius-ready
+  rows.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -50,7 +50,11 @@ overrides priority by editing this list.
    rows and 82 OpenAQ coordinate rows in the same five economies, classifying
    13 near-plus-name candidate rows, 9 near-only candidate rows, 22
    name-only-not-near candidate rows, 186 official coordinate rows without
-   either candidate signal, and 0 validated same-station joins. The
+   either candidate signal, and 0 validated same-station joins. The candidate
+   review worksheet then turns the 13 near-plus-name rows into row-level
+   reviewer questions across 4 economies, while recording 0 station-ID
+   crosswalk rows, 0 current-status confirmation rows, 0 validated
+   same-station joins, and 0 station-radius-ready rows. The
    monitor-grade evidence audit covers 239 official-source rows and finds 31
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
@@ -172,6 +176,27 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring candidate station-crosswalk worksheet):**
+  Added `air-monitoring/scripts/build-official-openaq-candidate-review.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-review.csv`
+  and
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-review-summary.json`,
+  and wrote `air-monitoring/official-openaq-candidate-review.md`. The
+  worksheet reads the official/OpenAQ reconciliation audit and the official
+  station-source extraction, filters only the 13 near-plus-name candidate rows
+  across 4 economies, and adds row-level review questions, allowed decisions,
+  source metadata, and minimum validation evidence. It records 0 station-ID
+  crosswalk rows, 0 public current-status confirmation rows, 0 validated
+  same-station joins, and 0 station-radius-ready rows. This narrows the next
+  review queue but does not validate any station crosswalk or catchment claim.
+  The public route now renders the candidate-review worksheet panel. Chrome CDP
+  QA passed at 1440x1100 and 390x1000 with 4 stat cards, 4 review-flow cards,
+  4 country cards, 6 row cards, 5 evidence gates, 3 download links, no page or
+  section horizontal overflow, and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-openaq-candidate-desktop.png`,
+  `reporting-site/qa/showcase-air-openaq-candidate-mobile.png`, and
+  `reporting-site/qa/showcase-air-openaq-candidate-mobile-gates.png`.
 - **2026-06-19 (air-monitoring official-to-OpenAQ reconciliation audit):**
   Added `air-monitoring/scripts/reconcile-official-openaq-stations.py`,
   generated

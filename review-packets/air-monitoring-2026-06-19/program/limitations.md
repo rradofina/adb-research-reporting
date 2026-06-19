@@ -33,6 +33,12 @@
   rows, 9 near-only candidate rows, 22 name-only-not-near candidate rows, 186
   official coordinate rows without either candidate signal, and 0 validated
   same-station joins. Candidate rows are not station crosswalk rows.
+- Official/OpenAQ candidate closure. The 2026-06-19 candidate review worksheet
+  filters the strongest reconciliation lane into 13 near-plus-name candidate
+  rows across 4 economies. It records 0 rows with station-ID crosswalk
+  evidence, 0 rows with public current-status confirmation, 0 validated
+  same-station joins, and 0 station-radius-ready rows. The worksheet is a
+  review queue, not validation.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

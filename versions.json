@@ -82,6 +82,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Official-to-OpenAQ reconciliation audit for the 230 official coordinate rows from the air-monitoring station-extraction pass. The audit cross-tabulates nearest-OpenAQ within-5-kilometer signals and name-overlap signals, while keeping all rows as candidates until station IDs, documented crosswalks, or source-owner/current-status evidence validates a join."
     },
+    "air_monitoring_official_openaq_candidate_review": {
+      "script": "air-monitoring/scripts/build-official-openaq-candidate-review.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Review worksheet for the 13 near-plus-name official/OpenAQ candidate rows from the reconciliation audit. The worksheet adds source metadata, row-level review questions, allowed decisions, and minimum validation evidence while keeping 0 rows validated and 0 rows station-radius-ready."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -152,6 +157,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_official_openaq_reconciliation pin after cross-tabulating official coordinate rows against OpenAQ proximity and name-overlap candidate signals."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_official_openaq_candidate_review pin after converting the 13 near-plus-name official/OpenAQ candidate rows into a review worksheet with zero validated joins."
     }
   ]
 }

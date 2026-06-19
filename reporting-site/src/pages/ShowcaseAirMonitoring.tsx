@@ -456,6 +456,68 @@ interface OfficialOpenAQSummary {
   non_claim: string;
 }
 
+interface OfficialOpenAQCandidateGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface OfficialOpenAQCandidateCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  candidate_rows: number;
+  unique_openaq_candidate_ids: number;
+  minimum_distance_km: number | null;
+  maximum_distance_km: number | null;
+  rows_with_public_evidence_status_not_yet_validated: number;
+  validated_same_station_rows: number;
+  station_radius_join_ready_rows: number;
+}
+
+interface OfficialOpenAQCandidateRow {
+  candidate_review_id: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_station_id: string;
+  source_station_name: string;
+  nearest_openaq_location_id: string;
+  nearest_openaq_location_name: string;
+  nearest_openaq_distance_km: number | null;
+  public_evidence_status: string;
+  next_public_review_step: string;
+}
+
+interface OfficialOpenAQCandidateSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  coverage_counts: {
+    candidate_rows: number;
+    countries_with_candidates: number;
+    near_plus_name_candidate_rows: number;
+    rows_with_station_id_crosswalk: number;
+    rows_with_public_current_status_confirmation: number;
+    validated_same_station_rows: number;
+    separate_nearby_station_rows: number;
+    insufficient_public_evidence_rows: number;
+    superseded_or_inactive_rows: number;
+    station_radius_join_ready_rows: number;
+  };
+  evidence_gate_counts: OfficialOpenAQCandidateGate[];
+  allowed_decisions: string[];
+  minimum_validation_evidence: string;
+  country_rows: OfficialOpenAQCandidateCountryRow[];
+  candidate_rows: OfficialOpenAQCandidateRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -557,6 +619,7 @@ export default function ShowcaseAirMonitoring() {
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
+  const [officialOpenAQCandidate, setOfficialOpenAQCandidate] = useState<OfficialOpenAQCandidateSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -592,6 +655,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`official OpenAQ reconciliation HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`official OpenAQ candidate review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -605,6 +672,7 @@ export default function ShowcaseAirMonitoring() {
         regulatorSourcePayload,
         regulatorStationPayload,
         officialOpenAQPayload,
+        officialOpenAQCandidatePayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -614,6 +682,7 @@ export default function ShowcaseAirMonitoring() {
         setRegulatorSource(regulatorSourcePayload);
         setRegulatorStation(regulatorStationPayload);
         setOfficialOpenAQ(officialOpenAQPayload);
+        setOfficialOpenAQCandidate(officialOpenAQCandidatePayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -728,6 +797,8 @@ export default function ShowcaseAirMonitoring() {
       <AirRegulatorStationPanel summary={regulatorStation} />
 
       <AirOfficialOpenAQPanel summary={officialOpenAQ} />
+
+      <AirOfficialOpenAQCandidatePanel summary={officialOpenAQCandidate} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1645,6 +1716,195 @@ function AirOfficialOpenAQPanel({ summary }: { summary: OfficialOpenAQSummary | 
         </>
       ) : (
         <p className="showcase-loading">Loading official-to-OpenAQ reconciliation audit...</p>
+      )}
+    </section>
+  );
+}
+
+function AirOfficialOpenAQCandidatePanel({ summary }: { summary: OfficialOpenAQCandidateSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const countryRows = [...(summary?.country_rows ?? [])].sort((a, b) => b.candidate_rows - a.candidate_rows);
+  const candidateRows = [...(summary?.candidate_rows ?? [])]
+    .sort((a, b) => (a.nearest_openaq_distance_km ?? 999999) - (b.nearest_openaq_distance_km ?? 999999))
+    .slice(0, 6);
+  const flow = counts
+    ? [
+        {
+          key: "queue",
+          label: "Review queue",
+          rows: counts.candidate_rows,
+          detail: "near plus name signal",
+          tone: "queue",
+        },
+        {
+          key: "crosswalk",
+          label: "Crosswalk evidence",
+          rows: counts.rows_with_station_id_crosswalk,
+          detail: "shared ID or documented crosswalk",
+          tone: "blocked",
+        },
+        {
+          key: "confirmed",
+          label: "Current-status evidence",
+          rows: counts.rows_with_public_current_status_confirmation,
+          detail: "public confirmation naming both records",
+          tone: "blocked",
+        },
+        {
+          key: "ready",
+          label: "Radius-ready joins",
+          rows: counts.station_radius_join_ready_rows,
+          detail: "usable in catchment analysis",
+          tone: "blocked",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-openaq-candidate-section" aria-label="Official OpenAQ candidate review worksheet">
+      <div className="air-openaq-candidate-head">
+        <div>
+          <p className="kicker kicker-blue">Candidate station-crosswalk review</p>
+          <h2>The strongest candidates still need proof.</h2>
+          <p>
+            The worksheet filters the reconciliation audit to the near-plus-name
+            lane and turns each row into a reviewer question. It shows exactly
+            what public evidence would be needed before a candidate becomes a
+            station crosswalk.
+          </p>
+        </div>
+        <div className="air-openaq-candidate-nonclaim">
+          <strong>Worksheet, not validation</strong>
+          <p>
+            {formatNumber(counts?.validated_same_station_rows ?? 0)} rows are
+            validated same-station joins and {formatNumber(counts?.station_radius_join_ready_rows ?? 0)} rows are
+            station-radius-ready.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-openaq-candidate-stat-grid">
+            <div>
+              <span>Candidate rows</span>
+              <strong>{formatNumber(counts.candidate_rows)}</strong>
+              <em>{formatNumber(counts.countries_with_candidates)} economies</em>
+            </div>
+            <div>
+              <span>Near + name</span>
+              <strong>{formatNumber(counts.near_plus_name_candidate_rows)}</strong>
+              <em>worksheet selection rule</em>
+            </div>
+            <div>
+              <span>Still open</span>
+              <strong>{formatNumber(counts.insufficient_public_evidence_rows)}</strong>
+              <em>not yet validated</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_rows)}</strong>
+              <em>crosswalk remains empty</em>
+            </div>
+          </div>
+
+          <div className="air-openaq-candidate-flow" aria-label="Candidate review flow">
+            {flow.map((step) => (
+              <article key={step.key} className={`air-openaq-candidate-flow-card air-openaq-candidate-flow-card-${step.tone}`}>
+                <span>{step.label}</span>
+                <strong>{formatNumber(step.rows)}</strong>
+                <p>{step.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-candidate-rule">
+            <div>
+              <span>Minimum validation evidence</span>
+              <p>{summary.minimum_validation_evidence}</p>
+            </div>
+            <div>
+              <span>Allowed decisions</span>
+              <ul>
+                {summary.allowed_decisions.map((decision) => (
+                  <li key={decision}>{sentenceCaseStatus(decision)}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="air-openaq-candidate-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-openaq-candidate-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.candidate_rows)} open</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>OpenAQ IDs</dt>
+                    <dd>{formatNumber(row.unique_openaq_candidate_ids)}</dd>
+                  </div>
+                  <div>
+                    <dt>Min km</dt>
+                    <dd>{formatNumber(row.minimum_distance_km, 3)}</dd>
+                  </div>
+                  <div>
+                    <dt>Max km</dt>
+                    <dd>{formatNumber(row.maximum_distance_km, 3)}</dd>
+                  </div>
+                  <div>
+                    <dt>Validated</dt>
+                    <dd>{formatNumber(row.validated_same_station_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-candidate-row-list">
+            {candidateRows.map((row) => (
+              <article key={row.candidate_review_id} className="air-openaq-candidate-row">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{formatNumber(row.nearest_openaq_distance_km, 3)} km</b>
+                </div>
+                <p>
+                  OpenAQ: {row.nearest_openaq_location_name}
+                </p>
+                <p>{sentenceCaseStatus(row.public_evidence_status)}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-candidate-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-openaq-candidate-gate air-openaq-candidate-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-openaq-candidate-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/official-openaq-candidate-review.md" download>
+              Worksheet note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-review-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-review.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading official/OpenAQ candidate review worksheet...</p>
       )}
     </section>
   );

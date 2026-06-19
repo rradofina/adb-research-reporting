@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T07:53:42.262Z",
+  "generated_at": "2026-06-19T08:07:09.272Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -144,6 +144,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_official_openaq_candidate_review",
+      "file": "official-openaq-candidate-review.md",
+      "label": "Air-monitoring official/OpenAQ candidate review worksheet",
+      "size": 4453,
+      "size_human": "4.3 KB",
+      "mtime": "2026-06-19T08:01:09.297Z",
+      "sha256": "66c351c3de5066311d619bca83688cc6ab55754d16b594e283c0187cbc68fe84",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -167,10 +177,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 3872,
-      "size_human": "3.8 KB",
-      "mtime": "2026-06-19T07:50:26.135Z",
-      "sha256": "b13cb07bc1f6c48c5d61a4d1a625465003824734efd862a75bd0ea94a2bc96e2",
+      "size": 4277,
+      "size_human": "4.2 KB",
+      "mtime": "2026-06-19T08:01:18.439Z",
+      "sha256": "49d4dcf8590099b87cd0a2c633066ee20f823497848e854bbfabec55cf72455c",
       "attestation_chain": "ai-first"
     }
   ],
@@ -222,6 +232,18 @@
       "size": 233265,
       "size_human": "227.8 KB",
       "sha256": "df7e2a3eb8870c1fcc63f8ba739afeb7a544aa7fa9e8690ff1ed655167feedfb"
+    },
+    {
+      "file": "generated/air-monitoring-official-openaq-candidate-review-summary.json",
+      "size": 39155,
+      "size_human": "38.2 KB",
+      "sha256": "770987d49d80366993e223108f426e5c50279c8e74ec2e81f5e42088b66294ff"
+    },
+    {
+      "file": "generated/air-monitoring-official-openaq-candidate-review.csv",
+      "size": 21319,
+      "size_human": "20.8 KB",
+      "sha256": "ecedea01ca17badc144c7795dd1eec2af3bb779b8dbd4ab403dd4a36e445f7c6"
     },
     {
       "file": "generated/air-monitoring-official-openaq-reconciliation-summary.json",

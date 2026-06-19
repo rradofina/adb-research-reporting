@@ -1725,6 +1725,83 @@ interface GeorgiaReportVerificationSummary {
   non_claim: string;
 }
 
+interface GeorgiaReportExportLadderGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaReportExportLadderDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaReportExportLadderMonthRow {
+  report_month: string;
+  station_code_count_in_html: number;
+  pm25_column_in_html: boolean;
+  html_not_verified_label_present: boolean;
+  html_verified_label_without_not_verified: boolean;
+  xlsx_export_tested: boolean;
+  xlsx_target_station_sheet_count: number | string;
+  pdf_not_verified_label_present: boolean;
+  report_export_decision: string;
+}
+
+interface GeorgiaReportExportLadderProbeRow {
+  report_month: string;
+  xlsx_retrieved: boolean;
+  xlsx_sheet_count: number;
+  xlsx_target_station_sheet_count: number;
+  xlsx_pm25_present: boolean;
+  xlsx_verification_label_present: boolean;
+  pdf_retrieved: boolean;
+  pdf_text_pages: number;
+  pdf_pm25_present: boolean;
+  pdf_not_verified_label_present: boolean;
+  pdf_verified_label_without_not_verified: boolean;
+}
+
+interface GeorgiaReportExportLadderSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  start_month: string;
+  months_to_scan: number;
+  export_probe_months: string[];
+  coverage_counts: {
+    months_scanned: number;
+    target_station_codes: number;
+    html_months_retrieved: number;
+    html_months_with_all_target_station_codes: number;
+    html_months_with_pm25_column: number;
+    html_not_verified_label_months: number;
+    html_verified_label_without_not_verified_months: number;
+    export_probe_months: number;
+    xlsx_export_probe_months_retrieved: number;
+    xlsx_export_probe_months_with_all_target_sheets: number;
+    xlsx_export_probe_months_with_pm25: number;
+    xlsx_export_probe_months_with_verification_label: number;
+    pdf_export_probe_months_retrieved: number;
+    pdf_export_probe_months_with_not_verified_label: number;
+    pdf_export_probe_months_verified_without_not_verified: number;
+    verified_report_closure_available_months: number;
+    current_status_confirmed_months: number;
+    station_method_classified_months: number;
+    complete_monitor_grade_classification_months: number;
+    station_radius_grade_assumption_ready_months: number;
+  };
+  decision_counts: GeorgiaReportExportLadderDecision[];
+  evidence_gate_counts: GeorgiaReportExportLadderGate[];
+  month_rows: GeorgiaReportExportLadderMonthRow[];
+  export_probe_rows: GeorgiaReportExportLadderProbeRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1861,6 +1938,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgStationStatusSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
+  const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
+    useState<GeorgiaReportExportLadderSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -2129,6 +2208,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-export-ladder-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia report export ladder HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaReportExportLadder(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -2274,6 +2373,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgStationStatusPanel summary={bmkgStationStatus} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
+
+      <AirGeorgiaReportExportLadderPanel summary={georgiaReportExportLadder} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -6212,6 +6313,178 @@ function AirGeorgiaReportVerificationPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading Georgia report verification source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaReportExportLadderPanel({
+  summary,
+}: {
+  summary: GeorgiaReportExportLadderSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const months = summary?.month_rows ?? [];
+  const probes = summary?.export_probe_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-export-section" aria-label="Georgia report export verification ladder">
+      <div className="air-grade-method-head air-georgia-export-head">
+        <div>
+          <p className="kicker kicker-crimson">Georgia export ladder</p>
+          <h2>Two years of report pages do not remove the caution.</h2>
+          <p>
+            The one-month report check could have been a timing problem. This
+            pass scans the official monthly route backward and probes the XLSX
+            and PDF exports exposed by the same report page.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-export-callout">
+          <span>Clean verified months</span>
+          <strong>{formatNumber(counts?.html_verified_label_without_not_verified_months ?? 0)}</strong>
+          <p>Station-code PM2.5 rows appear; verification closure does not.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-export-stat-grid">
+            <div>
+              <span>Months scanned</span>
+              <strong>{formatNumber(counts.months_scanned)}</strong>
+              <em>ending {summary.start_month}</em>
+            </div>
+            <div>
+              <span>HTML retrieved</span>
+              <strong>{formatNumber(counts.html_months_retrieved)}</strong>
+              <em>official monthly routes</em>
+            </div>
+            <div>
+              <span>PM2.5 report months</span>
+              <strong>{formatNumber(counts.html_months_with_pm25_column)}</strong>
+              <em>all target station codes present</em>
+            </div>
+            <div>
+              <span>Not-verified months</span>
+              <strong>{formatNumber(counts.html_not_verified_label_months)}</strong>
+              <em>caution retained</em>
+            </div>
+            <div>
+              <span>Export probes</span>
+              <strong>{formatNumber(counts.export_probe_months)}</strong>
+              <em>XLSX and PDF checked</em>
+            </div>
+            <div>
+              <span>Verified closures</span>
+              <strong>{formatNumber(counts.verified_report_closure_available_months)}</strong>
+              <em>no promotions</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-export-bridge" aria-label="Georgia report export decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-export-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} months</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-export-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-export-ladder-wall">
+            <div>
+              <span>24-month runway</span>
+              <h3>Every month has the row; no month clears the label.</h3>
+              <p>
+                Each tile is an official monthly report route. Solid warning
+                tiles retain the not-verified footer; outlined tiles also had
+                XLSX/PDF export probes.
+              </p>
+            </div>
+            <div className="air-georgia-export-month-grid">
+              {months.map((row) => (
+                <article
+                  key={row.report_month}
+                  className={`air-georgia-export-month ${
+                    row.html_verified_label_without_not_verified
+                      ? "air-georgia-export-month-clear"
+                      : row.xlsx_export_tested
+                        ? "air-georgia-export-month-probe"
+                        : "air-georgia-export-month-blocked"
+                  }`}
+                >
+                  <span>{row.report_month}</span>
+                  <strong>{row.html_not_verified_label_present ? "not verified" : "label open"}</strong>
+                  <em>
+                    {formatNumber(row.station_code_count_in_html)} codes / {row.pm25_column_in_html ? "PM2.5" : "no PM2.5"}
+                  </em>
+                  {row.xlsx_export_tested ? <b>export probe</b> : null}
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-georgia-export-probe-grid">
+            {probes.map((row) => (
+              <article key={row.report_month} className="air-georgia-export-probe">
+                <div>
+                  <span>{row.report_month}</span>
+                  <strong>Export probe</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>XLSX sheets</dt>
+                    <dd>
+                      {formatNumber(row.xlsx_target_station_sheet_count)}/{formatNumber(counts.target_station_codes)}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>XLSX label</dt>
+                    <dd>{row.xlsx_verification_label_present ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>PDF pages</dt>
+                    <dd>{formatNumber(row.pdf_text_pages)}</dd>
+                  </div>
+                  <div>
+                    <dt>PDF caution</dt>
+                    <dd>{row.pdf_not_verified_label_present ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>
+                  XLSX carries station sheets and PM2.5; PDF keeps the
+                  not-verified footer. Neither route closes the grade gate.
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-export-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-export-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-georgia-export-downloads">
+            <a href="/programs/air-monitoring/georgia-report-export-ladder.md">Read the note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-export-ladder-summary.json">Download JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-export-ladder.csv">Download CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia report export ladder...</p>
       )}
     </section>
   );

@@ -11846,6 +11846,174 @@
     background: linear-gradient(90deg, #fbb00e, #9b2226);
   }
 
+  .air-georgia-export-section {
+    background:
+      linear-gradient(180deg, rgba(155, 34, 38, 0.08), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-georgia-export-callout {
+    border-left-color: #9b2226;
+    background: #fff3f0;
+  }
+
+  .air-georgia-export-stat-grid > div {
+    border-top-color: #9b2226;
+  }
+
+  .air-georgia-export-lane,
+  .air-georgia-export-gate {
+    border-top-color: #9b2226;
+  }
+
+  .air-georgia-export-track {
+    background: #f5d9d6;
+  }
+
+  .air-georgia-export-track i {
+    background: linear-gradient(90deg, #9b2226, #fbb00e);
+  }
+
+  .air-georgia-export-ladder-wall {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.32fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    scroll-margin-top: 7rem;
+    padding: 1rem;
+    border: 1px solid var(--rule-soft);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.84);
+  }
+
+  .air-georgia-export-ladder-wall span,
+  .air-georgia-export-month span,
+  .air-georgia-export-probe span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-export-ladder-wall h3 {
+    margin: 0.2rem 0 0.45rem;
+    max-width: 23ch;
+    font-size: clamp(1.2rem, 1.5vw, 1.65rem);
+    line-height: 1.08;
+  }
+
+  .air-georgia-export-ladder-wall p,
+  .air-georgia-export-probe p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.42;
+  }
+
+  .air-georgia-export-month-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .air-georgia-export-month {
+    display: grid;
+    gap: 0.22rem;
+    min-width: 0;
+    min-height: 6rem;
+    padding: 0.6rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 5px solid #fbb00e;
+    background: #fff8e3;
+  }
+
+  .air-georgia-export-month-probe {
+    border-top-color: #9b2226;
+    box-shadow: inset 0 0 0 2px rgba(155, 34, 38, 0.16);
+  }
+
+  .air-georgia-export-month-clear {
+    border-top-color: #5a8227;
+    background: #f4f8ed;
+  }
+
+  .air-georgia-export-month strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 0.86rem;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-export-month em,
+  .air-georgia-export-month b {
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    font-style: normal;
+    line-height: 1.2;
+  }
+
+  .air-georgia-export-month b {
+    align-self: end;
+    color: #9b2226;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 800;
+  }
+
+  .air-georgia-export-probe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-georgia-export-probe {
+    display: grid;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #9b2226;
+    background: #ffffff;
+  }
+
+  .air-georgia-export-probe > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-georgia-export-probe strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-export-probe dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.42rem;
+    margin: 0;
+  }
+
+  .air-georgia-export-probe dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-georgia-export-probe dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -12873,6 +13041,10 @@
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
     .air-georgia-report-row-grid,
+    .air-georgia-export-stat-grid,
+    .air-georgia-export-bridge,
+    .air-georgia-export-gate-grid,
+    .air-georgia-export-probe-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -12905,10 +13077,16 @@
     .air-bmkg-status-head,
     .air-bmkg-status-value-wall,
     .air-georgia-report-head,
+    .air-georgia-export-head,
+    .air-georgia-export-ladder-wall,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-georgia-export-month-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
@@ -14269,6 +14447,10 @@
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
     .air-georgia-report-row-grid,
+    .air-georgia-export-stat-grid,
+    .air-georgia-export-bridge,
+    .air-georgia-export-gate-grid,
+    .air-georgia-export-probe-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -14323,6 +14505,8 @@
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
+    .air-georgia-export-lane,
+    .air-georgia-export-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -14347,9 +14531,23 @@
     .air-bmkg-operation-head,
     .air-bmkg-status-head,
     .air-georgia-report-head,
+    .air-georgia-export-head,
+    .air-georgia-export-ladder-wall,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-georgia-export-month-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-georgia-export-month {
+      min-height: 5.3rem;
+    }
+
+    .air-georgia-export-probe dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .air-bmkg-status-value-row {
@@ -14443,6 +14641,7 @@
     .air-bmkg-operation-downloads,
     .air-bmkg-status-downloads,
     .air-georgia-report-downloads,
+    .air-georgia-export-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

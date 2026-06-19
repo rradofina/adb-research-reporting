@@ -1,0 +1,488 @@
+{
+  "generated_at": "2026-06-19T22:49:26Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_georgia_report_export_ladder",
+  "method": "air_monitoring_georgia_report_export_ladder_v1",
+  "goal_level": "L3 Georgia report export verification ladder",
+  "start_month": "2026-05",
+  "months_to_scan": 24,
+  "export_probe_months": [
+    "2026-05",
+    "2025-12",
+    "2024-06"
+  ],
+  "source_inputs": [
+    {
+      "path": "source-inputs\\georgia-report-export-ladder-source-seed.csv",
+      "role": "official report/export route source seed"
+    },
+    {
+      "path": "generated\\air-monitoring-georgia-report-verification-source-scan.csv",
+      "role": "16 target Georgia station codes from prior report verification scan"
+    }
+  ],
+  "coverage_counts": {
+    "months_scanned": 24,
+    "target_station_codes": 16,
+    "html_months_retrieved": 24,
+    "html_months_with_all_target_station_codes": 24,
+    "html_months_with_pm25_column": 24,
+    "html_not_verified_label_months": 24,
+    "html_verified_label_without_not_verified_months": 0,
+    "export_probe_months": 3,
+    "xlsx_export_probe_months_retrieved": 3,
+    "xlsx_export_probe_months_with_all_target_sheets": 3,
+    "xlsx_export_probe_months_with_pm25": 3,
+    "xlsx_export_probe_months_with_verification_label": 0,
+    "pdf_export_probe_months_retrieved": 3,
+    "pdf_export_probe_months_with_not_verified_label": 3,
+    "pdf_export_probe_months_verified_without_not_verified": 0,
+    "verified_report_closure_available_months": 0,
+    "current_status_confirmed_months": 0,
+    "station_method_classified_months": 0,
+    "complete_monitor_grade_classification_months": 0,
+    "station_radius_grade_assumption_ready_months": 0
+  },
+  "decision_counts": [
+    {
+      "decision": "html_and_pdf_export_not_verified_keep_open",
+      "rows": 3
+    },
+    {
+      "decision": "monthly_html_ladder_pm25_present_not_verified_keep_open",
+      "rows": 21
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Monthly HTML routes retrieved",
+      "rows": 24,
+      "reader_use": "The scan retrieves each official monthly report page in the 24-month ladder."
+    },
+    {
+      "status": "available",
+      "gate": "All target station codes in monthly HTML",
+      "rows": 24,
+      "reader_use": "Every scanned month exposes the 16 target station codes in the official report text."
+    },
+    {
+      "status": "available",
+      "gate": "PM2.5 column in monthly HTML",
+      "rows": 24,
+      "reader_use": "Every scanned month exposes PM2.5 in the station-code report table."
+    },
+    {
+      "status": "caution",
+      "gate": "Not Verified Data in monthly HTML",
+      "rows": 24,
+      "reader_use": "The fetched official monthly pages retain the not-verified footer across the scanned ladder."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified label without not-verified footer",
+      "rows": 0,
+      "reader_use": "No scanned monthly page provides a clean verified-report label."
+    },
+    {
+      "status": "available",
+      "gate": "XLSX export probes retrieved",
+      "rows": 3,
+      "reader_use": "The official XLSX export route returns station sheets for the selected probe months."
+    },
+    {
+      "status": "partly_available",
+      "gate": "XLSX target station sheets",
+      "rows": 3,
+      "reader_use": "XLSX exports contain all target station sheets in the probed months, but no independent verification label."
+    },
+    {
+      "status": "caution",
+      "gate": "PDF export Not Verified Data footer",
+      "rows": 3,
+      "reader_use": "PDF exports preserve the not-verified footer in extracted text."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified report closure",
+      "rows": 0,
+      "reader_use": "No monthly HTML or export route closes the verified-report gate."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Current status and complete grade",
+      "rows": 0,
+      "reader_use": "The report/export routes do not provide station status, calibration, method class, or complete monitor-grade evidence."
+    }
+  ],
+  "month_rows": [
+    {
+      "report_month": "2026-05",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": true,
+      "xlsx_target_station_sheet_count": 16,
+      "pdf_not_verified_label_present": true,
+      "report_export_decision": "html_and_pdf_export_not_verified_keep_open"
+    },
+    {
+      "report_month": "2026-04",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2026-03",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2026-02",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2026-01",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-12",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": true,
+      "xlsx_target_station_sheet_count": 16,
+      "pdf_not_verified_label_present": true,
+      "report_export_decision": "html_and_pdf_export_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-11",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-10",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-09",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-08",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-07",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-06",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-05",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-04",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-03",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-02",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2025-01",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-12",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-11",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-10",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-09",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-08",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-07",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": false,
+      "xlsx_target_station_sheet_count": "",
+      "pdf_not_verified_label_present": false,
+      "report_export_decision": "monthly_html_ladder_pm25_present_not_verified_keep_open"
+    },
+    {
+      "report_month": "2024-06",
+      "station_code_count_in_html": 16,
+      "pm25_column_in_html": true,
+      "html_not_verified_label_present": true,
+      "html_verified_label_without_not_verified": false,
+      "xlsx_export_tested": true,
+      "xlsx_target_station_sheet_count": 16,
+      "pdf_not_verified_label_present": true,
+      "report_export_decision": "html_and_pdf_export_not_verified_keep_open"
+    }
+  ],
+  "export_probe_rows": [
+    {
+      "report_month": "2026-05",
+      "xlsx_retrieved": true,
+      "xlsx_sheet_count": 16,
+      "xlsx_target_station_sheet_count": 16,
+      "xlsx_pm25_present": true,
+      "xlsx_verification_label_present": false,
+      "pdf_retrieved": true,
+      "pdf_text_pages": 16,
+      "pdf_pm25_present": true,
+      "pdf_not_verified_label_present": true,
+      "pdf_verified_label_without_not_verified": false
+    },
+    {
+      "report_month": "2025-12",
+      "xlsx_retrieved": true,
+      "xlsx_sheet_count": 16,
+      "xlsx_target_station_sheet_count": 16,
+      "xlsx_pm25_present": true,
+      "xlsx_verification_label_present": false,
+      "pdf_retrieved": true,
+      "pdf_text_pages": 16,
+      "pdf_pm25_present": true,
+      "pdf_not_verified_label_present": true,
+      "pdf_verified_label_without_not_verified": false
+    },
+    {
+      "report_month": "2024-06",
+      "xlsx_retrieved": true,
+      "xlsx_sheet_count": 16,
+      "xlsx_target_station_sheet_count": 16,
+      "xlsx_pm25_present": true,
+      "xlsx_verification_label_present": false,
+      "pdf_retrieved": true,
+      "pdf_text_pages": 16,
+      "pdf_pm25_present": true,
+      "pdf_not_verified_label_present": true,
+      "pdf_verified_label_without_not_verified": false
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "airgov_monthly_report_html_ladder",
+      "source_name": "Air.gov.ge monthly report HTML route for Georgia target station codes",
+      "source_role": "official_monthly_report_html",
+      "url": "https://air.gov.ge/en/reports_page",
+      "content_type_hint": "html",
+      "retrievals": 24,
+      "retrieval_bytes_total": 6993621,
+      "sha256_sample": [
+        "daa7f2c89c5a906c92b37aea96f6501fc275c47bdd76c99f6ed109cfae4fb928",
+        "07a8164d90c819b20bd07e882559737dd06ad4ba4e6a9e535e8e5624323d0456",
+        "dfacd20976f6b7d616ce28dd8aa6996c4f84aee84c572b7a2d7cf82e04c5a3b6"
+      ],
+      "matched_expected_terms": [
+        "Reports"
+      ],
+      "source_note": "Official air.gov.ge monthly report route tested across a 24-month ladder for exact station-code PM2.5 rows and verification labels."
+    },
+    {
+      "source_key": "airgov_monthly_report_xlsx_export",
+      "source_name": "Air.gov.ge monthly report XLSX export route for Georgia target station codes",
+      "source_role": "official_monthly_report_xlsx_export",
+      "url": "https://air.gov.ge/en/reports_page?export_type=xlsx",
+      "content_type_hint": "xlsx",
+      "retrievals": 3,
+      "retrieval_bytes_total": 103271,
+      "sha256_sample": [
+        "a47dbe4cb0bcc332b4c5a465580681bee87dcda19c2569176a1d70edb12c6924",
+        "31af7cf35ebfcbdb18a3593ee948ba58fc534a45bcfdd2468855c21f98d49061",
+        "80e9878ac757da2340323e3bc4cec1784c764407c13bb2c39fc9e3281391650c"
+      ],
+      "matched_expected_terms": [
+        "AGMS"
+      ],
+      "source_note": "Official XLSX export route exposed by the report-page Download control. Used as a probe for station-sheet and PM2.5 export evidence, not as verification closure when the label is absent."
+    },
+    {
+      "source_key": "airgov_monthly_report_pdf_export",
+      "source_name": "Air.gov.ge monthly report PDF export route for Georgia target station codes",
+      "source_role": "official_monthly_report_pdf_export",
+      "url": "https://air.gov.ge/en/reports_page?export_type=pdf",
+      "content_type_hint": "pdf",
+      "retrievals": 3,
+      "retrieval_bytes_total": 725210,
+      "sha256_sample": [
+        "8d43a25c722a485e36cf6d569c155b094fd7ce2111337c21bb765b1de58e94f5",
+        "83e93a0fdbd2930d409a56449ce72eab19277306008bcfd4ffd755444726c39d",
+        "a6bb582d8266957071b40daa4b92ba711fcce05fb96985492760e0de2ca1142b"
+      ],
+      "matched_expected_terms": [
+        "AGMS"
+      ],
+      "source_note": "Official PDF export route exposed by the report-page Download control. Used to test whether export text carries the same verification footer."
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-georgia-report-export-ladder.csv",
+    "summary_json": "generated\\air-monitoring-georgia-report-export-ladder-summary.json",
+    "note": "georgia-report-export-ladder.md"
+  },
+  "non_claim": "This scan tests official Georgia monthly report and export routes for verification labels across time. It does not certify current station status, station method class, calibration status, complete monitor-grade classification, or station-radius readiness."
+}

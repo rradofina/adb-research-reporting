@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, and Georgia report-verification source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, and Georgia report/export verification ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -160,12 +160,20 @@ overrides priority by editing this list.
    network catalog, finds all 16 target station codes and PM2.5 report rows,
    records 16 not-verified report-label rows, and keeps verified-report
    closure, station-method classification, current-status confirmed,
-   complete-grade, and station-radius-ready counts at 0. Next AI-doable loop is
+   complete-grade, and station-radius-ready counts at 0. The Georgia
+   report/export ladder then retrieves 24 official monthly HTML report routes
+   from 2026-05 backward to 2024-06, finds all 16 target station codes and
+   PM2.5 in all 24 months, records 24 `Not Verified Data` HTML months, probes
+   3 XLSX exports with all 16 target station sheets, records 3 PDF export
+   probes retaining the not-verified footer, and keeps verified-report,
+   current-status, complete-grade, and station-radius-ready counts at 0. Next
+   AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry:
    station-specific inspection/calibration/status and official grade-basis
-   evidence for the 22 BMKG rows, a verified report export or exact
-   method/status table for Georgia, plus exact station method/status/certification
-   tables for Uzbekistan, before any station-radius or catchment claim.
+   evidence for the 22 BMKG rows, a Georgia verified report/status route beyond
+   the not-verified monthly report/export surface, plus exact station
+   method/status/certification tables for Uzbekistan, before any station-radius
+   or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -995,6 +1003,33 @@ by leaving the board in a state the next session can read.
   output, and no page errors. Screenshots:
   `reporting-site/qa/showcase-air-georgia-report-desktop.png` and
   `reporting-site/qa/showcase-air-georgia-report-mobile.png`.
+- **2026-06-20 (air-monitoring Georgia report/export verification ladder):**
+  Added `air-monitoring/source-inputs/georgia-report-export-ladder-source-seed.csv`
+  and `air-monitoring/scripts/scan-georgia-report-export-ladder.py`, generated
+  `air-monitoring/generated/air-monitoring-georgia-report-export-ladder.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-report-export-ladder-summary.json`,
+  and wrote `air-monitoring/georgia-report-export-ladder.md`. The networked
+  scan reads the 16 Georgia target station codes from the prior report scan,
+  retrieves 24 official `air.gov.ge` monthly HTML report routes from 2026-05
+  backward to 2024-06, finds all 16 target station codes and PM2.5 in all 24
+  months, records 24 `Not Verified Data` HTML months, probes XLSX/PDF exports
+  for 2026-05, 2025-12, and 2024-06, finds 3 XLSX probes with all 16 target
+  station sheets and 3 PDF probes retaining the not-verified footer, and keeps
+  verified-report closure, station-method classification, current-status
+  confirmed, complete monitor-grade, and station-radius-ready rows at 0. The
+  public route now renders a Georgia report/export ladder. Verification
+  passed: ladder script rerun, script `py_compile`, evidence/reference/deepening
+  sync, production site build, deterministic gates, `git diff --check` with
+  only CRLF warnings, and Playwright desktop/mobile QA at 1440x1100 and
+  390x1000. Browser QA confirmed 6 stat cards, 2 decision cards, 24 month
+  tiles, 3 export probe cards, 10 gate cards, 3 download links with HTTP 200,
+  no page or section horizontal overflow, no overflowing children, no request
+  failures, no console errors, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-georgia-export-desktop-head.png`,
+  `reporting-site/qa/showcase-air-georgia-export-desktop-ladder.png`,
+  `reporting-site/qa/showcase-air-georgia-export-mobile-head.png`, and
+  `reporting-site/qa/showcase-air-georgia-export-mobile-ladder.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, Georgia report/export verification ladder, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -34,8 +34,8 @@ status/certification source scan, the Uzbekistan blocker-row follow-up, the
 Indonesia/Georgia row-method source scan, the station-code status/method
 source scan, the station-grade decision ledger, the station-method
 classification audit, the BMKG operation/maintenance source scan, the BMKG
-station-specific status audit, and the Georgia report-verification source scan
-honestly, and do not imply
+station-specific status audit, the Georgia report-verification source scan, and
+the Georgia report/export verification ladder honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
@@ -614,6 +614,32 @@ grade-basis evidence, and catchment methods are added.
   no page errors. Screenshots:
   `reporting-site/qa/showcase-air-georgia-report-desktop.png` and
   `reporting-site/qa/showcase-air-georgia-report-mobile.png`.
+- **2026-06-20:** Added the Georgia report/export verification ladder. New
+  networked script `scripts/scan-georgia-report-export-ladder.py` reads
+  `source-inputs/georgia-report-export-ladder-source-seed.csv` and the prior
+  Georgia report-verification output, retrieves 24 official `air.gov.ge`
+  monthly HTML report routes from 2026-05 backward to 2024-06, and writes
+  `generated/air-monitoring-georgia-report-export-ladder.csv` and
+  `generated/air-monitoring-georgia-report-export-ladder-summary.json`. The
+  scan finds all 16 target station codes and PM2.5 in all 24 months, records
+  24 `Not Verified Data` HTML months, probes XLSX/PDF exports for 2026-05,
+  2025-12, and 2024-06, finds 3 XLSX probes with all 16 target station sheets
+  and 3 PDF probes retaining the not-verified footer, and keeps
+  verified-report closure, station-method classification, current-status
+  confirmed rows, complete monitor-grade rows, and station-radius-ready rows
+  at 0. Wrote `georgia-report-export-ladder.md` and wired a public Georgia
+  report/export ladder. Verification passed: ladder script rerun, script
+  `py_compile`, evidence/reference/deepening sync, production site build,
+  deterministic gates, `git diff --check` with only CRLF warnings, and
+  Playwright desktop/mobile QA at 1440x1100 and 390x1000. Browser QA confirmed
+  6 stat cards, 2 decision cards, 24 month tiles, 3 export probe cards, 10
+  gate cards, 3 download links with HTTP 200, no page or section horizontal
+  overflow, no overflowing children, no request failures, no console errors,
+  and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-georgia-export-desktop-head.png`,
+  `reporting-site/qa/showcase-air-georgia-export-desktop-ladder.png`,
+  `reporting-site/qa/showcase-air-georgia-export-mobile-head.png`, and
+  `reporting-site/qa/showcase-air-georgia-export-mobile-ladder.png`.
 
 ## Next focused work
 
@@ -634,11 +660,14 @@ grade-basis evidence, and catchment methods are added.
    BMKG station-detail scrape; it is public station-owner or regulator evidence
    outside the display page that names exact station IDs or station names and
    provides inspection, calibration, current-status, or grade-basis evidence.
-3. For the 16 Georgia rows, use the report-verification scan as the next
-   source-targeting wall. It finds all 16 target station codes and PM2.5 report
-   rows in the official May 2026 report route, but the fetched report page still
-   carries a `Not Verified Data` label and closes 0 verified rows. The next
-   useful source is a verified export, station method/status table, or regulator
+3. For the 16 Georgia rows, use the report-verification scan and the
+   report/export ladder as the source-targeting wall. The ladder finds all 16
+   target station codes and PM2.5 in 24 official monthly report pages from
+   2026-05 back to 2024-06, but all 24 HTML pages retain `Not Verified Data`;
+   the 3 XLSX probes have all 16 target station sheets but no verification
+   label, and the 3 PDF probes retain the not-verified footer. The next useful
+   source is therefore not another monthly report-page scrape; it is a verified
+   source, station method/status table, calibration/status record, or regulator
    document that names exact station codes without that caution.
 4. For the 22 BMKG rows now carrying operation/maintenance context plus
    station-page display snapshots, find station-specific inspection logs,
@@ -729,6 +758,12 @@ grade-basis evidence, and catchment methods are added.
   16 report-page `Not Verified Data` caution rows and 0 verified-report closure
   rows. Georgia remains blocked for station-method, current-status,
   complete-grade, and station-radius promotion.
+- The Georgia report/export ladder retrieves 24 official monthly HTML report
+  routes from 2026-05 backward to 2024-06, finds all 16 target station codes
+  and PM2.5 in every scanned month, records 24 `Not Verified Data` HTML months,
+  probes 3 XLSX exports with all 16 target station sheets, records 3 PDF export
+  probes retaining the not-verified footer, and keeps verified-report,
+  current-status, complete-grade, and station-radius-ready counts at 0.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

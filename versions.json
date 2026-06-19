@@ -247,6 +247,15 @@
       ],
       "notes": "Georgia report verification source scan for the 16 Georgia rows from the station-method classification audit. It retrieves the official May 2026 air.gov.ge monthly report route, AQI method note, and monitoring-network catalog, finds all 16 target station codes and PM2.5 report rows, records 16 not-verified report-label rows, and keeps verified-report closure, station-method classification, current-status confirmed, complete monitor-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_georgia_report_export_ladder": {
+      "script": "air-monitoring/scripts/scan-georgia-report-export-ladder.py",
+      "seed": "air-monitoring/source-inputs/georgia-report-export-ladder-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_georgia_report_verification_source_scan"
+      ],
+      "notes": "Georgia report export verification ladder for the 16 Georgia target station codes. It retrieves 24 official air.gov.ge monthly HTML report routes from 2026-05 backward to 2024-06, finds all 16 target station codes and PM2.5 in all 24 months, records 24 Not Verified Data HTML months, probes XLSX/PDF exports for 2026-05, 2025-12, and 2024-06, finds 3 XLSX probes with all 16 target station sheets and 3 PDF probes retaining the not-verified footer, and keeps verified-report closure, current-status confirmed, complete monitor-grade, and station-radius-ready rows at zero."
+    },
     "gdis_geocoded_disasters_1960_2018": {
       "name": "Geocoded Disasters (GDIS) Dataset, 1960-2018",
       "nasa_dataset_page": "https://data.nasa.gov/dataset/geocoded-disasters-gdis-dataset",

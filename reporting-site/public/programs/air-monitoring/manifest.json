@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T07:21:14.770Z",
+  "generated_at": "2026-06-19T07:43:00.860Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -124,6 +124,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_monitor_grade_evidence",
+      "file": "monitor-grade-evidence.md",
+      "label": "Air-monitoring monitor-grade evidence audit",
+      "size": 4570,
+      "size_human": "4.5 KB",
+      "mtime": "2026-06-19T07:37:27.283Z",
+      "sha256": "8559a7d7843e9c69e0d6e1714241c67ddd5b8a7d1d2e97dcac652cfc46449711",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -147,10 +157,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 2623,
-      "size_human": "2.6 KB",
-      "mtime": "2026-06-19T07:20:01.864Z",
-      "sha256": "03d8196025b87b3bc1c8da5add3ebc21ab8a68f9a207c5607f74489417dd1809",
+      "size": 3426,
+      "size_human": "3.3 KB",
+      "mtime": "2026-06-19T07:37:51.782Z",
+      "sha256": "34bf4b0273f3a4ccc43515a67bf9e945b99dab3fd2c363f900d7fb4ec87d0f81",
       "attestation_chain": "ai-first"
     }
   ],
@@ -190,6 +200,18 @@
       "size": 38042,
       "size_human": "37.2 KB",
       "sha256": "c7aa9c5725398921e5353ba7c9c1ebd5c66c98eb561bbeb8a040b61d6a14a6ff"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-evidence-summary.json",
+      "size": 46365,
+      "size_human": "45.3 KB",
+      "sha256": "25793d7087a8f301f171c8a324c6e9155592ea90b39b45bea3f27bc2e30ff0f4"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-evidence.csv",
+      "size": 233265,
+      "size_human": "227.8 KB",
+      "sha256": "df7e2a3eb8870c1fcc63f8ba739afeb7a544aa7fa9e8690ff1ed655167feedfb"
     },
     {
       "file": "generated/air-monitoring-openaq-station-metadata-summary.json",

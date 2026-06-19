@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, and public source/reconciliation walls complete; monitor-grade validation and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, monitor-grade evidence audit, and public source/reconciliation walls complete; complete monitor-grade classification and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -23,9 +23,9 @@ Build a reviewer-credible air-monitoring observability package for the
 showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
 keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
-upgrade queue, and do not imply station-radius, monitor-grade, or
-regulatory-inventory validation until official station tables and catchment
-methods are added.
+upgrade queue, show the monitor-grade evidence ladder honestly, and do not
+imply station-radius, complete monitor-grade, or regulatory-inventory
+validation until official method tables and catchment methods are added.
 
 ## Last completed
 
@@ -127,12 +127,38 @@ methods are added.
   source extraction and proximity screening, not a validated station join,
   not monitor-grade validation, not proof of no monitor outside OpenAQ, and
   not station-radius population coverage.
+- **2026-06-19:** Added the monitor-grade evidence audit. New script
+  `scripts/audit-monitor-grade-evidence.py` reads all 239 official-source rows
+  from the station-extraction pass, verifies key public source language, and
+  writes `generated/air-monitoring-monitor-grade-evidence.csv` and
+  `generated/air-monitoring-monitor-grade-evidence-summary.json`. The audit
+  finds 31 source-specific method-standard signal rows in Bangladesh, 138
+  automatic or official-portal signal-only rows, 3 sensor-under-test rows, 2
+  plan-only rows, 65 rows with no public grade language found, and 0 complete
+  monitor-grade classification rows. Wrote `monitor-grade-evidence.md`. This
+  is a source-language evidence ladder, not a certification of current
+  reference-grade station status and not station-radius population coverage.
+- **2026-06-19:** Added the monitor-grade evidence ladder to the public
+  showcase route at `/showcase/air-monitoring-observability`, synced the audit
+  note and generated CSV/JSON into the public evidence packet, and updated the
+  showcase registry/QA notes. Verification passed: audit script rerun, script
+  `py_compile`, evidence/doc/reference sync, production site build, six
+  deterministic gates, source-output contact/token scan with no matches, and
+  Chrome CDP desktop/mobile QA at 1440x1100 and 390x1000. The browser check
+  confirmed 5 monitor-grade stat cards, 5 ladder cards, 9 country cards, 6
+  evidence gates, 3 download links, no page or section horizontal overflow,
+  and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-monitor-grade-desktop.png`,
+  `reporting-site/qa/showcase-air-monitor-grade-mobile.png`,
+  `reporting-site/qa/showcase-air-monitor-grade-mobile-ladder.png`, and
+  `reporting-site/qa/showcase-air-monitor-grade-mobile-gates.png`.
 
 ## Next focused work
 
-1. Validate monitor grade where public official, station-owner, or regulator
-   sources distinguish reference-grade/regulatory monitors from low-cost or
-   other public feeds.
+1. Deepen non-Bangladesh monitor-grade documentation where public official,
+   station-owner, or regulator sources distinguish reference-grade/regulatory
+   monitors from low-cost or other public feeds, and confirm current-status
+   scope for the Bangladesh method-standard signal.
 2. Deepen official-to-OpenAQ reconciliation for the 230 official coordinate
    rows: match IDs/names where possible, keep proximity-only rows marked as
    candidates, and explain official rows that have no nearby OpenAQ PM2.5 row.
@@ -147,9 +173,11 @@ methods are added.
 - Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs,
   but still needs a declared catchment method and gridded population/PM2.5
   denominators.
-- Monitor-grade claims still have 0 classification rows and need a
-  station-level source that distinguishes reference-grade/regulatory monitors
-  from low-cost or other public feeds.
+- Monitor-grade claims still have 0 complete classification rows. Bangladesh
+  has 31 source-specific method-standard signal rows, but non-Bangladesh
+  official rows and current-status scope still need station-level sources that
+  distinguish reference-grade/regulatory monitors from low-cost or other public
+  feeds.
 - The official station-source extraction provides 230 public coordinate rows,
   but the 22-within-5-kilometers OpenAQ comparison is only a proximity
   diagnostic, not a validated same-station join.

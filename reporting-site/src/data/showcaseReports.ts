@@ -124,10 +124,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, and official station-table extraction before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/regulator-station-extraction.md",
-    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, and official-source reconciliation bars",
-    sourceNote: "OpenAQ v3 locations, public regulator and official portal station tables/APIs, WHO ambient air quality database, WDI, and committed source artifacts",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, official station-table extraction, and monitor-grade source-language evidence before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/monitor-grade-evidence.md",
+    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, official-source reconciliation bars, and monitor-grade evidence ladder",
+    sourceNote: "OpenAQ v3 locations, public regulator and official portal station tables/APIs, Bangladesh and Sri Lanka official source-language checks, WHO ambient air quality database, WDI, and committed source artifacts",
   },
   {
     id: 7,
@@ -477,7 +477,7 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
   6: {
     operationalUse: "Prioritize where OpenAQ station-coordinate checks, monitor-grade classification, and regulator-inventory checks should accompany satellite or modeled PM2.5 use.",
     falsifier: "If regulatory inventories or local station lists fill the apparent zero-monitor gaps, the public-source gap shrinks.",
-    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the current source pass has coordinates but no monitor-grade, regulator-inventory, or catchment-coverage rows.",
+    limitation: "Ground-monitor visibility is not pollution ranking, compliance assessment, or monitor siting adequacy; the monitor-grade audit finds source-specific method-standard language for Bangladesh, but complete monitor-grade classification and catchment coverage remain at zero.",
   },
   7: {
     operationalUse: "Flag geographies where OSM health amenities are too incomplete to support access or catchment planning.",
@@ -590,9 +590,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, and official-reconciliation panels.",
-    publicationGap: "Needs monitor-grade validation and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
-    nextUpgrade: "Validate monitor grade where public, reconcile official station rows with OpenAQ more carefully, then build a declared catchment denominator if the source comparison survives.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, monitor-grade evidence audit, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, official-reconciliation, and grade-evidence panels.",
+    publicationGap: "Needs complete monitor-grade classification across sources and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
+    nextUpgrade: "Deepen non-Bangladesh monitor-grade documentation, reconcile official station rows with OpenAQ more carefully, then build a declared catchment denominator only if the source comparison survives.",
   },
   7: {
     readiness: "l3-candidate",

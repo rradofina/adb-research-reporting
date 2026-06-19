@@ -72,6 +72,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Official station-source extraction for the 9 targeted air-monitoring regulator inventory, portal, or plan sources. The pass commits normalized station/source evidence, retrieval URLs, proximity diagnostics against OpenAQ station rows, and non-claims in generated regulator-station extraction CSV/JSON records."
     },
+    "air_monitoring_monitor_grade_evidence": {
+      "script": "air-monitoring/scripts/audit-monitor-grade-evidence.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Monitor-grade evidence audit for the 239 official-source rows from the air-monitoring station-extraction pass. The audit verifies Bangladesh method-standard language and Sri Lanka sensor-under-test language, then separates method-standard signals, automatic or official-portal provenance, sensor-under-test caution rows, plan-only rows, and rows with no public grade language."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -134,6 +139,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_regulator_station_extraction pin after extracting station coordinates, name-only evidence, count-only evidence, and plan-only evidence from the 9 targeted official air-monitoring sources."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_monitor_grade_evidence pin after auditing official station rows for public method-standard, automatic/portal-only, sensor-under-test, plan-only, and missing-grade evidence."
     }
   ]
 }

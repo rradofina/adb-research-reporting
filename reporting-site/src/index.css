@@ -8447,6 +8447,335 @@
     text-decoration: underline;
   }
 
+  .air-monitor-grade-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.08), rgba(255, 255, 255, 0.98) 40%),
+      #ffffff;
+  }
+
+  .air-monitor-grade-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .air-monitor-grade-head h2 {
+    max-width: 18ch;
+  }
+
+  .air-monitor-grade-nonclaim {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid #5a8227;
+    background: #f6faf1;
+  }
+
+  .air-monitor-grade-nonclaim strong,
+  .air-monitor-grade-stat-grid span,
+  .air-monitor-grade-ladder-card span,
+  .air-monitor-grade-gate span,
+  .air-monitor-grade-downloads span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-monitor-grade-nonclaim strong {
+    color: #3f641d;
+    font-size: var(--type-copy-sm);
+  }
+
+  .air-monitor-grade-nonclaim p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.55;
+  }
+
+  .air-monitor-grade-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-monitor-grade-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-monitor-grade-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .air-monitor-grade-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-monitor-grade-ladder {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-monitor-grade-ladder-card {
+    display: grid;
+    grid-template-rows: auto auto minmax(3.2rem, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-monitor-grade-ladder-card > div:first-child {
+    display: grid;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  .air-monitor-grade-ladder-card strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .air-monitor-grade-ladder-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-monitor-grade-ladder-track {
+    position: relative;
+    min-width: 0;
+    height: 0.72rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #edf2f4;
+  }
+
+  .air-monitor-grade-ladder-track i {
+    display: block;
+    height: 100%;
+    background: #007db8;
+  }
+
+  .air-monitor-grade-ladder-card-method {
+    border-top-color: #5a8227;
+  }
+
+  .air-monitor-grade-ladder-card-method .air-monitor-grade-ladder-track i {
+    background: #5a8227;
+  }
+
+  .air-monitor-grade-ladder-card-portal {
+    border-top-color: #007db8;
+  }
+
+  .air-monitor-grade-ladder-card-sensor {
+    border-top-color: #fbb00e;
+  }
+
+  .air-monitor-grade-ladder-card-sensor .air-monitor-grade-ladder-track i {
+    background: #fbb00e;
+  }
+
+  .air-monitor-grade-ladder-card-missing,
+  .air-monitor-grade-ladder-card-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-monitor-grade-ladder-card-missing .air-monitor-grade-ladder-track i,
+  .air-monitor-grade-ladder-card-blocked .air-monitor-grade-ladder-track i {
+    background: #9b2226;
+  }
+
+  .air-monitor-grade-country-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-monitor-grade-country {
+    display: grid;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-monitor-grade-country-method_standard_signal {
+    border-top-color: #5a8227;
+  }
+
+  .air-monitor-grade-country-automatic_or_official_portal_signal {
+    border-top-color: #007db8;
+  }
+
+  .air-monitor-grade-country-sensor_under_test_signal,
+  .air-monitor-grade-country-plan_only_no_grade {
+    border-top-color: #fbb00e;
+  }
+
+  .air-monitor-grade-country-no_public_grade_language_found {
+    border-top-color: #9b2226;
+  }
+
+  .air-monitor-grade-country > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.55rem;
+    align-items: baseline;
+    min-width: 0;
+  }
+
+  .air-monitor-grade-country span {
+    color: var(--sage);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .air-monitor-grade-country strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.12;
+  }
+
+  .air-monitor-grade-country b {
+    padding: 0.12rem 0.32rem;
+    border: 1px solid rgba(90, 130, 39, 0.25);
+    color: #3f641d;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-monitor-grade-country dl {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  .air-monitor-grade-country dl div {
+    min-width: 0;
+  }
+
+  .air-monitor-grade-country dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-monitor-grade-country dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .air-monitor-grade-country p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-monitor-grade-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-monitor-grade-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-monitor-grade-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-monitor-grade-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-monitor-grade-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-monitor-grade-gate strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-monitor-grade-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1rem;
+  }
+
+  .air-monitor-grade-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-monitor-grade-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-monitor-grade-downloads a {
+    color: var(--sage);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-monitor-grade-downloads a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: 1180px) {
     .air-metadata-stat-grid,
     .air-metadata-gate-grid,
@@ -8458,7 +8787,11 @@
     .air-regulator-gate-grid,
     .air-regulator-station-stat-grid,
     .air-regulator-station-country-grid,
-    .air-regulator-station-gate-grid {
+    .air-regulator-station-gate-grid,
+    .air-monitor-grade-stat-grid,
+    .air-monitor-grade-ladder,
+    .air-monitor-grade-country-grid,
+    .air-monitor-grade-gate-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -8467,6 +8800,7 @@
     .air-regulator-head,
     .air-regulator-source-grid,
     .air-regulator-station-head,
+    .air-monitor-grade-head,
     .air-official-reconciliation {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -9276,6 +9610,10 @@
       scroll-margin-top: 10.5rem;
     }
 
+    .air-monitor-grade-section {
+      scroll-margin-top: 10.5rem;
+    }
+
     .showcase-hero {
       min-height: auto;
       padding-top: 0.5rem;
@@ -9423,7 +9761,11 @@
     .air-regulator-gate-grid,
     .air-regulator-station-stat-grid,
     .air-regulator-station-country-grid,
-    .air-regulator-station-gate-grid {
+    .air-regulator-station-gate-grid,
+    .air-monitor-grade-stat-grid,
+    .air-monitor-grade-ladder,
+    .air-monitor-grade-country-grid,
+    .air-monitor-grade-gate-grid {
       grid-template-columns: minmax(0, 1fr);
     }
 
@@ -9431,12 +9773,15 @@
     .air-metadata-queue-card,
     .air-station-gate,
     .air-regulator-gate,
-    .air-regulator-station-gate {
+    .air-regulator-station-gate,
+    .air-monitor-grade-gate,
+    .air-monitor-grade-ladder-card {
       grid-template-rows: auto;
     }
 
     .air-official-reconciliation,
-    .air-regulator-station-head {
+    .air-regulator-station-head,
+    .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
     }
 
@@ -9460,6 +9805,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .air-monitor-grade-country dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .air-metadata-queue-card dl {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -9467,7 +9816,8 @@
     .air-metadata-downloads,
     .air-station-downloads,
     .air-regulator-downloads,
-    .air-regulator-station-downloads {
+    .air-regulator-station-downloads,
+    .air-monitor-grade-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       align-items: start;

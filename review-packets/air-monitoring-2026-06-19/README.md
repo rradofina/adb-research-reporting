@@ -63,7 +63,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `daacf836cd9e…`
+- `program/STATUS.md`  `41e2605fa40c…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -74,7 +74,8 @@ website is Tier 2 and is not included here).
 - `program/station-metadata-source-access.md`  `ad49202b861f…`
 - `program/regulator-source-inventory.md`  `a3caa8a9937f…`
 - `program/regulator-station-extraction.md`  `f362817a1c37…`
-- `program/limitations.md`  `03d8196025b8…`
+- `program/monitor-grade-evidence.md`  `8559a7d7843e…`
+- `program/limitations.md`  `34bf4b0273f3…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -83,6 +84,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-concentration-deepening.json`  `414eecf9ff39…`
 - `program/generated/air-monitoring-metadata-readiness-audit-summary.json`  `987a6fb62839…`
 - `program/generated/air-monitoring-metadata-readiness-audit.csv`  `c7aa9c572539…`
+- `program/generated/air-monitoring-monitor-grade-evidence-summary.json`  `25793d7087a8…`
+- `program/generated/air-monitoring-monitor-grade-evidence.csv`  `df7e2a3eb887…`
 - `program/generated/air-monitoring-openaq-station-metadata-summary.json`  `c864848a3cef…`
 - `program/generated/air-monitoring-openaq-station-metadata.csv`  `7c61c2a0ba4e…`
 - `program/generated/air-monitoring-regulator-source-inventory-summary.json`  `52be4c018fa8…`
@@ -92,6 +95,7 @@ website is Tier 2 and is not included here).
 - `program/generated/charts/air-monitoring-thumbnail.json`  `b87f82967eea…`
 - `program/generated/charts/air-monitoring-thumbnail.png`  `9ceb5b95e31f…`
 - `program/generated/charts/air-monitoring-thumbnail.svg`  `e47dcfcd7bc0…`
+- `program/scripts/audit-monitor-grade-evidence.py`  `57f5cac1bf0e…`
 - `program/scripts/build-metadata-readiness-audit.py`  `868c73ab91e8…`
 - `program/scripts/build-regulator-source-inventory.py`  `a14135438dc3…`
 - `program/scripts/build-thumbnail.py`  `9f0a3f2395e3…`
@@ -105,7 +109,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `f03c7615b331…`
+- `shared/versions.json`  `79f20050c264…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -115,4 +119,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T07:22:03.752Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T07:43:40.386Z by `scripts/build-review-packet.mjs`.

@@ -27,6 +27,13 @@
   22 official coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row
   as a screening diagnostic. This is not a validated station join, not
   monitor-grade validation, and not station-radius coverage.
+- Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
+  covers all 239 official-source rows from the station-extraction pass and
+  finds 31 source-specific method-standard signal rows in Bangladesh, 138
+  automatic or official-portal signal-only rows, 3 sensor-under-test rows, 2
+  plan-only rows, and 65 rows with no public grade language found. It still
+  finds 0 complete monitor-grade classification rows and does not make the 230
+  official coordinate rows station-radius-ready.
 
 ## Source-side
 
@@ -39,6 +46,10 @@
 - Official regulator or portal links found in the discovery pass require
   monitor-grade validation and careful source reconciliation before they can
   override or validate OpenAQ station rows.
+- Method-standard source language is source-specific. The Bangladesh signal
+  does not certify every official station row as current regulatory-grade
+  equipment without current-status and station-owner follow-up; automatic or
+  portal provenance remains weaker than monitor-grade classification.
 
 ## Method-side
 

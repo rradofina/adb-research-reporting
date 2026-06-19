@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, and official station-source extraction/reconciliation wall exist; station-radius and monitor-grade claims remain blocked until monitor-grade sources and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction/reconciliation wall, and monitor-grade evidence ladder exist; station-radius and complete monitor-grade claims remain blocked until method sources and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -45,9 +45,14 @@ overrides priority by editing this list.
    sources, normalizes 230 official station-coordinate rows across 5
    economies, keeps 6 station name-only rows, 1 count-only row, and 2
    plan-count-only rows separate, and finds 22 coordinate rows within 5
-   kilometers of an OpenAQ PM2.5 row as a screening diagnostic. Next
-   AI-doable loop is monitor-grade source validation and stricter
-   official/OpenAQ reconciliation before any station-radius or catchment claim.
+   kilometers of an OpenAQ PM2.5 row as a screening diagnostic. The
+   monitor-grade evidence audit covers 239 official-source rows and finds 31
+   source-specific method-standard signal rows in Bangladesh, 138 automatic or
+   official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
+   rows, 65 rows with no public grade language, and 0 complete
+   monitor-grade classification rows. Next AI-doable loop is non-Bangladesh
+   monitor-grade source validation and stricter official/OpenAQ reconciliation
+   before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -162,6 +167,26 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring monitor-grade evidence audit):** Added
+  `air-monitoring/scripts/audit-monitor-grade-evidence.py`, generated
+  `air-monitoring/generated/air-monitoring-monitor-grade-evidence.csv` and
+  `air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json`,
+  and wrote `air-monitoring/monitor-grade-evidence.md`. The audit reads all
+  239 official-source rows from the official station-source extraction pass,
+  verifies Bangladesh method-standard language and Sri Lanka sensor-under-test
+  language, and separates method-standard evidence from weaker automatic or
+  official-portal provenance. It records 31 source-specific method-standard
+  signal rows in Bangladesh, 138 automatic or official-portal signal-only
+  rows, 3 sensor-under-test rows, 2 plan-only rows, 65 rows with no public
+  grade language found, and 0 complete monitor-grade classification rows. The
+  public showcase now renders a monitor-grade evidence ladder and keeps the
+  station-radius/catchment claim blocked until complete grade classification
+  and gridded denominators exist. Verification passed: audit script rerun,
+  `py_compile`, evidence/doc/reference sync, production build, six deterministic
+  gates, source-output contact/token scan with no matches, and Chrome CDP
+  desktop/mobile QA with 5 stat cards, 5 ladder cards, 9 country cards, 6
+  evidence gates, 3 downloads, no horizontal overflow, and no console/page
+  errors.
 - **2026-06-19 (air-monitoring metadata-readiness wall):** Added
   `air-monitoring/scripts/build-metadata-readiness-audit.py`, generated
   `air-monitoring/generated/air-monitoring-metadata-readiness-audit.csv` and

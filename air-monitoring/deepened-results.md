@@ -29,6 +29,9 @@ Regulator-source discovery and station-source extraction:
 `generated/air-monitoring-regulator-source-inventory.csv`,
 `generated/air-monitoring-regulator-station-extraction-summary.json`, and
 `generated/air-monitoring-regulator-station-extraction.csv`.
+Monitor-grade evidence audit:
+`generated/air-monitoring-monitor-grade-evidence-summary.json` and
+`generated/air-monitoring-monitor-grade-evidence.csv`.
 
 ## The two questions
 
@@ -173,8 +176,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   230 coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row as a
   screening diagnostic. The strongest new claim is therefore source
   reconciliation, not station coverage: OpenAQ visibility is not the same
-  object as the public regulator map. Monitor-grade rows remain 0 and
-  station-radius coverage remains not computed.
+  object as the public regulator map. Complete monitor-grade classification
+  rows remain 0 and station-radius coverage remains not computed.
+- **New monitor-grade evidence audit:** the audit covers all 239
+  official-source rows from the station-extraction pass. It finds 31
+  source-specific method-standard signal rows in Bangladesh, 138 automatic or
+  official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only rows,
+  and 65 rows with no public grade language found. It still finds 0 complete
+  monitor-grade classification rows. The source story is now more precise, but
+  the catchment story is still blocked.
 
 ## Bounds
 
@@ -216,4 +226,5 @@ python air-monitoring/scripts/build-metadata-readiness-audit.py
 python air-monitoring/scripts/fetch-openaq-station-metadata.py
 python air-monitoring/scripts/build-regulator-source-inventory.py
 python air-monitoring/scripts/extract-regulator-station-evidence.py
+python air-monitoring/scripts/audit-monitor-grade-evidence.py
 ```

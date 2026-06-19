@@ -402,6 +402,53 @@ interface RegulatorStationSummary {
   non_claim: string;
 }
 
+interface MonitorGradeGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface MonitorGradeCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  source_name: string;
+  rows_audited: number;
+  coordinate_rows: number;
+  method_standard_signal_rows: number;
+  automatic_or_official_portal_signal_rows: number;
+  sensor_under_test_rows: number;
+  plan_only_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  dominant_grade_evidence_category: string;
+}
+
+interface MonitorGradeSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    official_station_rows_audited: number;
+    official_coordinate_rows_audited: number;
+    economies_audited: number;
+    economies_with_method_standard_signal: number;
+    method_standard_signal_rows: number;
+    automatic_or_official_portal_signal_only_rows: number;
+    sensor_under_test_rows: number;
+    plan_only_no_grade_rows: number;
+    no_public_grade_language_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready: boolean;
+  };
+  evidence_gate_counts: MonitorGradeGate[];
+  country_rows: MonitorGradeCountryRow[];
+  non_claim: string;
+}
+
 type AirMode = "concentration" | "residual" | "exposure";
 
 const MODES: Array<{ id: AirMode; label: string }> = [
@@ -450,7 +497,7 @@ function sentenceCaseStatus(value: string) {
 
 function gateTone(status: string) {
   if (status === "available" || status === "computed") return "available";
-  if (status === "partly_available" || status === "limited") return "pending";
+  if (status === "partly_available" || status === "limited" || status === "caution") return "pending";
   if (status === "not_yet_collected" || status.includes("not_collected")) return "pending";
   return "blocked";
 }
@@ -462,6 +509,7 @@ export default function ShowcaseAirMonitoring() {
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
+  const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
   const [error, setError] = useState<string | null>(null);
@@ -492,6 +540,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`regulator station HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
       .then(([
         deepeningPayload,
@@ -500,6 +552,7 @@ export default function ShowcaseAirMonitoring() {
         stationMetadataPayload,
         regulatorSourcePayload,
         regulatorStationPayload,
+        monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
         setPanel(panelPayload);
@@ -507,6 +560,7 @@ export default function ShowcaseAirMonitoring() {
         setStationMetadata(stationMetadataPayload);
         setRegulatorSource(regulatorSourcePayload);
         setRegulatorStation(regulatorStationPayload);
+        setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -618,6 +672,8 @@ export default function ShowcaseAirMonitoring() {
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
       <AirRegulatorStationPanel summary={regulatorStation} />
+
+      <AirMonitorGradePanel summary={monitorGrade} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -1160,6 +1216,23 @@ function extractionLevelLabel(level: string) {
   return sentenceCaseStatus(level).replace("station coordinates", "coordinate rows");
 }
 
+function gradeCategoryLabel(category: string) {
+  switch (category) {
+    case "method_standard_signal":
+      return "method-standard signal";
+    case "automatic_or_official_portal_signal":
+      return "automatic or portal signal";
+    case "sensor_under_test_signal":
+      return "sensor under test";
+    case "plan_only_no_grade":
+      return "plan only";
+    case "no_public_grade_language_found":
+      return "no public grade language";
+    default:
+      return sentenceCaseStatus(category);
+  }
+}
+
 function AirRegulatorStationPanel({ summary }: { summary: RegulatorStationSummary | null }) {
   const counts = summary?.coverage_counts;
   const rows = summary?.country_rows ?? [];
@@ -1335,6 +1408,196 @@ function AirRegulatorStationPanel({ summary }: { summary: RegulatorStationSummar
         </>
       ) : (
         <p className="showcase-loading">Loading official station-source extraction...</p>
+      )}
+    </section>
+  );
+}
+
+function AirMonitorGradePanel({ summary }: { summary: MonitorGradeSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.country_rows ?? [];
+  const totalRows = Math.max(1, counts?.official_station_rows_audited ?? rows.reduce((sum, row) => sum + row.rows_audited, 0));
+  const countryRows = [...rows].sort((a, b) => {
+    const methodDelta = b.method_standard_signal_rows - a.method_standard_signal_rows;
+    if (methodDelta !== 0) return methodDelta;
+    return b.rows_audited - a.rows_audited;
+  });
+  const ladder = counts
+    ? [
+        {
+          key: "method",
+          label: "Method-standard signal",
+          rows: counts.method_standard_signal_rows,
+          detail: `${formatNumber(counts.economies_with_method_standard_signal)} economy with source-specific method language`,
+          tone: "method",
+        },
+        {
+          key: "portal",
+          label: "Automatic or portal only",
+          rows: counts.automatic_or_official_portal_signal_only_rows,
+          detail: "provenance signal, not monitor-grade certification",
+          tone: "portal",
+        },
+        {
+          key: "sensor",
+          label: "Sensor under test",
+          rows: counts.sensor_under_test_rows,
+          detail: "explicit caution rows, not regulatory-grade evidence",
+          tone: "sensor",
+        },
+        {
+          key: "missing",
+          label: "No grade language found",
+          rows: counts.no_public_grade_language_rows,
+          detail: "official rows still need method documentation",
+          tone: "missing",
+        },
+        {
+          key: "complete",
+          label: "Complete classification",
+          rows: counts.complete_monitor_grade_classification_rows,
+          detail: "station-radius assumptions remain blocked",
+          tone: "blocked",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-monitor-grade-section" aria-label="Monitor-grade evidence audit">
+      <div className="air-monitor-grade-head">
+        <div>
+          <p className="kicker kicker-sage">Monitor-grade evidence</p>
+          <h2>Monitor grade is a source-language ladder, not a yes/no.</h2>
+          <p>
+            The audit reads the official station rows and separates explicit
+            method-standard language from weaker automatic-station or portal
+            provenance. Bangladesh moves above a flat zero, but the regional
+            classification remains incomplete.
+          </p>
+        </div>
+        <div className="air-monitor-grade-nonclaim">
+          <strong>Still not grade-ready</strong>
+          <p>
+            Complete monitor-grade classification remains at{" "}
+            {formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)} rows.
+            The next claim should be source reconciliation, not station-radius
+            population coverage.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-monitor-grade-stat-grid">
+            <div>
+              <span>Official rows audited</span>
+              <strong>{formatNumber(counts.official_station_rows_audited)}</strong>
+              <em>{formatNumber(counts.official_coordinate_rows_audited)} have coordinates</em>
+            </div>
+            <div>
+              <span>Method-standard signal</span>
+              <strong>{formatNumber(counts.method_standard_signal_rows)}</strong>
+              <em>{formatNumber(counts.economies_with_method_standard_signal)} economy</em>
+            </div>
+            <div>
+              <span>Portal-only signal</span>
+              <strong>{formatNumber(counts.automatic_or_official_portal_signal_only_rows)}</strong>
+              <em>not certification</em>
+            </div>
+            <div>
+              <span>Sensor under test</span>
+              <strong>{formatNumber(counts.sensor_under_test_rows)}</strong>
+              <em>caution rows</em>
+            </div>
+            <div>
+              <span>Complete classifications</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>catchment still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-monitor-grade-ladder" aria-label="Monitor-grade evidence ladder by row count">
+            {ladder.map((step) => {
+              const width = step.rows > 0 ? `${Math.max(5, (step.rows / totalRows) * 100)}%` : "0%";
+              return (
+                <article key={step.key} className={`air-monitor-grade-ladder-card air-monitor-grade-ladder-card-${step.tone}`}>
+                  <div>
+                    <span>{step.label}</span>
+                    <strong>{formatNumber(step.rows)}</strong>
+                  </div>
+                  <div className="air-monitor-grade-ladder-track">
+                    <i style={{ width }} />
+                  </div>
+                  <p>{step.detail}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-monitor-grade-country-grid">
+            {countryRows.map((row) => (
+              <article
+                key={row.iso3}
+                className={`air-monitor-grade-country air-monitor-grade-country-${row.dominant_grade_evidence_category}`}
+              >
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{gradeCategoryLabel(row.dominant_grade_evidence_category)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Rows</dt>
+                    <dd>{formatNumber(row.rows_audited)}</dd>
+                  </div>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.method_standard_signal_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Portal</dt>
+                    <dd>{formatNumber(row.automatic_or_official_portal_signal_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Sensor</dt>
+                    <dd>{formatNumber(row.sensor_under_test_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Complete</dt>
+                    <dd>{formatNumber(row.complete_monitor_grade_classification_rows)}</dd>
+                  </div>
+                </dl>
+                <p>{row.source_name}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-monitor-grade-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-monitor-grade-gate air-monitor-grade-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-monitor-grade-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/monitor-grade-evidence.md" download>
+              Audit note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading monitor-grade evidence audit...</p>
       )}
     </section>
   );

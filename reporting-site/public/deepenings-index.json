@@ -22,7 +22,7 @@
       "outcome": "computed + frontier wall",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "air-monitoring-concentration-deepening.json",
+      "artifact": "air-monitoring-bmkg-station-specific-status-audit-summary.json",
       "finding": "The ~14.3M 'unmonitored' headline is 83.5% just two economies (PNG 73.7%, Timor-Leste 9.8%); whether any monitoring gap survives once development is controlled cannot be settled on-disk (no HDI/GDP series cached — a named wall)."
     },
     {

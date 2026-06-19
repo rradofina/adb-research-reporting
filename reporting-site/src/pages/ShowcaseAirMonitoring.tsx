@@ -1600,6 +1600,77 @@ interface BmkgOperationMaintenanceSummary {
   non_claim: string;
 }
 
+interface BmkgStationStatusGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgStationStatusDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgStationStatusSampleRow {
+  source_station_id: string;
+  source_station_name: string;
+  detail_timestamp_raw: string;
+  detail_value_ug_m3: string;
+  detail_category_raw: string;
+  page_bam_method_text_found: boolean;
+  page_station_operational_status_found: boolean;
+  station_specific_calibration_certificate_found: boolean;
+  audit_decision: string;
+}
+
+interface BmkgStationValueRow {
+  source_station_id: string;
+  source_station_name: string;
+  detail_value_ug_m3: number | null;
+  detail_category_raw: string;
+  detail_timestamp_raw: string;
+  max_value_ug_m3: number | null;
+}
+
+interface BmkgStationStatusSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    detail_pages_retrieved: number;
+    detail_pages_with_station_name_match: number;
+    detail_pages_with_station_code_in_url: number;
+    public_measurement_display_rows: number;
+    parsed_timestamp_rows: number;
+    parsed_value_rows: number;
+    parsed_category_rows: number;
+    page_pm25_method_text_rows: number;
+    page_bam_method_text_rows: number;
+    source_level_daily_inspection_sop_context_rows: number;
+    source_level_maintenance_context_rows: number;
+    source_level_calibration_context_rows: number;
+    station_operational_status_page_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    status_or_certificate_link_rows: number;
+    current_status_confirmed_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgStationStatusDecision[];
+  category_counts: Array<{ category: string; rows: number }>;
+  evidence_gate_counts: BmkgStationStatusGate[];
+  station_sample_rows: BmkgStationStatusSampleRow[];
+  station_value_rows: BmkgStationValueRow[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -1786,6 +1857,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationMethodClassificationSummary | null>(null);
   const [bmkgOperationMaintenance, setBmkgOperationMaintenance] =
     useState<BmkgOperationMaintenanceSummary | null>(null);
+  const [bmkgStationStatus, setBmkgStationStatus] =
+    useState<BmkgStationStatusSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
@@ -2019,6 +2092,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-station-specific-status-audit-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG station-specific status audit HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgStationStatus(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -2177,6 +2270,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationMethodClassificationPanel summary={stationMethodClassification} />
 
       <AirBmkgOperationMaintenancePanel summary={bmkgOperationMaintenance} />
+
+      <AirBmkgStationStatusPanel summary={bmkgStationStatus} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -5837,6 +5932,167 @@ function AirBmkgOperationMaintenancePanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG operation/maintenance source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgStationStatusPanel({
+  summary,
+}: {
+  summary: BmkgStationStatusSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.station_sample_rows ?? [];
+  const valueRows = [...(summary?.station_value_rows ?? [])].sort(
+    (a, b) => (b.detail_value_ug_m3 ?? -1) - (a.detail_value_ug_m3 ?? -1),
+  );
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const maxValue = Math.max(1, ...valueRows.map((row) => row.detail_value_ug_m3 ?? 0));
+
+  const categoryTone = (category: string) => {
+    const lower = category.toLowerCase();
+    if (lower.includes("tidak") || lower.includes("berbahaya")) return "hot";
+    if (lower.includes("sedang")) return "warm";
+    return "cool";
+  };
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-status-section" aria-label="BMKG station-specific status and calibration audit">
+      <div className="air-grade-method-head air-bmkg-status-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG station-specific closure audit</p>
+          <h2>Public telemetry is visible. Certification is still missing.</h2>
+          <p>
+            This pass re-fetches the 22 exact BMKG station-detail pages, parses
+            their PM2.5 display snapshots, and tests whether those same pages
+            provide operational-status, inspection-log, or calibration-certificate
+            evidence for each station.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-status-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>Visible readings are not status or calibration certification.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-status-stat-grid">
+            <div>
+              <span>Station pages</span>
+              <strong>{formatNumber(counts.detail_pages_retrieved)}</strong>
+              <em>{formatNumber(counts.target_bmkg_rows)} BMKG target rows</em>
+            </div>
+            <div>
+              <span>Display snapshots parsed</span>
+              <strong>{formatNumber(counts.public_measurement_display_rows)}</strong>
+              <em>timestamp, PM2.5 value, and category</em>
+            </div>
+            <div>
+              <span>BAM method text</span>
+              <strong>{formatNumber(counts.page_bam_method_text_rows)}</strong>
+              <em>station-page method language</em>
+            </div>
+            <div>
+              <span>Status certifications</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>no station status closure</em>
+            </div>
+            <div>
+              <span>Calibration certificates</span>
+              <strong>{formatNumber(counts.station_specific_calibration_certificate_rows)}</strong>
+              <em>no target-row certificate</em>
+            </div>
+            <div>
+              <span>Radius-ready rows</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>not a catchment denominator</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-status-bridge" aria-label="BMKG station-specific status decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-status-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-status-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-status-value-wall" aria-label="BMKG public PM2.5 station display snapshot">
+            <div>
+              <p className="kicker">Station display snapshot</p>
+              <h3>Values are visible, but they do not close the certificate gate.</h3>
+              <p>
+                Snapshot from exact BMKG station pages at {valueRows[0]?.detail_timestamp_raw || "retrieval time"}.
+                Bars are scaled to the largest parsed display value in this audit.
+              </p>
+            </div>
+            <div className="air-bmkg-status-value-list">
+              {valueRows.map((row) => {
+                const value = row.detail_value_ug_m3 ?? 0;
+                return (
+                  <article key={row.source_station_id} className={`air-bmkg-status-value-row air-bmkg-status-value-${categoryTone(row.detail_category_raw)}`}>
+                    <div>
+                      <span>{row.source_station_id}</span>
+                      <strong>{row.source_station_name}</strong>
+                      <em>{row.detail_category_raw || "unparsed"}</em>
+                    </div>
+                    <div className="air-bmkg-status-value-meter">
+                      <i style={{ width: `${Math.max(2, (value / maxValue) * 100)}%` }} />
+                    </div>
+                    <b>{row.detail_value_ug_m3 === null ? "n/a" : formatNumber(row.detail_value_ug_m3, 1)}</b>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-status-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-status-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid air-bmkg-status-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-grade-method-row air-bmkg-status-row">
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                </div>
+                <p>{row.detail_value_ug_m3 || "n/a"} ug/m3 · {row.detail_category_raw || "category not parsed"}</p>
+                <em>
+                  BAM {row.page_bam_method_text_found ? "yes" : "no"} /
+                  status {row.page_station_operational_status_found ? "yes" : "no"} /
+                  certificate {row.station_specific_calibration_certificate_found ? "yes" : "no"}
+                </em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-status-downloads">
+            <a href="/programs/air-monitoring/bmkg-station-specific-status-audit.md">Read the note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-station-specific-status-audit-summary.json">Download JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-station-specific-status-audit.csv">Download CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG station-specific status audit...</p>
       )}
     </section>
   );

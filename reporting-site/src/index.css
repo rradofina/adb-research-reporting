@@ -11692,6 +11692,127 @@
     background: linear-gradient(90deg, #5a8227, #fbb00e);
   }
 
+  .air-bmkg-status-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.1), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-bmkg-status-callout {
+    border-left-color: #007db8;
+    background: #eef7fb;
+  }
+
+  .air-bmkg-status-stat-grid > div {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-status-lane,
+  .air-bmkg-status-row,
+  .air-bmkg-status-gate {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-status-row {
+    border-left-color: #007db8;
+  }
+
+  .air-bmkg-status-track {
+    background: #dff0f7;
+  }
+
+  .air-bmkg-status-track i {
+    background: linear-gradient(90deg, #007db8, #5a8227);
+  }
+
+  .air-bmkg-status-value-wall {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.35fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--rule-soft);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .air-bmkg-status-value-wall h3 {
+    margin: 0.15rem 0 0.4rem;
+    max-width: 24ch;
+    font-size: clamp(1.2rem, 1.5vw, 1.7rem);
+    line-height: 1.08;
+  }
+
+  .air-bmkg-status-value-wall p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .air-bmkg-status-value-list {
+    display: grid;
+    gap: 0.42rem;
+  }
+
+  .air-bmkg-status-value-row {
+    display: grid;
+    grid-template-columns: minmax(145px, 0.32fr) minmax(0, 1fr) minmax(3.4rem, auto);
+    gap: 0.55rem;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .air-bmkg-status-value-row > div:first-child {
+    min-width: 0;
+  }
+
+  .air-bmkg-status-value-row span,
+  .air-bmkg-status-value-row em {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .air-bmkg-status-value-row strong {
+    display: block;
+    overflow-wrap: anywhere;
+    font-size: 0.88rem;
+    line-height: 1.12;
+  }
+
+  .air-bmkg-status-value-row b {
+    justify-self: end;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .air-bmkg-status-value-meter {
+    position: relative;
+    height: 0.68rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #edf2f4;
+  }
+
+  .air-bmkg-status-value-meter i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #007db8;
+  }
+
+  .air-bmkg-status-value-warm .air-bmkg-status-value-meter i {
+    background: #fbb00e;
+  }
+
+  .air-bmkg-status-value-hot .air-bmkg-status-value-meter i {
+    background: #9b2226;
+  }
+
+  .air-bmkg-status-value-cool .air-bmkg-status-value-meter i {
+    background: #5a8227;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -12744,6 +12865,10 @@
     .air-bmkg-operation-bridge,
     .air-bmkg-operation-gate-grid,
     .air-bmkg-operation-row-grid,
+    .air-bmkg-status-stat-grid,
+    .air-bmkg-status-bridge,
+    .air-bmkg-status-gate-grid,
+    .air-bmkg-status-row-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -12777,6 +12902,8 @@
     .air-decision-ledger-head,
     .air-method-classification-head,
     .air-bmkg-operation-head,
+    .air-bmkg-status-head,
+    .air-bmkg-status-value-wall,
     .air-georgia-report-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
@@ -14133,6 +14260,11 @@
     .air-bmkg-operation-bridge,
     .air-bmkg-operation-gate-grid,
     .air-bmkg-operation-row-grid,
+    .air-bmkg-status-stat-grid,
+    .air-bmkg-status-bridge,
+    .air-bmkg-status-gate-grid,
+    .air-bmkg-status-row-grid,
+    .air-bmkg-status-value-wall,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -14185,6 +14317,9 @@
     .air-bmkg-operation-lane,
     .air-bmkg-operation-row,
     .air-bmkg-operation-gate,
+    .air-bmkg-status-lane,
+    .air-bmkg-status-row,
+    .air-bmkg-status-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -14210,10 +14345,26 @@
     .air-decision-ledger-head,
     .air-method-classification-head,
     .air-bmkg-operation-head,
+    .air-bmkg-status-head,
     .air-georgia-report-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-bmkg-status-value-row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.28rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+
+    .air-bmkg-status-value-row:last-child {
+      border-bottom: 0;
+    }
+
+    .air-bmkg-status-value-row b {
+      justify-self: start;
     }
 
     .air-official-bar-row {
@@ -14290,6 +14441,7 @@
     .air-decision-ledger-downloads,
     .air-method-classification-downloads,
     .air-bmkg-operation-downloads,
+    .air-bmkg-status-downloads,
     .air-georgia-report-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {

@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-06-19T22:29:17.648Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "missingText": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "metrics": {
+        "title": "ADB AI Research",
+        "statCards": 6,
+        "valueRows": 22,
+        "gateCards": 9,
+        "sampleRows": 12,
+        "downloadLinks": 3,
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "sectionTop": -999.859375,
+        "sectionHeight": 3187.265625,
+        "overflowing": []
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "missingText": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "metrics": {
+        "title": "ADB AI Research",
+        "statCards": 6,
+        "valueRows": 22,
+        "gateCards": 9,
+        "sampleRows": 12,
+        "downloadLinks": 3,
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "sectionTop": -3079.59375,
+        "sectionHeight": 7327.25,
+        "overflowing": []
+      }
+    }
+  ],
+  "failures": []
+}

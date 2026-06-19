@@ -4,14 +4,14 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-06-19.
+Last updated: 2026-06-20.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, Georgia report-verification source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, Georgia report-verification source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -33,8 +33,9 @@ scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
 Indonesia/Georgia row-method source scan, the station-code status/method
 source scan, the station-grade decision ledger, the station-method
-classification audit, and the BMKG operation/maintenance source scan
-and the Georgia report-verification source scan honestly, and do not imply
+classification audit, the BMKG operation/maintenance source scan, the BMKG
+station-specific status audit, and the Georgia report-verification source scan
+honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
@@ -565,6 +566,31 @@ grade-basis evidence, and catchment methods are added.
   no page errors. Screenshots:
   `reporting-site/qa/showcase-air-bmkg-operation-desktop.png` and
   `reporting-site/qa/showcase-air-bmkg-operation-mobile.png`.
+- **2026-06-20:** Added the BMKG station-specific status and calibration
+  audit. New networked script
+  `scripts/audit-bmkg-station-specific-status.py` reads the 22-row BMKG
+  operation/maintenance scan, re-fetches the 22 exact BMKG station-detail
+  pages into `.cache/bmkg-station-specific-status/`, and writes
+  `generated/air-monitoring-bmkg-station-specific-status-audit.csv` and
+  `generated/air-monitoring-bmkg-station-specific-status-audit-summary.json`.
+  The audit records cache paths and SHA-256 hashes, parses 22 public display
+  timestamps, PM2.5 values, and categories, confirms 22 station-page BAM method
+  text rows, and keeps station-specific operational-status certification,
+  inspection-log rows, calibration-certificate/status rows, current-status
+  confirmed rows, complete monitor-grade rows, and station-radius-ready rows at
+  0. Wrote `bmkg-station-specific-status-audit.md` and wired a public BMKG
+  station display/certification wall with a 22-row value bar visual.
+  Verification passed: audit script rerun, script `py_compile`,
+  evidence/reference/deepening sync, production site build, six deterministic
+  gates, `git diff --check` with only CRLF warnings, and Playwright
+  desktop/mobile QA at 1440x1100 and 390x1000. Browser QA confirmed 6 stat
+  cards, 22 value rows, 9 gate cards, 12 sample row cards, 3 download links,
+  no page or section horizontal overflow, no overflowing children, no request
+  failures, no console errors, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-bmkg-status-desktop-forced-top-view.png`,
+  `reporting-site/qa/showcase-air-bmkg-status-desktop-forced-value-view.png`,
+  `reporting-site/qa/showcase-air-bmkg-status-mobile-forced-top-view.png`, and
+  `reporting-site/qa/showcase-air-bmkg-status-mobile-forced-value-view.png`.
 - **2026-06-19:** Added the Georgia report-verification source scan. New
   networked script `scripts/scan-georgia-report-verification-sources.py` reads
   the 16 Georgia rows from the station-method classification audit, retrieves
@@ -599,25 +625,27 @@ grade-basis evidence, and catchment methods are added.
    station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. Use the 22-row BMKG operation/maintenance source scan as the next
-   source-targeting wall for Indonesia. It adds official daily-inspection SOP,
-   maintenance/check, calibration-procedure, BAM calibration service/tariff,
-   and regional BAM-1020 model context for the BMKG lane, but still leaves 0
-   station-specific inspection logs, 0 station-specific calibration
-   certificates, 0 current-status confirmed rows, 0 complete-grade rows, and 0
-   station-radius-ready rows.
+2. For the 22 BMKG rows, the station-specific status audit now proves the exact
+   station-detail pages are active public display objects: 22 pages retrieved,
+   22 parsed timestamp/value/category snapshots, and 22 station-page BAM method
+   text rows. It still closes 0 station-specific operational-status,
+   inspection-log, calibration-certificate/status, complete-grade, or
+   station-radius-ready rows. The next useful source is therefore not another
+   BMKG station-detail scrape; it is public station-owner or regulator evidence
+   outside the display page that names exact station IDs or station names and
+   provides inspection, calibration, current-status, or grade-basis evidence.
 3. For the 16 Georgia rows, use the report-verification scan as the next
    source-targeting wall. It finds all 16 target station codes and PM2.5 report
    rows in the official May 2026 report route, but the fetched report page still
    carries a `Not Verified Data` label and closes 0 verified rows. The next
    useful source is a verified export, station method/status table, or regulator
    document that names exact station codes without that caution.
-4. For the 22 BMKG rows now carrying operation/maintenance context, find
-   station-specific inspection logs, calibration certificates, public
-   current-status records, or official grade-basis evidence before any row is
-   promoted to complete monitor-grade. For Uzbekistan, instrument hints and
-   exact blocker rows remain outside grade promotion until exact blockers,
-   status, and certification are resolved.
+4. For the 22 BMKG rows now carrying operation/maintenance context plus
+   station-page display snapshots, find station-specific inspection logs,
+   calibration certificates, public current-status records, or official
+   grade-basis evidence before any row is promoted to complete monitor-grade.
+   For Uzbekistan, instrument hints and exact blocker rows remain outside grade
+   promotion until exact blockers, status, and certification are resolved.
 5. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
@@ -689,6 +717,12 @@ grade-basis evidence, and catchment methods are added.
   station-specific inspection logs, 0 station-specific calibration
   certificates, 0 current-status confirmed rows, 0 calibration-status rows, 0
   complete monitor-grade rows, and 0 station-radius-ready rows.
+- The BMKG station-specific status audit re-fetches 22 exact station-detail
+  pages, parses 22 public display snapshots with timestamp, PM2.5 value, and
+  category, and confirms 22 station-page BAM method-text rows. It still records
+  0 station-specific operational-status certification rows, 0 inspection-log
+  rows, 0 calibration-certificate/status rows, 0 current-status confirmed rows,
+  0 complete monitor-grade rows, and 0 station-radius-ready rows.
 - The Georgia report-verification source scan retrieves the official May 2026
   `air.gov.ge` monthly report route, AQI method note, and monitoring-network
   catalog, finds all 16 target station codes and PM2.5 report rows, but records

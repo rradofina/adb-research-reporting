@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, and Georgia report-verification source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, and Georgia report-verification source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -149,12 +149,19 @@ overrides priority by editing this list.
    BMKG rows, and still keeps station-specific inspection logs,
    station-specific calibration certificates, current-status confirmed,
    calibration-status, complete-grade, and station-radius-ready counts at 0.
+   The BMKG station-specific status audit then re-fetches the 22 exact BMKG
+   station-detail pages, parses 22 public PM2.5 display snapshots with
+   timestamp, value, and category, confirms 22 station-page BAM method-text
+   rows, and still keeps station-specific operational-status certification,
+   inspection-log, calibration-certificate/status, current-status confirmed,
+   complete-grade, and station-radius-ready counts at 0.
    The Georgia report-verification source scan then retrieves the official May
    2026 `air.gov.ge` monthly report route, AQI method note, and monitoring
    network catalog, finds all 16 target station codes and PM2.5 report rows,
    records 16 not-verified report-label rows, and keeps verified-report
    closure, station-method classification, current-status confirmed,
    complete-grade, and station-radius-ready counts at 0. Next AI-doable loop is
+   public station-owner or regulator evidence beyond BMKG station-page telemetry:
    station-specific inspection/calibration/status and official grade-basis
    evidence for the 22 BMKG rows, a verified report export or exact
    method/status table for Georgia, plus exact station method/status/certification
@@ -939,6 +946,33 @@ by leaving the board in a state the next session can read.
   output, and no page errors. Screenshots:
   `reporting-site/qa/showcase-air-bmkg-operation-desktop.png` and
   `reporting-site/qa/showcase-air-bmkg-operation-mobile.png`.
+- **2026-06-20 (air-monitoring BMKG station-specific status audit):**
+  Added `air-monitoring/scripts/audit-bmkg-station-specific-status.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-bmkg-station-specific-status-audit.csv`
+  and
+  `air-monitoring/generated/air-monitoring-bmkg-station-specific-status-audit-summary.json`,
+  and wrote `air-monitoring/bmkg-station-specific-status-audit.md`. The
+  networked audit reads the 22-row BMKG operation/maintenance scan, re-fetches
+  the 22 exact BMKG station-detail pages into
+  `air-monitoring/.cache/bmkg-station-specific-status/`, records cache paths
+  and SHA-256 hashes, parses 22 public display timestamps, PM2.5 values, and
+  categories, and confirms 22 station-page BAM method-text rows. It keeps
+  station-specific operational-status certification, inspection-log,
+  calibration-certificate/status, current-status confirmed, complete
+  monitor-grade, and station-radius-ready rows at 0. The public route now
+  renders a BMKG station display/certification wall with a 22-row value bar
+  visual. Verification passed: script rerun, script `py_compile`,
+  evidence/reference/deepening sync, production site build, six deterministic
+  gates, `git diff --check` with only CRLF warnings, and Playwright
+  desktop/mobile QA at 1440x1100 and 390x1000. Browser QA confirmed 6 stat
+  cards, 22 value rows, 9 gate cards, 12 sample row cards, 3 download links,
+  no page or section horizontal overflow, no overflowing children, no request
+  failures, no console errors, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-bmkg-status-desktop-forced-top-view.png`,
+  `reporting-site/qa/showcase-air-bmkg-status-desktop-forced-value-view.png`,
+  `reporting-site/qa/showcase-air-bmkg-status-mobile-forced-top-view.png`, and
+  `reporting-site/qa/showcase-air-bmkg-status-mobile-forced-value-view.png`.
 - **2026-06-19 (air-monitoring Georgia report-verification source scan):**
   Added `air-monitoring/scripts/scan-georgia-report-verification-sources.py`,
   generated

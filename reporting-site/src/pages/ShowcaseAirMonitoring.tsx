@@ -331,6 +331,77 @@ interface RegulatorSourceSummary {
   non_claim: string;
 }
 
+interface RegulatorStationGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface RegulatorStationCountryRow {
+  iso3: string;
+  iso2: string;
+  country: string;
+  subregion: string;
+  source_name: string;
+  source_class: string;
+  source_extraction_level: string;
+  retrieval_status: string;
+  official_rows_extracted: number;
+  coordinate_rows: number;
+  station_name_only_rows: number;
+  count_only_rows: number;
+  plan_count_only_rows: number;
+  pm25_signal_rows: number;
+  openaq_country_rows: number;
+  nearest_openaq_within_5km_rows: number;
+  name_overlap_rows: number;
+  source_station_count_claim: string;
+  retrieval_note: string;
+}
+
+interface RegulatorStationCoordinateRow {
+  iso3: string;
+  country: string;
+  source_station_id: string;
+  source_station_name: string;
+  latitude: number | null;
+  longitude: number | null;
+  pm25_signal: boolean;
+  nearest_openaq_location_name: string;
+  nearest_openaq_distance_km: number | null;
+  nearest_openaq_within_5km: boolean;
+}
+
+interface RegulatorStationSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    official_sources_targeted: number;
+    official_sources_retrieved_or_extracted: number;
+    countries_with_station_coordinates: number;
+    official_station_coordinate_rows: number;
+    official_station_name_only_rows: number;
+    official_count_only_rows: number;
+    official_plan_count_only_rows: number;
+    countries_with_unresolved_extraction: number;
+    official_rows_with_pm25_signal: number;
+    official_coordinate_rows_near_openaq_within_5km: number;
+    official_coordinate_rows_not_near_openaq_within_5km: number;
+    official_rows_with_name_overlap_to_openaq: number;
+    monitor_grade_rows: number;
+    station_radius_analysis_ready: boolean;
+  };
+  evidence_gate_counts: RegulatorStationGate[];
+  country_rows: RegulatorStationCountryRow[];
+  top_coordinate_rows: RegulatorStationCoordinateRow[];
+  non_claim: string;
+}
+
 type AirMode = "concentration" | "residual" | "exposure";
 
 const MODES: Array<{ id: AirMode; label: string }> = [
@@ -379,7 +450,7 @@ function sentenceCaseStatus(value: string) {
 
 function gateTone(status: string) {
   if (status === "available" || status === "computed") return "available";
-  if (status === "partly_available") return "pending";
+  if (status === "partly_available" || status === "limited") return "pending";
   if (status === "not_yet_collected" || status.includes("not_collected")) return "pending";
   return "blocked";
 }
@@ -390,6 +461,7 @@ export default function ShowcaseAirMonitoring() {
   const [metadataReadiness, setMetadataReadiness] = useState<MetadataReadinessSummary | null>(null);
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
+  const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
   const [error, setError] = useState<string | null>(null);
@@ -416,13 +488,25 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`regulator source HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-regulator-station-extraction-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`regulator station HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
-      .then(([deepeningPayload, panelPayload, metadataPayload, stationMetadataPayload, regulatorSourcePayload]) => {
+      .then(([
+        deepeningPayload,
+        panelPayload,
+        metadataPayload,
+        stationMetadataPayload,
+        regulatorSourcePayload,
+        regulatorStationPayload,
+      ]) => {
         setDeepening(deepeningPayload);
         setPanel(panelPayload);
         setMetadataReadiness(metadataPayload);
         setStationMetadata(stationMetadataPayload);
         setRegulatorSource(regulatorSourcePayload);
+        setRegulatorStation(regulatorStationPayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -462,14 +546,15 @@ export default function ShowcaseAirMonitoring() {
         <div className="showcase-hero-copy">
           <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
           <h1 className="showcase-title showcase-title-wide">
-            When the Monitor Gap Is Mostly Two Economies
+            When OpenAQ Is Not the Regulator Map
           </h1>
           <p className="showcase-lede">
             The air-monitoring pass starts with a public-source observability
             problem: OpenAQ shows no public PM2.5 monitor for 13 ADB-region
-            economies above the WHO annual guideline. The report asks whether
-            that regional headline is really regional, then tests how much of
-            the monitor-density pattern is explained by GDP per capita.
+            economies above the WHO annual guideline. It then checks the
+            official-source trail: station metadata, regulator candidates, and
+            official station tables show where OpenAQ visibility diverges from
+            the public regulator map.
           </p>
           <div className="showcase-meta">
             <span>{deepening?.attestation_chain || "ai-first"}</span>
@@ -531,6 +616,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationMetadataPanel summary={stationMetadata} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
+
+      <AirRegulatorStationPanel summary={regulatorStation} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -1064,6 +1151,190 @@ function AirRegulatorSourcePanel({ summary }: { summary: RegulatorSourceSummary 
         </>
       ) : (
         <p className="showcase-loading">Loading regulator-source inventory...</p>
+      )}
+    </section>
+  );
+}
+
+function extractionLevelLabel(level: string) {
+  return sentenceCaseStatus(level).replace("station coordinates", "coordinate rows");
+}
+
+function AirRegulatorStationPanel({ summary }: { summary: RegulatorStationSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.country_rows ?? [];
+  const coordinateCountries = rows
+    .filter((row) => row.coordinate_rows > 0)
+    .sort((a, b) => b.coordinate_rows - a.coordinate_rows);
+  const nonCoordinateRows = rows.filter((row) => row.coordinate_rows === 0);
+  const maxCoordinateRows = Math.max(1, ...coordinateCountries.map((row) => row.coordinate_rows));
+
+  return (
+    <section className="showcase-section air-regulator-station-section" aria-label="Official station-source extraction">
+      <div className="air-regulator-station-head">
+        <div>
+          <p className="kicker kicker-blue">Station-table extraction</p>
+          <h2>The official map is wider than the OpenAQ map.</h2>
+          <p>
+            The second source pass extracts station tables and public portal
+            rows from the official candidates. It separates hard coordinate
+            evidence from named stations, network counts, and project plans,
+            then compares official coordinates with OpenAQ as a screening
+            diagnostic.
+          </p>
+        </div>
+        <div className="air-regulator-station-nonclaim">
+          <strong>Proximity is not a match</strong>
+          <p>
+            A station within 5 km of an OpenAQ row is only a candidate for
+            reconciliation. A station outside 5 km is not proof that OpenAQ is
+            wrong. Monitor-grade and catchment claims remain blocked.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-regulator-station-stat-grid">
+            <div>
+              <span>Official coordinate rows</span>
+              <strong>{formatNumber(counts.official_station_coordinate_rows)}</strong>
+              <em>from {formatNumber(counts.countries_with_station_coordinates)} economies</em>
+            </div>
+            <div>
+              <span>Near OpenAQ rows</span>
+              <strong>{formatNumber(counts.official_coordinate_rows_near_openaq_within_5km)}</strong>
+              <em>within 5 km, screening only</em>
+            </div>
+            <div>
+              <span>Not near OpenAQ rows</span>
+              <strong>{formatNumber(counts.official_coordinate_rows_not_near_openaq_within_5km)}</strong>
+              <em>requires source reconciliation</em>
+            </div>
+            <div>
+              <span>Name/count/plan rows</span>
+              <strong>
+                {formatNumber(
+                  counts.official_station_name_only_rows +
+                    counts.official_count_only_rows +
+                    counts.official_plan_count_only_rows,
+                )}
+              </strong>
+              <em>not catchment-ready</em>
+            </div>
+            <div>
+              <span>Monitor-grade rows</span>
+              <strong>{formatNumber(counts.monitor_grade_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-official-reconciliation">
+            <div className="air-official-bars" aria-label="Official coordinate rows compared with OpenAQ proximity candidates">
+              <div className="air-official-bars-head">
+                <span>Official coordinate rows by source</span>
+                <b>{formatNumber(counts.official_station_coordinate_rows)} total</b>
+              </div>
+              {coordinateCountries.map((row) => {
+                const officialWidth = `${Math.max(5, (row.coordinate_rows / maxCoordinateRows) * 100)}%`;
+                const nearWidth = `${Math.max(
+                  row.nearest_openaq_within_5km_rows > 0 ? 3 : 0,
+                  (row.nearest_openaq_within_5km_rows / row.coordinate_rows) * 100,
+                )}%`;
+                return (
+                  <div key={row.iso3} className="air-official-bar-row">
+                    <div className="air-official-bar-label">
+                      <span>{row.iso3}</span>
+                      <strong>{row.country}</strong>
+                    </div>
+                    <div className="air-official-bar-track">
+                      <i style={{ width: officialWidth }} />
+                      <b style={{ width: nearWidth }} />
+                    </div>
+                    <div className="air-official-bar-values">
+                      <strong>{formatNumber(row.coordinate_rows)}</strong>
+                      <span>{formatNumber(row.nearest_openaq_within_5km_rows)} near</span>
+                      <em>{formatNumber(row.openaq_country_rows)} OpenAQ</em>
+                    </div>
+                  </div>
+                );
+              })}
+              <div className="air-official-legend">
+                <span><i /> official coordinate rows</span>
+                <span><b /> within 5 km of OpenAQ</span>
+              </div>
+            </div>
+
+            <div className="air-official-limited">
+              <h3>Useful, but not coordinate-ready</h3>
+              {nonCoordinateRows.map((row) => (
+                <div key={row.iso3} className={`air-official-limited-row air-official-limited-${row.source_extraction_level}`}>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{extractionLevelLabel(row.source_extraction_level)}</b>
+                  <p>{row.source_station_count_claim || row.source_name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-regulator-station-country-grid">
+            {rows.map((row) => (
+              <article key={row.iso3} className={`air-regulator-station-country air-regulator-station-country-${row.source_extraction_level}`}>
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{extractionLevelLabel(row.source_extraction_level)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Official rows</dt>
+                    <dd>{formatNumber(row.official_rows_extracted)}</dd>
+                  </div>
+                  <div>
+                    <dt>Coordinates</dt>
+                    <dd>{formatNumber(row.coordinate_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5 signal</dt>
+                    <dd>{formatNumber(row.pm25_signal_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Near OpenAQ</dt>
+                    <dd>{formatNumber(row.nearest_openaq_within_5km_rows)}</dd>
+                  </div>
+                </dl>
+                <p>{row.source_station_count_claim || row.source_name}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-regulator-station-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-regulator-station-gate air-regulator-station-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-regulator-station-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/regulator-station-extraction.md" download>
+              Extraction note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-regulator-station-extraction-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-regulator-station-extraction.csv" download>
+              Station CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading official station-source extraction...</p>
       )}
     </section>
   );

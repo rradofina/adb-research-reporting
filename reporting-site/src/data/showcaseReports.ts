@@ -119,15 +119,15 @@ export const showcaseReports: ShowcaseReport[] = [
   },
   {
     id: 6,
-    title: "When Pollution Is Visible but Monitors Are Not",
+    title: "When OpenAQ Is Not the Regulator Map",
     shortTitle: "Air-monitoring observability",
     href: "/showcase/air-monitoring-observability",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, and regulator-source candidates before a monitoring-gap claim is widened.",
-    evidencePath: "air-monitoring/regulator-source-inventory.md",
-    visual: "Zero-monitor exposure bars, GDP residual scatter, exposure panel, metadata-readiness wall, and OpenAQ station-coordinate map",
-    sourceNote: "OpenAQ v3 locations, public regulator/official portal source candidates, WHO ambient air quality database, WDI, and committed source artifacts",
+    deck: "Ground-monitor visibility is compared with PM2.5 exposure, GDP context, OpenAQ station coordinates, regulator-source candidates, and official station-table extraction before a monitoring-gap claim is widened.",
+    evidencePath: "air-monitoring/regulator-station-extraction.md",
+    visual: "Zero-monitor exposure bars, GDP residual scatter, metadata-readiness wall, OpenAQ coordinate map, regulator-source wall, and official-source reconciliation bars",
+    sourceNote: "OpenAQ v3 locations, public regulator and official portal station tables/APIs, WHO ambient air quality database, WDI, and committed source artifacts",
   },
   {
     id: 7,
@@ -590,9 +590,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   6: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, and source-wall panels.",
-    publicationGap: "Needs monitor-grade validation, regulatory inventory comparison, and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
-    nextUpgrade: "Extract official station tables from regulator/portal candidates, validate monitor grade where public, then build a declared catchment denominator if the source comparison survives.",
+    qaSummary: "Air-monitoring has deepening artifacts, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, and a bespoke observability report with concentration, residual, exposure, gate, coordinate, source-wall, and official-reconciliation panels.",
+    publicationGap: "Needs monitor-grade validation and gridded population/PM2.5 denominator validation before station-radius or catchment language.",
+    nextUpgrade: "Validate monitor grade where public, reconcile official station rows with OpenAQ more carefully, then build a declared catchment denominator if the source comparison survives.",
   },
   7: {
     readiness: "l3-candidate",

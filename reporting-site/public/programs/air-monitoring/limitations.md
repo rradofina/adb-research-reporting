@@ -20,6 +20,13 @@
   upgrade queue, but it still has 0 monitor-grade classification rows and 11
   targeted-search gaps. These are source candidates, not validated regulator
   inventories.
+- Official station-source reconciliation. The 2026-06-19 extraction pass
+  retrieves the 9 targeted official inventory, portal, or plan sources and
+  normalizes 230 official station-coordinate rows across 5 economies, 6
+  station name-only rows, 1 count-only row, and 2 plan-count-only rows. Only
+  22 official coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row
+  as a screening diagnostic. This is not a validated station join, not
+  monitor-grade validation, and not station-radius coverage.
 
 ## Source-side
 
@@ -30,8 +37,8 @@
   record. It does not prove that the 13 zero-OpenAQ PM2.5 economies have no
   monitor outside OpenAQ.
 - Official regulator or portal links found in the discovery pass require
-  station-table extraction and reconciliation before they can override or
-  validate OpenAQ station rows.
+  monitor-grade validation and careful source reconciliation before they can
+  override or validate OpenAQ station rows.
 
 ## Method-side
 

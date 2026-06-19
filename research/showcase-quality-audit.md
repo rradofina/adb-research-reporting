@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, and an OpenAQ station-metadata source pass make the monitoring observability gap and remaining evidence gates legible | Needs monitor-grade validation, regulatory-inventory comparison, and gridded population/PM2.5 denominators before station-radius or catchment language | Collect regulator inventories for the zero-OpenAQ and positive-residual queue, then build a declared catchment denominator if the source comparison survives |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, and official station-source extraction make the monitoring observability gap and remaining evidence gates legible | Needs monitor-grade validation, stricter official/OpenAQ reconciliation, and gridded population/PM2.5 denominators before station-radius or catchment language | Validate monitor grade where public, reconcile official station rows beyond proximity screening, then build a declared catchment denominator if the source comparison survives |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
@@ -505,6 +505,27 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-air-regulator-source-mobile.png`. This is source
   discovery, not regulator validation, not monitor-grade validation, not proof
   of no monitor outside OpenAQ, and not station-radius population coverage.
+- Air-monitoring report #6 then received an official station-source extraction
+  pass. New script
+  `air-monitoring/scripts/extract-regulator-station-evidence.py` reads the
+  regulator-source inventory and OpenAQ station metadata, retrieves the 9
+  targeted official inventory, portal, or plan sources, and writes
+  `generated/air-monitoring-regulator-station-extraction.csv` and
+  `generated/air-monitoring-regulator-station-extraction-summary.json`. The
+  pass extracts 230 official station-coordinate rows across 5 economies, 6
+  station name-only rows, 1 count-only row, and 2 plan-count-only rows; 22 of
+  the coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row as a
+  screening diagnostic. The public route now renders the official-source
+  reconciliation wall with 5 stat cards, 5 coordinate bars, 4 limited-evidence
+  rows, 9 country cards, 6 evidence gates, and 3 download links. Chrome CDP QA
+  at 1440x1100 and 390x1000 found no page or section horizontal overflow and
+  no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-regulator-station-desktop.png`,
+  `reporting-site/qa/showcase-air-regulator-station-mobile.png`, and
+  `reporting-site/qa/showcase-air-regulator-station-mobile-bars.png`. This is
+  official-source extraction and proximity screening, not a validated
+  official-to-OpenAQ station join, not monitor-grade validation, and not
+  station-radius population coverage.
 - PSDQ report #4 then received a source-repair public-evidence attachment
   pass. New no-network script
   `public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py`

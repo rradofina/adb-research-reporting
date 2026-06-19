@@ -24,6 +24,11 @@ Metadata-readiness audit:
 Station-metadata source-access pass:
 `generated/air-monitoring-openaq-station-metadata-summary.json` and
 `generated/air-monitoring-openaq-station-metadata.csv`.
+Regulator-source discovery and station-source extraction:
+`generated/air-monitoring-regulator-source-inventory-summary.json`,
+`generated/air-monitoring-regulator-source-inventory.csv`,
+`generated/air-monitoring-regulator-station-extraction-summary.json`, and
+`generated/air-monitoring-regulator-station-extraction.csv`.
 
 ## The two questions
 
@@ -161,6 +166,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   2 have official regulator pages with no station inventory found, 1 has a
   development-partner monitoring reference, and 9 remain targeted-search gaps.
   This is a source queue for validation, not validation itself.
+- **New official station-source extraction:** the extraction pass retrieves
+  the 9 targeted official inventory, portal, or plan sources and normalizes
+  230 official station-coordinate rows across 5 economies, 6 station
+  name-only rows, 1 count-only row, and 2 plan-count-only rows. Only 22 of the
+  230 coordinate rows fall within 5 kilometers of an OpenAQ PM2.5 row as a
+  screening diagnostic. The strongest new claim is therefore source
+  reconciliation, not station coverage: OpenAQ visibility is not the same
+  object as the public regulator map. Monitor-grade rows remain 0 and
+  station-radius coverage remains not computed.
 
 ## Bounds
 
@@ -200,4 +214,6 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
 python air-monitoring/scripts/deepen-concentration-and-hdi.py
 python air-monitoring/scripts/build-metadata-readiness-audit.py
 python air-monitoring/scripts/fetch-openaq-station-metadata.py
+python air-monitoring/scripts/build-regulator-source-inventory.py
+python air-monitoring/scripts/extract-regulator-station-evidence.py
 ```

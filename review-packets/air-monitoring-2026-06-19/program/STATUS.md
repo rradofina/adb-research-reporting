@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, and public source wall complete; official station-table extraction next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, and public source/reconciliation walls complete; monitor-grade validation and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -112,17 +112,33 @@ methods are added.
   source discovery, not regulator validation, not monitor-grade validation,
   not proof of no monitor outside OpenAQ, and not station-radius population
   coverage.
+- **2026-06-19:** Added the official station-source extraction pass. New
+  script `scripts/extract-regulator-station-evidence.py` reads the
+  regulator-source inventory and OpenAQ station metadata, retrieves the 9
+  targeted official inventory, portal, or plan sources, and writes
+  `generated/air-monitoring-regulator-station-extraction.csv` and
+  `generated/air-monitoring-regulator-station-extraction-summary.json`. The
+  pass extracts 230 official station-coordinate rows across 5 economies, 6
+  station name-only rows, 1 count-only row, and 2 plan-count-only rows. It
+  finds 22 official coordinate rows within 5 kilometers of an OpenAQ PM2.5 row
+  as a screening diagnostic, keeps 208 official coordinate rows outside that
+  threshold, records 0 monitor-grade rows, and leaves station-radius coverage
+  not computed. Wrote `regulator-station-extraction.md`. This is official
+  source extraction and proximity screening, not a validated station join,
+  not monitor-grade validation, not proof of no monitor outside OpenAQ, and
+  not station-radius population coverage.
 
 ## Next focused work
 
-1. Extract station tables or portal data from the 9 official inventory/portal
-   candidates and compare station names, coordinates, and pollutant coverage
-   against OpenAQ rows.
-2. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
+1. Validate monitor grade where public official, station-owner, or regulator
+   sources distinguish reference-grade/regulatory monitors from low-cost or
+   other public feeds.
+2. Deepen official-to-OpenAQ reconciliation for the 230 official coordinate
+   rows: match IDs/names where possible, keep proximity-only rows marked as
+   candidates, and explain official rows that have no nearby OpenAQ PM2.5 row.
+3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
-3. Validate monitor grade where public station-owner or regulator sources
-   distinguish reference-grade/regulatory monitors from low-cost feeds.
 4. Only after regulator sources and denominators exist, build station-radius or catchment
    sensitivity with gridded population/PM2.5 denominators.
 
@@ -134,6 +150,9 @@ methods are added.
 - Monitor-grade claims still have 0 classification rows and need a
   station-level source that distinguishes reference-grade/regulatory monitors
   from low-cost or other public feeds.
+- The official station-source extraction provides 230 public coordinate rows,
+  but the 22-within-5-kilometers OpenAQ comparison is only a proximity
+  diagnostic, not a validated same-station join.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

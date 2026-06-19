@@ -67,6 +67,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "First-pass public source-candidate inventory for 24 air-monitoring upgrade-queue economies. Source URLs, targeted-search gaps, retrieval statuses, and non-claims are committed in generated regulator-source inventory CSV/JSON records."
     },
+    "air_monitoring_regulator_station_extraction": {
+      "script": "air-monitoring/scripts/extract-regulator-station-evidence.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Official station-source extraction for the 9 targeted air-monitoring regulator inventory, portal, or plan sources. The pass commits normalized station/source evidence, retrieval URLs, proximity diagnostics against OpenAQ station rows, and non-claims in generated regulator-station extraction CSV/JSON records."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -125,6 +130,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_regulator_source_inventory pin after the first-pass public regulator-source discovery for the 24-economy air-monitoring upgrade queue."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_regulator_station_extraction pin after extracting station coordinates, name-only evidence, count-only evidence, and plan-only evidence from the 9 targeted official air-monitoring sources."
     }
   ]
 }

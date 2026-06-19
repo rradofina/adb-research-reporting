@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, and regulator-source wall exist; station-radius, monitor-grade, and regulatory-inventory claims remain blocked until official station tables, monitor-grade sources, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, and official station-source extraction/reconciliation wall exist; station-radius and monitor-grade claims remain blocked until monitor-grade sources and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -41,8 +41,13 @@ overrides priority by editing this list.
    regulator-source discovery pass identifies 9 official inventory or
    air-quality portal candidates, 6 official station-count claim rows, and 0
    monitor-grade classification rows, now surfaced in a public source wall.
-   Next AI-doable loop is station-table extraction and monitor-grade source
-   validation before any station-radius or catchment claim.
+   The official station-source extraction retrieves the 9 targeted official
+   sources, normalizes 230 official station-coordinate rows across 5
+   economies, keeps 6 station name-only rows, 1 count-only row, and 2
+   plan-count-only rows separate, and finds 22 coordinate rows within 5
+   kilometers of an OpenAQ PM2.5 row as a screening diagnostic. Next
+   AI-doable loop is monitor-grade source validation and stricter
+   official/OpenAQ reconciliation before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same

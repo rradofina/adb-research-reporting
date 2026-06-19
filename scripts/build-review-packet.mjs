@@ -65,6 +65,7 @@ const PROGRAM_FILES = [
   "metadata-readiness-audit.md",
   "station-metadata-source-access.md",
   "regulator-source-inventory.md",
+  "regulator-station-extraction.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

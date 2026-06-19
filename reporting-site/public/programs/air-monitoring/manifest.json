@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T06:56:10.002Z",
+  "generated_at": "2026-06-19T07:21:14.770Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -114,6 +114,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_regulator_station_extraction",
+      "file": "regulator-station-extraction.md",
+      "label": "Air-monitoring official station-source extraction",
+      "size": 5274,
+      "size_human": "5.2 KB",
+      "mtime": "2026-06-19T07:16:11.427Z",
+      "sha256": "f362817a1c37a68ec2f98829743806b49f1c8b39559ce45616dbc01f38c6a17a",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -137,10 +147,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 2101,
-      "size_human": "2.1 KB",
-      "mtime": "2026-06-19T06:46:30.146Z",
-      "sha256": "1982f06299ad82e5c99e6b450b4f9bb9fa714b14be64e380ff2d59deed1e7663",
+      "size": 2623,
+      "size_human": "2.6 KB",
+      "mtime": "2026-06-19T07:20:01.864Z",
+      "sha256": "03d8196025b87b3bc1c8da5add3ebc21ab8a68f9a207c5607f74489417dd1809",
       "attestation_chain": "ai-first"
     }
   ],
@@ -204,6 +214,18 @@
       "size": 24389,
       "size_human": "23.8 KB",
       "sha256": "5a4a21ed017a5fffae77c2ce1611c3317b00534a43a46f920d10e0b4085ed59f"
+    },
+    {
+      "file": "generated/air-monitoring-regulator-station-extraction-summary.json",
+      "size": 79008,
+      "size_human": "77.2 KB",
+      "sha256": "52da12112b68fb9739b60bc2e53a80d145fc955a516f8aa8c794bc7bd953ea5e"
+    },
+    {
+      "file": "generated/air-monitoring-regulator-station-extraction.csv",
+      "size": 230088,
+      "size_human": "224.7 KB",
+      "sha256": "109f03865c0533bce854a9c2c72f8d317f7d072f9085f7f9ca32ee95c89b94f9"
     },
     {
       "file": "generated/charts/air-monitoring-thumbnail.json",

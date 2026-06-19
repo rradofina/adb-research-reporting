@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-06-19T21:55:20.367Z",
+  "url": "http://127.0.0.1:5176/showcase/port-inert-parameter",
+  "requiredTexts": [
+    "The cap is inert; the harder evidence object is still missing.",
+    "WDI SOURCE STACK",
+    "11/11",
+    "RANKABLE ROWS WITH CONTAINER TRAFFIC",
+    "16/26",
+    "RANKABLE ROWS WITH FREIGHT PROXY",
+    "26/26",
+    "HINTERLAND TRAVEL-TIME JOIN",
+    "false",
+    "CHN, IND, IDN, VNM, THA",
+    "CHN, MYS, VNM, IND, HKG",
+    "port-hinterland-source-audit.json",
+    "port-hinterland-source-readiness-sources.csv",
+    "Trust comes from the source trail."
+  ],
+  "forbiddenTexts": [
+    "country-quality ranking"
+  ],
+  "targetedCropNote": "Full-page screenshots keep the sticky site header; focused visual and claim crops set .site-header to static so the inspected sections are not occluded by the QA scroll operation.",
+  "results": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 900
+      },
+      "status": 200,
+      "url": "http://127.0.0.1:5176/showcase/port-inert-parameter",
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "overflow": {
+        "docOverflow": false,
+        "offenders": [],
+        "scrollWidth": 1280,
+        "viewportWidth": 1280
+      },
+      "sourceWallTermCount": 6,
+      "downloadLinkCount": 2,
+      "screenshots": {
+        "full": "reporting-site/qa/showcase-port-source-desktop.png",
+        "visual": "reporting-site/qa/showcase-port-source-desktop-visual.png",
+        "claim": "reporting-site/qa/showcase-port-source-desktop-claim.png"
+      }
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "url": "http://127.0.0.1:5176/showcase/port-inert-parameter",
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "overflow": {
+        "docOverflow": false,
+        "offenders": [],
+        "scrollWidth": 390,
+        "viewportWidth": 390
+      },
+      "sourceWallTermCount": 6,
+      "downloadLinkCount": 2,
+      "screenshots": {
+        "full": "reporting-site/qa/showcase-port-source-mobile.png",
+        "visual": "reporting-site/qa/showcase-port-source-mobile-visual.png",
+        "claim": "reporting-site/qa/showcase-port-source-mobile-claim.png"
+      }
+    }
+  ],
+  "passed": true
+}

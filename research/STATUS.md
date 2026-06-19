@@ -324,6 +324,32 @@ by leaving the board in a state the next session can read.
   failed requests, or page-level horizontal overflow. Screenshots:
   `reporting-site/qa/showcase-invisible-urban-source-desktop.png` and
   `reporting-site/qa/showcase-invisible-urban-source-mobile.png`.
+- **2026-06-20 (port-hinterland source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/port-inert-parameter` from an inert-cap-only audit into a WDI
+  logistics, port-throughput, and freight-proxy source wall. Added
+  `port-hinterland-friction/scripts/audit-port-source-readiness.py`, cache
+  regeneration notes under `port-hinterland-friction/.cache/README.md`,
+  generated `port-hinterland-source-audit.json`,
+  `port-hinterland-source-readiness.json`,
+  `port-hinterland-source-readiness-sources.csv`, and
+  `port-hinterland-public-logistics-signals.csv`, and registered
+  `port_hinterland_source_readiness_public_metadata` in `versions.json`. The
+  baseline top five remain CHN, IND, IDN, VNM, and THA; the cap audit still
+  has 0 DMCs reaching the baseline cap, a maximum observed proxy of 1.1147,
+  and $10.0 trillion of imports needed to reach the cap. The source wall finds
+  11/11 WDI metadata records reachable, 16/26 rankable rows with container
+  port traffic, 26/26 rankable rows with at least one public freight proxy,
+  and 5/5 baseline top-five rows with at least one freight proxy. The direct
+  evidence object remains false: no port-performance table, port-to-inland OD
+  network, route-impedance surface, corridor travel-time surface, customs
+  release-time series, trucking-cost series, rail service series, or
+  inland-terminal performance series is joined. Verification in this pass
+  reran the port scripts, synced public artifacts, built the reporting site,
+  ran the showcase verifier, and browser-checked desktop plus 390px mobile with
+  no page errors, failed requests, or page-level horizontal overflow.
+  Screenshots: `reporting-site/qa/showcase-port-source-desktop.png` and
+  `reporting-site/qa/showcase-port-source-mobile.png`.
 - **2026-06-20 (social-protection source-object repair):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/social-protection-dropped-leg` from a dropped-leg-only audit into

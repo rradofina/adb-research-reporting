@@ -52,7 +52,7 @@ candidates before adding new surfaces.
 | 16 | Social-protection dropped leg | Evidence audit | Missing-leg ledger shows why some economies disappear from the headline | Needs payment-channel or beneficiary delivery data | Rebuild as coverage-versus-payment-rail observability |
 | 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards now sit beside WDI/AQUASTAT available-water stress, FAOSTAT harvested-area crop mix, and a national diagnostic variant | Needs basin allocation, crop-specific water requirements, irrigation command areas, GRACE depletion, and subnational rural exposure before water-crop exposure language | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note |
 | 18 | Invisible urbanization tautology | Evidence audit | Rank-preserving scalar sweep now sits beside a WDI/GHSL/SMOD/geoBoundaries source wall: GHSL metadata and top-five ADM2 boundary metadata are reachable, but the built-up/boundary overlay is still false | Needs GHSL raster or Earth Engine export, administrative-boundary intersection, classification-history ledger, and population-weighted built-up or SMOD zonal statistic | Build one GHSL/SMOD x boundary pilot, or keep the current route as a source-readiness caution note |
-| 19 | Port inert-parameter audit | Evidence audit | Cap-binding wall shows an inert sensitivity knob | Needs actual hinterland travel-time, logistics, or port-performance source | Search for public port/hinterland travel-time proxies |
+| 19 | Port inert-parameter audit | Evidence audit | Cap-binding wall now sits beside a WDI logistics, container-port, and freight-proxy source wall: all rankable rows have at least one public freight proxy, but direct port-performance and hinterland travel-time joins remain false | Needs port-level dwell/turnaround/productivity data, port-to-inland OD network, corridor travel-time surface, customs release time, trucking cost, or inland terminal performance evidence | Build one corridor-level port-to-hinterland pilot, or keep the current route as a proxy/source-readiness caution note |
 | 20 | School heat top-one audit | Evidence audit | Sensitivity ledger names discriminating, degenerate, and rank-losing runs | Needs school geocodes, calendars, enrollment, and local heat exposure | Pick a public school-location pilot or keep as sensitivity caution |
 
 ## Current QA evidence
@@ -1168,6 +1168,50 @@ Screenshots:
 `reporting-site/qa/showcase-invisible-urban-source-mobile.png`,
 `reporting-site/qa/showcase-invisible-urban-source-mobile-visual.png`, and
 `reporting-site/qa/showcase-invisible-urban-source-mobile-claim.png`.
+
+## 2026-06-20 — Report 19 port-hinterland source wall
+
+Report 19 now uses
+`port-hinterland-friction/generated/port-hinterland-source-audit.json` instead
+of the older inert-cap-only artifact. The new source-readiness pass adds
+`port-hinterland-friction/scripts/audit-port-source-readiness.py`, records cache
+regeneration notes under `port-hinterland-friction/.cache/README.md`, and
+writes `port-hinterland-source-readiness.json`,
+`port-hinterland-source-readiness-sources.csv`, and
+`port-hinterland-public-logistics-signals.csv`. It preserves the cap-binding
+falsifier while checking public WDI logistics, port-throughput, and freight
+proxy layers.
+
+The baseline top five remain CHN, IND, IDN, VNM, and THA. The old cap audit
+still records 0 DMCs reaching the baseline cap, a maximum observed import proxy
+of 1.1147, and $10.0 trillion of imports needed to reach the cap. The new
+source wall records 11/11 WDI metadata records reachable; 16/26 rankable rows
+with container port traffic; 26/26 rankable rows with at least one public
+freight proxy; and 5/5 baseline top-five rows with at least one public freight
+proxy. The diagnostic container-port-traffic top five are CHN, MYS, VNM, IND,
+and HKG.
+
+The analysis-ready corridor object remains false: no port-level dwell time,
+turnaround time, berth productivity, port-call delay table, port-to-inland
+origin-destination network, route impedance, corridor travel-time surface,
+customs release-time series, trucking-cost series, rail service series, or
+inland-terminal performance series is joined. Container throughput and freight
+ton-kilometers are source-readiness proxies, not a port-to-hinterland friction
+estimate.
+
+Verification in this pass reran the port scripts, synced public artifacts,
+built the reporting site, ran the showcase verifier, and browser-checked
+desktop 1280x900 plus mobile 390x844. Browser QA found all required
+source-wall text, 6 source-wall terms, 2 download links, no page errors, no
+failed requests, and no page-level horizontal overflow. Full-page screenshots
+keep the sticky site header; focused crops set the header static only to avoid
+the QA scroll operation occluding the inspected section. Screenshots:
+`reporting-site/qa/showcase-port-source-desktop.png`,
+`reporting-site/qa/showcase-port-source-desktop-visual.png`,
+`reporting-site/qa/showcase-port-source-desktop-claim.png`,
+`reporting-site/qa/showcase-port-source-mobile.png`,
+`reporting-site/qa/showcase-port-source-mobile-visual.png`, and
+`reporting-site/qa/showcase-port-source-mobile-claim.png`.
 
 ## Next deepening order
 

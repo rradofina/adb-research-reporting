@@ -161,8 +161,38 @@ volume-dominated with a single-economy correction, not a logistics ranking.
   gap in the public freight-data layer, restated here, not a property of those
   economies.
 
+## 2026-06-20 source-readiness upgrade
+
+`scripts/audit-port-source-readiness.py` keeps the inert-cap result above, then
+checks the public source object needed to move beyond the imports/LPI proxy. It
+writes:
+
+- `generated/port-hinterland-source-audit.json`
+- `generated/port-hinterland-source-readiness.json`
+- `generated/port-hinterland-source-readiness-sources.csv`
+- `generated/port-hinterland-public-logistics-signals.csv`
+
+The audit queries public World Bank WDI metadata and latest values for 11
+indicators: imports, LPI overall and five LPI components, container port
+traffic, rail freight, road freight, and air freight. The generated source wall
+finds 11/11 WDI metadata records reachable, 16/26 rankable rows with container
+port traffic, 26/26 rankable rows with at least one public freight proxy, and
+5/5 baseline top-five rows with at least one public freight proxy. The container
+port traffic top five in the source wall are CHN, MYS, VNM, IND, and HKG.
+
+This is still not a port-to-hinterland friction estimate. The generated source
+wall records `analysis_ready_direct_port_performance: false`,
+`analysis_ready_hinterland_travel_time: false`, and
+`analysis_ready_od_network_join: false`. No port-level dwell time, turnaround
+time, berth productivity, port-call delay table, port-to-inland origin-
+destination network, route-impedance surface, corridor travel-time surface,
+customs release-time series, trucking-cost series, rail service series, or
+inland-terminal performance series is joined. Container throughput and freight
+ton-kilometers are source-readiness proxies, not the headline evidence object.
+
 ## Reproduce
 
 ```bash
 python port-hinterland-friction/scripts/deepen-inert-parameter.py
+python port-hinterland-friction/scripts/audit-port-source-readiness.py
 ```

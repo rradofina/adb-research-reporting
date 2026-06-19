@@ -1,7 +1,7 @@
 {
   "program": "port-hinterland-friction",
   "permanent_url": "/program/port-hinterland-friction/evidence",
-  "generated_at": "2026-06-19T21:43:15.784Z",
+  "generated_at": "2026-06-19T21:56:07.255Z",
   "hero": {
     "png": "generated/charts/port-hinterland-friction-thumbnail.png",
     "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
@@ -159,7 +159,31 @@
       "file": "generated/port-hinterland-inert-parameter.json",
       "size": 7431,
       "size_human": "7.3 KB",
-      "sha256": "f6f925e0b54b70faae756500c49d99536b65128656610cc46e0576453502194b"
+      "sha256": "170aca6a93e60f91db39942174e4bc0916056958c857edc03f0e519a3c1ed476"
+    },
+    {
+      "file": "generated/port-hinterland-public-logistics-signals.csv",
+      "size": 5762,
+      "size_human": "5.6 KB",
+      "sha256": "ff8cac8d95454b43341e11e30bd7921a16691135b399ad49ffc262d0577d6ab4"
+    },
+    {
+      "file": "generated/port-hinterland-source-audit.json",
+      "size": 102363,
+      "size_human": "100.0 KB",
+      "sha256": "6bee5d4a744be2e22a47fc5d2abb070090e6d32315e6eb5d56f369fd4954af37"
+    },
+    {
+      "file": "generated/port-hinterland-source-readiness-sources.csv",
+      "size": 11417,
+      "size_human": "11.1 KB",
+      "sha256": "640abe354107c559981d37b1254677b593b862c2d5898acf97ee99402d2aae47"
+    },
+    {
+      "file": "generated/port-hinterland-source-readiness.json",
+      "size": 90718,
+      "size_human": "88.6 KB",
+      "sha256": "76f2bc1bd49eedb928af0522d356419bfa8bb5daf8c13396e5ac362d5ecde23a"
     }
   ],
   "articles": [

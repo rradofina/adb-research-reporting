@@ -1342,6 +1342,9 @@ function buildInvisibleUrbanizationModel(report: ShowcaseReport, data: JsonValue
 }
 
 function buildPortModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.port_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.port_source_readiness);
   const capRows = Object.entries(data.cap_perturbation || {}).map(([cap, row]) => {
     const record = row as JsonValue;
     const truncated = strings(record.rows_truncated);
@@ -1353,41 +1356,104 @@ function buildPortModel(report: ShowcaseReport, data: JsonValue): AuditModel {
       status: truncated.length ? "flag" : "survived",
     };
   }) as ParameterRow[];
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Port source audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  const containerTop5 = safeRows(sourceSummary.container_port_traffic_top5).map((row) => String(row.iso3)).join(", ");
+  const componentCards: ComponentCard[] = [
+    {
+      key: "baseline",
+      value: `${formatNumber(data.dmcs_reaching_cap_baseline)}`,
+      label: "rows binding at baseline cap",
+      note: `baseline divisor ${formatFlexible(data.baseline_params?.divisor)}; cap ${formatFlexible(data.baseline_params?.cap)}`,
+      status: "flag",
+    },
+    {
+      key: "binding",
+      value: strings(data.binding_cap_test?.rows_truncated).join(", ") || "none",
+      label: "rows binding in forced binding test",
+      note: `CHN index capped from ${formatFlexible(data.binding_cap_test?.chn_index_uncapped)} to ${formatFlexible(data.binding_cap_test?.chn_index_capped)}`,
+      status: "survived",
+    },
+  ];
+
+  if (hasSourceAudit) {
+    componentCards.push(
+      {
+        key: "wdi-stack",
+        value: `${formatNumber(sourceSummary.wdi_metadata_records_reachable)}/${formatNumber(sourceSummary.wdi_indicators_requested)}`,
+        label: "WDI source stack",
+        note: "LPI, imports, container port traffic, and freight-proxy metadata resolve through public WDI.",
+        status: "survived",
+      },
+      {
+        key: "container-traffic",
+        value: `${formatNumber(sourceSummary.rankable_rows_with_container_port_traffic)}/${formatNumber(sourceSummary.rankable_dmc_count)}`,
+        label: "rankable rows with container traffic",
+        note: `Container-traffic top five: ${containerTop5 || "not available"}. Throughput is not travel time.`,
+        status: "flag",
+      },
+      {
+        key: "freight-proxy",
+        value: `${formatNumber(sourceSummary.rankable_rows_with_any_actual_freight_proxy)}/${formatNumber(sourceSummary.rankable_dmc_count)}`,
+        label: "rankable rows with freight proxy",
+        note: "Air, rail, road, or container throughput is visible for the rankable rows, but it remains a proxy layer.",
+        status: "flag",
+      },
+      {
+        key: "travel-time",
+        value: String(sourceSummary.analysis_ready_hinterland_travel_time),
+        label: "hinterland travel-time join",
+        note: "No port-to-inland OD network, route impedance, corridor travel-time surface, or port-performance table is joined.",
+        status: "dropped",
+      },
+    );
+  }
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: `${formatNumber(sourceSummary.wdi_metadata_records_reachable)}/${formatNumber(sourceSummary.wdi_indicators_requested)}`, label: "WDI source records reachable" },
+      { value: `${formatNumber(sourceSummary.rankable_rows_with_container_port_traffic)}/${formatNumber(sourceSummary.rankable_dmc_count)}`, label: "rankable rows with container TEU" },
+      { value: String(sourceSummary.analysis_ready_hinterland_travel_time), label: "hinterland travel-time join" },
+    ] : [
       { value: formatNumber(data.dmcs_reaching_cap_baseline), label: "DMCs reaching baseline cap" },
       { value: formatFlexible(data.max_proxy_observed, 3), label: "max observed proxy" },
       { value: `$${formatFlexible(data.imports_to_reach_cap_usd_trillions, 1)}T`, label: "imports needed to reach cap" },
     ],
-    chartTitle: "A perturbed cap cannot test much if the observed data never touch it.",
-    chartDeck: "The cap lanes keep the top five beside the number of rows that actually bind under each cap.",
+    chartTitle: hasSourceAudit
+      ? "The cap is inert; the harder evidence object is still missing."
+      : "A perturbed cap cannot test much if the observed data never touch it.",
+    chartDeck: hasSourceAudit
+      ? "The cap lanes stay on the page, then the source wall separates visible WDI throughput and freight proxies from the missing port-performance and hinterland travel-time join."
+      : "The cap lanes keep the top five beside the number of rows that actually bind under each cap.",
     parameterRows: capRows,
-    componentCards: [
-      {
-        key: "baseline",
-        value: `${formatNumber(data.dmcs_reaching_cap_baseline)}`,
-        label: "rows binding at baseline cap",
-        note: `baseline divisor ${formatFlexible(data.baseline_params?.divisor)}; cap ${formatFlexible(data.baseline_params?.cap)}`,
-        status: "flag",
-      },
-      {
-        key: "binding",
-        value: strings(data.binding_cap_test?.rows_truncated).join(", ") || "none",
-        label: "rows binding in forced binding test",
-        note: `CHN index capped from ${formatFlexible(data.binding_cap_test?.chn_index_uncapped)} to ${formatFlexible(data.binding_cap_test?.chn_index_capped)}`,
-        status: "survived",
-      },
-    ],
+    componentCards,
     readouts: [
       { label: "Baseline top five", value: strings(data.baseline_top5).join(", ") },
       { label: "Committed-panel top five", value: strings(data.committed_panel_top5).join(", ") },
       { label: "Import-volume top five", value: strings(data.import_volume_top5).join(", ") },
       { label: "Volume top-five same order?", value: String(Boolean(data.friction_top5_equals_volume_top5_order)) },
+      ...(hasSourceAudit ? [
+        { label: "WDI metadata records reachable", value: `${formatNumber(sourceSummary.wdi_metadata_records_reachable)}/${formatNumber(sourceSummary.wdi_indicators_requested)}` },
+        { label: "Rankable rows with container traffic", value: `${formatNumber(sourceSummary.rankable_rows_with_container_port_traffic)}/${formatNumber(sourceSummary.rankable_dmc_count)}` },
+        { label: "Rankable rows with any freight proxy", value: `${formatNumber(sourceSummary.rankable_rows_with_any_actual_freight_proxy)}/${formatNumber(sourceSummary.rankable_dmc_count)}` },
+        { label: "Baseline top five with any freight proxy", value: `${formatNumber(sourceSummary.baseline_top5_with_any_actual_freight_proxy)}/5` },
+        { label: "Container traffic top five", value: containerTop5 || "not available" },
+        { label: "Direct port performance built", value: String(sourceSummary.analysis_ready_direct_port_performance) },
+        { label: "Hinterland travel-time join", value: String(sourceSummary.analysis_ready_hinterland_travel_time) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.port_hinterland_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }

@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T21:43:23.604Z
+Generated: 2026-06-19T21:56:15.114Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -15,11 +15,11 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Evidence paths present: 20/20
 - Static route coverage: 20/20
 - Audit JSON artifacts present: 12/12
-- Declared audit CSV companions present: 10/10
+- Declared audit CSV companions present: 11/11
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 358
-- QA browser-check JSON files in reporting-site/qa: 25
+- QA screenshot files in reporting-site/qa: 364
+- QA browser-check JSON files in reporting-site/qa: 26
 - Verification failures: 0
 
 ## Readiness Mix
@@ -51,7 +51,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 16 | Social-protection dropped leg | Evidence audit | ok | ok | ok | Search public payment-channel metadata and rebuild the screen as coverage-versus-payment-rail observability. |
 | 17 | Water denominator artifact | Evidence audit | ok | ok | ok | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note. |
 | 18 | Invisible urbanization tautology | Evidence audit | ok | ok | ok | Select one pilot geography and build the GHSL/SMOD x boundary overlay, or keep the current route as a source-readiness caution ... |
-| 19 | Port hinterland inert parameter | Evidence audit | ok | ok | ok | Search for public port/hinterland travel-time proxies and decide whether the cap audit becomes a methods note. |
+| 19 | Port hinterland inert parameter | Evidence audit | ok | ok | ok | Build one corridor-level port-to-hinterland pilot, or keep the current route as a proxy/source-readiness caution note. |
 | 20 | School heat top-one audit | Evidence audit | ok | ok | ok | Pick a public school-location pilot or keep the current route as a sensitivity-audit caution. |
 
 ## Failure List

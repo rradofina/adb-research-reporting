@@ -1,22 +1,22 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T21:43:23.604Z",
+  "generated_at": "2026-06-19T21:56:15.114Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 358,
-    "browserChecks": 25
+    "screenshots": 364,
+    "browserChecks": 26
   },
   "summary": {
     "reports_total": 20,
     "verified_reports": 20,
     "audit_reports": 12,
-    "audit_csv_declared": 10,
+    "audit_csv_declared": 11,
     "evidence_paths_present": 20,
     "routes_covered": 20,
     "audit_data_present": 12,
-    "audit_csv_present": 10,
+    "audit_csv_present": 11,
     "depth_records_present": 20,
     "quality_records_present": 20,
     "readiness_counts": {
@@ -450,19 +450,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "port-hinterland-friction/generated/port-hinterland-inert-parameter.json",
+      "evidencePath": "port-hinterland-friction/generated/port-hinterland-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/port-hinterland-friction/generated/port-hinterland-inert-parameter.json",
+      "auditDataUrl": "/programs/port-hinterland-friction/generated/port-hinterland-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": null,
-      "auditCsvExists": null,
+      "auditCsvUrl": "/programs/port-hinterland-friction/generated/port-hinterland-source-readiness-sources.csv",
+      "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Search for public port/hinterland travel-time proxies and decide whether the cap audit becomes a methods note."
+      "nextUpgrade": "Build one corridor-level port-to-hinterland pilot, or keep the current route as a proxy/source-readiness caution note."
     },
     {
       "id": 20,

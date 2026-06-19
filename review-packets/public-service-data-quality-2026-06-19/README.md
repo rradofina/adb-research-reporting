@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `34b5338c16d5…`
-- `program/STATUS.md`  `c49cb0772562…`
-- `program/REPRODUCE.md`  `197a57c4ddc8…`
+- `program/README.md`  `3ef0664bb322…`
+- `program/STATUS.md`  `5a05ecd08fce…`
+- `program/REPRODUCE.md`  `dd98738c58ad…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,7 +81,7 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `50f818da8925…`
+- `program/source-disagreement-l3-module.md`  `3a4ed5e62969…`
 - `program/facility-validation-sample.md`  `426a18b29d9e…`
 - `program/facility-validation-coded-screen.md`  `7842413f6f2b…`
 - `program/facility-validation-ai-review.md`  `dec4cb84cca8…`
@@ -96,6 +96,7 @@ website is Tier 2 and is not included here).
 - `program/facility-validation-public-source-decision-ledger.md`  `56c44623050e…`
 - `program/facility-validation-possible-same-facility-review.md`  `5f5f9ca3d5e9…`
 - `program/facility-validation-priority-name-conflict-review.md`  `ab75a593f44a…`
+- `program/facility-validation-zero-osm-upazila-observability-review.md`  `2369ddd0dc65…`
 - `program/facility-validation-source-repair-public-evidence.md`  `cbcb871decd1…`
 - `program/facility-validation-source-repair-official-coordinate-evidence.md`  `4d556f3556d9…`
 - `program/facility-validation-source-repair-public-explanation-evidence.md`  `8ad9950749bd…`
@@ -169,6 +170,8 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-facility-validation-source-repair-public-explanation-evidence.csv`  `3d6ac1c8d091…`
 - `program/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review-summary.json`  `fa8402ed534e…`
 - `program/generated/psdq-bgd-facility-validation-source-repair-registry-vintage-review.csv`  `3c0faef63e13…`
+- `program/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`  `834e5e0688d9…`
+- `program/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`  `c1877f32ab2e…`
 - `program/generated/psdq-bgd-open-buildings-admin-summary.csv`  `cff1ea1d4979…`
 - `program/generated/psdq-bgd-open-buildings-buffer-summary.json`  `92c84b2b88b2…`
 - `program/generated/psdq-bgd-open-buildings-facility-buffers.csv`  `fbb0213342e1…`
@@ -204,6 +207,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/build-bgd-facility-public-source-decision-ledger.py`  `0e2072550236…`
 - `program/scripts/build-bgd-facility-source-repair-clarification-packet.py`  `ed8d86fb6be1…`
 - `program/scripts/build-bgd-facility-source-repair-registry-vintage-review.py`  `97613087ef3b…`
+- `program/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py`  `0b9b966a04e4…`
 - `program/scripts/build-bgd-road-surface-context.py`  `dd5e729be664…`
 - `program/scripts/build-bgd-source-disagreement-strata.py`  `e6e8c541d683…`
 - `program/scripts/build-choropleth.py`  `afee4e2effe2…`
@@ -256,4 +260,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T03:29:30.557Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T03:53:30.466Z by `scripts/build-review-packet.mjs`.

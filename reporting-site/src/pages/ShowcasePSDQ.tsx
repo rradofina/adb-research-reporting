@@ -849,6 +849,108 @@ interface PsdqPriorityNameConflictReviewSummary {
   non_claim: string;
 }
 
+interface PsdqZeroOsmObservabilityReviewRow {
+  zero_osm_observability_review_id: string;
+  evidence_rank: number;
+  evidence_method: string;
+  status: string;
+  join_key: string;
+  division_name: string;
+  district_name: string;
+  upazila_name: string;
+  registry_records: number | string;
+  active_clinical_facilities: number | string;
+  coordinate_facilities: number | string;
+  osm_health: number | string;
+  registry_minus_osm_clinical: number | string;
+  registry_gap_share: number | string;
+  buildings_nearest_3km_p85: number | string;
+  underobserved_buildings_3km_p85_proxy: number | string;
+  has_open_buildings_denominator: boolean | string;
+  has_osm_boundary_match: boolean | string;
+  coordinate_share_of_active_clinical: number | string;
+  zero_osm_observability_class: string;
+  targeted_inspection_rows_in_current_queue: number | string;
+  targeted_inspection_ids: string;
+  targeted_inspection_facilities: string;
+  nearest_public_map_context_name_from_inspection: string;
+  nearest_public_map_context_distance_m_from_inspection: number | string;
+  nearest_public_map_context_url_from_inspection: string;
+  upazila_observability_language_allowed: boolean | string;
+  facility_row_closure_allowed_by_current_public_evidence: boolean | string;
+  facility_row_absence_language_allowed_by_current_public_evidence: boolean | string;
+  coordinate_correction_allowed_by_current_public_evidence: boolean | string;
+  minimum_evidence_to_close_facility_row: string;
+  minimum_evidence_to_upgrade_upazila_context: string;
+  review_action: string;
+  source_basis: string;
+  non_claim: string;
+}
+
+interface PsdqZeroOsmDivisionRow {
+  division_name: string;
+  zero_osm_upazilas: number;
+  active_clinical_facilities: number;
+  underobserved_buildings_3km_p85_proxy: number;
+  targeted_inspection_rows: number;
+}
+
+interface PsdqZeroOsmTargetedInspectionRow {
+  inspection_id: string;
+  inspection_rank: number;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  join_key: string;
+  active_clinical_facilities: number;
+  osm_health: number;
+  underobserved_buildings_3km_p85_proxy: number;
+  nearest_national_feature_1_name: string;
+  nearest_national_feature_1_distance_m: number | string;
+  nearest_national_feature_1_url: string;
+  inspection_decision: string;
+  closure_eligibility: string;
+  reclassification_candidate: string;
+  public_cache_finding: string;
+  evidence_needed_to_close_or_reclassify: string;
+}
+
+interface PsdqZeroOsmObservabilityReviewSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  zero_osm_observability_scope: {
+    exposure_rows_read: number;
+    zero_osm_active_registry_upazilas: number;
+    active_clinical_facilities_in_zero_osm_upazilas: number;
+    share_of_exposure_rows_zero_osm: number | null;
+    share_of_active_clinical_facilities_zero_osm: number | null;
+    zero_osm_upazilas_with_open_buildings_denominator: number;
+    zero_osm_upazilas_with_osm_boundary_match: number;
+    buildings_nearest_3km_p85_in_zero_osm_upazilas: number;
+    underobserved_buildings_3km_p85_proxy_in_zero_osm_upazilas: number;
+    targeted_inspection_rows_in_zero_osm_lane: number;
+    targeted_zero_osm_upazilas: number;
+    decision_ledger_deferred_zero_osm_context_rows: number;
+    upazila_observability_language_allowed_rows: number;
+    facility_rows_allowed_for_closure: number;
+    facility_rows_allowed_for_absence_language: number;
+    coordinate_corrections_allowed: number;
+    external_contacts_made: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_or_corrected: number;
+  };
+  zero_osm_observability_class_counts: PsdqCandidateResolutionCount[];
+  division_rows: PsdqZeroOsmDivisionRow[];
+  top_zero_osm_upazila_rows: PsdqZeroOsmObservabilityReviewRow[];
+  targeted_inspection_rows: PsdqZeroOsmTargetedInspectionRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqSourceRepairEvidenceRow {
   evidence_id: string;
   evidence_rank: number;
@@ -1396,6 +1498,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPossibleSameFacilityReviewSummary | null>(null);
   const [priorityNameConflictReviewSummary, setPriorityNameConflictReviewSummary] =
     useState<PsdqPriorityNameConflictReviewSummary | null>(null);
+  const [zeroOsmObservabilityReviewSummary, setZeroOsmObservabilityReviewSummary] =
+    useState<PsdqZeroOsmObservabilityReviewSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
@@ -1482,6 +1586,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`priority name-conflict review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`zero-OSM upazila observability review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
         return r.json();
@@ -1529,6 +1637,7 @@ export default function ShowcasePSDQ() {
         publicSourceDecisionLedgerPayload,
         possibleSameFacilityReviewPayload,
         priorityNameConflictReviewPayload,
+        zeroOsmObservabilityReviewPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
@@ -1554,6 +1663,7 @@ export default function ShowcasePSDQ() {
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
         setPossibleSameFacilityReviewSummary(possibleSameFacilityReviewPayload);
         setPriorityNameConflictReviewSummary(priorityNameConflictReviewPayload);
+        setZeroOsmObservabilityReviewSummary(zeroOsmObservabilityReviewPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
@@ -1687,6 +1797,10 @@ export default function ShowcasePSDQ() {
 
       {priorityNameConflictReviewSummary && (
         <PsdqPriorityNameConflictReviewPanel summary={priorityNameConflictReviewSummary} />
+      )}
+
+      {zeroOsmObservabilityReviewSummary && (
+        <PsdqZeroOsmObservabilityReviewPanel summary={zeroOsmObservabilityReviewSummary} />
       )}
 
       {sourceRepairEvidenceSummary && (
@@ -4905,6 +5019,217 @@ function PsdqPriorityNameConflictReviewPanel({ summary }: { summary: PsdqPriorit
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv" download>
           Download priority name-conflict CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function zeroOsmObservabilityColor(code: string) {
+  const colors: Record<string, string> = {
+    zero_osm_boundary_join_residue_review_first: "#6c757d",
+    zero_osm_high_building_proxy: "#007DB8",
+    zero_osm_high_registry_count: "#9B2226",
+    zero_osm_observability_context: "#5A8227",
+    zero_osm_missing_open_buildings_denominator: "#8A6A00",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function zeroOsmObservabilityLabel(code: string) {
+  const labels: Record<string, string> = {
+    zero_osm_boundary_join_residue_review_first: "Boundary join first",
+    zero_osm_high_building_proxy: "High building proxy",
+    zero_osm_high_registry_count: "High registry count",
+    zero_osm_observability_context: "Observability context",
+    zero_osm_missing_open_buildings_denominator: "Missing denominator",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function PsdqZeroOsmObservabilityReviewPanel({ summary }: { summary: PsdqZeroOsmObservabilityReviewSummary }) {
+  const scope = summary.zero_osm_observability_scope;
+  const topRows = summary.top_zero_osm_upazila_rows.slice(0, 10);
+  const targetedRows = summary.targeted_inspection_rows.slice(0, 8);
+  const maxDivisionUpazilas = Math.max(1, ...summary.division_rows.map((row) => row.zero_osm_upazilas));
+  const maxProxy = Math.max(
+    1,
+    ...topRows.map((row) => Number(row.underobserved_buildings_3km_p85_proxy || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-zero-osm-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Zero-OSM upazila observability review</p>
+          <h2>One hundred fifteen upazilas have registry rows, but zero joined OSM health features.</h2>
+          <p>
+            The review keeps the zero-OSM signal at the right level. It is a
+            source-observability queue for upazilas, not proof that any
+            specific DGHS facility is absent from the public map.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Zero-OSM upazilas</span>
+            <strong>{formatNumber(scope.zero_osm_active_registry_upazilas)}</strong>
+          </div>
+          <div>
+            <span>Active DGHS clinical rows</span>
+            <strong>{formatNumber(scope.active_clinical_facilities_in_zero_osm_upazilas)}</strong>
+          </div>
+          <div>
+            <span>Share of exposure rows</span>
+            <strong>{pct(scope.share_of_exposure_rows_zero_osm, 1)}</strong>
+          </div>
+          <div>
+            <span>Targeted queue</span>
+            <strong>
+              {formatNumber(scope.targeted_inspection_rows_in_zero_osm_lane)} rows /{" "}
+              {formatNumber(scope.targeted_zero_osm_upazilas)} upazilas
+            </strong>
+          </div>
+          <div>
+            <span>Boundary matches</span>
+            <strong>
+              {formatNumber(scope.zero_osm_upazilas_with_osm_boundary_match)} /{" "}
+              {formatNumber(scope.zero_osm_active_registry_upazilas)}
+            </strong>
+          </div>
+          <div>
+            <span>Closure / absence / corrections</span>
+            <strong>
+              {formatNumber(scope.facility_rows_allowed_for_closure)} /{" "}
+              {formatNumber(scope.facility_rows_allowed_for_absence_language)} /{" "}
+              {formatNumber(scope.coordinate_corrections_allowed)}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-zero-osm-division-grid">
+        {summary.division_rows.map((row) => {
+          const width = Math.max(4, (row.zero_osm_upazilas / maxDivisionUpazilas) * 100);
+          return (
+            <article key={row.division_name}>
+              <div>
+                <strong>{row.division_name}</strong>
+                <span>{formatNumber(row.zero_osm_upazilas)} upazilas</span>
+              </div>
+              <i aria-label={`${row.division_name} zero-OSM upazila bar`}>
+                <b style={{ width: `${width}%` }} />
+              </i>
+              <p>
+                {formatNumber(row.active_clinical_facilities)} active DGHS rows;{" "}
+                {formatNumber(row.underobserved_buildings_3km_p85_proxy)} proxy buildings;{" "}
+                {formatNumber(row.targeted_inspection_rows)} targeted rows.
+              </p>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-zero-osm-grid">
+        {topRows.map((row) => {
+          const color = zeroOsmObservabilityColor(row.zero_osm_observability_class);
+          const proxy = Number(row.underobserved_buildings_3km_p85_proxy || 0);
+          const proxyWidth = Math.max(4, Math.min(100, (proxy / maxProxy) * 100));
+          return (
+            <article key={row.zero_osm_observability_review_id} style={{ borderColor: color }}>
+              <div className="psdq-zero-osm-card-head">
+                <span>{row.zero_osm_observability_review_id}</span>
+                <strong>{row.upazila_name}</strong>
+                <em>{row.district_name}, {row.division_name}</em>
+              </div>
+              <div className="psdq-zero-osm-class" style={{ background: color }}>
+                {zeroOsmObservabilityLabel(row.zero_osm_observability_class)}
+              </div>
+              <div className="psdq-zero-osm-meter">
+                <div>
+                  <span>DGHS clinical</span>
+                  <strong>{formatNumber(Number(row.active_clinical_facilities || 0))}</strong>
+                </div>
+                <div>
+                  <span>OSM health</span>
+                  <strong>{formatNumber(Number(row.osm_health || 0))}</strong>
+                </div>
+                <div>
+                  <span>Targeted rows</span>
+                  <strong>{formatNumber(Number(row.targeted_inspection_rows_in_current_queue || 0))}</strong>
+                </div>
+              </div>
+              <div className="psdq-zero-osm-proxy">
+                <span>3 km p85 under-observed proxy</span>
+                <strong>{formatNumber(proxy)}</strong>
+                <i aria-label="Under-observed building proxy bar">
+                  <b style={{ width: `${proxyWidth}%`, background: color }} />
+                </i>
+              </div>
+              <div className="psdq-zero-osm-flags">
+                <span>{asBoolean(row.has_open_buildings_denominator) ? "Open Buildings denominator" : "missing denominator"}</span>
+                <span>{asBoolean(row.has_osm_boundary_match) ? "OSM boundary match" : "boundary join residue"}</span>
+                <span>{asBoolean(row.upazila_observability_language_allowed) ? "upazila context allowed" : "context blocked"}</span>
+              </div>
+              <p>{row.review_action}</p>
+              {row.targeted_inspection_facilities && (
+                <div className="psdq-zero-osm-targeted">
+                  <span>Inspection examples</span>
+                  <p>{row.targeted_inspection_facilities}</p>
+                </div>
+              )}
+              <div className="psdq-zero-osm-gates">
+                <div>
+                  <span>Close row only if</span>
+                  <p>{row.minimum_evidence_to_close_facility_row}</p>
+                </div>
+                <div>
+                  <span>Upgrade context only if</span>
+                  <p>{row.minimum_evidence_to_upgrade_upazila_context}</p>
+                </div>
+              </div>
+              <div className="psdq-zero-osm-status">
+                <span>upazila context</span>
+                <span>0 closed</span>
+                <span>0 facility absence uses</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-zero-osm-targeted-strip">
+        {targetedRows.map((row) => (
+          <article key={row.inspection_id}>
+            <span>{row.inspection_id}</span>
+            <strong>{row.facility_name}</strong>
+            <em>{row.upazila_name}, {row.district_name}</em>
+            <p>
+              Nearest public-map context: {row.nearest_national_feature_1_name || "none in compact record"}{" "}
+              {row.nearest_national_feature_1_distance_m
+                ? `at ${formatNumber(Number(row.nearest_national_feature_1_distance_m) / 1000, 1)} km`
+                : ""}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the zero-OSM upazila observability review</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-zero-osm-upazila-observability-review.md" download>
+          Download zero-OSM observability review note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json" download>
+          Download zero-OSM observability summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv" download>
+          Download zero-OSM observability CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

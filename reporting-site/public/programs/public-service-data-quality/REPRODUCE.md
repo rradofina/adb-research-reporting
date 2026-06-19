@@ -75,6 +75,12 @@ workbook and Codex seeded the canonical cache.
   priority-1 name-conflict candidates, carries forward name-score, distance,
   admin-place-name, and alias-source evidence, and keeps all rows open. It is
   not human validation.
+- The Bangladesh zero-OSM upazila observability review is a no-network pass
+  over the exposure-ranked disagreement table, exposure summary, targeted
+  public-map inspection queue, and decision-ledger summary. It isolates
+  upazilas with active DGHS clinical rows and zero joined OSM health features,
+  then keeps facility closure and absence language blocked. It is not human
+  validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -217,6 +223,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -542,6 +549,30 @@ at least 10 kilometers from the inspection point; 4 candidate names contain an
 admin place name; and the current artifacts contain 0 public alias or location
 sources. It allows 0 closures, 0 same-facility reclassifications, and 0
 map-absence uses.
+
+## Bangladesh facility-validation zero-OSM upazila observability review
+
+This step does not fetch data. It reads the exposure-ranked source-disagreement
+CSV, exposure summary JSON, targeted public-map inspection CSV, and
+decision-ledger summary JSON, then isolates upazilas with active DGHS clinical
+rows and zero joined OSM health features.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`
+- `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`
+
+The output status is
+`ai_zero_osm_upazila_observability_review_not_validation`. The current pass
+reviews 115 active-registry upazilas with 0 joined OSM health features,
+covering 3,879 active DGHS clinical rows and 2,334,152 p85 buildings in the
+3 km under-observed proxy. It links 18 deferred inspection rows across 5
+targeted upazilas. It allows 0 facility closures, 0 facility-level absence
+uses, and 0 coordinate corrections.
 
 ## Bangladesh facility-validation source-repair public evidence
 

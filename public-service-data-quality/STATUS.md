@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, and priority name-conflict wall; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 115-upazila zero-OSM observability review, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -28,6 +28,7 @@ triage, row-evidence notes, targeted public-map inspection queue, first-row
 public-source confirmation, 40-row targeted public-source confirmation,
 public-source decision ledger, source-repair public evidence, official-coordinate
 evidence, possible same-facility review, priority name-conflict review,
+zero-OSM upazila observability review,
 public-explanation search, correction-record follow-up,
 clarification packet, registry-vintage review, and caveats, make the source
 upgrade clear in the public surface, and preserve the existing PR maturity
@@ -35,6 +36,43 @@ label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh zero-OSM upazila observability review
+  for the PSDQ source-disagreement and facility-validation queue. New
+  no-network script
+  `scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` reads
+  `generated/psdq-bgd-exposure-ranked-disagreement.csv`,
+  `generated/psdq-bgd-exposure-ranked-disagreement-summary.json`,
+  `generated/psdq-bgd-facility-validation-public-map-inspection.csv`, and
+  `generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`,
+  then writes
+  `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`
+  and
+  `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`.
+  The pass reviews 115 active-registry upazilas with 0 joined OSM health
+  features, covering 3,879 active DGHS clinical rows and 2,334,152 p85
+  buildings in the 3 km under-observed proxy. It links 18 deferred inspection
+  rows across 5 targeted upazilas while allowing 0 facility closures, 0
+  facility-level absence uses, 0 coordinate corrections, 0 row
+  reclassifications, and 0 external contacts. Added
+  `facility-validation-zero-osm-upazila-observability-review.md`, wired
+  evidence sync and review-packet inclusion, updated README/REPRODUCE/L3
+  notes, hook bank, showcase quality audit, showcase registry metadata, and
+  added the zero-OSM observability panel to
+  `/showcase/psdq-source-disagreement`. This is an upazila-level
+  observability packet, not facility-level absence evidence, source-owner
+  response, human validation, ground truth, coordinate correction, row
+  closure, same-facility reclassification, a maturity promotion, or a
+  human-final upgrade. Verification passed: zero-OSM script rerun,
+  program-script `py_compile`, evidence/reference/docs sync, production site
+  build, six deterministic gates plus `git diff --check`, review packet and
+  zip rebuild, and agent-browser desktop/mobile QA at 1440x1100 and 390x900
+  with 8 division cards, 10 top-upazila cards, 8 targeted-strip cards, no
+  page-level or card-level horizontal overflow, no page errors, Sonargaon,
+  Chattogram, `0 closed`, and `0 facility absence uses` visible. Screenshots:
+  `reporting-site/qa/showcase-psdq-zero-osm-observability-desktop.png`,
+  `reporting-site/qa/showcase-psdq-zero-osm-observability-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-zero-osm-observability-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-zero-osm-observability-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh priority name-conflict review for the
   PSDQ facility-validation decision ledger. New no-network script
   `scripts/build-bgd-facility-priority-name-conflict-review.py` reads
@@ -699,12 +737,13 @@ label without implying human-final review.
 Current loop:
 
 1. Owner-only source-owner contact or human location validation is now the
-   substantive source-repair, possible same-facility, and priority
-   name-conflict wall for the
+   substantive source-repair, possible same-facility, priority
+   name-conflict, and facility-level zero-OSM absence wall for the
    unresolved Durgapur same-name cross-district coordinate conflict, the two
    shared-coordinate Narayanganj rows, the three possible same-facility
-   public-map candidates, and the nine priority name-conflict candidates. AI
-   must not contact DGHS, any facility, or any external reviewer.
+   public-map candidates, the nine priority name-conflict candidates, and
+   any specific DGHS row sitting inside a zero-OSM upazila context. AI must
+   not contact DGHS, any facility, or any external reviewer.
 2. Keep source-repair-first rows before any map-absence or same-facility
    language because coordinate/source repair changes the interpretation.
 3. Keep zero-OSM upazila observability rows separate from row-level absence

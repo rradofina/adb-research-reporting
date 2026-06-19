@@ -49,6 +49,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-facility-public-source-decision-ledger.py` — converts the 40-row public-source confirmation packet into a no-network reviewer decision ledger
 - `scripts/build-bgd-facility-possible-same-facility-review.py` — builds a no-contact review packet for the three possible same-facility public-map candidates and blocks premature closure/reclassification
 - `scripts/build-bgd-facility-priority-name-conflict-review.py` — builds a no-contact review packet for the nine priority-1 name-conflict rows and blocks premature closure/reclassification
+- `scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` — builds a no-contact upazila-level observability packet for active-registry rows with zero joined OSM health features and blocks facility-level absence language
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
@@ -110,6 +111,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json` — chart-ready name-score, distance, retrieval, and keep-open counts for possible same-facility rows
 - `generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv` — no-contact review gates for the nine priority-1 name-conflict public-map candidates
 - `generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json` — chart-ready name-score, distance, admin-place, alias-source, and keep-open counts for priority name-conflict rows
+- `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv` — upazila-level zero-OSM observability review for active-registry rows, including targeted inspection queue links
+- `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json` — chart-ready zero-OSM upazila counts, class counts, division rows, and keep-open gates
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json` — chart-ready source-repair attachment counts, evidence classes, and candidate groups
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv` — official DGHS profile coordinate evidence for the four source-repair-first rows
@@ -334,6 +337,15 @@ Current audit result:
   0.70; 6 candidates are at least 5 kilometers from the inspection point; and
   the current artifacts contain 0 public alias or location sources. It allows
   0 closures, 0 same-facility reclassifications, and 0 map-absence uses.
+- **BGD zero-OSM upazila observability review:** the no-network review reads
+  the exposure-ranked disagreement table, exposure summary, targeted
+  public-map inspection CSV, and decision-ledger summary. It isolates 115
+  active-registry upazilas with 0 joined OSM health features, covering 3,879
+  active DGHS clinical rows and 2,334,152 p85 buildings in the 3 km
+  under-observed proxy. It links the 18 deferred inspection rows across 5
+  targeted upazilas while allowing 0 facility closures, 0 facility-level
+  absence uses, and 0 coordinate corrections. This is upazila-level source
+  observability context, not facility validation.
 - **BGD source-repair public evidence:** the no-network attachment pass reads
   the decision ledger and targeted-row confirmation CSV, then attaches public
   DGHS profile and OSM API evidence to the 4 source-repair-first rows. All 4
@@ -414,6 +426,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py

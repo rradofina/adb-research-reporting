@@ -478,6 +478,36 @@ row resolution. These rows stay open until public alias evidence, a public
 location source, source-owner clarification, or human validation resolves the
 name conflict.
 
+## Zero-OSM Upazila Observability Review Addendum
+
+The zero-OSM upazila observability review now lives in
+`facility-validation-zero-osm-upazila-observability-review.md`. The script
+`scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` reads
+the exposure-ranked source-disagreement table, exposure summary, targeted
+public-map inspection CSV, and decision-ledger summary without fetching new
+data. It isolates upazilas where active DGHS clinical registry rows join to
+zero OSM health features.
+
+The pass covers the 115 active-registry zero-OSM upazilas in the exposure
+table:
+
+| Zero-OSM observability signal | Rows |
+|---|---:|
+| Active-registry upazilas with zero joined OSM health features | 115 |
+| Active DGHS clinical rows in those upazilas | 3,879 |
+| Zero-OSM upazilas with Open Buildings denominator | 108 |
+| Zero-OSM upazilas with OSM boundary match | 75 |
+| Targeted inspection rows linked to this lane | 18 |
+| Targeted zero-OSM upazilas | 5 |
+| Facility-row closures allowed | 0 |
+| Facility-level absence uses allowed | 0 |
+| Coordinate corrections allowed | 0 |
+
+The practical rule is that zero joined OSM health features at upazila level is
+a source-observability flag, not a row-level absence finding. The 18 targeted
+inspection rows stay open until a facility-level public source, source-owner
+clarification, or human validation resolves each row.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -668,6 +698,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
+python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -711,6 +742,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-priority-name-conflict-review-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

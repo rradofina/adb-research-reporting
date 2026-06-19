@@ -72,6 +72,7 @@ const ARTIFACTS = [
   { key: "facility_validation_public_source_decision_ledger", file: "facility-validation-public-source-decision-ledger.md", label: "Facility-validation public-source decision ledger" },
   { key: "facility_validation_possible_same_facility_review", file: "facility-validation-possible-same-facility-review.md", label: "Facility-validation possible same-facility review" },
   { key: "facility_validation_priority_name_conflict_review", file: "facility-validation-priority-name-conflict-review.md", label: "Facility-validation priority name-conflict review" },
+  { key: "facility_validation_zero_osm_upazila_observability_review", file: "facility-validation-zero-osm-upazila-observability-review.md", label: "Facility-validation zero-OSM upazila observability review" },
   { key: "facility_validation_source_repair_public_evidence", file: "facility-validation-source-repair-public-evidence.md", label: "Facility-validation source-repair public evidence" },
   { key: "facility_validation_source_repair_official_coordinate_evidence", file: "facility-validation-source-repair-official-coordinate-evidence.md", label: "Facility-validation source-repair official-coordinate evidence" },
   { key: "facility_validation_source_repair_public_explanation_evidence", file: "facility-validation-source-repair-public-explanation-evidence.md", label: "Facility-validation source-repair public explanation evidence" },

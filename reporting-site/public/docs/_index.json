@@ -44,8 +44,8 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 138305,
-    "size_human": "135.1 KB"
+    "size": 138626,
+    "size_human": "135.4 KB"
   },
   {
     "file": "wip-register.md",
@@ -74,8 +74,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 18743,
-    "size_human": "18.3 KB"
+    "size": 18880,
+    "size_human": "18.4 KB"
   },
   {
     "file": "manifest.sha256",

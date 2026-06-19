@@ -321,13 +321,16 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   useful for interpretation but still not station-level closure.
 - **New Uzbekistan station-specific source evidence scan:** the seeded source
   scan retrieves the official Uzhydromet map, 14 official regional
-  station-table pages, and one official gov.uz ecology note. It parses 93
-  regional station rows, matches all 28 target Uzbekistan rows to official
-  regional table rows, finds 22 rows where the table carries Horiba station
-  context, 6 rows with `Updating data` status, and 2 target rows also named in
-  the official gov.uz event note. It still finds 0 non-API public sources
-  naming internal target station IDs, 0 current-status confirmed rows, 0
-  complete monitor-grade classification rows, and 0 station-radius-ready rows.
+  station-table pages, 28 station-detail pages, and one official gov.uz ecology
+  note. It parses 93 regional station rows, matches all 28 target Uzbekistan
+  rows to official regional table rows, finds 22 rows where the table carries
+  Horiba station context, 6 rows with `Updating data` status, 28 station-detail
+  URLs whose numeric path matches the internal target station ID, 28 retrieved
+  detail pages with measurement timestamps, 26 detail measurements within 30
+  days, 27 positive detail-page PM2.5 values, 1 negative sentinel PM2.5 value,
+  and 2 target rows also named in the official gov.uz event note. It still
+  finds 0 current-status confirmed rows, 0 complete monitor-grade
+  classification rows, and 0 station-radius-ready rows.
 
 ## Bounds
 

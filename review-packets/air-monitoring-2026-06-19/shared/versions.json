@@ -139,7 +139,7 @@
       "script": "air-monitoring/scripts/scan-uzbekistan-station-specific-source-evidence.py",
       "seed": "air-monitoring/source-inputs/uzbekistan-station-specific-source-seed.csv",
       "retrieved_on": "2026-06-19",
-      "notes": "Official Uzbekistan station-specific source scan. It retrieves the Uzhydromet main map, 14 official regional station-table pages, and one gov.uz ecology note; parses 93 regional station rows; matches all 28 target Uzbekistan rows to official regional station-table rows; finds 22 rows where the regional table carries Horiba station context and 2 rows also named in the official gov.uz event note; but 0 non-API sources name the internal target station IDs and 0 rows are current-status confirmed, complete monitor-grade, or station-radius-ready."
+      "notes": "Official Uzbekistan station-specific source scan. It retrieves the Uzhydromet main map, 14 official regional station-table pages, 28 official station-detail pages, and one gov.uz ecology note; parses 93 regional station rows; matches all 28 target Uzbekistan rows to official regional station-table rows; finds 28 station-detail URLs whose numeric path matches the internal target station ID, 26 detail measurements within 30 days, 22 rows where the regional table carries Horiba station context, 2 rows also named in the official gov.uz event note, and 1 negative sentinel detail PM2.5 value; but 0 rows are current-status confirmed, complete monitor-grade, or station-radius-ready."
     },
     "who_aaq_database": {
       "version": "v6.1",

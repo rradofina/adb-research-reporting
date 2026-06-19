@@ -100,14 +100,17 @@
   rows.
 - Uzbekistan station-specific source evidence. The 2026-06-19 station-specific
   source scan retrieves the official Uzhydromet map, 14 official regional
-  station-table pages, and one official gov.uz ecology note; parses 93 station
-  rows; matches all 28 target Uzbekistan rows to official regional
-  station-table rows; finds 22 rows with Horiba table context, 6 rows with
-  `Updating data` status, and 2 official event-note station matches. It still
-  records 0 non-API public sources naming internal target station IDs, 0
-  current-status confirmed rows, 0 complete monitor-grade classification rows,
-  and 0 station-radius-ready rows. Station-specific table context is not
-  current-status, station-ID, or grade closure.
+  station-table pages, 28 station-detail pages, and one official gov.uz
+  ecology note; parses 93 station rows; matches all 28 target Uzbekistan rows
+  to official regional station-table rows; finds 22 rows with Horiba table
+  context, 6 rows with `Updating data` status, 28 station-detail URLs whose
+  numeric path matches the internal target station ID, 28 detail pages with
+  measurement timestamps, 26 detail measurements within 30 days, 27 positive
+  detail-page PM2.5 values, 1 negative sentinel PM2.5 value, and 2 official
+  event-note station matches. It still records 0 current-status confirmed rows,
+  0 complete monitor-grade classification rows, and 0 station-radius-ready
+  rows. Station-specific table/detail-page context is not current-status or
+  grade closure.
 
 ## Source-side
 
@@ -146,12 +149,13 @@
   with method/equipment and cadence/status context, but 0 retrieved sources
   name a target station ID from the 28-row queue. These sources help explain
   the monitoring network, but they do not certify the exact target rows.
-- Official station-specific web rows are still not internal station-ID or
-  current-status closure. The Uzbekistan station-specific source evidence scan
-  finds official regional table rows for all 28 target rows, but those pages
-  expose display row numbers rather than the internal target station IDs and do
-  not certify that the target stations are currently operating or complete
-  monitor-grade.
+- Official station-specific web rows close the ID gate but not the
+  current-status or grade gate. The Uzbekistan station-specific source evidence
+  scan finds official regional table rows and station-detail URLs whose numeric
+  path matches the internal target station ID for all 28 target rows. The same
+  pages do not certify that the target stations are currently operating under a
+  regulatory or reference-grade classification, and one detail page still shows
+  a negative sentinel PM2.5 value.
 
 ## Method-side
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T11:33:21Z",
+  "generated_at": "2026-06-19T11:52:10Z",
   "program": "air-monitoring",
   "attestation_chain": "ai-first",
   "status": "computed_uzbekistan_station_specific_source_evidence",
@@ -7,7 +7,7 @@
   "goal_level": "L3 Uzbekistan station-specific source scan",
   "coverage_counts": {
     "target_uzbekistan_station_rows": 28,
-    "sources_retrieved": 16,
+    "sources_retrieved": 44,
     "official_region_pages_retrieved": 14,
     "official_region_station_rows_parsed": 93,
     "official_region_table_match_rows": 28,
@@ -15,9 +15,15 @@
     "official_region_horiba_context_rows": 22,
     "official_region_recent_update_within_30_days_rows": 0,
     "official_region_updating_data_status_rows": 6,
+    "official_region_view_url_rows": 28,
+    "official_region_view_id_matches_target_rows": 28,
+    "official_detail_pages_retrieved": 28,
+    "official_detail_measurement_timestamp_rows": 28,
+    "official_detail_recent_measurement_within_30_days_rows": 26,
+    "official_detail_positive_pm25_rows": 27,
     "official_event_note_match_rows": 2,
     "station_specific_equipment_context_rows": 22,
-    "target_station_id_named_in_non_api_source_rows": 0,
+    "target_station_id_named_in_non_api_source_rows": 28,
     "current_status_confirmed_rows": 0,
     "station_method_classified_rows": 0,
     "complete_monitor_grade_classification_rows": 0,
@@ -33,7 +39,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 170927,
-      "sha256": "296cd82ebdea0b1cb5254921c2c0da06e7d477e5b3ea22e61a6937d8caf784dd"
+      "sha256": "b263d6c9b080ab4fdf6e4e3a29c960bb0f6c082b07a985dc2b5b78e935e116d2"
     },
     {
       "source_key": "uzhydromet_region_Tashkent city",
@@ -44,7 +50,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 70089,
-      "sha256": "21c8764f48222517545225264cea8074bbd3c660a159d8a310023543243952cb"
+      "sha256": "ae5d751b5528fe64c1e790c4b60929aef20d2304229d87aac7e0b9dfd6b82f76"
     },
     {
       "source_key": "uzhydromet_region_The Republic of Karakalpakstan",
@@ -55,7 +61,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 43628,
-      "sha256": "4f1b1cfec0ef6f50904984d78c7c98c07040b89c7f1d49dbd2cca4353ae5ab8e"
+      "sha256": "933ffae7b99153d49b36b83f236cd874865ee2e4c25a4f0959d3931036af39f5"
     },
     {
       "source_key": "uzhydromet_region_Khorezm region",
@@ -66,7 +72,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 43553,
-      "sha256": "b767ebda3b3a5c1c6d8b7bdf2501166f441e44e6356fca20119acb716ca4dc7a"
+      "sha256": "4b5c607d408b16c7049c5ff390b929002f28806fdc038ff64e7ef71ad1ed265b"
     },
     {
       "source_key": "uzhydromet_region_Ferghana region",
@@ -77,7 +83,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 50061,
-      "sha256": "bb9175dd5ed30ced20d4749ab33e8530bcb122a1a2da8bcff2ca45b5990031b2"
+      "sha256": "18939ad241a0c361dc68d6325c1dee68f06d9c85caccc3c32bb92cfe72546dd7"
     },
     {
       "source_key": "uzhydromet_region_Tashkent region",
@@ -88,7 +94,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 62724,
-      "sha256": "3770e67c6cb0001a2876ae24976306354a85ef71aafb193f2e37a374a19dc9ad"
+      "sha256": "85ecc423e48cba4beeec83fd1c955a8d36486fb6e8c4e21f776d6065f1c15b2e"
     },
     {
       "source_key": "uzhydromet_region_Syrdarya region",
@@ -99,7 +105,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 43568,
-      "sha256": "955762258d9e6e95fe6b1a1852453d10d4c1ca3e1d08f1d616f6fc54a400ff7e"
+      "sha256": "de9eed71cbe338dfb11ddb4c162a36cbafd75928e809c4ee81ad84957dba4d6b"
     },
     {
       "source_key": "uzhydromet_region_Surkhandarya region",
@@ -110,7 +116,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 46337,
-      "sha256": "88822c2a8dac6b018f8011df5a9b9f0711c97fabf9949115dd254c622f409c0d"
+      "sha256": "17c7d1101a0cce373f337a70e1bc627ad1b929b7da0d9a8fd484fcca7cd9ba33"
     },
     {
       "source_key": "uzhydromet_region_Samarkand region",
@@ -121,7 +127,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 46357,
-      "sha256": "f1fb35c900c7b83fee6e84c438c9a6140ee2417ee8092744d5da9494c165dd64"
+      "sha256": "67d2c8173d9c891f1050eec5ad953f8e8c31702416871d6e1ac73d42b56a0a33"
     },
     {
       "source_key": "uzhydromet_region_Namangan region",
@@ -132,7 +138,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 44792,
-      "sha256": "8c62aae42ad487ac3dfcd3cf0b329183a74e1a65c68cd65a97d28934b89c7035"
+      "sha256": "85a288d2e241f2598292c866e4122644fb5208a1860685ceee6bac87270f310e"
     },
     {
       "source_key": "uzhydromet_region_Navoi region",
@@ -143,7 +149,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 44504,
-      "sha256": "53248734a8868002c151a311d2cdd55e4827fc47bded6e59abee21827f90b64d"
+      "sha256": "c2fbfcc4d47cfbb90ad4929055e631db4f39b86fcf13656476f6e62b106ad0da"
     },
     {
       "source_key": "uzhydromet_region_Kashkadarya region",
@@ -154,7 +160,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 47582,
-      "sha256": "8e3cc674b6af1002dd30542f18d908b793a808ac0cc1d8e4e9946f2965cfe76e"
+      "sha256": "50a30239cfe1a0173ee597fa822214c0157dde228de4a086b546262376719e9a"
     },
     {
       "source_key": "uzhydromet_region_Djizzak region",
@@ -165,7 +171,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 40815,
-      "sha256": "3c44cd6662fded9e95c2d357cdc40a2e262b8101e42af8b80a7dc83f26bccdd6"
+      "sha256": "f43ff6e274245b4b950a6260521fe6e642cdfb86c0459605cd90ff89ba9f196f"
     },
     {
       "source_key": "uzhydromet_region_Bukhara region",
@@ -176,7 +182,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 46075,
-      "sha256": "fc168379ff3d44478d4b4cc9d12f2bf2cc8c4a5c03bca4db3e86243a7f05bc5a"
+      "sha256": "084d597af3819a2b9498f428b34b175dc6ba92bef0cb9afe0657e47523bf5387"
     },
     {
       "source_key": "uzhydromet_region_Andijan region",
@@ -187,7 +193,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 44749,
-      "sha256": "c9513e84888e98a4ceb4fdac413e9c55796cf67b5ac06e2cc3b8d01ce0390751"
+      "sha256": "bce9d134a4169764c28dca06162055c6cf94505cc792499203462ebdaee893f3"
     },
     {
       "source_key": "gov_uz_eco_tashkent_pm25_event",
@@ -197,8 +203,316 @@
       "retrieved": true,
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
-      "retrieval_bytes": 185778,
-      "sha256": "720a2ca6d1e453435b60ecf4f1f45923aecb182b0aaedd70b552212f5493c88e"
+      "retrieval_bytes": 185296,
+      "sha256": "dd7ff4b2c7c1593e1e8713d68cc81beaa0730c227491ca4e108250f8d7573e07"
+    },
+    {
+      "source_key": "uzhydromet_station_view_107",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/107",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/107",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33169,
+      "sha256": "d27c1962df43c60ff4e4c557f411907c7fad43ddaf7c03969cd3af2adcd95584"
+    },
+    {
+      "source_key": "uzhydromet_station_view_108",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/108",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/108",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33164,
+      "sha256": "94019971f1afa7d08689d31f7d909a6571ed740c283b289ca3c71d3f55587f5d"
+    },
+    {
+      "source_key": "uzhydromet_station_view_714",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/714",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/714",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34089,
+      "sha256": "3e24021494243555cfc782e14aab9daeeb737cedf260542bb4a28bcd5a28a390"
+    },
+    {
+      "source_key": "uzhydromet_station_view_715",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/715",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/715",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34094,
+      "sha256": "d2bf56c3225e7db75ceac8ac7f6f80ee01d642f83b6845f089db041b4e44cfc2"
+    },
+    {
+      "source_key": "uzhydromet_station_view_716",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/716",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/716",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34119,
+      "sha256": "4f3282421b21e41a1d37facc8a1483cd51bf8bae8bfb9a37ac95e65c4c9710d2"
+    },
+    {
+      "source_key": "uzhydromet_station_view_717",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/717",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/717",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34010,
+      "sha256": "d0eec2eb3535b1367c942826ac08de3ab0fc8813e2ac0e509c12df6bb7d3ddb9"
+    },
+    {
+      "source_key": "uzhydromet_station_view_718",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/718",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/718",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34074,
+      "sha256": "c0df8aade2b2573e8dc9a3b31e5f3ce07313f8a805e2ec6ea46752186b8476d1"
+    },
+    {
+      "source_key": "uzhydromet_station_view_719",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/719",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/719",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34079,
+      "sha256": "d3cf9fcfb698c87a4451a535187ef2bd22c2ceecf0d063cc696a45e474e09b11"
+    },
+    {
+      "source_key": "uzhydromet_station_view_720",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/720",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/720",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33890,
+      "sha256": "41782dc9eed524ba5b5568bc4757a73aeac7d9de731f182e043a3a7a7ad904f2"
+    },
+    {
+      "source_key": "uzhydromet_station_view_721",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/721",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/721",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33868,
+      "sha256": "bdebff8d1e3f9d19bd936f79cdeb5935b3029ff607981a7c24a13c7e7901a378"
+    },
+    {
+      "source_key": "uzhydromet_station_view_722",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/722",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/722",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33805,
+      "sha256": "f03f513654b550eeb8e22fd2f1d38a66a341b1bd89f2d7d0e609408583d8a4b8"
+    },
+    {
+      "source_key": "uzhydromet_station_view_723",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/723",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/723",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33874,
+      "sha256": "8f10b32139a35a79c2bcc50c4a6c7189351cf07e26b01c13c8271b8a83ffefba"
+    },
+    {
+      "source_key": "uzhydromet_station_view_724",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/724",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/724",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33811,
+      "sha256": "31d2887ac92f1ad5b88dcea2e0df54075fc28802299e591bb7c9d090d8f6266b"
+    },
+    {
+      "source_key": "uzhydromet_station_view_725",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/725",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/725",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33815,
+      "sha256": "19b0fead5d8b14da2182591fb626b400b4913a7844210c59cf0c9882b5bae6dc"
+    },
+    {
+      "source_key": "uzhydromet_station_view_726",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/726",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/726",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33882,
+      "sha256": "8679005e0c2d3cc97106f3b97ac8351edd849d0e07f699d1855223caa19e5f35"
+    },
+    {
+      "source_key": "uzhydromet_station_view_727",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/727",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/727",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33809,
+      "sha256": "a86587a0eecb0c94eea6c77c99949b203646503baaffbc030e09ada0009172ac"
+    },
+    {
+      "source_key": "uzhydromet_station_view_728",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/728",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/728",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33030,
+      "sha256": "ab7dfb396a3d6a6b000b0db9e9ed5997ad3637dc3046e034ad6e2830828c1c85"
+    },
+    {
+      "source_key": "uzhydromet_station_view_729",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/729",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/729",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33061,
+      "sha256": "55d07b0474cdb1f19b4df2feb0c22f0bc074c3577a6a0f7c51537284c97e98b4"
+    },
+    {
+      "source_key": "uzhydromet_station_view_730",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/730",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/730",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33025,
+      "sha256": "c6bfe5c5cd81fd66ca2c711346d7902740a0c1118ee8fd6c885d27fbe832d380"
+    },
+    {
+      "source_key": "uzhydromet_station_view_731",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/731",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/731",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33058,
+      "sha256": "279f7c30c371123e56fe412ee09087691b805e1ab59739c83a17260c6b54a908"
+    },
+    {
+      "source_key": "uzhydromet_station_view_732",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/732",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/732",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33034,
+      "sha256": "c50afeab52a6c90d4d6a95dfba080d6d5c42dbe9af627dd6234475cdc61c5720"
+    },
+    {
+      "source_key": "uzhydromet_station_view_733",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/733",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/733",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33028,
+      "sha256": "be0009ae23a4b49c830de6662da3b7fa60ecff1bedf637727bfa20c6443e573f"
+    },
+    {
+      "source_key": "uzhydromet_station_view_734",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/734",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/734",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33015,
+      "sha256": "880e80ba4951484c94006d6114abe3d88533b79b823337785d9179d79fea4cc5"
+    },
+    {
+      "source_key": "uzhydromet_station_view_735",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/735",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/735",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33011,
+      "sha256": "be710def15b9133206e5cfcc9eecca4f4e6a00b6818f34d1ab26864753d429b2"
+    },
+    {
+      "source_key": "uzhydromet_station_view_736",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/736",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/736",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33014,
+      "sha256": "9355d6e97168c97be284c055347f7dbb8a5e583ebd60d6d700e29e1aafc96c43"
+    },
+    {
+      "source_key": "uzhydromet_station_view_737",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/737",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/737",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33015,
+      "sha256": "8fe632df2023e9df307d5b4fcd9b8cef7b86a7d28eedc95a975286ac1503c086"
+    },
+    {
+      "source_key": "uzhydromet_station_view_738",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/738",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/738",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33008,
+      "sha256": "e54d3e5bb3c438c172b08a55b0cdf0e48aa452b22625663d27d5ca0cb8c43351"
+    },
+    {
+      "source_key": "uzhydromet_station_view_739",
+      "source_role": "official_station_detail_view",
+      "url": "https://monitoring.meteo.uz/en/map/view/739",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/739",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33024,
+      "sha256": "94d7b7f9442714f6b29a8cb8c23c78f018f0d89c5aa3cbca2a3abc0609f08d1e"
     }
   ],
   "match_quality_rows": [
@@ -217,11 +531,11 @@
   ],
   "decision_rows": [
     {
-      "source_scan_decision": "station_specific_event_context_keep_open",
+      "source_scan_decision": "station_detail_id_match_keep_open",
       "rows": 2
     },
     {
-      "source_scan_decision": "station_specific_table_context_keep_open",
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open",
       "rows": 26
     }
   ],
@@ -251,6 +565,24 @@
       "reader_use": "Recent official table timestamps are follow-up priority, not explicit current-status certification."
     },
     {
+      "gate": "Official station-detail URL matches target ID",
+      "status": "available",
+      "rows": 28,
+      "reader_use": "Official regional table links expose /map/view/{id} URLs whose numeric path matches the target station ID."
+    },
+    {
+      "gate": "Official station-detail page retrieved",
+      "status": "available",
+      "rows": 28,
+      "reader_use": "Station detail pages provide station names, update timestamps, and pollutant concentration rows."
+    },
+    {
+      "gate": "Official detail measurement within 30 days",
+      "status": "partly_available",
+      "rows": 26,
+      "reader_use": "Recent detail-page measurements are recency evidence, not complete operating-status certification."
+    },
+    {
       "gate": "Official event-note station mention",
       "status": "partly_available",
       "rows": 2,
@@ -258,9 +590,9 @@
     },
     {
       "gate": "Target station ID named outside API",
-      "status": "not_ready",
-      "rows": 0,
-      "reader_use": "The official web tables expose display row numbers, not the internal target station IDs."
+      "status": "available",
+      "rows": 28,
+      "reader_use": "The official regional table links name matching target station IDs in station-detail URLs."
     },
     {
       "gate": "Current-status confirmed",
@@ -291,8 +623,11 @@
       "official_region_row_address": "Uzgidromet, Yunusabad district (reference point: Observation site, observatory)",
       "official_region_row_auto": "",
       "official_region_row_updated_raw": "Updating data",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/107",
+      "official_detail_updated_raw": "01.05.2026 15:00",
+      "official_detail_pm25_value": "13.698",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_keep_open"
     },
     {
       "source_station_id": "108",
@@ -303,8 +638,11 @@
       "official_region_row_address": "Uzgidromet, Yunusabad district (reference point: Observation site, observatory)",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/108",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "8.44",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "714",
@@ -315,8 +653,11 @@
       "official_region_row_address": "г.Гулистан, махалля \" Буюк Келажак\". Сырдарьинское управление по гидрометеорологии.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/714",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "0.081",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "715",
@@ -327,8 +668,11 @@
       "official_region_row_address": "г.Джизак, махалля \"Зилол\" ул. Овланий, дом 2. Джизакское управление по гидрометеорологии.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/715",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "6.956",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "716",
@@ -339,8 +683,11 @@
       "official_region_row_address": "г.Самарканд, Университетский бульвар, 17. Международный университет туризма и культурного наследия.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/716",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "12.26",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "717",
@@ -351,8 +698,11 @@
       "official_region_row_address": "г.Термез, ул. Ат -Термизий. Дворец искусств.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/717",
+      "official_detail_updated_raw": "19.06.2026 11:00",
+      "official_detail_pm25_value": "16.491",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "718",
@@ -363,8 +713,11 @@
       "official_region_row_address": "Республика Каракалпакстан, г.Нукус, ул. Алмазар, дом 223. Университет Бердаха.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/718",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "44.177",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "719",
@@ -375,8 +728,11 @@
       "official_region_row_address": "г.Ургенч, ул. Ж. Мангуберды, дом 2. Хорезмское управление по гидрометеорологии.",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "06.03.2023, 11:20",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/719",
+      "official_detail_updated_raw": "19.06.2026 15:00",
+      "official_detail_pm25_value": "6.902",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "720",
@@ -387,8 +743,11 @@
       "official_region_row_address": "ТТЗ-4 массив",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "25.02.2024, 17:43",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/720",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "32.189",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "721",
@@ -399,8 +758,11 @@
       "official_region_row_address": "Qarshi",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "11.03.2024, 14:52",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/721",
+      "official_detail_updated_raw": "19.06.2026 15:00",
+      "official_detail_pm25_value": "7.183",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "722",
@@ -411,8 +773,11 @@
       "official_region_row_address": "Навоий",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "22.03.2024, 20:32",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/722",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "5.438",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     },
     {
       "source_station_id": "723",
@@ -423,8 +788,11 @@
       "official_region_row_address": "Бухоро",
       "official_region_row_auto": "horiba",
       "official_region_row_updated_raw": "22.03.2024, 20:33",
+      "official_region_view_url": "https://monitoring.meteo.uz/en/map/view/723",
+      "official_detail_updated_raw": "19.06.2026 16:00",
+      "official_detail_pm25_value": "6.585",
       "official_event_note_terms": "",
-      "source_scan_decision": "station_specific_table_context_keep_open"
+      "source_scan_decision": "station_detail_id_match_recent_measurement_keep_open"
     }
   ],
   "non_claim": "This scan checks official station-specific web rows and official event text for target-row context. It does not certify a target station as currently operating, reference-grade, complete monitor-grade, or station-radius-ready."

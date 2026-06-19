@@ -411,10 +411,12 @@ current-status sources, and catchment methods are added.
   official gov.uz ecology note. The scan parses 93 station rows, matches all
   28 target Uzbekistan rows to official regional station-table rows, finds 22
   rows where the regional table carries Horiba station context, 6 rows with
-  `Updating data` status, and 2 rows also named in the official gov.uz event
-  note. It still records 0 non-API public sources naming the internal target
-  station IDs, 0 current-status confirmed rows, 0 complete monitor-grade rows,
-  and 0 station-radius-ready rows. Wrote
+  `Updating data` status, 28 station-detail URLs whose numeric path matches the
+  internal target station ID, 28 detail pages with measurement timestamps, 26
+  detail measurements within 30 days, 27 positive detail-page PM2.5 values, 1
+  negative sentinel PM2.5 value, and 2 rows also named in the official gov.uz
+  event note. It still records 0 current-status confirmed rows, 0 complete
+  monitor-grade rows, and 0 station-radius-ready rows. Wrote
   `uzbekistan-station-specific-source-evidence.md`, synced the note and
   generated CSV/JSON into the public evidence packet, and refreshed the review
   packet. Chrome CDP QA at 1440x1100 and 390x1000 confirmed the home report
@@ -431,15 +433,15 @@ current-status sources, and catchment methods are added.
 ## Next focused work
 
 1. For the 28 Uzbekistan exact-row instrument-hint rows, search for public
-   station-owner or regulator documentation that explicitly names internal
-   station IDs, current operating status, station-specific certification, or
-   calibration/status records beyond the official regional station table.
-   Existing source-policy pages explain monitoring/cadence context, and the
-   station-specific scan matches all 28 target rows to official table rows, but
-   neither source layer names the internal target station IDs or closes current
-   status. Start with the 6 `Updating data` rows and the 22 rows without fresh
-   current-status confirmation. Keep every unresolved row outside
-   station-radius joins.
+   station-owner or regulator documentation that explicitly states current
+   operating status, station-specific certification, calibration/status records,
+   or method/grade classification beyond the official regional table and
+   station-detail pages. The station-specific scan now closes the internal
+   station-ID gate through official `/map/view/{id}` URLs, but it still does
+   not certify current regulatory/reference-grade operation. Start with the 2
+   detail pages whose measurement timestamps are older than 30 days and the 1
+   detail page with a negative sentinel PM2.5 value. Keep every unresolved row
+   outside station-radius joins.
 2. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, search for
    public station-owner or regulator method tables that connect the
    source-level method language to the exact station rows.
@@ -490,11 +492,13 @@ current-status sources, and catchment methods are added.
   target station ID from the 28-row queue. Source-policy context is therefore
   not station-level closure.
 - The Uzbekistan station-specific source evidence scan matches all 28 target
-  rows to official regional station-table rows and finds 22 Horiba table-context
-  rows plus 2 official gov.uz event-note station matches, but the pages expose
-  display row numbers rather than internal target station IDs, include 6
-  `Updating data` rows, and keep current-status confirmed, complete
-  monitor-grade classification, and station-radius-ready rows at 0.
+  rows to official regional station-table rows and finds 28 official
+  station-detail URLs whose numeric path matches the internal target station
+  ID, 26 detail measurements within 30 days, 22 Horiba table-context rows, 2
+  official gov.uz event-note station matches, and 1 negative sentinel detail
+  PM2.5 value. It closes the station-ID evidence gate for this queue, but keeps
+  current-status confirmed, complete monitor-grade classification, and
+  station-radius-ready rows at 0.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

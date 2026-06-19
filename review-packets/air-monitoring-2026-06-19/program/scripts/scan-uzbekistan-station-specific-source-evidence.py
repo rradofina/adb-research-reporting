@@ -79,9 +79,22 @@ FIELDNAMES = [
     "official_region_row_updated_raw",
     "official_region_row_updated_iso",
     "official_region_row_updated_age_days",
+    "official_region_view_url",
+    "official_region_view_station_id",
+    "official_region_view_id_matches_target",
     "official_region_horiba_context_found",
     "official_region_recent_update_within_30_days",
     "official_region_updating_data_status",
+    "official_detail_page_retrieved",
+    "official_detail_page_sha256",
+    "official_detail_page_title",
+    "official_detail_updated_raw",
+    "official_detail_updated_iso",
+    "official_detail_updated_age_days",
+    "official_detail_recent_measurement_within_30_days",
+    "official_detail_pm25_value",
+    "official_detail_pm25_value_status",
+    "official_detail_measurement_context_found",
     "official_event_note_match_found",
     "official_event_note_url",
     "official_event_note_sha256",
@@ -204,6 +217,9 @@ def parse_region_page(region: dict[str, str]) -> dict[str, Any]:
     soup = fetched.get("soup")
     if soup is not None:
         for item in soup.select(".points-item"):
+            view_anchor = item.select_one(".col-art a[href]")
+            view_url = urljoin(region["url"], view_anchor["href"]) if view_anchor else ""
+            view_match = re.search(r"/map/view/(\d+)", view_url)
             row = {
                 "region_name": region["region_name"],
                 "region_page_url": region["url"],
@@ -213,6 +229,8 @@ def parse_region_page(region: dict[str, str]) -> dict[str, Any]:
                 "address": col_text(item, "col-address"),
                 "auto": col_text(item, "col-auto"),
                 "updated_raw": col_text(item, "col-art"),
+                "view_url": view_url,
+                "view_station_id": view_match.group(1) if view_match else "",
             }
             if any(row[field] for field in ("display_row_id", "name", "address", "auto", "updated_raw")):
                 rows.append(row)
@@ -228,6 +246,42 @@ def parse_local_datetime(value: str) -> tuple[str, int | None]:
     parsed = datetime(int(year), int(month), int(day), tzinfo=timezone.utc)
     today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
     return parsed.date().isoformat(), (today - parsed).days
+
+
+def parse_detail_page(source: dict[str, Any]) -> dict[str, Any]:
+    soup = source.get("soup")
+    text = source.get("text", "")
+    title = normalize(soup.title.get_text(" ", strip=True)) if soup is not None and soup.title else ""
+    updated_raw = ""
+    updated_match = re.search(r"Updated:\s*([0-9]{2}\.[0-9]{2}\.[0-9]{4}\s+[0-9]{2}:[0-9]{2})", text)
+    if updated_match:
+        updated_raw = updated_match.group(1)
+    updated_iso, updated_age_days = parse_local_datetime(updated_raw)
+    pm25_value = ""
+    pm25_status = "missing"
+    pm25_match = re.search(r"PM\s*2\.5:\s*(-?[0-9]+(?:[.,][0-9]+)?)", text)
+    if pm25_match:
+        pm25_value = pm25_match.group(1).replace(",", ".")
+        try:
+            numeric = float(pm25_value)
+            if numeric < 0:
+                pm25_status = "negative"
+            elif numeric == 0:
+                pm25_status = "zero"
+            else:
+                pm25_status = "positive"
+        except ValueError:
+            pm25_status = "non_numeric"
+    return {
+        "title": title,
+        "updated_raw": updated_raw,
+        "updated_iso": updated_iso,
+        "updated_age_days": updated_age_days,
+        "recent": updated_age_days is not None and updated_age_days <= 30,
+        "pm25_value": pm25_value,
+        "pm25_status": pm25_status,
+        "measurement_context_found": bool(updated_raw and pm25_match and "details" in norm_key(text)),
+    }
 
 
 def address_matches(target_address: str, row_address: str) -> bool:
@@ -300,6 +354,8 @@ def station_decision(
     match_quality: str,
     event_terms: list[str],
     updated_age_days: int | None,
+    view_id_matches_target: bool,
+    detail_recent: bool,
 ) -> tuple[str, str]:
     if not region_match and not event_terms:
         return (
@@ -310,6 +366,16 @@ def station_decision(
         return (
             "station_specific_table_ambiguous_keep_open",
             "An official station-specific table row is nearby, but duplicate name/address rows prevent station-ID closure.",
+        )
+    if view_id_matches_target and detail_recent:
+        return (
+            "station_detail_id_match_recent_measurement_keep_open",
+            "The official station-detail URL matches the target station ID and has a recent measurement timestamp, but no complete grade statement.",
+        )
+    if view_id_matches_target:
+        return (
+            "station_detail_id_match_keep_open",
+            "The official station-detail URL matches the target station ID, but current-status and complete-grade certification still require stronger language.",
         )
     if updated_age_days is not None and updated_age_days <= 30:
         return (
@@ -332,6 +398,7 @@ def build_rows(
     targets: list[dict[str, str]],
     region_rows: list[dict[str, Any]],
     event_source: dict[str, Any] | None,
+    source_records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     event_text = event_source["text"] if event_source else ""
     event_url = event_source["final_url"] or event_source["url"] if event_source else ""
@@ -345,11 +412,33 @@ def build_rows(
         if region_match:
             updated_iso, updated_age_days = parse_local_datetime(region_match["updated_raw"])
         event_terms = event_terms_for_target(target, event_text)
+        view_url = region_match["view_url"] if region_match else ""
+        view_station_id = region_match["view_station_id"] if region_match else ""
+        view_id_matches_target = bool(view_station_id and view_station_id == target["source_station_id"])
+        detail_source: dict[str, Any] | None = None
+        detail = {
+            "title": "",
+            "updated_raw": "",
+            "updated_iso": "",
+            "updated_age_days": None,
+            "recent": False,
+            "pm25_value": "",
+            "pm25_status": "missing",
+            "measurement_context_found": False,
+        }
+        if view_url:
+            detail_source = fetch_source(view_url)
+            detail_source.update({"source_key": f"uzhydromet_station_view_{target['source_station_id']}", "source_role": "official_station_detail_view"})
+            source_records.append(detail_source)
+            if detail_source["retrieved"]:
+                detail = parse_detail_page(detail_source)
         decision, reader_use = station_decision(
             region_match=region_match,
             match_quality=match_quality,
             event_terms=event_terms,
             updated_age_days=updated_age_days,
+            view_id_matches_target=view_id_matches_target,
+            detail_recent=bool(detail["recent"]),
         )
         auto = region_match["auto"] if region_match else ""
         updated_raw = region_match["updated_raw"] if region_match else ""
@@ -385,16 +474,29 @@ def build_rows(
                 "official_region_row_updated_raw": updated_raw,
                 "official_region_row_updated_iso": updated_iso,
                 "official_region_row_updated_age_days": "" if updated_age_days is None else updated_age_days,
+                "official_region_view_url": view_url,
+                "official_region_view_station_id": view_station_id,
+                "official_region_view_id_matches_target": view_id_matches_target,
                 "official_region_horiba_context_found": horiba_context,
                 "official_region_recent_update_within_30_days": recent,
                 "official_region_updating_data_status": updating_status,
+                "official_detail_page_retrieved": bool(detail_source and detail_source["retrieved"]),
+                "official_detail_page_sha256": detail_source["sha256"] if detail_source and detail_source["retrieved"] else "",
+                "official_detail_page_title": detail["title"],
+                "official_detail_updated_raw": detail["updated_raw"],
+                "official_detail_updated_iso": detail["updated_iso"],
+                "official_detail_updated_age_days": "" if detail["updated_age_days"] is None else detail["updated_age_days"],
+                "official_detail_recent_measurement_within_30_days": detail["recent"],
+                "official_detail_pm25_value": detail["pm25_value"],
+                "official_detail_pm25_value_status": detail["pm25_status"],
+                "official_detail_measurement_context_found": detail["measurement_context_found"],
                 "official_event_note_match_found": event_match,
                 "official_event_note_url": event_url if event_match else "",
                 "official_event_note_sha256": event_sha if event_match else "",
                 "official_event_note_terms": "|".join(event_terms),
                 "station_specific_equipment_context_found": horiba_context or event_match,
-                "station_specific_status_or_update_context_found": bool(region_match and (updated_raw or auto)) or event_match,
-                "target_station_id_named_in_non_api_source": False,
+                "station_specific_status_or_update_context_found": bool(region_match and (updated_raw or auto)) or bool(detail["measurement_context_found"]) or event_match,
+                "target_station_id_named_in_non_api_source": view_id_matches_target,
                 "current_status_confirmed": False,
                 "station_method_classified": False,
                 "complete_monitor_grade_classification_available": False,
@@ -417,6 +519,9 @@ def evidence_gates(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     horiba_context = sum(row["station_specific_equipment_context_found"] for row in rows)
     recent_updates = sum(row["official_region_recent_update_within_30_days"] for row in rows)
     event_matches = sum(row["official_event_note_match_found"] for row in rows)
+    view_id_matches = sum(row["official_region_view_id_matches_target"] for row in rows)
+    detail_pages = sum(row["official_detail_page_retrieved"] for row in rows)
+    detail_recent = sum(row["official_detail_recent_measurement_within_30_days"] for row in rows)
     return [
         {
             "gate": "Official regional station-table match",
@@ -443,6 +548,24 @@ def evidence_gates(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "reader_use": "Recent official table timestamps are follow-up priority, not explicit current-status certification.",
         },
         {
+            "gate": "Official station-detail URL matches target ID",
+            "status": "available" if view_id_matches == len(rows) else "partly_available",
+            "rows": view_id_matches,
+            "reader_use": "Official regional table links expose /map/view/{id} URLs whose numeric path matches the target station ID.",
+        },
+        {
+            "gate": "Official station-detail page retrieved",
+            "status": "available" if detail_pages == len(rows) else "partly_available",
+            "rows": detail_pages,
+            "reader_use": "Station detail pages provide station names, update timestamps, and pollutant concentration rows.",
+        },
+        {
+            "gate": "Official detail measurement within 30 days",
+            "status": "partly_available",
+            "rows": detail_recent,
+            "reader_use": "Recent detail-page measurements are recency evidence, not complete operating-status certification.",
+        },
+        {
             "gate": "Official event-note station mention",
             "status": "partly_available",
             "rows": event_matches,
@@ -450,9 +573,9 @@ def evidence_gates(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         },
         {
             "gate": "Target station ID named outside API",
-            "status": "not_ready",
+            "status": "available" if view_id_matches == len(rows) else "partly_available",
             "rows": sum(row["target_station_id_named_in_non_api_source"] for row in rows),
-            "reader_use": "The official web tables expose display row numbers, not the internal target station IDs.",
+            "reader_use": "The official regional table links name matching target station IDs in station-detail URLs.",
         },
         {
             "gate": "Current-status confirmed",
@@ -501,6 +624,14 @@ def summary(
             row["official_region_recent_update_within_30_days"] for row in rows
         ),
         "official_region_updating_data_status_rows": sum(row["official_region_updating_data_status"] for row in rows),
+        "official_region_view_url_rows": sum(bool(row["official_region_view_url"]) for row in rows),
+        "official_region_view_id_matches_target_rows": sum(row["official_region_view_id_matches_target"] for row in rows),
+        "official_detail_pages_retrieved": sum(row["official_detail_page_retrieved"] for row in rows),
+        "official_detail_measurement_timestamp_rows": sum(bool(row["official_detail_updated_raw"]) for row in rows),
+        "official_detail_recent_measurement_within_30_days_rows": sum(
+            row["official_detail_recent_measurement_within_30_days"] for row in rows
+        ),
+        "official_detail_positive_pm25_rows": sum(row["official_detail_pm25_value_status"] == "positive" for row in rows),
         "official_event_note_match_rows": sum(row["official_event_note_match_found"] for row in rows),
         "station_specific_equipment_context_rows": sum(row["station_specific_equipment_context_found"] for row in rows),
         "target_station_id_named_in_non_api_source_rows": sum(
@@ -520,6 +651,9 @@ def summary(
         "official_region_row_address",
         "official_region_row_auto",
         "official_region_row_updated_raw",
+        "official_region_view_url",
+        "official_detail_updated_raw",
+        "official_detail_pm25_value",
         "official_event_note_terms",
         "source_scan_decision",
     ]
@@ -583,13 +717,15 @@ def main() -> None:
     event_source.update({"source_key": event_seed["source_key"], "source_role": event_seed["source_role"]})
     source_records.append(event_source)
 
-    rows = build_rows(generated_at, targets, region_rows, event_source if event_source["retrieved"] else None)
+    rows = build_rows(generated_at, targets, region_rows, event_source if event_source["retrieved"] else None, source_records)
     write_csv(OUT_CSV, rows)
     write_json(OUT_JSON, summary(generated_at, rows, source_records, region_rows))
     print(
         "Built Uzbekistan station-specific source evidence: "
         f"{len(rows)} target rows; "
         f"{sum(row['official_region_table_match_found'] for row in rows)} official regional table matches; "
+        f"{sum(row['official_region_view_id_matches_target'] for row in rows)} station-detail ID matches; "
+        f"{sum(row['official_detail_recent_measurement_within_30_days'] for row in rows)} recent detail measurements; "
         f"{sum(row['official_region_horiba_context_found'] for row in rows)} Horiba table rows; "
         f"{sum(row['official_event_note_match_found'] for row in rows)} official event-note matches; "
         "0 current-status confirmed rows."

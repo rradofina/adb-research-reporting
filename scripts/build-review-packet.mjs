@@ -62,6 +62,7 @@ const PROGRAM_FILES = [
   "leave-one-out-runs.json",
   "coverage.md",
   "results.md",
+  "metadata-readiness-audit.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

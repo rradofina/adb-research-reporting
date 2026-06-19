@@ -7,6 +7,10 @@
 - Subnational PM2.5 exposure (country-mean WDI only).
 - Source attribution (transport / household / industrial / burning).
 - Reference-grade vs low-cost monitor distinction in OpenAQ count.
+- Station-radius/catchment coverage, monitor grade, station first-seen
+  timestamps, and regulator inventory completeness. The committed
+  metadata-readiness audit finds 0 station-level cache files and 0 station
+  coordinate, grade, vintage, or regulatory-inventory rows.
 
 ## Source-side
 

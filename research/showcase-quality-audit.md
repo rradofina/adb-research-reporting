@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, and a metadata-readiness audit make the monitoring observability gap and station-level evidence wall legible | Needs station coordinates, monitor grade/owner, first-seen or vintage metadata, regulatory-inventory comparison, and gridded population/PM2.5 denominators | Fetch and version station-level OpenAQ/regulatory metadata before any station-radius or catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
@@ -441,6 +441,25 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-psdq-evidence-ladder-desktop-cards.png`,
   `reporting-site/qa/showcase-psdq-evidence-ladder-mobile.png`, and
   `reporting-site/qa/showcase-psdq-evidence-ladder-mobile-cards.png`.
+- Air-monitoring report #6 received a metadata-readiness wall on
+  2026-06-19. New no-network script
+  `air-monitoring/scripts/build-metadata-readiness-audit.py` reads the
+  committed country panel and concentration/GDP-confound deepening, then
+  writes `generated/air-monitoring-metadata-readiness-audit.csv` and
+  `generated/air-monitoring-metadata-readiness-audit-summary.json`. The public
+  route now renders 7 evidence gate cards, 4 summary cards, 10 upgrade-queue
+  cards, and audit note/JSON/CSV links. The audit records 24 upgrade-queue
+  rows and 0 station-coordinate, monitor-grade, station-vintage, or
+  regulatory-inventory rows, so station-radius/catchment claims remain
+  blocked. Browser QA passed at 1440x1100 and 390x900 with no page or
+  metadata-section horizontal overflow, no page errors, and only existing
+  React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-air-metadata-readiness-desktop.png`,
+  `reporting-site/qa/showcase-air-metadata-readiness-desktop-cards.png`,
+  `reporting-site/qa/showcase-air-metadata-readiness-mobile.png`,
+  `reporting-site/qa/showcase-air-metadata-readiness-mobile-cards.png`,
+  `reporting-site/qa/showcase-air-metadata-readiness-mobile-gates.png`, and
+  `reporting-site/qa/showcase-air-metadata-readiness-mobile-queue.png`.
 - PSDQ report #4 then received a source-repair public-evidence attachment
   pass. New no-network script
   `public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py`
@@ -577,11 +596,13 @@ candidates before adding new surfaces.
 
 ## Next deepening order
 
-1. PSDQ source disagreement, source-owner clarification or human-review packet
-   for the unresolved Durgapur same-name cross-district coordinate conflict and
-   shared-coordinate Narayanganj records.
-2. Air-monitoring observability, because the visual hook is strong and the
-   next source upgrade is concrete.
+1. Air-monitoring observability, because the metadata-readiness wall is now
+   public and the next source upgrade is concrete: station coordinates,
+   monitor grade/owner, station vintage, and regulator inventories.
+2. PSDQ source disagreement remains strong but owner-gated: source-owner
+   clarification or human review is needed for the unresolved Durgapur
+   same-name cross-district coordinate conflict and shared-coordinate
+   Narayanganj records.
 3. Access map-completeness, because official registry joins can turn a source
    audit into a defensible planning note.
 4. Disaster metric falsification, only after a true recovery-lag source object

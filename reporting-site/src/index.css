@@ -7108,6 +7108,291 @@
     stroke: #8a5c00;
   }
 
+  .air-metadata-section {
+    display: grid;
+    gap: 1.25rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%);
+  }
+
+  .air-metadata-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  @media (min-width: 980px) {
+    .air-metadata-head {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+    }
+  }
+
+  .air-metadata-head h2 {
+    margin: 0 0 0.65rem;
+    color: var(--ink);
+    font-size: clamp(1.55rem, 2vw, 2.3rem);
+    line-height: 1.05;
+  }
+
+  .air-metadata-head p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy);
+    line-height: var(--line-copy);
+  }
+
+  .air-metadata-nonclaim {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 1rem;
+    border-left: 4px solid #9b2226;
+    background: #fff8f5;
+  }
+
+  .air-metadata-nonclaim strong {
+    color: #7a1b1e;
+    font-size: var(--type-copy-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .air-metadata-nonclaim p {
+    font-size: var(--type-copy-sm);
+  }
+
+  .air-metadata-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-metadata-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-metadata-stat-grid span,
+  .air-metadata-gate span,
+  .air-metadata-class-list span,
+  .air-metadata-downloads span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .air-metadata-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .air-metadata-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-metadata-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-metadata-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.8rem, 1fr);
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #9db7c7;
+    background: #ffffff;
+  }
+
+  .air-metadata-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-metadata-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-metadata-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-metadata-gate strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .air-metadata-gate b {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1rem;
+  }
+
+  .air-metadata-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-metadata-queue-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.26fr) minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: start;
+  }
+
+  .air-metadata-class-list {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--rule-soft);
+    background: var(--paper-deep);
+  }
+
+  .air-metadata-class-list h3 {
+    margin: 0 0 0.25rem;
+    color: var(--ink);
+    font-size: 1.05rem;
+  }
+
+  .air-metadata-class-list div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .air-metadata-class-list div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .air-metadata-class-list strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .air-metadata-queue {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-metadata-queue-card {
+    display: grid;
+    grid-template-rows: auto auto minmax(5.6rem, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-metadata-queue-card > div:first-child {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: center;
+  }
+
+  .air-metadata-queue-card > div:first-child span {
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .air-metadata-queue-card > div:first-child strong {
+    min-width: 0;
+    color: var(--ink);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .air-metadata-queue-card dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    margin: 0;
+  }
+
+  .air-metadata-queue-card dt {
+    color: var(--ink-faint);
+    font-size: 0.67rem;
+    line-height: 1.15;
+  }
+
+  .air-metadata-queue-card dd {
+    margin: 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+    overflow-wrap: anywhere;
+  }
+
+  .air-metadata-queue-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-metadata-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-metadata-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-metadata-downloads a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1180px) {
+    .air-metadata-stat-grid,
+    .air-metadata-gate-grid,
+    .air-metadata-queue {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-metadata-queue-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
   /* Access map-completeness showcase */
 
   .access-hero {
@@ -8034,6 +8319,27 @@
     .air-residual-chart,
     .air-exposure-chart {
       min-width: 0;
+    }
+
+    .air-metadata-stat-grid,
+    .air-metadata-gate-grid,
+    .air-metadata-queue {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-metadata-gate,
+    .air-metadata-queue-card {
+      grid-template-rows: auto;
+    }
+
+    .air-metadata-queue-card dl {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .air-metadata-downloads {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
     }
 
     .access-hero-stats {

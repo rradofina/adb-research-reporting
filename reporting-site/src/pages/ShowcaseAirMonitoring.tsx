@@ -116,6 +116,73 @@ interface DeepeningData {
   generated_at: string;
 }
 
+interface MetadataGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface MetadataQueueClassCount {
+  name: string;
+  rows: number;
+}
+
+interface MetadataUpgradeQueueRow {
+  iso3: string;
+  country: string;
+  subregion: string;
+  population: number;
+  pm25_locations: number;
+  pm25_exposure_ugm3: number;
+  pm25_observability_gap_score: number;
+  pm25_above_who_guideline_5_ugm3: boolean;
+  baseline_gap_top5: boolean;
+  zero_public_monitor_above_guideline: boolean;
+  top_positive_gdp_residual: boolean;
+  log10_people_per_monitor_residual: number | null;
+  gdp_pc_year: number | null;
+  gdp_pc_current_usd: number | null;
+  station_coordinates_available_in_committed_artifacts: boolean;
+  monitor_grade_available_in_committed_artifacts: boolean;
+  monitor_first_seen_available_in_committed_artifacts: boolean;
+  regulatory_inventory_available_in_committed_artifacts: boolean;
+  station_radius_analysis_ready: boolean;
+  upgrade_queue_class: string;
+  next_evidence_needed: string;
+  non_claim: string;
+}
+
+interface MetadataReadinessSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  readiness_scope: {
+    panel_rows: number;
+    countries_with_public_monitor_count: number;
+    countries_with_pm25_exposure: number;
+    zero_public_monitor_above_guideline_economies: number;
+    monitored_economies_with_gdp_residuals: number;
+    baseline_gap_top5_rows: number;
+    positive_gdp_residual_queue_rows: number;
+    unique_upgrade_queue_rows: number;
+    station_level_cache_files: number;
+    station_coordinate_rows_available: number;
+    monitor_grade_rows_available: number;
+    monitor_first_seen_rows_available: number;
+    regulatory_inventory_rows_available: number;
+    station_radius_analysis_ready: boolean;
+  };
+  evidence_gate_counts: MetadataGate[];
+  upgrade_queue_class_counts: MetadataQueueClassCount[];
+  top_upgrade_queue_rows: MetadataUpgradeQueueRow[];
+  non_claim: string;
+}
+
 type AirMode = "concentration" | "residual" | "exposure";
 
 const MODES: Array<{ id: AirMode; label: string }> = [
@@ -158,9 +225,20 @@ function residualByIso(rows: ResidualRow[], iso: string) {
   return rows.find((row) => row.iso3 === iso);
 }
 
+function sentenceCaseStatus(value: string) {
+  return value.replaceAll("_", " ");
+}
+
+function gateTone(status: string) {
+  if (status === "available") return "available";
+  if (status === "not_yet_collected") return "pending";
+  return "blocked";
+}
+
 export default function ShowcaseAirMonitoring() {
   const [deepening, setDeepening] = useState<DeepeningData | null>(null);
   const [panel, setPanel] = useState<AirPanelData | null>(null);
+  const [metadataReadiness, setMetadataReadiness] = useState<MetadataReadinessSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
   const [error, setError] = useState<string | null>(null);
@@ -175,10 +253,15 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`panel HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-metadata-readiness-audit-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`metadata readiness HTTP ${r.status}`);
+        return r.json();
+      }),
     ])
-      .then(([deepeningPayload, panelPayload]) => {
+      .then(([deepeningPayload, panelPayload, metadataPayload]) => {
         setDeepening(deepeningPayload);
         setPanel(panelPayload);
+        setMetadataReadiness(metadataPayload);
       })
       .catch((err) => setError(String(err)));
   }, []);
@@ -281,6 +364,8 @@ export default function ShowcaseAirMonitoring() {
           </p>
         </div>
       </section>
+
+      <AirMetadataReadinessPanel summary={metadataReadiness} />
 
       <section className="showcase-explorer">
         <div className="showcase-explorer-head">
@@ -400,10 +485,141 @@ export default function ShowcaseAirMonitoring() {
           <a href="/programs/air-monitoring/generated/air-monitoring-adb-panel.json" download>
             Source panel JSON
           </a>
+          <a href="/programs/air-monitoring/metadata-readiness-audit.md" download>
+            Metadata audit note
+          </a>
+          <a href="/programs/air-monitoring/generated/air-monitoring-metadata-readiness-audit-summary.json" download>
+            Metadata audit JSON
+          </a>
           <Link to="/air-monitoring?view=evidence">Program evidence</Link>
         </div>
       </section>
     </article>
+  );
+}
+
+function AirMetadataReadinessPanel({ summary }: { summary: MetadataReadinessSummary | null }) {
+  const scope = summary?.readiness_scope;
+  const gateRows = summary?.evidence_gate_counts ?? [];
+  const queueRows = summary?.top_upgrade_queue_rows.slice(0, 10) ?? [];
+  const classCounts = summary?.upgrade_queue_class_counts ?? [];
+
+  return (
+    <section className="showcase-section air-metadata-section" aria-label="Air-monitoring metadata-readiness audit">
+      <div className="air-metadata-head">
+        <div>
+          <p className="kicker kicker-crimson">Metadata-readiness wall</p>
+          <h2>The next claim is blocked at station metadata.</h2>
+          <p>
+            The audit reads the committed country panel and GDP-confound
+            deepening, then asks whether the evidence is ready for
+            station-radius, monitor-grade, station-vintage, or regulatory
+            inventory language. The answer is not yet: the public route keeps
+            the blocked station-level gates visible before the observability
+            claim is widened.
+          </p>
+        </div>
+        <div className="air-metadata-nonclaim">
+          <strong>Non-claim</strong>
+          <p>
+            OpenAQ-visible zero is not proof that no monitor exists on the
+            ground. It means no public OpenAQ PM2.5 location is present in the
+            committed panel until a national regulator inventory is checked.
+          </p>
+        </div>
+      </div>
+
+      {summary && scope ? (
+        <>
+          <div className="air-metadata-stat-grid">
+            <div>
+              <span>Country-panel rows</span>
+              <strong>{formatNumber(scope.panel_rows)}</strong>
+              <em>monitor count and PM2.5 exposure available</em>
+            </div>
+            <div>
+              <span>Upgrade-queue rows</span>
+              <strong>{formatNumber(scope.unique_upgrade_queue_rows)}</strong>
+              <em>baseline, residual, or zero-monitor evidence need</em>
+            </div>
+            <div>
+              <span>Station-coordinate rows</span>
+              <strong>{formatNumber(scope.station_coordinate_rows_available)}</strong>
+              <em>required for radius or catchment claims</em>
+            </div>
+            <div>
+              <span>Station-radius ready</span>
+              <strong>{scope.station_radius_analysis_ready ? "yes" : "no"}</strong>
+              <em>station-level cache files: {formatNumber(scope.station_level_cache_files)}</em>
+            </div>
+          </div>
+
+          <div className="air-metadata-gate-grid">
+            {gateRows.map((gate) => (
+              <article key={gate.gate} className={`air-metadata-gate air-metadata-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-metadata-queue-layout">
+            <div className="air-metadata-class-list">
+              <h3>Queue classes</h3>
+              {classCounts.map((item) => (
+                <div key={item.name}>
+                  <span>{sentenceCaseStatus(item.name)}</span>
+                  <strong>{formatNumber(item.rows)}</strong>
+                </div>
+              ))}
+            </div>
+
+            <div className="air-metadata-queue">
+              {queueRows.map((row) => (
+                <article key={row.iso3} className="air-metadata-queue-card">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>PM2.5 locations</dt>
+                      <dd>{formatNumber(row.pm25_locations)}</dd>
+                    </div>
+                    <div>
+                      <dt>Gap score</dt>
+                      <dd>{formatNumber(row.pm25_observability_gap_score)}</dd>
+                    </div>
+                    <div>
+                      <dt>GDP residual</dt>
+                      <dd>{signed(row.log10_people_per_monitor_residual)}</dd>
+                    </div>
+                  </dl>
+                  <p>{row.next_evidence_needed}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-metadata-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/metadata-readiness-audit.md" download>
+              Audit note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-metadata-readiness-audit-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-metadata-readiness-audit.csv" download>
+              Audit CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading metadata-readiness audit...</p>
+      )}
+    </section>
   );
 }
 

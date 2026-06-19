@@ -18,6 +18,9 @@ is a composite triage measure per CONSTITUTION.md §6.4, never a country
 pollution ranking; per §13.3 this is a measurement / coverage gap.
 
 Artifact: `generated/air-monitoring-concentration-deepening.{json,csv}`.
+Metadata-readiness audit:
+`generated/air-monitoring-metadata-readiness-audit-summary.json` and
+`generated/air-monitoring-metadata-readiness-audit.csv`.
 
 ## The two questions
 
@@ -133,6 +136,12 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   from a public WDI fetch and confirms that development capacity is a major
   confound. It does not settle HDI-adjusted observability, sensor grade,
   subnational monitor catchments, or zero-monitor residuals.
+- **New metadata gate:** the metadata-readiness audit covers 50 country-panel
+  rows and 24 upgrade-queue rows, but finds 0 station-level cache files, 0
+  station-coordinate rows, 0 monitor-grade rows, 0 first-seen/vintage rows, and
+  0 regulatory-inventory rows in the committed artifacts. Station-radius,
+  monitor-grade, station-vintage, and regulatory-inventory claims are therefore
+  not ready.
 
 ## Bounds
 
@@ -170,4 +179,5 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
 
 ```bash
 python air-monitoring/scripts/deepen-concentration-and-hdi.py
+python air-monitoring/scripts/build-metadata-readiness-audit.py
 ```

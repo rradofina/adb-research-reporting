@@ -30,6 +30,7 @@ import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import matplotlib
@@ -53,6 +54,28 @@ DISASTER_PANEL = ROOT / "disaster-recovery-lag" / "generated" / "disaster-recove
 
 API_BASE = "https://api.worldbank.org/v2/country/all/indicator"
 RETRIEVED_AT = datetime.now(timezone.utc)
+CURRENT_YEAR = RETRIEVED_AT.year
+FINDEX_2025_DOWNLOAD_PAGE = "https://www.worldbank.org/en/publication/globalfindex/download-data"
+FINDEX_2025_COUNTRY_CSV_URL = (
+    "https://thedocs.worldbank.org/en/doc/"
+    "be6615202d1f08a25855c8ac2d615122-0050012025/related/"
+    "GlobalFindexDatabase2025.csv"
+)
+G2PX_KNOWLEDGE_URL = "https://www.worldbank.org/en/programs/g2px/knowledge"
+FINDEX_2025_CACHE = CACHE / "GlobalFindexDatabase2025.csv"
+
+FINDEX_2025_CANDIDATE_VARIABLES = {
+    "account_t_d": "candidate account-ownership variable",
+    "g20_made": "candidate digital-payment made variable",
+    "g20_received": "candidate digital-payment received variable",
+    "g20_any": "candidate any digital-payment variable",
+    "fing2p": "candidate government-to-person payment variable",
+    "fing2p_acc": "candidate G2P-to-account variable",
+    "fing2p_cash": "candidate G2P-cash variable",
+    "fing2p_fin": "candidate G2P-financial-institution variable",
+    "fing2p_mob": "candidate G2P-mobile-money variable",
+    "merchant_pay": "candidate merchant-payment variable",
+}
 
 PAYMENT_INDICATORS = {
     "FX.OWN.TOTL.ZS": {
@@ -159,17 +182,225 @@ def normalize_iso(row: dict, known_iso3: set[str]) -> str | None:
     return COUNTRY_ALIASES.get(name.strip().casefold())
 
 
-def fetch_indicator(code: str) -> tuple[str, Path, dict, list[dict]]:
+def fetch_indicator(code: str) -> tuple[str, Path, dict, list[dict], str, str | None]:
     url = f"{API_BASE}/{code}?format=json&per_page=20000"
     cache_path = CACHE / f"wb-{code}.json"
     request = Request(url, headers={"User-Agent": "ADB-research-topic-sprint/1.0"})
-    with urlopen(request, timeout=90) as response:
-        payload = json.load(response)
-    with cache_path.open("w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
+    retrieval_status = "live"
+    retrieval_error = None
+    try:
+        with urlopen(request, timeout=90) as response:
+            payload = json.load(response)
+        with cache_path.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+    except (HTTPError, URLError, TimeoutError, OSError) as exc:
+        if not cache_path.exists():
+            raise
+        retrieval_status = "cache_reused_after_fetch_error"
+        retrieval_error = f"{type(exc).__name__}: {exc}"
+        with cache_path.open("r", encoding="utf-8") as f:
+            payload = json.load(f)
     if not isinstance(payload, list) or len(payload) < 2:
         raise ValueError(f"Unexpected World Bank API payload for {code}")
-    return url, cache_path, payload[0], payload[1]
+    return url, cache_path, payload[0], payload[1], retrieval_status, retrieval_error
+
+
+def parse_source_year(year) -> int | None:
+    try:
+        return int(year)
+    except (TypeError, ValueError):
+        return None
+
+
+def reference_age(year) -> int | None:
+    parsed = parse_source_year(year)
+    if parsed is None:
+        return None
+    return CURRENT_YEAR - parsed
+
+
+def gap_flag(value: float | None) -> str:
+    if value is None:
+        return "missing_gap"
+    if value >= 40:
+        return "large_gap"
+    if value >= 20:
+        return "watch_gap"
+    return "small_or_negative_gap"
+
+
+def observability_tier(
+    events_per_year: float | None,
+    digital_pct: float | None,
+    gov_pct: float | None,
+    account_pct: float | None,
+    sp_coverage: float | None,
+) -> str:
+    if events_per_year is None:
+        return "exposure_missing"
+    if digital_pct is not None and gov_pct is not None and sp_coverage is not None:
+        return "two_rail_proxy"
+    if digital_pct is not None:
+        return "payment_use_proxy"
+    if account_pct is not None:
+        return "account_proxy_only"
+    return "payment_rail_missing"
+
+
+def payment_vintage_status(digital_year, has_findex_2025_candidate: bool) -> str:
+    parsed = parse_source_year(digital_year)
+    if parsed is None and has_findex_2025_candidate:
+        return "api_missing_findex2025_candidate"
+    if parsed is None:
+        return "payment_use_missing"
+    if has_findex_2025_candidate and parsed < 2024:
+        return "api_payment_use_lags_findex2025"
+    if parsed < 2021:
+        return "older_api_payment_use"
+    return "api_payment_use_current_for_endpoint"
+
+
+def source_context(year) -> str:
+    age = reference_age(year)
+    if age is None:
+        return "missing_public_field"
+    if age <= 2:
+        return "near_current_public_series"
+    if age <= 5:
+        return "standard_lag_public_series"
+    return "older_public_vintage"
+
+
+def build_evidence_flags(
+    *,
+    events_per_year: float | None,
+    digital_pct: float | None,
+    gov_pct: float | None,
+    sp_coverage: float | None,
+    account_gap: float | None,
+    sp_gov_gap: float | None,
+    digital_year,
+    has_findex_2025_candidate: bool,
+) -> list[str]:
+    flags = ["no_direct_emergency_transfer_measure"]
+    if events_per_year is None:
+        flags.append("disaster_exposure_missing")
+    if digital_pct is None:
+        flags.append("digital_payment_use_missing")
+    if gov_pct is None:
+        flags.append("government_payment_account_use_missing")
+    if sp_coverage is None:
+        flags.append("social_protection_coverage_missing")
+    if account_gap is not None and account_gap >= 40:
+        flags.append("large_account_minus_payment_use_gap")
+    elif account_gap is not None and account_gap >= 20:
+        flags.append("watch_account_minus_payment_use_gap")
+    if sp_gov_gap is not None and sp_gov_gap >= 40:
+        flags.append("large_sp_minus_government_payment_gap")
+    elif sp_gov_gap is not None and sp_gov_gap >= 20:
+        flags.append("watch_sp_minus_government_payment_gap")
+    parsed_digital_year = parse_source_year(digital_year)
+    if parsed_digital_year is not None and parsed_digital_year < 2021:
+        flags.append("older_payment_use_vintage")
+    if has_findex_2025_candidate:
+        flags.append("findex2025_2024_candidate_row_available")
+        if parsed_digital_year is None or parsed_digital_year < 2024:
+            flags.append("api_payment_use_endpoint_lags_findex2025")
+    else:
+        flags.append("findex2025_2024_candidate_row_missing")
+    return flags
+
+
+def fetch_findex_2025_inventory(known_iso3: set[str]) -> tuple[dict, set[str], dict[str, int]]:
+    request = Request(
+        FINDEX_2025_COUNTRY_CSV_URL,
+        headers={"User-Agent": "ADB-research-topic-sprint/1.0"},
+    )
+    retrieval_status = "live"
+    retrieval_error = None
+    response_headers = {}
+    try:
+        with urlopen(request, timeout=120) as response:
+            content = response.read()
+            response_headers = dict(response.headers)
+        with FINDEX_2025_CACHE.open("wb") as f:
+            f.write(content)
+    except (HTTPError, URLError, TimeoutError, OSError) as exc:
+        if not FINDEX_2025_CACHE.exists():
+            retrieval_status = "unavailable"
+            retrieval_error = f"{type(exc).__name__}: {exc}"
+            return {
+                "source": "Global Findex Database 2025 country-level CSV",
+                "download_page_url": FINDEX_2025_DOWNLOAD_PAGE,
+                "country_csv_url": FINDEX_2025_COUNTRY_CSV_URL,
+                "g2px_knowledge_url": G2PX_KNOWLEDGE_URL,
+                "retrieval_status": retrieval_status,
+                "retrieval_error": retrieval_error,
+                "cache_path": repo_rel(FINDEX_2025_CACHE),
+                "dmc_2024_all_group_rows": 0,
+                "candidate_variable_counts": {
+                    key: 0 for key in FINDEX_2025_CANDIDATE_VARIABLES
+                },
+                "candidate_variable_labels": FINDEX_2025_CANDIDATE_VARIABLES,
+                "use_rule": (
+                    "Inventory only. Candidate Findex 2025 variable codes must "
+                    "be mapped to the official glossary before replacing the "
+                    "World Bank API payment-use series."
+                ),
+            }, set(), {}
+        retrieval_status = "cache_reused_after_fetch_error"
+        retrieval_error = f"{type(exc).__name__}: {exc}"
+
+    rows_2024 = []
+    with FINDEX_2025_CACHE.open("r", encoding="iso-8859-2", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if (
+                row.get("codewb") in known_iso3
+                and row.get("year") == "2024"
+                and row.get("group") == "all"
+                and row.get("group2") == "all"
+            ):
+                rows_2024.append(row)
+
+    candidate_iso3 = {row["codewb"] for row in rows_2024}
+    candidate_counts = {
+        variable: sum(
+            1
+            for row in rows_2024
+            if row.get(variable) not in (None, "", "NA")
+        )
+        for variable in FINDEX_2025_CANDIDATE_VARIABLES
+    }
+    candidate_count_by_iso = {
+        row["codewb"]: sum(
+            1
+            for variable in FINDEX_2025_CANDIDATE_VARIABLES
+            if row.get(variable) not in (None, "", "NA")
+        )
+        for row in rows_2024
+    }
+    inventory = {
+        "source": "Global Findex Database 2025 country-level CSV",
+        "download_page_url": FINDEX_2025_DOWNLOAD_PAGE,
+        "country_csv_url": FINDEX_2025_COUNTRY_CSV_URL,
+        "g2px_knowledge_url": G2PX_KNOWLEDGE_URL,
+        "retrieval_status": retrieval_status,
+        "retrieval_error": retrieval_error,
+        "cache_path": repo_rel(FINDEX_2025_CACHE),
+        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+        "http_last_modified": response_headers.get("Last-Modified"),
+        "row_filter": "DMC ISO3 rows where year=2024, group=all, group2=all",
+        "dmc_2024_all_group_rows": len(rows_2024),
+        "candidate_variable_counts": candidate_counts,
+        "candidate_variable_labels": FINDEX_2025_CANDIDATE_VARIABLES,
+        "use_rule": (
+            "Inventory only. Candidate Findex 2025 variable codes must be "
+            "mapped to the official glossary before replacing the World Bank "
+            "API payment-use series in the chart."
+        ),
+    }
+    return inventory, candidate_iso3, candidate_count_by_iso
 
 
 def latest_values_by_iso(rows: list[dict], known_iso3: set[str]) -> dict[str, dict]:
@@ -209,15 +440,21 @@ def read_source_panels() -> tuple[dict, dict, dict[str, str], set[str]]:
     return social_rows, disaster_rows, countries, set(countries)
 
 
-def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
+def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict, dict]:
     social_rows, disaster_rows, countries, known_iso3 = read_source_panels()
+    (
+        findex_2025_inventory,
+        findex_2025_candidate_iso3,
+        findex_2025_candidate_count_by_iso,
+    ) = fetch_findex_2025_inventory(known_iso3)
     payment_values = {}
     source_records = []
 
     for code, details in PAYMENT_INDICATORS.items():
-        url, cache_path, meta, api_rows = fetch_indicator(code)
+        url, cache_path, meta, api_rows, retrieval_status, retrieval_error = fetch_indicator(code)
         latest = latest_values_by_iso(api_rows, known_iso3)
         payment_values[code] = latest
+        latest_reference_year = max((v["year"] for v in latest.values()), default=None)
         source_records.append({
             "indicator_code": code,
             "short": details["short"],
@@ -225,10 +462,15 @@ def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
             "source": details["source"],
             "url": url,
             "cache_path": repo_rel(cache_path),
+            "retrieval_status": retrieval_status,
+            "retrieval_error": retrieval_error,
             "api_total": meta.get("total"),
             "api_lastupdated": meta.get("lastupdated"),
             "dmc_latest_value_count": len(latest),
             "latest_reference_years": sorted({v["year"] for v in latest.values()}),
+            "latest_reference_year": latest_reference_year,
+            "latest_reference_age_years": reference_age(latest_reference_year),
+            "source_context": source_context(latest_reference_year),
         })
 
     rows = []
@@ -272,6 +514,28 @@ def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
         )
 
         has_plot_value = events_per_year is not None and digital_pct is not None
+        has_findex_2025_candidate = iso3 in findex_2025_candidate_iso3
+        tier = observability_tier(
+            events_per_year,
+            digital_pct,
+            gov_pct,
+            account_pct,
+            sp_coverage,
+        )
+        vintage_status = payment_vintage_status(
+            digital["year"] if digital else None,
+            has_findex_2025_candidate,
+        )
+        evidence_flags = build_evidence_flags(
+            events_per_year=events_per_year,
+            digital_pct=digital_pct,
+            gov_pct=gov_pct,
+            sp_coverage=sp_coverage,
+            account_gap=account_minus_digital,
+            sp_gov_gap=sp_minus_government,
+            digital_year=digital["year"] if digital else None,
+            has_findex_2025_candidate=has_findex_2025_candidate,
+        )
         rows.append({
             "iso3": iso3,
             "country": country,
@@ -301,12 +565,43 @@ def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
             if account_minus_digital is not None else None,
             "sp_minus_government_payment_account_pct": round(sp_minus_government, 4)
             if sp_minus_government is not None else None,
+            "observability_tier": tier,
+            "payment_vintage_status": vintage_status,
+            "digital_payment_source_context": source_context(digital["year"] if digital else None),
+            "digital_payment_age_years": reference_age(digital["year"] if digital else None),
+            "account_to_digital_year_gap": (
+                parse_source_year(account_year) - parse_source_year(digital["year"])
+                if account_year is not None and digital is not None
+                else None
+            ),
+            "account_gap_flag": gap_flag(account_minus_digital),
+            "sp_government_payment_gap_flag": gap_flag(sp_minus_government),
+            "has_findex2025_2024_candidate_row": has_findex_2025_candidate,
+            "findex2025_candidate_variable_count": (
+                findex_2025_candidate_count_by_iso.get(iso3, 0)
+            ),
+            "evidence_flags": "; ".join(evidence_flags),
             "has_disaster_data": bool(disaster),
             "has_digital_payment_use": digital_pct is not None,
             "has_government_payment_account_use": gov_pct is not None,
             "has_plot_value": has_plot_value,
         })
 
+    observability_order = {
+        "two_rail_proxy": 0,
+        "payment_use_proxy": 1,
+        "account_proxy_only": 2,
+        "payment_rail_missing": 3,
+        "exposure_missing": 4,
+    }
+    observability_counts = {
+        tier: sum(1 for r in rows if r["observability_tier"] == tier)
+        for tier in observability_order
+    }
+    payment_vintage_counts = {
+        status: sum(1 for r in rows if r["payment_vintage_status"] == status)
+        for status in sorted({r["payment_vintage_status"] for r in rows})
+    }
     coverage = {
         "dmc_rows": len(rows),
         "rows_with_disaster_event_frequency": sum(
@@ -326,6 +621,34 @@ def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
             1 for r in rows if r["active_account_pct"] is not None
         ),
         "rows_with_plot_value": sum(1 for r in rows if r["has_plot_value"]),
+        "rows_with_two_rail_proxy": observability_counts["two_rail_proxy"],
+        "rows_with_payment_use_proxy": observability_counts["payment_use_proxy"],
+        "rows_with_account_proxy_only": observability_counts["account_proxy_only"],
+        "rows_with_payment_rail_missing": observability_counts["payment_rail_missing"],
+        "rows_with_exposure_missing": observability_counts["exposure_missing"],
+        "rows_with_findex2025_2024_candidate_row": sum(
+            1 for r in rows if r["has_findex2025_2024_candidate_row"]
+        ),
+        "rows_where_api_payment_lags_findex2025": sum(
+            1
+            for r in rows
+            if r["payment_vintage_status"]
+            in ("api_payment_use_lags_findex2025", "api_missing_findex2025_candidate")
+        ),
+        "rows_with_large_account_payment_gap": sum(
+            1 for r in rows if r["account_gap_flag"] == "large_gap"
+        ),
+        "rows_with_exposure_and_large_account_gap": sum(
+            1
+            for r in rows
+            if r["account_gap_flag"] == "large_gap"
+            and (r["events_per_year_2000_2025"] or 0) >= 5
+        ),
+        "observability_tier_counts": observability_counts,
+        "payment_vintage_status_counts": payment_vintage_counts,
+        "findex2025_candidate_variable_counts": (
+            findex_2025_inventory["candidate_variable_counts"]
+        ),
     }
 
     direct_flags = sorted(
@@ -356,11 +679,35 @@ def build_joined_rows() -> tuple[list[dict], list[dict], dict, dict]:
         ),
     )[:12]
 
+    observability_watch_order = {
+        "payment_rail_missing": 0,
+        "account_proxy_only": 1,
+        "payment_use_proxy": 2,
+        "two_rail_proxy": 3,
+        "exposure_missing": 4,
+    }
+    source_observability_watchlist = sorted(
+        rows,
+        key=lambda r: (
+            -(
+                r["events_per_year_2000_2025"]
+                if r["events_per_year_2000_2025"] is not None else -1
+            ),
+            observability_watch_order.get(r["observability_tier"], 9),
+            -(
+                r["account_minus_digital_payment_pct"]
+                if r["account_minus_digital_payment_pct"] is not None else -1
+            ),
+            r["country"],
+        ),
+    )[:12]
+
     summaries = {
         "highest_disaster_exposure_with_payment_use_top12": direct_flags,
         "largest_account_minus_digital_payment_gap_top12": account_gap_flags,
+        "source_observability_watchlist_top12": source_observability_watchlist,
     }
-    return rows, source_records, coverage, summaries
+    return rows, source_records, coverage, summaries, findex_2025_inventory
 
 
 def marker_size(total_affected) -> float:
@@ -541,10 +888,22 @@ def write_scatter(rows: list[dict]) -> tuple[Path, Path]:
     fig.savefig(png_path, dpi=180)
     fig.savefig(svg_path)
     plt.close(fig)
+    with svg_path.open("r", encoding="utf-8") as f:
+        svg_lines = [line.rstrip() for line in f]
+    with svg_path.open("w", encoding="utf-8") as f:
+        f.write("\n".join(svg_lines) + "\n")
     return png_path, svg_path
 
 
-def write_outputs(rows, source_records, coverage, summaries, png_path, svg_path):
+def write_outputs(
+    rows,
+    source_records,
+    coverage,
+    summaries,
+    findex_2025_inventory,
+    png_path,
+    svg_path,
+):
     csv_path = OUT / "shock-payment-rails-sprint.csv"
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -578,6 +937,7 @@ def write_outputs(rows, source_records, coverage, summaries, png_path, svg_path)
             "social_protection_panel": repo_rel(SOCIAL_PANEL),
             "disaster_panel": repo_rel(DISASTER_PANEL),
             "world_bank_payment_indicators": source_records,
+            "findex_2025_country_level_inventory": findex_2025_inventory,
         },
         "source_sanity": {
             "unit": (
@@ -606,6 +966,21 @@ def write_outputs(rows, source_records, coverage, summaries, png_path, svg_path)
                 "vintage checks, payment-channel validation, and sensitivity "
                 "tests."
             ),
+            "findex_2025_inventory_rule": (
+                "Global Findex 2025 country-level data are inventoried as a "
+                "candidate 2024 source because the public download reports "
+                "2024 rows and payment/G2P variable codes. The sprint does "
+                "not replace the World Bank API payment-use series until "
+                "the Findex 2025 variable glossary is mapped and audited."
+            ),
+            "observability_protocol": (
+                "Two-rail proxy means the row has disaster frequency, "
+                "digital-payment use, government-payment account use, and "
+                "ASPIRE social-protection coverage. Payment-use proxy keeps "
+                "direct electronic-payment use but lacks at least one program "
+                "or government-payment leg. Account-proxy-only is not enough "
+                "for delivery-readiness language."
+            ),
         },
         "first_visual": {
             "type": "scatter",
@@ -631,10 +1006,16 @@ def write_outputs(rows, source_records, coverage, summaries, png_path, svg_path)
 
 
 def main():
-    rows, source_records, coverage, summaries = build_joined_rows()
+    rows, source_records, coverage, summaries, findex_2025_inventory = build_joined_rows()
     png_path, svg_path = write_scatter(rows)
     csv_path, json_path, payload = write_outputs(
-        rows, source_records, coverage, summaries, png_path, svg_path
+        rows,
+        source_records,
+        coverage,
+        summaries,
+        findex_2025_inventory,
+        png_path,
+        svg_path,
     )
 
     print("L2 new-topic sprint complete")
@@ -643,6 +1024,9 @@ def main():
     print(f"Rows with digital-payment use: {coverage['rows_with_digital_payment_use']}")
     print(f"Rows with government-payment account use: {coverage['rows_with_government_payment_account_use']}")
     print(f"Rows with plot value: {coverage['rows_with_plot_value']}")
+    print(f"Two-rail proxy rows: {coverage['rows_with_two_rail_proxy']}")
+    print(f"Findex 2025 candidate rows: {coverage['rows_with_findex2025_2024_candidate_row']}")
+    print(f"API payment-use rows lagging Findex 2025: {coverage['rows_where_api_payment_lags_findex2025']}")
     print(f"Decision: {payload['status']}")
     print(f"Wrote {csv_path}")
     print(f"Wrote {json_path}")

@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T16:37:09.881Z",
+  "generated_at": "2026-06-19T17:00:46.596Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 274,
-    "browserChecks": 10
+    "screenshots": 277,
+    "browserChecks": 11
   },
   "summary": {
     "reports_total": 20,
@@ -94,7 +94,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Add a payment-channel source scan and rerun the sprint with vintage and emergency-transfer non-claim checks."
+      "nextUpgrade": "Map the Findex 2025 payment/G2P variables into the generator, then rerun the sprint with event-transfer non-claim checks and one high-exposure case timeline."
     },
     {
       "id": 4,

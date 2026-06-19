@@ -1,0 +1,38 @@
+{
+  "route": "/showcase/shock-payment-rails",
+  "checked_at": "2026-06-20T01:03:00+08:00",
+  "tool": "agent-browser",
+  "desktop": {
+    "viewport": "1280x900",
+    "stats": ["14", "12", "22", "22"],
+    "stat_labels": [
+      "rows with the strongest public proxy bundle",
+      "rows with payment use but a missing program leg",
+      "DMC rows visible in the 2024 Findex candidate file",
+      "API payment-use rows lagging that source"
+    ],
+    "ledger_rows": 12,
+    "ledger_header": ["Economy", "Shock", "SP", "Acct", "Use", "Gov pay", "2024", "Tier"],
+    "visible_leg_texts": ["OK", "MISS", "WARN", "WARN", "OK", "CAND"],
+    "body_overflow": false,
+    "scroll_width": 1265,
+    "client_width": 1265,
+    "screenshots": [
+      "reporting-site/qa/showcase-shock-payment-observability-desktop.png",
+      "reporting-site/qa/showcase-shock-payment-observability-ledger-desktop.png"
+    ]
+  },
+  "mobile": {
+    "viewport": "375x900",
+    "stats": ["14", "12", "22", "22"],
+    "ledger_rows": 12,
+    "body_overflow": false,
+    "scroll_width": 360,
+    "client_width": 360,
+    "first_leg_background": "rgb(0, 125, 184)",
+    "hero_bottom_px": 1285,
+    "screenshots": [
+      "reporting-site/qa/showcase-shock-payment-observability-mobile.png"
+    ]
+  }
+}

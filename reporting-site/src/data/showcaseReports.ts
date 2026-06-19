@@ -88,10 +88,10 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/shock-payment-rails",
     status: "verified",
     statusLabel: "Prototype report",
-    deck: "Disaster exposure is compared with observable account, payment-use, and social-protection rails before any readiness claim.",
+    deck: "Disaster exposure is compared with observable account, payment-use, social-protection, and 2024 Findex candidate-source rails before any readiness claim.",
     evidencePath: "research/topic-sprints/shock-payment-rails-sprint.md",
-    visual: "Disaster-frequency scatter with payment-rail gap bars",
-    sourceNote: "EM-DAT, Findex, ASPIRE, and WDI public indicators",
+    visual: "Disaster-frequency scatter, payment-rail gap bars, and evidence-leg observability ledger",
+    sourceNote: "EM-DAT, Global Findex API/2025 country CSV inventory, ASPIRE, and WDI public indicators",
   },
   {
     id: 4,
@@ -569,9 +569,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   3: {
     readiness: "prototype",
     readinessLabel: "L2 prototype",
-    qaSummary: "Shock-payment rails joins public disaster, payment-use, and social-protection proxies with a checked visual surface.",
-    publicationGap: "Needs payment-channel metadata, ID/source vintage checks, and event-case validation before readiness language.",
-    nextUpgrade: "Add a payment-channel source scan and rerun the sprint with vintage and emergency-transfer non-claim checks.",
+    qaSummary: "Shock-payment rails joins public disaster, payment-use, social-protection, and Findex 2025 candidate-source inventory fields with a checked source-observability ledger.",
+    publicationGap: "Needs Findex 2025 variable-glossary mapping, payment-channel validation, ID/source checks, and event-case validation before readiness language.",
+    nextUpgrade: "Map the Findex 2025 payment/G2P variables into the generator, then rerun the sprint with event-transfer non-claim checks and one high-exposure case timeline.",
   },
   4: {
     readiness: "l3-candidate",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T16:36:42.810Z",
+  "generated_at": "2026-06-19T17:00:27.071Z",
   "source": "research/topic-sprints",
   "files": [
     {
@@ -26,9 +26,9 @@
     {
       "file": "generated/charts/shock-payment-rails-scatter.svg",
       "source": "research/topic-sprints/generated/charts/shock-payment-rails-scatter.svg",
-      "size": 148337,
-      "size_human": "144.9 KB",
-      "sha256": "005d6f4dd7fc35c26284c6e0bc29844ce53556c5750492dc5f892d4b5f86de4b"
+      "size": 146868,
+      "size_human": "143.4 KB",
+      "sha256": "c5ed4a4ff09b8116fbf7036d8b2b56da726990df162c30f239bbeafa9f93576f"
     },
     {
       "file": "generated/charts/wdi-data-freshness-heatmap.png",
@@ -61,16 +61,16 @@
     {
       "file": "generated/shock-payment-rails-sprint.csv",
       "source": "research/topic-sprints/generated/shock-payment-rails-sprint.csv",
-      "size": 5030,
-      "size_human": "4.9 KB",
-      "sha256": "59b1cb7ffbde42d88114dd7e982dc3975a820c5df317039c1a1d83766cb7bfc4"
+      "size": 17180,
+      "size_human": "16.8 KB",
+      "sha256": "fc1581bc54516f074fc7ac719c4f5f078e624475915061262603612da17c03e6"
     },
     {
       "file": "generated/shock-payment-rails-sprint.json",
       "source": "research/topic-sprints/generated/shock-payment-rails-sprint.json",
-      "size": 67962,
-      "size_human": "66.4 KB",
-      "sha256": "04e3c67c74c2d5b7849c6e2df710e3d92d551615b1a7f2a795146ad24f58f0f8"
+      "size": 137723,
+      "size_human": "134.5 KB",
+      "sha256": "078373b378d944ef2e445bf3208e8115bab7a055fd8b58dd640ceb3174651b0d"
     },
     {
       "file": "generated/wdi-data-freshness-sprint.csv",
@@ -96,9 +96,9 @@
     {
       "file": "reports/shock-payment-rails-sprint.md",
       "source": "research/topic-sprints/shock-payment-rails-sprint.md",
-      "size": 5444,
-      "size_human": "5.3 KB",
-      "sha256": "4545f14d299e1b1518cf5d4a98d17f8d9f2c7e363b0126a8ea095b4448b8e57a"
+      "size": 7348,
+      "size_human": "7.2 KB",
+      "sha256": "bd88c45bb498e935946a2e1041edff38da86963f8085cbd85caabe59442a0c5c"
     },
     {
       "file": "reports/wdi-data-freshness-sprint.md",

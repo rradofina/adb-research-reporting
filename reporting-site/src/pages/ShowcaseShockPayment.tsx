@@ -11,6 +11,18 @@ interface ShockCoverage {
   rows_with_government_payment_account_use: number;
   rows_with_active_account: number;
   rows_with_plot_value: number;
+  rows_with_two_rail_proxy: number;
+  rows_with_payment_use_proxy: number;
+  rows_with_account_proxy_only: number;
+  rows_with_payment_rail_missing: number;
+  rows_with_exposure_missing: number;
+  rows_with_findex2025_2024_candidate_row: number;
+  rows_where_api_payment_lags_findex2025: number;
+  rows_with_large_account_payment_gap: number;
+  rows_with_exposure_and_large_account_gap: number;
+  observability_tier_counts: Record<string, number>;
+  payment_vintage_status_counts: Record<string, number>;
+  findex2025_candidate_variable_counts: Record<string, number>;
 }
 
 interface PaymentIndicator {
@@ -22,6 +34,24 @@ interface PaymentIndicator {
   api_lastupdated: string;
   dmc_latest_value_count: number;
   latest_reference_years: number[];
+  latest_reference_year?: number | null;
+  latest_reference_age_years?: number | null;
+  source_context?: string;
+  retrieval_status?: string;
+}
+
+interface FindexInventory {
+  source: string;
+  download_page_url: string;
+  country_csv_url: string;
+  g2px_knowledge_url: string;
+  retrieval_status: string;
+  retrieval_error: string | null;
+  http_last_modified: string | null;
+  row_filter: string;
+  dmc_2024_all_group_rows: number;
+  candidate_variable_counts: Record<string, number>;
+  use_rule: string;
 }
 
 interface ShockRow {
@@ -44,6 +74,16 @@ interface ShockRow {
   poverty_year: number | null;
   account_minus_digital_payment_pct: number | null;
   sp_minus_government_payment_account_pct: number | null;
+  observability_tier: string;
+  payment_vintage_status: string;
+  digital_payment_source_context: string;
+  digital_payment_age_years: number | null;
+  account_to_digital_year_gap: number | null;
+  account_gap_flag: string;
+  sp_government_payment_gap_flag: string;
+  has_findex2025_2024_candidate_row: boolean;
+  findex2025_candidate_variable_count: number;
+  evidence_flags: string;
   has_disaster_data: boolean;
   has_digital_payment_use: boolean;
   has_government_payment_account_use: boolean;
@@ -61,6 +101,7 @@ interface ShockData {
     social_protection_panel: string;
     disaster_panel: string;
     world_bank_payment_indicators: PaymentIndicator[];
+    findex_2025_country_level_inventory: FindexInventory;
   };
   source_sanity: {
     unit: string;
@@ -68,11 +109,14 @@ interface ShockData {
     disaster_caveat: string;
     social_protection_caveat: string;
     use_limit: string;
+    findex_2025_inventory_rule: string;
+    observability_protocol: string;
   };
   rows: ShockRow[];
   triage_summaries: {
     highest_disaster_exposure_with_payment_use_top12: ShockRow[];
     largest_account_minus_digital_payment_gap_top12: ShockRow[];
+    source_observability_watchlist_top12: ShockRow[];
   };
 }
 
@@ -105,26 +149,39 @@ function yearList(years: number[]) {
   return years.slice().sort((a, b) => a - b).join(", ");
 }
 
-function mix(a: string, b: string, t: number) {
-  const pa = parseHex(a);
-  const pb = parseHex(b);
-  const clamped = Math.max(0, Math.min(1, t));
-  const c = pa.map((x, i) => Math.round(x + (pb[i] - x) * clamped));
-  return `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+function tierLabel(tier: string | null | undefined) {
+  if (!tier) return "Unclassified";
+  const labels: Record<string, string> = {
+    two_rail_proxy: "Two-rail proxy",
+    payment_use_proxy: "Payment-use proxy",
+    account_proxy_only: "Account proxy only",
+    payment_rail_missing: "Payment rail missing",
+    exposure_missing: "Exposure missing",
+  };
+  return labels[tier] || tier.replace(/_/g, " ");
 }
 
-function parseHex(hex: string) {
-  const clean = hex.replace("#", "");
-  return [
-    parseInt(clean.slice(0, 2), 16),
-    parseInt(clean.slice(2, 4), 16),
-    parseInt(clean.slice(4, 6), 16),
-  ];
+function vintageLabel(status: string | null | undefined) {
+  if (!status) return "Vintage not classified";
+  const labels: Record<string, string> = {
+    api_payment_use_lags_findex2025: "API lags Findex 2025",
+    api_missing_findex2025_candidate: "API missing, Findex candidate",
+    older_api_payment_use: "Older payment-use vintage",
+    payment_use_missing: "Payment-use missing",
+    api_payment_use_current_for_endpoint: "Current for API endpoint",
+  };
+  return labels[status] || status.replace(/_/g, " ");
 }
 
-function spFill(value: number | null) {
-  if (value === null || Number.isNaN(value)) return "#ffffff";
-  return mix("#c7d8e8", "#007DB8", Math.max(0, Math.min(1, value / 100)));
+function tierFill(tier: string | null | undefined) {
+  const colors: Record<string, string> = {
+    two_rail_proxy: "#007DB8",
+    payment_use_proxy: "#FBB00E",
+    account_proxy_only: "#8A4F7D",
+    payment_rail_missing: "#9B2226",
+    exposure_missing: "#d7dde3",
+  };
+  return colors[tier] || "#d7dde3";
 }
 
 function gapValue(row: ShockRow, mode: GapMode) {
@@ -147,10 +204,14 @@ export default function ShowcaseShockPayment() {
       .catch((err) => setError(String(err)));
   }, []);
 
-  const topExposure = data?.triage_summaries.highest_disaster_exposure_with_payment_use_top12[0];
-  const largestGap = data?.triage_summaries.largest_account_minus_digital_payment_gap_top12[0];
-  const paymentMetadata = data?.inputs.world_bank_payment_indicators || [];
+  const topExposure = data?.triage_summaries?.highest_disaster_exposure_with_payment_use_top12?.[0];
+  const largestGap = data?.triage_summaries?.largest_account_minus_digital_payment_gap_top12?.[0];
+  const paymentMetadata = data?.inputs?.world_bank_payment_indicators || [];
   const electronicPaymentMeta = paymentMetadata.find((item) => item.short === "digital_payment_use");
+  const findexInventory = data?.inputs?.findex_2025_country_level_inventory;
+  const findexCandidateCounts = findexInventory
+    ? Object.values(findexInventory.candidate_variable_counts || {})
+    : [];
 
   return (
     <article className="showcase-page">
@@ -163,8 +224,9 @@ export default function ShowcaseShockPayment() {
           <p className="showcase-lede">
             This sprint joins disaster exposure, social-protection coverage,
             account ownership, and payment-use indicators. The report asks a
-            narrower question than readiness: what public sources can actually
-            show about delivery rails after a shock?
+            narrower question than readiness: which delivery-rail evidence can
+            actually be seen, which source is only a proxy, and which newer
+            source now needs a proper variable-map before the chart changes?
           </p>
           <div className="showcase-meta">
             <span>{data?.attestation_chain || "ai-first"}</span>
@@ -179,15 +241,27 @@ export default function ShowcaseShockPayment() {
               <div className="shock-hero-stats">
                 <div>
                   <span className="showcase-stat-value">
-                    {data.coverage.rows_with_disaster_event_frequency}
+                    {data.coverage.rows_with_two_rail_proxy ?? "pending"}
                   </span>
-                  <span className="showcase-stat-label">DMC rows with disaster frequency</span>
+                  <span className="showcase-stat-label">rows with the strongest public proxy bundle</span>
                 </div>
                 <div>
                   <span className="showcase-stat-value">
-                    {data.coverage.rows_with_digital_payment_use}
+                    {data.coverage.rows_with_payment_use_proxy ?? "pending"}
                   </span>
-                  <span className="showcase-stat-label">rows with digital-payment use</span>
+                  <span className="showcase-stat-label">rows with payment use but a missing program leg</span>
+                </div>
+                <div>
+                  <span className="showcase-stat-value">
+                    {data.coverage.rows_with_findex2025_2024_candidate_row ?? "pending"}
+                  </span>
+                  <span className="showcase-stat-label">DMC rows visible in the 2024 Findex candidate file</span>
+                </div>
+                <div>
+                  <span className="showcase-stat-value">
+                    {data.coverage.rows_where_api_payment_lags_findex2025 ?? "pending"}
+                  </span>
+                  <span className="showcase-stat-label">API payment-use rows lagging that source</span>
                 </div>
               </div>
             </>
@@ -216,6 +290,41 @@ export default function ShowcaseShockPayment() {
 
       {data && <ShockRailsExplorer data={data} />}
 
+      {data && findexInventory && (
+        <section className="showcase-section showcase-two-col">
+          <div>
+            <p className="kicker">Source audit</p>
+            <h2>The newer source is visible, but not silently swapped in.</h2>
+            <p>
+              The 2025 Findex country file adds a 2024 source path for account,
+              payment, merchant, and G2P candidate variables. This page records
+              that source as an audit finding, not a replacement value, until
+              the variable glossary is mapped into the generator.
+            </p>
+          </div>
+          <div className="showcase-fact-list">
+            <div>
+              <span>Findex 2025 inventory result</span>
+              <strong>
+                {findexInventory.dmc_2024_all_group_rows} DMC rows match 2024/all/all in the country CSV
+              </strong>
+            </div>
+            <div>
+              <span>Candidate variable coverage</span>
+              <strong>
+                {findexCandidateCounts.length
+                  ? `${Math.min(...findexCandidateCounts)}-${Math.max(...findexCandidateCounts)} DMC rows across the tracked payment/G2P fields`
+                  : "Candidate variable counts pending in this JSON cache"}
+              </strong>
+            </div>
+            <div>
+              <span>Current-use rule</span>
+              <strong>{findexInventory.use_rule}</strong>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="showcase-section showcase-two-col">
         <div>
           <p className="kicker">What the first visual suggests</p>
@@ -224,7 +333,8 @@ export default function ShowcaseShockPayment() {
             The sprint makes visible that disaster frequency, digital-payment
             use, social-protection coverage, and account ownership do not form
             one clean measure. That is the research hook: the next program
-            should test source vintage, payment-channel definitions, and
+            should map the 2024 Findex candidate source, test source vintage,
+            payment-channel definitions, and
             event-specific validation before any readiness language appears.
           </p>
         </div>
@@ -254,6 +364,12 @@ export default function ShowcaseShockPayment() {
                 {electronicPaymentMeta.indicator_code} API update {electronicPaymentMeta.api_lastupdated};
                 {" "}reference years {yearList(electronicPaymentMeta.latest_reference_years)}
               </strong>
+            </div>
+          )}
+          {(data?.coverage.rows_with_exposure_and_large_account_gap || 0) > 0 && (
+            <div>
+              <span>High-exposure rows with large account-use gap</span>
+              <strong>{data?.coverage.rows_with_exposure_and_large_account_gap} rows trigger the stricter watch flag</strong>
             </div>
           )}
         </div>
@@ -324,7 +440,7 @@ function ShockHeroRails({ data }: { data: ShockData }) {
         <div className="shock-hero-row" key={row.iso3}>
           <div>
             <strong>{row.iso3}</strong>
-            <span>{formatNumber(row.events_per_year_2000_2025, 2)} events/year</span>
+            <span>{tierLabel(row.observability_tier)}</span>
           </div>
           <div className="shock-hero-bars" aria-label={`${row.country} account and digital payment use`}>
             <i
@@ -336,7 +452,7 @@ function ShockHeroRails({ data }: { data: ShockData }) {
               style={{ width: `${Math.max(3, row.digital_payment_use_pct || 0)}%` }}
             />
           </div>
-          <em>{pp(row.account_minus_digital_payment_pct, 0)} gap</em>
+          <em>{formatNumber(row.events_per_year_2000_2025, 1)} events/yr</em>
         </div>
       ))}
       <div className="shock-hero-key">
@@ -379,9 +495,8 @@ function ShockRailsExplorer({ data }: { data: ShockData }) {
           <p>
             The scatter plots disaster-event frequency against electronic
             payment use. Bubble size reflects affected event records, and fill
-            reflects ASPIRE social-protection coverage when available. The bar
-            panel shows concept gaps that should not be collapsed into an
-            index.
+            marks the source-observability tier. The bar panel shows concept
+            gaps that should not be collapsed into an index.
           </p>
         </div>
         <div className="showcase-controls" aria-label="Shock-payment explorer controls">
@@ -432,8 +547,9 @@ function ShockRailsExplorer({ data }: { data: ShockData }) {
       </div>
 
       <div className="freshness-legend shock-legend" aria-label="Shock-payment legend">
-        <span><i style={{ background: "#007DB8" }} /> Higher ASPIRE coverage</span>
-        <span><i style={{ background: "#ffffff" }} /> ASPIRE missing</span>
+        <span><i style={{ background: tierFill("two_rail_proxy") }} /> Two-rail proxy</span>
+        <span><i style={{ background: tierFill("payment_use_proxy") }} /> Payment-use proxy</span>
+        <span><i style={{ background: tierFill("payment_rail_missing") }} /> Rail missing</span>
         <span><i style={{ background: "#FBB00E" }} /> Selected economy</span>
       </div>
 
@@ -455,6 +571,14 @@ function ShockRailsExplorer({ data }: { data: ShockData }) {
           </strong>
         </div>
         <div>
+          <span>Source-observability tier</span>
+          <strong>
+            {selectedRow
+              ? `${tierLabel(selectedRow.observability_tier)}; ${vintageLabel(selectedRow.payment_vintage_status)}`
+              : "missing"}
+          </strong>
+        </div>
+        <div>
           <span>Social protection versus government-payment account use</span>
           <strong>
             {selectedRow
@@ -463,7 +587,177 @@ function ShockRailsExplorer({ data }: { data: ShockData }) {
           </strong>
         </div>
       </div>
+      <ShockObservabilityLedger data={data} onSelect={setSelectedIso} selectedIso={selectedRow?.iso3} />
     </section>
+  );
+}
+
+type LedgerState = "on" | "warn" | "candidate" | "missing";
+
+interface LedgerLeg {
+  id: string;
+  label: string;
+  title: string;
+  state: (row: ShockRow) => LedgerState;
+}
+
+const LEDGER_LEGS: LedgerLeg[] = [
+  {
+    id: "shock",
+    label: "Shock",
+    title: "EM-DAT disaster-frequency leg",
+    state: (row) => (row.events_per_year_2000_2025 != null ? "on" : "missing"),
+  },
+  {
+    id: "sp",
+    label: "SP",
+    title: "ASPIRE social-protection coverage leg",
+    state: (row) => (row.sp_coverage_pct != null ? "on" : "missing"),
+  },
+  {
+    id: "account",
+    label: "Acct",
+    title: "Account-ownership leg",
+    state: (row) => {
+      if (row.account_ownership_pct == null) return "missing";
+      return (row.account_to_digital_year_gap || 0) >= 3 ? "warn" : "on";
+    },
+  },
+  {
+    id: "use",
+    label: "Use",
+    title: "Electronic-payment-use leg",
+    state: (row) => {
+      if (row.digital_payment_use_pct == null) return "missing";
+      const status = row.payment_vintage_status || "";
+      return status.includes("lags") || status.includes("older")
+        ? "warn"
+        : "on";
+    },
+  },
+  {
+    id: "gov",
+    label: "Gov pay",
+    title: "Government-payment account-use leg",
+    state: (row) => (row.government_payment_account_use_pct != null ? "on" : "missing"),
+  },
+  {
+    id: "findex",
+    label: "2024",
+    title: "Findex 2025 country file has a 2024 all/all candidate row",
+    state: (row) => (row.has_findex2025_2024_candidate_row ? "candidate" : "missing"),
+  },
+];
+
+function legClass(state: LedgerState) {
+  return `shock-leg shock-leg-${state}`;
+}
+
+function legStyle(state: LedgerState) {
+  if (state === "on") {
+    return { background: "#007DB8", borderColor: "#007DB8", color: "#ffffff" };
+  }
+  if (state === "warn") {
+    return { background: "#FBB00E", borderColor: "#d89a00", color: "#2b2408" };
+  }
+  if (state === "candidate") {
+    return { background: "#5A8227", borderColor: "#5A8227", color: "#ffffff" };
+  }
+  return { background: "#e8edf2", borderColor: "#d7dde3", color: "#5d6874" };
+}
+
+function legTitle(row: ShockRow, leg: LedgerLeg) {
+  const state = leg.state(row);
+  if (leg.id === "use") {
+    return `${row.country}: ${leg.title}; ${pct(row.digital_payment_use_pct, 1)}; ${vintageLabel(row.payment_vintage_status)}`;
+  }
+  if (leg.id === "account") {
+    return `${row.country}: ${leg.title}; ${pct(row.account_ownership_pct, 1)}; account-to-use vintage gap ${formatNumber(row.account_to_digital_year_gap, 0)} years`;
+  }
+  if (leg.id === "findex") {
+    return `${row.country}: ${state === "candidate" ? row.findex2025_candidate_variable_count || 0 : 0} tracked candidate variables present`;
+  }
+  return `${row.country}: ${leg.title}; ${state}`;
+}
+
+function ShockObservabilityLedger({
+  data,
+  selectedIso,
+  onSelect,
+}: {
+  data: ShockData;
+  selectedIso?: string;
+  onSelect: (iso3: string) => void;
+}) {
+  const watchRows = data.triage_summaries.source_observability_watchlist_top12 || [];
+  const rows = watchRows.length
+    ? watchRows
+    : data.rows
+        .slice()
+        .sort((a, b) => (b.events_per_year_2000_2025 || 0) - (a.events_per_year_2000_2025 || 0))
+        .slice(0, 12);
+
+  return (
+    <div className="shock-ledger-wrap">
+      <div className="shock-ledger-head">
+        <div>
+          <p className="kicker">Source observability ledger</p>
+          <h3>Top exposed rows, checked leg by leg.</h3>
+        </div>
+        <p>
+          Yellow means the leg exists but carries a vintage or source-mapping
+          warning. Green is the 2024 Findex candidate source, not a replacement
+          value.
+        </p>
+      </div>
+      <div className="shock-ledger-scroll">
+        <div className="shock-ledger-grid" role="table" aria-label="Shock-payment evidence legs by economy">
+          <div className="shock-ledger-row shock-ledger-row-head" role="row">
+            <span>Economy</span>
+            {LEDGER_LEGS.map((leg) => (
+              <span key={leg.id} title={leg.title}>{leg.label}</span>
+            ))}
+            <span>Tier</span>
+          </div>
+          {rows.map((row) => (
+            <button
+              key={row.iso3}
+              type="button"
+              className={row.iso3 === selectedIso ? "shock-ledger-row shock-ledger-selected" : "shock-ledger-row"}
+              onClick={() => onSelect(row.iso3)}
+              role="row"
+            >
+              <span className="shock-ledger-country">
+                <strong>{row.iso3}</strong>
+                <em>{row.country}</em>
+              </span>
+              {LEDGER_LEGS.map((leg) => {
+                const state = leg.state(row);
+                return (
+                  <span
+                    key={leg.id}
+                    className={legClass(state)}
+                    style={legStyle(state)}
+                    title={legTitle(row, leg)}
+                  >
+                    {state === "missing" ? "MISS" : state === "candidate" ? "CAND" : state === "warn" ? "WARN" : "OK"}
+                  </span>
+                );
+              })}
+              <span className="shock-ledger-tier" style={{ borderColor: tierFill(row.observability_tier) }}>
+                {tierLabel(row.observability_tier)}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="freshness-legend shock-legend" aria-label="Shock-payment ledger legend">
+        <span><i style={{ background: "#007DB8" }} /> Evidence leg present</span>
+        <span><i style={{ background: "#FBB00E" }} /> Vintage or mapping warning</span>
+        <span><i style={{ background: "#5A8227" }} /> Findex 2024 candidate</span>
+        <span><i style={{ background: "#e8edf2" }} /> Missing public leg</span>
+      </div>
+    </div>
   );
 }
 
@@ -539,15 +833,15 @@ function ShockScatter({
               cx={x(row.events_per_year_2000_2025)}
               cy={y(row.digital_payment_use_pct)}
               r={r(row.total_affected_2000_2025)}
-              fill={spFill(row.sp_coverage_pct)}
-              stroke={selected ? "#FBB00E" : row.sp_coverage_pct === null ? "#6b7280" : "#ffffff"}
+              fill={tierFill(row.observability_tier)}
+              stroke={selected ? "#FBB00E" : "#ffffff"}
               strokeWidth={selected ? 3 : 1.3}
               className="shock-point"
               onMouseEnter={() => onSelect(row.iso3)}
               onClick={() => onSelect(row.iso3)}
             >
               <title>
-                {`${row.country}: ${formatNumber(row.events_per_year_2000_2025, 2)} events/year, ${pct(row.digital_payment_use_pct, 1)} payment use, ${pct(row.sp_coverage_pct, 1)} ASPIRE coverage`}
+                {`${row.country}: ${formatNumber(row.events_per_year_2000_2025, 2)} events/year, ${pct(row.digital_payment_use_pct, 1)} payment use, ${tierLabel(row.observability_tier)}, ${vintageLabel(row.payment_vintage_status)}, ${pct(row.sp_coverage_pct, 1)} ASPIRE coverage`}
               </title>
             </circle>
             {labelRows.has(row.iso3) && (

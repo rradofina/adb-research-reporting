@@ -51,7 +51,7 @@ candidates before adding new surfaces.
 | 15 | Food-price coverage trap | Evidence audit | Coverage funnel foregrounds missing CPI/import indicator legs | Needs household or market price exposure evidence | Join a market-price or household-expenditure source |
 | 16 | Social-protection dropped leg | Evidence audit | Missing-leg ledger shows why some economies disappear from the headline | Needs payment-channel or beneficiary delivery data | Rebuild as coverage-versus-payment-rail observability |
 | 17 | Water denominator artifact | Evidence audit | Internal-water denominator cards now sit beside WDI/AQUASTAT available-water stress, FAOSTAT harvested-area crop mix, and a national diagnostic variant | Needs basin allocation, crop-specific water requirements, irrigation command areas, GRACE depletion, and subnational rural exposure before water-crop exposure language | Build one basin/crop pilot from the source wall, or keep the current national variant as a denominator and crop-mix caution note |
-| 18 | Invisible urbanization tautology | Evidence audit | Rank-preserving scalar sweep is visibly not a robustness test | Needs satellite/built-up layer and classification history | Select one pilot and replace the WDI-only proxy |
+| 18 | Invisible urbanization tautology | Evidence audit | Rank-preserving scalar sweep now sits beside a WDI/GHSL/SMOD/geoBoundaries source wall: GHSL metadata and top-five ADM2 boundary metadata are reachable, but the built-up/boundary overlay is still false | Needs GHSL raster or Earth Engine export, administrative-boundary intersection, classification-history ledger, and population-weighted built-up or SMOD zonal statistic | Build one GHSL/SMOD x boundary pilot, or keep the current route as a source-readiness caution note |
 | 19 | Port inert-parameter audit | Evidence audit | Cap-binding wall shows an inert sensitivity knob | Needs actual hinterland travel-time, logistics, or port-performance source | Search for public port/hinterland travel-time proxies |
 | 20 | School heat top-one audit | Evidence audit | Sensitivity ledger names discriminating, degenerate, and rank-losing runs | Needs school geocodes, calendars, enrollment, and local heat exposure | Pick a public school-location pilot or keep as sensitivity caution |
 
@@ -1125,6 +1125,49 @@ overflow. Screenshots:
 `reporting-site/qa/showcase-water-source-mobile.png`,
 `reporting-site/qa/showcase-water-source-mobile-visual.png`, and
 `reporting-site/qa/showcase-water-source-mobile-claim.png`.
+
+## 2026-06-20 — Report 18 invisible-urbanization source wall
+
+Report 18 now uses
+`invisible-urbanization/generated/invisible-urbanization-source-audit.json`
+instead of the older tautology-only artifact. The new source-readiness pass
+adds `invisible-urbanization/scripts/audit-urban-source-readiness.py`,
+records cache regeneration notes under `invisible-urbanization/.cache/README.md`,
+and writes `invisible-urbanization-source-readiness.json`,
+`invisible-urbanization-source-readiness-sources.csv`, and
+`invisible-urbanization-boundary-readiness.csv`. It preserves the scalar-sweep
+falsifier while checking the public source stack needed to replace the WDI-only
+proxy: WDI urban-definition metadata, GHSL built-up and SMOD metadata pages,
+Earth Engine catalog pages, and geoBoundaries ADM2 metadata for the baseline
+top five.
+
+The baseline top five remain PNG, SLB, AFG, LAO, and BGD. The 5/10/15 scalar
+sweep keeps Spearman at 1.0, produces 0 rank inversions, and changes 0 top-five
+members. The generated audit records WDI urban definitions as national-office
+based; 5/5 GHSL or Earth Engine metadata pages reachable; 5/5 top-five ADM2
+metadata rows reachable; and a 2014-2020 boundary-year span across those rows.
+
+The analysis-ready spatial object remains false: no GHSL raster tile or Earth
+Engine export is downloaded, no GHS-SMOD grid is intersected with an
+administrative boundary, no census or gazetted urban-boundary classification
+history is joined, and no population-weighted built-up or SMOD zonal statistic
+is computed. The current WDI signal is therefore a triage proxy, not an
+on-ground invisible-urbanization estimate.
+
+Verification in this pass reran the invisible-urbanization scripts, synced
+public artifacts, built the reporting site, ran the showcase verifier, and
+browser-checked desktop 1280x900 plus mobile 390x844. Browser QA found all
+required source-wall text, 6 source-wall terms, 2 download links, no page
+errors, no failed requests, and no page-level horizontal overflow. Full-page
+screenshots keep the sticky site header; focused crops set the header static
+only to avoid the QA scroll operation occluding the inspected section.
+Screenshots:
+`reporting-site/qa/showcase-invisible-urban-source-desktop.png`,
+`reporting-site/qa/showcase-invisible-urban-source-desktop-visual.png`,
+`reporting-site/qa/showcase-invisible-urban-source-desktop-claim.png`,
+`reporting-site/qa/showcase-invisible-urban-source-mobile.png`,
+`reporting-site/qa/showcase-invisible-urban-source-mobile-visual.png`, and
+`reporting-site/qa/showcase-invisible-urban-source-mobile-claim.png`.
 
 ## Next deepening order
 

@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-06-19T21:41:16.537Z",
+  "url": "http://127.0.0.1:5176/showcase/invisible-urban-tautology",
+  "requiredTexts": [
+    "The source wall shows what the WDI proxy still cannot see.",
+    "GHSL/SMOD METADATA PAGES",
+    "5/5",
+    "TOP-FIVE ADM2 BOUNDARY METADATA",
+    "WDI URBAN DEFINITION",
+    "national definitions",
+    "built-up/boundary overlay",
+    "false",
+    "PNG, SLB, AFG, LAO, BGD",
+    "2014-2020",
+    "invisible-urbanization-source-audit.json",
+    "invisible-urbanization-source-readiness-sources.csv",
+    "Trust comes from the source trail."
+  ],
+  "forbiddenTexts": [
+    "comforting robustness"
+  ],
+  "targetedCropNote": "Full-page screenshots keep the sticky site header; focused visual and claim crops set .site-header to static so the inspected sections are not occluded by the QA scroll operation.",
+  "results": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 900
+      },
+      "status": 200,
+      "url": "http://127.0.0.1:5176/showcase/invisible-urban-tautology",
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "overflow": {
+        "docOverflow": false,
+        "offenders": [],
+        "scrollWidth": 1280,
+        "viewportWidth": 1280
+      },
+      "sourceWallTermCount": 6,
+      "downloadLinkCount": 2,
+      "screenshots": {
+        "full": "reporting-site/qa/showcase-invisible-urban-source-desktop.png",
+        "visual": "reporting-site/qa/showcase-invisible-urban-source-desktop-visual.png",
+        "claim": "reporting-site/qa/showcase-invisible-urban-source-desktop-claim.png"
+      }
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "url": "http://127.0.0.1:5176/showcase/invisible-urban-tautology",
+      "missingTexts": [],
+      "forbiddenPresent": [],
+      "consoleEvents": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "horizontalOverflow": false,
+      "overflow": {
+        "docOverflow": false,
+        "offenders": [],
+        "scrollWidth": 390,
+        "viewportWidth": 390
+      },
+      "sourceWallTermCount": 6,
+      "downloadLinkCount": 2,
+      "screenshots": {
+        "full": "reporting-site/qa/showcase-invisible-urban-source-mobile.png",
+        "visual": "reporting-site/qa/showcase-invisible-urban-source-mobile-visual.png",
+        "claim": "reporting-site/qa/showcase-invisible-urban-source-mobile-claim.png"
+      }
+    }
+  ],
+  "passed": true
+}

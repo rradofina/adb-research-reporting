@@ -1220,21 +1220,94 @@ function buildWaterModel(report: ShowcaseReport, data: JsonValue): AuditModel {
 }
 
 function buildInvisibleUrbanizationModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.urban_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.urban_source_readiness);
   const sweep = data.multiplier_sweep_is_rank_preserving || {};
   const boundary = data.genuine_falsification_not_run?.top5_boundary_pair || [];
   const shockPct = data.genuine_falsification_not_run?.input_shock_fraction_to_break_top5_boundary
     ? numberValue(data.genuine_falsification_not_run.input_shock_fraction_to_break_top5_boundary) * 100
     : 0;
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Urban source audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  if (sourceAudit.sources?.ghsl_pages) {
+    sourceTrail.push({ label: "GHSL metadata pages", value: strings(sourceAudit.sources.ghsl_pages).join("; ") });
+  }
+
+  const componentCards: ComponentCard[] = [
+    {
+      key: "formula",
+      value: "2 WDI terms",
+      label: "source structure",
+      note: data.signal_is_two_wdi_series_multiplied?.satellite_or_builtup_field_in_sources
+        ? "satellite field present"
+        : "no satellite or built-up field in sources",
+      status: "flag",
+    },
+    {
+      key: "boundary",
+      value: boundary.join(" / "),
+      label: "top-five boundary pair",
+      note: `${formatPct(shockPct, 2)} non-uniform input shock breaks the boundary`,
+      status: "dropped",
+    },
+  ];
+
+  if (hasSourceAudit) {
+    componentCards.push(
+      {
+        key: "wdi-definition",
+        value: sourceSummary.wdi_urban_definition_is_national ? "national definitions" : "not confirmed",
+        label: "WDI urban definition",
+        note: "WDI urban share is defined by national statistical offices; this is not a common built-up boundary.",
+        status: "flag",
+      },
+      {
+        key: "ghsl-pages",
+        value: `${formatNumber(sourceSummary.ghsl_public_metadata_pages_reachable)}/${formatNumber(sourceSummary.ghsl_public_metadata_pages_checked)}`,
+        label: "GHSL/SMOD metadata pages",
+        note: "Built-up surface, SMOD, download-catalog, and Earth Engine metadata pages are visible; no raster is downloaded.",
+        status: "survived",
+      },
+      {
+        key: "adm2-boundaries",
+        value: `${formatNumber(sourceSummary.top5_geoboundaries_adm2_reachable_rows)}/${formatNumber(sourceSummary.top5_geoboundaries_adm2_metadata_rows)}`,
+        label: "Top-five ADM2 boundary metadata",
+        note: `Boundary-year span ${sourceSummary.top5_boundary_year_min || "?"}-${sourceSummary.top5_boundary_year_max || "?"}; geometries are not intersected.`,
+        status: "survived",
+      },
+      {
+        key: "builtup-overlay",
+        value: String(sourceSummary.analysis_ready_builtup_boundary_overlay),
+        label: "Built-up/boundary overlay",
+        note: "No GHSL raster export, SMOD grid, boundary intersection, classification-history ledger, or zonal statistic is built.",
+        status: "dropped",
+      },
+    );
+  }
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: `${formatNumber(sourceSummary.ghsl_public_metadata_pages_reachable)}/${formatNumber(sourceSummary.ghsl_public_metadata_pages_checked)}`, label: "GHSL metadata pages reachable" },
+      { value: `${formatNumber(sourceSummary.top5_geoboundaries_adm2_reachable_rows)}/${formatNumber(sourceSummary.top5_geoboundaries_adm2_metadata_rows)}`, label: "top-five ADM2 metadata rows" },
+      { value: String(sourceSummary.analysis_ready_builtup_boundary_overlay), label: "built-up/boundary overlay" },
+    ] : [
       { value: formatFlexible(1, 1), label: "Spearman for scalar sweep" },
       { value: formatNumber(sweep.total_rank_inversions_across_sweep), label: "rank inversions across 5/10/15" },
       { value: formatPct(shockPct, 2), label: "shock to break top-five boundary" },
     ],
-    chartTitle: "The robustness sweep preserves ranks because it only scales the same score.",
-    chartDeck: "The lanes show identical top-five membership under positive scalar multipliers, then place the real input perturbation beside it.",
+    chartTitle: hasSourceAudit
+      ? "The source wall shows what the WDI proxy still cannot see."
+      : "The robustness sweep preserves ranks because it only scales the same score.",
+    chartDeck: hasSourceAudit
+      ? "The lanes keep the empty scalar-sweep result beside GHSL, SMOD, and boundary metadata, while the analysis-ready overlay remains false."
+      : "The lanes show identical top-five membership under positive scalar multipliers, then place the real input perturbation beside it.",
     laneRows: safeRows(sweep.results).map((row) => ({
       key: String(row.label),
       label: `multiplier ${row.multiplier}`,
@@ -1244,32 +1317,26 @@ function buildInvisibleUrbanizationModel(report: ShowcaseReport, data: JsonValue
       note: `top score ${formatFlexible(row.top1_score)}`,
       status: "survived",
     })) as LaneRow[],
-    componentCards: [
-      {
-        key: "formula",
-        value: "2 WDI terms",
-        label: "source structure",
-        note: data.signal_is_two_wdi_series_multiplied?.satellite_or_builtup_field_in_sources
-          ? "satellite field present"
-          : "no satellite or built-up field in sources",
-        status: "flag",
-      },
-      {
-        key: "boundary",
-        value: boundary.join(" / "),
-        label: "top-five boundary pair",
-        note: `${formatPct(shockPct, 2)} non-uniform input shock breaks the boundary`,
-        status: "dropped",
-      },
-    ],
+    componentCards,
     readouts: [
       { label: "Frozen formula", value: String(data.frozen_formula) },
       { label: "Baseline top five", value: strings(sweep.baseline_top5).join(", ") },
       { label: "All scalar Spearman equal one", value: String(Boolean(sweep.all_spearman_equal_one)) },
       { label: "Reproduction check", value: data.reproduces_committed_signal?.note || "committed column reproduced" },
+      ...(hasSourceAudit ? [
+        { label: "WDI urban definition is national", value: String(sourceSummary.wdi_urban_definition_is_national) },
+        { label: "GHSL metadata pages reachable", value: `${formatNumber(sourceSummary.ghsl_public_metadata_pages_reachable)}/${formatNumber(sourceSummary.ghsl_public_metadata_pages_checked)}` },
+        { label: "Top-five ADM2 boundary metadata", value: `${formatNumber(sourceSummary.top5_geoboundaries_adm2_reachable_rows)}/${formatNumber(sourceSummary.top5_geoboundaries_adm2_metadata_rows)}` },
+        { label: "Boundary year span", value: `${sourceSummary.top5_boundary_year_min || "?"}-${sourceSummary.top5_boundary_year_max || "?"}` },
+        { label: "Built-up/boundary overlay built", value: String(sourceSummary.analysis_ready_builtup_boundary_overlay) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.invisible_urbanization_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }

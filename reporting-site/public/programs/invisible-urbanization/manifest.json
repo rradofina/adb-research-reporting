@@ -1,7 +1,7 @@
 {
   "program": "invisible-urbanization",
   "permanent_url": "/program/invisible-urbanization/evidence",
-  "generated_at": "2026-06-19T21:24:43.863Z",
+  "generated_at": "2026-06-19T21:43:16.007Z",
   "hero": {
     "png": "generated/charts/invisible-urbanization-thumbnail.png",
     "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
@@ -146,6 +146,30 @@
       "sha256": "92d95ce09f1169d5af6c633eee749f3972d768f4898f596cc048273795629dc7"
     },
     {
+      "file": "generated/invisible-urbanization-boundary-readiness.csv",
+      "size": 2610,
+      "size_human": "2.5 KB",
+      "sha256": "7e31e6794beeda30a429594c42e73c90bf66fe04ce4071c6639860425902e841"
+    },
+    {
+      "file": "generated/invisible-urbanization-source-audit.json",
+      "size": 26996,
+      "size_human": "26.4 KB",
+      "sha256": "3fa4bb4fce264584748bff6a01ae6d08f25632d2cfb986ee8064e5a5a7886d4b"
+    },
+    {
+      "file": "generated/invisible-urbanization-source-readiness-sources.csv",
+      "size": 2594,
+      "size_human": "2.5 KB",
+      "sha256": "a7c3443857770a6639f4ea7bfa8e06b3c434b38af3b2973223a2b79d3dc4a1aa"
+    },
+    {
+      "file": "generated/invisible-urbanization-source-readiness.json",
+      "size": 21200,
+      "size_human": "20.7 KB",
+      "sha256": "23d4931234994f72ac9bcce9141674e3851d07bdb074518dc96251a5b5d82869"
+    },
+    {
       "file": "generated/invisible-urbanization-tautology.csv",
       "size": 210,
       "size_human": "210 B",
@@ -155,7 +179,7 @@
       "file": "generated/invisible-urbanization-tautology.json",
       "size": 5472,
       "size_human": "5.3 KB",
-      "sha256": "43de905a6e0be53060f878efdc8985ca6c3d32b50098892369c73961b3b1c903"
+      "sha256": "edb000c25688fc3acf0b162531b6fb17be1871e57364dfeb09a718a2cd6c48a9"
     }
   ],
   "articles": [

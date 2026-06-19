@@ -299,6 +299,31 @@ by leaving the board in a state the next session can read.
   page errors, failed requests, or page-level horizontal overflow. Screenshots:
   `reporting-site/qa/showcase-water-source-desktop.png` and
   `reporting-site/qa/showcase-water-source-mobile.png`.
+- **2026-06-20 (invisible-urbanization source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/invisible-urban-tautology` from a scalar-sweep tautology audit
+  into a WDI/GHSL/SMOD/geoBoundaries source wall. Added
+  `invisible-urbanization/scripts/audit-urban-source-readiness.py`, cache
+  regeneration notes under `invisible-urbanization/.cache/README.md`,
+  generated `invisible-urbanization-source-audit.json`,
+  `invisible-urbanization-source-readiness.json`,
+  `invisible-urbanization-source-readiness-sources.csv`, and
+  `invisible-urbanization-boundary-readiness.csv`, and registered
+  `invisible_urbanization_source_readiness_public_metadata` in
+  `versions.json`. The baseline top five remain PNG, SLB, AFG, LAO, and BGD;
+  the 5/10/15 scalar sweep still has Spearman 1.0, 0 rank inversions, and 0
+  top-five changes; WDI urban-definition metadata confirms national-office
+  definitions; 5/5 GHSL or Earth Engine metadata pages are reachable; 5/5
+  top-five geoBoundaries ADM2 metadata rows are reachable; and the boundary
+  year span is 2014-2020. The analysis-ready spatial wall remains false: no
+  GHSL raster export, SMOD grid intersection, boundary intersection,
+  classification-history ledger, or population-weighted zonal statistic is
+  built. Verification in this pass reran the invisible-urbanization scripts,
+  synced public artifacts, built the reporting site, ran the showcase
+  verifier, and browser-checked desktop plus 390px mobile with no page errors,
+  failed requests, or page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-invisible-urban-source-desktop.png` and
+  `reporting-site/qa/showcase-invisible-urban-source-mobile.png`.
 - **2026-06-20 (social-protection source-object repair):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/social-protection-dropped-leg` from a dropped-leg-only audit into

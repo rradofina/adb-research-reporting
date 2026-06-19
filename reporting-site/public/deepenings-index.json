@@ -94,7 +94,7 @@
       "outcome": "computed + frontier wall",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "invisible-urbanization-tautology.json",
+      "artifact": "invisible-urbanization-source-audit.json",
       "finding": "The \"±50% stable\" claim demonstrates only that multiplying every score by the same positive number preserves their order. That is a property of multiplication, not a property of the data, the signal, or the five DMCs."
     },
     {

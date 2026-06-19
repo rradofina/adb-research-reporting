@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T21:25:48.171Z",
+  "generated_at": "2026-06-19T21:43:23.604Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 352,
-    "browserChecks": 24
+    "screenshots": 358,
+    "browserChecks": 25
   },
   "summary": {
     "reports_total": 20,
@@ -427,19 +427,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+      "evidencePath": "invisible-urbanization/generated/invisible-urbanization-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/invisible-urbanization/generated/invisible-urbanization-tautology.json",
+      "auditDataUrl": "/programs/invisible-urbanization/generated/invisible-urbanization-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/invisible-urbanization/generated/invisible-urbanization-tautology.csv",
+      "auditCsvUrl": "/programs/invisible-urbanization/generated/invisible-urbanization-source-readiness-sources.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Select one pilot geography and replace the WDI-only proxy with GHSL or settlement-layer evidence."
+      "nextUpgrade": "Select one pilot geography and build the GHSL/SMOD x boundary overlay, or keep the current route as a source-readiness caution note."
     },
     {
       "id": 19,

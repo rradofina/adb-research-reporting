@@ -147,8 +147,35 @@ absent from disk.
   two public series multiplied, with a stability claim that is true by
   arithmetic and empty as evidence.
 
+## 2026-06-20 source-readiness upgrade
+
+`scripts/audit-urban-source-readiness.py` keeps the tautology result above,
+then checks the public source object needed to replace the WDI-only proxy.
+It writes:
+
+- `generated/invisible-urbanization-source-audit.json`
+- `generated/invisible-urbanization-source-readiness.json`
+- `generated/invisible-urbanization-source-readiness-sources.csv`
+- `generated/invisible-urbanization-boundary-readiness.csv`
+
+The audit confirms 5/5 GHSL or Earth Engine metadata pages are reachable,
+5/5 top-five geoBoundaries ADM2 metadata rows are reachable, and WDI urban
+share metadata defines urban population through national statistical-office
+definitions rather than a common built-up boundary. The current top five
+remain PNG, SLB, AFG, LAO, and BGD from the old WDI proxy.
+
+This is still not an invisible-urbanization estimate. The generated source
+wall records `analysis_ready_builtup_boundary_overlay: false`,
+`analysis_ready_classification_history: false`, and
+`analysis_ready_zonal_statistic: false`. No GHSL raster tile or Earth Engine
+export is downloaded; no GHS-SMOD grid is intersected with an administrative
+boundary; no national census or gazetted urban-boundary classification-history
+table is joined; and no population-weighted built-up or SMOD zonal statistic
+is computed.
+
 ## Reproduce
 
 ```bash
 python invisible-urbanization/scripts/deepen-tautology.py
+python invisible-urbanization/scripts/audit-urban-source-readiness.py
 ```

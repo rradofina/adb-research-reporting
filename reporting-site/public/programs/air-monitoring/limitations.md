@@ -46,6 +46,12 @@
   marked `isMonitor`, 0 exact station-ID overlaps, 0 exact official-agency
   owner/provider matches, 0 explicit crosswalk rows, 0 validated joins, and 0
   station-radius-ready rows.
+- Candidate crosswalk source scan. The 2026-06-19 source scan reviews the 6
+  OpenAQ `isMonitor` candidate rows against five public source URLs. It screens
+  all 6 as separate nearby stations and records 0 shared station-ID rows, 0
+  source-crosswalk rows, 0 documented co-location rows, 0 validated joins, and
+  0 station-radius-ready rows. The 7 not-`isMonitor` public-feed candidate rows
+  remain outside this scan.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

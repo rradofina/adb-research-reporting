@@ -587,6 +587,72 @@ interface OfficialOpenAQCandidateEvidenceSummary {
   non_claim: string;
 }
 
+interface CandidateCrosswalkSourceScanCountryRow {
+  iso3: string;
+  country: string;
+  rows_scanned: number;
+  separate_nearby_station_rows: number;
+  validated_same_station_rows: number;
+  station_radius_join_ready_rows: number;
+}
+
+interface CandidateCrosswalkSourceScanSourceRow {
+  source_key: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: number;
+  retrieval_bytes: number;
+  matched_terms: string[];
+  missing_terms: string[];
+  source_note: string;
+}
+
+interface CandidateCrosswalkSourceScanRow {
+  candidate_review_id: string;
+  iso3: string;
+  country: string;
+  source_station_name: string;
+  nearest_openaq_location_name: string;
+  nearest_openaq_distance_km: number;
+  openaq_provider_name: string;
+  official_source_public_name_or_address: string;
+  computed_coordinate_distance_km: number | null;
+  allowed_review_decision: string;
+  candidate_queue_status_after_scan: string;
+  disambiguating_public_evidence: string;
+  reader_use: string;
+}
+
+interface CandidateCrosswalkSourceScanSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    candidate_rows_total_before_scan: number;
+    is_monitor_candidate_rows_scanned: number;
+    non_monitor_candidate_rows_not_scanned: number;
+    source_urls_seeded: number;
+    source_urls_retrieved: number;
+    rows_with_official_coordinate_evidence: number;
+    rows_with_official_address_evidence: number;
+    rows_with_openaq_coordinate_evidence: number;
+    rows_screened_as_separate_nearby_stations: number;
+    shared_station_id_rows: number;
+    source_crosswalk_rows: number;
+    documented_colocation_rows: number;
+    validated_same_station_rows: number;
+    station_radius_join_ready_rows: number;
+  };
+  country_rows: CandidateCrosswalkSourceScanCountryRow[];
+  source_rows: CandidateCrosswalkSourceScanSourceRow[];
+  candidate_rows: CandidateCrosswalkSourceScanRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -691,6 +757,8 @@ export default function ShowcaseAirMonitoring() {
   const [officialOpenAQCandidate, setOfficialOpenAQCandidate] = useState<OfficialOpenAQCandidateSummary | null>(null);
   const [officialOpenAQCandidateEvidence, setOfficialOpenAQCandidateEvidence] =
     useState<OfficialOpenAQCandidateEvidenceSummary | null>(null);
+  const [candidateCrosswalkSourceScan, setCandidateCrosswalkSourceScan] =
+    useState<CandidateCrosswalkSourceScanSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -734,6 +802,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`official OpenAQ candidate evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`official OpenAQ candidate crosswalk source scan HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -749,6 +821,7 @@ export default function ShowcaseAirMonitoring() {
         officialOpenAQPayload,
         officialOpenAQCandidatePayload,
         officialOpenAQCandidateEvidencePayload,
+        candidateCrosswalkSourceScanPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -760,6 +833,7 @@ export default function ShowcaseAirMonitoring() {
         setOfficialOpenAQ(officialOpenAQPayload);
         setOfficialOpenAQCandidate(officialOpenAQCandidatePayload);
         setOfficialOpenAQCandidateEvidence(officialOpenAQCandidateEvidencePayload);
+        setCandidateCrosswalkSourceScan(candidateCrosswalkSourceScanPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -878,6 +952,8 @@ export default function ShowcaseAirMonitoring() {
       <AirOfficialOpenAQCandidatePanel summary={officialOpenAQCandidate} />
 
       <AirOfficialOpenAQCandidateEvidencePanel summary={officialOpenAQCandidateEvidence} />
+
+      <AirCandidateCrosswalkSourceScanPanel summary={candidateCrosswalkSourceScan} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -2133,6 +2209,122 @@ function AirOfficialOpenAQCandidateEvidencePanel({
         </>
       ) : (
         <p className="showcase-loading">Loading candidate public-evidence audit...</p>
+      )}
+    </section>
+  );
+}
+
+function AirCandidateCrosswalkSourceScanPanel({
+  summary,
+}: {
+  summary: CandidateCrosswalkSourceScanSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.candidate_rows ?? [];
+  const sourceRows = summary?.source_rows ?? [];
+
+  return (
+    <section className="showcase-section air-crosswalk-scan-section" aria-label="Official OpenAQ candidate crosswalk source scan">
+      <div className="air-crosswalk-scan-head">
+        <div>
+          <p className="kicker kicker-crimson">Crosswalk source scan</p>
+          <h2>The strongest candidate joins split apart under public sources.</h2>
+          <p>
+            The 6 OpenAQ isMonitor candidates were checked first. Public source
+            pages separate all 6 as nearby stations, so validated joins and
+            radius-ready rows stay at zero.
+          </p>
+        </div>
+        <div className="air-crosswalk-scan-callout">
+          <span>Decision</span>
+          <strong>{formatNumber(counts?.rows_screened_as_separate_nearby_stations ?? 0)}</strong>
+          <p>screened as separate nearby stations</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-crosswalk-scan-stat-grid">
+            <div>
+              <span>Rows scanned</span>
+              <strong>{formatNumber(counts.is_monitor_candidate_rows_scanned)}</strong>
+              <em>OpenAQ isMonitor candidates</em>
+            </div>
+            <div>
+              <span>Separate nearby</span>
+              <strong>{formatNumber(counts.rows_screened_as_separate_nearby_stations)}</strong>
+              <em>not join-ready</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_rows)}</strong>
+              <em>still zero</em>
+            </div>
+            <div>
+              <span>Source URLs</span>
+              <strong>{formatNumber(counts.source_urls_retrieved)}</strong>
+              <em>{formatNumber(counts.source_urls_seeded)} seeded</em>
+            </div>
+            <div>
+              <span>Not isMonitor</span>
+              <strong>{formatNumber(counts.non_monitor_candidate_rows_not_scanned)}</strong>
+              <em>next queue</em>
+            </div>
+          </div>
+
+          <div className="air-crosswalk-scan-country-grid">
+            {summary.country_rows.map((row) => (
+              <article key={row.iso3} className="air-crosswalk-scan-country">
+                <span>{row.iso3}</span>
+                <strong>{row.country}</strong>
+                <b>{formatNumber(row.separate_nearby_station_rows)} separate / {formatNumber(row.rows_scanned)} scanned</b>
+                <p>{formatNumber(row.validated_same_station_rows)} validated joins; {formatNumber(row.station_radius_join_ready_rows)} radius-ready rows.</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-crosswalk-scan-row-grid">
+            {rows.map((row) => (
+              <article key={row.candidate_review_id} className="air-crosswalk-scan-row">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{row.nearest_openaq_location_name}</b>
+                </div>
+                <p>{row.reader_use}</p>
+                <small>
+                  Distance: {row.computed_coordinate_distance_km !== null ? `${formatNumber(row.computed_coordinate_distance_km, 3)} km computed` : `${formatNumber(row.nearest_openaq_distance_km, 3)} km candidate diagnostic`}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-crosswalk-scan-source-grid">
+            {sourceRows.map((source) => (
+              <article key={source.source_key} className={source.retrieved ? "air-crosswalk-scan-source is-retrieved" : "air-crosswalk-scan-source"}>
+                <span>{sentenceCaseStatus(source.source_role)}</span>
+                <strong>{sentenceCaseStatus(source.source_key)}</strong>
+                <b>{source.retrieved ? "retrieved" : "not retrieved"} · {formatNumber(source.matched_terms.length)} matched terms</b>
+                <p>{source.source_note}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-crosswalk-scan-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/official-openaq-candidate-crosswalk-source-scan.md" download>
+              Evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading candidate crosswalk source scan...</p>
       )}
     </section>
   );

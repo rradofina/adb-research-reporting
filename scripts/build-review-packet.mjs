@@ -70,6 +70,7 @@ const PROGRAM_FILES = [
   "official-openaq-reconciliation.md",
   "official-openaq-candidate-review.md",
   "official-openaq-candidate-public-evidence.md",
+  "official-openaq-candidate-crosswalk-source-scan.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",
@@ -185,6 +186,22 @@ if (fs.existsSync(scrSrc)) {
   }
 }
 
+// source-inputs/ as a folder. These are committed seed files needed by
+// reproducible source scans.
+const sourceInputsSrc = path.join(programDir, "source-inputs");
+const sourceInputsDest = path.join(packetDir, "program", "source-inputs");
+if (fs.existsSync(sourceInputsSrc)) {
+  fs.mkdirSync(sourceInputsDest, { recursive: true });
+  for (const f of fs.readdirSync(sourceInputsSrc)) {
+    const src = path.join(sourceInputsSrc, f);
+    const dest = path.join(sourceInputsDest, f);
+    if (fs.statSync(src).isFile()) {
+      const hash = copyAndHash(src, dest);
+      if (hash) programIncluded.push({ path: `program/source-inputs/${f}`, sha256: hash });
+    }
+  }
+}
+
 const sharedIncluded = [];
 const missingShared = [];
 for (const f of SHARED_FILES) {
@@ -288,7 +305,8 @@ post for a general dev-econ reader) or \`publication/6-slides/*.pptx\`
    what the result cannot establish and what blocks human-final.
 8. Read \`publication/1-working-paper/*.md\` for the long-form paper.
 9. Optionally re-run the pipeline per \`program/REPRODUCE.md\`. Source
-   caches and code are under \`program/scripts/\` and \`program/generated/\`.
+   seeds, code, and generated outputs are under \`program/source-inputs/\`,
+   \`program/scripts/\`, and \`program/generated/\`.
 
 ## What the program owner asks of you
 

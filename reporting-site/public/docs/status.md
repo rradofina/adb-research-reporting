@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -59,7 +59,10 @@ overrides priority by editing this list.
    metadata to those 13 rows, finding 13 owner/provider rows, 6 OpenAQ
    `isMonitor` true rows, 7 not-`isMonitor` rows, 0 exact station-ID overlaps,
    0 exact agency owner/provider matches, 0 explicit crosswalk rows, 0
-   validated same-station joins, and 0 station-radius-ready rows. The
+   validated same-station joins, and 0 station-radius-ready rows. The candidate
+   crosswalk source scan then retrieves five public source URLs and screens all
+   6 OpenAQ `isMonitor` candidate rows as separate nearby stations while
+   keeping validated joins and radius-ready rows at 0. The
    monitor-grade evidence audit covers 239 official-source rows and finds 31
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
@@ -181,6 +184,31 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring candidate crosswalk source scan):** Added
+  `air-monitoring/source-inputs/candidate-crosswalk-public-source-seed.csv`,
+  `air-monitoring/scripts/scan-official-openaq-candidate-crosswalk-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json`,
+  and wrote
+  `air-monitoring/official-openaq-candidate-crosswalk-source-scan.md`. The
+  scan targets the 6 OpenAQ `isMonitor` candidate rows, retrieves all 5 seeded
+  public source URLs, finds official coordinate evidence for the 2 Bangladesh
+  SPARTAN-adjacent rows and Uzhydromet public-map address evidence for the 4
+  Uzbekistan StateAir-adjacent rows, screens all 6 as
+  `separate_nearby_stations`, and keeps shared station-ID rows,
+  source-crosswalk rows, documented co-location rows, validated same-station
+  joins, and station-radius-ready rows at 0. The 7 not-`isMonitor`
+  public-feed candidate rows remain the next row-level source-review queue.
+  The public route now renders the candidate crosswalk source-scan panel.
+  Chrome CDP QA passed at 1440x1100 and 390x1000 with 5 source-scan stat
+  cards, 2 country cards, 6 row cards, 5 source cards, 3 download links, no
+  page or section horizontal overflow, no text overflow, and no console/page
+  errors. Screenshots:
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-desktop.png`,
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile.png`, and
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile-sources.png`.
 - **2026-06-19 (air-monitoring candidate public-evidence audit):** Added
   `air-monitoring/scripts/audit-official-openaq-candidate-public-evidence.py`,
   generated

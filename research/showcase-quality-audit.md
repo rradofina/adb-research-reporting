@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, a public OpenAQ metadata evidence attachment, and monitor-grade evidence audit make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, complete monitor-grade classification, and gridded population/PM2.5 denominators before station-radius or catchment language | Review the near-plus-name candidate worksheet rows with public owner/provider and `isMonitor` evidence, deepen non-Bangladesh monitor-grade documentation, then build a declared catchment denominator only if the source comparison survives |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, a public OpenAQ metadata evidence attachment, a public source scan that screens the 6 OpenAQ `isMonitor` candidate rows as separate nearby stations, and monitor-grade evidence audit make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, complete monitor-grade classification, and gridded population/PM2.5 denominators before station-radius or catchment language | Review the 7 not-`isMonitor` public-feed candidate rows, deepen non-Bangladesh monitor-grade documentation, then build a declared catchment denominator only if the source comparison survives |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
@@ -588,6 +588,25 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-desktop.png`,
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile.png`, and
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile-gates.png`.
+- Air-monitoring report #6 then received a candidate crosswalk public-source
+  scan. New seed file
+  `air-monitoring/source-inputs/candidate-crosswalk-public-source-seed.csv`
+  and script
+  `air-monitoring/scripts/scan-official-openaq-candidate-crosswalk-sources.py`
+  fetch five public source URLs and review the 6 OpenAQ `isMonitor` candidate
+  rows. The scan retrieves all 5 source URLs, finds official coordinate
+  evidence for the 2 Bangladesh SPARTAN-adjacent rows, finds Uzhydromet
+  public-map address evidence for the 4 Uzbekistan StateAir-adjacent rows,
+  screens all 6 rows as separate nearby stations, and keeps validated
+  same-station joins and station-radius-ready rows at 0. This is row-level
+  source screening, not a catchment layer. The public route now renders the
+  source-scan panel; Chrome CDP QA passed at 1440x1100 and 390x1000 with 5
+  source-scan stat cards, 2 country cards, 6 row cards, 5 source cards, 3
+  download links, no page or section horizontal overflow, no text overflow,
+  and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-desktop.png`,
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile.png`, and
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile-sources.png`.
 - Air-monitoring report #6 then received a monitor-grade evidence audit. New
   script `air-monitoring/scripts/audit-monitor-grade-evidence.py` reads all
   239 official-source rows from the station-extraction pass, verifies

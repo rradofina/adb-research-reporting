@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -24,9 +24,10 @@ showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
 keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
 upgrade queue, show the official/OpenAQ candidate review queue, public OpenAQ
-metadata evidence, and monitor-grade evidence ladder honestly, and do not imply
-station-radius, complete monitor-grade, or regulatory-inventory validation until
-official method tables, station crosswalks, and catchment methods are added.
+metadata evidence, crosswalk source-scan decisions, and monitor-grade evidence
+ladder honestly, and do not imply station-radius, complete monitor-grade, or
+regulatory-inventory validation until official method tables, station
+crosswalks, and catchment methods are added.
 
 ## Last completed
 
@@ -213,19 +214,41 @@ official method tables, station crosswalks, and catchment methods are added.
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-desktop.png`,
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile.png`, and
   `reporting-site/qa/showcase-air-openaq-candidate-evidence-mobile-gates.png`.
+- **2026-06-19:** Added the official/OpenAQ candidate crosswalk source scan.
+  New seed file `source-inputs/candidate-crosswalk-public-source-seed.csv`
+  and script `scripts/scan-official-openaq-candidate-crosswalk-sources.py`
+  fetch five public source URLs, scan the 6 OpenAQ `isMonitor` candidate rows,
+  and write
+  `generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv`
+  and
+  `generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json`.
+  The scan retrieves all 5 public URLs, finds official coordinate evidence for
+  the 2 Bangladesh SPARTAN-adjacent rows, finds Uzhydromet public-map address
+  evidence for the 4 Uzbekistan StateAir-adjacent rows, screens all 6 rows as
+  `separate_nearby_stations`, and keeps shared station-ID rows, source-crosswalk
+  rows, documented co-location rows, validated same-station joins, and
+  station-radius-ready rows at 0. Wrote
+  `official-openaq-candidate-crosswalk-source-scan.md`. This reduces the
+  high-risk join queue, but it is still not a catchment layer.
+- **2026-06-19:** Added the candidate crosswalk source-scan panel to the public
+  showcase route. Chrome CDP QA at 1440x1100 and 390x1000 confirmed 5
+  source-scan stat cards, 2 country cards, 6 row cards, 5 source cards, 3
+  download links, no page or section horizontal overflow, no text overflow,
+  and no console/page errors. Screenshots:
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-desktop.png`,
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile.png`, and
+  `reporting-site/qa/showcase-air-crosswalk-source-scan-mobile-sources.png`.
 
 ## Next focused work
 
-1. Deepen non-Bangladesh monitor-grade documentation where public official,
+1. Use the crosswalk source-scan pattern on the 7 candidate rows not marked
+   `isMonitor`, keeping them outside station-radius joins unless source-owner
+   documentation, current-status pages, or documented co-location evidence
+   names both records. Then review the 31 one-signal candidates.
+2. Deepen non-Bangladesh monitor-grade documentation where public official,
    station-owner, or regulator sources distinguish reference-grade/regulatory
    monitors from low-cost or other public feeds, and confirm current-status
    scope for the Bangladesh method-standard signal.
-2. Use the candidate public-evidence audit to prioritize row-level public
-   station-crosswalk search: first the 6 OpenAQ `isMonitor` true rows without
-   crosswalks, then the 7 not-`isMonitor` public-feed caution rows. Keep rows
-   open unless station IDs, documented crosswalks, source-owner/current-status
-   pages, or documented co-location evidence support one of the worksheet
-   decisions. Then review the 31 one-signal candidates.
 3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
@@ -255,6 +278,10 @@ official method tables, station crosswalks, and catchment methods are added.
   station-ID overlaps, 0 exact official-agency owner/provider matches, 0
   explicit crosswalk rows, 0 validated same-station joins, and 0
   station-radius-ready rows.
+- The candidate crosswalk source scan screens the 6 OpenAQ `isMonitor` rows as
+  separate nearby stations using public source evidence, but the 7
+  not-`isMonitor` public-feed caution rows and the 31 one-signal candidates
+  still need row-level source review.
 - Treating OpenAQ-visible zero as no monitor on the ground remains blocked:
   the regulator-source discovery pass found only 1 official inventory/portal
   candidate among the 13 zero-OpenAQ economies and left 9 zero-OpenAQ

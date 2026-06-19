@@ -1,0 +1,9 @@
+bucket,label,row_count,share_of_registry_rows,active_clinical_facilities,share_of_active_clinical_facilities,osm_health,osm_to_active_clinical_ratio,registry_minus_osm_clinical,buildings_nearest_3km_p85,underobserved_buildings_3km_p85_proxy
+no_clinical_registry,No active clinical registry count,5,0.0087,0,0.0,0,,0,55,0
+zero_osm,Registry row has zero OSM health features,115,0.201,3879,0.1377,0,0.0,3879,2334152,2334152
+gt0_to_5pct,More than zero and below 5 percent OSM / registry,197,0.3444,11135,0.3953,289,0.026,10846,6916579,6735386
+5_to_10pct,5 to below 10 percent OSM / registry,92,0.1608,4569,0.1622,321,0.0703,4248,2898697,2696029
+10_to_20pct,10 to below 20 percent OSM / registry,81,0.1416,4774,0.1695,682,0.1429,4092,2884283,2471019
+20_to_50pct,20 to below 50 percent OSM / registry,44,0.0769,2744,0.0974,804,0.293,1940,1793361,1262004
+50_to_100pct,50 to below 100 percent OSM / registry,17,0.0297,655,0.0233,398,0.6076,257,397875,170058
+osm_ge_registry,OSM count equals or exceeds active clinical registry count,21,0.0367,410,0.0146,718,1.7512,0,242158,0

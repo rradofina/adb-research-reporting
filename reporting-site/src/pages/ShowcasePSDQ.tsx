@@ -574,6 +574,47 @@ interface PsdqPublicSourceConfirmationSummary {
   non_claim: string;
 }
 
+interface PsdqTargetedSourceConfirmationUpazilaRow {
+  district_name: string;
+  upazila_name: string;
+  rows: number;
+  priority_1_rows: number;
+  dghs_profiles_retrieved: number;
+  osm_candidate_api_records_retrieved: number;
+  rows_with_candidate_name_score_at_least_0_75: number;
+  dominant_confirmation_lane: string;
+  source_repair_rows: number;
+  possible_same_facility_rows: number;
+  name_conflict_rows: number;
+  zero_osm_context_rows: number;
+}
+
+interface PsdqTargetedSourceConfirmationSummary {
+  generated_at: string;
+  retrieved_at: string;
+  status: string;
+  goal_level: string;
+  confirmation_scope: {
+    rows_checked: number;
+    priority_1_rows_checked: number;
+    dghs_profiles_retrieved: number;
+    osm_candidate_api_records_retrieved: number;
+    rows_with_dghs_profile_token_support: number;
+    rows_with_candidate_name_score_at_least_0_75: number;
+    rows_kept_open: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  public_source_confirmation_lane_counts: PsdqCandidateResolutionCount[];
+  inspection_lane_counts: PsdqCandidateResolutionCount[];
+  focus_class_counts: PsdqCandidateResolutionCount[];
+  priority_scope_counts: PsdqCandidateResolutionCount[];
+  upazila_confirmation_rows: PsdqTargetedSourceConfirmationUpazilaRow[];
+  row_card_rows: PsdqPublicSourceConfirmationCardRow[];
+  confirmation_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -721,6 +762,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPublicMapInspectionSummary | null>(null);
   const [publicSourceConfirmationSummary, setPublicSourceConfirmationSummary] =
     useState<PsdqPublicSourceConfirmationSummary | null>(null);
+  const [targetedSourceConfirmationSummary, setTargetedSourceConfirmationSummary] =
+    useState<PsdqTargetedSourceConfirmationSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -779,6 +822,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`public source confirmation HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`targeted source confirmation HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -798,6 +845,7 @@ export default function ShowcasePSDQ() {
         publicMapGapEvidencePayload,
         publicMapInspectionPayload,
         publicSourceConfirmationPayload,
+        targetedSourceConfirmationPayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -813,6 +861,7 @@ export default function ShowcasePSDQ() {
         setPublicMapGapEvidenceSummary(publicMapGapEvidencePayload);
         setPublicMapInspectionSummary(publicMapInspectionPayload);
         setPublicSourceConfirmationSummary(publicSourceConfirmationPayload);
+        setTargetedSourceConfirmationSummary(targetedSourceConfirmationPayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -924,6 +973,10 @@ export default function ShowcasePSDQ() {
 
       {publicSourceConfirmationSummary && (
         <PsdqPublicSourceConfirmationPanel summary={publicSourceConfirmationSummary} />
+      )}
+
+      {targetedSourceConfirmationSummary && (
+        <PsdqTargetedSourceConfirmationPanel summary={targetedSourceConfirmationSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -3289,6 +3342,225 @@ function PsdqPublicSourceConfirmationScoreChart({ rows }: { rows: PsdqPublicSour
             </div>
           </article>
         ))}
+      </div>
+    </>
+  );
+}
+
+function PsdqTargetedSourceConfirmationPanel({ summary }: { summary: PsdqTargetedSourceConfirmationSummary }) {
+  return (
+    <section className="showcase-section psdq-targeted-source-confirmation-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Targeted-row public-source confirmation</p>
+          <h2>All 40 source links open; none close the row.</h2>
+          <p>
+            The second confirmation pass extends the retrieval check to every
+            targeted inspection row. The result is stronger evidence for the
+            review queue: public source availability is documented, while row
+            classification remains separate from source reachability.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows checked</span>
+            <strong>
+              {formatNumber(summary.confirmation_scope.rows_checked)} rows;{" "}
+              {formatNumber(summary.confirmation_scope.rows_closed_as_resolved)} closed
+            </strong>
+          </div>
+          <div>
+            <span>Priority-1 rows covered</span>
+            <strong>{formatNumber(summary.confirmation_scope.priority_1_rows_checked)} rows</strong>
+          </div>
+          <div>
+            <span>DGHS profiles retrieved</span>
+            <strong>{formatNumber(summary.confirmation_scope.dghs_profiles_retrieved)} public profiles</strong>
+          </div>
+          <div>
+            <span>OSM API records retrieved</span>
+            <strong>{formatNumber(summary.confirmation_scope.osm_candidate_api_records_retrieved)} candidate features</strong>
+          </div>
+          <div>
+            <span>High candidate-name score</span>
+            <strong>{formatNumber(summary.confirmation_scope.rows_with_candidate_name_score_at_least_0_75)} rows at 0.75+</strong>
+          </div>
+          <div>
+            <span>Rows kept open</span>
+            <strong>{formatNumber(summary.confirmation_scope.rows_kept_open)} public-source rows</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-public-source-confirmation-grid">
+        {summary.public_source_confirmation_lane_counts.map((item) => (
+          <div key={item.name}>
+            <span>{publicSourceConfirmationLabel(item.name)}</span>
+            <strong>{formatNumber(item.rows)}</strong>
+            <em>{publicSourceConfirmationMeaning(item.name)}</em>
+          </div>
+        ))}
+      </div>
+
+      <div className="psdq-coded-chart-wrap">
+        <PsdqTargetedSourceConfirmationUpazilaChart rows={summary.upazila_confirmation_rows} />
+      </div>
+
+      <div className="freshness-legend psdq-coded-legend" aria-label="PSDQ targeted-row public-source confirmation lane legend">
+        {summary.public_source_confirmation_lane_counts.map((item) => (
+          <span key={item.name}>
+            <i style={{ background: publicSourceConfirmationColor(item.name) }} />{" "}
+            {publicSourceConfirmationLabel(item.name)}
+          </span>
+        ))}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the targeted-row confirmation packet</p>
+        <code>python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-public-source-confirmation-targeted-rows.md" download>
+          Download targeted-row confirmation note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json" download>
+          Download targeted-row summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv" download>
+          Download targeted-row CSV
+        </a>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqTargetedSourceConfirmationUpazilaChart({ rows }: { rows: PsdqTargetedSourceConfirmationUpazilaRow[] }) {
+  const width = 1040;
+  const rowHeight = 42;
+  const headerHeight = 66;
+  const height = headerHeight + rows.length * rowHeight + 30;
+  const labelX = 0;
+  const barX = 300;
+  const barWidth = 500;
+  const countX = 830;
+  const scoreX = 930;
+
+  return (
+    <>
+      <svg
+        className="psdq-coded-chart psdq-targeted-source-confirmation-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        width={width}
+        height={height}
+        role="img"
+        aria-label="Targeted-row public-source confirmation by upazila"
+      >
+        <text x={0} y={18} className="showcase-heatmap-title">
+          Targeted-row confirmation lanes by upazila
+        </text>
+        <text x={0} y={38} className="showcase-heatmap-year">
+          Unit: targeted inspection row; source: live DGHS profile and OSM API retrieval
+        </text>
+        <text x={barX} y={58} className="psdq-chart-head">
+          Public-source lane mix
+        </text>
+        <text x={countX} y={58} className="psdq-chart-head">
+          rows
+        </text>
+        <text x={scoreX} y={58} className="psdq-chart-head">
+          0.75+ score
+        </text>
+
+        {rows.map((row, index) => {
+          const y = headerHeight + index * rowHeight;
+          const total = Math.max(1, row.rows);
+          const segments = [
+            ["source_repair_public_sources_retrieved_keep_open", row.source_repair_rows],
+            ["possible_same_facility_candidate_needs_manual_location_check", row.possible_same_facility_rows],
+            ["candidate_feature_retrieved_but_name_conflict_keep_open", row.name_conflict_rows],
+            ["zero_osm_context_candidate_outside_upazila_keep_open", row.zero_osm_context_rows],
+          ] as const;
+          let x = barX;
+          return (
+            <g key={`${row.district_name}-${row.upazila_name}`}>
+              <text x={labelX} y={y + 15} className="psdq-row-label">
+                {shortChartLabel(row.upazila_name, 30)}
+              </text>
+              <text x={labelX} y={y + 31} className="psdq-row-sub">
+                {row.district_name}; {formatNumber(row.priority_1_rows)} priority-1 rows
+              </text>
+              {segments.map(([lane, count]) => {
+                const segmentWidth = (count / total) * barWidth;
+                const currentX = x;
+                x += segmentWidth;
+                if (count <= 0) return null;
+                return (
+                  <rect
+                    key={lane}
+                    x={currentX}
+                    y={y}
+                    width={Math.max(2, segmentWidth)}
+                    height={22}
+                    fill={publicSourceConfirmationColor(lane)}
+                  >
+                    <title>
+                      {publicSourceConfirmationLabel(lane)}: {formatNumber(count)} rows
+                    </title>
+                  </rect>
+                );
+              })}
+              <text x={countX} y={y + 16} className="psdq-value">
+                {formatNumber(row.rows)}
+              </text>
+              <text x={scoreX} y={y + 16} className="psdq-value">
+                {formatNumber(row.rows_with_candidate_name_score_at_least_0_75)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="psdq-targeted-source-confirmation-mobile-list" aria-label="Mobile targeted-row confirmation by upazila">
+        <div>
+          <strong>Targeted-row confirmation by upazila</strong>
+          <span>Unit: targeted inspection row kept open</span>
+        </div>
+        {rows.map((row) => {
+          const total = Math.max(1, row.rows);
+          const segments = [
+            ["source_repair_public_sources_retrieved_keep_open", row.source_repair_rows],
+            ["possible_same_facility_candidate_needs_manual_location_check", row.possible_same_facility_rows],
+            ["candidate_feature_retrieved_but_name_conflict_keep_open", row.name_conflict_rows],
+            ["zero_osm_context_candidate_outside_upazila_keep_open", row.zero_osm_context_rows],
+          ] as const;
+          return (
+            <article key={`${row.district_name}-${row.upazila_name}`}>
+              <div>
+                <strong>{row.upazila_name}</strong>
+                <span>{row.district_name}; {formatNumber(row.priority_1_rows)} priority-1 rows</span>
+              </div>
+              <div className="psdq-targeted-confirmation-mobile-bar">
+                {segments.map(([lane, count]) => {
+                  if (count <= 0) return null;
+                  return (
+                    <i
+                      key={lane}
+                      style={{
+                        background: publicSourceConfirmationColor(lane),
+                        width: `${Math.max(3, (count / total) * 100)}%`,
+                      }}
+                    />
+                  );
+                })}
+              </div>
+              <div className="psdq-row-evidence-mobile-metrics">
+                <span><b>{formatNumber(row.rows)}</b> rows</span>
+                <span><b>{formatNumber(row.dghs_profiles_retrieved)}</b> DGHS</span>
+                <span><b>{formatNumber(row.rows_with_candidate_name_score_at_least_0_75)}</b> 0.75+</span>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </>
   );

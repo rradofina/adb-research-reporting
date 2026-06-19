@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, and 12-row public-source confirmation pass added; continuing confirmation beyond the first 12 rows is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, and 40-row targeted public-source confirmation pass added; decision-ledger review is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -25,12 +25,44 @@ start from the Bangladesh exposure-ranked registry-map visual, package the
 matching strata, validation sample, automated coded screen, AI row-review
 ledger, candidate/source checks, coordinate-repair triage, public-map-gap
 triage, row-evidence notes, targeted public-map inspection queue, first-row
-public-source confirmation, and caveats, make the source upgrade clear in the
-public surface, and preserve the existing PR maturity label without implying
-human-final review.
+public-source confirmation, 40-row targeted public-source confirmation, and
+caveats, make the source upgrade clear in the public surface, and preserve the
+existing PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh targeted-row public-source
+  confirmation pass for all 40 targeted public-map inspection rows. New live
+  public-source script
+  `scripts/confirm-bgd-facility-public-map-targeted-rows.py` reads
+  `generated/psdq-bgd-facility-validation-public-map-inspection.csv`,
+  retrieves the public DGHS profile page and public OSM API feature record for
+  each targeted inspection row, and writes
+  `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`
+  and
+  `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`.
+  The pass retrieves 40 DGHS profiles and 40 OSM API records; covers all 30
+  priority-1 rows; all 40 rows have DGHS profile token support; 6 rows have
+  live OSM candidate-name scores at or above 0.75; and all 40 rows remain
+  open with 0 AI closures and 0 AI reclassifications. Confirmation lanes: 18
+  zero-OSM context candidates outside the upazila, 15 candidate features
+  retrieved but name conflict remains, 4 source-repair public sources
+  retrieved, and 3 possible same-facility candidates needing manual location
+  check. Added `facility-validation-public-source-confirmation-targeted-rows.md`,
+  wired evidence sync and review-packet inclusion, updated README/REPRODUCE/L3
+  notes and the showcase registry, and added the targeted-row confirmation
+  panel to `/showcase/psdq-source-disagreement`. This is public-source
+  confirmation, not human validation, a row closure, a maturity promotion, or
+  a human-final upgrade. Verification passed: targeted-row confirmation
+  script rerun, program-script `py_compile`, production site build, six
+  deterministic gates plus `git diff --check`, review packet and zip rebuild,
+  and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with no
+  page-level horizontal overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-desktop.png`,
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-desktop-chart.png`,
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-mobile.png`,
+  and
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-mobile-list.png`.
 - **2026-06-19:** Added the Bangladesh first-row public-source confirmation
   pass for the targeted public-map inspection queue. New live public-source
   script `scripts/confirm-bgd-facility-public-map-first-rows.py` reads
@@ -370,14 +402,15 @@ human-final review.
 
 Current loop:
 
-1. Use the confirmation packet in
-   `generated/psdq-bgd-facility-validation-public-source-confirmation-summary.json`
+1. Use the targeted-row confirmation packet in
+   `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`
    and
-   `generated/psdq-bgd-facility-validation-public-source-confirmation.csv` to
-   continue public-source/manual confirmation beyond the first 12 rows.
-2. Continue with the remaining zero-OSM upazila queue and priority-1 follow-on
-   rows because those rows carry the clearest observability and
-   source-classification questions after the first named-upazila batch.
+   `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`
+   to build a decision ledger for the 3 possible same-facility rows, the 4
+   source-repair rows, and selected high-exposure name-conflict rows.
+2. Keep zero-OSM upazila observability rows separate from row-level absence
+   candidates because the nearest candidate feature is context, not direct
+   evidence of the DGHS row.
 3. Keep source-repair-first rows separate from possible same-facility public
    map matches, facility-specific absence candidates, and upazila-level public
    map observability cases.

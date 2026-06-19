@@ -371,6 +371,34 @@ The first 12 rows split into:
 This confirms that the first DGHS and OSM source links are live, while keeping
 the substantive row decision separate from API reachability and name support.
 
+## Targeted-Row Public-Source Confirmation Addendum
+
+The targeted-row public-source confirmation packet now lives in
+`facility-validation-public-source-confirmation-targeted-rows.md`. The script
+`scripts/confirm-bgd-facility-public-map-targeted-rows.py` reads the 40-row
+targeted inspection CSV and retrieves public DGHS profile pages plus public
+OSM API feature records for all targeted inspection rows.
+
+The pass checks 40 targeted inspection cases, including all 30 priority-1
+rows. It retrieves 40 DGHS public profiles and 40 OSM API feature records. All
+40 rows show DGHS profile token support, and 6 rows have live OSM
+candidate-name scores at or above 0.75. All 40 rows remain open; 0 are closed
+as resolved and 0 are reclassified as same-facility matches.
+
+The 40 rows split into:
+
+| Public-source confirmation lane | Rows |
+|---|---:|
+| Zero-OSM context candidate outside upazila, still open | 18 |
+| Candidate feature retrieved but name conflict remains | 15 |
+| Source-repair public sources retrieved, still open | 4 |
+| Possible same-facility candidate needing manual location check | 3 |
+
+This confirms that public-source reachability is not the limiting issue for
+the targeted queue. The remaining work is source classification: separating
+upazila-level observability gaps from row-level name conflicts, source-repair
+cases, and possible same-facility public-map candidates.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -400,6 +428,7 @@ python public-service-data-quality/scripts/triage-bgd-facility-public-map-gaps.p
 python public-service-data-quality/scripts/build-bgd-facility-public-map-gap-row-evidence.py
 python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targets.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
+python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 ```
 
 Outputs:
@@ -429,10 +458,12 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-map-inspection-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is to continue public-source/manual confirmation beyond the
-first 12 rows while preserving the lane separation. Close or reclassify a row
-only if a public source supports the change; otherwise keep it open with the
-specific unresolved source question.
+The next upgrade is a decision ledger for the 3 possible same-facility rows,
+the 4 source-repair rows, and a small set of high-exposure name-conflict rows.
+Close or reclassify a row only if a public source supports the change;
+otherwise keep it open with the specific unresolved source question.

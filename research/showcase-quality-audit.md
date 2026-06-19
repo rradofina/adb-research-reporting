@@ -37,7 +37,7 @@ candidates before adding new surfaces.
 | 1 | Market-level climate price transmission | L2 prototype | Public WFP/NASA POWER sprint, interactive market-month heatmap, and clear non-causal caveat | Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers | Convert the Nepal sprint into an L3 market-price package |
 | 2 | Public data freshness blind spots | L2 prototype | Public WDI API matrix makes stale and missing indicator vintages visible | Needs indicator-specific refresh expectations and non-applicability rules | Add source-specific refresh cadence labels |
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
-| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, and a 12-row public-source confirmation pass | Needs public-source/manual confirmation beyond the first 12 rows, registry-vintage notes, and independent validation before stronger access-map use | Continue confirmation beyond the first 12 targeted inspection rows |
+| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, and a 40-row public-source confirmation pass | Needs decision-ledger review for possible same-facility rows, source-repair rows, registry-vintage notes, and independent validation before stronger access-map use | Build a decision ledger for the 3 possible same-facility rows, the 4 source-repair rows, and selected high-exposure name-conflict rows |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
@@ -232,11 +232,33 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-psdq-public-source-confirmation-desktop-chart.png`,
   `reporting-site/qa/showcase-psdq-public-source-confirmation-mobile.png`, and
   `reporting-site/qa/showcase-psdq-public-source-confirmation-mobile-list.png`.
+- PSDQ report #4 then received a targeted-row public-source confirmation
+  pass. New script
+  `public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py`
+  reads the 40-row targeted inspection CSV and retrieves public DGHS profile
+  pages plus public OSM API records for all targeted inspection rows. It writes
+  `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`
+  and
+  `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`.
+  The pass retrieves 40 DGHS profiles and 40 OSM API records, covers all 30
+  priority-1 rows, records DGHS token support for all 40 rows, finds 6 rows
+  with live candidate-name score at or above 0.75, and closes or reclassifies
+  0 rows. This is public-source confirmation, not human validation or row
+  closure. Verification passed: targeted-row confirmation script rerun,
+  program-script `py_compile`, production build, six deterministic gates,
+  `git diff --check`, review packet and zip rebuild, and desktop/mobile
+  browser QA with no page-level horizontal overflow and no page errors.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-desktop.png`,
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-desktop-chart.png`,
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-mobile.png`,
+  and
+  `reporting-site/qa/showcase-psdq-targeted-source-confirmation-mobile-list.png`.
 
 ## Next deepening order
 
-1. PSDQ source disagreement, public-source/manual confirmation beyond the
-   first 12 targeted inspection rows.
+1. PSDQ source disagreement, decision ledger for possible same-facility,
+   source-repair, and selected high-exposure name-conflict rows.
 2. Air-monitoring observability, because the visual hook is strong and the
    next source upgrade is concrete.
 3. Access map-completeness, because official registry joins can turn a source

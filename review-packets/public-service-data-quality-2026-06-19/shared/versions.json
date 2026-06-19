@@ -1,0 +1,117 @@
+{
+  "$schema_version": "1",
+  "description": "Pinned external source versions for every program in this repository. Governed by CONSTITUTION.md section 11. Updated any time a source is bumped. Retrieval dates should be updated whenever a pipeline refreshes its cache.",
+  "updated": "2026-04-24",
+  "sources": {
+    "geoboundaries": {
+      "release": "gbOpen",
+      "url": "https://www.geoboundaries.org/api/current/gbOpen/",
+      "retrieved_on": "2026-04-23",
+      "notes": "ADM1 polygons used for PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS in access-services."
+    },
+    "world_bank_wdi": {
+      "api_base": "https://api.worldbank.org/v2/",
+      "indicators_used": [
+        "SP.POP.TOTL",
+        "AG.LND.TOTL.K2",
+        "SP.RUR.TOTL.ZS",
+        "EN.ATM.PM25.MC.M3",
+        "IT.NET.USER.ZS"
+      ],
+      "retrieved_on": "2026-04-23",
+      "notes": "Per-indicator retrieval date should be recorded in each generated row, not only here."
+    },
+    "world_bank_cckp": {
+      "api_base": "https://cckpapi.worldbank.org/cckp/v1/",
+      "dataset": "cmip6-x0.25",
+      "variables_used": ["tasmax", "pr", "prpercnt"],
+      "periods": ["1995-2014", "2040-2059"],
+      "scenarios": ["historical", "ssp245"],
+      "ensemble": "median_ensemble_all_mean",
+      "retrieved_on": "2026-04-23",
+      "notes": "National-level climatology. Not sufficient for within-country ADM1 variation; see Constitution section 6.5."
+    },
+    "worldpop_stats_api": {
+      "api_base": "https://api.worldpop.org/v1/services/stats",
+      "dataset_year": 2020,
+      "retrieved_on": "2026-04-23",
+      "notes": "Flaky and rate-limited. Constitution section 11 recommends migrating to local raster zonal stats."
+    },
+    "psa_openstat": {
+      "dataset": "2020 Census of Population and Housing, Regional",
+      "endpoint": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO/0021A6DPAG0.px",
+      "retrieved_on": "2026-04-23",
+      "notes": "Philippines ADM1 population. URL path is fragile; cache mandatory."
+    },
+    "osm_overpass": {
+      "endpoint": "https://overpass.kumi.systems/api/interpreter",
+      "data_vintage": null,
+      "retrieved_on_window": ["2026-04-05", "2026-04-23"],
+      "notes": "OSM is continuously edited. Reproducibility hazard per Constitution section 11. Planned migration to Overture monthly-versioned releases or a pinned Geofabrik planet extract."
+    },
+    "ookla_open_data": {
+      "s3_base": "https://ookla-open-data.s3.amazonaws.com/parquet/performance/",
+      "year_quarter": "2026-Q1",
+      "mode": ["fixed", "mobile"],
+      "retrieved_on": null,
+      "notes": "Manifest and DuckDB SQL committed; parquet not yet pulled. Opt-in via OOKLA_DOWNLOAD=1."
+    },
+    "openaq_api": {
+      "version": "v3",
+      "api_base": "https://api.openaq.org/v3/",
+      "retrieved_on": "2026-04-23",
+      "notes": "API key required for live pulls. Cache should be committed to repo so others reproduce without a key."
+    },
+    "who_aaq_database": {
+      "version": "v6.1",
+      "retrieved_on": "2026-04-23",
+      "notes": "WHO Ambient Air Quality Database. Excel download; hash in manifest.sha256 once committed."
+    },
+    "earth_engine_assets": {
+      "assets_in_use": [],
+      "notes": "Earth Engine export scaffolds exist (e.g., Sentinel-5P NO2) but no asset is committed to the pipeline yet. Record asset ID and export date per asset when activated."
+    },
+    "adb_aric_economy_list": {
+      "source": "ADB Asia Regional Integration Center, Asia and the Pacific economy grouping",
+      "retrieved_on": "2026-04-23",
+      "notes": "Defines the 50 ADB regional member economies used for scale-out screens."
+    },
+    "doh_nhfr_phl": {
+      "name": "DOH National Health Facility Registry v2.0",
+      "url": "https://nhfr.doh.gov.ph/VActivefacilitiesList",
+      "api": "https://nhfr.doh.gov.ph/api/list/v_activefacilities",
+      "access_model": "A (public, JWT issued per landing page; no login required)",
+      "license": "Unstated. Public-information disclosure under RA 9485.",
+      "version": "v2.0",
+      "totalRecordCount_at_retrieval": 44267,
+      "page_size_used": 2000,
+      "pages_cached": 23,
+      "retrieved_on": "2026-04-25",
+      "iso3": "PHL",
+      "regcode_to_adm1_map": {
+        "01": "PH-01", "02": "PH-02", "03": "PH-03", "04": "PH-40",
+        "05": "PH-05", "06": "PH-06", "07": "PH-07", "08": "PH-08",
+        "09": "PH-09", "10": "PH-10", "11": "PH-11", "12": "PH-12",
+        "13": "PH-00", "14": "PH-15", "16": "PH-13", "17": "PH-41",
+        "19": "PH-14"
+      },
+      "nir_provcode_split": {
+        "18045": "PH-06",
+        "18302": "PH-06",
+        "18046": "PH-07",
+        "18061": "PH-07"
+      },
+      "notes": "Used by Program 13 (public-service-data-quality) to compare against OSM-mapped health amenities from access-services pipeline."
+    }
+  },
+  "amendment_log": [
+    {
+      "date": "2026-04-24",
+      "change": "Initial version. Schema and first pin of every source currently used by access-services, air-monitoring, and digital-performance pipelines."
+    },
+    {
+      "date": "2026-04-25",
+      "change": "Added doh_nhfr_phl pin: DOH National Health Facility Registry v2.0, retrieved 2026-04-25, 44,267 active facilities across 23 pages, with regcode_to_adm1 mapping and NIR-provcode-split. Used by Program 13 (public-service-data-quality) Philippines pilot."
+    }
+  ]
+}

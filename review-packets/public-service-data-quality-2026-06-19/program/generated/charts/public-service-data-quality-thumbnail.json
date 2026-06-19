@@ -1,0 +1,30 @@
+{
+  "program": "public-service-data-quality",
+  "title": "Where the official health-facility map goes dark",
+  "caption": "OpenStreetMap recovers only 17% of Philippine and 12% of Bangladeshi clinical-tier facilities in the official registries.",
+  "headline_number": "PHL 17.1% \u00b7 BGD 11.8% clinical-tier match",
+  "visual_form": "two-up choropleth (PHL ADM1 + BGD ADM1)",
+  "source": "DOH NHFR (PHL), DGHS Facility Registry (BGD), OpenStreetMap",
+  "inputs": [
+    "generated/public-service-data-quality-PHL.csv",
+    "generated/public-service-data-quality-BGD.csv",
+    ".cache/phl-boundaries/gdb/phl_adm_psa_namria_20231106_GDB.gdb",
+    ".cache/geo/geoBoundaries-BGD-ADM1.geojson"
+  ],
+  "script": "public-service-data-quality/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-05-19T18:37:53+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "public-service-data-quality-thumbnail.png",
+    "svg": "public-service-data-quality-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "bf34019478706b3c4f3eaf9d59355adb5e1158be9ecc009dac622dfc99a954b9",
+    "svg": "2417ae237bbef3047cdd765496a064c31fddf349052af5d99aef314e0c0c17fa"
+  }
+}

@@ -91,7 +91,9 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Continue confirmation beyond the first 12 rows, but keep the same standard:
-separate source-repair rows, possible same-facility candidates, weak candidate
-links, and zero-OSM observability cases. A row should be closed or
-reclassified only when public evidence supports the change.
+The next confirmation packet extends this check to all 40 targeted inspection
+rows in `facility-validation-public-source-confirmation-targeted-rows.md`.
+Keep the same standard: separate source-repair rows, possible same-facility
+candidates, weak candidate links, and zero-OSM observability cases. A row
+should be closed or reclassified only when public evidence supports the
+change.

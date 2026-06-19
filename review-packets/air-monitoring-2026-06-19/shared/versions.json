@@ -178,6 +178,16 @@
       ],
       "notes": "No-network station-grade decision ledger for the 66 exact method-context station rows. It joins committed source-scan artifacts into row-level decision lanes, records 66 exact source rows, 50 method-context rows, 16 raw-value or blocker cautions, and keeps current-status confirmed, station-method classified, complete monitor-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_station_method_classification_audit": {
+      "script": "air-monitoring/scripts/build-station-method-classification-audit.py",
+      "retrieved_on": "2026-06-19",
+      "derives_from": [
+        "air_monitoring_station_grade_decision_ledger",
+        "air_monitoring_indonesia_georgia_row_method_source_scan",
+        "air_monitoring_station_code_status_method_source_scan"
+      ],
+      "notes": "Station-method classification audit for the 66 exact station-grade decision-ledger rows. It retrieves 4 public method/catalog sources, classifies 22 Indonesia BMKG rows as Beta Attenuation Monitoring method rows, records 37 rows with recent public measurement visibility, keeps Georgia at source-level catalog context with live-data verification caution, keeps Uzbekistan at instrument-hint/blocker context, and keeps current-status confirmed, calibration-status, complete monitor-grade, and station-radius-ready rows at zero."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -312,6 +322,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_station_grade_decision_ledger pin after joining the committed exact-row method evidence and follow-up scans into a 66-row station-grade decision ledger with zero current-status, complete-grade, and station-radius-ready rows."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_station_method_classification_audit pin after classifying 22 exact Indonesia BMKG rows as Beta Attenuation Monitoring method rows while keeping current-status, calibration-status, complete-grade, and station-radius readiness at zero."
     }
   ]
 }

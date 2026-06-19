@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -32,10 +32,11 @@ audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
 Indonesia/Georgia row-method source scan, the station-code status/method
-source scan, and the station-grade decision ledger honestly, and do not imply
-station-radius, complete monitor-grade, or regulatory-inventory validation
-until official method tables, station crosswalks, station-level
-current-status sources, and catchment methods are added.
+source scan, the station-grade decision ledger, and the station-method
+classification audit honestly, and do not imply station-radius, complete
+monitor-grade, or regulatory-inventory validation until station-level
+calibration/status sources, station crosswalks, complete grade-basis evidence,
+and catchment methods are added.
 
 ## Last completed
 
@@ -516,6 +517,30 @@ current-status sources, and catchment methods are added.
   classified rows, complete monitor-grade rows, and station-radius-ready rows
   at 0. Wrote `station-grade-decision-ledger.md` and wired a public
   station-grade decision wall.
+- **2026-06-19:** Added the station-method classification audit. New
+  networked script `scripts/build-station-method-classification-audit.py`
+  joins the 66-row station-grade decision ledger to the Indonesia/Georgia
+  row-method source scan, the station-code status/method source scan, and 4
+  public method/catalog sources from BMKG and air.gov.ge. It writes
+  `generated/air-monitoring-station-method-classification-audit.csv` and
+  `generated/air-monitoring-station-method-classification-audit-summary.json`,
+  retrieves all 4 source records, classifies 22 Indonesia/BMKG rows as
+  `Beta Attenuation Monitoring (BAM)`, records 37 rows with recent PM2.5
+  measurement visibility, keeps 16 Georgia rows at source-level catalog
+  context with live-data verification caution, keeps 28 Uzbekistan rows as
+  instrument-hint or blocker context, and records 16 raw-value or blocker
+  caution rows. Current-status confirmed rows, calibration-status rows,
+  complete monitor-grade rows, and station-radius-ready rows remain 0. Wrote
+  `station-method-classification-audit.md` and wired a public
+  station-method classification wall. Verification passed: audit script rerun,
+  script `py_compile`, evidence/reference sync, production site build, and
+  agent-browser desktop/mobile QA at 1440x1100 and 390x1000. Browser QA
+  confirmed 6 stat cards, 3 decision lanes, 3 country cards, 16 sample row
+  cards, 9 gate cards, 3 download links, no page or section horizontal
+  overflow, no overflowing mobile children, no console output, and no page
+  errors. Screenshots:
+  `reporting-site/qa/showcase-air-method-classification-desktop.png` and
+  `reporting-site/qa/showcase-air-method-classification-mobile.png`.
 
 ## Next focused work
 
@@ -527,19 +552,19 @@ current-status sources, and catchment methods are added.
    station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. Use the 66-row station-grade decision ledger as the next source-targeting
-   wall. It shows exact source trails and PM2.5 evidence for all 66 rows, but
-   16 rows carry raw-value or blocker cautions and 0 rows have current-status,
-   station-method, complete-grade, or station-radius closure.
-3. For the 38 Indonesia and Georgia exact PM2.5 portal/API rows, the
-   station-code scan improves the Georgia lane from alias context to 16 exact
-   `air.gov.ge` station-code API rows with PM2.5 equipment/substance rows and
-   15 operating-description context rows. Indonesia remains 22 exact BMKG
-   station-code/payload rows with same-page method context from the prior scan.
-   The next useful work is no longer broad station-code discovery; it is a
-   public station-owner or regulator method/status/certification table that
-   gives station-level method class, current status, calibration/status, and
-   complete monitor-grade classification for the exact rows.
+2. Use the 66-row station-method classification audit as the next
+   source-targeting wall. It upgrades 22 Indonesia/BMKG rows to
+   source-supported BAM method classification, records 37 recent PM2.5
+   measurement-visibility rows, and still leaves 0 current-status confirmed
+   rows, 0 row-level calibration/status rows, 0 complete-grade rows, and 0
+   station-radius-ready rows.
+3. For the 22 BMKG rows now method-classified, find station-level
+   calibration/status or official grade-basis evidence before any row is
+   promoted to complete monitor-grade. For Georgia, exact station-code rows
+   remain source-level catalog context plus live-data verification caution;
+   find a station-code method/status table or verified report. For Uzbekistan,
+   instrument hints and exact blocker rows remain outside grade promotion until
+   exact blockers, status, and certification are resolved.
 4. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
@@ -597,6 +622,13 @@ current-status sources, and catchment methods are added.
   caution rows, and still keeps station method-table, calibration/status,
   current-status confirmed, station-method classified, complete monitor-grade,
   and station-radius-ready rows at 0.
+- The station-method classification audit retrieves 4 public method/catalog
+  sources and upgrades the 22 Indonesia/BMKG rows to source-supported BAM
+  method classification, but it still records 0 current-status confirmed rows,
+  0 row-level calibration/status rows, 0 complete monitor-grade rows, and 0
+  station-radius-ready rows. Georgia remains source-level catalog context with
+  live-data verification caution, and Uzbekistan remains instrument-hint or
+  blocker context.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

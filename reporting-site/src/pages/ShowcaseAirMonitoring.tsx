@@ -1471,6 +1471,78 @@ interface StationGradeDecisionLedgerSummary {
   non_claim: string;
 }
 
+interface StationMethodClassificationGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationMethodClassificationCountryRow {
+  iso3: string;
+  country: string;
+  target_rows: number;
+  method_classified_rows: number;
+  current_measurement_recent_rows: number;
+  source_level_instrument_catalog_rows: number;
+  unverified_or_blocker_caution_rows: number;
+  current_status_confirmed_rows: number;
+  calibration_status_available_rows: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface StationMethodClassificationDecision {
+  decision: string;
+  rows: number;
+}
+
+interface StationMethodClassificationSampleRow {
+  iso3: string;
+  source_station_id: string;
+  source_station_name: string;
+  station_method_class: string;
+  station_method_classified: boolean;
+  current_measurement_recent: boolean;
+  raw_value_or_blocker_caution: boolean;
+  audit_decision: string;
+}
+
+interface StationMethodClassificationSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_rows: number;
+    target_indonesia_rows: number;
+    target_georgia_rows: number;
+    target_uzbekistan_rows: number;
+    source_records_total: number;
+    source_records_retrieved: number;
+    bmkg_method_classified_rows: number;
+    bmkg_recent_exact_detail_rows: number;
+    bmkg_regulation_calibration_context_rows: number;
+    bmkg_bam1020_source_level_model_context_rows: number;
+    georgia_source_level_catalog_rows: number;
+    georgia_live_data_unverified_caution_rows: number;
+    uzbekistan_instrument_hint_rows: number;
+    raw_value_or_blocker_caution_rows: number;
+    current_measurement_recent_rows: number;
+    current_status_confirmed_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  country_rows: StationMethodClassificationCountryRow[];
+  decision_counts: StationMethodClassificationDecision[];
+  evidence_gate_counts: StationMethodClassificationGate[];
+  station_sample_rows: StationMethodClassificationSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1599,6 +1671,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationCodeStatusMethodSummary | null>(null);
   const [stationGradeDecisionLedger, setStationGradeDecisionLedger] =
     useState<StationGradeDecisionLedgerSummary | null>(null);
+  const [stationMethodClassification, setStationMethodClassification] =
+    useState<StationMethodClassificationSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1787,6 +1861,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-method-classification-audit-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Station-method classification audit HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationMethodClassification(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -1924,6 +2018,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationCodeStatusMethodPanel summary={stationCodeStatusMethod} />
 
       <AirStationGradeDecisionLedgerPanel summary={stationGradeDecisionLedger} />
+
+      <AirStationMethodClassificationPanel summary={stationMethodClassification} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -5292,6 +5388,176 @@ function AirStationGradeDecisionLedgerPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading station-grade decision ledger...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationMethodClassificationPanel({
+  summary,
+}: {
+  summary: StationMethodClassificationSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const countries = summary?.country_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sampleRows = summary?.station_sample_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const countryTotal = Math.max(1, countries.reduce((sum, row) => sum + row.target_rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-method-classification-section" aria-label="Station-method classification audit">
+      <div className="air-grade-method-head air-method-classification-head">
+        <div>
+          <p className="kicker kicker-blue">Station-method classification audit</p>
+          <h2>A method class is not a grade claim.</h2>
+          <p>
+            This audit checks whether the exact station rows now have enough
+            public method evidence to classify the PM2.5 measurement method. It
+            upgrades the BMKG method lane while keeping status, calibration,
+            complete grade, and radius gates closed.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-method-classification-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>Method evidence improved, but station-grade certification did not.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-method-classification-stat-grid">
+            <div>
+              <span>Audit rows</span>
+              <strong>{formatNumber(counts.target_rows)}</strong>
+              <em>{formatNumber(counts.target_indonesia_rows)} IDN, {formatNumber(counts.target_georgia_rows)} GEO, {formatNumber(counts.target_uzbekistan_rows)} UZB</em>
+            </div>
+            <div>
+              <span>BMKG method class</span>
+              <strong>{formatNumber(counts.bmkg_method_classified_rows)}</strong>
+              <em>Beta Attenuation Monitoring</em>
+            </div>
+            <div>
+              <span>Recent measurement visible</span>
+              <strong>{formatNumber(counts.current_measurement_recent_rows)}</strong>
+              <em>display or hourly observation</em>
+            </div>
+            <div>
+              <span>Georgia caution</span>
+              <strong>{formatNumber(counts.georgia_live_data_unverified_caution_rows)}</strong>
+              <em>live data not verified</em>
+            </div>
+            <div>
+              <span>Blocker caution</span>
+              <strong>{formatNumber(counts.raw_value_or_blocker_caution_rows)}</strong>
+              <em>raw-value or blocker rows</em>
+            </div>
+            <div>
+              <span>Status confirmed</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>no status promotions</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-method-classification-bridge" aria-label="Station-method classification decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className={`air-grade-method-lane air-method-classification-lane air-method-classification-lane-${decision.decision}`}>
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-method-classification-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-country-grid air-method-classification-country-grid">
+            {countries.map((row) => (
+              <article key={row.iso3} className="air-grade-method-country air-method-classification-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.target_rows)} audit rows</b>
+                </div>
+                <div className="air-grade-method-track air-method-classification-track">
+                  <i style={{ width: `${Math.max(5, (row.target_rows / countryTotal) * 100)}%` }} />
+                </div>
+                <dl>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.method_classified_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Recent</dt>
+                    <dd>{formatNumber(row.current_measurement_recent_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Catalog</dt>
+                    <dd>{formatNumber(row.source_level_instrument_catalog_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Caution</dt>
+                    <dd>{formatNumber(row.unverified_or_blocker_caution_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{formatNumber(row.current_status_confirmed_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(row.complete_monitor_grade_classification_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid air-method-classification-row-grid">
+            {sampleRows.map((row) => (
+              <article key={`${row.iso3}-${row.source_station_id}`} className={`air-grade-method-row air-method-classification-row air-method-classification-row-${row.iso3.toLowerCase()}`}>
+                <div>
+                  <span>{row.iso3} · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{row.station_method_classified ? row.station_method_class : "method not closed"}</b>
+                </div>
+                <p>{sentenceCaseStatus(row.audit_decision)}</p>
+                <small>
+                  {row.current_measurement_recent ? "recent measurement visible" : "no recent measurement visibility"} · {row.raw_value_or_blocker_caution ? "caution present" : "no row caution"}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-method-classification-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-method-classification-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-method-classification-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-method-classification-audit.md" download>
+              Audit note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-method-classification-audit-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-method-classification-audit.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-method classification audit...</p>
       )}
     </section>
   );

@@ -79,6 +79,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_indonesia_georgia_row_method_source_scan", file: "indonesia-georgia-row-method-source-scan.md", label: "Air-monitoring Indonesia/Georgia row-method source scan" },
   { key: "air_monitoring_station_code_status_method_source_scan", file: "station-code-status-method-source-scan.md", label: "Air-monitoring station-code status/method source scan" },
   { key: "air_monitoring_station_grade_decision_ledger", file: "station-grade-decision-ledger.md", label: "Air-monitoring station-grade decision ledger" },
+  { key: "air_monitoring_station_method_classification_audit", file: "station-method-classification-audit.md", label: "Air-monitoring station-method classification audit" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
   { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "facility_validation_coded_screen", file: "facility-validation-coded-screen.md", label: "Facility-validation coded screen" },

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, and station-grade decision ledger exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, and station-method classification audit exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -136,9 +136,16 @@ overrides priority by editing this list.
    method-context rows into row-level decision lanes, records 66 exact source
    trails, 50 method-context rows, and 16 raw-value or blocker caution rows,
    while keeping current-status, station-method, complete-grade, and
-   station-radius-ready counts at 0. Next AI-doable loop is exact station-level
-   method/status/certification evidence, before any station-radius or catchment
-   claim.
+   station-radius-ready counts at 0. The station-method classification audit
+   then retrieves 4 BMKG and air.gov.ge method/catalog sources, classifies 22
+   Indonesia/BMKG rows as BAM, records 37 recent measurement-visibility rows,
+   keeps Georgia at source-level catalog context with live-data verification
+   caution and Uzbekistan at instrument-hint or blocker context, and keeps
+   current-status, calibration/status, complete-grade, and station-radius-ready
+   counts at 0. Next AI-doable loop is station-level calibration/status and
+   official grade-basis evidence for the 22 BMKG rows, plus exact station
+   method/status/certification tables for Georgia and Uzbekistan, before any
+   station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -477,6 +484,29 @@ by leaving the board in a state the next session can read.
   calibration/status rows, current-status confirmed rows, station-method
   classified rows, complete monitor-grade rows, and station-radius-ready rows
   at 0. The public route now renders a station-grade decision ledger panel.
+- **2026-06-19 (air-monitoring station-method classification audit):** Added
+  `air-monitoring/scripts/build-station-method-classification-audit.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-station-method-classification-audit.csv`
+  and
+  `air-monitoring/generated/air-monitoring-station-method-classification-audit-summary.json`,
+  and wrote `air-monitoring/station-method-classification-audit.md`. The
+  networked audit reads the station-grade decision ledger plus the
+  Indonesia/Georgia and station-code scans, retrieves 4 BMKG and air.gov.ge
+  method/catalog sources, classifies 22 Indonesia/BMKG rows as
+  `Beta Attenuation Monitoring (BAM)`, records 37 rows with recent PM2.5
+  measurement visibility, keeps 16 Georgia rows at source-level catalog
+  context with live-data verification caution, keeps 28 Uzbekistan rows as
+  instrument-hint or blocker context, records 16 raw-value or blocker caution
+  rows, and keeps current-status confirmed rows, row-level calibration/status
+  rows, complete monitor-grade rows, and station-radius-ready rows at 0. The
+  public route now renders a station-method classification panel.
+  Agent-browser QA passed at 1440x1100 and 390x1000 with 6 stat cards, 3
+  decision lanes, 3 country cards, 16 sample row cards, 9 gate cards, 3
+  download links, no page or section horizontal overflow, no overflowing mobile
+  children, no console output, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-method-classification-desktop.png` and
+  `reporting-site/qa/showcase-air-method-classification-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

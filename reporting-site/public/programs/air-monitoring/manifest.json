@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T15:01:24.412Z",
+  "generated_at": "2026-06-19T15:32:42.436Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -304,6 +304,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_station_method_classification_audit",
+      "file": "station-method-classification-audit.md",
+      "label": "Air-monitoring station-method classification audit",
+      "size": 4069,
+      "size_human": "4.0 KB",
+      "mtime": "2026-06-19T15:18:45.157Z",
+      "sha256": "6d629a7f6117b2de0b9b88bbd5104a54ca5abef7f0793745c98bd4590fb0d8db",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -562,6 +572,18 @@
       "size": 69541,
       "size_human": "67.9 KB",
       "sha256": "18b5f22d345550dc8d02d22990c99cbf9e3d6252610619cd47e3a57ade9ad79d"
+    },
+    {
+      "file": "generated/air-monitoring-station-method-classification-audit-summary.json",
+      "size": 18145,
+      "size_human": "17.7 KB",
+      "sha256": "6f497b07470b77d1371b9e93478b75ff279bb4819244f483f124a68fc77968af"
+    },
+    {
+      "file": "generated/air-monitoring-station-method-classification-audit.csv",
+      "size": 66400,
+      "size_human": "64.8 KB",
+      "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",

@@ -10873,6 +10873,58 @@
     border-left-color: #5a8227;
   }
 
+  .air-method-classification-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.1), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-method-classification-callout {
+    border-left-color: #007db8;
+    background: #eef8fc;
+  }
+
+  .air-method-classification-stat-grid > div {
+    border-top-color: #007db8;
+  }
+
+  .air-method-classification-lane,
+  .air-method-classification-row,
+  .air-method-classification-gate {
+    border-top-color: #007db8;
+  }
+
+  .air-method-classification-country,
+  .air-method-classification-row {
+    border-left-color: #007db8;
+  }
+
+  .air-method-classification-track {
+    background: #d7edf5;
+  }
+
+  .air-method-classification-track i {
+    background: linear-gradient(90deg, #007db8, #5a8227);
+  }
+
+  .air-method-classification-lane-indonesia_exact_detail_plus_bmkg_regulation_method_classified,
+  .air-method-classification-row-idn {
+    border-top-color: #5a8227;
+    border-left-color: #5a8227;
+  }
+
+  .air-method-classification-lane-georgia_source_level_instrument_catalog_keep_not_station_classified,
+  .air-method-classification-row-geo {
+    border-top-color: #fbb00e;
+    border-left-color: #fbb00e;
+  }
+
+  .air-method-classification-lane-uzbekistan_instrument_hint_or_blocker_keep_not_method_classified,
+  .air-method-classification-row-uzb {
+    border-top-color: #9b2226;
+    border-left-color: #9b2226;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -11883,6 +11935,11 @@
     .air-decision-ledger-country-grid,
     .air-decision-ledger-row-grid,
     .air-decision-ledger-gate-grid,
+    .air-method-classification-stat-grid,
+    .air-method-classification-bridge,
+    .air-method-classification-country-grid,
+    .air-method-classification-row-grid,
+    .air-method-classification-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -11910,6 +11967,7 @@
     .air-grade-station-head,
     .air-grade-method-head,
     .air-decision-ledger-head,
+    .air-method-classification-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
@@ -12929,6 +12987,11 @@
     .air-decision-ledger-country-grid,
     .air-decision-ledger-row-grid,
     .air-decision-ledger-gate-grid,
+    .air-method-classification-stat-grid,
+    .air-method-classification-bridge,
+    .air-method-classification-country-grid,
+    .air-method-classification-row-grid,
+    .air-method-classification-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -12971,6 +13034,9 @@
     .air-decision-ledger-lane,
     .air-decision-ledger-row,
     .air-decision-ledger-gate,
+    .air-method-classification-lane,
+    .air-method-classification-row,
+    .air-method-classification-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -12991,6 +13057,7 @@
     .air-grade-station-head,
     .air-grade-method-head,
     .air-decision-ledger-head,
+    .air-method-classification-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
@@ -13068,6 +13135,7 @@
     .air-grade-station-downloads,
     .air-grade-method-downloads,
     .air-decision-ledger-downloads,
+    .air-method-classification-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-06-19T15:26:50Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_method_classification_audit",
+  "method": "air_monitoring_station_method_classification_audit_v1",
+  "goal_level": "L3 station-method classification audit",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\station-method-classification-source-seed.csv",
+      "role": "public method/catalog source seed for this audit"
+    },
+    {
+      "path": "generated\\air-monitoring-station-grade-decision-ledger.csv",
+      "role": "66-row station-grade decision ledger"
+    },
+    {
+      "path": "generated\\air-monitoring-indonesia-georgia-row-method-source-scan.csv",
+      "role": "exact BMKG station-detail method evidence"
+    },
+    {
+      "path": "generated\\air-monitoring-station-code-status-method-source-scan.csv",
+      "role": "Georgia station-code and Uzbekistan blocker context"
+    }
+  ],
+  "coverage_counts": {
+    "target_rows": 66,
+    "target_indonesia_rows": 22,
+    "target_georgia_rows": 16,
+    "target_uzbekistan_rows": 28,
+    "source_records_total": 4,
+    "source_records_retrieved": 4,
+    "bmkg_method_classified_rows": 22,
+    "bmkg_recent_exact_detail_rows": 22,
+    "bmkg_regulation_calibration_context_rows": 22,
+    "bmkg_bam1020_source_level_model_context_rows": 22,
+    "georgia_source_level_catalog_rows": 16,
+    "georgia_live_data_unverified_caution_rows": 16,
+    "uzbekistan_instrument_hint_rows": 28,
+    "raw_value_or_blocker_caution_rows": 16,
+    "current_measurement_recent_rows": 37,
+    "current_status_confirmed_rows": 0,
+    "calibration_status_available_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "country_rows": [
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "target_rows": 16,
+      "method_classified_rows": 0,
+      "current_measurement_recent_rows": 15,
+      "source_level_instrument_catalog_rows": 16,
+      "unverified_or_blocker_caution_rows": 16,
+      "current_status_confirmed_rows": 0,
+      "calibration_status_available_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "target_rows": 22,
+      "method_classified_rows": 22,
+      "current_measurement_recent_rows": 22,
+      "source_level_instrument_catalog_rows": 22,
+      "unverified_or_blocker_caution_rows": 0,
+      "current_status_confirmed_rows": 0,
+      "calibration_status_available_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "target_rows": 28,
+      "method_classified_rows": 0,
+      "current_measurement_recent_rows": 0,
+      "source_level_instrument_catalog_rows": 0,
+      "unverified_or_blocker_caution_rows": 15,
+      "current_status_confirmed_rows": 0,
+      "calibration_status_available_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    }
+  ],
+  "decision_counts": [
+    {
+      "decision": "georgia_source_level_instrument_catalog_keep_not_station_classified",
+      "rows": 16
+    },
+    {
+      "decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified",
+      "rows": 22
+    },
+    {
+      "decision": "uzbekistan_instrument_hint_or_blocker_keep_not_method_classified",
+      "rows": 28
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Method-classification sources retrieved",
+      "rows": 4,
+      "reader_use": "Official method and catalog sources were retrieved or the retrieval failure is recorded with URL and error."
+    },
+    {
+      "status": "partly_available",
+      "gate": "BMKG exact rows with station method classified",
+      "rows": 22,
+      "reader_use": "Exact BMKG detail pages plus the official regulation support a BAM method class for Indonesia target rows."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Current measurement observed recently",
+      "rows": 37,
+      "reader_use": "A recent public station display or hourly PM2.5 observation is visibility evidence, not station-status certification."
+    },
+    {
+      "status": "caution",
+      "gate": "Georgia live-data verification caution",
+      "rows": 16,
+      "reader_use": "Georgia's portal says automatic-station data shown live are not verified; this blocks grade closure."
+    },
+    {
+      "status": "caution",
+      "gate": "Raw-value or blocker caution",
+      "rows": 16,
+      "reader_use": "Rows with test-mode, stale, sentinel, negative, or other raw-value cautions must stay outside grade/radius assumptions."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Current-status confirmed",
+      "rows": 0,
+      "reader_use": "No row has public station-status certification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Calibration/status available",
+      "rows": 0,
+      "reader_use": "Calibration procedure context is not row-level calibration status."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade classification",
+      "rows": 0,
+      "reader_use": "No row has complete public station-grade classification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-radius grade assumptions",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until status and complete grade are public and row-level."
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "bmkg_air_quality_observation_regulation_2019",
+      "source_name": "BMKG Regulation No. 11/2019 on air-quality observation and data management",
+      "source_role": "official_method_regulation",
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "url": "https://jdih.bmkg.go.id/common/dokumen/perbanno.11tahun2019.pdf",
+      "final_url": "https://jdih.bmkg.go.id/storage/common/dokumen/perbanno.11tahun2019.pdf",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_kind": "pdf",
+      "retrieval_bytes": 3900183,
+      "sha256": "d4d351fe8599d23823effd6caf97ef78f222524aae9680d4e0bd08ca27df8f05",
+      "matched_expected_terms": [
+        "Beta Attenuation Monitoring",
+        "BAM"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "BAM",
+        "Syncronous Cycle Method"
+      ],
+      "matched_current_terms": [
+        "peralatan otomatis"
+      ],
+      "matched_calibration_terms": [
+        "kalibrasi",
+        "analisis setelah kalibrasi"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official BMKG regulation text used only as source-level method and calibration-procedure context for automatic air-quality observations."
+    },
+    {
+      "source_key": "bmkg_sumsel_pm25_bam1020_note",
+      "source_name": "BMKG South Sumatra PM2.5 instrument note",
+      "source_role": "official_station_owner_method_note",
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "final_url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_kind": "html",
+      "retrieval_bytes": 158033,
+      "sha256": "1017cd4c0346ab6cedbd7e7bb0e193c21783df79aa7b8fe9a51d1cf6e08e167d",
+      "matched_expected_terms": [
+        "BMKG",
+        "PM2.5",
+        "BAM-1020"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitor",
+        "BAM-1020",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "otomatis"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official BMKG regional station page used as source-level model context, not as station-specific model evidence for every BMKG row."
+    },
+    {
+      "source_key": "airgov_monitoring_network_catalog",
+      "source_name": "Air.gov.ge atmospheric air-quality monitoring network",
+      "source_role": "official_network_catalog",
+      "iso3": "GEO",
+      "country": "Georgia",
+      "url": "https://air.gov.ge/en/pages/14/14",
+      "final_url": "https://air.gov.ge/en/pages/14/14",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_kind": "html",
+      "retrieval_bytes": 26515,
+      "sha256": "436fc3e7c288dae44b0090d55d18bf765578e39b630b72e8f09ef933eb50aae4",
+      "matched_expected_terms": [
+        "Monitoring Network",
+        "automatic stations",
+        "PM-712"
+      ],
+      "matched_method_terms": [
+        "Fidas 200",
+        "Fidas 200E",
+        "PM-712",
+        "automatic stations"
+      ],
+      "matched_current_terms": [
+        "24 hours"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official Georgia network page used as source-level instrument catalog and 24-hour automatic-monitoring context."
+    },
+    {
+      "source_key": "airgov_air_quality_index_method_note",
+      "source_name": "Air.gov.ge air-quality index method note",
+      "source_role": "official_index_method_note",
+      "iso3": "GEO",
+      "country": "Georgia",
+      "url": "https://air.gov.ge/en/pages/11/11",
+      "final_url": "https://air.gov.ge/en/pages/11/11",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_kind": "html",
+      "retrieval_bytes": 36538,
+      "sha256": "c742fad16edf11c2d19e562ff9f61c924b1c8507b8e2ea57cab72eb8f88da007",
+      "matched_expected_terms": [
+        "Air Quality Index",
+        "automatic air quality monitoring stations",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "automatic air quality monitoring stations"
+      ],
+      "matched_current_terms": [
+        "Hourly data",
+        "10 minutes delay"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [
+        "not verified",
+        "Verified data is available in the reports"
+      ],
+      "retrieval_error": "",
+      "source_note": "Official Georgia method/index page used to keep live automatic-station rows out of grade closure because the portal states live data are not verified."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_bjb2",
+      "source_station_name": "Banjarbaru",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_btm2",
+      "source_station_name": "Batam",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_idp2",
+      "source_station_name": "Indrapuri",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_jm3",
+      "source_station_name": "Kota Jambi",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_jm4",
+      "source_station_name": "Muaro Jambi",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_kmy3",
+      "source_station_name": "Kemayoran",
+      "station_method_class": "Beta Attenuation Monitoring (BAM)",
+      "station_method_classified": true,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "indonesia_exact_detail_plus_bmkg_regulation_method_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "01005",
+      "source_station_name": "Tazakendi (working in test mode)",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": true,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "AGMS",
+      "source_station_name": "Tbilisi - Davit Agmashenebeli Ave. № 73a",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "BTUM",
+      "source_station_name": "Batumi - T. Abuseridze Street №1",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "KUTS",
+      "source_station_name": "Kutaisi - Lado Asatiani St.№98",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": false,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "KZBG",
+      "source_station_name": "Tbilisi - Kazbegi Ave. near Vaso Godziashvili Garden",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN01",
+      "source_station_name": "Tbilisi - Marshal Gelovani Avenue №34",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": true,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "georgia_source_level_instrument_catalog_keep_not_station_classified"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "107",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": false,
+      "raw_value_or_blocker_caution": true,
+      "audit_decision": "uzbekistan_instrument_hint_or_blocker_keep_not_method_classified"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "108",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": false,
+      "raw_value_or_blocker_caution": true,
+      "audit_decision": "uzbekistan_instrument_hint_or_blocker_keep_not_method_classified"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "714",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": false,
+      "raw_value_or_blocker_caution": false,
+      "audit_decision": "uzbekistan_instrument_hint_or_blocker_keep_not_method_classified"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "715",
+      "source_station_name": "Автоматическая станция мониторинга атмосферного воздуха (Beta)",
+      "station_method_class": "",
+      "station_method_classified": false,
+      "current_measurement_recent": false,
+      "raw_value_or_blocker_caution": true,
+      "audit_decision": "uzbekistan_instrument_hint_or_blocker_keep_not_method_classified"
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-station-method-classification-audit.csv",
+    "summary_json": "generated\\air-monitoring-station-method-classification-audit-summary.json"
+  },
+  "non_claim": "This audit classifies public method evidence for exact station rows. It does not certify current station status, complete monitor-grade status, same-station OpenAQ joins, calibration status, or station-radius coverage."
+}

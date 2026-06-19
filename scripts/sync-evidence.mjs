@@ -70,6 +70,7 @@ const ARTIFACTS = [
   { key: "facility_validation_public_source_confirmation", file: "facility-validation-public-source-confirmation.md", label: "Facility-validation public-source confirmation" },
   { key: "facility_validation_public_source_confirmation_targeted_rows", file: "facility-validation-public-source-confirmation-targeted-rows.md", label: "Facility-validation targeted-row public-source confirmation" },
   { key: "facility_validation_public_source_decision_ledger", file: "facility-validation-public-source-decision-ledger.md", label: "Facility-validation public-source decision ledger" },
+  { key: "facility_validation_source_repair_public_evidence", file: "facility-validation-source-repair-public-evidence.md", label: "Facility-validation source-repair public evidence" },
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },

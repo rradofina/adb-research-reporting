@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, and 16-row public-source decision ledger added 2026-06-19; next loop is official public-evidence attachment for the 16 decision-ledger rows) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, and 4-row source-repair public-evidence attachment added 2026-06-19; next loop is official coordinate/source explanation for source-repair rows) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -37,10 +37,11 @@ overrides priority by editing this list.
    scan, coordinate-repair triage, public-map-gap triage, public-map-gap
    row-evidence ledger, targeted public-map inspection, first-row
    public-source confirmation, 40-row targeted public-source confirmation,
-   and 16-row public-source decision-ledger packets added 2026-06-19*.
-   Current work is attaching official public evidence to the 16 selected
-   decision-ledger rows, resolving source-repair-first cases before any
-   same-facility or map-absence language, without changing the maturity label.
+   16-row public-source decision-ledger, and 4-row source-repair
+   public-evidence attachment packets added 2026-06-19*. Current work is
+   searching for public official coordinate/source explanations for the 4
+   source-repair-first rows, before any same-facility or map-absence language,
+   without changing the maturity label.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -153,6 +154,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ source-repair public evidence):** Added
+  `public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py`,
+  generated
+  `psdq-bgd-facility-validation-source-repair-public-evidence.csv` and
+  `psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`,
+  and wrote
+  `public-service-data-quality/facility-validation-source-repair-public-evidence.md`.
+  The no-network pass reads the public-source decision ledger and targeted-row
+  confirmation CSV, then attaches public DGHS profile and OSM API evidence to
+  the 4 source-repair-first rows. All 4 have public evidence attached; 2 rows
+  share one public-map candidate; 2 rows have candidate distance of at least
+  10 kilometers; and 1 row has candidate distance of at least 50 kilometers.
+  All 4 source-repair rows remain open with 0 AI closures and 0 AI
+  reclassifications. This is public-source evidence attachment, not human
+  validation, source repair completion, row closure, a maturity promotion, or
+  a human-final upgrade. Verification passed: source-repair evidence script
+  rerun, new script `py_compile`, program-script `py_compile`, production
+  site build, six deterministic gates plus `git diff --check`, review packet
+  and zip rebuild, and agent-browser desktop/mobile QA at 1440x1100 and
+  390x900 with no page-level horizontal overflow and no page errors.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-desktop.png`,
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile-cards.png`.
+  Next PSDQ loop is searching for public official coordinate/source
+  explanations for the 4 source-repair-first rows.
 - **2026-06-19 (PSDQ public-source decision ledger):** Added
   `public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py`,
   generated

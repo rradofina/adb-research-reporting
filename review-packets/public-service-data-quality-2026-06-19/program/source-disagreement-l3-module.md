@@ -423,6 +423,28 @@ This makes the review queue narrower and more operational. It does not make
 the evidence human-validated, and it does not turn source reachability into a
 row outcome.
 
+## Source-Repair Public Evidence Addendum
+
+The source-repair evidence attachment now lives in
+`facility-validation-source-repair-public-evidence.md`. The script
+`scripts/attach-bgd-facility-source-repair-public-evidence.py` reads the
+decision ledger and the targeted-row confirmation CSV, then attaches public
+DGHS profile and OSM API evidence to the source-repair-first rows without
+fetching new data.
+
+The pass covers the 4 source-repair rows in the decision ledger:
+
+| Source-repair evidence signal | Rows |
+|---|---:|
+| Public evidence attached | 4 |
+| Rows sharing one public-map candidate | 2 |
+| Candidate distance at least 10 km | 2 |
+| Candidate distance at least 50 km | 1 |
+
+All 4 rows remain open; 0 are closed as resolved and 0 are reclassified as
+same-facility matches. The result is an evidence attachment for reviewer
+sequence, not a source repair completion.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -454,6 +476,7 @@ python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
+python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 ```
 
 Outputs:
@@ -487,6 +510,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 
 ## Next Statistical Upgrade
 

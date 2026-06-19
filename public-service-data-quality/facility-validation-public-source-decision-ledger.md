@@ -95,7 +95,8 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use the decision ledger to resolve the first track only when public evidence
-supports it. A stronger next pass would attach official public pages or map
-history for each decision row, record whether the closure gate is met, and
-keep all unresolved cases explicitly open.
+The first source-repair attachment pass now lives in
+`facility-validation-source-repair-public-evidence.md`. The next upgrade is to
+search for public official coordinate/source explanations for those four
+source-repair rows. Any row should remain open unless public evidence supports
+the repair, closure, or reclassification gate.

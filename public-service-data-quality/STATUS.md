@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, and 16-row public-source decision ledger added; public-evidence attachment for decision rows is the next upgrade; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, and 4-row source-repair public-evidence attachment added; official coordinate/source explanation for source-repair rows is the next upgrade; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -26,12 +26,42 @@ matching strata, validation sample, automated coded screen, AI row-review
 ledger, candidate/source checks, coordinate-repair triage, public-map-gap
 triage, row-evidence notes, targeted public-map inspection queue, first-row
 public-source confirmation, 40-row targeted public-source confirmation,
-public-source decision ledger, and caveats, make the source upgrade clear in
-the public surface, and preserve the existing PR maturity label without
-implying human-final review.
+public-source decision ledger, source-repair public evidence, and caveats,
+make the source upgrade clear in the public surface, and preserve the existing
+PR maturity label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh source-repair public-evidence
+  attachment for the PSDQ facility-validation decision ledger. New no-network
+  script `scripts/attach-bgd-facility-source-repair-public-evidence.py` reads
+  `generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv`
+  and
+  `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows.csv`,
+  then writes
+  `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
+  and
+  `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`.
+  The pass attaches public DGHS profile and OSM API evidence to all 4
+  source-repair-first rows. All 4 have public evidence attached; 2 rows share
+  one public-map candidate; 2 rows have candidate distance of at least 10
+  kilometers; and 1 row has candidate distance of at least 50 kilometers. All
+  4 source-repair rows remain open with 0 AI closures and 0 AI
+  reclassifications. Added
+  `facility-validation-source-repair-public-evidence.md`, wired evidence sync
+  and review-packet inclusion, updated README/REPRODUCE/L3 notes, and prepared
+  the showcase surface for source-repair evidence. This is public-source
+  evidence attachment, not human validation, a source repair completion, a row
+  closure, a maturity promotion, or a human-final upgrade. Verification
+  passed: source-repair evidence script rerun, new script `py_compile`,
+  program-script `py_compile`, production site build, six deterministic gates
+  plus `git diff --check`, review packet and zip rebuild, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with no page-level horizontal
+  overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-desktop.png`,
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh public-source decision ledger for the
   targeted PSDQ facility-validation queue. New no-network script
   `scripts/build-bgd-facility-public-source-decision-ledger.py` reads
@@ -434,12 +464,13 @@ implying human-final review.
 
 Current loop:
 
-1. Use the decision-ledger packet in
-   `generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
+1. Use the source-repair public-evidence packet in
+   `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
    and
-   `generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv`
-   to attach official public evidence to the 16 selected reviewer rows.
-2. Resolve source-repair-first rows before any map-absence or same-facility
+   `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
+   to search for public official coordinate/source explanations for the 4
+   source-repair-first rows.
+2. Keep source-repair-first rows before any map-absence or same-facility
    language because coordinate/source repair changes the interpretation.
 3. Keep zero-OSM upazila observability rows separate from row-level absence
    candidates because the nearest candidate feature is context, not direct

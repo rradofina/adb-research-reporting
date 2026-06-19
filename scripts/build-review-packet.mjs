@@ -75,6 +75,7 @@ const PROGRAM_FILES = [
   "facility-validation-public-source-confirmation.md",
   "facility-validation-public-source-confirmation-targeted-rows.md",
   "facility-validation-public-source-decision-ledger.md",
+  "facility-validation-source-repair-public-evidence.md",
   "limitations.md",
   "upgrade-gap.md",
   "catchment-upgrade.md",

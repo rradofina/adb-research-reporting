@@ -677,6 +677,72 @@ interface PsdqPublicSourceDecisionLedgerSummary {
   non_claim: string;
 }
 
+interface PsdqSourceRepairEvidenceRow {
+  evidence_id: string;
+  evidence_rank: number;
+  status: string;
+  decision_id: string;
+  confirmation_id: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  priority_scope: string;
+  source_repair_evidence_class: string;
+  source_repair_reviewer_action: string;
+  source_repair_reviewer_question: string;
+  closure_or_reclassification_gate: string;
+  public_evidence_attached: boolean | string;
+  dghs_public_profile_url: string;
+  dghs_profile_http_status: string;
+  candidate_feature_url: string;
+  candidate_osm_api_url: string;
+  candidate_osm_api_http_status: string;
+  candidate_osm_name_from_api: string;
+  candidate_osm_tags_compact: string;
+  candidate_distance_m_from_inspection: number | string;
+  candidate_name_score_from_live_tags: number | string;
+  shared_public_map_candidate_rows: number | string;
+  source_basis: string;
+}
+
+interface PsdqSourceRepairEvidenceSummary {
+  generated_at: string;
+  source_retrieved_at: string;
+  status: string;
+  goal_level: string;
+  selection_rule: string;
+  source_repair_scope: {
+    decision_ledger_rows: number;
+    source_repair_rows: number;
+    public_evidence_attached_rows: number;
+    dghs_profiles_attached: number;
+    osm_api_records_attached: number;
+    rows_with_shared_public_map_candidate: number;
+    rows_with_candidate_distance_10km_or_more: number;
+    rows_with_candidate_distance_50km_or_more: number;
+    max_candidate_distance_m: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  source_repair_evidence_class_counts: PsdqCandidateResolutionCount[];
+  candidate_feature_groups: Array<{
+    candidate_feature_url: string;
+    candidate_osm_api_url: string;
+    candidate_osm_name_from_api: string;
+    source_repair_rows: number;
+    districts: string[];
+    upazilas: string[];
+    facilities: string[];
+    max_distance_m: number;
+    max_name_score: number;
+  }>;
+  evidence_rows: PsdqSourceRepairEvidenceRow[];
+  evidence_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -829,6 +895,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqTargetedSourceConfirmationSummary | null>(null);
   const [publicSourceDecisionLedgerSummary, setPublicSourceDecisionLedgerSummary] =
     useState<PsdqPublicSourceDecisionLedgerSummary | null>(null);
+  const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
+    useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -895,6 +963,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`public source decision ledger HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -916,6 +988,7 @@ export default function ShowcasePSDQ() {
         publicSourceConfirmationPayload,
         targetedSourceConfirmationPayload,
         publicSourceDecisionLedgerPayload,
+        sourceRepairEvidencePayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -933,6 +1006,7 @@ export default function ShowcasePSDQ() {
         setPublicSourceConfirmationSummary(publicSourceConfirmationPayload);
         setTargetedSourceConfirmationSummary(targetedSourceConfirmationPayload);
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
+        setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1052,6 +1126,10 @@ export default function ShowcasePSDQ() {
 
       {publicSourceDecisionLedgerSummary && (
         <PsdqPublicSourceDecisionLedgerPanel summary={publicSourceDecisionLedgerSummary} />
+      )}
+
+      {sourceRepairEvidenceSummary && (
+        <PsdqSourceRepairPublicEvidencePanel summary={sourceRepairEvidenceSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -3873,6 +3951,151 @@ function PsdqDecisionLedgerRowChart({ rows }: { rows: PsdqPublicSourceDecisionLe
         })}
       </div>
     </>
+  );
+}
+
+function sourceRepairEvidenceColor(code: string) {
+  const colors: Record<string, string> = {
+    shared_public_map_candidate_across_multiple_dghs_rows: "#002569",
+    strong_name_but_long_coordinate_distance_conflict: "#007DB8",
+    strong_name_but_extreme_coordinate_distance_conflict: "#9B2226",
+    source_repair_public_evidence_attached: "#5A8227",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function sourceRepairEvidenceLabel(code: string) {
+  const labels: Record<string, string> = {
+    shared_public_map_candidate_across_multiple_dghs_rows: "Shared public-map candidate",
+    strong_name_but_long_coordinate_distance_conflict: "Long-distance source check",
+    strong_name_but_extreme_coordinate_distance_conflict: "Extreme-distance source check",
+    source_repair_public_evidence_attached: "Public evidence attached",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function asBoolean(value: boolean | string) {
+  return value === true || String(value).toLowerCase() === "true";
+}
+
+function PsdqSourceRepairPublicEvidencePanel({ summary }: { summary: PsdqSourceRepairEvidenceSummary }) {
+  const maxDistance = Math.max(
+    1,
+    ...summary.evidence_rows.map((row) => Number(row.candidate_distance_m_from_inspection || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-source-repair-evidence-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Source-repair public evidence</p>
+          <h2>Four rows now carry their public evidence before any outcome label.</h2>
+          <p>
+            The first source-repair pass attaches the DGHS profile and OSM API
+            evidence already retrieved for the repair queue. It separates a
+            shared-candidate collision from long-distance coordinate-source
+            checks and keeps every row open.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Source-repair rows</span>
+            <strong>{formatNumber(summary.source_repair_scope.source_repair_rows)}</strong>
+          </div>
+          <div>
+            <span>Evidence attached</span>
+            <strong>{formatNumber(summary.source_repair_scope.public_evidence_attached_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Shared candidate</span>
+            <strong>{formatNumber(summary.source_repair_scope.rows_with_shared_public_map_candidate)} rows</strong>
+          </div>
+          <div>
+            <span>10 km or more</span>
+            <strong>{formatNumber(summary.source_repair_scope.rows_with_candidate_distance_10km_or_more)} rows</strong>
+          </div>
+          <div>
+            <span>50 km or more</span>
+            <strong>{formatNumber(summary.source_repair_scope.rows_with_candidate_distance_50km_or_more)} row</strong>
+          </div>
+          <div>
+            <span>Rows closed</span>
+            <strong>{formatNumber(summary.source_repair_scope.rows_closed_as_resolved)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-source-repair-evidence-grid">
+        {summary.evidence_rows.map((row) => {
+          const distance = Number(row.candidate_distance_m_from_inspection || 0);
+          const score = Number(row.candidate_name_score_from_live_tags || 0);
+          const distanceWidth = Math.max(2, Math.min(100, (distance / maxDistance) * 100));
+          const color = sourceRepairEvidenceColor(row.source_repair_evidence_class);
+          return (
+            <article key={row.evidence_id} style={{ borderColor: color }}>
+              <div className="psdq-source-repair-card-head">
+                <span>{row.evidence_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.upazila_name}, {row.district_name}</em>
+              </div>
+              <div className="psdq-source-repair-class" style={{ background: color }}>
+                {sourceRepairEvidenceLabel(row.source_repair_evidence_class)}
+              </div>
+              <div className="psdq-source-repair-links">
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS {row.dghs_profile_http_status}
+                </a>
+                <a href={row.candidate_osm_api_url} target="_blank" rel="noreferrer">
+                  OSM API {row.candidate_osm_api_http_status}
+                </a>
+                <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                  Map feature
+                </a>
+              </div>
+              <div className="psdq-source-repair-candidate">
+                <span>Candidate</span>
+                <strong>{row.candidate_osm_name_from_api}</strong>
+                <em>{row.candidate_osm_tags_compact}</em>
+              </div>
+              <div className="psdq-source-repair-metrics">
+                <span><b>{formatNumber(score, 2)}</b> name score</span>
+                <span><b>{formatNumber(distance / 1000, 1)} km</b> candidate distance</span>
+                <span><b>{formatNumber(Number(row.shared_public_map_candidate_rows || 0))}</b> shared-candidate rows</span>
+              </div>
+              <div className="psdq-source-repair-distance" aria-label="Candidate distance share of maximum distance">
+                <i style={{ width: `${distanceWidth}%`, background: color }} />
+              </div>
+              <p>{row.source_repair_reviewer_question}</p>
+              <div className="psdq-source-repair-status">
+                <span>{asBoolean(row.public_evidence_attached) ? "Public evidence attached" : "Evidence attachment incomplete"}</span>
+                <span>0 closed</span>
+                <span>0 reclassified</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the source-repair evidence attachment</p>
+        <code>python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-public-evidence.md" download>
+          Download source-repair evidence note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json" download>
+          Download source-repair evidence summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv" download>
+          Download source-repair evidence CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
   );
 }
 

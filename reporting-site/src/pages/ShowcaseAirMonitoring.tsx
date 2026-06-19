@@ -1745,6 +1745,93 @@ interface BmkgStationStatusSummary {
   non_claim: string;
 }
 
+interface BmkgApiParityGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgApiParityDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgApiParityStationRow {
+  source_station_id: string;
+  source_station_name: string;
+  api_list_found: boolean;
+  api_list_condition_label: string;
+  api_detail_retrieved: boolean;
+  api_detail_date_raw: string;
+  api_detail_observation_count: number;
+  api_detail_latest_hour: string | number;
+  api_detail_latest_pm25_value: string | number;
+  api_coordinates_available: boolean;
+  api_list_detail_coordinate_match: boolean;
+  api_payload_has_station_status_field: boolean;
+  api_payload_has_inspection_field: boolean;
+  api_payload_has_calibration_field: boolean;
+  api_payload_has_certificate_field: boolean;
+  api_payload_has_grade_field: boolean;
+  api_payload_has_method_field: boolean;
+  api_condition_is_air_quality_label_only: boolean;
+  api_parity_decision: string;
+  reader_use: string;
+}
+
+interface BmkgApiParityExtraRow {
+  source_station_id: string;
+  source_station_name: string;
+  pm25_value: string | number;
+  condition: string;
+}
+
+interface BmkgApiParitySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    source_routes_retrieved: number;
+    auth_token_endpoint_retrieved: number;
+    auth_token_obtained: number;
+    pm25_list_api_retrieved: number;
+    pm25_list_api_station_rows: number;
+    pm25_list_api_extra_station_rows: number;
+    target_station_files_in_list_api_rows: number;
+    target_detail_api_routes_retrieved: number;
+    target_detail_api_data_rows: number;
+    target_detail_api_hourly_observation_rows: number;
+    api_detail_coordinate_rows: number;
+    api_coordinate_rows: number;
+    api_list_detail_coordinate_match_rows: number;
+    api_air_quality_condition_label_rows: number;
+    api_station_status_field_rows: number;
+    api_inspection_field_rows: number;
+    api_calibration_field_rows: number;
+    api_certificate_field_rows: number;
+    api_grade_field_rows: number;
+    api_method_field_rows: number;
+    current_status_confirmed_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgApiParityDecision[];
+  evidence_gate_counts: BmkgApiParityGate[];
+  station_rows: BmkgApiParityStationRow[];
+  station_sample_rows: BmkgApiParityStationRow[];
+  extra_api_station_rows: BmkgApiParityExtraRow[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2012,6 +2099,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgOperationMaintenanceSummary | null>(null);
   const [bmkgStationStatus, setBmkgStationStatus] =
     useState<BmkgStationStatusSummary | null>(null);
+  const [bmkgApiParity, setBmkgApiParity] =
+    useState<BmkgApiParitySummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -2287,6 +2376,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG API parity status HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgApiParity(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -2469,6 +2578,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgOperationMaintenancePanel summary={bmkgOperationMaintenance} />
 
       <AirBmkgStationStatusPanel summary={bmkgStationStatus} />
+
+      <AirBmkgApiParityPanel summary={bmkgApiParity} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -6463,6 +6574,205 @@ function AirBmkgStationStatusPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG station-specific status audit...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgApiParityPanel({
+  summary,
+}: {
+  summary: BmkgApiParitySummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.station_sample_rows ?? [];
+  const extras = summary?.extra_api_station_rows ?? [];
+  const total = Math.max(1, counts?.target_bmkg_rows ?? 0);
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const maxPm25 = Math.max(
+    1,
+    ...rows.map((row) => Number(row.api_detail_latest_pm25_value) || 0),
+  );
+  const fieldRows =
+    (counts?.api_station_status_field_rows ?? 0) +
+    (counts?.api_inspection_field_rows ?? 0) +
+    (counts?.api_calibration_field_rows ?? 0) +
+    (counts?.api_certificate_field_rows ?? 0) +
+    (counts?.api_grade_field_rows ?? 0) +
+    (counts?.api_method_field_rows ?? 0);
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-api-section" aria-label="BMKG API telemetry and status-field check">
+      <div className="air-grade-method-head air-bmkg-api-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG API parity check</p>
+          <h2>The API is live, but it is silent on certification.</h2>
+          <p>
+            This pass follows the public BMKG app token flow and checks the
+            official PM2.5 list/detail APIs for the same 22 station rows. The
+            APIs expose telemetry, coordinates, and condition labels; they do
+            not expose status, inspection, calibration, certificate, grade, or
+            method fields.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-api-callout">
+          <span>Status/certificate fields</span>
+          <strong>{formatNumber(fieldRows)}</strong>
+          <p>{formatNumber(counts?.target_detail_api_routes_retrieved ?? 0)} detail API routes still stay telemetry-only</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-api-stat-grid">
+            <div>
+              <span>Public token flow</span>
+              <strong>{formatNumber(counts.auth_token_obtained)}</strong>
+              <em>transient token obtained, not persisted</em>
+            </div>
+            <div>
+              <span>List API rows</span>
+              <strong>{formatNumber(counts.pm25_list_api_station_rows)}</strong>
+              <em>{formatNumber(counts.target_station_files_in_list_api_rows)} of {formatNumber(total)} target files present</em>
+            </div>
+            <div>
+              <span>Detail APIs</span>
+              <strong>{formatNumber(counts.target_detail_api_routes_retrieved)}</strong>
+              <em>{formatNumber(counts.target_detail_api_hourly_observation_rows)} hourly observations</em>
+            </div>
+            <div>
+              <span>Detail coordinates</span>
+              <strong>{formatNumber(counts.api_detail_coordinate_rows)}</strong>
+              <em>{formatNumber(counts.api_list_detail_coordinate_match_rows)} list/detail coordinate matches</em>
+            </div>
+            <div>
+              <span>Condition labels</span>
+              <strong>{formatNumber(counts.api_air_quality_condition_label_rows)}</strong>
+              <em>KONDISI is air quality, not station status</em>
+            </div>
+            <div>
+              <span>Radius ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>API telemetry does not close the gate</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-api-bridge" aria-label="BMKG API parity decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-api-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-api-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-api-field-wall">
+            <div>
+              <p className="kicker">API field wall</p>
+              <h3>Telemetry fields are abundant. Closure fields are absent.</h3>
+              <p>
+                The list API has {formatNumber(counts.pm25_list_api_extra_station_rows)} extra station files outside this target queue.
+                One target detail route is not present in the list API, so list/detail parity also remains imperfect.
+              </p>
+            </div>
+            <div className="air-bmkg-api-field-grid">
+              {[
+                ["status", counts.api_station_status_field_rows],
+                ["inspection", counts.api_inspection_field_rows],
+                ["calibration", counts.api_calibration_field_rows],
+                ["certificate", counts.api_certificate_field_rows],
+                ["grade", counts.api_grade_field_rows],
+                ["method", counts.api_method_field_rows],
+              ].map(([label, value]) => (
+                <div key={label}>
+                  <span>{label}</span>
+                  <strong>{formatNumber(Number(value))}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-bmkg-api-row-grid">
+            {rows.map((row) => {
+              const pm25 = Number(row.api_detail_latest_pm25_value) || 0;
+              return (
+                <article key={row.source_station_id} className={`air-bmkg-api-row ${row.api_list_found ? "" : "air-bmkg-api-row-missing"}`}>
+                  <div>
+                    <span>{row.source_station_id}</span>
+                    <strong>{row.source_station_name}</strong>
+                    <b>{sentenceCaseStatus(row.api_parity_decision)}</b>
+                  </div>
+                  <div className="air-bmkg-api-meter">
+                    <i style={{ width: `${Math.max(2, (pm25 / maxPm25) * 100)}%` }} />
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Latest</dt>
+                      <dd>{formatNumber(pm25, 1)}</dd>
+                    </div>
+                    <div>
+                      <dt>Hour</dt>
+                      <dd>{row.api_detail_latest_hour || "n/a"}</dd>
+                    </div>
+                    <div>
+                      <dt>List</dt>
+                      <dd>{row.api_list_found ? "yes" : "no"}</dd>
+                    </div>
+                    <div>
+                      <dt>Fields</dt>
+                      <dd>{row.api_payload_has_station_status_field ? "status" : "0"}</dd>
+                    </div>
+                  </dl>
+                  <p>{row.reader_use}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          {extras.length > 0 && (
+            <div className="air-bmkg-api-extra-strip" aria-label="Extra BMKG API station files outside target queue">
+              <span>Extra list API files outside target queue</span>
+              {extras.map((row) => (
+                <b key={row.source_station_id}>
+                  {row.source_station_id}: {row.source_station_name} ({formatNumber(Number(row.pm25_value) || 0, 1)})
+                </b>
+              ))}
+            </div>
+          )}
+
+          <div className="air-grade-method-gate-grid air-bmkg-api-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-api-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-api-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-api-parity-status.md" download>
+              API note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG API parity/status check...</p>
       )}
     </section>
   );

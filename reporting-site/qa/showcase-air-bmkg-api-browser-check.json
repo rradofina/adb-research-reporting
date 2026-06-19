@@ -1,0 +1,150 @@
+{
+  "checked_at": "2026-06-19T23:51:49.444Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "viewports": [
+    {
+      "label": "desktop",
+      "missingText": [],
+      "actualCounts": {
+        "stats": 6,
+        "lanes": 2,
+        "fields": 6,
+        "rows": 12,
+        "gates": 11,
+        "downloads": 3,
+        "extras": 3
+      },
+      "countMismatches": [],
+      "linkStatuses": [
+        {
+          "text": "API note",
+          "href": "/programs/air-monitoring/bmkg-api-parity-status.md",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "text": "Summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status-summary.json",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "text": "Row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status.csv",
+          "status": 200,
+          "ok": true
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "offenders": []
+      }
+    },
+    {
+      "label": "mobile",
+      "missingText": [],
+      "actualCounts": {
+        "stats": 6,
+        "lanes": 2,
+        "fields": 6,
+        "rows": 12,
+        "gates": 11,
+        "downloads": 3,
+        "extras": 3
+      },
+      "countMismatches": [],
+      "linkStatuses": [
+        {
+          "text": "API note",
+          "href": "/programs/air-monitoring/bmkg-api-parity-status.md",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "text": "Summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status-summary.json",
+          "status": 200,
+          "ok": true
+        },
+        {
+          "text": "Row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-api-parity-status.csv",
+          "status": 200,
+          "ok": true
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "offenders": []
+      }
+    }
+  ],
+  "console_messages": [
+    {
+      "viewport": "desktop",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "viewport": "desktop",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "viewport": "desktop",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "viewport": "desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+    },
+    {
+      "viewport": "mobile",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "viewport": "mobile",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "viewport": "mobile",
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+    },
+    {
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "viewport": "mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+    }
+  ],
+  "hard_console_errors": [],
+  "page_errors": [],
+  "request_failures": [],
+  "failed_links": [],
+  "screenshots": [
+    "showcase-air-bmkg-api-desktop-head.png",
+    "showcase-air-bmkg-api-desktop-fields.png",
+    "showcase-air-bmkg-api-desktop-rows.png",
+    "showcase-air-bmkg-api-mobile-head.png",
+    "showcase-air-bmkg-api-mobile-fields.png",
+    "showcase-air-bmkg-api-mobile-rows.png"
+  ],
+  "passed": true,
+  "failures": []
+}

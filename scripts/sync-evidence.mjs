@@ -83,6 +83,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_method_classification_audit", file: "station-method-classification-audit.md", label: "Air-monitoring station-method classification audit" },
   { key: "air_monitoring_bmkg_operation_maintenance_source_scan", file: "bmkg-operation-maintenance-source-scan.md", label: "Air-monitoring BMKG operation/maintenance source scan" },
   { key: "air_monitoring_bmkg_station_specific_status_audit", file: "bmkg-station-specific-status-audit.md", label: "Air-monitoring BMKG station-specific status audit" },
+  { key: "air_monitoring_bmkg_api_parity_status", file: "bmkg-api-parity-status.md", label: "Air-monitoring BMKG API telemetry/status-field check" },
   { key: "air_monitoring_georgia_report_verification_source_scan", file: "georgia-report-verification-source-scan.md", label: "Air-monitoring Georgia report verification source scan" },
   { key: "air_monitoring_georgia_report_export_ladder", file: "georgia-report-export-ladder.md", label: "Air-monitoring Georgia report export verification ladder" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T23:24:30.363Z",
+  "generated_at": "2026-06-19T23:47:54.398Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -344,6 +344,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_bmkg_api_parity_status",
+      "file": "bmkg-api-parity-status.md",
+      "label": "Air-monitoring BMKG API telemetry/status-field check",
+      "size": 2601,
+      "size_human": "2.5 KB",
+      "mtime": "2026-06-19T23:36:53.923Z",
+      "sha256": "31b0a67debb4438705d68b63040430171180efdf8a52663682ebd3b6df8b4118",
+      "attestation_chain": null
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -406,6 +416,18 @@
       "size": 18899,
       "size_human": "18.5 KB",
       "sha256": "5940f570c4db5fcf76d90462577e97879f28e8fabd20d7b059a6b05f7e1515ad"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-api-parity-status-summary.json",
+      "size": 97693,
+      "size_human": "95.4 KB",
+      "sha256": "30700e429bf7b42f6fc288a49fadce2d7bb4715e9e7f18465171619d945479db"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-api-parity-status.csv",
+      "size": 22017,
+      "size_human": "21.5 KB",
+      "sha256": "3e98749f489591758514c921c32638a6b55557d65b0d948136eeded671c681fd"
     },
     {
       "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json",

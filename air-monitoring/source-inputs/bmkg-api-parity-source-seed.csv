@@ -1,0 +1,4 @@
+source_key,source_role,url,source_note
+bmkg_public_auth_token_refresh,official_public_app_token,https://www.bmkg.go.id/api/auth-token/refresh,Public BMKG app token refresh route used by the official Nuxt site. The script records token receipt and expiry metadata but does not persist the transient token.
+bmkg_pm25_list_api,official_pm25_list_api,https://www.bmkg.go.id/api/kualitas-udara/pm25,Official BMKG PM2.5 list API used by the public station pages.
+bmkg_pm25_detail_api_template,official_pm25_detail_api_template,https://www.bmkg.go.id/api/kualitas-udara/pm25/{source_station_id},Official BMKG PM2.5 station detail API template; expanded for each target station code.

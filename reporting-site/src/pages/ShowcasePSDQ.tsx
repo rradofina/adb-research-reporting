@@ -1157,6 +1157,97 @@ interface PsdqHumanGatedHandoffSummary {
   non_claim: string;
 }
 
+interface PsdqAiClosureAuditGroup {
+  name: string;
+  label: string;
+  wall_category: string;
+  rows: number;
+}
+
+interface PsdqAiClosureAuditWall {
+  name: string;
+  rows: number;
+}
+
+interface PsdqAiClosureAuditUpazilaRow {
+  district_name: string;
+  upazila_name: string;
+  audit_rows: number;
+  source_repair_rows: number;
+  possible_same_facility_rows: number;
+  priority_name_conflict_rows: number;
+  lower_priority_name_conflict_rows: number;
+  zero_osm_absence_gate_rows: number;
+  ai_actionable_without_human_or_source_owner_rows: number;
+}
+
+interface PsdqAiClosureAuditGate {
+  label: string;
+  rows: number;
+}
+
+interface PsdqAiClosureAuditRow {
+  closure_audit_id: string;
+  worksheet_id: string;
+  handoff_id: string;
+  evidence_rank: number;
+  status: string;
+  handoff_group: string;
+  handoff_group_label: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  candidate_name: string;
+  candidate_feature_url: string;
+  candidate_distance_m: number | string;
+  candidate_name_score: number | string;
+  primary_reviewer_role: string;
+  blocker_label: string;
+  minimum_acceptable_evidence: string;
+  current_public_evidence_gate: string;
+  wall_category: string;
+  ai_current_allowed_action: string;
+  audit_decision: string;
+  audit_rationale: string;
+  required_next_evidence: string;
+  allowed_language_now: string;
+  non_claim: string;
+}
+
+interface PsdqAiClosureAuditSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  audit_scope: {
+    audit_rows: number;
+    handoff_groups: number;
+    upazilas_with_audit_rows: number;
+    human_or_source_owner_wall_rows: number;
+    external_contacts_made: number;
+    blank_human_validation_status_rows: number;
+    blank_proposed_decision_rows: number;
+    blank_source_owner_contact_rows: number;
+    blank_public_evidence_reference_rows: number;
+    blank_human_location_validation_reference_rows: number;
+    ai_closure_possible_rows: number;
+    ai_same_facility_reclassification_possible_rows: number;
+    ai_map_absence_language_possible_rows: number;
+    ai_coordinate_correction_possible_rows: number;
+    ai_actionable_without_human_or_source_owner_rows: number;
+    keep_open_only_rows: number;
+  };
+  handoff_group_counts: PsdqAiClosureAuditGroup[];
+  wall_category_counts: PsdqAiClosureAuditWall[];
+  upazila_audit_rows: PsdqAiClosureAuditUpazilaRow[];
+  decision_gate_counts: PsdqAiClosureAuditGate[];
+  top_audit_rows: PsdqAiClosureAuditRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqSourceRepairEvidenceRow {
   evidence_id: string;
   evidence_rank: number;
@@ -1710,6 +1801,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqZeroOsmObservabilityReviewSummary | null>(null);
   const [humanGatedHandoffSummary, setHumanGatedHandoffSummary] =
     useState<PsdqHumanGatedHandoffSummary | null>(null);
+  const [aiClosureAuditSummary, setAiClosureAuditSummary] =
+    useState<PsdqAiClosureAuditSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
@@ -1808,6 +1901,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`human-gated handoff HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`AI closure audit HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
         return r.json();
@@ -1858,6 +1955,7 @@ export default function ShowcasePSDQ() {
         lowerPriorityNameConflictReviewPayload,
         zeroOsmObservabilityReviewPayload,
         humanGatedHandoffPayload,
+        aiClosureAuditPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
@@ -1886,6 +1984,7 @@ export default function ShowcasePSDQ() {
         setLowerPriorityNameConflictReviewSummary(lowerPriorityNameConflictReviewPayload);
         setZeroOsmObservabilityReviewSummary(zeroOsmObservabilityReviewPayload);
         setHumanGatedHandoffSummary(humanGatedHandoffPayload);
+        setAiClosureAuditSummary(aiClosureAuditPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
@@ -2031,6 +2130,10 @@ export default function ShowcasePSDQ() {
 
       {humanGatedHandoffSummary && (
         <PsdqHumanGatedHandoffPanel summary={humanGatedHandoffSummary} />
+      )}
+
+      {aiClosureAuditSummary && (
+        <PsdqAiClosureAuditPanel summary={aiClosureAuditSummary} />
       )}
 
       {sourceRepairEvidenceSummary && (
@@ -5893,6 +5996,217 @@ function PsdqHumanGatedHandoffPanel({ summary }: { summary: PsdqHumanGatedHandof
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet.csv" download>
           Download worksheet CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function aiClosureWallColor(code: string) {
+  const colors: Record<string, string> = {
+    facility_level_absence_validation: "#8A6A00",
+    public_alias_location_or_human_validation: "#002569",
+    identity_and_location_validation: "#007DB8",
+    source_owner_or_human_location_validation: "#9B2226",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function aiClosureWallLabel(code: string) {
+  const labels: Record<string, string> = {
+    facility_level_absence_validation: "Facility-level absence validation",
+    public_alias_location_or_human_validation: "Public alias/location or human validation",
+    identity_and_location_validation: "Identity and location validation",
+    source_owner_or_human_location_validation: "Source-owner or human location validation",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function aiClosureGateLabel(label: string) {
+  return label
+    .replace("AI ", "")
+    .replace(" possible now", "")
+    .replace(" without human or source owner now", "")
+    .replace("same-facility", "same facility");
+}
+
+function PsdqAiClosureAuditPanel({ summary }: { summary: PsdqAiClosureAuditSummary }) {
+  const scope = summary.audit_scope;
+  const blockedGates = summary.decision_gate_counts.filter((gate) => gate.label !== "Keep-open only");
+  const keepOpenGate = summary.decision_gate_counts.find((gate) => gate.label === "Keep-open only");
+  const maxWallRows = Math.max(1, ...summary.wall_category_counts.map((row) => row.rows));
+  const topUpazilas = summary.upazila_audit_rows.slice(0, 10);
+  const maxUpazilaRows = Math.max(1, ...topUpazilas.map((row) => row.audit_rows));
+  const auditRows = summary.top_audit_rows.slice(0, 12);
+
+  return (
+    <section className="showcase-section psdq-ai-closure-audit-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">AI closure audit</p>
+          <h2>The current evidence permits keep-open language only.</h2>
+          <p>
+            The audit reads the human-validation worksheet and checks whether
+            any row can be closed, reclassified, corrected, or used for
+            map-absence language without source-owner or human-validation
+            evidence. The result is a row-level stopping rule for the AI loop.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows audited</span>
+            <strong>{formatNumber(scope.audit_rows)}</strong>
+          </div>
+          <div>
+            <span>Human/source-owner wall</span>
+            <strong>{formatNumber(scope.human_or_source_owner_wall_rows)} rows</strong>
+          </div>
+          <div>
+            <span>AI-actionable now</span>
+            <strong>{formatNumber(scope.ai_actionable_without_human_or_source_owner_rows)}</strong>
+          </div>
+          <div>
+            <span>Keep-open only</span>
+            <strong>{formatNumber(scope.keep_open_only_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Blank human statuses</span>
+            <strong>{formatNumber(scope.blank_human_validation_status_rows)}</strong>
+          </div>
+          <div>
+            <span>External contacts</span>
+            <strong>{formatNumber(scope.external_contacts_made)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-ai-closure-gate-grid">
+        {blockedGates.map((gate) => (
+          <article key={gate.label}>
+            <span>{aiClosureGateLabel(gate.label)}</span>
+            <strong>{formatNumber(gate.rows)}</strong>
+            <p>not allowed by current public evidence</p>
+          </article>
+        ))}
+        {keepOpenGate && (
+          <article className="psdq-ai-closure-keep-open">
+            <span>{keepOpenGate.label}</span>
+            <strong>{formatNumber(keepOpenGate.rows)}</strong>
+            <p>current allowed language</p>
+          </article>
+        )}
+      </div>
+
+      <div className="psdq-ai-closure-wall-grid">
+        {summary.wall_category_counts.map((wall) => {
+          const width = Math.max(8, (wall.rows / maxWallRows) * 100);
+          const color = aiClosureWallColor(wall.name);
+          return (
+            <article key={wall.name} style={{ borderColor: color }}>
+              <span>{aiClosureWallLabel(wall.name)}</span>
+              <strong>{formatNumber(wall.rows)} rows</strong>
+              <i aria-label={`${aiClosureWallLabel(wall.name)} audit row bar`}>
+                <b style={{ width: `${width}%`, background: color }} />
+              </i>
+              <p>requires source-owner, public official, or human-location evidence</p>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-ai-closure-upazila-grid">
+        {topUpazilas.map((row) => {
+          const width = Math.max(8, (row.audit_rows / maxUpazilaRows) * 100);
+          return (
+            <article key={`${row.district_name}-${row.upazila_name}`}>
+              <div>
+                <span>{row.district_name}</span>
+                <strong>{row.upazila_name}</strong>
+                <em>{formatNumber(row.audit_rows)} audit rows</em>
+              </div>
+              <i aria-label={`${row.upazila_name} AI closure-audit row bar`}>
+                <b style={{ width: `${width}%` }} />
+              </i>
+              <div className="psdq-ai-closure-chips">
+                <span>source {formatNumber(row.source_repair_rows)}</span>
+                <span>same {formatNumber(row.possible_same_facility_rows)}</span>
+                <span>priority {formatNumber(row.priority_name_conflict_rows)}</span>
+                <span>lower {formatNumber(row.lower_priority_name_conflict_rows)}</span>
+                <span>zero-OSM {formatNumber(row.zero_osm_absence_gate_rows)}</span>
+                <span>AI-actionable {formatNumber(row.ai_actionable_without_human_or_source_owner_rows)}</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-ai-closure-row-grid">
+        {auditRows.map((row) => {
+          const color = humanGatedHandoffColor(row.handoff_group);
+          const distance = Number(row.candidate_distance_m || 0);
+          const score = Number(row.candidate_name_score || 0);
+          return (
+            <article key={row.closure_audit_id} style={{ borderColor: color }}>
+              <div className="psdq-ai-closure-card-head">
+                <span>{row.closure_audit_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.upazila_name}, {row.district_name}</em>
+              </div>
+              <div className="psdq-human-gated-class" style={{ background: color }}>
+                {row.handoff_group_label}
+              </div>
+              {row.candidate_name && (
+                <div className="psdq-ai-closure-candidate">
+                  <span>Candidate context</span>
+                  <strong>{row.candidate_name}</strong>
+                  <em>
+                    {distance ? `${formatNumber(distance / 1000, 1)} km` : "distance n/a"}
+                    {score ? `; name score ${formatNumber(score, 2)}` : ""}
+                  </em>
+                  {row.candidate_feature_url && (
+                    <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                      Map feature
+                    </a>
+                  )}
+                </div>
+              )}
+              <div className="psdq-ai-closure-blocker">
+                <span>Audit wall</span>
+                <strong>{aiClosureWallLabel(row.wall_category)}</strong>
+                <p>{row.audit_rationale}</p>
+              </div>
+              <div className="psdq-ai-closure-gate">
+                <span>Current public evidence gate</span>
+                <p>{row.current_public_evidence_gate}</p>
+              </div>
+              <div className="psdq-ai-closure-status">
+                <span>{row.ai_current_allowed_action.replaceAll("_", " ")}</span>
+                <span>{row.audit_decision.replaceAll("_", " ")}</span>
+                <span>0 AI closure</span>
+              </div>
+              <p>{row.allowed_language_now}</p>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the AI closure audit</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-ai-closure-audit.md" download>
+          Download AI closure-audit note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json" download>
+          Download AI closure-audit summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit.csv" download>
+          Download AI closure-audit CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

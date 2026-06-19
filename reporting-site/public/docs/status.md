@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 39-row AI closure audit, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -40,7 +40,7 @@ overrides priority by editing this list.
    16-row public-source decision-ledger, 3-row possible same-facility review,
    9-row priority name-conflict review, 6-row lower-priority name-conflict
    spot check, 115-upazila zero-OSM observability review, 39-row human-gated
-   handoff matrix, 39-row human-validation worksheet, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation
+   handoff matrix, 39-row human-validation worksheet, 39-row AI closure audit, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation
    search, 3-row correction-record follow-up, 3-row no-contact clarification
    packet, and 3-row
    registry-vintage review added 2026-06-19*. Owner-only source contact or
@@ -163,6 +163,34 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ AI closure audit):** Added
+  `public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py`,
+  generated
+  `psdq-bgd-facility-validation-ai-closure-audit.csv` and
+  `psdq-bgd-facility-validation-ai-closure-audit-summary.json`, and wrote
+  `public-service-data-quality/facility-validation-ai-closure-audit.md`. The
+  no-network audit reads the 39-row human-validation worksheet, then checks
+  whether current public evidence and blank human-review fields permit AI
+  closure, same-facility reclassification, map-absence language, or coordinate
+  correction without source-owner or human-validation evidence. It audits 39
+  rows across 5 handoff groups and 15 upazilas; records 39 human- or
+  source-owner wall rows; 0 external contacts; 0 AI closure rows; 0 AI
+  same-facility reclassification rows; 0 AI map-absence language rows; 0 AI
+  coordinate-correction rows; 0 rows actionable without human or source-owner
+  evidence; and 39 keep-open-only rows. This is a no-contact decision gate,
+  not source-owner response, human validation, ground truth, coordinate
+  correction, row closure, same-facility reclassification, map-absence
+  validation, maturity promotion, or a human-final upgrade. Verification
+  passed: handoff/worksheet/audit chain rerun, audit script `py_compile`,
+  evidence/reference sync, production site build, six deterministic gates plus `git diff --check`, review packet and zip rebuild, and Chrome CDP
+  desktop/mobile QA at 1440x1100 and 390x900 with 6 gate cards, 4 wall cards,
+  10 upazila cards, 12 row cards, audit note and CSV links visible, no
+  page-level or section-level horizontal overflow, no page errors, and only
+  existing React Router development warnings. Screenshots:
+  `reporting-site/qa/showcase-psdq-ai-closure-audit-desktop.png`,
+  `reporting-site/qa/showcase-psdq-ai-closure-audit-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-ai-closure-audit-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-ai-closure-audit-mobile-cards.png`.
 - **2026-06-19 (PSDQ human-validation worksheet):** Added
   `public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py`,
   generated
@@ -181,9 +209,11 @@ by leaving the board in a state the next session can read.
   row closure, same-facility reclassification, map-absence validation, maturity
   promotion, or a human-final upgrade. Verification passed: worksheet script
   rerun, script `py_compile`, evidence/reference sync, production site build,
-  and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with worksheet
-  note/CSV links visible, no page-level or card-level horizontal overflow, no
-  page errors, and only existing Vite / React Router development warnings.
+  six deterministic gates plus `git diff --check`, review packet and zip
+  rebuild, and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with
+  worksheet note/CSV links visible, no page-level or card-level horizontal
+  overflow, no page errors, and only existing Vite / React Router development
+  warnings.
   Screenshots:
   `reporting-site/qa/showcase-psdq-human-validation-worksheet-links-desktop.png`
   and

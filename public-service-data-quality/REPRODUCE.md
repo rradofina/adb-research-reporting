@@ -95,6 +95,11 @@ workbook and Codex seeded the canonical cache.
   human-gated handoff matrix. It pre-fills public evidence and row-class
   minimum evidence rules while leaving every human-review decision field blank.
   It is not human validation.
+- The Bangladesh AI closure audit is a no-network pass over the
+  human-validation worksheet. It checks whether current public evidence plus
+  blank human-review fields permit AI closure, same-facility reclassification,
+  map-absence language, or coordinate correction. It is a keep-open audit, not
+  validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -241,6 +246,7 @@ python public-service-data-quality/scripts/build-bgd-facility-lower-priority-nam
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
+python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -663,6 +669,29 @@ decision fields blank. It carries forward 0 prefilled external contacts, 0
 prefilled closure rows, 0 prefilled reclassification rows, 0 prefilled
 map-absence rows, and 0 prefilled coordinate-correction rows.
 
+## Bangladesh facility-validation AI closure audit
+
+This step does not fetch data. It reads the human-validation worksheet and
+audits whether current public evidence plus blank human-review fields permit
+AI closure, same-facility reclassification, map-absence language, or
+coordinate correction.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-ai-closure-audit.csv`
+- `generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json`
+
+The output status is `ai_closure_audit_human_or_source_owner_wall`. The
+current pass audits 39 rows across 5 handoff groups and 15 upazilas. It finds
+39 human- or source-owner wall rows, 0 external contacts, 0 AI closures, 0 AI
+same-facility reclassifications, 0 AI map-absence uses, 0 AI coordinate
+corrections, 0 rows actionable without human or source-owner evidence, and 39
+keep-open-only rows.
+
 ## Bangladesh facility-validation source-repair public evidence
 
 This step does not fetch data. It reads the public-source decision ledger and
@@ -861,7 +890,15 @@ For a reader or reviewer, the reproducibility chain is:
    `facility-validation-public-map-gap-evidence.md`,
    `facility-validation-public-map-inspection.md`,
    `facility-validation-public-source-confirmation.md`,
-   `facility-validation-public-source-confirmation-targeted-rows.md`, and
+   `facility-validation-public-source-confirmation-targeted-rows.md`,
+   `facility-validation-public-source-decision-ledger.md`,
+   `facility-validation-possible-same-facility-review.md`,
+   `facility-validation-priority-name-conflict-review.md`,
+   `facility-validation-lower-priority-name-conflict-review.md`,
+   `facility-validation-zero-osm-upazila-observability-review.md`,
+   `facility-validation-human-gated-handoff.md`,
+   `facility-validation-human-validation-worksheet.md`,
+   `facility-validation-ai-closure-audit.md`, and
    `upgrade-gap.md`.
 2. Source and pipeline code: `public-service-data-quality/scripts/`.
 3. Generated artifacts: `public-service-data-quality/generated/`.

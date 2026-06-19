@@ -130,7 +130,7 @@
       "outcome": "computed + frontier wall",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "psdq-tier-decomposition.json",
+      "artifact": "psdq-bgd-facility-validation-ai-closure-audit-summary.json",
       "finding": "The 80-point clinical-tier gap is largely a statement about the BHS denominator, not about the facilities a patient would seek."
     },
     {

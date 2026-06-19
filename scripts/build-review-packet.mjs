@@ -81,6 +81,7 @@ const PROGRAM_FILES = [
   "facility-validation-zero-osm-upazila-observability-review.md",
   "facility-validation-human-gated-handoff.md",
   "facility-validation-human-validation-worksheet.md",
+  "facility-validation-ai-closure-audit.md",
   "facility-validation-source-repair-public-evidence.md",
   "facility-validation-source-repair-official-coordinate-evidence.md",
   "facility-validation-source-repair-public-explanation-evidence.md",

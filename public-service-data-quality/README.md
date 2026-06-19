@@ -53,6 +53,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` — builds a no-contact upazila-level observability packet for active-registry rows with zero joined OSM health features and blocks facility-level absence language
 - `scripts/build-bgd-facility-human-gated-handoff.py` — consolidates source-repair, possible same-facility, name-conflict, and zero-OSM rows into one no-contact human-gated handoff matrix
 - `scripts/build-bgd-facility-human-validation-worksheet.py` — converts the human-gated handoff matrix into a blank human-validation worksheet with row-class evidence rules
+- `scripts/build-bgd-facility-ai-closure-audit.py` — audits the human-validation worksheet to confirm which rows, if any, AI can close from current public evidence alone
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
@@ -122,6 +123,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json` — chart-ready handoff group, upazila, and no-closure gate counts
 - `generated/psdq-bgd-facility-validation-human-validation-worksheet.csv` — blank reviewer worksheet for the 39 handoff rows, including minimum evidence rules and empty human-decision fields
 - `generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json` — worksheet scope, group counts, role counts, and prefilled no-closure gate counts
+- `generated/psdq-bgd-facility-validation-ai-closure-audit.csv` — row-level audit of whether current public evidence permits AI closure, reclassification, map-absence language, or coordinate correction
+- `generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json` — chart-ready audit-wall counts, decision gates, and keep-open-only counts
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json` — chart-ready source-repair attachment counts, evidence classes, and candidate groups
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv` — official DGHS profile coordinate evidence for the four source-repair-first rows
@@ -380,6 +383,13 @@ Current audit result:
   forward 0 prefilled closure/reclassification/map-absence/correction gates,
   and makes 0 external contacts. This is a worksheet for future review, not
   human validation.
+- **BGD AI closure audit:** the no-network audit reads the 39-row
+  human-validation worksheet and checks whether current public evidence plus
+  blank human-review fields permit any AI closure, same-facility
+  reclassification, map-absence language, or coordinate correction. It audits
+  39 rows across 5 handoff groups and 15 upazilas; 39 rows remain at the
+  human- or source-owner wall; 0 are AI-actionable without human or
+  source-owner evidence; and 39 are keep-open only.
 - **BGD source-repair public evidence:** the no-network attachment pass reads
   the decision ledger and targeted-row confirmation CSV, then attaches public
   DGHS profile and OSM API evidence to the 4 source-repair-first rows. All 4
@@ -464,6 +474,7 @@ python public-service-data-quality/scripts/build-bgd-facility-lower-priority-nam
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
+python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py

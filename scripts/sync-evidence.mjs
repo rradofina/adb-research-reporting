@@ -76,6 +76,7 @@ const ARTIFACTS = [
   { key: "facility_validation_zero_osm_upazila_observability_review", file: "facility-validation-zero-osm-upazila-observability-review.md", label: "Facility-validation zero-OSM upazila observability review" },
   { key: "facility_validation_human_gated_handoff", file: "facility-validation-human-gated-handoff.md", label: "Facility-validation human-gated handoff matrix" },
   { key: "facility_validation_human_validation_worksheet", file: "facility-validation-human-validation-worksheet.md", label: "Facility-validation human-validation worksheet" },
+  { key: "facility_validation_ai_closure_audit", file: "facility-validation-ai-closure-audit.md", label: "Facility-validation AI closure audit" },
   { key: "facility_validation_source_repair_public_evidence", file: "facility-validation-source-repair-public-evidence.md", label: "Facility-validation source-repair public evidence" },
   { key: "facility_validation_source_repair_official_coordinate_evidence", file: "facility-validation-source-repair-official-coordinate-evidence.md", label: "Facility-validation source-repair official-coordinate evidence" },
   { key: "facility_validation_source_repair_public_explanation_evidence", file: "facility-validation-source-repair-public-explanation-evidence.md", label: "Facility-validation source-repair public explanation evidence" },

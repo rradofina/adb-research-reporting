@@ -607,6 +607,36 @@ consistent, but it does not perform that review. A blank status is the right
 status until a public official source, source-owner response, or human
 location validation supplies the missing evidence.
 
+## AI Closure Audit Addendum
+
+The AI closure audit now lives in
+`facility-validation-ai-closure-audit.md`. The script
+`scripts/build-bgd-facility-ai-closure-audit.py` reads the 39-row
+human-validation worksheet without fetching new data. It audits the blank
+human-review fields and the prefilled public-evidence gates to determine
+whether AI can close, reclassify, approve map-absence language, or correct
+coordinates without source-owner or human-validation evidence.
+
+The pass covers the same 39 worksheet rows:
+
+| AI closure-audit signal | Rows |
+|---|---:|
+| Audit rows | 39 |
+| Handoff groups | 5 |
+| Upazilas with audit rows | 15 |
+| Human or source-owner wall rows | 39 |
+| AI closures possible now | 0 |
+| AI same-facility reclassifications possible now | 0 |
+| AI map-absence uses possible now | 0 |
+| AI coordinate corrections possible now | 0 |
+| AI-actionable rows without human or source-owner evidence | 0 |
+| Keep-open-only rows | 39 |
+
+The practical rule is stronger than "not yet validated": the current public
+evidence authorizes only open-review language. A row can move only after a
+public official source, source-owner response, or human location validation
+resolves the row-specific blocker.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -801,6 +831,7 @@ python public-service-data-quality/scripts/build-bgd-facility-lower-priority-nam
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
+python public-service-data-quality/scripts/build-bgd-facility-ai-closure-audit.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -852,6 +883,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-ai-closure-audit-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

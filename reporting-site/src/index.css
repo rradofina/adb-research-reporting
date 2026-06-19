@@ -3846,6 +3846,12 @@
     scroll-margin-top: 8rem;
   }
 
+  .psdq-ai-closure-audit-section {
+    display: grid;
+    gap: 1rem;
+    scroll-margin-top: 8rem;
+  }
+
   .psdq-source-repair-evidence-section {
     display: grid;
     gap: 1rem;
@@ -3992,6 +3998,30 @@
   }
 
   .psdq-human-gated-row-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psdq-ai-closure-gate-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .psdq-ai-closure-wall-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-ai-closure-upazila-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .psdq-ai-closure-row-grid {
     display: grid;
     gap: 0.85rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5027,6 +5057,159 @@
   }
 
   .psdq-human-gated-evidence div {
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 0.6rem;
+  }
+
+  .psdq-ai-closure-gate-grid article,
+  .psdq-ai-closure-wall-grid article,
+  .psdq-ai-closure-upazila-grid article,
+  .psdq-ai-closure-row-grid article {
+    min-width: 0;
+    display: grid;
+    gap: 0.65rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .psdq-ai-closure-gate-grid article {
+    min-height: 8.5rem;
+    padding: 0.85rem;
+    border-top: 4px solid #9B2226;
+  }
+
+  .psdq-ai-closure-gate-grid .psdq-ai-closure-keep-open {
+    border-top-color: #5A8227;
+    background: #f7faf4;
+  }
+
+  .psdq-ai-closure-wall-grid article,
+  .psdq-ai-closure-row-grid article {
+    border-left: 4px solid var(--accent);
+    padding: 0.9rem;
+  }
+
+  .psdq-ai-closure-upazila-grid article {
+    padding: 0.85rem;
+  }
+
+  .psdq-ai-closure-gate-grid span,
+  .psdq-ai-closure-wall-grid span,
+  .psdq-ai-closure-upazila-grid span,
+  .psdq-ai-closure-card-head span,
+  .psdq-ai-closure-candidate span,
+  .psdq-ai-closure-blocker span,
+  .psdq-ai-closure-gate span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-ai-closure-gate-grid strong {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 0.95;
+  }
+
+  .psdq-ai-closure-wall-grid strong,
+  .psdq-ai-closure-upazila-grid strong,
+  .psdq-ai-closure-card-head strong,
+  .psdq-ai-closure-candidate strong,
+  .psdq-ai-closure-blocker strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-ai-closure-gate-grid p,
+  .psdq-ai-closure-wall-grid p,
+  .psdq-ai-closure-upazila-grid p,
+  .psdq-ai-closure-row-grid article > p,
+  .psdq-ai-closure-blocker p,
+  .psdq-ai-closure-gate p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.4;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-ai-closure-wall-grid i,
+  .psdq-ai-closure-upazila-grid i {
+    display: block;
+    height: 0.65rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-ai-closure-wall-grid b,
+  .psdq-ai-closure-upazila-grid b {
+    display: block;
+    height: 100%;
+  }
+
+  .psdq-ai-closure-upazila-grid b {
+    background: linear-gradient(90deg, #9B2226, #FBB00E);
+  }
+
+  .psdq-ai-closure-upazila-grid article > div:first-child,
+  .psdq-ai-closure-card-head,
+  .psdq-ai-closure-candidate,
+  .psdq-ai-closure-blocker,
+  .psdq-ai-closure-gate {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-ai-closure-upazila-grid em,
+  .psdq-ai-closure-card-head em,
+  .psdq-ai-closure-candidate em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-ai-closure-chips,
+  .psdq-ai-closure-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-ai-closure-chips span,
+  .psdq-ai-closure-status span {
+    color: var(--ink);
+    background: #eef2f5;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    padding: 0.3rem 0.4rem;
+    text-transform: none;
+  }
+
+  .psdq-ai-closure-candidate {
+    background: #f5f7f9;
+    padding: 0.65rem;
+  }
+
+  .psdq-ai-closure-candidate a {
+    width: fit-content;
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .psdq-ai-closure-blocker,
+  .psdq-ai-closure-gate {
     border-top: 1px solid var(--rule-soft);
     padding-top: 0.6rem;
   }
@@ -7640,6 +7823,10 @@
     .psdq-human-gated-group-grid,
     .psdq-human-gated-upazila-grid,
     .psdq-human-gated-row-grid,
+    .psdq-ai-closure-gate-grid,
+    .psdq-ai-closure-wall-grid,
+    .psdq-ai-closure-upazila-grid,
+    .psdq-ai-closure-row-grid,
     .psdq-source-repair-evidence-grid,
     .psdq-official-coordinate-grid,
     .psdq-public-explanation-grid,

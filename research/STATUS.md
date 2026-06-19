@@ -249,6 +249,24 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (shared evidence-audit showcase route refactor):**
+  Refactored the shared `/showcase/:reportSlug` route used by reports 9-20
+  so each artifact-driven report now renders a four-part evidence spine
+  (decision problem, measurement doubt, test added, publication gate) and a
+  four-part claim ladder (allowed finding, non-claim, falsifier, next
+  upgrade). This is a reader-facing UI/UX repair only, not a maturity
+  promotion. Browser QA checked all 12 shared audit routes across desktop and
+  mobile viewports, with 24/24 passes, no horizontal overflow, no console
+  errors, no network failures, and no missing source/caveat sections. QA
+  record:
+  `reporting-site/qa/showcase-evidence-audit-shared-route-browser-check.json`;
+  screenshots:
+  `reporting-site/qa/showcase-evidence-audit-migration-desktop-spine.png`,
+  `reporting-site/qa/showcase-evidence-audit-migration-mobile-spine.png`,
+  `reporting-site/qa/showcase-evidence-audit-food-desktop-visual.png`,
+  `reporting-site/qa/showcase-evidence-audit-food-mobile-visual.png`,
+  `reporting-site/qa/showcase-evidence-audit-water-desktop-claim.png`, and
+  `reporting-site/qa/showcase-evidence-audit-school-mobile-claim.png`.
 - **2026-06-19 (air-monitoring monitor-grade station method-evidence audit):**
   Added
   `air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py`,

@@ -1,0 +1,666 @@
+{
+  "generated_at": "2026-06-19T14:19:38.037Z",
+  "base_url": "http://127.0.0.1:5175",
+  "routes_checked": 12,
+  "viewport_checks": 24,
+  "passed": 24,
+  "failed": [],
+  "screenshots": [
+    "reporting-site/qa/showcase-evidence-audit-migration-desktop-spine.png",
+    "reporting-site/qa/showcase-evidence-audit-migration-mobile-spine.png",
+    "reporting-site/qa/showcase-evidence-audit-food-desktop-visual.png",
+    "reporting-site/qa/showcase-evidence-audit-food-mobile-visual.png",
+    "reporting-site/qa/showcase-evidence-audit-water-desktop-claim.png",
+    "reporting-site/qa/showcase-evidence-audit-school-mobile-claim.png"
+  ],
+  "checks": [
+    {
+      "route": "grid-generation-mismatch",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Power Capacity and Generation Tell Different Stories",
+        "statLabels": [
+          "top-five overlap",
+          "low-coverage rows withheld",
+          "generation-ranked rows"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "grid-generation-mismatch",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Power Capacity and Generation Tell Different Stories",
+        "statLabels": [
+          "top-five overlap",
+          "low-coverage rows withheld",
+          "generation-ranked rows"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "migration-denominator-switch",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When the Largest Diasporas Become Small Islands",
+        "statLabels": [
+          "absolute top-five survivors",
+          "WSM emigrant share",
+          "rankable origins"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 10,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-migration-desktop-spine.png"
+    },
+    {
+      "route": "migration-denominator-switch",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When the Largest Diasporas Become Small Islands",
+        "statLabels": [
+          "absolute top-five survivors",
+          "WSM emigrant share",
+          "rankable origins"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 10,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-migration-mobile-spine.png"
+    },
+    {
+      "route": "mpi-nightlight-blindspot",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Night Lights Cannot See the Poverty Dimension",
+        "statLabels": [
+          "ADB economies scoped",
+          "mean dimension share blind to NTL",
+          "majority-blind in both readings"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 4,
+        "visualRows": 10,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "mpi-nightlight-blindspot",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Night Lights Cannot See the Poverty Dimension",
+        "statLabels": [
+          "ADB economies scoped",
+          "mean dimension share blind to NTL",
+          "majority-blind in both readings"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 4,
+        "visualRows": 10,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "coastal-population-denominator",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Population Size Drives the Coastal Slum Screen",
+        "statLabels": [
+          "entered without population",
+          "dropped without population",
+          "China rank shift"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 8,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "coastal-population-denominator",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Population Size Drives the Coastal Slum Screen",
+        "statLabels": [
+          "entered without population",
+          "dropped without population",
+          "China rank shift"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 8,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "flood-component-decomposition",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When a Flood Access Index Measures Event Counts",
+        "statLabels": [
+          "Spearman vs per-capita rank",
+          "top-four survivors per capita",
+          "correlation with raw flood count"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 8,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "flood-component-decomposition",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When a Flood Access Index Measures Event Counts",
+        "statLabels": [
+          "Spearman vs per-capita rank",
+          "top-four survivors per capita",
+          "correlation with raw flood count"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 8,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "climate-health-measurement-repair",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Heat Workday Loss Collapses to Labor Share",
+        "statLabels": [
+          "saturated at tighter cap",
+          "rank correlation with labor share",
+          "rankable DMCs"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 9,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "climate-health-measurement-repair",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Heat Workday Loss Collapses to Labor Share",
+        "statLabels": [
+          "saturated at tighter cap",
+          "rank correlation with labor share",
+          "rankable DMCs"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 9,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "food-price-coverage-trap",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Vulnerability Is a Coverage Intersection",
+        "statLabels": [
+          "joint indicator universe",
+          "roster rows dropped by coverage",
+          "common-vintage reruns"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 4,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-food-desktop-visual.png"
+    },
+    {
+      "route": "food-price-coverage-trap",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Vulnerability Is a Coverage Intersection",
+        "statLabels": [
+          "joint indicator universe",
+          "roster rows dropped by coverage",
+          "common-vintage reruns"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 4,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-food-mobile-visual.png"
+    },
+    {
+      "route": "social-protection-dropped-leg",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Missing a Data Leg Removes the Runner-Up",
+        "statLabels": [
+          "excluded rows outrank lowest headline",
+          "lowest headline member by value rank",
+          "entered under imputation variant"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 9,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "social-protection-dropped-leg",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Missing a Data Leg Removes the Runner-Up",
+        "statLabels": [
+          "excluded rows outrank lowest headline",
+          "lowest headline member by value rank",
+          "entered under imputation variant"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 9,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "water-stress-denominator",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Water Stress Exceeds 100 Percent",
+        "statLabels": [
+          "above 100% internal denominator",
+          "AFG rank without rural multiplier",
+          "high-withdrawal set"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-water-desktop-claim.png"
+    },
+    {
+      "route": "water-stress-denominator",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Water Stress Exceeds 100 Percent",
+        "statLabels": [
+          "above 100% internal denominator",
+          "AFG rank without rural multiplier",
+          "high-withdrawal set"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "invisible-urban-tautology",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Robustness Is Just Multiplication",
+        "statLabels": [
+          "Spearman for scalar sweep",
+          "rank inversions across 5/10/15",
+          "shock to break top-five boundary"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "invisible-urban-tautology",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Robustness Is Just Multiplication",
+        "statLabels": [
+          "Spearman for scalar sweep",
+          "rank inversions across 5/10/15",
+          "shock to break top-five boundary"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "port-inert-parameter",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When a Sensitivity Knob Never Touches the Model",
+        "statLabels": [
+          "DMCs reaching baseline cap",
+          "max observed proxy",
+          "imports needed to reach cap"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "port-inert-parameter",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When a Sensitivity Knob Never Touches the Model",
+        "statLabels": [
+          "DMCs reaching baseline cap",
+          "max observed proxy",
+          "imports needed to reach cap"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 5,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "school-heat-sensitivity",
+      "viewport": "desktop",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Every Perturbation Includes an All-Zero Tie",
+        "statLabels": [
+          "KHM top-one among discriminating runs",
+          "degenerate all-zero runs",
+          "rank-losing runs"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 7,
+        "pageScrollWidth": 1365,
+        "viewportWidth": 1365,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": null
+    },
+    {
+      "route": "school-heat-sensitivity",
+      "viewport": "mobile",
+      "ready": true,
+      "pass": true,
+      "state": {
+        "title": "When Every Perturbation Includes an All-Zero Tie",
+        "statLabels": [
+          "KHM top-one among discriminating runs",
+          "degenerate all-zero runs",
+          "rank-losing runs"
+        ],
+        "spineCount": 4,
+        "claimCount": 4,
+        "caveatCount": 4,
+        "sourceRows": 5,
+        "visualRows": 7,
+        "pageScrollWidth": 390,
+        "viewportWidth": 390,
+        "horizontalOverflow": false,
+        "overflowing": []
+      },
+      "consoleErrors": [],
+      "exceptions": [],
+      "networkFailures": [],
+      "screenshotPath": "reporting-site/qa/showcase-evidence-audit-school-mobile-claim.png"
+    }
+  ]
+}

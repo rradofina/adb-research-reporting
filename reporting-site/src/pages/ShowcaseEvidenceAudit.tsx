@@ -22,6 +22,12 @@ interface Fact {
   value: string;
 }
 
+interface SpineItem {
+  label: string;
+  title: string;
+  body: string;
+}
+
 interface RankRow {
   key: string;
   label: string;
@@ -760,6 +766,62 @@ function buildAuditModel(report: ShowcaseReport, data: JsonValue): AuditModel {
   }
 }
 
+function buildEvidenceSpine(report: ShowcaseReport, model: AuditModel | null): SpineItem[] {
+  const depth = getShowcaseReportDepth(report);
+  const quality = getShowcaseReportQuality(report);
+
+  return [
+    {
+      label: "Decision problem",
+      title: "What the reader needs to decide",
+      body: depth.operationalUse,
+    },
+    {
+      label: "Measurement doubt",
+      title: report.audit?.question || report.title,
+      body: report.audit?.readerPayoff || report.deck,
+    },
+    {
+      label: "Test added",
+      title: model?.chartTitle || report.visual,
+      body: report.audit?.method || "The report is loaded from the committed evidence artifact before the visual is drawn.",
+    },
+    {
+      label: "Publication gate",
+      title: quality.readinessLabel,
+      body: quality.publicationGap,
+    },
+  ];
+}
+
+function buildClaimLadder(report: ShowcaseReport): SpineItem[] {
+  const depth = getShowcaseReportDepth(report);
+  const quality = getShowcaseReportQuality(report);
+
+  return [
+    {
+      label: "Finding now allowed",
+      title: "Current evidence result",
+      body: report.audit?.finding || report.deck,
+    },
+    {
+      label: "Claim not allowed",
+      title: "Boundary kept on page",
+      body: report.audit?.nonClaim || "The report does not widen the claim beyond the generated evidence artifact.",
+    },
+    {
+      label: "Falsifier",
+      title: "What could weaken it",
+      body: depth.falsifier,
+    },
+    {
+      label: "Next upgrade",
+      title: "How it graduates",
+      body: quality.nextUpgrade,
+    },
+  ];
+}
+
 export default function ShowcaseEvidenceAudit() {
   const { reportSlug = "" } = useParams();
   const report = findShowcaseReportBySlug(reportSlug);
@@ -790,6 +852,8 @@ export default function ShowcaseEvidenceAudit() {
 
   const depth = getShowcaseReportDepth(report);
   const quality = getShowcaseReportQuality(report);
+  const evidenceSpine = buildEvidenceSpine(report, model);
+  const claimLadder = buildClaimLadder(report);
   const nextReport =
     showcaseReports.find((item) => item.id === report.id + 1) ||
     showcaseReports.find((item) => item.id === 1);
@@ -841,6 +905,27 @@ export default function ShowcaseEvidenceAudit() {
         </div>
       </section>
 
+      <section className="showcase-section audit-spine-section">
+        <div className="showcase-section-copy">
+          <p className="kicker">Evidence spine</p>
+          <h2>Start with the decision, then show the measurement break.</h2>
+          <p>
+            Each audit report is held to the same ADB/ERDI sequence: decision
+            problem, data doubt, plain-language test, and the gate that still
+            prevents publication-level language.
+          </p>
+        </div>
+        <div className="audit-spine-grid">
+          {evidenceSpine.map((item, index) => (
+            <div className="audit-spine-card" key={item.label}>
+              <span>{String(index + 1).padStart(2, "0")} / {item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="showcase-section audit-evidence-section">
         <div className="showcase-explorer-head">
           <div>
@@ -857,16 +942,19 @@ export default function ShowcaseEvidenceAudit() {
       </section>
 
       {model && (
-        <section className="showcase-section showcase-two-col">
+        <section className="showcase-section showcase-two-col audit-claim-section">
           <div>
-            <p className="kicker">What to take away</p>
-            <h2>The strongest version is the smaller, tested claim.</h2>
-            <p>
-              This report surface is intentionally built from the generated audit
-              artifact. It is useful when it tells the reader what breaks,
-              what survives, and which next data layer would be needed before a
-              full publication claim.
-            </p>
+            <p className="kicker">Claim ladder</p>
+            <h2>{report.audit.finding}</h2>
+            <div className="audit-claim-ladder">
+              {claimLadder.map((item) => (
+                <div key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>{item.title}</strong>
+                  <p>{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="showcase-fact-list audit-readouts">
             <div>
@@ -903,11 +991,11 @@ export default function ShowcaseEvidenceAudit() {
         <section className="showcase-section showcase-two-col">
           <div>
             <p className="kicker">Limits and reproducibility</p>
-            <h2>Reader trust comes from the source trail.</h2>
+            <h2>Trust comes from the source trail, not the chart style.</h2>
             <p>
-              The visual is only allowed to be persuasive because the numbers
-              come from the JSON artifact named below. Caveats stay on the page
-              instead of hiding in a methods appendix.
+              The visual uses the generated artifact named below, and the
+              caveats remain in the reading path. That keeps the emotional
+              force of the chart tied to a reproducible source record.
             </p>
             <div className="audit-caveat-list">
               {model.caveats.filter(Boolean).map((caveat) => (

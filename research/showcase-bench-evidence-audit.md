@@ -1,0 +1,59 @@
+# Showcase bench evidence audit
+
+`attestation_chain: ai-first`
+
+Generated: 2026-06-19T16:25:46.109Z
+
+Script: `scripts/verify-showcase-bench.mjs`
+
+Registry: `reporting-site/src/data/showcaseReports.ts`
+
+## Summary
+
+- Reports in registry: 20
+- Verified status rows: 20/20
+- Evidence paths present: 20/20
+- Static route coverage: 20/20
+- Audit JSON artifacts present: 12/12
+- Declared audit CSV companions present: 9/9
+- Depth records present: 20/20
+- Quality records present: 20/20
+- QA screenshot files in reporting-site/qa: 268
+- QA browser-check JSON files in reporting-site/qa: 9
+- Verification failures: 0
+
+## Readiness Mix
+
+- prototype: 3
+- l3-candidate: 5
+- evidence-audit: 11
+- owner-gated: 1
+
+## Report-Level Checks
+
+| ID | Report | Readiness | Route | Evidence | Audit data | Next upgrade |
+|---:|---|---|---|---|---|---|
+| 1 | Market-level climate price transmission | L2 prototype | ok | ok | n/a | Convert the Nepal sprint into an L3 market-price package with commodity, import, fuel, and rainfall-source checks. |
+| 2 | Public data freshness blind spots | L2 prototype | ok | ok | n/a | Write the freshness inclusion protocol and rerun the matrix with source-specific refresh cadence labels. |
+| 3 | Shock-payment rails after disasters | L2 prototype | ok | ok | n/a | Add a payment-channel source scan and rerun the sprint with vintage and emergency-transfer non-claim checks. |
+| 4 | Public service data quality source disagreement | L3 candidate | ok | ok | n/a | Advance the next decision-ledger class only through public evidence, or stop at owner-only source-owner contact and human locat... |
+| 5 | Remittance corridors after flow weighting | L3 candidate | ok | ok | n/a | Validate corridor rows against central-bank or transaction sources where available; keep the L3 module as a sensitivity result ... |
+| 6 | Air-monitoring observability | L3 candidate | ok | ok | n/a | For BMKG, find station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia... |
+| 7 | Access map-completeness audit | L3 candidate | ok | ok | n/a | Extend registry joins for the priority economies and add a public friction/travel-time validation plan. |
+| 8 | Disaster metric falsification | L3 candidate | ok | ok | n/a | Build a recovery-lag source plan and event-level recovery proxy before reusing the disaster hook as a report. |
+| 9 | Power-fuel concentration audit | Evidence audit | ok | ok | ok | Search for public outage/reserve-margin proxies and decide whether the fuel-concentration result can graduate. |
+| 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Build a corridor-type falsifier that separates labor, refugee, family, and remittance-relevant migration signals. |
+| 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion and coauthored review are cleared. |
+| 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer. |
+| 13 | Flood access decomposition | Evidence audit | ok | ok | ok | Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note. |
+| 14 | Climate-health sensitivity repair | Evidence audit | ok | ok | ok | Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart. |
+| 15 | Food price coverage trap | Evidence audit | ok | ok | ok | Join a market-price or household-expenditure source for one DMC and keep WDI coverage as the source audit. |
+| 16 | Social-protection dropped leg | Evidence audit | ok | ok | ok | Search public payment-channel metadata and rebuild the screen as coverage-versus-payment-rail observability. |
+| 17 | Water denominator artifact | Evidence audit | ok | ok | ok | Rebuild the water screen around AQUASTAT/FAOSTAT or demote the current index to a denominator caution. |
+| 18 | Invisible urbanization tautology | Evidence audit | ok | ok | ok | Select one pilot geography and replace the WDI-only proxy with GHSL or settlement-layer evidence. |
+| 19 | Port hinterland inert parameter | Evidence audit | ok | ok | ok | Search for public port/hinterland travel-time proxies and decide whether the cap audit becomes a methods note. |
+| 20 | School heat top-one audit | Evidence audit | ok | ok | ok | Pick a public school-location pilot or keep the current route as a sensitivity-audit caution. |
+
+## Failure List
+
+- None.

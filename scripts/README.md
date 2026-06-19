@@ -21,6 +21,7 @@ only). CI executes the gating subset on every PR.
 |---|---|
 | `check-versions.mjs` | Reports versions.json sources older than N days (default 180) |
 | `coverage-matrix.mjs` | Generates research/coverage-matrix.md from public/data/*.json |
+| `verify-showcase-bench.mjs` | Verifies the 20-report showcase registry against committed evidence paths, public audit artifacts, route coverage, and quality/depth records |
 
 ## Pipeline drivers
 

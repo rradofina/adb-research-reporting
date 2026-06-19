@@ -85,6 +85,7 @@ const PROGRAM_FILES = [
   "station-code-status-method-source-scan.md",
   "station-grade-decision-ledger.md",
   "station-method-classification-audit.md",
+  "bmkg-operation-maintenance-source-scan.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

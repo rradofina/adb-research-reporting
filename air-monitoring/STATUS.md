@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -32,11 +32,12 @@ audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
 Indonesia/Georgia row-method source scan, the station-code status/method
-source scan, the station-grade decision ledger, and the station-method
-classification audit honestly, and do not imply station-radius, complete
-monitor-grade, or regulatory-inventory validation until station-level
-calibration/status sources, station crosswalks, complete grade-basis evidence,
-and catchment methods are added.
+source scan, the station-grade decision ledger, the station-method
+classification audit, and the BMKG operation/maintenance source scan
+honestly, and do not imply station-radius, complete monitor-grade, or
+regulatory-inventory validation until station-level calibration/status
+sources, station crosswalks, complete grade-basis evidence, and catchment
+methods are added.
 
 ## Last completed
 
@@ -541,6 +542,29 @@ and catchment methods are added.
   errors. Screenshots:
   `reporting-site/qa/showcase-air-method-classification-desktop.png` and
   `reporting-site/qa/showcase-air-method-classification-mobile.png`.
+- **2026-06-19:** Added the BMKG operation/maintenance source scan. New
+  networked script `scripts/scan-bmkg-operation-maintenance-sources.py` reads
+  the 22 Indonesia/BMKG rows already method-classified as BAM, retrieves 4
+  public BMKG operation/calibration/model-context sources plus 22 exact BMKG
+  station-detail pages, and writes
+  `generated/air-monitoring-bmkg-operation-maintenance-source-scan.csv` and
+  `generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json`.
+  The scan retrieves all 26 source records, records 22 recent exact station
+  detail pages, 22 daily-inspection SOP context rows, 22 maintenance/check
+  context rows, 22 calibration-procedure context rows, 22 BAM calibration
+  service/tariff context rows, and 22 regional BAM-1020 model-context rows.
+  Station-specific inspection logs, station-specific calibration certificates,
+  current-status confirmed rows, calibration-status rows, complete
+  monitor-grade rows, and station-radius-ready rows remain 0. Wrote
+  `bmkg-operation-maintenance-source-scan.md` and wired a public BMKG
+  operation/maintenance wall. Verification passed: scan script rerun, script
+  `py_compile`, production site build, and agent-browser desktop/mobile QA at
+  1440x1100 and 390x1000. Browser QA confirmed 6 stat cards, 1 decision lane,
+  12 sample row cards, 9 gate cards, 3 download links, no page or section
+  horizontal overflow, no overflowing mobile children, no console output, and
+  no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-bmkg-operation-desktop.png` and
+  `reporting-site/qa/showcase-air-bmkg-operation-mobile.png`.
 
 ## Next focused work
 
@@ -552,14 +576,16 @@ and catchment methods are added.
    station-owner or regulator correction/status evidence that explicitly
    resolves those exact row blockers and provides complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. Use the 66-row station-method classification audit as the next
-   source-targeting wall. It upgrades 22 Indonesia/BMKG rows to
-   source-supported BAM method classification, records 37 recent PM2.5
-   measurement-visibility rows, and still leaves 0 current-status confirmed
-   rows, 0 row-level calibration/status rows, 0 complete-grade rows, and 0
+2. Use the 22-row BMKG operation/maintenance source scan as the next
+   source-targeting wall for Indonesia. It adds official daily-inspection SOP,
+   maintenance/check, calibration-procedure, BAM calibration service/tariff,
+   and regional BAM-1020 model context for the BMKG lane, but still leaves 0
+   station-specific inspection logs, 0 station-specific calibration
+   certificates, 0 current-status confirmed rows, 0 complete-grade rows, and 0
    station-radius-ready rows.
-3. For the 22 BMKG rows now method-classified, find station-level
-   calibration/status or official grade-basis evidence before any row is
+3. For the 22 BMKG rows now carrying operation/maintenance context, find
+   station-specific inspection logs, calibration certificates, public
+   current-status records, or official grade-basis evidence before any row is
    promoted to complete monitor-grade. For Georgia, exact station-code rows
    remain source-level catalog context plus live-data verification caution;
    find a station-code method/status table or verified report. For Uzbekistan,
@@ -629,6 +655,13 @@ and catchment methods are added.
   station-radius-ready rows. Georgia remains source-level catalog context with
   live-data verification caution, and Uzbekistan remains instrument-hint or
   blocker context.
+- The BMKG operation/maintenance source scan retrieves 4 public BMKG context
+  sources and 22 exact station-detail pages, adding daily-inspection SOP,
+  maintenance/check, calibration-procedure, BAM calibration service/tariff, and
+  regional BAM-1020 model context to the 22 BMKG rows. It still records 0
+  station-specific inspection logs, 0 station-specific calibration
+  certificates, 0 current-status confirmed rows, 0 calibration-status rows, 0
+  complete monitor-grade rows, and 0 station-radius-ready rows.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

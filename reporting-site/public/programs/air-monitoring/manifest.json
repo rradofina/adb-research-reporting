@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T15:32:42.436Z",
+  "generated_at": "2026-06-19T15:52:44.865Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -314,6 +314,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_operation_maintenance_source_scan",
+      "file": "bmkg-operation-maintenance-source-scan.md",
+      "label": "Air-monitoring BMKG operation/maintenance source scan",
+      "size": 3343,
+      "size_human": "3.3 KB",
+      "mtime": "2026-06-19T15:52:37.425Z",
+      "sha256": "64876929f8afcc1ca3e6495dca90c543e12ae3a2a47c2fb204c9ca7cc4d978d6",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -356,6 +366,18 @@
       "size": 18899,
       "size_human": "18.5 KB",
       "sha256": "5940f570c4db5fcf76d90462577e97879f28e8fabd20d7b059a6b05f7e1515ad"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json",
+      "size": 43696,
+      "size_human": "42.7 KB",
+      "sha256": "0538b87eefc8c72c529d3450f9ab360031a1f40f003425c627c923e3d58ccc95"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan.csv",
+      "size": 25643,
+      "size_human": "25.0 KB",
+      "sha256": "20680efcede75f043920d76762f21d8b76a78a37b1aa706b1586c672c66db568"
     },
     {
       "file": "generated/air-monitoring-concentration-deepening.csv",

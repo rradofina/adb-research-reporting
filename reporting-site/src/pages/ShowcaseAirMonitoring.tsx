@@ -1543,6 +1543,63 @@ interface StationMethodClassificationSummary {
   non_claim: string;
 }
 
+interface BmkgOperationMaintenanceGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgOperationMaintenanceDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgOperationMaintenanceSampleRow {
+  source_station_id: string;
+  source_station_name: string;
+  exact_station_detail_timestamp_raw: string;
+  exact_station_detail_value_raw: string;
+  daily_inspection_sop_context: boolean;
+  maintenance_check_context: boolean;
+  calibration_procedure_context: boolean;
+  calibration_service_tariff_context: boolean;
+  operation_maintenance_decision: string;
+}
+
+interface BmkgOperationMaintenanceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    context_source_records: number;
+    context_source_records_retrieved: number;
+    exact_station_detail_records: number;
+    exact_station_detail_records_retrieved: number;
+    exact_station_detail_recent_within_30_days_rows: number;
+    daily_inspection_sop_context_rows: number;
+    daily_inspection_procedure_context_rows: number;
+    maintenance_check_context_rows: number;
+    calibration_procedure_context_rows: number;
+    calibration_service_tariff_context_rows: number;
+    regional_bam1020_model_context_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    current_status_confirmed_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgOperationMaintenanceDecision[];
+  evidence_gate_counts: BmkgOperationMaintenanceGate[];
+  station_sample_rows: BmkgOperationMaintenanceSampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1673,6 +1730,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationGradeDecisionLedgerSummary | null>(null);
   const [stationMethodClassification, setStationMethodClassification] =
     useState<StationMethodClassificationSummary | null>(null);
+  const [bmkgOperationMaintenance, setBmkgOperationMaintenance] =
+    useState<BmkgOperationMaintenanceSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1881,6 +1940,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG operation/maintenance source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgOperationMaintenance(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -2020,6 +2099,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationGradeDecisionLedgerPanel summary={stationGradeDecisionLedger} />
 
       <AirStationMethodClassificationPanel summary={stationMethodClassification} />
+
+      <AirBmkgOperationMaintenancePanel summary={bmkgOperationMaintenance} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -5558,6 +5639,126 @@ function AirStationMethodClassificationPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading station-method classification audit...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgOperationMaintenancePanel({
+  summary,
+}: {
+  summary: BmkgOperationMaintenanceSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.station_sample_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-operation-section" aria-label="BMKG operation and maintenance source scan">
+      <div className="air-grade-method-head air-bmkg-operation-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG operation and maintenance scan</p>
+          <h2>Operation context is still not certification.</h2>
+          <p>
+            The BMKG rows now have BAM method classification. This pass checks
+            public BMKG SOP, regulation, tariff, model-note, and exact station
+            pages for the missing station-status and calibration-evidence layer.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-operation-callout">
+          <span>Station certificates found</span>
+          <strong>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)}</strong>
+          <p>The source wall improves context, not row-level certification.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-operation-stat-grid">
+            <div>
+              <span>BMKG rows tested</span>
+              <strong>{formatNumber(counts.target_bmkg_rows)}</strong>
+              <em>already BAM method-classified</em>
+            </div>
+            <div>
+              <span>Source records</span>
+              <strong>{formatNumber(counts.context_source_records + counts.exact_station_detail_records)}</strong>
+              <em>{formatNumber(counts.context_source_records)} context, {formatNumber(counts.exact_station_detail_records)} station pages</em>
+            </div>
+            <div>
+              <span>Daily SOP context</span>
+              <strong>{formatNumber(counts.daily_inspection_sop_context_rows)}</strong>
+              <em>BMKG BAM-1020 inspection SOP</em>
+            </div>
+            <div>
+              <span>Maintenance context</span>
+              <strong>{formatNumber(counts.maintenance_check_context_rows)}</strong>
+              <em>source-level check terms</em>
+            </div>
+            <div>
+              <span>Calibration context</span>
+              <strong>{formatNumber(Math.max(counts.calibration_procedure_context_rows, counts.calibration_service_tariff_context_rows))}</strong>
+              <em>procedure or service/tariff, not certificate</em>
+            </div>
+            <div>
+              <span>Current status closed</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>no status promotions</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-operation-bridge" aria-label="BMKG operation and maintenance decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-operation-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-operation-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-operation-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-operation-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-row-grid air-bmkg-operation-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-grade-method-row air-bmkg-operation-row">
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                </div>
+                <p>{row.exact_station_detail_timestamp_raw || "No timestamp parsed"}</p>
+                <em>
+                  SOP {row.daily_inspection_sop_context ? "yes" : "no"} /
+                  maintenance {row.maintenance_check_context ? "yes" : "no"} /
+                  calibration context {(row.calibration_procedure_context || row.calibration_service_tariff_context) ? "yes" : "no"}
+                </em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-operation-downloads">
+            <a href="/programs/air-monitoring/bmkg-operation-maintenance-source-scan.md">Read the note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json">Download JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-operation-maintenance-source-scan.csv">Download CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG operation/maintenance source scan...</p>
       )}
     </section>
   );

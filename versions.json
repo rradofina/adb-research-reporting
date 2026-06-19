@@ -188,6 +188,14 @@
       ],
       "notes": "Station-method classification audit for the 66 exact station-grade decision-ledger rows. It retrieves 4 public method/catalog sources, classifies 22 Indonesia BMKG rows as Beta Attenuation Monitoring method rows, records 37 rows with recent public measurement visibility, keeps Georgia at source-level catalog context with live-data verification caution, keeps Uzbekistan at instrument-hint/blocker context, and keeps current-status confirmed, calibration-status, complete monitor-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_bmkg_operation_maintenance_source_scan": {
+      "script": "air-monitoring/scripts/scan-bmkg-operation-maintenance-sources.py",
+      "retrieved_on": "2026-06-19",
+      "derives_from": [
+        "air_monitoring_station_method_classification_audit"
+      ],
+      "notes": "BMKG operation/maintenance source scan for the 22 Indonesia BMKG rows already method-classified as BAM. It retrieves 4 public BMKG context sources and 22 exact station-detail pages, records daily-inspection SOP, maintenance/check, calibration-procedure, BAM calibration service/tariff, and regional BAM-1020 model context for all 22 rows, and keeps station-specific inspection logs, station-specific calibration certificates, current-status confirmed, calibration-status, complete monitor-grade, and station-radius-ready rows at zero."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -326,6 +334,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_station_method_classification_audit pin after classifying 22 exact Indonesia BMKG rows as Beta Attenuation Monitoring method rows while keeping current-status, calibration-status, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_bmkg_operation_maintenance_source_scan pin after retrieving BMKG daily-inspection SOP, regulation, calibration-tariff, model-note, and 22 exact station-detail sources while keeping station-specific status, calibration, complete-grade, and station-radius readiness at zero."
     }
   ]
 }

@@ -1,0 +1,1093 @@
+{
+  "generated_at": "2026-06-19T15:40:17Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_bmkg_operation_maintenance_source_scan",
+  "method": "air_monitoring_bmkg_operation_maintenance_source_scan_v1",
+  "goal_level": "L3 BMKG operation/maintenance source scan",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\bmkg-operation-maintenance-source-seed.csv",
+      "role": "public BMKG operation, maintenance, calibration, and model-context source seed"
+    },
+    {
+      "path": "generated\\air-monitoring-station-method-classification-audit.csv",
+      "role": "22 BMKG rows method-classified as BAM in the station-method classification audit"
+    }
+  ],
+  "coverage_counts": {
+    "target_bmkg_rows": 22,
+    "context_source_records": 4,
+    "context_source_records_retrieved": 4,
+    "exact_station_detail_records": 22,
+    "exact_station_detail_records_retrieved": 22,
+    "exact_station_detail_recent_within_30_days_rows": 22,
+    "daily_inspection_sop_context_rows": 22,
+    "daily_inspection_procedure_context_rows": 22,
+    "maintenance_check_context_rows": 22,
+    "calibration_procedure_context_rows": 22,
+    "calibration_service_tariff_context_rows": 22,
+    "regional_bam1020_model_context_rows": 22,
+    "station_specific_inspection_log_rows": 0,
+    "station_specific_calibration_certificate_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "calibration_status_available_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "decision_counts": [
+    {
+      "decision": "bmkg_operation_and_calibration_context_keep_not_status_certified",
+      "rows": 22
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Public BMKG sources retrieved",
+      "rows": 26,
+      "reader_use": "Includes exact station detail pages plus source-level SOP, regulation, tariff, and instrument-note pages."
+    },
+    {
+      "status": "available",
+      "gate": "Exact BMKG station pages still visible",
+      "rows": 22,
+      "reader_use": "Exact station-detail pages remain public source rows for the 22 BMKG targets."
+    },
+    {
+      "status": "available",
+      "gate": "Recent public measurement display",
+      "rows": 22,
+      "reader_use": "Recent display is evidence of public measurement visibility, not station-status certification."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Daily inspection SOP context",
+      "rows": 22,
+      "reader_use": "The BMKG SOP describes daily BAM-1020 checks in the BMKG environment."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Maintenance/check context",
+      "rows": 22,
+      "reader_use": "Maintenance and daily-check terms support source-level operation context only."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Calibration procedure or service context",
+      "rows": 22,
+      "reader_use": "Public BMKG materials mention calibration procedure or BAM calibration service context, not row-level certificates."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-specific inspection log",
+      "rows": 0,
+      "reader_use": "No public source gives the target station's inspection log."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-specific calibration certificate/status",
+      "rows": 0,
+      "reader_use": "No public source gives a calibration certificate or calibration-status record for a target row."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade and radius closure",
+      "rows": 0,
+      "reader_use": "Current-status, calibration-status, complete grade, and station-radius readiness remain blocked."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "source_station_id": "pm25_bjb2",
+      "source_station_name": "Banjarbaru",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_btm2",
+      "source_station_name": "Batam",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_idp2",
+      "source_station_name": "Indrapuri",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_jm3",
+      "source_station_name": "Kota Jambi",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_jm4",
+      "source_station_name": "Muaro Jambi",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_kmy3",
+      "source_station_name": "Kemayoran",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_ktb2",
+      "source_station_name": "Kototabang",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_mdn2",
+      "source_station_name": "Medan",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_mrs",
+      "source_station_name": "Maros",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_msg",
+      "source_station_name": "Pesawaran",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_pbb",
+      "source_station_name": "Bengkulu",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    },
+    {
+      "source_station_id": "pm25_pk2",
+      "source_station_name": "Pekanbaru",
+      "exact_station_detail_timestamp_raw": "19 Jun 2026, 21.00 WIB",
+      "exact_station_detail_value_raw": "",
+      "daily_inspection_sop_context": true,
+      "maintenance_check_context": true,
+      "calibration_procedure_context": true,
+      "calibration_service_tariff_context": true,
+      "operation_maintenance_decision": "bmkg_operation_and_calibration_context_keep_not_status_certified"
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "bmkg_bam1020_daily_inspection_sop_2023",
+      "source_name": "BMKG SOP No. 014/KB/IV/2023 for daily BAM-1020 inspection",
+      "source_role": "official_daily_inspection_sop",
+      "url": "https://jdih.bmkg.go.id/storage/common/dokumen/sop014kbiv2023ttgsoppemeriksaanharianalatpemantaupartikulatbam-1020dilingkunganbmkg.pdf",
+      "final_url": "https://jdih.bmkg.go.id/storage/common/dokumen/sop014kbiv2023ttgsoppemeriksaanharianalatpemantaupartikulatbam-1020dilingkunganbmkg.pdf",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 2784583,
+      "sha256": "0320e1bf6ded159c76de4f058e115215fd7c1d1673be19259494358bf6cdbc68",
+      "expanded_for_station_id": "",
+      "expanded_for_station_name": "",
+      "matched_expected_terms": [
+        "Pemeriksaan Harian",
+        "BAM-1020",
+        "BMKG"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitor",
+        "BAM",
+        "PM 2.5"
+      ],
+      "matched_operation_terms": [
+        "pengecekan harian",
+        "RH"
+      ],
+      "matched_maintenance_terms": [
+        "filter tape",
+        "pompa"
+      ],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": null
+    },
+    {
+      "source_key": "bmkg_air_quality_observation_regulation_2019",
+      "source_name": "BMKG Regulation No. 11/2019 on air-quality observation and data management",
+      "source_role": "official_method_regulation",
+      "url": "https://jdih.bmkg.go.id/common/dokumen/perbanno.11tahun2019.pdf",
+      "final_url": "https://jdih.bmkg.go.id/storage/common/dokumen/perbanno.11tahun2019.pdf",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 3900183,
+      "sha256": "d4d351fe8599d23823effd6caf97ef78f222524aae9680d4e0bd08ca27df8f05",
+      "expanded_for_station_id": "",
+      "expanded_for_station_name": "",
+      "matched_expected_terms": [
+        "Pengamatan dan Pengelolaan Data Kualitas Udara",
+        "PM2"
+      ],
+      "matched_method_terms": [
+        "5",
+        "BAM"
+      ],
+      "matched_operation_terms": [
+        "Beta Attenuation Monitoring",
+        "BAM",
+        "Syncronous Cycle Method"
+      ],
+      "matched_maintenance_terms": [
+        "peralatan otomatis",
+        "jam penuh"
+      ],
+      "matched_calibration_terms": [
+        "pemeliharaan"
+      ],
+      "matched_status_terms": [
+        "kalibrasi",
+        "analisis setelah kalibrasi"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": ""
+    },
+    {
+      "source_key": "bmkg_jateng_pnbp_calibration_tariff",
+      "source_name": "BMKG Central Java service and PNBP tariff page",
+      "source_role": "official_calibration_service_tariff",
+      "url": "https://staklim-jateng.bmkg.go.id/layanan_informasi.php",
+      "final_url": "https://staklim-jateng.bmkg.go.id/layanan_informasi.php",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 256238,
+      "sha256": "cef742e8b4b7bdc9c45673a1787cef00eb300504dbec8646c2f1c4cd5aea2378",
+      "expanded_for_station_id": "",
+      "expanded_for_station_name": "",
+      "matched_expected_terms": [
+        "Jasa Kalibrasi",
+        "Alat Kualitas Udara",
+        "Betha Attenuator Monitoring"
+      ],
+      "matched_method_terms": [
+        "Betha Attenuator Monitoring",
+        "BAM"
+      ],
+      "matched_operation_terms": [],
+      "matched_maintenance_terms": [
+        "Alat Kualitas Udara"
+      ],
+      "matched_calibration_terms": [
+        "Jasa Kalibrasi",
+        "per unit",
+        "Rp 250.000"
+      ],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official BMKG regional service page. Use only as evidence that BAM calibration appears in BMKG service/tariff materials, not as a calibration certificate for any target station."
+    },
+    {
+      "source_key": "bmkg_sumsel_pm25_bam1020_note",
+      "source_name": "BMKG South Sumatra PM2.5 instrument note",
+      "source_role": "official_station_owner_method_note",
+      "url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "final_url": "https://staklim-sumsel.bmkg.go.id/partikulat-matter-pm2-5/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 158033,
+      "sha256": "11a20388cdf4d8708564ea9161210a53d065660b7261e8e7fe0c48b015e08948",
+      "expanded_for_station_id": "",
+      "expanded_for_station_name": "",
+      "matched_expected_terms": [
+        "BMKG",
+        "PM2.5",
+        "BAM-1020"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitor",
+        "BAM-1020",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "otomatis",
+        "mengukur dan mencatat"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official BMKG regional station page used as source-level model context, not as station-specific model evidence for every BMKG row."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_bjb2",
+      "source_name": "BMKG PM2.5 station-detail page for Banjarbaru",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_bjb2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_bjb2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133031,
+      "sha256": "b9a6c71747746962c820ad9b2902e281337efe0b51233cb13e87ecb3e83c7735",
+      "expanded_for_station_id": "pm25_bjb2",
+      "expanded_for_station_name": "Banjarbaru",
+      "matched_expected_terms": [
+        "Banjarbaru",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_btm2",
+      "source_name": "BMKG PM2.5 station-detail page for Batam",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_btm2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_btm2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132844,
+      "sha256": "54a193b999fde89ff1b58cf6a39fa04d2bd158ffeb5092cf2c5ca134408d8c78",
+      "expanded_for_station_id": "pm25_btm2",
+      "expanded_for_station_name": "Batam",
+      "matched_expected_terms": [
+        "Batam",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_idp2",
+      "source_name": "BMKG PM2.5 station-detail page for Indrapuri",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_idp2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_idp2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133004,
+      "sha256": "d35a5a07fb3b403f5ce715c6512467fa7168ddf619ebd30f7a452d8e87e73e33",
+      "expanded_for_station_id": "pm25_idp2",
+      "expanded_for_station_name": "Indrapuri",
+      "matched_expected_terms": [
+        "Indrapuri",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_jm3",
+      "source_name": "BMKG PM2.5 station-detail page for Kota Jambi",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132892,
+      "sha256": "b3c1db055fc5dab5210677ad91cb64252c09609c252762e91eb6fd8ae71a1e7d",
+      "expanded_for_station_id": "pm25_jm3",
+      "expanded_for_station_name": "Kota Jambi",
+      "matched_expected_terms": [
+        "Kota Jambi",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_jm4",
+      "source_name": "BMKG PM2.5 station-detail page for Muaro Jambi",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm4",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_jm4",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132901,
+      "sha256": "6c2f169e5cfa8cbdf95a7573658078129c6ff7cf987511322021f6a99e68e59a",
+      "expanded_for_station_id": "pm25_jm4",
+      "expanded_for_station_name": "Muaro Jambi",
+      "matched_expected_terms": [
+        "Muaro Jambi",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_kmy3",
+      "source_name": "BMKG PM2.5 station-detail page for Kemayoran",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_kmy3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_kmy3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132906,
+      "sha256": "195a36c93c9d5cce46481b872a74c62bd924624acbcb9a7ec5423dff82eec944",
+      "expanded_for_station_id": "pm25_kmy3",
+      "expanded_for_station_name": "Kemayoran",
+      "matched_expected_terms": [
+        "Kemayoran",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_ktb2",
+      "source_name": "BMKG PM2.5 station-detail page for Kototabang",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ktb2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ktb2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132998,
+      "sha256": "09cc17209be27cb302f4e38a68d23e55c40cbc5d2adfe998e16862c14f756775",
+      "expanded_for_station_id": "pm25_ktb2",
+      "expanded_for_station_name": "Kototabang",
+      "matched_expected_terms": [
+        "Kototabang",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_mdn2",
+      "source_name": "BMKG PM2.5 station-detail page for Medan",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mdn2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mdn2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132967,
+      "sha256": "a240d8a34f62982040e264b52a59840b10a08c4b31e1b475902d58d0061e6fc0",
+      "expanded_for_station_id": "pm25_mdn2",
+      "expanded_for_station_name": "Medan",
+      "matched_expected_terms": [
+        "Medan",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_mrs",
+      "source_name": "BMKG PM2.5 station-detail page for Maros",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mrs",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_mrs",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132838,
+      "sha256": "9a2b8f5f32fb3533f3f9216940a41d760ec108a14ae70c96135cbad5ca949dd2",
+      "expanded_for_station_id": "pm25_mrs",
+      "expanded_for_station_name": "Maros",
+      "matched_expected_terms": [
+        "Maros",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_msg",
+      "source_name": "BMKG PM2.5 station-detail page for Pesawaran",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_msg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_msg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132894,
+      "sha256": "5ace6b976b04430f5f3eee1dfdc2e2941fbde9d68ce24cd08648990ee3222a52",
+      "expanded_for_station_id": "pm25_msg",
+      "expanded_for_station_name": "Pesawaran",
+      "matched_expected_terms": [
+        "Pesawaran",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_pbb",
+      "source_name": "BMKG PM2.5 station-detail page for Bengkulu",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pbb",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pbb",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132881,
+      "sha256": "0536461eb319d8c819e9ef05eb7b4df417484624c22df273eeb9c2ebe2e6e5fa",
+      "expanded_for_station_id": "pm25_pbb",
+      "expanded_for_station_name": "Bengkulu",
+      "matched_expected_terms": [
+        "Bengkulu",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_pk2",
+      "source_name": "BMKG PM2.5 station-detail page for Pekanbaru",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pk2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pk2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132881,
+      "sha256": "349cb90ac33a5eaf7fe982bf4b586ff9c7ddfea9c285319b76768d0f69ba0f27",
+      "expanded_for_station_id": "pm25_pk2",
+      "expanded_for_station_name": "Pekanbaru",
+      "matched_expected_terms": [
+        "Pekanbaru",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_pl3",
+      "source_name": "BMKG PM2.5 station-detail page for Talang Betutu Palembang",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pl3",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pl3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133025,
+      "sha256": "10d3983e6adf55b9f64511ac7ec5940479032960db6e976d44f10489eb649014",
+      "expanded_for_station_id": "pm25_pl3",
+      "expanded_for_station_name": "Talang Betutu Palembang",
+      "matched_expected_terms": [
+        "Talang Betutu Palembang",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_plb4",
+      "source_name": "BMKG PM2.5 station-detail page for Musi 2 Palembang",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_plb4",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_plb4",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132975,
+      "sha256": "bb2632e30f395f96ff5284b59f8cc3c0eb6010c8b7b3da4438a8ac0a3a41112c",
+      "expanded_for_station_id": "pm25_plb4",
+      "expanded_for_station_name": "Musi 2 Palembang",
+      "matched_expected_terms": [
+        "Musi 2 Palembang",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_pr2",
+      "source_name": "BMKG PM2.5 station-detail page for Palangkaraya",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pr2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_pr2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133006,
+      "sha256": "99afc50ea516ca001052e1329cf48d03fbc95b843a85e7f7b8ddea0fd605b951",
+      "expanded_for_station_id": "pm25_pr2",
+      "expanded_for_station_name": "Palangkaraya",
+      "matched_expected_terms": [
+        "Palangkaraya",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_ptn2",
+      "source_name": "BMKG PM2.5 station-detail page for Mempawah",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ptn2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_ptn2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132863,
+      "sha256": "e6d57879557a808a952a21ccb914d1bec2304949317dc3cb3a2abd3ec1e408b8",
+      "expanded_for_station_id": "pm25_ptn2",
+      "expanded_for_station_name": "Mempawah",
+      "matched_expected_terms": [
+        "Mempawah",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_sm2",
+      "source_name": "BMKG PM2.5 station-detail page for Samarinda",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_sm2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_sm2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132991,
+      "sha256": "613b584e064c991cb507c1e51652596656e98261ee63f8df59f5157854fd5735",
+      "expanded_for_station_id": "pm25_sm2",
+      "expanded_for_station_name": "Samarinda",
+      "matched_expected_terms": [
+        "Samarinda",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_smg",
+      "source_name": "BMKG PM2.5 station-detail page for Semarang",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_smg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_smg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132880,
+      "sha256": "79ea7ecf36e399fedc2069b826381fc4246d7ff8880e4792453b065720bbe8dc",
+      "expanded_for_station_id": "pm25_smg",
+      "expanded_for_station_name": "Semarang",
+      "matched_expected_terms": [
+        "Semarang",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_spd",
+      "source_name": "BMKG PM2.5 station-detail page for Kubu Raya",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_spd",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_spd",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132969,
+      "sha256": "f19a6b31b9721cf2cb60d446b6f7ed17edde40dd3900bfa3a544fcbf43fd4b4e",
+      "expanded_for_station_id": "pm25_spd",
+      "expanded_for_station_name": "Kubu Raya",
+      "matched_expected_terms": [
+        "Kubu Raya",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_srg",
+      "source_name": "BMKG PM2.5 station-detail page for Sorong",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_srg",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_srg",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132836,
+      "sha256": "c4f5e416c22f988a0e2496b5ad2480afae8a27c8dfc87e6edab280777fa9db46",
+      "expanded_for_station_id": "pm25_srg",
+      "expanded_for_station_name": "Sorong",
+      "matched_expected_terms": [
+        "Sorong",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_tj2",
+      "source_name": "BMKG PM2.5 station-detail page for Tanjung Harapan",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_tj2",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_tj2",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 133076,
+      "sha256": "b48c396b8c9fbaf81df2a0599c240eab1539b131c2f3669c63fc0f926ec646ea",
+      "expanded_for_station_id": "pm25_tj2",
+      "expanded_for_station_name": "Tanjung Harapan",
+      "matched_expected_terms": [
+        "Tanjung Harapan",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    },
+    {
+      "source_key": "bmkg_pm25_detail_pm25_yky",
+      "source_name": "BMKG PM2.5 station-detail page for Sleman",
+      "source_role": "official_station_detail_page",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_yky",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25/pm25_yky",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 132851,
+      "sha256": "8dbbfd42a732fab9d7276661f3d432635056be3422dbc017962be1959bb85ece",
+      "expanded_for_station_id": "pm25_yky",
+      "expanded_for_station_name": "Sleman",
+      "matched_expected_terms": [
+        "Sleman",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_operation_terms": [
+        "WIB"
+      ],
+      "matched_maintenance_terms": [],
+      "matched_calibration_terms": [],
+      "matched_status_terms": [],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Exact BMKG station-detail page; use as current public display and method text, not as station-status certification."
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-bmkg-operation-maintenance-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-bmkg-operation-maintenance-source-scan-summary.json"
+  },
+  "non_claim": "This scan records public BMKG operation, maintenance, calibration-procedure, and service-tariff context for the 22 BMKG BAM method-classified rows. It does not certify station current status, station-specific inspection logs, station-specific calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+}

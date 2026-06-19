@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, and station-method classification audit exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, and BMKG operation/maintenance source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -142,7 +142,14 @@ overrides priority by editing this list.
    keeps Georgia at source-level catalog context with live-data verification
    caution and Uzbekistan at instrument-hint or blocker context, and keeps
    current-status, calibration/status, complete-grade, and station-radius-ready
-   counts at 0. Next AI-doable loop is station-level calibration/status and
+   counts at 0. The BMKG operation/maintenance source scan then retrieves 4
+   public BMKG context sources and 22 exact station-detail pages, records
+   daily-inspection SOP, maintenance/check, calibration-procedure, BAM
+   calibration service/tariff, and regional BAM-1020 model context for all 22
+   BMKG rows, and still keeps station-specific inspection logs,
+   station-specific calibration certificates, current-status confirmed,
+   calibration-status, complete-grade, and station-radius-ready counts at 0.
+   Next AI-doable loop is station-specific inspection/calibration/status and
    official grade-basis evidence for the 22 BMKG rows, plus exact station
    method/status/certification tables for Georgia and Uzbekistan, before any
    station-radius or catchment claim.
@@ -507,6 +514,28 @@ by leaving the board in a state the next session can read.
   children, no console output, and no page errors. Screenshots:
   `reporting-site/qa/showcase-air-method-classification-desktop.png` and
   `reporting-site/qa/showcase-air-method-classification-mobile.png`.
+- **2026-06-19 (air-monitoring BMKG operation/maintenance source scan):**
+  Added `air-monitoring/scripts/scan-bmkg-operation-maintenance-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-bmkg-operation-maintenance-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json`,
+  and wrote `air-monitoring/bmkg-operation-maintenance-source-scan.md`. The
+  networked scan reads the 22 Indonesia/BMKG rows already method-classified as
+  BAM, retrieves 4 public BMKG context sources and 22 exact station-detail
+  pages, records 22 recent exact station-detail pages, 22 daily-inspection SOP
+  context rows, 22 maintenance/check context rows, 22 calibration-procedure
+  context rows, 22 BAM calibration service/tariff context rows, and 22 regional
+  BAM-1020 model-context rows, while keeping station-specific inspection logs,
+  station-specific calibration certificates, current-status confirmed,
+  calibration-status, complete monitor-grade, and station-radius-ready rows at
+  0. The public route now renders a BMKG operation/maintenance panel.
+  Agent-browser QA passed at 1440x1100 and 390x1000 with 6 stat cards, 1
+  decision lane, 12 sample row cards, 9 gate cards, 3 download links, no page
+  or section horizontal overflow, no overflowing mobile children, no console
+  output, and no page errors. Screenshots:
+  `reporting-site/qa/showcase-air-bmkg-operation-desktop.png` and
+  `reporting-site/qa/showcase-air-bmkg-operation-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

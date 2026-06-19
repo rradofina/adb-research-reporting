@@ -37,7 +37,7 @@ candidates before adding new surfaces.
 | 1 | Market-level climate price transmission | L2 prototype | Public WFP/NASA POWER sprint, interactive market-month heatmap, and clear non-causal caveat | Needs commodity expansion, alternative rainfall source, and non-climate price falsifiers | Convert the Nepal sprint into an L3 market-price package |
 | 2 | Public data freshness blind spots | L2 prototype | Public WDI API matrix makes stale and missing indicator vintages visible | Needs indicator-specific refresh expectations and non-applicability rules | Add source-specific refresh cadence labels |
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
-| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, and a 4-row source-repair public-evidence attachment | Needs public official coordinate/source explanations for source-repair rows, registry-vintage notes, and independent validation before stronger access-map use | Search for official coordinate/source explanations for the 4 source-repair-first rows before any same-facility or map-absence language |
+| 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 4-row source-repair public-evidence attachment, and a 4-row official-coordinate evidence pass | Needs public correction records, source explanations, registry-vintage notes, and independent validation before stronger access-map use | Search for public correction records or source explanations for the 4 source-repair-first coordinates before any same-facility or map-absence language |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts and bespoke visuals make the monitoring observability gap legible | Needs station-radius sensitivity and regulatory-inventory comparison | Build air-monitor catchment package |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
@@ -298,11 +298,37 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-psdq-source-repair-evidence-desktop-cards.png`,
   `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile.png`, and
   `reporting-site/qa/showcase-psdq-source-repair-evidence-mobile-cards.png`.
+- PSDQ report #4 then received a source-repair official-coordinate evidence
+  pass. New live public-source script
+  `public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py`
+  retrieves the four public DGHS profile pages, parses the embedded official
+  map coordinate, and compares it with the pinned OSM candidate coordinate.
+  It writes
+  `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`
+  and
+  `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json`.
+  The pass retrieves all 4 profiles, finds 4 exposed official coordinates,
+  confirms all 4 match the inspection CSV, records 2 rows sharing one official
+  profile coordinate, records 2 rows at least 10 kilometers from the named OSM
+  candidate, records 1 row at least 50 kilometers from the named OSM candidate,
+  and finds 0 explicit coordinate-source explanations. It closes or
+  reclassifies 0 rows. This is public-source coordinate evidence, not human
+  validation or source repair completion. Verification passed:
+  official-coordinate script rerun, new script `py_compile`, program-script
+  `py_compile`, production site build, six deterministic gates plus
+  `git diff --check`, review packet and zip rebuild, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with no page-level horizontal
+  overflow and no page errors. Screenshots:
+  `reporting-site/qa/showcase-psdq-official-coordinate-evidence-desktop.png`,
+  `reporting-site/qa/showcase-psdq-official-coordinate-evidence-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-official-coordinate-evidence-mobile.png`,
+  and
+  `reporting-site/qa/showcase-psdq-official-coordinate-evidence-mobile-cards.png`.
 
 ## Next deepening order
 
-1. PSDQ source disagreement, official coordinate/source explanations for the 4
-   source-repair-first rows.
+1. PSDQ source disagreement, correction records or source explanations for the
+   4 source-repair-first coordinates.
 2. Air-monitoring observability, because the visual hook is strong and the
    next source upgrade is concrete.
 3. Access map-completeness, because official registry joins can turn a source

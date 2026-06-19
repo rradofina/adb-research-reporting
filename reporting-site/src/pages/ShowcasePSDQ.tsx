@@ -743,6 +743,71 @@ interface PsdqSourceRepairEvidenceSummary {
   non_claim: string;
 }
 
+interface PsdqOfficialCoordinateEvidenceRow {
+  official_coordinate_evidence_id: string;
+  evidence_rank: number;
+  status: string;
+  source_repair_evidence_id: string;
+  decision_id: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  dghs_public_profile_url: string;
+  dghs_profile_http_status: number | string;
+  dghs_profile_retrieved: boolean | string;
+  dghs_profile_map_lat: number | string;
+  dghs_profile_map_lon: number | string;
+  dghs_profile_map_iframe_url: string;
+  dghs_profile_organization_name: string;
+  dghs_profile_division_name: string;
+  dghs_profile_district_name: string;
+  dghs_profile_upazilla_name: string;
+  dghs_profile_facility_email: string;
+  dghs_profile_matches_inspection_registry_coordinate: boolean | string;
+  dghs_profile_to_inspection_registry_distance_m: number | string;
+  candidate_feature_url: string;
+  candidate_osm_name: string;
+  candidate_osm_lat: number | string;
+  candidate_osm_lon: number | string;
+  candidate_osm_tags_compact: string;
+  dghs_profile_to_osm_candidate_distance_m: number | string;
+  candidate_distance_m_from_inspection: number | string;
+  candidate_name_score_from_live_tags: number | string;
+  shared_official_profile_coordinate_rows: number | string;
+  official_coordinate_evidence_class: string;
+  source_repair_reviewer_action: string;
+  explicit_coordinate_source_explanation_found: boolean | string;
+  source_explanation_status: string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+}
+
+interface PsdqOfficialCoordinateEvidenceSummary {
+  generated_at: string;
+  status: string;
+  goal_level: string;
+  selection_rule: string;
+  official_coordinate_scope: {
+    source_repair_rows: number;
+    dghs_profiles_retrieved: number;
+    official_profile_coordinates_exposed: number;
+    profile_coordinates_match_inspection_registry_coordinates: number;
+    rows_with_shared_official_profile_coordinate: number;
+    rows_with_official_coordinate_distance_10km_or_more_from_osm_candidate: number;
+    rows_with_official_coordinate_distance_50km_or_more_from_osm_candidate: number;
+    max_official_coordinate_to_osm_candidate_distance_m: number;
+    explicit_coordinate_source_explanations_found: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  official_coordinate_evidence_class_counts: PsdqCandidateResolutionCount[];
+  evidence_rows: PsdqOfficialCoordinateEvidenceRow[];
+  evidence_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqCountrySummary {
   iso3: string;
   country: string;
@@ -897,6 +962,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqPublicSourceDecisionLedgerSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
+  const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
+    useState<PsdqOfficialCoordinateEvidenceSummary | null>(null);
   const [national, setNational] = useState<PsdqNationalSummary | null>(null);
   const [rows, setRows] = useState<PsdqExposureRow[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -967,6 +1034,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`source repair official coordinate evidence HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-exposure-ranked-disagreement.csv").then((r) => {
         if (!r.ok) throw new Error(`csv HTTP ${r.status}`);
         return r.text();
@@ -989,6 +1060,7 @@ export default function ShowcasePSDQ() {
         targetedSourceConfirmationPayload,
         publicSourceDecisionLedgerPayload,
         sourceRepairEvidencePayload,
+        officialCoordinateEvidencePayload,
         csvText,
       ]) => {
         setSummary(summaryPayload);
@@ -1007,6 +1079,7 @@ export default function ShowcasePSDQ() {
         setTargetedSourceConfirmationSummary(targetedSourceConfirmationPayload);
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
+        setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setRows(parseCsv(csvText));
       })
       .catch((err) => setError(String(err)));
@@ -1130,6 +1203,10 @@ export default function ShowcasePSDQ() {
 
       {sourceRepairEvidenceSummary && (
         <PsdqSourceRepairPublicEvidencePanel summary={sourceRepairEvidenceSummary} />
+      )}
+
+      {officialCoordinateEvidenceSummary && (
+        <PsdqOfficialCoordinateEvidencePanel summary={officialCoordinateEvidenceSummary} />
       )}
 
       {summary && rows.length > 0 && <PsdqExplorer summary={summary} rows={rows} />}
@@ -3974,6 +4051,28 @@ function sourceRepairEvidenceLabel(code: string) {
   return labels[code] || code.replaceAll("_", " ");
 }
 
+function officialCoordinateEvidenceColor(code: string) {
+  if (code.includes("shared")) return "#007DB8";
+  if (code.includes("extreme")) return "#A33A2A";
+  if (code.includes("long")) return "#8A6A00";
+  return "#5A8227";
+}
+
+function officialCoordinateEvidenceLabel(code: string) {
+  const labels: Record<string, string> = {
+    official_profile_coordinate_shared_by_multiple_dghs_rows: "Shared official coordinate",
+    official_profile_coordinate_long_distance_from_named_osm_candidate: "Long-distance official coordinate",
+    official_profile_coordinate_extreme_distance_from_named_osm_candidate: "Extreme-distance official coordinate",
+    official_profile_coordinate_near_named_osm_candidate: "Nearby official coordinate",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function formatCoordinate(value: number | string) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed.toFixed(5) : String(value);
+}
+
 function asBoolean(value: boolean | string) {
   return value === true || String(value).toLowerCase() === "true";
 }
@@ -4087,6 +4186,134 @@ function PsdqSourceRepairPublicEvidencePanel({ summary }: { summary: PsdqSourceR
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv" download>
           Download source-repair evidence CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PsdqOfficialCoordinateEvidencePanel({ summary }: { summary: PsdqOfficialCoordinateEvidenceSummary }) {
+  const maxDistance = Math.max(
+    1,
+    ...summary.evidence_rows.map((row) => Number(row.dghs_profile_to_osm_candidate_distance_m || 0))
+  );
+
+  return (
+    <section className="showcase-section psdq-official-coordinate-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Official coordinate evidence</p>
+          <h2>The public DGHS pages expose the coordinates, but not the reason.</h2>
+          <p>
+            The next pass retrieves each DGHS profile page and parses the
+            embedded official map coordinate. The coordinates match the
+            inspection CSV, but the profiles do not expose an explicit
+            coordinate-source explanation, so the four rows stay open.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Profiles retrieved</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.dghs_profiles_retrieved)} / {formatNumber(summary.official_coordinate_scope.source_repair_rows)}</strong>
+          </div>
+          <div>
+            <span>Official coordinates exposed</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.official_profile_coordinates_exposed)}</strong>
+          </div>
+          <div>
+            <span>Match inspection CSV</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.profile_coordinates_match_inspection_registry_coordinates)} rows</strong>
+          </div>
+          <div>
+            <span>Shared official coordinate</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.rows_with_shared_official_profile_coordinate)} rows</strong>
+          </div>
+          <div>
+            <span>Source explanations found</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.explicit_coordinate_source_explanations_found)}</strong>
+          </div>
+          <div>
+            <span>Rows closed</span>
+            <strong>{formatNumber(summary.official_coordinate_scope.rows_closed_as_resolved)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-official-coordinate-grid">
+        {summary.evidence_rows.map((row) => {
+          const distance = Number(row.dghs_profile_to_osm_candidate_distance_m || 0);
+          const score = Number(row.candidate_name_score_from_live_tags || 0);
+          const distanceWidth = Math.max(2, Math.min(100, (distance / maxDistance) * 100));
+          const color = officialCoordinateEvidenceColor(row.official_coordinate_evidence_class);
+          return (
+            <article key={row.official_coordinate_evidence_id} style={{ borderColor: color }}>
+              <div className="psdq-official-coordinate-card-head">
+                <span>{row.official_coordinate_evidence_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.dghs_profile_division_name} / {row.dghs_profile_district_name} / {row.dghs_profile_upazilla_name}</em>
+              </div>
+              <div className="psdq-official-coordinate-class" style={{ background: color }}>
+                {officialCoordinateEvidenceLabel(row.official_coordinate_evidence_class)}
+              </div>
+              <div className="psdq-official-coordinate-links">
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS {row.dghs_profile_http_status}
+                </a>
+                <a href={row.dghs_profile_map_iframe_url} target="_blank" rel="noreferrer">
+                  DGHS map
+                </a>
+                <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                  OSM feature
+                </a>
+              </div>
+              <div className="psdq-official-coordinate-route">
+                <div className="psdq-official-coordinate-point">
+                  <span>Official DGHS coordinate</span>
+                  <strong>{formatCoordinate(row.dghs_profile_map_lat)}, {formatCoordinate(row.dghs_profile_map_lon)}</strong>
+                  <em>{row.dghs_profile_organization_name}</em>
+                </div>
+                <div className="psdq-official-coordinate-rail" aria-label="Official-to-OSM coordinate distance share of maximum distance">
+                  <i style={{ width: `${distanceWidth}%`, background: color }} />
+                </div>
+                <div className="psdq-official-coordinate-point">
+                  <span>Pinned OSM candidate</span>
+                  <strong>{formatCoordinate(row.candidate_osm_lat)}, {formatCoordinate(row.candidate_osm_lon)}</strong>
+                  <em>{row.candidate_osm_name}</em>
+                </div>
+              </div>
+              <div className="psdq-official-coordinate-metrics">
+                <span><b>{formatNumber(distance / 1000, 1)} km</b> official-to-OSM gap</span>
+                <span><b>{formatNumber(score, 2)}</b> name score</span>
+                <span><b>{formatNumber(Number(row.shared_official_profile_coordinate_rows || 0))}</b> shared official-coordinate rows</span>
+              </div>
+              <p>{row.source_repair_reviewer_action}</p>
+              <div className="psdq-official-coordinate-status">
+                <span>{asBoolean(row.explicit_coordinate_source_explanation_found) ? "Explanation found" : "No source explanation field"}</span>
+                <span>{asBoolean(row.dghs_profile_matches_inspection_registry_coordinate) ? "Matches inspection CSV" : "Differs from inspection CSV"}</span>
+                <span>0 closed</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the official-coordinate evidence</p>
+        <code>python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-source-repair-official-coordinate-evidence.md" download>
+          Download official-coordinate evidence note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json" download>
+          Download official-coordinate summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv" download>
+          Download official-coordinate CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

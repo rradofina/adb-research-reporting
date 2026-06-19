@@ -3829,6 +3829,11 @@
     gap: 1rem;
   }
 
+  .psdq-official-coordinate-section {
+    display: grid;
+    gap: 1rem;
+  }
+
   .psdq-sample-grid {
     display: grid;
     gap: 0.75rem;
@@ -3890,6 +3895,12 @@
   }
 
   .psdq-source-repair-evidence-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .psdq-official-coordinate-grid {
     display: grid;
     gap: 0.85rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -4029,6 +4040,154 @@
   }
 
   .psdq-source-repair-status span {
+    color: var(--ink);
+    background: #f5f7f9;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .psdq-official-coordinate-grid article {
+    min-width: 0;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 0.9rem;
+    background: #fff;
+  }
+
+  .psdq-official-coordinate-card-head {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-official-coordinate-card-head span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-official-coordinate-card-head strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-official-coordinate-card-head em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-official-coordinate-class {
+    width: fit-content;
+    max-width: 100%;
+    color: #fff;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .psdq-official-coordinate-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .psdq-official-coordinate-links a {
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .psdq-official-coordinate-route {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .psdq-official-coordinate-point {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .psdq-official-coordinate-point span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-official-coordinate-point strong {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-official-coordinate-point em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-official-coordinate-rail {
+    height: 0.55rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-official-coordinate-rail i {
+    display: block;
+    height: 100%;
+  }
+
+  .psdq-official-coordinate-metrics {
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psdq-official-coordinate-metrics span {
+    min-width: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.25;
+  }
+
+  .psdq-official-coordinate-metrics b {
+    display: block;
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.15;
+  }
+
+  .psdq-official-coordinate-grid article p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .psdq-official-coordinate-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-official-coordinate-status span {
     color: var(--ink);
     background: #f5f7f9;
     font-size: var(--type-copy-xs);
@@ -5813,6 +5972,7 @@
     .psdq-public-source-confirmation-cards,
     .psdq-public-source-decision-ledger-grid,
     .psdq-source-repair-evidence-grid,
+    .psdq-official-coordinate-grid,
     .psdq-inspection-focus-strip {
       grid-template-columns: minmax(0, 1fr);
     }

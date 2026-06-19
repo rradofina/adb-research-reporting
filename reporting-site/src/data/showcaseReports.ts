@@ -100,9 +100,9 @@ export const showcaseReports: ShowcaseReport[] = [
     href: "/showcase/psdq-source-disagreement",
     status: "verified",
     statusLabel: "L3 evidence module",
-    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, richer public-source tag checks, coordinate-repair triage, public-map-gap lanes, row-level evidence, a targeted public-map inspection queue, first-row confirmation, 40-row public-source confirmation, a 16-row public-source decision ledger, and 4 source-repair evidence attachments before access maps are trusted.",
+    deck: "Bangladesh registry-map disagreement is packaged with ratio strata, validation residues, a facility-level sample, automated screening, AI review, candidate-resolution lanes, richer public-source tag checks, coordinate-repair triage, public-map-gap lanes, row-level evidence, a targeted public-map inspection queue, first-row confirmation, 40-row public-source confirmation, a 16-row public-source decision ledger, 4 source-repair evidence attachments, and 4 official-coordinate evidence rows before access maps are trusted.",
     evidencePath: "public-service-data-quality/source-disagreement-l3-module.md",
-    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, public-source tag-support lanes, coordinate-repair distance ledger, public-map-gap upazila queue, row-evidence reviewer queue, targeted public-map inspection cards, first-row confirmation scores, 40-row upazila confirmation lanes, decision-ledger row tracks, and source-repair evidence cards",
+    visual: "Ranked registry-versus-OSM workbench, ratio-strata ledger, validation sample, coded-screen chart, AI review workstreams, candidate-resolution lanes, public-source tag-support lanes, coordinate-repair distance ledger, public-map-gap upazila queue, row-evidence reviewer queue, targeted public-map inspection cards, first-row confirmation scores, 40-row upazila confirmation lanes, decision-ledger row tracks, source-repair evidence cards, and official-coordinate gap cards",
     sourceNote: "DOH NHFR, DGHS registry, OSM, Open Buildings, and PSA context",
   },
   {
@@ -576,9 +576,9 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
   4: {
     readiness: "l3-candidate",
     readinessLabel: "L3 candidate",
-    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, and a 4-row source-repair public-evidence attachment.",
-    publicationGap: "Needs public official coordinate/source explanations for source-repair rows, registry-vintage notes, and independent validation before stronger access-map use.",
-    nextUpgrade: "Search for official coordinate/source explanations for the 4 source-repair-first rows before any same-facility or map-absence language.",
+    qaSummary: "BGD source-disagreement route reads formal L3 strata, a deterministic 20-upazila sample, an automated 76-row public-source coded screen, an AI review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 4-row source-repair public-evidence attachment, and a 4-row official-coordinate evidence pass.",
+    publicationGap: "Needs public correction records or source explanations for source-repair rows, registry-vintage notes, and independent validation before stronger access-map use.",
+    nextUpgrade: "Search for public correction records or source explanations for the 4 source-repair-first coordinates before any same-facility or map-absence language.",
   },
   5: {
     readiness: "l3-candidate",

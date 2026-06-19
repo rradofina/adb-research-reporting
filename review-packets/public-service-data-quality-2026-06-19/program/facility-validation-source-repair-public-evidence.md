@@ -95,7 +95,9 @@ Outputs:
 
 ## Next Statistical Upgrade
 
-Use the attached public evidence to search for official coordinate/source
-explanations for the four source-repair rows. A row should be closed or
-reclassified only if a public official source explains the intended coordinate,
-the duplicate-source issue, or the facility identity. Otherwise it remains open.
+Use the attached public evidence together with
+`facility-validation-source-repair-official-coordinate-evidence.md` to search
+for correction records, change logs, or other official pages explaining the
+published coordinate. A row should be closed or reclassified only if a public
+official source explains the intended coordinate, the duplicate-source issue, or
+the facility identity. Otherwise it remains open.

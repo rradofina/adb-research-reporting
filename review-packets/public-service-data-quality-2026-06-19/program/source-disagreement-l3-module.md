@@ -445,6 +445,31 @@ All 4 rows remain open; 0 are closed as resolved and 0 are reclassified as
 same-facility matches. The result is an evidence attachment for reviewer
 sequence, not a source repair completion.
 
+## Source-Repair Official Coordinate Addendum
+
+The official-coordinate evidence pass now lives in
+`facility-validation-source-repair-official-coordinate-evidence.md`. The script
+`scripts/explain-bgd-facility-source-repair-official-coordinates.py` retrieves
+the four public DGHS profile pages, parses the embedded official map
+coordinates, and compares them with the pinned OSM candidate coordinates.
+
+The pass covers the same 4 source-repair rows:
+
+| Official-coordinate evidence signal | Rows |
+|---|---:|
+| DGHS public profiles retrieved | 4 |
+| Official profile coordinates exposed | 4 |
+| Profile coordinates matching the inspection CSV | 4 |
+| Rows sharing one official profile coordinate | 2 |
+| Official-to-OSM candidate distance at least 10 km | 2 |
+| Official-to-OSM candidate distance at least 50 km | 1 |
+| Explicit coordinate-source explanations found | 0 |
+
+All 4 rows remain open; 0 are closed as resolved and 0 are reclassified as
+same-facility matches. The result exposes the official coordinate now visible
+on the DGHS profile pages, but it does not explain why that coordinate is
+shared or distant.
+
 ## What It Does Not Mean
 
 - This is not a population estimate, household count, poverty estimate,
@@ -477,6 +502,7 @@ python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
+python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 ```
 
 Outputs:
@@ -512,10 +538,13 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence-summary.json`
 
 ## Next Statistical Upgrade
 
-The next upgrade is a decision ledger for the 3 possible same-facility rows,
-the 4 source-repair rows, and a small set of high-exposure name-conflict rows.
-Close or reclassify a row only if a public source supports the change;
-otherwise keep it open with the specific unresolved source question.
+The next upgrade is a public correction-record or source-explanation search for
+the 4 source-repair-first coordinates. Close or reclassify a row only if a
+public official source explains the coordinate, source correction, duplicate
+record, or facility identity; otherwise keep it open with the specific
+unresolved source question.

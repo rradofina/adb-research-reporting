@@ -423,6 +423,32 @@ This makes the review queue narrower and more operational. It does not make
 the evidence human-validated, and it does not turn source reachability into a
 row outcome.
 
+## Possible Same-Facility Review Addendum
+
+The possible same-facility review now lives in
+`facility-validation-possible-same-facility-review.md`. The script
+`scripts/build-bgd-facility-possible-same-facility-review.py` reads the
+decision ledger and targeted-row confirmation CSV without fetching new data.
+It isolates the three rows where a public OSM candidate could be the same
+facility as the DGHS row but still needs identity and location support.
+
+The pass covers the 3 possible same-facility rows in the decision ledger:
+
+| Possible same-facility signal | Rows |
+|---|---:|
+| DGHS profiles retrieved | 3 |
+| OSM API records retrieved | 3 |
+| Name score at least 0.95 | 1 |
+| Candidate distance at least 2 km | 3 |
+| Closures allowed | 0 |
+| Same-facility reclassifications allowed | 0 |
+| Map-absence uses allowed | 0 |
+
+The practical rule is that name support alone is not a row outcome. The Aichi
+row has a name score of 1.0000, but the public candidate is still 2.3 km from
+the inspection point, so the row remains open until identity and location are
+validated together.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -611,6 +637,7 @@ python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
+python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -650,6 +677,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

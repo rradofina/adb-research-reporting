@@ -47,6 +47,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/confirm-bgd-facility-public-map-first-rows.py` — retrieves public DGHS profile pages and public OSM API feature records for the first 12 targeted inspection rows
 - `scripts/confirm-bgd-facility-public-map-targeted-rows.py` — retrieves public DGHS profile pages and public OSM API feature records for all 40 targeted inspection rows
 - `scripts/build-bgd-facility-public-source-decision-ledger.py` — converts the 40-row public-source confirmation packet into a no-network reviewer decision ledger
+- `scripts/build-bgd-facility-possible-same-facility-review.py` — builds a no-contact review packet for the three possible same-facility public-map candidates and blocks premature closure/reclassification
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
@@ -104,6 +105,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-public-source-confirmation-targeted-rows-summary.json` — chart-ready targeted-row confirmation lanes, retrieval counts, and upazila confirmation rows
 - `generated/psdq-bgd-facility-validation-public-source-decision-ledger.csv` — no-network public-source decision ledger for possible same-facility, source-repair, and priority-1 name-conflict rows
 - `generated/psdq-bgd-facility-validation-public-source-decision-ledger-summary.json` — chart-ready decision-track counts, defer counts, and reviewer decision rows
+- `generated/psdq-bgd-facility-validation-possible-same-facility-review.csv` — no-contact review gates for the three possible same-facility public-map candidates
+- `generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json` — chart-ready name-score, distance, retrieval, and keep-open counts for possible same-facility rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json` — chart-ready source-repair attachment counts, evidence classes, and candidate groups
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv` — official DGHS profile coordinate evidence for the four source-repair-first rows
@@ -314,6 +317,13 @@ Current audit result:
   lower-priority name-conflict spot checks. It keeps all 40 targeted rows open
   with 0 AI closures and 0 AI reclassifications. This is a public-source
   reviewer queue, not human validation or a row outcome table.
+- **BGD possible same-facility review:** the no-network review reads the
+  decision ledger and targeted-row confirmation CSV, then isolates the 3
+  possible same-facility public-map candidates. All 3 rows have DGHS profile
+  and OSM API evidence retrieved; 1 row has name score at least 0.95; all 3
+  candidates are at least 2 kilometers from the inspection point. It allows 0
+  closures, 0 same-facility reclassifications, and 0 map-absence uses. This is
+  a no-contact evidence gate, not human validation or a row outcome.
 - **BGD source-repair public evidence:** the no-network attachment pass reads
   the decision ledger and targeted-row confirmation CSV, then attaches public
   DGHS profile and OSM API evidence to the 4 source-repair-first rows. All 4
@@ -392,6 +402,7 @@ python public-service-data-quality/scripts/inspect-bgd-facility-public-map-targe
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-first-rows.py
 python public-service-data-quality/scripts/confirm-bgd-facility-public-map-targeted-rows.py
 python public-service-data-quality/scripts/build-bgd-facility-public-source-decision-ledger.py
+python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py

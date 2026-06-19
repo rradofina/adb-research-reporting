@@ -3824,6 +3824,11 @@
     gap: 1rem;
   }
 
+  .psdq-possible-same-facility-section {
+    display: grid;
+    gap: 1rem;
+  }
+
   .psdq-source-repair-evidence-section {
     display: grid;
     gap: 1rem;
@@ -3912,6 +3917,12 @@
     display: grid;
     gap: 0.75rem;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .psdq-possible-same-facility-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .psdq-source-repair-evidence-grid {
@@ -4084,6 +4095,193 @@
   }
 
   .psdq-source-repair-status span {
+    color: var(--ink);
+    background: #f5f7f9;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .psdq-possible-same-facility-grid article {
+    min-width: 0;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 0.9rem;
+    background: #fff;
+  }
+
+  .psdq-possible-same-facility-card-head {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-possible-same-facility-card-head span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-possible-same-facility-card-head strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-possible-same-facility-card-head em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+  }
+
+  .psdq-possible-same-facility-class {
+    width: fit-content;
+    max-width: 100%;
+    color: #fff;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .psdq-possible-same-facility-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .psdq-possible-same-facility-links a {
+    color: var(--accent);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .psdq-possible-same-facility-candidate {
+    display: grid;
+    gap: 0.25rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .psdq-possible-same-facility-candidate span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-possible-same-facility-candidate strong {
+    color: var(--ink);
+    font-size: var(--type-copy-sm);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-possible-same-facility-candidate em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-possible-same-facility-pair {
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .psdq-possible-same-facility-pair div {
+    min-width: 0;
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .psdq-possible-same-facility-pair span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-possible-same-facility-pair strong {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-sm);
+    line-height: 1.15;
+  }
+
+  .psdq-possible-same-facility-pair i {
+    display: block;
+    height: 0.55rem;
+    background: #eef2f5;
+    overflow: hidden;
+  }
+
+  .psdq-possible-same-facility-pair b {
+    display: block;
+    height: 100%;
+  }
+
+  .psdq-possible-same-facility-distance {
+    color: var(--ink);
+    background: #f5f7f9;
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    line-height: 1.25;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .psdq-possible-same-facility-grid article > p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-possible-same-facility-gates {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .psdq-possible-same-facility-gates div {
+    display: grid;
+    gap: 0.2rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .psdq-possible-same-facility-gates span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .psdq-possible-same-facility-gates p {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .psdq-possible-same-facility-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .psdq-possible-same-facility-status span {
     color: var(--ink);
     background: #f5f7f9;
     font-size: var(--type-copy-xs);
@@ -6691,6 +6889,7 @@
     .psdq-public-source-confirmation-grid,
     .psdq-public-source-confirmation-cards,
     .psdq-public-source-decision-ledger-grid,
+    .psdq-possible-same-facility-grid,
     .psdq-source-repair-evidence-grid,
     .psdq-official-coordinate-grid,
     .psdq-public-explanation-grid,
@@ -6722,6 +6921,7 @@
     }
 
     .psdq-inspection-candidate,
+    .psdq-possible-same-facility-pair,
     .psdq-confirmation-score-grid {
       grid-template-columns: minmax(0, 1fr);
     }

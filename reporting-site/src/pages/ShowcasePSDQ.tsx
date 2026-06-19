@@ -677,6 +677,89 @@ interface PsdqPublicSourceDecisionLedgerSummary {
   non_claim: string;
 }
 
+interface PsdqPossibleSameFacilityReviewRow {
+  possible_same_facility_review_id: string;
+  evidence_rank: number;
+  evidence_method: string;
+  status: string;
+  decision_id: string;
+  confirmation_id: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  priority_scope: string;
+  focus_class: string;
+  inspection_lane: string;
+  public_source_confirmation_lane: string;
+  dghs_profile_id: string;
+  dghs_public_profile_url: string;
+  dghs_profile_http_status: number | string;
+  dghs_profile_retrieved: boolean | string;
+  dghs_profile_facility_token_coverage: number | string;
+  dghs_profile_public_name_token_coverage: number | string;
+  candidate_feature_url: string;
+  candidate_osm_api_url: string;
+  candidate_osm_api_http_status: number | string;
+  candidate_osm_api_retrieved: boolean | string;
+  candidate_osm_type: string;
+  candidate_osm_id: string;
+  candidate_osm_name_from_api: string;
+  candidate_osm_lat: number | string;
+  candidate_osm_lon: number | string;
+  candidate_osm_tags_compact: string;
+  candidate_name_score_from_live_tags: number | string;
+  candidate_distance_m_from_inspection: number | string;
+  candidate_distance_band: string;
+  name_evidence_class: string;
+  decision_question: string;
+  closure_or_reclassification_gate: string;
+  minimum_evidence_to_close: string;
+  minimum_evidence_to_reclassify_as_same_facility: string;
+  minimum_evidence_to_keep_as_map_absence: string;
+  review_action: string;
+  row_closure_allowed_by_current_public_evidence: boolean | string;
+  same_facility_reclassification_allowed_by_current_public_evidence: boolean | string;
+  map_absence_language_allowed_by_current_public_evidence: boolean | string;
+  external_contact_made: boolean | string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_as_same_facility: number | string;
+  source_basis: string;
+  non_claim: string;
+}
+
+interface PsdqPossibleSameFacilityReviewSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  possible_same_facility_scope: {
+    decision_ledger_rows: number;
+    possible_same_facility_rows: number;
+    dghs_profiles_retrieved: number;
+    osm_api_records_retrieved: number;
+    rows_with_name_score_at_least_0_95: number;
+    rows_with_candidate_distance_2km_or_more: number;
+    min_candidate_distance_m: number | null;
+    max_candidate_distance_m: number | null;
+    min_candidate_name_score: number | null;
+    max_candidate_name_score: number | null;
+    external_contacts_made: number;
+    rows_allowed_for_closure: number;
+    rows_allowed_for_same_facility_reclassification: number;
+    rows_allowed_for_map_absence_language: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_as_same_facility: number;
+  };
+  candidate_distance_band_counts: PsdqCandidateResolutionCount[];
+  name_evidence_class_counts: PsdqCandidateResolutionCount[];
+  review_rows: PsdqPossibleSameFacilityReviewRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqSourceRepairEvidenceRow {
   evidence_id: string;
   evidence_rank: number;
@@ -1220,6 +1303,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqTargetedSourceConfirmationSummary | null>(null);
   const [publicSourceDecisionLedgerSummary, setPublicSourceDecisionLedgerSummary] =
     useState<PsdqPublicSourceDecisionLedgerSummary | null>(null);
+  const [possibleSameFacilityReviewSummary, setPossibleSameFacilityReviewSummary] =
+    useState<PsdqPossibleSameFacilityReviewSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
@@ -1298,6 +1383,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`public source decision ledger HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`possible same-facility review HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
         return r.json();
@@ -1343,6 +1432,7 @@ export default function ShowcasePSDQ() {
         publicSourceConfirmationPayload,
         targetedSourceConfirmationPayload,
         publicSourceDecisionLedgerPayload,
+        possibleSameFacilityReviewPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
@@ -1366,6 +1456,7 @@ export default function ShowcasePSDQ() {
         setPublicSourceConfirmationSummary(publicSourceConfirmationPayload);
         setTargetedSourceConfirmationSummary(targetedSourceConfirmationPayload);
         setPublicSourceDecisionLedgerSummary(publicSourceDecisionLedgerPayload);
+        setPossibleSameFacilityReviewSummary(possibleSameFacilityReviewPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
@@ -1491,6 +1582,10 @@ export default function ShowcasePSDQ() {
 
       {publicSourceDecisionLedgerSummary && (
         <PsdqPublicSourceDecisionLedgerPanel summary={publicSourceDecisionLedgerSummary} />
+      )}
+
+      {possibleSameFacilityReviewSummary && (
+        <PsdqPossibleSameFacilityReviewPanel summary={possibleSameFacilityReviewSummary} />
       )}
 
       {sourceRepairEvidenceSummary && (
@@ -4336,6 +4431,190 @@ function PsdqDecisionLedgerRowChart({ rows }: { rows: PsdqPublicSourceDecisionLe
         })}
       </div>
     </>
+  );
+}
+
+function possibleSameFacilityColor(code: string) {
+  const colors: Record<string, string> = {
+    name_support_strong_location_unresolved: "#5A8227",
+    name_support_partial_location_unresolved: "#FBB00E",
+    name_support_weak_location_unresolved: "#A33A2A",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function possibleSameFacilityLabel(code: string) {
+  const labels: Record<string, string> = {
+    name_support_strong_location_unresolved: "Strong name, location unresolved",
+    name_support_partial_location_unresolved: "Partial name, location unresolved",
+    name_support_weak_location_unresolved: "Weak name, location unresolved",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function possibleSameFacilityDistanceLabel(code: string) {
+  const labels: Record<string, string> = {
+    candidate_2km_to_under_3km_from_inspection_point: "2-3 km from inspection point",
+    candidate_3km_or_more_from_inspection_point: "3 km or more from inspection point",
+    candidate_1km_to_under_2km_from_inspection_point: "1-2 km from inspection point",
+    candidate_under_1km_from_inspection_point: "Under 1 km from inspection point",
+  };
+  return labels[code] || code.replaceAll("_", " ");
+}
+
+function PsdqPossibleSameFacilityReviewPanel({ summary }: { summary: PsdqPossibleSameFacilityReviewSummary }) {
+  const maxDistance = Math.max(
+    1,
+    ...summary.review_rows.map((row) => Number(row.candidate_distance_m_from_inspection || 0))
+  );
+  const minDistance = summary.possible_same_facility_scope.min_candidate_distance_m;
+  const maxDistanceScope = summary.possible_same_facility_scope.max_candidate_distance_m;
+  const minScore = summary.possible_same_facility_scope.min_candidate_name_score;
+  const maxScore = summary.possible_same_facility_scope.max_candidate_name_score;
+
+  return (
+    <section className="showcase-section psdq-possible-same-facility-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Possible same-facility review</p>
+          <h2>A matching name is not enough when location is still unresolved.</h2>
+          <p>
+            The review packet isolates the three public-map candidates that
+            could be same-facility matches. It puts name support beside
+            candidate distance, then keeps every row open until identity and
+            location are supported together.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Rows reviewed</span>
+            <strong>{formatNumber(summary.possible_same_facility_scope.possible_same_facility_rows)}</strong>
+          </div>
+          <div>
+            <span>Public sources retrieved</span>
+            <strong>
+              {formatNumber(summary.possible_same_facility_scope.dghs_profiles_retrieved)} DGHS /{" "}
+              {formatNumber(summary.possible_same_facility_scope.osm_api_records_retrieved)} OSM
+            </strong>
+          </div>
+          <div>
+            <span>Name score range</span>
+            <strong>{formatNumber(minScore ?? 0, 2)}-{formatNumber(maxScore ?? 0, 2)}</strong>
+          </div>
+          <div>
+            <span>Distance range</span>
+            <strong>
+              {formatNumber((minDistance ?? 0) / 1000, 1)}-{formatNumber((maxDistanceScope ?? 0) / 1000, 1)} km
+            </strong>
+          </div>
+          <div>
+            <span>2 km or more</span>
+            <strong>{formatNumber(summary.possible_same_facility_scope.rows_with_candidate_distance_2km_or_more)} rows</strong>
+          </div>
+          <div>
+            <span>Closure / reclass / map absence</span>
+            <strong>
+              {formatNumber(summary.possible_same_facility_scope.rows_allowed_for_closure)} /{" "}
+              {formatNumber(summary.possible_same_facility_scope.rows_allowed_for_same_facility_reclassification)} /{" "}
+              {formatNumber(summary.possible_same_facility_scope.rows_allowed_for_map_absence_language)}
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-possible-same-facility-grid">
+        {summary.review_rows.map((row) => {
+          const color = possibleSameFacilityColor(row.name_evidence_class);
+          const score = Number(row.candidate_name_score_from_live_tags || 0);
+          const distance = Number(row.candidate_distance_m_from_inspection || 0);
+          const scoreWidth = Math.max(4, Math.min(100, score * 100));
+          const distanceWidth = Math.max(4, Math.min(100, (distance / maxDistance) * 100));
+          return (
+            <article key={row.possible_same_facility_review_id} style={{ borderColor: color }}>
+              <div className="psdq-possible-same-facility-card-head">
+                <span>{row.possible_same_facility_review_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.upazila_name}, {row.district_name}</em>
+              </div>
+              <div className="psdq-possible-same-facility-class" style={{ background: color }}>
+                {possibleSameFacilityLabel(row.name_evidence_class)}
+              </div>
+              <div className="psdq-possible-same-facility-links">
+                <a href={row.dghs_public_profile_url} target="_blank" rel="noreferrer">
+                  DGHS {row.dghs_profile_http_status}
+                </a>
+                <a href={row.candidate_osm_api_url} target="_blank" rel="noreferrer">
+                  OSM API {row.candidate_osm_api_http_status}
+                </a>
+                <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                  Map feature
+                </a>
+              </div>
+              <div className="psdq-possible-same-facility-candidate">
+                <span>Candidate</span>
+                <strong>{row.candidate_osm_name_from_api || "Unnamed OSM feature"}</strong>
+                <em>{row.candidate_osm_type} {row.candidate_osm_id}; {row.candidate_osm_tags_compact}</em>
+              </div>
+              <div className="psdq-possible-same-facility-pair">
+                <div>
+                  <span>Name support</span>
+                  <strong>{formatNumber(score, 2)}</strong>
+                  <i aria-label="Name-score bar">
+                    <b style={{ width: `${scoreWidth}%`, background: color }} />
+                  </i>
+                </div>
+                <div>
+                  <span>Location distance</span>
+                  <strong>{formatNumber(distance / 1000, 1)} km</strong>
+                  <i aria-label="Distance bar">
+                    <b style={{ width: `${distanceWidth}%`, background: "#002569" }} />
+                  </i>
+                </div>
+              </div>
+              <div className="psdq-possible-same-facility-distance">
+                {possibleSameFacilityDistanceLabel(row.candidate_distance_band)}
+              </div>
+              <p>{row.review_action}</p>
+              <div className="psdq-possible-same-facility-gates">
+                <div>
+                  <span>Reclassify only if</span>
+                  <p>{row.minimum_evidence_to_reclassify_as_same_facility}</p>
+                </div>
+                <div>
+                  <span>Keep as map absence only if</span>
+                  <p>{row.minimum_evidence_to_keep_as_map_absence}</p>
+                </div>
+              </div>
+              <div className="psdq-possible-same-facility-status">
+                <span>keep open</span>
+                <span>0 closed</span>
+                <span>0 reclassified</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the possible same-facility review</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-possible-same-facility-review.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-possible-same-facility-review.md" download>
+          Download possible same-facility review note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json" download>
+          Download possible same-facility summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-possible-same-facility-review.csv" download>
+          Download possible same-facility CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
   );
 }
 

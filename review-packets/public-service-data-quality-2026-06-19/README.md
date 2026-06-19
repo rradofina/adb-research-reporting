@@ -68,9 +68,9 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/README.md`  `7bc164f3c386…`
-- `program/STATUS.md`  `2a6463cd4666…`
-- `program/REPRODUCE.md`  `625d80e8fde6…`
+- `program/README.md`  `16f96c3c778d…`
+- `program/STATUS.md`  `76e5ad0695e2…`
+- `program/REPRODUCE.md`  `c5d3324157c6…`
 - `program/SOURCE-ACTION.md`  `bd763bbd155b…`
 - `program/literature.md`  `f94f6c0f5cbf…`
 - `program/scoring.md`  `ee44d0d49e36…`
@@ -81,7 +81,7 @@ website is Tier 2 and is not included here).
 - `program/leave-one-out-runs.json`  `bc403c4974cd…`
 - `program/coverage.md`  `533d35d8b4c9…`
 - `program/results.md`  `c5f1cd46169d…`
-- `program/source-disagreement-l3-module.md`  `251d859f6263…`
+- `program/source-disagreement-l3-module.md`  `d05f15956237…`
 - `program/facility-validation-sample.md`  `426a18b29d9e…`
 - `program/facility-validation-coded-screen.md`  `7842413f6f2b…`
 - `program/facility-validation-ai-review.md`  `dec4cb84cca8…`
@@ -94,6 +94,7 @@ website is Tier 2 and is not included here).
 - `program/facility-validation-public-source-confirmation.md`  `d3beb6947d5d…`
 - `program/facility-validation-public-source-confirmation-targeted-rows.md`  `faf2b45c8069…`
 - `program/facility-validation-public-source-decision-ledger.md`  `56c44623050e…`
+- `program/facility-validation-possible-same-facility-review.md`  `5f5f9ca3d5e9…`
 - `program/facility-validation-source-repair-public-evidence.md`  `cbcb871decd1…`
 - `program/facility-validation-source-repair-official-coordinate-evidence.md`  `4d556f3556d9…`
 - `program/facility-validation-source-repair-public-explanation-evidence.md`  `8ad9950749bd…`
@@ -136,6 +137,8 @@ website is Tier 2 and is not included here).
 - `program/generated/psdq-bgd-facility-validation-coordinate-repair-summary.json`  `34eb05ae6939…`
 - `program/generated/psdq-bgd-facility-validation-coordinate-repair.csv`  `158436c4bcfe…`
 - `program/generated/psdq-bgd-facility-validation-osm-candidates.csv`  `d0347d049cde…`
+- `program/generated/psdq-bgd-facility-validation-possible-same-facility-review-summary.json`  `1713d59526eb…`
+- `program/generated/psdq-bgd-facility-validation-possible-same-facility-review.csv`  `1c60193328b5…`
 - `program/generated/psdq-bgd-facility-validation-public-map-gap-evidence-summary.json`  `ca2de90a8b7b…`
 - `program/generated/psdq-bgd-facility-validation-public-map-gap-evidence.csv`  `aaf0b7c65aec…`
 - `program/generated/psdq-bgd-facility-validation-public-map-gap-summary.json`  `5d12b68e7986…`
@@ -192,6 +195,7 @@ website is Tier 2 and is not included here).
 - `program/scripts/audit-catchment-readiness.py`  `bb030f0c65e0…`
 - `program/scripts/build-bgd-exposure-ranked-disagreement.py`  `1171943a92b8…`
 - `program/scripts/build-bgd-facility-extract.py`  `bc7a0a7751e3…`
+- `program/scripts/build-bgd-facility-possible-same-facility-review.py`  `6ad179224f81…`
 - `program/scripts/build-bgd-facility-public-map-gap-row-evidence.py`  `dc3093edc317…`
 - `program/scripts/build-bgd-facility-public-source-decision-ledger.py`  `0e2072550236…`
 - `program/scripts/build-bgd-facility-source-repair-clarification-packet.py`  `ed8d86fb6be1…`
@@ -248,4 +252,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T02:53:52.487Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T03:14:05.077Z by `scripts/build-review-packet.mjs`.

@@ -70,6 +70,7 @@ const ARTIFACTS = [
   { key: "facility_validation_public_source_confirmation", file: "facility-validation-public-source-confirmation.md", label: "Facility-validation public-source confirmation" },
   { key: "facility_validation_public_source_confirmation_targeted_rows", file: "facility-validation-public-source-confirmation-targeted-rows.md", label: "Facility-validation targeted-row public-source confirmation" },
   { key: "facility_validation_public_source_decision_ledger", file: "facility-validation-public-source-decision-ledger.md", label: "Facility-validation public-source decision ledger" },
+  { key: "facility_validation_possible_same_facility_review", file: "facility-validation-possible-same-facility-review.md", label: "Facility-validation possible same-facility review" },
   { key: "facility_validation_source_repair_public_evidence", file: "facility-validation-source-repair-public-evidence.md", label: "Facility-validation source-repair public evidence" },
   { key: "facility_validation_source_repair_official_coordinate_evidence", file: "facility-validation-source-repair-official-coordinate-evidence.md", label: "Facility-validation source-repair official-coordinate evidence" },
   { key: "facility_validation_source_repair_public_explanation_evidence", file: "facility-validation-source-repair-public-explanation-evidence.md", label: "Facility-validation source-repair public explanation evidence" },

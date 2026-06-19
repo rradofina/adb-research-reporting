@@ -77,6 +77,12 @@ has a public-data evidence spine and a visual that reveals a specific
 measurement problem. This is a report-quality queue, not a maturity promotion
 register.
 
+Current focus addendum: the Air-monitoring observability row now includes a
+66-row exact station method-evidence audit with raw live-value sanity flags:
+37 positive raw live PM2.5 values, 12 negative raw values, 1 sentinel value,
+16 missing raw values, 0 complete monitor-grade classification rows, and 0
+station-radius-ready rows.
+
 | Batch | Report candidate | Evidence base | Showcase visual concept | Current report status | Next loop |
 |---:|---|---|---|---|---|
 | 1 | Market-level climate price transmission | `research/topic-sprints/nepal-market-climate-prices-sprint.md` and generated WFP/NASA POWER market-month JSON | Interactive market-month heatmap with price anomaly and lagged precipitation anomaly | Prototype surface at `/showcase`; desktop/mobile screenshot QA complete | L3 program package: commodity expansion, rainfall-source comparison, non-climate falsifiers |

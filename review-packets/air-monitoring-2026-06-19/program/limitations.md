@@ -92,9 +92,12 @@
   exact official station-source extraction rows. It finds 66 exact official
   rows with PM2.5 signal and coordinates, 28 exact-row instrument hints, and
   38 official PM2.5 portal/API rows without instrument wording on the exact
-  row. It still records 0 current-status confirmed rows, 0 station-method
-  classified rows, 0 complete monitor-grade classification rows, and 0
-  station-radius grade-assumption-ready rows.
+  row. It also finds 37 positive raw live PM2.5 values, 12 negative raw values,
+  1 sentinel, and 16 missing raw values, so the raw live-value field is a data
+  sanity flag rather than current-status confirmation. It still records 0
+  current-status confirmed rows, 0 station-method classified rows, 0 complete
+  monitor-grade classification rows, and 0 station-radius grade-assumption-ready
+  rows.
 
 ## Source-side
 

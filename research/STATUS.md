@@ -89,8 +89,10 @@ overrides priority by editing this list.
    The station method-evidence audit then joins the 66 method-context rows to
    exact official extraction rows, finds 66 exact rows with PM2.5 signal and
    coordinates, separates 28 exact-row instrument hints from 38 exact PM2.5
-   portal/API rows, and still keeps current-status confirmed, station-method
-   classified, complete grade, and station-radius-ready rows at 0. Next
+   portal/API rows, flags 37 positive raw live PM2.5 values plus 29 negative,
+   sentinel, or missing raw-value rows, and still keeps current-status
+   confirmed, station-method classified, complete grade, and
+   station-radius-ready rows at 0. Next
    AI-doable loop is public station-level current-status/method evidence for
    the 28 Uzbekistan instrument-hint rows first, then the 38 Indonesia and
    Georgia portal/API rows, before any station-radius or catchment claim.
@@ -219,13 +221,15 @@ by leaving the board in a state the next session can read.
   no-network audit reads the station-review queue plus the official
   station-source extraction, reviews the 66 method-context station rows, finds
   66 exact official station rows with PM2.5 signal and coordinates, separates
-  28 exact-row instrument hints from 38 exact PM2.5 portal/API rows, and keeps
-  current-status confirmed rows, station-method classified rows, complete
-  monitor-grade classifications, and station-radius grade-assumption-ready rows
-  at 0. The public route now renders a monitor-grade station method-evidence
-  wall. Chrome CDP QA passed at 1440x1100 and 390x1000 with 6 stat cards, 3
-  lane cards, 3 country cards, 3 source-group cards, 12 sample station row
-  cards, 6 evidence gates, 3 download links, no page or section horizontal
+  28 exact-row instrument hints from 38 exact PM2.5 portal/API rows, flags 37
+  positive raw live PM2.5 values plus 12 negative raw values, 1 sentinel, and
+  16 missing raw values, and keeps current-status confirmed rows,
+  station-method classified rows, complete monitor-grade classifications, and
+  station-radius grade-assumption-ready rows at 0. The public route now renders
+  a monitor-grade station method-evidence wall. Chrome CDP QA passed at
+  1440x1100 and 390x1000 with 6 stat cards, 3 lane cards, 3 country cards, 3
+  source-group cards, 12 sample station row cards, 8 evidence gates, 3 download
+  links, no page or section horizontal
   overflow, no text overflow, and no page errors beyond existing React Router
   future-flag warnings. Screenshots:
   `reporting-site/qa/showcase-air-grade-method-desktop.png`,

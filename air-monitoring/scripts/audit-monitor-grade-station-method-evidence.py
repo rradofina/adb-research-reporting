@@ -73,6 +73,8 @@ FIELDNAMES = [
     "exact_pm25_signal",
     "exact_pollutants_listed",
     "exact_live_pm25_value_populated",
+    "exact_live_pm25_value_raw",
+    "exact_live_pm25_value_status",
     "exact_retrieval_status",
     "exact_retrieval_url",
     "source_level_method_terms",
@@ -162,6 +164,23 @@ def matched_terms(text: str, terms: list[str]) -> list[str]:
     return [term for term in terms if term.lower() in lower]
 
 
+def live_value_status(value: str) -> str:
+    clean = str(value).strip()
+    if not clean:
+        return "missing_raw_value"
+    try:
+        number = float(clean)
+    except ValueError:
+        return "nonnumeric_raw_value"
+    if number == -9999:
+        return "sentinel_minus_9999"
+    if number < 0:
+        return "negative_raw_value"
+    if number == 0:
+        return "zero_raw_value"
+    return "positive_raw_value"
+
+
 def evidence_lane(exact_row: dict[str, str] | None, hint_terms: list[str]) -> str:
     if exact_row is None:
         return "exact_row_not_found"
@@ -211,6 +230,7 @@ def build_rows(
         row_terms = matched_terms(exact_text, PUBLIC_ROW_HINTS)
         lane = evidence_lane(exact, instrument_terms)
         live_value = exact.get("live_pm25_value", "") if exact else ""
+        live_status = live_value_status(live_value)
         output.append(
             {
                 "generated_at": generated_at,
@@ -238,6 +258,8 @@ def build_rows(
                 "exact_pm25_signal": boolish(exact.get("pm25_signal", "")) if exact else False,
                 "exact_pollutants_listed": exact.get("pollutants_listed", "") if exact else "",
                 "exact_live_pm25_value_populated": bool(live_value.strip()),
+                "exact_live_pm25_value_raw": live_value,
+                "exact_live_pm25_value_status": live_status,
                 "exact_retrieval_status": exact.get("retrieval_status", "") if exact else "",
                 "exact_retrieval_url": exact.get("retrieval_url", "") if exact else "",
                 "source_level_method_terms": row["matched_method_terms"],
@@ -281,6 +303,18 @@ def country_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "row_level_instrument_hint_rows": lanes["row_level_instrument_hint"],
                 "row_level_pm25_portal_or_api_rows": lanes["row_level_pm25_portal_or_api"],
                 "exact_live_pm25_value_populated_rows": sum(row["exact_live_pm25_value_populated"] for row in group),
+                "positive_raw_live_pm25_value_rows": sum(
+                    row["exact_live_pm25_value_status"] == "positive_raw_value" for row in group
+                ),
+                "negative_raw_live_pm25_value_rows": sum(
+                    row["exact_live_pm25_value_status"] == "negative_raw_value" for row in group
+                ),
+                "sentinel_raw_live_pm25_value_rows": sum(
+                    row["exact_live_pm25_value_status"] == "sentinel_minus_9999" for row in group
+                ),
+                "missing_raw_live_pm25_value_rows": sum(
+                    row["exact_live_pm25_value_status"] == "missing_raw_value" for row in group
+                ),
                 "complete_monitor_grade_classification_rows": 0,
                 "station_radius_grade_assumption_ready_rows": 0,
             }
@@ -362,6 +396,8 @@ def sample_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         "exact_source_evidence_type",
         "exact_source_station_type",
         "exact_pm25_signal",
+        "exact_live_pm25_value_raw",
+        "exact_live_pm25_value_status",
         "source_level_method_terms",
         "row_level_method_hint_terms",
         "reader_use",
@@ -382,6 +418,12 @@ def summary(generated_at: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
     exact_pm25 = sum(row["exact_pm25_signal"] for row in rows)
     exact_coordinates = sum(row["exact_coordinate_available"] for row in rows)
     live_values = sum(row["exact_live_pm25_value_populated"] for row in rows)
+    positive_live_values = sum(row["exact_live_pm25_value_status"] == "positive_raw_value" for row in rows)
+    zero_live_values = sum(row["exact_live_pm25_value_status"] == "zero_raw_value" for row in rows)
+    negative_live_values = sum(row["exact_live_pm25_value_status"] == "negative_raw_value" for row in rows)
+    sentinel_live_values = sum(row["exact_live_pm25_value_status"] == "sentinel_minus_9999" for row in rows)
+    missing_live_values = sum(row["exact_live_pm25_value_status"] == "missing_raw_value" for row in rows)
+    nonnumeric_live_values = sum(row["exact_live_pm25_value_status"] == "nonnumeric_raw_value" for row in rows)
     public_current_rows = sum(row["public_current_row_observed"] for row in rows)
     evidence_gate_counts = [
         {
@@ -401,6 +443,18 @@ def summary(generated_at: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
             "status": "partly_available",
             "rows": lanes["row_level_instrument_hint"],
             "reader_use": "Instrument wording appears on the exact row, but it is still a hint rather than grade certification.",
+        },
+        {
+            "gate": "Positive raw live PM2.5 values",
+            "status": "partly_available",
+            "rows": positive_live_values + zero_live_values,
+            "reader_use": "A raw live PM2.5 value is nonnegative, but this is still not current-status certification.",
+        },
+        {
+            "gate": "Negative, sentinel, or missing raw values",
+            "status": "caution",
+            "rows": negative_live_values + sentinel_live_values + missing_live_values + nonnumeric_live_values,
+            "reader_use": "The raw value field cannot be treated as a clean current-status signal without source-specific QA.",
         },
         {
             "gate": "PM2.5 portal/API rows without instrument row term",
@@ -447,6 +501,12 @@ def summary(generated_at: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
             "exact_pm25_signal_rows": exact_pm25,
             "exact_coordinate_rows": exact_coordinates,
             "exact_live_pm25_value_populated_rows": live_values,
+            "positive_raw_live_pm25_value_rows": positive_live_values,
+            "zero_raw_live_pm25_value_rows": zero_live_values,
+            "negative_raw_live_pm25_value_rows": negative_live_values,
+            "sentinel_raw_live_pm25_value_rows": sentinel_live_values,
+            "missing_raw_live_pm25_value_rows": missing_live_values,
+            "nonnumeric_raw_live_pm25_value_rows": nonnumeric_live_values,
             "public_current_row_observed_rows": public_current_rows,
             "row_level_instrument_hint_rows": lanes["row_level_instrument_hint"],
             "row_level_pm25_portal_or_api_rows": lanes["row_level_pm25_portal_or_api"],

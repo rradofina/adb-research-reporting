@@ -17,6 +17,9 @@ The script finds:
 - 28 rows where the exact row carries instrument wording.
 - 38 rows where the exact row is an official PM2.5 portal or API row, but the
   exact row does not name a reference method or instrument.
+- 37 rows with a positive raw live PM2.5 value.
+- 12 rows with negative raw live PM2.5 values, 1 row with a `-9999` sentinel,
+  and 16 rows with no raw live PM2.5 value.
 - 0 rows with complete monitor-grade classification.
 - 0 rows ready for station-radius grade assumptions.
 
@@ -29,12 +32,14 @@ and Georgia still have exact public PM2.5 rows, but the exact rows are portal
 or hourly API rows; their method language remains source-group context rather
 than station-row certification.
 
-The practical result is a sharper review order. Uzbekistan should be checked
-first for station-level current-status and method documentation. Indonesia and
-Georgia should be checked next for station-owner or regulator tables that
-connect the source-level method language to the exact PM2.5 portal/API station
-rows. None of the 66 rows should enter station-radius coverage until that
-station-level evidence exists.
+The practical result is a sharper review order, plus a data-sanity warning.
+Uzbekistan should be checked first for station-level current-status and method
+documentation, but its exact API rows include 12 negative raw PM2.5 values and
+1 sentinel value, so raw live fields cannot be treated as clean status
+evidence. Indonesia and Georgia should be checked next for station-owner or
+regulator tables that connect the source-level method language to the exact
+PM2.5 portal/API station rows. None of the 66 rows should enter station-radius
+coverage until that station-level evidence exists.
 
 ## Method
 
@@ -61,17 +66,19 @@ No network access is used. Counts are computed from committed generated CSVs.
 | Exact official row join | 66 | Available |
 | Exact PM2.5 signal | 66 | Available |
 | Row-level instrument hints | 28 | Partly available |
+| Positive raw live PM2.5 values | 37 | Partly available |
+| Negative, sentinel, or missing raw values | 29 | Caution |
 | PM2.5 portal/API rows without instrument row term | 38 | Partly available |
 | Complete monitor-grade classification | 0 | Not ready |
 | Station-radius grade assumptions | 0 | Not ready |
 
 ## Country distribution
 
-| Economy | Station rows | Exact rows | PM2.5 rows | Instrument hints | Portal/API rows | Complete grade |
-|---|---:|---:|---:|---:|---:|---:|
-| Uzbekistan | 28 | 28 | 28 | 28 | 0 | 0 |
-| Indonesia | 22 | 22 | 22 | 0 | 22 | 0 |
-| Georgia | 16 | 16 | 16 | 0 | 16 | 0 |
+| Economy | Station rows | Exact rows | PM2.5 rows | Instrument hints | Portal/API rows | Positive raw live value | Raw live value issue | Complete grade |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Uzbekistan | 28 | 28 | 28 | 28 | 0 | 15 | 13 | 0 |
+| Indonesia | 22 | 22 | 22 | 0 | 22 | 22 | 0 | 0 |
+| Georgia | 16 | 16 | 16 | 0 | 16 | 0 | 16 | 0 |
 
 ## Outputs
 

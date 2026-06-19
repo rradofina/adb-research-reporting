@@ -950,6 +950,10 @@ interface MonitorGradeStationMethodEvidenceCountryRow {
   row_level_instrument_hint_rows: number;
   row_level_pm25_portal_or_api_rows: number;
   exact_live_pm25_value_populated_rows: number;
+  positive_raw_live_pm25_value_rows: number;
+  negative_raw_live_pm25_value_rows: number;
+  sentinel_raw_live_pm25_value_rows: number;
+  missing_raw_live_pm25_value_rows: number;
   complete_monitor_grade_classification_rows: number;
   station_radius_grade_assumption_ready_rows: number;
 }
@@ -983,6 +987,8 @@ interface MonitorGradeStationMethodEvidenceSampleRow {
   exact_source_evidence_type: string;
   exact_source_station_type: string;
   exact_pm25_signal: boolean;
+  exact_live_pm25_value_raw: string;
+  exact_live_pm25_value_status: string;
   source_level_method_terms: string;
   row_level_method_hint_terms: string;
   reader_use: string;
@@ -1004,6 +1010,12 @@ interface MonitorGradeStationMethodEvidenceSummary {
     exact_pm25_signal_rows: number;
     exact_coordinate_rows: number;
     exact_live_pm25_value_populated_rows: number;
+    positive_raw_live_pm25_value_rows: number;
+    zero_raw_live_pm25_value_rows: number;
+    negative_raw_live_pm25_value_rows: number;
+    sentinel_raw_live_pm25_value_rows: number;
+    missing_raw_live_pm25_value_rows: number;
+    nonnumeric_raw_live_pm25_value_rows: number;
     public_current_row_observed_rows: number;
     row_level_instrument_hint_rows: number;
     row_level_pm25_portal_or_api_rows: number;
@@ -3435,6 +3447,15 @@ function AirMonitorGradeStationMethodEvidencePanel({
   );
   const sourceGroups = summary?.source_group_rows ?? [];
   const sampleRows = summary?.station_sample_rows ?? [];
+  const rawLiveValueOkRows = counts
+    ? counts.positive_raw_live_pm25_value_rows + counts.zero_raw_live_pm25_value_rows
+    : 0;
+  const rawLiveValueIssueRows = counts
+    ? counts.negative_raw_live_pm25_value_rows +
+      counts.sentinel_raw_live_pm25_value_rows +
+      counts.missing_raw_live_pm25_value_rows +
+      counts.nonnumeric_raw_live_pm25_value_rows
+    : 0;
 
   return (
     <section className="showcase-section air-grade-method-section" aria-label="Monitor-grade station method-evidence audit">
@@ -3480,14 +3501,14 @@ function AirMonitorGradeStationMethodEvidencePanel({
               <em>exact row wording</em>
             </div>
             <div>
-              <span>Portal/API rows</span>
-              <strong>{formatNumber(counts.row_level_pm25_portal_or_api_rows)}</strong>
-              <em>not method classification</em>
+              <span>Raw values ok</span>
+              <strong>{formatNumber(rawLiveValueOkRows)}</strong>
+              <em>nonnegative raw PM2.5</em>
             </div>
             <div>
-              <span>Radius-ready</span>
-              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
-              <em>still blocked</em>
+              <span>Raw value issues</span>
+              <strong>{formatNumber(rawLiveValueIssueRows)}</strong>
+              <em>negative, sentinel, or missing</em>
             </div>
           </div>
 
@@ -3528,12 +3549,22 @@ function AirMonitorGradeStationMethodEvidencePanel({
                     <dd>{formatNumber(row.row_level_instrument_hint_rows)}</dd>
                   </div>
                   <div>
-                    <dt>Portal/API</dt>
+                    <dt>Portal</dt>
                     <dd>{formatNumber(row.row_level_pm25_portal_or_api_rows)}</dd>
                   </div>
                   <div>
-                    <dt>Ready</dt>
-                    <dd>{formatNumber(row.station_radius_grade_assumption_ready_rows)}</dd>
+                    <dt>Raw+</dt>
+                    <dd>{formatNumber(row.positive_raw_live_pm25_value_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Issue</dt>
+                    <dd>
+                      {formatNumber(
+                        row.negative_raw_live_pm25_value_rows +
+                          row.sentinel_raw_live_pm25_value_rows +
+                          row.missing_raw_live_pm25_value_rows,
+                      )}
+                    </dd>
                   </div>
                 </dl>
               </article>
@@ -3568,6 +3599,8 @@ function AirMonitorGradeStationMethodEvidencePanel({
                 <p>{row.reader_use}</p>
                 <small>
                   {row.row_level_method_hint_terms || row.source_level_method_terms || row.exact_source_station_type}
+                  {" · "}
+                  {sentenceCaseStatus(row.exact_live_pm25_value_status)}
                 </small>
               </article>
             ))}

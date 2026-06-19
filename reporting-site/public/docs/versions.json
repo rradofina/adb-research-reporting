@@ -120,7 +120,7 @@
     "air_monitoring_monitor_grade_station_method_evidence": {
       "script": "air-monitoring/scripts/audit-monitor-grade-station-method-evidence.py",
       "retrieved_on": "2026-06-19",
-      "notes": "No-network station-row method-evidence audit derived from the station-review queue and official station-source extraction. It reviews the 66 method-context rows, finds 66 exact official station rows, 28 exact-row instrument hints, 38 PM2.5 portal/API rows without instrument wording on the exact row, and still 0 complete monitor-grade or station-radius-ready rows."
+      "notes": "No-network station-row method-evidence audit derived from the station-review queue and official station-source extraction. It reviews the 66 method-context rows, finds 66 exact official station rows, 28 exact-row instrument hints, 38 PM2.5 portal/API rows without instrument wording on the exact row, 37 positive raw live PM2.5 values, 12 negative raw values, 1 sentinel, 16 missing raw values, and still 0 complete monitor-grade or station-radius-ready rows."
     },
     "who_aaq_database": {
       "version": "v6.1",
@@ -224,6 +224,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_monitor_grade_station_method_evidence pin after joining the 66 method-context station-review rows to exact official extraction rows while keeping complete grade and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Updated air_monitoring_monitor_grade_station_method_evidence pin after adding raw live PM2.5 value sanity flags to the 66 exact station-row method-evidence audit."
     }
   ]
 }

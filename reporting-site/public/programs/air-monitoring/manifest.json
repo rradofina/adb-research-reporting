@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T10:12:35.206Z",
+  "generated_at": "2026-06-19T10:25:09.295Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -217,10 +217,10 @@
       "key": "air_monitoring_monitor_grade_station_method_evidence",
       "file": "monitor-grade-station-method-evidence.md",
       "label": "Air-monitoring monitor-grade station method-evidence audit",
-      "size": 3432,
-      "size_human": "3.4 KB",
-      "mtime": "2026-06-19T10:03:42.929Z",
-      "sha256": "e0b61cad29468571430b21105b72a47b04d9352393cca195f318632b2f509d4e",
+      "size": 3982,
+      "size_human": "3.9 KB",
+      "mtime": "2026-06-19T10:15:29.440Z",
+      "sha256": "fbfac3f8e157d1e10a9f9c614ad4812560ccb8f1f653b5d53dd8c9861049306e",
       "attestation_chain": "ai-first"
     },
     {
@@ -247,10 +247,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 8401,
-      "size_human": "8.2 KB",
-      "mtime": "2026-06-19T10:06:49.152Z",
-      "sha256": "55c1606b05ca3a75d424d85cb0d53a18d95f6af447b9db5f617ace831390184f",
+      "size": 8610,
+      "size_human": "8.4 KB",
+      "mtime": "2026-06-19T10:21:34.618Z",
+      "sha256": "3738d56d066a1e6ebad79031ec536ef56a541260aad41880a34ad4da19233079",
       "attestation_chain": "ai-first"
     }
   ],
@@ -317,15 +317,15 @@
     },
     {
       "file": "generated/air-monitoring-monitor-grade-station-method-evidence-summary.json",
-      "size": 26734,
-      "size_human": "26.1 KB",
-      "sha256": "f94e82a88ef5a3f9d46881207e8b09a0847136a30d4d093aa76a486349c1e751"
+      "size": 29916,
+      "size_human": "29.2 KB",
+      "sha256": "f167d18e9d3fd5b8e9917c5c633498a6fd85c86c171acd1bbbd64d3a81dae8ba"
     },
     {
       "file": "generated/air-monitoring-monitor-grade-station-method-evidence.csv",
-      "size": 70246,
-      "size_human": "68.6 KB",
-      "sha256": "1fcba272bee9102e09c43c6724ccc1535874a6284c10c09d800856562bfaf954"
+      "size": 71837,
+      "size_human": "70.2 KB",
+      "sha256": "7d671253195edfc9527e0fb208fe9f79925ac6a2681d84485e6d7034a7b3e94e"
     },
     {
       "file": "generated/air-monitoring-monitor-grade-station-review-queue-summary.json",

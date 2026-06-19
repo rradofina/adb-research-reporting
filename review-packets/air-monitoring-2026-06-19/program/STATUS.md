@@ -341,15 +341,18 @@ current-status sources, and catchment methods are added.
   `generated/air-monitoring-monitor-grade-station-method-evidence-summary.json`.
   It reviews the 66 method-context station rows, finds 66 exact official
   station rows with PM2.5 signal and coordinates, separates 28 exact-row
-  instrument hints from 38 official PM2.5 portal/API rows, and keeps
-  current-status confirmed rows, station-method classified rows, complete
-  monitor-grade classifications, and station-radius grade-assumption-ready
-  rows at 0. Wrote `monitor-grade-station-method-evidence.md`. This is exact
-  station-row evidence triage, not station-level grade certification.
+  instrument hints from 38 official PM2.5 portal/API rows, flags 37 positive
+  raw live PM2.5 values plus 12 negative raw values, 1 sentinel, and 16 missing
+  raw values, and keeps current-status confirmed rows, station-method
+  classified rows, complete monitor-grade classifications, and station-radius
+  grade-assumption-ready rows at 0. Wrote
+  `monitor-grade-station-method-evidence.md`. This is exact station-row
+  evidence triage and raw-value sanity checking, not station-level grade
+  certification.
 - **2026-06-19:** Added the monitor-grade station method-evidence panel to
   the public showcase route. Chrome CDP QA at 1440x1100 and 390x1000 confirmed
   6 stat cards, 3 lane cards, 3 country cards, 3 source-group cards, 12 sample
-  station row cards, 6 evidence gates, 3 download links, no page or section
+  station row cards, 8 evidence gates, 3 download links, no page or section
   horizontal overflow, no text overflow, and no page errors beyond existing
   React Router future-flag warnings. Screenshots:
   `reporting-site/qa/showcase-air-grade-method-desktop.png`,

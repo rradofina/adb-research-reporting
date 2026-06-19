@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T10:03:09Z",
+  "generated_at": "2026-06-19T10:25:07Z",
   "program": "air-monitoring",
   "attestation_chain": "ai-first",
   "status": "computed_station_method_evidence_audit",
@@ -24,6 +24,12 @@
     "exact_pm25_signal_rows": 66,
     "exact_coordinate_rows": 66,
     "exact_live_pm25_value_populated_rows": 50,
+    "positive_raw_live_pm25_value_rows": 37,
+    "zero_raw_live_pm25_value_rows": 0,
+    "negative_raw_live_pm25_value_rows": 12,
+    "sentinel_raw_live_pm25_value_rows": 1,
+    "missing_raw_live_pm25_value_rows": 16,
+    "nonnumeric_raw_live_pm25_value_rows": 0,
     "public_current_row_observed_rows": 66,
     "row_level_instrument_hint_rows": 28,
     "row_level_pm25_portal_or_api_rows": 38,
@@ -62,6 +68,10 @@
       "row_level_instrument_hint_rows": 28,
       "row_level_pm25_portal_or_api_rows": 0,
       "exact_live_pm25_value_populated_rows": 28,
+      "positive_raw_live_pm25_value_rows": 15,
+      "negative_raw_live_pm25_value_rows": 12,
+      "sentinel_raw_live_pm25_value_rows": 1,
+      "missing_raw_live_pm25_value_rows": 0,
       "complete_monitor_grade_classification_rows": 0,
       "station_radius_grade_assumption_ready_rows": 0
     },
@@ -74,6 +84,10 @@
       "row_level_instrument_hint_rows": 0,
       "row_level_pm25_portal_or_api_rows": 22,
       "exact_live_pm25_value_populated_rows": 22,
+      "positive_raw_live_pm25_value_rows": 22,
+      "negative_raw_live_pm25_value_rows": 0,
+      "sentinel_raw_live_pm25_value_rows": 0,
+      "missing_raw_live_pm25_value_rows": 0,
       "complete_monitor_grade_classification_rows": 0,
       "station_radius_grade_assumption_ready_rows": 0
     },
@@ -86,6 +100,10 @@
       "row_level_instrument_hint_rows": 0,
       "row_level_pm25_portal_or_api_rows": 16,
       "exact_live_pm25_value_populated_rows": 0,
+      "positive_raw_live_pm25_value_rows": 0,
+      "negative_raw_live_pm25_value_rows": 0,
+      "sentinel_raw_live_pm25_value_rows": 0,
+      "missing_raw_live_pm25_value_rows": 16,
       "complete_monitor_grade_classification_rows": 0,
       "station_radius_grade_assumption_ready_rows": 0
     }
@@ -151,6 +169,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -168,6 +188,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -185,6 +207,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -202,6 +226,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -219,6 +245,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -236,6 +264,8 @@
       "exact_source_evidence_type": "official_hourly_station_api",
       "exact_source_station_type": "air.gov.ge hourly station",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "",
+      "exact_live_pm25_value_status": "missing_raw_value",
       "source_level_method_terms": "EU Directive|2008/50/EC|CAFE|measuring instruments",
       "row_level_method_hint_terms": "PM2.5|api|hourly|automatic",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -253,6 +283,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "13.7",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -270,6 +302,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "9.1",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -287,6 +321,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "9.9",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -304,6 +340,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "13.3",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -321,6 +359,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "11.6",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -338,6 +378,8 @@
       "exact_source_evidence_type": "official_pm25_portal_nuxt_payload",
       "exact_source_station_type": "BMKG PM2.5 portal location",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "52.4",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "Beta Attenuation|BAM|BAM-1020|Partisol|HVAS",
       "row_level_method_hint_terms": "PM2.5|portal",
       "reader_use": "Use as exact official PM2.5 row evidence. It confirms a public row, not the station's monitor-grade class."
@@ -355,6 +397,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "0.001",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -372,6 +416,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "-0.001",
+      "exact_live_pm25_value_status": "negative_raw_value",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -389,6 +435,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "0.011",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -406,6 +454,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "-9999.0",
+      "exact_live_pm25_value_status": "sentinel_minus_9999",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -423,6 +473,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "-0.004",
+      "exact_live_pm25_value_status": "negative_raw_value",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -440,6 +492,8 @@
       "exact_source_evidence_type": "official_air_quality_map_api",
       "exact_source_station_type": "automatic HORIBA marker",
       "exact_pm25_signal": true,
+      "exact_live_pm25_value_raw": "0.003",
+      "exact_live_pm25_value_status": "positive_raw_value",
       "source_level_method_terms": "HORIBA|automatic",
       "row_level_method_hint_terms": "HORIBA",
       "reader_use": "Use as the strongest follow-up lead. The exact official row carries instrument wording, but this is still not complete grade certification."
@@ -463,6 +517,18 @@
       "status": "partly_available",
       "rows": 28,
       "reader_use": "Instrument wording appears on the exact row, but it is still a hint rather than grade certification."
+    },
+    {
+      "gate": "Positive raw live PM2.5 values",
+      "status": "partly_available",
+      "rows": 37,
+      "reader_use": "A raw live PM2.5 value is nonnegative, but this is still not current-status certification."
+    },
+    {
+      "gate": "Negative, sentinel, or missing raw values",
+      "status": "caution",
+      "rows": 29,
+      "reader_use": "The raw value field cannot be treated as a clean current-status signal without source-specific QA."
     },
     {
       "gate": "PM2.5 portal/API rows without instrument row term",

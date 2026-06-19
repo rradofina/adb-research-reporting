@@ -719,12 +719,14 @@ candidates before adding new surfaces.
   `generated/air-monitoring-monitor-grade-station-method-evidence-summary.json`.
   The audit reviews the 66 method-context station rows, finds 66 exact
   official station rows with PM2.5 signal and coordinates, separates 28
-  exact-row instrument hints from 38 exact PM2.5 portal/API rows, and keeps
-  current-status confirmed rows, station-method classified rows, complete
-  monitor-grade classifications, and station-radius grade-assumption-ready rows
-  at 0. The public route now renders an exact station method-evidence bridge
-  with 6 stat cards, 3 lane cards, 3 country cards, 3 source-group cards, 12
-  sample station row cards, 6 evidence gates, and 3 download links. Chrome CDP
+  exact-row instrument hints from 38 exact PM2.5 portal/API rows, flags 37
+  positive raw live PM2.5 values plus 12 negative raw values, 1 sentinel, and
+  16 missing raw values, and keeps current-status confirmed rows,
+  station-method classified rows, complete monitor-grade classifications, and
+  station-radius grade-assumption-ready rows at 0. The public route now renders
+  an exact station method-evidence bridge with 6 stat cards, 3 lane cards, 3
+  country cards, 3 source-group cards, 12 sample station row cards, 8 evidence
+  gates, and 3 download links. Chrome CDP
   QA at 1440x1100 and 390x1000 found no page or section horizontal overflow,
   no text overflow, and no page errors beyond existing React Router
   future-flag warnings. Screenshots:

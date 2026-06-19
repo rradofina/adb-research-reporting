@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -30,6 +30,7 @@ public-source decision ledger, source-repair public evidence, official-coordinat
 evidence, possible same-facility review, priority name-conflict review,
 lower-priority name-conflict spot check,
 zero-OSM upazila observability review,
+human-gated handoff matrix,
 public-explanation search, correction-record follow-up,
 clarification packet, registry-vintage review, and caveats, make the source
 upgrade clear in the public surface, and preserve the existing PR maturity
@@ -37,6 +38,39 @@ label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh human-gated handoff matrix for the
+  PSDQ facility-validation queue. New no-network script
+  `scripts/build-bgd-facility-human-gated-handoff.py` reads the source-repair
+  clarification packet, possible same-facility review, priority and
+  lower-priority name-conflict reviews, and zero-OSM observability summary,
+  then writes
+  `generated/psdq-bgd-facility-validation-human-gated-handoff.csv` and
+  `generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json`.
+  The pass consolidates 39 open rows across 5 groups and 15 upazilas: 3
+  source-repair clarifications, 3 possible same-facility rows, 9 priority
+  name-conflict rows, 6 lower-priority name-conflict rows, and 18 zero-OSM
+  facility-row absence gates. It records 39 rows requiring human or
+  source-owner action and allows 0 closures, 0 same-facility
+  reclassifications, 0 map-absence uses, 0 coordinate corrections, and 0
+  external contacts. Added `facility-validation-human-gated-handoff.md`,
+  wired evidence sync and review-packet inclusion, updated
+  README/REPRODUCE/L3 notes, hook bank, showcase quality audit, showcase
+  registry metadata, and added the handoff wall to
+  `/showcase/psdq-source-disagreement`. This is a no-contact reviewer queue,
+  not source-owner response, human validation, ground truth, coordinate
+  correction, row closure, same-facility reclassification, map-absence
+  validation, a maturity promotion, or a human-final upgrade. Verification
+  passed: human-gated handoff script rerun, script `py_compile`, evidence and
+  reference sync, production site build, six deterministic gates plus
+  `git diff --check`, review packet and zip rebuild, and agent-browser
+  desktop/mobile QA at 1440x1100 and 390x900 with 5 group cards, 10 upazila
+  cards, 12 handoff row cards, no page-level or card-level horizontal
+  overflow, no page errors, no console messages, Durgapur, `0 closed`, and
+  `0 map absence uses` visible. Screenshots:
+  `reporting-site/qa/showcase-psdq-human-gated-handoff-desktop.png`,
+  `reporting-site/qa/showcase-psdq-human-gated-handoff-desktop-cards.png`,
+  `reporting-site/qa/showcase-psdq-human-gated-handoff-mobile.png`, and
+  `reporting-site/qa/showcase-psdq-human-gated-handoff-mobile-cards.png`.
 - **2026-06-19:** Added the Bangladesh lower-priority name-conflict spot-check
   review for the PSDQ targeted public-source confirmation queue. New
   no-network script

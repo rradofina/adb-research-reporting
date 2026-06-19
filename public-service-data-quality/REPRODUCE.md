@@ -86,6 +86,11 @@ workbook and Codex seeded the canonical cache.
   upazilas with active DGHS clinical rows and zero joined OSM health features,
   then keeps facility closure and absence language blocked. It is not human
   validation.
+- The Bangladesh human-gated handoff matrix is a no-network pass over the
+  source-repair clarification packet, possible same-facility review, priority
+  and lower-priority name-conflict reviews, and zero-OSM observability summary.
+  It consolidates open rows that still require source-owner clarification or
+  human validation. It is not human validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -230,6 +235,7 @@ python public-service-data-quality/scripts/build-bgd-facility-possible-same-faci
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
+python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -604,6 +610,30 @@ reviews 115 active-registry upazilas with 0 joined OSM health features,
 covering 3,879 active DGHS clinical rows and 2,334,152 p85 buildings in the
 3 km under-observed proxy. It links 18 deferred inspection rows across 5
 targeted upazilas. It allows 0 facility closures, 0 facility-level absence
+uses, and 0 coordinate corrections.
+
+## Bangladesh facility-validation human-gated handoff matrix
+
+This step does not fetch data. It reads the source-repair clarification packet,
+possible same-facility review, priority and lower-priority name-conflict
+reviews, and zero-OSM observability summary, then consolidates the rows that
+still require source-owner clarification or human validation.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-human-gated-handoff.csv`
+- `generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json`
+
+The output status is `ai_human_gated_handoff_not_validation`. The current pass
+reviews 39 open handoff rows across 5 handoff groups and 15 upazilas: 3
+source-repair clarifications, 3 possible same-facility rows, 9 priority
+name-conflict rows, 6 lower-priority name-conflict rows, and 18 zero-OSM
+facility-row absence gates. It records 39 rows requiring human or source-owner
+action. It allows 0 closures, 0 same-facility reclassifications, 0 map-absence
 uses, and 0 coordinate corrections.
 
 ## Bangladesh facility-validation source-repair public evidence

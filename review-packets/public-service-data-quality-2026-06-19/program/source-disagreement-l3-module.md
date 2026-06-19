@@ -543,6 +543,39 @@ a source-observability flag, not a row-level absence finding. The 18 targeted
 inspection rows stay open until a facility-level public source, source-owner
 clarification, or human validation resolves each row.
 
+## Human-Gated Handoff Matrix Addendum
+
+The consolidated handoff matrix now lives in
+`facility-validation-human-gated-handoff.md`. The script
+`scripts/build-bgd-facility-human-gated-handoff.py` reads the source-repair
+clarification packet, possible same-facility review, priority name-conflict
+review, lower-priority name-conflict spot check, and zero-OSM observability
+summary without fetching new data. It converts the separate review lanes into
+one reviewer queue that names the evidence still required before any row can
+be closed, reclassified, corrected, or used as facility-level map-absence
+language.
+
+The pass covers 39 open rows across 5 handoff groups and 15 upazilas:
+
+| Human-gated handoff signal | Rows |
+|---|---:|
+| Source-repair owner clarification | 3 |
+| Possible same-facility validation | 3 |
+| Priority name-conflict alias/location validation | 9 |
+| Lower-priority name-conflict alias/location validation | 6 |
+| Zero-OSM facility-row absence validation | 18 |
+| Human or source-owner action required | 39 |
+| Closures allowed | 0 |
+| Same-facility reclassifications allowed | 0 |
+| Map-absence uses allowed | 0 |
+| Coordinate corrections allowed | 0 |
+
+The practical rule is that the AI-only review loop has reached a handoff wall:
+the current public artifacts can organize and explain the unresolved rows, but
+they cannot supply source-owner clarification, human location validation, or
+facility-level ground truth. The public route should therefore show the matrix
+as an open reviewer queue, not as a new validation result.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -735,6 +768,7 @@ python public-service-data-quality/scripts/build-bgd-facility-possible-same-faci
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
+python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -782,6 +816,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

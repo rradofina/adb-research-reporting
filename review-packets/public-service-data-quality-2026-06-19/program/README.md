@@ -51,6 +51,7 @@ submission or peer-reviewed claim beyond the current issue.
 - `scripts/build-bgd-facility-priority-name-conflict-review.py` — builds a no-contact review packet for the nine priority-1 name-conflict rows and blocks premature closure/reclassification
 - `scripts/build-bgd-facility-lower-priority-name-conflict-review.py` — builds a no-contact spot-check packet for the six deferred lower-priority name-conflict rows and repeated candidate features
 - `scripts/build-bgd-facility-zero-osm-upazila-observability-review.py` — builds a no-contact upazila-level observability packet for active-registry rows with zero joined OSM health features and blocks facility-level absence language
+- `scripts/build-bgd-facility-human-gated-handoff.py` — consolidates source-repair, possible same-facility, name-conflict, and zero-OSM rows into one no-contact human-gated handoff matrix
 - `scripts/attach-bgd-facility-source-repair-public-evidence.py` — attaches public DGHS and OSM evidence to the four source-repair-first decision rows
 - `scripts/explain-bgd-facility-source-repair-official-coordinates.py` — retrieves public DGHS profile pages and parses official map coordinates for the four source-repair-first rows
 - `scripts/search-bgd-facility-source-repair-public-explanations.py` — searches public DGHS profile tabs, cached DGHS registry records, and official government health portals for source-repair coordinate explanations
@@ -116,6 +117,8 @@ submission or peer-reviewed claim beyond the current issue.
 - `generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json` — chart-ready repeated-candidate, name-score, distance, alias-source, and keep-open counts for lower-priority name-conflict rows
 - `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv` — upazila-level zero-OSM observability review for active-registry rows, including targeted inspection queue links
 - `generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json` — chart-ready zero-OSM upazila counts, class counts, division rows, and keep-open gates
+- `generated/psdq-bgd-facility-validation-human-gated-handoff.csv` — consolidated no-contact handoff matrix for 39 rows that require owner clarification or human validation
+- `generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json` — chart-ready handoff group, upazila, and no-closure gate counts
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv` — source-repair public-evidence attachment table for the four source-repair-first decision rows
 - `generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json` — chart-ready source-repair attachment counts, evidence classes, and candidate groups
 - `generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv` — official DGHS profile coordinate evidence for the four source-repair-first rows
@@ -358,6 +361,15 @@ Current audit result:
   targeted upazilas while allowing 0 facility closures, 0 facility-level
   absence uses, and 0 coordinate corrections. This is upazila-level source
   observability context, not facility validation.
+- **BGD human-gated handoff matrix:** the no-network review reads the
+  source-repair clarification packet, possible same-facility review, priority
+  and lower-priority name-conflict reviews, and zero-OSM observability summary.
+  It consolidates 39 open rows across 5 handoff groups and 15 upazilas: 3
+  source-repair clarifications, 3 possible same-facility rows, 9 priority
+  name-conflict rows, 6 lower-priority name-conflict rows, and 18 zero-OSM
+  facility-row absence gates. It records 39 human- or owner-action required
+  rows and allows 0 closures, 0 reclassifications, 0 map-absence uses, and 0
+  coordinate corrections.
 - **BGD source-repair public evidence:** the no-network attachment pass reads
   the decision ledger and targeted-row confirmation CSV, then attaches public
   DGHS profile and OSM API evidence to the 4 source-repair-first rows. All 4
@@ -440,6 +452,7 @@ python public-service-data-quality/scripts/build-bgd-facility-possible-same-faci
 python public-service-data-quality/scripts/build-bgd-facility-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
+python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py

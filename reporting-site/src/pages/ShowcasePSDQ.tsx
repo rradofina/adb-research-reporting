@@ -1075,6 +1075,88 @@ interface PsdqZeroOsmObservabilityReviewSummary {
   non_claim: string;
 }
 
+interface PsdqHumanGatedHandoffGroup {
+  name: string;
+  label: string;
+  rows: number;
+}
+
+interface PsdqHumanGatedHandoffUpazilaRow {
+  district_name: string;
+  upazila_name: string;
+  handoff_rows: number;
+  handoff_groups: string;
+  source_repair_rows: number;
+  possible_same_facility_rows: number;
+  priority_name_conflict_rows: number;
+  lower_priority_name_conflict_rows: number;
+  zero_osm_absence_gate_rows: number;
+}
+
+interface PsdqHumanGatedHandoffRow {
+  handoff_id: string;
+  evidence_rank: number;
+  status: string;
+  handoff_group: string;
+  handoff_group_label: string;
+  source_artifact_id: string;
+  source_artifact: string;
+  inspection_id: string;
+  facility_name: string;
+  facility_type_name: string;
+  district_name: string;
+  upazila_name: string;
+  candidate_name: string;
+  candidate_feature_url: string;
+  candidate_distance_m: number | string;
+  candidate_name_score: number | string;
+  blocker_label: string;
+  required_next_evidence: string;
+  public_evidence_basis: string;
+  review_question: string;
+  row_summary: string;
+  human_or_owner_action_required: boolean | string;
+  external_contact_made: boolean | string;
+  row_closure_allowed_by_current_public_evidence: boolean | string;
+  same_facility_reclassification_allowed_by_current_public_evidence: boolean | string;
+  map_absence_language_allowed_by_current_public_evidence: boolean | string;
+  coordinate_correction_allowed_by_current_public_evidence: boolean | string;
+  rows_closed_as_resolved: number | string;
+  rows_reclassified_or_corrected: number | string;
+  allowed_language_now: string;
+  non_claim: string;
+}
+
+interface PsdqHumanGatedHandoffSummary {
+  generated_at: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  handoff_scope: {
+    handoff_rows: number;
+    handoff_groups: number;
+    upazilas_with_handoff_rows: number;
+    human_or_owner_action_required_rows: number;
+    external_contacts_made: number;
+    rows_allowed_for_closure: number;
+    rows_allowed_for_same_facility_reclassification: number;
+    rows_allowed_for_map_absence_language: number;
+    coordinate_corrections_allowed: number;
+    rows_closed_as_resolved: number;
+    rows_reclassified_or_corrected: number;
+    candidate_distance_min_m: number | null;
+    candidate_distance_max_m: number | null;
+    candidate_name_score_min: number | null;
+    candidate_name_score_max: number | null;
+  };
+  handoff_group_counts: PsdqHumanGatedHandoffGroup[];
+  upazila_handoff_rows: PsdqHumanGatedHandoffUpazilaRow[];
+  top_handoff_rows: PsdqHumanGatedHandoffRow[];
+  review_notes: string[];
+  non_claim: string;
+}
+
 interface PsdqSourceRepairEvidenceRow {
   evidence_id: string;
   evidence_rank: number;
@@ -1626,6 +1708,8 @@ export default function ShowcasePSDQ() {
     useState<PsdqLowerPriorityNameConflictReviewSummary | null>(null);
   const [zeroOsmObservabilityReviewSummary, setZeroOsmObservabilityReviewSummary] =
     useState<PsdqZeroOsmObservabilityReviewSummary | null>(null);
+  const [humanGatedHandoffSummary, setHumanGatedHandoffSummary] =
+    useState<PsdqHumanGatedHandoffSummary | null>(null);
   const [sourceRepairEvidenceSummary, setSourceRepairEvidenceSummary] =
     useState<PsdqSourceRepairEvidenceSummary | null>(null);
   const [officialCoordinateEvidenceSummary, setOfficialCoordinateEvidenceSummary] =
@@ -1720,6 +1804,10 @@ export default function ShowcasePSDQ() {
         if (!r.ok) throw new Error(`zero-OSM upazila observability review HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`human-gated handoff HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`source repair public evidence HTTP ${r.status}`);
         return r.json();
@@ -1769,6 +1857,7 @@ export default function ShowcasePSDQ() {
         priorityNameConflictReviewPayload,
         lowerPriorityNameConflictReviewPayload,
         zeroOsmObservabilityReviewPayload,
+        humanGatedHandoffPayload,
         sourceRepairEvidencePayload,
         officialCoordinateEvidencePayload,
         publicExplanationEvidencePayload,
@@ -1796,6 +1885,7 @@ export default function ShowcasePSDQ() {
         setPriorityNameConflictReviewSummary(priorityNameConflictReviewPayload);
         setLowerPriorityNameConflictReviewSummary(lowerPriorityNameConflictReviewPayload);
         setZeroOsmObservabilityReviewSummary(zeroOsmObservabilityReviewPayload);
+        setHumanGatedHandoffSummary(humanGatedHandoffPayload);
         setSourceRepairEvidenceSummary(sourceRepairEvidencePayload);
         setOfficialCoordinateEvidenceSummary(officialCoordinateEvidencePayload);
         setPublicExplanationEvidenceSummary(publicExplanationEvidencePayload);
@@ -1937,6 +2027,10 @@ export default function ShowcasePSDQ() {
 
       {zeroOsmObservabilityReviewSummary && (
         <PsdqZeroOsmObservabilityReviewPanel summary={zeroOsmObservabilityReviewSummary} />
+      )}
+
+      {humanGatedHandoffSummary && (
+        <PsdqHumanGatedHandoffPanel summary={humanGatedHandoffSummary} />
       )}
 
       {sourceRepairEvidenceSummary && (
@@ -5580,6 +5674,216 @@ function PsdqZeroOsmObservabilityReviewPanel({ summary }: { summary: PsdqZeroOsm
         </a>
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review.csv" download>
           Download zero-OSM observability CSV
+        </a>
+        <p className="psdq-method-note">
+          Selection rule: {summary.selection_rule}
+        </p>
+        <p className="psdq-method-note">
+          Non-claim: {summary.non_claim}
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function humanGatedHandoffColor(code: string) {
+  const colors: Record<string, string> = {
+    source_repair_owner_clarification: "#9B2226",
+    possible_same_facility_location_validation: "#007DB8",
+    priority_name_conflict_alias_location_validation: "#002569",
+    lower_priority_name_conflict_alias_location_validation: "#5A8227",
+    zero_osm_facility_row_absence_validation: "#8A6A00",
+  };
+  return colors[code] || "#6c757d";
+}
+
+function PsdqHumanGatedHandoffPanel({ summary }: { summary: PsdqHumanGatedHandoffSummary }) {
+  const scope = summary.handoff_scope;
+  const maxGroupRows = Math.max(1, ...summary.handoff_group_counts.map((row) => row.rows));
+  const topUpazilas = summary.upazila_handoff_rows.slice(0, 10);
+  const maxUpazilaRows = Math.max(1, ...topUpazilas.map((row) => row.handoff_rows));
+  const handoffRows = summary.top_handoff_rows.slice(0, 12);
+  const distanceMin = scope.candidate_distance_min_m;
+  const distanceMax = scope.candidate_distance_max_m;
+  const nameScoreMin = scope.candidate_name_score_min;
+  const nameScoreMax = scope.candidate_name_score_max;
+
+  return (
+    <section className="showcase-section psdq-human-gated-handoff-section">
+      <div className="showcase-two-col">
+        <div>
+          <p className="kicker">Human-gated handoff matrix</p>
+          <h2>The AI loop has reached the owner-or-human validation wall.</h2>
+          <p>
+            The handoff matrix consolidates the open source-repair, possible
+            same-facility, name-conflict, and zero-OSM rows into one reviewer
+            queue. It shows exactly what still needs source-owner
+            clarification or human location validation before any stronger
+            row language can be used.
+          </p>
+        </div>
+        <div className="showcase-fact-list">
+          <div>
+            <span>Open handoff rows</span>
+            <strong>{formatNumber(scope.handoff_rows)}</strong>
+          </div>
+          <div>
+            <span>Human or owner action</span>
+            <strong>{formatNumber(scope.human_or_owner_action_required_rows)} rows</strong>
+          </div>
+          <div>
+            <span>Groups / upazilas</span>
+            <strong>
+              {formatNumber(scope.handoff_groups)} / {formatNumber(scope.upazilas_with_handoff_rows)}
+            </strong>
+          </div>
+          <div>
+            <span>Candidate distance range</span>
+            <strong>
+              {distanceMin == null || distanceMax == null
+                ? "n/a"
+                : `${formatNumber(distanceMin / 1000, 1)}-${formatNumber(distanceMax / 1000, 1)} km`}
+            </strong>
+          </div>
+          <div>
+            <span>Name score range</span>
+            <strong>
+              {nameScoreMin == null || nameScoreMax == null
+                ? "n/a"
+                : `${formatNumber(nameScoreMin, 2)}-${formatNumber(nameScoreMax, 2)}`}
+            </strong>
+          </div>
+          <div>
+            <span>External contacts</span>
+            <strong>{formatNumber(scope.external_contacts_made)}</strong>
+          </div>
+          <div>
+            <span>Closure / reclass / map absence</span>
+            <strong>
+              {formatNumber(scope.rows_allowed_for_closure)} /{" "}
+              {formatNumber(scope.rows_allowed_for_same_facility_reclassification)} /{" "}
+              {formatNumber(scope.rows_allowed_for_map_absence_language)}
+            </strong>
+          </div>
+          <div>
+            <span>Coordinate corrections</span>
+            <strong>{formatNumber(scope.coordinate_corrections_allowed)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="psdq-human-gated-group-grid">
+        {summary.handoff_group_counts.map((group) => {
+          const color = humanGatedHandoffColor(group.name);
+          const width = Math.max(8, (group.rows / maxGroupRows) * 100);
+          return (
+            <article key={group.name} style={{ borderColor: color }}>
+              <span>{group.name.replaceAll("_", " ")}</span>
+              <strong>{formatNumber(group.rows)} rows</strong>
+              <p>{group.label}</p>
+              <i aria-label={`${group.label} handoff row bar`}>
+                <b style={{ width: `${width}%`, background: color }} />
+              </i>
+              <em>human gated; 0 closed</em>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-human-gated-upazila-grid">
+        {topUpazilas.map((row) => {
+          const width = Math.max(8, (row.handoff_rows / maxUpazilaRows) * 100);
+          return (
+            <article key={`${row.district_name}-${row.upazila_name}`}>
+              <div>
+                <span>{row.district_name}</span>
+                <strong>{row.upazila_name}</strong>
+                <em>{formatNumber(row.handoff_rows)} handoff rows</em>
+              </div>
+              <i aria-label={`${row.upazila_name} handoff row concentration bar`}>
+                <b style={{ width: `${width}%` }} />
+              </i>
+              <p>{row.handoff_groups}</p>
+              <div className="psdq-human-gated-lane-chips">
+                <span>source {formatNumber(row.source_repair_rows)}</span>
+                <span>same {formatNumber(row.possible_same_facility_rows)}</span>
+                <span>priority {formatNumber(row.priority_name_conflict_rows)}</span>
+                <span>lower {formatNumber(row.lower_priority_name_conflict_rows)}</span>
+                <span>zero-OSM {formatNumber(row.zero_osm_absence_gate_rows)}</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="psdq-human-gated-row-grid">
+        {handoffRows.map((row) => {
+          const color = humanGatedHandoffColor(row.handoff_group);
+          const distance = Number(row.candidate_distance_m || 0);
+          const score = Number(row.candidate_name_score || 0);
+          return (
+            <article key={row.handoff_id} style={{ borderColor: color }}>
+              <div className="psdq-human-gated-card-head">
+                <span>{row.handoff_id}</span>
+                <strong>{row.facility_name}</strong>
+                <em>{row.upazila_name}, {row.district_name}</em>
+              </div>
+              <div className="psdq-human-gated-class" style={{ background: color }}>
+                {row.handoff_group_label}
+              </div>
+              {row.candidate_name && (
+                <div className="psdq-human-gated-candidate">
+                  <span>Public-map candidate</span>
+                  <strong>{row.candidate_name}</strong>
+                  <em>
+                    {distance ? `${formatNumber(distance / 1000, 1)} km` : "distance n/a"}
+                    {score ? `; name score ${formatNumber(score, 2)}` : ""}
+                  </em>
+                  {row.candidate_feature_url && (
+                    <a href={row.candidate_feature_url} target="_blank" rel="noreferrer">
+                      Map feature
+                    </a>
+                  )}
+                </div>
+              )}
+              <div className="psdq-human-gated-blocker">
+                <span>Blocker</span>
+                <strong>{row.blocker_label}</strong>
+              </div>
+              <p>{row.review_question}</p>
+              <div className="psdq-human-gated-evidence">
+                <div>
+                  <span>Required next evidence</span>
+                  <p>{row.required_next_evidence}</p>
+                </div>
+                <div>
+                  <span>Public basis so far</span>
+                  <p>{row.public_evidence_basis}</p>
+                </div>
+              </div>
+              <div className="psdq-human-gated-status">
+                <span>{asBoolean(row.human_or_owner_action_required) ? "human gated" : "AI-only"}</span>
+                <span>{asBoolean(row.external_contact_made) ? "contact made" : "0 contacts"}</span>
+                <span>{formatNumber(Number(row.rows_closed_as_resolved || 0))} closed</span>
+                <span>{formatNumber(Number(row.rows_reclassified_or_corrected || 0))} reclassified</span>
+                <span>{asBoolean(row.map_absence_language_allowed_by_current_public_evidence) ? "map absence allowed" : "0 map absence uses"}</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="showcase-source-box psdq-sample-downloads">
+        <p className="showcase-source-title">Download the human-gated handoff matrix</p>
+        <code>python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py</code>
+        <a href="/programs/public-service-data-quality/facility-validation-human-gated-handoff.md" download>
+          Download human-gated handoff note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json" download>
+          Download human-gated summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff.csv" download>
+          Download human-gated CSV
         </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}

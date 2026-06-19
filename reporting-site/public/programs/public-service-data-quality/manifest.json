@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-06-19T04:08:32.998Z",
+  "generated_at": "2026-06-19T04:21:26.998Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,20 +27,20 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 42908,
-      "size_human": "41.9 KB",
-      "mtime": "2026-06-19T04:01:43.496Z",
-      "sha256": "a4c41fa5caaf19829a72825a0a6aea0cd5010170817ff92de906ac5aa567297f",
+      "size": 44131,
+      "size_human": "43.1 KB",
+      "mtime": "2026-06-19T04:13:39.391Z",
+      "sha256": "78e80ced171e1b11f8dca484617539658870f111fb0ad1be4e3ed0fba5ad0173",
       "attestation_chain": null
     },
     {
       "key": "reproduce",
       "file": "REPRODUCE.md",
       "label": "Reproducibility guide",
-      "size": 38250,
-      "size_human": "37.4 KB",
-      "mtime": "2026-06-19T04:02:04.358Z",
-      "sha256": "7dc399d5ac7a32731317e781d3b3fd1f62c7d508d986c87490d4d483659c3842",
+      "size": 39799,
+      "size_human": "38.9 KB",
+      "mtime": "2026-06-19T04:14:04.501Z",
+      "sha256": "371fb784f211ff1eaf4a1d262a90bf65fad53abc144d5d6daa2382944d478b44",
       "attestation_chain": null
     },
     {
@@ -127,10 +127,10 @@
       "key": "source_disagreement_l3",
       "file": "source-disagreement-l3-module.md",
       "label": "Source-disagreement L3 module",
-      "size": 39514,
-      "size_human": "38.6 KB",
-      "mtime": "2026-06-19T04:02:17.392Z",
-      "sha256": "7cf7636417bf8259a596d3d5b6ee97cdd8902a543fdb3790d9a48883cfbddd70",
+      "size": 41349,
+      "size_human": "40.4 KB",
+      "mtime": "2026-06-19T04:16:17.021Z",
+      "sha256": "edea48e7717784145ccd8c630672fc54675e9760954d6ca53a60d2b8ab70bbba",
       "attestation_chain": "ai-first"
     },
     {
@@ -291,6 +291,16 @@
       "size_human": "5.3 KB",
       "mtime": "2026-06-19T03:37:21.115Z",
       "sha256": "2369ddd0dc657ed1d452cad42949c780c7e8532d3ed79a40d20beb7f3902c395",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "facility_validation_human_gated_handoff",
+      "file": "facility-validation-human-gated-handoff.md",
+      "label": "Facility-validation human-gated handoff matrix",
+      "size": 3817,
+      "size_human": "3.7 KB",
+      "mtime": "2026-06-19T04:12:37.426Z",
+      "sha256": "94f2e1ec02adebee9a7f22931e128b177cd8e2570df034e8459bb69842e55324",
       "attestation_chain": "ai-first"
     },
     {
@@ -572,6 +582,18 @@
       "size": 46448,
       "size_human": "45.4 KB",
       "sha256": "158436c4bcfedf03714659097ddcff81a69864af6a899736a7f74b60aea9650c"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json",
+      "size": 157631,
+      "size_human": "153.9 KB",
+      "sha256": "5fe6bfdc0f87d3183347e6ff32ca09b81b27c61e81563b0f77f5c4ae2715cd66"
+    },
+    {
+      "file": "generated/psdq-bgd-facility-validation-human-gated-handoff.csv",
+      "size": 67376,
+      "size_human": "65.8 KB",
+      "sha256": "c80d6ad39b3d1ea3da567c0a7db82a71c873db57a97f80ee36f789856dcb7355"
     },
     {
       "file": "generated/psdq-bgd-facility-validation-lower-priority-name-conflict-review-summary.json",

@@ -1,7 +1,7 @@
 {
   "program": "remittance-resilience",
   "permanent_url": "/program/remittance-resilience/evidence",
-  "generated_at": "2026-06-19T17:00:25.897Z",
+  "generated_at": "2026-06-19T17:45:39.815Z",
   "hero": {
     "png": "generated/charts/remittance-resilience-thumbnail.png",
     "svg": "generated/charts/remittance-resilience-thumbnail.svg",
@@ -135,7 +135,7 @@
       "file": "generated/charts/remittance-flow-weighting-sprint.svg",
       "size": 89343,
       "size_human": "87.2 KB",
-      "sha256": "1ae079c6a51a7de553cdefc47e1d2586835789dde79867fff79c07087faf0503"
+      "sha256": "a54f2482852bf2e0e035cb62db8b827bb374cdc2f4ee0052fe081e373ead0341"
     },
     {
       "file": "generated/charts/remittance-fragility-scatter.png",
@@ -169,15 +169,15 @@
     },
     {
       "file": "generated/remittance-flow-weighting-sprint.csv",
-      "size": 3672,
-      "size_human": "3.6 KB",
-      "sha256": "17e6d5cb078f70381e4a844687b2c6303ee910afb0bd80660e3de4086aa6cbde"
+      "size": 11502,
+      "size_human": "11.2 KB",
+      "sha256": "b69c5e29521c240b9d61429b5a71d44c46cbd2d72c5011c196dae1497b034c6c"
     },
     {
       "file": "generated/remittance-flow-weighting-sprint.json",
-      "size": 35207,
-      "size_human": "34.4 KB",
-      "sha256": "dae15767469c17cea031d2b2c17f4ab3ee5a15f5ac63f32e2ab6703ca24dbd8b"
+      "size": 98938,
+      "size_human": "96.6 KB",
+      "sha256": "264643247f99407ec11103492584bb0915abc6fa190d652ce41b0b69c62da16f"
     },
     {
       "file": "generated/remittance-median-deepening.csv",

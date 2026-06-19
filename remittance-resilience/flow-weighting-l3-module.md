@@ -1,7 +1,7 @@
 # L3 Sensitivity Module: Flow-Weighted Remittance Corridor Costs
 
 `attestation_chain: ai-first`
-Date: 2026-06-17
+Date: 2026-06-20
 Goal level: L3 program evidence
 
 ## Status
@@ -55,6 +55,17 @@ represent less than 25 percent of estimated inbound KNOMAD flow:
 | Armenia | 1 | 12.32% |
 | Afghanistan | 4 | 24.83% |
 
+The 2026-06-20 rerun adds a row-level evidence-confidence ledger to the same
+generated JSON and CSV. It records **21 rankable economies**, **1**
+flow-weighted top-five row below the 25 percent matched-flow coverage screen,
+**2** flow-weighted top-five rows with only one matched RPW corridor, and
+**15** DMCs where KNOMAD has inbound flow but latest-period RPW has no quoted
+corridor coverage. The ledger is a validation queue, not a stronger claim.
+
+Source vintage remains a core caveat: RPW prices are Q1 2025, KNOMAD bilateral
+flows are 2021, and the WDI remittance-dependence years in the cache range from
+2019 to 2024.
+
 ## Decision Rule
 
 The flow-weighting module does not change the frozen 2026-04-26
@@ -104,6 +115,13 @@ matched RPW corridor and 13.75 percent matched-flow coverage.
 
 The module is useful for choosing corridors for validation. It is not a claim
 about actual household prices, informal-channel use, or country performance.
+
+The confidence ledger sharpens the reader-facing language. The top group
+survives flow weighting, but rank confidence is uneven. Kyrgyz Republic remains
+first with one matched corridor and 13.75 percent matched-flow coverage;
+Vanuatu is also a one-corridor top-five row. Nepal is the cleaner evidence
+movement in the module because 7 of 8 observed RPW corridors match KNOMAD flows
+and those matched corridors cover 86.23 percent of estimated inbound flow.
 
 ## Reproduce
 

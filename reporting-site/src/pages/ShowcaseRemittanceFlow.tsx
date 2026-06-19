@@ -28,6 +28,59 @@ interface FlowRow {
   fragility_flow_weighted: number | null;
   quote_rank: number | null;
   flow_weighted_rank: number | null;
+  rank_improvement_after_flow_weighting: number | null;
+  top5_membership_status: string;
+  low_matched_flow_coverage_flag: boolean;
+  single_matched_corridor_flag: boolean;
+  flow_weighted_top5_low_coverage_flag: boolean;
+  rpw_quote_absence_flag: boolean;
+  flow_coverage_gap_pct_points: number | null;
+  evidence_confidence_class: string;
+  evidence_confidence_label: string;
+  evidence_confidence_action: string;
+}
+
+interface EvidenceLedgerRow {
+  iso3: string;
+  country: string;
+  wdi_remittance_pct_gdp: number | null;
+  wdi_year: number | null;
+  quote_rank: number | null;
+  flow_weighted_rank: number | null;
+  rank_improvement_after_flow_weighting: number | null;
+  rpw_corridors_observed: number;
+  matched_rpw_corridors: number;
+  flow_coverage_share: number | null;
+  flow_coverage_gap_pct_points: number | null;
+  matched_flow_usd_million: number | null;
+  total_knomad_inbound_flow_usd_million: number | null;
+  top5_membership_status: string;
+  low_matched_flow_coverage_flag: boolean;
+  single_matched_corridor_flag: boolean;
+  flow_weighted_top5_low_coverage_flag: boolean;
+  rpw_quote_absence_flag: boolean;
+  evidence_confidence_class: string;
+  evidence_confidence_label: string;
+  evidence_confidence_action: string;
+}
+
+interface EvidenceConfidence {
+  ranked_economies: number;
+  top5_set_survival_count: number;
+  top5_low_coverage_count: number;
+  top5_one_corridor_count: number;
+  rankable_low_coverage_count: number;
+  rankable_one_corridor_count: number;
+  knomad_flow_no_rpw_quote_economies: number;
+  wdi_year_counts: Array<{ year: number; economies: number }>;
+  source_vintage: {
+    rpw_period: string;
+    knomad_flow_year: number;
+    wdi_latest_year_min: number | null;
+    wdi_latest_year_max: number | null;
+  };
+  source_vintage_note: string;
+  confidence_ledger: EvidenceLedgerRow[];
 }
 
 interface FlowData {
@@ -58,15 +111,19 @@ interface FlowData {
     latest_rpw_period: string;
     rpw_corridors_latest_period: number;
     matched_rpw_corridors: number;
+    matched_rpw_corridor_share: number;
     unmatched_rpw_corridors: number;
     low_matched_flow_coverage_flags_lt_25pct: FlowCoverageFlag[];
   };
   ranking_test: {
+    repaired_program_baseline_top5: string[];
     quote_top5: string[];
     flow_weighted_top5: string[];
+    baseline_top5_survival_count: number;
     dropped_from_top5_after_flow_weighting: string[];
     entered_top5_after_flow_weighting: string[];
   };
+  evidence_confidence: EvidenceConfidence;
   rows: FlowRow[];
   missing_corridors: Array<{ source_iso3: string; dest_iso3: string; source: string; dest: string }>;
 }
@@ -109,8 +166,6 @@ const METRIC_OPTIONS: Array<{ id: MetricMode; label: string }> = [
   { id: "rank", label: "Rank movement" },
   { id: "coverage", label: "Coverage risk" },
 ];
-
-const BASELINE_TOP5 = new Set(["KGZ", "NPL", "TON", "VUT", "WSM"]);
 
 function formatNumber(value: number | null | undefined, digits = 0) {
   if (value === null || value === undefined || Number.isNaN(value)) return "missing";
@@ -178,8 +233,12 @@ export default function ShowcaseRemittanceFlow() {
 
   const nepal = flow ? rowByIso(flow.rows, "NPL") : undefined;
   const vanuatu = flow ? rowByIso(flow.rows, "VUT") : undefined;
+  const kyrgyz = flow ? rowByIso(flow.rows, "KGZ") : undefined;
   const matchedLabel = flow
     ? `${flow.coverage.matched_rpw_corridors}/${flow.coverage.rpw_corridors_latest_period}`
+    : "";
+  const topSetSurvival = flow
+    ? `${flow.ranking_test.baseline_top5_survival_count}/5`
     : "";
 
   return (
@@ -214,9 +273,15 @@ export default function ShowcaseRemittanceFlow() {
                 </div>
                 <div>
                   <span className="showcase-stat-value">
-                    {flow.ranking_test.flow_weighted_top5.length}/5
+                    {topSetSurvival}
                   </span>
                   <span className="showcase-stat-label">baseline top-five economies still in the flow-weighted top five</span>
+                </div>
+                <div>
+                  <span className="showcase-stat-value">
+                    {flow.evidence_confidence.top5_low_coverage_count}
+                  </span>
+                  <span className="showcase-stat-label">flow-weighted top-five rows below 25% matched-flow coverage</span>
                 </div>
               </div>
             </>
@@ -243,6 +308,8 @@ export default function ShowcaseRemittanceFlow() {
       </section>
 
       {flow && <RemittanceExplorer data={flow} sensitivity={sensitivity} />}
+
+      {flow && <RemittanceConfidenceLedger data={flow} />}
 
       <section className="showcase-section showcase-two-col">
         <div>
@@ -287,6 +354,16 @@ export default function ShowcaseRemittanceFlow() {
               </strong>
             </div>
           )}
+          {kyrgyz && (
+            <div>
+              <span>Confidence warning</span>
+              <strong>
+                Kyrgyz Republic stays rank {kyrgyz.flow_weighted_rank}, but the
+                row has {kyrgyz.matched_rpw_corridors} matched RPW corridor and{" "}
+                {share(kyrgyz.flow_coverage_share, 1)} matched-flow coverage.
+              </strong>
+            </div>
+          )}
         </div>
       </section>
 
@@ -298,9 +375,12 @@ export default function ShowcaseRemittanceFlow() {
             KNOMAD flows are 2021 analytic estimates, while RPW prices are Q1
             2025 quotes. The join does not observe which providers households
             used, which fee schedule applied, or whether a corridor's matched
-            flow coverage captures the whole market. Four economies in the
-            module have matched-flow coverage below 25 percent and need source
-            validation before any stronger claim.
+            flow coverage captures the whole market. The generated ledger flags{" "}
+            {flow?.evidence_confidence.rankable_low_coverage_count ?? "multiple"}{" "}
+            ranked economies below 25 percent matched-flow coverage and{" "}
+            {flow?.evidence_confidence.knomad_flow_no_rpw_quote_economies ?? "several"}{" "}
+            DMCs with KNOMAD inbound flow but no latest-period RPW quote
+            coverage.
           </p>
         </div>
         <div className="showcase-source-box">
@@ -409,6 +489,10 @@ function RemittanceExplorer({
   sensitivity: SensitivityData | null;
 }) {
   const plotRows = useMemo(() => data.rows.filter(hasCosts), [data.rows]);
+  const baselineTop5 = useMemo(
+    () => new Set(data.ranking_test.repaired_program_baseline_top5),
+    [data.ranking_test.repaired_program_baseline_top5],
+  );
   const [selectedIso, setSelectedIso] = useState("NPL");
   const [metric, setMetric] = useState<MetricMode>("delta");
   const selectedRow = rowByIso(data.rows, selectedIso) || rowByIso(data.rows, "NPL") || plotRows[0];
@@ -456,10 +540,10 @@ function RemittanceExplorer({
 
       <div className="remittance-visual-grid">
         <div className="remittance-chart-wrap">
-          <FlowScatter rows={plotRows} selectedIso={selectedRow?.iso3} onSelect={setSelectedIso} />
+          <FlowScatter rows={plotRows} baselineTop5={baselineTop5} selectedIso={selectedRow?.iso3} onSelect={setSelectedIso} />
         </div>
         <div className="remittance-chart-wrap">
-          <FlowSidePanel rows={plotRows} mode={metric} selectedIso={selectedRow?.iso3} onSelect={setSelectedIso} />
+          <FlowSidePanel rows={plotRows} baselineTop5={baselineTop5} mode={metric} selectedIso={selectedRow?.iso3} onSelect={setSelectedIso} />
         </div>
       </div>
 
@@ -509,12 +593,132 @@ function RemittanceExplorer({
   );
 }
 
+function RemittanceConfidenceLedger({ data }: { data: FlowData }) {
+  const ledger = data.evidence_confidence.confidence_ledger;
+  const byIso = new Map(ledger.map((row) => [row.iso3, row]));
+  const topFive = data.ranking_test.flow_weighted_top5
+    .map((iso) => byIso.get(iso))
+    .filter((row): row is EvidenceLedgerRow => Boolean(row));
+  const absenceRows = ledger.filter((row) => row.rpw_quote_absence_flag).slice(0, 6);
+  const attentionRows = ledger
+    .filter((row) =>
+      row.flow_weighted_top5_low_coverage_flag
+      || row.low_matched_flow_coverage_flag
+      || row.single_matched_corridor_flag
+      || row.rpw_quote_absence_flag,
+    )
+    .slice(0, 14);
+  const yearCounts = data.evidence_confidence.wdi_year_counts
+    .map((item) => `${item.year}: ${item.economies}`)
+    .join("; ");
+
+  return (
+    <section className="showcase-section remittance-confidence-section">
+      <div className="showcase-section-copy">
+        <p className="kicker">Evidence confidence ledger</p>
+        <h2>The top group survives; confidence does not survive evenly.</h2>
+        <p>
+          Flow weighting supports the same five-economy set, but the generated
+          ledger separates set survival from evidence confidence. The strongest
+          use is validation targeting: which corridor rows need checking before
+          anyone treats a rank as decision-grade.
+        </p>
+      </div>
+
+      <div className="remittance-confidence-grid">
+        <div className="remittance-confidence-panel">
+          <p className="showcase-source-title">Flow-weighted top five confidence rail</p>
+          <div className="remit-confidence-rail">
+            {topFive.map((row) => {
+              const coverageWidth = `${Math.max(3, Math.min(100, (row.flow_coverage_share || 0) * 100))}%`;
+              return (
+                <div
+                  key={row.iso3}
+                  className={`remit-confidence-card remit-confidence-card-${row.evidence_confidence_class}`}
+                >
+                  <div className="remit-confidence-card-head">
+                    <span>#{row.flow_weighted_rank}</span>
+                    <strong>{row.iso3}</strong>
+                    <em>{row.evidence_confidence_label}</em>
+                  </div>
+                  <div className="remit-confidence-bar" aria-label={`${row.country} matched-flow coverage`}>
+                    <i style={{ width: coverageWidth }} />
+                  </div>
+                  <div className="remit-confidence-metrics">
+                    <span>{row.matched_rpw_corridors}/{row.rpw_corridors_observed} corridors</span>
+                    <span>{share(row.flow_coverage_share, 0)} flow covered</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="remittance-confidence-panel">
+          <p className="showcase-source-title">Coverage absences</p>
+          <strong className="remit-absence-count">
+            {data.evidence_confidence.knomad_flow_no_rpw_quote_economies} DMCs have KNOMAD inbound flow but no latest-period RPW quote coverage
+          </strong>
+          <div className="remit-absence-list">
+            {absenceRows.map((row) => (
+              <div key={row.iso3}>
+                <span>{row.iso3}</span>
+                <strong>{pct(row.wdi_remittance_pct_gdp, 1)} of GDP</strong>
+                <small>{formatNumber(row.total_knomad_inbound_flow_usd_million, 0)} US$M KNOMAD flow</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="remittance-confidence-ledger" aria-label="Remittance evidence confidence rows">
+        <div className="remit-ledger-head">
+          <span>Economy</span>
+          <span>Flow rank</span>
+          <span>Coverage</span>
+          <span>Corridors</span>
+          <span>Evidence class</span>
+          <span>Next validation action</span>
+        </div>
+        {attentionRows.map((row) => (
+          <div key={row.iso3} className="remit-ledger-row">
+            <span data-label="Economy">
+              <strong>{row.iso3}</strong>
+              <small>{row.country}</small>
+            </span>
+            <span data-label="Flow rank">
+              {row.flow_weighted_rank ? `#${row.flow_weighted_rank}` : "no rank"}
+            </span>
+            <span data-label="Coverage">
+              {share(row.flow_coverage_share, 1)}
+            </span>
+            <span data-label="Corridors">
+              {row.matched_rpw_corridors}/{row.rpw_corridors_observed}
+            </span>
+            <span data-label="Evidence class">
+              <strong>{row.evidence_confidence_label}</strong>
+            </span>
+            <span data-label="Next action">{row.evidence_confidence_action}</span>
+          </div>
+        ))}
+      </div>
+
+      <p className="remittance-method-note">
+        Source vintage: {data.evidence_confidence.source_vintage_note} WDI latest-year
+        distribution across DMCs in cache: {yearCounts}.
+      </p>
+    </section>
+  );
+}
+
 function FlowScatter({
   rows,
+  baselineTop5,
   selectedIso,
   onSelect,
 }: {
   rows: FlowRow[];
+  baselineTop5: Set<string>;
   selectedIso?: string;
   onSelect: (iso3: string) => void;
 }) {
@@ -536,7 +740,7 @@ function FlowScatter({
   const ticks = Array.from({ length: Math.floor(maxValue / 5) + 1 }, (_, index) => index * 5);
   const labelRows = new Set([
     ...rows
-      .filter((row) => BASELINE_TOP5.has(row.iso3))
+      .filter((row) => baselineTop5.has(row.iso3))
       .map((row) => row.iso3),
     selectedIso || "",
     "MMR",
@@ -582,7 +786,7 @@ function FlowScatter({
       {rows.map((row) => {
         const selected = row.iso3 === selectedIso;
         const lowCoverage = (row.flow_coverage_share || 0) < 0.25;
-        const top5 = BASELINE_TOP5.has(row.iso3);
+        const top5 = baselineTop5.has(row.iso3);
         const cx = x(row.quote_mean_cost_pct || 0);
         const cy = y(row.flow_weighted_mean_cost_pct || 0);
         return (
@@ -621,17 +825,19 @@ function FlowScatter({
 
 function FlowSidePanel({
   rows,
+  baselineTop5,
   mode,
   selectedIso,
   onSelect,
 }: {
   rows: FlowRow[];
+  baselineTop5: Set<string>;
   mode: MetricMode;
   selectedIso?: string;
   onSelect: (iso3: string) => void;
 }) {
   if (mode === "rank") {
-    return <FlowRankChart rows={rows} selectedIso={selectedIso} onSelect={onSelect} />;
+    return <FlowRankChart rows={rows} baselineTop5={baselineTop5} selectedIso={selectedIso} onSelect={onSelect} />;
   }
   return <FlowBars rows={rows} mode={mode} selectedIso={selectedIso} onSelect={onSelect} />;
 }
@@ -726,10 +932,12 @@ function FlowBars({
 
 function FlowRankChart({
   rows,
+  baselineTop5,
   selectedIso,
   onSelect,
 }: {
   rows: FlowRow[];
+  baselineTop5: Set<string>;
   selectedIso?: string;
   onSelect: (iso3: string) => void;
 }) {
@@ -766,7 +974,7 @@ function FlowRankChart({
       <line x1={rightX} x2={rightX} y1={top + 20} y2={height - 20} className="remit-rank-axis" />
       {displayRows.map((row) => {
         const selected = row.iso3 === selectedIso;
-        const top5 = BASELINE_TOP5.has(row.iso3);
+        const top5 = baselineTop5.has(row.iso3);
         const y1 = y(row.quote_rank || 1) + 36;
         const y2 = y(row.flow_weighted_rank || 1) + 36;
         return (

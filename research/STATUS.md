@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-06-19.
+Last updated: 2026-06-20.
 
 ## Current focus
 
@@ -273,6 +273,29 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (remittance flow-weighting confidence ledger):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/remittance-flow-weighting` with a generated evidence-confidence
+  ledger rather than a prose-only caveat. The L3 module now emits row-level
+  confidence classes, a top-five confidence rail, coverage-absence rows, and
+  source-vintage counts from
+  `remittance-resilience/scripts/sprint-flow-weighted-cost.py`. Current
+  generated counts: 21 rankable economies, 5/5 repaired baseline top-five
+  economies still in the flow-weighted top five, 1 flow-weighted top-five row
+  below 25% matched-flow coverage, 2 flow-weighted top-five rows with one
+  matched RPW corridor, and 15 DMCs with KNOMAD inbound flow but no
+  latest-period RPW quote coverage. This is a reader-facing evidence and UI
+  repair only, not a maturity promotion. Verification: remittance script rerun,
+  `npm run build` passed with the existing chunk-size warning, Chrome CDP QA
+  passed at 1365x900 and 375x820 with no page-level horizontal overflow, no
+  console errors, no network failures, 5 confidence cards, 14 ledger rows, 6
+  absence rows, and hero values `140/142`, `5/5`, `1`. QA record:
+  `reporting-site/qa/showcase-remittance-confidence-browser-check.json`;
+  screenshots:
+  `reporting-site/qa/showcase-remittance-confidence-desktop.png`,
+  `reporting-site/qa/showcase-remittance-confidence-ledger-desktop.png`,
+  `reporting-site/qa/showcase-remittance-confidence-mobile.png`, and
+  `reporting-site/qa/showcase-remittance-confidence-ledger-mobile.png`.
 - **2026-06-19 (home report-bench readiness map):** Added a compact
   20-slot readiness map to the first viewport of `/`, using the shared
   showcase registry and explicit stage colors for L2 prototype, L3 candidate,

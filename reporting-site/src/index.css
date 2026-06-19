@@ -7498,9 +7498,14 @@
     border-bottom: 0;
   }
 
+  .remittance-hero-stats > div:first-child {
+    grid-column: 1 / -1;
+  }
+
   .remittance-hero-stats .showcase-stat-value {
-    font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+    font-size: clamp(1.55rem, 2.2vw, 2.05rem);
     overflow-wrap: anywhere;
+    white-space: nowrap;
   }
 
   .remittance-filter-buttons {
@@ -7550,6 +7555,254 @@
   .remittance-sensitivity-strip {
     min-width: 930px;
     max-width: none;
+  }
+
+  .remittance-confidence-section {
+    gap: 1.25rem;
+  }
+
+  .remittance-confidence-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.7fr);
+    gap: 1rem;
+  }
+
+  .remittance-confidence-panel {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .remit-confidence-rail {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(132px, 1fr));
+    gap: 0.7rem;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
+  }
+
+  .remit-confidence-card {
+    min-width: 0;
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.75rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid var(--accent);
+    background: #f8fafc;
+  }
+
+  .remit-confidence-card-thin_top_five_row,
+  .remit-confidence-card-low_flow_coverage_ranked {
+    border-left-color: #9b2226;
+    background: #fff8f6;
+  }
+
+  .remit-confidence-card-one_corridor_ranked {
+    border-left-color: #FBB00E;
+    background: #fffdf2;
+  }
+
+  .remit-confidence-card-broadly_observed_ranked {
+    border-left-color: #5A8227;
+    background: #f8fbf4;
+  }
+
+  .remit-confidence-card-head {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.45rem;
+  }
+
+  .remit-confidence-card-head span,
+  .remit-confidence-card-head strong {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  .remit-confidence-card-head span {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  .remit-confidence-card-head strong {
+    color: var(--ink);
+    font-size: 1rem;
+  }
+
+  .remit-confidence-card-head em {
+    min-width: 0;
+    color: var(--ink-soft);
+    font-size: 0.74rem;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .remit-confidence-bar {
+    height: 0.45rem;
+    overflow: hidden;
+    background: #e5edf3;
+    border: 1px solid var(--rule-soft);
+  }
+
+  .remit-confidence-bar i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #007DB8, #5A8227);
+  }
+
+  .remit-confidence-card-thin_top_five_row .remit-confidence-bar i,
+  .remit-confidence-card-low_flow_coverage_ranked .remit-confidence-bar i {
+    background: #9b2226;
+  }
+
+  .remit-confidence-card-one_corridor_ranked .remit-confidence-bar i {
+    background: #FBB00E;
+  }
+
+  .remit-confidence-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.7rem;
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .remit-absence-count {
+    display: block;
+    color: var(--ink);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.25;
+  }
+
+  .remit-absence-list {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 0.8rem;
+  }
+
+  .remit-absence-list > div {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.2rem 0.75rem;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .remit-absence-list span {
+    grid-row: span 2;
+    color: var(--accent);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 850;
+  }
+
+  .remit-absence-list strong,
+  .remit-absence-list small {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .remit-absence-list strong {
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+
+  .remit-absence-list small {
+    color: var(--ink-faint);
+    font-size: 0.76rem;
+  }
+
+  .remittance-confidence-ledger {
+    margin-top: 0.25rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .remit-ledger-head,
+  .remit-ledger-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 1.05fr) minmax(72px, 0.45fr) minmax(82px, 0.55fr) minmax(76px, 0.55fr) minmax(140px, 1fr) minmax(220px, 1.8fr);
+    gap: 0.75rem;
+    align-items: start;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .remit-ledger-head {
+    border-bottom: 1px solid var(--rule-soft);
+    background: #f8fafc;
+    color: var(--ink-faint);
+    font-size: 0.7rem;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .remit-ledger-row {
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .remit-ledger-row:last-child {
+    border-bottom: 0;
+  }
+
+  .remit-ledger-row > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .remit-ledger-row strong {
+    color: var(--ink);
+  }
+
+  .remit-ledger-row small {
+    display: block;
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 980px) {
+    .remittance-confidence-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .remit-confidence-rail {
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .remit-ledger-head {
+      display: none;
+    }
+
+    .remit-ledger-row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.45rem;
+      padding: 0.9rem;
+    }
+
+    .remit-ledger-row > span {
+      display: grid;
+      grid-template-columns: minmax(6.5rem, 0.42fr) minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: baseline;
+    }
+
+    .remit-ledger-row > span::before {
+      content: attr(data-label);
+      color: var(--ink-faint);
+      font-size: 0.68rem;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
   }
 
   .remit-point,

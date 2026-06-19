@@ -206,6 +206,195 @@ def rank(rows, key):
     return sorted(eligible, key=lambda r: -r[key])
 
 
+def classify_evidence(row, flow_top5):
+    rankable = row.get("flow_weighted_rank") is not None
+    total_flow = row.get("total_knomad_inbound_flow_usd_million")
+    coverage = row.get("flow_coverage_share")
+    matched = row.get("matched_rpw_corridors", 0)
+    observed = row.get("rpw_corridors_observed", 0)
+    in_flow_top5 = row["iso3"] in flow_top5
+    low_coverage = coverage is not None and matched > 0 and coverage < 0.25
+    one_corridor = rankable and matched == 1
+    no_rpw_quote = bool(total_flow) and observed == 0
+
+    if in_flow_top5 and low_coverage:
+        return {
+            "class": "thin_top_five_row",
+            "label": "Thin top-five row",
+            "action": "Keep set-membership language, but do not treat this rank as validated without corridor follow-up.",
+        }
+    if no_rpw_quote:
+        return {
+            "class": "flow_visible_no_rpw_quote",
+            "label": "Flow visible, no RPW quote",
+            "action": "Treat as a coverage absence; add corridor-price validation before ranking.",
+        }
+    if low_coverage:
+        return {
+            "class": "low_flow_coverage_ranked",
+            "label": "Low matched-flow coverage",
+            "action": "Use only as a validation target; matched RPW corridors cover less than 25 percent of estimated inbound flow.",
+        }
+    if one_corridor:
+        return {
+            "class": "one_corridor_ranked",
+            "label": "One matched corridor",
+            "action": "Keep the row visible but check whether one corridor is a policy-relevant proxy.",
+        }
+    if rankable and coverage is not None and coverage >= 0.75 and matched >= 5:
+        return {
+            "class": "broadly_observed_ranked",
+            "label": "Broadly observed ranked row",
+            "action": "Rankable inside this module; still not a household transaction estimate.",
+        }
+    if rankable:
+        return {
+            "class": "ranked_with_caveat",
+            "label": "Ranked with caveat",
+            "action": "Use for screening only; source vintage and corridor coverage still limit interpretation.",
+        }
+    return {
+        "class": "not_rankable_in_module",
+        "label": "Not rankable in module",
+        "action": "Insufficient public-source join for a flow-weighted rank.",
+    }
+
+
+def build_confidence_ledger(rows, flow_top5, quote_top5, repaired_top5, wdi, latest_period):
+    baseline_set = set(repaired_top5)
+    quote_set = set(quote_top5)
+    flow_set = set(flow_top5)
+    for row in rows:
+        evidence = classify_evidence(row, flow_set)
+        coverage = row.get("flow_coverage_share")
+        rankable = row.get("flow_weighted_rank") is not None
+        in_baseline = row["iso3"] in baseline_set
+        in_quote = row["iso3"] in quote_set
+        in_flow = row["iso3"] in flow_set
+        if in_baseline and in_flow:
+            membership = "baseline_and_flow_top5"
+        elif in_flow:
+            membership = "flow_top5_only"
+        elif in_baseline:
+            membership = "baseline_top5_only"
+        elif in_quote:
+            membership = "quote_top5_only"
+        elif rankable:
+            membership = "ranked_outside_top5"
+        else:
+            membership = "not_ranked"
+
+        row["rank_improvement_after_flow_weighting"] = (
+            row["quote_rank"] - row["flow_weighted_rank"]
+            if row.get("quote_rank") is not None and row.get("flow_weighted_rank") is not None
+            else None
+        )
+        row["top5_membership_status"] = membership
+        row["low_matched_flow_coverage_flag"] = (
+            coverage is not None and row["matched_rpw_corridors"] > 0 and coverage < 0.25
+        )
+        row["single_matched_corridor_flag"] = rankable and row["matched_rpw_corridors"] == 1
+        row["flow_weighted_top5_low_coverage_flag"] = in_flow and row["low_matched_flow_coverage_flag"]
+        row["rpw_quote_absence_flag"] = (
+            row.get("total_knomad_inbound_flow_usd_million") is not None
+            and row["rpw_corridors_observed"] == 0
+        )
+        row["flow_coverage_gap_pct_points"] = (
+            round((1 - coverage) * 100, 2) if coverage is not None else None
+        )
+        row["evidence_confidence_class"] = evidence["class"]
+        row["evidence_confidence_label"] = evidence["label"]
+        row["evidence_confidence_action"] = evidence["action"]
+
+    class_priority = {
+        "thin_top_five_row": 0,
+        "low_flow_coverage_ranked": 1,
+        "one_corridor_ranked": 2,
+        "flow_visible_no_rpw_quote": 3,
+        "broadly_observed_ranked": 4,
+        "ranked_with_caveat": 5,
+        "not_rankable_in_module": 6,
+    }
+
+    def ledger_priority(row):
+        rank = row.get("flow_weighted_rank") or 999
+        dep = row.get("wdi_remittance_pct_gdp") or -1
+        return (
+            class_priority.get(row["evidence_confidence_class"], 9),
+            rank,
+            -dep,
+            row["country"],
+        )
+
+    confidence_ledger = sorted(
+        [
+            {
+                "iso3": r["iso3"],
+                "country": r["country"],
+                "wdi_remittance_pct_gdp": r["wdi_remittance_pct_gdp"],
+                "wdi_year": r["wdi_year"],
+                "quote_rank": r["quote_rank"],
+                "flow_weighted_rank": r["flow_weighted_rank"],
+                "rank_improvement_after_flow_weighting": r["rank_improvement_after_flow_weighting"],
+                "rpw_corridors_observed": r["rpw_corridors_observed"],
+                "matched_rpw_corridors": r["matched_rpw_corridors"],
+                "flow_coverage_share": r["flow_coverage_share"],
+                "flow_coverage_gap_pct_points": r["flow_coverage_gap_pct_points"],
+                "matched_flow_usd_million": r["matched_flow_usd_million"],
+                "total_knomad_inbound_flow_usd_million": r["total_knomad_inbound_flow_usd_million"],
+                "top5_membership_status": r["top5_membership_status"],
+                "low_matched_flow_coverage_flag": r["low_matched_flow_coverage_flag"],
+                "single_matched_corridor_flag": r["single_matched_corridor_flag"],
+                "flow_weighted_top5_low_coverage_flag": r["flow_weighted_top5_low_coverage_flag"],
+                "rpw_quote_absence_flag": r["rpw_quote_absence_flag"],
+                "evidence_confidence_class": r["evidence_confidence_class"],
+                "evidence_confidence_label": r["evidence_confidence_label"],
+                "evidence_confidence_action": r["evidence_confidence_action"],
+            }
+            for r in rows
+            if r["flow_weighted_rank"] is not None
+            or r["low_matched_flow_coverage_flag"]
+            or r["rpw_quote_absence_flag"]
+            or r["iso3"] in flow_set
+        ],
+        key=ledger_priority,
+    )
+
+    wdi_year_counts = defaultdict(int)
+    for entry in wdi.values():
+        wdi_year_counts[entry["year"]] += 1
+
+    ranked = [r for r in rows if r["flow_weighted_rank"] is not None]
+    no_rpw_quote_rows = [r for r in rows if r["rpw_quote_absence_flag"]]
+    return {
+        "ranked_economies": len(ranked),
+        "top5_set_survival_count": sum(1 for iso in flow_top5 if iso in baseline_set),
+        "top5_low_coverage_count": sum(1 for r in rows if r["flow_weighted_top5_low_coverage_flag"]),
+        "top5_one_corridor_count": sum(
+            1 for r in rows if r["iso3"] in flow_set and r["single_matched_corridor_flag"]
+        ),
+        "rankable_low_coverage_count": sum(1 for r in ranked if r["low_matched_flow_coverage_flag"]),
+        "rankable_one_corridor_count": sum(1 for r in ranked if r["single_matched_corridor_flag"]),
+        "knomad_flow_no_rpw_quote_economies": len(no_rpw_quote_rows),
+        "wdi_year_counts": [
+            {"year": year, "economies": wdi_year_counts[year]}
+            for year in sorted(wdi_year_counts)
+        ],
+        "source_vintage": {
+            "rpw_period": latest_period,
+            "knomad_flow_year": 2021,
+            "wdi_latest_year_min": min(wdi_year_counts) if wdi_year_counts else None,
+            "wdi_latest_year_max": max(wdi_year_counts) if wdi_year_counts else None,
+        },
+        "source_vintage_note": (
+            "The module joins RPW Q1 2025 quoted corridor prices to KNOMAD "
+            "2021 bilateral flow estimates and the latest available WDI "
+            "remittance-dependence year per economy."
+        ),
+        "confidence_ledger": confidence_ledger,
+    }
+
+
 def write_chart(rows):
     plot_rows = [
         r for r in rows
@@ -356,6 +545,14 @@ def main():
         row["quote_rank"] = quote_pos.get(row["iso3"])
         row["flow_weighted_rank"] = flow_pos.get(row["iso3"])
 
+    evidence_confidence = build_confidence_ledger(
+        rows,
+        flow_top5,
+        quote_top5,
+        REPAIRED_BASELINE_TOP5,
+        wdi,
+        latest_period,
+    )
     rows_sorted = sorted(rows, key=lambda r: (r["flow_weighted_rank"] or 999, r["country"]))
     coverage_flags = [
         {
@@ -488,9 +685,11 @@ def main():
             "repaired_program_baseline_top5": REPAIRED_BASELINE_TOP5,
             "quote_top5": quote_top5,
             "flow_weighted_top5": flow_top5,
+            "baseline_top5_survival_count": evidence_confidence["top5_set_survival_count"],
             "dropped_from_top5_after_flow_weighting": [i for i in quote_top5 if i not in flow_top5],
             "entered_top5_after_flow_weighting": [i for i in flow_top5 if i not in quote_top5],
         },
+        "evidence_confidence": evidence_confidence,
         "outputs": {
             "csv": "remittance-resilience/generated/remittance-flow-weighting-sprint.csv",
             "chart_svg": "remittance-resilience/generated/charts/remittance-flow-weighting-sprint.svg"

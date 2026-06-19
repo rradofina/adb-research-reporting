@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-06-19T17:42:00.803Z",
+  "route": "http://127.0.0.1:5176/showcase/remittance-flow-weighting",
+  "chrome_port": 9941,
+  "status": "pass",
+  "checks": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1365,
+        "height": 900,
+        "mobile": false
+      },
+      "metrics": {
+        "url": "http://127.0.0.1:5176/showcase/remittance-flow-weighting",
+        "title": "When Every Corridor Is Not the Same Corridor",
+        "viewportWidth": 1365,
+        "viewportHeight": 900,
+        "scrollWidth": 1350,
+        "horizontalOverflow": false,
+        "heroValues": [
+          "140/142",
+          "5/5",
+          "1"
+        ],
+        "confidenceCards": 5,
+        "ledgerRows": 14,
+        "absenceRows": 6,
+        "scatterPoints": 22,
+        "railScrollWidth": 734,
+        "railClientWidth": 734,
+        "ledgerWidth": 1120,
+        "hasTopGroupCopy": true,
+        "hasCoverageAbsenceCopy": true,
+        "hasKyrgyzWarning": true
+      },
+      "ledgerMetrics": {
+        "viewportWidth": 1365,
+        "scrollWidth": 1350,
+        "horizontalOverflow": false,
+        "firstCardText": "#1KGZThin top-five row1/1 corridors14% flow covered",
+        "firstLedgerText": "KGZKyrgyz Republic#113.8%1/1Thin top-five rowKeep set-membership language, but do not treat this rank as validated without corridor follow-up.",
+        "visibleTop": 4217
+      },
+      "consoleErrors": [],
+      "networkFailures": [],
+      "screenshots": {
+        "first": "reporting-site/qa/showcase-remittance-confidence-desktop.png",
+        "ledger": "reporting-site/qa/showcase-remittance-confidence-ledger-desktop.png"
+      }
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 375,
+        "height": 820,
+        "mobile": true
+      },
+      "metrics": {
+        "url": "http://127.0.0.1:5176/showcase/remittance-flow-weighting",
+        "title": "When Every Corridor Is Not the Same Corridor",
+        "viewportWidth": 375,
+        "viewportHeight": 820,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "heroValues": [
+          "140/142",
+          "5/5",
+          "1"
+        ],
+        "confidenceCards": 5,
+        "ledgerRows": 14,
+        "absenceRows": 6,
+        "scatterPoints": 22,
+        "railScrollWidth": 795,
+        "railClientWidth": 293,
+        "ledgerWidth": 327,
+        "hasTopGroupCopy": true,
+        "hasCoverageAbsenceCopy": true,
+        "hasKyrgyzWarning": true
+      },
+      "ledgerMetrics": {
+        "viewportWidth": 375,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "firstCardText": "#1KGZThin top-five row1/1 corridors14% flow covered",
+        "firstLedgerText": "KGZKyrgyz Republic#113.8%1/1Thin top-five rowKeep set-membership language, but do not treat this rank as validated without corridor follow-up.",
+        "visibleTop": 3968
+      },
+      "consoleErrors": [],
+      "networkFailures": [],
+      "screenshots": {
+        "first": "reporting-site/qa/showcase-remittance-confidence-mobile.png",
+        "ledger": "reporting-site/qa/showcase-remittance-confidence-ledger-mobile.png"
+      }
+    }
+  ]
+}

@@ -1,45 +1,45 @@
-iso3,country,wdi_remittance_pct_gdp,wdi_year,rpw_period,rpw_corridors_observed,matched_rpw_corridors,total_knomad_inbound_flow_usd_million,matched_flow_usd_million,flow_coverage_share,quote_mean_cost_pct,quote_median_cost_pct,flow_weighted_mean_cost_pct,flow_minus_quote_cost_pct,fragility_quote_mean,fragility_flow_weighted,quote_rank,flow_weighted_rank
-KGZ,Kyrgyz Republic,26.5776,2022,2025_1Q,1,1,2793.0,384.0,0.1375,10.5443,10.5443,10.5443,0.0,70.3,70.3,1,1
-NPL,Nepal,26.2255,2024,2025_1Q,8,7,8204.0,7074.0,0.8623,6.2619,3.5091,8.5677,2.3057,41.7,57.1,5,2
-VUT,Vanuatu,18.751,2022,2025_1Q,2,1,167.0,92.0,0.5509,9.6283,9.6283,10.8238,1.1956,48.1,54.1,4,3
-WSM,Samoa,24.0063,2024,2025_1Q,2,2,247.0,169.0,0.6842,8.0588,8.0588,7.9828,-0.0761,51.6,51.1,2,4
-TON,Tonga,42.6104,2023,2025_1Q,2,2,211.0,118.0,0.5592,7.5054,7.5054,7.5604,0.0551,50.0,50.4,3,5
-PAK,Pakistan,9.3963,2024,2025_1Q,12,12,31307.0,27547.0,0.8799,10.0338,5.6805,10.4284,0.3946,25.1,26.1,6,6
-TJK,Tajikistan,47.8852,2024,2025_1Q,1,1,2922.0,191.0,0.0654,2.95,2.95,2.95,0.0,19.7,19.7,7,7
-KHM,Cambodia,6.1009,2024,2025_1Q,1,1,1153.0,637.0,0.5525,10.5626,10.5626,10.5626,0.0,17.2,17.2,8,8
-MMR,Myanmar,3.4013,2019,2025_1Q,3,3,1999.0,1367.0,0.6838,25.6058,12.8407,18.7488,-6.857,13.6,13.6,9,9
-BGD,Bangladesh,6.1149,2024,2025_1Q,11,11,22201.0,15357.0,0.6917,6.9069,6.2975,7.4938,0.5869,11.3,12.2,10,10
-PHL,Philippines,8.7257,2024,2025_1Q,14,14,36683.0,32506.0,0.8861,4.6871,4.0803,4.539,-0.1482,10.9,10.6,11,11
-FJI,Fiji,7.1077,2024,2025_1Q,2,2,482.0,303.0,0.6286,5.2783,5.2783,5.1498,-0.1284,10.0,9.8,12,12
-ARM,Armenia,4.9247,2024,2025_1Q,1,1,1607.0,198.0,0.1232,6.6764,6.6764,6.6764,0.0,8.8,8.8,15,13
-LKA,Sri Lanka,6.792,2024,2025_1Q,11,11,5520.0,4422.0,0.8011,5.4053,5.5983,4.6447,-0.7605,9.8,8.4,13,14
-AFG,Afghanistan,3.9533,2020,2025_1Q,4,4,298.0,74.0,0.2483,8.3788,8.9892,7.282,-1.0968,8.8,7.7,14,15
-IND,India,3.5212,2024,2025_1Q,20,20,89374.0,84967.0,0.9507,8.4454,6.7976,5.5869,-2.8584,7.9,5.2,16,16
-LAO,Lao People's Democratic Republic,1.4942,2024,2025_1Q,1,1,224.0,155.0,0.692,11.8382,11.8382,11.8382,0.0,4.7,4.7,17,17
-THA,Thailand,1.796,2024,2025_1Q,7,7,9066.0,4667.0,0.5148,6.2562,4.9383,7.1832,0.9271,3.0,3.4,18,18
-IDN,Indonesia,1.1486,2024,2025_1Q,9,9,9396.0,7776.0,0.8276,6.5354,6.0303,4.8271,-1.7083,2.0,1.5,19,19
-MYS,Malaysia,0.3802,2024,2025_1Q,2,2,1562.0,1136.0,0.7273,12.7817,12.7817,17.684,4.9024,1.3,1.5,20,20
-CHN,"China, People's Republic of",0.1676,2024,2025_1Q,16,16,52998.0,34842.0,0.6574,8.2197,5.9883,7.2208,-0.9989,0.4,0.3,21,21
-AZE,Azerbaijan,1.8188,2024,,0,0,1526.0,,0.0,,,,,,,,
-BTN,Bhutan,3.5825,2023,,0,0,55.0,,0.0,,,,,,,,
-BRN,Brunei Darussalam,,,,0,0,,,,,,,,,,,
-COK,Cook Islands,,,,0,0,,,,,,,,,,,
-GEO,Georgia,11.8705,2024,,0,0,2643.0,,0.0,,,,,,,,
-HKG,"Hong Kong, China",0.1125,2024,,0,0,457.0,,0.0,,,,,,,,
-KAZ,Kazakhstan,0.0826,2024,,0,0,306.0,,0.0,,,,,,,,
-KIR,Kiribati,4.7613,2024,,0,0,15.0,,0.0,,,,,,,,
-MDV,Maldives,0.08,2024,,0,0,4.0,,0.0,,,,,,,,
-MHL,Marshall Islands,23.0632,2024,,0,0,30.0,,0.0,,,,,,,,
-FSM,"Micronesia, Federated States of",,,,0,0,,,,,,,,,,,
-MNG,Mongolia,2.2177,2024,,0,0,530.0,,0.0,,,,,,,,
-NRU,Nauru,1.3747,2024,,0,0,,,,,,,,,,,
-NIU,Niue,,,,0,0,,,,,,,,,,,
-PLW,Palau,0.8015,2023,,0,0,1.0,,0.0,,,,,,,,
-PNG,Papua New Guinea,0.0122,2024,,0,0,2.0,,0.0,,,,,,,,
-SLB,Solomon Islands,6.0089,2024,,0,0,49.0,,0.0,,,,,,,,
-TPE,"Taipei,China",,,,0,0,,,,,,,,,,,
-TLS,Timor-Leste,11.7692,2024,,0,0,168.0,,0.0,,,,,,,,
-TKM,Turkmenistan,,,,0,0,1.0,,0.0,,,,,,,,
-TUV,Tuvalu,4.1631,2023,,0,0,,,,,,,,,,,
-UZB,Uzbekistan,14.4211,2024,,0,0,9198.0,,0.0,,,,,,,,
-VNM,Viet Nam,,,2025_1Q,12,12,18060.0,15454.0,0.8557,6.5208,5.789,5.5359,-0.9849,,,,
+iso3,country,wdi_remittance_pct_gdp,wdi_year,rpw_period,rpw_corridors_observed,matched_rpw_corridors,total_knomad_inbound_flow_usd_million,matched_flow_usd_million,flow_coverage_share,quote_mean_cost_pct,quote_median_cost_pct,flow_weighted_mean_cost_pct,flow_minus_quote_cost_pct,fragility_quote_mean,fragility_flow_weighted,quote_rank,flow_weighted_rank,rank_improvement_after_flow_weighting,top5_membership_status,low_matched_flow_coverage_flag,single_matched_corridor_flag,flow_weighted_top5_low_coverage_flag,rpw_quote_absence_flag,flow_coverage_gap_pct_points,evidence_confidence_class,evidence_confidence_label,evidence_confidence_action
+KGZ,Kyrgyz Republic,26.5776,2022,2025_1Q,1,1,2793.0,384.0,0.1375,10.5443,10.5443,10.5443,0.0,70.3,70.3,1,1,0,baseline_and_flow_top5,True,True,True,False,86.25,thin_top_five_row,Thin top-five row,"Keep set-membership language, but do not treat this rank as validated without corridor follow-up."
+NPL,Nepal,26.2255,2024,2025_1Q,8,7,8204.0,7074.0,0.8623,6.2619,3.5091,8.5677,2.3057,41.7,57.1,5,2,3,baseline_and_flow_top5,False,False,False,False,13.77,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+VUT,Vanuatu,18.751,2022,2025_1Q,2,1,167.0,92.0,0.5509,9.6283,9.6283,10.8238,1.1956,48.1,54.1,4,3,1,baseline_and_flow_top5,False,True,False,False,44.91,one_corridor_ranked,One matched corridor,Keep the row visible but check whether one corridor is a policy-relevant proxy.
+WSM,Samoa,24.0063,2024,2025_1Q,2,2,247.0,169.0,0.6842,8.0588,8.0588,7.9828,-0.0761,51.6,51.1,2,4,-2,baseline_and_flow_top5,False,False,False,False,31.58,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+TON,Tonga,42.6104,2023,2025_1Q,2,2,211.0,118.0,0.5592,7.5054,7.5054,7.5604,0.0551,50.0,50.4,3,5,-2,baseline_and_flow_top5,False,False,False,False,44.08,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+PAK,Pakistan,9.3963,2024,2025_1Q,12,12,31307.0,27547.0,0.8799,10.0338,5.6805,10.4284,0.3946,25.1,26.1,6,6,0,ranked_outside_top5,False,False,False,False,12.01,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+TJK,Tajikistan,47.8852,2024,2025_1Q,1,1,2922.0,191.0,0.0654,2.95,2.95,2.95,0.0,19.7,19.7,7,7,0,ranked_outside_top5,True,True,False,False,93.46,low_flow_coverage_ranked,Low matched-flow coverage,Use only as a validation target; matched RPW corridors cover less than 25 percent of estimated inbound flow.
+KHM,Cambodia,6.1009,2024,2025_1Q,1,1,1153.0,637.0,0.5525,10.5626,10.5626,10.5626,0.0,17.2,17.2,8,8,0,ranked_outside_top5,False,True,False,False,44.75,one_corridor_ranked,One matched corridor,Keep the row visible but check whether one corridor is a policy-relevant proxy.
+MMR,Myanmar,3.4013,2019,2025_1Q,3,3,1999.0,1367.0,0.6838,25.6058,12.8407,18.7488,-6.857,13.6,13.6,9,9,0,ranked_outside_top5,False,False,False,False,31.62,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+BGD,Bangladesh,6.1149,2024,2025_1Q,11,11,22201.0,15357.0,0.6917,6.9069,6.2975,7.4938,0.5869,11.3,12.2,10,10,0,ranked_outside_top5,False,False,False,False,30.83,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+PHL,Philippines,8.7257,2024,2025_1Q,14,14,36683.0,32506.0,0.8861,4.6871,4.0803,4.539,-0.1482,10.9,10.6,11,11,0,ranked_outside_top5,False,False,False,False,11.39,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+FJI,Fiji,7.1077,2024,2025_1Q,2,2,482.0,303.0,0.6286,5.2783,5.2783,5.1498,-0.1284,10.0,9.8,12,12,0,ranked_outside_top5,False,False,False,False,37.14,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+ARM,Armenia,4.9247,2024,2025_1Q,1,1,1607.0,198.0,0.1232,6.6764,6.6764,6.6764,0.0,8.8,8.8,15,13,2,ranked_outside_top5,True,True,False,False,87.68,low_flow_coverage_ranked,Low matched-flow coverage,Use only as a validation target; matched RPW corridors cover less than 25 percent of estimated inbound flow.
+LKA,Sri Lanka,6.792,2024,2025_1Q,11,11,5520.0,4422.0,0.8011,5.4053,5.5983,4.6447,-0.7605,9.8,8.4,13,14,-1,ranked_outside_top5,False,False,False,False,19.89,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+AFG,Afghanistan,3.9533,2020,2025_1Q,4,4,298.0,74.0,0.2483,8.3788,8.9892,7.282,-1.0968,8.8,7.7,14,15,-1,ranked_outside_top5,True,False,False,False,75.17,low_flow_coverage_ranked,Low matched-flow coverage,Use only as a validation target; matched RPW corridors cover less than 25 percent of estimated inbound flow.
+IND,India,3.5212,2024,2025_1Q,20,20,89374.0,84967.0,0.9507,8.4454,6.7976,5.5869,-2.8584,7.9,5.2,16,16,0,ranked_outside_top5,False,False,False,False,4.93,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+LAO,Lao People's Democratic Republic,1.4942,2024,2025_1Q,1,1,224.0,155.0,0.692,11.8382,11.8382,11.8382,0.0,4.7,4.7,17,17,0,ranked_outside_top5,False,True,False,False,30.8,one_corridor_ranked,One matched corridor,Keep the row visible but check whether one corridor is a policy-relevant proxy.
+THA,Thailand,1.796,2024,2025_1Q,7,7,9066.0,4667.0,0.5148,6.2562,4.9383,7.1832,0.9271,3.0,3.4,18,18,0,ranked_outside_top5,False,False,False,False,48.52,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+IDN,Indonesia,1.1486,2024,2025_1Q,9,9,9396.0,7776.0,0.8276,6.5354,6.0303,4.8271,-1.7083,2.0,1.5,19,19,0,ranked_outside_top5,False,False,False,False,17.24,broadly_observed_ranked,Broadly observed ranked row,Rankable inside this module; still not a household transaction estimate.
+MYS,Malaysia,0.3802,2024,2025_1Q,2,2,1562.0,1136.0,0.7273,12.7817,12.7817,17.684,4.9024,1.3,1.5,20,20,0,ranked_outside_top5,False,False,False,False,27.27,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+CHN,"China, People's Republic of",0.1676,2024,2025_1Q,16,16,52998.0,34842.0,0.6574,8.2197,5.9883,7.2208,-0.9989,0.4,0.3,21,21,0,ranked_outside_top5,False,False,False,False,34.26,ranked_with_caveat,Ranked with caveat,Use for screening only; source vintage and corridor coverage still limit interpretation.
+AZE,Azerbaijan,1.8188,2024,,0,0,1526.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+BTN,Bhutan,3.5825,2023,,0,0,55.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+BRN,Brunei Darussalam,,,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+COK,Cook Islands,,,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+GEO,Georgia,11.8705,2024,,0,0,2643.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+HKG,"Hong Kong, China",0.1125,2024,,0,0,457.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+KAZ,Kazakhstan,0.0826,2024,,0,0,306.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+KIR,Kiribati,4.7613,2024,,0,0,15.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+MDV,Maldives,0.08,2024,,0,0,4.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+MHL,Marshall Islands,23.0632,2024,,0,0,30.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+FSM,"Micronesia, Federated States of",,,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+MNG,Mongolia,2.2177,2024,,0,0,530.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+NRU,Nauru,1.3747,2024,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+NIU,Niue,,,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+PLW,Palau,0.8015,2023,,0,0,1.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+PNG,Papua New Guinea,0.0122,2024,,0,0,2.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+SLB,Solomon Islands,6.0089,2024,,0,0,49.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+TPE,"Taipei,China",,,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+TLS,Timor-Leste,11.7692,2024,,0,0,168.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+TKM,Turkmenistan,,,,0,0,1.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+TUV,Tuvalu,4.1631,2023,,0,0,,,,,,,,,,,,,not_ranked,False,False,False,False,,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.
+UZB,Uzbekistan,14.4211,2024,,0,0,9198.0,,0.0,,,,,,,,,,not_ranked,False,False,False,True,100.0,flow_visible_no_rpw_quote,"Flow visible, no RPW quote",Treat as a coverage absence; add corridor-price validation before ranking.
+VNM,Viet Nam,,,2025_1Q,12,12,18060.0,15454.0,0.8557,6.5208,5.789,5.5359,-0.9849,,,,,,not_ranked,False,False,False,False,14.43,not_rankable_in_module,Not rankable in module,Insufficient public-source join for a flow-weighted rank.

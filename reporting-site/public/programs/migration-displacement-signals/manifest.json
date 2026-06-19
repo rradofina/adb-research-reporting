@@ -1,7 +1,7 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/program/migration-displacement-signals/evidence",
-  "generated_at": "2026-06-19T19:09:48.878Z",
+  "generated_at": "2026-06-19T19:27:35.038Z",
   "hero": {
     "png": "generated/charts/migration-displacement-signals-thumbnail.png",
     "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
@@ -144,6 +144,30 @@
       "sha256": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
     },
     {
+      "file": "generated/migration-corridor-type-forced-displacement-corridors.csv",
+      "size": 45083,
+      "size_human": "44.0 KB",
+      "sha256": "70998777d268386974101b5e79e2205d880aabdd07ac912426cc0dcd7c647769"
+    },
+    {
+      "file": "generated/migration-corridor-type-forced-displacement-country.csv",
+      "size": 5948,
+      "size_human": "5.8 KB",
+      "sha256": "6797170609488c1e351bc534f4ffa4c15d317f2e47a6cd1beb02999c127d4f29"
+    },
+    {
+      "file": "generated/migration-corridor-type-forced-displacement.json",
+      "size": 120395,
+      "size_human": "117.6 KB",
+      "sha256": "84c085134c89bd5be7435f44941354e26e8bf0ab3ce8fbcaa7b9b93c545b0eab"
+    },
+    {
+      "file": "generated/migration-denominator-corridor-type-audit.json",
+      "size": 143298,
+      "size_human": "139.9 KB",
+      "sha256": "f751c8ccb5cf7f5b2d53d9ca1d377de00bec9f605852288ef234fd90d43d949d"
+    },
+    {
       "file": "generated/migration-displacement-adb-panel.csv",
       "size": 1639,
       "size_human": "1.6 KB",
@@ -153,7 +177,7 @@
       "file": "generated/migration-displacement-adb-panel.json",
       "size": 77117,
       "size_human": "75.3 KB",
-      "sha256": "3d5dc9afd1fc1ad144d454b043d4374bfd4955ffd1b6fb22e4b13796b0c8ae5d"
+      "sha256": "eefc611eb2b3266e2e3a06fd276ecec2c70dc7180b71d67f06096970470e9b77"
     },
     {
       "file": "generated/migration-per-population-deepening.csv",
@@ -165,7 +189,7 @@
       "file": "generated/migration-per-population-deepening.json",
       "size": 15833,
       "size_human": "15.5 KB",
-      "sha256": "264b3873c73834a64970d6ec64ffb0b827379f9bb021c13a807ec25ebe53c5cd"
+      "sha256": "e180195e518abf13f9fbf5338de6c1365818fefae07b9c192b2625fdf6ee8150"
     }
   ],
   "articles": [

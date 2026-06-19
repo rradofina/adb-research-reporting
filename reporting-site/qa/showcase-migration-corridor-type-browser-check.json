@@ -1,0 +1,150 @@
+{
+  "targetUrl": "http://127.0.0.1:5176/showcase/migration-denominator-switch",
+  "checkedAt": "2026-06-19T19:28:27.284Z",
+  "browser": "system Chrome via Playwright headless",
+  "results": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900,
+      "metrics": {
+        "title": "When the Largest Diasporas Become Small Islands",
+        "url": "http://127.0.0.1:5176/showcase/migration-denominator-switch",
+        "pageOverflow": false,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When the Largest Diasporas Become Small Islands": true,
+          "81.7%": true,
+          "AFG forced-displacement share": true,
+          "AFG->IRN": true,
+          "This does not classify labor": true
+        },
+        "requiredCardPresence": {
+          "Share top-five forced-majority": true,
+          "UNHCR origins queried": true,
+          "Substantial forced component": true,
+          "Largest forced corridor": true
+        },
+        "cards": [
+          {
+            "value": "81.7%",
+            "label": "AFG forced-displacement share"
+          },
+          {
+            "value": "0/5",
+            "label": "Share top-five forced-majority"
+          },
+          {
+            "value": "44",
+            "label": "UNHCR origins queried"
+          },
+          {
+            "value": "7",
+            "label": "Substantial forced component"
+          },
+          {
+            "value": "AFG->IRN",
+            "label": "Largest forced corridor"
+          }
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download corridor-type audit JSON",
+            "href": "/programs/migration-displacement-signals/generated/migration-denominator-corridor-type-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/migration-displacement-signals/generated/migration-corridor-type-forced-displacement-country.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/migration-displacement-signals"
+          }
+        ],
+        "visualScreenshot": true,
+        "claimScreenshot": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 820,
+      "metrics": {
+        "title": "When the Largest Diasporas Become Small Islands",
+        "url": "http://127.0.0.1:5176/showcase/migration-denominator-switch",
+        "pageOverflow": false,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When the Largest Diasporas Become Small Islands": true,
+          "81.7%": true,
+          "AFG forced-displacement share": true,
+          "AFG->IRN": true,
+          "This does not classify labor": true
+        },
+        "requiredCardPresence": {
+          "Share top-five forced-majority": true,
+          "UNHCR origins queried": true,
+          "Substantial forced component": true,
+          "Largest forced corridor": true
+        },
+        "cards": [
+          {
+            "value": "81.7%",
+            "label": "AFG forced-displacement share"
+          },
+          {
+            "value": "0/5",
+            "label": "Share top-five forced-majority"
+          },
+          {
+            "value": "44",
+            "label": "UNHCR origins queried"
+          },
+          {
+            "value": "7",
+            "label": "Substantial forced component"
+          },
+          {
+            "value": "AFG->IRN",
+            "label": "Largest forced corridor"
+          }
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download corridor-type audit JSON",
+            "href": "/programs/migration-displacement-signals/generated/migration-denominator-corridor-type-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/migration-displacement-signals/generated/migration-corridor-type-forced-displacement-country.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/migration-displacement-signals"
+          }
+        ],
+        "visualScreenshot": true,
+        "claimScreenshot": true
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    "showcase-migration-corridor-type-desktop.png",
+    "showcase-migration-corridor-type-desktop-visual.png",
+    "showcase-migration-corridor-type-desktop-claim.png",
+    "showcase-migration-corridor-type-mobile.png",
+    "showcase-migration-corridor-type-mobile-visual.png",
+    "showcase-migration-corridor-type-mobile-claim.png"
+  ]
+}

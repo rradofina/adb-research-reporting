@@ -103,7 +103,7 @@
       "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "migration-per-population-deepening.json",
+      "artifact": "migration-denominator-corridor-type-audit.json",
       "finding": "Re-ranking on intensity rather than count collapses the absolute top-5 completely."
     },
     {

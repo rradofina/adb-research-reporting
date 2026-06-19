@@ -1,0 +1,45 @@
+iso3,country,emigrant_stock_2024,rank_absolute,rank_share,emigrant_pct_of_population,population_total,forced_abroad_2024,refugees_abroad_2024,asylum_seekers_abroad_2024,other_people_in_need_protection_abroad_2024,forced_abroad_share_of_emigrant_stock,forced_abroad_pct_of_emigrant_stock,forced_abroad_pct_of_population,idps_in_origin_context_2024,classification,in_absolute_top5,in_share_top5,top_forced_corridor_1
+AFG,Afghanistan,7528994,4,6,17.65,42647492,6151318,5766586,384732,0,0.817,81.7,14.42,3199710,forced-displacement majority,True,False,IRN 3477082
+MMR,Myanmar,4320462,7,18,7.93,54500091,1388449,1322503,65946,0,0.3214,32.1,2.55,3513867,substantial forced-displacement component,False,False,BGD 1005596
+CHN,China,11701619,2,39,0.83,1408975000,334524,153564,180960,0,0.0286,2.9,0.02,0,low forced-displacement share,True,False,USA 207953
+IND,India,18533845,1,36,1.28,1450935791,242236,39303,202933,0,0.0131,1.3,0.02,0,low forced-displacement share,True,False,USA 140959
+LKA,Sri Lanka,1492103,14,22,6.81,21916000,180380,147033,33347,0,0.1209,12.1,0.82,4806,substantial forced-displacement component,False,False,IND 90365
+PAK,Pakistan,6915057,6,33,2.75,251269164,169243,86285,82958,0,0.0245,2.4,0.07,3439,low forced-displacement share,False,False,ITA 40008
+AZE,Azerbaijan,810116,17,17,7.94,10202830,160780,153154,7626,0,0.1985,19.8,1.58,655212,substantial forced-displacement component,False,False,ARM 137152
+BGD,Bangladesh,8706947,3,25,5.02,173562364,136604,28473,108131,0,0.0157,1.6,0.08,0,low forced-displacement share,True,False,ITA 44026
+GEO,Georgia,496486,23,10,13.42,3699557,51564,16554,35010,0,0.1039,10.4,1.39,299172,substantial forced-displacement component,False,False,USA 17041
+VNM,Viet Nam,3693537,9,32,3.66,100987686,42555,19961,22594,0,0.0115,1.2,0.04,0,low forced-displacement share,False,False,GBR 8712
+ARM,Armenia,637604,20,3,21.02,3033500,36392,15933,20459,0,0.0571,5.7,1.2,0,low forced-displacement share,False,True,USA 15723
+UZB,Uzbekistan,2114480,13,24,5.82,36361859,27917,5152,22765,0,0.0132,1.3,0.08,0,low forced-displacement share,False,False,USA 21548
+NPL,Nepal,2637195,11,14,8.89,29651054,27459,7840,19619,0,0.0104,1.0,0.09,0,low forced-displacement share,False,False,USA 19280
+IDN,Indonesia,3745148,8,35,1.32,283487931,27370,9172,18198,0,0.0073,0.7,0.01,0,low forced-displacement share,False,False,USA 11286
+KAZ,Kazakhstan,2796572,10,9,13.58,20592571,16507,4119,12388,0,0.0059,0.6,0.08,0,low forced-displacement share,False,False,USA 9100
+KGZ,Kyrgyzstan,540573,21,20,7.49,7221868,14750,3400,11350,0,0.0273,2.7,0.2,0,low forced-displacement share,False,False,USA 11239
+MYS,Malaysia,2433875,12,21,6.84,35557673,13988,1209,12779,0,0.0057,0.6,0.04,0,low forced-displacement share,False,False,AUS 10407
+KHM,Cambodia,778793,18,31,4.42,17638801,12995,11474,1521,0,0.0167,1.7,0.07,0,low forced-displacement share,False,False,FRA 10613
+TJK,Tajikistan,514478,22,28,4.86,10590927,11990,4045,7945,0,0.0233,2.3,0.11,0,low forced-displacement share,False,False,USA 4000
+MNG,Mongolia,175596,26,26,4.98,3524788,10018,2501,7517,0,0.0571,5.7,0.28,0,low forced-displacement share,False,False,USA 4568
+BTN,Bhutan,66145,29,16,8.36,791524,7956,7433,523,0,0.1203,12.0,1.01,0,substantial forced-displacement component,False,False,NPL 6365
+PHL,Philippines,6988383,5,23,6.03,115843670,7527,785,6742,0,0.0011,0.1,0.01,121576,low forced-displacement share,True,False,AUS 3350
+LAO,Lao PDR,660258,19,15,8.5,7769819,7316,6556,760,0,0.0111,1.1,0.09,0,low forced-displacement share,False,False,FRA 6199
+TKM,Turkmenistan,365787,24,27,4.88,7494498,4907,2580,2327,0,0.0134,1.3,0.07,0,low forced-displacement share,False,False,USA 1951
+THA,Thailand,1178757,16,34,1.64,71668011,4322,300,4022,0,0.0037,0.4,0.01,0,low forced-displacement share,False,False,AUS 2550
+FJI,Fiji,181025,25,5,19.49,928784,3416,248,3168,0,0.0189,1.9,0.37,0,low forced-displacement share,False,True,AUS 2646
+TON,Tonga,53237,30,2,51.1,104175,1754,42,1712,0,0.0329,3.3,1.68,0,low forced-displacement share,False,True,AUS 1723
+PNG,Papua New Guinea,35050,32,41,0.33,10576502,1486,504,982,0,0.0424,4.2,0.01,84051,low forced-displacement share,False,False,AUS 1423
+TLS,Timor-Leste,109613,28,19,7.83,1400638,1458,5,1453,0,0.0133,1.3,0.1,0,low forced-displacement share,False,False,AUS 1176
+VUT,Vanuatu,15202,33,30,4.64,327777,1156,5,1151,0,0.076,7.6,0.35,0,low forced-displacement share,False,False,AUS 1048
+HKG,Hong Kong SAR,1240250,15,7,16.48,7524100,1095,240,855,0,0.0009,0.1,0.01,0,low forced-displacement share,False,False,USA 376
+SLB,Solomon Islands,8352,35,38,1.02,819198,879,44,835,0,0.1052,10.5,0.11,11,substantial forced-displacement component,False,False,AUS 851
+WSM,Samoa,119313,27,1,54.73,218019,492,8,484,0,0.0041,0.4,0.23,0,low forced-displacement share,False,True,AUS 477
+MDV,Maldives,2773,37,40,0.53,527799,107,76,31,0,0.0386,3.9,0.02,0,low forced-displacement share,False,False,GBR 53
+BRN,Brunei Darussalam,46552,31,13,10.06,462721,71,0,71,0,0.0015,0.2,0.02,0,low forced-displacement share,False,False,AUS 71
+KIR,Kiribati,6306,36,29,4.69,134518,58,5,53,0,0.0092,0.9,0.04,0,low forced-displacement share,False,False,AUS 53
+NRU,Nauru,2484,39,4,20.79,11947,23,5,18,0,0.0093,0.9,0.19,0,low forced-displacement share,False,True,AUS 23
+TUV,Tuvalu,1239,40,11,12.84,9646,11,0,11,0,0.0089,0.9,0.11,0,low forced-displacement share,False,False,NZL 6
+NIU,Niue,4955,,,,,10,5,5,0,0.002,0.2,,0,low forced-displacement share,False,False,USA 10
+MHL,Marshall Islands,400,41,37,1.07,37548,10,0,10,0,0.025,2.5,0.03,0,low forced-displacement share,False,False,CAN 5
+FSM,Micronesia,13568,34,12,11.99,113160,5,0,5,0,0.0004,0.0,0.0,0,low forced-displacement share,False,False,USA 5
+TWN,Taiwan,832507,,,,,0,0,0,0,0.0,0.0,,0,no forced-displacement rows,False,False,
+COK,Cook Islands,20288,,,,,0,0,0,0,0.0,0.0,,0,no forced-displacement rows,False,False,
+PLW,Palau,2674,38,8,15.11,17695,0,0,0,0,0.0,0.0,0.0,0,no forced-displacement rows,False,False,

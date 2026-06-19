@@ -1,7 +1,7 @@
 # Showcase quality audit
 
 `attestation_chain: ai-first`
-Date: 2026-06-19
+Date: 2026-06-20
 
 Purpose: keep the 20-report ADB/ERDI showcase honest. A route with a good
 visual is not automatically publication ready. This audit records the current
@@ -43,7 +43,7 @@ candidates before adding new surfaces.
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge now has a public World Bank reliability-proxy source wall | Needs direct outage, reserve-margin, dispatch, seasonal generation, or heat-stress evidence | Choose high-concentration rows and search for regulator outage or dispatch records beyond the proxy wall |
-| 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks reveal denominator dependence | Needs corridor composition and migration-purpose split | Build corridor-type falsifier |
+| 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks now include a UNHCR forced-displacement corridor-type falsifier: Afghanistan is the forced-displacement-majority exception, while the share top five is not | Needs labor, family, student, temporary-work, visa, and deployment corridor evidence before migration-purpose interpretation | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR forced-displacement layer |
 | 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition shows what night lights cannot directly see | Needs owner-led VIIRS/Earth Engine access and coauthor attestation | Keep as methods note until owner-gated access clears |
 | 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge prevents a size-driven coastal proxy from overclaiming | Needs settlement footprints, elevation, and surge-zone overlay | Choose one-coast pilot and join settlement/hazard layers |
 | 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size | Needs roads, markets/services, flood footprint, and travel-time logic | Build one-DMC flooded-network pilot or demote to methods caution |
@@ -93,6 +93,19 @@ candidates before adding new surfaces.
   generation concentration and a proxy, and 8 high-generation-concentration
   rows with a proxy. This is a source-readiness wall, not outage, reserve
   margin, dispatch, or heat-stress evidence.
+- Migration report #10 received a UNHCR forced-displacement corridor-type
+  falsifier pass on 2026-06-20. New script
+  `migration-displacement-signals/scripts/audit-corridor-type-forced-displacement.py`
+  queries the UNHCR Refugee Data Finder population API for 2024 origin-asylum
+  rows and writes raw-response hashes, a country CSV, a corridor CSV, and
+  `migration-denominator-corridor-type-audit.json`. The audit queries 44
+  origins from the UN DESA/WDI migration panel, finds 41 origins with at least
+  one forced-displacement-abroad row, and shows that Afghanistan is the only
+  forced-displacement-majority origin in the panel. Its UNHCR forced-
+  displacement-abroad stock is 81.7% of its UN DESA emigrant stock, while the
+  share top five has 0/5 forced-displacement-majority rows. This sharpens the
+  denominator-switch story but remains a forced-displacement-only layer, not a
+  labor, family, student, temporary-work, welfare, or fragility classification.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`
   reads the existing BGD exposure and road-context artifacts and writes

@@ -312,9 +312,16 @@ function buildMigrationModel(report: ShowcaseReport, data: JsonValue): AuditMode
   const absoluteTop = strings(data.absolute_top5);
   const shareTop = strings(data.share_top5);
   const details = rowByIso(safeRows(data.rows_by_share));
+  const falsifier = data.corridor_type_falsifier || {};
+  const falsifierSummary = falsifier.summary || {};
+  const forcedRows = rowByIso(safeRows(falsifier.country_rows));
+  const topForcedCorridor = safeRows(falsifier.top_forced_corridors)[0] || {};
+  const hasFalsifier = Boolean(data.corridor_type_falsifier);
   const rows = unique([...absoluteTop, ...shareTop]).map((iso) => {
     const row = details.get(iso) || {};
+    const forced = forcedRows.get(iso) || {};
     const diff = Math.abs(numberValue(row.rank_absolute) - numberValue(row.rank_share));
+    const forcedPct = forced.forced_abroad_pct_of_emigrant_stock;
     return {
       key: iso,
       label: iso,
@@ -323,32 +330,95 @@ function buildMigrationModel(report: ShowcaseReport, data: JsonValue): AuditMode
       rightText: row.rank_share ? `#${row.rank_share} share` : rankText(shareTop, iso, "share"),
       leftValue: row.emigrant_stock_2024 ? formatNumber(row.emigrant_stock_2024) : undefined,
       rightValue: row.emigrant_pct_of_population ? formatPct(row.emigrant_pct_of_population, 1) : undefined,
-      note: row.population_total ? `population ${formatNumber(row.population_total)}` : undefined,
+      note: row.population_total
+        ? `population ${formatNumber(row.population_total)}${
+          forcedPct !== undefined ? `; forced-displacement share ${formatPct(forcedPct, 1)}` : ""
+        }`
+        : undefined,
       status: statusFromSets(absoluteTop.includes(iso), shareTop.includes(iso)),
       intensity: Math.max(30, Math.min(100, diff * 4)),
     };
   });
+  const sourceTrail = sourceFacts(report, data);
+  if (falsifier.retrieved_at) {
+    sourceTrail.push({ label: "UNHCR retrieval", value: String(falsifier.retrieved_at) });
+  }
+  if (falsifier.source?.docs) {
+    sourceTrail.push({ label: "UNHCR API docs", value: String(falsifier.source.docs) });
+  }
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasFalsifier ? [
+      { value: `${safeRows(data.survivors_in_both_top5).length}/5`, label: "absolute top-five survivors" },
+      { value: formatPct(falsifierSummary.afghanistan_forced_abroad_pct_of_emigrant_stock, 1), label: "AFG forced-displacement share" },
+      { value: formatNumber(falsifierSummary.forced_displacement_majority_origins), label: "forced-majority origins" },
+      { value: formatNumber(falsifierSummary.substantial_forced_displacement_component_origins), label: "substantial component rows" },
+    ] : [
       { value: `${safeRows(data.survivors_in_both_top5).length}/5`, label: "absolute top-five survivors" },
       { value: formatPct(details.get(shareTop[0])?.emigrant_pct_of_population || 0, 1), label: `${shareTop[0]} emigrant share` },
       { value: formatNumber(safeRows(data.rows_by_share).length), label: "rankable origins" },
     ],
-    chartTitle: "The denominator switch changes the story, not just the order.",
-    chartDeck: "Absolute emigrant stock favors large origins; population share reveals small-economy exposure.",
+    chartTitle: hasFalsifier
+      ? "The denominator switch reveals islands, then the UNHCR layer isolates Afghanistan."
+      : "The denominator switch changes the story, not just the order.",
+    chartDeck: hasFalsifier
+      ? "The bridge shows how absolute stock becomes population-share exposure. The cards separate forced-displacement-majority stock from diaspora stock where public UNHCR data can see it."
+      : "Absolute emigrant stock favors large origins; population share reveals small-economy exposure.",
     leftLabel: "Absolute stock",
     rightLabel: "Share of origin population",
     rows,
+    componentCards: hasFalsifier ? [
+      {
+        key: "afg-exception",
+        value: formatPct(falsifierSummary.afghanistan_forced_abroad_pct_of_emigrant_stock, 1),
+        label: "AFG forced-displacement share",
+        note: "UNHCR forced-displacement stock abroad as a share of Afghanistan's UN DESA emigrant stock.",
+        status: "flag",
+      },
+      {
+        key: "share-top-five",
+        value: `${strings(falsifierSummary.share_top5_forced_displacement_majority).length}/5`,
+        label: "Share top-five forced-majority",
+        note: "The Samoa, Tonga, Armenia, Nauru, and Fiji share-top-five set is not forced-displacement-majority in UNHCR data.",
+        status: "survived",
+      },
+      {
+        key: "origins",
+        value: formatNumber(falsifierSummary.origins_queried),
+        label: "UNHCR origins queried",
+        note: "One origin-asylum query per UN DESA origin in the migration panel.",
+        status: "survived",
+      },
+      {
+        key: "substantial",
+        value: formatNumber(falsifierSummary.substantial_forced_displacement_component_origins),
+        label: "Substantial forced component",
+        note: "Origins where forced-displacement stock is at least 10% of UN DESA emigrant stock.",
+        status: "flag",
+      },
+      {
+        key: "top-corridor",
+        value: `${topForcedCorridor.origin_iso3 || "?"}->${topForcedCorridor.asylum_iso3 || "?"}`,
+        label: "Largest forced corridor",
+        note: `${formatNumber(topForcedCorridor.forced_displacement_abroad)} people in the UNHCR 2024 forced-displacement fields.`,
+        status: "flag",
+      },
+    ] : undefined,
     readouts: [
       { label: "Absolute top five", value: absoluteTop.join(", ") },
       { label: "Population-share top five", value: shareTop.join(", ") },
       { label: "Dropped from headline", value: strings(data.dropped_from_top5_on_share).join(", ") },
       { label: "Entered after denominator switch", value: strings(data.entered_top5_on_share).join(", ") },
+      ...(hasFalsifier ? [
+        { label: "Absolute top-five forced-majority", value: strings(falsifierSummary.absolute_top5_forced_displacement_majority).join(", ") || "none" },
+        { label: "Share top-five forced-majority", value: strings(falsifierSummary.share_top5_forced_displacement_majority).join(", ") || "none" },
+        { label: "AFG forced stock abroad", value: formatNumber(falsifierSummary.afghanistan_forced_abroad_2024) },
+        { label: "Largest forced corridor", value: `${topForcedCorridor.origin_iso3 || "?"}->${topForcedCorridor.asylum_iso3 || "?"} (${formatNumber(topForcedCorridor.forced_displacement_abroad)})` },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: baseCaveats(report, data).concat(hasFalsifier ? [String(falsifier.claim_scope || "")] : []),
     generatedAt: data.generated_at,
   };
 }

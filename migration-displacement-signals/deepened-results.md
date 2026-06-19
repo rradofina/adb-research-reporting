@@ -136,8 +136,50 @@ rescues the headline.
   vintage of each input; vintage stability (UN DESA 2015/2020) remains the
   separate §1.5 question.
 
+## Corridor-type forced-displacement check
+
+The next source question is whether the denominator switch mixes unlike
+mobility types. `scripts/audit-corridor-type-forced-displacement.py` adds a
+public UNHCR Refugee Data Finder crosswalk for 2024. For each UN DESA origin
+in the program panel, the script queries UNHCR origin-asylum stock rows and
+sums three international forced-displacement fields: refugees,
+asylum-seekers, and other people in need of international protection. IDPs are
+kept as origin-country context but excluded from the emigrant-stock comparison
+because they are not abroad.
+
+The audit queries 44 origins, finds 41 with at least one forced-displacement
+abroad row, and identifies 1 forced-displacement-majority origin:
+Afghanistan. UNHCR forced-displacement stock abroad is 6,151,318 for
+Afghanistan, or 81.7% of its UN DESA emigrant stock. The top two public
+forced-displacement corridors are Afghanistan to the Islamic Republic of Iran
+(3,477,082) and Afghanistan to Pakistan (1,758,574). This confirms that the
+one absolute-top-five economy that partly survives the population denominator
+is not the same kind of signal as Samoa, Tonga, Armenia, Nauru, or Fiji.
+
+The source layer also prevents overcorrection. The share top five is not a
+forced-displacement-majority set: Samoa (0.4% forced-displacement share of
+UN DESA emigrant stock), Tonga (3.3%), Armenia (5.7%), Nauru (0.9%), and Fiji
+(1.9%) remain mainly diaspora-stock observations in the public data, not
+refugee-stock observations. For the absolute top five, Afghanistan is the
+exception; India (1.3%), China (2.9%), Bangladesh (1.6%), and the Philippines
+(0.1%) are low forced-displacement-share rows in this UNHCR comparison.
+
+This still does not classify labor, family, student, or temporary-work
+corridors. It is a negative and positive source test: public UNHCR data can
+name the forced-displacement component, but a labor/family split still needs
+national deployment registers, visa-class statistics, or corridor-specific
+administrative data.
+
+Artifacts:
+
+- `generated/migration-denominator-corridor-type-audit.json`
+- `generated/migration-corridor-type-forced-displacement.json`
+- `generated/migration-corridor-type-forced-displacement-country.csv`
+- `generated/migration-corridor-type-forced-displacement-corridors.csv`
+
 ## Reproduce
 
 ```bash
 python migration-displacement-signals/scripts/deepen-per-population.py
+python migration-displacement-signals/scripts/audit-corridor-type-forced-displacement.py
 ```

@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:10:10.862Z",
+  "generated_at": "2026-06-19T19:28:40.342Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 304,
-    "browserChecks": 16
+    "screenshots": 310,
+    "browserChecks": 17
   },
   "summary": {
     "reports_total": 20,
@@ -243,19 +243,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "migration-displacement-signals/generated/migration-per-population-deepening.json",
+      "evidencePath": "migration-displacement-signals/generated/migration-denominator-corridor-type-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/migration-displacement-signals/generated/migration-per-population-deepening.json",
+      "auditDataUrl": "/programs/migration-displacement-signals/generated/migration-denominator-corridor-type-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/migration-displacement-signals/generated/migration-per-population-deepening.csv",
+      "auditCsvUrl": "/programs/migration-displacement-signals/generated/migration-corridor-type-forced-displacement-country.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Build a corridor-type falsifier that separates labor, refugee, family, and remittance-relevant migration signals."
+      "nextUpgrade": "Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR forced-displacement layer."
     },
     {
       "id": 11,

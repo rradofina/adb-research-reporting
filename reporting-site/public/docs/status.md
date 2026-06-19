@@ -299,6 +299,34 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-grid-reliability-proxy-desktop-visual.png`,
   `reporting-site/qa/showcase-grid-reliability-proxy-mobile.png`, and
   `reporting-site/qa/showcase-grid-reliability-proxy-mobile-visual.png`.
+- **2026-06-20 (migration corridor-type forced-displacement audit):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/migration-denominator-switch` from a denominator-switch rank
+  bridge into a UN DESA/WDI migration-stock report with a public UNHCR
+  forced-displacement corridor-type falsifier. Added
+  `migration-displacement-signals/scripts/audit-corridor-type-forced-displacement.py`,
+  cache regeneration notes under
+  `migration-displacement-signals/.cache/README.md`, generated
+  `migration-denominator-corridor-type-audit.json`,
+  `migration-corridor-type-forced-displacement.json`, and country/corridor CSV
+  companions, and registered `unhcr_refugee_data_finder_population_api` in
+  `versions.json`. The audit queries 44 UN DESA/WDI panel origins against the
+  UNHCR Refugee Data Finder population API for 2024 origin-asylum rows, finds
+  41 origins with at least one forced-displacement-abroad row, 7 origins with a
+  substantial forced-displacement component, and 1 forced-displacement-majority
+  origin. Afghanistan is the exception: UNHCR forced-displacement-abroad stock
+  is 6,151,318 people, or 81.7% of its UN DESA emigrant stock; the share top
+  five has 0/5 forced-displacement-majority rows. This is a corridor-type
+  falsifier and source-readiness layer, not a labor, family, student,
+  temporary-work, welfare, or fragility classification. Verification in this
+  pass reran the migration scripts, synced public artifacts, built the
+  reporting site, and browser-checked desktop plus 375px mobile with zero
+  console errors, zero network errors, and zero page-level horizontal
+  overflow. Screenshots:
+  `reporting-site/qa/showcase-migration-corridor-type-desktop.png`,
+  `reporting-site/qa/showcase-migration-corridor-type-desktop-visual.png`,
+  `reporting-site/qa/showcase-migration-corridor-type-mobile.png`, and
+  `reporting-site/qa/showcase-migration-corridor-type-mobile-visual.png`.
 - **2026-06-20 (disaster metric-falsification source-readiness audit):** In
   the owner-directed 20-report showcase loop, upgraded
   `/showcase/disaster-metric-falsification` from a metric-switch route into a

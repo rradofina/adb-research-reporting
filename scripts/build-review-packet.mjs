@@ -73,6 +73,7 @@ const PROGRAM_FILES = [
   "official-openaq-candidate-crosswalk-source-scan.md",
   "official-openaq-candidate-public-feed-source-scan.md",
   "one-signal-review-queue.md",
+  "monitor-grade-source-validation-scan.md",
   "source-disagreement-l3-module.md",
   "facility-validation-sample.md",
   "facility-validation-coded-screen.md",

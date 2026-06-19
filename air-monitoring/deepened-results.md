@@ -53,6 +53,10 @@ and
 One-signal review queue:
 `generated/air-monitoring-one-signal-review-queue-summary.json` and
 `generated/air-monitoring-one-signal-review-queue.csv`.
+Monitor-grade source-validation scan:
+`generated/air-monitoring-monitor-grade-source-validation-scan-summary.json`
+and
+`generated/air-monitoring-monitor-grade-source-validation-scan.csv`.
 
 ## The two questions
 
@@ -254,6 +258,14 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   and 65 rows with no public grade language found. It still finds 0 complete
   monitor-grade classification rows. The source story is now more precise, but
   the catchment story is still blocked.
+- **New monitor-grade source-validation scan:** the scan retrieves 14 seeded
+  public source URLs across 7 non-Bangladesh economies and covers all 138
+  monitor-grade provenance-only rows from the one-signal queue. It finds 2
+  method/equipment context source rows, 5 standard/method context source rows,
+  6 official/automatic context-only source rows, and 1 caution source row. It
+  still finds 0 complete monitor-grade classification rows and 0
+  station-radius grade-assumption-ready rows. The method context is useful for
+  the next station-level review, but it is not current grade certification.
 
 ## Bounds
 
@@ -301,4 +313,5 @@ python air-monitoring/scripts/audit-official-openaq-candidate-public-evidence.py
 python air-monitoring/scripts/scan-official-openaq-candidate-crosswalk-sources.py
 python air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources.py
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
+python air-monitoring/scripts/scan-monitor-grade-source-validation.py
 ```

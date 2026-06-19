@@ -11,7 +11,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -25,10 +25,12 @@ keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
 package, coordinate map, and regulator-source discovery now available for the
 upgrade queue, show the official/OpenAQ candidate review queue, public OpenAQ
 metadata evidence, `isMonitor` crosswalk source-scan decisions, public-feed
-source-scan decisions, the one-signal review queue, and monitor-grade evidence
-ladder honestly, and do not imply station-radius, complete monitor-grade, or
+source-scan decisions, the one-signal review queue, the monitor-grade evidence
+ladder, and the non-Bangladesh monitor-grade source-validation scan honestly,
+and do not imply station-radius, complete monitor-grade, or
 regulatory-inventory validation until official method tables, station
-crosswalks, and catchment methods are added.
+crosswalks, station-level current-status sources, and catchment methods are
+added.
 
 ## Last completed
 
@@ -286,17 +288,38 @@ crosswalks, and catchment methods are added.
   `reporting-site/qa/showcase-air-one-signal-desktop.png`,
   `reporting-site/qa/showcase-air-one-signal-mobile.png`, and
   `reporting-site/qa/showcase-air-one-signal-mobile-rows.png`.
+- **2026-06-19:** Added the monitor-grade source-validation scan. New script
+  `scripts/scan-monitor-grade-source-validation.py` reads
+  `source-inputs/monitor-grade-source-validation-seed.csv` and the one-signal
+  review queue, retrieves 14 seeded public source URLs across 7 economies, and
+  writes
+  `generated/air-monitoring-monitor-grade-source-validation-scan.csv` and
+  `generated/air-monitoring-monitor-grade-source-validation-scan-summary.json`.
+  The scan covers all 138 monitor-grade provenance-only queue rows, finds 2
+  method/equipment context source rows, 5 standard/method context source rows,
+  6 official/automatic context-only source rows, and 1 caution source row, but
+  keeps complete monitor-grade classification rows and station-radius
+  grade-assumption-ready rows at 0. Wrote
+  `monitor-grade-source-validation-scan.md`. This is source-language
+  validation, not station-level grade certification.
+- **2026-06-19:** Added the monitor-grade source-validation panel to the
+  public showcase route. Chrome CDP QA at 1440x1100 and 390x1000 confirmed 5
+  stat cards, 7 country cards, 14 source cards, 5 evidence gates, 3 download
+  links, no page or section horizontal overflow, no text overflow, and no page
+  errors beyond existing React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-air-grade-source-desktop.png`,
+  `reporting-site/qa/showcase-air-grade-source-mobile.png`, and
+  `reporting-site/qa/showcase-air-grade-source-mobile-sources.png`.
 
 ## Next focused work
 
-1. Resolve the one-signal queue where public evidence exists: shared station
-   IDs, source-owner crosswalks, current-status pages, documented co-location,
-   or station-owner/regulator method documentation. Keep every unresolved row
-   outside station-radius joins.
-2. Deepen non-Bangladesh monitor-grade documentation where public official,
-   station-owner, or regulator sources distinguish reference-grade/regulatory
-   monitors from low-cost or other public feeds, and confirm current-status
-   scope for the Bangladesh method-standard signal.
+1. Turn the source-validation scan into station-level review work where public
+   evidence exists: current method pages, station-owner documentation, current
+   status pages, shared station IDs, source-owner crosswalks, or documented
+   co-location. Keep every unresolved row outside station-radius joins.
+2. Deepen non-Bangladesh monitor-grade documentation from source-level context
+   into station-level classifications where possible, and confirm
+   current-status scope for the Bangladesh method-standard signal.
 3. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
@@ -313,6 +336,11 @@ crosswalks, and catchment methods are added.
   official rows and current-status scope still need station-level sources that
   distinguish reference-grade/regulatory monitors from low-cost or other public
   feeds.
+- The monitor-grade source-validation scan improves source context across 14
+  public URLs and 138 provenance-only queue rows, but it still records 0
+  complete monitor-grade classifications and 0 station-radius grade-assumption
+  rows. Source-level method terms are not station-level current grade
+  certification.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, and monitor-grade source-validation wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -76,9 +76,14 @@ overrides priority by editing this list.
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
    rows, 65 rows with no public grade language, and 0 complete monitor-grade
-   classification rows. Next AI-doable loop is resolving one-signal rows with
-   public crosswalk or method documentation and non-Bangladesh monitor-grade
-   source validation before any station-radius or catchment claim.
+   classification rows. The monitor-grade source-validation scan then
+   retrieves 14 public source URLs across 7 non-Bangladesh economies, covers
+   all 138 provenance-only queue rows, finds 7 source rows with method,
+   equipment, standard, or method context, 6 official/automatic context-only
+   source rows, 1 caution source row, and still 0 complete grade or
+   station-radius-ready rows. Next AI-doable loop is turning source-level
+   method context into station-level current-status review where public
+   evidence permits, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -193,6 +198,28 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring monitor-grade source-validation scan):** Added
+  `air-monitoring/source-inputs/monitor-grade-source-validation-seed.csv`,
+  `air-monitoring/scripts/scan-monitor-grade-source-validation.py`, generated
+  `air-monitoring/generated/air-monitoring-monitor-grade-source-validation-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-monitor-grade-source-validation-scan-summary.json`,
+  and wrote `air-monitoring/monitor-grade-source-validation-scan.md`. The scan
+  retrieves all 14 seeded public URLs across 7 economies and covers all 138
+  monitor-grade provenance-only rows from the one-signal review queue. It finds
+  2 method/equipment context source rows, 5 standard/method context source
+  rows, 6 official/automatic context-only source rows, 1 caution source row, 0
+  complete monitor-grade classification rows, and 0 station-radius
+  grade-assumption-ready rows. The public route now renders a monitor-grade
+  source-validation wall. Chrome CDP QA passed at 1440x1100 and 390x1000 with
+  5 stat cards, 7 country cards, 14 source cards, 5 evidence gates, 3 download
+  links, no page or section horizontal overflow, no text overflow, and no page
+  errors beyond existing React Router future-flag warnings. Screenshots:
+  `reporting-site/qa/showcase-air-grade-source-desktop.png`,
+  `reporting-site/qa/showcase-air-grade-source-mobile.png`, and
+  `reporting-site/qa/showcase-air-grade-source-mobile-sources.png`. Next work
+  is station-level current-status/method review for the rows with public
+  method context, not station-radius coverage.
 - **2026-06-19 (air-monitoring one-signal review queue):** Added
   `air-monitoring/scripts/build-one-signal-review-queue.py`, generated
   `air-monitoring/generated/air-monitoring-one-signal-review-queue.csv` and

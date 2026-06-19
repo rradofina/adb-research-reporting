@@ -797,6 +797,63 @@ interface OneSignalReviewQueueSummary {
   non_claim: string;
 }
 
+interface MonitorGradeSourceValidationCountryRow {
+  iso3: string;
+  country: string;
+  source_rows_scanned: number;
+  source_rows_retrieved: number;
+  monitor_grade_provenance_only_queue_items: number;
+  method_or_standard_context_sources: number;
+  official_or_automatic_context_sources: number;
+  caution_sources: number;
+  retrieval_failed_sources: number;
+  complete_monitor_grade_classification_rows: number;
+  station_radius_grade_assumption_ready_rows: number;
+}
+
+interface MonitorGradeSourceValidationSourceRow {
+  source_key: string;
+  iso3: string;
+  country: string;
+  source_name: string;
+  source_role: string;
+  retrieved: boolean;
+  queue_items_covered: number;
+  matched_expected_terms: string;
+  matched_method_terms: string;
+  matched_caution_terms: string;
+  source_grade_evidence_lane: string;
+  source_validation_decision: string;
+  reader_use: string;
+}
+
+interface MonitorGradeSourceValidationSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    source_urls_seeded: number;
+    source_urls_retrieved: number;
+    source_urls_failed: number;
+    economies_scanned: number;
+    monitor_grade_provenance_only_rows_covered: number;
+    method_or_equipment_context_source_rows: number;
+    standard_or_method_context_source_rows: number;
+    official_or_automatic_context_source_rows: number;
+    caution_language_source_rows: number;
+    source_context_only_no_grade_language_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  evidence_gate_counts: MonitorGradeGate[];
+  country_rows: MonitorGradeSourceValidationCountryRow[];
+  source_rows: MonitorGradeSourceValidationSourceRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -907,6 +964,8 @@ export default function ShowcaseAirMonitoring() {
     useState<CandidatePublicFeedSourceScanSummary | null>(null);
   const [oneSignalReviewQueue, setOneSignalReviewQueue] =
     useState<OneSignalReviewQueueSummary | null>(null);
+  const [monitorGradeSourceValidation, setMonitorGradeSourceValidation] =
+    useState<MonitorGradeSourceValidationSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -962,6 +1021,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`one-signal review queue HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-source-validation-scan-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`monitor grade source validation HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -980,6 +1043,7 @@ export default function ShowcaseAirMonitoring() {
         candidateCrosswalkSourceScanPayload,
         candidatePublicFeedSourceScanPayload,
         oneSignalReviewQueuePayload,
+        monitorGradeSourceValidationPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -994,6 +1058,7 @@ export default function ShowcaseAirMonitoring() {
         setCandidateCrosswalkSourceScan(candidateCrosswalkSourceScanPayload);
         setCandidatePublicFeedSourceScan(candidatePublicFeedSourceScanPayload);
         setOneSignalReviewQueue(oneSignalReviewQueuePayload);
+        setMonitorGradeSourceValidation(monitorGradeSourceValidationPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1118,6 +1183,8 @@ export default function ShowcaseAirMonitoring() {
       <AirCandidatePublicFeedSourceScanPanel summary={candidatePublicFeedSourceScan} />
 
       <AirOneSignalReviewQueuePanel summary={oneSignalReviewQueue} />
+
+      <AirMonitorGradeSourceValidationPanel summary={monitorGradeSourceValidation} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -1687,6 +1754,25 @@ function oneSignalLaneLabel(lane: string) {
       return "Name only, not near";
     case "monitor_grade_provenance_only":
       return "Official or automatic only";
+    default:
+      return sentenceCaseStatus(lane);
+  }
+}
+
+function monitorGradeSourceLaneLabel(lane: string) {
+  switch (lane) {
+    case "method_or_equipment_context_found":
+      return "method or equipment";
+    case "standard_or_method_context_found":
+      return "standard or method";
+    case "official_or_automatic_context_found":
+      return "official or automatic";
+    case "caution_language_found":
+      return "caution";
+    case "retrieval_failed":
+      return "retrieval failed";
+    case "source_context_only_no_grade_language":
+      return "no grade language";
     default:
       return sentenceCaseStatus(lane);
   }
@@ -2804,6 +2890,151 @@ function AirOneSignalReviewQueuePanel({
         </>
       ) : (
         <p className="showcase-loading">Loading one-signal review queue...</p>
+      )}
+    </section>
+  );
+}
+
+function AirMonitorGradeSourceValidationPanel({
+  summary,
+}: {
+  summary: MonitorGradeSourceValidationSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const methodContextCount = counts
+    ? counts.method_or_equipment_context_source_rows + counts.standard_or_method_context_source_rows
+    : 0;
+  const countryRows = [...(summary?.country_rows ?? [])].sort(
+    (a, b) => b.monitor_grade_provenance_only_queue_items - a.monitor_grade_provenance_only_queue_items,
+  );
+  const sourceRows = summary?.source_rows ?? [];
+
+  return (
+    <section className="showcase-section air-grade-source-section" aria-label="Monitor-grade source-validation scan">
+      <div className="air-grade-source-head">
+        <div>
+          <p className="kicker kicker-sage">Grade source validation</p>
+          <h2>Method clues appear. Grade certification still does not.</h2>
+          <p>
+            The scan retrieves public source pages for the non-Bangladesh
+            provenance-only lane. It separates method, equipment, standard,
+            official-context, and caution language without converting any row
+            into a complete monitor-grade classification.
+          </p>
+        </div>
+        <div className="air-grade-source-callout">
+          <span>Complete grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_classification_rows ?? 0)}</strong>
+          <p>station-radius assumptions remain blocked</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-source-stat-grid">
+            <div>
+              <span>Source URLs</span>
+              <strong>{formatNumber(counts.source_urls_retrieved)}</strong>
+              <em>{formatNumber(counts.source_urls_seeded)} seeded</em>
+            </div>
+            <div>
+              <span>Rows covered</span>
+              <strong>{formatNumber(counts.monitor_grade_provenance_only_rows_covered)}</strong>
+              <em>provenance-only queue</em>
+            </div>
+            <div>
+              <span>Method context</span>
+              <strong>{formatNumber(methodContextCount)}</strong>
+              <em>source rows, not certifications</em>
+            </div>
+            <div>
+              <span>Caution</span>
+              <strong>{formatNumber(counts.caution_language_source_rows)}</strong>
+              <em>source row</em>
+            </div>
+            <div>
+              <span>Radius-ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>still zero</em>
+            </div>
+          </div>
+
+          <div className="air-grade-source-country-grid">
+            {countryRows.map((row) => (
+              <article key={row.iso3} className="air-grade-source-country">
+                <div>
+                  <span>{row.iso3}</span>
+                  <strong>{row.country}</strong>
+                  <b>{formatNumber(row.monitor_grade_provenance_only_queue_items)} covered rows</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Sources</dt>
+                    <dd>{formatNumber(row.source_rows_retrieved)}</dd>
+                  </div>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.method_or_standard_context_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Context</dt>
+                    <dd>{formatNumber(row.official_or_automatic_context_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Ready</dt>
+                    <dd>{formatNumber(row.station_radius_grade_assumption_ready_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-source-card-grid">
+            {sourceRows.map((source) => (
+              <article
+                key={source.source_key}
+                className={`air-grade-source-card air-grade-source-card-${source.source_grade_evidence_lane}`}
+              >
+                <div>
+                  <span>{source.iso3} · {sentenceCaseStatus(source.source_role)}</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{monitorGradeSourceLaneLabel(source.source_grade_evidence_lane)}</b>
+                </div>
+                <p>{source.reader_use}</p>
+                <small>
+                  {formatNumber(source.queue_items_covered)} queue rows ·{" "}
+                  {source.matched_method_terms || source.matched_expected_terms || "no matched terms"}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-source-gate-grid">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-grade-source-gate air-grade-source-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-source-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/monitor-grade-source-validation-scan.md" download>
+              Source scan note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-source-validation-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-monitor-grade-source-validation-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading monitor-grade source-validation scan...</p>
       )}
     </section>
   );

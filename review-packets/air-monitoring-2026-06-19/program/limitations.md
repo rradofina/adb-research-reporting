@@ -73,6 +73,14 @@
   plan-only rows, and 65 rows with no public grade language found. It still
   finds 0 complete monitor-grade classification rows and does not make the 230
   official coordinate rows station-radius-ready.
+- Monitor-grade source validation. The 2026-06-19 source-validation scan
+  retrieves 14 seeded public URLs across 7 non-Bangladesh economies and covers
+  all 138 monitor-grade provenance-only queue rows. It finds 7 source rows
+  with method/equipment or standard/method context, 6 official/automatic
+  context-only source rows, and 1 caution source row. It still records 0
+  complete monitor-grade classification rows and 0 station-radius
+  grade-assumption-ready rows. Source-level method terms are not station-level
+  current grade certification.
 
 ## Source-side
 
@@ -89,6 +97,10 @@
   does not certify every official station row as current regulatory-grade
   equipment without current-status and station-owner follow-up; automatic or
   portal provenance remains weaker than monitor-grade classification.
+- Non-Bangladesh method/context language is also source-specific. BMKG,
+  Uzhydromet, NEA, CEA, Brunei, Malaysia, and Tajikistan sources can support
+  a review queue, but they do not certify every covered station row without
+  station-level current-status and method evidence.
 
 ## Method-side
 

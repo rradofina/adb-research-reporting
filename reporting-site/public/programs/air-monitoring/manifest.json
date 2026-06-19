@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T09:21:15.187Z",
+  "generated_at": "2026-06-19T09:40:32.066Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -194,6 +194,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_monitor_grade_source_validation_scan",
+      "file": "monitor-grade-source-validation-scan.md",
+      "label": "Air-monitoring monitor-grade source-validation scan",
+      "size": 3711,
+      "size_human": "3.6 KB",
+      "mtime": "2026-06-19T09:30:54.099Z",
+      "sha256": "b6a20db700f7ddde70d864587eb4034030f73cf2d033f3a326431410e3287715",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -217,10 +227,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 6151,
-      "size_human": "6.0 KB",
-      "mtime": "2026-06-19T09:15:19.268Z",
-      "sha256": "7604d48b7ec85873fbfd77e2c01b135f4b4e8ab76628e607f989a809fdd96a89",
+      "size": 6977,
+      "size_human": "6.8 KB",
+      "mtime": "2026-06-19T09:39:45.914Z",
+      "sha256": "f7878315bbc0dc3ec3c2e7b994d8cf8c32b5985b76d23766c651cecf3d73051a",
       "attestation_chain": "ai-first"
     }
   ],
@@ -272,6 +282,18 @@
       "size": 233265,
       "size_human": "227.8 KB",
       "sha256": "df7e2a3eb8870c1fcc63f8ba739afeb7a544aa7fa9e8690ff1ed655167feedfb"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-source-validation-scan-summary.json",
+      "size": 28055,
+      "size_human": "27.4 KB",
+      "sha256": "8535f7596a824733122296f447795613bc29eaeb1e61bb8d3130d92665879052"
+    },
+    {
+      "file": "generated/air-monitoring-monitor-grade-source-validation-scan.csv",
+      "size": 11963,
+      "size_human": "11.7 KB",
+      "sha256": "d2ffe6b2790e347407ee06847c9f0c5b72c9f47b30a60018a3b401ae30b57ec3"
     },
     {
       "file": "generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json",

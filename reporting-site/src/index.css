@@ -9977,6 +9977,235 @@
     text-decoration: underline;
   }
 
+  .air-grade-source-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.09), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-grade-source-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .air-grade-source-head h2 {
+    max-width: 24ch;
+  }
+
+  .air-grade-source-callout {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid #5a8227;
+    background: #f3f8ed;
+  }
+
+  .air-grade-source-callout span,
+  .air-grade-source-stat-grid span,
+  .air-grade-source-country span,
+  .air-grade-source-card span,
+  .air-grade-source-gate span,
+  .air-grade-source-downloads span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-grade-source-callout strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .air-grade-source-callout p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+  }
+
+  .air-grade-source-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-grade-source-stat-grid > div,
+  .air-grade-source-country,
+  .air-grade-source-card,
+  .air-grade-source-gate {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    background: #ffffff;
+  }
+
+  .air-grade-source-stat-grid > div {
+    border-top: 4px solid #5a8227;
+  }
+
+  .air-grade-source-stat-grid strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .air-grade-source-stat-grid em {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    font-style: normal;
+    line-height: 1.35;
+  }
+
+  .air-grade-source-country-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-grade-source-country {
+    border-top: 4px solid #5a8227;
+  }
+
+  .air-grade-source-country > div:first-child,
+  .air-grade-source-card > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-grade-source-country strong,
+  .air-grade-source-card strong,
+  .air-grade-source-gate strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .air-grade-source-country b,
+  .air-grade-source-card b,
+  .air-grade-source-gate b,
+  .air-grade-source-card small {
+    color: #3f641d;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-grade-source-country dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-grade-source-country dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-grade-source-country dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .air-grade-source-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-grade-source-card {
+    grid-template-rows: auto minmax(3.6rem, 1fr) auto;
+    border-left: 4px solid #5a8227;
+  }
+
+  .air-grade-source-card-official_or_automatic_context_found {
+    border-left-color: #007db8;
+  }
+
+  .air-grade-source-card-caution_language_found {
+    border-left-color: #fbb00e;
+  }
+
+  .air-grade-source-card-retrieval_failed,
+  .air-grade-source-card-source_context_only_no_grade_language {
+    border-left-color: #9b2226;
+  }
+
+  .air-grade-source-card p,
+  .air-grade-source-gate p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .air-grade-source-gate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .air-grade-source-gate {
+    grid-template-rows: auto auto auto minmax(4.7rem, 1fr);
+    border-top: 4px solid #9db7c7;
+  }
+
+  .air-grade-source-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-grade-source-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-grade-source-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-grade-source-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    align-items: center;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .air-grade-source-downloads a {
+    color: var(--sage);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-grade-source-downloads a:hover {
+    text-decoration: underline;
+  }
+
   .air-monitor-grade-section {
     display: grid;
     gap: 1.15rem;
@@ -10346,6 +10575,10 @@
     .air-one-signal-row-grid,
     .air-one-signal-source-grid,
     .air-one-signal-gate-grid,
+    .air-grade-source-stat-grid,
+    .air-grade-source-country-grid,
+    .air-grade-source-card-grid,
+    .air-grade-source-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -10365,6 +10598,7 @@
     .air-crosswalk-scan-head,
     .air-public-feed-scan-head,
     .air-one-signal-head,
+    .air-grade-source-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
       grid-template-columns: minmax(0, 1fr);
@@ -11360,6 +11594,10 @@
     .air-one-signal-row-grid,
     .air-one-signal-source-grid,
     .air-one-signal-gate-grid,
+    .air-grade-source-stat-grid,
+    .air-grade-source-country-grid,
+    .air-grade-source-card-grid,
+    .air-grade-source-gate-grid,
     .air-monitor-grade-stat-grid,
     .air-monitor-grade-ladder,
     .air-monitor-grade-country-grid,
@@ -11385,6 +11623,8 @@
     .air-one-signal-row,
     .air-one-signal-source,
     .air-one-signal-gate,
+    .air-grade-source-card,
+    .air-grade-source-gate,
     .air-monitor-grade-gate,
     .air-monitor-grade-ladder-card {
       grid-template-rows: auto;
@@ -11398,6 +11638,7 @@
     .air-crosswalk-scan-head,
     .air-public-feed-scan-head,
     .air-one-signal-head,
+    .air-grade-source-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -11440,6 +11681,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .air-grade-source-country dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .air-metadata-queue-card dl {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -11454,6 +11699,7 @@
     .air-crosswalk-scan-downloads,
     .air-public-feed-scan-downloads,
     .air-one-signal-downloads,
+    .air-grade-source-downloads,
     .air-monitor-grade-downloads {
       display: grid;
       grid-template-columns: minmax(0, 1fr);

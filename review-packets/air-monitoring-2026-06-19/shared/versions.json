@@ -107,6 +107,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "One-signal review queue after the near-plus-name candidate source scans. The queue combines 9 near-only official/OpenAQ rows, 22 name-only-not-near rows, and 138 automatic or official-portal monitor-grade provenance-only rows while keeping validated same-station joins, complete monitor-grade classifications, and station-radius-ready rows at 0."
     },
+    "air_monitoring_monitor_grade_source_validation_scan": {
+      "script": "air-monitoring/scripts/scan-monitor-grade-source-validation.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Source-validation scan for the non-Bangladesh monitor-grade provenance-only lane. The scan retrieves 14 seeded public source URLs across 7 economies, covers all 138 provenance-only queue rows, finds method/equipment or standard context in 7 source rows, official/automatic context in 6 source rows, caution language in 1 source row, and keeps complete monitor-grade classifications and station-radius grade-assumption-ready rows at 0."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -197,6 +202,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_one_signal_review_queue pin after combining the weaker near-only, name-only-not-near, and monitor-grade provenance-only air-monitoring review lanes."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_monitor_grade_source_validation_scan pin after checking 14 public source URLs for non-Bangladesh monitor-grade method, equipment, standard, official-context, and caution language."
     }
   ]
 }

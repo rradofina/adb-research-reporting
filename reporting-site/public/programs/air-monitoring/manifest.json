@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T13:31:24.854Z",
+  "generated_at": "2026-06-19T14:03:29.850Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -284,6 +284,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_station_code_status_method_source_scan",
+      "file": "station-code-status-method-source-scan.md",
+      "label": "Air-monitoring station-code status/method source scan",
+      "size": 6608,
+      "size_human": "6.5 KB",
+      "mtime": "2026-06-19T13:50:17.933Z",
+      "sha256": "b19e2da4023afcb03c7578ac2b754d7a4e8e157b68536657dd8eda237dc32e1c",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -518,6 +528,18 @@
       "size": 230088,
       "size_human": "224.7 KB",
       "sha256": "109f03865c0533bce854a9c2c72f8d317f7d072f9085f7f9ca32ee95c89b94f9"
+    },
+    {
+      "file": "generated/air-monitoring-station-code-status-method-source-scan-summary.json",
+      "size": 21788,
+      "size_human": "21.3 KB",
+      "sha256": "2d4981bb728ad2e034ea4d3b06ce0dc2deb02e896ce3567df58b2b24243392f7"
+    },
+    {
+      "file": "generated/air-monitoring-station-code-status-method-source-scan.csv",
+      "size": 57387,
+      "size_human": "56.0 KB",
+      "sha256": "2b382f70164f49696da36b220f1b978852af09a48045b24bd8504b4fcc59a6a5"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",

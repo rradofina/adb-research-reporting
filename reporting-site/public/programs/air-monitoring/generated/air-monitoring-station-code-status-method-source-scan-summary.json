@@ -1,0 +1,522 @@
+{
+  "generated_at": "2026-06-19T14:02:58Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_code_status_method_source_scan",
+  "method": "air_monitoring_station_code_status_method_source_scan_v1",
+  "goal_level": "L3 station-code status/method source scan",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\station-code-status-method-source-seed.csv",
+      "role": "public endpoint/page source seed for the live scan"
+    },
+    {
+      "path": "generated\\air-monitoring-monitor-grade-station-method-evidence.csv",
+      "role": "source of the 38 Indonesia/Georgia exact PM2.5 portal/API target rows"
+    },
+    {
+      "path": "generated\\air-monitoring-indonesia-georgia-row-method-source-scan.csv",
+      "role": "prior Indonesia/Georgia row-method source context"
+    },
+    {
+      "path": "generated\\air-monitoring-uzbekistan-blocker-row-followup.csv",
+      "role": "prior exact Uzbekistan blocker-row follow-up carried into this stricter scan"
+    }
+  ],
+  "coverage_counts": {
+    "target_rows": 41,
+    "target_georgia_rows": 16,
+    "target_indonesia_rows": 22,
+    "target_uzbekistan_blocker_rows": 3,
+    "source_records_total": 7,
+    "source_records_retrieved_or_carried_forward": 7,
+    "exact_station_code_or_id_rows": 41,
+    "georgia_station_code_api_rows": 16,
+    "georgia_pm25_equipment_rows": 16,
+    "georgia_pm25_hourly_observation_rows": 15,
+    "georgia_operating_description_context_rows": 15,
+    "georgia_test_mode_rows": 1,
+    "indonesia_bmkg_payload_station_code_rows": 22,
+    "indonesia_bmkg_xml_filename_rows": 22,
+    "uzbekistan_unresolved_blocker_rows": 3,
+    "station_method_table_rows": 0,
+    "instrument_model_available_rows": 0,
+    "calibration_status_available_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "country_rows": [
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "target_rows": 16,
+      "exact_station_code_or_id_rows": 16,
+      "pm25_row_or_equipment_rows": 16,
+      "station_operating_description_context_rows": 15,
+      "test_mode_or_blocker_rows": 1,
+      "station_method_table_rows": 0,
+      "current_status_confirmed_rows": 0,
+      "station_method_classified_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "target_rows": 22,
+      "exact_station_code_or_id_rows": 22,
+      "pm25_row_or_equipment_rows": 22,
+      "station_operating_description_context_rows": 0,
+      "test_mode_or_blocker_rows": 0,
+      "station_method_table_rows": 0,
+      "current_status_confirmed_rows": 0,
+      "station_method_classified_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "target_rows": 3,
+      "exact_station_code_or_id_rows": 3,
+      "pm25_row_or_equipment_rows": 3,
+      "station_operating_description_context_rows": 0,
+      "test_mode_or_blocker_rows": 3,
+      "station_method_table_rows": 0,
+      "current_status_confirmed_rows": 0,
+      "station_method_classified_rows": 0,
+      "complete_monitor_grade_classification_rows": 0,
+      "station_radius_grade_assumption_ready_rows": 0
+    }
+  ],
+  "decision_counts": [
+    {
+      "decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready",
+      "rows": 15
+    },
+    {
+      "decision": "georgia_station_code_test_mode_keep_blocked",
+      "rows": 1
+    },
+    {
+      "decision": "indonesia_bmkg_payload_station_code_context_keep_not_grade_ready",
+      "rows": 22
+    },
+    {
+      "decision": "uzbekistan_exact_blocker_still_unresolved_keep_blocked",
+      "rows": 3
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Exact station code or ID found",
+      "rows": 41,
+      "reader_use": "Every target remains traceable to an exact public station code, link, payload key, or station-detail ID."
+    },
+    {
+      "status": "available",
+      "gate": "Georgia station-code API rows",
+      "rows": 16,
+      "reader_use": "Georgia improves from alias context to exact public station-code API rows."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Georgia PM2.5 equipment rows",
+      "rows": 16,
+      "reader_use": "The air.gov.ge station-code objects list PM2.5 among station substances for all target Georgia rows."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Georgia operating-description context",
+      "rows": 15,
+      "reader_use": "Most Georgia station-code descriptions say the automatic station has been operating or in operation since a named month/year."
+    },
+    {
+      "status": "caution",
+      "gate": "Test-mode or blocker rows",
+      "rows": 4,
+      "reader_use": "One Georgia row is explicitly test-mode and all three Uzbekistan rows remain stale or sentinel blockers."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station method table",
+      "rows": 0,
+      "reader_use": "No public source in this pass gives a complete station-code method table with instrument/method classification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Calibration/status evidence",
+      "rows": 0,
+      "reader_use": "No row has explicit public calibration, maintenance, or operating-status closure adequate for grade use."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Current-status confirmed",
+      "rows": 0,
+      "reader_use": "API presence, station descriptions, and live values are not treated as station-status certification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade classification",
+      "rows": 0,
+      "reader_use": "No row has complete public station-grade classification."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-radius grade assumptions",
+      "rows": 0,
+      "reader_use": "Station-radius coverage remains blocked until current status, method class, and grade are public and row-level."
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "airgov_station_code_hourly_api",
+      "source_role": "official_station_code_api",
+      "iso3": "GEO",
+      "country": "Georgia",
+      "url": "https://air.gov.ge/api/get_data_1hour",
+      "retrieval_url": "https://air.gov.ge/api/get_data_1hour?from_date_time=2026-06-19T14%3A00%3A00&to_date_time=2026-06-19T14%3A00%3A00&station_code=all&municipality_id=all&substance=all&last_data=true&chart=false&format=json",
+      "final_url": "https://air.gov.ge/api/get_data_1hour/?from_date_time=2026-06-19T14%3A00%3A00&to_date_time=2026-06-19T14%3A00%3A00&station_code=all&municipality_id=all&substance=all&last_data=true&chart=false&format=json",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/json",
+      "retrieval_bytes": 83665,
+      "sha256": "90078ccefbbd7cd64216e1f88aab8713ba00b5f48d67c00e9dcc80aef109986c",
+      "matched_expected_terms": [
+        "code",
+        "stationequipment_set",
+        "PM2.5"
+      ],
+      "matched_method_terms": [
+        "automatic station",
+        "PM2.5"
+      ],
+      "matched_current_terms": [
+        "operating since",
+        "in operation since",
+        "operated since"
+      ],
+      "matched_standard_terms": [
+        "airqualityindexlevel_set"
+      ],
+      "matched_caution_terms": [
+        "test mode"
+      ],
+      "error": "",
+      "source_note": "Official air.gov.ge endpoint returning station-code objects, station equipment/substance rows, coordinates, station descriptions, and hourly PM2.5 observations where available."
+    },
+    {
+      "source_key": "bmkg_pm25_portal_nuxt_payload",
+      "source_role": "official_pm25_portal_payload",
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "url": "https://www.bmkg.go.id/kualitas-udara/pm25",
+      "retrieval_url": "https://www.bmkg.go.id/kualitas-udara/pm25",
+      "final_url": "https://www.bmkg.go.id/kualitas-udara/pm25",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "retrieval_bytes": 199743,
+      "sha256": "06658a3cd759fbdb5603d26138a5a35ee436b6fd8690c3c34c7b061a9371e5da",
+      "matched_expected_terms": [
+        "PM2.5",
+        "BMKG",
+        "Konsentrasi"
+      ],
+      "matched_method_terms": [
+        "Beta Attenuation Monitoring",
+        "Beta Attenuation",
+        "sinar beta"
+      ],
+      "matched_current_terms": [
+        "WIB",
+        "Kategori",
+        "Lihat Detail"
+      ],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "BMKG public PM2.5 portal source checked for exact station-code links and Nuxt payload station filenames."
+    },
+    {
+      "source_key": "prior_uzbekistan_blocker_official_region_table_1",
+      "source_role": "official_region_station_table",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
+      "retrieval_url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 70089,
+      "sha256": "30473e90ef19efd043ece39506aa24d5315dc83eb279451150e15eb2f67a3587",
+      "matched_expected_terms": [],
+      "matched_method_terms": [],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "Carried forward from the committed Uzbekistan blocker-row follow-up source record."
+    },
+    {
+      "source_key": "prior_uzbekistan_blocker_official_station_detail_107",
+      "source_role": "official_station_detail_page",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "url": "https://monitoring.meteo.uz/en/map/view/107",
+      "retrieval_url": "https://monitoring.meteo.uz/en/map/view/107",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/107",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33167,
+      "sha256": "28988f758de41a9ccecc9db2a8da35e0fbb26babcc893b1ff8761e9fea40fa21",
+      "matched_expected_terms": [],
+      "matched_method_terms": [],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "Carried forward from the committed Uzbekistan blocker-row follow-up source record."
+    },
+    {
+      "source_key": "prior_uzbekistan_blocker_official_station_detail_728",
+      "source_role": "official_station_detail_page",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "url": "https://monitoring.meteo.uz/en/map/view/728",
+      "retrieval_url": "https://monitoring.meteo.uz/en/map/view/728",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/728",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33028,
+      "sha256": "28d291c451416e731859383f7b9c331117b5a14158d0a60b048865f94fcecc83",
+      "matched_expected_terms": [],
+      "matched_method_terms": [],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "Carried forward from the committed Uzbekistan blocker-row follow-up source record."
+    },
+    {
+      "source_key": "prior_uzbekistan_blocker_official_region_table_2",
+      "source_role": "official_region_station_table",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
+      "retrieval_url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
+      "final_url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 62724,
+      "sha256": "9658759e2765089797ebd7a6f80c222d839fd2194116e7c8c4c78e68e050719a",
+      "matched_expected_terms": [],
+      "matched_method_terms": [],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "Carried forward from the committed Uzbekistan blocker-row follow-up source record."
+    },
+    {
+      "source_key": "prior_uzbekistan_blocker_official_station_detail_737",
+      "source_role": "official_station_detail_page",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "url": "https://monitoring.meteo.uz/en/map/view/737",
+      "retrieval_url": "https://monitoring.meteo.uz/en/map/view/737",
+      "final_url": "https://monitoring.meteo.uz/en/map/view/737",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33014,
+      "sha256": "24900aca9ebe9fa528b9e6b19a9398d99cae6ae5214cb88a33adc50a217e0af1",
+      "matched_expected_terms": [],
+      "matched_method_terms": [],
+      "matched_current_terms": [],
+      "matched_standard_terms": [],
+      "matched_caution_terms": [],
+      "error": "",
+      "source_note": "Carried forward from the committed Uzbekistan blocker-row follow-up source record."
+    }
+  ],
+  "station_sample_rows": [
+    {
+      "iso3": "GEO",
+      "source_station_id": "AGMS",
+      "source_station_name": "Tbilisi - Davit Agmashenebeli Ave. № 73a",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "BTUM",
+      "source_station_name": "Batumi - T. Abuseridze Street №1",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "KUTS",
+      "source_station_name": "Kutaisi - Lado Asatiani St.№98",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 0,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "KZBG",
+      "source_station_name": "Tbilisi - Kazbegi Ave. near Vaso Godziashvili Garden",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN01",
+      "source_station_name": "Tbilisi - Marshal Gelovani Avenue №34",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN02",
+      "source_station_name": "Rustavi - Friendship Ave. №35a",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN03",
+      "source_station_name": "Batumi - Batumi Central Park, 6 May Park",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "GEO",
+      "source_station_id": "ORN04",
+      "source_station_name": "Kutaisi-Ninoshvili Street and D.Aghmashenebeli Ave.",
+      "station_code_source_lane": "georgia_airgov_station_code_api",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": true,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "georgia_station_code_pm25_equipment_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_bjb2",
+      "source_station_name": "Banjarbaru",
+      "station_code_source_lane": "indonesia_bmkg_portal_payload",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "indonesia_bmkg_payload_station_code_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_btm2",
+      "source_station_name": "Batam",
+      "station_code_source_lane": "indonesia_bmkg_portal_payload",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "indonesia_bmkg_payload_station_code_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_idp2",
+      "source_station_name": "Indrapuri",
+      "station_code_source_lane": "indonesia_bmkg_portal_payload",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "indonesia_bmkg_payload_station_code_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "IDN",
+      "source_station_id": "pm25_jm3",
+      "source_station_name": "Kota Jambi",
+      "station_code_source_lane": "indonesia_bmkg_portal_payload",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "indonesia_bmkg_payload_station_code_context_keep_not_grade_ready"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "107",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "station_code_source_lane": "uzbekistan_blocker_followup_carried_forward",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "uzbekistan_exact_blocker_still_unresolved_keep_blocked"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "728",
+      "source_station_name": "Sergili",
+      "station_code_source_lane": "uzbekistan_blocker_followup_carried_forward",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "uzbekistan_exact_blocker_still_unresolved_keep_blocked"
+    },
+    {
+      "iso3": "UZB",
+      "source_station_id": "737",
+      "source_station_name": "Akhangaran",
+      "station_code_source_lane": "uzbekistan_blocker_followup_carried_forward",
+      "pm25_row_or_equipment_listed": true,
+      "pm25_observation_rows": 1,
+      "station_description_operating_context": false,
+      "station_test_mode_flag": false,
+      "source_scan_decision": "uzbekistan_exact_blocker_still_unresolved_keep_blocked"
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-station-code-status-method-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-station-code-status-method-source-scan-summary.json"
+  },
+  "non_claim": "This scan checks exact station-code or station-ID public sources for method/status closure. It does not convert API presence, station descriptions, PM2.5 equipment rows, live values, HORIBA hints, or BMKG method context into current-status confirmation, complete monitor-grade classification, or station-radius readiness."
+}

@@ -159,6 +159,12 @@
       "retrieved_on": "2026-06-19",
       "notes": "Seeded and expanded public source scan for the 38 Indonesia and Georgia exact PM2.5 portal/API rows. It retrieves 29 of 29 source URLs, including 22 BMKG station-detail pages, finds 22 Indonesia same-page method-context candidates and 9 Georgia station-alias context candidates, and still keeps current-status confirmed, station-method classified, complete monitor-grade, and station-radius-ready rows at 0."
     },
+    "air_monitoring_station_code_status_method_source_scan": {
+      "script": "air-monitoring/scripts/scan-station-code-status-method-sources.py",
+      "seed": "air-monitoring/source-inputs/station-code-status-method-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "notes": "Strict station-code/status source scan for 41 unresolved rows: 16 Georgia air.gov.ge station-code API rows, 22 Indonesia BMKG PM2.5 portal payload rows, and 3 Uzbekistan blocker rows carried forward from the exact blocker follow-up. It finds 41 exact station code or ID rows, 16 Georgia PM2.5 equipment rows, 15 Georgia operating-description context rows, 1 Georgia test-mode row, 22 Indonesia BMKG station-code payload rows, 3 unresolved Uzbekistan blockers, and still 0 station method-table, current-status confirmed, complete monitor-grade, or station-radius-ready rows."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -285,6 +291,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_indonesia_georgia_row_method_source_scan pin after scanning 38 exact Indonesia/Georgia PM2.5 portal/API rows against seeded public source and station-detail pages while keeping current-status, station-method classified, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_station_code_status_method_source_scan pin after scanning 41 unresolved station-code/status rows across Georgia, Indonesia, and Uzbekistan while keeping station method-table, current-status, complete-grade, and station-radius readiness at zero."
     }
   ]
 }

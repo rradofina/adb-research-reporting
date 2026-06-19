@@ -10532,6 +10532,31 @@
     border-left-color: #5a8227;
   }
 
+  .air-station-code-section {
+    background:
+      linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-station-code-callout {
+    border-left-color: #fbb00e;
+    background: #fff7df;
+  }
+
+  .air-station-code-lane {
+    border-top-color: #fbb00e;
+  }
+
+  .air-station-code-country,
+  .air-station-code-source,
+  .air-station-code-row {
+    border-left-color: #fbb00e;
+  }
+
+  .air-station-code-track i {
+    background: linear-gradient(90deg, #fbb00e, #007db8);
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -10717,6 +10742,10 @@
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 0.4rem;
     margin: 0;
+  }
+
+  .air-station-code-country dl {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .air-grade-method-country dt {

@@ -97,6 +97,11 @@
       "retrieved_on": "2026-06-19",
       "notes": "Public source scan for the 6 OpenAQ isMonitor candidate worksheet rows. The scan retrieves five public source URLs, screens all 6 rows as separate nearby stations, and keeps validated same-station joins and station-radius-ready rows at 0."
     },
+    "air_monitoring_official_openaq_candidate_public_feed_source_scan": {
+      "script": "air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources.py",
+      "retrieved_on": "2026-06-19",
+      "notes": "Public source scan for the 7 OpenAQ candidate worksheet rows not marked isMonitor. The scan retrieves 10 public source URLs, screens all 7 rows as public-feed nearby rows that are not join-ready, and keeps validated same-station joins and station-radius-ready rows at 0."
+    },
     "who_aaq_database": {
       "version": "v6.1",
       "retrieved_on": "2026-04-23",
@@ -179,6 +184,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_official_openaq_candidate_crosswalk_source_scan pin after public-source screening all 6 OpenAQ isMonitor candidate rows as separate nearby stations with zero validated joins."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_official_openaq_candidate_public_feed_source_scan pin after public-source screening all 7 not-isMonitor candidate rows as public-feed nearby rows with zero validated joins."
     }
   ]
 }

@@ -52,6 +52,13 @@
   source-crosswalk rows, 0 documented co-location rows, 0 validated joins, and
   0 station-radius-ready rows. The 7 not-`isMonitor` public-feed candidate rows
   remain outside this scan.
+- Candidate public-feed source scan. The 2026-06-19 public-feed scan reviews
+  the 7 OpenAQ candidate rows not marked `isMonitor` against 10 public source
+  URLs, official station-extraction coordinates, and OpenAQ metadata. It
+  screens all 7 as nearby public-feed rows that are not join-ready and records
+  0 shared station-ID rows, 0 source-owner crosswalk rows, 0 current-status
+  crosswalk rows, 0 documented co-location rows, 0 validated joins, and 0
+  station-radius-ready rows.
 - Monitor-grade classification. The 2026-06-19 monitor-grade evidence audit
   covers all 239 official-source rows from the station-extraction pass and
   finds 31 source-specific method-standard signal rows in Bangladesh, 138

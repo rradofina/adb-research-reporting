@@ -46,6 +46,10 @@ Official/OpenAQ candidate crosswalk source scan:
 `generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json`
 and
 `generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv`.
+Official/OpenAQ candidate public-feed source scan:
+`generated/air-monitoring-official-openaq-candidate-public-feed-source-scan-summary.json`
+and
+`generated/air-monitoring-official-openaq-candidate-public-feed-source-scan.csv`.
 
 ## The two questions
 
@@ -224,6 +228,15 @@ separate category: no public PM2.5 monitor is visible in OpenAQ in the
   StateAir / US Diplomatic Post: Tashkent OpenAQ row. It still records 0
   shared station-ID rows, 0 source-crosswalk rows, 0 documented co-location
   rows, 0 validated same-station joins, and 0 station-radius-ready rows.
+- **New candidate public-feed source scan:** the scan fetches 10 public source
+  URLs and reviews the 7 candidate rows not marked `isMonitor` in OpenAQ. It
+  retrieves official coordinate evidence and provider-context pages, then
+  screens all 7 rows as public-feed nearby rows that are not join-ready. It
+  records 7 rows with official coordinate evidence, 7 with OpenAQ coordinate
+  evidence, 7 with public-feed owner/provider metadata, 0 official-agency
+  owner/provider matches, 0 source-owner crosswalk rows, 0 documented
+  co-location rows, 0 validated same-station joins, and 0 station-radius-ready
+  rows.
 - **New monitor-grade evidence audit:** the audit covers all 239
   official-source rows from the station-extraction pass. It finds 31
   source-specific method-standard signal rows in Bangladesh, 138 automatic or
@@ -276,5 +289,6 @@ python air-monitoring/scripts/reconcile-official-openaq-stations.py
 python air-monitoring/scripts/build-official-openaq-candidate-review.py
 python air-monitoring/scripts/audit-official-openaq-candidate-public-evidence.py
 python air-monitoring/scripts/scan-official-openaq-candidate-crosswalk-sources.py
+python air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources.py
 python air-monitoring/scripts/audit-monitor-grade-evidence.py
 ```

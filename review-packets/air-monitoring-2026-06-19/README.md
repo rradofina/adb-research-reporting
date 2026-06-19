@@ -64,7 +64,7 @@ website is Tier 2 and is not included here).
 
 ### Program artifacts
 
-- `program/STATUS.md`  `99d24ed8d4d8…`
+- `program/STATUS.md`  `bd995aa29edd…`
 - `program/literature.md`  `60a13d873b48…`
 - `program/pre-registration.md`  `4281201e57c5…`
 - `program/sensitivity.md`  `051bd9c19243…`
@@ -80,7 +80,8 @@ website is Tier 2 and is not included here).
 - `program/official-openaq-candidate-review.md`  `66c351c3de50…`
 - `program/official-openaq-candidate-public-evidence.md`  `4a26808ac815…`
 - `program/official-openaq-candidate-crosswalk-source-scan.md`  `5dd3c81fcdeb…`
-- `program/limitations.md`  `3707467bdd11…`
+- `program/official-openaq-candidate-public-feed-source-scan.md`  `7a627b81a080…`
+- `program/limitations.md`  `c519abd16dcd…`
 - `program/review-internal.md`  `c96d88072943…`
 - `program/review-external.md`  `42b7f2c3bf52…`
 - `program/generated/air-monitoring-adb-panel.csv`  `ae5b6892577d…`
@@ -95,6 +96,8 @@ website is Tier 2 and is not included here).
 - `program/generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan.csv`  `71cebe893149…`
 - `program/generated/air-monitoring-official-openaq-candidate-public-evidence-summary.json`  `fb5141e6223b…`
 - `program/generated/air-monitoring-official-openaq-candidate-public-evidence.csv`  `098fc2fb224b…`
+- `program/generated/air-monitoring-official-openaq-candidate-public-feed-source-scan-summary.json`  `d25aa9915877…`
+- `program/generated/air-monitoring-official-openaq-candidate-public-feed-source-scan.csv`  `263ef9cf7bbe…`
 - `program/generated/air-monitoring-official-openaq-candidate-review-summary.json`  `770987d49d80…`
 - `program/generated/air-monitoring-official-openaq-candidate-review.csv`  `ecedea01ca17…`
 - `program/generated/air-monitoring-official-openaq-reconciliation-summary.json`  `195c17128543…`
@@ -119,7 +122,9 @@ website is Tier 2 and is not included here).
 - `program/scripts/fetch-openaq-station-metadata.py`  `52311cd5e082…`
 - `program/scripts/reconcile-official-openaq-stations.py`  `849137bed27f…`
 - `program/scripts/scan-official-openaq-candidate-crosswalk-sources.py`  `988d701d01a6…`
+- `program/scripts/scan-official-openaq-candidate-public-feed-sources.py`  `d2ec39679996…`
 - `program/source-inputs/candidate-crosswalk-public-source-seed.csv`  `f8c24b78e130…`
+- `program/source-inputs/candidate-public-feed-source-seed.csv`  `65a5cdf1a6c2…`
 - `program/source-inputs/regulator-source-inventory-seed.csv`  `53c155ad76dd…`
 
 ### Shared governance
@@ -128,7 +133,7 @@ website is Tier 2 and is not included here).
 - `shared/CLAUDE.md`  `b5db191363fb…`
 - `shared/references.bib`  `4940e86a69c9…`
 - `shared/red-team.md`  `fd096b32dcc1…`
-- `shared/versions.json`  `f81696cefe5e…`
+- `shared/versions.json`  `db8b89b65e1e…`
 - `shared/manifest.sha256`  `db692480ff8a…`
 - `shared/style-guide.md`  `aa146af42a4a…`
 - `shared/wip-register.md`  `b6dc4c42687c…`
@@ -138,4 +143,4 @@ website is Tier 2 and is not included here).
 
 The full SHA-256 of every file in this packet is at `packet-manifest.sha256`.
 
-— Generated 2026-06-19T08:46:55.099Z by `scripts/build-review-packet.mjs`.
+— Generated 2026-06-19T09:04:09.076Z by `scripts/build-review-packet.mjs`.

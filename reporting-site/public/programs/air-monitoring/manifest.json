@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T08:44:17.373Z",
+  "generated_at": "2026-06-19T09:03:51.326Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -174,6 +174,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_official_openaq_candidate_public_feed_source_scan",
+      "file": "official-openaq-candidate-public-feed-source-scan.md",
+      "label": "Air-monitoring official/OpenAQ candidate public-feed source scan",
+      "size": 5234,
+      "size_human": "5.1 KB",
+      "mtime": "2026-06-19T08:54:57.968Z",
+      "sha256": "7a627b81a0809052a471d2680f870f45da48ea6e8089a5a07c070e68840b905d",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -197,10 +207,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 5179,
-      "size_human": "5.1 KB",
-      "mtime": "2026-06-19T08:36:03.685Z",
-      "sha256": "3707467bdd112ca7ba87325e253144129545b7902aef50ed61bad95cafc89bb4",
+      "size": 5665,
+      "size_human": "5.5 KB",
+      "mtime": "2026-06-19T08:55:40.154Z",
+      "sha256": "c519abd16dcd2e3ebd50cc03bc57288db253b431653c909db310a3c4110125cb",
       "attestation_chain": "ai-first"
     }
   ],
@@ -276,6 +286,18 @@
       "size": 12322,
       "size_human": "12.0 KB",
       "sha256": "098fc2fb224b303fd03076ab121a78cc4c20deaf03cd0402d21b073056dd4b6b"
+    },
+    {
+      "file": "generated/air-monitoring-official-openaq-candidate-public-feed-source-scan-summary.json",
+      "size": 32819,
+      "size_human": "32.0 KB",
+      "sha256": "d25aa991587742d39ab1e2a28497cb705c7b55b3261fe131a53faa5f10d5c811"
+    },
+    {
+      "file": "generated/air-monitoring-official-openaq-candidate-public-feed-source-scan.csv",
+      "size": 13141,
+      "size_human": "12.8 KB",
+      "sha256": "263ef9cf7bbef1226e4cdc3e21c486d6d9868ac7cb7b1e463141e53f80bec1ca"
     },
     {
       "file": "generated/air-monitoring-official-openaq-candidate-review-summary.json",

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, and monitor-grade evidence ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until method sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -62,7 +62,10 @@ overrides priority by editing this list.
    validated same-station joins, and 0 station-radius-ready rows. The candidate
    crosswalk source scan then retrieves five public source URLs and screens all
    6 OpenAQ `isMonitor` candidate rows as separate nearby stations while
-   keeping validated joins and radius-ready rows at 0. The
+   keeping validated joins and radius-ready rows at 0. The candidate
+   public-feed source scan retrieves 10 public source URLs and screens all 7
+   not-`isMonitor` candidate rows as public-feed nearby rows that are not
+   join-ready, again keeping validated joins and radius-ready rows at 0. The
    monitor-grade evidence audit covers 239 official-source rows and finds 31
    source-specific method-standard signal rows in Bangladesh, 138 automatic or
    official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
@@ -184,6 +187,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (air-monitoring candidate public-feed source scan):** Added
+  `air-monitoring/source-inputs/candidate-public-feed-source-seed.csv`,
+  `air-monitoring/scripts/scan-official-openaq-candidate-public-feed-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-public-feed-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-official-openaq-candidate-public-feed-source-scan-summary.json`,
+  and wrote
+  `air-monitoring/official-openaq-candidate-public-feed-source-scan.md`. The
+  scan targets the 7 candidate rows not marked `isMonitor` in OpenAQ, retrieves
+  all 10 seeded public source URLs, records 7 official-coordinate rows, 7
+  OpenAQ-coordinate rows, 7 public-feed owner/provider rows, and 2 rows where
+  the same OpenAQ public-feed location is reused across multiple official
+  candidates. It screens all 7 rows as public-feed nearby rows that are not
+  join-ready and keeps official agency owner/provider matches, shared station
+  IDs, source-owner crosswalks, current-status crosswalks, documented
+  co-location rows, validated same-station joins, and station-radius-ready rows
+  at 0. The next row-level source-review queue is the broader one-signal set:
+  near-only, name-only-not-near, and monitor-grade one-signal official rows.
+  The public route now renders the candidate public-feed source-scan panel.
+  Chrome CDP QA passed at 1440x1100 and 390x1000 with 5 public-feed stat
+  cards, 4 country cards, 7 row cards, 10 source cards, 3 download links, no
+  page or section horizontal overflow, no text overflow, and no console/page
+  errors. Screenshots:
+  `reporting-site/qa/showcase-air-public-feed-source-scan-desktop.png`,
+  `reporting-site/qa/showcase-air-public-feed-source-scan-mobile.png`, and
+  `reporting-site/qa/showcase-air-public-feed-source-scan-mobile-sources.png`.
 - **2026-06-19 (air-monitoring candidate crosswalk source scan):** Added
   `air-monitoring/source-inputs/candidate-crosswalk-public-source-seed.csv`,
   `air-monitoring/scripts/scan-official-openaq-candidate-crosswalk-sources.py`,
@@ -199,8 +229,8 @@ by leaving the board in a state the next session can read.
   Uzbekistan StateAir-adjacent rows, screens all 6 as
   `separate_nearby_stations`, and keeps shared station-ID rows,
   source-crosswalk rows, documented co-location rows, validated same-station
-  joins, and station-radius-ready rows at 0. The 7 not-`isMonitor`
-  public-feed candidate rows remain the next row-level source-review queue.
+  joins, and station-radius-ready rows at 0. The follow-on public-feed scan
+  handles the 7 not-`isMonitor` rows separately.
   The public route now renders the candidate crosswalk source-scan panel.
   Chrome CDP QA passed at 1440x1100 and 390x1000 with 5 source-scan stat
   cards, 2 country cards, 6 row cards, 5 source cards, 3 download links, no

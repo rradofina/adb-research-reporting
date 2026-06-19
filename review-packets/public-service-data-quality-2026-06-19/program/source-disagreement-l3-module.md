@@ -576,6 +576,37 @@ they cannot supply source-owner clarification, human location validation, or
 facility-level ground truth. The public route should therefore show the matrix
 as an open reviewer queue, not as a new validation result.
 
+## Human-Validation Worksheet Addendum
+
+The human-validation worksheet now lives in
+`facility-validation-human-validation-worksheet.md`. The script
+`scripts/build-bgd-facility-human-validation-worksheet.py` reads the 39-row
+human-gated handoff CSV without fetching new data. It pre-fills the row
+identifiers, public evidence basis, review questions, minimum acceptable
+evidence rules, primary reviewer role, and allowed decision values. It leaves
+the human-validation status, reviewer identity/role, review date, evidence
+references, proposed decision, rationale, and post-review gate fields blank.
+
+The pass covers the same 39 handoff rows:
+
+| Human-validation worksheet signal | Rows |
+|---|---:|
+| Worksheet rows | 39 |
+| Handoff groups | 5 |
+| Primary reviewer-role classes | 2 |
+| Blank human-validation status fields | 39 |
+| Blank proposed-decision fields | 39 |
+| Prefilled external contacts made | 0 |
+| Prefilled closure-allowed rows | 0 |
+| Prefilled reclassification-allowed rows | 0 |
+| Prefilled map-absence-allowed rows | 0 |
+| Prefilled coordinate-correction-allowed rows | 0 |
+
+The practical rule is that the worksheet can make future human review more
+consistent, but it does not perform that review. A blank status is the right
+status until a public official source, source-owner response, or human
+location validation supplies the missing evidence.
+
 ## Source-Repair Public Evidence Addendum
 
 The source-repair evidence attachment now lives in
@@ -769,6 +800,7 @@ python public-service-data-quality/scripts/build-bgd-facility-priority-name-conf
 python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
+python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -818,6 +850,8 @@ Outputs:
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-zero-osm-upazila-observability-review-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff-summary.json`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet.csv`
+- `public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence.csv`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-public-evidence-summary.json`
 - `public-service-data-quality/generated/psdq-bgd-facility-validation-source-repair-official-coordinate-evidence.csv`

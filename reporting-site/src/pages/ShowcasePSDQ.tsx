@@ -5885,6 +5885,15 @@ function PsdqHumanGatedHandoffPanel({ summary }: { summary: PsdqHumanGatedHandof
         <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-gated-handoff.csv" download>
           Download human-gated CSV
         </a>
+        <a href="/programs/public-service-data-quality/facility-validation-human-validation-worksheet.md" download>
+          Download human-validation worksheet note
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json" download>
+          Download worksheet summary JSON
+        </a>
+        <a href="/programs/public-service-data-quality/generated/psdq-bgd-facility-validation-human-validation-worksheet.csv" download>
+          Download worksheet CSV
+        </a>
         <p className="psdq-method-note">
           Selection rule: {summary.selection_rule}
         </p>

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
+| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
 | Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -31,6 +31,7 @@ evidence, possible same-facility review, priority name-conflict review,
 lower-priority name-conflict spot check,
 zero-OSM upazila observability review,
 human-gated handoff matrix,
+human-validation worksheet,
 public-explanation search, correction-record follow-up,
 clarification packet, registry-vintage review, and caveats, make the source
 upgrade clear in the public surface, and preserve the existing PR maturity
@@ -38,6 +39,36 @@ label without implying human-final review.
 
 ## Last completed
 
+- **2026-06-19:** Added the Bangladesh human-validation worksheet for the PSDQ
+  facility-validation handoff queue. New no-network script
+  `scripts/build-bgd-facility-human-validation-worksheet.py` reads
+  `generated/psdq-bgd-facility-validation-human-gated-handoff.csv`, then
+  writes
+  `generated/psdq-bgd-facility-validation-human-validation-worksheet.csv` and
+  `generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json`.
+  The pass creates 39 worksheet rows across 5 handoff groups and 2 reviewer
+  role classes. It pre-fills public evidence, review questions, minimum
+  acceptable evidence rules, allowed decision values, and current public
+  evidence gates; leaves 39 human-validation status fields and 39 proposed
+  decision fields blank; and carries forward 0 external contacts, 0 prefilled
+  closure rows, 0 prefilled reclassification rows, 0 prefilled map-absence
+  rows, and 0 prefilled coordinate-correction rows. Added
+  `facility-validation-human-validation-worksheet.md`, wired evidence sync and
+  review-packet inclusion, updated README/REPRODUCE/L3 notes, and linked the
+  worksheet downloads from `/showcase/psdq-source-disagreement`. This is a
+  no-contact review instrument, not source-owner response, human validation,
+  ground truth, coordinate correction, row closure, same-facility
+  reclassification, map-absence validation, a maturity promotion, or a
+  human-final upgrade. Verification passed: worksheet script rerun, script
+  `py_compile`, evidence and reference sync, production site build, six
+  deterministic gates plus `git diff --check`, review packet and zip rebuild,
+  and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with worksheet
+  note/CSV links visible, 5 handoff group cards, 12 handoff row cards, no
+  page-level or card-level horizontal overflow, no page errors, and only
+  existing Vite / React Router development warnings. Screenshots:
+  `reporting-site/qa/showcase-psdq-human-validation-worksheet-links-desktop.png`
+  and
+  `reporting-site/qa/showcase-psdq-human-validation-worksheet-links-mobile.png`.
 - **2026-06-19:** Added the Bangladesh human-gated handoff matrix for the
   PSDQ facility-validation queue. New no-network script
   `scripts/build-bgd-facility-human-gated-handoff.py` reads the source-repair

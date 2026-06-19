@@ -91,6 +91,10 @@ workbook and Codex seeded the canonical cache.
   and lower-priority name-conflict reviews, and zero-OSM observability summary.
   It consolidates open rows that still require source-owner clarification or
   human validation. It is not human validation.
+- The Bangladesh human-validation worksheet is a no-network pass over the
+  human-gated handoff matrix. It pre-fills public evidence and row-class
+  minimum evidence rules while leaving every human-review decision field blank.
+  It is not human validation.
 - The Bangladesh source-repair public-evidence attachment is a no-network pass
   over the decision ledger and targeted-row confirmation packet. It attaches
   public DGHS profile and OSM API evidence to the four source-repair-first rows
@@ -236,6 +240,7 @@ python public-service-data-quality/scripts/build-bgd-facility-priority-name-conf
 python public-service-data-quality/scripts/build-bgd-facility-lower-priority-name-conflict-review.py
 python public-service-data-quality/scripts/build-bgd-facility-zero-osm-upazila-observability-review.py
 python public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py
+python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
 python public-service-data-quality/scripts/attach-bgd-facility-source-repair-public-evidence.py
 python public-service-data-quality/scripts/explain-bgd-facility-source-repair-official-coordinates.py
 python public-service-data-quality/scripts/search-bgd-facility-source-repair-public-explanations.py
@@ -635,6 +640,28 @@ name-conflict rows, 6 lower-priority name-conflict rows, and 18 zero-OSM
 facility-row absence gates. It records 39 rows requiring human or source-owner
 action. It allows 0 closures, 0 same-facility reclassifications, 0 map-absence
 uses, and 0 coordinate corrections.
+
+## Bangladesh facility-validation human-validation worksheet
+
+This step does not fetch data. It reads the human-gated handoff CSV, pre-fills
+the public evidence and group-specific minimum evidence rules, and leaves the
+human-review decision fields blank.
+
+```bash
+python public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py
+```
+
+Expected outputs:
+
+- `generated/psdq-bgd-facility-validation-human-validation-worksheet.csv`
+- `generated/psdq-bgd-facility-validation-human-validation-worksheet-summary.json`
+
+The output status is `ai_human_validation_worksheet_not_validation`. The
+current pass creates 39 worksheet rows across 5 handoff groups and 2 reviewer
+role classes. It leaves 39 human-validation status fields and 39 proposed
+decision fields blank. It carries forward 0 prefilled external contacts, 0
+prefilled closure rows, 0 prefilled reclassification rows, 0 prefilled
+map-absence rows, and 0 prefilled coordinate-correction rows.
 
 ## Bangladesh facility-validation source-repair public evidence
 

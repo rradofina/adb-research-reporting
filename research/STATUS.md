@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall) |
+| Active flagship | `public-service-data-quality` (PR; ai-first finished 2026-05-07; BGD source-disagreement L3 module, validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row public-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added 2026-06-19; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall) |
 | Per-program board | [`public-service-data-quality/STATUS.md`](../public-service-data-quality/STATUS.md) |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -40,7 +40,7 @@ overrides priority by editing this list.
    16-row public-source decision-ledger, 3-row possible same-facility review,
    9-row priority name-conflict review, 6-row lower-priority name-conflict
    spot check, 115-upazila zero-OSM observability review, 39-row human-gated
-   handoff matrix, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation
+   handoff matrix, 39-row human-validation worksheet, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation
    search, 3-row correction-record follow-up, 3-row no-contact clarification
    packet, and 3-row
    registry-vintage review added 2026-06-19*. Owner-only source contact or
@@ -163,6 +163,33 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-19 (PSDQ human-validation worksheet):** Added
+  `public-service-data-quality/scripts/build-bgd-facility-human-validation-worksheet.py`,
+  generated
+  `psdq-bgd-facility-validation-human-validation-worksheet.csv` and
+  `psdq-bgd-facility-validation-human-validation-worksheet-summary.json`, and
+  wrote
+  `public-service-data-quality/facility-validation-human-validation-worksheet.md`.
+  The no-network review reads the 39-row human-gated handoff CSV, then
+  pre-fills public evidence, review questions, minimum acceptable evidence
+  rules, allowed decision values, and current public evidence gates. It leaves
+  39 human-validation status fields and 39 proposed decision fields blank and
+  carries forward 0 external contacts, 0 prefilled closure rows, 0 prefilled
+  reclassification rows, 0 prefilled map-absence rows, and 0 prefilled
+  coordinate-correction rows. This is a no-contact review instrument, not
+  source-owner response, human validation, ground truth, coordinate correction,
+  row closure, same-facility reclassification, map-absence validation, maturity
+  promotion, or a human-final upgrade. Verification passed: worksheet script
+  rerun, script `py_compile`, evidence/reference sync, production site build,
+  six deterministic gates plus `git diff --check`, review packet and zip
+  rebuild, and agent-browser desktop/mobile QA at 1440x1100 and 390x900 with
+  worksheet note/CSV links visible, no page-level or card-level horizontal
+  overflow, no page errors, and only existing Vite / React Router development
+  warnings.
+  Screenshots:
+  `reporting-site/qa/showcase-psdq-human-validation-worksheet-links-desktop.png`
+  and
+  `reporting-site/qa/showcase-psdq-human-validation-worksheet-links-mobile.png`.
 - **2026-06-19 (PSDQ human-gated handoff matrix):** Added
   `public-service-data-quality/scripts/build-bgd-facility-human-gated-handoff.py`,
   generated `psdq-bgd-facility-validation-human-gated-handoff.csv` and

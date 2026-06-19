@@ -273,6 +273,30 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (flood access source-readiness wall):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/flood-component-decomposition` from a rank-flip-only audit into a
+  decomposition plus public access source-readiness wall. Added
+  `flood-market-access/scripts/audit-access-source-readiness.py`, cache
+  regeneration notes under `flood-market-access/.cache/README.md`, generated
+  `flood-decomposition-access-source-audit.json`,
+  `flood-access-source-readiness.json`, and source/link CSV companions, and
+  registered `flood_access_source_readiness_public_metadata` in
+  `versions.json`. The audit verifies 109 Geofabrik `.osm.pbf` links including
+  65 latest extract links, one HDX/WFP food-prices CSV resource whose sampled
+  header has no coordinate fields, 5,221 WorldPop dataset rows including 861
+  panel rows across all 41 flood-panel economies, and public Global Flood
+  Database / NASA flood-product metadata including 913 GFD Earth Engine events
+  for 2000-2018. It keeps `analysis_ready_network_join: false`: no road
+  extract is downloaded, no market points are geocoded, no population raster is
+  downloaded, no observed flood footprint is exported, no road edges are cut,
+  no travel time is routed, and no population-weighted access-loss estimate is
+  produced. Verification in this pass reran the flood scripts, synced public
+  artifacts, built the reporting site, ran the deterministic gates and
+  showcase verifier, and browser-checked desktop plus 390px mobile with no page
+  errors, failed requests, or page-level horizontal overflow. Screenshots:
+  `reporting-site/qa/showcase-flood-access-source-desktop.png` and
+  `reporting-site/qa/showcase-flood-access-source-mobile.png`.
 - **2026-06-20 (coastal spatial source-readiness wall):** In the
   owner-directed 20-report showcase loop, upgraded
   `/showcase/coastal-population-denominator` from a no-population rank bridge

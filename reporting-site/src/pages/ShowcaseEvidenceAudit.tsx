@@ -598,6 +598,9 @@ function buildCoastalModel(report: ShowcaseReport, data: JsonValue): AuditModel 
 
 function buildFloodModel(report: ShowcaseReport, data: JsonValue): AuditModel {
   const rowsAll = safeRows(data.rows);
+  const readiness = data.access_source_readiness || {};
+  const sourceSummary = readiness.summary || {};
+  const hasSourceWall = Boolean(readiness.summary);
   const committedRank = new Map(
     [...rowsAll]
       .sort((a, b) => numberValue(b.index_committed) - numberValue(a.index_committed))
@@ -629,26 +632,103 @@ function buildFloodModel(report: ShowcaseReport, data: JsonValue): AuditModel {
     };
   });
 
+  const sourceTrail = sourceFacts(report, data);
+  if (readiness.retrieved_at) {
+    sourceTrail.push({ label: "Access source-wall retrieval", value: String(readiness.retrieved_at) });
+  }
+  if (sourceSummary.road_extract_total_pbf_links_visible !== undefined) {
+    sourceTrail.push({
+      label: "Road-source visibility",
+      value: `${formatNumber(sourceSummary.road_extract_total_pbf_links_visible)} Geofabrik .osm.pbf links; ${formatNumber(sourceSummary.road_extract_latest_pbf_links_visible)} latest`,
+    });
+  }
+  if (sourceSummary.market_csv_size_mb !== undefined) {
+    sourceTrail.push({
+      label: "Market-source visibility",
+      value: `HDX/WFP CSV ${formatFlexible(sourceSummary.market_csv_size_mb, 1)} MB; coordinate fields in sampled header: ${String(sourceSummary.market_coordinate_fields_visible_in_sample_header)}`,
+    });
+  }
+  if (sourceSummary.gfd_earth_engine_dataset_id_visible !== undefined) {
+    sourceTrail.push({
+      label: "Flood-footprint catalog",
+      value: `GFD dataset ID visible=${String(sourceSummary.gfd_earth_engine_dataset_id_visible)}; parsed events=${formatNumber(sourceSummary.gfd_earth_engine_event_count_parsed)}`,
+    });
+  }
+
+  const caveats = baseCaveats(report, data);
+  if (data.flood_data_wall) caveats.push(String(data.flood_data_wall));
+  if (readiness.claim_scope) caveats.push(String(readiness.claim_scope));
+
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceWall ? [
+      { value: formatFlexible(data.b_strip_size_terms?.spearman_headline_vs_per_capita, 3), label: "Spearman vs per-capita rank" },
+      { value: "0/4", label: "top-four survivors per capita" },
+      { value: formatNumber(sourceSummary.road_extract_latest_pbf_links_visible), label: "latest road extracts visible" },
+      { value: "0", label: "routed access joins computed" },
+    ] : [
       { value: formatFlexible(data.b_strip_size_terms?.spearman_headline_vs_per_capita, 3), label: "Spearman vs per-capita rank" },
       { value: "0/4", label: "top-four survivors per capita" },
       { value: formatFlexible(data.what_the_index_correlates_with?.pearson_index_vs_raw_flood_count, 3), label: "correlation with raw flood count" },
     ],
-    chartTitle: "Per-capita framing breaks the original flood-access top four.",
-    chartDeck: "The audit contrasts the committed index with a per-capita-per-million version and exposes the event-count term.",
+    chartTitle: hasSourceWall
+      ? "The country-rank bridge now sits beside an empty route object."
+      : "Per-capita framing breaks the original flood-access top four.",
+    chartDeck: hasSourceWall
+      ? "The bridge shows the rank break; the cards show public road, market, population, and flood-footprint sources before any route is claimed."
+      : "The audit contrasts the committed index with a per-capita-per-million version and exposes the event-count term.",
     leftLabel: "Committed proxy",
     rightLabel: "Per-capita alternative",
     rows,
+    componentCards: hasSourceWall ? [
+      {
+        key: "road-extracts",
+        value: formatNumber(sourceSummary.road_extract_latest_pbf_links_visible),
+        label: "Latest OSM extracts visible",
+        note: `${formatNumber(sourceSummary.road_extract_total_pbf_links_visible)} Geofabrik .osm.pbf links are visible, but no road graph or bridge-edge table is built.`,
+        status: "flag",
+      },
+      {
+        key: "market-csv",
+        value: `${formatNumber(sourceSummary.market_csv_resources)} CSV`,
+        label: "WFP market source visible",
+        note: `The sampled HDX/WFP header has market and price fields; coordinate fields visible in sample=${String(sourceSummary.market_coordinate_fields_visible_in_sample_header)}.`,
+        status: sourceSummary.market_coordinate_fields_visible_in_sample_header ? "flag" : "dropped",
+      },
+      {
+        key: "worldpop",
+        value: `${formatNumber(sourceSummary.worldpop_panel_iso_with_rows)}/${formatNumber(rowsAll.length)}`,
+        label: "Flood-panel economies with WorldPop rows",
+        note: `${formatNumber(sourceSummary.worldpop_panel_rows)} panel rows are visible through the catalog; no raster or population-weighted settlement layer is downloaded.`,
+        status: "flag",
+      },
+      {
+        key: "flood-footprint",
+        value: formatNumber(sourceSummary.gfd_earth_engine_event_count_parsed),
+        label: "GFD catalog events parsed",
+        note: `Dataset ID visible=${String(sourceSummary.gfd_earth_engine_dataset_id_visible)} for 2000-2018, but no observed flood raster or road-edge overlay is exported.`,
+        status: "flag",
+      },
+      {
+        key: "access-join",
+        value: "not joined",
+        label: "Road-market-flood object",
+        note: "No market geocoding, flooded-edge cut, routed travel time, or population-weighted access-loss estimate is computed.",
+        status: "dropped",
+      },
+    ] : undefined,
     readouts: [
       { label: "Committed top four", value: committedTop.join(", ") },
       { label: "Per-capita top four", value: perCapTop.join(", ") },
       { label: "Dropped per capita", value: strings(data.b_strip_size_terms?.dropped_per_capita).join(", ") },
+      ...(hasSourceWall ? [
+        { label: "Access source layers checked", value: formatNumber(sourceSummary.access_source_layers_checked) },
+        { label: "Analysis-ready network join", value: String(sourceSummary.analysis_ready_network_join) },
+      ] : []),
       { label: "Index reading", value: data.what_the_index_correlates_with?.reading || "size-and-reporting audit" },
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(caveats),
     generatedAt: data.generated_at,
   };
 }

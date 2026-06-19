@@ -46,7 +46,7 @@ candidates before adding new surfaces.
 | 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks now include a UNHCR forced-displacement corridor-type falsifier: Afghanistan is the forced-displacement-majority exception, while the share top five is not | Needs labor, family, student, temporary-work, visa, and deployment corridor evidence before migration-purpose interpretation | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR forced-displacement layer |
 | 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition now sits beside a public NASA CMR Black Marble source-readiness wall, so the owner-gated NTL join is explicit rather than hand-waved | Needs authenticated raster access, population-weighted zonal statistics, subnational MPI crosswalks, flare masking, and coauthor attestation before any NTL x MPI claim | Keep as methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared |
 | 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge now sits beside a GHSL/NASADEM/Aqueduct source-readiness wall, so the proxy cannot overclaim storm-surge exposure | Needs raster download, return-period choice, low-elevation derivation, settlement-footprint overlay, and exposed-population denominator | Choose one-coast pilot and join settlement, elevation, population, informality, and coastal-hazard cells |
-| 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size | Needs roads, markets/services, flood footprint, and travel-time logic | Build one-DMC flooded-network pilot or demote to methods caution |
+| 13 | Flood component decomposition | Evidence audit | Per-capita rerank shows the flood proxy is mostly event counts and population size, and the new Geofabrik/WFP/WorldPop/GFD/NASA source wall keeps every routed-access join flag false | Needs downloaded and routed road graph, geocoded markets/services, population raster weights, observed flood footprint, cut road edges, and travel-time recomputation | Build one-DMC flooded-network pilot from the visible source stack or demote to methods caution |
 | 14 | Climate-health measurement repair | Evidence audit | PM2.5 cap lanes reveal drift toward labor-share ranking | Needs labor-force denominator and heat exposure evidence | Repair denominator and lead with cap sensitivity |
 | 15 | Food-price coverage trap | Evidence audit | Coverage funnel foregrounds missing CPI/import indicator legs | Needs household or market price exposure evidence | Join a market-price or household-expenditure source |
 | 16 | Social-protection dropped leg | Evidence audit | Missing-leg ledger shows why some economies disappear from the headline | Needs payment-channel or beneficiary delivery data | Rebuild as coverage-versus-payment-rail observability |
@@ -138,6 +138,22 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-coastal-spatial-source-desktop-visual.png`,
   `reporting-site/qa/showcase-coastal-spatial-source-mobile.png`, and
   `reporting-site/qa/showcase-coastal-spatial-source-mobile-visual.png`.
+- Flood-market-access report #13 received an access source-readiness wall on
+  2026-06-20. New script
+  `flood-market-access/scripts/audit-access-source-readiness.py` queries
+  Geofabrik extract indexes, HDX/WFP food-price metadata plus a header sample,
+  WorldPop population dataset-list metadata, Global Flood Database pages, NASA
+  NRT flood-product pages, and NASA CMR flood-discovery metadata, then emits
+  `flood-decomposition-access-source-audit.json`. The audit finds 109
+  Geofabrik `.osm.pbf` links including 65 latest extract links, one HDX/WFP
+  CSV resource whose sampled header lacks coordinate fields, 5,221 WorldPop
+  rows including 861 panel rows across all 41 flood-panel economies, and a
+  visible `GLOBAL_FLOOD_DB/MODIS_EVENTS/V1` catalog with 913 events for
+  2000-2018. It still records `analysis_ready_network_join: false`: no OSM
+  extract is downloaded, no market points are geocoded, no population raster is
+  downloaded, no observed flood footprint is exported, no road edges are cut,
+  no travel time is routed, and no population-weighted access-loss estimate is
+  produced.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`
   reads the existing BGD exposure and road-context artifacts and writes

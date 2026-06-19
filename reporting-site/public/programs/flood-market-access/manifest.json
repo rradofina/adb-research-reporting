@@ -1,7 +1,7 @@
 {
   "program": "flood-market-access",
   "permanent_url": "/program/flood-market-access/evidence",
-  "generated_at": "2026-06-19T19:52:32.840Z",
+  "generated_at": "2026-06-19T20:05:34.895Z",
   "hero": {
     "png": "generated/charts/flood-market-access-thumbnail.png",
     "svg": "generated/charts/flood-market-access-thumbnail.svg",
@@ -144,6 +144,24 @@
       "sha256": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
     },
     {
+      "file": "generated/flood-access-source-readiness-links.csv",
+      "size": 7113,
+      "size_human": "6.9 KB",
+      "sha256": "dbf7972d20cc1cf4ccb9feae1faf53a785674d8b5a74cf17f117c9d8af533bc9"
+    },
+    {
+      "file": "generated/flood-access-source-readiness-sources.csv",
+      "size": 2034,
+      "size_human": "2.0 KB",
+      "sha256": "1e1f408ac5c777435a49316416f22c959eb1f15bd3f72b8b5e9d7988209cc4ce"
+    },
+    {
+      "file": "generated/flood-access-source-readiness.json",
+      "size": 39430,
+      "size_human": "38.5 KB",
+      "sha256": "1c6f98da9181a21ad8ceaf593a82e7ebc1120215c48a35c82f47968e9e458996"
+    },
+    {
       "file": "generated/flood-decompose-deepening.csv",
       "size": 2608,
       "size_human": "2.5 KB",
@@ -153,7 +171,13 @@
       "file": "generated/flood-decompose-deepening.json",
       "size": 18628,
       "size_human": "18.2 KB",
-      "sha256": "29d5b9890cb9447b54bfbbd9397985375d8ea1bdfab51134d3329809c2b0ca3b"
+      "sha256": "0fefced0bedc05d17007bbecd65d9b39676278c2c3d97775577fb34680de4d23"
+    },
+    {
+      "file": "generated/flood-decomposition-access-source-audit.json",
+      "size": 60566,
+      "size_human": "59.1 KB",
+      "sha256": "b8421c50cc9e3230ae2182186136a01a5d018b2878ed1af864e54e750fd46c86"
     },
     {
       "file": "generated/flood-market-access-adb-panel.csv",

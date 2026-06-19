@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T19:48:56.963Z
+Generated: 2026-06-19T20:10:20.444Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 316
-- QA browser-check JSON files in reporting-site/qa: 18
+- QA screenshot files in reporting-site/qa: 328
+- QA browser-check JSON files in reporting-site/qa: 20
 - Verification failures: 0
 
 ## Readiness Mix
@@ -45,7 +45,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Add national deployment or visa-class evidence for selected Pacific, Caucasus, and Afghanistan corridors beyond the UNHCR force... |
 | 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion, zonal statistics, and coauthored review are cleared. |
 | 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot, pull the named raster layers, and join settlement, elevation, population, informality, and coastal-ha... |
-| 13 | Flood access decomposition | Evidence audit | ok | ok | ok | Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note. |
+| 13 | Flood access decomposition | Evidence audit | ok | ok | ok | Build a one-DMC flooded-network pilot from the visible source stack, or demote the proxy to a source-method caution note. |
 | 14 | Climate-health sensitivity repair | Evidence audit | ok | ok | ok | Replace total-population exposure with labor-force denominators and document cap sensitivity as the lead chart. |
 | 15 | Food price coverage trap | Evidence audit | ok | ok | ok | Join a market-price or household-expenditure source for one DMC and keep WDI coverage as the source audit. |
 | 16 | Social-protection dropped leg | Evidence audit | ok | ok | ok | Search public payment-channel metadata and rebuild the screen as coverage-versus-payment-rail observability. |

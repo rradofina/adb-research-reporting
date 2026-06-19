@@ -126,34 +126,32 @@ disaster-reporting density, not flood-driven market isolation.
 
 The frontier object the program name claims is **population-weighted travel
 time from rural settlements to the market they actually use, recomputed with
-road segments cut where they cross an observed flood footprint.** That needs
-four layers, none of which is in the committed panel:
+road segments cut where they cross an observed flood footprint.** The new
+source-readiness script makes that wall concrete instead of speculative:
+`scripts/audit-access-source-readiness.py` queries public source metadata and
+emits `generated/flood-decomposition-access-source-audit.json`,
+`generated/flood-access-source-readiness-sources.csv`, and a link companion.
 
-- **Road and bridge network:** OpenStreetMap road graph, routed with a
-  travel-time engine (OSRM), or the Malaria Atlas Project friction surface as a
-  coarse fallback.
-- **Market locations:** WFP/VAM and FAO/GIEWS georeferenced market price
-  points.
-- **Population:** WorldPop gridded population to weight settlements.
-- **Observed inundation footprint:** Sentinel-1 SAR flood maps (UNOSAT
-  rapid-mapping, Global Flood Database / Dartmouth Flood Observatory) to break
-  the right road edges — *not* GLOFAS, which is a modeled hazard, not observed
-  inundation. The model-vs-observed gap (GLOFAS modeled extent vs Sentinel-1
-  SAR observed extent) is itself a separate finding (`deep-questions.md` §1.2).
+The audit confirms that the four source families are visible but not yet
+joined:
 
-**The wall is partly soft and partly hard.** OSM, WorldPop, WFP/FAO market
-points, Sentinel-1 SAR, and JRC Global Surface Water are all open and blocked
-only by not yet having been fetched and routed — and the network is blocked in
-this environment, so they cannot be retrieved now. The one genuinely hard,
-owner-gated dependency is **GLOFAS modeled extent** (account / Earth Engine
-OAuth on the owner's identity); but the keystone construct test in §1.1 does
-not need GLOFAS — the observed Sentinel-1 SAR comparison stands on its own once
-network access is available. Until the road graph and an observed flood
-footprint are actually joined, the index should keep the name "triage label,"
-not "market-access measure."
+| Layer needed for a true access claim | Public-source status from the audit | Still missing |
+|---|---|---|
+| Road and bridge network | Geofabrik exposes 109 `.osm.pbf` links across Asia and Oceania, including 65 latest extract links | No extract downloaded, no routable graph, no bridge/edge table |
+| Market locations | HDX/WFP resolves one Global Food Prices Database CSV resource, about 225.8 MB; the sampled header has market/admin/commodity/month/price fields | No full CSV pull, no coordinate fields visible in the sampled header, no market geocoding or service catchment |
+| Population weights | WorldPop returns 5,221 population dataset rows; 861 rows cover all 41 economies in the flood panel; latest listed year is 2020 | No raster download, settlement weighting, or zonal statistic |
+| Observed flood footprint | The Global Flood Database Earth Engine catalog exposes `GLOBAL_FLOOD_DB/MODIS_EVENTS/V1`, parses as 913 events for 2000-2018, and the NASA NRT flood-products page exposes MODIS/VIIRS flood products | No event raster, Sentinel-1/MODIS/SAR mask, or flood-edge overlay downloaded/exported |
+
+The analysis-ready flags remain false: no road graph is built, no market points
+are joined, no WorldPop grid is downloaded, no observed flood footprint is
+downloaded, no road edges are cut, no travel time is routed, and no
+population-weighted access-loss estimate is produced. Until those layers are
+actually joined, the index should keep the name "triage label," not
+"market-access measure."
 
 ## Reproduce
 
 ```bash
 python flood-market-access/scripts/deepen-decompose.py
+python flood-market-access/scripts/audit-access-source-readiness.py
 ```

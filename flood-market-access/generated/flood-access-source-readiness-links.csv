@@ -1,0 +1,47 @@
+layer_role,source_name,href,rel_or_label,file_type,selected_for_analysis
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/afghanistan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/armenia-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/azerbaijan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/bangladesh-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/bhutan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/cambodia-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/china-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/east-timor-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/india-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/indonesia-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/iran-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/iraq-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/japan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/jordan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/kazakhstan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/kyrgyzstan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/laos-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/lebanon-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/malaysia-singapore-brunei-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/maldives-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/mongolia-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/myanmar-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/nepal-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/north-korea-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/pakistan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/philippines-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/sea-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/south-korea-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/sri-lanka-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/syria-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/taiwan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/tajikistan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/thailand-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/turkmenistan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/uzbekistan-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/vietnam-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+road_network,Geofabrik OpenStreetMap extract index,https://download.geofabrik.de/asia/yemen-latest.osm.pbf,latest .osm.pbf extract,pbf,False
+market_locations,HDX/WFP Global Food Prices Database,https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv,Global Food Prices Database (WFP),csv,False
+population_weight,WorldPop REST dataset list,https://www.worldpop.org/rest/data/pop/wpgp,wpgp population dataset API,json,False
+observed_flood_footprint,Observed flood-footprint candidate metadata,https://global-flood-database.cloudtostreet.ai/,Global Flood Database project page,html/json,False
+observed_flood_footprint,Observed flood-footprint candidate metadata,https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1,Earth Engine catalog: GLOBAL_FLOOD_DB/MODIS_EVENTS/V1,html/json,False
+observed_flood_footprint,Observed flood-footprint candidate metadata,https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products,NASA NRT Global Flood Products,html/json,False
+observed_flood_footprint,Observed flood-footprint candidate metadata,https://cmr.earthdata.nasa.gov/search/collections.json?keyword=Dartmouth+Flood+Observatory&page_size=10,NASA CMR keyword search: Dartmouth Flood Observatory,json,False

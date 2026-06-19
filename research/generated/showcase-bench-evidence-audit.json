@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:48:56.963Z",
+  "generated_at": "2026-06-19T20:10:20.444Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 316,
-    "browserChecks": 18
+    "screenshots": 328,
+    "browserChecks": 20
   },
   "summary": {
     "reports_total": 20,
@@ -312,19 +312,19 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "flood-market-access/generated/flood-decompose-deepening.json",
+      "evidencePath": "flood-market-access/generated/flood-decomposition-access-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/flood-market-access/generated/flood-decompose-deepening.json",
+      "auditDataUrl": "/programs/flood-market-access/generated/flood-decomposition-access-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/flood-market-access/generated/flood-decompose-deepening.csv",
+      "auditCsvUrl": "/programs/flood-market-access/generated/flood-access-source-readiness-sources.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Build a one-DMC flooded-network pilot or demote the proxy to a source-method caution note."
+      "nextUpgrade": "Build a one-DMC flooded-network pilot from the visible source stack, or demote the proxy to a source-method caution note."
     },
     {
       "id": 14,

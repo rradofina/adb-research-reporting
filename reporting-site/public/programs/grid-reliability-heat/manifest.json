@@ -1,7 +1,7 @@
 {
   "program": "grid-reliability-heat",
   "permanent_url": "/program/grid-reliability-heat/evidence",
-  "generated_at": "2026-06-19T18:48:33.113Z",
+  "generated_at": "2026-06-19T19:09:48.961Z",
   "hero": {
     "png": "generated/charts/grid-reliability-heat-thumbnail.png",
     "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
@@ -153,7 +153,31 @@
       "file": "generated/grid-generation-deepening.json",
       "size": 11578,
       "size_human": "11.3 KB",
-      "sha256": "71d25de21b3b870d03b9339d6571b47457c13e7fe73de5c0f78965317eb4fde8"
+      "sha256": "b3cdd7ca739152e48c65a632119820f76ce0d761da2e68fa57f0124021b2b443"
+    },
+    {
+      "file": "generated/grid-generation-reliability-source-audit.json",
+      "size": 108614,
+      "size_human": "106.1 KB",
+      "sha256": "f3fea3956d101276538b7413350fc767f859cd0c9a926064689c37e34773beb4"
+    },
+    {
+      "file": "generated/grid-public-reliability-proxy-readiness-country.csv",
+      "size": 14693,
+      "size_human": "14.3 KB",
+      "sha256": "cbe56da40c7899397508dc398568afe7472ef021082c6e8eab1b9d599b26267a"
+    },
+    {
+      "file": "generated/grid-public-reliability-proxy-readiness-indicators.csv",
+      "size": 7015,
+      "size_human": "6.9 KB",
+      "sha256": "7f6f51d2caba82253ec3ba48de2798b33c7dc34883d7509d6d4c267d7ec83926"
+    },
+    {
+      "file": "generated/grid-public-reliability-proxy-readiness.json",
+      "size": 92569,
+      "size_human": "90.4 KB",
+      "sha256": "7b663f752713af295922629ff07edd4a126dcb9bae76b15f9158eb41b6659e35"
     },
     {
       "file": "generated/grid-reliability-heat-adb-panel.csv",
@@ -165,7 +189,7 @@
       "file": "generated/grid-reliability-heat-adb-panel.json",
       "size": 21974,
       "size_human": "21.5 KB",
-      "sha256": "6ca7f8be9dcd764e9709402896595c4ba3623cf12882bf03a48f5d9956a0b519"
+      "sha256": "361c7097879f9d156ea7b7bd2d47c27a53eced6ed8f85ab2eff572e3b0966759"
     }
   ],
   "articles": [

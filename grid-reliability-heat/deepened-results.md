@@ -82,8 +82,40 @@ screen reported. The screen had the right worry and the wrong variable.
   estimate; the database is a 2022-vintage snapshot, so post-2022 solar is
   absent (the same limitation the capacity headline carries).
 
+## Public reliability-proxy source check
+
+The next source question is whether the generation-concentration screen can be
+linked to a public reliability proxy before the report uses reliability
+language. `scripts/audit-public-reliability-proxies.py` queries 15 World Bank
+indicator endpoints: firm outage exposure and value-loss indicators,
+Enterprise Survey legacy outage measures, Doing Business electricity
+reliability indicators, and B-READY utility-service scores.
+
+The result is a source-readiness object, not a reliability estimate. The audit
+finds 38 ADB DMCs with at least one public reliability proxy, 22 DMCs with
+both a generation-concentration result and at least one proxy, and 8 DMCs with
+high generation concentration (`H >= 0.8`) plus at least one proxy. The proxy
+vintages span 2009-2025. Three cataloged outage-duration or outage-count
+endpoints return no usable ADB-DMC observations through the World Bank API in
+this pull, which is recorded as a negative source result rather than hidden.
+
+The bridge is useful because it narrows the next real research task: the
+public data stack can crosswalk generation concentration against firm-reported
+outage exposure and institutional electricity-service indicators, but it still
+does not observe reserve margins, dispatch by season, outage event records, or
+heat-stress curtailment. The report can therefore show a reliability-proxy
+source wall, not a reliability ranking.
+
+Artifacts:
+
+- `generated/grid-generation-reliability-source-audit.json`
+- `generated/grid-public-reliability-proxy-readiness.json`
+- `generated/grid-public-reliability-proxy-readiness-country.csv`
+- `generated/grid-public-reliability-proxy-readiness-indicators.csv`
+
 ## Reproduce
 
 ```bash
 python grid-reliability-heat/scripts/deepen-generation.py
+python grid-reliability-heat/scripts/audit-public-reliability-proxies.py
 ```

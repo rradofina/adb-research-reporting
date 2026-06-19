@@ -1,0 +1,148 @@
+{
+  "targetUrl": "http://127.0.0.1:5176/showcase/grid-generation-mismatch",
+  "checkedAt": "2026-06-19T19:09:18.550Z",
+  "browser": "system Chrome via Playwright headless",
+  "results": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900,
+      "metrics": {
+        "title": "When Single-Fuel Grids Meet Patchy Outage Evidence",
+        "url": "http://127.0.0.1:5176/showcase/grid-generation-mismatch",
+        "pageOverflow": false,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When Single-Fuel Grids Meet Patchy Outage Evidence": true,
+          "generation + proxy rows": true,
+          "Public proxy present": true,
+          "High H plus proxy": true,
+          "Queried indicators with zero ADB rows": true,
+          "This is not a power-reliability ranking": true
+        },
+        "cards": [
+          {
+            "label": "Public proxy present",
+            "value": "38/40"
+          },
+          {
+            "label": "Both layers ready",
+            "value": "22"
+          },
+          {
+            "label": "High H plus proxy",
+            "value": "8"
+          },
+          {
+            "label": "Queried indicators with zero ADB rows",
+            "value": "3"
+          },
+          {
+            "label": "B-READY utility rows",
+            "value": "13"
+          }
+        ],
+        "stats": [
+          "38",
+          "22",
+          "8",
+          "2009-2025"
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download source-audit JSON",
+            "href": "/programs/grid-reliability-heat/generated/grid-generation-reliability-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/grid-reliability-heat/generated/grid-public-reliability-proxy-readiness-country.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/grid-reliability-heat"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 820,
+      "metrics": {
+        "title": "When Single-Fuel Grids Meet Patchy Outage Evidence",
+        "url": "http://127.0.0.1:5176/showcase/grid-generation-mismatch",
+        "pageOverflow": false,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "overflowing": [],
+        "requiredTextPresence": {
+          "When Single-Fuel Grids Meet Patchy Outage Evidence": true,
+          "generation + proxy rows": true,
+          "Public proxy present": true,
+          "High H plus proxy": true,
+          "Queried indicators with zero ADB rows": true,
+          "This is not a power-reliability ranking": true
+        },
+        "cards": [
+          {
+            "label": "Public proxy present",
+            "value": "38/40"
+          },
+          {
+            "label": "Both layers ready",
+            "value": "22"
+          },
+          {
+            "label": "High H plus proxy",
+            "value": "8"
+          },
+          {
+            "label": "Queried indicators with zero ADB rows",
+            "value": "3"
+          },
+          {
+            "label": "B-READY utility rows",
+            "value": "13"
+          }
+        ],
+        "stats": [
+          "38",
+          "22",
+          "8",
+          "2009-2025"
+        ],
+        "sourceLinks": [
+          {
+            "text": "Download source-audit JSON",
+            "href": "/programs/grid-reliability-heat/generated/grid-generation-reliability-source-audit.json"
+          },
+          {
+            "text": "Download CSV companion",
+            "href": "/programs/grid-reliability-heat/generated/grid-public-reliability-proxy-readiness-country.csv"
+          },
+          {
+            "text": "Open program evidence page",
+            "href": "/grid-reliability-heat"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "networkErrors": []
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    "showcase-grid-reliability-proxy-desktop.png",
+    "showcase-grid-reliability-proxy-desktop-visual.png",
+    "showcase-grid-reliability-proxy-desktop-claim.png",
+    "showcase-grid-reliability-proxy-mobile.png",
+    "showcase-grid-reliability-proxy-mobile-visual.png",
+    "showcase-grid-reliability-proxy-mobile-claim.png"
+  ]
+}

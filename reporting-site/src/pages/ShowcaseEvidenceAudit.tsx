@@ -194,12 +194,20 @@ function buildGridModel(report: ShowcaseReport, data: JsonValue): AuditModel {
   const capacityTop = strings(data.capacity_top5);
   const generationTop = strings(data.generation_top5);
   const details = rowByIso(safeRows(data.rows_by_generation_herfindahl));
+  const readiness = data.reliability_proxy_readiness || {};
+  const readinessSummary = readiness.summary || {};
+  const readinessRows = rowByIso(safeRows(readiness.country_rows));
+  const indicatorRecords = safeRows(readiness.indicator_records);
+  const highProxyRows = safeRows(readiness.high_generation_proxy_rows);
+  const noAdbIndicatorCount = indicatorRecords.filter((row) => numberValue(row.adb_dmcs_with_latest) === 0).length;
   const overlap = capacityTop.filter((iso) => generationTop.includes(iso)).length;
   const rows = unique([...capacityTop, ...generationTop]).map((iso) => {
     const row = details.get(iso) || {};
+    const proxyRow = readinessRows.get(iso) || {};
     const leftRank = capacityTop.indexOf(iso);
     const rightRank = generationTop.indexOf(iso);
     const intensity = leftRank >= 0 && rightRank >= 0 ? Math.abs(leftRank - rightRank) * 18 + 24 : 88;
+    const proxyCount = numberValue(proxyRow.proxy_indicator_count);
     return {
       key: iso,
       label: iso,
@@ -208,32 +216,94 @@ function buildGridModel(report: ShowcaseReport, data: JsonValue): AuditModel {
       rightText: rankText(generationTop, iso, "generation"),
       leftValue: `H ${formatFlexible(row.herfindahl_capacity)}`,
       rightValue: `H ${formatFlexible(row.herfindahl_generation)}`,
-      note: `${row.top_fuel_capacity || "capacity fuel"} to ${row.top_fuel_generation || "generation fuel"}`,
+      note: `${row.top_fuel_capacity || "capacity fuel"} to ${row.top_fuel_generation || "generation fuel"}${
+        proxyCount ? `; ${proxyCount} public proxy fields` : ""
+      }`,
       status: statusFromSets(capacityTop.includes(iso), generationTop.includes(iso)),
       intensity,
     };
   });
+  const hasReadiness = Boolean(data.reliability_proxy_readiness);
+  const sourceTrail = sourceFacts(report, data);
+  if (readiness.retrieved_at) {
+    sourceTrail.push({ label: "Reliability proxy retrieval", value: String(readiness.retrieved_at) });
+  }
+  if (readiness.world_bank_api_base) {
+    sourceTrail.push({ label: "Proxy API base", value: String(readiness.world_bank_api_base) });
+  }
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasReadiness ? [
+      { value: formatNumber(readinessSummary.dmcs_with_any_reliability_proxy), label: "DMCs with public proxy" },
+      { value: formatNumber(readinessSummary.dmcs_with_generation_and_any_proxy), label: "generation + proxy rows" },
+      { value: formatNumber(readinessSummary.high_generation_concentration_and_proxy_rows), label: "high-concentration proxy rows" },
+      { value: String(readinessSummary.proxy_latest_year_span || "mixed"), label: "proxy vintage span" },
+    ] : [
       { value: `${overlap}/5`, label: "top-five overlap" },
-      { value: formatNumber(safeRows(data.rows_withheld_low_coverage).length), label: "low-coverage rows withheld" },
+      { value: formatNumber(strings(data.rows_withheld_low_coverage).length), label: "low-coverage rows withheld" },
       { value: formatNumber(safeRows(data.rows_by_generation_herfindahl).length), label: "generation-ranked rows" },
     ],
-    chartTitle: "Capacity rank is not enough. Generation coverage has to be visible.",
-    chartDeck: "The bridge compares the top fuel concentration screen using installed capacity and using reported or modeled generation.",
+    chartTitle: hasReadiness
+      ? "The fuel bridge now has a second wall: public reliability proxy coverage."
+      : "Capacity rank is not enough. Generation coverage has to be visible.",
+    chartDeck: hasReadiness
+      ? "The bridge still compares capacity and generation concentration, while the cards show whether public outage or electricity-service proxies exist before any reliability claim is made."
+      : "The bridge compares the top fuel concentration screen using installed capacity and using reported or modeled generation.",
     leftLabel: "Capacity screen",
     rightLabel: "Generation screen",
     rows,
+    componentCards: hasReadiness ? [
+      {
+        key: "proxy-coverage",
+        value: `${formatNumber(readinessSummary.dmcs_with_any_reliability_proxy)}/${formatNumber(readinessSummary.adb_dmc_roster_n)}`,
+        label: "Public proxy present",
+        note: "At least one firm-outage, Doing Business, Enterprise Survey legacy, or B-READY electricity-service proxy exists.",
+        status: "survived",
+      },
+      {
+        key: "generation-proxy",
+        value: formatNumber(readinessSummary.dmcs_with_generation_and_any_proxy),
+        label: "Both layers ready",
+        note: "Rows with WRI generation concentration and at least one public reliability proxy.",
+        status: "survived",
+      },
+      {
+        key: "high-generation-proxy",
+        value: formatNumber(readinessSummary.high_generation_concentration_and_proxy_rows),
+        label: "High H plus proxy",
+        note: `Generation Herfindahl at or above ${formatFlexible(readinessSummary.high_generation_herfindahl_threshold, 1)} with at least one proxy field.`,
+        status: "flag",
+      },
+      {
+        key: "negative-source-result",
+        value: formatNumber(noAdbIndicatorCount),
+        label: "Queried indicators with zero ADB rows",
+        note: "Cataloged outage-count or outage-duration endpoints were kept in the audit even when they returned no usable ADB-DMC observations.",
+        status: "dropped",
+      },
+      {
+        key: "bready",
+        value: formatNumber(readinessSummary.dmcs_with_bready_utility_proxy),
+        label: "B-READY utility rows",
+        note: "Recent utility-service scores exist for a smaller 2024 country set and cannot replace outage records.",
+        status: "flag",
+      },
+    ] : undefined,
     readouts: [
       { label: "Capacity top five", value: capacityTop.join(", ") },
       { label: "Generation top five", value: generationTop.join(", ") },
       { label: "Dropped on generation", value: strings(data.dropped_from_cluster_on_generation).join(", ") || "none" },
       { label: "Entered on generation", value: strings(data.entered_cluster_on_generation).join(", ") || "none" },
+      ...(hasReadiness ? [
+        { label: "Proxy indicators queried", value: formatNumber(readinessSummary.indicators_queried) },
+        { label: "Indicators with ADB rows", value: formatNumber(readinessSummary.indicators_with_adb_proxy_rows) },
+        { label: "High-concentration queue", value: highProxyRows.map((row) => row.iso3).join(", ") || "none" },
+        { label: "Withheld generation but proxy present", value: formatNumber(readinessSummary.withheld_generation_but_proxy_rows) },
+      ] : []),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: baseCaveats(report, data).concat(hasReadiness ? [String(readiness.claim_scope || "")] : []),
     generatedAt: data.generated_at,
   };
 }
@@ -1075,6 +1145,14 @@ export default function ShowcaseEvidenceAudit() {
 }
 
 function AuditVisual({ model }: { model: AuditModel }) {
+  if (model.rows && model.componentCards) {
+    return (
+      <div className="audit-visual-grid">
+        <RankAuditVisual model={model} />
+        <ComponentVisual model={model} />
+      </div>
+    );
+  }
   if (model.rows) {
     return <RankAuditVisual model={model} />;
   }

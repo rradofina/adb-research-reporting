@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-19T18:49:32.067Z
+Generated: 2026-06-19T19:10:10.862Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 9/9
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 298
-- QA browser-check JSON files in reporting-site/qa: 15
+- QA screenshot files in reporting-site/qa: 304
+- QA browser-check JSON files in reporting-site/qa: 16
 - Verification failures: 0
 
 ## Readiness Mix
@@ -41,7 +41,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 6 | Air-monitoring observability | L3 candidate | ok | ok | n/a | For BMKG, find station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia... |
 | 7 | Access map-completeness audit | L3 candidate | ok | ok | n/a | Extend registry joins for Pakistan and Lao, finish the Cambodia source-scope checks, and add a public friction/travel-time vali... |
 | 8 | Disaster metric falsification | L3 candidate | ok | ok | n/a | Build the event-date join and one pilot radiance extraction; keep the current report as source readiness until an actual recove... |
-| 9 | Power-fuel concentration audit | Evidence audit | ok | ok | ok | Search for public outage/reserve-margin proxies and decide whether the fuel-concentration result can graduate. |
+| 9 | Grid reliability proxy source wall | Evidence audit | ok | ok | ok | Pick 1-2 high-concentration rows and search for regulator outage records, seasonal dispatch, or reserve-margin evidence beyond ... |
 | 10 | Emigration denominator switch | Evidence audit | ok | ok | ok | Build a corridor-type falsifier that separates labor, refugee, family, and remittance-relevant migration signals. |
 | 11 | MPI night-light blind spot | Owner-gated | ok | ok | ok | Keep as a transparent methods note until owner-led NTL ingestion and coauthored review are cleared. |
 | 12 | Coastal denominator audit | Evidence audit | ok | ok | ok | Choose a one-coast pilot and join GHSL or equivalent settlement data to a public coastal hazard layer. |

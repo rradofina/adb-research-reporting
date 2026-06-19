@@ -273,6 +273,32 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (grid reliability proxy source-wall audit):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/grid-generation-mismatch` from a capacity-versus-generation
+  bridge into a generation-concentration plus public reliability-proxy
+  source-readiness report. Added
+  `grid-reliability-heat/scripts/audit-public-reliability-proxies.py`, cache
+  regeneration notes under `grid-reliability-heat/.cache/README.md`, generated
+  `grid-generation-reliability-source-audit.json`,
+  `grid-public-reliability-proxy-readiness.json`, and country/indicator CSV
+  companions, and registered `world_bank_wdi_grid_reliability_proxies` in
+  `versions.json`. The audit queries 15 World Bank firm-outage, Enterprise
+  Survey legacy, Doing Business, and B-READY utility-service indicators. It
+  finds 38 DMCs with at least one public reliability proxy, 22 DMCs with both
+  generation concentration and a proxy, and 8 high-generation-concentration
+  rows with a proxy; proxy vintages span 2009-2025, and 3 queried
+  outage-count or outage-duration endpoints have zero usable ADB-DMC rows in
+  this pull. This is a source-readiness wall, not outage-event,
+  reserve-margin, dispatch, or heat-stress evidence. Verification in this
+  pass reran the grid scripts, synced public artifacts, built the reporting
+  site, and browser-checked desktop plus 375px mobile with zero console
+  errors, zero network errors, and zero page-level horizontal overflow.
+  Screenshots:
+  `reporting-site/qa/showcase-grid-reliability-proxy-desktop.png`,
+  `reporting-site/qa/showcase-grid-reliability-proxy-desktop-visual.png`,
+  `reporting-site/qa/showcase-grid-reliability-proxy-mobile.png`, and
+  `reporting-site/qa/showcase-grid-reliability-proxy-mobile-visual.png`.
 - **2026-06-20 (disaster metric-falsification source-readiness audit):** In
   the owner-directed 20-report showcase loop, upgraded
   `/showcase/disaster-metric-falsification` from a metric-switch route into a

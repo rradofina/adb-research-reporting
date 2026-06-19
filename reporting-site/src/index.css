@@ -827,6 +827,10 @@
     }
   }
 
+  .audit-visual-grid > .audit-component-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .audit-component-card strong {
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: clamp(1.2rem, 2.2vw, 1.9rem);

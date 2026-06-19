@@ -42,7 +42,7 @@ candidates before adding new surfaces.
 | 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, a metadata-readiness audit, an OpenAQ station-metadata source pass, regulator-source discovery, official station-source extraction, official/OpenAQ reconciliation audit, a 13-row candidate station-crosswalk review worksheet, a public OpenAQ metadata evidence attachment, a public source scan that screens the 6 OpenAQ `isMonitor` candidate rows as separate nearby stations, a public-feed source scan that screens the 7 not-`isMonitor` rows as nearby public-feed rows that are not join-ready, a 169-item one-signal review queue, monitor-grade evidence audit, a 14-source monitor-grade source-validation scan, a 138-row station-review queue, a 66-row exact station method-evidence audit, a 28-row Uzbekistan current/method scan, a Uzbekistan method-policy source scan, and a Uzbekistan station-specific source evidence scan with 28 official station-detail ID matches make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, station-level complete monitor-grade classification, explicit station status/method documentation, and gridded population/PM2.5 denominators before station-radius or catchment language | Search station-owner/regulator documentation that explicitly states current operating status, calibration/status records, or station-specific certification beyond the official regional table and detail pages, then resolve the 38 Indonesia/Georgia PM2.5 portal/API rows while keeping the 2 caution rows blocked unless clarified |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
-| 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge keeps generation coverage visible | Needs outage, reserve-margin, dispatch, or heat-stress evidence | Search for public reliability proxies |
+| 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge now has a public World Bank reliability-proxy source wall | Needs direct outage, reserve-margin, dispatch, seasonal generation, or heat-stress evidence | Choose high-concentration rows and search for regulator outage or dispatch records beyond the proxy wall |
 | 10 | Emigration denominator switch | Evidence audit | Absolute-stock versus population-share ranks reveal denominator dependence | Needs corridor composition and migration-purpose split | Build corridor-type falsifier |
 | 11 | MPI night-light blind spot | Owner-gated | MPI-side decomposition shows what night lights cannot directly see | Needs owner-led VIIRS/Earth Engine access and coauthor attestation | Keep as methods note until owner-gated access clears |
 | 12 | Coastal population-denominator audit | Evidence audit | No-population rank bridge prevents a size-driven coastal proxy from overclaiming | Needs settlement footprints, elevation, and surge-zone overlay | Choose one-coast pilot and join settlement/hazard layers |
@@ -83,6 +83,16 @@ candidates before adding new surfaces.
   language, and Chrome/CDP QA passed at desktop and 375px mobile. Screenshots:
   `reporting-site/qa/showcase-remittance-l3-desktop.png` and
   `reporting-site/qa/showcase-remittance-l3-mobile.png`.
+- Grid-reliability report #9 received a public reliability-proxy source-wall
+  pass on 2026-06-20. New script
+  `grid-reliability-heat/scripts/audit-public-reliability-proxies.py` queries
+  15 World Bank firm-outage, Enterprise Survey legacy, Doing Business, and
+  B-READY utility-service indicators, writes raw-response hashes, and joins the
+  latest public proxy values to the generation fuel-concentration artifact. The
+  audit finds 38 DMCs with at least one public proxy, 22 DMCs with both
+  generation concentration and a proxy, and 8 high-generation-concentration
+  rows with a proxy. This is a source-readiness wall, not outage, reserve
+  margin, dispatch, or heat-stress evidence.
 - PSDQ report #4 received a focused L3 evidence-module pass on 2026-06-19.
   New script `public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py`
   reads the existing BGD exposure and road-context artifacts and writes

@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T18:49:32.067Z",
+  "generated_at": "2026-06-19T19:10:10.862Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 298,
-    "browserChecks": 15
+    "screenshots": 304,
+    "browserChecks": 16
   },
   "summary": {
     "reports_total": 20,
@@ -213,26 +213,26 @@
     },
     {
       "id": 9,
-      "title": "When Power Capacity and Generation Tell Different Stories",
-      "shortTitle": "Power-fuel concentration audit",
+      "title": "When Single-Fuel Grids Meet Patchy Outage Evidence",
+      "shortTitle": "Grid reliability proxy source wall",
       "href": "/showcase/grid-generation-mismatch",
       "status": "verified",
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "grid-reliability-heat/generated/grid-generation-deepening.json",
+      "evidencePath": "grid-reliability-heat/generated/grid-generation-reliability-source-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/grid-reliability-heat/generated/grid-generation-deepening.json",
+      "auditDataUrl": "/programs/grid-reliability-heat/generated/grid-generation-reliability-source-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/grid-reliability-heat/generated/grid-generation-deepening.csv",
+      "auditCsvUrl": "/programs/grid-reliability-heat/generated/grid-public-reliability-proxy-readiness-country.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "Search for public outage/reserve-margin proxies and decide whether the fuel-concentration result can graduate."
+      "nextUpgrade": "Pick 1-2 high-concentration rows and search for regulator outage records, seasonal dispatch, or reserve-margin evidence beyond the World Bank proxy wall."
     },
     {
       "id": 10,

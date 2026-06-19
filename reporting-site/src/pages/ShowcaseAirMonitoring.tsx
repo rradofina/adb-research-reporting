@@ -1158,6 +1158,58 @@ interface UzbekistanStatusCertificationSummary {
   non_claim: string;
 }
 
+interface UzbekistanBlockerFollowupGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanBlockerFollowupRow {
+  source_station_id: string;
+  review_focus: string;
+  source_station_name: string;
+  region_row_auto: string;
+  region_row_updated_raw: string;
+  detail_updated_iso: string;
+  detail_updated_age_days: string | number;
+  detail_pm25_value: string;
+  detail_pm25_value_status: string;
+  detail_negative_pollutant_count: number;
+  detail_sentinel_minus_9999_pollutant_count: number;
+  followup_decision: string;
+  reader_use: string;
+}
+
+interface UzbekistanBlockerFollowupSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    target_blocker_rows: number;
+    official_region_pages_seeded: number;
+    official_region_pages_retrieved: number;
+    official_detail_pages_retrieved: number;
+    region_row_found_rows: number;
+    region_row_updating_data_rows: number;
+    region_row_horiba_context_rows: number;
+    detail_page_retrieved_rows: number;
+    stale_detail_blocker_rows: number;
+    sentinel_pm25_blocker_rows: number;
+    public_row_followup_resolved_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  evidence_gate_counts: UzbekistanBlockerFollowupGate[];
+  station_rows: UzbekistanBlockerFollowupRow[];
+  reader_warning: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -1278,6 +1330,8 @@ export default function ShowcaseAirMonitoring() {
     useState<UzbekistanCurrentMethodSummary | null>(null);
   const [uzbekistanStatusCertification, setUzbekistanStatusCertification] =
     useState<UzbekistanStatusCertificationSummary | null>(null);
+  const [uzbekistanBlockerFollowup, setUzbekistanBlockerFollowup] =
+    useState<UzbekistanBlockerFollowupSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -1353,6 +1407,10 @@ export default function ShowcaseAirMonitoring() {
         if (!r.ok) throw new Error(`Uzbekistan status certification source scan HTTP ${r.status}`);
         return r.json();
       }),
+      fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json").then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan blocker row follow-up HTTP ${r.status}`);
+        return r.json();
+      }),
       fetch("/programs/air-monitoring/generated/air-monitoring-monitor-grade-evidence-summary.json").then((r) => {
         if (!r.ok) throw new Error(`monitor grade HTTP ${r.status}`);
         return r.json();
@@ -1376,6 +1434,7 @@ export default function ShowcaseAirMonitoring() {
         monitorGradeStationMethodEvidencePayload,
         uzbekistanCurrentMethodPayload,
         uzbekistanStatusCertificationPayload,
+        uzbekistanBlockerFollowupPayload,
         monitorGradePayload,
       ]) => {
         setDeepening(deepeningPayload);
@@ -1395,6 +1454,7 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGradeStationMethodEvidence(monitorGradeStationMethodEvidencePayload);
         setUzbekistanCurrentMethod(uzbekistanCurrentMethodPayload);
         setUzbekistanStatusCertification(uzbekistanStatusCertificationPayload);
+        setUzbekistanBlockerFollowup(uzbekistanBlockerFollowupPayload);
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
@@ -1529,6 +1589,8 @@ export default function ShowcaseAirMonitoring() {
       <AirUzbekistanCurrentMethodPanel summary={uzbekistanCurrentMethod} />
 
       <AirUzbekistanStatusCertificationPanel summary={uzbekistanStatusCertification} />
+
+      <AirUzbekistanBlockerFollowupPanel summary={uzbekistanBlockerFollowup} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -4152,6 +4214,178 @@ function AirUzbekistanStatusCertificationPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan status/certification source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanBlockerFollowupPanel({
+  summary,
+}: {
+  summary: UzbekistanBlockerFollowupSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.station_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const total = Math.max(1, counts?.target_blocker_rows ?? rows.length);
+  const ladder = counts
+    ? [
+        {
+          key: "detail",
+          label: "Exact detail pages",
+          rows: counts.official_detail_pages_retrieved,
+          denominator: total,
+          detail: "public official station pages",
+        },
+        {
+          key: "region",
+          label: "Region rows found",
+          rows: counts.region_row_found_rows,
+          denominator: total,
+          detail: "matching official table rows",
+        },
+        {
+          key: "stale",
+          label: "Stale blockers",
+          rows: counts.stale_detail_blocker_rows,
+          denominator: total,
+          detail: "older than 30 days",
+        },
+        {
+          key: "sentinel",
+          label: "Sentinel blocker",
+          rows: counts.sentinel_pm25_blocker_rows,
+          denominator: total,
+          detail: "PM2.5 equals -9999",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-uzb-current-section air-uzb-blocker-section" aria-label="Uzbekistan blocker row follow-up">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-crimson">Uzbekistan blocker follow-up</p>
+          <h2>Three rows still stop the radius claim.</h2>
+          <p>
+            This pass goes row by row through the stale and sentinel cases left
+            by the source scan. It retrieves the exact official pages again,
+            then asks whether the blocker is actually resolved.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout air-uzb-blocker-callout">
+          <span>Resolved blockers</span>
+          <strong>{formatNumber(counts?.public_row_followup_resolved_rows ?? 0)}</strong>
+          <p>Every row remains outside current-status and radius claims</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid">
+            <div>
+              <span>Detail pages</span>
+              <strong>{formatNumber(counts.official_detail_pages_retrieved)}</strong>
+              <em>{formatNumber(total)} target blocker rows</em>
+            </div>
+            <div>
+              <span>Region rows</span>
+              <strong>{formatNumber(counts.region_row_found_rows)}</strong>
+              <em>official table matches</em>
+            </div>
+            <div>
+              <span>Stale rows</span>
+              <strong>{formatNumber(counts.stale_detail_blocker_rows)}</strong>
+              <em>plus Updating data</em>
+            </div>
+            <div>
+              <span>Sentinel row</span>
+              <strong>{formatNumber(counts.sentinel_pm25_blocker_rows)}</strong>
+              <em>PM2.5 = -9999</em>
+            </div>
+            <div>
+              <span>Current status</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>explicit closures</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-uzb-current-age-grid air-uzb-blocker-ladder">
+            {ladder.map((step) => (
+              <article key={step.key} className={`air-uzb-current-age air-uzb-blocker-ladder-${step.key}`}>
+                <div>
+                  <span>{step.label}</span>
+                  <strong>{formatNumber(step.rows)} rows</strong>
+                </div>
+                <div className="air-uzb-current-track">
+                  <i style={{ width: step.rows > 0 ? `${Math.max(4, (step.rows / step.denominator) * 100)}%` : "0%" }} />
+                </div>
+                <p>{step.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-row-grid air-uzb-blocker-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-uzb-current-row air-uzb-blocker-row">
+                <div>
+                  <span>UZB · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.followup_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Detail age</dt>
+                    <dd>{row.detail_updated_age_days || "n/a"} days</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.detail_pm25_value || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>Row signal</dt>
+                    <dd>{row.region_row_auto || row.region_row_updated_raw || "n/a"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <small>
+                  {sentenceCaseStatus(row.review_focus)} · {sentenceCaseStatus(row.detail_pm25_value_status)}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-blocker-row-followup.md" download>
+              Blocker note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-row-followup.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan blocker-row follow-up...</p>
       )}
     </section>
   );

@@ -10797,6 +10797,12 @@
       #ffffff;
   }
 
+  .air-uzb-blocker-section {
+    background:
+      linear-gradient(180deg, rgba(251, 176, 14, 0.12), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
   .air-uzb-current-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -10822,6 +10828,11 @@
     background: #edf8fd;
   }
 
+  .air-uzb-blocker-section .air-uzb-current-callout {
+    border-left-color: #9b2226;
+    background: #fff6e4;
+  }
+
   .air-uzb-current-callout span,
   .air-uzb-current-stat-grid span,
   .air-uzb-current-age span,
@@ -10845,6 +10856,10 @@
 
   .air-uzb-status-section .air-uzb-current-callout strong {
     color: #005f89;
+  }
+
+  .air-uzb-blocker-section .air-uzb-current-callout strong {
+    color: #7b1115;
   }
 
   .air-uzb-current-callout p,
@@ -10882,6 +10897,10 @@
 
   .air-uzb-status-section .air-uzb-current-stat-grid > div {
     border-top-color: #007db8;
+  }
+
+  .air-uzb-blocker-section .air-uzb-current-stat-grid > div {
+    border-top-color: #fbb00e;
   }
 
   .air-uzb-current-stat-grid strong {
@@ -10927,6 +10946,19 @@
   }
 
   .air-uzb-status-ladder-followup {
+    border-top-color: #9b2226;
+  }
+
+  .air-uzb-blocker-ladder-detail,
+  .air-uzb-blocker-ladder-region {
+    border-top-color: #5a8227;
+  }
+
+  .air-uzb-blocker-ladder-stale {
+    border-top-color: #fbb00e;
+  }
+
+  .air-uzb-blocker-ladder-sentinel {
     border-top-color: #9b2226;
   }
 
@@ -10991,6 +11023,23 @@
     background: #9b2226;
   }
 
+  .air-uzb-blocker-section .air-uzb-current-track {
+    background: #f7e7c3;
+  }
+
+  .air-uzb-blocker-ladder-detail .air-uzb-current-track i,
+  .air-uzb-blocker-ladder-region .air-uzb-current-track i {
+    background: #5a8227;
+  }
+
+  .air-uzb-blocker-ladder-stale .air-uzb-current-track i {
+    background: #fbb00e;
+  }
+
+  .air-uzb-blocker-ladder-sentinel .air-uzb-current-track i {
+    background: #9b2226;
+  }
+
   .air-uzb-current-row-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -11008,6 +11057,14 @@
 
   .air-uzb-current-row-within_90_days {
     border-left-color: #fbb00e;
+  }
+
+  .air-uzb-blocker-row {
+    border-left-color: #9b2226;
+  }
+
+  .air-uzb-blocker-row small {
+    color: #7b1115;
   }
 
   .air-uzb-current-row dl {

@@ -12,7 +12,7 @@ Last updated: 2026-06-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, and Uzbekistan status/certification wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, and Uzbekistan blocker wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -114,9 +114,14 @@ overrides priority by editing this list.
    exact station event mentions, 4 weaker context candidate rows, 2 stale
    station-detail follow-up rows, and 1 sentinel PM2.5 follow-up row; and still
    keeps current-status confirmation, station-method classification, complete
-   monitor-grade classification, and station-radius readiness at 0. Next
-   AI-doable loop is exact row-level station-owner or regulator documentation
-   for the 2 stale detail rows, the 1 sentinel detail row, then the 38
+   monitor-grade classification, and station-radius readiness at 0. The
+   Uzbekistan blocker-row follow-up then retrieves 2 official regional table
+   pages and 3 exact official detail pages for station IDs 107, 728, and 737,
+   finds 2 stale detail rows whose regional rows say `Updating data`, 1 recent
+   `Sergili` detail row with PM2.5 equal to `-9999`, and 0 public
+   blocker-resolution rows; current-status, station-method, complete-grade, and
+   station-radius-ready counts remain 0. Next AI-doable loop is either public
+   correction/status evidence for station IDs 107, 728, and 737 or the 38
    Indonesia and Georgia portal/API rows, before any station-radius or
    catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
@@ -361,6 +366,23 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-status-certification-mobile.png`; no
   horizontal overflow or route-level browser errors were observed beyond
   dev-server notices.
+- **2026-06-19 (air-monitoring Uzbekistan blocker-row follow-up):** Added
+  `air-monitoring/source-inputs/uzbekistan-blocker-row-followup-targets.csv`,
+  `air-monitoring/scripts/scan-uzbekistan-blocker-row-followup.py`, generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-blocker-row-followup.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json`,
+  and wrote `air-monitoring/uzbekistan-blocker-row-followup.md`. The follow-up
+  retrieves 2 official regional table pages and 3 exact official station-detail
+  pages for station IDs 107, 728, and 737, finds all 3 matching region rows, 2
+  stale detail rows with regional `Updating data`, 1 recent `Sergili` row whose
+  PM2.5 value remains `-9999`, and 0 public blocker-resolution rows. It keeps
+  current-status confirmed, station-method classified, complete monitor-grade,
+  and station-radius-ready rows at 0 and adds a public 3-row blocker wall.
+  Chrome CDP QA confirms the home card, topic Evidence/Data tabs, and
+  desktop/mobile route panel, writing
+  `reporting-site/qa/showcase-air-blocker-followup-desktop.png` and
+  `reporting-site/qa/showcase-air-blocker-followup-mobile.png`.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

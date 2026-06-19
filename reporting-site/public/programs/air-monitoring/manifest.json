@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-19T12:33:17.198Z",
+  "generated_at": "2026-06-19T12:50:25.073Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -264,6 +264,16 @@
       "attestation_chain": null
     },
     {
+      "key": "air_monitoring_uzbekistan_blocker_row_followup",
+      "file": "uzbekistan-blocker-row-followup.md",
+      "label": "Air-monitoring Uzbekistan blocker-row follow-up",
+      "size": 2964,
+      "size_human": "2.9 KB",
+      "mtime": "2026-06-19T12:41:56.820Z",
+      "sha256": "032201fbb6f68465286fbbaa9415b4f5f33e3fd437210bfe649d5b296eebc959",
+      "attestation_chain": null
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -486,6 +496,18 @@
       "size": 230088,
       "size_human": "224.7 KB",
       "sha256": "109f03865c0533bce854a9c2c72f8d317f7d072f9085f7f9ca32ee95c89b94f9"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",
+      "size": 15689,
+      "size_human": "15.3 KB",
+      "sha256": "f28133711283cfb7a31bbb9f4668eeca07315fd24eed5be70fedbf7199da9dcd"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-blocker-row-followup.csv",
+      "size": 5741,
+      "size_human": "5.6 KB",
+      "sha256": "282ff688036b8af51e145103bc5da07a9c8085182835e81cf2b5339676ee1d2b"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-method-policy-source-scan-summary.json",

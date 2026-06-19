@@ -1,0 +1,4 @@
+source_station_id,review_focus,expected_station_name,region_page_url,detail_url,reader_question
+107,stale_detail_measurement,Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси,https://monitoring.meteo.uz/en/map/regions/gorod-tashkent,https://monitoring.meteo.uz/en/map/view/107,Does the official row-level source now confirm current operation or monitor-grade closure for the stale Yunusabad station-detail row?
+728,sentinel_pm25_value,Sergili,https://monitoring.meteo.uz/en/map/regions/gorod-tashkent,https://monitoring.meteo.uz/en/map/view/728,Does the official row-level source explain or clear the -9999 PM2.5 sentinel on the Sergili station-detail row?
+737,stale_detail_measurement,Akhangaran,https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast,https://monitoring.meteo.uz/en/map/view/737,Does the official row-level source now confirm current operation or monitor-grade closure for the stale Akhangaran station-detail row?

@@ -273,6 +273,31 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-20 (food-price food-import source repair):** In the
+  owner-directed 20-report showcase loop, upgraded
+  `/showcase/food-price-coverage-trap` from a coverage-only audit into a
+  raw-ag-import versus true food-import source wall. Added
+  `food-price-climate-transmission/scripts/audit-food-import-source-readiness.py`,
+  cache regeneration notes under
+  `food-price-climate-transmission/.cache/README.md`, generated
+  `food-price-coverage-food-import-audit.json`,
+  `food-price-food-import-source-readiness.json`,
+  `food-price-food-import-rerank.csv`, and
+  `food-price-food-import-source-readiness-sources.csv`, and registered
+  `food_price_food_import_source_readiness_public_metadata` in
+  `versions.json`. The audit documents that the old import leg is WDI
+  agricultural raw materials, not food imports; the true WDI food-import leg
+  expands CPI x import eligibility from 34 to 36 roster rows under the same
+  cached CPI leg, with Micronesia and Vanuatu entering eligibility; the old
+  LAO+PAK common set across N becomes empty; and HDX exposes one WFP Global
+  Food Prices CSV resource of 225.8 MB that is not joined. The analysis-ready
+  food-price exposure wall remains false: no market-month price panel,
+  commodity basket, local climate shock, exchange-rate/fuel decomposition, or
+  household food-expenditure denominator is computed. Verification in this
+  pass reran the food-price scripts, synced public artifacts, built the
+  reporting site, ran the deterministic gates and showcase verifier, and
+  browser-checked desktop plus 390px mobile with no page errors, failed
+  requests, or page-level horizontal overflow.
 - **2026-06-20 (climate-health labor denominator and heat-source wall):** In
   the owner-directed 20-report showcase loop, upgraded
   `/showcase/climate-health-measurement-repair` from a cap-saturation-only

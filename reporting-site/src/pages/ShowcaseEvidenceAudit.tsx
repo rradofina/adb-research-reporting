@@ -166,6 +166,9 @@ function sourceFacts(report: ShowcaseReport, data: JsonValue): Fact[] {
     { label: "Evidence path", value: report.evidencePath },
     { label: "Source stack", value: report.sourceNote },
   ];
+  if (report.audit?.csvUrl) {
+    facts.push({ label: "CSV companion", value: report.audit.csvUrl });
+  }
   if (data.attestation_chain) {
     facts.push({ label: "Attestation", value: String(data.attestation_chain) });
   }
@@ -847,8 +850,17 @@ function buildClimateHealthModel(report: ShowcaseReport, data: JsonValue): Audit
 }
 
 function buildFoodCoverageModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  const sourceAudit = data.food_import_source_readiness || {};
+  const sourceSummary = sourceAudit.summary || {};
+  const hasSourceAudit = Boolean(data.food_import_source_readiness);
   const total = numberValue(data.roster_n);
-  const years = Object.entries(data.common_vintage_runs || {}).map(([year, row]) => {
+  const yearSource = hasSourceAudit
+    ? sourceAudit.common_vintage_runs_food_import_live_cpi || {}
+    : data.common_vintage_runs || {};
+  const years = Object.entries(yearSource)
+    .sort(([a], [b]) => Number(b) - Number(a))
+    .slice(0, hasSourceAudit ? 8 : 7)
+    .map(([year, row]) => {
     const record = row as JsonValue;
     return {
       year,
@@ -861,31 +873,112 @@ function buildFoodCoverageModel(report: ShowcaseReport, data: JsonValue): AuditM
     safeRows(data.dropped_have_imp_no_cpi).length +
     safeRows(data.dropped_have_cpi_no_imp).length +
     safeRows(data.dropped_neither).length;
+  const oldCommon = strings(sourceSummary.original_raw_ag_common_across_n || data.committed_common_across_N);
+  const foodCommon = strings(sourceSummary.food_import_common_across_n_same_cached_cpi);
+  const foodTop10SameCpi = strings(sourceAudit.runs?.food_import_same_cached_cpi?.["10"]);
+  const foodTop10LiveCpi = strings(sourceAudit.runs?.food_import_live_cpi?.["10"]);
+  const enteredFood = strings(sourceSummary.entered_when_food_import_replaces_raw_ag);
+  const sourceTrail = sourceFacts(report, data);
+  if (sourceAudit.retrieved_at) {
+    sourceTrail.push({ label: "Source-audit retrieval", value: String(sourceAudit.retrieved_at) });
+  }
+  if (sourceAudit.sources?.wdi_indicators) {
+    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
+  }
+  if (sourceAudit.sources?.hdx_wfp_package_api) {
+    sourceTrail.push({ label: "WFP package metadata", value: String(sourceAudit.sources.hdx_wfp_package_api) });
+  }
+  const componentCards = hasSourceAudit ? [
+    {
+      key: "old-raw-ag",
+      value: formatNumber(sourceSummary.raw_ag_import_latest_rows),
+      label: "Raw-ag import rows",
+      note: `The old leg is agricultural raw materials, not food imports; its stable common set is ${oldCommon.join(", ") || "none"}.`,
+      status: "flag",
+    },
+    {
+      key: "food-import",
+      value: formatNumber(sourceSummary.food_import_latest_rows),
+      label: "Food-import rows",
+      note: `The true food-import leg lifts the CPI x import joint universe to ${formatNumber(sourceSummary.joint_cached_cpi_food_import_rows)} rows; ${enteredFood.join(", ") || "no economies"} enter eligibility.`,
+      status: "survived",
+    },
+    {
+      key: "stable-set",
+      value: foodCommon.join(", ") || "none",
+      label: "Stable set after repair",
+      note: `Using the same cached CPI leg, the top-8 set is ${strings(sourceAudit.runs?.food_import_same_cached_cpi?.["8"]).join(", ") || "empty"} and top-10 is ${foodTop10SameCpi.join(", ") || "empty"}.`,
+      status: "dropped",
+    },
+    {
+      key: "wfp-market",
+      value: `${formatNumber(sourceSummary.wfp_csv_size_mb, 1)} MB`,
+      label: "WFP market CSV visible",
+      note: `${formatNumber(sourceSummary.wfp_csv_resources)} CSV resource is visible through HDX, but only metadata and a header sample are inspected here.`,
+      status: "flag",
+    },
+    {
+      key: "local-exposure",
+      value: "0",
+      label: "Market-climate joins",
+      note: "No market-month price panel, commodity basket, household food-expenditure denominator, or local climate shock is joined.",
+      status: "dropped",
+    },
+  ] as ComponentCard[] : undefined;
 
   return {
     kind: report.audit!.kind,
-    stats: [
+    stats: hasSourceAudit ? [
+      { value: `${formatNumber(sourceSummary.joint_cached_cpi_food_import_rows)}/${formatNumber(sourceSummary.original_joint_universe_n)}`, label: "food/raw joint rows" },
+      { value: formatNumber(sourceSummary.food_import_latest_rows), label: "WDI food-import rows" },
+      { value: foodCommon.join(", ") || "none", label: "stable set after repair" },
+      { value: `${formatNumber(sourceSummary.wfp_csv_size_mb, 1)} MB`, label: "WFP CSV not joined" },
+    ] : [
       { value: formatNumber(data.joint_universe_n), label: "joint indicator universe" },
       { value: formatNumber(droppedCount), label: "roster rows dropped by coverage" },
       { value: formatNumber(years.length), label: "common-vintage reruns" },
     ],
-    chartTitle: "The first result is a coverage funnel, not a vulnerability ranking.",
-    chartDeck: "The funnel shows how the roster narrows when CPI and agricultural-import legs both have to exist.",
-    funnelRows: [
+    chartTitle: hasSourceAudit
+      ? "The old stable pair disappears when the import leg is actually food."
+      : "The first result is a coverage funnel, not a vulnerability ranking.",
+    chartDeck: hasSourceAudit
+      ? "Bars compare the old raw-materials import leg with the true WDI food-import leg. Cards show why WFP market prices are still a source wall, not a joined climate-price model."
+      : "The funnel shows how the roster narrows when CPI and agricultural-import legs both have to exist.",
+    funnelRows: hasSourceAudit ? [
+      { label: "ADB roster", value: total, total, note: "starting DMC/economy roster" },
+      { label: "Old CPI x raw-ag joint", value: numberValue(sourceSummary.original_joint_universe_n), total, note: "old joint universe behind LAO+PAK" },
+      { label: "Have food-import leg", value: numberValue(sourceSummary.food_import_latest_rows), total, note: "WDI TM.VAL.FOOD.ZS.UN latest value" },
+      { label: "CPI x food-import joint", value: numberValue(sourceSummary.joint_cached_cpi_food_import_rows), total, note: "same cached CPI leg; food-import repair" },
+    ] : [
       { label: "ADB roster", value: total, total, note: "starting DMC/economy roster" },
       { label: "Have CPI leg", value: numberValue(data.have_cpi_n), total, note: "consumer price index available" },
       { label: "Have import leg", value: numberValue(data.have_imp_n), total, note: "agricultural-imports indicator available" },
       { label: "Have both legs", value: numberValue(data.joint_universe_n), total, note: "joint universe used by the screen" },
     ],
     coverageYears: years,
+    componentCards,
     readouts: [
-      { label: "Dropped: imports but no CPI", value: strings(data.dropped_have_imp_no_cpi).join(", ") || "none" },
-      { label: "Dropped: CPI but no imports", value: strings(data.dropped_have_cpi_no_imp).join(", ") || "none" },
-      { label: "Dropped: neither leg", value: strings(data.dropped_neither).join(", ") || "none" },
-      { label: "Common across committed N", value: strings(data.committed_common_across_N).join(", ") || "none" },
+      ...(hasSourceAudit ? [
+        { label: "Old raw-ag common across N", value: oldCommon.join(", ") || "none" },
+        { label: "Food-import common across N", value: foodCommon.join(", ") || "none" },
+        { label: "Food-import top-10, same CPI", value: foodTop10SameCpi.join(", ") || "empty" },
+        { label: "Food-import top-10, live CPI", value: foodTop10LiveCpi.join(", ") || "empty" },
+        { label: "Rows entering food-import eligibility", value: enteredFood.join(", ") || "none" },
+        { label: "WFP header fields sampled", value: strings(sourceAudit.wfp_detail?.header_fields).slice(0, 6).join(", ") || "none" },
+        { label: "Analysis-ready food-price exposure", value: String(sourceSummary.analysis_ready_food_price_exposure) },
+      ] : [
+        { label: "Dropped: imports but no CPI", value: strings(data.dropped_have_imp_no_cpi).join(", ") || "none" },
+        { label: "Dropped: CPI but no imports", value: strings(data.dropped_have_cpi_no_imp).join(", ") || "none" },
+        { label: "Dropped: neither leg", value: strings(data.dropped_neither).join(", ") || "none" },
+        { label: "Common across committed N", value: strings(data.committed_common_across_N).join(", ") || "none" },
+      ]),
     ],
-    sourceFacts: sourceFacts(report, data),
-    caveats: baseCaveats(report, data),
+    sourceFacts: sourceTrail,
+    caveats: unique(baseCaveats(report, data).concat([
+      data.food_price_data_wall,
+      sourceAudit.claim_scope,
+      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
+    ].filter(Boolean).map(String))),
     generatedAt: data.generated_at,
   };
 }
@@ -1493,6 +1586,16 @@ function AuditVisual({ model }: { model: AuditModel }) {
   if (model.stackRows) {
     return <StackedBlindnessVisual model={model} />;
   }
+  if (model.funnelRows && model.componentCards) {
+    return (
+      <div className="audit-visual-grid audit-coverage-source-grid">
+        <div className="audit-coverage-panels">
+          <CoverageFunnelPanels model={model} />
+        </div>
+        <ComponentVisual model={model} />
+      </div>
+    );
+  }
   if (model.funnelRows) {
     return <CoverageFunnelVisual model={model} />;
   }
@@ -1576,6 +1679,14 @@ function StackedBlindnessVisual({ model }: { model: AuditModel }) {
 function CoverageFunnelVisual({ model }: { model: AuditModel }) {
   return (
     <div className="audit-visual-grid">
+      <CoverageFunnelPanels model={model} />
+    </div>
+  );
+}
+
+function CoverageFunnelPanels({ model }: { model: AuditModel }) {
+  return (
+    <>
       <div className="audit-funnel">
         {model.funnelRows?.map((row) => (
           <div className="audit-funnel-row" key={row.label}>
@@ -1600,7 +1711,7 @@ function CoverageFunnelVisual({ model }: { model: AuditModel }) {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

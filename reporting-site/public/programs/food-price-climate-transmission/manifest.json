@@ -1,7 +1,7 @@
 {
   "program": "food-price-climate-transmission",
   "permanent_url": "/program/food-price-climate-transmission/evidence",
-  "generated_at": "2026-06-19T20:24:51.878Z",
+  "generated_at": "2026-06-19T20:46:33.371Z",
   "hero": {
     "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
     "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
@@ -165,7 +165,31 @@
       "file": "generated/food-price-coverage-deepening.json",
       "size": 4289,
       "size_human": "4.2 KB",
-      "sha256": "99aa817d6e275ee2d99dc526824c190cd61dbe4450e36fc46a0fb8102172c07e"
+      "sha256": "99c101471db81b02553515724441cb06458b1947b1a80bc5953178735591873f"
+    },
+    {
+      "file": "generated/food-price-coverage-food-import-audit.json",
+      "size": 84251,
+      "size_human": "82.3 KB",
+      "sha256": "610c9bc6e58bd374b2171cc7aa04a226d9062d8334664ced676a840ed22246ca"
+    },
+    {
+      "file": "generated/food-price-food-import-rerank.csv",
+      "size": 7655,
+      "size_human": "7.5 KB",
+      "sha256": "a2e38f87eb7b0c7c178ec1c8d13663cce0e1567da27e43f95920332e96a9f8e2"
+    },
+    {
+      "file": "generated/food-price-food-import-source-readiness-sources.csv",
+      "size": 1740,
+      "size_human": "1.7 KB",
+      "sha256": "ffb17054ad78e19410b45470fbf9bb13920dc271004d4626eb2999e01ecd9681"
+    },
+    {
+      "file": "generated/food-price-food-import-source-readiness.json",
+      "size": 74665,
+      "size_human": "72.9 KB",
+      "sha256": "2dd854bf3e16e59db1ff32682c7135eface84c096b54c562509b5dee7e95bc35"
     },
     {
       "file": "generated/food-price-reformulated-adb-panel.csv",

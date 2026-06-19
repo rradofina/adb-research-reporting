@@ -2,18 +2,54 @@
 
 `attestation_chain: ai-first`
 
-This answers the keystone in `deep-questions.md` §5.1 with a real
-recomputation. Every number below is produced by
-`scripts/deepen-coverage-artifact.py` from the committed public WDI caches
-the headline itself uses — `FP.CPI.TOTL.ZG` (consumer-price inflation,
-annual %) and `TM.VAL.AGRI.ZS.UN` (agricultural raw-materials imports, %
-of merchandise imports), both `lastupdated: 2026-04-08`, CC BY 4.0,
-re-read from the program cache. No new data, no network, no AI-supplied
-figures. The rank intersection is a triage qualifier per
-CONSTITUTION.md §6.4, not a food-security ranking; the framing is a
-measurement / coverage gap per §13.3, not a DMC deficiency.
+This answers the keystone in `deep-questions.md` §5.1 with two real
+recomputations. `scripts/deepen-coverage-artifact.py` reproduces the
+headline from the committed public WDI caches the screen itself used:
+`FP.CPI.TOTL.ZG` (consumer-price inflation, annual %) and
+`TM.VAL.AGRI.ZS.UN` (agricultural raw-materials imports, % of merchandise
+imports), both `lastupdated: 2026-04-08`, CC BY 4.0. The new
+`scripts/audit-food-import-source-readiness.py` then fetches public WDI
+metadata/data for `TM.VAL.FOOD.ZS.UN` (food imports, % of merchandise
+imports) and public HDX/WFP food-price package metadata. No empirical
+number below comes from model memory. The rank intersection is a triage
+qualifier per CONSTITUTION.md §6.4, not a food-security ranking; the
+framing is a measurement / coverage gap per §13.3, not a DMC deficiency.
 
-Artifact: `generated/food-price-coverage-deepening.{json,csv}`.
+Artifacts:
+
+- `generated/food-price-coverage-deepening.{json,csv}`
+- `generated/food-price-coverage-food-import-audit.json`
+- `generated/food-price-food-import-rerank.csv`
+- `generated/food-price-food-import-source-readiness-sources.csv`
+
+## Source repair: the import leg was not food
+
+The old second axis was not a food-import indicator. WDI
+`TM.VAL.AGRI.ZS.UN` measures agricultural raw-materials imports, not food
+imports. The source audit therefore reruns the screen with the true WDI food
+imports indicator, `TM.VAL.FOOD.ZS.UN`, while keeping the original cached CPI
+leg for an apples-to-apples repair.
+
+The repair changes the evidence object rather than strengthening the old
+claim. The original CPI x raw-ag import joint universe was **34** roster rows.
+The CPI x food-import universe is **36** rows under the same cached CPI leg:
+Micronesia and Vanuatu enter eligibility. The old common set across N
+(`{LAO, PAK}`) becomes **empty** under the food-import leg. With the same
+cached CPI values, the food-import top-8 set is Vanuatu only, and the top-10
+set is Micronesia plus Vanuatu. With the live WDI CPI extract, the food-import
+top-10 set is Micronesia, Tajikistan, and Vanuatu, but the common set across
+N remains empty.
+
+The source wall is now explicit. The live WDI pull finds **39** roster rows
+with latest CPI values and **39** with latest food-import values; the food-
+import latest-year span is 2000-2024. HDX exposes one WFP Global Food Prices
+CSV resource, with a sampled size of **225.8 MB** and header fields including
+`adm0_id`, `adm0_name`, `adm1_id`, `adm1_name`, `mkt_id`, `mkt_name`,
+`cm_id`, and `cm_name`. That is source readiness only: the repository still
+does not join the WFP market-month panel, commodity baskets, local climate
+shocks, exchange-rate or fuel decomposition, or household food-expenditure
+denominators. The combined artifact therefore remains a measurement and
+source audit, not a climate-to-food-price transmission estimate.
 
 ## The question
 

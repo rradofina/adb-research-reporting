@@ -494,6 +494,22 @@
     gap: 0.65rem;
   }
 
+  .audit-coverage-panels {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  @media (min-width: 760px) {
+    .audit-coverage-panels {
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 0.55fr);
+    }
+  }
+
+  .audit-coverage-source-grid {
+    align-items: stretch;
+  }
+
   .audit-rank-header {
     display: grid;
     grid-template-columns: minmax(8rem, 0.7fr) minmax(0, 1fr) minmax(8rem, 0.7fr);

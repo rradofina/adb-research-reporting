@@ -1,0 +1,140 @@
+{
+  "route": "http://127.0.0.1:5176/showcase/food-price-coverage-trap",
+  "generated_at": "2026-06-19T20:44:59.688Z",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1100,
+      "pageErrors": [],
+      "counts": {
+        "funnelRows": 4,
+        "componentCards": 5,
+        "yearCards": 8,
+        "sourceRows": 9,
+        "downloadLinks": 2,
+        "bodyScrollWidth": 1440,
+        "bodyClientWidth": 1440,
+        "horizontalOverflow": false,
+        "overflowingElements": []
+      },
+      "textChecks": {
+        "true wdi food imports": true,
+        "lao+pak stable set becomes empty": true,
+        "food-import rows": true,
+        "raw-ag import rows": true,
+        "wfp market csv visible": true,
+        "analysis-ready food-price exposure": true,
+        "false": true,
+        "not joined": true,
+        "food-price-coverage-food-import-audit.json": true,
+        "food-price-food-import-rerank.csv": true
+      }
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 900,
+      "pageErrors": [],
+      "counts": {
+        "funnelRows": 4,
+        "componentCards": 5,
+        "yearCards": 8,
+        "sourceRows": 9,
+        "downloadLinks": 2,
+        "bodyScrollWidth": 390,
+        "bodyClientWidth": 390,
+        "horizontalOverflow": false,
+        "overflowingElements": []
+      },
+      "textChecks": {
+        "true wdi food imports": true,
+        "lao+pak stable set becomes empty": true,
+        "food-import rows": true,
+        "raw-ag import rows": true,
+        "wfp market csv visible": true,
+        "analysis-ready food-price exposure": true,
+        "false": true,
+        "not joined": true,
+        "food-price-coverage-food-import-audit.json": true,
+        "food-price-food-import-rerank.csv": true
+      }
+    }
+  ],
+  "required_text": {},
+  "failures": [],
+  "console_messages": [
+    {
+      "name": "desktop",
+      "messages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "messages": [
+        {
+          "type": "debug",
+          "text": "[vite] connecting..."
+        },
+        {
+          "type": "debug",
+          "text": "[vite] connected."
+        },
+        {
+          "type": "info",
+          "text": "%cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold"
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ]
+    }
+  ],
+  "failed_requests": [
+    {
+      "name": "desktop",
+      "requests": []
+    },
+    {
+      "name": "mobile",
+      "requests": []
+    }
+  ],
+  "screenshots": {
+    "desktop": {
+      "full": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-desktop.png",
+      "visual": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-desktop-visual.png",
+      "claim": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-desktop-claim.png"
+    },
+    "mobile": {
+      "full": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-mobile.png",
+      "visual": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-mobile-visual.png",
+      "claim": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-food-price-food-import-mobile-claim.png"
+    }
+  }
+}

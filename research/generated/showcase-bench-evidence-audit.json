@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T20:27:54.737Z",
+  "generated_at": "2026-06-19T20:46:58.603Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 334,
-    "browserChecks": 21
+    "screenshots": 340,
+    "browserChecks": 22
   },
   "summary": {
     "reports_total": 20,
@@ -358,13 +358,13 @@
       "statusLabel": "Evidence audit",
       "readiness": "evidence-audit",
       "readinessLabel": "Evidence audit",
-      "evidencePath": "food-price-climate-transmission/generated/food-price-coverage-deepening.json",
+      "evidencePath": "food-price-climate-transmission/generated/food-price-coverage-food-import-audit.json",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "shared-audit",
-      "auditDataUrl": "/programs/food-price-climate-transmission/generated/food-price-coverage-deepening.json",
+      "auditDataUrl": "/programs/food-price-climate-transmission/generated/food-price-coverage-food-import-audit.json",
       "auditDataExists": true,
-      "auditCsvUrl": "/programs/food-price-climate-transmission/generated/food-price-coverage-deepening.csv",
+      "auditCsvUrl": "/programs/food-price-climate-transmission/generated/food-price-food-import-rerank.csv",
       "auditCsvExists": true,
       "depthRecordExists": true,
       "qualityRecordExists": true,

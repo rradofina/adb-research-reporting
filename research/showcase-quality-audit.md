@@ -1017,6 +1017,40 @@ candidates before adding new surfaces.
   `reporting-site/qa/showcase-psdq-registry-vintage-review-mobile.png`, and
   `reporting-site/qa/showcase-psdq-registry-vintage-review-mobile-cards.png`.
 
+## 2026-06-20 — Report 15 food-price food-import source repair
+
+Report 15 now uses
+`food-price-climate-transmission/generated/food-price-coverage-food-import-audit.json`
+instead of the older coverage-only artifact. The new source-readiness pass
+adds `food-price-climate-transmission/scripts/audit-food-import-source-readiness.py`,
+records cache regeneration notes under
+`food-price-climate-transmission/.cache/README.md`, and writes
+`food-price-food-import-source-readiness.json`,
+`food-price-food-import-rerank.csv`, and
+`food-price-food-import-source-readiness-sources.csv`. The audit documents
+that the old import leg is WDI agricultural raw materials, not food imports;
+fetches WDI `TM.VAL.FOOD.ZS.UN`; and inspects HDX/WFP food-price package
+metadata without joining the 225.8 MB market CSV. Key generated facts: the
+old CPI x raw-ag joint universe is 34 rows; CPI x food-import eligibility is
+36 rows under the same cached CPI leg; Micronesia and Vanuatu enter
+eligibility; the old LAO+PAK common set becomes empty; and market-month
+prices, commodity baskets, local climate shocks, exchange-rate/fuel
+decomposition, household food-expenditure denominators, and climate-to-
+food-price exposure remain uncomputed.
+
+Verification in this pass reran the food-price scripts, synced public
+artifacts, built the reporting site, ran all deterministic gates and the
+showcase verifier, and browser-checked desktop 1440x1100 plus mobile 390x900.
+Browser QA found 4 funnel rows, 5 component cards, 8 year cards, 9 source
+rows, 2 download links, all required source-repair text, no page errors, no
+failed requests, and no page-level horizontal overflow. Screenshots:
+`reporting-site/qa/showcase-food-price-food-import-desktop.png`,
+`reporting-site/qa/showcase-food-price-food-import-desktop-visual.png`,
+`reporting-site/qa/showcase-food-price-food-import-desktop-claim.png`,
+`reporting-site/qa/showcase-food-price-food-import-mobile.png`,
+`reporting-site/qa/showcase-food-price-food-import-mobile-visual.png`, and
+`reporting-site/qa/showcase-food-price-food-import-mobile-claim.png`.
+
 ## Next deepening order
 
 1. Air-monitoring observability, because the station-coordinate source pass is

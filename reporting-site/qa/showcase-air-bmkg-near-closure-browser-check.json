@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-06-20T05:20:00Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "section": ".air-bmkg-near-closure-section",
+  "attestation_chain": "ai-first",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "counts": {
+      "statCards": 6,
+      "laneCards": 5,
+      "rowCards": 22,
+      "gateCards": 12,
+      "downloads": 3
+    },
+    "downloadStatuses": [
+      {
+        "path": "/programs/air-monitoring/bmkg-near-closure-ledger.md",
+        "status": 200
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger-summary.json",
+        "status": 200
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger.csv",
+        "status": 200
+      }
+    ],
+    "pageOverflow": false,
+    "sectionOverflow": false,
+    "overflowingChildren": 0,
+    "requiredTextVisible": true
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "counts": {
+      "statCards": 6,
+      "laneCards": 5,
+      "rowCards": 22,
+      "gateCards": 12,
+      "downloads": 3
+    },
+    "downloadStatuses": [
+      {
+        "path": "/programs/air-monitoring/bmkg-near-closure-ledger.md",
+        "status": 200
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger-summary.json",
+        "status": 200
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger.csv",
+        "status": 200
+      }
+    ],
+    "pageOverflow": false,
+    "sectionOverflow": false,
+    "overflowingChildren": 0,
+    "requiredTextVisible": true
+  },
+  "browserSignals": {
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "badHttpResponsesObserved": 0,
+    "note": "agent-browser network log did not retain request history in this session; in-page fetch checks returned HTTP 200 for the three evidence downloads."
+  },
+  "screenshots": [
+    "reporting-site/qa/showcase-air-bmkg-near-closure-desktop-section-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-desktop-lanes-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-desktop-rows-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-desktop-gates-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-mobile-section-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-mobile-lanes-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-mobile-rows-clean.png",
+    "reporting-site/qa/showcase-air-bmkg-near-closure-mobile-gates-clean.png"
+  ]
+}

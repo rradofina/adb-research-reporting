@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and Georgia NEA station network/launch source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and Georgia NEA station network/launch source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -233,14 +233,17 @@ overrides priority by editing this list.
    context to 13 rows, current-network city context to 15 rows, and PM2.5 or
    standard-equipment context to 15 rows, while keeping station-code rows,
    verified-report closure, current-status, calibration-status, complete-grade,
-   and station-radius-ready rows at 0. Next AI-doable loop is
-   public station-owner or regulator evidence beyond BMKG station-page telemetry,
-   regional analysis context, the BMKG CEWS dashboard status wall,
-   source-level BMKG standards/SOP/tariff/PPID/report context, public
-   station-unit/academic/regulator/deployment context, and official
-   installation/audit/NOC/AWS/public-information context:
-   station-specific inspection/calibration/status/certificate evidence for the
-   BMKG rows, a Georgia station-code verified
+   and station-radius-ready rows at 0. The BMKG near-closure ledger then
+   synthesizes the existing BMKG method, display, dashboard, grade-basis,
+   station-context, and installation/audit artifacts into 22 row-level gates:
+   22 method/display rows, 21 current `ONLINE` dashboard rows, 1 `DELAYED`
+   row, 1 exact audit/calibration context row, 7 PM2.5 installation/deployment
+   context rows, and still 0 station-specific inspection logs, calibration
+   certificate/status rows, complete-grade rows, or station-radius-ready rows.
+   Next AI-doable loop is station-owner or regulator evidence beyond the
+   BMKG near-closure context stack: station-specific
+   inspection/calibration/status/certificate evidence for the BMKG rows, a
+   Georgia station-code verified
    report/status/method route beyond the tested policy, daily/monthly caution,
    annual server-error, XLSX station-sheet-only surfaces, and NEA city-level
    network/launch context, plus exact

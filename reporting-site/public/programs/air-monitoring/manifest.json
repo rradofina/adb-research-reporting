@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T04:45:50.328Z",
+  "generated_at": "2026-06-20T05:12:16.046Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -414,6 +414,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_near_closure_ledger",
+      "file": "bmkg-near-closure-ledger.md",
+      "label": "Air-monitoring BMKG near-closure ledger",
+      "size": 3582,
+      "size_human": "3.5 KB",
+      "mtime": "2026-06-20T05:01:01.571Z",
+      "sha256": "7d44bd5eb98e82bac7a623f51f4a1031cf0ac04807b092ccd45173f02baf9529",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -554,6 +564,18 @@
       "size": 18592,
       "size_human": "18.2 KB",
       "sha256": "7e6db625944f36936a26e252ef2eac95bcac18e3d1abff2beb4bbff1596ea338"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-near-closure-ledger-summary.json",
+      "size": 54509,
+      "size_human": "53.2 KB",
+      "sha256": "64c65b44d69a185ddf73258cc4f838341eb9de00f22be0d779fd97c323a146e3"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-near-closure-ledger.csv",
+      "size": 18176,
+      "size_human": "17.8 KB",
+      "sha256": "1d588bbab303ea9667681008af8fc99b8c0fe6c8fd4af421cb96ea0ec3587450"
     },
     {
       "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json",

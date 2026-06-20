@@ -2310,6 +2310,73 @@ interface BmkgInstallationAuditSummary {
   non_claim: string;
 }
 
+interface BmkgNearClosureGate {
+  gate: string;
+  status: string;
+  rows: number;
+  note: string;
+}
+
+interface BmkgNearClosureLane {
+  lane: string;
+  rows: number;
+}
+
+interface BmkgNearClosureDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  station_method_class: string;
+  method_classified: boolean;
+  detail_page_display_found: boolean;
+  station_page_bam_method_text_found: boolean;
+  dashboard_status_raw: string;
+  dashboard_current_status_confirmed: boolean;
+  dashboard_delayed: boolean;
+  source_level_grade_basis_available: boolean;
+  source_level_periodic_calibration_rule_sources: number;
+  source_level_calibration_service_sources: number;
+  source_level_certificate_context_sources: number;
+  station_unit_or_exact_context_sources: number;
+  exact_station_audit_calibration_sources: number;
+  pm25_installation_deployment_sources: number;
+  station_specific_inspection_log_found: boolean;
+  station_specific_calibration_certificate_found: boolean;
+  calibration_status_available: boolean;
+  complete_monitor_grade_classification_available: boolean;
+  station_radius_grade_assumption_ready: boolean;
+  visible_evidence_gate_count: number;
+  blocking_gate_count: number;
+  near_closure_lane: string;
+  reader_use: string;
+}
+
+interface BmkgNearClosureSummary {
+  generated_at: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  counts: {
+    bmkg_target_rows: number;
+    station_method_classified_rows: number;
+    detail_page_display_rows: number;
+    dashboard_current_online_rows: number;
+    dashboard_delayed_rows: number;
+    source_level_grade_basis_rows: number;
+    station_unit_or_exact_context_rows: number;
+    exact_audit_calibration_context_rows: number;
+    pm25_installation_deployment_context_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_rows: number;
+  };
+  lane_counts: BmkgNearClosureLane[];
+  evidence_gate_counts: BmkgNearClosureGate[];
+  display_rows: BmkgNearClosureDisplayRow[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2828,6 +2895,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgStationPublicContextSummary | null>(null);
   const [bmkgInstallationAudit, setBmkgInstallationAudit] =
     useState<BmkgInstallationAuditSummary | null>(null);
+  const [bmkgNearClosure, setBmkgNearClosure] =
+    useState<BmkgNearClosureSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -3249,6 +3318,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG near-closure ledger HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgNearClosure(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3505,6 +3594,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgStationPublicContextPanel summary={bmkgStationPublicContext} />
 
       <AirBmkgInstallationAuditPanel summary={bmkgInstallationAudit} />
+
+      <AirBmkgNearClosurePanel summary={bmkgNearClosure} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -8780,6 +8871,158 @@ function AirBmkgInstallationAuditPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading BMKG installation/audit source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgNearClosurePanel({
+  summary,
+}: {
+  summary: BmkgNearClosureSummary | null;
+}) {
+  const counts = summary?.counts;
+  const lanes = summary?.lane_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const laneTotal = Math.max(1, lanes.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-near-closure-section" aria-label="BMKG near-closure ledger">
+      <div className="air-grade-method-head air-bmkg-near-closure-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG near-closure ledger</p>
+          <h2>Many gates are visible. The certificate gate is still empty.</h2>
+          <p>
+            This ledger combines the BMKG method classification, station-detail
+            displays, CEWS dashboard status, source-level standards, station
+            public-context scan, and installation/audit scan into one row-level
+            closure view. It shows how close the evidence gets before the
+            station-specific certificate, inspection log, or calibration-status
+            gate stops the grade claim.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-near-closure-callout">
+          <span>Complete-grade rows</span>
+          <strong>{formatNumber(counts?.complete_monitor_grade_rows ?? 0)}</strong>
+          <p>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)} public station-specific PM2.5 certificates in the current evidence stack.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-near-closure-stat-grid">
+            <div>
+              <span>BMKG rows</span>
+              <strong>{formatNumber(counts.bmkg_target_rows)}</strong>
+              <em>target station-detail rows</em>
+            </div>
+            <div>
+              <span>ONLINE dashboard</span>
+              <strong>{formatNumber(counts.dashboard_current_online_rows)}</strong>
+              <em>{formatNumber(counts.dashboard_delayed_rows)} delayed row</em>
+            </div>
+            <div>
+              <span>Method classified</span>
+              <strong>{formatNumber(counts.station_method_classified_rows)}</strong>
+              <em>BAM source-supported rows</em>
+            </div>
+            <div>
+              <span>Source-level basis</span>
+              <strong>{formatNumber(counts.source_level_grade_basis_rows)}</strong>
+              <em>rules, service, certificate context</em>
+            </div>
+            <div>
+              <span>Exact audit context</span>
+              <strong>{formatNumber(counts.exact_audit_calibration_context_rows)}</strong>
+              <em>context only, not certificate</em>
+            </div>
+            <div>
+              <span>Calibration certificates</span>
+              <strong>{formatNumber(counts.station_specific_calibration_certificate_rows)}</strong>
+              <em>the closure blocker</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-near-closure-lane-grid" aria-label="BMKG near-closure lanes">
+            {lanes.map((lane) => (
+              <article key={lane.lane} className={`air-grade-method-lane air-bmkg-near-closure-lane air-bmkg-near-closure-lane-${lane.lane}`}>
+                <div>
+                  <span>{sentenceCaseStatus(lane.lane)}</span>
+                  <strong>{formatNumber(lane.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-near-closure-track">
+                  <i style={{ width: `${Math.max(4, (lane.rows / laneTotal) * 100)}%` }} />
+                </div>
+                <p>{lane.lane.includes("audit") ? "Closest row: exact audit/calibration context is visible but not a station PM2.5 certificate." : "Evidence remains useful as review targeting, not as grade closure."}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-near-closure-row-grid" aria-label="BMKG near-closure station rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className={`air-bmkg-near-closure-row air-bmkg-near-closure-row-${row.near_closure_lane}`}>
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.near_closure_lane)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Visible</dt>
+                    <dd>{formatNumber(row.visible_evidence_gate_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>Blocking</dt>
+                    <dd>{formatNumber(row.blocking_gate_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{row.dashboard_status_raw || "missing"}</dd>
+                  </div>
+                  <div>
+                    <dt>Cert.</dt>
+                    <dd>{row.station_specific_calibration_certificate_found ? "yes" : "0"}</dd>
+                  </div>
+                </dl>
+                <ul>
+                  <li>Method: {row.method_classified ? row.station_method_class : "not classified"}</li>
+                  <li>Source-level calibration routes: {formatNumber(row.source_level_periodic_calibration_rule_sources + row.source_level_calibration_service_sources)}</li>
+                  <li>Exact/audit context: {formatNumber(row.exact_station_audit_calibration_sources)}</li>
+                </ul>
+                <p>{row.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-near-closure-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-near-closure-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.note}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-bmkg-near-closure-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-grade-method-downloads air-bmkg-near-closure-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-near-closure-ledger.md" download>
+              Download near-closure note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-near-closure-ledger.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading BMKG near-closure ledger...</p>
       )}
     </section>
   );

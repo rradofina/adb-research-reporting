@@ -317,6 +317,19 @@
       ],
       "notes": "Official BMKG installation, audit/calibration, public-information, and operational-monitoring source scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 6 of 6 seeded official sources, adds 1 exact station audit/calibration context row, 7 PM2.5 installation/deployment context rows, 4 source-level operational or calibration routes, and keeps station-specific inspection logs, calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
     },
+    "air_monitoring_bmkg_near_closure_ledger": {
+      "script": "air-monitoring/scripts/build-bmkg-near-closure-ledger.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_method_classification_audit",
+        "air_monitoring_bmkg_station_specific_status_audit",
+        "air_monitoring_bmkg_dashboard_status_source_scan",
+        "air_monitoring_bmkg_grade_basis_source_scan",
+        "air_monitoring_bmkg_station_public_context_source_scan",
+        "air_monitoring_bmkg_installation_audit_source_scan"
+      ],
+      "notes": "No-network BMKG near-closure ledger for the 22 Indonesia BMKG BAM-classified rows. It synthesizes existing method, station-detail display, dashboard status, source-level grade-basis, station public-context, and official installation/audit evidence into row-level gates: 22 method-classified rows, 22 station-detail display rows, 21 current ONLINE dashboard rows, 1 current DELAYED row, 1 exact audit/calibration context row, 7 PM2.5 installation/deployment context rows, and 0 station-specific inspection logs, calibration certificates/status records, complete monitor-grade rows, or station-radius-ready rows."
+    },
     "air_monitoring_georgia_report_verification_source_scan": {
       "script": "air-monitoring/scripts/scan-georgia-report-verification-sources.py",
       "retrieved_on": "2026-06-19",
@@ -767,6 +780,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_bmkg_installation_audit_source_scan pin after retrieving 6 official BMKG installation, audit/calibration, public-information, and operational-monitoring sources for the 22 BMKG BAM-classified rows, adding 1 exact station audit/calibration context row and 7 PM2.5 installation/deployment context rows while keeping station-specific inspection logs, calibration certificate/status records, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_bmkg_near_closure_ledger pin after synthesizing six committed BMKG evidence artifacts into a 22-row closure ledger with 21 current ONLINE dashboard rows, 1 DELAYED row, 1 exact audit/calibration context row, 7 PM2.5 installation/deployment context rows, and 0 station-specific inspection logs, calibration certificates/status records, complete-grade rows, or station-radius-ready rows."
     },
     {
       "date": "2026-06-19",

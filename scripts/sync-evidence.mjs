@@ -90,6 +90,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_bmkg_grade_basis_source_scan", file: "bmkg-grade-basis-source-scan.md", label: "Air-monitoring BMKG grade-basis source scan" },
   { key: "air_monitoring_bmkg_station_public_context_source_scan", file: "bmkg-station-public-context-source-scan.md", label: "Air-monitoring BMKG station public-context source scan" },
   { key: "air_monitoring_bmkg_installation_audit_source_scan", file: "bmkg-installation-audit-source-scan.md", label: "Air-monitoring BMKG installation/audit source scan" },
+  { key: "air_monitoring_bmkg_near_closure_ledger", file: "bmkg-near-closure-ledger.md", label: "Air-monitoring BMKG near-closure ledger" },
   { key: "air_monitoring_georgia_report_verification_source_scan", file: "georgia-report-verification-source-scan.md", label: "Air-monitoring Georgia report verification source scan" },
   { key: "air_monitoring_georgia_report_export_ladder", file: "georgia-report-export-ladder.md", label: "Air-monitoring Georgia report export verification ladder" },
   { key: "air_monitoring_georgia_verification_policy", file: "georgia-verification-policy.md", label: "Air-monitoring Georgia verification-policy wall" },

@@ -12546,6 +12546,151 @@
     font-weight: 800;
   }
 
+  .air-bmkg-near-closure-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 37, 105, 0.08), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
+  .air-bmkg-near-closure-callout {
+    border-left-color: #002569;
+    background: #edf3fb;
+  }
+
+  .air-bmkg-near-closure-stat-grid > div,
+  .air-bmkg-near-closure-lane,
+  .air-bmkg-near-closure-gate {
+    border-top-color: #002569;
+  }
+
+  .air-bmkg-near-closure-track {
+    background: #dfe8f4;
+  }
+
+  .air-bmkg-near-closure-track i {
+    background: linear-gradient(90deg, #002569, #007db8);
+  }
+
+  .air-bmkg-near-closure-lane-grid,
+  .air-bmkg-near-closure-row-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-bmkg-near-closure-row {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(3.6rem, 1fr);
+    gap: 0.62rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #002569;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .air-bmkg-near-closure-row-nearest_exact_audit_context_certificate_missing {
+    border-left-color: #5a8227;
+    background: #f5f9ee;
+  }
+
+  .air-bmkg-near-closure-row-station_unit_context_certificate_missing {
+    border-left-color: #007db8;
+    background: #eef8fc;
+  }
+
+  .air-bmkg-near-closure-row-pm25_deployment_context_certificate_missing {
+    border-left-color: #fbb00e;
+    background: #fff8e3;
+  }
+
+  .air-bmkg-near-closure-row-dashboard_delayed_certificate_missing {
+    border-left-color: #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-bmkg-near-closure-row > div:first-child {
+    display: grid;
+    gap: 0.24rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-near-closure-row span,
+  .air-bmkg-near-closure-row dt {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-near-closure-row strong {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.14;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-near-closure-row b,
+  .air-bmkg-near-closure-row dd {
+    color: #002569;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-near-closure-row dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-near-closure-row dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
+  .air-bmkg-near-closure-row ul {
+    display: grid;
+    gap: 0.22rem;
+    margin: 0;
+    padding-left: 1rem;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-bmkg-near-closure-row li,
+  .air-bmkg-near-closure-row p,
+  .air-bmkg-near-closure-nonclaim {
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-near-closure-row p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+  }
+
+  .air-bmkg-near-closure-nonclaim {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(155, 34, 38, 0.18);
+    border-left: 4px solid #9b2226;
+    background: #fff7f5;
+    color: #5f1b1f;
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -14479,6 +14624,10 @@
     .air-bmkg-grade-source-grid,
     .air-bmkg-station-context-row-grid,
     .air-bmkg-station-context-source-grid,
+    .air-bmkg-near-closure-stat-grid,
+    .air-bmkg-near-closure-lane-grid,
+    .air-bmkg-near-closure-row-grid,
+    .air-bmkg-near-closure-gate-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15928,6 +16077,10 @@
     .air-bmkg-grade-source-grid,
     .air-bmkg-station-context-row-grid,
     .air-bmkg-station-context-source-grid,
+    .air-bmkg-near-closure-stat-grid,
+    .air-bmkg-near-closure-lane-grid,
+    .air-bmkg-near-closure-row-grid,
+    .air-bmkg-near-closure-gate-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -16020,6 +16173,8 @@
     .air-bmkg-station-context-row,
     .air-bmkg-station-context-source,
     .air-bmkg-station-context-gate,
+    .air-bmkg-near-closure-row,
+    .air-bmkg-near-closure-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -16064,6 +16219,7 @@
     .air-bmkg-api-head,
     .air-bmkg-regional-head,
     .air-bmkg-dashboard-head,
+    .air-bmkg-near-closure-head,
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
@@ -16118,7 +16274,8 @@
     .air-bmkg-regional-row dl,
     .air-bmkg-grade-source-card dl,
     .air-bmkg-station-context-row dl,
-    .air-bmkg-station-context-source dl {
+    .air-bmkg-station-context-source dl,
+    .air-bmkg-near-closure-row dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

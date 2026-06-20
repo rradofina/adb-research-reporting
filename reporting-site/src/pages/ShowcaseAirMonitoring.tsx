@@ -2039,6 +2039,82 @@ interface GeorgiaVerificationPolicySummary {
   non_claim: string;
 }
 
+interface GeorgiaReportFrequencyGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaReportFrequencyDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaReportFrequencyRow {
+  report_type: string;
+  route_probes: number;
+  valid_payload_routes: number;
+  server_error_routes: number;
+  html_not_verified_routes: number;
+  pdf_not_verified_routes: number;
+  xlsx_station_sheet_routes: number;
+  verified_closure_routes: number;
+  reader_use: string;
+}
+
+interface GeorgiaReportFrequencySampleRow {
+  report_type: string;
+  export_type: string;
+  probe_date: string;
+  http_status: number;
+  valid_payload: boolean;
+  station_code_matches: number;
+  pm25_present: boolean;
+  not_verified_label_present: boolean;
+  verified_label_without_not_verified: boolean;
+  xlsx_target_station_sheet_count: number;
+  report_frequency_decision: string;
+}
+
+interface GeorgiaReportFrequencySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    route_probes_targeted: number;
+    routes_retrieved_200: number;
+    valid_payload_routes: number;
+    server_error_routes: number;
+    annual_server_error_routes: number;
+    daily_routes_tested: number;
+    monthly_routes_tested: number;
+    annual_routes_tested: number;
+    html_not_verified_routes: number;
+    pdf_not_verified_routes: number;
+    html_pdf_not_verified_routes: number;
+    xlsx_valid_routes: number;
+    xlsx_all_target_station_sheet_routes: number;
+    xlsx_verification_label_routes: number;
+    routes_with_all_target_station_codes: number;
+    routes_with_pm25: number;
+    verified_label_without_not_verified_routes: number;
+    verified_report_closure_available_routes: number;
+    current_status_confirmed_routes: number;
+    station_method_classified_routes: number;
+    complete_monitor_grade_classification_routes: number;
+    station_radius_grade_assumption_ready_routes: number;
+  };
+  frequency_rows: GeorgiaReportFrequencyRow[];
+  decision_counts: GeorgiaReportFrequencyDecision[];
+  evidence_gate_counts: GeorgiaReportFrequencyGate[];
+  sample_rows: GeorgiaReportFrequencySampleRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -2183,6 +2259,8 @@ export default function ShowcaseAirMonitoring() {
     useState<GeorgiaReportExportLadderSummary | null>(null);
   const [georgiaVerificationPolicy, setGeorgiaVerificationPolicy] =
     useState<GeorgiaVerificationPolicySummary | null>(null);
+  const [georgiaReportFrequency, setGeorgiaReportFrequency] =
+    useState<GeorgiaReportFrequencySummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -2531,6 +2609,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia report frequency HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaReportFrequency(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -2684,6 +2782,8 @@ export default function ShowcaseAirMonitoring() {
       <AirGeorgiaReportExportLadderPanel summary={georgiaReportExportLadder} />
 
       <AirGeorgiaVerificationPolicyPanel summary={georgiaVerificationPolicy} />
+
+      <AirGeorgiaReportFrequencyPanel summary={georgiaReportFrequency} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -7323,6 +7423,187 @@ function AirGeorgiaVerificationPolicyPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading Georgia verification-policy wall...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaReportFrequencyPanel({
+  summary,
+}: {
+  summary: GeorgiaReportFrequencySummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const frequencies = summary?.frequency_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const samples = summary?.sample_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const closureRoutes =
+    (counts?.verified_report_closure_available_routes ?? 0) +
+    (counts?.current_status_confirmed_routes ?? 0) +
+    (counts?.complete_monitor_grade_classification_routes ?? 0);
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-frequency-section" aria-label="Georgia report frequency matrix">
+      <div className="air-grade-method-head air-georgia-frequency-head">
+        <div>
+          <p className="kicker kicker-blue">Georgia report-frequency matrix</p>
+          <h2>Daily reports repeat the caution. Annual reports do not open.</h2>
+          <p>
+            The policy says verified data are in reports, so this pass tests the
+            daily, monthly, and annual report routes directly. Daily and monthly
+            human-readable outputs keep the caution; annual probes return server
+            errors for the tested formats.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-frequency-callout">
+          <span>Closure routes</span>
+          <strong>{formatNumber(closureRoutes)}</strong>
+          <p>frequency tests do not close verification, status, or grade</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-frequency-stat-grid">
+            <div>
+              <span>Route probes</span>
+              <strong>{formatNumber(counts.route_probes_targeted)}</strong>
+              <em>daily, monthly, annual</em>
+            </div>
+            <div>
+              <span>Valid payloads</span>
+              <strong>{formatNumber(counts.valid_payload_routes)}</strong>
+              <em>daily/monthly only</em>
+            </div>
+            <div>
+              <span>Annual server errors</span>
+              <strong>{formatNumber(counts.annual_server_error_routes)}</strong>
+              <em>tested date formats</em>
+            </div>
+            <div>
+              <span>HTML/PDF cautions</span>
+              <strong>{formatNumber(counts.html_pdf_not_verified_routes)}</strong>
+              <em>not-verified payloads</em>
+            </div>
+            <div>
+              <span>XLSX station sheets</span>
+              <strong>{formatNumber(counts.xlsx_all_target_station_sheet_routes)}</strong>
+              <em>verification labels: {formatNumber(counts.xlsx_verification_label_routes)}</em>
+            </div>
+            <div>
+              <span>Verified closures</span>
+              <strong>{formatNumber(counts.verified_report_closure_available_routes)}</strong>
+              <em>target station codes remain open</em>
+            </div>
+          </div>
+
+          <div className="air-georgia-frequency-grid" aria-label="Georgia report frequency outcomes">
+            {frequencies.map((row) => (
+              <article key={row.report_type} className={`air-georgia-frequency-card air-georgia-frequency-card-${row.report_type}`}>
+                <div>
+                  <span>{row.report_type}</span>
+                  <strong>{formatNumber(row.route_probes)} probes</strong>
+                </div>
+                <p>{row.reader_use}</p>
+                <dl>
+                  <div>
+                    <dt>Valid</dt>
+                    <dd>{formatNumber(row.valid_payload_routes)}</dd>
+                  </div>
+                  <div>
+                    <dt>Server errors</dt>
+                    <dd>{formatNumber(row.server_error_routes)}</dd>
+                  </div>
+                  <div>
+                    <dt>HTML caution</dt>
+                    <dd>{formatNumber(row.html_not_verified_routes)}</dd>
+                  </div>
+                  <div>
+                    <dt>PDF caution</dt>
+                    <dd>{formatNumber(row.pdf_not_verified_routes)}</dd>
+                  </div>
+                  <div>
+                    <dt>XLSX sheets</dt>
+                    <dd>{formatNumber(row.xlsx_station_sheet_routes)}</dd>
+                  </div>
+                  <div>
+                    <dt>Closures</dt>
+                    <dd>{formatNumber(row.verified_closure_routes)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-frequency-decision-grid" aria-label="Georgia report frequency decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-frequency-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-frequency-track">
+                  <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-frequency-sample-grid">
+            {samples.slice(0, 12).map((row) => (
+              <article
+                key={`${row.report_type}-${row.export_type}-${row.probe_date}`}
+                className={`air-georgia-frequency-sample air-georgia-frequency-sample-${row.export_type}`}
+              >
+                <div>
+                  <span>{row.report_type} / {row.export_type}</span>
+                  <strong>{row.probe_date}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>HTTP</dt>
+                    <dd>{formatNumber(row.http_status)}</dd>
+                  </div>
+                  <div>
+                    <dt>Stations</dt>
+                    <dd>{formatNumber(row.station_code_matches)}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.pm25_present ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Caution</dt>
+                    <dd>{row.not_verified_label_present ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{sentenceCaseStatus(row.report_frequency_decision)}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-frequency-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-frequency-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-georgia-frequency-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/georgia-report-frequency-matrix.md">Frequency note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json">Summary JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix.csv">Source CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia report-frequency matrix...</p>
       )}
     </section>
   );

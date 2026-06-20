@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T00:20:39.906Z",
+  "generated_at": "2026-06-20T00:45:31.422Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -384,6 +384,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_georgia_report_frequency_matrix",
+      "file": "georgia-report-frequency-matrix.md",
+      "label": "Air-monitoring Georgia report-frequency verification matrix",
+      "size": 1854,
+      "size_human": "1.8 KB",
+      "mtime": "2026-06-20T00:35:58.172Z",
+      "sha256": "701e5b43a385ba1e97734725f785d357067ce912db6d94e804caeedcc99d4916",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -486,6 +496,18 @@
       "size": 33829,
       "size_human": "33.0 KB",
       "sha256": "35c00715dc0eb33a6d515b9c507476c638cbf78edde1451ca2f7066d5f01bec9"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+      "size": 16158,
+      "size_human": "15.8 KB",
+      "sha256": "78b2f3ef6c78251879983c7fdb9b31cc5336ff3891217564f95f381298d017a7"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-report-frequency-matrix.csv",
+      "size": 29294,
+      "size_human": "28.6 KB",
+      "sha256": "bfa34a51387d086828f77d4c9d5c19e53df3d7f8c25bb1806c320f4628ed17da"
     },
     {
       "file": "generated/air-monitoring-georgia-report-verification-source-scan-summary.json",

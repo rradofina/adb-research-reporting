@@ -12313,6 +12313,133 @@
     font-weight: 800;
   }
 
+  .air-georgia-frequency-section {
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.08), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
+  .air-georgia-frequency-callout {
+    border-left-color: #5a8227;
+    background: #f1f8ec;
+  }
+
+  .air-georgia-frequency-stat-grid > div,
+  .air-georgia-frequency-lane,
+  .air-georgia-frequency-gate {
+    border-top-color: #5a8227;
+  }
+
+  .air-georgia-frequency-track {
+    background: #e4f2dc;
+  }
+
+  .air-georgia-frequency-track i {
+    background: linear-gradient(90deg, #5a8227, var(--crimson));
+  }
+
+  .air-georgia-frequency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-georgia-frequency-card,
+  .air-georgia-frequency-sample {
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .air-georgia-frequency-card {
+    display: grid;
+    gap: 0.8rem;
+    border-top: 5px solid #5a8227;
+  }
+
+  .air-georgia-frequency-card-annual {
+    border-top-color: var(--crimson);
+  }
+
+  .air-georgia-frequency-card span,
+  .air-georgia-frequency-sample span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-frequency-card strong {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink);
+    font-size: 1.35rem;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-frequency-card p,
+  .air-georgia-frequency-sample p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.42;
+  }
+
+  .air-georgia-frequency-card dl,
+  .air-georgia-frequency-sample dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.48rem;
+    margin: 0;
+  }
+
+  .air-georgia-frequency-card dt,
+  .air-georgia-frequency-sample dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .air-georgia-frequency-card dd,
+  .air-georgia-frequency-sample dd {
+    margin: 0.1rem 0 0;
+    color: #5a8227;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .air-georgia-frequency-sample-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-georgia-frequency-sample {
+    display: grid;
+    gap: 0.62rem;
+    border-left: 4px solid #5a8227;
+  }
+
+  .air-georgia-frequency-sample-pdf,
+  .air-georgia-frequency-sample-html {
+    border-left-color: var(--crimson);
+  }
+
+  .air-georgia-frequency-sample strong {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.12;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -13533,6 +13660,11 @@
     .air-georgia-policy-decision-grid,
     .air-georgia-policy-source-grid,
     .air-georgia-policy-gate-grid,
+    .air-georgia-frequency-stat-grid,
+    .air-georgia-frequency-grid,
+    .air-georgia-frequency-decision-grid,
+    .air-georgia-frequency-sample-grid,
+    .air-georgia-frequency-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -13570,6 +13702,7 @@
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
     .air-georgia-policy-head,
+    .air-georgia-frequency-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
@@ -14953,6 +15086,11 @@
     .air-georgia-policy-decision-grid,
     .air-georgia-policy-source-grid,
     .air-georgia-policy-gate-grid,
+    .air-georgia-frequency-stat-grid,
+    .air-georgia-frequency-grid,
+    .air-georgia-frequency-decision-grid,
+    .air-georgia-frequency-sample-grid,
+    .air-georgia-frequency-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -15018,6 +15156,10 @@
     .air-georgia-policy-lane,
     .air-georgia-policy-source,
     .air-georgia-policy-gate,
+    .air-georgia-frequency-lane,
+    .air-georgia-frequency-card,
+    .air-georgia-frequency-sample,
+    .air-georgia-frequency-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -15048,6 +15190,7 @@
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
     .air-georgia-policy-head,
+    .air-georgia-frequency-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
@@ -15066,6 +15209,11 @@
     }
 
     .air-georgia-policy-source dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-georgia-frequency-card dl,
+    .air-georgia-frequency-sample dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -15168,6 +15316,7 @@
     .air-georgia-report-downloads,
     .air-georgia-export-downloads,
     .air-georgia-policy-downloads,
+    .air-georgia-frequency-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

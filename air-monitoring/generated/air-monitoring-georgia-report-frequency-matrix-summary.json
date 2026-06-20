@@ -1,0 +1,465 @@
+{
+  "generated_at": "2026-06-20T00:33:56Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_georgia_report_frequency_matrix",
+  "method": "air_monitoring_georgia_report_frequency_matrix_v1",
+  "goal_level": "L3 Georgia report-frequency verification matrix",
+  "source_scope": "Official air.gov.ge report generator routes for daily, monthly, and annual HTML/XLSX/PDF outputs for 16 target Georgia station codes.",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\georgia-report-frequency-matrix-source-seed.csv",
+      "role": "official Georgia report-frequency route seed"
+    }
+  ],
+  "coverage_counts": {
+    "route_probes_targeted": 24,
+    "routes_retrieved_200": 12,
+    "valid_payload_routes": 12,
+    "server_error_routes": 12,
+    "annual_server_error_routes": 12,
+    "daily_routes_tested": 6,
+    "monthly_routes_tested": 6,
+    "annual_routes_tested": 12,
+    "html_not_verified_routes": 4,
+    "pdf_not_verified_routes": 4,
+    "html_pdf_not_verified_routes": 8,
+    "xlsx_valid_routes": 4,
+    "xlsx_all_target_station_sheet_routes": 4,
+    "xlsx_verification_label_routes": 0,
+    "routes_with_all_target_station_codes": 8,
+    "routes_with_pm25": 12,
+    "verified_label_without_not_verified_routes": 0,
+    "verified_report_closure_available_routes": 0,
+    "current_status_confirmed_routes": 0,
+    "station_method_classified_routes": 0,
+    "complete_monitor_grade_classification_routes": 0,
+    "station_radius_grade_assumption_ready_routes": 0
+  },
+  "frequency_rows": [
+    {
+      "report_type": "daily",
+      "route_probes": 6,
+      "valid_payload_routes": 6,
+      "server_error_routes": 0,
+      "html_not_verified_routes": 2,
+      "pdf_not_verified_routes": 2,
+      "xlsx_station_sheet_routes": 2,
+      "verified_closure_routes": 0,
+      "reader_use": "Daily HTML/PDF surfaces repeat the caution; XLSX carries station sheets but no verification label."
+    },
+    {
+      "report_type": "monthly",
+      "route_probes": 6,
+      "valid_payload_routes": 6,
+      "server_error_routes": 0,
+      "html_not_verified_routes": 2,
+      "pdf_not_verified_routes": 2,
+      "xlsx_station_sheet_routes": 2,
+      "verified_closure_routes": 0,
+      "reader_use": "Monthly comparison routes match the earlier ladder: report payloads remain open, not closed."
+    },
+    {
+      "report_type": "annual",
+      "route_probes": 12,
+      "valid_payload_routes": 0,
+      "server_error_routes": 12,
+      "html_not_verified_routes": 0,
+      "pdf_not_verified_routes": 0,
+      "xlsx_station_sheet_routes": 0,
+      "verified_closure_routes": 0,
+      "reader_use": "Annual route probes return server-error pages for tested date formats, so they do not provide a verified surface."
+    }
+  ],
+  "decision_counts": [
+    {
+      "decision": "annual_route_server_error_no_closure",
+      "rows": 12
+    },
+    {
+      "decision": "daily_html_not_verified_keep_open",
+      "rows": 2
+    },
+    {
+      "decision": "daily_pdf_not_verified_keep_open",
+      "rows": 2
+    },
+    {
+      "decision": "monthly_html_not_verified_keep_open",
+      "rows": 2
+    },
+    {
+      "decision": "monthly_pdf_not_verified_keep_open",
+      "rows": 2
+    },
+    {
+      "decision": "xlsx_station_sheets_without_verification_label",
+      "rows": 4
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Daily report/export probes",
+      "rows": 6,
+      "reader_use": "Daily HTML, XLSX, and PDF routes were tested on two dates."
+    },
+    {
+      "status": "available",
+      "gate": "Monthly comparison probes",
+      "rows": 6,
+      "reader_use": "Monthly HTML, XLSX, and PDF routes were retested on two benchmark months."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Annual route probes",
+      "rows": 12,
+      "reader_use": "Annual route probes returned server-error pages for the tested formats."
+    },
+    {
+      "status": "caution",
+      "gate": "HTML/PDF Not Verified Data",
+      "rows": 8,
+      "reader_use": "Human-readable report payloads still carry not-verified caution text."
+    },
+    {
+      "status": "partly_available",
+      "gate": "XLSX station sheets",
+      "rows": 4,
+      "reader_use": "XLSX exports expose target station sheets but no verification label."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Clean verified label",
+      "rows": 0,
+      "reader_use": "No tested frequency/export route provides a verified label without the not-verified caution."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified report closure",
+      "rows": 0,
+      "reader_use": "No tested route closes the verified-report gate for the target station codes."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station status and complete grade",
+      "rows": 0,
+      "reader_use": "Report-frequency routes do not provide station current status, method table, or complete grade."
+    }
+  ],
+  "sample_rows": [
+    {
+      "report_type": "daily",
+      "export_type": "html",
+      "probe_date": "2026-06-19",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 15,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "daily_html_not_verified_keep_open"
+    },
+    {
+      "report_type": "daily",
+      "export_type": "html",
+      "probe_date": "2025-12-31",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 15,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "daily_html_not_verified_keep_open"
+    },
+    {
+      "report_type": "daily",
+      "export_type": "xlsx",
+      "probe_date": "2026-06-19",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 16,
+      "report_frequency_decision": "xlsx_station_sheets_without_verification_label"
+    },
+    {
+      "report_type": "daily",
+      "export_type": "xlsx",
+      "probe_date": "2025-12-31",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 16,
+      "report_frequency_decision": "xlsx_station_sheets_without_verification_label"
+    },
+    {
+      "report_type": "daily",
+      "export_type": "pdf",
+      "probe_date": "2026-06-19",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 15,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "daily_pdf_not_verified_keep_open"
+    },
+    {
+      "report_type": "daily",
+      "export_type": "pdf",
+      "probe_date": "2025-12-31",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 15,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "daily_pdf_not_verified_keep_open"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "html",
+      "probe_date": "2026-05",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "monthly_html_not_verified_keep_open"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "html",
+      "probe_date": "2025-12",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "monthly_html_not_verified_keep_open"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "xlsx",
+      "probe_date": "2026-05",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 16,
+      "report_frequency_decision": "xlsx_station_sheets_without_verification_label"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "xlsx",
+      "probe_date": "2025-12",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 16,
+      "report_frequency_decision": "xlsx_station_sheets_without_verification_label"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "pdf",
+      "probe_date": "2026-05",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "monthly_pdf_not_verified_keep_open"
+    },
+    {
+      "report_type": "monthly",
+      "export_type": "pdf",
+      "probe_date": "2025-12",
+      "http_status": 200,
+      "valid_payload": true,
+      "station_code_matches": 16,
+      "pm25_present": true,
+      "not_verified_label_present": true,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "monthly_pdf_not_verified_keep_open"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "html",
+      "probe_date": "2025",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "html",
+      "probe_date": "2025-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "html",
+      "probe_date": "2025-01-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "html",
+      "probe_date": "2025-12-31",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "xlsx",
+      "probe_date": "2025",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "xlsx",
+      "probe_date": "2025-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "xlsx",
+      "probe_date": "2025-01-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "xlsx",
+      "probe_date": "2025-12-31",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "pdf",
+      "probe_date": "2025",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "pdf",
+      "probe_date": "2025-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "pdf",
+      "probe_date": "2025-01-01",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    },
+    {
+      "report_type": "annual",
+      "export_type": "pdf",
+      "probe_date": "2025-12-31",
+      "http_status": 500,
+      "valid_payload": false,
+      "station_code_matches": 0,
+      "pm25_present": false,
+      "not_verified_label_present": false,
+      "verified_label_without_not_verified": false,
+      "xlsx_target_station_sheet_count": 0,
+      "report_frequency_decision": "annual_route_server_error_no_closure"
+    }
+  ],
+  "non_claim": "This scan tests official Georgia daily, monthly, and annual report routes plus XLSX/PDF exports. It does not certify any target station as verified, currently operating, station-method classified, complete monitor-grade, or station-radius ready."
+}

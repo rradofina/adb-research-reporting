@@ -1,0 +1,113 @@
+{
+  "checkedAt": "2026-06-20T00:46:33.529Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "requiredText": [
+    "Georgia report-frequency matrix",
+    "Daily reports repeat the caution. Annual reports do not open.",
+    "Closure routes",
+    "Route probes",
+    "Valid payloads",
+    "Annual server errors",
+    "HTML/PDF cautions",
+    "XLSX station sheets",
+    "Verified closures",
+    "daily",
+    "monthly",
+    "annual",
+    "Annual route probes"
+  ],
+  "expectedCounts": {
+    ".air-georgia-frequency-section .air-georgia-frequency-stat-grid > div": 6,
+    ".air-georgia-frequency-section .air-georgia-frequency-grid > article": 3,
+    ".air-georgia-frequency-section .air-georgia-frequency-lane": 6,
+    ".air-georgia-frequency-section .air-georgia-frequency-sample": 12,
+    ".air-georgia-frequency-section .air-georgia-frequency-gate": 8,
+    ".air-georgia-frequency-section .air-georgia-frequency-downloads a": 3
+  },
+  "results": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        ".air-georgia-frequency-section .air-georgia-frequency-stat-grid > div": 6,
+        ".air-georgia-frequency-section .air-georgia-frequency-grid > article": 3,
+        ".air-georgia-frequency-section .air-georgia-frequency-lane": 6,
+        ".air-georgia-frequency-section .air-georgia-frequency-sample": 12,
+        ".air-georgia-frequency-section .air-georgia-frequency-gate": 8,
+        ".air-georgia-frequency-section .air-georgia-frequency-downloads a": 3
+      },
+      "linkStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-report-frequency-matrix.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        ".air-georgia-frequency-section .air-georgia-frequency-stat-grid > div": 6,
+        ".air-georgia-frequency-section .air-georgia-frequency-grid > article": 3,
+        ".air-georgia-frequency-section .air-georgia-frequency-lane": 6,
+        ".air-georgia-frequency-section .air-georgia-frequency-sample": 12,
+        ".air-georgia-frequency-section .air-georgia-frequency-gate": 8,
+        ".air-georgia-frequency-section .air-georgia-frequency-downloads a": 3
+      },
+      "linkStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-report-frequency-matrix.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    }
+  ],
+  "screenshots": [
+    "showcase-air-georgia-frequency-desktop-head.png",
+    "showcase-air-georgia-frequency-desktop-frequency.png",
+    "showcase-air-georgia-frequency-desktop-samples.png",
+    "showcase-air-georgia-frequency-desktop-gates.png",
+    "showcase-air-georgia-frequency-mobile-head.png",
+    "showcase-air-georgia-frequency-mobile-frequency.png",
+    "showcase-air-georgia-frequency-mobile-samples.png",
+    "showcase-air-georgia-frequency-mobile-gates.png"
+  ]
+}

@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-20T00:22:20.544Z
+Generated: 2026-06-20T00:47:47.178Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 12/12
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 398
-- QA browser-check JSON files in reporting-site/qa: 32
+- QA screenshot files in reporting-site/qa: 406
+- QA browser-check JSON files in reporting-site/qa: 33
 - Verification failures: 0
 
 ## Readiness Mix

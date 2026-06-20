@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, Georgia report/export verification ladder, and Georgia verification-policy wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -173,13 +173,19 @@ overrides priority by editing this list.
    reports, and joins that rule back to the 24-month report/export surface;
    the joined surface still has 24 not-verified HTML months, 3 PDF caution
    probes, 0 verified closure rows, 0 current-status rows, 0 complete-grade
-   rows, and 0 station-radius-ready rows. Next AI-doable loop is
+   rows, and 0 station-radius-ready rows. The Georgia report-frequency matrix
+   then probes 24 official daily, monthly, and annual HTML/XLSX/PDF routes for
+   the same 16 station codes, retrieves 12 valid daily/monthly payloads,
+   records 12 annual server-error probes, finds 8 HTML/PDF not-verified
+   payloads, 4 XLSX station-sheet exports without verification labels, and 0
+   verified closure routes. Next AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry:
    station-specific inspection/calibration/status and official grade-basis
-   evidence for the 22 BMKG rows, a Georgia verified report/status route beyond
-   the not-verified monthly report/export surface, plus exact station
-   method/status/certification tables for Uzbekistan, before any station-radius
-   or catchment claim.
+   evidence for the 22 BMKG rows, a Georgia station-code verified
+   report/status/method route beyond the tested policy, daily/monthly caution,
+   annual server-error, and XLSX station-sheet-only surfaces, plus exact
+   station method/status/certification tables for Uzbekistan, before any
+   station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -1052,6 +1058,23 @@ by leaving the board in a state the next session can read.
   verified report-closure rows, 0 current-status rows, 0 station-method rows,
   0 complete-grade rows, and 0 station-radius-ready rows. The public route now
   renders a Georgia verification-policy bridge.
+- **2026-06-20 (air-monitoring Georgia report-frequency matrix):**
+  Added
+  `air-monitoring/source-inputs/georgia-report-frequency-matrix-source-seed.csv`
+  and `air-monitoring/scripts/scan-georgia-report-frequency-matrix.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json`,
+  and wrote `air-monitoring/georgia-report-frequency-matrix.md`. The
+  networked scan probes 24 official `air.gov.ge` daily, monthly, and annual
+  HTML/XLSX/PDF report routes for the 16 Georgia target station codes,
+  retrieves 12 valid daily/monthly report or export payloads, records 12
+  annual server-error probes, finds 8 HTML/PDF payloads retaining not-verified
+  labels, finds 4 XLSX exports with all target station sheets but 0
+  verification labels, and keeps verified-report closure, current-status,
+  station-method, complete-grade, and station-radius-ready rows at 0. The
+  public route now renders a Georgia report-frequency matrix.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

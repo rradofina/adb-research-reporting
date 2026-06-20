@@ -1300,6 +1300,19 @@ by leaving the board in a state the next session can read.
   station-method, complete-grade, or station-radius-ready rows. The public
   route now renders a launch-context-versus-station-closure wall for the
   unresolved Uzbekistan blockers.
+- **2026-06-20 (air-monitoring Uzbekistan blocker currentness refresh):**
+  Reran the committed Uzbekistan blocker-row follow-up and
+  endpoint-consistency scripts against current public Uzhydromet routes for
+  station IDs 107, 728, and 737. The rerun retrieves 2 official regional table
+  pages, 3 exact station-detail pages, and 16 of 16 official endpoint routes.
+  Station 107 remains 50 days stale with regional `Updating data`, station 728
+  remains recent but carries PM2.5 `-9999`, and station 737 remains 41 days
+  stale with regional `Updating data`. The endpoint-consistency pass still
+  records 3 API/detail date mismatches, 2 API/detail PM2.5 mismatches, 3
+  region/detail status mismatches, and 0 public endpoint-resolution,
+  current-status, complete-grade, or station-radius-ready rows. This is a
+  reproducibility/currentness refresh only; it does not change the active
+  maturity label.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

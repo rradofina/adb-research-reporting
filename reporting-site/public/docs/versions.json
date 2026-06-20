@@ -184,15 +184,15 @@
     "air_monitoring_uzbekistan_blocker_row_followup": {
       "script": "air-monitoring/scripts/scan-uzbekistan-blocker-row-followup.py",
       "seed": "air-monitoring/source-inputs/uzbekistan-blocker-row-followup-targets.csv",
-      "retrieved_on": "2026-06-19",
-      "notes": "Exact row-level follow-up for the 3 Uzbekistan blocker rows left by the status/certification scan. It retrieves 2 official regional table pages and 3 exact official station-detail pages, finds 2 stale detail rows with regional Updating data status and 1 recent Sergili row with a -9999 PM2.5 sentinel, and still resolves 0 public blockers, 0 current-status confirmations, 0 complete monitor-grade rows, and 0 station-radius-ready rows."
+      "retrieved_on": "2026-06-20",
+      "notes": "Exact row-level follow-up for the 3 Uzbekistan blocker rows left by the status/certification scan. The 2026-06-20 refresh retrieves 2 official regional table pages and 3 exact official station-detail pages; station 107 is 50 days stale with regional Updating data, station 728 is recent but still carries the -9999 PM2.5 sentinel, and station 737 is 41 days stale with regional Updating data. It still resolves 0 public blockers, 0 current-status confirmations, 0 complete monitor-grade rows, and 0 station-radius-ready rows."
     },
     "air_monitoring_uzbekistan_endpoint_consistency": {
       "script": "air-monitoring/scripts/scan-uzbekistan-endpoint-consistency.py",
       "seed": "air-monitoring/source-inputs/uzbekistan-endpoint-consistency-targets.csv",
       "url": "https://monitoring.meteo.uz/api/maps",
-      "retrieved_on": "2026-06-19",
-      "notes": "Exact official endpoint-consistency check for the 3 Uzbekistan blocker rows. It retrieves 16 of 16 official routes across the public maps API, English/Russian/Uzbek regional table pages, and English/Russian/Uzbek station-detail pages; finds 9 of 9 detail pages and 9 language regional rows; records 3 cross-language detail agreements, 3 API/detail date mismatches, 2 API/detail PM2.5 mismatches, 3 region/detail status mismatches, 3 unresolved blocker rows, and still 0 public endpoint-resolution, current-status confirmed, complete monitor-grade, or station-radius-ready rows."
+      "retrieved_on": "2026-06-20",
+      "notes": "Exact official endpoint-consistency check for the 3 Uzbekistan blocker rows. The 2026-06-20 refresh retrieves 16 of 16 official routes across the public maps API, English/Russian/Uzbek regional table pages, and English/Russian/Uzbek station-detail pages; finds 9 of 9 detail pages and 9 language regional rows; records 3 cross-language detail agreements, 3 API/detail date mismatches, 2 API/detail PM2.5 mismatches, 3 region/detail status mismatches, 3 unresolved blocker rows, and still 0 public endpoint-resolution, current-status confirmed, complete monitor-grade, or station-radius-ready rows."
     },
     "air_monitoring_uzbekistan_blocker_external_context": {
       "script": "air-monitoring/scripts/scan-uzbekistan-blocker-external-context.py",
@@ -745,6 +745,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_uzbekistan_blocker_external_context pin after retrieving 4 external official or technical context sources for the 3 Uzbekistan blocker rows while keeping exact station-ID context, blocker-resolution, current-status, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Refreshed air_monitoring_uzbekistan_blocker_row_followup and air_monitoring_uzbekistan_endpoint_consistency pins against current public Uzhydromet endpoints; station IDs 107, 728, and 737 remain unresolved with 0 public resolution, current-status, complete-grade, or station-radius-ready rows."
     },
     {
       "date": "2026-06-19",

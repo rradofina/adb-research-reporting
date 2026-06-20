@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-06-20T05:53:00Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "focus": "Uzbekistan blocker-row follow-up and endpoint-consistency refresh",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1100,
+      "screenshot": "showcase-air-uzbekistan-refresh-endpoint-desktop.png"
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1000,
+      "screenshot": "showcase-air-uzbekistan-refresh-endpoint-mobile.png"
+    }
+  ],
+  "checks": {
+    "route_status": 200,
+    "body_has_content": true,
+    "vite_error_overlay": false,
+    "blocker_section_found": true,
+    "endpoint_section_found": true,
+    "external_context_section_found": true,
+    "desktop_horizontal_overflow": false,
+    "mobile_page_horizontal_overflow": false,
+    "mobile_blocker_section_overflow": false,
+    "mobile_endpoint_section_overflow": false,
+    "blocker_and_endpoint_downloads_checked": 6,
+    "blocker_and_endpoint_download_statuses": [200, 200, 200, 200, 200, 200],
+    "console_notes": ["[debug] [vite] connected."]
+  }
+}

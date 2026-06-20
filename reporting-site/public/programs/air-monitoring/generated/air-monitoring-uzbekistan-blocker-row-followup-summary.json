@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T12:41:14Z",
+  "generated_at": "2026-06-20T05:49:15Z",
   "program": "air-monitoring",
   "attestation_chain": "ai-first",
   "status": "computed_uzbekistan_blocker_row_followup",
@@ -32,7 +32,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 70089,
-      "sha256": "30473e90ef19efd043ece39506aa24d5315dc83eb279451150e15eb2f67a3587",
+      "sha256": "c93966d30e0e54d55bb572b0c4c5550b4457d5e3fc683e79579d3fa1a0d04d6b",
       "error": ""
     },
     {
@@ -43,8 +43,8 @@
       "retrieved": true,
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
-      "retrieval_bytes": 33167,
-      "sha256": "28988f758de41a9ccecc9db2a8da35e0fbb26babcc893b1ff8761e9fea40fa21",
+      "retrieval_bytes": 33169,
+      "sha256": "d29255ddaef42fd0122a1a18645fe7609aca78df584f601d03eed2e0c1126e31",
       "error": ""
     },
     {
@@ -55,8 +55,8 @@
       "retrieved": true,
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
-      "retrieval_bytes": 33028,
-      "sha256": "28d291c451416e731859383f7b9c331117b5a14158d0a60b048865f94fcecc83",
+      "retrieval_bytes": 33030,
+      "sha256": "344f62ffb979a517724566633d16e9e0c3bd3f2e6e32936692a62b5f78b49348",
       "error": ""
     },
     {
@@ -68,7 +68,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 62724,
-      "sha256": "9658759e2765089797ebd7a6f80c222d839fd2194116e7c8c4c78e68e050719a",
+      "sha256": "02797828f001bc00d48f7a6e12eaea6efa37bc21b9dde249103047c12a95ecc8",
       "error": ""
     },
     {
@@ -80,7 +80,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=utf-8",
       "retrieval_bytes": 33014,
-      "sha256": "24900aca9ebe9fa528b9e6b19a9398d99cae6ae5214cb88a33adc50a217e0af1",
+      "sha256": "90bb015339d6cc7eb3bf88a4f1c3a3b89a6d158abf8d560e05f45db48ca835b6",
       "error": ""
     }
   ],
@@ -146,7 +146,7 @@
   ],
   "station_rows": [
     {
-      "generated_at": "2026-06-19T12:41:14Z",
+      "generated_at": "2026-06-20T05:49:15Z",
       "attestation_chain": "ai-first",
       "status": "computed_uzbekistan_blocker_row_followup",
       "method": "air_monitoring_uzbekistan_blocker_row_followup_v1",
@@ -162,7 +162,7 @@
       "prior_context_source_keys": "world_bank_tashkent_aqm_text",
       "region_page_url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
       "region_page_retrieved": true,
-      "region_page_sha256": "30473e90ef19efd043ece39506aa24d5315dc83eb279451150e15eb2f67a3587",
+      "region_page_sha256": "c93966d30e0e54d55bb572b0c4c5550b4457d5e3fc683e79579d3fa1a0d04d6b",
       "region_row_found": true,
       "region_row_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
       "region_row_address": "Uzgidromet, Yunusabad district (reference point: Observation site, observatory)",
@@ -176,11 +176,11 @@
       "region_row_view_id_matches_target": true,
       "detail_url": "https://monitoring.meteo.uz/en/map/view/107",
       "detail_page_retrieved": true,
-      "detail_page_sha256": "28988f758de41a9ccecc9db2a8da35e0fbb26babcc893b1ff8761e9fea40fa21",
+      "detail_page_sha256": "d29255ddaef42fd0122a1a18645fe7609aca78df584f601d03eed2e0c1126e31",
       "detail_title": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
       "detail_updated_raw": "01.05.2026 15:00",
       "detail_updated_iso": "2026-05-01",
-      "detail_updated_age_days": 49,
+      "detail_updated_age_days": 50,
       "detail_recent_measurement_within_30_days": false,
       "detail_pm25_value": "13.698",
       "detail_pm25_value_status": "positive",
@@ -200,7 +200,7 @@
       "reader_use": "Use as a current-status blocker: the exact official detail page is older than 30 days and the regional table says Updating data."
     },
     {
-      "generated_at": "2026-06-19T12:41:14Z",
+      "generated_at": "2026-06-20T05:49:15Z",
       "attestation_chain": "ai-first",
       "status": "computed_uzbekistan_blocker_row_followup",
       "method": "air_monitoring_uzbekistan_blocker_row_followup_v1",
@@ -216,25 +216,25 @@
       "prior_context_source_keys": "",
       "region_page_url": "https://monitoring.meteo.uz/en/map/regions/gorod-tashkent",
       "region_page_retrieved": true,
-      "region_page_sha256": "30473e90ef19efd043ece39506aa24d5315dc83eb279451150e15eb2f67a3587",
+      "region_page_sha256": "c93966d30e0e54d55bb572b0c4c5550b4457d5e3fc683e79579d3fa1a0d04d6b",
       "region_row_found": true,
       "region_row_name": "Sergili",
       "region_row_address": "Sergili",
       "region_row_auto": "horiba",
       "region_row_updated_raw": "27.12.2024, 00:00",
       "region_row_updated_iso": "2024-12-27",
-      "region_row_updated_age_days": 539,
+      "region_row_updated_age_days": 540,
       "region_row_updating_data_status": false,
       "region_row_horiba_context": true,
       "region_row_view_url": "https://monitoring.meteo.uz/en/map/view/728",
       "region_row_view_id_matches_target": true,
       "detail_url": "https://monitoring.meteo.uz/en/map/view/728",
       "detail_page_retrieved": true,
-      "detail_page_sha256": "28d291c451416e731859383f7b9c331117b5a14158d0a60b048865f94fcecc83",
+      "detail_page_sha256": "344f62ffb979a517724566633d16e9e0c3bd3f2e6e32936692a62b5f78b49348",
       "detail_title": "Sergili",
       "detail_updated_raw": "16.06.2026 15:00",
       "detail_updated_iso": "2026-06-16",
-      "detail_updated_age_days": 3,
+      "detail_updated_age_days": 4,
       "detail_recent_measurement_within_30_days": true,
       "detail_pm25_value": "-9999",
       "detail_pm25_value_status": "sentinel_minus_9999",
@@ -254,7 +254,7 @@
       "reader_use": "Use as a QA blocker: the exact official detail page is recent but the PM2.5 value is the -9999 sentinel, so the row cannot support a station-radius or current-status claim."
     },
     {
-      "generated_at": "2026-06-19T12:41:14Z",
+      "generated_at": "2026-06-20T05:49:15Z",
       "attestation_chain": "ai-first",
       "status": "computed_uzbekistan_blocker_row_followup",
       "method": "air_monitoring_uzbekistan_blocker_row_followup_v1",
@@ -270,7 +270,7 @@
       "prior_context_source_keys": "",
       "region_page_url": "https://monitoring.meteo.uz/en/map/regions/tashkentskaja-oblast",
       "region_page_retrieved": true,
-      "region_page_sha256": "9658759e2765089797ebd7a6f80c222d839fd2194116e7c8c4c78e68e050719a",
+      "region_page_sha256": "02797828f001bc00d48f7a6e12eaea6efa37bc21b9dde249103047c12a95ecc8",
       "region_row_found": true,
       "region_row_name": "Akhangaran",
       "region_row_address": "",
@@ -284,11 +284,11 @@
       "region_row_view_id_matches_target": true,
       "detail_url": "https://monitoring.meteo.uz/en/map/view/737",
       "detail_page_retrieved": true,
-      "detail_page_sha256": "24900aca9ebe9fa528b9e6b19a9398d99cae6ae5214cb88a33adc50a217e0af1",
+      "detail_page_sha256": "90bb015339d6cc7eb3bf88a4f1c3a3b89a6d158abf8d560e05f45db48ca835b6",
       "detail_title": "Akhangaran",
       "detail_updated_raw": "10.05.2026 14:00",
       "detail_updated_iso": "2026-05-10",
-      "detail_updated_age_days": 40,
+      "detail_updated_age_days": 41,
       "detail_recent_measurement_within_30_days": false,
       "detail_pm25_value": "14.56",
       "detail_pm25_value_status": "positive",

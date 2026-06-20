@@ -50,6 +50,19 @@ grade-basis evidence, and catchment methods are added.
 
 ## Last completed
 
+- **2026-06-20:** Refreshed the Uzbekistan blocker-row follow-up and
+  endpoint-consistency artifacts against current public Uzhydromet routes for
+  station IDs 107, 728, and 737. The rerun retrieved 2 official regional table
+  pages, 3 exact official station-detail pages, and 16 of 16 official endpoint
+  routes. The result remains blocked: station 107 is 50 days stale with
+  regional `Updating data`, station 728 is recent but still has PM2.5 equal to
+  `-9999`, and station 737 is 41 days stale with regional `Updating data`. The
+  endpoint check still records 3 API/detail date mismatches, 2 API/detail
+  PM2.5 mismatches, 3 region/detail status mismatches, and 0 public
+  endpoint-resolution, current-status, complete monitor-grade, or
+  station-radius-ready rows. This updates retrieval hashes and age-day fields;
+  it does not change the maturity label or promote any station row.
+
 - **2026-06-20:** Added the BMKG targeted certificate/status source scan.
   New seed file
   `source-inputs/bmkg-certificate-status-targeted-source-seed.csv` and script

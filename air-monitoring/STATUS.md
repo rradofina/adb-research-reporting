@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, sourced primary radius/sensitivity rules, PM2.5 resolution decision, denominator join dry run, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, PM2.5 resolution decision, denominator join dry run, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -52,14 +52,29 @@ file-manifest prefreeze, download-feasibility gate, ACAG version-decision gate,
 ACAG coarse checksum gate, GHSL population tile-selection gate, and GHSL
 population tile checksum/transform gate, GHSL tile-routing correction gate,
 GHSL corrected population tile custody gate, GHSL large population tile
-custody gate, and station-radius method prefreeze gate
+custody gate, station-radius method prefreeze gate, and station-radius
+radius-rule source scan
 honestly, and do not imply station-radius, complete monitor-grade, or
 regulatory-inventory validation until station-level calibration/status
-sources, station crosswalks, complete grade-basis evidence, sourced primary
-radius/sensitivity rules, PM2.5 resolution rules, and joined population/PM2.5
+sources, station crosswalks, complete grade-basis evidence, PM2.5 resolution
+rules, and joined population/PM2.5
 denominator dry-run files are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the station-radius radius-rule source scan. New
+  network script `scripts/scan-station-radius-radius-rule-sources.py` retrieves
+  current eCFR Appendix D and EPA network-assessment guidance sources, records
+  2 of 2 public sources retrieved, 6 evidence rows, 4 selected eCFR
+  spatial-scale evidence rows, a source-frozen 4.0 km PM2.5 neighborhood-scale
+  primary diagnostic band, 0.5 km and 50.0 km sensitivity bands, and 0
+  catchment population rows, PM2.5 exposure rows, validated same-station joins,
+  complete monitor-grade rows, or station-radius-ready economies. It writes
+  `generated/air-monitoring-station-radius-radius-rule-source-scan.csv`,
+  `generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json`,
+  and `station-radius-radius-rule-source-scan.md`. This is a radius-rule
+  source gate, not a station buffer, catchment map, service area, legal
+  representativeness determination, or monitor-grade coverage claim.
 
 - **2026-06-20:** Added the station-radius method prefreeze gate. New script
   `scripts/build-station-radius-method-prefreeze.py` reads the coordinate

@@ -337,6 +337,22 @@
       "cache_policy": "No new raw data are downloaded by this derivative gate; rerun the script after upstream coordinate, denominator, reconciliation, or grade artifacts change.",
       "notes": "Station-radius method prefreeze gate. It reads committed coordinate readiness, corrected GHSL tile routing/custody, large-tile custody, ACAG coarse checksum, official/OpenAQ reconciliation, and station-grade ledger artifacts; records 277 coordinate rows, 275 unique coordinate points, 21 of 21 corrected GHSL population tiles in custody, 2 ACAG coarse PM2.5 files in custody, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 catchment rows; prefreezes the coordinate universe, GHSL file-custody rule, and de-duplication principle while keeping primary radius, PM2.5 resolution, station identity joins, monitor-grade use, map, and public headline claims blocked."
     },
+    "air_monitoring_station_radius_radius_rule_source_scan": {
+      "script": "air-monitoring/scripts/scan-station-radius-radius-rule-sources.py",
+      "seed": "air-monitoring/source-inputs/station-radius-radius-rule-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_method_prefreeze",
+        "air_monitoring_station_radius_ghsl_large_population_tile_custody",
+        "air_monitoring_station_radius_acag_coarse_checksums"
+      ],
+      "source_pages": [
+        "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-C/part-58/appendix-Appendix%20D%20to%20Part%2058",
+        "https://www.epa.gov/sites/default/files/2020-01/documents/network-assessment-guidance.pdf"
+      ],
+      "cache_policy": "Raw public source responses are stored under air-monitoring/.cache/station-radius-radius-rule-sources/ and are not committed; rerun the script to refresh current eCFR and EPA source retrieval evidence.",
+      "notes": "Station-radius radius-rule source scan. It retrieves 2 of 2 public source URLs, records 6 evidence rows, selects 4 eCFR spatial-scale evidence rows, freezes a 4.0 km PM2.5 neighborhood-scale primary diagnostic band with 0.5 km and 50.0 km sensitivity bands, and keeps catchment population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, and station-radius-ready economies at zero. These are diagnostic spatial-scale bands, not service areas, legal station representativeness determinations, or monitor-grade coverage claims."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -992,6 +1008,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_method_prefreeze pin after deriving a no-network method ledger from the coordinate, GHSL custody, ACAG custody, reconciliation, and station-grade artifacts: 277 coordinate rows, 275 unique coordinate points, 21/21 population tiles in custody, 2 ACAG coarse PM2.5 files, 0 validated joins, 0 complete monitor-grade rows, and 0 catchment rows; the coordinate universe, GHSL file-custody rule, and de-duplication principle are prefrozen while radius, PM2.5 resolution, joins, grade use, map, and public headline claims remain blocked."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_radius_rule_source_scan pin after retrieving current eCFR Appendix D and EPA network-assessment guidance sources, selecting 4 eCFR spatial-scale evidence rows, freezing a 4 km PM2.5 neighborhood-scale primary diagnostic radius plus 0.5 km and 50 km sensitivity bands, and keeping catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
     },
     {
       "date": "2026-06-19",

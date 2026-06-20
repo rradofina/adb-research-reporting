@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-06-20T14:32:59.629Z",
+  "url": "http://127.0.0.1:5177/showcase/air-monitoring-observability",
+  "target_section": ".air-radius-rule-section",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "screenshot": "reporting-site/qa/showcase-air-radius-rule-desktop.png",
+    "found": true,
+    "stat_count": 6,
+    "source_count": 2,
+    "evidence_count": 4,
+    "gate_count": 5,
+    "body_overflow": false,
+    "section_overflow": false,
+    "overflowing_elements": []
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "screenshot": "reporting-site/qa/showcase-air-radius-rule-mobile.png",
+    "found": true,
+    "stat_count": 6,
+    "source_count": 2,
+    "evidence_count": 4,
+    "gate_count": 5,
+    "body_overflow": false,
+    "section_overflow": false,
+    "overflowing_elements": []
+  },
+  "download_links": [
+    {
+      "path": "/programs/air-monitoring/station-radius-radius-rule-source-scan.md",
+      "status": 200,
+      "bytes": 3409
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json",
+      "status": 200,
+      "bytes": 15969
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-radius-rule-source-scan.csv",
+      "status": 200,
+      "bytes": 8179
+    }
+  ],
+  "console_or_page_errors_observed": "No page errors surfaced through agent-browser commands; download fetches returned HTTP 200.",
+  "note": "Section presents a source-frozen 4 km primary diagnostic band with 0.5/50 km sensitivity and keeps catchment rows at zero.",
+  "extra_screenshots": [
+    "reporting-site/qa/showcase-air-radius-rule-ladder-mobile.png",
+    "reporting-site/qa/showcase-air-radius-rule-evidence-desktop.png"
+  ],
+  "visual_inspection": "Desktop top view, desktop evidence/gate view, mobile top view, and mobile ladder view inspected; radius ladder labels are readable and no overflow remains after marker anchoring fix."
+}

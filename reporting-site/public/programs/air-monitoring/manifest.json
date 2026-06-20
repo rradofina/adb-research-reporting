@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T14:08:47.328Z",
+  "generated_at": "2026-06-20T14:33:55.675Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -231,6 +231,16 @@
       "size_human": "4.7 KB",
       "mtime": "2026-06-20T13:50:14.286Z",
       "sha256": "cb1876580a4e5766b6a042c9118df632fc146a9eab451a10363a3cce18349e70",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_radius_rule_source_scan",
+      "file": "station-radius-radius-rule-source-scan.md",
+      "label": "Air-monitoring station-radius radius-rule source scan",
+      "size": 3409,
+      "size_human": "3.3 KB",
+      "mtime": "2026-06-20T14:17:56.643Z",
+      "sha256": "ad141994ff4512c1bda7019ed01fed96a5128d4038c1c6b25fcf0bac0faad516",
       "attestation_chain": "ai-first"
     },
     {
@@ -1292,6 +1302,18 @@
       "size": 22720,
       "size_human": "22.2 KB",
       "sha256": "57f0d92a99bc9c250b901a189ac7d7bbe7b2add948c49127370dd1bcf5120801"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json",
+      "size": 15977,
+      "size_human": "15.6 KB",
+      "sha256": "516299316648f81055601e8a9d47e58bb68d3e75a0ce1ce042a29a45ff2c3521"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-radius-rule-source-scan.csv",
+      "size": 8187,
+      "size_human": "8.0 KB",
+      "sha256": "923343ee546dd8b64032b3fb600cc9a245e353698127b3f6caddc6ef9bbd20e1"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",

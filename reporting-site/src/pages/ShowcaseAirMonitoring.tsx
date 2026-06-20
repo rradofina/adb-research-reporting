@@ -1213,6 +1213,83 @@ interface StationRadiusMethodPrefreezeSummary {
   non_claim: string;
 }
 
+interface StationRadiusRuleGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusRuleSourceRow {
+  source_key: string;
+  source_family: string;
+  title: string;
+  url: string;
+  retrieval_status: string;
+  http_status: number | string;
+  content_type: string;
+  content_length_bytes: number | string;
+  cache_path: string;
+  sha256: string;
+  retrieval_error: string;
+}
+
+interface StationRadiusRuleEvidenceRow {
+  evidence_id: string;
+  evidence_role: string;
+  evidence_status: string;
+  extracted_scale: string;
+  extracted_value: string;
+  radius_km: number | string;
+  selected_for_rule?: boolean | string;
+  source_snippet: string;
+  reader_use: string;
+  title: string;
+  url: string;
+  source_family: string;
+  retrieval_status: string;
+}
+
+interface StationRadiusRuleSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_seed: string;
+  coverage_counts: {
+    seed_sources: number;
+    retrieved_sources: number;
+    retrieval_error_sources: number;
+    evidence_rows: number;
+    spatial_scale_evidence_rows: number;
+    rule_selected_evidence_rows: number;
+    primary_radius_km: number;
+    lower_sensitivity_radius_km: number;
+    upper_sensitivity_radius_km: number;
+    radius_rule_frozen: boolean;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  radius_rule: {
+    status: string;
+    primary_radius_km: number;
+    primary_label: string;
+    sensitivity_radii_km: number[];
+    tile_envelope_radius_km: number;
+    tile_envelope_source: string;
+    claim_guardrail: string;
+  };
+  evidence_gate_counts: StationRadiusRuleGate[];
+  source_rows: StationRadiusRuleSourceRow[];
+  evidence_rows: StationRadiusRuleEvidenceRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4152,6 +4229,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusGhslLargeCustodySummary | null>(null);
   const [stationRadiusMethodPrefreeze, setStationRadiusMethodPrefreeze] =
     useState<StationRadiusMethodPrefreezeSummary | null>(null);
+  const [stationRadiusRuleSourceScan, setStationRadiusRuleSourceScan] =
+    useState<StationRadiusRuleSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4602,6 +4681,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusMethodPrefreeze(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius radius-rule source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusRuleSourceScan(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5221,6 +5320,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusGhslLargeCustodyPanel summary={stationRadiusGhslLargeCustody} />
 
       <AirStationRadiusMethodPrefreezePanel summary={stationRadiusMethodPrefreeze} />
+
+      <AirStationRadiusRuleSourcePanel summary={stationRadiusRuleSourceScan} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -7889,6 +7990,201 @@ function AirStationRadiusMethodPrefreezePanel({ summary }: { summary: StationRad
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius method prefreeze...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusRuleSourcePanel({ summary }: { summary: StationRadiusRuleSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rule = summary?.radius_rule;
+  const selectedEvidence = (summary?.evidence_rows ?? []).filter(
+    (row) => String(row.selected_for_rule).toLowerCase() === "true",
+  );
+  const radiusMarkers = rule
+    ? [
+        {
+          key: "lower",
+          label: `${rule.sensitivity_radii_km[0]} km`,
+          value: rule.sensitivity_radii_km[0],
+          title: "Lower sensitivity",
+          text: "Middle-to-neighborhood boundary.",
+        },
+        {
+          key: "primary",
+          label: `${rule.primary_radius_km} km`,
+          value: rule.primary_radius_km,
+          title: "Primary diagnostic",
+          text: rule.primary_label,
+        },
+        {
+          key: "upper",
+          label: `${rule.sensitivity_radii_km[1]} km`,
+          value: rule.sensitivity_radii_km[1],
+          title: "Upper sensitivity",
+          text: "Urban-scale upper band and tile envelope.",
+        },
+      ]
+    : [];
+  const positionPct = (value: number) => {
+    const lower = rule?.sensitivity_radii_km[0] ?? 0.5;
+    const upper = rule?.sensitivity_radii_km[1] ?? 50;
+    const ratio = Math.log10(value / lower) / Math.log10(upper / lower);
+    return Math.max(0, Math.min(100, ratio * 100));
+  };
+  const evidenceRadius = (row: StationRadiusRuleEvidenceRow) => {
+    if (row.radius_km === "" || row.radius_km === undefined) return "scale rule";
+    return `${row.radius_km} km`;
+  };
+  const gateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("available") || normalized.includes("frozen")) return "available";
+    if (normalized.includes("partial") || normalized.includes("not_computed")) return "pending";
+    return "blocked";
+  };
+
+  return (
+    <section className="showcase-section air-radius-rule-section" aria-label="Station-radius source-based radius rule">
+      <div className="air-radius-rule-head">
+        <div>
+          <p className="kicker kicker-blue">Radius-rule source wall</p>
+          <h2>The radius now has a source; the catchment still has no result.</h2>
+          <p>
+            The scan retrieves the public spatial-scale sources, freezes a
+            diagnostic 4 km PM2.5 neighborhood band, and keeps 0.5 km and 50 km
+            sensitivity bands visible before any population or exposure row is
+            computed.
+          </p>
+        </div>
+        <div className="air-radius-rule-callout">
+          <span>Rule state</span>
+          <strong>{rule ? sentenceCaseStatus(rule.status) : "Loading"}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.rule_selected_evidence_rows)} selected source rows; ${formatNumber(counts.station_radius_population_rows)} catchment rows.`
+              : "Reading source scan."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts && rule ? (
+        <>
+          <div className="air-radius-rule-ladder" aria-label="Source-frozen station-radius bands">
+            <div className="air-radius-rule-ladder-copy">
+              <span>Diagnostic band</span>
+              <strong>{rule.primary_radius_km} km primary</strong>
+              <p>{rule.claim_guardrail}</p>
+            </div>
+            <div className="air-radius-rule-track" aria-hidden="true">
+              <i />
+              {radiusMarkers.map((marker) => (
+                <b
+                  key={marker.key}
+                  className={`air-radius-rule-marker air-radius-rule-marker-${marker.key}`}
+                  style={{ left: `${positionPct(marker.value)}%` }}
+                >
+                  <span>{marker.label}</span>
+                </b>
+              ))}
+            </div>
+            <div className="air-radius-rule-marker-grid">
+              {radiusMarkers.map((marker) => (
+                <article key={marker.key} className={`air-radius-rule-band air-radius-rule-band-${marker.key}`}>
+                  <span>{marker.title}</span>
+                  <strong>{marker.label}</strong>
+                  <p>{marker.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-radius-rule-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.retrieved_sources)} / {formatNumber(counts.seed_sources)}</strong>
+              <em>{formatNumber(counts.retrieval_error_sources)} retrieval errors</em>
+            </div>
+            <div>
+              <span>Selected evidence</span>
+              <strong>{formatNumber(counts.rule_selected_evidence_rows)}</strong>
+              <em>{formatNumber(counts.spatial_scale_evidence_rows)} spatial-scale rows</em>
+            </div>
+            <div>
+              <span>Primary radius</span>
+              <strong>{formatNumber(counts.primary_radius_km)} km</strong>
+              <em>neighborhood-scale upper bound</em>
+            </div>
+            <div>
+              <span>Sensitivity</span>
+              <strong>{formatNumber(counts.lower_sensitivity_radius_km)} / {formatNumber(counts.upper_sensitivity_radius_km)} km</strong>
+              <em>source-frozen bands</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)}</strong>
+              <em>identity still blocked</em>
+            </div>
+            <div>
+              <span>Catchment rows</span>
+              <strong>{formatNumber(counts.station_radius_population_rows)}</strong>
+              <em>map still locked</em>
+            </div>
+          </div>
+
+          <div className="air-radius-rule-source-grid" aria-label="Radius-rule public sources">
+            {summary.source_rows.map((source) => (
+              <article key={source.source_key} className={`air-radius-rule-source air-radius-rule-source-${source.retrieval_status}`}>
+                <span>{sentenceCaseStatus(source.source_family)}</span>
+                <strong>{source.title}</strong>
+                <p>
+                  {sentenceCaseStatus(source.retrieval_status)}; HTTP {source.http_status};
+                  {" "}
+                  {formatNumber(Number(source.content_length_bytes || 0))} bytes cached.
+                </p>
+                <a href={source.url}>Open source</a>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-rule-evidence-grid" aria-label="Selected radius-rule source evidence">
+            {selectedEvidence.map((row) => (
+              <article key={row.evidence_id} className={`air-radius-rule-evidence air-radius-rule-evidence-${row.evidence_role}`}>
+                <span>{sentenceCaseStatus(row.evidence_role)}</span>
+                <strong>{evidenceRadius(row)}</strong>
+                <em>{row.extracted_scale}</em>
+                <p>{row.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-rule-gate-grid" aria-label="Radius-rule evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-radius-rule-gate air-radius-rule-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-rule-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-rule-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-radius-rule-source-scan.md" download>
+              Download source note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-radius-rule-source-scan.csv" download>
+              Download evidence CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius radius-rule source scan...</p>
       )}
     </section>
   );

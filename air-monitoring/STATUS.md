@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, frozen radius rules, selected denominator downloads/checksums, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, frozen radius rules, selected denominator downloads/checksums, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -47,8 +47,8 @@ report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, the Georgia report-frequency matrix, the
 Georgia NEA station network/launch source scan, and the Georgia indicator
 endpoint mismatch scan, and the station-radius denominator readiness wall
-plus the station-radius denominator source plan, acquisition-route scan, and
-file-manifest prefreeze
+plus the station-radius denominator source plan, acquisition-route scan,
+file-manifest prefreeze, and download-feasibility gate
 honestly, and do not imply station-radius, complete monitor-grade, or
 regulatory-inventory validation until station-level calibration/status
 sources, station crosswalks, complete grade-basis evidence, selected
@@ -56,6 +56,26 @@ denominator downloads and checksums, frozen catchment methods, and
 downloaded/checksummed denominator files are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the station-radius denominator download-feasibility
+  gate. New no-download script
+  `scripts/build-station-radius-denominator-download-feasibility.py` reads the
+  file-manifest prefreeze and classifies each visible file, S3 object, metadata
+  record, or unresolved shared-folder route by download risk and next evidence
+  action. The pass reviews 12 manifest rows, identifies 4 first-wave checksum
+  candidates, including 2 conditional ACAG V6.GL.03 coarse PM2.5 candidates
+  and 2 metadata or route-test candidates, defers 4 multi-gigabyte population
+  archives and 2 moderate/large PM2.5 objects, keeps 2 ACAG Box shared-folder
+  routes unresolved, and keeps selected population denominators, denominator
+  downloads, SHA-256 denominator checksums, validated same-station joins,
+  complete monitor-grade rows, station-radius maps, and station-radius-ready
+  economies at 0. It writes
+  `generated/air-monitoring-station-radius-denominator-download-feasibility.csv`,
+  `generated/air-monitoring-station-radius-denominator-download-feasibility-summary.json`,
+  and `station-radius-denominator-download-feasibility.md`. This is a
+  download decision gate, not a denominator download, checksum manifest,
+  catchment computation, PM2.5 exposure computation, validated join, or
+  monitor-grade promotion.
 
 - **2026-06-20:** Added the station-radius denominator file-manifest
   prefreeze. New script
@@ -1138,8 +1158,9 @@ downloaded/checksummed denominator files are added.
    candidate found in the first pass.
 8. Use `station-radius-denominator-readiness.md`,
    `station-radius-denominator-source-plan.md`,
-   `station-radius-denominator-acquisition-routes.md`, and
-   `station-radius-denominator-file-manifest-prefreeze.md` as the current
+   `station-radius-denominator-acquisition-routes.md`,
+   `station-radius-denominator-file-manifest-prefreeze.md`, and
+   `station-radius-denominator-download-feasibility.md` as the current
    station-radius blocker walls. The evidence package now has 101 OpenAQ
    coordinate rows, 230 official coordinate rows, 22 official/OpenAQ proximity
    candidate rows, 2 population source candidates, 2 PM2.5 source candidates, 2
@@ -1147,32 +1168,39 @@ downloaded/checksummed denominator files are added.
    for 4 of 4 candidate denominator sources, 87 visible route links, 33 route
    probes, 20 probe-OK responses, 12 file-manifest rows, 10 exact public
    file/object records, 5 exact population file records, and 4 current ACAG
-   V6.GL.03 AWS PM2.5 object records with source-plan version drift. It still
-   has 0 downloaded denominator files, 0 SHA-256 denominator checksums, 0
-   validated same-station joins, 0 complete monitor-grade rows, 0 gridded
-   population denominator files committed to the package, 0 gridded PM2.5
-   denominator files committed to the package, and 0 station-radius-ready
-   economies. The next station-radius work is still not a map; it is choosing a
-   tractable GHSL/WorldPop file or tile subset and ACAG object from the
-   prefreeze manifest, resolving whether current ACAG V6.GL.03 can replace or
-   only supplement the source-plan V6.GL.02.04/V5 routes, freezing the
-   radius/de-duplication/join/grade rules, or pinning a small checksummed
-   denominator subset before any catchment computation.
+   V6.GL.03 AWS PM2.5 object records with source-plan version drift. The
+   download-feasibility gate identifies 4 first-wave checksum candidates, 2
+   conditional ACAG V6.GL.03 coarse PM2.5 candidates, 2 metadata or route-test
+   candidates, 4 deferred multi-gigabyte population archives, 2 deferred
+   moderate/large PM2.5 objects, and 2 unresolved ACAG Box shared-folder
+   routes. It still has 0 selected population denominators, 0 downloaded
+   denominator files, 0 SHA-256 denominator checksums, 0 validated same-station
+   joins, 0 complete monitor-grade rows, 0 gridded population denominator files
+   committed to the package, 0 gridded PM2.5 denominator files committed to the
+   package, and 0 station-radius-ready economies. The next station-radius work
+   is still not a map; it is resolving whether current ACAG V6.GL.03 can replace
+   or only supplement the source-plan V6.GL.02.04/V5 routes, selecting a
+   DMC-intersecting GHSL/WorldPop population tile or subset rather than the
+   route-test tile, freezing the radius/de-duplication/join/grade rules, or
+   pinning a small checksummed denominator subset before any catchment
+   computation.
 
 ## Current blockers
 
 - Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs
   and 230 official coordinate inputs across the 24-economy upgrade queue. The
-  denominator-readiness, source-plan, acquisition-route, and file-manifest
-  prefreeze walls make the public source stack visible, including 4 of 4
+  denominator-readiness, source-plan, acquisition-route, file-manifest
+  prefreeze, and download-feasibility walls make the public source stack
+  visible, including 4 of 4
   candidate denominator sources with visible routes, 87 route links, 12
   file-manifest rows, 10 exact public file/object records, 5 exact population
   file records, and 4 current ACAG V6.GL.03 AWS PM2.5 object records with
-  source-plan version drift. It still records 0 denominator downloads, 0
-  SHA-256 denominator checksums, 0 validated same-station joins, 0 complete
-  monitor-grade rows, 0 gridded population denominator files committed to the
-  package, 0 gridded PM2.5 denominator files committed to the package, and 0
-  station-radius-ready economies. GHSL/WorldPop and ACAG source pages are
+  source-plan version drift. The feasibility gate identifies 4 first-wave
+  candidates but also keeps 0 selected population denominators, 0 denominator
+  downloads, 0 SHA-256 denominator checksums, 0 validated same-station joins, 0
+  complete monitor-grade rows, 0 gridded population denominator files committed
+  to the package, 0 gridded PM2.5 denominator files committed to the package,
+  and 0 station-radius-ready economies. GHSL/WorldPop and ACAG source pages are
   verified as candidates, but the package still needs a selected checksummed
   denominator subset, a frozen catchment method, de-duplication rules,
   validated joins, and grade assumptions before any coverage map is computed.

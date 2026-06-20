@@ -165,6 +165,26 @@
       ],
       "notes": "Station-radius denominator file-manifest prefreeze. It records 12 manifest rows: 10 exact public file/object records visible, 5 exact population file records, 4 current ACAG V6.GL.03 AWS PM2.5 object records with source-plan version drift, 1 context metadata file record, and 2 ACAG Box shared-folder routes that are still not exact file manifests. It records 0 downloaded denominator files, 0 SHA-256 denominator checksums, 0 validated same-station joins, 0 complete monitor-grade rows, 0 catchment maps, and 0 station-radius-ready economies."
     },
+    "air_monitoring_station_radius_denominator_download_feasibility": {
+      "script": "air-monitoring/scripts/build-station-radius-denominator-download-feasibility.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_file_manifest_prefreeze",
+        "air_monitoring_station_radius_denominator_acquisition_routes",
+        "air_monitoring_station_radius_denominator_source_plan",
+        "air_monitoring_station_radius_denominator_readiness"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/",
+        "https://data.worldpop.org/repo/prj/Global_2015_2030/R2025A/",
+        "https://registry.opendata.aws/surface-pm2-5-v6gl/",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/",
+        "https://sites.wustl.edu/acag/surface-pm2-5/",
+        "https://wustl.box.com/s/y143mciw7jz7ft2qe3hccjw65m3xe8f2",
+        "https://wustl.box.com/v/ACAG-V5GL0502-GWRPM25"
+      ],
+      "notes": "Station-radius denominator download-feasibility gate derived from the prefreeze manifest. It reviews 12 manifest rows, identifies 4 first-wave checksum candidates, including 2 conditional ACAG V6.GL.03 coarse PM2.5 candidates and 2 metadata or route-test candidates, defers 4 multi-gigabyte population archives and 2 moderate/large PM2.5 objects, keeps 2 ACAG Box shared-folder routes unresolved, and records 0 selected population denominators, 0 downloaded files, 0 SHA-256 denominator checksums, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -784,6 +804,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_denominator_file_manifest_prefreeze pin after resolving visible station-radius denominator routes into 12 manifest rows: 10 exact public file/object records, 5 exact population files, 4 current ACAG V6.GL.03 AWS PM2.5 objects with version drift, 2 unresolved ACAG Box shared-folder routes, and 0 downloads/checksums/joins/grade rows/maps."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_denominator_download_feasibility pin after classifying the 12-row prefreeze manifest into first-wave checksum candidates, large-archive deferrals, ACAG version-drift cautions, unresolved shared-folder blockers, and zero-download/checksum non-claims before any station-radius computation."
     },
     {
       "date": "2026-06-19",

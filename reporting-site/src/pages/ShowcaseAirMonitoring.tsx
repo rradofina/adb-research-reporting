@@ -531,6 +531,94 @@ interface StationRadiusFileManifestSummary {
   non_claim: string;
 }
 
+interface StationRadiusDownloadFeasibilityGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusDownloadFeasibilityDecision {
+  decision: string;
+  records: number;
+}
+
+interface StationRadiusDownloadFeasibilityRole {
+  role: string;
+  records: number;
+}
+
+interface StationRadiusDownloadFeasibilitySize {
+  size_class: string;
+  records: number;
+}
+
+interface StationRadiusDownloadFeasibilityRecord {
+  manifest_key: string;
+  source_key: string;
+  source_name: string;
+  source_family: string;
+  source_role: string;
+  denominator_type: string;
+  candidate_role: string;
+  source_plan_version: string;
+  resolved_version: string;
+  vintage: string;
+  resolution: string;
+  geography_scope: string;
+  file_format: string;
+  route_type: string;
+  manifest_status: string;
+  exact_file_url: string;
+  s3_key: string;
+  content_length_bytes: number;
+  size_mb: number;
+  size_class: string;
+  exact_route_visible: boolean;
+  source_plan_version_drift: boolean;
+  unresolved_shared_folder: boolean;
+  download_feasibility: string;
+  selection_role: string;
+  first_wave_candidate: boolean;
+  denominator_gate_closer: boolean;
+  reader_use: string;
+  proposed_action: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusDownloadFeasibilitySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    manifest_records_reviewed: number;
+    exact_file_or_object_records_visible: number;
+    safe_under_10mb_records: number;
+    first_wave_download_candidates: number;
+    conditional_pm25_checksum_candidates: number;
+    metadata_or_route_test_candidates: number;
+    population_denominator_selected_for_download: number;
+    large_population_archives_deferred: number;
+    moderate_or_large_pm25_objects_deferred: number;
+    acag_version_decision_required_records: number;
+    unresolved_shared_folder_routes: number;
+    denominator_files_downloaded: number;
+    denominator_files_sha256_checksummed: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  download_feasibility_counts: StationRadiusDownloadFeasibilityDecision[];
+  selection_role_counts: StationRadiusDownloadFeasibilityRole[];
+  size_class_counts: StationRadiusDownloadFeasibilitySize[];
+  evidence_gate_counts: StationRadiusDownloadFeasibilityGate[];
+  feasibility_records: StationRadiusDownloadFeasibilityRecord[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3452,6 +3540,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusAcquisitionSummary | null>(null);
   const [stationRadiusFileManifest, setStationRadiusFileManifest] =
     useState<StationRadiusFileManifestSummary | null>(null);
+  const [stationRadiusDownloadFeasibility, setStationRadiusDownloadFeasibility] =
+    useState<StationRadiusDownloadFeasibilitySummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3722,6 +3812,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusFileManifest(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-download-feasibility-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator download feasibility HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusDownloadFeasibility(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4323,6 +4433,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusAcquisitionPanel summary={stationRadiusAcquisition} />
 
       <AirStationRadiusFileManifestPanel summary={stationRadiusFileManifest} />
+
+      <AirStationRadiusDownloadFeasibilityPanel summary={stationRadiusDownloadFeasibility} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -5474,6 +5586,189 @@ function AirStationRadiusFileManifestPanel({ summary }: { summary: StationRadius
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator file manifest...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusDownloadFeasibilityPanel({ summary }: { summary: StationRadiusDownloadFeasibilitySummary | null }) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.download_feasibility_counts ?? [];
+  const sizes = summary?.size_class_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const records = useMemo(() => {
+    const rows = [...(summary?.feasibility_records ?? [])];
+    return rows.sort((a, b) => {
+      if (a.first_wave_candidate !== b.first_wave_candidate) return a.first_wave_candidate ? -1 : 1;
+      return (a.content_length_bytes || 0) - (b.content_length_bytes || 0);
+    });
+  }, [summary]);
+  const maxDecisionRecords = Math.max(1, ...decisions.map((row) => row.records));
+  const maxSizeRecords = Math.max(1, ...sizes.map((row) => row.records));
+  const formatBytes = (value: number) => {
+    const bytes = Number(value || 0);
+    if (!Number.isFinite(bytes) || bytes <= 0) return "unlisted";
+    if (bytes >= 1_000_000_000) return `${(bytes / 1_000_000_000).toFixed(1)} GB`;
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+  const decisionTone = (record: StationRadiusDownloadFeasibilityRecord) => {
+    if (record.download_feasibility.includes("blocked")) return "blocked";
+    if (record.download_feasibility.includes("defer") || record.download_feasibility.includes("second_wave")) return "deferred";
+    if (record.download_feasibility.includes("conditional")) return "candidate";
+    if (record.first_wave_candidate) return "safe";
+    return "review";
+  };
+
+  return (
+    <section className="showcase-section air-radius-download-section" aria-label="Station-radius denominator download feasibility gate">
+      <div className="air-radius-download-head">
+        <div>
+          <p className="kicker kicker-blue">Download feasibility gate</p>
+          <h2>The next download is a decision, not a map.</h2>
+          <p>
+            The manifest now becomes a file-by-file triage table. It names the
+            small checksum candidates, separates metadata and route tests from
+            true denominators, and keeps ACAG version drift visible before any
+            raster, NetCDF, or catchment layer enters the evidence packet.
+          </p>
+        </div>
+        <div className="air-radius-download-callout">
+          <span>First-wave candidates</span>
+          <strong>{formatNumber(counts?.first_wave_download_candidates ?? 0)}</strong>
+          <p>Identified only. No denominator file has been downloaded or checksummed.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-radius-download-stat-grid">
+            <div>
+              <span>Manifest rows reviewed</span>
+              <strong>{formatNumber(counts.manifest_records_reviewed)}</strong>
+              <em>all prefreeze rows classified</em>
+            </div>
+            <div>
+              <span>Safe under 10 MB</span>
+              <strong>{formatNumber(counts.safe_under_10mb_records)}</strong>
+              <em>small enough for a checksum test</em>
+            </div>
+            <div>
+              <span>Conditional PM2.5</span>
+              <strong>{formatNumber(counts.conditional_pm25_checksum_candidates)}</strong>
+              <em>ACAG V6.GL.03 coarse objects after version decision</em>
+            </div>
+            <div>
+              <span>Population selected</span>
+              <strong>{formatNumber(counts.population_denominator_selected_for_download)}</strong>
+              <em>route-test tile is not a DMC denominator</em>
+            </div>
+            <div>
+              <span>Large deferrals</span>
+              <strong>{formatNumber(counts.large_population_archives_deferred + counts.moderate_or_large_pm25_objects_deferred)}</strong>
+              <em>large archives or second-wave fine objects</em>
+            </div>
+            <div>
+              <span>Downloads/checksums</span>
+              <strong>{formatNumber(counts.denominator_files_downloaded + counts.denominator_files_sha256_checksummed)}</strong>
+              <em>still zero by design</em>
+            </div>
+          </div>
+
+          <div className="air-radius-download-lane-grid" aria-label="Download decision rows">
+            {records.map((record) => {
+              const target = record.s3_key || record.exact_file_url || record.manifest_key;
+              return (
+                <article
+                  key={record.manifest_key}
+                  className={`air-radius-download-record air-radius-download-record-${decisionTone(record)}`}
+                >
+                  <div className="air-radius-download-record-head">
+                    <span>{record.first_wave_candidate ? "First-wave candidate" : sentenceCaseStatus(record.selection_role)}</span>
+                    <strong>{record.manifest_key}</strong>
+                    <b>{formatBytes(record.content_length_bytes)} / {sentenceCaseStatus(record.size_class)}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Source</dt>
+                      <dd>{record.source_family}</dd>
+                    </div>
+                    <div>
+                      <dt>Type</dt>
+                      <dd>{sentenceCaseStatus(record.denominator_type)}</dd>
+                    </div>
+                    <div>
+                      <dt>Version drift</dt>
+                      <dd>{record.source_plan_version_drift ? "yes" : "no"}</dd>
+                    </div>
+                    <div>
+                      <dt>Gate closer</dt>
+                      <dd>{record.denominator_gate_closer ? "yes" : "no"}</dd>
+                    </div>
+                  </dl>
+                  <p>{record.reader_use}</p>
+                  <p className="air-radius-download-action">{record.proposed_action}</p>
+                  <div className="air-radius-download-path">
+                    <span>{sentenceCaseStatus(record.download_feasibility)}</span>
+                    <code>{target}</code>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-radius-download-lists">
+            <div>
+              <span>Download decisions</span>
+              {decisions.map((row) => (
+                <article key={row.decision}>
+                  <strong>{sentenceCaseStatus(row.decision)}</strong>
+                  <b>{formatNumber(row.records)} rows</b>
+                  <i style={{ width: `${Math.max(8, (row.records / maxDecisionRecords) * 100)}%` }} />
+                </article>
+              ))}
+            </div>
+            <div>
+              <span>Size classes</span>
+              {sizes.map((row) => (
+                <article key={row.size_class}>
+                  <strong>{sentenceCaseStatus(row.size_class)}</strong>
+                  <b>{formatNumber(row.records)} rows</b>
+                  <i style={{ width: `${Math.max(8, (row.records / maxSizeRecords) * 100)}%` }} />
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-radius-download-gate-grid" aria-label="Download-feasibility gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-radius-download-gate air-radius-download-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-download-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-download-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-download-feasibility.md" download>
+              Download feasibility note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-download-feasibility-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-download-feasibility.csv" download>
+              Download decision CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator download feasibility...</p>
       )}
     </section>
   );

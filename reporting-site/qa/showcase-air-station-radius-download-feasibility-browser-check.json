@@ -1,0 +1,74 @@
+{
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "checked_on": "2026-06-20",
+  "surface": "Air-monitoring showcase station-radius denominator download-feasibility gate",
+  "direct_endpoints": [
+    {
+      "path": "/programs/air-monitoring/station-radius-denominator-download-feasibility.md",
+      "status": 200
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-download-feasibility-summary.json",
+      "status": 200
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-download-feasibility.csv",
+      "status": 200
+    }
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1100,
+      "section_present": true,
+      "heading": "The next download is a decision, not a map.",
+      "callout_value": "4",
+      "stat_cards": 6,
+      "record_cards": 12,
+      "decision_and_size_articles": 13,
+      "gate_cards": 6,
+      "download_links": 3,
+      "body_horizontal_overflow": false,
+      "section_horizontal_overflow": false,
+      "page_errors": 0,
+      "console_errors": 0,
+      "console_warnings": [
+        "Existing React Router future-flag warnings",
+        "Existing Vite development-server messages"
+      ],
+      "screenshot": "reporting-site/qa/showcase-air-station-radius-download-feasibility-desktop.png",
+      "visual_notes": "Heading, callout, first-wave row cards, decision bars, and file paths render without overlap; file paths wrap within cards."
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1000,
+      "section_present": true,
+      "heading": "The next download is a decision, not a map.",
+      "callout_value": "4",
+      "stat_cards": 6,
+      "record_cards": 12,
+      "decision_and_size_articles": 13,
+      "gate_cards": 6,
+      "download_links": 3,
+      "body_horizontal_overflow": false,
+      "section_horizontal_overflow": false,
+      "page_errors": 0,
+      "console_errors": 0,
+      "console_warnings": [
+        "Existing React Router future-flag warnings",
+        "Existing Vite development-server messages"
+      ],
+      "screenshot": "reporting-site/qa/showcase-air-station-radius-download-feasibility-mobile.png",
+      "visual_notes": "First viewport shows the hook and stacked stat cards clearly; no text overlap or squeezed file paths in the checked section."
+    }
+  ],
+  "required_text_present": [
+    "ACAG decision",
+    "Population selected",
+    "No-download"
+  ],
+  "result": "pass",
+  "non_claim": "This QA confirms the public surface and evidence links render; it does not validate station-radius catchments, exposure calculations, denominator downloads, SHA-256 checksums, monitor-grade classifications, or same-station joins."
+}

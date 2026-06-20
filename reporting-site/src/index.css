@@ -1119,6 +1119,324 @@
   }
 }
 
+.air-radius-download-section {
+  display: grid;
+  gap: 1.15rem;
+  scroll-margin-top: 5.5rem;
+  overflow-x: clip;
+}
+
+.air-radius-download-section * {
+  min-width: 0;
+}
+
+.air-radius-download-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.3fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.air-radius-download-head h2 {
+  margin: 0.2rem 0 0;
+  max-width: 56rem;
+  color: var(--ink);
+  font-size: 3.05rem;
+  line-height: 1;
+}
+
+.air-radius-download-head p {
+  max-width: 62rem;
+}
+
+.air-radius-download-callout {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 125, 184, 0.2);
+  border-left: 5px solid #007db8;
+  background: #f5fbff;
+}
+
+.air-radius-download-callout span,
+.air-radius-download-stat-grid span,
+.air-radius-download-record span,
+.air-radius-download-record dt,
+.air-radius-download-path span,
+.air-radius-download-lists > div > span,
+.air-radius-download-gate span,
+.air-radius-download-downloads span {
+  color: var(--ink-faint);
+  font-size: var(--type-copy-xs);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-download-callout strong {
+  color: #005f89;
+  font-size: 4.45rem;
+  line-height: 0.9;
+}
+
+.air-radius-download-callout p,
+.air-radius-download-stat-grid em,
+.air-radius-download-record p,
+.air-radius-download-gate p,
+.air-radius-download-nonclaim {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--type-copy-xs);
+  line-height: 1.45;
+}
+
+.air-radius-download-stat-grid,
+.air-radius-download-lane-grid,
+.air-radius-download-gate-grid,
+.air-radius-download-lists {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.air-radius-download-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-radius-download-stat-grid > div,
+.air-radius-download-record,
+.air-radius-download-lists > div,
+.air-radius-download-gate {
+  padding: 0.9rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--paper);
+}
+
+.air-radius-download-stat-grid > div {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 4px solid #007db8;
+}
+
+.air-radius-download-stat-grid > div:nth-child(3) {
+  border-top-color: #5a8227;
+}
+
+.air-radius-download-stat-grid > div:nth-child(4),
+.air-radius-download-stat-grid > div:nth-child(5),
+.air-radius-download-stat-grid > div:nth-child(6) {
+  border-top-color: #9b2226;
+}
+
+.air-radius-download-stat-grid strong,
+.air-radius-download-record b,
+.air-radius-download-record dd,
+.air-radius-download-lists b,
+.air-radius-download-gate em {
+  color: #005f89;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 800;
+}
+
+.air-radius-download-stat-grid strong {
+  font-size: 1.9rem;
+  line-height: 1.05;
+}
+
+.air-radius-download-lane-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-radius-download-record {
+  display: grid;
+  grid-template-rows: auto auto minmax(4.5rem, auto) auto auto;
+  gap: 0.58rem;
+  border-top: 4px solid #7d8790;
+}
+
+.air-radius-download-record-safe {
+  border-top-color: #5a8227;
+  background: #f7fbf1;
+}
+
+.air-radius-download-record-candidate {
+  border-top-color: #007db8;
+  background: #f5fbff;
+}
+
+.air-radius-download-record-deferred {
+  border-top-color: #fbb00e;
+  background: #fffaf0;
+}
+
+.air-radius-download-record-blocked {
+  border-top-color: #9b2226;
+  background: #fff4f1;
+}
+
+.air-radius-download-record strong,
+.air-radius-download-gate strong,
+.air-radius-download-lists strong {
+  display: block;
+  color: var(--ink);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-download-record b {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: var(--type-copy-xs);
+  overflow-wrap: anywhere;
+}
+
+.air-radius-download-record dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.air-radius-download-record dd {
+  margin: 0.12rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-download-action {
+  color: #005f89 !important;
+}
+
+.air-radius-download-path {
+  display: grid;
+  gap: 0.25rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.air-radius-download-path code {
+  color: var(--accent);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.air-radius-download-lists {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-radius-download-lists > div {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.air-radius-download-lists article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+}
+
+.air-radius-download-lists i {
+  grid-column: 1 / -1;
+  display: block;
+  height: 0.55rem;
+  border: 1px solid rgba(33, 37, 41, 0.12);
+  background: linear-gradient(90deg, #007db8, #5a8227);
+}
+
+.air-radius-download-gate-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-radius-download-gate {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(3.4rem, 1fr);
+  gap: 0.45rem;
+  border-top: 4px solid #9b2226;
+}
+
+.air-radius-download-gate-available {
+  border-top-color: #5a8227;
+}
+
+.air-radius-download-gate-pending {
+  border-top-color: #fbb00e;
+}
+
+.air-radius-download-gate-blocked {
+  border-top-color: #9b2226;
+}
+
+.air-radius-download-nonclaim {
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-radius-download-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.air-radius-download-downloads span,
+.air-radius-download-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-radius-download-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-radius-download-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-radius-download-stat-grid,
+  .air-radius-download-gate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-radius-download-lane-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .air-radius-download-head,
+  .air-radius-download-lists {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-radius-download-head h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-radius-download-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-radius-download-stat-grid,
+  .air-radius-download-lane-grid,
+  .air-radius-download-gate-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-radius-download-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

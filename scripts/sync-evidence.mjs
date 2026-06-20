@@ -63,6 +63,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_denominator_source_plan", file: "station-radius-denominator-source-plan.md", label: "Air-monitoring station-radius denominator source plan" },
   { key: "air_monitoring_station_radius_denominator_acquisition_routes", file: "station-radius-denominator-acquisition-routes.md", label: "Air-monitoring station-radius denominator acquisition routes" },
   { key: "air_monitoring_station_radius_denominator_file_manifest_prefreeze", file: "station-radius-denominator-file-manifest-prefreeze.md", label: "Air-monitoring station-radius denominator file-manifest prefreeze" },
+  { key: "air_monitoring_station_radius_denominator_download_feasibility", file: "station-radius-denominator-download-feasibility.md", label: "Air-monitoring station-radius denominator download feasibility gate" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

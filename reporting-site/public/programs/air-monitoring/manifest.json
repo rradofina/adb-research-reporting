@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T10:10:48.835Z",
+  "generated_at": "2026-06-20T10:42:46.216Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -151,6 +151,16 @@
       "size_human": "5.2 KB",
       "mtime": "2026-06-20T10:10:33.102Z",
       "sha256": "ecb3ec28f27797d7d65ef7f1c53d817a9a985aeeae96be72897b4efb3b2d1aa0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_acag_version_decision",
+      "file": "station-radius-acag-version-decision.md",
+      "label": "Air-monitoring station-radius ACAG version-decision gate",
+      "size": 4910,
+      "size_human": "4.8 KB",
+      "mtime": "2026-06-20T10:26:19.898Z",
+      "sha256": "8e629121054018de825098b2bb4d963265f5ea18f258d225ff1eaae177359bf1",
       "attestation_chain": "ai-first"
     },
     {
@@ -1038,6 +1048,18 @@
       "size": 66400,
       "size_human": "64.8 KB",
       "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-acag-version-decision-summary.json",
+      "size": 28552,
+      "size_human": "27.9 KB",
+      "sha256": "b8ae128e41c2d17be001a0dc57e614c4df8758e57beaad01f1f54386fdec64de"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-acag-version-decision.csv",
+      "size": 12421,
+      "size_human": "12.1 KB",
+      "sha256": "48d849560ea247cc7fd1f42ba0a59981c0dde528e96f10db622933366a201926"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",

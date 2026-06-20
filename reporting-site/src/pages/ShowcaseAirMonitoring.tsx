@@ -619,6 +619,86 @@ interface StationRadiusDownloadFeasibilitySummary {
   non_claim: string;
 }
 
+interface StationRadiusAcagVersionGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusAcagVersionDecision {
+  decision: string;
+  records: number;
+}
+
+interface StationRadiusAcagEvidenceType {
+  evidence_type: string;
+  records: number;
+}
+
+interface StationRadiusAcagVersionRow {
+  record_key: string;
+  evidence_type: string;
+  source_name: string;
+  source_role: string;
+  planned_version: string;
+  observed_version: string;
+  selected_vintage: string;
+  route_url: string;
+  retrieved: boolean;
+  http_status: number | string;
+  matched_terms: string;
+  s3_prefix: string;
+  s3_key_count: number | string;
+  first_year: string;
+  latest_year: string;
+  target_2023_object: string;
+  target_2023_size_bytes: number;
+  latest_2024_object: string;
+  latest_2024_size_bytes: number;
+  decision: string;
+  allowed_use: string;
+  not_allowed_use: string;
+  next_action: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusAcagVersionSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  version_decision: string;
+  coverage_counts: {
+    evidence_rows: number;
+    routes_retrieved: number;
+    source_pages_retrieved: number;
+    s3_prefixes_retrieved: number;
+    v6gl03_s3_prefixes_with_2023_target: number;
+    v6gl03_s3_prefixes_with_2024_visible: number;
+    approved_2023_coarse_first_wave_objects: number;
+    fine_resolution_second_wave_or_deferred_objects: number;
+    legacy_v6gl0204_v5_box_routes_unresolved: number;
+    legacy_v6gl0204_v5_exact_file_manifests: number;
+    v6gl03_allowed_as_silent_replacement: number;
+    selected_vintage: number;
+    visible_latest_v6gl03_year: number;
+    denominator_files_downloaded: number;
+    denominator_files_sha256_checksummed: number;
+    netcdf_variables_inspected: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  decision_counts: StationRadiusAcagVersionDecision[];
+  evidence_type_counts: StationRadiusAcagEvidenceType[];
+  evidence_gate_counts: StationRadiusAcagVersionGate[];
+  acag_rows: StationRadiusAcagVersionRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3542,6 +3622,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusFileManifestSummary | null>(null);
   const [stationRadiusDownloadFeasibility, setStationRadiusDownloadFeasibility] =
     useState<StationRadiusDownloadFeasibilitySummary | null>(null);
+  const [stationRadiusAcagVersion, setStationRadiusAcagVersion] =
+    useState<StationRadiusAcagVersionSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3832,6 +3914,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusDownloadFeasibility(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-acag-version-decision-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius ACAG version decision HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusAcagVersion(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4435,6 +4537,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusFileManifestPanel summary={stationRadiusFileManifest} />
 
       <AirStationRadiusDownloadFeasibilityPanel summary={stationRadiusDownloadFeasibility} />
+
+      <AirStationRadiusAcagVersionPanel summary={stationRadiusAcagVersion} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -5769,6 +5873,205 @@ function AirStationRadiusDownloadFeasibilityPanel({ summary }: { summary: Statio
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator download feasibility...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusAcagVersionPanel({ summary }: { summary: StationRadiusAcagVersionSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const gates = summary?.evidence_gate_counts ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const evidenceTypes = summary?.evidence_type_counts ?? [];
+  const rows = useMemo(() => {
+    const order: Record<string, number> = {
+      registry_page: 0,
+      method_documentation_page: 1,
+      s3_prefix_listing: 2,
+      source_page: 3,
+      box_shared_folder_page: 4,
+    };
+    return [...(summary?.acag_rows ?? [])].sort((a, b) => {
+      const left = order[a.evidence_type] ?? 9;
+      const right = order[b.evidence_type] ?? 9;
+      if (left !== right) return left - right;
+      return a.record_key.localeCompare(b.record_key);
+    });
+  }, [summary]);
+  const maxDecisionRecords = Math.max(1, ...decisions.map((row) => row.records));
+  const asNumber = (value: number | string | undefined) => {
+    const parsed = Number(value ?? 0);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const formatBytes = (value: number | string | undefined) => {
+    const bytes = asNumber(value);
+    if (bytes <= 0) return "no file";
+    if (bytes >= 1_000_000_000) return `${(bytes / 1_000_000_000).toFixed(1)} GB`;
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+  const rowTone = (row: StationRadiusAcagVersionRow) => {
+    if (row.decision.includes("approved")) return "approved";
+    if (row.decision.includes("second_wave")) return "deferred";
+    if (row.decision.includes("defer")) return "deferred";
+    if (row.decision.includes("unresolved")) return "blocked";
+    if (row.evidence_type.includes("documentation") || row.evidence_type.includes("registry")) return "context";
+    return "review";
+  };
+
+  return (
+    <section className="showcase-section air-acag-version-section" aria-label="ACAG version-decision gate">
+      <div className="air-acag-version-head">
+        <div>
+          <p className="kicker kicker-blue">ACAG version decision</p>
+          <h2>Current ACAG becomes a pilot lane, not a silent substitution.</h2>
+          <p>
+            The source plan named V6.GL.02.04 and V5 Box routes. The public AWS
+            path now exposes V6.GL.03 objects. This gate records the decision:
+            use V6.GL.03 only as the current-version pilot lane, keep legacy
+            routes unresolved, and do not widen the monitoring claim.
+          </p>
+        </div>
+        <div className="air-acag-version-callout">
+          <span>Selected vintage</span>
+          <strong>{counts?.selected_vintage ?? "2023"}</strong>
+          <p>2024 objects are visible, but this package keeps 2023 until the method is amended.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-acag-version-decision">
+            <span>Decision</span>
+            <p>{summary.version_decision}</p>
+          </div>
+
+          <div className="air-acag-version-stat-grid">
+            <div>
+              <span>Evidence routes</span>
+              <strong>{formatNumber(counts.routes_retrieved)}</strong>
+              <em>all checked routes retrieved</em>
+            </div>
+            <div>
+              <span>S3 prefixes</span>
+              <strong>{formatNumber(counts.s3_prefixes_retrieved)}</strong>
+              <em>annual object listings, not downloads</em>
+            </div>
+            <div>
+              <span>First-wave coarse</span>
+              <strong>{formatNumber(counts.approved_2023_coarse_first_wave_objects)}</strong>
+              <em>Asia pilot plus global sanity object</em>
+            </div>
+            <div>
+              <span>2024 visible</span>
+              <strong>{formatNumber(counts.v6gl03_s3_prefixes_with_2024_visible)}</strong>
+              <em>visible but not selected</em>
+            </div>
+            <div>
+              <span>Legacy Box unresolved</span>
+              <strong>{formatNumber(counts.legacy_v6gl0204_v5_box_routes_unresolved)}</strong>
+              <em>not exact file manifests</em>
+            </div>
+            <div>
+              <span>Silent replacements</span>
+              <strong>{formatNumber(counts.v6gl03_allowed_as_silent_replacement)}</strong>
+              <em>not allowed</em>
+            </div>
+          </div>
+
+          <div className="air-acag-version-gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-acag-version-gate air-acag-version-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-acag-version-row-grid" aria-label="ACAG version evidence rows">
+            {rows.map((row) => {
+              const target = row.target_2023_object || row.route_url;
+              return (
+                <article key={row.record_key} className={`air-acag-version-row air-acag-version-row-${rowTone(row)}`}>
+                  <div className="air-acag-version-row-head">
+                    <span>{sentenceCaseStatus(row.evidence_type)}</span>
+                    <strong>{row.record_key}</strong>
+                    <b>{row.observed_version}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Vintage</dt>
+                      <dd>{row.selected_vintage}</dd>
+                    </div>
+                    <div>
+                      <dt>Keys</dt>
+                      <dd>{formatNumber(asNumber(row.s3_key_count))}</dd>
+                    </div>
+                    <div>
+                      <dt>Years</dt>
+                      <dd>{row.first_year && row.latest_year ? `${row.first_year}-${row.latest_year}` : "page"}</dd>
+                    </div>
+                    <div>
+                      <dt>2023 size</dt>
+                      <dd>{formatBytes(row.target_2023_size_bytes)}</dd>
+                    </div>
+                  </dl>
+                  <p>{row.allowed_use}</p>
+                  <p className="air-acag-version-block">{row.not_allowed_use}</p>
+                  <div className="air-acag-version-path">
+                    <span>{sentenceCaseStatus(row.decision)}</span>
+                    <code>{target}</code>
+                  </div>
+                  {row.latest_2024_object ? (
+                    <small>2024 visible: {formatBytes(row.latest_2024_size_bytes)} / not selected</small>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-acag-version-lists">
+            <div>
+              <span>Decision ledger</span>
+              {decisions.map((row) => (
+                <article key={row.decision}>
+                  <strong>{sentenceCaseStatus(row.decision)}</strong>
+                  <b>{formatNumber(row.records)} rows</b>
+                  <i style={{ width: `${Math.max(8, (row.records / maxDecisionRecords) * 100)}%` }} />
+                </article>
+              ))}
+            </div>
+            <div>
+              <span>Evidence types</span>
+              {evidenceTypes.map((row) => (
+                <article key={row.evidence_type}>
+                  <strong>{sentenceCaseStatus(row.evidence_type)}</strong>
+                  <b>{formatNumber(row.records)} rows</b>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <p className="air-acag-version-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-acag-version-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-acag-version-decision.md" download>
+              Download version note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-acag-version-decision-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-acag-version-decision.csv" download>
+              Download decision CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading ACAG version decision...</p>
       )}
     </section>
   );

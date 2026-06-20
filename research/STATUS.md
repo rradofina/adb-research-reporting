@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, and station-radius denominator download-feasibility gate exist; station-radius/catchment, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, selected denominator downloads/checksums, frozen radius/de-duplication rules, and downloaded/checksummed gridded population/PM2.5 denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, and station-radius ACAG version-decision gate exist; station-radius/catchment, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, selected population denominator subset, selected denominator downloads/checksums, NetCDF variable inspection, frozen radius/de-duplication rules, and downloaded/checksummed gridded population/PM2.5 denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -248,13 +248,16 @@ overrides priority by editing this list.
    gridded PM2.5 denominator files, and 0 station-radius-ready economies; and
    keeps the catchment map blocked until denominator, join, grade, and method
    gates close. The station-radius denominator source plan, acquisition-route
-   scan, file-manifest prefreeze, and download-feasibility gate then verify 7
-   public source pages, 4 candidate denominator sources with visible routes, 87
-   visible route links, 20 probe-OK responses, 12 manifest rows, 10 exact public
-   file/object records, 5 exact population files, 4 current ACAG V6.GL.03 AWS
-   PM2.5 object records with source-plan version drift, 4 first-wave checksum
-   candidates, 2 conditional PM2.5 coarse candidates, 0 selected population
-   denominators, 0 downloads, 0 SHA-256 denominator checksums, and 0 maps. The
+   scan, file-manifest prefreeze, download-feasibility gate, and ACAG
+   version-decision gate then verify 7 public source pages, 4 candidate
+   denominator sources with visible routes, 87 visible route links, 20 probe-OK
+   responses, 12 manifest rows, 10 exact public file/object records, 5 exact
+   population files, 4 current ACAG V6.GL.03 AWS PM2.5 object records with
+   source-plan version drift, 4 first-wave checksum candidates, 2 approved 2023
+   V6.GL.03 coarse PM2.5 checksum candidates, 2024 ACAG objects visible but not
+   selected, 2 unresolved V6.GL.02.04/V5 Box routes, 0 selected population
+   denominators, 0 downloads, 0 SHA-256 denominator checksums, 0 NetCDF variable
+   inspections, and 0 maps. The
    BMKG
    near-closure ledger then
    synthesizes the existing BMKG method, display, dashboard, grade-basis,
@@ -1386,6 +1389,24 @@ by leaving the board in a state the next session can read.
   denominator checksums, joins, grade closure, maps, and station-radius-ready
   economies at 0. This closes the download-decision question, not the checksum,
   denominator-selection, join, grade, map, or exposure computation.
+- **2026-06-20 (air-monitoring station-radius ACAG version decision):** Added
+  `air-monitoring/scripts/scan-station-radius-acag-version-decision.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-station-radius-acag-version-decision.csv`
+  and
+  `air-monitoring/generated/air-monitoring-station-radius-acag-version-decision-summary.json`,
+  and wrote `air-monitoring/station-radius-acag-version-decision.md`. The gate
+  retrieves 9 public evidence routes: the ACAG source page, AWS Registry page,
+  SATPM V6.GL.03 documentation, four S3 prefix listings, and the two
+  V6.GL.02.04/V5 Box routes. It selects the 2023 V6.GL.03 Asia coarse PM2.5
+  object and the 2023 global coarse object as first-wave checksum candidates,
+  records 2024 V6.GL.03 annual objects as visible but not selected, keeps the
+  V6.GL.02.04/V5 Box routes unresolved, allows 0 silent V6.GL.03 replacements
+  of the source-plan routes, and keeps downloads, SHA-256 checksums, NetCDF
+  variable inspections, joins, grade closure, maps, and station-radius-ready
+  economies at 0. This closes the ACAG current-version pilot-lane question, not
+  the denominator-selection, checksum, variable-inspection, join, grade, map, or
+  exposure computation.
 - **2026-06-20 (air-monitoring station-radius denominator readiness wall):**
   Added `air-monitoring/scripts/build-station-radius-denominator-readiness.py`,
   generated

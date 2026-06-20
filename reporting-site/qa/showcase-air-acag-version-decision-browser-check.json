@@ -1,0 +1,76 @@
+{
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "checked_on": "2026-06-20",
+  "surface": "Air-monitoring showcase ACAG version-decision gate",
+  "direct_endpoints": [
+    {
+      "path": "/programs/air-monitoring/station-radius-acag-version-decision.md",
+      "status": 200
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-acag-version-decision-summary.json",
+      "status": 200
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-acag-version-decision.csv",
+      "status": 200
+    }
+  ],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1100,
+      "section_present": true,
+      "heading": "Current ACAG becomes a pilot lane, not a silent substitution.",
+      "callout_value": "2023",
+      "stat_cards": 6,
+      "gate_cards": 6,
+      "evidence_rows": 9,
+      "decision_articles": 14,
+      "download_links": 3,
+      "first_wave_object_visible": true,
+      "body_horizontal_overflow": false,
+      "section_horizontal_overflow": false,
+      "page_errors": 0,
+      "console_errors": 0,
+      "console_warnings": [
+        "Existing React Router future-flag warnings",
+        "Existing Vite development-server messages"
+      ],
+      "screenshot": "reporting-site/qa/showcase-air-acag-version-decision-desktop.png",
+      "visual_notes": "The hook, selected-vintage callout, decision text, stat cards, and gate cards are visible in the first checked viewport without overlap."
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1000,
+      "section_present": true,
+      "heading": "Current ACAG becomes a pilot lane, not a silent substitution.",
+      "callout_value": "2023",
+      "stat_cards": 6,
+      "gate_cards": 6,
+      "evidence_rows": 9,
+      "decision_articles": 14,
+      "download_links": 3,
+      "first_wave_object_visible": true,
+      "body_horizontal_overflow": false,
+      "section_horizontal_overflow": false,
+      "page_errors": 0,
+      "console_errors": 0,
+      "console_warnings": [
+        "Existing React Router future-flag warnings",
+        "Existing Vite development-server messages"
+      ],
+      "screenshot": "reporting-site/qa/showcase-air-acag-version-decision-mobile.png",
+      "visual_notes": "The hook, selected-vintage callout, and decision card stack cleanly at mobile width; the long decision continues below the first viewport without horizontal overflow."
+    }
+  ],
+  "required_text_present": [
+    "2024 objects are visible",
+    "Silent replacements",
+    "V6GL03.CNNPM25.0p10.AS.202301-202312.nc"
+  ],
+  "result": "pass",
+  "non_claim": "This QA confirms the public surface and evidence links render; it does not validate ACAG file downloads, SHA-256 checksums, NetCDF variable inspection, PM2.5 exposure, station-radius catchments, monitor-grade rows, or same-station joins."
+}

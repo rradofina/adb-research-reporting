@@ -185,6 +185,27 @@
       ],
       "notes": "Station-radius denominator download-feasibility gate derived from the prefreeze manifest. It reviews 12 manifest rows, identifies 4 first-wave checksum candidates, including 2 conditional ACAG V6.GL.03 coarse PM2.5 candidates and 2 metadata or route-test candidates, defers 4 multi-gigabyte population archives and 2 moderate/large PM2.5 objects, keeps 2 ACAG Box shared-folder routes unresolved, and records 0 selected population denominators, 0 downloaded files, 0 SHA-256 denominator checksums, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies."
     },
+    "air_monitoring_station_radius_acag_version_decision": {
+      "script": "air-monitoring/scripts/scan-station-radius-acag-version-decision.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_download_feasibility",
+        "air_monitoring_station_radius_denominator_file_manifest_prefreeze",
+        "air_monitoring_station_radius_denominator_source_plan"
+      ],
+      "source_pages": [
+        "https://sites.wustl.edu/acag/surface-pm2-5/",
+        "https://registry.opendata.aws/surface-pm2-5-v6gl/",
+        "https://www.satpm.org/v6-gl-03",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/CoarseResolution/AS/Annual/&max-keys=1000",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/CoarseResolution/GL/Annual/&max-keys=1000",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/FineResolution/AS/Annual/&max-keys=1000",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/FineResolution/GL/Annual/&max-keys=1000",
+        "https://wustl.box.com/s/y143mciw7jz7ft2qe3hccjw65m3xe8f2",
+        "https://wustl.box.com/v/ACAG-V5GL0502-GWRPM25"
+      ],
+      "notes": "Station-radius ACAG version-decision gate. It retrieves 9 public evidence routes, including 5 source/documentation/Box pages and 4 S3 prefix listings; confirms V6.GL.03 current registry/documentation visibility; selects the 2023 Asia coarse object and 2023 global coarse object as first-wave checksum candidates; records 2024 V6.GL.03 annual objects as visible but not selected; keeps V6.GL.02.04/V5 Box routes unresolved; allows 0 silent V6.GL.03 replacements of V6.GL.02.04/V5; and records 0 downloaded NetCDF files, 0 SHA-256 denominator checksums, 0 NetCDF variable inspections, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -808,6 +829,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_denominator_download_feasibility pin after classifying the 12-row prefreeze manifest into first-wave checksum candidates, large-archive deferrals, ACAG version-drift cautions, unresolved shared-folder blockers, and zero-download/checksum non-claims before any station-radius computation."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_acag_version_decision pin after retrieving ACAG source/documentation, AWS registry, S3 prefix listings, and Box routes; selecting 2023 V6.GL.03 Asia/global coarse objects as first-wave checksum candidates; keeping 2024 visible but unselected; preserving V6.GL.02.04/V5 Box routes as unresolved; and recording zero downloads/checksums/NetCDF inspections/joins/grade rows/maps."
     },
     {
       "date": "2026-06-19",

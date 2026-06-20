@@ -1437,6 +1437,340 @@
   }
 }
 
+.air-acag-version-section {
+  border-top: 1px solid rgba(0, 125, 184, 0.28);
+  background:
+    linear-gradient(90deg, rgba(0, 125, 184, 0.07), transparent 42%),
+    #ffffff;
+}
+
+.air-acag-version-section * {
+  min-width: 0;
+}
+
+.air-acag-version-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.34fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.air-acag-version-head h2 {
+  max-width: 13ch;
+  margin: 0.15rem 0 1rem;
+  color: #111827;
+  font-size: clamp(2.2rem, 4vw, 4.15rem);
+  line-height: 0.95;
+}
+
+.air-acag-version-head p,
+.air-acag-version-decision p {
+  max-width: 64rem;
+  color: #304356;
+  line-height: 1.65;
+}
+
+.air-acag-version-callout,
+.air-acag-version-decision,
+.air-acag-version-stat-grid > div,
+.air-acag-version-gate,
+.air-acag-version-row,
+.air-acag-version-lists > div {
+  border: 1px solid rgba(0, 125, 184, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.air-acag-version-callout {
+  padding: 1.2rem;
+  border-left: 5px solid #007db8;
+}
+
+.air-acag-version-callout span,
+.air-acag-version-decision span,
+.air-acag-version-stat-grid span,
+.air-acag-version-gate span,
+.air-acag-version-row span,
+.air-acag-version-row dt,
+.air-acag-version-lists > div > span,
+.air-acag-version-downloads span,
+.air-acag-version-path span {
+  color: #4f6373;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.air-acag-version-callout strong {
+  display: block;
+  margin: 0.55rem 0;
+  color: #00689b;
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  line-height: 0.9;
+}
+
+.air-acag-version-callout p,
+.air-acag-version-stat-grid em,
+.air-acag-version-gate p,
+.air-acag-version-row p,
+.air-acag-version-nonclaim,
+.air-acag-version-row small {
+  color: #405366;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.air-acag-version-decision {
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  border-left: 5px solid #5a8227;
+}
+
+.air-acag-version-decision p {
+  margin: 0.45rem 0 0;
+  font-weight: 600;
+}
+
+.air-acag-version-stat-grid,
+.air-acag-version-gates,
+.air-acag-version-row-grid,
+.air-acag-version-lists {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.air-acag-version-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-acag-version-stat-grid > div,
+.air-acag-version-gate,
+.air-acag-version-row,
+.air-acag-version-lists > div {
+  padding: 1rem;
+}
+
+.air-acag-version-stat-grid > div {
+  border-top: 4px solid #007db8;
+}
+
+.air-acag-version-stat-grid > div:nth-child(3) {
+  border-top-color: #5a8227;
+}
+
+.air-acag-version-stat-grid > div:nth-child(4),
+.air-acag-version-stat-grid > div:nth-child(5) {
+  border-top-color: #fbb00e;
+}
+
+.air-acag-version-stat-grid > div:nth-child(6) {
+  border-top-color: #9b2226;
+}
+
+.air-acag-version-stat-grid strong,
+.air-acag-version-row b,
+.air-acag-version-row dd,
+.air-acag-version-gate em,
+.air-acag-version-lists b {
+  color: #00689b;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+}
+
+.air-acag-version-stat-grid strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 2rem;
+}
+
+.air-acag-version-gates {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-acag-version-gate {
+  border-left: 4px solid #007db8;
+}
+
+.air-acag-version-gate-available {
+  border-left-color: #5a8227;
+}
+
+.air-acag-version-gate-pending {
+  border-left-color: #fbb00e;
+}
+
+.air-acag-version-gate-blocked {
+  border-left-color: #9b2226;
+}
+
+.air-acag-version-gate strong,
+.air-acag-version-row strong,
+.air-acag-version-lists strong {
+  display: block;
+  margin: 0.4rem 0;
+  color: #1d2c3a;
+  line-height: 1.25;
+}
+
+.air-acag-version-row-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-acag-version-row {
+  display: grid;
+  gap: 0.75rem;
+  border-left: 5px solid #81909d;
+}
+
+.air-acag-version-row-approved,
+.air-acag-version-row-context {
+  border-left-color: #5a8227;
+}
+
+.air-acag-version-row-deferred {
+  border-left-color: #fbb00e;
+}
+
+.air-acag-version-row-blocked {
+  border-left-color: #9b2226;
+}
+
+.air-acag-version-row b {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.25rem 0.45rem;
+  background: #eef8fc;
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.air-acag-version-row dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.air-acag-version-row dd {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-acag-version-block {
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid #9b2226;
+  background: #fff7f4;
+}
+
+.air-acag-version-path {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.65rem;
+  background: #f4f8fb;
+}
+
+.air-acag-version-path code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.air-acag-version-lists {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.6fr);
+}
+
+.air-acag-version-lists article {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 0.65rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(0, 125, 184, 0.12);
+}
+
+.air-acag-version-lists i {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 3px;
+  background: #007db8;
+}
+
+.air-acag-version-nonclaim {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-acag-version-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-acag-version-downloads span,
+.air-acag-version-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-acag-version-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-acag-version-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-acag-version-stat-grid,
+  .air-acag-version-gates,
+  .air-acag-version-row-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .air-acag-version-head,
+  .air-acag-version-lists {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-acag-version-head h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-acag-version-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-acag-version-stat-grid,
+  .air-acag-version-gates,
+  .air-acag-version-row-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-acag-version-row dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-acag-version-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

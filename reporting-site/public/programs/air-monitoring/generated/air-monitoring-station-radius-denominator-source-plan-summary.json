@@ -1,0 +1,402 @@
+{
+  "generated_at": "2026-06-20T08:32:54Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_radius_denominator_source_plan",
+  "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+  "goal_level": "L3 station-radius denominator source plan",
+  "source_inputs": [
+    {
+      "path": "source-inputs/station-radius-denominator-source-seed.csv",
+      "role": "seeded public denominator source pages"
+    },
+    {
+      "path": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",
+      "role": "current station-radius readiness wall"
+    }
+  ],
+  "coverage_counts": {
+    "seeded_source_urls": 7,
+    "source_urls_retrieved": 7,
+    "source_level_candidate_denominator_sources": 4,
+    "population_candidate_sources": 2,
+    "pm25_candidate_sources": 2,
+    "context_only_sources": 2,
+    "boundary_reference_sources": 1,
+    "committed_population_raster_files": 0,
+    "committed_pm25_grid_files": 0,
+    "committed_boundary_reference_files": 2,
+    "validated_same_station_join_rows": 0,
+    "complete_monitor_grade_rows": 0,
+    "station_radius_ready_economies": 0
+  },
+  "source_role_counts": [
+    {
+      "role": "boundary_reference",
+      "sources": 1
+    },
+    {
+      "role": "primary_pm25_denominator",
+      "sources": 1
+    },
+    {
+      "role": "primary_population_denominator",
+      "sources": 1
+    },
+    {
+      "role": "secondary_pm25_context",
+      "sources": 1
+    },
+    {
+      "role": "sensitivity_pm25_denominator",
+      "sources": 1
+    },
+    {
+      "role": "sensitivity_population_denominator",
+      "sources": 1
+    },
+    {
+      "role": "validation_context",
+      "sources": 1
+    }
+  ],
+  "source_decision_counts": [
+    {
+      "decision": "boundary_reference_terms_available",
+      "sources": 1
+    },
+    {
+      "decision": "candidate_pm25_sensitivity_denominator",
+      "sources": 1
+    },
+    {
+      "decision": "candidate_population_sensitivity_denominator",
+      "sources": 1
+    },
+    {
+      "decision": "candidate_primary_pm25_denominator",
+      "sources": 1
+    },
+    {
+      "decision": "candidate_primary_population_denominator",
+      "sources": 1
+    },
+    {
+      "decision": "context_only_city_ground_measurement_database",
+      "sources": 1
+    },
+    {
+      "decision": "context_only_older_pm25_surface",
+      "sources": 1
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Public population denominator source pages",
+      "rows": 2,
+      "reader_use": "Source pages expose gridded population candidates; no raster is pinned yet."
+    },
+    {
+      "status": "available",
+      "gate": "Public gridded PM2.5 source pages",
+      "rows": 2,
+      "reader_use": "Source pages expose gridded PM2.5 candidates; no grid file is pinned yet."
+    },
+    {
+      "status": "available",
+      "gate": "Boundary reference files",
+      "rows": 2,
+      "reader_use": "Natural Earth boundary files already exist in opensrc for cartographic reference."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Population raster files downloaded and checksummed",
+      "rows": 0,
+      "reader_use": "The source plan does not download GHSL or WorldPop rasters."
+    },
+    {
+      "status": "not_ready",
+      "gate": "PM2.5 grid files downloaded and checksummed",
+      "rows": 0,
+      "reader_use": "The source plan does not download ACAG or WHO DIMAQ grids."
+    },
+    {
+      "status": "draft_not_frozen",
+      "gate": "Radius sensitivity method",
+      "rows": 3,
+      "reader_use": "Draft sweep is 10, 25, and 50 km; this must be frozen in pre-registration before computation."
+    },
+    {
+      "status": "draft_not_frozen",
+      "gate": "Station de-duplication method",
+      "rows": 0,
+      "reader_use": "Proximity alone is not a join; official/OpenAQ rows need explicit station-ID, owner, or source crosswalk evidence."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Validated same-station joins",
+      "rows": 0,
+      "reader_use": "The current reconciliation artifact still records zero validated joins."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade rows",
+      "rows": 0,
+      "reader_use": "The current station-grade ledger still records zero complete monitor-grade rows."
+    },
+    {
+      "status": "not_computed",
+      "gate": "Station-radius map",
+      "rows": 0,
+      "reader_use": "Blocked until files, processing, radius, join, and grade gates close."
+    }
+  ],
+  "proposed_method": {
+    "population_primary": "GHSL GHS-POP R2023A, 2020 observed estimate; 2025 projection as sensitivity if a current-period read is needed.",
+    "population_sensitivity": "WorldPop Global2 R2025A country 100m files after country-level download paths and license notes are pinned.",
+    "pm25_primary": "ACAG SatPM2.5 V6.GL.02.04 annual 2023 grid; start with 0.1 degree for tractable QA, then move to 0.01 degree only with tiling/subset rules.",
+    "pm25_sensitivity": "ACAG V5.GL.05.02 traditional GWR algorithm for the same year where feasible.",
+    "radius_sweep_km": [
+      10,
+      25,
+      50
+    ],
+    "deduplication_rule_draft": "Do not merge OpenAQ and official rows from distance alone. Treat rows as separate unless a public station ID, provider/owner crosswalk, station page, or explicit source trail supports the same-station decision.",
+    "grade_rule_draft": "Keep a visibility layer separate from a monitor-grade layer. The visibility layer can show public coordinate inputs; the monitor-grade layer remains empty until complete grade/status evidence exists.",
+    "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+  },
+  "reference_files": {
+    "committed_population_raster_files": [],
+    "committed_pm25_grid_files": [],
+    "committed_boundary_reference_files": [
+      "opensrc/world-boundaries/ne_50m_admin_0_countries.geojson",
+      "opensrc/world-boundaries/ne_110m_admin_0_countries.geojson"
+    ]
+  },
+  "source_records": [
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "ghsl_jrc_ghs_pop_r2023a",
+      "source_name": "JRC GHSL GHS-POP R2023A catalogue",
+      "source_role": "primary_population_denominator",
+      "source_family": "GHSL",
+      "source_scope": "global_population_grid",
+      "url": "https://data.jrc.ec.europa.eu/dataset/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+      "final_url": "https://data.jrc.ec.europa.eu/dataset/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 99788,
+      "sha256": "3897fcfc10f2bb04380a567621403db5e15e3ba1eab14de2457c9cca4dde6db9",
+      "matched_expected_terms": "GHS-POP R2023A||population grid||1975-2030",
+      "matched_gridded_terms": "100m||3 arc-seconds||TIFF||people per cell",
+      "matched_access_terms": "No limitations||anonymously access||directly",
+      "matched_license_terms": "source is acknowledged||European Commission reuse notice",
+      "matched_vintage_terms": "R2023A||2020||2025||2030",
+      "matched_caveat_terms": "projections||disaggregated||census",
+      "source_decision": "candidate_primary_population_denominator",
+      "source_level_candidate_ready": true,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Candidate baseline population denominator; still needs raster download, checksum, clipping, and sensitivity checks.",
+      "source_note": "Primary candidate for station-radius population counts once raster files are downloaded and pinned; use observed 2020 with 2025 projection as sensitivity.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "worldpop_global2_r2025a",
+      "source_name": "WorldPop Global2 population counts R2025A",
+      "source_role": "sensitivity_population_denominator",
+      "source_family": "WorldPop",
+      "source_scope": "country_population_grid",
+      "url": "https://hub.worldpop.org/project/categories?id=3",
+      "final_url": "https://hub.worldpop.org/project/categories?id=3",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 14202,
+      "sha256": "19f2d9db373d52cdd3758e65e79e861f9d67f857697dcf63e0a326d9938a2d47",
+      "matched_expected_terms": "Population Counts||Global2||R2025A",
+      "matched_gridded_terms": "100m||1km||Geotiff||2015 to 2030",
+      "matched_access_terms": "available||download",
+      "matched_license_terms": "Creative Commons Attribution 4.0",
+      "matched_vintage_terms": "R2025A||2015 to 2030",
+      "matched_caveat_terms": "choosing the right||more accurate estimates",
+      "source_decision": "candidate_population_sensitivity_denominator",
+      "source_level_candidate_ready": true,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Candidate sensitivity population denominator; compare against GHSL after files are pinned.",
+      "source_note": "Sensitivity population denominator candidate; useful to compare against GHSL after country files and license notes are pinned.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "acag_v6gl0204_pm25",
+      "source_name": "ACAG SatPM2.5 V6.GL.02.04",
+      "source_role": "primary_pm25_denominator",
+      "source_family": "ACAG",
+      "source_scope": "global_pm25_grid",
+      "url": "https://sites.wustl.edu/acag/surface-pm2-5/",
+      "final_url": "https://sites.wustl.edu/acag/surface-pm2-5/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 97608,
+      "sha256": "4264d510bab98234915ad8ffac2542fd0f952ee624f3b4ef2578e4c863a70622",
+      "matched_expected_terms": "V6.GL.02.04||PM 2.5||1998-2023",
+      "matched_gridded_terms": "0.01||0.1||NetCDF||WGS84",
+      "matched_access_terms": "Registry of Open Data on AWS||wustl.box.com",
+      "matched_license_terms": "CC BY 4.0",
+      "matched_vintage_terms": "1998-2023||2023",
+      "matched_caveat_terms": "large-scale studies||unlikely to fully resolve PM 2.5 gradients",
+      "source_decision": "candidate_primary_pm25_denominator",
+      "source_level_candidate_ready": true,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Candidate baseline PM2.5 surface; still needs subset/download, checksum, raster handling, and caveat checks.",
+      "source_note": "Primary PM2.5 surface candidate for station-radius exposure context; use 0.1 degree first for tractable QA and 0.01 degree only after tiling/subset rules are committed.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "acag_v5gl0502_pm25",
+      "source_name": "ACAG SatPM2.5 V5.GL.05.02 traditional algorithm",
+      "source_role": "sensitivity_pm25_denominator",
+      "source_family": "ACAG",
+      "source_scope": "global_pm25_grid",
+      "url": "https://sites.wustl.edu/acag/surface-pm2-5/",
+      "final_url": "https://sites.wustl.edu/acag/surface-pm2-5/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 97608,
+      "sha256": "4264d510bab98234915ad8ffac2542fd0f952ee624f3b4ef2578e4c863a70622",
+      "matched_expected_terms": "V5.GL.05.02||traditional global algorithm||1998-2023",
+      "matched_gridded_terms": "0.01||0.1||NetCDF||WGS84",
+      "matched_access_terms": "wustl.box.com",
+      "matched_license_terms": "CC BY 4.0",
+      "matched_vintage_terms": "1998-2023||2023",
+      "matched_caveat_terms": "large-scale studies||unlikely to fully resolve PM 2.5 gradients",
+      "source_decision": "candidate_pm25_sensitivity_denominator",
+      "source_level_candidate_ready": true,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Candidate sensitivity PM2.5 surface for algorithm comparison after files are pinned.",
+      "source_note": "Sensitivity PM2.5 surface candidate to compare the current CNN algorithm against the traditional GWR algorithm.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "who_dimaq_2016_pm25",
+      "source_name": "WHO DIMAQ 2016 modelled PM2.5 grid",
+      "source_role": "secondary_pm25_context",
+      "source_family": "WHO",
+      "source_scope": "global_pm25_grid_context",
+      "url": "https://www.who.int/data/gho/data/themes/air-pollution/who-modelled-estimates-of-air-pollution-from-particulate-matter",
+      "final_url": "https://www.who.int/data/gho/data/themes/air-pollution/who-modelled-estimates-of-air-pollution-from-particulate-matter",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 95737,
+      "sha256": "2792d6dcc732c8a4eff48445b966ec169406e287690bcec3141a5487f785d46f",
+      "matched_expected_terms": "DIMAQ||2016||annual average PM 2.5",
+      "matched_gridded_terms": "0.1||longitude||latitude||country code",
+      "matched_access_terms": "xlxs",
+      "matched_license_terms": "World Health Organization||all rights reserved",
+      "matched_vintage_terms": "2016",
+      "matched_caveat_terms": "uncertainty||weak statistical information systems||local levels",
+      "source_decision": "context_only_older_pm25_surface",
+      "source_level_candidate_ready": false,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Use as context or sensitivity only; it is older than the current ACAG surfaces and carries uncertainty cautions.",
+      "source_note": "Secondary context only for this program because it is older than ACAG current surfaces and has explicit uncertainty cautions.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "who_air_quality_database_v61",
+      "source_name": "WHO Ambient Air Quality Database V6.1",
+      "source_role": "validation_context",
+      "source_family": "WHO",
+      "source_scope": "city_or_town_ground_measurement_context",
+      "url": "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+      "final_url": "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 122482,
+      "sha256": "623c447b8b8c5d7c28bbe2f28d81e831e2dda740ca3ecdc2d131ce8e6db99b5b",
+      "matched_expected_terms": "Version 2024 V6.1||PM 2.5||annual mean",
+      "matched_gridded_terms": "city or town as a whole||ground measurements",
+      "matched_access_terms": "Excel Version V6.1||Interactive web application",
+      "matched_license_terms": "World Health Organization",
+      "matched_vintage_terms": "2024||V6.1",
+      "matched_caveat_terms": "city or town as a whole",
+      "source_decision": "context_only_city_ground_measurement_database",
+      "source_level_candidate_ready": false,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Use for validation and source context, not as a station-radius gridded denominator.",
+      "source_note": "Validation and context source; not a station-radius denominator because WHO states the database represents city or town averages rather than individual stations.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    },
+    {
+      "generated_at": "2026-06-20T08:32:54Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_denominator_source_plan",
+      "method": "air_monitoring_station_radius_denominator_source_plan_v1",
+      "source_key": "natural_earth_terms",
+      "source_name": "existing Natural Earth boundary reference terms",
+      "source_role": "boundary_reference",
+      "source_family": "NaturalEarth",
+      "source_scope": "global_boundary_reference",
+      "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "final_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 37748,
+      "sha256": "9da4bc95f7b2a502ebe9e126ed5e7e67743799c30070c9aad31d595ab0288138",
+      "matched_expected_terms": "Natural Earth||public domain||1:10m",
+      "matched_gridded_terms": "vector||raster||map data",
+      "matched_access_terms": "No permission is needed||use the maps in any manner",
+      "matched_license_terms": "public domain",
+      "matched_vintage_terms": "2026",
+      "matched_caveat_terms": "accuracy||content||design",
+      "source_decision": "boundary_reference_terms_available",
+      "source_level_candidate_ready": false,
+      "raster_or_grid_file_committed": false,
+      "reader_use": "Boundary terms support the already committed Natural Earth reference files; no denominator is provided.",
+      "source_note": "Boundary-source context for the already committed Natural Earth country files; not a population or PM2.5 denominator.",
+      "retrieval_error": "",
+      "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+    }
+  ],
+  "outputs": {
+    "csv": "generated/air-monitoring-station-radius-denominator-source-plan.csv",
+    "summary_json": "generated/air-monitoring-station-radius-denominator-source-plan-summary.json",
+    "markdown": "station-radius-denominator-source-plan.md"
+  },
+  "non_claim": "This source-plan scan verifies public denominator source pages and drafts the next method gates for station-radius analysis. It does not download population or PM2.5 rasters, does not compute catchment population, does not compute PM2.5 exposure inside a radius, does not validate same-station joins, and does not classify any monitor-grade row as complete."
+}

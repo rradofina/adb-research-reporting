@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T08:10:45.123Z",
+  "generated_at": "2026-06-20T08:46:46.196Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 484,
-    "browserChecks": 48
+    "screenshots": 486,
+    "browserChecks": 49
   },
   "summary": {
     "reports_total": 20,
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/station-radius-denominator-readiness.md",
+      "evidencePath": "air-monitoring/station-radius-denominator-source-plan.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",
@@ -163,7 +163,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source beyond the Air Uzbekistan alternate namespace that names station IDs 107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, with correction/status/calibration or grade-basis closure; for BMKG, target station-specific inspection logs, PM2.5 calibration certificates, calibration-status records, or explicit station-grade records beyond station pages, dashboard status, station studies, installation/deployment context, source-level rules, and the PPID/PTSP access-route wall; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, XLSX station-sheet-only exports, NEA city-level network/launch context, and the indicator API's different station-code namespace; for station-radius work, add a public gridded population and PM2.5 denominator plan plus declared radius, de-duplication, join, and grade rules before any catchment map."
+      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source beyond the Air Uzbekistan alternate namespace that names station IDs 107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, with correction/status/calibration or grade-basis closure; for BMKG, target station-specific inspection logs, PM2.5 calibration certificates, calibration-status records, or explicit station-grade records beyond station pages, dashboard status, station studies, installation/deployment context, source-level rules, and the PPID/PTSP access-route wall; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, XLSX station-sheet-only exports, NEA city-level network/launch context, and the indicator API's different station-code namespace; for station-radius work, freeze the GHSL/WorldPop and ACAG route, then download or subset small checksummed denominator files before any catchment map."
     },
     {
       "id": 7,

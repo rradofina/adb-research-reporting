@@ -333,6 +333,69 @@ interface StationRadiusReadinessSummary {
   non_claim: string;
 }
 
+interface StationRadiusSourcePlanGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusSourcePlanDecision {
+  decision: string;
+  sources: number;
+}
+
+interface StationRadiusSourcePlanRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_family: string;
+  source_decision: string;
+  source_level_candidate_ready: boolean;
+  raster_or_grid_file_committed: boolean;
+  matched_gridded_terms: string;
+  matched_license_terms: string;
+  matched_vintage_terms: string;
+  reader_use: string;
+}
+
+interface StationRadiusSourcePlanSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    seeded_source_urls: number;
+    source_urls_retrieved: number;
+    source_level_candidate_denominator_sources: number;
+    population_candidate_sources: number;
+    pm25_candidate_sources: number;
+    context_only_sources: number;
+    boundary_reference_sources: number;
+    committed_population_raster_files: number;
+    committed_pm25_grid_files: number;
+    committed_boundary_reference_files: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  source_decision_counts: StationRadiusSourcePlanDecision[];
+  evidence_gate_counts: StationRadiusSourcePlanGate[];
+  proposed_method: {
+    population_primary: string;
+    population_sensitivity: string;
+    pm25_primary: string;
+    pm25_sensitivity: string;
+    radius_sweep_km: number[];
+    deduplication_rule_draft: string;
+    grade_rule_draft: string;
+  };
+  source_records: StationRadiusSourcePlanRecord[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3243,6 +3306,8 @@ export default function ShowcaseAirMonitoring() {
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
   const [stationRadiusReadiness, setStationRadiusReadiness] =
     useState<StationRadiusReadinessSummary | null>(null);
+  const [stationRadiusSourcePlan, setStationRadiusSourcePlan] =
+    useState<StationRadiusSourcePlanSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3453,6 +3518,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusReadiness(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator source plan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusSourcePlan(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4048,6 +4133,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationMetadataPanel summary={stationMetadata} />
 
       <AirStationRadiusReadinessPanel summary={stationRadiusReadiness} />
+
+      <AirStationRadiusSourcePlanPanel summary={stationRadiusSourcePlan} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -4673,6 +4760,188 @@ function AirStationRadiusReadinessPanel({ summary }: { summary: StationRadiusRea
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator readiness wall...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusSourcePlanPanel({ summary }: { summary: StationRadiusSourcePlanSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const records = summary?.source_records ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const method = summary?.proposed_method;
+  const decisionRows = summary?.source_decision_counts ?? [];
+  const maxDecisionSources = Math.max(1, ...decisionRows.map((row) => row.sources));
+  const termCount = (value: string | undefined) => (value ? value.split("||").filter(Boolean).length : 0);
+  const cardTone = (record: StationRadiusSourcePlanRecord) => {
+    if (record.source_level_candidate_ready) return "ready";
+    if (record.source_role === "boundary_reference" || record.source_decision.startsWith("context_only")) return "context";
+    return "blocked";
+  };
+
+  return (
+    <section className="showcase-section air-radius-source-plan-section" aria-label="Station-radius denominator source plan">
+      <div className="air-radius-source-plan-head">
+        <div>
+          <p className="kicker kicker-crimson">Denominator source plan</p>
+          <h2>The source route exists; the map still does not.</h2>
+          <p>
+            The next upgrade is no longer a vague request for better data.
+            This scan verifies the public source pages that could support a
+            future catchment map, then keeps the hard gates visible: no
+            denominator files are pinned, no raster intersection method is
+            frozen, and the station join and grade ledgers still have zero
+            closure rows.
+          </p>
+        </div>
+        <div className="air-radius-source-plan-callout">
+          <span>Pinned denominator grids</span>
+          <strong>
+            {formatNumber((counts?.committed_population_raster_files ?? 0) + (counts?.committed_pm25_grid_files ?? 0))}
+          </strong>
+          <p>Source pages are enough to plan. They are not enough to map.</p>
+        </div>
+      </div>
+
+      {summary && counts && method ? (
+        <>
+          <div className="air-radius-source-plan-stat-grid">
+            <div className="air-radius-source-plan-stat">
+              <span>Source pages retrieved</span>
+              <strong>{formatNumber(counts.source_urls_retrieved)} / {formatNumber(counts.seeded_source_urls)}</strong>
+              <em>public pages fetched and hashed</em>
+            </div>
+            <div className="air-radius-source-plan-stat">
+              <span>Candidate denominators</span>
+              <strong>{formatNumber(counts.source_level_candidate_denominator_sources)}</strong>
+              <em>source-level ready, files not pinned</em>
+            </div>
+            <div className="air-radius-source-plan-stat">
+              <span>Population candidates</span>
+              <strong>{formatNumber(counts.population_candidate_sources)}</strong>
+              <em>GHSL baseline, WorldPop sensitivity</em>
+            </div>
+            <div className="air-radius-source-plan-stat">
+              <span>PM2.5 candidates</span>
+              <strong>{formatNumber(counts.pm25_candidate_sources)}</strong>
+              <em>ACAG current plus algorithm sensitivity</em>
+            </div>
+            <div className="air-radius-source-plan-stat">
+              <span>Context-only sources</span>
+              <strong>{formatNumber(counts.context_only_sources)}</strong>
+              <em>WHO validation/context, not radius denominators</em>
+            </div>
+            <div className="air-radius-source-plan-stat">
+              <span>Radius-ready economies</span>
+              <strong>{formatNumber(counts.station_radius_ready_economies)}</strong>
+              <em>join and grade ledgers still block the map</em>
+            </div>
+          </div>
+
+          <div className="air-radius-source-plan-source-grid" aria-label="Public denominator source decisions">
+            {records.map((record) => (
+              <article
+                key={record.source_key}
+                className={`air-radius-source-plan-source air-radius-source-plan-source-${cardTone(record)}`}
+              >
+                <div>
+                  <span>{record.source_family} / {sentenceCaseStatus(record.source_role)}</span>
+                  <strong>{record.source_name}</strong>
+                  <b>{sentenceCaseStatus(record.source_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Grid terms</dt>
+                    <dd>{formatNumber(termCount(record.matched_gridded_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>License</dt>
+                    <dd>{formatNumber(termCount(record.matched_license_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Vintage</dt>
+                    <dd>{formatNumber(termCount(record.matched_vintage_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>File</dt>
+                    <dd>{record.raster_or_grid_file_committed ? "pinned" : "none"}</dd>
+                  </div>
+                </dl>
+                <p>{record.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-source-plan-method-grid" aria-label="Draft station-radius method spine">
+            <article className="air-radius-source-plan-method">
+              <span>Population primary</span>
+              <strong>GHSL first</strong>
+              <p>{method.population_primary}</p>
+            </article>
+            <article className="air-radius-source-plan-method">
+              <span>Population sensitivity</span>
+              <strong>WorldPop check</strong>
+              <p>{method.population_sensitivity}</p>
+            </article>
+            <article className="air-radius-source-plan-method">
+              <span>PM2.5 primary</span>
+              <strong>ACAG V6</strong>
+              <p>{method.pm25_primary}</p>
+            </article>
+            <article className="air-radius-source-plan-method">
+              <span>Radius sweep</span>
+              <strong>{method.radius_sweep_km.join(" / ")} km</strong>
+              <p>Draft only. Freeze the sweep in pre-registration before any catchment computation.</p>
+            </article>
+            <article className="air-radius-source-plan-method">
+              <span>Join and grade rule</span>
+              <strong>Two layers</strong>
+              <p>{method.grade_rule_draft}</p>
+            </article>
+          </div>
+
+          <div className="air-radius-source-plan-decision-grid" aria-label="Source-plan decision distribution">
+            {decisionRows.map((row) => (
+              <article key={row.decision}>
+                <div>
+                  <span>{sentenceCaseStatus(row.decision)}</span>
+                  <strong>{formatNumber(row.sources)} source{row.sources === 1 ? "" : "s"}</strong>
+                </div>
+                <div className="air-radius-source-plan-track">
+                  <i style={{ width: `${Math.max(7, (row.sources / maxDecisionSources) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-source-plan-gate-grid" aria-label="Station-radius source-plan gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-radius-source-plan-gate air-radius-source-plan-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-source-plan-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-source-plan-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-source-plan.md" download>
+              Download source plan
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan.csv" download>
+              Download source CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator source plan...</p>
       )}
     </section>
   );

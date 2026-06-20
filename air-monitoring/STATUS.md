@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, frozen radius rules, and downloaded/checksummed catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -47,12 +47,30 @@ report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, the Georgia report-frequency matrix, the
 Georgia NEA station network/launch source scan, and the Georgia indicator
 endpoint mismatch scan, and the station-radius denominator readiness wall
-honestly, and do not imply
+plus the station-radius denominator source plan honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
-grade-basis evidence, and catchment methods are added.
+grade-basis evidence, frozen catchment methods, and downloaded/checksummed
+denominator files are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the station-radius denominator source plan. New seed
+  file `source-inputs/station-radius-denominator-source-seed.csv` and script
+  `scripts/scan-station-radius-denominator-sources.py` retrieve public source
+  pages for GHSL GHS-POP R2023A, WorldPop Global2 R2025A, ACAG SatPM2.5
+  V6/V5, WHO DIMAQ and Ambient Air Quality Database context, and Natural Earth
+  terms. The pass retrieves 7 of 7 source pages, classifies 2 population
+  candidate denominator sources, 2 PM2.5 candidate denominator sources, 2
+  context-only WHO sources, and 1 boundary-reference source; it records 0
+  committed population rasters, 0 committed PM2.5 grids, 0 validated
+  same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready
+  economies. It writes
+  `generated/air-monitoring-station-radius-denominator-source-plan.csv`,
+  `generated/air-monitoring-station-radius-denominator-source-plan-summary.json`,
+  and `station-radius-denominator-source-plan.md`. This is a public source
+  route and method-gate plan, not a raster download, catchment computation,
+  PM2.5 exposure computation, validated join, or monitor-grade promotion.
 
 - **2026-06-20:** Added the station-radius denominator readiness wall. New
   no-network script `scripts/build-station-radius-denominator-readiness.py`
@@ -1079,25 +1097,29 @@ grade-basis evidence, and catchment methods are added.
 7. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
-8. Use `station-radius-denominator-readiness.md` as the current station-radius
-   blocker wall. The evidence package now has 101 OpenAQ coordinate rows, 230
-   official coordinate rows, and 22 official/OpenAQ proximity candidate rows,
-   but it still has 0 validated same-station joins, 0 complete monitor-grade
-   rows, 0 gridded population denominator files, 0 gridded PM2.5 denominator
-   files, and 0 station-radius-ready economies. The next station-radius work
-   is not a map; it is a public denominator source plan plus a declared radius,
-   de-duplication, join, and grade rule.
+8. Use `station-radius-denominator-readiness.md` and
+   `station-radius-denominator-source-plan.md` as the current station-radius
+   blocker walls. The evidence package now has 101 OpenAQ coordinate rows, 230
+   official coordinate rows, 22 official/OpenAQ proximity candidate rows, 2
+   population source candidates, 2 PM2.5 source candidates, 2 WHO context
+   sources, and 1 boundary-reference source, but it still has 0 validated
+   same-station joins, 0 complete monitor-grade rows, 0 gridded population
+   denominator files, 0 gridded PM2.5 denominator files, and 0
+   station-radius-ready economies. The next station-radius work is still not a
+   map; it is freezing the radius/de-duplication/join/grade rules or pinning a
+   small checksummed denominator subset before any catchment computation.
 
 ## Current blockers
 
 - Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs
   and 230 official coordinate inputs across the 24-economy upgrade queue, but
-  the denominator-readiness wall records 0 validated same-station joins, 0
-  complete monitor-grade rows, 0 gridded population denominator files, 0
-  gridded PM2.5 denominator files, and 0 station-radius-ready economies. It
-  still needs a declared catchment method, gridded denominators, de-duplication
-  rules, validated joins, and grade assumptions before any coverage map is
-  computed.
+  the denominator-readiness and source-plan walls still record 0 validated
+  same-station joins, 0 complete monitor-grade rows, 0 gridded population
+  denominator files, 0 gridded PM2.5 denominator files, and 0
+  station-radius-ready economies. GHSL/WorldPop and ACAG source pages are
+  verified as candidates, but the package still needs a frozen catchment
+  method, downloaded/checksummed gridded denominators, de-duplication rules,
+  validated joins, and grade assumptions before any coverage map is computed.
 - Monitor-grade claims still have 0 complete classification rows. Bangladesh
   has 31 source-specific method-standard signal rows, but non-Bangladesh
   official rows and current-status scope still need station-level sources that

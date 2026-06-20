@@ -108,6 +108,27 @@
       ],
       "notes": "No-network station-radius denominator readiness wall for the 24-economy air-monitoring upgrade queue. It inventories 101 OpenAQ coordinate rows, 230 official coordinate rows, 22 proximity candidate rows, 0 validated same-station joins, 0 complete monitor-grade rows, 0 gridded population denominator files, 0 gridded PM2.5 denominator files, and 0 station-radius-ready economies. It does not compute catchment population, PM2.5 exposure inside a radius, monitor coverage, same-station joins, or complete monitor-grade classification."
     },
+    "air_monitoring_station_radius_denominator_source_plan": {
+      "script": "air-monitoring/scripts/scan-station-radius-denominator-sources.py",
+      "seed": "air-monitoring/source-inputs/station-radius-denominator-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_readiness",
+        "openaq_api",
+        "air_monitoring_regulator_station_extraction",
+        "air_monitoring_official_openaq_reconciliation",
+        "air_monitoring_station_grade_decision_ledger"
+      ],
+      "source_pages": [
+        "https://data.jrc.ec.europa.eu/dataset/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+        "https://hub.worldpop.org/project/categories?id=3",
+        "https://sites.wustl.edu/acag/surface-pm2-5/",
+        "https://www.who.int/data/gho/data/themes/air-pollution/who-modelled-estimates-of-air-pollution-from-particulate-matter",
+        "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+        "https://www.naturalearthdata.com/about/terms-of-use/"
+      ],
+      "notes": "Public source-plan scan for station-radius denominators. It retrieves 7 of 7 source pages, classifies 2 population candidate denominator sources, 2 PM2.5 candidate denominator sources, 2 context-only WHO sources, and 1 boundary-reference source; records 0 committed population rasters, 0 committed PM2.5 grids, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies. It does not download rasters or compute catchment/exposure coverage."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -715,6 +736,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_denominator_readiness pin after building a no-network readiness wall for the 24-economy air-monitoring upgrade queue, showing 101 OpenAQ coordinate rows, 230 official coordinate rows, 22 proximity candidate rows, 0 validated same-station joins, 0 gridded population denominator files, 0 gridded PM2.5 denominator files, and 0 station-radius-ready economies."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_denominator_source_plan pin after retrieving 7 of 7 public source pages for GHSL, WorldPop, ACAG, WHO, and Natural Earth, classifying 4 source-level denominator candidates while keeping raster downloads, station-radius computation, validated joins, complete-grade rows, and radius-ready economies at zero."
     },
     {
       "date": "2026-06-19",

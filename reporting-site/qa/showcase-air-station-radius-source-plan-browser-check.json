@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-06-20T08:45:49.533Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "browser": "Chrome/148.0.7778.96",
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "desktop",
+      "pass": true
+    },
+    {
+      "name": "mobile",
+      "pass": true
+    }
+  ],
+  "expected_counts": {
+    "statCards": 6,
+    "sourceCards": 7,
+    "methodCards": 5,
+    "decisionCards": 7,
+    "gateCards": 10,
+    "downloadLinks": 3
+  },
+  "results": [
+    {
+      "name": "desktop",
+      "screenshotPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-station-radius-source-plan-desktop.png",
+      "summary": {
+        "viewport": {
+          "width": 1440,
+          "height": 1100
+        },
+        "titleVisible": true,
+        "nonclaimVisible": true,
+        "loadingVisible": false,
+        "statCards": 6,
+        "sourceCards": 7,
+        "methodCards": 5,
+        "decisionCards": 7,
+        "gateCards": 10,
+        "downloadLinks": 3,
+        "downloadHrefs": [
+          "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-source-plan.md",
+          "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json",
+          "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan.csv"
+        ],
+        "pageOverflow": false,
+        "sectionOverflow": false,
+        "overflowChildren": []
+      },
+      "downloadStatuses": [
+        {
+          "href": "/programs/air-monitoring/station-radius-denominator-source-plan.md",
+          "status": 200,
+          "ok": true,
+          "bytes": 3331
+        },
+        {
+          "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json",
+          "status": 200,
+          "ok": true,
+          "bytes": 22192
+        },
+        {
+          "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan.csv",
+          "status": 200,
+          "ok": true,
+          "bytes": 9784
+        }
+      ],
+      "logs": {
+        "consoleErrors": [],
+        "exceptions": [],
+        "requestFailures": [],
+        "badResponses": []
+      }
+    },
+    {
+      "name": "mobile",
+      "screenshotPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-station-radius-source-plan-mobile.png",
+      "summary": {
+        "viewport": {
+          "width": 390,
+          "height": 1000
+        },
+        "titleVisible": true,
+        "nonclaimVisible": true,
+        "loadingVisible": false,
+        "statCards": 6,
+        "sourceCards": 7,
+        "methodCards": 5,
+        "decisionCards": 7,
+        "gateCards": 10,
+        "downloadLinks": 3,
+        "downloadHrefs": [
+          "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-source-plan.md",
+          "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json",
+          "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan.csv"
+        ],
+        "pageOverflow": false,
+        "sectionOverflow": false,
+        "overflowChildren": []
+      },
+      "downloadStatuses": [
+        {
+          "href": "/programs/air-monitoring/station-radius-denominator-source-plan.md",
+          "status": 200,
+          "ok": true,
+          "bytes": 3331
+        },
+        {
+          "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan-summary.json",
+          "status": 200,
+          "ok": true,
+          "bytes": 22192
+        },
+        {
+          "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-source-plan.csv",
+          "status": 200,
+          "ok": true,
+          "bytes": 9784
+        }
+      ],
+      "logs": {
+        "consoleErrors": [],
+        "exceptions": [],
+        "requestFailures": [],
+        "badResponses": []
+      }
+    }
+  ]
+}

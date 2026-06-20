@@ -2414,6 +2414,318 @@
   }
 }
 
+.air-ghsl-checksum-section {
+  border-top: 1px solid rgba(155, 34, 38, 0.2);
+  background:
+    linear-gradient(135deg, rgba(155, 34, 38, 0.07), transparent 42%),
+    linear-gradient(90deg, rgba(0, 125, 184, 0.06), transparent 58%),
+    #fffdfb;
+}
+
+.air-ghsl-checksum-section * {
+  min-width: 0;
+}
+
+.air-ghsl-checksum-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.34fr);
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.air-ghsl-checksum-head h2 {
+  max-width: 15ch;
+  margin: 0.15rem 0 1rem;
+  color: #2c1c1e;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.96;
+}
+
+.air-ghsl-checksum-head p,
+.air-ghsl-checksum-gate p,
+.air-ghsl-checksum-row p,
+.air-ghsl-checksum-rule p,
+.air-ghsl-checksum-nonclaim {
+  max-width: 66rem;
+  color: #3f3f3f;
+  line-height: 1.58;
+}
+
+.air-ghsl-checksum-warning,
+.air-ghsl-checksum-stat-grid > div,
+.air-ghsl-checksum-gate,
+.air-ghsl-checksum-rule,
+.air-ghsl-checksum-row {
+  border: 1px solid rgba(92, 48, 48, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.air-ghsl-checksum-warning {
+  padding: 1.15rem;
+  border-left: 5px solid #9b2226;
+}
+
+.air-ghsl-checksum-warning span,
+.air-ghsl-checksum-stat-grid span,
+.air-ghsl-checksum-gate span,
+.air-ghsl-checksum-rule span,
+.air-ghsl-checksum-row span,
+.air-ghsl-checksum-row dt,
+.air-ghsl-checksum-downloads span,
+.air-ghsl-checksum-hash span,
+.air-ghsl-checksum-path span {
+  color: #5f5757;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.air-ghsl-checksum-warning strong {
+  display: block;
+  margin: 0.45rem 0;
+  color: #9b2226;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 0.9;
+}
+
+.air-ghsl-checksum-stat-grid,
+.air-ghsl-checksum-gates,
+.air-ghsl-checksum-row-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.air-ghsl-checksum-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-ghsl-checksum-stat-grid > div,
+.air-ghsl-checksum-gate,
+.air-ghsl-checksum-rule,
+.air-ghsl-checksum-row {
+  padding: 1rem;
+}
+
+.air-ghsl-checksum-stat-grid > div {
+  border-top: 4px solid #007db8;
+}
+
+.air-ghsl-checksum-stat-grid > div:nth-child(3),
+.air-ghsl-checksum-stat-grid > div:nth-child(4) {
+  border-top-color: #5a8227;
+}
+
+.air-ghsl-checksum-stat-grid > div:nth-child(5),
+.air-ghsl-checksum-stat-grid > div:nth-child(6) {
+  border-top-color: #9b2226;
+}
+
+.air-ghsl-checksum-stat-grid strong,
+.air-ghsl-checksum-gate em,
+.air-ghsl-checksum-row strong,
+.air-ghsl-checksum-row dd {
+  color: #5c2226;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+}
+
+.air-ghsl-checksum-stat-grid strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 1.95rem;
+}
+
+.air-ghsl-checksum-stat-grid em,
+.air-ghsl-checksum-gate p,
+.air-ghsl-checksum-row p,
+.air-ghsl-checksum-rule p,
+.air-ghsl-checksum-nonclaim {
+  font-size: 0.84rem;
+}
+
+.air-ghsl-checksum-gates {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-ghsl-checksum-gate {
+  border-left: 4px solid #007db8;
+}
+
+.air-ghsl-checksum-gate-available {
+  border-left-color: #5a8227;
+}
+
+.air-ghsl-checksum-gate-pending {
+  border-left-color: #fbb00e;
+}
+
+.air-ghsl-checksum-gate-blocked {
+  border-left-color: #9b2226;
+}
+
+.air-ghsl-checksum-gate strong,
+.air-ghsl-checksum-row strong {
+  display: block;
+  margin: 0.35rem 0;
+  color: #231f20;
+  line-height: 1.25;
+}
+
+.air-ghsl-checksum-rule {
+  margin-top: 1rem;
+  border-left: 4px solid #fbb00e;
+  background: #fffbeb;
+}
+
+.air-ghsl-checksum-row-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-ghsl-checksum-row {
+  display: grid;
+  gap: 0.7rem;
+  border-left: 5px solid #9b2226;
+}
+
+.air-ghsl-checksum-row-downloaded {
+  border-left-color: #5a8227;
+}
+
+.air-ghsl-checksum-row-failed {
+  background: #fff8ef;
+}
+
+.air-ghsl-checksum-row-head {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.air-ghsl-checksum-row b {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.24rem 0.42rem;
+  color: #172b35;
+  background: #edf5f8;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-checksum-row-failed b {
+  background: #fff0d0;
+}
+
+.air-ghsl-checksum-row dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.air-ghsl-checksum-row dd {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-checksum-hash,
+.air-ghsl-checksum-path {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.65rem;
+  background: #f5f8f9;
+}
+
+.air-ghsl-checksum-hash code,
+.air-ghsl-checksum-path code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.air-ghsl-checksum-error {
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid #9b2226;
+  background: #fff4f1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.air-ghsl-checksum-nonclaim {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-ghsl-checksum-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-ghsl-checksum-downloads span,
+.air-ghsl-checksum-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-checksum-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-ghsl-checksum-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-ghsl-checksum-stat-grid,
+  .air-ghsl-checksum-gates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .air-ghsl-checksum-row-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .air-ghsl-checksum-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-checksum-head h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-ghsl-checksum-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-ghsl-checksum-stat-grid,
+  .air-ghsl-checksum-gates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-checksum-row dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-ghsl-checksum-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

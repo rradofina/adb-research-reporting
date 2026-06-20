@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T11:31:04.008Z",
+  "generated_at": "2026-06-20T12:11:23.570Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 496,
-    "browserChecks": 54
+    "screenshots": 502,
+    "browserChecks": 56
   },
   "summary": {
     "reports_total": 20,
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/station-radius-ghsl-population-tile-selection.md",
+      "evidencePath": "air-monitoring/station-radius-ghsl-population-tile-checksums.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",

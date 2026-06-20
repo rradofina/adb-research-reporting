@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-06-20",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "section_selector": ".air-ghsl-checksum-section",
+  "desktop": {
+    "viewport": "1440x1100",
+    "screenshot": "reporting-site/qa/showcase-air-ghsl-tile-checksums-desktop.png",
+    "row_grid_screenshot": "reporting-site/qa/showcase-air-ghsl-tile-checksums-rows-desktop.png",
+    "stat_count": 6,
+    "gate_count": 8,
+    "first_wave_row_count": 7,
+    "downloaded_row_count": 4,
+    "failed_row_count": 3,
+    "body_overflow": false,
+    "section_overflow": false,
+    "row_grid_overflow": false,
+    "overflowing_children": []
+  },
+  "mobile": {
+    "viewport": "390x1000",
+    "screenshot": "reporting-site/qa/showcase-air-ghsl-tile-checksums-mobile.png",
+    "row_grid_screenshot": "reporting-site/qa/showcase-air-ghsl-tile-checksums-rows-mobile.png",
+    "stat_count": 6,
+    "gate_count": 8,
+    "first_wave_row_count": 7,
+    "downloaded_row_count": 4,
+    "failed_row_count": 3,
+    "body_overflow": false,
+    "section_overflow": false,
+    "row_grid_overflow": false,
+    "overflowing_children": []
+  },
+  "download_endpoints": [
+    {
+      "path": "/programs/air-monitoring/station-radius-ghsl-population-tile-checksums.md",
+      "status": 200,
+      "bytes": 4652
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-checksums-summary.json",
+      "status": 200,
+      "bytes": 58290
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-checksums.csv",
+      "status": 200,
+      "bytes": 29775
+    }
+  ],
+  "console_errors": [],
+  "console_warnings": [
+    "React Router v7 future-flag warnings from the existing dev stack"
+  ],
+  "console_info": [
+    "React DevTools suggestion",
+    "Vite dev-server connected/hot-update messages"
+  ]
+}

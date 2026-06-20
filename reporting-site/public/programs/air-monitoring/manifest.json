@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T11:31:06.628Z",
+  "generated_at": "2026-06-20T12:11:26.445Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -181,6 +181,16 @@
       "size_human": "3.6 KB",
       "mtime": "2026-06-20T11:18:55.763Z",
       "sha256": "948631c469520b5d234e5651205982838be245f1faa3a8664c6540041d04e1ac",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_ghsl_population_tile_checksums",
+      "file": "station-radius-ghsl-population-tile-checksums.md",
+      "label": "Air-monitoring station-radius GHSL population tile checksum gate",
+      "size": 4652,
+      "size_human": "4.5 KB",
+      "mtime": "2026-06-20T11:54:04.760Z",
+      "sha256": "15c8ef93e273ef23d26ad592f9f890d75d973be2572cad318c2cb8daae688177",
       "attestation_chain": "ai-first"
     },
     {
@@ -1152,6 +1162,18 @@
       "size": 9784,
       "size_human": "9.6 KB",
       "sha256": "d7c99379aad34a63c9429080286b218afac435675b99bfff15118ea6c50652f2"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-population-tile-checksums-summary.json",
+      "size": 58290,
+      "size_human": "56.9 KB",
+      "sha256": "4bca1996989139424615ab311d6ac695ea009cf497e404c95877534fe209a758"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-population-tile-checksums.csv",
+      "size": 29775,
+      "size_human": "29.1 KB",
+      "sha256": "f0ba0f615f77b35ffd7549fa7db0b1f996806e4599ec0647b7e2d0c502a74921"
     },
     {
       "file": "generated/air-monitoring-station-radius-ghsl-population-tile-selection-country.csv",

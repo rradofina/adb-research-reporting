@@ -238,6 +238,23 @@
       "cache_policy": "No GHSL ZIP bodies are downloaded or cached by this gate; the script records selected public tile URLs and HEAD metadata only.",
       "notes": "Station-radius GHSL population tile-selection gate. It converts 277 committed coordinate rows across 11 economies into 23 selected GHSL 2020 4326 3 arc-second tile URLs using a conservative 50 km draft-radius buffer, runs 23 HEAD probes, records 7 HEAD-OK tile URLs and 16 HEAD failures, records a 189.406 MB known-size subset from the successful HEAD responses, and keeps population ZIP downloads, population SHA-256 checksums, GeoTIFF transform inspections, station-radius population rows, PM2.5 exposure rows, validated same-station joins, complete monitor-grade rows, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_ghsl_population_tile_checksums": {
+      "script": "air-monitoring/scripts/download-station-radius-ghsl-population-tiles.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_ghsl_population_tile_selection",
+        "air_monitoring_station_radius_denominator_readiness",
+        "air_monitoring_station_radius_denominator_source_plan"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C30.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C30.zip"
+      ],
+      "cache_policy": "Raw GHSL ZIP files are stored under air-monitoring/.cache/station-radius-ghsl-population-tiles/ and are not committed; rerun the script to rehydrate them from public GHSL tile URLs.",
+      "notes": "Station-radius GHSL population tile checksum gate. It reviews 23 selected GHSL tile rows, treats 7 HEAD-OK rows under 60 MB as first-wave download candidates, downloads 4 ZIP files into the ignored local cache, records 4 SHA-256 hashes and 102.118 MB of cached GHSL ZIP data, opens 4 ZIP files and 4 GeoTIFFs with EPSG:4326 transforms, records 4 transform mismatches against the simple 10-degree routing assumption, keeps 3 first-wave candidate downloads unresolved, keeps 16 selected HEAD-not-OK tiles blocked, and keeps station-radius population rows, PM2.5 exposure rows, validated same-station joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -873,6 +890,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_ghsl_population_tile_selection pin after converting 277 committed station-coordinate rows across 11 economies into 23 selected GHSL population tile URLs, recording 23 HEAD probes with 7 OK responses and 16 failures, and keeping population ZIP downloads, checksums, GeoTIFF transform inspections, catchments, exposure rows, joins, grade rows, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_ghsl_population_tile_checksums pin after downloading 4 first-wave selected GHSL population tile ZIPs into the ignored cache, recording 4 SHA-256 hashes, opening 4 ZIP/GeoTIFF payloads, finding 4 transform mismatches against the simple 10-degree tile-routing assumption, and keeping 3 first-wave candidate downloads, 16 selected HEAD-not-OK tiles, catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
     },
     {
       "date": "2026-06-19",

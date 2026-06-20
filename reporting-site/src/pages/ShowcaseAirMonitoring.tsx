@@ -852,6 +852,80 @@ interface StationRadiusGhslTileSelectionSummary {
   non_claim: string;
 }
 
+interface StationRadiusGhslTileChecksumGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusGhslTileChecksumRow {
+  tile_id: string;
+  selected_economies: string;
+  coordinate_rows_touching_tile: number;
+  head_ok: boolean;
+  expected_size_bytes: number | string;
+  expected_size_mb: number | string;
+  exact_file_url: string;
+  download_decision: string;
+  downloaded: boolean;
+  downloaded_this_run: boolean;
+  cache_path: string;
+  file_size_bytes: number | string;
+  size_matches_expected: boolean;
+  sha256: string;
+  http_status: number | string;
+  content_type: string;
+  last_modified: string;
+  zip_opened: boolean | string;
+  geotiff_member_count: number | string;
+  geotiff_members: string;
+  geotiff_opened: boolean | string;
+  raster_width: number | string;
+  raster_height: number | string;
+  raster_crs: string;
+  raster_transform: string;
+  raster_bounds: string;
+  raster_dtype: string;
+  transform_matches_10_degree_tile_bounds: boolean | string;
+  blocking_gap: string;
+  retrieval_error: string;
+}
+
+interface StationRadiusGhslTileChecksumSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  first_wave_rule: string;
+  cache_policy: string;
+  coverage_counts: {
+    selected_tile_rows: number;
+    first_wave_download_candidate_rows: number;
+    downloaded_population_tile_files: number;
+    downloaded_population_tile_files_this_run: number;
+    sha256_checksummed_population_tile_files: number;
+    downloaded_size_bytes_total: number;
+    downloaded_size_mb_total: number;
+    zip_files_opened: number;
+    geotiff_members_found: number;
+    geotiff_transform_inspected_files: number;
+    geotiff_transform_matches_10_degree_tile_bounds: number;
+    geotiff_transform_mismatch_files: number;
+    selected_head_not_ok_blocked_tiles: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusGhslTileChecksumGate[];
+  tile_checksum_rows: StationRadiusGhslTileChecksumRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3781,6 +3855,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusAcagChecksumSummary | null>(null);
   const [stationRadiusGhslTileSelection, setStationRadiusGhslTileSelection] =
     useState<StationRadiusGhslTileSelectionSummary | null>(null);
+  const [stationRadiusGhslTileChecksum, setStationRadiusGhslTileChecksum] =
+    useState<StationRadiusGhslTileChecksumSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4131,6 +4207,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusGhslTileSelection(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-checksums-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius GHSL population tile checksums HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusGhslTileChecksum(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4740,6 +4836,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusAcagChecksumPanel summary={stationRadiusAcagChecksum} />
 
       <AirStationRadiusGhslTileSelectionPanel summary={stationRadiusGhslTileSelection} />
+
+      <AirStationRadiusGhslTileChecksumPanel summary={stationRadiusGhslTileChecksum} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -6612,6 +6710,162 @@ function AirStationRadiusGhslTileSelectionPanel({ summary }: { summary: StationR
         </>
       ) : (
         <p className="showcase-loading">Loading GHSL population tile-selection gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusGhslTileChecksumPanel({ summary }: { summary: StationRadiusGhslTileChecksumSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.tile_checksum_rows ?? [];
+  const firstWaveRows = rows.filter((row) => row.download_decision === "selected_first_wave_download_candidate");
+  const downloadedRows = firstWaveRows.filter((row) => row.downloaded);
+  const failedRows = firstWaveRows.filter((row) => !row.downloaded);
+  const isTrue = (value: boolean | string | undefined) => value === true || String(value).toLowerCase() === "true";
+  const formatBytes = (value: number | string | undefined) => {
+    const bytes = Number(value ?? 0);
+    if (!Number.isFinite(bytes) || bytes <= 0) return "no file";
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+
+  return (
+    <section className="showcase-section air-ghsl-checksum-section" aria-label="GHSL population tile checksum and transform gate">
+      <div className="air-ghsl-checksum-head">
+        <div>
+          <p className="kicker kicker-blue">File custody gate</p>
+          <h2>The first ZIPs open, but the grid assumption breaks.</h2>
+          <p>
+            Four selected GHSL population tiles are now downloaded, hashed, and
+            readable as GeoTIFFs. Their inspected bounds do not match the simple
+            10-degree routing assumption, so the method has to correct tile
+            routing before any station-radius population is computed.
+          </p>
+        </div>
+        <div className="air-ghsl-checksum-warning">
+          <span>Transform mismatch</span>
+          <strong>{formatNumber(counts?.geotiff_transform_mismatch_files ?? 0)}</strong>
+          <p>Every inspected first-wave raster is readable, but not ready for catchment use.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-ghsl-checksum-stat-grid">
+            <div>
+              <span>Selected tiles</span>
+              <strong>{formatNumber(counts.selected_tile_rows)}</strong>
+              <em>from the prior queue</em>
+            </div>
+            <div>
+              <span>First wave</span>
+              <strong>{formatNumber(counts.first_wave_download_candidate_rows)}</strong>
+              <em>HEAD OK and &lt;= 60 MB</em>
+            </div>
+            <div>
+              <span>Downloaded</span>
+              <strong>{formatNumber(counts.downloaded_population_tile_files)}</strong>
+              <em>{formatNumber(counts.downloaded_size_mb_total, 1)} MB cached</em>
+            </div>
+            <div>
+              <span>SHA-256 hashes</span>
+              <strong>{formatNumber(counts.sha256_checksummed_population_tile_files)}</strong>
+              <em>committed checksum rows</em>
+            </div>
+            <div>
+              <span>Transform matches</span>
+              <strong>{formatNumber(counts.geotiff_transform_matches_10_degree_tile_bounds)}</strong>
+              <em>{formatNumber(counts.geotiff_transform_mismatch_files)} mismatches</em>
+            </div>
+            <div>
+              <span>Population rows</span>
+              <strong>{formatNumber(counts.station_radius_population_rows)}</strong>
+              <em>no catchment output</em>
+            </div>
+          </div>
+
+          <div className="air-ghsl-checksum-gates" aria-label="GHSL checksum evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-ghsl-checksum-gate air-ghsl-checksum-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-checksum-rule">
+            <span>First-wave rule</span>
+            <p>{summary.first_wave_rule}</p>
+          </div>
+
+          <div className="air-ghsl-checksum-row-grid" aria-label="First-wave GHSL tile custody rows">
+            {firstWaveRows.map((row) => {
+              const opened = isTrue(row.geotiff_opened);
+              const boundsMatch = isTrue(row.transform_matches_10_degree_tile_bounds);
+              const boundsLabel = opened ? (boundsMatch ? "match" : "mismatch") : "not inspected";
+              return (
+                <article
+                  key={row.tile_id}
+                  className={`air-ghsl-checksum-row ${row.downloaded ? "air-ghsl-checksum-row-downloaded" : "air-ghsl-checksum-row-failed"}`}
+                >
+                  <div className="air-ghsl-checksum-row-head">
+                    <span>{row.selected_economies.replaceAll("||", " + ")}</span>
+                    <strong>{row.tile_id}</strong>
+                    <b>{row.downloaded ? "downloaded" : "download failed"}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Size</dt>
+                      <dd>{formatBytes(row.file_size_bytes || row.expected_size_bytes)}</dd>
+                    </div>
+                    <div>
+                      <dt>GeoTIFF</dt>
+                      <dd>{opened ? "opened" : "not opened"}</dd>
+                    </div>
+                    <div>
+                      <dt>Bounds</dt>
+                      <dd>{boundsLabel}</dd>
+                    </div>
+                  </dl>
+                  {row.sha256 ? (
+                    <div className="air-ghsl-checksum-hash">
+                      <span>SHA-256</span>
+                      <code>{row.sha256}</code>
+                    </div>
+                  ) : null}
+                  {row.raster_bounds ? (
+                    <div className="air-ghsl-checksum-path">
+                      <span>Raster bounds</span>
+                      <code>{row.raster_bounds}</code>
+                    </div>
+                  ) : null}
+                  <p>{row.blocking_gap}</p>
+                  {row.retrieval_error ? <p className="air-ghsl-checksum-error">{row.retrieval_error}</p> : null}
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="air-ghsl-checksum-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-ghsl-checksum-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-ghsl-population-tile-checksums.md" download>
+              Download checksum note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-checksums-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-checksums.csv" download>
+              Download checksum CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading GHSL population tile checksum gate...</p>
       )}
     </section>
   );

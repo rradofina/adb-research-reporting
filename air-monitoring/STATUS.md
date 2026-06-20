@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -42,13 +42,32 @@ station public-context source scan, the BMKG installation/audit source scan,
 the BMKG near-closure ledger, the BMKG targeted certificate/status source scan,
 the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
-the Georgia verification-policy wall, the Georgia report-frequency matrix, and
-the Georgia NEA station network/launch source scan honestly, and do not imply
+the Georgia verification-policy wall, the Georgia report-frequency matrix, the
+Georgia NEA station network/launch source scan, and the Georgia indicator
+endpoint mismatch scan honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the Georgia indicator endpoint mismatch scan. New seed
+  file `source-inputs/georgia-indicator-endpoint-mismatch-source-seed.csv` and
+  script `scripts/scan-georgia-indicator-endpoint-mismatch.py` probe official
+  `air.gov.ge` indicator and daily API routes exposed by the page template
+  against the 16 Georgia target station-code rows. The pass retrieves 1 of 2
+  routes, parses 136 indicator station objects, finds 14 target rows with
+  city/address alias context but 0 exact target station-code matches, 0
+  indicator PM2.5 context rows, 0 verified/status/calibration/complete-grade
+  closure rows, and 0 station-radius-ready rows. This is a namespace/blocker
+  wall, not station-code verification or grade promotion. The public route now
+  renders a Georgia indicator endpoint namespace wall. Browser QA at
+  1440x1100 and 390x1000 confirmed 6 stat cards, 2 decision cards, 16 row
+  cards, 2 source cards, 6 gate cards, 3 download links returning 200, no
+  framework overlay, no page errors, and no page or section horizontal
+  overflow. Screenshots:
+  `reporting-site/qa/showcase-air-georgia-indicator-endpoint-desktop.png` and
+  `reporting-site/qa/showcase-air-georgia-indicator-endpoint-mobile.png`.
 
 - **2026-06-20:** Expanded the BMKG station public-context source scan with
   official local BMKG PM2.5 report pages and bulletins from Kalbar, Bengkulu,
@@ -951,7 +970,8 @@ grade-basis evidence, and catchment methods are added.
    evidence.
 3. For the 16 Georgia rows, use the report-verification scan, the
    report/export ladder, the verification-policy wall, the report-frequency
-   matrix, and the NEA station network/launch source scan as the
+   matrix, the NEA station network/launch source scan, and the indicator
+   endpoint mismatch scan as the
    source-targeting wall. The policy note says live
    automatic-station data are not verified and that verified data are available
    in reports; the ladder then finds all 16 target station codes and PM2.5 in
@@ -965,12 +985,16 @@ grade-basis evidence, and catchment methods are added.
    official current-network or station-launch pages, adds official city or
    source context to 15 rows, launch context to 13 rows, and PM2.5 or
    standard-equipment context to 15 rows, but still finds 0 station-code,
-   status, calibration, grade, or radius-ready closures. The next useful source is
+   status, calibration, grade, or radius-ready closures. The indicator endpoint
+   then adds 136 official station objects and 14 city/address alias-context
+   target rows, but it uses a different station-code namespace and still finds
+   0 exact target station-code matches, 0 PM2.5 alias rows, and 0
+   verified/status/calibration/grade closures. The next useful source is
    therefore not another policy page, daily/monthly report-page scrape, annual
-   route format probe, XLSX export check, or city-level NEA launch/network
-   page; it is a verified source, station method/status table,
-   calibration/status record, or regulator document that names exact station
-   codes without that caution.
+   route format probe, XLSX export check, city-level NEA launch/network page,
+   or indicator API route variant; it is a verified source, station
+   method/status table, calibration/status record, or regulator document that
+   names exact station codes without that caution.
 4. For the 22 BMKG rows now summarized in the near-closure ledger, find
    station-specific inspection logs, PM2.5 calibration certificates/status
    records, or explicit station-grade records before any row is promoted to

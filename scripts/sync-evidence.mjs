@@ -97,6 +97,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_georgia_verification_policy", file: "georgia-verification-policy.md", label: "Air-monitoring Georgia verification-policy wall" },
   { key: "air_monitoring_georgia_report_frequency_matrix", file: "georgia-report-frequency-matrix.md", label: "Air-monitoring Georgia report-frequency verification matrix" },
   { key: "air_monitoring_georgia_station_network_launch_source_scan", file: "georgia-station-network-launch-source-scan.md", label: "Air-monitoring Georgia station network/launch source scan" },
+  { key: "air_monitoring_georgia_indicator_endpoint_mismatch", file: "georgia-indicator-endpoint-mismatch.md", label: "Air-monitoring Georgia indicator endpoint mismatch scan" },
   { key: "source_disagreement_l3", file: "source-disagreement-l3-module.md", label: "Source-disagreement L3 module" },
   { key: "facility_validation_sample", file: "facility-validation-sample.md", label: "Facility-validation sample design" },
   { key: "facility_validation_coded_screen", file: "facility-validation-coded-screen.md", label: "Facility-validation coded screen" },

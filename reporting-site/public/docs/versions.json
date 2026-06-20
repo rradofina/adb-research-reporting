@@ -388,6 +388,16 @@
       ],
       "notes": "Georgia NEA station network and launch source scan for the 16 Georgia target station-code rows. It retrieves 8 official National Environmental Agency current-network or station-launch pages, adds official city or source context to 15 rows, launch context to 13 rows, current-network city context to 15 rows, PM2.5 or standard-equipment context to 15 rows, and keeps station-code rows, verified-report closure, current-status, calibration-status, complete-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_georgia_indicator_endpoint_mismatch": {
+      "script": "air-monitoring/scripts/scan-georgia-indicator-endpoint-mismatch.py",
+      "seed": "air-monitoring/source-inputs/georgia-indicator-endpoint-mismatch-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_georgia_station_network_launch_source_scan",
+        "air_monitoring_georgia_report_frequency_matrix"
+      ],
+      "notes": "Georgia indicator endpoint mismatch scan for the 16 Georgia target station-code rows. It probes the official air.gov.ge indicator and daily API routes exposed by the page template, retrieves 1 of 2 routes, parses 136 indicator station objects, finds 14 rows with city/address alias context but 0 exact target station-code matches, 0 indicator PM2.5 context rows, 0 verified/status/calibration/complete-grade closure rows, and 0 station-radius-ready rows."
+    },
     "gdis_geocoded_disasters_1960_2018": {
       "name": "Geocoded Disasters (GDIS) Dataset, 1960-2018",
       "nasa_dataset_page": "https://data.nasa.gov/dataset/geocoded-disasters-gdis-dataset",
@@ -821,6 +831,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_georgia_station_network_launch_source_scan pin after retrieving 8 official NEA current-network or station-launch pages for the 16 Georgia target station-code rows, adding 15 city/source-context rows and 13 launch-context rows while keeping station-code/status/calibration/complete-grade/radius closure at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_georgia_indicator_endpoint_mismatch pin after probing official air.gov.ge indicator/daily API routes, retrieving 1 of 2 routes, parsing 136 indicator station objects, finding 14 target rows with city alias context but 0 exact target station-code matches, and keeping verified/status/calibration/complete-grade/radius closure at zero."
     },
     {
       "date": "2026-06-20",

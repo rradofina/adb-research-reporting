@@ -2826,6 +2826,81 @@ interface GeorgiaNetworkLaunchSummary {
   non_claim: string;
 }
 
+interface GeorgiaIndicatorEndpointGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaIndicatorEndpointDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaIndicatorEndpointDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  target_city: string;
+  matched_indicator_codes: string;
+  matched_indicator_station_count: number;
+  matched_indicator_pm25_station_count: number;
+  indicator_endpoint_decision: string;
+  reader_use: string;
+}
+
+interface GeorgiaIndicatorEndpointSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  retrieval_url: string;
+  final_url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  content_type: string;
+  retrieval_bytes: number;
+  sha256: string;
+  json_array_rows: number;
+  matched_expected_terms: string;
+  matched_station_code_terms: string;
+  matched_pm25_terms: string;
+  matched_verification_terms: string;
+  matched_status_terms: string;
+  retrieval_error: string;
+  source_note: string;
+}
+
+interface GeorgiaIndicatorEndpointSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_georgia_rows: number;
+    source_routes_seeded: number;
+    source_routes_retrieved: number;
+    indicator_api_station_objects: number;
+    daily_api_route_available: number;
+    exact_indicator_station_code_rows: number;
+    indicator_city_alias_context_rows: number;
+    indicator_pm25_context_rows: number;
+    indicator_verification_language_rows: number;
+    daily_endpoint_verified_closure_rows: number;
+    current_status_confirmed_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: GeorgiaIndicatorEndpointDecision[];
+  evidence_gate_counts: GeorgiaIndicatorEndpointGate[];
+  display_rows: GeorgiaIndicatorEndpointDisplayRow[];
+  source_records: GeorgiaIndicatorEndpointSourceRecord[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -2990,6 +3065,8 @@ export default function ShowcaseAirMonitoring() {
     useState<GeorgiaReportFrequencySummary | null>(null);
   const [georgiaNetworkLaunch, setGeorgiaNetworkLaunch] =
     useState<GeorgiaNetworkLaunchSummary | null>(null);
+  const [georgiaIndicatorEndpoint, setGeorgiaIndicatorEndpoint] =
+    useState<GeorgiaIndicatorEndpointSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -3538,6 +3615,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia indicator endpoint mismatch HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaIndicatorEndpoint(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -3711,6 +3808,8 @@ export default function ShowcaseAirMonitoring() {
       <AirGeorgiaReportFrequencyPanel summary={georgiaReportFrequency} />
 
       <AirGeorgiaNetworkLaunchPanel summary={georgiaNetworkLaunch} />
+
+      <AirGeorgiaIndicatorEndpointPanel summary={georgiaIndicatorEndpoint} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -10160,6 +10259,184 @@ function AirGeorgiaNetworkLaunchPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading Georgia station network/launch source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaIndicatorEndpointPanel({
+  summary,
+}: {
+  summary: GeorgiaIndicatorEndpointSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const closureRows =
+    (counts?.exact_indicator_station_code_rows ?? 0) +
+    (counts?.daily_endpoint_verified_closure_rows ?? 0) +
+    (counts?.current_status_confirmed_rows ?? 0) +
+    (counts?.calibration_status_available_rows ?? 0) +
+    (counts?.complete_monitor_grade_classification_rows ?? 0);
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-network-section air-georgia-indicator-section" aria-label="Georgia indicator endpoint mismatch scan">
+      <div className="air-grade-method-head air-georgia-network-head air-georgia-indicator-head">
+        <div>
+          <p className="kicker kicker-blue">Georgia indicator endpoint mismatch</p>
+          <h2>The official indicator API is real, but it is not the report-code bridge.</h2>
+          <p>
+            The air.gov.ge page template exposes indicator and daily API routes.
+            This pass checks whether those endpoints name the 16 target station
+            codes from the report surface. The indicator endpoint returns a
+            broad station object layer, but the target codes do not appear.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-network-callout air-georgia-indicator-callout">
+          <span>Exact code matches</span>
+          <strong>{formatNumber(counts?.exact_indicator_station_code_rows ?? 0)}</strong>
+          <p>city aliases remain non-closure evidence</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-network-stat-grid air-georgia-indicator-stat-grid">
+            <div>
+              <span>Routes retrieved</span>
+              <strong>{formatNumber(counts.source_routes_retrieved)} / {formatNumber(counts.source_routes_seeded)}</strong>
+              <em>indicator plus daily probe</em>
+            </div>
+            <div>
+              <span>Indicator objects</span>
+              <strong>{formatNumber(counts.indicator_api_station_objects)}</strong>
+              <em>official API station layer</em>
+            </div>
+            <div>
+              <span>Target rows</span>
+              <strong>{formatNumber(counts.target_georgia_rows)}</strong>
+              <em>report-code queue</em>
+            </div>
+            <div>
+              <span>City alias context</span>
+              <strong>{formatNumber(counts.indicator_city_alias_context_rows)}</strong>
+              <em>different code namespace</em>
+            </div>
+            <div>
+              <span>PM2.5 alias rows</span>
+              <strong>{formatNumber(counts.indicator_pm25_context_rows)}</strong>
+              <em>no PM2.5 closure in this layer</em>
+            </div>
+            <div>
+              <span>Closure rows</span>
+              <strong>{formatNumber(closureRows)}</strong>
+              <em>status, calibration, grade still open</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-network-decision-grid air-georgia-indicator-decision-grid" aria-label="Georgia indicator endpoint decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-network-lane air-georgia-indicator-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-network-track air-georgia-indicator-track">
+                  <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-network-row-grid air-georgia-indicator-row-grid" aria-label="Georgia indicator endpoint target rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-georgia-network-row air-georgia-indicator-row">
+                <div>
+                  <span>{row.target_city}</span>
+                  <strong>{row.source_station_id}</strong>
+                </div>
+                <p>{row.source_station_name}</p>
+                <dl>
+                  <div>
+                    <dt>Alias codes</dt>
+                    <dd>{formatNumber(termCount(row.matched_indicator_codes))}</dd>
+                  </div>
+                  <div>
+                    <dt>Alias stations</dt>
+                    <dd>{formatNumber(row.matched_indicator_station_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5 alias</dt>
+                    <dd>{formatNumber(row.matched_indicator_pm25_station_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>Exact code</dt>
+                    <dd>0</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <em>{sentenceCaseStatus(row.indicator_endpoint_decision)}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-network-source-grid air-georgia-indicator-source-grid" aria-label="Georgia indicator endpoint source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={`air-georgia-network-source air-georgia-indicator-source air-georgia-indicator-source-${source.source_role}`}>
+                <div>
+                  <span>{source.source_role.replaceAll("_", " ")}</span>
+                  <strong>{source.source_name}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>HTTP</dt>
+                    <dd>{source.http_status ? formatNumber(Number(source.http_status)) : "open"}</dd>
+                  </div>
+                  <div>
+                    <dt>JSON rows</dt>
+                    <dd>{formatNumber(source.json_array_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Codes</dt>
+                    <dd>{formatNumber(termCount(source.matched_station_code_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Verified</dt>
+                    <dd>{formatNumber(termCount(source.matched_verification_terms))}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+                {source.retrieval_error ? <p>{source.retrieval_error}</p> : null}
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-network-gate-grid air-georgia-indicator-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-network-gate air-georgia-indicator-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-georgia-indicator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-grade-method-downloads air-georgia-network-downloads air-georgia-indicator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/georgia-indicator-endpoint-mismatch.md">Endpoint mismatch note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json">Summary JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch.csv">Row CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia indicator endpoint mismatch scan...</p>
       )}
     </section>
   );

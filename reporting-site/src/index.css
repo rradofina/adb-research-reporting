@@ -13454,6 +13454,63 @@
     border-top-color: var(--crimson);
   }
 
+  .air-georgia-indicator-section {
+    background:
+      linear-gradient(180deg, rgba(251, 176, 14, 0.12), rgba(255, 255, 255, 0.98) 46%),
+      #ffffff;
+  }
+
+  .air-georgia-indicator-callout {
+    border-left-color: #fbb00e;
+    background: #fff8e6;
+  }
+
+  .air-georgia-indicator-stat-grid > div,
+  .air-georgia-indicator-lane,
+  .air-georgia-indicator-gate {
+    border-top-color: #fbb00e;
+  }
+
+  .air-georgia-indicator-track {
+    background: #fff2c7;
+  }
+
+  .air-georgia-indicator-track i {
+    background: linear-gradient(90deg, #fbb00e, var(--crimson));
+  }
+
+  .air-georgia-indicator-row {
+    border-left-color: #fbb00e;
+  }
+
+  .air-georgia-indicator-row em {
+    color: var(--crimson);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-indicator-source {
+    border-top-color: #fbb00e;
+  }
+
+  .air-georgia-indicator-source-official_daily_api_probe {
+    border-top-color: var(--crimson);
+  }
+
+  .air-georgia-indicator-nonclaim {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid var(--crimson);
+    background: #fff8e6;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);

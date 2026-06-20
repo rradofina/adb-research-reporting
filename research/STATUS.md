@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and Georgia NEA station network/launch source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and Georgia indicator endpoint mismatch scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -234,7 +234,13 @@ overrides priority by editing this list.
    context to 13 rows, current-network city context to 15 rows, and PM2.5 or
    standard-equipment context to 15 rows, while keeping station-code rows,
    verified-report closure, current-status, calibration-status, complete-grade,
-   and station-radius-ready rows at 0. The BMKG near-closure ledger then
+   and station-radius-ready rows at 0. The Georgia indicator endpoint mismatch
+   scan then probes official `air.gov.ge` indicator and daily API routes,
+   retrieves 1 of 2 routes, parses 136 indicator station objects, finds 14
+   target rows with city/address alias context, and keeps exact target
+   station-code matches, PM2.5 alias rows, verified/status/calibration
+   closure, complete-grade rows, and station-radius-ready rows at 0. The BMKG
+   near-closure ledger then
    synthesizes the existing BMKG method, display, dashboard, grade-basis,
    station-context, and installation/audit artifacts into 22 row-level gates:
    22 method/display rows, 21 current `ONLINE` dashboard rows, 1 `DELAYED`
@@ -1295,6 +1301,25 @@ by leaving the board in a state the next session can read.
   3 decision lanes, 16 row cards, 8 source cards, 8 gate cards, 3 working
   download links, no page errors, no bad HTTP responses, no overflowing
   children, and no page or section overflow.
+- **2026-06-20 (air-monitoring Georgia indicator endpoint mismatch scan):**
+  Added
+  `air-monitoring/source-inputs/georgia-indicator-endpoint-mismatch-source-seed.csv`
+  and `air-monitoring/scripts/scan-georgia-indicator-endpoint-mismatch.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json`,
+  and wrote `air-monitoring/georgia-indicator-endpoint-mismatch.md`. The
+  networked scan probes official `air.gov.ge` indicator and daily API routes
+  exposed by the page template, retrieves 1 of 2 routes, parses 136 indicator
+  station objects, finds 14 target rows with city/address alias context but 0
+  exact target station-code matches, 0 indicator PM2.5 context rows, 0
+  verified/status/calibration/complete-grade closure rows, and 0
+  station-radius-ready rows. The public route now renders a Georgia indicator
+  endpoint namespace wall. Browser QA passed at 1440x1100 and 390x1000 with 6
+  stat cards, 2 decision cards, 16 row cards, 2 source cards, 6 gate cards, 3
+  working download links, no page errors, no framework overlay, no page
+  horizontal overflow, and no section horizontal overflow.
 - **2026-06-20 (air-monitoring Uzbekistan blocker external-context wall):**
   Added
   `air-monitoring/source-inputs/uzbekistan-blocker-external-context-source-seed.csv`

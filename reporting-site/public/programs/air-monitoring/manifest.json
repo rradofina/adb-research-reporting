@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T06:14:45.611Z",
+  "generated_at": "2026-06-20T06:41:58.186Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -484,6 +484,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_georgia_indicator_endpoint_mismatch",
+      "file": "georgia-indicator-endpoint-mismatch.md",
+      "label": "Air-monitoring Georgia indicator endpoint mismatch scan",
+      "size": 1488,
+      "size_human": "1.5 KB",
+      "mtime": "2026-06-20T06:33:49.889Z",
+      "sha256": "15e034f0399425255528e89566198e9ccc5cef05a593bbcde105553bf2ea637e",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -658,6 +668,18 @@
       "size": 34736,
       "size_human": "33.9 KB",
       "sha256": "414eecf9ff391851f1a4deee59696a0e84aa26365f60fe928db361b0b22ecf13"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
+      "size": 48026,
+      "size_human": "46.9 KB",
+      "sha256": "8164dbf5ec5d5f378238bc016ce106b18bc347130c796a772106a2511585e694"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-indicator-endpoint-mismatch.csv",
+      "size": 15905,
+      "size_human": "15.5 KB",
+      "sha256": "716711c54be540f046f08acfc226197c4b908dea03a001447677a5201a9f5dcb"
     },
     {
       "file": "generated/air-monitoring-georgia-report-export-ladder-summary.json",

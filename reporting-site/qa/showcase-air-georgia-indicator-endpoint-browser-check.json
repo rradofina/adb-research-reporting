@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-06-20T06:40:26Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "artifact": "air_monitoring_georgia_indicator_endpoint_mismatch",
+  "browser_tool": "agent-browser",
+  "screenshots": {
+    "desktop": "reporting-site/qa/showcase-air-georgia-indicator-endpoint-desktop.png",
+    "mobile": "reporting-site/qa/showcase-air-georgia-indicator-endpoint-mobile.png"
+  },
+  "load_check": {
+    "framework_overlay": false,
+    "has_content": true,
+    "panel_found": true,
+    "page_errors_after_check": 0
+  },
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "panel_found": true,
+    "row_cards": 16,
+    "source_cards": 2,
+    "gate_cards": 6,
+    "page_horizontal_overflow_px": 0,
+    "section_horizontal_overflow_px": 0,
+    "framework_overlay": false
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "panel_found": true,
+    "title": "The official indicator API is real, but it is not the report-code bridge.",
+    "callout_value": "0",
+    "stat_cards": [
+      {
+        "label": "Routes retrieved",
+        "value": "1 / 2",
+        "note": "indicator plus daily probe"
+      },
+      {
+        "label": "Indicator objects",
+        "value": "136",
+        "note": "official API station layer"
+      },
+      {
+        "label": "Target rows",
+        "value": "16",
+        "note": "report-code queue"
+      },
+      {
+        "label": "City alias context",
+        "value": "14",
+        "note": "different code namespace"
+      },
+      {
+        "label": "PM2.5 alias rows",
+        "value": "0",
+        "note": "no PM2.5 closure in this layer"
+      },
+      {
+        "label": "Closure rows",
+        "value": "0",
+        "note": "status, calibration, grade still open"
+      }
+    ],
+    "decision_cards": 2,
+    "row_cards": 16,
+    "source_cards": 2,
+    "gate_cards": 6,
+    "download_links": [
+      {
+        "text": "Endpoint mismatch note",
+        "href": "/programs/air-monitoring/georgia-indicator-endpoint-mismatch.md",
+        "status": 200
+      },
+      {
+        "text": "Summary JSON",
+        "href": "/programs/air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
+        "status": 200
+      },
+      {
+        "text": "Row CSV",
+        "href": "/programs/air-monitoring/generated/air-monitoring-georgia-indicator-endpoint-mismatch.csv",
+        "status": 200
+      }
+    ],
+    "page_horizontal_overflow_px": 0,
+    "section_horizontal_overflow_px": 0,
+    "framework_overlay": false
+  },
+  "visual_inspection": {
+    "desktop": "Panel header, six stat cards, decision lanes, and first row cards are visible; no overlap observed.",
+    "mobile": "Panel title, callout, and stacked stat cards fit within the viewport; no horizontal clipping observed."
+  }
+}

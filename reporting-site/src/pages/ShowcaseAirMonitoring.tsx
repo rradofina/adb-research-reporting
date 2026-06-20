@@ -1963,6 +1963,82 @@ interface GeorgiaReportExportLadderSummary {
   non_claim: string;
 }
 
+interface GeorgiaVerificationPolicyGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaVerificationPolicyDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaVerificationPolicySourceRow {
+  source_key: string;
+  source_role: string;
+  retrieved: boolean;
+  matched_expected_terms: string;
+  matched_verification_terms: string;
+  matched_instrument_terms: string;
+  matched_station_terms: string;
+  policy_decision: string;
+  reader_use: string;
+}
+
+interface GeorgiaVerificationPolicyBridge {
+  policy_says_reports_are_verified_surface: boolean;
+  scanned_report_surfaces_still_not_verified: boolean;
+  verified_report_closure_available: boolean;
+  decision: string;
+  reader_use: string;
+}
+
+interface GeorgiaVerificationPolicySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    source_routes_targeted: number;
+    source_routes_retrieved: number;
+    policy_sources_retrieved: number;
+    live_data_not_verified_policy_sources: number;
+    verified_data_reports_policy_sources: number;
+    report_generator_available_sources: number;
+    network_method_context_sources: number;
+    instrument_model_context_sources: number;
+    network_or_instrument_context_sources: number;
+    plan_validated_capture_rate_context_sources: number;
+    plan_station_area_context_sources: number;
+    exact_target_station_code_context_sources: number;
+    months_scanned: number;
+    target_station_codes: number;
+    html_months_with_all_target_station_codes: number;
+    html_not_verified_label_months: number;
+    html_verified_label_without_not_verified_months: number;
+    export_probe_months: number;
+    xlsx_export_probe_months_with_all_target_sheets: number;
+    xlsx_export_probe_months_with_verification_label: number;
+    pdf_export_probe_months_with_not_verified_label: number;
+    pdf_export_probe_months_verified_without_not_verified: number;
+    verified_report_closure_available_months: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+    policy_report_surface_contradiction_rows: number;
+  };
+  decision_counts: GeorgiaVerificationPolicyDecision[];
+  evidence_gate_counts: GeorgiaVerificationPolicyGate[];
+  policy_bridge: GeorgiaVerificationPolicyBridge;
+  source_rows: GeorgiaVerificationPolicySourceRow[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -2105,6 +2181,8 @@ export default function ShowcaseAirMonitoring() {
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
     useState<GeorgiaReportExportLadderSummary | null>(null);
+  const [georgiaVerificationPolicy, setGeorgiaVerificationPolicy] =
+    useState<GeorgiaVerificationPolicySummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -2433,6 +2511,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia verification policy HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaVerificationPolicy(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -2584,6 +2682,8 @@ export default function ShowcaseAirMonitoring() {
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
       <AirGeorgiaReportExportLadderPanel summary={georgiaReportExportLadder} />
+
+      <AirGeorgiaVerificationPolicyPanel summary={georgiaVerificationPolicy} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -7064,6 +7164,165 @@ function AirGeorgiaReportExportLadderPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading Georgia report export ladder...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaVerificationPolicyPanel({
+  summary,
+}: {
+  summary: GeorgiaVerificationPolicySummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sources = summary?.source_rows ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const bridge = summary?.policy_bridge;
+  const closureRows =
+    (counts?.verified_report_closure_available_months ?? 0) +
+    (counts?.current_status_confirmed_rows ?? 0) +
+    (counts?.station_method_classified_rows ?? 0) +
+    (counts?.complete_monitor_grade_classification_rows ?? 0);
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-policy-section" aria-label="Georgia verification policy wall">
+      <div className="air-grade-method-head air-georgia-policy-head">
+        <div>
+          <p className="kicker kicker-blue">Georgia verification policy wall</p>
+          <h2>The policy points to reports. The reports still point back to caution.</h2>
+          <p>
+            The portal says live automatic-station data are not verified and
+            directs readers to reports for verified data. The report/export
+            ladder then shows the public report surfaces we can retrieve still
+            carry not-verified labels or no verification label.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-policy-callout">
+          <span>Closure rows</span>
+          <strong>{formatNumber(closureRows)}</strong>
+          <p>policy, reports, network pages, and plan context do not close station status</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-policy-stat-grid">
+            <div>
+              <span>Official source routes</span>
+              <strong>{formatNumber(counts.source_routes_retrieved)}</strong>
+              <em>of {formatNumber(counts.source_routes_targeted)} retrieved</em>
+            </div>
+            <div>
+              <span>Live-data caution</span>
+              <strong>{formatNumber(counts.live_data_not_verified_policy_sources)}</strong>
+              <em>automatic station data not verified</em>
+            </div>
+            <div>
+              <span>Reports named</span>
+              <strong>{formatNumber(counts.verified_data_reports_policy_sources)}</strong>
+              <em>verification surface in policy text</em>
+            </div>
+            <div>
+              <span>Not-verified HTML months</span>
+              <strong>{formatNumber(counts.html_not_verified_label_months)}</strong>
+              <em>of {formatNumber(counts.months_scanned)} report pages</em>
+            </div>
+            <div>
+              <span>PDF caution probes</span>
+              <strong>{formatNumber(counts.pdf_export_probe_months_with_not_verified_label)}</strong>
+              <em>of {formatNumber(counts.export_probe_months)} exports</em>
+            </div>
+            <div>
+              <span>Verified closures</span>
+              <strong>{formatNumber(counts.verified_report_closure_available_months)}</strong>
+              <em>target station codes remain open</em>
+            </div>
+          </div>
+
+          <div className="air-georgia-policy-bridge" aria-label="Georgia policy to report bridge">
+            <article>
+              <span>Policy rule</span>
+              <strong>{bridge?.policy_says_reports_are_verified_surface ? "reports" : "missing"}</strong>
+              <p>Official text directs verification away from live map data.</p>
+            </article>
+            <article>
+              <span>Report surface</span>
+              <strong>{bridge?.scanned_report_surfaces_still_not_verified ? "caution" : "clear"}</strong>
+              <p>The 24-month ladder keeps the fetched report surface open.</p>
+            </article>
+            <article>
+              <span>Reader decision</span>
+              <strong>{bridge?.verified_report_closure_available ? "promote" : "keep blocked"}</strong>
+              <p>{bridge?.reader_use}</p>
+            </article>
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-policy-decision-grid" aria-label="Georgia verification policy decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-policy-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-policy-track">
+                  <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-policy-source-grid">
+            {sources.map((row) => (
+              <article key={row.source_key} className="air-georgia-policy-source">
+                <div>
+                  <span>{row.source_role}</span>
+                  <strong>{sentenceCaseStatus(row.source_key)}</strong>
+                </div>
+                <p>{row.reader_use}</p>
+                <dl>
+                  <div>
+                    <dt>Expected</dt>
+                    <dd>{row.matched_expected_terms ? formatNumber(row.matched_expected_terms.split("||").filter(Boolean).length) : "0"}</dd>
+                  </div>
+                  <div>
+                    <dt>Verification</dt>
+                    <dd>{row.matched_verification_terms ? formatNumber(row.matched_verification_terms.split("||").filter(Boolean).length) : "0"}</dd>
+                  </div>
+                  <div>
+                    <dt>Instrument</dt>
+                    <dd>{row.matched_instrument_terms ? formatNumber(row.matched_instrument_terms.split("||").filter(Boolean).length) : "0"}</dd>
+                  </div>
+                  <div>
+                    <dt>Station areas</dt>
+                    <dd>{row.matched_station_terms ? formatNumber(row.matched_station_terms.split("||").filter(Boolean).length) : "0"}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-policy-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-policy-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-georgia-policy-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/georgia-verification-policy.md">Policy note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json">Summary JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy.csv">Source CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia verification-policy wall...</p>
       )}
     </section>
   );

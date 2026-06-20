@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, and Georgia report/export verification ladder exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, Georgia report/export verification ladder, and Georgia verification-policy wall exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -166,8 +166,14 @@ overrides priority by editing this list.
    PM2.5 in all 24 months, records 24 `Not Verified Data` HTML months, probes
    3 XLSX exports with all 16 target station sheets, records 3 PDF export
    probes retaining the not-verified footer, and keeps verified-report,
-   current-status, complete-grade, and station-radius-ready counts at 0. Next
-   AI-doable loop is
+   current-status, complete-grade, and station-radius-ready counts at 0. The
+   Georgia verification-policy wall then retrieves 5 official policy, report,
+   network, plan, or MEPA routes, confirms the official rule that live
+   automatic-station data are not verified and verified data are expected from
+   reports, and joins that rule back to the 24-month report/export surface;
+   the joined surface still has 24 not-verified HTML months, 3 PDF caution
+   probes, 0 verified closure rows, 0 current-status rows, 0 complete-grade
+   rows, and 0 station-radius-ready rows. Next AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry:
    station-specific inspection/calibration/status and official grade-basis
    evidence for the 22 BMKG rows, a Georgia verified report/status route beyond
@@ -1030,6 +1036,22 @@ by leaving the board in a state the next session can read.
   `reporting-site/qa/showcase-air-georgia-export-desktop-ladder.png`,
   `reporting-site/qa/showcase-air-georgia-export-mobile-head.png`, and
   `reporting-site/qa/showcase-air-georgia-export-mobile-ladder.png`.
+- **2026-06-20 (air-monitoring Georgia verification-policy wall):**
+  Added `air-monitoring/source-inputs/georgia-verification-policy-source-seed.csv`
+  and `air-monitoring/scripts/scan-georgia-verification-policy.py`, generated
+  `air-monitoring/generated/air-monitoring-georgia-verification-policy.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json`,
+  and wrote `air-monitoring/georgia-verification-policy.md`. The networked
+  scan retrieves 5 official `air.gov.ge` or MEPA policy/report/network/plan
+  routes, finds 1 live-data-not-verified policy source, 1 source saying
+  verified data are available in reports, 1 official report-generator source,
+  2 network or instrument-context sources, and 1 validation/capture-rate
+  context source. Joined back to the 24-month Georgia report/export ladder, it
+  keeps 24 HTML months with `Not Verified Data`, 3 PDF caution probes, 0
+  verified report-closure rows, 0 current-status rows, 0 station-method rows,
+  0 complete-grade rows, and 0 station-radius-ready rows. The public route now
+  renders a Georgia verification-policy bridge.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

@@ -12195,6 +12195,124 @@
     font-weight: 800;
   }
 
+  .air-georgia-policy-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.08), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-georgia-policy-callout {
+    border-left-color: var(--crimson);
+    background: #eef8fc;
+  }
+
+  .air-georgia-policy-stat-grid > div,
+  .air-georgia-policy-lane,
+  .air-georgia-policy-gate {
+    border-top-color: var(--crimson);
+  }
+
+  .air-georgia-policy-track {
+    background: #dff0f7;
+  }
+
+  .air-georgia-policy-track i {
+    background: linear-gradient(90deg, var(--crimson), #5a8227);
+  }
+
+  .air-georgia-policy-bridge {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-georgia-policy-bridge article,
+  .air-georgia-policy-source {
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .air-georgia-policy-bridge article {
+    display: grid;
+    gap: 0.45rem;
+    border-top: 5px solid var(--crimson);
+  }
+
+  .air-georgia-policy-bridge span,
+  .air-georgia-policy-source span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-policy-bridge strong {
+    color: var(--ink);
+    font-size: 1.35rem;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-policy-bridge p,
+  .air-georgia-policy-source p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.42;
+  }
+
+  .air-georgia-policy-source-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-georgia-policy-source {
+    display: grid;
+    gap: 0.65rem;
+    border-left: 4px solid var(--crimson);
+  }
+
+  .air-georgia-policy-source > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-georgia-policy-source strong {
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .air-georgia-policy-source dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.42rem;
+    margin: 0;
+  }
+
+  .air-georgia-policy-source dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .air-georgia-policy-source dd {
+    margin: 0.1rem 0 0;
+    color: var(--crimson);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
   .air-grade-method-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -13410,6 +13528,11 @@
     .air-georgia-export-bridge,
     .air-georgia-export-gate-grid,
     .air-georgia-export-probe-grid,
+    .air-georgia-policy-stat-grid,
+    .air-georgia-policy-bridge,
+    .air-georgia-policy-decision-grid,
+    .air-georgia-policy-source-grid,
+    .air-georgia-policy-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -13446,6 +13569,7 @@
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
+    .air-georgia-policy-head,
     .air-uzb-current-head,
     .air-monitor-grade-head,
     .air-official-reconciliation {
@@ -14824,6 +14948,11 @@
     .air-georgia-export-bridge,
     .air-georgia-export-gate-grid,
     .air-georgia-export-probe-grid,
+    .air-georgia-policy-stat-grid,
+    .air-georgia-policy-bridge,
+    .air-georgia-policy-decision-grid,
+    .air-georgia-policy-source-grid,
+    .air-georgia-policy-gate-grid,
     .air-uzb-current-stat-grid,
     .air-uzb-current-age-grid,
     .air-uzb-current-row-grid,
@@ -14886,6 +15015,9 @@
     .air-georgia-report-gate,
     .air-georgia-export-lane,
     .air-georgia-export-gate,
+    .air-georgia-policy-lane,
+    .air-georgia-policy-source,
+    .air-georgia-policy-gate,
     .air-uzb-current-age,
     .air-uzb-current-row,
     .air-uzb-current-gate,
@@ -14915,6 +15047,7 @@
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
+    .air-georgia-policy-head,
     .air-uzb-current-head,
     .air-monitor-grade-head {
       grid-template-columns: minmax(0, 1fr);
@@ -14929,6 +15062,10 @@
     }
 
     .air-georgia-export-probe dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-georgia-policy-source dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -15030,6 +15167,7 @@
     .air-bmkg-api-downloads,
     .air-georgia-report-downloads,
     .air-georgia-export-downloads,
+    .air-georgia-policy-downloads,
     .air-uzb-current-downloads,
     .air-monitor-grade-downloads {
       display: grid;

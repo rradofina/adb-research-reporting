@@ -273,6 +273,15 @@
       ],
       "notes": "Georgia report export verification ladder for the 16 Georgia target station codes. It retrieves 24 official air.gov.ge monthly HTML report routes from 2026-05 backward to 2024-06, finds all 16 target station codes and PM2.5 in all 24 months, records 24 Not Verified Data HTML months, probes XLSX/PDF exports for 2026-05, 2025-12, and 2024-06, finds 3 XLSX probes with all 16 target station sheets and 3 PDF probes retaining the not-verified footer, and keeps verified-report closure, current-status confirmed, complete monitor-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_georgia_verification_policy": {
+      "script": "air-monitoring/scripts/scan-georgia-verification-policy.py",
+      "seed": "air-monitoring/source-inputs/georgia-verification-policy-source-seed.csv",
+      "retrieved_on": "2026-06-19",
+      "derives_from": [
+        "air_monitoring_georgia_report_export_ladder"
+      ],
+      "notes": "Georgia verification-policy wall that retrieves 5 official air.gov.ge or MEPA policy/report/network/plan source routes, finds 1 live-data-not-verified policy source, 1 source saying verified data are available in reports, 1 official report-generator route, 2 network or instrument-context rows, and 1 validation/capture-rate context row. Joined to the report/export ladder, it keeps 24 not-verified monthly HTML months, 3 not-verified PDF export probes, 0 verified report-closure months, 0 station-status rows, 0 complete-grade rows, and 0 station-radius-ready rows."
+    },
     "gdis_geocoded_disasters_1960_2018": {
       "name": "Geocoded Disasters (GDIS) Dataset, 1960-2018",
       "nasa_dataset_page": "https://data.nasa.gov/dataset/geocoded-disasters-gdis-dataset",
@@ -658,6 +667,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_georgia_report_verification_source_scan pin after finding all 16 target Georgia station codes and PM2.5 report rows in the official May 2026 report route, while preserving the not-verified caution and keeping verified closure at zero."
+    },
+    {
+      "date": "2026-06-19",
+      "change": "Added air_monitoring_georgia_verification_policy pin after retrieving 5 official Georgia policy/report/network/plan sources and joining the portal verification rule to the 24-month not-verified report/export ladder while keeping verified closure, station status, complete grade, and station-radius readiness at zero."
     },
     {
       "date": "2026-06-20",

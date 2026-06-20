@@ -1,0 +1,198 @@
+{
+  "generated_at": "2026-06-20T00:11:57Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_georgia_verification_policy",
+  "method": "air_monitoring_georgia_verification_policy_v1",
+  "goal_level": "L3 Georgia verification-policy source wall",
+  "source_scope": "Official Georgia air.gov.ge verification, report-generator, monitoring-network, plan pages, plus MEPA management-plan PDF joined to the 24-month Georgia report/export ladder.",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\georgia-verification-policy-source-seed.csv",
+      "role": "official Georgia verification-policy source seed"
+    },
+    {
+      "path": "generated\\air-monitoring-georgia-report-export-ladder-summary.json",
+      "role": "prior 24-month Georgia report/export ladder summary"
+    }
+  ],
+  "coverage_counts": {
+    "source_routes_targeted": 5,
+    "source_routes_retrieved": 5,
+    "policy_sources_retrieved": 2,
+    "live_data_not_verified_policy_sources": 1,
+    "verified_data_reports_policy_sources": 1,
+    "report_generator_available_sources": 1,
+    "network_method_context_sources": 1,
+    "instrument_model_context_sources": 1,
+    "network_or_instrument_context_sources": 2,
+    "plan_validated_capture_rate_context_sources": 1,
+    "plan_station_area_context_sources": 1,
+    "exact_target_station_code_context_sources": 0,
+    "months_scanned": 24,
+    "target_station_codes": 16,
+    "html_months_with_all_target_station_codes": 24,
+    "html_not_verified_label_months": 24,
+    "html_verified_label_without_not_verified_months": 0,
+    "export_probe_months": 3,
+    "xlsx_export_probe_months_with_all_target_sheets": 3,
+    "xlsx_export_probe_months_with_verification_label": 0,
+    "pdf_export_probe_months_with_not_verified_label": 3,
+    "pdf_export_probe_months_verified_without_not_verified": 0,
+    "verified_report_closure_available_months": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0,
+    "policy_report_surface_contradiction_rows": 1
+  },
+  "decision_counts": [
+    {
+      "decision": "network_instrument_context_no_station_status",
+      "rows": 1
+    },
+    {
+      "decision": "plan_validation_context_not_station_code_closure",
+      "rows": 1
+    },
+    {
+      "decision": "policy_says_live_unverified_reports_verified",
+      "rows": 1
+    },
+    {
+      "decision": "report_generator_available_no_verified_closure",
+      "rows": 1
+    },
+    {
+      "decision": "source_locator_no_verified_closure",
+      "rows": 1
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Official live-data verification note",
+      "rows": 1,
+      "reader_use": "The portal states that automatic-station live data are not verified."
+    },
+    {
+      "status": "available",
+      "gate": "Reports named as verification surface",
+      "rows": 1,
+      "reader_use": "The portal directs readers to reports for verified data."
+    },
+    {
+      "status": "available",
+      "gate": "Official report generator route",
+      "rows": 1,
+      "reader_use": "The public report generator is reachable and remains the route tested by the export ladder."
+    },
+    {
+      "status": "available",
+      "gate": "Network and instrument-model context",
+      "rows": 2,
+      "reader_use": "Official network pages provide source-level monitoring and instrument context."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Validation and capture-rate context",
+      "rows": 1,
+      "reader_use": "The management-plan PDF discusses validated measurement results and capture-rate concepts, but not target station-code closure."
+    },
+    {
+      "status": "caution",
+      "gate": "Monthly HTML reports retain not-verified label",
+      "rows": 24,
+      "reader_use": "The existing report/export ladder keeps the official monthly HTML surface open, not closed."
+    },
+    {
+      "status": "caution",
+      "gate": "PDF exports retain not-verified footer",
+      "rows": 3,
+      "reader_use": "PDF exports preserve the not-verified footer in the probed months."
+    },
+    {
+      "status": "partly_available",
+      "gate": "XLSX target sheets without verification label",
+      "rows": 3,
+      "reader_use": "XLSX exports contain the target station sheets but do not provide a separate verification label."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified report closure",
+      "rows": 0,
+      "reader_use": "No scanned policy/report/export combination closes the verified-report gate for the target station codes."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station status, method table, complete grade",
+      "rows": 0,
+      "reader_use": "The policy sources do not provide station-code current status, calibration status, complete method class, or station-radius readiness."
+    }
+  ],
+  "policy_bridge": {
+    "policy_says_reports_are_verified_surface": true,
+    "scanned_report_surfaces_still_not_verified": true,
+    "verified_report_closure_available": false,
+    "decision": "verification_policy_points_to_reports_but_report_exports_keep_blocked",
+    "reader_use": "The policy surface explains the expected verification route; the report/export ladder shows the currently retrievable surfaces still do not close it."
+  },
+  "source_rows": [
+    {
+      "source_key": "georgia_air_quality_index_verification_note",
+      "source_role": "official_live_data_verification_note",
+      "retrieved": true,
+      "matched_expected_terms": "Data received from automatic air quality monitoring stations is not verified||Verified data is available in the reports",
+      "matched_verification_terms": "not verified||Verified data is available in the reports",
+      "matched_instrument_terms": "",
+      "matched_station_terms": "",
+      "policy_decision": "policy_says_live_unverified_reports_verified",
+      "reader_use": "Use as the policy rule: live automatic-station data are not verified, and report surfaces are where verification should be checked."
+    },
+    {
+      "source_key": "georgia_report_generator_page",
+      "source_role": "official_report_generator",
+      "retrieved": true,
+      "matched_expected_terms": "Reports||Generate Report||Daily||Monthly||Annual",
+      "matched_verification_terms": "",
+      "matched_instrument_terms": "",
+      "matched_station_terms": "",
+      "policy_decision": "report_generator_available_no_verified_closure",
+      "reader_use": "Use as the report-generator source route; closure still depends on the fetched report/export labels."
+    },
+    {
+      "source_key": "georgia_monitoring_network_page",
+      "source_role": "official_monitoring_network_method_context",
+      "retrieved": true,
+      "matched_expected_terms": "Monitoring Network||automatic stations||24 hours",
+      "matched_verification_terms": "",
+      "matched_instrument_terms": "Horiba||Envea||KIMOTO||Teledyne||Palas||Fidas",
+      "matched_station_terms": "Tbilisi||Kutaisi||Batumi||Rustavi||Telavi||Akhaltsikhe||Zugdidi||Mestia",
+      "policy_decision": "network_instrument_context_no_station_status",
+      "reader_use": "Use as source-level network and instrument-model context, not as station-code verification or calibration status."
+    },
+    {
+      "source_key": "georgia_tbilisi_plan_landing",
+      "source_role": "official_plan_landing",
+      "retrieved": true,
+      "matched_expected_terms": "Tbilisi Air Q Plan||Monitoring of air quality",
+      "matched_verification_terms": "",
+      "matched_instrument_terms": "",
+      "matched_station_terms": "Tbilisi",
+      "policy_decision": "source_locator_no_verified_closure",
+      "reader_use": "Use as a source locator only; it does not close verified-report or station-status gates."
+    },
+    {
+      "source_key": "mepa_tbilisi_air_quality_management_plan_pdf",
+      "source_role": "official_air_quality_management_plan_pdf",
+      "retrieved": true,
+      "matched_expected_terms": "validated measurement results||data capture rate||automatic stations||PM2.5",
+      "matched_verification_terms": "validated measurement results||data capture rate",
+      "matched_instrument_terms": "",
+      "matched_station_terms": "Didube||Saburtalo||Chugureti||Samgori||Dighomi",
+      "policy_decision": "plan_validation_context_not_station_code_closure",
+      "reader_use": "Use as validation and capture-rate context; it does not name the 16 target station codes with verified closure."
+    }
+  ],
+  "non_claim": "This scan records official Georgia verification-policy, report-generator, network, and management-plan source language. It does not certify any target station as verified, currently operating, station-method classified, complete monitor-grade, or station-radius ready."
+}

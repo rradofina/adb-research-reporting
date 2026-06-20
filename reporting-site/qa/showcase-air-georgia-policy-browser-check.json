@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-06-20T00:21:43.007Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "requiredText": [
+    "Georgia verification policy wall",
+    "The policy points to reports. The reports still point back to caution.",
+    "Closure rows",
+    "Official source routes",
+    "Live-data caution",
+    "Reports named",
+    "Not-verified HTML months",
+    "PDF caution probes",
+    "Verified closures",
+    "Policy rule",
+    "Report surface",
+    "Reader decision",
+    "Official live-data verification note"
+  ],
+  "expectedCounts": {
+    ".air-georgia-policy-section .air-georgia-policy-stat-grid > div": 6,
+    ".air-georgia-policy-section .air-georgia-policy-bridge > article": 3,
+    ".air-georgia-policy-section .air-georgia-policy-lane": 5,
+    ".air-georgia-policy-section .air-georgia-policy-source": 5,
+    ".air-georgia-policy-section .air-georgia-policy-gate": 10,
+    ".air-georgia-policy-section .air-georgia-policy-downloads a": 3
+  },
+  "results": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        ".air-georgia-policy-section .air-georgia-policy-stat-grid > div": 6,
+        ".air-georgia-policy-section .air-georgia-policy-bridge > article": 3,
+        ".air-georgia-policy-section .air-georgia-policy-lane": 5,
+        ".air-georgia-policy-section .air-georgia-policy-source": 5,
+        ".air-georgia-policy-section .air-georgia-policy-gate": 10,
+        ".air-georgia-policy-section .air-georgia-policy-downloads a": 3
+      },
+      "linkStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-verification-policy.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        ".air-georgia-policy-section .air-georgia-policy-stat-grid > div": 6,
+        ".air-georgia-policy-section .air-georgia-policy-bridge > article": 3,
+        ".air-georgia-policy-section .air-georgia-policy-lane": 5,
+        ".air-georgia-policy-section .air-georgia-policy-source": 5,
+        ".air-georgia-policy-section .air-georgia-policy-gate": 10,
+        ".air-georgia-policy-section .air-georgia-policy-downloads a": 3
+      },
+      "linkStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-verification-policy.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "bodyOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    }
+  ],
+  "screenshots": [
+    "showcase-air-georgia-policy-desktop-head.png",
+    "showcase-air-georgia-policy-desktop-sources.png",
+    "showcase-air-georgia-policy-desktop-gates.png",
+    "showcase-air-georgia-policy-mobile-head.png",
+    "showcase-air-georgia-policy-mobile-sources.png",
+    "showcase-air-georgia-policy-mobile-gates.png"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T05:53:00.449Z",
+  "generated_at": "2026-06-20T06:14:45.611Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -397,10 +397,10 @@
       "key": "air_monitoring_bmkg_station_public_context_source_scan",
       "file": "bmkg-station-public-context-source-scan.md",
       "label": "Air-monitoring BMKG station public-context source scan",
-      "size": 2778,
-      "size_human": "2.7 KB",
-      "mtime": "2026-06-20T03:18:11.184Z",
-      "sha256": "cb59c4f94005604141b8b8442475505fbc6ac8318a1f0359f98b572b05bdb6de",
+      "size": 2954,
+      "size_human": "2.9 KB",
+      "mtime": "2026-06-20T06:00:01.554Z",
+      "sha256": "833d1c0c760aea8c01c80e75a2f8dd64058fcca8bce7575dd4e3f424ecf34e36",
       "attestation_chain": "ai-first"
     },
     {
@@ -417,10 +417,10 @@
       "key": "air_monitoring_bmkg_near_closure_ledger",
       "file": "bmkg-near-closure-ledger.md",
       "label": "Air-monitoring BMKG near-closure ledger",
-      "size": 3582,
+      "size": 3552,
       "size_human": "3.5 KB",
-      "mtime": "2026-06-20T05:01:01.571Z",
-      "sha256": "7d44bd5eb98e82bac7a623f51f4a1031cf0ac04807b092ccd45173f02baf9529",
+      "mtime": "2026-06-20T06:07:17.725Z",
+      "sha256": "7cbbe0938ccd5d9f2da4856003c5ef5a7a774e895844e9ee5fa2bf69ecec2ba6",
       "attestation_chain": "ai-first"
     },
     {
@@ -589,15 +589,15 @@
     },
     {
       "file": "generated/air-monitoring-bmkg-near-closure-ledger-summary.json",
-      "size": 54509,
+      "size": 54505,
       "size_human": "53.2 KB",
-      "sha256": "64c65b44d69a185ddf73258cc4f838341eb9de00f22be0d779fd97c323a146e3"
+      "sha256": "6b9f3847f5c5d4f0639c6a2adf4088f1b655ea01d3506ab38497069a2e161ae2"
     },
     {
       "file": "generated/air-monitoring-bmkg-near-closure-ledger.csv",
-      "size": 18176,
-      "size_human": "17.8 KB",
-      "sha256": "1d588bbab303ea9667681008af8fc99b8c0fe6c8fd4af421cb96ea0ec3587450"
+      "size": 18173,
+      "size_human": "17.7 KB",
+      "sha256": "18fc4064c44d390cc11df96c9ca6425cad5da820493c7df12e874608b92d1caa"
     },
     {
       "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json",
@@ -625,15 +625,15 @@
     },
     {
       "file": "generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json",
-      "size": 63276,
-      "size_human": "61.8 KB",
-      "sha256": "35d3b2f72f26ec6d91e981c21b1f2bd572b955e361bd68924d5950333de67b93"
+      "size": 75213,
+      "size_human": "73.5 KB",
+      "sha256": "59c5e47ae4fe11063df26a01da50130fdc65ede9e495955a0d7b649561148a2e"
     },
     {
       "file": "generated/air-monitoring-bmkg-station-public-context-source-scan.csv",
-      "size": 18576,
-      "size_human": "18.1 KB",
-      "sha256": "f68189fa82c7ca9678e4bae05c7c0e6b181605f115cf40ceeff40b4111afe3d6"
+      "size": 19504,
+      "size_human": "19.0 KB",
+      "sha256": "bc4b0cf8110a129155492b6f31d3f648c135beb7fb02735973fb668c7141ee66"
     },
     {
       "file": "generated/air-monitoring-bmkg-station-specific-status-audit-summary.json",

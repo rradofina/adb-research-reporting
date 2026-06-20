@@ -189,11 +189,12 @@ overrides priority by editing this list.
    rows, 0 station-specific inspection logs, 0 station-specific calibration
    certificates/status records, 0 complete-grade rows, and 0
    station-radius-ready rows. The BMKG station public-context source scan then
-   retrieves 9 public station-unit, academic/journal, regulator, and
-   deployment-context sources, finds 9 rows with public station or deployment
-   context, 4 station-unit or exact-context rows, 6 city/deployment context
-   rows, 9 method-context rows, 7 calibration-language context rows, and still
-   0 station-specific inspection logs, 0 station-specific calibration
+   retrieves 16 public station-unit, local PM2.5 report, academic/journal,
+   regulator, and deployment-context sources, finds 11 rows with public
+   station or deployment context, 7 station-unit or exact-context rows, 6
+   city/deployment context rows, 11 method-context rows, 7
+   calibration-language context rows, and still 0 station-specific inspection
+   logs, 0 station-specific calibration
    certificates/status records, 0 current-status confirmations from this pass,
    0 complete-grade rows, and 0 station-radius-ready rows. The BMKG
    installation/audit source scan then retrieves 6 official BMKG installation,
@@ -1154,6 +1155,19 @@ by leaving the board in a state the next session can read.
   visible, no overflow, no console errors, no page errors, no request failures,
   and no bad HTTP responses. Screenshots were written under
   `reporting-site/qa/showcase-air-bmkg-station-context-*-clean.png`.
+- **2026-06-20 (air-monitoring BMKG station public-context expansion):**
+  Expanded the BMKG station public-context source scan with official local
+  BMKG PM2.5 report pages and bulletins from Kalbar, Bengkulu, Sumsel, and
+  Kemayoran, then rebuilt the BMKG near-closure ledger. The refreshed
+  station-context scan retrieves 16 of 16 seeded sources, including 12
+  official or regulator sources and 4 academic or journal sources; it records
+  11 rows with public station/unit or deployment context, 7 station-unit or
+  exact-context rows, 6 city/deployment context rows, 11 method-context rows,
+  and 7 calibration-language context rows. The rebuilt near-closure ledger
+  now carries 7 station-unit or exact-context rows, while station-specific
+  inspection logs, PM2.5 calibration certificates/status records,
+  complete-grade rows, and station-radius-ready rows remain 0. This expands
+  the official local reporting evidence trail, not the grade-closure claim.
 - **2026-06-20 (air-monitoring BMKG installation/audit source scan):** Added
   `air-monitoring/source-inputs/bmkg-installation-audit-source-seed.csv` and
   `air-monitoring/scripts/scan-bmkg-installation-audit-sources.py`, generated

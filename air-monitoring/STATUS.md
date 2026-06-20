@@ -50,6 +50,19 @@ grade-basis evidence, and catchment methods are added.
 
 ## Last completed
 
+- **2026-06-20:** Expanded the BMKG station public-context source scan with
+  official local BMKG PM2.5 report pages and bulletins from Kalbar, Bengkulu,
+  Sumsel, and Kemayoran, then rebuilt the BMKG near-closure ledger. The
+  station-context scan now retrieves 16 of 16 seeded sources, including 12
+  official or regulator sources and 4 academic or journal sources; it records
+  11 rows with public station/unit or deployment context, 7 station-unit or
+  exact-context rows, 6 city/deployment context rows, 11 method-context rows,
+  and 7 calibration-language context rows. The rebuilt near-closure ledger now
+  carries 7 station-unit or exact-context rows, while station-specific
+  inspection logs, PM2.5 calibration certificates/status records, complete
+  monitor-grade rows, and station-radius-ready rows all remain 0. This is a
+  local-report source expansion, not station-grade promotion.
+
 - **2026-06-20:** Refreshed the Uzbekistan blocker-row follow-up and
   endpoint-consistency artifacts against current public Uzhydromet routes for
   station IDs 107, 728, and 737. The rerun retrieved 2 official regional table
@@ -884,7 +897,7 @@ grade-basis evidence, and catchment methods are added.
   `bmkg-near-closure-ledger.md`. The ledger covers 22 BMKG target rows, 22
   method-classified rows, 22 station-detail display rows, 21 current `ONLINE`
   dashboard rows, 1 current `DELAYED` Pekanbaru row, 22 source-level
-  grade-basis rows, 4 station-unit or exact-context rows, 1 exact
+  grade-basis rows, 7 station-unit or exact-context rows, 1 exact
   audit/calibration context row, and 7 PM2.5 installation/deployment context
   rows. It still records 0 station-specific inspection logs, 0 public
   station-specific PM2.5 calibration certificates, 0 calibration-status rows, 0
@@ -915,9 +928,10 @@ grade-basis evidence, and catchment methods are added.
    current `DELAYED` Pekanbaru row. The grade-basis scan then strengthens the
    source-level method, technical-standard, inspection-rule, calibration-rule,
    calibration-service, and certificate-context basis, while the station
-   public-context scan retrieves 9 station-unit, academic/journal, regulator,
-   and deployment-context sources, adds 9 public station or deployment context
-   rows, and finds 4 station-unit or exact-context rows. The installation/audit
+   public-context scan retrieves 16 station-unit, official local PM2.5 report,
+   academic/journal, regulator, and deployment-context sources, adds 11 public
+   station or deployment context rows, and finds 7 station-unit or
+   exact-context rows. The installation/audit
    scan then retrieves 6 official BMKG installation, audit/calibration,
    public-information, and operational-monitoring sources, adds 1 exact station
    audit/calibration context row and 7 PM2.5 installation/deployment context
@@ -1074,12 +1088,13 @@ grade-basis evidence, and catchment methods are added.
   inspection logs, 0 station-specific calibration certificates/status rows, 0
   complete monitor-grade rows, and 0 station-radius-ready rows. Source-level
   rules and service routes are not station-level certification.
-- The BMKG station public-context source scan retrieves 9 public station-unit,
-  academic/journal, regulator, and deployment-context sources. It adds 9 rows
-  with public station or deployment context, 4 station-unit or exact-context
-  rows, 6 city/deployment context rows, 9 method-context rows, 7
-  calibration-language context rows, and 8 inspection or operating-context
-  rows. It still records 0 station-specific inspection logs, 0 station-specific
+- The BMKG station public-context source scan retrieves 16 public station-unit,
+  official local PM2.5 report, academic/journal, regulator, and
+  deployment-context sources. It adds 11 rows with public station or deployment
+  context, 7 station-unit or exact-context rows, 6 city/deployment context
+  rows, 11 method-context rows, 7 calibration-language context rows, and 11
+  inspection or operating-context rows. It still records 0 station-specific
+  inspection logs, 0 station-specific
   calibration certificates/status rows, 0 current-status confirmations from
   this pass, 0 complete monitor-grade rows, and 0 station-radius-ready rows.
   Station studies and deployment context are not station certificates.

@@ -3,8 +3,8 @@
 The previous BMKG grade-basis scan strengthened source-level standards,
 inspection rules, calibration routes, and certificate-request context. This
 pass tests a different source family: public station-unit publications,
-regulator reports, and station studies that name exact BMKG stations or
-deployment areas.
+local PM2.5 report pages, local bulletins, regulator reports, and station
+studies that name exact BMKG stations or deployment areas.
 
 The script deliberately keeps certificate, calibration-status, complete-grade,
 and station-radius gates closed unless the public source provides a row-level
@@ -357,7 +357,14 @@ def summary_payload(generated_at: str, rows: list[dict[str, Any]], source_rows: 
         "official_or_regulator_sources_retrieved": sum(
             source["retrieved"]
             and source["source_role"]
-            in {"official_station_unit_publication", "official_performance_report", "regulator_air_quality_report"}
+            in {
+                "official_station_unit_publication",
+                "official_local_pm25_page",
+                "official_local_pm25_report",
+                "official_station_bulletin",
+                "official_performance_report",
+                "regulator_air_quality_report",
+            }
             for source in source_rows
         ),
         "academic_or_journal_sources_retrieved": sum(
@@ -385,7 +392,7 @@ def summary_payload(generated_at: str, rows: list[dict[str, Any]], source_rows: 
             "available" if counts["station_public_context_source_urls_retrieved"] == len(source_rows) else "limited",
             "Seeded station/unit public sources retrieved",
             counts["station_public_context_source_urls_retrieved"],
-            "Confirms station-unit publications, regulator reports, and station studies were tested.",
+            "Confirms station-unit publications, local PM2.5 reports, regulator reports, and station studies were tested.",
         ),
         gate(
             "available" if counts["rows_with_station_unit_or_exact_context"] else "not_ready",
@@ -442,7 +449,7 @@ def summary_payload(generated_at: str, rows: list[dict[str, Any]], source_rows: 
         "status": STATUS,
         "method": METHOD,
         "goal_level": "L3 BMKG station/unit public-context source scan",
-        "source_scope": "Station-unit publications, regulator reports, and station studies that name exact BMKG PM2.5 station units, city deployment areas, or BAM-1020 station context.",
+        "source_scope": "Station-unit publications, local PM2.5 report pages, local bulletins, regulator reports, and station studies that name exact BMKG PM2.5 station units, city deployment areas, or BAM-1020 station context.",
         "source_inputs": [
             {"path": str(SEED_CSV.relative_to(PROGRAM_DIR)), "role": "seeded station/unit public-context sources"},
             {"path": str(METHOD_CLASSIFICATION_CSV.relative_to(PROGRAM_DIR)), "role": "22 BMKG rows classified as BAM by the station-method audit"},

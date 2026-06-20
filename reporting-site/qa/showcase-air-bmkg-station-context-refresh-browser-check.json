@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-06-20T06:13:00Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "focus": "BMKG station public-context source scan expansion",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1100,
+      "screenshot": "showcase-air-bmkg-station-context-refresh-desktop.png"
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1000,
+      "screenshot": "showcase-air-bmkg-station-context-refresh-mobile.png"
+    }
+  ],
+  "checks": {
+    "route_status": 200,
+    "vite_error_overlay": false,
+    "section_found": true,
+    "stat_values": ["16/16", "11", "7", "11", "7", "0"],
+    "decision_lanes": 4,
+    "row_cards": 11,
+    "source_cards": 16,
+    "gate_cards": 7,
+    "downloads_checked": 3,
+    "download_statuses": [200, 200, 200],
+    "desktop_section_overflow": false,
+    "mobile_page_overflow": false,
+    "mobile_section_overflow": false,
+    "console_notes": []
+  }
+}

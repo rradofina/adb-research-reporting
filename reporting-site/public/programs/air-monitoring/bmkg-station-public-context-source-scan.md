@@ -11,9 +11,9 @@ method: air_monitoring_bmkg_station_public_context_source_scan_v1
 The BMKG grade-basis scan established that public BMKG standards, SOPs, service
 pages, PPID reports, and annual reports contain method, inspection, logbook,
 calibration, service-route, and certificate-request context. The unresolved
-question is narrower: whether public station-unit publications, regulator
-reports, or station studies name exact BMKG PM2.5 station units and provide
-station-level support.
+question is narrower: whether public station-unit publications, local BMKG
+PM2.5 report pages, local bulletins, regulator reports, or station studies name
+exact BMKG PM2.5 station units and provide station-level support.
 
 This pass tests that source family without treating station context as
 certification.
@@ -23,10 +23,11 @@ certification.
 The source seed is
 `air-monitoring/source-inputs/bmkg-station-public-context-source-seed.csv`.
 
-The scan tests station-unit publications from GAW Bukit Kototabang, public
-station studies for Jambi, Sorong, and West Kalimantan, a Jakarta regulator
-report naming BMKG Kemayoran, and a BMKG performance report that lists PM2.5
-deployment areas.
+The scan tests station-unit publications from GAW Bukit Kototabang, official
+local PM2.5 pages and bulletins from Kalbar, Bengkulu, Sumsel, and Kemayoran,
+public station studies for Jambi, Sorong, and West Kalimantan, a Jakarta
+regulator report naming BMKG Kemayoran, and a BMKG performance report that
+lists PM2.5 deployment areas.
 
 ## What the scan records
 
@@ -46,10 +47,11 @@ row-level station record.
 ## How to use this result
 
 Use the scan as a station-context layer. It can strengthen the evidence trail
-for rows where public station/unit material confirms the station and BAM-1020
-method context. It still cannot promote any station to complete monitor-grade
-because a station study, city deployment note, or historical unit publication is
-not a current calibration certificate or inspection log.
+for rows where public station/unit material confirms the station, reporting
+activity, and BAM-1020 method context. It still cannot promote any station to
+complete monitor-grade because a local PM2.5 report, station study, city
+deployment note, or historical unit publication is not a current calibration
+certificate or inspection log.
 
 ## What this does not mean
 

@@ -1284,6 +1284,92 @@ interface UzbekistanEndpointConsistencySummary {
   non_claim: string;
 }
 
+interface UzbekistanExternalContextGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanExternalContextSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  matched_expected_terms: string[];
+  matched_station_terms: string[];
+  matched_status_terms: string[];
+  matched_method_grade_terms: string[];
+  matched_calibration_terms: string[];
+  matched_caution_terms: string[];
+  source_note: string;
+}
+
+interface UzbekistanExternalContextRow {
+  source_station_id: string;
+  source_station_name: string;
+  review_focus: string;
+  prior_followup_decision: string;
+  prior_endpoint_decision: string;
+  detail_updated_iso: string;
+  detail_pm25_value: string;
+  detail_pm25_value_status: string;
+  api_date_iso: string;
+  api_pm25_value: string;
+  region_updated_values: string;
+  external_source_context_keys: string;
+  official_launch_context_keys: string;
+  source_level_reference_context_keys: string;
+  station_name_or_location_external_context_keys: string;
+  exact_station_id_external_context_keys: string;
+  external_exact_station_id_context: boolean;
+  external_station_name_or_location_context: boolean;
+  external_context_candidate: boolean;
+  launch_context_only: boolean;
+  source_level_reference_context_only: boolean;
+  public_blocker_resolution_available: boolean;
+  current_status_confirmed: boolean;
+  station_method_classified: boolean;
+  complete_monitor_grade_classification_available: boolean;
+  station_radius_grade_assumption_ready: boolean;
+  external_context_decision: string;
+  reader_use: string;
+}
+
+interface UzbekistanExternalContextSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_blocker_rows: number;
+    external_source_urls_seeded: number;
+    external_source_urls_retrieved: number;
+    official_commissioning_sources_retrieved: number;
+    technical_context_sources_retrieved: number;
+    rows_with_any_external_context: number;
+    rows_with_launch_context_only: number;
+    rows_with_source_level_reference_context_only: number;
+    rows_with_station_name_or_location_external_context: number;
+    rows_with_exact_station_id_external_context: number;
+    public_blocker_resolution_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: { decision: string; rows: number }[];
+  source_records: UzbekistanExternalContextSourceRecord[];
+  evidence_gate_counts: UzbekistanExternalContextGate[];
+  station_rows: UzbekistanExternalContextRow[];
+  non_claim: string;
+}
+
 interface IndonesiaGeorgiaRowMethodSourceGate {
   gate: string;
   status: string;
@@ -2239,6 +2325,8 @@ export default function ShowcaseAirMonitoring() {
     useState<UzbekistanBlockerFollowupSummary | null>(null);
   const [uzbekistanEndpointConsistency, setUzbekistanEndpointConsistency] =
     useState<UzbekistanEndpointConsistencySummary | null>(null);
+  const [uzbekistanExternalContext, setUzbekistanExternalContext] =
+    useState<UzbekistanExternalContextSummary | null>(null);
   const [indonesiaGeorgiaRowMethodSource, setIndonesiaGeorgiaRowMethodSource] =
     useState<IndonesiaGeorgiaRowMethodSourceSummary | null>(null);
   const [stationCodeStatusMethod, setStationCodeStatusMethod] =
@@ -2399,6 +2487,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setUzbekistanEndpointConsistency(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan blocker external context HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setUzbekistanExternalContext(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -2762,6 +2870,8 @@ export default function ShowcaseAirMonitoring() {
       <AirUzbekistanBlockerFollowupPanel summary={uzbekistanBlockerFollowup} />
 
       <AirUzbekistanEndpointConsistencyPanel summary={uzbekistanEndpointConsistency} />
+
+      <AirUzbekistanExternalContextPanel summary={uzbekistanExternalContext} />
 
       <AirIndonesiaGeorgiaRowMethodSourcePanel summary={indonesiaGeorgiaRowMethodSource} />
 
@@ -5750,6 +5860,197 @@ function AirUzbekistanEndpointConsistencyPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan endpoint consistency check...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanExternalContextPanel({
+  summary,
+}: {
+  summary: UzbekistanExternalContextSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.station_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const total = Math.max(1, counts?.target_blocker_rows ?? rows.length);
+  const contextStats = counts
+    ? [
+        {
+          key: "launch",
+          label: "Launch context",
+          rows: counts.rows_with_launch_context_only,
+          detail: "Sergili/Sergeli appears in official launch context",
+        },
+        {
+          key: "reference",
+          label: "Reference context",
+          rows: counts.rows_with_source_level_reference_context_only,
+          detail: "Tashkent source-level context, not exact blocker closure",
+        },
+        {
+          key: "id",
+          label: "Exact station-ID context",
+          rows: counts.rows_with_exact_station_id_external_context,
+          detail: "no source names IDs 107, 728, or 737 with closure",
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-uzb-current-section air-uzb-external-section" aria-label="Uzbekistan blocker external context wall">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-sage">Uzbekistan external context</p>
+          <h2>Launch context is not a sentinel fix.</h2>
+          <p>
+            This pass leaves the telemetry endpoints alone and checks public
+            official or technical context outside those pages. It asks whether
+            a source names station IDs 107, 728, or 737 with a correction,
+            current-status record, calibration record, or grade basis.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout air-uzb-external-callout">
+          <span>Exact station-ID closures</span>
+          <strong>{formatNumber(counts?.public_blocker_resolution_rows ?? 0)}</strong>
+          <p>{formatNumber(counts?.external_source_urls_retrieved ?? 0)} external sources retrieved; blockers stay open</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid air-uzb-external-stat-grid">
+            <div>
+              <span>External sources</span>
+              <strong>{formatNumber(counts.external_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.external_source_urls_seeded)} seeded</em>
+            </div>
+            <div>
+              <span>Context rows</span>
+              <strong>{formatNumber(counts.rows_with_any_external_context)}</strong>
+              <em>of {formatNumber(total)} blocker rows</em>
+            </div>
+            <div>
+              <span>Name/location context</span>
+              <strong>{formatNumber(counts.rows_with_station_name_or_location_external_context)}</strong>
+              <em>not station-ID closure</em>
+            </div>
+            <div>
+              <span>Exact ID context</span>
+              <strong>{formatNumber(counts.rows_with_exact_station_id_external_context)}</strong>
+              <em>IDs 107, 728, 737</em>
+            </div>
+            <div>
+              <span>Current status</span>
+              <strong>{formatNumber(counts.current_status_confirmed_rows)}</strong>
+              <em>public closures</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-uzb-external-context-grid">
+            {contextStats.map((item) => (
+              <article key={item.key} className={`air-uzb-external-context air-uzb-external-context-${item.key}`}>
+                <div>
+                  <span>{item.label}</span>
+                  <strong>{formatNumber(item.rows)} rows</strong>
+                </div>
+                <div className="air-uzb-current-track">
+                  <i style={{ width: item.rows > 0 ? `${Math.max(4, (item.rows / total) * 100)}%` : "0%" }} />
+                </div>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-external-source-grid">
+            {sources.map((source) => (
+              <article key={source.source_key} className={`air-uzb-external-source air-uzb-external-source-${gateTone(source.retrieved ? "available" : "not_ready")}`}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_role)}</span>
+                  <strong>{source.source_name}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</dd>
+                  </div>
+                  <div>
+                    <dt>Station terms</dt>
+                    <dd>{formatNumber(source.matched_station_terms.length)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade terms</dt>
+                    <dd>{formatNumber(source.matched_method_grade_terms.length)}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+                <a href={source.url}>Source</a>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-row-grid air-uzb-external-row-grid">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-uzb-current-row air-uzb-external-row">
+                <div>
+                  <span>UZB · {row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.external_context_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Detail</dt>
+                    <dd>{row.detail_updated_iso || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.detail_pm25_value || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>ID closure</dt>
+                    <dd>{row.external_exact_station_id_context ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <small>
+                  {row.official_launch_context_keys || row.source_level_reference_context_keys || row.prior_endpoint_decision}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid air-uzb-external-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-blocker-external-context.md" download>
+              External-context note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan blocker external-context wall...</p>
       )}
     </section>
   );

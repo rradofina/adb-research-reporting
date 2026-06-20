@@ -194,6 +194,16 @@
       "retrieved_on": "2026-06-19",
       "notes": "Exact official endpoint-consistency check for the 3 Uzbekistan blocker rows. It retrieves 16 of 16 official routes across the public maps API, English/Russian/Uzbek regional table pages, and English/Russian/Uzbek station-detail pages; finds 9 of 9 detail pages and 9 language regional rows; records 3 cross-language detail agreements, 3 API/detail date mismatches, 2 API/detail PM2.5 mismatches, 3 region/detail status mismatches, 3 unresolved blocker rows, and still 0 public endpoint-resolution, current-status confirmed, complete monitor-grade, or station-radius-ready rows."
     },
+    "air_monitoring_uzbekistan_blocker_external_context": {
+      "script": "air-monitoring/scripts/scan-uzbekistan-blocker-external-context.py",
+      "seed": "air-monitoring/source-inputs/uzbekistan-blocker-external-context-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_uzbekistan_blocker_row_followup",
+        "air_monitoring_uzbekistan_endpoint_consistency"
+      ],
+      "notes": "External public context wall for the 3 exact Uzbekistan blocker rows. It retrieves 4 of 4 official or technical context sources, including government Sergeli/Uchtepa launch pages and the World Bank Tashkent assessment text; finds 2 blocker rows with source context, 1 launch-context-only row, 1 source-level-reference-context-only row, 0 exact station-ID external-context rows, 0 public blocker-resolution rows, 0 current-status rows, 0 complete monitor-grade rows, and 0 station-radius-ready rows."
+    },
     "air_monitoring_indonesia_georgia_row_method_source_scan": {
       "script": "air-monitoring/scripts/scan-indonesia-georgia-row-method-sources.py",
       "seed": "air-monitoring/source-inputs/indonesia-georgia-row-method-source-seed.csv",
@@ -644,6 +654,10 @@
     {
       "date": "2026-06-19",
       "change": "Added air_monitoring_uzbekistan_endpoint_consistency pin after comparing the 3 Uzbekistan blocker rows across the public maps API, English/Russian/Uzbek detail pages, and English/Russian/Uzbek regional rows while keeping endpoint-resolution, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_uzbekistan_blocker_external_context pin after retrieving 4 external official or technical context sources for the 3 Uzbekistan blocker rows while keeping exact station-ID context, blocker-resolution, current-status, complete-grade, and station-radius readiness at zero."
     },
     {
       "date": "2026-06-19",

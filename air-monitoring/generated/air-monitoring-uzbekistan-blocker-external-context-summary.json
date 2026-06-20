@@ -1,0 +1,351 @@
+{
+  "generated_at": "2026-06-20T01:00:08Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_uzbekistan_blocker_external_context",
+  "method": "air_monitoring_uzbekistan_blocker_external_context_v1",
+  "goal_level": "L3 Uzbekistan blocker external-context wall",
+  "source_scope": "Official government Sergeli/Sergili launch pages and source-level Tashkent reference-grade context joined back to station IDs 107, 728, and 737.",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\uzbekistan-blocker-external-context-source-seed.csv",
+      "role": "external official or technical context seed"
+    },
+    {
+      "path": "generated\\air-monitoring-uzbekistan-blocker-row-followup.csv",
+      "role": "prior exact blocker-row follow-up"
+    },
+    {
+      "path": "generated\\air-monitoring-uzbekistan-endpoint-consistency.csv",
+      "role": "prior endpoint-consistency wall"
+    }
+  ],
+  "coverage_counts": {
+    "target_blocker_rows": 3,
+    "external_source_urls_seeded": 4,
+    "external_source_urls_retrieved": 4,
+    "official_commissioning_sources_retrieved": 3,
+    "technical_context_sources_retrieved": 1,
+    "rows_with_any_external_context": 2,
+    "rows_with_launch_context_only": 1,
+    "rows_with_source_level_reference_context_only": 1,
+    "rows_with_station_name_or_location_external_context": 2,
+    "rows_with_exact_station_id_external_context": 0,
+    "public_blocker_resolution_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "decision_counts": [
+    {
+      "decision": "launch_context_does_not_clear_sentinel_or_status_blocker",
+      "rows": 1
+    },
+    {
+      "decision": "no_external_context_resolution_keep_blocked",
+      "rows": 1
+    },
+    {
+      "decision": "source_level_reference_context_does_not_clear_exact_blocker",
+      "rows": 1
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "gov_uz_sergili_uchtepa_launch_en",
+      "source_name": "Government ecology note on Sergeli and Uchtepa launches",
+      "source_role": "official_commissioning_context",
+      "url": "https://gov.uz/en/eco/news/view/44830",
+      "final_url": "https://gov.uz/en/eco/news/view/44830",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 195605,
+      "sha256": "71e407f2faa40b66319c3a429d3f14e45d766ed9c321e5269e99275791d34118",
+      "retrieval_error": "",
+      "matched_expected_terms": [
+        "Sergeli",
+        "Uchtepa",
+        "automatic air monitoring stations",
+        "monitoring.meteo.uz"
+      ],
+      "missing_expected_terms": [
+        "Hydrometeorological Service Agency"
+      ],
+      "matched_station_terms": [
+        "Sergeli",
+        "Uchtepa"
+      ],
+      "matched_status_terms": [
+        "launched"
+      ],
+      "matched_method_grade_terms": [
+        "automatic air monitoring stations"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Official government page gives launch and platform-integration context for Sergeli/Sergili and Uchtepa, but does not name station ID 728 or resolve the PM2.5 sentinel."
+    },
+    {
+      "source_key": "gov_uz_sergili_uchtepa_launch_oz",
+      "source_name": "Government ecology note on Sergeli and Uchtepa launches in Uzbek",
+      "source_role": "official_commissioning_context",
+      "url": "https://gov.uz/oz/eco/news/view/44830",
+      "final_url": "https://gov.uz/oz/eco/news/view/44830",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 199076,
+      "sha256": "cd164df29b1d2341e93e0b23ebacc6754089509f5bc3b7c4a5d37f20d1bc2174",
+      "retrieval_error": "",
+      "matched_expected_terms": [
+        "Sergeli",
+        "Uchtepa",
+        "havo monitoringi avtomatik stansiyalari",
+        "Gidrometeorologiya xizmati agentligi",
+        "monitoring.meteo.uz"
+      ],
+      "missing_expected_terms": [],
+      "matched_station_terms": [
+        "Sergeli",
+        "Uchtepa"
+      ],
+      "matched_status_terms": [
+        "ishga tushirildi"
+      ],
+      "matched_method_grade_terms": [
+        "avtomatik stansiyalari"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Uzbek-language government page is used as a language cross-check for the same Sergeli/Sergili launch context."
+    },
+    {
+      "source_key": "gov_uz_sergili_uchtepa_launch_ru",
+      "source_name": "Government ecology note on Sergeli and Uchtepa launches in Russian",
+      "source_role": "official_commissioning_context",
+      "url": "https://gov.uz/ru/eco/news/view/44830",
+      "final_url": "https://gov.uz/ru/eco/news/view/44830",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 225781,
+      "sha256": "f9c846d50aef75ad6272e81023f1a31b2f8291d94c76eda10b5e07880cdf7d66",
+      "retrieval_error": "",
+      "matched_expected_terms": [
+        "Сергели",
+        "автоматические станции мониторинга воздуха",
+        "Агентство гидрометеорологической службы",
+        "monitoring.meteo.uz"
+      ],
+      "missing_expected_terms": [
+        "Учтепа"
+      ],
+      "matched_station_terms": [
+        "Сергели"
+      ],
+      "matched_status_terms": [
+        "введены в эксплуатацию"
+      ],
+      "matched_method_grade_terms": [
+        "автоматические станции мониторинга воздуха"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Russian-language government page is used as a language cross-check for the same Sergeli/Sergili launch context."
+    },
+    {
+      "source_key": "world_bank_tashkent_reference_grade_text",
+      "source_name": "World Bank Tashkent air-quality assessment text",
+      "source_role": "independent_reference_grade_context",
+      "url": "https://documents1.worldbank.org/curated/en/099061424075531584/txt/P177108-ec9e93ac-4651-4a71-81d3-40144918d6cd.txt",
+      "final_url": "https://documents1.worldbank.org/curated/en/099061424075531584/txt/P177108-ec9e93ac-4651-4a71-81d3-40144918d6cd.txt",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/plain;charset=utf-8",
+      "retrieval_bytes": 447370,
+      "sha256": "b665d8d25e5886ce73c58d6e02d2d60d832e78d39de91cf338551d010da6566d",
+      "retrieval_error": "",
+      "matched_expected_terms": [
+        "automatic reference grade stations",
+        "international monitoring standards",
+        "Uzhydromet",
+        "PM2.5"
+      ],
+      "missing_expected_terms": [],
+      "matched_station_terms": [
+        "Tashkent",
+        "Uzhydromet"
+      ],
+      "matched_status_terms": [
+        "became operational"
+      ],
+      "matched_method_grade_terms": [
+        "reference grade",
+        "international monitoring standards"
+      ],
+      "matched_calibration_terms": [],
+      "matched_caution_terms": [],
+      "source_note": "Independent technical report gives source-level Tashkent reference-grade context, but it does not name station IDs 107, 728, or 737."
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "External context sources retrieved",
+      "rows": 4,
+      "reader_use": "Official government pages and a technical context source were retrieved outside the exact telemetry endpoints."
+    },
+    {
+      "status": "available",
+      "gate": "Official launch context",
+      "rows": 1,
+      "reader_use": "Sergili/Sergeli has public launch/platform context, but this is context, not sentinel correction."
+    },
+    {
+      "status": "caution",
+      "gate": "Source-level reference context",
+      "rows": 1,
+      "reader_use": "Reference-grade language exists at source level for Tashkent context, but it does not name the blocker station ID."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Exact station-ID external context",
+      "rows": 0,
+      "reader_use": "No scanned external source names station IDs 107, 728, or 737 with row-level closure."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Public blocker resolution",
+      "rows": 0,
+      "reader_use": "No external source resolves the stale detail, Updating-data, sentinel, or endpoint-disagreement blockers."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Current-status confirmed",
+      "rows": 0,
+      "reader_use": "No exact row has public operating-status closure."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade classification",
+      "rows": 0,
+      "reader_use": "No blocker row has complete station-grade documentation."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-radius readiness",
+      "rows": 0,
+      "reader_use": "No blocker row is eligible for station-radius assumptions."
+    }
+  ],
+  "station_rows": [
+    {
+      "generated_at": "2026-06-20T01:00:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_uzbekistan_blocker_external_context",
+      "method": "air_monitoring_uzbekistan_blocker_external_context_v1",
+      "source_station_id": "107",
+      "source_station_name": "Атмосфера ҳавоси мониторинги автоматлаштирилган станцияси",
+      "review_focus": "stale_detail_measurement",
+      "prior_followup_decision": "stale_detail_and_region_updating_keep_blocked",
+      "prior_endpoint_decision": "stale_detail_region_updating_and_endpoint_mismatch_keep_blocked",
+      "detail_updated_iso": "2026-05-01",
+      "detail_pm25_value": "13.698",
+      "detail_pm25_value_status": "positive",
+      "api_date_iso": "2026-05-05",
+      "api_pm25_value": "0.001",
+      "region_updated_values": "Updating data | Обновление данных | Маълумотлар янгиланиши",
+      "external_source_context_keys": "world_bank_tashkent_reference_grade_text",
+      "official_launch_context_keys": "",
+      "source_level_reference_context_keys": "world_bank_tashkent_reference_grade_text",
+      "exact_station_id_external_context_keys": "",
+      "station_name_or_location_external_context_keys": "world_bank_tashkent_reference_grade_text",
+      "external_exact_station_id_context": false,
+      "external_station_name_or_location_context": true,
+      "external_context_candidate": true,
+      "launch_context_only": false,
+      "source_level_reference_context_only": true,
+      "public_blocker_resolution_available": false,
+      "current_status_confirmed": false,
+      "station_method_classified": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "non_claim": "This scan checks public official or technical context outside the exact Uzbekistan telemetry pages. Launch, platform-integration, or reference-grade context does not resolve a stale detail page, a -9999 PM2.5 sentinel, endpoint disagreement, current operating status, complete monitor-grade classification, or station-radius readiness unless a public source names the exact station row and gives explicit correction/status or grade language.",
+      "external_context_decision": "source_level_reference_context_does_not_clear_exact_blocker",
+      "reader_use": "Use as source-level context only. Tashkent reference-grade language does not name this station ID or resolve the stale Updating-data blocker on the exact official row."
+    },
+    {
+      "generated_at": "2026-06-20T01:00:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_uzbekistan_blocker_external_context",
+      "method": "air_monitoring_uzbekistan_blocker_external_context_v1",
+      "source_station_id": "728",
+      "source_station_name": "Sergili",
+      "review_focus": "sentinel_pm25_value",
+      "prior_followup_decision": "sentinel_pm25_confirmed_keep_blocked",
+      "prior_endpoint_decision": "detail_sentinel_and_endpoint_mismatch_keep_blocked",
+      "detail_updated_iso": "2026-06-16",
+      "detail_pm25_value": "-9999",
+      "detail_pm25_value_status": "sentinel_minus_9999",
+      "api_date_iso": "2024-12-27",
+      "api_pm25_value": "-0.003",
+      "region_updated_values": "27.12.2024, 00:00",
+      "external_source_context_keys": "gov_uz_sergili_uchtepa_launch_en | gov_uz_sergili_uchtepa_launch_oz | gov_uz_sergili_uchtepa_launch_ru | world_bank_tashkent_reference_grade_text",
+      "official_launch_context_keys": "gov_uz_sergili_uchtepa_launch_en | gov_uz_sergili_uchtepa_launch_oz | gov_uz_sergili_uchtepa_launch_ru",
+      "source_level_reference_context_keys": "",
+      "exact_station_id_external_context_keys": "",
+      "station_name_or_location_external_context_keys": "gov_uz_sergili_uchtepa_launch_en | gov_uz_sergili_uchtepa_launch_oz | gov_uz_sergili_uchtepa_launch_ru | world_bank_tashkent_reference_grade_text",
+      "external_exact_station_id_context": false,
+      "external_station_name_or_location_context": true,
+      "external_context_candidate": true,
+      "launch_context_only": true,
+      "source_level_reference_context_only": false,
+      "public_blocker_resolution_available": false,
+      "current_status_confirmed": false,
+      "station_method_classified": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "non_claim": "This scan checks public official or technical context outside the exact Uzbekistan telemetry pages. Launch, platform-integration, or reference-grade context does not resolve a stale detail page, a -9999 PM2.5 sentinel, endpoint disagreement, current operating status, complete monitor-grade classification, or station-radius readiness unless a public source names the exact station row and gives explicit correction/status or grade language.",
+      "external_context_decision": "launch_context_does_not_clear_sentinel_or_status_blocker",
+      "reader_use": "Use as a sharper Sergili wall: official launch/platform context exists, but it does not explain or correct the -9999 PM2.5 sentinel on the exact station-detail row."
+    },
+    {
+      "generated_at": "2026-06-20T01:00:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_uzbekistan_blocker_external_context",
+      "method": "air_monitoring_uzbekistan_blocker_external_context_v1",
+      "source_station_id": "737",
+      "source_station_name": "Akhangaran",
+      "review_focus": "stale_detail_measurement",
+      "prior_followup_decision": "stale_detail_and_region_updating_keep_blocked",
+      "prior_endpoint_decision": "stale_detail_region_updating_and_endpoint_mismatch_keep_blocked",
+      "detail_updated_iso": "2026-05-10",
+      "detail_pm25_value": "14.56",
+      "detail_pm25_value_status": "positive",
+      "api_date_iso": "2026-06-03",
+      "api_pm25_value": "14.56",
+      "region_updated_values": "Updating data | Обновление данных | Маълумотлар янгиланиши",
+      "external_source_context_keys": "",
+      "official_launch_context_keys": "",
+      "source_level_reference_context_keys": "",
+      "exact_station_id_external_context_keys": "",
+      "station_name_or_location_external_context_keys": "",
+      "external_exact_station_id_context": false,
+      "external_station_name_or_location_context": false,
+      "external_context_candidate": false,
+      "launch_context_only": false,
+      "source_level_reference_context_only": false,
+      "public_blocker_resolution_available": false,
+      "current_status_confirmed": false,
+      "station_method_classified": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "non_claim": "This scan checks public official or technical context outside the exact Uzbekistan telemetry pages. Launch, platform-integration, or reference-grade context does not resolve a stale detail page, a -9999 PM2.5 sentinel, endpoint disagreement, current operating status, complete monitor-grade classification, or station-radius readiness unless a public source names the exact station row and gives explicit correction/status or grade language.",
+      "external_context_decision": "no_external_context_resolution_keep_blocked",
+      "reader_use": "Use as a blocker-preservation row. The scanned external public sources do not name the exact station ID with correction, current-status, calibration, or complete-grade closure."
+    }
+  ],
+  "non_claim": "This scan checks public official or technical context outside the exact Uzbekistan telemetry pages. Launch, platform-integration, or reference-grade context does not resolve a stale detail page, a -9999 PM2.5 sentinel, endpoint disagreement, current operating status, complete monitor-grade classification, or station-radius readiness unless a public source names the exact station row and gives explicit correction/status or grade language."
+}

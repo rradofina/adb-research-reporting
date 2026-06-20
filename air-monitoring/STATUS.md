@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -31,10 +31,11 @@ station-level monitor-grade review queue, the exact station method-evidence
 audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
-Uzbekistan endpoint-consistency check, the Indonesia/Georgia row-method source
-scan, the station-code status/method source scan, the station-grade decision
-ledger, the station-method classification audit, the BMKG operation/maintenance
-source scan, the BMKG station-specific status audit, the BMKG API
+Uzbekistan endpoint-consistency check, the Uzbekistan blocker external-context
+wall, the Indonesia/Georgia row-method source scan, the station-code
+status/method source scan, the station-grade decision ledger, the
+station-method classification audit, the BMKG operation/maintenance source
+scan, the BMKG station-specific status audit, the BMKG API
 parity/status-field check, the Georgia report-verification source scan, the
 Georgia report/export verification ladder, the Georgia verification-policy
 wall, and the Georgia report-frequency matrix honestly, and do not imply
@@ -686,6 +687,19 @@ grade-basis evidence, and catchment methods are added.
   current-status, station-method, complete-grade, and station-radius-ready rows
   at 0. Wrote `georgia-report-frequency-matrix.md` and wired a public Georgia
   report-frequency matrix.
+- **2026-06-20:** Added the Uzbekistan blocker external-context wall. New
+  source seed `source-inputs/uzbekistan-blocker-external-context-source-seed.csv`
+  and script `scripts/scan-uzbekistan-blocker-external-context.py` retrieve 4
+  public official or technical context sources outside the exact telemetry
+  pages for station IDs 107, 728, and 737. The scan writes
+  `generated/air-monitoring-uzbekistan-blocker-external-context.csv` and
+  `generated/air-monitoring-uzbekistan-blocker-external-context-summary.json`,
+  finds 4 retrieved sources, 2 blocker rows with source context, 1 Sergili
+  launch-context-only row, 1 source-level Tashkent reference-context-only row,
+  0 exact station-ID external-context rows, 0 public blocker-resolution rows,
+  0 current-status rows, 0 complete monitor-grade rows, and 0
+  station-radius-ready rows. Wrote `uzbekistan-blocker-external-context.md`
+  and wired a public launch-context-versus-closure wall.
 - **2026-06-19:** Added the BMKG API telemetry/status-field check. New source
   seed `source-inputs/bmkg-api-parity-source-seed.csv` and script
   `scripts/scan-bmkg-api-parity-status.py` follow the public BMKG Nuxt app
@@ -704,16 +718,20 @@ grade-basis evidence, and catchment methods are added.
 
 ## Next focused work
 
-1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up and
-   endpoint-consistency check now prove the exact official row blocker remains
-   unresolved across official surfaces: 107 and 737 are stale detail pages
-   whose regional rows say `Updating data`, 728 is a recent `Sergili` detail
-   page with PM2.5 equal to `-9999`, and the public API/detail/region endpoint
-   set has 3 date/status mismatches plus 2 PM2.5 mismatches. The remaining
-   AI-doable Uzbekistan work is not another broad or endpoint scrape; it is
-   public station-owner or regulator correction/status evidence that explicitly
-   resolves those exact row blockers and provides complete monitor-grade
-   classification. Keep every unresolved row outside station-radius joins.
+1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
+   endpoint-consistency check, and external-context wall now prove the exact
+   official row blocker remains unresolved across official surfaces and nearby
+   public context: 107 and 737 are stale detail pages whose regional rows say
+   `Updating data`, 728 is a recent `Sergili` detail page with PM2.5 equal to
+   `-9999`, the public API/detail/region endpoint set has 3 date/status
+   mismatches plus 2 PM2.5 mismatches, and the external-context wall retrieves
+   4 official or technical sources but finds 0 exact station-ID
+   correction/status/grade-closure rows. The remaining AI-doable Uzbekistan
+   work is not another broad scrape, endpoint scrape, or source-level context
+   scan; it is public station-owner or regulator correction/status evidence
+   that names station IDs 107, 728, or 737 and explicitly resolves those exact
+   row blockers with complete monitor-grade classification. Keep every
+   unresolved row outside station-radius joins.
 2. For the 22 BMKG rows, the station-specific status audit now proves the exact
    station-detail pages are active public display objects: 22 pages retrieved,
    22 parsed timestamp/value/category snapshots, and 22 station-page BAM method
@@ -893,6 +911,14 @@ grade-basis evidence, and catchment methods are added.
   mismatches, and 3 unresolved blocker rows. It records 0 public endpoint
   resolution rows, 0 current-status confirmed rows, 0 complete monitor-grade
   rows, and 0 station-radius-ready rows.
+- The Uzbekistan blocker external-context wall retrieves 4 public official or
+  technical context sources outside the exact telemetry endpoints, including
+  government Sergili/Uchtepa launch pages and the World Bank Tashkent
+  assessment text. It finds 2 blocker rows with source context, but only as 1
+  launch-context-only row and 1 source-level-reference-context-only row; it
+  records 0 exact station-ID external-context rows, 0 public blocker-resolution
+  rows, 0 current-status rows, 0 complete monitor-grade rows, and 0
+  station-radius-ready rows.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

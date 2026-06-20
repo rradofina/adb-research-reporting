@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-06-20T01:06:10.294Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        "statCards": 6,
+        "contextCards": 3,
+        "sourceCards": 4,
+        "stationRows": 3,
+        "gateCards": 8,
+        "downloads": 3
+      },
+      "missingText": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/uzbekistan-blocker-external-context.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        "statCards": 6,
+        "contextCards": 3,
+        "sourceCards": 4,
+        "stationRows": 3,
+        "gateCards": 8,
+        "downloads": 3
+      },
+      "missingText": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/uzbekistan-blocker-external-context.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context.csv",
+          "status": 200
+        }
+      ],
+      "overflow": {
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "offenders": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T00:45:31.422Z",
+  "generated_at": "2026-06-20T01:16:03.648Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -282,6 +282,16 @@
       "mtime": "2026-06-19T23:14:57.806Z",
       "sha256": "5c4e96d86450a8750272c70d2feb24a657422a22ae320036845fc37a5b24f078",
       "attestation_chain": null
+    },
+    {
+      "key": "air_monitoring_uzbekistan_blocker_external_context",
+      "file": "uzbekistan-blocker-external-context.md",
+      "label": "Air-monitoring Uzbekistan blocker external-context wall",
+      "size": 2208,
+      "size_human": "2.2 KB",
+      "mtime": "2026-06-20T01:00:17.665Z",
+      "sha256": "3c5a534ce888e181db9a9073233fd9b87cb8d2f3e465c8031c97da3714cf51be",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "air_monitoring_indonesia_georgia_row_method_source_scan",
@@ -748,6 +758,18 @@
       "size": 66400,
       "size_human": "64.8 KB",
       "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-blocker-external-context-summary.json",
+      "size": 17572,
+      "size_human": "17.2 KB",
+      "sha256": "7de4fb6b342acfa4248ea8f0728c2e5a5f0e629ef93f05a0a0398421bc379981"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-blocker-external-context.csv",
+      "size": 4788,
+      "size_human": "4.7 KB",
+      "sha256": "9314bdd2f8f95804d81060fa02936ec440baf5996e92c654fafac2689bfb4503"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",

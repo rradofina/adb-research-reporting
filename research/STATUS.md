@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -120,9 +120,19 @@ overrides priority by editing this list.
    finds 2 stale detail rows whose regional rows say `Updating data`, 1 recent
    `Sergili` detail row with PM2.5 equal to `-9999`, and 0 public
    blocker-resolution rows; current-status, station-method, complete-grade, and
-   station-radius-ready counts remain 0. The Indonesia/Georgia row-method
-   source scan then retrieves 29 of 29 seeded or expanded public source URLs
-   for the 38 exact PM2.5 portal/API rows, finds 22 Indonesia BMKG same-page
+   station-radius-ready counts remain 0. The Uzbekistan endpoint-consistency
+   check then retrieves 16 official API/detail/region payloads for those same
+   3 blocker rows, finds 3 date/status mismatches, 2 PM2.5 mismatches, 3
+   unresolved blocker rows, and 0 public endpoint-resolution, current-status,
+   complete-grade, or station-radius-ready rows. The Uzbekistan blocker
+   external-context wall then retrieves 4 public official or technical context
+   sources outside the exact telemetry endpoints, finds 2 blocker rows with
+   source context, but only as 1 launch-context-only row and 1
+   source-level-reference-context-only row, and keeps exact station-ID
+   external-context, public blocker-resolution, current-status, complete-grade,
+   and station-radius-ready rows at 0. The Indonesia/Georgia row-method source
+   scan then retrieves 29 of 29 seeded or expanded public source URLs for the
+   38 exact PM2.5 portal/API rows, finds 22 Indonesia BMKG same-page
    method-context candidates and 9 Georgia station-alias context candidates,
    and still keeps current-status confirmed, station-method classified,
    complete monitor-grade, and station-radius-ready rows at 0. The
@@ -184,8 +194,8 @@ overrides priority by editing this list.
    evidence for the 22 BMKG rows, a Georgia station-code verified
    report/status/method route beyond the tested policy, daily/monthly caution,
    annual server-error, and XLSX station-sheet-only surfaces, plus exact
-   station method/status/certification tables for Uzbekistan, before any
-   station-radius or catchment claim.
+   station-ID correction/status/grade records for Uzbekistan station IDs 107,
+   728, and 737, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -1075,6 +1085,25 @@ by leaving the board in a state the next session can read.
   verification labels, and keeps verified-report closure, current-status,
   station-method, complete-grade, and station-radius-ready rows at 0. The
   public route now renders a Georgia report-frequency matrix.
+- **2026-06-20 (air-monitoring Uzbekistan blocker external-context wall):**
+  Added
+  `air-monitoring/source-inputs/uzbekistan-blocker-external-context-source-seed.csv`
+  and `air-monitoring/scripts/scan-uzbekistan-blocker-external-context.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context.csv`
+  and
+  `air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json`,
+  and wrote `air-monitoring/uzbekistan-blocker-external-context.md`. The
+  networked scan tests Uzbekistan blocker station IDs 107, 728, and 737
+  against 4 public official or technical context sources outside the exact
+  telemetry endpoints, including government Sergili/Uchtepa launch pages and
+  the World Bank Tashkent assessment text. It retrieves all 4 sources, finds 2
+  blocker rows with source context, 1 launch-context-only row, 1
+  source-level-reference-context-only row, and 0 exact station-ID
+  external-context, public blocker-resolution, current-status,
+  station-method, complete-grade, or station-radius-ready rows. The public
+  route now renders a launch-context-versus-station-closure wall for the
+  unresolved Uzbekistan blockers.
 - **2026-06-19 (air-monitoring monitor-grade station-review queue):** Added
   `air-monitoring/scripts/build-monitor-grade-station-review-queue.py`,
   generated

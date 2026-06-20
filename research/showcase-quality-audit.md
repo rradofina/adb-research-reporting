@@ -1303,13 +1303,58 @@ failed requests, and no page-level horizontal overflow. Screenshots:
 `reporting-site/qa/showcase-school-source-mobile-visual.png`, and
 `reporting-site/qa/showcase-school-source-mobile-claim.png`.
 
+## 2026-06-20 — Air-monitoring Uzbekistan external-context wall
+
+Air-monitoring now adds
+`air-monitoring/generated/air-monitoring-uzbekistan-blocker-external-context-summary.json`
+to the public evidence stack for the `/showcase/air-monitoring-observability`
+prototype. The new source pass adds
+`air-monitoring/source-inputs/uzbekistan-blocker-external-context-source-seed.csv`
+and `air-monitoring/scripts/scan-uzbekistan-blocker-external-context.py`,
+generates `air-monitoring-uzbekistan-blocker-external-context.csv`, and
+writes `air-monitoring/uzbekistan-blocker-external-context.md`. It tests the
+three exact Uzbekistan blocker station IDs, 107, 728, and 737, against four
+public official or technical context sources outside the exact telemetry pages.
+
+The generated summary records 4/4 external source URLs retrieved, 3 official
+commissioning sources retrieved, 1 technical context source retrieved, 2
+blocker rows with some external context, 1 Sergili launch-context-only row, 1
+source-level Tashkent reference-context-only row, and 0 exact station-ID
+external-context rows. The same artifact keeps public blocker-resolution,
+current-status, station-method, complete-grade, and station-radius-ready rows
+at 0. The UI now presents this as context that explains the station-network
+environment, not as evidence that resolves the `Updating data` rows or the
+`-9999` PM2.5 sentinel.
+
+Verification in this pass reran the Uzbekistan external-context script, synced
+public evidence and references, built the reporting site, ran the showcase
+verifier and deterministic repository gates, and browser-checked desktop
+1440x1100 plus mobile 390x1000. Browser QA found 6 stat cards, 3 context
+cards, 4 source cards, 3 station rows, 8 evidence-gate cards, 3 working
+download links, no missing required text, no console errors, no request
+failures, no page or section overflow, and no overflowing children. Raw
+element captures showed the sticky site header because of the QA scroll
+operation, so visual inspection used header-hidden clean crops:
+`reporting-site/qa/showcase-air-uzbekistan-external-desktop-section-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-desktop-sources-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-desktop-rows-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-desktop-gates-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-mobile-section-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-mobile-sources-clean.png`,
+`reporting-site/qa/showcase-air-uzbekistan-external-mobile-rows-clean.png`,
+and
+`reporting-site/qa/showcase-air-uzbekistan-external-mobile-gates-clean.png`.
+
 ## Next deepening order
 
-1. Air-monitoring observability, because the station-coordinate source pass is
-   now public and the next source upgrade is concrete: resolve the
-   one-signal queue with public crosswalk or method documentation, deepen
-   non-Bangladesh monitor-grade validation, and only then add a declared
-   catchment denominator.
+1. Air-monitoring observability, because the source walls now identify the
+   exact closure gaps: Uzbekistan needs station-ID correction/status/grade
+   records for IDs 107, 728, and 737; BMKG needs station-specific
+   inspection/calibration/status or official grade-basis evidence beyond
+   station-page telemetry; Georgia needs a verified station-code
+   report/status/method route beyond the tested caution and export surfaces.
+   Only after those closures should the program add station-radius or
+   catchment denominators.
 2. PSDQ source disagreement remains strong but owner-gated: source-owner
    clarification or human review is needed for the unresolved Durgapur
    same-name cross-district coordinate conflict and shared-coordinate

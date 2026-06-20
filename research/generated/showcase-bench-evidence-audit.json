@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T00:47:47.178Z",
+  "generated_at": "2026-06-20T01:15:45.130Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 406,
-    "browserChecks": 33
+    "screenshots": 414,
+    "browserChecks": 34
   },
   "summary": {
     "reports_total": 20,
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/georgia-report-frequency-matrix.md",
+      "evidencePath": "air-monitoring/uzbekistan-blocker-external-context.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",
@@ -163,7 +163,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "For BMKG, move beyond visible station-page telemetry by finding station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, and XLSX station-sheet-only exports; for Uzbekistan, find an official correction/status/grade record that resolves the exact endpoint disagreements before any catchment denominator is promoted."
+      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source that names station IDs 107, 728, or 737 with correction/status/calibration or grade-basis closure; for BMKG, move beyond visible station-page telemetry by finding station-specific inspection logs, calibration certificates, status records, or grade-basis evidence; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, and XLSX station-sheet-only exports before any catchment denominator is promoted."
     },
     {
       "id": 7,

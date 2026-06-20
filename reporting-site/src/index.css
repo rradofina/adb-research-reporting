@@ -12743,6 +12743,12 @@
       #ffffff;
   }
 
+  .air-uzb-external-section {
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.12), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
   .air-uzb-current-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
@@ -12778,6 +12784,11 @@
     background: #eef8fb;
   }
 
+  .air-uzb-external-section .air-uzb-current-callout {
+    border-left-color: #5a8227;
+    background: #f3f8eb;
+  }
+
   .air-uzb-current-callout span,
   .air-uzb-current-stat-grid span,
   .air-uzb-current-age span,
@@ -12811,12 +12822,18 @@
     color: #005f89;
   }
 
+  .air-uzb-external-section .air-uzb-current-callout strong {
+    color: #3f6316;
+  }
+
   .air-uzb-current-callout p,
   .air-uzb-current-age p,
   .air-uzb-current-row p,
   .air-uzb-current-gate p,
   .air-uzb-endpoint-mismatch p,
-  .air-uzb-endpoint-row p {
+  .air-uzb-endpoint-row p,
+  .air-uzb-external-context p,
+  .air-uzb-external-source p {
     margin: 0;
     color: var(--ink-soft);
     font-size: var(--type-copy-sm);
@@ -12856,6 +12873,10 @@
 
   .air-uzb-endpoint-section .air-uzb-current-stat-grid > div {
     border-top-color: #005f89;
+  }
+
+  .air-uzb-external-section .air-uzb-current-stat-grid > div {
+    border-top-color: #5a8227;
   }
 
   .air-uzb-current-stat-grid strong {
@@ -13001,6 +13022,74 @@
     gap: 0.75rem;
   }
 
+  .air-uzb-external-context-grid,
+  .air-uzb-external-source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-uzb-external-context,
+  .air-uzb-external-source {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #5a8227;
+    background: #ffffff;
+  }
+
+  .air-uzb-external-context-id {
+    border-top-color: #9b2226;
+  }
+
+  .air-uzb-external-context-reference {
+    border-top-color: #fbb00e;
+  }
+
+  .air-uzb-external-context > div:first-child,
+  .air-uzb-external-source > div:first-child {
+    display: grid;
+    gap: 0.28rem;
+    min-width: 0;
+  }
+
+  .air-uzb-external-context span,
+  .air-uzb-external-source span {
+    min-width: 0;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-external-context strong,
+  .air-uzb-external-source strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-external-section .air-uzb-current-track {
+    background: #e2ecd4;
+  }
+
+  .air-uzb-external-section .air-uzb-current-track i {
+    background: #5a8227;
+  }
+
+  .air-uzb-external-context-id .air-uzb-current-track i {
+    background: #9b2226;
+  }
+
+  .air-uzb-external-context-reference .air-uzb-current-track i {
+    background: #fbb00e;
+  }
+
   .air-uzb-endpoint-mismatch {
     display: grid;
     grid-template-rows: auto auto minmax(2.8rem, 1fr);
@@ -13084,6 +13173,10 @@
 
   .air-uzb-blocker-row {
     border-left-color: #9b2226;
+  }
+
+  .air-uzb-external-row {
+    border-left-color: #5a8227;
   }
 
   .air-uzb-blocker-row small {
@@ -13170,6 +13263,13 @@
     margin: 0;
   }
 
+  .air-uzb-external-source dl {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
   .air-uzb-current-row dt {
     color: var(--ink-faint);
     font-size: 0.68rem;
@@ -13178,6 +13278,13 @@
   }
 
   .air-uzb-endpoint-row dt {
+    color: var(--ink-faint);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .air-uzb-external-source dt {
     color: var(--ink-faint);
     font-size: 0.68rem;
     text-transform: uppercase;
@@ -13200,6 +13307,26 @@
     font-size: 0.82rem;
     font-weight: 800;
     overflow-wrap: anywhere;
+  }
+
+  .air-uzb-external-source dd {
+    margin: 0.1rem 0 0;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-external-source a {
+    color: var(--crimson);
+    font-size: var(--type-copy-sm);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-uzb-external-source a:hover {
+    text-decoration: underline;
   }
 
   .air-uzb-current-gate {

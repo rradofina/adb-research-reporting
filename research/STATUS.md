@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and Georgia NEA station network/launch source scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -227,7 +227,13 @@ overrides priority by editing this list.
    the same 16 station codes, retrieves 12 valid daily/monthly payloads,
    records 12 annual server-error probes, finds 8 HTML/PDF not-verified
    payloads, 4 XLSX station-sheet exports without verification labels, and 0
-   verified closure routes. Next AI-doable loop is
+   verified closure routes. The Georgia NEA station network/launch source scan
+   then retrieves 8 official National Environmental Agency current-network or
+   station-launch pages, adds official city/source context to 15 rows, launch
+   context to 13 rows, current-network city context to 15 rows, and PM2.5 or
+   standard-equipment context to 15 rows, while keeping station-code rows,
+   verified-report closure, current-status, calibration-status, complete-grade,
+   and station-radius-ready rows at 0. Next AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry,
    regional analysis context, the BMKG CEWS dashboard status wall,
    source-level BMKG standards/SOP/tariff/PPID/report context, public
@@ -236,7 +242,8 @@ overrides priority by editing this list.
    station-specific inspection/calibration/status/certificate evidence for the
    BMKG rows, a Georgia station-code verified
    report/status/method route beyond the tested policy, daily/monthly caution,
-   annual server-error, and XLSX station-sheet-only surfaces, plus exact
+   annual server-error, XLSX station-sheet-only surfaces, and NEA city-level
+   network/launch context, plus exact
    station-ID correction/status/grade records for Uzbekistan station IDs 107,
    728, and 737, before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
@@ -1243,6 +1250,28 @@ by leaving the board in a state the next session can read.
   verification labels, and keeps verified-report closure, current-status,
   station-method, complete-grade, and station-radius-ready rows at 0. The
   public route now renders a Georgia report-frequency matrix.
+- **2026-06-20 (air-monitoring Georgia NEA station network/launch source
+  scan):** Added
+  `air-monitoring/source-inputs/georgia-station-network-launch-source-seed.csv`
+  and
+  `air-monitoring/scripts/scan-georgia-station-network-launch-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json`,
+  and wrote
+  `air-monitoring/georgia-station-network-launch-source-scan.md`. The
+  networked scan retrieves 8 official National Environmental Agency
+  current-network or station-launch pages, adds official city/source context
+  to 15 of the 16 Georgia target station-code rows, launch context to 13 rows,
+  current-network city context to 15 rows, PM2.5 or standard-equipment context
+  to 15 rows, and keeps station-code rows, verified-report closure,
+  current-status, calibration-status, complete-grade, and station-radius-ready
+  rows at 0. The public route now renders a Georgia NEA network/launch wall.
+  Browser QA passed at 1440x1100 and 390x1000 with 6 stat cards, 9 city cards,
+  3 decision lanes, 16 row cards, 8 source cards, 8 gate cards, 3 working
+  download links, no page errors, no bad HTTP responses, no overflowing
+  children, and no page or section overflow.
 - **2026-06-20 (air-monitoring Uzbekistan blocker external-context wall):**
   Added
   `air-monitoring/source-inputs/uzbekistan-blocker-external-context-source-seed.csv`

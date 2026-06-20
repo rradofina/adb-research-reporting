@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T04:11:25.007Z",
+  "generated_at": "2026-06-20T04:45:50.328Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -454,6 +454,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_georgia_station_network_launch_source_scan",
+      "file": "georgia-station-network-launch-source-scan.md",
+      "label": "Air-monitoring Georgia station network/launch source scan",
+      "size": 6287,
+      "size_human": "6.1 KB",
+      "mtime": "2026-06-20T04:45:27.137Z",
+      "sha256": "4b8682c064c456f8a598f2f6b7dd052e3cecfec566bc28235ca91becf79a211a",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
@@ -640,6 +650,18 @@
       "size": 17605,
       "size_human": "17.2 KB",
       "sha256": "2db75da8fa272872fd6e1c3952f21292456afa5946d77159111366086d1c571d"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json",
+      "size": 26163,
+      "size_human": "25.5 KB",
+      "sha256": "1d784a55b199a3f74f3857e9e4916ceb00bf6c3a137872979008492cb988d35e"
+    },
+    {
+      "file": "generated/air-monitoring-georgia-station-network-launch-source-scan.csv",
+      "size": 17931,
+      "size_human": "17.5 KB",
+      "sha256": "c7b3848fcee760cc25400fa623ea8273f02322fc511a1726f9f39d3d96554b91"
     },
     {
       "file": "generated/air-monitoring-georgia-verification-policy-summary.json",

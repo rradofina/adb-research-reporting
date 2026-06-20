@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -40,7 +40,8 @@ parity/status-field check, the BMKG regional status/source scan, the BMKG
 dashboard current-status source scan, the BMKG grade-basis source scan, the BMKG
 station public-context source scan, the BMKG installation/audit source scan, the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
-the Georgia verification-policy wall, and the Georgia report-frequency matrix honestly, and do not imply
+the Georgia verification-policy wall, the Georgia report-frequency matrix, and
+the Georgia NEA station network/launch source scan honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
@@ -689,6 +690,35 @@ grade-basis evidence, and catchment methods are added.
   current-status, station-method, complete-grade, and station-radius-ready rows
   at 0. Wrote `georgia-report-frequency-matrix.md` and wired a public Georgia
   report-frequency matrix.
+- **2026-06-20:** Added the Georgia NEA station network/launch source scan.
+  New source seed
+  `source-inputs/georgia-station-network-launch-source-seed.csv` and script
+  `scripts/scan-georgia-station-network-launch-sources.py` retrieve 8 official
+  National Environmental Agency current-network or station-launch pages for
+  the 16 Georgia target station-code rows. The pass writes
+  `generated/air-monitoring-georgia-station-network-launch-source-scan.csv`
+  and
+  `generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json`,
+  finds 8 of 8 source pages retrieved, 15 rows with official city or
+  source-context evidence, 13 launch-context rows, 15 current-network
+  city-context rows, 15 PM2.5 or standard-equipment context rows, 0 station
+  code rows in this source family, and 0 verified-report closure,
+  current-status, calibration-status, complete-grade, or station-radius-ready
+  rows. Wrote `georgia-station-network-launch-source-scan.md` and wired a
+  public Georgia NEA network/launch wall. Browser QA at 1440x1100 and
+  390x1000 confirmed 6 stat cards, 9 city cards, 3 decision lanes, 16 row
+  cards, 8 source cards, 8 gate cards, 3 working download links, required
+  text visible, no page errors, no bad HTTP responses, no overflowing
+  children, and no page or section overflow. Screenshots were written at
+  `reporting-site/qa/showcase-air-georgia-network-desktop-section-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-desktop-rows-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-desktop-sources-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-desktop-gates-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-mobile-section-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-mobile-rows-clean.png`,
+  `reporting-site/qa/showcase-air-georgia-network-mobile-sources-clean.png`,
+  and
+  `reporting-site/qa/showcase-air-georgia-network-mobile-gates-clean.png`.
 - **2026-06-20:** Added the Uzbekistan blocker external-context wall. New
   source seed `source-inputs/uzbekistan-blocker-external-context-source-seed.csv`
   and script `scripts/scan-uzbekistan-blocker-external-context.py` retrieve 4
@@ -857,8 +887,9 @@ grade-basis evidence, and catchment methods are added.
    that names exact BMKG station IDs or station names and gives row-level
    inspection, calibration certificate/status, or explicit grade evidence.
 3. For the 16 Georgia rows, use the report-verification scan, the
-   report/export ladder, the verification-policy wall, and the report-frequency
-   matrix as the source-targeting wall. The policy note says live
+   report/export ladder, the verification-policy wall, the report-frequency
+   matrix, and the NEA station network/launch source scan as the
+   source-targeting wall. The policy note says live
    automatic-station data are not verified and that verified data are available
    in reports; the ladder then finds all 16 target station codes and PM2.5 in
    24 official monthly report pages from 2026-05 back to 2024-06, but all 24
@@ -867,11 +898,16 @@ grade-basis evidence, and catchment methods are added.
    not-verified footer. The frequency matrix adds daily and annual checks:
    daily HTML/PDF routes repeat the caution, daily/monthly XLSX exports expose
    target station sheets without verification labels, and annual routes return
-   server-error pages for tested date formats. The next useful source is
+   server-error pages for tested date formats. The NEA scan then retrieves 8
+   official current-network or station-launch pages, adds official city or
+   source context to 15 rows, launch context to 13 rows, and PM2.5 or
+   standard-equipment context to 15 rows, but still finds 0 station-code,
+   status, calibration, grade, or radius-ready closures. The next useful source is
    therefore not another policy page, daily/monthly report-page scrape, annual
-   route format probe, or XLSX export check; it is a verified source, station
-   method/status table, calibration/status record, or regulator document that
-   names exact station codes without that caution.
+   route format probe, XLSX export check, or city-level NEA launch/network
+   page; it is a verified source, station method/status table,
+   calibration/status record, or regulator document that names exact station
+   codes without that caution.
 4. For the 22 BMKG rows now carrying operation/maintenance context,
    station-page display snapshots, dashboard current-status context,
    source-level grade-basis context, public station/deployment context, and
@@ -1035,6 +1071,14 @@ grade-basis evidence, and catchment methods are added.
   target station sheets but 0 verification labels, and keeps verified-report
   closure, current-status, station-method, complete-grade, and
   station-radius-ready counts at 0.
+- The Georgia NEA station network/launch source scan retrieves 8 official
+  National Environmental Agency current-network or station-launch pages,
+  records 15 rows with official city/source context, 13 launch-context rows,
+  15 current-network city-context rows, and 15 PM2.5 or standard-equipment
+  context rows. It still records 0 station-code rows in this source family,
+  0 verified-report closure rows, 0 current-status rows, 0 calibration-status
+  rows, 0 complete-grade rows, and 0 station-radius-ready rows. City-level
+  station-owner context is not station-code verification or grade evidence.
 - The Uzbekistan station current/method scan confirms that the 28 exact-row
   instrument-hint station IDs still appear in the public API with HORIBA
   markers, but 22 target rows have API reading dates older than 365 days and 13

@@ -352,6 +352,16 @@
       ],
       "notes": "Georgia report-frequency verification matrix for the 16 Georgia target station codes. It probes 24 official air.gov.ge daily, monthly, and annual HTML/XLSX/PDF report routes, retrieves 12 valid daily/monthly report or export payloads, records 12 annual server-error route probes, 8 HTML/PDF payloads retaining not-verified labels, 4 XLSX exports with all target station sheets but 0 verification labels, and keeps verified-report closure, current-status confirmed, complete-grade, and station-radius-ready rows at zero."
     },
+    "air_monitoring_georgia_station_network_launch_source_scan": {
+      "script": "air-monitoring/scripts/scan-georgia-station-network-launch-sources.py",
+      "seed": "air-monitoring/source-inputs/georgia-station-network-launch-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_georgia_report_frequency_matrix",
+        "air_monitoring_station_method_classification_audit"
+      ],
+      "notes": "Georgia NEA station network and launch source scan for the 16 Georgia target station-code rows. It retrieves 8 official National Environmental Agency current-network or station-launch pages, adds official city or source context to 15 rows, launch context to 13 rows, current-network city context to 15 rows, PM2.5 or standard-equipment context to 15 rows, and keeps station-code rows, verified-report closure, current-status, calibration-status, complete-grade, and station-radius-ready rows at zero."
+    },
     "gdis_geocoded_disasters_1960_2018": {
       "name": "Geocoded Disasters (GDIS) Dataset, 1960-2018",
       "nasa_dataset_page": "https://data.nasa.gov/dataset/geocoded-disasters-gdis-dataset",
@@ -769,6 +779,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_georgia_report_frequency_matrix pin after probing 24 official Georgia daily, monthly, and annual HTML/XLSX/PDF report routes, finding 8 HTML/PDF not-verified payloads, 4 XLSX station-sheet exports without verification labels, 12 annual server-error probes, and 0 verified closure routes."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_georgia_station_network_launch_source_scan pin after retrieving 8 official NEA current-network or station-launch pages for the 16 Georgia target station-code rows, adding 15 city/source-context rows and 13 launch-context rows while keeping station-code/status/calibration/complete-grade/radius closure at zero."
     },
     {
       "date": "2026-06-20",

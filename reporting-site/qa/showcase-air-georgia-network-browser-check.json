@@ -1,0 +1,248 @@
+{
+  "generated_at": "2026-06-20T04:42:43.212Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "expected": {
+    "statCards": 6,
+    "cityCards": 9,
+    "decisionLanes": 3,
+    "rowCards": 16,
+    "sourceCards": 8,
+    "gateCards": 8,
+    "downloads": 3
+  },
+  "results": [
+    {
+      "viewportName": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "sectionPresent": true,
+      "requiredText": {
+        "15": true,
+        "georgia nea network/launch scan": true,
+        "official launch pages add context. station codes still do not close.": true,
+        "closure rows": true,
+        "8 / 8": true,
+        "station-code queue": true,
+        "network/launch note": true,
+        "summary json": true,
+        "row csv": true
+      },
+      "counts": {
+        "statCards": 6,
+        "cityCards": 9,
+        "decisionLanes": 3,
+        "rowCards": 16,
+        "sourceCards": 8,
+        "gateCards": 8,
+        "downloads": 3
+      },
+      "overflow": [
+        {
+          "selector": "body",
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-section",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-stat-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-city-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-decision-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-row-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-source-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-gate-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        }
+      ],
+      "childOverflow": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-station-network-launch-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleOutput": [
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected."
+      ],
+      "pageErrorOutput": [],
+      "requestOutput": [
+        "[81800.996] GET http://127.0.0.1:5176/programs/air-monitoring/georgia-station-network-launch-source-scan.md (Fetch) 200",
+        "[81800.997] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json (Fetch) 200",
+        "[81800.998] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv (Fetch) 200"
+      ],
+      "failures": []
+    },
+    {
+      "viewportName": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "sectionPresent": true,
+      "requiredText": {
+        "15": true,
+        "georgia nea network/launch scan": true,
+        "official launch pages add context. station codes still do not close.": true,
+        "closure rows": true,
+        "8 / 8": true,
+        "station-code queue": true,
+        "network/launch note": true,
+        "summary json": true,
+        "row csv": true
+      },
+      "counts": {
+        "statCards": 6,
+        "cityCards": 9,
+        "decisionLanes": 3,
+        "rowCards": 16,
+        "sourceCards": 8,
+        "gateCards": 8,
+        "downloads": 3
+      },
+      "overflow": [
+        {
+          "selector": "body",
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-section",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-stat-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-city-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-decision-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-row-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-source-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        },
+        {
+          "selector": ".air-georgia-network-gate-grid",
+          "scrollWidth": 327,
+          "clientWidth": 327,
+          "overflow": false
+        }
+      ],
+      "childOverflow": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/georgia-station-network-launch-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleOutput": [
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected.",
+        "[debug] [vite] connected."
+      ],
+      "pageErrorOutput": [],
+      "requestOutput": [
+        "[81800.1152] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json (Fetch) 200",
+        "[81800.1153] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan-summary.json (Fetch) 200",
+        "[81800.1154] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json (Fetch) 200",
+        "[81800.1155] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-export-ladder-summary.json (Fetch) 200",
+        "[81800.1156] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-verification-policy-summary.json (Fetch) 200",
+        "[81800.1157] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-report-frequency-matrix-summary.json (Fetch) 200",
+        "[81800.1158] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json (Fetch) 200",
+        "[81800.1159] GET http://127.0.0.1:5176/programs/air-monitoring/georgia-station-network-launch-source-scan.md (Fetch) 200",
+        "[81800.1160] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json (Fetch) 200",
+        "[81800.1161] GET http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv (Fetch) 200"
+      ],
+      "failures": []
+    }
+  ],
+  "screenshots": [
+    "showcase-air-georgia-network-desktop-section-clean.png",
+    "showcase-air-georgia-network-desktop-rows-clean.png",
+    "showcase-air-georgia-network-desktop-sources-clean.png",
+    "showcase-air-georgia-network-desktop-gates-clean.png",
+    "showcase-air-georgia-network-mobile-section-clean.png",
+    "showcase-air-georgia-network-mobile-rows-clean.png",
+    "showcase-air-georgia-network-mobile-sources-clean.png",
+    "showcase-air-georgia-network-mobile-gates-clean.png"
+  ],
+  "pass": true
+}

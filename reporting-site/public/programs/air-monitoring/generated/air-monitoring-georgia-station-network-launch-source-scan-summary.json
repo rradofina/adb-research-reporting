@@ -1,0 +1,644 @@
+{
+  "generated_at": "2026-06-20T04:44:54Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_georgia_station_network_launch_source_scan",
+  "method": "air_monitoring_georgia_station_network_launch_source_scan_v1",
+  "goal_level": "L3 Georgia NEA station network/launch source scan",
+  "source_scope": "Official National Environmental Agency current-network and station-launch pages for the 16 Georgia station-code rows.",
+  "source_inputs": [
+    {
+      "path": "source-inputs\\georgia-station-network-launch-source-seed.csv",
+      "role": "official Georgia NEA network and station-launch source seed"
+    },
+    {
+      "path": "generated\\air-monitoring-station-method-classification-audit.csv",
+      "role": "16 Georgia rows from the station-method classification audit"
+    }
+  ],
+  "coverage_counts": {
+    "target_georgia_rows": 16,
+    "source_records": 8,
+    "source_records_retrieved": 8,
+    "current_network_source_records": 1,
+    "launch_source_records": 7,
+    "rows_with_public_source_context": 15,
+    "rows_with_launch_source_context": 13,
+    "rows_with_current_network_city_context": 15,
+    "rows_with_standard_or_pm25_context": 15,
+    "rows_with_pm25_pollutant_context": 15,
+    "rows_with_station_name_or_address_context": 2,
+    "rows_with_station_code_in_source": 0,
+    "verified_report_closure_available_rows": 0,
+    "current_status_confirmed_rows": 0,
+    "station_method_classified_rows": 0,
+    "calibration_status_available_rows": 0,
+    "complete_monitor_grade_classification_rows": 0,
+    "station_radius_grade_assumption_ready_rows": 0
+  },
+  "decision_counts": [
+    {
+      "decision": "city_launch_current_network_method_context_keep_open",
+      "rows": 13
+    },
+    {
+      "decision": "current_network_city_context_without_station_code",
+      "rows": 2
+    },
+    {
+      "decision": "no_station_owner_context_found_keep_open",
+      "rows": 1
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "available",
+      "gate": "Official NEA source pages retrieved",
+      "rows": 8,
+      "reader_use": "The scan retrieves the seeded NEA current-network and launch pages."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Station-city public context",
+      "rows": 15,
+      "reader_use": "Rows with a city or station-name/address match in the official source family."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Launch source context",
+      "rows": 13,
+      "reader_use": "Rows whose target city appears in a station-launch source."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Current network city context",
+      "rows": 15,
+      "reader_use": "Rows whose target city appears in the current network expansion source."
+    },
+    {
+      "status": "partly_available",
+      "gate": "PM2.5 or standard-equipment context",
+      "rows": 15,
+      "reader_use": "Rows with source-level PM2.5, standard equipment, or continuous-monitoring context."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Station-code source context",
+      "rows": 0,
+      "reader_use": "The NEA news pages do not provide exact station-code closure for the target rows."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Verified report/status/calibration closure",
+      "rows": 0,
+      "reader_use": "No station-specific verified report, calibration, inspection, current-status, or certificate row is found."
+    },
+    {
+      "status": "not_ready",
+      "gate": "Complete monitor-grade and radius readiness",
+      "rows": 0,
+      "reader_use": "City-level source context cannot support complete-grade or station-radius assumptions."
+    }
+  ],
+  "city_rows": [
+    {
+      "target_city": "Akhaltsikhe",
+      "target_rows": 1,
+      "public_source_context_rows": 1,
+      "launch_source_context_rows": 1,
+      "current_network_city_context_rows": 1,
+      "standard_or_pm25_context_rows": 1,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Batumi",
+      "target_rows": 2,
+      "public_source_context_rows": 2,
+      "launch_source_context_rows": 2,
+      "current_network_city_context_rows": 2,
+      "standard_or_pm25_context_rows": 2,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Kutaisi",
+      "target_rows": 2,
+      "public_source_context_rows": 2,
+      "launch_source_context_rows": 2,
+      "current_network_city_context_rows": 2,
+      "standard_or_pm25_context_rows": 2,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Mestia",
+      "target_rows": 1,
+      "public_source_context_rows": 1,
+      "launch_source_context_rows": 1,
+      "current_network_city_context_rows": 1,
+      "standard_or_pm25_context_rows": 1,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Rustavi",
+      "target_rows": 2,
+      "public_source_context_rows": 2,
+      "launch_source_context_rows": 0,
+      "current_network_city_context_rows": 2,
+      "standard_or_pm25_context_rows": 2,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Tazakendi",
+      "target_rows": 1,
+      "public_source_context_rows": 0,
+      "launch_source_context_rows": 0,
+      "current_network_city_context_rows": 0,
+      "standard_or_pm25_context_rows": 0,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Tbilisi",
+      "target_rows": 5,
+      "public_source_context_rows": 5,
+      "launch_source_context_rows": 5,
+      "current_network_city_context_rows": 5,
+      "standard_or_pm25_context_rows": 5,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Telavi",
+      "target_rows": 1,
+      "public_source_context_rows": 1,
+      "launch_source_context_rows": 1,
+      "current_network_city_context_rows": 1,
+      "standard_or_pm25_context_rows": 1,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    },
+    {
+      "target_city": "Zugdidi",
+      "target_rows": 1,
+      "public_source_context_rows": 1,
+      "launch_source_context_rows": 1,
+      "current_network_city_context_rows": 1,
+      "standard_or_pm25_context_rows": 1,
+      "station_code_context_rows": 0,
+      "complete_grade_rows": 0
+    }
+  ],
+  "display_rows": [
+    {
+      "source_station_id": "ORN08",
+      "source_station_name": "Akhaltsikhe-Aspindza Street №18",
+      "target_city": "Akhaltsikhe",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "BTUM",
+      "source_station_name": "Batumi - T. Abuseridze Street №1",
+      "target_city": "Batumi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN03",
+      "source_station_name": "Batumi - Batumi Central Park, 6 May Park",
+      "target_city": "Batumi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "KUTS",
+      "source_station_name": "Kutaisi - Lado Asatiani St.№98",
+      "target_city": "Kutaisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN04",
+      "source_station_name": "Kutaisi-Ninoshvili Street and D.Aghmashenebeli Ave.",
+      "target_city": "Kutaisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN06",
+      "source_station_name": "Mestia town",
+      "target_city": "Mestia",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN02",
+      "source_station_name": "Rustavi - Friendship Ave. №35a",
+      "target_city": "Rustavi",
+      "launch_source_context": false,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "current_network_city_context_without_station_code",
+      "reader_use": "A current network page names the city, but the evidence is not station-code specific."
+    },
+    {
+      "source_station_id": "RST18",
+      "source_station_name": "Rustavi - Batumi Street No. 19",
+      "target_city": "Rustavi",
+      "launch_source_context": false,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "current_network_city_context_without_station_code",
+      "reader_use": "A current network page names the city, but the evidence is not station-code specific."
+    },
+    {
+      "source_station_id": "AGMS",
+      "source_station_name": "Tbilisi - Davit Agmashenebeli Ave. № 73a",
+      "target_city": "Tbilisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "KZBG",
+      "source_station_name": "Tbilisi - Kazbegi Ave. near Vaso Godziashvili Garden",
+      "target_city": "Tbilisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN01",
+      "source_station_name": "Tbilisi - Marshal Gelovani Avenue №34",
+      "target_city": "Tbilisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "TSRT",
+      "source_station_name": "Tbilisi - Akaki Tsereteli ave. №105",
+      "target_city": "Tbilisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "VRKT",
+      "source_station_name": "Tbilisi - Varketili 3, IIIa m/d, near №325",
+      "target_city": "Tbilisi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN07",
+      "source_station_name": "Telavi-Kvirike Didi Street №43",
+      "target_city": "Telavi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "ORN05",
+      "source_station_name": "Zugdidi - Rustaveli Street №192",
+      "target_city": "Zugdidi",
+      "launch_source_context": true,
+      "current_network_city_context": true,
+      "city_level_standard_equipment_context": true,
+      "station_code_in_source": false,
+      "network_launch_decision": "city_launch_current_network_method_context_keep_open",
+      "reader_use": "Official NEA sources support launch/current network and method context at the city or network level, but not station-code status or grade closure."
+    },
+    {
+      "source_station_id": "01005",
+      "source_station_name": "Tazakendi (working in test mode)",
+      "target_city": "Tazakendi",
+      "launch_source_context": false,
+      "current_network_city_context": false,
+      "city_level_standard_equipment_context": false,
+      "station_code_in_source": false,
+      "network_launch_decision": "no_station_owner_context_found_keep_open",
+      "reader_use": "The seeded NEA source family does not name this target station city, station code, or address term."
+    }
+  ],
+  "source_records": [
+    {
+      "source_key": "nea_network_expansion_2026",
+      "source_name": "NEA 2026 atmospheric air-quality monitoring network expansion",
+      "source_role": "current_network_context",
+      "url": "https://nea.gov.ge/En/News/2379",
+      "final_url": "https://nea.gov.ge/En/News/2379",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 33065,
+      "sha256": "406eab898aac076834c1b252e28fe0ff72a16eec6df35df8e5e388fb4be2d1a8",
+      "matched_expected_terms": [
+        "National Environmental Agency",
+        "air quality monitoring stations",
+        "air.gov.ge"
+      ],
+      "matched_city_terms": [
+        "Tbilisi",
+        "Rustavi",
+        "Batumi",
+        "Kutaisi",
+        "Telavi",
+        "Akhaltsikhe",
+        "Mestia",
+        "Zugdidi"
+      ],
+      "matched_method_terms": [
+        "PM10",
+        "PM2.5",
+        "standard-compliant instruments",
+        "continuous monitoring"
+      ],
+      "matched_current_terms": [
+        "Currently",
+        "operate across Georgia",
+        "available online"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA news page used as current source-level network and city-context evidence. It names monitoring cities and pollutants but does not name station codes."
+    },
+    {
+      "source_key": "nea_tbilisi_station_2023",
+      "source_name": "NEA additional automatic station in Tbilisi 2023",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1215",
+      "final_url": "https://nea.gov.ge/En/News/1215",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 36013,
+      "sha256": "5d4618e65d79f6f71f10863edf45b32192ac47f7cd93f78d64f22d331d5c4537",
+      "matched_expected_terms": [
+        "automatic station",
+        "Tbilisi",
+        "air.gov.ge"
+      ],
+      "matched_city_terms": [
+        "Tbilisi"
+      ],
+      "matched_method_terms": [
+        "modern air quality monitoring station",
+        "appropriate monitoring system"
+      ],
+      "matched_current_terms": [
+        "opened",
+        "added"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for an added Tbilisi automatic station. It gives city-level context only; it is not station-code closure."
+    },
+    {
+      "source_key": "nea_akhaltsikhe_launch_2024",
+      "source_name": "NEA automatic station inaugurated in Akhaltsikhe 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1239",
+      "final_url": "https://nea.gov.ge/En/News/1239",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 35768,
+      "sha256": "0ededed3bbaf9a8023d01de554e7fd5b9631efe396ef09436d609b7ceed4c040",
+      "matched_expected_terms": [
+        "automatic station",
+        "Akhaltsikhe",
+        "air quality monitoring network"
+      ],
+      "matched_city_terms": [
+        "Akhaltsikhe"
+      ],
+      "matched_method_terms": [
+        "EU directives",
+        "mobile and stationary stations"
+      ],
+      "matched_current_terms": [
+        "Starting today",
+        "receive air quality data",
+        "transparent and open"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for Akhaltsikhe city context. It does not expose the ORN08 station code or a calibration/status record."
+    },
+    {
+      "source_key": "nea_batumi_launch_2024",
+      "source_name": "NEA ambient air-quality monitoring station inaugurated in Batumi 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1240",
+      "final_url": "https://nea.gov.ge/En/News/1240",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 36181,
+      "sha256": "fc491887f9d6de3e01062fb091be032e5fd2f6448658eda202041cd90992a223",
+      "matched_expected_terms": [
+        "automatic station",
+        "Batumi",
+        "air quality monitoring network"
+      ],
+      "matched_city_terms": [
+        "Batumi"
+      ],
+      "matched_method_terms": [
+        "automatic station",
+        "monitoring network"
+      ],
+      "matched_current_terms": [
+        "currently operational",
+        "gradually become available"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for Batumi city context. It does not distinguish BTUM from ORN03 or provide station-code status closure."
+    },
+    {
+      "source_key": "nea_kutaisi_launch_2024",
+      "source_name": "NEA automatic station inaugurated in Kutaisi 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1241",
+      "final_url": "https://nea.gov.ge/En/News/1241",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 36171,
+      "sha256": "336f72aafaedf88152c76e2e06fa8e33efe27adef7a9f5ca5a908b5981991875",
+      "matched_expected_terms": [
+        "automatic ambient air quality monitoring station",
+        "Kutaisi",
+        "air.gov.ge"
+      ],
+      "matched_city_terms": [
+        "Kutaisi"
+      ],
+      "matched_method_terms": [
+        "automatic",
+        "air quality monitoring network",
+        "monitoring station"
+      ],
+      "matched_current_terms": [
+        "operational",
+        "gradually become available"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for Kutaisi city context. It does not distinguish KUTS from ORN04 or provide station-code status closure."
+    },
+    {
+      "source_key": "nea_zugdidi_launch_2024",
+      "source_name": "NEA modern station inaugurated in Zugdidi 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1243",
+      "final_url": "https://nea.gov.ge/En/News/1243",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34896,
+      "sha256": "7e49dc08f95c45d4419b493c471703fc166ce97a8fcd9d6adca744348e3bac12",
+      "matched_expected_terms": [
+        "automatic station",
+        "Zugdidi",
+        "air.gov.ge"
+      ],
+      "matched_city_terms": [
+        "Zugdidi"
+      ],
+      "matched_method_terms": [
+        "automatic station",
+        "air quality monitoring network"
+      ],
+      "matched_current_terms": [
+        "operating throughout the country",
+        "made available on the portal"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for the Zugdidi monitoring station. It gives station-city context but does not expose ORN05 code, verification, calibration, or current status."
+    },
+    {
+      "source_key": "nea_telavi_launch_2024",
+      "source_name": "NEA modern station inaugurated in Telavi 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1249",
+      "final_url": "https://nea.gov.ge/En/News/1249",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 36708,
+      "sha256": "58a9cf462962ab4de8b11591c72c798c57bb173b7e0c7e50e7c0a59d2a74d057",
+      "matched_expected_terms": [
+        "automatic station",
+        "Telavi",
+        "PM2.5"
+      ],
+      "matched_city_terms": [
+        "Telavi"
+      ],
+      "matched_method_terms": [
+        "modern standard devices",
+        "PM10",
+        "PM2.5",
+        "24 hours"
+      ],
+      "matched_current_terms": [
+        "monitoring network"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for the Telavi monitoring station. It names standard devices and PM2.5 but does not expose ORN07 code, verification, calibration, or current status."
+    },
+    {
+      "source_key": "nea_mestia_launch_2024",
+      "source_name": "NEA modern station opened in Mestia 2024",
+      "source_role": "station_launch_context",
+      "url": "https://nea.gov.ge/En/News/1287",
+      "final_url": "https://nea.gov.ge/En/News/1287",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieval_bytes": 34524,
+      "sha256": "f1b8bdeeef2fc9de7b4cf2743d04050f0cc4a14b4d02fae22710833fa31a4779",
+      "matched_expected_terms": [
+        "automatic station",
+        "Mestia",
+        "PM2.5"
+      ],
+      "matched_city_terms": [
+        "Mestia"
+      ],
+      "matched_method_terms": [
+        "modern standard equipment",
+        "PM10",
+        "PM2.5",
+        "24 hours"
+      ],
+      "matched_current_terms": [
+        "operating throughout the country",
+        "published on the portal"
+      ],
+      "matched_caution_terms": [],
+      "retrieval_error": "",
+      "source_note": "Official NEA launch page for the Mestia monitoring station. It names equipment and PM2.5 but does not expose ORN06 code, verification, calibration, or current status."
+    }
+  ],
+  "outputs": {
+    "csv": "generated\\air-monitoring-georgia-station-network-launch-source-scan.csv",
+    "summary_json": "generated\\air-monitoring-georgia-station-network-launch-source-scan-summary.json",
+    "note": "georgia-station-network-launch-source-scan.md"
+  },
+  "non_claim": "This scan records official Georgia NEA network and station-launch source context. It does not certify station-code verification, current station status, calibration status, complete monitor-grade classification, same-station OpenAQ joins, or station-radius readiness."
+}

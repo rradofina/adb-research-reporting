@@ -2593,6 +2593,91 @@ interface GeorgiaReportFrequencySummary {
   non_claim: string;
 }
 
+interface GeorgiaNetworkLaunchGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface GeorgiaNetworkLaunchDecision {
+  decision: string;
+  rows: number;
+}
+
+interface GeorgiaNetworkLaunchCityRow {
+  target_city: string;
+  target_rows: number;
+  public_source_context_rows: number;
+  launch_source_context_rows: number;
+  current_network_city_context_rows: number;
+  standard_or_pm25_context_rows: number;
+  station_code_context_rows: number;
+  complete_grade_rows: number;
+}
+
+interface GeorgiaNetworkLaunchDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  target_city: string;
+  launch_source_context: boolean;
+  current_network_city_context: boolean;
+  city_level_standard_equipment_context: boolean;
+  station_code_in_source: boolean;
+  network_launch_decision: string;
+  reader_use: string;
+}
+
+interface GeorgiaNetworkLaunchSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: number;
+  retrieval_bytes: number;
+  matched_city_terms: string[];
+  matched_method_terms: string[];
+  matched_current_terms: string[];
+  source_note: string;
+}
+
+interface GeorgiaNetworkLaunchSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_georgia_rows: number;
+    source_records: number;
+    source_records_retrieved: number;
+    current_network_source_records: number;
+    launch_source_records: number;
+    rows_with_public_source_context: number;
+    rows_with_launch_source_context: number;
+    rows_with_current_network_city_context: number;
+    rows_with_standard_or_pm25_context: number;
+    rows_with_pm25_pollutant_context: number;
+    rows_with_station_name_or_address_context: number;
+    rows_with_station_code_in_source: number;
+    verified_report_closure_available_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: GeorgiaNetworkLaunchDecision[];
+  evidence_gate_counts: GeorgiaNetworkLaunchGate[];
+  city_rows: GeorgiaNetworkLaunchCityRow[];
+  display_rows: GeorgiaNetworkLaunchDisplayRow[];
+  source_records: GeorgiaNetworkLaunchSourceRecord[];
+  non_claim: string;
+}
+
 interface MonitorGradeCountryRow {
   iso3: string;
   iso2: string;
@@ -2751,6 +2836,8 @@ export default function ShowcaseAirMonitoring() {
     useState<GeorgiaVerificationPolicySummary | null>(null);
   const [georgiaReportFrequency, setGeorgiaReportFrequency] =
     useState<GeorgiaReportFrequencySummary | null>(null);
+  const [georgiaNetworkLaunch, setGeorgiaNetworkLaunch] =
+    useState<GeorgiaNetworkLaunchSummary | null>(null);
   const [monitorGrade, setMonitorGrade] = useState<MonitorGradeSummary | null>(null);
   const [mode, setMode] = useState<AirMode>("concentration");
   const [focusIso, setFocusIso] = useState("PNG");
@@ -3239,6 +3326,26 @@ export default function ShowcaseAirMonitoring() {
     };
   }, []);
 
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Georgia station network launch source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setGeorgiaNetworkLaunch(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const zeroRows = deepening?.part_a_concentration.rows ?? [];
   const residualRows =
     deepening?.part_b_confound.gdp_partial.top_positive_residuals_more_people_per_monitor_than_gdp_predicts ?? [];
@@ -3406,6 +3513,8 @@ export default function ShowcaseAirMonitoring() {
       <AirGeorgiaVerificationPolicyPanel summary={georgiaVerificationPolicy} />
 
       <AirGeorgiaReportFrequencyPanel summary={georgiaReportFrequency} />
+
+      <AirGeorgiaNetworkLaunchPanel summary={georgiaNetworkLaunch} />
 
       <AirMonitorGradePanel summary={monitorGrade} />
 
@@ -9302,6 +9411,209 @@ function AirGeorgiaReportFrequencyPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading Georgia report-frequency matrix...</p>
+      )}
+    </section>
+  );
+}
+
+function AirGeorgiaNetworkLaunchPanel({
+  summary,
+}: {
+  summary: GeorgiaNetworkLaunchSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const cities = summary?.city_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const closureRows =
+    (counts?.verified_report_closure_available_rows ?? 0) +
+    (counts?.current_status_confirmed_rows ?? 0) +
+    (counts?.calibration_status_available_rows ?? 0) +
+    (counts?.complete_monitor_grade_classification_rows ?? 0);
+
+  return (
+    <section className="showcase-section air-grade-method-section air-georgia-network-section" aria-label="Georgia station network and launch source scan">
+      <div className="air-grade-method-head air-georgia-network-head">
+        <div>
+          <p className="kicker kicker-crimson">Georgia NEA network/launch scan</p>
+          <h2>Official launch pages add context. Station codes still do not close.</h2>
+          <p>
+            After the report-frequency matrix kept Georgia verification open,
+            this pass checks NEA network and station-launch pages. The sources
+            improve public station-owner context for named cities, but they do
+            not provide station-code verification, calibration, or current-status
+            records.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-georgia-network-callout">
+          <span>Closure rows</span>
+          <strong>{formatNumber(closureRows)}</strong>
+          <p>city-level context is not complete monitor-grade evidence</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-georgia-network-stat-grid">
+            <div>
+              <span>NEA sources</span>
+              <strong>{formatNumber(counts.source_records_retrieved)} / {formatNumber(counts.source_records)}</strong>
+              <em>network and launch pages</em>
+            </div>
+            <div>
+              <span>Georgia rows</span>
+              <strong>{formatNumber(counts.target_georgia_rows)}</strong>
+              <em>station-code queue</em>
+            </div>
+            <div>
+              <span>Public context</span>
+              <strong>{formatNumber(counts.rows_with_public_source_context)}</strong>
+              <em>city or source context</em>
+            </div>
+            <div>
+              <span>Launch context</span>
+              <strong>{formatNumber(counts.rows_with_launch_source_context)}</strong>
+              <em>station-city launches</em>
+            </div>
+            <div>
+              <span>Current network</span>
+              <strong>{formatNumber(counts.rows_with_current_network_city_context)}</strong>
+              <em>city-level only</em>
+            </div>
+            <div>
+              <span>Station codes</span>
+              <strong>{formatNumber(counts.rows_with_station_code_in_source)}</strong>
+              <em>no source-code closure</em>
+            </div>
+          </div>
+
+          <div className="air-georgia-network-city-grid" aria-label="Georgia city-level source bridge">
+            {cities.map((row) => (
+              <article key={row.target_city} className={row.complete_grade_rows ? "air-georgia-network-city air-georgia-network-city-ready" : "air-georgia-network-city"}>
+                <div>
+                  <span>{row.target_city}</span>
+                  <strong>{formatNumber(row.target_rows)} rows</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Context</dt>
+                    <dd>{formatNumber(row.public_source_context_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Launch</dt>
+                    <dd>{formatNumber(row.launch_source_context_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Current</dt>
+                    <dd>{formatNumber(row.current_network_city_context_rows)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{formatNumber(row.complete_grade_rows)}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-bridge air-georgia-network-decision-grid" aria-label="Georgia NEA network launch decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-georgia-network-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-georgia-network-track">
+                  <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-network-row-grid" aria-label="Georgia station network target rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-georgia-network-row">
+                <div>
+                  <span>{row.target_city}</span>
+                  <strong>{row.source_station_id}</strong>
+                </div>
+                <p>{row.source_station_name}</p>
+                <dl>
+                  <div>
+                    <dt>Launch</dt>
+                    <dd>{row.launch_source_context ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Network</dt>
+                    <dd>{row.current_network_city_context ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5/std</dt>
+                    <dd>{row.city_level_standard_equipment_context ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Code</dt>
+                    <dd>{row.station_code_in_source ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-georgia-network-source-grid" aria-label="Georgia NEA network launch source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={`air-georgia-network-source air-georgia-network-source-${source.source_role}`}>
+                <div>
+                  <span>{source.source_role.replaceAll("_", " ")}</span>
+                  <strong>{source.source_name}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>HTTP</dt>
+                    <dd>{formatNumber(source.http_status)}</dd>
+                  </div>
+                  <div>
+                    <dt>Cities</dt>
+                    <dd>{formatNumber(source.matched_city_terms.length)}</dd>
+                  </div>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(source.matched_method_terms.length)}</dd>
+                  </div>
+                  <div>
+                    <dt>Current</dt>
+                    <dd>{formatNumber(source.matched_current_terms.length)}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-georgia-network-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-georgia-network-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-georgia-network-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/georgia-station-network-launch-source-scan.md">Network/launch note</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan-summary.json">Summary JSON</a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-georgia-station-network-launch-source-scan.csv">Row CSV</a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading Georgia station network/launch source scan...</p>
       )}
     </section>
   );

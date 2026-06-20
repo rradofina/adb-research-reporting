@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, explicit station current-status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/grade-basis documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -36,7 +36,8 @@ wall, the Indonesia/Georgia row-method source scan, the station-code
 status/method source scan, the station-grade decision ledger, the
 station-method classification audit, the BMKG operation/maintenance source
 scan, the BMKG station-specific status audit, the BMKG API
-parity/status-field check, the BMKG regional status/source scan, the Georgia
+parity/status-field check, the BMKG regional status/source scan, the BMKG
+dashboard current-status source scan, the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, and the Georgia report-frequency matrix honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
@@ -736,6 +737,21 @@ grade-basis evidence, and catchment methods are added.
   text, no overflow, no console errors, no page errors, and no request
   failures. Screenshots were refreshed under
   `reporting-site/qa/showcase-air-bmkg-regional-*-clean.png`.
+- **2026-06-20:** Added the BMKG dashboard current-status source scan. Source
+  seed `source-inputs/bmkg-dashboard-status-source-seed.csv` and script
+  `scripts/scan-bmkg-dashboard-status-sources.py` retrieve the official BMKG
+  climate-information parent page and embedded CEWS PM2.5 dashboard HTML. The
+  scan writes
+  `generated/air-monitoring-bmkg-dashboard-status-source-scan.csv` and
+  `generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json`,
+  parses 26 dashboard locations from the public `dashboardData` object, matches
+  all 22 target BMKG rows, records 22 current dashboard timestamps, 21 current
+  `ONLINE` rows, 1 current `DELAYED` row for Pekanbaru, 21 positive latest
+  PM2.5 rows, and 2,640 target time-series observations. It keeps
+  station-specific inspection logs, calibration-certificate/status, complete
+  monitor-grade, and station-radius-ready rows at 0. Wrote
+  `bmkg-dashboard-status-source-scan.md` and wired a public BMKG dashboard
+  status wall.
 
 ## Next focused work
 
@@ -755,16 +771,16 @@ grade-basis evidence, and catchment methods are added.
    unresolved row outside station-radius joins.
 2. For the 22 BMKG rows, the station-specific status audit proves the exact
    station-detail pages are active public display objects, the API parity check
-   proves those fields remain telemetry-only, and the regional status/source
-   scan now retrieves 10 public sources, closes current status for exactly 1
-   row, Banjarbaru (`pm25_bjb2`), and adds station/site context for Kemayoran,
-   Bengkulu, Musi 2 Palembang, and Mempawah without closing their status or
-   grade gates. The pass still closes 0 inspection-log,
+   proves those fields remain telemetry-only, the regional status/source scan
+   closes current status for Banjarbaru only, and the CEWS dashboard scan now
+   matches all 22 target rows with 21 current `ONLINE` dashboard rows and 1
+   current `DELAYED` Pekanbaru row. The BMKG current-status wall is therefore
+   mostly closed at dashboard level, but the pass still closes 0 inspection-log,
    calibration-certificate/status, complete-grade, or station-radius-ready
-   rows. The next useful source is therefore not another BMKG station-detail,
-   PM2.5 API scrape, or generic regional analysis page; it is public
+   rows. The next useful source is not another BMKG station-detail, PM2.5 API
+   scrape, dashboard refresh, or generic regional analysis page; it is public
    station-owner or regulator evidence that names exact BMKG station IDs or
-   station names and provides inspection, calibration, current-status, or
+   station names and provides inspection, calibration, calibration-status, or
    grade-basis evidence.
 3. For the 16 Georgia rows, use the report-verification scan, the
    report/export ladder, the verification-policy wall, and the report-frequency
@@ -882,6 +898,14 @@ grade-basis evidence, and catchment methods are added.
   pass, while keeping station-specific inspection logs,
   calibration-certificate/status, complete monitor-grade rows, and
   station-radius-ready rows at 0.
+- The BMKG dashboard current-status source scan retrieves the official BMKG
+  climate-information parent page and embedded CEWS PM2.5 dashboard, parses 26
+  dashboard locations, matches all 22 target rows, and records 21 current
+  `ONLINE` target rows plus 1 current `DELAYED` Pekanbaru row. This mostly
+  closes the BMKG current dashboard-status question, but it still records 0
+  station-specific inspection logs, 0 calibration-certificate/status rows, 0
+  complete monitor-grade rows, and 0 station-radius-ready rows. Dashboard
+  status is not grade or calibration evidence.
 - The Georgia report-verification source scan retrieves the official May 2026
   `air.gov.ge` monthly report route, AQI method note, and monitoring-network
   catalog, finds all 16 target station codes and PM2.5 report rows, but records

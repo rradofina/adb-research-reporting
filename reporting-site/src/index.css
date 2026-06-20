@@ -12128,6 +12128,142 @@
     overflow-wrap: anywhere;
   }
 
+  .air-bmkg-dashboard-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.12), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-bmkg-dashboard-callout {
+    border-left-color: #007db8;
+    background: #eef8fc;
+  }
+
+  .air-bmkg-dashboard-stat-grid > div,
+  .air-bmkg-dashboard-lane,
+  .air-bmkg-dashboard-gate {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-dashboard-track {
+    background: #dceff7;
+  }
+
+  .air-bmkg-dashboard-track i {
+    background: linear-gradient(90deg, #007db8, #5a8227);
+  }
+
+  .air-bmkg-dashboard-status-wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-dashboard-tile {
+    display: grid;
+    gap: 0.6rem;
+    min-width: 0;
+    padding: 0.78rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #fbb00e;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .air-bmkg-dashboard-tile-online {
+    border-left-color: #5a8227;
+    background: #f7fbf1;
+  }
+
+  .air-bmkg-dashboard-tile-delayed {
+    border-left-color: #fbb00e;
+    background: #fff9e8;
+  }
+
+  .air-bmkg-dashboard-tile > div:first-child {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-dashboard-tile span,
+  .air-bmkg-dashboard-tile dt,
+  .air-bmkg-dashboard-source-grid span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-dashboard-tile strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-dashboard-tile b,
+  .air-bmkg-dashboard-tile dd,
+  .air-bmkg-dashboard-tile em,
+  .air-bmkg-dashboard-source-grid em {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-dashboard-tile dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-dashboard-tile dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
+  .air-bmkg-dashboard-tile p,
+  .air-bmkg-dashboard-source-grid p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-dashboard-source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-dashboard-source-grid article {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.8rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #d7dee4;
+    background: #ffffff;
+  }
+
+  .air-bmkg-dashboard-source-grid article.air-bmkg-dashboard-source-matched {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-dashboard-source-grid strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.88rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -13913,6 +14049,11 @@
     .air-bmkg-regional-evidence-wall,
     .air-bmkg-regional-gate-grid,
     .air-bmkg-regional-source-grid,
+    .air-bmkg-dashboard-stat-grid,
+    .air-bmkg-dashboard-bridge,
+    .air-bmkg-dashboard-status-wall,
+    .air-bmkg-dashboard-gate-grid,
+    .air-bmkg-dashboard-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -13963,6 +14104,7 @@
     .air-bmkg-status-head,
     .air-bmkg-api-head,
     .air-bmkg-regional-head,
+    .air-bmkg-dashboard-head,
     .air-bmkg-status-value-wall,
     .air-bmkg-api-field-wall,
     .air-georgia-report-head,
@@ -15345,6 +15487,11 @@
     .air-bmkg-regional-evidence-wall,
     .air-bmkg-regional-gate-grid,
     .air-bmkg-regional-source-grid,
+    .air-bmkg-dashboard-stat-grid,
+    .air-bmkg-dashboard-bridge,
+    .air-bmkg-dashboard-status-wall,
+    .air-bmkg-dashboard-gate-grid,
+    .air-bmkg-dashboard-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15423,6 +15570,9 @@
     .air-bmkg-regional-lane,
     .air-bmkg-regional-row,
     .air-bmkg-regional-gate,
+    .air-bmkg-dashboard-lane,
+    .air-bmkg-dashboard-tile,
+    .air-bmkg-dashboard-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -15462,6 +15612,7 @@
     .air-bmkg-status-head,
     .air-bmkg-api-head,
     .air-bmkg-regional-head,
+    .air-bmkg-dashboard-head,
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,

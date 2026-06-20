@@ -1997,6 +1997,95 @@ interface BmkgRegionalStatusSummary {
   non_claim: string;
 }
 
+interface BmkgDashboardStatusGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgDashboardStatusDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgDashboardStatusDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  dashboard_location_key: string;
+  dashboard_location_found: boolean;
+  dashboard_status_raw: string;
+  dashboard_timestamp_raw: string;
+  dashboard_timestamp_iso: string;
+  dashboard_timestamp_age_hours: number | string;
+  dashboard_timestamp_current_within_30_days: boolean;
+  dashboard_pm25_ug_m3: number | string;
+  dashboard_category_raw: string;
+  dashboard_latitude: number | string;
+  dashboard_longitude: number | string;
+  dashboard_timeseries_points: number;
+  dashboard_positive_observation_count: number;
+  dashboard_zero_observation_count: number;
+  dashboard_last_label: string;
+  explicit_dashboard_online: boolean;
+  explicit_dashboard_delayed: boolean;
+  current_status_confirmed: boolean;
+  complete_monitor_grade_classification_available: boolean;
+  station_radius_grade_assumption_ready: boolean;
+  dashboard_status_decision: string;
+  reader_use: string;
+}
+
+interface BmkgDashboardStatusSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  retrieval_bytes: number;
+  matched_expected_terms: string;
+  dashboard_location_count: number | string;
+  matched_target_station_rows: number;
+  retrieval_error: string;
+  source_note: string;
+}
+
+interface BmkgDashboardStatusSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    dashboard_source_urls_seeded: number;
+    dashboard_source_urls_retrieved: number;
+    official_parent_page_sources_retrieved: number;
+    official_dashboard_data_sources_retrieved: number;
+    dashboard_locations_total: number;
+    target_dashboard_location_rows: number;
+    target_dashboard_current_timestamp_rows: number;
+    target_dashboard_online_rows: number;
+    target_dashboard_delayed_rows: number;
+    current_status_confirmed_rows: number;
+    target_latest_positive_pm25_rows: number;
+    target_timeseries_observation_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgDashboardStatusDecision[];
+  evidence_gate_counts: BmkgDashboardStatusGate[];
+  display_rows: BmkgDashboardStatusDisplayRow[];
+  source_records: BmkgDashboardStatusSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2422,6 +2511,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgApiParitySummary | null>(null);
   const [bmkgRegionalStatus, setBmkgRegionalStatus] =
     useState<BmkgRegionalStatusSummary | null>(null);
+  const [bmkgDashboardStatus, setBmkgDashboardStatus] =
+    useState<BmkgDashboardStatusSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -2761,6 +2852,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG dashboard status source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgDashboardStatus(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -2989,6 +3100,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgApiParityPanel summary={bmkgApiParity} />
 
       <AirBmkgRegionalStatusPanel summary={bmkgRegionalStatus} />
+
+      <AirBmkgDashboardStatusPanel summary={bmkgDashboardStatus} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -7541,6 +7654,170 @@ function AirBmkgRegionalStatusPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG regional status source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgDashboardStatusPanel({
+  summary,
+}: {
+  summary: BmkgDashboardStatusSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-dashboard-section" aria-label="BMKG dashboard current-status source scan">
+      <div className="air-grade-method-head air-bmkg-dashboard-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG dashboard status scan</p>
+          <h2>The status wall moves, but the grade wall does not.</h2>
+          <p>
+            The official BMKG climate-information page embeds a CEWS PM2.5
+            dashboard with a public data object. This scan matches every target
+            BMKG row to that dashboard, closes current dashboard status for the
+            ONLINE rows, and keeps calibration, grade, and radius evidence open.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-dashboard-callout">
+          <span>Current ONLINE rows</span>
+          <strong>{formatNumber(counts?.current_status_confirmed_rows ?? 0)}</strong>
+          <p>Pekanbaru remains a current DELAYED caution row.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-dashboard-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.dashboard_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.dashboard_source_urls_seeded)} parent/dashboard routes</em>
+            </div>
+            <div>
+              <span>Dashboard locations</span>
+              <strong>{formatNumber(counts.dashboard_locations_total)}</strong>
+              <em>public CEWS PM2.5 locations</em>
+            </div>
+            <div>
+              <span>Target rows matched</span>
+              <strong>{formatNumber(counts.target_dashboard_location_rows)}</strong>
+              <em>of {formatNumber(counts.target_bmkg_rows)} BMKG rows</em>
+            </div>
+            <div>
+              <span>Current DELAYED</span>
+              <strong>{formatNumber(counts.target_dashboard_delayed_rows)}</strong>
+              <em>visible but not current-online</em>
+            </div>
+            <div>
+              <span>Series observations</span>
+              <strong>{formatNumber(counts.target_timeseries_observation_rows)}</strong>
+              <em>dashboard points across target rows</em>
+            </div>
+            <div>
+              <span>Calibration certificates</span>
+              <strong>{formatNumber(counts.station_specific_calibration_certificate_rows)}</strong>
+              <em>still absent from dashboard fields</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-dashboard-bridge" aria-label="BMKG dashboard status scan decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-dashboard-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-dashboard-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-dashboard-status-wall" aria-label="BMKG dashboard status rows">
+            {rows.map((row) => (
+              <article
+                key={row.source_station_id}
+                className={`air-bmkg-dashboard-tile ${row.current_status_confirmed ? "air-bmkg-dashboard-tile-online" : "air-bmkg-dashboard-tile-delayed"}`}
+              >
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.dashboard_location_key || row.source_station_name}</strong>
+                  <b>{row.dashboard_status_raw || "not found"}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{formatNumber(Number(row.dashboard_pm25_ug_m3), 1)}</dd>
+                  </div>
+                  <div>
+                    <dt>Category</dt>
+                    <dd>{row.dashboard_category_raw || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>Points</dt>
+                    <dd>{formatNumber(row.dashboard_timeseries_points)}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{row.complete_monitor_grade_classification_available ? "closed" : "open"}</dd>
+                  </div>
+                </dl>
+                <p>
+                  Latest dashboard timestamp: {row.dashboard_timestamp_raw || "n/a"}; last series label {row.dashboard_last_label || "n/a"}.
+                </p>
+                <em>{row.reader_use}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-dashboard-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-dashboard-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-dashboard-source-grid" aria-label="BMKG dashboard source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={source.matched_target_station_rows > 0 ? "air-bmkg-dashboard-source-matched" : ""}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_role)}</span>
+                  <strong>{sentenceCaseStatus(source.source_key)}</strong>
+                </div>
+                <p>{source.source_name}</p>
+                <em>
+                  HTTP {source.http_status || "n/a"} · {formatNumber(source.matched_target_station_rows)} target rows · {source.retrieved ? "retrieved" : "not retrieved"}
+                </em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-dashboard-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-dashboard-status-source-scan.md" download>
+              Dashboard status note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG dashboard status source scan...</p>
       )}
     </section>
   );

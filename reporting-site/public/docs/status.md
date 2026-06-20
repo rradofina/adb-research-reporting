@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level method/current-status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/grade-basis sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -176,7 +176,12 @@ overrides priority by editing this list.
    regional-analysis context rows, confirms 1 Banjarbaru row with official
    regional `ONLINE` status and recent timestamp, and still keeps
    inspection-log, calibration-certificate/status, complete-grade, and
-   station-radius-ready rows at 0.
+   station-radius-ready rows at 0. The BMKG dashboard current-status source
+   scan then retrieves the official BMKG climate-information parent page and
+   CEWS PM2.5 dashboard, parses 26 dashboard locations, matches all 22 target
+   rows, records 21 current `ONLINE` dashboard rows, 1 current `DELAYED`
+   Pekanbaru row, and still keeps inspection-log, calibration-certificate/status,
+   complete-grade, and station-radius-ready rows at 0.
    The Georgia report-verification source scan then retrieves the official May
    2026 `air.gov.ge` monthly report route, AQI method note, and monitoring
    network catalog, finds all 16 target station codes and PM2.5 report rows,
@@ -202,9 +207,9 @@ overrides priority by editing this list.
    payloads, 4 XLSX station-sheet exports without verification labels, and 0
    verified closure routes. Next AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry,
-   regional analysis context, and the one Banjarbaru regional status closure:
+   regional analysis context, and the BMKG CEWS dashboard status wall:
    station-specific inspection/calibration/status and official grade-basis
-   evidence for the remaining BMKG rows, a Georgia station-code verified
+   evidence for the BMKG rows, a Georgia station-code verified
    report/status/method route beyond the tested policy, daily/monthly caution,
    annual server-error, and XLSX station-sheet-only surfaces, plus exact
    station-ID correction/status/grade records for Uzbekistan station IDs 107,
@@ -1039,6 +1044,27 @@ by leaving the board in a state the next session can read.
   working download links, no missing required text, no overflow, no console
   errors, no page errors, and no request failures. Screenshots were refreshed
   under `reporting-site/qa/showcase-air-bmkg-regional-*-clean.png`.
+- **2026-06-20 (air-monitoring BMKG dashboard current-status scan):**
+  Added `air-monitoring/source-inputs/bmkg-dashboard-status-source-seed.csv`
+  and `air-monitoring/scripts/scan-bmkg-dashboard-status-sources.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json`,
+  and wrote `air-monitoring/bmkg-dashboard-status-source-scan.md`. The
+  networked scan retrieves the official BMKG climate-information parent page
+  and embedded CEWS PM2.5 dashboard, parses 26 dashboard locations from the
+  public `dashboardData` object, matches all 22 target BMKG rows, records 22
+  current timestamps, 21 current `ONLINE` dashboard rows, 1 current `DELAYED`
+  Pekanbaru row, 21 positive latest PM2.5 rows, and 2,640 target time-series
+  observations, while keeping inspection-log, calibration-certificate/status,
+  complete monitor-grade, and station-radius-ready rows at 0. Production build
+  passed with the existing chunk-size warning. Focused Playwright QA passed at
+  1440x1100 and 390x1000 with 6 stat cards, 2 decision lanes, 22 status tiles,
+  10 gate cards, 2 source cards, 3 working download links, no missing required
+  text, no overflow, no console errors, no page errors, and no request
+  failures. Screenshots were written under
+  `reporting-site/qa/showcase-air-bmkg-dashboard-*-clean.png`.
 - **2026-06-19 (air-monitoring Georgia report-verification source scan):**
   Added `air-monitoring/scripts/scan-georgia-report-verification-sources.py`,
   generated

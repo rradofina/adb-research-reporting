@@ -39,7 +39,7 @@ candidates before adding new surfaces.
 | 3 | Shock-payment rails after disasters | L2 prototype | Public disaster, payment-use, and social-protection proxies are concept-separated | Needs payment-channel metadata and emergency-transfer validation | Add payment-channel source scan and vintage checks |
 | 4 | PSDQ source disagreement | L3 candidate | Mature PSDQ spine plus a formal BGD source-disagreement L3 module with ratio strata, validation residues, a 20-upazila validation sample, an automated coded screen, an AI public-source review ledger, an 8-row candidate-resolution pass, a richer public-source tag scan, a 23-row coordinate-repair triage, a 40-row public-map-gap triage, a 40-row row-evidence ledger, a 40-row targeted public-map inspection packet, a 12-row first-source pass, a 40-row public-source confirmation pass, a 16-row public-source decision ledger, a 3-row possible same-facility review, a 9-row priority name-conflict review, a 6-row lower-priority name-conflict spot check, a 115-upazila zero-OSM observability review, a 39-row human-gated handoff matrix, a 39-row blank human-validation worksheet, a 39-row AI closure audit, a 10-stage evidence ladder, a 4-row source-repair public-evidence attachment, a 4-row official-coordinate evidence pass, a 4-row public-explanation search, a 3-row correction-record follow-up, a 3-row no-contact clarification packet, and a 3-row registry-vintage review | Needs owner-only source-owner contact or human validation for possible same-facility candidates, priority and lower-priority name-conflict candidates, zero-OSM facility-row absence decisions, the Durgapur same-name cross-district coordinate conflict, and shared-coordinate Narayanganj records before stronger access-map use | Owner-only source-owner contact or human location validation remains the substantive source-repair, same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM wall |
 | 5 | Remittance corridors after flow weighting | L3 candidate | Flow-weighting L3 module directly repairs a current flagship claim and now has rebuilt packet/site/gate/CDP verification | Needs owner-led human-final validation and non-public transaction or central-bank validation before stronger public use | Validate corridor rows against central-bank or transaction sources where available |
-| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, metadata-readiness, OpenAQ station metadata, regulator-source discovery, official station extraction, official/OpenAQ reconciliation, candidate review/public-evidence/source scans, one-signal review, monitor-grade evidence/source-validation/station-review walls, exact station method-evidence, Uzbekistan station-specific/status/blocker and endpoint-consistency walls, Indonesia/Georgia method/status scans, station-grade and method-classification audits, a BMKG operation/maintenance wall, a BMKG station-specific status audit with 22 parsed station display snapshots and 0 certificate/status closures, a BMKG API field wall with 22 detail routes and 0 status/certificate fields, a 10-source BMKG regional status/analysis wall with 5 station/site context rows but only 1 current-status closure, a Georgia report-verification wall, a 24-month Georgia report/export ladder, a 5-source Georgia verification-policy bridge, and a 24-probe Georgia report-frequency matrix make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, station-level complete monitor-grade classification, explicit station status/method documentation, verified Georgia report/status evidence, and gridded population/PM2.5 denominators before station-radius or catchment language | Search station-owner/regulator documentation that explicitly states current operating status, calibration/status records, station-specific certification, or exact correction/status notes beyond BMKG station-page/API telemetry, Uzhydromet endpoint disagreement, BMKG regional analysis context, and official regional/detail pages; for Georgia, move beyond the official policy note, daily/monthly caution routes, annual server-error probes, and XLSX station-sheet-only exports to find a verified export or station method/status table before any catchment denominator is promoted |
+| 6 | Air-monitoring observability | L3 candidate | Deepening artifacts, bespoke visuals, metadata-readiness, OpenAQ station metadata, regulator-source discovery, official station extraction, official/OpenAQ reconciliation, candidate review/public-evidence/source scans, one-signal review, monitor-grade evidence/source-validation/station-review walls, exact station method-evidence, Uzbekistan station-specific/status/blocker and endpoint-consistency walls, Indonesia/Georgia method/status scans, station-grade and method-classification audits, a BMKG operation/maintenance wall, a BMKG station-specific status audit with 22 parsed station display snapshots and 0 certificate/status closures, a BMKG API field wall with 22 detail routes and 0 status/certificate fields, a 10-source BMKG regional status/analysis wall with 5 station/site context rows but only 1 regional current-status closure, a BMKG dashboard current-status wall with all 22 target rows matched, 21 current ONLINE rows, and 1 current DELAYED Pekanbaru row while keeping inspection/calibration/complete-grade/radius rows at 0, a Georgia report-verification wall, a 24-month Georgia report/export ladder, a 5-source Georgia verification-policy bridge, and a 24-probe Georgia report-frequency matrix make the monitoring observability gap and remaining evidence gates legible | Needs validated station crosswalks, station-level complete monitor-grade classification, station-specific calibration/inspection/grade-basis documentation, verified Georgia report/status evidence, and gridded population/PM2.5 denominators before station-radius or catchment language | Search station-owner/regulator documentation that explicitly states inspection logs, calibration/status records, station-specific certification, or exact grade-basis notes beyond BMKG station-page/API/dashboard telemetry and BMKG regional analysis context; for Georgia, move beyond the official policy note, daily/monthly caution routes, annual server-error probes, and XLSX station-sheet-only exports to find a verified export or station method/status table before any catchment denominator is promoted |
 | 7 | Access map-completeness audit | L3 candidate | Registry comparison artifacts and source-audit visuals show when OSM access maps are incomplete | Needs more registry joins and travel-time/catchment denominator | Extend official registry joins and add public friction validation |
 | 8 | Disaster metric falsification | L3 candidate | Alternate EM-DAT burden metrics visibly break the original pair | Needs event-level recovery curves and exposure denominator | Build recovery-lag source plan before reusing the hook |
 | 9 | Power-fuel concentration audit | Evidence audit | Capacity-versus-generation bridge now has a public World Bank reliability-proxy source wall | Needs direct outage, reserve-margin, dispatch, seasonal generation, or heat-stress evidence | Choose high-concentration rows and search for regulator outage or dispatch records beyond the proxy wall |
@@ -1383,14 +1383,53 @@ Screenshots were refreshed at:
 `reporting-site/qa/showcase-air-bmkg-regional-mobile-sources-clean.png`, and
 `reporting-site/qa/showcase-air-bmkg-regional-mobile-gates-clean.png`.
 
+## 2026-06-20 — Air-monitoring BMKG dashboard current-status gate
+
+Air-monitoring now adds
+`air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json`
+to the public evidence stack for `/showcase/air-monitoring-observability`.
+The new source pass adds
+`air-monitoring/source-inputs/bmkg-dashboard-status-source-seed.csv` and
+`air-monitoring/scripts/scan-bmkg-dashboard-status-sources.py`, generates
+`air-monitoring-bmkg-dashboard-status-source-scan.csv`, and writes
+`air-monitoring/bmkg-dashboard-status-source-scan.md`.
+
+The generated summary records 22 BMKG target rows, 2/2 official BMKG
+parent/dashboard source URLs retrieved, 26 dashboard locations parsed from the
+public CEWS `dashboardData` object, all 22 target rows matched to dashboard
+locations, 22 current dashboard timestamps, 21 current `ONLINE` rows, 1 current
+`DELAYED` Pekanbaru row, 21 positive latest PM2.5 rows, and 2,640 target
+time-series observations. The same artifact keeps station-specific inspection
+logs, calibration-certificate/status, complete monitor-grade, and
+station-radius-ready rows at 0. This moves the BMKG current-status evidence
+wall, but it does not move grade or radius readiness.
+
+Verification in this pass ran `py_compile`, reran the BMKG dashboard-status
+source scan, synced public evidence and docs through the reporting-site build,
+and browser-checked desktop 1440x1100 plus mobile 390x1000. Browser QA found
+6 stat cards, 2 decision lanes, 22 status tiles, 10 gate cards, 2 source cards,
+3 working download links, no missing required text, no console errors, no page
+errors, no request failures, no overflowing children, and no page or section
+overflow. The screenshot pass hides the sticky site header only during capture
+so the saved QA images are clean. Screenshots were written at:
+`reporting-site/qa/showcase-air-bmkg-dashboard-desktop-section-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-desktop-status-wall-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-desktop-sources-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-desktop-gates-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-mobile-section-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-mobile-status-wall-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-dashboard-mobile-sources-clean.png`, and
+`reporting-site/qa/showcase-air-bmkg-dashboard-mobile-gates-clean.png`.
+
 ## Next deepening order
 
 1. Air-monitoring observability, because the source walls now identify the
    exact closure gaps: Uzbekistan needs station-ID correction/status/grade
-   records for IDs 107, 728, and 737; BMKG now has one regional current-status
-   closure for Banjarbaru plus context rows for Kemayoran, Bengkulu, Musi 2
-   Palembang, and Mempawah, but still needs station-specific inspection,
-   calibration, or official grade-basis evidence for complete-grade promotion;
+   records for IDs 107, 728, and 737; BMKG now has a CEWS dashboard
+   current-status wall with 21 current `ONLINE` target rows and 1 current
+   `DELAYED` Pekanbaru row, but still needs station-specific inspection,
+   calibration, calibration-status, or official grade-basis evidence for
+   complete-grade promotion;
    Georgia needs a verified station-code report/status/method route beyond the
    tested caution and export surfaces. Only after those closures should the
    program add station-radius or catchment denominators.

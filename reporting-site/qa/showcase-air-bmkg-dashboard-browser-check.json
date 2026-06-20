@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-06-20T02:33:42.053Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "expected": {
+    "statCards": 6,
+    "decisionLanes": 2,
+    "statusTiles": 22,
+    "gateCards": 10,
+    "sourceCards": 2,
+    "downloads": 3
+  },
+  "screenshots_clean_header_hidden": true,
+  "results": [
+    {
+      "viewportName": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        "statCards": 6,
+        "decisionLanes": 2,
+        "statusTiles": 22,
+        "gateCards": 10,
+        "sourceCards": 2,
+        "downloads": 3
+      },
+      "overflow": [
+        {
+          "selector": "body",
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-section",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-status-wall",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-source-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-gate-grid",
+          "scrollWidth": 1120,
+          "clientWidth": 1120,
+          "overflow": false
+        }
+      ],
+      "childOverflow": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-dashboard-status-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "failures": []
+    },
+    {
+      "viewportName": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        "statCards": 6,
+        "decisionLanes": 2,
+        "statusTiles": 22,
+        "gateCards": 10,
+        "sourceCards": 2,
+        "downloads": 3
+      },
+      "overflow": [
+        {
+          "selector": "body",
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-section",
+          "scrollWidth": 342,
+          "clientWidth": 342,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-status-wall",
+          "scrollWidth": 342,
+          "clientWidth": 342,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-source-grid",
+          "scrollWidth": 342,
+          "clientWidth": 342,
+          "overflow": false
+        },
+        {
+          "selector": ".air-bmkg-dashboard-gate-grid",
+          "scrollWidth": 342,
+          "clientWidth": 342,
+          "overflow": false
+        }
+      ],
+      "childOverflow": [],
+      "downloadStatuses": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-dashboard-status-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-dashboard-status-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "failures": []
+    }
+  ],
+  "pass": true
+}

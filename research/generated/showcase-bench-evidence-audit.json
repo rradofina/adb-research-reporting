@@ -1,6 +1,6 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T11:07:58.798Z",
+  "generated_at": "2026-06-20T11:31:04.008Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/station-radius-acag-coarse-checksums.md",
+      "evidencePath": "air-monitoring/station-radius-ghsl-population-tile-selection.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",

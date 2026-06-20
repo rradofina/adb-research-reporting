@@ -769,6 +769,89 @@ interface StationRadiusAcagChecksumSummary {
   non_claim: string;
 }
 
+interface StationRadiusGhslTileGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusGhslCountryRow {
+  iso3: string;
+  country: string;
+  readiness_lane: string;
+  openaq_coordinate_rows_used: number;
+  official_pm25_coordinate_rows_used: number;
+  coordinate_rows_used: number;
+  unique_coordinate_points: number;
+  ghsl_population_tiles_selected: number;
+  tile_ids: string;
+  reader_use: string;
+}
+
+interface StationRadiusGhslTileRow {
+  tile_id: string;
+  tile_row: number;
+  tile_col: number;
+  south: number;
+  west: number;
+  north: number;
+  east: number;
+  selected_economies: string;
+  selected_economy_count: number;
+  coordinate_rows_touching_tile: number;
+  openaq_coordinate_rows_touching_tile: number;
+  official_pm25_coordinate_rows_touching_tile: number;
+  ghsl_vintage: string;
+  ghsl_resolution: string;
+  exact_file_url: string;
+  head_status: number | string;
+  head_ok: boolean;
+  content_type: string;
+  content_length_bytes: number | string;
+  size_mb: string;
+  last_modified: string;
+  selection_status: string;
+  download_decision: string;
+  blocking_gap: string;
+  retrieval_error: string;
+}
+
+interface StationRadiusGhslTileSelectionSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  tile_grid_assumption: string;
+  coverage_counts: {
+    coordinate_ready_economies: number;
+    coordinate_rows_used: number;
+    openaq_coordinate_rows_used: number;
+    official_pm25_coordinate_rows_used: number;
+    unique_coordinate_points: number;
+    draft_radius_buffer_km: number;
+    ghsl_population_tile_urls_selected: number;
+    ghsl_tile_head_probes: number;
+    ghsl_tile_head_ok: number;
+    ghsl_tile_head_failed: number;
+    selected_tile_content_length_bytes_total: number;
+    selected_tile_content_length_mb_total: number;
+    population_denominator_files_downloaded: number;
+    population_denominator_files_sha256_checksummed: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusGhslTileGate[];
+  country_rows: StationRadiusGhslCountryRow[];
+  tile_rows: StationRadiusGhslTileRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3696,6 +3779,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusAcagVersionSummary | null>(null);
   const [stationRadiusAcagChecksum, setStationRadiusAcagChecksum] =
     useState<StationRadiusAcagChecksumSummary | null>(null);
+  const [stationRadiusGhslTileSelection, setStationRadiusGhslTileSelection] =
+    useState<StationRadiusGhslTileSelectionSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4026,6 +4111,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusAcagChecksum(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-selection-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius GHSL population tile selection HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusGhslTileSelection(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4633,6 +4738,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusAcagVersionPanel summary={stationRadiusAcagVersion} />
 
       <AirStationRadiusAcagChecksumPanel summary={stationRadiusAcagChecksum} />
+
+      <AirStationRadiusGhslTileSelectionPanel summary={stationRadiusGhslTileSelection} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -6315,6 +6422,196 @@ function AirStationRadiusAcagChecksumPanel({ summary }: { summary: StationRadius
         </>
       ) : (
         <p className="showcase-loading">Loading ACAG coarse checksum gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusGhslTileSelectionPanel({ summary }: { summary: StationRadiusGhslTileSelectionSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const countryRows = [...(summary?.country_rows ?? [])].sort(
+    (a, b) => b.coordinate_rows_used - a.coordinate_rows_used
+  );
+  const tileRows = summary?.tile_rows ?? [];
+  const maxCountryRows = Math.max(1, ...countryRows.map((row) => Number(row.coordinate_rows_used) || 0));
+  const headOkRows = tileRows.filter((row) => row.head_ok);
+  const failedRows = tileRows.filter((row) => !row.head_ok);
+  const formatBytes = (value: number | string | undefined) => {
+    const bytes = Number(value ?? 0);
+    if (!Number.isFinite(bytes) || bytes <= 0) return "size unconfirmed";
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+  const headLabel = (row: StationRadiusGhslTileRow) => {
+    if (row.head_ok) return row.head_status ? `HEAD ${row.head_status}` : "HEAD OK";
+    if (row.retrieval_error.toLowerCase().includes("timed out")) return "timeout";
+    if (row.retrieval_error) return "not reached";
+    return "HEAD not OK";
+  };
+
+  return (
+    <section className="showcase-section air-ghsl-tile-section" aria-label="GHSL population tile-selection gate">
+      <div className="air-ghsl-tile-head">
+        <div>
+          <p className="kicker kicker-blue">Population denominator queue</p>
+          <h2>Population is now a bounded tile queue, not a catchment count.</h2>
+          <p>
+            This gate turns station coordinates into exact GHSL population tile
+            URLs before any raster body is downloaded. The queue is visible,
+            the partial HEAD wall is visible, and every catchment number stays
+            at zero until file custody and raster checks close.
+          </p>
+        </div>
+        <div className="air-ghsl-tile-callout">
+          <span>Draft radius buffer</span>
+          <strong>{formatNumber(counts?.draft_radius_buffer_km ?? 0)} km</strong>
+          <p>Used only to over-select tiles around station coordinates; radius rules are not frozen.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-ghsl-tile-stat-grid">
+            <div>
+              <span>Economies queued</span>
+              <strong>{formatNumber(counts.coordinate_ready_economies)}</strong>
+              <em>coordinate-ready only</em>
+            </div>
+            <div>
+              <span>Coordinate rows</span>
+              <strong>{formatNumber(counts.coordinate_rows_used)}</strong>
+              <em>{formatNumber(counts.unique_coordinate_points)} unique points</em>
+            </div>
+            <div>
+              <span>Tile URLs</span>
+              <strong>{formatNumber(counts.ghsl_population_tile_urls_selected)}</strong>
+              <em>selected for future custody</em>
+            </div>
+            <div>
+              <span>HEAD OK</span>
+              <strong>{formatNumber(counts.ghsl_tile_head_ok)} / {formatNumber(counts.ghsl_tile_head_probes)}</strong>
+              <em>{formatNumber(counts.ghsl_tile_head_failed)} still failed</em>
+            </div>
+            <div>
+              <span>Known-size subset</span>
+              <strong>{formatNumber(counts.selected_tile_content_length_mb_total, 1)} MB</strong>
+              <em>from successful HEAD only</em>
+            </div>
+            <div>
+              <span>Population files</span>
+              <strong>{formatNumber(counts.population_denominator_files_downloaded)}</strong>
+              <em>no ZIPs or hashes yet</em>
+            </div>
+          </div>
+
+          <div className="air-ghsl-tile-gates" aria-label="GHSL population evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-ghsl-tile-gate air-ghsl-tile-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-tile-queue">
+            <div className="air-ghsl-tile-country-list" aria-label="Country tile queue">
+              <div className="air-ghsl-tile-subhead">
+                <span>Country queue</span>
+                <strong>{formatNumber(countryRows.length)} economies</strong>
+              </div>
+              {countryRows.map((row) => {
+                const share = Math.max(5, Math.round((row.coordinate_rows_used / maxCountryRows) * 100));
+                return (
+                  <article key={row.iso3} className="air-ghsl-tile-country-card">
+                    <div>
+                      <span>{row.iso3}</span>
+                      <strong>{row.country}</strong>
+                      <em>{formatNumber(row.ghsl_population_tiles_selected)} tile URLs</em>
+                    </div>
+                    <div className="air-ghsl-tile-meter" aria-hidden="true">
+                      <i style={{ width: `${share}%` }} />
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>Rows</dt>
+                        <dd>{formatNumber(row.coordinate_rows_used)}</dd>
+                      </div>
+                      <div>
+                        <dt>OpenAQ</dt>
+                        <dd>{formatNumber(row.openaq_coordinate_rows_used)}</dd>
+                      </div>
+                      <div>
+                        <dt>Official</dt>
+                        <dd>{formatNumber(row.official_pm25_coordinate_rows_used)}</dd>
+                      </div>
+                    </dl>
+                    <code>{row.tile_ids}</code>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="air-ghsl-tile-wall" aria-label="Selected GHSL tile URL wall">
+              <div className="air-ghsl-tile-subhead">
+                <span>Selected tiles</span>
+                <strong>{formatNumber(headOkRows.length)} reached, {formatNumber(failedRows.length)} still blocked</strong>
+              </div>
+              <div className="air-ghsl-tile-card-grid">
+                {tileRows.map((row) => (
+                  <article
+                    key={row.tile_id}
+                    className={`air-ghsl-tile-card ${row.head_ok ? "air-ghsl-tile-card-ok" : "air-ghsl-tile-card-failed"}`}
+                  >
+                    <div className="air-ghsl-tile-card-head">
+                      <span>{row.selected_economies.replaceAll("||", " + ")}</span>
+                      <strong>{row.tile_id}</strong>
+                      <b>{headLabel(row)}</b>
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>Coord. rows</dt>
+                        <dd>{formatNumber(row.coordinate_rows_touching_tile)}</dd>
+                      </div>
+                      <div>
+                        <dt>Size</dt>
+                        <dd>{row.size_mb ? `${row.size_mb} MB` : formatBytes(row.content_length_bytes)}</dd>
+                      </div>
+                      <div>
+                        <dt>Bounds</dt>
+                        <dd>{row.west} to {row.east} E</dd>
+                      </div>
+                    </dl>
+                    <p>{row.head_ok ? row.last_modified : row.retrieval_error}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <p className="air-ghsl-tile-assumption">{summary.tile_grid_assumption}</p>
+          <p className="air-ghsl-tile-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-ghsl-tile-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-ghsl-population-tile-selection.md" download>
+              Download tile-selection note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-selection-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-selection.csv" download>
+              Download tile CSV
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-population-tile-selection-country.csv" download>
+              Download country CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading GHSL population tile-selection gate...</p>
       )}
     </section>
   );

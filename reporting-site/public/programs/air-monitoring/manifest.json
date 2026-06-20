@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T11:02:41.270Z",
+  "generated_at": "2026-06-20T11:31:06.628Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -171,6 +171,16 @@
       "size_human": "2.4 KB",
       "mtime": "2026-06-20T10:59:31.806Z",
       "sha256": "84f8909c539bc09c2c8fa0fd2a35e5ff7b19b1c492f66dc047d563731e13b2b4",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_ghsl_population_tile_selection",
+      "file": "station-radius-ghsl-population-tile-selection.md",
+      "label": "Air-monitoring station-radius GHSL population tile-selection gate",
+      "size": 3719,
+      "size_human": "3.6 KB",
+      "mtime": "2026-06-20T11:18:55.763Z",
+      "sha256": "948631c469520b5d234e5651205982838be245f1faa3a8664c6540041d04e1ac",
       "attestation_chain": "ai-first"
     },
     {
@@ -1142,6 +1152,24 @@
       "size": 9784,
       "size_human": "9.6 KB",
       "sha256": "d7c99379aad34a63c9429080286b218afac435675b99bfff15118ea6c50652f2"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-population-tile-selection-country.csv",
+      "size": 9970,
+      "size_human": "9.7 KB",
+      "sha256": "75eb19527fab6b94db72393f4e118385318ca2852c8bd8c8692d15fb6abbfcb2"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-population-tile-selection-summary.json",
+      "size": 67891,
+      "size_human": "66.3 KB",
+      "sha256": "6f608784eb9ee6ad88d8ac5ee664469ec17b9ed588501af4c810eab410291803"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-population-tile-selection.csv",
+      "size": 28886,
+      "size_human": "28.2 KB",
+      "sha256": "05af986d67a28b653459cac5718a6061dc977085e59c0f10d22ad6cc2e84321d"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",

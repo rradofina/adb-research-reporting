@@ -221,6 +221,23 @@
       "cache_policy": "Raw NetCDF files are stored under air-monitoring/.cache/station-radius-acag-coarse-checksums/ and are not committed; rerun the script to rehydrate them from public ACAG S3 object URLs.",
       "notes": "Station-radius ACAG coarse checksum gate. It downloads only the two approved 2023 V6.GL.03 coarse PM2.5 objects into the ignored local cache, records 2 SHA-256 hashes, verifies 2 size matches against S3 metadata, opens 2 NETCDF4 files, records PM25(lat,lon) with lat/lon coordinate variables for both files, and keeps population denominator selection, PM2.5 exposure rows, station catchments, validated same-station joins, complete monitor-grade rows, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_ghsl_population_tile_selection": {
+      "script": "air-monitoring/scripts/select-station-radius-ghsl-population-tiles.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_readiness",
+        "air_monitoring_station_radius_denominator_source_plan",
+        "air_monitoring_station_radius_denominator_acquisition_routes",
+        "openaq_api",
+        "air_monitoring_regulator_station_extraction"
+      ],
+      "source_pages": [
+        "https://data.jrc.ec.europa.eu/dataset/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/"
+      ],
+      "cache_policy": "No GHSL ZIP bodies are downloaded or cached by this gate; the script records selected public tile URLs and HEAD metadata only.",
+      "notes": "Station-radius GHSL population tile-selection gate. It converts 277 committed coordinate rows across 11 economies into 23 selected GHSL 2020 4326 3 arc-second tile URLs using a conservative 50 km draft-radius buffer, runs 23 HEAD probes, records 7 HEAD-OK tile URLs and 16 HEAD failures, records a 189.406 MB known-size subset from the successful HEAD responses, and keeps population ZIP downloads, population SHA-256 checksums, GeoTIFF transform inspections, station-radius population rows, PM2.5 exposure rows, validated same-station joins, complete monitor-grade rows, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -852,6 +869,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_acag_coarse_checksums pin after downloading only the two approved 2023 V6.GL.03 coarse PM2.5 NetCDF objects into the ignored local cache, recording 2 SHA-256 hashes, opening 2 NETCDF4 files, finding PM25(lat,lon) with lat/lon coordinates in both, and keeping population denominator selection, exposure, catchments, joins, grade rows, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_ghsl_population_tile_selection pin after converting 277 committed station-coordinate rows across 11 economies into 23 selected GHSL population tile URLs, recording 23 HEAD probes with 7 OK responses and 16 failures, and keeping population ZIP downloads, checksums, GeoTIFF transform inspections, catchments, exposure rows, joins, grade rows, and station-radius readiness at zero."
     },
     {
       "date": "2026-06-19",

@@ -66,6 +66,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_denominator_download_feasibility", file: "station-radius-denominator-download-feasibility.md", label: "Air-monitoring station-radius denominator download feasibility gate" },
   { key: "air_monitoring_station_radius_acag_version_decision", file: "station-radius-acag-version-decision.md", label: "Air-monitoring station-radius ACAG version-decision gate" },
   { key: "air_monitoring_station_radius_acag_coarse_checksums", file: "station-radius-acag-coarse-checksums.md", label: "Air-monitoring station-radius ACAG coarse checksum gate" },
+  { key: "air_monitoring_station_radius_ghsl_population_tile_selection", file: "station-radius-ghsl-population-tile-selection.md", label: "Air-monitoring station-radius GHSL population tile-selection gate" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-06-20T05:40:00Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "section": ".air-bmkg-certificate-section",
+  "viewport_checks": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "loaded": true,
+      "section_found": true,
+      "title": "The next search found maintenance context, not the missing certificate.",
+      "counts": {
+        "stat_cards": 6,
+        "source_lanes": 5,
+        "station_decisions": 2,
+        "matched_station_rows": 1,
+        "source_cards": 8,
+        "gate_cards": 7,
+        "download_links": 3
+      },
+      "download_status": [
+        {
+          "label": "Download certificate/status note",
+          "href": "/programs/air-monitoring/bmkg-certificate-status-targeted-source-scan.md",
+          "status": 200
+        },
+        {
+          "label": "Download summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "label": "Download row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "required_text_visible": true,
+      "page_horizontal_overflow": false,
+      "section_overflowing_children": 0,
+      "error_overlay": false,
+      "console_errors": 0,
+      "page_errors": 0,
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-certificate-desktop-viewport.png",
+        "reporting-site/qa/showcase-air-bmkg-certificate-desktop-sources-viewport.png"
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "loaded": true,
+      "section_found": true,
+      "title": "The next search found maintenance context, not the missing certificate.",
+      "counts": {
+        "stat_cards": 6,
+        "source_lanes": 5,
+        "station_decisions": 2,
+        "matched_station_rows": 1,
+        "source_cards": 8,
+        "gate_cards": 7,
+        "download_links": 3
+      },
+      "download_status": [
+        {
+          "label": "Download certificate/status note",
+          "href": "/programs/air-monitoring/bmkg-certificate-status-targeted-source-scan.md",
+          "status": 200
+        },
+        {
+          "label": "Download summary JSON",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "label": "Download row CSV",
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "required_text_visible": true,
+      "page_horizontal_overflow": false,
+      "body_horizontal_overflow": false,
+      "section_overflowing_children": 0,
+      "error_overlay": false,
+      "console_errors": 0,
+      "page_errors": 0,
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-certificate-mobile-viewport.png",
+        "reporting-site/qa/showcase-air-bmkg-certificate-mobile-sources-viewport.png"
+      ]
+    }
+  ],
+  "notes": [
+    "The selector-capture screenshot mode returned blank images in this run, so QA keeps viewport screenshots after scrolling the section/source wall into view.",
+    "The only console output observed was the normal Vite debug connection message; no page errors were reported."
+  ]
+}

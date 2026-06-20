@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -39,7 +39,8 @@ scan, the BMKG station-specific status audit, the BMKG API
 parity/status-field check, the BMKG regional status/source scan, the BMKG
 dashboard current-status source scan, the BMKG grade-basis source scan, the BMKG
 station public-context source scan, the BMKG installation/audit source scan,
-the BMKG near-closure ledger, the Georgia
+the BMKG near-closure ledger, the BMKG targeted certificate/status source scan,
+the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, the Georgia report-frequency matrix, and
 the Georgia NEA station network/launch source scan honestly, and do not imply
@@ -48,6 +49,21 @@ until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the BMKG targeted certificate/status source scan.
+  New seed file
+  `source-inputs/bmkg-certificate-status-targeted-source-seed.csv` and script
+  `scripts/scan-bmkg-certificate-status-targeted-sources.py` test the public
+  source family surfaced by targeted BMKG PM2.5 certificate/status searches:
+  the GAW Bukit Kototabang maintenance page, already pinned exact Kototabang
+  audit/station-unit sources, BMKG daily BAM-1020 inspection SOP, PTSP
+  calibration service/tariff route, and PPID certificate-request context. The
+  pass retrieves 8 of 8 sources, finds 1 row with exact station
+  maintenance/calibration-language context, and keeps station-specific
+  inspection logs, station-specific PM2.5 calibration certificate/status rows,
+  complete monitor-grade rows, and station-radius-ready rows at zero. Wrote
+  `bmkg-certificate-status-targeted-source-scan.md` plus generated CSV/JSON.
+  This is a targeted closure search wall, not grade promotion.
 
 - **2026-06-19:** Added the metadata-readiness audit. New no-network script
   `scripts/build-metadata-readiness-audit.py` reads

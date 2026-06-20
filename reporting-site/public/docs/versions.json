@@ -317,6 +317,19 @@
       ],
       "notes": "Official BMKG installation, audit/calibration, public-information, and operational-monitoring source scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 6 of 6 seeded official sources, adds 1 exact station audit/calibration context row, 7 PM2.5 installation/deployment context rows, 4 source-level operational or calibration routes, and keeps station-specific inspection logs, calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
     },
+    "air_monitoring_bmkg_certificate_status_targeted_source_scan": {
+      "script": "air-monitoring/scripts/scan-bmkg-certificate-status-targeted-sources.py",
+      "seed": "air-monitoring/source-inputs/bmkg-certificate-status-targeted-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_method_classification_audit",
+        "air_monitoring_bmkg_grade_basis_source_scan",
+        "air_monitoring_bmkg_station_public_context_source_scan",
+        "air_monitoring_bmkg_installation_audit_source_scan",
+        "air_monitoring_bmkg_near_closure_ledger"
+      ],
+      "notes": "Targeted BMKG certificate/status source scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 8 of 8 seeded public sources found around station-specific PM2.5 certificate/status searches, including the newly surfaced GAW Bukit Kototabang maintenance page, exact Kototabang audit/station-unit sources, and source-level BMKG inspection, service, and PPID certificate-request routes; finds 1 row with exact station maintenance/calibration-language context and keeps station-specific inspection logs, station-specific PM2.5 calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
+    },
     "air_monitoring_bmkg_near_closure_ledger": {
       "script": "air-monitoring/scripts/build-bmkg-near-closure-ledger.py",
       "retrieved_on": "2026-06-20",

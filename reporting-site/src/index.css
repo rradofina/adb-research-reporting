@@ -12691,6 +12691,184 @@
     line-height: 1.45;
   }
 
+  .air-bmkg-certificate-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.12), rgba(255, 255, 255, 0.98) 43%),
+      #ffffff;
+  }
+
+  .air-bmkg-certificate-callout {
+    border-left-color: #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-bmkg-certificate-stat-grid > div,
+  .air-bmkg-certificate-gate {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-certificate-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr);
+    gap: 0.85rem;
+  }
+
+  .air-bmkg-certificate-lane-grid,
+  .air-bmkg-certificate-decision-grid,
+  .air-bmkg-certificate-row-grid,
+  .air-bmkg-certificate-source-grid {
+    display: grid;
+    gap: 0.75rem;
+    min-width: 0;
+    scroll-margin-top: 7rem;
+  }
+
+  .air-bmkg-certificate-lane-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-bmkg-certificate-decision-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-bmkg-certificate-row-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-bmkg-certificate-source-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .air-bmkg-certificate-lane,
+  .air-bmkg-certificate-decision,
+  .air-bmkg-certificate-row,
+  .air-bmkg-certificate-source {
+    display: grid;
+    gap: 0.58rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .air-bmkg-certificate-lane,
+  .air-bmkg-certificate-decision,
+  .air-bmkg-certificate-source {
+    border-top: 4px solid #9db7c7;
+  }
+
+  .air-bmkg-certificate-row {
+    grid-template-rows: auto auto minmax(3.3rem, 1fr) auto;
+    border-left: 4px solid #5a8227;
+    background: #f5f9ee;
+  }
+
+  .air-bmkg-certificate-source-exact_station_maintenance_calibration_context,
+  .air-bmkg-certificate-source-exact_station_calibration_language_context {
+    border-top-color: #5a8227;
+    background: #f5f9ee;
+  }
+
+  .air-bmkg-certificate-source-source_level_certificate_or_service_context,
+  .air-bmkg-certificate-source-source_level_inspection_status_or_calibration_context {
+    border-top-color: #007db8;
+    background: #eef8fc;
+  }
+
+  .air-bmkg-certificate-source-retrieved_no_target_closure_context {
+    border-top-color: #fbb00e;
+    background: #fff9e8;
+  }
+
+  .air-bmkg-certificate-decision-no_targeted_certificate_status_source_found,
+  .air-bmkg-certificate-gate.air-grade-method-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-bmkg-certificate-lane > div:first-child,
+  .air-bmkg-certificate-decision > div:first-child,
+  .air-bmkg-certificate-row > div:first-child,
+  .air-bmkg-certificate-source > div:first-child {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-certificate-lane span,
+  .air-bmkg-certificate-decision span,
+  .air-bmkg-certificate-row span,
+  .air-bmkg-certificate-row dt,
+  .air-bmkg-certificate-source span,
+  .air-bmkg-certificate-source dt {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-certificate-lane strong,
+  .air-bmkg-certificate-decision strong,
+  .air-bmkg-certificate-row strong,
+  .air-bmkg-certificate-source strong {
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-certificate-row b,
+  .air-bmkg-certificate-row dd,
+  .air-bmkg-certificate-row em,
+  .air-bmkg-certificate-source b,
+  .air-bmkg-certificate-source dd {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-certificate-row p,
+  .air-bmkg-certificate-source p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-certificate-row dl,
+  .air-bmkg-certificate-source dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-certificate-row dd,
+  .air-bmkg-certificate-source dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
+  .air-bmkg-certificate-track {
+    height: 0.72rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #dfe8f4;
+  }
+
+  .air-bmkg-certificate-track i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #007db8, #5a8227);
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -14628,6 +14806,12 @@
     .air-bmkg-near-closure-lane-grid,
     .air-bmkg-near-closure-row-grid,
     .air-bmkg-near-closure-gate-grid,
+    .air-bmkg-certificate-stat-grid,
+    .air-bmkg-certificate-story-grid,
+    .air-bmkg-certificate-lane-grid,
+    .air-bmkg-certificate-row-grid,
+    .air-bmkg-certificate-source-grid,
+    .air-bmkg-certificate-gate-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -14687,6 +14871,7 @@
     .air-bmkg-dashboard-head,
     .air-bmkg-status-value-wall,
     .air-bmkg-api-field-wall,
+    .air-bmkg-certificate-head,
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
@@ -16081,6 +16266,13 @@
     .air-bmkg-near-closure-lane-grid,
     .air-bmkg-near-closure-row-grid,
     .air-bmkg-near-closure-gate-grid,
+    .air-bmkg-certificate-stat-grid,
+    .air-bmkg-certificate-story-grid,
+    .air-bmkg-certificate-lane-grid,
+    .air-bmkg-certificate-decision-grid,
+    .air-bmkg-certificate-row-grid,
+    .air-bmkg-certificate-source-grid,
+    .air-bmkg-certificate-gate-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -16175,6 +16367,11 @@
     .air-bmkg-station-context-gate,
     .air-bmkg-near-closure-row,
     .air-bmkg-near-closure-gate,
+    .air-bmkg-certificate-lane,
+    .air-bmkg-certificate-decision,
+    .air-bmkg-certificate-row,
+    .air-bmkg-certificate-source,
+    .air-bmkg-certificate-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -16220,6 +16417,7 @@
     .air-bmkg-regional-head,
     .air-bmkg-dashboard-head,
     .air-bmkg-near-closure-head,
+    .air-bmkg-certificate-head,
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
@@ -16275,7 +16473,9 @@
     .air-bmkg-grade-source-card dl,
     .air-bmkg-station-context-row dl,
     .air-bmkg-station-context-source dl,
-    .air-bmkg-near-closure-row dl {
+    .air-bmkg-near-closure-row dl,
+    .air-bmkg-certificate-row dl,
+    .air-bmkg-certificate-source dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

@@ -2377,6 +2377,87 @@ interface BmkgNearClosureSummary {
   non_claim: string;
 }
 
+interface BmkgCertificateStatusTargetedGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgCertificateStatusTargetedLane {
+  lane: string;
+  sources: number;
+}
+
+interface BmkgCertificateStatusTargetedDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgCertificateStatusTargetedDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  targeted_source_keys: string;
+  exact_station_maintenance_sources: number;
+  exact_station_pm25_method_sources: number;
+  exact_station_calibration_language_sources: number;
+  exact_station_certificate_language_sources: number;
+  certificate_status_decision: string;
+  reader_use: string;
+}
+
+interface BmkgCertificateStatusTargetedSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_match_scope: string;
+  retrieved: boolean;
+  http_status: string | number;
+  matched_target_station_ids: string;
+  matched_expected_terms: string;
+  matched_pm25_terms: string;
+  matched_maintenance_terms: string;
+  matched_calibration_terms: string;
+  matched_certificate_terms: string;
+  matched_status_terms: string;
+  source_search_lane: string;
+  source_note: string;
+}
+
+interface BmkgCertificateStatusTargetedSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    certificate_status_source_urls_seeded: number;
+    certificate_status_source_urls_retrieved: number;
+    exact_station_or_unit_source_urls_retrieved: number;
+    source_level_inspection_service_or_certificate_routes_retrieved: number;
+    rows_with_any_targeted_source_context: number;
+    rows_with_exact_maintenance_context: number;
+    rows_with_exact_pm25_method_context: number;
+    rows_with_exact_calibration_language_context: number;
+    rows_with_exact_certificate_language_not_certificate: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_from_this_scan_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  source_lane_counts: BmkgCertificateStatusTargetedLane[];
+  decision_counts: BmkgCertificateStatusTargetedDecision[];
+  evidence_gate_counts: BmkgCertificateStatusTargetedGate[];
+  display_rows: BmkgCertificateStatusTargetedDisplayRow[];
+  source_records: BmkgCertificateStatusTargetedSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2897,6 +2978,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgInstallationAuditSummary | null>(null);
   const [bmkgNearClosure, setBmkgNearClosure] =
     useState<BmkgNearClosureSummary | null>(null);
+  const [bmkgCertificateStatusTargeted, setBmkgCertificateStatusTargeted] =
+    useState<BmkgCertificateStatusTargetedSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -3338,6 +3421,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG certificate/status targeted source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgCertificateStatusTargeted(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3596,6 +3699,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgInstallationAuditPanel summary={bmkgInstallationAudit} />
 
       <AirBmkgNearClosurePanel summary={bmkgNearClosure} />
+
+      <AirBmkgCertificateStatusTargetedPanel summary={bmkgCertificateStatusTargeted} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -9023,6 +9128,204 @@ function AirBmkgNearClosurePanel({
         </>
       ) : (
         <p className="showcase-loading">Loading BMKG near-closure ledger...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgCertificateStatusTargetedPanel({
+  summary,
+}: {
+  summary: BmkgCertificateStatusTargetedSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const lanes = summary?.source_lane_counts ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const laneTotal = Math.max(1, lanes.reduce((sum, row) => sum + row.sources, 0));
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-certificate-section" aria-label="BMKG targeted certificate/status source scan">
+      <div className="air-grade-method-head air-bmkg-certificate-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG certificate/status search wall</p>
+          <h2>The next search found maintenance context, not the missing certificate.</h2>
+          <p>
+            The previous ledger identified the exact closure blocker. This
+            targeted pass follows the public-source trail around that blocker:
+            Kototabang station-unit maintenance and audit pages, GAW station
+            publications, BMKG inspection SOPs, service/tariff routes, and PPID
+            certificate-request context. The reader can see where the search
+            touched the wall instead of treating the absence as silence.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-certificate-callout">
+          <span>Station certificates</span>
+          <strong>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)}</strong>
+          <p>
+            {formatNumber(counts?.certificate_status_source_urls_retrieved ?? 0)} targeted public sources checked; {formatNumber(counts?.rows_with_exact_maintenance_context ?? 0)} station row gained exact maintenance context.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-certificate-stat-grid">
+            <div>
+              <span>Sources checked</span>
+              <strong>{formatNumber(counts.certificate_status_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.certificate_status_source_urls_seeded)} seeded URLs</em>
+            </div>
+            <div>
+              <span>Exact sources</span>
+              <strong>{formatNumber(counts.exact_station_or_unit_source_urls_retrieved)}</strong>
+              <em>Kototabang-focused station/unit trail</em>
+            </div>
+            <div>
+              <span>Source-level routes</span>
+              <strong>{formatNumber(counts.source_level_inspection_service_or_certificate_routes_retrieved)}</strong>
+              <em>SOP, service, or certificate-request context</em>
+            </div>
+            <div>
+              <span>Matched rows</span>
+              <strong>{formatNumber(counts.rows_with_any_targeted_source_context)}</strong>
+              <em>of {formatNumber(counts.target_bmkg_rows)} BMKG rows</em>
+            </div>
+            <div>
+              <span>Calibration language</span>
+              <strong>{formatNumber(counts.rows_with_exact_calibration_language_context)}</strong>
+              <em>exact context only</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>closure still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-bmkg-certificate-story-grid">
+            <div className="air-bmkg-certificate-lane-grid" aria-label="BMKG certificate/status source-search lanes">
+              {lanes.map((lane) => (
+                <article key={lane.lane} className={`air-bmkg-certificate-lane air-bmkg-certificate-lane-${lane.lane}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(lane.lane)}</span>
+                    <strong>{formatNumber(lane.sources)} sources</strong>
+                  </div>
+                  <div className="air-bmkg-certificate-track">
+                    <i style={{ width: `${Math.max(5, (lane.sources / laneTotal) * 100)}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="air-bmkg-certificate-decision-grid" aria-label="BMKG certificate/status station decisions">
+              {decisions.map((decision) => (
+                <article key={decision.decision} className={`air-bmkg-certificate-decision air-bmkg-certificate-decision-${decision.decision}`}>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                  <div className="air-bmkg-certificate-track">
+                    <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-bmkg-certificate-row-grid" aria-label="BMKG certificate/status matched station rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-bmkg-certificate-row">
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.certificate_status_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Sources</dt>
+                    <dd>{formatNumber(termCount(row.targeted_source_keys))}</dd>
+                  </div>
+                  <div>
+                    <dt>Maint.</dt>
+                    <dd>{formatNumber(row.exact_station_maintenance_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Calib.</dt>
+                    <dd>{formatNumber(row.exact_station_calibration_language_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Cert.</dt>
+                    <dd>{formatNumber(row.exact_station_certificate_language_sources)}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <em>{sentenceCaseStatus(row.targeted_source_keys)}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-certificate-source-grid" aria-label="BMKG certificate/status source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={`air-bmkg-certificate-source air-bmkg-certificate-source-${source.source_search_lane}`}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_search_lane)}</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Rows</dt>
+                    <dd>{formatNumber(termCount(source.matched_target_station_ids))}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{formatNumber(termCount(source.matched_pm25_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Maint.</dt>
+                    <dd>{formatNumber(termCount(source.matched_maintenance_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Cert.</dt>
+                    <dd>{formatNumber(termCount(source.matched_certificate_terms))}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-certificate-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-certificate-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-bmkg-near-closure-nonclaim air-bmkg-certificate-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-grade-method-downloads air-bmkg-certificate-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-certificate-status-targeted-source-scan.md" download>
+              Download certificate/status note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-certificate-status-targeted-source-scan.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading BMKG targeted certificate/status source scan...</p>
       )}
     </section>
   );

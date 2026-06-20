@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T05:12:16.046Z",
+  "generated_at": "2026-06-20T05:39:59.804Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -424,6 +424,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_certificate_status_targeted_source_scan",
+      "file": "bmkg-certificate-status-targeted-source-scan.md",
+      "label": "Air-monitoring BMKG targeted certificate/status source scan",
+      "size": 3061,
+      "size_human": "3.0 KB",
+      "mtime": "2026-06-20T05:39:01.799Z",
+      "sha256": "3a03c4c8e6d888bd233c45acdd6db8265644f5abcb0ead6e0d9b5a8ee85300af",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -528,6 +538,18 @@
       "size": 22017,
       "size_human": "21.5 KB",
       "sha256": "3e98749f489591758514c921c32638a6b55557d65b0d948136eeded671c681fd"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json",
+      "size": 59392,
+      "size_human": "58.0 KB",
+      "sha256": "f39412e8aaf36db962e2f6ca4f853a83f9ac3d96d564894e1104ec7ef4fff455"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-certificate-status-targeted-source-scan.csv",
+      "size": 19528,
+      "size_human": "19.1 KB",
+      "sha256": "92b9c4c40527b2821a045b09120c2c553812d6661f7affb85acd26cb826e065c"
     },
     {
       "file": "generated/air-monitoring-bmkg-dashboard-status-source-scan-summary.json",

@@ -3055,6 +3055,317 @@
   }
 }
 
+.air-ghsl-custody-section {
+  border-top: 1px solid rgba(90, 130, 39, 0.28);
+  background:
+    linear-gradient(135deg, rgba(90, 130, 39, 0.12), transparent 36%),
+    linear-gradient(90deg, rgba(0, 125, 184, 0.06), transparent 58%),
+    #fbfdf8;
+}
+
+.air-ghsl-custody-section * {
+  min-width: 0;
+}
+
+.air-ghsl-custody-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.34fr);
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.air-ghsl-custody-head h2 {
+  max-width: 17ch;
+  margin: 0.15rem 0 1rem;
+  color: #243319;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.96;
+}
+
+.air-ghsl-custody-head p,
+.air-ghsl-custody-callout p,
+.air-ghsl-custody-gate p,
+.air-ghsl-custody-rule p,
+.air-ghsl-custody-nonclaim {
+  max-width: 68rem;
+  color: #3f3f3f;
+  line-height: 1.58;
+}
+
+.air-ghsl-custody-callout,
+.air-ghsl-custody-stat-grid > div,
+.air-ghsl-custody-gate,
+.air-ghsl-custody-rule,
+.air-ghsl-custody-deferred-card,
+.air-ghsl-custody-download-card {
+  border: 1px solid rgba(44, 72, 23, 0.16);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.air-ghsl-custody-callout {
+  padding: 1.15rem;
+  border-left: 5px solid #5a8227;
+}
+
+.air-ghsl-custody-callout span,
+.air-ghsl-custody-stat-grid span,
+.air-ghsl-custody-gate span,
+.air-ghsl-custody-rule span,
+.air-ghsl-custody-deferred-card span,
+.air-ghsl-custody-download-card span,
+.air-ghsl-custody-downloads span,
+.air-ghsl-custody-deferred-card dt,
+.air-ghsl-custody-download-card dt {
+  color: #52604a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-callout strong {
+  display: block;
+  margin: 0.45rem 0;
+  color: #315f1c;
+  font-size: clamp(1.65rem, 3.2vw, 2.6rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-stat-grid,
+.air-ghsl-custody-gates,
+.air-ghsl-custody-deferred-grid,
+.air-ghsl-custody-download-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.air-ghsl-custody-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-ghsl-custody-stat-grid > div,
+.air-ghsl-custody-gate,
+.air-ghsl-custody-rule,
+.air-ghsl-custody-deferred-card,
+.air-ghsl-custody-download-card {
+  padding: 1rem;
+}
+
+.air-ghsl-custody-stat-grid > div {
+  border-top: 4px solid #007db8;
+}
+
+.air-ghsl-custody-stat-grid > div:nth-child(2),
+.air-ghsl-custody-stat-grid > div:nth-child(3),
+.air-ghsl-custody-stat-grid > div:nth-child(4) {
+  border-top-color: #5a8227;
+}
+
+.air-ghsl-custody-stat-grid > div:nth-child(6) {
+  border-top-color: #fbb00e;
+}
+
+.air-ghsl-custody-stat-grid strong,
+.air-ghsl-custody-gate em,
+.air-ghsl-custody-deferred-card strong,
+.air-ghsl-custody-deferred-card dd,
+.air-ghsl-custody-download-card strong,
+.air-ghsl-custody-download-card dd {
+  color: #253d19;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+}
+
+.air-ghsl-custody-stat-grid strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 1.95rem;
+}
+
+.air-ghsl-custody-stat-grid em,
+.air-ghsl-custody-gate p,
+.air-ghsl-custody-rule p,
+.air-ghsl-custody-nonclaim {
+  font-size: 0.84rem;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-gates {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-ghsl-custody-gate {
+  border-left: 4px solid #007db8;
+}
+
+.air-ghsl-custody-gate-available {
+  border-left-color: #5a8227;
+}
+
+.air-ghsl-custody-gate-pending {
+  border-left-color: #fbb00e;
+}
+
+.air-ghsl-custody-gate-blocked {
+  border-left-color: #9b2226;
+}
+
+.air-ghsl-custody-gate strong,
+.air-ghsl-custody-deferred-card strong,
+.air-ghsl-custody-download-card strong {
+  display: block;
+  margin: 0.35rem 0;
+  color: #231f20;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-rule {
+  margin-top: 1rem;
+  border-left: 4px solid #5a8227;
+  background: #f3f8ee;
+}
+
+.air-ghsl-custody-deferred-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  scroll-margin-top: 7rem;
+}
+
+.air-ghsl-custody-deferred-card {
+  display: grid;
+  gap: 0.7rem;
+  border-left: 5px solid #fbb00e;
+  background: #fffaf0;
+}
+
+.air-ghsl-custody-deferred-card em,
+.air-ghsl-custody-download-card em {
+  color: #5f5750;
+  font-size: 0.78rem;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-deferred-card dl,
+.air-ghsl-custody-download-card dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.air-ghsl-custody-deferred-card dl {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-ghsl-custody-download-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  scroll-margin-top: 7rem;
+}
+
+.air-ghsl-custody-download-card {
+  display: grid;
+  gap: 0.6rem;
+  border-top: 4px solid #5a8227;
+}
+
+.air-ghsl-custody-download-card:nth-child(6n + 1),
+.air-ghsl-custody-download-card:nth-child(6n + 4) {
+  border-top-color: #007db8;
+}
+
+.air-ghsl-custody-download-card:nth-child(6n + 3) {
+  border-top-color: #fbb00e;
+}
+
+.air-ghsl-custody-download-card dl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-ghsl-custody-deferred-card dd,
+.air-ghsl-custody-download-card dd {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-nonclaim {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-ghsl-custody-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-ghsl-custody-downloads span,
+.air-ghsl-custody-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-custody-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-ghsl-custody-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-ghsl-custody-stat-grid,
+  .air-ghsl-custody-gates,
+  .air-ghsl-custody-deferred-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-ghsl-custody-download-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .air-ghsl-custody-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-custody-head h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-ghsl-custody-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-ghsl-custody-stat-grid,
+  .air-ghsl-custody-gates,
+  .air-ghsl-custody-deferred-grid,
+  .air-ghsl-custody-download-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-custody-deferred-card dl,
+  .air-ghsl-custody-download-card dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-ghsl-custody-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

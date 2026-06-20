@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-06-20T13:10:00Z",
+  "route": "http://127.0.0.1:5177/showcase/air-monitoring-observability",
+  "section_selector": ".air-ghsl-custody-section",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "found": true,
+    "stat_count": 6,
+    "gate_count": 9,
+    "deferred_card_count": 3,
+    "downloaded_card_count": 18,
+    "body_horizontal_overflow": false,
+    "section_horizontal_overflow": false,
+    "overflow_elements": []
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "found": true,
+    "stat_count": 6,
+    "gate_count": 9,
+    "deferred_card_count": 3,
+    "downloaded_card_count": 18,
+    "body_horizontal_overflow": false,
+    "section_horizontal_overflow": false,
+    "overflow_elements": []
+  },
+  "evidence_links": [
+    {
+      "href": "/programs/air-monitoring/station-radius-ghsl-corrected-population-tile-custody.md",
+      "status": 200,
+      "bytes": 6949
+    },
+    {
+      "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-corrected-population-tile-custody-summary.json",
+      "status": 200,
+      "bytes": 79768
+    },
+    {
+      "href": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-corrected-population-tile-custody.csv",
+      "status": 200,
+      "bytes": 36462
+    }
+  ],
+  "browser_console_errors": [],
+  "page_errors": [],
+  "screenshots": [
+    "reporting-site/qa/showcase-air-ghsl-corrected-custody-desktop.png",
+    "reporting-site/qa/showcase-air-ghsl-corrected-custody-rows-desktop.png",
+    "reporting-site/qa/showcase-air-ghsl-corrected-custody-mobile.png",
+    "reporting-site/qa/showcase-air-ghsl-corrected-custody-rows-mobile.png"
+  ]
+}

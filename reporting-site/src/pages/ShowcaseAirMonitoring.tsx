@@ -1018,6 +1018,76 @@ interface StationRadiusGhslTileRoutingSummary {
   non_claim: string;
 }
 
+interface StationRadiusGhslCorrectedCustodyGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusGhslCorrectedCustodyRow {
+  tile_id: string;
+  correction_status: string;
+  corrected_selected_economies: string;
+  corrected_coordinate_rows_touching_tile: number | string;
+  custody_probe_source: string;
+  custody_size_mb: number | string;
+  download_decision: string;
+  downloaded: boolean | string;
+  downloaded_this_run: boolean | string;
+  downloaded_from_prior_cache: boolean | string;
+  file_size_bytes: number | string;
+  sha256: string;
+  sha256_matches_prior: boolean | string;
+  geotiff_opened: boolean | string;
+  raster_bounds: string;
+  transform_matches_corrected_tile_bounds: boolean | string;
+  blocking_gap: string;
+  retrieval_error: string;
+}
+
+interface StationRadiusGhslCorrectedCustodySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  first_wave_rule: string;
+  cache_policy: string;
+  coverage_counts: {
+    corrected_tile_rows: number;
+    retained_corrected_tile_rows: number;
+    added_corrected_tile_rows: number;
+    current_head_ok_tiles: number;
+    current_range_ok_tiles: number;
+    current_probe_size_available_tiles: number;
+    corrected_first_wave_eligible_rows: number;
+    corrected_first_wave_download_candidate_rows: number;
+    downloaded_population_tile_files: number;
+    downloaded_population_tile_files_this_run: number;
+    downloaded_population_tile_files_from_prior_cache: number;
+    sha256_checksummed_population_tile_files: number;
+    sha256_matches_prior_rows: number;
+    downloaded_size_bytes_total: number;
+    downloaded_size_mb_total: number;
+    zip_files_opened: number;
+    geotiff_opened_files: number;
+    geotiff_transform_matches_corrected_bounds: number;
+    geotiff_transform_mismatch_corrected_bounds: number;
+    blocked_corrected_selected_tiles: number;
+    deferred_corrected_selected_tiles: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusGhslCorrectedCustodyGate[];
+  tile_custody_rows: StationRadiusGhslCorrectedCustodyRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3951,6 +4021,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusGhslTileChecksumSummary | null>(null);
   const [stationRadiusGhslTileRouting, setStationRadiusGhslTileRouting] =
     useState<StationRadiusGhslTileRoutingSummary | null>(null);
+  const [stationRadiusGhslCorrectedCustody, setStationRadiusGhslCorrectedCustody] =
+    useState<StationRadiusGhslCorrectedCustodySummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4341,6 +4413,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusGhslTileRouting(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-corrected-population-tile-custody-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius GHSL corrected tile custody HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusGhslCorrectedCustody(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4954,6 +5046,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusGhslTileChecksumPanel summary={stationRadiusGhslTileChecksum} />
 
       <AirStationRadiusGhslTileRoutingPanel summary={stationRadiusGhslTileRouting} />
+
+      <AirStationRadiusGhslCorrectedCustodyPanel summary={stationRadiusGhslCorrectedCustody} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -7173,6 +7267,172 @@ function AirStationRadiusGhslTileRoutingPanel({ summary }: { summary: StationRad
         </>
       ) : (
         <p className="showcase-loading">Loading GHSL tile routing correction gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusGhslCorrectedCustodyPanel({ summary }: { summary: StationRadiusGhslCorrectedCustodySummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.tile_custody_rows ?? [];
+  const isTruthyEvidence = (value: boolean | string | undefined) => value === true || String(value).toLowerCase() === "true";
+  const deferredRows = rows.filter((row) => row.download_decision.startsWith("deferred"));
+  const downloadedRows = rows
+    .filter((row) => isTruthyEvidence(row.downloaded))
+    .sort((a, b) => Number(b.file_size_bytes || 0) - Number(a.file_size_bytes || 0));
+  const formatSize = (value: number | string | undefined) => {
+    const mb = Number(value ?? 0);
+    if (!Number.isFinite(mb) || mb <= 0) return "size missing";
+    return `${formatNumber(mb, 1)} MB`;
+  };
+  const formatBytes = (value: number | string | undefined) => {
+    const bytes = Number(value ?? 0);
+    if (!Number.isFinite(bytes) || bytes <= 0) return "size missing";
+    return `${formatNumber(bytes / 1_000_000, 1)} MB`;
+  };
+  const decisionLabel = (decision: string) => {
+    if (decision.startsWith("deferred")) return "deferred large tile";
+    if (decision === "retained_corrected_queue_cached_zip") return "cached custody";
+    if (decision === "corrected_first_wave_download_candidate") return "download candidate";
+    if (decision.startsWith("blocked")) return "blocked probe";
+    return decision.replaceAll("_", " ");
+  };
+
+  return (
+    <section className="showcase-section air-ghsl-custody-section" aria-label="GHSL corrected population tile custody gate">
+      <div className="air-ghsl-custody-head">
+        <div>
+          <p className="kicker kicker-green">Corrected custody</p>
+          <h2>The denominator gap is now three large tiles.</h2>
+          <p>
+            The corrected queue is probed again against public GHSL files. Most
+            selected population tiles are now downloaded, hashed, and checked
+            against the corrected origin; the remaining gap is explicit large
+            tile custody, not an invisible routing error.
+          </p>
+        </div>
+        <div className="air-ghsl-custody-callout">
+          <span>Corrected queue in custody</span>
+          <strong>{formatNumber(counts?.downloaded_population_tile_files ?? 0)} / {formatNumber(counts?.corrected_tile_rows ?? 0)}</strong>
+          <p>
+            {formatNumber(counts?.geotiff_transform_matches_corrected_bounds ?? 0)} opened rasters match corrected bounds.
+            {counts?.deferred_corrected_selected_tiles ? ` ${formatNumber(counts.deferred_corrected_selected_tiles)} large tiles remain deferred.` : " No selected tile is blocked."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-ghsl-custody-stat-grid">
+            <div>
+              <span>Current probes</span>
+              <strong>{formatNumber(counts.current_probe_size_available_tiles)}</strong>
+              <em>of {formatNumber(counts.corrected_tile_rows)} corrected URLs</em>
+            </div>
+            <div>
+              <span>First-wave eligible</span>
+              <strong>{formatNumber(counts.corrected_first_wave_eligible_rows)}</strong>
+              <em>at or below 60 MB</em>
+            </div>
+            <div>
+              <span>ZIPs in custody</span>
+              <strong>{formatNumber(counts.downloaded_population_tile_files)}</strong>
+              <em>{formatNumber(counts.downloaded_size_mb_total, 1)} MB cached</em>
+            </div>
+            <div>
+              <span>SHA-256 hashes</span>
+              <strong>{formatNumber(counts.sha256_checksummed_population_tile_files)}</strong>
+              <em>{formatNumber(counts.sha256_matches_prior_rows)} match prior cache</em>
+            </div>
+            <div>
+              <span>Corrected matches</span>
+              <strong>{formatNumber(counts.geotiff_transform_matches_corrected_bounds)}</strong>
+              <em>{formatNumber(counts.geotiff_transform_mismatch_corrected_bounds)} mismatches</em>
+            </div>
+            <div>
+              <span>Deferred large tiles</span>
+              <strong>{formatNumber(counts.deferred_corrected_selected_tiles)}</strong>
+              <em>not used for catchments</em>
+            </div>
+          </div>
+
+          <div className="air-ghsl-custody-gates" aria-label="GHSL corrected custody evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-ghsl-custody-gate air-ghsl-custody-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-custody-rule">
+            <span>First-wave rule</span>
+            <p>{summary.first_wave_rule}</p>
+          </div>
+
+          <div className="air-ghsl-custody-deferred-grid" aria-label="Deferred large corrected GHSL tiles">
+            {deferredRows.map((row) => (
+              <article key={row.tile_id} className="air-ghsl-custody-deferred-card">
+                <span>{decisionLabel(row.download_decision)}</span>
+                <strong>{row.tile_id}</strong>
+                <em>{row.corrected_selected_economies.replaceAll("||", " + ")}</em>
+                <dl>
+                  <div>
+                    <dt>Current size</dt>
+                    <dd>{formatSize(row.custody_size_mb)}</dd>
+                  </div>
+                  <div>
+                    <dt>Probe</dt>
+                    <dd>{row.custody_probe_source || "none"}</dd>
+                  </div>
+                  <div>
+                    <dt>Rows touched</dt>
+                    <dd>{formatNumber(Number(row.corrected_coordinate_rows_touching_tile || 0))}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-custody-download-grid" aria-label="Downloaded corrected GHSL population tiles">
+            {downloadedRows.map((row) => (
+              <article key={row.tile_id} className="air-ghsl-custody-download-card">
+                <span>{isTruthyEvidence(row.downloaded_from_prior_cache) ? "cached" : "downloaded"}</span>
+                <strong>{row.tile_id}</strong>
+                <em>{row.corrected_selected_economies.replaceAll("||", " + ")}</em>
+                <dl>
+                  <div>
+                    <dt>Size</dt>
+                    <dd>{formatBytes(row.file_size_bytes)}</dd>
+                  </div>
+                  <div>
+                    <dt>Bounds</dt>
+                    <dd>{isTruthyEvidence(row.transform_matches_corrected_tile_bounds) ? "match" : "check"}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-ghsl-custody-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-ghsl-custody-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-ghsl-corrected-population-tile-custody.md" download>
+              Download custody note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-corrected-population-tile-custody-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-corrected-population-tile-custody.csv" download>
+              Download custody CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading GHSL corrected tile custody gate...</p>
       )}
     </section>
   );

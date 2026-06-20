@@ -271,6 +271,41 @@
       ],
       "notes": "Station-radius GHSL tile-routing correction gate. It derives a corrected GHSL R/C origin from 4 opened GeoTIFF bounds (north_origin 89.09958351, west_origin -180.00791704; origin ranges 0.00000008 degrees north and west), reruns the existing 50 km coordinate-buffer queue across 277 coordinate rows and 11 economies, changes the population tile queue from 23 previous tile URLs to 21 corrected tile URLs, retains 20 previous tile IDs, adds R9_C32, removes R10_C28, R6_C23, and R6_C26, keeps 6 corrected tiles with prior HEAD-OK evidence, 14 with prior HEAD-not-OK evidence, 1 newly added tile with unknown HEAD evidence, retains 3 downloaded population ZIPs under corrected routing, flags 1 previously downloaded ZIP as removed under corrected routing, and keeps station-radius population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_ghsl_corrected_population_tile_custody": {
+      "script": "air-monitoring/scripts/download-station-radius-ghsl-corrected-population-tiles.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_ghsl_tile_routing_correction",
+        "air_monitoring_station_radius_ghsl_population_tile_checksums",
+        "air_monitoring_station_radius_ghsl_population_tile_selection",
+        "air_monitoring_station_radius_denominator_readiness"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R5_C23.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R5_C24.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R5_C25.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R5_C26.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R6_C24.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R6_C25.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C27.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C26.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C27.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C29.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C30.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C32.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C29.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C30.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C31.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C32.zip"
+      ],
+      "cache_policy": "Raw GHSL ZIP files are stored under air-monitoring/.cache/station-radius-ghsl-population-tiles/ and are not committed; rerun the script to rehydrate them from public GHSL tile URLs.",
+      "notes": "Station-radius GHSL corrected population tile custody gate. It re-probes the 21 corrected selected GHSL population tile URLs, records 21 current HEAD-OK probes with size metadata, treats 18 tiles at or below 60 MB as first-wave eligible, reuses/downloads 18 ZIP files in the ignored local cache, records 18 SHA-256 hashes and 464.408 MB of cached ZIP data, opens 18 ZIP/GeoTIFF payloads, finds 18 transforms matching corrected GHSL bounds and 0 mismatches, preserves 3 deferred large selected tiles (R7_C27, R7_C28, R8_C26) for a separate custody pass, and keeps station-radius population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -914,6 +949,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_ghsl_tile_routing_correction pin after deriving a corrected GHSL R/C origin from 4 opened GeoTIFF bounds, rerouting 277 coordinate rows, changing the selected population tile queue from 23 previous tile URLs to 21 corrected tile URLs, adding R9_C32, removing R10_C28, R6_C23, and R6_C26, retaining 3 downloaded population ZIPs under corrected routing, flagging 1 previously downloaded ZIP as removed under corrected routing, and keeping catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_ghsl_corrected_population_tile_custody pin after re-probing the 21 corrected GHSL population tile URLs, recording 21 current HEAD-OK probes, keeping 18 first-wave eligible ZIPs in ignored local cache with SHA-256 hashes and corrected-bound GeoTIFF matches, deferring 3 large selected tiles (R7_C27, R7_C28, R8_C26), and keeping catchments, exposure rows, joins, grade rows, maps, and station-radius readiness blocked."
     },
     {
       "date": "2026-06-19",

@@ -287,6 +287,16 @@
       ],
       "notes": "Official BMKG climate-information parent page and CEWS PM2.5 dashboard status scan for the 22 Indonesia BMKG rows. It retrieves 2 of 2 seeded public routes, parses 26 dashboard locations from the embedded dashboardData object, matches all 22 target rows, records 22 current timestamps, 21 current ONLINE rows, 1 current DELAYED row for Pekanbaru, 2,640 target time-series observations, and keeps station-specific inspection logs, calibration-certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
     },
+    "air_monitoring_bmkg_grade_basis_source_scan": {
+      "script": "air-monitoring/scripts/scan-bmkg-grade-basis-sources.py",
+      "seed": "air-monitoring/source-inputs/bmkg-grade-basis-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_method_classification_audit",
+        "air_monitoring_bmkg_dashboard_status_source_scan"
+      ],
+      "notes": "Official BMKG grade-basis, inspection, calibration, service/tariff, PPID, and annual-report source scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 10 of 10 seeded sources, finds 8 source-level BAM/PM2.5 method-basis sources, 7 technical/operational standard sources, 3 daily inspection or logbook rule-context sources, 2 periodic calibration rule-context sources, 2 public calibration service route sources, 2 certificate-request or output context sources, and keeps station-specific inspection logs, station-specific calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
+    },
     "air_monitoring_georgia_report_verification_source_scan": {
       "script": "air-monitoring/scripts/scan-georgia-report-verification-sources.py",
       "retrieved_on": "2026-06-19",
@@ -715,6 +725,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_bmkg_dashboard_status_source_scan pin after retrieving the official BMKG climate parent page and CEWS PM2.5 dashboard, parsing 26 dashboard locations, matching all 22 BMKG target rows, confirming 21 current ONLINE dashboard rows plus 1 current DELAYED Pekanbaru row, and keeping inspection, calibration, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_bmkg_grade_basis_source_scan pin after retrieving 10 official BMKG standard, SOP, service/tariff, PPID, public-information, and annual-report sources for the 22 BMKG BAM-classified rows, strengthening source-level method, inspection/logbook, calibration, and certificate-context evidence while keeping station-specific calibration/status, complete-grade, and station-radius readiness at zero."
     },
     {
       "date": "2026-06-19",

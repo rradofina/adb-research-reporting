@@ -2086,6 +2086,82 @@ interface BmkgDashboardStatusSummary {
   non_claim: string;
 }
 
+interface BmkgGradeBasisGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgGradeBasisDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgGradeBasisStationRow {
+  source_station_id: string;
+  source_station_name: string;
+  station_method_class: string;
+  station_name_context_source_keys: string;
+  grade_basis_decision: string;
+}
+
+interface BmkgGradeBasisSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  retrieval_bytes: number;
+  matched_expected_terms: string;
+  matched_method_terms: string;
+  matched_technical_standard_terms: string;
+  matched_daily_log_terms: string;
+  matched_calibration_terms: string;
+  matched_certificate_terms: string;
+  matched_target_station_rows: number;
+  retrieval_error: string;
+  source_note: string;
+}
+
+interface BmkgGradeBasisSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    grade_basis_source_urls_seeded: number;
+    grade_basis_source_urls_retrieved: number;
+    official_standard_or_rule_sources_retrieved: number;
+    official_service_or_tariff_sources_retrieved: number;
+    official_report_or_ppid_sources_retrieved: number;
+    rows_with_station_name_context_in_grade_basis_sources: number;
+    source_level_method_basis_sources: number;
+    source_level_technical_standard_sources: number;
+    source_level_daily_log_or_inspection_sources: number;
+    source_level_periodic_calibration_rule_sources: number;
+    source_level_calibration_service_sources: number;
+    source_level_certificate_request_or_output_sources: number;
+    source_level_pm25_network_context_sources: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgGradeBasisDecision[];
+  evidence_gate_counts: BmkgGradeBasisGate[];
+  display_rows: BmkgGradeBasisStationRow[];
+  source_records: BmkgGradeBasisSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2513,6 +2589,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgRegionalStatusSummary | null>(null);
   const [bmkgDashboardStatus, setBmkgDashboardStatus] =
     useState<BmkgDashboardStatusSummary | null>(null);
+  const [bmkgGradeBasis, setBmkgGradeBasis] =
+    useState<BmkgGradeBasisSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -2872,6 +2950,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-grade-basis-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG grade-basis source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgGradeBasis(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3102,6 +3200,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgRegionalStatusPanel summary={bmkgRegionalStatus} />
 
       <AirBmkgDashboardStatusPanel summary={bmkgDashboardStatus} />
+
+      <AirBmkgGradeBasisPanel summary={bmkgGradeBasis} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -7818,6 +7918,201 @@ function AirBmkgDashboardStatusPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG dashboard status source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgGradeBasisPanel({
+  summary,
+}: {
+  summary: BmkgGradeBasisSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const sourceLevelCalibration =
+    (counts?.source_level_periodic_calibration_rule_sources ?? 0) +
+    (counts?.source_level_calibration_service_sources ?? 0);
+  const stationClosure =
+    (counts?.station_specific_calibration_certificate_rows ?? 0) +
+    (counts?.calibration_status_available_rows ?? 0);
+  const sourceFamilies = counts
+    ? [
+        {
+          label: "Standards and SOP",
+          value: counts.official_standard_or_rule_sources_retrieved,
+          detail: "method, operating rule, inspection, and logbook context",
+        },
+        {
+          label: "Service and tariff",
+          value: counts.official_service_or_tariff_sources_retrieved,
+          detail: "public calibration-service route context",
+        },
+        {
+          label: "PPID and reports",
+          value: counts.official_report_or_ppid_sources_retrieved,
+          detail: "agency-level public-information and certificate context",
+        },
+      ]
+    : [];
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-grade-section" aria-label="BMKG grade-basis source scan">
+      <div className="air-grade-method-head air-bmkg-grade-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG grade-basis scan</p>
+          <h2>The method wall is stronger. The station certificate wall is still closed.</h2>
+          <p>
+            This pass tests official BMKG standards, SOPs, service pages, PPID
+            records, and reports for the 22 target BAM rows. It improves the
+            source-level method and calibration-rule basis, but it does not
+            produce station-level inspection logs, calibration certificates, or
+            complete monitor-grade classifications.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-grade-callout">
+          <span>Station certificate rows</span>
+          <strong>{formatNumber(stationClosure)}</strong>
+          <p>{formatNumber(counts?.grade_basis_source_urls_retrieved ?? 0)} official sources retrieved; none close row-level calibration status.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-grade-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.grade_basis_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.grade_basis_source_urls_seeded)} seeded grade-basis routes</em>
+            </div>
+            <div>
+              <span>Method basis</span>
+              <strong>{formatNumber(counts.source_level_method_basis_sources)}</strong>
+              <em>BAM or PM2.5 method context sources</em>
+            </div>
+            <div>
+              <span>Technical standards</span>
+              <strong>{formatNumber(counts.source_level_technical_standard_sources)}</strong>
+              <em>standard, equipment, or operating-rule context</em>
+            </div>
+            <div>
+              <span>Inspection rules</span>
+              <strong>{formatNumber(counts.source_level_daily_log_or_inspection_sources)}</strong>
+              <em>daily inspection or logbook context</em>
+            </div>
+            <div>
+              <span>Calibration route/rule</span>
+              <strong>{formatNumber(sourceLevelCalibration)}</strong>
+              <em>periodic rule plus service-route sources</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>source-level rules are not row-level certificates</em>
+            </div>
+          </div>
+
+          <div className="air-bmkg-grade-family-grid" aria-label="BMKG grade-basis source families">
+            {sourceFamilies.map((family) => (
+              <article key={family.label} className="air-bmkg-grade-family">
+                <span>{family.label}</span>
+                <strong>{formatNumber(family.value)}</strong>
+                <p>{family.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-grade-bridge" aria-label="BMKG grade-basis source scan decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-grade-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-grade-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+                <p>Station-level grade promotion remains blocked for every target BMKG row.</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-grade-source-grid" aria-label="BMKG grade-basis source records">
+            {sources.map((source) => {
+              const sourceTone = source.matched_calibration_terms
+                ? "air-bmkg-grade-source-calibration"
+                : source.matched_method_terms
+                  ? "air-bmkg-grade-source-method"
+                  : "air-bmkg-grade-source-empty";
+              return (
+                <article key={source.source_key} className={`air-bmkg-grade-source-card ${sourceTone}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(source.source_role)}</span>
+                    <strong>{source.source_name}</strong>
+                    <b>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Method</dt>
+                      <dd>{formatNumber(termCount(source.matched_method_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Standard</dt>
+                      <dd>{formatNumber(termCount(source.matched_technical_standard_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Inspect</dt>
+                      <dd>{formatNumber(termCount(source.matched_daily_log_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Calibrate</dt>
+                      <dd>{formatNumber(termCount(source.matched_calibration_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Cert</dt>
+                      <dd>{formatNumber(termCount(source.matched_certificate_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Rows</dt>
+                      <dd>{formatNumber(source.matched_target_station_rows)}</dd>
+                    </div>
+                  </dl>
+                  <p>{source.source_note}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-grade-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-grade-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-grade-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-grade-basis-source-scan.md" download>
+              Grade-basis note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-grade-basis-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-grade-basis-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG grade-basis source scan...</p>
       )}
     </section>
   );

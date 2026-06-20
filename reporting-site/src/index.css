@@ -12264,6 +12264,140 @@
     overflow-wrap: anywhere;
   }
 
+  .air-bmkg-grade-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.13), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
+  .air-bmkg-grade-callout {
+    border-left-color: #5a8227;
+    background: #f4faed;
+  }
+
+  .air-bmkg-grade-stat-grid > div,
+  .air-bmkg-grade-lane,
+  .air-bmkg-grade-gate {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-grade-track {
+    background: #e5f0da;
+  }
+
+  .air-bmkg-grade-track i {
+    background: linear-gradient(90deg, #5a8227, #007db8);
+  }
+
+  .air-bmkg-grade-family-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-bmkg-grade-family,
+  .air-bmkg-grade-source-card {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .air-bmkg-grade-family {
+    border-left: 4px solid #5a8227;
+    background: #f7fbf1;
+  }
+
+  .air-bmkg-grade-family span,
+  .air-bmkg-grade-source-card span,
+  .air-bmkg-grade-source-card dt {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-grade-family strong {
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 1.85rem;
+    line-height: 1;
+  }
+
+  .air-bmkg-grade-family p,
+  .air-bmkg-grade-source-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-sm);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-grade-source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-grade-source-card {
+    grid-template-rows: auto auto minmax(3.4rem, 1fr);
+    border-top: 4px solid #9aa6b2;
+  }
+
+  .air-bmkg-grade-source-card > div:first-child {
+    display: grid;
+    gap: 0.24rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-grade-source-method {
+    border-top-color: #007db8;
+  }
+
+  .air-bmkg-grade-source-calibration {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-grade-source-empty {
+    background: #f8fafc;
+  }
+
+  .air-bmkg-grade-source-card strong {
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-grade-source-card b,
+  .air-bmkg-grade-source-card dd {
+    color: #42651f;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-grade-source-card dl {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-grade-source-card dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -14054,6 +14188,8 @@
     .air-bmkg-dashboard-status-wall,
     .air-bmkg-dashboard-gate-grid,
     .air-bmkg-dashboard-source-grid,
+    .air-bmkg-grade-family-grid,
+    .air-bmkg-grade-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15492,6 +15628,8 @@
     .air-bmkg-dashboard-status-wall,
     .air-bmkg-dashboard-gate-grid,
     .air-bmkg-dashboard-source-grid,
+    .air-bmkg-grade-family-grid,
+    .air-bmkg-grade-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15573,6 +15711,8 @@
     .air-bmkg-dashboard-lane,
     .air-bmkg-dashboard-tile,
     .air-bmkg-dashboard-gate,
+    .air-bmkg-grade-source-card,
+    .air-bmkg-grade-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -15660,7 +15800,8 @@
     }
 
     .air-bmkg-api-row dl,
-    .air-bmkg-regional-row dl {
+    .air-bmkg-regional-row dl,
+    .air-bmkg-grade-source-card dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

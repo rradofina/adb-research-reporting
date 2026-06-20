@@ -1,0 +1,130 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "checked_after_sync": true,
+  "viewport_checks": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1400
+      },
+      "screenshot": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-bmkg-ppid-access-desktop.png",
+      "counts": {
+        "stat_cards": 6,
+        "lane_cards": 6,
+        "decision_cards": 1,
+        "row_cards": 22,
+        "source_cards": 8,
+        "gate_cards": 9,
+        "download_links": 3,
+        "document_scroll_width": 1440,
+        "document_client_width": 1440,
+        "document_horizontal_overflow_px": 0,
+        "section_width": 1120,
+        "section_left": 160,
+        "section_right": 1280,
+        "section_horizontal_overflow_px": 0,
+        "heading": "The public route shows readings, not certificates.",
+        "callout_value": "0",
+        "nonclaim": "This scan classifies official BMKG PPID/PTSP access routes for PM2.5 monitoring and calibration/certificate context. It does not certify station-specific inspection logs, PM2.5 calibration certificates, calibration status, complete monitor-grade classification, same-station OpenAQ joins, or station-radius coverage."
+      }
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1200
+      },
+      "screenshot": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\showcase-air-bmkg-ppid-access-mobile.png",
+      "counts": {
+        "stat_cards": 6,
+        "lane_cards": 6,
+        "decision_cards": 1,
+        "row_cards": 22,
+        "source_cards": 8,
+        "gate_cards": 9,
+        "download_links": 3,
+        "document_scroll_width": 390,
+        "document_client_width": 390,
+        "document_horizontal_overflow_px": 0,
+        "section_width": 342,
+        "section_left": 24,
+        "section_right": 366,
+        "section_horizontal_overflow_px": 0,
+        "heading": "The public route shows readings, not certificates.",
+        "callout_value": "0",
+        "nonclaim": "This scan classifies official BMKG PPID/PTSP access routes for PM2.5 monitoring and calibration/certificate context. It does not certify station-specific inspection logs, PM2.5 calibration certificates, calibration status, complete monitor-grade classification, same-station OpenAQ joins, or station-radius coverage."
+      }
+    }
+  ],
+  "download_checks": [
+    {
+      "label": "desktop",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-ppid-access-route-scan.md",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "label": "desktop",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan-summary.json",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "label": "desktop",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan.csv",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "label": "mobile",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-ppid-access-route-scan.md",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "label": "mobile",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan-summary.json",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "label": "mobile",
+      "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan.csv",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "console_errors": [],
+  "console_warnings": [
+    {
+      "label": "desktop",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "label": "desktop",
+      "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+    },
+    {
+      "label": "mobile",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "label": "mobile",
+      "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+    }
+  ],
+  "page_errors": [],
+  "response_errors": [],
+  "expected": {
+    "stat_cards": 6,
+    "lane_cards": 6,
+    "decision_cards": 1,
+    "row_cards": 22,
+    "source_cards": 8,
+    "gate_cards": 9,
+    "download_links": 3
+  },
+  "passed": true,
+  "failures": []
+}

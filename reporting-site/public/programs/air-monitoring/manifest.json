@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T07:11:26.816Z",
+  "generated_at": "2026-06-20T07:43:47.100Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -444,6 +444,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_ppid_access_route_scan",
+      "file": "bmkg-ppid-access-route-scan.md",
+      "label": "Air-monitoring BMKG PPID/PTSP access-route scan",
+      "size": 2750,
+      "size_human": "2.7 KB",
+      "mtime": "2026-06-20T07:43:32.638Z",
+      "sha256": "45a095af54b706ea8eefa40c3121b448366fc5e6e9b31dfb6453a97eeb45e1b1",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -630,6 +640,18 @@
       "size": 25643,
       "size_human": "25.0 KB",
       "sha256": "20680efcede75f043920d76762f21d8b76a78a37b1aa706b1586c672c66db568"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-ppid-access-route-scan-summary.json",
+      "size": 72740,
+      "size_human": "71.0 KB",
+      "sha256": "72eed5c0df8a9084104586b16f2475bc6dd569c00c197a6274d203559d58f53c"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-ppid-access-route-scan.csv",
+      "size": 20475,
+      "size_human": "20.0 KB",
+      "sha256": "0e9411882f4cae7750d9bede88e91c81bac14cc2905bb7711166c00b8c4b7310"
     },
     {
       "file": "generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",

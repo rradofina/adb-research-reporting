@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -41,6 +41,7 @@ parity/status-field check, the BMKG regional status/source scan, the BMKG
 dashboard current-status source scan, the BMKG grade-basis source scan, the BMKG
 station public-context source scan, the BMKG installation/audit source scan,
 the BMKG near-closure ledger, the BMKG targeted certificate/status source scan,
+the BMKG PPID/PTSP access-route scan,
 the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, the Georgia report-frequency matrix, the
@@ -51,6 +52,20 @@ until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the BMKG PPID/PTSP access-route wall. New seed file
+  `source-inputs/bmkg-ppid-access-route-source-seed.csv` and script
+  `scripts/scan-bmkg-ppid-access-routes.py` test the official PPID/PTSP
+  access taxonomy for the 22 BMKG BAM-classified rows in the near-closure
+  ledger. The pass retrieves 8 of 8 official sources, records 1 PPID public
+  PM2.5 catalog route, 1 public PM2.5 station-display route matching all 22
+  target rows, 1 source-level calibration-service route, 1
+  certificate-request context source, and 2 raw-data access-limit context
+  sources. It keeps station-specific inspection logs, PM2.5 calibration
+  certificate/status rows, complete monitor-grade rows, and
+  station-radius-ready rows at 0. The public showcase now renders a BMKG
+  PPID/PTSP access-route wall. This is source-access context, not grade
+  promotion.
 
 - **2026-06-20:** Added the Uzbekistan Air Uzbekistan portal namespace wall.
   New seed file
@@ -982,12 +997,19 @@ grade-basis evidence, and catchment methods are added.
    Pekanbaru row, 1 exact audit/calibration context row, 7 PM2.5
    installation/deployment context rows, and still 0 station-specific
    inspection logs, calibration certificates/status records, complete-grade
-   rows, or station-radius-ready rows. The next useful source is not another
+   rows, or station-radius-ready rows. The PPID/PTSP access-route wall then
+   retrieves 8 official access-route sources, maps the public PM2.5 catalog
+   route and public PM2.5 display route back to all 22 target rows, adds
+   source-level calibration-service, certificate-request, and raw-data
+   access-limit context, and keeps station-specific inspection,
+   calibration-certificate/status, complete-grade, and station-radius-ready
+   rows at 0. The next useful source is not another
    BMKG station-detail, PM2.5 API scrape, dashboard refresh, generic regional
    analysis page, broad standard, SOP, tariff page, PPID report, annual report,
    station-unit publication, academic article, city/deployment context source,
-   installation note, station audit article, NOC route, AWS route, or
-   public-information catalog; it is public station-owner or regulator evidence
+   installation note, station audit article, NOC route, AWS route,
+   public-information catalog, PPID/PTSP access route, public PM2.5 display
+   route, or raw-data exclusion page; it is public station-owner or regulator evidence
    that names exact BMKG station IDs or station names and gives row-level
    inspection, PM2.5 calibration certificate/status, or explicit grade
    evidence.
@@ -1163,6 +1185,13 @@ grade-basis evidence, and catchment methods are added.
   station-specific PM2.5 calibration certificates, 0 calibration-status rows, 0
   complete monitor-grade rows, and 0 station-radius-ready rows. Near closure is
   not grade closure.
+- The BMKG PPID/PTSP access-route wall retrieves 8 official access-route
+  sources and confirms that all 22 target rows are visible on the public PM2.5
+  display route, while calibration service, certificate-request, and raw-data
+  access-limit language remain source-level context. It records 0
+  station-specific inspection logs, 0 PM2.5 calibration certificate/status
+  rows, 0 complete monitor-grade rows, and 0 station-radius-ready rows. Public
+  display and access taxonomy are not station certificate closure.
 - The Georgia report-verification source scan retrieves the official May 2026
   `air.gov.ge` monthly report route, AQI method note, and monitoring-network
   catalog, finds all 16 target station codes and PM2.5 report rows, but records

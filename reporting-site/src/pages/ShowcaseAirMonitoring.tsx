@@ -2556,6 +2556,85 @@ interface BmkgCertificateStatusTargetedSummary {
   non_claim: string;
 }
 
+interface BmkgPpidAccessRouteGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgPpidAccessRouteLane {
+  lane: string;
+  sources: number;
+}
+
+interface BmkgPpidAccessRouteDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgPpidAccessRouteDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  dashboard_status_raw: string;
+  public_pm25_display_route_available: boolean;
+  source_level_calibration_service_route_available: boolean;
+  source_level_certificate_request_context_available: boolean;
+  raw_data_exclusion_context_available: boolean;
+  access_route_decision: string;
+  reader_use: string;
+}
+
+interface BmkgPpidAccessRouteSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_scope: string;
+  retrieved: boolean;
+  http_status: string | number;
+  matched_pm25_terms: string;
+  matched_public_access_terms: string;
+  matched_calibration_terms: string;
+  matched_certificate_terms: string;
+  matched_excluded_terms: string;
+  matched_target_station_ids: string;
+  source_lane: string;
+  source_note: string;
+}
+
+interface BmkgPpidAccessRouteSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    ppid_access_source_urls_seeded: number;
+    ppid_access_source_urls_retrieved: number;
+    public_pm25_catalog_route_sources: number;
+    public_pm25_station_display_sources: number;
+    target_rows_on_public_pm25_display: number;
+    source_level_calibration_service_routes: number;
+    certificate_request_context_sources: number;
+    raw_data_exclusion_context_sources: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_from_this_scan_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  source_lane_counts: BmkgPpidAccessRouteLane[];
+  decision_counts: BmkgPpidAccessRouteDecision[];
+  evidence_gate_counts: BmkgPpidAccessRouteGate[];
+  display_rows: BmkgPpidAccessRouteDisplayRow[];
+  source_records: BmkgPpidAccessRouteSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -3155,6 +3234,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgNearClosureSummary | null>(null);
   const [bmkgCertificateStatusTargeted, setBmkgCertificateStatusTargeted] =
     useState<BmkgCertificateStatusTargetedSummary | null>(null);
+  const [bmkgPpidAccessRoute, setBmkgPpidAccessRoute] =
+    useState<BmkgPpidAccessRouteSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -3638,6 +3719,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG PPID/PTSP access-route scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgPpidAccessRoute(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3920,6 +4021,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgNearClosurePanel summary={bmkgNearClosure} />
 
       <AirBmkgCertificateStatusTargetedPanel summary={bmkgCertificateStatusTargeted} />
+
+      <AirBmkgPpidAccessRoutePanel summary={bmkgPpidAccessRoute} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -9789,6 +9892,200 @@ function AirBmkgCertificateStatusTargetedPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading BMKG targeted certificate/status source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgPpidAccessRoutePanel({
+  summary,
+}: {
+  summary: BmkgPpidAccessRouteSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const lanes = summary?.source_lane_counts ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const laneTotal = Math.max(1, lanes.reduce((sum, row) => sum + row.sources, 0));
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+
+  return (
+    <section className="showcase-section air-bmkg-ppid-section" aria-label="BMKG PPID and PTSP access-route wall">
+      <div className="air-bmkg-ppid-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG PPID/PTSP access-route wall</p>
+          <h2>The public route shows readings, not certificates.</h2>
+          <p>
+            BMKG rows are close enough to look convincing: BAM method, public
+            PM2.5 display, dashboard status, and service routes are visible.
+            This wall checks the official PPID/PTSP taxonomy before any row is
+            promoted as complete monitor-grade evidence.
+          </p>
+        </div>
+        <div className="air-bmkg-ppid-callout">
+          <span>Station certificate rows</span>
+          <strong>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)}</strong>
+          <p>Public display is not the same as a calibration/status record.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-bmkg-ppid-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.ppid_access_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.ppid_access_source_urls_seeded)} PPID/PTSP routes</em>
+            </div>
+            <div>
+              <span>Public display rows</span>
+              <strong>{formatNumber(counts.target_rows_on_public_pm25_display)}</strong>
+              <em>of {formatNumber(counts.target_bmkg_rows)} BMKG targets</em>
+            </div>
+            <div>
+              <span>PM2.5 catalog routes</span>
+              <strong>{formatNumber(counts.public_pm25_catalog_route_sources)}</strong>
+              <em>public-information taxonomy</em>
+            </div>
+            <div>
+              <span>Calibration service routes</span>
+              <strong>{formatNumber(counts.source_level_calibration_service_routes)}</strong>
+              <em>source-level context only</em>
+            </div>
+            <div>
+              <span>Certificate request context</span>
+              <strong>{formatNumber(counts.certificate_request_context_sources)}</strong>
+              <em>not a public station record</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>no promotions</em>
+            </div>
+          </div>
+
+          <div className="air-bmkg-ppid-story-grid">
+            <div className="air-bmkg-ppid-lane-grid" aria-label="BMKG PPID source lanes">
+              {lanes.map((lane) => (
+                <article key={lane.lane} className={`air-bmkg-ppid-lane air-bmkg-ppid-lane-${lane.lane}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(lane.lane)}</span>
+                    <strong>{formatNumber(lane.sources)} sources</strong>
+                  </div>
+                  <div className="air-bmkg-ppid-track">
+                    <i style={{ width: `${Math.max(5, (lane.sources / laneTotal) * 100)}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="air-bmkg-ppid-decision-grid" aria-label="BMKG PPID row decisions">
+              {decisions.map((decision) => (
+                <article key={decision.decision} className="air-bmkg-ppid-decision">
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                  <div className="air-bmkg-ppid-track">
+                    <i style={{ width: `${Math.max(5, (decision.rows / decisionTotal) * 100)}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-bmkg-ppid-row-grid" aria-label="BMKG PPID target row decisions">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className={`air-bmkg-ppid-row air-bmkg-ppid-row-${row.dashboard_status_raw.toLowerCase()}`}>
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.dashboard_status_raw || "unknown")}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Display</dt>
+                    <dd>{row.public_pm25_display_route_available ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Service</dt>
+                    <dd>{row.source_level_calibration_service_route_available ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Request</dt>
+                    <dd>{row.source_level_certificate_request_context_available ? "yes" : "no"}</dd>
+                  </div>
+                  <div>
+                    <dt>Raw limit</dt>
+                    <dd>{row.raw_data_exclusion_context_available ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <em>{sentenceCaseStatus(row.access_route_decision)}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-ppid-source-grid" aria-label="BMKG PPID and PTSP source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={`air-bmkg-ppid-source air-bmkg-ppid-source-${source.source_lane}`}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_lane)}</span>
+                  <strong>{source.source_name}</strong>
+                  <b>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Rows</dt>
+                    <dd>{formatNumber(termCount(source.matched_target_station_ids))}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{formatNumber(termCount(source.matched_pm25_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Access</dt>
+                    <dd>{formatNumber(termCount(source.matched_public_access_terms))}</dd>
+                  </div>
+                  <div>
+                    <dt>Cert.</dt>
+                    <dd>{formatNumber(termCount(source.matched_certificate_terms))}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-ppid-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-ppid-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-bmkg-ppid-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-grade-method-downloads air-bmkg-ppid-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-ppid-access-route-scan.md" download>
+              Download PPID/PTSP note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-ppid-access-route-scan.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading BMKG PPID/PTSP access-route scan...</p>
       )}
     </section>
   );

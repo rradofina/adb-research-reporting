@@ -12869,6 +12869,267 @@
     background: linear-gradient(90deg, #007db8, #5a8227);
   }
 
+  .air-bmkg-ppid-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.13), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-bmkg-ppid-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.28fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .air-bmkg-ppid-head h2 {
+    margin: 0.25rem 0 0;
+    max-width: 52rem;
+    color: var(--ink);
+    font-size: clamp(1.85rem, 3vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .air-bmkg-ppid-head p {
+    max-width: 58rem;
+  }
+
+  .air-bmkg-ppid-callout {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+    padding: 1rem;
+    border-left: 5px solid #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-bmkg-ppid-callout span,
+  .air-bmkg-ppid-row span,
+  .air-bmkg-ppid-row dt,
+  .air-bmkg-ppid-source span,
+  .air-bmkg-ppid-source dt,
+  .air-bmkg-ppid-lane span,
+  .air-bmkg-ppid-decision span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-ppid-callout strong {
+    color: #9b2226;
+    font-size: clamp(2.8rem, 6vw, 5.25rem);
+    line-height: 0.86;
+  }
+
+  .air-bmkg-ppid-callout p,
+  .air-bmkg-ppid-row p,
+  .air-bmkg-ppid-source p,
+  .air-bmkg-ppid-nonclaim {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-ppid-stat-grid,
+  .air-bmkg-ppid-lane-grid,
+  .air-bmkg-ppid-decision-grid,
+  .air-bmkg-ppid-row-grid,
+  .air-bmkg-ppid-source-grid {
+    display: grid;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-ppid-stat-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .air-bmkg-ppid-stat-grid > div,
+  .air-bmkg-ppid-lane,
+  .air-bmkg-ppid-decision,
+  .air-bmkg-ppid-row,
+  .air-bmkg-ppid-source,
+  .air-bmkg-ppid-gate {
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #5a8227;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .air-bmkg-ppid-stat-grid span,
+  .air-bmkg-ppid-stat-grid em {
+    display: block;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+  }
+
+  .air-bmkg-ppid-stat-grid strong,
+  .air-bmkg-ppid-lane strong,
+  .air-bmkg-ppid-decision strong,
+  .air-bmkg-ppid-row strong,
+  .air-bmkg-ppid-source strong {
+    display: block;
+    margin-top: 0.16rem;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-ppid-stat-grid strong {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: clamp(1.55rem, 2.3vw, 2.25rem);
+    line-height: 1;
+  }
+
+  .air-bmkg-ppid-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.56fr) minmax(0, 0.44fr);
+    gap: 0.85rem;
+  }
+
+  .air-bmkg-ppid-lane-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-bmkg-ppid-decision-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-bmkg-ppid-row-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-bmkg-ppid-source-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .air-bmkg-ppid-row,
+  .air-bmkg-ppid-source {
+    display: grid;
+    gap: 0.58rem;
+  }
+
+  .air-bmkg-ppid-row {
+    grid-template-rows: auto auto minmax(3.3rem, 1fr) auto;
+    border-left: 4px solid #007db8;
+    background: #f2f8fb;
+  }
+
+  .air-bmkg-ppid-row-delayed {
+    border-left-color: #fbb00e;
+    background: #fff9e8;
+  }
+
+  .air-bmkg-ppid-source-public_pm25_station_display {
+    border-top-color: #5a8227;
+    background: #f5f9ee;
+  }
+
+  .air-bmkg-ppid-source-calibration_service_route,
+  .air-bmkg-ppid-source-certificate_request_context {
+    border-top-color: #007db8;
+    background: #eef8fc;
+  }
+
+  .air-bmkg-ppid-source-raw_data_exclusion_context {
+    border-top-color: #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-bmkg-ppid-source-retrieved_no_pm25_certificate_context {
+    border-top-color: #fbb00e;
+    background: #fff9e8;
+  }
+
+  .air-bmkg-ppid-row > div:first-child,
+  .air-bmkg-ppid-source > div:first-child {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .air-bmkg-ppid-row b,
+  .air-bmkg-ppid-row dd,
+  .air-bmkg-ppid-row em,
+  .air-bmkg-ppid-source b,
+  .air-bmkg-ppid-source dd {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-ppid-row dl,
+  .air-bmkg-ppid-source dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-ppid-row dd,
+  .air-bmkg-ppid-source dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
+  .air-bmkg-ppid-track {
+    height: 0.72rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #e1ead7;
+  }
+
+  .air-bmkg-ppid-track i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #5a8227, #007db8);
+  }
+
+  .air-bmkg-ppid-nonclaim {
+    padding: 0.85rem 1rem;
+    border-left: 4px solid #9b2226;
+    background: #fff4f1;
+  }
+
+  @media (max-width: 1100px) {
+    .air-bmkg-ppid-stat-grid,
+    .air-bmkg-ppid-source-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-bmkg-ppid-story-grid,
+    .air-bmkg-ppid-head {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .air-bmkg-ppid-stat-grid,
+    .air-bmkg-ppid-lane-grid,
+    .air-bmkg-ppid-row-grid,
+    .air-bmkg-ppid-source-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-bmkg-ppid-row dl,
+    .air-bmkg-ppid-source dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),

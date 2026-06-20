@@ -340,6 +340,16 @@
       ],
       "notes": "Targeted BMKG certificate/status source scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 8 of 8 seeded public sources found around station-specific PM2.5 certificate/status searches, including the newly surfaced GAW Bukit Kototabang maintenance page, exact Kototabang audit/station-unit sources, and source-level BMKG inspection, service, and PPID certificate-request routes; finds 1 row with exact station maintenance/calibration-language context and keeps station-specific inspection logs, station-specific PM2.5 calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
     },
+    "air_monitoring_bmkg_ppid_access_route_scan": {
+      "script": "air-monitoring/scripts/scan-bmkg-ppid-access-routes.py",
+      "seed": "air-monitoring/source-inputs/bmkg-ppid-access-route-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_bmkg_near_closure_ledger",
+        "air_monitoring_bmkg_certificate_status_targeted_source_scan"
+      ],
+      "notes": "BMKG PPID/PTSP access-route scan for the 22 Indonesia BMKG BAM-classified rows. It retrieves 8 of 8 official PPID/PTSP sources, finds 1 PPID public PM2.5 catalog route, 1 public PM2.5 station-display route that names all 22 target rows, 1 source-level calibration-service route, 1 certificate-request context source, 2 raw-data access-limit context sources, and keeps station-specific inspection logs, PM2.5 calibration certificate/status rows, complete monitor-grade rows, and station-radius-ready rows at zero."
+    },
     "air_monitoring_bmkg_near_closure_ledger": {
       "script": "air-monitoring/scripts/build-bmkg-near-closure-ledger.py",
       "retrieved_on": "2026-06-20",
@@ -829,6 +839,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_bmkg_near_closure_ledger pin after synthesizing six committed BMKG evidence artifacts into a 22-row closure ledger with 21 current ONLINE dashboard rows, 1 DELAYED row, 1 exact audit/calibration context row, 7 PM2.5 installation/deployment context rows, and 0 station-specific inspection logs, calibration certificates/status records, complete-grade rows, or station-radius-ready rows."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_bmkg_ppid_access_route_scan pin after retrieving 8 official BMKG PPID/PTSP sources, mapping public PM2.5 catalog/display routes and service/request context back to the 22 BMKG rows, and keeping station-specific inspection, calibration certificate/status, complete-grade, and station-radius gates at zero."
     },
     {
       "date": "2026-06-19",

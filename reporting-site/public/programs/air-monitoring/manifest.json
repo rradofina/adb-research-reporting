@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T08:46:10.109Z",
+  "generated_at": "2026-06-20T09:12:32.198Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -121,6 +121,16 @@
       "size_human": "3.3 KB",
       "mtime": "2026-06-20T08:33:04.885Z",
       "sha256": "795244a636aed314591622f0b585e20d4c3b71bda1a40e2db3a7a34d2d5cdd35",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_denominator_acquisition_routes",
+      "file": "station-radius-denominator-acquisition-routes.md",
+      "label": "Air-monitoring station-radius denominator acquisition routes",
+      "size": 3688,
+      "size_human": "3.6 KB",
+      "mtime": "2026-06-20T09:08:10.892Z",
+      "sha256": "0ba7123747027b386c34b4d982d8e46ce2a17f402de3fb6c04407c69bffbc13b",
       "attestation_chain": "ai-first"
     },
     {
@@ -1008,6 +1018,18 @@
       "size": 66400,
       "size_human": "64.8 KB",
       "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",
+      "size": 22394,
+      "size_human": "21.9 KB",
+      "sha256": "794ac1ce86df276f738b55d8bffc11f0f9802a60e54c9b7c2302a97cdef850af"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes.csv",
+      "size": 13455,
+      "size_human": "13.1 KB",
+      "sha256": "b726dee9ea59a91d62693f44c72050cf05401bd0b89d729cad27dc6fb1b89be6"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",

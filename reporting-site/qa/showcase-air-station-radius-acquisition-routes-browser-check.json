@@ -1,0 +1,164 @@
+{
+  "checked_at": "2026-06-20T09:13:57Z",
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "browser": "standalone_chromium_cdp",
+  "in_app_browser_available": false,
+  "expected": {
+    "stat_cards": 6,
+    "route_cards": 7,
+    "decision_tracks": 3,
+    "gate_cards": 6,
+    "download_links": 3
+  },
+  "desktop": {
+    "label": "desktop",
+    "title": "The doors are visible; the files are still outside the package.",
+    "callout": "4 / 4",
+    "stats": 6,
+    "routeCards": 7,
+    "routeExamples": [
+      "source_directory_route: GHS-POP_GLOBE_R2023A",
+      "country_100m_listing_route: Individual countries 2015-2030 ( 100m resolution ) R2025A v1",
+      "box_download_route: [https://wustl.box.com/v/ACAG-V6GL0204-CNNPM25]",
+      "box_download_route: [https://wustl.box.com/v/ACAG-V5GL0502-GWRPM25]",
+      "context_file_route: DIMAQ database, 2016 xlxs, 51.46Mb",
+      "context_file_route: Download",
+      "boundary_download_page_route: Downloads"
+    ],
+    "decisionTracks": 3,
+    "gates": 6,
+    "downloads": [
+      {
+        "text": "Download route scan",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-acquisition-routes.md"
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json"
+      },
+      {
+        "text": "Download route CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes.csv"
+      }
+    ],
+    "nonclaim": "This acquisition-route scan extracts public download, listing, cloud, or context routes visible on the verified denominator source pages. It does not download GHSL, WorldPop, ACAG, or WHO raster/grid files; does not checksum denominator files; does not compute catchment population or PM2.5 exposure; does not validate same-station joins; and does not promote any monitor-grade row.",
+    "pageOverflow": false,
+    "sectionOverflow": false,
+    "overflowChildren": [],
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "sectionRect": {
+      "width": 1120,
+      "height": 2098
+    },
+    "downloadStatuses": [
+      {
+        "text": "Download route scan",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-acquisition-routes.md",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "text": "Download route CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes.csv",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "screenshot": {
+      "file": "reporting-site/qa/showcase-air-station-radius-acquisition-routes-desktop.png",
+      "rect": {
+        "x": 152,
+        "y": 8981,
+        "width": 1120,
+        "height": 2098
+      }
+    }
+  },
+  "mobile": {
+    "label": "mobile",
+    "title": "The doors are visible; the files are still outside the package.",
+    "callout": "4 / 4",
+    "stats": 6,
+    "routeCards": 7,
+    "routeExamples": [
+      "source_directory_route: GHS-POP_GLOBE_R2023A",
+      "country_100m_listing_route: Individual countries 2015-2030 ( 100m resolution ) R2025A v1",
+      "box_download_route: [https://wustl.box.com/v/ACAG-V6GL0204-CNNPM25]",
+      "box_download_route: [https://wustl.box.com/v/ACAG-V5GL0502-GWRPM25]",
+      "context_file_route: DIMAQ database, 2016 xlxs, 51.46Mb",
+      "context_file_route: Download",
+      "boundary_download_page_route: Downloads"
+    ],
+    "decisionTracks": 3,
+    "gates": 6,
+    "downloads": [
+      {
+        "text": "Download route scan",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-acquisition-routes.md"
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json"
+      },
+      {
+        "text": "Download route CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes.csv"
+      }
+    ],
+    "nonclaim": "This acquisition-route scan extracts public download, listing, cloud, or context routes visible on the verified denominator source pages. It does not download GHSL, WorldPop, ACAG, or WHO raster/grid files; does not checksum denominator files; does not compute catchment population or PM2.5 exposure; does not validate same-station joins; and does not promote any monitor-grade row.",
+    "pageOverflow": false,
+    "sectionOverflow": false,
+    "overflowChildren": [],
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "sectionRect": {
+      "width": 342,
+      "height": 5884
+    },
+    "downloadStatuses": [
+      {
+        "text": "Download route scan",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-acquisition-routes.md",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "text": "Download route CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes.csv",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "screenshot": {
+      "file": "reporting-site/qa/showcase-air-station-radius-acquisition-routes-mobile.png",
+      "rect": {
+        "x": 24,
+        "y": 25138,
+        "width": 342,
+        "height": 5885
+      }
+    }
+  },
+  "runtime_errors": [],
+  "console_errors": [],
+  "request_failures": [],
+  "bad_responses": [],
+  "pass": true
+}

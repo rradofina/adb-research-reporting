@@ -396,6 +396,67 @@ interface StationRadiusSourcePlanSummary {
   non_claim: string;
 }
 
+interface StationRadiusAcquisitionGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusAcquisitionDecision {
+  decision: string;
+  sources: number;
+}
+
+interface StationRadiusAcquisitionRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_family: string;
+  source_level_candidate_ready: boolean;
+  route_links_total: number;
+  direct_file_route_links: number;
+  cloud_or_listing_route_links: number;
+  context_route_links: number;
+  route_probe_attempts: number;
+  route_probe_ok: number;
+  route_probe_statuses: string;
+  route_examples: string;
+  route_decision: string;
+  reader_use: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusAcquisitionSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    source_records: number;
+    source_pages_retrieved: number;
+    candidate_denominator_sources: number;
+    candidate_sources_with_visible_routes: number;
+    visible_route_links: number;
+    direct_file_route_links: number;
+    cloud_or_listing_route_links: number;
+    context_route_links: number;
+    route_probe_attempts: number;
+    route_probe_ok: number;
+    committed_population_raster_files: number;
+    committed_pm25_grid_files: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  route_decision_counts: StationRadiusAcquisitionDecision[];
+  evidence_gate_counts: StationRadiusAcquisitionGate[];
+  route_records: StationRadiusAcquisitionRecord[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3308,6 +3369,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusReadinessSummary | null>(null);
   const [stationRadiusSourcePlan, setStationRadiusSourcePlan] =
     useState<StationRadiusSourcePlanSummary | null>(null);
+  const [stationRadiusAcquisition, setStationRadiusAcquisition] =
+    useState<StationRadiusAcquisitionSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3538,6 +3601,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusSourcePlan(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator acquisition routes HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusAcquisition(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4135,6 +4218,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusReadinessPanel summary={stationRadiusReadiness} />
 
       <AirStationRadiusSourcePlanPanel summary={stationRadiusSourcePlan} />
+
+      <AirStationRadiusAcquisitionPanel summary={stationRadiusAcquisition} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -4942,6 +5027,176 @@ function AirStationRadiusSourcePlanPanel({ summary }: { summary: StationRadiusSo
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator source plan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusAcquisitionPanel({ summary }: { summary: StationRadiusAcquisitionSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const records = summary?.route_records ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const decisions = summary?.route_decision_counts ?? [];
+  const maxDecisionSources = Math.max(1, ...decisions.map((row) => row.sources));
+  const pinnedFiles = (counts?.committed_population_raster_files ?? 0) + (counts?.committed_pm25_grid_files ?? 0);
+  const routeTone = (record: StationRadiusAcquisitionRecord) => {
+    if (record.source_level_candidate_ready) return "candidate";
+    if (record.route_decision.startsWith("context")) return "context";
+    if (record.route_decision.startsWith("boundary")) return "boundary";
+    return "blocked";
+  };
+  const firstRoute = (record: StationRadiusAcquisitionRecord) => {
+    const first = record.route_examples.split(" || ")[0] || "No route example captured";
+    const [label, href] = first.split(" => ");
+    return { label: label || first, href: href || "" };
+  };
+
+  return (
+    <section className="showcase-section air-radius-acquisition-section" aria-label="Station-radius denominator acquisition routes">
+      <div className="air-radius-acquisition-head">
+        <div>
+          <p className="kicker kicker-blue">Acquisition route scan</p>
+          <h2>The doors are visible; the files are still outside the package.</h2>
+          <p>
+            The source-plan wall says which public sources can support a future
+            denominator. This pass checks whether those pages expose actual
+            download, listing, Box, AWS, or context routes, then keeps the
+            exact-file and checksum gates closed.
+          </p>
+        </div>
+        <div className="air-radius-acquisition-callout">
+          <span>Candidate sources with routes</span>
+          <strong>
+            {formatNumber(counts?.candidate_sources_with_visible_routes ?? 0)}
+            <small> / {formatNumber(counts?.candidate_denominator_sources ?? 0)}</small>
+          </strong>
+          <p>Route visibility is progress. It is not a denominator file.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-radius-acquisition-stat-grid">
+            <div>
+              <span>Source pages retrieved</span>
+              <strong>{formatNumber(counts.source_pages_retrieved)} / {formatNumber(counts.source_records)}</strong>
+              <em>route scan inputs</em>
+            </div>
+            <div>
+              <span>Visible route links</span>
+              <strong>{formatNumber(counts.visible_route_links)}</strong>
+              <em>download, listing, cloud, or context links</em>
+            </div>
+            <div>
+              <span>Cloud/listing routes</span>
+              <strong>{formatNumber(counts.cloud_or_listing_route_links)}</strong>
+              <em>directories, Box, AWS, listings</em>
+            </div>
+            <div>
+              <span>HEAD probes ok</span>
+              <strong>{formatNumber(counts.route_probe_ok)} / {formatNumber(counts.route_probe_attempts)}</strong>
+              <em>light route checks, no file downloads</em>
+            </div>
+            <div>
+              <span>Pinned denominator files</span>
+              <strong>{formatNumber(pinnedFiles)}</strong>
+              <em>no raster or grid checksum yet</em>
+            </div>
+            <div>
+              <span>Radius-ready economies</span>
+              <strong>{formatNumber(counts.station_radius_ready_economies)}</strong>
+              <em>join and grade gates still block</em>
+            </div>
+          </div>
+
+          <div className="air-radius-acquisition-route-grid" aria-label="Acquisition route records">
+            {records.map((record) => {
+              const example = firstRoute(record);
+              return (
+                <article
+                  key={record.source_key}
+                  className={`air-radius-acquisition-route air-radius-acquisition-route-${routeTone(record)}`}
+                >
+                  <div>
+                    <span>{record.source_family} / {sentenceCaseStatus(record.source_role)}</span>
+                    <strong>{record.source_name}</strong>
+                    <b>{sentenceCaseStatus(record.route_decision)}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Routes</dt>
+                      <dd>{formatNumber(record.route_links_total)}</dd>
+                    </div>
+                    <div>
+                      <dt>Cloud/listing</dt>
+                      <dd>{formatNumber(record.cloud_or_listing_route_links)}</dd>
+                    </div>
+                    <div>
+                      <dt>Direct/context</dt>
+                      <dd>{formatNumber(record.direct_file_route_links + record.context_route_links)}</dd>
+                    </div>
+                    <div>
+                      <dt>Probe ok</dt>
+                      <dd>{formatNumber(record.route_probe_ok)} / {formatNumber(record.route_probe_attempts)}</dd>
+                    </div>
+                  </dl>
+                  <p>{record.reader_use}</p>
+                  <div className="air-radius-acquisition-example">
+                    <span>First route example</span>
+                    {example.href ? (
+                      <a href={example.href}>{example.label}</a>
+                    ) : (
+                      <em>{example.label}</em>
+                    )}
+                  </div>
+                  <p className="air-radius-acquisition-gap">{record.blocking_gap}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-radius-acquisition-decision-grid" aria-label="Acquisition route decisions">
+            {decisions.map((row) => (
+              <article key={row.decision}>
+                <div>
+                  <span>{sentenceCaseStatus(row.decision)}</span>
+                  <strong>{formatNumber(row.sources)} source{row.sources === 1 ? "" : "s"}</strong>
+                </div>
+                <div className="air-radius-acquisition-track">
+                  <i style={{ width: `${Math.max(7, (row.sources / maxDecisionSources) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-acquisition-gate-grid" aria-label="Acquisition route gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-radius-acquisition-gate air-radius-acquisition-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-acquisition-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-acquisition-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-acquisition-routes.md" download>
+              Download route scan
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-acquisition-routes.csv" download>
+              Download route CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator acquisition routes...</p>
       )}
     </section>
   );

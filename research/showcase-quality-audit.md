@@ -1345,16 +1345,51 @@ operation, so visual inspection used header-hidden clean crops:
 and
 `reporting-site/qa/showcase-air-uzbekistan-external-mobile-gates-clean.png`.
 
+## 2026-06-20 — Air-monitoring BMKG regional status gate
+
+Air-monitoring now adds
+`air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json`
+to the public evidence stack for `/showcase/air-monitoring-observability`.
+The new source pass adds
+`air-monitoring/source-inputs/bmkg-regional-status-source-seed.csv` and
+`air-monitoring/scripts/scan-bmkg-regional-status-sources.py`, generates
+`air-monitoring-bmkg-regional-status-source-scan.csv`, and writes
+`air-monitoring/bmkg-regional-status-source-scan.md`.
+
+The generated summary records 22 BMKG target rows, 6/6 regional or public
+source URLs retrieved, 1 official regional station-status source retrieved, 2
+rows with exact station-name external context, 1 Banjarbaru row with official
+regional `ONLINE` status and a recent timestamp, and 1 current-status confirmed
+row. The same artifact keeps station-specific inspection-log,
+calibration-certificate/status, complete monitor-grade, and
+station-radius-ready rows at 0. This is a useful gate movement: current status
+is no longer zero for BMKG, but complete grade still remains blocked.
+
+Verification in this pass ran `py_compile`, reran the BMKG regional-status
+source scan, synced public evidence and docs through the reporting-site build,
+and browser-checked desktop 1440x1100 plus mobile 390x1000. Browser QA found 6
+stat cards, 3 decision lanes, 2 evidence rows, 8 gate cards, 6 source cards, 3
+working download links, no missing required text, no console errors, no page
+errors, no request failures, and no page or section overflow. Screenshots:
+`reporting-site/qa/showcase-air-bmkg-regional-desktop-section-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-desktop-evidence-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-desktop-sources-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-desktop-gates-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-mobile-section-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-mobile-evidence-clean.png`,
+`reporting-site/qa/showcase-air-bmkg-regional-mobile-sources-clean.png`, and
+`reporting-site/qa/showcase-air-bmkg-regional-mobile-gates-clean.png`.
+
 ## Next deepening order
 
 1. Air-monitoring observability, because the source walls now identify the
    exact closure gaps: Uzbekistan needs station-ID correction/status/grade
-   records for IDs 107, 728, and 737; BMKG needs station-specific
-   inspection/calibration/status or official grade-basis evidence beyond
-   station-page telemetry; Georgia needs a verified station-code
-   report/status/method route beyond the tested caution and export surfaces.
-   Only after those closures should the program add station-radius or
-   catchment denominators.
+   records for IDs 107, 728, and 737; BMKG now has one regional current-status
+   closure for Banjarbaru but still needs station-specific inspection,
+   calibration, or official grade-basis evidence for complete-grade promotion;
+   Georgia needs a verified station-code report/status/method route beyond the
+   tested caution and export surfaces. Only after those closures should the
+   program add station-radius or catchment denominators.
 2. PSDQ source disagreement remains strong but owner-gated: source-owner
    clarification or human review is needed for the unresolved Durgapur
    same-name cross-district coordinate conflict and shared-coordinate

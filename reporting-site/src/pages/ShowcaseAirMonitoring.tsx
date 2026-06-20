@@ -1918,6 +1918,85 @@ interface BmkgApiParitySummary {
   non_claim: string;
 }
 
+interface BmkgRegionalStatusGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgRegionalStatusDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgRegionalStatusDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  matched_source_keys: string;
+  matched_source_roles: string;
+  source_url_count: number;
+  exact_station_name_external_context: boolean;
+  explicit_regional_status_online: boolean;
+  status_source_key: string;
+  status_source_url: string;
+  status_timestamp_raw: string;
+  status_value_ug_m3: string;
+  status_category_raw: string;
+  source_latitude: string;
+  source_longitude: string;
+  current_status_confirmed: boolean;
+  complete_monitor_grade_classification_available: boolean;
+  station_radius_grade_assumption_ready: boolean;
+  regional_status_decision: string;
+  reader_use: string;
+}
+
+interface BmkgRegionalStatusSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  retrieval_bytes: number;
+  matched_expected_terms: string;
+  matched_target_station_rows: number;
+  retrieval_error: string;
+  source_note: string;
+}
+
+interface BmkgRegionalStatusSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    regional_public_source_urls_seeded: number;
+    regional_public_source_urls_retrieved: number;
+    official_regional_station_status_sources_retrieved: number;
+    public_information_or_service_sources_retrieved: number;
+    rows_with_exact_station_name_external_context: number;
+    rows_with_location_level_external_context: number;
+    rows_with_regional_online_status: number;
+    current_status_confirmed_rows: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgRegionalStatusDecision[];
+  evidence_gate_counts: BmkgRegionalStatusGate[];
+  display_rows: BmkgRegionalStatusDisplayRow[];
+  source_records: BmkgRegionalStatusSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2341,6 +2420,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgStationStatusSummary | null>(null);
   const [bmkgApiParity, setBmkgApiParity] =
     useState<BmkgApiParitySummary | null>(null);
+  const [bmkgRegionalStatus, setBmkgRegionalStatus] =
+    useState<BmkgRegionalStatusSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -2660,6 +2741,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG regional status source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgRegionalStatus(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -2886,6 +2987,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgStationStatusPanel summary={bmkgStationStatus} />
 
       <AirBmkgApiParityPanel summary={bmkgApiParity} />
+
+      <AirBmkgRegionalStatusPanel summary={bmkgRegionalStatus} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -7274,6 +7377,169 @@ function AirBmkgApiParityPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG API parity/status check...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgRegionalStatusPanel({
+  summary,
+}: {
+  summary: BmkgRegionalStatusSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-regional-section" aria-label="BMKG regional station-status source scan">
+      <div className="air-grade-method-head air-bmkg-regional-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG regional status scan</p>
+          <h2>One status gate moves, but the grade gate stays closed.</h2>
+          <p>
+            This pass leaves the central station-detail and API surfaces and checks
+            regional BMKG, public-information, service, and regulator sources.
+            Banjarbaru gets explicit regional ONLINE status; calibration and
+            complete-grade evidence still remain absent.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-regional-callout">
+          <span>Current-status rows</span>
+          <strong>{formatNumber(counts?.current_status_confirmed_rows ?? 0)}</strong>
+          <p>Useful movement, not a station-radius or grade promotion.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-regional-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.regional_public_source_urls_retrieved)}</strong>
+              <em>of {formatNumber(counts.regional_public_source_urls_seeded)} seeded routes</em>
+            </div>
+            <div>
+              <span>Exact station context</span>
+              <strong>{formatNumber(counts.rows_with_exact_station_name_external_context)}</strong>
+              <em>Banjarbaru and Kemayoran</em>
+            </div>
+            <div>
+              <span>Regional ONLINE rows</span>
+              <strong>{formatNumber(counts.rows_with_regional_online_status)}</strong>
+              <em>official Kalimantan Selatan page</em>
+            </div>
+            <div>
+              <span>Calibration certificates</span>
+              <strong>{formatNumber(counts.station_specific_calibration_certificate_rows)}</strong>
+              <em>still absent in public sources</em>
+            </div>
+            <div>
+              <span>Complete grade</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>status alone is not enough</em>
+            </div>
+            <div>
+              <span>Radius ready</span>
+              <strong>{formatNumber(counts.station_radius_grade_assumption_ready_rows)}</strong>
+              <em>no catchment denominator yet</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-regional-bridge" aria-label="BMKG regional status scan decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className="air-grade-method-lane air-bmkg-regional-lane">
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-regional-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-regional-evidence-wall" aria-label="BMKG regional station evidence rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className={`air-bmkg-regional-row ${row.current_status_confirmed ? "air-bmkg-regional-row-closed" : ""}`}>
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.regional_status_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{row.explicit_regional_status_online ? "ONLINE" : "not closed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Time</dt>
+                    <dd>{row.status_timestamp_raw || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.status_value_ug_m3 || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>Grade</dt>
+                    <dd>{row.complete_monitor_grade_classification_available ? "closed" : "open"}</dd>
+                  </div>
+                </dl>
+                {row.source_latitude && row.source_longitude && (
+                  <p>
+                    Regional page coordinates: {row.source_latitude}, {row.source_longitude}; category {row.status_category_raw || "n/a"}.
+                  </p>
+                )}
+                <em>{row.reader_use}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-regional-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-regional-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-regional-source-grid" aria-label="BMKG regional status source records">
+            {sources.map((source) => (
+              <article key={source.source_key} className={source.matched_target_station_rows > 0 ? "air-bmkg-regional-source-matched" : ""}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_role)}</span>
+                  <strong>{sentenceCaseStatus(source.source_key)}</strong>
+                </div>
+                <p>{source.source_name}</p>
+                <em>
+                  HTTP {source.http_status || "n/a"} · {formatNumber(source.matched_target_station_rows)} target rows · {source.retrieved ? "retrieved" : "not retrieved"}
+                </em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-regional-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-regional-status-source-scan.md" download>
+              Regional status note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG regional status source scan...</p>
       )}
     </section>
   );

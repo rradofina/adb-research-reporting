@@ -1,0 +1,84 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "checkedAt": "2026-06-20T01:41:20.922Z",
+  "results": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        "statCards": 6,
+        "decisionLanes": 3,
+        "evidenceRows": 2,
+        "gateCards": 8,
+        "sourceCards": 6,
+        "downloadLinks": 3
+      },
+      "missingTexts": [],
+      "overflow": {
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "overflowingChildren": []
+      },
+      "linkResults": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-regional-status-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000,
+        "isMobile": true
+      },
+      "counts": {
+        "statCards": 6,
+        "decisionLanes": 3,
+        "evidenceRows": 2,
+        "gateCards": 8,
+        "sourceCards": 6,
+        "downloadLinks": 3
+      },
+      "missingTexts": [],
+      "overflow": {
+        "bodyOverflow": false,
+        "sectionOverflow": false,
+        "overflowingChildren": []
+      },
+      "linkResults": [
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-regional-status-source-scan.md",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
+          "status": 200
+        },
+        {
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
+          "status": 200
+        }
+      ],
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": []
+    }
+  ],
+  "failures": []
+}

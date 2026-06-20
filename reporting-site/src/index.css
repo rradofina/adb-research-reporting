@@ -11994,6 +11994,140 @@
     border-bottom: 1px solid var(--rule-soft);
   }
 
+  .air-bmkg-regional-section {
+    background:
+      linear-gradient(180deg, rgba(90, 130, 39, 0.12), rgba(255, 255, 255, 0.98) 40%),
+      #ffffff;
+  }
+
+  .air-bmkg-regional-callout {
+    border-left-color: #5a8227;
+    background: #f4f8ed;
+  }
+
+  .air-bmkg-regional-stat-grid > div {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-regional-lane,
+  .air-bmkg-regional-gate {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-regional-track {
+    background: #e7f0d9;
+  }
+
+  .air-bmkg-regional-track i {
+    background: linear-gradient(90deg, #5a8227, #007db8);
+  }
+
+  .air-bmkg-regional-evidence-wall {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-regional-row {
+    display: grid;
+    gap: 0.7rem;
+    min-width: 0;
+    padding: 0.95rem;
+    border: 1px solid var(--rule-soft);
+    border-left: 4px solid #fbb00e;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .air-bmkg-regional-row-closed {
+    border-left-color: #5a8227;
+    background: #f7fbf1;
+  }
+
+  .air-bmkg-regional-row > div:first-child {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-regional-row span,
+  .air-bmkg-regional-row dt,
+  .air-bmkg-regional-source-grid span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-regional-row strong {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-regional-row b,
+  .air-bmkg-regional-row dd,
+  .air-bmkg-regional-row em,
+  .air-bmkg-regional-source-grid em {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-regional-row dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-regional-row dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
+  .air-bmkg-regional-row p,
+  .air-bmkg-regional-source-grid p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-regional-source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-regional-source-grid article {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.8rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #d7dee4;
+    background: #ffffff;
+  }
+
+  .air-bmkg-regional-source-grid article.air-bmkg-regional-source-matched {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-regional-source-grid strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.88rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -13774,6 +13908,11 @@
     .air-bmkg-api-field-grid,
     .air-bmkg-api-row-grid,
     .air-bmkg-api-gate-grid,
+    .air-bmkg-regional-stat-grid,
+    .air-bmkg-regional-bridge,
+    .air-bmkg-regional-evidence-wall,
+    .air-bmkg-regional-gate-grid,
+    .air-bmkg-regional-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -13823,6 +13962,7 @@
     .air-bmkg-operation-head,
     .air-bmkg-status-head,
     .air-bmkg-api-head,
+    .air-bmkg-regional-head,
     .air-bmkg-status-value-wall,
     .air-bmkg-api-field-wall,
     .air-georgia-report-head,
@@ -15200,6 +15340,11 @@
     .air-bmkg-api-field-grid,
     .air-bmkg-api-row-grid,
     .air-bmkg-api-gate-grid,
+    .air-bmkg-regional-stat-grid,
+    .air-bmkg-regional-bridge,
+    .air-bmkg-regional-evidence-wall,
+    .air-bmkg-regional-gate-grid,
+    .air-bmkg-regional-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15275,6 +15420,9 @@
     .air-bmkg-api-lane,
     .air-bmkg-api-row,
     .air-bmkg-api-gate,
+    .air-bmkg-regional-lane,
+    .air-bmkg-regional-row,
+    .air-bmkg-regional-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -15313,6 +15461,7 @@
     .air-bmkg-operation-head,
     .air-bmkg-status-head,
     .air-bmkg-api-head,
+    .air-bmkg-regional-head,
     .air-georgia-report-head,
     .air-georgia-export-head,
     .air-georgia-export-ladder-wall,
@@ -15359,7 +15508,8 @@
       justify-self: start;
     }
 
-    .air-bmkg-api-row dl {
+    .air-bmkg-api-row dl,
+    .air-bmkg-regional-row dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

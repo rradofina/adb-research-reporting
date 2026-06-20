@@ -306,6 +306,22 @@
       "cache_policy": "Raw GHSL ZIP files are stored under air-monitoring/.cache/station-radius-ghsl-population-tiles/ and are not committed; rerun the script to rehydrate them from public GHSL tile URLs.",
       "notes": "Station-radius GHSL corrected population tile custody gate. It re-probes the 21 corrected selected GHSL population tile URLs, records 21 current HEAD-OK probes with size metadata, treats 18 tiles at or below 60 MB as first-wave eligible, reuses/downloads 18 ZIP files in the ignored local cache, records 18 SHA-256 hashes and 464.408 MB of cached ZIP data, opens 18 ZIP/GeoTIFF payloads, finds 18 transforms matching corrected GHSL bounds and 0 mismatches, preserves 3 deferred large selected tiles (R7_C27, R7_C28, R8_C26) for a separate custody pass, and keeps station-radius population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_ghsl_large_population_tile_custody": {
+      "script": "air-monitoring/scripts/download-station-radius-ghsl-large-population-tiles.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_ghsl_corrected_population_tile_custody",
+        "air_monitoring_station_radius_ghsl_tile_routing_correction",
+        "air_monitoring_station_radius_denominator_readiness"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C27.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R7_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C26.zip"
+      ],
+      "cache_policy": "Raw GHSL ZIP files are stored under air-monitoring/.cache/station-radius-ghsl-population-tiles/ and are not committed; rerun the script to rehydrate the large corrected tiles from public GHSL URLs.",
+      "notes": "Station-radius GHSL large population tile custody gate. It targets the 3 corrected selected GHSL population tiles deferred by the 60 MB first-wave rule, records 3 current HEAD-OK probes, downloads or reuses all 3 large ZIPs in the ignored local cache, records 3 SHA-256 hashes and 521.841 MB of cached ZIP data, opens 3 ZIP/GeoTIFF payloads, finds 3 transforms matching corrected GHSL bounds and 0 mismatches, closes corrected population file custody at 21 of 21 selected tiles when joined with the first-wave custody gate, and keeps station-radius population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -953,6 +969,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_ghsl_corrected_population_tile_custody pin after re-probing the 21 corrected GHSL population tile URLs, recording 21 current HEAD-OK probes, keeping 18 first-wave eligible ZIPs in ignored local cache with SHA-256 hashes and corrected-bound GeoTIFF matches, deferring 3 large selected tiles (R7_C27, R7_C28, R8_C26), and keeping catchments, exposure rows, joins, grade rows, maps, and station-radius readiness blocked."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_ghsl_large_population_tile_custody pin after downloading or reusing the 3 deferred large corrected GHSL population ZIPs, recording 3 SHA-256 hashes, opening 3 ZIP/GeoTIFF payloads with corrected-bound matches, closing corrected population file custody at 21 of 21 selected tiles, and keeping catchments, exposure rows, joins, grade rows, maps, and station-radius readiness blocked until the method is frozen."
     },
     {
       "date": "2026-06-19",

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T13:17:03.626Z",
+  "generated_at": "2026-06-20T13:40:00.772Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -211,6 +211,16 @@
       "size_human": "6.8 KB",
       "mtime": "2026-06-20T12:59:25.757Z",
       "sha256": "d2326689b415dadc5ea4d274147f0a2941e9c9d9bf3b68ecb31292ae8ec5be01",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_ghsl_large_population_tile_custody",
+      "file": "station-radius-ghsl-large-population-tile-custody.md",
+      "label": "Air-monitoring station-radius GHSL large population tile custody gate",
+      "size": 3129,
+      "size_human": "3.1 KB",
+      "mtime": "2026-06-20T13:32:09.139Z",
+      "sha256": "e2b0ac2593a16a0bb9ed9668d6b3f3b8ccc8b6bec1c6c7f1df5d2e7a1dc5996d",
       "attestation_chain": "ai-first"
     },
     {
@@ -1194,6 +1204,18 @@
       "size": 36462,
       "size_human": "35.6 KB",
       "sha256": "da41b5e5bad87e0e7bb71da38d8f23662f5193a8632e8153ddca635697ce66f9"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-large-population-tile-custody-summary.json",
+      "size": 13141,
+      "size_human": "12.8 KB",
+      "sha256": "dc110a1e9771fce6525890ff172bad50b45761955669c19c6419e1efea811a7c"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-large-population-tile-custody.csv",
+      "size": 5755,
+      "size_human": "5.6 KB",
+      "sha256": "d7ecc1b3ed971e8c58833c41a9c83e51f0a5897aa88785e9e146ede8866045e8"
     },
     {
       "file": "generated/air-monitoring-station-radius-ghsl-population-tile-checksums-summary.json",

@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T09:12:32.198Z",
+  "generated_at": "2026-06-20T09:45:13.356Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -131,6 +131,16 @@
       "size_human": "3.6 KB",
       "mtime": "2026-06-20T09:08:10.892Z",
       "sha256": "0ba7123747027b386c34b4d982d8e46ce2a17f402de3fb6c04407c69bffbc13b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_denominator_file_manifest_prefreeze",
+      "file": "station-radius-denominator-file-manifest-prefreeze.md",
+      "label": "Air-monitoring station-radius denominator file-manifest prefreeze",
+      "size": 5509,
+      "size_human": "5.4 KB",
+      "mtime": "2026-06-20T09:44:41.245Z",
+      "sha256": "0c3685c8cb3e8f6726430aba2e4e21c3fc8a693f633aa47d7149361decd9b282",
       "attestation_chain": "ai-first"
     },
     {
@@ -1030,6 +1040,18 @@
       "size": 13455,
       "size_human": "13.1 KB",
       "sha256": "b726dee9ea59a91d62693f44c72050cf05401bd0b89d729cad27dc6fb1b89be6"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze-summary.json",
+      "size": 35426,
+      "size_human": "34.6 KB",
+      "sha256": "89c35ab9d2e0f04c30b16ca81e6214c14a6cf68cfe0cb0a7ca1d223dd9f386e8"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze.csv",
+      "size": 19353,
+      "size_human": "18.9 KB",
+      "sha256": "d26ff745150920e24e9340492a5a93bb75b372d8b902b91f5158a69d5af71fe5"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",

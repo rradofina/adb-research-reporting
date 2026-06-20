@@ -457,6 +457,80 @@ interface StationRadiusAcquisitionSummary {
   non_claim: string;
 }
 
+interface StationRadiusFileManifestGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusFileManifestStatus {
+  status: string;
+  records: number;
+}
+
+interface StationRadiusFileManifestRecord {
+  manifest_key: string;
+  source_key: string;
+  source_name: string;
+  source_family: string;
+  source_role: string;
+  denominator_type: string;
+  candidate_role: string;
+  source_plan_version: string;
+  resolved_version: string;
+  vintage: string;
+  resolution: string;
+  geography_scope: string;
+  file_format: string;
+  listing_url: string;
+  file_name: string;
+  exact_file_url: string;
+  s3_bucket: string;
+  s3_key: string;
+  route_type: string;
+  manifest_status: string;
+  head_status: number | string;
+  content_type: string;
+  content_length_bytes: string;
+  listing_size_hint: string;
+  last_modified: string;
+  etag: string;
+  checksum_algorithm: string;
+  reader_use: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusFileManifestSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    manifest_records: number;
+    exact_file_or_object_records_visible: number;
+    exact_population_file_records_visible: number;
+    exact_pm25_file_records_visible: number;
+    context_metadata_file_records_visible: number;
+    shared_folder_routes_not_exact_file_manifest: number;
+    records_with_server_size_bytes: number;
+    records_with_s3_etag: number;
+    current_acag_aws_records_with_source_plan_version_drift: number;
+    source_plan_v6gl0204_or_v5_exact_file_records: number;
+    denominator_files_downloaded: number;
+    denominator_files_sha256_checksummed: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  manifest_status_counts: StationRadiusFileManifestStatus[];
+  evidence_gate_counts: StationRadiusFileManifestGate[];
+  manifest_records: StationRadiusFileManifestRecord[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3354,8 +3428,13 @@ function sentenceCaseStatus(value: string) {
 }
 
 function gateTone(status: string) {
-  if (status === "available" || status === "computed") return "available";
-  if (status === "partly_available" || status === "limited" || status === "caution") return "pending";
+  if (status === "available" || status === "computed" || status === "available_prefreeze") return "available";
+  if (
+    status === "partly_available" ||
+    status === "available_with_version_drift" ||
+    status === "limited" ||
+    status === "caution"
+  ) return "pending";
   if (status === "not_yet_collected" || status.includes("not_collected")) return "pending";
   return "blocked";
 }
@@ -3371,6 +3450,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusSourcePlanSummary | null>(null);
   const [stationRadiusAcquisition, setStationRadiusAcquisition] =
     useState<StationRadiusAcquisitionSummary | null>(null);
+  const [stationRadiusFileManifest, setStationRadiusFileManifest] =
+    useState<StationRadiusFileManifestSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3621,6 +3702,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusAcquisition(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator file manifest HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusFileManifest(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4220,6 +4321,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusSourcePlanPanel summary={stationRadiusSourcePlan} />
 
       <AirStationRadiusAcquisitionPanel summary={stationRadiusAcquisition} />
+
+      <AirStationRadiusFileManifestPanel summary={stationRadiusFileManifest} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -5197,6 +5300,180 @@ function AirStationRadiusAcquisitionPanel({ summary }: { summary: StationRadiusA
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator acquisition routes...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusFileManifestPanel({ summary }: { summary: StationRadiusFileManifestSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const records = summary?.manifest_records ?? [];
+  const statusRows = summary?.manifest_status_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const maxStatusRecords = Math.max(1, ...statusRows.map((row) => row.records));
+  const downloaded = (counts?.denominator_files_downloaded ?? 0) + (counts?.denominator_files_sha256_checksummed ?? 0);
+  const formatBytes = (value: string | number) => {
+    const bytes = Number(value || 0);
+    if (!Number.isFinite(bytes) || bytes <= 0) return "not listed";
+    if (bytes >= 1_000_000_000) return `${(bytes / 1_000_000_000).toFixed(1)} GB`;
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+  const recordTone = (record: StationRadiusFileManifestRecord) => {
+    if (record.manifest_status.includes("shared_folder")) return "unresolved";
+    if (record.denominator_type === "population") return "population";
+    if (record.denominator_type === "pm25") return "pm25";
+    return "context";
+  };
+
+  return (
+    <section className="showcase-section air-radius-file-section" aria-label="Station-radius denominator file-manifest prefreeze">
+      <div className="air-radius-file-head">
+        <div>
+          <p className="kicker kicker-blue">File-manifest prefreeze</p>
+          <h2>The filenames are real; the denominator is still untouched.</h2>
+          <p>
+            The route scan is now resolved into exact public file URLs and S3
+            object keys where the source exposes them. The manifest also makes
+            the unresolved ACAG Box routes and current-version drift visible
+            before any raster or grid enters the package.
+          </p>
+        </div>
+        <div className="air-radius-file-callout">
+          <span>Exact file or object records</span>
+          <strong>
+            {formatNumber(counts?.exact_file_or_object_records_visible ?? 0)}
+            <small> / {formatNumber(counts?.manifest_records ?? 0)}</small>
+          </strong>
+          <p>Visible names and server metadata only. No denominator file is downloaded.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-radius-file-stat-grid">
+            <div>
+              <span>Manifest rows</span>
+              <strong>{formatNumber(counts.manifest_records)}</strong>
+              <em>file, object, metadata, and unresolved route records</em>
+            </div>
+            <div>
+              <span>Population files</span>
+              <strong>{formatNumber(counts.exact_population_file_records_visible)}</strong>
+              <em>GHSL and WorldPop exact archive or tile URLs</em>
+            </div>
+            <div>
+              <span>PM2.5 objects</span>
+              <strong>{formatNumber(counts.exact_pm25_file_records_visible)}</strong>
+              <em>current ACAG AWS objects, not the older Box route</em>
+            </div>
+            <div>
+              <span>Version drift rows</span>
+              <strong>{formatNumber(counts.current_acag_aws_records_with_source_plan_version_drift)}</strong>
+              <em>V6.GL.03 visible while source plan named V6.GL.02.04/V5</em>
+            </div>
+            <div>
+              <span>Box routes unresolved</span>
+              <strong>{formatNumber(counts.shared_folder_routes_not_exact_file_manifest)}</strong>
+              <em>shared folders still lack exact file manifests</em>
+            </div>
+            <div>
+              <span>Downloads/checksums</span>
+              <strong>{formatNumber(downloaded)}</strong>
+              <em>radius computation remains blocked</em>
+            </div>
+          </div>
+
+          <div className="air-radius-file-record-grid" aria-label="File and object manifest records">
+            {records.map((record) => {
+              const target = record.s3_key || record.exact_file_url || record.file_name || "No exact path captured";
+              const externalHref = record.exact_file_url.startsWith("http") ? record.exact_file_url : "";
+              return (
+                <article
+                  key={record.manifest_key}
+                  className={`air-radius-file-record air-radius-file-record-${recordTone(record)}`}
+                >
+                  <div>
+                    <span>{sentenceCaseStatus(record.denominator_type)} / {record.source_family}</span>
+                    <strong>{record.manifest_key}</strong>
+                    <b>{record.resolved_version || record.source_plan_version || "version unresolved"}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Scope</dt>
+                      <dd>{record.geography_scope}</dd>
+                    </div>
+                    <div>
+                      <dt>Size</dt>
+                      <dd>{formatBytes(record.content_length_bytes)}</dd>
+                    </div>
+                    <div>
+                      <dt>Route</dt>
+                      <dd>{sentenceCaseStatus(record.route_type || "unresolved")}</dd>
+                    </div>
+                    <div>
+                      <dt>HEAD</dt>
+                      <dd>{record.head_status || "not probed"}</dd>
+                    </div>
+                  </dl>
+                  <p>{record.reader_use}</p>
+                  <div className="air-radius-file-path">
+                    <span>{record.file_format || "source path"}</span>
+                    {externalHref ? (
+                      <a href={externalHref}>{target}</a>
+                    ) : (
+                      <code>{target}</code>
+                    )}
+                  </div>
+                  <p className="air-radius-file-gap">{record.blocking_gap}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-radius-file-status-grid" aria-label="Manifest status counts">
+            {statusRows.map((row) => (
+              <article key={row.status}>
+                <div>
+                  <span>{sentenceCaseStatus(row.status)}</span>
+                  <strong>{formatNumber(row.records)} record{row.records === 1 ? "" : "s"}</strong>
+                </div>
+                <div className="air-radius-file-track">
+                  <i style={{ width: `${Math.max(7, (row.records / maxStatusRecords) * 100)}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-radius-file-gate-grid" aria-label="File-manifest gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-radius-file-gate air-radius-file-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-file-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-file-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-file-manifest-prefreeze.md" download>
+              Download manifest note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze.csv" download>
+              Download manifest CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator file manifest...</p>
       )}
     </section>
   );

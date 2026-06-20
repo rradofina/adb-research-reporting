@@ -790,6 +790,335 @@
   }
 }
 
+.air-radius-file-section {
+  display: grid;
+  gap: 1.15rem;
+  scroll-margin-top: 5.5rem;
+  overflow-x: clip;
+}
+
+.air-radius-file-section * {
+  min-width: 0;
+}
+
+.air-radius-file-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.32fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.air-radius-file-head h2 {
+  margin: 0.2rem 0 0;
+  max-width: 55rem;
+  color: var(--ink);
+  font-size: 3.2rem;
+  line-height: 0.98;
+}
+
+.air-radius-file-head p {
+  max-width: 62rem;
+}
+
+.air-radius-file-callout {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  border: 1px solid rgba(90, 130, 39, 0.24);
+  border-left: 5px solid #5a8227;
+  background: #f7fbf1;
+}
+
+.air-radius-file-callout span,
+.air-radius-file-stat-grid span,
+.air-radius-file-record span,
+.air-radius-file-record dt,
+.air-radius-file-path span,
+.air-radius-file-status-grid span,
+.air-radius-file-gate span,
+.air-radius-file-downloads span {
+  color: var(--ink-faint);
+  font-size: var(--type-copy-xs);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-file-callout strong {
+  color: #4d6f22;
+  font-size: 4.6rem;
+  line-height: 0.88;
+}
+
+.air-radius-file-callout small {
+  color: var(--ink-soft);
+  font-size: 0.42em;
+}
+
+.air-radius-file-callout p,
+.air-radius-file-stat-grid em,
+.air-radius-file-record p,
+.air-radius-file-gate p,
+.air-radius-file-nonclaim {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--type-copy-xs);
+  line-height: 1.45;
+}
+
+.air-radius-file-stat-grid,
+.air-radius-file-record-grid,
+.air-radius-file-status-grid,
+.air-radius-file-gate-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.air-radius-file-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-radius-file-stat-grid > div,
+.air-radius-file-record,
+.air-radius-file-status-grid article,
+.air-radius-file-gate {
+  padding: 0.9rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--paper);
+}
+
+.air-radius-file-stat-grid > div {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 4px solid #007db8;
+}
+
+.air-radius-file-stat-grid > div:nth-child(2),
+.air-radius-file-stat-grid > div:nth-child(3) {
+  border-top-color: #5a8227;
+}
+
+.air-radius-file-stat-grid > div:nth-child(4),
+.air-radius-file-stat-grid > div:nth-child(5),
+.air-radius-file-stat-grid > div:nth-child(6) {
+  border-top-color: #9b2226;
+}
+
+.air-radius-file-stat-grid strong,
+.air-radius-file-record b,
+.air-radius-file-record dd,
+.air-radius-file-status-grid strong,
+.air-radius-file-gate em {
+  color: #005f89;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 800;
+}
+
+.air-radius-file-stat-grid strong {
+  font-size: 1.9rem;
+  line-height: 1.05;
+}
+
+.air-radius-file-record-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-radius-file-record {
+  display: grid;
+  grid-template-rows: auto auto minmax(4.4rem, auto) auto auto;
+  gap: 0.58rem;
+  border-top: 4px solid #9b2226;
+}
+
+.air-radius-file-record-population {
+  border-top-color: #5a8227;
+  background: #f7fbf1;
+}
+
+.air-radius-file-record-pm25 {
+  border-top-color: #007db8;
+  background: #f5fbff;
+}
+
+.air-radius-file-record-context {
+  border-top-color: #fbb00e;
+  background: #fffaf0;
+}
+
+.air-radius-file-record-unresolved {
+  border-top-color: #9b2226;
+  background: #fff4f1;
+}
+
+.air-radius-file-record strong,
+.air-radius-file-gate strong {
+  display: block;
+  color: var(--ink);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-file-record b {
+  display: block;
+  margin-top: 0.3rem;
+  color: #005f89;
+  font-size: var(--type-copy-xs);
+  overflow-wrap: anywhere;
+}
+
+.air-radius-file-record dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.air-radius-file-record dd {
+  margin: 0.12rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-radius-file-path {
+  display: grid;
+  gap: 0.25rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.air-radius-file-path a,
+.air-radius-file-path code {
+  color: var(--accent);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.air-radius-file-path a:hover {
+  text-decoration: underline;
+}
+
+.air-radius-file-gap {
+  color: #7b1f23 !important;
+}
+
+.air-radius-file-status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-radius-file-status-grid article {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.air-radius-file-track {
+  height: 0.62rem;
+  overflow: hidden;
+  border: 1px solid rgba(33, 37, 41, 0.12);
+  background: #eef3f6;
+}
+
+.air-radius-file-track i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #007db8, #5a8227);
+}
+
+.air-radius-file-gate-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-radius-file-gate {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(3.4rem, 1fr);
+  gap: 0.45rem;
+  border-top: 4px solid #9b2226;
+}
+
+.air-radius-file-gate-available {
+  border-top-color: #5a8227;
+}
+
+.air-radius-file-gate-pending {
+  border-top-color: #fbb00e;
+}
+
+.air-radius-file-gate-blocked {
+  border-top-color: #9b2226;
+}
+
+.air-radius-file-nonclaim {
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-radius-file-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.air-radius-file-downloads span,
+.air-radius-file-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-radius-file-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-radius-file-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-radius-file-stat-grid,
+  .air-radius-file-gate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-radius-file-record-grid,
+  .air-radius-file-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .air-radius-file-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-radius-file-head h2 {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-radius-file-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-radius-file-stat-grid,
+  .air-radius-file-record-grid,
+  .air-radius-file-status-grid,
+  .air-radius-file-gate-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-radius-file-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

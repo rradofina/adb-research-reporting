@@ -1,0 +1,85 @@
+{
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "browser_tool": "agent-browser",
+  "checked_at": "2026-06-20T09:50:26Z",
+  "desktop": {
+    "checked_at": "2026-06-20T09:48:53.383Z",
+    "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "section_present": true,
+    "stats": 6,
+    "records": 12,
+    "status_cards": 4,
+    "gates": 6,
+    "downloads": [
+      {
+        "text": "Download manifest note",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-file-manifest-prefreeze.md",
+        "status": 200
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze-summary.json",
+        "status": 200
+      },
+      {
+        "text": "Download manifest CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze.csv",
+        "status": 200
+      }
+    ],
+    "hook_text": "The filenames are real; the denominator is still untouched.",
+    "callout": "10 / 12",
+    "has_version_drift_text": true,
+    "has_download_zero_text": true,
+    "body_overflow": false,
+    "overflowing_children": []
+  },
+  "mobile": {
+    "checked_at": "2026-06-20T09:49:54.236Z",
+    "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "section_present": true,
+    "stats": 6,
+    "records": 12,
+    "status_cards": 4,
+    "gates": 6,
+    "downloads": [
+      {
+        "text": "Download manifest note",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-file-manifest-prefreeze.md",
+        "status": 200
+      },
+      {
+        "text": "Download summary JSON",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze-summary.json",
+        "status": 200
+      },
+      {
+        "text": "Download manifest CSV",
+        "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-file-manifest-prefreeze.csv",
+        "status": 200
+      }
+    ],
+    "hook_text": "The filenames are real; the denominator is still untouched.",
+    "callout": "10 / 12",
+    "has_version_drift_text": true,
+    "has_download_zero_text": true,
+    "body_overflow": false,
+    "overflowing_children": []
+  },
+  "screenshots": {
+    "desktop": "reporting-site/qa/showcase-air-station-radius-file-manifest-desktop.png",
+    "mobile": "reporting-site/qa/showcase-air-station-radius-file-manifest-mobile.png"
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "request_log_note": "agent-browser network log did not retain request history in this session; in-page fetch checks returned HTTP 200 for the three evidence downloads on desktop and mobile.",
+  "pass": true
+}

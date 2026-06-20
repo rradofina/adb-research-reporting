@@ -146,6 +146,25 @@
       ],
       "notes": "Public acquisition-route scan for station-radius denominators. It retrieves 7 of 7 source pages, finds visible acquisition routes for 4 of 4 candidate denominator sources, records 87 visible route links, 33 route HEAD probes with 20 OK responses, 0 committed population rasters, 0 committed PM2.5 grids, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies. It does not download or checksum denominator files and does not compute catchment/exposure coverage."
     },
+    "air_monitoring_station_radius_denominator_file_manifest_prefreeze": {
+      "script": "air-monitoring/scripts/build-station-radius-denominator-file-manifest-prefreeze.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_acquisition_routes",
+        "air_monitoring_station_radius_denominator_source_plan",
+        "air_monitoring_station_radius_denominator_readiness"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/",
+        "https://data.worldpop.org/repo/prj/Global_2015_2030/R2025A/",
+        "https://registry.opendata.aws/surface-pm2-5-v6gl/",
+        "https://satpmdata.s3.amazonaws.com/?list-type=2&prefix=V6GL03/",
+        "https://sites.wustl.edu/acag/surface-pm2-5/",
+        "https://wustl.box.com/s/y143mciw7jz7ft2qe3hccjw65m3xe8f2",
+        "https://wustl.box.com/v/ACAG-V5GL0502-GWRPM25"
+      ],
+      "notes": "Station-radius denominator file-manifest prefreeze. It records 12 manifest rows: 10 exact public file/object records visible, 5 exact population file records, 4 current ACAG V6.GL.03 AWS PM2.5 object records with source-plan version drift, 1 context metadata file record, and 2 ACAG Box shared-folder routes that are still not exact file manifests. It records 0 downloaded denominator files, 0 SHA-256 denominator checksums, 0 validated same-station joins, 0 complete monitor-grade rows, 0 catchment maps, and 0 station-radius-ready economies."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -761,6 +780,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_denominator_acquisition_routes pin after extracting visible acquisition routes from the station-radius denominator source pages: 4 of 4 candidate denominator sources have visible routes, 87 route links are recorded, 33 HEAD probes are attempted with 20 OK responses, and downloaded/checksummed denominator files remain at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_denominator_file_manifest_prefreeze pin after resolving visible station-radius denominator routes into 12 manifest rows: 10 exact public file/object records, 5 exact population files, 4 current ACAG V6.GL.03 AWS PM2.5 objects with version drift, 2 unresolved ACAG Box shared-folder routes, and 0 downloads/checksums/joins/grade rows/maps."
     },
     {
       "date": "2026-06-19",

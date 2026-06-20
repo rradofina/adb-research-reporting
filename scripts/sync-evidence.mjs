@@ -73,6 +73,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_ghsl_large_population_tile_custody", file: "station-radius-ghsl-large-population-tile-custody.md", label: "Air-monitoring station-radius GHSL large population tile custody gate" },
   { key: "air_monitoring_station_radius_method_prefreeze", file: "station-radius-method-prefreeze.md", label: "Air-monitoring station-radius method prefreeze gate" },
   { key: "air_monitoring_station_radius_radius_rule_source_scan", file: "station-radius-radius-rule-source-scan.md", label: "Air-monitoring station-radius radius-rule source scan" },
+  { key: "air_monitoring_station_radius_pm25_resolution_decision", file: "station-radius-pm25-resolution-decision.md", label: "Air-monitoring station-radius PM2.5 resolution decision" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

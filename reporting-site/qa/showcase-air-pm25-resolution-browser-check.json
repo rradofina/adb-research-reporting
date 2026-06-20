@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-20T14:51:13.748Z",
+  "url": "http://127.0.0.1:5177/showcase/air-monitoring-observability",
+  "target_section": ".air-pm25-resolution-section",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "screenshot": "reporting-site/qa/showcase-air-pm25-resolution-desktop.png",
+    "found": true,
+    "flow_count": 3,
+    "stat_count": 6,
+    "decision_row_count": 2,
+    "gate_count": 4,
+    "body_overflow": false,
+    "section_overflow": false,
+    "overflowing_elements": []
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1100
+    },
+    "screenshot": "reporting-site/qa/showcase-air-pm25-resolution-mobile.png",
+    "found": true,
+    "flow_count": 3,
+    "stat_count": 6,
+    "decision_row_count": 2,
+    "gate_count": 4,
+    "body_overflow": false,
+    "section_overflow": false,
+    "overflowing_elements": []
+  },
+  "download_links": [
+    {
+      "path": "/programs/air-monitoring/station-radius-pm25-resolution-decision.md",
+      "status": 200,
+      "bytes": 2722
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-pm25-resolution-decision-summary.json",
+      "status": 200,
+      "bytes": 7842
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-pm25-resolution-decision.csv",
+      "status": 200,
+      "bytes": 3173
+    }
+  ],
+  "console_or_page_errors_observed": "No page errors surfaced through agent-browser commands; download fetches returned HTTP 200.",
+  "note": "Section presents ACAG V6.GL.03 2023 0.10 degree coarse PM2.5 as the dry-run grid lane and keeps exposure rows at zero.",
+  "visual_inspection": "Desktop and mobile screenshots inspected after label polish; PM2.5 resolution state and Asia coarse consistency lane read cleanly, and no overflow is present."
+}

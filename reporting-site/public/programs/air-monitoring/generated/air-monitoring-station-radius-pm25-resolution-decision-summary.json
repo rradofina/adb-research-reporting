@@ -1,0 +1,134 @@
+{
+  "generated_at": "2026-06-20T14:40:11Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_radius_pm25_resolution_decision",
+  "method": "air_monitoring_station_radius_pm25_resolution_decision_v1",
+  "goal_level": "L3 station-radius PM2.5 resolution decision gate",
+  "source_inputs": {
+    "acag_version_summary": "generated/air-monitoring-station-radius-acag-version-decision-summary.json",
+    "acag_checksum_summary": "generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json",
+    "method_prefreeze_summary": "generated/air-monitoring-station-radius-method-prefreeze-summary.json",
+    "radius_rule_summary": "generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json"
+  },
+  "coverage_counts": {
+    "checksummed_coarse_pm25_files": 2,
+    "files_with_pm25_lat_lon": 2,
+    "selected_primary_pm25_surfaces": 1,
+    "consistency_lane_pm25_surfaces": 1,
+    "selected_vintage": 2023,
+    "visible_latest_v6gl03_year": 2024,
+    "fine_resolution_second_wave_or_deferred_objects": 2,
+    "radius_rule_frozen": true,
+    "primary_radius_km": 4.0,
+    "lower_sensitivity_radius_km": 0.5,
+    "upper_sensitivity_radius_km": 50.0,
+    "coordinate_rows_used": 277,
+    "population_tile_files_in_custody": 21,
+    "station_radius_population_rows": 0,
+    "station_radius_pm25_exposure_rows": 0,
+    "validated_same_station_join_rows": 0,
+    "complete_monitor_grade_rows": 0,
+    "station_radius_ready_economies": 0
+  },
+  "pm25_resolution_decision": {
+    "status": "pm25_resolution_frozen_not_joined",
+    "selected_version": "V6.GL.03",
+    "selected_vintage": 2023,
+    "selected_resolution": "0.10 degree coarse annual",
+    "primary_dry_run_record_key": "v6gl03_gl_coarse_annual",
+    "consistency_lane_record_key": "v6gl03_as_coarse_annual",
+    "deferred_lanes": "fine-resolution ACAG objects and visible 2024 V6.GL.03 annual objects",
+    "claim_guardrail": "Use the grid only as a coarse annual contextual PM2.5 denominator for a dry run. Do not report station catchment exposure, monitor coverage, or neighborhood-scale measured concentration from this gate."
+  },
+  "evidence_gate_counts": [
+    {
+      "gate": "ACAG current-version decision",
+      "status": "available",
+      "rows": 9,
+      "reader_use": "Confirms V6.GL.03 2023 coarse PM2.5 objects are the pinned first-wave lane."
+    },
+    {
+      "gate": "ACAG coarse checksum custody",
+      "status": "available",
+      "rows": 2,
+      "reader_use": "Confirms the two coarse NetCDF files are downloaded, check-summed, and metadata-opened."
+    },
+    {
+      "gate": "Radius rule",
+      "status": "available",
+      "rows": 4,
+      "reader_use": "Confirms the 4 km primary and 0.5/50 km sensitivity bands are source-frozen."
+    },
+    {
+      "gate": "PM2.5 denominator join",
+      "status": "not_computed",
+      "rows": 0,
+      "reader_use": "No station-radius PM2.5 exposure rows are computed in this decision gate."
+    }
+  ],
+  "decision_rows": [
+    {
+      "generated_at": "2026-06-20T14:40:11Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_pm25_resolution_decision",
+      "method": "air_monitoring_station_radius_pm25_resolution_decision_v1",
+      "decision_id": "v6gl03_gl_coarse_annual_pm25_resolution",
+      "decision_role": "primary_dry_run_pm25_surface",
+      "decision_status": "frozen_for_dry_run",
+      "selected": true,
+      "acag_record_key": "v6gl03_gl_coarse_annual",
+      "source_role": "global_pm25_sanity_candidate",
+      "observed_version": "V6.GL.03",
+      "selected_vintage": "2023",
+      "selected_resolution": "0.10 degree",
+      "grid_family": "global_coarse",
+      "object_url": "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/GL/Annual/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+      "cache_path": ".cache/station-radius-acag-coarse-checksums/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+      "sha256": "89ae44c70d939a5ae5ed298264e026fc3ce50e3af76ba3de53ba51c11d34a8e3",
+      "file_size_bytes": 5201631,
+      "dimensions": "lat:1300||lon:3600",
+      "variables": "PM25(lat,lon)[ug/m3]||lat(lat)[degrees_north]||lon(lon)[degrees_east]",
+      "pm25_variable": "PM25",
+      "radius_rule_context": "4 km primary diagnostic; 0.5 km and 50 km sensitivity bands",
+      "reader_use": "Use the check-summed 2023 V6.GL.03 global coarse PM2.5 grid as the first dry-run pollutant surface.",
+      "blocking_gap": "Population/PM2.5 denominator join dry run, station identity joins, complete monitor-grade rows, and exposure/catchment outputs remain open.",
+      "claim_guardrail": "Coarse annual gridded PM2.5 is a contextual pollutant surface for a dry-run denominator, not a station measurement or neighborhood-scale concentration claim.",
+      "non_claim": "This PM2.5 resolution decision freezes the coarse annual ACAG grid lane for a future denominator dry run. It does not compute PM2.5 exposure, station buffers, catchment population, monitor coverage, validated same-station joins, or complete monitor-grade classification."
+    },
+    {
+      "generated_at": "2026-06-20T14:40:11Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_pm25_resolution_decision",
+      "method": "air_monitoring_station_radius_pm25_resolution_decision_v1",
+      "decision_id": "v6gl03_as_coarse_annual_pm25_resolution",
+      "decision_role": "regional_consistency_pm25_surface",
+      "decision_status": "frozen_consistency_lane",
+      "selected": false,
+      "acag_record_key": "v6gl03_as_coarse_annual",
+      "source_role": "primary_pm25_first_wave_candidate",
+      "observed_version": "V6.GL.03",
+      "selected_vintage": "2023",
+      "selected_resolution": "0.10 degree",
+      "grid_family": "asia_coarse",
+      "object_url": "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/AS/Annual/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+      "cache_path": ".cache/station-radius-acag-coarse-checksums/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+      "sha256": "d2be821db5eb03c2babbc671fd21914ffa9fa5608fcdf400fd6fc9526022f8b0",
+      "file_size_bytes": 1098264,
+      "dimensions": "lat:700||lon:800",
+      "variables": "PM25(lat,lon)[ug/m3]||lat(lat)[degrees_north]||lon(lon)[degrees_east]",
+      "pm25_variable": "PM25",
+      "radius_rule_context": "4 km primary diagnostic; 0.5 km and 50 km sensitivity bands",
+      "reader_use": "Retain the check-summed 2023 V6.GL.03 Asia coarse grid as a consistency lane.",
+      "blocking_gap": "Population/PM2.5 denominator join dry run, station identity joins, complete monitor-grade rows, and exposure/catchment outputs remain open.",
+      "claim_guardrail": "Coarse annual gridded PM2.5 is a contextual pollutant surface for a dry-run denominator, not a station measurement or neighborhood-scale concentration claim.",
+      "non_claim": "This PM2.5 resolution decision freezes the coarse annual ACAG grid lane for a future denominator dry run. It does not compute PM2.5 exposure, station buffers, catchment population, monitor coverage, validated same-station joins, or complete monitor-grade classification."
+    }
+  ],
+  "outputs": {
+    "csv": "generated/air-monitoring-station-radius-pm25-resolution-decision.csv",
+    "summary_json": "generated/air-monitoring-station-radius-pm25-resolution-decision-summary.json",
+    "markdown": "station-radius-pm25-resolution-decision.md"
+  },
+  "non_claim": "This PM2.5 resolution decision freezes the coarse annual ACAG grid lane for a future denominator dry run. It does not compute PM2.5 exposure, station buffers, catchment population, monitor coverage, validated same-station joins, or complete monitor-grade classification."
+}

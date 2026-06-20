@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T14:33:55.675Z",
+  "generated_at": "2026-06-20T14:55:30.525Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -241,6 +241,16 @@
       "size_human": "3.3 KB",
       "mtime": "2026-06-20T14:17:56.643Z",
       "sha256": "ad141994ff4512c1bda7019ed01fed96a5128d4038c1c6b25fcf0bac0faad516",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_pm25_resolution_decision",
+      "file": "station-radius-pm25-resolution-decision.md",
+      "label": "Air-monitoring station-radius PM2.5 resolution decision",
+      "size": 2722,
+      "size_human": "2.7 KB",
+      "mtime": "2026-06-20T14:40:11.183Z",
+      "sha256": "9aa3132e27156548c98df77cdb09b0b084768b16b6b4e6f937ece09a46469966",
       "attestation_chain": "ai-first"
     },
     {
@@ -1302,6 +1312,18 @@
       "size": 22720,
       "size_human": "22.2 KB",
       "sha256": "57f0d92a99bc9c250b901a189ac7d7bbe7b2add948c49127370dd1bcf5120801"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-pm25-resolution-decision-summary.json",
+      "size": 7842,
+      "size_human": "7.7 KB",
+      "sha256": "8c07897e195fe1882c0d39eb2c758cc83ad7479be183036822903ee5bb6da022"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-pm25-resolution-decision.csv",
+      "size": 3173,
+      "size_human": "3.1 KB",
+      "sha256": "fdff9f6c3ab87df2ab7e731427bc17458523d54fd3a4f000c2980ec30684fa8b"
     },
     {
       "file": "generated/air-monitoring-station-radius-radius-rule-source-scan-summary.json",

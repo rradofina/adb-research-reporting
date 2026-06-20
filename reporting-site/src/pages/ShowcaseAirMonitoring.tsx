@@ -1290,6 +1290,79 @@ interface StationRadiusRuleSummary {
   non_claim: string;
 }
 
+interface StationRadiusPm25ResolutionGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusPm25ResolutionRow {
+  decision_id: string;
+  decision_role: string;
+  decision_status: string;
+  selected: boolean | string;
+  acag_record_key: string;
+  source_role: string;
+  observed_version: string;
+  selected_vintage: number | string;
+  selected_resolution: string;
+  grid_family: string;
+  object_url: string;
+  cache_path: string;
+  sha256: string;
+  file_size_bytes: number | string;
+  dimensions: string;
+  variables: string;
+  pm25_variable: string;
+  radius_rule_context: string;
+  reader_use: string;
+  blocking_gap: string;
+  claim_guardrail: string;
+}
+
+interface StationRadiusPm25ResolutionSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    checksummed_coarse_pm25_files: number;
+    files_with_pm25_lat_lon: number;
+    selected_primary_pm25_surfaces: number;
+    consistency_lane_pm25_surfaces: number;
+    selected_vintage: number;
+    visible_latest_v6gl03_year: number;
+    fine_resolution_second_wave_or_deferred_objects: number;
+    radius_rule_frozen: boolean;
+    primary_radius_km: number;
+    lower_sensitivity_radius_km: number;
+    upper_sensitivity_radius_km: number;
+    coordinate_rows_used: number;
+    population_tile_files_in_custody: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  pm25_resolution_decision: {
+    status: string;
+    selected_version: string;
+    selected_vintage: number;
+    selected_resolution: string;
+    primary_dry_run_record_key: string;
+    consistency_lane_record_key: string;
+    deferred_lanes: string;
+    claim_guardrail: string;
+  };
+  evidence_gate_counts: StationRadiusPm25ResolutionGate[];
+  decision_rows: StationRadiusPm25ResolutionRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4231,6 +4304,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusMethodPrefreezeSummary | null>(null);
   const [stationRadiusRuleSourceScan, setStationRadiusRuleSourceScan] =
     useState<StationRadiusRuleSummary | null>(null);
+  const [stationRadiusPm25Resolution, setStationRadiusPm25Resolution] =
+    useState<StationRadiusPm25ResolutionSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4701,6 +4776,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusRuleSourceScan(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-pm25-resolution-decision-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius PM2.5 resolution decision HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusPm25Resolution(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5322,6 +5417,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusMethodPrefreezePanel summary={stationRadiusMethodPrefreeze} />
 
       <AirStationRadiusRuleSourcePanel summary={stationRadiusRuleSourceScan} />
+
+      <AirStationRadiusPm25ResolutionPanel summary={stationRadiusPm25Resolution} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -8185,6 +8282,141 @@ function AirStationRadiusRuleSourcePanel({ summary }: { summary: StationRadiusRu
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius radius-rule source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusPm25ResolutionPanel({ summary }: { summary: StationRadiusPm25ResolutionSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const decision = summary?.pm25_resolution_decision;
+  const selectedRow = summary?.decision_rows.find((row) => String(row.selected).toLowerCase() === "true");
+  const consistencyRows = summary?.decision_rows.filter((row) => String(row.selected).toLowerCase() !== "true") ?? [];
+  const gateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("available") || normalized.includes("frozen")) return "available";
+    if (normalized.includes("not_computed") || normalized.includes("defer")) return "pending";
+    return "blocked";
+  };
+
+  return (
+    <section className="showcase-section air-pm25-resolution-section" aria-label="Station-radius PM2.5 resolution decision">
+      <div className="air-pm25-resolution-head">
+        <div>
+          <p className="kicker kicker-blue">PM2.5 grid decision</p>
+          <h2>The pollutant grid is frozen for a dry run, not for a claim.</h2>
+          <p>
+            This gate chooses the already check-summed ACAG coarse annual PM2.5
+            lane for the next denominator join. It keeps fine-resolution and
+            2024 objects out of the first pass until they are separately pinned.
+          </p>
+        </div>
+        <div className="air-pm25-resolution-callout">
+          <span>Grid state</span>
+          <strong>{decision ? "PM2.5 resolution frozen" : "Loading"}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.checksummed_coarse_pm25_files)} coarse files in custody; ${formatNumber(counts.station_radius_pm25_exposure_rows)} exposure rows.`
+              : "Reading PM2.5 decision."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts && decision ? (
+        <>
+          <div className="air-pm25-resolution-flow" aria-label="PM2.5 resolution dry-run lanes">
+            <article className="air-pm25-resolution-primary">
+              <span>Primary dry-run surface</span>
+              <strong>{decision.selected_version} {decision.selected_vintage}</strong>
+              <em>{decision.selected_resolution}</em>
+              <p>{selectedRow?.reader_use ?? "Global coarse PM2.5 grid selected for the first dry-run lane."}</p>
+            </article>
+            <article className="air-pm25-resolution-secondary">
+              <span>Consistency lane</span>
+              <strong>Asia coarse 2023</strong>
+              <em>{consistencyRows[0]?.selected_resolution ?? decision.selected_resolution}</em>
+              <p>{consistencyRows[0]?.reader_use ?? "Regional coarse PM2.5 grid retained for consistency checks."}</p>
+            </article>
+            <article className="air-pm25-resolution-deferred">
+              <span>Deferred</span>
+              <strong>{formatNumber(counts.fine_resolution_second_wave_or_deferred_objects)} fine objects</strong>
+              <em>{formatNumber(counts.visible_latest_v6gl03_year)} visible but unselected</em>
+              <p>{decision.deferred_lanes}</p>
+            </article>
+          </div>
+
+          <div className="air-pm25-resolution-stat-grid">
+            <div>
+              <span>Coordinate rows</span>
+              <strong>{formatNumber(counts.coordinate_rows_used)}</strong>
+              <em>ready for dry-run join</em>
+            </div>
+            <div>
+              <span>Population tiles</span>
+              <strong>{formatNumber(counts.population_tile_files_in_custody)}</strong>
+              <em>in custody</em>
+            </div>
+            <div>
+              <span>Radius rule</span>
+              <strong>{formatNumber(counts.primary_radius_km)} km</strong>
+              <em>{formatNumber(counts.lower_sensitivity_radius_km)} / {formatNumber(counts.upper_sensitivity_radius_km)} km sensitivity</em>
+            </div>
+            <div>
+              <span>PM2.5 files</span>
+              <strong>{formatNumber(counts.checksummed_coarse_pm25_files)}</strong>
+              <em>{formatNumber(counts.files_with_pm25_lat_lon)} with PM25(lat,lon)</em>
+            </div>
+            <div>
+              <span>Exposure rows</span>
+              <strong>{formatNumber(counts.station_radius_pm25_exposure_rows)}</strong>
+              <em>not computed</em>
+            </div>
+            <div>
+              <span>Ready economies</span>
+              <strong>{formatNumber(counts.station_radius_ready_economies)}</strong>
+              <em>join still blocked</em>
+            </div>
+          </div>
+
+          <div className="air-pm25-resolution-row-grid" aria-label="PM2.5 resolution decision rows">
+            {summary.decision_rows.map((row) => (
+              <article key={row.decision_id} className={`air-pm25-resolution-row air-pm25-resolution-row-${row.grid_family}`}>
+                <span>{sentenceCaseStatus(row.decision_role)}</span>
+                <strong>{row.acag_record_key}</strong>
+                <em>{row.selected_resolution}; {row.dimensions}</em>
+                <p>{row.claim_guardrail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-pm25-resolution-gate-grid" aria-label="PM2.5 resolution gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-pm25-resolution-gate air-pm25-resolution-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-pm25-resolution-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-pm25-resolution-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-pm25-resolution-decision.md" download>
+              Download decision note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-pm25-resolution-decision-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-pm25-resolution-decision.csv" download>
+              Download decision CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius PM2.5 resolution decision...</p>
       )}
     </section>
   );

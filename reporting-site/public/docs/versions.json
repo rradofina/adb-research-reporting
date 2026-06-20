@@ -353,6 +353,24 @@
       "cache_policy": "Raw public source responses are stored under air-monitoring/.cache/station-radius-radius-rule-sources/ and are not committed; rerun the script to refresh current eCFR and EPA source retrieval evidence.",
       "notes": "Station-radius radius-rule source scan. It retrieves 2 of 2 public source URLs, records 6 evidence rows, selects 4 eCFR spatial-scale evidence rows, freezes a 4.0 km PM2.5 neighborhood-scale primary diagnostic band with 0.5 km and 50.0 km sensitivity bands, and keeps catchment population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, and station-radius-ready economies at zero. These are diagnostic spatial-scale bands, not service areas, legal station representativeness determinations, or monitor-grade coverage claims."
     },
+    "air_monitoring_station_radius_pm25_resolution_decision": {
+      "script": "air-monitoring/scripts/build-station-radius-pm25-resolution-decision.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_acag_version_decision",
+        "air_monitoring_station_radius_acag_coarse_checksums",
+        "air_monitoring_station_radius_method_prefreeze",
+        "air_monitoring_station_radius_radius_rule_source_scan"
+      ],
+      "source_pages": [
+        "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/GL/Annual/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+        "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/AS/Annual/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+        "https://registry.opendata.aws/surface-pm2-5-v6gl/",
+        "https://www.satpm.org/v6-gl-03"
+      ],
+      "cache_policy": "No new raw PM2.5 files are downloaded by this derivative decision gate; it reads committed ACAG version/checksum summaries. Raw NetCDF files remain under air-monitoring/.cache/station-radius-acag-coarse-checksums/ and are rehydrated by the upstream checksum script.",
+      "notes": "Station-radius PM2.5 resolution decision gate. It freezes ACAG V6.GL.03 2023 annual 0.10 degree coarse PM2.5 as the first dry-run grid lane, selects the check-summed global coarse file as the primary dry-run surface, retains the check-summed Asia coarse file as a consistency lane, defers fine-resolution ACAG and visible 2024 V6.GL.03 objects, and keeps PM2.5 exposure rows, catchment population rows, validated joins, complete monitor-grade rows, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -1012,6 +1030,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_radius_rule_source_scan pin after retrieving current eCFR Appendix D and EPA network-assessment guidance sources, selecting 4 eCFR spatial-scale evidence rows, freezing a 4 km PM2.5 neighborhood-scale primary diagnostic radius plus 0.5 km and 50 km sensitivity bands, and keeping catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_pm25_resolution_decision pin after freezing ACAG V6.GL.03 2023 annual 0.10 degree coarse PM2.5 as the first dry-run grid lane, selecting the check-summed global coarse file as primary, retaining the check-summed Asia coarse file as a consistency lane, deferring fine-resolution/2024 objects, and keeping PM2.5 exposure rows, catchments, joins, grade rows, and station-radius readiness blocked."
     },
     {
       "date": "2026-06-19",

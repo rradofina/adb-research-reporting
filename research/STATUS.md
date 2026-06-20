@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, and Georgia report-frequency matrix exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -195,6 +195,14 @@ overrides priority by editing this list.
    rows, 9 method-context rows, 7 calibration-language context rows, and still
    0 station-specific inspection logs, 0 station-specific calibration
    certificates/status records, 0 current-status confirmations from this pass,
+   0 complete-grade rows, and 0 station-radius-ready rows. The BMKG
+   installation/audit source scan then retrieves 6 official BMKG installation,
+   audit/calibration, public-information, and operational-monitoring sources,
+   finds 8 rows with installation or audit context, 1 exact station
+   audit/calibration context row, 7 PM2.5 installation/deployment context rows,
+   4 source-level operational or calibration routes, and still 0
+   station-specific inspection logs, 0 station-specific calibration
+   certificates/status records, 0 current-status confirmations from this pass,
    0 complete-grade rows, and 0 station-radius-ready rows.
    The Georgia report-verification source scan then retrieves the official May
    2026 `air.gov.ge` monthly report route, AQI method note, and monitoring
@@ -222,8 +230,9 @@ overrides priority by editing this list.
    verified closure routes. Next AI-doable loop is
    public station-owner or regulator evidence beyond BMKG station-page telemetry,
    regional analysis context, the BMKG CEWS dashboard status wall,
-   source-level BMKG standards/SOP/tariff/PPID/report context, and public
-   station-unit/academic/regulator/deployment context:
+   source-level BMKG standards/SOP/tariff/PPID/report context, public
+   station-unit/academic/regulator/deployment context, and official
+   installation/audit/NOC/AWS/public-information context:
    station-specific inspection/calibration/status/certificate evidence for the
    BMKG rows, a Georgia station-code verified
    report/status/method route beyond the tested policy, daily/monthly caution,
@@ -1129,6 +1138,29 @@ by leaving the board in a state the next session can read.
   visible, no overflow, no console errors, no page errors, no request failures,
   and no bad HTTP responses. Screenshots were written under
   `reporting-site/qa/showcase-air-bmkg-station-context-*-clean.png`.
+- **2026-06-20 (air-monitoring BMKG installation/audit source scan):** Added
+  `air-monitoring/source-inputs/bmkg-installation-audit-source-seed.csv` and
+  `air-monitoring/scripts/scan-bmkg-installation-audit-sources.py`, generated
+  `air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan.csv`
+  and
+  `air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan-summary.json`,
+  and wrote `air-monitoring/bmkg-installation-audit-source-scan.md`. The
+  networked scan retrieves 6 official BMKG installation, audit/calibration,
+  public-information, and operational-monitoring sources for the 22 BMKG
+  BAM-classified target rows. It records 8 rows with installation or audit
+  context, 1 exact station audit/calibration context row, 7 PM2.5
+  installation/deployment context rows, and 4 source-level operational or
+  calibration routes. It keeps station-specific inspection logs,
+  station-specific calibration certificate/status records, current-status
+  confirmations from this pass, complete monitor-grade rows, and
+  station-radius-ready rows at 0. The public route now renders a BMKG
+  installation/audit source wall. Production build passed with the existing
+  chunk-size warning. Focused Playwright QA passed at 1440x1100 and 390x1000
+  with 6 stat cards, 3 decision lanes, 8 matched row cards, 6 source cards, 7
+  gate cards, 3 working download links, required text visible, no overflow, no
+  console errors, no page errors, no request failures, and no bad HTTP
+  responses. Screenshots were written under
+  `reporting-site/qa/showcase-air-bmkg-install-audit-*-clean.png`.
 - **2026-06-19 (air-monitoring Georgia report-verification source scan):**
   Added `air-monitoring/scripts/scan-georgia-report-verification-sources.py`,
   generated

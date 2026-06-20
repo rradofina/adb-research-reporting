@@ -2241,6 +2241,75 @@ interface BmkgStationPublicContextSummary {
   non_claim: string;
 }
 
+interface BmkgInstallationAuditGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgInstallationAuditDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgInstallationAuditDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  matched_source_keys: string;
+  exact_station_audit_calibration_sources: number;
+  pm25_installation_deployment_sources: number;
+  installation_audit_decision: string;
+  reader_use: string;
+}
+
+interface BmkgInstallationAuditSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_match_scope: string;
+  retrieved: boolean;
+  http_status: string | number;
+  matched_target_station_ids: string;
+  matched_pm25_terms: string;
+  matched_installation_terms: string;
+  matched_audit_terms: string;
+  matched_calibration_terms: string;
+  matched_operation_terms: string;
+  source_note: string;
+}
+
+interface BmkgInstallationAuditSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    installation_audit_source_urls_seeded: number;
+    installation_audit_source_urls_retrieved: number;
+    official_sources_retrieved: number;
+    rows_with_any_installation_or_audit_context: number;
+    rows_with_exact_station_audit_calibration_context: number;
+    rows_with_pm25_installation_deployment_context: number;
+    source_level_operational_or_calibration_sources: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgInstallationAuditDecision[];
+  evidence_gate_counts: BmkgInstallationAuditGate[];
+  display_rows: BmkgInstallationAuditDisplayRow[];
+  source_records: BmkgInstallationAuditSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2672,6 +2741,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgGradeBasisSummary | null>(null);
   const [bmkgStationPublicContext, setBmkgStationPublicContext] =
     useState<BmkgStationPublicContextSummary | null>(null);
+  const [bmkgInstallationAudit, setBmkgInstallationAudit] =
+    useState<BmkgInstallationAuditSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -3071,6 +3142,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG installation/audit source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgInstallationAudit(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3305,6 +3396,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgGradeBasisPanel summary={bmkgGradeBasis} />
 
       <AirBmkgStationPublicContextPanel summary={bmkgStationPublicContext} />
+
+      <AirBmkgInstallationAuditPanel summary={bmkgInstallationAudit} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -8401,6 +8494,183 @@ function AirBmkgStationPublicContextPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG station public-context source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgInstallationAuditPanel({
+  summary,
+}: {
+  summary: BmkgInstallationAuditSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-station-context-section air-bmkg-install-audit-section" aria-label="BMKG installation/audit source scan">
+      <div className="air-grade-method-head air-bmkg-station-context-head air-bmkg-install-audit-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG installation/audit source scan</p>
+          <h2>One station shows audit context. Certificates still stay closed.</h2>
+          <p>
+            This pass moves from station studies to official BMKG installation,
+            audit/calibration, public-information, and operational-monitoring
+            routes. It adds one exact station audit/calibration signal and a
+            2020 PM2.5 installation layer, while still finding no station
+            certificate or calibration-status record.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-station-context-callout air-bmkg-install-audit-callout">
+          <span>Station certificate rows</span>
+          <strong>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)}</strong>
+          <p>{formatNumber(counts?.rows_with_exact_station_audit_calibration_context ?? 0)} exact audit/calibration row, not certificate closure.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-station-context-stat-grid air-bmkg-install-audit-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.installation_audit_source_urls_retrieved)}/{formatNumber(counts.installation_audit_source_urls_seeded)}</strong>
+              <em>official installation/audit routes</em>
+            </div>
+            <div>
+              <span>Rows with context</span>
+              <strong>{formatNumber(counts.rows_with_any_installation_or_audit_context)}</strong>
+              <em>installation or audit context</em>
+            </div>
+            <div>
+              <span>Exact audit row</span>
+              <strong>{formatNumber(counts.rows_with_exact_station_audit_calibration_context)}</strong>
+              <em>Kototabang station-level context</em>
+            </div>
+            <div>
+              <span>Install/deploy rows</span>
+              <strong>{formatNumber(counts.rows_with_pm25_installation_deployment_context)}</strong>
+              <em>official PM2.5 installation layer</em>
+            </div>
+            <div>
+              <span>Source-level routes</span>
+              <strong>{formatNumber(counts.source_level_operational_or_calibration_sources)}</strong>
+              <em>operations or calibration context only</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>no certificate/status closure</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-station-context-bridge air-bmkg-install-audit-bridge" aria-label="BMKG installation/audit decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className={`air-grade-method-lane air-bmkg-station-context-lane air-bmkg-station-context-lane-${decision.decision} air-bmkg-install-audit-lane`}>
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-station-context-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+                <p>{decision.decision.includes("no_installation") ? "No seeded official source matched this row." : "Context moves the evidence trail, not the certificate gate."}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-station-context-row-grid air-bmkg-install-audit-row-grid" aria-label="BMKG installation/audit matched rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className={`air-bmkg-station-context-row air-bmkg-install-audit-row air-bmkg-station-context-row-${row.installation_audit_decision}`}>
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.installation_audit_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Audit</dt>
+                    <dd>{formatNumber(row.exact_station_audit_calibration_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Install</dt>
+                    <dd>{formatNumber(row.pm25_installation_deployment_sources)}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <em>{sentenceCaseStatus(row.matched_source_keys)}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-station-context-source-grid air-bmkg-install-audit-source-grid" aria-label="BMKG installation/audit source records">
+            {sources.map((source) => {
+              const sourceTone = source.source_match_scope.includes("exact")
+                ? "air-bmkg-station-context-source-exact"
+                : source.matched_target_station_ids
+                  ? "air-bmkg-station-context-source-city"
+                  : "air-bmkg-station-context-source-empty";
+              return (
+                <article key={source.source_key} className={`air-bmkg-station-context-source air-bmkg-install-audit-source ${sourceTone}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(source.source_role)}</span>
+                    <strong>{source.source_name}</strong>
+                    <b>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Rows</dt>
+                      <dd>{formatNumber(termCount(source.matched_target_station_ids))}</dd>
+                    </div>
+                    <div>
+                      <dt>PM2.5</dt>
+                      <dd>{formatNumber(termCount(source.matched_pm25_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Audit</dt>
+                      <dd>{formatNumber(termCount(source.matched_audit_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Calib.</dt>
+                      <dd>{formatNumber(termCount(source.matched_calibration_terms))}</dd>
+                    </div>
+                  </dl>
+                  <p>{source.source_note}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-station-context-gate-grid air-bmkg-install-audit-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-station-context-gate air-bmkg-install-audit-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-station-context-downloads air-bmkg-install-audit-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-installation-audit-source-scan.md" download>
+              Download installation/audit note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-installation-audit-source-scan.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading BMKG installation/audit source scan...</p>
       )}
     </section>
   );

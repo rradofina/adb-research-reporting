@@ -1,0 +1,96 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "expected": {
+    "statCards": 6,
+    "lanes": 3,
+    "rows": 8,
+    "sources": 6,
+    "gates": 7,
+    "downloads": 3
+  },
+  "results": [
+    {
+      "viewportName": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        "statCards": 6,
+        "lanes": 3,
+        "rows": 8,
+        "sources": 6,
+        "gates": 7,
+        "downloads": 3
+      },
+      "requiredTexts": [
+        "BMKG installation/audit source scan",
+        "6/6",
+        "Rows with context",
+        "1 exact audit/calibration row",
+        "Kototabang",
+        "Kota Jambi",
+        "Station-specific calibration certificate/status",
+        "Download summary JSON"
+      ],
+      "missingTexts": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "bad": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-install-audit-desktop-section-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-desktop-rows-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-desktop-sources-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-desktop-gates-clean.png"
+      ]
+    },
+    {
+      "viewportName": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        "statCards": 6,
+        "lanes": 3,
+        "rows": 8,
+        "sources": 6,
+        "gates": 7,
+        "downloads": 3
+      },
+      "requiredTexts": [
+        "BMKG installation/audit source scan",
+        "6/6",
+        "Rows with context",
+        "1 exact audit/calibration row",
+        "Kototabang",
+        "Kota Jambi",
+        "Station-specific calibration certificate/status",
+        "Download summary JSON"
+      ],
+      "missingTexts": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "bad": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-install-audit-mobile-section-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-mobile-rows-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-mobile-sources-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-install-audit-mobile-gates-clean.png"
+      ]
+    }
+  ],
+  "failures": [],
+  "passed": true,
+  "generatedAt": "2026-06-20T04:07:59.429Z"
+}

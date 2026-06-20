@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T03:50:11.832Z",
+  "generated_at": "2026-06-20T04:11:25.007Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -404,6 +404,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_installation_audit_source_scan",
+      "file": "bmkg-installation-audit-source-scan.md",
+      "label": "Air-monitoring BMKG installation/audit source scan",
+      "size": 2696,
+      "size_human": "2.6 KB",
+      "mtime": "2026-06-20T04:01:59.035Z",
+      "sha256": "0ffa034e00f4fd549b212c4b1a6f567fae5283d3eaa285204dc6d5621e15930e",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -522,6 +532,18 @@
       "size": 21437,
       "size_human": "20.9 KB",
       "sha256": "422345c3a88d67b1f1e0e3247f2b68ff929bec5aa8b46628d8f284e47b53932b"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-installation-audit-source-scan-summary.json",
+      "size": 55473,
+      "size_human": "54.2 KB",
+      "sha256": "d5b05764efdaebd14735d3a918e22e9b28f19716f26474b33613a8502588dc44"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-installation-audit-source-scan.csv",
+      "size": 18592,
+      "size_human": "18.2 KB",
+      "sha256": "7e6db625944f36936a26e252ef2eac95bcac18e3d1abff2beb4bbff1596ea338"
     },
     {
       "file": "generated/air-monitoring-bmkg-operation-maintenance-source-scan-summary.json",

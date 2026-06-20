@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-06-20T10:59:31Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_radius_acag_coarse_checksums",
+  "method": "air_monitoring_station_radius_acag_coarse_checksums_v1",
+  "goal_level": "L3 station-radius ACAG coarse PM2.5 checksum and metadata gate",
+  "source_inputs": [
+    {
+      "path": "generated/air-monitoring-station-radius-acag-version-decision-summary.json",
+      "role": "station-radius ACAG version-decision summary"
+    }
+  ],
+  "cache_policy": "Raw NetCDF files are stored under air-monitoring/.cache/station-radius-acag-coarse-checksums/ and are not committed; rerun the script to rehydrate them from public S3 object URLs.",
+  "coverage_counts": {
+    "approved_coarse_candidate_files": 2,
+    "downloaded_files": 2,
+    "downloaded_this_run": 0,
+    "sha256_checksummed_files": 2,
+    "size_matches_expected_files": 2,
+    "netcdf_files_opened": 2,
+    "files_with_pm25_variable_candidates": 2,
+    "files_with_lat_lon_coordinate_variables": 2,
+    "population_denominator_files_selected": 0,
+    "population_denominator_files_downloaded": 0,
+    "station_radius_pm25_exposure_rows": 0,
+    "validated_same_station_join_rows": 0,
+    "complete_monitor_grade_rows": 0,
+    "station_radius_ready_economies": 0
+  },
+  "evidence_gate_counts": [
+    {
+      "gate": "Approved coarse ACAG files downloaded",
+      "status": "available",
+      "rows": 2,
+      "reader_use": "Only the two selected 2023 V6.GL.03 coarse PM2.5 objects are cached locally."
+    },
+    {
+      "gate": "SHA-256 checksum ledger",
+      "status": "available",
+      "rows": 2,
+      "reader_use": "The raw NetCDF files stay in the ignored cache; committed artifacts retain hashes and source URLs."
+    },
+    {
+      "gate": "NetCDF variable metadata",
+      "status": "available",
+      "rows": 2,
+      "reader_use": "Dimensions and variables are inspectable before any exposure computation."
+    },
+    {
+      "gate": "Population denominator selection",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No GHSL or WorldPop denominator has been selected or downloaded in this pass."
+    },
+    {
+      "gate": "Station-radius exposure computation",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "No PM2.5 exposure or catchment map is computed here."
+    },
+    {
+      "gate": "Station joins and monitor-grade closure",
+      "status": "not_ready",
+      "rows": 0,
+      "reader_use": "Station identity and monitor-grade gates remain separate blockers."
+    }
+  ],
+  "checksum_rows": [
+    {
+      "generated_at": "2026-06-20T10:59:31Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_acag_coarse_checksums",
+      "method": "air_monitoring_station_radius_acag_coarse_checksums_v1",
+      "record_key": "v6gl03_as_coarse_annual",
+      "source_role": "primary_pm25_first_wave_candidate",
+      "observed_version": "V6.GL.03",
+      "selected_vintage": "2023",
+      "s3_key": "V6GL03/CoarseResolution/AS/Annual/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+      "object_url": "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/AS/Annual/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+      "expected_size_bytes": 1098264,
+      "expected_etag": "85cecdc2b7d5ccd65630e01cb7685ae7",
+      "downloaded": true,
+      "downloaded_this_run": false,
+      "cache_path": ".cache/station-radius-acag-coarse-checksums/V6GL03.CNNPM25.0p10.AS.202301-202312.nc",
+      "file_size_bytes": 1098264,
+      "size_matches_expected": true,
+      "sha256": "d2be821db5eb03c2babbc671fd21914ffa9fa5608fcdf400fd6fc9526022f8b0",
+      "http_status": "",
+      "content_type": "",
+      "last_modified": "",
+      "netcdf_opened": true,
+      "netcdf_format": "NETCDF4",
+      "dimension_count": 2,
+      "dimensions": "lat:700||lon:800",
+      "variable_count": 3,
+      "variables": "PM25(lat,lon)[ug/m3]||lat(lat)[degrees_north]||lon(lon)[degrees_east]",
+      "coordinate_variables": "lat||lon",
+      "pm25_variable_candidates": "PM25",
+      "global_attributes": "TITLE||CONTACT||LAT_DELTA||LON_DELTA||SPATIALCOVERAGE||TIMECOVERAGE",
+      "metadata_decision": "metadata_ready_for_method_freeze",
+      "reader_use": "Use this checksum and NetCDF metadata to freeze the next PM2.5 denominator processing step.",
+      "blocking_gap": "Population denominator selection, radius rules, station joins, and grade gates remain open.",
+      "retrieval_error": "",
+      "non_claim": "This ACAG coarse checksum pass downloads and hashes only the two approved 2023 V6.GL.03 coarse PM2.5 pilot objects and inspects NetCDF metadata. It does not download fine-resolution PM2.5 files; does not select or download a population denominator; does not compute PM2.5 exposure, station catchments, or station-radius population; does not validate same-station joins; and does not promote monitor-grade rows."
+    },
+    {
+      "generated_at": "2026-06-20T10:59:31Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_acag_coarse_checksums",
+      "method": "air_monitoring_station_radius_acag_coarse_checksums_v1",
+      "record_key": "v6gl03_gl_coarse_annual",
+      "source_role": "global_pm25_sanity_candidate",
+      "observed_version": "V6.GL.03",
+      "selected_vintage": "2023",
+      "s3_key": "V6GL03/CoarseResolution/GL/Annual/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+      "object_url": "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/GL/Annual/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+      "expected_size_bytes": 5201631,
+      "expected_etag": "4dba5529a9f28c13ad7b37b0e50ca183",
+      "downloaded": true,
+      "downloaded_this_run": false,
+      "cache_path": ".cache/station-radius-acag-coarse-checksums/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+      "file_size_bytes": 5201631,
+      "size_matches_expected": true,
+      "sha256": "89ae44c70d939a5ae5ed298264e026fc3ce50e3af76ba3de53ba51c11d34a8e3",
+      "http_status": "",
+      "content_type": "",
+      "last_modified": "",
+      "netcdf_opened": true,
+      "netcdf_format": "NETCDF4",
+      "dimension_count": 2,
+      "dimensions": "lat:1300||lon:3600",
+      "variable_count": 3,
+      "variables": "PM25(lat,lon)[ug/m3]||lat(lat)[degrees_north]||lon(lon)[degrees_east]",
+      "coordinate_variables": "lat||lon",
+      "pm25_variable_candidates": "PM25",
+      "global_attributes": "TITLE||CONTACT||LAT_DELTA||LON_DELTA||SPATIALCOVERAGE||TIMECOVERAGE",
+      "metadata_decision": "metadata_ready_for_method_freeze",
+      "reader_use": "Use this checksum and NetCDF metadata to freeze the next PM2.5 denominator processing step.",
+      "blocking_gap": "Population denominator selection, radius rules, station joins, and grade gates remain open.",
+      "retrieval_error": "",
+      "non_claim": "This ACAG coarse checksum pass downloads and hashes only the two approved 2023 V6.GL.03 coarse PM2.5 pilot objects and inspects NetCDF metadata. It does not download fine-resolution PM2.5 files; does not select or download a population denominator; does not compute PM2.5 exposure, station catchments, or station-radius population; does not validate same-station joins; and does not promote monitor-grade rows."
+    }
+  ],
+  "upstream_counts": {
+    "evidence_rows": 9,
+    "routes_retrieved": 9,
+    "source_pages_retrieved": 5,
+    "s3_prefixes_retrieved": 4,
+    "v6gl03_s3_prefixes_with_2023_target": 4,
+    "v6gl03_s3_prefixes_with_2024_visible": 4,
+    "approved_2023_coarse_first_wave_objects": 2,
+    "fine_resolution_second_wave_or_deferred_objects": 2,
+    "legacy_v6gl0204_v5_box_routes_unresolved": 2,
+    "legacy_v6gl0204_v5_exact_file_manifests": 0,
+    "v6gl03_allowed_as_silent_replacement": 0,
+    "selected_vintage": 2023,
+    "visible_latest_v6gl03_year": 2024,
+    "denominator_files_downloaded": 0,
+    "denominator_files_sha256_checksummed": 0,
+    "netcdf_variables_inspected": 0,
+    "validated_same_station_join_rows": 0,
+    "complete_monitor_grade_rows": 0,
+    "station_radius_ready_economies": 0
+  },
+  "outputs": {
+    "csv": "generated/air-monitoring-station-radius-acag-coarse-checksums.csv",
+    "summary_json": "generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json",
+    "markdown": "station-radius-acag-coarse-checksums.md"
+  },
+  "non_claim": "This ACAG coarse checksum pass downloads and hashes only the two approved 2023 V6.GL.03 coarse PM2.5 pilot objects and inspects NetCDF metadata. It does not download fine-resolution PM2.5 files; does not select or download a population denominator; does not compute PM2.5 exposure, station catchments, or station-radius population; does not validate same-station joins; and does not promote monitor-grade rows."
+}

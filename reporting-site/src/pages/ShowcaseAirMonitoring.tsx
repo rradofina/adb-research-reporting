@@ -699,6 +699,76 @@ interface StationRadiusAcagVersionSummary {
   non_claim: string;
 }
 
+interface StationRadiusAcagChecksumGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusAcagChecksumRow {
+  record_key: string;
+  source_role: string;
+  observed_version: string;
+  selected_vintage: string;
+  s3_key: string;
+  object_url: string;
+  expected_size_bytes: number;
+  expected_etag: string;
+  downloaded: boolean;
+  downloaded_this_run: boolean;
+  cache_path: string;
+  file_size_bytes: number;
+  size_matches_expected: boolean;
+  sha256: string;
+  http_status: number | string;
+  content_type: string;
+  last_modified: string;
+  netcdf_opened: boolean;
+  netcdf_format: string;
+  dimension_count: number;
+  dimensions: string;
+  variable_count: number;
+  variables: string;
+  coordinate_variables: string;
+  pm25_variable_candidates: string;
+  global_attributes: string;
+  metadata_decision: string;
+  reader_use: string;
+  blocking_gap: string;
+  retrieval_error: string;
+  non_claim: string;
+}
+
+interface StationRadiusAcagChecksumSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  cache_policy: string;
+  coverage_counts: {
+    approved_coarse_candidate_files: number;
+    downloaded_files: number;
+    downloaded_this_run: number;
+    sha256_checksummed_files: number;
+    size_matches_expected_files: number;
+    netcdf_files_opened: number;
+    files_with_pm25_variable_candidates: number;
+    files_with_lat_lon_coordinate_variables: number;
+    population_denominator_files_selected: number;
+    population_denominator_files_downloaded: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusAcagChecksumGate[];
+  checksum_rows: StationRadiusAcagChecksumRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3624,6 +3694,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusDownloadFeasibilitySummary | null>(null);
   const [stationRadiusAcagVersion, setStationRadiusAcagVersion] =
     useState<StationRadiusAcagVersionSummary | null>(null);
+  const [stationRadiusAcagChecksum, setStationRadiusAcagChecksum] =
+    useState<StationRadiusAcagChecksumSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3934,6 +4006,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusAcagVersion(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius ACAG coarse checksum HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusAcagChecksum(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4539,6 +4631,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusDownloadFeasibilityPanel summary={stationRadiusDownloadFeasibility} />
 
       <AirStationRadiusAcagVersionPanel summary={stationRadiusAcagVersion} />
+
+      <AirStationRadiusAcagChecksumPanel summary={stationRadiusAcagChecksum} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -6072,6 +6166,155 @@ function AirStationRadiusAcagVersionPanel({ summary }: { summary: StationRadiusA
         </>
       ) : (
         <p className="showcase-loading">Loading ACAG version decision...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusAcagChecksumPanel({ summary }: { summary: StationRadiusAcagChecksumSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.checksum_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const asNumber = (value: number | string | undefined) => {
+    const parsed = Number(value ?? 0);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const formatBytes = (value: number | string | undefined) => {
+    const bytes = asNumber(value);
+    if (bytes <= 0) return "no file";
+    if (bytes >= 1_000_000_000) return `${(bytes / 1_000_000_000).toFixed(1)} GB`;
+    if (bytes >= 1_000_000) return `${(bytes / 1_000_000).toFixed(1)} MB`;
+    if (bytes >= 1_000) return `${(bytes / 1_000).toFixed(1)} KB`;
+    return `${formatNumber(bytes)} B`;
+  };
+
+  return (
+    <section className="showcase-section air-acag-checksum-section" aria-label="ACAG coarse checksum gate">
+      <div className="air-acag-checksum-head">
+        <div>
+          <p className="kicker kicker-blue">Checksum gate</p>
+          <h2>The first PM2.5 files are hashed, not interpreted.</h2>
+          <p>
+            This pass crosses from route discovery into reproducible data
+            custody. It downloads only the two approved 2023 V6.GL.03 coarse
+            PM2.5 NetCDF files, records hashes and metadata, and stops before
+            population denominators, exposure surfaces, or station catchments.
+          </p>
+        </div>
+        <div className="air-acag-checksum-cache">
+          <span>Cache policy</span>
+          <strong>Ignored raw NetCDF</strong>
+          <p>{summary?.cache_policy ?? "Raw ACAG files remain outside the committed tree."}</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-acag-checksum-stat-grid">
+            <div>
+              <span>Downloaded</span>
+              <strong>{formatNumber(counts.downloaded_files)}</strong>
+              <em>approved coarse files</em>
+            </div>
+            <div>
+              <span>SHA-256 hashes</span>
+              <strong>{formatNumber(counts.sha256_checksummed_files)}</strong>
+              <em>committed checksum ledger</em>
+            </div>
+            <div>
+              <span>NetCDF opened</span>
+              <strong>{formatNumber(counts.netcdf_files_opened)}</strong>
+              <em>metadata inspected</em>
+            </div>
+            <div>
+              <span>PM2.5 variables</span>
+              <strong>{formatNumber(counts.files_with_pm25_variable_candidates)}</strong>
+              <em>PM25(lat, lon) candidates</em>
+            </div>
+            <div>
+              <span>Population denominators</span>
+              <strong>{formatNumber(counts.population_denominator_files_downloaded)}</strong>
+              <em>not selected or cached</em>
+            </div>
+            <div>
+              <span>Exposure rows</span>
+              <strong>{formatNumber(counts.station_radius_pm25_exposure_rows)}</strong>
+              <em>no catchment claim</em>
+            </div>
+          </div>
+
+          <div className="air-acag-checksum-gates" aria-label="ACAG checksum evidence gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-acag-checksum-gate air-acag-checksum-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-acag-checksum-row-grid" aria-label="Downloaded ACAG checksum rows">
+            {rows.map((row) => (
+              <article key={row.record_key} className="air-acag-checksum-row">
+                <div className="air-acag-checksum-row-head">
+                  <span>{sentenceCaseStatus(row.source_role)}</span>
+                  <strong>{row.record_key}</strong>
+                  <b>{row.observed_version} / {row.selected_vintage}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Size</dt>
+                    <dd>{formatBytes(row.file_size_bytes)}</dd>
+                  </div>
+                  <div>
+                    <dt>Format</dt>
+                    <dd>{row.netcdf_format}</dd>
+                  </div>
+                  <div>
+                    <dt>Dimensions</dt>
+                    <dd>{row.dimensions}</dd>
+                  </div>
+                  <div>
+                    <dt>PM2.5</dt>
+                    <dd>{row.pm25_variable_candidates}</dd>
+                  </div>
+                </dl>
+                <div className="air-acag-checksum-hash">
+                  <span>SHA-256</span>
+                  <code>{row.sha256}</code>
+                </div>
+                <div className="air-acag-checksum-path">
+                  <span>Cached file</span>
+                  <code>{row.cache_path}</code>
+                </div>
+                <div className="air-acag-checksum-path">
+                  <span>S3 object</span>
+                  <code>{row.s3_key}</code>
+                </div>
+                <p>{row.reader_use}</p>
+                <p className="air-acag-checksum-block">{row.blocking_gap}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-acag-checksum-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-acag-checksum-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-acag-coarse-checksums.md" download>
+              Download checksum note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-acag-coarse-checksums.csv" download>
+              Download checksum CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading ACAG coarse checksum gate...</p>
       )}
     </section>
   );

@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-06-20T11:08:00Z",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "panel": "ACAG coarse checksum gate",
+  "desktop": {
+    "viewport": "1440x1100",
+    "screenshot": "reporting-site/qa/showcase-air-acag-coarse-checksums-desktop.png",
+    "heading": "The first PM2.5 files are hashed, not interpreted.",
+    "stat_cards": 6,
+    "evidence_gates": 6,
+    "checksum_rows": 2,
+    "body_overflow": false,
+    "section_overflow": false
+  },
+  "mobile": {
+    "viewport": "390x1000",
+    "screenshot": "reporting-site/qa/showcase-air-acag-coarse-checksums-mobile.png",
+    "heading": "The first PM2.5 files are hashed, not interpreted.",
+    "stat_cards": 6,
+    "evidence_gates": 6,
+    "checksum_rows": 2,
+    "body_overflow": false,
+    "section_overflow": false
+  },
+  "console": {
+    "errors": 0,
+    "warnings": "React Router future-flag warnings and Vite dev-server messages only"
+  },
+  "downloads_checked": [
+    "/programs/air-monitoring/station-radius-acag-coarse-checksums.md",
+    "/programs/air-monitoring/generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json",
+    "/programs/air-monitoring/generated/air-monitoring-station-radius-acag-coarse-checksums.csv"
+  ]
+}

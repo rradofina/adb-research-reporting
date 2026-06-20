@@ -43,3 +43,24 @@ Cached HTML pages are stored under `.cache/bmkg-station-specific-status/`.
 The committed CSV/JSON records retain source URLs, cache paths, SHA-256
 hashes, parsed public display fields, and the station-specific non-promotion
 gates.
+
+## ACAG station-radius coarse PM2.5 checksums
+
+Regenerate the ACAG V6.GL.03 coarse PM2.5 checksum and metadata ledger with:
+
+```bash
+python air-monitoring/scripts/download-station-radius-acag-coarse-checksums.py
+```
+
+The script reads
+`generated/air-monitoring-station-radius-acag-version-decision-summary.json`,
+downloads only the two approved 2023 coarse NetCDF objects from public ACAG
+S3 routes into `.cache/station-radius-acag-coarse-checksums/`, computes
+SHA-256 hashes, inspects NetCDF dimensions and variables, and writes:
+
+- `generated/air-monitoring-station-radius-acag-coarse-checksums.csv`
+- `generated/air-monitoring-station-radius-acag-coarse-checksums-summary.json`
+
+The raw NetCDF files are public-source cache files and are not committed.
+The committed CSV/JSON records retain source URLs, object keys, byte counts,
+SHA-256 hashes, cache paths, dimension/variable metadata, and non-claim gates.

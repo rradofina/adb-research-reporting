@@ -48,8 +48,9 @@ USER_AGENT = (
 TIMEOUT_SECONDS = 90
 NON_CLAIM = (
     "This scan records public BMKG regional, public-information, service, "
-    "historical, and regulator context for the 22 BMKG PM2.5 rows. A regional "
-    "source can close current-status only when it names an exact target station "
+    "historical, regulator, and regional-analysis context for the 22 BMKG "
+    "PM2.5 rows. Regional analysis pages can support station or official-site "
+    "context, but current-status closure still requires an exact target station "
     "with explicit status text and a recent timestamp. It does not certify "
     "station-specific inspection logs, calibration certificates, complete "
     "monitor-grade status, same-station OpenAQ joins, or station-radius "
@@ -115,6 +116,7 @@ MONTHS = {
 
 STATUS_SOURCE_ROLES = {"official_regional_station_status"}
 STATION_CONTEXT_SOURCE_ROLES = {
+    "official_regional_analysis_context",
     "official_regional_station_status",
     "official_regional_upt_profile",
     "official_historical_station_context",
@@ -126,6 +128,12 @@ LOCATION_ALIASES = {
     "pm25_pl3": ["palembang", "kota palembang"],
     "pm25_idp2": ["aceh besar", "kab. aceh besar", "kab aceh besar"],
     "pm25_jm4": ["jambi", "provinsi jambi"],
+}
+
+STATION_CONTEXT_ALIASES = {
+    "pm25_pbb": ["stasiun klimatologi bengkulu", "kota bengkulu"],
+    "pm25_plb4": ["palembang (musi 2)", "musi 2"],
+    "pm25_ptn2": ["stasiun klimatologi kalimantan barat", "mempawah"],
 }
 
 
@@ -280,6 +288,13 @@ def source_level_context(source_records: list[dict[str, Any]], role: str) -> boo
     return any(record["retrieved"] and record["source_role"] == role for record in source_records)
 
 
+def station_context_matches(source_role: str, station_id: str, station_key: str, text_key: str) -> bool:
+    aliases = STATION_CONTEXT_ALIASES.get(station_id, [])
+    if source_role == "official_regional_analysis_context":
+        return any(alias in text_key for alias in aliases)
+    return station_key in text_key or any(alias in text_key for alias in aliases)
+
+
 def build_rows(generated_at: str, sources: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     status_entries: dict[str, dict[str, Any]] = {}
     for source in sources:
@@ -300,7 +315,7 @@ def build_rows(generated_at: str, sources: list[dict[str, Any]]) -> tuple[list[d
             if not source["retrieved"]:
                 continue
             text_key = norm_key(source["text"])
-            if source["source_role"] in STATION_CONTEXT_SOURCE_ROLES and station_key in text_key:
+            if source["source_role"] in STATION_CONTEXT_SOURCE_ROLES and station_context_matches(source["source_role"], station_id, station_key, text_key):
                 matched_sources.append(source)
             aliases = LOCATION_ALIASES.get(station_id, [])
             if source["source_role"] == "official_historical_station_context" and any(alias in text_key for alias in aliases):
@@ -333,7 +348,7 @@ def build_rows(generated_at: str, sources: list[dict[str, Any]]) -> tuple[list[d
         elif matched_sources:
             decision = "station_named_in_public_source_but_no_current_status_closure"
             reader_use = (
-                "Use as exact station-name public context. It does not provide current-status, "
+                "Use as exact station-name or official site-variant public context. It does not provide current-status, "
                 "inspection, calibration, certificate, complete-grade, or radius closure."
             )
         elif location_sources:
@@ -417,6 +432,9 @@ def build_rows(generated_at: str, sources: list[dict[str, Any]]) -> tuple[list[d
 def evidence_gate_counts(rows: list[dict[str, Any]], sources: list[dict[str, Any]]) -> list[dict[str, Any]]:
     retrieved_sources = sum(1 for source in sources if source["retrieved"])
     status_sources = sum(1 for source in sources if source["retrieved"] and source["source_role"] == "official_regional_station_status")
+    regional_analysis_sources = sum(
+        1 for source in sources if source["retrieved"] and source["source_role"] == "official_regional_analysis_context"
+    )
     public_info_sources = sum(
         1
         for source in sources
@@ -424,6 +442,11 @@ def evidence_gate_counts(rows: list[dict[str, Any]], sources: list[dict[str, Any
         and source["source_role"] in {"official_public_information_cadence", "official_service_tariff"}
     )
     exact_context = sum(1 for row in rows if row["exact_station_name_external_context"])
+    regional_analysis_context = sum(
+        1
+        for row in rows
+        if "official_regional_analysis_context" in str(row["matched_source_roles"]).split("||")
+    )
     current_status = sum(1 for row in rows if row["current_status_confirmed"])
     return [
         {
@@ -439,10 +462,22 @@ def evidence_gate_counts(rows: list[dict[str, Any]], sources: list[dict[str, Any
             "reader_use": "A regional BMKG page can carry station-level status text outside the central detail/API surfaces.",
         },
         {
+            "status": "partly_available" if regional_analysis_sources else "not_ready",
+            "gate": "Regional analysis context source",
+            "rows": regional_analysis_sources,
+            "reader_use": "Regional analysis pages can name official monitoring sites, but they do not certify target-row status or grade.",
+        },
+        {
             "status": "partly_available" if exact_context else "not_ready",
-            "gate": "Exact target station named outside central detail/API",
+            "gate": "Target station or official site named outside central detail/API",
             "rows": exact_context,
-            "reader_use": "Exact station-name context helps target closure, but only explicit recent status text closes current status.",
+            "reader_use": "Station/site context helps target source closure, but only explicit recent status text closes current status.",
+        },
+        {
+            "status": "partly_available" if regional_analysis_context else "not_ready",
+            "gate": "Rows with regional analysis context",
+            "rows": regional_analysis_context,
+            "reader_use": "Counts target rows matched to official regional analysis pages without treating them as status or grade evidence.",
         },
         {
             "status": "available" if current_status else "not_ready",
@@ -506,6 +541,9 @@ def main() -> None:
         "official_regional_station_status_sources_retrieved": sum(
             1 for source in sources if source["retrieved"] and source["source_role"] == "official_regional_station_status"
         ),
+        "official_regional_analysis_context_sources_retrieved": sum(
+            1 for source in sources if source["retrieved"] and source["source_role"] == "official_regional_analysis_context"
+        ),
         "public_information_or_service_sources_retrieved": sum(
             1
             for source in sources
@@ -513,6 +551,11 @@ def main() -> None:
             and source["source_role"] in {"official_public_information_cadence", "official_service_tariff"}
         ),
         "rows_with_exact_station_name_external_context": sum(1 for row in rows if row["exact_station_name_external_context"]),
+        "rows_with_regional_analysis_context": sum(
+            1
+            for row in rows
+            if "official_regional_analysis_context" in str(row["matched_source_roles"]).split("||")
+        ),
         "rows_with_location_level_external_context": sum(1 for row in rows if row["location_level_external_context"]),
         "rows_with_regional_online_status": sum(1 for row in rows if row["explicit_regional_status_online"]),
         "current_status_confirmed_rows": sum(1 for row in rows if row["current_status_confirmed"]),
@@ -531,8 +574,8 @@ def main() -> None:
         "method": METHOD,
         "goal_level": "L3 BMKG regional station-status closure scan",
         "source_scope": (
-            "Public regional BMKG, BMKG public-information/service, historical BMKG, "
-            "and public regulator sources outside the central BMKG station-detail and API surfaces."
+            "Public regional BMKG station-status and analysis pages, BMKG public-information/service, "
+            "historical BMKG, and public regulator sources outside the central BMKG station-detail and API surfaces."
         ),
         "source_inputs": [
             {"path": str(SEED_CSV.relative_to(PROGRAM_DIR)), "role": "seeded BMKG regional/public status source routes"},

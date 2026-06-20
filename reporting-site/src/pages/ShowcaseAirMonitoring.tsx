@@ -7402,9 +7402,10 @@ function AirBmkgRegionalStatusPanel({
           <h2>One status gate moves, but the grade gate stays closed.</h2>
           <p>
             This pass leaves the central station-detail and API surfaces and checks
-            regional BMKG, public-information, service, and regulator sources.
-            Banjarbaru gets explicit regional ONLINE status; calibration and
-            complete-grade evidence still remain absent.
+            regional BMKG status and analysis pages, public-information,
+            service, and regulator sources. Banjarbaru gets explicit regional
+            ONLINE status; the added analysis pages expand station/site context
+            without closing calibration or complete-grade evidence.
           </p>
         </div>
         <div className="air-grade-method-callout air-bmkg-regional-callout">
@@ -7423,9 +7424,9 @@ function AirBmkgRegionalStatusPanel({
               <em>of {formatNumber(counts.regional_public_source_urls_seeded)} seeded routes</em>
             </div>
             <div>
-              <span>Exact station context</span>
+              <span>Station/site context</span>
               <strong>{formatNumber(counts.rows_with_exact_station_name_external_context)}</strong>
-              <em>Banjarbaru and Kemayoran</em>
+              <em>status, regulator, or analysis source</em>
             </div>
             <div>
               <span>Regional ONLINE rows</span>

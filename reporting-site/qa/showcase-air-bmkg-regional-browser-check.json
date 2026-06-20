@@ -1,84 +1,107 @@
 {
+  "generated_at": "2026-06-20T02:01:11.131Z",
   "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
-  "checkedAt": "2026-06-20T01:41:20.922Z",
+  "expected": {
+    "statCards": 6,
+    "decisionLanes": 3,
+    "evidenceRows": 5,
+    "gateCards": 10,
+    "sourceCards": 10,
+    "downloads": 3
+  },
   "results": [
     {
-      "label": "desktop",
+      "name": "desktop",
       "viewport": {
         "width": 1440,
         "height": 1100
       },
-      "counts": {
+      "metrics": {
         "statCards": 6,
         "decisionLanes": 3,
-        "evidenceRows": 2,
-        "gateCards": 8,
-        "sourceCards": 6,
-        "downloadLinks": 3
+        "evidenceRows": 5,
+        "gateCards": 10,
+        "sourceCards": 10,
+        "downloads": 3,
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "overflowingChildren": [],
+        "missingRequiredText": [],
+        "visibleTextSample": "BMKG regional status scanOne status gate moves, but the grade gate stays closed.This pass leaves the central station-detail and API surfaces and checks regional BMKG status and analysis pages, public-information, service, and regulator sources. Banjarbaru gets explicit regional ONLINE status; the added analysis pages expand station/site context without closing calibration or complete-grade evidence.Current-status rows1Useful movement, not a station-radius or grade promotion.Sources retrieved10of 10 seeded routesStation/site context5status, regulator, or analysis sourceRegional ONLINE rows1official Kalimantan Selatan pageCalibration certificates0still absent in public sourcesComplete grade0st"
       },
-      "missingTexts": [],
-      "overflow": {
-        "bodyOverflow": false,
-        "sectionOverflow": false,
-        "overflowingChildren": []
-      },
-      "linkResults": [
+      "downloadStatuses": [
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-regional-status-source-scan.md",
-          "status": 200
+          "href": "/programs/air-monitoring/bmkg-regional-status-source-scan.md",
+          "status": 200,
+          "ok": true
         },
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
-          "status": 200
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
+          "status": 200,
+          "ok": true
         },
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
-          "status": 200
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
+          "status": 200,
+          "ok": true
         }
       ],
       "consoleMessages": [],
       "pageErrors": [],
-      "requestFailures": []
+      "requestFailures": [],
+      "mismatches": []
     },
     {
-      "label": "mobile",
+      "name": "mobile",
       "viewport": {
         "width": 390,
-        "height": 1000,
-        "isMobile": true
+        "height": 1000
       },
-      "counts": {
+      "metrics": {
         "statCards": 6,
         "decisionLanes": 3,
-        "evidenceRows": 2,
-        "gateCards": 8,
-        "sourceCards": 6,
-        "downloadLinks": 3
+        "evidenceRows": 5,
+        "gateCards": 10,
+        "sourceCards": 10,
+        "downloads": 3,
+        "pageOverflow": 0,
+        "sectionOverflow": 0,
+        "overflowingChildren": [],
+        "missingRequiredText": [],
+        "visibleTextSample": "BMKG regional status scanOne status gate moves, but the grade gate stays closed.This pass leaves the central station-detail and API surfaces and checks regional BMKG status and analysis pages, public-information, service, and regulator sources. Banjarbaru gets explicit regional ONLINE status; the added analysis pages expand station/site context without closing calibration or complete-grade evidence.Current-status rows1Useful movement, not a station-radius or grade promotion.Sources retrieved10of 10 seeded routesStation/site context5status, regulator, or analysis sourceRegional ONLINE rows1official Kalimantan Selatan pageCalibration certificates0still absent in public sourcesComplete grade0st"
       },
-      "missingTexts": [],
-      "overflow": {
-        "bodyOverflow": false,
-        "sectionOverflow": false,
-        "overflowingChildren": []
-      },
-      "linkResults": [
+      "downloadStatuses": [
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/bmkg-regional-status-source-scan.md",
-          "status": 200
+          "href": "/programs/air-monitoring/bmkg-regional-status-source-scan.md",
+          "status": 200,
+          "ok": true
         },
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
-          "status": 200
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
+          "status": 200,
+          "ok": true
         },
         {
-          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
-          "status": 200
+          "href": "/programs/air-monitoring/generated/air-monitoring-bmkg-regional-status-source-scan.csv",
+          "status": 200,
+          "ok": true
         }
       ],
       "consoleMessages": [],
       "pageErrors": [],
-      "requestFailures": []
+      "requestFailures": [],
+      "mismatches": []
     }
   ],
-  "failures": []
+  "passed": true,
+  "screenshots": [
+    "showcase-air-bmkg-regional-desktop-section-clean.png",
+    "showcase-air-bmkg-regional-desktop-evidence-clean.png",
+    "showcase-air-bmkg-regional-desktop-sources-clean.png",
+    "showcase-air-bmkg-regional-desktop-gates-clean.png",
+    "showcase-air-bmkg-regional-mobile-section-clean.png",
+    "showcase-air-bmkg-regional-mobile-evidence-clean.png",
+    "showcase-air-bmkg-regional-mobile-sources-clean.png",
+    "showcase-air-bmkg-regional-mobile-gates-clean.png"
+  ]
 }

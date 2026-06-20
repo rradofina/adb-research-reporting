@@ -1,6 +1,6 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T01:41:43.857Z",
+  "generated_at": "2026-06-20T02:04:32.366Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",

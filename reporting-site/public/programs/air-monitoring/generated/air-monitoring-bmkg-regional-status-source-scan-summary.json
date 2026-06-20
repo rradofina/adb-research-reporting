@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-20T01:28:05Z",
+  "generated_at": "2026-06-20T01:50:41Z",
   "program": "air-monitoring",
   "attestation_chain": "ai-first",
   "status": "computed_bmkg_regional_status_source_scan",
   "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
   "goal_level": "L3 BMKG regional station-status closure scan",
-  "source_scope": "Public regional BMKG, BMKG public-information/service, historical BMKG, and public regulator sources outside the central BMKG station-detail and API surfaces.",
+  "source_scope": "Public regional BMKG station-status and analysis pages, BMKG public-information/service, historical BMKG, and public regulator sources outside the central BMKG station-detail and API surfaces.",
   "source_inputs": [
     {
       "path": "source-inputs\\bmkg-regional-status-source-seed.csv",
@@ -18,11 +18,13 @@
   ],
   "coverage_counts": {
     "target_bmkg_rows": 22,
-    "regional_public_source_urls_seeded": 6,
-    "regional_public_source_urls_retrieved": 6,
+    "regional_public_source_urls_seeded": 10,
+    "regional_public_source_urls_retrieved": 10,
     "official_regional_station_status_sources_retrieved": 1,
+    "official_regional_analysis_context_sources_retrieved": 4,
     "public_information_or_service_sources_retrieved": 2,
-    "rows_with_exact_station_name_external_context": 2,
+    "rows_with_exact_station_name_external_context": 5,
+    "rows_with_regional_analysis_context": 3,
     "rows_with_location_level_external_context": 0,
     "rows_with_regional_online_status": 1,
     "current_status_confirmed_rows": 1,
@@ -35,7 +37,7 @@
   "decision_counts": [
     {
       "decision": "no_regional_station_status_source_keep_blocked",
-      "rows": 20
+      "rows": 17
     },
     {
       "decision": "regional_online_status_current_but_grade_still_blocked",
@@ -43,14 +45,14 @@
     },
     {
       "decision": "station_named_in_public_source_but_no_current_status_closure",
-      "rows": 1
+      "rows": 4
     }
   ],
   "evidence_gate_counts": [
     {
       "status": "available",
       "gate": "Seeded regional/public sources retrieved",
-      "rows": 6,
+      "rows": 10,
       "reader_use": "Confirms the seeded public source routes were tested."
     },
     {
@@ -61,9 +63,21 @@
     },
     {
       "status": "partly_available",
-      "gate": "Exact target station named outside central detail/API",
-      "rows": 2,
-      "reader_use": "Exact station-name context helps target closure, but only explicit recent status text closes current status."
+      "gate": "Regional analysis context source",
+      "rows": 4,
+      "reader_use": "Regional analysis pages can name official monitoring sites, but they do not certify target-row status or grade."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Target station or official site named outside central detail/API",
+      "rows": 5,
+      "reader_use": "Station/site context helps target source closure, but only explicit recent status text closes current status."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Rows with regional analysis context",
+      "rows": 3,
+      "reader_use": "Counts target rows matched to official regional analysis pages without treating them as status or grade evidence."
     },
     {
       "status": "available",
@@ -98,7 +112,7 @@
   ],
   "station_rows": [
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -132,10 +146,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "regional_online_status_current_but_grade_still_blocked",
       "reader_use": "Use as station-specific current-status evidence from an official regional BMKG page. Do not use it as inspection, calibration, certificate, complete-grade, or radius evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -169,10 +183,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -206,10 +220,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -243,10 +257,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -280,10 +294,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -316,11 +330,11 @@
       "complete_monitor_grade_classification_available": false,
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
-      "reader_use": "Use as exact station-name public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -354,10 +368,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -391,10 +405,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -428,10 +442,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -465,20 +479,20 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
       "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_pbb",
       "source_station_id": "pm25_pbb",
       "source_station_name": "Bengkulu",
-      "matched_source_keys": "",
-      "matched_source_roles": "",
-      "source_url_count": 0,
-      "exact_station_name_external_context": false,
+      "matched_source_keys": "bmkg_bengkulu_pm25_dasarian||bmkg_bengkulu_pm25_monthly",
+      "matched_source_roles": "official_regional_analysis_context||official_regional_analysis_context",
+      "source_url_count": 2,
+      "exact_station_name_external_context": true,
       "location_level_external_context": false,
       "explicit_regional_status_online": false,
       "status_source_key": "",
@@ -500,12 +514,12 @@
       "current_status_confirmed": false,
       "complete_monitor_grade_classification_available": false,
       "station_radius_grade_assumption_ready": false,
-      "regional_status_decision": "no_regional_station_status_source_keep_blocked",
-      "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -539,10 +553,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -576,20 +590,20 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
       "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_plb4",
       "source_station_id": "pm25_plb4",
       "source_station_name": "Musi 2 Palembang",
-      "matched_source_keys": "",
-      "matched_source_roles": "",
-      "source_url_count": 0,
-      "exact_station_name_external_context": false,
+      "matched_source_keys": "bmkg_sumsel_musi2_pm25_analysis",
+      "matched_source_roles": "official_regional_analysis_context",
+      "source_url_count": 1,
+      "exact_station_name_external_context": true,
       "location_level_external_context": false,
       "explicit_regional_status_online": false,
       "status_source_key": "",
@@ -611,12 +625,12 @@
       "current_status_confirmed": false,
       "complete_monitor_grade_classification_available": false,
       "station_radius_grade_assumption_ready": false,
-      "regional_status_decision": "no_regional_station_status_source_keep_blocked",
-      "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -650,20 +664,20 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
       "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_ptn2",
       "source_station_id": "pm25_ptn2",
       "source_station_name": "Mempawah",
-      "matched_source_keys": "",
-      "matched_source_roles": "",
-      "source_url_count": 0,
-      "exact_station_name_external_context": false,
+      "matched_source_keys": "bmkg_kalbar_pm25_mempawah_bulletin",
+      "matched_source_roles": "official_regional_analysis_context",
+      "source_url_count": 1,
+      "exact_station_name_external_context": true,
       "location_level_external_context": false,
       "explicit_regional_status_online": false,
       "status_source_key": "",
@@ -685,12 +699,12 @@
       "current_status_confirmed": false,
       "complete_monitor_grade_classification_available": false,
       "station_radius_grade_assumption_ready": false,
-      "regional_status_decision": "no_regional_station_status_source_keep_blocked",
-      "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -724,10 +738,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -761,10 +775,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -798,10 +812,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -835,10 +849,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -872,10 +886,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -909,12 +923,12 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "no_regional_station_status_source_keep_blocked",
       "reader_use": "No seeded regional or regulator source names this exact station with status evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     }
   ],
   "display_rows": [
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -948,10 +962,10 @@
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "regional_online_status_current_but_grade_still_blocked",
       "reader_use": "Use as station-specific current-status evidence from an official regional BMKG page. Do not use it as inspection, calibration, certificate, complete-grade, or radius evidence.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     },
     {
-      "generated_at": "2026-06-20T01:28:05Z",
+      "generated_at": "2026-06-20T01:50:41Z",
       "attestation_chain": "ai-first",
       "status": "computed_bmkg_regional_status_source_scan",
       "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
@@ -984,8 +998,119 @@
       "complete_monitor_grade_classification_available": false,
       "station_radius_grade_assumption_ready": false,
       "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
-      "reader_use": "Use as exact station-name public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
-      "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+    },
+    {
+      "generated_at": "2026-06-20T01:50:41Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_bmkg_regional_status_source_scan",
+      "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
+      "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_pbb",
+      "source_station_id": "pm25_pbb",
+      "source_station_name": "Bengkulu",
+      "matched_source_keys": "bmkg_bengkulu_pm25_dasarian||bmkg_bengkulu_pm25_monthly",
+      "matched_source_roles": "official_regional_analysis_context||official_regional_analysis_context",
+      "source_url_count": 2,
+      "exact_station_name_external_context": true,
+      "location_level_external_context": false,
+      "explicit_regional_status_online": false,
+      "status_source_key": "",
+      "status_source_url": "",
+      "status_timestamp_raw": "",
+      "status_timestamp_iso": "",
+      "status_recent_within_30_days": false,
+      "status_value_ug_m3": "",
+      "status_category_raw": "",
+      "source_latitude": "",
+      "source_longitude": "",
+      "public_information_cadence_context": true,
+      "service_tariff_context": true,
+      "historical_station_context": false,
+      "regulator_station_context": false,
+      "station_specific_inspection_log_found": false,
+      "station_specific_calibration_certificate_found": false,
+      "calibration_status_available": false,
+      "current_status_confirmed": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+    },
+    {
+      "generated_at": "2026-06-20T01:50:41Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_bmkg_regional_status_source_scan",
+      "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
+      "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_plb4",
+      "source_station_id": "pm25_plb4",
+      "source_station_name": "Musi 2 Palembang",
+      "matched_source_keys": "bmkg_sumsel_musi2_pm25_analysis",
+      "matched_source_roles": "official_regional_analysis_context",
+      "source_url_count": 1,
+      "exact_station_name_external_context": true,
+      "location_level_external_context": false,
+      "explicit_regional_status_online": false,
+      "status_source_key": "",
+      "status_source_url": "",
+      "status_timestamp_raw": "",
+      "status_timestamp_iso": "",
+      "status_recent_within_30_days": false,
+      "status_value_ug_m3": "",
+      "status_category_raw": "",
+      "source_latitude": "",
+      "source_longitude": "",
+      "public_information_cadence_context": true,
+      "service_tariff_context": true,
+      "historical_station_context": false,
+      "regulator_station_context": false,
+      "station_specific_inspection_log_found": false,
+      "station_specific_calibration_certificate_found": false,
+      "calibration_status_available": false,
+      "current_status_confirmed": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
+    },
+    {
+      "generated_at": "2026-06-20T01:50:41Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_bmkg_regional_status_source_scan",
+      "method": "air_monitoring_bmkg_regional_status_source_scan_v1",
+      "bmkg_regional_status_scan_id": "IDN-bmkg-regional-status-pm25_ptn2",
+      "source_station_id": "pm25_ptn2",
+      "source_station_name": "Mempawah",
+      "matched_source_keys": "bmkg_kalbar_pm25_mempawah_bulletin",
+      "matched_source_roles": "official_regional_analysis_context",
+      "source_url_count": 1,
+      "exact_station_name_external_context": true,
+      "location_level_external_context": false,
+      "explicit_regional_status_online": false,
+      "status_source_key": "",
+      "status_source_url": "",
+      "status_timestamp_raw": "",
+      "status_timestamp_iso": "",
+      "status_recent_within_30_days": false,
+      "status_value_ug_m3": "",
+      "status_category_raw": "",
+      "source_latitude": "",
+      "source_longitude": "",
+      "public_information_cadence_context": true,
+      "service_tariff_context": true,
+      "historical_station_context": false,
+      "regulator_station_context": false,
+      "station_specific_inspection_log_found": false,
+      "station_specific_calibration_certificate_found": false,
+      "calibration_status_available": false,
+      "current_status_confirmed": false,
+      "complete_monitor_grade_classification_available": false,
+      "station_radius_grade_assumption_ready": false,
+      "regional_status_decision": "station_named_in_public_source_but_no_current_status_closure",
+      "reader_use": "Use as exact station-name or official site-variant public context. It does not provide current-status, inspection, calibration, certificate, complete-grade, or radius closure.",
+      "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage."
     }
   ],
   "source_records": [
@@ -999,7 +1124,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
       "retrieval_bytes": 122422,
-      "sha256": "7ea1c4cadf51459fc4342bf8ddfd2895815446e0710b4f6fe63512d2d388d6d0",
+      "sha256": "cace13088c311a42e2ae5f7bad24dbd8516ba8659fb90acb3ad3a77fc840f258",
       "matched_expected_terms": "Kualitas Udara Kalimantan Selatan||PM2.5||Status Stasiun",
       "matched_station_status_terms": "Status Stasiun||ONLINE||Kategori",
       "matched_calibration_terms": "",
@@ -1019,7 +1144,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
       "retrieval_bytes": 162549,
-      "sha256": "6b8001e1f2271e5230f146c41838d03830691077c4004fcf36ad03f81d6f9a21",
+      "sha256": "a38775f574d40b20c7749c43654d0d2197a891c6161ac20962dfe2a001f14d66",
       "matched_expected_terms": "Stasiun Klimatologi Kelas I Kalimantan Selatan||Koordinator Provinsi||Kota Banjarbaru",
       "matched_station_status_terms": "",
       "matched_calibration_terms": "",
@@ -1039,7 +1164,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
       "retrieval_bytes": 361436,
-      "sha256": "59ec5ba83138f8d94fa15de35c5e19cd676d345e39661fd015c9b346f9f64c57",
+      "sha256": "17e5dc2f084029865258a293822fbc61f2fc5c465d86f3cb6b5d7d6493d2939a",
       "matched_expected_terms": "Informasi Kualitas Udara||Pemantauan Kualitas Udara||PM2",
       "matched_station_status_terms": "5",
       "matched_calibration_terms": "setiap jam||Website",
@@ -1059,7 +1184,7 @@
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
       "retrieval_bytes": 189162,
-      "sha256": "5e3abc6ac04d982cf9bb78ebc0eb3d4bfd7505c4a9780c80b384a33698acd304",
+      "sha256": "5be9c4b25f29ed5fce95a84d77f36d86efce21b3bd6809773e57930f69cfd91a",
       "matched_expected_terms": "Informasi Kualitas Udara||Particulate Matter||PM2.5",
       "matched_station_status_terms": "per stasiun per tahun",
       "matched_calibration_terms": "Jasa Kalibrasi||Debu Particulate Matter",
@@ -1108,9 +1233,89 @@
       "matched_target_station_rows": 1,
       "retrieval_error": "",
       "source_note": "Public regulator report context for the Kemayoran station. It is not a BMKG calibration certificate."
+    },
+    {
+      "source_key": "bmkg_bengkulu_pm25_dasarian",
+      "source_name": "BMKG Bengkulu PM2.5 dasarian regional analysis page",
+      "source_role": "official_regional_analysis_context",
+      "url": "https://bengkulu.bmkg.go.id/analisis-kualitas-udara-pm2-5-dasarian/",
+      "final_url": "https://bengkulu.bmkg.go.id/analisis-kualitas-udara-pm2-5-dasarian/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 303414,
+      "sha256": "75b1bbdaf82e83e425f01381031e2babb7b76f5277b8e0528a4a860eeb6e7816",
+      "matched_expected_terms": "Analisis Kualitas Udara||PM2.5||Kota Bengkulu",
+      "matched_station_status_terms": "periode",
+      "matched_calibration_terms": "",
+      "matched_inspection_terms": "pemantauan",
+      "matched_grade_terms": "BAM||Beta Attenuation Monitoring",
+      "matched_target_station_rows": 1,
+      "retrieval_error": "",
+      "source_note": "Official regional analysis page for PM2.5 in Bengkulu. It supports station/site context and method language"
+    },
+    {
+      "source_key": "bmkg_bengkulu_pm25_monthly",
+      "source_name": "BMKG Bengkulu PM2.5 monthly regional analysis page",
+      "source_role": "official_regional_analysis_context",
+      "url": "https://bengkulu.bmkg.go.id/analisis-kualitas-udara-bulanan/",
+      "final_url": "https://bengkulu.bmkg.go.id/analisis-kualitas-udara-bulanan/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 306790,
+      "sha256": "ef390075069ce11fd9cfc97718aaf0d214297bcf2b3709b08276ebee20ae8891",
+      "matched_expected_terms": "Analisis Kualitas Udara Bulanan||PM2.5||Stasiun Klimatologi Bengkulu",
+      "matched_station_status_terms": "kategori",
+      "matched_calibration_terms": "",
+      "matched_inspection_terms": "pemantauan||alat otomatis",
+      "matched_grade_terms": "alat otomatis",
+      "matched_target_station_rows": 1,
+      "retrieval_error": "",
+      "source_note": "Official regional monthly analysis page for PM2.5 in Bengkulu. It supports station/site context and method language"
+    },
+    {
+      "source_key": "bmkg_sumsel_musi2_pm25_analysis",
+      "source_name": "BMKG South Sumatra PM2.5 analysis page for Palembang Musi 2",
+      "source_role": "official_regional_analysis_context",
+      "url": "https://staklim-sumsel.bmkg.go.id/fluktuasi-konsentrasi-pm-2-5-di-palembang-musi-2-sejak-agustus-2023/",
+      "final_url": "https://staklim-sumsel.bmkg.go.id/fluktuasi-konsentrasi-pm-2-5-di-palembang-musi-2-sejak-agustus-2023/",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "retrieval_bytes": 158312,
+      "sha256": "5cbd3a59f4f84328d965bb14755471c14955fb2e1feb7ae35b84a6428849c910",
+      "matched_expected_terms": "PM 2.5||Palembang||Musi 2",
+      "matched_station_status_terms": "periode||konsentrasi",
+      "matched_calibration_terms": "",
+      "matched_inspection_terms": "",
+      "matched_grade_terms": "PM2.5",
+      "matched_target_station_rows": 1,
+      "retrieval_error": "",
+      "source_note": "Official regional analysis page for Palembang Musi 2 PM2.5. It supports station/site context"
+    },
+    {
+      "source_key": "bmkg_kalbar_pm25_mempawah_bulletin",
+      "source_name": "BMKG West Kalimantan climate bulletin naming Mempawah PM2.5 monitoring",
+      "source_role": "official_regional_analysis_context",
+      "url": "https://kalbar.bmkg.go.id/buletin/pdf/Buletin-Iklim-Edisi-Maret-2026.pdf",
+      "final_url": "https://kalbar.bmkg.go.id/buletin/pdf/Buletin-Iklim-Edisi-Maret-2026.pdf",
+      "retrieved": true,
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "retrieval_bytes": 4857961,
+      "sha256": "efed8b77f12fba0348d5a7d5e910f64f964e7ba1385aa3b9e7a1dbfd6d3798f8",
+      "matched_expected_terms": "PM2.5||Stasiun Klimatologi Kalimantan Barat||Mempawah",
+      "matched_station_status_terms": "kategori",
+      "matched_calibration_terms": "",
+      "matched_inspection_terms": "pengukuran||alat",
+      "matched_grade_terms": "Beta Rays Attenuation Monitoring||BAM",
+      "matched_target_station_rows": 1,
+      "retrieval_error": "",
+      "source_note": "Official regional bulletin for Kalimantan Barat PM2.5 monitoring. It supports station/site context"
     }
   ],
-  "non_claim": "This scan records public BMKG regional, public-information, service, historical, and regulator context for the 22 BMKG PM2.5 rows. A regional source can close current-status only when it names an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage.",
+  "non_claim": "This scan records public BMKG regional, public-information, service, historical, regulator, and regional-analysis context for the 22 BMKG PM2.5 rows. Regional analysis pages can support station or official-site context, but current-status closure still requires an exact target station with explicit status text and a recent timestamp. It does not certify station-specific inspection logs, calibration certificates, complete monitor-grade status, same-station OpenAQ joins, or station-radius coverage.",
   "outputs": {
     "csv": "generated\\air-monitoring-bmkg-regional-status-source-scan.csv",
     "summary_json": "generated\\air-monitoring-bmkg-regional-status-source-scan-summary.json"

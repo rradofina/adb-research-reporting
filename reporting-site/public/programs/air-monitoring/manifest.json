@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T01:39:51.241Z",
+  "generated_at": "2026-06-20T02:03:54.457Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -367,10 +367,10 @@
       "key": "air_monitoring_bmkg_regional_status_source_scan",
       "file": "bmkg-regional-status-source-scan.md",
       "label": "Air-monitoring BMKG regional status source scan",
-      "size": 3016,
-      "size_human": "2.9 KB",
-      "mtime": "2026-06-20T01:29:11.818Z",
-      "sha256": "a3c61ef8b4dc4172baed18feff3edc8435564969d3053d1b3a55ad3fdb05256f",
+      "size": 3754,
+      "size_human": "3.7 KB",
+      "mtime": "2026-06-20T01:52:25.374Z",
+      "sha256": "1b8c9d5f087c97287fca7848931b6b50fb577ad0017dc5eca259cd5d0f896230",
       "attestation_chain": "ai-first"
     },
     {
@@ -483,15 +483,15 @@
     },
     {
       "file": "generated/air-monitoring-bmkg-regional-status-source-scan-summary.json",
-      "size": 62531,
-      "size_human": "61.1 KB",
-      "sha256": "45efa265ba8f7495d85fe109c440fd78b5d35e67b7fb1f5e4b8409f34029c160"
+      "size": 77097,
+      "size_human": "75.3 KB",
+      "sha256": "d95a3d78642a7c573de144f534430f59b70f2d98c1b0e988176ff6d12199534b"
     },
     {
       "file": "generated/air-monitoring-bmkg-regional-status-source-scan.csv",
-      "size": 19831,
-      "size_human": "19.4 KB",
-      "sha256": "6c60757693934e5fd45905cdf3efd82acfcc70c323ee90fb7d746080f8d8af30"
+      "size": 21947,
+      "size_human": "21.4 KB",
+      "sha256": "05391d3015c59fd44b666a81cf05900f0ea98ae1603cfaa5c58d8b57d7b91b98"
     },
     {
       "file": "generated/air-monitoring-bmkg-station-specific-status-audit-summary.json",

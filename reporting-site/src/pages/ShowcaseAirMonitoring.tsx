@@ -268,6 +268,71 @@ interface StationMetadataSummary {
   non_claim: string;
 }
 
+interface StationRadiusReadinessGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusReadinessLane {
+  lane: string;
+  economies: number;
+}
+
+interface StationRadiusReadinessCountryRow {
+  iso3: string;
+  country: string;
+  subregion: string;
+  upgrade_queue_class: string;
+  openaq_coordinate_rows: number;
+  official_coordinate_rows: number;
+  official_pm25_coordinate_rows: number;
+  near_plus_name_candidate_rows: number;
+  near_only_candidate_rows: number;
+  name_overlap_not_near_candidate_rows: number;
+  validated_same_station_join_rows: number;
+  complete_monitor_grade_rows: number;
+  gridded_population_denominator_files: number;
+  gridded_pm25_denominator_files: number;
+  station_radius_analysis_ready: boolean;
+  readiness_lane: string;
+  reader_use: string;
+}
+
+interface StationRadiusReadinessSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  selection_rule: string;
+  coverage_counts: {
+    upgrade_queue_economies: number;
+    economies_with_any_coordinate_input: number;
+    economies_with_openaq_coordinate_rows: number;
+    economies_with_official_coordinate_rows: number;
+    openaq_coordinate_rows: number;
+    official_coordinate_rows: number;
+    official_pm25_coordinate_rows: number;
+    near_plus_name_candidate_rows: number;
+    near_only_candidate_rows: number;
+    name_overlap_not_near_candidate_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    boundary_reference_files_available: number;
+    gridded_population_denominator_files: number;
+    gridded_pm25_denominator_files: number;
+    station_radius_ready_economies: number;
+  };
+  readiness_lane_counts: StationRadiusReadinessLane[];
+  evidence_gate_counts: StationRadiusReadinessGate[];
+  country_rows: StationRadiusReadinessCountryRow[];
+  top_coordinate_ready_rows: StationRadiusReadinessCountryRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3176,6 +3241,8 @@ export default function ShowcaseAirMonitoring() {
   const [panel, setPanel] = useState<AirPanelData | null>(null);
   const [metadataReadiness, setMetadataReadiness] = useState<MetadataReadinessSummary | null>(null);
   const [stationMetadata, setStationMetadata] = useState<StationMetadataSummary | null>(null);
+  const [stationRadiusReadiness, setStationRadiusReadiness] =
+    useState<StationRadiusReadinessSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -3374,6 +3441,26 @@ export default function ShowcaseAirMonitoring() {
         setMonitorGrade(monitorGradePayload);
       })
       .catch((err) => setError(String(err)));
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator readiness HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusReadiness(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -3960,6 +4047,8 @@ export default function ShowcaseAirMonitoring() {
 
       <AirStationMetadataPanel summary={stationMetadata} />
 
+      <AirStationRadiusReadinessPanel summary={stationRadiusReadiness} />
+
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
       <AirRegulatorStationPanel summary={regulatorStation} />
@@ -4417,6 +4506,173 @@ function AirStationMetadataPanel({ summary }: { summary: StationMetadataSummary 
         </>
       ) : (
         <p className="showcase-loading">Loading OpenAQ station metadata...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusReadinessPanel({ summary }: { summary: StationRadiusReadinessSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const lanes = summary?.readiness_lane_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.top_coordinate_ready_rows ?? [];
+  const laneTotal = Math.max(1, lanes.reduce((sum, row) => sum + row.economies, 0));
+  const maxCoordinateRows = Math.max(
+    1,
+    ...rows.map((row) => row.openaq_coordinate_rows + row.official_coordinate_rows),
+  );
+
+  return (
+    <section className="showcase-section air-radius-readiness-section" aria-label="Station-radius denominator readiness wall">
+      <div className="air-radius-readiness-head">
+        <div>
+          <p className="kicker kicker-crimson">Station-radius readiness wall</p>
+          <h2>The map is blocked by denominators, not dots.</h2>
+          <p>
+            The station map now has coordinates from OpenAQ and official public
+            sources. This pass asks the harder planning question: can those
+            points be turned into catchment population or PM2.5 exposure? The
+            answer is still no because denominator rasters, validated joins,
+            complete grade rows, and radius rules are not in the committed
+            evidence package.
+          </p>
+        </div>
+        <div className="air-radius-readiness-callout">
+          <span>Radius-ready economies</span>
+          <strong>{formatNumber(counts?.station_radius_ready_economies ?? 0)}</strong>
+          <p>Coordinates are input evidence. They are not a coverage surface.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-radius-readiness-stat-grid">
+            <div>
+              <span>OpenAQ coordinate rows</span>
+              <strong>{formatNumber(counts.openaq_coordinate_rows)}</strong>
+              <em>{formatNumber(counts.economies_with_openaq_coordinate_rows)} economies</em>
+            </div>
+            <div>
+              <span>Official coordinate rows</span>
+              <strong>{formatNumber(counts.official_coordinate_rows)}</strong>
+              <em>{formatNumber(counts.economies_with_official_coordinate_rows)} economies</em>
+            </div>
+            <div>
+              <span>Candidate proximity rows</span>
+              <strong>{formatNumber(counts.near_plus_name_candidate_rows + counts.near_only_candidate_rows)}</strong>
+              <em>screening signals, not joins</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)}</strong>
+              <em>required before de-duplication</em>
+            </div>
+            <div>
+              <span>Population denominator files</span>
+              <strong>{formatNumber(counts.gridded_population_denominator_files)}</strong>
+              <em>no radius intersections yet</em>
+            </div>
+            <div>
+              <span>PM2.5 denominator files</span>
+              <strong>{formatNumber(counts.gridded_pm25_denominator_files)}</strong>
+              <em>no exposure surface yet</em>
+            </div>
+          </div>
+
+          <div className="air-radius-readiness-story-grid">
+            <div className="air-radius-readiness-lane-grid" aria-label="Station-radius readiness lanes">
+              {lanes.map((lane) => (
+                <article key={lane.lane} className={`air-radius-readiness-lane air-radius-readiness-lane-${lane.lane}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(lane.lane)}</span>
+                    <strong>{formatNumber(lane.economies)} economies</strong>
+                  </div>
+                  <div className="air-radius-readiness-track">
+                    <i style={{ width: `${Math.max(6, (lane.economies / laneTotal) * 100)}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="air-radius-readiness-flow" aria-label="Station-radius prerequisite flow">
+              {gates.map((gate, index) => (
+                <article key={gate.gate} className={`air-radius-readiness-rung air-radius-readiness-rung-${gateTone(gate.status)}`}>
+                  <b>{index + 1}</b>
+                  <div>
+                    <strong>{gate.gate}</strong>
+                    <span>{sentenceCaseStatus(gate.status)} / {formatNumber(gate.rows)} rows</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="air-radius-readiness-country-grid" aria-label="Coordinate-heavy economies still blocked from station-radius analysis">
+            {rows.map((row) => {
+              const coordinateRows = row.openaq_coordinate_rows + row.official_coordinate_rows;
+              const candidateRows = row.near_plus_name_candidate_rows + row.near_only_candidate_rows;
+              return (
+                <article key={row.iso3} className={`air-radius-readiness-country air-radius-readiness-country-${row.readiness_lane}`}>
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                    <b>{formatNumber(coordinateRows)} coord.</b>
+                  </div>
+                  <div className="air-radius-readiness-meter">
+                    <i style={{ width: `${Math.max(4, (coordinateRows / maxCoordinateRows) * 100)}%` }} />
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>OpenAQ</dt>
+                      <dd>{formatNumber(row.openaq_coordinate_rows)}</dd>
+                    </div>
+                    <div>
+                      <dt>Official</dt>
+                      <dd>{formatNumber(row.official_coordinate_rows)}</dd>
+                    </div>
+                    <div>
+                      <dt>Candidates</dt>
+                      <dd>{formatNumber(candidateRows)}</dd>
+                    </div>
+                    <div>
+                      <dt>Ready</dt>
+                      <dd>{row.station_radius_analysis_ready ? "yes" : "no"}</dd>
+                    </div>
+                  </dl>
+                  <p>{row.reader_use}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-radius-readiness-gate-grid" aria-label="Station-radius evidence gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-radius-readiness-gate air-radius-readiness-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-radius-readiness-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-radius-readiness-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-readiness.md" download>
+              Download readiness note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator readiness wall...</p>
       )}
     </section>
   );

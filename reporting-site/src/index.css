@@ -8724,6 +8724,335 @@
     text-decoration: underline;
   }
 
+  .air-radius-readiness-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(155, 34, 38, 0.07), rgba(255, 255, 255, 0.98) 43%),
+      #ffffff;
+  }
+
+  .air-radius-readiness-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.28fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .air-radius-readiness-head h2 {
+    margin: 0.2rem 0 0;
+    max-width: 54rem;
+    color: var(--ink);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .air-radius-readiness-head p {
+    max-width: 60rem;
+  }
+
+  .air-radius-readiness-callout {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+    padding: 1rem;
+    border-left: 5px solid #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-radius-readiness-callout span,
+  .air-radius-readiness-stat-grid span,
+  .air-radius-readiness-lane span,
+  .air-radius-readiness-rung span,
+  .air-radius-readiness-country span,
+  .air-radius-readiness-country dt,
+  .air-radius-readiness-gate span,
+  .air-radius-readiness-downloads span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-radius-readiness-callout strong {
+    color: #9b2226;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: 0.84;
+  }
+
+  .air-radius-readiness-callout p,
+  .air-radius-readiness-stat-grid em,
+  .air-radius-readiness-country p,
+  .air-radius-readiness-gate p,
+  .air-radius-readiness-nonclaim {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-radius-readiness-stat-grid,
+  .air-radius-readiness-lane-grid,
+  .air-radius-readiness-flow,
+  .air-radius-readiness-country-grid,
+  .air-radius-readiness-gate-grid {
+    display: grid;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .air-radius-readiness-stat-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .air-radius-readiness-stat-grid > div,
+  .air-radius-readiness-lane,
+  .air-radius-readiness-rung,
+  .air-radius-readiness-country,
+  .air-radius-readiness-gate {
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .air-radius-readiness-stat-grid > div {
+    display: grid;
+    gap: 0.35rem;
+    border-top: 4px solid #007db8;
+  }
+
+  .air-radius-readiness-stat-grid > div:nth-child(3),
+  .air-radius-readiness-stat-grid > div:nth-child(4) {
+    border-top-color: #fbb00e;
+  }
+
+  .air-radius-readiness-stat-grid > div:nth-child(5),
+  .air-radius-readiness-stat-grid > div:nth-child(6) {
+    border-top-color: #9b2226;
+  }
+
+  .air-radius-readiness-stat-grid strong,
+  .air-radius-readiness-country b,
+  .air-radius-readiness-country dd,
+  .air-radius-readiness-gate em {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 800;
+  }
+
+  .air-radius-readiness-stat-grid strong {
+    font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+    line-height: 1;
+  }
+
+  .air-radius-readiness-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+    gap: 0.85rem;
+    align-items: start;
+  }
+
+  .air-radius-readiness-lane-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-radius-readiness-lane {
+    display: grid;
+    gap: 0.6rem;
+    border-left: 4px solid #9b2226;
+    background: #fff8f5;
+  }
+
+  .air-radius-readiness-lane-blocked_denominator_missing_after_coordinates {
+    border-left-color: #fbb00e;
+    background: #fffaf0;
+  }
+
+  .air-radius-readiness-lane strong,
+  .air-radius-readiness-rung strong,
+  .air-radius-readiness-country strong,
+  .air-radius-readiness-gate strong {
+    display: block;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-radius-readiness-track,
+  .air-radius-readiness-meter {
+    height: 0.68rem;
+    overflow: hidden;
+    border: 1px solid rgba(33, 37, 41, 0.12);
+    background: #e6eef4;
+  }
+
+  .air-radius-readiness-track i,
+  .air-radius-readiness-meter i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #9b2226, #fbb00e, #007db8);
+  }
+
+  .air-radius-readiness-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-radius-readiness-rung {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: start;
+    border-top: 4px solid #9db7c7;
+  }
+
+  .air-radius-readiness-rung b {
+    display: grid;
+    place-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: #edf5f8;
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+  }
+
+  .air-radius-readiness-rung-available {
+    border-top-color: #5a8227;
+    background: #f5f9ee;
+  }
+
+  .air-radius-readiness-rung-pending {
+    border-top-color: #fbb00e;
+    background: #fffaf0;
+  }
+
+  .air-radius-readiness-rung-blocked {
+    border-top-color: #9b2226;
+    background: #fff8f5;
+  }
+
+  .air-radius-readiness-country-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .air-radius-readiness-country {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(3.6rem, 1fr);
+    gap: 0.58rem;
+    border-left: 4px solid #fbb00e;
+  }
+
+  .air-radius-readiness-country-blocked_no_station_coordinates_or_denominators {
+    border-left-color: #9b2226;
+    background: #fff8f5;
+  }
+
+  .air-radius-readiness-country > div:first-child {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .air-radius-readiness-country dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-radius-readiness-country dd {
+    margin: 0.12rem 0 0;
+    overflow-wrap: anywhere;
+  }
+
+  .air-radius-readiness-gate-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .air-radius-readiness-gate {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(4.3rem, 1fr);
+    gap: 0.45rem;
+    border-top: 4px solid #9db7c7;
+  }
+
+  .air-radius-readiness-gate-available {
+    border-top-color: #5a8227;
+  }
+
+  .air-radius-readiness-gate-pending {
+    border-top-color: #fbb00e;
+  }
+
+  .air-radius-readiness-gate-blocked {
+    border-top-color: #9b2226;
+  }
+
+  .air-radius-readiness-nonclaim {
+    padding: 0.85rem 1rem;
+    border-left: 4px solid #9b2226;
+    background: #fff4f1;
+  }
+
+  .air-radius-readiness-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: 0.15rem;
+  }
+
+  .air-radius-readiness-downloads a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .air-radius-readiness-downloads a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1180px) {
+    .air-radius-readiness-stat-grid,
+    .air-radius-readiness-flow,
+    .air-radius-readiness-gate-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .air-radius-readiness-country-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 820px) {
+    .air-radius-readiness-head,
+    .air-radius-readiness-story-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-radius-readiness-country-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .air-radius-readiness-stat-grid,
+    .air-radius-readiness-flow,
+    .air-radius-readiness-country-grid,
+    .air-radius-readiness-gate-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .air-radius-readiness-country dl {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   .air-regulator-section {
     display: grid;
     gap: 1.15rem;

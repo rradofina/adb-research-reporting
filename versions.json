@@ -96,6 +96,18 @@
       "retrieved_on": "2026-06-19",
       "notes": "API key required for live pulls. The 2026-06-19 air-monitoring station-metadata pass writes raw responses to git-ignored .cache/openaq-station-metadata/ and commits generated CSV/JSON retrieval records plus the fetch script. Two OpenAQ rows were excluded from station-coordinate counts because their coordinates fell outside broad target-country bounds."
     },
+    "air_monitoring_station_radius_denominator_readiness": {
+      "script": "air-monitoring/scripts/build-station-radius-denominator-readiness.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_metadata_readiness_audit",
+        "openaq_api",
+        "air_monitoring_regulator_station_extraction",
+        "air_monitoring_official_openaq_reconciliation",
+        "air_monitoring_station_grade_decision_ledger"
+      ],
+      "notes": "No-network station-radius denominator readiness wall for the 24-economy air-monitoring upgrade queue. It inventories 101 OpenAQ coordinate rows, 230 official coordinate rows, 22 proximity candidate rows, 0 validated same-station joins, 0 complete monitor-grade rows, 0 gridded population denominator files, 0 gridded PM2.5 denominator files, and 0 station-radius-ready economies. It does not compute catchment population, PM2.5 exposure inside a radius, monitor coverage, same-station joins, or complete monitor-grade classification."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -699,6 +711,10 @@
     {
       "date": "2026-06-19",
       "change": "Updated openaq_api pin after the air-monitoring OpenAQ v3 station-metadata source-access pass. The pass queried the locations endpoint for PM2.5 station metadata in 24 upgrade-queue economies, committed generated CSV/JSON retrieval records, and recorded 2 coordinate-QC exclusions."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_denominator_readiness pin after building a no-network readiness wall for the 24-economy air-monitoring upgrade queue, showing 101 OpenAQ coordinate rows, 230 official coordinate rows, 22 proximity candidate rows, 0 validated same-station joins, 0 gridded population denominator files, 0 gridded PM2.5 denominator files, and 0 station-radius-ready economies."
     },
     {
       "date": "2026-06-19",

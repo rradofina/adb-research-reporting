@@ -1,0 +1,98 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "generatedAt": "2026-06-20T08:08:28.917Z",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "screenshotPath": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-air-station-radius-readiness-desktop.png",
+    "headerHiddenForScreenshot": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "metrics": {
+      "missingSection": false,
+      "statCards": 6,
+      "laneCards": 2,
+      "flowRungs": 10,
+      "countryCards": 12,
+      "gateCards": 10,
+      "downloadLinks": 3,
+      "downloadStatuses": [
+        {
+          "text": "Download readiness note",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-readiness.md",
+          "status": 200
+        },
+        {
+          "text": "Download summary JSON",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness-summary.json",
+          "status": 200
+        },
+        {
+          "text": "Download row CSV",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness.csv",
+          "status": 200
+        }
+      ],
+      "pageOverflowX": false,
+      "sectionOverflowX": false,
+      "sectionLeft": 160,
+      "sectionRight": 1280,
+      "viewportWidth": 1440,
+      "overflowChildren": [],
+      "headlineVisible": true,
+      "zeroReadyVisible": true,
+      "denominatorVisible": true,
+      "nonClaimVisible": true
+    }
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "screenshotPath": "D:/Users/Raymond/OneDrive/Desktop/ADB/Research/reporting-site/qa/showcase-air-station-radius-readiness-mobile.png",
+    "headerHiddenForScreenshot": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "metrics": {
+      "missingSection": false,
+      "statCards": 6,
+      "laneCards": 2,
+      "flowRungs": 10,
+      "countryCards": 12,
+      "gateCards": 10,
+      "downloadLinks": 3,
+      "downloadStatuses": [
+        {
+          "text": "Download readiness note",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/station-radius-denominator-readiness.md",
+          "status": 200
+        },
+        {
+          "text": "Download summary JSON",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness-summary.json",
+          "status": 200
+        },
+        {
+          "text": "Download row CSV",
+          "href": "http://127.0.0.1:5176/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-readiness.csv",
+          "status": 200
+        }
+      ],
+      "pageOverflowX": false,
+      "sectionOverflowX": false,
+      "sectionLeft": 24,
+      "sectionRight": 366,
+      "viewportWidth": 390,
+      "overflowChildren": [],
+      "headlineVisible": true,
+      "zeroReadyVisible": true,
+      "denominatorVisible": true,
+      "nonClaimVisible": true
+    }
+  }
+}

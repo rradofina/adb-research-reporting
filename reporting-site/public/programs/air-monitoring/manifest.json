@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T07:43:47.100Z",
+  "generated_at": "2026-06-20T08:07:17.581Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -101,6 +101,16 @@
       "size_human": "5.3 KB",
       "mtime": "2026-06-19T06:27:42.660Z",
       "sha256": "ad49202b861f99e33df878727d8b0c1bd6e09d0ae7df2e96f52b6f33ca66d1ea",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_denominator_readiness",
+      "file": "station-radius-denominator-readiness.md",
+      "label": "Air-monitoring station-radius denominator readiness wall",
+      "size": 2205,
+      "size_human": "2.2 KB",
+      "mtime": "2026-06-20T08:02:55.799Z",
+      "sha256": "c1eb96099a1fcabdf165a8a53040f73b6d98326f827da040372f7108bcf2b521",
       "attestation_chain": "ai-first"
     },
     {
@@ -988,6 +998,18 @@
       "size": 66400,
       "size_human": "64.8 KB",
       "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",
+      "size": 71245,
+      "size_human": "69.6 KB",
+      "sha256": "f440d93b2d1f270f37e7855f66ec350379704346b89a40335b3b3fcd12fee7ec"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-readiness.csv",
+      "size": 18782,
+      "size_human": "18.3 KB",
+      "sha256": "9ebe9df6b3801575a00d4111887733b4f7f89970036a30c934b6534cad4b7837"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",

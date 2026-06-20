@@ -12,7 +12,7 @@ Last updated: 2026-06-20.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, and Georgia indicator endpoint mismatch scan exist; station-radius, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, and catchment denominators are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and station-radius denominator readiness wall exist; station-radius/catchment, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, declared radius/de-duplication rules, and gridded population/PM2.5 denominators are added) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -239,7 +239,15 @@ overrides priority by editing this list.
    retrieves 1 of 2 routes, parses 136 indicator station objects, finds 14
    target rows with city/address alias context, and keeps exact target
    station-code matches, PM2.5 alias rows, verified/status/calibration
-   closure, complete-grade rows, and station-radius-ready rows at 0. The BMKG
+   closure, complete-grade rows, and station-radius-ready rows at 0. The
+   station-radius denominator readiness wall then reads the committed station
+   coordinate, reconciliation, grade-ledger, and boundary-reference artifacts;
+   records 101 OpenAQ coordinate rows, 230 official coordinate rows, 22
+   official/OpenAQ proximity candidate rows, 0 validated same-station joins, 0
+   complete monitor-grade rows, 0 gridded population denominator files, 0
+   gridded PM2.5 denominator files, and 0 station-radius-ready economies; and
+   keeps the catchment map blocked until denominator, join, grade, and method
+   gates close. The BMKG
    near-closure ledger then
    synthesizes the existing BMKG method, display, dashboard, grade-basis,
    station-context, and installation/audit artifacts into 22 row-level gates:
@@ -261,7 +269,8 @@ overrides priority by editing this list.
    annual server-error, XLSX station-sheet-only surfaces, and NEA city-level
    network/launch context, plus exact
    station-ID correction/status/grade records for Uzbekistan station IDs 107,
-   728, and 737, before any station-radius or catchment claim.
+   728, and 737, plus a gridded denominator and declared radius/de-duplication
+   plan before any station-radius or catchment claim.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -1301,6 +1310,25 @@ by leaving the board in a state the next session can read.
   3 decision lanes, 16 row cards, 8 source cards, 8 gate cards, 3 working
   download links, no page errors, no bad HTTP responses, no overflowing
   children, and no page or section overflow.
+- **2026-06-20 (air-monitoring station-radius denominator readiness wall):**
+  Added `air-monitoring/scripts/build-station-radius-denominator-readiness.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-station-radius-denominator-readiness.csv`
+  and
+  `air-monitoring/generated/air-monitoring-station-radius-denominator-readiness-summary.json`,
+  and wrote `air-monitoring/station-radius-denominator-readiness.md`. The
+  no-network wall reads committed station-coordinate, reconciliation,
+  grade-ledger, and boundary-reference artifacts; covers 24 upgrade-queue
+  economies; records 101 OpenAQ coordinate rows, 230 official coordinate rows,
+  22 official/OpenAQ proximity candidate rows, 0 validated same-station joins,
+  0 complete monitor-grade rows, 0 gridded population denominator files, 0
+  gridded PM2.5 denominator files, and 0 station-radius-ready economies. The
+  public route now renders the wall immediately after the OpenAQ station map.
+  Browser QA passed at 1440x1100 and 390x1000 with 6 stat cards, 2 readiness
+  lanes, 10 prerequisite rungs, 12 country cards, 10 gate cards, 3 working
+  download links, no console errors, no page errors, no request failures, no
+  page or section horizontal overflow, and screenshot artifacts under
+  `reporting-site/qa/showcase-air-station-radius-readiness-*.png`.
 - **2026-06-20 (air-monitoring Georgia indicator endpoint mismatch scan):**
   Added
   `air-monitoring/source-inputs/georgia-indicator-endpoint-mismatch-source-seed.csv`

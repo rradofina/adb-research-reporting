@@ -59,6 +59,7 @@ const ARTIFACTS = [
   { key: "results", file: "results.md", label: "Results" },
   { key: "air_monitoring_metadata_readiness_audit", file: "metadata-readiness-audit.md", label: "Air-monitoring metadata-readiness audit" },
   { key: "air_monitoring_station_metadata_source_access", file: "station-metadata-source-access.md", label: "Air-monitoring OpenAQ station-metadata source access" },
+  { key: "air_monitoring_station_radius_denominator_readiness", file: "station-radius-denominator-readiness.md", label: "Air-monitoring station-radius denominator readiness wall" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

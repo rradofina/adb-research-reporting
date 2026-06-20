@@ -3640,6 +3640,318 @@
   }
 }
 
+.air-method-section {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 37, 105, 0.16);
+  background:
+    linear-gradient(90deg, rgba(0, 125, 184, 0.08), rgba(251, 176, 14, 0.07) 44%, rgba(90, 130, 39, 0.07)),
+    #ffffff;
+  color: #212529;
+}
+
+.air-method-section * {
+  min-width: 0;
+}
+
+.air-method-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.air-method-head h2 {
+  max-width: 780px;
+  margin: 0.2rem 0 0;
+  color: #002569;
+  font-size: clamp(1.7rem, 1.15rem + 1.9vw, 3rem);
+  line-height: 1;
+}
+
+.air-method-head p,
+.air-method-lock p,
+.air-method-gate p,
+.air-method-rule p,
+.air-method-country p,
+.air-method-nonclaim {
+  color: #495057;
+  line-height: 1.55;
+}
+
+.air-method-lock,
+.air-method-stat-grid > div,
+.air-method-gate,
+.air-method-rule,
+.air-method-country {
+  border: 1px solid rgba(0, 37, 105, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-method-lock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 1px rgba(0, 125, 184, 0.08);
+}
+
+.air-method-lock span,
+.air-method-stat-grid span,
+.air-method-gate span,
+.air-method-rule span,
+.air-method-country span,
+.air-method-downloads span {
+  color: #59636e;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.air-method-lock strong {
+  color: #002569;
+  font-size: clamp(1.6rem, 1.15rem + 1.6vw, 2.6rem);
+  line-height: 0.98;
+}
+
+.air-method-stat-grid,
+.air-method-gate-rail,
+.air-method-rule-grid,
+.air-method-country-wall {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.air-method-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-method-stat-grid > div,
+.air-method-gate,
+.air-method-rule,
+.air-method-country {
+  padding: 0.9rem;
+}
+
+.air-method-stat-grid > div:first-child,
+.air-method-stat-grid > div:nth-child(2) {
+  background: #f5fbff;
+  border-color: rgba(0, 125, 184, 0.2);
+}
+
+.air-method-stat-grid > div:nth-child(4),
+.air-method-stat-grid > div:nth-child(5),
+.air-method-stat-grid > div:nth-child(6) {
+  background: #fff9e8;
+  border-color: rgba(251, 176, 14, 0.26);
+}
+
+.air-method-stat-grid strong,
+.air-method-gate strong,
+.air-method-rule strong,
+.air-method-country strong {
+  display: block;
+  color: #002569;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.air-method-stat-grid strong {
+  margin-top: 0.2rem;
+  font-size: clamp(1.45rem, 1.15rem + 1vw, 2rem);
+}
+
+.air-method-stat-grid em,
+.air-method-gate em,
+.air-method-rule em {
+  display: block;
+  margin-top: 0.25rem;
+  color: #5a8227;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.air-method-gate-rail {
+  grid-template-columns: repeat(8, minmax(150px, 1fr));
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.air-method-gate {
+  position: relative;
+  min-height: 210px;
+}
+
+.air-method-gate::before {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  content: "";
+}
+
+.air-method-gate-prefrozen::before,
+.air-method-gate-available::before {
+  background: #5a8227;
+}
+
+.air-method-gate-blocked::before,
+.air-method-gate-pending::before {
+  background: #fbb00e;
+}
+
+.air-method-rule-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-method-rule {
+  min-height: 235px;
+  box-shadow: inset 0 0.3rem 0 rgba(0, 125, 184, 0.18);
+}
+
+.air-method-rule-available,
+.air-method-rule-prefrozen {
+  background: #f7fbf3;
+  border-color: rgba(90, 130, 39, 0.25);
+  box-shadow: inset 0 0.3rem 0 rgba(90, 130, 39, 0.28);
+}
+
+.air-method-rule-blocked,
+.air-method-rule-pending {
+  background: #fff9e8;
+  border-color: rgba(251, 176, 14, 0.28);
+  box-shadow: inset 0 0.3rem 0 rgba(251, 176, 14, 0.42);
+}
+
+.air-method-rule p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.air-method-country-wall {
+  grid-template-columns: repeat(11, minmax(132px, 1fr));
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.air-method-country {
+  min-height: 145px;
+}
+
+.air-method-country > div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.air-method-country-meter {
+  position: relative;
+  height: 0.45rem;
+  margin: 0.75rem 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e9ecef;
+}
+
+.air-method-country-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #007db8, #5a8227);
+}
+
+.air-method-country p {
+  margin-bottom: 0;
+  font-size: 0.82rem;
+}
+
+.air-method-nonclaim {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(0, 37, 105, 0.16);
+  border-left: 0.35rem solid #fbb00e;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+}
+
+.air-method-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-method-downloads span,
+.air-method-downloads a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.35rem;
+  overflow-wrap: anywhere;
+}
+
+.air-method-downloads a {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(0, 37, 105, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #005f8f;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.air-method-downloads a:hover {
+  border-color: #007db8;
+  color: #003f5f;
+}
+
+@media (max-width: 1120px) {
+  .air-method-stat-grid,
+  .air-method-rule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-method-head {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .air-method-section {
+    padding: 1.25rem;
+  }
+
+  .air-method-stat-grid,
+  .air-method-rule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .air-method-gate-rail,
+  .air-method-country-wall {
+    margin-right: -1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .air-method-head h2 {
+    font-size: 2rem;
+  }
+
+  .air-method-downloads {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

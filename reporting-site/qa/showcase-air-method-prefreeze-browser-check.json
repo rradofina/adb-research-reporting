@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-06-20T14:07:57Z",
+  "url": "http://127.0.0.1:5177/showcase/air-monitoring-observability",
+  "selector": ".air-method-section",
+  "desktop": {
+    "viewport": "1440x1100",
+    "found": true,
+    "stat_count": 6,
+    "gate_count": 8,
+    "rule_count": 8,
+    "country_count": 11,
+    "body_overflow": false,
+    "section_overflow": false,
+    "unexpected_overflow": [],
+    "screenshots": [
+      "reporting-site/qa/showcase-air-method-prefreeze-desktop.png",
+      "reporting-site/qa/showcase-air-method-prefreeze-country-desktop.png"
+    ]
+  },
+  "mobile": {
+    "viewport": "390x1000",
+    "found": true,
+    "stat_count": 6,
+    "gate_count": 8,
+    "rule_count": 8,
+    "country_count": 11,
+    "body_overflow": false,
+    "section_overflow": false,
+    "unexpected_overflow": [],
+    "download_links": [
+      {
+        "path": "/programs/air-monitoring/station-radius-method-prefreeze.md",
+        "status": 200,
+        "bytes": 4788
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-method-prefreeze-summary.json",
+        "status": 200,
+        "bytes": 44436
+      },
+      {
+        "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-method-prefreeze.csv",
+        "status": 200,
+        "bytes": 22720
+      }
+    ],
+    "screenshots": [
+      "reporting-site/qa/showcase-air-method-prefreeze-mobile.png",
+      "reporting-site/qa/showcase-air-method-prefreeze-country-mobile.png"
+    ]
+  },
+  "console": {
+    "page_errors": [],
+    "notes": "Only Vite hot-update debug output was observed during local CSS refresh."
+  }
+}

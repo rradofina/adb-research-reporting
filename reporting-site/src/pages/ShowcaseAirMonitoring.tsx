@@ -1151,6 +1151,68 @@ interface StationRadiusGhslLargeCustodySummary {
   non_claim: string;
 }
 
+interface StationRadiusMethodPrefreezeGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusMethodRuleRow {
+  rule_id: string;
+  gate: string;
+  gate_status: string;
+  evidence_rows: number | string;
+  frozen_for_next_compute: boolean | string;
+  claim_allowed: boolean | string;
+  next_blocker: string;
+  decision: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusMethodCountryRow {
+  iso3: string;
+  country: string;
+  coordinate_rows_used: number | string;
+  unique_coordinate_points: number | string;
+  openaq_coordinate_rows_used: number | string;
+  official_pm25_coordinate_rows_used: number | string;
+  corrected_tile_count: number | string;
+  population_tile_files_in_custody: number | string;
+  population_tile_custody_complete: boolean | string;
+  next_blocker: string;
+}
+
+interface StationRadiusMethodPrefreezeSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  method_stage: string;
+  coverage_counts: {
+    coordinate_economies: number;
+    coordinate_rows_used: number;
+    unique_coordinate_points: number;
+    openaq_coordinate_rows_used: number;
+    official_pm25_coordinate_rows_used: number;
+    population_tile_files_required: number;
+    population_tile_files_in_custody: number;
+    coordinate_economies_with_full_population_tile_custody: number;
+    pm25_coarse_files_in_custody: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusMethodPrefreezeGate[];
+  method_rule_rows: StationRadiusMethodRuleRow[];
+  country_rows: StationRadiusMethodCountryRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4088,6 +4150,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusGhslCorrectedCustodySummary | null>(null);
   const [stationRadiusGhslLargeCustody, setStationRadiusGhslLargeCustody] =
     useState<StationRadiusGhslLargeCustodySummary | null>(null);
+  const [stationRadiusMethodPrefreeze, setStationRadiusMethodPrefreeze] =
+    useState<StationRadiusMethodPrefreezeSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4518,6 +4582,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusGhslLargeCustody(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-method-prefreeze-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius method prefreeze HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusMethodPrefreeze(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5135,6 +5219,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusGhslCorrectedCustodyPanel summary={stationRadiusGhslCorrectedCustody} />
 
       <AirStationRadiusGhslLargeCustodyPanel summary={stationRadiusGhslLargeCustody} />
+
+      <AirStationRadiusMethodPrefreezePanel summary={stationRadiusMethodPrefreeze} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -7659,6 +7745,150 @@ function AirStationRadiusGhslLargeCustodyPanel({ summary }: { summary: StationRa
         </>
       ) : (
         <p className="showcase-loading">Loading GHSL large tile custody gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusMethodPrefreezePanel({ summary }: { summary: StationRadiusMethodPrefreezeSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rules = summary?.method_rule_rows ?? [];
+  const countries = summary?.country_rows ?? [];
+  const isTruthyEvidence = (value: boolean | string | undefined) => value === true || String(value).toLowerCase() === "true";
+  const ruleTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("blocked") || normalized.includes("not_")) return "blocked";
+    if (normalized.includes("available")) return "available";
+    if (normalized.includes("prefrozen")) return "prefrozen";
+    return "pending";
+  };
+
+  return (
+    <section className="showcase-section air-method-section" aria-label="Station-radius method prefreeze gate">
+      <div className="air-method-head">
+        <div>
+          <p className="kicker kicker-blue">Method prefreeze</p>
+          <h2>The map is still locked, but the evidence frame is no longer loose.</h2>
+          <p>
+            This gate turns the custody work into a reproducible method ledger:
+            which rows can enter a dry run, which file denominators are fixed,
+            and which claims remain blocked before any station-radius visual can
+            become a result.
+          </p>
+        </div>
+        <div className="air-method-lock">
+          <span>Publication state</span>
+          <strong>{summary ? sentenceCaseStatus(summary.method_stage) : "Loading"}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.population_tile_files_in_custody)} of ${formatNumber(counts.population_tile_files_required)} population tiles are in custody; ${formatNumber(counts.station_radius_population_rows)} catchment rows exist.`
+              : "Reading method ledger."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-method-stat-grid">
+            <div>
+              <span>Coordinate rows</span>
+              <strong>{formatNumber(counts.coordinate_rows_used)}</strong>
+              <em>{formatNumber(counts.unique_coordinate_points)} unique points</em>
+            </div>
+            <div>
+              <span>Population custody</span>
+              <strong>{formatNumber(counts.population_tile_files_in_custody)} / {formatNumber(counts.population_tile_files_required)}</strong>
+              <em>{formatNumber(counts.coordinate_economies_with_full_population_tile_custody)} economies complete</em>
+            </div>
+            <div>
+              <span>PM2.5 custody</span>
+              <strong>{formatNumber(counts.pm25_coarse_files_in_custody)}</strong>
+              <em>coarse pilot files</em>
+            </div>
+            <div>
+              <span>Validated joins</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)}</strong>
+              <em>no source-family merge</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_rows)}</strong>
+              <em>no regulatory coverage claim</em>
+            </div>
+            <div>
+              <span>Catchment rows</span>
+              <strong>{formatNumber(counts.station_radius_population_rows)}</strong>
+              <em>map remains locked</em>
+            </div>
+          </div>
+
+          <div className="air-method-gate-rail" aria-label="Station-radius method evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-method-gate air-method-gate-${ruleTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-method-rule-grid" aria-label="Station-radius method rule ledger">
+            {rules.map((rule) => (
+              <article key={rule.rule_id} className={`air-method-rule air-method-rule-${ruleTone(rule.gate_status)}`}>
+                <span>{sentenceCaseStatus(rule.gate_status)}</span>
+                <strong>{rule.gate}</strong>
+                <em>
+                  {isTruthyEvidence(rule.frozen_for_next_compute)
+                    ? "Frozen for dry run"
+                    : `Blocked: ${sentenceCaseStatus(rule.next_blocker)}`}
+                </em>
+                <p>{rule.decision}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-method-country-wall" aria-label="Station-radius country prefreeze rows">
+            {countries.map((row) => {
+              const coordinateRows = Number(row.coordinate_rows_used || 0);
+              const custody = Number(row.population_tile_files_in_custody || 0);
+              const tiles = Number(row.corrected_tile_count || 0);
+              return (
+                <article key={row.iso3} className="air-method-country">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{formatNumber(coordinateRows)} rows</strong>
+                  </div>
+                  <div className="air-method-country-meter" aria-hidden="true">
+                    <i style={{ width: `${Math.max(10, Math.min(100, (coordinateRows / 85) * 100))}%` }} />
+                  </div>
+                  <p>
+                    {formatNumber(Number(row.unique_coordinate_points || 0))} unique points;
+                    {" "}
+                    {formatNumber(custody)} of {formatNumber(tiles)} GHSL tiles in custody.
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="air-method-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-method-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-method-prefreeze.md" download>
+              Download method note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-method-prefreeze-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-method-prefreeze.csv" download>
+              Download ledger CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius method prefreeze...</p>
       )}
     </section>
   );

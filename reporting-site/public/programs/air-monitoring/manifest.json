@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T13:40:00.772Z",
+  "generated_at": "2026-06-20T14:08:47.328Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -221,6 +221,16 @@
       "size_human": "3.1 KB",
       "mtime": "2026-06-20T13:32:09.139Z",
       "sha256": "e2b0ac2593a16a0bb9ed9668d6b3f3b8ccc8b6bec1c6c7f1df5d2e7a1dc5996d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_method_prefreeze",
+      "file": "station-radius-method-prefreeze.md",
+      "label": "Air-monitoring station-radius method prefreeze gate",
+      "size": 4788,
+      "size_human": "4.7 KB",
+      "mtime": "2026-06-20T13:50:14.286Z",
+      "sha256": "cb1876580a4e5766b6a042c9118df632fc146a9eab451a10363a3cce18349e70",
       "attestation_chain": "ai-first"
     },
     {
@@ -1270,6 +1280,18 @@
       "size": 27995,
       "size_human": "27.3 KB",
       "sha256": "da8618b763b53e6190c0e7f95a393a4a264272635e2f03e2bb6f9d2615f7461e"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-method-prefreeze-summary.json",
+      "size": 44436,
+      "size_human": "43.4 KB",
+      "sha256": "a42fd8caa8ca89bb612feb181eb821311a67c1ca7811bca904b8c7d3d160770a"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-method-prefreeze.csv",
+      "size": 22720,
+      "size_human": "22.2 KB",
+      "sha256": "57f0d92a99bc9c250b901a189ac7d7bbe7b2add948c49127370dd1bcf5120801"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",

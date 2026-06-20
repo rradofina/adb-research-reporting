@@ -12398,6 +12398,154 @@
     font-weight: 800;
   }
 
+  .air-bmkg-station-context-section {
+    display: grid;
+    gap: 1.15rem;
+    scroll-margin-top: 5.5rem;
+    border-bottom: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.1), rgba(255, 255, 255, 0.98) 44%),
+      #ffffff;
+  }
+
+  .air-bmkg-station-context-callout {
+    border-left-color: #005f89;
+    background: #edf8fd;
+  }
+
+  .air-bmkg-station-context-stat-grid > div,
+  .air-bmkg-station-context-lane,
+  .air-bmkg-station-context-gate {
+    border-top-color: #005f89;
+  }
+
+  .air-bmkg-station-context-track {
+    background: #dcecf4;
+  }
+
+  .air-bmkg-station-context-track i {
+    background: linear-gradient(90deg, #005f89, #5a8227);
+  }
+
+  .air-bmkg-station-context-lane-no_new_public_station_context {
+    border-top-color: #9aa6b2;
+  }
+
+  .air-bmkg-station-context-lane-deployment_area_context_no_station_certificate {
+    border-top-color: #fbb00e;
+  }
+
+  .air-bmkg-station-context-row-grid,
+  .air-bmkg-station-context-source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .air-bmkg-station-context-row,
+  .air-bmkg-station-context-source {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 0.85rem;
+    border: 1px solid var(--rule-soft);
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .air-bmkg-station-context-row {
+    grid-template-rows: auto auto minmax(3.4rem, 1fr) auto;
+    border-left: 4px solid #005f89;
+  }
+
+  .air-bmkg-station-context-row-deployment_area_context_no_station_certificate {
+    border-left-color: #fbb00e;
+    background: #fff9e8;
+  }
+
+  .air-bmkg-station-context-row-station_named_method_and_calibration_context_no_certificate {
+    border-left-color: #5a8227;
+    background: #f7fbf1;
+  }
+
+  .air-bmkg-station-context-source {
+    grid-template-rows: auto auto minmax(3.4rem, 1fr);
+    border-top: 4px solid #9aa6b2;
+  }
+
+  .air-bmkg-station-context-source-exact {
+    border-top-color: #5a8227;
+  }
+
+  .air-bmkg-station-context-source-city {
+    border-top-color: #fbb00e;
+  }
+
+  .air-bmkg-station-context-source-empty {
+    background: #f8fafc;
+  }
+
+  .air-bmkg-station-context-row > div:first-child,
+  .air-bmkg-station-context-source > div:first-child {
+    display: grid;
+    gap: 0.24rem;
+    min-width: 0;
+  }
+
+  .air-bmkg-station-context-row span,
+  .air-bmkg-station-context-row dt,
+  .air-bmkg-station-context-source span,
+  .air-bmkg-station-context-source dt {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-station-context-row strong,
+  .air-bmkg-station-context-source strong {
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-station-context-row b,
+  .air-bmkg-station-context-row dd,
+  .air-bmkg-station-context-row em,
+  .air-bmkg-station-context-source b,
+  .air-bmkg-station-context-source dd {
+    color: #005f89;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-station-context-row p,
+  .air-bmkg-station-context-source p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: var(--type-copy-xs);
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .air-bmkg-station-context-row dl,
+  .air-bmkg-station-context-source dl {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .air-bmkg-station-context-row dd,
+  .air-bmkg-station-context-source dd {
+    margin: 0.12rem 0 0;
+    font-weight: 800;
+  }
+
   .air-georgia-report-section {
     background:
       linear-gradient(180deg, rgba(251, 176, 14, 0.14), rgba(255, 255, 255, 0.98) 42%),
@@ -14190,6 +14338,8 @@
     .air-bmkg-dashboard-source-grid,
     .air-bmkg-grade-family-grid,
     .air-bmkg-grade-source-grid,
+    .air-bmkg-station-context-row-grid,
+    .air-bmkg-station-context-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15630,6 +15780,8 @@
     .air-bmkg-dashboard-source-grid,
     .air-bmkg-grade-family-grid,
     .air-bmkg-grade-source-grid,
+    .air-bmkg-station-context-row-grid,
+    .air-bmkg-station-context-source-grid,
     .air-georgia-report-stat-grid,
     .air-georgia-report-bridge,
     .air-georgia-report-gate-grid,
@@ -15713,6 +15865,9 @@
     .air-bmkg-dashboard-gate,
     .air-bmkg-grade-source-card,
     .air-bmkg-grade-gate,
+    .air-bmkg-station-context-row,
+    .air-bmkg-station-context-source,
+    .air-bmkg-station-context-gate,
     .air-georgia-report-lane,
     .air-georgia-report-row,
     .air-georgia-report-gate,
@@ -15801,7 +15956,9 @@
 
     .air-bmkg-api-row dl,
     .air-bmkg-regional-row dl,
-    .air-bmkg-grade-source-card dl {
+    .air-bmkg-grade-source-card dl,
+    .air-bmkg-station-context-row dl,
+    .air-bmkg-station-context-source dl {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

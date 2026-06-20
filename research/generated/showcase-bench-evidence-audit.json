@@ -1,12 +1,12 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T03:09:54.708Z",
+  "generated_at": "2026-06-20T03:51:27.993Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
   "qa_inventory": {
-    "screenshots": 436,
-    "browserChecks": 37
+    "screenshots": 444,
+    "browserChecks": 38
   },
   "summary": {
     "reports_total": 20,
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/bmkg-grade-basis-source-scan.md",
+      "evidencePath": "air-monitoring/bmkg-station-public-context-source-scan.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",
@@ -163,7 +163,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source that names station IDs 107, 728, or 737 with correction/status/calibration or grade-basis closure; for BMKG, move beyond source-level grade-basis rules by finding station-specific inspection logs, calibration certificates, calibration-status records, or explicit station-grade records; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, and XLSX station-sheet-only exports before any catchment denominator is promoted."
+      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source that names station IDs 107, 728, or 737 with correction/status/calibration or grade-basis closure; for BMKG, move beyond public station/unit studies, deployment context, and source-level grade-basis rules by finding station-specific inspection logs, calibration certificates, calibration-status records, or explicit station-grade records; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, and XLSX station-sheet-only exports before any catchment denominator is promoted."
     },
     {
       "id": 7,

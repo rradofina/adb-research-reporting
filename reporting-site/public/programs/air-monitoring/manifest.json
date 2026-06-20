@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T03:06:21.620Z",
+  "generated_at": "2026-06-20T03:50:11.832Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -394,6 +394,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_station_public_context_source_scan",
+      "file": "bmkg-station-public-context-source-scan.md",
+      "label": "Air-monitoring BMKG station public-context source scan",
+      "size": 2778,
+      "size_human": "2.7 KB",
+      "mtime": "2026-06-20T03:18:11.184Z",
+      "sha256": "cb59c4f94005604141b8b8442475505fbc6ac8318a1f0359f98b572b05bdb6de",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -536,6 +546,18 @@
       "size": 21947,
       "size_human": "21.4 KB",
       "sha256": "05391d3015c59fd44b666a81cf05900f0ea98ae1603cfaa5c58d8b57d7b91b98"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json",
+      "size": 63276,
+      "size_human": "61.8 KB",
+      "sha256": "35d3b2f72f26ec6d91e981c21b1f2bd572b955e361bd68924d5950333de67b93"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-station-public-context-source-scan.csv",
+      "size": 18576,
+      "size_human": "18.1 KB",
+      "sha256": "f68189fa82c7ca9678e4bae05c7c0e6b181605f115cf40ceeff40b4111afe3d6"
     },
     {
       "file": "generated/air-monitoring-bmkg-station-specific-status-audit-summary.json",

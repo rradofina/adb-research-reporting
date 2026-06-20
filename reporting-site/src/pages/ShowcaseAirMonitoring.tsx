@@ -2162,6 +2162,85 @@ interface BmkgGradeBasisSummary {
   non_claim: string;
 }
 
+interface BmkgStationPublicContextGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface BmkgStationPublicContextDecision {
+  decision: string;
+  rows: number;
+}
+
+interface BmkgStationPublicContextDisplayRow {
+  source_station_id: string;
+  source_station_name: string;
+  public_context_source_keys: string;
+  station_unit_or_exact_context_sources: number;
+  city_or_deployment_context_sources: number;
+  method_context_sources: number;
+  calibration_context_sources: number;
+  station_public_context_decision: string;
+  reader_use: string;
+}
+
+interface BmkgStationPublicContextSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  source_match_scope: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  matched_target_station_ids: string;
+  matched_alias_terms: string;
+  matched_expected_terms: string;
+  matched_method_terms: string;
+  matched_calibration_terms: string;
+  matched_inspection_terms: string;
+  matched_certificate_terms: string;
+  matched_status_terms: string;
+  retrieval_error: string;
+  source_note: string;
+}
+
+interface BmkgStationPublicContextSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_bmkg_rows: number;
+    station_public_context_source_urls_seeded: number;
+    station_public_context_source_urls_retrieved: number;
+    official_or_regulator_sources_retrieved: number;
+    academic_or_journal_sources_retrieved: number;
+    rows_with_any_public_station_context: number;
+    rows_with_station_unit_or_exact_context: number;
+    rows_with_city_or_deployment_context: number;
+    rows_with_station_method_context: number;
+    rows_with_station_calibration_context: number;
+    rows_with_station_inspection_or_operation_context: number;
+    rows_with_certificate_context_not_station_certificate: number;
+    station_specific_inspection_log_rows: number;
+    station_specific_calibration_certificate_rows: number;
+    calibration_status_available_rows: number;
+    current_status_confirmed_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: BmkgStationPublicContextDecision[];
+  evidence_gate_counts: BmkgStationPublicContextGate[];
+  display_rows: BmkgStationPublicContextDisplayRow[];
+  source_records: BmkgStationPublicContextSourceRecord[];
+  non_claim: string;
+}
+
 interface GeorgiaReportVerificationGate {
   gate: string;
   status: string;
@@ -2591,6 +2670,8 @@ export default function ShowcaseAirMonitoring() {
     useState<BmkgDashboardStatusSummary | null>(null);
   const [bmkgGradeBasis, setBmkgGradeBasis] =
     useState<BmkgGradeBasisSummary | null>(null);
+  const [bmkgStationPublicContext, setBmkgStationPublicContext] =
+    useState<BmkgStationPublicContextSummary | null>(null);
   const [georgiaReportVerification, setGeorgiaReportVerification] =
     useState<GeorgiaReportVerificationSummary | null>(null);
   const [georgiaReportExportLadder, setGeorgiaReportExportLadder] =
@@ -2970,6 +3051,26 @@ export default function ShowcaseAirMonitoring() {
   useEffect(() => {
     let isActive = true;
 
+    fetch("/programs/air-monitoring/generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`BMKG station public-context source scan HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setBmkgStationPublicContext(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
     fetch("/programs/air-monitoring/generated/air-monitoring-georgia-report-verification-source-scan-summary.json")
       .then((r) => {
         if (!r.ok) throw new Error(`Georgia report verification source scan HTTP ${r.status}`);
@@ -3202,6 +3303,8 @@ export default function ShowcaseAirMonitoring() {
       <AirBmkgDashboardStatusPanel summary={bmkgDashboardStatus} />
 
       <AirBmkgGradeBasisPanel summary={bmkgGradeBasis} />
+
+      <AirBmkgStationPublicContextPanel summary={bmkgStationPublicContext} />
 
       <AirGeorgiaReportVerificationPanel summary={georgiaReportVerification} />
 
@@ -8113,6 +8216,191 @@ function AirBmkgGradeBasisPanel({
         </>
       ) : (
         <p className="air-grade-method-loading">Loading BMKG grade-basis source scan...</p>
+      )}
+    </section>
+  );
+}
+
+function AirBmkgStationPublicContextPanel({
+  summary,
+}: {
+  summary: BmkgStationPublicContextSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const decisions = summary?.decision_counts ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const rows = summary?.display_rows ?? [];
+  const sources = summary?.source_records ?? [];
+  const decisionTotal = Math.max(1, decisions.reduce((sum, row) => sum + row.rows, 0));
+  const termCount = (value: string) => value.split("||").filter(Boolean).length;
+
+  return (
+    <section className="showcase-section air-grade-method-section air-bmkg-station-context-section" aria-label="BMKG station public-context source scan">
+      <div className="air-grade-method-head air-bmkg-station-context-head">
+        <div>
+          <p className="kicker kicker-blue">BMKG station public-context source scan</p>
+          <h2>Station papers name some rows. Certificates still do not appear.</h2>
+          <p>
+            This layer moves beyond central BMKG standards and checks station-unit
+            publications, regulator reports, and station studies. It adds public
+            station or deployment context for selected BMKG rows, while keeping
+            inspection-log, calibration-certificate, status, complete-grade, and
+            radius gates closed.
+          </p>
+        </div>
+        <div className="air-grade-method-callout air-bmkg-station-context-callout">
+          <span>Station certificate rows</span>
+          <strong>{formatNumber(counts?.station_specific_calibration_certificate_rows ?? 0)}</strong>
+          <p>{formatNumber(counts?.rows_with_any_public_station_context ?? 0)} rows gain public station or deployment context, not certification.</p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-grade-method-stat-grid air-bmkg-station-context-stat-grid">
+            <div>
+              <span>Sources retrieved</span>
+              <strong>{formatNumber(counts.station_public_context_source_urls_retrieved)}/{formatNumber(counts.station_public_context_source_urls_seeded)}</strong>
+              <em>station-context routes</em>
+            </div>
+            <div>
+              <span>Rows with context</span>
+              <strong>{formatNumber(counts.rows_with_any_public_station_context)}</strong>
+              <em>station/unit or deployment-area matches</em>
+            </div>
+            <div>
+              <span>Station/unit exact</span>
+              <strong>{formatNumber(counts.rows_with_station_unit_or_exact_context)}</strong>
+              <em>stronger than city-only context</em>
+            </div>
+            <div>
+              <span>Method context</span>
+              <strong>{formatNumber(counts.rows_with_station_method_context)}</strong>
+              <em>matched source contains BAM/PM2.5 terms</em>
+            </div>
+            <div>
+              <span>Calibration language</span>
+              <strong>{formatNumber(counts.rows_with_station_calibration_context)}</strong>
+              <em>not certificate or current status</em>
+            </div>
+            <div>
+              <span>Complete grade rows</span>
+              <strong>{formatNumber(counts.complete_monitor_grade_classification_rows)}</strong>
+              <em>station context is not grade closure</em>
+            </div>
+          </div>
+
+          <div className="air-grade-method-bridge air-bmkg-station-context-bridge" aria-label="BMKG station-context decisions">
+            {decisions.map((decision) => (
+              <article key={decision.decision} className={`air-grade-method-lane air-bmkg-station-context-lane air-bmkg-station-context-lane-${decision.decision}`}>
+                <div>
+                  <span>{sentenceCaseStatus(decision.decision)}</span>
+                  <strong>{formatNumber(decision.rows)} rows</strong>
+                </div>
+                <div className="air-grade-method-track air-bmkg-station-context-track">
+                  <i style={{ width: `${Math.max(4, (decision.rows / decisionTotal) * 100)}%` }} />
+                </div>
+                <p>{decision.decision.includes("no_new") ? "No seeded source matched this row." : "Context moves the evidence trail, not the certificate gate."}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-station-context-row-grid" aria-label="BMKG station-context matched rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className={`air-bmkg-station-context-row air-bmkg-station-context-row-${row.station_public_context_decision}`}>
+                <div>
+                  <span>{row.source_station_id}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.station_public_context_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Unit</dt>
+                    <dd>{formatNumber(row.station_unit_or_exact_context_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>City</dt>
+                    <dd>{formatNumber(row.city_or_deployment_context_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Method</dt>
+                    <dd>{formatNumber(row.method_context_sources)}</dd>
+                  </div>
+                  <div>
+                    <dt>Calib.</dt>
+                    <dd>{formatNumber(row.calibration_context_sources)}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <em>{sentenceCaseStatus(row.public_context_source_keys)}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-bmkg-station-context-source-grid" aria-label="BMKG station-context source records">
+            {sources.map((source) => {
+              const sourceTone = source.source_match_scope.includes("exact") || source.source_match_scope.includes("unit")
+                ? "air-bmkg-station-context-source-exact"
+                : source.matched_target_station_ids
+                  ? "air-bmkg-station-context-source-city"
+                  : "air-bmkg-station-context-source-empty";
+              return (
+                <article key={source.source_key} className={`air-bmkg-station-context-source ${sourceTone}`}>
+                  <div>
+                    <span>{sentenceCaseStatus(source.source_role)}</span>
+                    <strong>{source.source_name}</strong>
+                    <b>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</b>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Rows</dt>
+                      <dd>{formatNumber(termCount(source.matched_target_station_ids))}</dd>
+                    </div>
+                    <div>
+                      <dt>Alias</dt>
+                      <dd>{formatNumber(termCount(source.matched_alias_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Method</dt>
+                      <dd>{formatNumber(termCount(source.matched_method_terms))}</dd>
+                    </div>
+                    <div>
+                      <dt>Calib.</dt>
+                      <dd>{formatNumber(termCount(source.matched_calibration_terms))}</dd>
+                    </div>
+                  </dl>
+                  <p>{source.source_note}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-grade-method-gate-grid air-bmkg-station-context-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-grade-method-gate air-bmkg-station-context-gate air-grade-method-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-grade-method-downloads air-bmkg-station-context-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/bmkg-station-public-context-source-scan.md" download>
+              Download station-context note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-bmkg-station-public-context-source-scan.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="air-grade-method-loading">Loading BMKG station public-context source scan...</p>
       )}
     </section>
   );

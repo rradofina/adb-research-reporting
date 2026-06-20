@@ -1,0 +1,100 @@
+{
+  "url": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "expected": {
+    "statCards": 6,
+    "lanes": 4,
+    "rows": 9,
+    "sources": 9,
+    "gates": 7,
+    "downloads": 3
+  },
+  "results": [
+    {
+      "viewportName": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "counts": {
+        "statCards": 6,
+        "lanes": 4,
+        "rows": 9,
+        "sources": 9,
+        "gates": 7,
+        "downloads": 3
+      },
+      "requiredTexts": [
+        "BMKG station public-context source scan",
+        "9/9",
+        "9 rows",
+        "4 rows",
+        "0 rows",
+        "Kemayoran",
+        "Kota Jambi",
+        "Kototabang",
+        "Station-specific calibration certificate/status",
+        "Download summary JSON"
+      ],
+      "missingTexts": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "bad": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-station-context-desktop-section-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-desktop-rows-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-desktop-sources-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-desktop-gates-clean.png"
+      ]
+    },
+    {
+      "viewportName": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 1000
+      },
+      "counts": {
+        "statCards": 6,
+        "lanes": 4,
+        "rows": 9,
+        "sources": 9,
+        "gates": 7,
+        "downloads": 3
+      },
+      "requiredTexts": [
+        "BMKG station public-context source scan",
+        "9/9",
+        "9 rows",
+        "4 rows",
+        "0 rows",
+        "Kemayoran",
+        "Kota Jambi",
+        "Kototabang",
+        "Station-specific calibration certificate/status",
+        "Download summary JSON"
+      ],
+      "missingTexts": [],
+      "overflow": {
+        "pageOverflow": 0,
+        "bad": []
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "requestFailures": [],
+      "badResponses": [],
+      "screenshots": [
+        "reporting-site/qa/showcase-air-bmkg-station-context-mobile-section-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-mobile-rows-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-mobile-sources-clean.png",
+        "reporting-site/qa/showcase-air-bmkg-station-context-mobile-gates-clean.png"
+      ]
+    }
+  ],
+  "failures": [],
+  "passed": true,
+  "generatedAt": "2026-06-20T03:48:59.243Z"
+}

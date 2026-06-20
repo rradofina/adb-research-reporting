@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-06-20T20:45:00+08:00",
+  "url": "http://127.0.0.1:5177/showcase/air-monitoring-observability",
+  "session": "ghsl-routing-qa",
+  "section_selector": ".air-ghsl-routing-section",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "found": true,
+    "stat_cards": 6,
+    "evidence_gates": 7,
+    "origin_cards": 4,
+    "changed_tile_cards": 4,
+    "country_change_cards": 4,
+    "body_horizontal_overflow": false,
+    "section_horizontal_overflow": false,
+    "inner_overflow_examples": [],
+    "screenshots": [
+      "reporting-site/qa/showcase-air-ghsl-tile-routing-desktop.png",
+      "reporting-site/qa/showcase-air-ghsl-tile-routing-changes-desktop.png"
+    ]
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "found": true,
+    "stat_cards": 6,
+    "evidence_gates": 7,
+    "origin_cards": 4,
+    "changed_tile_cards": 4,
+    "country_change_cards": 4,
+    "body_horizontal_overflow": false,
+    "section_horizontal_overflow": false,
+    "inner_overflow_examples": [],
+    "screenshots": [
+      "reporting-site/qa/showcase-air-ghsl-tile-routing-mobile.png",
+      "reporting-site/qa/showcase-air-ghsl-tile-routing-changes-mobile.png"
+    ]
+  },
+  "download_links": [
+    {
+      "path": "/programs/air-monitoring/station-radius-ghsl-tile-routing-correction.md",
+      "status": 200,
+      "bytes": 5310
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-summary.json",
+      "status": 200,
+      "bytes": 84408
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction.csv",
+      "status": 200,
+      "bytes": 27995
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-country.csv",
+      "status": 200,
+      "bytes": 9631
+    },
+    {
+      "path": "/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-origin.csv",
+      "status": 200,
+      "bytes": 4333
+    }
+  ],
+  "browser_errors_empty": true,
+  "console_notes": [
+    "Isolated session showed no page errors after the isTrue scope fix; console output after the final CSS update contained only Vite hot-update debug text."
+  ],
+  "visual_notes": [
+    "Desktop and mobile screenshots show the routing-correction wall, queue-change callout, stat cards, evidence gates, changed tile rows, and download links without horizontal overflow.",
+    "Changed-tile metric cards use two columns so custody labels wrap at spaces rather than breaking inside words."
+  ]
+}

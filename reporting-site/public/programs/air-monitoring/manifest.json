@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T12:11:26.445Z",
+  "generated_at": "2026-06-20T12:48:23.507Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -191,6 +191,16 @@
       "size_human": "4.5 KB",
       "mtime": "2026-06-20T11:54:04.760Z",
       "sha256": "15c8ef93e273ef23d26ad592f9f890d75d973be2572cad318c2cb8daae688177",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_ghsl_tile_routing_correction",
+      "file": "station-radius-ghsl-tile-routing-correction.md",
+      "label": "Air-monitoring station-radius GHSL tile-routing correction gate",
+      "size": 5310,
+      "size_human": "5.2 KB",
+      "mtime": "2026-06-20T12:18:54.722Z",
+      "sha256": "1b43b3afcafcce092031656a4727b281ced1234effba513dca2be5c0dca757b3",
       "attestation_chain": "ai-first"
     },
     {
@@ -1192,6 +1202,30 @@
       "size": 28886,
       "size_human": "28.2 KB",
       "sha256": "05af986d67a28b653459cac5718a6061dc977085e59c0f10d22ad6cc2e84321d"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-tile-routing-correction-country.csv",
+      "size": 9631,
+      "size_human": "9.4 KB",
+      "sha256": "4961de6e537ff89c4175cd9147c0b006f7407d081319e93c6131b46f855e0943"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-tile-routing-correction-origin.csv",
+      "size": 4333,
+      "size_human": "4.2 KB",
+      "sha256": "476d4528e025a37376f06de2c719d6a406fd81f99a59e0c4af4615fdd7230cb0"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-tile-routing-correction-summary.json",
+      "size": 84408,
+      "size_human": "82.4 KB",
+      "sha256": "2fc5d622ffb86f160bc7e8140edb3b4e8afc6954d7c9f06a7dd17c1f0cf593ea"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-ghsl-tile-routing-correction.csv",
+      "size": 27995,
+      "size_human": "27.3 KB",
+      "sha256": "da8618b763b53e6190c0e7f95a393a4a264272635e2f03e2bb6f9d2615f7461e"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",

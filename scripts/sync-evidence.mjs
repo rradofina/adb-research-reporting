@@ -68,6 +68,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_acag_coarse_checksums", file: "station-radius-acag-coarse-checksums.md", label: "Air-monitoring station-radius ACAG coarse checksum gate" },
   { key: "air_monitoring_station_radius_ghsl_population_tile_selection", file: "station-radius-ghsl-population-tile-selection.md", label: "Air-monitoring station-radius GHSL population tile-selection gate" },
   { key: "air_monitoring_station_radius_ghsl_population_tile_checksums", file: "station-radius-ghsl-population-tile-checksums.md", label: "Air-monitoring station-radius GHSL population tile checksum gate" },
+  { key: "air_monitoring_station_radius_ghsl_tile_routing_correction", file: "station-radius-ghsl-tile-routing-correction.md", label: "Air-monitoring station-radius GHSL tile-routing correction gate" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

@@ -926,6 +926,98 @@ interface StationRadiusGhslTileChecksumSummary {
   non_claim: string;
 }
 
+interface StationRadiusGhslTileRoutingGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusGhslTileRoutingOriginRow {
+  tile_id: string;
+  raster_west: number;
+  raster_south: number;
+  raster_east: number;
+  raster_north: number;
+  derived_north_origin: number;
+  derived_west_origin: number;
+  mean_north_origin: number;
+  mean_west_origin: number;
+  sha256: string;
+}
+
+interface StationRadiusGhslTileRoutingRow {
+  tile_id: string;
+  previous_selected: boolean | string;
+  corrected_selected: boolean | string;
+  correction_status: string;
+  previous_selected_economies: string;
+  corrected_selected_economies: string;
+  previous_coordinate_rows_touching_tile: number | string;
+  corrected_coordinate_rows_touching_tile: number | string;
+  prior_head_ok: boolean | string;
+  prior_downloaded: boolean | string;
+  prior_sha256: string;
+  prior_raster_bounds: string;
+}
+
+interface StationRadiusGhslTileRoutingCountryRow {
+  iso3: string;
+  country: string;
+  coordinate_rows_used: number;
+  previous_tile_count: number;
+  corrected_tile_count: number;
+  retained_tile_count: number;
+  added_tile_count: number;
+  removed_tile_count: number;
+  added_tile_ids: string;
+  removed_tile_ids: string;
+}
+
+interface StationRadiusGhslTileRoutingSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  routing_rule: string;
+  coverage_counts: {
+    coordinate_ready_economies: number;
+    coordinate_rows_used: number;
+    openaq_coordinate_rows_used: number;
+    official_pm25_coordinate_rows_used: number;
+    origin_observation_rows: number;
+    observed_north_origin: number;
+    observed_west_origin: number;
+    north_origin_range_degrees: number;
+    west_origin_range_degrees: number;
+    previous_tile_urls_selected: number;
+    corrected_tile_urls_selected: number;
+    retained_previous_tile_urls: number;
+    added_corrected_tile_urls: number;
+    removed_previous_tile_urls: number;
+    corrected_tile_prior_head_ok: number;
+    corrected_tile_prior_head_not_ok: number;
+    corrected_tile_prior_head_unknown: number;
+    downloaded_population_tiles_retained_by_corrected_routing: number;
+    downloaded_population_tiles_removed_by_corrected_routing: number;
+    station_radius_population_rows: number;
+    station_radius_pm25_exposure_rows: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+  };
+  evidence_gate_counts: StationRadiusGhslTileRoutingGate[];
+  added_corrected_tile_ids: string[];
+  removed_previous_tile_ids: string[];
+  retained_previous_tile_ids: string[];
+  origin_rows: StationRadiusGhslTileRoutingOriginRow[];
+  country_rows: StationRadiusGhslTileRoutingCountryRow[];
+  tile_rows: StationRadiusGhslTileRoutingRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -3857,6 +3949,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusGhslTileSelectionSummary | null>(null);
   const [stationRadiusGhslTileChecksum, setStationRadiusGhslTileChecksum] =
     useState<StationRadiusGhslTileChecksumSummary | null>(null);
+  const [stationRadiusGhslTileRouting, setStationRadiusGhslTileRouting] =
+    useState<StationRadiusGhslTileRoutingSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4227,6 +4321,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusGhslTileChecksum(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius GHSL tile routing correction HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusGhslTileRouting(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -4838,6 +4952,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusGhslTileSelectionPanel summary={stationRadiusGhslTileSelection} />
 
       <AirStationRadiusGhslTileChecksumPanel summary={stationRadiusGhslTileChecksum} />
+
+      <AirStationRadiusGhslTileRoutingPanel summary={stationRadiusGhslTileRouting} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -6866,6 +6982,197 @@ function AirStationRadiusGhslTileChecksumPanel({ summary }: { summary: StationRa
         </>
       ) : (
         <p className="showcase-loading">Loading GHSL population tile checksum gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusGhslTileRoutingPanel({ summary }: { summary: StationRadiusGhslTileRoutingSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const changedRows = (summary?.tile_rows ?? []).filter((row) => row.correction_status !== "retained_by_corrected_origin");
+  const countryChanges = (summary?.country_rows ?? []).filter((row) => row.added_tile_count > 0 || row.removed_tile_count > 0);
+  const originRows = summary?.origin_rows ?? [];
+
+  const correctionLabel = (status: string) => {
+    if (status === "added_by_corrected_origin") return "added";
+    if (status === "removed_by_corrected_origin") return "removed";
+    return "retained";
+  };
+  const isTruthyEvidence = (value: boolean | string | undefined) => value === true || String(value).toLowerCase() === "true";
+
+  return (
+    <section className="showcase-section air-ghsl-routing-section" aria-label="GHSL tile routing correction gate">
+      <div className="air-ghsl-routing-head">
+        <div>
+          <p className="kicker kicker-ochre">Routing correction</p>
+          <h2>The corrected grid changes the denominator queue.</h2>
+          <p>
+            The first downloaded GeoTIFFs reveal a consistent GHSL origin, so
+            the station-coordinate queue is rerun against that observed grid
+            before any catchment population is computed.
+          </p>
+        </div>
+        <div className="air-ghsl-routing-callout">
+          <span>Queue change</span>
+          <strong>{formatNumber(counts?.added_corrected_tile_urls ?? 0)} added / {formatNumber(counts?.removed_previous_tile_urls ?? 0)} removed</strong>
+          <p>
+            One added tile still has no HEAD or checksum custody. One previously
+            downloaded tile is no longer selected under the corrected origin.
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-ghsl-routing-stat-grid">
+            <div>
+              <span>Origin rasters</span>
+              <strong>{formatNumber(counts.origin_observation_rows)}</strong>
+              <em>opened GeoTIFFs</em>
+            </div>
+            <div>
+              <span>Previous queue</span>
+              <strong>{formatNumber(counts.previous_tile_urls_selected)}</strong>
+              <em>simple-grid tile IDs</em>
+            </div>
+            <div>
+              <span>Corrected queue</span>
+              <strong>{formatNumber(counts.corrected_tile_urls_selected)}</strong>
+              <em>observed-origin tile IDs</em>
+            </div>
+            <div>
+              <span>Retained</span>
+              <strong>{formatNumber(counts.retained_previous_tile_urls)}</strong>
+              <em>carry prior evidence</em>
+            </div>
+            <div>
+              <span>Added</span>
+              <strong>{formatNumber(counts.added_corrected_tile_urls)}</strong>
+              <em>{summary.added_corrected_tile_ids.join(", ") || "none"}</em>
+            </div>
+            <div>
+              <span>Removed</span>
+              <strong>{formatNumber(counts.removed_previous_tile_urls)}</strong>
+              <em>{summary.removed_previous_tile_ids.join(", ") || "none"}</em>
+            </div>
+          </div>
+
+          <div className="air-ghsl-routing-gates" aria-label="GHSL routing correction evidence gates">
+            {summary.evidence_gate_counts.map((gate) => (
+              <article key={gate.gate} className={`air-ghsl-routing-gate air-ghsl-routing-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-routing-rule">
+            <span>Corrected routing rule</span>
+            <p>{summary.routing_rule}</p>
+          </div>
+
+          <div className="air-ghsl-routing-origin-grid" aria-label="Observed GHSL origin rows">
+            {originRows.map((row) => (
+              <article key={row.tile_id} className="air-ghsl-routing-origin-card">
+                <span>{row.tile_id}</span>
+                <strong>{formatNumber(row.derived_north_origin, 8)} north / {formatNumber(row.derived_west_origin, 8)} west</strong>
+                <code>
+                  {formatNumber(row.raster_west, 6)},{formatNumber(row.raster_south, 6)},
+                  {formatNumber(row.raster_east, 6)},{formatNumber(row.raster_north, 6)}
+                </code>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-ghsl-routing-change-grid" aria-label="GHSL routing changed tile rows">
+            {changedRows.map((row) => {
+              const priorHead = row.prior_head_ok === "" ? "unknown" : isTruthyEvidence(row.prior_head_ok) ? "HEAD OK" : "HEAD not OK";
+              const priorDownloaded = row.prior_downloaded === "" ? "not checked" : isTruthyEvidence(row.prior_downloaded) ? "downloaded" : "not downloaded";
+              const economies = row.corrected_selected_economies || row.previous_selected_economies || "no economy";
+              return (
+                <article
+                  key={row.tile_id}
+                  className={`air-ghsl-routing-change air-ghsl-routing-change-${correctionLabel(row.correction_status)}`}
+                >
+                  <div>
+                    <span>{correctionLabel(row.correction_status)}</span>
+                    <strong>{row.tile_id}</strong>
+                    <em>{economies.replaceAll("||", " + ")}</em>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Corrected rows</dt>
+                      <dd>{formatNumber(Number(row.corrected_coordinate_rows_touching_tile || 0))}</dd>
+                    </div>
+                    <div>
+                      <dt>Prior HEAD</dt>
+                      <dd>{priorHead}</dd>
+                    </div>
+                    <div>
+                      <dt>Custody</dt>
+                      <dd>{priorDownloaded}</dd>
+                    </div>
+                  </dl>
+                  {row.prior_sha256 ? (
+                    <code>{row.prior_sha256}</code>
+                  ) : null}
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-ghsl-routing-country-grid" aria-label="Countries with corrected GHSL queue changes">
+            {countryChanges.map((row) => (
+              <article key={row.iso3} className="air-ghsl-routing-country-card">
+                <span>{row.iso3}</span>
+                <strong>{row.country}</strong>
+                <dl>
+                  <div>
+                    <dt>Previous</dt>
+                    <dd>{formatNumber(row.previous_tile_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>Corrected</dt>
+                    <dd>{formatNumber(row.corrected_tile_count)}</dd>
+                  </div>
+                  <div>
+                    <dt>Added</dt>
+                    <dd>{row.added_tile_ids || "none"}</dd>
+                  </div>
+                  <div>
+                    <dt>Removed</dt>
+                    <dd>{row.removed_tile_ids || "none"}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-ghsl-routing-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-ghsl-routing-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-ghsl-tile-routing-correction.md" download>
+              Download correction note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction.csv" download>
+              Download tile CSV
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-country.csv" download>
+              Download country CSV
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-ghsl-tile-routing-correction-origin.csv" download>
+              Download origin CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading GHSL tile routing correction gate...</p>
       )}
     </section>
   );

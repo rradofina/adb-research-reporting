@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, frozen radius rules, remaining population-denominator downloads/checksums, corrected GHSL tile-routing rules, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, frozen radius rules, corrected-queue population-denominator HEAD/download/checksum custody, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -50,15 +50,36 @@ endpoint mismatch scan, and the station-radius denominator readiness wall
 plus the station-radius denominator source plan, acquisition-route scan,
 file-manifest prefreeze, download-feasibility gate, ACAG version-decision gate,
 ACAG coarse checksum gate, GHSL population tile-selection gate, and GHSL
-population tile checksum/transform gate
+population tile checksum/transform gate and GHSL tile-routing correction gate
 honestly, and do not imply station-radius, complete monitor-grade, or
 regulatory-inventory validation until station-level calibration/status
 sources, station crosswalks, complete grade-basis evidence,
-remaining population-denominator downloads and checksums, corrected GHSL
-tile-routing rules, frozen catchment methods, and joined population/PM2.5
-denominator files are added.
+corrected-queue population-denominator downloads and checksums, frozen
+catchment methods, and joined population/PM2.5 denominator files are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the station-radius GHSL tile-routing correction gate.
+  New script `scripts/derive-station-radius-ghsl-tile-routing-correction.py`
+  reads the GHSL tile-selection and checksum summaries, derives the observed
+  GHSL R/C grid origin from 4 opened GeoTIFF bounds, and reruns the same 50 km
+  draft coordinate buffer across the 277 coordinate rows. The pass records an
+  observed north origin of 89.09958351 and west origin of -180.00791704, with
+  0.00000008-degree origin ranges in both directions; changes the queue from
+  23 previous selected tile URLs to 21 corrected tile URLs; retains 20 previous
+  tile IDs; adds `R9_C32`; removes `R10_C28`, `R6_C23`, and `R6_C26`; keeps 6
+  corrected tiles with prior HEAD-OK evidence, 14 with prior HEAD-not-OK
+  evidence, and 1 newly added tile with unknown HEAD evidence; retains 3
+  downloaded ZIPs under corrected routing; flags 1 previously downloaded ZIP
+  as removed under corrected routing; and keeps station-radius population rows,
+  PM2.5 exposure rows, validated same-station joins, complete monitor-grade
+  rows, maps, and station-radius-ready economies at 0. It writes
+  `generated/air-monitoring-station-radius-ghsl-tile-routing-correction.csv`,
+  `generated/air-monitoring-station-radius-ghsl-tile-routing-correction-country.csv`,
+  `generated/air-monitoring-station-radius-ghsl-tile-routing-correction-origin.csv`,
+  `generated/air-monitoring-station-radius-ghsl-tile-routing-correction-summary.json`,
+  and `station-radius-ghsl-tile-routing-correction.md`. This is a routing
+  correction gate, not a catchment computation or map.
 
 - **2026-06-20:** Added the station-radius GHSL population tile
   checksum/transform gate. New script
@@ -1283,12 +1304,19 @@ denominator files are added.
    routing assumption; 3 first-wave HEAD-OK candidates still failed download,
    16 selected tiles remain HEAD-not-OK blockers, and station-radius population
    rows, PM2.5 exposure rows, validated joins, complete-grade rows, maps, and
-   station-radius-ready economies remain 0. The next station-radius work is
-   still not a map; it is correcting or verifying the GHSL tile-routing rule
-   from inspected raster bounds, retrying or serializing the remaining selected
-   GHSL tile downloads, then freezing radius/de-duplication/join/grade rules
-   and joining the checksummed population/PM2.5 denominators only after the
-   method is frozen.
+   station-radius-ready economies remain 0. The GHSL tile-routing correction
+   gate then derives the observed GHSL R/C origin from those 4 opened GeoTIFF
+   bounds, reruns the same 50 km draft coordinate buffer, changes the selected
+   population queue from 23 previous tile URLs to 21 corrected tile URLs, adds
+   `R9_C32`, removes `R10_C28`, `R6_C23`, and `R6_C26`, retains 3 downloaded
+   ZIPs under corrected routing, and keeps station-radius population rows,
+   PM2.5 exposure rows, validated joins, complete-grade rows, maps, and
+   station-radius-ready economies at 0. The next station-radius work is still
+   not a map; it is HEAD/download/checksum custody for the corrected GHSL
+   population queue, especially the newly added `R9_C32` and retained
+   HEAD-not-OK tiles, then freezing radius/de-duplication/join/grade rules and
+   joining the checksummed population/PM2.5 denominators only after the method
+   is frozen.
 
 ## Current blockers
 
@@ -1296,8 +1324,9 @@ denominator files are added.
   and 230 official coordinate inputs across the 24-economy upgrade queue. The
   denominator-readiness, source-plan, acquisition-route, file-manifest
   prefreeze, download-feasibility, ACAG version-decision, ACAG coarse
-  checksum, GHSL population tile-selection, and GHSL population tile
-  checksum/transform walls make the public source stack
+  checksum, GHSL population tile-selection, GHSL population tile
+  checksum/transform, and GHSL tile-routing correction walls make the public
+  source stack
   visible, including 4 of 4
   candidate denominator sources with visible routes, 87 route links, 12
   file-manifest rows, 10 exact public file/object records, 5 exact population
@@ -1313,15 +1342,19 @@ denominator files are added.
   then downloads and hashes 4 selected population tile ZIPs, opens 4 GeoTIFFs,
   and records 4 transform mismatches against the simple 10-degree routing
   assumption, while 3 first-wave candidates still fail download and 16 selected
-  tiles remain HEAD-not-OK blockers. The package still keeps 0 station-radius
-  population rows, 0 station-radius PM2.5 exposure rows, 0 validated
-  same-station joins, 0 complete monitor-grade rows, 0 gridded population
-  denominator files committed to the package, and 0 station-radius-ready
-  economies. GHSL/WorldPop and ACAG source pages are verified as candidates,
-  but the package still needs corrected GHSL tile-routing rules, remaining
-  selected checksummed population denominators, a frozen catchment method,
-  de-duplication rules,
-  validated joins, and grade assumptions before any coverage map is computed.
+  tiles remain HEAD-not-OK blockers. The routing-correction gate derives the
+  observed GHSL R/C origin from the opened GeoTIFF bounds, changes the queue to
+  21 corrected selected tile URLs, adds `R9_C32`, removes `R10_C28`,
+  `R6_C23`, and `R6_C26`, retains 3 downloaded ZIPs under corrected routing,
+  and flags 1 downloaded ZIP as removed under the corrected queue. The package
+  still keeps 0 station-radius population rows, 0 station-radius PM2.5 exposure
+  rows, 0 validated same-station joins, 0 complete monitor-grade rows, 0
+  gridded population denominator files committed to the package, and 0
+  station-radius-ready economies. GHSL/WorldPop and ACAG source pages are
+  verified as candidates, but the package still needs corrected-queue GHSL
+  HEAD/download/checksum custody, a frozen catchment method, de-duplication
+  rules, validated joins, and grade assumptions before any coverage map is
+  computed.
 - Monitor-grade claims still have 0 complete classification rows. Bangladesh
   has 31 source-specific method-standard signal rows, but non-Bangladesh
   official rows and current-status scope still need station-level sources that

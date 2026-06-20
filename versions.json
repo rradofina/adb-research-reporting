@@ -255,6 +255,22 @@
       "cache_policy": "Raw GHSL ZIP files are stored under air-monitoring/.cache/station-radius-ghsl-population-tiles/ and are not committed; rerun the script to rehydrate them from public GHSL tile URLs.",
       "notes": "Station-radius GHSL population tile checksum gate. It reviews 23 selected GHSL tile rows, treats 7 HEAD-OK rows under 60 MB as first-wave download candidates, downloads 4 ZIP files into the ignored local cache, records 4 SHA-256 hashes and 102.118 MB of cached GHSL ZIP data, opens 4 ZIP files and 4 GeoTIFFs with EPSG:4326 transforms, records 4 transform mismatches against the simple 10-degree routing assumption, keeps 3 first-wave candidate downloads unresolved, keeps 16 selected HEAD-not-OK tiles blocked, and keeps station-radius population rows, PM2.5 exposure rows, validated same-station joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_ghsl_tile_routing_correction": {
+      "script": "air-monitoring/scripts/derive-station-radius-ghsl-tile-routing-correction.py",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_station_radius_ghsl_population_tile_checksums",
+        "air_monitoring_station_radius_ghsl_population_tile_selection",
+        "air_monitoring_station_radius_denominator_readiness"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R8_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R9_C30.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C28.zip",
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/GHS_POP_E2020_GLOBE_R2023A_4326_3ss_V1_0_R10_C30.zip"
+      ],
+      "notes": "Station-radius GHSL tile-routing correction gate. It derives a corrected GHSL R/C origin from 4 opened GeoTIFF bounds (north_origin 89.09958351, west_origin -180.00791704; origin ranges 0.00000008 degrees north and west), reruns the existing 50 km coordinate-buffer queue across 277 coordinate rows and 11 economies, changes the population tile queue from 23 previous tile URLs to 21 corrected tile URLs, retains 20 previous tile IDs, adds R9_C32, removes R10_C28, R6_C23, and R6_C26, keeps 6 corrected tiles with prior HEAD-OK evidence, 14 with prior HEAD-not-OK evidence, 1 newly added tile with unknown HEAD evidence, retains 3 downloaded population ZIPs under corrected routing, flags 1 previously downloaded ZIP as removed under corrected routing, and keeps station-radius population rows, PM2.5 exposure rows, validated joins, complete monitor-grade rows, maps, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -894,6 +910,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_ghsl_population_tile_checksums pin after downloading 4 first-wave selected GHSL population tile ZIPs into the ignored cache, recording 4 SHA-256 hashes, opening 4 ZIP/GeoTIFF payloads, finding 4 transform mismatches against the simple 10-degree tile-routing assumption, and keeping 3 first-wave candidate downloads, 16 selected HEAD-not-OK tiles, catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_station_radius_ghsl_tile_routing_correction pin after deriving a corrected GHSL R/C origin from 4 opened GeoTIFF bounds, rerouting 277 coordinate rows, changing the selected population tile queue from 23 previous tile URLs to 21 corrected tile URLs, adding R9_C32, removing R10_C28, R6_C23, and R6_C26, retaining 3 downloaded population ZIPs under corrected routing, flagging 1 previously downloaded ZIP as removed under corrected routing, and keeping catchments, exposure rows, joins, grade rows, and station-radius readiness blocked."
     },
     {
       "date": "2026-06-19",

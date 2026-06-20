@@ -2726,6 +2726,335 @@
   }
 }
 
+.air-ghsl-routing-section {
+  border-top: 1px solid rgba(251, 176, 14, 0.34);
+  background:
+    linear-gradient(135deg, rgba(251, 176, 14, 0.13), transparent 38%),
+    linear-gradient(90deg, rgba(0, 125, 184, 0.06), transparent 58%),
+    #fffef8;
+}
+
+.air-ghsl-routing-section * {
+  min-width: 0;
+}
+
+.air-ghsl-routing-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.36fr);
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.air-ghsl-routing-head h2 {
+  max-width: 16ch;
+  margin: 0.15rem 0 1rem;
+  color: #2c2416;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.96;
+}
+
+.air-ghsl-routing-head p,
+.air-ghsl-routing-gate p,
+.air-ghsl-routing-rule p,
+.air-ghsl-routing-nonclaim {
+  max-width: 66rem;
+  color: #3f3f3f;
+  line-height: 1.58;
+}
+
+.air-ghsl-routing-callout,
+.air-ghsl-routing-stat-grid > div,
+.air-ghsl-routing-gate,
+.air-ghsl-routing-rule,
+.air-ghsl-routing-origin-card,
+.air-ghsl-routing-change,
+.air-ghsl-routing-country-card {
+  border: 1px solid rgba(92, 64, 28, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.air-ghsl-routing-callout {
+  padding: 1.15rem;
+  border-left: 5px solid #fbb00e;
+}
+
+.air-ghsl-routing-callout span,
+.air-ghsl-routing-stat-grid span,
+.air-ghsl-routing-gate span,
+.air-ghsl-routing-rule span,
+.air-ghsl-routing-origin-card span,
+.air-ghsl-routing-change span,
+.air-ghsl-routing-country-card span,
+.air-ghsl-routing-downloads span,
+.air-ghsl-routing-change dt,
+.air-ghsl-routing-country-card dt {
+  color: #5f5750;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-callout strong {
+  display: block;
+  margin: 0.45rem 0;
+  color: #8a5b00;
+  font-size: clamp(1.65rem, 3.2vw, 2.6rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-stat-grid,
+.air-ghsl-routing-gates,
+.air-ghsl-routing-origin-grid,
+.air-ghsl-routing-change-grid,
+.air-ghsl-routing-country-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.air-ghsl-routing-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-stat-grid > div,
+.air-ghsl-routing-gate,
+.air-ghsl-routing-rule,
+.air-ghsl-routing-origin-card,
+.air-ghsl-routing-change,
+.air-ghsl-routing-country-card {
+  padding: 1rem;
+}
+
+.air-ghsl-routing-stat-grid > div {
+  border-top: 4px solid #007db8;
+}
+
+.air-ghsl-routing-stat-grid > div:nth-child(4) {
+  border-top-color: #5a8227;
+}
+
+.air-ghsl-routing-stat-grid > div:nth-child(5),
+.air-ghsl-routing-stat-grid > div:nth-child(6) {
+  border-top-color: #fbb00e;
+}
+
+.air-ghsl-routing-stat-grid strong,
+.air-ghsl-routing-gate em,
+.air-ghsl-routing-change strong,
+.air-ghsl-routing-change dd,
+.air-ghsl-routing-country-card strong,
+.air-ghsl-routing-country-card dd {
+  color: #5c3712;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+}
+
+.air-ghsl-routing-stat-grid strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 1.95rem;
+}
+
+.air-ghsl-routing-stat-grid em,
+.air-ghsl-routing-gate p,
+.air-ghsl-routing-rule p,
+.air-ghsl-routing-nonclaim {
+  font-size: 0.84rem;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-gates {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-gate {
+  border-left: 4px solid #007db8;
+}
+
+.air-ghsl-routing-gate-available {
+  border-left-color: #5a8227;
+}
+
+.air-ghsl-routing-gate-pending {
+  border-left-color: #fbb00e;
+}
+
+.air-ghsl-routing-gate-blocked {
+  border-left-color: #9b2226;
+}
+
+.air-ghsl-routing-gate strong,
+.air-ghsl-routing-origin-card strong,
+.air-ghsl-routing-change strong,
+.air-ghsl-routing-country-card strong {
+  display: block;
+  margin: 0.35rem 0;
+  color: #231f20;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-rule {
+  margin-top: 1rem;
+  border-left: 4px solid #fbb00e;
+  background: #fffbeb;
+}
+
+.air-ghsl-routing-origin-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-origin-card {
+  display: grid;
+  gap: 0.55rem;
+  border-top: 4px solid #007db8;
+}
+
+.air-ghsl-routing-origin-card code,
+.air-ghsl-routing-change code {
+  display: block;
+  padding: 0.6rem;
+  background: #f5f8f9;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.air-ghsl-routing-change-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  scroll-margin-top: 7rem;
+}
+
+.air-ghsl-routing-change {
+  display: grid;
+  gap: 0.7rem;
+  border-left: 5px solid #5a8227;
+}
+
+.air-ghsl-routing-change-added {
+  border-left-color: #007db8;
+  background: #eef7fb;
+}
+
+.air-ghsl-routing-change-removed {
+  border-left-color: #9b2226;
+  background: #fff8ef;
+}
+
+.air-ghsl-routing-change em {
+  color: #5f5750;
+  font-size: 0.78rem;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-change dl,
+.air-ghsl-routing-country-card dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.air-ghsl-routing-change dl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-country-card dl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-change dd,
+.air-ghsl-routing-country-card dd {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-country-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-ghsl-routing-country-card {
+  border-top: 4px solid #fbb00e;
+}
+
+.air-ghsl-routing-nonclaim {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #9b2226;
+  background: #fff4f1;
+}
+
+.air-ghsl-routing-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-ghsl-routing-downloads span,
+.air-ghsl-routing-downloads a {
+  overflow-wrap: anywhere;
+}
+
+.air-ghsl-routing-downloads a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.air-ghsl-routing-downloads a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .air-ghsl-routing-stat-grid,
+  .air-ghsl-routing-gates,
+  .air-ghsl-routing-origin-grid,
+  .air-ghsl-routing-change-grid,
+  .air-ghsl-routing-country-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .air-ghsl-routing-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-routing-head h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .air-ghsl-routing-section {
+    scroll-margin-top: 9.5rem;
+  }
+
+  .air-ghsl-routing-stat-grid,
+  .air-ghsl-routing-gates,
+  .air-ghsl-routing-origin-grid,
+  .air-ghsl-routing-change-grid,
+  .air-ghsl-routing-country-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .air-ghsl-routing-change dl,
+  .air-ghsl-routing-country-card dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .air-ghsl-routing-downloads {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

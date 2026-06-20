@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-06-20T15:10:29+08:00",
+  "route": "http://127.0.0.1:5176/showcase/air-monitoring-observability",
+  "panel": "Uzbekistan Air Uzbekistan portal namespace wall",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "screenshot": "reporting-site/qa/showcase-air-uzbekistan-portal-namespace-desktop.png",
+    "framework_overlay": false,
+    "panel_visible": true,
+    "stat_cards": 8,
+    "bridge_cards": 3,
+    "row_cards": 3,
+    "source_cards": 4,
+    "target_id_probe_cards": 3,
+    "gate_cards": 11,
+    "page_horizontal_overflow_px": 0,
+    "section_horizontal_overflow_px": 0
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 1000
+    },
+    "screenshot": "reporting-site/qa/showcase-air-uzbekistan-portal-namespace-mobile.png",
+    "framework_overlay": false,
+    "panel_visible": true,
+    "stat_cards": 8,
+    "bridge_cards": 3,
+    "row_cards": 3,
+    "source_cards": 4,
+    "target_id_probe_cards": 3,
+    "gate_cards": 11,
+    "download_links": [
+      {
+        "label": "Portal namespace note",
+        "status": 200
+      },
+      {
+        "label": "Summary JSON",
+        "status": 200
+      },
+      {
+        "label": "Row CSV",
+        "status": 200
+      }
+    ],
+    "page_horizontal_overflow_px": 0,
+    "section_horizontal_overflow_px": 0
+  },
+  "console": {
+    "page_errors": 0,
+    "notes": "No page errors. Console contains existing React DevTools, Vite connected, and React Router future-flag warnings."
+  }
+}

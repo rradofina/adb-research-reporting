@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-20T06:41:41.218Z
+Generated: 2026-06-20T07:11:24.266Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 
@@ -18,8 +18,8 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 - Declared audit CSV companions present: 12/12
 - Depth records present: 20/20
 - Quality records present: 20/20
-- QA screenshot files in reporting-site/qa: 478
-- QA browser-check JSON files in reporting-site/qa: 45
+- QA screenshot files in reporting-site/qa: 480
+- QA browser-check JSON files in reporting-site/qa: 46
 - Verification failures: 0
 
 ## Readiness Mix
@@ -38,7 +38,7 @@ Registry: `reporting-site/src/data/showcaseReports.ts`
 | 3 | Shock-payment rails after disasters | L2 prototype | ok | ok | n/a | Map the Findex 2025 payment/G2P variables into the generator, then rerun the sprint with event-transfer non-claim checks and on... |
 | 4 | Public service data quality source disagreement | L3 candidate | ok | ok | n/a | Advance the next decision-ledger class only through public evidence, or stop at owner-only source-owner contact and human locat... |
 | 5 | Remittance corridors after flow weighting | L3 candidate | ok | ok | n/a | Validate corridor rows against central-bank or transaction sources where available; keep the L3 module as a sensitivity result ... |
-| 6 | Air-monitoring observability | L3 candidate | ok | ok | n/a | For Uzbekistan, find a public station-owner or regulator source that names station IDs 107, 728, or 737 with correction/status/... |
+| 6 | Air-monitoring observability | L3 candidate | ok | ok | n/a | For Uzbekistan, find a public station-owner or regulator source beyond the Air Uzbekistan alternate namespace that names statio... |
 | 7 | Access map-completeness audit | L3 candidate | ok | ok | n/a | Extend registry joins for Pakistan and Lao, finish the Cambodia source-scope checks, and add a public friction/travel-time vali... |
 | 8 | Disaster metric falsification | L3 candidate | ok | ok | n/a | Build the event-date join and one pilot radiance extraction; keep the current report as source readiness until an actual recove... |
 | 9 | Grid reliability proxy source wall | Evidence audit | ok | ok | ok | Pick 1-2 high-concentration rows and search for regulator outage records, seasonal dispatch, or reserve-margin evidence beyond ... |

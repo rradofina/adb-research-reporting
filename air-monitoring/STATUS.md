@@ -11,7 +11,7 @@ Last updated: 2026-06-20.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and catchment denominators next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -32,7 +32,8 @@ audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
 scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
 status/certification source scan, the Uzbekistan blocker-row follow-up, the
 Uzbekistan endpoint-consistency check, the Uzbekistan blocker external-context
-wall, the Indonesia/Georgia row-method source scan, the station-code
+wall, the Uzbekistan Air Uzbekistan portal namespace wall, the
+Indonesia/Georgia row-method source scan, the station-code
 status/method source scan, the station-grade decision ledger, the
 station-method classification audit, the BMKG operation/maintenance source
 scan, the BMKG station-specific status audit, the BMKG API
@@ -50,6 +51,24 @@ until station-level calibration/status sources, station crosswalks, complete
 grade-basis evidence, and catchment methods are added.
 
 ## Last completed
+
+- **2026-06-20:** Added the Uzbekistan Air Uzbekistan portal namespace wall.
+  New seed file
+  `source-inputs/uzbekistan-air-portal-namespace-source-seed.csv` and script
+  `scripts/scan-uzbekistan-air-portal-namespace.py` test whether the public
+  Data/Meteo API landing page and Air Uzbekistan Horiba portal resolve the
+  three exact Uzbekistan blocker rows. The pass retrieves 4 of 4 seeded
+  sources, records that the `data.meteo.uz` API landing page points to an
+  email/application access route, probes 6 derived Horiba detail routes, parses
+  28 Air Uzbekistan Horiba station objects, matches the 3 blocker station names
+  to alternate portal IDs 1, 20, and 26, and finds all 3 alternate detail rows
+  mirror the official blocker detail timestamp and PM2.5 value. The original
+  blocker IDs 107, 728, and 737 return station-not-found payloads on the Air
+  Uzbekistan detail endpoint. Public portal resolution, current-status
+  confirmation, complete monitor-grade classification, and station-radius
+  readiness remain 0. The public showcase now renders an Air Uzbekistan portal
+  namespace wall. This is source-routing context, not station-status or grade
+  promotion.
 
 - **2026-06-20:** Added the Georgia indicator endpoint mismatch scan. New seed
   file `source-inputs/georgia-indicator-endpoint-mismatch-source-seed.csv` and
@@ -926,19 +945,23 @@ grade-basis evidence, and catchment methods are added.
 ## Next focused work
 
 1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
-   endpoint-consistency check, and external-context wall now prove the exact
-   official row blocker remains unresolved across official surfaces and nearby
-   public context: 107 and 737 are stale detail pages whose regional rows say
+   endpoint-consistency check, external-context wall, and Air Uzbekistan portal
+   namespace wall now prove the exact official row blocker remains unresolved
+   across official surfaces, nearby public context, and a second public portal
+   namespace: 107 and 737 are stale detail pages whose regional rows say
    `Updating data`, 728 is a recent `Sergili` detail page with PM2.5 equal to
    `-9999`, the public API/detail/region endpoint set has 3 date/status
-   mismatches plus 2 PM2.5 mismatches, and the external-context wall retrieves
-   4 official or technical sources but finds 0 exact station-ID
-   correction/status/grade-closure rows. The remaining AI-doable Uzbekistan
-   work is not another broad scrape, endpoint scrape, or source-level context
-   scan; it is public station-owner or regulator correction/status evidence
-   that names station IDs 107, 728, or 737 and explicitly resolves those exact
-   row blockers with complete monitor-grade classification. Keep every
-   unresolved row outside station-radius joins.
+   mismatches plus 2 PM2.5 mismatches, the external-context wall retrieves 4
+   official or technical sources but finds 0 exact station-ID
+   correction/status/grade-closure rows, and the Air Uzbekistan portal maps the
+   same station names to alternate IDs 1, 20, and 26 while the original IDs
+   107, 728, and 737 return station-not-found payloads. The remaining
+   AI-doable Uzbekistan work is not another broad scrape, endpoint scrape,
+   source-level context scan, or Air Uzbekistan namespace probe; it is public
+   station-owner or regulator correction/status evidence that names station IDs
+   107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, and
+   resolves those exact row blockers with complete monitor-grade
+   classification. Keep every unresolved row outside station-radius joins.
 2. For the 22 BMKG rows, the station-specific status audit proves the exact
    station-detail pages are active public display objects, the API parity check
    proves those fields remain telemetry-only, the regional status/source scan
@@ -1217,6 +1240,15 @@ grade-basis evidence, and catchment methods are added.
   records 0 exact station-ID external-context rows, 0 public blocker-resolution
   rows, 0 current-status rows, 0 complete monitor-grade rows, and 0
   station-radius-ready rows.
+- The Uzbekistan Air Uzbekistan portal namespace wall retrieves 4 public
+  Data/Meteo or Air Uzbekistan source routes and probes 6 derived Horiba
+  detail routes. It parses 28 Air Uzbekistan Horiba station objects and matches
+  all 3 blocker station names to alternate portal IDs 1, 20, and 26, but the
+  original IDs 107, 728, and 737 are not accepted by the portal detail endpoint
+  and the alternate detail rows mirror the stale or sentinel official blocker
+  values. It records 0 public portal-resolution rows, 0 current-status
+  confirmation rows, 0 complete monitor-grade rows, and 0 station-radius-ready
+  rows. Portal active flags are not station-status or grade closure.
 - The official station-source extraction provides 230 public coordinate rows,
   but the official-to-OpenAQ reconciliation audit still has 0 validated
   same-station joins. The 13 near-plus-name rows, 9 near-only rows, and 22

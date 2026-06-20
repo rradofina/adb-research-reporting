@@ -14161,6 +14161,82 @@
     background: #fbb00e;
   }
 
+  .air-uzb-portal-section {
+    background:
+      linear-gradient(180deg, rgba(0, 125, 184, 0.08), rgba(255, 255, 255, 0.98) 42%),
+      #ffffff;
+  }
+
+  .air-uzb-portal-callout {
+    border-color: #005f89;
+    background: #f2f8fb;
+  }
+
+  .air-uzb-portal-bridge-grid,
+  .air-uzb-portal-source-grid,
+  .air-uzb-portal-probe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 0.75rem;
+  }
+
+  .air-uzb-portal-bridge,
+  .air-uzb-portal-probe {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--rule-soft);
+    border-top: 4px solid #005f89;
+    background: #ffffff;
+  }
+
+  .air-uzb-portal-bridge-namespace,
+  .air-uzb-portal-probe-blocked {
+    border-top-color: #9b2226;
+    background: #fff7f5;
+  }
+
+  .air-uzb-portal-bridge-closure {
+    border-top-color: #fbb00e;
+    background: #fffaf0;
+  }
+
+  .air-uzb-portal-row {
+    border-left-color: #005f89;
+  }
+
+  .air-uzb-portal-source {
+    border-top-color: #005f89;
+  }
+
+  .air-uzb-portal-bridge span,
+  .air-uzb-portal-probe span {
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-portal-bridge strong,
+  .air-uzb-portal-probe strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+  }
+
+  .air-uzb-portal-probe p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: var(--type-copy-xs);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
   .air-uzb-endpoint-mismatch {
     display: grid;
     grid-template-rows: auto auto minmax(2.8rem, 1fr);

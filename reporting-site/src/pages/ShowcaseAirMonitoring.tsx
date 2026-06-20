@@ -1370,6 +1370,104 @@ interface UzbekistanExternalContextSummary {
   non_claim: string;
 }
 
+interface UzbekistanAirPortalNamespaceGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface UzbekistanAirPortalNamespaceSourceRecord {
+  source_key: string;
+  source_name: string;
+  source_role: string;
+  url: string;
+  retrieved: boolean;
+  http_status: string | number;
+  station_data_available?: boolean;
+  api_error?: string;
+  source_note: string;
+}
+
+interface UzbekistanAirPortalNamespaceRow {
+  source_station_id: string;
+  source_station_name: string;
+  review_focus: string;
+  prior_followup_decision: string;
+  prior_endpoint_decision: string;
+  official_detail_updated_iso: string;
+  official_detail_pm25_value: string;
+  official_detail_pm25_value_status: string;
+  official_region_updated_values: string;
+  air_portal_alternate_station_found: boolean;
+  air_portal_alternate_station_id: string;
+  air_portal_alternate_station_name: string;
+  air_portal_alternate_station_active: boolean;
+  air_portal_latitude: number | string;
+  air_portal_longitude: number | string;
+  air_portal_target_id_detail_found: boolean;
+  air_portal_target_id_detail_error: string;
+  air_portal_alternate_detail_found: boolean;
+  air_portal_alternate_detail_datetime: string;
+  air_portal_alternate_detail_date_iso: string;
+  air_portal_alternate_detail_age_days: number | string;
+  air_portal_alternate_detail_pm25_value: number | string;
+  air_portal_alternate_detail_pm25_status: string;
+  air_portal_detail_mirrors_official_detail: boolean;
+  air_portal_detail_stale_over_30_days: boolean;
+  air_portal_detail_pm25_sentinel: boolean;
+  data_meteo_api_requires_email_application: boolean;
+  endpoint_namespace_mismatch: boolean;
+  active_flag_counted_as_status_closure: boolean;
+  public_portal_resolution_available: boolean;
+  current_status_confirmed: boolean;
+  station_method_classified: boolean;
+  complete_monitor_grade_classification_available: boolean;
+  station_radius_grade_assumption_ready: boolean;
+  portal_namespace_decision: string;
+  reader_use: string;
+}
+
+interface UzbekistanAirPortalNamespaceSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  coverage_counts: {
+    target_blocker_rows: number;
+    source_urls_seeded: number;
+    source_urls_retrieved: number;
+    derived_detail_probe_routes: number;
+    derived_detail_probe_routes_retrieved: number;
+    data_meteo_api_landing_retrieved: number;
+    data_meteo_email_application_required_rows: number;
+    air_portal_station_list_retrieved: number;
+    air_portal_station_objects: number;
+    target_blocker_id_detail_probe_rows: number;
+    target_blocker_id_detail_found_rows: number;
+    alternate_station_name_match_rows: number;
+    alternate_station_active_flag_rows: number;
+    alternate_detail_rows_retrieved: number;
+    alternate_detail_mirrors_official_detail_rows: number;
+    alternate_detail_stale_rows: number;
+    alternate_detail_sentinel_rows: number;
+    endpoint_namespace_mismatch_rows: number;
+    public_portal_resolution_rows: number;
+    current_status_confirmed_rows: number;
+    station_method_classified_rows: number;
+    complete_monitor_grade_classification_rows: number;
+    station_radius_grade_assumption_ready_rows: number;
+  };
+  decision_counts: { decision: string; rows: number }[];
+  source_records: UzbekistanAirPortalNamespaceSourceRecord[];
+  evidence_gate_counts: UzbekistanAirPortalNamespaceGate[];
+  station_rows: UzbekistanAirPortalNamespaceRow[];
+  non_claim: string;
+}
+
 interface IndonesiaGeorgiaRowMethodSourceGate {
   gate: string;
   status: string;
@@ -3027,6 +3125,8 @@ export default function ShowcaseAirMonitoring() {
     useState<UzbekistanEndpointConsistencySummary | null>(null);
   const [uzbekistanExternalContext, setUzbekistanExternalContext] =
     useState<UzbekistanExternalContextSummary | null>(null);
+  const [uzbekistanAirPortalNamespace, setUzbekistanAirPortalNamespace] =
+    useState<UzbekistanAirPortalNamespaceSummary | null>(null);
   const [indonesiaGeorgiaRowMethodSource, setIndonesiaGeorgiaRowMethodSource] =
     useState<IndonesiaGeorgiaRowMethodSourceSummary | null>(null);
   const [stationCodeStatusMethod, setStationCodeStatusMethod] =
@@ -3225,6 +3325,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setUzbekistanExternalContext(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Uzbekistan Air Uzbekistan portal namespace HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setUzbekistanAirPortalNamespace(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -3770,6 +3890,8 @@ export default function ShowcaseAirMonitoring() {
       <AirUzbekistanEndpointConsistencyPanel summary={uzbekistanEndpointConsistency} />
 
       <AirUzbekistanExternalContextPanel summary={uzbekistanExternalContext} />
+
+      <AirUzbekistanAirPortalNamespacePanel summary={uzbekistanAirPortalNamespace} />
 
       <AirIndonesiaGeorgiaRowMethodSourcePanel summary={indonesiaGeorgiaRowMethodSource} />
 
@@ -6967,6 +7089,248 @@ function AirUzbekistanExternalContextPanel({
         </>
       ) : (
         <p className="showcase-loading">Loading Uzbekistan blocker external-context wall...</p>
+      )}
+    </section>
+  );
+}
+
+function AirUzbekistanAirPortalNamespacePanel({
+  summary,
+}: {
+  summary: UzbekistanAirPortalNamespaceSummary | null;
+}) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.station_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const sources = summary?.source_records ?? [];
+  const total = Math.max(1, counts?.target_blocker_rows ?? rows.length);
+  const seededSources = sources.filter((source) => !source.source_role.includes("detail_probe"));
+  const targetIdProbes = sources.filter((source) => source.source_role === "target_id_detail_probe");
+  const mirrorShare = counts ? counts.alternate_detail_mirrors_official_detail_rows / total : 0;
+  const metricCards = counts
+    ? [
+        {
+          key: "stations",
+          label: "Portal Horiba stations",
+          value: counts.air_portal_station_objects,
+          detail: "second namespace exposed",
+        },
+        {
+          key: "matches",
+          label: "Alternate matches",
+          value: counts.alternate_station_name_match_rows,
+          detail: "of 3 blocker rows",
+        },
+        {
+          key: "original",
+          label: "Original ID hits",
+          value: counts.target_blocker_id_detail_found_rows,
+          detail: "IDs 107, 728, 737",
+        },
+        {
+          key: "mirror",
+          label: "Mirrored details",
+          value: counts.alternate_detail_mirrors_official_detail_rows,
+          detail: `${pct(mirrorShare)} mirror the blocker`,
+        },
+        {
+          key: "stale",
+          label: "Stale alternates",
+          value: counts.alternate_detail_stale_rows,
+          detail: "older than 30 days",
+        },
+        {
+          key: "sentinel",
+          label: "Sentinel alternate",
+          value: counts.alternate_detail_sentinel_rows,
+          detail: "PM2.5 is -9999",
+        },
+        {
+          key: "status",
+          label: "Current-status closures",
+          value: counts.current_status_confirmed_rows,
+          detail: "active flag is not closure",
+        },
+        {
+          key: "grade",
+          label: "Complete-grade rows",
+          value: counts.complete_monitor_grade_classification_rows,
+          detail: "still zero",
+        },
+      ]
+    : [];
+
+  const displayNumber = (value: number | string | null | undefined, digits = 0) => {
+    if (typeof value === "number") return formatNumber(value, digits);
+    return value === null || value === undefined || value === "" ? "n/a" : String(value);
+  };
+
+  return (
+    <section className="showcase-section air-uzb-current-section air-uzb-external-section air-uzb-portal-section" aria-label="Uzbekistan Air Uzbekistan portal namespace wall">
+      <div className="air-uzb-current-head">
+        <div>
+          <p className="kicker kicker-blue">Uzbekistan portal namespace</p>
+          <h2>The second portal finds the stations, not the closure.</h2>
+          <p>
+            Air Uzbekistan exposes a public Horiba station list and detail API.
+            This scan checks whether that portal accepts blocker IDs 107, 728,
+            and 737, or only maps the same stations to alternate IDs that still
+            carry the stale or sentinel evidence.
+          </p>
+        </div>
+        <div className="air-uzb-current-callout air-uzb-portal-callout">
+          <span>Portal blocker resolutions</span>
+          <strong>{formatNumber(counts?.public_portal_resolution_rows ?? 0)}</strong>
+          <p>
+            {formatNumber(counts?.alternate_station_name_match_rows ?? 0)} alternate namespace matches;
+            original IDs still fail
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-uzb-current-stat-grid air-uzb-portal-stat-grid">
+            {metricCards.map((card) => (
+              <div key={card.key}>
+                <span>{card.label}</span>
+                <strong>{formatNumber(card.value)}</strong>
+                <em>{card.detail}</em>
+              </div>
+            ))}
+          </div>
+
+          <div className="air-uzb-portal-bridge-grid" aria-label="Uzbekistan portal namespace decisions">
+            <article className="air-uzb-portal-bridge air-uzb-portal-bridge-source">
+              <span>Source object</span>
+              <strong>Data portal plus Horiba endpoint</strong>
+              <p>
+                The Data/Meteo landing page documents API modules but points to
+                an email/application route. The Air Uzbekistan page exposes a
+                no-login Horiba station list and detail endpoint.
+              </p>
+            </article>
+            <article className="air-uzb-portal-bridge air-uzb-portal-bridge-namespace">
+              <span>Namespace test</span>
+              <strong>107/728/737 are not Air Uzbekistan IDs</strong>
+              <p>
+                The portal detail route returns station records for IDs 1, 20,
+                and 26, while probes for the original blocker IDs return station
+                not found payloads.
+              </p>
+            </article>
+            <article className="air-uzb-portal-bridge air-uzb-portal-bridge-closure">
+              <span>Closure test</span>
+              <strong>Active flags stay out of the status count</strong>
+              <p>
+                The alternate station list marks the rows active, but the
+                detail values still mirror the exact official blocker rows, so
+                current-status and grade closures remain zero.
+              </p>
+            </article>
+          </div>
+
+          <div className="air-uzb-current-row-grid air-uzb-portal-row-grid" aria-label="Uzbekistan portal namespace rows">
+            {rows.map((row) => (
+              <article key={row.source_station_id} className="air-uzb-current-row air-uzb-portal-row">
+                <div>
+                  <span>UZB · {row.source_station_id} to portal {row.air_portal_alternate_station_id || "none"}</span>
+                  <strong>{row.source_station_name}</strong>
+                  <b>{sentenceCaseStatus(row.portal_namespace_decision)}</b>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Portal name</dt>
+                    <dd>{row.air_portal_alternate_station_name || "not found"}</dd>
+                  </div>
+                  <div>
+                    <dt>Active flag</dt>
+                    <dd>{row.air_portal_alternate_station_active ? "present" : "absent"}</dd>
+                  </div>
+                  <div>
+                    <dt>Original ID</dt>
+                    <dd>{row.air_portal_target_id_detail_found ? "accepted" : "not found"}</dd>
+                  </div>
+                  <div>
+                    <dt>Portal date</dt>
+                    <dd>{row.air_portal_alternate_detail_date_iso || "n/a"}</dd>
+                  </div>
+                  <div>
+                    <dt>Portal PM2.5</dt>
+                    <dd>{displayNumber(row.air_portal_alternate_detail_pm25_value, 3)}</dd>
+                  </div>
+                  <div>
+                    <dt>Mirrors official</dt>
+                    <dd>{row.air_portal_detail_mirrors_official_detail ? "yes" : "no"}</dd>
+                  </div>
+                </dl>
+                <p>{row.reader_use}</p>
+                <small>
+                  {row.air_portal_target_id_detail_error || row.prior_endpoint_decision}
+                </small>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-portal-source-grid" aria-label="Uzbekistan portal source records">
+            {seededSources.map((source) => (
+              <article key={source.source_key} className={`air-uzb-external-source air-uzb-portal-source air-uzb-external-source-${gateTone(source.retrieved ? "available" : "not_ready")}`}>
+                <div>
+                  <span>{sentenceCaseStatus(source.source_role)}</span>
+                  <strong>{source.source_name}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{source.retrieved ? `HTTP ${source.http_status}` : "not retrieved"}</dd>
+                  </div>
+                  <div>
+                    <dt>Role</dt>
+                    <dd>{sentenceCaseStatus(source.source_role)}</dd>
+                  </div>
+                </dl>
+                <p>{source.source_note}</p>
+                <a href={source.url}>Source</a>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-portal-probe-grid" aria-label="Uzbekistan portal target ID probes">
+            {targetIdProbes.map((source) => (
+              <article key={source.source_key} className={`air-uzb-portal-probe air-uzb-portal-probe-${source.station_data_available ? "available" : "blocked"}`}>
+                <span>{source.source_key.replace("air_uzbekistan_horiba_target_id_", "Target ID ")}</span>
+                <strong>{source.station_data_available ? "Station data found" : "Station not found"}</strong>
+                <p>{source.api_error || "The target ID returned a station record."}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-gate-grid air-uzb-portal-gate-grid">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-uzb-current-gate air-uzb-current-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <b>{formatNumber(gate.rows)} rows</b>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-uzb-current-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/uzbekistan-air-portal-namespace.md" download>
+              Portal namespace note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json" download>
+              Summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-uzbekistan-air-portal-namespace.csv" download>
+              Row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading Uzbekistan Air Uzbekistan portal namespace wall...</p>
       )}
     </section>
   );

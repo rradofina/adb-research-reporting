@@ -204,6 +204,16 @@
       ],
       "notes": "External public context wall for the 3 exact Uzbekistan blocker rows. It retrieves 4 of 4 official or technical context sources, including government Sergeli/Uchtepa launch pages and the World Bank Tashkent assessment text; finds 2 blocker rows with source context, 1 launch-context-only row, 1 source-level-reference-context-only row, 0 exact station-ID external-context rows, 0 public blocker-resolution rows, 0 current-status rows, 0 complete monitor-grade rows, and 0 station-radius-ready rows."
     },
+    "air_monitoring_uzbekistan_air_portal_namespace": {
+      "script": "air-monitoring/scripts/scan-uzbekistan-air-portal-namespace.py",
+      "seed": "air-monitoring/source-inputs/uzbekistan-air-portal-namespace-source-seed.csv",
+      "retrieved_on": "2026-06-20",
+      "derives_from": [
+        "air_monitoring_uzbekistan_blocker_row_followup",
+        "air_monitoring_uzbekistan_endpoint_consistency"
+      ],
+      "notes": "Air Uzbekistan / DigitalMeteo portal namespace wall for the 3 exact Uzbekistan blocker rows. It retrieves 4 of 4 seeded public sources, records the data.meteo.uz API email/application access wall, probes 6 derived Horiba detail routes, parses 28 Air Uzbekistan Horiba station objects, finds 3 alternate station-name matches with active portal flags and 3 alternate details mirroring the official blocker detail rows, finds 0 original blocker IDs accepted by the Air Uzbekistan detail endpoint, and keeps public portal resolution, current-status confirmation, complete monitor-grade classification, and station-radius readiness at zero."
+    },
     "air_monitoring_indonesia_georgia_row_method_source_scan": {
       "script": "air-monitoring/scripts/scan-indonesia-georgia-row-method-sources.py",
       "seed": "air-monitoring/source-inputs/indonesia-georgia-row-method-source-seed.csv",
@@ -755,6 +765,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_uzbekistan_blocker_external_context pin after retrieving 4 external official or technical context sources for the 3 Uzbekistan blocker rows while keeping exact station-ID context, blocker-resolution, current-status, complete-grade, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-20",
+      "change": "Added air_monitoring_uzbekistan_air_portal_namespace pin after checking the Data/Meteo API landing page and Air Uzbekistan Horiba portal namespace for the 3 Uzbekistan blocker rows; alternate portal IDs 1, 20, and 26 mirror the official blocker detail rows, while original IDs 107, 728, and 737 are not accepted by the portal detail endpoint and closure rows remain zero."
     },
     {
       "date": "2026-06-20",

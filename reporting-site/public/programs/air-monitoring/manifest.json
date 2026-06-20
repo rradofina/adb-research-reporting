@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T06:41:58.186Z",
+  "generated_at": "2026-06-20T07:11:26.816Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -291,6 +291,16 @@
       "size_human": "2.2 KB",
       "mtime": "2026-06-20T01:00:17.665Z",
       "sha256": "3c5a534ce888e181db9a9073233fd9b87cb8d2f3e465c8031c97da3714cf51be",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_uzbekistan_air_portal_namespace",
+      "file": "uzbekistan-air-portal-namespace.md",
+      "label": "Air-monitoring Uzbekistan Air Uzbekistan portal namespace wall",
+      "size": 2226,
+      "size_human": "2.2 KB",
+      "mtime": "2026-06-20T07:11:17.816Z",
+      "sha256": "eb43380558dd4f6a889ab4175d11247da39a956d92a8b71b132fb5499da87292",
       "attestation_chain": "ai-first"
     },
     {
@@ -956,6 +966,18 @@
       "size": 66400,
       "size_human": "64.8 KB",
       "sha256": "34d4a89c2f140c86b2f5e45e81b7567064e3aed41fcd659ee4d280059533a9d6"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",
+      "size": 23731,
+      "size_human": "23.2 KB",
+      "sha256": "7942eb3339e43a06ed6608e305fa5c4551869469daea6270db63537387759d91"
+    },
+    {
+      "file": "generated/air-monitoring-uzbekistan-air-portal-namespace.csv",
+      "size": 5122,
+      "size_human": "5.0 KB",
+      "sha256": "4ccbc9ddd221863459bf1c8e83ad3aaac92a0184bc0e637468455ca32ad3ace3"
     },
     {
       "file": "generated/air-monitoring-uzbekistan-blocker-external-context-summary.json",

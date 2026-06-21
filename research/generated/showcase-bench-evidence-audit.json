@@ -1,6 +1,6 @@
 {
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-20T14:55:57.256Z",
+  "generated_at": "2026-06-20T15:25:00.958Z",
   "script": "scripts/verify-showcase-bench.mjs",
   "registry": "reporting-site/src/data/showcaseReports.ts",
   "routes_file": "reporting-site/src/main.tsx",
@@ -151,7 +151,7 @@
       "statusLabel": "Prototype report",
       "readiness": "l3-candidate",
       "readinessLabel": "L3 candidate",
-      "evidencePath": "air-monitoring/station-radius-pm25-resolution-decision.md",
+      "evidencePath": "air-monitoring/station-radius-denominator-join-dry-run.md",
       "evidenceExists": true,
       "routeCovered": true,
       "routeKind": "explicit",
@@ -163,7 +163,7 @@
       "qualityRecordExists": true,
       "sourceNotePresent": true,
       "visualPresent": true,
-      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source beyond the Air Uzbekistan alternate namespace that names station IDs 107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, with correction/status/calibration or grade-basis closure; for BMKG, target station-specific inspection logs, PM2.5 calibration certificates, calibration-status records, or explicit station-grade records beyond station pages, dashboard status, station studies, installation/deployment context, source-level rules, and the PPID/PTSP access-route wall; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, XLSX station-sheet-only exports, NEA city-level network/launch context, and the indicator API's different station-code namespace; for station-radius work, run the population/PM2.5 denominator join dry run without promoting coverage claims."
+      "nextUpgrade": "For Uzbekistan, find a public station-owner or regulator source beyond the Air Uzbekistan alternate namespace that names station IDs 107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, with correction/status/calibration or grade-basis closure; for BMKG, target station-specific inspection logs, PM2.5 calibration certificates, calibration-status records, or explicit station-grade records beyond station pages, dashboard status, station studies, installation/deployment context, source-level rules, and the PPID/PTSP access-route wall; for Georgia, find a station-specific verified report/status/method route beyond the policy note, daily/monthly caution routes, annual server-error routes, XLSX station-sheet-only exports, NEA city-level network/launch context, and the indicator API's different station-code namespace; for station-radius work, compute unioned country catchments only after preserving the non-claim wall around the row-level denominator dry run."
     },
     {
       "id": 7,

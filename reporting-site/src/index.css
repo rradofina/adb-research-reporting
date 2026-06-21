@@ -4558,6 +4558,288 @@
   }
 }
 
+.air-denominator-join-section {
+  border: 1px solid rgba(20, 38, 56, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 246, 244, 0.88)),
+    #ffffff;
+  box-shadow: 0 18px 38px rgba(13, 27, 42, 0.08);
+}
+
+.air-denominator-join-section * {
+  min-width: 0;
+}
+
+.air-denominator-join-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(17rem, 0.5fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.air-denominator-join-head h2 {
+  max-width: 14ch;
+}
+
+.air-denominator-join-head p,
+.air-denominator-join-callout p,
+.air-denominator-join-flow p,
+.air-denominator-gate p,
+.air-denominator-nonclaim {
+  color: rgba(13, 27, 42, 0.76);
+  line-height: 1.55;
+}
+
+.air-denominator-join-callout,
+.air-denominator-join-flow > article,
+.air-denominator-radius,
+.air-denominator-country-row,
+.air-denominator-gate {
+  border: 1px solid rgba(20, 38, 56, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-denominator-join-callout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-left: 0.35rem solid #c73b3b;
+}
+
+.air-denominator-join-callout span,
+.air-denominator-join-flow span,
+.air-denominator-radius span,
+.air-denominator-country-row span,
+.air-denominator-gate span,
+.air-denominator-downloads span {
+  color: rgba(13, 27, 42, 0.58);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.air-denominator-join-callout strong {
+  margin-top: 0.35rem;
+  color: #7f1d1d;
+  font-size: clamp(1.45rem, 4vw, 2.5rem);
+  line-height: 1;
+}
+
+.air-denominator-join-flow,
+.air-denominator-radius-band,
+.air-denominator-country-grid,
+.air-denominator-gate-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.air-denominator-join-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-denominator-radius-band {
+  grid-template-columns: 0.55fr 1fr 1.35fr;
+}
+
+.air-denominator-country-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.air-denominator-gate-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.air-denominator-join-flow > article,
+.air-denominator-radius,
+.air-denominator-country-row,
+.air-denominator-gate {
+  padding: 0.95rem;
+}
+
+.air-denominator-join-flow strong,
+.air-denominator-radius strong,
+.air-denominator-country-row strong,
+.air-denominator-gate strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #142638;
+  font-size: 1.18rem;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.air-denominator-join-flow em,
+.air-denominator-radius em,
+.air-denominator-country-row em,
+.air-denominator-gate em {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(13, 27, 42, 0.62);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.air-denominator-join-brake {
+  border-left: 0.3rem solid #fbb00e;
+}
+
+.air-denominator-radius-lower_sensitivity {
+  border-left: 0.3rem solid #4f8a8b;
+}
+
+.air-denominator-radius-primary {
+  border-left: 0.3rem solid #007db8;
+}
+
+.air-denominator-radius-upper_sensitivity {
+  border-left: 0.3rem solid #c73b3b;
+}
+
+.air-denominator-country-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.7fr) minmax(9rem, 1fr) minmax(13rem, 1.1fr);
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.air-denominator-country-bar {
+  position: relative;
+  height: 0.8rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(20, 38, 56, 0.09);
+}
+
+.air-denominator-country-bar i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #007db8, #4f8a8b 62%, #fbb00e);
+}
+
+.air-denominator-country-row dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.air-denominator-country-row dt,
+.air-denominator-country-row dd {
+  margin: 0;
+}
+
+.air-denominator-country-row dt {
+  color: rgba(13, 27, 42, 0.56);
+  font-size: 0.68rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.air-denominator-country-row dd {
+  color: #142638;
+  font-size: 1rem;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.air-denominator-gate-computed {
+  border-left: 0.3rem solid #007a5a;
+}
+
+.air-denominator-gate-blocked {
+  border-left: 0.3rem solid #c73b3b;
+}
+
+.air-denominator-gate-available {
+  border-left: 0.3rem solid #007db8;
+}
+
+.air-denominator-nonclaim {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(20, 38, 56, 0.14);
+  border-left: 0.35rem solid #fbb00e;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  font-size: 0.92rem;
+}
+
+.air-denominator-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.air-denominator-downloads span,
+.air-denominator-downloads a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.35rem;
+  overflow-wrap: anywhere;
+}
+
+.air-denominator-downloads a {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(20, 38, 56, 0.16);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #005f8f;
+  font-size: 0.88rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.air-denominator-downloads a:hover {
+  border-color: #007db8;
+  color: #003f5f;
+}
+
+@media (max-width: 1120px) {
+  .air-denominator-join-head,
+  .air-denominator-join-flow,
+  .air-denominator-country-row {
+    grid-template-columns: 1fr;
+  }
+
+  .air-denominator-radius-band,
+  .air-denominator-country-grid,
+  .air-denominator-gate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .air-denominator-join-section {
+    padding: 1.25rem;
+  }
+
+  .air-denominator-radius-band,
+  .air-denominator-country-grid,
+  .air-denominator-gate-grid,
+  .air-denominator-country-row dl {
+    grid-template-columns: 1fr;
+  }
+
+  .air-denominator-join-head h2 {
+    font-size: 2rem;
+  }
+
+  .air-denominator-downloads {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
 @layer components {
   /* === Artifact-driven audit showcase reports === */
 

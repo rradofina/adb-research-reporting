@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T14:55:30.525Z",
+  "generated_at": "2026-06-20T15:25:10.016Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -251,6 +251,16 @@
       "size_human": "2.7 KB",
       "mtime": "2026-06-20T14:40:11.183Z",
       "sha256": "9aa3132e27156548c98df77cdb09b0b084768b16b6b4e6f937ece09a46469966",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_denominator_join_dry_run",
+      "file": "station-radius-denominator-join-dry-run.md",
+      "label": "Air-monitoring station-radius denominator join dry run",
+      "size": 3078,
+      "size_human": "3.0 KB",
+      "mtime": "2026-06-20T15:24:35.146Z",
+      "sha256": "8fef51877973f112a32cdd5e95932ab8d1c939a30154d29bf6da00d3b8ece71c",
       "attestation_chain": "ai-first"
     },
     {
@@ -1198,6 +1208,24 @@
       "size": 19353,
       "size_human": "18.9 KB",
       "sha256": "d26ff745150920e24e9340492a5a93bb75b372d8b902b91f5158a69d5af71fe5"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-join-dry-run-country.csv",
+      "size": 34857,
+      "size_human": "34.0 KB",
+      "sha256": "4235e6b3359c1bd1e191e3902859a3a00f42ea52a68dc646f1c422fa0eaa86c2"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-join-dry-run-summary.json",
+      "size": 116590,
+      "size_human": "113.9 KB",
+      "sha256": "a669e86428dfb73560d26d3c35281f7bc3cd8d36b6e04d9c7676b4c1a01ebb11"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-denominator-join-dry-run.csv",
+      "size": 956741,
+      "size_human": "934.3 KB",
+      "sha256": "561c1aa2e514d470ef3fd14e444167a491f0d160c4c7b5bcbd268c74ac7e63a1"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",

@@ -1363,6 +1363,82 @@ interface StationRadiusPm25ResolutionSummary {
   non_claim: string;
 }
 
+interface StationRadiusDenominatorJoinGate {
+  gate: string;
+  status: string;
+  rows: number;
+  reader_use: string;
+}
+
+interface StationRadiusDenominatorJoinCountryRow {
+  iso3: string;
+  country: string;
+  radius_km: number | string;
+  radius_role: string;
+  coordinate_rows: number;
+  unique_coordinate_points: number;
+  openaq_coordinate_rows: number;
+  official_pm25_coordinate_rows: number;
+  population_rows_computed: number;
+  pm25_rows_computed: number;
+  candidate_population_buffer_sum: number;
+  candidate_population_exact_coordinate_dedup_sum: number;
+  mean_pm25_nearest_ugm3: number | string;
+  mean_pm25_radius_ugm3: number | string;
+  ghsl_tile_count: number;
+  ghsl_tile_ids: string;
+  country_union_population_computed: boolean | string;
+  coverage_claim_allowed: boolean | string;
+  validated_same_station_join_rows: number;
+  complete_monitor_grade_rows: number;
+  station_radius_ready: boolean | string;
+  reader_use: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusDenominatorJoinSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    coordinate_economies: number;
+    coordinate_rows_used: number;
+    unique_coordinate_points: number;
+    openaq_coordinate_rows_used: number;
+    official_pm25_coordinate_rows_used: number;
+    radius_bands_computed: number;
+    candidate_coordinate_radius_rows: number;
+    population_rows_computed: number;
+    pm25_rows_computed: number;
+    country_radius_summary_rows: number;
+    population_raster_tiles_opened: number;
+    acag_pm25_surface_opened: number;
+    primary_radius_km: number;
+    lower_sensitivity_radius_km: number;
+    upper_sensitivity_radius_km: number;
+    country_union_population_rows: number;
+    country_union_population_computed: boolean;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+    coverage_claim_allowed: boolean;
+  };
+  evidence_gate_counts: StationRadiusDenominatorJoinGate[];
+  radius_bands: Array<{ radius_role: string; radius_km: number }>;
+  pm25_surface: {
+    record_key: string;
+    selected_vintage: string;
+    cache_path: string;
+    resolution_decision_status: string;
+  };
+  top_primary_radius_country_rows: StationRadiusDenominatorJoinCountryRow[];
+  country_rows: StationRadiusDenominatorJoinCountryRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4306,6 +4382,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusRuleSummary | null>(null);
   const [stationRadiusPm25Resolution, setStationRadiusPm25Resolution] =
     useState<StationRadiusPm25ResolutionSummary | null>(null);
+  const [stationRadiusDenominatorJoin, setStationRadiusDenominatorJoin] =
+    useState<StationRadiusDenominatorJoinSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4796,6 +4874,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusPm25Resolution(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-join-dry-run-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius denominator join dry run HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusDenominatorJoin(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5419,6 +5517,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusRuleSourcePanel summary={stationRadiusRuleSourceScan} />
 
       <AirStationRadiusPm25ResolutionPanel summary={stationRadiusPm25Resolution} />
+
+      <AirStationRadiusDenominatorJoinPanel summary={stationRadiusDenominatorJoin} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -8417,6 +8517,156 @@ function AirStationRadiusPm25ResolutionPanel({ summary }: { summary: StationRadi
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius PM2.5 resolution decision...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusDenominatorJoinPanel({ summary }: { summary: StationRadiusDenominatorJoinSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.top_primary_radius_country_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const asNumber = (value: number | string | undefined) => {
+    const parsed = Number(value ?? 0);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const compact = (value: number | string | undefined) => {
+    const parsed = asNumber(value);
+    if (parsed >= 1_000_000_000) return `${(parsed / 1_000_000_000).toFixed(1)}B`;
+    if (parsed >= 1_000_000) return `${(parsed / 1_000_000).toFixed(1)}M`;
+    if (parsed >= 1_000) return `${(parsed / 1_000).toFixed(1)}K`;
+    return formatNumber(parsed);
+  };
+  const gateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("computed")) return "computed";
+    if (normalized.includes("not_ready") || normalized.includes("not_computed")) return "blocked";
+    return "available";
+  };
+  const maxPopulation = Math.max(
+    1,
+    ...rows.map((row) => asNumber(row.candidate_population_exact_coordinate_dedup_sum)),
+  );
+
+  return (
+    <section className="showcase-section air-denominator-join-section" aria-label="Station-radius denominator join dry run">
+      <div className="air-denominator-join-head">
+        <div>
+          <p className="kicker kicker-crimson">Denominator join dry run</p>
+          <h2>The buffers touch real cells; the claim still stops at the gate.</h2>
+          <p>
+            This pass connects the frozen candidate coordinate universe to GHSL population cells and the selected
+            ACAG coarse annual PM2.5 grid. It is row-level denominator evidence, not a monitor-coverage statement.
+          </p>
+        </div>
+        <div className="air-denominator-join-callout">
+          <span>Join state</span>
+          <strong>{counts ? `${formatNumber(counts.candidate_coordinate_radius_rows)} physical joins` : "Loading"}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.station_radius_ready_economies)} ready economies; ${formatNumber(counts.country_union_population_rows)} unioned catchment rows.`
+              : "Reading denominator dry run."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-denominator-join-flow" aria-label="Denominator join evidence flow">
+            <article>
+              <span>Frozen coordinate universe</span>
+              <strong>{formatNumber(counts.coordinate_rows_used)}</strong>
+              <em>{formatNumber(counts.unique_coordinate_points)} unique points</em>
+              <p>OpenAQ and official PM2.5 coordinate rows are kept source-family separated.</p>
+            </article>
+            <article>
+              <span>Denominators opened</span>
+              <strong>{formatNumber(counts.population_raster_tiles_opened)} GHSL tiles</strong>
+              <em>{summary.pm25_surface.record_key}</em>
+              <p>The script opens cached ZIP/GeoTIFF tiles and the selected ACAG NetCDF surface.</p>
+            </article>
+            <article className="air-denominator-join-brake">
+              <span>Claim brake</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)} joins</strong>
+              <em>{formatNumber(counts.complete_monitor_grade_rows)} complete-grade rows</em>
+              <p>Zero validated station joins and zero complete-grade rows keep coverage language blocked.</p>
+            </article>
+          </div>
+
+          <div className="air-denominator-radius-band" aria-label="Computed radius bands">
+            {summary.radius_bands.map((band) => (
+              <article key={band.radius_role} className={`air-denominator-radius air-denominator-radius-${band.radius_role}`}>
+                <span>{sentenceCaseStatus(band.radius_role)}</span>
+                <strong>{formatNumber(band.radius_km, band.radius_km < 1 ? 1 : 0)} km</strong>
+                <em>{band.radius_role === "primary" ? "source-frozen diagnostic band" : "sensitivity band"}</em>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-denominator-country-grid" aria-label="Primary 4 km denominator diagnostics by economy">
+            {rows.map((row) => {
+              const population = asNumber(row.candidate_population_exact_coordinate_dedup_sum);
+              const width = `${Math.max(4, (population / maxPopulation) * 100)}%`;
+              return (
+                <article key={row.iso3} className="air-denominator-country-row">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                    <em>{formatNumber(row.coordinate_rows)} rows; {formatNumber(row.unique_coordinate_points)} unique points</em>
+                  </div>
+                  <div className="air-denominator-country-bar">
+                    <i style={{ width }} />
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Candidate population</dt>
+                      <dd>{compact(population)}</dd>
+                    </div>
+                    <div>
+                      <dt>Nearest PM2.5</dt>
+                      <dd>{formatNumber(asNumber(row.mean_pm25_nearest_ugm3), 1)}</dd>
+                    </div>
+                    <div>
+                      <dt>Tiles</dt>
+                      <dd>{formatNumber(row.ghsl_tile_count)}</dd>
+                    </div>
+                  </dl>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-denominator-gate-grid" aria-label="Denominator join gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-denominator-gate air-denominator-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-denominator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-denominator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-denominator-join-dry-run.md" download>
+              Download evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-join-dry-run-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-join-dry-run-country.csv" download>
+              Download country CSV
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-denominator-join-dry-run.csv" download>
+              Download row CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius denominator join dry run...</p>
       )}
     </section>
   );

@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-20T14:55:57.256Z
+Generated: 2026-06-20T15:25:00.958Z
 
 Script: `scripts/verify-showcase-bench.mjs`
 

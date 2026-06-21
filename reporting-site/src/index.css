@@ -4724,6 +4724,64 @@
   background: linear-gradient(90deg, #007db8, #4f8a8b 62%, #fbb00e);
 }
 
+.air-union-section {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 251, 0.9)),
+    #ffffff;
+}
+
+.air-union-callout {
+  border-left-color: #007a5a;
+}
+
+.air-union-callout strong {
+  color: #005c44;
+}
+
+.air-union-country-row {
+  grid-template-columns: minmax(8rem, 0.6fr) minmax(11rem, 1fr) minmax(13rem, 1.05fr);
+}
+
+.air-union-bars {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.air-union-bars > div {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.air-union-bars span {
+  color: rgba(13, 27, 42, 0.56);
+  font-size: 0.68rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.air-union-bar {
+  position: relative;
+  height: 0.78rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(20, 38, 56, 0.09);
+}
+
+.air-union-bar i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  border-radius: inherit;
+}
+
+.air-union-bar-row i {
+  background: linear-gradient(90deg, #c73b3b, #fbb00e);
+}
+
+.air-union-bar-unioned i {
+  background: linear-gradient(90deg, #007db8, #007a5a);
+}
+
 .air-denominator-country-row dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

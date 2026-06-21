@@ -396,6 +396,26 @@
       "cache_policy": "No new raw denominator files are downloaded by this derivative dry-run gate. It reads cached GHSL ZIP/GeoTIFF files from air-monitoring/.cache/station-radius-ghsl-population-tiles/ and the cached ACAG NetCDF from air-monitoring/.cache/station-radius-acag-coarse-checksums/, both rehydrated by upstream custody scripts.",
       "notes": "Station-radius denominator join dry run. It reads the frozen 277-row candidate coordinate universe, opens 21 cached GHSL population tiles and the selected ACAG V6.GL.03 2023 global coarse annual PM2.5 NetCDF, evaluates 0.5 km, 4 km, and 50 km radius bands, writes 831 candidate coordinate-radius rows and 33 country-radius summary rows, computes 831 GHSL row-level population joins and 831 ACAG PM2.5 contextual joins, but keeps country-unioned catchment rows, validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_radius_country_unioned_catchment_dry_run": {
+      "script": "air-monitoring/scripts/build-station-radius-country-unioned-catchment-dry-run.py",
+      "retrieved_on": "2026-06-21",
+      "derives_from": [
+        "air_monitoring_station_radius_denominator_join_dry_run",
+        "air_monitoring_station_radius_ghsl_corrected_population_tile_custody",
+        "air_monitoring_station_radius_ghsl_large_population_tile_custody",
+        "air_monitoring_station_radius_acag_coarse_checksums",
+        "air_monitoring_station_radius_radius_rule_source_scan"
+      ],
+      "source_pages": [
+        "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2020_GLOBE_R2023A_4326_3ss/V1-0/tiles/",
+        "https://satpmdata.s3.amazonaws.com/V6GL03/CoarseResolution/GL/Annual/V6GL03.CNNPM25.0p10.GL.202301-202312.nc",
+        "https://registry.opendata.aws/surface-pm2-5-v6gl/",
+        "https://www.satpm.org/v6-gl-03",
+        "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-C/part-58/appendix-Appendix%20D%20to%20Part%2058"
+      ],
+      "cache_policy": "No new raw denominator files are downloaded by this derivative dry-run gate. It reads the committed row-level denominator join outputs plus the cached GHSL ZIP/GeoTIFF files and selected cached ACAG NetCDF created by upstream custody scripts.",
+      "notes": "Station-radius country-unioned catchment dry run. It counts each GHSL population cell at most once within each economy and source-frozen radius band, writes 33 country-radius union rows, computes 33 GHSL country-unioned population denominators and 22 ACAG union-cell PM2.5 context rows, compares them with the prior row-level buffer sums, and keeps validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius-ready economies at zero."
+    },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
       "retrieved_on": "2026-06-19",
@@ -1063,6 +1083,10 @@
     {
       "date": "2026-06-20",
       "change": "Added air_monitoring_station_radius_denominator_join_dry_run pin after physically joining 277 frozen candidate coordinate rows to cached GHSL population tiles and the selected ACAG V6.GL.03 2023 global coarse annual PM2.5 grid across 0.5 km, 4 km, and 50 km bands, writing 831 coordinate-radius rows and 33 country-radius summaries, while keeping unioned coverage, validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-21",
+      "change": "Added air_monitoring_station_radius_country_unioned_catchment_dry_run pin after counting GHSL cells at most once within each economy and source-frozen radius band, writing 33 country-radius union rows, 33 GHSL unioned population denominators, and 22 ACAG union-cell PM2.5 context rows while keeping validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius readiness at zero."
     },
     {
       "date": "2026-06-19",

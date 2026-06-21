@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-20T15:25:10.016Z",
+  "generated_at": "2026-06-21T04:16:08.324Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -261,6 +261,16 @@
       "size_human": "3.0 KB",
       "mtime": "2026-06-20T15:24:35.146Z",
       "sha256": "8fef51877973f112a32cdd5e95932ab8d1c939a30154d29bf6da00d3b8ece71c",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_country_unioned_catchment_dry_run",
+      "file": "station-radius-country-unioned-catchment-dry-run.md",
+      "label": "Air-monitoring station-radius country-unioned catchment dry run",
+      "size": 3022,
+      "size_human": "3.0 KB",
+      "mtime": "2026-06-21T04:06:17.830Z",
+      "sha256": "5cce2c8e9cc2e9db3d1b01e4091f35dbd72c4cff8ec03340c80f643bc3eac931",
       "attestation_chain": "ai-first"
     },
     {
@@ -1172,6 +1182,18 @@
       "size": 12421,
       "size_human": "12.1 KB",
       "sha256": "48d849560ea247cc7fd1f42ba0a59981c0dde528e96f10db622933366a201926"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json",
+      "size": 98050,
+      "size_human": "95.8 KB",
+      "sha256": "f69b2955bbd1ceb6a3d52450e8985b0a816ce7b230243764f8ae615125424ee0"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-country-unioned-catchment-dry-run.csv",
+      "size": 32814,
+      "size_human": "32.0 KB",
+      "sha256": "e7b09e4a77d81c6db78e1fa74b6b6220dd439a82be374a97ea229b765d974410"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",

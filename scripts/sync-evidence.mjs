@@ -75,6 +75,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_radius_rule_source_scan", file: "station-radius-radius-rule-source-scan.md", label: "Air-monitoring station-radius radius-rule source scan" },
   { key: "air_monitoring_station_radius_pm25_resolution_decision", file: "station-radius-pm25-resolution-decision.md", label: "Air-monitoring station-radius PM2.5 resolution decision" },
   { key: "air_monitoring_station_radius_denominator_join_dry_run", file: "station-radius-denominator-join-dry-run.md", label: "Air-monitoring station-radius denominator join dry run" },
+  { key: "air_monitoring_station_radius_country_unioned_catchment_dry_run", file: "station-radius-country-unioned-catchment-dry-run.md", label: "Air-monitoring station-radius country-unioned catchment dry run" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

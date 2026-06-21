@@ -4,14 +4,14 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-06-20.
+Last updated: 2026-06-21.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and country-unioned catchment denominators next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, station-specific calibration/inspection/certificate/status documentation, and a coverage-claim gate next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -53,14 +53,34 @@ ACAG coarse checksum gate, GHSL population tile-selection gate, and GHSL
 population tile checksum/transform gate, GHSL tile-routing correction gate,
 GHSL corrected population tile custody gate, GHSL large population tile
 custody gate, station-radius method prefreeze gate, station-radius
-radius-rule source scan, station-radius PM2.5 resolution decision, and the
-station-radius denominator join dry run honestly, and do not imply
+radius-rule source scan, station-radius PM2.5 resolution decision, the
+station-radius denominator join dry run, and the station-radius
+country-unioned catchment dry run honestly, and do not imply
 station-radius, complete monitor-grade, or regulatory-inventory validation
 until station-level calibration/status sources, station crosswalks, complete
-grade-basis evidence, country-unioned catchment denominators, and a
-coverage-claim gate are added.
+grade-basis evidence, and a coverage-claim gate are added.
 
 ## Last completed
+
+- **2026-06-21:** Added the station-radius country-unioned catchment dry run.
+  New derivative script
+  `scripts/build-station-radius-country-unioned-catchment-dry-run.py` reads the
+  committed row-level denominator join dry-run summary and country CSV, reuses
+  the checked GHSL/ACAG custody functions, and counts each GHSL cell at most
+  once within each economy and source-frozen radius band. It writes 33
+  country-radius union rows, computes 33 GHSL unioned population denominators
+  and 22 ACAG union-cell PM2.5 context rows, compares them with the prior
+  row-level buffer sums, and keeps validated same-station joins, complete
+  monitor-grade rows, station-radius-ready economies, and
+  `coverage_claim_allowed=false` at zero/false. At the primary 4 km band,
+  Bangladesh falls from an 80.227 million row-buffer denominator to a 24.712
+  million country-unioned denominator, making overlap visible without turning
+  the result into a monitor-coverage claim. It writes
+  `generated/air-monitoring-station-radius-country-unioned-catchment-dry-run.csv`,
+  `generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json`,
+  and `station-radius-country-unioned-catchment-dry-run.md`. This is a
+  de-duplicated candidate denominator diagnostic, not a station service area,
+  exposure estimate, coverage result, or monitor-grade promotion.
 
 - **2026-06-20:** Added the station-radius denominator join dry run. New
   derivative script `scripts/build-station-radius-denominator-join-dry-run.py`
@@ -1396,27 +1416,30 @@ coverage-claim gate are added.
    across 11 coordinate-ready economies. The same dry run deliberately records
    0 country-unioned catchment rows, 0 validated same-station join rows, 0
    complete monitor-grade rows, 0 station-radius-ready economies, and
-   `coverage_claim_allowed=false`. The next station-radius work is not a map or
-   coverage headline; it is either row-level station identity and grade closure,
-   or a country-unioned catchment computation that preserves the non-claim wall
-   until validated joins, complete grade evidence, and a claim gate exist.
+   `coverage_claim_allowed=false`. The country-unioned catchment dry run then
+   counts each GHSL cell once per economy/radius band, writes 33 country-radius
+   union rows, computes 33 GHSL unioned population denominators and 22 ACAG
+   union-cell PM2.5 context rows, and keeps coverage claims blocked. The next
+   station-radius work is not a map or coverage headline; it is row-level
+   station identity validation, complete grade closure, and a claim gate before
+   any station-radius coverage language.
 
 ## Current blockers
 
 - Station-radius or catchment analysis now has 101 OpenAQ coordinate inputs,
   230 official coordinate inputs, 21 of 21 corrected GHSL population tiles in
   local custody, 2 approved ACAG V6.GL.03 2023 coarse PM2.5 NetCDF files in
-  local custody, a source-frozen 4 km primary diagnostic radius, and a
-  denominator join dry run that computes 831 coordinate-radius rows, 831 GHSL
-  row-level population joins, 831 ACAG nearest-cell PM2.5 samples, and 33
-  country-radius summaries across 11 coordinate-ready economies. The package
-  still keeps 0 country-unioned catchment rows, 0 validated same-station join
-  rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and
-  `coverage_claim_allowed=false`. The dry-run country summaries are exact
-  coordinate-buffer diagnostics, not de-duplicated national catchments, service
-  areas, monitor coverage estimates, or exposure claims. A coverage map remains
-  blocked until row-level station identity joins, complete grade assumptions,
-  country-unioned catchment denominators, and a claim gate are all present.
+  local custody, a source-frozen 4 km primary diagnostic radius, a denominator
+  join dry run that computes 831 coordinate-radius rows, 831 GHSL row-level
+  population joins, 831 ACAG nearest-cell PM2.5 samples, and 33 country-radius
+  summaries, and a country-unioned dry run that computes 33 GHSL unioned
+  population denominators and 22 ACAG union-cell PM2.5 context rows across 11
+  coordinate-ready economies. The package still keeps 0 validated same-station
+  join rows, 0 complete monitor-grade rows, 0 station-radius-ready economies,
+  and `coverage_claim_allowed=false`. The unioned catchments are candidate
+  denominator geometry, not service areas, monitor coverage estimates, or
+  exposure claims. A coverage map remains blocked until row-level station
+  identity joins, complete grade assumptions, and a claim gate are all present.
 - Monitor-grade claims still have 0 complete classification rows. Bangladesh
   has 31 source-specific method-standard signal rows, but non-Bangladesh
   official rows and current-status scope still need station-level sources that

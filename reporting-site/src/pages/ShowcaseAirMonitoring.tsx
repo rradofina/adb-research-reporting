@@ -1439,6 +1439,71 @@ interface StationRadiusDenominatorJoinSummary {
   non_claim: string;
 }
 
+interface StationRadiusCountryUnionRow {
+  iso3: string;
+  country: string;
+  radius_km: number | string;
+  radius_role: string;
+  coordinate_rows: number;
+  unique_coordinate_points: number;
+  openaq_coordinate_rows: number;
+  official_pm25_coordinate_rows: number;
+  unioned_population_sum: number | string;
+  unioned_positive_cells: number;
+  unioned_population_tile_count: number;
+  unioned_population_windows_scanned: number;
+  row_level_candidate_population_buffer_sum: number | string;
+  row_level_exact_coordinate_dedup_sum: number | string;
+  row_to_union_population_multiplier: number | string;
+  exact_dedup_to_union_population_multiplier: number | string;
+  population_overlap_removed_from_row_sum: number | string;
+  unioned_pm25_cell_mean_ugm3: number | string;
+  unioned_pm25_cell_count: number;
+  unioned_pm25_computed: boolean | string;
+  country_union_population_computed: boolean | string;
+  coverage_claim_allowed: boolean | string;
+  validated_same_station_join_rows: number;
+  complete_monitor_grade_rows: number;
+  station_radius_ready: boolean | string;
+  reader_use: string;
+  blocking_gap: string;
+}
+
+interface StationRadiusCountryUnionSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  coverage_counts: {
+    coordinate_economies: number;
+    coordinate_rows_used: number;
+    unique_coordinate_points: number;
+    openaq_coordinate_rows_used: number;
+    official_pm25_coordinate_rows_used: number;
+    radius_bands_computed: number;
+    row_level_country_radius_rows_read: number;
+    country_union_rows_computed: number;
+    country_union_population_rows_computed: number;
+    country_union_pm25_rows_computed: number;
+    population_raster_tiles_opened: number;
+    acag_pm25_surface_opened: number;
+    primary_radius_km: number;
+    lower_sensitivity_radius_km: number;
+    upper_sensitivity_radius_km: number;
+    validated_same_station_join_rows: number;
+    complete_monitor_grade_rows: number;
+    station_radius_ready_economies: number;
+    coverage_claim_allowed: boolean;
+  };
+  evidence_gate_counts: StationRadiusDenominatorJoinGate[];
+  radius_bands: Array<{ radius_role: string; radius_km: number }>;
+  top_primary_radius_country_rows: StationRadiusCountryUnionRow[];
+  country_rows: StationRadiusCountryUnionRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4384,6 +4449,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusPm25ResolutionSummary | null>(null);
   const [stationRadiusDenominatorJoin, setStationRadiusDenominatorJoin] =
     useState<StationRadiusDenominatorJoinSummary | null>(null);
+  const [stationRadiusCountryUnion, setStationRadiusCountryUnion] =
+    useState<StationRadiusCountryUnionSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4894,6 +4961,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusDenominatorJoin(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius country union dry run HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusCountryUnion(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5519,6 +5606,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusPm25ResolutionPanel summary={stationRadiusPm25Resolution} />
 
       <AirStationRadiusDenominatorJoinPanel summary={stationRadiusDenominatorJoin} />
+
+      <AirStationRadiusCountryUnionPanel summary={stationRadiusCountryUnion} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -8667,6 +8756,161 @@ function AirStationRadiusDenominatorJoinPanel({ summary }: { summary: StationRad
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius denominator join dry run...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusCountryUnionPanel({ summary }: { summary: StationRadiusCountryUnionSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const rows = summary?.top_primary_radius_country_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const asNumber = (value: number | string | undefined) => {
+    const parsed = Number(value ?? 0);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const truthy = (value: boolean | string | undefined) =>
+    value === true || String(value ?? "").toLowerCase() === "true";
+  const compact = (value: number | string | undefined) => {
+    const parsed = asNumber(value);
+    if (parsed >= 1_000_000_000) return `${(parsed / 1_000_000_000).toFixed(1)}B`;
+    if (parsed >= 1_000_000) return `${(parsed / 1_000_000).toFixed(1)}M`;
+    if (parsed >= 1_000) return `${(parsed / 1_000).toFixed(1)}K`;
+    return formatNumber(parsed);
+  };
+  const gateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("computed")) return "computed";
+    if (normalized.includes("blocked") || normalized.includes("not_ready")) return "blocked";
+    return "available";
+  };
+  const top = rows[0];
+  const maxRowBuffer = Math.max(
+    1,
+    ...rows.map((row) => asNumber(row.row_level_candidate_population_buffer_sum)),
+  );
+
+  return (
+    <section className="showcase-section air-denominator-join-section air-union-section" aria-label="Station-radius country-unioned catchment dry run">
+      <div className="air-denominator-join-head">
+        <div>
+          <p className="kicker kicker-crimson">Country-unioned dry run</p>
+          <h2>Unioning turns the pile-up into a method warning.</h2>
+          <p>
+            This pass counts each GHSL population cell once within an economy and radius band. It exposes how much
+            duplicate buffer mass was in the row-level diagnostic, while keeping the result outside coverage language.
+          </p>
+        </div>
+        <div className="air-denominator-join-callout air-union-callout">
+          <span>Largest primary contrast</span>
+          <strong>
+            {top ? `${formatNumber(asNumber(top.row_to_union_population_multiplier), 2)}x row buffer` : "Loading"}
+          </strong>
+          <p>
+            {top
+              ? `${top.iso3}: ${compact(top.row_level_candidate_population_buffer_sum)} row-buffer sum vs ${compact(top.unioned_population_sum)} unioned denominator.`
+              : "Reading country-unioned catchment dry run."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts ? (
+        <>
+          <div className="air-denominator-join-flow" aria-label="Country-unioned catchment evidence flow">
+            <article>
+              <span>Unioned denominator rows</span>
+              <strong>{formatNumber(counts.country_union_rows_computed)}</strong>
+              <em>{formatNumber(counts.radius_bands_computed)} radius bands</em>
+              <p>Each row is an economy/radius union of candidate-coordinate GHSL cells.</p>
+            </article>
+            <article>
+              <span>Overlap made visible</span>
+              <strong>{top ? compact(top.population_overlap_removed_from_row_sum) : "Loading"}</strong>
+              <em>{top ? `${top?.iso3} row-buffer overlap` : "primary 4 km contrast"}</em>
+              <p>The comparison separates duplicate candidate-buffer mass from a unioned denominator.</p>
+            </article>
+            <article className="air-denominator-join-brake">
+              <span>Claim brake</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)} joins</strong>
+              <em>{formatNumber(counts.complete_monitor_grade_rows)} complete-grade rows</em>
+              <p>Unioned geometry is not enough: station identity, grade evidence, and claim permission remain blocked.</p>
+            </article>
+          </div>
+
+          <div className="air-denominator-country-grid air-union-country-grid" aria-label="Primary 4 km country-unioned diagnostics by economy">
+            {rows.map((row) => {
+              const unioned = asNumber(row.unioned_population_sum);
+              const rowBuffer = asNumber(row.row_level_candidate_population_buffer_sum);
+              const rowWidth = `${Math.max(4, (rowBuffer / maxRowBuffer) * 100)}%`;
+              const unionWidth = `${Math.max(4, (unioned / maxRowBuffer) * 100)}%`;
+              return (
+                <article key={row.iso3} className="air-denominator-country-row air-union-country-row">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                    <em>{formatNumber(row.coordinate_rows)} rows; {formatNumber(row.unique_coordinate_points)} unique points</em>
+                  </div>
+                  <div className="air-union-bars" aria-label={`${row.country} row buffer versus unioned denominator`}>
+                    <div>
+                      <span>Row buffer</span>
+                      <div className="air-union-bar air-union-bar-row">
+                        <i style={{ width: rowWidth }} />
+                      </div>
+                    </div>
+                    <div>
+                      <span>Unioned</span>
+                      <div className="air-union-bar air-union-bar-unioned">
+                        <i style={{ width: unionWidth }} />
+                      </div>
+                    </div>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Unioned denominator</dt>
+                      <dd>{compact(unioned)}</dd>
+                    </div>
+                    <div>
+                      <dt>Row/union</dt>
+                      <dd>{formatNumber(asNumber(row.row_to_union_population_multiplier), 2)}x</dd>
+                    </div>
+                    <div>
+                      <dt>ACAG cells</dt>
+                      <dd>{truthy(row.unioned_pm25_computed) ? formatNumber(row.unioned_pm25_cell_count) : "0"}</dd>
+                    </div>
+                  </dl>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-denominator-gate-grid" aria-label="Country union gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-denominator-gate air-denominator-gate-${gateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-denominator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-denominator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-country-unioned-catchment-dry-run.md" download>
+              Download evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-country-unioned-catchment-dry-run.csv" download>
+              Download country CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius country-unioned catchment dry run...</p>
       )}
     </section>
   );

@@ -1,0 +1,387 @@
+{
+  "generated_at": "2026-06-23T08:58:18Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_radius_coverage_claim_gate",
+  "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+  "goal_level": "L3 station-radius coverage-claim gate",
+  "claim_rule": {
+    "rule": "A station-radius coverage claim is allowed only when denominator geometry is computed, validated same-station identity rows exist, complete monitor-grade rows exist, station-radius readiness is true, and the coverage-claim flag is true for the row/economy.",
+    "allowed": false,
+    "current_decision": "block_coverage_claim"
+  },
+  "source_inputs": [
+    {
+      "path": "generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json",
+      "role": "country-unioned catchment denominator dry run"
+    },
+    {
+      "path": "generated/air-monitoring-station-radius-denominator-join-dry-run-summary.json",
+      "role": "row-level denominator join dry run"
+    },
+    {
+      "path": "generated/air-monitoring-station-radius-denominator-readiness-summary.json",
+      "role": "station-radius readiness wall"
+    },
+    {
+      "path": "generated/air-monitoring-official-openaq-candidate-review-summary.json",
+      "role": "candidate same-station review worksheet"
+    },
+    {
+      "path": "generated/air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json",
+      "role": "candidate public crosswalk source scan"
+    },
+    {
+      "path": "generated/air-monitoring-station-method-classification-audit-summary.json",
+      "role": "station-method classification audit"
+    },
+    {
+      "path": "generated/air-monitoring-station-grade-decision-ledger-summary.json",
+      "role": "station-grade decision ledger"
+    },
+    {
+      "path": "generated/air-monitoring-bmkg-near-closure-ledger-summary.json",
+      "role": "BMKG near-closure ledger"
+    },
+    {
+      "path": "generated/air-monitoring-bmkg-certificate-status-targeted-source-scan-summary.json",
+      "role": "BMKG targeted certificate/status source scan"
+    },
+    {
+      "path": "generated/air-monitoring-uzbekistan-blocker-row-followup-summary.json",
+      "role": "Uzbekistan blocker-row follow-up"
+    },
+    {
+      "path": "generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+      "role": "Uzbekistan endpoint consistency check"
+    },
+    {
+      "path": "generated/air-monitoring-uzbekistan-air-portal-namespace-summary.json",
+      "role": "Uzbekistan Air Uzbekistan portal namespace wall"
+    },
+    {
+      "path": "generated/air-monitoring-georgia-report-export-ladder-summary.json",
+      "role": "Georgia report/export verification ladder"
+    },
+    {
+      "path": "generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+      "role": "Georgia report-frequency matrix"
+    },
+    {
+      "path": "generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
+      "role": "Georgia indicator endpoint mismatch scan"
+    }
+  ],
+  "coverage_counts": {
+    "primary_radius_country_rows_checked": 11,
+    "coordinate_economies": 11,
+    "country_union_rows_computed": 33,
+    "country_union_population_rows_computed": 33,
+    "country_union_pm25_rows_computed": 22,
+    "denominator_join_rows": 831,
+    "ghsl_population_rows_computed": 831,
+    "acag_pm25_rows_computed": 831,
+    "validated_same_station_join_rows": 0,
+    "candidate_review_rows": 13,
+    "candidate_crosswalk_source_scan_rows": 6,
+    "complete_monitor_grade_rows": 0,
+    "station_method_classified_rows": 22,
+    "current_status_confirmed_rows": 0,
+    "calibration_status_available_rows": 0,
+    "station_radius_ready_economies": 0,
+    "station_radius_ready_rows": 0,
+    "claim_allowed_country_rows": 0,
+    "coverage_claim_allowed": false
+  },
+  "blocker_context_counts": {
+    "bmkg_target_rows": 22,
+    "bmkg_method_classified_rows": 22,
+    "bmkg_dashboard_current_online_rows": 21,
+    "bmkg_station_specific_inspection_log_rows": 0,
+    "bmkg_station_specific_calibration_certificate_rows": 0,
+    "bmkg_calibration_status_rows": 0,
+    "uzbekistan_unresolved_blocker_rows": 3,
+    "uzbekistan_endpoint_mismatch_rows": 3,
+    "uzbekistan_air_portal_resolution_rows": 0,
+    "georgia_verified_report_closure_rows": 0,
+    "georgia_indicator_exact_station_code_rows": 0
+  },
+  "release_decision_counts": [
+    {
+      "release_decision": "block_coverage_claim",
+      "rows": 11
+    }
+  ],
+  "evidence_gate_counts": [
+    {
+      "status": "computed",
+      "gate": "Country-unioned denominator geometry",
+      "rows": 33,
+      "reader_use": "GHSL cells are unioned once per economy/radius band; this is geometry only."
+    },
+    {
+      "status": "computed",
+      "gate": "ACAG PM2.5 context",
+      "rows": 22,
+      "reader_use": "Coarse grid-cell context exists for some union cells, but it is not exposure."
+    },
+    {
+      "status": "blocked",
+      "gate": "Validated same-station identity",
+      "rows": 0,
+      "reader_use": "No public crosswalk or shared station-ID evidence validates official/OpenAQ rows as the same station."
+    },
+    {
+      "status": "partly_available",
+      "gate": "Station-method classification",
+      "rows": 22,
+      "reader_use": "BMKG method rows are classified, but method classification is not complete monitor-grade evidence."
+    },
+    {
+      "status": "blocked",
+      "gate": "Current status confirmed",
+      "rows": 0,
+      "reader_use": "Visibility or dashboard status is not station-status certification in the grade ledger."
+    },
+    {
+      "status": "blocked",
+      "gate": "Calibration/status record",
+      "rows": 0,
+      "reader_use": "No row-level calibration-status record is available."
+    },
+    {
+      "status": "blocked",
+      "gate": "Complete monitor-grade rows",
+      "rows": 0,
+      "reader_use": "No station row has complete public monitor-grade closure."
+    },
+    {
+      "status": "blocked",
+      "gate": "Station-radius readiness",
+      "rows": 0,
+      "reader_use": "No economy is ready for a station-radius coverage claim."
+    },
+    {
+      "status": "blocked",
+      "gate": "Coverage claim permission",
+      "rows": 0,
+      "reader_use": "The publication surface may show denominator diagnostics only."
+    }
+  ],
+  "display_rows": [
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "BGD-station-radius-coverage-claim-gate",
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "radius_km": 4.0,
+      "coordinate_rows": 53,
+      "openaq_coordinate_rows": 22,
+      "official_pm25_coordinate_rows": 31,
+      "unioned_population_sum": 24712113.168,
+      "row_level_candidate_population_buffer_sum": 80227280.523,
+      "row_to_union_population_multiplier": 3.246,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "IDN-station-radius-coverage-claim-gate",
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "radius_km": 4.0,
+      "coordinate_rows": 58,
+      "openaq_coordinate_rows": 36,
+      "official_pm25_coordinate_rows": 22,
+      "unioned_population_sum": 15154232.146,
+      "row_level_candidate_population_buffer_sum": 27402298.671,
+      "row_to_union_population_multiplier": 1.808,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "MYS-station-radius-coverage-claim-gate",
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "radius_km": 4.0,
+      "coordinate_rows": 85,
+      "openaq_coordinate_rows": 18,
+      "official_pm25_coordinate_rows": 67,
+      "unioned_population_sum": 7627671.214,
+      "row_level_candidate_population_buffer_sum": 9745622.205,
+      "row_to_union_population_multiplier": 1.278,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "UZB-station-radius-coverage-claim-gate",
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "radius_km": 4.0,
+      "coordinate_rows": 44,
+      "openaq_coordinate_rows": 4,
+      "official_pm25_coordinate_rows": 40,
+      "unioned_population_sum": 5050716.278,
+      "row_level_candidate_population_buffer_sum": 7965633.979,
+      "row_to_union_population_multiplier": 1.577,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "AFG-station-radius-coverage-claim-gate",
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "radius_km": 4.0,
+      "coordinate_rows": 2,
+      "openaq_coordinate_rows": 2,
+      "official_pm25_coordinate_rows": 0,
+      "unioned_population_sum": 1571500.293,
+      "row_level_candidate_population_buffer_sum": 2375372.397,
+      "row_to_union_population_multiplier": 1.512,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "MMR-station-radius-coverage-claim-gate",
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "radius_km": 4.0,
+      "coordinate_rows": 3,
+      "openaq_coordinate_rows": 3,
+      "official_pm25_coordinate_rows": 0,
+      "unioned_population_sum": 1384417.179,
+      "row_level_candidate_population_buffer_sum": 1602881.76,
+      "row_to_union_population_multiplier": 1.158,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "GEO-station-radius-coverage-claim-gate",
+      "iso3": "GEO",
+      "country": "Georgia",
+      "radius_km": 4.0,
+      "coordinate_rows": 18,
+      "openaq_coordinate_rows": 2,
+      "official_pm25_coordinate_rows": 16,
+      "unioned_population_sum": 1332609.962,
+      "row_level_candidate_population_buffer_sum": 2609473.9,
+      "row_to_union_population_multiplier": 1.958,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    },
+    {
+      "generated_at": "2026-06-23T08:58:18Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_coverage_claim_gate",
+      "method": "air_monitoring_station_radius_coverage_claim_gate_v1",
+      "claim_gate_id": "TJK-station-radius-coverage-claim-gate",
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "radius_km": 4.0,
+      "coordinate_rows": 7,
+      "openaq_coordinate_rows": 7,
+      "official_pm25_coordinate_rows": 0,
+      "unioned_population_sum": 1219474.147,
+      "row_level_candidate_population_buffer_sum": 1584518.836,
+      "row_to_union_population_multiplier": 1.299,
+      "denominator_geometry_gate": "computed",
+      "station_identity_gate": "blocked",
+      "monitor_grade_gate": "blocked",
+      "station_radius_readiness_gate": "blocked",
+      "coverage_claim_gate": "blocked",
+      "coverage_claim_allowed": false,
+      "release_decision": "block_coverage_claim",
+      "reader_use": "Show as denominator geometry only; do not describe as monitor coverage or people served.",
+      "blocking_gaps": "validated same-station identity||complete monitor-grade evidence||station-radius readiness||coverage-claim permission",
+      "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+    }
+  ],
+  "outputs": {
+    "csv": "generated/air-monitoring-station-radius-coverage-claim-gate.csv",
+    "summary_json": "generated/air-monitoring-station-radius-coverage-claim-gate-summary.json",
+    "markdown": "station-radius-coverage-claim-gate.md"
+  },
+  "non_claim": "This gate decides whether the current station-radius denominator evidence may be described as monitor coverage. It does not validate same-station joins, does not certify complete monitor grade, does not estimate people served by monitors, and does not create an exposure or regulatory-coverage claim."
+}

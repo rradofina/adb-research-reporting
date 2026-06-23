@@ -4782,6 +4782,137 @@
   background: linear-gradient(90deg, #007db8, #007a5a);
 }
 
+.air-claim-gate-section {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(252, 244, 239, 0.9)),
+    #ffffff;
+}
+
+.air-claim-gate-callout {
+  border-left-color: #7f1d1d;
+}
+
+.air-claim-gate-callout strong {
+  color: #7f1d1d;
+}
+
+.air-claim-gate-rule {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(127, 29, 29, 0.18);
+  border-left: 0.35rem solid #7f1d1d;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-claim-gate-rule span,
+.air-claim-gate-row span,
+.air-claim-gate-blocker span {
+  color: rgba(13, 27, 42, 0.58);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.air-claim-gate-rule p,
+.air-claim-gate-row p,
+.air-claim-gate-blocker p {
+  margin: 0;
+  color: rgba(13, 27, 42, 0.72);
+  line-height: 1.45;
+}
+
+.air-claim-gate-stop {
+  border-left: 0.3rem solid #7f1d1d;
+}
+
+.air-claim-gate-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.air-claim-gate-row-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.air-claim-gate-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.45fr) minmax(12rem, 0.8fr) minmax(15rem, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem;
+  border: 1px solid rgba(20, 38, 56, 0.12);
+  border-left: 0.3rem solid #c73b3b;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-claim-gate-row strong,
+.air-claim-gate-blocker strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #142638;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.air-claim-gate-row em {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(13, 27, 42, 0.62);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.air-claim-gate-bar {
+  position: relative;
+  height: 0.8rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(20, 38, 56, 0.1);
+}
+
+.air-claim-gate-bar i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c73b3b, #fbb00e 70%, #007db8);
+}
+
+.air-claim-gate-blocker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.air-claim-gate-blocker {
+  padding: 0.95rem;
+  border: 1px solid rgba(20, 38, 56, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-claim-gate-blocker:nth-child(1) {
+  border-left: 0.3rem solid #007db8;
+}
+
+.air-claim-gate-blocker:nth-child(2) {
+  border-left: 0.3rem solid #fbb00e;
+}
+
+.air-claim-gate-blocker:nth-child(3) {
+  border-left: 0.3rem solid #c73b3b;
+}
+
 .air-denominator-country-row dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4814,6 +4945,10 @@
 
 .air-denominator-gate-blocked {
   border-left: 0.3rem solid #c73b3b;
+}
+
+.air-denominator-gate-partly {
+  border-left: 0.3rem solid #fbb00e;
 }
 
 .air-denominator-gate-available {
@@ -4865,12 +5000,15 @@
 @media (max-width: 1120px) {
   .air-denominator-join-head,
   .air-denominator-join-flow,
+  .air-claim-gate-row,
   .air-denominator-country-row {
     grid-template-columns: 1fr;
   }
 
   .air-denominator-radius-band,
   .air-denominator-country-grid,
+  .air-claim-gate-grid,
+  .air-claim-gate-blocker-grid,
   .air-denominator-gate-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4883,6 +5021,8 @@
 
   .air-denominator-radius-band,
   .air-denominator-country-grid,
+  .air-claim-gate-grid,
+  .air-claim-gate-blocker-grid,
   .air-denominator-gate-grid,
   .air-denominator-country-row dl {
     grid-template-columns: 1fr;

@@ -1,7 +1,7 @@
 {
   "$schema_version": "1",
   "description": "Pinned external source versions for every program in this repository. Governed by CONSTITUTION.md section 11. Updated any time a source is bumped. Retrieval dates should be updated whenever a pipeline refreshes its cache.",
-  "updated": "2026-06-20",
+  "updated": "2026-06-21",
   "sources": {
     "geoboundaries": {
       "release": "gbOpen",
@@ -415,6 +415,29 @@
       ],
       "cache_policy": "No new raw denominator files are downloaded by this derivative dry-run gate. It reads the committed row-level denominator join outputs plus the cached GHSL ZIP/GeoTIFF files and selected cached ACAG NetCDF created by upstream custody scripts.",
       "notes": "Station-radius country-unioned catchment dry run. It counts each GHSL population cell at most once within each economy and source-frozen radius band, writes 33 country-radius union rows, computes 33 GHSL country-unioned population denominators and 22 ACAG union-cell PM2.5 context rows, compares them with the prior row-level buffer sums, and keeps validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius-ready economies at zero."
+    },
+    "air_monitoring_station_radius_coverage_claim_gate": {
+      "script": "air-monitoring/scripts/build-station-radius-coverage-claim-gate.py",
+      "retrieved_on": "2026-06-21",
+      "derives_from": [
+        "air_monitoring_station_radius_country_unioned_catchment_dry_run",
+        "air_monitoring_station_radius_denominator_join_dry_run",
+        "air_monitoring_station_radius_denominator_readiness",
+        "air_monitoring_official_openaq_candidate_review",
+        "air_monitoring_official_openaq_candidate_crosswalk_source_scan",
+        "air_monitoring_station_method_classification_audit",
+        "air_monitoring_station_grade_decision_ledger",
+        "air_monitoring_bmkg_near_closure_ledger",
+        "air_monitoring_bmkg_certificate_status_targeted_source_scan",
+        "air_monitoring_uzbekistan_blocker_row_followup",
+        "air_monitoring_uzbekistan_endpoint_consistency",
+        "air_monitoring_uzbekistan_air_portal_namespace",
+        "air_monitoring_georgia_report_export_ladder",
+        "air_monitoring_georgia_report_frequency_matrix",
+        "air_monitoring_georgia_indicator_endpoint_mismatch"
+      ],
+      "cache_policy": "No network or raw-data retrieval is performed by this derivative gate; rerun after upstream denominator, station-identity, grade, BMKG, Uzbekistan, or Georgia artifacts change.",
+      "notes": "Station-radius coverage-claim gate. It reads committed denominator and country-unioned geometry plus station-identity, monitor-grade, BMKG, Uzbekistan, and Georgia blocker artifacts; checks 11 primary-radius country rows, 33 unioned denominator rows, 831 row-level GHSL/ACAG joins, 0 validated same-station joins, 0 complete monitor-grade rows, and 0 station-radius-ready economies; and blocks all 11 country rows from coverage language."
     },
     "air_monitoring_regulator_source_inventory": {
       "seed": "air-monitoring/source-inputs/regulator-source-inventory-seed.csv",
@@ -1087,6 +1110,10 @@
     {
       "date": "2026-06-21",
       "change": "Added air_monitoring_station_radius_country_unioned_catchment_dry_run pin after counting GHSL cells at most once within each economy and source-frozen radius band, writing 33 country-radius union rows, 33 GHSL unioned population denominators, and 22 ACAG union-cell PM2.5 context rows while keeping validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-21",
+      "change": "Added air_monitoring_station_radius_coverage_claim_gate pin after reading the denominator, country-unioned, station-identity, monitor-grade, BMKG, Uzbekistan, and Georgia blocker artifacts; checking 11 primary-radius economy rows, 33 unioned denominator rows, and 831 row-level GHSL/ACAG joins; and blocking all station-radius coverage language because validated same-station joins, complete monitor-grade rows, station-radius-ready economies, and claim-allowed rows remain at zero."
     },
     {
       "date": "2026-06-19",

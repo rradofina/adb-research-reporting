@@ -1504,6 +1504,81 @@ interface StationRadiusCountryUnionSummary {
   non_claim: string;
 }
 
+interface StationRadiusClaimGateRow {
+  claim_gate_id: string;
+  iso3: string;
+  country: string;
+  radius_km: number | string;
+  coordinate_rows: number;
+  openaq_coordinate_rows: number;
+  official_pm25_coordinate_rows: number;
+  unioned_population_sum: number | string;
+  row_level_candidate_population_buffer_sum: number | string;
+  row_to_union_population_multiplier: number | string;
+  denominator_geometry_gate: string;
+  station_identity_gate: string;
+  monitor_grade_gate: string;
+  station_radius_readiness_gate: string;
+  coverage_claim_gate: string;
+  coverage_claim_allowed: boolean | string;
+  release_decision: string;
+  reader_use: string;
+  blocking_gaps: string;
+  non_claim: string;
+}
+
+interface StationRadiusClaimGateSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  claim_rule: {
+    rule: string;
+    allowed: boolean;
+    current_decision: string;
+  };
+  coverage_counts: {
+    primary_radius_country_rows_checked: number;
+    coordinate_economies: number;
+    country_union_rows_computed: number;
+    country_union_population_rows_computed: number;
+    country_union_pm25_rows_computed: number;
+    denominator_join_rows: number;
+    ghsl_population_rows_computed: number;
+    acag_pm25_rows_computed: number;
+    validated_same_station_join_rows: number;
+    candidate_review_rows: number;
+    candidate_crosswalk_source_scan_rows: number;
+    complete_monitor_grade_rows: number;
+    station_method_classified_rows: number;
+    current_status_confirmed_rows: number;
+    calibration_status_available_rows: number;
+    station_radius_ready_economies: number;
+    station_radius_ready_rows: number;
+    claim_allowed_country_rows: number;
+    coverage_claim_allowed: boolean;
+  };
+  blocker_context_counts: {
+    bmkg_target_rows: number;
+    bmkg_method_classified_rows: number;
+    bmkg_dashboard_current_online_rows: number;
+    bmkg_station_specific_inspection_log_rows: number;
+    bmkg_station_specific_calibration_certificate_rows: number;
+    bmkg_calibration_status_rows: number;
+    uzbekistan_unresolved_blocker_rows: number;
+    uzbekistan_endpoint_mismatch_rows: number;
+    uzbekistan_air_portal_resolution_rows: number;
+    georgia_verified_report_closure_rows: number;
+    georgia_indicator_exact_station_code_rows: number;
+  };
+  release_decision_counts: Array<{ release_decision: string; rows: number }>;
+  evidence_gate_counts: StationRadiusDenominatorJoinGate[];
+  display_rows: StationRadiusClaimGateRow[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4451,6 +4526,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusDenominatorJoinSummary | null>(null);
   const [stationRadiusCountryUnion, setStationRadiusCountryUnion] =
     useState<StationRadiusCountryUnionSummary | null>(null);
+  const [stationRadiusClaimGate, setStationRadiusClaimGate] =
+    useState<StationRadiusClaimGateSummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -4981,6 +5058,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusCountryUnion(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-coverage-claim-gate-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius coverage claim gate HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusClaimGate(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5608,6 +5705,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusDenominatorJoinPanel summary={stationRadiusDenominatorJoin} />
 
       <AirStationRadiusCountryUnionPanel summary={stationRadiusCountryUnion} />
+
+      <AirStationRadiusClaimGatePanel summary={stationRadiusClaimGate} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -8911,6 +9010,170 @@ function AirStationRadiusCountryUnionPanel({ summary }: { summary: StationRadius
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius country-unioned catchment dry run...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusClaimGatePanel({ summary }: { summary: StationRadiusClaimGateSummary | null }) {
+  const counts = summary?.coverage_counts;
+  const context = summary?.blocker_context_counts;
+  const rows = summary?.display_rows ?? [];
+  const gates = summary?.evidence_gate_counts ?? [];
+  const asNumber = (value: number | string | undefined) => {
+    const parsed = Number(value ?? 0);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const compact = (value: number | string | undefined, digits = 1) => {
+    const parsed = asNumber(value);
+    if (Math.abs(parsed) >= 1_000_000) return `${formatNumber(parsed / 1_000_000, digits)}m`;
+    if (Math.abs(parsed) >= 1_000) return `${formatNumber(parsed / 1_000, digits)}k`;
+    return formatNumber(parsed, digits);
+  };
+  const localGateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("computed")) return "computed";
+    if (normalized.includes("partly") || normalized.includes("partial")) return "partly";
+    if (normalized.includes("blocked")) return "blocked";
+    return "available";
+  };
+  const maxPopulation = Math.max(1, ...rows.map((row) => asNumber(row.unioned_population_sum)));
+  const blockerCards = context
+    ? [
+        {
+          label: "BMKG near-closure",
+          value: context.bmkg_method_classified_rows,
+          detail: `${formatNumber(context.bmkg_calibration_status_rows)} calibration/status rows; ${formatNumber(context.bmkg_station_specific_calibration_certificate_rows)} station certificates`,
+        },
+        {
+          label: "Uzbekistan blocker rows",
+          value: context.uzbekistan_unresolved_blocker_rows,
+          detail: `${formatNumber(context.uzbekistan_endpoint_mismatch_rows)} endpoint mismatches; ${formatNumber(context.uzbekistan_air_portal_resolution_rows)} namespace closures`,
+        },
+        {
+          label: "Georgia station-code closure",
+          value: context.georgia_verified_report_closure_rows,
+          detail: `${formatNumber(context.georgia_indicator_exact_station_code_rows)} exact indicator station-code rows`,
+        },
+      ]
+    : [];
+
+  return (
+    <section className="showcase-section air-denominator-join-section air-claim-gate-section" aria-label="Station-radius coverage claim gate">
+      <div className="air-denominator-join-head">
+        <div>
+          <p className="kicker kicker-crimson">Coverage claim gate</p>
+          <h2>The map is allowed to be useful; the claim is not allowed through.</h2>
+          <p>
+            This gate reads the denominator geometry, same-station identity checks, and monitor-grade ledgers before the
+            page can say anything that sounds like monitor coverage or people served.
+          </p>
+        </div>
+        <div className="air-denominator-join-callout air-claim-gate-callout">
+          <span>Coverage permission</span>
+          <strong>{summary?.claim_rule.allowed ? "Allowed" : "Blocked"}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.claim_allowed_country_rows)} of ${formatNumber(counts.primary_radius_country_rows_checked)} primary-radius economy rows can use coverage language.`
+              : "Reading the coverage-claim rule."}
+          </p>
+        </div>
+      </div>
+
+      {summary && counts && context ? (
+        <>
+          <div className="air-claim-gate-rule">
+            <span>Mechanical rule</span>
+            <p>{summary.claim_rule.rule}</p>
+          </div>
+
+          <div className="air-denominator-join-flow air-claim-gate-flow" aria-label="Coverage claim gate evidence flow">
+            <article>
+              <span>Computed geometry</span>
+              <strong>{formatNumber(counts.country_union_rows_computed)} union rows</strong>
+              <em>{formatNumber(counts.denominator_join_rows)} row-level joins</em>
+              <p>Country/radius denominators are computed, including the unioned GHSL population layer.</p>
+            </article>
+            <article className="air-denominator-join-brake">
+              <span>Evidence lift still missing</span>
+              <strong>{formatNumber(counts.validated_same_station_join_rows)} validated joins</strong>
+              <em>{formatNumber(counts.complete_monitor_grade_rows)} complete-grade rows</em>
+              <p>The station identity and grade prerequisites remain at zero.</p>
+            </article>
+            <article className="air-claim-gate-stop">
+              <span>Near-closure is not closure</span>
+              <strong>{formatNumber(context.bmkg_method_classified_rows)} BMKG method rows</strong>
+              <em>{formatNumber(context.bmkg_calibration_status_rows)} certificates/status records</em>
+              <p>Method and dashboard evidence improve the review queue, but they do not release coverage language.</p>
+            </article>
+          </div>
+
+          <div className="air-denominator-gate-grid air-claim-gate-grid" aria-label="Coverage claim evidence gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-denominator-gate air-denominator-gate-${localGateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-claim-gate-row-grid" aria-label="Largest blocked primary-radius rows">
+            {rows.map((row) => {
+              const unioned = asNumber(row.unioned_population_sum);
+              const width = `${Math.max(4, (unioned / maxPopulation) * 100)}%`;
+              const missing = row.blocking_gaps.split("||").filter(Boolean);
+              return (
+                <article key={row.claim_gate_id} className="air-claim-gate-row">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                    <em>{formatNumber(row.coordinate_rows)} coordinate rows</em>
+                  </div>
+                  <div>
+                    <span>Unioned denominator</span>
+                    <strong>{compact(unioned)}</strong>
+                    <div className="air-claim-gate-bar" aria-label={`${row.country} blocked denominator scale`}>
+                      <i style={{ width }} />
+                    </div>
+                  </div>
+                  <div>
+                    <span>{sentenceCaseStatus(row.release_decision)}</span>
+                    <p>{missing.join(", ")}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-claim-gate-blocker-grid" aria-label="Source-specific blocker context">
+            {blockerCards.map((card) => (
+              <article key={card.label} className="air-claim-gate-blocker">
+                <span>{card.label}</span>
+                <strong>{formatNumber(card.value)} rows</strong>
+                <p>{card.detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-denominator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-denominator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-coverage-claim-gate.md" download>
+              Download evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-coverage-claim-gate-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-coverage-claim-gate.csv" download>
+              Download gate CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius coverage claim gate...</p>
       )}
     </section>
   );

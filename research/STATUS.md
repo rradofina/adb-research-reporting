@@ -12,7 +12,7 @@ Last updated: 2026-06-21.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, and station-radius country-unioned catchment dry run exist; station-radius/catchment, validated station-crosswalk, and complete monitor-grade claims remain blocked until station-level calibration/inspection/certificate/status sources, crosswalk evidence, complete grade evidence, and a coverage-claim gate are added) |
+| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, and station-radius coverage-claim gate exist; station-radius/catchment, validated station-crosswalk, and complete monitor-grade claims remain blocked because station-level calibration/inspection/certificate/status sources, crosswalk evidence, complete grade evidence, station-radius-ready economies, and claim-allowed rows remain at zero) |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -256,10 +256,12 @@ overrides priority by editing this list.
    831 ACAG nearest-cell PM2.5 samples, and 33 country-radius summaries across
    11 coordinate-ready economies. The country-unioned catchment dry run then
    counts each GHSL cell at most once within each economy/radius band, writes
-   33 country-radius union rows, computes 33 GHSL unioned population
-   denominators and 22 ACAG union-cell PM2.5 context rows, and still keeps 0
-   validated same-station joins, 0 complete monitor-grade rows, 0
-   station-radius-ready economies, and `coverage_claim_allowed=false`.
+   33 country-radius union rows, and computes 33 GHSL unioned population
+   denominators plus 22 ACAG union-cell PM2.5 context rows. The
+   coverage-claim gate then checks 11 primary-radius economy rows and still
+   keeps 0 validated same-station joins, 0 complete monitor-grade rows, 0
+   station-radius-ready economies, 0 claim-allowed rows, and
+   `coverage_claim_allowed=false`.
    The
    BMKG
    near-closure ledger then
@@ -399,6 +401,21 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-06-21 (air-monitoring station-radius coverage-claim gate):** Added
+  `air-monitoring/scripts/build-station-radius-coverage-claim-gate.py`,
+  generated
+  `air-monitoring/generated/air-monitoring-station-radius-coverage-claim-gate.csv`
+  and
+  `air-monitoring/generated/air-monitoring-station-radius-coverage-claim-gate-summary.json`,
+  and wrote `air-monitoring/station-radius-coverage-claim-gate.md`. The
+  derivative gate reads the denominator join, country-unioned catchment,
+  station-identity, monitor-grade, BMKG, Uzbekistan, and Georgia blocker
+  artifacts; checks 11 primary-radius economy rows, 33 unioned denominator
+  rows, and 831 row-level GHSL/ACAG joins; and blocks all 11 country rows
+  because validated same-station joins, complete monitor-grade rows,
+  station-radius-ready economies, and claim-allowed rows remain at 0. The
+  public route now renders the claim gate immediately after the
+  country-unioned overlap wall.
 - **2026-06-21 (air-monitoring station-radius country-unioned catchment dry
   run):** Added
   `air-monitoring/scripts/build-station-radius-country-unioned-catchment-dry-run.py`,

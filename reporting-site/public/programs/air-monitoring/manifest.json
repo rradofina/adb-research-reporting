@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-21T04:16:08.324Z",
+  "generated_at": "2026-06-23T08:59:58.227Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -271,6 +271,16 @@
       "size_human": "3.0 KB",
       "mtime": "2026-06-21T04:06:17.830Z",
       "sha256": "5cce2c8e9cc2e9db3d1b01e4091f35dbd72c4cff8ec03340c80f643bc3eac931",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_coverage_claim_gate",
+      "file": "station-radius-coverage-claim-gate.md",
+      "label": "Air-monitoring station-radius coverage-claim gate",
+      "size": 3919,
+      "size_human": "3.8 KB",
+      "mtime": "2026-06-23T08:58:18.967Z",
+      "sha256": "0c74abd3c78843ede63328027f50e20a659fa2a1b632b43751e077c06e290aa4",
       "attestation_chain": "ai-first"
     },
     {
@@ -1194,6 +1204,18 @@
       "size": 32814,
       "size_human": "32.0 KB",
       "sha256": "e7b09e4a77d81c6db78e1fa74b6b6220dd439a82be374a97ea229b765d974410"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-coverage-claim-gate-summary.json",
+      "size": 19489,
+      "size_human": "19.0 KB",
+      "sha256": "70b8621bad64a412ccc37058a106df7367ca3c4014ccd4e10596b382f389a3a2"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-coverage-claim-gate.csv",
+      "size": 9245,
+      "size_human": "9.0 KB",
+      "sha256": "18f85d105f0f43c486a392d14bba4a7ec7f1b5b853caa3c3a8747b49a110814b"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",

@@ -1579,6 +1579,56 @@ interface StationRadiusClaimGateSummary {
   non_claim: string;
 }
 
+interface StationIdentityCountryRow {
+  iso3: string;
+  country: string;
+  identity_candidate_rows: number;
+  validated_same_station_rows: number;
+  station_radius_identity_ready_rows: number;
+  source_screened_rows: number;
+  one_signal_rows: number;
+  separate_nearby_rows: number;
+  public_feed_not_join_ready_rows: number;
+  open_review_rows: number;
+}
+
+interface StationIdentitySummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  identity_rule: {
+    rule: string;
+    validated_rows: number;
+    station_radius_identity_ready_rows: number;
+    current_decision: string;
+  };
+  coverage_counts: {
+    identity_candidate_rows_checked: number;
+    countries_with_identity_candidates: number;
+    near_plus_name_candidate_rows_before_source_screen: number;
+    source_screened_near_plus_name_rows: number;
+    source_screened_is_monitor_rows: number;
+    source_screened_public_feed_rows: number;
+    one_signal_identity_rows: number;
+    near_only_identity_rows: number;
+    name_overlap_not_near_identity_rows: number;
+    shared_station_id_rows: number;
+    source_owner_crosswalk_rows: number;
+    current_status_crosswalk_rows: number;
+    documented_colocation_rows: number;
+    validated_same_station_rows: number;
+    station_radius_identity_ready_rows: number;
+  };
+  decision_counts: Array<{ release_decision: string; rows: number }>;
+  lane_counts: Array<{ identity_lane: string; rows: number }>;
+  country_rows: StationIdentityCountryRow[];
+  evidence_gate_counts: StationRadiusDenominatorJoinGate[];
+  non_claim: string;
+}
+
 interface RegulatorSourceGate {
   gate: string;
   status: string;
@@ -4528,6 +4578,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusCountryUnionSummary | null>(null);
   const [stationRadiusClaimGate, setStationRadiusClaimGate] =
     useState<StationRadiusClaimGateSummary | null>(null);
+  const [stationIdentityGate, setStationIdentityGate] =
+    useState<StationIdentitySummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
   const [regulatorStation, setRegulatorStation] = useState<RegulatorStationSummary | null>(null);
   const [officialOpenAQ, setOfficialOpenAQ] = useState<OfficialOpenAQSummary | null>(null);
@@ -5058,6 +5110,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusCountryUnion(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-identity-validation-gate-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station identity validation gate HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationIdentityGate(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5705,6 +5777,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationRadiusDenominatorJoinPanel summary={stationRadiusDenominatorJoin} />
 
       <AirStationRadiusCountryUnionPanel summary={stationRadiusCountryUnion} />
+
+      <AirStationIdentityValidationPanel summary={stationIdentityGate} />
 
       <AirStationRadiusClaimGatePanel summary={stationRadiusClaimGate} />
 
@@ -9010,6 +9084,159 @@ function AirStationRadiusCountryUnionPanel({ summary }: { summary: StationRadius
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius country-unioned catchment dry run...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationIdentityValidationPanel({ summary }: { summary: StationIdentitySummary | null }) {
+  const counts = summary?.coverage_counts;
+  const gates = summary?.evidence_gate_counts ?? [];
+  const countries = summary?.country_rows ?? [];
+  const decisions = summary?.decision_counts ?? [];
+  const maxCandidates = Math.max(1, ...countries.map((row) => row.identity_candidate_rows));
+  const localGateTone = (status: string) => {
+    const normalized = status.toLowerCase();
+    if (normalized.includes("computed")) return "computed";
+    if (normalized.includes("blocked")) return "blocked";
+    if (normalized.includes("partly") || normalized.includes("partial")) return "partly";
+    return "available";
+  };
+  return (
+    <section className="showcase-section air-denominator-join-section air-identity-gate-section" aria-label="Station-identity validation gate">
+      <div className="air-denominator-join-head">
+        <div>
+          <p className="kicker kicker-crimson">Station identity gate</p>
+          <h2>The same-station join is still closed.</h2>
+          <p>
+            This gate consolidates the official/OpenAQ identity candidates and releases a row only when public evidence provides a shared ID,
+            source-owner crosswalk, current-status crosswalk, or documented co-location.
+          </p>
+        </div>
+        <div className="air-denominator-join-callout air-identity-gate-callout">
+          <span>Identity-ready rows</span>
+          <strong>{counts ? formatNumber(counts.station_radius_identity_ready_rows) : "..."}</strong>
+          <p>
+            {counts
+              ? `${formatNumber(counts.validated_same_station_rows)} validated same-station rows from ${formatNumber(
+                  counts.identity_candidate_rows_checked,
+                )} identity candidates.`
+              : "Reading the station-identity rule."}
+          </p>
+        </div>
+      </div>
+      {summary && counts ? (
+        <>
+          <div className="air-claim-gate-rule air-identity-gate-rule">
+            <span>Mechanical rule</span>
+            <p>{summary.identity_rule.rule}</p>
+          </div>
+
+          <div className="air-denominator-join-flow air-identity-gate-flow" aria-label="Station identity evidence flow">
+            <article>
+              <span>Candidate universe</span>
+              <strong>{formatNumber(counts.identity_candidate_rows_checked)} rows</strong>
+              <em>{formatNumber(counts.countries_with_identity_candidates)} economies</em>
+              <p>Rows come from near-plus-name source scans plus one-signal identity leads.</p>
+            </article>
+            <article>
+              <span>Source-screened strongest lane</span>
+              <strong>{formatNumber(counts.source_screened_near_plus_name_rows)} rows</strong>
+              <em>
+                {formatNumber(counts.source_screened_is_monitor_rows)} monitor; {formatNumber(counts.source_screened_public_feed_rows)} public feed
+              </em>
+              <p>The strongest candidate lane is already reviewed, but not released as same-station evidence.</p>
+            </article>
+            <article className="air-denominator-join-brake">
+              <span>Validation evidence</span>
+              <strong>{formatNumber(counts.validated_same_station_rows)} joins</strong>
+              <em>
+                {formatNumber(
+                  counts.shared_station_id_rows +
+                    counts.source_owner_crosswalk_rows +
+                    counts.current_status_crosswalk_rows +
+                    counts.documented_colocation_rows,
+                )}{" "}
+                validation signals
+              </em>
+              <p>Proximity and name overlap remain insufficient for station-radius coverage.</p>
+            </article>
+          </div>
+
+          <div className="air-denominator-gate-grid air-claim-gate-grid air-identity-gate-grid" aria-label="Station identity evidence gates">
+            {gates.map((gate) => (
+              <article key={gate.gate} className={`air-denominator-gate air-denominator-gate-${localGateTone(gate.status)}`}>
+                <span>{sentenceCaseStatus(gate.status)}</span>
+                <strong>{gate.gate}</strong>
+                <em>{formatNumber(gate.rows)} rows</em>
+                <p>{gate.reader_use}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-identity-country-grid" aria-label="Station identity country queue">
+            {countries.map((row) => {
+              const width = `${Math.max(4, (row.identity_candidate_rows / maxCandidates) * 100)}%`;
+              return (
+                <article key={row.iso3} className="air-identity-country">
+                  <div>
+                    <span>{row.iso3}</span>
+                    <strong>{row.country}</strong>
+                    <em>{formatNumber(row.identity_candidate_rows)} identity candidates</em>
+                  </div>
+                  <div>
+                    <span>Queue mix</span>
+                    <p>
+                      {formatNumber(row.source_screened_rows)} source-screened; {formatNumber(row.one_signal_rows)} one-signal.
+                    </p>
+                    <div className="air-claim-gate-bar air-identity-gate-bar" aria-label={`${row.country} identity candidate queue scale`}>
+                      <i style={{ width }} />
+                    </div>
+                  </div>
+                  <div>
+                    <span>Released</span>
+                    <p>
+                      {formatNumber(row.validated_same_station_rows)} validated; {formatNumber(row.station_radius_identity_ready_rows)} radius-ready.
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="air-claim-gate-blocker-grid air-identity-decision-grid" aria-label="Station identity release decisions">
+            {decisions.map((decision) => (
+              <article key={decision.release_decision} className="air-claim-gate-blocker">
+                <span>{sentenceCaseStatus(decision.release_decision)}</span>
+                <strong>{formatNumber(decision.rows)} rows</strong>
+                <p>
+                  {decision.release_decision === "separate_nearby_stations"
+                    ? "Source scans distinguish these candidates as nearby, not same-station joins."
+                    : decision.release_decision === "public_feed_nearby_not_join_ready"
+                      ? "Nearby public-feed rows remain out of official station identity joins."
+                      : "One-signal rows stay open until a second public validation signal appears."}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-denominator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-denominator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-identity-validation-gate.md" download>
+              Download evidence note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-identity-validation-gate-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-identity-validation-gate.csv" download>
+              Download gate CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-identity validation gate...</p>
       )}
     </section>
   );

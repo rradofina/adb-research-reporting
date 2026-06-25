@@ -4,14 +4,14 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-06-21.
+Last updated: 2026-06-25.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-radius coverage-claim gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and station-specific calibration/inspection/certificate/status documentation remain next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-identity validation gate, station-radius coverage-claim gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and station-specific calibration/inspection/certificate/status documentation remain next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -55,13 +55,31 @@ GHSL corrected population tile custody gate, GHSL large population tile
 custody gate, station-radius method prefreeze gate, station-radius
 radius-rule source scan, station-radius PM2.5 resolution decision, the
 station-radius denominator join dry run, the station-radius
-country-unioned catchment dry run, and the station-radius coverage-claim gate
-honestly, and do not imply station-radius coverage, complete monitor-grade, or
-regulatory-inventory validation until station-level calibration/status
-sources, station crosswalks, complete grade-basis evidence, and
+country-unioned catchment dry run, the station-identity validation gate, and
+the station-radius coverage-claim gate honestly, and do not imply
+station-radius coverage, complete monitor-grade, or regulatory-inventory
+validation until station-level calibration/status sources, validated station
+identity/crosswalk evidence, complete grade-basis evidence, and
 station-radius-ready economy rows exist.
 
 ## Last completed
+
+- **2026-06-25:** Added the station-identity validation gate. New derivative
+  script `scripts/build-station-identity-validation-gate.py` reads the
+  committed candidate review worksheet summary, candidate crosswalk source
+  scan, candidate public-feed source scan, and one-signal review queue. It
+  checks 44 identity candidates across 4 economies: 13 source-screened
+  near-plus-name rows and 31 one-signal identity rows. It finds 0 shared
+  station IDs, 0 source-owner crosswalk rows, 0 current-status crosswalk rows,
+  0 documented co-location rows, 0 validated same-station rows, and 0
+  station-radius identity-ready rows. It writes
+  `generated/air-monitoring-station-identity-validation-gate.csv`,
+  `generated/air-monitoring-station-identity-validation-gate-summary.json`,
+  and `station-identity-validation-gate.md`. The downstream coverage-claim
+  gate now reads this identity gate and still blocks all station-radius
+  coverage language. This is a station-identity evidence gate, not a
+  monitor-grade certification, station service area, people-served estimate,
+  exposure estimate, or validated coverage result.
 
 - **2026-06-21:** Added the station-radius coverage-claim gate. New derivative
   script `scripts/build-station-radius-coverage-claim-gate.py` reads the
@@ -1310,7 +1328,18 @@ station-radius-ready economy rows exist.
 
 ## Next focused work
 
-1. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
+1. Treat the station-identity validation gate as the current same-station
+   closure wall. It checks 44 identity candidates across 4 economies,
+   including the 13 source-screened near-plus-name rows and 31 one-signal
+   identity rows, and still finds 0 shared station IDs, 0 source-owner
+   crosswalk rows, 0 current-status crosswalk rows, 0 documented co-location
+   rows, 0 validated same-station rows, and 0 station-radius identity-ready
+   rows. The next useful identity source is not another proximity/name scan or
+   display refresh; it is public source-owner or regulator evidence that gives
+   a shared station identifier, explicit official/OpenAQ crosswalk,
+   current-status crosswalk, or documented co-location for a row. Keep every
+   row outside station-radius joins until that evidence exists.
+2. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
    endpoint-consistency check, external-context wall, and Air Uzbekistan portal
    namespace wall now prove the exact official row blocker remains unresolved
    across official surfaces, nearby public context, and a second public portal
@@ -1328,7 +1357,7 @@ station-radius-ready economy rows exist.
    107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, and
    resolves those exact row blockers with complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-2. For the 22 BMKG rows, the station-specific status audit proves the exact
+3. For the 22 BMKG rows, the station-specific status audit proves the exact
    station-detail pages are active public display objects, the API parity check
    proves those fields remain telemetry-only, the regional status/source scan
    closes current status for Banjarbaru only, and the CEWS dashboard scan now
@@ -1364,7 +1393,7 @@ station-radius-ready economy rows exist.
    that names exact BMKG station IDs or station names and gives row-level
    inspection, PM2.5 calibration certificate/status, or explicit grade
    evidence.
-3. For the 16 Georgia rows, use the report-verification scan, the
+4. For the 16 Georgia rows, use the report-verification scan, the
    report/export ladder, the verification-policy wall, the report-frequency
    matrix, the NEA station network/launch source scan, and the indicator
    endpoint mismatch scan as the
@@ -1391,23 +1420,23 @@ station-radius-ready economy rows exist.
    or indicator API route variant; it is a verified source, station
    method/status table, calibration/status record, or regulator document that
    names exact station codes without that caution.
-4. For the 22 BMKG rows now summarized in the near-closure ledger, find
+5. For the 22 BMKG rows now summarized in the near-closure ledger, find
    station-specific inspection logs, PM2.5 calibration certificates/status
    records, or explicit station-grade records before any row is promoted to
    complete monitor-grade.
    For Uzbekistan, instrument hints and exact blocker rows remain outside grade
    promotion until exact blockers, endpoint disagreements, status, and
    certification are resolved.
-5. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
+6. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
-6. Deepen the 70 official-context-only rows only after the method-context lane
+7. Deepen the 70 official-context-only rows only after the method-context lane
    is exhausted; official portal provenance alone is not enough for grade
    language.
-7. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
+8. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
-8. Use `station-radius-denominator-readiness.md`,
+9. Use `station-radius-denominator-readiness.md`,
    `station-radius-denominator-source-plan.md`,
    `station-radius-denominator-acquisition-routes.md`,
    `station-radius-denominator-file-manifest-prefreeze.md`,

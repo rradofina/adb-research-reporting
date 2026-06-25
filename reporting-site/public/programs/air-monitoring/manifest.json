@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-23T08:59:58.227Z",
+  "generated_at": "2026-06-25T15:28:24.396Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -274,13 +274,23 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_station_identity_validation_gate",
+      "file": "station-identity-validation-gate.md",
+      "label": "Air-monitoring station-identity validation gate",
+      "size": 2642,
+      "size_human": "2.6 KB",
+      "mtime": "2026-06-25T15:22:01.980Z",
+      "sha256": "d11d9632fe7081c4b92ba6644b8369105f5be4755dfac1bf1b52b45a7ceb8e9b",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_station_radius_coverage_claim_gate",
       "file": "station-radius-coverage-claim-gate.md",
       "label": "Air-monitoring station-radius coverage-claim gate",
       "size": 3919,
       "size_human": "3.8 KB",
-      "mtime": "2026-06-23T08:58:18.967Z",
-      "sha256": "0c74abd3c78843ede63328027f50e20a659fa2a1b632b43751e077c06e290aa4",
+      "mtime": "2026-06-25T15:22:11.168Z",
+      "sha256": "51a36cb99d14af8bcf8770af111da99a78941e8bbc6be46c81212ec557314175",
       "attestation_chain": "ai-first"
     },
     {
@@ -1158,6 +1168,18 @@
       "sha256": "18b5f22d345550dc8d02d22990c99cbf9e3d6252610619cd47e3a57ade9ad79d"
     },
     {
+      "file": "generated/air-monitoring-station-identity-validation-gate-summary.json",
+      "size": 26531,
+      "size_human": "25.9 KB",
+      "sha256": "54d24fdc556660c9830cd37c091ff5db99f9b13062a497e1c295d72896bf38b8"
+    },
+    {
+      "file": "generated/air-monitoring-station-identity-validation-gate.csv",
+      "size": 38895,
+      "size_human": "38.0 KB",
+      "sha256": "109a96abb6bd251a366b2197ba7fd0d5ab60df227b54fe9a4f5c19d6bfd627a0"
+    },
+    {
       "file": "generated/air-monitoring-station-method-classification-audit-summary.json",
       "size": 18145,
       "size_human": "17.7 KB",
@@ -1207,15 +1229,15 @@
     },
     {
       "file": "generated/air-monitoring-station-radius-coverage-claim-gate-summary.json",
-      "size": 19489,
-      "size_human": "19.0 KB",
-      "sha256": "70b8621bad64a412ccc37058a106df7367ca3c4014ccd4e10596b382f389a3a2"
+      "size": 19643,
+      "size_human": "19.2 KB",
+      "sha256": "ffed2f75445e1c376daf9585bd71e8f7cca268d8eaf2173c95ccb4789d431cf2"
     },
     {
       "file": "generated/air-monitoring-station-radius-coverage-claim-gate.csv",
       "size": 9245,
       "size_human": "9.0 KB",
-      "sha256": "18f85d105f0f43c486a392d14bba4a7ec7f1b5b853caa3c3a8747b49a110814b"
+      "sha256": "3498c86c3ef66f9b7f8f836007509f9e3eb966d06a103fe5ddd5b93fd7fa51dc"
     },
     {
       "file": "generated/air-monitoring-station-radius-denominator-acquisition-routes-summary.json",

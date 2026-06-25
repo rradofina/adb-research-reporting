@@ -4913,6 +4913,83 @@
   border-left: 0.3rem solid #c73b3b;
 }
 
+.air-identity-gate-section {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 252, 0.9)),
+    #ffffff;
+}
+
+.air-identity-gate-callout {
+  border-left-color: #007db8;
+}
+
+.air-identity-gate-callout strong {
+  color: #007db8;
+}
+
+.air-identity-gate-rule {
+  border-color: rgba(0, 125, 184, 0.2);
+  border-left-color: #007db8;
+}
+
+.air-identity-gate-flow > article:last-child {
+  border-left: 0.3rem solid #c73b3b;
+}
+
+.air-identity-country-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.air-identity-country {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.45fr) minmax(12rem, 0.85fr) minmax(12rem, 0.7fr);
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem;
+  border: 1px solid rgba(20, 38, 56, 0.12);
+  border-left: 0.3rem solid #007db8;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.air-identity-country span {
+  color: rgba(13, 27, 42, 0.58);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.air-identity-country strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #142638;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.air-identity-country em {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(13, 27, 42, 0.62);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.air-identity-country p {
+  margin: 0;
+  color: rgba(13, 27, 42, 0.72);
+  line-height: 1.45;
+}
+
+.air-identity-gate-bar i {
+  background: linear-gradient(90deg, #007db8, #5a8227 70%, #fbb00e);
+}
+
 .air-denominator-country-row dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5001,6 +5078,7 @@
   .air-denominator-join-head,
   .air-denominator-join-flow,
   .air-claim-gate-row,
+  .air-identity-country,
   .air-denominator-country-row {
     grid-template-columns: 1fr;
   }
@@ -5009,6 +5087,8 @@
   .air-denominator-country-grid,
   .air-claim-gate-grid,
   .air-claim-gate-blocker-grid,
+  .air-identity-gate-grid,
+  .air-identity-decision-grid,
   .air-denominator-gate-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5023,6 +5103,8 @@
   .air-denominator-country-grid,
   .air-claim-gate-grid,
   .air-claim-gate-blocker-grid,
+  .air-identity-gate-grid,
+  .air-identity-decision-grid,
   .air-denominator-gate-grid,
   .air-denominator-country-row dl {
     grid-template-columns: 1fr;

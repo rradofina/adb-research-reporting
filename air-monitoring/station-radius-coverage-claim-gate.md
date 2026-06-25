@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Generated: 2026-06-23T08:58:18Z
+Generated: 2026-06-25T15:22:11Z
 
 ## What this adds
 

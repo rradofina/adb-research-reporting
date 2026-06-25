@@ -25,6 +25,7 @@ DENOMINATOR_JOIN_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-station-radius-d
 READINESS_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-station-radius-denominator-readiness-summary.json"
 CANDIDATE_REVIEW_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-official-openaq-candidate-review-summary.json"
 CANDIDATE_CROSSWALK_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-official-openaq-candidate-crosswalk-source-scan-summary.json"
+STATION_IDENTITY_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-station-identity-validation-gate-summary.json"
 STATION_METHOD_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-station-method-classification-audit-summary.json"
 STATION_GRADE_LEDGER_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-station-grade-decision-ledger-summary.json"
 BMKG_NEAR_CLOSURE_SUMMARY_JSON = GENERATED_DIR / "air-monitoring-bmkg-near-closure-ledger-summary.json"
@@ -203,6 +204,7 @@ def build_summary(generated_at: str, rows: list[dict[str, Any]], inputs: dict[st
     readiness = inputs["readiness"]
     candidate_review = inputs["candidate_review"]
     candidate_crosswalk = inputs["candidate_crosswalk"]
+    station_identity = inputs["station_identity"]
     station_method = inputs["station_method"]
     station_grade = inputs["station_grade"]
     bmkg_near = inputs["bmkg_near"]
@@ -243,6 +245,7 @@ def build_summary(generated_at: str, rows: list[dict[str, Any]], inputs: dict[st
             count_from(readiness, "coverage_counts", "validated_same_station_join_rows"),
             count_from(candidate_review, "coverage_counts", "validated_same_station_rows"),
             count_from(candidate_crosswalk, "coverage_counts", "validated_same_station_rows"),
+            count_from(station_identity, "coverage_counts", "validated_same_station_rows"),
         ),
         "candidate_review_rows": count_from(candidate_review, "coverage_counts", "near_plus_name_candidate_rows"),
         "candidate_crosswalk_source_scan_rows": count_from(candidate_crosswalk, "coverage_counts", "is_monitor_candidate_rows_scanned"),
@@ -377,6 +380,7 @@ def build_summary(generated_at: str, rows: list[dict[str, Any]], inputs: dict[st
             source_input(READINESS_SUMMARY_JSON, "station-radius readiness wall"),
             source_input(CANDIDATE_REVIEW_SUMMARY_JSON, "candidate same-station review worksheet"),
             source_input(CANDIDATE_CROSSWALK_SUMMARY_JSON, "candidate public crosswalk source scan"),
+            source_input(STATION_IDENTITY_SUMMARY_JSON, "station-identity validation gate"),
             source_input(STATION_METHOD_SUMMARY_JSON, "station-method classification audit"),
             source_input(STATION_GRADE_LEDGER_SUMMARY_JSON, "station-grade decision ledger"),
             source_input(BMKG_NEAR_CLOSURE_SUMMARY_JSON, "BMKG near-closure ledger"),
@@ -454,6 +458,7 @@ def main() -> None:
         "readiness": read_json(READINESS_SUMMARY_JSON),
         "candidate_review": read_json(CANDIDATE_REVIEW_SUMMARY_JSON),
         "candidate_crosswalk": read_json(CANDIDATE_CROSSWALK_SUMMARY_JSON),
+        "station_identity": read_json(STATION_IDENTITY_SUMMARY_JSON),
         "station_method": read_json(STATION_METHOD_SUMMARY_JSON),
         "station_grade": read_json(STATION_GRADE_LEDGER_SUMMARY_JSON),
         "bmkg_near": read_json(BMKG_NEAR_CLOSURE_SUMMARY_JSON),

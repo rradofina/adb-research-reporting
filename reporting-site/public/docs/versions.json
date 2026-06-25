@@ -416,6 +416,18 @@
       "cache_policy": "No new raw denominator files are downloaded by this derivative dry-run gate. It reads the committed row-level denominator join outputs plus the cached GHSL ZIP/GeoTIFF files and selected cached ACAG NetCDF created by upstream custody scripts.",
       "notes": "Station-radius country-unioned catchment dry run. It counts each GHSL population cell at most once within each economy and source-frozen radius band, writes 33 country-radius union rows, computes 33 GHSL country-unioned population denominators and 22 ACAG union-cell PM2.5 context rows, compares them with the prior row-level buffer sums, and keeps validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius-ready economies at zero."
     },
+    "air_monitoring_station_identity_validation_gate": {
+      "script": "air-monitoring/scripts/build-station-identity-validation-gate.py",
+      "retrieved_on": "2026-06-25",
+      "derives_from": [
+        "air_monitoring_official_openaq_candidate_review",
+        "air_monitoring_official_openaq_candidate_crosswalk_source_scan",
+        "air_monitoring_official_openaq_candidate_public_feed_source_scan",
+        "air_monitoring_one_signal_review_queue"
+      ],
+      "cache_policy": "No network or raw-data retrieval is performed by this derivative gate; rerun after upstream candidate-review, candidate-source-scan, public-feed-source-scan, or one-signal review artifacts change.",
+      "notes": "Station-identity validation gate. It consolidates 44 official/OpenAQ identity candidates across 4 economies, including 13 source-screened near-plus-name rows and 31 one-signal identity rows, and releases 0 validated same-station rows and 0 station-radius identity-ready rows because public shared station ID, source-owner crosswalk, current-status crosswalk, and documented co-location evidence remain absent."
+    },
     "air_monitoring_station_radius_coverage_claim_gate": {
       "script": "air-monitoring/scripts/build-station-radius-coverage-claim-gate.py",
       "retrieved_on": "2026-06-21",
@@ -423,6 +435,7 @@
         "air_monitoring_station_radius_country_unioned_catchment_dry_run",
         "air_monitoring_station_radius_denominator_join_dry_run",
         "air_monitoring_station_radius_denominator_readiness",
+        "air_monitoring_station_identity_validation_gate",
         "air_monitoring_official_openaq_candidate_review",
         "air_monitoring_official_openaq_candidate_crosswalk_source_scan",
         "air_monitoring_station_method_classification_audit",
@@ -1110,6 +1123,10 @@
     {
       "date": "2026-06-21",
       "change": "Added air_monitoring_station_radius_country_unioned_catchment_dry_run pin after counting GHSL cells at most once within each economy and source-frozen radius band, writing 33 country-radius union rows, 33 GHSL unioned population denominators, and 22 ACAG union-cell PM2.5 context rows while keeping validated same-station joins, complete monitor-grade rows, coverage claims, and station-radius readiness at zero."
+    },
+    {
+      "date": "2026-06-25",
+      "change": "Added air_monitoring_station_identity_validation_gate pin after consolidating 44 official/OpenAQ identity candidates across 4 economies into a no-network row-level gate: 13 source-screened near-plus-name rows, 31 one-signal identity rows, 0 shared station ID rows, 0 source-owner crosswalk rows, 0 current-status crosswalk rows, 0 documented co-location rows, 0 validated same-station rows, and 0 station-radius identity-ready rows."
     },
     {
       "date": "2026-06-21",

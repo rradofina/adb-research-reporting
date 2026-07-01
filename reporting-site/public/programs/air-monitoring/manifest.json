@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-07-01T09:47:25.666Z",
+  "generated_at": "2026-07-01T09:53:28.937Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -23,6 +23,16 @@
     }
   },
   "artifacts": [
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 6769,
+      "size_human": "6.6 KB",
+      "mtime": "2026-07-01T09:51:38.250Z",
+      "sha256": "291fb6404fb2e5d782880a1aea9526e7155613aca3812f4d771899b5f24aee95",
+      "attestation_chain": "ai-first"
+    },
     {
       "key": "literature",
       "file": "literature.md",

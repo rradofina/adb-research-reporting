@@ -50,6 +50,7 @@ const ARTIFACTS = [
   { key: "readme", file: "README.md", label: "Overview" },
   { key: "reproduce", file: "REPRODUCE.md", label: "Reproducibility guide" },
   { key: "source_action", file: "SOURCE-ACTION.md", label: "Source action packet" },
+  { key: "paper_charter", file: "paper-charter.md", label: "Paper charter" },
   { key: "literature", file: "literature.md", label: "Literature review" },
   { key: "scoring", file: "scoring.md", label: "Scoring rubric" },
   { key: "preregistration", file: "pre-registration.md", label: "Pre-registration" },

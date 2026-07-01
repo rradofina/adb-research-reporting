@@ -64,6 +64,17 @@ station-radius-ready economy rows exist.
 
 ## Last completed
 
+- **2026-07-01 (later):** Added `paper-charter.md` for the air-monitoring
+  report frame. The charter converts the current evidence package into the
+  reader-facing primitives the program now needs before further publication
+  work: policy/statistical problem, measurement blind spot, source hierarchy,
+  claim type, main visual, validation target, caveat box, policy use case, and
+  publication target. It keeps the current claim type as a diagnostic
+  measurement audit, blocks station service-area, people-served,
+  complete-inventory, reference-grade monitor-count, and country-ranking
+  language, and defines the next loop question as: what exact public document
+  would convert one blocked row into a station-radius claim-eligible row?
+
 - **2026-07-01:** Added the BMKG station-grade closure gate. New no-network
   derivative script `scripts/build-bmkg-station-grade-closure-gate.py` reads
   the committed BMKG near-closure ledger, targeted certificate/status scan,
@@ -1348,7 +1359,15 @@ station-radius-ready economy rows exist.
 
 ## Next focused work
 
-1. Treat the station-identity validation gate as the current same-station
+1. Use `paper-charter.md` as the report-frame gate before new source mining.
+   The next loop should target one exact public document that could convert a
+   blocked row into a station-radius claim-eligible row: station ID crosswalk,
+   station-specific current operating status, PM2.5 calibration
+   certificate/status, inspection log, explicit grade record, verified report,
+   or source-owner confirmation. If a named source-access route cannot produce
+   that document from public sources, publish the wall honestly instead of
+   widening the scrape.
+2. Treat the station-identity validation gate as the current same-station
    closure wall. It checks 44 identity candidates across 4 economies,
    including the 13 source-screened near-plus-name rows and 31 one-signal
    identity rows, and still finds 0 shared station IDs, 0 source-owner
@@ -1359,7 +1378,7 @@ station-radius-ready economy rows exist.
    a shared station identifier, explicit official/OpenAQ crosswalk,
    current-status crosswalk, or documented co-location for a row. Keep every
    row outside station-radius joins until that evidence exists.
-2. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
+3. For Uzbekistan station IDs 107, 728, and 737, the blocker follow-up,
    endpoint-consistency check, external-context wall, and Air Uzbekistan portal
    namespace wall now prove the exact official row blocker remains unresolved
    across official surfaces, nearby public context, and a second public portal
@@ -1377,7 +1396,7 @@ station-radius-ready economy rows exist.
    107, 728, or 737, or explicitly crosswalks them to IDs 1, 20, and 26, and
    resolves those exact row blockers with complete monitor-grade
    classification. Keep every unresolved row outside station-radius joins.
-3. For the 22 BMKG rows, the station-specific status audit proves the exact
+4. For the 22 BMKG rows, the station-specific status audit proves the exact
    station-detail pages are active public display objects, the API parity check
    proves those fields remain telemetry-only, the regional status/source scan
    closes current status for Banjarbaru only, and the CEWS dashboard scan now
@@ -1419,7 +1438,7 @@ station-radius-ready economy rows exist.
    that names exact BMKG station IDs or station names and gives row-level
    inspection, PM2.5 calibration certificate/status, or explicit grade
    evidence.
-4. For the 16 Georgia rows, use the report-verification scan, the
+5. For the 16 Georgia rows, use the report-verification scan, the
    report/export ladder, the verification-policy wall, the report-frequency
    matrix, the NEA station network/launch source scan, and the indicator
    endpoint mismatch scan as the
@@ -1446,23 +1465,23 @@ station-radius-ready economy rows exist.
    or indicator API route variant; it is a verified source, station
    method/status table, calibration/status record, or regulator document that
    names exact station codes without that caution.
-5. For the 22 BMKG rows now summarized in the near-closure ledger and the
+6. For the 22 BMKG rows now summarized in the near-closure ledger and the
    strict station-grade closure gate, find station-specific inspection logs,
    PM2.5 calibration certificates/status records, or explicit station-grade
    records before any row is promoted to complete monitor-grade.
    For Uzbekistan, instrument hints and exact blocker rows remain outside grade
    promotion until exact blockers, endpoint disagreements, status, and
    certification are resolved.
-6. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
+7. For the 2 caution-blocked Sri Lanka rows, keep grade promotion blocked
    unless a public source clarifies that the exact row is not a sensor or
    under-test feed.
-7. Deepen the 70 official-context-only rows only after the method-context lane
+8. Deepen the 70 official-context-only rows only after the method-context lane
    is exhausted; official portal provenance alone is not enough for grade
    language.
-8. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
+9. Resolve the 3 scripted retrieval errors and deepen the 11 targeted-search
    gaps, especially the 9 zero-OpenAQ economies with no official inventory
    candidate found in the first pass.
-9. Use `station-radius-denominator-readiness.md`,
+10. Use `station-radius-denominator-readiness.md`,
    `station-radius-denominator-source-plan.md`,
    `station-radius-denominator-acquisition-routes.md`,
    `station-radius-denominator-file-manifest-prefreeze.md`,

@@ -79,7 +79,7 @@ Research/
 │   ├── _blog/                 Tier 4 blog posts
 │   ├── _social/               Tier 5 social cards
 │   └── _slides/               Tier 6 Quarto slide markdown
-├── reporting-site/            Vite + React + Tailwind public site
+├── reporting-site/            Next.js App Router + React + Tailwind public site
 ├── luminosity-gap/            legacy Next.js site (original Program 0; see its README)
 ├── research/                  lab-ops files (STATUS, factory, register, decisions)
 ├── scripts/                   cross-program tooling and gates

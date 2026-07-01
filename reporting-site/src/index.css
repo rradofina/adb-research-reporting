@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 /* =========================================================
    Development Evidence Lab — design system
@@ -126,21 +125,22 @@
     --track-chip: 0.05em;
     --weight-medium: 500;
     --weight-semibold: 600;
+    --font-sans: var(--font-source-sans), system-ui, -apple-system,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: var(--font-jetbrains-mono), ui-monospace, Menlo, Consolas,
+      monospace;
   }
 
-  html, body, #root { height: 100%; }
+  html, body { min-height: 100%; }
 
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-feature-settings: "liga" 1, "kern" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-
-  #root { position: relative; z-index: 1; }
 
   ::selection {
     background: rgba(0, 125, 184, 0.2);
@@ -148,8 +148,7 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI",
-      Arial, sans-serif;
+    font-family: var(--font-sans);
     letter-spacing: var(--track-tight);
   }
 

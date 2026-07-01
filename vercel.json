@@ -1,31 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "buildCommand": "cd reporting-site && npm install && npm run build",
-  "outputDirectory": "reporting-site/dist",
-  "installCommand": "echo 'skipping root install; build command handles it'",
-  "rewrites": [
-    {
-      "source": "/articles",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/data",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/docs",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/programs",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/((?!assets/|data/|articles/|programs/|docs/|references\\.json|favicon\\.svg|robots\\.txt).*)",
-      "destination": "/index.html"
-    }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "npm run build --prefix reporting-site",
+  "installCommand": "npm install --prefix reporting-site",
   "headers": [
     {
       "source": "/data/(.*)",
@@ -34,9 +11,9 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/programs/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=600" }
       ]
     }
   ]

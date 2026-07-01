@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { ReactNode, CSSProperties } from "react";
 
 /** Editorial number marker, e.g. "№ 03" */
@@ -205,7 +205,7 @@ export function Chip({
 
 /** Article / program card */
 export function FeatureCard({
-  to,
+  href,
   number,
   kicker,
   title,
@@ -213,7 +213,7 @@ export function FeatureCard({
   meta,
   accent = "ink",
 }: {
-  to: string;
+  href: string;
   number?: number | string;
   kicker: string;
   title: string;
@@ -230,8 +230,7 @@ export function FeatureCard({
           ? { color: "var(--ochre)" }
           : {};
   return (
-    <Link
-      to={to}
+    <Link href={href}
       className="group relative block py-7 first:pt-0 border-b border-[var(--rule-soft)] transition-colors hover:border-[var(--rule)]"
     >
       <div className="grid grid-cols-12 gap-6 items-start">

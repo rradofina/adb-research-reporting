@@ -3,15 +3,26 @@
  *
  * Minimal institutional site chrome.
  */
-import { Link, NavLink, Outlet } from "react-router-dom";
+"use client";
 
-export default function Layout() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+
+function navClass(pathname: string, href: string) {
+  const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
+  return "site-nav-link " + (active ? "site-nav-link-active" : "");
+}
+
+export default function Layout({ children }: { children: ReactNode }) {
+  const pathname = usePathname() ?? "/";
+
   return (
     <div className="site-page">
       {/* Header */}
       <header className="site-header">
         <div className="site-shell site-header-row">
-          <Link to="/" className="site-brand">
+          <Link href="/" className="site-brand">
             <span className="site-brand-mark" aria-hidden="true">
               D
             </span>
@@ -23,34 +34,18 @@ export default function Layout() {
             </span>
           </Link>
           <nav className="site-nav">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
-              }
-            >
+            <Link href="/" className={navClass(pathname, "/")}>
               Home
-            </NavLink>
-            <Link to="/#topics" className="site-nav-link">
+            </Link>
+            <Link href="/#topics" className="site-nav-link">
               Topics
             </Link>
-            <NavLink
-              to="/showcase"
-              className={({ isActive }) =>
-                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
-              }
-            >
+            <Link href="/showcase" className={navClass(pathname, "/showcase")}>
               Evidence
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
-              }
-            >
+            </Link>
+            <Link href="/about" className={navClass(pathname, "/about")}>
               About
-            </NavLink>
+            </Link>
             <a
               href="https://github.com/rradofina/adb-research-reporting"
               target="_blank"
@@ -65,7 +60,7 @@ export default function Layout() {
 
       {/* Main content */}
       <main className="site-shell site-main">
-        <Outlet />
+        {children}
       </main>
 
       {/* Footer */}
@@ -77,12 +72,12 @@ export default function Layout() {
             is disclosed and empirical values trace to committed scripts.
           </div>
           <div className="site-footer-links">
-            <Link to="/about">About</Link>
-            <Link to="/native-charts">Data visuals</Link>
-            <Link to="/deepenings">Evidence checks</Link>
-            <Link to="/docs">Docs</Link>
-            <Link to="/constitution">Constitution</Link>
-            <Link to="/license">License</Link>
+            <Link href="/about">About</Link>
+            <Link href="/native-charts">Data visuals</Link>
+            <Link href="/deepenings">Evidence checks</Link>
+            <Link href="/docs">Docs</Link>
+            <Link href="/constitution">Constitution</Link>
+            <Link href="/license">License</Link>
             <a
               href="https://github.com/rradofina/adb-research-reporting"
               target="_blank"

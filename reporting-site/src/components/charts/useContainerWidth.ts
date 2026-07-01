@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
  * over a fixed-size raster that just scales down on mobile.
  */
 export function useContainerWidth<T extends HTMLElement = HTMLDivElement>(): [
-  React.RefObject<T>,
+  React.RefObject<T | null>,
   number,
 ] {
   const ref = useRef<T>(null);

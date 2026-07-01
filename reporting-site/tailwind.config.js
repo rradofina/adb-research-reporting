@@ -1,6 +1,6 @@
 /** @type {import("tailwindcss").Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -9,7 +9,7 @@ export default {
         // with ADB's exact system-ui fallback so the render degrades the way
         // adb.org does.
         sans: [
-          '"Source Sans 3"',
+          "var(--font-source-sans)",
           "system-ui",
           "-apple-system",
           '"Segoe UI"',
@@ -22,7 +22,7 @@ export default {
         // `font-display` / `font-serif` usage stays on-brand (full ADB
         // corporate identity has no editorial serif).
         display: [
-          '"Source Sans 3"',
+          "var(--font-source-sans)",
           "system-ui",
           "-apple-system",
           '"Segoe UI"',
@@ -30,7 +30,7 @@ export default {
           "sans-serif",
         ],
         serif: [
-          '"Source Sans 3"',
+          "var(--font-source-sans)",
           "system-ui",
           "-apple-system",
           '"Segoe UI"',
@@ -39,7 +39,7 @@ export default {
         ],
         // Mono: JetBrains Mono — data tables, code, and attestation stamps.
         mono: [
-          '"JetBrains Mono"',
+          "var(--font-jetbrains-mono)",
           "ui-monospace",
           "Menlo",
           "Consolas",

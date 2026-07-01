@@ -1,15 +1,15 @@
 /**
  * Lightweight Supabase REST client for the reporting site.
  *
- * No npm dep — uses fetch + the project URL + anon key from import.meta.env.
+ * No npm dep — uses fetch + the project URL + anon key from public env vars.
  * Reads only public-schema views (read-only by construction).
  *
  * The website still reads /data/*.json by default (faster, no network round-trip,
  * works offline). Use this client when you need cross-program SQL joins or
  * dynamic filtering that's awkward in static JSON.
  */
-const URL = import.meta.env.VITE_SUPABASE_URL as string | undefined;
-const ANON = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
+const URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 export const supabaseEnabled = Boolean(URL && ANON);
 

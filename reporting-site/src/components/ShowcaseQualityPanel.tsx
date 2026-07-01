@@ -2,11 +2,19 @@ import {
   getShowcaseReportDepth,
   getShowcaseReportQuality,
   showcaseReports,
+  type ShowcaseReadiness,
 } from "../data/showcaseReports";
 
 interface ShowcaseQualityPanelProps {
   reportId: number;
 }
+
+const publicReadinessLabel: Record<ShowcaseReadiness, string> = {
+  prototype: "Prototype evidence",
+  "l3-candidate": "Evidence package",
+  "evidence-audit": "Evidence audit",
+  "owner-gated": "Owner-gated source note",
+};
 
 export function ShowcaseQualityPanel({ reportId }: ShowcaseQualityPanelProps) {
   const report = showcaseReports.find((item) => item.id === reportId);
@@ -20,11 +28,15 @@ export function ShowcaseQualityPanel({ reportId }: ShowcaseQualityPanelProps) {
       <div className="showcase-section-copy">
         <p className="kicker kicker-crimson">Current QA stage</p>
         <h2>
-          {quality.readinessLabel}: {report.shortTitle}
+          {publicReadinessLabel[quality.readiness]}: {report.shortTitle}
         </h2>
         <p>{quality.qaSummary}</p>
       </div>
       <div className="showcase-fact-list showcase-quality-facts">
+        <div>
+          <span>Technical stage</span>
+          <strong>{quality.readinessLabel}</strong>
+        </div>
         <div>
           <span>Operational use</span>
           <strong>{depth.operationalUse}</strong>

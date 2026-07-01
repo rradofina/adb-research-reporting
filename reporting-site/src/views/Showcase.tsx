@@ -3,7 +3,22 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
-import { getShowcaseReportQuality, showcaseReports } from "../data/showcaseReports";
+import {
+  getShowcaseReportQuality,
+  showcaseReports,
+  type ShowcaseReadiness,
+} from "../data/showcaseReports";
+
+const publicReadinessLabel: Record<ShowcaseReadiness, string> = {
+  prototype: "Prototype evidence",
+  "l3-candidate": "Evidence package",
+  "evidence-audit": "Evidence audit",
+  "owner-gated": "Owner-gated source note",
+};
+
+function publicStatusLabel(label: string) {
+  return label.replace(/^L\d+\s+/i, "");
+}
 
 interface SprintCoverage {
   raw_price_rows_kept: number;
@@ -202,7 +217,7 @@ export default function Showcase() {
     <article className="showcase-page">
       <header className="showcase-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title">
             When Food Prices Spike, Is the Weather Local?
           </h1>
@@ -359,14 +374,15 @@ export default function Showcase() {
 
       <section className="showcase-section">
         <div className="showcase-section-copy">
-          <p className="kicker">Showcase queue</p>
+          <p className="kicker">Evidence library</p>
           <h2>
-            First batch: {showcaseReports.length} candidates, {showcaseReports.length} report surfaces.
+            {showcaseReports.length} report surfaces with source paths and caveats.
           </h2>
           <p>
-            The showcase is deliberately batch-based. Reports enter only after
-            the evidence package, visual concept, caveats, and visual QA are
-            strong enough to make a reader-facing surface defensible.
+            Reports enter this library only after the evidence package, visual
+            concept, caveats, and visual QA are strong enough for a
+            reader-facing surface. The stage label is descriptive, not a claim
+            promotion.
           </p>
         </div>
         <div className="showcase-queue">
@@ -377,7 +393,7 @@ export default function Showcase() {
                 <Link href={item.href}>{item.shortTitle}</Link>
               </strong>
               <em>
-                {item.statusLabel} - {getShowcaseReportQuality(item).readinessLabel}
+                {publicStatusLabel(item.statusLabel)} - {publicReadinessLabel[getShowcaseReportQuality(item).readiness]}
               </em>
               <code>{item.evidencePath}</code>
             </div>

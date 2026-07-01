@@ -38,10 +38,13 @@ export default function Layout({ children }: { children: ReactNode }) {
               Home
             </Link>
             <Link href="/#topics" className="site-nav-link">
-              Topics
+              Research
+            </Link>
+            <Link href="/review" className={navClass(pathname, "/review")}>
+              Review
             </Link>
             <Link href="/showcase" className={navClass(pathname, "/showcase")}>
-              Evidence
+              Evidence library
             </Link>
             <Link href="/about" className={navClass(pathname, "/about")}>
               About
@@ -72,6 +75,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             is disclosed and empirical values trace to committed scripts.
           </div>
           <div className="site-footer-links">
+            <Link href="/review">Review desk</Link>
             <Link href="/about">About</Link>
             <Link href="/native-charts">Data visuals</Link>
             <Link href="/deepenings">Evidence checks</Link>

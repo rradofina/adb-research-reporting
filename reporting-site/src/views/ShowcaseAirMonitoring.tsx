@@ -5675,7 +5675,7 @@ export default function ShowcaseAirMonitoring() {
     <article className="showcase-page air-showcase">
       <header className="showcase-hero air-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title showcase-title-wide">
             When OpenAQ Is Not the Regulator Map
           </h1>
@@ -5689,7 +5689,7 @@ export default function ShowcaseAirMonitoring() {
           </p>
           <div className="showcase-meta">
             <span>{deepening?.attestation_chain || "ai-first"}</span>
-            <span>L2/L3 evidence sprint</span>
+            <span>Evidence package</span>
             <span>Observability screen, not a pollution ranking</span>
           </div>
         </div>

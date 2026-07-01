@@ -191,7 +191,7 @@ export default function ShowcaseAccessCompleteness() {
     <article className="showcase-page access-showcase">
       <header className="showcase-hero access-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title showcase-title-wide">
             When the Access Gap Is the Map Gap
           </h1>
@@ -205,7 +205,7 @@ export default function ShowcaseAccessCompleteness() {
           </p>
           <div className="showcase-meta">
             <span>{data?.attestation_chain || "ai-first"}</span>
-            <span>Deepening report</span>
+            <span>Evidence audit</span>
             <span>Triage screen, not an access ranking</span>
           </div>
         </div>

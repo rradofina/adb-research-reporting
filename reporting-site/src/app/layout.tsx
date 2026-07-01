@@ -16,9 +16,12 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Development Evidence Lab",
+  title: {
+    default: "Development Evidence Lab",
+    template: "%s | Development Evidence Lab",
+  },
   description:
-    "Public-data measurement research on Asian Development Bank developing member economies.",
+    "Public-data measurement research on Asian Development Bank developing member economies, with reproducible evidence packets, caveats, and AI-attestation disclosure.",
 };
 
 export default function RootLayout({

@@ -247,7 +247,7 @@ export default function ShowcaseRemittanceFlow() {
     <article className="showcase-page">
       <header className="showcase-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title showcase-title-wide">
             When Every Corridor Is Not the Same Corridor
           </h1>
@@ -260,7 +260,7 @@ export default function ShowcaseRemittanceFlow() {
           </p>
           <div className="showcase-meta">
             <span>{flow?.attestation_chain || "ai-first"}</span>
-            <span>L3 flow-weighting module</span>
+            <span>Evidence package</span>
             <span>Flow-weighted sensitivity, not a risk rating</span>
           </div>
         </div>
@@ -386,7 +386,7 @@ export default function ShowcaseRemittanceFlow() {
           </p>
         </div>
         <div className="showcase-source-box">
-          <p className="showcase-source-title">Reproduce the L3 repair module</p>
+          <p className="showcase-source-title">Reproduce the repair module</p>
           <code>python remittance-resilience/scripts/process-remittance.py</code>
           <code>python remittance-resilience/scripts/sensitivity.py</code>
           <code>python remittance-resilience/scripts/deepen-median-cost.py</code>

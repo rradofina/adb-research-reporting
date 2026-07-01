@@ -235,6 +235,7 @@ export default function Home() {
           </p>
           <div className="home-actions" aria-label="Primary paths">
             <Link href="/showcase/air-monitoring-observability">Open featured evidence</Link>
+            <Link href="/review">Researcher review desk</Link>
             <a href="#topics">Browse topics</a>
           </div>
           <div className="home-assurance" aria-label="Research standard">
@@ -243,6 +244,23 @@ export default function Home() {
             <span>Evidence packets linked</span>
             <span>AI role disclosed</span>
           </div>
+        </div>
+      </section>
+
+      <section className="home-review-band" aria-labelledby="home-review-title">
+        <div>
+          <p className="home-section-kicker">For reviewers</p>
+          <h2 id="home-review-title">Check the claim gate before the chart.</h2>
+          <p>
+            The site is built so a reader can move from a public-facing visual
+            into the generated files, method caveats, source records, and
+            blocked claims without trusting the page by eye.
+          </p>
+        </div>
+        <div className="home-review-actions">
+          <Link href="/review">Open review desk</Link>
+          <Link href="/versions">Source ledger</Link>
+          <Link href="/factory">Factory rules</Link>
         </div>
       </section>
 

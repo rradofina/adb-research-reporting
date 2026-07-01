@@ -1733,7 +1733,7 @@ export default function ShowcaseEvidenceAudit({ reportSlug }: { reportSlug: stri
     <article className={`showcase-page audit-showcase audit-${report.audit.kind}`}>
       <header className="showcase-hero audit-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI evidence audit {String(report.id).padStart(2, "0")}</p>
+          <p className="kicker kicker-crimson">Public-data evidence audit {String(report.id).padStart(2, "0")}</p>
           <h1 className="showcase-title showcase-title-wide audit-title">{report.title}</h1>
           <p className="showcase-lede">{report.deck}</p>
           <div className="showcase-meta">

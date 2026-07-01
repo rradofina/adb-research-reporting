@@ -2065,7 +2065,7 @@ export default function ShowcasePSDQ() {
     <article className="showcase-page">
       <header className="showcase-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title showcase-title-wide">
             When the Map and Registry Disagree
           </h1>
@@ -2077,7 +2077,7 @@ export default function ShowcasePSDQ() {
           </p>
           <div className="showcase-meta">
             <span>ai-first</span>
-            <span>L3 source-disagreement module</span>
+            <span>Evidence package</span>
             <span>Measurement gap, not facility quality</span>
           </div>
         </div>
@@ -2233,7 +2233,7 @@ export default function ShowcasePSDQ() {
           <p className="kicker">What the first visual suggests</p>
           <h2>The largest planning risk is not only the largest facility gap.</h2>
           <p>
-            The L3 source-disagreement view pairs the registry-map disagreement with
+            The source-disagreement evidence view pairs the registry-map disagreement with
             Google Open Buildings p85 denominators near coordinate-ready
             facilities. That makes the visual operational: a small public-map
             ratio matters more where many buildings sit near the facilities
@@ -2289,7 +2289,7 @@ export default function ShowcasePSDQ() {
           <code>python public-service-data-quality/scripts/build-bgd-exposure-ranked-disagreement.py</code>
           <code>python public-service-data-quality/scripts/build-bgd-source-disagreement-strata.py</code>
           <a href="/programs/public-service-data-quality/source-disagreement-l3-module.md" download>
-            Download L3 evidence note
+            Download evidence note
           </a>
           <a href="/programs/public-service-data-quality/generated/psdq-bgd-source-disagreement-strata.json" download>
             Download strata JSON
@@ -2347,7 +2347,7 @@ function PsdqValidationPanel({ strata }: { strata: PsdqSourceStrata }) {
           <p className="kicker">Source validation stack</p>
           <h2>The useful result is the QA ledger behind the map.</h2>
           <p>
-            The L3 module does not ask a reader to trust a chart by eye. It
+            The evidence module does not ask a reader to trust a chart by eye. It
             exposes the rows that can support an exposure screen, the rows that
             still need source validation, and the counterexamples where OSM
             equals or exceeds the registry count.
@@ -7550,7 +7550,7 @@ function PsdqStrataChart({ strata }: { strata: PsdqRatioStratum[] }) {
         Ratio strata used as validation gates
       </text>
       <text x={0} y={38} className="showcase-heatmap-year">
-        Unit: DGHS registry upazila row; source: generated PSDQ L3 strata JSON
+        Unit: DGHS registry upazila row; source: generated PSDQ strata JSON
       </text>
       <text x={barX} y={54} className="psdq-chart-head">
         Rows

@@ -220,7 +220,7 @@ export default function ShowcaseShockPayment() {
     <article className="showcase-page">
       <header className="showcase-hero">
         <div className="showcase-hero-copy">
-          <p className="kicker kicker-crimson">ADB/ERDI-aligned showcase prototype</p>
+          <p className="kicker kicker-crimson">Public-data evidence note</p>
           <h1 className="showcase-title showcase-title-wide">
             After the Shock, Can the Payment Rail Be Seen?
           </h1>

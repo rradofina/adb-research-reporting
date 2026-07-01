@@ -1,0 +1,144 @@
+{
+  "generated_at": "2026-07-01T12:59:08Z",
+  "program": "air-monitoring",
+  "attestation_chain": "ai-first",
+  "status": "computed_station_radius_claim_eligibility_targets",
+  "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+  "goal_level": "L3 claim-eligibility target matrix",
+  "source_scope": "No-network synthesis of committed identity, grade, endpoint, verification, and coverage-claim gates.",
+  "source_inputs": [
+    {
+      "path": "generated/air-monitoring-station-identity-validation-gate-summary.json",
+      "role": "station-identity validation gate"
+    },
+    {
+      "path": "generated/air-monitoring-bmkg-station-grade-closure-gate-summary.json",
+      "role": "BMKG station-grade closure gate"
+    },
+    {
+      "path": "generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+      "role": "Georgia report-frequency verification matrix"
+    },
+    {
+      "path": "generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+      "role": "Uzbekistan endpoint consistency gate"
+    },
+    {
+      "path": "generated/air-monitoring-station-radius-coverage-claim-gate-summary.json",
+      "role": "station-radius coverage-claim gate"
+    }
+  ],
+  "document_primitives": [
+    "official/OpenAQ station identity bridge",
+    "target-station inspection log",
+    "target-station PM2.5 calibration certificate or calibration-status record",
+    "explicit station-grade record",
+    "verified report/export or station-code status table",
+    "official endpoint correction/status record"
+  ],
+  "target_count": 5,
+  "blocked_row_lane_checks_total": 96,
+  "targets": [
+    {
+      "generated_at": "2026-07-01T12:59:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_claim_eligibility_targets",
+      "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+      "target_id": "identity-crosswalk",
+      "evidence_lane": "same-station identity",
+      "scope": "4 economies with official/OpenAQ identity candidates",
+      "source_artifacts": "generated/air-monitoring-station-identity-validation-gate-summary.json",
+      "blocked_rows": 44,
+      "current_public_evidence": "13 near-plus-name rows have been source-screened and 31 one-signal identity rows remain open.",
+      "missing_public_document": "A shared station ID, source-owner crosswalk, current-status crosswalk, or documented co-location record linking the official row to the OpenAQ row.",
+      "conversion_condition": "At least one public source must name both records or otherwise document that the two rows are the same station or an accepted co-located station pair.",
+      "why_current_evidence_fails": "Proximity, name overlap, owner/provider text, and public-feed context are candidate evidence only.",
+      "next_search_target": "Regulator station-code tables, OpenAQ/provider crosswalks, current network pages, or station metadata downloads.",
+      "would_unlock": "Station-radius identity-ready rows; it would not by itself unlock monitor-grade or coverage claims.",
+      "promoted_by_this_artifact": false,
+      "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+    },
+    {
+      "generated_at": "2026-07-01T12:59:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_claim_eligibility_targets",
+      "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+      "target_id": "bmkg-grade-closure",
+      "evidence_lane": "complete station-grade evidence",
+      "scope": "Indonesia BMKG PM2.5 target rows",
+      "source_artifacts": "generated/air-monitoring-bmkg-station-grade-closure-gate-summary.json",
+      "blocked_rows": 22,
+      "current_public_evidence": "22 rows have BAM method classification, 22 rows have public station-detail display, and 21 rows have current ONLINE dashboard status.",
+      "missing_public_document": "A target-station inspection log, PM2.5 calibration certificate/status record, or explicit station-grade record.",
+      "conversion_condition": "The document must name the same station ID or station name and state inspection, calibration/status, or grade evidence for the PM2.5 monitor.",
+      "why_current_evidence_fails": "Source-level SOPs, public display, method text, PPID routes, and certificate-request context do not certify the exact station row.",
+      "next_search_target": "BMKG station-unit pages, calibration service outputs, inspection logs, certificate registers, or PPID document responses.",
+      "would_unlock": "A complete monitor-grade candidate row after the strict BMKG closure rule; identity gates would still need to pass before radius claims.",
+      "promoted_by_this_artifact": false,
+      "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+    },
+    {
+      "generated_at": "2026-07-01T12:59:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_claim_eligibility_targets",
+      "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+      "target_id": "georgia-verified-report-closure",
+      "evidence_lane": "verified report or station-code closure",
+      "scope": "Georgia air.gov.ge target station codes",
+      "source_artifacts": "generated/air-monitoring-georgia-report-frequency-matrix-summary.json",
+      "blocked_rows": 16,
+      "current_public_evidence": "4 XLSX routes expose target station sheets, but 8 HTML/PDF payloads carry a not-verified caution.",
+      "missing_public_document": "A verified report/export surface without the not-verified caution, or a station-code method/status document that closes verification for the exact target station codes.",
+      "conversion_condition": "The public route must carry the exact station codes and PM2.5 rows while also giving verified status or current station/status/grade closure.",
+      "why_current_evidence_fails": "Station sheets without a verification label and reports with not-verified footers remain evidence walls, not closure.",
+      "next_search_target": "Verified daily/monthly/annual exports, network catalogs with station codes, or NEA verification/status documentation.",
+      "would_unlock": "Georgia report-verification closure candidates; it would not by itself solve OpenAQ identity or grade completeness.",
+      "promoted_by_this_artifact": false,
+      "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+    },
+    {
+      "generated_at": "2026-07-01T12:59:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_claim_eligibility_targets",
+      "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+      "target_id": "uzbekistan-endpoint-resolution",
+      "evidence_lane": "endpoint consistency and station-status closure",
+      "scope": "Uzbekistan exact blocker station IDs",
+      "source_artifacts": "generated/air-monitoring-uzbekistan-endpoint-consistency-summary.json",
+      "blocked_rows": 3,
+      "current_public_evidence": "16 official routes were retrieved for 3 blocker rows, but endpoint disagreement remains.",
+      "missing_public_document": "A public official correction, status, or grade record resolving the stale-detail, sentinel PM2.5, or API/detail/regional-table mismatch for the exact station ID.",
+      "conversion_condition": "The public source must name the exact station ID and explain or correct the conflicting endpoint values enough to support current-status and grade interpretation.",
+      "why_current_evidence_fails": "API presence, Horiba markers, language detail pages, and regional tables disagree or retain stale/sentinel values.",
+      "next_search_target": "Official correction notices, station maintenance/status pages, API changelogs, or station-detail pages with resolved current values.",
+      "would_unlock": "Uzbekistan blocker-row resolution candidates; it would not by itself create complete monitor-grade or radius readiness.",
+      "promoted_by_this_artifact": false,
+      "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+    },
+    {
+      "generated_at": "2026-07-01T12:59:08Z",
+      "attestation_chain": "ai-first",
+      "status": "computed_station_radius_claim_eligibility_targets",
+      "method": "air_monitoring_station_radius_claim_eligibility_targets_v1",
+      "target_id": "country-radius-claim-permission",
+      "evidence_lane": "coverage-claim permission",
+      "scope": "Primary 4 km country-radius denominator rows",
+      "source_artifacts": "generated/air-monitoring-station-radius-coverage-claim-gate-summary.json",
+      "blocked_rows": 11,
+      "current_public_evidence": "33 country-unioned population denominators and 22 ACAG PM2.5 context rows are computed.",
+      "missing_public_document": "The upstream identity and complete-grade documents above; denominator geometry alone cannot become a station-radius coverage claim.",
+      "conversion_condition": "A country row can move only after validated same-station identity rows, complete monitor-grade rows, station-radius readiness, and the coverage-claim permission flag are all true.",
+      "why_current_evidence_fails": "The coverage gate records 0 BMKG calibration-certificate rows, 0 Georgia verified-report closure rows, and 0 Uzbekistan portal-resolution rows.",
+      "next_search_target": "First close identity and grade rows; then rerun the station-radius coverage-claim gate.",
+      "would_unlock": "Permission to discuss station-radius coverage for a row/economy only if all upstream gates also pass.",
+      "promoted_by_this_artifact": false,
+      "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+    }
+  ],
+  "outputs": {
+    "csv": "generated/air-monitoring-station-radius-claim-eligibility-targets.csv",
+    "summary_json": "generated/air-monitoring-station-radius-claim-eligibility-targets-summary.json",
+    "markdown": "station-radius-claim-eligibility-targets.md"
+  },
+  "non_claim": "This target matrix identifies public-document prerequisites for future station-radius claim eligibility. It does not validate same-station joins, does not certify monitor grade, does not estimate people served, and does not allow station-radius coverage language."
+}

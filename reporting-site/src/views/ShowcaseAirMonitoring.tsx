@@ -1581,6 +1581,39 @@ interface StationRadiusClaimGateSummary {
   non_claim: string;
 }
 
+interface StationRadiusClaimTargetRow {
+  target_id: string;
+  evidence_lane: string;
+  scope: string;
+  source_artifacts: string;
+  blocked_rows: number;
+  current_public_evidence: string;
+  missing_public_document: string;
+  conversion_condition: string;
+  why_current_evidence_fails: string;
+  next_search_target: string;
+  would_unlock: string;
+  promoted_by_this_artifact: boolean | string;
+  non_claim: string;
+}
+
+interface StationRadiusClaimEligibilityTargetsSummary {
+  generated_at: string;
+  program: string;
+  attestation_chain: string;
+  status: string;
+  method: string;
+  goal_level: string;
+  source_scope: string;
+  source_inputs: Array<{ path: string; role: string }>;
+  document_primitives: string[];
+  target_count: number;
+  blocked_row_lane_checks_total: number;
+  targets: StationRadiusClaimTargetRow[];
+  outputs: { csv: string; summary_json: string; markdown: string };
+  non_claim: string;
+}
+
 interface StationIdentityCountryRow {
   iso3: string;
   country: string;
@@ -4580,6 +4613,8 @@ export default function ShowcaseAirMonitoring() {
     useState<StationRadiusCountryUnionSummary | null>(null);
   const [stationRadiusClaimGate, setStationRadiusClaimGate] =
     useState<StationRadiusClaimGateSummary | null>(null);
+  const [stationRadiusClaimTargets, setStationRadiusClaimTargets] =
+    useState<StationRadiusClaimEligibilityTargetsSummary | null>(null);
   const [stationIdentityGate, setStationIdentityGate] =
     useState<StationIdentitySummary | null>(null);
   const [regulatorSource, setRegulatorSource] = useState<RegulatorSourceSummary | null>(null);
@@ -5152,6 +5187,26 @@ export default function ShowcaseAirMonitoring() {
       })
       .then((payload) => {
         if (isActive) setStationRadiusClaimGate(payload);
+      })
+      .catch((err) => {
+        if (isActive) setError((current) => current || String(err));
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/programs/air-monitoring/generated/air-monitoring-station-radius-claim-eligibility-targets-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`station-radius claim eligibility targets HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((payload) => {
+        if (isActive) setStationRadiusClaimTargets(payload);
       })
       .catch((err) => {
         if (isActive) setError((current) => current || String(err));
@@ -5783,6 +5838,8 @@ export default function ShowcaseAirMonitoring() {
       <AirStationIdentityValidationPanel summary={stationIdentityGate} />
 
       <AirStationRadiusClaimGatePanel summary={stationRadiusClaimGate} />
+
+      <AirStationRadiusClaimTargetsPanel summary={stationRadiusClaimTargets} />
 
       <AirRegulatorSourcePanel summary={regulatorSource} />
 
@@ -9403,6 +9460,89 @@ function AirStationRadiusClaimGatePanel({ summary }: { summary: StationRadiusCla
         </>
       ) : (
         <p className="showcase-loading">Loading station-radius coverage claim gate...</p>
+      )}
+    </section>
+  );
+}
+
+function AirStationRadiusClaimTargetsPanel({
+  summary,
+}: {
+  summary: StationRadiusClaimEligibilityTargetsSummary | null;
+}) {
+  const targets = summary?.targets ?? [];
+
+  return (
+    <section className="showcase-section air-denominator-join-section air-claim-gate-section" aria-label="Station-radius claim eligibility targets">
+      <div className="air-denominator-join-head">
+        <div>
+          <p className="kicker kicker-blue">Claim-eligibility targets</p>
+          <h2>The next evidence primitive is a document, not another map.</h2>
+          <p>
+            This matrix translates the blocked coverage claim into the exact public documents a reviewer would need
+            before any row can move toward station-radius language.
+          </p>
+        </div>
+        <div className="air-denominator-join-callout air-claim-gate-callout">
+          <span>Target lanes</span>
+          <strong>{summary ? formatNumber(summary.target_count) : "..."}</strong>
+          <p>
+            {summary
+              ? `${formatNumber(summary.blocked_row_lane_checks_total)} blocked row-lane checks remain across identity, grade, verification, endpoint, and claim-permission gates.`
+              : "Reading claim-eligibility targets."}
+          </p>
+        </div>
+      </div>
+
+      {summary ? (
+        <>
+          <div className="air-denominator-gate-grid air-claim-gate-grid" aria-label="Required public-document primitives">
+            {summary.document_primitives.map((primitive) => (
+              <article key={primitive} className="air-denominator-gate air-denominator-gate-blocked">
+                <span>Needed</span>
+                <strong>{primitive}</strong>
+                <p>Required before denominator geometry can become claim language.</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="air-claim-gate-row-grid" aria-label="Claim eligibility target matrix">
+            {targets.map((target) => (
+              <article key={target.target_id} className="air-claim-gate-row">
+                <div>
+                  <span>{target.evidence_lane}</span>
+                  <strong>{formatNumber(target.blocked_rows)} blocked rows</strong>
+                  <em>{target.scope}</em>
+                </div>
+                <div>
+                  <span>Missing document</span>
+                  <p>{target.missing_public_document}</p>
+                </div>
+                <div>
+                  <span>Would unlock</span>
+                  <p>{target.would_unlock}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="air-denominator-nonclaim">{summary.non_claim}</p>
+
+          <div className="air-denominator-downloads">
+            <span>{summary.method}</span>
+            <a href="/programs/air-monitoring/station-radius-claim-eligibility-targets.md" download>
+              Download target note
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-claim-eligibility-targets-summary.json" download>
+              Download summary JSON
+            </a>
+            <a href="/programs/air-monitoring/generated/air-monitoring-station-radius-claim-eligibility-targets.csv" download>
+              Download target CSV
+            </a>
+          </div>
+        </>
+      ) : (
+        <p className="showcase-loading">Loading station-radius claim-eligibility targets...</p>
       )}
     </section>
   );

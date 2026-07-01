@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-07-01T12:49:03.037Z",
+  "generated_at": "2026-07-01T13:04:26.490Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -301,6 +301,16 @@
       "size_human": "3.8 KB",
       "mtime": "2026-06-25T15:22:11.168Z",
       "sha256": "51a36cb99d14af8bcf8770af111da99a78941e8bbc6be46c81212ec557314175",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "air_monitoring_station_radius_claim_eligibility_targets",
+      "file": "station-radius-claim-eligibility-targets.md",
+      "label": "Air-monitoring station-radius claim-eligibility targets",
+      "size": 3110,
+      "size_human": "3.0 KB",
+      "mtime": "2026-07-01T12:59:08.849Z",
+      "sha256": "297db7b4eb331079ebbb0ce1e16b9ccb21a074bdbc8bfffb3ce9543b4bf4776e",
       "attestation_chain": "ai-first"
     },
     {
@@ -1246,6 +1256,18 @@
       "size": 12421,
       "size_human": "12.1 KB",
       "sha256": "48d849560ea247cc7fd1f42ba0a59981c0dde528e96f10db622933366a201926"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-claim-eligibility-targets-summary.json",
+      "size": 11419,
+      "size_human": "11.2 KB",
+      "sha256": "2f85767a11403ccfccffe92f901e8c196d6e48ea66db49ae72006296cee4f84d"
+    },
+    {
+      "file": "generated/air-monitoring-station-radius-claim-eligibility-targets.csv",
+      "size": 7003,
+      "size_human": "6.8 KB",
+      "sha256": "9518d84936787887c7836603cb0901a940880433a9aa125fd91289d9e8d4c7a3"
     },
     {
       "file": "generated/air-monitoring-station-radius-country-unioned-catchment-dry-run-summary.json",

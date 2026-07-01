@@ -79,6 +79,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_station_radius_country_unioned_catchment_dry_run", file: "station-radius-country-unioned-catchment-dry-run.md", label: "Air-monitoring station-radius country-unioned catchment dry run" },
   { key: "air_monitoring_station_identity_validation_gate", file: "station-identity-validation-gate.md", label: "Air-monitoring station-identity validation gate" },
   { key: "air_monitoring_station_radius_coverage_claim_gate", file: "station-radius-coverage-claim-gate.md", label: "Air-monitoring station-radius coverage-claim gate" },
+  { key: "air_monitoring_station_radius_claim_eligibility_targets", file: "station-radius-claim-eligibility-targets.md", label: "Air-monitoring station-radius claim-eligibility targets" },
   { key: "air_monitoring_regulator_source_inventory", file: "regulator-source-inventory.md", label: "Air-monitoring regulator-source inventory" },
   { key: "air_monitoring_regulator_station_extraction", file: "regulator-station-extraction.md", label: "Air-monitoring official station-source extraction" },
   { key: "air_monitoring_monitor_grade_evidence", file: "monitor-grade-evidence.md", label: "Air-monitoring monitor-grade evidence audit" },

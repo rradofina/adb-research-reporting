@@ -1,0 +1,56 @@
+{
+  "url": "http://127.0.0.1:5174/",
+  "checkedAt": "2026-07-01T09:49:39.298Z",
+  "checks": [
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 900,
+      "pngPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\home-commit-desktop.png",
+      "metrics": {
+        "title": "Development Evidence Lab",
+        "h1": "Public evidence for development blind spots",
+        "innerWidth": 1280,
+        "innerHeight": 900,
+        "scrollWidth": 1265,
+        "horizontalOverflow": false,
+        "visibleCards": 10
+      },
+      "consoleEntries": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 800,
+      "pngPath": "D:\\Users\\Raymond\\OneDrive\\Desktop\\ADB\\Research\\reporting-site\\qa\\home-commit-mobile.png",
+      "metrics": {
+        "title": "Development Evidence Lab",
+        "h1": "Public evidence for development blind spots",
+        "innerWidth": 375,
+        "innerHeight": 800,
+        "scrollWidth": 375,
+        "horizontalOverflow": false,
+        "visibleCards": 9
+      },
+      "consoleEntries": [
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+        },
+        {
+          "type": "warning",
+          "text": "⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."
+        }
+      ]
+    }
+  ]
+}

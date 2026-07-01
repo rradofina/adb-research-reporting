@@ -1716,10 +1716,12 @@ export default function ShowcaseEvidenceAudit() {
   const claimLadder = buildClaimLadder(report);
   const nextReport =
     showcaseReports.find((item) => item.id === report.id + 1) ||
-    showcaseReports.find((item) => item.id === 1);
+    showcaseReports.find((item) => item.id === 1) ||
+    report;
   const previousReport =
     showcaseReports.find((item) => item.id === report.id - 1) ||
-    showcaseReports[showcaseReports.length - 1];
+    showcaseReports[showcaseReports.length - 1] ||
+    report;
   const heroChecks = [
     { label: "Use", body: depth.operationalUse },
     { label: "Falsifier", body: depth.falsifier },

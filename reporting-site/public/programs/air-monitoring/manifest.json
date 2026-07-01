@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-06-26T01:36:26.671Z",
+  "generated_at": "2026-07-01T09:47:25.666Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -644,6 +644,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "air_monitoring_bmkg_station_grade_closure_gate",
+      "file": "bmkg-station-grade-closure-gate.md",
+      "label": "Air-monitoring BMKG station-grade closure gate",
+      "size": 6314,
+      "size_human": "6.2 KB",
+      "mtime": "2026-07-01T09:45:25.984Z",
+      "sha256": "7bab2cb0e49eb546f27cc14c7e5fc775fb4108b2a05b193219a8a665a1387020",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "air_monitoring_georgia_report_verification_source_scan",
       "file": "georgia-report-verification-source-scan.md",
       "label": "Air-monitoring Georgia report verification source scan",
@@ -854,6 +864,18 @@
       "size": 21947,
       "size_human": "21.4 KB",
       "sha256": "05391d3015c59fd44b666a81cf05900f0ea98ae1603cfaa5c58d8b57d7b91b98"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-station-grade-closure-gate-summary.json",
+      "size": 66429,
+      "size_human": "64.9 KB",
+      "sha256": "c5405229b08592845005021058794df1a323da8c3f216b2ee2ed648ffe259e67"
+    },
+    {
+      "file": "generated/air-monitoring-bmkg-station-grade-closure-gate.csv",
+      "size": 24300,
+      "size_human": "23.7 KB",
+      "sha256": "c734af1139ee3c246de9fc9871ebd322b4741c5dca2e8731ea6f2eef0afe868f"
     },
     {
       "file": "generated/air-monitoring-bmkg-station-public-context-source-scan-summary.json",

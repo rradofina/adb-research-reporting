@@ -13,9 +13,9 @@ export default function About() {
 
       <section className="page-section prose-article">
         <p>
-          <strong>ADB AI Research</strong> is a research lab producing
-          measurement-gap research on Asian Development Bank developing
-          member economies (DMCs). Every empirical number on this site
+          <strong>Development Evidence Lab</strong> is a public-data research
+          lab producing measurement-gap research on Asian Development Bank
+          developing member economies (DMCs). Every empirical number on this site
           traces to a committed script and a public source. Every
           artifact carries an <code>attestation_chain</code> field that
           records which review path produced it.
@@ -137,7 +137,7 @@ export default function About() {
         </p>
         <blockquote>
           Adofina, R. (2026). <em>The OSM-vs-registry gap in Philippine
-          and Bangladeshi health facilities</em>. ADB AI Research working
+          and Bangladeshi health facilities</em>. Development Evidence Lab working
           paper, ai-first attestation under CONSTITUTION.md §18.
           Available at <code>/public-service-data-quality</code> on this
           site. CC BY 4.0.

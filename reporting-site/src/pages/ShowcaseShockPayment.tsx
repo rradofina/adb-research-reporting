@@ -181,6 +181,7 @@ function tierFill(tier: string | null | undefined) {
     payment_rail_missing: "#9B2226",
     exposure_missing: "#d7dde3",
   };
+  if (!tier) return "#d7dde3";
   return colors[tier] || "#d7dde3";
 }
 

@@ -1,10 +1,7 @@
 /**
  * Layout.tsx — minimal site chrome.
  *
- * Drops the editorial chrome (§18 ACTIVE banner, VOL I — № 04, "A
- * MEASUREMENT-GAP PUBLICATION", "The Blindspots Lab" branding) in
- * favor of a simple header (logo + small nav) and a small footer.
- * The brand is "ADB AI Research".
+ * Minimal institutional site chrome.
  */
 import { Link, NavLink, Outlet } from "react-router-dom";
 
@@ -16,13 +13,13 @@ export default function Layout() {
         <div className="site-shell site-header-row">
           <Link to="/" className="site-brand">
             <span className="site-brand-mark" aria-hidden="true">
-              A
+              D
             </span>
             <span className="site-brand-title">
-              ADB AI Research
+              Development Evidence Lab
             </span>
             <span className="site-brand-kicker">
-              report bench - public data
+              Asia-Pacific public data
             </span>
           </Link>
           <nav className="site-nav">
@@ -33,31 +30,18 @@ export default function Layout() {
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
-              Reports
+              Home
             </NavLink>
-            <NavLink
-              to="/native-charts"
-              className={({ isActive }) =>
-                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
-              }
-            >
-              Charts
-            </NavLink>
-            <NavLink
-              to="/deepenings"
-              className={({ isActive }) =>
-                "site-nav-link " + (isActive ? "site-nav-link-active" : "")
-              }
-            >
-              Deepening checks
-            </NavLink>
+            <Link to="/#topics" className="site-nav-link">
+              Topics
+            </Link>
             <NavLink
               to="/showcase"
               className={({ isActive }) =>
                 "site-nav-link " + (isActive ? "site-nav-link-active" : "")
               }
             >
-              Showcase
+              Evidence
             </NavLink>
             <NavLink
               to="/about"
@@ -88,12 +72,14 @@ export default function Layout() {
       <footer className="site-footer">
         <div className="site-shell site-footer-row">
           <div className="site-footer-copy">
-            ADB AI Research — public-data measurement-gap research on
-            Asian Development Bank developing member economies.
-            AI-attested under a written constitution.
+            Development Evidence Lab presents public-data measurement research
+            on Asian Development Bank developing member economies. AI assistance
+            is disclosed and empirical values trace to committed scripts.
           </div>
           <div className="site-footer-links">
             <Link to="/about">About</Link>
+            <Link to="/native-charts">Data visuals</Link>
+            <Link to="/deepenings">Evidence checks</Link>
             <Link to="/docs">Docs</Link>
             <Link to="/constitution">Constitution</Link>
             <Link to="/license">License</Link>

@@ -116,6 +116,7 @@ export default function Research() {
     {
       "publication-ready": 0,
       "screening-result": 0,
+      "program-prospectus": 0,
       "prepared-pipeline": 0,
       hypothesis: 0,
     },

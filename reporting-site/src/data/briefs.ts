@@ -1,6 +1,7 @@
 export type FinishGroup =
   | "publication-ready"
   | "screening-result"
+  | "program-prospectus"
   | "prepared-pipeline"
   | "hypothesis";
 
@@ -27,6 +28,7 @@ export interface BriefDetail {
 export const FINISH_LABELS: Record<FinishGroup, string> = {
   "publication-ready": "Finished for current issue",
   "screening-result": "Screening only",
+  "program-prospectus": "Program prospectus",
   "prepared-pipeline": "Pipeline ready, not run",
   hypothesis: "Not finished",
 };

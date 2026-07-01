@@ -1,9 +1,8 @@
 /**
- * Home.tsx - reader-facing research portal.
+ * Home.tsx - institutional research portal.
  *
- * The homepage leads with the public value proposition and topic pathways.
- * Dense evidence, readiness labels, and archive surfaces remain available
- * lower on the page for reviewers who need the full research trail.
+ * The homepage is organized for external readers: what the lab studies,
+ * which evidence pages are ready to inspect, and where the audit trail lives.
  */
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
@@ -11,10 +10,11 @@ import { programs } from "../data/programs";
 import {
   getShowcaseReportQuality,
   showcaseReports,
-  verifiedShowcaseReports,
+  type ShowcaseReadiness,
 } from "../data/showcaseReports";
-import { MaturityChip, maturityLabels, type Maturity } from "../lib/claimTiers";
+import type { Maturity } from "../lib/claimTiers";
 import type { HeroVisual } from "../lib/evidence";
+import "./Home.css";
 
 interface HeroIndexEntry {
   slug: string;
@@ -29,94 +29,133 @@ interface HeroIndex {
 interface ReaderTopicSpec {
   reportId: number;
   label: string;
-  audience: string;
-  hook: string;
-  evidence: string;
+  question: string;
+  summary: string;
   tone: "blue" | "green" | "red" | "gold";
+  programSlug?: string;
   featured?: boolean;
 }
 
 const ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
 
+const publicReportLabels: Record<ShowcaseReadiness, string> = {
+  prototype: "Prototype",
+  "l3-candidate": "Evidence package",
+  "evidence-audit": "Evidence audit",
+  "owner-gated": "Needs validation",
+};
+
+const publicProgramLabels: Record<Maturity, string> = {
+  H: "In development",
+  PP: "Pipeline prepared",
+  SR: "Screening result",
+  PR: "Finished for issue",
+  Ret: "Retired",
+};
+
 const readerTopicSpecs: ReaderTopicSpec[] = [
   {
     reportId: 6,
-    label: "Current flagship",
-    audience: "Air quality and observability",
-    hook: "Where public monitor maps are visible, and where station-coverage claims still fail.",
-    evidence: "OpenAQ, regulator portals, station identity, monitor-grade, GHSL, and ACAG gates.",
+    label: "Air quality",
+    question: "Can public monitor maps support station-coverage claims?",
+    summary:
+      "OpenAQ rows, regulator portals, station identity checks, and denominator gates are shown before any coverage language is allowed.",
     tone: "blue",
+    programSlug: "air-monitoring",
     featured: true,
   },
   {
     reportId: 4,
     label: "Service delivery",
-    audience: "Public service data quality",
-    hook: "What happens when the official registry and the public map disagree.",
-    evidence: "Facility registries, OSM, Open Buildings, row-level review ledgers, and human-gated handoff files.",
+    question: "Which facilities disappear between a registry and a public map?",
+    summary:
+      "Registry-map disagreement is reviewed row by row before public access maps are trusted.",
     tone: "red",
+    programSlug: "public-service-data-quality",
   },
   {
     reportId: 5,
     label: "Household finance",
-    audience: "Remittance corridor costs",
-    hook: "How corridor rankings change when prices are weighted by observed flow exposure.",
-    evidence: "World Bank RPW, KNOMAD bilateral flows, WDI remittance dependence, and sensitivity checks.",
+    question: "Do corridor costs look different after flow weighting?",
+    summary:
+      "Remittance prices are checked against observed corridor-flow exposure instead of equal-count averages.",
     tone: "green",
+    programSlug: "remittance-resilience",
   },
   {
     reportId: 8,
     label: "Disaster risk",
-    audience: "Recovery lag evidence",
-    hook: "Why disaster burden screens need event geography before recovery language is used.",
-    evidence: "EM-DAT, GDIS geocoded events, Black Marble metadata, and recovery-source readiness.",
+    question: "When does a disaster metric fail its own test?",
+    summary:
+      "EM-DAT burden measures are compared before recovery-lag language is reused.",
     tone: "gold",
+    programSlug: "disaster-recovery-lag",
   },
   {
     reportId: 3,
     label: "Shock response",
-    audience: "Payment rails after disasters",
-    hook: "Where account ownership, payment use, and social-protection coverage diverge.",
-    evidence: "EM-DAT, Findex, ASPIRE, WDI, and a public rail-observability ledger.",
+    question: "Is account ownership enough to describe payment rails?",
+    summary:
+      "Disaster exposure is compared with payment use and social-protection observability.",
     tone: "green",
+    programSlug: "social-protection-shock-coverage",
   },
   {
     reportId: 7,
     label: "Access maps",
-    audience: "Health facility map completeness",
-    hook: "When a service-access map is really measuring whether facilities are mapped.",
-    evidence: "OSM, official clinical registries, WorldPop, Cambodia HDX/MoH/OCHA sources, and PSDQ context.",
+    question: "Is an access map measuring service access or map completeness?",
+    summary:
+      "OSM health amenities are checked against official denominator evidence before interpretation.",
     tone: "blue",
+    programSlug: "access-services",
   },
   {
     reportId: 14,
     label: "Climate and labor",
-    audience: "Heat, air pollution, and workdays",
-    hook: "How cap choice and worker denominators change what a workday-loss proxy can say.",
-    evidence: "WDI PM2.5, WDI employment denominators, CCKP heat metadata, and source-readiness walls.",
+    question: "What can a heat-and-work proxy honestly say?",
+    summary:
+      "Worker denominators, cap choice, and heat-source readiness are separated from workday-loss claims.",
     tone: "red",
+    programSlug: "climate-health-workdays",
   },
   {
     reportId: 20,
     label: "Education",
-    audience: "School heat disruption",
-    hook: "Why a national heat screen is not yet a school-day disruption measure.",
-    evidence: "WDI, CCKP, OSM school counts, UNICEF source pointers, and school-day join gates.",
+    question: "When is a national heat screen not a school-day measure?",
+    summary:
+      "School heat evidence stays at source-readiness level until school calendars and locations are joined.",
     tone: "gold",
+    programSlug: "school-heat-disruption",
   },
   {
     reportId: 17,
     label: "Water and crops",
-    audience: "Water stress denominator checks",
-    hook: "Where national water-stress rankings change after the denominator is repaired.",
-    evidence: "WDI, AQUASTAT, FAOSTAT crop-mix rows, and basin-level non-claims.",
+    question: "How much of a water-stress result is the denominator?",
+    summary:
+      "National water-stress rows are checked against available-water and crop-mix source limits.",
     tone: "blue",
+    programSlug: "water-stress-crop-diversification",
   },
 ];
 
 function statusRank(status: Maturity): number {
   const i = ORDER.indexOf(status);
   return i < 0 ? ORDER.length : i;
+}
+
+function shortText(value: string, limit = 170) {
+  if (value.length <= limit) return value;
+  const trimmed = value.slice(0, limit).replace(/\s+\S*$/, "");
+  return `${trimmed}...`;
+}
+
+function reportStageLabel(readiness: ShowcaseReadiness) {
+  return publicReportLabels[readiness];
+}
+
+function heroPath(slug: string | undefined, hero: HeroVisual | null | undefined) {
+  if (!slug || !hero) return null;
+  return `/programs/${slug}/${hero.png}`;
 }
 
 export default function Home() {
@@ -149,13 +188,24 @@ export default function Home() {
   const readerTopics = readerTopicSpecs
     .map((topic) => {
       const report = reportById.get(topic.reportId);
-      return report ? { ...topic, report, quality: getShowcaseReportQuality(report) } : null;
+      if (!report) return null;
+      const quality = getShowcaseReportQuality(report);
+      return {
+        ...topic,
+        report,
+        quality,
+        publicStage: reportStageLabel(quality.readiness),
+        hero: topic.programSlug ? heroIndex[topic.programSlug] : null,
+      };
     })
     .filter((topic): topic is NonNullable<typeof topic> => Boolean(topic));
 
+  const featuredTopic = readerTopics.find((topic) => topic.featured) ?? readerTopics[0];
+  const standardTopics = readerTopics.filter((topic) => topic !== featuredTopic);
+
   const sortedPrograms = [...programs].sort((a, b) => {
-    const sa = statusRank(a.status as Maturity);
-    const sb = statusRank(b.status as Maturity);
+    const sa = statusRank(a.status);
+    const sb = statusRank(b.status);
     if (sa !== sb) return sa - sb;
     const ha = heroIndex[a.slug] ? 0 : 1;
     const hb = heroIndex[b.slug] ? 0 : 1;
@@ -163,196 +213,174 @@ export default function Home() {
     return a.id - b.id;
   });
 
-  const heroesRendered = Object.values(heroIndex).filter(Boolean).length;
-  const verifiedCount = verifiedShowcaseReports.length;
-  const l3CandidateCount = showcaseReports.filter(
-    (report) => getShowcaseReportQuality(report).readiness === "l3-candidate",
-  ).length;
+  const visualPrograms = loaded
+    ? sortedPrograms.filter((program) => Boolean(heroIndex[program.slug]))
+    : [];
+
+  const featuredImage = heroPath(featuredTopic?.programSlug, featuredTopic?.hero);
 
   return (
-    <div className="home-page home-portal">
-      <section className="home-portal-hero" aria-labelledby="home-portal-title">
-        <div className="home-portal-hero-inner">
-          <p className="home-portal-kicker">Public-data measurement research</p>
-          <h1 id="home-portal-title">ADB AI Research</h1>
-          <p className="home-portal-lede">
-            Evidence packages for policy questions where the first problem is not the model, but whether the public data are complete enough to support the claim.
+    <div className="home-page home-institutional">
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-media" aria-hidden="true" />
+        <div className="home-hero-content">
+          <p className="home-eyebrow">Data for development</p>
+          <h1 id="home-title">Public evidence for development blind spots</h1>
+          <p className="home-lede">
+            Browse research pages that test whether public data can support
+            claims about services, climate, air quality, resilience, and
+            statistical visibility across ADB developing member economies.
           </p>
-          <div className="home-portal-actions" aria-label="Primary paths">
-            <Link to="/showcase/air-monitoring-observability">Read the air-monitoring flagship</Link>
+          <div className="home-actions" aria-label="Primary paths">
+            <Link to="/showcase/air-monitoring-observability">Open featured evidence</Link>
             <a href="#topics">Browse topics</a>
           </div>
-          <div className="home-portal-readout" aria-label="Research bench status">
-            <span>
-              <strong>{verifiedCount}</strong>
-              verified report routes
-            </span>
-            <span>
-              <strong>{l3CandidateCount}</strong>
-              L3 candidates
-            </span>
-            <span>
-              <strong>{loaded ? heroesRendered : "..."}</strong>
-              program visuals
-            </span>
+          <div className="home-assurance" aria-label="Research standard">
+            <span>Public sources only</span>
+            <span>Scripts before claims</span>
+            <span>Evidence packets linked</span>
+            <span>AI role disclosed</span>
           </div>
         </div>
       </section>
 
-      <section className="home-topic-section" id="topics" aria-labelledby="home-topic-title">
-        <div className="home-section-head home-topic-head">
-          <p className="kicker">Topics</p>
-          <h2 id="home-topic-title">Start with the measurement problem.</h2>
+      <section className="home-browse-section" id="topics" aria-labelledby="home-topic-title">
+        <div className="home-section-head">
+          <p className="home-section-kicker">Research and publications</p>
+          <h2 id="home-topic-title">Start with the development question.</h2>
           <p>
-            Each topic opens with the policy question, the public-source gap, and the evidence that is already reproducible. Stronger claims stay behind the gates until the data support them.
+            Each page shows the policy question, the public-source gap, and the
+            evidence that is already reproducible. Stronger claims stay gated
+            until the data can support them.
           </p>
         </div>
+
+        {featuredTopic && (
+          <Link
+            to={featuredTopic.report.href}
+            className={`home-featured-card${featuredImage ? "" : " home-featured-card-noimage"}`}
+          >
+            {featuredImage && (
+              <img
+                src={featuredImage}
+                alt={featuredTopic.hero?.title || featuredTopic.question}
+                loading="eager"
+                width={featuredTopic.hero?.dimensions?.width || 1600}
+                height={featuredTopic.hero?.dimensions?.height || 900}
+              />
+            )}
+            <div className="home-featured-copy">
+              <span>{featuredTopic.publicStage}</span>
+              <h3>{featuredTopic.question}</h3>
+              <p>{featuredTopic.summary}</p>
+              <b>Featured evidence</b>
+            </div>
+          </Link>
+        )}
 
         <div className="home-topic-grid">
-          {readerTopics.map((topic) => (
-            <Link
-              to={topic.report.href}
-              className={`home-topic-card home-topic-card-${topic.tone}${topic.featured ? " home-topic-card-featured" : ""}`}
-              key={topic.report.href}
-            >
-              <span className="home-topic-label">{topic.label}</span>
-              <h3>{topic.audience}</h3>
-              <p>{topic.hook}</p>
-              <span className="home-topic-evidence">{topic.evidence}</span>
-              <span className="home-topic-status">{topic.quality.readinessLabel}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-report-section" aria-labelledby="home-report-batch">
-        <div className="home-section-head">
-          <p className="kicker">Report bench</p>
-          <h2 id="home-report-batch">The full queue stays visible.</h2>
-          <p>
-            The report bench keeps the audit trail close to the public story: every route links back to a committed artifact, source note, and next evidence upgrade.
-          </p>
-        </div>
-        <div className="home-report-list">
-          {showcaseReports.map((report) => {
-            const quality = getShowcaseReportQuality(report);
+          {standardTopics.map((topic) => {
+            const topicImage = heroPath(topic.programSlug, topic.hero);
             return (
-              <Link to={report.href} className="home-report-row" key={report.href}>
-                <span>{String(report.id).padStart(2, "0")}</span>
-                <strong>{report.shortTitle}</strong>
-                <em>{quality.readinessLabel}</em>
-                <p>{report.deck}</p>
+              <Link
+                to={topic.report.href}
+                className={`home-topic-card home-topic-card-${topic.tone}`}
+                key={topic.report.href}
+              >
+                {topicImage && (
+                  <img
+                    src={topicImage}
+                    alt={topic.hero?.title || topic.question}
+                    loading="lazy"
+                    width={topic.hero?.dimensions?.width || 1600}
+                    height={topic.hero?.dimensions?.height || 900}
+                  />
+                )}
+                <span>{topic.label}</span>
+                <h3>{topic.question}</h3>
+                <b>{topic.publicStage}</b>
               </Link>
             );
           })}
         </div>
       </section>
 
-      <section className="home-standard-band" aria-labelledby="home-standard-title">
-        <div>
-          <p className="kicker">Research standard</p>
-          <h2 id="home-standard-title">The public surface makes the claim smaller before it makes it useful.</h2>
-        </div>
-        <div className="home-standard-list">
-          <p>
-            No empirical number on this site comes from model memory. The path from claim to script, generated artifact, public source, and status note remains available from the evidence pages.
-          </p>
-          <p>
-            Visuals are used to show source disagreement, missing denominators, sensitivity, and claim gates. They are not treated as proof of publication readiness.
-          </p>
-        </div>
-      </section>
-
-      <section className="home-program-section" aria-labelledby="home-program-archive">
+      <section className="home-library-section" id="evidence" aria-labelledby="home-library-title">
         <div className="home-section-head">
-          <p className="kicker">Program archive</p>
-          <h2 id="home-program-archive">Program pages carry the deeper evidence trail.</h2>
+          <p className="home-section-kicker">Evidence library</p>
+          <h2 id="home-library-title">The long audit trail is available, but it is not the first thing a reader has to decode.</h2>
           <p>
-            The archive preserves maturity labels, attestation chips, generated hero visuals, and reproduction links for the broader research factory.
+            The visible pages keep internal maturity codes out of the way while
+            preserving the route to scripts, generated files, source notes, and
+            governance documents.
           </p>
-          <div className="home-meta">
-            <span>
-              {programs.length} programs - {loaded ? heroesRendered : "..."} with rendered hero visuals
-            </span>
-            <span>-</span>
-            <Link to="/about" className="token-link">
-              About
-            </Link>
-            <span>-</span>
-            <Link to="/docs" className="token-link">
-              Documents
-            </Link>
-            <span>-</span>
-            <a
-              href="https://github.com/rradofina/adb-research-reporting"
-              target="_blank"
-              rel="noreferrer"
-              className="token-link"
-            >
-              GitHub
-            </a>
-          </div>
         </div>
 
-        <div className="hero-grid home-program-grid">
-          {sortedPrograms.map((p) => {
-            const hero = heroIndex[p.slug] || null;
-            const maturity = p.status as Maturity;
-            const heroPng = hero ? `/programs/${p.slug}/${hero.png}` : null;
-            return (
-              <Link
-                key={p.slug}
-                to={`/${p.slug}`}
-                className={`hero-card${hero ? "" : " hero-card-empty"}`}
-              >
-                <div className="hero-card-thumb">
-                  {hero && heroPng ? (
+        <details className="home-library-details">
+          <summary>
+            <span>All evidence reports</span>
+            <b>{showcaseReports.length}</b>
+          </summary>
+          <div className="home-report-list">
+            {showcaseReports.map((report) => {
+              const quality = getShowcaseReportQuality(report);
+              return (
+                <Link to={report.href} className="home-report-row" key={report.href}>
+                  <span>{String(report.id).padStart(2, "0")}</span>
+                  <strong>{report.shortTitle}</strong>
+                  <em>{reportStageLabel(quality.readiness)}</em>
+                  <p>{shortText(report.deck)}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </details>
+
+        <details className="home-library-details">
+          <summary>
+            <span>Program pages with generated visuals</span>
+            <b>{loaded ? visualPrograms.length : "..."}</b>
+          </summary>
+          {loaded ? (
+            <div className="home-visual-grid">
+              {visualPrograms.map((program) => {
+                const hero = heroIndex[program.slug];
+                const image = heroPath(program.slug, hero);
+                if (!hero || !image) return null;
+                return (
+                  <Link key={program.slug} to={`/${program.slug}`} className="home-visual-card">
                     <img
-                      src={heroPng}
+                      src={image}
                       alt={hero.title}
                       loading="lazy"
                       width={hero.dimensions?.width || 1600}
                       height={hero.dimensions?.height || 900}
                     />
-                  ) : (
-                    <div className="hero-card-placeholder">
-                      <span className="hero-card-placeholder-label">Hero pending</span>
-                      <span className="hero-card-placeholder-status">{maturityLabels[maturity]}</span>
+                    <div>
+                      <span>{publicProgramLabels[program.status]}</span>
+                      <h3>{hero.title}</h3>
+                      <p>{shortText(hero.caption || program.summary, 120)}</p>
                     </div>
-                  )}
-                  <div className="hero-card-chips">
-                    <MaturityChip status={maturity} />
-                    {hero && (
-                      <span
-                        className="attestation-chip"
-                        title="attestation_chain set per CONSTITUTION.md section 18.2"
-                      >
-                        {hero.attestation_chain}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="hero-card-body">
-                  <h3 className="hero-card-title">{hero?.title || p.title}</h3>
-                  <p className="hero-card-caption">{hero?.caption || p.summary}</p>
-                  {hero?.headline_number && (
-                    <p className="hero-card-headline-number">{hero.headline_number}</p>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="home-loading-note">Loading generated program visuals...</p>
+          )}
+        </details>
 
-      <section className="home-footer-note">
-        <p>
-          The homepage is a publication surface, not a maturity gate. The active board remains{" "}
-          <Link to="/status" className="token-link">
-            research/STATUS.md
-          </Link>
-          ; program labels remain governed by the Constitution and factory loop.
-        </p>
+        <div className="home-standard-note">
+          <p>
+            The homepage is a publication surface, not a maturity gate. Program
+            labels remain governed by the Constitution and factory loop; the
+            active board remains{" "}
+            <Link to="/status" className="token-link">
+              research/STATUS.md
+            </Link>
+            .
+          </p>
+        </div>
       </section>
     </div>
   );

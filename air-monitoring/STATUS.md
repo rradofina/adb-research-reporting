@@ -4,14 +4,14 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-06-25.
+Last updated: 2026-07-01.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-identity validation gate, station-radius coverage-claim gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and station-specific calibration/inspection/certificate/status documentation remain next |
+| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, BMKG station-grade closure gate, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-identity validation gate, station-radius coverage-claim gate, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and station-specific calibration/inspection/certificate/status documentation remain next |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -41,7 +41,7 @@ parity/status-field check, the BMKG regional status/source scan, the BMKG
 dashboard current-status source scan, the BMKG grade-basis source scan, the BMKG
 station public-context source scan, the BMKG installation/audit source scan,
 the BMKG near-closure ledger, the BMKG targeted certificate/status source scan,
-the BMKG PPID/PTSP access-route scan,
+the BMKG PPID/PTSP access-route scan, the BMKG station-grade closure gate,
 the Georgia
 report-verification source scan, the Georgia report/export verification ladder,
 the Georgia verification-policy wall, the Georgia report-frequency matrix, the
@@ -63,6 +63,26 @@ identity/crosswalk evidence, complete grade-basis evidence, and
 station-radius-ready economy rows exist.
 
 ## Last completed
+
+- **2026-07-01:** Added the BMKG station-grade closure gate. New no-network
+  derivative script `scripts/build-bmkg-station-grade-closure-gate.py` reads
+  the committed BMKG near-closure ledger, targeted certificate/status scan,
+  and PPID/PTSP access-route scan. It checks 22 BMKG PM2.5 rows against a
+  strict closure rule: method, exact station display, station-page BAM text,
+  current dashboard status, source-level grade basis, and at least one
+  station-specific inspection log, PM2.5 calibration certificate/status
+  record, or explicit station-grade record. It records 22 method-classified
+  rows, 22 public display rows, 21 current `ONLINE` dashboard rows, 1
+  `DELAYED` dashboard row, 22 PPID public display-route rows, 0
+  station-specific inspection-log rows, 0 station-specific PM2.5 calibration
+  certificate rows, 0 calibration-status rows, 0 explicit station-grade rows,
+  0 complete monitor-grade rows, and 0 station-radius grade-assumption-ready
+  rows. It writes
+  `generated/air-monitoring-bmkg-station-grade-closure-gate.csv`,
+  `generated/air-monitoring-bmkg-station-grade-closure-gate-summary.json`,
+  and `bmkg-station-grade-closure-gate.md`. This is a row-level station-grade
+  decision gate, not a monitor-grade promotion, same-station OpenAQ join,
+  service-area estimate, exposure estimate, or station-radius coverage result.
 
 - **2026-06-25:** Added the station-identity validation gate. New derivative
   script `scripts/build-station-identity-validation-gate.py` reads the
@@ -1383,7 +1403,13 @@ station-radius-ready economy rows exist.
    source-level calibration-service, certificate-request, and raw-data
    access-limit context, and keeps station-specific inspection,
    calibration-certificate/status, complete-grade, and station-radius-ready
-   rows at 0. The next useful source is not another
+   rows at 0. The BMKG station-grade closure gate then reads the near-closure,
+   targeted certificate/status, and PPID/PTSP row tables together and keeps all
+   22 rows blocked from complete monitor-grade promotion: 22 method/display
+   rows, 21 current `ONLINE` rows, 1 `DELAYED` row, 22 PPID display-route
+   rows, and still 0 station-specific inspection logs, PM2.5 calibration
+   certificate/status records, explicit station-grade rows, complete-grade
+   rows, or station-radius grade-assumption-ready rows. The next useful source is not another
    BMKG station-detail, PM2.5 API scrape, dashboard refresh, generic regional
    analysis page, broad standard, SOP, tariff page, PPID report, annual report,
    station-unit publication, academic article, city/deployment context source,
@@ -1420,10 +1446,10 @@ station-radius-ready economy rows exist.
    or indicator API route variant; it is a verified source, station
    method/status table, calibration/status record, or regulator document that
    names exact station codes without that caution.
-5. For the 22 BMKG rows now summarized in the near-closure ledger, find
-   station-specific inspection logs, PM2.5 calibration certificates/status
-   records, or explicit station-grade records before any row is promoted to
-   complete monitor-grade.
+5. For the 22 BMKG rows now summarized in the near-closure ledger and the
+   strict station-grade closure gate, find station-specific inspection logs,
+   PM2.5 calibration certificates/status records, or explicit station-grade
+   records before any row is promoted to complete monitor-grade.
    For Uzbekistan, instrument hints and exact blocker rows remain outside grade
    promotion until exact blockers, endpoint disagreements, status, and
    certification are resolved.

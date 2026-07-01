@@ -23,6 +23,7 @@ const FILTERS: Array<{ key: Filter; label: string }> = [
   { key: "all", label: "All topics" },
   { key: "publication-ready", label: "Finished" },
   { key: "screening-result", label: "Screening" },
+  { key: "program-prospectus", label: "Prospectus" },
   { key: "prepared-pipeline", label: "Pipeline" },
   { key: "hypothesis", label: "Not finished" },
 ];
@@ -30,8 +31,9 @@ const FILTERS: Array<{ key: Filter; label: string }> = [
 const FINISH_ORDER: Record<FinishGroup, number> = {
   "publication-ready": 0,
   "screening-result": 1,
-  "prepared-pipeline": 2,
-  hypothesis: 3,
+  "program-prospectus": 2,
+  "prepared-pipeline": 3,
+  hypothesis: 4,
 };
 
 export default function Briefs() {
@@ -61,6 +63,7 @@ export default function Briefs() {
     const counts: Record<FinishGroup, number> = {
       "publication-ready": 0,
       "screening-result": 0,
+      "program-prospectus": 0,
       "prepared-pipeline": 0,
       hypothesis: 0,
     };
@@ -404,6 +407,7 @@ function formatChartValue(value: number) {
 function chipVariant(finish: FinishGroup): "default" | "crimson" | "sage" | "ochre" {
   if (finish === "publication-ready") return "crimson";
   if (finish === "screening-result") return "sage";
+  if (finish === "program-prospectus") return "ochre";
   if (finish === "prepared-pipeline") return "ochre";
   return "default";
 }

@@ -113,6 +113,7 @@ const ARTIFACTS = [
   { key: "air_monitoring_bmkg_near_closure_ledger", file: "bmkg-near-closure-ledger.md", label: "Air-monitoring BMKG near-closure ledger" },
   { key: "air_monitoring_bmkg_certificate_status_targeted_source_scan", file: "bmkg-certificate-status-targeted-source-scan.md", label: "Air-monitoring BMKG targeted certificate/status source scan" },
   { key: "air_monitoring_bmkg_ppid_access_route_scan", file: "bmkg-ppid-access-route-scan.md", label: "Air-monitoring BMKG PPID/PTSP access-route scan" },
+  { key: "air_monitoring_bmkg_station_grade_closure_gate", file: "bmkg-station-grade-closure-gate.md", label: "Air-monitoring BMKG station-grade closure gate" },
   { key: "air_monitoring_georgia_report_verification_source_scan", file: "georgia-report-verification-source-scan.md", label: "Air-monitoring Georgia report verification source scan" },
   { key: "air_monitoring_georgia_report_export_ladder", file: "georgia-report-export-ladder.md", label: "Air-monitoring Georgia report export verification ladder" },
   { key: "air_monitoring_georgia_verification_policy", file: "georgia-verification-policy.md", label: "Air-monitoring Georgia verification-policy wall" },

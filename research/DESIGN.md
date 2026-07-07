@@ -159,9 +159,11 @@ Run this checklist before closing any public-surface session:
 3. **Done 2026-07-07:** Reworked `Home.tsx` to lead with five ranked
    findings (claim + hero visual + label), with process/reviewer links
    demoted below the first viewport and verified at 1280 px and 375 px.
-4. Add the evidence-ledger component once, shared by all programs, fed by
-   a generated `{program}/generated/evidence-ledger.json` written by a
-   committed script.
+4. **Done 2026-07-07:** Added `reporting-site/src/components/EvidenceLedger.tsx`
+   and updated the air-monitoring and PSDQ ledger builders to emit standard
+   `{program}/generated/evidence-ledger.{json,csv}` aliases. Both showcase
+   routes now use the shared component for group cards, filtering, file links,
+   and responsive ledger tables.
 5. Audit every program page against the anatomy; record deviations in
    the per-program STATUS and fix them as presentation moves (a
    first-class move under `research/JUDGMENT.md` §4).

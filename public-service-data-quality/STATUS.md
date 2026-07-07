@@ -12,7 +12,7 @@ Last updated: 2026-07-07.
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L4 presentation refactor complete: `/showcase/psdq-source-disagreement` now renders one generated evidence ledger instead of stacked wall sections. Substantive source repair remains owner-only source-owner contact or human location validation; PR maturity label unchanged. |
+| Active stage | L4 presentation refactor complete: `/showcase/psdq-source-disagreement` now renders one generated evidence ledger through the shared reporting-site ledger component. Substantive source repair remains owner-only source-owner contact or human location validation; PR maturity label unchanged. |
 | Active flagship | Yes, as of 2026-07-07 — rotated in for the design-backlog presentation move after `air-monitoring` closed. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -29,6 +29,13 @@ owner-only.
 
 ## Last completed
 
+- **2026-07-07:** Standardized the PSDQ evidence ledger surface. The builder
+  now emits `generated/evidence-ledger.{json,csv}` aliases alongside the
+  legacy `psdq-evidence-ledger.{json,csv}` files, and the showcase imports the
+  shared `reporting-site/src/components/EvidenceLedger.tsx` renderer for group
+  cards, table filtering, reader-use text, and artifact links. No new repair
+  claim, row closure, maturity promotion, source-owner contact, or human-final
+  upgrade.
 - **2026-07-07:** Refactored the PSDQ showcase from a 7,532-line wall-stack
   route to a 524-line finding-first page backed by
   `generated/psdq-evidence-ledger.{json,csv}`. The new no-network ledger

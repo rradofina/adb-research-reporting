@@ -3,7 +3,7 @@
   "status": "computed_psdq_evidence_ledger",
   "method": "psdq_evidence_ledger_v1",
   "attestation_chain": "ai-first",
-  "generated_at": "2026-07-07T07:13:32Z",
+  "generated_at": "2026-07-07T07:55:35Z",
   "finding": {
     "headline": "Bangladesh registry-map disagreement is visible at upazila scale, but row-level repair is now explicitly human/source-owner gated.",
     "claim": "The PSDQ Bangladesh L3 module joins 572 DGHS upazila rows with 28,166 active clinical facilities to 3,212 joined OSM health features; the facility-validation chain ends with 39 human/source-owner wall rows and 0 AI-actionable closures.",
@@ -44,11 +44,11 @@
       "OSM absence is not facility absence.",
       "No source owner or human reviewer was contacted under ai-first mode."
     ],
-    "audit_route": "generated/psdq-evidence-ledger.json and generated/psdq-evidence-ledger.csv"
+    "audit_route": "generated/evidence-ledger.json and generated/evidence-ledger.csv"
   },
   "data_to_visual_contract": {
-    "source": "public-service-data-quality/generated/psdq-evidence-ledger.json",
-    "transform": "reporting-site/src/views/ShowcasePSDQ.tsx renders gates, grouped rows, and ledger links.",
+    "source": "public-service-data-quality/generated/evidence-ledger.json",
+    "transform": "reporting-site/src/components/EvidenceLedger.tsx renders grouped rows, filtering, and ledger links.",
     "claim_role": "Supports the headline and makes the human/source-owner gate visible.",
     "mobile_proof": "375 px browser QA required after site build.",
     "fallback": "The evidence ledger table lists every artifact row, substantive finding, and download link."
@@ -560,8 +560,10 @@
     }
   ],
   "outputs": {
-    "json": "generated/psdq-evidence-ledger.json",
-    "csv": "generated/psdq-evidence-ledger.csv"
+    "json": "generated/evidence-ledger.json",
+    "csv": "generated/evidence-ledger.csv",
+    "legacy_json": "generated/psdq-evidence-ledger.json",
+    "legacy_csv": "generated/psdq-evidence-ledger.csv"
   },
   "non_claim": "This is an AI-first evidence ledger for the PSDQ Bangladesh source-disagreement showcase. It summarizes committed public-data artifacts so a reader can follow the evidence chain. It is not human validation, not source-owner outreach, not ground truth, not a row closure, not a same-facility reclassification, not a coordinate correction, not a facility-quality assessment, and not a service-access estimate."
 }

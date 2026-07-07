@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-07-07T07:26:09.462Z",
+  "generated_at": "2026-07-07T08:10:09.448Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -500,6 +500,18 @@
       "sha256": "2417ae237bbef3047cdd765496a064c31fddf349052af5d99aef314e0c0c17fa"
     },
     {
+      "file": "generated/evidence-ledger.csv",
+      "size": 28792,
+      "size_human": "28.1 KB",
+      "sha256": "0b978b07f573bf2025c2fbf8c7a365f23f49e0a2b949966014cfed75e404c295"
+    },
+    {
+      "file": "generated/evidence-ledger.json",
+      "size": 43502,
+      "size_human": "42.5 KB",
+      "sha256": "ce0e8463668dabb1b2bb0fea7f41fd3d103a931eea6b61347150828bcf6d2e9e"
+    },
+    {
       "file": "generated/psdq-bgd-admin-coordinate-summary.csv",
       "size": 42806,
       "size_human": "41.8 KB",
@@ -951,9 +963,9 @@
     },
     {
       "file": "generated/psdq-evidence-ledger.json",
-      "size": 43400,
-      "size_human": "42.4 KB",
-      "sha256": "bcbc6cf07b4fb561a93856bebbff51ae449587c944a464afca48c7d1d99b066d"
+      "size": 43502,
+      "size_human": "42.5 KB",
+      "sha256": "ce0e8463668dabb1b2bb0fea7f41fd3d103a931eea6b61347150828bcf6d2e9e"
     },
     {
       "file": "generated/psdq-phl-admin3-open-buildings-context-summary.json",

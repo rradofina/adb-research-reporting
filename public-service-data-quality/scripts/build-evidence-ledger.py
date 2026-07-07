@@ -21,6 +21,8 @@ GENERATED_DIR = PROGRAM_DIR / "generated"
 
 OUT_JSON = GENERATED_DIR / "psdq-evidence-ledger.json"
 OUT_CSV = GENERATED_DIR / "psdq-evidence-ledger.csv"
+STANDARD_JSON = GENERATED_DIR / "evidence-ledger.json"
+STANDARD_CSV = GENERATED_DIR / "evidence-ledger.csv"
 
 METHOD = "psdq_evidence_ledger_v1"
 STATUS = "computed_psdq_evidence_ledger"
@@ -810,19 +812,21 @@ def main() -> None:
                 "OSM absence is not facility absence.",
                 "No source owner or human reviewer was contacted under ai-first mode.",
             ],
-            "audit_route": "generated/psdq-evidence-ledger.json and generated/psdq-evidence-ledger.csv",
+            "audit_route": "generated/evidence-ledger.json and generated/evidence-ledger.csv",
         },
         "data_to_visual_contract": {
-            "source": "public-service-data-quality/generated/psdq-evidence-ledger.json",
-            "transform": "reporting-site/src/views/ShowcasePSDQ.tsx renders gates, grouped rows, and ledger links.",
+            "source": "public-service-data-quality/generated/evidence-ledger.json",
+            "transform": "reporting-site/src/components/EvidenceLedger.tsx renders grouped rows, filtering, and ledger links.",
             "claim_role": "Supports the headline and makes the human/source-owner gate visible.",
             "mobile_proof": "375 px browser QA required after site build.",
             "fallback": "The evidence ledger table lists every artifact row, substantive finding, and download link.",
         },
         "rows": rows,
         "outputs": {
-            "json": rel(OUT_JSON.relative_to(PROGRAM_DIR).as_posix()),
-            "csv": rel(OUT_CSV.relative_to(PROGRAM_DIR).as_posix()),
+            "json": rel(STANDARD_JSON.relative_to(PROGRAM_DIR).as_posix()),
+            "csv": rel(STANDARD_CSV.relative_to(PROGRAM_DIR).as_posix()),
+            "legacy_json": rel(OUT_JSON.relative_to(PROGRAM_DIR).as_posix()),
+            "legacy_csv": rel(OUT_CSV.relative_to(PROGRAM_DIR).as_posix()),
         },
         "non_claim": NON_CLAIM,
     }
@@ -846,9 +850,13 @@ def main() -> None:
         "non_claim",
     ]
     write_json(OUT_JSON, payload)
+    write_json(STANDARD_JSON, payload)
     write_csv(OUT_CSV, rows, fields)
+    write_csv(STANDARD_CSV, rows, fields)
     print(f"Wrote {OUT_JSON} ({len(rows)} ledger rows)")
+    print(f"Wrote {STANDARD_JSON}")
     print(f"Wrote {OUT_CSV}")
+    print(f"Wrote {STANDARD_CSV}")
 
 
 if __name__ == "__main__":

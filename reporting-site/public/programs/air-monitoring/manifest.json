@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-07-07T06:45:41.378Z",
+  "generated_at": "2026-07-07T08:10:10.482Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -941,9 +941,9 @@
     },
     {
       "file": "generated/air-monitoring-evidence-ledger.json",
-      "size": 159153,
-      "size_human": "155.4 KB",
-      "sha256": "5ba5f9050f37727d9b4d60a40839e4cbe3707e7c47d6e2aace67b1cf9e7f2f07"
+      "size": 159259,
+      "size_human": "155.5 KB",
+      "sha256": "1481d84fdde3f8b0555fee8ff578754119a4e6bb4b74fe8044344e9c9dcf3c5f"
     },
     {
       "file": "generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
@@ -1610,6 +1610,18 @@
       "size": 969764,
       "size_human": "947.0 KB",
       "sha256": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+    },
+    {
+      "file": "generated/evidence-ledger.csv",
+      "size": 43177,
+      "size_human": "42.2 KB",
+      "sha256": "ff969eab96dc6c19d9ee79758a17ce4fdcff2669668a4443b4e44f35a677a893"
+    },
+    {
+      "file": "generated/evidence-ledger.json",
+      "size": 159259,
+      "size_human": "155.5 KB",
+      "sha256": "1481d84fdde3f8b0555fee8ff578754119a4e6bb4b74fe8044344e9c9dcf3c5f"
     }
   ],
   "articles": [

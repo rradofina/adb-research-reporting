@@ -159,6 +159,14 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-07-07 (shared evidence-ledger component):** Completed the next L0
+  design-backlog move. Added a shared reporting-site evidence-ledger component
+  and standard `generated/evidence-ledger.{json,csv}` aliases for
+  `air-monitoring` and `public-service-data-quality`; both showcase routes now
+  use the same grouped ledger cards, filterable table, and artifact-link
+  renderer. No claim, maturity label, or active flagship change. Next design
+  backlog item: audit remaining program pages against `research/DESIGN.md`.
+
 - **2026-07-07 (Home findings-first refactor):** Completed the L0
   presentation move from `research/DESIGN.md`: `/` now opens with five
   ranked research findings (air monitoring, PSDQ, remittances, migration,

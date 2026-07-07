@@ -21,6 +21,8 @@ GENERATED_DIR = PROGRAM_DIR / "generated"
 
 OUT_JSON = GENERATED_DIR / "air-monitoring-evidence-ledger.json"
 OUT_CSV = GENERATED_DIR / "air-monitoring-evidence-ledger.csv"
+STANDARD_JSON = GENERATED_DIR / "evidence-ledger.json"
+STANDARD_CSV = GENERATED_DIR / "evidence-ledger.csv"
 
 METHOD = "air_monitoring_evidence_ledger_v1"
 STATUS = "computed_air_monitoring_evidence_ledger"
@@ -521,8 +523,10 @@ def main() -> None:
         "rows": rows,
         "economy_rows": economy_rows,
         "outputs": {
-            "json": "generated/air-monitoring-evidence-ledger.json",
-            "csv": "generated/air-monitoring-evidence-ledger.csv",
+            "json": "generated/evidence-ledger.json",
+            "csv": "generated/evidence-ledger.csv",
+            "legacy_json": "generated/air-monitoring-evidence-ledger.json",
+            "legacy_csv": "generated/air-monitoring-evidence-ledger.csv",
         },
         "non_claim": (
             "This ledger summarizes existing public-source evidence. It does not "
@@ -532,9 +536,13 @@ def main() -> None:
     }
 
     write_json(OUT_JSON, payload)
+    write_json(STANDARD_JSON, payload)
     write_csv(OUT_CSV, rows)
+    write_csv(STANDARD_CSV, rows)
     print(f"Wrote {OUT_JSON} ({len(rows)} ledger rows)")
+    print(f"Wrote {STANDARD_JSON}")
     print(f"Wrote {OUT_CSV}")
+    print(f"Wrote {STANDARD_CSV}")
 
 
 if __name__ == "__main__":

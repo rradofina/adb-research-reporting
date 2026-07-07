@@ -1,11 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Link from "next/link";
+import {
+  EvidenceLedgerGroupSummary,
+  EvidenceLedgerTable,
+  formatLedgerNumber as formatNumber,
+  type EvidenceLedgerRow,
+} from "../components/EvidenceLedger";
 import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
-import ledgerData from "../../public/programs/air-monitoring/generated/air-monitoring-evidence-ledger.json";
+import ledgerData from "../../public/programs/air-monitoring/generated/evidence-ledger.json";
 
-const LEDGER_URL = "/programs/air-monitoring/generated/air-monitoring-evidence-ledger.json";
+const LEDGER_URL = "/programs/air-monitoring/generated/evidence-ledger.json";
+const LEDGER_CSV_URL = "/programs/air-monitoring/generated/evidence-ledger.csv";
 
 interface HeadlineCounts {
   ledger_rows: number;
@@ -26,25 +32,7 @@ interface HeadlineCounts {
   denominator_join_rows: number;
 }
 
-interface LedgerRow {
-  ledger_id: string;
-  title: string;
-  group: string;
-  status: string;
-  method: string;
-  attestation_chain: string;
-  generated_at: string;
-  checked_rows: number;
-  source_inputs_count: number;
-  zero_claim_fields: string[];
-  zero_claim_field_count: number;
-  substantive_finding: string;
-  reader_use: string;
-  artifact_path: string;
-  summary_path: string;
-  csv_path: string;
-  non_claim: string;
-}
+type LedgerRow = EvidenceLedgerRow;
 
 interface EconomyRow {
   iso3: string;
@@ -85,63 +73,6 @@ interface EvidenceLedger {
 }
 
 const LEDGER = ledgerData as EvidenceLedger;
-
-function formatNumber(value: number | null | undefined) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "pending";
-  return value.toLocaleString();
-}
-
-function shortDate(value: string | null | undefined) {
-  if (!value) return "pending";
-  const date = new Date(value);
-  if (Number.isNaN(date.valueOf())) return value.slice(0, 10);
-  return date.toISOString().slice(0, 10);
-}
-
-function titleCase(value: string) {
-  return value
-    .split(/[-_\s]+/)
-    .filter(Boolean)
-    .map((part) => {
-      const upper = part.toUpperCase();
-      if (["QA", "PM25", "BMKG", "GHSL", "ACAG", "PPID", "PTSP", "API", "CSV", "JSON"].includes(upper)) {
-        return upper === "PM25" ? "PM2.5" : upper;
-      }
-      return part.charAt(0).toUpperCase() + part.slice(1);
-    })
-    .join(" ");
-}
-
-function publicPath(path: string) {
-  if (!path) return "";
-  const clean = path.replace(/\\/g, "/").replace(/^air-monitoring\//, "");
-  return `/programs/air-monitoring/${clean}`;
-}
-
-function strongestRows(rows: LedgerRow[]) {
-  return rows
-    .filter((row) => row.zero_claim_field_count > 0)
-    .slice()
-    .sort((a, b) => b.zero_claim_field_count - a.zero_claim_field_count || b.checked_rows - a.checked_rows)
-    .slice(0, 8);
-}
-
-function groupRows(rows: LedgerRow[]) {
-  const grouped = new Map<string, LedgerRow[]>();
-  for (const row of rows) {
-    const list = grouped.get(row.group) || [];
-    list.push(row);
-    grouped.set(row.group, list);
-  }
-  return Array.from(grouped.entries())
-    .map(([group, items]) => ({
-      group,
-      items,
-      zeroFields: items.reduce((sum, item) => sum + item.zero_claim_field_count, 0),
-      checkedRows: items.reduce((sum, item) => sum + (item.checked_rows || 0), 0),
-    }))
-    .sort((a, b) => b.zeroFields - a.zeroFields || a.group.localeCompare(b.group));
-}
 
 function EvidenceMatrix({ counts }: { counts?: HeadlineCounts }) {
   const items = [
@@ -250,23 +181,6 @@ function SourceRouteList({ routes }: { routes: string[] }) {
   );
 }
 
-function GroupSummary({ rows }: { rows: LedgerRow[] }) {
-  const groups = groupRows(rows);
-  return (
-    <div className="air-ledger-group-grid">
-      {groups.map((group) => (
-        <div className="air-ledger-group" key={group.group}>
-          <span>{titleCase(group.group)}</span>
-          <strong>{formatNumber(group.items.length)} ledger rows</strong>
-          <p>
-            {formatNumber(group.checkedRows)} checked rows · {formatNumber(group.zeroFields)} zero claim fields
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function EconomyStrip({ rows }: { rows: EconomyRow[] }) {
   const visibleRows = rows
     .slice()
@@ -298,78 +212,6 @@ function EconomyStrip({ rows }: { rows: EconomyRow[] }) {
         </div>
       ))}
     </div>
-  );
-}
-
-function EvidenceLedgerTable({ rows }: { rows: LedgerRow[] }) {
-  const [group, setGroup] = useState("all");
-  const groupOptions = useMemo(
-    () => ["all", ...Array.from(new Set(rows.map((row) => row.group))).sort()],
-    [rows],
-  );
-  const filteredRows = useMemo(
-    () => (group === "all" ? strongestRows(rows) : rows.filter((row) => row.group === group).slice(0, 12)),
-    [group, rows],
-  );
-
-  return (
-    <section className="showcase-section air-ledger-section" aria-labelledby="air-ledger-heading">
-      <div className="showcase-section-copy">
-        <p className="kicker kicker-crimson">Evidence ledger</p>
-        <h2 id="air-ledger-heading">The audit trail is now one table, not a wall stack.</h2>
-        <p>
-          Each row is generated from a committed summary JSON. The public page
-          shows the strongest claim-relevant rows first, then lets the reader
-          switch by evidence group.
-        </p>
-      </div>
-      <div className="air-ledger-toolbar">
-        <label>
-          Evidence group
-          <select value={group} onChange={(event) => setGroup(event.target.value)}>
-            {groupOptions.map((option) => (
-              <option key={option} value={option}>
-                {option === "all" ? "Highest zero-gate rows" : titleCase(option)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <span>{formatNumber(filteredRows.length)} rows shown</span>
-      </div>
-      <div className="air-ledger-table-wrap">
-        <table className="air-ledger-table">
-          <thead>
-            <tr>
-              <th>Evidence row</th>
-              <th>Checked</th>
-              <th>Zero fields</th>
-              <th>Finding</th>
-              <th>Files</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredRows.map((row) => (
-              <tr key={row.ledger_id}>
-                <td>
-                  <span>{titleCase(row.group)}</span>
-                  <strong>{row.title}</strong>
-                </td>
-                <td>{formatNumber(row.checked_rows)}</td>
-                <td>{formatNumber(row.zero_claim_field_count)}</td>
-                <td>{row.substantive_finding}</td>
-                <td>
-                  <div className="air-ledger-links">
-                    {row.artifact_path && <a href={publicPath(row.artifact_path)}>note</a>}
-                    <a href={publicPath(row.summary_path)}>json</a>
-                    {row.csv_path && <a href={publicPath(row.csv_path)}>csv</a>}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
   );
 }
 
@@ -436,7 +278,12 @@ export default function ShowcaseAirMonitoring() {
             do not close.
           </p>
         </div>
-        <GroupSummary rows={rows} />
+        <EvidenceLedgerGroupSummary
+          rows={rows}
+          rowNoun="ledger rows"
+          metricKey="zero_claim_field_count"
+          metricLabel="zero claim fields"
+        />
       </section>
 
       <section className="showcase-section showcase-two-col">
@@ -461,7 +308,19 @@ export default function ShowcaseAirMonitoring() {
         <EconomyStrip rows={ledger.economy_rows} />
       </section>
 
-      <EvidenceLedgerTable rows={rows} />
+      <EvidenceLedgerTable
+        rows={rows}
+        programSlug="air-monitoring"
+        headingId="air-ledger-heading"
+        title="The audit trail is now one table, not a wall stack."
+        description="Each row is generated from a committed summary JSON. The public page shows the strongest claim-relevant rows first, then lets the reader switch by evidence group."
+        metricKey="zero_claim_field_count"
+        metricLabel="Zero fields"
+        allOptionLabel="Highest zero-gate rows"
+        allMode="highest-metric"
+        allRowLimit={8}
+        groupRowLimit={12}
+      />
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">
@@ -494,7 +353,7 @@ export default function ShowcaseAirMonitoring() {
           <a href="/programs/air-monitoring/results.md">Results note</a>
           <a href="/programs/air-monitoring/sensitivity.md">Sensitivity note</a>
           <a href={LEDGER_URL}>Evidence ledger JSON</a>
-          <a href="/programs/air-monitoring/generated/air-monitoring-evidence-ledger.csv">Evidence ledger CSV</a>
+          <a href={LEDGER_CSV_URL}>Evidence ledger CSV</a>
           <Link href="/program/air-monitoring/evidence">Program evidence archive</Link>
         </div>
       </section>

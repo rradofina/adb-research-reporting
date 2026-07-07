@@ -12,7 +12,7 @@ Last updated: 2026-07-07.
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
 | Active stage | Evidence-gap package closed 2026-07-07: the public-source audit now publishes the documented absence finding through `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, the article, a generated evidence ledger, and a finding-first showcase page. |
-| Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
+| Active flagship | No — issue closed 2026-07-07; further work only for shared presentation components or a named §6.7-qualified public source |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | `/program/air-monitoring/evidence` |
@@ -34,6 +34,13 @@ same-station crosswalk, or method-grade records.
 
 ## Last completed
 
+- **2026-07-07:** Standardized the air-monitoring evidence ledger surface.
+  The builder now emits `generated/evidence-ledger.{json,csv}` aliases
+  alongside the legacy `air-monitoring-evidence-ledger.{json,csv}` files, and
+  the showcase imports the shared `reporting-site/src/components/EvidenceLedger.tsx`
+  renderer for group cards, zero-field filtering, and artifact links. This is
+  presentation/navigation maintenance, not a new source scan, coverage claim,
+  maturity promotion, or human-final upgrade.
 - **2026-07-07:** Published the absence-finding package. Added
   `scripts/build-evidence-ledger.py` and generated
   `generated/air-monitoring-evidence-ledger.{json,csv}` (64 ledger rows,

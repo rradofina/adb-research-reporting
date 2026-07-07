@@ -1,12 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Link from "next/link";
+import {
+  EvidenceLedgerGroupSummary,
+  EvidenceLedgerTable,
+  formatLedgerNumber as formatNumber,
+  formatLedgerPercent as formatPercent,
+  type EvidenceLedgerRow,
+} from "../components/EvidenceLedger";
 import { ShowcaseQualityPanel } from "../components/ShowcaseQualityPanel";
-import ledgerData from "../../public/programs/public-service-data-quality/generated/psdq-evidence-ledger.json";
+import ledgerData from "../../public/programs/public-service-data-quality/generated/evidence-ledger.json";
 
-const LEDGER_URL = "/programs/public-service-data-quality/generated/psdq-evidence-ledger.json";
-const LEDGER_CSV_URL = "/programs/public-service-data-quality/generated/psdq-evidence-ledger.csv";
+const LEDGER_URL = "/programs/public-service-data-quality/generated/evidence-ledger.json";
+const LEDGER_CSV_URL = "/programs/public-service-data-quality/generated/evidence-ledger.csv";
 
 interface HeadlineCounts {
   ledger_rows: number;
@@ -50,24 +56,7 @@ interface DataVisualContract {
   fallback: string;
 }
 
-interface LedgerRow {
-  ledger_id: string;
-  group: string;
-  title: string;
-  status: string;
-  goal_level: string;
-  method: string;
-  attestation_chain: string;
-  generated_at: string;
-  checked_rows: number;
-  source_inputs_count: number;
-  substantive_finding: string;
-  reader_use: string;
-  artifact_path: string;
-  summary_path: string;
-  csv_path: string;
-  non_claim: string;
-}
+type LedgerRow = EvidenceLedgerRow;
 
 interface EvidenceLedger {
   program: string;
@@ -93,62 +82,6 @@ interface EvidenceLedger {
 }
 
 const LEDGER = ledgerData as EvidenceLedger;
-
-function formatNumber(value: number | null | undefined) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "pending";
-  return value.toLocaleString();
-}
-
-function formatPercent(value: number | null | undefined) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "pending";
-  return `${(value * 100).toFixed(1)}%`;
-}
-
-function shortDate(value: string | null | undefined) {
-  if (!value) return "pending";
-  const date = new Date(value);
-  if (Number.isNaN(date.valueOf())) return value.slice(0, 10);
-  return date.toISOString().slice(0, 10);
-}
-
-function titleCase(value: string) {
-  return value
-    .split(/[-_\s/]+/)
-    .filter(Boolean)
-    .map((part) => {
-      const upper = part.toUpperCase();
-      if (["AI", "API", "CSV", "DGHS", "JSON", "L3", "OSM", "PSDQ", "QA"].includes(upper)) return upper;
-      return part.charAt(0).toUpperCase() + part.slice(1);
-    })
-    .join(" ");
-}
-
-function publicPath(path: string) {
-  if (!path) return "";
-  const clean = path.replace(/\\/g, "/").replace(/^public-service-data-quality\//, "");
-  return `/programs/public-service-data-quality/${clean}`;
-}
-
-function groupRows(rows: LedgerRow[]) {
-  const grouped = new Map<string, LedgerRow[]>();
-  for (const row of rows) {
-    const list = grouped.get(row.group) || [];
-    list.push(row);
-    grouped.set(row.group, list);
-  }
-  return Array.from(grouped.entries())
-    .map(([group, items]) => ({
-      group,
-      items,
-      checkedRows: items.reduce((sum, item) => sum + (item.checked_rows || 0), 0),
-      latest: items
-        .map((item) => item.generated_at)
-        .filter(Boolean)
-        .sort()
-        .at(-1),
-    }))
-    .sort((a, b) => b.items.length - a.items.length || a.group.localeCompare(b.group));
-}
 
 function EvidenceMatrix({ counts }: { counts: HeadlineCounts }) {
   const items = [
@@ -289,24 +222,6 @@ function EvidencePath({ counts }: { counts: HeadlineCounts }) {
   );
 }
 
-function GroupSummary({ rows }: { rows: LedgerRow[] }) {
-  const groups = groupRows(rows);
-  return (
-    <div className="air-ledger-group-grid">
-      {groups.map((group) => (
-        <div className="air-ledger-group" key={group.group}>
-          <span>{titleCase(group.group)}</span>
-          <strong>{formatNumber(group.items.length)} rows</strong>
-          <p>
-            {formatNumber(group.checkedRows)} checked or indexed rows
-            {group.latest ? `; latest ${shortDate(group.latest)}` : ""}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function Limits({ cautions }: { cautions: string[] }) {
   return (
     <div className="psdq-limit-grid">
@@ -337,81 +252,6 @@ function DataContract({ contract }: { contract: DataVisualContract }) {
         </div>
       ))}
     </dl>
-  );
-}
-
-function EvidenceLedgerTable({ rows }: { rows: LedgerRow[] }) {
-  const [group, setGroup] = useState("all");
-  const groupOptions = useMemo(
-    () => ["all", ...Array.from(new Set(rows.map((row) => row.group))).sort()],
-    [rows],
-  );
-  const filteredRows = useMemo(
-    () => (group === "all" ? rows : rows.filter((row) => row.group === group)),
-    [group, rows],
-  );
-
-  return (
-    <section className="showcase-section air-ledger-section" aria-labelledby="psdq-ledger-heading">
-      <div className="showcase-section-copy">
-        <p className="kicker kicker-crimson">Evidence ledger</p>
-        <h2 id="psdq-ledger-heading">The audit trail is one generated table.</h2>
-        <p>
-          The old page stacked every wall and scan as its own section. This
-          table is generated from committed summaries and keeps the substantive
-          finding, reader use, and download links in one place.
-        </p>
-      </div>
-      <div className="air-ledger-toolbar">
-        <label>
-          Evidence group
-          <select value={group} onChange={(event) => setGroup(event.target.value)}>
-            {groupOptions.map((option) => (
-              <option key={option} value={option}>
-                {option === "all" ? "All evidence rows" : titleCase(option)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <span>{formatNumber(filteredRows.length)} rows shown</span>
-      </div>
-      <div className="air-ledger-table-wrap">
-        <table className="air-ledger-table">
-          <thead>
-            <tr>
-              <th>Evidence row</th>
-              <th>Checked</th>
-              <th>Sources</th>
-              <th>Finding</th>
-              <th>Files</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredRows.map((row) => (
-              <tr key={row.ledger_id}>
-                <td>
-                  <span>{titleCase(row.group)}</span>
-                  <strong>{row.title}</strong>
-                </td>
-                <td>{formatNumber(row.checked_rows)}</td>
-                <td>{formatNumber(row.source_inputs_count)}</td>
-                <td>
-                  {row.substantive_finding}
-                  <strong>{row.reader_use}</strong>
-                </td>
-                <td>
-                  <div className="air-ledger-links">
-                    {row.artifact_path && <a href={publicPath(row.artifact_path)}>note</a>}
-                    {row.summary_path && <a href={publicPath(row.summary_path)}>json</a>}
-                    {row.csv_path && <a href={publicPath(row.csv_path)}>csv</a>}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
   );
 }
 
@@ -486,7 +326,11 @@ export default function ShowcasePSDQ() {
             conclusions.
           </p>
         </div>
-        <GroupSummary rows={ledger.rows} />
+        <EvidenceLedgerGroupSummary
+          rows={ledger.rows}
+          checkedLabel="checked or indexed rows"
+          showLatest
+        />
       </section>
 
       <section className="showcase-section showcase-two-col">
@@ -498,7 +342,17 @@ export default function ShowcasePSDQ() {
         <Limits cautions={ledger.reader_first_test.cautions} />
       </section>
 
-      <EvidenceLedgerTable rows={ledger.rows} />
+      <EvidenceLedgerTable
+        rows={ledger.rows}
+        programSlug="public-service-data-quality"
+        headingId="psdq-ledger-heading"
+        title="The audit trail is one generated table."
+        description="The old page stacked every wall and scan as its own section. This table is generated from committed summaries and keeps the substantive finding, reader use, and download links in one place."
+        metricKey="source_inputs_count"
+        metricLabel="Sources"
+        allOptionLabel="All evidence rows"
+        includeReaderUse
+      />
 
       <section className="showcase-section showcase-two-col">
         <div className="showcase-section-copy">

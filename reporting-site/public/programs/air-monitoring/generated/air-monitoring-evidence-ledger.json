@@ -3,7 +3,7 @@
   "status": "computed_air_monitoring_evidence_ledger",
   "method": "air_monitoring_evidence_ledger_v1",
   "attestation_chain": "ai-first",
-  "generated_at": "2026-07-07T06:45:38Z",
+  "generated_at": "2026-07-07T07:55:36Z",
   "finding": {
     "headline": "Public station-level QA evidence is not sufficient to support a station-radius air-monitoring coverage claim in the current audit packet.",
     "claim": "The committed public-source searches find official station, method, dashboard, denominator, and route context, but the claim-enabling station-level evidence fields remain zero: validated same-station joins, complete monitor-grade rows, station-level calibration or inspection records, station-radius-ready economies, and allowed coverage-claim rows.",
@@ -2998,8 +2998,10 @@
     }
   ],
   "outputs": {
-    "json": "generated/air-monitoring-evidence-ledger.json",
-    "csv": "generated/air-monitoring-evidence-ledger.csv"
+    "json": "generated/evidence-ledger.json",
+    "csv": "generated/evidence-ledger.csv",
+    "legacy_json": "generated/air-monitoring-evidence-ledger.json",
+    "legacy_csv": "generated/air-monitoring-evidence-ledger.csv"
   },
   "non_claim": "This ledger summarizes existing public-source evidence. It does not certify monitors, validate station colocation, estimate coverage, estimate exposure, or make a regulatory-performance claim."
 }

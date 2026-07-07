@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/program/air-monitoring/evidence",
-  "generated_at": "2026-07-07T05:58:26.396Z",
+  "generated_at": "2026-07-07T06:45:41.378Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -57,10 +57,10 @@
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 1015,
-      "size_human": "1015 B",
-      "mtime": "2026-04-26T16:57:32.629Z",
-      "sha256": "051bd9c192436ca43d71818e401dd47ade5c8673e13d4bdc15c2a0670dc7636b",
+      "size": 2692,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-07T06:19:12.462Z",
+      "sha256": "a429ec3f0fb7ef53b57d95aef69e57ae78bac42cdf94bafc604a16d46b100c92",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,20 +77,20 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 453,
-      "size_human": "453 B",
-      "mtime": "2026-04-26T16:57:33.531Z",
-      "sha256": "891119091e8e654ee625169a7ce393a1d29528c23571c3ac434f92916f76b97b",
+      "size": 1455,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-07T06:26:56.354Z",
+      "sha256": "1a2a90b715ad2f46e16395ac98b92ef086b2806e2dae03d1148fca6167f01dd5",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 533,
-      "size_human": "533 B",
-      "mtime": "2026-04-26T16:57:56.737Z",
-      "sha256": "c25ebb1871ca664a448fe4694de9f90abbce5921d8ee0eb087f60b75c4312062",
+      "size": 2967,
+      "size_human": "2.9 KB",
+      "mtime": "2026-07-07T06:18:55.530Z",
+      "sha256": "2984e9defd7155fe55eeed1b18ea6d59fff85ec351b088df11efc689dc105212",
       "attestation_chain": "ai-first"
     },
     {
@@ -757,10 +757,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 10884,
-      "size_human": "10.6 KB",
-      "mtime": "2026-06-19T11:49:58.797Z",
-      "sha256": "443353d0f8d4fa6ab1ec119cfbd0ef733d8c013cf4d5cc71e2e3082a273247b7",
+      "size": 2093,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-07T06:26:35.681Z",
+      "sha256": "b3cfb345621bb77892e514bafc0f33693ba9448fada82b5c740e865d52408df3",
       "attestation_chain": "ai-first"
     }
   ],
@@ -932,6 +932,18 @@
       "size": 34736,
       "size_human": "33.9 KB",
       "sha256": "414eecf9ff391851f1a4deee59696a0e84aa26365f60fe928db361b0b22ecf13"
+    },
+    {
+      "file": "generated/air-monitoring-evidence-ledger.csv",
+      "size": 43177,
+      "size_human": "42.2 KB",
+      "sha256": "ff969eab96dc6c19d9ee79758a17ce4fdcff2669668a4443b4e44f35a677a893"
+    },
+    {
+      "file": "generated/air-monitoring-evidence-ledger.json",
+      "size": 159153,
+      "size_human": "155.4 KB",
+      "sha256": "5ba5f9050f37727d9b4d60a40839e4cbe3707e7c47d6e2aace67b1cf9e7f2f07"
     },
     {
       "file": "generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
@@ -1603,7 +1615,7 @@
   "articles": [
     {
       "slug": "pm25-observability-gap-cluster",
-      "title": "Five economies hold the top of the PM2.5 observability gap — Afghanistan, Bangladesh, Myanmar, Uzbekistan, Tajikistan",
+      "title": "Public station-level monitor QA evidence is not verifiable in the current air-monitoring audit",
       "attestation_chain": "ai-first"
     }
   ]

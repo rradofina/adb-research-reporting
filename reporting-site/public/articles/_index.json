@@ -497,31 +497,28 @@
   },
   {
     "slug": "pm25-observability-gap-cluster",
-    "title": "Five economies hold the top of the PM2.5 observability gap — Afghanistan, Bangladesh, Myanmar, Uzbekistan, Tajikistan",
-    "subtitle": "High pollution exposure × thin or absent public monitoring. WDI national PM2.5 is itself imputed in low-monitor DMCs.",
+    "title": "Public station-level monitor QA evidence is not verifiable in the current air-monitoring audit",
+    "subtitle": "The audited packet sees station and method context, but not the public calibration, inspection, identity, and grade evidence needed for coverage claims.",
     "kind": "working-paper",
     "tier": "working-paper",
     "status": "draft",
     "program": "air-monitoring",
-    "maturity": "SR",
+    "maturity": "L3 candidate",
     "topics": [
       "air-quality",
       "PM2.5",
-      "observability-gap"
+      "observability-gap",
+      "public-data-quality"
     ],
     "geographies": [
-      "AFG",
-      "BGD",
-      "MMR",
-      "UZB",
-      "TJK"
+      "regional"
     ],
-    "abstract": "Across 50 ADB-region economies, the PM2.5 observability-gap score combines people-per-OpenAQ-monitor with WHO-derived PM2.5 exposure-above-the-5-µg/m³-2021-guideline. Five economies — Afghanistan, Bangladesh, Myanmar, Uzbekistan, Tajikistan — hold the top-5 gap positions. WDI national PM2.5 is monitor-interpolated; in low-monitor DMCs it is effectively imputed, so the gap-score reflects both high pollution AND low monitoring (not independent phenomena, per HEI). ACAG-V6 satellite-derived 1-km gridded PM2.5 is the §18.5 upgrade-pass. Published under §18 (AI-First).",
+    "abstract": "The current air-monitoring audit should be read as an evidence-gap result, not as a station-radius coverage estimate. A generated ledger indexes 64 committed summary rows and 214 supporting files. Public sources expose station lists, method language, dashboard status, denominator geometry, and source routes, but the claim-enabling counters remain zero for validated same-station rows, BMKG station-specific inspection logs, BMKG station-specific calibration certificates, BMKG calibration-status rows, complete monitor-grade rows, station-radius-ready economies, and allowed coverage-claim rows.",
     "authors": [
       "{ name: Raymond Adofina",
       "affiliation: Asian Development Bank }"
     ],
-    "published_at": "2026-04-27",
+    "published_at": "2026-07-07",
     "updated_at": "",
     "doi": "",
     "file": "pm25-observability-gap-cluster.md",

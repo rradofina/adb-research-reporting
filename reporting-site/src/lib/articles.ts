@@ -33,7 +33,7 @@ let _cache: Promise<ArticleMeta[]> | null = null;
 
 export function loadArticleIndex(): Promise<ArticleMeta[]> {
   if (!_cache) {
-    _cache = fetch("/articles/_index.json")
+    _cache = fetch("/articles/_index.json", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : []))
       .catch(() => []);
   }
@@ -44,7 +44,7 @@ export async function loadArticleBody(slug: string): Promise<string | null> {
   const index = await loadArticleIndex();
   const meta = index.find((a) => a.slug === slug);
   if (!meta) return null;
-  const r = await fetch(`/articles/${meta.file}`);
+  const r = await fetch(`/articles/${meta.file}`, { cache: "no-store" });
   if (!r.ok) return null;
   return r.text();
 }

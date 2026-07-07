@@ -111,11 +111,13 @@ Facility-count stress is not travel-time access; road-network
 isochrones remain the policy-grade measure. →
 [/findings/access-stress-pilot-cluster](/findings/access-stress-pilot-cluster)
 
-**Air-Monitoring Observability.** Five economies hold the top PM2.5
-observability-gap positions: Afghanistan, Bangladesh, Myanmar,
-Uzbekistan, and Tajikistan. WDI PM2.5 is partly model-derived in
-low-monitor settings, so exposure and observability are not
-independent. → [/findings/pm25-observability-gap-cluster](/findings/pm25-observability-gap-cluster)
+**Air-Monitoring Observability.** A generated evidence ledger indexes
+64 public-source summary rows and 214 supporting files, but the
+claim-enabling QA counters remain zero for validated same-station
+rows, station-level BMKG inspection logs/certificates/status rows,
+complete monitor-grade rows, station-radius-ready economies, and
+allowed coverage-claim rows. This is an evidence-gap result, not a
+monitor-coverage estimate. → [/findings/pm25-observability-gap-cluster](/findings/pm25-observability-gap-cluster)
 
 **Invisible Urbanization.** Papua New Guinea, Solomon Islands,
 Afghanistan, Lao PDR, and Bangladesh hold the top urban-growth-from-

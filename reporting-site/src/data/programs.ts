@@ -44,10 +44,10 @@ export const programs: ProgramEntry[] = [
   {
     id: 3,
     slug: "air-monitoring",
-    title: "Air pollution without air monitors",
+    title: "Public monitor QA observability",
     status: "SR",
     summary:
-      "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1 observability screen across 50 ADB regional economies. 7 economies flagged for sparse PM2.5 monitoring; 14.3M people live in above-guideline PM2.5 economies with no public PM2.5 monitor.",
+      "Generated evidence ledger indexes 64 air-monitoring summary rows and 214 supporting files. Public sources expose station, method, dashboard, and denominator context, but station-level calibration/inspection/status, validated same-station, complete monitor-grade, and coverage-claim gates remain at zero.",
     href: "/program/air-monitoring",
   },
   {

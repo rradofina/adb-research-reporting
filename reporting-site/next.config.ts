@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
       { source: "/findings", destination: "/", permanent: false },
       { source: "/findings/:slug", destination: "/", permanent: false },
       { source: "/articles", destination: "/", permanent: false },
-      { source: "/articles/:slug", destination: "/", permanent: false },
       { source: "/program/:slug/evidence", destination: "/:slug?view=evidence", permanent: false },
       { source: "/program/:slug", destination: "/:slug", permanent: false },
       { source: "/research", destination: "/", permanent: false },

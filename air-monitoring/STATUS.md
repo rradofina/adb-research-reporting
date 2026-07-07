@@ -11,7 +11,7 @@ Last updated: 2026-07-07.
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | Reframed 2026-07-07 under Constitution §6.7: the systematic 8-economy search for station-level QA evidence is complete and found none in public; the program now packages that documented absence as its headline result. Next: consolidate the 60+ scan artifacts into an absence-of-evidence results package and rebuild the showcase page per `research/DESIGN.md`. |
+| Active stage | Evidence-gap package closed 2026-07-07: the public-source audit now publishes the documented absence finding through `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, the article, a generated evidence ledger, and a finding-first showcase page. |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -19,33 +19,32 @@ Last updated: 2026-07-07.
 
 ## Current output target
 
-**Headline claim-in-progress (reframed 2026-07-07).** Across the 8-economy
-review queue (Bangladesh, Indonesia, Georgia, Uzbekistan, and the remaining
-upgrade-queue economies), a systematic public-source search — 60+ committed
-scan, audit, ledger, and gate artifacts, all indexed in `generated/` and the
-program README — found zero publicly published station-level calibration
-records, inspection logs, calibration certificates, or validated
-station-identity crosswalks, while method-level context (BAM classification
-for 22 BMKG stations, HORIBA markers in Uzbekistan, Georgia's official
-not-verified-data policy) is widely available. The finding is the gap
-between method-level visibility and QA-level verifiability.
+**Current finding.** Public station-level QA evidence is not verifiable in
+the audited air-monitoring packet. The generated ledger reads 64 committed
+summary rows and indexes 214 supporting files; it records station/source,
+method, dashboard, denominator, and route context, but 0 validated
+same-station rows, 0 BMKG station-specific inspection-log/certificate/status
+rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and
+0 allowed coverage-claim rows.
 
-**Deliverables to close the current issue:**
-
-1. `results.md` stating the absence finding with the search protocol,
-   per-economy source counts, and retrieval records.
-2. A search-protocol sensitivity note: what was searched, in which
-   languages, via which routes, and what a false negative would require.
-3. An evidence-ledger JSON + shared ledger component replacing the stacked
-   walls on `/showcase/air-monitoring-observability` (DESIGN backlog #1).
-4. Article + limitations: the PNG/Timor-Leste concentration result and
-   GDP-confound caveat stay; station-radius coverage claims stay retired
-   unless a §6.7-qualified new source appears.
-
-Station-radius/catchment computation artifacts are retained as method
-groundwork but are no longer the program's target claim.
+**Next focused work.** Do not add another generic source scan. Either (a)
+rotate after final commit, or (b) add a named §6.7-qualified source only if it
+plausibly contains station-level calibration, inspection, current status,
+same-station crosswalk, or method-grade records.
 
 ## Last completed
+
+- **2026-07-07:** Published the absence-finding package. Added
+  `scripts/build-evidence-ledger.py` and generated
+  `generated/air-monitoring-evidence-ledger.{json,csv}` (64 ledger rows,
+  214 supporting files indexed). Rewrote `results.md`, `coverage.md`,
+  `sensitivity.md`, `limitations.md`, and the article around the public QA
+  evidence-gap claim. Replaced the 15k-line showcase wall stack with a
+  finding-first ledger page and updated the site registry/brief/program copy.
+  Verification passed: ledger script, `npm run typecheck`, `npm run build`,
+  five repository gates, desktop/mobile browser QA on
+  `/showcase/air-monitoring-observability`, and screenshots saved in
+  `reporting-site/qa/air-ledger-*.png`.
 
 - **2026-07-01 (later):** Added the station-radius claim-eligibility target
   matrix. New no-network derivative script

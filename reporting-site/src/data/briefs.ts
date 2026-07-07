@@ -154,22 +154,22 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Environment",
     finish: "screening-result",
     question:
-      "Where is PM2.5 exposure high while public ground-monitor coverage is thin?",
+      "Can public sources verify station-level monitor QA well enough for coverage claims?",
     output:
-      "Five economies hold the top PM2.5 observability-gap positions: Afghanistan, Bangladesh, Myanmar, Uzbekistan, and Tajikistan.",
-    chartTitle: "PM2.5 observability-gap score",
-    sourceNote: "OpenAQ v3, WDI PM2.5, and WHO guideline framing.",
+      "The generated ledger indexes 64 summary rows and 214 supporting files, but the claim-enabling QA counters remain zero for validated same-station rows, BMKG station-level certificates/logs/status rows, complete monitor-grade rows, station-radius-ready economies, and allowed coverage-claim rows.",
+    chartTitle: "Public monitor-QA evidence gate ledger",
+    sourceNote: "OpenAQ v3, public regulator/station portals, BMKG routes, Georgia routes, Uzbekistan routes, GHSL/ACAG custody, and generated evidence ledger.",
     caveat:
-      "WDI PM2.5 is partly model-derived in low-monitor settings, so exposure and observability are not independent.",
+      "The result is absence in audited public routes, not proof the records do not exist.",
     nextStep:
-      "Replace the country mean with ACAG or comparable gridded PM2.5 and classify monitor quality.",
+      "Add a newly named source only if it plausibly contains station-level calibration, inspection, crosswalk, or grade evidence.",
     granularity: {
-      currentUnit: "Country-level PM2.5 exposure and public monitor availability screen",
-      targetUnit: "Ground-monitor catchment, city, industrial corridor, gridded population exposure",
+      currentUnit: "Public source route, station row, and claim-enabling QA gate",
+      targetUnit: "Validated same-station monitor with station-level calibration, inspection, and grade evidence",
       gap:
-        "WDI PM2.5 is model-derived and not a local exposure surface; monitor quality and freshness are not fully classified.",
+        "Public station/source context exists, but station-level QA records and same-station crosswalks do not close the coverage gate.",
       upgradeData:
-        "OpenAQ station histories, ACAG or SEDAC PM2.5 grids, Sentinel-5P NO2, WorldPop, and city boundaries.",
+        "Official station-level QA ledgers, calibration certificates, inspection logs, current calibration-status rows, and official/OpenAQ station crosswalks.",
     },
   },
   "invisible-urbanization": {

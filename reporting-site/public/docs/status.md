@@ -12,7 +12,7 @@ Last updated: 2026-07-07.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` — **reframed 2026-07-07** from a blocked station-radius coverage claim to a documented-absence finding: across the 8-economy review queue, no station-level calibration/inspection/certificate evidence is publicly published. The 60+ scan/wall/gate artifacts are the evidence base for that claim, not blockers before it. See `air-monitoring/STATUS.md`. |
+| Active flagship | `air-monitoring` — **evidence-gap package closed 2026-07-07**: a generated ledger indexes 64 committed summary rows and 214 supporting files; public sources show station/source/method/dashboard/denominator context but 0 validated same-station rows, 0 station-level BMKG inspection/certificate/status rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and 0 allowed coverage-claim rows. See `air-monitoring/STATUS.md`. |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -30,20 +30,13 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-1. **`air-monitoring`** — *current active flagship; reframed 2026-07-07 under
-   §6.7.* Supported results: the zero-monitor population headline is
-   concentrated in Papua New Guinea and Timor-Leste; monitor density is
-   strongly GDP-confounded among monitored economies; and a systematic
-   eight-economy search (60+ committed scan artifacts; index in
-   `air-monitoring/STATUS.md` and the program README) found **zero publicly
-   published station-level calibration, inspection, certificate, or
-   validated-crosswalk records**. That documented absence is now the
-   program's headline claim-in-progress. Next work: consolidate the scan
-   artifacts into one absence-of-evidence results package (results.md,
-   sensitivity of the search protocol, evidence ledger per
-   `research/DESIGN.md`) and rebuild the showcase page to the six-part
-   anatomy. Station-radius coverage claims stay blocked and are no longer
-   the target.
+1. **`air-monitoring`** — *current active flagship; Mode-A issue now closed
+   for the public-evidence absence package.* Completed 2026-07-07:
+   `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, article,
+   generated evidence ledger, and the six-part showcase page. Further work is
+   allowed only for a named §6.7-qualified source that plausibly contains
+   station-level calibration, inspection, current status, same-station
+   crosswalk, or method-grade records; otherwise rotate after commit.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same

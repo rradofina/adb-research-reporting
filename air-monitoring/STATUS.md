@@ -4,14 +4,14 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-07-01.
+Last updated: 2026-07-07.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | L3 candidate under §18 ai-first |
-| Active stage | OpenAQ station-metadata source package, station map, regulator-source discovery, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence audit, monitor-grade source-validation scan, monitor-grade station-review queue, station method-evidence audit, Uzbekistan station current/method scan, Uzbekistan method-policy source scan, Uzbekistan station-specific source evidence scan, Uzbekistan status/certification source scan, Uzbekistan blocker-row follow-up, Uzbekistan endpoint-consistency check, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia row-method source scan, station-code status/method source scan, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API parity/status-field check, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, BMKG station-grade closure gate, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-identity validation gate, station-radius coverage-claim gate, station-radius claim-eligibility target matrix, and public source/reconciliation walls complete; validated station crosswalks, complete monitor-grade classification, and station-specific calibration/inspection/certificate/status documentation remain next |
+| Active stage | Reframed 2026-07-07 under Constitution §6.7: the systematic 8-economy search for station-level QA evidence is complete and found none in public; the program now packages that documented absence as its headline result. Next: consolidate the 60+ scan artifacts into an absence-of-evidence results package and rebuild the showcase page per `research/DESIGN.md`. |
 | Active flagship | Yes, as of 2026-06-19 — rotated in after PSDQ returned to an owner-only source-owner/human-validation wall |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
@@ -19,49 +19,31 @@ Last updated: 2026-07-01.
 
 ## Current output target
 
-Build a reviewer-credible air-monitoring observability package for the
-showcase bench: keep the Papua New Guinea/Timor-Leste concentration result,
-keep the GDP-confound caveat visible, show the OpenAQ station-metadata source
-package, coordinate map, and regulator-source discovery now available for the
-upgrade queue, show the official/OpenAQ candidate review queue, public OpenAQ
-metadata evidence, `isMonitor` crosswalk source-scan decisions, public-feed
-source-scan decisions, the one-signal review queue, the monitor-grade evidence
-ladder, the non-Bangladesh monitor-grade source-validation scan, the
-station-level monitor-grade review queue, the exact station method-evidence
-audit, the Uzbekistan current/method scan, the Uzbekistan method-policy source
-scan, the Uzbekistan station-specific source evidence scan, the Uzbekistan
-status/certification source scan, the Uzbekistan blocker-row follow-up, the
-Uzbekistan endpoint-consistency check, the Uzbekistan blocker external-context
-wall, the Uzbekistan Air Uzbekistan portal namespace wall, the
-Indonesia/Georgia row-method source scan, the station-code
-status/method source scan, the station-grade decision ledger, the
-station-method classification audit, the BMKG operation/maintenance source
-scan, the BMKG station-specific status audit, the BMKG API
-parity/status-field check, the BMKG regional status/source scan, the BMKG
-dashboard current-status source scan, the BMKG grade-basis source scan, the BMKG
-station public-context source scan, the BMKG installation/audit source scan,
-the BMKG near-closure ledger, the BMKG targeted certificate/status source scan,
-the BMKG PPID/PTSP access-route scan, the BMKG station-grade closure gate,
-the Georgia
-report-verification source scan, the Georgia report/export verification ladder,
-the Georgia verification-policy wall, the Georgia report-frequency matrix, the
-Georgia NEA station network/launch source scan, and the Georgia indicator
-endpoint mismatch scan, and the station-radius denominator readiness wall
-plus the station-radius denominator source plan, acquisition-route scan,
-file-manifest prefreeze, download-feasibility gate, ACAG version-decision gate,
-ACAG coarse checksum gate, GHSL population tile-selection gate, and GHSL
-population tile checksum/transform gate, GHSL tile-routing correction gate,
-GHSL corrected population tile custody gate, GHSL large population tile
-custody gate, station-radius method prefreeze gate, station-radius
-radius-rule source scan, station-radius PM2.5 resolution decision, the
-station-radius denominator join dry run, the station-radius
-country-unioned catchment dry run, the station-identity validation gate, the
-station-radius coverage-claim gate, and the station-radius claim-eligibility
-target matrix honestly, and do not imply
-station-radius coverage, complete monitor-grade, or regulatory-inventory
-validation until station-level calibration/status sources, validated station
-identity/crosswalk evidence, complete grade-basis evidence, and
-station-radius-ready economy rows exist.
+**Headline claim-in-progress (reframed 2026-07-07).** Across the 8-economy
+review queue (Bangladesh, Indonesia, Georgia, Uzbekistan, and the remaining
+upgrade-queue economies), a systematic public-source search — 60+ committed
+scan, audit, ledger, and gate artifacts, all indexed in `generated/` and the
+program README — found zero publicly published station-level calibration
+records, inspection logs, calibration certificates, or validated
+station-identity crosswalks, while method-level context (BAM classification
+for 22 BMKG stations, HORIBA markers in Uzbekistan, Georgia's official
+not-verified-data policy) is widely available. The finding is the gap
+between method-level visibility and QA-level verifiability.
+
+**Deliverables to close the current issue:**
+
+1. `results.md` stating the absence finding with the search protocol,
+   per-economy source counts, and retrieval records.
+2. A search-protocol sensitivity note: what was searched, in which
+   languages, via which routes, and what a false negative would require.
+3. An evidence-ledger JSON + shared ledger component replacing the stacked
+   walls on `/showcase/air-monitoring-observability` (DESIGN backlog #1).
+4. Article + limitations: the PNG/Timor-Leste concentration result and
+   GDP-confound caveat stay; station-radius coverage claims stay retired
+   unless a §6.7-qualified new source appears.
+
+Station-radius/catchment computation artifacts are retained as method
+groundwork but are no longer the program's target claim.
 
 ## Last completed
 

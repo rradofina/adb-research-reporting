@@ -6,6 +6,32 @@ claim still has to pass the repository gates: public data, reproducible
 scripts, cited literature, sensitivity checks, explicit limitations, and
 human-final judgment before external submission.
 
+This manual defines the *steps*. `research/JUDGMENT.md` defines *how to
+choose among them* and is read first; `research/DESIGN.md` defines how
+results are presented. The factory's output is **claims a reader can trust
+and understand** — artifacts, scripts, and gates are the receipts, never
+the product.
+
+## What progress means
+
+A session advanced the factory only if the claim moved, the claim changed
+shape honestly, a reader-facing surface improved, or a kill/defer/rotate
+decision was recorded (`research/JUDGMENT.md` §1). Producing another
+committed artifact against an unmoved blocker is not progress and must not
+be reported as "last completed" work in the boards as if it were.
+
+## Stopping rule and dead ends
+
+The stopping rule in `research/JUDGMENT.md` §2 is part of this loop, not
+an exception to it: after two passes leave the same claim-enabling counts
+at zero, the third session must reshape the claim, publish the documented
+absence as the finding (§2.6 of the Constitution treats null results as
+legitimate outputs — for a measurement-gap lab they are often the *core*
+output), or write a five-line blocker note and rotate. A systematic search
+that finds nothing, with sources and retrieval recorded, is a completed
+piece of evidence about observability — package it that way rather than
+treating it as a corridor toward a claim the public record cannot support.
+
 ## What the factory produces
 
 Each program should eventually contain the same artifact set:
@@ -159,8 +185,15 @@ Once hook triage produces a specific data object worth developing:
    inclusion rules, and stale-source risk.
 8. **Red-team the claim.** Ask what would make the conclusion false, weaker,
    or merely descriptive.
-9. **Publish the packet.** Sync the article, evidence links, references, and
-   site route only after the gates pass.
+9. **Re-check the claim's shape.** If the evidence now supports a different
+   claim than the one framed in step 1 — narrower, negative, or an
+   absence-of-evidence finding — restate the claim before polishing
+   anything. Polishing surfaces around a claim the evidence no longer
+   supports is the most expensive mistake this loop can make.
+10. **Publish the packet.** Sync the article, evidence links, references, and
+    site route only after the gates pass. Presentation follows
+    `research/DESIGN.md`: finding first, one hero visual, evidence ledger —
+    never stacked audit walls.
 
 ## Publication ladder (added 2026-05-07)
 
@@ -352,11 +385,16 @@ PR maturity and is the active flagship.
 ## Codex prompt to start a program
 
 ```text
-Create a new research program package for <topic>. Use public data only.
-First draft the research question, literature map, data-source plan,
-pre-registration, and reproducibility plan. Do not write a headline claim
-until the generated artifacts exist. Run the repository gates before marking
-anything as Screening Result or Publication Ready.
+Test <topic> as a research hook before creating a full program package. Use
+public data only. First write the hook card from research/JUDGMENT.md §5:
+source object, first visual, possible claim, decision user, falsifier,
+landscape gap, and stop condition. Then write or reuse one committed script
+that produces the rough visual or table. Create a program package only if the
+visual exposes a specific measurement problem; otherwise write a defer note in
+research/topic-sprints/. Do not write a headline claim until generated
+artifacts, source notes, caveats, and sensitivity checks exist. Run the
+repository gates before marking anything as Screening Result or Publication
+Ready.
 ```
 
 ## Factory commands
@@ -395,8 +433,18 @@ Use separate files for separate kinds of memory:
 | `research/TODO-NEXT-SESSION.md` | Backlog of useful future work |
 | `research/README.md` | Map of research-operations files |
 
-Every substantial session should start by reading `research/STATUS.md` and
-end by updating it if the focus, stage, next output, or blockers changed.
+Every substantial session should start by reading the stack in `AGENTS.md`,
+then the active program board. At open, state the active flagship, stage, move
+from `research/JUDGMENT.md` §4, and reason. At close, update the active
+program board if the focus, stage, next output, blockers, or verification
+status changed; update `research/STATUS.md` only if the lab-level board
+changed.
+
+**Board hygiene.** Boards are read, not archived-to. A status cell or
+"last completed" entry states the finding or decision first and stays
+within ten lines; artifact inventories live in the program folder and git
+history (`research/JUDGMENT.md` §7). When a board entry outgrows the
+budget, the entry is summarized down, not the budget up.
 
 ## Scale rule
 

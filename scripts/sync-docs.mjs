@@ -21,6 +21,8 @@ const DOCS = [
   ["README.md",                       "repo-readme.md"],
   ["LICENSE",                         "license.txt"],
   ["LICENSE-CONTENT",                 "license-content.txt"],
+  ["research/JUDGMENT.md",            "judgment.md"],
+  ["research/DESIGN.md",              "design.md"],
   ["research/factory.md",             "factory.md"],
   ["research/STATUS.md",              "status.md"],
   ["research/wip-register.md",        "wip-register.md"],

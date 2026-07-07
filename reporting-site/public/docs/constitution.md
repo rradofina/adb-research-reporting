@@ -279,6 +279,18 @@ Any arbitrary numeric choice (threshold, weight, buffer, cutoff) is tested at
 ±50%. Results that do not survive this test are not claims; they are
 observations.
 
+### 6.7 Stopping rule and claim reshaping (added 2026-07-07)
+Progress is measured on claims, not artifacts. After two consecutive
+evidence passes leave the same claim-enabling counts unchanged at zero, a
+third pass at the same blocker is not permitted. The program must instead
+(a) reshape the claim to what the existing evidence supports, (b) publish
+the systematically documented absence of public evidence as the finding —
+for a measurement-gap lab, a documented absence is a first-class result
+under §2.6 — or (c) record a blocker note naming the exact missing
+document or access and rotate. A further pass is allowed only if it names
+in advance a specific previously unchecked source and why it plausibly
+changes the count. Operational detail lives in `research/JUDGMENT.md`.
+
 ---
 
 ## 7. Claim Maturity and Review Gates
@@ -624,6 +636,10 @@ Things we do not do:
 - Bundle unrelated findings to make a program look bigger.
 - Present screening results in policy-ready packaging.
 - Recycle a method across programs without checking whether it fits.
+- Measure progress in artifacts produced rather than claims moved.
+- Take a third pass at a wall two prior passes left unmoved (§6.7).
+- Publish a page that enumerates process instead of communicating a
+  finding (`research/DESIGN.md`).
 - Use the word "revolutionary," "unprecedented," or "game-changing" in any
   output.
 - Promote a finding past its evidence.
@@ -718,6 +734,18 @@ not forced backward by a rule change unless the amendment explicitly says so.
 
 ### 16.1 Changelog
 
+- **2026-07-07** — Amendment: added §6.7 "Stopping rule and claim
+  reshaping" and four §14 taste entries (artifact-counting, third-pass
+  grinding, process-enumerating pages). Companion documents
+  `research/JUDGMENT.md` (judgment layer) and `research/DESIGN.md`
+  (presentation layer) adopted with factory-manual standing;
+  `AGENTS.md` and `research/factory.md` rewired around claim-centered
+  progress. Rationale: the air-monitoring flagship accumulated 60+
+  consecutive scan/wall/gate artifacts with every claim-enabling count
+  at zero — each artifact individually compliant, the sequence
+  unproductive and reader-hostile. The constitution previously gated
+  promotion but never repetition; §6.7 closes that gap and makes
+  documented absence an explicit first-class output. No §18 change.
 - **2026-04-26** — Amendment: §8.1 — suspended WIP caps under §18
   ACTIVE. The cap was designed for human-attestation pacing
   (multi-week external red-team rounds; quality-degrades-with-

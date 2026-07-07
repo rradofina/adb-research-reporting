@@ -31,6 +31,18 @@ const SECTIONS: Array<{
         githubPath: "CLAUDE.md",
       },
       {
+        slug: "judgment",
+        title: "Judgment layer",
+        description: "How Codex chooses the next move: claim-centered progress, stopping rule, topic hook cards, visual thinking, and board-writing discipline.",
+        githubPath: "research/JUDGMENT.md",
+      },
+      {
+        slug: "design",
+        title: "Design layer",
+        description: "How findings appear on public pages: reader-first anatomy, wall consolidation, visual contracts, and public-surface QA.",
+        githubPath: "research/DESIGN.md",
+      },
+      {
         slug: "factory",
         title: "Factory manual",
         description: "Per-program loop, publication ladder (7 tiers), three review modes, visualization rule, status conventions.",

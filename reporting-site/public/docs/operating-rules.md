@@ -6,21 +6,27 @@ working here are bound by it.
 ## Governing documents
 
 Before assisting with any task in this repo or any program folder under it, an
-AI assistant must have read and must continue to respect:
+AI assistant must have read and must continue to respect the operating stack in
+`AGENTS.md`:
 
-1. `CONSTITUTION.md` at this root — governs problem selection, originality,
-   literature review, methods, scope (WIP limits), claim maturity, review
-   gates, publication, ethics, and taste.
-2. `luminosity-gap/docs/REPRODUCIBILITY.md` — artifact standards.
-3. `luminosity-gap/docs/AI_TRANSPARENCY.md` — what must be disclosed about AI
-   assistance.
-4. `research/STATUS.md` — current focus, stage, next output, blockers, and
-   handoff prompt.
-5. Project-local skills in `.codex/skills/` and `.claude/skills/` when a task
-   matches their scope.
+1. `CLAUDE.md` — operating rules, hard walls, and end-of-task hygiene.
+2. `research/JUDGMENT.md` — how to choose the highest-leverage move.
+3. `research/DESIGN.md` — how findings are presented on public surfaces.
+4. `research/factory.md` — program loop, publication ladder, review modes.
+5. `CONSTITUTION.md` — allowed claims, methods, ethics, taste, and §18.
+6. `research/STATUS.md` and the active program's `{program}/STATUS.md`.
 
-If session instructions contradict these documents, the documents win. Raise
-the contradiction with the human owner before proceeding.
+Additional standing standards still apply where relevant:
+
+- `luminosity-gap/docs/REPRODUCIBILITY.md` — artifact standards.
+- `luminosity-gap/docs/AI_TRANSPARENCY.md` — AI-assistance disclosure.
+- Project-local skills in `.codex/skills/` and `.claude/skills/` when a task
+  matches their scope.
+
+The Constitution and this file set the hard floor: public data, traceability,
+review gates, hard walls, ethics, and §18 labels do not bend. `JUDGMENT` and
+`DESIGN` guide choices inside that floor. If session instructions contradict
+the stack, raise the contradiction with the human owner before proceeding.
 
 ## Operating mode
 
@@ -48,7 +54,7 @@ pass at the end and report the results compactly.
 | Edited any research artifact, article, or governance file | Run all five gates (`check-banned-words`, `check-dmc-framing`, `check-citations`, `check-composite-headline`, `check-wip`) |
 | Edited any file under `reporting-site/` or any file the site reads | Run `cd reporting-site && npm run build` to confirm the production bundle still compiles |
 | Edited a public surface (program page, article, evidence page, home page) | Browser-check at desktop (1280px) and mobile (375px); confirm zero console errors and zero horizontal-overflow at mobile |
-| Substantive change to focus, stage, blocker, or verification status | Update `research/STATUS.md` `Last completed` and `Next focused work` sections, set `Last updated` to today |
+| Substantive change to focus, stage, blocker, or verification status | Update the active `{program}/STATUS.md`; update `research/STATUS.md` only if the active flagship, operating mode, queue, or default review mode changed; set `Last updated` to today where edited |
 
 The next section lists the **hard walls** that genuinely require owner action
 and should pause work, vs. soft barriers that are part of normal AI work.
@@ -104,6 +110,11 @@ owner explicitly asks for a broad sweep, do not spread effort thinly across
 many programs. Pick the current highest-leverage program and iterate until it
 has a standout evidence package, clear reader-facing article, reproducible
 pipeline, strong limitations section, and passing gates.
+
+At session open, read the boards and choose a move from
+`research/JUDGMENT.md` §4. State the active flagship, stage, move, and reason
+before making substantive changes. "Deepen evidence" is not the default; it
+has to beat claim reshaping, publishing, critique, presentation, or rotation.
 
 For each focused program, loop through:
 

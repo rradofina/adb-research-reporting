@@ -6,13 +6,13 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-07-01.
+Last updated: 2026-07-07.
 
 ## Current focus
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` (L3 candidate; prototype surface at `/showcase/air-monitoring-observability`; paper charter, concentration/GDP-confound deepening, metadata-readiness audit, OpenAQ station-metadata source-access pass, station map, regulator-source wall, official station-source extraction, official-to-OpenAQ reconciliation audit, candidate station-crosswalk review worksheet, candidate public-evidence audit, candidate crosswalk source scan, candidate public-feed source scan, one-signal review queue, monitor-grade evidence ladder, monitor-grade source-validation wall, monitor-grade station-review wall, exact station method-evidence wall, Uzbekistan current/method wall, Uzbekistan method-policy wall, Uzbekistan station-specific source wall, Uzbekistan status/certification wall, Uzbekistan blocker wall, Uzbekistan endpoint-consistency wall, Uzbekistan blocker external-context wall, Uzbekistan Air Uzbekistan portal namespace wall, Indonesia/Georgia method-context wall, station-code status/method wall, station-grade decision ledger, station-method classification audit, BMKG operation/maintenance source scan, BMKG station-specific status audit, BMKG API field wall, BMKG regional status/source scan, BMKG dashboard current-status source scan, BMKG grade-basis source scan, BMKG station public-context source scan, BMKG installation/audit source scan, BMKG near-closure ledger, BMKG targeted certificate/status source scan, BMKG PPID/PTSP access-route scan, BMKG station-grade closure gate, Georgia report-verification source scan, Georgia report/export verification ladder, Georgia verification-policy wall, Georgia report-frequency matrix, Georgia NEA station network/launch source scan, Georgia indicator endpoint mismatch scan, station-radius denominator readiness wall, station-radius denominator source plan, station-radius denominator acquisition-route scan, station-radius denominator file-manifest prefreeze, station-radius denominator download-feasibility gate, station-radius ACAG version-decision gate, station-radius ACAG coarse checksum gate, station-radius GHSL population tile-selection gate, station-radius GHSL population tile checksum/transform gate, station-radius GHSL tile-routing correction gate, station-radius GHSL corrected population tile custody gate, station-radius GHSL large population tile custody gate, station-radius method prefreeze gate, station-radius radius-rule source scan, station-radius PM2.5 resolution decision, station-radius denominator join dry run, station-radius country-unioned catchment dry run, station-identity validation gate, station-radius coverage-claim gate, and station-radius claim-eligibility target matrix exist; station-radius/catchment, validated station identity/crosswalk, and complete monitor-grade claims remain blocked because station-level calibration/inspection/certificate/status sources, crosswalk evidence, complete grade evidence, validated same-station rows, station-radius-ready economies, and claim-allowed rows remain at zero) |
+| Active flagship | `air-monitoring` — **reframed 2026-07-07** from a blocked station-radius coverage claim to a documented-absence finding: across the 8-economy review queue, no station-level calibration/inspection/certificate evidence is publicly published. The 60+ scan/wall/gate artifacts are the evidence base for that claim, not blockers before it. See `air-monitoring/STATUS.md`. |
 | Per-program board | `air-monitoring/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -30,263 +30,20 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-1. **`air-monitoring`** — *current active flagship; L3 candidate*. The
-   existing deepening proves the zero-monitor population headline is
-   concentrated in Papua New Guinea and Timor-Leste and that monitor-density
-   patterns are strongly confounded with GDP per capita among monitored
-   economies. The metadata-readiness audit made the station-level wall
-   explicit; the OpenAQ station-metadata source pass and public station panel
-   now supply 101 coordinate rows for 11 upgrade-queue economies, record 2
-   coordinate-QC exclusions, and keep 13 economies at OpenAQ-visible zero. The
-   regulator-source discovery pass identifies 9 official inventory or
-   air-quality portal candidates, 6 official station-count claim rows, and 0
-   monitor-grade classification rows, now surfaced in a public source wall.
-   The official station-source extraction retrieves the 9 targeted official
-   sources, normalizes 230 official station-coordinate rows across 5
-   economies, keeps 6 station name-only rows, 1 count-only row, and 2
-   plan-count-only rows separate, and finds 22 coordinate rows within 5
-   kilometers of an OpenAQ PM2.5 row as a screening diagnostic. The
-   official-to-OpenAQ reconciliation audit covers the 230 official coordinate
-   rows and 82 OpenAQ coordinate rows in the same five economies, classifying
-   13 near-plus-name candidate rows, 9 near-only candidate rows, 22
-   name-only-not-near candidate rows, 186 official coordinate rows without
-   either candidate signal, and 0 validated same-station joins. The candidate
-   review worksheet then turns the 13 near-plus-name rows into row-level
-   reviewer questions across 4 economies, while recording 0 station-ID
-   crosswalk rows, 0 current-status confirmation rows, 0 validated
-   same-station joins, and 0 station-radius-ready rows. The candidate
-   public-evidence audit attaches OpenAQ owner/provider and `isMonitor`
-   metadata to those 13 rows, finding 13 owner/provider rows, 6 OpenAQ
-   `isMonitor` true rows, 7 not-`isMonitor` rows, 0 exact station-ID overlaps,
-   0 exact agency owner/provider matches, 0 explicit crosswalk rows, 0
-   validated same-station joins, and 0 station-radius-ready rows. The candidate
-   crosswalk source scan then retrieves five public source URLs and screens all
-   6 OpenAQ `isMonitor` candidate rows as separate nearby stations while
-   keeping validated joins and radius-ready rows at 0. The candidate
-   public-feed source scan retrieves 10 public source URLs and screens all 7
-   not-`isMonitor` candidate rows as public-feed nearby rows that are not
-   join-ready, again keeping validated joins and radius-ready rows at 0. The
-   one-signal review queue then combines 9 near-only official/OpenAQ rows, 22
-   name-only-not-near rows, and 138 automatic or official-portal
-   monitor-grade provenance-only rows into 169 review items across 149 unique
-   official station keys and 8 economies, while keeping validated
-   same-station joins, complete monitor-grade classifications, and
-   station-radius-ready rows at 0. The
-   monitor-grade evidence audit covers 239 official-source rows and finds 31
-   source-specific method-standard signal rows in Bangladesh, 138 automatic or
-   official-portal signal-only rows, 3 sensor-under-test rows, 2 plan-only
-   rows, 65 rows with no public grade language, and 0 complete monitor-grade
-   classification rows. The monitor-grade source-validation scan then
-   retrieves 14 public source URLs across 7 non-Bangladesh economies, covers
-   all 138 provenance-only queue rows, finds 7 source rows with method,
-   equipment, standard, or method context, 6 official/automatic context-only
-   source rows, 1 caution source row, and still 0 complete grade or
-   station-radius-ready rows. The station-review queue then assigns those 138
-   provenance-only station rows to row-level review lanes: 66 method-context
-   rows needing station confirmation, 2 caution-blocked rows, 70
-   official-context-only rows, and still 0 current-status confirmed,
-   station-method classified, complete grade, or station-radius-ready rows.
-   The station method-evidence audit then joins the 66 method-context rows to
-   exact official extraction rows, finds 66 exact rows with PM2.5 signal and
-   coordinates, separates 28 exact-row instrument hints from 38 exact PM2.5
-   portal/API rows, flags 37 positive raw live PM2.5 values plus 29 negative,
-   sentinel, or missing raw-value rows, and still keeps current-status
-   confirmed, station-method classified, complete grade, and
-   station-radius-ready rows at 0. The Uzbekistan station current/method scan
-   then finds all 28 target instrument-hint station IDs in the public API with
-   HORIBA markers, but only 5 reading dates within 30 days, 22 older than 365
-   days, 13 negative or sentinel raw PM2.5 values, and still 0 explicit
-   current-status confirmed, complete grade, or station-radius-ready rows. The
-   Uzbekistan method-policy source scan retrieves 4 public source-policy rows
-   with method/equipment and cadence/status context, but 0 sources name a target
-   station ID from the 28-row queue. The Uzbekistan station-specific source
-   evidence scan then retrieves the official Uzhydromet map, 14 official
-   regional station-table pages, 28 station-detail pages, and one official
-   gov.uz ecology note; parses 93 station rows; matches all 28 target rows to
-   official regional table rows; finds 28 official station-detail URLs whose
-   numeric path matches the internal target station ID, 26 detail measurements
-   within 30 days, 22 Horiba table-context rows, 6 `Updating data` rows, 2
-   official event-note station matches, and 1 negative sentinel detail PM2.5
-   value. The Uzbekistan status/certification source scan then retrieves 7
-   public source URLs, finds 6 source rows with method/equipment context, 7
-   with operating or online context, 3 with source-level standards or
-   reference-grade context, 1 with maintenance/training context, 2 additional
-   exact station event mentions, 4 weaker context candidate rows, 2 stale
-   station-detail follow-up rows, and 1 sentinel PM2.5 follow-up row; and still
-   keeps current-status confirmation, station-method classification, complete
-   monitor-grade classification, and station-radius readiness at 0. The
-   Uzbekistan blocker-row follow-up then retrieves 2 official regional table
-   pages and 3 exact official detail pages for station IDs 107, 728, and 737,
-   finds 2 stale detail rows whose regional rows say `Updating data`, 1 recent
-   `Sergili` detail row with PM2.5 equal to `-9999`, and 0 public
-   blocker-resolution rows; current-status, station-method, complete-grade, and
-   station-radius-ready counts remain 0. The Uzbekistan endpoint-consistency
-   check then retrieves 16 official API/detail/region payloads for those same
-   3 blocker rows, finds 3 date/status mismatches, 2 PM2.5 mismatches, 3
-   unresolved blocker rows, and 0 public endpoint-resolution, current-status,
-   complete-grade, or station-radius-ready rows. The Uzbekistan blocker
-   external-context wall then retrieves 4 public official or technical context
-   sources outside the exact telemetry endpoints, finds 2 blocker rows with
-   source context, but only as 1 launch-context-only row and 1
-   source-level-reference-context-only row, and keeps exact station-ID
-   external-context, public blocker-resolution, current-status, complete-grade,
-   and station-radius-ready rows at 0. The Indonesia/Georgia row-method source
-   scan then retrieves 29 of 29 seeded or expanded public source URLs for the
-   38 exact PM2.5 portal/API rows, finds 22 Indonesia BMKG same-page
-   method-context candidates and 9 Georgia station-alias context candidates,
-   and still keeps current-status confirmed, station-method classified,
-   complete monitor-grade, and station-radius-ready rows at 0. The
-   station-code status/method scan then covers 41 unresolved rows, improving
-   Georgia to 16 exact `air.gov.ge` station-code API rows with PM2.5
-   equipment/substance rows and 15 operating-description context rows, while
-   keeping 1 Georgia test-mode row, 22 Indonesia BMKG payload rows, and 3
-   Uzbekistan blockers visible; station method-table, calibration/status,
-   current-status confirmed, complete-grade, and station-radius-ready counts
-   remain 0. The station-grade decision ledger then joins all 66 exact
-   method-context rows into row-level decision lanes, records 66 exact source
-   trails, 50 method-context rows, and 16 raw-value or blocker caution rows,
-   while keeping current-status, station-method, complete-grade, and
-   station-radius-ready counts at 0. The station-method classification audit
-   then retrieves 4 BMKG and air.gov.ge method/catalog sources, classifies 22
-   Indonesia/BMKG rows as BAM, records 37 recent measurement-visibility rows,
-   keeps Georgia at source-level catalog context with live-data verification
-   caution and Uzbekistan at instrument-hint or blocker context, and keeps
-   current-status, calibration/status, complete-grade, and station-radius-ready
-   counts at 0. The BMKG operation/maintenance source scan then retrieves 4
-   public BMKG context sources and 22 exact station-detail pages, records
-   daily-inspection SOP, maintenance/check, calibration-procedure, BAM
-   calibration service/tariff, and regional BAM-1020 model context for all 22
-   BMKG rows, and still keeps station-specific inspection logs,
-   station-specific calibration certificates, current-status confirmed,
-   calibration-status, complete-grade, and station-radius-ready counts at 0.
-   The BMKG station-specific status audit then re-fetches the 22 exact BMKG
-   station-detail pages, parses 22 public PM2.5 display snapshots with
-   timestamp, value, and category, confirms 22 station-page BAM method-text
-   rows, and still keeps station-specific operational-status certification,
-   inspection-log, calibration-certificate/status, current-status confirmed,
-   complete-grade, and station-radius-ready counts at 0. The BMKG API
-   parity/status-field check then retrieves the public app token route, PM2.5
-   list API, and 22 target detail API routes, records 132 hourly PM2.5
-   observations, and keeps status, inspection, calibration, certificate, grade,
-   method, current-status confirmed, complete-grade, and station-radius-ready
-   fields at 0. The BMKG regional status/source scan then retrieves 10 public
-   regional status, regional analysis, public-information, service, PPID, or
-   regulator sources outside those central telemetry surfaces, finds 5
-   station-name or official site-variant context rows, records 3
-   regional-analysis context rows, confirms 1 Banjarbaru row with official
-   regional `ONLINE` status and recent timestamp, and still keeps
-   inspection-log, calibration-certificate/status, complete-grade, and
-   station-radius-ready rows at 0. The BMKG dashboard current-status source
-   scan then retrieves the official BMKG climate-information parent page and
-   CEWS PM2.5 dashboard, parses 26 dashboard locations, matches all 22 target
-   rows, records 21 current `ONLINE` dashboard rows, 1 current `DELAYED`
-   Pekanbaru row, and still keeps inspection-log, calibration-certificate/status,
-   complete-grade, and station-radius-ready rows at 0. The BMKG grade-basis
-   source scan then retrieves 10 official standards, SOP, service/tariff, PPID,
-   and report sources, adds source-level method, technical-standard,
-   inspection-rule, calibration-rule, calibration-service, and
-   certificate-context evidence, but still finds 0 target station-name context
-   rows, 0 station-specific inspection logs, 0 station-specific calibration
-   certificates/status records, 0 complete-grade rows, and 0
-   station-radius-ready rows. The BMKG station public-context source scan then
-   retrieves 16 public station-unit, local PM2.5 report, academic/journal,
-   regulator, and deployment-context sources, finds 11 rows with public
-   station or deployment context, 7 station-unit or exact-context rows, 6
-   city/deployment context rows, 11 method-context rows, 7
-   calibration-language context rows, and still 0 station-specific inspection
-   logs, 0 station-specific calibration
-   certificates/status records, 0 current-status confirmations from this pass,
-   0 complete-grade rows, and 0 station-radius-ready rows. The BMKG
-   installation/audit source scan then retrieves 6 official BMKG installation,
-   audit/calibration, public-information, and operational-monitoring sources,
-   finds 8 rows with installation or audit context, 1 exact station
-   audit/calibration context row, 7 PM2.5 installation/deployment context rows,
-   4 source-level operational or calibration routes, and still 0
-   station-specific inspection logs, 0 station-specific calibration
-   certificates/status records, 0 current-status confirmations from this pass,
-   0 complete-grade rows, and 0 station-radius-ready rows.
-   The Georgia report-verification source scan then retrieves the official May
-   2026 `air.gov.ge` monthly report route, AQI method note, and monitoring
-   network catalog, finds all 16 target station codes and PM2.5 report rows,
-   records 16 not-verified report-label rows, and keeps verified-report
-   closure, station-method classification, current-status confirmed,
-   complete-grade, and station-radius-ready counts at 0. The Georgia
-   report/export ladder then retrieves 24 official monthly HTML report routes
-   from 2026-05 backward to 2024-06, finds all 16 target station codes and
-   PM2.5 in all 24 months, records 24 `Not Verified Data` HTML months, probes
-   3 XLSX exports with all 16 target station sheets, records 3 PDF export
-   probes retaining the not-verified footer, and keeps verified-report,
-   current-status, complete-grade, and station-radius-ready counts at 0. The
-   Georgia verification-policy wall then retrieves 5 official policy, report,
-   network, plan, or MEPA routes, confirms the official rule that live
-   automatic-station data are not verified and verified data are expected from
-   reports, and joins that rule back to the 24-month report/export surface;
-   the joined surface still has 24 not-verified HTML months, 3 PDF caution
-   probes, 0 verified closure rows, 0 current-status rows, 0 complete-grade
-   rows, and 0 station-radius-ready rows. The Georgia report-frequency matrix
-   then probes 24 official daily, monthly, and annual HTML/XLSX/PDF routes for
-   the same 16 station codes, retrieves 12 valid daily/monthly payloads,
-   records 12 annual server-error probes, finds 8 HTML/PDF not-verified
-   payloads, 4 XLSX station-sheet exports without verification labels, and 0
-   verified closure routes. The Georgia NEA station network/launch source scan
-   then retrieves 8 official National Environmental Agency current-network or
-   station-launch pages, adds official city/source context to 15 rows, launch
-   context to 13 rows, current-network city context to 15 rows, and PM2.5 or
-   standard-equipment context to 15 rows, while keeping station-code rows,
-   verified-report closure, current-status, calibration-status, complete-grade,
-   and station-radius-ready rows at 0. The Georgia indicator endpoint mismatch
-   scan then probes official `air.gov.ge` indicator and daily API routes,
-   retrieves 1 of 2 routes, parses 136 indicator station objects, finds 14
-   target rows with city/address alias context, and keeps exact target
-   station-code matches, PM2.5 alias rows, verified/status/calibration
-   closure, complete-grade rows, and station-radius-ready rows at 0. The
-   station-radius denominator readiness wall and denominator source stack then
-   read the committed station coordinate, reconciliation, grade-ledger, and
-   boundary-reference artifacts; verify 7 public source pages, 4 candidate
-   denominator sources with visible routes, 87 visible route links, 20 probe-OK
-   responses, 12 manifest rows, 10 exact public file/object records, 5 exact
-   population files, 4 current ACAG V6.GL.03 AWS PM2.5 object records with
-   source-plan version drift, 2 approved 2023 V6.GL.03 coarse PM2.5 checksum
-   candidates, 2 downloaded and checksummed ACAG NetCDF files, and 21 of 21
-   corrected selected GHSL population tile files in custody. The method
-   prefreeze, radius-rule source scan, PM2.5 resolution decision, and
-   denominator join dry run then freeze the row universe, select 0.5 km, 4 km,
-   and 50 km diagnostic radius bands, open the cached GHSL/ACAG denominators,
-   and write 831 coordinate-radius rows, 831 GHSL row-level population joins,
-   831 ACAG nearest-cell PM2.5 samples, and 33 country-radius summaries across
-   11 coordinate-ready economies. The country-unioned catchment dry run then
-   counts each GHSL cell at most once within each economy/radius band, writes
-   33 country-radius union rows, and computes 33 GHSL unioned population
-   denominators plus 22 ACAG union-cell PM2.5 context rows. The
-   coverage-claim gate then checks 11 primary-radius economy rows and still
-   keeps 0 validated same-station joins, 0 complete monitor-grade rows, 0
-   station-radius-ready economies, 0 claim-allowed rows, and
-   `coverage_claim_allowed=false`.
-   The
-   BMKG
-   near-closure ledger then
-   synthesizes the existing BMKG method, display, dashboard, grade-basis,
-   station-context, and installation/audit artifacts into 22 row-level gates:
-   22 method/display rows, 21 current `ONLINE` dashboard rows, 1 `DELAYED`
-   row, 1 exact audit/calibration context row, 7 PM2.5 installation/deployment
-   context rows, and still 0 station-specific inspection logs, calibration
-   certificate/status rows, complete-grade rows, or station-radius-ready rows.
-   The BMKG targeted certificate/status source scan then retrieves 8 public
-   sources around the missing certificate/status gate, including the newly
-   surfaced GAW Bukit Kototabang maintenance page, finds 1 exact station
-   maintenance/calibration-language row, and still keeps station-specific
-   inspection logs, PM2.5 calibration certificate/status rows, complete-grade
-   rows, and station-radius-ready rows at 0.
-   Next AI-doable loop is station-owner or regulator evidence beyond the
-   BMKG near-closure and targeted-search context stack: station-specific
-   inspection/calibration/status/certificate evidence for the BMKG rows, a
-   Georgia station-code verified
-   report/status/method route beyond the tested policy, daily/monthly caution,
-   annual server-error, XLSX station-sheet-only surfaces, and NEA city-level
-   network/launch context, plus exact
-   station-ID correction/status/grade records for Uzbekistan station IDs 107,
-   728, and 737, plus a formal claim gate before any station-radius or
-   catchment claim.
+1. **`air-monitoring`** — *current active flagship; reframed 2026-07-07 under
+   §6.7.* Supported results: the zero-monitor population headline is
+   concentrated in Papua New Guinea and Timor-Leste; monitor density is
+   strongly GDP-confounded among monitored economies; and a systematic
+   eight-economy search (60+ committed scan artifacts; index in
+   `air-monitoring/STATUS.md` and the program README) found **zero publicly
+   published station-level calibration, inspection, certificate, or
+   validated-crosswalk records**. That documented absence is now the
+   program's headline claim-in-progress. Next work: consolidate the scan
+   artifacts into one absence-of-evidence results package (results.md,
+   sensitivity of the search protocol, evidence ledger per
+   `research/DESIGN.md`) and rebuild the showcase page to the six-part
+   anatomy. Station-radius coverage claims stay blocked and are no longer
+   the target.
 2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -363,6 +120,8 @@ Generic across programs. Use these in chat updates and handoffs.
 | `CONSTITUTION.md` §15 | Program register of record |
 | `research/TODO-NEXT-SESSION.md` | Backlog of useful future work (cross-program) |
 | `research/hook-bank.md` | Data-first shortlist for non-generic topic hooks |
+| `research/JUDGMENT.md` | Thinking layer: progress test, stopping rule, move menu, taste tests |
+| `research/DESIGN.md` | Presentation layer: page anatomy, wall-consolidation rule, visual system |
 | `research/factory.md` | Process manual: program loop, publication ladder, review loop |
 | `CLAUDE.md` | Operating rules for AI assistants |
 
@@ -377,11 +136,15 @@ edits. It opens by stating what is being done, runs by doing it, and closes
 by leaving the board in a state the next session can read.
 
 **At session open:**
-1. Read this file, the active flagship's `{program}/STATUS.md`, `CLAUDE.md`,
-   and `research/factory.md`.
-2. State the active flagship, current stage, and next output in plain language.
-3. Continue the next focused work in the per-program board, unless the
-   owner redirects.
+1. Read the operating stack in `AGENTS.md`: `CLAUDE.md`,
+   `research/JUDGMENT.md`, `research/DESIGN.md`, `research/factory.md`,
+   `CONSTITUTION.md`, this board, and the active flagship's
+   `{program}/STATUS.md`.
+2. State the active flagship, current stage, chosen move from
+   `research/JUDGMENT.md` §4, and the one-sentence reason.
+3. Continue the next focused work in the per-program board unless the owner
+   redirects. If the owner asks for governance, topic-selection, or design
+   refactoring, treat it as an L0 lab move and say so.
 
 **During session:**
 1. Name the kind of work being done (framing, source, pipeline, results,
@@ -400,6 +163,26 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-07 (Codex alignment pass):** Harmonized `CLAUDE.md`,
+  `AGENTS.md`, `research/factory.md`, and this board around the same session
+  stack: judgment before artifact work, design before public-surface edits,
+  and hook triage before new program packages. `research/JUDGMENT.md` now
+  requires a source-object-first hook card for topic selection; `research/DESIGN.md`
+  now requires a reader-first test and data-to-visual contract. The reporting
+  site now exposes `/judgment` and `/design` as first-class governance docs.
+
+- **2026-07-07 (process refactor + air-monitoring reframe):** Adopted
+  `research/JUDGMENT.md` (claim-centered progress, §6.7 stopping rule, move
+  menu, taste tests) and `research/DESIGN.md` (finding-first page anatomy,
+  wall-consolidation rule); rewired `AGENTS.md` and `research/factory.md`;
+  amended `CONSTITUTION.md` §6.7 and §14 per §16. Applied the stopping rule
+  to `air-monitoring`: the station-radius coverage claim is retired as the
+  target, and the program pivots to publishing the documented absence of
+  public station-level QA evidence as its headline result. First design
+  targets: `ShowcaseAirMonitoring.tsx` and `Home.tsx` per the DESIGN backlog.
+  Board entries now carry a ten-line budget; older long-form notes below are
+  retained as archive.
 
 - **2026-07-01 (air-monitoring station-radius claim-eligibility targets):**
   Added `air-monitoring/scripts/build-station-radius-claim-eligibility-targets.py`,

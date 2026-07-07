@@ -41,6 +41,16 @@ const DOC_REGISTRY: Record<string, DocInfo> = {
     title: "Agent rules (AGENTS.md)",
     blurb: "Default operating mode and focus rule for any AI agent working in the repository.",
   },
+  judgment: {
+    file: "judgment.md",
+    title: "Judgment layer",
+    blurb: "How Codex chooses what to do next: claim-centered progress, stopping rule, topic hook cards, visual thinking, and board-writing discipline.",
+  },
+  design: {
+    file: "design.md",
+    title: "Design layer",
+    blurb: "How findings are presented on public surfaces: reader-first anatomy, wall consolidation, visual contracts, and page QA.",
+  },
   factory: {
     file: "factory.md",
     title: "Factory manual",
@@ -203,6 +213,8 @@ function sourcePathForFile(file: string): string {
     "repo-readme.md": "README.md",
     "license.txt": "LICENSE",
     "license-content.txt": "LICENSE-CONTENT",
+    "judgment.md": "research/JUDGMENT.md",
+    "design.md": "research/DESIGN.md",
     "factory.md": "research/factory.md",
     "status.md": "research/STATUS.md",
     "wip-register.md": "research/wip-register.md",

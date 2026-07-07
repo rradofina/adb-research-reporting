@@ -8549,6 +8549,84 @@
     line-height: var(--line-copy);
   }
 
+  .topic-overview-summary {
+    color: var(--ink-soft);
+    font-size: var(--type-copy-md);
+  }
+
+  .topic-overview-note {
+    max-width: var(--measure-prose);
+    margin-bottom: var(--space-page-intro);
+    color: var(--ink-faint);
+    font-size: var(--type-copy-sm);
+    line-height: var(--line-copy);
+  }
+
+  .topic-overview-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .topic-overview-metrics > div {
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .topic-overview-metrics > div:nth-child(odd) {
+    padding-right: var(--space-page-intro);
+    border-right: 1px solid var(--rule-soft);
+  }
+
+  .topic-overview-metrics > div:nth-child(even) {
+    padding-left: var(--space-page-intro);
+  }
+
+  .topic-overview-metrics > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .topic-overview-metrics span {
+    display: block;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-xs);
+    text-transform: uppercase;
+  }
+
+  .topic-overview-metrics strong {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--ink);
+    font-size: var(--type-copy-lg);
+    font-weight: var(--weight-semibold);
+  }
+
+  .topic-overview-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-list-gap-tight) var(--space-page-intro);
+    margin-top: var(--space-page-intro);
+  }
+
+  @media (max-width: 640px) {
+    .topic-overview-metrics {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .topic-overview-metrics > div,
+    .topic-overview-metrics > div:nth-child(odd),
+    .topic-overview-metrics > div:nth-child(even) {
+      padding-right: 0;
+      padding-left: 0;
+      border-right: 0;
+    }
+
+    .topic-overview-metrics > div:nth-last-child(2) {
+      border-bottom: 1px solid var(--rule-soft);
+    }
+  }
+
   .topic-section {
     margin-bottom: var(--space-page-header-gap);
   }

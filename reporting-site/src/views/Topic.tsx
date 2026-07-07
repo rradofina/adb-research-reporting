@@ -4,8 +4,8 @@
  * Topic.tsx — unified topic page.
  *
  * Replaces the previous split between /program/{slug}, /findings/{slug}, and
- * /program/{slug}/evidence with a single page per topic. Tabs (Paper, Brief,
- * Blog, Slides, Data, Evidence) switch the main content; sidebar shows
+ * /program/{slug}/evidence with a single page per topic. Tabs (Overview,
+ * Paper, Brief, Blog, Slides, Data, Evidence) switch the main content; sidebar shows
  * at-a-glance metadata + downloads. URL: /{slug}[?view={tab}].
  */
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -27,7 +27,7 @@ import { RemittanceMapHero } from "../components/charts/RemittanceMapHero";
 
 marked.setOptions({ gfm: true, breaks: false });
 
-type View = "paper" | "brief" | "blog" | "slides" | "data" | "evidence";
+type View = "overview" | "paper" | "brief" | "blog" | "slides" | "data" | "evidence";
 
 const TIER_TO_VIEW: Record<string, View> = {
   "working-paper": "paper",
@@ -37,8 +37,9 @@ const TIER_TO_VIEW: Record<string, View> = {
   slides: "slides",
 };
 
-const TAB_ORDER: View[] = ["paper", "brief", "blog", "slides", "data", "evidence"];
+const TAB_ORDER: View[] = ["overview", "paper", "brief", "blog", "slides", "data", "evidence"];
 const TAB_LABEL: Record<View, string> = {
+  overview: "Overview",
   paper: "Paper",
   brief: "Brief",
   blog: "Blog post",
@@ -53,16 +54,21 @@ function bytes(n: number): string {
   return `${(n / 1024 / 1024).toFixed(2)} MB`;
 }
 
+function isView(value: string | null): value is View {
+  return !!value && TAB_ORDER.includes(value as View);
+}
+
 export default function Topic({ slug }: { slug: string }) {
   const router = useRouter();
   const search = useSearchParams();
-  const view = (search?.get("view") as View) || "paper";
+  const requestedView = isView(search?.get("view")) ? (search?.get("view") as View) : null;
 
   const [tiers, setTiers] = useState<Record<View, ArticleMeta | undefined>>({} as any);
   const [bodyHtml, setBodyHtml] = useState<string>("");
   const [bodyLoading, setBodyLoading] = useState(false);
   const [manifest, setManifest] = useState<EvidenceManifest | null>(null);
   const [missing, setMissing] = useState(false);
+  const [metadataLoaded, setMetadataLoaded] = useState(false);
 
   // Per-(slug, view) HTML cache so re-clicking a tab is instant and the
   // previously-shown content stays visible while the new tab fetches.
@@ -82,12 +88,16 @@ export default function Topic({ slug }: { slug: string }) {
   useEffect(() => {
     let cancelled = false;
     setMissing(false);
+    setMetadataLoaded(false);
     bodyCache.current.clear();
     (async () => {
-      const index = await loadArticleIndex();
+      const [index, m] = await Promise.all([loadArticleIndex(), loadEvidenceManifest(slug)]);
       const forSlug = index.filter((a) => a.program === slug);
       if (forSlug.length === 0 && !programEntry) {
-        if (!cancelled) setMissing(true);
+        if (!cancelled) {
+          setMissing(true);
+          setMetadataLoaded(true);
+        }
         return;
       }
       const buckets: Record<View, ArticleMeta | undefined> = {} as any;
@@ -95,22 +105,54 @@ export default function Topic({ slug }: { slug: string }) {
         const v = TIER_TO_VIEW[a.tier as string] || TIER_TO_VIEW[a.kind as string];
         if (v && !buckets[v]) buckets[v] = a;
       }
-      if (!cancelled) setTiers(buckets);
-    })();
-    (async () => {
-      const m = await loadEvidenceManifest(slug);
-      if (!cancelled) setManifest(m);
+      if (!cancelled) {
+        setTiers(buckets);
+        setManifest(m);
+        setMetadataLoaded(true);
+      }
     })();
     return () => {
       cancelled = true;
     };
   }, [slug, programEntry]);
 
+  const paper = tiers.paper;
+  const title = paper?.title || programEntry?.title || slug;
+  const subtitle = paper?.subtitle || programEntry?.summary || "";
+  const status = (paper?.maturity as any) || programEntry?.status || "H";
+  const attestation = paper?.attestation_chain || "ai-first";
+  const authors = paper?.authors || ["Raymond Adofina"];
+  const published = paper?.published_at;
+  const updated = paper?.updated_at;
+  const availableTabs = new Set<View>();
+  if (!metadataLoaded) {
+    availableTabs.add("paper");
+  } else {
+    if (programEntry && !tiers.paper) availableTabs.add("overview");
+    if (tiers.paper) availableTabs.add("paper");
+    if (tiers.brief) availableTabs.add("brief");
+    if (tiers.blog) availableTabs.add("blog");
+    if (tiers.slides) availableTabs.add("slides");
+    if ((manifest?.generated_files || []).length > 0) availableTabs.add("data");
+    if (manifest && ((manifest.artifacts || []).length > 0 || (manifest.scripts || []).length > 0)) {
+      availableTabs.add("evidence");
+    }
+    if (availableTabs.size === 0) availableTabs.add("overview");
+  }
+  const defaultView: View = !metadataLoaded
+    ? "paper"
+    : tiers.paper
+      ? "paper"
+      : manifest && ((manifest.artifacts || []).length > 0 || (manifest.generated_files || []).length > 0)
+        ? "evidence"
+        : "overview";
+  const view: View = requestedView && availableTabs.has(requestedView) ? requestedView : defaultView;
+
   // 2. When the active tab changes, load that tab's markdown body if
   // not cached. The previous tab's HTML stays in bodyHtml until the new
   // body is ready — no flash to a blank/loading state on tab switch.
   useEffect(() => {
-    if (view === "data" || view === "evidence") {
+    if (view === "overview" || view === "data" || view === "evidence") {
       // These tabs render from manifest, not markdown.
       setBodyHtml("");
       setBodyLoading(false);
@@ -159,14 +201,6 @@ export default function Topic({ slug }: { slug: string }) {
     };
   }, [slug, view, tiers]);
 
-  function setView(v: View) {
-    const next = new URLSearchParams(search?.toString() ?? "");
-    if (v === "paper") next.delete("view");
-    else next.set("view", v);
-    const query = next.toString();
-    router.replace(query ? `/${slug}?${query}` : `/${slug}`, { scroll: false });
-  }
-
   if (missing) {
     return (
       <div className="not-found-page">
@@ -179,18 +213,13 @@ export default function Topic({ slug }: { slug: string }) {
     );
   }
 
-  const paper = tiers.paper;
-  const title = paper?.title || programEntry?.title || slug;
-  const subtitle = paper?.subtitle || programEntry?.summary || "";
-  const status = (paper?.maturity as any) || programEntry?.status || "H";
-  const attestation = paper?.attestation_chain || "ai-first";
-  const authors = paper?.authors || ["Raymond Adofina"];
-  const published = paper?.published_at;
-  const updated = paper?.updated_at;
-  const availableTabs = new Set<View>(["paper", "data", "evidence"]);
-  if (tiers.brief) availableTabs.add("brief");
-  if (tiers.blog) availableTabs.add("blog");
-  if (tiers.slides) availableTabs.add("slides");
+  function setView(v: View) {
+    const next = new URLSearchParams(search?.toString() ?? "");
+    if (v === defaultView) next.delete("view");
+    else next.set("view", v);
+    const query = next.toString();
+    router.replace(query ? `/${slug}?${query}` : `/${slug}`, { scroll: false });
+  }
 
   return (
     <article className="topic-page">
@@ -292,6 +321,15 @@ export default function Topic({ slug }: { slug: string }) {
       <div className="topic-grid">
         {/* Main content */}
         <main className="topic-main">
+          {view === "overview" && (
+            <OverviewTab
+              program={programEntry}
+              manifest={manifest}
+              slug={slug}
+              hasPaper={!!tiers.paper}
+            />
+          )}
+
           {view === "paper" || view === "brief" || view === "blog" ? (
             // Render any current bodyHtml even while loading — keeps the
             // previous tab's content visible until the new one is ready,
@@ -306,6 +344,8 @@ export default function Topic({ slug }: { slug: string }) {
               />
             ) : bodyLoading ? (
               <div className="loading-message">Loading…</div>
+            ) : !metadataLoaded ? (
+              <div className="loading-message">Loading topic…</div>
             ) : (
               <div className="loading-message">
                 No {TAB_LABEL[view].toLowerCase()} version yet for this topic.
@@ -335,6 +375,60 @@ export default function Topic({ slug }: { slug: string }) {
         </aside>
       </div>
     </article>
+  );
+}
+
+function OverviewTab({
+  program,
+  manifest,
+  slug,
+  hasPaper,
+}: {
+  program: (typeof programs)[number] | undefined;
+  manifest: EvidenceManifest | null;
+  slug: string;
+  hasPaper: boolean;
+}) {
+  return (
+    <div className="topic-overview">
+      <h2 className="content-title">Current state</h2>
+      {program?.summary ? (
+        <p className="content-copy topic-overview-summary">{program.summary}</p>
+      ) : (
+        <p className="content-copy">No program summary is registered for this topic yet.</p>
+      )}
+      {program?.note ? <p className="topic-overview-note">{program.note}</p> : null}
+      <div className="topic-overview-metrics" aria-label="Topic evidence status">
+        <div>
+          <span>Article</span>
+          <strong>{hasPaper ? "available" : "not yet"}</strong>
+        </div>
+        <div>
+          <span>Hero visual</span>
+          <strong>{manifest?.hero ? "available" : "not yet"}</strong>
+        </div>
+        <div>
+          <span>Evidence files</span>
+          <strong>{(manifest?.artifacts || []).length.toLocaleString()}</strong>
+        </div>
+        <div>
+          <span>Generated outputs</span>
+          <strong>{(manifest?.generated_files || []).length.toLocaleString()}</strong>
+        </div>
+      </div>
+      <div className="topic-overview-actions">
+        {(manifest?.artifacts || []).length > 0 || (manifest?.scripts || []).length > 0 ? (
+          <Link href={`/${slug}?view=evidence`} className="token-link">
+            Open evidence packet
+          </Link>
+        ) : null}
+        {(manifest?.generated_files || []).length > 0 ? (
+          <Link href={`/${slug}?view=data`} className="token-link">
+            Open generated data
+          </Link>
+        ) : null}
+      </div>
+    </div>
   );
 }
 

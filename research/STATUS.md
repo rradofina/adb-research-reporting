@@ -159,6 +159,17 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-07-07 (program-route anatomy audit):** Completed the next L0
+  design-backlog move after the shared ledger component. The active program
+  route is centralized: `/program/{slug}` and `/program/{slug}/evidence`
+  redirect into `reporting-site/src/views/Topic.tsx`. Audit result: 16 of
+  18 topics have paper + hero + evidence surfaces; `mpi-nighttime-lights`
+  has evidence but no paper/hero; `digital-performance` has only the
+  register summary. The topic shell now opens the best available surface
+  (paper, then evidence, then overview) so a program page no longer lands
+  on an empty Paper tab when evidence exists. Remaining deviations are
+  topic-specific presentation moves.
+
 - **2026-07-07 (shared evidence-ledger component):** Completed the next L0
   design-backlog move. Added a shared reporting-site evidence-ledger component
   and standard `generated/evidence-ledger.{json,csv}` aliases for

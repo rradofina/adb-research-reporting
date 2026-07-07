@@ -164,6 +164,12 @@ Run this checklist before closing any public-surface session:
    `{program}/generated/evidence-ledger.{json,csv}` aliases. Both showcase
    routes now use the shared component for group cards, filtering, file links,
    and responsive ledger tables.
-5. Audit every program page against the anatomy; record deviations in
-   the per-program STATUS and fix them as presentation moves (a
-   first-class move under `research/JUDGMENT.md` §4).
+5. **Done 2026-07-07:** Audited the active program route. All
+   `/program/{slug}` and `/program/{slug}/evidence` links redirect to the
+   generic `Topic.tsx` surface; 16 of 18 topics have paper + hero +
+   evidence surfaces, `mpi-nighttime-lights` has evidence but no paper/hero,
+   and `digital-performance` has only the register summary. Fixed the
+   shared topic shell so a topic opens to the best available surface
+   (paper, then evidence, then overview) instead of an empty Paper tab.
+   Remaining per-topic deviations are now presentation moves, not route
+   bugs.

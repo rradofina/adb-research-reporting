@@ -59,11 +59,11 @@ export default function HowToRead() {
               </tr>
               <tr>
                 <td><span className="font-mono text-sm">/program/{`{slug}`}</span></td>
-                <td>Per-program detail page. Old format; some programs only.</td>
+                <td>Canonical topic page. Opens the best available surface: paper first, then evidence, then a register overview.</td>
               </tr>
               <tr>
                 <td><span className="font-mono text-sm">/program/{`{slug}`}/evidence</span></td>
-                <td><strong>The full audit trail.</strong> Pre-registration, sensitivity, internal review, red-team review, limitations, source data — all hash-pinned and rendered inline.</td>
+                <td>Redirects to the topic Evidence tab: pre-registration, sensitivity, reviews, limitations, source data, and hash-pinned files.</td>
               </tr>
               <tr>
                 <td><Link href="/atlas" className="ed-link font-mono">/atlas</Link></td>

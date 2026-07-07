@@ -33,9 +33,11 @@ interface ReaderTopicSpec {
   label: string;
   question: string;
   summary: string;
+  findingClaim?: string;
+  findingLimit?: string;
+  findingRank?: number;
   tone: "blue" | "green" | "red" | "gold";
   programSlug?: string;
-  featured?: boolean;
 }
 
 const ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
@@ -62,9 +64,13 @@ const readerTopicSpecs: ReaderTopicSpec[] = [
     question: "Can public monitor maps support station-coverage claims?",
     summary:
       "OpenAQ rows, regulator portals, station identity checks, and denominator gates are shown before any coverage language is allowed.",
+    findingClaim:
+      "Across 8 economy routes, public station, method, dashboard, and denominator records still leave 0 validated same-station QA rows and 0 allowed coverage-claim rows.",
+    findingLimit:
+      "This is an observability finding, not proof that the monitors are uncalibrated.",
+    findingRank: 1,
     tone: "blue",
     programSlug: "air-monitoring",
-    featured: true,
   },
   {
     reportId: 4,
@@ -72,6 +78,11 @@ const readerTopicSpecs: ReaderTopicSpec[] = [
     question: "Which facilities disappear between a registry and a public map?",
     summary:
       "Registry-map disagreement is reviewed row by row before public access maps are trusted.",
+    findingClaim:
+      "Bangladesh joins 572 DGHS upazila rows and 28,166 active facilities to 3,212 OSM health features, but source-owner repair still ends at 39 wall rows and 0 AI-actionable closures.",
+    findingLimit:
+      "The result shows public registry-map disagreement, not corrected facility locations.",
+    findingRank: 2,
     tone: "red",
     programSlug: "public-service-data-quality",
   },
@@ -81,8 +92,41 @@ const readerTopicSpecs: ReaderTopicSpec[] = [
     question: "Do corridor costs look different after flow weighting?",
     summary:
       "Remittance prices are checked against observed corridor-flow exposure instead of equal-count averages.",
+    findingClaim:
+      "Tonga reaches 42.6% of GDP in remittance dependence, so corridor prices are re-read with public bilateral-flow weights instead of equal-count averages.",
+    findingLimit:
+      "The page measures public corridor-cost exposure, not household resilience.",
+    findingRank: 3,
     tone: "green",
     programSlug: "remittance-resilience",
+  },
+  {
+    reportId: 10,
+    label: "Migration",
+    question: "What changes when emigrant stock is read by population share?",
+    summary:
+      "UN DESA emigrant stocks are divided by WDI origin population, then checked against UNHCR forced-displacement corridors.",
+    findingClaim:
+      "Afghanistan is the exception in the denominator switch: UNHCR forced-displacement stock equals 81.7% of its UN DESA emigrant stock.",
+    findingLimit:
+      "This does not classify labor, family, student, or temporary-work migration.",
+    findingRank: 4,
+    tone: "blue",
+    programSlug: "migration-displacement-signals",
+  },
+  {
+    reportId: 9,
+    label: "Energy",
+    question: "Can single-fuel generation screens become reliability claims?",
+    summary:
+      "Generation-fuel concentration is crosswalked to public outage and electricity-service proxies before reliability language is allowed.",
+    findingClaim:
+      "Public reliability proxies exist for 38 DMCs and overlap 22 generation-ranked rows, but the page stops at source readiness.",
+    findingLimit:
+      "This is not a power-reliability ranking and does not observe outage events.",
+    findingRank: 5,
+    tone: "gold",
+    programSlug: "grid-reliability-heat",
   },
   {
     reportId: 8,
@@ -202,8 +246,13 @@ export default function Home() {
     })
     .filter((topic): topic is NonNullable<typeof topic> => Boolean(topic));
 
-  const featuredTopic = readerTopics.find((topic) => topic.featured) ?? readerTopics[0];
-  const standardTopics = readerTopics.filter((topic) => topic !== featuredTopic);
+  const findingTopics = readerTopics
+    .filter((topic) => typeof topic.findingRank === "number")
+    .sort((a, b) => (a.findingRank ?? 99) - (b.findingRank ?? 99))
+    .slice(0, 5);
+  const findingTopicHrefs = new Set(findingTopics.map((topic) => topic.report.href));
+  const standardTopics = readerTopics.filter((topic) => !findingTopicHrefs.has(topic.report.href));
+  const primaryFinding = findingTopics[0] ?? readerTopics[0];
 
   const sortedPrograms = [...programs].sort((a, b) => {
     const sa = statusRank(a.status);
@@ -219,31 +268,59 @@ export default function Home() {
     ? sortedPrograms.filter((program) => Boolean(heroIndex[program.slug]))
     : [];
 
-  const featuredImage = heroPath(featuredTopic?.programSlug, featuredTopic?.hero);
-
   return (
     <div className="home-page home-institutional">
       <section className="home-hero" aria-labelledby="home-title">
         <div className="home-hero-media" aria-hidden="true" />
         <div className="home-hero-content">
-          <p className="home-eyebrow">Data for development</p>
-          <h1 id="home-title">Public evidence for development blind spots</h1>
+          <p className="home-eyebrow">Research findings</p>
+          <h1 id="home-title">Public evidence findings</h1>
           <p className="home-lede">
-            Browse research pages that test whether public data can support
-            claims about services, climate, air quality, resilience, and
-            statistical visibility across ADB developing member economies.
+            Start with the strongest public-source results. Each card states
+            what the evidence can carry, what it cannot yet say, and where a
+            reader can inspect the generated packet.
           </p>
           <div className="home-actions" aria-label="Primary paths">
-            <Link href="/showcase/air-monitoring-observability">Open featured evidence</Link>
-            <Link href="/review">Researcher review desk</Link>
-            <a href="#topics">Browse topics</a>
+            <Link href={primaryFinding?.report.href ?? "/showcase/air-monitoring-observability"}>
+              Open lead finding
+            </Link>
+            <a href="#topics">Browse all findings</a>
           </div>
           <div className="home-assurance" aria-label="Research standard">
-            <span>Public sources only</span>
-            <span>Scripts before claims</span>
-            <span>Evidence packets linked</span>
-            <span>AI role disclosed</span>
+            <span>Maturity labels visible</span>
+            <span>attestation_chain: ai-first</span>
+            <span>Generated visuals only</span>
+            <span>Audit trail linked</span>
           </div>
+        </div>
+        <div className="home-hero-findings" aria-label="Featured research findings">
+          {findingTopics.map((topic, index) => {
+            const image = heroPath(topic.programSlug, topic.hero);
+            const attestation = topic.hero?.attestation_chain || "ai-first";
+            return (
+              <Link
+                href={topic.report.href}
+                className={`home-finding-card${index === 0 ? " home-finding-card-primary" : ""}${image ? "" : " home-finding-card-noimage"}`}
+                key={topic.report.href}
+              >
+                {image && (
+                  <img
+                    src={image}
+                    alt={topic.hero?.title || topic.question}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    width={topic.hero?.dimensions?.width || 1600}
+                    height={topic.hero?.dimensions?.height || 900}
+                  />
+                )}
+                <div className="home-finding-copy">
+                  <span>{topic.publicStage} · {attestation}</span>
+                  <h3>{topic.label}</h3>
+                  <p>{topic.findingClaim ?? topic.report.audit?.finding ?? topic.report.deck}</p>
+                  <em>{topic.findingLimit ?? topic.report.audit?.nonClaim ?? topic.quality.publicationGap}</em>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -267,35 +344,13 @@ export default function Home() {
       <section className="home-browse-section" id="topics" aria-labelledby="home-topic-title">
         <div className="home-section-head">
           <p className="home-section-kicker">Research and publications</p>
-          <h2 id="home-topic-title">Start with the development question.</h2>
+          <h2 id="home-topic-title">Browse the remaining research questions.</h2>
           <p>
-            Each page shows the policy question, the public-source gap, and the
-            evidence that is already reproducible. Stronger claims stay gated
-            until the data can support them.
+            The front door now carries the strongest findings. This section
+            keeps the rest of the queue accessible by question, with stronger
+            claims still gated until the data can support them.
           </p>
         </div>
-
-        {featuredTopic && (
-          <Link href={featuredTopic.report.href}
-            className={`home-featured-card${featuredImage ? "" : " home-featured-card-noimage"}`}
-          >
-            {featuredImage && (
-              <img
-                src={featuredImage}
-                alt={featuredTopic.hero?.title || featuredTopic.question}
-                loading="eager"
-                width={featuredTopic.hero?.dimensions?.width || 1600}
-                height={featuredTopic.hero?.dimensions?.height || 900}
-              />
-            )}
-            <div className="home-featured-copy">
-              <span>{featuredTopic.publicStage}</span>
-              <h3>{featuredTopic.question}</h3>
-              <p>{featuredTopic.summary}</p>
-              <b>Featured evidence</b>
-            </div>
-          </Link>
-        )}
 
         <div className="home-topic-grid">
           {standardTopics.map((topic) => {

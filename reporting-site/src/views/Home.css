@@ -10,20 +10,24 @@
 
 .home-hero {
   position: relative;
-  min-height: 31rem;
+  min-height: clamp(38rem, 78vh, 48rem);
   display: grid;
-  align-items: end;
+  grid-template-columns: minmax(20rem, 0.78fr) minmax(34rem, 1.22fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
   overflow: hidden;
+  padding: clamp(1rem, 2vw, 1.5rem);
   border: 1px solid var(--rule);
-  background: var(--navy);
+  background: #071e33;
 }
 
 .home-hero-media {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 37, 105, 0.99), rgba(0, 95, 140, 0.97) 55%, rgba(0, 37, 105, 0.92)),
-    url("/programs/air-monitoring/generated/charts/air-monitoring-thumbnail.png") center / cover no-repeat;
+    linear-gradient(90deg, rgba(5, 21, 36, 0.98), rgba(0, 79, 116, 0.9) 54%, rgba(6, 30, 51, 0.94)),
+    url("/programs/public-service-data-quality/generated/charts/public-service-data-quality-thumbnail.png") center / cover no-repeat;
+  opacity: 0.96;
 }
 
 .home-hero::after {
@@ -37,10 +41,11 @@
 .home-hero-content {
   position: relative;
   z-index: 1;
-  width: min(100%, 47rem);
+  align-self: end;
+  width: min(100%, 44rem);
   display: grid;
   gap: 1rem;
-  padding: 3rem;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
   color: #ffffff;
 }
 
@@ -50,6 +55,7 @@
 .home-topic-card b,
 .home-featured-copy span,
 .home-featured-copy b,
+.home-finding-copy span,
 .home-report-row span,
 .home-report-row em,
 .home-visual-card span {
@@ -66,12 +72,12 @@
 }
 
 .home-hero h1 {
-  max-width: 13ch;
+  max-width: 12ch;
   margin: 0;
   color: #ffffff;
-  font-size: 3.45rem;
+  font-size: clamp(3rem, 5vw, 4.75rem);
   font-weight: 760;
-  line-height: 1;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -136,6 +142,7 @@
   color: rgba(255, 255, 255, 0.9);
   font-size: var(--type-copy-sm);
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .home-assurance span:nth-child(2) {
@@ -148,6 +155,125 @@
 
 .home-assurance span:nth-child(4) {
   border-left-color: #9b2226;
+}
+
+.home-hero-findings {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(19rem, 0.95fr) minmax(21rem, 1.05fr);
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.home-finding-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: var(--radius-interactive);
+  color: inherit;
+  background: rgba(255, 255, 255, 0.96);
+  text-decoration: none;
+  box-shadow: 0 22px 52px -36px rgba(0, 0, 0, 0.58);
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.home-finding-card-primary {
+  grid-row: span 4;
+}
+
+.home-finding-card-noimage {
+  grid-template-rows: minmax(0, 1fr);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(232, 241, 246, 0.96));
+}
+
+.home-finding-card img {
+  width: 100%;
+  aspect-ratio: 16 / 8.6;
+  display: block;
+  object-fit: cover;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.home-finding-card:not(.home-finding-card-primary) img {
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.home-finding-card:not(.home-finding-card-primary) {
+  grid-template-columns: minmax(6.75rem, 0.34fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.home-finding-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.38rem;
+  min-height: 0;
+  padding: 0.76rem;
+}
+
+.home-finding-copy span {
+  color: var(--accent-strong);
+}
+
+.home-finding-copy h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 760;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.home-finding-card-primary .home-finding-copy h3 {
+  font-size: 1.32rem;
+}
+
+.home-finding-copy p,
+.home-finding-copy em {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--type-copy-sm);
+  line-height: 1.36;
+}
+
+.home-finding-copy p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.home-finding-card:not(.home-finding-card-primary) .home-finding-copy p {
+  -webkit-line-clamp: 2;
+}
+
+.home-finding-card:not(.home-finding-card-primary) .home-finding-copy em {
+  -webkit-line-clamp: 1;
+}
+
+.home-finding-copy em {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--ink-faint);
+  font-style: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.home-finding-card:hover {
+  transform: translateY(-2px);
+  border-color: #fbb00e;
+  box-shadow: 0 18px 46px -30px rgba(0, 0, 0, 0.7);
+}
+
+.home-finding-card:hover h3 {
+  color: var(--accent);
 }
 
 .home-browse-section,
@@ -493,6 +619,19 @@
 }
 
 @media (max-width: 1080px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+  }
+
+  .home-hero-content {
+    width: min(100%, 48rem);
+  }
+
+  .home-hero-findings {
+    min-height: 32rem;
+  }
+
   .home-topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -510,21 +649,23 @@
 
   .home-hero {
     min-height: auto;
+    padding: 0.75rem;
   }
 
   .home-hero-media {
     background:
-      linear-gradient(180deg, rgba(0, 37, 105, 0.99), rgba(0, 95, 140, 0.96)),
-      url("/programs/air-monitoring/generated/charts/air-monitoring-thumbnail.png") center / cover no-repeat;
+      linear-gradient(180deg, rgba(5, 21, 36, 0.98), rgba(0, 79, 116, 0.94)),
+      url("/programs/public-service-data-quality/generated/charts/public-service-data-quality-thumbnail.png") center / cover no-repeat;
   }
 
   .home-hero-content {
-    padding: 2rem 1rem 2.35rem;
+    gap: 0.85rem;
+    padding: 1.3rem 1rem 1rem;
   }
 
   .home-hero h1 {
-    max-width: 12ch;
-    font-size: 2.35rem;
+    max-width: 13ch;
+    font-size: 2.12rem;
     line-height: 1.04;
   }
 
@@ -536,15 +677,51 @@
   .home-actions {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
 
   .home-actions a {
     justify-content: center;
+    min-height: 2.35rem;
   }
 
   .home-assurance {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+    padding-top: 0.65rem;
+  }
+
+  .home-assurance span {
+    font-size: 0.78rem;
+    line-height: 1.18;
+  }
+
+  .home-hero-findings {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    min-height: 0;
+  }
+
+  .home-finding-card-primary {
+    grid-row: auto;
+  }
+
+  .home-finding-card:not(.home-finding-card-primary) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .home-finding-card img,
+  .home-finding-card:not(.home-finding-card-primary) img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-finding-card:not(.home-finding-card-primary) .home-finding-copy p,
+  .home-finding-copy p,
+  .home-finding-copy em {
+    -webkit-line-clamp: 3;
   }
 
   .home-section-head h2 {
@@ -591,15 +768,48 @@
   }
 
   .home-assurance {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-finding-card,
+  .home-finding-card:not(.home-finding-card-primary) {
+    grid-template-columns: minmax(6.6rem, 0.36fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 8.5rem;
+  }
+
+  .home-finding-card img,
+  .home-finding-card:not(.home-finding-card-primary) img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .home-finding-copy {
+    gap: 0.28rem;
+    padding: 0.58rem;
+  }
+
+  .home-finding-copy h3,
+  .home-finding-card-primary .home-finding-copy h3 {
+    font-size: 0.98rem;
+    line-height: 1.12;
+  }
+
+  .home-finding-copy p,
+  .home-finding-card:not(.home-finding-card-primary) .home-finding-copy p {
+    -webkit-line-clamp: 2;
+  }
+
+  .home-finding-copy em {
+    -webkit-line-clamp: 1;
   }
 }
 
 /* index.css is imported after route modules, so these selectors deliberately
    outrank older global homepage rules without changing unrelated pages. */
 .home-institutional .home-hero {
-  min-height: 31rem;
-  padding: 0;
+  min-height: clamp(38rem, 78vh, 48rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
   margin: 0;
   border: 1px solid var(--rule);
 }
@@ -635,6 +845,11 @@
 }
 
 @media (max-width: 1080px) {
+  .home-institutional .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+  }
+
   .home-institutional .home-topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -643,11 +858,12 @@
 @media (max-width: 780px) {
   .home-institutional .home-hero {
     min-height: auto;
+    padding: 0.75rem;
   }
 
   .home-institutional .home-hero h1 {
-    max-width: 12ch;
-    font-size: 2.35rem;
+    max-width: 13ch;
+    font-size: 2.12rem;
     line-height: 1.04;
   }
 

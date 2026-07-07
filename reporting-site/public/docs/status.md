@@ -159,6 +159,14 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-07-07 (Home findings-first refactor):** Completed the L0
+  presentation move from `research/DESIGN.md`: `/` now opens with five
+  ranked research findings (air monitoring, PSDQ, remittances, migration,
+  energy), each with a generated visual, maturity label, and AI-first
+  disclosure. Process/reviewer links moved below the finding-first hero;
+  QA screenshots cover 1280 px and 375 px. Next design backlog item:
+  shared evidence-ledger component.
+
 - **2026-07-07 (PSDQ presentation refactor):** Rotated from the closed
   `air-monitoring` package to `public-service-data-quality` for the design
   backlog's second wall-consolidation target. Added

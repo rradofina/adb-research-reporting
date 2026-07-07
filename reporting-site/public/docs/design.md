@@ -156,8 +156,9 @@ Run this checklist before closing any public-surface session:
 2. **Done 2026-07-07:** Apply the same refactor to `ShowcasePSDQ.tsx`; the
    route now reads `psdq-evidence-ledger.{json,csv}` and treats the 28
    source-disagreement artifacts as ledger rows.
-3. Rework `Home.tsx` to lead with findings (claim + hero visual +
-   label), demoting process links to a secondary tier.
+3. **Done 2026-07-07:** Reworked `Home.tsx` to lead with five ranked
+   findings (claim + hero visual + label), with process/reviewer links
+   demoted below the first viewport and verified at 1280 px and 375 px.
 4. Add the evidence-ledger component once, shared by all programs, fed by
    a generated `{program}/generated/evidence-ledger.json` written by a
    committed script.

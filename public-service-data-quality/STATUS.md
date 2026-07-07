@@ -5,42 +5,39 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to PSDQ.
 
-Last updated: 2026-06-19.
+Last updated: 2026-07-07.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | PR (under §18 ai-first); **ai-first finished for current issue** as of 2026-05-07 (Mode A exit condition met) |
-| Active stage | L3 source-disagreement module plus facility-validation sample, automated coded screen, AI public-source review ledger, 8-row candidate-resolution pass, richer public-source tag scan, 23-row coordinate-repair triage, 40-row public-map-gap triage, 40-row public-map-gap row-evidence ledger, 40-row targeted public-map inspection packet, 12-row first-source confirmation pass, 40-row targeted public-source confirmation pass, 16-row public-source decision ledger, 3-row possible same-facility review, 9-row priority name-conflict review, 6-row lower-priority name-conflict spot check, 115-upazila zero-OSM observability review, 39-row human-gated handoff matrix, 39-row human-validation worksheet, 39-row AI closure audit, 10-stage evidence ladder, 4-row source-repair public-evidence attachment, 4-row official-coordinate evidence, 4-row public-explanation search, 3-row correction-record follow-up, 3-row no-contact clarification packet, and 3-row registry-vintage review added; owner-only source contact or human validation remains the substantive source-repair, possible same-facility, priority/lower-priority name-conflict, and facility-level zero-OSM absence wall; PR maturity label unchanged |
-| Active flagship | Yes, as of 2026-06-19 — rotated back in after the remittance L3 flow-weighting repair closed under Mode A. |
+| Active stage | L4 presentation refactor complete: `/showcase/psdq-source-disagreement` now renders one generated evidence ledger instead of stacked wall sections. Substantive source repair remains owner-only source-owner contact or human location validation; PR maturity label unchanged. |
+| Active flagship | Yes, as of 2026-07-07 — rotated in for the design-backlog presentation move after `air-monitoring` closed. |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | `/program/public-service-data-quality/evidence` |
 
 ## Current output target
 
-A reviewer-credible PSDQ source-disagreement package for the showcase bench:
-start from the Bangladesh exposure-ranked registry-map visual, package the
-matching strata, validation sample, automated coded screen, AI row-review
-ledger, candidate/source checks, coordinate-repair triage, public-map-gap
-triage, row-evidence notes, targeted public-map inspection queue, first-row
-public-source confirmation, 40-row targeted public-source confirmation,
-public-source decision ledger, source-repair public evidence, official-coordinate
-evidence, possible same-facility review, priority name-conflict review,
-lower-priority name-conflict spot check,
-zero-OSM upazila observability review,
-human-gated handoff matrix,
-human-validation worksheet,
-AI closure audit,
-evidence ladder,
-public-explanation search, correction-record follow-up,
-clarification packet, registry-vintage review, and caveats, make the source
-upgrade clear in the public surface, and preserve the existing PR maturity
-label without implying human-final review.
+Keep the PSDQ package in its current honest shape: source-disagreement is
+reader-ready as an L3/PR ai-first evidence module; row-level repair is not.
+Future AI work should only improve presentation, shared components, or evidence
+navigation unless a new §6.7-qualified public source plausibly changes the
+human/source-owner wall. Human-final validation and source-owner contact remain
+owner-only.
 
 ## Last completed
 
+- **2026-07-07:** Refactored the PSDQ showcase from a 7,532-line wall-stack
+  route to a 524-line finding-first page backed by
+  `generated/psdq-evidence-ledger.{json,csv}`. The new no-network ledger
+  builder indexes 28 committed summary artifacts and surfaces the core result:
+  572 DGHS upazila rows, 28,166 active clinical facilities, 3,212 joined OSM
+  health features, 39 human/source-owner wall rows, and 0 AI-actionable
+  closures. This is a presentation/navigation refactor, not a new empirical
+  claim, row closure, source-owner response, human validation, maturity
+  promotion, or human-final upgrade.
 - **2026-06-19:** Added the Bangladesh facility-validation evidence ladder for
   the PSDQ source-disagreement showcase. New no-network script
   `scripts/build-bgd-facility-evidence-ladder.py` reads 10 committed summary

@@ -12,11 +12,11 @@ Last updated: 2026-07-07.
 
 | Field | Value |
 |---|---|
-| Active flagship | `air-monitoring` — **evidence-gap package closed 2026-07-07**: a generated ledger indexes 64 committed summary rows and 214 supporting files; public sources show station/source/method/dashboard/denominator context but 0 validated same-station rows, 0 station-level BMKG inspection/certificate/status rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and 0 allowed coverage-claim rows. See `air-monitoring/STATUS.md`. |
-| Per-program board | `air-monitoring/STATUS.md` |
+| Active flagship | `public-service-data-quality` — **presentation refactor closed 2026-07-07**: the PSDQ showcase now reads one generated evidence ledger instead of stacked wall sections. The ledger indexes 28 summary artifacts and keeps the supported finding narrow: Bangladesh registry-map disagreement is visible, while row repair ends at 39 human/source-owner wall rows and 0 AI-actionable closures. See `public-service-data-quality/STATUS.md`. |
+| Per-program board | `public-service-data-quality/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `public-service-data-quality` (PR; evidence ladder closed in commit `8913943`; AI-doable work is back at the owner-only source-owner contact or human-validation wall) |
+| Previous flagship | `air-monitoring` — evidence-gap package closed 2026-07-07; further work only for a named §6.7-qualified source. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -30,7 +30,7 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-1. **`air-monitoring`** — *current active flagship; Mode-A issue now closed
+1. **`air-monitoring`** — *Mode-A issue closed
    for the public-evidence absence package.* Completed 2026-07-07:
    `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, article,
    generated evidence ledger, and the six-part showcase page. Further work is
@@ -71,10 +71,12 @@ overrides priority by editing this list.
     composite; index needs reformulation before ladder build.
 13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
     modeled-extent is §18.5 owner-gated.
-14. **`public-service-data-quality`** — PR ai-first package remains strong,
-    but the next substantive upgrade is owner-only source-owner contact or
-    human location validation for source-repair, same-facility,
-    priority/lower-priority name-conflict, and facility-level zero-OSM rows.
+14. **`public-service-data-quality`** — *current active flagship for L4
+    presentation; issue closed 2026-07-07.* The showcase now uses generated
+    `psdq-evidence-ledger.{json,csv}` instead of stacked walls. Substantive
+    source repair remains owner-only source-owner contact or human location
+    validation for source-repair, same-facility, priority/lower-priority
+    name-conflict, and facility-level zero-OSM rows.
 15. **`invisible-urbanization`** — settlement growth vs admin urban
     boundaries; pipeline ready.
 16. **`coastal-informal-risk`** — informal coastal settlements vs
@@ -156,6 +158,15 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-07 (PSDQ presentation refactor):** Rotated from the closed
+  `air-monitoring` package to `public-service-data-quality` for the design
+  backlog's second wall-consolidation target. Added
+  `public-service-data-quality/scripts/build-evidence-ledger.py`, generated
+  `psdq-evidence-ledger.{json,csv}`, and refactored
+  `/showcase/psdq-source-disagreement` from stacked audit sections to the
+  six-part reader surface in `research/DESIGN.md`. No maturity promotion and
+  no new row-level repair claim.
 
 - **2026-07-07 (Codex alignment pass):** Harmonized `CLAUDE.md`,
   `AGENTS.md`, `research/factory.md`, and this board around the same session

@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-07-07T06:45:40.272Z",
+  "generated_at": "2026-07-07T07:26:09.462Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -942,6 +942,18 @@
       "size": 60500,
       "size_human": "59.1 KB",
       "sha256": "aee3865ea91666317591a6bc017a9363e067c93579af8153fb5c5ec1324e0add"
+    },
+    {
+      "file": "generated/psdq-evidence-ledger.csv",
+      "size": 28792,
+      "size_human": "28.1 KB",
+      "sha256": "0b978b07f573bf2025c2fbf8c7a365f23f49e0a2b949966014cfed75e404c295"
+    },
+    {
+      "file": "generated/psdq-evidence-ledger.json",
+      "size": 43400,
+      "size_human": "42.4 KB",
+      "sha256": "bcbc6cf07b4fb561a93856bebbff51ae449587c944a464afca48c7d1d99b066d"
     },
     {
       "file": "generated/psdq-phl-admin3-open-buildings-context-summary.json",

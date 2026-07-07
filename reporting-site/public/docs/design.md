@@ -150,10 +150,12 @@ Run this checklist before closing any public-surface session:
 
 ## Standing design backlog (first targets)
 
-1. Refactor `ShowcaseAirMonitoring.tsx` to the six-part anatomy with a
-   generated evidence-ledger index; the ~65 wall artifacts become ledger
-   rows.
-2. Apply the same refactor to `ShowcasePSDQ.tsx`.
+1. **Done 2026-07-07:** Refactor `ShowcaseAirMonitoring.tsx` to the
+   six-part anatomy with a generated evidence-ledger index; the ~65 wall
+   artifacts become ledger rows.
+2. **Done 2026-07-07:** Apply the same refactor to `ShowcasePSDQ.tsx`; the
+   route now reads `psdq-evidence-ledger.{json,csv}` and treats the 28
+   source-disagreement artifacts as ledger rows.
 3. Rework `Home.tsx` to lead with findings (claim + hero visual +
    label), demoting process links to a secondary tier.
 4. Add the evidence-ledger component once, shared by all programs, fed by

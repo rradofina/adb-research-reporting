@@ -497,6 +497,109 @@
   font-size: var(--type-copy-sm);
 }
 
+.psdq-ledger-page .air-ledger-gate-context {
+  border-left-color: #005f73;
+}
+
+.psdq-ledger-page .air-ledger-gate-context .air-ledger-bar i {
+  background: #005f73;
+}
+
+.psdq-ledger-page .showcase-hero {
+  align-items: start !important;
+  padding-block: 3rem 2.75rem !important;
+}
+
+.psdq-ledger-page .air-ledger-stat {
+  background: rgba(0, 95, 115, 0.06);
+}
+
+.psdq-evidence-path {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.psdq-evidence-path article {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  min-width: 0;
+  min-height: 10.5rem;
+  padding: 0.9rem;
+  border: 1px solid var(--rule-soft);
+  border-top: 4px solid #005f73;
+  border-radius: var(--radius-interactive);
+  background: var(--paper);
+}
+
+.psdq-evidence-path article:last-child {
+  border-top-color: #9b2226;
+  background: rgba(155, 34, 38, 0.06);
+}
+
+.psdq-evidence-path span,
+.psdq-limit-grid span,
+.psdq-contract-list dt {
+  color: var(--ink-faint);
+  font-size: var(--type-copy-xs);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.psdq-evidence-path strong {
+  color: var(--ink);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.psdq-evidence-path h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--type-copy);
+  line-height: 1.2;
+}
+
+.psdq-evidence-path p,
+.psdq-limit-grid p,
+.psdq-contract-list dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--type-copy-sm);
+  line-height: 1.35;
+}
+
+.psdq-limit-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.psdq-limit-grid div {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(155, 34, 38, 0.22);
+  border-left: 4px solid #9b2226;
+  border-radius: var(--radius-interactive);
+  background: rgba(155, 34, 38, 0.05);
+}
+
+.psdq-contract-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.psdq-contract-list div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-interactive);
+  background: var(--paper);
+}
+
 @media (max-width: 1020px) {
   .air-ledger-group-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -504,6 +607,10 @@
 
   .air-source-route-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .psdq-evidence-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -523,6 +630,14 @@
 
   .air-ledger-toolbar select {
     min-width: 100%;
+  }
+
+  .psdq-evidence-path {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .psdq-evidence-path article {
+    min-height: 0;
   }
 }
 

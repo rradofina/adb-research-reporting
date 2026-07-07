@@ -159,6 +159,18 @@ by leaving the board in a state the next session can read.
 
 ## Current operational notes
 
+- **2026-07-07 (current-issue closure surface):** Completed the next L0
+  presentation move. Added `reporting-site/src/data/issueClosure.ts` as
+  the shared issue-count contract and wired Home, Research, and Briefs to
+  it; article/guide copy now states the same public closure: 18 topics
+  classified as 7 finished for current issue, 8 screening-only, 1
+  prospectus, 1 prepared pipeline, and 1 hypothesis. No constitutional
+  maturity promotion/demotion was made; this was a presentation and
+  issue-closure reconciliation. Browser QA showed that `/research`,
+  `/briefs`, `/how-to-read`, `/glossary`, `/archive`, `/data/upgrades`,
+  `/methods`, and `/references` were redirected away despite existing
+  view components; those routes are now exposed as App Router pages.
+
 - **2026-07-07 (program-route anatomy audit):** Completed the next L0
   design-backlog move after the shared ledger component. The active program
   route is centralized: `/program/{slug}` and `/program/{slug}/evidence`

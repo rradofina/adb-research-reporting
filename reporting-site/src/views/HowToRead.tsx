@@ -29,7 +29,11 @@ export default function HowToRead() {
           <h2 className="display-md text-[1.6rem] mt-2">Site layout</h2>
         </header>
         <div className="col-span-12 lg:col-span-9">
-          <table className="data-table w-full">
+          <table className="data-table w-full how-to-read-route-table">
+            <colgroup>
+              <col style={{ width: "38%" }} />
+              <col />
+            </colgroup>
             <thead>
               <tr>
                 <th>Route</th>
@@ -240,7 +244,9 @@ node scripts/verify-manifest.mjs`}</pre>
             <li>· This is <strong>not a country ranking</strong>. Composite indices appear as triage instruments only.</li>
             <li>· The framing is <strong>measurement gap, coverage gap, observability gap</strong> — not DMC deficiency.</li>
             <li>· No claim is presented past its evidence. Honest narrowings are surfaced, not buried.</li>
+            <li>· The prospectus program (climate-health-workdays) is computed but not treated as final; the heat layer remains an upgrade, not an implied result.</li>
             <li>· The prepared-pipeline program (digital-performance) is held back because the data aggregation has not run; it is documented, not silently promoted.</li>
+            <li>· The hypothesis program (mpi-nighttime-lights) remains owner-led until the external nighttime-lights track is reconciled with this repository.</li>
             <li>· Every <code className="font-mono not-italic">ai-first</code> chip is labeled honestly. A reader who wants <code className="font-mono not-italic">human-final</code> work has the upgrade-pass paths documented per program.</li>
           </ul>
         </div>

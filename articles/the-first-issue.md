@@ -1,7 +1,7 @@
 ---
 slug: the-first-issue
 title: "Vol. I, № 04: The first issue of the Blindspots Lab"
-subtitle: "Eight programs finished for the current issue, eight at Screening Result, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind."
+subtitle: "Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind."
 kind: blog
 status: draft
 attestation_chain: ai-first
@@ -12,18 +12,20 @@ topics: [governance, methodology, first-issue]
 program: meta
 maturity: PR
 abstract: >
-  This is the first issue of The Blindspots Lab. Eight programs cross
+  This is the first issue of The Blindspots Lab. Seven programs cross
   to finished-for-current-issue status under Constitution §18 (AI-First Operating
   Mode). Eight more sit at Screening Result with explicit honest
-  narrowings or triage-only screens. One — digital-performance — stays
-  at Prepared Pipeline because the Ookla parquet aggregation has not
-  yet been run. One — mpi-nighttime-lights — remains at Hypothesis
-  until the external track is reconciled. The article introduces the
-  eight finished issue findings, the screening results, and what
+  narrowings or triage-only screens. One — climate-health-workdays —
+  is a Program Prospectus because the PM2.5 layer is computed but the
+  heat layer remains an upgrade. One — digital-performance — stays at
+  Prepared Pipeline because the Ookla parquet aggregation has not yet
+  been run. One — mpi-nighttime-lights — remains at Hypothesis until
+  the external track is reconciled. The article introduces the finished
+  issue findings, the screening results, the held-back tracks, and what
   readers should know about §18 attested research before they cite it.
 doi:
 published_at: 2026-04-26
-updated_at: 2026-04-26
+updated_at: 2026-07-07
 references: []
 license: CC BY 4.0
 banned_words_check: passing
@@ -34,12 +36,15 @@ review_internal_chain: ai-critique-pass under §18
 
 # What's in the issue
 
-Eight current-issue finished programs, each with a permanent self-hosted
+Seven current-issue finished programs, each with a permanent self-hosted
 evidence packet at `/program/{slug}/evidence` and a working-paper
-article in this hub. All under §18 — AI-attested rather than
-human-attested. Read each headline with that label.
+article in this hub. The full issue register now has an honest label for
+all eighteen topics: seven finished, eight screening-only, one
+prospectus, one prepared pipeline, and one hypothesis. All under §18 —
+AI-attested rather than human-attested. Read each headline with that
+label.
 
-## The eight finished current-issue programs
+## The seven finished current-issue programs
 
 **Public Service Data Quality.** OpenStreetMap captures 17.1% of the
 Philippines clinical-tier health-facility registry and 11.8% of the
@@ -50,11 +55,6 @@ The within-country gradient is steep. → [the-osm-vs-registry-gap](/findings/me
 Vanuatu, Samoa — persistently cluster as remittance-corridor-stress-
 exposed. Stable across every ±50% sensitivity row including a
 multiplicative-vs-additive aggregation switch. → [/findings/remittance-corridors-vulnerability-cluster](/findings/remittance-corridors-vulnerability-cluster)
-
-**Climate-Health Workdays.** Three DMCs — Afghanistan, India,
-Bangladesh — top the pressure index across every parameter row.
-Top-5 narrowed honestly because the PM2.5-cap parameter shifts the
-4th and 5th positions. PM2.5-only; heat layer is upgrade-pass. → [/findings/workday-loss-pressure-cluster](/findings/workday-loss-pressure-cluster)
 
 **Migration & Displacement.** Five DMCs — India, China, Bangladesh,
 Afghanistan, Philippines — hold the top of the emigrant-stock
@@ -135,6 +135,16 @@ the stable top-4 flood-rural-exposure set. The current measure is
 flood exposure plus rural population, not road-network disruption or
 market isolation. → [/findings/flood-market-access-cluster](/findings/flood-market-access-cluster)
 
+## The one Program Prospectus
+
+**Climate-Health Workdays.** Three DMCs — Afghanistan, India,
+Bangladesh — top the PM2.5 workday-pressure screen across every
+parameter row. Top-5 narrowed honestly because the PM2.5-cap parameter
+shifts the 4th and 5th positions. It is a Program Prospectus, not a
+finished issue paper: the PM2.5 layer is computed, but the heat layer
+and true workday-loss interpretation remain upgrade-pass work. →
+[/findings/workday-loss-pressure-cluster](/findings/workday-loss-pressure-cluster)
+
 ## The one Prepared-Pipeline hold-back
 
 **Digital Performance.** Stays at Prepared Pipeline. The Ookla Q1 2026
@@ -142,6 +152,14 @@ manifest and DuckDB SQL are committed for Philippines and Bangladesh
 pilots, but the parquet aggregation has not been run. No speed,
 latency, or coverage claim should appear until those files are fetched
 and aggregated.
+
+## The one Hypothesis hold-back
+
+**MPI × Nighttime Lights.** Remains a Hypothesis in this repository.
+OPHI MPI 2024 parsing is present, but the nighttime-lights ingestion,
+zonal statistics, and coauthored external track are not reconciled here.
+No MPI-light interpretation should be folded into this issue until that
+lineage is brought back into the repo or explicitly retired.
 
 ## What §18 means for any reader
 
@@ -194,9 +212,9 @@ under §18:
 - **Taste heuristics in full** — banned words checked, no composite-
   index headline, no causal language from screening signals.
 
-## Three §16 amendments shipped this issue
+## Four §16 amendments shipped this issue
 
-This issue has three Constitutional amendments. They are public:
+This issue has four Constitutional amendments. They are public:
 
 1. **§18 — AI-First Operating Mode** added 2026-04-25. The
    foundation of every "ai-first" attestation in this issue.
@@ -208,6 +226,10 @@ This issue has three Constitutional amendments. They are public:
    SR) under §18 ACTIVE. The cap was designed for human-attestation
    pacing; under AI-attestation the rationale doesn't apply. Caps
    automatically reactivate when §18 is reverted.
+4. **§6.7 stopping-rule amendment** 2026-07-07. Makes claim reshaping
+   mandatory after repeated zero-result evidence passes and treats a
+   documented public-evidence absence as a first-class result where the
+   lab is measuring observability gaps.
 
 ## What is not in this issue
 
@@ -220,8 +242,9 @@ PSDQ extension to India and Indonesia: deferred to a future issue.
 Both pipelines need new data sources fetched (HMIS via data.gov.in;
 SATUSEHAT requires registration).
 
-Sub-national disaggregation for any program: country-level only
-across the eight PR programs. ADM1 / ADM2 deferred to per-program
-upgrade-passes.
+Sub-national disaggregation for most finished programs: many current
+issue claims still operate at country level. ADM1 / ADM2 deferred to
+per-program upgrade-passes unless the program's evidence packet already
+states a lower valid unit.
 
-— Raymond Adofina · 2026-04-26 · `attestation_chain: ai-first`
+— Raymond Adofina · 2026-07-07 · `attestation_chain: ai-first`

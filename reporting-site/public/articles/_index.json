@@ -1,5 +1,89 @@
 [
   {
+    "slug": "about-the-lab",
+    "title": "About the Development Blindspots Lab",
+    "subtitle": "A research operation that measures what official data misses, on a Constitution that binds every program.",
+    "kind": "blog",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "H",
+    "topics": [
+      "governance",
+      "methodology"
+    ],
+    "geographies": [],
+    "abstract": "The Blindspots Lab studies the difference between official data and reality across Asian Development Bank developing member economies. Public data only. Every empirical number traces to a committed script. The current issue uses Constitution §18 AI-first attestation, with source lineage, sensitivity checks, caveats, and status labels made explicit. This first article describes what binds the lab and why it exists.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-25",
+    "updated_at": "2026-07-07",
+    "doi": "",
+    "file": "about-the-lab.md",
+    "attestation_chain": "",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "reading-the-program-register",
+    "title": "How to read the program register",
+    "subtitle": "A short note on the four claim-maturity tiers, the gate requirements, and what the labels actually mean.",
+    "kind": "brief",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "H",
+    "topics": [
+      "governance",
+      "methodology",
+      "claim-maturity"
+    ],
+    "geographies": [],
+    "abstract": "Each program in the lab carries a maturity label — Hypothesis, Prepared Pipeline, Screening Result, and finished for issue (internal PR code). The labels look ordinal but are categorical: each transition has required artifacts, and the attestation chain states whether the current label is AI-first, human-final, or mixed. This brief explains what the labels promise and, more importantly, what they do not.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-25",
+    "updated_at": "2026-07-07",
+    "doi": "",
+    "file": "reading-the-program-register.md",
+    "attestation_chain": "",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "the-first-issue",
+    "title": "\"Vol. I, № 04: The first issue of the Blindspots Lab\"",
+    "subtitle": "\"Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind.\"",
+    "kind": "blog",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "PR",
+    "topics": [
+      "governance",
+      "methodology",
+      "first-issue"
+    ],
+    "geographies": [],
+    "abstract": "This is the first issue of The Blindspots Lab. Seven programs cross to finished-for-current-issue status under Constitution §18 (AI-First Operating Mode). Eight more sit at Screening Result with explicit honest narrowings or triage-only screens. One — climate-health-workdays — is a Program Prospectus because the PM2.5 layer is computed but the heat layer remains an upgrade. One — digital-performance — stays at Prepared Pipeline because the Ookla parquet aggregation has not yet been run. One — mpi-nighttime-lights — remains at Hypothesis until the external track is reconciled. The article introduces the finished issue findings, the screening results, the held-back tracks, and what readers should know about §18 attested research before they cite it.",
+    "authors": [
+      "{ name: Raymond Adofina",
+      "affiliation: Asian Development Bank }"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-07",
+    "doi": "",
+    "file": "the-first-issue.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "remittance-corridors-vulnerability-cluster",
     "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
     "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
@@ -100,35 +184,6 @@
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
   },
   {
-    "slug": "the-first-issue",
-    "title": "\"Vol. I, № 04: The first issue of the Blindspots Lab\"",
-    "subtitle": "\"Eight programs finished for the current issue, eight at Screening Result, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind.\"",
-    "kind": "blog",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "PR",
-    "topics": [
-      "governance",
-      "methodology",
-      "first-issue"
-    ],
-    "geographies": [],
-    "abstract": "This is the first issue of The Blindspots Lab. Eight programs cross to finished-for-current-issue status under Constitution §18 (AI-First Operating Mode). Eight more sit at Screening Result with explicit honest narrowings or triage-only screens. One — digital-performance — stays at Prepared Pipeline because the Ookla parquet aggregation has not yet been run. One — mpi-nighttime-lights — remains at Hypothesis until the external track is reconciled. The article introduces the eight finished issue findings, the screening results, and what readers should know about §18 attested research before they cite it.",
-    "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-04-26",
-    "doi": "",
-    "file": "the-first-issue.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "workday-loss-pressure-cluster",
     "title": "Three DMCs persistently top the workday-loss pressure cluster",
     "subtitle": "Afghanistan, India, Bangladesh hold the top three positions across every parameter perturbation; the fourth and fifth shift.",
@@ -161,61 +216,6 @@
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
-  },
-  {
-    "slug": "about-the-lab",
-    "title": "About the Development Blindspots Lab",
-    "subtitle": "A research operation that measures what official data misses, on a Constitution that binds every program.",
-    "kind": "blog",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "H",
-    "topics": [
-      "governance",
-      "methodology"
-    ],
-    "geographies": [],
-    "abstract": "The Blindspots Lab studies the difference between official data and reality across Asian Development Bank developing member economies. Public data only. Every empirical number traces to a committed script. The current issue uses Constitution §18 AI-first attestation, with source lineage, sensitivity checks, caveats, and status labels made explicit. This first article describes what binds the lab and why it exists.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-25",
-    "updated_at": "2026-04-25",
-    "doi": "",
-    "file": "about-the-lab.md",
-    "attestation_chain": "",
-    "constitution_ref": "",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "reading-the-program-register",
-    "title": "How to read the program register",
-    "subtitle": "A short note on the four claim-maturity tiers, the gate requirements, and what the labels actually mean.",
-    "kind": "brief",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "H",
-    "topics": [
-      "governance",
-      "methodology",
-      "claim-maturity"
-    ],
-    "geographies": [],
-    "abstract": "Each program in the lab carries a maturity label — Hypothesis, Prepared Pipeline, Screening Result, and finished for issue (internal PR code). The labels look ordinal but are categorical: each transition has required artifacts, and the attestation chain states whether the current label is AI-first, human-final, or mixed. This brief explains what the labels promise and, more importantly, what they do not.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-25",
-    "updated_at": "2026-04-25",
-    "doi": "",
-    "file": "reading-the-program-register.md",
-    "attestation_chain": "",
-    "constitution_ref": "",
-    "review_external_chain": "",
-    "review_internal_chain": ""
   },
   {
     "slug": "access-stress-pilot-cluster",

@@ -1,7 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { BRIEF_DETAILS } from "../data/briefs";
+import {
+  ISSUE_CLOSURE_AS_OF,
+  issueClosureDeck,
+  issueStatusCards,
+} from "../data/issueClosure";
 import { programs } from "../data/programs";
 import { Numeral, Kicker, Maturity, Divider, StatBlock } from "../components/ui";
 
@@ -109,21 +113,6 @@ export default function Research() {
     "Other",
   ];
 
-  const finishCounts = programs.reduce(
-    (acc, program) => {
-      const finish = BRIEF_DETAILS[program.slug]?.finish;
-      if (finish) acc[finish] += 1;
-      return acc;
-    },
-    {
-      "publication-ready": 0,
-      "screening-result": 0,
-      "program-prospectus": 0,
-      "prepared-pipeline": 0,
-      hypothesis: 0,
-    },
-  );
-
   return (
     <div className="reveal">
       <header className="grid grid-cols-12 gap-6 mb-12">
@@ -138,7 +127,9 @@ export default function Research() {
           <p className="lede mt-6 max-w-[60ch]">
             Each program targets a different measurement gap, but the
             reader should never have to guess whether it is finished,
-            screening-only, pipeline-only, or still a hypothesis.
+            screening-only, prospectus-stage, pipeline-only, or still a
+            hypothesis. Current issue closure as of {ISSUE_CLOSURE_AS_OF}:{" "}
+            {issueClosureDeck}
           </p>
           <Link href="/briefs"
             className="mt-7 inline-flex ed-link text-sm uppercase tracking-[0.18em] font-mono"
@@ -148,10 +139,9 @@ export default function Research() {
         </div>
         <div className="col-span-12 md:col-span-4 md:pl-6 md:border-l md:border-[var(--rule-soft)] marginalia">
           <div className="grid grid-cols-2 gap-5">
-            <StatBlock label="Finished" value={finishCounts["publication-ready"]} />
-            <StatBlock label="Screening" value={finishCounts["screening-result"]} />
-            <StatBlock label="Pipeline" value={finishCounts["prepared-pipeline"]} />
-            <StatBlock label="Not finished" value={finishCounts.hypothesis} />
+            {issueStatusCards.map((card) => (
+              <StatBlock key={card.key} label={card.label} value={card.count} />
+            ))}
           </div>
         </div>
       </header>

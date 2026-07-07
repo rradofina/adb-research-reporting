@@ -283,6 +283,124 @@
   scroll-margin-top: 6rem;
 }
 
+.home-issue-closure {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(18rem, 0.52fr) minmax(17rem, 0.42fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  padding-block: 1.45rem;
+  border-block: 1px solid var(--ink);
+}
+
+.home-issue-closure-copy {
+  align-self: center;
+}
+
+.home-issue-closure h2 {
+  max-width: 18ch;
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 720;
+  line-height: 1.03;
+  letter-spacing: 0;
+}
+
+.home-issue-closure p {
+  max-width: 68ch;
+  margin: 0.8rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.home-issue-status-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: #ffffff;
+}
+
+.home-issue-status {
+  display: grid;
+  align-content: space-between;
+  min-height: 8.6rem;
+  padding: 0.75rem;
+  border-right: 1px solid var(--rule-soft);
+}
+
+.home-issue-status:last-child {
+  border-right: 0;
+}
+
+.home-issue-status span {
+  color: var(--ink-faint);
+  font-size: var(--type-copy-xs);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.home-issue-status strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.5vw, 3.7rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.home-issue-notes {
+  display: grid;
+  align-content: space-between;
+  gap: 0.9rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+
+.home-issue-notes div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.home-issue-notes div span {
+  padding: 0.5rem 0.55rem;
+  border-left: 0.2rem solid var(--accent);
+  background: var(--paper-deep);
+  color: var(--ink);
+  font-size: var(--type-copy-sm);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.home-issue-notes ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  color: var(--ink-soft);
+  font-size: var(--type-copy-sm);
+  line-height: 1.45;
+  list-style: none;
+}
+
+.home-issue-notes li {
+  padding-left: 0.8rem;
+  border-left: 0.16rem solid var(--rule);
+}
+
+.home-issue-notes a {
+  color: var(--accent-strong);
+  font-size: var(--type-copy-sm);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.home-issue-notes a:hover {
+  color: var(--accent);
+}
+
 .home-review-band {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
@@ -639,6 +757,17 @@
   .home-visual-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .home-issue-closure {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-issue-notes {
+    padding-top: 1rem;
+    padding-left: 0;
+    border-top: 1px solid var(--rule-soft);
+    border-left: 0;
+  }
 }
 
 @media (max-width: 780px) {
@@ -729,6 +858,20 @@
     font-size: 2rem;
   }
 
+  .home-issue-closure h2 {
+    max-width: 16ch;
+    font-size: 2rem;
+  }
+
+  .home-issue-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-issue-status {
+    min-height: 6.25rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
   .home-featured-card {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -769,6 +912,15 @@
 
   .home-assurance {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-issue-status-grid,
+  .home-issue-notes div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-issue-status {
+    min-height: 5rem;
   }
 
   .home-finding-card,

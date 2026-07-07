@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Chip, Divider, Kicker, Maturity, Numeral, StatBlock } from "../components/ui";
 import {
@@ -10,6 +10,12 @@ import {
   type BriefDetail,
   type FinishGroup,
 } from "../data/briefs";
+import {
+  ISSUE_CLOSURE_AS_OF,
+  issueClosureDeck,
+  issueStatusCards,
+  issueTotal,
+} from "../data/issueClosure";
 import { programs } from "../data/programs";
 import { INDICATORS, loadIndicator, type IndicatorDef, type IndicatorRow } from "../lib/indicators";
 
@@ -61,21 +67,6 @@ export default function Briefs() {
     };
   }, []);
 
-  const statusCounts = useMemo(() => {
-    const counts: Record<FinishGroup, number> = {
-      "publication-ready": 0,
-      "screening-result": 0,
-      "program-prospectus": 0,
-      "prepared-pipeline": 0,
-      hypothesis: 0,
-    };
-    programs.forEach((program) => {
-      const detail = BRIEF_DETAILS[program.slug];
-      if (detail) counts[detail.finish] += 1;
-    });
-    return counts;
-  }, []);
-
   const visible = programs
     .filter((program) => {
       const detail = BRIEF_DETAILS[program.slug];
@@ -109,16 +100,17 @@ export default function Briefs() {
             source stack, caveat, current unit, target policy unit, and next
             step. Country screens are treated as triage; the serious research
             path is province, district, municipality, grid, facility, corridor,
-            and road-segment granularity.
+            and road-segment granularity. Current closure as of{" "}
+            {ISSUE_CLOSURE_AS_OF}: {issueClosureDeck}
           </p>
         </div>
         <aside className="col-span-12 lg:col-span-4 lg:pl-6 lg:border-l lg:border-[var(--rule-soft)]">
           <Kicker>Current issue state</Kicker>
           <div className="grid grid-cols-2 gap-5 mt-5">
-            <StatBlock label="Finished" value={statusCounts["publication-ready"]} note="Full current-issue evidence package under the AI-first chain." />
-            <StatBlock label="Screening" value={statusCounts["screening-result"]} note="Useful signal; not final research output." />
-            <StatBlock label="Pipeline" value={statusCounts["prepared-pipeline"]} note="Code path exists; output not run." />
-            <StatBlock label="Not finished" value={statusCounts.hypothesis} note="Question exists; no full result here." />
+            <StatBlock label="Classified" value={issueTotal} note="All registered current-issue topics now have an explicit finish state." />
+            {issueStatusCards.map((card) => (
+              <StatBlock key={card.key} label={card.label} value={card.count} note={card.note} />
+            ))}
           </div>
         </aside>
       </header>

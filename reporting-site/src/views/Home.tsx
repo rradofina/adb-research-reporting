@@ -10,6 +10,14 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { programs } from "../data/programs";
 import {
+  ISSUE_CLOSURE_AS_OF,
+  issueClosureDeck,
+  issueComputedCount,
+  issueHeldBackCount,
+  issueHoldBackNotes,
+  issueStatusCards,
+} from "../data/issueClosure";
+import {
   getShowcaseReportQuality,
   showcaseReports,
   type ShowcaseReadiness,
@@ -321,6 +329,38 @@ export default function Home() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      <section className="home-issue-closure" aria-labelledby="home-issue-closure-title">
+        <div className="home-issue-closure-copy">
+          <p className="home-section-kicker">Current issue closed · {ISSUE_CLOSURE_AS_OF}</p>
+          <h2 id="home-issue-closure-title">All eighteen topics now have an honest label.</h2>
+          <p>
+            {issueClosureDeck} Computed outputs are separated from held-back
+            tracks so the public issue can be read without pretending every
+            registered idea became a paper.
+          </p>
+        </div>
+        <div className="home-issue-status-grid" aria-label="Current issue classification">
+          {issueStatusCards.map((card) => (
+            <div className="home-issue-status" key={card.key}>
+              <span>{card.label}</span>
+              <strong>{card.count}</strong>
+            </div>
+          ))}
+        </div>
+        <div className="home-issue-notes">
+          <div>
+            <span>{issueComputedCount} computed outputs</span>
+            <span>{issueHeldBackCount} held back</span>
+          </div>
+          <ul>
+            {issueHoldBackNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+          <Link href="/briefs">Open all briefs</Link>
         </div>
       </section>
 

@@ -19,7 +19,7 @@ abstract: >
   binds the lab and why it exists.
 doi:
 published_at: 2026-04-25
-updated_at: 2026-04-25
+updated_at: 2026-07-07
 references:
   - sandefur2015badata
   - alkire2024mpi
@@ -71,10 +71,11 @@ lab. It does five things:
    appear in outputs as triage instruments and are labeled as such.
 4. It bans framing findings as DMC deficiency. The framing is
    measurement gap, coverage gap, observability gap.
-5. It defines AI's role as bounded assistant: AI may draft prose,
-   pipelines, and source triage. AI may not generate empirical numbers,
-   advance a claim's maturity label, or finalize a literature review.
-   Humans hold every gate.
+5. It defines AI's role by operating mode. Outside §18, AI is a bounded
+   assistant and humans hold every gate. Under current §18 ACTIVE mode,
+   AI executes disclosed gate-actions with `attestation_chain: ai-first`;
+   human-final status remains owner-only and requires the §18.5 upgrade
+   path.
 
 Five additional disciplines anchor the work to the data: every empirical
 value traces to a committed script and a public source; every cache file
@@ -85,13 +86,14 @@ arbitrary numeric — threshold, weight, buffer, cutoff — is tested at
 
 # Where the lab is now
 
-Of the eighteen registered programs, eight are finished for the current
-issue under Constitution §18 AI-first attestation.
-Eight are Screening Results: useful empirical signals, but not final
-research outputs. One is Prepared Pipeline, meaning the engineering path
-exists but no empirical claim should be made yet. One remains Hypothesis
-inside this repository until the external nighttime-lights track is
-reconciled.
+Of the eighteen registered programs, seven are finished for the current
+issue under Constitution §18 AI-first attestation. Eight are Screening
+Results: useful empirical signals, but not final research outputs. One
+is a Program Prospectus because the PM2.5 layer is computed while the
+heat layer remains an upgrade. One is Prepared Pipeline, meaning the
+engineering path exists but no empirical claim should be made yet. One
+remains Hypothesis inside this repository until the external
+nighttime-lights track is reconciled.
 
 The reporting site you are reading is the lab's public face. It now
 separates the scan-first brief layer from the full evidence packets:
@@ -125,4 +127,4 @@ grade measures, rerun sensitivity where needed, and convert the
 AI-first evidence chain into a human-final paper track only when the
 literature, caveats, and replication package are strong enough.
 
-— Raymond Adofina · 2026-04-25
+— Raymond Adofina · 2026-07-07

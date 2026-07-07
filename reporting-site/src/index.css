@@ -8870,6 +8870,18 @@
     vertical-align: top;
   }
 
+  .how-to-read-route-table {
+    table-layout: fixed;
+  }
+
+  .how-to-read-route-table th,
+  .how-to-read-route-table td,
+  .how-to-read-route-table a,
+  .how-to-read-route-table span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .data-table tbody tr:hover td {
     background: rgba(26, 24, 20, 0.025);
   }

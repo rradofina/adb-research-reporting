@@ -173,3 +173,13 @@ Run this checklist before closing any public-surface session:
    (paper, then evidence, then overview) instead of an empty Paper tab.
    Remaining per-topic deviations are now presentation moves, not route
    bugs.
+6. **Done 2026-07-07:** Added a shared current-issue closure contract
+   (`reporting-site/src/data/issueClosure.ts`) and used it on Home,
+   Research, and Briefs. The public issue now classifies all 18 topics
+   consistently: 7 finished, 8 screening-only, 1 prospectus, 1 prepared
+   pipeline, and 1 hypothesis. Articles and reader-guide copy were
+   reconciled to the same labels without promoting any program through
+   the constitutional WIP register. Browser QA also exposed the old
+   `/research`, `/briefs`, `/how-to-read`, `/glossary`, `/archive`,
+   `/data/upgrades`, `/methods`, and `/references` redirects; those
+   existing views are now real App Router pages.

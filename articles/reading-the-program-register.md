@@ -19,7 +19,7 @@ abstract: >
   what the labels promise and, more importantly, what they do not.
 doi:
 published_at: 2026-04-25
-updated_at: 2026-04-25
+updated_at: 2026-07-07
 references: []
 license: CC BY 4.0
 banned_words_check: passing
@@ -97,4 +97,10 @@ The reporting site shows a chip beside each program's title. The chip
 encodes the current label and should be read with the attestation chain.
 An AI-first label is not hidden; it is part of the claim.
 
-— Raymond Adofina · 2026-04-25
+As of the 2026-07-07 current-issue closure, the public issue classifies
+all eighteen topics: seven finished for the current issue, eight
+screening-only, one Program Prospectus, one Prepared Pipeline, and one
+Hypothesis. Those are reader-facing issue labels, not human-final venue
+claims.
+
+— Raymond Adofina · 2026-07-07

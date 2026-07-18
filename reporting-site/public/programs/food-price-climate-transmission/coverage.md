@@ -1,22 +1,17 @@
-# Coverage — Food Price Climate Transmission
+# Coverage — Nepal market-month object
 
-`attestation_chain: ai-first`. 2026-04-27.
+`attestation_chain: ai-first` · 2026-07-19
 
-43 of 50 ADB DMCs ranked.
+| Layer | Coverage |
+|---|---:|
+| Selected markets | 12 |
+| Possible market-month cells | 1,008 |
+| Cells with coarse-rice price | 937 |
+| Cells with year-on-year price change | 760 |
+| Cells also joined to one-month-lag rainfall | 760 |
+| Corrected analysis years | 2020–2025 |
+| Annual CPI overlap | 2020–2024, 5 years |
 
-## Joint top-N intersection (stable)
-
-| N | Set |
-|---|---|
-| 3 | LAO, PAK |
-| 5 | BGD, LAO, PAK |
-| 8 | BGD, LAO, PAK |
-| 10 | BGD, LAO, PAK |
-
-## Top-3 detail
-
-| ISO3 | DMC | CPI inflation % | Ag imports % merch | CPI rank | Imp rank |
-|---|---|---|---|---|---|
-| LAO | Lao PDR | 23.1 | 4.6 | 1 | 2 |
-| PAK | Pakistan | 12.6 | 4.3 | 2 | 3 |
-| BGD | Bangladesh | 10.5 | 6.0 | 4 | 1 |
+Coverage is adequate for a descriptive within-panel alignment test. It is not
+representative of all Nepal markets, commodities, households, or climate
+hazards. Missing price months are not imputed.

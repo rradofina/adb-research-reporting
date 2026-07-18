@@ -1,38 +1,56 @@
-# Food Price Climate Transmission
+# Food-price climate transmission — construct validation
 
-## Research Question
+**Maturity:** PP · construct-validation checkpoint
 
-Where do climate anomalies appear most likely to transmit into local food-price
-stress, especially in places where national inflation hides regional pressure?
+`attestation_chain: ai-first`
 
-## Why This Is Unconventional
+## Finding
 
-Inflation is usually national and macroeconomic. This track looks for local
-climate-to-market transmission using price observations, rainfall/heat shocks,
-and market access.
+The annual DMC qualifier and the old Nepal price-wave method are retired as
+research findings.
 
-## Available Data
+- Correcting price levels to year-on-year market price change reduces flagged
+  coarse-rice spike cells from **259 to 152**.
+- **17 of 152** corrected spike cells follow locally dry rainfall at the main
+  one-month lag; **135 do not**.
+- Dry alignment remains a minority in all **81** ±50% threshold runs.
+- Annual headline CPI and median market rice-price change have Spearman **+0.21**
+  over five years; the objects are not interchangeable.
+- Nepal sits outside the inherited annual top-10 intersection.
 
-- WFP food-price database
-- FAOSTAT crop and food-balance indicators
-- World Bank Pink Sheet commodity prices
-- CHIRPS rainfall and ERA5/TerraClimate heat data
-- OpenStreetMap market and road locations
-- WorldPop population grids
+This is a measurement and replication-boundary result, not a climate-effect
+estimate or a replacement country ranking.
 
-## First Pipeline
+## Evidence objects
 
-1. Select economies with WFP subnational market-price coverage.
-2. Join monthly price observations to rainfall/heat anomalies.
-3. Add market-access and population exposure summaries.
+- WFP coarse-rice retail prices in 12 Nepal markets, 2019–2025.
+- NASA POWER monthly point rainfall at the same market coordinates, 2018–2025.
+- 760 market-month observations with year-on-year price and one-month-lag rain.
+- 81-run threshold factorial plus 0-, 1-, 3-, and 6-month lag checks.
+- World Bank headline CPI context for 2020–2024 and the inherited DMC screen.
 
-## Outputs
+## Main outputs
 
-- `generated/food-price-climate-transmission-pilots.csv`
-- Market-level anomaly and price-pressure panel
-- Data dictionary for commodity harmonization
+- `generated/food-price-construct-validation.json`
+- `generated/food-price-market-month-corrected.csv`
+- `generated/food-price-market-year.csv`
+- `generated/food-price-threshold-sensitivity.csv`
+- `generated/charts/food-price-*.{png,svg}`
+- `articles/food-price-joint-qualifier.md`
 
-## Reproducibility Notes
+## Reproduce
 
-Commodity definitions vary by country. Keep commodity mapping explicit and avoid
-cross-country comparisons until units are normalized.
+See `REPRODUCE.md`. The claim-enabling sequence is:
+
+```powershell
+python research/topic-sprints/scripts/sprint-nepal-market-climate-prices.py
+python food-price-climate-transmission/scripts/build-construct-validation.py
+python food-price-climate-transmission/scripts/build-figure-dossier.py
+```
+
+## Next qualified study
+
+Join dated geocoded hazards, several commodities, crop and sourcing zones,
+market access, fuel, exchange-rate, trade, and policy controls. Use an
+event-study, fixed-effects, or local-projection design. Do not tune the annual
+country screen as a substitute.

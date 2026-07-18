@@ -852,135 +852,94 @@ function buildClimateHealthModel(report: ShowcaseReport, data: JsonValue): Audit
 }
 
 function buildFoodCoverageModel(report: ShowcaseReport, data: JsonValue): AuditModel {
-  const sourceAudit = data.food_import_source_readiness || {};
-  const sourceSummary = sourceAudit.summary || {};
-  const hasSourceAudit = Boolean(data.food_import_source_readiness);
-  const total = numberValue(data.roster_n);
-  const yearSource = hasSourceAudit
-    ? sourceAudit.common_vintage_runs_food_import_live_cpi || {}
-    : data.common_vintage_runs || {};
-  const years = Object.entries(yearSource)
-    .sort(([a], [b]) => Number(b) - Number(a))
-    .slice(0, hasSourceAudit ? 8 : 7)
-    .map(([year, row]) => {
-    const record = row as JsonValue;
-    return {
-      year,
-      nBoth: numberValue(record.n_both),
-      top5: strings(record.top5),
-      top8: strings(record.top8),
-    };
-  });
-  const droppedCount =
-    safeRows(data.dropped_have_imp_no_cpi).length +
-    safeRows(data.dropped_have_cpi_no_imp).length +
-    safeRows(data.dropped_neither).length;
-  const oldCommon = strings(sourceSummary.original_raw_ag_common_across_n || data.committed_common_across_N);
-  const foodCommon = strings(sourceSummary.food_import_common_across_n_same_cached_cpi);
-  const foodTop10SameCpi = strings(sourceAudit.runs?.food_import_same_cached_cpi?.["10"]);
-  const foodTop10LiveCpi = strings(sourceAudit.runs?.food_import_live_cpi?.["10"]);
-  const enteredFood = strings(sourceSummary.entered_when_food_import_replaces_raw_ag);
-  const sourceTrail = sourceFacts(report, data);
-  if (sourceAudit.retrieved_at) {
-    sourceTrail.push({ label: "Source-audit retrieval", value: String(sourceAudit.retrieved_at) });
-  }
-  if (sourceAudit.sources?.wdi_indicators) {
-    sourceTrail.push({ label: "WDI indicators checked", value: strings(sourceAudit.sources.wdi_indicators).join(", ") });
-  }
-  if (sourceAudit.sources?.hdx_wfp_package_api) {
-    sourceTrail.push({ label: "WFP package metadata", value: String(sourceAudit.sources.hdx_wfp_package_api) });
-  }
-  const componentCards = hasSourceAudit ? [
+  const coverage = data.coverage || {};
+  const correction = data.method_correction || {};
+  const main = data.main_result || {};
+  const sensitivity = data.threshold_sensitivity_summary || {};
+  const annual = data.annual_alignment || {};
+  const macro = data.macro_selection || {};
+  const nepal = macro.nepal || {};
+  const gates = data.claim_gates || {};
+  const lagRows = safeRows(data.lag_sensitivity).map((row) => ({
+    key: `lag-${row.rain_lag_months}`,
+    label: `${formatNumber(row.rain_lag_months)}-month rainfall lag`,
+    left: `${formatNumber(row.price_spike_cells)} spike cells`,
+    middle: `${formatNumber(row.dry_aligned_price_spike_cells)} dry-aligned`,
+    right: formatPct(numberValue(row.dry_share_of_joined_price_spikes) * 100, 1),
+    note: row.rain_lag_months === 1
+      ? "Main pre-specified lag; alignment is coincidence, not attribution."
+      : "Timing diagnostic; no tested lag makes dry alignment dominant.",
+    status: row.rain_lag_months === 1 ? "survived" : "flag",
+  })) as LaneRow[];
+
+  const componentCards = [
     {
-      key: "old-raw-ag",
-      value: formatNumber(sourceSummary.raw_ag_import_latest_rows),
-      label: "Raw-ag import rows",
-      note: `The old leg is agricultural raw materials, not food imports; its stable common set is ${oldCommon.join(", ") || "none"}.`,
+      key: "method-correction",
+      value: `${formatNumber(correction.old_price_spike_cells)}→${formatNumber(correction.corrected_price_spike_cells)}`,
+      label: "price-spike cells",
+      note: "Year-on-year change replaces distance to a full-sample calendar-month median, removing a later-price-level artifact.",
       status: "flag",
     },
     {
-      key: "food-import",
-      value: formatNumber(sourceSummary.food_import_latest_rows),
-      label: "Food-import rows",
-      note: `The true food-import leg lifts the CPI x import joint universe to ${formatNumber(sourceSummary.joint_cached_cpi_food_import_rows)} rows; ${enteredFood.join(", ") || "no economies"} enter eligibility.`,
+      key: "dry-alignment",
+      value: `${formatNumber(main.dry_aligned_price_spike_cells)}/${formatNumber(main.price_spike_cells)}`,
+      label: "dry-aligned spikes",
+      note: `${formatNumber(main.non_dry_price_spike_cells)} corrected spike cells do not follow locally dry rainfall at the one-month lag.`,
       status: "survived",
     },
     {
-      key: "stable-set",
-      value: foodCommon.join(", ") || "none",
-      label: "Stable set after repair",
-      note: `Using the same cached CPI leg, the top-8 set is ${strings(sourceAudit.runs?.food_import_same_cached_cpi?.["8"]).join(", ") || "empty"} and top-10 is ${foodTop10SameCpi.join(", ") || "empty"}.`,
+      key: "threshold-direction",
+      value: `${formatPct(numberValue(sensitivity.dry_share_min) * 100, 0)}–${formatPct(numberValue(sensitivity.dry_share_max) * 100, 1)}`,
+      label: "dry share across 81 runs",
+      note: "Dry alignment remains a minority in every ±50% threshold combination; wave and cluster counts do not remain stable.",
+      status: "survived",
+    },
+    {
+      key: "annual-alignment",
+      value: `ρ ${formatFlexible(annual.spearman_rho, 2)}`,
+      label: "annual CPI vs market rice",
+      note: `${formatNumber(annual.n_years)} years, exact permutation p=${formatFlexible(annual.exact_two_sided_permutation_p_for_spearman, 2)}; baskets and aggregation levels differ.`,
       status: "dropped",
     },
     {
-      key: "wfp-market",
-      value: `${formatNumber(sourceSummary.wfp_csv_size_mb, 1)} MB`,
-      label: "WFP market CSV visible",
-      note: `${formatNumber(sourceSummary.wfp_csv_resources)} CSV resource is visible through HDX, but only metadata and a header sample are inspected here.`,
-      status: "flag",
-    },
-    {
-      key: "local-exposure",
-      value: "0",
-      label: "Market-climate joins",
-      note: "No market-month price panel, commodity basket, household food-expenditure denominator, or local climate shock is joined.",
+      key: "causal-gate",
+      value: gates.causal_climate_price_claim_allowed ? "open" : "closed",
+      label: "climate-effect gate",
+      note: "No observed event join, multi-commodity result, market-access controls, or causal design exists.",
       status: "dropped",
     },
-  ] as ComponentCard[] : undefined;
+  ] as ComponentCard[];
+
+  const sourceTrail = sourceFacts(report, data);
+  sourceTrail.push(
+    { label: "Market-price object", value: String(data.source_objects?.nepal_market_sprint?.path || "WFP Nepal market-month sprint") },
+    { label: "Climate source", value: "NASA POWER monthly corrected precipitation at 12 market points" },
+    { label: "Literature boundary", value: String(data.literature_precedence?.citation_key || "baptista2023climateshocks") },
+  );
 
   return {
     kind: report.audit!.kind,
-    stats: hasSourceAudit ? [
-      { value: `${formatNumber(sourceSummary.joint_cached_cpi_food_import_rows)}/${formatNumber(sourceSummary.original_joint_universe_n)}`, label: "food/raw joint rows" },
-      { value: formatNumber(sourceSummary.food_import_latest_rows), label: "WDI food-import rows" },
-      { value: foodCommon.join(", ") || "none", label: "stable set after repair" },
-      { value: `${formatNumber(sourceSummary.wfp_csv_size_mb, 1)} MB`, label: "WFP CSV not joined" },
-    ] : [
-      { value: formatNumber(data.joint_universe_n), label: "joint indicator universe" },
-      { value: formatNumber(droppedCount), label: "roster rows dropped by coverage" },
-      { value: formatNumber(years.length), label: "common-vintage reruns" },
+    stats: [
+      { value: `${formatNumber(main.dry_aligned_price_spike_cells)}/${formatNumber(main.price_spike_cells)}`, label: "dry-aligned price spikes" },
+      { value: formatPct(numberValue(main.dry_share_of_price_spike_cells) * 100, 1), label: "main dry-alignment share" },
+      { value: formatNumber(sensitivity.run_count), label: "threshold runs" },
+      { value: formatNumber(coverage.corrected_cells_with_year_on_year_price), label: "aligned market-month cells" },
     ],
-    chartTitle: hasSourceAudit
-      ? "The old stable pair disappears when the import leg is actually food."
-      : "The first result is a coverage funnel, not a vulnerability ranking.",
-    chartDeck: hasSourceAudit
-      ? "Bars compare the old raw-materials import leg with the true WDI food-import leg. Cards show why WFP market prices are still a source wall, not a joined climate-price model."
-      : "The funnel shows how the roster narrows when CPI and agricultural-import legs both have to exist.",
-    funnelRows: hasSourceAudit ? [
-      { label: "ADB roster", value: total, total, note: "starting DMC/economy roster" },
-      { label: "Old CPI x raw-ag joint", value: numberValue(sourceSummary.original_joint_universe_n), total, note: "old joint universe behind LAO+PAK" },
-      { label: "Have food-import leg", value: numberValue(sourceSummary.food_import_latest_rows), total, note: "WDI TM.VAL.FOOD.ZS.UN latest value" },
-      { label: "CPI x food-import joint", value: numberValue(sourceSummary.joint_cached_cpi_food_import_rows), total, note: "same cached CPI leg; food-import repair" },
-    ] : [
-      { label: "ADB roster", value: total, total, note: "starting DMC/economy roster" },
-      { label: "Have CPI leg", value: numberValue(data.have_cpi_n), total, note: "consumer price index available" },
-      { label: "Have import leg", value: numberValue(data.have_imp_n), total, note: "agricultural-imports indicator available" },
-      { label: "Have both legs", value: numberValue(data.joint_universe_n), total, note: "joint universe used by the screen" },
-    ],
-    coverageYears: years,
+    chartTitle: "The corrected wave is broad; local dryness is rarely its near-term signature.",
+    chartDeck: "Lag lanes keep the 17-of-152 finding in context. Construct cards show the outcome correction, threshold stability, annual mismatch, and closed attribution gates.",
+    laneRows: lagRows,
     componentCards,
     readouts: [
-      ...(hasSourceAudit ? [
-        { label: "Old raw-ag common across N", value: oldCommon.join(", ") || "none" },
-        { label: "Food-import common across N", value: foodCommon.join(", ") || "none" },
-        { label: "Food-import top-10, same CPI", value: foodTop10SameCpi.join(", ") || "empty" },
-        { label: "Food-import top-10, live CPI", value: foodTop10LiveCpi.join(", ") || "empty" },
-        { label: "Rows entering food-import eligibility", value: enteredFood.join(", ") || "none" },
-        { label: "WFP header fields sampled", value: strings(sourceAudit.wfp_detail?.header_fields).slice(0, 6).join(", ") || "none" },
-        { label: "Analysis-ready food-price exposure", value: String(sourceSummary.analysis_ready_food_price_exposure) },
-      ] : [
-        { label: "Dropped: imports but no CPI", value: strings(data.dropped_have_imp_no_cpi).join(", ") || "none" },
-        { label: "Dropped: CPI but no imports", value: strings(data.dropped_have_cpi_no_imp).join(", ") || "none" },
-        { label: "Dropped: neither leg", value: strings(data.dropped_neither).join(", ") || "none" },
-        { label: "Common across committed N", value: strings(data.committed_common_across_N).join(", ") || "none" },
-      ]),
+      { label: "Old/corrected broad-wave months", value: `${formatNumber(correction.old_broad_non_dry_wave_months)} / ${formatNumber(correction.corrected_broad_non_dry_wave_months)}` },
+      { label: "Main broad non-dry wave months", value: formatNumber(main.broad_non_dry_wave_month_count) },
+      { label: "Main dry-cluster months", value: formatNumber(main.dry_aligned_cluster_month_count) },
+      { label: "Threshold wave-count range", value: `${formatNumber(sensitivity.broad_non_dry_wave_month_count_min)}–${formatNumber(sensitivity.broad_non_dry_wave_month_count_max)}` },
+      { label: "Nepal annual screen ranks", value: `CPI #${formatNumber(nepal.cpi_rank)}; raw-ag imports #${formatNumber(nepal.imp_rank)}` },
+      { label: "Annual overlap and p-value", value: `${formatNumber(annual.n_years)} years; p=${formatFlexible(annual.exact_two_sided_permutation_p_for_spearman, 2)}` },
+      { label: "Decision", value: String(data.decision || "Retire the annual qualifier.") },
     ],
     sourceFacts: sourceTrail,
-    caveats: unique(baseCaveats(report, data).concat([
-      data.food_price_data_wall,
-      sourceAudit.claim_scope,
-      ...(sourceSummary.owner_gated_or_unfinished_steps || []),
-    ].filter(Boolean).map(String))),
+    caveats: unique(baseCaveats(report, data).concat(strings(data.nonclaims))),
     generatedAt: data.generated_at,
   };
 }

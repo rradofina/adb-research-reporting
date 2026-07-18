@@ -77,7 +77,7 @@
       "has_script": true,
       "has_artifact": true,
       "artifact": "food-price-coverage-deepening.json",
-      "finding": "\"LAO + PAK stable across N\" is substantially a fact about which two economies carried both numbers in compatible vintages — not a robust fact about food prices."
+      "finding": "attestation_chain: ai-first · PP · 2026-07-19 Correcting the outcome from distance to a full-sample calendar-month median to same-market year-on-year log price change reduces coarse-rice spike cells from 259 to 152."
     },
     {
       "slug": "grid-reliability-heat",

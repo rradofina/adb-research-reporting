@@ -2,8 +2,8 @@
   {
     "file": "constitution.md",
     "source": "CONSTITUTION.md",
-    "size": 71264,
-    "size_human": "69.6 KB"
+    "size": 71383,
+    "size_human": "69.7 KB"
   },
   {
     "file": "operating-rules.md",
@@ -74,14 +74,14 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 225712,
-    "size_human": "220.4 KB"
+    "size": 225895,
+    "size_human": "220.6 KB"
   },
   {
     "file": "wip-register.md",
     "source": "research/wip-register.md",
-    "size": 9733,
-    "size_human": "9.5 KB"
+    "size": 10325,
+    "size_human": "10.1 KB"
   },
   {
     "file": "red-team.md",
@@ -104,8 +104,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 135180,
-    "size_human": "132.0 KB"
+    "size": 138268,
+    "size_human": "135.0 KB"
   },
   {
     "file": "manifest.sha256",

@@ -4,7 +4,7 @@
 // reviewers per CONSTITUTION.md §9.3 and red-team.md.
 //
 // Usage:
-//   node scripts/build-review-packet.mjs --program {slug}
+//   node scripts/build-review-packet.mjs --program {slug} [--date YYYY-MM-DD]
 //
 // Output: review-packets/{slug}-{YYYY-MM-DD}/
 //   - README.md (cover letter; lists files + their SHA-256)
@@ -42,7 +42,11 @@ if (!fs.existsSync(programDir)) {
   process.exit(2);
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const today = arg("date", new Date().toISOString().slice(0, 10));
+if (!/^\d{4}-\d{2}-\d{2}$/.test(today)) {
+  console.error("--date must use YYYY-MM-DD.");
+  process.exit(2);
+}
 const packetDir = path.resolve(REPO_ROOT, "review-packets", `${program}-${today}`);
 fs.mkdirSync(packetDir, { recursive: true });
 fs.mkdirSync(path.join(packetDir, "shared"), { recursive: true });

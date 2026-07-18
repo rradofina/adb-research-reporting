@@ -1,0 +1,44 @@
+iso3,country,cpi_pct,cpi_year,ag_imports_pct_merch,ag_year,has_cpi,has_imp,in_joint_universe
+AFG,Afghanistan,-6.6,2024,1.77,2019,True,True,True
+ARM,Armenia,0.27,2024,0.7,2024,True,True,True
+AZE,Azerbaijan,2.21,2024,1.37,2024,True,True,True
+BGD,Bangladesh,10.47,2024,6.03,2018,True,True,True
+BTN,Bhutan,2.76,2024,2.9,2023,True,True,True
+BRN,Brunei Darussalam,-0.39,2024,0.05,2024,True,True,True
+KHM,Cambodia,0.81,2024,2.97,2024,True,True,True
+CHN,China,0.22,2024,2.66,2024,True,True,True
+COK,Cook Islands,,,,,False,False,False
+FJI,Fiji,3.89,2024,0.36,2024,True,True,True
+GEO,Georgia,1.11,2024,0.82,2024,True,True,True
+HKG,Hong Kong SAR,1.73,2024,0.09,2024,True,True,True
+IND,India,4.95,2024,1.54,2024,True,True,True
+IDN,Indonesia,2.18,2024,2.01,2024,True,True,True
+KAZ,Kazakhstan,8.69,2024,0.65,2024,True,True,True
+KIR,Kiribati,2.46,2024,2.3,2021,True,True,True
+KGZ,Kyrgyzstan,5.0,2024,0.47,2024,True,True,True
+LAO,Lao PDR,23.13,2024,4.57,2023,True,True,True
+MYS,Malaysia,1.83,2024,1.55,2024,True,True,True
+MDV,Maldives,1.4,2024,1.35,2024,True,True,True
+MHL,Marshall Islands,,,,,False,False,False
+FSM,Micronesia,5.41,2022,,,True,False,False
+MNG,Mongolia,6.2,2024,0.43,2023,True,True,True
+MMR,Myanmar,8.83,2019,0.54,2024,True,True,True
+NRU,Nauru,,,,,False,False,False
+NPL,Nepal,4.69,2024,1.29,2022,True,True,True
+PAK,Pakistan,12.63,2024,4.34,2024,True,True,True
+PLW,Palau,2.23,2024,1.7,2018,True,True,True
+PNG,Papua New Guinea,0.6,2024,0.51,2023,True,True,True
+PHL,Philippines,3.21,2024,0.55,2024,True,True,True
+WSM,Samoa,2.17,2024,2.31,2024,True,True,True
+SLB,Solomon Islands,4.32,2024,0.69,2018,True,True,True
+LKA,Sri Lanka,-0.43,2024,1.89,2024,True,True,True
+TWN,Taiwan,,,,,False,False,False
+TJK,Tajikistan,,,4.12,2023,False,True,False
+THA,Thailand,1.37,2024,1.31,2024,True,True,True
+TLS,Timor-Leste,2.06,2024,0.83,2023,True,True,True
+TON,Tonga,3.23,2024,1.72,2023,True,True,True
+TKM,Turkmenistan,,,,,False,False,False
+TUV,Tuvalu,,,,,False,False,False
+UZB,Uzbekistan,9.63,2024,1.89,2024,True,True,True
+VUT,Vanuatu,11.18,2023,,,True,False,False
+VNM,Viet Nam,3.62,2024,2.52,2023,True,True,True

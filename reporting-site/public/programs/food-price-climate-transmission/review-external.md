@@ -1,44 +1,54 @@
-# External red-team review — Food Price Climate Transmission
+# External red-team synthesis — Food-price construct validation
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-27.
+`attestation_chain: ai-first` · §18.4 synthesis · 2026-07-19
 
-**No individual reviewer was contacted.**
+**No individual reviewer was contacted under §18. The objections above are AI-synthesized from each institution's public methodological stance, not actual reviewer feedback.**
 
-## Roster
+## Candidate perspectives
 
-| ID | Institution | Synthesized from |
+| ID | Institution / literature | Public basis |
 |---|---|---|
-| C-1 | FAO GIEWS | Food-price monitoring methodology |
-| C-2 | World Food Programme HungerMap | Food-price-stress alerts |
-| C-3 | IFPRI | Food-price transmission research |
-| C-4 | World Bank Food Crisis Observatory | Aggregate methodology |
+| C-1 | IMF Nepal climate-price study | [@baptista2023climateshocks] |
+| C-2 | Nepal market-integration literature | [@shively2017nepalfoodprices] |
+| C-3 | FAO food-price monitoring | [@fao2022fpma] |
+| C-4 | Global climate-inflation literature | [@kotz2024climateinflation] |
 
-## Objections
+## Objections and responses
 
-**C-1 (FAO GIEWS).** WDI CPI is general; food-CPI subindex (where
-published) is more targeted. The article should use food-CPI where
-available and note the substitution.
+### C-1 — a coincidence screen does not replicate an event study
 
-**C-2 (WFP HungerMap).** Joint vulnerability ≠ food crisis. WFP's
-food-insecurity classification (IPC) is the actionable layer.
+The panel lacks recorded climate shocks, fixed effects, local projections, and
+remote-versus-connected heterogeneity.
 
-**C-3 (IFPRI).** Climate-CPI transmission requires sub-annual
-timestep + commodity-level analysis. Annual country-mean CPI
-cannot detect transmission events.
+**Response.** Accepted. No effect is estimated. The contribution is a construct
+audit and a specification for an updated replication.
 
-**C-4 (WB Food Crisis Observatory).** PAK's 12.6% CPI in 2023 was
-exchange-rate-driven, not climate-driven. The headline
-distinguishes high inflation from climate-related inflation.
+### C-2 — market access and fuel can dominate spatial price differences
 
-## Responses
+Rainfall-price alignment without connectivity and input-cost controls is
+under-specified.
 
-1. Food-CPI subset is upgrade-pass.
-2. WFP/IPC integration upgrade-pass.
-3. Sub-annual transmission analysis upgrade-pass.
-4. Article notes that PAK 2023 CPI is exchange-rate-driven, not
-   climate-driven; the joint qualifier therefore over-attributes to
-   climate vulnerability for PAK specifically.
+**Response.** Accepted. Roads, travel time, remoteness, fuel, trade, exchange
+rates, and policy are mandatory layers for the successor study.
 
-## §18.4 non-claim
+### C-3 — an anomaly alert is not a causal explanation
 
-No individual reviewer was contacted.
+Thresholds can identify unusual price movements but do not establish their
+source, severity, or welfare effect.
+
+**Response.** Accepted. The output is labeled a coincidence screen; threshold
+sensitivity is shown; no food-security or welfare ranking is produced.
+
+### C-4 — climate-inflation estimation requires panel controls and dynamics
+
+Monthly CPI work uses fixed effects, trends, nonlinear responses, and lag
+structures across a large panel. A 12-market descriptive screen cannot carry
+the same interpretation.
+
+**Response.** Accepted. The paper separates annual CPI from commodity prices
+and blocks transmission language until a qualified design exists.
+
+## Synthesis decision
+
+The objections support publication only as PP construct validation. Human-final
+domain and source review remains an owner-led hard wall under §18.5.

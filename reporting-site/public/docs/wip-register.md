@@ -29,7 +29,7 @@ Re-promotion requires the program loop to be run end-to-end.
 A promotion request that would push either count over its cap is
 rejected at the gate.
 
-Last updated: 2026-05-07.
+Last updated: 2026-07-19.
 
 ---
 
@@ -100,6 +100,11 @@ end-to-end.
   Cambodia leads 5 of 6 discriminating runs but ranks 6 of 6 by affected count
   in UNICEF's heatwave-major ADB subset; proxy correlation +0.03 versus +0.94
   for child population. Article: `articles/school-heat-honest-narrowing.md`.
+- **food-price-climate-transmission** — annual qualifier and old price-wave
+  method retired: correcting to year-on-year market price change leaves 152
+  Nepal coarse-rice spike cells, of which 17 follow locally dry rainfall at one
+  month; dry alignment remains a minority in all 81 threshold runs. Article:
+  `articles/food-price-joint-qualifier.md`.
 
 ### Prepared Pipeline (other)
 
@@ -147,6 +152,7 @@ promotion)*
 | 2026-05-07 | water-stress-crop-diversification | SR → PP | (this commit) | ai-first | Same demotion reason |
 | 2026-05-07 | school-heat-disruption | SR → PP | (this commit) | ai-first | Same demotion reason |
 | 2026-07-18 | water-stress-crop-diversification | PP construct-validation issue closed | (this commit) | ai-first | Inherited country ranking rejected; full paper and nine-figure evidence spine built |
+| 2026-07-19 | food-price-climate-transmission | PP construct-validation issue closed | (this commit) | ai-first | Annual qualifier and old price-wave method retired; corrected 12-market Nepal paper and ten-figure evidence spine built |
 
 ---
 

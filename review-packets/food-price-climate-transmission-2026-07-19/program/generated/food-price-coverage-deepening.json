@@ -1,0 +1,222 @@
+{
+  "program": "food-price-climate-transmission",
+  "analysis": "joint high-high intersection as a coverage artifact (deep-questions.md §5.1)",
+  "claim_scope": "Deepening of the reformulated joint-vulnerability screen. Recomputes the identical CPI x ag-imports rank intersection the headline uses, but exposes (a) which DMCs are dropped for missing one leg, (b) the set after filling each missing leg from any other cached year, and (c) the set restricted to a common vintage. Triage qualifier (CONSTITUTION.md §6.4), not a food-security ranking; measurement/coverage-gap framing (§13.3).",
+  "sources": {
+    "wdi_cpi": "WDI FP.CPI.TOTL.ZG (Inflation, consumer prices, annual %), CC BY 4.0",
+    "wdi_ag_imports": "WDI TM.VAL.AGRI.ZS.UN (Agricultural raw materials imports, % of merchandise imports), CC BY 4.0",
+    "cache_lastupdated": "2026-04-08 (program cache, both extracts)",
+    "note_indicator_label": "TM.VAL.AGRI.ZS.UN is 'agricultural RAW MATERIALS imports', not food imports; the import axis does not measure the food-import exposure the transmission claim implies."
+  },
+  "roster_n": 43,
+  "have_cpi_n": 36,
+  "have_imp_n": 35,
+  "joint_universe": [
+    "AFG",
+    "ARM",
+    "AZE",
+    "BGD",
+    "BRN",
+    "BTN",
+    "CHN",
+    "FJI",
+    "GEO",
+    "HKG",
+    "IDN",
+    "IND",
+    "KAZ",
+    "KGZ",
+    "KHM",
+    "KIR",
+    "LAO",
+    "LKA",
+    "MDV",
+    "MMR",
+    "MNG",
+    "MYS",
+    "NPL",
+    "PAK",
+    "PHL",
+    "PLW",
+    "PNG",
+    "SLB",
+    "THA",
+    "TLS",
+    "TON",
+    "UZB",
+    "VNM",
+    "WSM"
+  ],
+  "joint_universe_n": 34,
+  "dropped_have_imp_no_cpi": [
+    "TJK"
+  ],
+  "dropped_have_cpi_no_imp": [
+    "FSM",
+    "VUT"
+  ],
+  "dropped_neither": [
+    "COK",
+    "MHL",
+    "NRU",
+    "TKM",
+    "TUV",
+    "TWN"
+  ],
+  "committed_runs": {
+    "3": [
+      "LAO",
+      "PAK"
+    ],
+    "5": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ],
+    "8": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ],
+    "10": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ]
+  },
+  "committed_common_across_N": [
+    "LAO",
+    "PAK"
+  ],
+  "fill_log": [
+    {
+      "iso3": "TJK",
+      "leg": "CPI",
+      "filled_value": null,
+      "filled_year": null,
+      "note": "NO value in any cached year"
+    },
+    {
+      "iso3": "FSM",
+      "leg": "ag-imports",
+      "filled_value": null,
+      "filled_year": null,
+      "note": "NO value in any cached year"
+    },
+    {
+      "iso3": "VUT",
+      "leg": "ag-imports",
+      "filled_value": null,
+      "filled_year": null,
+      "note": "NO value in any cached year"
+    }
+  ],
+  "fillable": [],
+  "unfillable_indicator_absent": [
+    "FSM",
+    "TJK",
+    "VUT"
+  ],
+  "filled_runs": {
+    "3": [
+      "LAO",
+      "PAK"
+    ],
+    "5": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ],
+    "8": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ],
+    "10": [
+      "BGD",
+      "LAO",
+      "PAK"
+    ]
+  },
+  "filled_common_across_N": [
+    "LAO",
+    "PAK"
+  ],
+  "common_vintage_runs": {
+    "2024": {
+      "n_both": 20,
+      "top5": [
+        "PAK"
+      ],
+      "top8": [
+        "PAK",
+        "UZB"
+      ]
+    },
+    "2023": {
+      "n_both": 27,
+      "top5": [
+        "LAO",
+        "PAK"
+      ],
+      "top8": [
+        "LAO",
+        "PAK"
+      ]
+    },
+    "2022": {
+      "n_both": 28,
+      "top5": [
+        "LAO",
+        "PAK"
+      ],
+      "top8": [
+        "LAO",
+        "PAK"
+      ]
+    },
+    "2021": {
+      "n_both": 28,
+      "top5": [
+        "PAK"
+      ],
+      "top8": [
+        "PAK"
+      ]
+    },
+    "2020": {
+      "n_both": 28,
+      "top5": [
+        "PAK"
+      ],
+      "top8": [
+        "BTN",
+        "PAK"
+      ]
+    },
+    "2019": {
+      "n_both": 30,
+      "top5": [
+        "PAK"
+      ],
+      "top8": [
+        "PAK"
+      ]
+    },
+    "2018": {
+      "n_both": 32,
+      "top5": [
+        "BGD"
+      ],
+      "top8": [
+        "BGD",
+        "PAK",
+        "UZB"
+      ]
+    }
+  },
+  "lao_pak_common_committed": true,
+  "lao_pak_common_after_fill": true,
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T20:36:05Z"
+}

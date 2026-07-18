@@ -298,24 +298,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "food-price-climate-transmission",
     articleSlug: "food-price-joint-qualifier",
     domain: "Food",
-    finish: "screening-result",
+    finish: "publication-ready",
     question:
-      "Which economies sit jointly high on CPI inflation and agriculture-import exposure after dropping the unstable composite?",
+      "After correcting the price outcome, how often do large Nepal rice-price increases follow locally dry rainfall?",
     output:
-      "Lao PDR and Pakistan sit in the top-N of both rankings for every N from 3 to 10; Bangladesh joins from N=5.",
-    chartTitle: "Food-price vulnerability screen",
-    sourceNote: "WDI CPI inflation, agriculture imports share, and food production index.",
+      "Only 17 of 152 corrected market-month spike cells align with locally dry rainfall at one month; the minority direction survives all 81 threshold runs.",
+    chartTitle: "Corrected Nepal rice-price alignment",
+    sourceNote: "WFP Nepal coarse-rice market prices, NASA POWER monthly point rainfall, and WDI CPI context.",
     caveat:
-      "This does not establish climate-to-price transmission; the annual macro data are too coarse.",
+      "The 11.2% is a threshold coincidence share, not the fraction of price change caused by climate.",
     nextStep:
-      "Use sub-annual commodity prices and local climate anomalies to test transmission directly.",
+      "Build an event-defined multi-commodity panel with crop zones, connectivity, common-driver controls, and a pre-specified panel design.",
     granularity: {
-      currentUnit: "Country-year macro screen",
-      targetUnit: "Market, commodity, month, local climate anomaly",
+      currentUnit: "Nepal market × month × coarse-rice price × point rainfall",
+      targetUnit: "Market × commodity × dated hazard event × production/sourcing zone",
       gap:
-        "Annual macro data cannot establish climate-to-price transmission.",
+        "No recorded hazard event, multi-commodity outcome, market-access controls, or causal design is joined.",
       upgradeData:
-        "WFP/VAM or national market price series, FAO FPMA, CHIRPS rainfall, ERA5 heat, and commodity calendars.",
+        "WFP or official multi-commodity prices, geocoded hazard events, crop calendars, production zones, roads, fuel, exchange rates, trade, and policy data.",
     },
   },
   "grid-reliability-heat": {

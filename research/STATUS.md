@@ -6,17 +6,17 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-07-18.
+Last updated: 2026-07-19.
 
 ## Current focus
 
 | Field | Value |
 |---|---|
-| Active flagship | `food-price-climate-transmission` — test whether the annual macro joint qualifier survives contact with the existing market-month price-wave object before rebuilding its publication story. |
-| Per-program board | `food-price-climate-transmission/STATUS.md` |
+| Active flagship | `flood-market-access` — decide whether the stable national proxy should be retired, reshaped as a source-readiness finding, or tested with one routed road–market–flood object. |
+| Per-program board | `flood-market-access/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `school-heat-disruption` — the inherited disruption ranking was retired after the “every perturbation” claim failed and Cambodia ranked sixth of six in UNICEF's heatwave-major ADB subset. |
+| Previous flagship | `food-price-climate-transmission` — the annual qualifier and old price-wave method were retired; 17 of 152 corrected Nepal rice-price spike cells follow locally dry rainfall at one month. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -82,11 +82,13 @@ overrides priority by editing this list.
     Cambodia leads five of six discriminating proxy runs but ranks sixth of six
     by affected count in UNICEF's heatwave-major ADB subset. Reopen only for a
     school-day exposure-outcome join; do not retune the national composite.
-12. **`food-price-climate-transmission`** — **active flagship.** The composite
-    failed sensitivity. Test the retained annual joint qualifier against the
-    existing market-month price-wave object before rebuilding the ladder.
-13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
-    modeled-extent is §18.5 owner-gated.
+12. **`food-price-climate-transmission`** — *construct-validation issue closed.*
+    The corrected Nepal panel leaves 17 of 152 coarse-rice spike cells aligned
+    with prior-month local dryness; dry alignment remains a minority in all 81
+    threshold runs. Reopen only for a recorded-event, multi-commodity panel.
+13. **`flood-market-access`** — **active flagship.** The stable national top
+    four is still a proxy; choose between one public routed-network pilot and a
+    publication-grade source-readiness finding before adding another audit wall.
 14. **`public-service-data-quality`** — *current presentation issue closed.* The showcase now uses generated
     `psdq-evidence-ledger.{json,csv}` instead of stacked walls. Substantive
     source repair remains owner-only source-owner contact or human location

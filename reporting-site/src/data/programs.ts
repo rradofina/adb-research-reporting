@@ -103,11 +103,11 @@ export const programs: ProgramEntry[] = [
   {
     id: 9,
     slug: "food-price-climate-transmission",
-    title: "Food-price climate transmission",
-    status: "SR",
+    title: "When local dryness does not explain the rice-price wave",
+    status: "PP",
     summary:
-      "The unstable composite was dropped. Usable screen: Lao PDR and Pakistan sit jointly high on CPI inflation and agriculture-import exposure for every N from 3 to 10; Bangladesh joins from N=5.",
-    note: "Screening result only; climate-to-price transmission is not claimed.",
+      "Correcting the Nepal price outcome leaves 152 coarse-rice spike cells across 12 markets; 17 follow locally dry rainfall at one month, and dry alignment remains a minority in all 81 threshold runs.",
+    note: "PP construct validation. The annual DMC qualifier is retired; coincidence is not climate attribution.",
     href: "/program/food-price-climate-transmission",
   },
   {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T16:21:17.110Z",
+  "generated_at": "2026-07-18T17:20:08.117Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -237,20 +237,20 @@
         "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
         "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
         "json": "generated/charts/food-price-climate-transmission-thumbnail.json",
-        "title": "Two economies with high CPI inflation AND ag-import exposure",
-        "caption": "Lao PDR (CPI 23.1 %, ag-imports 4.6 % of merchandise) and Pakistan (12.6 % / 4.3 %) are the only DMCs that clear both axes — stable across every N from 3 to 10.",
-        "headline_number": "LAO 23.1% CPI · 4.6% ag-imports",
-        "visual_form": "two-axis scatter (CPI × ag-import share)",
-        "source": "WDI CPI inflation + agricultural-import share",
+        "title": "Only one in nine corrected rice-price spikes follows locally dry rainfall",
+        "caption": "Seventeen of 152 corrected Nepal coarse-rice price-spike cells follow locally dry rainfall at the one-month lag.",
+        "headline_number": "17 of 152 · 11.2%",
+        "visual_form": "construct-validation finding card",
+        "source": "food-price-climate-transmission/generated/food-price-construct-validation.json",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T20:28:55+00:00",
+        "generated_at": "2026-07-18T17:19:43.278476+00:00",
         "dimensions": {
-          "width": 1600,
-          "height": 900
+          "width": 2570,
+          "height": 1472
         },
         "sha256": {
-          "png": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5",
-          "svg": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+          "png": "9d4892e48ca359258ea45edbdee885b07458cae01e7154efbfd49ea64524542c",
+          "svg": "9c90aea91610b340c1430a1f665ed5bc225e25cd246aa788f43245091f56894a"
         }
       }
     },

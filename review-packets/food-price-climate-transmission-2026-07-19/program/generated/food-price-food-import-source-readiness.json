@@ -1,0 +1,2307 @@
+{
+  "program": "food-price-climate-transmission",
+  "analysis": "food-import source-readiness and rerank audit",
+  "claim_scope": "Public source audit for the food-price coverage trap. It replaces the old agricultural raw-materials import proxy with WDI food imports for a diagnostic rerank and checks WFP market-price metadata, but it does not estimate local price exposure, food security, or climate-to-price pass-through.",
+  "retrieved_at": "2026-06-19T20:36:11Z",
+  "sources": {
+    "world_bank_wdi_api_base": "https://api.worldbank.org/v2",
+    "wdi_indicators": [
+      "FP.CPI.TOTL.ZG",
+      "TM.VAL.AGRI.ZS.UN",
+      "TM.VAL.FOOD.ZS.UN"
+    ],
+    "wdi_food_imports_indicator_page": "https://data.worldbank.org/indicator/TM.VAL.FOOD.ZS.UN",
+    "hdx_wfp_package_api": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices"
+  },
+  "summary": {
+    "roster_n": 43,
+    "original_joint_universe_n": 34,
+    "cpi_cached_latest_rows": 36,
+    "cpi_live_latest_rows": 39,
+    "raw_ag_import_latest_rows": 35,
+    "food_import_latest_rows": 39,
+    "joint_cached_cpi_food_import_rows": 36,
+    "joint_live_cpi_food_import_rows": 38,
+    "entered_when_food_import_replaces_raw_ag": [
+      "FSM",
+      "VUT"
+    ],
+    "dropped_when_food_import_replaces_raw_ag": [],
+    "original_raw_ag_common_across_n": [
+      "LAO",
+      "PAK"
+    ],
+    "food_import_common_across_n_same_cached_cpi": [],
+    "food_import_common_across_n_live_cpi": [],
+    "food_import_common_vintage_years": 62,
+    "food_import_common_vintage_top5_lao_pak_years": [],
+    "food_import_indicator_latest_year_span": "2000-2024",
+    "cpi_live_latest_year_span": "2011-2024",
+    "wfp_package_resources": 1,
+    "wfp_csv_resources": 1,
+    "wfp_csv_size_mb": 225.8,
+    "wfp_coordinate_fields_visible_in_sample_header": false,
+    "market_price_series_joined": false,
+    "commodity_food_basket_joined": false,
+    "household_expenditure_joined": false,
+    "climate_local_price_joined": false,
+    "analysis_ready_food_price_exposure": false,
+    "owner_gated_or_unfinished_steps": [
+      "The old import leg is agricultural raw materials, not food imports.",
+      "The true WDI food-import leg is a national macro import share, not market exposure.",
+      "The WFP market-price package is visible, but the full market-month file is not joined.",
+      "No commodity basket, local climate shock, exchange-rate/fuel decomposition, or household food-expenditure denominator is computed.",
+      "The page therefore remains a source and coverage audit, not a climate-to-food-price transmission estimate."
+    ]
+  },
+  "indicator_records": [
+    {
+      "indicator_id": "FP.CPI.TOTL.ZG",
+      "indicator_name": "Inflation, consumer prices (annual %)",
+      "indicator_source": "World Development Indicators",
+      "source_note": "Inflation as measured by the consumer price index reflects the annual percentage change in the cost to the average consumer of acquiring a basket of goods and services that may be fixed or changed at specified intervals, such as yearly. This indicator denotes the percentage change over each previous year of the constant price (base year 2015) series in United States dollars.",
+      "data_url": "https://api.worldbank.org/v2/country/all/indicator/FP.CPI.TOTL.ZG?format=json&per_page=20000",
+      "metadata_url": "https://api.worldbank.org/v2/indicator/FP.CPI.TOTL.ZG?format=json",
+      "dmc_observations": 1560,
+      "dmc_latest_rows": 39,
+      "world_bank_lastupdated": "2026-04-08",
+      "latest_year_span": "2011-2024",
+      "data_sha256": "c1f217d2f0fe2485c6ecaac03dc3abf2a56578850251d6ef6e1f8c2a50805f6b",
+      "metadata_sha256": "cd84438e2051733ea714b05bbda76fe64614e7c9a6d1133d3c668ccca32c4b94",
+      "data_fetch_mode": "live",
+      "metadata_fetch_mode": "live"
+    },
+    {
+      "indicator_id": "TM.VAL.AGRI.ZS.UN",
+      "indicator_name": "Agricultural raw materials imports (% of merchandise imports)",
+      "indicator_source": "World Development Indicators",
+      "source_note": "Agricultural raw materials comprise section 2 of SITC Rev. 3 (crude materials, inedible, except fuels) excluding divisions 22 (oil-seeds and oleaginous fruits), 27 (crude fertilizers and minerals excluding coal, petroleum, and precious stones), and 28 (metalliferous ores and scrap). This indicator is expressed as a percentage of merchandise imports which is comprised of goods whose economic ownership is changed between a non-resident and a resident and that are not included in the following specific categories: goods under merchanting, non-monetary gold, and parts of travel, construction, and government goods and services n.i.e.",
+      "data_url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.AGRI.ZS.UN?format=json&per_page=20000",
+      "metadata_url": "https://api.worldbank.org/v2/indicator/TM.VAL.AGRI.ZS.UN?format=json",
+      "dmc_observations": 1320,
+      "dmc_latest_rows": 39,
+      "world_bank_lastupdated": "2026-04-08",
+      "latest_year_span": "2000-2024",
+      "data_sha256": "717f72557d48ecb617377fad45e40c9f4eb8da8bc5befefd2c4a1e94f147711d",
+      "metadata_sha256": "1c2b530a1765e518512502cf71071e3407a19a5847d5c8172e53ae145846b0a2",
+      "data_fetch_mode": "live",
+      "metadata_fetch_mode": "live"
+    },
+    {
+      "indicator_id": "TM.VAL.FOOD.ZS.UN",
+      "indicator_name": "Food imports (% of merchandise imports)",
+      "indicator_source": "World Development Indicators",
+      "source_note": "Food comprises the commodities in SITC (Rev. 3) sections 0 (food and live animals), 1 (beverages and tobacco), and 4 (animal and vegetable oils and fats) and division 22 (oil seeds, oil nuts, and oil kernels). This indicator is expressed as a percentage of merchandise imports which is comprised of goods whose economic ownership is changed between a non-resident and a resident and that are not included in the following specific categories: goods under merchanting, non-monetary gold, and parts of travel, construction, and government goods and services n.i.e.",
+      "data_url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.FOOD.ZS.UN?format=json&per_page=20000",
+      "metadata_url": "https://api.worldbank.org/v2/indicator/TM.VAL.FOOD.ZS.UN?format=json",
+      "dmc_observations": 1329,
+      "dmc_latest_rows": 39,
+      "world_bank_lastupdated": "2026-04-08",
+      "latest_year_span": "2000-2024",
+      "data_sha256": "a2fc2ddd91c62014ab00fb13661e624986048e50daa7d4726711e8bede7e46e8",
+      "metadata_sha256": "36021affb598eddfa18d443518f71efa2acf32d48499df5cd89150d3b116c2bd",
+      "data_fetch_mode": "live",
+      "metadata_fetch_mode": "live"
+    }
+  ],
+  "wfp_detail": {
+    "package_title": "Global Food Prices Database (WFP)",
+    "package_name": "wfp-food-prices",
+    "resource_count": 1,
+    "csv_resource_count": 1,
+    "resource_id": "12d7c8e3-eff9-4db0-93b7-726825c4fe9a",
+    "resource_name": "Global Food Prices Database (WFP)",
+    "resource_url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+    "resource_format": "CSV",
+    "resource_size_bytes": 225787557,
+    "resource_size_mb": 225.8,
+    "header_fields": [
+      "adm0_id",
+      "adm0_name",
+      "adm1_id",
+      "adm1_name",
+      "mkt_id",
+      "mkt_name",
+      "cm_id",
+      "cm_name",
+      "cur_id",
+      "cur_name",
+      "pt_id",
+      "pt_name",
+      "um_id",
+      "um_name",
+      "mp_month",
+      "mp_year",
+      "mp_price",
+      "mp_commoditysource"
+    ],
+    "coordinate_fields_visible_in_sample_header": false,
+    "file_type": "csv",
+    "head_content_length": "225787557",
+    "range_content_range": "bytes 0-4095/225787557",
+    "package_success": true
+  },
+  "source_rows": [
+    {
+      "layer_role": "price_indicator",
+      "source_name": "World Bank WDI CPI inflation",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/FP.CPI.TOTL.ZG?format=json&per_page=20000",
+      "key_id": "FP.CPI.TOTL.ZG",
+      "public_metadata_reachable": true,
+      "candidate_rows": 43,
+      "joined_rows": 39,
+      "status": "available as national macro price indicator",
+      "notes": "39 of 43 roster economies have a latest CPI value in the live WDI extract; latest-year span 2011-2024."
+    },
+    {
+      "layer_role": "old_import_proxy",
+      "source_name": "World Bank WDI agricultural raw-materials imports",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.AGRI.ZS.UN?format=json&per_page=20000",
+      "key_id": "TM.VAL.AGRI.ZS.UN",
+      "public_metadata_reachable": true,
+      "candidate_rows": 43,
+      "joined_rows": 35,
+      "status": "old proxy documented as not food imports",
+      "notes": "This is agricultural raw-materials imports, not food imports. The committed cache has 35 roster economies with latest values."
+    },
+    {
+      "layer_role": "food_import_proxy",
+      "source_name": "World Bank WDI food imports",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.FOOD.ZS.UN?format=json&per_page=20000",
+      "key_id": "TM.VAL.FOOD.ZS.UN",
+      "public_metadata_reachable": true,
+      "candidate_rows": 43,
+      "joined_rows": 39,
+      "status": "true food-import macro leg available",
+      "notes": "39 of 43 roster economies have latest food-import values; latest-year span 2000-2024."
+    },
+    {
+      "layer_role": "market_price_source",
+      "source_name": "HDX/WFP Global Food Prices Database",
+      "source_url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+      "key_id": "12d7c8e3-eff9-4db0-93b7-726825c4fe9a",
+      "public_metadata_reachable": true,
+      "candidate_rows": 1,
+      "joined_rows": 0,
+      "status": "market-price source visible; not joined",
+      "notes": "Package has 1 resource(s), 1 CSV resource(s), main CSV size 225.8 MB, and sampled header fields adm0_id, adm0_name, adm1_id, adm1_name, mkt_id, mkt_name, cm_id, cm_name."
+    },
+    {
+      "layer_role": "analysis_ready_food_price_exposure",
+      "source_name": "Market x commodity x climate x household exposure object",
+      "source_url": "",
+      "key_id": "not_computed",
+      "public_metadata_reachable": false,
+      "candidate_rows": 0,
+      "joined_rows": 0,
+      "status": "not joined",
+      "notes": "No WFP market-month panel, commodity basket, local climate shock, exchange-rate/fuel decomposition, or household expenditure denominator is joined."
+    }
+  ],
+  "rerank_rows": [
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "cpi_cached_pct": 10.47,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 4,
+      "cpi_live_pct": 10.47,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 4,
+      "raw_ag_imports_pct_merch": 6.03,
+      "raw_ag_year": 2018,
+      "raw_ag_rank": 1,
+      "food_imports_pct_merch": 13.0,
+      "food_import_year": 2018,
+      "food_import_rank": 21,
+      "original_joint_top3": false,
+      "original_joint_top5": true,
+      "original_joint_top8": true,
+      "original_joint_top10": true,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "cpi_cached_pct": 2.46,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 19,
+      "cpi_live_pct": 2.46,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 20,
+      "raw_ag_imports_pct_merch": 2.3,
+      "raw_ag_year": 2021,
+      "raw_ag_rank": 10,
+      "food_imports_pct_merch": 41.44,
+      "food_import_year": 2021,
+      "food_import_rank": 1,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "cpi_cached_pct": 23.13,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 1,
+      "cpi_live_pct": 23.13,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 1,
+      "raw_ag_imports_pct_merch": 4.57,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 2,
+      "food_imports_pct_merch": 12.69,
+      "food_import_year": 2023,
+      "food_import_rank": 22,
+      "original_joint_top3": true,
+      "original_joint_top5": true,
+      "original_joint_top8": true,
+      "original_joint_top10": true,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "cpi_cached_pct": 12.63,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 2,
+      "cpi_live_pct": 12.63,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 2,
+      "raw_ag_imports_pct_merch": 4.34,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 3,
+      "food_imports_pct_merch": 14.1,
+      "food_import_year": 2024,
+      "food_import_rank": 19,
+      "original_joint_top3": true,
+      "original_joint_top5": true,
+      "original_joint_top8": true,
+      "original_joint_top10": true,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "cpi_cached_pct": 2.17,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 23,
+      "cpi_live_pct": 2.17,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 24,
+      "raw_ag_imports_pct_merch": 2.31,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 9,
+      "food_imports_pct_merch": 29.63,
+      "food_import_year": 2024,
+      "food_import_rank": 2,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "cpi_cached_pct": 2.06,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 24,
+      "cpi_live_pct": 2.06,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 25,
+      "raw_ag_imports_pct_merch": 0.83,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 23,
+      "food_imports_pct_merch": 28.06,
+      "food_import_year": 2023,
+      "food_import_rank": 3,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "cpi_cached_pct": 11.18,
+      "cpi_cached_year": 2023,
+      "cpi_cached_rank": 3,
+      "cpi_live_pct": 11.18,
+      "cpi_live_year": 2023,
+      "cpi_live_rank": 3,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": 24.96,
+      "food_import_year": 2011,
+      "food_import_rank": 8,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": true,
+      "food_joint_top10_same_cpi": true,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": true,
+      "food_joint_top10_live_cpi": true,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia",
+      "cpi_cached_pct": 5.41,
+      "cpi_cached_year": 2022,
+      "cpi_cached_rank": 9,
+      "cpi_live_pct": 5.41,
+      "cpi_live_year": 2022,
+      "cpi_live_rank": 10,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": 27.76,
+      "food_import_year": 2013,
+      "food_import_rank": 4,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": true,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": true,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": 6.0,
+      "cpi_live_year": 2016,
+      "cpi_live_rank": 9,
+      "raw_ag_imports_pct_merch": 4.12,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 4,
+      "food_imports_pct_merch": 26.46,
+      "food_import_year": 2023,
+      "food_import_rank": 7,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": true,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "cpi_cached_pct": 0.81,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 30,
+      "cpi_live_pct": 0.81,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 31,
+      "raw_ag_imports_pct_merch": 2.97,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 5,
+      "food_imports_pct_merch": 7.46,
+      "food_import_year": 2024,
+      "food_import_rank": 36,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "cpi_cached_pct": 3.23,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 16,
+      "cpi_live_pct": 3.23,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 17,
+      "raw_ag_imports_pct_merch": 1.72,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 15,
+      "food_imports_pct_merch": 27.49,
+      "food_import_year": 2023,
+      "food_import_rank": 5,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "cpi_cached_pct": 9.63,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 5,
+      "cpi_live_pct": 9.63,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 5,
+      "raw_ag_imports_pct_merch": 1.89,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 12,
+      "food_imports_pct_merch": 12.45,
+      "food_import_year": 2024,
+      "food_import_rank": 24,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "cpi_cached_pct": -6.6,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 36,
+      "cpi_live_pct": -6.6,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 39,
+      "raw_ag_imports_pct_merch": 1.77,
+      "raw_ag_year": 2019,
+      "raw_ag_rank": 14,
+      "food_imports_pct_merch": 26.92,
+      "food_import_year": 2019,
+      "food_import_rank": 6,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "cpi_cached_pct": 2.76,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 18,
+      "cpi_live_pct": 2.76,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 19,
+      "raw_ag_imports_pct_merch": 2.9,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 6,
+      "food_imports_pct_merch": 17.82,
+      "food_import_year": 2023,
+      "food_import_rank": 15,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "cpi_cached_pct": 8.83,
+      "cpi_cached_year": 2019,
+      "cpi_cached_rank": 6,
+      "cpi_live_pct": 8.83,
+      "cpi_live_year": 2019,
+      "cpi_live_rank": 6,
+      "raw_ag_imports_pct_merch": 0.54,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 29,
+      "food_imports_pct_merch": 9.74,
+      "food_import_year": 2024,
+      "food_import_rank": 29,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "cpi_cached_pct": 0.22,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 33,
+      "cpi_live_pct": 0.22,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 35,
+      "raw_ag_imports_pct_merch": 2.66,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 7,
+      "food_imports_pct_merch": 8.11,
+      "food_import_year": 2024,
+      "food_import_rank": 35,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "cpi_cached_pct": 8.69,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 7,
+      "cpi_live_pct": 8.69,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 7,
+      "raw_ag_imports_pct_merch": 0.65,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 27,
+      "food_imports_pct_merch": 10.97,
+      "food_import_year": 2024,
+      "food_import_rank": 28,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "cpi_cached_pct": 6.2,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 8,
+      "cpi_live_pct": 6.2,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 8,
+      "raw_ag_imports_pct_merch": 0.43,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 32,
+      "food_imports_pct_merch": 11.01,
+      "food_import_year": 2023,
+      "food_import_rank": 27,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "cpi_cached_pct": 3.62,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 15,
+      "cpi_live_pct": 3.62,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 16,
+      "raw_ag_imports_pct_merch": 2.52,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 8,
+      "food_imports_pct_merch": 8.8,
+      "food_import_year": 2023,
+      "food_import_rank": 31,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau",
+      "cpi_cached_pct": 2.23,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 20,
+      "cpi_live_pct": 2.23,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 21,
+      "raw_ag_imports_pct_merch": 1.7,
+      "raw_ag_year": 2018,
+      "raw_ag_rank": 16,
+      "food_imports_pct_merch": 22.96,
+      "food_import_year": 2018,
+      "food_import_rank": 9,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "cpi_cached_pct": 5.0,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 10,
+      "cpi_live_pct": 5.0,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 11,
+      "raw_ag_imports_pct_merch": 0.47,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 31,
+      "food_imports_pct_merch": 9.01,
+      "food_import_year": 2024,
+      "food_import_rank": 30,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "cpi_cached_pct": 4.32,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 13,
+      "cpi_live_pct": 4.32,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 14,
+      "raw_ag_imports_pct_merch": 0.69,
+      "raw_ag_year": 2018,
+      "raw_ag_rank": 26,
+      "food_imports_pct_merch": 22.19,
+      "food_import_year": 2018,
+      "food_import_rank": 10,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "cpi_cached_pct": 4.95,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 11,
+      "cpi_live_pct": 4.95,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 12,
+      "raw_ag_imports_pct_merch": 1.54,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 18,
+      "food_imports_pct_merch": 5.06,
+      "food_import_year": 2024,
+      "food_import_rank": 38,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "cpi_cached_pct": 2.18,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 22,
+      "cpi_live_pct": 2.18,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 23,
+      "raw_ag_imports_pct_merch": 2.01,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 11,
+      "food_imports_pct_merch": 11.86,
+      "food_import_year": 2024,
+      "food_import_rank": 25,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": 0.5,
+      "cpi_live_year": 2011,
+      "cpi_live_rank": 33,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": 21.54,
+      "food_import_year": 2008,
+      "food_import_rank": 11,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "cpi_cached_pct": 1.4,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 27,
+      "cpi_live_pct": 1.4,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 28,
+      "raw_ag_imports_pct_merch": 1.35,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 20,
+      "food_imports_pct_merch": 21.24,
+      "food_import_year": 2024,
+      "food_import_rank": 12,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "cpi_cached_pct": 4.69,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 12,
+      "cpi_live_pct": 4.69,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 13,
+      "raw_ag_imports_pct_merch": 1.29,
+      "raw_ag_year": 2022,
+      "raw_ag_rank": 22,
+      "food_imports_pct_merch": 17.96,
+      "food_import_year": 2022,
+      "food_import_rank": 14,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "cpi_cached_pct": 3.89,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 14,
+      "cpi_live_pct": 3.89,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 15,
+      "raw_ag_imports_pct_merch": 0.36,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 33,
+      "food_imports_pct_merch": 18.96,
+      "food_import_year": 2024,
+      "food_import_rank": 13,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "cpi_cached_pct": -0.43,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 35,
+      "cpi_live_pct": -0.43,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 38,
+      "raw_ag_imports_pct_merch": 1.89,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 13,
+      "food_imports_pct_merch": 15.29,
+      "food_import_year": 2024,
+      "food_import_rank": 17,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "cpi_cached_pct": 0.6,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 31,
+      "cpi_live_pct": 0.6,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 32,
+      "raw_ag_imports_pct_merch": 0.51,
+      "raw_ag_year": 2023,
+      "raw_ag_rank": 30,
+      "food_imports_pct_merch": 16.49,
+      "food_import_year": 2023,
+      "food_import_rank": 16,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "cpi_cached_pct": 1.83,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 25,
+      "cpi_live_pct": 1.83,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 26,
+      "raw_ag_imports_pct_merch": 1.55,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 17,
+      "food_imports_pct_merch": 8.5,
+      "food_import_year": 2024,
+      "food_import_rank": 32,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "cpi_cached_pct": 3.21,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 17,
+      "cpi_live_pct": 3.21,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 18,
+      "raw_ag_imports_pct_merch": 0.55,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 28,
+      "food_imports_pct_merch": 15.01,
+      "food_import_year": 2024,
+      "food_import_rank": 18,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "cpi_cached_pct": 2.21,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 21,
+      "cpi_live_pct": 2.21,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 22,
+      "raw_ag_imports_pct_merch": 1.37,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 19,
+      "food_imports_pct_merch": 13.38,
+      "food_import_year": 2024,
+      "food_import_rank": 20,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "cpi_cached_pct": 1.37,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 28,
+      "cpi_live_pct": 1.37,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 29,
+      "raw_ag_imports_pct_merch": 1.31,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 21,
+      "food_imports_pct_merch": 6.59,
+      "food_import_year": 2024,
+      "food_import_rank": 37,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "cpi_cached_pct": 1.11,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 29,
+      "cpi_live_pct": 1.11,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 30,
+      "raw_ag_imports_pct_merch": 0.82,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 24,
+      "food_imports_pct_merch": 12.46,
+      "food_import_year": 2024,
+      "food_import_rank": 23,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "cpi_cached_pct": 0.27,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 32,
+      "cpi_live_pct": 0.27,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 34,
+      "raw_ag_imports_pct_merch": 0.7,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 25,
+      "food_imports_pct_merch": 8.36,
+      "food_import_year": 2024,
+      "food_import_rank": 33,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR",
+      "cpi_cached_pct": 1.73,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 26,
+      "cpi_live_pct": 1.73,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 27,
+      "raw_ag_imports_pct_merch": 0.09,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 34,
+      "food_imports_pct_merch": 3.32,
+      "food_import_year": 2024,
+      "food_import_rank": 39,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": null,
+      "cpi_live_year": null,
+      "cpi_live_rank": null,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": 11.74,
+      "food_import_year": 2000,
+      "food_import_rank": 26,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "cpi_cached_pct": -0.39,
+      "cpi_cached_year": 2024,
+      "cpi_cached_rank": 34,
+      "cpi_live_pct": -0.39,
+      "cpi_live_year": 2024,
+      "cpi_live_rank": 37,
+      "raw_ag_imports_pct_merch": 0.05,
+      "raw_ag_year": 2024,
+      "raw_ag_rank": 35,
+      "food_imports_pct_merch": 8.17,
+      "food_import_year": 2024,
+      "food_import_rank": 34,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "eligible after food-import repair"
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": null,
+      "cpi_live_year": null,
+      "cpi_live_rank": null,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": null,
+      "food_import_year": null,
+      "food_import_rank": null,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": null,
+      "cpi_live_year": null,
+      "cpi_live_rank": null,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": null,
+      "food_import_year": null,
+      "food_import_rank": null,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "NRU",
+      "country": "Nauru",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": -0.12,
+      "cpi_live_year": 2012,
+      "cpi_live_rank": 36,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": null,
+      "food_import_year": null,
+      "food_import_rank": null,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "cpi_cached_pct": null,
+      "cpi_cached_year": null,
+      "cpi_cached_rank": null,
+      "cpi_live_pct": null,
+      "cpi_live_year": null,
+      "cpi_live_rank": null,
+      "raw_ag_imports_pct_merch": null,
+      "raw_ag_year": null,
+      "raw_ag_rank": null,
+      "food_imports_pct_merch": null,
+      "food_import_year": null,
+      "food_import_rank": null,
+      "original_joint_top3": false,
+      "original_joint_top5": false,
+      "original_joint_top8": false,
+      "original_joint_top10": false,
+      "food_joint_top3_same_cpi": false,
+      "food_joint_top5_same_cpi": false,
+      "food_joint_top8_same_cpi": false,
+      "food_joint_top10_same_cpi": false,
+      "food_joint_top3_live_cpi": false,
+      "food_joint_top5_live_cpi": false,
+      "food_joint_top8_live_cpi": false,
+      "food_joint_top10_live_cpi": false,
+      "coverage_status": "missing CPI or food-import leg"
+    }
+  ],
+  "runs": {
+    "original_cached_cpi_raw_ag": {
+      "3": [
+        "LAO",
+        "PAK"
+      ],
+      "5": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ],
+      "8": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ],
+      "10": [
+        "BGD",
+        "LAO",
+        "PAK"
+      ]
+    },
+    "food_import_same_cached_cpi": {
+      "3": [],
+      "5": [],
+      "8": [
+        "VUT"
+      ],
+      "10": [
+        "FSM",
+        "VUT"
+      ]
+    },
+    "food_import_live_cpi": {
+      "3": [],
+      "5": [],
+      "8": [
+        "VUT"
+      ],
+      "10": [
+        "FSM",
+        "TJK",
+        "VUT"
+      ]
+    }
+  },
+  "common_vintage_runs_food_import_live_cpi": {
+    "2024": {
+      "n_both": 20,
+      "top5": [],
+      "top8": [
+        "PAK"
+      ]
+    },
+    "2023": {
+      "n_both": 27,
+      "top5": [],
+      "top8": []
+    },
+    "2022": {
+      "n_both": 28,
+      "top5": [],
+      "top8": [
+        "AZE",
+        "KAZ"
+      ]
+    },
+    "2021": {
+      "n_both": 28,
+      "top5": [],
+      "top8": []
+    },
+    "2020": {
+      "n_both": 28,
+      "top5": [],
+      "top8": []
+    },
+    "2019": {
+      "n_both": 30,
+      "top5": [],
+      "top8": [
+        "NPL"
+      ]
+    },
+    "2018": {
+      "n_both": 32,
+      "top5": [],
+      "top8": [
+        "TON"
+      ]
+    },
+    "2017": {
+      "n_both": 33,
+      "top5": [
+        "TON"
+      ],
+      "top8": [
+        "TON"
+      ]
+    },
+    "2016": {
+      "n_both": 31,
+      "top5": [],
+      "top8": [
+        "TJK"
+      ]
+    },
+    "2015": {
+      "n_both": 30,
+      "top5": [],
+      "top8": []
+    },
+    "2014": {
+      "n_both": 30,
+      "top5": [],
+      "top8": []
+    },
+    "2013": {
+      "n_both": 32,
+      "top5": [],
+      "top8": []
+    },
+    "2012": {
+      "n_both": 32,
+      "top5": [],
+      "top8": [
+        "MDV"
+      ]
+    },
+    "2011": {
+      "n_both": 33,
+      "top5": [],
+      "top8": []
+    },
+    "2010": {
+      "n_both": 32,
+      "top5": [],
+      "top8": []
+    },
+    "2009": {
+      "n_both": 30,
+      "top5": [
+        "KIR"
+      ],
+      "top8": [
+        "KIR",
+        "SLB"
+      ]
+    },
+    "2008": {
+      "n_both": 28,
+      "top5": [],
+      "top8": [
+        "AFG"
+      ]
+    },
+    "2007": {
+      "n_both": 29,
+      "top5": [],
+      "top8": []
+    },
+    "2006": {
+      "n_both": 27,
+      "top5": [
+        "SLB"
+      ],
+      "top8": [
+        "SLB"
+      ]
+    },
+    "2005": {
+      "n_both": 26,
+      "top5": [],
+      "top8": [
+        "TON"
+      ]
+    },
+    "2004": {
+      "n_both": 27,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "TON",
+        "WSM"
+      ]
+    },
+    "2003": {
+      "n_both": 27,
+      "top5": [
+        "TON"
+      ],
+      "top8": [
+        "SLB",
+        "TON"
+      ]
+    },
+    "2002": {
+      "n_both": 24,
+      "top5": [
+        "SLB"
+      ],
+      "top8": [
+        "SLB",
+        "TON"
+      ]
+    },
+    "2001": {
+      "n_both": 25,
+      "top5": [],
+      "top8": [
+        "TON"
+      ]
+    },
+    "2000": {
+      "n_both": 24,
+      "top5": [],
+      "top8": [
+        "MNG",
+        "PNG",
+        "TON"
+      ]
+    },
+    "1999": {
+      "n_both": 19,
+      "top5": [
+        "GEO"
+      ],
+      "top8": [
+        "GEO"
+      ]
+    },
+    "1998": {
+      "n_both": 20,
+      "top5": [
+        "PNG"
+      ],
+      "top8": [
+        "PNG"
+      ]
+    },
+    "1997": {
+      "n_both": 17,
+      "top5": [],
+      "top8": [
+        "ARM",
+        "PAK"
+      ]
+    },
+    "1996": {
+      "n_both": 15,
+      "top5": [
+        "AZE",
+        "GEO",
+        "KGZ"
+      ],
+      "top8": [
+        "AZE",
+        "GEO",
+        "KGZ",
+        "MNG"
+      ]
+    },
+    "1995": {
+      "n_both": 11,
+      "top5": [],
+      "top8": [
+        "KAZ"
+      ]
+    },
+    "1994": {
+      "n_both": 12,
+      "top5": [],
+      "top8": []
+    },
+    "1993": {
+      "n_both": 14,
+      "top5": [],
+      "top8": [
+        "BTN",
+        "LKA",
+        "PAK"
+      ]
+    },
+    "1992": {
+      "n_both": 13,
+      "top5": [],
+      "top8": [
+        "LKA",
+        "MMR"
+      ]
+    },
+    "1991": {
+      "n_both": 9,
+      "top5": [],
+      "top8": [
+        "PHL"
+      ]
+    },
+    "1990": {
+      "n_both": 8,
+      "top5": [
+        "LKA"
+      ],
+      "top8": [
+        "LKA"
+      ]
+    },
+    "1989": {
+      "n_both": 6,
+      "top5": [],
+      "top8": []
+    },
+    "1987": {
+      "n_both": 16,
+      "top5": [
+        "BGD"
+      ],
+      "top8": [
+        "BGD",
+        "SLB"
+      ]
+    },
+    "1986": {
+      "n_both": 14,
+      "top5": [
+        "SLB",
+        "TON"
+      ],
+      "top8": [
+        "LKA",
+        "SLB",
+        "TON"
+      ]
+    },
+    "1985": {
+      "n_both": 14,
+      "top5": [
+        "SLB",
+        "TON"
+      ],
+      "top8": [
+        "PAK",
+        "SLB",
+        "TON"
+      ]
+    },
+    "1984": {
+      "n_both": 15,
+      "top5": [],
+      "top8": [
+        "PNG",
+        "SLB"
+      ]
+    },
+    "1983": {
+      "n_both": 16,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "LKA",
+        "WSM"
+      ]
+    },
+    "1982": {
+      "n_both": 15,
+      "top5": [
+        "TON",
+        "WSM"
+      ],
+      "top8": [
+        "SLB",
+        "TON",
+        "WSM"
+      ]
+    },
+    "1981": {
+      "n_both": 15,
+      "top5": [
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "top8": [
+        "LKA",
+        "TON",
+        "VUT",
+        "WSM"
+      ]
+    },
+    "1980": {
+      "n_both": 13,
+      "top5": [
+        "TON",
+        "WSM"
+      ],
+      "top8": [
+        "FJI",
+        "LKA",
+        "TON",
+        "WSM"
+      ]
+    },
+    "1979": {
+      "n_both": 12,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "FJI",
+        "LKA",
+        "PAK",
+        "WSM"
+      ]
+    },
+    "1978": {
+      "n_both": 12,
+      "top5": [
+        "LKA",
+        "TON"
+      ],
+      "top8": [
+        "LKA",
+        "SLB",
+        "TON"
+      ]
+    },
+    "1977": {
+      "n_both": 13,
+      "top5": [
+        "TON",
+        "WSM"
+      ],
+      "top8": [
+        "SLB",
+        "TON",
+        "WSM"
+      ]
+    },
+    "1976": {
+      "n_both": 14,
+      "top5": [],
+      "top8": [
+        "FJI",
+        "PNG",
+        "TON",
+        "WSM"
+      ]
+    },
+    "1975": {
+      "n_both": 13,
+      "top5": [],
+      "top8": [
+        "PAK",
+        "WSM"
+      ]
+    },
+    "1974": {
+      "n_both": 13,
+      "top5": [],
+      "top8": [
+        "PAK",
+        "PNG",
+        "WSM"
+      ]
+    },
+    "1973": {
+      "n_both": 11,
+      "top5": [],
+      "top8": [
+        "PAK",
+        "WSM"
+      ]
+    },
+    "1972": {
+      "n_both": 12,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "SLB",
+        "WSM"
+      ]
+    },
+    "1971": {
+      "n_both": 10,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "FJI",
+        "LKA",
+        "WSM"
+      ]
+    },
+    "1970": {
+      "n_both": 10,
+      "top5": [
+        "LKA"
+      ],
+      "top8": [
+        "FJI",
+        "IND",
+        "LKA",
+        "WSM"
+      ]
+    },
+    "1969": {
+      "n_both": 9,
+      "top5": [
+        "LKA",
+        "WSM"
+      ],
+      "top8": [
+        "LKA",
+        "MYS",
+        "WSM"
+      ]
+    },
+    "1968": {
+      "n_both": 9,
+      "top5": [
+        "IND",
+        "LKA"
+      ],
+      "top8": [
+        "IDN",
+        "IND",
+        "LKA",
+        "WSM"
+      ]
+    },
+    "1967": {
+      "n_both": 9,
+      "top5": [
+        "IND",
+        "MYS"
+      ],
+      "top8": [
+        "IND",
+        "LKA",
+        "MYS"
+      ]
+    },
+    "1966": {
+      "n_both": 8,
+      "top5": [
+        "IND"
+      ],
+      "top8": [
+        "IND",
+        "WSM"
+      ]
+    },
+    "1965": {
+      "n_both": 8,
+      "top5": [],
+      "top8": [
+        "IND",
+        "LKA",
+        "PHL",
+        "WSM"
+      ]
+    },
+    "1964": {
+      "n_both": 8,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "LKA",
+        "MMR",
+        "MYS",
+        "PAK",
+        "WSM"
+      ]
+    },
+    "1963": {
+      "n_both": 6,
+      "top5": [
+        "LKA"
+      ],
+      "top8": [
+        "IND",
+        "LKA",
+        "PAK",
+        "PHL",
+        "WSM"
+      ]
+    },
+    "1962": {
+      "n_both": 7,
+      "top5": [
+        "WSM"
+      ],
+      "top8": [
+        "IND",
+        "LKA",
+        "PAK",
+        "PHL",
+        "WSM"
+      ]
+    }
+  },
+  "cache_records": [
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/FP.CPI.TOTL.ZG?format=json&per_page=20000",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_FP_CPI_TOTL_ZG_all.json",
+      "bytes": 3982288,
+      "sha256": "c1f217d2f0fe2485c6ecaac03dc3abf2a56578850251d6ef6e1f8c2a50805f6b",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:13 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e553213dc20965-HKG",
+        "CF-Cache-Status": "REVALIDATED",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2331576",
+        "Expires": "Thu, 16 Jul 2026 20:15:49 GMT",
+        "Last-Modified": "Tue, 16 Jun 2026 20:15:48 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=iRdO.n.Sm7iS_Lz.wVzbamRz32AKPT1qKziJOFM1SNE-1781901373907-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_data",
+      "indicator_id": "FP.CPI.TOTL.ZG"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/FP.CPI.TOTL.ZG?format=json",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_FP_CPI_TOTL_ZG_metadata.json",
+      "bytes": 773,
+      "sha256": "cd84438e2051733ea714b05bbda76fe64614e7c9a6d1133d3c668ccca32c4b94",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:14 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e553271a30ddc9-HKG",
+        "CF-Cache-Status": "MISS",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2441461",
+        "Expires": "Sat, 18 Jul 2026 02:47:15 GMT",
+        "Last-Modified": "Thu, 18 Jun 2026 02:47:14 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=FF.YzPbEB3qKAV4B0uqSREJZMhgzTzrzfuxwH8V8SMg-1781901374819-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_metadata",
+      "indicator_id": "FP.CPI.TOTL.ZG"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.FOOD.ZS.UN?format=json&per_page=20000",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_TM_VAL_FOOD_ZS_UN_all.json",
+      "bytes": 4079597,
+      "sha256": "a2fc2ddd91c62014ab00fb13661e624986048e50daa7d4726711e8bede7e46e8",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:16 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e553296c8c9212-HKG",
+        "CF-Cache-Status": "MISS",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2592001",
+        "Expires": "Sun, 19 Jul 2026 20:36:17 GMT",
+        "Last-Modified": "Fri, 19 Jun 2026 20:36:16 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=6DFFCMHmQRtmZVAlftNT7qQ15xs2Jnr8z2R2qCgQ1RE-1781901376504-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_data",
+      "indicator_id": "TM.VAL.FOOD.ZS.UN"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/TM.VAL.FOOD.ZS.UN?format=json",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_TM_VAL_FOOD_ZS_UN_metadata.json",
+      "bytes": 1037,
+      "sha256": "36021affb598eddfa18d443518f71efa2acf32d48499df5cd89150d3b116c2bd",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:17 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e553359de75de2-HKG",
+        "CF-Cache-Status": "MISS",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2592001",
+        "Expires": "Sun, 19 Jul 2026 20:36:18 GMT",
+        "Last-Modified": "Fri, 19 Jun 2026 20:36:17 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=pqbBQ6_ivVBhylm9K40BY3uXIdOgmms240vJB0jy2hk-1781901377356-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_metadata",
+      "indicator_id": "TM.VAL.FOOD.ZS.UN"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/TM.VAL.AGRI.ZS.UN?format=json&per_page=20000",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_TM_VAL_AGRI_ZS_UN_all.json",
+      "bytes": 4468247,
+      "sha256": "717f72557d48ecb617377fad45e40c9f4eb8da8bc5befefd2c4a1e94f147711d",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:18 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e553398e69dba0-HKG",
+        "CF-Cache-Status": "MISS",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2592001",
+        "Expires": "Sun, 19 Jul 2026 20:36:19 GMT",
+        "Last-Modified": "Fri, 19 Jun 2026 20:36:18 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=2lNL4eDbS1VRSz0kM20leZiDFQs_3Rrp21ZnYgClFC0-1781901378860-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_data",
+      "indicator_id": "TM.VAL.AGRI.ZS.UN"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/TM.VAL.AGRI.ZS.UN?format=json",
+      "cache_path": ".cache\\food-import-source-readiness\\wdi_TM_VAL_AGRI_ZS_UN_metadata.json",
+      "bytes": 1188,
+      "sha256": "1c2b530a1765e518512502cf71071e3407a19a5847d5c8172e53ae145846b0a2",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:19 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "CF-Ray": "a0e55346bb42e2e4-HKG",
+        "CF-Cache-Status": "MISS",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "public, max-age=2592001",
+        "Expires": "Sun, 19 Jul 2026 20:36:20 GMT",
+        "Last-Modified": "Fri, 19 Jun 2026 20:36:19 GMT",
+        "Vary": "accept-encoding",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        "Access-Control-Allow-Methods": "GET",
+        "Request-Context": "appId=cid-v1:da002513-bd8b-4441-9f30-737944134422",
+        "X-Powered-By": "ASP.NET",
+        "Set-Cookie": "_cfuvid=tpyXS9O3R1B5LVg_yJATRntMTSgDb15wajM3HfrRol8-1781901379982-0.0.1.1-604800000; path=/; domain=.worldbank.org; HttpOnly; Secure; SameSite=None"
+      },
+      "query_type": "wdi_indicator_metadata",
+      "indicator_id": "TM.VAL.AGRI.ZS.UN"
+    },
+    {
+      "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+      "cache_path": ".cache\\food-import-source-readiness\\hdx_wfp_food_prices_package.json",
+      "bytes": 18531,
+      "sha256": "80645f068a3c6e5f32cb2ec2f6f3cf9e3f3956cb519a349967fa8a2fd4b89548",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:36:20 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Content-Length": "18531",
+        "Connection": "close",
+        "Vary": "Cookie",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Access-Control-Allow-Origin": "*",
+        "Server": "data.humdata.org",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload; always;",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Robots-Tag": "index, follow",
+        "X-Nginx-Cache": "MISS",
+        "X-Nginx-Backend": "http://ckan-api:5000 (10.99.3.103:5000)"
+      },
+      "query_type": "hdx_package_show",
+      "package_id": "wfp-food-prices"
+    },
+    {
+      "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "x-amz-id-2": "CsE1R7Z945M5/2NslT84gIrlngbba/VO6jWbH2JDxOnKeB6v5kaU3/VgUDoxndHSK/88LQ5UvTY=",
+        "x-amz-request-id": "0BBGC6870W0BF262",
+        "Date": "Fri, 19 Jun 2026 20:36:24 GMT",
+        "Last-Modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+        "ETag": "\"fdb868ff70ca3598ddde0130eb0cbdd7\"",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-version-id": "q_79YtUuHnxLPyn3Imly60cjQYlzGlRC",
+        "Accept-Ranges": "bytes",
+        "Content-Type": "text/csv",
+        "Content-Length": "225787557",
+        "Server": "AmazonS3",
+        "Connection": "close"
+      },
+      "query_type": "wfp_csv_head",
+      "cache_path": ""
+    },
+    {
+      "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+      "cache_path": ".cache\\food-import-source-readiness\\wfp_food_prices_header_sample.csv",
+      "bytes": 4096,
+      "sha256": "06325943333a61982be8d20e2f74b9edbb3967e513520d85bfdc75f7abee2466",
+      "status_code": 206,
+      "fetch_mode": "live",
+      "response_headers": {
+        "x-amz-id-2": "z39073iaffov+W3cpSiAKbP+F5Tn4WK7xDEKejkQtI2QcJAVRJ7RvEsnCKxpZxEeAZsWBAwGyX4=",
+        "x-amz-request-id": "HTTFTEZY68VF273W",
+        "Date": "Fri, 19 Jun 2026 20:36:26 GMT",
+        "Last-Modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+        "ETag": "\"fdb868ff70ca3598ddde0130eb0cbdd7\"",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-version-id": "q_79YtUuHnxLPyn3Imly60cjQYlzGlRC",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 0-4095/225787557",
+        "Content-Type": "text/csv",
+        "Content-Length": "4096",
+        "Server": "AmazonS3",
+        "Connection": "close"
+      },
+      "range_request": "bytes=0-4095",
+      "query_type": "wfp_csv_range_header_sample"
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T20:36:11Z"
+}

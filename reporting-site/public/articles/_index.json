@@ -1,5 +1,36 @@
 [
   {
+    "slug": "food-price-joint-qualifier",
+    "title": "Only one in nine corrected Nepal rice-price spikes followed locally dry rainfall",
+    "subtitle": "A 12-market construct validation retires both the inherited annual DMC qualifier and an earlier price-wave method; the remaining result is a coincidence screen, not climate attribution.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "This paper tests whether an inherited annual country screen can support a climate-to-food-price research claim and whether a public Nepal market-month object offers a better-aligned alternative. The annual screen intersects headline CPI inflation with agricultural raw-material imports; it excludes Nepal from its top 10 and cannot identify a commodity, event, market, or mechanism. The Nepal object joins WFP coarse-rice retail prices in 12 markets to NASA POWER monthly point rainfall for 2019–2025. Correcting the price outcome from distance to a full-sample calendar-month median to year-on-year log change reduces flagged spike cells from 259 to 152 and broad wave months from 25 to 10. Under the main thresholds, 17 of 152 spike cells follow locally dry rainfall at a one-month lag. Dry alignment remains a minority in all 81 ±50% threshold combinations, but wave and cluster counts are unstable. Annual headline CPI and median market rice-price change have a five-year Spearman correlation of +0.21 (exact permutation p=0.73), too little evidence and too much construct mismatch for validation. The result is a measurement audit and replication boundary: observed hazard events, multiple commodities, market access, and macro controls are required before estimating transmission.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-27",
+    "updated_at": "2026-07-19",
+    "doi": "",
+    "file": "food-price-joint-qualifier.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "access-stress-pilot-cluster",
     "title": "Official registries reorder 16 of 17 Philippine regional facility-load ranks",
     "subtitle": "The eight-economy OSM screen is a map-observability triage, not a service-access ranking; only two pilot economies have comparable registry corrections.",
@@ -521,38 +552,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "food-price-joint-qualifier",
-    "title": "Two DMCs sit at the top of both food-price-stress rankings — Lao PDR and Pakistan",
-    "subtitle": "Joint top-N intersection of CPI inflation and ag-imports share. Set-based reformulation after the original composite failed the sensitivity gate.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "food-price-climate-transmission",
-    "maturity": "SR",
-    "topics": [
-      "food-price",
-      "joint-vulnerability",
-      "methodology"
-    ],
-    "geographies": [
-      "LAO",
-      "PAK",
-      "BGD"
-    ],
-    "abstract": "The original food-price composite-index formulation failed the +/-50 percent sensitivity gate (alternative sub-metric weights produced no stable top-5). This article reports the reformulated set-based joint qualifier across 43 ADB DMCs: two economies — Lao PDR and Pakistan — sit in the top-N of BOTH WDI CPI inflation AND ag-imports-share-of-merchandise for every N from 3 to 10. A third, Bangladesh, joins from N=5. The reformulation is invariant to weight choice by construction. The article does NOT claim climate-CPI transmission; the named program question requires sub- annual + commodity-level analysis, deferred to §18.5 upgrade-pass. Pakistan's 2023 CPI was exchange-rate-driven, flagged separately from climate vulnerability. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-27",
-    "updated_at": "",
-    "doi": "",
-    "file": "food-price-joint-qualifier.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "invisible-urbanization-cluster",
     "title": "Five rural-base DMCs hold the top of the urban-growth signal — PNG, Solomon Islands, Afghanistan, Lao PDR, Bangladesh",
     "subtitle": "Growth-from-a-low-urban-base. Stable across multiplier perturbations. GHSL Built-up Surface integration is the upgrade-pass.",
@@ -780,6 +779,37 @@
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "food-price-joint-qualifier-brief",
+    "title": "Local dryness preceded only one in nine corrected Nepal rice-price spikes",
+    "subtitle": "The stable result is a measurement boundary, not a climate-effect estimate.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "Correcting the market-price outcome leaves 152 coarse-rice spike cells; 17 follow locally dry rainfall at the one-month lag, and dry alignment remains a minority in every ±50% threshold run.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "food-price-joint-qualifier-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },
@@ -1097,6 +1127,37 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "food-price-joint-qualifier-blog",
+    "title": "A stable country screen was still the wrong food-price story",
+    "subtitle": "Correcting the Nepal market-price outcome turns a climate narrative into a sharper measurement finding.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "The annual ranking cannot observe transmission, and an earlier market method confused higher later price levels with large price changes.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "food-price-joint-qualifier-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "grid-reliability-heat",
     "title": "When a good electricity-risk hypothesis meets the wrong data",
     "subtitle": "",
@@ -1404,6 +1465,37 @@
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "food-price-joint-qualifier-social",
+    "title": "Nepal rice-price construct validation — social card",
+    "subtitle": "Only 17 of 152 corrected price spikes followed locally dry rainfall.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "The annual ranking is retired and the corrected market-month result is a coincidence screen, not climate attribution.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "food-price-joint-qualifier-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },
@@ -1718,6 +1810,35 @@
     "file": "disaster-recovery-lag-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "food-price-joint-qualifier-deck",
+    "title": "\"Only one in nine corrected rice-price spikes followed locally dry rainfall\"",
+    "subtitle": "\"Nepal market-month construct validation · AI-first §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "food-price-joint-qualifier-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },

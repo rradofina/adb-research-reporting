@@ -1,46 +1,36 @@
-# Pre-registration — Food Price Climate Transmission (reformulated)
+# Retrospective construct-validation protocol
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-27.
+`attestation_chain: ai-first` · frozen 2026-07-19 · PP
 
-The original composite-index formulation failed the +/-50 percent
-sensitivity gate (no stable top-5 across alternative sub-metric
-weights; documented in `NEGATIVE-RESULT.md`). This reformulation
-abandons the composite in favor of a **set-based joint qualifier**.
+This is not presented as a confirmatory pre-registration. The inherited annual
+screen and Nepal sprint existed before this protocol. The document freezes the
+publication checks used for the retrospective construct validation.
 
-## 1. Claim
+## Primary decision
 
-> Two ADB DMCs — **Lao PDR and Pakistan** — sit in the top-N of
-> BOTH WDI CPI inflation AND ag-imports-share-of-merchandise for
-> every N from 3 to 10. A third DMC, Bangladesh, joins from N=5
-> onward. The headline is the **joint top-N intersection set**, not
-> a score.
+The annual qualifier is retired unless its geography, basket, timing, and
+mechanism align with the market object. The climate-price claim remains blocked
+unless a recorded hazard-event join and a causal design exist.
 
-## 2. Falsification
+## Main specification
 
-The set {LAO, PAK} changes by ≥ 1 entry under any N ∈ [3, 10].
+- Unit: Nepal market × month.
+- Commodity: coarse rice, retail NPR/kg.
+- Outcome: 100 × log(price_t / price_t-12).
+- Spike: outcome ≥20%.
+- Dry: market/calendar-month precipitation z≤-1 at one-month lag.
+- Main statistic: dry-aligned spike cells / all spike cells with rainfall.
+- Missing year-on-year comparisons: excluded, not imputed.
 
-## 3. Population
+## Robustness rules
 
-43 ADB DMCs with both WDI indicators.
+Run the full ±50% factorial for all four arbitrary thresholds and rainfall lags
+0, 1, 3, and 6 months. Headline only a direction that survives all 81 threshold
+runs. Do not headline wave or cluster counts if their ranges change materially.
 
-## 5. Metric
+## Claim gates
 
-Set-based: DMC qualifies if it is in top-N of both rankings.
-
-## 6. Arbitrary numeric
-
-| Param | Value | Range tested |
-|---|---|---|
-| Top-N for joint qualifier | 5 | 3, 5, 8, 10 |
-
-## 7. Sources
-
-WDI FP.CPI.TOTL.ZG; WDI TM.VAL.AGRI.ZS.UN. CC BY 4.0.
-
-## 8. Decision rule
-
-Common set across all 4 N choices = `[LAO, PAK]`. **Positive (top-2 narrowing).**
-
-## 10. §18
-
-`ai-first`. 2026-04-27.
+No wording may state or imply a climate effect, attribution, national
+representativeness, household welfare result, or multi-commodity conclusion.
+The publication must identify the existing Nepal causal literature and label
+this work a construct validation and replication boundary.

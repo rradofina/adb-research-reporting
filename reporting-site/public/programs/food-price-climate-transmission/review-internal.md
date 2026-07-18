@@ -1,23 +1,25 @@
-# Internal review — Food Price Climate Transmission (reformulated)
+# Internal review — Food-price construct validation
 
-`attestation_chain: ai-first`. §18 critique-pass. Closed 2026-04-27.
+`attestation_chain: ai-first` · §18 critique-pass · 2026-07-19
 
-## Critique
+## Critique and disposition
 
-1. **Original composite failed; reformulation is set-based.** The
-   set-based joint qualifier sidesteps the weight-sensitivity issue
-   the composite had. Honest gain.
-2. **The "climate transmission" element is absent.** The program is
-   named for climate-CPI transmission but the current artifact is
-   joint vulnerability without a climate-anomaly term. Article must
-   be precise.
-3. **WDI ag-imports ≠ food imports.** Agricultural imports include
-   non-food (cotton, rubber). A food-specific subset would be more
-   targeted.
+1. **The original outcome is a price-level artifact.** Comparing each month to
+   a full-sample calendar-month median classifies later high levels as anomalies.
+   **Accepted:** replaced with same-market year-on-year log change.
+2. **The annual qualifier cannot validate transmission.** It uses national
+   headline CPI and agricultural raw-material imports and excludes Nepal.
+   **Accepted:** retired as a research finding; retained only as mismatch evidence.
+3. **Dry rainfall is not a climate shock.** Market-point monthly rainfall does
+   not observe production zones, crop damage, floods, or heat.
+   **Accepted:** all language says alignment or coincidence, never effect.
+4. **Threshold counts are unstable.** Wave and cluster counts vary widely.
+   **Accepted:** only the minority direction, stable in 81 runs, is headlined.
+5. **Novelty is constrained by prior Nepal work.** A stronger event-based study
+   already exists. **Accepted:** paper is framed as a replication boundary and
+   specifies an updated multi-commodity event-panel upgrade.
 
-## Responses
+## Decision
 
-1. Sensitivity gate now passes with margin.
-2. Article frames as "joint food-price vulnerability"; the
-   climate-transmission analysis is the §18.5 upgrade-pass.
-3. Documented in limitations.md.
+Pass at PP as a construct-validation result. Block causal, national-ranking,
+household-welfare, and multi-commodity claims.

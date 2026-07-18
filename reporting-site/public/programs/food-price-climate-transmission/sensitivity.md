@@ -1,32 +1,26 @@
-# Sensitivity — Food Price Climate Transmission
+# Sensitivity — Food-price construct validation
 
-`attestation_chain: ai-first`. Run 2026-04-27.
+`attestation_chain: ai-first` · 2026-07-19
 
-## 1. Test matrix (reformulated)
+The main definition uses a 20% year-on-year log price-change threshold, a
+one-month-lag precipitation z-score of -1 or lower, a 50% market-share rule for
+broad waves, and a 34% maximum dry share for a non-dry wave.
 
-| Top-N | Joint intersection |
-|---|---|
-| 3 | `[LAO, PAK]` |
-| 5 | `[BGD, LAO, PAK]` |
-| 8 | `[BGD, LAO, PAK]` |
-| 10 | `[BGD, LAO, PAK]` |
+Each arbitrary threshold is varied by ±50%:
 
-**Common set across all N: `[LAO, PAK]`.** Honest top-2 narrowing.
+- price change: 10%, 20%, 30%;
+- dry-rainfall z-score: -0.5, -1.0, -1.5;
+- broad-wave market share: 25%, 50%, 75%;
+- maximum dry share: 17%, 34%, 51%.
 
-The set-based joint qualifier is more robust than the original
-composite. The original failed because alternative sub-metric weights
-produced different top-5 sets with no overlap; the intersection
-formulation is invariant to weight choice by construction.
+The 3×3×3×3 factorial contains 81 runs. Dry alignment ranges from 0% to
+48.84% of corrected spike cells and remains a minority in every run. That
+direction is stable.
 
-## 2. Replication ranges
+Broad non-dry wave counts range from 0 to 44 months; dry-cluster counts range
+from 0 to 27. These counts are threshold-sensitive and are not headline
+quantities.
 
-- Top-2 {LAO, PAK}: stable across N ∈ {3, 5, 8, 10}.
-- Top-3 {BGD, LAO, PAK}: stable across N ∈ {5, 8, 10}; BGD drops at N=3.
-
-## TODO §18.5
-
-- Climate-transmission analysis (the program's named question):
-  link CPI inflation residuals to climate-anomaly events
-  (drought, flood) at sub-annual timesteps. Currently absent.
-- World Food Programme HungerMap or FAO GIEWS as alternative
-  data sources.
+Rainfall-lag checks at 0, 1, 3, and 6 months produce dry-aligned shares of
+11.84%, 11.18%, 5.92%, and 8.55%, respectively. The result does not depend on a
+single lag producing a majority alignment.

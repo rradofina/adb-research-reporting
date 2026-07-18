@@ -1,26 +1,29 @@
-# Results — Food Price Climate Transmission (reformulated)
+# Results — corrected Nepal market-month screen
 
-`attestation_chain: ai-first`. §18 SR — 2026-04-27. **Reformulated
-after original composite failed sensitivity gate.**
+`attestation_chain: ai-first` · PP · 2026-07-19
 
-## Headline
+## Finding
 
-Two ADB DMCs — **Lao PDR and Pakistan** — sit in the top-N of BOTH
-WDI CPI inflation AND WDI ag-imports-share-of-merchandise across
-every N from 3 to 10. A third, Bangladesh, joins from N=5 onward.
-The headline is the **joint intersection set**, not a score.
+The corrected panel contains 760 market-month observations with year-on-year
+coarse-rice price change and one-month-lag rainfall. Of 152 price-spike cells,
+17 are dry-aligned and 135 are not. Dryness therefore coincides with 11.18% of
+spike cells under the main definition.
 
-The reformulation replaces the original composite (which failed the
-±50% sensitivity gate) with a set-based joint qualifier. The joint
-qualifier is invariant to weight choice by construction.
+At alternative rainfall lags, the aligned shares are 11.84% at zero months,
+5.92% at three months, and 8.55% at six months. No lag makes local dryness the
+dominant pattern.
 
-| ISO3 | CPI inflation % | Ag imports % merch | Joint top-N? |
-|---|---|---|---|
-| LAO | 23.1 | 4.6 | yes (every N) |
-| PAK | 12.6 | 4.3 | yes (every N) |
-| BGD | 10.5 | 6.0 | yes (N≥5) |
+The main classification identifies ten broad non-dry wave months and two
+dry-aligned cluster months, concentrated in 2023–2024. Those counts are not
+headline findings because the 81-run threshold factorial produces 0–44 broad
+wave months and 0–27 dry clusters.
 
-PAK's CPI in 2023 was exchange-rate-driven, not climate-driven (per
-WB Food Crisis Observatory). The joint qualifier doesn't separate
-drivers; it identifies joint vulnerability, not climate transmission.
-The transmission analysis is the §18.5 upgrade-pass.
+The annual CPI comparison has only five observations. Spearman is +0.2052,
+Pearson +0.2019, and the exact two-sided permutation p-value is 0.7333. This
+does not validate annual CPI as a market-rice outcome.
+
+## Decision
+
+Retire the inherited annual qualifier and old price-wave count. Publish the
+minority-alignment finding as a construct validation. Do not make a causal
+climate-to-price claim.

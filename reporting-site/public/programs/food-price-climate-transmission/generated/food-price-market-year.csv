@@ -1,0 +1,7 @@
+year,observed_market_month_cells,median_market_rice_yoy_log_change_pct,price_spike_cells,price_spike_cell_share,dry_aligned_price_spike_cells,dry_share_of_price_spike_cells,broad_non_dry_wave_months,dry_aligned_cluster_months,wdi_headline_cpi_inflation_pct
+2020,107,4.879,12,0.1121,1,0.0833,0,0,5.05635826238499
+2021,132,0.0,19,0.1439,2,0.1053,0,0,4.12676744440695
+2022,138,4.0822,8,0.058,1,0.125,0,0,7.6702057938028
+2023,143,18.2322,66,0.4615,6,0.0909,5,1,7.11587261530826
+2024,120,18.2322,47,0.3917,7,0.1489,5,1,4.6850965426577
+2025,120,0.0,0,0.0,0,0,0,0,

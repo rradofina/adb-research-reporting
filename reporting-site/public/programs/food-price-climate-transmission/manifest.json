@@ -1,25 +1,25 @@
 {
   "program": "food-price-climate-transmission",
   "permanent_url": "/food-price-climate-transmission?view=evidence",
-  "generated_at": "2026-07-18T16:21:16.681Z",
+  "generated_at": "2026-07-18T17:20:07.557Z",
   "hero": {
     "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
     "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
     "json": "generated/charts/food-price-climate-transmission-thumbnail.json",
-    "title": "Two economies with high CPI inflation AND ag-import exposure",
-    "caption": "Lao PDR (CPI 23.1 %, ag-imports 4.6 % of merchandise) and Pakistan (12.6 % / 4.3 %) are the only DMCs that clear both axes — stable across every N from 3 to 10.",
-    "headline_number": "LAO 23.1% CPI · 4.6% ag-imports",
-    "visual_form": "two-axis scatter (CPI × ag-import share)",
-    "source": "WDI CPI inflation + agricultural-import share",
+    "title": "Only one in nine corrected rice-price spikes follows locally dry rainfall",
+    "caption": "Seventeen of 152 corrected Nepal coarse-rice price-spike cells follow locally dry rainfall at the one-month lag.",
+    "headline_number": "17 of 152 · 11.2%",
+    "visual_form": "construct-validation finding card",
+    "source": "food-price-climate-transmission/generated/food-price-construct-validation.json",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:28:55+00:00",
+    "generated_at": "2026-07-18T17:19:43.278476+00:00",
     "dimensions": {
-      "width": 1600,
-      "height": 900
+      "width": 2570,
+      "height": 1472
     },
     "sha256": {
-      "png": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5",
-      "svg": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+      "png": "9d4892e48ca359258ea45edbdee885b07458cae01e7154efbfd49ea64524542c",
+      "svg": "9c90aea91610b340c1430a1f665ed5bc225e25cd246aa788f43245091f56894a"
     }
   },
   "artifacts": [
@@ -27,121 +27,249 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1201,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.336Z",
-      "sha256": "f7c9589a5aca4f5e33b3ce11626894eb60caa57f085af7fc7882509b6a38c2a5",
-      "attestation_chain": null
+      "size": 2172,
+      "size_human": "2.1 KB",
+      "mtime": "2026-07-18T16:46:52.266Z",
+      "sha256": "3bd70a71339206dd17c9f91fb27d735a9b0343afc0601a6283bbadfd0ea305a7",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1390,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T16:46:52.266Z",
+      "sha256": "d44cdf03d129cbb448445df5d8cb270ebcc4554d912a5a96bde7fff5dce506aa",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1910,
-      "size_human": "1.9 KB",
-      "mtime": "2026-04-27T03:43:40.558Z",
-      "sha256": "6ce27144a7f4e71d78c9efb5040abcaf915ffdfa4c887a4205bff272f077d189",
+      "size": 1296,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T16:46:52.275Z",
+      "sha256": "a570bb49963bc776c69502903cda26e5377411cda8bf0a151127456d94034173",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1235,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-27T00:24:45.833Z",
-      "sha256": "6b83dfd2d7e855900cf4f4c55dddb3d705e9d964fc2183105665708bee18fde9",
+      "size": 1501,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T16:46:52.277Z",
+      "sha256": "e211d7c43a8ce724fa2bfcae0b0a0ca326d091b5b94f0b12812164db20e0acc2",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 1033,
+      "size": 1042,
       "size_human": "1.0 KB",
-      "mtime": "2026-04-27T00:24:52.430Z",
-      "sha256": "e491dfe66c57c988f2048f79adf93d11e79e817242926e2f4acb8ecd38dbe84c",
+      "mtime": "2026-07-18T16:46:52.270Z",
+      "sha256": "dc2381037f1ba1740dfc5114812f3e9a6778c40dc7c46b0ef1b93bdb53212b3f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
       "file": "sensitivity-runs.json",
       "label": "Sensitivity-run output",
-      "size": 908,
-      "size_human": "908 B",
-      "mtime": "2026-04-27T00:24:28.494Z",
-      "sha256": "ac6d740d6196dff7eafbb9e2472bdff05eacaa06954dc55dcf8b7baa60f65ebd",
+      "size": 35379,
+      "size_human": "34.5 KB",
+      "mtime": "2026-07-18T17:03:19.085Z",
+      "sha256": "a41270157d0aff67a0e793c110276b4799592d38ba6baf24119ce772d1bc84c1",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 504,
-      "size_human": "504 B",
-      "mtime": "2026-04-27T00:24:56.294Z",
-      "sha256": "f4061afe9ff36131133e1a3322cb6c0a0744609f4c532d123c24a4daa05b0651",
+      "size": 613,
+      "size_human": "613 B",
+      "mtime": "2026-07-18T16:46:52.274Z",
+      "sha256": "2a4a4a059b50494ef77003f53968e792fc9b0446850d6e2adee7060fd4b9e899",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 1105,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-27T00:25:21.794Z",
-      "sha256": "45e91cc9f14674b94dbfce38080af8305c178a106c950e919b99dc38f8b01238",
+      "size": 1227,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T16:46:52.269Z",
+      "sha256": "a417f10638a73d1ddec9e886141836b2a81e42dd63f3469092ddf086cd085272",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 901,
-      "size_human": "901 B",
-      "mtime": "2026-04-27T00:25:02.493Z",
-      "sha256": "07ec928a1ab8f169dffebb19585388a61bf96529f9d84df815be3d8d888e872d",
+      "size": 1342,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T16:48:42.927Z",
+      "sha256": "c935db3c7a7caf24ee467882e2b2a1d164c470386daf208856b899c44d39ffaf",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1524,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-27T00:25:12.294Z",
-      "sha256": "70886421cffa681251be56be3c9092c852747cc0df49294203325a8b517a7134",
+      "size": 2233,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T16:48:42.928Z",
+      "sha256": "71d54f7f4800b65df4c1de1caec90071a537d3fa4dc3e841db79fb99a0a5d93a",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 862,
-      "size_human": "862 B",
-      "mtime": "2026-04-27T00:25:16.934Z",
-      "sha256": "95431688bab92c1f8dac68de33c6b527d09dcd3cc71dd18db125782eb7af9af6",
+      "size": 937,
+      "size_human": "937 B",
+      "mtime": "2026-07-18T16:46:52.272Z",
+      "sha256": "21e20996f8781ebc321556a8df713a8d7c1a8e974684699d2b72f9d662d05248",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1015,
+      "size_human": "1015 B",
+      "mtime": "2026-07-18T16:46:52.278Z",
+      "sha256": "44c3dae24f951826bada849c8ee1ab5eff5096d475fe84279bcac97c731306c8",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/food-price-annual-alignment.png",
+      "size": 162414,
+      "size_human": "158.6 KB",
+      "sha256": "d07f6924ea58086cddda759eff453fb81472fea4044c0593e2022b2ab4b34c08"
+    },
+    {
+      "file": "generated/charts/food-price-annual-alignment.svg",
+      "size": 96678,
+      "size_human": "94.4 KB",
+      "sha256": "b81f923bc15c7d39d1266a7fc041272d5e9023938b3a4a14b50c43d002a22dc9"
+    },
+    {
+      "file": "generated/charts/food-price-claim-gates.png",
+      "size": 168243,
+      "size_human": "164.3 KB",
+      "sha256": "5948471c128c233717e7ee6e611680a2ec0571820ca7aa2004ebfaf828741680"
+    },
+    {
+      "file": "generated/charts/food-price-claim-gates.svg",
+      "size": 87970,
+      "size_human": "85.9 KB",
+      "sha256": "28dc77c0be423c884b0dabe74a85972731a42ad6a999058d5bb3ef984f6b773c"
+    },
+    {
       "file": "generated/charts/food-price-climate-transmission-thumbnail.json",
-      "size": 1162,
-      "size_human": "1.1 KB",
-      "sha256": "dc1fa38d59222c8005313592cbe1216390baca8c1cf194314cd2078d812f4869"
+      "size": 1726,
+      "size_human": "1.7 KB",
+      "sha256": "573ce179f6d35a1a102d971707b5db1c0ecf54504edcbf576a5596b04ee90800"
     },
     {
       "file": "generated/charts/food-price-climate-transmission-thumbnail.png",
-      "size": 103971,
-      "size_human": "101.5 KB",
-      "sha256": "76f21ab7d12702228a46669600dabe208c5bf4a6c3549c340891b33e3554a7f5"
+      "size": 114489,
+      "size_human": "111.8 KB",
+      "sha256": "9d4892e48ca359258ea45edbdee885b07458cae01e7154efbfd49ea64524542c"
     },
     {
       "file": "generated/charts/food-price-climate-transmission-thumbnail.svg",
-      "size": 144475,
-      "size_human": "141.1 KB",
-      "sha256": "a49e14a308dcd3af5f2ca87fa6c62c120b208e1ecbaf96e5aafbe13dc5f3238a"
+      "size": 59169,
+      "size_human": "57.8 KB",
+      "sha256": "9c90aea91610b340c1430a1f665ed5bc225e25cd246aa788f43245091f56894a"
+    },
+    {
+      "file": "generated/charts/food-price-macro-market-mismatch.png",
+      "size": 172444,
+      "size_human": "168.4 KB",
+      "sha256": "a1b5b9e1608bdd5c2851ecff1cf5b58f9dedde11b022ec117b699f26da630238"
+    },
+    {
+      "file": "generated/charts/food-price-macro-market-mismatch.svg",
+      "size": 98976,
+      "size_human": "96.7 KB",
+      "sha256": "604262689f6fd29819d1d6ffdaef1efbff59f3977fbf0a2b6bb99e35e0c006fd"
+    },
+    {
+      "file": "generated/charts/food-price-method-correction.png",
+      "size": 165433,
+      "size_human": "161.6 KB",
+      "sha256": "bfe71ec9416f5d58e496ad5aba32cb743b089337e91772b81962f374f0253dae"
+    },
+    {
+      "file": "generated/charts/food-price-method-correction.svg",
+      "size": 95885,
+      "size_human": "93.6 KB",
+      "sha256": "54e3e902d8c826cc0e84fdd1588b64020a0cf810747d1001e6a3a8c2c530cc35"
+    },
+    {
+      "file": "generated/charts/food-price-rain-lag-sensitivity.png",
+      "size": 152973,
+      "size_human": "149.4 KB",
+      "sha256": "037607cf561bdf3bc2bf829c4e6c05d6161cfc74e46d955945df1ccf5d61a653"
+    },
+    {
+      "file": "generated/charts/food-price-rain-lag-sensitivity.svg",
+      "size": 89249,
+      "size_human": "87.2 KB",
+      "sha256": "ab7c7a1ed47775baea63282ae08b9690812ee848650b29a00250bc98e73fc5a5"
+    },
+    {
+      "file": "generated/charts/food-price-source-alignment-funnel.png",
+      "size": 136678,
+      "size_human": "133.5 KB",
+      "sha256": "a5d5383d23c737a26f71883f3db84d6583837aed13abab08c7a33de22d649993"
+    },
+    {
+      "file": "generated/charts/food-price-source-alignment-funnel.svg",
+      "size": 72804,
+      "size_human": "71.1 KB",
+      "sha256": "2e90074c74d9149b86af0b08035e8a22bf0799c71a85c4122cc60c51d2967ae5"
+    },
+    {
+      "file": "generated/charts/food-price-spike-alignment.png",
+      "size": 164957,
+      "size_human": "161.1 KB",
+      "sha256": "a53fec47e9b555680c3c2d2ce6f4ce4a1dbfaa4b23d004b0d82a03125f16276c"
+    },
+    {
+      "file": "generated/charts/food-price-spike-alignment.svg",
+      "size": 97051,
+      "size_human": "94.8 KB",
+      "sha256": "61e2050a30cf87b2a5ad7552de4e4eaf3d3349636775ca4b5435e78725caabf0"
+    },
+    {
+      "file": "generated/charts/food-price-threshold-sensitivity.png",
+      "size": 173849,
+      "size_human": "169.8 KB",
+      "sha256": "d07d8e5564df9b39d2ef1c7ae7b23d60b4d750b54ba49d67dfccf13756992c0e"
+    },
+    {
+      "file": "generated/charts/food-price-threshold-sensitivity.svg",
+      "size": 108378,
+      "size_human": "105.8 KB",
+      "sha256": "e5f38db32a2ee86feb4ac6458e019b635e7fb26489d6ff5d9ec2fe769d899029"
+    },
+    {
+      "file": "generated/charts/food-price-wave-timeline.png",
+      "size": 152040,
+      "size_human": "148.5 KB",
+      "sha256": "afa6f9c21278d741db08917a8f01aca0f53c7731c22ba5d6be0072f915579f7a"
+    },
+    {
+      "file": "generated/charts/food-price-wave-timeline.svg",
+      "size": 98732,
+      "size_human": "96.4 KB",
+      "sha256": "f4b83bc605cd45f0b66aef7f6811b61df03354ad49c4df7277e256b5f2d93c7d"
     },
     {
       "file": "generated/food-price-adb-panel.csv",
@@ -154,6 +282,12 @@
       "size": 13022,
       "size_human": "12.7 KB",
       "sha256": "04bbba27fa2f0bbff4b06326d6d9c4cf71cbfe19ae404258c1395a7515b458dc"
+    },
+    {
+      "file": "generated/food-price-construct-validation.json",
+      "size": 52252,
+      "size_human": "51.0 KB",
+      "sha256": "89caa8e649ca80ba874b82bc3d0cd9dbc48aff9339cd33ff24f7f7fe7af96c08"
     },
     {
       "file": "generated/food-price-coverage-deepening.csv",
@@ -192,6 +326,18 @@
       "sha256": "2dd854bf3e16e59db1ff32682c7135eface84c096b54c562509b5dee7e95bc35"
     },
     {
+      "file": "generated/food-price-market-month-corrected.csv",
+      "size": 162557,
+      "size_human": "158.7 KB",
+      "sha256": "2b2d895d18f6d11342222754ea9b42fb0d93d5f81ae313e2fc14b3e46ff8d1e0"
+    },
+    {
+      "file": "generated/food-price-market-year.csv",
+      "size": 565,
+      "size_human": "565 B",
+      "sha256": "f4d4d650688ca0ec7319f8a1acb5aa01b0257bb34107951a2c7fcfaa2f750a65"
+    },
+    {
       "file": "generated/food-price-reformulated-adb-panel.csv",
       "size": 1954,
       "size_human": "1.9 KB",
@@ -202,12 +348,18 @@
       "size": 13045,
       "size_human": "12.7 KB",
       "sha256": "25615ae4f88f5cd46eaaca735f606cecf89279498a51f427f9498f80439fd2fe"
+    },
+    {
+      "file": "generated/food-price-threshold-sensitivity.csv",
+      "size": 3351,
+      "size_human": "3.3 KB",
+      "sha256": "c9e5d3fc49cb3b8bb4fbde493497ca737a73ab5e5ac62de7fa967b111f5bae14"
     }
   ],
   "articles": [
     {
       "slug": "food-price-joint-qualifier",
-      "title": "Two DMCs sit at the top of both food-price-stress rankings — Lao PDR and Pakistan",
+      "title": "Only one in nine corrected Nepal rice-price spikes followed locally dry rainfall",
       "attestation_chain": "ai-first"
     }
   ],
@@ -281,7 +433,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -306,21 +458,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/food-price-climate-transmission/REPRODUCE.md",
+    "deck": "/programs/food-price-climate-transmission/food-price-climate-transmission-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/food-price-climate-transmission"
   }

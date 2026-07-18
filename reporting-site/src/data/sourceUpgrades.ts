@@ -184,16 +184,17 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "food-price-climate-transmission",
     betterSource:
-      "FAO FPMA; WFP VAM market prices; FEWS NET Data Center; CHIRPS rainfall; ERA5 heat; commodity calendars.",
+      "WFP or official multi-commodity market prices; public geocoded hazard events; crop calendars and production zones; roads, fuel, exchange rates, trade, and policy series.",
     betterUnit:
-      "Market, commodity, month, livelihood zone, and local climate anomaly.",
+      "Market, commodity, dated hazard event, production or sourcing zone, and connectivity class.",
     priority: "P1",
     rationale:
-      "Climate-to-price transmission cannot be tested with annual macro indicators. Market-month price series are the minimum serious unit.",
+      "The market-month correction is sufficient to reject the annual screen, but attribution requires event timing, multiple commodities, market structure, and common-driver controls.",
     sourceLinks: [
       { label: "FAO FPMA", href: "https://www.fao.org/giews/food-prices/price-tool/en/" },
-      { label: "FEWS NET Data Center", href: "https://fews.net/data" },
-      { label: "WFP market analysis", href: "https://www.wfp.org/market-analysis" },
+      { label: "WFP Nepal prices", href: "https://data.humdata.org/dataset/wfp-food-prices-for-nepal" },
+      { label: "NASA POWER monthly API", href: "https://power.larc.nasa.gov/docs/services/api/temporal/monthly/" },
+      { label: "IMF Nepal climate-price study", href: "https://www.imf.org/en/Publications/WP/Issues/2023/08/18/Climate-Shocks-and-Food-Prices-Evidence-from-Nepal-537807" },
     ],
   },
   {

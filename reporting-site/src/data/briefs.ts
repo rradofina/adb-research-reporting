@@ -129,25 +129,26 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
   },
   "digital-performance": {
     slug: "digital-performance",
+    articleSlug: "digital-availability-use-gap",
     domain: "Connectivity",
     finish: "prepared-pipeline",
     question:
-      "Do measured fixed and mobile speeds reveal a digital-performance gap that headline subscription indicators miss?",
+      "Do reported 4G/LTE population coverage and recent internet use tell the same connectivity story?",
     output:
-      "Ookla Q1 2026 manifest and DuckDB SQL are committed for Philippines and Bangladesh pilots; no parquet aggregation has been run.",
-    chartTitle: "Chart pending: Ookla parquet aggregation",
-    sourceNote: "Ookla Open Data manifest; SQL prepared for large parquet files.",
+      "In 2024, coverage exceeds use by a median 14.3 percentage points across 34 exact-year ADB developing member cases; 31 differences are positive.",
+    chartTitle: "4G/LTE availability minus internet use, 2024",
+    sourceNote: "ITU DataHub i271GA and i99H; exact economy-year pairs with no temporal imputation.",
     caveat:
-      "No speed, latency, or coverage claim should appear until the parquet files are downloaded and aggregated.",
+      "The difference is between aggregate official indicators, not a person-level count; it does not measure speed, quality, household affordability, or causal effects.",
     nextStep:
-      "Fetch the mobile and fixed parquet files, run DuckDB aggregation, and publish fixed/mobile median-speed charts.",
+      "Expand comparable urban/rural and demographic use data, then add Ookla only as a separate performance-conditional-on-testing layer.",
     granularity: {
-      currentUnit: "Prepared PHL/BGD Ookla manifest; no aggregated tile result yet",
-      targetUnit: "Ookla fixed/mobile tile, city, municipality, school/clinic catchment",
+      currentUnit: "Economy-year exact matches across 39 observed roster economies, 2012–2024",
+      targetUnit: "Household/person, rural/urban stratum, municipality, and tested performance tile as separate layers",
       gap:
-        "Parquet aggregation has not run, so no speed, latency, or measurement-density surface exists.",
+        "National aggregates cannot identify the covered-but-offline population or explain barriers; only ten 2024 cases have exact-year rural/urban use rates.",
       upgradeData:
-        "Ookla fixed/mobile parquet, ITU/WDI ICT indicators, WorldPop/GHSL, admin boundaries, and service POIs.",
+        "Household ICT surveys, device ownership, digital skills, stated non-use barriers, distribution-sensitive affordability, and Ookla/MLab as conditional quality layers.",
     },
   },
   "air-monitoring": {

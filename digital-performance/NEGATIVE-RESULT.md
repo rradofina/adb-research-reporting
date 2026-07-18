@@ -1,5 +1,10 @@
 # Pipeline-required — Digital Performance
 
+> **Superseded on 2026-07-19.** This historical note documents the retired
+> speed-first route. The program now has an executed, exact-year ITU
+> availability–use measurement study. Ookla remains a separate future
+> performance layer; see `README.md` and `results.md`.
+
 `attestation_chain: n/a`. 2026-04-27.
 
 ## Status

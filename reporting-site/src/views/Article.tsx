@@ -59,9 +59,28 @@ export default function Article({ slug = "" }: { slug?: string }) {
       const stripped = stripFrontmatter(body);
       const rendered = await marked.parse(stripped);
       const rawHtml = typeof rendered === "string" ? rendered : "";
+      // Standalone Markdown images are evidence figures on research pages.
+      // Promote them to semantic figures and expose the descriptive alt text as
+      // a visible caption so the chart's role in the argument is not hidden.
+      const figuredHtml = rawHtml.replace(
+        /<p><img\s+([^>]+)><\/p>/g,
+        (_match, attrs: string) => {
+          const altMatch = attrs.match(/\balt="([^"]*)"/);
+          const srcMatch = attrs.match(/\bsrc="([^"]*)"/);
+          const caption = altMatch?.[1]?.trim();
+          const src = srcMatch?.[1];
+          const image = src
+            ? `<a class="ed-paper-figure-link" href="${src}" target="_blank" rel="noreferrer" aria-label="Open full-size figure"><img ${attrs}></a>`
+            : `<img ${attrs}>`;
+          const figcaption = caption || src
+            ? `<figcaption>${caption ? `<span>${caption}</span>` : ""}${src ? `<a href="${src}" target="_blank" rel="noreferrer">Open full-size figure ↗</a>` : ""}</figcaption>`
+            : "";
+          return `<figure class="ed-paper-figure">${image}${figcaption}</figure>`;
+        },
+      );
       // Resolve [@bibtex-key] citations + append References section
       const refIndex = byKey(refs);
-      const { html: resolved, cited } = resolveCitations(rawHtml, refIndex);
+      const { html: resolved, cited } = resolveCitations(figuredHtml, refIndex);
       const finalHtml = resolved + renderReferenceList(cited);
       if (!cancelled) {
         setMeta(m);
@@ -261,8 +280,11 @@ export default function Article({ slug = "" }: { slug?: string }) {
           </p>
           <p>
             A clean clone of the upstream repository at the publication commit
-            reproduces every value in this paper without any API key or live
-            network call. Per Constitution §11.
+            contains the scripts, generated analytical inputs, source custody,
+            and figure specifications needed to audit every visible value.
+            Raw upstream caches are rehydrated from the recorded public URLs;
+            program-specific network and credential requirements are stated in
+            the reproduction guide. Per Constitution §11.
           </p>
         </section>
       )}

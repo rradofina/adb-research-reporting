@@ -169,15 +169,14 @@ Run this checklist before closing any public-surface session:
    `{program}/generated/evidence-ledger.{json,csv}` aliases. Both showcase
    routes now use the shared component for group cards, filtering, file links,
    and responsive ledger tables.
-5. **Done 2026-07-07:** Audited the active program route. All
+5. **Done 2026-07-07; refreshed 2026-07-19:** Audited the active program route. All
    `/program/{slug}` and `/program/{slug}/evidence` links redirect to the
-   generic `Topic.tsx` surface; 16 of 18 topics have paper + hero +
-   evidence surfaces, `mpi-nighttime-lights` has evidence but no paper/hero,
-   and `digital-performance` has only the register summary. Fixed the
-   shared topic shell so a topic opens to the best available surface
-   (paper, then evidence, then overview) instead of an empty Paper tab.
-   Remaining per-topic deviations are now presentation moves, not route
-   bugs.
+   generic `Topic.tsx` surface. `digital-performance` now has a full paper,
+   hero, nine-section evidence story, and 12-figure dossier;
+   `mpi-nighttime-lights` remains the sole topic without a finished paper/hero
+   under its owner/coauthor-led path. The research view keeps prose to a
+   readable measure, gives charts the full evidence canvas, shows captions and
+   full-size links, and does not repeat the paper before the evidence sections.
 6. **Done 2026-07-07:** Added a shared current-issue closure contract
    (`reporting-site/src/data/issueClosure.ts`) and used it on Home,
    Research, and Briefs. The public issue now classifies all 18 topics

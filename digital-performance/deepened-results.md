@@ -2,6 +2,11 @@
 
 `attestation_chain: ai-first`
 
+> **Superseded on 2026-07-19.** This document preserves the inherited Ookla
+> route and the earlier source wall. The current executed study is the
+> exact-year ITU availability–use analysis in `results.md`; Ookla is now a
+> separate future service-quality layer, not the flagship dependency.
+
 This is the deepening pass for a Stage-1 program, and it is honest about why
 it produces no figures yet. Unlike the other deepened results in this repo,
 there is **no recomputation here, because there is no data on disk to

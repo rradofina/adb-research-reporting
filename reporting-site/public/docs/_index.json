@@ -2,8 +2,8 @@
   {
     "file": "constitution.md",
     "source": "CONSTITUTION.md",
-    "size": 71477,
-    "size_human": "69.8 KB"
+    "size": 71772,
+    "size_human": "70.1 KB"
   },
   {
     "file": "operating-rules.md",
@@ -44,7 +44,7 @@
   {
     "file": "design.md",
     "source": "research/DESIGN.md",
-    "size": 10031,
+    "size": 10064,
     "size_human": "9.8 KB"
   },
   {
@@ -62,8 +62,8 @@
   {
     "file": "visual-roadmap.md",
     "source": "research/VISUAL-ROADMAP.md",
-    "size": 6110,
-    "size_human": "6.0 KB"
+    "size": 6365,
+    "size_human": "6.2 KB"
   },
   {
     "file": "factory.md",
@@ -74,14 +74,14 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 226357,
-    "size_human": "221.1 KB"
+    "size": 226754,
+    "size_human": "221.4 KB"
   },
   {
     "file": "wip-register.md",
     "source": "research/wip-register.md",
-    "size": 11506,
-    "size_human": "11.2 KB"
+    "size": 12065,
+    "size_human": "11.8 KB"
   },
   {
     "file": "red-team.md",
@@ -104,8 +104,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 138268,
-    "size_human": "135.0 KB"
+    "size": 139251,
+    "size_human": "136.0 KB"
   },
   {
     "file": "manifest.sha256",

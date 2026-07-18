@@ -550,6 +550,38 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "digital-availability-use-gap",
+    "title": "The network is present. Use still lags.",
+    "subtitle": "Exact-year ITU data show a 14.3-point median difference between reported 4G availability and internet use across 34 ADB developing member cases in 2024.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "digital-performance",
+    "maturity": "SR",
+    "topics": [
+      "digital inclusion",
+      "mobile coverage",
+      "internet use",
+      "affordability",
+      "statistical measurement"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "In 2024, reported 4G/LTE population coverage exceeds internet use in 31 of 34 ADB developing member economies with exact-year ITU observations. The median difference is 14.3 percentage points; median coverage is 98.0% and median use is 82.2%. A balanced 28-economy comparison shows the median gap narrowing by 5.9 points from 2018 to 2024, but 12 economies widen. A 5 GB mobile-data price basket has only a weak cross-sectional association with the gap, while an urban-rural use diagnostic is strong but covers only ten economies. The study measures a difference between official availability and use indicators; it does not identify covered non-users, service quality, affordability incidence, or causal effects.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "digital-availability-use-gap.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "invisible-urbanization-cluster",
     "title": "One urban share can be 20 points from another",
     "subtitle": "A GHSL–WDI measurement study across ADB developing economies shows why definition, administrative scale, and reclassification change the urban story.",
@@ -774,6 +806,35 @@
     "file": "coastal-informal-cluster-brief.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "digital-availability-use-gap-brief",
+    "title": "Network availability is not internet use",
+    "subtitle": "A two-page evidence brief for connectivity monitoring across ADB developing member economies.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "digital-performance",
+    "maturity": "PP",
+    "topics": [
+      "digital inclusion",
+      "connectivity monitoring"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "In 2024, reported 4G/LTE population coverage exceeds internet use by a median 14.3 percentage points across 34 exact-year ADB developing member cases. The difference is positive in 31. It is a measurement difference, not a count of covered non-users.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "digital-availability-use-gap-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },
@@ -1198,6 +1259,35 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "digital-availability-use-gap-blog",
+    "title": "A signal can reach you before the Internet does",
+    "subtitle": "Why connectivity dashboards need separate measures for network availability and actual use.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "digital-performance",
+    "maturity": "PP",
+    "topics": [
+      "digital inclusion",
+      "data storytelling"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Exact-year ITU data show a 14.3-point median difference between reported 4G availability and internet use across 34 ADB developing member economies in 2024.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "digital-availability-use-gap-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "disaster-recovery-lag",
     "title": "The archive worked. The recovery measure did not.",
     "subtitle": "",
@@ -1616,6 +1706,34 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "digital-availability-use-gap-social",
+    "title": "Network available ≠ Internet used",
+    "subtitle": "Social copy derived from the digital-performance measurement study.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "digital-performance",
+    "maturity": "PP",
+    "topics": [
+      "digital inclusion"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Exact-year ITU data separate reported 4G availability from Internet use.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "digital-availability-use-gap-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "disaster-recovery-lag",
     "title": "Disaster recovery construct validation — social copy",
     "subtitle": "",
@@ -2015,6 +2133,35 @@
     "file": "coastal-informal-cluster-slides.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "digital-availability-use-gap-slides",
+    "title": "The network is present. Use still lags.",
+    "subtitle": "An eight-slide evidence deck on availability and use across ADB developing member economies.",
+    "kind": "slides",
+    "tier": "slides",
+    "status": "draft",
+    "program": "digital-performance",
+    "maturity": "PP",
+    "topics": [
+      "digital inclusion",
+      "connectivity monitoring"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Eight-slide presentation of the exact-year ITU availability-use study.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "digital-availability-use-gap-slides.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },

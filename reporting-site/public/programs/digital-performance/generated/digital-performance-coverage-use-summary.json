@@ -1,0 +1,181 @@
+{
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T20:44:58+00:00",
+  "study": "availability-use gap from exact-year ITU indicators",
+  "definitions": {
+    "coverage_4g": "ITU i271GA: population within range of at least a 4G/LTE mobile-cellular signal, irrespective of subscription or use",
+    "internet_use": "ITU i99H: individuals using the Internet from any location in the previous three months",
+    "gap": "coverage_4g_pct minus internet_use_pct, percentage points"
+  },
+  "roster_n": 44,
+  "period": [
+    2012,
+    2024
+  ],
+  "headline_year": 2024,
+  "headline": {
+    "roster_coverage_floor_share": 0.5,
+    "roster_coverage_floor_n": 22,
+    "headline_year": 2024,
+    "paired_economies": 34,
+    "median_gap_pp": 14.3182525,
+    "median_4g_coverage_pct": 98.0,
+    "median_internet_use_pct": 82.1755025,
+    "positive_gap_economies": 31,
+    "negative_gap_economies": 3
+  },
+  "sensitivity": {
+    "minus_50pct": {
+      "roster_coverage_floor_share": 0.25,
+      "roster_coverage_floor_n": 11,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    },
+    "baseline": {
+      "roster_coverage_floor_share": 0.5,
+      "roster_coverage_floor_n": 22,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    },
+    "plus_50pct": {
+      "roster_coverage_floor_share": 0.75,
+      "roster_coverage_floor_n": 33,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    }
+  },
+  "paired_headline_economies": [
+    "AFG",
+    "ARM",
+    "AZE",
+    "BGD",
+    "BRN",
+    "BTN",
+    "CHN",
+    "FJI",
+    "FSM",
+    "GEO",
+    "HKG",
+    "IDN",
+    "IND",
+    "KAZ",
+    "KGZ",
+    "KHM",
+    "KIR",
+    "LAO",
+    "LKA",
+    "MDV",
+    "MNG",
+    "MYS",
+    "NPL",
+    "NRU",
+    "PAK",
+    "PHL",
+    "PNG",
+    "SLB",
+    "THA",
+    "TJK",
+    "TON",
+    "TWN",
+    "UZB",
+    "VNM"
+  ],
+  "excluded_headline_economies": [
+    {
+      "iso3": "COK",
+      "country": "Cook Islands"
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands"
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar"
+    },
+    {
+      "iso3": "NIU",
+      "country": "Niue"
+    },
+    {
+      "iso3": "PLW",
+      "country": "Palau"
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa"
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste"
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan"
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu"
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu"
+    }
+  ],
+  "panel_rows": 391,
+  "panel_economies": 39,
+  "panel_year_counts": {
+    "2012": 8,
+    "2013": 17,
+    "2014": 32,
+    "2015": 37,
+    "2016": 35,
+    "2017": 36,
+    "2018": 30,
+    "2019": 35,
+    "2020": 35,
+    "2021": 33,
+    "2022": 33,
+    "2023": 26,
+    "2024": 34
+  },
+  "headline_source_type_counts": {
+    "itu_estimate": 20,
+    "other_or_mixed": 14
+  },
+  "secondary_exact_match_counts": {
+    "mobile_5gb_pct_gni": 57,
+    "urban_rural_use_gap": 89,
+    "headline_mobile_5gb_pct_gni": 32,
+    "headline_urban_rural_use_gap": 10
+  },
+  "coverage_3g_hierarchy_flags": 1,
+  "rejected_source_rows": {
+    "coverage_4g": 0,
+    "internet_use": 0,
+    "coverage_3g": 0,
+    "affordability_5gb": 0,
+    "internet_use_rural": 0,
+    "internet_use_urban": 0
+  },
+  "claim_guard": [
+    "The gap is descriptive and does not identify why people do not use the Internet.",
+    "The two indicators mix administrative reports, estimates, and survey-derived values; source notes are retained.",
+    "Coverage is not speed, reliability, affordability, digital skill, or welfare."
+  ]
+}

@@ -28,7 +28,16 @@ work that is **deliberately not AI-doable** under §18.
   methods note, or working-paper outline only after the package evidence
   spine and chart source notes are complete.
 
-### 1. Ookla pipeline → digital-performance to SR
+### 1. Digital-performance independent-data upgrade — current SR issue closed
+
+The 2026-07-19 exact-year ITU availability–use study displaced the inherited
+Ookla-first plan and promoted the program to SR. The next eligible move is an
+independent household/device/skills/non-use-barrier object. Ookla remains a
+separate quality layer conditional on testing, not the route to an adoption
+claim.
+
+<details>
+<summary>Superseded inherited Ookla-first task</summary>
 
 - **Source**: Ookla Speedtest Open Data on AWS S3
   (`s3://ookla-open-data/parquet/performance/`). Public bucket,
@@ -40,6 +49,8 @@ work that is **deliberately not AI-doable** under §18.
   via DuckDB; (c) ADB-DMC-filter; (d) sensitivity at ±50% on the
   ITU broadband threshold (10 Mbps download). Estimate 2–3 hours
   including SR-tier evidence-packet write-up.
+
+</details>
 
 ### 2. PSDQ extension to IND
 

@@ -8672,6 +8672,15 @@
       grid-template-columns: minmax(0, 1fr) var(--layout-topic-sidebar);
       align-items: start;
     }
+
+    .topic-grid-paper {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .topic-grid-paper .topic-sidebar {
+      max-width: var(--measure-research);
+      margin-top: 1rem;
+    }
   }
 
   .topic-main {
@@ -8700,6 +8709,45 @@
   .research-story-section .prose-article > p:has(> img),
   .research-story-section .prose-article > p:has(> picture) {
     max-width: 100%;
+  }
+
+  .research-evidence-figure {
+    width: 100%;
+    margin: 2rem 0 2.65rem;
+  }
+
+  .research-evidence-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule-soft);
+    background: #fff;
+  }
+
+  .research-evidence-figure-link {
+    display: block;
+  }
+
+  .research-evidence-figure figcaption {
+    max-width: var(--measure-research);
+    margin-top: 0.7rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+    color: var(--ink-faint);
+    font-size: var(--type-copy-sm);
+    line-height: 1.5;
+  }
+
+  .research-evidence-figure figcaption a {
+    flex: 0 0 auto;
+    color: var(--crimson);
+    font-family: var(--font-mono);
+    font-size: var(--type-copy-xs);
+    letter-spacing: 0.03em;
+    text-decoration: none;
   }
 
   .topic-body-pending {
@@ -9201,15 +9249,17 @@
   /* ---------- Working-paper article view (default for /findings/:slug) ---------- */
 
   .ed-paper {
-    max-width: 760px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 3.5rem 1.5rem 5rem;
+    padding: 3.5rem 2rem 5rem;
     font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     color: var(--ink);
   }
 
   /* === Cover page === */
   .ed-paper-cover {
+    max-width: 860px;
+    margin-inline: auto;
     text-align: left;
     padding-bottom: 2.5rem;
   }
@@ -9426,6 +9476,53 @@
     counter-reset: section-counter;
   }
 
+  .ed-paper-body > h1,
+  .ed-paper-body > h2,
+  .ed-paper-body > h3,
+  .ed-paper-body > p,
+  .ed-paper-body > ul,
+  .ed-paper-body > ol,
+  .ed-paper-body > blockquote,
+  .ed-paper-body > pre,
+  .ed-paper-body > .article-references {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ed-paper-figure {
+    width: 100%;
+    margin: 2.1rem 0 2.7rem;
+  }
+  .ed-paper-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule-soft);
+    background: #fff;
+  }
+  .ed-paper-figure-link { display: block; }
+  .ed-paper-figure figcaption {
+    max-width: 820px;
+    margin: 0.7rem auto 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--ink-faint);
+  }
+  .ed-paper-figure figcaption a {
+    flex: 0 0 auto;
+    color: var(--crimson);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    text-decoration: none;
+  }
+
   .ed-paper-body > h1 {
     font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     font-weight: 600;
@@ -9622,6 +9719,9 @@
 
   /* === Appendix === */
   .ed-paper-appendix {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1rem;
   }
   .ed-paper-appendix h2 {
@@ -9650,6 +9750,9 @@
 
   /* === Footer nav === */
   .ed-paper-nav {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 3rem;
     padding-top: 1.4rem;
     border-top: 1px solid var(--rule-soft);
@@ -9694,6 +9797,8 @@
     }
     .ed-paper-body table thead th,
     .ed-paper-body table tbody td { padding: 0.4rem 0.5rem; }
+    .ed-paper-figure { margin: 1.5rem -0.35rem 2rem; width: calc(100% + 0.7rem); }
+    .ed-paper-figure figcaption { padding: 0 0.35rem; }
     .ed-paper-nav { flex-direction: column; }
   }
 

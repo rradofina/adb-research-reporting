@@ -19,6 +19,7 @@ human owner per the relevant gate request in `research/gates/`.
 | mpi-nighttime-lights _(mpi-nighttime-lights)_ | · | · | · | · | · | · | · | · | · |
 | public-service-data-quality _(public-service-data-quality)_ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | access-services _(access-services)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| digital-performance _(digital-performance)_ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | air-monitoring _(air-monitoring)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | remittance-resilience _(remittance-resilience)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | grid-reliability-heat _(grid-reliability-heat)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |

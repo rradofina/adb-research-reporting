@@ -1,0 +1,392 @@
+iso3,country,year,coverage_4g_pct,internet_use_pct,availability_use_gap_pp,coverage_source,coverage_note,internet_use_source,internet_use_note,coverage_data_id,internet_use_data_id,mobile_5gb_pct_gni,internet_use_rural_pct,internet_use_urban_pct,urban_rural_use_gap_pp
+ARM,Armenia,2012,17.54,37.5,-19.96,ITU estimate.,,ITU estimate.,,7232162,5825101,,,,
+AZE,Azerbaijan,2012,6.68,54.200001,-47.520001,ITU estimate.,,ITU estimate.,,7232166,5825105,,,,
+HKG,"Hong Kong, China",2012,91.67,72.9,18.77,ITU estimate.,,Census and Statistics Department,,7232200,5825174,,,,
+KAZ,Kazakhstan,2012,2.67,61.906627,-59.236627,ITU estimate.,,Agency of the Republic of Kazakhstan on Statistics.,,6622492,5825190,,,,
+PAK,Pakistan,2012,0.0,8.1,-8.1,,,ITU estimate.,,6564373,5825240,,,,
+PHL,Philippines,2012,6.0,30.799999,-24.799999,ITU estimate.,,ITU estimate.,,7232236,5825243,,,,
+LKA,Sri Lanka,2012,5.0,9.0004,-4.0004,ITU estimate.,,ITU estimate.,,6621677,59465355,,,,
+TJK,Tajikistan,2012,8.38,14.51,-6.13,ITU estimate.,,ITU estimate.,,7232244,5825275,,,,
+ARM,Armenia,2013,44.0,41.9,2.1,Ministry of Transport and Communication of Armenia,,National Statistical Service,All population.,6684801,6226517,,,,
+AZE,Azerbaijan,2013,14.31,73.000001,-58.690001,ITU estimate.,,State Statistical Committee of Azerbaijan Republic,Population age 7+.,7232165,6226518,,,,
+BTN,Bhutan,2013,5.0,22.4,-17.4,ITU estimate.,,ITU estimate.,,6621668,6226532,,,,
+BRN,Brunei Darussalam,2013,5.0,64.5,-59.5,ITU estimate.,,ITU estimate.,,7232176,6226531,,,,
+CHN,China,2013,10.0,45.799999,-35.799999,ITU estimates.,,ITU estimate.,Permanent residents at the age of 6 or above. In the last 6 months. Based on CNNIC report.,7232179,6220323,,,,
+GEO,Georgia,2013,8.86,43.3,-34.44,ITU estimate.,,National Statistics Office of Georgia,In the last 12 months.,6618604,6223996,,22.882125,64.816099,41.933974
+HKG,"Hong Kong, China",2013,95.0,74.2,20.8,ITU estimate.,,Census and Statistics Department,,7232199,6223991,,,,
+IDN,Indonesia,2013,5.0,14.94,-9.94,ITU estimate.,,BPS-Statistics Indonesia,,7232202,6223992,,,,
+KAZ,Kazakhstan,2013,25.86,63.304224,-37.444224,ITU estimate.,,Agency of the Republic of Kazakhstan on Statistics.,,6622493,6226574,,,,
+KIR,Kiribati,2013,10.0,11.5,-1.5,ITU estimate.,,ITU estimate.,,7232212,6226578,,,,
+MYS,Malaysia,2013,15.0,57.057512,-42.057512,ITU estimate.,,Department of Statistics,,7232219,6213604,,,,
+MDV,Maldives,2013,11.4,44.099998,-32.699998,ITU estimate.,,ITU estimate.,,7232220,6226594,,,,
+PAK,Pakistan,2013,0.0,9.0,-9.0,,,ITU estimate. ,,6564372,6226615,,,,
+PHL,Philippines,2013,27.0,32.700001,-5.700001,ITU estimate.,,ITU estimate.,,7232235,6226618,,,,
+LKA,Sri Lanka,2013,10.72,10.0444,0.6756,ITU estimate.,,ITU estimate.,,6621678,59465356,,,,
+TJK,Tajikistan,2013,17.37,16.0,1.37,ITU estimate.,,ITU estimate.,,7232243,6226642,,,,
+TKM,Turkmenistan,2013,6.0,9.6,-3.6,ITU estimate.,,ITU estimate.,,7232249,6226643,,,,
+AFG,Afghanistan,2014,0.0,7.0,-7.0,ITU estimate,ITU estimate,ITU estimate.,,6783549,6517403,,,,
+ARM,Armenia,2014,46.0,54.622806,-8.622806,Ministry of Transport and Communication of Armenia,,National Statistical Service,,6566695,6517329,,,,
+AZE,Azerbaijan,2014,49.0,75.000016,-26.000016,Ministry of Communications and High Technologies (MC&HT),,State Statistical Committee of the Republic of Azerbaijan,,6566773,6517306,,,,
+BGD,Bangladesh,2014,59.0,9.0529,49.9471,Bangladesh Telecommunication Regulatory Commission,,ITU estimate.,,6570914,6517396,,,,
+BTN,Bhutan,2014,10.72,30.299999,-19.579999,ITU estimate,ITU estimate,ITU estimate.,,6570994,6517349,,,,
+BRN,Brunei Darussalam,2014,11.0,68.769997,-57.769997,ITU estimate,ITU estimate,ITU estimate.,,6573279,6517298,,,,
+KHM,Cambodia,2014,9.0,14.0,-5.0,ITU estimate,ITU estimate,ITU estimate.,,6788369,6517399,,,,
+CHN,China,2014,43.59,47.900002,-4.310002,Ministry of Industry and Information Technology,,ITU estimate.,Permanent residents at the age of 6 or above. In the last 6 months.,6573597,6517324,,,,
+FJI,Fiji,2014,15.0,37.400002,-22.400002,ITU estimate,ITU estimate,ITU estimate.,,6571807,6517336,,,,
+GEO,Georgia,2014,20.0,49.102455,-29.102455,ITU estimate,ITU estimate,Geostat,reference period is the last 12 months,6618605,6515069,,28.536325,70.936079,42.399753
+HKG,"Hong Kong, China",2014,95.0,79.86627,15.13373,ITU estimate,ITU estimate,Census and Statistics Department,Reference period: last 12 months,6574480,6517288,,,,
+IND,India,2014,2.0,13.5,-11.5,ITU estimate,ITU estimate,ITU estimate.,,6572291,6517375,,,,
+IDN,Indonesia,2014,10.0,17.14316,-7.14316,ITU estimate,ITU estimate,BPS-Statistics Indonesia,,6579117,6515077,,,,
+KAZ,Kazakhstan,2014,43.3,66.0,-22.7,"The Committee for Communication, informatization and information of the Ministry for Investment and Development of the Republic of Kazakhstan",,ITU estimate.,,6630056,6517312,,,,
+KIR,Kiribati,2014,20.0,12.25,7.75,ITU estimate,ITU estimate,ITU estimate.,,7115238,6517385,,,,
+KGZ,Kyrgyz Republic,2014,0.5,28.299999,-27.799999,State Communications Agency under the Governmet of the Kyrgyz Republic,,ITU estimate.,,6633251,6517359,,,,
+LAO,Lao PDR,2014,2.0,14.26,-12.26,Ministry of Post and Telecommunication,Ref from LTC,ITU estimate.,,6687140,6517383,,,,
+MYS,Malaysia,2014,33.0,63.665426,-30.665426,Malaysian Communications and Multimedia Commission,,Department of Statistics,Estimate by DOSM,6581078,6517292,,,,
+MDV,Maldives,2014,44.0,49.279999,-5.279999,ITU estimate,ITU estimate,ITU estimate.,,6782170,6517325,,,,
+MMR,Myanmar,2014,0.0,7.4,-7.4,ITU estimate,ITU estimate,ITU estimate.,,6789089,6517424,,,,
+NPL,Nepal,2014,0.0,15.44,-15.44,ITU estimate,ITU estimate,ITU estimate.,,7115176,6517381,,,,
+PAK,Pakistan,2014,7.0,10.0,-3.0,,"Figures are as on 31st December, 2014 based on data received from cellular mobile operators",ITU estimate. ,,6564311,6517388,,,,
+PNG,Papua New Guinea,2014,7.0,6.5,0.5,ITU estimate,ITU estimate,ITU estimate.,,7115250,6517393,,,,
+PHL,Philippines,2014,48.0,34.700001,13.299999,ITU estimate,ITU estimate,ITU estimate.,,6581581,6517341,,,,
+LKA,Sri Lanka,2014,25.0,10.500003,14.499997,ITU estimate,ITU estimate,Department of Census and Statistics,,6776183,6517357,,,,
+TWN,"Taipei,China",2014,99.3,78.037621,21.262379,National Communications Commission,,National Communications Commission,,6589067,6517279,,,,
+TJK,Tajikistan,2014,35.0,17.49,17.51,ITU estimate,ITU estimate,ITU estimate.,,7115257,6517377,,,,
+THA,Thailand,2014,0.0,34.886054,-34.886054,ITU estimate,ITU estimate,National Statistical Office,,6589297,6515130,,26.861073,44.851518,17.990445
+TON,Tonga,2014,0.0,35.954399,-35.954399,ITU estimate,ITU estimate,ITU estimate.,,6774679,6517347,,,,
+TKM,Turkmenistan,2014,10.0,12.2,-2.2,ITU estimate,ITU estimate,ITU estimate.,,7115259,6517386,,,,
+UZB,Uzbekistan,2014,1.0,35.5,-34.5,"State Committee for Communications, Informatization and Telecommunication Technologies ",,ITU estimate.,,6681618,6517333,,,,
+VNM,Viet Nam,2014,0.0,41.0,-41.0,ITU estimate,ITU estimate,ITU estimate.,,6589920,6517326,,,,
+AFG,Afghanistan,2015,0.0,8.26,-8.26,ITU estimate.,,ITU estimate.,,6783550,6801670,,,,
+ARM,Armenia,2015,46.5,59.100834,-12.600834,Ministry of Transport and Communication of Armenia,,National Statistical Service,,6777227,6801573,,,,
+AZE,Azerbaijan,2015,39.0,77.0,-38.0,"Ministry of Transport, Communications and High Technologies (MTC&HT) ",Excluding occupied territories of Azerbaijan,State Statistical Committee of the Republic of Azerbaijan,,6777250,6797040,,,,
+BGD,Bangladesh,2015,65.0,12.3688,52.6312,Bangladesh Telecommunication Regulatory Commission,,ITU estimate.,,6783525,6801665,,,,
+BTN,Bhutan,2015,40.0,39.799999,0.200001,Ministry of Information & Communications,,ITU estimate.,,6783479,6801612,,,,
+BRN,Brunei Darussalam,2015,80.0,71.199997,8.800003,Authority for Info-communications Technology Industry of Brunei Darussalam,,ITU estimate.,,6788323,6801557,,,,
+KHM,Cambodia,2015,30.0,6.433191,23.566809,Telecommunication Regulator of Cambodia (TRC),,National Institute of Statistics,,6788370,6796910,,1.346737,23.001715,21.654978
+CHN,China,2015,85.0,50.299999,34.700001,Ministry of Industry and Information Technology,,ITU estimate.,Permanent residents at the age of 6 or above. In the last 6 months.,6788444,6801580,,,,
+FJI,Fiji,2015,17.0,42.5,-25.5,Ministry of Communications,,ITU estimate.,,6783433,6801592,,,,
+GEO,Georgia,2015,82.0,47.56976,34.43024,Georgian National Communications Commission,,National Statistics Office of Georgia,,6789826,6797047,,30.296286,65.589084,35.292798
+HKG,"Hong Kong, China",2015,99.0,84.948353,14.051647,Office of the Communications Authority,,Census and Statistics Department,In the last twelve months,6789031,6797048,,,,
+IND,India,2015,4.0,14.9,-10.9,ITU estimate,ITU estimate,ITU estimate.,,6782758,6801642,,,,
+IDN,Indonesia,2015,5.0,22.062743,-17.062743,ITU estimate,,BPS-Statistics Indonesia,,6885450,6797049,,11.69614,32.044879,20.348739
+KAZ,Kazakhstan,2015,65.5,70.829934,-5.329934,"The Committee for Communication, informatization and information of the Ministry for Investment and Development of the Republic of Kazakhstan",,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",,6790068,6797050,,66.45627,74.127652,7.671382
+KIR,Kiribati,2015,0.0,14.9,-14.9,ITU estimate.,,ITU estimate.,Census.,6797033,6801659,,,,
+KGZ,Kyrgyz Republic,2015,1.6,30.247,-28.647,State Communications Agency under the Governmet of the Kyrgyz Republic,,ITU estimate.,,6790101,6801620,,,,
+LAO,Lao PDR,2015,5.0,18.200001,-13.200001,Ministry of Post and Telecommunication,Ref from LTC,ITU estimate.,,6788888,6801655,,,,
+MYS,Malaysia,2015,71.0,71.064068,-0.064068,Malaysian Communications and Multimedia Commission,,Department of Statistics,,6784693,6797056,,54.999143,76.300976,21.301834
+MDV,Maldives,2015,58.0,54.462002,3.537998,ITU estimate,,ITU estimate.,,6782171,6801578,,,,
+FSM,Micronesia,2015,0.0,31.501101,-31.501101,"Department of Transportation, Communications and Infrastructure",,ITU estimate.,,6789526,6801617,,,,
+MMR,Myanmar,2015,0.0,10.9,-10.9,"Posts and Telecommunications Department, Ministry of communications and Information Technology",,ITU estimate.,,6788219,6801658,,,,
+NPL,Nepal,2015,0.0,17.5816,-17.5816,Nepal Telecommunications Authority,,ITU estimate.,,6988905,6801651,,,,
+PAK,Pakistan,2015,16.0,11.0,5.0,Pakistan Telecommunication Authority,"Figures are as on 31st December, 2015 based on data received from cellular mobile Operators",ITU estimate.,,6779724,6771644,,,,
+PNG,Papua New Guinea,2015,35.0,7.9,27.1,ITU estimate,,ITU estimate.,,6885461,6801660,,,,
+PHL,Philippines,2015,39.0,36.900002,2.099998,ICTO,,ITU estimate.,,6801979,6801601,,,,
+SLB,Solomon Islands,2015,11.5,10.0005,1.4995,Telecommunications Commission of the Solomon Islands,,ITU estimate.,,6776237,6801667,,,,
+LKA,Sri Lanka,2015,35.0,15.2625,19.7375,,,ITU estimate.,5 � 69 years used in last year. DC&S.,6776184,6801621,,,,
+TWN,"Taipei,China",2015,99.45,78.036873,21.413127,National Communications Commission,,National Communications Commission,,6788604,6801539,,,,
+TJK,Tajikistan,2015,60.0,18.98,41.02,ITU estimate,ITU estimate,ITU estimate.,,7115258,6801649,,,,
+THA,Thailand,2015,21.0,39.316127,-18.316127,ITU estimate,,National Statistical Office,,6788558,6797062,,31.183343,49.399335,18.215992
+TLS,Timor-Leste,2015,0.0,18.6,-18.6,ITU estimate.,,ITU estimate.,,6788535,6803083,,,,
+TON,Tonga,2015,0.0,38.651299,-38.651299,"Ministry of Meteorology, Energy, Information, Disaster Management, Environment and Climate Change, Communication (MEIDECC) ",,ITU estimate.,,6774680,6801594,,,,
+TKM,Turkmenistan,2015,25.0,14.9968,10.0032,ITU estimate,ITU estimate,ITU Estimate.,,7115260,6801657,,,,
+TUV,Tuvalu,2015,0.0,27.299999,-27.299999,ITU estimate.,,ITU estimate.,,7898085,6801613,,,,
+UZB,Uzbekistan,2015,10.0,42.799999,-32.799999,"State Committee for Communications, Informatization and Telecommunication Technologies ",,ITU estimate.,,6790556,6801590,,,,
+VUT,Vanuatu,2015,18.0,22.3514,-4.3514,Office of the Telecommunications & Radiocommunications Regulator,Estimated. 7 tower sites covering majority of the capital city. Last census was in 2009 so population numbers are subject to significant estimation.,ITU Estimate.,,6773590,6801635,,,,
+VNM,Viet Nam,2015,0.0,45.0,-45.0,ITU estimate,ITU estimate,ITU estimate.,Reference period is past six months.,6788421,6801581,,,,
+AFG,Afghanistan,2016,0.0,11.0,-11.0,Afghanistan Telecom Regulatory Authority,,ITU estimate.,,7115360,7230283,,,,
+ARM,Armenia,2016,52.48,64.34603,-11.86603,"Ministry of Transport, Communication and Information Technologies of Armenia",,National Statistical Service of RA,,7139826,7230321,,56.507334,68.828669,12.321335
+AZE,Azerbaijan,2016,41.0,78.2,-37.2,"Ministry of Transport, Communications and High Technologies",Excluding occupied territories of Azerbaijan,State Statistical Committee of the Republic of Azerbaijan,,7139805,7230322,,,,
+BGD,Bangladesh,2016,65.0,16.899099,48.100901,Bangladesh Telecommunication Regulatory Commission,"June,2017",ITU estimate.,,7139781,7230285,,,,
+BTN,Bhutan,2016,53.0,46.503201,6.496799,Ministry of Information and Communications,by two operators,ITU estimate.,,7139736,7230286,,,,
+BRN,Brunei Darussalam,2016,89.58,90.0,-0.42,Authority for Info-communications Technology Industry of Brunei Darussalam,,Authority for Info-communications Technology Industry of Brunei Darussalam,,7138811,7230287,,,,
+KHM,Cambodia,2016,50.0,32.398452,17.601548,Telecommunication Regulator of Cambodia,,National Institute of Statistics,,7138865,7230288,,30.000004,40.0,9.999996
+CHN,China,2016,97.0,53.2,43.8,MIIT,,CNNIC.,,7139014,7230289,,,,
+GEO,Georgia,2016,91.99,58.45929,33.53071,GNCC,,National Statistics Office of Georgia,Reference period is the last 3 months. Time period 2016-2017 is recalculated according to latest results of 2014 general population census.,7139975,7230324,,41.031791,70.062924,29.031133
+HKG,"Hong Kong, China",2016,99.0,87.479415,11.520585,Office of the Communications Authority,,Census and Statistics Department,Iin the last twelve months.,7139254,7230291,,,,
+IND,India,2016,73.5,16.5,57.0,Ministry of Communications,,ITU estimate.,,7139132,7230292,,,,
+IDN,Indonesia,2016,22.6,25.447354,-2.847354,Ministry of Communication and Informatics,MCIT,BPS-Statistics Indonesia,,7232201,7230293,,14.233546,35.860525,21.626979
+KAZ,Kazakhstan,2016,69.0,74.587726,-5.587726,Ministry of Digital Development Innovation and Aerospace,,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",,7139083,7230325,,68.83776,78.864686,10.026926
+KGZ,Kyrgyz Republic,2016,40.0,40.526199,-0.526199,State Communications Agency under the State Committee for IT and Communications of the Kyrgyz Republic,,ITU estimate.,,7139037,7230326,,,,
+LAO,Lao PDR,2016,7.0,21.870001,-14.870001,Ministry of Post and Telecommunication,Ref from LTC & Unitel,ITU estimate.,,7139468,7230298,,,,
+MYS,Malaysia,2016,88.0,78.78831,9.21169,Malaysian Communications and Multimedia Malaysia,,Department of Statistics,Estimates by DOSM,7139581,7230300,,,,
+MDV,Maldives,2016,80.0,59.477501,20.522499,Communications Authority of Maldives,,ITU estimate.,,7138993,7230301,,,,
+FSM,Micronesia,2016,0.0,33.3522,-33.3522,"Department of Transportation, Communications and Infrastructure",,ITU estimate.,,7138834,7230303,,,,
+MNG,Mongolia,2016,6.9,22.265771,-15.365771,Communications Regulatory Commission of Mongolia,,National Statistical Office of Mongolia,,7139646,7230304,,,,
+MMR,Myanmar,2016,9.19,16.0,-6.81,Ministry of Transport and Communications,,ITU estimate.,,7231945,7230305,,,,
+NPL,Nepal,2016,15.47,20.700001,-5.230001,ITU estimate.,,ITU Estimate.,,7232231,7230306,,,,
+PAK,Pakistan,2016,27.0,12.385447,14.614553,Pakistan Telecommunication Authority,Figure reports the highest coverage as on 31st December 2016,PAKISTAN BUREAU OF STATISTICS,,7138665,7230308,,8.509857,19.088047,10.57819
+PNG,Papua New Guinea,2016,35.0,9.6015,25.3985,ITU estimate.,,ITU estimate.,,7898088,7230309,,,,
+PHL,Philippines,2016,80.0,39.200001,40.799999,Department of Information and Communications Technology,,ITU estimate.,,7232234,7230310,,,,
+SLB,Solomon Islands,2016,13.3,11.0009,2.2991,Telecommunications Commission of the Solomon Islands,,ITU estimate.,,7138521,7230313,,,,
+LKA,Sri Lanka,2016,36.0,22.19,13.81,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,,7175792,7230314,,,,
+TWN,"Taipei,China",2016,99.5,79.745187,19.754813,National Communications Commission,,National Communications Commission,,7140025,7230387,,,,
+TJK,Tajikistan,2016,73.59,20.469999,53.120001,ITU estimate.,,ITU estimate.,,7232242,7230329,,,,
+THA,Thailand,2016,98.0,47.504966,50.495034,The National Broadcasting and Telecommunications Commission,NBTC,National Statistical Office of Thailand,,7170028,7230315,,39.51044,57.389242,17.878802
+TLS,Timor-Leste,2016,0.0,21.200001,-21.200001,Autoridade Nacional de Comunicações,,ITU estimate.,,7302481,7230316,,,,
+TON,Tonga,2016,41.14,39.950001,1.189999,MEIDECC,,ITU estimate.,,7232247,7230317,,,,
+TKM,Turkmenistan,2016,46.1,17.990299,28.109701,ITU estimate.,,ITU estimate.,,7232248,7230330,,,,
+TUV,Tuvalu,2016,0.0,31.0,-31.0,ITU estimate.,,Tuvalu Central Statistics Division,In the last month.,7898087,7230318,,,,
+UZB,Uzbekistan,2016,16.9,46.791302,-29.891302,Ministry for Development of Information Technologies and Communications of the Republic of Uzbekistan,,ITU estimate.,,7171353,7230332,,,,
+VNM,Viet Nam,2016,5.0,53.0,-48.0,Ministry of Information and Communications,,ITU estimate.,Reference period is past six months.,7141118,7230320,,,,
+AFG,Afghanistan,2017,4.0,13.5,-9.5,Afghanistan Telecom Regulatory Authority,,ITU estimate.,Asia Foundation,7808424,7896370,,,,
+ARM,Armenia,2017,90.05,64.744884,25.305116,"Ministry of Transport, Communication and Information Technologies of Armenia",,The Statistical Committee of the Republic of Armenia ,,7807517,7896376,,,,
+AZE,Azerbaijan,2017,42.0,79.0,-37.0,"Ministry of Transport, Communications and High Technologies",Excluding occupied territories of Azerbaijan,State Statistical Committee of the Republic of Azerbaijan,,7807541,7848401,,56.039837,91.700009,35.660172
+BGD,Bangladesh,2017,67.0,21.5,45.5,Bangladesh Telecommunication Regulatory Commission,"June,2018",Findex.,,7808496,7848403,,,,
+BTN,Bhutan,2017,55.0,54.335499,0.664501,Ministry of Information and Communications,For two operators,ITU estimate.,,7808544,7848408,,,,
+BRN,Brunei Darussalam,2017,90.04,94.866699,-4.826699,Authority for Info-communications Technology Industry of Brunei Darussalam,,ITU estimate.,,7808592,7896386,,,,
+KHM,Cambodia,2017,57.5,32.900279,24.599721,Telecommunication Regulator of Cambodia,,National Institute of Statistics,,7808616,7848438,,29.999997,39.999995,9.999998
+CHN,China,2017,98.0,54.3,43.7,MIIT,,CNNIC.,,7808640,7769822,,,,
+GEO,Georgia,2017,99.72,59.705505,40.014495,Georgian National Communications Commission,,National Statistics Office of Georgia,Reference period is the last 3 months. Time period 2016-2017 is recalculated according to latest results of 2014 general population census.,7807809,7848427,,43.621821,70.701674,27.079852
+HKG,"Hong Kong, China",2017,99.0,89.415945,9.584055,Office of the Communications Authority,,Census and Statistics Department,last twelve months.,7808736,7848428,,,,
+IND,India,2017,88.0,18.200001,69.799999,Ministry of Communications,December 2017,ITU estimate.,,7808760,7840929,,,,
+IDN,Indonesia,2017,90.42,32.335806,58.084194,Ministry of Communication and Informatics,MCIT,BPS-Statistics Indonesia,,7808784,7848431,,19.872159,43.362753,23.490595
+KAZ,Kazakhstan,2017,72.9,76.426748,-3.526748,"Ministry of digital development, innovation and aerospace industry of the Republic of Kazakhstan",,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",,7807857,7848437,,71.706764,79.919278,8.212514
+KIR,Kiribati,2017,51.0,25.309601,25.690399,Ministry of ICTTD,,ITU estimate.,,7808880,7896421,,,,
+KGZ,Kyrgyz Republic,2017,50.0,50.805302,-0.805302,State Communications Agency under the State Committee for IT and Communications of the Kyrgyz Republic,,ITU estimate.,,7807905,7896422,,,,
+LAO,Lao PDR,2017,9.0,25.510401,-16.510401,Ministry of Post and Telecommunication,Ref from LTC & Unitel,ITU estimate.,,7810788,7896423,,,,
+MYS,Malaysia,2017,77.2,80.140479,-2.940479,Malaysian Communications and Multimedia Commission,Revised figure from 92 reported in ITU Long Questionnaire 2019,Department of Statistics,,7808928,7848449,,68.028422,83.969734,15.941312
+MDV,Maldives,2017,100.0,64.955002,35.044998,Communications Authority of Maldives,,ITU estimate.,,7808952,7896430,,,,
+FSM,Micronesia,2017,0.0,35.3041,-35.3041,Division of Communications,,ITU estimate.,,7808976,7896435,,,,
+MNG,Mongolia,2017,21.0,23.7143,-2.7143,Communications Regulatory Commission of Mongolia,,ITU estimate.,All population,7809000,7896438,,,,
+MMR,Myanmar,2017,29.52,23.621082,5.898918,Ministry of Transport and Communications,,Central Statistical Organization,,7809025,7896440,,,,
+NRU,Nauru,2017,30.0,62.385101,-32.385101,ITU estimate.,,ITU estimate.,,7898102,7986567,,,,
+NPL,Nepal,2017,15.47,24.3,-8.83,Nepal Telecommunications Authority,From NTA,Findex.,"Findex, 15+.",7809050,7896442,,,,
+PAK,Pakistan,2017,67.0,13.78,53.22,Pakistan Telecommunication Authority,Figure reports the highest coverage as on 31st December 2017,ITU estimate.,,7809098,7896448,,,,
+PNG,Papua New Guinea,2017,50.0,11.2092,38.7908,ITU estimate.,,ITU estimate.,,7898104,7896450,,,,
+PHL,Philippines,2017,80.0,41.599998,38.400002,Department of Information and Communications Technology,,ITU estimate.,,7898111,7896451,,,,
+SLB,Solomon Islands,2017,19.0,15.1484,3.8516,Telecommunications Commission Solomon Islands,,ITU estimate.,,7809170,7896463,,,,
+LKA,Sri Lanka,2017,48.0,25.0755,22.9245,Telecommunications Regulatory Commission of Sri Lanka,Telecommunications Regulatory Commission of Sri Lanka,ITU estimate.,,7809194,7896467,,,,
+TWN,"Taipei,China",2017,99.6,82.900002,16.699998,National Communications Commission,,ITU estimate.,,7809291,7896368,,,,
+TJK,Tajikistan,2017,80.0,21.959999,58.040001,ITU estimate.,,ITU estimate.,,7898112,7896471,,,,
+THA,Thailand,2017,98.0,52.891929,45.108071,Office of the National Broadcasting and Telecommunications Commission,NBTC,National Statistical Office,,7809315,7848466,,44.974183,62.651258,17.677075
+TLS,Timor-Leste,2017,20.0,24.200001,-4.200001,Autoridade Nacional de Comunicações,,ITU estimate.,,7809339,7896474,,,,
+TON,Tonga,2017,65.0,46.200802,18.799198,MEIDECC,,ITU estimate.,,7898106,7896475,,,,
+TUV,Tuvalu,2017,0.0,35.200001,-35.200001,ITU estimate.,,ITU estimate.,,7898095,7896478,,,,
+UZB,Uzbekistan,2017,43.0,48.699999,-5.699999,Ministry for Development of Information Technologies and Communications of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics ,,7808352,7896484,,,,
+VNM,Viet Nam,2017,95.0,58.14,36.86,Ministry of Information and Communications,,Ministry of Information and Communications,,7809435,7896487,,,,
+AFG,Afghanistan,2018,7.0,16.799999,-9.799999,Afghanistan Telecommunication Regulatory Authority.,,ITU estimate.,Asia Foundation,8377903,31268824,,,,
+ARM,Armenia,2018,99.1,68.245052,30.854948,Ministry of High-Tech Industry of Armenia,,The Statistical Committee of the Republic of Armenia ,,31106800,35660248,,,,
+AZE,Azerbaijan,2018,49.0,79.799995,-30.799995,"Ministry of Transport, Communications and High Technologies",Excluding occupied territories of Azerbaijan,State Statistical Committee of the Republic of Azerbaijan,,8377990,30899193,,66.745477,91.204907,24.45943
+BGD,Bangladesh,2018,79.0,25.5651,53.4349,Bangladesh Telecommunication Regulatory Commission,"June,2019",ITU estimate.,,8378019,35660280,,,,
+BTN,Bhutan,2018,60.0,63.486801,-3.486801,Ministry of Information & Communications,,ITU estimate.,,8369613,35660295,,,,
+BRN,Brunei Darussalam,2018,94.94,95.0,-0.06,Authority for Info-communications Technology Industry of Brunei Darussalam,,Authority for Info-communications Technology Industry of Brunei Darussalam,,8378193,30899249,,,,
+KHM,Cambodia,2018,80.3,65.0,15.3,Telecommunication Regulator of Cambodia (TRC),,ITU estimate.,,8383515,59465346,,,,
+CHN,China,2018,99.4,65.358398,34.041602,MIIT,,ITU estimate.,,8378339,35660308,,,,
+FJI,Fiji,2018,75.0,58.236401,16.763599,Ministry of Communications,,ITU estimate.,,8383673,35660350,,,,
+GEO,Georgia,2018,99.72,62.717908,37.002092,Georgian National Communications Commission,,National Statistics Office of Georgia,,8369847,30899126,,46.112913,75.797345,29.684433
+HKG,"Hong Kong, China",2018,99.0,90.507395,8.492605,Office of the Communications Authority,,Census and Statistics Department,In the last twelve months,8378658,31268837,,,,
+IND,India,2018,94.0,20.0813,73.9187,MINISTRY OF COMMUNICATIONS,"December 2018, Data from operator having maximum coverage",Ministry of Statistics and Programme Implementation,"Social consumption - Education, NSS 75th round",8378687,35660404,,,,
+IDN,Indonesia,2018,97.59,39.904639,57.685361,Ministry of Communications and Informatics,Ministry of Communications and Informatics,BPS-Statistics Indonesia,,8378716,30899097,,26.556507,50.921764,24.365257
+KAZ,Kazakhstan,2018,75.3,78.903919,-3.603919,Ministry of Digital Development Innovation and Aerospace Industry of the Republic of Kazakhstan,,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",,8377236,30899184,,75.218194,81.555481,6.337286
+KIR,Kiribati,2018,53.0,32.986401,20.013599,"Ministry of Information, Communication, Transport & Tourism Development",,ITU estimate.,,8383689,35660417,,,,
+KGZ,Kyrgyz Republic,2018,70.0,62.8,7.2,State Communications Agency under the State Committee for IT and Communications of the Kyrgyz Republic,,National Statistical Committee of the Kyrgyz Republic,,8377702,35660645,,,,
+LAO,Lao PDR,2018,43.0,36.271301,6.728699,Ministry of Post and Telecommunication,,ITU estimate.,,8369700,35660423,,,,
+MYS,Malaysia,2018,79.7,81.201049,-1.501049,Malaysian Communications and Multimedia Commission,,Department of Statistics,,8378948,30899200,,69.423436,84.898659,15.475223
+MDV,Maldives,2018,100.0,70.936897,29.063103,Communications Authority of Maldives,,ITU estimate.,,8378977,35660452,,,,
+MNG,Mongolia,2018,45.0,47.130002,-2.130002,Communications Regulatory Commision of Mongolia,,National Statistical Office of Mongolia,Weight adjusted in 2018,8379064,30899106,,,,
+MMR,Myanmar,2018,75.0,29.379,45.621,Ministry of Transport and Communications,,ITU estimate.,,8379122,35660292,,,,
+PAK,Pakistan,2018,68.6,15.34,53.26,Pakistan Telecommunication Authoriity,Figure reports the highest coverage as on 31st December 2018,ITU estimate.,,8368127,35660504,,,,
+PHL,Philippines,2018,80.0,44.099998,35.900002,ITU estimate.,,ITU estimate.,,31106414,35660507,,,,
+SLB,Solomon Islands,2018,20.0,20.8594,-0.8594,Telecommunications Commission Solomon Islands,,ITU estimate.,,8383594,35660547,,,,
+LKA,Sri Lanka,2018,80.0,28.336201,51.663799,Telecommunication Regulatory Commission of Sri Lanka,,ITU estimate.,,8383637,35660314,,,,
+TWN,"Taipei,China",2018,99.9,86.205811,13.694189,National Communications Commission,,National Communications Commission,,8379472,31268859,,,,
+THA,Thailand,2018,98.0,56.817481,41.182519,Office of The National Broadcasting and Telecommunications Commission (NBTC),NBTC,National Statistical Office,,8379501,30899117,,49.294733,66.074665,16.779931
+TLS,Timor-Leste,2018,40.0,27.6,12.4,National Communications Authority ,,ITU estimate.,,8386035,35660700,,,,
+UZB,Uzbekistan,2018,44.0,55.200001,-11.200001,Ministry of Development of the Information Technologies and Communications of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics ,,30904121,31268856,,48.364498,61.557848,13.193349
+VNM,Viet Nam,2018,93.89,69.847929,24.042071,Ministry of Information and Communications,,Ministry of Information and Communications,,8379588,30899143,,,,
+AFG,Afghanistan,2019,22.0,17.6,4.4,Afghanistan Telecommunication Regulatory Authority.,,ITU estimate.,Asia Foundation,35662736,35660726,,,,
+ARM,Armenia,2019,99.3,66.54395,32.75605,Ministry of High-Tech Industry of Armenia,,The Statistical Committee of the Republic of Armenia ,,35665876,35660750,,59.935714,70.754529,10.818814
+AZE,Azerbaijan,2019,93.0,81.099999,11.900001,Ministry of Digital Development and Transport,Excluding occupied territories of Azerbaijan,State Statistical Committee of the Republic of Azerbaijan,,35665824,35660771,,67.718517,92.827583,25.109066
+BGD,Bangladesh,2019,82.0,30.383101,51.616899,Bangladesh Telecommunication Regulatory Commission,"December, 2019",ITU estimate.,,35665772,35660795,,,,
+BTN,Bhutan,2019,78.0,74.179398,3.820602,Ministry of Information & Communications,,ITU estimate.,,35665642,35660818,,,,
+BRN,Brunei Darussalam,2019,95.25,95.0,0.25,Authority for Info-communications Technology Industry of Brunei Darussalam,,Authority for Info-communications Technology Industry of Brunei Darussalam,,35665538,35660815,,,,
+KHM,Cambodia,2019,80.3,52.305878,27.994122,Telecommunication Regulator of Cambodia (TRC),,National Institute of Statistics,,35665410,35660830,,,,
+CHN,China,2019,99.9,64.080881,35.819119,Ministry of Industry and Information Technology,,National Bureau of Statistics,,35665289,35660836,,46.195652,76.533019,30.337367
+FJI,Fiji,2019,76.0,63.217899,12.782101,Ministry of Communications,,ITU estimate.,,36452950,35660903,,,,
+GEO,Georgia,2019,99.72,68.846714,30.873286,Communications Comission,,National Statistics Office of Georgia,,35664845,35661324,,56.599995,77.215828,20.615833
+HKG,"Hong Kong, China",2019,99.0,91.7434,7.2566,Office of the Communications Authority,,Census and Statistics Department,In the last twelve months,35666164,35660954,,,,
+IND,India,2019,97.92,29.5235,68.3965,Department of Telecommunications,December 2019,ITU estimate.,,35680094,35660975,,,,
+IDN,Indonesia,2019,97.59,47.690649,49.899351,Ministry of Communications and Informatics,Ministry of Communications and Informatics,BPS-Statistics Indonesia,,35664689,35660978,,33.837073,58.59226,24.755188
+KAZ,Kazakhstan,2019,75.7,81.87762,-6.17762,"Ministry of digital development, defense and aerospace industry of the Republic of Kazakhstan",,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",,35679723,35661327,,79.240356,83.754386,4.51403
+KIR,Kiribati,2019,53.0,41.792999,11.207001,"Ministry of Information, Communication, Transport & Tourism Development",,ITU estimate.,,35679749,35661008,,,,
+KGZ,Kyrgyz Republic,2019,85.0,64.1,20.9,State Communications Agency under the State Committee for IT and Communications of the Kyrgyz Republic,,National Statistical Committee of the Kyrgyz Republic,,35664455,35661336,,,,
+LAO,Lao PDR,2019,43.0,47.032299,-4.032299,Ministry of Technology and Communication,,ITU estimate.,,35664429,35661020,,,,
+MYS,Malaysia,2019,82.2,84.187145,-1.987145,Malaysian Communications and Multimedia Commission,Revised figure,Department of Statistics,,35664273,35661063,,72.263394,87.615345,15.351951
+MDV,Maldives,2019,100.0,77.469704,22.530296,Communications Authority of Maldives,,ITU estimate.,,35664247,35661066,,,,
+MNG,Mongolia,2019,59.0,51.079994,7.920006,Communications Regulatory Commission of Mongolia ,,National Statistical Office of Mongolia,Weight adjusted in 2018,35664117,35661075,,,,
+MMR,Myanmar,2019,88.89,36.540501,52.349499,"Posts and Telecommunications Department, Ministry of Transport and Communications ",,ITU estimate.,,36308509,35660812,,,,
+NRU,Nauru,2019,30.0,74.7379,-44.7379,ITU estimate.,,ITU estimate.,,36477721,35661123,,,,
+NPL,Nepal,2019,30.0,33.336601,-3.336601,ITU estimate.,,ITU estimate.,,35897088,35661120,,,,
+PAK,Pakistan,2019,68.73,17.070902,51.659098,Pakistan Telecommunication Authority,Figure reports the highest coverage as on 31st December 2019,Pakistan Bureau of Statistics,Last three months,35663905,35661132,,,,
+PNG,Papua New Guinea,2019,50.0,13.6242,36.3758,ITU estimate.,,ITU estimate.,,36477725,35661141,,,,
+PHL,Philippines,2019,80.0,43.026612,36.973388,Department of Information and Communication Technology,,"Office of the National Statistician, Philippine Statistics Authority",,35663761,35661135,,,,
+SLB,Solomon Islands,2019,25.0,22.4888,2.5112,ITU estimate.,,ITU estimate.,,35697751,35661192,,,,
+LKA,Sri Lanka,2019,80.0,32.020901,47.979099,Telecommunications Regulatory Commission of Sri Lanka,,ITU estimate.,,35821767,35660845,,,,
+TWN,"Taipei,China",2019,99.9,88.822458,11.077542,National Communications Commission,,National Communications Commission,,35663230,35661380,,,,
+TJK,Tajikistan,2019,80.0,22.6863,57.3137,ITU estimate.,,ITU estimate.,,36477733,59465525,,,,
+THA,Thailand,2019,98.0,66.652419,31.347581,The National Broadcasting and Telecommunications Commission,NBTC,National Statistical Office,,35663178,35661246,,60.128643,74.629762,14.50112
+TLS,Timor-Leste,2019,45.0,28.004601,16.995399,National Communications Authority ,Estimate,ITU estimate.,,35663152,35661395,,,,
+TON,Tonga,2019,96.0,51.563,44.437,MEIDECC,,ITU estimate.,,35663100,59465494,,,,
+UZB,Uzbekistan,2019,47.7,70.399999,-22.699999,Ministry for Development of Information Technologies and Communications of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics ,,35662944,35661282,,,,
+VNM,Viet Nam,2019,97.0,68.66158,28.33842,Ministry of Information and Communications,,Ministry of Information and Communications,,35662866,35661297,,,,
+AFG,Afghanistan,2020,26.0,17.0485,8.9515,Afghanistan Telecommunication Regulatory Authority.,,ITU estimate.,,36112857,36223982,,,,
+ARM,Armenia,2020,100.0,76.507701,23.492299,Ministry of High-Tech Industry of Armenia,,Statistical Committee of RA,All ages.,36108514,36223190,,71.488179,80.062548,8.57437
+AZE,Azerbaijan,2020,93.0,84.599996,8.400004,Ministry of Digital Development and Transport,,State Statistical Committee of the Republic of Azerbaijan,Aged 7 and older.,36108916,36223191,,72.732866,94.925379,22.192513
+BGD,Bangladesh,2020,97.8,36.1091,61.6909,Bangladesh Telecommunication Regulatory Commission,"June, 2021",ITU estimate.,Aged 5 and older.,36109841,36223196,,,,
+BTN,Bhutan,2020,80.0,76.8508,3.1492,Ministry of Information & Communications,,ITU estimate.,,36111740,36223996,,,,
+BRN,Brunei Darussalam,2020,95.25,96.305496,-1.055496,Authority for Info-communications Technology Industry of Brunei Darussalam,Data is referring to LTE coverage. There is no WiMax deployment in Brunei.,ITU estimate.,Aged 15 and older.,36110545,36223198,,,,
+KHM,Cambodia,2020,91.5,56.3759,35.1241,Telecommunication Regulator of Cambodia (TRC),,ITU estimate.,Aged 5 and older.,36302379,36178697,,,,
+CHN,China,2020,99.9,70.05276,29.84724,Ministry of Industry and Information Technology,,National Bureau of Statistics,Aged 6 and older.,36110589,36012326,,61.012954,75.712847,14.699893
+FJI,Fiji,2020,80.0,68.625603,11.374397,Ministry of Communications,,ITU estimate.,,36452812,42775439,,,,
+GEO,Georgia,2020,99.72,72.531575,27.188425,Communications Comission,,National Statistics Office of Georgia,Aged 15 and older.,36109444,36178852,,59.66685,81.244857,21.578007
+HKG,"Hong Kong, China",2020,99.0,92.413136,6.586864,"Office of the Communications Authority, Hong Kong, China",,Census and Statistics Department,Aged 10 and older. In the last 12 months.,36109753,36178732,,,,
+IND,India,2020,98.45,43.405443,55.044557,Department of Telecommunications,December 2020,IAMAI and KANTAR,,36112989,36223210,,,,
+IDN,Indonesia,2020,96.1,53.726494,42.373506,Ministry of Communications and Informatics,"The decrease in this figure relates to the different method used in measuring coverage, from only residential areas to all areas.",BPS-Statistics Indonesia,All ages.,36109797,36178746,,40.320829,64.249635,23.928806
+KAZ,Kazakhstan,2020,81.3,85.942599,-4.642599,"Ministry of Digital development, defense and aerospace industry of the Republic of Kazakhstan",the data is generated on an annual basis at the end of May,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",Aged 6 and older.,36112185,36178856,,83.351001,87.74596,4.394959
+KIR,Kiribati,2020,53.3,52.950901,0.349099,"Ministry of Information, Communication, Transport & Tourism Development",,ITU estimate.,,36172155,59465413,,,,
+KGZ,Kyrgyz Republic,2020,85.0,72.0,13.0,ITU estimate.,,National Statistical Committee of the Kyrgyz Republic,,36477774,42555743,,,,
+LAO,Lao PDR,2020,50.0,54.0,-4.0,Ministry of Technology and Communication,,Laos Statistical Information Service - Statistical Yearbook 2021,,36477758,36223992,,,,
+MYS,Malaysia,2020,93.5,89.555012,3.944988,Malaysian Communications and Multimedia Commission,Malaysia implements National Broadband Plan called JENDELA which among others to increase 4G coverage nationwide.,Department of Statistics,Aged 15 and older.,36113679,36178773,,79.374,92.388187,13.014187
+MDV,Maldives,2020,100.0,79.097801,20.902199,Communications Authority of Maldives,,ITU estimate.,,36172203,36227594,,,,
+MNG,Mongolia,2020,73.0,62.500028,10.499972,Communications Regulatory Commission of Mongolia,,National Statistical Office of Mongolia,Aged 15 and older.,36113723,36178780,,,,
+MMR,Myanmar,2020,93.85,45.447701,48.402299,"Posts and Telecommunications Department, Ministry of Transport and Communications",,ITU estimate.,,36308416,36223985,,,,
+NRU,Nauru,2020,30.0,77.466599,-47.466599,ITU estimate.,,ITU estimate.,,36477754,42775456,,,,
+NPL,Nepal,2020,45.0,36.965302,8.034698,ITU estimate.,,ITU estimate.,,36477759,36277433,,,,
+PAK,Pakistan,2020,68.82,18.935,49.885,Pakistan Telecommunication Authority,Figure reports the highest coverage as on 31st December 2020,Pakistan Bureau of Statistics,Aged 5 and older. Used internet in Last three months,36108828,36223223,,11.644897,30.656647,19.01175
+PNG,Papua New Guinea,2020,50.0,15.0204,34.9796,ITU estimate.,,ITU estimate.,,36477762,42775458,,,,
+PHL,Philippines,2020,80.0,53.7649,26.2351,Department of Information and Communication Technology,,ITU estimate.,Aged 10-74.,36473928,36223256,,,,
+SLB,Solomon Islands,2020,25.0,24.198401,0.801599,ITU estimate.,,ITU estimate.,,36477751,42775460,,,,
+LKA,Sri Lanka,2020,96.0,36.184734,59.815266,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,Aged 5-69.,36108784,36199728,,,,
+TWN,"Taipei,China",2020,99.8,88.960744,10.839256,National Communications Commission,,National Communications Commission,Aged 16 or older.,36110325,36178866,,,,
+TJK,Tajikistan,2020,80.0,27.5441,52.4559,ITU estimate.,,ITU estimate.,,36477770,48476689,,,,
+THA,Thailand,2020,98.1,77.843741,20.256259,Office of The National Broadcasting and Telecommunications Commission,NBTC##1.Revise % of population covered by at least LTE/WiMAX mobile network In 2022.,National Statistical Office,Aged 6 and older.,36109885,36178827,,73.152768,83.562253,10.409485
+TLS,Timor-Leste,2020,45.0,32.012699,12.987301,National Communications Authority,,ITU estimate.,,36108740,36223989,,,,
+TON,Tonga,2020,96.0,54.473701,41.526299,"Ministry of Meteorology, Energy, Information, Disaster Management, Environment and Climate Change, Communication (MEIDECC)",,ITU estimate.,,36477780,59465495,,,,
+UZB,Uzbekistan,2020,65.9,71.099998,-5.199998,Ministry for Development of Information Technologies and Communications of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics,Aged 10 and older.,36108872,36605890,,66.923386,74.99108,8.067693
+VNM,Viet Nam,2020,99.5,70.3,29.2,Ministry of Information and Communications,,General Statistics Office of Vietnam,Aged 6 and older.,36111118,36178838,,63.5,81.93,18.43
+AFG,Afghanistan,2021,26.0,16.514299,9.485701,Afghanistan Telecommunication Regulatory Authority.,,ITU estimate.,,45542960,48476697,,,,
+ARM,Armenia,2021,100.0,78.612258,21.387742,Ministry of High-Tech Industry of Armenia,,The Statistical Committee of the Republic of Armenia,All ages.,36800971,42775308,,73.517698,82.378295,8.860597
+AZE,Azerbaijan,2021,94.0,85.99999,8.00001,Ministry of Digital Development and Transport,,State Statistical Committee of the Republic of Azerbaijan,Aged 7 and older.,36784919,42775311,,76.474949,94.335161,17.860211
+BGD,Bangladesh,2021,98.2,38.917445,59.282555,Bangladesh Telecommunication Regulatory Commission,"June, 2022",Bangladesh Bureau of Statistics (BBS),Aged 5 and older.,36781781,42775315,,29.735373,66.84762,37.112247
+BTN,Bhutan,2021,80.0,85.636884,-5.636884,Government Technology Agency,,Ministry of Information and Communication,Not available.,36781825,42555404,,79.05497,96.557375,17.502405
+BRN,Brunei Darussalam,2021,96.64,97.628799,-0.988799,Authority for Info-communications Technology Industry of Brunei Darussalam,Data is referring to LTE coverage. There is no WiMax deployment in Brunei.,ITU estimate.,Aged 15 and older.,48747293,42775321,,,,
+KHM,Cambodia,2021,92.1,60.762699,31.337301,Telecommunication Regulator of Cambodia (TRC),"data was changed, as verified again.",ITU estimate.,Aged 5 and older.,36781913,42775360,,,,
+CHN,China,2021,99.9,73.053235,26.846765,Ministry of Industry and Information Technology,,National Bureau of Statistics,Aged 6 and older.,36782221,42555407,,56.988061,81.815696,24.827635
+FJI,Fiji,2021,80.0,70.568001,9.431999,ITU estimate.,,ITU estimate.,,48478007,42775339,,,,
+GEO,Georgia,2021,99.72,76.442709,23.277291,Communications Comission,,National Statistics Office of Georgia,Aged 15 and older.,36782935,42555521,,66.38144,83.173319,16.791879
+HKG,"Hong Kong, China",2021,99.0,93.087158,5.912842,Office of the Communications Authority,,Census and Statistics Department,Aged 10 and older. In the last 12 months.,36781957,42555433,,,,
+IND,India,2021,98.67,49.258099,49.411901,Department of Telecommunications,As in December 2021,ITU estimate.,,36782001,59465399,,,,
+IDN,Indonesia,2021,96.19,62.104478,34.085522,Ministry of Communications and Informatics,"The decrease in this figure relates to the different method used in measuring coverage, from overlaying of residential area maps to overlaying of area maps.",BPS-Statistics Indonesia,All ages.,36785842,42555446,,49.304367,71.807301,22.502934
+KAZ,Kazakhstan,2021,83.5,90.923951,-7.423951,"Ministry of digital development, defense and aerospace industry of the Republic of Kazakhstan",the data is generated on an annual basis at the end of May,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",Aged 6 and older.,36785631,42555524,,88.957512,92.276,3.318487
+KIR,Kiribati,2021,64.0,67.087601,-3.087601,"Ministry of Information, Communication & Transport ",Only one service provider provide the service,ITU estimate.,,48749138,59465414,,,,
+KGZ,Kyrgyz Republic,2021,96.0,77.117699,18.882301,Service for the Regulation and Supervision of the Communications Sector under the Ministry of Digital Development of the Kyrgyz Republic,due to the fact that there has been an increase in settlements on the territory of the Kyrgyz Republic,ITU estimate.,,45542981,42775359,,,,
+LAO,Lao PDR,2021,52.0,62.0,-10.0,Ministry of Technology and Communication,,Laos Statistical Information Service - Statistical Yearbook 2021,,36782311,42555460,,,,
+MYS,Malaysia,2021,95.4,96.751428,-1.351428,Malaysian Communications and Multimedia Commission,"Further improvement and enhancement under government initiatives, namely JENDELA has improved 4G network.",Department of Statistics,Aged 15 and older.,36783595,42555467,,93.462768,97.660893,4.198125
+MDV,Maldives,2021,100.0,81.957603,18.042397,Communications Authority of Maldives,,ITU estimate.,,36784255,42775373,,,,
+MNG,Mongolia,2021,99.0,81.606823,17.393177,Communications Regulatory Commission of Mongolia,,National Statistical Office of Mongolia,Aged 15 and older.,36784299,42555472,,,,
+NRU,Nauru,2021,30.0,80.294998,-50.294998,ITU estimate.,,ITU estimate.,,45542962,59465458,,,,
+NPL,Nepal,2021,45.0,40.989101,4.010899,ITU estimate.,,ITU estimate.,,45542966,42775385,,,,
+PNG,Papua New Guinea,2021,50.0,16.559601,33.440399,ITU estimate.,,ITU estimate.,,45542969,42775392,,,,
+PHL,Philippines,2021,80.0,66.907799,13.092201,Department of Information and Communication Technology,,ITU estimate.,Aged 10-74.,36785180,42775391,,,,
+SLB,Solomon Islands,2021,25.0,26.037901,-1.037901,ITU estimate.,,ITU estimate.,,45542959,42775397,,,,
+LKA,Sri Lanka,2021,96.0,44.453087,51.546913,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,Aged 5-69.,36800219,42775367,,,,
+TWN,"Taipei,China",2021,99.95,87.603996,12.346004,National Communications Commission,,ITU estimate.,Aged 16 and older.,36785361,42775411,,,,
+TJK,Tajikistan,2021,80.0,36.705601,43.294399,ITU estimate.,,ITU estimate.,,45542978,48476707,,,,
+THA,Thailand,2021,98.1,85.269567,12.830433,Office of the National Broadcasting and Telecommunications Commission,Data from the largest mobile operator in Thailand,National Statistical Office,Aged 6 and older.,36785405,42555503,,81.684875,89.628174,7.943299
+TLS,Timor-Leste,2021,45.0,35.042,9.958,National Communications Authority,,ITU estimate.,,36800175,42775406,,,,
+TON,Tonga,2021,96.0,57.549,38.451,"Ministry of Meteorology, Energy, Information, Disaster Management, Environment and Climate Change, Communication (MEIDECC)",,Tonga Statistics Department,"Private household residence only, not including visitors. Have mobile phone and use for internet last three weeks",36800351,42775407,,,62.749685,
+UZB,Uzbekistan,2021,75.0,76.59043,-1.59043,Ministry of Digital Technologies of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics,Aged 10 and older.,36785095,42775417,,73.490777,79.45395,5.963173
+VNM,Viet Nam,2021,99.7,74.21,25.49,Ministry of Information and Communications,,Ministry of Information and Communications,Aged 6 and older.,36800403,42555511,,,,
+AFG,Afghanistan,2022,33.03,15.8663,17.1637,Afghanistan Telecommunication Regulatory Authority.,,ITU estimate.,,48501941,48476711,,,,
+ARM,Armenia,2022,100.0,77.027675,22.972325,Ministry of High-Tech Industry of Armenia,,The Statistical Committee of the Republic of Armenia,All ages.,45651631,48476721,,73.312356,79.519651,6.207296
+AZE,Azerbaijan,2022,94.0,88.0,6.0,Ministry of Digital Development and Transport,,State Statistical Committee of the Republic of Azerbaijan,Aged 7 and older.,45651771,48476716,,81.251109,93.510025,12.258917
+BGD,Bangladesh,2022,98.5,41.616501,56.883499,Bangladesh Telecommunication Regulatory Commission,"June, 2023",ITU estimate.,Aged 5 and older.,45652004,48476720,,,,
+BTN,Bhutan,2022,97.0,88.356201,8.643799,Government Technology Agency,BTL- 45.55%#TICL-97%,ITU estimate.,,45652217,48476723,,,,
+BRN,Brunei Darussalam,2022,98.64,98.970426,-0.330426,Authority for Info-communications Technology Industry of Brunei Darussalam,Data is referring to LTE coverage. There is no WiMax deployment in Brunei.,Authority for Info-communications Technology Industry of Brunei Darussalam,Aged 15 and older.,48749179,48476728,,,,
+KHM,Cambodia,2022,92.1,65.490799,26.609201,Telecommunication Regulator of Cambodia (TRC),,ITU estimate.,Aged 5 and older.,45652322,48476731,,,,
+CHN,China,2022,99.9,75.611316,24.288684,Ministry of Industry and Information Technology,,National Bureau of Statistics,Aged 6 and older.,45652395,48418744,,,,
+FJI,Fiji,2022,80.0,72.565498,7.434502,ITU estimate.,,ITU estimate.,,48751162,48476750,,,,
+GEO,Georgia,2022,99.72,78.711275,21.008725,Communications Comission,,National Statistics Office of Georgia,Aged 15 and older.,45656720,48419166,,68.728401,85.194697,16.466296
+HKG,"Hong Kong, China",2022,99.0,95.613571,3.386429,Office of the Communications Authority,,Census and Statistics Department,Aged 10 and older. In last twelve months,45653380,48418851,,,,
+IND,India,2022,98.67,55.9,42.77,Department of Telecommunications,As in December 2022,Ministry of Statistics and Programme Implementation,,45653590,48476764,,,,
+IDN,Indonesia,2022,96.48,66.484613,29.995387,Ministry of Communications and Informatics,,BPS-Statistics Indonesia,All ages.,45653625,48418889,,56.108625,74.162072,18.053447
+KAZ,Kazakhstan,2022,87.3,92.296853,-4.996853,"Ministry of digital development, defense and aerospace industry of the Republic of Kazakhstan",the data is generated on an annual basis at the end of May,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",Aged 6 and older.,45693030,48419184,,90.319202,93.534438,3.215236
+KIR,Kiribati,2022,64.0,84.998497,-20.998497,"Ministry of Information, Communication, Transport & Tourism Development",,ITU estimate.,,48749204,59465415,,,,
+KGZ,Kyrgyz Republic,2022,96.9,84.193703,12.706297,Service for the Regulation and Supervision of the Communications Sector under the Ministry of Digital Development of the Kyrgyz Republic,due to the fact that there has been an increase in settlements on the territory of the Kyrgyz Republic,ITU estimate.,,48509407,48476774,,,,
+LAO,Lao PDR,2022,66.32,64.540001,1.779999,Ministry of Post and Telecommunication,,ITU estimate.,,48751174,48476775,,,,
+MYS,Malaysia,2022,96.9,97.39864,-0.49864,Malaysian Communications and Multimedia Commission,JENDELA initiatives for further improvement and enhancement have increased connectivity for 4G networks.,Department of Statistics,Aged 15 and older.,45654370,48418958,,94.516255,98.331623,3.815368
+MDV,Maldives,2022,100.0,83.911891,16.088109,Communications Authority of Maldives,,"Maldives Bureau of Statistics, Ministry of Housing, Land and Urban Development",Aged 15 and older. Converted to individuals by assuming the household response is representative of all individuals in the household,45654405,48476784,,75.175448,96.413066,21.237618
+FSM,Micronesia,2022,30.0,39.027901,-9.027901,"Department of Transportation, Communications and Infrastructure",,ITU estimate.,,45653117,59465377,,,,
+MNG,Mongolia,2022,99.0,81.077202,17.922798,Communications Regulatory Commission of Mongolia,,ITU estimate.,Aged 15 and older.,45654475,48476790,,,,
+NRU,Nauru,2022,90.0,83.226601,6.773399,ITU estimate.,,ITU estimate.,,48751177,59465459,,,,
+NPL,Nepal,2022,53.28,45.450802,7.829198,ITU estimate.,,ITU estimate.,,45692718,48476797,,,,
+PNG,Papua New Guinea,2022,55.91,18.256599,37.653401,ITU estimate.,,ITU estimate.,,48751181,48476807,,,,
+PHL,Philippines,2022,80.0,75.211144,4.788856,Department of Information and Communication Technology,,Department of  Information and Communications Technology,Aged 15 and older.,45654965,48476808,,,,
+SLB,Solomon Islands,2022,29.54,28.0173,1.5227,ITU estimate.,,ITU estimate.,,48751185,48476727,,,,
+LKA,Sri Lanka,2022,97.0,48.3,48.7,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,Aged 5-69.,45652465,48476736,,,,
+TWN,"Taipei,China",2022,99.96,86.268022,13.691978,National Communications Commission,,National Communications Commission,Aged 16 and older.,45656790,48419193,,,,
+TJK,Tajikistan,2022,80.0,48.914299,31.085701,ITU estimate.,,ITU estimate.,,48751188,48476831,,,,
+THA,Thailand,2022,98.1,87.977245,10.122755,The National Broadcasting and Telecommunications Commission,Data from the largest mobile operator in Thailand,National Statistical Office,Aged 6 and older.,45655945,48419078,,84.873678,91.675916,6.802238
+TON,Tonga,2022,96.0,61.607399,34.392601,ITU estimate.,,ITU estimate.,,45691783,48476833,,,,
+UZB,Uzbekistan,2022,85.0,83.9,1.1,Ministry of Digital Technologies of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics,Aged 10 and older.,45656306,48476849,,81.534004,86.083432,4.549428
+VNM,Viet Nam,2022,99.85,78.589999,21.260001,Ministry of Information and Communications,,Ministry of Information and Communications,Aged 6 and older.,45656414,48419122,,,,
+AFG,Afghanistan,2023,34.0,15.9284,18.0716,Afghanistan Telecommunication Regulatory Authority.,increase,ITU estimate.,,48820218,52268931,21.29,,,
+ARM,Armenia,2023,100.0,79.99663,20.00337,Ministry of High-Tech Industry of Armenia,,The Statistical Committee of the Republic of Armenia,All ages.,48821088,52268936,0.82,74.919246,83.488258,8.569013
+AZE,Azerbaijan,2023,100.0,89.0,11.0,Ministry of Digital Development and Transport,,State Statistical Committee of the Republic of Azerbaijan,Aged 7 and older.,48821239,48750201,0.85,82.115393,94.628169,12.512776
+BGD,Bangladesh,2023,98.93,44.502742,54.427258,Bangladesh Telecommunication Regulatory Commission,"June, 2024",Bangladesh Bureau of Statistics,Aged 5 and older.,48821803,48750236,1.45,36.40951,68.583463,32.173953
+BTN,Bhutan,2023,97.0,90.0214,6.9786,Government Technology Agency,,ITU estimate.,,48822043,52268942,1.84,,,
+BRN,Brunei Darussalam,2023,99.04,98.970398,0.069602,Authority for Info-communications Technology Industry of Brunei Darussalam,Data is referring to LTE coverage. There is no WiMax deployment in Brunei.##The data increased to 99.04 due to an increase connection from a new tower in April.,ITU estimate.,,48822004,52268945,0.31,,,
+KHM,Cambodia,2023,93.1,68.925499,24.174501,Telecommunication Regulator of Cambodia (TRC),,ITU estimate.,,52135844,52268949,2.82,,,
+CHN,China,2023,100.0,90.6,9.4,Ministry of Industry and Information Technology,,China Internet Network Information Center,"Aged 6 and older. From 2023 includes individuals reporting they have not used the Internet but have used mobile applications such as WeChat, Taobao, Douyin and others",48822195,51712064,0.85,66.499941,83.300075,16.800134
+GEO,Georgia,2023,99.72,81.884256,17.835744,Communications Comission,,National Statistics Office of Georgia,Aged 15 and older.,48825639,51712500,0.8,72.970472,87.50466,14.534188
+HKG,"Hong Kong, China",2023,99.0,95.977819,3.022181,Office of the Communications Authority,,"Census and Statistics Department, Hong Kong Special Administrative Region, China",Aged 10 and older.,48823165,52268981,0.1,,,
+IND,India,2023,98.8,60.2523,38.5477,Department of Telecommunications,As in December 2023,ITU estimate.,,52128162,59465400,1.15,,,
+IDN,Indonesia,2023,98.96,69.208366,29.751634,Ministry of Communications and Informatics,,BPS-Statistics Indonesia,Aged 5 and older.,48823384,51712179,0.56,59.333988,76.295566,16.961578
+KAZ,Kazakhstan,2023,89.2,92.878461,-3.678461,"Ministry of digital development, defense and aerospace industry of the Republic of Kazakhstan",National statistic agency data,Bureau of National statistics Agency for Strategic planning and reforms of the Republic of Kazakhstan,Aged 6 and older.,48821491,51712516,0.84,91.709736,93.599136,1.8894
+KIR,Kiribati,2023,65.0,88.0,-23.0,"Ministry of Information, Communication, Transport & Tourism Development",,Kiribati National Statistics Office,Refers to individuals with access to the Internet at home,48820299,52268992,7.67,,,
+KGZ,Kyrgyz Republic,2023,99.33,91.044403,8.285597,Service for the Regulation and Supervision of the Communications Sector under the Ministry of Digital Development of the Kyrgyz Republic,,Gallup World Poll.,Aged 15 and older.,48821537,52268993,0.93,,,
+LAO,Lao PDR,2023,76.0,64.398003,11.601997,Ministry of Post and Telecommunication,,ITU estimate.,,52140891,52268994,1.74,,,
+MYS,Malaysia,2023,97.1,97.692726,-0.592726,Malaysian Communications and Multimedia Commission,Improvement and enhancement of 4G LTE coverage by government initiatives through JENDELA project,Department of Statistics,Aged 15 and older.,48820775,51712239,0.59,94.980317,98.595361,3.615044
+MDV,Maldives,2023,100.0,84.552902,15.447098,Communications Authority of Maldives,,ITU estimate.,,48820815,52269002,2.55,,,
+MNG,Mongolia,2023,99.0,83.743202,15.256798,Communications Regulatory Commission of Mongolia,,ITU estimate.,,48823758,52269010,1.23,,,
+PNG,Papua New Guinea,2023,70.0,18.5613,51.4387,NATIONAL INFORMATION & COMMUNICATION TECHNOLOGY AUTHORITY ( NICTA),,ITU estimate.,,52275225,52269025,23.51,,,
+PHL,Philippines,2023,95.54,77.866997,17.673003,Department of Information and Communication Technology,,ITU estimate.,,48824048,52269027,1.78,,,
+LKA,Sri Lanka,2023,97.0,51.2,45.8,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,Aged 5-69.,48822273,52269043,0.45,,,
+TWN,"Taipei,China",2023,99.96,93.144814,6.815186,National Communications Commission,,National Communications Commission,Aged 16 and older.,48821640,51712539,,,,
+THA,Thailand,2023,99.0,89.535252,9.464748,The National Broadcasting and Telecommunications Commission,Data from the largest mobile operator in Thailand,National Statistical Office,Aged 6 and older.,48824927,51712410,2.29,86.864017,92.706434,5.842417
+UZB,Uzbekistan,2023,92.0,89.01361,2.98639,Ministry of Digital Technologies of the Republic of Uzbekistan,,State Committee of the Republic of Uzbekistan on Statistics,Aged 10 and older.,48825309,51712452,0.95,,,
+VNM,Viet Nam,2023,99.85,78.08,21.77,Ministry of Information and Communications,,Ministry of Information and Communications,Aged 6 and older.,48825377,51712465,0.91,74.045064,84.7,10.654936
+AFG,Afghanistan,2024,37.324101,16.094999,21.229102,ITU estimate.,,ITU estimate.,,59466429,59465318,19.17,,,
+ARM,Armenia,2024,100.0,81.339302,18.660698,Ministry of High-Tech Industry of Armenia,,ITU estimate.,,56107405,59465325,0.72,,,
+AZE,Azerbaijan,2024,100.0,90.439796,9.560204,Ministry of Digital Development and Transport,,ITU estimate.,,56115922,59465329,0.9,,,
+BGD,Bangladesh,2024,99.64,53.421713,46.218287,Bangladesh Telecommunication Regulatory Commission,"December, 2024",Bangladesh Bureau of Statistics,Aged 5 and older.,56106522,59465335,0.75,43.585937,75.759095,32.173158
+BTN,Bhutan,2024,97.0,91.277397,5.722603,Government Technology Agency,Data from Tashicell Infocom,ITU estimate.,,56114531,59465341,1.51,,,
+BRN,Brunei Darussalam,2024,99.04,96.298288,2.741712,Authority for Info-communications Technology Industry of Brunei Darussalam,,Authority for Info-communications Technology Industry of Brunei Darussalam,Aged 0 and older.,56107559,59465340,0.34,93.11134,96.656561,3.545221
+KHM,Cambodia,2024,93.2,68.475304,24.724696,Telecommunication Regulator of Cambodia (TRC),,ITU estimate.,,56116571,59465347,0.66,,,
+CHN,China,2024,100.0,92.0,8.0,Ministry of Industry and Information Technology,,Instituto Nacional de Estadisticas,"From 2023 includes individuals reporting they have not used the Internet but have used mobile applications such as WeChat, Taobao, Douyin and others",56113746,56104749,0.81,,,
+FJI,Fiji,2024,85.0,74.7052,10.2948,Telecommunication Authority of Fiji ,,ITU estimate.,,59466446,59465375,3.13,,,
+GEO,Georgia,2024,99.72,83.798557,15.921443,Communications Comission,,National Statistics Office of Georgia,Aged 15 and older.,56113453,59465523,0.72,76.223562,88.488432,12.26487
+HKG,"Hong Kong, China",2024,99.0,95.75537,3.24463,Office of the Communications Authority,,"Census and Statistics Department, the Government of the Hong Kong Special Administrative Region of the People?s Republic of China",Aged 10 and older. In previous 12 months. Excludes foreign domestic helpers.,56122783,59465391,0.09,,,
+IND,India,2024,99.06,64.943497,34.116503,Department of Telecommunications,As in December 2024,ITU estimate.,,56112886,59465401,1.04,,,
+IDN,Indonesia,2024,99.15,72.780755,26.369245,Ministry of Communications and Informatics,,BPS-Statistics Indonesia,Aged 5 and older.,56122869,56292135,0.52,63.70974,79.126375,15.416635
+KAZ,Kazakhstan,2024,91.6,93.391673,-1.791673,"Ministry of digital development, defense and aerospace industry of the Republic of Kazakhstan",according to the final data of the Office for National Statistics for 2024,"Committee on Statistics, Ministry of National Economy of the Republic of Kazakhstan",Aged 6 and older.,56117041,56292494,1.11,91.747618,94.373957,2.626339
+KIR,Kiribati,2024,62.0,89.4403,-27.4403,"Ministry of Information, Communication, and Transport ",result after the inspection carried out by Regulator,ITU estimate.,,56123049,59465416,4.55,,,
+KGZ,Kyrgyz Republic,2024,99.4,92.028603,7.371397,Service for the Regulation and Supervision of the Communications Sector under the Ministry of Digital Development of the Kyrgyz Republic,,ITU estimate.,,56115799,59465527,1.64,,,
+LAO,Lao PDR,2024,76.0,65.592697,10.407303,ITU estimate.,,ITU estimate.,,59466461,59465419,1.41,,,
+MYS,Malaysia,2024,98.6,98.020606,0.579394,Malaysian Communications and Multimedia Commission,,Department of Statistics,Aged 15 and older.,56116284,56292209,0.23,95.292533,98.996541,3.704008
+MDV,Maldives,2024,100.0,85.239998,14.760002,Communications Authority of Maldives,,ITU estimate.,,56106852,59465440,2.28,,,
+FSM,Micronesia,2024,85.0,39.523602,45.476398,ITU estimate.,,ITU estimate.,,59466447,59465379,8.67,,,
+MNG,Mongolia,2024,99.0,85.123497,13.876503,Communications Regulatory Commission of Mongolia,,ITU estimate.,,56110356,59465445,1.16,,,
+NRU,Nauru,2024,78.978993,83.011703,-4.03271,ITU estimate.,,ITU estimate.,,59466476,59465461,1.85,,,
+NPL,Nepal,2024,86.0,46.321899,39.678101,National Telecommunication Authority.,,ITU estimate.,,59466475,59465457,1.99,,,
+PAK,Pakistan,2024,81.0,57.253,23.747,Pakistan Telecommunication Authority,Coverage as on 31st December 2024,Pakistan Bureau of Statistics,,56113217,59465463,,,,
+PNG,Papua New Guinea,2024,76.0,18.8116,57.1884,NICTA.,,ITU estimate.,,59466478,59465469,11.83,,,
+PHL,Philippines,2024,98.69,67.263009,31.426991,Department of Information and Communication Technology,,Department of  Information and Communications Technology,Aged 10 and older.,56110157,59465464,2.07,61.187288,72.749612,11.562325
+SLB,Solomon Islands,2024,35.187096,29.040701,6.146395,ITU estimate.,,ITU estimate.,,59466486,59465478,14.09,,,
+LKA,Sri Lanka,2024,97.4,54.59,42.81,Telecommunications Regulatory Commission of Sri Lanka,,Department of Census and Statistics,Aged 5-69.,59417890,59465357,0.4,52.021634,67.07,15.048366
+TWN,"Taipei,China",2024,100.0,96.706643,3.293357,National Communications Commission,,National Communications Commission,Aged 16 and older.,56110932,56292506,,,,
+TJK,Tajikistan,2024,84.7,55.7934,28.9066,Communication Service under the Government of the Republic of Tajikistan,According to the research conducted by the Communication Service,ITU estimate.,,59466500,59465526,5.86,,,
+THA,Thailand,2024,99.0,90.867188,8.132812,The National Broadcasting and Telecommunications Commission,Data from the largest mobile operator in Thailand,National Statistical Office,Aged 6 and older.,56123512,56292380,0.74,88.623028,93.521628,4.8986
+TON,Tonga,2024,96.0,67.441704,28.558296,ITU estimate.,,ITU estimate.,,59466492,59465496,2.09,,,
+UZB,Uzbekistan,2024,97.0,89.505501,7.494499,Ministry for Development of Information Technologies and Communications of the Republic of Uzbekistan,,ITU estimate.,,56112217,59465506,1.2,,,
+VNM,Viet Nam,2024,99.85,84.15,15.7,Ministry of Science and Technology,,General Statistics Office of Vietnam,Aged 6 and older.,56110804,56292437,0.86,81.108835,89.07,7.961165

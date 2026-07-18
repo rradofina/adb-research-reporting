@@ -222,6 +222,11 @@ def save_thumbnail(
 
     fig.savefig(png_path, dpi=FIG_DPI, bbox_inches=None, facecolor="white")
     fig.savefig(svg_path, format="svg", bbox_inches=None, facecolor="white")
+    svg_text = svg_path.read_text(encoding="utf-8")
+    svg_path.write_text(
+        "\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n",
+        encoding="utf-8",
+    )
     # Matplotlib emits trailing spaces in SVG path data. Normalize before the
     # sidecar hash is computed so generated heroes pass repository hygiene and
     # the recorded digest matches the committed file byte-for-byte.

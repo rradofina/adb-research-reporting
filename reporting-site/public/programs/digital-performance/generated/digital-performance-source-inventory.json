@@ -1,0 +1,87 @@
+{
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T20:44:58+00:00",
+  "sources": [
+    {
+      "name": "coverage_metadata",
+      "url": "https://api.datahub.itu.int/v2/dictionaries/getbyid/100095",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/coverage_metadata.json",
+      "retrieved_at": "2026-07-18T20:06:37+00:00",
+      "bytes": 6645,
+      "sha256": "a76a0bf5b009ee27c3b17812a94a646062e56d535f22068efbd1c64a033ee8ea",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "internet_use_metadata",
+      "url": "https://api.datahub.itu.int/v2/dictionaries/getbyid/11624",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/internet_use_metadata.json",
+      "retrieved_at": "2026-07-18T20:06:38+00:00",
+      "bytes": 6684,
+      "sha256": "6774bac84a887bf241739ee430c8f453a38b47c41fa7ec06dee9ad1972e38c98",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "coverage_4g",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/19306",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/coverage_4g.json",
+      "retrieved_at": "2026-07-18T20:06:39+00:00",
+      "bytes": 561932,
+      "sha256": "e9409106acb73506fd26cd49233a40c278a09780e1e368390bee1675e6b9fd66",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "internet_use",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/11624",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/internet_use.json",
+      "retrieved_at": "2026-07-18T20:06:41+00:00",
+      "bytes": 1166013,
+      "sha256": "e942864dbfc25eb20ff53ca5873d504c4d1ba20515f3917875a509c46935d7f1",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "coverage_3g",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/430",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/coverage_3g.json",
+      "retrieved_at": "2026-07-18T20:06:42+00:00",
+      "bytes": 704291,
+      "sha256": "5f1de8c162dd5ad4afaca0f0b70ac5d817e865bca650d0ba2e5b3f7f7c650db4",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "affordability_metadata",
+      "url": "https://api.datahub.itu.int/v2/dictionaries/getbyid/36056",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/affordability_metadata.json",
+      "retrieved_at": "2026-07-18T20:06:43+00:00",
+      "bytes": 2636,
+      "sha256": "307e5166eb87318ee10f7f5db712a639a5524e536c8e038da6fdcce6a8b26abc",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "affordability_5gb",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/36056",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/affordability_5gb.json",
+      "retrieved_at": "2026-07-18T20:06:43+00:00",
+      "bytes": 148666,
+      "sha256": "36278a9be903221de72ce9ed6f4de1de6db8b31e41172f4841dbfb71e9e9c804",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "internet_use_rural",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/9291",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/internet_use_rural.json",
+      "retrieved_at": "2026-07-18T20:06:43+00:00",
+      "bytes": 151123,
+      "sha256": "09fbc49aa55706ce6e51a888db332bd1572b117383a1f437b53542da70e7be97",
+      "access": "public HTTPS; no authentication"
+    },
+    {
+      "name": "internet_use_urban",
+      "url": "https://api.datahub.itu.int/v2/data/bycode/9300",
+      "cache_path": "digital-performance/.cache/itu-datahub-v2/internet_use_urban.json",
+      "retrieved_at": "2026-07-18T20:06:44+00:00",
+      "bytes": 157060,
+      "sha256": "1854c512f6502a0345a4b4db55f1b483fe281cc9a0aea6a88a2e2863f1bf5740",
+      "access": "public HTTPS; no authentication"
+    }
+  ]
+}

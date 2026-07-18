@@ -80,13 +80,14 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "digital-performance",
     betterSource:
-      "Ookla fixed/mobile parquet; M-Lab NDT; ITU ICT indicators; WorldPop and GHSL denominators.",
+      "Household ICT surveys; ITU rural/urban, gender, age, skills and non-use-barrier series; device ownership; distribution-sensitive affordability; then Ookla or M-Lab as a separate quality layer.",
     betterUnit:
-      "Ookla tile, mobile/fixed access cell, city, municipality, school or clinic catchment.",
-    priority: "P2",
+      "Person or household, rural/urban stratum, municipality, and tested-performance tile with separate denominators.",
+    priority: "P1",
     rationale:
-      "The code path exists but the parquet aggregation has not run. Once run, this becomes a strong granular infrastructure-performance story.",
+      "The 2024 availability–use difference is measured. The next constraint is explaining adoption and within-economy inequality without asking speed-test users to represent the unconnected.",
     sourceLinks: [
+      { label: "ITU DataHub", href: "https://datahub.itu.int/" },
       { label: "Ookla Open Data", href: "https://registry.opendata.aws/speedtest-global-performance/" },
       { label: "M-Lab", href: "https://www.measurementlab.net/data/" },
     ],

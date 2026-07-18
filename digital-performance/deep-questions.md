@@ -2,6 +2,11 @@
 
 `attestation_chain: ai-first`
 
+> **Superseded as the active agenda on 2026-07-19.** The executed ITU
+> availability–use study in `results.md` answered the program-selection
+> question and displaced the Ookla-first plan. The questions below are kept as
+> a future conditional-on-testing quality agenda only.
+
 This is an AI-generated research agenda for a program still at Stage 1: the
 folder holds committed Ookla Speedtest SQL (`ookla-fixed-2026-q1.sql`,
 `ookla-mobile-2026-q1.sql`) but no executed output, and — critically — no

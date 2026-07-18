@@ -1,0 +1,163 @@
+{
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T20:45:06+00:00",
+  "program": "digital-performance",
+  "headline_year": 2024,
+  "headline": {
+    "roster_coverage_floor_share": 0.5,
+    "roster_coverage_floor_n": 22,
+    "headline_year": 2024,
+    "paired_economies": 34,
+    "median_gap_pp": 14.3182525,
+    "median_4g_coverage_pct": 98.0,
+    "median_internet_use_pct": 82.1755025,
+    "positive_gap_economies": 31,
+    "negative_gap_economies": 3
+  },
+  "affordability_association": {
+    "n": 32,
+    "pearson_r": 0.19884920194978276,
+    "spearman_rho": 0.156355971695084
+  },
+  "urban_rural_association": {
+    "n": 10,
+    "pearson_r": 0.8776220599577224,
+    "spearman_rho": 0.9272727272727272
+  },
+  "source_provenance": {
+    "both_itu_estimates_n": 6,
+    "both_itu_estimates_median_gap_pp": 15.818202500000002,
+    "other_or_mixed_n": 28,
+    "other_or_mixed_median_gap_pp": 14.3182525
+  },
+  "balanced_change": {
+    "start_year": 2018,
+    "end_year": 2024,
+    "economies": 28,
+    "median_change_pp": -5.858386999999999,
+    "gap_narrowed": 16,
+    "gap_widened": 12
+  },
+  "figures": [
+    {
+      "number": 1,
+      "title": "Availability–use gap hero",
+      "evidence_job": "Show every signed headline gap",
+      "claim_guard": "Difference, not unobserved users",
+      "files": {
+        "png": "generated/charts/digital-performance-01-availability-use-gap-hero.png",
+        "svg": "generated/charts/digital-performance-01-availability-use-gap-hero.svg"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Coverage and use components",
+      "evidence_job": "Expose both inputs behind each gap",
+      "claim_guard": "No direct gap observation",
+      "files": {
+        "png": "generated/charts/digital-performance-02-components-dumbbell.png",
+        "svg": "generated/charts/digital-performance-02-components-dumbbell.svg"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Coverage–use scatter",
+      "evidence_job": "Test whether high availability implies high use",
+      "claim_guard": "No causal quadrant labels",
+      "files": {
+        "png": "generated/charts/digital-performance-03-coverage-use-scatter.png",
+        "svg": "generated/charts/digital-performance-03-coverage-use-scatter.svg"
+      }
+    },
+    {
+      "number": 4,
+      "title": "Components over time",
+      "evidence_job": "Show cross-sectional evolution and denominator",
+      "claim_guard": "Changing sample is visible",
+      "files": {
+        "png": "generated/charts/digital-performance-04-components-over-time.png",
+        "svg": "generated/charts/digital-performance-04-components-over-time.svg"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Balanced change",
+      "evidence_job": "Separate time pattern from changing membership",
+      "claim_guard": "Descriptive anchor years",
+      "files": {
+        "png": "generated/charts/digital-performance-05-balanced-gap-change.png",
+        "svg": "generated/charts/digital-performance-05-balanced-gap-change.svg"
+      }
+    },
+    {
+      "number": 6,
+      "title": "Affordability association",
+      "evidence_job": "Test one plausible correlate",
+      "claim_guard": "Association is not explanation",
+      "files": {
+        "png": "generated/charts/digital-performance-06-affordability-association.png",
+        "svg": "generated/charts/digital-performance-06-affordability-association.svg"
+      }
+    },
+    {
+      "number": 7,
+      "title": "Urban–rural use gap",
+      "evidence_job": "Expose a within-economy divide",
+      "claim_guard": "Small matched sample",
+      "files": {
+        "png": "generated/charts/digital-performance-07-urban-rural-use-gap.png",
+        "svg": "generated/charts/digital-performance-07-urban-rural-use-gap.svg"
+      }
+    },
+    {
+      "number": 8,
+      "title": "Source provenance",
+      "evidence_job": "Show estimate/reporting mix",
+      "claim_guard": "Not an accuracy ranking",
+      "files": {
+        "png": "generated/charts/digital-performance-08-source-provenance.png",
+        "svg": "generated/charts/digital-performance-08-source-provenance.svg"
+      }
+    },
+    {
+      "number": 9,
+      "title": "Sample-floor sensitivity",
+      "evidence_job": "Apply ±50% rule to headline-year selection",
+      "claim_guard": "Sample rule only",
+      "files": {
+        "png": "generated/charts/digital-performance-09-sample-floor-sensitivity.png",
+        "svg": "generated/charts/digital-performance-09-sample-floor-sensitivity.svg"
+      }
+    },
+    {
+      "number": 10,
+      "title": "Pair-availability heatmap",
+      "evidence_job": "Show every missing exact-year pair",
+      "claim_guard": "Grey is missing, not zero",
+      "files": {
+        "png": "generated/charts/digital-performance-10-pair-availability-heatmap.png",
+        "svg": "generated/charts/digital-performance-10-pair-availability-heatmap.svg"
+      }
+    },
+    {
+      "number": 11,
+      "title": "Coverage funnel",
+      "evidence_job": "Expose denominators for each question",
+      "claim_guard": "No 44-economy generalization",
+      "files": {
+        "png": "generated/charts/digital-performance-11-coverage-funnel.png",
+        "svg": "generated/charts/digital-performance-11-coverage-funnel.svg"
+      }
+    },
+    {
+      "number": 12,
+      "title": "Method and claim gate",
+      "evidence_job": "Separate supported and unsupported inference",
+      "claim_guard": "Infographic carries nonclaims",
+      "files": {
+        "png": "generated/charts/digital-performance-12-method-and-claim-gate.png",
+        "svg": "generated/charts/digital-performance-12-method-and-claim-gate.svg"
+      }
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "note": "Deterministic scan of committed deepening triplets; findings extracted verbatim from each deepened-results.md.",
   "counts": {
     "total": 18,
-    "computed": 17,
-    "walls": 1
+    "computed": 18,
+    "walls": 0
   },
   "rows": [
     {
@@ -46,10 +46,10 @@
     {
       "slug": "digital-performance",
       "title": "Deepened result",
-      "outcome": "wall",
+      "outcome": "computed + frontier wall",
       "has_script": true,
-      "has_artifact": false,
-      "artifact": null,
+      "has_artifact": true,
+      "artifact": "digital-performance-coverage-use-summary.json",
       "finding": "A genuine data wall: the Ookla speed pull (~2.6 GB), WorldPop, and an official-coverage claim are not on disk, so no numbers can be produced yet — a runnable pipeline stub is committed that refuses to invent them."
     },
     {

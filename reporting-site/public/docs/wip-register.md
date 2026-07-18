@@ -13,7 +13,7 @@ required. Every artifact carries `attestation_chain: ai-first` per §18.2.
 | Cap | Limit (pre-§18 default) | Limit (§18 ACTIVE — current) | Current count |
 |---|---|---|---|
 | Publication-Ready (PR) | 1 | suspended | 1 |
-| Screening Result (SR) | 3 | suspended | 0 |
+| Screening Result (SR) | 3 | suspended | 1 |
 
 §8.1 amended 2026-04-26: WIP caps suspended under §18 ACTIVE. Caps
 reactivate when §18 is reverted.
@@ -52,7 +52,12 @@ Last updated: 2026-07-19.
 
 ### Screening Result
 
-*(none currently; 9 programs demoted to PP on 2026-05-07 — see promotion log)*
+- **digital-performance** — the inherited Ookla-first dependency is retired.
+  An exact-year ITU screen covers 34 ADB developing member cases in 2024,
+  finds a 14.3-point median difference between reported 4G availability and
+  internet use, retains negative values and source diagnostics, and passes the
+  ±50% sample-floor check. Article:
+  `articles/digital-availability-use-gap.md`.
 
 ### Prepared Pipeline
 
@@ -165,6 +170,7 @@ promotion)*
 | 2026-07-19 | food-price-climate-transmission | PP construct-validation issue closed | (this commit) | ai-first | Annual qualifier and old price-wave method retired; corrected 12-market Nepal paper and ten-figure evidence spine built |
 | 2026-07-19 | flood-market-access | PP construct-validation issue closed | (this commit) | ai-first | National proxy retired; one-event Sylhet route object, full paper, ten-figure evidence spine, and 54-run sensitivity grid built |
 | 2026-07-19 | invisible-urbanization | PP measurement issue closed | (this commit) | ai-first | Inherited proxy retired; GHSL–WDI definition gap, administrative-scale and transition diagnostics, full paper, and 11-figure evidence spine built |
+| 2026-07-19 | digital-performance | PP → SR under §18 | (this commit) | ai-first | Full program loop completed: exact-year ITU result, source custody, scoring 26/30, ±50% sensitivity, critiques, paper, evidence surface, and 12-figure dossier |
 
 ---
 

@@ -37,7 +37,8 @@ python access-services/scripts/build-figure-dossier.py
 python access-services/scripts/build-thumbnail.py
 
 # Program 2 — Measured digital development gap
-npm run research:ookla
+python digital-performance/scripts/build-coverage-use-gap.py --refresh
+python digital-performance/scripts/build-figure-dossier.py
 
 # Program 3 — Air pollution without air monitors
 OPENAQ_API_KEY=<your-key> npm run research:openaq

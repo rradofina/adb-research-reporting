@@ -55,7 +55,7 @@ That second claim is usually impossible to defend and should not be used.
 | `mpi-nighttime-lights` | Potentially strong, but not yet original in this repo beyond MPI parsing. O1 current / O2 potential. | NTL join and subnational output not committed; coauthorship status must be reconciled. |
 | `access-services` | Useful O1/O2 screen. | Facility counts are not travel-time access; OSM undercount is inherited. |
 | `road-quality-poverty-access` | Good O2 next-track concept. | Road-quality ML method is already ADB's line; originality must come from poverty/access integration. |
-| `digital-performance` | Potential O2 once Ookla parquet aggregation runs. | No empirical value yet; pipeline prepared only. |
+| `digital-performance` | O2: exact-year ITU availability and use are joined across the ADB-DMC roster with provenance, missingness, affordability, urban-rural, and balanced-panel diagnostics. | The aggregate difference is not a person-level usage gap; independent household microdata and service-quality data are future layers. |
 | `air-monitoring` | O1 current; O2 if gridded exposure and monitor catchments replace country means. | WDI PM2.5 is too coarse and partly modeled. |
 | `invisible-urbanization` | O2: GHSL Degree of Urbanisation is joined to WDI national definitions, with administrative-scale and unit-transition diagnostics. | Construct differences are measured; legal misclassification and service neglect remain outside the claim. |
 | `climate-health-workdays` | O1 current; O2 if heat and occupational exposure enter at district/grid scale. | Current result is PM2.5-only despite the workday-loss framing. |

@@ -4,10 +4,10 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 8,
-    "hero_only": 8,
-    "with_no_visual": 2,
-    "working_papers_with_figure_references": 6
+    "with_multiple_figures": 16,
+    "hero_only": 1,
+    "with_no_visual": 1,
+    "working_papers_with_figure_references": 15
   },
   "programs": [
     {
@@ -587,7 +587,7 @@
       "evidence_figure_count": 7,
       "has_hero": true,
       "generated_data_object_count": 12,
-      "working_paper_figure_references": 0,
+      "working_paper_figure_references": 7,
       "status": "multiple-figures",
       "figures": [
         {
@@ -655,17 +655,95 @@
           "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/port-friction-trade-volume-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/port-hinterland-friction/generated/charts/port-two-gate-validation.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-rank-inversion.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-source-alignment-funnel.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-cppi-sensitivity.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-proxy-vs-cppi.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-cppi-distributions.svg",
+            "/programs/port-hinterland-friction/generated/charts/port-cppi-time-series.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "water-stress-crop-diversification",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 10,
+      "evidence_figure_count": 9,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 9,
+      "working_paper_figure_references": 9,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/water-crop-concentration-profiles",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-crop-construct-scatter",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-denominator-rebase",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-diagnostic-driver-dominance",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-diagnostic-sensitivity-membership",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-membership-churn",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-next-data-object",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/water-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/water-stress-crop-diversification-thumbnail",
           "formats": [
@@ -673,18 +751,66 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/water-three-gate-validity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/water-crop-pressure-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/water-stress-crop-diversification/generated/charts/water-three-gate-validity.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-source-alignment-funnel.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-membership-churn.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-denominator-rebase.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-crop-concentration-profiles.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-crop-construct-scatter.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-diagnostic-driver-dominance.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-diagnostic-sensitivity-membership.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-next-data-object.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/water-crop-pressure-cluster.md",
+          "tier": "blog",
+          "references": [
+            "/programs/water-stress-crop-diversification/generated/charts/water-three-gate-validity.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-denominator-rebase.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-crop-concentration-profiles.svg",
+            "/programs/water-stress-crop-diversification/generated/charts/water-source-alignment-funnel.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/water-crop-pressure-cluster.md",
+          "tier": "brief",
+          "references": [
+            "/programs/water-stress-crop-diversification/generated/charts/water-three-gate-validity.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/water-crop-pressure-cluster.md",
+          "tier": "social",
+          "references": [
+            "/programs/water-stress-crop-diversification/generated/charts/water-stress-crop-diversification-thumbnail.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "social-protection-shock-coverage",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 9,
+      "evidence_figure_count": 8,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 8,
+      "working_paper_figure_references": 8,
+      "status": "multiple-figures",
       "figures": [
         {
           "file": "charts/social-protection-shock-coverage-thumbnail",
@@ -693,19 +819,145 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/sp-covid-response-matrix",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-dropped-leg-ranking",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-membership-churn",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-poverty-dominance",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-proxy-vs-response-breadth",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-three-gate-validity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/sp-vintage-profile",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/sp-shock-readiness-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/social-protection-shock-coverage/generated/charts/sp-three-gate-validity.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-source-alignment-funnel.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-dropped-leg-ranking.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-membership-churn.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-vintage-profile.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-covid-response-matrix.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-proxy-vs-response-breadth.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-poverty-dominance.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/sp-shock-readiness-cluster.md",
+          "tier": "blog",
+          "references": [
+            "/programs/social-protection-shock-coverage/generated/charts/sp-dropped-leg-ranking.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-membership-churn.svg",
+            "/programs/social-protection-shock-coverage/generated/charts/sp-covid-response-matrix.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/sp-shock-readiness-cluster.md",
+          "tier": "brief",
+          "references": [
+            "/programs/social-protection-shock-coverage/generated/charts/sp-three-gate-validity.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/sp-shock-readiness-cluster.md",
+          "tier": "social",
+          "references": [
+            "/programs/social-protection-shock-coverage/generated/charts/social-protection-shock-coverage-thumbnail.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "school-heat-disruption",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 10,
+      "evidence_figure_count": 9,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 9,
+      "working_paper_figure_references": 9,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/school-driver-dominance",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-enrollment-share-proxy",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-hazard-burden-composition",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/school-heat-disruption-thumbnail",
           "formats": [
@@ -713,19 +965,121 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/school-heatwave-affected-ranking",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-next-data-object",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-proxy-outcome-scatter",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-sensitivity-run-verdicts",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/school-three-gate-validity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/school-heat-honest-narrowing.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/school-heat-disruption/generated/charts/school-three-gate-validity.svg",
+            "/programs/school-heat-disruption/generated/charts/school-sensitivity-run-verdicts.svg",
+            "/programs/school-heat-disruption/generated/charts/school-source-alignment-funnel.svg",
+            "/programs/school-heat-disruption/generated/charts/school-heatwave-affected-ranking.svg",
+            "/programs/school-heat-disruption/generated/charts/school-proxy-outcome-scatter.svg",
+            "/programs/school-heat-disruption/generated/charts/school-driver-dominance.svg",
+            "/programs/school-heat-disruption/generated/charts/school-hazard-burden-composition.svg",
+            "/programs/school-heat-disruption/generated/charts/school-enrollment-share-proxy.svg",
+            "/programs/school-heat-disruption/generated/charts/school-next-data-object.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/school-heat-honest-narrowing.md",
+          "tier": "blog",
+          "references": [
+            "/programs/school-heat-disruption/generated/charts/school-sensitivity-run-verdicts.svg",
+            "/programs/school-heat-disruption/generated/charts/school-heatwave-affected-ranking.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/school-heat-honest-narrowing.md",
+          "tier": "brief",
+          "references": [
+            "/programs/school-heat-disruption/generated/charts/school-three-gate-validity.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/school-heat-honest-narrowing.md",
+          "tier": "social",
+          "references": [
+            "/programs/school-heat-disruption/generated/charts/school-heat-disruption-thumbnail.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "food-price-climate-transmission",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 10,
+      "evidence_figure_count": 9,
       "has_hero": true,
-      "generated_data_object_count": 7,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 11,
+      "working_paper_figure_references": 9,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/food-price-annual-alignment",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-claim-gates",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/food-price-climate-transmission-thumbnail",
           "formats": [
@@ -733,19 +1087,211 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/food-price-macro-market-mismatch",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-method-correction",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-rain-lag-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-spike-alignment",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-threshold-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/food-price-wave-timeline",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/food-price-joint-qualifier.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/food-price-climate-transmission/generated/charts/food-price-spike-alignment.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-source-alignment-funnel.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-method-correction.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-rain-lag-sensitivity.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-wave-timeline.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-threshold-sensitivity.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-annual-alignment.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-macro-market-mismatch.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-claim-gates.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/food-price-joint-qualifier.md",
+          "tier": "blog",
+          "references": [
+            "/programs/food-price-climate-transmission/generated/charts/food-price-macro-market-mismatch.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-method-correction.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-spike-alignment.svg",
+            "/programs/food-price-climate-transmission/generated/charts/food-price-wave-timeline.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/food-price-joint-qualifier.md",
+          "tier": "brief",
+          "references": [
+            "/programs/food-price-climate-transmission/generated/charts/food-price-spike-alignment.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/food-price-joint-qualifier.md",
+          "tier": "social",
+          "references": [
+            "/programs/food-price-climate-transmission/generated/charts/food-price-climate-transmission-thumbnail.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "coastal-informal-risk",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 15,
+      "evidence_figure_count": 14,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 12,
+      "working_paper_figure_references": 12,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/coastal-informal-risk-01-growth-hero",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-02-centre-dumbbell",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-03-proxy-falsification",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-04-economy-aggregation",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-05-elevation-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-06-window-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-07-population-built-corroboration",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-08-absolute-versus-share",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-09-change-direction",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-10-growth-concentration",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-11-coverage-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-informal-risk-12-method-and-claim-gate",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/coastal-informal-risk-thumbnail",
           "formats": [
@@ -753,18 +1299,68 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/coastal-rough-lecz-growth",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/coastal-rough-proxy-comparison",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/coastal-informal-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-02-centre-dumbbell.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-10-growth-concentration.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-03-proxy-falsification.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-04-economy-aggregation.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-09-change-direction.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-07-population-built-corroboration.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-08-absolute-versus-share.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-05-elevation-sensitivity.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-06-window-sensitivity.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.svg",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg"
+          ]
+        },
+        {
+          "article": "articles/_slides/coastal-informal-cluster.md",
+          "tier": "slides",
+          "references": [
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-10-growth-concentration.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-03-proxy-falsification.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-07-population-built-corroboration.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-08-absolute-versus-share.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-05-elevation-sensitivity.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-06-window-sensitivity.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.png",
+            "/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.png"
+          ]
+        }
+      ]
     },
     {
       "slug": "flood-market-access",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 10,
+      "evidence_figure_count": 9,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 9,
+      "working_paper_figure_references": 8,
+      "status": "multiple-figures",
       "figures": [
         {
           "file": "charts/flood-market-access-thumbnail",
@@ -773,19 +1369,227 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/flood-sylhet-access-split",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-claim-gates",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-coverage-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-market-gate",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-road-set",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-route-map",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-source-disagreement",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/flood-sylhet-survivor-selection",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/flood-market-access-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/flood-market-access/generated/charts/flood-sylhet-route-map.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-market-gate.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-source-disagreement.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-access-split.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-sensitivity.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-road-set.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-survivor-selection.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-claim-gates.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/flood-market-access-cluster.md",
+          "tier": "blog",
+          "references": [
+            "/programs/flood-market-access/generated/charts/flood-sylhet-route-map.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-sensitivity.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-market-gate.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/flood-market-access-cluster.md",
+          "tier": "brief",
+          "references": [
+            "/programs/flood-market-access/generated/charts/flood-sylhet-access-split.svg",
+            "/programs/flood-market-access/generated/charts/flood-sylhet-sensitivity.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "invisible-urbanization",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 14,
+      "evidence_figure_count": 13,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 14,
+      "working_paper_figure_references": 6,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/invisible-urbanization-01-definition-gap-hero",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-02-selected-definition-dumbbell",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-03-definition-gap-over-time",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-04-focus-trajectories",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-05-administrative-scale-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-06-embedded-share-over-time",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-07-transition-waterfall",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-08-country-embedded-shares",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-09-country-time-heatmap",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-10-coverage-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-11-method-and-claim-gate",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-rough-definition-gap",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/invisible-urbanization-rough-scale-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/invisible-urbanization-thumbnail",
           "formats": [
@@ -795,7 +1599,33 @@
           "role": "hero"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/invisible-urbanization-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-01-definition-gap-hero.svg",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-02-selected-definition-dumbbell.svg",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-03-definition-gap-over-time.svg",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-05-administrative-scale-sensitivity.svg",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-07-transition-waterfall.svg",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-11-method-and-claim-gate.svg"
+          ]
+        },
+        {
+          "article": "articles/_slides/invisible-urbanization-cluster.md",
+          "tier": "slides",
+          "references": [
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-01-definition-gap-hero.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-11-method-and-claim-gate.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-02-selected-definition-dumbbell.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-03-definition-gap-over-time.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-05-administrative-scale-sensitivity.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-06-embedded-share-over-time.png",
+            "/programs/invisible-urbanization/generated/charts/invisible-urbanization-07-transition-waterfall.png"
+          ]
+        }
+      ]
     },
     {
       "slug": "access-services",
@@ -894,14 +1724,172 @@
     },
     {
       "slug": "digital-performance",
-      "logical_figure_count": 0,
-      "evidence_figure_count": 0,
-      "has_hero": false,
-      "generated_data_object_count": 0,
-      "working_paper_figure_references": 0,
-      "status": "no-visual",
-      "figures": [],
-      "article_references": []
+      "logical_figure_count": 14,
+      "evidence_figure_count": 13,
+      "has_hero": true,
+      "generated_data_object_count": 5,
+      "working_paper_figure_references": 10,
+      "status": "multiple-figures",
+      "figures": [
+        {
+          "file": "charts/digital-performance-01-availability-use-gap-hero",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-02-components-dumbbell",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-03-coverage-use-scatter",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-04-components-over-time",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-05-balanced-gap-change",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-06-affordability-association",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-07-urban-rural-use-gap",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-08-source-provenance",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-09-sample-floor-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-10-pair-availability-heatmap",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-11-coverage-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-12-method-and-claim-gate",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-rough-coverage-use",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/digital-performance-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": [
+        {
+          "article": "articles/digital-availability-use-gap.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-03-coverage-use-scatter.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-04-components-over-time.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-05-balanced-gap-change.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-07-urban-rural-use-gap.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-09-sample-floor-sensitivity.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-10-pair-availability-heatmap.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-12-method-and-claim-gate.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/digital-availability-use-gap.md",
+          "tier": "blog",
+          "references": [
+            "/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/digital-availability-use-gap.md",
+          "tier": "brief",
+          "references": [
+            "/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg"
+          ]
+        },
+        {
+          "article": "articles/_slides/digital-availability-use-gap.md",
+          "tier": "slides",
+          "references": [
+            "/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-12-method-and-claim-gate.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-05-balanced-gap-change.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg",
+            "/programs/digital-performance/generated/charts/digital-performance-07-urban-rural-use-gap.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "mpi-nighttime-lights",

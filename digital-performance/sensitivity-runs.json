@@ -1,0 +1,64 @@
+{
+  "program": "digital-performance",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T20:45:06+00:00",
+  "sample_floor_sensitivity": {
+    "minus_50pct": {
+      "roster_coverage_floor_share": 0.25,
+      "roster_coverage_floor_n": 11,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    },
+    "baseline": {
+      "roster_coverage_floor_share": 0.5,
+      "roster_coverage_floor_n": 22,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    },
+    "plus_50pct": {
+      "roster_coverage_floor_share": 0.75,
+      "roster_coverage_floor_n": 33,
+      "headline_year": 2024,
+      "paired_economies": 34,
+      "median_gap_pp": 14.3182525,
+      "median_4g_coverage_pct": 98.0,
+      "median_internet_use_pct": 82.1755025,
+      "positive_gap_economies": 31,
+      "negative_gap_economies": 3
+    }
+  },
+  "balanced_change": {
+    "start_year": 2018,
+    "end_year": 2024,
+    "economies": 28,
+    "median_change_pp": -5.858386999999999,
+    "gap_narrowed": 16,
+    "gap_widened": 12
+  },
+  "affordability_association": {
+    "n": 32,
+    "pearson_r": 0.19884920194978276,
+    "spearman_rho": 0.156355971695084
+  },
+  "urban_rural_association": {
+    "n": 10,
+    "pearson_r": 0.8776220599577224,
+    "spearman_rho": 0.9272727272727272
+  },
+  "source_provenance": {
+    "both_itu_estimates_n": 6,
+    "both_itu_estimates_median_gap_pp": 15.818202500000002,
+    "other_or_mixed_n": 28,
+    "other_or_mixed_median_gap_pp": 14.3182525
+  }
+}

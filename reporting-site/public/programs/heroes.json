@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T19:55:46.057Z",
+  "generated_at": "2026-07-18T20:45:39.779Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -371,7 +371,26 @@
     },
     {
       "slug": "digital-performance",
-      "hero": null
+      "hero": {
+        "png": "generated/charts/digital-performance-thumbnail.png",
+        "svg": "generated/charts/digital-performance-thumbnail.svg",
+        "json": "generated/charts/digital-performance-thumbnail.json",
+        "title": "The network is present. Use still lags.",
+        "caption": "Reported 4G/LTE coverage exceeds Internet use by a median 14.3 percentage points across 34 exact-year observed cases in 2024.",
+        "headline_number": "14.3 percentage-point median difference",
+        "visual_form": "top signed gaps plus median component inset",
+        "source": "ITU DataHub i271GA + i99H",
+        "attestation_chain": "ai-first",
+        "generated_at": "2026-07-18T20:45:08+00:00",
+        "dimensions": {
+          "width": 1600,
+          "height": 900
+        },
+        "sha256": {
+          "png": "dd4769ce853ca592260a8174233de1125751dbf4ce6234e9a4d1afc34c770a37",
+          "svg": "bcc0bf583878b98e7b11de6f3f44fe23b8baf99b2ad0ebd50c85552db75850d7"
+        }
+      }
     },
     {
       "slug": "mpi-nighttime-lights",

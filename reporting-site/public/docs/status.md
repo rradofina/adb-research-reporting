@@ -12,17 +12,16 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `digital-performance` — start from a public connectivity data object and a rough visual, then decide whether the 2.6 GB Ookla route is necessary. |
-| Per-program board | `digital-performance/STATUS.md` |
+| Active flagship | None — `digital-performance` is ai-first finished for its current issue; no closed program is reopened without a named claim-changing public object. |
+| Per-program board | Next board is selected only after a qualified source object earns rotation; `mpi-nighttime-lights` remains owner/coauthor-led. |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `coastal-informal-risk` — the inherited proxy was retired; 1,334 reporting GHS-UCDB centres added 90.9 million people below 10 m from 2000 to 2020. |
+| Previous flagship | `digital-performance` — the Ookla-first dependency was retired; exact-year ITU data yield a 14.3-point median 2024 availability–use difference across 34 observed cases. |
 
-The active flagship is the only program that may be advanced this session.
-Rotation reason recorded in the operational notes below. Programs in the
-queue are listed in `research/wip-register.md` and `CONSTITUTION.md` §15.
-Do not silently switch programs; rotation requires recording the reason
-here before switching.
+No program is silently reopened after current-issue closure. The next session
+must name a qualified public source object that can change a claim, or record a
+new data-first hook sprint. The only remaining registered Hypothesis,
+`mpi-nighttime-lights`, follows its owner/coauthor-led path.
 
 ## Next-up queue
 
@@ -103,9 +102,13 @@ overrides priority by editing this list.
     inherited proxy is retired. A direct GHS-UCDB object finds 90.9 million
     additional people below 10 m across 1,334 reporting centres; reopen only
     for qualified local hazard, protection, or social data.
-17. **`digital-performance`** — **active flagship.** Start with a public
-    connectivity data object and rough visual; test data availability before
-    committing to the inherited 2.6 GB Ookla route.
+17. **`digital-performance`** — *current issue closed; SR under §18.* The
+    inherited Ookla-first dependency is retired. An exact-year ITU screen finds
+    a 14.3-point median 2024 availability–use difference across 34 observed
+    cases, positive in 31, with a full paper, 12-figure dossier, source custody,
+    ±50% sample-floor check, critiques, and desktop/mobile QA. Reopen only for
+    independent household/device/skills/non-use evidence or a distinct
+    conditional service-quality question.
 18. **`mpi-nighttime-lights`** — Program 0, co-authored with Arturo; H
     stage; owner-led not AI-led (different review path).
 

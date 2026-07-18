@@ -1,78 +1,513 @@
 {
   "program": "digital-performance",
   "permanent_url": "/digital-performance?view=evidence",
-  "generated_at": "2026-07-18T19:55:46.024Z",
-  "hero": null,
-  "artifacts": [],
-  "generated_files": [],
-  "articles": [],
+  "generated_at": "2026-07-18T20:45:39.747Z",
+  "hero": {
+    "png": "generated/charts/digital-performance-thumbnail.png",
+    "svg": "generated/charts/digital-performance-thumbnail.svg",
+    "json": "generated/charts/digital-performance-thumbnail.json",
+    "title": "The network is present. Use still lags.",
+    "caption": "Reported 4G/LTE coverage exceeds Internet use by a median 14.3 percentage points across 34 exact-year observed cases in 2024.",
+    "headline_number": "14.3 percentage-point median difference",
+    "visual_form": "top signed gaps plus median component inset",
+    "source": "ITU DataHub i271GA + i99H",
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-07-18T20:45:08+00:00",
+    "dimensions": {
+      "width": 1600,
+      "height": 900
+    },
+    "sha256": {
+      "png": "dd4769ce853ca592260a8174233de1125751dbf4ce6234e9a4d1afc34c770a37",
+      "svg": "bcc0bf583878b98e7b11de6f3f44fe23b8baf99b2ad0ebd50c85552db75850d7"
+    }
+  },
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 2437,
+      "size_human": "2.4 KB",
+      "mtime": "2026-07-18T20:45:37.250Z",
+      "sha256": "5745a0aa2a2839a267fdaacf534b64b928744173ae57a7498a01623838a9b765",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 2177,
+      "size_human": "2.1 KB",
+      "mtime": "2026-07-18T20:45:37.250Z",
+      "sha256": "996678d8874ee48e9ea582066a2f100a7029ab23bdaf89a4b19c8269f26a5ddc",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 2571,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-18T20:45:37.254Z",
+      "sha256": "834560705c4509dfd3ac2bb2a80bd63fe5b1593bc3688de675c627db40b6e4ad",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 8487,
+      "size_human": "8.3 KB",
+      "mtime": "2026-07-18T20:45:37.253Z",
+      "sha256": "cde589eff330be5e9ba603d21d30a9952cf83edcf90dfb1222818da383490463",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "scoring",
+      "file": "scoring.md",
+      "label": "Scoring rubric",
+      "size": 2107,
+      "size_human": "2.1 KB",
+      "mtime": "2026-07-18T20:45:37.256Z",
+      "sha256": "d3eedfbbf1179b18de850320ddc3ad9846c2fef40d2c35748db6bebb0ba9e319",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 5454,
+      "size_human": "5.3 KB",
+      "mtime": "2026-07-18T20:45:37.254Z",
+      "sha256": "d4ec31c573822eeca1aa707139fe00236029e877985a01e3bcd312e25c078292",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 1984,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T20:45:37.257Z",
+      "sha256": "d868973c504430931ca864dcb47d628d83e0eeba7f2c4eeec30a370c6e5f8109",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity_runs",
+      "file": "sensitivity-runs.json",
+      "label": "Sensitivity-run output",
+      "size": 1914,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T20:45:06.897Z",
+      "sha256": "278b0c905631f3e120f587b8705cc451e5af4984c01c79903864544a1c8e1d79",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 2327,
+      "size_human": "2.3 KB",
+      "mtime": "2026-07-18T20:45:37.251Z",
+      "sha256": "7f79a2ae62bca60f9caf773b74736291393053f85ec3bf23ac89e5b4686267e8",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 5318,
+      "size_human": "5.2 KB",
+      "mtime": "2026-07-18T20:45:37.255Z",
+      "sha256": "fba9c3df0412924b72acf0c0f98eee0642b5abb8bb2e0406d967dc60d3df7c37",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 1896,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T20:45:37.256Z",
+      "sha256": "a3a7335ccd81be16937c10179fc7c06f065ec43dfa80fa198bfd5b3df82a2014",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 1980,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T20:45:37.255Z",
+      "sha256": "0cb11c0df8210bb4f36e11d5ac86ed85d0a1e2a281539784810f5e0e982356ce",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 2302,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T20:45:37.252Z",
+      "sha256": "db736109bfea45111dd6ac08df123d3e6d633fd4cf7f5c28f53c5cb650464082",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "conclusion",
+      "file": "conclusion.md",
+      "label": "Conclusion and next evidence upgrade",
+      "size": 1440,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T20:45:37.250Z",
+      "sha256": "89045ff5167c27cc496b4670cd11bbfd6c2c47449795113e983079863614f98b",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/charts/digital-performance-01-availability-use-gap-hero.png",
+      "size": 205827,
+      "size_human": "201.0 KB",
+      "sha256": "a0be91336714a1ec6ac92a968217f3220092f0c0dfbfa71aef4fa4bb0d1c06f4"
+    },
+    {
+      "file": "generated/charts/digital-performance-01-availability-use-gap-hero.svg",
+      "size": 119731,
+      "size_human": "116.9 KB",
+      "sha256": "0f91d87c4496b93540604c824738347f965aafce5149602d86bc5e5870402bc8"
+    },
+    {
+      "file": "generated/charts/digital-performance-02-components-dumbbell.png",
+      "size": 199185,
+      "size_human": "194.5 KB",
+      "sha256": "ac80e19f99774e5f7cf2dc65939d39ce685f5f2da25da7546107144d930ab1ac"
+    },
+    {
+      "file": "generated/charts/digital-performance-02-components-dumbbell.svg",
+      "size": 103428,
+      "size_human": "101.0 KB",
+      "sha256": "7b0c27c75685ad2014f0247c56da8e915375c79ef308003873a6ca2f92b5f75a"
+    },
+    {
+      "file": "generated/charts/digital-performance-03-coverage-use-scatter.png",
+      "size": 156113,
+      "size_human": "152.5 KB",
+      "sha256": "9c58a643e406d8149bed340686984cca68a279b1dc404fe5209525c05cc07f49"
+    },
+    {
+      "file": "generated/charts/digital-performance-03-coverage-use-scatter.svg",
+      "size": 79298,
+      "size_human": "77.4 KB",
+      "sha256": "945cca8e89898821ef79da9c39812a4f77ed3b502afa043ed711b8200b96bcca"
+    },
+    {
+      "file": "generated/charts/digital-performance-04-components-over-time.png",
+      "size": 147976,
+      "size_human": "144.5 KB",
+      "sha256": "37aed08b045bb666d077c84d1fbe7c5c01b418e0e869d8e56dd971584c2b9881"
+    },
+    {
+      "file": "generated/charts/digital-performance-04-components-over-time.svg",
+      "size": 79584,
+      "size_human": "77.7 KB",
+      "sha256": "bbca557f8fa0ca0d8b35899dc92fab5643bc02de3e333967004bd63628acf11c"
+    },
+    {
+      "file": "generated/charts/digital-performance-05-balanced-gap-change.png",
+      "size": 180616,
+      "size_human": "176.4 KB",
+      "sha256": "7f87b044bc44f7645b10e710714f661c667e58d1d5420d6b19941d8ec88c8f85"
+    },
+    {
+      "file": "generated/charts/digital-performance-05-balanced-gap-change.svg",
+      "size": 99152,
+      "size_human": "96.8 KB",
+      "sha256": "6683955daa8bbb2602299c2db09ae031d178fafe1187373cb09c05130276de01"
+    },
+    {
+      "file": "generated/charts/digital-performance-06-affordability-association.png",
+      "size": 147130,
+      "size_human": "143.7 KB",
+      "sha256": "490b9c526b37d061e84e53be71f2ca443e18793bc779869d9f5f8ab0c66ac4e7"
+    },
+    {
+      "file": "generated/charts/digital-performance-06-affordability-association.svg",
+      "size": 88680,
+      "size_human": "86.6 KB",
+      "sha256": "b1590b2408a4e4da3a21033941df41845ecc462677f678552eb46054d8d53f4b"
+    },
+    {
+      "file": "generated/charts/digital-performance-07-urban-rural-use-gap.png",
+      "size": 120141,
+      "size_human": "117.3 KB",
+      "sha256": "949b3434d51204eaae68abeaaf8cc412809a8f47d344cf3368ad93fdca8eb1ab"
+    },
+    {
+      "file": "generated/charts/digital-performance-07-urban-rural-use-gap.svg",
+      "size": 79273,
+      "size_human": "77.4 KB",
+      "sha256": "23ad1d43d5f2fdfb1f5d21f5777f32ef40eafe74f522f2233e061973176811be"
+    },
+    {
+      "file": "generated/charts/digital-performance-08-source-provenance.png",
+      "size": 98650,
+      "size_human": "96.3 KB",
+      "sha256": "c4e419e5faeabd710a4ae295220f4cd07adb144d2f2b36aa07a275efdf19c71a"
+    },
+    {
+      "file": "generated/charts/digital-performance-08-source-provenance.svg",
+      "size": 69058,
+      "size_human": "67.4 KB",
+      "sha256": "8176718a54413761f175dfd5f3c182f81c49cc8e22a2aafef8b492f1a0589f48"
+    },
+    {
+      "file": "generated/charts/digital-performance-09-sample-floor-sensitivity.png",
+      "size": 85629,
+      "size_human": "83.6 KB",
+      "sha256": "ae1f51bc55f1ae7f4dc859352d5e79382d8280d8d23c3ad90b61dc7d17e247d2"
+    },
+    {
+      "file": "generated/charts/digital-performance-09-sample-floor-sensitivity.svg",
+      "size": 67526,
+      "size_human": "65.9 KB",
+      "sha256": "ba4668320c561c106c560592d521ed499858797684a7a57e451513849aae8893"
+    },
+    {
+      "file": "generated/charts/digital-performance-10-pair-availability-heatmap.png",
+      "size": 190995,
+      "size_human": "186.5 KB",
+      "sha256": "aabc8431bfb3867d6e2b5030a84d07fefb6966c77b52bdc22480be686122b082"
+    },
+    {
+      "file": "generated/charts/digital-performance-10-pair-availability-heatmap.svg",
+      "size": 123578,
+      "size_human": "120.7 KB",
+      "sha256": "511f037e5c790c6c3c381f88f37c5a8d2e165f61ddc1a42fe38cef80624f6a23"
+    },
+    {
+      "file": "generated/charts/digital-performance-11-coverage-funnel.png",
+      "size": 94120,
+      "size_human": "91.9 KB",
+      "sha256": "0b9a84035c7901701b1f6f5f89b9ecaeb20483ee1f6d069da2a31016a9eef9e2"
+    },
+    {
+      "file": "generated/charts/digital-performance-11-coverage-funnel.svg",
+      "size": 68076,
+      "size_human": "66.5 KB",
+      "sha256": "1d6e48ccec801c34e44a4fff8922d0ce8d1b1afeebe046b233962b99f4bdb759"
+    },
+    {
+      "file": "generated/charts/digital-performance-12-method-and-claim-gate.png",
+      "size": 157017,
+      "size_human": "153.3 KB",
+      "sha256": "9941935e981acfc560989376c2c2470ea95f3f12ec396a21e6868356f61751bb"
+    },
+    {
+      "file": "generated/charts/digital-performance-12-method-and-claim-gate.svg",
+      "size": 85633,
+      "size_human": "83.6 KB",
+      "sha256": "7284b55371fc61d430662304335b8ff8738718a9f85ded8e548a020ea55e7590"
+    },
+    {
+      "file": "generated/charts/digital-performance-rough-coverage-use.png",
+      "size": 190206,
+      "size_human": "185.7 KB",
+      "sha256": "8750522c2d503e886d03634bc3ebe7f54b08ece163673d21cb9ade591012c447"
+    },
+    {
+      "file": "generated/charts/digital-performance-rough-coverage-use.svg",
+      "size": 111887,
+      "size_human": "109.3 KB",
+      "sha256": "2213dcf1a43c15849234bdc551507260f043f7af594a8ab52bd4727be971eb73"
+    },
+    {
+      "file": "generated/charts/digital-performance-thumbnail.json",
+      "size": 1116,
+      "size_human": "1.1 KB",
+      "sha256": "6ae5f8c0ef3e201d0ead19630d78300709ce5992f402f095f46e34b767e3fafe"
+    },
+    {
+      "file": "generated/charts/digital-performance-thumbnail.png",
+      "size": 86779,
+      "size_human": "84.7 KB",
+      "sha256": "dd4769ce853ca592260a8174233de1125751dbf4ce6234e9a4d1afc34c770a37"
+    },
+    {
+      "file": "generated/charts/digital-performance-thumbnail.svg",
+      "size": 108006,
+      "size_human": "105.5 KB",
+      "sha256": "bcc0bf583878b98e7b11de6f3f44fe23b8baf99b2ad0ebd50c85552db75850d7"
+    },
+    {
+      "file": "generated/digital-performance-coverage-hierarchy-flags.csv",
+      "size": 116,
+      "size_human": "116 B",
+      "sha256": "8bdd1876077e8f96d07534fdef855f4e3ff175c7178aac28c4402b94ed10c774"
+    },
+    {
+      "file": "generated/digital-performance-coverage-use-panel.csv",
+      "size": 62800,
+      "size_human": "61.3 KB",
+      "sha256": "98d34f8644ba68780c7f6c551eb3e7818a77fb0aa804ea0ba63c1748f21ec2da"
+    },
+    {
+      "file": "generated/digital-performance-coverage-use-summary.json",
+      "size": 4332,
+      "size_human": "4.2 KB",
+      "sha256": "c1b07f9997de1cdd6135ec1a4219b84d0ab2e968bf449087b2461072f4297065"
+    },
+    {
+      "file": "generated/digital-performance-figure-dossier.json",
+      "size": 5823,
+      "size_human": "5.7 KB",
+      "sha256": "31cadb78074696273f64da07926f6de745194ead80c2416443d81cae1dbf605a"
+    },
+    {
+      "file": "generated/digital-performance-source-inventory.json",
+      "size": 3879,
+      "size_human": "3.8 KB",
+      "sha256": "e921d11aa62573554168a6fc3303ac328854cd1de67f4eda00dda249591f1daf"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "digital-availability-use-gap",
+      "title": "The network is present. Use still lags.",
+      "attestation_chain": "ai-first"
+    }
+  ],
   "story": [
     {
       "key": "background",
       "title": "Research problem and background",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
+        {
+          "key": "readme",
+          "file": "README.md",
+          "label": "Overview"
+        }
+      ]
     },
     {
       "key": "literature",
       "title": "Related literature and evidence gap",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "literature",
+          "file": "literature.md",
+          "label": "Literature review"
+        }
+      ]
     },
     {
       "key": "data",
       "title": "Data sources and coverage",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "coverage",
+          "file": "coverage.md",
+          "label": "Coverage"
+        }
+      ]
     },
     {
       "key": "method",
       "title": "Methodology and claim test",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "preregistration",
+          "file": "pre-registration.md",
+          "label": "Pre-registration"
+        },
+        {
+          "key": "scoring",
+          "file": "scoring.md",
+          "label": "Scoring rubric"
+        }
+      ]
     },
     {
       "key": "results",
       "title": "Results",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "results",
+          "file": "results.md",
+          "label": "Results"
+        }
+      ]
     },
     {
       "key": "robustness",
       "title": "Sensitivity and robustness",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "sensitivity",
+          "file": "sensitivity.md",
+          "label": "Sensitivity suite"
+        }
+      ]
     },
     {
       "key": "limitations",
       "title": "Limitations and what this does not mean",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "limitations",
+          "file": "limitations.md",
+          "label": "Limitations"
+        }
+      ]
     },
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "conclusion",
+          "file": "conclusion.md",
+          "label": "Conclusion and next evidence upgrade"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
+    "reproduce": "/programs/digital-performance/REPRODUCE.md",
     "deck": null,
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/digital-performance"

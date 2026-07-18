@@ -245,7 +245,7 @@ node scripts/verify-manifest.mjs`}</pre>
             <li>· The framing is <strong>measurement gap, coverage gap, observability gap</strong> — not DMC deficiency.</li>
             <li>· No claim is presented past its evidence. Honest narrowings are surfaced, not buried.</li>
             <li>· Prepared-pipeline programs may contain computed screens, but those screens are not treated as final research; missing evidence upgrades remain explicit.</li>
-            <li>· The prepared-pipeline program (digital-performance) is held back because the data aggregation has not run; it is documented, not silently promoted.</li>
+            <li>· The digital-performance screening paper reports an executed ITU availability–use measurement study; the inherited Ookla speed route remains a separate, unrun quality upgrade.</li>
             <li>· The hypothesis program (mpi-nighttime-lights) remains owner-led until the external nighttime-lights track is reconciled with this repository.</li>
             <li>· Every <code className="font-mono not-italic">ai-first</code> chip is labeled honestly. A reader who wants <code className="font-mono not-italic">human-final</code> work has the upgrade-pass paths documented per program.</li>
           </ul>

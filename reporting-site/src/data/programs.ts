@@ -36,10 +36,13 @@ export const programs: ProgramEntry[] = [
   {
     id: 2,
     slug: "digital-performance",
-    title: "Measured digital development gap",
-    status: "PP",
+    title: "The network is present. Use still lags.",
+    status: "SR",
     summary:
-      "Ookla Open Data manifest + DuckDB SQL scaffold committed for PHL/BGD. Opt-in parquet download; no aggregated speed/latency claims yet.",
+      "Across 34 exact-year ADB developing member cases in 2024, reported 4G/LTE coverage exceeds internet use by a median 14.3 percentage points; the difference is positive in 31.",
+    note:
+      "AI-first Screening Result. Availability and use are separate aggregate indicators; the difference is not a person-level count, speed result, or causal effect.",
+    href: "/digital-performance?view=paper",
   },
   {
     id: 3,

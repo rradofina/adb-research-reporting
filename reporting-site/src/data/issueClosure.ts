@@ -1,7 +1,7 @@
 import { programs } from "./programs";
 import type { Maturity } from "../lib/claimTiers";
 
-export const ISSUE_CLOSURE_AS_OF = "2026-07-18";
+export const ISSUE_CLOSURE_AS_OF = "2026-07-19";
 
 export const ISSUE_STATUS_ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
 

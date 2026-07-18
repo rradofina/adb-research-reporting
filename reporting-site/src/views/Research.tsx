@@ -20,7 +20,7 @@ const DOMAIN_MAP: Record<string, { domain: string; description: string }> = {
   },
   "digital-performance": {
     domain: "Connectivity",
-    description: "Measured speed × population-weighted digital usability.",
+    description: "Network availability versus actual internet use, with quality kept as a separate layer.",
   },
   "air-monitoring": {
     domain: "Environment",

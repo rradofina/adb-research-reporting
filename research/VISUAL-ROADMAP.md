@@ -34,7 +34,7 @@ new claims or imply that every planned chart is currently supportable.
 | `flood-market-access` | 1 | Composite decomposition; rural share against flood frequency; raw-to-per-capita rank shifts; source-readiness matrix; spatial extent only after the modeled layer is admitted. |
 | `invisible-urbanization` | 11 | GHSL–WDI definition-gap distribution and trajectories; administrative-scale sensitivity; embedded-population time series; unit-transition waterfall; country shares; heatmap; coverage funnel; claim-gate infographic. |
 | `air-monitoring` | 1 | Station-evidence coverage matrix; calibration/status absence matrix; concentration against monitor observability; source-vintage timeline; unresolved evidence by station. |
-| `digital-performance` | 0 | Stop at hook triage: name a public data object and rough falsifiable visual before creating a program figure. |
+| `digital-performance` | 13 | Current-issue figure spine complete: signed availability–use hero, components, scatter, time series, balanced change, affordability, urban-rural diagnostic, provenance, sensitivity, availability heatmap, denominator funnel, claim gate, and hero thumbnail. Add another view only for independent household, device, skills, or conditional service-quality evidence. |
 | `mpi-nighttime-lights` | 0 | MPI dimension decomposition; night-light-blind share against MPI; indicator-observability matrix; source-readiness figure; spatial validation only after an eligible raster join. |
 
 ## Build order

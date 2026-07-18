@@ -12,6 +12,7 @@ const PROGRAMS = [
   "mpi-nighttime-lights",
   "public-service-data-quality",
   "access-services",
+  "digital-performance",
   "air-monitoring",
   "remittance-resilience",
   "grid-reliability-heat",

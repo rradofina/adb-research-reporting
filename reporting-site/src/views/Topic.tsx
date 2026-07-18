@@ -33,6 +33,22 @@ import { RemittanceMapHero } from "../components/charts/RemittanceMapHero";
 
 marked.setOptions({ gfm: true, breaks: false });
 
+function promoteStandaloneFigures(html: string): string {
+  return html.replace(/<p><img\s+([^>]+)><\/p>/g, (_match, attrs: string) => {
+    const altMatch = attrs.match(/\balt="([^"]*)"/);
+    const srcMatch = attrs.match(/\bsrc="([^"]*)"/);
+    const caption = altMatch?.[1]?.trim();
+    const src = srcMatch?.[1];
+    const image = src
+      ? `<a class="research-evidence-figure-link" href="${src}" target="_blank" rel="noreferrer" aria-label="Open full-size figure"><img ${attrs}></a>`
+      : `<img ${attrs}>`;
+    const figcaption = caption || src
+      ? `<figcaption>${caption ? `<span>${caption}</span>` : ""}${src ? `<a href="${src}" target="_blank" rel="noreferrer">Open full-size figure ↗</a>` : ""}</figcaption>`
+      : "";
+    return `<figure class="research-evidence-figure">${image}${figcaption}</figure>`;
+  });
+}
+
 type View = "overview" | "paper" | "brief" | "blog" | "slides" | "data" | "evidence";
 
 const TIER_TO_VIEW: Record<string, View> = {
@@ -217,7 +233,7 @@ export default function Topic({ slug }: { slug: string }) {
             )
         : raw;
       const refIndex = byKey(refs);
-      const { html: resolved, cited } = resolveCitations(webReady, refIndex);
+      const { html: resolved, cited } = resolveCitations(promoteStandaloneFigures(webReady), refIndex);
       const finalHtml = resolved + renderReferenceList(cited);
       bodyCache.current.set(key, finalHtml);
       if (!cancelled) {
@@ -310,7 +326,7 @@ export default function Topic({ slug }: { slug: string }) {
            their content's intrinsic width on narrow viewports — without
            it, a long inline code path or a wide image makes the column
            overflow the viewport. */}
-      <div className="topic-grid">
+      <div className={"topic-grid " + (view === "paper" ? "topic-grid-paper" : "")}>
         {/* Main content */}
         <main className="topic-main">
           {view === "overview" && (
@@ -420,10 +436,22 @@ function TopicHeroFigure({ slug, hero }: { slug: string; hero: HeroVisual }) {
   );
 }
 
-function splitNarrativeForHero(html: string) {
+function splitNarrativeForHero(html: string, condense = false) {
   const resultsHeading = /<h([12])(?:\s[^>]*)?>\s*(?:Results|Findings|The finding|Main result)\s*<\/h\1>/i.exec(html);
   if (resultsHeading?.index !== undefined) {
     const splitAt = resultsHeading.index + resultsHeading[0].length;
+    if (condense) {
+      const tail = html.slice(splitAt);
+      const firstParagraph = /^\s*(<p>[\s\S]*?<\/p>)/i.exec(tail);
+      if (firstParagraph) {
+        const remainder = tail.slice(firstParagraph[0].length).replace(/^\s*<figure[\s\S]*?<\/figure>/i, "");
+        const secondParagraph = /^\s*(<p>[\s\S]*?<\/p>)/i.exec(remainder);
+        return {
+          before: html.slice(resultsHeading.index, splitAt) + firstParagraph[1],
+          after: secondParagraph?.[1] || "",
+        };
+      }
+    }
     return { before: html.slice(0, splitAt), after: html.slice(splitAt) };
   }
   const openingParagraph = html.indexOf("</p>");
@@ -504,7 +532,7 @@ function ResearchStory({
                 /src="generated\//g,
                 `src="/programs/${slug}/generated/`,
               );
-              const { html, cited } = resolveCitations(webReady, refIndex);
+              const { html, cited } = resolveCitations(promoteStandaloneFigures(webReady), refIndex);
               return `<div class="research-story-document">${html}${renderReferenceList(cited)}</div>`;
             }),
           );
@@ -525,7 +553,9 @@ function ResearchStory({
     return <div className="loading-message">Loading the research package…</div>;
   }
 
-  const narrative = summaryHtml ? splitNarrativeForHero(summaryHtml) : null;
+  const narrative = summaryHtml
+    ? splitNarrativeForHero(summaryHtml, (manifest.story || []).every((section) => section.available))
+    : null;
   const heroIsInNarrative = Boolean(hero && narrative);
 
   return (

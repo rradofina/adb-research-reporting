@@ -5901,7 +5901,16 @@
   }
 
   .audit-hero-panel {
+    min-width: 0;
     border-left-color: var(--audit-red);
+  }
+
+  .audit-hero-panel > div,
+  .audit-hero-panel span,
+  .audit-hero-panel p,
+  .audit-hero-panel code {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .audit-hero-panel .showcase-stat-value {
@@ -5913,7 +5922,9 @@
   }
 
   .audit-hero-route code {
+    display: block;
     overflow-wrap: anywhere;
+    word-break: break-word;
     color: var(--ink);
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: var(--type-copy-xs);

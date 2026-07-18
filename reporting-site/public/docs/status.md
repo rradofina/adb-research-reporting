@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `school-heat-disruption` — the committed audit disproves the public “Cambodia is #1 across every perturbation” claim. The next move is to reshape the claim around the six discriminating runs and the missing school-day exposure/outcome join. |
-| Per-program board | `school-heat-disruption/STATUS.md` |
+| Active flagship | `food-price-climate-transmission` — test whether the annual macro joint qualifier survives contact with the existing market-month price-wave object before rebuilding its publication story. |
+| Per-program board | `food-price-climate-transmission/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `water-stress-crop-diversification` — the inherited top four was retired after it survived only two of seven stated sensitivity runs, two of four members under direct available-water stress, and zero of four under direct crop concentration. |
+| Previous flagship | `school-heat-disruption` — the inherited disruption ranking was retired after the “every perturbation” claim failed and Cambodia ranked sixth of six in UNICEF's heatwave-major ADB subset. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -78,13 +78,13 @@ overrides priority by editing this list.
     available-water stress retains two named members and direct crop
     concentration none. Reopen only for a basin × crop × irrigation × year
     object with exposure and an observed outcome.
-11. **`school-heat-disruption`** — **active flagship.** Correct the false
-    “KHM #1 across every perturbation” language: KHM leads five of six
-    discriminating runs, Pakistan leads one, and one additional run is an
-    all-zero tie. Then test whether the current source objects permit a
-    defensible exposure or disruption claim.
-12. **`food-price-climate-transmission`** — sensitivity-gate failure on
-    composite; index needs reformulation before ladder build.
+11. **`school-heat-disruption`** — *construct-validation issue closed.*
+    Cambodia leads five of six discriminating proxy runs but ranks sixth of six
+    by affected count in UNICEF's heatwave-major ADB subset. Reopen only for a
+    school-day exposure-outcome join; do not retune the national composite.
+12. **`food-price-climate-transmission`** — **active flagship.** The composite
+    failed sensitivity. Test the retained annual joint qualifier against the
+    existing market-month price-wave object before rebuilding the ladder.
 13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
     modeled-extent is §18.5 owner-gated.
 14. **`public-service-data-quality`** — *current presentation issue closed.* The showcase now uses generated

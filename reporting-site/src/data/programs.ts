@@ -166,8 +166,8 @@ export const programs: ProgramEntry[] = [
     title: "School heat disruption",
     status: "PP",
     summary:
-      "Cambodia is the single DMC that clears the screen under ±50 % sensitivity — 5.3 M children 0–14, primary pupil-teacher ratio 41.7 (highest in the screen), historical-period tasmax 31.9 °C. Top-5 ranking fails sensitivity; future-period tasmax (2040–2059 SSP2-4.5) would amplify the gradient.",
-    note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
+      "The inherited claim is rejected: Cambodia leads 5 of 6 discriminating sensitivity runs but ranks 6 of 6 by affected-student count in UNICEF's heatwave-major ADB subset; the proxy correlation is +0.03 versus +0.94 for child population.",
+    note: "AI-first construct-validation checkpoint completed 2026-07-18; the national disruption ranking is retired.",
     href: "/program/school-heat-disruption",
   },
   {

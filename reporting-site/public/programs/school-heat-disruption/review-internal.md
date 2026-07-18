@@ -1,20 +1,37 @@
-# Internal review — School Heat Disruption
+# Internal red-team — school heat disruption
 
-`attestation_chain: ai-first`. §18 critique-pass. Closed 2026-04-26.
+`attestation_chain: ai-first` · 2026-07-18
 
-## Critique
+## Objections and dispositions
 
-1. **The index is too parameter-sensitive to support a top-5 claim.**
-   Honest narrowing to top-1 is the right call.
-2. **Tasmax 1995–2014 is historical baseline.** Recent decades have
-   shifted; CMIP6 projections under SSP2-4.5 would shift the picture.
-3. **PTR (pupil-teacher ratio) is a school-quality proxy, not a heat-
-   exposure mechanism.** The multiplicative inclusion is a stretch.
+### The sample is too small for a correlation result
 
-## Responses
+Accepted. The six-row statistic is descriptive, carries a deterministic
+bootstrap interval, and is used only to test whether the inherited order has
+visible support. It cannot estimate a regional relationship.
 
-1. Top-1 claim adopted; the article documents the parameter
-   sensitivity transparently.
-2. CMIP6 projection layer deferred to §18.5 upgrade-pass.
-3. PTR rationale documented; alternative is to drop PTR and use only
-   heat × children-share (also a §18.5 robustness check).
+### Affected counts mainly measure country size
+
+Accepted and made central. Child population's +0.94 rank correlation is shown
+beside the full index's +0.03. The paper does not call raw counts risk rates.
+
+### UNICEF counts are heterogeneous
+
+Accepted. The paper states that counts can be observed or enrollment-estimated,
+that reporting is selected, and that absence is unknown. Enrollment ratios are
+explicitly labeled mixed-vintage diagnostics.
+
+### “Major hazard” is not a full heat-event panel
+
+Accepted. The six rows identify the hazard associated with the largest
+reported disruption only. The paper does not claim complete event coverage.
+
+### Failure against one outcome does not prove heat is unimportant
+
+Accepted. The conclusion retires the index, not the heat-education mechanism.
+The successor design measures school-day exposure and educational outcomes.
+
+## Decision
+
+Publish the construct-validation correction at PP maturity. Do not publish a
+replacement country ranking or causal heat effect.

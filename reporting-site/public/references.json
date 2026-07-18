@@ -325,7 +325,7 @@
   {
     "type": "article",
     "key": "park2020heat",
-    "author": "Park, R. Jisung and Behrer, A. Patrick and Goodman, Joshua",
+    "author": "Park, R. Jisung and Goodman, Joshua and Hurwitz, Michael and Smith, Jonathan",
     "title": "Heat and learning",
     "journal": "American Economic Journal: Economic Policy",
     "year": "2020",
@@ -333,9 +333,58 @@
     "number": "2",
     "pages": "306--339",
     "doi": "10.1257/pol.20180612",
-    "note": "Retrieved 2026-04-26. Empirical heat-learning thresholds; cited in school-heat-disruption red-team synthesis as evidence the linear-tmax ramp is the wrong functional form.",
+    "note": "Retrieved 2026-07-18. Empirical evidence on heat exposure and educational performance; the authors do not validate the national school-heat proxy used in this repository.",
     "short": "Park et al. 2020",
-    "long": "Park, R. Jisung and Behrer, A. Patrick and Goodman, Joshua (2020) \"Heat and learning.\" American Economic Journal: Economic Policy 12(2) pp. 306--339 DOI: 10.1257/pol.20180612"
+    "long": "Park, R. Jisung and Goodman, Joshua and Hurwitz, Michael and Smith, Jonathan (2020) \"Heat and learning.\" American Economic Journal: Economic Policy 12(2) pp. 306--339 DOI: 10.1257/pol.20180612"
+  },
+  {
+    "type": "techreport",
+    "key": "unicef2025learninginterrupted",
+    "author": "UNICEF",
+    "title": "Learning Interrupted: Global Snapshot of Climate-Related School Disruptions in 2024",
+    "institution": "United Nations Children's Fund",
+    "year": "2025",
+    "url": "https://www.unicef.org/reports/learning-interrupted-global-snapshot-2024",
+    "note": "Retrieved 2026-07-18. Annex 1 country rows are transcribed and programmatically checked against the public PDF before use. Missing countries are unknown, not zero; affected-student values combine reported counts and enrollment-based estimates.",
+    "short": "UNICEF 2025",
+    "long": "UNICEF (2025) \"Learning Interrupted: Global Snapshot of Climate-Related School Disruptions in 2024.\" United Nations Children's Fund"
+  },
+  {
+    "type": "techreport",
+    "key": "worldbank2024choosingfuture",
+    "author": "World Bank",
+    "title": "Choosing Our Future: Education for Climate Action",
+    "institution": "World Bank",
+    "year": "2024",
+    "url": "https://www.worldbank.org/en/topic/education/publication/education-for-climate-action",
+    "note": "Retrieved 2026-07-18. Used for the wider education-and-climate framing, not for the program's country ranking.",
+    "short": "World Bank 2024",
+    "long": "World Bank (2024) \"Choosing Our Future: Education for Climate Action.\" World Bank"
+  },
+  {
+    "type": "article",
+    "key": "wargocki2019classroom",
+    "author": "Wargocki, Pawel and Porras-Salazar, Jose Ali and Contreras-Espinoza, Sergio",
+    "title": "The relationship between classroom temperature and children's performance in school",
+    "journal": "Building and Environment",
+    "year": "2019",
+    "volume": "157",
+    "pages": "197--204",
+    "doi": "10.1016/j.buildenv.2019.04.046",
+    "note": "Retrieved 2026-07-18. Meta-analysis of 18 studies; the evidence base is concentrated in temperate settings and does not identify national disruption counts.",
+    "short": "Wargocki et al. 2019",
+    "long": "Wargocki, Pawel and Porras-Salazar, Jose Ali and Contreras-Espinoza, Sergio (2019) \"The relationship between classroom temperature and children's performance in school.\" Building and Environment 157 pp. 197--204 DOI: 10.1016/j.buildenv.2019.04.046"
+  },
+  {
+    "type": "misc",
+    "key": "worldbank2026indicatorsapi",
+    "author": "World Bank",
+    "title": "World Bank Indicators API Documentation",
+    "year": "2026",
+    "url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+    "note": "Retrieved 2026-07-18. Public API used to retrieve the latest available pre-primary, primary, and secondary enrollment totals from 2015--2025 for a denominator diagnostic.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"World Bank Indicators API Documentation.\""
   },
   {
     "type": "article",

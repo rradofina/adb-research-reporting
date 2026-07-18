@@ -1,52 +1,53 @@
-# School Heat Disruption
+# School heat disruption — construct validation
 
-## Research Question
+**Maturity:** PP · construct-validation checkpoint
 
-Where are children likely losing learning time because schools face high heat,
-poor cooling access, and climate-sensitive attendance disruption?
+`attestation_chain: ai-first`
 
-## Why This Is Unconventional
+## Finding
 
-Education dashboards usually track enrollment, test scores, or school counts.
-This track screens for climate conditions that make school attendance and
-learning quality physically harder even when official access looks adequate.
+The inherited national ranking is rejected as a measure of school disruption.
 
-## Available Data
+- “Cambodia is first in every perturbation” is false: it leads **5 of 6**
+  discriminating runs; Pakistan leads one; a seventh is an all-zero tie.
+- UNICEF's 2024 annex contains **21** ADB-economy rows, including **6** whose
+  major disruption hazard is heatwave.
+- Cambodia ranks **6 of 6** by affected-student count in that subset.
+- The old index has Spearman **+0.03** with affected counts; child population
+  alone has **+0.94**.
+- The subset is small and selected. This is a construct-validation result, not
+  a replacement risk, safety, or resilience ranking.
 
-- World Bank CCKP heat indicators
-- UNICEF education and child population indicators
-- UNESCO Institute for Statistics enrollment and completion indicators
-- OpenStreetMap school locations
-- WorldPop age-structured population where available
-- ERA5-Land or TerraClimate for gridded heat extensions
+## Evidence objects
 
-## First Pipeline
+- Inherited 32-economy WDI/CCKP proxy panel and seven sensitivity runs.
+- UNICEF *Learning Interrupted* Annex 1, transcribed and programmatically
+  checked against the public PDF: 21 ADB rows.
+- World Bank Indicators API enrollment denominator diagnostic: 19 complete
+  three-level denominators, including 17 rows overlapping the old panel.
+- School × day × exposure × outcome join: **0 observations**.
 
-1. Build economy-level child heat-exposure screen.
-2. Add ADM1 or city school density using OSM and population grids.
-3. Identify places with high school-age population per mapped school and high
-   heat stress.
+## Main outputs
 
-## Outputs
-
-- `generated/school-heat-disruption-adb-screen.csv`
-- Country and ADM1 heat-learning pressure map
-- Documentation on whether school-location data is observed or inferred
 - `generated/school-heat-sensitivity-audit.json`
-- `generated/school-heat-source-audit.json`
-- `generated/school-heat-source-readiness-sources.csv`
-- `generated/school-heat-khm-pak-source-readiness.csv`
+- `generated/school-construct-validation.json`
+- `generated/school-construct-diagnostics.csv`
+- `generated/school-construct-correlations.csv`
+- `generated/charts/school-*.{png,svg}`
+- `articles/school-heat-honest-narrowing.md`
 
-## Current Evidence Boundary
+## Reproduce
 
-The current showcase evidence is a source-readiness wall, not a
-school-disruption result. It preserves the Cambodia top-one sensitivity
-narrowing, checks public WDI, CCKP, OSM, and UNICEF source visibility, and
-keeps the real analysis-ready joins false until school calendars, daily
-school-day heat or WBGT, cleaned school geocodes, enrollment-weighted
-exposure, and observed closure, attendance, or learning outcomes are joined.
+See `REPRODUCE.md`. The claim-enabling sequence is:
 
-## Reproducibility Notes
+```powershell
+python school-heat-disruption/scripts/deepen-sensitivity-audit.py
+python school-heat-disruption/scripts/build-construct-validation.py
+python school-heat-disruption/scripts/build-figure-dossier.py
+```
 
-Cooling access is likely a weak proxy in the first pass. Mark it as a model gap
-unless a country-specific dataset is found.
+## Next qualified study
+
+Join daily local heat, school calendars, enrolled students and school
+conditions, and an observed closure, attendance, assessment, or learning
+outcome. Do not retune the national index as a substitute for that shared unit.

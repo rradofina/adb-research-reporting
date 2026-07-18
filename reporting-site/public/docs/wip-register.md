@@ -96,9 +96,10 @@ end-to-end.
   it is the raw top four in 2 of 7 runs; direct water retains 2 of 4 members,
   direct crop HHI 0 of 4, and all five crop-HHI leaders lack water rows. Article:
   `articles/water-crop-pressure-cluster.md`.
-- **school-heat-disruption** — honest narrowing to top-1 (KHM only)
-  because top-5 fails sensitivity gate. Article:
-  `articles/school-heat-honest-narrowing.md`.
+- **school-heat-disruption** — inherited national disruption ranking rejected:
+  Cambodia leads 5 of 6 discriminating runs but ranks 6 of 6 by affected count
+  in UNICEF's heatwave-major ADB subset; proxy correlation +0.03 versus +0.94
+  for child population. Article: `articles/school-heat-honest-narrowing.md`.
 
 ### Prepared Pipeline (other)
 

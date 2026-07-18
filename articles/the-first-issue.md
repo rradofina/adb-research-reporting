@@ -94,11 +94,12 @@ published members; direct FAOSTAT crop concentration retains none; and all five
 crop-HHI leaders lack water-stress rows. The country ranking is retired. →
 [/findings/water-crop-pressure-cluster](/findings/water-crop-pressure-cluster)
 
-**School Heat Disruption.** Top-1 narrowing — only Cambodia is
-parameter-stable. The top-5 fails the ±50% sensitivity gate. The
-brief documents the parameter-sensitivity itself as the diagnostic;
-the index's linear-tmax ramp is the wrong functional form per Lancet
-Countdown indicator 1.1.5. → [/findings/school-heat-honest-narrowing](/findings/school-heat-honest-narrowing)
+**School Heat Disruption — corrected 2026-07-18.** Cambodia leads five of six
+discriminating sensitivity runs, not every perturbation. In UNICEF's six
+heatwave-major ADB rows, Cambodia ranks sixth by affected-student count; the
+old index has Spearman +0.03 with the count, compared with +0.94 for child
+population. The national disruption ranking is retired. →
+[/findings/school-heat-honest-narrowing](/findings/school-heat-honest-narrowing)
 
 **Food-Price Climate Transmission.** Composite-index result dropped.
 The usable screen is a joint qualifier: Lao PDR and Pakistan sit in

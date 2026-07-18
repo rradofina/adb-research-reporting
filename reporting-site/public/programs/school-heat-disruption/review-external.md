@@ -1,41 +1,55 @@
-# External red-team review — School Heat Disruption
+# External red-team synthesis — School heat disruption
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-26.
+`attestation_chain: ai-first` · §18.4 synthesis · 2026-07-18
 
-**No individual reviewer was contacted.**
+**No individual reviewer was contacted under §18. The objections above are AI-synthesized from each institution's public methodological stance, not actual reviewer feedback.**
 
-## Roster
+## Candidate perspectives
 
-| ID | Institution | Synthesized from |
+| ID | Institution / literature | Public basis |
 |---|---|---|
-| C-1 | Lancet Countdown | Heat-children labor-capacity-loss indicator |
-| C-2 | UNICEF EAPRO | Education-and-climate work |
-| C-3 | Climate-Schools (UCL/LSHTM) | Heat-and-school-attendance literature |
-| C-4 | World Bank Climate Change Knowledge Portal | CCKP methodology |
+| C-1 | UNICEF school-disruption reporting | [@unicef2025learninginterrupted] |
+| C-2 | World Bank education and climate | [@worldbank2024choosingfuture] |
+| C-3 | Heat and learning research | [@park2020heat] |
+| C-4 | Classroom-temperature evidence | [@wargocki2019classroom] |
 
-## Objections
+## Objections and responses
 
-**C-1 (Lancet Countdown).** The Countdown indicator 1.1.5 (children
-exposed to heatwaves) uses age-specific exposure curves, not a linear
-tmax ramp. The current pipeline's linear ramp is the wrong functional
-form.
+### C-1 — affected-student counts are not harmonized disruption rates
 
-**C-2 (UNICEF EAPRO).** School-attendance impact requires school-day
-heat exposure, not annual tasmax. WBGT (wet-bulb globe temperature)
-during school hours is the actionable measure.
+UNICEF combines public reports and enrollment-based estimates. Reporting
+coverage, event multiplicity, and duration differ across countries.
 
-**C-3 (Climate-Schools academic).** Empirical studies (Park et al.
-2020 in PNAS) show learning-loss heat-exposure thresholds around
-27–32°C for outdoor activities; the 25°C floor in this index is too
-low.
+**Response.** Accepted. Counts are used only for a first rank-order construct
+check. Missing rows are unknown; mixed-vintage enrollment ratios are labeled
+diagnostics; no rate or days-lost claim is made.
 
-**C-4 (CCKP).** Country-mean tasmax obscures within-country range.
-The Indo-Gangetic Plain and parts of Cambodia are far above national
-means. Subnational CCKP indicators exist for IND but not all DMCs.
+### C-2 — education-system adaptation is absent
 
-## Responses
+Closures reflect hazard, calendars, buildings, cooling, policy thresholds, and
+response capacity. A climate-demography composite cannot isolate those paths.
 
-All accepted. Article: (a) acknowledges linear-ramp limitation;
-(b) flags WBGT as more actionable; (c) cites Park et al. threshold
-range; (d) notes CCKP subnational availability for §18.5
-upgrade-pass.
+**Response.** Accepted. The ranking is retired and the next object explicitly
+requires school conditions, adaptation, and an observed outcome.
+
+### C-3 — heat exposure must be timed to learning
+
+Annual historical climatology cannot represent heat on instructional days or
+during assessment periods.
+
+**Response.** Accepted. The proposed successor is school-day or district-day,
+with nonlinear heat measures and calendar alignment pre-specified.
+
+### C-4 — outdoor temperature is not classroom temperature
+
+Indoor exposure depends on ventilation, materials, shade, occupancy, humidity,
+and cooling. Evidence from temperate classrooms may not transfer directly.
+
+**Response.** Accepted. Indoor measurement and setting-specific validation are
+named as upgrades; no classroom-performance effect is estimated here.
+
+## Synthesis decision
+
+The objections reinforce the construct-validation result and block a
+replacement country ranking. Human-final review remains an owner-led hard wall
+under Constitution §18.5.

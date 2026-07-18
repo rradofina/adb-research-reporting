@@ -447,24 +447,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "school-heat-disruption",
     articleSlug: "school-heat-honest-narrowing",
     domain: "Education",
-    finish: "screening-result",
+    finish: "construct-validation",
     question:
-      "Which education systems show the strongest simple pressure signal from children, pupil-teacher ratio, and heat?",
+      "Does the inherited school-heat proxy survive its own sensitivity language and align with an observed disruption outcome?",
     output:
-      "Only Cambodia is parameter-stable at the top; the top-5 changes under sensitivity testing.",
-    chartTitle: "School-heat pressure index",
-    sourceNote: "WDI school-age share, primary pupil-teacher ratio, and CCKP historical tasmax.",
+      "No. Cambodia leads 5 of 6 discriminating runs but ranks 6 of 6 by affected-student count in UNICEF's heatwave-major ADB subset.",
+    chartTitle: "Three validity gates",
+    sourceNote: "UNICEF 2024 climate-related school-disruption annex, WDI enrollment, and the inherited WDI/CCKP proxy panel.",
     caveat:
-      "The linear heat ramp is too simple for a policy-grade learning-loss estimate.",
+      "The heatwave subset has six selected rows; affected counts mix observations and enrollment-based estimates and do not measure days or learning loss.",
     nextStep:
-      "Use classroom-temperature or heat-learning functions and future-period climate scenarios.",
+      "Build a school-day or district-day panel joining local heat, calendars, enrollment, school conditions, and closure, attendance, assessment, or learning.",
     granularity: {
-      currentUnit: "Country-level children, pupil-teacher ratio, and historical tasmax",
-      targetUnit: "School, district, municipality, classroom heat-exposure zone",
+      currentUnit: "Six heatwave-major country rows with national proxy inputs and 2024 affected-student counts",
+      targetUnit: "School-day or district-day heat exposure and educational outcome",
       gap:
-        "Linear heat ramp is too simple and school locations/enrollment are not joined.",
+        "Country counts do not align event timing, calendars, local or indoor heat, adaptation, duration, attendance, or learning.",
       upgradeData:
-        "School geocodes, district enrollment, ERA5/CMIP heat, classroom/learning heat-response functions, and UNICEF/UIS data.",
+        "School geocodes, daily humid heat, calendars, enrollment, cooling/building conditions, closures, attendance, and assessments.",
     },
   },
   "social-protection-shock-coverage": {

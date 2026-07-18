@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T15:20:31.624Z",
+  "generated_at": "2026-07-18T16:21:17.110Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -214,20 +214,20 @@
         "png": "generated/charts/school-heat-disruption-thumbnail.png",
         "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
         "json": "generated/charts/school-heat-disruption-thumbnail.json",
-        "title": "Cambodia: one DMC clears the school-heat gate",
-        "caption": "Cambodia: 5.3M children 0–14, primary PTR 41.7, historical-period tasmax 31.9°C. Top-5 ranking fails ±50 % sensitivity; only Cambodia is stable.",
-        "headline_number": "Cambodia 5.3M children · PTR 41.7 · tasmax 31.9°C",
-        "visual_form": "single-country triple-card (children, PTR, tasmax)",
-        "source": "WDI + CCKP historical tasmax",
+        "title": "Cambodia led the proxy but ranked last by disruption count",
+        "caption": "Cambodia leads the inherited proxy but ranks sixth of six by the UNICEF 2024 affected-student count among ADB rows whose largest disruption hazard is heatwave.",
+        "headline_number": "6 of 6 · rho +0.03",
+        "visual_form": "construct-validation finding card",
+        "source": "UNICEF Learning Interrupted annex 2024; WDI/CCKP inherited panel",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T15:38:05+00:00",
+        "generated_at": "2026-07-18T16:13:21.390746+00:00",
         "dimensions": {
-          "width": 1600,
-          "height": 900
+          "width": 2578,
+          "height": 1311
         },
         "sha256": {
-          "png": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70",
-          "svg": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+          "png": "85fac52abb5515ce3e3c36471d219d050f48984b8a0c1c1d35258138190a388c",
+          "svg": "1fb6192da1bd737b6aa63b9d82ab9784e99a3ab075c5c458fa9be926d48f3373"
         }
       }
     },

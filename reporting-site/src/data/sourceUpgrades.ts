@@ -269,16 +269,16 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "school-heat-disruption",
     betterSource:
-      "National EMIS school geocodes; UIS/UNICEF education data; ERA5 or CMIP6 heat; Dynamic World land cover; Google Open Buildings built-up context; classroom or learning heat-response functions.",
+      "Administrative closure and attendance records; stable school calendars and geocodes; daily ERA5-Land or station heat and humidity; enrollment; building, cooling, and classroom-condition data; assessment outcomes.",
     betterUnit:
-      "School, district, municipality, classroom heat-exposure zone, and affected student group.",
-    priority: "P2",
+      "School-day or district-day, with enrolled students and an observed closure, attendance, assessment, or learning outcome.",
+    priority: "P1",
     rationale:
-      "The current screen is honest but too simple. School geocodes and a real heat-learning function are needed for policy-grade disruption estimates.",
+      "The national proxy fails its first construct-relevant outcome check. Another country composite cannot fix the missing alignment among event timing, instructional days, local or indoor exposure, adaptation, and outcome.",
     sourceLinks: [
       { label: "UNESCO UIS", href: "https://uis.unesco.org/" },
       { label: "UNICEF MICS", href: "https://mics.unicef.org/" },
-      { label: "Dynamic World", href: "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1" },
+      { label: "ERA5-Land", href: "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land" },
     ],
   },
   {

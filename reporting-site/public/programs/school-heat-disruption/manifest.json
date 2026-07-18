@@ -1,25 +1,25 @@
 {
   "program": "school-heat-disruption",
   "permanent_url": "/school-heat-disruption?view=evidence",
-  "generated_at": "2026-07-18T15:20:27.445Z",
+  "generated_at": "2026-07-18T16:21:16.648Z",
   "hero": {
     "png": "generated/charts/school-heat-disruption-thumbnail.png",
     "svg": "generated/charts/school-heat-disruption-thumbnail.svg",
     "json": "generated/charts/school-heat-disruption-thumbnail.json",
-    "title": "Cambodia: one DMC clears the school-heat gate",
-    "caption": "Cambodia: 5.3M children 0–14, primary PTR 41.7, historical-period tasmax 31.9°C. Top-5 ranking fails ±50 % sensitivity; only Cambodia is stable.",
-    "headline_number": "Cambodia 5.3M children · PTR 41.7 · tasmax 31.9°C",
-    "visual_form": "single-country triple-card (children, PTR, tasmax)",
-    "source": "WDI + CCKP historical tasmax",
+    "title": "Cambodia led the proxy but ranked last by disruption count",
+    "caption": "Cambodia leads the inherited proxy but ranks sixth of six by the UNICEF 2024 affected-student count among ADB rows whose largest disruption hazard is heatwave.",
+    "headline_number": "6 of 6 · rho +0.03",
+    "visual_form": "construct-validation finding card",
+    "source": "UNICEF Learning Interrupted annex 2024; WDI/CCKP inherited panel",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T15:38:05+00:00",
+    "generated_at": "2026-07-18T16:13:21.390746+00:00",
     "dimensions": {
-      "width": 1600,
-      "height": 900
+      "width": 2578,
+      "height": 1311
     },
     "sha256": {
-      "png": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70",
-      "svg": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+      "png": "85fac52abb5515ce3e3c36471d219d050f48984b8a0c1c1d35258138190a388c",
+      "svg": "1fb6192da1bd737b6aa63b9d82ab9784e99a3ab075c5c458fa9be926d48f3373"
     }
   },
   "artifacts": [
@@ -27,40 +27,50 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 2002,
+      "size": 2050,
       "size_human": "2.0 KB",
-      "mtime": "2026-06-19T22:12:30.071Z",
-      "sha256": "76b08bf0112bb6344321277cffe4a4d626918ac5e6977b9b410b6ae3ffadc6f3",
-      "attestation_chain": null
+      "mtime": "2026-07-18T15:52:24.953Z",
+      "sha256": "8ac11f34e714b63d07d1d627123a262657553971463eea3a15b238d69573e06b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1366,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T15:52:24.978Z",
+      "sha256": "ad0af453c0527b8f22dea3027238f94be006769798cc8af0c2a8695e9254b0d8",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1718,
-      "size_human": "1.7 KB",
-      "mtime": "2026-04-27T03:42:33.058Z",
-      "sha256": "acab0167714d842b4eec149048b949e278cc9be3d5274660a065f847dce27329",
+      "size": 1571,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T15:52:24.968Z",
+      "sha256": "7fe4a8801e30a290111b527166ae656081ce36753d5978c198b982c2a1ad59c9",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1344,
-      "size_human": "1.3 KB",
-      "mtime": "2026-04-26T03:27:53.975Z",
-      "sha256": "fa8ea1c8e39a0edf7a64adc13f36abf218718966830736a3655ba5c40317c57d",
+      "size": 2035,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T15:52:24.957Z",
+      "sha256": "e676a2b361530a8282746b2957fb524940e5543403f1c92a6b7943a026548c0c",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 955,
-      "size_human": "955 B",
-      "mtime": "2026-04-26T03:28:00.515Z",
-      "sha256": "e5ff77a5adf18b9f65a2fc95e07f19b8ba4855fae38a3c692a3827402484dfb3",
+      "size": 1045,
+      "size_human": "1.0 KB",
+      "mtime": "2026-07-18T15:52:24.962Z",
+      "sha256": "45ee4cca092aead319aaa95ccddefb4896ca1f92d0cf7eee3ccc9363bbeafc06",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +87,207 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 316,
-      "size_human": "316 B",
-      "mtime": "2026-04-26T03:28:03.665Z",
-      "sha256": "2eb0b3ea2f4b0020768652f14bebdab1293866503031df2ca77b107614001d1a",
+      "size": 992,
+      "size_human": "992 B",
+      "mtime": "2026-07-18T15:52:24.966Z",
+      "sha256": "54897de24dd539abb311eb3b111b147d624d35ecb85cbc37886fc8cc154bfc28",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 771,
-      "size_human": "771 B",
-      "mtime": "2026-04-26T03:28:28.535Z",
-      "sha256": "01dc8583f17cbbc4d1b148d5946c85e8709d79b939799598576b0d663ddb7091",
+      "size": 1581,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T15:52:24.960Z",
+      "sha256": "2102ad2aeec8a0bcb5ab632bac19b3afbe0bb86602dacf9ccfa00cdf9599ceb8",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 819,
-      "size_human": "819 B",
-      "mtime": "2026-04-26T03:28:09.524Z",
-      "sha256": "3c8f26f372a8cb205c1f9c6605e78e93e37ddf845aec8cda898f2ae1c59821b5",
+      "size": 1406,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T15:52:24.970Z",
+      "sha256": "166fb2f9194c3655c79b4d5bd7dff02785d66e11c1440f52a0e29957fdac4193",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1557,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T03:28:19.902Z",
-      "sha256": "48fad0434a73ec37a1eeacee51a507759d6f7d21206e819e03c3b5cf86da0f7f",
+      "size": 2342,
+      "size_human": "2.3 KB",
+      "mtime": "2026-07-18T15:52:24.972Z",
+      "sha256": "ab620e6c178e89c33bc6adef3d2a23507a1c6be29a44cedeccd8eb044a329026",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 848,
-      "size_human": "848 B",
-      "mtime": "2026-04-26T03:28:24.941Z",
-      "sha256": "3fa3b77e0bfb037e5841b58379ac63675871f527e62b7fe562ccce8ac3aae289",
+      "size": 1038,
+      "size_human": "1.0 KB",
+      "mtime": "2026-07-18T15:52:24.963Z",
+      "sha256": "0b40e079d7e4956eef829dfcf75a3f9305f8a7b1e58abe10e4c3521f15222301",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1189,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T15:52:24.978Z",
+      "sha256": "936c43a99732555914dd389e054d0fb71f116bc55fe58b9e580308ef05fdbe4a",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/school-driver-dominance.png",
+      "size": 112457,
+      "size_human": "109.8 KB",
+      "sha256": "3cdd78243eeee367adee6f67a969873e556c038e9129552fd9ac98c1ac8ee94a"
+    },
+    {
+      "file": "generated/charts/school-driver-dominance.svg",
+      "size": 78312,
+      "size_human": "76.5 KB",
+      "sha256": "66f2aee558f1d74c53b34f18598d98e423f312efe26db6525eb5feb3b23f4eff"
+    },
+    {
+      "file": "generated/charts/school-enrollment-share-proxy.png",
+      "size": 211361,
+      "size_human": "206.4 KB",
+      "sha256": "4f6a70292e32b76e50bee35316cc6634573af7648ef7cb5652ad332476aea12f"
+    },
+    {
+      "file": "generated/charts/school-enrollment-share-proxy.svg",
+      "size": 114959,
+      "size_human": "112.3 KB",
+      "sha256": "394e62c91378d3387c50f80c064b4dfd5b1f21f2ee3a3b5678f7d1c0dda5d8d7"
+    },
+    {
+      "file": "generated/charts/school-hazard-burden-composition.png",
+      "size": 131423,
+      "size_human": "128.3 KB",
+      "sha256": "e8f6ebcbe140d2a80377c2abe6fed670b8ca7120a5fd4d3742484e7cc9fb2a17"
+    },
+    {
+      "file": "generated/charts/school-hazard-burden-composition.svg",
+      "size": 81720,
+      "size_human": "79.8 KB",
+      "sha256": "05de1218387d28cb997a27b7fba9dc2a1031c7b05da2f1127f6f1880fd8a71db"
+    },
+    {
       "file": "generated/charts/school-heat-disruption-thumbnail.json",
-      "size": 1122,
-      "size_human": "1.1 KB",
-      "sha256": "9cce3a3bba2120c65d50301b0d9d8e26284e45aee053edabc67a86095bcb62af"
+      "size": 1184,
+      "size_human": "1.2 KB",
+      "sha256": "0e663326f05cd971ff1b0b821f10ffa8cd464a905a4449c78f28baea27b7d107"
     },
     {
       "file": "generated/charts/school-heat-disruption-thumbnail.png",
-      "size": 95518,
-      "size_human": "93.3 KB",
-      "sha256": "0cb2884c1813088144369bf4c7a205446b0d6689f6cc976f768fb82cf65c3f70"
+      "size": 149937,
+      "size_human": "146.4 KB",
+      "sha256": "85fac52abb5515ce3e3c36471d219d050f48984b8a0c1c1d35258138190a388c"
     },
     {
       "file": "generated/charts/school-heat-disruption-thumbnail.svg",
-      "size": 121578,
-      "size_human": "118.7 KB",
-      "sha256": "5911d37193ae7281bbaa7e925dee40f73b74d1eadca89ea9b9c64a0ceff7319f"
+      "size": 58007,
+      "size_human": "56.6 KB",
+      "sha256": "1fb6192da1bd737b6aa63b9d82ab9784e99a3ab075c5c458fa9be926d48f3373"
+    },
+    {
+      "file": "generated/charts/school-heatwave-affected-ranking.png",
+      "size": 132101,
+      "size_human": "129.0 KB",
+      "sha256": "342df05fed8fa41d20333bf803beba372a48af655ea88385595f8da08836bb46"
+    },
+    {
+      "file": "generated/charts/school-heatwave-affected-ranking.svg",
+      "size": 85425,
+      "size_human": "83.4 KB",
+      "sha256": "246da8de80652d16b56c208106ed36af410ddcffbe4b2f3f57764d755e71150f"
+    },
+    {
+      "file": "generated/charts/school-next-data-object.png",
+      "size": 154925,
+      "size_human": "151.3 KB",
+      "sha256": "f7616522b1111a35cf3ca1cffaae6afab382a28abcac45dd7365fb0814043b1f"
+    },
+    {
+      "file": "generated/charts/school-next-data-object.svg",
+      "size": 93315,
+      "size_human": "91.1 KB",
+      "sha256": "304b319d923f62f8923a054914ce15a545ec81145b6ac61b2b2413419e9a4d8c"
+    },
+    {
+      "file": "generated/charts/school-proxy-outcome-scatter.png",
+      "size": 139784,
+      "size_human": "136.5 KB",
+      "sha256": "10130c95de68a13570b00afab06837fd957ec90a5c8fb01a9fcc34a745f596f2"
+    },
+    {
+      "file": "generated/charts/school-proxy-outcome-scatter.svg",
+      "size": 87993,
+      "size_human": "85.9 KB",
+      "sha256": "3ebdb14ee7a15c272bc9c80b751ae130bab27f0e1d52258ca81affdbaf96af28"
+    },
+    {
+      "file": "generated/charts/school-sensitivity-run-verdicts.png",
+      "size": 150592,
+      "size_human": "147.1 KB",
+      "sha256": "624577bc7221f5cfaba3d2e6073ec58689e651296e4c6cc96efb16f006d2130c"
+    },
+    {
+      "file": "generated/charts/school-sensitivity-run-verdicts.svg",
+      "size": 88183,
+      "size_human": "86.1 KB",
+      "sha256": "1a9984c948eb19993b5dd01411a8e830209205e062f09b36a2439fca6696e94c"
+    },
+    {
+      "file": "generated/charts/school-source-alignment-funnel.png",
+      "size": 139101,
+      "size_human": "135.8 KB",
+      "sha256": "40b46e8140d442636e3c4b2806c658307e5248188d0038f0dd359ef9a9cb4b80"
+    },
+    {
+      "file": "generated/charts/school-source-alignment-funnel.svg",
+      "size": 85282,
+      "size_human": "83.3 KB",
+      "sha256": "d9297130ccd66aa952d8540ddeba76ed21f7f362a5ba96804c534386e775e45f"
+    },
+    {
+      "file": "generated/charts/school-three-gate-validity.png",
+      "size": 155978,
+      "size_human": "152.3 KB",
+      "sha256": "2caaa678616e520c91c66ae1514f2b674c42cf59f04fe669faf8b80d0c8232a1"
+    },
+    {
+      "file": "generated/charts/school-three-gate-validity.svg",
+      "size": 87146,
+      "size_human": "85.1 KB",
+      "sha256": "a1a837af08951b4572d2e7a900313fd4e7d2b3faef41ae1ad5c2746eb0645c2b"
+    },
+    {
+      "file": "generated/school-construct-correlations.csv",
+      "size": 1398,
+      "size_human": "1.4 KB",
+      "sha256": "39dc54744d7552e077b28f0d9fe7bf1c37b47979fd79d1b2d51211cd4d2f4449"
+    },
+    {
+      "file": "generated/school-construct-diagnostics.csv",
+      "size": 4386,
+      "size_human": "4.3 KB",
+      "sha256": "6d55432fe3496ba385799acd03c12da7f372abc6e00007012d9014cbb7ff8288"
+    },
+    {
+      "file": "generated/school-construct-validation.json",
+      "size": 34508,
+      "size_human": "33.7 KB",
+      "sha256": "8d716c541c9d282e15e98f4c11c8f10c556139ca13eaacaaba748f1e7cc3ebd7"
     },
     {
       "file": "generated/school-heat-adb-panel.csv",
@@ -165,7 +311,7 @@
       "file": "generated/school-heat-sensitivity-audit.json",
       "size": 4106,
       "size_human": "4.0 KB",
-      "sha256": "c41c139f51195960bc40fd66ea4c05fc13e779bbbc1db45bba8b8bd2a385dc2c"
+      "sha256": "af3754f02ce89c87d3f081aef8d8899014dec1283b679dbb4a40594627d3f654"
     },
     {
       "file": "generated/school-heat-source-audit.json",
@@ -189,7 +335,7 @@
   "articles": [
     {
       "slug": "school-heat-honest-narrowing",
-      "title": "A negative result on the school-heat top-5 — only Cambodia survives",
+      "title": "Cambodia led the school-heat proxy—but ranked last by observed heatwave disruption",
       "attestation_chain": "ai-first"
     }
   ],
@@ -263,7 +409,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -288,21 +434,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/school-heat-disruption/REPRODUCE.md",
+    "deck": "/programs/school-heat-disruption/school-heat-disruption-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/school-heat-disruption"
   }

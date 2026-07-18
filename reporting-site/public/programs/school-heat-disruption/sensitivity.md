@@ -1,28 +1,31 @@
-# Sensitivity — School Heat Disruption
+# Sensitivity audit
 
-`attestation_chain: ai-first`. Run 2026-04-26.
+`attestation_chain: ai-first`
 
-The index is **very parameter-sensitive**. Top-5 set composition
-shifts dramatically under tmax-floor and tmax-cap perturbations. Only
-the top-1 (KHM) is parameter-robust.
+## Original ±50% runs
 
-| Variant | Top-1 | Top-5 stable? |
-|---|---|---|
-| Baseline | KHM | (set varies) |
-| tmax_floor ±50% | KHM | no |
-| tmax_cap ±50% | KHM | no |
-| PTR cap ±50% | KHM | partial |
+| Run | Result |
+|---|---|
+| Baseline | Cambodia first |
+| Temperature floor -50% | Pakistan first; Cambodia second |
+| Temperature floor +50% | All-zero tie; non-discriminating |
+| Temperature cap -50% | Cambodia first |
+| Temperature cap +50% | Cambodia first |
+| PTR cap -50% | Cambodia first |
+| PTR cap +50% | Cambodia first |
 
-**Common top-1: `[KHM]`.** Honest narrowing.
+The defensible statement is “Cambodia leads five of six discriminating runs,”
+not “Cambodia is first in every perturbation.”
 
-The high parameter-sensitivity is itself a finding: the index
-formula's tmax-ramp is the dominant driver, not the children-share or
-PTR component. Future iterations should consider replacing the
-linear-ramp with a more empirically grounded heat-impact function
-(e.g., Lancet Countdown labor-capacity-loss curve).
+## Outcome-correlation uncertainty
 
-## TODO §18.5
+Each construct-validation correlation uses 5,000 deterministic bootstrap
+resamples. The six-row heatwave subset produces wide intervals:
 
-- Replace linear tmax ramp with Lancet Countdown-style heat-stress
-  function.
-- Subnational tasmax (CCKP country-mean is too coarse).
+- old index: +0.03, interval -1.00 to +1.00;
+- child population: +0.94, interval +0.52 to +1.00;
+- historical tasmax: +0.03, interval -1.00 to +1.00; and
+- pupil-teacher ratio: -0.37, interval -1.00 to +0.81.
+
+The intervals are a warning against generalization. No parameter retuning is
+performed after observing UNICEF counts.

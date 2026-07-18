@@ -1,27 +1,23 @@
-# Limitations — School Heat Disruption
+# Limitations
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-26.
+`attestation_chain: ai-first`
 
-## Cannot establish
+1. UNICEF's English-language public reporting is selected; absence from the
+   annex is unknown, not zero.
+2. Affected-student values combine observed counts and enrollment-based
+   estimates and do not measure duration.
+3. The annex identifies the hazard causing the largest reported disruption,
+   not every country-event pair.
+4. The construct-relevant heatwave subset has six economies. Correlations are
+   descriptive and bootstrap intervals are wide.
+5. WDI enrollment levels can come from different years. Their sum is only a
+   denominator diagnostic.
+6. National 1995–2014 annual tasmax does not measure local school-day, indoor,
+   or humid-heat exposure in 2024.
+7. Pupil-teacher ratio is not a validated heat-adaptation or vulnerability
+   function.
+8. The analysis observes no closure days, attendance, assessment, learning,
+   cooling, building quality, or adaptation response.
 
-- Top-5 set: too parameter-sensitive. Only top-1 (KHM) is robust.
-- Actual school-day exposure (WBGT during school hours).
-- Subnational heat exposure within large-area DMCs.
-
-## Source-side
-
-- CCKP tasmax is annual mean, country-level, baseline 1995–2014.
-- WDI PTR is national mean.
-
-## Method-side
-
-- Linear tmax ramp is wrong functional form per Lancet Countdown.
-- 25°C floor is empirically low (literature suggests 27–32°C).
-- PTR multiplier is a quality proxy, not a heat-exposure mechanism.
-
-## Reviewer objections (synthesized)
-
-- C-1 (Lancet Countdown): linear ramp wrong.
-- C-2 (UNICEF): WBGT actionable.
-- C-3 (academic): 27–32°C empirical threshold.
-- C-4 (CCKP): subnational available for some DMCs.
+These limits prevent a replacement country ranking. They do not restore the
+retired proxy claim.

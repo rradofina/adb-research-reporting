@@ -1,0 +1,8 @@
+label,x,y,n,spearman,p_value_descriptive,bootstrap_ci95,bootstrap_draws_requested,bootstrap_draws_valid,bootstrap_seed
+Old index vs all-climate affected count,school_heat_pressure_index,students_affected_2024,19,0.5842162661782007,0.008623722159954897,"[0.13911961446586518, 0.8401023323608033]",5000,5000,15001
+Child population vs all-climate affected count,children_0_14_millions,students_affected_2024,19,0.7929824561403509,5.1269958076243476e-05,"[0.4520911347517731, 0.9486316378677521]",5000,5000,15002
+Old index vs affected-to-enrollment proxy,school_heat_pressure_index,affected_to_enrollment_pct,17,0.6651566307087096,0.0035717218591386174,"[0.19206348028191103, 0.894849130292201]",5000,5000,15003
+Old index vs heatwave affected count,school_heat_pressure_index,students_affected_2024,6,0.028571428571428574,0.9571545189504373,"[-1.0, 1.0]",5000,4999,15004
+Child population vs heatwave affected count,children_0_14_millions,students_affected_2024,6,0.942857142857143,0.004804664723032055,"[0.5151515151515151, 1.0]",5000,5000,15005
+Historical tasmax vs heatwave affected count,annual_tasmax_1995_2014_celsius,students_affected_2024,6,0.028571428571428574,0.9571545189504373,"[-1.0, 1.0]",5000,5000,15006
+Primary PTR vs heatwave affected count,primary_pupil_teacher_ratio,students_affected_2024,6,-0.3714285714285715,0.4684781341107872,"[-1.0, 0.8064516129032258]",5000,4999,15007

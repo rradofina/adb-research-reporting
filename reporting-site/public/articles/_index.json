@@ -176,6 +176,37 @@
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
   },
   {
+    "slug": "school-heat-honest-narrowing",
+    "title": "Cambodia led the school-heat proxy—but ranked last by observed heatwave disruption",
+    "subtitle": "The “first in every perturbation” claim is false; among six ADB economies where heatwave was the major 2024 disruption hazard, the proxy’s rank correlation with affected-student counts is +0.03, compared with +0.94 for child population alone.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "school-heat-disruption",
+    "maturity": "PP",
+    "topics": [
+      "education",
+      "heat",
+      "school-disruption",
+      "construct-validation"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "A national screening index ranked Cambodia first by multiplying the share of children aged 0–14, primary pupil-teacher ratio, and a linear transform of 1995–2014 annual maximum temperature. The public story said Cambodia held first place across every ±50% parameter perturbation. Re-reading the seven committed runs shows that statement is false: one run is an all-zero tie and Pakistan leads another. This paper then validates the index against UNICEF's 2024 country-level climate-related school-disruption annex. Among the six ADB economies whose largest reported disruption hazard was a heatwave, Cambodia has the smallest affected-student count. The index has a Spearman correlation of +0.03 with affected counts, with a 95% deterministic bootstrap interval from -1.00 to +1.00; child population alone has a correlation of +0.94. The sample is small, selected, and unsuitable for causal inference. The result is therefore not a new country ranking. It is a construct-validation finding: the inherited index cannot be interpreted as school disruption, and the next research object must align school-day heat, school calendars, enrolled students, and observed closure, attendance, or learning outcomes.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "school-heat-honest-narrowing.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "single-fuel-grid-cluster",
     "title": "A plausible heat-reliability story fails its regional measurement test",
     "subtitle": "The generation-mix result survives a better denominator; the heat-outage direction changes with the proxy.",
@@ -660,36 +691,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "school-heat-honest-narrowing",
-    "title": "A negative result on the school-heat top-5 — only Cambodia survives",
-    "subtitle": "The top-5 set fails the +/- 50 percent sensitivity gate. Honest narrowing to top-1. The index needs a different functional form.",
-    "kind": "brief",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "school-heat-disruption",
-    "maturity": "PP",
-    "topics": [
-      "climate-health",
-      "schools",
-      "methodology"
-    ],
-    "geographies": [
-      "KHM"
-    ],
-    "abstract": "The school-heat-pressure index — heat × children-share × pupil- teacher-ratio — produces a top-5 ranking across 32 ADB DMCs that fails the +/- 50 percent sensitivity gate on its tmax-floor and tmax-cap parameters. Only the top-1 (Cambodia) is parameter- robust. The article reports the negative result on the top-5 claim and the honest narrowing to the top-1. The high parameter- sensitivity is itself the finding: the index's linear tmax ramp is not the right functional form. The Lancet Countdown labor-capacity- loss curve and Park et al. 2020 PNAS empirical thresholds are the §18.5 upgrade-pass. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "school-heat-honest-narrowing.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "access-services-brief",
     "title": "The facility map changes the Philippine regional rank",
     "subtitle": "A one-page brief on why an eight-economy OSM screen should be used for source validation, not service-access ranking.",
@@ -905,6 +906,37 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "school-heat-honest-narrowing-brief",
+    "title": "The school-heat ranking fails its first outcome check",
+    "subtitle": "Cambodia led the proxy but ranked sixth of six by affected-student count in the heatwave-major subset.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "school-heat-disruption",
+    "maturity": "PP",
+    "topics": [
+      "education",
+      "heat",
+      "school-disruption",
+      "construct-validation"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The old “Cambodia is first in every perturbation” statement is false, and UNICEF's 2024 annex does not preserve the proxy's order among six ADB heatwave-major rows.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "school-heat-honest-narrowing-brief.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1193,6 +1225,37 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "school-heat-honest-narrowing-blog",
+    "title": "A heat proxy is not a school-disruption result",
+    "subtitle": "Cambodia led the formula, but the first direct outcome check reverses the story.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "school-heat-disruption",
+    "maturity": "PP",
+    "topics": [
+      "education",
+      "heat",
+      "school-disruption",
+      "construct-validation"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The inherited formula looked robust until its saved sensitivity runs and an observed school-disruption source were read together.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "school-heat-honest-narrowing-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "sp-shock-readiness-cluster-blog",
     "title": "A stable social-protection score can still rank the wrong records",
     "subtitle": "The published top five changes when the panel's own missing-data rule is applied consistently.",
@@ -1464,6 +1527,37 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "school-heat-honest-narrowing-social",
+    "title": "School-heat construct validation — social card",
+    "subtitle": "Cambodia led the proxy but ranked last in the observed heatwave subset.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "school-heat-disruption",
+    "maturity": "PP",
+    "topics": [
+      "education",
+      "heat",
+      "school-disruption",
+      "construct-validation"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The “first in every perturbation” claim is false, and the proxy has near-zero rank association with affected-student counts in six heatwave-major rows.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "school-heat-honest-narrowing-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1751,6 +1845,35 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "school-heat-honest-narrowing-deck",
+    "title": "\"Cambodia led the proxy—but ranked last in the observed heatwave subset\"",
+    "subtitle": "\"AI-first construct validation · §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "school-heat-disruption",
+    "maturity": "PP",
+    "topics": [
+      "education",
+      "heat",
+      "school-disruption",
+      "construct-validation"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "school-heat-honest-narrowing-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

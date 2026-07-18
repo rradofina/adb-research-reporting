@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [BTN, BRN, MNG, NPL, TJK]
 topics: [grid, energy, structural-exposure]
 program: grid-reliability-heat
-maturity: PR
+maturity: PP
 abstract: >
   WRI Global Power Plant Database v1.3.0 (frozen since 2022) catalogs
   7,071 plants across 40 ADB regional DMCs. Five economies — Brunei,

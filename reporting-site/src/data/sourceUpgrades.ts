@@ -129,7 +129,7 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
       "Grid cell, district, occupational group, outdoor worksite, and heat-exposure zone.",
     priority: "P1",
     rationale:
-      "The current issue is finished as PM2.5 pressure, but the title promises heat-workday loss; heat has to enter before the stronger claim.",
+      "The current screen measures PM2.5 pressure, but the title promises heat-workday loss; heat has to enter before the stronger claim.",
     sourceLinks: [
       { label: "ERA5-Land", href: "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land" },
       { label: "ILOSTAT", href: "https://ilostat.ilo.org/data/" },

@@ -49,6 +49,24 @@ const SECTIONS: Array<{
         githubPath: "research/factory.md",
       },
       {
+        slug: "data-architecture",
+        title: "Data architecture",
+        description: "Decision record for Git as research truth, Vercel as delivery, Supabase as query projection, and object storage for large immutable files.",
+        githubPath: "research/DATA-ARCHITECTURE.md",
+      },
+      {
+        slug: "visual-research",
+        title: "Visual research standard",
+        description: "Figure-spine requirements, chart-to-claim contracts, maturity expectations, uncertainty, falsification, and responsive figure QA.",
+        githubPath: "research/VISUAL-RESEARCH-STANDARD.md",
+      },
+      {
+        slug: "visual-roadmap",
+        title: "Visual research roadmap",
+        description: "Cross-program audit and the highest-value next figure sequence for each research package.",
+        githubPath: "research/VISUAL-ROADMAP.md",
+      },
+      {
         slug: "agents",
         title: "Agent rules",
         description: "Default operating mode and focus rule for AI agents.",

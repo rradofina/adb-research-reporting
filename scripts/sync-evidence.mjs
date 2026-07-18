@@ -200,6 +200,38 @@ function syncProgram(slug) {
     });
   }
 
+  // Public research-story contract. The site renders this ordered sequence
+  // instead of treating a short article as though it were a complete paper.
+  // Missing sections stay explicit: absence is part of the public maturity
+  // signal, not something the UI should hide or fill with invented prose.
+  const byKey = new Map(included.map((artifact) => [artifact.key, artifact]));
+  const storySpecs = [
+    { key: "background", title: "Research problem and background", candidates: ["paper_charter", "readme"] },
+    { key: "literature", title: "Related literature and evidence gap", candidates: ["literature"] },
+    { key: "data", title: "Data sources and coverage", candidates: ["coverage", "source_action"] },
+    { key: "method", title: "Methodology and claim test", candidates: ["preregistration", "scoring"] },
+    { key: "results", title: "Results", candidates: ["results"] },
+    { key: "robustness", title: "Sensitivity and robustness", candidates: ["sensitivity"] },
+    { key: "limitations", title: "Limitations and what this does not mean", candidates: ["limitations"] },
+    { key: "conclusion", title: "Conclusion and next evidence upgrade", candidates: ["upgrade_gap"] },
+    { key: "reproduce", title: "Reproduce the analysis", candidates: ["reproduce"] },
+  ];
+  const story = storySpecs.map((section) => {
+    const artifacts = section.candidates.map((key) => byKey.get(key)).filter(Boolean);
+    const hasDraftMarker = artifacts.some((artifact) => {
+      if (!artifact.file.endsWith(".md")) return false;
+      const text = fs.readFileSync(path.join(dir, artifact.file), "utf8");
+      return /\bTODO\b|\{program-title\}|\{slug\}|kebab-case-slug/i.test(text);
+    });
+    return {
+      key: section.key,
+      title: section.title,
+      available: artifacts.length > 0,
+      state: artifacts.length === 0 ? "missing" : hasDraftMarker ? "draft" : "present",
+      artifacts: artifacts.map(({ key, file, label }) => ({ key, file, label })),
+    };
+  });
+
   // Also expose the latest generated/* files as downloads. Recurses one level
   // into subdirectories (e.g., generated/charts/) so chart and other binary
   // artifacts sync alongside the JSON/CSV outputs.
@@ -250,7 +282,7 @@ function syncProgram(slug) {
   }
 
   // Compute permanent-URL placeholder for §10.3
-  const permanentUrl = `/program/${slug}/evidence`;
+  const permanentUrl = `/${slug}?view=evidence`;
 
   // Hero visual (visual-first refactor, 2026-05-19). Each program may produce
   // generated/charts/{slug}-thumbnail.{png,svg,json}; if all three exist, the
@@ -289,6 +321,17 @@ function syncProgram(slug) {
     artifacts: included,
     generated_files: generatedIncluded,
     articles,
+    story,
+    resources: {
+      reproduce: byKey.has("reproduce")
+        ? `/programs/${slug}/${byKey.get("reproduce").file}`
+        : null,
+      deck: fs.existsSync(path.join(dest, `${slug}-deck.pptx`))
+        ? `/programs/${slug}/${slug}-deck.pptx`
+        : null,
+      reviewer_packet: null,
+      repository: `https://github.com/rradofina/adb-research-reporting/tree/main/${slug}`,
+    },
   };
 
   fs.writeFileSync(

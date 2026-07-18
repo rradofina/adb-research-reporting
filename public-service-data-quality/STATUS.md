@@ -5,7 +5,7 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to PSDQ.
 
-Last updated: 2026-07-07.
+Last updated: 2026-07-18.
 
 ## Current
 
@@ -29,6 +29,11 @@ owner-only.
 
 ## Last completed
 
+- **2026-07-18:** The canonical topic route now presents PSDQ through the shared
+  nine-part research spine and embeds the lead visual at the article's finding
+  turn; additional Markdown figures remain beside the evidence they interpret.
+  This is a reader-navigation change only; the supported finding, PR maturity,
+  ai-first label, and owner-only repair wall are unchanged.
 - **2026-07-07:** Standardized the PSDQ evidence ledger surface. The builder
   now emits `generated/evidence-ledger.{json,csv}` aliases alongside the
   legacy `psdq-evidence-ledger.{json,csv}` files, and the showcase imports the

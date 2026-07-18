@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [KHM]
 topics: [climate-health, schools, methodology]
 program: school-heat-disruption
-maturity: SR
+maturity: PP
 abstract: >
   The school-heat-pressure index — heat × children-share × pupil-
   teacher-ratio — produces a top-5 ranking across 32 ADB DMCs that

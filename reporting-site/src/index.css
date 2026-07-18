@@ -155,6 +155,148 @@
   /* Tailwind reset undoes margin on headings; we set rhythm in components */
 }
 
+@layer components {
+  .research-story {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  .research-story-status {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-deep);
+  }
+
+  .research-story-status h2 {
+    max-width: 19ch;
+    margin-top: 0.4rem;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: clamp(1.65rem, 3.4vw, 2.6rem);
+    line-height: 1.05;
+  }
+
+  .research-story-status p {
+    max-width: 64ch;
+    margin-top: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+
+  .research-story-status ol {
+    border-top: 1px solid var(--rule);
+  }
+
+  .research-story-status li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 0.85rem;
+  }
+
+  .research-story-status li a {
+    color: var(--ink);
+  }
+
+  .research-story-status li span,
+  .research-story-heading > span {
+    color: var(--ink-faint);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .research-story-status li.is-available span {
+    color: var(--sage-dark, var(--sage));
+  }
+
+  .research-story-status li.is-draft span {
+    color: var(--ochre);
+  }
+
+  .research-story-status li.is-missing a {
+    color: var(--ink-faint);
+  }
+
+  .research-story-section {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ink);
+  }
+
+  .research-story-document,
+  .research-story-section > .prose-article {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .research-story-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .research-story-heading .topic-section-label {
+    margin-bottom: 0;
+  }
+
+.research-story-document + .research-story-document {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--rule);
+  }
+
+  .research-story-missing {
+    max-width: 64ch;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid var(--ochre);
+    background: var(--paper-deep);
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  @media (min-width: 900px) {
+    .research-story-status {
+      grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr);
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .research-story {
+      gap: 2.75rem;
+    }
+
+    .research-story-status {
+      margin-right: -0.5rem;
+      margin-left: -0.5rem;
+    }
+
+    .research-story-heading {
+      display: grid;
+      gap: 0.35rem;
+    }
+  }
+}
+
+.research-inline-figure {
+  margin: 1.5rem 0 1.75rem;
+}
+
 .air-ledger-page {
   background: var(--paper);
 }
@@ -9673,6 +9815,9 @@
     border-radius: 2px;
   }
   .prose-article pre {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: 0.85rem;
     line-height: 1.5;
@@ -9704,9 +9849,11 @@
      Wide tables scroll inside their column instead of expanding the page;
      long inline file paths in <code> wrap at any character; embedded
      images respect their parent container's width. */
-  .prose-article > table,
+  .research-story-document > table,
+  .prose-article table,
   .ed-paper-body > table {
     display: block;
+    width: 100%;
     max-width: 100%;
     overflow-x: auto;
   }

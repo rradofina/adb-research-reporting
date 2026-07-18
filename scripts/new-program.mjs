@@ -20,7 +20,6 @@ const TEMPLATE_MAP = [
   ["limitations.md", "limitations.md"],
   ["review-internal.md", "review-internal.md"],
   ["review-external.md", "review-external.md"],
-  ["article.md", "article.md"],
 ];
 
 function usage() {
@@ -80,8 +79,34 @@ function main() {
   writeIfMissing(path.join(target, "generated", ".gitkeep"), "");
   writeIfMissing(path.join(target, "scripts", ".gitkeep"), "");
 
+  writeIfMissing(
+    path.join(target, "REPRODUCE.md"),
+    `# Reproduce — ${title}\n\n\`attestation_chain: ai-first\`\n\n## Environment\n\nTODO: pin runtime and package versions.\n\n## Fetch public data\n\n\`\`\`bash\n# TODO: deterministic retrieval command\n\`\`\`\n\n## Build the result\n\n\`\`\`bash\n# TODO: committed processing and sensitivity commands\n\`\`\`\n\n## Verify\n\nTODO: name generated artifacts and checksum command.\n`,
+  );
+  writeIfMissing(
+    path.join(target, "upgrade-gap.md"),
+    `# Conclusion and next evidence upgrade — ${title}\n\n\`attestation_chain: ai-first\`\n\n## What the current evidence supports\n\nTODO.\n\n## What it does not support\n\nTODO.\n\n## Highest-value next data object\n\nTODO: name the public data object and the claim it could change.\n`,
+  );
+  writeIfMissing(
+    path.join(target, "figure-plan.md"),
+    `# Figure plan — ${title}\n\n\`attestation_chain: ai-first\`\n\nRead \`research/VISUAL-RESEARCH-STANDARD.md\` before filling this plan. A PNG and SVG of the same figure count once.\n\n| Figure | Research role | Literature link | Source object | Unit and coverage | Transform script | Claim test | Uncertainty | Mobile fallback | Status |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | Observability / coverage | TODO | TODO | TODO | TODO | TODO | TODO | Table | Planned |\n| 2 | Hero / main claim | TODO | TODO | TODO | TODO | TODO | TODO | Table | Planned |\n| 3 | Sensitivity / limitation | TODO | TODO | TODO | TODO | TODO | TODO | Table | Planned |\n\nDo not add a figure whose source object, claim test, and distinct role cannot be named.\n`,
+  );
+
+  const articleTemplate = path.join(TEMPLATE_DIR, "article.md");
+  if (!fs.existsSync(articleTemplate)) {
+    console.error(`Template missing: ${articleTemplate}`);
+    process.exit(2);
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  const article = fs.readFileSync(articleTemplate, "utf8")
+    .replaceAll("kebab-case-slug", slug)
+    .replaceAll("{program-title}", title)
+    .replaceAll("{program-slug}", slug)
+    .replaceAll("YYYY-MM-DD", today);
+  writeIfMissing(path.join(REPO_ROOT, "articles", `${slug}.md`), article);
+
   console.log(`Created ${slug}`);
-  console.log("Next: fill README.md, literature.md, pre-registration.md, then add deterministic scripts.");
+  console.log("Next: register the program, start from a public data object and rough visual, fill figure-plan.md, then fill the research-story sections.");
 }
 
 main();

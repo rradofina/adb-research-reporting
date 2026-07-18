@@ -30,6 +30,34 @@ function parseFrontmatter(text) {
   return { frontmatter, body: m[2] };
 }
 
+function splitTopLevel(value) {
+  const parts = [];
+  let start = 0;
+  let depth = 0;
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] === "{" || value[i] === "[") depth++;
+    if (value[i] === "}" || value[i] === "]") depth--;
+    if (value[i] === "," && depth === 0) {
+      parts.push(value.slice(start, i).trim());
+      start = i + 1;
+    }
+  }
+  parts.push(value.slice(start).trim());
+  return parts.filter(Boolean);
+}
+
+function parseInlineValue(value) {
+  const objectMatch = value.match(/^\{(.*)\}$/);
+  if (!objectMatch) return value;
+  const object = {};
+  for (const part of splitTopLevel(objectMatch[1])) {
+    const separator = part.indexOf(":");
+    if (separator < 0) continue;
+    object[part.slice(0, separator).trim()] = part.slice(separator + 1).trim();
+  }
+  return object;
+}
+
 // Tiny YAML-ish parser: handles flat keys, scalar values, simple arrays
 // in [] notation, and >- folded blocks. Intentionally limited — keeps
 // articles' frontmatter shape disciplined.
@@ -63,9 +91,11 @@ function parseYamlIsh(text) {
         const obj = {};
         const objMatch = inner.match(/^\{(.*)\}$/);
         if (objMatch) {
-          for (const part of objMatch[1].split(",")) {
-            const kv = part.split(":").map((s) => s.trim());
-            if (kv.length === 2) obj[kv[0]] = kv[1];
+          for (const part of splitTopLevel(objMatch[1])) {
+            const separator = part.indexOf(":");
+            if (separator >= 0) {
+              obj[part.slice(0, separator).trim()] = part.slice(separator + 1).trim();
+            }
           }
           arr.push(obj);
         } else {
@@ -77,7 +107,7 @@ function parseYamlIsh(text) {
       continue;
     }
     if (val.startsWith("[") && val.endsWith("]")) {
-      out[key] = val.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean);
+      out[key] = splitTopLevel(val.slice(1, -1)).map(parseInlineValue);
     } else {
       out[key] = val;
     }

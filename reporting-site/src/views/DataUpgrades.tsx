@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Chip, Divider, Kicker, Maturity, Numeral, StatBlock } from "../components/ui";
-import { BRIEF_DETAILS, FINISH_LABELS } from "../data/briefs";
+import { BRIEF_DETAILS } from "../data/briefs";
 import { programs } from "../data/programs";
 import {
   PRIORITY_META,
@@ -138,16 +138,13 @@ export default function DataUpgrades() {
                     <div className="flex items-baseline gap-3">
                       <Numeral n={program.id} />
                       <div>
-                        <Link href={program.href ?? `/program/${program.slug}/evidence`}
+                        <Link href={`/${program.slug}`}
                           className="ed-link display-md text-base"
                         >
                           {program.title}
                         </Link>
                         <div className="mt-2 flex flex-wrap gap-2">
                           <Maturity status={program.status} />
-                          <Chip variant={priorityTone(upgrade.priority)}>
-                            {FINISH_LABELS[detail.finish]}
-                          </Chip>
                         </div>
                       </div>
                     </div>
@@ -280,10 +277,6 @@ function SourceLinks({ links }: { links: SourceUpgrade["sourceLinks"] }) {
 function PriorityChip({ priority }: { priority: UpgradePriority }) {
   const meta = PRIORITY_META[priority];
   return <Chip variant={meta.tone}>{meta.label}</Chip>;
-}
-
-function priorityTone(priority: UpgradePriority) {
-  return PRIORITY_META[priority].tone;
 }
 
 function priorityColor(priority: UpgradePriority) {

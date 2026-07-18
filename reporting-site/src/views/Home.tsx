@@ -61,7 +61,7 @@ const publicProgramLabels: Record<Maturity, string> = {
   H: "In development",
   PP: "Pipeline prepared",
   SR: "Screening result",
-  PR: "Finished for issue",
+  PR: "Publication-ready",
   Ret: "Retired",
 };
 
@@ -248,7 +248,10 @@ export default function Home() {
         ...topic,
         report,
         quality,
-        publicStage: reportStageLabel(quality.readiness),
+        publicStage: topic.programSlug
+          ? publicProgramLabels[programs.find((program) => program.slug === topic.programSlug)?.status || "H"]
+          : reportStageLabel(quality.readiness),
+        href: topic.programSlug ? `/${topic.programSlug}` : report.href,
         hero: topic.programSlug ? heroIndex[topic.programSlug] : null,
       };
     })
@@ -258,8 +261,8 @@ export default function Home() {
     .filter((topic) => typeof topic.findingRank === "number")
     .sort((a, b) => (a.findingRank ?? 99) - (b.findingRank ?? 99))
     .slice(0, 5);
-  const findingTopicHrefs = new Set(findingTopics.map((topic) => topic.report.href));
-  const standardTopics = readerTopics.filter((topic) => !findingTopicHrefs.has(topic.report.href));
+  const findingTopicHrefs = new Set(findingTopics.map((topic) => topic.href));
+  const standardTopics = readerTopics.filter((topic) => !findingTopicHrefs.has(topic.href));
   const primaryFinding = findingTopics[0] ?? readerTopics[0];
 
   const sortedPrograms = [...programs].sort((a, b) => {
@@ -289,10 +292,10 @@ export default function Home() {
             reader can inspect the generated packet.
           </p>
           <div className="home-actions" aria-label="Primary paths">
-            <Link href={primaryFinding?.report.href ?? "/showcase/air-monitoring-observability"}>
+            <Link href={primaryFinding?.href ?? "/research"}>
               Open lead finding
             </Link>
-            <a href="#topics">Browse all findings</a>
+            <Link href="/research">Browse all research</Link>
           </div>
           <div className="home-assurance" aria-label="Research standard">
             <span>Maturity labels visible</span>
@@ -307,9 +310,9 @@ export default function Home() {
             const attestation = topic.hero?.attestation_chain || "ai-first";
             return (
               <Link
-                href={topic.report.href}
+                href={topic.href}
                 className={`home-finding-card${index === 0 ? " home-finding-card-primary" : ""}${image ? "" : " home-finding-card-noimage"}`}
-                key={topic.report.href}
+                key={topic.href}
               >
                 {image && (
                   <img
@@ -334,12 +337,12 @@ export default function Home() {
 
       <section className="home-issue-closure" aria-labelledby="home-issue-closure-title">
         <div className="home-issue-closure-copy">
-          <p className="home-section-kicker">Current issue closed · {ISSUE_CLOSURE_AS_OF}</p>
-          <h2 id="home-issue-closure-title">All eighteen topics now have an honest label.</h2>
+          <p className="home-section-kicker">Program register · {ISSUE_CLOSURE_AS_OF}</p>
+          <h2 id="home-issue-closure-title">All eighteen topics have one authoritative maturity label.</h2>
           <p>
-            {issueClosureDeck} Computed outputs are separated from held-back
-            tracks so the public issue can be read without pretending every
-            registered idea became a paper.
+            {issueClosureDeck} Research outputs are separated from in-progress
+            tracks so the catalogue never implies that every registered idea
+            is already a complete paper.
           </p>
         </div>
         <div className="home-issue-status-grid" aria-label="Current issue classification">
@@ -396,9 +399,9 @@ export default function Home() {
           {standardTopics.map((topic) => {
             const topicImage = heroPath(topic.programSlug, topic.hero);
             return (
-              <Link href={topic.report.href}
+              <Link href={topic.href}
                 className={`home-topic-card home-topic-card-${topic.tone}`}
-                key={topic.report.href}
+                key={topic.href}
               >
                 {topicImage && (
                   <img
@@ -420,8 +423,8 @@ export default function Home() {
 
       <section className="home-library-section" id="evidence" aria-labelledby="home-library-title">
         <div className="home-section-head">
-          <p className="home-section-kicker">Evidence library</p>
-          <h2 id="home-library-title">The long audit trail is available, but it is not the first thing a reader has to decode.</h2>
+          <p className="home-section-kicker">Explorations and audits</p>
+          <h2 id="home-library-title">Method experiments and evidence audits stay available without being mistaken for full research papers.</h2>
           <p>
             The visible pages keep internal maturity codes out of the way while
             preserving the route to scripts, generated files, source notes, and

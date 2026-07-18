@@ -1,78 +1,64 @@
-import {
-  BRIEF_DETAILS,
-  FINISH_LABELS,
-  type BriefDetail,
-  type FinishGroup,
-} from "./briefs";
-import { programs, type ProgramEntry } from "./programs";
+import { programs } from "./programs";
+import type { Maturity } from "../lib/claimTiers";
 
-export const ISSUE_CLOSURE_AS_OF = "2026-07-07";
+export const ISSUE_CLOSURE_AS_OF = "2026-07-18";
 
-export const ISSUE_FINISH_ORDER: FinishGroup[] = [
-  "publication-ready",
-  "screening-result",
-  "program-prospectus",
-  "prepared-pipeline",
-  "hypothesis",
-];
+export const ISSUE_STATUS_ORDER: Maturity[] = ["PR", "SR", "PP", "H", "Ret"];
 
-const ISSUE_STATUS_NOTES: Record<FinishGroup, string> = {
-  "publication-ready": "Full current-issue evidence package under the ai-first chain.",
-  "screening-result": "Useful public-data signal; not final research output.",
-  "program-prospectus": "Computed prospectus; key upgrade still missing.",
-  "prepared-pipeline": "Code path exists; empirical output not run.",
-  hypothesis: "Question exists; no full repository result here.",
+const STATUS_COPY: Record<Maturity, { label: string; note: string }> = {
+  PR: {
+    label: "Publication-ready",
+    note: "A full evidence package has passed the repository's current publication gate.",
+  },
+  SR: {
+    label: "Screening result",
+    note: "A useful public-data signal exists, with explicit limits and an upgrade path.",
+  },
+  PP: {
+    label: "Prepared pipeline",
+    note: "The question or pipeline is prepared, but the evidence does not support a finished claim.",
+  },
+  H: {
+    label: "Hypothesis",
+    note: "A research question exists; a complete empirical result is not present in this repository.",
+  },
+  Ret: {
+    label: "Retired",
+    note: "The program is retained for provenance but is no longer active.",
+  },
 };
 
-export interface IssueProgramRow {
-  program: ProgramEntry;
-  detail: BriefDetail;
-}
-
-export const issueProgramRows: IssueProgramRow[] = programs
-  .map((program) => ({
-    program,
-    detail: BRIEF_DETAILS[program.slug],
-  }))
-  .filter((row): row is IssueProgramRow => Boolean(row.detail));
-
-export const issueCounts = ISSUE_FINISH_ORDER.reduce(
-  (acc, key) => {
-    acc[key] = 0;
+export const issueCounts = ISSUE_STATUS_ORDER.reduce(
+  (acc, status) => {
+    acc[status] = programs.filter((program) => program.status === status).length;
     return acc;
   },
-  {} as Record<FinishGroup, number>,
+  {} as Record<Maturity, number>,
 );
 
-for (const row of issueProgramRows) {
-  issueCounts[row.detail.finish] += 1;
-}
-
-export const issueTotal = issueProgramRows.length;
-export const issueFinishedCount = issueCounts["publication-ready"];
-export const issueComputedCount =
-  issueCounts["publication-ready"] +
-  issueCounts["screening-result"] +
-  issueCounts["program-prospectus"];
-export const issueHeldBackCount =
-  issueCounts["prepared-pipeline"] + issueCounts.hypothesis;
+export const issueTotal = programs.length;
+export const issueFinishedCount = issueCounts.PR;
+export const issueComputedCount = issueCounts.PR + issueCounts.SR;
+export const issueHeldBackCount = issueCounts.PP + issueCounts.H + issueCounts.Ret;
 
 export const issueClosureDeck =
-  `${issueTotal} topics are classified: ` +
-  `${issueCounts["publication-ready"]} finished for the current issue, ` +
-  `${issueCounts["screening-result"]} screening-only, ` +
-  `${issueCounts["program-prospectus"]} prospectus, ` +
-  `${issueCounts["prepared-pipeline"]} prepared pipeline, and ` +
-  `${issueCounts.hypothesis} hypothesis.`;
+  `${issueTotal} programs are registered: ` +
+  `${issueCounts.PR} publication-ready, ` +
+  `${issueCounts.SR} screening results, ` +
+  `${issueCounts.PP} prepared pipelines, ` +
+  `${issueCounts.H} hypothesis, and ` +
+  `${issueCounts.Ret} retired.`;
 
 export const issueHoldBackNotes = [
-  "digital-performance is held at prepared pipeline because the Ookla parquet aggregation has not run.",
-  "mpi-nighttime-lights remains hypothesis/owner-led until the external nighttime-lights track is reconciled.",
+  "Prepared-pipeline and hypothesis programs remain visible so readers can see the question, data gap, and next viable research move.",
+  "Only the constitutional program register controls these labels; article or showcase metadata cannot promote a topic.",
 ];
 
-export const issueStatusCards = ISSUE_FINISH_ORDER.map((key) => ({
-  key,
-  label: FINISH_LABELS[key],
-  count: issueCounts[key],
-  note: ISSUE_STATUS_NOTES[key],
-}));
+export const issueStatusCards = ISSUE_STATUS_ORDER
+  .filter((status) => status !== "Ret" || issueCounts.Ret > 0)
+  .map((status) => ({
+    key: status,
+    label: STATUS_COPY[status].label,
+    count: issueCounts[status],
+    note: STATUS_COPY[status].note,
+  }));

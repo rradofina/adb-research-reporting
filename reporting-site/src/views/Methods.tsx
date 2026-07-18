@@ -25,7 +25,7 @@ const TIERS = [
   {
     n: "IV",
     code: "PR",
-    label: "Finished for issue",
+    label: "Publication-ready",
     body: "Source retrieval, code, sensitivity, review response, and public archive complete for the stated attestation chain.",
   },
 ];

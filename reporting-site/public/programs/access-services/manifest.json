@@ -1,7 +1,7 @@
 {
   "program": "access-services",
-  "permanent_url": "/program/access-services/evidence",
-  "generated_at": "2026-07-07T06:45:40.982Z",
+  "permanent_url": "/access-services?view=evidence",
+  "generated_at": "2026-07-18T08:01:07.901Z",
   "hero": {
     "png": "generated/charts/access-services-thumbnail.png",
     "svg": "generated/charts/access-services-thumbnail.svg",
@@ -182,5 +182,112 @@
       "title": "Four pilot DMCs hold the top of the access-stress ranking — Bangladesh, Cambodia, Lao PDR, Pakistan",
       "attestation_chain": "ai-first"
     }
-  ]
+  ],
+  "story": [
+    {
+      "key": "background",
+      "title": "Research problem and background",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "literature",
+      "title": "Related literature and evidence gap",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "literature",
+          "file": "literature.md",
+          "label": "Literature review"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "title": "Data sources and coverage",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "coverage",
+          "file": "coverage.md",
+          "label": "Coverage"
+        }
+      ]
+    },
+    {
+      "key": "method",
+      "title": "Methodology and claim test",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "preregistration",
+          "file": "pre-registration.md",
+          "label": "Pre-registration"
+        }
+      ]
+    },
+    {
+      "key": "results",
+      "title": "Results",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "results",
+          "file": "results.md",
+          "label": "Results"
+        }
+      ]
+    },
+    {
+      "key": "robustness",
+      "title": "Sensitivity and robustness",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "sensitivity",
+          "file": "sensitivity.md",
+          "label": "Sensitivity suite"
+        }
+      ]
+    },
+    {
+      "key": "limitations",
+      "title": "Limitations and what this does not mean",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "limitations",
+          "file": "limitations.md",
+          "label": "Limitations"
+        }
+      ]
+    },
+    {
+      "key": "conclusion",
+      "title": "Conclusion and next evidence upgrade",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "reproduce",
+      "title": "Reproduce the analysis",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    }
+  ],
+  "resources": {
+    "reproduce": null,
+    "deck": null,
+    "reviewer_packet": null,
+    "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/access-services"
+  }
 }

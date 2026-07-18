@@ -20,7 +20,13 @@ import {
   type ArticleMeta,
 } from "../lib/articles";
 import { loadReferences, byKey, resolveCitations, renderReferenceList } from "../lib/refs";
-import { loadEvidenceManifest, type EvidenceManifest } from "../lib/evidence";
+import {
+  loadArtifact,
+  loadEvidenceManifest,
+  type EvidenceManifest,
+  type HeroVisual,
+  type ResearchStorySection,
+} from "../lib/evidence";
 import { programs } from "../data/programs";
 import { MaturityChip } from "../lib/claimTiers";
 import { RemittanceMapHero } from "../components/charts/RemittanceMapHero";
@@ -40,7 +46,7 @@ const TIER_TO_VIEW: Record<string, View> = {
 const TAB_ORDER: View[] = ["overview", "paper", "brief", "blog", "slides", "data", "evidence"];
 const TAB_LABEL: Record<View, string> = {
   overview: "Overview",
-  paper: "Paper",
+  paper: "Research",
   brief: "Brief",
   blog: "Blog post",
   slides: "Slides",
@@ -119,9 +125,13 @@ export default function Topic({ slug }: { slug: string }) {
   const paper = tiers.paper;
   const title = paper?.title || programEntry?.title || slug;
   const subtitle = paper?.subtitle || programEntry?.summary || "";
-  const status = (paper?.maturity as any) || programEntry?.status || "H";
+  // The constitutional register is authoritative. Article frontmatter is
+  // descriptive metadata and must never silently promote a public page.
+  const status = programEntry?.status || (paper?.maturity as any) || "H";
   const attestation = paper?.attestation_chain || "ai-first";
-  const authors = paper?.authors || ["Raymond Adofina"];
+  const authors = (paper?.authors || ["Raymond Adofina"]).map((author) =>
+    author.replace(/^\{\s*name:\s*([^,}]+).*\}$/, "$1").trim(),
+  );
   const published = paper?.published_at;
   const updated = paper?.updated_at;
   const availableTabs = new Set<View>();
@@ -129,10 +139,10 @@ export default function Topic({ slug }: { slug: string }) {
     availableTabs.add("paper");
   } else {
     if (programEntry && !tiers.paper) availableTabs.add("overview");
-    if (tiers.paper) availableTabs.add("paper");
+    if (tiers.paper || manifest?.story?.some((section) => section.available)) availableTabs.add("paper");
     if (tiers.brief) availableTabs.add("brief");
     if (tiers.blog) availableTabs.add("blog");
-    if (tiers.slides) availableTabs.add("slides");
+    if (manifest?.resources?.deck) availableTabs.add("slides");
     if ((manifest?.generated_files || []).length > 0) availableTabs.add("data");
     if (manifest && ((manifest.artifacts || []).length > 0 || (manifest.scripts || []).length > 0)) {
       availableTabs.add("evidence");
@@ -141,7 +151,7 @@ export default function Topic({ slug }: { slug: string }) {
   }
   const defaultView: View = !metadataLoaded
     ? "paper"
-    : tiers.paper
+    : tiers.paper || manifest?.story?.some((section) => section.available)
       ? "paper"
       : manifest && ((manifest.artifacts || []).length > 0 || (manifest.generated_files || []).length > 0)
         ? "evidence"
@@ -257,47 +267,6 @@ export default function Topic({ slug }: { slug: string }) {
         </div>
       </header>
 
-      {/* Hero visual (visual-first refactor, 2026-05-19). When the
-          program has a rendered hero, show it above the tab strip. The
-          same image users clicked from the home gallery. */}
-      {manifest?.hero &&
-        (() => {
-          const hero = manifest.hero;
-          const pngHero = (
-            <figure className="topic-hero">
-              <Image
-                src={`/programs/${slug}/${hero.png}`}
-                alt={hero.title}
-                width={hero.dimensions?.width || 1600}
-                height={hero.dimensions?.height || 900}
-                priority
-              />
-              <figcaption className="topic-hero-caption">
-                <span className="topic-hero-caption-text">{hero.caption}</span>
-                <span className="topic-hero-caption-meta">
-                  <span>{hero.visual_form}</span>
-                  <span>·</span>
-                  <span>{hero.source}</span>
-                  <span>·</span>
-                  <span>
-                    attestation:{" "}
-                    <code className="inline-code-token">
-                      {hero.attestation_chain}
-                    </code>
-                  </span>
-                </span>
-              </figcaption>
-            </figure>
-          );
-          // Remittance flagship: render the native interactive map in place
-          // of the static PNG (PNG remains the fallback while data loads).
-          return slug === "remittance-resilience" ? (
-            <RemittanceMapHero hero={hero} fallback={pngHero} />
-          ) : (
-            pngHero
-          );
-        })()}
-
       {/* Tab strip */}
       <nav className="topic-tabs">
         {TAB_ORDER.filter((t) => availableTabs.has(t)).map((t) => (
@@ -313,6 +282,10 @@ export default function Topic({ slug }: { slug: string }) {
           </button>
         ))}
       </nav>
+
+      {view === "paper" && manifest?.story ? (
+        <ResearchPackageIndex story={manifest.story} />
+      ) : null}
 
       {/* Two-column layout. min-w-0 on grid items lets them shrink below
            their content's intrinsic width on narrow viewports — without
@@ -330,7 +303,15 @@ export default function Topic({ slug }: { slug: string }) {
             />
           )}
 
-          {view === "paper" || view === "brief" || view === "blog" ? (
+          {view === "paper" ? (
+            <ResearchStory
+              slug={slug}
+              manifest={manifest}
+              hero={manifest?.hero || null}
+              summaryHtml={bodyHtml}
+              summaryLoading={bodyLoading}
+            />
+          ) : view === "brief" || view === "blog" ? (
             // Render any current bodyHtml even while loading — keeps the
             // previous tab's content visible until the new one is ready,
             // so tab switching does not flash to a blank state.
@@ -354,7 +335,13 @@ export default function Topic({ slug }: { slug: string }) {
           ) : null}
 
           {view === "slides" && (
-            <SlidesTab slug={slug} sourceMeta={tiers.slides} bodyHtml={bodyHtml} bodyLoading={bodyLoading} />
+            <SlidesTab
+              slug={slug}
+              pptxUrl={manifest?.resources?.deck || null}
+              sourceMeta={tiers.slides}
+              bodyHtml={bodyHtml}
+              bodyLoading={bodyLoading}
+            />
           )}
 
           {view === "data" && <DataTab manifest={manifest} slug={slug} />}
@@ -375,6 +362,185 @@ export default function Topic({ slug }: { slug: string }) {
         </aside>
       </div>
     </article>
+  );
+}
+
+interface LoadedStorySection extends ResearchStorySection {
+  html: string;
+}
+
+function TopicHeroFigure({ slug, hero }: { slug: string; hero: HeroVisual }) {
+  const pngHero = (
+    <figure className="topic-hero research-inline-figure">
+      <Image
+        src={`/programs/${slug}/${hero.png}`}
+        alt={hero.title}
+        width={hero.dimensions?.width || 1600}
+        height={hero.dimensions?.height || 900}
+        priority
+      />
+      <figcaption className="topic-hero-caption">
+        <span className="topic-hero-caption-text">{hero.caption}</span>
+        <span className="topic-hero-caption-meta">
+          <span>{hero.visual_form}</span>
+          <span>·</span>
+          <span>{hero.source}</span>
+          <span>·</span>
+          <span>
+            attestation: <code className="inline-code-token">{hero.attestation_chain}</code>
+          </span>
+        </span>
+      </figcaption>
+    </figure>
+  );
+
+  return slug === "remittance-resilience" ? (
+    <RemittanceMapHero hero={hero} fallback={pngHero} />
+  ) : (
+    pngHero
+  );
+}
+
+function splitNarrativeForHero(html: string) {
+  const resultsHeading = /<h([12])(?:\s[^>]*)?>\s*(?:Results|Findings|The finding|Main result)\s*<\/h\1>/i.exec(html);
+  if (resultsHeading?.index !== undefined) {
+    const splitAt = resultsHeading.index + resultsHeading[0].length;
+    return { before: html.slice(0, splitAt), after: html.slice(splitAt) };
+  }
+  const openingParagraph = html.indexOf("</p>");
+  if (openingParagraph >= 0) {
+    const splitAt = openingParagraph + 4;
+    return { before: html.slice(0, splitAt), after: html.slice(splitAt) };
+  }
+  return { before: "", after: html };
+}
+
+function ResearchPackageIndex({ story }: { story: ResearchStorySection[] }) {
+  const availableCount = story.filter((section) => section.available).length;
+  const completeCount = story.filter((section) => section.state === "present").length;
+  return (
+    <section className="research-story-status" aria-labelledby="research-package-title">
+      <div>
+        <div className="topic-section-label">Research package</div>
+        <h2 id="research-package-title">The full evidence spine, with gaps left visible.</h2>
+        <p>
+          {availableCount} of {story.length} standard sections have a file; {completeCount} contain no template markers.
+          The article, chart, method, literature, limitations, and reproduction trail are kept in one reader journey.
+        </p>
+      </div>
+      <ol aria-label="Research section availability">
+        {story.map((section) => (
+          <li key={section.key} className={section.state === "present" ? "is-available" : section.available ? "is-draft" : "is-missing"}>
+            <a href={`#research-${section.key}`}>{section.title}</a>
+            <span>{section.state === "present" ? "Present" : section.available ? "Draft" : "Not yet"}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function ResearchStory({
+  slug,
+  manifest,
+  hero,
+  summaryHtml,
+  summaryLoading,
+}: {
+  slug: string;
+  manifest: EvidenceManifest | null;
+  hero: HeroVisual | null;
+  summaryHtml: string;
+  summaryLoading: boolean;
+}) {
+  const [sections, setSections] = useState<LoadedStorySection[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    const story = manifest?.story || [];
+    if (!manifest) {
+      setLoading(true);
+      return;
+    }
+    (async () => {
+      setLoading(true);
+      const refs = await loadReferences();
+      const refIndex = byKey(refs);
+      const loaded = await Promise.all(
+        story.map(async (section) => {
+          const documents = await Promise.all(
+            section.artifacts.map(async (artifact) => {
+              const source = await loadArtifact(slug, artifact.file);
+              if (!source) return "";
+              const withoutFrontmatter = stripFrontmatter(source)
+                .replace(/^#\s+[^\r\n]+\r?\n+/, "")
+                .trim();
+              const rendered = await marked.parse(withoutFrontmatter);
+              const raw = typeof rendered === "string" ? rendered : "";
+              const { html, cited } = resolveCitations(raw, refIndex);
+              return `<div class="research-story-document">${html}${renderReferenceList(cited)}</div>`;
+            }),
+          );
+          return { ...section, html: documents.filter(Boolean).join("") };
+        }),
+      );
+      if (!cancelled) {
+        setSections(loaded);
+        setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [manifest, slug]);
+
+  if (!manifest || loading) {
+    return <div className="loading-message">Loading the research package…</div>;
+  }
+
+  const narrative = summaryHtml ? splitNarrativeForHero(summaryHtml) : null;
+  const heroIsInNarrative = Boolean(hero && narrative);
+
+  return (
+    <div className="research-story">
+      {narrative ? (
+        <section className="research-story-section" id="research-summary">
+          <div className="topic-section-label">Research summary</div>
+          <div
+            className={"prose-article topic-body-narrow " + (summaryLoading ? "topic-body-pending" : "")}
+            dangerouslySetInnerHTML={{ __html: narrative.before }}
+          />
+          {hero ? <TopicHeroFigure slug={slug} hero={hero} /> : null}
+          <div
+            className={"prose-article topic-body-narrow " + (summaryLoading ? "topic-body-pending" : "")}
+            dangerouslySetInnerHTML={{ __html: narrative.after }}
+          />
+        </section>
+      ) : summaryLoading ? (
+        <div className="loading-message">Loading research summary…</div>
+      ) : null}
+
+      {sections.map((section) => (
+        <section className="research-story-section" id={`research-${section.key}`} key={section.key}>
+          <div className="research-story-heading">
+            <div className="topic-section-label">{section.title}</div>
+            <span>{section.state === "present" ? "Present" : section.available ? "Draft section" : "Evidence gap"}</span>
+          </div>
+          {section.key === "results" && hero && !heroIsInNarrative ? (
+            <TopicHeroFigure slug={slug} hero={hero} />
+          ) : null}
+          {section.available && section.html ? (
+            <div className="prose-article topic-body-narrow" dangerouslySetInnerHTML={{ __html: section.html }} />
+          ) : (
+            <div className="research-story-missing">
+              This program does not yet contain a committed {section.title.toLowerCase()} section.
+              Treat the page at its displayed maturity level; this gap is part of the next research pass.
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
   );
 }
 
@@ -434,16 +600,20 @@ function OverviewTab({
 
 function SlidesTab({
   slug,
+  pptxUrl,
   sourceMeta,
   bodyHtml,
   bodyLoading,
 }: {
   slug: string;
+  pptxUrl: string | null;
   sourceMeta: ArticleMeta | undefined;
   bodyHtml: string;
   bodyLoading: boolean;
 }) {
-  const pptxUrl = `/programs/${slug}/${slug}-deck.pptx`;
+  if (!pptxUrl) {
+    return <div className="loading-message">No generated slide deck is available for this topic.</div>;
+  }
   return (
     <div>
       <div className="topic-panel">
@@ -546,26 +716,35 @@ function EvidenceTab({ manifest, slug }: { manifest: EvidenceManifest | null; sl
         generated file, with SHA-256 hashes. A reviewer can reproduce the
         result from a clean clone using the runbook below.
       </p>
-      <div className="resource-grid">
-        <a
-          href={`/_archive/review-packets/${slug}-2026-05-07.zip`}
-          download
-          className="resource-card"
-        >
-          <div className="topic-section-label">Reviewer packet</div>
-          <div className="resource-title">Download .zip</div>
-          <div className="resource-note">~6 MB · all 7 tiers + governance</div>
-        </a>
-        <a
-          href={`/programs/${slug}/${slug}-deck.pptx`}
-          download
-          className="resource-card"
-        >
-          <div className="topic-section-label">Slide deck</div>
-          <div className="resource-title">Download .pptx</div>
-          <div className="resource-note">ADB internal format</div>
-        </a>
-      </div>
+      {(manifest.resources?.reviewer_packet || manifest.resources?.deck || manifest.resources?.reproduce) ? (
+        <div className="resource-grid">
+          {manifest.resources?.reviewer_packet ? (
+            <a href={manifest.resources.reviewer_packet} download className="resource-card">
+              <div className="topic-section-label">Reviewer packet</div>
+              <div className="resource-title">Download .zip</div>
+              <div className="resource-note">Frozen review bundle</div>
+            </a>
+          ) : null}
+          {manifest.resources?.deck ? (
+            <a href={manifest.resources.deck} download className="resource-card">
+              <div className="topic-section-label">Slide deck</div>
+              <div className="resource-title">Download .pptx</div>
+              <div className="resource-note">Generated presentation</div>
+            </a>
+          ) : null}
+          {manifest.resources?.reproduce ? (
+            <a href={manifest.resources.reproduce} target="_blank" rel="noreferrer" className="resource-card">
+              <div className="topic-section-label">Reproduce</div>
+              <div className="resource-title">Open runbook</div>
+              <div className="resource-note">Committed commands and environment</div>
+            </a>
+          ) : null}
+        </div>
+      ) : (
+        <p className="research-story-missing">
+          No packaged downloads are published for this topic yet. The documentation and generated files below are the available evidence surface.
+        </p>
+      )}
       <section className="topic-section">
         <div className="topic-section-label">
           Documentation files
@@ -641,11 +820,11 @@ function Sidebar({
           {tiers.paper && <li>Working paper</li>}
           {tiers.brief && <li>One-page brief</li>}
           {tiers.blog && <li>Blog post</li>}
-          {tiers.slides && (
+          {manifest?.resources?.deck && (
             <li>
               Slide deck —{" "}
               <a
-                href={`/programs/${slug}/${slug}-deck.pptx`}
+                href={manifest.resources.deck}
                 download
                 className="token-link"
               >
@@ -690,19 +869,21 @@ function Sidebar({
       <section>
         <div className="sidebar-label">Reproduce</div>
         <ul className="sidebar-data-list">
+          {manifest?.resources?.reproduce ? (
+            <li>
+              <a
+                href={manifest.resources.reproduce}
+                target="_blank"
+                rel="noreferrer"
+                className="file-link"
+              >
+                Reproduction runbook
+              </a>
+            </li>
+          ) : null}
           <li>
             <a
-              href={`/programs/${slug}/REPRODUCE.md`}
-              target="_blank"
-              rel="noreferrer"
-              className="file-link"
-            >
-              REPRODUCE.md
-            </a>
-          </li>
-          <li>
-            <a
-              href={`https://github.com/rradofina/adb-research-reporting/tree/main/${slug}`}
+              href={manifest?.resources?.repository || `https://github.com/rradofina/adb-research-reporting/tree/main/${slug}`}
               target="_blank"
               rel="noreferrer"
               className="file-link"

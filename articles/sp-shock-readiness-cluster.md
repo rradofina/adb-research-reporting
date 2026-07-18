@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [BGD, LAO, MMR, PAK, PHL]
 topics: [social-protection, financial-inclusion, shock-response]
 program: social-protection-shock-coverage
-maturity: PR
+maturity: PP
 abstract: >
   The shock-payment-readiness gap combines poverty headcount with
   payment-system readiness (a weighted average of WDI ASPIRE social-

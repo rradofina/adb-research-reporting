@@ -57,6 +57,29 @@ export interface EvidenceManifest {
   generated_files: GeneratedFile[];
   scripts?: ScriptFile[];
   articles: ArticleRef[];
+  story?: ResearchStorySection[];
+  resources?: EvidenceResources;
+}
+
+export interface ResearchStoryArtifact {
+  key: string;
+  file: string;
+  label: string;
+}
+
+export interface ResearchStorySection {
+  key: string;
+  title: string;
+  available: boolean;
+  state?: "missing" | "draft" | "present";
+  artifacts: ResearchStoryArtifact[];
+}
+
+export interface EvidenceResources {
+  reproduce: string | null;
+  deck: string | null;
+  reviewer_packet: string | null;
+  repository: string;
 }
 
 const cache = new Map<string, Promise<EvidenceManifest | null>>();

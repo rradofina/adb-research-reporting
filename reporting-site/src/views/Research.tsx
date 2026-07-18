@@ -126,9 +126,9 @@ export default function Research() {
           </h1>
           <p className="lede mt-6 max-w-[60ch]">
             Each program targets a different measurement gap, but the
-            reader should never have to guess whether it is finished,
-            screening-only, prospectus-stage, pipeline-only, or still a
-            hypothesis. Current issue closure as of {ISSUE_CLOSURE_AS_OF}:{" "}
+            reader should never have to guess whether it is publication-ready,
+            screening-only, pipeline-only, or still a hypothesis. Program
+            register snapshot as of {ISSUE_CLOSURE_AS_OF}:{" "}
             {issueClosureDeck}
           </p>
           <Link href="/briefs"
@@ -163,17 +163,13 @@ export default function Research() {
               <ul className="divide-y divide-[var(--rule-soft)]">
                 {list.map((p) => {
                   const meta = DOMAIN_MAP[p.slug];
-                  const linkable = Boolean(p.href);
-                  const Wrap = ({ children }: any) =>
-                    linkable ? (
-                      <Link href={p.href!}
-                        className="group block py-7 -mx-2 px-2 transition-colors hover:bg-paper-deep"
-                      >
-                        {children}
-                      </Link>
-                    ) : (
-                      <div className="block py-7">{children}</div>
-                    );
+                  const Wrap = ({ children }: any) => (
+                    <Link href={`/${p.slug}`}
+                      className="group block py-7 -mx-2 px-2 transition-colors hover:bg-paper-deep"
+                    >
+                      {children}
+                    </Link>
+                  );
                   return (
                     <li key={p.slug}>
                       <Wrap>
@@ -182,7 +178,7 @@ export default function Research() {
                             <Numeral n={p.id} />
                           </div>
                           <div className="col-span-12 sm:col-span-9">
-                            <h3 className={"display-md text-[clamp(1.2rem,1.8vw,1.6rem)] " + (linkable ? "group-hover:text-crimson transition-colors" : "text-ink-faint")}>
+                            <h3 className="display-md text-[clamp(1.2rem,1.8vw,1.6rem)] group-hover:text-crimson transition-colors">
                               {p.title}
                             </h3>
                             <p className="mt-2 text-ink-soft max-w-prose leading-relaxed">

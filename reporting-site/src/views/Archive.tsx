@@ -131,7 +131,7 @@ export default function Archive() {
                 <td className="text-right font-mono tabular text-sm">{r.artifactCount}</td>
                 <td className="text-right font-mono tabular text-sm">{r.generatedCount}</td>
                 <td className="font-mono text-[0.7rem] text-ink-soft">
-                  /program/{r.slug}/evidence
+                  /{r.slug}?view=evidence
                 </td>
               </tr>
             ))}
@@ -148,8 +148,8 @@ export default function Archive() {
         </header>
         <div className="col-span-12 lg:col-span-9 max-w-prose">
           <p className="text-ink-soft leading-relaxed">
-            Every finished current-issue program's permanent URL is
-            <code className="font-mono not-italic">/program/{`{slug}`}/evidence</code>.
+            Every publication-ready program's permanent URL is
+            <code className="font-mono not-italic">/{`{slug}`}?view=evidence</code>.
             The URL plus the publication commit SHA on
             <code className="font-mono not-italic"> rradofina/adb-research-reporting</code>
             is the citation handle. Each artifact carries its own SHA-256
@@ -167,7 +167,7 @@ export default function Archive() {
             }}
           >{`Adofina, R. (2026). {Program title} — permanent evidence packet.
 The Blindspots Lab.
-${typeof window !== "undefined" ? window.location.origin : ""}/program/{slug}/evidence
+${typeof window !== "undefined" ? window.location.origin : ""}/{slug}?view=evidence
 attestation_chain: ai-first  (or human-final / mixed)
 commit: {SHA at publication}`}</pre>
         </div>

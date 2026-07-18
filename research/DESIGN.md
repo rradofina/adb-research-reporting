@@ -96,6 +96,11 @@ Consequences, effective immediately:
 
 ## Visual system
 
+- **Figure spine, not figure quota.** The working paper follows
+  `research/VISUAL-RESEARCH-STANDARD.md`: one hero plus every distinct
+  coverage, heterogeneity, sensitivity, uncertainty, falsification, or
+  limitation figure the evidence earns. Shallow surfaces reuse the hero;
+  the canonical article carries the full empirical sequence.
 - **One system, everywhere.** All charts go through the shared components
   (`ChartFrame`, `RankedBar`, `Scatter`, `ChoroplethMap`, …). A new chart
   form is added to the shared set with consistent typography, spacing,

@@ -71,8 +71,7 @@
     "geographies": [],
     "abstract": "This is the first issue of The Blindspots Lab. Seven programs cross to finished-for-current-issue status under Constitution §18 (AI-First Operating Mode). Eight more sit at Screening Result with explicit honest narrowings or triage-only screens. One — climate-health-workdays — is a Program Prospectus because the PM2.5 layer is computed but the heat layer remains an upgrade. One — digital-performance — stays at Prepared Pipeline because the Ookla parquet aggregation has not yet been run. One — mpi-nighttime-lights — remains at Hypothesis until the external track is reconciled. The article introduces the finished issue findings, the screening results, the held-back tracks, and what readers should know about §18 attested research before they cite it.",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "2026-07-07",
@@ -157,7 +156,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "migration-displacement-signals",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "migration",
       "emigrant-stock",
@@ -191,7 +190,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "climate-health-workdays",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "climate-health",
       "PM2.5",
@@ -239,8 +238,7 @@
     ],
     "abstract": "An 8-DMC pilot (PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS) of country- level access-stress, derived from ADM1 OSM amenity counts vs population (national census + WorldPop). Four economies — Bangladesh, Cambodia, Lao PDR, Pakistan — hold the top-4 country positions across alternative aggregation choices (population- weighted ADM1 mean vs maximum-ADM1 people-per-health-facility). Top-5 is aggregation-sensitive. Honest narrowing. The pilot does not extend to the 42 other ADB DMCs; that's the §18.5 upgrade- pass scope. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-27",
     "updated_at": "",
@@ -274,8 +272,7 @@
     ],
     "abstract": "Across 31 coastal ADB DMCs with WDI urban + population data, five economies — Pakistan, Philippines, China, Bangladesh, Myanmar — persistently hold the top-5 coastal-informal-risk index positions across +/- 50 percent perturbation of the slum-share imputation value. The index is log10(population) × urban-share × slum-share. WDI's slum series is sparse (only 7 of 31 coastal DMCs); imputed at 10 percent where missing. Honest first-pass; LECZ integration via CIESIN SEDAC is the §18.5 upgrade-pass. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -294,7 +291,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "disaster-recovery-lag",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "disaster-burden",
       "EM-DAT",
@@ -306,8 +303,7 @@
     ],
     "abstract": "EM-DAT 2000-2025 records 1,767 disaster events across 38 of the 50 ADB regional DMCs. Across events-per-year, total-affected, and total-damage-USD-adjusted, two economies — China and India — persistently hold the top two positions. The top-5 set is metric- sensitive and cannot be claimed; the headline is the metric-robust top-2. The article reports both absolute and per-capita figures. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -340,8 +336,7 @@
     ],
     "abstract": "Across 41 ADB DMCs with WDI rural + population data and EM-DAT 2000-2025 flood-event records, four economies — India, China, Indonesia, Afghanistan — hold the top-4 flood-rural-exposure index positions across every alternative metric formulation tested (full index, flood-events-only, rural × floods). Top-5 is metric-sensitive; honest narrowing to top-4. The \"market access\" element is rural-share × flood-frequency — a proxy for rural exposure to flood events, not actual road-network disruption. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -373,8 +368,7 @@
     ],
     "abstract": "The original food-price composite-index formulation failed the +/-50 percent sensitivity gate (alternative sub-metric weights produced no stable top-5). This article reports the reformulated set-based joint qualifier across 43 ADB DMCs: two economies — Lao PDR and Pakistan — sit in the top-N of BOTH WDI CPI inflation AND ag-imports-share-of-merchandise for every N from 3 to 10. A third, Bangladesh, joins from N=5. The reformulation is invariant to weight choice by construction. The article does NOT claim climate-CPI transmission; the named program question requires sub- annual + commodity-level analysis, deferred to §18.5 upgrade-pass. Pakistan's 2023 CPI was exchange-rate-driven, flagged separately from climate vulnerability. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-27",
     "updated_at": "",
@@ -408,8 +402,7 @@
     ],
     "abstract": "Across 41 ADB DMCs with WDI urban + urban-population-growth data, five economies — Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, Bangladesh — hold the top-5 of the \"invisible urbanization\" signal: rural-share × urban-population growth rate. These are rural-majority economies with rapid urban growth, proxying for sub-classification lag in national urban statistics. GHSL Built-up Surface is the canonical satellite-based measure and is the §18.5 upgrade-pass. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -446,8 +439,7 @@
     ],
     "abstract": "A cross-program meta-finding across the lab's 16 SR/PR programs. Each program publishes a stable top-N set of ADB DMCs that survives its +/-50 percent sensitivity gate. When the 16 sets are intersected, one economy — Bangladesh — appears in 8 of 16. Afghanistan appears in 6. India, China, and Pakistan each appear in 5. The brief reports the joint-vulnerability cluster as a deliberately narrow, set-based meta-finding. Per Constitution §6.4, the brief does NOT publish a composite vulnerability score; the headline is set membership. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-27",
     "updated_at": "",
@@ -483,8 +475,7 @@
     ],
     "abstract": "The lab's headline cluster — Bangladesh, Afghanistan, India, China, Pakistan — is partly an absolute-scale artifact. Programs whose index includes log10(population) or absolute event counts surface large-population economies. When the same data is recomputed per-capita, an entirely different top-5 emerges: Pacific small- island states (Marshall Islands, Kiribati, FSM, Fiji, Solomon Islands) for flood exposure; Tuvalu enters the coastal cluster. This brief documents the population-weighting artifact, distinguishes programs that are scale-invariant by construction (remittance- resilience top-5 set is identical under absolute and per-capita rankings) from those that are not (flood, coastal, disaster). The policy implication is not \"the cluster is wrong\" — both rankings answer real questions — but a reader citing the lab must say which question. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-27",
     "updated_at": "",
@@ -503,7 +494,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "air-monitoring",
-    "maturity": "L3 candidate",
+    "maturity": "SR",
     "topics": [
       "air-quality",
       "PM2.5",
@@ -515,8 +506,7 @@
     ],
     "abstract": "The current air-monitoring audit should be read as an evidence-gap result, not as a station-radius coverage estimate. A generated ledger indexes 64 committed summary rows and 214 supporting files. Public sources expose station lists, method language, dashboard status, denominator geometry, and source routes, but the claim-enabling counters remain zero for validated same-station rows, BMKG station-specific inspection logs, BMKG station-specific calibration certificates, BMKG calibration-status rows, complete monitor-grade rows, station-radius-ready economies, and allowed coverage-claim rows.",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-07-07",
     "updated_at": "",
@@ -535,7 +525,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "port-hinterland-friction",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "trade",
       "logistics",
@@ -551,8 +541,7 @@
     ],
     "abstract": "The friction-exposure index combines World Bank Logistics Performance Index (LPI) gap with a sqrt-transformed import-volume proxy. Across 43 ADB DMCs, five economies — China, India, Indonesia, Thailand, Vietnam — persistently rank in the top-5 across every ±50% perturbation of the index's two arbitrary parameters. All five are large coastal trade economies with mid-range LPI scores; the exposure reading is \"trade volume × logistics performance gap.\" LPI is perception-based, not measured. Per-corridor bilateral trade- cost data is the §18.5 upgrade-pass. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -571,7 +560,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "school-heat-disruption",
-    "maturity": "SR",
+    "maturity": "PP",
     "topics": [
       "climate-health",
       "schools",
@@ -582,8 +571,7 @@
     ],
     "abstract": "The school-heat-pressure index — heat × children-share × pupil- teacher-ratio — produces a top-5 ranking across 32 ADB DMCs that fails the +/- 50 percent sensitivity gate on its tmax-floor and tmax-cap parameters. Only the top-1 (Cambodia) is parameter- robust. The article reports the negative result on the top-5 claim and the honest narrowing to the top-1. The high parameter- sensitivity is itself the finding: the index's linear tmax ramp is not the right functional form. The Lancet Countdown labor-capacity- loss curve and Park et al. 2020 PNAS empirical thresholds are the §18.5 upgrade-pass. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -602,7 +590,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "grid-reliability-heat",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "grid",
       "energy",
@@ -617,8 +605,7 @@
     ],
     "abstract": "WRI Global Power Plant Database v1.3.0 (frozen since 2022) catalogs 7,071 plants across 40 ADB regional DMCs. Five economies — Brunei, Bhutan, Mongolia, Nepal, Tajikistan — sit in the top-5 of single- fuel-source exposure (top fuel ≥ 80% of installed capacity), and also in the top-5 of the fuel-Herfindahl ranking. The set is mixed in subtype: three hydro-dominant (BTN, NPL, TJK), one gas-dominant (BRN), one coal-dominant (MNG). The fragility mechanism differs by subtype. The article does not call this \"fragile country\" — the framing is structural single-fuel-source exposure. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -637,7 +624,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "social-protection-shock-coverage",
-    "maturity": "PR",
+    "maturity": "PP",
     "topics": [
       "social-protection",
       "financial-inclusion",
@@ -652,8 +639,7 @@
     ],
     "abstract": "The shock-payment-readiness gap combines poverty headcount with payment-system readiness (a weighted average of WDI ASPIRE social- protection coverage and World Bank Findex 2021 account ownership). Across 43 ADB DMCs, five economies — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines — persistently hold the top-5 positions in the gap ranking, stable across +/- 50 percent perturbation of the SP/Findex weight. ASPIRE pools all SP types (cash, in-kind, pensions); shock-responsive SP is a smaller subset. The 2021 Findex vintage was elevated by pandemic emergency cash transfers. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",
@@ -672,7 +658,7 @@
     "tier": "working-paper",
     "status": "draft",
     "program": "water-stress-crop-diversification",
-    "maturity": "SR",
+    "maturity": "PP",
     "topics": [
       "water",
       "agriculture",
@@ -686,8 +672,7 @@
     ],
     "abstract": "The water-crop pressure index combines WDI water-withdrawal-as- share-of-resources, cereal-yield kg/ha, and rural-population share. Across 43 ADB DMCs, four economies — Afghanistan, Azerbaijan, Pakistan, Turkmenistan — persistently hold the top-4 positions across every +/- 50 percent perturbation of the index's three arbitrary parameters. The fifth position (typically Uzbekistan) shifts under some yield-baseline perturbations; honest narrowing to top-4. Turkmenistan's 1,868 percent withdrawal-as-share-of- resources reflects transboundary Amu Darya inflow, not within- country resource exhaustion; the pressure mechanism for TKM is upstream-cooperation-dependent. Published under §18 (AI-First).",
     "authors": [
-      "{ name: Raymond Adofina",
-      "affiliation: Asian Development Bank }"
+      "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
     "updated_at": "",

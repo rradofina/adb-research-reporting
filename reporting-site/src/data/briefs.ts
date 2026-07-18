@@ -26,7 +26,7 @@ export interface BriefDetail {
 }
 
 export const FINISH_LABELS: Record<FinishGroup, string> = {
-  "publication-ready": "Finished for current issue",
+  "publication-ready": "Publication-ready",
   "screening-result": "Screening only",
   "program-prospectus": "Program prospectus",
   "prepared-pipeline": "Pipeline ready, not run",

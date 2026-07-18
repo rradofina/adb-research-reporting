@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [CHN, IND]
 topics: [disaster-burden, EM-DAT, structural-exposure]
 program: disaster-recovery-lag
-maturity: PR
+maturity: PP
 abstract: >
   EM-DAT 2000-2025 records 1,767 disaster events across 38 of the
   50 ADB regional DMCs. Across events-per-year, total-affected, and

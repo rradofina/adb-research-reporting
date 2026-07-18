@@ -1,9 +1,80 @@
 {
   "program": "digital-performance",
-  "permanent_url": "/program/digital-performance/evidence",
-  "generated_at": "2026-07-07T06:45:41.387Z",
+  "permanent_url": "/digital-performance?view=evidence",
+  "generated_at": "2026-07-18T08:01:08.149Z",
   "hero": null,
   "artifacts": [],
   "generated_files": [],
-  "articles": []
+  "articles": [],
+  "story": [
+    {
+      "key": "background",
+      "title": "Research problem and background",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "literature",
+      "title": "Related literature and evidence gap",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "data",
+      "title": "Data sources and coverage",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "method",
+      "title": "Methodology and claim test",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "results",
+      "title": "Results",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "robustness",
+      "title": "Sensitivity and robustness",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "limitations",
+      "title": "Limitations and what this does not mean",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "conclusion",
+      "title": "Conclusion and next evidence upgrade",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "reproduce",
+      "title": "Reproduce the analysis",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    }
+  ],
+  "resources": {
+    "reproduce": null,
+    "deck": null,
+    "reviewer_packet": null,
+    "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/digital-performance"
+  }
 }

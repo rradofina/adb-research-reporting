@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [CHN, IND, IDN, THA, VNM]
 topics: [trade, logistics, ports, LPI]
 program: port-hinterland-friction
-maturity: PR
+maturity: PP
 abstract: >
   The friction-exposure index combines World Bank Logistics Performance
   Index (LPI) gap with a sqrt-transformed import-volume proxy. Across

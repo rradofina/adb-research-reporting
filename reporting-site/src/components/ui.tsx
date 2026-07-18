@@ -264,7 +264,7 @@ export function Maturity({ status }: { status: "H" | "PP" | "SR" | "PR" | "Ret" 
     H: { label: "Hypothesis", cls: "chip" },
     PP: { label: "Prepared pipeline", cls: "chip chip-ochre" },
     SR: { label: "Screening result", cls: "chip chip-sage" },
-    PR: { label: "Finished for issue", cls: "chip chip-crimson chip-filled" },
+    PR: { label: "Publication-ready", cls: "chip chip-crimson chip-filled" },
     Ret: { label: "Retired", cls: "chip" },
   };
   const m = map[status] ?? map.H;

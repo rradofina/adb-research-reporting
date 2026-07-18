@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [AFG, AZE, PAK, TKM]
 topics: [water, agriculture, climate-stress]
 program: water-stress-crop-diversification
-maturity: SR
+maturity: PP
 abstract: >
   The water-crop pressure index combines WDI water-withdrawal-as-
   share-of-resources, cereal-yield kg/ha, and rural-population share.

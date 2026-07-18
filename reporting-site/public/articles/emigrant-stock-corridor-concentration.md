@@ -11,7 +11,7 @@ authors:
 geographies: [IND, CHN, BGD, AFG, PHL]
 topics: [migration, emigrant-stock, corridor-concentration]
 program: migration-displacement-signals
-maturity: PR
+maturity: PP
 abstract: >
   UN DESA International Migrant Stock 2024 reports cumulative foreign-
   born populations by country. Across the 44 ADB regional DMCs published

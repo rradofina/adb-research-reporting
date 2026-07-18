@@ -1,71 +1,89 @@
 ---
 slug: kebab-case-slug
-title: Article title — sentence case
-subtitle: Optional subtitle (≤ 18 words)
-kind: blog | brief | working-paper | journal | dataset-doc
-status: draft | review | published | retracted
+title: {program-title}
+subtitle: A public-data research package
+tier: working-paper
+kind: working-paper
+status: draft
+attestation_chain: ai-first
+constitution_ref: §18 ACTIVE
 authors:
-  - { name: Raymond Adofina, affiliation: Asian Development Bank, orcid: }
-geographies: [PHL, BGD, IND]
-topics: [measurement-gap, public-service-data-quality]
-program: public-service-data-quality
-maturity: SR
+  - { name: Raymond Adofina, affiliation: Asian Development Bank }
+geographies: []
+topics: [measurement-gap]
+program: {program-slug}
+maturity: H
 abstract: >
-  ≤ 200 words. Plain prose, no jargon. State the question, the data, the
-  finding, the limit. No banned words.
-doi:
-zenodo:
-  reserved_doi:
-  upload_id:
-  deposition_url:
+  TODO: state the problem, data object, finding, and main limitation in no more
+  than 200 words.
 published_at: YYYY-MM-DD
 updated_at: YYYY-MM-DD
-references:
-  - alkire2024mpi
-  - sandefur2015badata
-limitations_file: ../public-service-data-quality/limitations.md
-review_internal_file: ../public-service-data-quality/review-internal.md
-review_external_file: ../public-service-data-quality/review-external.md
-preregistration_file: ../public-service-data-quality/pre-registration.md
+references: []
+limitations_file: ../{program-slug}/limitations.md
+review_internal_file: ../{program-slug}/review-internal.md
+review_external_file: ../{program-slug}/review-external.md
+preregistration_file: ../{program-slug}/pre-registration.md
 license: CC BY 4.0
-banned_words_check: passing
-dmc_framing_check: passing
-manifest_sha256_check: passing
 ---
 
-# Article body
+# {program-title}
 
-Article body in Markdown. Citations are written `[@bibtex-key]` and
-resolved against `/references.bib` by the renderer at build time.
+## Why the problem matters
 
-## 1. The question
+TODO: open with the policy-relevant measurement problem, not the factory process.
 
-What is the measurement gap and why does it matter for ADB DMC planning?
+## What existing data and literature miss
 
-## 2. The data
+TODO: synthesize the verified literature and identify the narrower evidence gap.
+Citations use BibTeX keys such as `[@key]`.
 
-Cite primary sources by BibTeX key. Reference `versions.json` pin and
-retrieval date for every dynamic source.
+## Data sources and coverage
 
-## 3. The finding
+TODO: name public sources, retrieval/version records, geography, period, unit,
+denominator, missingness, and known source disagreements.
 
-State the headline finding. Replicate from `results.md` §1.
+<!-- Figure role: observability/coverage. Include only from a committed source
+object and transform named in the program's figure-plan.md. -->
 
-## 4. Sensitivity
+## Methodology and claim test
 
-Replication range from `sensitivity.md` §2. State the parameter that
-moved the answer most.
+TODO: state the falsifiable claim, inclusion rules, transformations, and the
+pre-registered sensitivity design.
 
-## 5. Limitations
+## Results
 
-Pulled from `limitations.md` verbatim (the renderer inlines it).
+TODO: lead with the generated chart or table and interpret the result in plain
+language. Every number must trace to a committed script and generated artifact.
 
-## 6. Reproduction
+<!-- Figure roles: hero/main claim, then one distinct heterogeneity or
+decomposition view when supported. Do not repeat the hero as a second format. -->
 
-```bash
-{command from results.md §6}
-```
+## Sensitivity and robustness
 
-## 7. Acknowledgments
+TODO: report the ±50% arbitrary-choice suite and name what changes, or does not
+change, the conclusion.
 
-External reviewers, with permission. Per `review-external.md` §6.
+<!-- Figure roles: sensitivity and, where the design permits, falsification or
+validation. Show instability rather than summarizing it only in prose. -->
+
+## What the result means
+
+TODO: explain the practical development relevance without inflating a screening
+signal into a policy-effect claim.
+
+## What it does not mean
+
+TODO: state the strongest non-claim and the important source or design limits.
+
+<!-- Figure role: missingness, source disagreement, or unresolved evidence when
+it materially changes interpretation. -->
+
+## Conclusion and next evidence upgrade
+
+TODO: conclude at the displayed maturity level and name the one public data
+object or method upgrade most likely to change the claim.
+
+## Reproduce
+
+See `../{program-slug}/REPRODUCE.md` for the clean-clone commands, generated
+artifacts, version pins, and checksums.

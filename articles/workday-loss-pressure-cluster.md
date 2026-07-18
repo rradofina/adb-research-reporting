@@ -11,7 +11,7 @@ authors:
 geographies: [AFG, IND, BGD, PAK, TJK]
 topics: [climate-health, PM2.5, outdoor-labor]
 program: climate-health-workdays
-maturity: PR
+maturity: PP
 abstract: >
   The workday-loss pressure index combines outdoor-labor share
   (agriculture + half-weighted industry employment) with PM2.5 exposure

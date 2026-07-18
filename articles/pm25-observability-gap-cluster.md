@@ -10,7 +10,7 @@ authors: [{ name: Raymond Adofina, affiliation: Asian Development Bank }]
 geographies: [regional]
 topics: [air-quality, PM2.5, observability-gap, public-data-quality]
 program: air-monitoring
-maturity: L3 candidate
+maturity: SR
 abstract: >
   The current air-monitoring audit should be read as an evidence-gap result, not
   as a station-radius coverage estimate. A generated ledger indexes 64

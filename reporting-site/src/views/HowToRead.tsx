@@ -134,7 +134,7 @@ export default function HowToRead() {
             </li>
             <li className="flex gap-4">
               <span className="font-mono text-xs uppercase tracking-[0.18em] shrink-0 mt-1 w-12">PR</span>
-              <div><strong>Finished for current issue.</strong> Internal PR code. Full current-issue evidence package: literature synthesis, sensitivity where applicable, review response, and permanent archive. Quotable only with the AI-first attestation caveat unless upgraded to human-final.</div>
+              <div><strong>Publication-ready.</strong> Internal PR code. Full evidence package: literature synthesis, sensitivity where applicable, review response, and permanent archive. Quotable only with the AI-first attestation caveat unless upgraded to human-final.</div>
             </li>
           </ul>
         </div>
@@ -169,7 +169,7 @@ export default function HowToRead() {
           </ul>
           <p className="mt-6 text-ink-soft leading-relaxed max-w-prose">
             Read the chip honestly. A finding labeled <code className="font-mono not-italic">PR · ai-first</code>{" "}
-            means: finished for this issue, not peer reviewed or supervisor-attested.
+            means: publication-ready under the disclosed AI-first chain, not peer reviewed or supervisor-attested.
             Convert it to <code className="font-mono not-italic">human-final</code>{" "}
             via the §18.5 upgrade-pass paths in each program's
             <code className="font-mono not-italic"> review-external.md </code> §5.
@@ -212,14 +212,14 @@ python {program-slug}/scripts/sensitivity.py
 # 4. Verify cache hashes match
 node scripts/verify-manifest.mjs`}</pre>
           <p className="text-ink-soft leading-relaxed mt-6">
-            No API keys are required for reproduction — every cache file is
-            committed and hash-pinned in <code className="font-mono not-italic">manifest.sha256</code>{" "}
-            (609 files; verified on every CI run). Live refresh is opt-in
+            No API keys are required for the current reproduction paths — cache files are
+            committed and hash-pinned in <code className="font-mono not-italic">manifest.sha256</code>.
+            Live refresh is opt-in
             per pipeline.
           </p>
           <p className="text-ink-soft leading-relaxed mt-4">
             To inspect a program's full audit trail without running anything,
-            open <code className="font-mono not-italic">/program/{`{slug}`}/evidence</code> — that page
+            open <code className="font-mono not-italic">/{`{slug}`}?view=evidence</code> — that page
             renders every artifact (literature review, pre-registration,
             sensitivity, coverage, results, internal review, red-team
             review, limitations) inline, with per-file SHA-256.
@@ -244,7 +244,7 @@ node scripts/verify-manifest.mjs`}</pre>
             <li>· This is <strong>not a country ranking</strong>. Composite indices appear as triage instruments only.</li>
             <li>· The framing is <strong>measurement gap, coverage gap, observability gap</strong> — not DMC deficiency.</li>
             <li>· No claim is presented past its evidence. Honest narrowings are surfaced, not buried.</li>
-            <li>· The prospectus program (climate-health-workdays) is computed but not treated as final; the heat layer remains an upgrade, not an implied result.</li>
+            <li>· Prepared-pipeline programs may contain computed screens, but those screens are not treated as final research; missing evidence upgrades remain explicit.</li>
             <li>· The prepared-pipeline program (digital-performance) is held back because the data aggregation has not run; it is documented, not silently promoted.</li>
             <li>· The hypothesis program (mpi-nighttime-lights) remains owner-led until the external nighttime-lights track is reconciled with this repository.</li>
             <li>· Every <code className="font-mono not-italic">ai-first</code> chip is labeled honestly. A reader who wants <code className="font-mono not-italic">human-final</code> work has the upgrade-pass paths documented per program.</li>
@@ -255,8 +255,8 @@ node scripts/verify-manifest.mjs`}</pre>
       <Divider wide />
 
       <nav className="flex items-center justify-between flex-wrap gap-4 pb-12">
-        <Link href="/findings/the-first-issue" className="ed-link font-mono text-xs uppercase tracking-[0.18em]">
-          → Read the first issue
+        <Link href="/research" className="ed-link font-mono text-xs uppercase tracking-[0.18em]">
+          → Browse the research catalogue
         </Link>
         <div className="flex gap-4 flex-wrap">
           <Link href="/research" className="ed-link font-mono text-xs uppercase tracking-[0.18em]">All programs</Link>

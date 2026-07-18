@@ -147,7 +147,7 @@ export const programs: ProgramEntry[] = [
     status: "PR",
     summary:
       "OSM health-amenity counts compared to DOH NHFR (PHL) and DGHS Facility Registry (BGD). 17.1% (PHL) and 11.8% (BGD) clinical-tier match. 9.8× rural-urban gradient. Now with ADM3 Open Buildings context, road context, PSA SAE poverty overlay, and the BARMM barangay-name resolver (249 of 257 unresolved records resolved).",
-    note: "Active flagship. ai-first finished for current issue 2026-05-07 under Mode A. Human-final review remains the upgrade path under §18.5.",
+    note: "Active flagship. Publication-ready under the ai-first chain and Mode A as of 2026-05-07. Human-final review remains the upgrade path under §18.5.",
     href: "/public-service-data-quality",
   },
   {

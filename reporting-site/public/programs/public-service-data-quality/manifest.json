@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
-  "permanent_url": "/program/public-service-data-quality/evidence",
-  "generated_at": "2026-07-07T08:10:09.448Z",
+  "permanent_url": "/public-service-data-quality?view=evidence",
+  "generated_at": "2026-07-18T08:01:07.551Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -1058,5 +1058,140 @@
       "title": "The OSM-vs-registry gap in Philippine and Bangladeshi health facilities",
       "attestation_chain": "ai-first"
     }
-  ]
+  ],
+  "story": [
+    {
+      "key": "background",
+      "title": "Research problem and background",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "readme",
+          "file": "README.md",
+          "label": "Overview"
+        }
+      ]
+    },
+    {
+      "key": "literature",
+      "title": "Related literature and evidence gap",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "literature",
+          "file": "literature.md",
+          "label": "Literature review"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "title": "Data sources and coverage",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "coverage",
+          "file": "coverage.md",
+          "label": "Coverage"
+        },
+        {
+          "key": "source_action",
+          "file": "SOURCE-ACTION.md",
+          "label": "Source action packet"
+        }
+      ]
+    },
+    {
+      "key": "method",
+      "title": "Methodology and claim test",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "preregistration",
+          "file": "pre-registration.md",
+          "label": "Pre-registration"
+        },
+        {
+          "key": "scoring",
+          "file": "scoring.md",
+          "label": "Scoring rubric"
+        }
+      ]
+    },
+    {
+      "key": "results",
+      "title": "Results",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "results",
+          "file": "results.md",
+          "label": "Results"
+        }
+      ]
+    },
+    {
+      "key": "robustness",
+      "title": "Sensitivity and robustness",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "sensitivity",
+          "file": "sensitivity.md",
+          "label": "Sensitivity suite"
+        }
+      ]
+    },
+    {
+      "key": "limitations",
+      "title": "Limitations and what this does not mean",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "limitations",
+          "file": "limitations.md",
+          "label": "Limitations"
+        }
+      ]
+    },
+    {
+      "key": "conclusion",
+      "title": "Conclusion and next evidence upgrade",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
+    },
+    {
+      "key": "reproduce",
+      "title": "Reproduce the analysis",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "reproduce": "/programs/public-service-data-quality/REPRODUCE.md",
+    "deck": "/programs/public-service-data-quality/public-service-data-quality-deck.pptx",
+    "reviewer_packet": null,
+    "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/public-service-data-quality"
+  }
 }

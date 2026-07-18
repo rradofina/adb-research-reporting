@@ -5,10 +5,8 @@ import Link from "next/link";
 import { Chip, Divider, Kicker, Maturity, Numeral, StatBlock } from "../components/ui";
 import {
   BRIEF_DETAILS,
-  FINISH_LABELS,
   ROAD_QUALITY_NEXT_TRACK,
   type BriefDetail,
-  type FinishGroup,
 } from "../data/briefs";
 import {
   ISSUE_CLOSURE_AS_OF,
@@ -17,9 +15,10 @@ import {
   issueTotal,
 } from "../data/issueClosure";
 import { programs } from "../data/programs";
+import type { Maturity as MaturityStatus } from "../lib/claimTiers";
 import { INDICATORS, loadIndicator, type IndicatorDef, type IndicatorRow } from "../lib/indicators";
 
-type Filter = "all" | FinishGroup;
+type Filter = "all" | MaturityStatus;
 
 interface ChartPack {
   def: IndicatorDef;
@@ -29,19 +28,18 @@ interface ChartPack {
 
 const FILTERS: Array<{ key: Filter; label: string }> = [
   { key: "all", label: "All topics" },
-  { key: "publication-ready", label: "Finished" },
-  { key: "screening-result", label: "Screening" },
-  { key: "program-prospectus", label: "Prospectus" },
-  { key: "prepared-pipeline", label: "Pipeline" },
-  { key: "hypothesis", label: "Not finished" },
+  { key: "PR", label: "Publication-ready" },
+  { key: "SR", label: "Screening" },
+  { key: "PP", label: "Pipeline" },
+  { key: "H", label: "Hypothesis" },
 ];
 
-const FINISH_ORDER: Record<FinishGroup, number> = {
-  "publication-ready": 0,
-  "screening-result": 1,
-  "program-prospectus": 2,
-  "prepared-pipeline": 3,
-  hypothesis: 4,
+const FINISH_ORDER: Record<MaturityStatus, number> = {
+  PR: 0,
+  SR: 1,
+  PP: 2,
+  H: 3,
+  Ret: 4,
 };
 
 export default function Briefs() {
@@ -71,14 +69,14 @@ export default function Briefs() {
     .filter((program) => {
       const detail = BRIEF_DETAILS[program.slug];
       if (!detail) return false;
-      return filter === "all" || detail.finish === filter;
+      return filter === "all" || program.status === filter;
     })
     .sort((a, b) => {
       const aDetail = BRIEF_DETAILS[a.slug];
       const bDetail = BRIEF_DETAILS[b.slug];
       const flagshipSort = Number(Boolean(bDetail.flagship)) - Number(Boolean(aDetail.flagship));
       if (filter === "all") {
-        return FINISH_ORDER[aDetail.finish] - FINISH_ORDER[bDetail.finish] || flagshipSort || a.id - b.id;
+        return FINISH_ORDER[a.status] - FINISH_ORDER[b.status] || flagshipSort || a.id - b.id;
       }
       return flagshipSort || a.id - b.id;
     });
@@ -100,7 +98,7 @@ export default function Briefs() {
             source stack, caveat, current unit, target policy unit, and next
             step. Country screens are treated as triage; the serious research
             path is province, district, municipality, grid, facility, corridor,
-            and road-segment granularity. Current closure as of{" "}
+            and road-segment granularity. Register snapshot as of{" "}
             {ISSUE_CLOSURE_AS_OF}: {issueClosureDeck}
           </p>
         </div>
@@ -160,9 +158,6 @@ export default function Briefs() {
                   <Numeral n={program.id} />
                   <div className="mt-4 flex flex-wrap gap-2">
                     <Maturity status={program.status} />
-                    <Chip variant={chipVariant(detail.finish)}>
-                      {FINISH_LABELS[detail.finish]}
-                    </Chip>
                     {detail.flagship && <Chip variant="ochre">Flagship paper</Chip>}
                   </div>
                   <div className="mt-5 marginalia">
@@ -180,7 +175,7 @@ export default function Briefs() {
                 </h2>
                 <div className="mt-7 space-y-5">
                   <BriefLine label="Question" text={detail.question} />
-                  <BriefLine label="What is finished" text={detail.output} />
+                  <BriefLine label="Current output" text={detail.output} />
                   <BriefLine label="Source stack" text={detail.sourceNote} />
                   <BriefLine label="Caveat" text={detail.caveat} />
                   <BriefLine label="Next step" text={detail.nextStep} />
@@ -188,13 +183,13 @@ export default function Briefs() {
                 <GranularityPanel detail={detail.granularity} />
                 <div className="mt-7 flex flex-wrap gap-3">
                   {detail.articleSlug && (
-                    <Link href={`/findings/${detail.articleSlug}`}
+                    <Link href={`/${program.slug}`}
                       className="ed-link text-sm uppercase tracking-[0.16em] font-mono"
                     >
                       Read write-up
                     </Link>
                   )}
-                  <Link href={`/program/${program.slug}/evidence`}
+                  <Link href={`/${program.slug}?view=evidence`}
                     className="ed-link text-sm uppercase tracking-[0.16em] font-mono"
                   >
                     Evidence packet
@@ -394,14 +389,6 @@ function formatChartValue(value: number) {
   if (value >= 100) return value.toFixed(0);
   if (value >= 10) return value.toFixed(1);
   return value.toFixed(2).replace(/\.?0+$/, "");
-}
-
-function chipVariant(finish: FinishGroup): "default" | "crimson" | "sage" | "ochre" {
-  if (finish === "publication-ready") return "crimson";
-  if (finish === "screening-result") return "sage";
-  if (finish === "program-prospectus") return "ochre";
-  if (finish === "prepared-pipeline") return "ochre";
-  return "default";
 }
 
 function buildChartPack(def: IndicatorDef, rows: IndicatorRow[]): ChartPack {

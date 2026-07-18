@@ -26,7 +26,7 @@ export default function Methodology() {
           <Tier tier="H" label="Hypothesis" body="Idea, gap, proposed metric. May be AI-assisted. Not a finding." />
           <Tier tier="PP" label="Prepared pipeline" body="Script, manifest, SQL exists. No empirical value claimed." />
           <Tier tier="SR" label="Screening result" body="Pipeline has run. Triage only." />
-          <Tier tier="PR" label="Finished for issue" body="Source retrieval, code, sensitivity, review response, and archive complete for the stated chain." />
+          <Tier tier="PR" label="Publication-ready" body="Source retrieval, code, sensitivity, review response, and archive complete for the stated chain." />
         </div>
       </Section>
 

@@ -1,7 +1,7 @@
 {
   "program": "water-stress-crop-diversification",
-  "permanent_url": "/program/water-stress-crop-diversification/evidence",
-  "generated_at": "2026-07-07T06:45:40.669Z",
+  "permanent_url": "/water-stress-crop-diversification?view=evidence",
+  "generated_at": "2026-07-18T08:01:07.728Z",
   "hero": {
     "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
     "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
@@ -198,5 +198,118 @@
       "title": "Four DMCs hold the top of the water-stress + crop-pressure ranking — Afghanistan, Azerbaijan, Pakistan, Turkmenistan",
       "attestation_chain": "ai-first"
     }
-  ]
+  ],
+  "story": [
+    {
+      "key": "background",
+      "title": "Research problem and background",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "readme",
+          "file": "README.md",
+          "label": "Overview"
+        }
+      ]
+    },
+    {
+      "key": "literature",
+      "title": "Related literature and evidence gap",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "literature",
+          "file": "literature.md",
+          "label": "Literature review"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "title": "Data sources and coverage",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "coverage",
+          "file": "coverage.md",
+          "label": "Coverage"
+        }
+      ]
+    },
+    {
+      "key": "method",
+      "title": "Methodology and claim test",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "preregistration",
+          "file": "pre-registration.md",
+          "label": "Pre-registration"
+        }
+      ]
+    },
+    {
+      "key": "results",
+      "title": "Results",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "results",
+          "file": "results.md",
+          "label": "Results"
+        }
+      ]
+    },
+    {
+      "key": "robustness",
+      "title": "Sensitivity and robustness",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "sensitivity",
+          "file": "sensitivity.md",
+          "label": "Sensitivity suite"
+        }
+      ]
+    },
+    {
+      "key": "limitations",
+      "title": "Limitations and what this does not mean",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "limitations",
+          "file": "limitations.md",
+          "label": "Limitations"
+        }
+      ]
+    },
+    {
+      "key": "conclusion",
+      "title": "Conclusion and next evidence upgrade",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    },
+    {
+      "key": "reproduce",
+      "title": "Reproduce the analysis",
+      "available": false,
+      "state": "missing",
+      "artifacts": []
+    }
+  ],
+  "resources": {
+    "reproduce": null,
+    "deck": null,
+    "reviewer_packet": null,
+    "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/water-stress-crop-diversification"
+  }
 }

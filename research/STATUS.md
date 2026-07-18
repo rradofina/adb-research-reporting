@@ -6,7 +6,7 @@ Per-program detail — last completed, next focused work, current blockers,
 program-specific runbooks — lives in `{program}/STATUS.md` or in the
 program's `README.md`. If you find PSDQ-specific narrative here, move it.
 
-Last updated: 2026-07-07.
+Last updated: 2026-07-18.
 
 ## Current focus
 
@@ -158,6 +158,22 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (visual-research critique):** The first deterministic figure
+  audit found 14 of 18 programs are hero-only, two have multiple logical
+  figures, and two have none; only two working papers embed figures. Adopted a
+  figure-spine standard and program-by-program roadmap: serious packages add
+  distinct coverage, main-result, heterogeneity, sensitivity, falsification,
+  uncertainty, and limitation views only when committed data support them.
+  No claim, maturity label, flagship, or attestation chain changed.
+
+- **2026-07-18 (reader-first research packages):** Every canonical topic page
+  now exposes the same nine-part research spine and marks each section present,
+  draft, or missing before the lead visual. Broken download promises were
+  removed; only generated resources are linked. The site remains Git + Vercel
+  first, with a documented Supabase query projection and object-storage boundary
+  for later scale. This is an L0 presentation and delivery decision: no claim,
+  maturity label, flagship, or attestation chain changed.
 
 - **2026-07-07 (current-issue closure surface):** Completed the next L0
   presentation move. Added `reporting-site/src/data/issueClosure.ts` as

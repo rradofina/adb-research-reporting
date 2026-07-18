@@ -4,7 +4,7 @@ export const maturityLabels: Record<Maturity, string> = {
   H: "Hypothesis",
   PP: "Prepared pipeline",
   SR: "Screening result",
-  PR: "Finished for issue",
+  PR: "Publication-ready",
   Ret: "Retired",
 };
 

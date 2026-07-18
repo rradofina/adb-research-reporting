@@ -51,6 +51,21 @@ const DOC_REGISTRY: Record<string, DocInfo> = {
     title: "Design layer",
     blurb: "How findings are presented on public surfaces: reader-first anatomy, wall consolidation, visual contracts, and page QA.",
   },
+  "data-architecture": {
+    file: "data-architecture.md",
+    title: "Data architecture",
+    blurb: "The scalable boundary between the Git research record, Vercel delivery, Supabase query projections, and large-object storage.",
+  },
+  "visual-research": {
+    file: "visual-research.md",
+    title: "Visual research standard",
+    blurb: "The lab's figure-spine standard: every chart must test a claim, show evidence structure, expose uncertainty, or make a limitation visible.",
+  },
+  "visual-roadmap": {
+    file: "visual-roadmap.md",
+    title: "Visual research roadmap",
+    blurb: "The current cross-program figure audit and the next evidence-led visual sequence for each research package.",
+  },
   factory: {
     file: "factory.md",
     title: "Factory manual",
@@ -215,6 +230,9 @@ function sourcePathForFile(file: string): string {
     "license-content.txt": "LICENSE-CONTENT",
     "judgment.md": "research/JUDGMENT.md",
     "design.md": "research/DESIGN.md",
+    "data-architecture.md": "research/DATA-ARCHITECTURE.md",
+    "visual-research.md": "research/VISUAL-RESEARCH-STANDARD.md",
+    "visual-roadmap.md": "research/VISUAL-ROADMAP.md",
     "factory.md": "research/factory.md",
     "status.md": "research/STATUS.md",
     "wip-register.md": "research/wip-register.md",

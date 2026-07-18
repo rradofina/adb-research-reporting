@@ -44,20 +44,38 @@
   {
     "file": "design.md",
     "source": "research/DESIGN.md",
-    "size": 9691,
-    "size_human": "9.5 KB"
+    "size": 10031,
+    "size_human": "9.8 KB"
+  },
+  {
+    "file": "data-architecture.md",
+    "source": "research/DATA-ARCHITECTURE.md",
+    "size": 7153,
+    "size_human": "7.0 KB"
+  },
+  {
+    "file": "visual-research.md",
+    "source": "research/VISUAL-RESEARCH-STANDARD.md",
+    "size": 6002,
+    "size_human": "5.9 KB"
+  },
+  {
+    "file": "visual-roadmap.md",
+    "source": "research/VISUAL-ROADMAP.md",
+    "size": 4942,
+    "size_human": "4.8 KB"
   },
   {
     "file": "factory.md",
     "source": "research/factory.md",
-    "size": 24841,
+    "size": 24884,
     "size_human": "24.3 KB"
   },
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 217613,
-    "size_human": "212.5 KB"
+    "size": 218668,
+    "size_human": "213.5 KB"
   },
   {
     "file": "wip-register.md",

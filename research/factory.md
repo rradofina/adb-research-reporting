@@ -213,17 +213,17 @@ exists. AI generates each tier deterministically from the same evidence
 packet, in order. Each tier links back to the next deeper one so a reader
 can drill from a tweet down to the committed script.
 
-**Visualization rule.** Visualization is **per-program, not pre-built**.
-Each program identifies the 1–2 visualizations its argument actually
-needs (a choropleth, a Sankey of corridors, a small-multiples panel,
-etc.) and those components are built when first needed and reused when a
-later program needs them. Speculative viz libraries violate the
-simplicity rule (CLAUDE.md "Doing tasks") and produce sites that look
-generic; per-program viz produces sites that look like the work. Each
-visualization should be defined by a Python code block (Quarto-rendered
-on the slide deck and brief charts) and a matching React component (on
-the program page), both reading the same generated CSV — so the same
-chart appears at every reader-depth and cannot drift between tiers.
+**Visualization rule.** Visualization is **per-program, not pre-built**, and
+follows `research/VISUAL-RESEARCH-STANDARD.md`. Each program identifies one
+hero that travels across the brief, blog, social card, deck, and program page.
+The working paper then develops the additional coverage, main-result,
+heterogeneity, sensitivity, uncertainty, falsification, and limitation figures
+that its evidence can support. These are distinct tests, not alternate exports
+or decorative variations of the hero. Speculative viz libraries violate the
+simplicity rule and produce sites that look generic; per-program figures make
+the empirical argument visible. Each figure is produced by a committed script
+reading generated data, and the public renderer reads that same output so a
+number cannot drift between publication tiers.
 
 | Tier | Format | Length | Path | Audience |
 |---|---|---|---|---|

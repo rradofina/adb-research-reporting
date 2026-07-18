@@ -1,0 +1,456 @@
+{
+  "audit_date": "2026-07-18",
+  "attestation_chain": "ai-first",
+  "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
+  "summary": {
+    "programs": 18,
+    "with_multiple_figures": 2,
+    "hero_only": 14,
+    "with_no_visual": 2,
+    "working_papers_with_figure_references": 2
+  },
+  "programs": [
+    {
+      "slug": "public-service-data-quality",
+      "logical_figure_count": 4,
+      "evidence_figure_count": 3,
+      "has_hero": true,
+      "generated_data_object_count": 83,
+      "working_paper_figure_references": 3,
+      "status": "multiple-figures",
+      "figures": [
+        {
+          "file": "charts/psdq-choropleth-bgd-adm1",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/psdq-choropleth-phl-adm1",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/psdq-choropleth-phl-adm3-poverty",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/public-service-data-quality-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": [
+        {
+          "article": "articles/measurement-gap-philippines-bangladesh.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg",
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-bgd-adm1.svg",
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm3-poverty.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/public-service-data-quality.md",
+          "tier": "blog",
+          "references": [
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/public-service-data-quality.md",
+          "tier": "brief",
+          "references": [
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/public-service-data-quality.md",
+          "tier": "social",
+          "references": [
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "remittance-resilience",
+      "logical_figure_count": 3,
+      "evidence_figure_count": 2,
+      "has_hero": true,
+      "generated_data_object_count": 3,
+      "working_paper_figure_references": 1,
+      "status": "multiple-figures",
+      "figures": [
+        {
+          "file": "charts/remittance-flow-weighting-sprint",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/remittance-fragility-scatter",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/remittance-resilience-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": [
+        {
+          "article": "articles/remittance-corridors-vulnerability-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg"
+          ]
+        },
+        {
+          "article": "articles/_blog/remittance-resilience.md",
+          "tier": "blog",
+          "references": [
+            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/remittance-resilience.md",
+          "tier": "brief",
+          "references": [
+            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/remittance-resilience.md",
+          "tier": "social",
+          "references": [
+            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "migration-displacement-signals",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/migration-displacement-signals-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "climate-health-workdays",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/climate-health-workdays-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 5,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/disaster-recovery-lag-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/grid-reliability-heat-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "port-hinterland-friction",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/port-hinterland-friction-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "water-stress-crop-diversification",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/water-stress-crop-diversification-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "social-protection-shock-coverage",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/social-protection-shock-coverage-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "school-heat-disruption",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/school-heat-disruption-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "food-price-climate-transmission",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 7,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/food-price-climate-transmission-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "coastal-informal-risk",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/coastal-informal-risk-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "flood-market-access",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/flood-market-access-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "invisible-urbanization",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 6,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/invisible-urbanization-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "access-services",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 5,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/access-services-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "air-monitoring",
+      "logical_figure_count": 1,
+      "evidence_figure_count": 0,
+      "has_hero": true,
+      "generated_data_object_count": 136,
+      "working_paper_figure_references": 0,
+      "status": "hero-only",
+      "figures": [
+        {
+          "file": "charts/air-monitoring-thumbnail",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "hero"
+        }
+      ],
+      "article_references": []
+    },
+    {
+      "slug": "digital-performance",
+      "logical_figure_count": 0,
+      "evidence_figure_count": 0,
+      "has_hero": false,
+      "generated_data_object_count": 0,
+      "working_paper_figure_references": 0,
+      "status": "no-visual",
+      "figures": [],
+      "article_references": []
+    },
+    {
+      "slug": "mpi-nighttime-lights",
+      "logical_figure_count": 0,
+      "evidence_figure_count": 0,
+      "has_hero": false,
+      "generated_data_object_count": 5,
+      "working_paper_figure_references": 0,
+      "status": "no-visual",
+      "figures": [],
+      "article_references": []
+    }
+  ]
+}

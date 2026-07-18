@@ -12,11 +12,11 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `invisible-urbanization` — replace the WDI growth-from-low-base proxy with one public built-up-surface × administrative-classification object, or publish the measurement gap and rotate. |
-| Per-program board | `invisible-urbanization/STATUS.md` |
+| Active flagship | `coastal-informal-risk` — replace the national proxy with one public low-elevation coastal settlement-growth object, while keeping informality outside the remote-sensing claim. |
+| Per-program board | `coastal-informal-risk/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `flood-market-access` — the national proxy was retired; a Sylhet routed-access pilot finds 41.24% modeled disconnection across a 38.92%–43.45% sensitivity band. |
+| Previous flagship | `invisible-urbanization` — the inherited proxy was retired; GHSL and WDI urban shares differ by a median absolute 20.0 points across 40 complete 2020 cases. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -95,12 +95,13 @@ overrides priority by editing this list.
     source repair remains owner-only source-owner contact or human location
     validation for source-repair, same-facility, priority/lower-priority
     name-conflict, and facility-level zero-OSM rows.
-15. **`invisible-urbanization`** — **active flagship.** The WDI scalar sweep is
-    arithmetically invariant and contains no built-up surface. Build one public
-    settlement-growth × administrative-classification object before improving
-    the narrative.
-16. **`coastal-informal-risk`** — informal coastal settlements vs
-    storm-surge exposure; pipeline ready.
+15. **`invisible-urbanization`** — *current measurement issue closed.* The
+    inherited ranking is retired. A GHSL–WDI comparison finds a median absolute
+    20.0-point definition gap in 2020, with administrative-scale and transition
+    diagnostics. Reopen only for claim-changing classification or service data.
+16. **`coastal-informal-risk`** — **active flagship.** Start with a public
+    low-elevation coastal settlement-growth object; remote sensing must not be
+    used to label informality.
 17. **`digital-performance`** — broadband coverage vs official
     connectivity claims; folder mostly empty (Stage 1 framing needed).
 18. **`mpi-nighttime-lights`** — Program 0, co-authored with Arturo; H

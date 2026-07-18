@@ -1,48 +1,61 @@
-# External red-team review — Invisible Urbanization
+# External-review brief and AI-synthesized objections
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-26.
+`attestation_chain: ai-first` · Prepared 2026-07-19
 
-**No individual reviewer was contacted.**
+**No individual reviewer was contacted.** The objections below synthesize the
+published methodological positions of JRC/GHSL, UN DESA, the Degree of
+Urbanisation manual, and peer-reviewed sensitivity research. They are not
+attributed quotations or completed external review.
 
-## Roster
+## Objection 1 — Harmonization is not truth
 
-| ID | Institution | Synthesized from |
-|---|---|---|
-| C-1 | JRC GHSL team | Built-up Surface methodology |
-| C-2 | UN DESA Urban Population | Urban-classification methodology |
-| C-3 | UN-Habitat Global Urban Observatory | Sub-classification monitoring |
-| C-4 | ANU Devpolicy / Pacific urbanization | Pacific small-state perspective |
+A GHSL specialist would object to treating GHS-DUC as a corrected national
+statistic. The product is designed for consistent global comparison and has
+its own modeled-population, grid, threshold, and contiguity assumptions.
 
-## Objections
+**Disposition:** accepted. The paper treats GHSL as a standardized comparison
+construct and cites its sensitivity literature.
 
-**C-1 (JRC GHSL).** Built-up Surface (BUILT-S) layer detects settlement
-growth from satellite imagery and is the canonical "invisible
-urbanization" measure. WDI's growth-rate proxy doesn't see what GHSL
-sees.
+## Objection 2 — National definitions are legitimate for national purposes
 
-**C-2 (UN DESA).** "Urban" is country-defined. WDI urban-share
-comparisons across countries with different definitions are not
-strictly comparable.
+A national-statistics reviewer would note that administrative and functional
+criteria can reflect legal responsibilities and local settlement systems that
+a global density rule cannot reproduce.
 
-**C-3 (UN-Habitat).** Sub-classification lag (settlements that exist
-on the ground but aren't yet reclassified urban) is real, but
-varies by national statistical capacity. Nepal and Indonesia
-update urban classifications more often than Solomon Islands or
-Afghanistan, which would inflate the latter's "invisible"
-signal artifactually.
+**Disposition:** accepted. The conclusion recommends national series for
+nationally defined reporting and GHSL for harmonized screening.
 
-**C-4 (Pacific).** PNG and SLB at the top reflects rapid Port Moresby
-+ Honiara growth, but also reflects national statistical lag in
-re-classifying peri-urban settlements. The signal is co-produced
-by real growth and statistical lag.
+## Objection 3 — GADM levels are not equivalent institutions
 
-## Responses
+A subnational governance reviewer would reject a cross-country ranking of
+level-2 embedded shares because districts, provinces, counties, and equivalent
+units vary greatly in size and authority.
 
-All accepted. §18.5 upgrade-pass: (a) GHSL BUILT-S integration; (b)
-country-classification-vintage variable to disentangle real growth
-from statistical lag; (c) Pacific cross-validation against satellite
-imagery.
+**Disposition:** accepted. The ordering is descriptive only; no governance or
+performance conclusion is attached.
 
-## §18.4 non-claim
+## Objection 4 — Threshold sensitivity needs a grid rerun
 
-No individual reviewer was contacted.
+A methods reviewer would ask for alternative density, size, contiguity, and
+population-grid realizations, not only administrative-scale sensitivity.
+
+**Disposition:** valid limitation. The study uses official GHS-DUC V2.0 and
+does not claim robustness to alternative grid rules.
+
+## Objection 5 — “Hidden” requires country evidence
+
+A South Asia urban-policy reviewer would require dated statutory or census
+urban designations, boundary histories, and service outcomes before accepting
+that settlement growth is officially unrecognized or underserved.
+
+**Disposition:** accepted and converted into the next-study design.
+
+## Packet questions for a future human reviewer
+
+1. Is “definition disagreement” the correct headline construct?
+2. Is the common-sample scale comparison technically and institutionally clear?
+3. Does the transition decomposition overstate the meaning of a GHS-DUC class
+   change?
+4. Which country offers the strongest public legal-classification history for
+   a validation study?
+5. What policy decision, if any, could safely use this diagnostic?

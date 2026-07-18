@@ -1,0 +1,564 @@
+{
+  "program": "invisible-urbanization",
+  "analysis": "tautology audit plus GHSL and boundary source-readiness wall",
+  "claim_scope": "Deepening of the committed invisible-urbanization proxy. It preserves the arithmetic tautology result, then records that public GHSL built-up surface, GHSL SMOD, WDI urban-definition metadata, and geoBoundaries ADM2 metadata are visible. It does not download rasters, intersect boundaries, build a classification-history ledger, or estimate hidden built-up population.",
+  "source": {
+    "name": "WDI via committed panel",
+    "fields": "SP.RUR.TOTL.ZS (rural_pct), SP.URB.GROW (urban_pop_growth_pct)",
+    "license": "CC BY 4.0",
+    "retrieved_at": "2026-04-26",
+    "panel_file": "generated/invisible-urbanization-adb-panel.json"
+  },
+  "frozen_formula": "(rural_pct/100) * max(urban_pop_growth_pct, 0) * multiplier",
+  "n_dmcs": 41,
+  "multiplier_sweep_is_rank_preserving": {
+    "baseline_top5": [
+      "PNG",
+      "SLB",
+      "AFG",
+      "LAO",
+      "BGD"
+    ],
+    "results": [
+      {
+        "multiplier": 5.0,
+        "label": "mult_5",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 17.2161
+      },
+      {
+        "multiplier": 10.0,
+        "label": "mult_10",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 34.4322
+      },
+      {
+        "multiplier": 15.0,
+        "label": "mult_15",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 51.6483
+      }
+    ],
+    "all_spearman_equal_one": true,
+    "total_rank_inversions_across_sweep": 0,
+    "any_top5_change_across_sweep": false
+  },
+  "signal_is_two_wdi_series_multiplied": {
+    "reconstructed_from_rural_x_growth_only_max_abs_error": 0.04,
+    "satellite_or_builtup_field_in_sources": false,
+    "source_keys": [
+      "wdi_urban_pct",
+      "wdi_urban_pop_growth",
+      "wdi_rural_pct",
+      "wdi_population",
+      "license",
+      "retrieved_at"
+    ]
+  },
+  "genuine_falsification_not_run": {
+    "description": "Independent per-row perturbation of the two input series (the test pre-registration sec. 2 calls 'a different formulation'). Unlike the shared scalar, a non-uniform input shock CAN reorder the table.",
+    "top5_boundary_pair": [
+      "BGD",
+      "VUT"
+    ],
+    "input_shock_fraction_to_break_top5_boundary": 0.0075,
+    "adjacent_pair_swap_fractions": [
+      {
+        "pair_hi": "PNG",
+        "pair_lo": "SLB",
+        "baseline_hi_score": 34.4322,
+        "baseline_lo_score": 31.3236,
+        "input_shock_fraction_to_swap": 0.0237,
+        "input_shock_pct_to_swap": 2.37
+      },
+      {
+        "pair_hi": "SLB",
+        "pair_lo": "AFG",
+        "baseline_hi_score": 31.3236,
+        "baseline_lo_score": 27.7139,
+        "input_shock_fraction_to_swap": 0.0306,
+        "input_shock_pct_to_swap": 3.06
+      },
+      {
+        "pair_hi": "AFG",
+        "pair_lo": "LAO",
+        "baseline_hi_score": 27.7139,
+        "baseline_lo_score": 19.7508,
+        "input_shock_fraction_to_swap": 0.0845,
+        "input_shock_pct_to_swap": 8.45
+      },
+      {
+        "pair_hi": "LAO",
+        "pair_lo": "BGD",
+        "baseline_hi_score": 19.7508,
+        "baseline_lo_score": 18.9786,
+        "input_shock_fraction_to_swap": 0.01,
+        "input_shock_pct_to_swap": 1.0
+      },
+      {
+        "pair_hi": "BGD",
+        "pair_lo": "VUT",
+        "baseline_hi_score": 18.9786,
+        "baseline_lo_score": 18.4149,
+        "input_shock_fraction_to_swap": 0.0075,
+        "input_shock_pct_to_swap": 0.75
+      },
+      {
+        "pair_hi": "VUT",
+        "pair_lo": "BTN",
+        "baseline_hi_score": 18.4149,
+        "baseline_lo_score": 15.0388,
+        "input_shock_fraction_to_swap": 0.0506,
+        "input_shock_pct_to_swap": 5.06
+      }
+    ]
+  },
+  "urban_source_readiness": {
+    "program": "invisible-urbanization",
+    "analysis": "GHSL built-up, SMOD, WDI urban-definition, and ADM2 boundary source-readiness audit",
+    "claim_scope": "Public source audit for replacing the WDI-only proxy. GHSL and boundary metadata are reachable, but the analysis-ready built-up boundary overlay remains false.",
+    "retrieved_at": "2026-06-19T21:43:05Z",
+    "sources": {
+      "world_bank_wdi_api_base": "https://api.worldbank.org/v2",
+      "wdi_indicators": [
+        "SP.URB.TOTL.IN.ZS",
+        "SP.URB.GROW"
+      ],
+      "ghsl_pages": [
+        "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php",
+        "https://human-settlement.emergency.copernicus.eu/ghs_smod2023.php",
+        "https://human-settlement.emergency.copernicus.eu/download.php",
+        "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_S",
+        "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_SMOD_V2-0"
+      ],
+      "geoboundaries_api_pattern": "https://www.geoboundaries.org/api/current/gbOpen/{ISO3}/ADM2/"
+    },
+    "summary": {
+      "baseline_top5": [
+        "PNG",
+        "SLB",
+        "AFG",
+        "LAO",
+        "BGD"
+      ],
+      "wdi_metadata_records": 2,
+      "wdi_urban_definition_is_national": true,
+      "ghsl_public_metadata_pages_checked": 5,
+      "ghsl_public_metadata_pages_reachable": 5,
+      "ghsl_built_or_smod_token_rows": 5,
+      "top5_geoboundaries_adm2_metadata_rows": 5,
+      "top5_geoboundaries_adm2_reachable_rows": 5,
+      "top5_boundary_year_min": 2014,
+      "top5_boundary_year_max": 2020,
+      "analysis_ready_builtup_boundary_overlay": false,
+      "analysis_ready_classification_history": false,
+      "analysis_ready_zonal_statistic": false,
+      "owner_gated_or_unfinished_steps": [
+        "No GHSL raster tile or Earth Engine export is downloaded.",
+        "No GHS-SMOD grid is intersected with an administrative boundary.",
+        "No national census or gazetted urban-boundary classification-history table is joined.",
+        "No population-weighted built-up or SMOD zonal statistic is computed.",
+        "The current WDI signal remains a triage proxy until the GHSL/boundary overlay is built."
+      ]
+    },
+    "wdi_indicator_records": [
+      {
+        "indicator_id": "SP.URB.TOTL.IN.ZS",
+        "indicator_name": "Urban population (% of total population)",
+        "source_note": "Urban population refers to people living in urban areas as defined by national statistical offices. The data are collected and smoothed by United Nations Population Division.",
+        "source_organization": "World Urbanization Prospects, United Nations (UN), uri: https://population.un.org/wup/, note: United Nations Population Division's World Urbanization Prospects, National definitions, publisher: UN Population Division",
+        "metadata_url": "https://api.worldbank.org/v2/indicator/SP.URB.TOTL.IN.ZS?format=json",
+        "metadata_sha256": "ada77d666a1469f69379933d0597cdd420299806163905af52de79d538da95e6",
+        "metadata_bytes": 719,
+        "metadata_fetch_mode": "cache",
+        "metadata_status_code": 200
+      },
+      {
+        "indicator_id": "SP.URB.GROW",
+        "indicator_name": "Urban population growth (annual %)",
+        "source_note": "Annual urban population growth rate for year t is the exponential rate of growth of midyear urban population from year t-1 to t, expressed as a percentage. Urban population refers to people living in urban areas as defined by national statistical offices. It is calculated using World Bank total population estimates and urban ratios from the United Nations World Urbanization Prospects.",
+        "source_organization": "World Urbanization Prospects, United Nations (UN), uri: https://population.un.org/wup/, note: World Bank staff estimates based on the United Nations Population Division's World Urbanization Prospects, National definitions, publisher: UN Population Division;\nStaff estimates, World Bank (WB), note: World Bank staff estimates based on the United Nations Population Division's World Urbanization Prospects, National definitions",
+        "metadata_url": "https://api.worldbank.org/v2/indicator/SP.URB.GROW?format=json",
+        "metadata_sha256": "b678df4f84398cb1e879348d7c199f4b1eb479f3f0b2728cf47e4364d05a50aa",
+        "metadata_bytes": 1134,
+        "metadata_fetch_mode": "cache",
+        "metadata_status_code": 200
+      }
+    ],
+    "ghsl_source_rows": [
+      {
+        "layer_role": "built_up_surface",
+        "source_name": "GHSL GHS-BUILT-S R2023A product page",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php",
+        "public_metadata_reachable": true,
+        "bytes": 14993,
+        "sha256": "8739be805189322eacab7a81c9dca84613294cee1525d14d87952a3f4f15a776",
+        "tokens_found": "BUILT-S; GHS-BUILT; download",
+        "tokens_missing": "GHS_BUILT",
+        "link_count": 11,
+        "download_mentions": 4,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "degree_of_urbanisation",
+        "source_name": "GHSL GHS-SMOD R2023A product page",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/ghs_smod2023.php",
+        "public_metadata_reachable": true,
+        "bytes": 15043,
+        "sha256": "0e401de72a89eb8dc30a7da8fbeb32a208bfc45a054a15536de28b3da167e59f",
+        "tokens_found": "SMOD; Degree of Urbanisation; GHS_SMOD; download",
+        "tokens_missing": "",
+        "link_count": 11,
+        "download_mentions": 4,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "ghsl_download_catalog",
+        "source_name": "GHSL download catalog",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/download.php",
+        "public_metadata_reachable": true,
+        "bytes": 26368,
+        "sha256": "d6b4be8ec46f13f2528635ec61c9c4f332d81ab9818db5ce189139b1a8f1e981",
+        "tokens_found": "GHS-SMOD; R2023A; download",
+        "tokens_missing": "GHS-BUILT-S",
+        "link_count": 16,
+        "download_mentions": 28,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "gee_built_up_metadata",
+        "source_name": "Earth Engine catalog metadata for GHSL built-up surface",
+        "source_url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_S",
+        "public_metadata_reachable": true,
+        "bytes": 96872,
+        "sha256": "95092f5f91c2c45aa9f0e85d1c2b3432d18e1130993dc4cb791da5be7d395814",
+        "tokens_found": "JRC/GHSL/P2023A/GHS_BUILT_S; GHS_BUILT; built-up",
+        "tokens_missing": "",
+        "link_count": 122,
+        "download_mentions": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "gee_smod_metadata",
+        "source_name": "Earth Engine catalog metadata for GHSL SMOD",
+        "source_url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_SMOD_V2-0",
+        "public_metadata_reachable": true,
+        "bytes": 95532,
+        "sha256": "d1e217f93952a57fd3542db2b906524e119aa4c1f3bde18405ee5b07a0c035f9",
+        "tokens_found": "JRC/GHSL/P2023A/GHS_SMOD; GHS_SMOD; Degree of Urbanisation",
+        "tokens_missing": "",
+        "link_count": 124,
+        "download_mentions": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      }
+    ],
+    "geoboundaries_top5_rows": [
+      {
+        "iso3": "PNG",
+        "layer_role": "admin_boundary_metadata",
+        "source_name": "geoBoundaries gbOpen ADM2",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/PNG/ADM2/",
+        "public_metadata_reachable": true,
+        "boundary_type": "ADM2",
+        "boundary_year_represented": "2019",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PNG/ADM2/geoBoundaries-PNG-ADM2.geojson",
+        "static_download_link": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PNG/ADM2/geoBoundaries-PNG-ADM2-all.zip",
+        "license": "nan",
+        "status": "ADM2 metadata visible",
+        "notes": "Metadata checked only; no boundary geometry is downloaded or intersected."
+      },
+      {
+        "iso3": "SLB",
+        "layer_role": "admin_boundary_metadata",
+        "source_name": "geoBoundaries gbOpen ADM2",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/SLB/ADM2/",
+        "public_metadata_reachable": true,
+        "boundary_type": "ADM2",
+        "boundary_year_represented": "2018",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/SLB/ADM2/geoBoundaries-SLB-ADM2.geojson",
+        "static_download_link": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/SLB/ADM2/geoBoundaries-SLB-ADM2-all.zip",
+        "license": "nan",
+        "status": "ADM2 metadata visible",
+        "notes": "Metadata checked only; no boundary geometry is downloaded or intersected."
+      },
+      {
+        "iso3": "AFG",
+        "layer_role": "admin_boundary_metadata",
+        "source_name": "geoBoundaries gbOpen ADM2",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/AFG/ADM2/",
+        "public_metadata_reachable": true,
+        "boundary_type": "ADM2",
+        "boundary_year_represented": "2014",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AFG/ADM2/geoBoundaries-AFG-ADM2.geojson",
+        "static_download_link": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AFG/ADM2/geoBoundaries-AFG-ADM2-all.zip",
+        "license": "license was officially a custom license simply described as open on ArcGIS Hub. No other restictions were included so collector decided on public domain as the official license.",
+        "status": "ADM2 metadata visible",
+        "notes": "Metadata checked only; no boundary geometry is downloaded or intersected."
+      },
+      {
+        "iso3": "LAO",
+        "layer_role": "admin_boundary_metadata",
+        "source_name": "geoBoundaries gbOpen ADM2",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/LAO/ADM2/",
+        "public_metadata_reachable": true,
+        "boundary_type": "ADM2",
+        "boundary_year_represented": "2019",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM2/geoBoundaries-LAO-ADM2.geojson",
+        "static_download_link": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/LAO/ADM2/geoBoundaries-LAO-ADM2-all.zip",
+        "license": "nan",
+        "status": "ADM2 metadata visible",
+        "notes": "Metadata checked only; no boundary geometry is downloaded or intersected."
+      },
+      {
+        "iso3": "BGD",
+        "layer_role": "admin_boundary_metadata",
+        "source_name": "geoBoundaries gbOpen ADM2",
+        "source_url": "https://www.geoboundaries.org/api/current/gbOpen/BGD/ADM2/",
+        "public_metadata_reachable": true,
+        "boundary_type": "ADM2",
+        "boundary_year_represented": "2020",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2.geojson",
+        "static_download_link": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2-all.zip",
+        "license": "nan",
+        "status": "ADM2 metadata visible",
+        "notes": "Metadata checked only; no boundary geometry is downloaded or intersected."
+      }
+    ],
+    "source_rows": [
+      {
+        "layer_role": "old_proxy_urban_share",
+        "source_name": "World Bank WDI urban population share",
+        "source_url": "https://api.worldbank.org/v2/indicator/SP.URB.TOTL.IN.ZS?format=json",
+        "key_id": "SP.URB.TOTL.IN.ZS",
+        "public_metadata_reachable": true,
+        "joined_rows": 41,
+        "status": "metadata visible; national-definition based",
+        "notes": "Urban population refers to people living in urban areas as defined by national statistical offices. The data are collected and smoothed by United Nations Population Division."
+      },
+      {
+        "layer_role": "old_proxy_urban_growth",
+        "source_name": "World Bank WDI urban population growth",
+        "source_url": "https://api.worldbank.org/v2/indicator/SP.URB.GROW?format=json",
+        "key_id": "SP.URB.GROW",
+        "public_metadata_reachable": true,
+        "joined_rows": 41,
+        "status": "metadata visible; national-definition based",
+        "notes": "Annual urban population growth rate for year t is the exponential rate of growth of midyear urban population from year t-1 to t, expressed as a percentage. Urban population refers to people living in urban areas as defined by national statistical offices. It is calculated using World Bank total population estimates and urban ratios from the United Nations World Urbanization Prospects."
+      },
+      {
+        "layer_role": "built_up_surface",
+        "source_name": "GHSL GHS-BUILT-S R2023A product page",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php",
+        "key_id": "built_up_surface",
+        "public_metadata_reachable": true,
+        "joined_rows": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "degree_of_urbanisation",
+        "source_name": "GHSL GHS-SMOD R2023A product page",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/ghs_smod2023.php",
+        "key_id": "degree_of_urbanisation",
+        "public_metadata_reachable": true,
+        "joined_rows": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "ghsl_download_catalog",
+        "source_name": "GHSL download catalog",
+        "source_url": "https://human-settlement.emergency.copernicus.eu/download.php",
+        "key_id": "ghsl_download_catalog",
+        "public_metadata_reachable": true,
+        "joined_rows": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "gee_built_up_metadata",
+        "source_name": "Earth Engine catalog metadata for GHSL built-up surface",
+        "source_url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_S",
+        "key_id": "gee_built_up_metadata",
+        "public_metadata_reachable": true,
+        "joined_rows": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "gee_smod_metadata",
+        "source_name": "Earth Engine catalog metadata for GHSL SMOD",
+        "source_url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_SMOD_V2-0",
+        "key_id": "gee_smod_metadata",
+        "public_metadata_reachable": true,
+        "joined_rows": 0,
+        "status": "metadata visible",
+        "notes": "Metadata/source page checked only; no raster or Earth Engine export is downloaded."
+      },
+      {
+        "layer_role": "analysis_ready_builtup_boundary_overlay",
+        "source_name": "GHSL built-up or SMOD x administrative-boundary overlay",
+        "source_url": "",
+        "key_id": "not_computed",
+        "public_metadata_reachable": false,
+        "joined_rows": 0,
+        "status": "not joined",
+        "notes": "No GHSL raster, SMOD grid, boundary geometry, classification-history table, or zonal statistic is joined."
+      }
+    ],
+    "cache_records": [
+      {
+        "url": "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php",
+        "cache_path": ".cache\\urban-source-readiness\\https_human_settlement_emergency_copernicus_eu_ghs_buS2023_php.html",
+        "bytes": 14993,
+        "sha256": "8739be805189322eacab7a81c9dca84613294cee1525d14d87952a3f4f15a776",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "query_type": "public_source_page",
+        "layer_role": "built_up_surface"
+      },
+      {
+        "url": "https://human-settlement.emergency.copernicus.eu/ghs_smod2023.php",
+        "cache_path": ".cache\\urban-source-readiness\\https_human_settlement_emergency_copernicus_eu_ghs_smod2023_php.html",
+        "bytes": 15043,
+        "sha256": "0e401de72a89eb8dc30a7da8fbeb32a208bfc45a054a15536de28b3da167e59f",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "query_type": "public_source_page",
+        "layer_role": "degree_of_urbanisation"
+      },
+      {
+        "url": "https://human-settlement.emergency.copernicus.eu/download.php",
+        "cache_path": ".cache\\urban-source-readiness\\https_human_settlement_emergency_copernicus_eu_download_php.html",
+        "bytes": 26368,
+        "sha256": "d6b4be8ec46f13f2528635ec61c9c4f332d81ab9818db5ce189139b1a8f1e981",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "query_type": "public_source_page",
+        "layer_role": "ghsl_download_catalog"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_BUILT_S",
+        "cache_path": ".cache\\urban-source-readiness\\https_developers_google_com_earth_engine_datasets_catalog_JRC_GHSL_P2023A_GHS_BUILT_S.html",
+        "bytes": 96872,
+        "sha256": "95092f5f91c2c45aa9f0e85d1c2b3432d18e1130993dc4cb791da5be7d395814",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "query_type": "public_source_page",
+        "layer_role": "gee_built_up_metadata"
+      },
+      {
+        "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_GHSL_P2023A_GHS_SMOD_V2-0",
+        "cache_path": ".cache\\urban-source-readiness\\https_developers_google_com_earth_engine_datasets_catalog_JRC_GHSL_P2023A_GHS_SMOD_V2_0.html",
+        "bytes": 95532,
+        "sha256": "d1e217f93952a57fd3542db2b906524e119aa4c1f3bde18405ee5b07a0c035f9",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "query_type": "public_source_page",
+        "layer_role": "gee_smod_metadata"
+      },
+      {
+        "url": "https://www.geoboundaries.org/api/current/gbOpen/PNG/ADM2/",
+        "cache_path": ".cache\\urban-source-readiness\\https_www_geoboundaries_org_api_current_gbOpen_PNG_ADM2.json",
+        "bytes": 1887,
+        "sha256": "f7fb034269ad110f3ee81d209bfa872eed478e88d1ddf8df7b5a7f2deecae2e4",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "json_parse_ok": true,
+        "query_type": "geoboundaries_adm2_metadata",
+        "iso3": "PNG"
+      },
+      {
+        "url": "https://www.geoboundaries.org/api/current/gbOpen/SLB/ADM2/",
+        "cache_path": ".cache\\urban-source-readiness\\https_www_geoboundaries_org_api_current_gbOpen_SLB_ADM2.json",
+        "bytes": 1924,
+        "sha256": "90026ff939a16699c9b151b5ffca25875d5fce750500cc9fc484cccb37daaad4",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "json_parse_ok": true,
+        "query_type": "geoboundaries_adm2_metadata",
+        "iso3": "SLB"
+      },
+      {
+        "url": "https://www.geoboundaries.org/api/current/gbOpen/AFG/ADM2/",
+        "cache_path": ".cache\\urban-source-readiness\\https_www_geoboundaries_org_api_current_gbOpen_AFG_ADM2.json",
+        "bytes": 2030,
+        "sha256": "d5dea10c785f9094cc74ba8ad1039a46ae4df3bfd082ae99734f45f07807065f",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "json_parse_ok": true,
+        "query_type": "geoboundaries_adm2_metadata",
+        "iso3": "AFG"
+      },
+      {
+        "url": "https://www.geoboundaries.org/api/current/gbOpen/LAO/ADM2/",
+        "cache_path": ".cache\\urban-source-readiness\\https_www_geoboundaries_org_api_current_gbOpen_LAO_ADM2.json",
+        "bytes": 1816,
+        "sha256": "56dd2c2d372737140120d76f708f4a898453f979c84efb36a399f5da2a395933",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "json_parse_ok": true,
+        "query_type": "geoboundaries_adm2_metadata",
+        "iso3": "LAO"
+      },
+      {
+        "url": "https://www.geoboundaries.org/api/current/gbOpen/BGD/ADM2/",
+        "cache_path": ".cache\\urban-source-readiness\\https_www_geoboundaries_org_api_current_gbOpen_BGD_ADM2.json",
+        "bytes": 1850,
+        "sha256": "1f12fb2c5827799d5802b4b8672cf99953fa4ef21f6bee3ffd405a31b77f75ab",
+        "status_code": 200,
+        "fetch_mode": "cache",
+        "headers": {},
+        "json_parse_ok": true,
+        "query_type": "geoboundaries_adm2_metadata",
+        "iso3": "BGD"
+      }
+    ],
+    "attestation_chain": "ai-first",
+    "generated_at": "2026-06-19T21:43:05Z"
+  },
+  "invisible_urbanization_data_wall": "GHSL built-up, GHSL SMOD, WDI urban-definition metadata, and geoBoundaries ADM2 metadata are now visible at source level. The analysis still has no raster download, boundary intersection, classification-history ledger, or population-weighted zonal statistic, so it is not an analysis-ready invisible-urbanization estimate.",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T21:43:05Z"
+}

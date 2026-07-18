@@ -1,49 +1,79 @@
-# Literature review — Invisible Urbanization
+# Related literature and evidence gap
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · Search refreshed 2026-07-19
 
-## 1. Search record
+## Search record
 
-Queries (2026-04-27):
-1. `GHSL Built-up Surface Pesaresi JRC settlement growth`
-2. `urban classification lag developing economies`
-3. `Herfort Zipf OSM urban completeness`
-4. `UN DESA urban population definition LMIC`
+The search covered harmonized urban definitions, national-definition
+comparability, hidden urbanization in South Asia, remote-sensing sensitivity,
+and the effect of reclassification. Sources were limited to peer-reviewed
+research and primary institutional publications. Core queries included:
 
-Tier-A: *Environment and Urbanization*, *Nature Communications*,
-*Cities*. Tier-B: JRC GHSL, UN DESA Population Division, UN-Habitat.
+1. `Degree of Urbanisation national definitions Asia`
+2. `hidden urbanization South Asia official statistics`
+3. `urban definition sensitivity remote sensing administrative boundaries`
+4. `rural urban reclassification development indicators`
+5. `GHSL GHS-DUC R2023A GADM 4.1`
 
-## 2. Verified entries
+## What is established
 
-- **`pesaresi2024ghsl`** — Pesaresi & Politis (2023). GHS-BUILT-S
-  R2023A. JRC. doi:10.2905/9F06F36F-4B11-47EC-ABB0-4F8B7B1D72EA.
-  **The canonical satellite-based settlement-growth measure;
-  the §18.5 upgrade-pass.**
-- **`herfort2023osm`** — Herfort et al. (2023). OSM urban-building
-  completeness. *Nature Communications*. **Cited for the
-  OSM-coverage-correlates-with-development critique.**
+### National definitions are not internationally uniform
 
-## 3. Synthesis
+The UN distinguishes country-specific national definitions from the
+standardized Degree of Urbanization. National definitions may use
+administrative status, size, density, economic activity, or functional criteria
+[@undesa2025wupmethod]. The Degree of Urbanisation manual explicitly presents
+the harmonized method as a complement—not a replacement—for national systems
+[@oecd2021degurba].
 
-1. **Satellite Built-up Surface (BUILT-S)** [@pesaresi2024ghsl]
-   detects settlement growth that may not yet be in national
-   urban classifications — the canonical "invisible
-   urbanization" measure.
-2. **OSM coverage tracks development** [@herfort2023osm]; using
-   OSM as a proxy inherits this bias.
+### A harmonized method changes the measured urban share in Asia
 
-## 4. Gap
+Dijkstra and coauthors apply the common grid method globally and find that
+urban shares are considerably higher than national-definition shares in much
+of Africa and Asia. They attribute part of the difference to towns being
+classified rural under some national systems [@dijkstra2021globalurbanisation].
+That paper establishes the global pattern. The present study narrows the
+question to the repository's ADB economy roster, reproduces the comparison
+from public data, and adds administrative-scale and transition diagnostics.
 
-No published cross-ADB-DMC growth-from-low-urban-base signal
-with stable rank-set across multiplier perturbations. The
-top-5 set finding (PNG, SLB, AFG, LAO, BGD) is the marginal
-contribution.
+### “Hidden urbanization” is a policy concern, but it is a stronger claim
 
-## 5. First testable claim
+Ellis and Roberts use “messy and hidden urbanization” to describe South Asian
+settlement growth that may not be reflected in official classifications and
+that can interact with governance, infrastructure, and service deficits
+[@ellis2016southasiaurbanization]. Their policy argument motivates the topic,
+but a GHSL–WDI percentage gap alone cannot establish those governance or
+service consequences.
 
-> Five rural-majority ADB DMCs hold the top-5 invisible-urbanization
-> signal across multiplier perturbations.
+### Definitions can change substantive development results
 
-## 7. §18 attestation
+Using seven rural–urban definitions in Tanzania, Wineman, Alia, and Anderson
+show that measured urbanization and selected indicators such as rural poverty
+and electrification change with the definition. They also show that periodic
+reclassification affects estimated change [@wineman2020ruralurban]. This
+supports treating classification as part of the empirical design rather than
+as a harmless label.
 
-`ai-first`. 2026-04-27.
+### Harmonization does not remove sensitivity
+
+DEGURBA itself embeds density, size, contiguity, and smoothing choices.
+Spatially explicit sensitivity work finds that the impact of those choices is
+not evenly distributed, including sensitivity in Pacific Asian desakota regions
+[@vanmigerode2024urbansensitivity]. The 2023 GHS-DUC product adds a further
+administrative stage by assigning grid populations to GADM 4.1 units
+[@jrc2026ghsduc].
+
+## Evidence gap and contribution
+
+Existing work establishes that definitions differ and that the difference can
+matter. This paper contributes a reproducible ADB-focused measurement object
+with three additions:
+
+1. a 1975–2020 GHSL–WDI complete-case panel;
+2. common-sample sensitivity across administrative levels 1–3; and
+3. a unit-level decomposition showing how persistent growth and classification
+   threshold crossings jointly determine the embedded urban stock.
+
+The paper does **not** validate national legal boundaries, compare service
+outcomes, or vary the underlying DEGURBA grid thresholds. Those are the next
+evidence upgrades.

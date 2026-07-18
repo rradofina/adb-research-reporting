@@ -32,7 +32,7 @@ new claims or imply that every planned chart is currently supportable.
 | `food-price-climate-transmission` | 1 | Inflation against food-import share; original-to-food-specific rank shifts; top-set overlap matrix; source-vintage coverage; reformulation sensitivity. |
 | `coastal-informal-risk` | 1 | Population-weighted to unweighted rank shifts; urban share against slum share; imputation influence; source coverage; spatial figure only after an eligible coastal object is retrieved. |
 | `flood-market-access` | 1 | Composite decomposition; rural share against flood frequency; raw-to-per-capita rank shifts; source-readiness matrix; spatial extent only after the modeled layer is admitted. |
-| `invisible-urbanization` | 1 | Urban share against growth; tautology sensitivity and rank inversions; boundary-vintage matrix; coverage by spatial unit; spatial mismatch only after the boundary join exists. |
+| `invisible-urbanization` | 11 | GHSL–WDI definition-gap distribution and trajectories; administrative-scale sensitivity; embedded-population time series; unit-transition waterfall; country shares; heatmap; coverage funnel; claim-gate infographic. |
 | `air-monitoring` | 1 | Station-evidence coverage matrix; calibration/status absence matrix; concentration against monitor observability; source-vintage timeline; unresolved evidence by station. |
 | `digital-performance` | 0 | Stop at hook triage: name a public data object and rough falsifiable visual before creating a program figure. |
 | `mpi-nighttime-lights` | 0 | MPI dimension decomposition; night-light-blind share against MPI; indicator-observability matrix; source-readiness figure; spatial validation only after an eligible raster join. |

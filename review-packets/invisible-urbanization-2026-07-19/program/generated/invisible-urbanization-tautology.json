@@ -1,0 +1,158 @@
+{
+  "program": "invisible-urbanization",
+  "analysis": "tautology check: rank-preserving multiplier sweep vs genuine input perturbation",
+  "claim_scope": "Deepening of the +/-50% multiplier 'stability' claim. Demonstrates the 5/10/15 sweep is a rank-preserving positive scalar (Spearman 1.0, zero inversions, identical top-5) and therefore certifies nothing; shows the signal is two WDI series multiplied with no satellite layer; and runs the input-perturbation falsification the headline never ran. Triage proxy (CONSTITUTION.md sec. 6.4), not a country ranking (sec. 13.3).",
+  "source": {
+    "name": "WDI via committed panel",
+    "fields": "SP.RUR.TOTL.ZS (rural_pct), SP.URB.GROW (urban_pop_growth_pct)",
+    "license": "CC BY 4.0",
+    "retrieved_at": "2026-04-26",
+    "panel_file": "generated/invisible-urbanization-adb-panel.json"
+  },
+  "frozen_formula": "(rural_pct/100) * max(urban_pop_growth_pct, 0) * multiplier",
+  "n_dmcs": 41,
+  "reproduces_committed_signal": {
+    "max_abs_error_vs_committed_column": 0.04,
+    "rounding_tolerance": 0.05,
+    "within_rounding_tolerance": true,
+    "rank_inversions_vs_committed_column": 1,
+    "inverted_pairs_vs_committed_column": [
+      "UZB/VNM"
+    ],
+    "max_score_gap_among_inverted_pairs": 0.01,
+    "top5_reproduced_exactly": true,
+    "reproduces": true,
+    "note": "Committed column was computed from full-precision WDI inputs then rounded to 2 dp; the panel displays inputs at 1 dp, so recomputing from the displayed inputs matches to within a 2nd-decimal rounding band (0.04 <= 0.05). The only ordering change is a single adjacent tie-flip at ranks 14-15 (UZB/VNM, separated by 0.01 in the committed column) caused by that input rounding; the top-5 the headline claims is reproduced exactly."
+  },
+  "multiplier_sweep_is_rank_preserving": {
+    "baseline_top5": [
+      "PNG",
+      "SLB",
+      "AFG",
+      "LAO",
+      "BGD"
+    ],
+    "results": [
+      {
+        "multiplier": 5.0,
+        "label": "mult_5",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 17.2161
+      },
+      {
+        "multiplier": 10.0,
+        "label": "mult_10",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 34.4322
+      },
+      {
+        "multiplier": 15.0,
+        "label": "mult_15",
+        "spearman_vs_baseline": 1.0,
+        "pairwise_rank_inversions_vs_baseline": 0,
+        "top5": [
+          "PNG",
+          "SLB",
+          "AFG",
+          "LAO",
+          "BGD"
+        ],
+        "top5_changes_vs_baseline": [],
+        "top1_score": 51.6483
+      }
+    ],
+    "all_spearman_equal_one": true,
+    "total_rank_inversions_across_sweep": 0,
+    "any_top5_change_across_sweep": false
+  },
+  "signal_is_two_wdi_series_multiplied": {
+    "reconstructed_from_rural_x_growth_only_max_abs_error": 0.04,
+    "satellite_or_builtup_field_in_sources": false,
+    "source_keys": [
+      "wdi_urban_pct",
+      "wdi_urban_pop_growth",
+      "wdi_rural_pct",
+      "wdi_population",
+      "license",
+      "retrieved_at"
+    ]
+  },
+  "genuine_falsification_not_run": {
+    "description": "Independent per-row perturbation of the two input series (the test pre-registration sec. 2 calls 'a different formulation'). Unlike the shared scalar, a non-uniform input shock CAN reorder the table.",
+    "top5_boundary_pair": [
+      "BGD",
+      "VUT"
+    ],
+    "input_shock_fraction_to_break_top5_boundary": 0.0075,
+    "adjacent_pair_swap_fractions": [
+      {
+        "pair_hi": "PNG",
+        "pair_lo": "SLB",
+        "baseline_hi_score": 34.4322,
+        "baseline_lo_score": 31.3236,
+        "input_shock_fraction_to_swap": 0.0237,
+        "input_shock_pct_to_swap": 2.37
+      },
+      {
+        "pair_hi": "SLB",
+        "pair_lo": "AFG",
+        "baseline_hi_score": 31.3236,
+        "baseline_lo_score": 27.7139,
+        "input_shock_fraction_to_swap": 0.0306,
+        "input_shock_pct_to_swap": 3.06
+      },
+      {
+        "pair_hi": "AFG",
+        "pair_lo": "LAO",
+        "baseline_hi_score": 27.7139,
+        "baseline_lo_score": 19.7508,
+        "input_shock_fraction_to_swap": 0.0845,
+        "input_shock_pct_to_swap": 8.45
+      },
+      {
+        "pair_hi": "LAO",
+        "pair_lo": "BGD",
+        "baseline_hi_score": 19.7508,
+        "baseline_lo_score": 18.9786,
+        "input_shock_fraction_to_swap": 0.01,
+        "input_shock_pct_to_swap": 1.0
+      },
+      {
+        "pair_hi": "BGD",
+        "pair_lo": "VUT",
+        "baseline_hi_score": 18.9786,
+        "baseline_lo_score": 18.4149,
+        "input_shock_fraction_to_swap": 0.0075,
+        "input_shock_pct_to_swap": 0.75
+      },
+      {
+        "pair_hi": "VUT",
+        "pair_lo": "BTN",
+        "baseline_hi_score": 18.4149,
+        "baseline_lo_score": 15.0388,
+        "input_shock_fraction_to_swap": 0.0506,
+        "input_shock_pct_to_swap": 5.06
+      }
+    ]
+  },
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T21:43:05Z"
+}

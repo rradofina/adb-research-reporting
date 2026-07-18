@@ -1,17 +1,18 @@
 {
   "program": "invisible-urbanization",
-  "title": "Urban growth from a rural base",
-  "caption": "Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, Bangladesh \u2014 low urban share + fast urban growth, the cities satellite imagery would expect to see expanding fastest.",
-  "headline_number": "Solomon Islands 4.5%/yr urban growth",
-  "visual_form": "two-axis scatter (urban % \u00d7 urban growth %)",
-  "source": "WDI urban share + urban growth",
+  "title": "One urban share can be 20 points from another",
+  "caption": "GHSL and WDI urban shares differ by a median absolute 20.0 percentage points across 40 complete cases in 2020; administrative scale also changes the embedded share.",
+  "headline_number": "20.0 percentage-point median absolute gap",
+  "visual_form": "signed definition-gap bars plus administrative-scale inset",
+  "source": "JRC GHS-DUC R2023A V2.0 + World Bank WDI",
   "inputs": [
-    "generated/invisible-urbanization-adb-panel.csv"
+    "generated/invisible-urbanization-definition-gap-panel.csv",
+    "generated/invisible-urbanization-definition-gap.json"
   ],
   "script": "invisible-urbanization/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T20:27:02+00:00",
+  "generated_at": "2026-07-18T19:08:31+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +22,7 @@
     "svg": "invisible-urbanization-thumbnail.svg"
   },
   "sha256": {
-    "png": "c0154676f033a17d4c736afcfed088a03506f97825952a4eddc9e2b60a2ccc98",
-    "svg": "ca28517312c2d7b57379040ac5c1d3d45eef8ab918fb3e8ec0b45ea3dc6ddda0"
+    "png": "b7ccc8f65e112d50c220d6bd08389ac86a87a91a14f8ad3e85fff2aeee8daf24",
+    "svg": "d4158e6da0934f3ebd257cf2bd28d3a7d0fb8f4ac815b5fad2c0171ad894ba31"
   }
 }

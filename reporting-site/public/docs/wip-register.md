@@ -110,6 +110,11 @@ end-to-end.
   mapped marketplaces, and WorldPop; the base model disconnects 345,718 people
   and all 54 variants remain between 38.92% and 43.45%. Article:
   `articles/flood-market-access-cluster.md`.
+- **invisible-urbanization** — inherited WDI proxy ranking retired. The rebuilt
+  GHSL–WDI measurement study finds a median absolute 20.0-point urban-share gap
+  across 40 complete cases in 2020, adds administrative-scale and transition
+  diagnostics, and presents an 11-figure evidence spine. Article:
+  `articles/invisible-urbanization-cluster.md`.
 
 ### Prepared Pipeline (other)
 
@@ -159,6 +164,7 @@ promotion)*
 | 2026-07-18 | water-stress-crop-diversification | PP construct-validation issue closed | (this commit) | ai-first | Inherited country ranking rejected; full paper and nine-figure evidence spine built |
 | 2026-07-19 | food-price-climate-transmission | PP construct-validation issue closed | (this commit) | ai-first | Annual qualifier and old price-wave method retired; corrected 12-market Nepal paper and ten-figure evidence spine built |
 | 2026-07-19 | flood-market-access | PP construct-validation issue closed | (this commit) | ai-first | National proxy retired; one-event Sylhet route object, full paper, ten-figure evidence spine, and 54-run sensitivity grid built |
+| 2026-07-19 | invisible-urbanization | PP measurement issue closed | (this commit) | ai-first | Inherited proxy retired; GHSL–WDI definition gap, administrative-scale and transition diagnostics, full paper, and 11-figure evidence spine built |
 
 ---
 

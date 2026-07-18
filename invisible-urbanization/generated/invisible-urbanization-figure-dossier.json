@@ -1,0 +1,96 @@
+{
+  "program": "invisible-urbanization",
+  "analysis": "evidence-bearing figure dossier",
+  "attestation_chain": "ai-first",
+  "figure_count": 11,
+  "figures": [
+    {
+      "order": 1,
+      "name": "definition-gap hero",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-01-definition-gap-hero.png",
+        "svg": "generated\\charts\\invisible-urbanization-01-definition-gap-hero.svg"
+      }
+    },
+    {
+      "order": 2,
+      "name": "selected definition dumbbell",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-02-selected-definition-dumbbell.png",
+        "svg": "generated\\charts\\invisible-urbanization-02-selected-definition-dumbbell.svg"
+      }
+    },
+    {
+      "order": 3,
+      "name": "definition gap over time",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-03-definition-gap-over-time.png",
+        "svg": "generated\\charts\\invisible-urbanization-03-definition-gap-over-time.svg"
+      }
+    },
+    {
+      "order": 4,
+      "name": "focus trajectories",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-04-focus-trajectories.png",
+        "svg": "generated\\charts\\invisible-urbanization-04-focus-trajectories.svg"
+      }
+    },
+    {
+      "order": 5,
+      "name": "administrative-scale sensitivity",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-05-administrative-scale-sensitivity.png",
+        "svg": "generated\\charts\\invisible-urbanization-05-administrative-scale-sensitivity.svg"
+      }
+    },
+    {
+      "order": 6,
+      "name": "embedded share over time",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-06-embedded-share-over-time.png",
+        "svg": "generated\\charts\\invisible-urbanization-06-embedded-share-over-time.svg"
+      }
+    },
+    {
+      "order": 7,
+      "name": "transition waterfall",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-07-transition-waterfall.png",
+        "svg": "generated\\charts\\invisible-urbanization-07-transition-waterfall.svg"
+      }
+    },
+    {
+      "order": 8,
+      "name": "country embedded shares",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-08-country-embedded-shares.png",
+        "svg": "generated\\charts\\invisible-urbanization-08-country-embedded-shares.svg"
+      }
+    },
+    {
+      "order": 9,
+      "name": "country-time heatmap",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-09-country-time-heatmap.png",
+        "svg": "generated\\charts\\invisible-urbanization-09-country-time-heatmap.svg"
+      }
+    },
+    {
+      "order": 10,
+      "name": "coverage funnel",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-10-coverage-funnel.png",
+        "svg": "generated\\charts\\invisible-urbanization-10-coverage-funnel.svg"
+      }
+    },
+    {
+      "order": 11,
+      "name": "method and claim gate",
+      "paths": {
+        "png": "generated\\charts\\invisible-urbanization-11-method-and-claim-gate.png",
+        "svg": "generated\\charts\\invisible-urbanization-11-method-and-claim-gate.svg"
+      }
+    }
+  ]
+}

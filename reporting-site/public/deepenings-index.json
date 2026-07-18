@@ -91,11 +91,11 @@
     {
       "slug": "invisible-urbanization",
       "title": "Deepened result",
-      "outcome": "computed + frontier wall",
+      "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
       "artifact": "invisible-urbanization-source-audit.json",
-      "finding": "The \"±50% stable\" claim demonstrates only that multiplying every score by the same positive number preserves their order. That is a property of multiplication, not a property of the data, the signal, or the five DMCs."
+      "finding": "attestation_chain: ai-first The inherited program treated rank stability under a common multiplier as evidence. That test was tautological."
     },
     {
       "slug": "migration-displacement-signals",

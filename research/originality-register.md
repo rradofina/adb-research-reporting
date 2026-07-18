@@ -57,7 +57,7 @@ That second claim is usually impossible to defend and should not be used.
 | `road-quality-poverty-access` | Good O2 next-track concept. | Road-quality ML method is already ADB's line; originality must come from poverty/access integration. |
 | `digital-performance` | Potential O2 once Ookla parquet aggregation runs. | No empirical value yet; pipeline prepared only. |
 | `air-monitoring` | O1 current; O2 if gridded exposure and monitor catchments replace country means. | WDI PM2.5 is too coarse and partly modeled. |
-| `invisible-urbanization` | O1 current; O2 if GHSL/building-change geographies are joined. | WDI urban proxies are not enough. |
+| `invisible-urbanization` | O2: GHSL Degree of Urbanisation is joined to WDI national definitions, with administrative-scale and unit-transition diagnostics. | Construct differences are measured; legal misclassification and service neglect remain outside the claim. |
 | `climate-health-workdays` | O1 current; O2 if heat and occupational exposure enter at district/grid scale. | Current result is PM2.5-only despite the workday-loss framing. |
 | `coastal-informal-risk` | O1 current; O2 if LECZ and settlement footprints are used. | Binary coastal exposure and sparse slum data are too blunt. |
 | `disaster-recovery-lag` | O1 current; O2/O3 if event footprints and recovery curves are computed. | Current result is disaster burden, not recovery lag. |

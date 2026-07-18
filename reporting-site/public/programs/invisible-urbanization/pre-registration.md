@@ -1,38 +1,52 @@
-# Pre-registration — Invisible Urbanization
+# Retrospective design freeze
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-26.
+`attestation_chain: ai-first` · Retrospective pre-analysis record · 2026-07-19
 
-## 1. Claim
+This design was frozen after the public GHS-DUC schema was inspected and before
+the full narrative was written. It is retrospective and must not be described
+as a prospective pre-registration.
 
-> Five ADB DMCs — Papua New Guinea, Solomon Islands, Afghanistan,
-> Lao PDR, Bangladesh — persistently hold the top-5 invisible-
-> urbanization signal across ±50% on the index multiplier.
+## Primary estimands
 
-## 2. Falsification
+1. **Definition gap:** GHSL level-0 urban share minus WDI
+   `SP.URB.TOTL.IN.ZS`, in percentage points, at matching five-year epochs.
+2. **Embedded urban population:** `UCentre_Pop + UCluster_Pop` inside a GHS-DUC
+   administrative unit where `DEGURBA_L1 = 1`.
+3. **Embedded share:** embedded urban population divided by all GHSL
+   urban-centre-plus-urban-cluster population in the covered economy sample.
 
-Top-5 changes by > 1 entry. (Multiplicative scalar test is rank-
-preserving by construction; falsification would require a different
-formulation.)
+## Primary population and period
 
-## 3. Population
+- Repository's established 44-economy ADB developing-member roster.
+- 2020 cross-section for the headline definition gap.
+- 1975–2020 five-year epochs for persistence.
+- GADM 4.1 level 2 for the transition analysis.
+- 2000–2020 as the descriptive transition window.
 
-41 ADB DMCs with WDI urban-share + urban-pop-growth.
+## Decision rules
 
-## 5. Metric
+- Do not impute missing WDI observations or missing GADM levels.
+- Aggregate multiple GADM level-0 fragments to `GID_0GHSL` before joining WDI.
+- Compare administrative levels only on the intersection of economies present
+  at levels 1, 2, and 3.
+- Treat the definition-gap sign as descriptive; no direction is assumed.
+- Do not convert a cross-source percentage-point gap to people.
+- Do not label a GHS-DUC transition a national legal reclassification.
 
-`signal = (rural_pct / 100) × max(urban_pop_growth_pct, 0) × 10`.
-Higher = more growth from a low-urbanization base. Triage only.
+## Sensitivity plan
 
-## 6. Arbitrary numeric
+- Administrative scale: levels 1, 2, and 3 on the same economy sample.
+- Time-window choice: vary the 20-year window by ±50%, using 10 and 30 years.
+- Report both signed and absolute definition gaps.
+- Report full coverage at each analytical layer.
 
-| Param | Value | Range |
-|---|---|---|
-| Multiplier | 10 | 5–15 |
+## Falsification and stopping rules
 
-## 8. Decision rule
-
-Common top-5 across baseline + 2: `[AFG, BGD, LAO, PNG, SLB]`. **Positive.**
-
-## 10. §18
-
-`ai-first`. 2026-04-26.
+- If the GHSL–WDI median absolute gap is trivial, retire the definition-gap
+  story.
+- If administrative-level results reverse or disappear on a common sample,
+  do not claim scale sensitivity.
+- If the transition decomposition does not close arithmetically, stop and fix
+  the panel.
+- The analysis cannot pass a legal-misclassification or policy-neglect claim
+  without country-specific administrative and service evidence.

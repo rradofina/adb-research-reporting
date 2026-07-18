@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `port-hinterland-friction` — the direct World Bank CPPI test retains only one of the inherited top five in the main specification and at most two across 20 variants. Publication is paused at a named source wall: the new LPI 2.0 port-exit-to-LLDC corridor data sit behind an interactive Cloudflare challenge that requires owner action. |
-| Per-program board | `port-hinterland-friction/STATUS.md` |
+| Active flagship | `water-stress-crop-diversification` — the inherited top-four narrowing may conflate an internal-water denominator, national cereal yield, and rural share. The next move is construct validation against committed available-water and crop-mix objects. |
+| Per-program board | `water-stress-crop-diversification/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `grid-reliability-heat` — seven-figure PP dossier closed 2026-07-18; 8 of 15 heat-reliability correlations are positive, 7 negative, and 10 intervals include zero, so no directional ranking is published. |
+| Previous flagship | `social-protection-shock-coverage` — the inherited top five was retired after only three named members survived the panel's value order. The full construct-validation ladder is public; an event-level delivery outcome remains the next qualified object. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -63,15 +63,19 @@ overrides priority by editing this list.
    generation concentration retain the same top five, but 15 aligned
    heat-reliability tests split direction and 10 intervals include zero.
    Reopen only for service-territory or event-level outage data.
-8. **`port-hinterland-friction`** — **active flagship; named source wall.** The
+8. **`port-hinterland-friction`** — *construct-validation issue closed; named source wall.* The
    direct CPPI test retains only Indonesia from the inherited top five in the
    main specification and zero to two members across 20 variants. The next
    eligible object is World Bank LPI 2.0 port-exit-to-LLDC corridor time; its
    interactive download is Cloudflare-blocked in this environment.
-9. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,
-   PHL} stable.
-10. **`water-stress-crop-diversification`** — top-4 narrowing {AFG, AZE,
-   PAK, TKM}; UZB perturbation-sensitive — narrower headline.
+9. **`social-protection-shock-coverage`** — *construct-validation issue closed.*
+   Only three named members survive the panel's own value order;
+   every named economy has a documented cash-transfer response, while zero
+   comparable delivery outcomes are joined. Reopen only for an event-level
+   eligibility, receipt, failure, or delivery-time object.
+10. **`water-stress-crop-diversification`** — **active flagship.** Test the
+   inherited top-four narrowing against committed available-water and crop-mix
+   objects before retaining or retiring the national construct.
 11. **`school-heat-disruption`** — honest narrowing to top-1 (KHM only);
     top-5 fails ±50% gate. Smallest-claim flagship candidate.
 12. **`food-price-climate-transmission`** — sensitivity-gate failure on
@@ -164,6 +168,26 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (social-protection construct validation closed; rotation):**
+  Only three members of the inherited named five survive the panel's own value
+  order; Vanuatu and Tajikistan outrank the published tail but were omitted for
+  missing one proxy leg. All five named economies have documented COVID-19
+  cash-transfer responses, while no comparable receipt, speed, failure, or
+  trigger outcome is joined. The country ranking is retired. The nine-section
+  public story, eight-figure spine, publication ladder, deck, and evidence
+  packet passed gates, build, and 1280/375 browser QA. Rotated to
+  `water-stress-crop-diversification` because its committed denominator and
+  crop-mix disagreements can change the claim without another source scan.
+
+- **2026-07-18 (port construct validation closed; rotation):** The inherited
+  imports × LPI top five shares only Indonesia with the main observed CPPI-
+  disadvantage top five and zero to two members across 20 specifications.
+  The public PP note now has all nine research sections and eight visuals.
+  The remaining port-to-inland object is the official LPI 2.0 shipment file,
+  which is behind an owner-access Cloudflare challenge. Rotated to
+  `social-protection-shock-coverage` because another port scan is forbidden
+  by the stopping rule and the next composite needs a direct construct test.
 
 - **2026-07-18 (climate-health construct validation closed; rotation):** The
   PM2.5/employment proxy shares at most one top-three economy with Lancet heat-

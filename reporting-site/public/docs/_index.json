@@ -74,14 +74,14 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 223032,
-    "size_human": "217.8 KB"
+    "size": 224726,
+    "size_human": "219.5 KB"
   },
   {
     "file": "wip-register.md",
     "source": "research/wip-register.md",
-    "size": 9109,
-    "size_human": "8.9 KB"
+    "size": 9269,
+    "size_human": "9.1 KB"
   },
   {
     "file": "red-team.md",
@@ -104,8 +104,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 131561,
-    "size_human": "128.5 KB"
+    "size": 132842,
+    "size_human": "129.7 KB"
   },
   {
     "file": "manifest.sha256",

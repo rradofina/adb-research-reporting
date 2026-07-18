@@ -1,63 +1,40 @@
-# Literature review — Social Protection Shock Coverage
+# Related literature — social protection, payments, and construct validity
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · PP
 
-## 1. Search record
+## Evidence spine
 
-Queries (2026-04-26):
-1. `World Bank ASPIRE social protection coverage methodology`
-2. `Findex 2021 account ownership LMIC pandemic`
-3. `Banerjee Duflo graduation program cash transfer Science`
-4. `shock-responsive social protection LMIC SP`
+ASPIRE compiles indicators on social assistance, social insurance, and labor-
+market programs from administrative and household-survey sources, with explicit
+cross-country comparability caveats [@worldbank2026aspire]. It supports
+coverage and performance analysis but does not turn “all SP coverage” into an
+emergency-delivery measure.
 
-Tier-A: *Science*, *AEJ: Applied Economics*, *World Development*,
-*Journal of Development Economics*. Tier-B: WB Social Protection &
-Jobs, IPA, J-PAL. Tier-C: ADB SP technical notes.
+Global Findex 2021 documents financial access, digital payments, and resilience
+during the pandemic [@wb2022findex]. Account ownership is an enabling condition,
+not a transaction-level observation of government payment receipt.
 
-## 2. Verified entries
+The World Bank G2Px program treats payment architecture, responsible
+digitization, and recipient experience as distinct parts of government-to-
+person delivery [@worldbank2026g2px]. This is the closest methodological
+precedent for why account access alone cannot validate last-mile performance.
 
-- **`wb2018aspire`** — Beegle et al. (2018). Realizing the full
-  potential of social safety nets. WB. **ASPIRE methodology.**
-- **`wb2022findex`** — Demirgüç-Kunt et al. (2022). The Global
-  Findex Database 2021. doi:10.1596/978-1-4648-1897-4. **Account
-  ownership; vintage caveat for pandemic-era elevation.**
-- **`banerjee2015multifaceted`** — Banerjee et al. (2015). A
-  multifaceted program causes lasting progress. Science 348(6236).
-  doi:10.1126/science.1260799. **Six-country graduation-program RCT.**
+The World Bank COVID-19 response database records country measures, program
+descriptions, and—where available—beneficiary, transfer, budget, and timing
+fields [@gentilini2021covidresponses]. Its public matrix is useful for instrument
+presence; the fields are incomplete and preliminary, so it cannot supply a
+harmonized delivery outcome for this cross-country test.
 
-## 3. Synthesis
+## Marginal contribution
 
-Three established facts:
+The program does not propose another social-protection index. It documents a
+general measurement failure: internal parameter stability can coexist with an
+unannounced eligibility rule, construct drift, mixed denominators, asynchronous
+vintages, and no outcome validation. The contribution is the falsification and
+the specification of the next event-level data object.
 
-1. **SP coverage and account ownership are mutually reinforcing
-   for shock-responsive programs.** ASPIRE [@wb2018aspire] tracks
-   coverage; Findex [@wb2022findex] tracks the financial-inclusion
-   side. Both are needed for fast G2P.
-2. **Cash-transfer effectiveness is well-documented at small
-   scale** in RCT settings [@banerjee2015multifaceted].
-3. **Findex 2021 was elevated** by emergency programs; account
-   ownership figures are a high-water mark.
+## What would change the contribution
 
-## 4. Gap
-
-No cross-ADB-DMC ranking of poverty × (1 - readiness) where
-readiness combines SP and account ownership. ASPIRE country
-profiles publish coverage; the joint-with-poverty product is
-the program's contribution.
-
-## 5. Risk of redundancy
-
-WB SPJ publishes SP-coverage country profiles. The marginal
-contribution is the poverty-weighted readiness-gap ranking + the
-top-5 set-stability claim across SP/Findex weight perturbations.
-
-## 6. First testable claim
-
-> Five ADB DMCs — Bangladesh, Lao PDR, Myanmar, Pakistan,
-> Philippines — persistently rank in the top five shock-payment-
-> readiness-gap positions across ±50% perturbation of the
-> SP/Findex weighting.
-
-## 7. §18 attestation
-
-`ai-first`. 2026-04-27.
+A public harmonized dataset of eligible versus actual recipients, successful
+versus failed payments, timestamps, geography, channel, and shock trigger would
+move the program from construct validation to delivery-outcome research.

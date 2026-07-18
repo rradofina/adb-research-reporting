@@ -1,19 +1,24 @@
-# Internal review — Social Protection Shock Coverage
+# Internal critique-pass — social-protection construct validation
 
-`attestation_chain: ai-first`. §18 critique-pass. Closed 2026-04-26.
+`attestation_chain: ai-first`
 
-## Critique
+## Objections and responses
 
-1. Findex 2021 is mid-pandemic; account ownership has shifted with
-   PMJDY in IND, GCash in PHL, and similar. Article should flag
-   vintage.
-2. SP coverage from ASPIRE includes pensions and social assistance
-   together; not all are shock-responsive.
-3. Cash-transfer shock-response capability requires payment-system
-   readiness (G2P, mobile money), not just account ownership.
+1. **The value order compares one-legged and two-legged records.** Correct.
+   The paper uses that fact to reject the headline's unannounced rule, not to
+   endorse the one-legged ranking. Mean imputation is shown only as a second
+   falsification.
+2. **Response-category counts may reflect documentation effort.** Correct.
+   Breadth is labeled a weak construct diagnostic, never readiness.
+3. **All five having cash transfers does not prove successful delivery.**
+   Correct; that is the paper's third gate and the reason the old “cannot
+   reach” wording is removed.
+4. **The safety-net variant is temporally incoherent.** Correct. It falsifies
+   robustness but is explicitly rejected as a replacement ranking.
+5. **The literature could support a delivery study without this index.**
+   Agreed. The conclusion specifies the event-level table needed to begin one.
 
-## Responses
+## Decision
 
-1. Vintage flagged in `limitations.md`.
-2. ASPIRE shock-response subset deferred to §18.5 upgrade-pass.
-3. Mobile-money penetration variable to be added in upgrade-pass.
+The critique changes the claim rather than adding another proxy. The public
+surface leads with measurement failure and limits.

@@ -1,25 +1,25 @@
 {
   "program": "social-protection-shock-coverage",
   "permanent_url": "/social-protection-shock-coverage?view=evidence",
-  "generated_at": "2026-07-18T13:48:13.700Z",
+  "generated_at": "2026-07-18T14:39:24.008Z",
   "hero": {
     "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
     "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
     "json": "generated/charts/social-protection-shock-coverage-thumbnail.json",
-    "title": "Where a shock-response payment cannot reach",
-    "caption": "Pakistan: 23% in poverty, 22% covered by social protection, 21% holding a financial account. A shock payment must travel one of the last two rails.",
-    "headline_number": "Pakistan 23% · 22% · 21%",
-    "visual_form": "triple horizontal bar (poverty / SP / accounts, top-8 readiness gap)",
-    "source": "WDI poverty + ASPIRE SP + Findex accounts",
+    "title": "The stable top five was fixed by a missing-data rule",
+    "caption": "Only three named members survive the panel's own value order, and no comparable successful-receipt or delivery-time outcome is joined.",
+    "headline_number": "3 of 5 · 0 delivery outcomes",
+    "visual_form": "construct-validation finding card",
+    "source": "WDI/ASPIRE/Findex panel and World Bank COVID-19 SPJ response matrix v15",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:26:59+00:00",
+    "generated_at": "2026-07-18T14:28:45.784635+00:00",
     "dimensions": {
-      "width": 1600,
-      "height": 900
+      "width": 2578,
+      "height": 1311
     },
     "sha256": {
-      "png": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5",
-      "svg": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+      "png": "1849c3b11bd912d03475a4e38772adaf330c7b3b9540551e4e45ce46bc574fba",
+      "svg": "2f6451ea0ca4f2f1ddbd9d0b97f761cbd670200d0ca7cf76851f7f488c372738"
     }
   },
   "artifacts": [
@@ -27,40 +27,50 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1243,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.337Z",
-      "sha256": "fde7446f8f9c3ea6b3079fc54ffc8a24b496d92c05531d5d3ca43c87018d14a3",
-      "attestation_chain": null
+      "size": 1632,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T14:20:12.184Z",
+      "sha256": "092e5f3339b895f9dc53bea558b0a93192eedd5c93b74c63abb9bf589c1fb3b4",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1486,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T14:29:39.536Z",
+      "sha256": "914a5ec0c2be0d868a54d83461deb980c3f1fbf0de93f83b554f27c507665075",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 2342,
-      "size_human": "2.3 KB",
-      "mtime": "2026-04-27T03:38:17.580Z",
-      "sha256": "014723487c5877f236137705bd01c8d70e37b7d79e6c1cc3d4e68cb43e94ee12",
+      "size": 2036,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T14:20:56.343Z",
+      "sha256": "c829bc1323dd3d9142d11ab27a77f3194b2ebc452c2ace94544de789a40146bd",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 992,
-      "size_human": "992 B",
-      "mtime": "2026-04-26T03:26:16.910Z",
-      "sha256": "22bd07e9fb4083c212e299a5cf8efec31babeb39bd77942ca652b88645d0dd63",
+      "size": 1648,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T14:20:12.246Z",
+      "sha256": "e06a3c5a58db228ab7b8924606cc8211fcf9f2f49716d897ab9d5c84a335ac57",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 409,
-      "size_human": "409 B",
-      "mtime": "2026-04-26T03:26:19.959Z",
-      "sha256": "785e1cfa4b8e8375f8d7450468dce03e85ef7bdd11dd96ea6d59c75e8c23cb7f",
+      "size": 946,
+      "size_human": "946 B",
+      "mtime": "2026-07-18T14:20:12.250Z",
+      "sha256": "b59dfe465a4955be59e25e4f0ad0bf658f890b1a9f01a65567899ee6bb60e6da",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +87,177 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 371,
-      "size_human": "371 B",
-      "mtime": "2026-04-26T03:26:23.021Z",
-      "sha256": "5bbdfee299df2ce83ef98aa773b5bca0a0ff8d3ef09ffc5670da6022ea3fe658",
+      "size": 852,
+      "size_human": "852 B",
+      "mtime": "2026-07-18T14:20:56.341Z",
+      "sha256": "cc6b31a6360733d71372a66dee071de7e47d2a11940e1c835ba6ec62e1c10606",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 520,
-      "size_human": "520 B",
-      "mtime": "2026-04-26T03:26:46.866Z",
-      "sha256": "5adc8ff1d625bfd7d022da6f26d50735d1723479f08dc25d3b3a94d7feabcc7e",
+      "size": 1270,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T14:20:12.248Z",
+      "sha256": "41ddc6418ac7d901fae452c4817f886232b8cb2f46fdeb157a60d6bb890790ca",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 708,
-      "size_human": "708 B",
-      "mtime": "2026-04-26T03:26:28.398Z",
-      "sha256": "979d2c1ca9a04c984bdfa21fac80cae6cb7183df23608d6794a2d93b314eedf3",
+      "size": 1141,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T14:20:56.344Z",
+      "sha256": "f5eadf43ea8d1c2d0077a83673412e1429ff845208d6239d299e729773cc70de",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1577,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T03:26:39.453Z",
-      "sha256": "deb85b59ef5454dd6954d5e9e4782d3700b4a67b4a4b5ed287c0cf5bb4c270a2",
+      "size": 1280,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T14:20:56.346Z",
+      "sha256": "018f639d2908618cef8bda3680fc7000de8b0cdb1fe88eca508a6ff592f82988",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 775,
-      "size_human": "775 B",
-      "mtime": "2026-04-26T03:26:44.010Z",
-      "sha256": "94756c74ab268182ced4c7662306e3bfd8761c94cd06d0029d491940ec0c4aea",
+      "size": 1241,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T14:20:56.339Z",
+      "sha256": "9b0017ec1afae37d7b6fcc9af0d6737fb3236b9ffb22cfa76d3564b40ea09d2a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1338,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T14:29:39.537Z",
+      "sha256": "b8d3f5c8d2b697d9bf2efa614296a1ecff02a65e80226d675f5898657f850549",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
       "file": "generated/charts/social-protection-shock-coverage-thumbnail.json",
-      "size": 1155,
-      "size_human": "1.1 KB",
-      "sha256": "b6cef3721164ba58e7e403001033b621dff7002bc411d81feb8af19f35fe07cc"
+      "size": 1228,
+      "size_human": "1.2 KB",
+      "sha256": "429f5c3b093a7c633c2bb69978556b7f1cfebe3faed121093cc3935cc54da8b6"
     },
     {
       "file": "generated/charts/social-protection-shock-coverage-thumbnail.png",
-      "size": 104102,
-      "size_human": "101.7 KB",
-      "sha256": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5"
+      "size": 135752,
+      "size_human": "132.6 KB",
+      "sha256": "1849c3b11bd912d03475a4e38772adaf330c7b3b9540551e4e45ce46bc574fba"
     },
     {
       "file": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
-      "size": 117613,
-      "size_human": "114.9 KB",
-      "sha256": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+      "size": 52148,
+      "size_human": "50.9 KB",
+      "sha256": "2f6451ea0ca4f2f1ddbd9d0b97f761cbd670200d0ca7cf76851f7f488c372738"
+    },
+    {
+      "file": "generated/charts/sp-covid-response-matrix.png",
+      "size": 122632,
+      "size_human": "119.8 KB",
+      "sha256": "c72ad10bab6bc4118c4b96efc4c06b1cccf7facc4e8d07f6fee2b48d4172ce2e"
+    },
+    {
+      "file": "generated/charts/sp-covid-response-matrix.svg",
+      "size": 88926,
+      "size_human": "86.8 KB",
+      "sha256": "1c89527bb2cf5d5f17d55a112a374d962d5c32c7f5fdf15a4690815862472aab"
+    },
+    {
+      "file": "generated/charts/sp-dropped-leg-ranking.png",
+      "size": 123242,
+      "size_human": "120.4 KB",
+      "sha256": "6c9388c35458e35e2f66f4520ea66f93f00acdcaf467873a36058c7881c5119b"
+    },
+    {
+      "file": "generated/charts/sp-dropped-leg-ranking.svg",
+      "size": 77669,
+      "size_human": "75.8 KB",
+      "sha256": "2247b9b88543e990f67c515c434d3afdfb6784670a30c7a421089736dd72129b"
+    },
+    {
+      "file": "generated/charts/sp-membership-churn.png",
+      "size": 119710,
+      "size_human": "116.9 KB",
+      "sha256": "112c9e2dbd3bfb3da7510eed54fa0e692e2e4d069b856fd6ff7d4b6c039793e3"
+    },
+    {
+      "file": "generated/charts/sp-membership-churn.svg",
+      "size": 87802,
+      "size_human": "85.7 KB",
+      "sha256": "d332853824c45e58be98a5c3c5041e228725df043186c1c47a4855bf1202150b"
+    },
+    {
+      "file": "generated/charts/sp-poverty-dominance.png",
+      "size": 145170,
+      "size_human": "141.8 KB",
+      "sha256": "34cb7c30560ec16f73c2218d52fe2370b6272b4e426e2c409a94ecc80af78812"
+    },
+    {
+      "file": "generated/charts/sp-poverty-dominance.svg",
+      "size": 81302,
+      "size_human": "79.4 KB",
+      "sha256": "325bb920d1bac1699d216cde640bbe91bc552efa7ae1090a5623a40849e6d4b5"
+    },
+    {
+      "file": "generated/charts/sp-proxy-vs-response-breadth.png",
+      "size": 148270,
+      "size_human": "144.8 KB",
+      "sha256": "7618b0ddebc4a80a1fea52fe557bf779bb9ecd6aa08484b8f467196472b80931"
+    },
+    {
+      "file": "generated/charts/sp-proxy-vs-response-breadth.svg",
+      "size": 87872,
+      "size_human": "85.8 KB",
+      "sha256": "9fe062c5f709341354cbfc6f23a910f7afa7200ef60bedd0c8652c6286bf75bf"
+    },
+    {
+      "file": "generated/charts/sp-source-alignment-funnel.png",
+      "size": 120431,
+      "size_human": "117.6 KB",
+      "sha256": "dfababc035dd6a672917a1e3fd73d2475d91383f29d5d3c823a86af68c53baef"
+    },
+    {
+      "file": "generated/charts/sp-source-alignment-funnel.svg",
+      "size": 75893,
+      "size_human": "74.1 KB",
+      "sha256": "08e6fa62250e5550650a7b5f1945ee4d2b3135256269b2e654ebbfe1e9cda247"
+    },
+    {
+      "file": "generated/charts/sp-three-gate-validity.png",
+      "size": 148255,
+      "size_human": "144.8 KB",
+      "sha256": "3cf876895936e99000536a8c79629865f219a8d9d27d0ee95b0d2566ad1e95be"
+    },
+    {
+      "file": "generated/charts/sp-three-gate-validity.svg",
+      "size": 85861,
+      "size_human": "83.8 KB",
+      "sha256": "bc956e74d596e49b31786c70e05ce54fe1713d44440d213d6c7a7218986a033a"
+    },
+    {
+      "file": "generated/charts/sp-vintage-profile.png",
+      "size": 132663,
+      "size_human": "129.6 KB",
+      "sha256": "abd4ace7fe3670fff0d913bc64b77600be96fb92d7743b2f495bc1a05c514b88"
+    },
+    {
+      "file": "generated/charts/sp-vintage-profile.svg",
+      "size": 80051,
+      "size_human": "78.2 KB",
+      "sha256": "5570d3dc84bc55c97a1e160cd13e1249a63e34cf7343aac3bbe95fa00ac5b65e"
     },
     {
       "file": "generated/social-protection-adb-panel.csv",
@@ -151,15 +267,27 @@
     },
     {
       "file": "generated/social-protection-adb-panel.json",
-      "size": 16090,
+      "size": 16099,
       "size_human": "15.7 KB",
-      "sha256": "f62c02bfd9791b651fe77b1a51597d5bda6721b0118c86a952aed831178fc113"
+      "sha256": "322ede16eb27c624cc06acf297cbd1cbe695d4788d26a0587b365559671b6097"
+    },
+    {
+      "file": "generated/social-protection-covid-response-diagnostics.csv",
+      "size": 5044,
+      "size_human": "4.9 KB",
+      "sha256": "fa7720c797d50966fb2d50d5605d3a2307d9acb2bdf9100840aef5d9ce548021"
+    },
+    {
+      "file": "generated/social-protection-covid-response-validation.json",
+      "size": 2973,
+      "size_human": "2.9 KB",
+      "sha256": "aba1f2074c95c826947150ccd2bfc02ca80f4510a1a85072b3f3b72e7a2cd34c"
     },
     {
       "file": "generated/social-protection-dropped-leg-source-audit.json",
-      "size": 110529,
-      "size_human": "107.9 KB",
-      "sha256": "ff1e5ce20962e629451f867d214e6d4c1a05bd1abd05cece1af4996480216cbb"
+      "size": 111045,
+      "size_human": "108.4 KB",
+      "sha256": "a24302c0caffa62d622179c2f58df3d403cde31adb529f31a8a6bdf30381896a"
     },
     {
       "file": "generated/social-protection-dropped-leg.csv",
@@ -171,7 +299,7 @@
       "file": "generated/social-protection-dropped-leg.json",
       "size": 20093,
       "size_human": "19.6 KB",
-      "sha256": "ae25b6d233f0fbd307002ed87beaddb871ba7c378dfac007088d1e962318b89e"
+      "sha256": "6255d1e86e92f15768bff7358816ab9ade3077b514d972d9bd68e42335cf33a9"
     },
     {
       "file": "generated/social-protection-social-safety-net-rerank.csv",
@@ -181,21 +309,21 @@
     },
     {
       "file": "generated/social-protection-source-readiness-sources.csv",
-      "size": 1739,
+      "size": 1758,
       "size_human": "1.7 KB",
-      "sha256": "41752940817929f547ebf6b62dc0b2e3e4fcc2971ff9ea0347b1b996b442b1ae"
+      "sha256": "6aaac12dfcad1636cc27fe06466425f79a99f2ed471654e4d2b89489d47584af"
     },
     {
       "file": "generated/social-protection-source-readiness.json",
-      "size": 84619,
-      "size_human": "82.6 KB",
-      "sha256": "72b528b8281e6367b297a264c5e8847bdde849846705a4b5f046aac4e033ff6f"
+      "size": 85118,
+      "size_human": "83.1 KB",
+      "sha256": "12fe0666b9aca18a349f73d5c91471e2c06fdc8eaa450e77c12ec63af4aeae33"
     }
   ],
   "articles": [
     {
       "slug": "sp-shock-readiness-cluster",
-      "title": "Five DMCs hold the top of the shock-payment-readiness gap — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines",
+      "title": "The “stable top five” was fixed by a missing-data rule",
       "attestation_chain": "ai-first"
     }
   ],
@@ -269,7 +397,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,21 +422,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/social-protection-shock-coverage/REPRODUCE.md",
+    "deck": "/programs/social-protection-shock-coverage/social-protection-shock-coverage-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/social-protection-shock-coverage"
   }

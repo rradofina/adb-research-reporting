@@ -176,8 +176,8 @@ export const programs: ProgramEntry[] = [
     title: "Social protection shock coverage",
     status: "PP",
     summary:
-      "Pakistan combines 23 % poverty headcount, 22 % any-social-protection coverage, and 21 % Findex account ownership — the widest gap in the panel between people in need and the two rails a shock-response payment can travel. Lao PDR sits at 2 % SP coverage; Myanmar account ownership 48 %.",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
+      "The inherited ‘stable top five’ is rejected. Vanuatu and Tajikistan outrank two named members but were omitted for missing one proxy leg; all five named economies have documented COVID-19 cash-transfer responses, while zero comparable delivery outcomes are joined.",
+    note: "AI-first construct-validation checkpoint completed 2026-07-18; the country ranking is retired.",
     href: "/program/social-protection-shock-coverage",
   },
   {

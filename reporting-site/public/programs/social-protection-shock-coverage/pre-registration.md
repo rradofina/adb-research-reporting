@@ -1,41 +1,44 @@
-# Pre-registration — Social Protection Shock Coverage
+# Pre-registration — construct validation
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-26.
+`attestation_chain: ai-first` · PP
 
-## 1. Claim
+## Claim under test
 
-> Five ADB DMCs — **Bangladesh, Lao PDR, Myanmar, Pakistan,
-> Philippines** — persistently rank in the top-5 shock-payment-
-> readiness-gap, across ±50% perturbation of the SP/Findex weight,
-> reflecting high poverty + low SP coverage + low account ownership.
+The inherited named five is a stable, interpretable screen of national
+shock-payment-readiness gaps.
 
-## 2. Falsification
+## Population and unit
 
-Top-5 set composition changes by > 1 entry under any ±50% perturbation.
+ADB developing member roster; economy-level latest-available WDI observations.
+External construct check: economy × documented COVID-19 response category in
+the World Bank version-15 matrix dated 14 May 2021.
 
-## 3. Population
+## Falsification rules
 
-43 ADB DMCs with ASPIRE SP coverage + Findex account + poverty data.
+Reject the named-five claim if any of the following holds:
 
-## 5. Metric
+1. the named set is not the five largest values produced by the committed formula;
+2. a reasonable missing-leg treatment changes the membership;
+3. a narrower coverage construct has low membership agreement;
+4. a qualified direct source contradicts the interpretation or lacks the
+   delivery outcome required by the label; or
+5. the direct construct association is weak, unstable, or points the wrong way.
 
-`gap = (poverty/100) × (1 - average(sp_coverage, account_ownership)) × 100`.
-Triage only.
+## Main diagnostics
 
-## 6. Arbitrary numerics
+- reproduce value order before applying a completeness filter;
+- mean-impute each missing proxy leg using the complete-record mean;
+- rerun with ASPIRE safety-net coverage;
+- parse eight documented World Bank COVID-19 response categories;
+- estimate Spearman association and a deterministic 2,000-draw bootstrap interval.
 
-| Param | Value | Range |
-|---|---|---|
-| SP weight in average | 0.5 | 0.25–0.75 |
+## Arbitrary numerics
 
-## 7. Sources
+The inherited proxy weights retain the existing ±50% sensitivity. The direct
+response matrix uses source-defined categories and no numeric cutoff. Mean
+imputation is a transparent falsification diagnostic, not a preferred estimate.
 
-WDI ASPIRE; Findex 2021; WB poverty.
+## Decision
 
-## 8. Decision
-
-Common top-5 across baseline + 2 perturbation = `[BGD, LAO, MMR, PAK, PHL]`. **Positive.**
-
-## 10. §18
-
-`ai-first`. 2026-04-26.
+The claim is rejected. The output becomes a measurement audit, not a revised
+country priority ranking.

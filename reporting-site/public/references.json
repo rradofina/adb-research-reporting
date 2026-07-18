@@ -734,6 +734,41 @@
   },
   {
     "type": "techreport",
+    "key": "gentilini2021covidresponses",
+    "author": "Gentilini, Ugo and Almenfi, Mohamed and Orton, Ian and Dale, Pamela",
+    "title": "Social Protection and Jobs Responses to COVID-19: A Real-Time Review of Country Measures",
+    "institution": "World Bank",
+    "year": "2021",
+    "number": "Version 15, May 14, 2021",
+    "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/129431621025702954",
+    "note": "Retrieved 2026-07-18. Public 3,197-page workbook rendering parsed for the instrument-presence construct check; the source warns that records are preliminary and should be interpreted with caution.",
+    "short": "Gentilini et al. 2021",
+    "long": "Gentilini, Ugo and Almenfi, Mohamed and Orton, Ian and Dale, Pamela (2021) \"Social Protection and Jobs Responses to COVID-19: A Real-Time Review of Country Measures.\" World Bank"
+  },
+  {
+    "type": "misc",
+    "key": "worldbank2026aspire",
+    "author": "World Bank",
+    "title": "ASPIRE: The Atlas of Social Protection Indicators of Resilience and Equity",
+    "year": "2026",
+    "url": "https://www.worldbank.org/en/data/datatopics/aspire",
+    "note": "Retrieved 2026-07-18. ASPIRE describes cross-country social assistance, social insurance, and labor-market indicators derived from administrative and household-survey sources, with explicit comparability caveats.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"ASPIRE: The Atlas of Social Protection Indicators of Resilience and Equity.\""
+  },
+  {
+    "type": "misc",
+    "key": "worldbank2026g2px",
+    "author": "World Bank",
+    "title": "Government-to-Person (G2Px)",
+    "year": "2026",
+    "url": "https://www.worldbank.org/en/programs/g2px",
+    "note": "Retrieved 2026-07-18. G2Px frames payment delivery as an architecture and recipient-experience problem, not simply account ownership.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"Government-to-Person (G2Px).\""
+  },
+  {
+    "type": "techreport",
     "key": "wri2023aqueduct",
     "author": "Kuzma, Samantha and Saccoccia, Liz and Chertock, Marlena",
     "title": "25 Countries, Housing One-Quarter of the Population, Face Extremely High Water Stress",

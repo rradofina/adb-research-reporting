@@ -54,10 +54,11 @@ with 2000 coverage; Turkmenistan enters through a 1998 poverty value and a
 it is that the current result is highly sensitive to which public proxy is
 called "coverage."
 
-The source audit also catches a label drift. Current WDI metadata names
+The source audit also caught and repaired a label drift. Current WDI metadata names
 `SI.POV.DDAY` as **"Poverty headcount ratio at $3.00 a day (2021 PPP)"**,
-while older program prose labels the same indicator as `$2.15/day 2017 PPP`.
-That mismatch must be visible anywhere the poverty denominator is shown.
+while the earlier program prose labeled the same indicator as `$2.15/day 2017 PPP`.
+The committed scripts and public copy now use the current definition; the audit
+preserves the historical correction.
 
 The analysis-ready object is still missing: no emergency-transfer program
 registry, beneficiary roster, payment-rail use table, delivery-speed record,

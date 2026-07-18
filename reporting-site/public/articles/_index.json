@@ -208,6 +208,37 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "sp-shock-readiness-cluster",
+    "title": "The “stable top five” was fixed by a missing-data rule",
+    "subtitle": "Two omitted economies outrank the published tail, every named economy had a documented COVID-19 cash-transfer response, and no comparable delivery outcome is joined.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "social-protection-shock-coverage",
+    "maturity": "PP",
+    "topics": [
+      "social-protection",
+      "financial-inclusion",
+      "shock-response",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "An inherited country screen multiplied the World Bank poverty headcount by one minus the average of ASPIRE social-protection coverage and Global Findex account ownership, then named Bangladesh, Lao PDR, Myanmar, Pakistan, and the Philippines as a stable shock-payment-readiness-gap top five. This paper audits the construction before adding more polish. The named set is not the panel's descending value order: Vanuatu and Tajikistan outrank the Philippines and Bangladesh but were omitted because each lacks one proxy leg. Mean imputation preserves that substitution. Replacing all-social- protection coverage with the narrower safety-net series produces zero overlap, but with old and incomplete observations that cannot support a replacement ranking. A new parse of the World Bank COVID-19 response matrix documents cash-transfer instruments in all five named economies, yet the source does not supply comparable successful-receipt, delivery-time, payment-failure, or trigger-latency outcomes. The country ranking is rejected. The defensible contribution is a construct-validation result and a precise specification of the next data object.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "sp-shock-readiness-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "workday-loss-pressure-cluster",
     "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
     "subtitle": "Across 21 aligned year-and-parameter tests, the proxy shares at most one of its top three economies with the Lancet Countdown measure of heat-related potential work hours lost.",
@@ -628,40 +659,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "sp-shock-readiness-cluster",
-    "title": "Five DMCs hold the top of the shock-payment-readiness gap — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines",
-    "subtitle": "High poverty meets thin SP coverage and thin account ownership. Stable across SP/Findex weighting perturbations.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "social-protection-shock-coverage",
-    "maturity": "PP",
-    "topics": [
-      "social-protection",
-      "financial-inclusion",
-      "shock-response"
-    ],
-    "geographies": [
-      "BGD",
-      "LAO",
-      "MMR",
-      "PAK",
-      "PHL"
-    ],
-    "abstract": "The shock-payment-readiness gap combines poverty headcount with payment-system readiness (a weighted average of WDI ASPIRE social- protection coverage and World Bank Findex 2021 account ownership). Across 43 ADB DMCs, five economies — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines — persistently hold the top-5 positions in the gap ranking, stable across +/- 50 percent perturbation of the SP/Findex weight. ASPIRE pools all SP types (cash, in-kind, pensions); shock-responsive SP is a smaller subset. The 2021 Findex vintage was elevated by pandemic emergency cash transfers. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "sp-shock-readiness-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "water-crop-pressure-cluster",
     "title": "Four DMCs hold the top of the water-stress + crop-pressure ranking — Afghanistan, Azerbaijan, Pakistan, Turkmenistan",
     "subtitle": "Three within-country water-intensity, one transboundary. The fifth position is parameter-sensitive.",
@@ -916,6 +913,36 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "sp-shock-readiness-cluster-brief",
+    "title": "The shock-payment “top five” fails its own ranking rule",
+    "subtitle": "A one-page construct check of missing data, proxy choice, and observed COVID-19 responses.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "social-protection-shock-coverage",
+    "maturity": "PP",
+    "topics": [
+      "social-protection",
+      "payments",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The named shock-payment-readiness top five is rejected. Only three members survive the panel's own value order, and the external response source does not contain a comparable delivery outcome.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "sp-shock-readiness-cluster-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "access-services-blog",
     "title": "Before ranking access, check whether the map contains the facilities",
     "subtitle": "A Philippine registry comparison turns an open-map access screen into a more honest source-validation tool.",
@@ -1137,6 +1164,36 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "sp-shock-readiness-cluster-blog",
+    "title": "A stable social-protection score can still rank the wrong records",
+    "subtitle": "The published top five changes when the panel's own missing-data rule is applied consistently.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "social-protection-shock-coverage",
+    "maturity": "PP",
+    "topics": [
+      "social-protection",
+      "payments",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The inherited screen looked stable under weight changes, but omitted two higher-valued one-legged records and had no direct delivery outcome.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "sp-shock-readiness-cluster-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "access-services-social",
     "title": "Access services — social card",
     "subtitle": "Tweet-length summary of the registry-denominator finding.",
@@ -1347,6 +1404,36 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "sp-shock-readiness-cluster-social",
+    "title": "Social-protection construct validation — social card",
+    "subtitle": "The stable top five fails its own value order.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "social-protection-shock-coverage",
+    "maturity": "PP",
+    "topics": [
+      "social-protection",
+      "payments",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "Only three of five named economies survive the panel's own value rank, and zero comparable delivery outcomes are joined.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "sp-shock-readiness-cluster-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1573,6 +1660,34 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "sp-shock-readiness-cluster-deck",
+    "title": "\"The stable top five was fixed by a missing-data rule\"",
+    "subtitle": "\"Social-protection construct validation — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "social-protection-shock-coverage",
+    "maturity": "PP",
+    "topics": [
+      "social-protection",
+      "payments",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "sp-shock-readiness-cluster-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

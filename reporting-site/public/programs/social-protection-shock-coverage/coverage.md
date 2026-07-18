@@ -1,15 +1,17 @@
-# Coverage — Social Protection Shock Coverage
+# Coverage — social-protection construct validation
 
-`attestation_chain: ai-first`. 2026-04-26.
+`attestation_chain: ai-first` · PP
 
-43 of 50 DMCs rankable.
+| Object | Roster coverage | Unit | Main limit |
+|---|---:|---|---|
+| ADB roster | 43 | economy | analysis frame only |
+| WDI poverty, latest | 36 | economy-year | asynchronous vintage |
+| ASPIRE all-SP, latest | 35 | economy-year | not shock-specific |
+| ASPIRE safety net, latest | 30 | economy-year | sparse; 2000–2022 |
+| Findex account ownership, latest | 27 | economy-year | access is not receipt |
+| World Bank COVID response matrix | 41 | economy × category | presence only |
+| Common gap/response diagnostic | 24 | economy | selected by data availability |
+| Comparable delivery outcome | 0 | recipient/event | not joined |
 
-## Top-5
-
-| ISO3 | Poverty % | SP coverage % | Account % |
-|---|---|---|---|
-| PAK | 23 | 22 | 21 |
-| MMR | 10 | 14 | (low) |
-| LAO | (computed) | 2 | (low) |
-| BGD | (computed) | (computed) | (computed) |
-| PHL | (computed) | (computed) | (computed) |
+The external matrix omits Marshall Islands and Nauru from the ADB roster. No
+absence is interpreted as no policy response.

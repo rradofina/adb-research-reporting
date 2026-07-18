@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-04-26T03:23:12.458992Z",
+  "program": "social-protection-shock-coverage",
+  "metric": "shock-payment-readiness-gap ranking",
+  "common_top5_across_runs": [
+    "BGD",
+    "LAO",
+    "MMR",
+    "PAK",
+    "PHL"
+  ],
+  "runs": [
+    {
+      "label": "baseline_sp_weight_0.5",
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 18.05
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 7.12
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 5.7
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 2.8
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 2.7
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 2.25
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 1.76
+        },
+        {
+          "iso3": "GEO",
+          "country": "Georgia",
+          "value": 1.33
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyzstan",
+          "value": 1.1
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 0.99
+        }
+      ]
+    },
+    {
+      "label": "sp_weight_minus50",
+      "sp_weight": 0.25,
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 18.11
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 6.25
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 5.07
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 2.74
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 2.69
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 2.43
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 1.63
+        },
+        {
+          "iso3": "GEO",
+          "country": "Georgia",
+          "value": 1.29
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyzstan",
+          "value": 1.15
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 0.64
+        }
+      ]
+    },
+    {
+      "label": "sp_weight_plus50",
+      "sp_weight": 0.75,
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 17.98
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 7.99
+        },
+        {
+          "iso3": "LAO",
+          "country": "Lao PDR",
+          "value": 6.32
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 2.91
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 2.66
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 2.07
+        },
+        {
+          "iso3": "UZB",
+          "country": "Uzbekistan",
+          "value": 1.89
+        },
+        {
+          "iso3": "GEO",
+          "country": "Georgia",
+          "value": 1.38
+        },
+        {
+          "iso3": "LKA",
+          "country": "Sri Lanka",
+          "value": 1.34
+        },
+        {
+          "iso3": "KGZ",
+          "country": "Kyrgyzstan",
+          "value": 1.04
+        }
+      ]
+    }
+  ]
+}

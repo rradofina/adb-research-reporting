@@ -1,0 +1,44 @@
+iso3,country,source_page,source_row,documented_in_matrix,cash_based_transfers,public_works,in_kind_or_school_feeding,utility_and_financial_support,paid_leave_or_unemployment,health_insurance_support,pensions_and_disability_benefits,social_security_contributions,social_assistance_breadth,social_protection_breadth,poverty_pct,sp_coverage_pct,account_pct,legs_present,shock_payment_readiness_gap,headline_top5_inherited,headline_top5
+AFG,Afghanistan,5.0,1.0,True,True,False,True,True,False,False,True,False,3.0,4.0,,,,,,,False
+ARM,Armenia,5.0,10.0,True,True,True,True,True,False,False,True,False,4.0,5.0,0.8,75.295,55.3477,both,0.3,False,False
+AZE,Azerbaijan,5.0,14.0,True,True,True,True,True,True,False,False,True,4.0,6.0,,,,,,,False
+BGD,Bangladesh,5.0,17.0,True,True,False,True,True,False,True,False,False,3.0,4.0,5.9,55.5564,52.8061,both,2.7,True,True
+BRN,Brunei Darussalam,6.0,30.0,True,False,False,False,True,False,False,False,True,1.0,2.0,,,,,,,False
+BTN,Bhutan,5.0,24.0,True,True,True,True,True,False,False,False,False,4.0,4.0,0.0,8.971,,sp-only,0.0,False,False
+CHN,China,6.0,43.0,True,True,False,False,True,True,True,True,True,2.0,6.0,0.0,,88.709,acc-only,0.0,False,False
+COK,Cook Islands,6.0,48.0,True,True,False,False,False,True,False,False,False,1.0,2.0,,,,,,,False
+FJI,Fiji,6.0,69.0,True,True,False,False,True,True,False,True,True,2.0,5.0,,,,,,,False
+FSM,Micronesia,8.0,131.0,True,True,False,False,True,True,False,False,False,2.0,3.0,,,,,,,False
+GEO,Georgia,7.0,75.0,True,True,False,True,True,True,False,True,False,3.0,5.0,4.2,65.9739,70.4987,both,1.3,False,False
+HKG,Hong Kong SAR,7.0,90.0,True,True,True,True,True,True,False,False,True,4.0,6.0,,,,,,,False
+IDN,Indonesia,7.0,94.0,True,True,True,True,True,False,True,False,False,4.0,5.0,5.4,65.093,51.7553,both,2.2,False,False
+IND,India,7.0,93.0,True,True,True,True,False,True,True,True,True,3.0,7.0,5.3,,77.5291,acc-only,1.2,False,False
+KAZ,Kazakhstan,7.0,105.0,True,True,True,True,True,False,True,False,False,4.0,5.0,0.0,57.2609,81.1085,both,0.0,False,False
+KGZ,Kyrgyz Republic,7.0,111.0,True,True,False,True,True,True,False,False,True,3.0,5.0,2.2,55.1526,45.0948,both,1.1,False,False
+KHM,Cambodia,6.0,35.0,True,True,True,False,False,False,False,False,False,2.0,2.0,,,,,,,False
+KIR,Kiribati,7.0,107.0,True,False,False,False,False,True,False,False,True,0.0,2.0,0.9,51.7177,,sp-only,0.4,False,False
+LAO,Lao PDR,7.0,112.0,True,True,False,True,True,False,False,False,False,3.0,3.0,7.1,2.1592,37.32,both,5.7,True,True
+LKA,Sri Lanka,9.0,186.0,True,True,False,True,True,False,True,True,False,3.0,5.0,2.7,37.5004,89.2707,both,1.0,False,False
+MDV,Maldives,8.0,125.0,True,False,False,True,True,True,False,False,False,2.0,3.0,0.0,28.6075,79.5464,both,0.0,False,False
+MHL,Marshall Islands,,,False,,,,,,,,,,,2.1,62.732,,sp-only,0.8,False,False
+MMR,Myanmar,8.0,139.0,True,True,True,True,True,False,True,False,True,4.0,6.0,10.3,13.9684,47.791,both,7.1,True,True
+MNG,Mongolia,8.0,134.0,True,True,False,True,True,True,False,False,True,3.0,5.0,0.4,92.6014,98.455,both,0.0,False,False
+MYS,Malaysia,8.0,124.0,True,True,False,True,True,True,False,True,True,3.0,6.0,0.0,76.6754,88.3749,both,0.0,False,False
+NPL,Nepal,8.0,141.0,True,True,True,True,True,True,True,False,True,4.0,7.0,2.4,,54.0027,acc-only,1.1,False,False
+NRU,Nauru,,,False,,,,,,,,,,,,,,,,,False
+PAK,Pakistan,8.0,152.0,True,True,False,True,True,False,True,True,False,3.0,5.0,23.0,22.0928,20.9806,both,18.0,True,True
+PHL,Philippines,9.0,158.0,True,True,True,True,True,True,False,False,True,4.0,6.0,5.3,43.0411,51.3718,both,2.8,True,True
+PLW,Palau,8.0,153.0,True,False,True,False,True,True,False,False,False,2.0,3.0,,,,,,,False
+PNG,Papua New Guinea,9.0,155.0,True,False,False,True,False,False,False,False,True,1.0,2.0,,,,,,,False
+SLB,Solomon Islands,9.0,181.0,True,False,False,True,True,False,False,False,True,2.0,3.0,,,,,,,False
+THA,Thailand,10.0,198.0,True,True,False,False,True,True,True,False,True,2.0,5.0,0.0,87.1883,95.577,both,0.0,False,False
+TJK,Tajikistan,10.0,196.0,True,True,False,False,True,True,False,False,False,2.0,3.0,6.1,,39.4882,acc-only,3.7,False,False
+TKM,Turkmenistan,10.0,205.0,True,True,False,False,True,False,False,False,True,2.0,3.0,,,,,,,False
+TLS,Timor-Leste,10.0,199.0,True,True,False,True,True,False,False,False,True,3.0,4.0,,,,,,,False
+TON,Tonga,10.0,201.0,True,True,False,False,True,True,False,False,True,2.0,4.0,,,,,,,False
+TUV,Tuvalu,10.0,207.0,True,True,False,False,True,False,False,False,True,2.0,3.0,,,,,,,False
+TWN,"Taiwan, China",10.0,195.0,True,True,True,True,True,True,False,False,True,4.0,6.0,,,,,,,False
+UZB,Uzbekistan,10.0,214.0,True,True,True,True,True,True,True,True,False,4.0,7.0,2.7,25.4578,44.1348,both,1.8,False,False
+VNM,Viet Nam,10.0,217.0,True,True,False,False,True,False,False,True,True,2.0,4.0,1.6,89.4056,56.2658,both,0.4,False,False
+VUT,Vanuatu,10.0,215.0,True,True,False,False,True,False,False,False,False,2.0,2.0,19.5,30.352,,sp-only,13.6,False,False
+WSM,Samoa,9.0,169.0,True,True,False,False,True,True,False,False,True,2.0,4.0,,,,,,,False

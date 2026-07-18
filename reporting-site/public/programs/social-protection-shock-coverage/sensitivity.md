@@ -1,16 +1,21 @@
-# Sensitivity — Social Protection Shock Coverage
+# Sensitivity — social-protection construct
 
-`attestation_chain: ai-first`. Run 2026-04-26.
+`attestation_chain: ai-first` · PP
 
-| SP weight | Top-5 |
-|---|---|
-| 0.25 (-50%) | (subset stable) |
-| 0.50 (baseline) | BGD, LAO, MMR, PAK, PHL |
-| 0.75 (+50%) | (subset stable) |
+The original ±50% perturbation of social-protection versus account-ownership
+weights preserves the named set only because it holds the same completeness
+filter fixed. That is internal formula stability, not construct validity.
 
-**Common top-5: `[BGD, LAO, MMR, PAK, PHL]`.** Stable.
+Three stronger specification changes fail to preserve the claim:
 
-## TODO §18.5
+- **Unfiltered value order:** two of five members change.
+- **Mean-imputed missing legs:** the same two members change.
+- **Narrower safety-net coverage:** zero of five members remain.
 
-- Findex 2025 (when published) replacing 2021.
-- Subnational SP coverage where available.
+The safety-net result is not a replacement ranking: its leading observations
+combine old, asynchronous, and often one-legged inputs. The external response-
+breadth association is also uncertain (Spearman −0.07; bootstrap interval
+−0.47 to 0.36).
+
+No arbitrary numeric cutoff is introduced in the external matrix parse; its
+eight columns are source-defined response categories.

@@ -284,15 +284,16 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "social-protection-shock-coverage",
     betterSource:
-      "ASPIRE disaggregations; World Bank G2Px; administrative beneficiary coverage; payment-agent or mobile-money locations; disaster shock footprints.",
+      "Event-level shock-program registries; eligibility and actual-recipient counts; payment transactions and failures; timestamps; grievance records; World Bank G2Px recipient-experience objects; shock footprints.",
     betterUnit:
       "Province/district, beneficiary group, payment-point catchment, shock-affected municipality, and delivery-time window.",
     priority: "P2",
     rationale:
-      "The current country-level readiness gap is useful. Delivery speed, adequacy, and payment geography are what make it shock-responsive.",
+      "The country ranking failed construct validation. A future result must observe eligibility, receipt, failure, timeliness, and geography at the same program and shock unit.",
     sourceLinks: [
       { label: "ASPIRE", href: "https://www.worldbank.org/en/data/datatopics/aspire" },
       { label: "G2Px", href: "https://www.worldbank.org/en/programs/g2px" },
+      { label: "COVID-19 response database", href: "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/129431621025702954" },
     ],
   },
   {

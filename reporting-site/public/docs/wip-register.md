@@ -87,8 +87,10 @@ end-to-end.
   and overlap remains 0–2 across 20 specifications. The port-to-inland
   leg awaits the official LPI 2.0 shipment file. Article:
   `articles/port-friction-trade-volume-cluster.md`.
-- **social-protection-shock-coverage** — 43 ADB DMCs; top-5 set
-  {BGD, LAO, MMR, PAK, PHL} stable. Article:
+- **social-protection-shock-coverage** — inherited national top five rejected:
+  only three named members survive the panel's own value order; every named
+  economy has a documented cash-transfer response, while zero comparable
+  delivery outcomes are joined. Article:
   `articles/sp-shock-readiness-cluster.md`.
 - **water-stress-crop-diversification** — top-4 narrowing {AFG, AZE,
   PAK, TKM}; UZB shifts under yield perturbations. Article:

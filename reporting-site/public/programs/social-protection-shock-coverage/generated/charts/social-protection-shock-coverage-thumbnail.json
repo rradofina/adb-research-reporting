@@ -1,27 +1,28 @@
 {
   "program": "social-protection-shock-coverage",
-  "title": "Where a shock-response payment cannot reach",
-  "caption": "Pakistan: 23% in poverty, 22% covered by social protection, 21% holding a financial account. A shock payment must travel one of the last two rails.",
-  "headline_number": "Pakistan 23% \u00b7 22% \u00b7 21%",
-  "visual_form": "triple horizontal bar (poverty / SP / accounts, top-8 readiness gap)",
-  "source": "WDI poverty + ASPIRE SP + Findex accounts",
+  "title": "The stable top five was fixed by a missing-data rule",
+  "caption": "Only three named members survive the panel's own value order, and no comparable successful-receipt or delivery-time outcome is joined.",
+  "headline_number": "3 of 5 \u00b7 0 delivery outcomes",
+  "visual_form": "construct-validation finding card",
+  "source": "WDI/ASPIRE/Findex panel and World Bank COVID-19 SPJ response matrix v15",
   "inputs": [
-    "generated/social-protection-adb-panel.csv"
+    "generated/social-protection-dropped-leg.json",
+    "generated/social-protection-covid-response-validation.json"
   ],
-  "script": "social-protection-shock-coverage/scripts/build-thumbnail.py",
+  "script": "social-protection-shock-coverage/scripts/build-figure-dossier.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T20:26:59+00:00",
+  "generated_at": "2026-07-18T14:28:45.784635+00:00",
   "dimensions": {
-    "width": 1600,
-    "height": 900
+    "width": 2578,
+    "height": 1311
   },
   "files": {
     "png": "social-protection-shock-coverage-thumbnail.png",
     "svg": "social-protection-shock-coverage-thumbnail.svg"
   },
   "sha256": {
-    "png": "13b933ad197d59c02f5d3fbadfc389c7c18c768b54c2194f10e056542ab214b5",
-    "svg": "af84507ea58025f1303589a517d4cf90dddbcc6b6f7c03c7659be943afd42603"
+    "png": "1849c3b11bd912d03475a4e38772adaf330c7b3b9540551e4e45ce46bc574fba",
+    "svg": "2f6451ea0ca4f2f1ddbd9d0b97f761cbd670200d0ca7cf76851f7f488c372738"
   }
 }

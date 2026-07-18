@@ -2,8 +2,8 @@
 
 `attestation_chain: ai-first` · Last updated: 2026-07-18
 
-- **Active flagship:** Yes.
-- **Stage:** L4 construct validation; source-unlock wall reached.
+- **Active flagship:** No; current issue closed and rotated 2026-07-18.
+- **Stage:** L8 owner-only source wall after L4 construct validation.
 - **Finding:** In the 2025 CPPI main test, only Indonesia remains in the inherited {CHN, IND, IDN, THA, VNM} top five; across 20 specifications the overlap ranges from zero to two.
 - **Claim decision:** Retire the imports × survey-LPI friction ranking. The call-weighted association with observed port-time disadvantage is -0.57 (95% bootstrap interval -0.83 to -0.11).
 - **Reader progress:** Seven evidence figures and a new hero now show the rank inversion, port heterogeneity, sensitivity, and source boundary.

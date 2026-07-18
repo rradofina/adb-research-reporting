@@ -1,40 +1,27 @@
-# External red-team review — Social Protection Shock Coverage
+# External red-team synthesis — social-protection construct validation
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-26.
+`attestation_chain: ai-first`
 
-**No individual reviewer was contacted.**
+No individual external reviewer was contacted. This is an AI synthesis of
+objections implied by public World Bank ASPIRE, Findex, G2Px, and COVID-19
+response documentation under Constitution §18.4.
 
-## Roster
+## Likely reviewer objections
 
-| ID | Institution | Synthesized from |
-|---|---|---|
-| C-1 | World Bank Social Protection & Jobs | ASPIRE methodology |
-| C-2 | UNDP HDR / SHDI | Subnational HDI / SP linkages |
-| C-3 | IPA / J-PAL | Cash-transfer evaluation literature |
-| C-4 | World Bank Findex team | 2021 Findex methodology |
+- A social-protection scholar would reject pooling insurance, assistance, and
+  labor programs as if each were equally scalable after a shock.
+- A payments specialist would reject account ownership as evidence of account
+  activity, recipient control, liquidity, agent access, or successful G2P receipt.
+- A survey methodologist would reject comparisons that mix population and
+  adult denominators, survey and administrative sources, and vintages spanning
+  different policy eras.
+- A causal researcher would reject interpreting cross-sectional association as
+  delivery capacity or shock response.
+- A country specialist would object to national rankings that erase program,
+  geography, shock, and beneficiary heterogeneity.
 
-## Objections
+## Response
 
-**C-1 (WB SPJ).** ASPIRE pools all programs (cash, in-kind,
-pensions). Shock-responsive SP — programs that can scale during
-crises — is a small subset. The article should disaggregate.
-
-**C-2 (UNDP HDR).** Subnational SP coverage is far more variable than
-national means. Pakistan's BISP penetrates parts of Sindh and Punjab
-strongly while leaving Balochistan thin; the national figure obscures.
-
-**C-3 (IPA / J-PAL).** Account ownership ≠ delivery capability.
-Many low-income households have accounts that are dormant. Active-use
-data (last 90-day transaction) would be more meaningful.
-
-**C-4 (WB Findex).** Findex 2021 was conducted during pandemic
-recovery; account ownership figures were elevated by emergency cash-
-transfer programs. 2025 data (when released) will likely show
-different baselines.
-
-## Responses
-
-All accepted. Article: (a) frames as SP + account-ownership readiness
-gap, not shock-response capability per se; (b) flags subnational
-heterogeneity in PAK, MMR, BGD; (c) notes account ownership ≠
-delivery; (d) flags Findex 2021 vintage caveat.
+All objections are accepted. The ranking is retired; the response matrix is
+used only to test observability; and the conclusion asks for aligned event-level
+delivery data rather than another composite.

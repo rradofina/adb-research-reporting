@@ -1,24 +1,21 @@
-# Limitations — Social Protection Shock Coverage
+# Limitations — social-protection construct validation
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-26.
+`attestation_chain: ai-first` · PP
 
-## Cannot establish
+- Latest-available WDI values are asynchronous and do not form a balanced year.
+- Poverty uses a whole-population denominator; Findex account ownership uses
+  adults; ASPIRE estimates may come from household surveys or administrative data.
+- All-SP coverage pools assistance, insurance, and labor programs; even the
+  narrower safety-net series is not shock-event delivery.
+- A documented COVID-19 response category is instrument presence, not reach,
+  adequacy, timeliness, successful payment, or implementation quality.
+- Documentation intensity varies across economies; the May 2021 database is a
+  preliminary historical snapshot.
+- Mean imputation is only a transparent falsification test.
+- No beneficiary roster, eligibility denominator, shock footprint, payment
+  transaction, agent network, grievance record, or delivery timestamp is joined.
+- The analysis does not grade any economy's system and makes no causal claim.
 
-- Actual shock-responsive SP capability (ASPIRE includes non-shock-
-  responsive programs).
-- Subnational SP penetration.
-- Active account use vs ownership.
-
-## Source-side
-
-- Findex 2021 conducted during pandemic; account figures elevated.
-- ASPIRE pools all SP types.
-- WDI poverty headcount $2.15 baseline; alternative thresholds
-  (multidimensional, $3.65) give different rankings.
-
-## Reviewer objections (synthesized)
-
-- C-1 (WB SPJ): ASPIRE includes non-shock-responsive programs.
-- C-2 (UNDP HDR): subnational variation obscured.
-- C-3 (IPA/J-PAL): account ownership ≠ delivery capability.
-- C-4 (WB Findex): 2021 vintage caveat.
+The minimum upgrade is an event-level public table aligning affected or
+eligible people, planned and actual recipients, successful and failed payments,
+timestamps, amount, channel, geography, and program identifier.

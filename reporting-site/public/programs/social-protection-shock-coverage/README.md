@@ -1,39 +1,38 @@
-# Social Protection Shock Coverage
+# Social protection shock coverage
 
-## Research Question
+**Maturity:** PP · construct-validation checkpoint
+**Attestation:** `attestation_chain: ai-first` · no individual external reviewer contacted
 
-Which economies face high climate or price-shock exposure but have weak social
-protection reach, payment readiness, or adaptive-delivery capacity?
+## Finding
 
-## Why This Is Unconventional
+The inherited “stable top five” is rejected. Only three named members survive
+the panel's own descending value order. Vanuatu and Tajikistan outrank the
+Philippines and Bangladesh but were omitted because each lacks one proxy leg.
+A public World Bank COVID-19 response matrix records cash-transfer instruments
+in all five named economies, yet supplies no comparable successful-receipt,
+delivery-time, payment-failure, or shock-trigger outcome.
 
-Social protection is often measured as program coverage. This track asks whether
-coverage overlaps with shock exposure and whether payments can scale quickly
-when risk materializes.
+## Research question
 
-## Available Data
+Does a poverty × (one minus social-protection/account-ownership) composite
+preserve its own ranking rule and align with a qualified observed-response
+object strongly enough to support a shock-payment-readiness interpretation?
 
-- World Bank ASPIRE social protection indicators
-- World Bank WDI poverty, inflation, and financial access indicators
-- Findex account/mobile-money indicators
-- EM-DAT disaster exposure summaries
-- World Bank CCKP climate indicators
-- ADB social protection and country partnership documents for qualitative review
+## Decision
 
-## First Pipeline
+No. Retire the country ranking. Publish the construct failure and the precise
+delivery data needed for a future study.
 
-1. Build ADB economy scorecard for shock exposure versus social protection
-   coverage.
-2. Add payment-readiness proxies from Findex.
-3. Identify countries needing administrative-data partnerships.
+## Reproduce
 
-## Outputs
+```powershell
+python social-protection-shock-coverage/scripts/process-sp.py
+python social-protection-shock-coverage/scripts/deepen-include-partial.py
+python social-protection-shock-coverage/scripts/audit-social-protection-source-readiness.py
+python social-protection-shock-coverage/scripts/build-covid-response-validation.py
+python social-protection-shock-coverage/scripts/build-figure-dossier.py
+```
 
-- `generated/social-protection-shock-coverage-adb-screen.csv`
-- Economy readiness matrix
-- Source review of indicator limits
-
-## Reproducibility Notes
-
-Coverage indicators are not the same as benefit adequacy or delivery speed.
-Those gaps must stay explicit.
+Raw public responses are cached under `.cache/`; generated diagnostics and all
+article figures are committed under `generated/`. The main paper is
+`articles/sp-shock-readiness-cluster.md`.

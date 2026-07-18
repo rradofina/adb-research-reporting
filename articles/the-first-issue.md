@@ -79,10 +79,12 @@ vessel-time data: only Indonesia remains in the main direct-measure
 top five. The national proxy ranking is retired; the hinterland leg
 remains unresolved. → [/findings/port-friction-trade-volume-cluster](/findings/port-friction-trade-volume-cluster)
 
-**Social-Protection Readiness.** Five DMCs — Bangladesh, Lao PDR,
-Myanmar, Pakistan, Philippines — hold the top-5 shock-payment-
-readiness gap. ASPIRE pools all SP types; Findex 2021 was elevated
-by pandemic programs. Both flagged. → [/findings/sp-shock-readiness-cluster](/findings/sp-shock-readiness-cluster)
+**Social-Protection Readiness — corrected 2026-07-18.** Only three members of
+the inherited named five survive the panel's own value order. Vanuatu and
+Tajikistan outrank two named members but were omitted for a missing proxy leg.
+All five named economies have documented COVID-19 cash-transfer responses;
+zero comparable delivery outcomes are joined. The ranking is retired. →
+[/findings/sp-shock-readiness-cluster](/findings/sp-shock-readiness-cluster)
 
 ## The eight Screening-Result screens
 

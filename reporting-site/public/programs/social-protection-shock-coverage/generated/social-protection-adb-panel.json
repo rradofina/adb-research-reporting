@@ -7,8 +7,8 @@
       "indicators": [
         "per_allsp.cov_pop_tot — ASPIRE total social protection coverage (% pop)",
         "FX.OWN.TOTL.ZS — Findex account ownership (% age 15+)",
-        "SI.POV.DDAY — Poverty headcount at $2.15/day 2017 PPP",
-        "SI.POV.GAPS — Poverty gap at $2.15/day"
+        "SI.POV.DDAY — Poverty headcount at $3.00/day 2021 PPP",
+        "SI.POV.GAPS — Poverty gap at $3.00/day 2021 PPP"
       ],
       "license": "CC BY 4.0",
       "retrieved_at": "2026-04-25"
@@ -535,5 +535,5 @@
       "shock_payment_readiness_gap": null
     }
   ],
-  "generated_at": "2026-04-25T01:50:07Z"
+  "generated_at": "2026-07-18T14:24:45Z"
 }

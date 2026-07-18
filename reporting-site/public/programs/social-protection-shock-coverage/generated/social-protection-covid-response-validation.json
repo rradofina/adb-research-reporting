@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-18T14:28:39Z",
+  "analysis": "construct validation against documented COVID-19 social-protection responses",
+  "attestation_chain": "ai-first",
+  "source": {
+    "title": "Global Database on Social Protection and Jobs Responses to COVID-19, version 15",
+    "publisher": "World Bank",
+    "version_date": "2021-05-14",
+    "landing_url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/129431621025702954",
+    "pdf_url": "https://documents1.worldbank.org/curated/en/129431621025702954/pdf/Global-Database-on-Social-Protection-and-Jobs-Responses-to-COVID-19.pdf",
+    "retrieved_on": "2026-07-18",
+    "fetch_mode": "cache",
+    "bytes": 5543517,
+    "sha256": "d58c48403d4f57a15f67caf17e859e59a80c0504926c3a76dab23a179fa3f60a",
+    "pages": 3197,
+    "matrix_pages": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "claim_scope": "The source records whether response categories were documented. It does not provide a comparable country-level successful-receipt rate, delivery time, payment-failure rate, or shock-trigger latency. Breadth is a construct diagnostic, not readiness.",
+  "summary": {
+    "adb_roster": 43,
+    "documented_dmc": 41,
+    "not_documented_dmc": [
+      "MHL",
+      "NRU"
+    ],
+    "headline_five": [
+      "BGD",
+      "LAO",
+      "MMR",
+      "PAK",
+      "PHL"
+    ],
+    "value_ranked_top5": [
+      "PAK",
+      "VUT",
+      "MMR",
+      "LAO",
+      "TJK"
+    ],
+    "illustrative_breadth_top5_with_iso_tiebreak": [
+      "IND",
+      "NPL",
+      "UZB",
+      "AZE",
+      "CHN"
+    ],
+    "headline_value_overlap": 3,
+    "headline_breadth_overlap": 0,
+    "headline_cash_transfer_presence": {
+      "BGD": true,
+      "LAO": true,
+      "MMR": true,
+      "PAK": true,
+      "PHL": true
+    },
+    "headline_mean_breadth": 4.8,
+    "other_rankable_mean_breadth": 4.79,
+    "correlations": [
+      {
+        "x": "shock_payment_readiness_gap",
+        "y": "social_protection_breadth",
+        "n": 24,
+        "spearman": -0.0675,
+        "bootstrap_ci95": [
+          -0.4726,
+          0.3555
+        ],
+        "bootstrap_draws": 2000
+      },
+      {
+        "x": "poverty_pct",
+        "y": "social_protection_breadth",
+        "n": 24,
+        "spearman": -0.0885,
+        "bootstrap_ci95": [
+          -0.4988,
+          0.3425
+        ],
+        "bootstrap_draws": 2000
+      }
+    ],
+    "analysis_ready_successful_receipt": false,
+    "analysis_ready_delivery_speed": false,
+    "analysis_ready_payment_failure": false,
+    "analysis_ready_shock_trigger_latency": false
+  },
+  "decision": "Reject the inherited named-five claim. The named set is not the panel's value-ranked top five, all five have a documented cash-transfer response in the direct matrix, and the source does not contain the delivery outcome required by the original wording."
+}

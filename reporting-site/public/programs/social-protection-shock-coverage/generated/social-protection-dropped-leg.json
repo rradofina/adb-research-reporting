@@ -3,7 +3,7 @@
   "analysis": "dropped-leg artifact — true value-ranked order vs the headline five",
   "claim_scope": "Deepening of the readiness-gap screen. Recomputes the identical shock_payment_readiness_gap that process-sp.py produces (most-recent WDI year per indicator; one-legged average for economies missing a component) for every economy with at least the poverty leg, then ranks by value and flags every economy excluded from the named five purely for missing a WDI leg. Triage measure (CONSTITUTION.md §6.4); a measurement/observability question (§13.3), not a country ranking.",
   "source": {
-    "name": "World Bank WDI (ASPIRE per_allsp.cov_pop_tot; Global Findex 2021 FX.OWN.TOTL.ZS; poverty SI.POV.DDAY $2.15/day 2017 PPP)",
+    "name": "World Bank WDI (ASPIRE per_allsp.cov_pop_tot; Global Findex 2021 FX.OWN.TOTL.ZS; poverty SI.POV.DDAY $3.00/day 2021 PPP)",
     "license": "CC BY 4.0",
     "retrieved_at": "2026-04-25 (program cache)",
     "wall_note": "Network blocked; all values re-read from the committed program cache, identical to the headline pipeline source."
@@ -791,5 +791,5 @@
     }
   ],
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T20:51:31Z"
+  "generated_at": "2026-07-18T14:24:45Z"
 }

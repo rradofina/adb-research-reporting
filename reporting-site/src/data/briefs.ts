@@ -1,5 +1,6 @@
 export type FinishGroup =
   | "publication-ready"
+  | "construct-validation"
   | "screening-result"
   | "program-prospectus"
   | "prepared-pipeline"
@@ -27,6 +28,7 @@ export interface BriefDetail {
 
 export const FINISH_LABELS: Record<FinishGroup, string> = {
   "publication-ready": "Publication-ready",
+  "construct-validation": "Construct check",
   "screening-result": "Screening only",
   "program-prospectus": "Program prospectus",
   "prepared-pipeline": "Pipeline ready, not run",
@@ -248,7 +250,7 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "disaster-recovery-lag",
     articleSlug: "disaster-burden-cluster",
     domain: "Disaster",
-    finish: "publication-ready",
+    finish: "construct-validation",
     question:
       "Can public disaster records and daily nighttime radiance support a stable recovery-month measure?",
     output:
@@ -471,22 +473,22 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Social protection",
     finish: "publication-ready",
     question:
-      "Which DMCs combine poverty exposure, low social-protection coverage, and weak digital-payment reach?",
+      "Does the inherited shock-payment screen preserve its own ranking rule and align with an observed response object?",
     output:
-      "Bangladesh, Lao PDR, Myanmar, Pakistan, and the Philippines hold the stable readiness-gap set.",
-    chartTitle: "Shock-payment readiness gap",
-    sourceNote: "WDI poverty, ASPIRE social-protection coverage, and Global Findex account ownership.",
+      "No. Only three named members survive the panel's own value order, while zero comparable delivery outcomes are joined.",
+    chartTitle: "Three-gate construct validation",
+    sourceNote: "WDI poverty, ASPIRE coverage, Findex account ownership, and the World Bank COVID-19 response matrix.",
     caveat:
-      "Coverage is not adequacy, and account ownership is not payment success.",
+      "Response-category presence is not successful receipt, delivery speed, payment failure, or shock-trigger latency.",
     nextStep:
-      "Add benefit adequacy, delivery speed, and post-shock administrative coverage where public data exist.",
+      "Start from event-level eligibility, actual receipt, failed payments, timestamps, channel, geography, and shock trigger.",
     granularity: {
       currentUnit: "Country-level poverty, ASPIRE social-protection coverage, and Findex account ownership",
       targetUnit: "Province/district, payment point catchment, beneficiary group, shock-affected municipality",
       gap:
-        "Coverage is national and not shock-specific; delivery speed and adequacy are missing.",
+        "The national proxy stack changes membership under missing-data and coverage rules; delivery outcomes are absent.",
       upgradeData:
-        "Administrative social-protection coverage by area, payment-agent/mobile-money locations, LSMS/DHS/MICS, disaster shock footprints, and benefit adequacy data.",
+        "Shock-program registries, eligibility denominators, payment transactions and failures, timestamps, grievance records, delivery channels, and shock footprints.",
     },
   },
   "water-stress-crop-diversification": {

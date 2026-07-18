@@ -23,7 +23,7 @@ mean (SP weight 0.25 → 0.75 in `pre-registration.md` §6). That is a
 **robustness property of a ranking built from three World Bank WDI
 indicators of different vintages**: ASPIRE coverage (`per_allsp.cov_pop_tot`,
 fielded 2017–2022 across the set), Findex account ownership
-(`FX.OWN.TOTL.ZS`, all 2021), and `$2.15/day` poverty
+(`FX.OWN.TOTL.ZS`, all 2021), and `$3.00/day (2021 PPP)` poverty
 (`SI.POV.DDAY`, ranging 2017 for MMR to 2024 for PAK/LAO). It is not yet a
 statement about whether an emergency transfer reaches a flood-displaced
 household. Everything below is the distance between that and a finding —
@@ -79,7 +79,7 @@ and across the panel poverty and readiness are almost certainly strongly
 negatively correlated (rich DMCs — THA, MYS, KAZ, MNG — sit at poverty 0.0
 *and* readiness ~0.9, pinning their gap to 0.0). If, conditional on the
 poverty being non-trivial, readiness barely varies, then the second factor
-adds nothing and the index is re-stating the `$2.15` poverty headcount with
+adds nothing and the index is re-stating the `$3.00/day (2021 PPP)` poverty headcount with
 extra steps. Pakistan illustrates the worry from the other side: its gap of
 18.0 is roughly four times Vanuatu's (13.6) and is driven overwhelmingly by
 its 23% poverty headcount, the panel's highest by a wide margin. **Plot the

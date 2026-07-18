@@ -193,4 +193,15 @@ export const programs: ProgramEntry[] = [
     note: "AI-first construct-validation checkpoint completed 2026-07-18; the country ranking is retired.",
     href: "/program/water-stress-crop-diversification",
   },
+  {
+    id: 18,
+    slug: "public-data-freshness",
+    title: "A data year has two clocks",
+    status: "H",
+    summary:
+      "A prospectively frozen WDI study will test whether calendar age and indicator-relative lag send materially different economy-by-indicator cells for review across 42 ADB developing member economies.",
+    note:
+      "Active AI-first flagship at Hypothesis. The nine-indicator L2 hook is qualified; the 9/18/27-indicator L3 result has not yet run.",
+    href: "/public-data-freshness",
+  },
 ];

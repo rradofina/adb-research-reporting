@@ -34,6 +34,7 @@ human owner per the relevant gate request in `research/gates/`.
 | coastal-informal-risk _(coastal-informal-risk)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | flood-market-access _(flood-market-access)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | invisible-urbanization _(invisible-urbanization)_ | ✓ | · | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| public-data-freshness _(public-data-freshness)_ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 ---
 

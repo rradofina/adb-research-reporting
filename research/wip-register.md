@@ -128,8 +128,10 @@ promotion)*
 
 ### Hypothesis
 
-*(see `CONSTITUTION.md` §15 program register; cross-check on every
-promotion)*
+- **public-data-freshness** — active flagship with a qualified L2 WDI heatmap,
+  finalized literature landscape, 27/30 prospectus score, and prospectively
+  frozen 9/18/27-indicator design. The expanded pipeline has not yet run.
+- **mpi-nighttime-lights** — owner/coauthor-led path; no AI-led promotion.
 
 ### Retired
 

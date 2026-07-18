@@ -31,6 +31,7 @@ const PROGRAMS = [
   "access-services",
   "air-monitoring",
   "digital-performance",
+  "public-data-freshness",
   "mpi-nighttime-lights",
 ];
 

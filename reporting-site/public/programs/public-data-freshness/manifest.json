@@ -1,0 +1,282 @@
+{
+  "program": "public-data-freshness",
+  "permanent_url": "/public-data-freshness?view=evidence",
+  "generated_at": "2026-07-18T21:05:53.657Z",
+  "hero": null,
+  "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 4505,
+      "size_human": "4.4 KB",
+      "mtime": "2026-07-18T20:54:36.795Z",
+      "sha256": "e9f9e9b8c526d86c42ab9ebb9ceda6a11bf49d83f93dab321bf341efd54b9b3a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 366,
+      "size_human": "366 B",
+      "mtime": "2026-07-18T20:50:46.152Z",
+      "sha256": "ff67ea5a7686e77087e2f88b8d498038aea3de18112b628714350c8c1befbba1",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 2436,
+      "size_human": "2.4 KB",
+      "mtime": "2026-07-18T20:54:36.796Z",
+      "sha256": "b3dd756e9b0f989c814f65c26a34feec0a62bf2643480d078a8710a88474a357",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "literature",
+      "file": "literature.md",
+      "label": "Literature review",
+      "size": 10559,
+      "size_human": "10.3 KB",
+      "mtime": "2026-07-18T20:56:37.933Z",
+      "sha256": "6a702d898527c112f5c8c90c97efa5bdb1ccee99df8b06c8439f306d7a3ca6af",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "scoring",
+      "file": "scoring.md",
+      "label": "Scoring rubric",
+      "size": 1739,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T20:54:36.799Z",
+      "sha256": "ad9a81fcb1f8e8f8bf9229a536e3a0f4cc1ad57e5b38bfa009efb7628bde5926",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "preregistration",
+      "file": "pre-registration.md",
+      "label": "Pre-registration",
+      "size": 7002,
+      "size_human": "6.8 KB",
+      "mtime": "2026-07-18T20:54:36.797Z",
+      "sha256": "4528b0b9beb517b57a4626e47c9a3b347dedb6a4cba5ab0089c92bac90cbbdf5",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "sensitivity",
+      "file": "sensitivity.md",
+      "label": "Sensitivity suite",
+      "size": 1604,
+      "size_human": "1.6 KB",
+      "mtime": "2026-04-25T05:23:47.723Z",
+      "sha256": "4b32611878b4410be15c10056497bce25f16728244e7f7cc4ce4875208da9160",
+      "attestation_chain": null
+    },
+    {
+      "key": "coverage",
+      "file": "coverage.md",
+      "label": "Coverage",
+      "size": 665,
+      "size_human": "665 B",
+      "mtime": "2026-04-25T05:23:54.343Z",
+      "sha256": "b716845705ec81d3cc4b2b45f757fc817d1a5b0f7369241f3e1f10bae7834ea8",
+      "attestation_chain": null
+    },
+    {
+      "key": "results",
+      "file": "results.md",
+      "label": "Results",
+      "size": 2176,
+      "size_human": "2.1 KB",
+      "mtime": "2026-04-25T05:24:07.733Z",
+      "sha256": "f55e52f56d7669c0b02cdfb67332c15813f2058973139ee5ad8cce498be89341",
+      "attestation_chain": null
+    },
+    {
+      "key": "review_internal",
+      "file": "review-internal.md",
+      "label": "Internal review",
+      "size": 1095,
+      "size_human": "1.1 KB",
+      "mtime": "2026-04-25T05:24:14.238Z",
+      "sha256": "5c1c74bb99259fe96e54c613393a7ae9c72d20bf4d9dc146ec20663a68b85e67",
+      "attestation_chain": null
+    },
+    {
+      "key": "review_external",
+      "file": "review-external.md",
+      "label": "External red-team review",
+      "size": 2518,
+      "size_human": "2.5 KB",
+      "mtime": "2026-04-25T05:24:27.401Z",
+      "sha256": "2c1567a83873dc6b88a690352959b7ea7ea678c8ede06cb396083d340c296942",
+      "attestation_chain": null
+    },
+    {
+      "key": "limitations",
+      "file": "limitations.md",
+      "label": "Limitations",
+      "size": 1677,
+      "size_human": "1.6 KB",
+      "mtime": "2026-04-25T05:24:36.564Z",
+      "sha256": "bae727c3ca5353347d1be0b82b83297396b9dd07d3202389268ef76978fa7d01",
+      "attestation_chain": null
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 291,
+      "size_human": "291 B",
+      "mtime": "2026-07-18T20:50:46.152Z",
+      "sha256": "4d21d1390fb18951aa52cfce0ff80c73f4023e4dd31b56e9936a48acade43acd",
+      "attestation_chain": "ai-first"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "generated/.gitkeep",
+      "size": 0,
+      "size_human": "0 B",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "articles": [],
+  "story": [
+    {
+      "key": "background",
+      "title": "Research problem and background",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
+        {
+          "key": "readme",
+          "file": "README.md",
+          "label": "Overview"
+        }
+      ]
+    },
+    {
+      "key": "literature",
+      "title": "Related literature and evidence gap",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "literature",
+          "file": "literature.md",
+          "label": "Literature review"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "title": "Data sources and coverage",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "coverage",
+          "file": "coverage.md",
+          "label": "Coverage"
+        }
+      ]
+    },
+    {
+      "key": "method",
+      "title": "Methodology and claim test",
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "preregistration",
+          "file": "pre-registration.md",
+          "label": "Pre-registration"
+        },
+        {
+          "key": "scoring",
+          "file": "scoring.md",
+          "label": "Scoring rubric"
+        }
+      ]
+    },
+    {
+      "key": "results",
+      "title": "Results",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "results",
+          "file": "results.md",
+          "label": "Results"
+        }
+      ]
+    },
+    {
+      "key": "robustness",
+      "title": "Sensitivity and robustness",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "sensitivity",
+          "file": "sensitivity.md",
+          "label": "Sensitivity suite"
+        }
+      ]
+    },
+    {
+      "key": "limitations",
+      "title": "Limitations and what this does not mean",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "limitations",
+          "file": "limitations.md",
+          "label": "Limitations"
+        }
+      ]
+    },
+    {
+      "key": "conclusion",
+      "title": "Conclusion and next evidence upgrade",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
+    },
+    {
+      "key": "reproduce",
+      "title": "Reproduce the analysis",
+      "available": true,
+      "state": "draft",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "reproduce": "/programs/public-data-freshness/REPRODUCE.md",
+    "deck": null,
+    "reviewer_packet": null,
+    "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/public-data-freshness"
+  }
+}

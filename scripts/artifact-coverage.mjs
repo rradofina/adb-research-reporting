@@ -27,6 +27,7 @@ const PROGRAMS = [
   "coastal-informal-risk",
   "flood-market-access",
   "invisible-urbanization",
+  "public-data-freshness",
 ];
 
 const ARTIFACTS = [

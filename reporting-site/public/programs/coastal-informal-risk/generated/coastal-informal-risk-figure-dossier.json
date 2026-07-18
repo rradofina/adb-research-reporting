@@ -1,0 +1,104 @@
+{
+  "program": "coastal-informal-risk",
+  "analysis": "evidence-bearing figure dossier",
+  "attestation_chain": "ai-first",
+  "figure_count": 12,
+  "figures": [
+    {
+      "order": 1,
+      "name": "growth hero",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.svg"
+      }
+    },
+    {
+      "order": 2,
+      "name": "centre dumbbell",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-02-centre-dumbbell.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-02-centre-dumbbell.svg"
+      }
+    },
+    {
+      "order": 3,
+      "name": "proxy falsification",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-03-proxy-falsification.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-03-proxy-falsification.svg"
+      }
+    },
+    {
+      "order": 4,
+      "name": "economy aggregation",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-04-economy-aggregation.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-04-economy-aggregation.svg"
+      }
+    },
+    {
+      "order": 5,
+      "name": "elevation sensitivity",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-05-elevation-sensitivity.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-05-elevation-sensitivity.svg"
+      }
+    },
+    {
+      "order": 6,
+      "name": "window sensitivity",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-06-window-sensitivity.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-06-window-sensitivity.svg"
+      }
+    },
+    {
+      "order": 7,
+      "name": "population-built corroboration",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-07-population-built-corroboration.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-07-population-built-corroboration.svg"
+      }
+    },
+    {
+      "order": 8,
+      "name": "absolute versus share",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-08-absolute-versus-share.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-08-absolute-versus-share.svg"
+      }
+    },
+    {
+      "order": 9,
+      "name": "change direction",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-09-change-direction.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-09-change-direction.svg"
+      }
+    },
+    {
+      "order": 10,
+      "name": "growth concentration",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-10-growth-concentration.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-10-growth-concentration.svg"
+      }
+    },
+    {
+      "order": 11,
+      "name": "coverage funnel",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.svg"
+      }
+    },
+    {
+      "order": 12,
+      "name": "method and claim gate",
+      "paths": {
+        "png": "coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.png",
+        "svg": "coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-04-26T11:20:16.400792Z",
+  "program": "coastal-informal-risk",
+  "metric": "coastal-informal-risk-index ranking",
+  "common_top5_across_runs": [
+    "BGD",
+    "CHN",
+    "MMR",
+    "PAK",
+    "PHL"
+  ],
+  "runs": [
+    {
+      "label": "baseline_slum_imputed_10pct",
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 184.4
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 160.67
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 158.57
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 138.76
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 137.11
+        },
+        {
+          "iso3": "TUV",
+          "country": "Tuvalu",
+          "value": 131.21
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 125.37
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 110.48
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 100.15
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 96.42
+        }
+      ]
+    },
+    {
+      "label": "slum_imputed_minus50_5pct",
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 184.4
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 160.67
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 158.57
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 138.76
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 137.11
+        },
+        {
+          "iso3": "TUV",
+          "country": "Tuvalu",
+          "value": 131.21
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 125.37
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 110.48
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 100.15
+        },
+        {
+          "iso3": "IDN",
+          "country": "Indonesia",
+          "value": 96.42
+        }
+      ]
+    },
+    {
+      "label": "slum_imputed_plus50_15pct",
+      "top10": [
+        {
+          "iso3": "PAK",
+          "country": "Pakistan",
+          "value": 184.4
+        },
+        {
+          "iso3": "PHL",
+          "country": "Philippines",
+          "value": 160.67
+        },
+        {
+          "iso3": "CHN",
+          "country": "China",
+          "value": 158.57
+        },
+        {
+          "iso3": "BGD",
+          "country": "Bangladesh",
+          "value": 138.76
+        },
+        {
+          "iso3": "MMR",
+          "country": "Myanmar",
+          "value": 137.11
+        },
+        {
+          "iso3": "TUV",
+          "country": "Tuvalu",
+          "value": 131.21
+        },
+        {
+          "iso3": "KHM",
+          "country": "Cambodia",
+          "value": 125.37
+        },
+        {
+          "iso3": "AZE",
+          "country": "Azerbaijan",
+          "value": 110.48
+        },
+        {
+          "iso3": "HKG",
+          "country": "Hong Kong, China",
+          "value": 103.15
+        },
+        {
+          "iso3": "VNM",
+          "country": "Viet Nam",
+          "value": 100.15
+        }
+      ]
+    }
+  ]
+}

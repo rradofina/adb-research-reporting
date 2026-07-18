@@ -1,25 +1,25 @@
 {
   "program": "coastal-informal-risk",
   "permanent_url": "/coastal-informal-risk?view=evidence",
-  "generated_at": "2026-07-18T19:21:10.634Z",
+  "generated_at": "2026-07-18T19:55:45.494Z",
   "hero": {
     "png": "generated/charts/coastal-informal-risk-thumbnail.png",
     "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
     "json": "generated/charts/coastal-informal-risk-thumbnail.json",
-    "title": "Coastal-informal pressure concentrates in five economies",
-    "caption": "Pakistan, Philippines, China, Bangladesh, Myanmar — stable top-5 by population-scaled informal-urban-pressure proxy.",
-    "headline_number": "Myanmar 58% slum-share of urban population",
-    "visual_form": "Asia-Pacific map (top-5 highlighted, color = slum-urban %)",
-    "source": "WDI slum / urban / population shares",
+    "title": "90.9 million more people recorded below 10 metres",
+    "caption": "Shanghai, Bangkok, and Dhaka lead the centre-level change, 2000–2020.",
+    "headline_number": "+90.9 million",
+    "visual_form": "ranked horizontal bar chart",
+    "source": "GHS-UCDB R2024A V1.2",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T18:40:47+00:00",
+    "generated_at": "2026-07-18T19:42:04+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081",
-      "svg": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+      "png": "e4ae00517c44c4a10c09b93028e18ea9855635199dff42b6a0518eda1313b959",
+      "svg": "f758919842e958371a490cf249f4c0a262116e1ecdd6ff2b26b9bfcd226dbd6a"
     }
   },
   "artifacts": [
@@ -27,40 +27,60 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1243,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.334Z",
-      "sha256": "510a6e01e12bbd37e8fc91774b6541c1d2070704a74f27384765c6443603540f",
-      "attestation_chain": null
+      "size": 2230,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T19:41:31.086Z",
+      "sha256": "05b197c7e49662e1a0cc7f51b41060fc6905305445a795b47e1ed39c4cc879a5",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1111,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T19:41:31.156Z",
+      "sha256": "558c4ee23240f2bea02b42fcc249c901b8f7d65c47dfb8c372e7a90067ce43ea",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1113,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T19:44:18.895Z",
+      "sha256": "164a048056f52a1a1f5a9c2bb5fd60cbc31b8c73a4d98a1d03cd9260242833f9",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 2028,
-      "size_human": "2.0 KB",
-      "mtime": "2026-04-27T03:42:45.325Z",
-      "sha256": "c94f0dc620846a233efde01b4ada2b515fd5005727db56f38e7adc44e590b4e9",
+      "size": 2677,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T19:41:31.147Z",
+      "sha256": "eeba808b6c4b50565f16c848df8d5b68dbb95f1a1751aa59bf4c1a2bd0ac0c4f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1238,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-26T11:20:35.333Z",
-      "sha256": "4080a0a5b2fac3cbd29128d546ccc2a6cdcbe90de3f033ed5b4abbddc90ec06e",
+      "size": 3314,
+      "size_human": "3.2 KB",
+      "mtime": "2026-07-18T19:26:58.723Z",
+      "sha256": "bfc629584d41197eb01342cfc6286462f92dabe2eb3d1c05ed5add40186dbec7",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 508,
-      "size_human": "508 B",
-      "mtime": "2026-04-26T11:20:39.941Z",
-      "sha256": "6a0cd8a6f3305bb7f216b18e486fee4855a9b33ea249b656607d9413cbb9bb81",
+      "size": 961,
+      "size_human": "961 B",
+      "mtime": "2026-07-18T19:41:31.152Z",
+      "sha256": "c997fb2d5445330b7a6cac7f3390ec4251e3b489b63d8e19b12621ca61ff34c1",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +97,249 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 515,
-      "size_human": "515 B",
-      "mtime": "2026-04-26T11:20:44.838Z",
-      "sha256": "ed7d78c2f934eff24fe3c8ad70d416ba8e51c3f064f08d3f402a5a96b4f0c1ae",
+      "size": 1211,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T19:41:31.149Z",
+      "sha256": "0ed1d34b32c5886ea3c6a4c31d9a5fb156174bf26092750f98fb7252f9489eea",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 538,
-      "size_human": "538 B",
-      "mtime": "2026-04-26T11:21:10.826Z",
-      "sha256": "a024dec5521df9ad90ebdb2743e9e63677dbbdab9cca60a306b8e7b0f105edd0",
+      "size": 4139,
+      "size_human": "4.0 KB",
+      "mtime": "2026-07-18T19:41:31.150Z",
+      "sha256": "35040fdefb91613487c42412e50d7ad2fa8e30a1defa78789774cf68a0d3bbde",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 846,
-      "size_human": "846 B",
-      "mtime": "2026-04-26T11:20:52.112Z",
-      "sha256": "b82b6758d4420adbc8b7a3f4dc49e2ca75e85a9ee0206b6e074b40b8b3f584c5",
+      "size": 1750,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T19:44:18.890Z",
+      "sha256": "f79e659118fb9085884bb1730db5f2c87bbaad69b7f3565c1d01ca0ff154ade9",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1799,
-      "size_human": "1.8 KB",
-      "mtime": "2026-04-26T11:21:04.069Z",
-      "sha256": "d1dd6e986a45a174752aeecc658dede5f5b9b0b68a5cd6ba1d9890161f286259",
+      "size": 1328,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T19:44:18.891Z",
+      "sha256": "a02836d77fea9d588170b9b85013f22c9462df028c710492ccdfa15156bf4515",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 665,
-      "size_human": "665 B",
-      "mtime": "2026-04-26T11:21:07.883Z",
-      "sha256": "fa47a5c6b3ff2664b5d3bf37714c5c3f3107b3e23d3ab401cff751c4c26762d6",
+      "size": 1525,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T19:41:31.154Z",
+      "sha256": "46e55f94fb2f2b25406267a98eda83deae9fb2931c6007223bfe5b9a98e19d1b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "conclusion",
+      "file": "conclusion.md",
+      "label": "Conclusion and next evidence upgrade",
+      "size": 1076,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T19:41:31.154Z",
+      "sha256": "f6b082a311c3f2f89a7ac4ddff00fb912b50c2b200da59994192e1be6ccf586c",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/coastal-informal-risk-01-growth-hero.png",
+      "size": 172773,
+      "size_human": "168.7 KB",
+      "sha256": "866412fdbc3a72c91c5dcf5f24330a4695bc952c4ddbc0265000f4d5af5b7aca"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-01-growth-hero.svg",
+      "size": 104020,
+      "size_human": "101.6 KB",
+      "sha256": "ee9851918f7e5865164e31ab3e5d1ddf68fc30140376ff4c2fbfd3d14b499d21"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-02-centre-dumbbell.png",
+      "size": 158721,
+      "size_human": "155.0 KB",
+      "sha256": "d9bb0ac6558f14bfde29d663ca12c7b593a37ea96957c79a6450ecb64b59a339"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-02-centre-dumbbell.svg",
+      "size": 89362,
+      "size_human": "87.3 KB",
+      "sha256": "53fe043093aea91f41115f979e25f0da07f1f5029a5bf178ee54cfd1621485e6"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-03-proxy-falsification.png",
+      "size": 94442,
+      "size_human": "92.2 KB",
+      "sha256": "ba8b198f0c34eb991437edbbd230069b11830c69b1d9485b7013370372f0309c"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-03-proxy-falsification.svg",
+      "size": 69666,
+      "size_human": "68.0 KB",
+      "sha256": "df5f53c897937b2fdd5407c51f34a659b5c86f7829ef95db8dedc00384f6cdad"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-04-economy-aggregation.png",
+      "size": 119058,
+      "size_human": "116.3 KB",
+      "sha256": "fb0d4fa73497be2b62d5b18098b56b0e4d5ace0247a6f8c11704d549b3ab313f"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-04-economy-aggregation.svg",
+      "size": 77107,
+      "size_human": "75.3 KB",
+      "sha256": "fbc92727e63f56df0eda65dcb6c6dee60dd5c5dfc09ee2da2e39d8fb785fb6df"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-05-elevation-sensitivity.png",
+      "size": 79239,
+      "size_human": "77.4 KB",
+      "sha256": "e6bd1e6038a1f5c7b33d70d9edcbf90fdd6dfd28da366de63c766a95b58e7836"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-05-elevation-sensitivity.svg",
+      "size": 56427,
+      "size_human": "55.1 KB",
+      "sha256": "53b0a4ad7d246bb6abb5cbbcdc9c72168825baf78980c808e5a05119c0bd544b"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-06-window-sensitivity.png",
+      "size": 125960,
+      "size_human": "123.0 KB",
+      "sha256": "63f9f42f733cad791995f8259eae6284d6a0454e911f7632f7fb62a187cfbfd7"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-06-window-sensitivity.svg",
+      "size": 63825,
+      "size_human": "62.3 KB",
+      "sha256": "3ac1b108a670a634e5179c527b4441d94d3945369d745c7876b41ae32bc5536d"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-07-population-built-corroboration.png",
+      "size": 116506,
+      "size_human": "113.8 KB",
+      "sha256": "ae587ec7411da4a178e6de4d607807b316ee09ae0e571cb0a6c53feebd6de6db"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-07-population-built-corroboration.svg",
+      "size": 267887,
+      "size_human": "261.6 KB",
+      "sha256": "d6366ca5f411c0ffa64d033605ee22fa96a932c9a91c35153c2d492b2df42993"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-08-absolute-versus-share.png",
+      "size": 146345,
+      "size_human": "142.9 KB",
+      "sha256": "4af2f7ca4f8c382804e3b7474c40024775908baaa946f21949cca2c806269d5d"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-08-absolute-versus-share.svg",
+      "size": 337932,
+      "size_human": "330.0 KB",
+      "sha256": "dddaf3c84053afa427cf30928c787a114e5bfb72ac7510b91cb106a5a16a78c2"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-09-change-direction.png",
+      "size": 88926,
+      "size_human": "86.8 KB",
+      "sha256": "c7be7956917d2fb831d538b1e313603fd3d7bf20051617b6a1b482308ccd5d2f"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-09-change-direction.svg",
+      "size": 62150,
+      "size_human": "60.7 KB",
+      "sha256": "a36b580130aaa23f59785ebfe9b405a1432a845b9a33e1ba9dab0580a6fdfb00"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-10-growth-concentration.png",
+      "size": 134936,
+      "size_human": "131.8 KB",
+      "sha256": "d46f6c486f4fc67c2391ce1fcc03b02e2ea860214dc1781244e37cae8c14de0c"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-10-growth-concentration.svg",
+      "size": 67768,
+      "size_human": "66.2 KB",
+      "sha256": "69324c30c0701e7c9a6a05c5f51f6317782212c5644ed06000d148a41a237aed"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-11-coverage-funnel.png",
+      "size": 107004,
+      "size_human": "104.5 KB",
+      "sha256": "54273b97baf000a7ce648e237b6dce821386c7f47708c8521ef9bc228b3dc056"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-11-coverage-funnel.svg",
+      "size": 73122,
+      "size_human": "71.4 KB",
+      "sha256": "d10da8030d82bb0e68271b12da1f16106097ef87767b36a985794ea710f94270"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-12-method-and-claim-gate.png",
+      "size": 168552,
+      "size_human": "164.6 KB",
+      "sha256": "c2dbf908318fae6e5e6f0b5369369003ad01df1a8f9ce5a2d7b7260fe53cf329"
+    },
+    {
+      "file": "generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg",
+      "size": 88847,
+      "size_human": "86.8 KB",
+      "sha256": "c46599a911670e7d5257eb9a14669205add39ebc3a02332b542a16d274fd06e5"
+    },
+    {
       "file": "generated/charts/coastal-informal-risk-thumbnail.json",
-      "size": 1095,
-      "size_human": "1.1 KB",
-      "sha256": "4a6606cae813df2c9042822fa98f14b201527ee832cc122f182dc3d196fc34f0"
+      "size": 965,
+      "size_human": "965 B",
+      "sha256": "fcecfb693ed57a6ae82b2d222ca1d31d2b403fa844f4996b4d780a4b4f2b2e17"
     },
     {
       "file": "generated/charts/coastal-informal-risk-thumbnail.png",
-      "size": 189167,
-      "size_human": "184.7 KB",
-      "sha256": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081"
+      "size": 75370,
+      "size_human": "73.6 KB",
+      "sha256": "e4ae00517c44c4a10c09b93028e18ea9855635199dff42b6a0518eda1313b959"
     },
     {
       "file": "generated/charts/coastal-informal-risk-thumbnail.svg",
-      "size": 1040176,
-      "size_human": "1015.8 KB",
-      "sha256": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+      "size": 87096,
+      "size_human": "85.1 KB",
+      "sha256": "f758919842e958371a490cf249f4c0a262116e1ecdd6ff2b26b9bfcd226dbd6a"
+    },
+    {
+      "file": "generated/charts/coastal-rough-lecz-growth.png",
+      "size": 184521,
+      "size_human": "180.2 KB",
+      "sha256": "992ab2bbac3ec38e7275274aabdb092e7c45f2a64d1c47eafea4e1b645d5a03d"
+    },
+    {
+      "file": "generated/charts/coastal-rough-lecz-growth.svg",
+      "size": 106830,
+      "size_human": "104.3 KB",
+      "sha256": "8e8fe88ba502a9f7e94d053f9006cfc978d8e3c4ea1b210e7ad3b7881ec65f84"
+    },
+    {
+      "file": "generated/charts/coastal-rough-proxy-comparison.png",
+      "size": 85263,
+      "size_human": "83.3 KB",
+      "sha256": "7dd232bd0d778eea32a831d4df2c81ef8f66bad15daae6f12dbc0110e420d017"
+    },
+    {
+      "file": "generated/charts/coastal-rough-proxy-comparison.svg",
+      "size": 63219,
+      "size_human": "61.7 KB",
+      "sha256": "6329e67904fec15c9e6e65b26ce3fb9e93781d0412caf033d3371e6ffe7bf824"
     },
     {
       "file": "generated/coastal-denominator-spatial-source-audit.json",
@@ -162,6 +360,18 @@
       "sha256": "bf2f9e233e5d66bd7bea913ebaba2547717fd93835d45a26ba86224e1bb440d1"
     },
     {
+      "file": "generated/coastal-ghs-ucdb-inventory.json",
+      "size": 91703,
+      "size_human": "89.6 KB",
+      "sha256": "14f96830ad80a5a9f79c4a6378ed9da911961fa173e60966dc89092346ff3736"
+    },
+    {
+      "file": "generated/coastal-ghs-ucdb-members.csv",
+      "size": 1099,
+      "size_human": "1.1 KB",
+      "sha256": "d64cd8a32410ea9911f21b026ae0ac75bbde3d0d1a04ff4a28432866bed7cfa2"
+    },
+    {
       "file": "generated/coastal-informal-risk-adb-panel.csv",
       "size": 1540,
       "size_human": "1.5 KB",
@@ -172,6 +382,30 @@
       "size": 8739,
       "size_human": "8.5 KB",
       "sha256": "3ddbca76d4dc92d8ef7e7cf7aedfdc0c24c6b2ae68cf5a52e7faace49f6d859a"
+    },
+    {
+      "file": "generated/coastal-informal-risk-figure-dossier.json",
+      "size": 3915,
+      "size_human": "3.8 KB",
+      "sha256": "d08889252db4a7ee19c8f390522f956fd857ab21ef4e2af0322152318d7176a1"
+    },
+    {
+      "file": "generated/coastal-lecz-growth-diagnostics.json",
+      "size": 34467,
+      "size_human": "33.7 KB",
+      "sha256": "de0ff398289c5935f643354b4f715e499e86c78f61c2ff9ef6d0833f8c401e5c"
+    },
+    {
+      "file": "generated/coastal-lecz-sensitivity-runs.json",
+      "size": 10101,
+      "size_human": "9.9 KB",
+      "sha256": "2d0f18ee5c5fdd229251d5445dc79af60761998992fad7a3046c8162af40a927"
+    },
+    {
+      "file": "generated/coastal-lecz-urban-centre-panel.csv",
+      "size": 529831,
+      "size_human": "517.4 KB",
+      "sha256": "8c951c87d7a417ecdd3571b5e1ec61496fc107ee7129987d5dde8da9d6460d39"
     },
     {
       "file": "generated/coastal-spatial-source-readiness-links.csv",
@@ -195,7 +429,7 @@
   "articles": [
     {
       "slug": "coastal-informal-cluster",
-      "title": "Five coastal DMCs hold the top of the urban-informal-pressure ranking — Pakistan, Philippines, China, Bangladesh, Myanmar",
+      "title": "90.9 million more people in low-elevation urban centres",
       "attestation_chain": "ai-first"
     }
   ],
@@ -206,6 +440,11 @@
       "available": true,
       "state": "present",
       "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
         {
           "key": "readme",
           "file": "README.md",
@@ -269,7 +508,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,20 +533,32 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "conclusion",
+          "file": "conclusion.md",
+          "label": "Conclusion and next evidence upgrade"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
+    "reproduce": "/programs/coastal-informal-risk/REPRODUCE.md",
     "deck": null,
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/coastal-informal-risk"

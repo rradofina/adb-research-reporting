@@ -1,22 +1,38 @@
-# Internal review — Coastal Informal Risk
+# Internal review — low-elevation urban growth
 
-`attestation_chain: ai-first`. §18 critique-pass. Closed 2026-04-26.
+`attestation_chain: ai-first` · Critique pass 2026-07-19
 
-## Critique
+## Decision
 
-1. WDI EN.POP.SLUM.UR.ZS has very few entries for ADB DMCs (only ~7
-   of 31 coastal). The 10% imputation is a placeholder; the headline
-   is robust to ±50% on imputation but a real slum-share series is
-   the upgrade-pass.
-2. "Coastal" is a binary flag. Coastal-zone *exposure* (LECZ) is
-   the better measure; this artifact uses country-level coastal-yes/no
-   only.
-3. Population inflates the index for large countries. The headline
-   reflects scale, not specifically coastal-informal vulnerability.
+**Pass as a PP measurement study after claim reshaping.** The direct spatial
+object supports a centre-level exposure-growth finding. It does not support the
+program's inherited “informal risk” language.
 
-## Responses
+## Major critiques and responses
 
-1. Documented in limitations.md.
-2. LECZ via CIESIN SEDAC is the §18.5 upgrade-pass.
-3. The headline is honest: this is a population-scaled index. Per-capita
-   variant deferred to upgrade-pass.
+1. **The frozen 75% coverage gate fails.** Only 1,334 of 5,347 matched centres
+   report the required block. **Response:** preserve the frozen design, add a
+   protocol-deviation record, show the funnel, and call the total a reporting-
+   subset result.
+2. **Blank semantics are undocumented.** **Response:** never convert blank to
+   zero; distinguish 4,013 blanks from 410 reported zeros.
+3. **Fixed 2025 footprints complicate historical interpretation.**
+   **Response:** state that the series measures within-footprint change, not
+   evolving city boundaries.
+4. **Absolute ranks favour large centres.** **Response:** add concentration,
+   share-change, direction, and economy-context figures; ban vulnerability-
+   league-table language.
+5. **Elevation is not flood hazard.** **Response:** move storm surge, relative
+   sea level, subsidence, and protection to the next-study design.
+6. **Earth observation is not informality.** **Response:** remove informality
+   from the measured claim and retain it only as a future locally validated
+   research layer.
+
+## Verification checks
+
+- Population and built-up quantities are computed independently.
+- All six threshold-window sensitivity runs remain positive.
+- The old-versus-new top-five comparison is labeled construct falsification.
+- Every reader-facing number traces to the committed build script and generated
+  diagnostics.
+

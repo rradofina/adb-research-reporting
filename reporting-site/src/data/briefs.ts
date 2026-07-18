@@ -226,24 +226,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "coastal-informal-risk",
     articleSlug: "coastal-informal-cluster",
     domain: "Built form",
-    finish: "screening-result",
+    finish: "publication-ready",
     question:
-      "Which coastal DMCs combine large urban populations with measured or imputed informal-settlement pressure?",
+      "Which urban centres recorded the largest population and built-up growth below 5 and 10 metres from 2000 to 2020?",
     output:
-      "Pakistan, Philippines, China, Bangladesh, and Myanmar hold the top urban-informal-pressure positions.",
-    chartTitle: "Coastal informal-pressure index",
-    sourceNote: "WDI urban share, population, and slum prevalence where available.",
+      "The reporting subset added 90.9 million people below 10 metres; Shanghai, Bangkok, and Dhaka lead, and ten centres account for 52.1% of positive change.",
+    chartTitle: "Low-elevation urban-centre growth",
+    sourceNote: "GHS-UCDB R2024A V1.2 Exposure and General Characteristics themes.",
     caveat:
-      "WDI slum data are sparse, and coastal exposure is binary rather than low-elevation coastal-zone exposure.",
+      "Only 1,334 of 5,347 matched centres report the required LECZ block; the result is exposure growth, not flood loss or informality.",
     nextStep:
-      "Replace the binary coastal flag with LECZ population and settlement-footprint layers.",
+      "Join local storm surge, relative sea level, subsidence, protection, and validated housing or service data for a small set of leading centres.",
     granularity: {
-      currentUnit: "Country-level coastal flag with urban population and sparse slum prevalence",
-      targetUnit: "Low-elevation coastal-zone grid, settlement footprint, barangay/municipality",
+      currentUnit: "Fixed-2025 GHS-UCDB urban centre with 5 m and 10 m LECZ attributes",
+      targetUnit: "Hazard-resolved neighbourhood, barangay, or municipality inside selected centres",
       gap:
-        "Coastal exposure is binary and WDI slum data are sparse or imputed.",
+        "The centre object observes elevation-zone exposure but not surge, subsidence, protection, tenure, services, or loss.",
       upgradeData:
-        "LECZ population, GHSL/WorldPop, building footprints, national slum or informal-settlement layers, and flood/coastal hazard surfaces.",
+        "Local coastal-hazard surfaces, relative sea level, subsidence, protection and drainage, dated boundaries, and validated deprivation or service layers.",
     },
   },
   "disaster-recovery-lag": {

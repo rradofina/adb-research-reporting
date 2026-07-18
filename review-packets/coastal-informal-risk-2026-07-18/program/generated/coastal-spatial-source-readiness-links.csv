@@ -1,0 +1,45 @@
+layer_role,source_name,href,rel_or_label,file_type,selected_for_analysis
+settlement_footprint,GHSL/JRC download page,https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A.txt?t=1603983376,Metadata information (1.04 KB),txt,False
+settlement_footprint,GHSL/JRC download page,https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A_tile_schema.zip?t=1617195881,Index shapefile (294.61 KB),zip,False
+settlement_footprint,GHSL/JRC download page,https://human-settlement.emergency.copernicus.eu/documents/GHSL_Data_Package_2023.pdf?t=1727170839,,pdf,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip,http://esipfed.org/ns/fedsearch/1.1/data#,zip,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip,http://esipfed.org/ns/fedsearch/1.1/s3#,zip,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,http://dx.doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001,http://esipfed.org/ns/fedsearch/1.1/documentation#,001,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml,http://esipfed.org/ns/fedsearch/1.1/metadata#,xml,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml,http://esipfed.org/ns/fedsearch/1.1/metadata#,xml,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://data.lpdaac.earthdatacloud.nasa.gov/s3credentials,http://esipfed.org/ns/fedsearch/1.1/metadata#,,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg,http://esipfed.org/ns/fedsearch/1.1/browse#,jpg,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,s3://lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg,http://esipfed.org/ns/fedsearch/1.1/browse#,jpg,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://search.earthdata.nasa.gov/search/granules?p=C2763264762-LPCLOUD,http://esipfed.org/ns/fedsearch/1.1/data#,,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001,http://esipfed.org/ns/fedsearch/1.1/metadata#,001,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://www.earthdata.nasa.gov/centers/lp-daac,http://esipfed.org/ns/fedsearch/1.1/metadata#,,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://lpdaac.usgs.gov/documents/2237/NASADEM_User_Guide_V13.pdf,http://esipfed.org/ns/fedsearch/1.1/documentation#,pdf,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://lpdaac.usgs.gov/documents/642/DEM_Comparison_Guide.pdf,http://esipfed.org/ns/fedsearch/1.1/documentation#,pdf,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://appeears.earthdatacloud.nasa.gov/,http://esipfed.org/ns/fedsearch/1.1/data#,,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://search.earthdata.nasa.gov/search/granules?p=C2763264764-LPCLOUD,http://esipfed.org/ns/fedsearch/1.1/data#,,False
+elevation_dem,NASA CMR NASADEM_HGT sample granule,https://search.earthdata.nasa.gov/search/granules?p=C2763264768-LPCLOUD,http://esipfed.org/ns/fedsearch/1.1/data#,,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.pickle,inuncoast_historical_nosub_hist_rp0001_5.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.tif,inuncoast_historical_nosub_hist_rp0001_5.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.pickle,inuncoast_historical_nosub_hist_rp0002_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.tif,inuncoast_historical_nosub_hist_rp0002_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.pickle,inuncoast_historical_nosub_hist_rp0005_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.tif,inuncoast_historical_nosub_hist_rp0005_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.pickle,inuncoast_historical_nosub_hist_rp0010_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.tif,inuncoast_historical_nosub_hist_rp0010_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.pickle,inuncoast_historical_nosub_hist_rp0025_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.tif,inuncoast_historical_nosub_hist_rp0025_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.pickle,inuncoast_historical_nosub_hist_rp0050_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.tif,inuncoast_historical_nosub_hist_rp0050_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.pickle,inuncoast_historical_nosub_hist_rp0100_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.tif,inuncoast_historical_nosub_hist_rp0100_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.pickle,inuncoast_historical_nosub_hist_rp0250_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.tif,inuncoast_historical_nosub_hist_rp0250_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.pickle,inuncoast_historical_nosub_hist_rp0500_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.tif,inuncoast_historical_nosub_hist_rp0500_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.pickle,inuncoast_historical_nosub_hist_rp1000_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.tif,inuncoast_historical_nosub_hist_rp1000_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.pickle,inuncoast_historical_wtsub_hist_rp0001_5.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.tif,inuncoast_historical_wtsub_hist_rp0001_5.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.pickle,inuncoast_historical_wtsub_hist_rp0002_0.pickle,pickle,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.tif,inuncoast_historical_wtsub_hist_rp0002_0.tif,tif,False
+coastal_hazard,WRI Aqueduct Floods Hazard Maps v2,https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0005_0.pickle,inuncoast_historical_wtsub_hist_rp0005_0.pickle,pickle,False

@@ -1,39 +1,50 @@
-# Coastal Informal Settlement Risk
+# Low-elevation urban growth in ADB developing economies
 
-## Research Question
+`attestation_chain: ai-first` · PP measurement study
 
-Where is coastal population growth occurring in places exposed to flood, storm
-surge, or land-subsidence risk before those settlements are fully visible in
-official urban planning data?
+## Finding
 
-## Why This Is Unconventional
+Across 1,334 GHS-UCDB urban centres with reported low-elevation fields in 24
+ADB developing economies, the population recorded below 10 metres increased
+from 237.3 million in 2000 to 328.2 million in 2020: a net change of **90.9
+million**. Shanghai, Bangkok, and Dhaka have the largest centre-level increases.
 
-This builds on invisible urbanization but focuses on coastal risk. The core idea
-is not just urban growth; it is unplanned growth in physically fragile coastal
-zones.
+![Largest centre-level changes](generated/charts/coastal-informal-risk-01-growth-hero.png)
 
-## Available Data
+This is a low-elevation settlement-growth result. It is not a flood-loss,
+informality, deprivation, or adaptation ranking.
 
-- GHSL built-up area and settlement model layers
-- WorldPop population grids
-- JRC Global Surface Water and coastline layers
-- NASA SRTM or Copernicus DEM elevation
-- OpenStreetMap roads, amenities, and drainage proxies
-- geoBoundaries administrative geometries
+## Why the research changed shape
 
-## First Pipeline
+The inherited study multiplied national population, urban share, and mostly
+imputed slum shares, then manually tagged coastal economies. That object
+contained no coastline, elevation, city footprint, or hazard surface. Only two
+of its top five economies remain in the top five after replacing it with
+observed centre-level population change inside the Low Elevation Coastal Zone.
 
-1. Identify low-elevation coastal zones by economy.
-2. Measure built-up and population growth since 2000/2015.
-3. Flag places with fast growth and weak mapped service infrastructure.
+## Evidence object
 
-## Outputs
+The study uses the Exposure and General Characteristics themes of GHS-UCDB
+R2024A V1.2 [@jrc2026ucdb]. Each epoch is summarized inside the same
+quality-controlled 2025 urban-centre footprint. The primary measure adds the
+population below 5 metres to the population between 5 and 10 metres, then
+compares 2000 with 2020. Built-up surface provides an independent quantity for
+corroboration.
 
-- `generated/coastal-informal-risk-pilots.csv`
-- Coastal growth exposure ranking
-- Data-quality flags for DEM resolution and settlement detectability
+## Coverage rule
 
-## Reproducibility Notes
+The source contains 5,347 country-matched centres, but 4,013 leave the entire
+LECZ block blank. Because the documentation does not define blank as zero, no
+blank is imputed. The paper reports the full funnel and treats the result as a
+reporting-subset total. See `protocol-deviation.md`.
 
-Do not call settlements informal from remote-sensing data alone. Label the first
-output as a planning-screen candidate list.
+## Research products
+
+- `results.md` — numbered empirical findings;
+- `literature.md` — evidence and construct positioning;
+- `sensitivity.md` — 5/10 m and 10/20/30-year tests;
+- `coverage.md` and `limitations.md` — denominators and claim limits;
+- `generated/coastal-informal-risk-figure-dossier.json` — 12 figures;
+- `REPRODUCE.md` — source custody and commands;
+- `articles/coastal-informal-cluster.md` — public working paper.
+

@@ -1,47 +1,74 @@
-# Pre-registration — Coastal Informal Risk
+# Design freeze — low-elevation urban growth
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-26.
+`attestation_chain: ai-first` · Frozen before the GHS-UCDB V1.2 pull on
+2026-07-19.
 
-## 1. Claim
+## Question
 
-> Among the 31 ADB DMCs with a coastline and WDI data on urban share
-> + population, five — Pakistan, Philippines, China, Bangladesh,
-> Myanmar — persistently hold the top five coastal-informal-risk
-> index positions across +/-50 percent perturbation of the slum-share
-> imputation value.
+Which urban centres in ADB developing economies added the most population and
+built-up surface inside the low-elevation coastal zone from 2000 to 2020, and
+does that settlement-scale pattern resemble the inherited national proxy?
 
-## 2. Falsification
+## Unit and population
 
-Top-5 set composition changes by > 1 entry under the imputation
-sensitivity test.
+The unit is a quality-controlled GHS-UCDB fixed-2025-boundary urban centre.
+The analysis population is every centre whose country ISO code maps to the
+repository's ADB developing-economy roster and whose required 2000 and 2020
+LECZ fields are nonmissing. A centre enters the low-elevation analysis when its
+population below 10 metres is positive in either endpoint. No missing value is
+imputed.
 
-## 3. Population
+## Primary estimands
 
-31 of 50 ADB DMCs (coastal economies with all required WDI inputs).
-19 excluded: 11 landlocked + 8 with missing inputs.
+1. Absolute change in population below 10 metres, 2000–2020:
+   `(EX_L05_POP_2020 + EX_L10_POP_2020) -
+   (EX_L05_POP_2000 + EX_L10_POP_2000)`.
+2. Absolute change in built-up surface below 10 metres over the same period:
+   `(EX_L05_BUS_2020 + EX_L10_BUS_2020) -
+   (EX_L05_BUS_2000 + EX_L10_BUS_2000)`.
+3. The overlap between the top five centres' economies and the inherited
+   national proxy's top-five economy set. This overlap is a falsification
+   comparison, not a validation target.
 
-## 5. Metric
+## Sensitivity and alternate views
 
-`index = log10(population) × (urban_pct / 100) × (slum_pct / 100) × 100`,
-with slum-share imputed at 10% where missing (typical urban-slum
-percentage in middle-income LMICs per UN-Habitat).
+- **Elevation definition:** below 5 metres versus below 10 metres.
+- **Window length (arbitrary numeric choice):** 10, 20, and 30 years ending
+  in 2020. These are the required −50%, baseline, and +50% variants around the
+  20-year window.
+- **Scale:** centre-level absolute change, economy-aggregated absolute change,
+  and change in the low-elevation share of centre population.
+- **Quantity:** population and built-up surface are reported separately; they
+  are never multiplied into a composite index.
 
-## 6. Arbitrary numeric
+## Decision rules
 
-| Param | Value | Range |
-|---|---|---|
-| Slum-share imputation | 10% | 5–15% |
+The hook passes to a full program package only if:
 
-## 7. Sources
+1. at least 75% of DMC urban centres in the source have complete 2000/2020
+   population and built-up LECZ fields;
+2. at least 25 centres have positive below-10-metre population in an endpoint;
+3. the hero chart can name centres rather than only economies; and
+4. the claim remains descriptive of observed GHSL/LECZ quantities and does
+   not infer informality, inadequate protection, legal status, welfare loss,
+   or policy failure.
 
-WDI SP.URB.TOTL.IN.ZS, SP.POP.TOTL, EN.POP.SLUM.UR.ZS (CC BY 4.0).
-Coastal flag: manual ADB-DMC roster.
+The ranking need not be stable across elevation definitions or time windows.
+Instability is a substantive result and must be shown.
 
-## 8. Decision rule
+## Source and version custody
 
-Common top-5 across baseline + 2 perturbations: `[BGD, CHN, MMR, PAK, PHL]`.
-**Positive.**
+- GHS-UCDB R2024A thematic files, V1.2, retrieved 2026-07-19.
+- Dataset DOI: `10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd`.
+- GHS-POP R2023A supplies population; GHS-BUILT-S R2023A supplies built-up
+  surface; the LECZ mask is derived from CIESIN/CIDR SEDAC LECZ Version 3.
+- Acquisition records the download URL, byte count, SHA-256, archive members,
+  and retrieval timestamp.
 
-## 10. §18
+## Claim limits fixed in advance
 
-`ai-first`. 2026-04-26.
+Fixed 2025 urban-centre boundaries make the time comparison spatially
+consistent but do not reconstruct the historical boundary of the settlement.
+The LECZ is an elevation-and-coastal-zone screen, not a flood-depth, storm-
+surge, subsidence, protection, or loss model. Remote sensing cannot identify
+informal tenure or whether infrastructure and services are adequate.

@@ -104,23 +104,6 @@ export const INDICATORS: IndicatorDef[] = [
     },
   },
   {
-    programSlug: "coastal-informal-risk",
-    programTitle: "Coastal informal pressure",
-    programNumber: 6,
-    domain: "Built form",
-    unit: "index",
-    higherIsWorse: true,
-    metricLabel: "Coastal informal pressure",
-    sentenceTemplate: (v, r) =>
-      `Coastal informal-pressure ${v.toFixed(1)} — urban share ${r?.urban_pct?.toFixed?.(1) ?? "—"}%, slum share ${r?.slum_pct_urban?.toFixed?.(1) ?? "—"}%.`,
-    href: "/program/coastal-informal-risk/evidence",
-    accent: "crimson",
-    source: {
-      path: "/programs/coastal-informal-risk/generated/coastal-informal-risk-adb-panel.json",
-      extract: fromArrayOfRows("rows", "iso3", "coastal_informal_risk_index"),
-    },
-  },
-  {
     programSlug: "flood-market-access",
     programTitle: "Sylhet flood-route access",
     programNumber: 8,

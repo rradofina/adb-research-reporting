@@ -1,0 +1,1287 @@
+{
+  "program": "coastal-informal-risk",
+  "analysis": "GHS-UCDB low-elevation urban-centre growth object",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T19:36:04+00:00",
+  "claim_scope": "Descriptive urban-centre population and built-up changes inside the LECZ. No inference about informality, protection, service adequacy, hazard loss, or policy failure.",
+  "source_custody": {
+    "dataset": "GHS-UCDB R2024A V1.2",
+    "dataset_doi": "10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd",
+    "retrieved_at": "2026-07-18T19:28:03+00:00",
+    "packages": [
+      {
+        "label": "general_characteristics",
+        "url": "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "bytes": 6902089,
+        "sha256": "bc879d82320504f89df2041b7936221c8239cd808abe93980493aed062b4f3d6"
+      },
+      {
+        "label": "exposure",
+        "url": "https://cidportal.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_EXPOSURE_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_EXPOSURE_GLOBE_R2024A_V1_2.zip",
+        "bytes": 44408361,
+        "sha256": "f0ba93a5faaddadf62f9568b8c421d63a8f583757cde7170ea6ef0ca1102879c"
+      }
+    ]
+  },
+  "coverage": {
+    "source_urban_centres": 11422,
+    "source_countries": 191,
+    "matched_dmc_urban_centres": 5347,
+    "represented_coastal_economies": 24,
+    "represented_iso3": [
+      "AZE",
+      "BGD",
+      "BRN",
+      "CHN",
+      "FJI",
+      "GEO",
+      "IDN",
+      "IND",
+      "KHM",
+      "LKA",
+      "MDV",
+      "MMR",
+      "MYS",
+      "PAK",
+      "PHL",
+      "PNG",
+      "SLB",
+      "THA",
+      "TKM",
+      "TLS",
+      "TON",
+      "VNM",
+      "VUT",
+      "WSM"
+    ],
+    "roster_economies_without_eligible_ucdb_centre": [
+      "FSM",
+      "HKG",
+      "KIR",
+      "MHL",
+      "NRU",
+      "PLW",
+      "TUV"
+    ],
+    "roster_economy_labels_without_eligible_ucdb_centre": [
+      "Micronesia",
+      "Hong Kong, China",
+      "Kiribati",
+      "Marshall Islands",
+      "Nauru",
+      "Palau",
+      "Tuvalu"
+    ],
+    "complete_2000_2020_below10_centres": 1334,
+    "blank_2000_2020_below10_block_centres": 4013,
+    "zero_both_2000_2020_below10_centres": 410,
+    "positive_below10_endpoint_centres": 924
+  },
+  "base_result": {
+    "threshold_m": 10,
+    "start_year": 2000,
+    "end_year": 2020,
+    "total_population_2000": 237315455.15,
+    "total_population_2020": 328177444.96,
+    "total_population_change": 90861989.81,
+    "median_centre_change": 12329.695,
+    "centres_increasing": 775,
+    "centres_decreasing": 149,
+    "centres_more_people_but_smaller_share": 255,
+    "share_complete_centres": 1334,
+    "total_positive_population_change": 93088087.95,
+    "top5_centres_share_of_positive_change_pct": 38.476,
+    "top10_centres_share_of_positive_change_pct": 52.0805,
+    "population_built_change_pearson_r": 0.8534,
+    "top20_centres_population_change": [
+      {
+        "urban_centre_id": "11345",
+        "urban_centre": "Shanghai",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 14159252.05,
+        "end": 26130850.41,
+        "change": 11971598.36
+      },
+      {
+        "urban_centre_id": "2315",
+        "urban_centre": "Bangkok",
+        "iso3": "THA",
+        "economy": "Thailand",
+        "start": 9049180.39,
+        "end": 17107239.47,
+        "change": 8058059.08
+      },
+      {
+        "urban_centre_id": "6090",
+        "urban_centre": "Dhaka",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 14358199.9,
+        "end": 21644204.25,
+        "change": 7286004.35
+      },
+      {
+        "urban_centre_id": "10933",
+        "urban_centre": "Guangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 12589226.62,
+        "end": 17015062.29,
+        "change": 4425835.67
+      },
+      {
+        "urban_centre_id": "11199",
+        "urban_centre": "Suzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 6127354.95,
+        "end": 10202457.93,
+        "change": 4075102.98
+      },
+      {
+        "urban_centre_id": "5239",
+        "urban_centre": "Ho Chi Minh City",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 4305518.66,
+        "end": 8290344.22,
+        "change": 3984825.56
+      },
+      {
+        "urban_centre_id": "9127",
+        "urban_centre": "Tianjin",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 4560957.9,
+        "end": 7262417.64,
+        "change": 2701459.74
+      },
+      {
+        "urban_centre_id": "11352",
+        "urban_centre": "Kolkata",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 16124578.9,
+        "end": 18813706.15,
+        "change": 2689127.25
+      },
+      {
+        "urban_centre_id": "11407",
+        "urban_centre": "Shantou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 5275441.35,
+        "end": 7000497.19,
+        "change": 1725055.84
+      },
+      {
+        "urban_centre_id": "6913",
+        "urban_centre": "Surat",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 754291.4,
+        "end": 2317959.91,
+        "change": 1563668.51
+      },
+      {
+        "urban_centre_id": "5472",
+        "urban_centre": "Jakarta",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "start": 4668297.23,
+        "end": 6197306.79,
+        "change": 1529009.56
+      },
+      {
+        "urban_centre_id": "7599",
+        "urban_centre": "Mumbai",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 6353948.1,
+        "end": 7787480.24,
+        "change": 1433532.14
+      },
+      {
+        "urban_centre_id": "2457",
+        "urban_centre": "Karachi",
+        "iso3": "PAK",
+        "economy": "Pakistan",
+        "start": 1813903.67,
+        "end": 3167723.32,
+        "change": 1353819.65
+      },
+      {
+        "urban_centre_id": "5029",
+        "urban_centre": "Yangon",
+        "iso3": "MMR",
+        "economy": "Myanmar",
+        "start": 2490590.9,
+        "end": 3776669.6,
+        "change": 1286078.7
+      },
+      {
+        "urban_centre_id": "11311",
+        "urban_centre": "Hangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 3318712.69,
+        "end": 4360026.33,
+        "change": 1041313.64
+      },
+      {
+        "urban_centre_id": "11563",
+        "urban_centre": "Ningbo",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 1762179.42,
+        "end": 2728488.63,
+        "change": 966309.21
+      },
+      {
+        "urban_centre_id": "2323",
+        "urban_centre": "Manila",
+        "iso3": "PHL",
+        "economy": "Philippines",
+        "start": 5294963.14,
+        "end": 6257541.54,
+        "change": 962578.4
+      },
+      {
+        "urban_centre_id": "10300",
+        "urban_centre": "Chennai",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 2303971.83,
+        "end": 3183846.48,
+        "change": 879874.65
+      },
+      {
+        "urban_centre_id": "9386",
+        "urban_centre": "Kochi",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 1958499.95,
+        "end": 2770920.06,
+        "change": 812420.11
+      },
+      {
+        "urban_centre_id": "4768",
+        "urban_centre": "C?n Th?",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 627456.68,
+        "end": 1369940.45,
+        "change": 742483.77
+      }
+    ],
+    "top15_centre_population_declines": [
+      {
+        "urban_centre_id": "5906",
+        "urban_centre": "Khulna",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 1306579.24,
+        "end": 1075845.08,
+        "change": -230734.16
+      },
+      {
+        "urban_centre_id": "6379",
+        "urban_centre": "Cilacap",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "start": 638481.27,
+        "end": 514848.11,
+        "change": -123633.16
+      },
+      {
+        "urban_centre_id": "6723",
+        "urban_centre": "Barishal",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 562429.73,
+        "end": 463110.59,
+        "change": -99319.14
+      },
+      {
+        "urban_centre_id": "6843",
+        "urban_centre": "Patuakhali",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 259397.6,
+        "end": 171228.07,
+        "change": -88169.53
+      },
+      {
+        "urban_centre_id": "4210",
+        "urban_centre": "Jolo",
+        "iso3": "PHL",
+        "economy": "Philippines",
+        "start": 136749.94,
+        "end": 49718.72,
+        "change": -87031.22
+      },
+      {
+        "urban_centre_id": "6213",
+        "urban_centre": "Bagerhat",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 206511.97,
+        "end": 129520.71,
+        "change": -76991.26
+      },
+      {
+        "urban_centre_id": "11037",
+        "urban_centre": "Taizhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 445332.39,
+        "end": 370200.94,
+        "change": -75131.45
+      },
+      {
+        "urban_centre_id": "6633",
+        "urban_centre": "Jhalokathi",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 185440.01,
+        "end": 131506.65,
+        "change": -53933.36
+      },
+      {
+        "urban_centre_id": "10879",
+        "urban_centre": "Jianhu",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 319798.03,
+        "end": 269711.56,
+        "change": -50086.47
+      },
+      {
+        "urban_centre_id": "10801",
+        "urban_centre": "Binhai",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 279848.74,
+        "end": 231195.76,
+        "change": -48652.98
+      },
+      {
+        "urban_centre_id": "5635",
+        "urban_centre": "Noapara",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 193919.04,
+        "end": 150384.78,
+        "change": -43534.26
+      },
+      {
+        "urban_centre_id": "10919",
+        "urban_centre": "Sheyang",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 201324.01,
+        "end": 159619.93,
+        "change": -41704.08
+      },
+      {
+        "urban_centre_id": "10973",
+        "urban_centre": "Yangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 372695.99,
+        "end": 331582.04,
+        "change": -41113.95
+      },
+      {
+        "urban_centre_id": "10837",
+        "urban_centre": "Funing",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 243906.1,
+        "end": 206886.67,
+        "change": -37019.43
+      },
+      {
+        "urban_centre_id": "6423",
+        "urban_centre": "Pirojpur",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 140991.6,
+        "end": 104863.5,
+        "change": -36128.1
+      }
+    ],
+    "top20_centres_built_change": [
+      {
+        "urban_centre_id": "11345",
+        "urban_centre": "Shanghai",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 405822864.0,
+        "end": 689497690.0,
+        "change": 283674826.0
+      },
+      {
+        "urban_centre_id": "10933",
+        "urban_centre": "Guangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 475097951.0,
+        "end": 717230925.0,
+        "change": 242132974.0
+      },
+      {
+        "urban_centre_id": "11199",
+        "urban_centre": "Suzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 158527549.0,
+        "end": 388098387.0,
+        "change": 229570838.0
+      },
+      {
+        "urban_centre_id": "2315",
+        "urban_centre": "Bangkok",
+        "iso3": "THA",
+        "economy": "Thailand",
+        "start": 436358487.0,
+        "end": 620612887.0,
+        "change": 184254400.0
+      },
+      {
+        "urban_centre_id": "11311",
+        "urban_centre": "Hangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 115763635.0,
+        "end": 264891120.0,
+        "change": 149127485.0
+      },
+      {
+        "urban_centre_id": "6090",
+        "urban_centre": "Dhaka",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 179314932.0,
+        "end": 262892871.0,
+        "change": 83577939.0
+      },
+      {
+        "urban_centre_id": "11225",
+        "urban_centre": "Nantong",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 57487920.0,
+        "end": 136638959.0,
+        "change": 79151039.0
+      },
+      {
+        "urban_centre_id": "9127",
+        "urban_centre": "Tianjin",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 110392273.0,
+        "end": 175278283.0,
+        "change": 64886010.0
+      },
+      {
+        "urban_centre_id": "5239",
+        "urban_centre": "Ho Chi Minh City",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 134234052.0,
+        "end": 197322067.0,
+        "change": 63088015.0
+      },
+      {
+        "urban_centre_id": "11407",
+        "urban_centre": "Shantou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 188958093.0,
+        "end": 240168374.0,
+        "change": 51210281.0
+      },
+      {
+        "urban_centre_id": "11563",
+        "urban_centre": "Ningbo",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 55492574.0,
+        "end": 103862333.0,
+        "change": 48369759.0
+      },
+      {
+        "urban_centre_id": "11352",
+        "urban_centre": "Kolkata",
+        "iso3": "IND",
+        "economy": "India",
+        "start": 230981404.0,
+        "end": 279175423.0,
+        "change": 48194019.0
+      },
+      {
+        "urban_centre_id": "11195",
+        "urban_centre": "Zhangjiagang",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 38937176.0,
+        "end": 84400762.0,
+        "change": 45463586.0
+      },
+      {
+        "urban_centre_id": "1999",
+        "urban_centre": "Hanoi",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 46005969.0,
+        "end": 88868370.0,
+        "change": 42862401.0
+      },
+      {
+        "urban_centre_id": "11489",
+        "urban_centre": "Cixi",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 55726320.0,
+        "end": 89375644.0,
+        "change": 33649324.0
+      },
+      {
+        "urban_centre_id": "10941",
+        "urban_centre": "Yancheng",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 21255652.0,
+        "end": 51703191.0,
+        "change": 30447539.0
+      },
+      {
+        "urban_centre_id": "11251",
+        "urban_centre": "Changshu",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 20552965.0,
+        "end": 47882764.0,
+        "change": 27329799.0
+      },
+      {
+        "urban_centre_id": "4768",
+        "urban_centre": "C?n Th?",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 15202963.0,
+        "end": 41829550.0,
+        "change": 26626587.0
+      },
+      {
+        "urban_centre_id": "11665",
+        "urban_centre": "Taizhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 40728113.0,
+        "end": 66200409.0,
+        "change": 25472296.0
+      },
+      {
+        "urban_centre_id": "9251",
+        "urban_centre": "Binhai New Area",
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 52473941.0,
+        "end": 77010303.0,
+        "change": 24536362.0
+      }
+    ],
+    "top20_more_people_smaller_share": [
+      {
+        "urban_centre_id": "11345",
+        "urban_centre": "Shanghai",
+        "iso3": "CHN",
+        "economy": "China",
+        "population_change": 11971598.36,
+        "share_2000_pct": 93.89,
+        "share_2020_pct": 93.88,
+        "share_change_pp": -0.01
+      },
+      {
+        "urban_centre_id": "6090",
+        "urban_centre": "Dhaka",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "population_change": 7286004.35,
+        "share_2000_pct": 68.54,
+        "share_2020_pct": 64.46,
+        "share_change_pp": -4.08
+      },
+      {
+        "urban_centre_id": "10933",
+        "urban_centre": "Guangzhou",
+        "iso3": "CHN",
+        "economy": "China",
+        "population_change": 4425835.67,
+        "share_2000_pct": 42.99,
+        "share_2020_pct": 41.16,
+        "share_change_pp": -1.83
+      },
+      {
+        "urban_centre_id": "5239",
+        "urban_centre": "Ho Chi Minh City",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "population_change": 3984825.56,
+        "share_2000_pct": 65.52,
+        "share_2020_pct": 64.18,
+        "share_change_pp": -1.34
+      },
+      {
+        "urban_centre_id": "5472",
+        "urban_centre": "Jakarta",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "population_change": 1529009.56,
+        "share_2000_pct": 18.14,
+        "share_2020_pct": 16.22,
+        "share_change_pp": -1.92
+      },
+      {
+        "urban_centre_id": "2323",
+        "urban_centre": "Manila",
+        "iso3": "PHL",
+        "economy": "Philippines",
+        "population_change": 962578.4,
+        "share_2000_pct": 29.51,
+        "share_2020_pct": 25.6,
+        "share_change_pp": -3.91
+      },
+      {
+        "urban_centre_id": "4768",
+        "urban_centre": "C?n Th?",
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "population_change": 742483.77,
+        "share_2000_pct": 99.67,
+        "share_2020_pct": 99.66,
+        "share_change_pp": -0.01
+      },
+      {
+        "urban_centre_id": "7439",
+        "urban_centre": "Chattogram",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "population_change": 615116.09,
+        "share_2000_pct": 62.31,
+        "share_2020_pct": 62.17,
+        "share_change_pp": -0.14
+      },
+      {
+        "urban_centre_id": "7459",
+        "urban_centre": "Surabaya",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "population_change": 486395.3,
+        "share_2000_pct": 61.81,
+        "share_2020_pct": 61.13,
+        "share_change_pp": -0.68
+      },
+      {
+        "urban_centre_id": "9251",
+        "urban_centre": "Binhai New Area",
+        "iso3": "CHN",
+        "economy": "China",
+        "population_change": 448270.75,
+        "share_2000_pct": 99.12,
+        "share_2020_pct": 91.52,
+        "share_change_pp": -7.6
+      },
+      {
+        "urban_centre_id": "11636",
+        "urban_centre": "Putian",
+        "iso3": "CHN",
+        "economy": "China",
+        "population_change": 423561.22,
+        "share_2000_pct": 54.98,
+        "share_2020_pct": 54.64,
+        "share_change_pp": -0.34
+      },
+      {
+        "urban_centre_id": "1648",
+        "urban_centre": "Kuala Lumpur",
+        "iso3": "MYS",
+        "economy": "Malaysia",
+        "population_change": 408381.66,
+        "share_2000_pct": 13.59,
+        "share_2020_pct": 12.93,
+        "share_change_pp": -0.66
+      },
+      {
+        "urban_centre_id": "8035",
+        "urban_centre": "Makassar",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "population_change": 377406.6,
+        "share_2000_pct": 71.54,
+        "share_2020_pct": 71.31,
+        "share_change_pp": -0.23
+      },
+      {
+        "urban_centre_id": "6000",
+        "urban_centre": "Savar",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "population_change": 365079.18,
+        "share_2000_pct": 33.21,
+        "share_2020_pct": 29.4,
+        "share_change_pp": -3.81
+      },
+      {
+        "urban_centre_id": "11079",
+        "urban_centre": "Zhuhai [Macau]",
+        "iso3": "CHN",
+        "economy": "China",
+        "population_change": 333806.88,
+        "share_2000_pct": 48.86,
+        "share_2020_pct": 48.56,
+        "share_change_pp": -0.3
+      },
+      {
+        "urban_centre_id": "9464",
+        "urban_centre": "Kollam",
+        "iso3": "IND",
+        "economy": "India",
+        "population_change": 283056.15,
+        "share_2000_pct": 32.13,
+        "share_2020_pct": 29.96,
+        "share_change_pp": -2.17
+      },
+      {
+        "urban_centre_id": "7563",
+        "urban_centre": "Vasai-Virar",
+        "iso3": "IND",
+        "economy": "India",
+        "population_change": 281113.15,
+        "share_2000_pct": 66.34,
+        "share_2020_pct": 61.06,
+        "share_change_pp": -5.28
+      },
+      {
+        "urban_centre_id": "7958",
+        "urban_centre": "Samarinda",
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "population_change": 261854.55,
+        "share_2000_pct": 61.42,
+        "share_2020_pct": 57.69,
+        "share_change_pp": -3.73
+      },
+      {
+        "urban_centre_id": "7529",
+        "urban_centre": "Kutubdia",
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "population_change": 249624.16,
+        "share_2000_pct": 96.35,
+        "share_2020_pct": 95.73,
+        "share_change_pp": -0.62
+      },
+      {
+        "urban_centre_id": "5525",
+        "urban_centre": "Cagayan de Oro",
+        "iso3": "PHL",
+        "economy": "Philippines",
+        "population_change": 230023.02,
+        "share_2000_pct": 64.63,
+        "share_2020_pct": 64.11,
+        "share_change_pp": -0.52
+      }
+    ],
+    "top10_economies_population_change": [
+      {
+        "iso3": "CHN",
+        "economy": "China",
+        "start": 90163895.15,
+        "end": 130703814.82,
+        "change": 40539919.67,
+        "centres": 329
+      },
+      {
+        "iso3": "IND",
+        "economy": "India",
+        "start": 41980648.51,
+        "end": 52804032.24,
+        "change": 10823383.73,
+        "centres": 165
+      },
+      {
+        "iso3": "BGD",
+        "economy": "Bangladesh",
+        "start": 27740951.01,
+        "end": 36669155.57,
+        "change": 8928204.56,
+        "centres": 116
+      },
+      {
+        "iso3": "THA",
+        "economy": "Thailand",
+        "start": 10790512.2,
+        "end": 19299111.38,
+        "change": 8508599.18,
+        "centres": 54
+      },
+      {
+        "iso3": "VNM",
+        "economy": "Viet Nam",
+        "start": 16692319.01,
+        "end": 23590609.91,
+        "change": 6898290.9,
+        "centres": 102
+      },
+      {
+        "iso3": "IDN",
+        "economy": "Indonesia",
+        "start": 25432920.41,
+        "end": 31475035.52,
+        "change": 6042115.11,
+        "centres": 208
+      },
+      {
+        "iso3": "PHL",
+        "economy": "Philippines",
+        "start": 11470341.71,
+        "end": 15476040.86,
+        "change": 4005699.15,
+        "centres": 100
+      },
+      {
+        "iso3": "MYS",
+        "economy": "Malaysia",
+        "start": 3760359.27,
+        "end": 5356944.32,
+        "change": 1596585.05,
+        "centres": 43
+      },
+      {
+        "iso3": "MMR",
+        "economy": "Myanmar",
+        "start": 4826456.18,
+        "end": 6366406.25,
+        "change": 1539950.07,
+        "centres": 77
+      },
+      {
+        "iso3": "PAK",
+        "economy": "Pakistan",
+        "start": 1902747.87,
+        "end": 3257158.68,
+        "change": 1354410.81,
+        "centres": 54
+      }
+    ]
+  },
+  "proxy_falsification": {
+    "inherited_top5_economies": [
+      "PAK",
+      "PHL",
+      "CHN",
+      "BGD",
+      "MMR"
+    ],
+    "observed_top5_economies_by_aggregated_centre_change": [
+      "CHN",
+      "IND",
+      "BGD",
+      "THA",
+      "VNM"
+    ],
+    "observed_top5_centre_economies": [
+      "CHN",
+      "THA",
+      "BGD",
+      "CHN",
+      "CHN"
+    ],
+    "economy_top5_overlap_count": 2,
+    "centre_top5_economy_overlap_count": 2
+  },
+  "sensitivity": [
+    {
+      "threshold_m": 5,
+      "window_years": 10,
+      "start_year": 2010,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 893,
+      "total_population_change": 16569145.21,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 6384900.98,
+          "end": 8839840.34,
+          "change": 2454939.36
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 6582806.99,
+          "end": 8807032.44,
+          "change": 2224225.45
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 2654511.88,
+          "end": 3937483.19,
+          "change": 1282971.31
+        },
+        {
+          "urban_centre_id": "5239",
+          "urban_centre": "Ho Chi Minh City",
+          "iso3": "VNM",
+          "economy": "Viet Nam",
+          "start": 2293133.16,
+          "end": 3129182.75,
+          "change": 836049.59
+        },
+        {
+          "urban_centre_id": "10933",
+          "urban_centre": "Guangzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 5719628.93,
+          "end": 6402495.18,
+          "change": 682866.25
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "THA",
+        "VNM",
+        "IND",
+        "IDN"
+      ]
+    },
+    {
+      "threshold_m": 5,
+      "window_years": 20,
+      "start_year": 2000,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 893,
+      "total_population_change": 34642838.02,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 3939579.53,
+          "end": 8839840.34,
+          "change": 4900260.81
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 4246682.66,
+          "end": 8807032.44,
+          "change": 4560349.78
+        },
+        {
+          "urban_centre_id": "10933",
+          "urban_centre": "Guangzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 3907554.01,
+          "end": 6402495.18,
+          "change": 2494941.17
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 1811926.95,
+          "end": 3937483.19,
+          "change": 2125556.24
+        },
+        {
+          "urban_centre_id": "5239",
+          "urban_centre": "Ho Chi Minh City",
+          "iso3": "VNM",
+          "economy": "Viet Nam",
+          "start": 1549268.71,
+          "end": 3129182.75,
+          "change": 1579914.04
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "THA",
+        "IND",
+        "VNM",
+        "IDN"
+      ]
+    },
+    {
+      "threshold_m": 5,
+      "window_years": 30,
+      "start_year": 1990,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 893,
+      "total_population_change": 53508483.78,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 2206420.45,
+          "end": 8839840.34,
+          "change": 6633419.89
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 2906337.44,
+          "end": 8807032.44,
+          "change": 5900695.0
+        },
+        {
+          "urban_centre_id": "10933",
+          "urban_centre": "Guangzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 767473.8,
+          "end": 6402495.18,
+          "change": 5635021.38
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 1157854.51,
+          "end": 3937483.19,
+          "change": 2779628.68
+        },
+        {
+          "urban_centre_id": "5239",
+          "urban_centre": "Ho Chi Minh City",
+          "iso3": "VNM",
+          "economy": "Viet Nam",
+          "start": 945561.91,
+          "end": 3129182.75,
+          "change": 2183620.84
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "THA",
+        "IND",
+        "VNM",
+        "IDN"
+      ]
+    },
+    {
+      "threshold_m": 10,
+      "window_years": 10,
+      "start_year": 2010,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 924,
+      "total_population_change": 45003470.28,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 19780268.11,
+          "end": 26130850.41,
+          "change": 6350582.3
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 12991721.19,
+          "end": 17107239.47,
+          "change": 4115518.28
+        },
+        {
+          "urban_centre_id": "6090",
+          "urban_centre": "Dhaka",
+          "iso3": "BGD",
+          "economy": "Bangladesh",
+          "start": 17953296.83,
+          "end": 21644204.25,
+          "change": 3690907.42
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 7573093.38,
+          "end": 10202457.93,
+          "change": 2629364.55
+        },
+        {
+          "urban_centre_id": "5239",
+          "urban_centre": "Ho Chi Minh City",
+          "iso3": "VNM",
+          "economy": "Viet Nam",
+          "start": 6123958.11,
+          "end": 8290344.22,
+          "change": 2166386.11
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "IND",
+        "THA",
+        "BGD",
+        "VNM"
+      ]
+    },
+    {
+      "threshold_m": 10,
+      "window_years": 20,
+      "start_year": 2000,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 924,
+      "total_population_change": 90861989.81,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 14159252.05,
+          "end": 26130850.41,
+          "change": 11971598.36
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 9049180.39,
+          "end": 17107239.47,
+          "change": 8058059.08
+        },
+        {
+          "urban_centre_id": "6090",
+          "urban_centre": "Dhaka",
+          "iso3": "BGD",
+          "economy": "Bangladesh",
+          "start": 14358199.9,
+          "end": 21644204.25,
+          "change": 7286004.35
+        },
+        {
+          "urban_centre_id": "10933",
+          "urban_centre": "Guangzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 12589226.62,
+          "end": 17015062.29,
+          "change": 4425835.67
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 6127354.95,
+          "end": 10202457.93,
+          "change": 4075102.98
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "IND",
+        "BGD",
+        "THA",
+        "VNM"
+      ]
+    },
+    {
+      "threshold_m": 10,
+      "window_years": 30,
+      "start_year": 1990,
+      "end_year": 2020,
+      "complete_centres": 1334,
+      "positive_endpoint_centres": 924,
+      "total_population_change": 155506343.07,
+      "top5_centres": [
+        {
+          "urban_centre_id": "11345",
+          "urban_centre": "Shanghai",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 8883082.5,
+          "end": 26130850.41,
+          "change": 17247767.91
+        },
+        {
+          "urban_centre_id": "10933",
+          "urban_centre": "Guangzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 3500368.25,
+          "end": 17015062.29,
+          "change": 13514694.04
+        },
+        {
+          "urban_centre_id": "6090",
+          "urban_centre": "Dhaka",
+          "iso3": "BGD",
+          "economy": "Bangladesh",
+          "start": 10853875.12,
+          "end": 21644204.25,
+          "change": 10790329.13
+        },
+        {
+          "urban_centre_id": "2315",
+          "urban_centre": "Bangkok",
+          "iso3": "THA",
+          "economy": "Thailand",
+          "start": 7111034.17,
+          "end": 17107239.47,
+          "change": 9996205.3
+        },
+        {
+          "urban_centre_id": "11199",
+          "urban_centre": "Suzhou",
+          "iso3": "CHN",
+          "economy": "China",
+          "start": 3956354.04,
+          "end": 10202457.93,
+          "change": 6246103.89
+        }
+      ],
+      "top5_economies": [
+        "CHN",
+        "IND",
+        "BGD",
+        "THA",
+        "VNM"
+      ]
+    }
+  ]
+}

@@ -1,47 +1,32 @@
-# External red-team review — Coastal Informal Risk
+# External red-team synthesis — low-elevation urban growth
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-26.
+`attestation_chain: ai-first` · §18.4 synthesis 2026-07-19
 
 **No individual reviewer was contacted under §18.**
 
-## Roster
+## Synthetic reviewer lenses
 
-| ID | Institution | Synthesized from |
+| Lens | Main objection | Disposition |
 |---|---|---|
-| C-1 | UN-Habitat Global Urban Observatory | Slum measurement methodology |
-| C-2 | CIESIN SEDAC LECZ team | Low-elevation coastal-zone delineation |
-| C-3 | World Bank Climate Change Cross-Cutting | Coastal-risk policy framing |
-| C-4 | ANU Devpolicy / Pacific small-island risk | Pacific perspective |
+| Coastal hazards | A 10 m zone is not a surge or loss surface | Accepted; exposure language only |
+| Urban remote sensing | Built-up form does not establish informality | Accepted; informality removed |
+| Official statistics | Blank values cannot be assumed zero | Accepted; complete funnel shown |
+| Small-island development | UCDB centre thresholds omit key contexts | Accepted; no all-DMC claim |
+| City planning | Fixed footprints do not track boundary growth | Accepted; within-footprint interpretation |
 
-## Objections
+## Residual challenge
 
-**C-1 (UN-Habitat).** "Slum" definition varies by country; UN-Habitat
-maintains a 5-criterion standard (water, sanitation, durable housing,
-sufficient living area, secure tenure). WDI's SP.POP.SLUM.UR.ZS is a
-country-reported aggregate and is sparsely available. The 10%
-imputation hides this heterogeneity.
+The main number is large and easy to overstate. Every public tier must keep
+“recorded,” “reporting centres,” and “below 10 metres” close to the 90.9 million
+finding. The paper must not shorten it to “people at coastal risk.”
 
-**C-2 (CIESIN).** LECZ (Low-Elevation Coastal Zone, ≤10m elevation)
-is the standard exposure layer. This artifact uses country-level
-coastal-yes/no instead. The §18.5 upgrade-pass should integrate
-LECZ population shares.
+## Recommendation
 
-**C-3 (WB Climate).** Coastal exposure ≠ coastal-informal risk.
-Cyclone tracks, sea-level-rise scenarios, and storm-surge modeling
-are needed for actionable policy framing. This is structural-
-exposure only.
-
-**C-4 (ANU Devpolicy / Pacific).** Pacific small-island states
-(KIR, MHL, TUV, MDV) have entire populations in LECZ but small
-absolute populations; the log-population term down-weights them.
-The headline misses Pacific vulnerability.
-
-## Responses
-
-All accepted. Documented in limitations.md. §18.5 upgrade-pass
-priorities: (a) LECZ integration; (b) Pacific small-island
-sub-population analysis; (c) cyclone/storm-surge layer.
+Publish the measurement result and the old-proxy falsification. For the next
+pass, select a small number of leading centres only after local hazard,
+subsidence, protection, and deprivation data are qualified.
 
 ## §18.4 non-claim
 
 No individual reviewer was contacted.
+

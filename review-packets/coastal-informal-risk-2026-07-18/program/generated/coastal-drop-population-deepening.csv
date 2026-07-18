@@ -1,0 +1,32 @@
+iso3,country,urban_pct,population,slum_pct_used,slum_imputed,headline_index,rank_headline,nopop_score,rank_nopop,rank_shift_headline_to_nopop
+PAK,Pakistan,39.2,251269164,56.0,False,184.4,1,21.95,2,-1
+PHL,Philippines,55.5,115843670,35.9,False,160.67,2,19.92,3,-1
+CHN,China,65.9,1408975000,26.3,False,158.57,3,17.33,5,-2
+BGD,Bangladesh,32.7,173562364,51.5,False,138.76,4,16.84,7,-3
+MMR,Myanmar,30.4,54500091,58.3,False,137.11,5,17.72,4,1
+TUV,Tuvalu,64.7,9646,50.9,False,131.21,6,32.93,1,5
+KHM,Cambodia,40.9,17638801,42.3,False,125.37,7,17.3,6,1
+AZE,Azerbaijan,58.6,10202830,26.9,False,110.48,8,15.76,9,-1
+VNM,Viet Nam,38.5,100987686,32.5,False,100.15,9,12.51,11,-2
+IDN,Indonesia,58.8,283487931,19.4,False,96.42,10,11.41,12,-2
+BRN,Brunei Darussalam,74.9,462721,21.6,False,91.66,11,16.18,8,3
+MDV,Maldives,42.0,527799,34.8,False,83.64,12,14.62,10,2
+HKG,"Hong Kong, China",100.0,7524100,10.0,True,68.76,13,10.0,13,0
+LKA,Sri Lanka,20.3,21916000,44.7,False,66.61,14,9.07,15,-1
+TLS,Timor-Leste,28.7,1400638,33.9,False,59.8,15,9.73,14,1
+FJI,Fiji,59.1,928784,9.4,False,33.15,16,5.56,17,-1
+WSM,Samoa,17.5,218019,34.6,False,32.32,17,6.05,16,1
+GEO,Georgia,61.1,3699557,7.1,False,28.49,18,4.34,18,0
+TKM,Turkmenistan,47.1,7494498,8.4,False,27.2,19,3.96,19,0
+PNG,Papua New Guinea,15.4,10576502,22.3,False,24.12,20,3.43,21,-1
+KIR,Kiribati,62.5,134518,5.9,False,18.91,21,3.69,20,1
+IND,India,35.4,1450935791,5.4,False,17.51,22,1.91,23,-1
+FSM,Micronesia,22.5,113160,10.0,True,11.37,23,2.25,22,1
+THA,Thailand,61.9,71668011,2.0,False,9.72,24,1.24,25,-1
+MHL,Marshall Islands,78.7,37548,2.4,False,8.64,25,1.89,24,1
+VUT,Vanuatu,22.3,327777,3.1,False,3.81,26,0.69,26,0
+SLB,Solomon Islands,30.7,819198,1.9,False,3.45,27,0.58,28,-1
+NRU,Nauru,100.0,11947,0.6,False,2.45,28,0.6,27,1
+PLW,Palau,79.2,17695,0.6,False,2.02,29,0.48,29,0
+MYS,Malaysia,76.9,35557673,0.2,False,1.16,30,0.15,30,0
+TON,Tonga,21.2,104175,0.3,False,0.32,31,0.06,31,0

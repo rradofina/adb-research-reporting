@@ -138,16 +138,16 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "coastal-informal-risk",
     betterSource:
-      "Low-elevation coastal-zone population; GHSL and WorldPop; Google Open Buildings 2.5D Temporal; AlphaEarth/Dynamic World built-up change; national slum or informal-settlement layers; flood and coastal hazard surfaces.",
+      "Local storm-surge and relative-sea-level surfaces; subsidence; coastal protection and drainage; dated planning boundaries; validated housing, tenure, and service layers.",
     betterUnit:
-      "Low-elevation coastal-zone grid, settlement footprint, barangay, municipality, and flood-prone neighborhood.",
-    priority: "P2",
+      "Hazard-resolved neighbourhood, barangay, or municipality inside a small set of leading GHS-UCDB centres.",
+    priority: "P1",
     rationale:
-      "The current coastal flag and sparse slum data are too blunt; settlement footprints would make the exposure spatially legible.",
+      "The current study now measures low-elevation settlement growth directly; the next claim requires hazard, protection, and locally validated social conditions.",
     sourceLinks: [
-      { label: "GHSL", href: "https://ghsl.jrc.ec.europa.eu/" },
-      { label: "WorldPop", href: "https://www.worldpop.org/datacatalog/" },
-      { label: "Google Open Buildings 2.5D Temporal", href: "https://sites.research.google/gr/open-buildings/temporal/" },
+      { label: "GHS-UCDB R2024A", href: "https://data.jrc.ec.europa.eu/dataset/1a338be6-7eaf-480c-9664-3a8ade88cbcd" },
+      { label: "IPCC cities by the sea", href: "https://www.ipcc.ch/report/ar6/wg2/chapter/ccp2/" },
+      { label: "SEDAC LECZ", href: "https://sedac.ciesin.columbia.edu/data/collection/lecz" },
     ],
   },
   {

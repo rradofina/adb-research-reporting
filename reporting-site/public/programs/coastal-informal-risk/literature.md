@@ -1,55 +1,54 @@
-# Literature review — Coastal Informal Risk
+# Literature review — low-elevation urban growth
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · Updated 2026-07-19
 
-## 1. Search record
+## Evidence spine
 
-Queries (2026-04-27):
-1. `McGranahan Balk Anderson LECZ low elevation coastal zone`
-2. `UN-Habitat slum measurement 5 criteria`
-3. `coastal informal settlement vulnerability LMIC`
-4. `CIESIN SEDAC LECZ population share`
+McGranahan, Balk, and Anderson defined the Low Elevation Coastal Zone as the
+contiguous coastal land below 10 metres and showed why population concentration
+in that zone matters for climate policy [@mcgranahan2007rising]. Neumann and
+co-authors later separated demographic change in the LECZ from modeled coastal
+flood exposure under sea-level and socioeconomic scenarios
+[@neumann2015coastal]. That distinction governs this study: elevation-zone
+population is an exposure object, not a flood-probability or loss object.
 
-Tier-A: *Environment and Urbanization*, *Nature Climate Change*,
-*Global Environmental Change*. Tier-B: UN-Habitat, CIESIN SEDAC.
-Tier-C: IIED working papers, ADB urban-resilience briefs.
+GHS-UCDB provides a globally harmonized way to study named urban centres. The
+database integrates open geospatial sources into comparable centre extents and
+multi-temporal attributes [@melchiorri2024ucdb]. The R2024A V1.2 release used
+here contains 11,422 quality-controlled urban centres and exposes population
+and built-up-surface fields below 5 metres and from 5 to 10 metres
+[@jrc2026ucdb]. Fixed 2025 footprints permit within-boundary comparison across
+epochs, while also limiting the interpretation: the analysis does not measure
+the outward movement of the city boundary.
 
-## 2. Verified entries
+The IPCC frames coastal risk as the interaction of hazards, exposure,
+vulnerability, and adaptation [@ipcc2022coastalcities]. A LECZ count observes
+only part of that chain. Storm surge, relative sea level, subsidence, coastal
+protection, and social vulnerability can differ sharply among cities at the
+same elevation.
 
-- **`mcgranahan2007rising`** — McGranahan, Balk, Anderson (2007).
-  The rising tide. *Environment and Urbanization* 19(1):17–37.
-  doi:10.1177/0956247807076960. **Foundational LECZ definition
-  (≤10m elevation) and population-share methodology.**
-- **`unhabitat2022slum`** — UN-Habitat World Cities Report 2022.
-  **Slum measurement: 5-criterion standard.**
-- **`geoboundaries2024`** — Runfola et al. (2024). geoBoundaries
-  gbOpen ADM1 polygons.
+Finally, Earth observation does not by itself establish informality. Kuffer and
+co-authors show that remotely sensed morphology can support deprived-area
+mapping, but slum and inadequate-housing indicators also depend on tenure,
+services, durability, and local context [@kuffer2018slumindicator]. The present
+study therefore removes “informal” from its measured claim.
 
-## 3. Synthesis
+## Contribution
 
-1. **LECZ population-share is the standard exposure measure**
-   [@mcgranahan2007rising]; CIESIN SEDAC publishes the global
-   layer.
-2. **"Slum" is country-defined** [@unhabitat2022slum]; UN-Habitat's
-   5-criterion standard (water, sanitation, durable housing,
-   sufficient living area, secure tenure) anchors the WDI series.
-3. **WDI's slum series is sparse** for ADB DMCs — only 7 of 31
-   coastal DMCs have direct values; imputation at 10% is the
-   defensible placeholder.
+The contribution is not a new risk index. It is a reproducible measurement
+study that:
 
-## 4. Gap
+1. replaces a national, imputation-heavy proxy with a direct urban-centre LECZ
+   object;
+2. quantifies 2000–2020 population and built-up change in reported centres;
+3. shows how rankings change when the construct becomes spatial;
+4. tests the elevation definition and time window;
+5. makes blank-field and small-island coverage failures visible.
 
-No published cross-ADB-coastal-DMC informal-risk ranking with
-±50% sensitivity on slum-imputation. The top-5 set-stability
-claim is the marginal contribution.
+## Open research gap
 
-## 5. First testable claim
+A policy-ready next stage would join the centre polygons to local relative
+sea-level or storm-surge surfaces, protection standards, subsidence, and
+validated settlement-deprivation data. Those additions would create a risk
+study; this paper deliberately stops at exposure growth.
 
-> Among the 31 ADB DMCs with a coastline and required WDI inputs,
-> five — Pakistan, Philippines, China, Bangladesh, Myanmar —
-> persistently hold the top-5 coastal-informal-risk index positions
-> across ±50% perturbation of the slum-share imputation.
-
-## 7. §18 attestation
-
-`ai-first`. 2026-04-27.

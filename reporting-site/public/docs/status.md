@@ -12,11 +12,11 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `coastal-informal-risk` — replace the national proxy with one public low-elevation coastal settlement-growth object, while keeping informality outside the remote-sensing claim. |
-| Per-program board | `coastal-informal-risk/STATUS.md` |
+| Active flagship | `digital-performance` — start from a public connectivity data object and a rough visual, then decide whether the 2.6 GB Ookla route is necessary. |
+| Per-program board | `digital-performance/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `invisible-urbanization` — the inherited proxy was retired; GHSL and WDI urban shares differ by a median absolute 20.0 points across 40 complete 2020 cases. |
+| Previous flagship | `coastal-informal-risk` — the inherited proxy was retired; 1,334 reporting GHS-UCDB centres added 90.9 million people below 10 m from 2000 to 2020. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -99,11 +99,13 @@ overrides priority by editing this list.
     inherited ranking is retired. A GHSL–WDI comparison finds a median absolute
     20.0-point definition gap in 2020, with administrative-scale and transition
     diagnostics. Reopen only for claim-changing classification or service data.
-16. **`coastal-informal-risk`** — **active flagship.** Start with a public
-    low-elevation coastal settlement-growth object; remote sensing must not be
-    used to label informality.
-17. **`digital-performance`** — broadband coverage vs official
-    connectivity claims; folder mostly empty (Stage 1 framing needed).
+16. **`coastal-informal-risk`** — *current measurement issue closed.* The
+    inherited proxy is retired. A direct GHS-UCDB object finds 90.9 million
+    additional people below 10 m across 1,334 reporting centres; reopen only
+    for qualified local hazard, protection, or social data.
+17. **`digital-performance`** — **active flagship.** Start with a public
+    connectivity data object and rough visual; test data availability before
+    committing to the inherited 2.6 GB Ookla route.
 18. **`mpi-nighttime-lights`** — Program 0, co-authored with Arturo; H
     stage; owner-led not AI-led (different review path).
 

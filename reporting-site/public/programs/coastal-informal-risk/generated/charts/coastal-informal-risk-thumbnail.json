@@ -1,17 +1,17 @@
 {
   "program": "coastal-informal-risk",
-  "title": "Coastal-informal pressure concentrates in five economies",
-  "caption": "Pakistan, Philippines, China, Bangladesh, Myanmar \u2014 stable top-5 by population-scaled informal-urban-pressure proxy.",
-  "headline_number": "Myanmar 58% slum-share of urban population",
-  "visual_form": "Asia-Pacific map (top-5 highlighted, color = slum-urban %)",
-  "source": "WDI slum / urban / population shares",
+  "title": "90.9 million more people recorded below 10 metres",
+  "caption": "Shanghai, Bangkok, and Dhaka lead the centre-level change, 2000\u20132020.",
+  "headline_number": "+90.9 million",
+  "visual_form": "ranked horizontal bar chart",
+  "source": "GHS-UCDB R2024A V1.2",
   "inputs": [
-    "generated/coastal-informal-risk-adb-panel.csv"
+    "generated/coastal-lecz-urban-centre-panel.csv"
   ],
   "script": "coastal-informal-risk/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T18:40:47+00:00",
+  "generated_at": "2026-07-18T19:42:04+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +21,7 @@
     "svg": "coastal-informal-risk-thumbnail.svg"
   },
   "sha256": {
-    "png": "b3143efc592929a3bf60881daf79f97933f5afff7a35b54ed82080da6902b081",
-    "svg": "d426ba331d6b2591a3ce15f1c3b1fb7867fb5c00dfb0c3355bded2429be449a8"
+    "png": "e4ae00517c44c4a10c09b93028e18ea9855635199dff42b6a0518eda1313b959",
+    "svg": "f758919842e958371a490cf249f4c0a262116e1ecdd6ff2b26b9bfcd226dbd6a"
   }
 }

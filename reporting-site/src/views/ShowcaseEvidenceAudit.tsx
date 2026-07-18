@@ -513,6 +513,55 @@ function buildMpiModel(report: ShowcaseReport, data: JsonValue): AuditModel {
 }
 
 function buildCoastalModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  if (data.base_result && data.coverage) {
+    const base = data.base_result || {};
+    const coverage = data.coverage || {};
+    const proxy = data.proxy_falsification || {};
+    const rows = safeRows(base.top20_centres_population_change)
+      .slice(0, 8)
+      .map((row, index) => ({
+        key: String(row.urban_centre_id || index),
+        label: String(row.urban_centre || row.iso3),
+        sublabel: `${String(row.iso3 || "")} · ${String(row.economy || "")}`,
+        leftText: "2000 below 10 m",
+        rightText: "2020 below 10 m",
+        leftValue: formatNumber(row.start),
+        rightValue: formatNumber(row.end),
+        note: `+${formatNumber(row.change)} people`,
+        status: "survived" as const,
+        intensity: Math.max(24, 100 - index * 9),
+      }));
+
+    return {
+      kind: report.audit!.kind,
+      stats: [
+        { value: `${formatFlexible(numberValue(base.total_population_change) / 1e6, 1)}m`, label: "net change below 10 m" },
+        { value: formatNumber(coverage.complete_2000_2020_below10_centres), label: "reporting centres" },
+        { value: `${formatFlexible(base.top10_centres_share_of_positive_change_pct, 1)}%`, label: "top-ten share of positive change" },
+        { value: `${proxy.economy_top5_overlap_count}/5`, label: "old/new economy overlap" },
+      ],
+      chartTitle: "The direct spatial object resolves the result to named centres.",
+      chartDeck: "The bridge compares 2000 and 2020 population below 10 metres for the largest centre-level increases inside fixed 2025 footprints.",
+      leftLabel: "2000",
+      rightLabel: "2020",
+      rows,
+      componentCards: [
+        { key: "matched", value: formatNumber(coverage.matched_dmc_urban_centres), label: "Country-matched centres", note: "Centres in the coastal-DMC roster before LECZ-field filtering.", status: "survived" },
+        { key: "reported", value: formatNumber(coverage.complete_2000_2020_below10_centres), label: "Reported LECZ blocks", note: "Complete 2000 and 2020 population and built-up fields.", status: "survived" },
+        { key: "positive", value: formatNumber(coverage.positive_below10_endpoint_centres), label: "Positive endpoint", note: "Population below 10 m is positive in at least one endpoint.", status: "survived" },
+        { key: "blank", value: formatNumber(coverage.blank_2000_2020_below10_block_centres), label: "Undefined blanks", note: "Not converted to zero; the total is a reporting-subset result.", status: "flag" },
+      ],
+      readouts: [
+        { label: "Inherited top five", value: strings(proxy.inherited_top5_economies).join(", ") },
+        { label: "Observed economy top five", value: strings(proxy.observed_top5_economies_by_aggregated_centre_change).join(", ") },
+        { label: "Population-built correlation", value: formatFlexible(base.population_built_change_pearson_r, 2) },
+        { label: "More people, smaller share", value: formatNumber(base.centres_more_people_but_smaller_share) },
+      ],
+      sourceFacts: sourceFacts(report, data),
+      caveats: baseCaveats(report, data),
+      generatedAt: data.generated_at,
+    };
+  }
   const headlineTop = strings(data.headline_top5);
   const noPopTop = strings(data.nopop_top5);
   const readiness = data.coastal_source_readiness || {};

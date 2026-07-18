@@ -73,12 +73,12 @@ export const programs: ProgramEntry[] = [
   {
     id: 6,
     slug: "coastal-informal-risk",
-    title: "Coastal informal settlement risk",
-    status: "SR",
+    title: "Low-elevation urban growth",
+    status: "PP",
     summary:
-      "Population-scaled urban-informal-pressure proxy for 31 coastal ADB DMCs. Stable top-5: Pakistan, Philippines, China, Bangladesh, Myanmar. Low-elevation coastal zone integration remains the upgrade-pass.",
-    note: "Screening result only; WDI slum data are sparse and partly imputed.",
-    href: "/program/coastal-informal-risk/evidence",
+      "Across 1,334 reporting urban centres, population recorded below 10 metres increased by 90.9 million from 2000 to 2020. Ten centres account for 52.1% of positive change.",
+    note: "PP measurement study; reporting-subset exposure, not flood loss, informality, or policy performance.",
+    href: "/coastal-informal-risk?view=paper",
   },
   {
     id: 7,

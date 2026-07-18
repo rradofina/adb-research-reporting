@@ -36,7 +36,7 @@ const DOMAIN_MAP: Record<string, { domain: string; description: string }> = {
   },
   "coastal-informal-risk": {
     domain: "Built form",
-    description: "Coastal informal-settlement growth in low-elevation risk zones.",
+    description: "Recorded population and built-up growth inside low-elevation urban-centre footprints.",
   },
   "disaster-recovery-lag": {
     domain: "Disaster",

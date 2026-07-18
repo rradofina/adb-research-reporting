@@ -1,0 +1,549 @@
+{
+  "program": "coastal-informal-risk",
+  "analysis": "coastal informal-risk spatial source-readiness audit",
+  "claim_scope": "Source-readiness wall for the spatial layers needed after the no-population denominator audit. Public metadata/index pages are visible for settlement, elevation, and coastal-hazard inputs, but the analysis-ready overlay remains uncomputed. This is not a storm-surge exposure or informal-settlement footprint result.",
+  "retrieved_at": "2026-06-19T19:45:06Z",
+  "sources": {
+    "ghsl_download_page": "https://human-settlement.emergency.copernicus.eu/download.php",
+    "ghsl_catalog_page": "https://data.jrc.ec.europa.eu/collection/ghsl",
+    "nasadem_cmr_collections": "https://cmr.earthdata.nasa.gov/search/collections.json",
+    "nasadem_cmr_granules": "https://cmr.earthdata.nasa.gov/search/granules.json",
+    "wri_aqueduct_floods_v2_index": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html"
+  },
+  "summary": {
+    "spatial_source_layers_checked": 3,
+    "ghsl_built_settlement_link_candidates": 2,
+    "nasadem_concept_id": "C2763264762-LPCLOUD",
+    "nasadem_sample_https_data_links": 9,
+    "nasadem_sample_s3_links": 3,
+    "nasadem_sample_protected_https_data_links": 3,
+    "wri_coastal_links": 820,
+    "wri_coastal_tif_links": 410,
+    "wri_coastal_return_period_tokens": [
+      "0001_5",
+      "0002_0",
+      "0005_0",
+      "0010_0",
+      "0025_0",
+      "0050_0",
+      "0100_0",
+      "0250_0",
+      "0500_0",
+      "1000_0"
+    ],
+    "analysis_ready_overlay": false,
+    "raster_layers_downloaded": 0,
+    "settlement_elevation_surge_joined": false,
+    "no_population_top5": [
+      "TUV",
+      "PAK",
+      "PHL",
+      "MMR",
+      "CHN"
+    ],
+    "entered_top5_when_pop_removed": [
+      "TUV"
+    ],
+    "dropped_from_top5_when_pop_removed": [
+      "BGD"
+    ],
+    "owner_gated_or_unfinished_steps": [
+      "No GHSL or other settlement raster tile is downloaded, mosaicked, or classified.",
+      "No NASADEM tile is downloaded and no low-elevation band is derived.",
+      "No WRI Aqueduct coastal GeoTIFF is downloaded, clipped, or assigned a return period.",
+      "No CRS harmonization, resampling, population weighting, informality mask, or zonal statistic is computed.",
+      "No settlement-level, coastline-level, or exposed-population result is produced."
+    ]
+  },
+  "source_rows": [
+    {
+      "layer_role": "settlement_footprint",
+      "source_name": "GHSL/JRC Global Human Settlement Layer",
+      "source_url": "https://human-settlement.emergency.copernicus.eu/download.php",
+      "key_id": "GHS_BUILT_S metadata candidates",
+      "public_metadata_reachable": true,
+      "candidate_links": 2,
+      "sample_data_links": 0,
+      "status": "metadata page reachable; settlement/built-up links visible; no raster tile pulled",
+      "notes": "Download page has 2 GHS_BUILT_S link candidates; catalog page has GHSL text=True. No GHSL raster is downloaded or mosaicked here."
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT",
+      "source_url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=NASADEM_HGT&page_size=5",
+      "key_id": "C2763264762-LPCLOUD",
+      "public_metadata_reachable": true,
+      "candidate_links": 1,
+      "sample_data_links": 9,
+      "status": "CMR collection and sample-granule metadata reachable; raster access not attempted",
+      "notes": "Concept C2763264762-LPCLOUD has cloud_hosted=True and sample HTTPS data links=9; protected HTTPS data links=3."
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "source_url": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html",
+      "key_id": "inuncoast coastal inundation depth files",
+      "public_metadata_reachable": true,
+      "candidate_links": 820,
+      "sample_data_links": 410,
+      "status": "coastal hazard-map index reachable; no return period selected or raster downloaded",
+      "notes": "820 unique inuncoast links, including 410 GeoTIFF links and 410 pickle links; return-period tokens visible: 10."
+    },
+    {
+      "layer_role": "analysis_ready_overlay",
+      "source_name": "Settlement x elevation x coastal-hazard overlay",
+      "source_url": "",
+      "key_id": "not_computed",
+      "public_metadata_reachable": false,
+      "candidate_links": 0,
+      "sample_data_links": 0,
+      "status": "not joined",
+      "notes": "No GHSL, NASADEM, WRI coastal hazard, population, or informality-mask raster overlay is computed here."
+    }
+  ],
+  "nasadem_detail": {
+    "collection_rows": [
+      {
+        "short_name": "NASADEM_HGT",
+        "version_id": "001",
+        "concept_id": "C2763264762-LPCLOUD",
+        "title": "NASADEM Merged DEM Global 1 arc second V001",
+        "time_start": "2000-02-11T00:00:00.000Z",
+        "time_end": "2000-02-21T23:59:59.000Z",
+        "updated": "2020-02-13T00:00:00.000Z",
+        "cloud_hosted": true,
+        "online_access_flag": true,
+        "data_center": "LPCLOUD",
+        "processing_level_id": "3",
+        "boxes": "-56 -180 60 180"
+      }
+    ],
+    "sample_granule_rows": [
+      {
+        "granule_id": "G2816769882-LPCLOUD",
+        "title": "NASADEM_HGT_s01w047",
+        "time_start": "2000-02-11T00:00:00.000Z",
+        "updated": "2018-09-12T13:26:39.688Z",
+        "data_links": 10,
+        "https_data_links": 9,
+        "s3_links": 3,
+        "protected_https_data_links": 3,
+        "documentation_links": 8
+      }
+    ],
+    "concept_id": "C2763264762-LPCLOUD",
+    "title": "NASADEM Merged DEM Global 1 arc second V001",
+    "time_start": "2000-02-11T00:00:00.000Z",
+    "updated": "2020-02-13T00:00:00.000Z",
+    "data_links": 10,
+    "https_data_links": 9,
+    "s3_links": 3,
+    "protected_https_data_links": 3,
+    "documentation_links": 8
+  },
+  "sample_link_rows": [
+    {
+      "layer_role": "settlement_footprint",
+      "source_name": "GHSL/JRC download page",
+      "href": "https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A.txt?t=1603983376",
+      "rel_or_label": "Metadata information (1.04 KB)",
+      "file_type": "txt",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "settlement_footprint",
+      "source_name": "GHSL/JRC download page",
+      "href": "https://human-settlement.emergency.copernicus.eu/documents/GHS_BUILT_S2comp2018_GLOBE_R2020A_tile_schema.zip?t=1617195881",
+      "rel_or_label": "Index shapefile (294.61 KB)",
+      "file_type": "zip",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "settlement_footprint",
+      "source_name": "GHSL/JRC download page",
+      "href": "https://human-settlement.emergency.copernicus.eu/documents/GHSL_Data_Package_2023.pdf?t=1727170839",
+      "rel_or_label": "",
+      "file_type": "pdf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+      "file_type": "zip",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.zip",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/s3#",
+      "file_type": "zip",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "http://dx.doi.org/10.5067/MEaSUREs/NASADEM/NASADEM_HGT.001",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+      "file_type": "001",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+      "file_type": "xml",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "s3://lp-prod-protected/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.cmr.xml",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+      "file_type": "xml",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://data.lpdaac.earthdatacloud.nasa.gov/s3credentials",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/browse#",
+      "file_type": "jpg",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "s3://lp-prod-public/NASADEM_HGT.001/NASADEM_HGT_s01w047/NASADEM_HGT_s01w047.1.jpg",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/browse#",
+      "file_type": "jpg",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264762-LPCLOUD",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+      "file_type": "001",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://www.earthdata.nasa.gov/centers/lp-daac",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/metadata#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://lpdaac.usgs.gov/documents/2237/NASADEM_User_Guide_V13.pdf",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+      "file_type": "pdf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://lpdaac.usgs.gov/documents/642/DEM_Comparison_Guide.pdf",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/documentation#",
+      "file_type": "pdf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://appeears.earthdatacloud.nasa.gov/",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264764-LPCLOUD",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "elevation_dem",
+      "source_name": "NASA CMR NASADEM_HGT sample granule",
+      "href": "https://search.earthdata.nasa.gov/search/granules?p=C2763264768-LPCLOUD",
+      "rel_or_label": "http://esipfed.org/ns/fedsearch/1.1/data#",
+      "file_type": "",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0001_5.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0001_5.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0001_5.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0002_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0002_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0002_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0005_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0005_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0005_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0010_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0010_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0010_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0025_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0025_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0025_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0050_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0050_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0050_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0100_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0100_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0100_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0250_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0250_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0250_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0500_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp0500_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp0500_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.pickle",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp1000_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_nosub_hist_rp1000_0.tif",
+      "rel_or_label": "inuncoast_historical_nosub_hist_rp1000_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.pickle",
+      "rel_or_label": "inuncoast_historical_wtsub_hist_rp0001_5.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0001_5.tif",
+      "rel_or_label": "inuncoast_historical_wtsub_hist_rp0001_5.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.pickle",
+      "rel_or_label": "inuncoast_historical_wtsub_hist_rp0002_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0002_0.tif",
+      "rel_or_label": "inuncoast_historical_wtsub_hist_rp0002_0.tif",
+      "file_type": "tif",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "coastal_hazard",
+      "source_name": "WRI Aqueduct Floods Hazard Maps v2",
+      "href": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/inuncoast_historical_wtsub_hist_rp0005_0.pickle",
+      "rel_or_label": "inuncoast_historical_wtsub_hist_rp0005_0.pickle",
+      "file_type": "pickle",
+      "selected_for_analysis": false
+    }
+  ],
+  "cache_records": [
+    {
+      "url": "https://human-settlement.emergency.copernicus.eu/download.php",
+      "cache_path": ".cache\\coastal-spatial-source-readiness\\ghsl_download_page.html",
+      "bytes": 26368,
+      "sha256": "f1a201f3cf984c626a36c0cb65bdb4047ee563ce43241c16503f7d4cdd6d1187",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "query_type": "ghsl_download_page"
+    },
+    {
+      "url": "https://data.jrc.ec.europa.eu/collection/ghsl",
+      "cache_path": ".cache\\coastal-spatial-source-readiness\\ghsl_catalog_page.html",
+      "bytes": 37832,
+      "sha256": "beb6d3c95f1cf632086b002b319b8f92f02b0feb1738524cbabef77eb37a8510",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "query_type": "ghsl_catalog_page"
+    },
+    {
+      "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=NASADEM_HGT&page_size=5",
+      "cache_path": ".cache\\coastal-spatial-source-readiness\\nasadem_hgt_collections.json",
+      "bytes": 24254,
+      "sha256": "d19e0593a34e5199f7243f8cadee11e3174164177d350aaa0407b086d41bd697",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "query_type": "cmr_collections",
+      "short_name": "NASADEM_HGT"
+    },
+    {
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2763264762-LPCLOUD&page_size=1&sort_key%5B%5D=-start_date",
+      "cache_path": ".cache\\coastal-spatial-source-readiness\\nasadem_hgt_granules_C2763264762-LPCLOUD.json",
+      "bytes": 4145,
+      "sha256": "1d26a7c2747d8c55b09223772c3df75811c140142d786a3d45bb7944f128d6f8",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "query_type": "cmr_sample_granule",
+      "concept_id": "C2763264762-LPCLOUD"
+    },
+    {
+      "url": "https://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html",
+      "cache_path": ".cache\\coastal-spatial-source-readiness\\wri_aqueduct_floods_v2_index.html",
+      "bytes": 253692,
+      "sha256": "5110345845fa052e03047b9ec44037afe88628d557230b0300f7f0b58e30e92c",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "query_type": "wri_aqueduct_floods_v2_index"
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T19:45:06Z"
+}

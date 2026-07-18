@@ -1,49 +1,74 @@
-# Literature review — Water Stress × Crop Diversification
+# Literature review — Water stress × crop diversification
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · §18 AI-first review refreshed 2026-07-18
 
-## 1. Search record
+## Search and reading record
 
-Queries (2026-04-27):
-1. `WRI Aqueduct 4.0 baseline water stress methodology`
-2. `FAO AQUASTAT withdrawal-as-share methodology`
-3. `transboundary water Aral Basin Amu Darya stress`
-4. `cereal yield water-productivity LMIC`
+The review checked the main-result or methodology sections of the cited
+sources using publisher, DOI, or institutional pages. Searches covered:
 
-Tier-A: *Water Resources Research*, *Hydrology and Earth System Sciences*,
-*Nature Sustainability*. Tier-B: WRI Aqueduct, FAO, IWMI, IFPRI.
-Tier-C: ICWC publications.
+1. SDG 6.4.2 available-water-stress definition and environmental-flow
+   requirements;
+2. AQUASTAT internal, external, and total renewable-water methodology;
+3. Aqueduct 4.0 spatial scale, current stress, and projected risk;
+4. monthly water-scarcity measurement;
+5. national and subnational crop-diversity resilience evidence; and
+6. Central Asian irrigation and transboundary water mechanisms.
 
-## 2. Verified entries
+## Evidence spine
 
-- **`wri2023aqueduct`** — Kuzma et al. (2023). 25 Countries face
-  extremely high water stress. WRI Aqueduct 4.0 framework.
-- **`fao2024aquastat`** — FAO AQUASTAT canonical water-stats source.
+### Water stress is denominator- and scale-dependent
 
-## 3. Synthesis
+FAO defines SDG 6.4.2 as freshwater withdrawal divided by total renewable
+freshwater resources after environmental-flow requirements
+[@fao2017sdg642]. AQUASTAT separately documents internal and external flows and
+cautions that total renewable resources are not fully exploitable or available
+[@fao2024aquastat]. This supports replacing the old internal-resource ratio,
+but it also prevents interpreting the replacement as basin-level usable water.
 
-1. **Withdrawal-as-share-of-resources can exceed 100%** when
-   transboundary or fossil-aquifer water supplements local sources.
-   Aqueduct 4.0 [@wri2023aqueduct] separates baseline water stress,
-   projected stress, and drought risk.
-2. **AQUASTAT [@fao2024aquastat] is the canonical source**; WDI
-   ER.H2O.FWTL.ZS is derived.
-3. **Cereal yield is a partial proxy** for water-stress sensitivity
-   in cotton-dominant or livestock-dominant economies.
+Aqueduct 4.0 uses 13 indicators at hydrological, aquifer, and national scales,
+including current and projected conditions [@wri2023aqueduct]. Mekonnen and
+Hoekstra estimate monthly scarcity spatially, demonstrating that annual
+national averages can conceal seasonal and local pressure
+[@mekonnen2016waterscarcity]. Together these sources make the basin and season
+part of the construct, not optional refinements.
 
-## 4. Gap
+### Crop diversity is an outcome hypothesis, not a label
 
-No published cross-ADB-DMC top-N water-crop pressure ranking with
-sensitivity testing on the three index parameters. The top-4
-narrowing (UZB shifts under yield perturbations) is the program's
-honest finding.
+Renard and Tilman associate greater crop diversity with more stable national
+food production [@renard2019cropdiversity]. Birthal and Hazrana find that crop
+diversification can mitigate productivity losses from rainfall deficits and
+heat stress in India [@birthal2019cropdiversification]. Both studies analyze
+variation in outcomes over time. They do not validate inverse cereal yield as a
+diversity proxy or establish that national HHI multiplied by water stress is a
+resilience measure.
 
-## 5. First testable claim
+### Transboundary mechanisms require explicit units
 
-> Four ADB DMCs — Afghanistan, Azerbaijan, Pakistan, Turkmenistan —
-> persistently rank in the top-4 water-crop-pressure index across
-> ±50% on three parameters.
+Micklin's review links the Aral Sea's decline to irrigation withdrawals from
+the Amu Darya and Syr Darya [@micklin2007aralsea]. This supports treating
+Central Asian ratios as transboundary allocation problems. A country ratio can
+signal pressure but cannot identify upstream control, downstream consumption,
+treaty security, return flow, or ecological cost.
 
-## 7. §18 attestation
+## Marginal contribution
 
-`ai-first`. 2026-04-27.
+The contribution is not another country ranking. It is a reproducible
+construct-validation result showing that:
+
+- the saved sensitivity runs do not match the published raw-top-four claim;
+- direct water and crop measures select different economies;
+- the aligned sample excludes all five crop-concentration leaders; and
+- the replacement diagnostic remains associated with water rather than crop
+  concentration.
+
+The literature implies the next test: estimate whether basin-level crop
+diversity moderates an observed drought, depletion, or production-loss outcome
+after water, crops, weather, and exposure are aligned to the same unit and
+period.
+
+## §18 attestation
+
+Lit attest under §18 AI-first: AI completed the targeted Tier-A/B/C scan and
+read each cited paper's main-result or methodology section. This is not a
+human-final literature attestation.

@@ -151,5 +151,5 @@
     "faostat_crop_area": "Keystone option (3) — the Shannon-equitability / Herfindahl crop-diversity index the program name promises — is not part of this denominator-only script. Run `audit-water-source-readiness.py` for the FAOSTAT Area harvested crop-mix ledger. The cached arable/agri land split is a land-USE proxy only and does not measure crop mix."
   },
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T21:23:48Z"
+  "generated_at": "2026-07-18T15:06:04Z"
 }

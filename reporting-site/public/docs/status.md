@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `water-stress-crop-diversification` — the inherited top-four narrowing may conflate an internal-water denominator, national cereal yield, and rural share. The next move is construct validation against committed available-water and crop-mix objects. |
-| Per-program board | `water-stress-crop-diversification/STATUS.md` |
+| Active flagship | `school-heat-disruption` — the committed audit disproves the public “Cambodia is #1 across every perturbation” claim. The next move is to reshape the claim around the six discriminating runs and the missing school-day exposure/outcome join. |
+| Per-program board | `school-heat-disruption/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `social-protection-shock-coverage` — the inherited top five was retired after only three named members survived the panel's value order. The full construct-validation ladder is public; an event-level delivery outcome remains the next qualified object. |
+| Previous flagship | `water-stress-crop-diversification` — the inherited top four was retired after it survived only two of seven stated sensitivity runs, two of four members under direct available-water stress, and zero of four under direct crop concentration. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -73,11 +73,16 @@ overrides priority by editing this list.
    every named economy has a documented cash-transfer response, while zero
    comparable delivery outcomes are joined. Reopen only for an event-level
    eligibility, receipt, failure, or delivery-time object.
-10. **`water-stress-crop-diversification`** — **active flagship.** Test the
-   inherited top-four narrowing against committed available-water and crop-mix
-   objects before retaining or retiring the national construct.
-11. **`school-heat-disruption`** — honest narrowing to top-1 (KHM only);
-    top-5 fails ±50% gate. Smallest-claim flagship candidate.
+10. **`water-stress-crop-diversification`** — *construct-validation issue closed.*
+    The inherited set is the raw top four in only two of seven runs; direct
+    available-water stress retains two named members and direct crop
+    concentration none. Reopen only for a basin × crop × irrigation × year
+    object with exposure and an observed outcome.
+11. **`school-heat-disruption`** — **active flagship.** Correct the false
+    “KHM #1 across every perturbation” language: KHM leads five of six
+    discriminating runs, Pakistan leads one, and one additional run is an
+    all-zero tie. Then test whether the current source objects permit a
+    defensible exposure or disruption claim.
 12. **`food-price-climate-transmission`** — sensitivity-gate failure on
     composite; index needs reformulation before ladder build.
 13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
@@ -168,6 +173,17 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (water-crop construct validation closed; rotation):** The
+  published four-economy set is the raw top four in only two of seven inherited
+  runs. Direct available-water stress retains two members, direct FAOSTAT crop
+  concentration retains none, and all five crop-concentration leaders lack a
+  joined water-stress row. The national ranking is retired. The nine-section
+  public story, nine-figure spine, publication ladder, deck, and evidence
+  packet passed gates, build, and 1280/375 browser QA. Rotated to
+  `school-heat-disruption` because its committed sensitivity audit already
+  changes the public claim: Cambodia leads five of six discriminating runs,
+  not every perturbation.
 
 - **2026-07-18 (social-protection construct validation closed; rotation):**
   Only three members of the inherited named five survive the panel's own value

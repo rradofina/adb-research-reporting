@@ -239,6 +239,37 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "water-crop-pressure-cluster",
+    "title": "The “stable top four” does not survive its own water and crop measures",
+    "subtitle": "The published set is the raw top four in only two of seven runs; direct water stress retains two members, direct crop concentration none, and the most crop-concentrated visible economies lack water observations.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "water-stress-crop-diversification",
+    "maturity": "PP",
+    "topics": [
+      "water",
+      "agriculture",
+      "crop-diversification",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "An inherited screen described Afghanistan, Azerbaijan, Pakistan, and Turkmenistan as a persistent water-crop-pressure top four. The screen multiplied freshwater withdrawal as a share of internal renewable water, inverse cereal yield, and rural population share. This paper tests the construction before treating it as a research result. The published set is the raw top four in only two of seven sensitivity runs; the baseline raw top four contains Uzbekistan rather than Afghanistan. Replacing the internal- water ratio with WDI/AQUASTAT SDG 6.4.2 available-water stress retains only Pakistan and Turkmenistan from the published four in its top five. Replacing inverse cereal yield with FAOSTAT harvested-area concentration retains none. Forty-one of the 43 roster economies have a 2024 crop-mix record, but only 30 have water-stress data, and all five highest crop-HHI economies are missing from the water series. Among the 30 aligned economies, water stress and crop concentration have a Spearman correlation of -0.24 with a 95% bootstrap interval from -0.59 to +0.15. A source-upgraded three-term diagnostic is correlated +0.92 with water stress but only +0.05 with crop concentration. The inherited country ranking is rejected. The defensible output is a construct-validation result and a specification for a basin-by-crop-by-year exposure object.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "water-crop-pressure-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "workday-loss-pressure-cluster",
     "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
     "subtitle": "Across 21 aligned year-and-parameter tests, the proxy shares at most one of its top three economies with the Lancet Countdown measure of heat-related potential work hours lost.",
@@ -659,39 +690,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "water-crop-pressure-cluster",
-    "title": "Four DMCs hold the top of the water-stress + crop-pressure ranking — Afghanistan, Azerbaijan, Pakistan, Turkmenistan",
-    "subtitle": "Three within-country water-intensity, one transboundary. The fifth position is parameter-sensitive.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "water-stress-crop-diversification",
-    "maturity": "PP",
-    "topics": [
-      "water",
-      "agriculture",
-      "climate-stress"
-    ],
-    "geographies": [
-      "AFG",
-      "AZE",
-      "PAK",
-      "TKM"
-    ],
-    "abstract": "The water-crop pressure index combines WDI water-withdrawal-as- share-of-resources, cereal-yield kg/ha, and rural-population share. Across 43 ADB DMCs, four economies — Afghanistan, Azerbaijan, Pakistan, Turkmenistan — persistently hold the top-4 positions across every +/- 50 percent perturbation of the index's three arbitrary parameters. The fifth position (typically Uzbekistan) shifts under some yield-baseline perturbations; honest narrowing to top-4. Turkmenistan's 1,868 percent withdrawal-as-share-of- resources reflects transboundary Amu Darya inflow, not within- country resource exhaustion; the pressure mechanism for TKM is upstream-cooperation-dependent. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "water-crop-pressure-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "access-services-brief",
     "title": "The facility map changes the Philippine regional rank",
     "subtitle": "A one-page brief on why an eight-economy OSM screen should be used for source validation, not service-access ranking.",
@@ -937,6 +935,37 @@
     "updated_at": "",
     "doi": "",
     "file": "sp-shock-readiness-cluster-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "water-crop-pressure-cluster-brief",
+    "title": "The water-crop “top four” fails direct measurement",
+    "subtitle": "A one-page construct check of the ranking rule, water denominator, crop proxy, and source coverage.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "water-stress-crop-diversification",
+    "maturity": "PP",
+    "topics": [
+      "water",
+      "agriculture",
+      "crop-diversification",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The inherited Afghanistan–Azerbaijan–Pakistan–Turkmenistan ranking is rejected. It is the raw top four in only two of seven runs, and direct water and crop measures do not reproduce it.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "water-crop-pressure-cluster-brief.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1194,6 +1223,37 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "water-crop-pressure-cluster-blog",
+    "title": "A stable water-crop score can still measure the wrong things",
+    "subtitle": "Direct water stress and harvested-area concentration do not reproduce the inherited four-country story.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "water-stress-crop-diversification",
+    "maturity": "PP",
+    "topics": [
+      "water",
+      "agriculture",
+      "crop-diversification",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The old score looked stable because it repeatedly combined the same proxies. Replacing those proxies changes the countries and exposes a selective data gap.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "water-crop-pressure-cluster-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "access-services-social",
     "title": "Access services — social card",
     "subtitle": "Tweet-length summary of the registry-denominator finding.",
@@ -1434,6 +1494,37 @@
     "updated_at": "",
     "doi": "",
     "file": "sp-shock-readiness-cluster-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "water-crop-pressure-cluster-social",
+    "title": "Water-crop construct validation — social card",
+    "subtitle": "The stable top four does not survive direct water and crop measures.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "water-stress-crop-diversification",
+    "maturity": "PP",
+    "topics": [
+      "water",
+      "agriculture",
+      "crop-diversification",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "The published set is the raw top four in 2 of 7 runs; direct water retains 2 of 4 members and direct crop concentration 0 of 4.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "water-crop-pressure-cluster-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1688,6 +1779,35 @@
     "updated_at": "",
     "doi": "",
     "file": "sp-shock-readiness-cluster-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "water-crop-pressure-cluster-deck",
+    "title": "\"The stable top four does not survive its own constructs\"",
+    "subtitle": "\"Water × crop construct validation — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "water-stress-crop-diversification",
+    "maturity": "PP",
+    "topics": [
+      "water",
+      "agriculture",
+      "crop-diversification",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "water-crop-pressure-cluster-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

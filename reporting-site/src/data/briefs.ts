@@ -495,24 +495,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "water-stress-crop-diversification",
     articleSlug: "water-crop-pressure-cluster",
     domain: "Environment",
-    finish: "screening-result",
+    finish: "construct-validation",
     question:
-      "Which rural economies combine high freshwater withdrawal pressure with crop-system exposure?",
+      "Does the inherited four-country screen survive direct measures of available-water stress and harvested-area crop concentration?",
     output:
-      "Afghanistan, Azerbaijan, Pakistan, and Turkmenistan form a stable top-4 narrowing; top-5 is sensitive.",
-    chartTitle: "Water-crop pressure index",
-    sourceNote: "WDI freshwater withdrawal, cereal yield, and rural share.",
+      "No. The published set is the raw top four in 2 of 7 runs; direct water retains 2 of 4 members and direct crop concentration 0 of 4.",
+    chartTitle: "Three construct gates",
+    sourceNote: "WDI/AQUASTAT SDG 6.4.2 and FAOSTAT 2024 Area harvested, with the inherited WDI screen retained for audit.",
     caveat:
-      "Turkmenistan's withdrawal ratio reflects transboundary-water dependence; it is not comparable to purely internal-resource stress.",
+      "The 30-row national join excludes all five crop-HHI leaders and contains no basin, irrigation, crop-water-demand, or outcome layer.",
     nextStep:
-      "Add AQUASTAT basin data, crop calendars, and commodity-specific diversification measures.",
+      "Build one basin × crop × irrigation × year pilot with an observed depletion or production outcome.",
     granularity: {
-      currentUnit: "Country-level water withdrawal, cereal yield, and rural share",
-      targetUnit: "River basin, irrigation command, crop zone, district",
+      currentUnit: "Thirty aligned national water-stress, crop-HHI, and rural-share rows",
+      targetUnit: "Basin × crop × irrigation × year, linked to farms or people",
       gap:
-        "Country water-withdrawal ratios hide basin/transboundary mechanisms and crop calendars.",
+        "Country averages cannot align transboundary allocation, seasonal water demand, crop location, irrigation status, and exposure.",
       upgradeData:
-        "AQUASTAT/basin water data, HydroBASINS/HydroRIVERS, crop calendars, irrigation maps, and commodity-specific yield data.",
+        "Basin withdrawal/depletion and allocation, SPAM or equivalent crop areas, irrigation masks, crop-water coefficients, weather, and gridded exposure.",
     },
   },
 };

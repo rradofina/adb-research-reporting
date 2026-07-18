@@ -92,8 +92,9 @@ end-to-end.
   economy has a documented cash-transfer response, while zero comparable
   delivery outcomes are joined. Article:
   `articles/sp-shock-readiness-cluster.md`.
-- **water-stress-crop-diversification** — top-4 narrowing {AFG, AZE,
-  PAK, TKM}; UZB shifts under yield perturbations. Article:
+- **water-stress-crop-diversification** — inherited national top four rejected:
+  it is the raw top four in 2 of 7 runs; direct water retains 2 of 4 members,
+  direct crop HHI 0 of 4, and all five crop-HHI leaders lack water rows. Article:
   `articles/water-crop-pressure-cluster.md`.
 - **school-heat-disruption** — honest narrowing to top-1 (KHM only)
   because top-5 fails sensitivity gate. Article:
@@ -144,6 +145,7 @@ promotion)*
 | 2026-05-07 | social-protection-shock-coverage | SR → PP | (this commit) | ai-first | Same demotion reason |
 | 2026-05-07 | water-stress-crop-diversification | SR → PP | (this commit) | ai-first | Same demotion reason |
 | 2026-05-07 | school-heat-disruption | SR → PP | (this commit) | ai-first | Same demotion reason |
+| 2026-07-18 | water-stress-crop-diversification | PP construct-validation issue closed | (this commit) | ai-first | Inherited country ranking rejected; full paper and nine-figure evidence spine built |
 
 ---
 

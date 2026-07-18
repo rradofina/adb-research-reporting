@@ -86,14 +86,13 @@ All five named economies have documented COVID-19 cash-transfer responses;
 zero comparable delivery outcomes are joined. The ranking is retired. →
 [/findings/sp-shock-readiness-cluster](/findings/sp-shock-readiness-cluster)
 
-## The eight Screening-Result screens
+## The remaining Screening-Result screens
 
-**Water-Crop Pressure.** Top-4 narrowing — Afghanistan, Azerbaijan,
-Pakistan, Turkmenistan. Top-5 fails because Uzbekistan shifts under
-yield-baseline perturbations. TKM's 1,868% withdrawal is
-transboundary Amu Darya inflow, distinguished from the other three's
-within-country mechanism. SR rather than PR because of the
-narrowing. → [/findings/water-crop-pressure-cluster](/findings/water-crop-pressure-cluster)
+**Water-Crop Pressure — corrected 2026-07-18.** The published set is the raw
+top four in only two of seven runs. Direct available-water stress retains two
+published members; direct FAOSTAT crop concentration retains none; and all five
+crop-HHI leaders lack water-stress rows. The country ranking is retired. →
+[/findings/water-crop-pressure-cluster](/findings/water-crop-pressure-cluster)
 
 **School Heat Disruption.** Top-1 narrowing — only Cambodia is
 parameter-stable. The top-5 fails the ±50% sensitivity gate. The

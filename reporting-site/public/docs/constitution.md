@@ -683,7 +683,7 @@ result, **PR** = Publication-ready, **Ret** = Retired.
 | 14 | Remittance resilience gaps | `remittance-resilience/` | **PP — demoted 2026-05-07** (see §16; previously PR under §18; artifact preserved at `/program/remittance-resilience/evidence`; re-promotion requires the new program loop in `research/factory.md`) | 22/30 (AI under §18) | Adofina | 2026-05-07 |
 | 15 | School heat disruption | `school-heat-disruption/` | **PP — demoted 2026-05-07** (see §16; previously SR under §18; artifact preserved at `/program/school-heat-disruption/evidence`; re-promotion requires the new program loop in `research/factory.md`) | 17/30 (AI under §18) | Adofina | 2026-05-07 |
 | 16 | Social protection shock coverage | `social-protection-shock-coverage/` | **PP — demoted 2026-05-07** (see §16; previously PR under §18; artifact preserved at `/program/social-protection-shock-coverage/evidence`; re-promotion requires the new program loop in `research/factory.md`) | 20/30 (AI under §18) | Adofina | 2026-05-07 |
-| 17 | Water stress and crop concentration | `water-stress-crop-diversification/` | **PP — demoted 2026-05-07** (see §16; previously SR under §18; artifact preserved at `/program/water-stress-crop-diversification/evidence`; re-promotion requires the new program loop in `research/factory.md`) | 19/30 (AI under §18) | Adofina | 2026-05-07 |
+| 17 | Water stress and crop diversification | `water-stress-crop-diversification/` | **PP — construct-validation issue closed 2026-07-18** (inherited country ranking rejected; direct water retains 2/4 published members, direct crop HHI 0/4; next qualified object is basin × crop × irrigation × year; `/program/water-stress-crop-diversification/evidence`) | 24/30 (AI under §18) | Adofina | 2026-07-18 |
 
 **Current WIP allocation under §8.1 (updated 2026-05-07):**
 - Publication-ready (max 1, suspended under §18): public-service-data-quality.
@@ -1044,6 +1044,8 @@ not forced backward by a rule change unless the amendment explicitly says so.
     dependence). Pakistan 326%, Uzbekistan 263%, Azerbaijan 161%.
     Top index: TKM 79.4, PAK 75.3, AZE 54.4. Script:
     `water-stress-crop-diversification/scripts/process-water-crop.py`.
+    **Historical note (2026-07-18):** this screen was later rejected by the
+    program's direct water-stress and FAOSTAT crop-HHI construct validation.
   Reporting site extended with 3 new program pages (P11, P12, P17);
   cross-program vulnerability matrix extended to 8 columns (P1, P3,
   P7, P10, P11, P12, P13, P14 — P17 integrated via data only, matrix

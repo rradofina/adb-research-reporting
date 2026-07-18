@@ -183,11 +183,11 @@ export const programs: ProgramEntry[] = [
   {
     id: 17,
     slug: "water-stress-crop-diversification",
-    title: "Water stress and crop concentration",
+    title: "Water stress and crop diversification",
     status: "PP",
     summary:
-      "Turkmenistan withdraws 18.7× its internal renewable water resources (1,868 %, transboundary-reliant). Pakistan 326 %, Uzbekistan 263 %, Azerbaijan 161 % are also above the renewability line. The withdrawal gradient outlines a transboundary-water vulnerability cluster across Central and South Asia.",
-    note: "Demoted SR → PP on 2026-05-07; awaits the new program loop.",
+      "The inherited top four fails direct construct checks: only two published members enter the available-water top five, none enters the crop-HHI top five, and all five crop-concentration leaders lack water-stress rows.",
+    note: "AI-first construct-validation checkpoint completed 2026-07-18; the country ranking is retired.",
     href: "/program/water-stress-crop-diversification",
   },
 ];

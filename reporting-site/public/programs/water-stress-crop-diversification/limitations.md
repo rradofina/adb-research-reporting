@@ -1,27 +1,51 @@
-# Limitations — Water Stress × Crop Diversification
+# Limitations — Water stress × crop diversification
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-26.
+`attestation_chain: ai-first` · Updated 2026-07-18
 
-## Cannot establish
+## What the validation establishes
 
-- Trajectory water stress (current vs projected).
-- Crop-specific sensitivity (cereal proxy is partial).
-- Subnational stress within large-area DMCs.
+- The inherited set does not occupy the raw top four in five of seven saved
+  runs.
+- The old water term saturates for all four baseline leaders.
+- Direct available-water stress and direct crop concentration do not reproduce
+  the published membership.
+- The source-upgraded diagnostic is water-dominated and loses the five
+  crop-HHI leaders because their water values are missing.
 
-## Source-side
+## What it cannot establish
 
-- WDI is a derived measure; AQUASTAT direct pull would add per-sector
-  withdrawal.
-- Withdrawal > 100% reflects transboundary or fossil-aquifer inflows;
-  TKM 1,868% is Amu Darya-dependent.
+- Basin, aquifer, or irrigation-command-area water pressure.
+- Groundwater depletion, return flows, reuse, desalination, environmental-flow
+  realization, or treaty-secured allocation.
+- Crop-specific water demand, irrigation status, planting calendars, or
+  common-year weather exposure.
+- Household, farm, income, nutrition, or production resilience.
+- A causal benefit from crop diversification.
+- A policy-priority country ranking.
 
-## Method-side
+## Source limitations
 
-- Top-5 narrowed to top-4 due to UZB shifting under some perturbations.
+- SDG 6.4.2 is a national annual monitoring indicator. It improves the
+  internal-resource denominator but still hides basin and seasonal variation.
+- FAOSTAT HHI uses reported harvested area. A high value can reflect a small
+  reported crop portfolio, missing items, multiple cropping, or genuinely
+  concentrated production.
+- Water is latest 2022, crop mix is 2024, and rural population reaches 2025.
+  The join is not common-year.
+- Eleven crop-visible roster economies lack available-water stress; all five
+  crop-HHI leaders are in that missing group.
 
-## Reviewer objections (synthesized)
+## Method limitations
 
-- C-1 (WRI Aqueduct): trajectory missing.
-- C-2 (IWMI): withdrawal-share misinterpretation for transboundary.
-- C-3 (FAO): AQUASTAT direct pull preferred.
-- C-4 (OSCE): transboundary mechanism hidden.
+- Spearman correlations are descriptive, with only 30 aligned economies.
+- Bootstrap intervals quantify sample uncertainty conditional on the observed
+  rows; they do not correct selection or measurement error.
+- The 27-specification diagnostic varies arbitrary choices but remains a
+  national composite. Stability is not external validity.
+- HHI measures concentration, not diversity's effect on production stability.
+
+## Required upgrade
+
+A basin × crop × irrigation × year object joining withdrawal or depletion and
+allocation, crop area and irrigation status, crop water requirements and
+weather, and farm or population exposure.

@@ -89,7 +89,7 @@ only committed inputs, and must produce identical output on rerun
 | `remittance-resilience` | Five fragile remittance corridors | Asia-Pacific map; top-5 enlarged | "70.3% of Kyrgyz GDP comes from remittances" |
 | `migration-displacement-signals` | Six corridors carry 56M emigrants | Chord diagram (7 origins × 10 destinations) | "18.5M from India · 11.7M from China" |
 | `disaster-recovery-lag` | CHN, IND carry the burden | Small-multiples of EM-DAT event timelines | "CHN 25.6 events/yr · 1.77B affected" |
-| `water-stress-crop-diversification` | TKM at 1,868% freshwater withdrawal | Horizontal bar; TKM/PAK/UZB/AZE annotated against 100% line | "Turkmenistan withdraws 18.7× its internal water resources" |
+| `water-stress-crop-diversification` | Inherited set matches the raw top four in 2/7 runs; direct crop HHI retains 0/4 | Construct-validation finding card with stated-rule, water, and crop gates | "The stable top four does not survive its own constructs" |
 | `grid-reliability-heat` | Single-fuel grids | Stacked bar per country (top 6) | "Bhutan 100% hydro · Brunei 100% gas" |
 | `climate-health-workdays` | Outdoor-labor × PM2.5 exposure | Scatter with country dots sized by exposed population | "IND 798.6M outdoor workers in above-WHO-guideline PM2.5" |
 | `port-hinterland-friction` | Top-5 trade-volume cluster | Bar with LPI × imports product | "CHN, IND carry 60% of regional import-friction exposure" |
@@ -142,7 +142,7 @@ Example demotions (illustrative — exact wording per script):
 
 | Before (composite-led) | After (non-composite-led) |
 |---|---|
-| "Top index: TKM 79.4, PAK 75.3, AZE 54.4" | "TKM withdraws 18.7× its internal renewable water resources" |
+| "Top index: TKM 79.4, PAK 75.3, AZE 54.4" | "The published set is the raw top four in 2 of 7 saved runs" |
 | "AFG 55.7 (26M exposed); IND 53.1 (798.6M exposed)" | "798.6M outdoor workers in India breathe above-WHO-guideline PM2.5" |
 | "Top friction exposure: CHN (1.45), IND (0.94)" | "CHN and IND account for 60% of regional import-friction exposure" |
 

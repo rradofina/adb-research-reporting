@@ -1,7 +1,7 @@
 {
   "program": "social-protection-shock-coverage",
   "permanent_url": "/social-protection-shock-coverage?view=evidence",
-  "generated_at": "2026-07-18T14:39:24.008Z",
+  "generated_at": "2026-07-18T15:20:27.231Z",
   "hero": {
     "png": "generated/charts/social-protection-shock-coverage-thumbnail.png",
     "svg": "generated/charts/social-protection-shock-coverage-thumbnail.svg",
@@ -27,10 +27,10 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1632,
+      "size": 1630,
       "size_human": "1.6 KB",
-      "mtime": "2026-07-18T14:20:12.184Z",
-      "sha256": "092e5f3339b895f9dc53bea558b0a93192eedd5c93b74c63abb9bf589c1fb3b4",
+      "mtime": "2026-07-18T14:40:01.594Z",
+      "sha256": "6bb42512b02acea37f14e124b105cc346fe62b8cfc723e7591f257e140b24fd4",
       "attestation_chain": "ai-first"
     },
     {

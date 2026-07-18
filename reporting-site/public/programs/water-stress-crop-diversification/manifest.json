@@ -1,25 +1,25 @@
 {
   "program": "water-stress-crop-diversification",
   "permanent_url": "/water-stress-crop-diversification?view=evidence",
-  "generated_at": "2026-07-18T14:39:23.962Z",
+  "generated_at": "2026-07-18T15:20:26.681Z",
   "hero": {
     "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
     "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
     "json": "generated/charts/water-stress-crop-diversification-thumbnail.json",
-    "title": "Withdrawals beyond the renewable line",
-    "caption": "Turkmenistan 1,868% — Pakistan, Uzbekistan, Azerbaijan, Iran each draw beyond 100 % of internal renewable water, relying on transboundary rivers.",
-    "headline_number": "Turkmenistan 18.7× internal renewable water resources",
-    "visual_form": "horizontal ranked bar (top 10 ADB DMCs)",
-    "source": "World Bank WDI ER.H2O.FWTL.ZS",
+    "title": "The stable top four does not survive its own constructs",
+    "caption": "The published set is the raw top four in only two of seven sensitivity runs; direct water stress retains two members and direct crop concentration none.",
+    "headline_number": "2 of 7 · 0 of 4 crop",
+    "visual_form": "construct-validation finding card",
+    "source": "WDI/AQUASTAT SDG 6.4.2 and FAOSTAT 2024 harvested area",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:26:53+00:00",
+    "generated_at": "2026-07-18T15:07:24.398647+00:00",
     "dimensions": {
-      "width": 1600,
-      "height": 900
+      "width": 2578,
+      "height": 1311
     },
     "sha256": {
-      "png": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e",
-      "svg": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+      "png": "3b78407e0a8bdbf3a66ad268c1edde532da9dc5d9aab09254e3c5396d4b86df4",
+      "svg": "555a87634003a3e8b5d7bfce7e5856c65f745cc6d50bb24bab5c8c396cee85d5"
     }
   },
   "artifacts": [
@@ -27,40 +27,50 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1235,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.339Z",
-      "sha256": "96c0411035d90555956328754dbec43dfe0efc565240abfd397a5b405fa4c40f",
-      "attestation_chain": null
+      "size": 2595,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-18T14:58:16.265Z",
+      "sha256": "d3a3e607dd0b8d6f90bb6d4511eed7cc9a1cecbf586aa45e60e600d18120813f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1883,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T15:00:01.426Z",
+      "sha256": "3b66e6835efbb85a23540e875389f90c4c0a2bd511feeee0500e8595ea2277ed",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1695,
-      "size_human": "1.7 KB",
-      "mtime": "2026-04-27T03:42:21.355Z",
-      "sha256": "669dfeaae31696560b0114264cff9722692bfbce8c72792479bf23ee7f8f562f",
+      "size": 3490,
+      "size_human": "3.4 KB",
+      "mtime": "2026-07-18T14:58:16.272Z",
+      "sha256": "d5ebc17ec91e9445185c9964c018baef5ec7075c079429b1fc2c7051251b5c79",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1131,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-26T03:27:00.604Z",
-      "sha256": "b89a819f023cce3cdc7d64354c11c27fdb748cdf14fb40ab336c4c59338dd8ba",
+      "size": 2683,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T14:58:16.266Z",
+      "sha256": "b45b8017a0c0f54a78f62290e6dd036cce4c47c96e87dd491fd4aa42c9b09cb3",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 654,
-      "size_human": "654 B",
-      "mtime": "2026-04-26T03:27:05.696Z",
-      "sha256": "3489f6c701807744617eddc3666f4fa2f308c03ae721bc3568bc22c7e1f95eae",
+      "size": 1938,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T14:58:16.268Z",
+      "sha256": "c5c195a3dfaee06d253e57d62011a1a1db088145ee486b37b5f66674fa096bf4",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +87,207 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 409,
-      "size_human": "409 B",
-      "mtime": "2026-04-26T03:27:09.172Z",
-      "sha256": "6978ed5c1245a66fdaa462dea51834bab161d7806e21b6476a9ca120e6d8057f",
+      "size": 1464,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T14:58:16.271Z",
+      "sha256": "90a018d38a5647db1ac7258612ec3cabe0562c4962acd370faf717fa1df44438",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 765,
-      "size_human": "765 B",
-      "mtime": "2026-04-26T03:27:34.452Z",
-      "sha256": "2ded0821ff573febddd0071556594187065362e3bd68c1f8bc6092490bf4d91d",
+      "size": 2490,
+      "size_human": "2.4 KB",
+      "mtime": "2026-07-18T14:58:16.267Z",
+      "sha256": "d5f195d47e5272939ef3f6fde941deb628367bc47cf2c0ea58e11250cd638f7c",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 957,
-      "size_human": "957 B",
-      "mtime": "2026-04-26T03:27:15.336Z",
-      "sha256": "3b6ec04a01976fc5bab0cd27771bc98c172d562bd57b6aa9296c8612681a0607",
+      "size": 2729,
+      "size_human": "2.7 KB",
+      "mtime": "2026-07-18T15:00:01.420Z",
+      "sha256": "3f9a60573021b3f5241749c9433b4a2308f6fbf640826334c3f50a5fba11563f",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1528,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T03:27:25.740Z",
-      "sha256": "2fbc998bc7f2a28b3a5689bd8a9b863566998c1c3d76a5263f6b4712badcc25d",
+      "size": 2980,
+      "size_human": "2.9 KB",
+      "mtime": "2026-07-18T15:00:01.422Z",
+      "sha256": "01233965c0e6e2c7ba9b6b72812841e0c2d8b8a50fd25dde33b1068d6ae5df8e",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 826,
-      "size_human": "826 B",
-      "mtime": "2026-04-26T03:27:30.335Z",
-      "sha256": "0f9d22342c79b60344a151be88ca2dd8484d12ff01974ebb8c50484e40c73e03",
+      "size": 2238,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T14:58:16.269Z",
+      "sha256": "8166e9f040e1ff4e8b694712c3166cf5df84308059e86ec4153814c1e57ff752",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1083,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T15:00:01.426Z",
+      "sha256": "2b2dd85a7b041855950cde0cd3413e1a176a830d196554407fc6bc2e439468a9",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/water-crop-concentration-profiles.png",
+      "size": 171414,
+      "size_human": "167.4 KB",
+      "sha256": "5722b76ee0d09dea22286e683a59eba6e61a917c68739e330db7df152d8baa4b"
+    },
+    {
+      "file": "generated/charts/water-crop-concentration-profiles.svg",
+      "size": 100242,
+      "size_human": "97.9 KB",
+      "sha256": "3f03a13a56798ca25a88293ec52955f471604641321de163ab78560e7fa6e069"
+    },
+    {
+      "file": "generated/charts/water-crop-construct-scatter.png",
+      "size": 183123,
+      "size_human": "178.8 KB",
+      "sha256": "672b3332eac68c698474dee9a974f6f5b93d8618606ce9e62cdc6686f6fd4075"
+    },
+    {
+      "file": "generated/charts/water-crop-construct-scatter.svg",
+      "size": 99603,
+      "size_human": "97.3 KB",
+      "sha256": "8de47f8888a1a8432f6ceb20e4676db5f63723402e5bbf743dfc5fe141574a13"
+    },
+    {
+      "file": "generated/charts/water-denominator-rebase.png",
+      "size": 137058,
+      "size_human": "133.8 KB",
+      "sha256": "5d8212d59495d9da2c6415a52e6be3c1ab0d07e2793b9895f24aa25e01835ca3"
+    },
+    {
+      "file": "generated/charts/water-denominator-rebase.svg",
+      "size": 90538,
+      "size_human": "88.4 KB",
+      "sha256": "5735353fa9559e510a6a8e97e00bd86a14180a6fbfe3770c3a53850ad3113812"
+    },
+    {
+      "file": "generated/charts/water-diagnostic-driver-dominance.png",
+      "size": 106938,
+      "size_human": "104.4 KB",
+      "sha256": "44c6878e6d79f818ad1c23466c6316c260858b3c4874980c0d2f996a42a5ab59"
+    },
+    {
+      "file": "generated/charts/water-diagnostic-driver-dominance.svg",
+      "size": 77056,
+      "size_human": "75.3 KB",
+      "sha256": "fe2413cb94b49a6f1ad76f52c3cc88a85050ba4363909caa3fd6d277a1f188b9"
+    },
+    {
+      "file": "generated/charts/water-diagnostic-sensitivity-membership.png",
+      "size": 106022,
+      "size_human": "103.5 KB",
+      "sha256": "8129f48a57649e36250eb25bc50ff89a6edddab74133bd39eba70d9f2d9e1baa"
+    },
+    {
+      "file": "generated/charts/water-diagnostic-sensitivity-membership.svg",
+      "size": 69840,
+      "size_human": "68.2 KB",
+      "sha256": "51e4a0fed3d57387ed78443d97fbd3a5bd4116b1246d559871bd7676d925396e"
+    },
+    {
+      "file": "generated/charts/water-membership-churn.png",
+      "size": 117865,
+      "size_human": "115.1 KB",
+      "sha256": "195b84d6ca56cfcb2886138c8a0dfca31693d4c45a4f6423ad48e3e8e1c8a697"
+    },
+    {
+      "file": "generated/charts/water-membership-churn.svg",
+      "size": 93614,
+      "size_human": "91.4 KB",
+      "sha256": "fcbaca0c3c9773db055d4d70c83067ad93647b9703df276099ef02633d5fdca9"
+    },
+    {
+      "file": "generated/charts/water-next-data-object.png",
+      "size": 141449,
+      "size_human": "138.1 KB",
+      "sha256": "761c4fdbd871ebcaee8b41bf36edfbd35fbcfc8a21ba00ba3dc8bb60ce09cea0"
+    },
+    {
+      "file": "generated/charts/water-next-data-object.svg",
+      "size": 85912,
+      "size_human": "83.9 KB",
+      "sha256": "12ae9fdd75c008544ee0a2867d352ab54c2247d97f17f7d6b7581742f3da4f98"
+    },
+    {
+      "file": "generated/charts/water-source-alignment-funnel.png",
+      "size": 122556,
+      "size_human": "119.7 KB",
+      "sha256": "286f74faa351b0cd0a1f9b6d54f84660f615248c747492fbdcc2f517c2b9f034"
+    },
+    {
+      "file": "generated/charts/water-source-alignment-funnel.svg",
+      "size": 76881,
+      "size_human": "75.1 KB",
+      "sha256": "2045bcb33436c6c60da2d442dea2ffb54e266a1ac3f1bbd4fa2114b3313d45be"
+    },
+    {
       "file": "generated/charts/water-stress-crop-diversification-thumbnail.json",
-      "size": 1139,
-      "size_human": "1.1 KB",
-      "sha256": "012214d3a4432277d721ecde0336eda93e3bee6e54b558df28cd81e6315183c2"
+      "size": 1208,
+      "size_human": "1.2 KB",
+      "sha256": "9b6dc402b9767f2123f3fa8535a40416611bb2fc4084ca06c55de1426883d57f"
     },
     {
       "file": "generated/charts/water-stress-crop-diversification-thumbnail.png",
-      "size": 104049,
-      "size_human": "101.6 KB",
-      "sha256": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e"
+      "size": 134184,
+      "size_human": "131.0 KB",
+      "sha256": "3b78407e0a8bdbf3a66ad268c1edde532da9dc5d9aab09254e3c5396d4b86df4"
     },
     {
       "file": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
-      "size": 115248,
-      "size_human": "112.5 KB",
-      "sha256": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+      "size": 49612,
+      "size_human": "48.4 KB",
+      "sha256": "555a87634003a3e8b5d7bfce7e5856c65f745cc6d50bb24bab5c8c396cee85d5"
+    },
+    {
+      "file": "generated/charts/water-three-gate-validity.png",
+      "size": 133081,
+      "size_human": "130.0 KB",
+      "sha256": "4556879029156a8e780c37a24df0e6e0897271df4ea8dd324088c3745bd0a023"
+    },
+    {
+      "file": "generated/charts/water-three-gate-validity.svg",
+      "size": 79907,
+      "size_human": "78.0 KB",
+      "sha256": "baaa497153af9fdfc48635983bdf32721b9e128875bc233e85d9e775685ff427"
+    },
+    {
+      "file": "generated/water-construct-diagnostics.csv",
+      "size": 8009,
+      "size_human": "7.8 KB",
+      "sha256": "329ff5d18a1af03838d6eb38b980ed75dc153aca87fe9b2f8d3a5eda57401c33"
+    },
+    {
+      "file": "generated/water-construct-sensitivity.csv",
+      "size": 2304,
+      "size_human": "2.3 KB",
+      "sha256": "bb36285d64052693f130a8aab13ad0cb0120816564911ce2c290abb749615e99"
+    },
+    {
+      "file": "generated/water-construct-validation.json",
+      "size": 70163,
+      "size_human": "68.5 KB",
+      "sha256": "f5a1711023498f1fe02245189ede4867ab11db6e669044479041997c71e3c5c0"
     },
     {
       "file": "generated/water-stress-crop-adb-panel.csv",
@@ -153,7 +299,7 @@
       "file": "generated/water-stress-crop-adb-panel.json",
       "size": 17065,
       "size_human": "16.7 KB",
-      "sha256": "7d64d4719c9c8a5a215d5b7c0407a1fa2bb8a4944b387211e98e4637e7c0dd33"
+      "sha256": "608ba398496b07e689a332c4bfc4a5fd77f0d435991a752d08f55807aaa90ceb"
     },
     {
       "file": "generated/water-stress-denominator-deepening.csv",
@@ -165,13 +311,13 @@
       "file": "generated/water-stress-denominator-deepening.json",
       "size": 5042,
       "size_human": "4.9 KB",
-      "sha256": "1ee33d4fda3ffcc46a595276fc3771618ce37d7b057334f60aa1115202883303"
+      "sha256": "4943b0784fe0ff3b9f200f8f838a1f668c903a03011b200d139e9e50a2db761d"
     },
     {
       "file": "generated/water-stress-denominator-source-audit.json",
-      "size": 139841,
-      "size_human": "136.6 KB",
-      "sha256": "68e20af8e44c2e5946b915c24f96811ffca05bdffe5368b5bcd2e4ac6883db6d"
+      "size": 139681,
+      "size_human": "136.4 KB",
+      "sha256": "0fce8065cfa9c581ab614dc92eaff7a4493ebda563fa8c3104900bc07220973d"
     },
     {
       "file": "generated/water-stress-source-readiness-sources.csv",
@@ -181,21 +327,21 @@
     },
     {
       "file": "generated/water-stress-source-readiness.json",
-      "size": 125961,
-      "size_human": "123.0 KB",
-      "sha256": "8d6d55d35099767e54e580184cd4c7145661a8d596fa2e1435de5f3cb32e0926"
+      "size": 125817,
+      "size_human": "122.9 KB",
+      "sha256": "a56abd17cb42d7daa6814d2102d894103e4218efd201cc09dec4f08f167d997f"
     },
     {
       "file": "generated/water-stress-source-variant-rerank.csv",
-      "size": 6411,
+      "size": 6410,
       "size_human": "6.3 KB",
-      "sha256": "846297f41b04229ccf903ef80eee3d8f2c905cf7086034e9a5eb9406824daaa3"
+      "sha256": "7d05dd44bc4f7f4605cdeffded6b4eacffdb2f579e0cade0c2a8e1c44738ba8a"
     }
   ],
   "articles": [
     {
       "slug": "water-crop-pressure-cluster",
-      "title": "Four DMCs hold the top of the water-stress + crop-pressure ranking — Afghanistan, Azerbaijan, Pakistan, Turkmenistan",
+      "title": "The “stable top four” does not survive its own water and crop measures",
       "attestation_chain": "ai-first"
     }
   ],
@@ -269,7 +415,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,21 +440,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/water-stress-crop-diversification/REPRODUCE.md",
+    "deck": "/programs/water-stress-crop-diversification/water-stress-crop-diversification-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/water-stress-crop-diversification"
   }

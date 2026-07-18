@@ -1,16 +1,35 @@
-# Coverage — Water Stress × Crop Diversification
+# Coverage — Water stress × crop diversification
 
-`attestation_chain: ai-first`. 2026-04-26.
+`attestation_chain: ai-first` · Refreshed 2026-07-18
 
-43 of 50 DMCs rankable.
+## Source coverage
 
-## Top-4
+| Object | Roster rows | Latest year/span | Role |
+|---|---:|---|---|
+| Program roster | 43 | fixed | denominator |
+| Old internal-water ratio | 30 | 2022 | inherited proxy |
+| SDG 6.4.2 available-water stress | 30 | 2022 | direct national water object |
+| FAOSTAT harvested-area crop mix | 41 | 2024 | direct national crop object |
+| Rural population | 41 | 2025 | context |
+| Aligned water + crop + rural | 30 | mixed | diagnostic only |
+| Basin × crop × irrigation exposure | 0 | — | required next object |
 
-| ISO3 | Water withdraw % | Cereal yield kg/ha | Rural % |
-|---|---|---|---|
-| TKM | 1,868% | (low) | (high) |
-| PAK | 326% | (mid) | (high) |
-| AZE | 161% | (mid) | (mid) |
-| AFG | (high) | (low) | 75% |
+Earlier program prose reported 43 of 50 economies as rankable. The committed
+panel supports 30 of the 43-economy roster. The earlier count is retired.
 
-Turkmenistan's 1,868% reflects extreme transboundary-water dependence.
+## Coverage selection
+
+The direct crop-HHI top five—Tuvalu, Kiribati, the Federated States of
+Micronesia, Nauru, and Vanuatu—has **zero** available-water-stress rows. The
+aligned national sample therefore omits every full-sample crop-concentration
+leader.
+
+This does not imply that those economies have high or low water stress. It is
+an observability gap: the chosen national water indicator cannot evaluate the
+cases highlighted by the crop source.
+
+## Vintage alignment
+
+The analysis uses latest-year source objects rather than a balanced panel.
+Water, crop, and rural values belong to different years. No result is described
+as a common-year exposure estimate.

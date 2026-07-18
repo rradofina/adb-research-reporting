@@ -1,43 +1,69 @@
-# Pre-registration — Water Stress × Crop Diversification
+# Pre-registration record — Water stress × crop diversification
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-26.
+`attestation_chain: ai-first`
 
-## 1. Claim
+## Historical frozen screen
 
-> Four ADB DMCs — **Afghanistan, Azerbaijan, Pakistan, Turkmenistan** —
-> persistently rank in the top-4 water-crop-pressure-index, across
-> ±50% perturbation of the index's three arbitrary parameters.
-> Honest narrowing from top-5 (which is parameter-sensitive).
+The 2026-04-26 frozen screen claimed that Afghanistan, Azerbaijan, Pakistan,
+and Turkmenistan persistently occupied the top four of an inherited composite
+under ±50% perturbations. Its metric was:
 
-## 2. Falsification
+`min(water/100, 1.5) × min(3000/max(yield,100), 1.0) × rural/100 × 100`.
 
-Top-4 set composition changes by > 1 entry under any ±50% perturbation.
+The saved computation actually defines the set as the intersection of seven
+**top-five** lists. This historical record remains part of the audit trail; the
+claim is not retained.
 
-## 3. Population
+## Construct-validation protocol
 
-43 ADB DMCs with WDI water/cereal/rural data.
+The current validation is a post-registered audit, not a retroactive
+pre-registration. It was opened because the inherited water denominator and
+crop proxy did not match the research question.
 
-## 5. Metric
+### Population
 
-`index = min(water/100, 1.5) × min(3000/max(yield, 100), 1.0) × (rural/100) × 100`.
-Triage only.
+The fixed 43-economy program roster used by the inherited scripts. Coverage is
+reported separately for every source object; missing economies are never
+silently removed from the denominator.
 
-## 6. Arbitrary numerics
+### Direct replacements
 
-| Param | Value | Range |
-|---|---|---|
-| Water-withdrawal cap (% resources) | 100 | 50–150 |
-| Water multiplier ceiling | 1.5 | 0.75–2.25 |
-| Yield baseline kg/ha | 3000 | 1500–4500 |
+1. Replace withdrawal divided by internal renewable resources with
+   WDI/AQUASTAT SDG 6.4.2 available-water stress.
+2. Replace inverse cereal yield with HHI and Shannon equitability calculated
+   from FAOSTAT item-level Area harvested shares.
+3. Retain rural population only as context and as a diagnostic component, not
+   as evidence of water or crop exposure.
 
-## 7. Sources
+### Tests
 
-WDI ER.H2O.FWTL.ZS, AG.YLD.CREL.KG, SP.RUR.TOTL.ZS.
+1. Count exact matches between the published set and each saved run's raw top
+   four.
+2. Compare published membership with the direct water top five and direct crop
+   HHI top five.
+3. Report water, crop, and aligned coverage, including whether crop-HHI leaders
+   are selected out by missing water data.
+4. Calculate Spearman rank associations with deterministic 5,000-resample
+   bootstrap intervals.
+5. Apply ±50% sensitivity to the diagnostic water ceiling and crop/rural
+   exponents, producing 27 specifications.
+6. Ablate water, crop, and rural components to identify driver dominance.
 
-## 8. Decision
+### Decision rule
 
-Common top-4 across baseline + 6 perturbation = `[AFG, AZE, PAK, TKM]`. **Positive (top-4 narrowing).**
+Reject the inherited country claim if any of the following occurs:
 
-## 10. §18 attestation
+- it is not the raw top four in all seven inherited runs;
+- fewer than three published members appear in either direct-construct top
+  five; or
+- the source-upgraded diagnostic is much more strongly associated with one
+  component than the other named construct.
 
-`ai-first`. 2026-04-26.
+All three rejection conditions occur. No replacement country ranking is
+promoted.
+
+## Non-claims
+
+The validation does not estimate basin scarcity, groundwater depletion,
+irrigation demand, crop water requirements, climate resilience, or policy
+priority. A basin × crop × irrigation × year join remains required.

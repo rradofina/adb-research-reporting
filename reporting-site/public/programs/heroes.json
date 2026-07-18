@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T14:39:24.405Z",
+  "generated_at": "2026-07-18T15:20:31.624Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -168,20 +168,20 @@
         "png": "generated/charts/water-stress-crop-diversification-thumbnail.png",
         "svg": "generated/charts/water-stress-crop-diversification-thumbnail.svg",
         "json": "generated/charts/water-stress-crop-diversification-thumbnail.json",
-        "title": "Withdrawals beyond the renewable line",
-        "caption": "Turkmenistan 1,868% — Pakistan, Uzbekistan, Azerbaijan, Iran each draw beyond 100 % of internal renewable water, relying on transboundary rivers.",
-        "headline_number": "Turkmenistan 18.7× internal renewable water resources",
-        "visual_form": "horizontal ranked bar (top 10 ADB DMCs)",
-        "source": "World Bank WDI ER.H2O.FWTL.ZS",
+        "title": "The stable top four does not survive its own constructs",
+        "caption": "The published set is the raw top four in only two of seven sensitivity runs; direct water stress retains two members and direct crop concentration none.",
+        "headline_number": "2 of 7 · 0 of 4 crop",
+        "visual_form": "construct-validation finding card",
+        "source": "WDI/AQUASTAT SDG 6.4.2 and FAOSTAT 2024 harvested area",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T20:26:53+00:00",
+        "generated_at": "2026-07-18T15:07:24.398647+00:00",
         "dimensions": {
-          "width": 1600,
-          "height": 900
+          "width": 2578,
+          "height": 1311
         },
         "sha256": {
-          "png": "521fbb23b82e2bde7611837822a696dd8f2736a56fc65ce6e18046ffedd5500e",
-          "svg": "b4113e6aaf214d55e5d0a01d8139e601f302b3a625fe728a9850f3beaccee701"
+          "png": "3b78407e0a8bdbf3a66ad268c1edde532da9dc5d9aab09254e3c5396d4b86df4",
+          "svg": "555a87634003a3e8b5d7bfce7e5856c65f745cc6d50bb24bab5c8c396cee85d5"
         }
       }
     },

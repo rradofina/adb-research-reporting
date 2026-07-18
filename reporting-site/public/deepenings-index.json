@@ -167,7 +167,7 @@
       "has_script": true,
       "has_artifact": true,
       "artifact": "water-stress-denominator-deepening.json",
-      "finding": "The headline top-4 is not ordered by water stress. Among the four above-100% economies the index is built on, the water term is a flat, saturated 1.5 for all of them, so their internal ordering is decided by cereal yield and rural share."
+      "finding": "attestation_chain: ai-first · 2026-07-18 The earlier denominator audit showed that the old formula saturated its water term for all four baseline leaders and used inverse cereal yield as a crop proxy."
     }
   ]
 }

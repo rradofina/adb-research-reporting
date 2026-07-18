@@ -299,12 +299,12 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "water-stress-crop-diversification",
     betterSource:
-      "HydroBASINS/HydroSHEDS; AQUASTAT basin data; SPAM crop allocation; GAEZ; crop calendars; irrigation command maps.",
+      "AQUASTAT/Aqueduct or GRACE basin water; HydroBASINS; SPAM crop allocation; irrigation status; crop-water coefficients; weather and exposure grids.",
     betterUnit:
-      "River basin, irrigation command, crop zone, district, and transboundary dependency corridor.",
-    priority: "P2",
+      "Basin × crop × irrigation × year, linked to farm or population exposure and an observed outcome.",
+    priority: "P1",
     rationale:
-      "The current country screen is useful but hides basin mechanics. Basin and crop-zone data would make the Turkmenistan/Pakistan mechanism clearer.",
+      "The national ranking is rejected: direct water and crop measures disagree, the aligned sample excludes all five crop-HHI leaders, and the replacement diagnostic is water-dominated.",
     sourceLinks: [
       { label: "HydroSHEDS", href: "https://www.hydrosheds.org/" },
       { label: "MapSPAM", href: "https://www.mapspam.info/" },

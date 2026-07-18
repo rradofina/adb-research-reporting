@@ -1,43 +1,56 @@
-# Pre-registration — Air Pollution Without Air Monitors
+# Design record and transparent claim amendment — air-monitoring
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-27.
+`attestation_chain: ai-first`. Original freeze 2026-04-27; amendment recorded
+2026-07-07 and publication design frozen 2026-07-19.
 
-## 1. Claim
+## Original preregistered claim
 
-> Five ADB-region economies — Afghanistan, Bangladesh, Myanmar,
-> Uzbekistan, Tajikistan — hold the top-5 PM2.5 observability-gap
-> score positions, combining high WHO-derived PM2.5 exposure with
-> sparse or absent OpenAQ public PM2.5 monitoring infrastructure.
+The original study proposed a composite observability-gap ranking based on
+people per public monitor and modeled PM2.5 exposure. Its headline top-five set
+was Afghanistan, Bangladesh, Myanmar, Uzbekistan, and Tajikistan.
 
-## 2. Falsification
+## Why the original claim was retired
 
-Top-5 set changes under alternative gap-score formulations (e.g.,
-zero-monitors + above-guideline subset).
+The composite was a triage device and its interpretation depended on treating
+aggregator-visible locations as comparable monitoring infrastructure. Later
+source work showed that station identity and monitor-grade evidence could not
+be validated consistently. Under the repository's claim gates, that invalidates
+the ranking as a headline research result.
 
-## 3. Population
+This amendment is retrospective. It is not presented as a preregistered
+absence claim.
 
-50 ADB-region economies in the OpenAQ pilot.
+## Active research question
 
-## 5. Metric
+Do the committed public sources expose enough station-level identity and QA
+evidence to support a station-radius air-monitoring coverage claim?
 
-`pm25_observability_gap_score` ∈ [0, 100], composite of
-(people-per-monitor) × (PM2.5-exposure-above-WHO-5-µg/m³-guideline).
+## Active claim rule
 
-## 6. Arbitrary numerics
+A coverage claim is allowed only if public evidence closes both:
 
-| Param | Value | Range |
-|---|---|---|
-| WHO PM2.5 guideline | 5 µg/m³ | (WHO 2021 anchored; not an arbitrary range) |
-| Gap-score scale | 0–100 | (deterministic from inputs) |
+1. a same-station identity gate linking the official and aggregator records;
+   and
+2. a monitor-grade gate with current station-specific method, inspection,
+   calibration, or equivalent quality evidence.
 
-## 8. Decision
+## Falsifier
 
-Top-5 by gap-score baseline = `[AFG, BGD, MMR, UZB, TJK]`. The
-zero-monitor-above-guideline subset returns a different ordering
-because it's a different question (which DMCs have NO public PM2.5
-monitor at all and are above the guideline). The pre-registered
-headline is the gap-score top-5.
+The documented-absence claim is narrowed or overturned for an affected row if
+a named public source supplies a station-specific inspection log, calibration
+certificate or status row, official same-station crosswalk, or station-keyed
+method-grade ledger.
 
-## 10. §18
+## Arbitrary numeric choices and sensitivity
 
-`ai-first`. 2026-04-27.
+The downstream geometry used 0.5 km, 4 km, and 50 km diagnostic radii. These
+represent the required ±50% sensitivity envelope and a deliberately wide
+stress lane. The active result stops before radius-based coverage is permitted:
+all three choices yield 0 allowed claims because a radius cannot create missing
+identity or QA evidence.
+
+## Publication decision
+
+Publish the bounded public-data absence at SR maturity. Do not publish the
+retired composite ranking, people-served estimates, exposure estimates,
+regulator rankings, or a claim that the missing records do not exist.

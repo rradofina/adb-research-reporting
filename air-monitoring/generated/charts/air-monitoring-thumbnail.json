@@ -1,17 +1,17 @@
 {
   "program": "air-monitoring",
-  "title": "Above the air-quality guideline, below the monitor count",
-  "caption": "14.3 M people across 13 ADB DMCs live above the WHO PM2.5 guideline with no public monitor. Concentrated: Papua New Guinea and Timor-Leste = 84% of the total.",
-  "headline_number": "14.3M people \u00b7 13 economies \u00b7 0 PM2.5 monitors",
-  "visual_form": "Asia-Pacific map (above-guideline / zero-monitor economies)",
-  "source": "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1",
+  "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+  "caption": "Across 24 economies and 239 audited official station rows, the public packet verifies 0 same-station joins, 0 complete monitor-grade rows, and 0 allowed coverage claims.",
+  "headline_number": "0 validated joins \u00b7 0 complete grade rows \u00b7 0 allowed claims",
+  "visual_form": "claim-permission evidence ladder",
+  "source": "Committed air-monitoring public-evidence ledger",
   "inputs": [
-    "generated/air-monitoring-adb-panel.csv"
+    "generated/evidence-ledger.json"
   ],
   "script": "air-monitoring/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T20:27:09+00:00",
+  "generated_at": "2026-07-18T21:54:22+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +21,7 @@
     "svg": "air-monitoring-thumbnail.svg"
   },
   "sha256": {
-    "png": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9",
-    "svg": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+    "png": "8fc881d2e493bcdc8a4e8305a4d2c78411917ac2ab20a9ae8a3c866dc29fa812",
+    "svg": "1a13109ca45e6c646f4d43732c3b370415565ad8d10e860c80a0fa1fc0e3c97b"
   }
 }

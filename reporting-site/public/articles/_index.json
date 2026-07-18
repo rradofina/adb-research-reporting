@@ -64,6 +64,37 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "pm25-observability-gap-cluster",
+    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+    "subtitle": "A 24-economy audit stops before station-radius coverage because public same-station identity and monitor-grade evidence do not close.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Public dashboards and aggregators expose station locations and measurements, but a station-radius coverage claim requires a traceable chain from physical station identity to current monitor-grade evidence. This study consolidates 64 committed public-source summaries across a 24-economy discovery frame. It audits 239 official station rows, checks 44 official/OpenAQ identity candidates, and computes 831 denominator joins as nonclaim geometry. It verifies 0 same-station rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and 0 allowed coverage claims. The result is a bounded public-data absence, not evidence that QA records do not exist and not an estimate of monitor coverage, exposure, or regulator performance.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-07",
+    "updated_at": "2026-07-19",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "access-stress-pilot-cluster",
     "title": "Official registries reorder 16 of 17 Philippine regional facility-load ranks",
     "subtitle": "The eight-economy OSM screen is a map-observability triage, not a service-access ranking; only two pilot economies have comparable registry corrections.",
@@ -686,10 +717,10 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "pm25-observability-gap-cluster",
-    "title": "Public station-level monitor QA evidence is not verifiable in the current air-monitoring audit",
-    "subtitle": "The audited packet sees station and method context, but not the public calibration, inspection, identity, and grade evidence needed for coverage claims.",
-    "kind": "working-paper",
+    "slug": "pm25-observability-gap-cluster-blog",
+    "title": "A station dot is not yet a coverage claim",
+    "subtitle": "What a 24-economy public-source audit learned by refusing to turn visible monitor routes into unverified population coverage.",
+    "kind": "blog",
     "tier": "working-paper",
     "status": "draft",
     "program": "air-monitoring",
@@ -697,24 +728,116 @@
     "topics": [
       "air-quality",
       "PM2.5",
-      "observability-gap",
+      "open-data",
+      "measurement"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Public monitoring routes are easier to find than public station-level quality evidence. The study documents exactly where the chain breaks.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-brief",
+    "title": "Public station visibility does not validate monitoring coverage",
+    "subtitle": "The 24-economy audit reaches station discovery and denominator geometry, then stops at identity and monitor-grade evidence.",
+    "kind": "brief",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "The public-source packet audits 239 official station rows and 44 identity candidates but verifies no same-station joins, complete monitor-grade rows, station-radius-ready economies, or allowed coverage claims.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-deck",
+    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+    "subtitle": "Air-monitoring public QA observability · AI-first §18",
+    "kind": "deck",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Nine evidence-led slides show why the public-source audit withholds a station-radius coverage claim.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-social",
+    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+    "subtitle": "24 economies · 239 official station rows · 44 identity candidates · 0 allowed coverage claims",
+    "kind": "social",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
       "public-data-quality"
     ],
     "geographies": [
       "regional"
     ],
-    "abstract": "The current air-monitoring audit should be read as an evidence-gap result, not as a station-radius coverage estimate. A generated ledger indexes 64 committed summary rows and 214 supporting files. Public sources expose station lists, method language, dashboard status, denominator geometry, and source routes, but the claim-enabling counters remain zero for validated same-station rows, BMKG station-specific inspection logs, BMKG station-specific calibration certificates, BMKG calibration-status rows, complete monitor-grade rows, station-radius-ready economies, and allowed coverage-claim rows.",
+    "abstract": "A public-data audit finds station and denominator context but no verified same-station, complete-grade, or claim-ready rows.",
     "authors": [
       "Raymond Adofina"
     ],
-    "published_at": "2026-07-07",
+    "published_at": "",
     "updated_at": "",
     "doi": "",
-    "file": "pm25-observability-gap-cluster.md",
+    "file": "pm25-observability-gap-cluster-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
+    "review_external_chain": "",
+    "review_internal_chain": ""
   },
   {
     "slug": "public-data-freshness-two-clocks",
@@ -2196,6 +2319,28 @@
     "file": "access-services-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "air-monitoring",
+    "title": "\"Public monitor routes are visible. Claim-ready QA evidence is not.\"",
+    "subtitle": "\"Air-monitoring public QA observability · AI-first §18\"",
+    "kind": "blog",
+    "tier": "slides",
+    "status": "draft",
+    "program": "",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "air-monitoring.md",
+    "attestation_chain": "",
+    "constitution_ref": "",
     "review_external_chain": "",
     "review_internal_chain": ""
   },

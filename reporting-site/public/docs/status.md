@@ -12,17 +12,18 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-data-freshness` — publication and verification pass for the narrowed two-clock result. |
-| Per-program board | `public-data-freshness/STATUS.md` |
+| Active flagship | `public-service-data-quality` — repair the incomplete 4-of-9 reader story without reopening owner-only source walls. |
+| Per-program board | `public-service-data-quality/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `digital-performance` — the Ookla-first dependency was retired; exact-year ITU data yield a 14.3-point median 2024 availability–use difference across 34 observed cases. |
+| Previous flagship | `air-monitoring` — the bounded public-QA absence now has a full story, eight-figure spine, five-format ladder, PowerPoint, and responsive QA. |
 
-The expanded WDI panel changes review status for 138 of 709 observed baseline
-cells, but the pre-specified environment deletion lowers disagreement to 9.2%
-and rejects a broad cross-domain reading. The publication now leads with this
-domain-concentrated finding, explicit threshold dependence, and lower Pacific
-coverage. `mpi-nighttime-lights` continues on its owner/coauthor-led path.
+The air-monitoring publication is closed and its empirical wall remains
+closed. The completion audit now moves to `public-service-data-quality` because
+its public manifest exposes only 4 of 9 standard research sections despite a
+complete publication ladder. The move is presentation repair from committed
+evidence, not owner-only source validation. `mpi-nighttime-lights` continues
+on its owner/coauthor-led path.
 
 ## Next-up queue
 
@@ -30,17 +31,16 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-0. **`public-data-freshness`** — *active flagship; SR publication close.*
-   The frozen 9/18/27 panel passes the primary gate, while the domain-deletion
-   falsifier narrows the result. Next: finish gates, browser QA, and commit;
-   then rotate rather than scan another generic data portal.
-1. **`air-monitoring`** — *Mode-A issue closed
-   for the public-evidence absence package.* Completed 2026-07-07:
-   `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, article,
-   generated evidence ledger, and the six-part showcase page. Further work is
-   allowed only for a named §6.7-qualified source that plausibly contains
-   station-level calibration, inspection, current status, same-station
-   crosswalk, or method-grade records; otherwise rotate after commit.
+0. **`public-service-data-quality`** — *active flagship; PR reader-story
+   repair.* The evidence ledger and publication ladder exist, but the public
+   manifest exposes only 4 of 9 standard sections. Next: map or write the
+   missing background, data, results, conclusion, and reproduction surfaces
+   from committed evidence; do not cross owner-only source walls.
+1. **`air-monitoring`** — *current issue closed; SR under §18.* The bounded
+   public-QA absence now has a 9-of-9 story, eight-figure dossier, five-format
+   ladder, PowerPoint, passing gates, and desktop/mobile QA. Reopen only for a
+   named station-level calibration, inspection, status, crosswalk, or
+   method-grade source.
 2. **`remittance-resilience`** — *current figure-spine issue closed.* L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
@@ -94,11 +94,10 @@ overrides priority by editing this list.
     national proxy is retired; the Sylhet route object finds 345,718 modeled
     people disconnected, with a 38.92%–43.45% range across 54 variants. Reopen
     only for observed passability, audited markets, or travel/market outcomes.
-14. **`public-service-data-quality`** — *current presentation issue closed.* The showcase now uses generated
-    `psdq-evidence-ledger.{json,csv}` instead of stacked walls. Substantive
-    source repair remains owner-only source-owner contact or human location
-    validation for source-repair, same-facility, priority/lower-priority
-    name-conflict, and facility-level zero-OSM rows.
+14. **`public-data-freshness`** — *current issue closed; SR under §18.* The
+    frozen 9/18/27 panel passes the primary gate, while the environment-domain
+    falsifier narrows the result. Reopen only for a claim-changing source or a
+    distinct registered question, not another generic data portal scan.
 15. **`invisible-urbanization`** — *current measurement issue closed.* The
     inherited ranking is retired. A GHSL–WDI comparison finds a median absolute
     20.0-point definition gap in 2020, with administrative-scale and transition

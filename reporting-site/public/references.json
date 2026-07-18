@@ -323,6 +323,43 @@
     "long": "World Health Organization (2021) \"WHO global air quality guidelines: particulate matter (PM2.5 and PM10), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide.\" World Health Organization"
   },
   {
+    "type": "techreport",
+    "key": "who2026monitoring",
+    "author": "World Health Organization",
+    "title": "Air quality monitoring for enhanced understanding of health impacts and beyond",
+    "institution": "World Health Organization",
+    "year": "2026",
+    "url": "https://www.who.int/publications/i/item/B09646",
+    "note": "Retrieved 2026-07-19. Used for the importance of continuous, consistent, high-quality monitoring and public information sharing; not used as an empirical input.",
+    "short": "World Health Organization 2026",
+    "long": "World Health Organization (2026) \"Air quality monitoring for enhanced understanding of health impacts and beyond.\" World Health Organization"
+  },
+  {
+    "type": "techreport",
+    "key": "usepa2017qahandbook",
+    "author": "United States Environmental Protection Agency",
+    "title": "Quality Assurance Handbook for Air Pollution Measurement Systems, Volume II: Ambient Air Quality Monitoring Program",
+    "institution": "United States Environmental Protection Agency",
+    "number": "EPA-454/B-17-001",
+    "year": "2017",
+    "url": "https://www.epa.gov/amtic/ambient-air-monitoring-quality-assurance-guidance-documents",
+    "note": "Retrieved 2026-07-19. Used to define the types of station-level quality-system evidence relevant to intended-use claims; U.S. regulatory requirements are not applied to ADB developing member countries.",
+    "short": "United States Environmental Protection Agency 2017",
+    "long": "United States Environmental Protection Agency (2017) \"Quality Assurance Handbook for Air Pollution Measurement Systems, Volume II: Ambient Air Quality Monitoring Program.\" United States Environmental Protection Agency"
+  },
+  {
+    "type": "misc",
+    "key": "openaq2026locations",
+    "author": "OpenAQ",
+    "title": "Locations resource documentation",
+    "year": "2026",
+    "howpublished": "OpenAQ API documentation",
+    "url": "https://docs.openaq.org/resources/locations",
+    "note": "Retrieved 2026-07-19. Documents location, owner, provider, instrument, sensor, activity, coordinate, and isMonitor metadata used for source discovery and candidate matching.",
+    "short": "OpenAQ 2026",
+    "long": "OpenAQ (2026) \"Locations resource documentation.\""
+  },
+  {
     "type": "article",
     "key": "park2020heat",
     "author": "Park, R. Jisung and Goodman, Joshua and Hurwitz, Michael and Smith, Jonathan",

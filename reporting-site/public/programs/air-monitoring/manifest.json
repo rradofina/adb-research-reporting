@@ -1,28 +1,48 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/air-monitoring?view=evidence",
-  "generated_at": "2026-07-18T21:05:53.470Z",
+  "generated_at": "2026-07-18T22:04:18.895Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
     "json": "generated/charts/air-monitoring-thumbnail.json",
-    "title": "Above the air-quality guideline, below the monitor count",
-    "caption": "14.3 M people across 13 ADB DMCs live above the WHO PM2.5 guideline with no public monitor. Concentrated: Papua New Guinea and Timor-Leste = 84% of the total.",
-    "headline_number": "14.3M people · 13 economies · 0 PM2.5 monitors",
-    "visual_form": "Asia-Pacific map (above-guideline / zero-monitor economies)",
-    "source": "OpenAQ v3 + WDI PM2.5 + WHO AAQ v6.1",
+    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+    "caption": "Across 24 economies and 239 audited official station rows, the public packet verifies 0 same-station joins, 0 complete monitor-grade rows, and 0 allowed coverage claims.",
+    "headline_number": "0 validated joins · 0 complete grade rows · 0 allowed claims",
+    "visual_form": "claim-permission evidence ladder",
+    "source": "Committed air-monitoring public-evidence ledger",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:27:09+00:00",
+    "generated_at": "2026-07-18T21:54:22+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9",
-      "svg": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+      "png": "8fc881d2e493bcdc8a4e8305a4d2c78411917ac2ab20a9ae8a3c866dc29fa812",
+      "svg": "1a13109ca45e6c646f4d43732c3b370415565ad8d10e860c80a0fa1fc0e3c97b"
     }
   },
   "artifacts": [
+    {
+      "key": "readme",
+      "file": "README.md",
+      "label": "Overview",
+      "size": 3177,
+      "size_human": "3.1 KB",
+      "mtime": "2026-07-18T21:52:14.679Z",
+      "sha256": "2a555094d62e3cbc085081e2276b8898ec6ba27b8f767070c2072b6c5bf6ee2b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1958,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T21:52:14.679Z",
+      "sha256": "36753a8bdcbdedacedcc8deb6a9daa92d7a5142f452482289c926cd0ec7678cf",
+      "attestation_chain": "ai-first"
+    },
     {
       "key": "paper_charter",
       "file": "paper-charter.md",
@@ -37,30 +57,30 @@
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1875,
-      "size_human": "1.8 KB",
-      "mtime": "2026-04-27T03:43:30.787Z",
-      "sha256": "60a13d873b4837a72a3b7a23ae9b5d3163df8deb405652fb7a22abfbaf889033",
+      "size": 2672,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T22:02:41.342Z",
+      "sha256": "036582bdcb191bc3f58fc676c1ec61934fca7a8db206955cfe416f272e6ad270",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1288,
-      "size_human": "1.3 KB",
-      "mtime": "2026-04-26T16:57:24.084Z",
-      "sha256": "4281201e57c511f13586bc9c313c863b748e2821dd58079028c0c95d717c29d8",
+      "size": 2301,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T22:02:41.343Z",
+      "sha256": "ba688d3e804877560d6337f43ea1ab772ea9e8baff035b49368b47a69646780d",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 2692,
-      "size_human": "2.6 KB",
-      "mtime": "2026-07-07T06:19:12.462Z",
-      "sha256": "a429ec3f0fb7ef53b57d95aef69e57ae78bac42cdf94bafc604a16d46b100c92",
+      "size": 1969,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T22:02:41.344Z",
+      "sha256": "58746b00aa3d28f9e3c2b5b2257e152b6b724ef5613fcddb5cc578c1c9d81fff",
       "attestation_chain": "ai-first"
     },
     {
@@ -87,10 +107,10 @@
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 2967,
-      "size_human": "2.9 KB",
-      "mtime": "2026-07-07T06:18:55.530Z",
-      "sha256": "2984e9defd7155fe55eeed1b18ea6d59fff85ec351b088df11efc689dc105212",
+      "size": 4171,
+      "size_human": "4.1 KB",
+      "mtime": "2026-07-18T22:02:41.343Z",
+      "sha256": "36b5201f3357c544a9e574e5b58808fe91830a1ef25782dcba8af0f029c1f55a",
       "attestation_chain": "ai-first"
     },
     {
@@ -757,10 +777,20 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 2093,
-      "size_human": "2.0 KB",
-      "mtime": "2026-07-07T06:26:35.681Z",
-      "sha256": "b3cfb345621bb77892e514bafc0f33693ba9448fada82b5c740e865d52408df3",
+      "size": 1551,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T22:02:41.342Z",
+      "sha256": "c975b499294967a6bd525630bd581a5fa64f4f4ae5c7a851b7f80d04baeb0d2e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1533,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T21:52:14.680Z",
+      "sha256": "ff13b0ed62defda0112c9f74b0fe54aebf86edaf2f49e5937033e099d500e645",
       "attestation_chain": "ai-first"
     }
   ],
@@ -943,7 +973,7 @@
       "file": "generated/air-monitoring-evidence-ledger.json",
       "size": 159259,
       "size_human": "155.5 KB",
-      "sha256": "1481d84fdde3f8b0555fee8ff578754119a4e6bb4b74fe8044344e9c9dcf3c5f"
+      "sha256": "572712ca78f17dfc950c86582aabd89295882fe618ec2dccfebd9b5be25b0a8b"
     },
     {
       "file": "generated/air-monitoring-georgia-indicator-endpoint-mismatch-summary.json",
@@ -1594,22 +1624,118 @@
       "sha256": "1e705a3b2febf0bbf3e5331cef0debb9632aa9637f677a15bec98d47b75ed405"
     },
     {
+      "file": "generated/charts/air-monitoring-bmkg-closure.png",
+      "size": 135801,
+      "size_human": "132.6 KB",
+      "sha256": "e67d316f2c7315f235b78abaccfeca896ca11834a7aad57828832f1302ff8fb0"
+    },
+    {
+      "file": "generated/charts/air-monitoring-bmkg-closure.svg",
+      "size": 81423,
+      "size_human": "79.5 KB",
+      "sha256": "2d21d6b61f65672fdab60e3a78a8e248ceffc73d65fbe334485eea3405c31e1c"
+    },
+    {
+      "file": "generated/charts/air-monitoring-claim-ladder.png",
+      "size": 160894,
+      "size_human": "157.1 KB",
+      "sha256": "72f7353ccde8210110112f4131010887ff731e4f6d74b4f5572d8ea9ef82eef6"
+    },
+    {
+      "file": "generated/charts/air-monitoring-claim-ladder.svg",
+      "size": 78542,
+      "size_human": "76.7 KB",
+      "sha256": "e9168f20b36c698080aa1d1f04e2d33196121d428261fbc16992f07113a940f0"
+    },
+    {
+      "file": "generated/charts/air-monitoring-economy-matrix.png",
+      "size": 215423,
+      "size_human": "210.4 KB",
+      "sha256": "2dd24037c1b2c9b083682468ba29b08a7b7d303447ad76b79fc6685b1f8142b5"
+    },
+    {
+      "file": "generated/charts/air-monitoring-economy-matrix.svg",
+      "size": 111078,
+      "size_human": "108.5 KB",
+      "sha256": "777287800ccef7ec206bb77630b36aaa47b8a697c43e2b7c502e5344691a0481"
+    },
+    {
+      "file": "generated/charts/air-monitoring-evidence-funnel.png",
+      "size": 163880,
+      "size_human": "160.0 KB",
+      "sha256": "2f099b0bb7489f5fde7b2c8ec56a6401ffb829ea94da89fceff4e43fb1e0e1d8"
+    },
+    {
+      "file": "generated/charts/air-monitoring-evidence-funnel.svg",
+      "size": 84978,
+      "size_human": "83.0 KB",
+      "sha256": "61cdd50dbeb4e6022102d0745a36ad5d84a5933de59334372e66f431cdaf0721"
+    },
+    {
+      "file": "generated/charts/air-monitoring-evidence-groups.png",
+      "size": 154466,
+      "size_human": "150.8 KB",
+      "sha256": "8e4ad6d8a195752299faf09e698b9d4474952351febbc86197b191e84418b615"
+    },
+    {
+      "file": "generated/charts/air-monitoring-evidence-groups.svg",
+      "size": 91116,
+      "size_human": "89.0 KB",
+      "sha256": "a826e27163eb725eb27cde31de738ca6151623e31c045aa8b8a2417a1de3ca48"
+    },
+    {
+      "file": "generated/charts/air-monitoring-overturning-evidence.png",
+      "size": 140573,
+      "size_human": "137.3 KB",
+      "sha256": "efaf302fe3ee8a833917ff645845b47147b1fe638ed2ae36d640bd638139d4f3"
+    },
+    {
+      "file": "generated/charts/air-monitoring-overturning-evidence.svg",
+      "size": 76838,
+      "size_human": "75.0 KB",
+      "sha256": "7700b2e5f0c1bf93c2e068a84b653ce72a4b1428ca083a05f2aa82869f27ccc2"
+    },
+    {
+      "file": "generated/charts/air-monitoring-qa-gates.png",
+      "size": 215607,
+      "size_human": "210.6 KB",
+      "sha256": "e27803741056617a3a3e07ac18956b2cd8b6e68bfcd006e32f26668c8f5bcee3"
+    },
+    {
+      "file": "generated/charts/air-monitoring-qa-gates.svg",
+      "size": 105480,
+      "size_human": "103.0 KB",
+      "sha256": "32fbaec49544f25aab51c8ac009a347e2fb728274edb46b6069acf29c2d600a7"
+    },
+    {
+      "file": "generated/charts/air-monitoring-sensitivity-boundary.png",
+      "size": 204500,
+      "size_human": "199.7 KB",
+      "sha256": "47775897459993943eb90656497775b7e5eb48ca8385d8b3597f26759806eba9"
+    },
+    {
+      "file": "generated/charts/air-monitoring-sensitivity-boundary.svg",
+      "size": 99295,
+      "size_human": "97.0 KB",
+      "sha256": "d2a0759e574ecb1e762c0cd560534f71ac47b4882aef8bcfd56676eb7f1b133c"
+    },
+    {
       "file": "generated/charts/air-monitoring-thumbnail.json",
-      "size": 1112,
+      "size": 1123,
       "size_human": "1.1 KB",
-      "sha256": "b87f82967eead5763fdfbf357cccad63cf5ef079ab04a7421f76838632f6eb08"
+      "sha256": "7feb5e7fff468c6259ede40ac8e1b48ddf9b9a3b153463b83b1774cf8e6c43a1"
     },
     {
       "file": "generated/charts/air-monitoring-thumbnail.png",
-      "size": 184643,
-      "size_human": "180.3 KB",
-      "sha256": "9ceb5b95e31ff65e8aee6c7096bb061279b7e0bc8c58964770e6031aebdaaff9"
+      "size": 87244,
+      "size_human": "85.2 KB",
+      "sha256": "8fc881d2e493bcdc8a4e8305a4d2c78411917ac2ab20a9ae8a3c866dc29fa812"
     },
     {
       "file": "generated/charts/air-monitoring-thumbnail.svg",
-      "size": 969764,
-      "size_human": "947.0 KB",
-      "sha256": "90e444c28704c3a6e1370d112156795b285b19a1259ec7f280c7f766751418fc"
+      "size": 91840,
+      "size_human": "89.7 KB",
+      "sha256": "1a13109ca45e6c646f4d43732c3b370415565ad8d10e860c80a0fa1fc0e3c97b"
     },
     {
       "file": "generated/evidence-ledger.csv",
@@ -1621,13 +1747,33 @@
       "file": "generated/evidence-ledger.json",
       "size": 159259,
       "size_human": "155.5 KB",
-      "sha256": "1481d84fdde3f8b0555fee8ff578754119a4e6bb4b74fe8044344e9c9dcf3c5f"
+      "sha256": "572712ca78f17dfc950c86582aabd89295882fe618ec2dccfebd9b5be25b0a8b"
     }
   ],
   "articles": [
     {
+      "slug": "pm25-observability-gap-cluster-blog",
+      "title": "A station dot is not yet a coverage claim",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-brief",
+      "title": "Public station visibility does not validate monitoring coverage",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-deck",
+      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-social",
+      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+      "attestation_chain": "ai-first"
+    },
+    {
       "slug": "pm25-observability-gap-cluster",
-      "title": "Public station-level monitor QA evidence is not verifiable in the current air-monitoring audit",
+      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
       "attestation_chain": "ai-first"
     }
   ],
@@ -1642,6 +1788,11 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
+        },
+        {
+          "key": "readme",
+          "file": "README.md",
+          "label": "Overview"
         }
       ]
     },
@@ -1726,21 +1877,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/air-monitoring/REPRODUCE.md",
+    "deck": "/programs/air-monitoring/air-monitoring-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/air-monitoring"
   }

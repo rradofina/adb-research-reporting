@@ -4,15 +4,15 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-07-07.
+Last updated: 2026-07-19.
 
 ## Current
 
 | Field | Value |
 |---|---|
-| Maturity label | L3 candidate under §18 ai-first |
-| Active stage | Evidence-gap package closed 2026-07-07: the public-source audit now publishes the documented absence finding through `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, the article, a generated evidence ledger, and a finding-first showcase page. |
-| Active flagship | No — issue closed 2026-07-07; further work only for shared presentation components or a named §6.7-qualified public source |
+| Maturity label | SR under §18 ai-first |
+| Active stage | Current issue closed 2026-07-19: full research story, eight-figure evidence spine, five-format publication ladder, reproducibility guide, PowerPoint, and responsive public surface verified. |
+| Active flagship | No — rotate; reopen only for a named claim-changing station-level source |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | `/program/air-monitoring/evidence` |
@@ -21,18 +21,30 @@ Last updated: 2026-07-07.
 
 **Current finding.** Public station-level QA evidence is not verifiable in
 the audited air-monitoring packet. The generated ledger reads 64 committed
-summary rows and indexes 214 supporting files; it records station/source,
-method, dashboard, denominator, and route context, but 0 validated
-same-station rows, 0 BMKG station-specific inspection-log/certificate/status
-rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and
-0 allowed coverage-claim rows.
+summary rows and records station/source, method, dashboard, denominator, and
+route context, but 0 validated same-station rows, 0 BMKG station-specific
+inspection-log/certificate/status rows, 0 complete monitor-grade rows, 0
+station-radius-ready economies, and 0 allowed coverage-claim rows.
 
-**Next focused work.** Do not add another generic source scan. Either (a)
-rotate after final commit, or (b) add a named §6.7-qualified source only if it
+**Next focused work.** Reopen only for a named §6.7-qualified source that
 plausibly contains station-level calibration, inspection, current status,
-same-station crosswalk, or method-grade records.
+same-station crosswalk, or method-grade records. Do not run another generic
+source scan.
 
 ## Last completed
+
+- **2026-07-19:** Rebuilt the closed absence result as a complete research
+  publication without another source scan. Added `README.md`, `REPRODUCE.md`,
+  a corrected literature landscape, transparent claim-amendment record,
+  conclusion/upgrade memo, eight generated evidence figures, a finding-first
+  hero, full working paper, brief, blog, social post, slide article, and a
+  nine-slide PowerPoint. The paper now leads with the bounded result and
+  separates public station visibility from identity, grade, and coverage.
+  Verification passed the evidence rebuild, five repository gates, typecheck,
+  production build, and browser QA at 1280 px and 375 px. The Research view
+  reports 9 of 9 standard sections, loads 11 figures with 0 broken images, has
+  0 console errors, and has no mobile page overflow; the Slides view exposes
+  the built `.pptx`.
 
 - **2026-07-07:** Standardized the air-monitoring evidence ledger surface.
   The builder now emits `generated/evidence-ledger.{json,csv}` aliases

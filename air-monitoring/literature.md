@@ -1,52 +1,51 @@
-# Literature review — Air Pollution Without Air Monitors
+# Related literature and evidence gap — air-monitoring
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first`. Literature landscape updated 2026-07-19.
 
-## 1. Search record
+## Monitoring is necessary, but intended use sets the evidence burden
 
-Queries (2026-04-27):
-1. `OpenAQ public PM2.5 monitor density LMIC`
-2. `WHO 2021 ambient air quality guidelines 5 µg/m³`
-3. `Shaddick DIMAQ PM2.5 data integration model`
-4. `van Donkelaar ACAG-V6 satellite PM2.5 Dalhousie`
+WHO treats continuous, consistent, high-quality monitoring and public sharing
+as necessary for understanding health impacts and tracking progress
+[@who2026monitoring]. The WHO air-quality guideline supplies a health benchmark,
+but it does not certify any individual monitoring station [@who2021aqg].
 
-Tier-A: *Environmental Science & Technology*, *Journal of the
-Royal Statistical Society: Series C*, *The Lancet Planetary Health*.
-Tier-B: WHO, HEI, Dalhousie, OpenAQ. Tier-C: WB AQM, IIASA.
+The U.S. EPA quality-assurance handbook makes the measurement-system problem
+more explicit: network design, siting, methods, calibration, audits, validation,
+and reporting belong to a quality system, not to a location count alone
+[@usepa2017qahandbook]. This study does not import U.S. regulatory rules into
+developing member countries. It uses the handbook to identify the types of
+station-level evidence that a defensible quality or coverage claim would need.
 
-## 2. Verified entries
+## Aggregated open data provide discovery metadata, not automatic QA closure
 
-- **`who2021aqg`** — WHO 2021 ambient AQ guidelines. **The 5 µg/m³
-  annual mean PM2.5 guideline.**
-- **`vandonkelaar2021monthly`** — van Donkelaar et al. (2021).
-  ACAG-V6 satellite PM2.5. *EST*. **§18.5 upgrade-pass.**
-- **`shaddick2018data`** — Shaddick et al. (2018). DIMAQ
-  data-integration model. *JRSS:C*. doi:10.1111/rssc.12227.
-  **The model underlying WDI national PM2.5 estimates in
-  low-monitor DMCs.**
+OpenAQ's location resources expose coordinates, owner, provider, instruments,
+sensors, activity, and an `isMonitor` field [@openaq2026locations]. Those fields
+are valuable for source discovery and candidate matching. They do not, by
+themselves, prove that an aggregator record and a regulator record refer to the
+same physical station or that current station-specific calibration and
+inspection evidence is public.
 
-## 3. Synthesis
+Global exposure models address a different problem. DIMAQ and satellite-derived
+PM2.5 surfaces combine monitoring and modeled information to estimate exposure
+where direct monitoring is sparse [@shaddick2018data; @vandonkelaar2021monthly].
+They can supply exposure context or a denominator surface; they cannot replace
+station identity, operational status, or station-level QA documentation.
 
-1. **WDI national PM2.5 is monitor-interpolated**
-   [@shaddick2018data]; in low-monitor DMCs it is effectively
-   imputed via DIMAQ.
-2. **WHO 2021 [@who2021aqg]** tightened the annual mean guideline
-   to 5 µg/m³ and provides interim targets at 35, 25, 15, 10.
-3. **ACAG-V6 [@vandonkelaar2021monthly]** provides 1-km gridded
-   global PM2.5; the §18.5 upgrade-pass for low-monitor DMCs.
+## Evidence gap
 
-## 4. Gap
+The empirical gap is not whether air pollution matters or whether station
+coordinates exist. It is whether public sources expose a joinable chain from a
+station identity to current method, status, calibration or inspection evidence
+that permits a station-radius coverage statement.
 
-No published cross-ADB-region PM2.5 observability-gap ranking
-combining OpenAQ monitor density with WHO PM2.5 exposure.
+The contribution is a reproducible public-evidence audit across a 24-economy
+discovery frame. It distinguishes five objects that are often collapsed:
 
-## 5. First testable claim
+1. a public station route;
+2. a station or measurement row;
+3. an official/aggregator identity candidate;
+4. a validated same-station and monitor-grade record; and
+5. a claim-ready station-radius observation.
 
-> Five ADB-region economies — Afghanistan, Bangladesh, Myanmar,
-> Uzbekistan, Tajikistan — hold the top-5 PM2.5 observability-gap
-> positions, combining high WHO-derived PM2.5 exposure with
-> sparse or absent OpenAQ public PM2.5 monitoring.
-
-## 7. §18 attestation
-
-`ai-first`. 2026-04-27.
+The paper's negative result sits between objects 3 and 4. That boundary is the
+literature-facing contribution and the reason a coverage estimate is withheld.

@@ -3,7 +3,7 @@
   "status": "computed_air_monitoring_evidence_ledger",
   "method": "air_monitoring_evidence_ledger_v1",
   "attestation_chain": "ai-first",
-  "generated_at": "2026-07-07T07:55:36Z",
+  "generated_at": "2026-07-18T21:54:18Z",
   "finding": {
     "headline": "Public station-level QA evidence is not sufficient to support a station-radius air-monitoring coverage claim in the current audit packet.",
     "claim": "The committed public-source searches find official station, method, dashboard, denominator, and route context, but the claim-enabling station-level evidence fields remain zero: validated same-station joins, complete monitor-grade rows, station-level calibration or inspection records, station-radius-ready economies, and allowed coverage-claim rows.",
@@ -12,7 +12,7 @@
   },
   "headline_counts": {
     "ledger_rows": 64,
-    "supporting_files_indexed": 216,
+    "supporting_files_indexed": 236,
     "economies_in_source_discovery": 24,
     "economies_with_official_station_source_or_portal": 9,
     "official_station_rows_audited": 239,

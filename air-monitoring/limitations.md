@@ -1,54 +1,26 @@
-# Limitations -- Air-monitoring public QA observability
+# Limitations and nonclaims — air-monitoring public QA observability
 
-`attestation_chain: ai-first`. Updated 2026-07-07.
+`attestation_chain: ai-first`. Updated 2026-07-19.
 
-## Scope
+1. **Bounded public routes.** The finding applies to the named public sources
+   and retrieval states in the committed ledger. It does not show that the
+   missing records do not exist elsewhere.
+2. **No private evidence.** Internal regulator QA files, credentialed portals,
+   and nonpublic station logs are outside the public-data-only scope.
+3. **Metadata is not certification.** Owner, provider, instrument, `isMonitor`,
+   method, and dashboard-status fields help discovery but do not automatically
+   validate station identity, calibration, inspection, or current grade.
+4. **No same-station assumption.** Proximity and name similarity produce
+   candidates, not validated joins.
+5. **No coverage or exposure estimate.** The 831 denominator joins are geometry
+   and custody checks until identity and monitor-grade gates close.
+6. **No regulator or country ranking.** Differences in public evidence may
+   reflect publication systems, language, archive design, or the audit frame;
+   they are not performance scores.
+7. **No causal inference.** The study does not estimate health effects,
+   pollution determinants, monitor effects, or policy impacts.
+8. **Dynamic public sources.** Dashboards and APIs can change after retrieval.
+   Future releases should be treated as claim-changing evidence and versioned.
 
-The active claim is a public-evidence absence finding. It says the audited
-public routes do not expose enough station-level QA evidence to support
-station-radius monitor coverage claims.
-
-It does not say that calibration certificates, inspection logs, or
-station-code crosswalks do not exist outside the audited public routes.
-
-## Main limits
-
-1. **Public-route limit.** The result is bounded by the public sources named
-   in the generated ledger and its source-input summaries.
-2. **No private or credentialed evidence.** The project uses public data only.
-   Nonpublic regulator files, internal QA ledgers, or restricted portals are
-   outside scope.
-3. **No monitor certification.** Method or dashboard context is not treated as
-   station-level calibration, inspection, or complete monitor-grade evidence.
-4. **No same-station assumption.** Official and OpenAQ rows are not joined
-   unless public evidence supports the same-station identity.
-5. **No coverage estimate.** GHSL/ACAG denominator rows and station-radius dry
-   runs are geometry/custody evidence only until identity and grade gates close.
-6. **No performance claim.** The packet does not rank regulators, agencies, or
-   monitor networks by performance.
-
-## What would overturn or narrow the finding
-
-A public source can change the result if it contains at least one of:
-
-- station-level calibration certificates;
-- station-level inspection logs;
-- station-level current calibration-status rows;
-- official station-code crosswalks that validate official/OpenAQ identity;
-- a public method-grade ledger with station identifiers.
-
-Generic source expansion is not enough. A new search pass must name the source
-route and why it plausibly contains one of those records.
-
-## Reproduce
-
-Run:
-
-```powershell
-python air-monitoring\scripts\build-evidence-ledger.py
-```
-
-Then inspect:
-
-- `air-monitoring/generated/air-monitoring-evidence-ledger.json`
-- `air-monitoring/generated/air-monitoring-evidence-ledger.csv`
+The public article should therefore use “not verifiable in the audited packet,”
+not “does not exist.”

@@ -1,56 +1,43 @@
-# Sensitivity -- Air-monitoring public QA observability
+# Sensitivity and robustness — air-monitoring public QA observability
 
-`attestation_chain: ai-first`. Updated 2026-07-07.
+`attestation_chain: ai-first`. Updated 2026-07-19.
 
-This note replaces the old monitor-density sensitivity as the active headline
-check. The current claim is not a composite monitor-density score; it is a
-documented public-evidence absence generated from
-`air-monitoring/scripts/build-evidence-ledger.py`.
+## Numeric sensitivity
 
-## Active claim
+The downstream station-radius diagnostic uses 4 km as the main geometry, 0.5
+km as the −87.5% narrow lane, and 50 km as a deliberately wide stress lane. The
+active claim stops before coverage is allowed, so the required ±50% question is
+answered conservatively: moving the radius by at least ±50% cannot create a
+same-station crosswalk, calibration record, inspection log, or complete
+monitor-grade row. Allowed claims remain zero in every radius lane.
 
-Public evidence in the audited packet does not close the station-level QA gates
-needed for a station-radius air-monitoring coverage claim.
+![The absence result is invariant to radius choice](generated/charts/air-monitoring-sensitivity-boundary.svg)
 
-The generated ledger records 64 summary rows and 214 supporting files. The
-claim-enabling counters remain zero for validated same-station rows, BMKG
-station-specific inspection logs, BMKG station-specific calibration
-certificates, BMKG calibration-status rows, complete monitor-grade rows,
-station-radius-ready economies, and allowed coverage-claim rows.
+## Denominator-route robustness
 
-## Sensitivity logic
+The ledger records 831 GHSL/ACAG denominator joins. Replacing the population or
+PM2.5 surface could alter future denominator values but cannot close the public
+identity and station-grade gates. Denominator choice is therefore downstream
+of the active finding.
 
-The result is not sensitive to the 0.5 km, 4 km, or 50 km station-radius bands,
-because the current claim stops before any radius coverage estimate is allowed.
-Changing the radius changes future denominator geometry; it does not create a
-station-level calibration certificate, inspection log, same-station crosswalk,
-or complete monitor-grade row.
+## Source-discovery sensitivity
 
-The result is not sensitive to the GHSL/ACAG denominator route either. The
-coverage gate records 831 denominator join rows, but denominator rows are
-explicitly non-claim evidence until station identity and monitor-grade gates
-close.
+The result is sensitive to false negatives in public source discovery. A new
+pass is justified only when it names a previously unchecked source and explains
+why that source plausibly contains one of the following:
 
-The result is sensitive to source-discovery false negatives. A newly public
-station-level certificate, inspection log, calibration-status row, official
-same-station crosswalk, or public method-grade ledger would update the ledger
-and could overturn the absence finding for the affected economy or station.
+- a station-specific calibration certificate or inspection log;
+- a current station-level calibration-status record;
+- an official station-code crosswalk; or
+- a public method-grade ledger keyed to station identifiers.
 
-## Source-expansion test
+One valid row narrows the finding for that station or economy. A generic search
+that produces the same source classes does not count as robustness evidence.
 
-A further pass is justified only if it names a previously unchecked source and
-why it plausibly differs from the searched routes. Generic re-searching is not
-a sensitivity check. A valid expansion source would be one of:
+## Claim robustness
 
-- an official station-level calibration-certificate or inspection-log registry;
-- an official station-code crosswalk linking regulator rows and OpenAQ rows;
-- a public audit or QA ledger with station identifiers and current calibration
-  status;
-- a regulator API endpoint not represented in the current summary set.
-
-## Retired background result
-
-The April 2026 gap-score result remains a background screening artifact only.
-It combined people per monitor with PM2.5-above-guideline context. It is no
-longer the active air-monitoring claim because the later public-source audit
-showed that station identity and monitor-grade evidence gates do not close.
+The result survives the strongest noncausal interpretation test: removing the
+denominator calculations entirely leaves the public-evidence conclusion
+unchanged. Conversely, the finding is deliberately easy to falsify with a
+specific public QA object. This asymmetry is appropriate for a bounded absence
+claim.

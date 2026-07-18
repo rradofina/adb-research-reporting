@@ -1,73 +1,87 @@
-# Results -- Air-monitoring public QA observability
+# Results — public station visibility does not close the QA chain
 
-`attestation_chain: ai-first`. L3 candidate evidence package. Generated from
-`air-monitoring/scripts/build-evidence-ledger.py` and
-`air-monitoring/generated/air-monitoring-evidence-ledger.json`.
+`attestation_chain: ai-first`. SR evidence package. Updated 2026-07-19.
 
-## Finding
+## Main finding
 
-The current air-monitoring evidence packet supports a documented-absence
-finding, not a station-radius coverage finding. Public sources provide station
-lists, method language, dashboard status, denominator geometry, and source
-routes, but the public station-level QA evidence needed to validate a coverage
-claim remains absent in the audited packet.
+The audit reaches the station-discovery and denominator stages, then stops. It
+finds 24 economies in the source-discovery frame, official station routes in 9,
+239 official station rows audited for monitor-grade evidence, 44
+official/OpenAQ identity candidates, and 831 denominator joins. It verifies 0
+same-station rows, 0 complete monitor-grade rows, 0 station-radius-ready
+economies, and 0 allowed coverage-claim rows.
 
-## What the generated ledger sees
+![The analysis stops at station identity](generated/charts/air-monitoring-claim-ladder.svg)
 
-The ledger script reads 64 committed summary JSON files and indexes 214
-supporting files. Its headline counts are:
+The counts use different units and are not an attrition rate. Together they
+show where the claim-permission sequence stops.
 
-| Gate | Public evidence found |
-|---|---:|
-| Economies in source discovery | 24 |
-| Economies with an official station source or portal | 9 |
-| Official station rows audited for monitor-grade evidence | 239 |
-| Official/OpenAQ identity candidate rows checked | 44 |
-| Validated same-station rows | 0 |
-| BMKG PM2.5 target rows with method/display/status context | 22 |
-| BMKG station-specific inspection-log rows | 0 |
-| BMKG station-specific calibration-certificate rows | 0 |
-| BMKG calibration-status rows | 0 |
-| Complete monitor-grade rows in the coverage gate | 0 |
-| Station-radius-ready economies | 0 |
-| Denominator join rows computed | 831 |
-| Coverage-claim rows allowed | 0 |
+## Source routes exist, but the public crosswalk does not
+
+Official inventories, regulator portals, dashboards, APIs, OpenAQ metadata,
+and denominator sources provide substantial discovery context. The audit's 44
+identity candidates are still candidates: no public record in the packet
+validates an official and OpenAQ row as the same physical station.
+
+![Five audit stages separate discovery from validated identity](generated/charts/air-monitoring-evidence-funnel.svg)
+
+## All seven claim-enabling gates remain closed
+
+The ledger treats a zero as informative only when the source route, retrieval
+state, row scope, and exact missing field are recorded. Under that rule, seven
+headline gates remain at zero.
+
+![All claim-enabling public QA gates remain closed](generated/charts/air-monitoring-qa-gates.svg)
+
+## The BMKG lane shows why dashboard visibility is insufficient
+
+All 22 BMKG target rows have method, display, and status context, and 21 are
+currently shown as online in the audited dashboard snapshot. The packet still
+contains no station-specific inspection log, calibration certificate,
+calibration-status row, or complete monitor-grade row for the target queue.
+Online status is operational context, not grade closure.
+
+![BMKG is visible online but does not close the grade gate](generated/charts/air-monitoring-bmkg-closure.svg)
+
+## Evidence availability differs across the discovery frame
+
+The economy matrix makes the missingness pattern visible. Some economies reach
+official-source, audited-row, or identity-candidate lanes. None reaches the
+claim-ready lane. A blank cell is not a performance score and does not mean a
+monitoring network is absent on the ground.
+
+![Economy-level evidence lanes in the discovery frame](generated/charts/air-monitoring-economy-matrix.svg)
+
+## This was not a one-page source check
+
+The consolidated ledger spans source discovery, station identity, denominator
+custody, country-specific deep dives, and claim closure. Artifact counts show
+where the audit effort sits; they do not rank agencies or countries.
+
+![Evidence families consolidated by the ledger](generated/charts/air-monitoring-evidence-groups.svg)
+
+## The result is insensitive to radius, but sensitive to new evidence
+
+Changing the diagnostic radius from 4 km to 0.5 km or 50 km changes future
+geometry, not the missing public QA chain. All three lanes therefore leave the
+allowed-claim count at zero. A genuinely new station-level source could change
+the finding.
+
+![Geometry sensitivity and source-expansion sensitivity are different](generated/charts/air-monitoring-sensitivity-boundary.svg)
+
+## The falsifier is concrete
+
+Five public evidence objects would narrow or overturn the result: a
+station-specific inspection log, calibration certificate, current
+calibration-status row, official same-station crosswalk, or station-keyed
+method-grade record. None is verified in the current packet.
+
+![Public evidence objects that would change the result](generated/charts/air-monitoring-overturning-evidence.svg)
 
 ## Interpretation
 
-The result is a public observability gap. The audit can say that several
-official and regulator-facing source routes are visible, and that some rows
-carry method or dashboard context. It cannot say that monitors are
-station-level calibration traceable, inspection traceable, or ready for
-station-radius population or exposure coverage claims.
-
-The useful contribution is therefore negative but substantive: for this audit
-queue, public evidence is not enough to validate station-level monitor quality
-or same-station joins. The absence is documented by named source routes,
-retrieval states, row scopes, and zero-valued claim gates rather than by model
-memory or a general web-search impression.
-
-## What this cannot say
-
-This packet does not prove that calibration certificates or inspection logs do
-not exist. It says they were not public in the audited routes. A future public
-release of station-level certificates, inspection logs, calibration-status
-rows, or official/OpenAQ crosswalks would change the claim.
-
-This packet also does not estimate population coverage, PM2.5 exposure, monitor
-performance, or regulatory performance. The denominator dry runs stay as
-geometry and custody evidence until station identity and monitor-grade gates
-close.
-
-## Reproduce
-
-Run:
-
-```powershell
-python air-monitoring\scripts\build-evidence-ledger.py
-```
-
-Primary outputs:
-
-- `air-monitoring/generated/air-monitoring-evidence-ledger.json`
-- `air-monitoring/generated/air-monitoring-evidence-ledger.csv`
+The defensible conclusion is an observability gap in public station-level QA
+evidence. It is not a claim that these records do not exist; it is a record that
+they were not verifiable in the named public routes. It is also not an estimate
+of monitor coverage, population served, exposure, data accuracy, or regulatory
+performance.

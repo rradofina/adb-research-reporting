@@ -136,7 +136,7 @@ export default function Briefs() {
         <Link href="/research" className="ml-auto ed-link text-sm uppercase tracking-[0.16em] font-mono">
           Program index
         </Link>
-        <Link href="/data/upgrades" className="ed-link text-sm uppercase tracking-[0.16em] font-mono">
+        <Link href="/upgrades" className="ed-link text-sm uppercase tracking-[0.16em] font-mono">
           Data upgrades
         </Link>
       </div>

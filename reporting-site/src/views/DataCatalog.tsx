@@ -74,7 +74,7 @@ export default function DataCatalog() {
               Cross-program vulnerability matrix queryable directly via Supabase REST.
             </p>
           </Link>
-          <Link href="/data/upgrades"
+          <Link href="/upgrades"
             className="block ed-card p-6 group hover:border-ink"
           >
             <Kicker variant="ochre">Upgrade matrix →</Kicker>

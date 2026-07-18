@@ -55,6 +55,20 @@ pass at the end and report the results compactly.
 | Edited any file under `reporting-site/` or any file the site reads | Run `cd reporting-site && npm run build` to confirm the production bundle still compiles |
 | Edited a public surface (program page, article, evidence page, home page) | Browser-check at desktop (1280px) and mobile (375px); confirm zero console errors and zero horizontal-overflow at mobile |
 | Substantive change to focus, stage, blocker, or verification status | Update the active `{program}/STATUS.md`; update `research/STATUS.md` only if the active flagship, operating mode, queue, or default review mode changed; set `Last updated` to today where edited |
+| Any commit intended for a production push | From the repository root, run `npx vercel pull --yes --environment=production` and then `node scripts/verify-vercel-production.mjs`. The repository-owned gate must exit 0 before pushing; a standalone incremental `npm run build` does not satisfy this release gate. On Linux/CI, also run `npx vercel build --prod` and require exit 0. |
+
+**Production-push rule.** Do not push a production-bound commit while the
+Vercel production gate is failing. The local gate uses the linked Vercel
+project's pulled production settings, performs a clean locked install, runs the
+production build with production environment values, and validates the route
+manifests. This makes project-root, framework detection, dependency resolution,
+environment, and output behavior explicit before a cost-bearing deployment. A
+raw `vercel build --prod` is additionally mandatory on Linux/CI. Vercel's local
+Next output assembler has a Windows path-separator defect for nested static App
+Router routes, so Windows release work uses the repository gate rather than
+waiving or remotely testing a failing check. If a Git-triggered deployment
+still fails despite the gate, inspect that deployment's Vercel build log,
+repair the mismatch, rerun the full gate, and only then push the fix.
 
 The next section lists the **hard walls** that genuinely require owner action
 and should pause work, vs. soft barriers that are part of normal AI work.

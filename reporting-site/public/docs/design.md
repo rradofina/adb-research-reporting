@@ -185,5 +185,5 @@ Run this checklist before closing any public-surface session:
    reconciled to the same labels without promoting any program through
    the constitutional WIP register. Browser QA also exposed the old
    `/research`, `/briefs`, `/how-to-read`, `/glossary`, `/archive`,
-   `/data/upgrades`, `/methods`, and `/references` redirects; those
+   `/upgrades`, `/methods`, and `/references` redirects; those
    existing views are now real App Router pages.

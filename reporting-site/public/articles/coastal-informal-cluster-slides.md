@@ -71,4 +71,4 @@ informality, deprivation, protection, or policy quality.
 Take a small set of leading centres and add local hazard, subsidence,
 protection, planning-boundary, and validated housing or service data.
 
-`attestation_chain: ai-first`
+*AI-first prepared pipeline; not externally reviewed.*

@@ -1,7 +1,7 @@
 {
   "program": "digital-performance",
   "permanent_url": "/digital-performance?view=evidence",
-  "generated_at": "2026-07-18T22:42:44.077Z",
+  "generated_at": "2026-07-18T23:00:06.964Z",
   "hero": {
     "png": "generated/charts/digital-performance-thumbnail.png",
     "svg": "generated/charts/digital-performance-thumbnail.svg",
@@ -99,8 +99,8 @@
       "label": "Sensitivity-run output",
       "size": 1914,
       "size_human": "1.9 KB",
-      "mtime": "2026-07-18T20:45:06.897Z",
-      "sha256": "278b0c905631f3e120f587b8705cc451e5af4984c01c79903864544a1c8e1d79",
+      "mtime": "2026-07-18T22:51:50.961Z",
+      "sha256": "286565854132e335afbf41e4ec7fafc241f837b10b20778f0c104d9838ea02f2",
       "attestation_chain": null
     },
     {
@@ -175,7 +175,7 @@
       "file": "generated/charts/digital-performance-01-availability-use-gap-hero.svg",
       "size": 119731,
       "size_human": "116.9 KB",
-      "sha256": "0f91d87c4496b93540604c824738347f965aafce5149602d86bc5e5870402bc8"
+      "sha256": "90b5b3a3a7bf652e2010222a77d7057c4c1c285a770204b783703df337646a86"
     },
     {
       "file": "generated/charts/digital-performance-02-components-dumbbell.png",
@@ -187,7 +187,7 @@
       "file": "generated/charts/digital-performance-02-components-dumbbell.svg",
       "size": 103428,
       "size_human": "101.0 KB",
-      "sha256": "7b0c27c75685ad2014f0247c56da8e915375c79ef308003873a6ca2f92b5f75a"
+      "sha256": "59277ddc4398a5266475ff7e200adf5abf4376b135178b18734ba53b3a66d8f1"
     },
     {
       "file": "generated/charts/digital-performance-03-coverage-use-scatter.png",
@@ -199,7 +199,7 @@
       "file": "generated/charts/digital-performance-03-coverage-use-scatter.svg",
       "size": 79298,
       "size_human": "77.4 KB",
-      "sha256": "945cca8e89898821ef79da9c39812a4f77ed3b502afa043ed711b8200b96bcca"
+      "sha256": "76f4739e45f1ab84211894f8186009fadc59598434205e8336db6754ee763f01"
     },
     {
       "file": "generated/charts/digital-performance-04-components-over-time.png",
@@ -211,7 +211,7 @@
       "file": "generated/charts/digital-performance-04-components-over-time.svg",
       "size": 79584,
       "size_human": "77.7 KB",
-      "sha256": "bbca557f8fa0ca0d8b35899dc92fab5643bc02de3e333967004bd63628acf11c"
+      "sha256": "c5741812d85ff3e535b1df657b22ff7db48ca80f17c7d427eded1655c49ae7a0"
     },
     {
       "file": "generated/charts/digital-performance-05-balanced-gap-change.png",
@@ -223,7 +223,7 @@
       "file": "generated/charts/digital-performance-05-balanced-gap-change.svg",
       "size": 99152,
       "size_human": "96.8 KB",
-      "sha256": "6683955daa8bbb2602299c2db09ae031d178fafe1187373cb09c05130276de01"
+      "sha256": "f9b729d1f9bd20516feff102cf14f58eaf6f05a40b83fadf0bb7162c06eebc12"
     },
     {
       "file": "generated/charts/digital-performance-06-affordability-association.png",
@@ -235,7 +235,7 @@
       "file": "generated/charts/digital-performance-06-affordability-association.svg",
       "size": 88680,
       "size_human": "86.6 KB",
-      "sha256": "b1590b2408a4e4da3a21033941df41845ecc462677f678552eb46054d8d53f4b"
+      "sha256": "533c3c356342ec69fbd003a1daf1f3f92d86a1580379f2c965278ebde8aba228"
     },
     {
       "file": "generated/charts/digital-performance-07-urban-rural-use-gap.png",
@@ -247,7 +247,7 @@
       "file": "generated/charts/digital-performance-07-urban-rural-use-gap.svg",
       "size": 79273,
       "size_human": "77.4 KB",
-      "sha256": "23ad1d43d5f2fdfb1f5d21f5777f32ef40eafe74f522f2233e061973176811be"
+      "sha256": "4f51d2a0365b72eb81d72514afc47a31cf5ea18ebb81fdc0700528841ebb7fd4"
     },
     {
       "file": "generated/charts/digital-performance-08-source-provenance.png",
@@ -259,7 +259,7 @@
       "file": "generated/charts/digital-performance-08-source-provenance.svg",
       "size": 69058,
       "size_human": "67.4 KB",
-      "sha256": "8176718a54413761f175dfd5f3c182f81c49cc8e22a2aafef8b492f1a0589f48"
+      "sha256": "1d49ec37f4c2935ae0abf4f97473d07e2b340466aa835a3fa023af9eda6f34bc"
     },
     {
       "file": "generated/charts/digital-performance-09-sample-floor-sensitivity.png",
@@ -271,7 +271,7 @@
       "file": "generated/charts/digital-performance-09-sample-floor-sensitivity.svg",
       "size": 67526,
       "size_human": "65.9 KB",
-      "sha256": "ba4668320c561c106c560592d521ed499858797684a7a57e451513849aae8893"
+      "sha256": "640aae0a845ee3dd209e0d238631315cc7238b4ccd89071be7c254f1ba1f732b"
     },
     {
       "file": "generated/charts/digital-performance-10-pair-availability-heatmap.png",
@@ -283,7 +283,7 @@
       "file": "generated/charts/digital-performance-10-pair-availability-heatmap.svg",
       "size": 123578,
       "size_human": "120.7 KB",
-      "sha256": "511f037e5c790c6c3c381f88f37c5a8d2e165f61ddc1a42fe38cef80624f6a23"
+      "sha256": "32bada55db9cc2350b88f39356828b5843251f139ed536c2dc5ec2ce4e4abf67"
     },
     {
       "file": "generated/charts/digital-performance-11-coverage-funnel.png",
@@ -295,7 +295,7 @@
       "file": "generated/charts/digital-performance-11-coverage-funnel.svg",
       "size": 68076,
       "size_human": "66.5 KB",
-      "sha256": "1d6e48ccec801c34e44a4fff8922d0ce8d1b1afeebe046b233962b99f4bdb759"
+      "sha256": "e5ee06b2ec5fe4efb16e9f696d94edb183c3b56527894402b0ec12fcdc82b188"
     },
     {
       "file": "generated/charts/digital-performance-12-method-and-claim-gate.png",
@@ -307,7 +307,7 @@
       "file": "generated/charts/digital-performance-12-method-and-claim-gate.svg",
       "size": 85633,
       "size_human": "83.6 KB",
-      "sha256": "7284b55371fc61d430662304335b8ff8738718a9f85ded8e548a020ea55e7590"
+      "sha256": "d0c7dcd00040fff35bd88c0818d8db2c12be25a0ae5572056b2e040520ae870a"
     },
     {
       "file": "generated/charts/digital-performance-rough-coverage-use.png",
@@ -361,7 +361,7 @@
       "file": "generated/digital-performance-figure-dossier.json",
       "size": 5823,
       "size_human": "5.7 KB",
-      "sha256": "31cadb78074696273f64da07926f6de745194ead80c2416443d81cae1dbf605a"
+      "sha256": "2c7ef6b91fd2f7122e409dde47a7bc146baf9b2e415cd7ceb593117c9594b61d"
     },
     {
       "file": "generated/digital-performance-source-inventory.json",
@@ -498,7 +498,7 @@
   ],
   "resources": {
     "reproduce": "/programs/digital-performance/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/digital-performance/digital-performance-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/digital-performance"
   }

@@ -18,6 +18,7 @@
 - **Next qualified move:** Reopen only for independent household, device,
   skills, non-use-barrier, or distribution-sensitive affordability evidence;
   use Ookla only as a separate quality-conditional-on-testing layer.
-- **Verification:** Pipelines reran; five gates, source audit, typecheck, and
-  150-route production build pass; 1280/375 browser QA shows no console error,
-  broken image, missing citation, or page-level horizontal overflow.
+- **Verification:** Pipelines reran; six checks and the 165-page production
+  build pass; responsive QA is clean; the corrected nine-slide PPTX renders
+  six evidence figures without orphan text slides, clipping, or broken media.
+- **Rotation:** Current issue is closed; `public-data-freshness` is next.

@@ -1,7 +1,7 @@
 ---
 slug: public-data-freshness-two-clocks-slides
 title: A data year has two clocks
-subtitle: Eight slides on domain-aware freshness review in WDI dashboards.
+subtitle: Nine slides on domain-aware freshness review in WDI dashboards.
 kind: slides
 status: draft
 attestation_chain: ai-first
@@ -11,7 +11,7 @@ geographies: [ADB developing economies]
 topics: [public data, monitoring, data visualization]
 program: public-data-freshness
 maturity: PP
-abstract: Eight-slide presentation of the public-data-freshness study.
+abstract: Nine-slide presentation of the public-data-freshness study.
 published_at: 2026-07-19
 license: CC BY 4.0
 banned_words_check: passing
@@ -34,10 +34,10 @@ At three years, calendar age and indicator-relative lag disagree for **138 of
 
 `calendar age = production age + relative lag`
 
-![Two-clock construct.](/programs/public-data-freshness/generated/charts/public-data-freshness-05-two-clock-construct.svg)
-
 Calendar age remains the policy-use warning. Relative lag triages source
 follow-up. Neither measures accuracy.
+
+![Two-clock construct.](/programs/public-data-freshness/generated/charts/public-data-freshness-05-two-clock-construct.svg){width=85%}
 
 # 4 — The calendar queue is almost three times larger
 
@@ -79,6 +79,6 @@ Disagreement at effective cutoffs:
 Show latest year, indicator frontier, relative lag, missingness, and the chosen
 cutoff. Do not turn them into an economy score.
 
-![Supported claim and limits.](/programs/public-data-freshness/generated/charts/public-data-freshness-12-claim-gate.svg)
-
 Reproduce: `python public-data-freshness/scripts/build-freshness-panel.py`
+
+![Supported claim and limits.](/programs/public-data-freshness/generated/charts/public-data-freshness-12-claim-gate.svg){width=85%}

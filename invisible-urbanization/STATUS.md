@@ -14,6 +14,7 @@
   misclassification, informality, service neglect, or causal policy effects.
 - **Reopen only for:** a claim-changing classification-history, service-access,
   or observed planning-boundary object.
-- **Verification:** Five gates, typecheck, production build, chart dossier,
-  desktop/mobile browser QA, image integrity, and zero browser errors passed.
-- **Rotation:** Current issue is closed; `coastal-informal-risk` is next.
+- **Verification:** Six checks, production build, chart dossier, responsive QA,
+  and image integrity passed; the 10-slide PPTX renders seven evidence figures
+  without duplicate captions, clipping, or broken media.
+- **Rotation:** Current issue is closed; `flood-market-access` is next.

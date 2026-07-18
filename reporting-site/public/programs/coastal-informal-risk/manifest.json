@@ -1,7 +1,7 @@
 {
   "program": "coastal-informal-risk",
   "permanent_url": "/coastal-informal-risk?view=evidence",
-  "generated_at": "2026-07-18T22:42:43.265Z",
+  "generated_at": "2026-07-18T23:00:06.255Z",
   "hero": {
     "png": "generated/charts/coastal-informal-risk-thumbnail.png",
     "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
@@ -163,9 +163,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-01-growth-hero.svg",
-      "size": 104020,
-      "size_human": "101.6 KB",
-      "sha256": "ee9851918f7e5865164e31ab3e5d1ddf68fc30140376ff4c2fbfd3d14b499d21"
+      "size": 102256,
+      "size_human": "99.9 KB",
+      "sha256": "d9dc6ec8866c2ca4119ae931862324c5f96a077e748d71175f8fda86a7a889ab"
     },
     {
       "file": "generated/charts/coastal-informal-risk-02-centre-dumbbell.png",
@@ -175,9 +175,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-02-centre-dumbbell.svg",
-      "size": 89362,
-      "size_human": "87.3 KB",
-      "sha256": "53fe043093aea91f41115f979e25f0da07f1f5029a5bf178ee54cfd1621485e6"
+      "size": 87969,
+      "size_human": "85.9 KB",
+      "sha256": "bb260e6fc29f228cf1c7ccda628260e5803f535945986766ca5a67e0c177608e"
     },
     {
       "file": "generated/charts/coastal-informal-risk-03-proxy-falsification.png",
@@ -187,9 +187,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-03-proxy-falsification.svg",
-      "size": 69666,
-      "size_human": "68.0 KB",
-      "sha256": "df5f53c897937b2fdd5407c51f34a659b5c86f7829ef95db8dedc00384f6cdad"
+      "size": 68220,
+      "size_human": "66.6 KB",
+      "sha256": "bdb029f4b9f437b3a2fc583a8847d4f43e09a1a35b4da44c57cc2e6b6479e4ce"
     },
     {
       "file": "generated/charts/coastal-informal-risk-04-economy-aggregation.png",
@@ -199,9 +199,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-04-economy-aggregation.svg",
-      "size": 77107,
-      "size_human": "75.3 KB",
-      "sha256": "fbc92727e63f56df0eda65dcb6c6dee60dd5c5dfc09ee2da2e39d8fb785fb6df"
+      "size": 75664,
+      "size_human": "73.9 KB",
+      "sha256": "f4ed10f2c22c7212436b4089ae40f51d4dc483dca47aac14fbe4ffed10cac419"
     },
     {
       "file": "generated/charts/coastal-informal-risk-05-elevation-sensitivity.png",
@@ -211,9 +211,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-05-elevation-sensitivity.svg",
-      "size": 56427,
-      "size_human": "55.1 KB",
-      "sha256": "53b0a4ad7d246bb6abb5cbbcdc9c72168825baf78980c808e5a05119c0bd544b"
+      "size": 55156,
+      "size_human": "53.9 KB",
+      "sha256": "39b4af705b90259551ab28515a5f7df4c7ba6569bbc9c22baa34e3eadd96f61c"
     },
     {
       "file": "generated/charts/coastal-informal-risk-06-window-sensitivity.png",
@@ -223,9 +223,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-06-window-sensitivity.svg",
-      "size": 63825,
-      "size_human": "62.3 KB",
-      "sha256": "3ac1b108a670a634e5179c527b4441d94d3945369d745c7876b41ae32bc5536d"
+      "size": 62561,
+      "size_human": "61.1 KB",
+      "sha256": "fb8613fcc37c885d2920671f2a8096ea2de1d5085dd408bc4f7faf20dc8f91a8"
     },
     {
       "file": "generated/charts/coastal-informal-risk-07-population-built-corroboration.png",
@@ -235,9 +235,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-07-population-built-corroboration.svg",
-      "size": 267887,
-      "size_human": "261.6 KB",
-      "sha256": "d6366ca5f411c0ffa64d033605ee22fa96a932c9a91c35153c2d492b2df42993"
+      "size": 266445,
+      "size_human": "260.2 KB",
+      "sha256": "e71ce511a9a03bfd5ab979dd9d5e8a61c41835c19048dabd4b4ff2a367759ceb"
     },
     {
       "file": "generated/charts/coastal-informal-risk-08-absolute-versus-share.png",
@@ -247,9 +247,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-08-absolute-versus-share.svg",
-      "size": 337932,
-      "size_human": "330.0 KB",
-      "sha256": "dddaf3c84053afa427cf30928c787a114e5bfb72ac7510b91cb106a5a16a78c2"
+      "size": 336641,
+      "size_human": "328.8 KB",
+      "sha256": "e7d64264da6c8d091960e71cc81f293c4da1861b42cebe279ce03471a79ba8d9"
     },
     {
       "file": "generated/charts/coastal-informal-risk-09-change-direction.png",
@@ -259,9 +259,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-09-change-direction.svg",
-      "size": 62150,
-      "size_human": "60.7 KB",
-      "sha256": "a36b580130aaa23f59785ebfe9b405a1432a845b9a33e1ba9dab0580a6fdfb00"
+      "size": 60811,
+      "size_human": "59.4 KB",
+      "sha256": "081508b5b47244652a61e1ba3f5973003cb9eabb0b773fdaaab86dbb04173be3"
     },
     {
       "file": "generated/charts/coastal-informal-risk-10-growth-concentration.png",
@@ -271,9 +271,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-10-growth-concentration.svg",
-      "size": 67768,
-      "size_human": "66.2 KB",
-      "sha256": "69324c30c0701e7c9a6a05c5f51f6317782212c5644ed06000d148a41a237aed"
+      "size": 66396,
+      "size_human": "64.8 KB",
+      "sha256": "0c99a6c86b7c11bd65d67f11c0af016ee11b53858c27d8c05d8e80bc676cf0b9"
     },
     {
       "file": "generated/charts/coastal-informal-risk-11-coverage-funnel.png",
@@ -283,9 +283,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-11-coverage-funnel.svg",
-      "size": 73122,
-      "size_human": "71.4 KB",
-      "sha256": "d10da8030d82bb0e68271b12da1f16106097ef87767b36a985794ea710f94270"
+      "size": 71559,
+      "size_human": "69.9 KB",
+      "sha256": "c511a1c146e5dc0264065fecff7a804564d2b6868b754b4281dfdd8502352c29"
     },
     {
       "file": "generated/charts/coastal-informal-risk-12-method-and-claim-gate.png",
@@ -295,9 +295,9 @@
     },
     {
       "file": "generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg",
-      "size": 88847,
-      "size_human": "86.8 KB",
-      "sha256": "c46599a911670e7d5257eb9a14669205add39ebc3a02332b542a16d274fd06e5"
+      "size": 87364,
+      "size_human": "85.3 KB",
+      "sha256": "635f8b3b5919376da2bd1df484c3d90f637280b71e442f622d07e10fe9b161be"
     },
     {
       "file": "generated/charts/coastal-informal-risk-thumbnail.json",
@@ -554,7 +554,7 @@
   ],
   "resources": {
     "reproduce": "/programs/coastal-informal-risk/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/coastal-informal-risk/coastal-informal-risk-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/coastal-informal-risk"
   }

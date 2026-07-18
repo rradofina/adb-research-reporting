@@ -118,9 +118,10 @@ function parseYamlIsh(text) {
 
 // Collect markdown files: top-level articles/*.md (working papers) plus
 // publication-ladder tier subdirectories articles/_brief/, _blog/, _social/,
-// _slides/ — see research/factory.md "Publication ladder". Files in tier
-// subdirectories are flattened to {slug}.md in the dest dir; the slug must
-// be unique across the whole site (typical pattern: tier suffix in slug).
+// _slides/ — see research/factory.md "Publication ladder". Legacy top-level
+// derivatives may declare a valid `tier` in frontmatter; honor that declaration
+// rather than silently listing every top-level file as a working paper. Files
+// in non-working-paper tiers are flattened to {slug}.md in the destination.
 const TIER_DIRS = ["_brief", "_blog", "_social", "_slides"];
 
 const sources = [];
@@ -140,7 +141,10 @@ const index = [];
 for (const { src, origFilename, tier } of sources) {
   const { frontmatter, body } = parseFrontmatter(fs.readFileSync(src, "utf8"));
   const slug = frontmatter.slug ?? path.basename(origFilename, ".md");
-  const destFilename = tier === "working-paper" ? origFilename : `${slug}.md`;
+  const declaredTier = frontmatter.tier;
+  const validTiers = new Set(["working-paper", "brief", "blog", "social", "slides"]);
+  const resolvedTier = validTiers.has(declaredTier) ? declaredTier : tier;
+  const destFilename = resolvedTier === "working-paper" ? origFilename : `${slug}.md`;
   const dest = path.join(DEST, destFilename);
   fs.copyFileSync(src, dest);
   index.push({
@@ -148,7 +152,7 @@ for (const { src, origFilename, tier } of sources) {
     title: frontmatter.title ?? "(untitled)",
     subtitle: frontmatter.subtitle ?? "",
     kind: frontmatter.kind ?? "blog",
-    tier,
+    tier: resolvedTier,
     status: frontmatter.status ?? "draft",
     program: frontmatter.program ?? "",
     maturity: frontmatter.maturity ?? "",

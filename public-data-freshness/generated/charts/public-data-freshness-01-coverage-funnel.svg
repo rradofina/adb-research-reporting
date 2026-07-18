@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-19T05:28:37.355892</dc:date>
+    <dc:date>2026-07-19T06:53:33.160840</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -40,7 +40,7 @@ Q 20.978824 179.1504 20.978824 186.3756
 L 20.978824 310.10715
 Q 20.978824 317.33235 27.868235 317.33235
 z
-" clip-path="url(#p5b9b301d9e)" style="fill: #ffffff; stroke: #0076a8; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p0439b8e255)" style="fill: #ffffff; stroke: #0076a8; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 247.468235 317.33235
@@ -53,7 +53,7 @@ Q 240.578824 179.1504 240.578824 186.3756
 L 240.578824 310.10715
 Q 240.578824 317.33235 247.468235 317.33235
 z
-" clip-path="url(#p5b9b301d9e)" style="fill: #ffffff; stroke: #0076a8; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p0439b8e255)" style="fill: #ffffff; stroke: #0076a8; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 467.068235 317.33235
@@ -66,7 +66,7 @@ Q 460.178824 179.1504 460.178824 186.3756
 L 460.178824 310.10715
 Q 460.178824 317.33235 467.068235 317.33235
 z
-" clip-path="url(#p5b9b301d9e)" style="fill: #ffffff; stroke: #248a8d; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p0439b8e255)" style="fill: #ffffff; stroke: #248a8d; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 686.668235 317.33235
@@ -79,7 +79,7 @@ Q 679.778824 179.1504 679.778824 186.3756
 L 679.778824 310.10715
 Q 679.778824 317.33235 686.668235 317.33235
 z
-" clip-path="url(#p5b9b301d9e)" style="fill: #ffffff; stroke: #248a8d; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p0439b8e255)" style="fill: #ffffff; stroke: #248a8d; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- FROZEN INDICATOR CODES -->
@@ -2311,7 +2311,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p5b9b301d9e">
+  <clipPath id="p0439b8e255">
    <rect x="7.2" y="92.448" width="878.4" height="289.008"/>
   </clipPath>
  </defs>

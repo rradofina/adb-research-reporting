@@ -721,7 +721,7 @@
     "title": "A station dot is not yet a coverage claim",
     "subtitle": "What a 24-economy public-source audit learned by refusing to turn visible monitor routes into unverified population coverage.",
     "kind": "blog",
-    "tier": "working-paper",
+    "tier": "blog",
     "status": "draft",
     "program": "air-monitoring",
     "maturity": "SR",
@@ -752,7 +752,7 @@
     "title": "Public station visibility does not validate monitoring coverage",
     "subtitle": "The 24-economy audit reaches station discovery and denominator geometry, then stops at identity and monitor-grade evidence.",
     "kind": "brief",
-    "tier": "working-paper",
+    "tier": "brief",
     "status": "draft",
     "program": "air-monitoring",
     "maturity": "SR",
@@ -783,7 +783,7 @@
     "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
     "subtitle": "Air-monitoring public QA observability · AI-first §18",
     "kind": "deck",
-    "tier": "working-paper",
+    "tier": "slides",
     "status": "draft",
     "program": "air-monitoring",
     "maturity": "SR",
@@ -814,7 +814,7 @@
     "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
     "subtitle": "24 economies · 239 official station rows · 44 identity candidates · 0 allowed coverage claims",
     "kind": "social",
-    "tier": "working-paper",
+    "tier": "social",
     "status": "draft",
     "program": "air-monitoring",
     "maturity": "SR",
@@ -2471,7 +2471,7 @@
   {
     "slug": "digital-availability-use-gap-slides",
     "title": "The network is present. Use still lags.",
-    "subtitle": "An eight-slide evidence deck on availability and use across ADB developing member economies.",
+    "subtitle": "A nine-slide evidence deck on availability and use across ADB developing member economies.",
     "kind": "slides",
     "tier": "slides",
     "status": "draft",
@@ -2484,7 +2484,7 @@
     "geographies": [
       "ADB developing economies"
     ],
-    "abstract": "Eight-slide presentation of the exact-year ITU availability-use study.",
+    "abstract": "Nine-slide presentation of the exact-year ITU availability-use study.",
     "authors": [
       "Raymond Adofina"
     ],
@@ -2700,7 +2700,7 @@
   {
     "slug": "public-data-freshness-two-clocks-slides",
     "title": "A data year has two clocks",
-    "subtitle": "Eight slides on domain-aware freshness review in WDI dashboards.",
+    "subtitle": "Nine slides on domain-aware freshness review in WDI dashboards.",
     "kind": "slides",
     "tier": "slides",
     "status": "draft",
@@ -2714,7 +2714,7 @@
     "geographies": [
       "ADB developing economies"
     ],
-    "abstract": "Eight-slide presentation of the public-data-freshness study.",
+    "abstract": "Nine-slide presentation of the public-data-freshness study.",
     "authors": [
       "Raymond Adofina"
     ],

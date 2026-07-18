@@ -1,7 +1,7 @@
 {
   "program": "flood-market-access",
   "permanent_url": "/flood-market-access?view=evidence",
-  "generated_at": "2026-07-18T22:42:43.435Z",
+  "generated_at": "2026-07-18T23:00:06.384Z",
   "hero": {
     "png": "generated/charts/flood-market-access-thumbnail.png",
     "svg": "generated/charts/flood-market-access-thumbnail.svg",
@@ -12,14 +12,14 @@
     "visual_form": "routed-access finding card",
     "source": "flood-market-access/generated/flood-sylhet-route-pilot.json",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-07-18T18:29:34.226756+00:00",
+    "generated_at": "2026-07-18T22:49:34.584456+00:00",
     "dimensions": {
       "width": 2570,
       "height": 1472
     },
     "sha256": {
       "png": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815",
-      "svg": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
+      "svg": "483e6d114d427f62c16ab1a84ae3574931917f7fcd65427315ecd61531113fb1"
     }
   },
   "artifacts": [
@@ -149,7 +149,7 @@
       "file": "generated/charts/flood-market-access-thumbnail.json",
       "size": 1718,
       "size_human": "1.7 KB",
-      "sha256": "db0013b8a9c70aa62f983b8b2c9409107e8baa05bf8113a5b4ba4916ed6fd969"
+      "sha256": "88a3096ccbfa003c36e1df241bf9ff27712704714387fcf2ba027bdce40de9a9"
     },
     {
       "file": "generated/charts/flood-market-access-thumbnail.png",
@@ -161,7 +161,7 @@
       "file": "generated/charts/flood-market-access-thumbnail.svg",
       "size": 58873,
       "size_human": "57.5 KB",
-      "sha256": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
+      "sha256": "483e6d114d427f62c16ab1a84ae3574931917f7fcd65427315ecd61531113fb1"
     },
     {
       "file": "generated/charts/flood-sylhet-access-split.png",
@@ -173,7 +173,7 @@
       "file": "generated/charts/flood-sylhet-access-split.svg",
       "size": 103243,
       "size_human": "100.8 KB",
-      "sha256": "819bbd3a50348ce0ceb6acff1547a242ebc9a38881062572466a4cf73f63667d"
+      "sha256": "57d4ec67a2a97755b60e0deba3e24952c38d7425da771f75be4c75fd482a8e33"
     },
     {
       "file": "generated/charts/flood-sylhet-claim-gates.png",
@@ -185,7 +185,7 @@
       "file": "generated/charts/flood-sylhet-claim-gates.svg",
       "size": 83073,
       "size_human": "81.1 KB",
-      "sha256": "d7f8b2e91ad987f5365133f3ea267bf586cc08a25118871df69ba23fc32a5fa1"
+      "sha256": "401e7c9b4045eefb0d0d4b19cb4812521b39a0dd2fa9ea4f8c643ee589428455"
     },
     {
       "file": "generated/charts/flood-sylhet-coverage-funnel.png",
@@ -197,7 +197,7 @@
       "file": "generated/charts/flood-sylhet-coverage-funnel.svg",
       "size": 87526,
       "size_human": "85.5 KB",
-      "sha256": "53a4c751e938b8b5b1046ae41ff3768df14ea431145c5f8d473602adb731f803"
+      "sha256": "9cc0383b8ffeea08acf3fe4b6bec108b6c46aceaef2510ac49ad72184830044d"
     },
     {
       "file": "generated/charts/flood-sylhet-market-gate.png",
@@ -209,7 +209,7 @@
       "file": "generated/charts/flood-sylhet-market-gate.svg",
       "size": 102823,
       "size_human": "100.4 KB",
-      "sha256": "a3f75b012cbcba18533abb8441d936540d2fdfd46b7a578ea1fca43a414ec9f9"
+      "sha256": "905b0648bf7ef4e0d9303694ffb1bf5974b2c9c9d96e213f68c42c32e91fc9a0"
     },
     {
       "file": "generated/charts/flood-sylhet-road-set.png",
@@ -221,7 +221,7 @@
       "file": "generated/charts/flood-sylhet-road-set.svg",
       "size": 100304,
       "size_human": "98.0 KB",
-      "sha256": "715dc65021141368fa2002395f355d07068f12fedf12d65228c1522221cd5609"
+      "sha256": "64bbc9255d045bedb6c49f77ca4056dc3b7ad801c50fe53cb15da43ea4abc522"
     },
     {
       "file": "generated/charts/flood-sylhet-route-map.png",
@@ -233,7 +233,7 @@
       "file": "generated/charts/flood-sylhet-route-map.svg",
       "size": 16223099,
       "size_human": "15.47 MB",
-      "sha256": "1bb4af69564900f512ffea5c1eadcbf34806a24b05d43712f6c110e920f4a752"
+      "sha256": "2143b075386552e0533312771fc12e4ed79f8567d24fbd2ef37f82173d8aa831"
     },
     {
       "file": "generated/charts/flood-sylhet-sensitivity.png",
@@ -245,7 +245,7 @@
       "file": "generated/charts/flood-sylhet-sensitivity.svg",
       "size": 117268,
       "size_human": "114.5 KB",
-      "sha256": "5bb3a71cdc9fabe853387ae4d5349d38cc0cf08615d1c2459c8add15c8bd5dc9"
+      "sha256": "eef9c95c9a74500c0d676b48173ecbd881bf4a56e316ffd7f955350d03b4095a"
     },
     {
       "file": "generated/charts/flood-sylhet-source-disagreement.png",
@@ -257,7 +257,7 @@
       "file": "generated/charts/flood-sylhet-source-disagreement.svg",
       "size": 124436,
       "size_human": "121.5 KB",
-      "sha256": "3233d20204f631653ff7ad011a88667bb709a5f74f0604a154b53cacb61f82a1"
+      "sha256": "9f185887fb49c8032b1c798a88f0a5509c159d4882c27103b485d728000ef78f"
     },
     {
       "file": "generated/charts/flood-sylhet-survivor-selection.png",
@@ -269,7 +269,7 @@
       "file": "generated/charts/flood-sylhet-survivor-selection.svg",
       "size": 89055,
       "size_human": "87.0 KB",
-      "sha256": "706e70094b9bdbb46c199203e46594943be979aea535f6299fc338da96e6f9b7"
+      "sha256": "bafa163d7098b60913097482659fb226a6eb93fa03064f3b53db1626e048371f"
     },
     {
       "file": "generated/flood-access-source-readiness-links.csv",
@@ -466,7 +466,7 @@
   ],
   "resources": {
     "reproduce": "/programs/flood-market-access/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/flood-market-access/flood-market-access-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/flood-market-access"
   }

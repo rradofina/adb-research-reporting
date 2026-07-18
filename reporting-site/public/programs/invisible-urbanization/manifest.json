@@ -1,7 +1,7 @@
 {
   "program": "invisible-urbanization",
   "permanent_url": "/invisible-urbanization?view=evidence",
-  "generated_at": "2026-07-18T22:42:43.555Z",
+  "generated_at": "2026-07-18T23:00:06.514Z",
   "hero": {
     "png": "generated/charts/invisible-urbanization-thumbnail.png",
     "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
@@ -163,9 +163,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-01-definition-gap-hero.svg",
-      "size": 101003,
-      "size_human": "98.6 KB",
-      "sha256": "d40b9a1819af67bfe4c39f459fb14565683828c166a7c944bb20ff4a642de920"
+      "size": 99221,
+      "size_human": "96.9 KB",
+      "sha256": "bbbd29b9584d942e0d2ec4f6e1f3d96215cbce3f5d899a6c8e2b103314d48ff2"
     },
     {
       "file": "generated/charts/invisible-urbanization-02-selected-definition-dumbbell.png",
@@ -175,9 +175,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-02-selected-definition-dumbbell.svg",
-      "size": 96106,
-      "size_human": "93.9 KB",
-      "sha256": "eb5d97adfcba33dca06a71273cba3f8cda08c2dacbb960ae074bfdcaa8d8df16"
+      "size": 94530,
+      "size_human": "92.3 KB",
+      "sha256": "9586cc91f1321d17f5d7b8bca8af4b7199e5fd8c1dc67ef905e765e5917ad014"
     },
     {
       "file": "generated/charts/invisible-urbanization-03-definition-gap-over-time.png",
@@ -187,9 +187,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-03-definition-gap-over-time.svg",
-      "size": 66532,
-      "size_human": "65.0 KB",
-      "sha256": "2a4d49cdc2c9408477d7c6b06db363b5a6b6e95c5fc2ec520ce9d74f2502f545"
+      "size": 65178,
+      "size_human": "63.7 KB",
+      "sha256": "901751ea4d4fd4bd794e6c6136543670ffc8bb21493243fa8bfc89f126572720"
     },
     {
       "file": "generated/charts/invisible-urbanization-04-focus-trajectories.png",
@@ -199,9 +199,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-04-focus-trajectories.svg",
-      "size": 102857,
-      "size_human": "100.4 KB",
-      "sha256": "8c6b7f902ccaae41627ca5e46dfe520f172b9531c42d0c06c52bea09ffb51cb5"
+      "size": 101258,
+      "size_human": "98.9 KB",
+      "sha256": "7998f75c868ae7f275062a81780e34e6b15e41e9b10e6316be49b1c412b3f1bd"
     },
     {
       "file": "generated/charts/invisible-urbanization-05-administrative-scale-sensitivity.png",
@@ -211,9 +211,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-05-administrative-scale-sensitivity.svg",
-      "size": 66632,
-      "size_human": "65.1 KB",
-      "sha256": "ad2f5daf878ea0b78ec79d90708fc798ba31f3b1915147b30e826d9902993664"
+      "size": 65196,
+      "size_human": "63.7 KB",
+      "sha256": "99ab797ed6047422c24c2e2b75b0feeab610f8c813f41509ca39036843e34e49"
     },
     {
       "file": "generated/charts/invisible-urbanization-06-embedded-share-over-time.png",
@@ -223,9 +223,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-06-embedded-share-over-time.svg",
-      "size": 71146,
-      "size_human": "69.5 KB",
-      "sha256": "8b0917213f3c88da7046dd71baf23c1a96f62ce92e7271737aa394e1fda614f6"
+      "size": 69736,
+      "size_human": "68.1 KB",
+      "sha256": "c17c33479c830deb284c428027686238e13b3499015a3294ffa057c8e6cb5649"
     },
     {
       "file": "generated/charts/invisible-urbanization-07-transition-waterfall.png",
@@ -235,9 +235,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-07-transition-waterfall.svg",
-      "size": 83270,
-      "size_human": "81.3 KB",
-      "sha256": "cfbc69d0801a6cfa5edfc0f7eef40ad7bb6f4cf77e6d4a40d5568eeed3950ea1"
+      "size": 81722,
+      "size_human": "79.8 KB",
+      "sha256": "c467edcb0f7b3ef747759133bff0853399197150202bc6c3b6bda083bbccf51c"
     },
     {
       "file": "generated/charts/invisible-urbanization-08-country-embedded-shares.png",
@@ -247,9 +247,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-08-country-embedded-shares.svg",
-      "size": 94135,
-      "size_human": "91.9 KB",
-      "sha256": "ec4117083a2b28f67c07c29eaed79dd8b69820117fe2b0e9b4e1c21c71537e8a"
+      "size": 92512,
+      "size_human": "90.3 KB",
+      "sha256": "7bbce369e8c34cf709e49402700c6f499cb60e6c408ff3018f6abc5cb37afdb6"
     },
     {
       "file": "generated/charts/invisible-urbanization-09-country-time-heatmap.png",
@@ -259,9 +259,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-09-country-time-heatmap.svg",
-      "size": 94495,
-      "size_human": "92.3 KB",
-      "sha256": "d2b69400bf6f2a3b124506fbddd6c74cab051659211f824b5cd3a48bd6ade143"
+      "size": 92952,
+      "size_human": "90.8 KB",
+      "sha256": "7106f5a440c074adc3e0c9383e4e7efc09289dc9277fa122c27654015eb8f6c7"
     },
     {
       "file": "generated/charts/invisible-urbanization-10-coverage-funnel.png",
@@ -271,9 +271,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-10-coverage-funnel.svg",
-      "size": 68871,
-      "size_human": "67.3 KB",
-      "sha256": "3ec5c29427ae3dc4b40808283a28f67a257109eb6bf2bd4308efcdead7f1e2df"
+      "size": 67363,
+      "size_human": "65.8 KB",
+      "sha256": "e9c00cb0fa0ac3022724f0e4bae72e95169bd797cf6ed83f1f62f5cfeebf011e"
     },
     {
       "file": "generated/charts/invisible-urbanization-11-method-and-claim-gate.png",
@@ -283,9 +283,9 @@
     },
     {
       "file": "generated/charts/invisible-urbanization-11-method-and-claim-gate.svg",
-      "size": 96961,
-      "size_human": "94.7 KB",
-      "sha256": "96269054f3609ca4ec189ae77cdeea971de1d6bc666401f533c93d3d2ae64f4d"
+      "size": 95505,
+      "size_human": "93.3 KB",
+      "sha256": "01873866dea846e79a542c50515d50a5bfdd4deae82dbdc2df2f2f2ddc1e9ec4"
     },
     {
       "file": "generated/charts/invisible-urbanization-rough-definition-gap.png",
@@ -554,7 +554,7 @@
   ],
   "resources": {
     "reproduce": "/programs/invisible-urbanization/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/invisible-urbanization/invisible-urbanization-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/invisible-urbanization"
   }

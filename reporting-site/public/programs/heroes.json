@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T22:42:44.241Z",
+  "generated_at": "2026-07-18T23:00:07.165Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -289,14 +289,14 @@
         "visual_form": "routed-access finding card",
         "source": "flood-market-access/generated/flood-sylhet-route-pilot.json",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-07-18T18:29:34.226756+00:00",
+        "generated_at": "2026-07-18T22:49:34.584456+00:00",
         "dimensions": {
           "width": 2570,
           "height": 1472
         },
         "sha256": {
           "png": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815",
-          "svg": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
+          "svg": "483e6d114d427f62c16ab1a84ae3574931917f7fcd65427315ecd61531113fb1"
         }
       }
     },

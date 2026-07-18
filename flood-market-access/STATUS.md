@@ -16,3 +16,7 @@
   audited market inventory.
 - **Progress test:** The claim changed shape and the reader is better off: a
   proxy ranking became a reproducible route object with visible validity gates.
+- **Deck verification:** The 10-slide PPTX renders nine evidence figures with
+  no duplicate captions, clipping, or broken media; the open destination and
+  passability gates remain visible on the closing slide.
+- **Rotation:** Current issue is closed; `digital-performance` is next.

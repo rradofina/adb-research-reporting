@@ -6,8 +6,8 @@
   disagree for 138 of 709 observed baseline cells (19.5%).
 - **Decision:** Reshape the broad claim: removing environment lowers
   disagreement to 9.2%, below the frozen 10% gate.
-- **Stage:** AI-first Screening Result; full evidence packet and publication
-  ladder prepared for gate and browser verification.
+- **Stage:** AI-first Screening Result; evidence packet, publication ladder,
+  and deck closeout complete.
 - **Reader value:** A dashboard can distinguish shared production cadence from
   economy-specific lag without hiding calendar age or missingness.
 - **Coverage:** 709 of 756 baseline cells observed across 42 economies and 18
@@ -18,4 +18,8 @@
   CSV is behind a documented Cloudflare challenge and supplies no panel value.
 - **Stop:** Do not take another generic portal scan. The next upgrade requires
   formal producer release calendars and ingestion dates.
-- **Next move:** Publish, verify, commit, then rotate to the next flagship.
+- **Verification:** The corrected nine-slide PPTX renders seven evidence
+  figures without orphan continuation slides, duplicate captions, clipping,
+  or broken media.
+- **Next move:** Rotate; reopen only for formal producer calendars or ingestion
+  dates that can change the source-cadence claim.

@@ -70,4 +70,4 @@ gap alone.
 One-country join of official classification vintages, historical boundaries,
 GHSL grids, and one service or fiscal outcome.
 
-`attestation_chain: ai-first`
+*AI-first prepared pipeline; not externally reviewed.*

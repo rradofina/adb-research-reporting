@@ -1,7 +1,7 @@
 ---
 slug: digital-availability-use-gap-slides
 title: The network is present. Use still lags.
-subtitle: An eight-slide evidence deck on availability and use across ADB developing member economies.
+subtitle: A nine-slide evidence deck on availability and use across ADB developing member economies.
 kind: slides
 status: draft
 attestation_chain: ai-first
@@ -11,7 +11,7 @@ geographies: [ADB developing economies]
 topics: [digital inclusion, connectivity monitoring]
 program: digital-performance
 maturity: PP
-abstract: Eight-slide presentation of the exact-year ITU availability-use study.
+abstract: Nine-slide presentation of the exact-year ITU availability-use study.
 published_at: 2026-07-19
 license: CC BY 4.0
 banned_words_check: passing
@@ -49,10 +49,10 @@ It is not a person-level count, speed measure, or causal effect.
 
 # 4 — Near-universal coverage can coexist with much lower use
 
-![Coverage and use components in 2024.](/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg)
-
 Bangladesh, Sri Lanka, India, and the Philippines all report coverage near 100%
 and use far below it.
+
+![Coverage and use components in 2024.](/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg){width=85%}
 
 # 5 — Progress is uneven
 
@@ -68,10 +68,10 @@ The balanced 2018–2024 sample contains 28 economies.
 
 2024 5 GB basket association: Spearman **0.16**, n=32.
 
-![Affordability diagnostic.](/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg)
-
 Affordability remains relevant; the national basket is not household incidence
 and does not measure devices, skills, trust, content, or perceived value.
+
+![Affordability diagnostic.](/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg){width=85%}
 
 # 7 — The next data priority is within-economy visibility
 

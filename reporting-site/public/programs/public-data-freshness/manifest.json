@@ -1,7 +1,7 @@
 {
   "program": "public-data-freshness",
   "permanent_url": "/public-data-freshness?view=evidence",
-  "generated_at": "2026-07-18T22:42:44.193Z",
+  "generated_at": "2026-07-18T23:00:07.106Z",
   "hero": null,
   "artifacts": [
     {
@@ -152,7 +152,7 @@
       "file": "generated/charts/public-data-freshness-01-coverage-funnel.svg",
       "size": 70006,
       "size_human": "68.4 KB",
-      "sha256": "0aac84ba16480d169b413df93518b7d33c622ccf5551ea64321d6224cbc74e87"
+      "sha256": "1f560409a8d8e64c3825785619999922a20487caffc64ec779cb7a81defd5b7d"
     },
     {
       "file": "generated/charts/public-data-freshness-02-indicator-production-age.png",
@@ -164,7 +164,7 @@
       "file": "generated/charts/public-data-freshness-02-indicator-production-age.svg",
       "size": 107909,
       "size_human": "105.4 KB",
-      "sha256": "89264bc0363b2ed4eccad2e17c5858021bdcbc8419f1d72b17699856f13262e2"
+      "sha256": "9a673feef5edb72bfa952ef3826bc5bd27860bba324edf265cb7ddcc70f2f7d4"
     },
     {
       "file": "generated/charts/public-data-freshness-03-domain-clock-decomposition.png",
@@ -176,7 +176,7 @@
       "file": "generated/charts/public-data-freshness-03-domain-clock-decomposition.svg",
       "size": 80736,
       "size_human": "78.8 KB",
-      "sha256": "33b80fb27dffa6c2cd78d9911fde93bad0cd36bd33e629c93fb899f682cf732f"
+      "sha256": "cba9319e77a0ece5d6429b0cec4d60055005da2c78a70d41e9cca79a1a3d4127"
     },
     {
       "file": "generated/charts/public-data-freshness-04-classification-matrix.png",
@@ -188,7 +188,7 @@
       "file": "generated/charts/public-data-freshness-04-classification-matrix.svg",
       "size": 67285,
       "size_human": "65.7 KB",
-      "sha256": "7568337d37db3941ab848c9f7e92bb30d5ba664281c8f8aa64a4ca821c960872"
+      "sha256": "861b9437be4a3928b66e1ac872df10eb79b6bf665aef2824da0b5e56f5fbd63d"
     },
     {
       "file": "generated/charts/public-data-freshness-05-two-clock-construct.png",
@@ -200,7 +200,7 @@
       "file": "generated/charts/public-data-freshness-05-two-clock-construct.svg",
       "size": 79520,
       "size_human": "77.7 KB",
-      "sha256": "9449b082cbd9bb66a246c3e71a3cab6024a6b86b7f3f53155ec8154c5dc40955"
+      "sha256": "40ee334e718f3a8af8ab5f4674c7fa6504a5aa4e1ed213d8098e698fc82909bb"
     },
     {
       "file": "generated/charts/public-data-freshness-06-domain-concentration.png",
@@ -212,7 +212,7 @@
       "file": "generated/charts/public-data-freshness-06-domain-concentration.svg",
       "size": 76784,
       "size_human": "75.0 KB",
-      "sha256": "d4803cce7e79113968e38247de6fba34483357e089042bf47c23c44e9322093e"
+      "sha256": "342eb7a603925d2062a54873a594e7ae1a21ff0a5a63f517f7490b33b3b27b94"
     },
     {
       "file": "generated/charts/public-data-freshness-07-missing-versus-old.png",
@@ -224,7 +224,7 @@
       "file": "generated/charts/public-data-freshness-07-missing-versus-old.svg",
       "size": 77262,
       "size_human": "75.5 KB",
-      "sha256": "f1ef7d29bb2fa7312cd78ce31ad20b3af8a53b5038eb2ee38fea987881825a41"
+      "sha256": "d58a086b7f583c13c03c80e14a6e2d7ee88c50fb39ad3c6074e5ccc12d42512b"
     },
     {
       "file": "generated/charts/public-data-freshness-08-pacific-group-diagnostic.png",
@@ -236,7 +236,7 @@
       "file": "generated/charts/public-data-freshness-08-pacific-group-diagnostic.svg",
       "size": 66500,
       "size_human": "64.9 KB",
-      "sha256": "7968399f601701810ea113b7d139c9706e43a7657f42e8fa8b90c474d3169a92"
+      "sha256": "a2e69d26d17c55845c22b72426416e7932ebeea7f3bfc7d9838d3546a947a8fb"
     },
     {
       "file": "generated/charts/public-data-freshness-09-indicator-set-sensitivity.png",
@@ -248,7 +248,7 @@
       "file": "generated/charts/public-data-freshness-09-indicator-set-sensitivity.svg",
       "size": 59874,
       "size_human": "58.5 KB",
-      "sha256": "411d86ce9b2f10e29f446e299db56e9eeb220abd024e64c0ced6fac96538da9b"
+      "sha256": "c0cfd56c3af30a630e494621df91a46f5972ae8016ecc2a01e93d8ae8366e8ce"
     },
     {
       "file": "generated/charts/public-data-freshness-10-threshold-sensitivity.png",
@@ -260,7 +260,7 @@
       "file": "generated/charts/public-data-freshness-10-threshold-sensitivity.svg",
       "size": 66609,
       "size_human": "65.0 KB",
-      "sha256": "769aebbcb97984aacc7284aedb4c02ab80707e8f6eba7158f925009555b12c1b"
+      "sha256": "62d86ba1296a6ea904f1eeffb7a40eae88ab7abe38ba7d1b069c65bb0a7e72cc"
     },
     {
       "file": "generated/charts/public-data-freshness-11-alternative-specifications.png",
@@ -272,7 +272,7 @@
       "file": "generated/charts/public-data-freshness-11-alternative-specifications.svg",
       "size": 73636,
       "size_human": "71.9 KB",
-      "sha256": "9a7624ccd72a19c0708dc526f746f998b65bddfb3fe256e54dc847cb20918b94"
+      "sha256": "61d90d33e5ba13409ed6bef347c2c12fbdd14d382c1972f6b40d7721b8fb65a7"
     },
     {
       "file": "generated/charts/public-data-freshness-12-claim-gate.png",
@@ -284,13 +284,13 @@
       "file": "generated/charts/public-data-freshness-12-claim-gate.svg",
       "size": 82355,
       "size_human": "80.4 KB",
-      "sha256": "88eafeb3be9d9c2825d3d7212705791f9fbe14ea6c4fcc21f41afa5b10b540c6"
+      "sha256": "ba0a19f03735f9f704305769c5b82862174fc6a75d124256a8070b543b2beee8"
     },
     {
       "file": "generated/figure-manifest.json",
       "size": 3438,
       "size_human": "3.4 KB",
-      "sha256": "52391ac18311b5f1bbc9e2905918eaa85ce602cae92484512e4b2d80e43902c7"
+      "sha256": "958c1e02c6414f856f7bda07deb153e32b8388ccf3c94240a16b298b0150c079"
     },
     {
       "file": "generated/freshness-cache-manifest.csv",
@@ -493,7 +493,7 @@
   ],
   "resources": {
     "reproduce": "/programs/public-data-freshness/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/public-data-freshness/public-data-freshness-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/public-data-freshness"
   }

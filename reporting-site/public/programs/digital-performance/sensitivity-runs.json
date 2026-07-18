@@ -1,7 +1,7 @@
 {
   "program": "digital-performance",
   "attestation_chain": "ai-first",
-  "generated_at": "2026-07-18T20:45:06+00:00",
+  "generated_at": "2026-07-18T22:51:50+00:00",
   "sample_floor_sensitivity": {
     "minus_50pct": {
       "roster_coverage_floor_share": 0.25,

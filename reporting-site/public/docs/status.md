@@ -6,29 +6,27 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `coastal-informal-risk` |
-| Stage | L7 evidence complete; publication-deck closeout |
-| Highest-leverage move | **Improve presentation** — build and verify the already-authored slide source so the five-format reader ladder is complete. |
-| Per-program board | `coastal-informal-risk/STATUS.md` |
+| Active flagship | None; AI-eligible publication queue complete |
+| Stage | Factory completion audit |
+| Highest-leverage move | **Rotate / owner decision** — choose the next public data object rather than reopen a closed claim or owner-led program. |
+| Per-program board | `research/STATUS.md` |
 | Operating mode | §18 ACTIVE; Mode A review |
-| Previous flagship | `port-hinterland-friction` — 9/9 research sections, full article ladder, eight story figures, and a checked 10-slide PPTX. |
+| Previous flagship | `public-data-freshness` — orphan text slides removed and the source visually checked as a nine-slide, seven-figure PPTX. |
 
 ## Decision and queue
 
-The remaining AI-eligible gaps are presentation artifacts, not missing
-empirical results. Close one deck at a time from the existing committed figure
-spines; do not reopen source searches unless a named source can change a claim.
+The AI-eligible queue now has complete standard research stories and built
+decks. Do not reopen a closed issue unless a named public source can change its
+claim.
 
-0. **`coastal-informal-risk`** — active: resolve its existing slide source,
-   build the PPTX, inspect every slide, sync, and run reader QA.
-1. **Deck closeouts** — `invisible-urbanization`, `flood-market-access`,
-   `digital-performance`, and `public-data-freshness`.
-2. **`mpi-nighttime-lights`** — 1 of 9 sections, no hero, and no deck; retain
+1. **`mpi-nighttime-lights`** — 1 of 9 sections, no hero, and no deck; retain
    the owner/coauthor-led path and do not treat it as an AI packaging target
    without owner direction.
+2. **Next flagship** — select a new public data object with a rough visual and
+   falsifiable claim; do not start from a broad topic essay.
 
-All other AI-eligible programs expose 9 of 9 standard sections and a built
-deck. `port-hinterland-friction` remains closed at the port boundary until the
+All AI-eligible programs expose 9 of 9 standard sections and a built deck.
+`port-hinterland-friction` remains closed at the port boundary until the
 qualified shipment-level hinterland source is available.
 
 ## Session protocol

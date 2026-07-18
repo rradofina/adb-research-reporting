@@ -1,17 +1,18 @@
 {
   "program": "grid-reliability-heat",
-  "title": "Six grids: single-fuel capacity concentration",
-  "caption": "Bhutan 100 % hydro \u00b7 Brunei Darussalam 100 % gas \u00b7 six DMCs above 85 % single-fuel.",
-  "headline_number": "Bhutan 100% hydro",
-  "visual_form": "horizontal ranked bar (top 10 by single-fuel share)",
-  "source": "WRI Global Power Plant DB v1.3.0",
+  "title": "One grid result survives. The heat direction does not.",
+  "caption": "The generation-mix top five is stable; heat\u2013reliability correlations split 8 positive to 7 negative.",
+  "headline_number": "8 vs 7",
+  "visual_form": "two-gate construct-validation cards",
+  "source": "WRI GPPD; World Bank CCKP and indicators",
   "inputs": [
-    "generated/grid-reliability-heat-adb-panel.csv"
+    "generated/grid-generation-deepening.json",
+    "generated/grid-heat-reliability-construct-validation.json"
   ],
   "script": "grid-reliability-heat/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T20:26:49+00:00",
+  "generated_at": "2026-07-18T13:02:40+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +22,7 @@
     "svg": "grid-reliability-heat-thumbnail.svg"
   },
   "sha256": {
-    "png": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801",
-    "svg": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+    "png": "4d1a3e35ae128139b3b3db34ba78103d2c47e9b6cb22410332647b0b424c2f3a",
+    "svg": "6c2d4e124d359bb2f81e46d6ea4573158ac1e0ff1fe2c113c55a74db74f7a8a2"
   }
 }

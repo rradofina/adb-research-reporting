@@ -1,25 +1,25 @@
 {
   "program": "grid-reliability-heat",
   "permanent_url": "/grid-reliability-heat?view=evidence",
-  "generated_at": "2026-07-18T12:35:58.918Z",
+  "generated_at": "2026-07-18T13:13:46.550Z",
   "hero": {
     "png": "generated/charts/grid-reliability-heat-thumbnail.png",
     "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
     "json": "generated/charts/grid-reliability-heat-thumbnail.json",
-    "title": "Six grids: single-fuel capacity concentration",
-    "caption": "Bhutan 100 % hydro · Brunei Darussalam 100 % gas · six DMCs above 85 % single-fuel.",
-    "headline_number": "Bhutan 100% hydro",
-    "visual_form": "horizontal ranked bar (top 10 by single-fuel share)",
-    "source": "WRI Global Power Plant DB v1.3.0",
+    "title": "One grid result survives. The heat direction does not.",
+    "caption": "The generation-mix top five is stable; heat–reliability correlations split 8 positive to 7 negative.",
+    "headline_number": "8 vs 7",
+    "visual_form": "two-gate construct-validation cards",
+    "source": "WRI GPPD; World Bank CCKP and indicators",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:26:49+00:00",
+    "generated_at": "2026-07-18T13:02:40+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801",
-      "svg": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+      "png": "4d1a3e35ae128139b3b3db34ba78103d2c47e9b6cb22410332647b0b424c2f3a",
+      "svg": "6c2d4e124d359bb2f81e46d6ea4573158ac1e0ff1fe2c113c55a74db74f7a8a2"
     }
   },
   "artifacts": [
@@ -27,40 +27,60 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1265,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.335Z",
-      "sha256": "66f8c02b2b351241017c1398dd53ffd07fbf205c0a8c0251d76aa4aba4514fcd",
-      "attestation_chain": null
+      "size": 2291,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T13:00:26.427Z",
+      "sha256": "38be96f42df7e807d34b2b8ecea22bd032ee8992ce1071d3f3983669e52b040b",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1112,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T13:00:26.438Z",
+      "sha256": "d33fc1797187965cdb19a7e25cffd4a44bfe155b1dde55492fced8e6b5646bf6",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 823,
+      "size_human": "823 B",
+      "mtime": "2026-07-18T13:00:26.437Z",
+      "sha256": "2ac65f5b8425eb6b640bf74cb3968153a71380e8c8033131b51093d25699523a",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1995,
-      "size_human": "1.9 KB",
-      "mtime": "2026-04-27T03:37:50.822Z",
-      "sha256": "71c9c0f9b5fd0c19b7e0b098481a9d1407bd0bd3ed73383e478317a966a9e511",
+      "size": 1885,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T13:02:07.397Z",
+      "sha256": "1a0fdd822dc2968319c9079fa666b8fe682b6a363fca9d1b3e28c4aacd1925fe",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1361,
-      "size_human": "1.3 KB",
-      "mtime": "2026-04-26T03:24:45.447Z",
-      "sha256": "0f8fa301f11f258e81e75aa0d6946e25f2a375c380a2089dd45fd32d1d870933",
+      "size": 2017,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T13:00:26.431Z",
+      "sha256": "3d38b30de6da08f7d80dc33b478a95236560184be5ab2e2e6585e054acfb9eea",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 700,
-      "size_human": "700 B",
-      "mtime": "2026-04-26T03:24:50.985Z",
-      "sha256": "4bfc931e94444b4f1f2cac567a0cb65dd6129eca6c1ee1aa0a11952a990cd894",
+      "size": 1503,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T13:00:26.434Z",
+      "sha256": "cdeeb491fd4e8cfbfe740025989e4e450bf6c4b2db2facc95ae34769d5c9f68e",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +97,171 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 351,
-      "size_human": "351 B",
-      "mtime": "2026-04-26T03:24:53.802Z",
-      "sha256": "860fb1ee9996df696502ffbeeb1867f0db88d788189348d126ea3f61469caf1c",
+      "size": 1497,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T13:00:26.430Z",
+      "sha256": "bc00bffb7d77cff43bcb4fbc212769b1ce654c6922d2911aa113a6b5740610fe",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 634,
-      "size_human": "634 B",
-      "mtime": "2026-04-26T03:25:18.773Z",
-      "sha256": "389284c64019edec068f5b73f952dc61e20adcd10a49f084c7ad657ebca6f2d2",
+      "size": 2041,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T13:00:26.432Z",
+      "sha256": "37ba6c09342ad51429a75b51f70d09d5082f73b4ea0cc3369d6096d91da696a9",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 984,
-      "size_human": "984 B",
-      "mtime": "2026-04-26T03:25:01.328Z",
-      "sha256": "e4534ab6b8b9b7ed0c6f560f5294bc5c653a72c77d76d0d48a0aa3b8b7891e07",
+      "size": 898,
+      "size_human": "898 B",
+      "mtime": "2026-07-18T13:05:27.159Z",
+      "sha256": "23fbd1fcab5e3313a15f20a0d237b932e03b5fc10ea1173fd82df6782bf422c7",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1534,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T03:25:11.038Z",
-      "sha256": "fefb3019621f0640b6c8aad1c956310fac61348f67046108202706405a763442",
+      "size": 981,
+      "size_human": "981 B",
+      "mtime": "2026-07-18T13:05:27.160Z",
+      "sha256": "4ab04a1745d6f5e31768f184c5f829028c69c8802ede7d7ce734c1ebfac94b06",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 660,
-      "size_human": "660 B",
-      "mtime": "2026-04-26T03:25:15.071Z",
-      "sha256": "1bded23b66c9af121651357a26b217452b6a6f4d2bd1df0369ae61957e4df338",
+      "size": 1218,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T13:00:26.436Z",
+      "sha256": "9aa313d51c674cebe2b47f7d6c134ca1d15a59dad441a8bd1139af44ead6e282",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 907,
+      "size_human": "907 B",
+      "mtime": "2026-07-18T13:00:26.437Z",
+      "sha256": "fe1c87bc00a57f2a13904889f6bc14741d8a1885ccdffb827a1c2056a31de22e",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/grid-capacity-generation-concentration.png",
+      "size": 154207,
+      "size_human": "150.6 KB",
+      "sha256": "604a0da45d1f7c5c955bd55cbd9e97b99b786fba94efafc65c40d1bcb153b06c"
+    },
+    {
+      "file": "generated/charts/grid-capacity-generation-concentration.svg",
+      "size": 85775,
+      "size_human": "83.8 KB",
+      "sha256": "b48425bcd38f7984b697776168ad7f814fec68c80c6c1032ddf13c7992e00eeb"
+    },
+    {
+      "file": "generated/charts/grid-generation-reliability-association.png",
+      "size": 102731,
+      "size_human": "100.3 KB",
+      "sha256": "d30affebe8562713c89b1bd41300a2f837440e2f011a730a71fbbf67d1ffea24"
+    },
+    {
+      "file": "generated/charts/grid-generation-reliability-association.svg",
+      "size": 68864,
+      "size_human": "67.3 KB",
+      "sha256": "f1325bd9ddfd5e7f3490d3544e7e1a9bef00d0da7735eae0aedd0163a87301ce"
+    },
+    {
+      "file": "generated/charts/grid-heat-reliability-correlation-matrix.png",
+      "size": 137595,
+      "size_human": "134.4 KB",
+      "sha256": "50b41b26c4f7d419d79beefc3462e0aa5d7a7756de230f2f9660bd85fdc21de1"
+    },
+    {
+      "file": "generated/charts/grid-heat-reliability-correlation-matrix.svg",
+      "size": 87695,
+      "size_human": "85.6 KB",
+      "sha256": "4a29c518dbea22da4cb2fa4b6f3f16e056b70a62e72cd5512b2beb22e0a76181"
+    },
+    {
+      "file": "generated/charts/grid-heat-reliability-sensitivity.png",
+      "size": 168555,
+      "size_human": "164.6 KB",
+      "sha256": "97a7056e9835a03816daa78de8d7edadb60584ffd709bd92273febf9213a1cb0"
+    },
+    {
+      "file": "generated/charts/grid-heat-reliability-sensitivity.svg",
+      "size": 107832,
+      "size_human": "105.3 KB",
+      "sha256": "0309b3439ad945d11c2c2816845122aad8b03ad449df317e891cb08abdffd478"
+    },
+    {
       "file": "generated/charts/grid-reliability-heat-thumbnail.json",
-      "size": 1020,
-      "size_human": "1020 B",
-      "sha256": "8f106d23d395c1e006f73c0728e0dd83c737c211cd11d1e5fe72c4c74bf530c6"
+      "size": 1083,
+      "size_human": "1.1 KB",
+      "sha256": "cd6d85741183cbe16782a37948c84a1222d012aaac6529a843d2dc25cdc3605a"
     },
     {
       "file": "generated/charts/grid-reliability-heat-thumbnail.png",
-      "size": 107958,
-      "size_human": "105.4 KB",
-      "sha256": "36277d6f3b67807781a3f829f86cc75ba56a8fb773ea9a2503186cfcf543d801"
+      "size": 69853,
+      "size_human": "68.2 KB",
+      "sha256": "4d1a3e35ae128139b3b3db34ba78103d2c47e9b6cb22410332647b0b424c2f3a"
     },
     {
       "file": "generated/charts/grid-reliability-heat-thumbnail.svg",
-      "size": 115454,
-      "size_human": "112.7 KB",
-      "sha256": "b097702705a0ee8a8af1b38458a76dbf18a0c08cde8c7af661d602e41afe60d5"
+      "size": 82124,
+      "size_human": "80.2 KB",
+      "sha256": "6c2d4e124d359bb2f81e46d6ea4573158ac1e0ff1fe2c113c55a74db74f7a8a2"
+    },
+    {
+      "file": "generated/charts/grid-reliability-proxy-vintages.png",
+      "size": 162402,
+      "size_human": "158.6 KB",
+      "sha256": "13ac4aedc1ee78c35e4cabab9f783781f1576d91dc421ada51f609cb2b653be8"
+    },
+    {
+      "file": "generated/charts/grid-reliability-proxy-vintages.svg",
+      "size": 100860,
+      "size_human": "98.5 KB",
+      "sha256": "d8b81785ddb32761f0ebd17d27a31da6b00f437bf830bb754b157d5ec16ae787"
+    },
+    {
+      "file": "generated/charts/grid-source-alignment-funnel.png",
+      "size": 97685,
+      "size_human": "95.4 KB",
+      "sha256": "b74f6931d25c0bd3d740b1d817a9516c1a1e7889af86f5f75ada8b12f5ca97af"
+    },
+    {
+      "file": "generated/charts/grid-source-alignment-funnel.svg",
+      "size": 69074,
+      "size_human": "67.5 KB",
+      "sha256": "9ce8c47cec5c68b95165bc889b9f5f0e50fd8fc731a5e1d3528e85a1cd8583da"
+    },
+    {
+      "file": "generated/charts/grid-two-gate-validation.png",
+      "size": 127258,
+      "size_human": "124.3 KB",
+      "sha256": "cf3f4996edf559543ad54bf2d77563a428fbf1ff7af33f3d38cff4f409fe6335"
+    },
+    {
+      "file": "generated/charts/grid-two-gate-validation.svg",
+      "size": 73576,
+      "size_human": "71.9 KB",
+      "sha256": "86956f69cebb6d25f8898acb8a4105388a8fa9e530c4e81b2e739f307b846b50"
+    },
+    {
+      "file": "generated/grid-figure-dossier-summary.json",
+      "size": 419,
+      "size_human": "419 B",
+      "sha256": "b76f2cd6e721adbfc191e601841957806a62032022b71b94738dbf0734ba5d78"
     },
     {
       "file": "generated/grid-generation-deepening.csv",
@@ -156,10 +276,40 @@
       "sha256": "b3cdd7ca739152e48c65a632119820f76ce0d761da2e68fa57f0124021b2b443"
     },
     {
+      "file": "generated/grid-generation-reliability-diagnostics.csv",
+      "size": 600,
+      "size_human": "600 B",
+      "sha256": "3367822321b6323c92d17b3ffa675e2b01707b162c399107b07363bc7926659b"
+    },
+    {
       "file": "generated/grid-generation-reliability-source-audit.json",
       "size": 108614,
       "size_human": "106.1 KB",
       "sha256": "f3fea3956d101276538b7413350fc767f859cd0c9a926064689c37e34773beb4"
+    },
+    {
+      "file": "generated/grid-heat-reliability-construct-validation.json",
+      "size": 13837,
+      "size_human": "13.5 KB",
+      "sha256": "232863c0cebd0172fa853a5522f5ff374cfccc003029f2e71763a2da54010560"
+    },
+    {
+      "file": "generated/grid-heat-reliability-diagnostics.csv",
+      "size": 2008,
+      "size_human": "2.0 KB",
+      "sha256": "fcbb968c32d5c14aa9f0c29a17f1a0f00620a7f86873f5c49f353049dc49231a"
+    },
+    {
+      "file": "generated/grid-heat-reliability-exact-year-crosswalk.csv",
+      "size": 74760,
+      "size_human": "73.0 KB",
+      "sha256": "6bc763fb095ccfe9190c50f4dcd9b043c2358c68464130432f75599de79de896"
+    },
+    {
+      "file": "generated/grid-heat-reliability-source-ledger.json",
+      "size": 3856,
+      "size_human": "3.8 KB",
+      "sha256": "9de87f527fea637e1ea55af0cc79e06b78ab88ecfa6aa69370d266b186662005"
     },
     {
       "file": "generated/grid-public-reliability-proxy-readiness-country.csv",
@@ -195,7 +345,7 @@
   "articles": [
     {
       "slug": "single-fuel-grid-cluster",
-      "title": "Five DMCs run on a single fuel — Brunei, Bhutan, Mongolia, Nepal, Tajikistan",
+      "title": "A plausible heat-reliability story fails its regional measurement test",
       "attestation_chain": "ai-first"
     }
   ],
@@ -206,6 +356,11 @@
       "available": true,
       "state": "present",
       "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
         {
           "key": "readme",
           "file": "README.md",
@@ -269,7 +424,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,21 +449,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/grid-reliability-heat/REPRODUCE.md",
+    "deck": "/programs/grid-reliability-heat/grid-reliability-heat-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/grid-reliability-heat"
   }

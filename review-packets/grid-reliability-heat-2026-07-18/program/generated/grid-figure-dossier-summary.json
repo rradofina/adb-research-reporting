@@ -1,0 +1,14 @@
+{
+  "program": "grid-reliability-heat",
+  "attestation_chain": "ai-first",
+  "figure_count": 7,
+  "figures": [
+    "grid-two-gate-validation",
+    "grid-capacity-generation-concentration",
+    "grid-heat-reliability-correlation-matrix",
+    "grid-heat-reliability-sensitivity",
+    "grid-source-alignment-funnel",
+    "grid-reliability-proxy-vintages",
+    "grid-generation-reliability-association"
+  ]
+}

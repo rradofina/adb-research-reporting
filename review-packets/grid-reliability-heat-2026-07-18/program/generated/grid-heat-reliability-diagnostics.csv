@@ -1,0 +1,16 @@
+outcome_indicator,outcome_label,heat_metric,observations,economies,year_min,year_max,spearman_all,bootstrap_95_low,bootstrap_95_high,spearman_latest_per_economy,spearman_winsorized_outcome
+IC.ELC.OUTG.ZS,Firms experiencing electrical outages (%),tasmax_anomaly,67,32,2007,2022,-0.3381,-0.5113,-0.1308,-0.5756,-0.3404
+IC.ELC.OUTG.ZS,Firms experiencing electrical outages (%),txx_anomaly,67,32,2007,2022,0.0548,-0.1884,0.2956,-0.2852,0.055
+IC.ELC.OUTG.ZS,Firms experiencing electrical outages (%),tr_anomaly,67,32,2007,2022,0.0516,-0.1889,0.2721,-0.3756,0.0534
+IC.FRM.INFRA.IN2,Electrical outages in a typical month,tasmax_anomaly,62,32,2007,2020,-0.1614,-0.3824,0.0468,-0.2534,-0.1596
+IC.FRM.INFRA.IN2,Electrical outages in a typical month,txx_anomaly,62,32,2007,2020,0.1264,-0.115,0.3613,-0.227,0.1245
+IC.FRM.INFRA.IN2,Electrical outages in a typical month,tr_anomaly,62,32,2007,2020,0.0934,-0.1561,0.3236,-0.2026,0.0976
+IC.FRM.INFRA.IN3_C,Typical outage duration (hours),tasmax_anomaly,61,32,2007,2020,0.0393,-0.2151,0.2915,0.1853,0.0378
+IC.FRM.INFRA.IN3_C,Typical outage duration (hours),txx_anomaly,61,32,2007,2020,-0.087,-0.3257,0.179,-0.1525,-0.0878
+IC.FRM.INFRA.IN3_C,Typical outage duration (hours),tr_anomaly,61,32,2007,2020,0.3112,0.0609,0.5469,0.3537,0.3099
+IC.FRM.INFRA.IN4_C,Sales lost to outages (%),tasmax_anomaly,61,32,2007,2020,-0.2507,-0.4746,0.0203,-0.4554,-0.2527
+IC.FRM.INFRA.IN4_C,Sales lost to outages (%),txx_anomaly,61,32,2007,2020,0.1697,-0.0908,0.4109,-0.0831,0.1698
+IC.FRM.INFRA.IN4_C,Sales lost to outages (%),tr_anomaly,61,32,2007,2020,0.1107,-0.1391,0.344,-0.3095,0.1096
+IC.ELC.SAID.XD.DB1619,SAIDI under Doing Business methodology,tasmax_anomaly,200,32,2014,2019,-0.204,-0.3459,-0.0591,-0.5282,-0.2043
+IC.ELC.SAID.XD.DB1619,SAIDI under Doing Business methodology,txx_anomaly,200,32,2014,2019,-0.1754,-0.3216,-0.0357,-0.4054,-0.1749
+IC.ELC.SAID.XD.DB1619,SAIDI under Doing Business methodology,tr_anomaly,200,32,2014,2019,-0.1728,-0.3188,-0.0279,-0.2094,-0.1735

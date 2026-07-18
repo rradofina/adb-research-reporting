@@ -1,23 +1,19 @@
-# Internal review — Grid Reliability under Heat
+# Internal critique
 
-`attestation_chain: ai-first`. §18 critique-pass. Closed 2026-04-26.
+`attestation_chain: ai-first` · 2026-07-18
 
-## Critique
+## Main objections
 
-1. **Hydro-dominant grids (BTN 100%, NPL 95%, TJK 88%) are not
-   "fragile" by default.** Hydro is renewable; fragility is exposure
-   to drought-driven generation reduction, not fuel-concentration per
-   se. The framing must be precise.
-2. **Coal-dominant MNG (89%) is a different fragility kind.** Carbon-
-   transition risk + heat-stressed combustion efficiency.
-3. **WRI v1.3.0 frozen 2022.** Solar buildouts in IND, VNM, etc., not
-   captured. The diversification figures may overstate single-fuel
-   dominance for those countries (not in the top-5, but generally).
+1. National annual heat is too coarse for an outage mechanism.
+2. Firm surveys and Doing Business SAIDI are different constructs and vintages.
+3. Repeated country rows create implicit weighting.
+4. Static 2017 generation concentration cannot explain changing outage conditions.
+5. A matrix with isolated nonzero coefficients could invite selective interpretation.
 
-## Responses
+## Disposition
 
-1. Article re-frames: "structural single-fuel-source exposure," with
-   subtypes (hydro-dependent, gas-dependent, coal-dependent).
-2. Subtype framing distinguishes BTN/NPL/TJK (hydro) from BRN (gas)
-   from MNG (coal).
-3. WRI vintage flagged in `limitations.md`.
+All accepted. The paper reports every heat × outcome cell, the 8/7 sign split, the 10/15 zero-crossing intervals, latest-per-economy sensitivity, and separate generation correlations. It removes the vulnerability ranking and states that the nonzero cells do not form a coherent direction. No composite is used.
+
+## Remaining wall
+
+Human-final energy-system and source review is still required. No external reviewer was contacted.

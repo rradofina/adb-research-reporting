@@ -1,0 +1,373 @@
+{
+  "program": "grid-reliability-heat",
+  "analysis": "exact-year heat and public reliability-proxy construct validation",
+  "generated_at": "2026-07-18T12:56:01Z",
+  "attestation_chain": "ai-first",
+  "claim_scope": "Descriptive source-alignment test only; not a causal estimate, reliability ranking, outage forecast, or heat-attribution model.",
+  "coverage": {
+    "heat_economies": 40,
+    "heat_years": [
+      1950,
+      2022
+    ],
+    "outcome_economies": 38,
+    "outcome_years": [
+      2007,
+      2025
+    ],
+    "matched_country_year_outcome_rows": 451,
+    "matched_economies": 36,
+    "matched_years": [
+      2007,
+      2022
+    ],
+    "matched_with_generation_concentration": 323,
+    "matched_generation_economies": 22
+  },
+  "diagnostic_count": 15,
+  "signs": {
+    "positive": 8,
+    "negative": 7
+  },
+  "bootstrap_intervals_crossing_zero": 10,
+  "decision_rule": "Reject a directional heat-reliability claim if correlations change sign across defensible outcomes or if most bootstrap intervals include zero.",
+  "decision": "reject_directional_claim",
+  "diagnostics": [
+    {
+      "outcome_indicator": "IC.ELC.OUTG.ZS",
+      "outcome_label": "Firms experiencing electrical outages (%)",
+      "heat_metric": "tasmax_anomaly",
+      "observations": 67,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2022,
+      "spearman_all": -0.3381,
+      "bootstrap_95_low": -0.5113,
+      "bootstrap_95_high": -0.1308,
+      "spearman_latest_per_economy": -0.5756,
+      "spearman_winsorized_outcome": -0.3404
+    },
+    {
+      "outcome_indicator": "IC.ELC.OUTG.ZS",
+      "outcome_label": "Firms experiencing electrical outages (%)",
+      "heat_metric": "txx_anomaly",
+      "observations": 67,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2022,
+      "spearman_all": 0.0548,
+      "bootstrap_95_low": -0.1884,
+      "bootstrap_95_high": 0.2956,
+      "spearman_latest_per_economy": -0.2852,
+      "spearman_winsorized_outcome": 0.055
+    },
+    {
+      "outcome_indicator": "IC.ELC.OUTG.ZS",
+      "outcome_label": "Firms experiencing electrical outages (%)",
+      "heat_metric": "tr_anomaly",
+      "observations": 67,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2022,
+      "spearman_all": 0.0516,
+      "bootstrap_95_low": -0.1889,
+      "bootstrap_95_high": 0.2721,
+      "spearman_latest_per_economy": -0.3756,
+      "spearman_winsorized_outcome": 0.0534
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN2",
+      "outcome_label": "Electrical outages in a typical month",
+      "heat_metric": "tasmax_anomaly",
+      "observations": 62,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": -0.1614,
+      "bootstrap_95_low": -0.3824,
+      "bootstrap_95_high": 0.0468,
+      "spearman_latest_per_economy": -0.2534,
+      "spearman_winsorized_outcome": -0.1596
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN2",
+      "outcome_label": "Electrical outages in a typical month",
+      "heat_metric": "txx_anomaly",
+      "observations": 62,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.1264,
+      "bootstrap_95_low": -0.115,
+      "bootstrap_95_high": 0.3613,
+      "spearman_latest_per_economy": -0.227,
+      "spearman_winsorized_outcome": 0.1245
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN2",
+      "outcome_label": "Electrical outages in a typical month",
+      "heat_metric": "tr_anomaly",
+      "observations": 62,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.0934,
+      "bootstrap_95_low": -0.1561,
+      "bootstrap_95_high": 0.3236,
+      "spearman_latest_per_economy": -0.2026,
+      "spearman_winsorized_outcome": 0.0976
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN3_C",
+      "outcome_label": "Typical outage duration (hours)",
+      "heat_metric": "tasmax_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.0393,
+      "bootstrap_95_low": -0.2151,
+      "bootstrap_95_high": 0.2915,
+      "spearman_latest_per_economy": 0.1853,
+      "spearman_winsorized_outcome": 0.0378
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN3_C",
+      "outcome_label": "Typical outage duration (hours)",
+      "heat_metric": "txx_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": -0.087,
+      "bootstrap_95_low": -0.3257,
+      "bootstrap_95_high": 0.179,
+      "spearman_latest_per_economy": -0.1525,
+      "spearman_winsorized_outcome": -0.0878
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN3_C",
+      "outcome_label": "Typical outage duration (hours)",
+      "heat_metric": "tr_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.3112,
+      "bootstrap_95_low": 0.0609,
+      "bootstrap_95_high": 0.5469,
+      "spearman_latest_per_economy": 0.3537,
+      "spearman_winsorized_outcome": 0.3099
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN4_C",
+      "outcome_label": "Sales lost to outages (%)",
+      "heat_metric": "tasmax_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": -0.2507,
+      "bootstrap_95_low": -0.4746,
+      "bootstrap_95_high": 0.0203,
+      "spearman_latest_per_economy": -0.4554,
+      "spearman_winsorized_outcome": -0.2527
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN4_C",
+      "outcome_label": "Sales lost to outages (%)",
+      "heat_metric": "txx_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.1697,
+      "bootstrap_95_low": -0.0908,
+      "bootstrap_95_high": 0.4109,
+      "spearman_latest_per_economy": -0.0831,
+      "spearman_winsorized_outcome": 0.1698
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN4_C",
+      "outcome_label": "Sales lost to outages (%)",
+      "heat_metric": "tr_anomaly",
+      "observations": 61,
+      "economies": 32,
+      "year_min": 2007,
+      "year_max": 2020,
+      "spearman_all": 0.1107,
+      "bootstrap_95_low": -0.1391,
+      "bootstrap_95_high": 0.344,
+      "spearman_latest_per_economy": -0.3095,
+      "spearman_winsorized_outcome": 0.1096
+    },
+    {
+      "outcome_indicator": "IC.ELC.SAID.XD.DB1619",
+      "outcome_label": "SAIDI under Doing Business methodology",
+      "heat_metric": "tasmax_anomaly",
+      "observations": 200,
+      "economies": 32,
+      "year_min": 2014,
+      "year_max": 2019,
+      "spearman_all": -0.204,
+      "bootstrap_95_low": -0.3459,
+      "bootstrap_95_high": -0.0591,
+      "spearman_latest_per_economy": -0.5282,
+      "spearman_winsorized_outcome": -0.2043
+    },
+    {
+      "outcome_indicator": "IC.ELC.SAID.XD.DB1619",
+      "outcome_label": "SAIDI under Doing Business methodology",
+      "heat_metric": "txx_anomaly",
+      "observations": 200,
+      "economies": 32,
+      "year_min": 2014,
+      "year_max": 2019,
+      "spearman_all": -0.1754,
+      "bootstrap_95_low": -0.3216,
+      "bootstrap_95_high": -0.0357,
+      "spearman_latest_per_economy": -0.4054,
+      "spearman_winsorized_outcome": -0.1749
+    },
+    {
+      "outcome_indicator": "IC.ELC.SAID.XD.DB1619",
+      "outcome_label": "SAIDI under Doing Business methodology",
+      "heat_metric": "tr_anomaly",
+      "observations": 200,
+      "economies": 32,
+      "year_min": 2014,
+      "year_max": 2019,
+      "spearman_all": -0.1728,
+      "bootstrap_95_low": -0.3188,
+      "bootstrap_95_high": -0.0279,
+      "spearman_latest_per_economy": -0.2094,
+      "spearman_winsorized_outcome": -0.1735
+    }
+  ],
+  "generation_diagnostics": [
+    {
+      "outcome_indicator": "IC.ELC.OUTG.ZS",
+      "outcome_label": "Firms experiencing electrical outages (%)",
+      "observations": 48,
+      "economies": 21,
+      "spearman_all_rows": 0.1197,
+      "spearman_latest_per_economy": -0.0266,
+      "latest_bootstrap_95_low": -0.4571,
+      "latest_bootstrap_95_high": 0.4389
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN2",
+      "outcome_label": "Electrical outages in a typical month",
+      "observations": 45,
+      "economies": 21,
+      "spearman_all_rows": 0.2171,
+      "spearman_latest_per_economy": 0.1909,
+      "latest_bootstrap_95_low": -0.301,
+      "latest_bootstrap_95_high": 0.5977
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN3_C",
+      "outcome_label": "Typical outage duration (hours)",
+      "observations": 45,
+      "economies": 21,
+      "spearman_all_rows": 0.2081,
+      "spearman_latest_per_economy": 0.1572,
+      "latest_bootstrap_95_low": -0.3205,
+      "latest_bootstrap_95_high": 0.5651
+    },
+    {
+      "outcome_indicator": "IC.FRM.INFRA.IN4_C",
+      "outcome_label": "Sales lost to outages (%)",
+      "observations": 45,
+      "economies": 21,
+      "spearman_all_rows": 0.3141,
+      "spearman_latest_per_economy": 0.079,
+      "latest_bootstrap_95_low": -0.4056,
+      "latest_bootstrap_95_high": 0.5441
+    },
+    {
+      "outcome_indicator": "IC.ELC.SAID.XD.DB1619",
+      "outcome_label": "SAIDI under Doing Business methodology",
+      "observations": 140,
+      "economies": 20,
+      "spearman_all_rows": -0.188,
+      "spearman_latest_per_economy": 0.0512,
+      "latest_bootstrap_95_low": -0.4193,
+      "latest_bootstrap_95_high": 0.4907
+    }
+  ],
+  "source_ledger": [
+    {
+      "source": "World Bank CCKP ERA5",
+      "variable": "tasmax",
+      "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_tasmax_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+      "cache_file": ".cache\\joint-heat-reliability\\cckp-tasmax.json",
+      "bytes": 46261,
+      "sha256": "e0a264c72f53a2d2500f3890a1b58679a357c4ec6c905b5fdac03254c9dfd2cb",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank CCKP ERA5",
+      "variable": "txx",
+      "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_txx_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+      "cache_file": ".cache\\joint-heat-reliability\\cckp-txx.json",
+      "bytes": 46739,
+      "sha256": "933ee7ed771c63808359003fc7e8a1e231f577b9f6d265cc9929b0b56492ce4b",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank CCKP ERA5",
+      "variable": "tr",
+      "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_tr_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+      "cache_file": ".cache\\joint-heat-reliability\\cckp-tr.json",
+      "bytes": 47324,
+      "sha256": "d3a6b66d5b1814dbc12790567e839f7a128741c632b9ea9ddcff73605fc83ed1",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank Indicators API",
+      "indicator": "IC.ELC.OUTG.ZS",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IC.ELC.OUTG.ZS?format=json&per_page=20000",
+      "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_ELC_OUTG_ZS.json",
+      "bytes": 4087916,
+      "sha256": "fe81f3162471d45d3afc7c60f1395913785a662f8e20f1c1192ff8176180bd64",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank Indicators API",
+      "indicator": "IC.FRM.INFRA.IN2",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN2?format=json&per_page=20000",
+      "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN2.json",
+      "bytes": 501119,
+      "sha256": "9ecbc7160d8d4da52419a71d979cb3e380116227fd4c9b50f4f5874caca178fb",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank Indicators API",
+      "indicator": "IC.FRM.INFRA.IN3_C",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN3_C?format=json&per_page=20000",
+      "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN3_C.json",
+      "bytes": 573352,
+      "sha256": "c2bbc83fe605049e84fefec40e3afcc32b27a68e4c799f344f91b93a08680eff",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank Indicators API",
+      "indicator": "IC.FRM.INFRA.IN4_C",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN4_C?format=json&per_page=20000",
+      "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN4_C.json",
+      "bytes": 584335,
+      "sha256": "fa2725bfaa10f98e106b38643f8ea720c2ad1398a3927aadc105731a48c003b0",
+      "fetch_mode": "live"
+    },
+    {
+      "source": "World Bank Indicators API",
+      "indicator": "IC.ELC.SAID.XD.DB1619",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IC.ELC.SAID.XD.DB1619?format=json&per_page=20000",
+      "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_ELC_SAID_XD_DB1619.json",
+      "bytes": 1013993,
+      "sha256": "17459366ddbfef909d08ea7859bcf9227fd3c4b04dd3c2e7dada5f145531fbf3",
+      "fetch_mode": "live"
+    }
+  ]
+}

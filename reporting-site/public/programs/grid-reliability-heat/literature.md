@@ -1,59 +1,15 @@
-# Literature review — Grid Reliability under Heat
+# Related literature and evidence gap
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first`
 
-## 1. Search record
+The literature makes the heat–reliability mechanism plausible but also clarifies why the regional public-data crosswalk is not enough.
 
-Queries (2026-04-26):
-1. `WRI Global Power Plant Database fuel concentration LMIC`
-2. `IEA Electricity 2024 capacity additions Asia`
-3. `Herfindahl fuel-mix grid fragility`
-4. `single-fuel grid hydro drought reliability`
+Climate can affect supply through several channels. Higher air temperature can derate thermal generation and transmission, while heat and drought jointly constrain cooling water and hydropower. Plant-level and coupled hydrology–electricity studies model these mechanisms directly rather than infer them from national fuel shares [@bartos2015climatepower; @vanvliet2016power].
 
-Tier-A: *Energy Policy*, *Nature Energy*, *Joule*. Tier-B: IEA, IRENA,
-WRI Energy. Tier-C: ADB Energy Sector Group reports.
+Heat can also affect reliability through demand and network stress. Recent China evidence joins high-frequency outage records to heatwaves and estimates changes in outage frequency and duration [@xu2025heatoutages]. That design aligns event timing and service outcomes. It is methodologically different from joining an annual national heat anomaly to a sporadic firm survey.
 
-## 2. Verified entries
+The sources used here are still valuable. WRI documents installed capacity and reported or modeled annual generation [@wri2022plants]. World Bank CCKP provides spatially aggregated ERA5 climate series and explicit API metadata [@worldbankcckp2026]. World Bank Enterprise Survey indicators measure what firms report about outages in a survey wave [@worldbankenterprisesurveys2026]. Each object is legitimate within its unit.
 
-- **`wri2022plants`** — WRI Global Power Plant Database v1.3.0
-  (frozen 2022). **Primary data source. Cited with the explicit
-  vintage caveat.**
-- **`iea2024electricity`** — IEA Electricity 2024 report.
-  **The §18.5 upgrade-pass source for current-capacity additions
-  not in WRI v1.3.0.**
+The gap is the bridge. No source in this package observes high-frequency heat, demand, available generation, network conditions, and interruption outcomes for a common regional service territory. The contribution is therefore not another vulnerability score. It is a falsification result showing that annual country constructs produce no stable regional direction and identifying the observation design required next.
 
-## 3. Synthesis
-
-Two established facts:
-
-1. **Single-fuel grids are exposed to fuel-specific shocks.**
-   Hydro to drought, gas to global price swings, coal to carbon-
-   transition risk. The Herfindahl is a defensible single-number
-   summary [@wri2022plants].
-2. **The 2022–2025 solar buildout is unevenly distributed across
-   ADB DMCs.** IEA 2024 [@iea2024electricity] documents capacity
-   additions that are missing from WRI v1.3.0.
-
-## 4. Gap
-
-No cross-DMC sensitivity-tested top-N concentration cluster has
-been published for the ADB regional roster. WRI publishes the
-plant database; the top-5 set-stability claim across the alternative
-single-fuel-share definition is a derivative finding.
-
-## 5. Risk of redundancy
-
-IEA capacity reports rank installed capacity. The marginal
-contribution here is the set-stability claim across the
-fuel-Herfindahl and single-fuel-share-≥-80% definitions.
-
-## 6. First testable claim
-
-> Five ADB DMCs — Brunei, Bhutan, Mongolia, Nepal, Tajikistan —
-> persistently rank in the top five most-fuel-concentrated grids
-> across both fuel-Herfindahl and single-fuel-share ≥ 80%
-> definitions.
-
-## 7. §18 attestation
-
-`ai-first`. 2026-04-27.
+![Reliability vintages](generated/charts/grid-reliability-proxy-vintages.svg)

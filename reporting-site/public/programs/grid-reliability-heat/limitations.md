@@ -1,22 +1,13 @@
-# Limitations — Grid Reliability under Heat
+# Limitations and non-claims
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-26.
+`attestation_chain: ai-first`
 
-## Cannot establish
-
-- Heat-derated reliability (the named program question). Current
-  artifact = structural single-fuel exposure only.
-- Actual generation share (capacity ≠ generation).
-- 2022–2025 solar buildouts not in v1.3.0.
-
-## Reviewer objections (synthesized verbatim)
-
-- C-1 (IEA/Ember): vintage gap.
-- C-2 (IRENA): hydro vs fragility framing.
-- C-3 (WRI): capacity vs generation.
-- C-4 (ADB Energy SD): heat sensitivity not measured.
-
-## Banned framings
-
-The result is single-fuel-source exposure; not "DMC failing on
-energy security."
+- Annual national heat averages do not measure temperature at the load center, generator, line, or outage event.
+- Firm surveys report business experience in survey waves; they are not continuous utility monitoring.
+- Doing Business SAIDI follows a separate 2015–2019 method and is not interchangeable with firm reports.
+- WRI generation is a 2017 reported/modeled field in a database frozen in 2022. It omits recent additions and does not observe hourly or seasonal dispatch.
+- Fuel concentration does not measure adequacy, reserve margin, imports, network redundancy, maintenance, storage, demand response, or operator performance.
+- The descriptive correlations omit confounders and serial/country dependence. They are neither causal estimates nor forecasts.
+- The regional crosswalk cannot identify which economies are “most heat vulnerable.” Ranking them would exceed the evidence.
+- No claim is made that heat reduces outages where a negative coefficient appears; that is a measurement warning, not a substantive reversal.
+- No external reviewer was contacted. Human-final source and domain review remains outstanding under Constitution §18.5.

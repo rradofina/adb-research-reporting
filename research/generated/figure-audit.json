@@ -4,10 +4,10 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 6,
-    "hero_only": 10,
+    "with_multiple_figures": 7,
+    "hero_only": 9,
     "with_no_visual": 2,
-    "working_papers_with_figure_references": 5
+    "working_papers_with_figure_references": 6
   },
   "programs": [
     {
@@ -493,13 +493,45 @@
     },
     {
       "slug": "grid-reliability-heat",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 8,
+      "evidence_figure_count": 7,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 12,
+      "working_paper_figure_references": 7,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/grid-capacity-generation-concentration",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/grid-generation-reliability-association",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/grid-heat-reliability-correlation-matrix",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/grid-heat-reliability-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/grid-reliability-heat-thumbnail",
           "formats": [
@@ -507,9 +539,47 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/grid-reliability-proxy-vintages",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/grid-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/grid-two-gate-validation",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/single-fuel-grid-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/grid-reliability-heat/generated/charts/grid-two-gate-validation.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-capacity-generation-concentration.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-source-alignment-funnel.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-heat-reliability-correlation-matrix.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-reliability-proxy-vintages.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-heat-reliability-sensitivity.svg",
+            "/programs/grid-reliability-heat/generated/charts/grid-generation-reliability-association.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "port-hinterland-friction",

@@ -1,21 +1,15 @@
-# Sensitivity — Grid Reliability under Heat
+# Sensitivity and robustness
 
-`attestation_chain: ai-first`. Run 2026-04-26 by `scripts/batch-sensitivity.py`.
+`attestation_chain: ai-first`
 
-| Variant | Top-5 |
-|---|---|
-| fuel-Herfindahl baseline | BRN, BTN, MNG, NPL, TJK |
-| Single-fuel-share ≥ 80% | (subset of same set) |
+The negative finding is not that every coefficient is zero. It is that the sign and magnitude depend on reasonable measurement choices.
 
-**Common top-5: `[BRN, BTN, MNG, NPL, TJK]`.** Stable across
-alternative single-fuel definitions.
+![Sensitivity](generated/charts/grid-heat-reliability-sensitivity.svg)
 
-## TODO §18.5 upgrade-pass
+- **Country weighting.** Replacing all exact-year rows with one latest row per economy moves several coefficients across zero. The largest change is for firms affected × average maximum temperature, from −0.34 to −0.58; other positive all-row relationships become negative.
+- **Outcome tails.** Winsorizing each outcome at the 5th and 95th percentiles barely changes the all-row coefficients, so extreme outcome values do not explain the sign disagreement.
+- **Heat definition.** Average maximum temperature, the annual hottest daily maximum, and tropical nights encode different exposure channels; they produce different signs for four of five reliability outcomes.
+- **Generation denominator.** The top-five economy set is stable between capacity and generation, but the level and order change. Generation coverage below 80% remains withheld; the floor is varied from 40% to 100% for the triage roster, not used to manufacture the headline.
+- **Uncertainty.** Ten of 15 row-bootstrap intervals include zero. All five latest-per-economy generation–reliability intervals include zero.
 
-- Reliability outcome (outage frequency × heat day) instead of just
-  fuel concentration. The program name implies a heat-dependence
-  question; current artifact is structural exposure only.
-- WRI v1.3.0 frozen since 2022 — Geofabrik or IEA/Ember updated source
-  needed.
-
-## §18 attestation closed.
+The bootstrap resamples rows and does not solve repeated-country dependence. It is used as an uncertainty screen, not an inferential claim.

@@ -78,9 +78,10 @@ end-to-end.
   retired: three of five metrics replace at least one member. A 108-orbit
   Typhoon Haiyan pilot yields zero of seven GDIS centroids with one recovery
   month across 54 variants. Article: `articles/disaster-burden-cluster.md`.
-- **grid-reliability-heat** — 40 ADB DMCs; top-5 single-fuel set
-  {BTN, BRN, MNG, NPL, TJK} stable. Article:
-  `articles/single-fuel-grid-cluster.md`.
+- **grid-reliability-heat** — current issue closed: the capacity-to-generation
+  top five remains {BTN, BRN, NPL, MNG, TJK}, but the aligned heat-reliability
+  evidence splits direction and does not support a regional vulnerability
+  ranking. Article: `articles/single-fuel-grid-cluster.md`.
 - **port-hinterland-friction** — 43 ADB DMCs; top-5 set {CHN, IND,
   IDN, THA, VNM} stable. Article:
   `articles/port-friction-trade-volume-cluster.md`.

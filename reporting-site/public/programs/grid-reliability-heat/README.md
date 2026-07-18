@@ -1,38 +1,30 @@
-# Grid Reliability Under Heat
+# Heat does not yet produce a regional reliability ranking
 
-## Research Question
+`attestation_chain: ai-first` · Prepared pipeline
 
-Where could rising heat create electricity reliability stress in places where
-official electrification rates look high?
+## Finding
 
-## Why This Is Unconventional
+The structural exposure result survives a better denominator: the same five economies top fuel concentration on installed capacity and 2017 generation, and generation is usually more concentrated. The proposed heat–reliability result does not survive construct validation. Across 15 exact-year correlations formed from three World Bank CCKP heat measures and five public reliability proxies, eight are positive and seven are negative; 10 bootstrap intervals include zero.
 
-Electrification rates hide reliability, cooling demand, and heat-sensitive grid
-stress. This track asks where "connected" does not mean resilient.
+![Two-gate validation](generated/charts/grid-two-gate-validation.svg)
 
-## Available Data
+The defensible output is therefore a measurement finding. Fuel concentration describes dependence on a narrow generation mix. It does not identify outages. Annual country heat measures joined to sporadic firm surveys and Doing Business indicators do not identify a stable regional heat–reliability direction.
 
-- World Bank WDI electricity access and power-loss indicators
-- NASA VIIRS nighttime lights as a stability proxy, used carefully
-- World Bank CCKP heat indicators
-- OpenStreetMap power infrastructure where mapped
-- Ember or IEA country-level generation mix where available
-- WorldPop population grids
+## Research question
 
-## First Pipeline
+Can public regional data support a directional claim that hotter conditions and concentrated generation are associated with worse electricity reliability across ADB developing member economies?
 
-1. Build economy-level heat-reliability pressure score.
-2. Compare access rates against transmission/distribution loss and heat trends.
-3. Add subnational light-stability or population exposure only after caveats are
-   documented.
+## Answer
 
-## Outputs
+Not with this measurement chain. A public exact-year bridge exists for 36 economies and 451 country-year-outcome rows, but the direction changes with the heat variable, reliability proxy, and country weighting. Adding a usable WRI generation-concentration estimate narrows the joint economy roster to 22. All five latest-per-economy correlations between generation concentration and reliability proxies have intervals crossing zero.
 
-- `generated/grid-reliability-heat-adb-screen.csv`
-- Economy ranking and pilot-city candidates
-- Clear caveat page on nighttime lights as proxy data
+## What remains useful
 
-## Reproducibility Notes
+- Capacity can overstate fuel diversity; annual generation sharpens the structural-exposure screen.
+- CCKP and World Bank reliability indicators can be joined exactly by country and year.
+- The joined object is a source-readiness and construct-validation layer, not an outage model.
+- The next claim-enabling object is high-frequency outage or interruption data joined to daily heat, demand, dispatch, and grid conditions at a common service territory.
 
-Nighttime lights should be treated as a benchmark or proxy, not the headline
-claim. Reliability claims need outage or utility data before publication.
+## Reproduce
+
+See [REPRODUCE.md](REPRODUCE.md). The full method, source limits, sensitivity results, literature, and conclusion are linked in the public research story.

@@ -594,6 +594,58 @@
     "long": "International Energy Agency (2024) \"Electricity 2024: Analysis and forecast to 2026.\" IEA / OECD"
   },
   {
+    "type": "misc",
+    "key": "worldbankenterprisesurveys2026",
+    "author": "World Bank",
+    "title": "Power outages in firms in a typical month: World Development Indicators metadata",
+    "year": "2026",
+    "howpublished": "World Bank DataBank metadata glossary",
+    "url": "https://databank.worldbank.org/metadataglossary/world-development-indicators/series/IC.ELC.OUTG",
+    "note": "Retrieved 2026-07-18. Defines the Enterprise Survey outage indicator and its survey-based methodology.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"Power outages in firms in a typical month: World Development Indicators metadata.\""
+  },
+  {
+    "type": "article",
+    "key": "bartos2015climatepower",
+    "author": "Bartos, Matthew D. and Chester, Mikhail V.",
+    "title": "Impacts of climate change on electric power supply in the Western United States",
+    "journal": "Nature Climate Change",
+    "year": "2015",
+    "volume": "5",
+    "pages": "748--752",
+    "doi": "10.1038/nclimate2648",
+    "short": "Bartos and Chester 2015",
+    "long": "Bartos, Matthew D. and Chester, Mikhail V. (2015) \"Impacts of climate change on electric power supply in the Western United States.\" Nature Climate Change 5 pp. 748--752 DOI: 10.1038/nclimate2648"
+  },
+  {
+    "type": "article",
+    "key": "vanvliet2016power",
+    "author": "van Vliet, Michelle T. H. and Wiberg, David and Leduc, Sylvain and Riahi, Keywan",
+    "title": "Power-generation system vulnerability and adaptation to changes in climate and water resources",
+    "journal": "Nature Climate Change",
+    "year": "2016",
+    "volume": "6",
+    "pages": "375--380",
+    "doi": "10.1038/nclimate2903",
+    "short": "van Vliet et al. 2016",
+    "long": "van Vliet, Michelle T. H. and Wiberg, David and Leduc, Sylvain and Riahi, Keywan (2016) \"Power-generation system vulnerability and adaptation to changes in climate and water resources.\" Nature Climate Change 6 pp. 375--380 DOI: 10.1038/nclimate2903"
+  },
+  {
+    "type": "article",
+    "key": "xu2025heatoutages",
+    "author": "Xu, Y. and others",
+    "title": "Impacts of heatwaves on electricity reliability: Evidence from power outage data in China",
+    "journal": "iScience",
+    "year": "2025",
+    "volume": "28",
+    "number": "2",
+    "pages": "111855",
+    "doi": "10.1016/j.isci.2025.111855",
+    "short": "Xu and others 2025",
+    "long": "Xu, Y. and others (2025) \"Impacts of heatwaves on electricity reliability: Evidence from power outage data in China.\" iScience 28(2) pp. 111855 DOI: 10.1016/j.isci.2025.111855"
+  },
+  {
     "type": "techreport",
     "key": "wb2023lpi",
     "author": "World Bank",

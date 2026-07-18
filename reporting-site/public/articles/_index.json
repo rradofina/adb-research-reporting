@@ -144,6 +144,38 @@
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
   },
   {
+    "slug": "single-fuel-grid-cluster",
+    "title": "A plausible heat-reliability story fails its regional measurement test",
+    "subtitle": "The generation-mix result survives a better denominator; the heat-outage direction changes with the proxy.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "grid-reliability-heat",
+    "maturity": "PP",
+    "topics": [
+      "grid",
+      "energy",
+      "heat",
+      "measurement",
+      "reliability"
+    ],
+    "geographies": [
+      "ADB DMCs"
+    ],
+    "abstract": "A public exact-year crosswalk joins World Bank CCKP ERA5 heat measures to five World Bank reliability proxies across 36 ADB developing member economies. The proposed directional result fails: eight of 15 correlations are positive, seven negative, and 10 bootstrap intervals include zero. A separate WRI test is stable: the same five economies top fuel concentration on capacity and 2017 generation, with generation usually more concentrated. Fuel concentration is therefore retained as structural exposure, not interpreted as reliability.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-18",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "single-fuel-grid-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "workday-loss-pressure-cluster",
     "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
     "subtitle": "Across 21 aligned year-and-parameter tests, the proxy shares at most one of its top three economies with the Lancet Countdown measure of heat-related potential work hours lost.",
@@ -599,40 +631,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "single-fuel-grid-cluster",
-    "title": "Five DMCs run on a single fuel — Brunei, Bhutan, Mongolia, Nepal, Tajikistan",
-    "subtitle": "Three hydro-dominant, one gas-dominant, one coal-dominant. The fragility kind differs by subtype.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "grid-reliability-heat",
-    "maturity": "PP",
-    "topics": [
-      "grid",
-      "energy",
-      "structural-exposure"
-    ],
-    "geographies": [
-      "BTN",
-      "BRN",
-      "MNG",
-      "NPL",
-      "TJK"
-    ],
-    "abstract": "WRI Global Power Plant Database v1.3.0 (frozen since 2022) catalogs 7,071 plants across 40 ADB regional DMCs. Five economies — Brunei, Bhutan, Mongolia, Nepal, Tajikistan — sit in the top-5 of single- fuel-source exposure (top fuel ≥ 80% of installed capacity), and also in the top-5 of the fuel-Herfindahl ranking. The set is mixed in subtype: three hydro-dominant (BTN, NPL, TJK), one gas-dominant (BRN), one coal-dominant (MNG). The fragility mechanism differs by subtype. The article does not call this \"fragile country\" — the framing is structural single-fuel-source exposure. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "single-fuel-grid-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "sp-shock-readiness-cluster",
     "title": "Five DMCs hold the top of the shock-payment-readiness gap — Bangladesh, Lao PDR, Myanmar, Pakistan, Philippines",
     "subtitle": "High poverty meets thin SP coverage and thin account ownership. Stable across SP/Findex weighting perturbations.",
@@ -787,6 +785,28 @@
     "updated_at": "",
     "doi": "",
     "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "grid-reliability-heat",
+    "title": "A plausible heat-reliability story fails its regional measurement test",
+    "subtitle": "",
+    "kind": "policy-brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "grid-reliability-heat",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "grid-reliability-heat.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
     "review_external_chain": "",
@@ -992,6 +1012,28 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "grid-reliability-heat",
+    "title": "When a good electricity-risk hypothesis meets the wrong data",
+    "subtitle": "",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "grid-reliability-heat",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "grid-reliability-heat.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "migration-displacement-signals-blog",
     "title": "A migration ranking can reverse when the denominator changes",
     "subtitle": "The same 2024 migrant-stock data tell different stories about diaspora scale and population-relative stock.",
@@ -1183,6 +1225,28 @@
     "updated_at": "",
     "doi": "",
     "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "grid-reliability-heat",
+    "title": "The heat-reliability direction changes with the measure",
+    "subtitle": "",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "grid-reliability-heat",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "grid-reliability-heat.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
     "review_external_chain": "",
@@ -1383,6 +1447,35 @@
     "updated_at": "",
     "doi": "",
     "file": "disaster-recovery-lag-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "grid-reliability-heat-deck",
+    "title": "\"A plausible heat-reliability story fails its regional measurement test\"",
+    "subtitle": "\"Generation concentration survives; the heat-outage direction does not — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "grid-reliability-heat",
+    "maturity": "PP",
+    "topics": [
+      "grid",
+      "heat",
+      "reliability",
+      "measurement"
+    ],
+    "geographies": [
+      "Asia-Pacific"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "grid-reliability-heat-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE",
     "review_external_chain": "",

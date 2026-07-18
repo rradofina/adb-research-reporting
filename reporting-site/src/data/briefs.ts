@@ -322,15 +322,15 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Energy",
     finish: "publication-ready",
     question:
-      "Which power systems show strong single-fuel concentration before adding the heat-reliability layer?",
+      "Does a directional regional heat–reliability relationship survive reasonable public definitions?",
     output:
-      "Brunei, Bhutan, Mongolia, Nepal, and Tajikistan exceed 80% dependence on a single fuel category.",
-    chartTitle: "Fuel-mix Herfindahl concentration",
-    sourceNote: "WRI Global Power Plant Database and WDI electricity access.",
+      "No. The 15 exact-year correlations split 8 positive to 7 negative; the separate capacity-to-generation concentration top five remains stable.",
+    chartTitle: "Two-gate construct validation",
+    sourceNote: "WRI GPPD v1.3.0; World Bank CCKP ERA5; World Bank public reliability indicators.",
     caveat:
-      "Fuel concentration is structural exposure, not heat-related outage risk.",
+      "Annual country heat and sporadic reliability proxies do not identify event-level heat effects or current grid reliability.",
     nextStep:
-      "Add ERA5 heat anomalies and outage or reliability data where public records exist.",
+      "Obtain service-territory interruption timing joined to daily/hourly heat, demand, available generation, imports, and network conditions.",
     granularity: {
       currentUnit: "Country-level power-plant fuel-mix concentration",
       targetUnit: "Plant, substation, feeder/service area, city or district",

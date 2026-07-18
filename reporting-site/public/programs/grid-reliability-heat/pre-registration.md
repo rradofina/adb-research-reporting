@@ -1,50 +1,27 @@
-# Pre-registration — Grid Reliability under Heat
+# Methodology and claim test
 
-`attestation_chain: ai-first`. §18 AI-frozen 2026-04-26.
+`attestation_chain: ai-first`
 
-## 1. Claim
+The original 26 April 2026 pre-registration tested whether five economies remained in the capacity-based top five under an alternative single-fuel-share rule. That rule was positive. It did not pre-register a heat–outage model.
 
-> Five ADB DMCs — **Brunei, Bhutan, Mongolia, Nepal, Tajikistan** —
-> persistently rank in the top five most-fuel-concentrated grids
-> (highest fuel-Herfindahl) and in the alternative single-fuel-share-
-> ≥-80% threshold, indicating structural single-fuel exposure. The
-> headline is the set, not the score.
+The present analysis is explicitly a **retrospective construct-validation addendum**, frozen in code rather than represented as a prospective experiment. It asks whether a directional regional claim survives reasonable definitions on both sides of the proposed bridge.
 
-## 2. Falsification
+## Units and transformations
 
-Retracted if top-5 fuel-Herfindahl ranking and ≥80% single-fuel
-threshold disagree by ≥ 2 entries.
+- Unit: country-year-outcome observation.
+- Heat: annual country values for average maximum temperature (`tasmax`), maximum daily maximum temperature (`txx`), and tropical nights (`tr`). Each is expressed as an anomaly from that economy's 1991–2020 mean.
+- Reliability: five separate outcomes; none is combined into a composite.
+- Association: Spearman rank correlation. This is descriptive and unadjusted.
+- Structural exposure: fuel-Herfindahl on 2017 generation, shown separately and withheld below 80% generation coverage.
 
-## 3. Population
+## Decision rule
 
-40 ADB DMCs with ≥ 1 plant in WRI Global Power Plant Database v1.3.0
-(7,071 ADB-DMC plants total).
+Reject a directional heat–reliability claim if the correlation changes sign across defensible outcomes or heat measures, or if most 95% bootstrap intervals include zero. The rule fires: eight correlations are positive, seven negative, and 10 of 15 intervals include zero.
 
-## 4. Time window
+## Sensitivity
 
-WRI v1.3.0 (frozen since 2022; rapid 2022–2025 solar buildouts missing).
+The ±50% requirement applies to the 80% generation-coverage floor (40%–100%) and any display threshold. The headline does not depend on a high/low cutoff. Correlations are also recomputed on one latest observation per economy and after 5th/95th percentile winsorization of outcomes.
 
-## 5. Metric
+## Interpretation boundary
 
-Fuel-Herfindahl = Σ (fuel-share-of-capacity)². 1.0 = single-fuel,
-≤ 0.3 = diversified. Triage only (Constitution §6.4).
-
-## 6. Arbitrary numerics
-
-| Param | Value | Range |
-|---|---|---|
-| Herfindahl threshold | 0.5 | 0.25–0.75 |
-| Single-fuel-share threshold | 80% | 40%–100% |
-| Top-N | 5 | 3–8 |
-
-## 7. Sources
-
-WRI Global Power Plant DB v1.3.0 (CC BY 4.0). WDI EG.ELC.ACCS.ZS.
-
-## 8. Decision rule
-
-Common top-5 across both methods = `[BRN, BTN, MNG, NPL, TJK]`. **Positive.**
-
-## 10. §18 attestation
-
-`attestation_chain: ai-first`. Frozen 2026-04-26.
+No coefficient estimates a causal heat effect. The design omits demand, reserve margin, generation availability, imports, network topology, adaptation, price, and weather-event timing. Country-year rank association cannot substitute for service-territory outage records.

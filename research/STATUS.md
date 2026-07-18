@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `grid-reliability-heat` — rotated in 2026-07-18 after disaster recovery closed its eight-figure construct-validation story. The highest-leverage move is to reshape the heat-reliability claim because the committed data measure annual generation concentration and heterogeneous reliability proxies, not a joint heat-outage outcome. |
-| Per-program board | `grid-reliability-heat/STATUS.md` |
+| Active flagship | `port-hinterland-friction` — rotated in 2026-07-18 after grid reliability closed its seven-figure construct-validation story. The highest-leverage move is to reshape the claim: test whether the committed trade-volume/LPI cluster survives contact with a direct public port or hinterland-friction object before investing in publication polish. |
+| Per-program board | `port-hinterland-friction/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `disaster-recovery-lag` — eight-figure PP dossier closed 2026-07-18; three of five burden metrics change the inherited top two and zero of seven Haiyan centroids retain one recovery month across 54 variants. |
+| Previous flagship | `grid-reliability-heat` — seven-figure PP dossier closed 2026-07-18; 8 of 15 heat-reliability correlations are positive, 7 negative, and 10 intervals include zero, so no directional ranking is published. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -59,12 +59,14 @@ overrides priority by editing this list.
    metrics change the inherited top two, and a 108-orbit Haiyan pilot yields
    zero stable recovery months across seven centroids and 54 variants. Reopen
    only for verified footprints, longer baselines, or independent outcomes.
-7. **`grid-reliability-heat`** — **active flagship.** The top-five annual fuel-
-   concentration set survives a capacity-to-generation recompute, while the
-   available public reliability proxies differ in year and method. It still
-   lacks an aligned heat–outage outcome.
-8. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
-   IND, IDN, THA, VNM} stable.
+7. **`grid-reliability-heat`** — *current issue closed.* Capacity and
+   generation concentration retain the same top five, but 15 aligned
+   heat-reliability tests split direction and 10 intervals include zero.
+   Reopen only for service-territory or event-level outage data.
+8. **`port-hinterland-friction`** — **active flagship.** The inherited top-five
+   trade-volume cluster {CHN, IND, IDN, THA, VNM} must now be tested against a
+   direct port or hinterland-friction object; its imports-cap sensitivity is
+   inert and cannot support a robustness claim.
 9. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,
    PHL} stable.
 10. **`water-stress-crop-diversification`** — top-4 narrowing {AFG, AZE,

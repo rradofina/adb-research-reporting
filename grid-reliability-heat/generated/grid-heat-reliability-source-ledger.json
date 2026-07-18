@@ -1,0 +1,74 @@
+[
+  {
+    "source": "World Bank CCKP ERA5",
+    "variable": "tasmax",
+    "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_tasmax_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+    "cache_file": ".cache\\joint-heat-reliability\\cckp-tasmax.json",
+    "bytes": 46261,
+    "sha256": "e0a264c72f53a2d2500f3890a1b58679a357c4ec6c905b5fdac03254c9dfd2cb",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank CCKP ERA5",
+    "variable": "txx",
+    "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_txx_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+    "cache_file": ".cache\\joint-heat-reliability\\cckp-txx.json",
+    "bytes": 46739,
+    "sha256": "933ee7ed771c63808359003fc7e8a1e231f577b9f6d265cc9929b0b56492ce4b",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank CCKP ERA5",
+    "variable": "tr",
+    "url": "https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_tr_timeseries_annual_1950-2022_mean_historical_era5_x0.25_mean/AFG,ARM,AZE,BGD,BTN,BRN,KHM,CHN,FJI,GEO,HKG,IND,IDN,KAZ,KIR,KGZ,LAO,MYS,MDV,MHL,FSM,MNG,MMR,NPL,PAK,PNG,PHL,WSM,SLB,LKA,TJK,THA,TLS,TON,TKM,TUV,UZB,VUT,VNM,TWN?_format=json",
+    "cache_file": ".cache\\joint-heat-reliability\\cckp-tr.json",
+    "bytes": 47324,
+    "sha256": "d3a6b66d5b1814dbc12790567e839f7a128741c632b9ea9ddcff73605fc83ed1",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank Indicators API",
+    "indicator": "IC.ELC.OUTG.ZS",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/IC.ELC.OUTG.ZS?format=json&per_page=20000",
+    "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_ELC_OUTG_ZS.json",
+    "bytes": 4087916,
+    "sha256": "fe81f3162471d45d3afc7c60f1395913785a662f8e20f1c1192ff8176180bd64",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank Indicators API",
+    "indicator": "IC.FRM.INFRA.IN2",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN2?format=json&per_page=20000",
+    "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN2.json",
+    "bytes": 501119,
+    "sha256": "9ecbc7160d8d4da52419a71d979cb3e380116227fd4c9b50f4f5874caca178fb",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank Indicators API",
+    "indicator": "IC.FRM.INFRA.IN3_C",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN3_C?format=json&per_page=20000",
+    "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN3_C.json",
+    "bytes": 573352,
+    "sha256": "c2bbc83fe605049e84fefec40e3afcc32b27a68e4c799f344f91b93a08680eff",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank Indicators API",
+    "indicator": "IC.FRM.INFRA.IN4_C",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/IC.FRM.INFRA.IN4_C?format=json&per_page=20000",
+    "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_FRM_INFRA_IN4_C.json",
+    "bytes": 584335,
+    "sha256": "fa2725bfaa10f98e106b38643f8ea720c2ad1398a3927aadc105731a48c003b0",
+    "fetch_mode": "live"
+  },
+  {
+    "source": "World Bank Indicators API",
+    "indicator": "IC.ELC.SAID.XD.DB1619",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/IC.ELC.SAID.XD.DB1619?format=json&per_page=20000",
+    "cache_file": ".cache\\joint-heat-reliability\\wdi-IC_ELC_SAID_XD_DB1619.json",
+    "bytes": 1013993,
+    "sha256": "17459366ddbfef909d08ea7859bcf9227fd3c4b04dd3c2e7dada5f145531fbf3",
+    "fetch_mode": "live"
+  }
+]

@@ -1,0 +1,760 @@
+{
+  "program": "grid-reliability-heat",
+  "claim_scope": "Hypothesis-stage structural-exposure layer. WRI Global Power Plant Database v1.3.0 capacity + fuel-mix concentration + WDI access. NOT yet a heat-stress reliability metric — that requires ERA5-Land × outage records or generation-loss data, which need separate work.",
+  "framing_rule": "Structural exposure metric: high single-fuel concentration + high thermal share + climate sensitivity = vulnerability to a single-shock pathway. Not a reliability ranking.",
+  "sources": {
+    "wri_gpp": {
+      "name": "WRI Global Power Plant Database v1.3.0",
+      "url": "https://github.com/wri/global-power-plant-database",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25",
+      "version_note": "Frozen at v1.3.0; not maintained by WRI since 2022. Plant-level snapshot.",
+      "rows_total": 7071
+    },
+    "wdi_elec_access": {
+      "name": "EG.ELC.ACCS.ZS — Access to electricity (% population)",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/EG.ELC.ACCS.ZS",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    },
+    "wdi_energy_use": {
+      "name": "EG.USE.PCAP.KG.OE — Energy use (kg oil equiv. per capita)",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/EG.USE.PCAP.KG.OE",
+      "license": "CC BY 4.0",
+      "retrieved_at": "2026-04-25"
+    }
+  },
+  "methodology": {
+    "fuel_herfindahl": "Sum of squared fuel-share-of-capacity. 1.0 = single-fuel grid; low = diversified."
+  },
+  "global_fuel_distribution_in_adb_plants": {
+    "Solar": 2420,
+    "Hydro": 1601,
+    "Coal": 1377,
+    "Wind": 982,
+    "Gas": 440,
+    "Oil": 136,
+    "Biomass": 64,
+    "Nuclear": 27,
+    "Geothermal": 22,
+    "Waste": 2
+  },
+  "rows": [
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "plant_count": 5,
+      "total_capacity_mw": 1482.2,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 1.0,
+      "fuel_herfindahl": 1.0,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 1482.2
+      }
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "plant_count": 4,
+      "total_capacity_mw": 586.0,
+      "top_fuel": "Gas",
+      "top_fuel_share": 1.0,
+      "fuel_herfindahl": 1.0,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 8658.00697644634,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 586.0
+      }
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "plant_count": 14,
+      "total_capacity_mw": 588.0,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.949,
+      "fuel_herfindahl": 0.9032,
+      "wdi_elec_access_pct": 94.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 442.648852285229,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 557.9,
+        "Solar": 30.0
+      }
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "plant_count": 8,
+      "total_capacity_mw": 904.0,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.8894,
+      "fuel_herfindahl": 0.7971,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 2176.26135692672,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 804.0,
+        "Solar": 50.0,
+        "Wind": 50.0
+      }
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "plant_count": 10,
+      "total_capacity_mw": 5296.4,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.8848,
+      "fuel_herfindahl": 0.7962,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 393.055077961309,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 4686.4,
+        "Oil": 610.0
+      }
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "plant_count": 33,
+      "total_capacity_mw": 18628.0,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.8518,
+      "fuel_herfindahl": 0.7389,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 3650.54759330848,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 15868.0,
+        "Hydro": 2090.0,
+        "Gas": 400.0,
+        "Solar": 270.0
+      }
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "plant_count": 8,
+      "total_capacity_mw": 3634.0,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.8008,
+      "fuel_herfindahl": 0.6758,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 591.211507833659,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 2910.0,
+        "Coal": 674.0,
+        "Oil": 50.0
+      }
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "plant_count": 9,
+      "total_capacity_mw": 300.6,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.7937,
+      "fuel_herfindahl": 0.6539,
+      "wdi_elec_access_pct": 85.3,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 238.6,
+        "Gas": 42.0,
+        "Solar": 20.0
+      }
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "plant_count": 57,
+      "total_capacity_mw": 11840.0,
+      "top_fuel": "Gas",
+      "top_fuel_share": 0.7405,
+      "fuel_herfindahl": 0.5959,
+      "wdi_elec_access_pct": 99.5,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 287.753137358845,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 8767.0,
+        "Oil": 2560.0,
+        "Coal": 250.0,
+        "Hydro": 230.0,
+        "Solar": 33.0
+      }
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "plant_count": 196,
+      "total_capacity_mw": 39654.3,
+      "top_fuel": "Gas",
+      "top_fuel_share": 0.7303,
+      "fuel_herfindahl": 0.5612,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1851.27231424167,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 28959.0,
+        "Coal": 5260.0,
+        "Hydro": 3788.0,
+        "Solar": 1348.7,
+        "Wind": 210.0,
+        "Biomass": 88.6
+      }
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "plant_count": 19,
+      "total_capacity_mw": 3831.4,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.6737,
+      "fuel_herfindahl": 0.5604,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1530.06712122186,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 2581.4,
+        "Gas": 1250.0
+      }
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "plant_count": 7,
+      "total_capacity_mw": 3454.0,
+      "top_fuel": "Oil",
+      "top_fuel_share": 0.6587,
+      "fuel_herfindahl": 0.5503,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 4558.64639369573,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Oil": 2275.0,
+        "Gas": 1179.0
+      }
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "plant_count": 35,
+      "total_capacity_mw": 3987.1,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.6835,
+      "fuel_herfindahl": 0.538,
+      "wdi_elec_access_pct": 76.8,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 410.864214508252,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 2725.2,
+        "Gas": 1046.9,
+        "Coal": 165.0,
+        "Solar": 50.0
+      }
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "plant_count": 20,
+      "total_capacity_mw": 4986.9,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.6234,
+      "fuel_herfindahl": 0.5305,
+      "wdi_elec_access_pct": 96.5,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 880.598982763996,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 3108.9,
+        "Coal": 1878.0
+      }
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "plant_count": 16,
+      "total_capacity_mw": 12640.0,
+      "top_fuel": "Gas",
+      "top_fuel_share": 0.6786,
+      "fuel_herfindahl": 0.5091,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1394.09046714259,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 8578.0,
+        "Coal": 2522.0,
+        "Hydro": 1140.0,
+        "Oil": 300.0,
+        "Solar": 100.0
+      }
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "plant_count": 12,
+      "total_capacity_mw": 317.4,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.6585,
+      "fuel_herfindahl": 0.4949,
+      "wdi_elec_access_pct": 99.3,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 209.0,
+        "Oil": 74.0,
+        "Biomass": 24.3,
+        "Wind": 10.1
+      }
+    },
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "plant_count": 4235,
+      "total_capacity_mw": 1415067.4,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.6754,
+      "fuel_herfindahl": 0.4948,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 2850.94152906511,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 955718.0,
+        "Hydro": 259025.6,
+        "Gas": 59774.5,
+        "Solar": 54801.8,
+        "Wind": 50990.4,
+        "Nuclear": 33402.0,
+        "Oil": 1329.0,
+        "Geothermal": 26.1
+      }
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "plant_count": 16,
+      "total_capacity_mw": 1517.6,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.599,
+      "fuel_herfindahl": 0.4712,
+      "wdi_elec_access_pct": 95.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 554.905182911585,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 909.0,
+        "Coal": 505.0,
+        "Oil": 53.6,
+        "Waste": 25.2,
+        "Solar": 22.8,
+        "Biomass": 2.0
+      }
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "plant_count": 1589,
+      "total_capacity_mw": 316088.5,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.6483,
+      "fuel_herfindahl": 0.4548,
+      "wdi_elec_access_pct": 99.5,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 763.197899394641,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 204919.2,
+        "Hydro": 45561.5,
+        "Solar": 25549.1,
+        "Gas": 24947.5,
+        "Nuclear": 8780.0,
+        "Wind": 3647.1,
+        "Oil": 1680.8,
+        "Biomass": 1003.3
+      }
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "plant_count": 8,
+      "total_capacity_mw": 3271.0,
+      "top_fuel": "Gas",
+      "top_fuel_share": 0.5903,
+      "fuel_herfindahl": 0.4487,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1300.30532664528,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 1931.0,
+        "Hydro": 965.0,
+        "Nuclear": 375.0
+      }
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "plant_count": 178,
+      "total_capacity_mw": 48751.4,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.6017,
+      "fuel_herfindahl": 0.4408,
+      "wdi_elec_access_pct": 99.4,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 982.414925134717,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 29333.0,
+        "Gas": 12810.0,
+        "Hydro": 4559.6,
+        "Geothermal": 1342.0,
+        "Oil": 706.8
+      }
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "plant_count": 55,
+      "total_capacity_mw": 28794.5,
+      "top_fuel": "Gas",
+      "top_fuel_share": 0.4629,
+      "fuel_herfindahl": 0.4232,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 3008.82419919301,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Gas": 13330.0,
+        "Coal": 13004.0,
+        "Hydro": 1989.0,
+        "Solar": 281.5,
+        "Oil": 178.0,
+        "Biomass": 12.0
+      }
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "plant_count": 14,
+      "total_capacity_mw": 5764.0,
+      "top_fuel": "Oil",
+      "top_fuel_share": 0.4164,
+      "fuel_herfindahl": 0.3739,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1732.19739502846,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Oil": 2400.0,
+        "Gas": 2390.0,
+        "Hydro": 974.0
+      }
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "plant_count": 15,
+      "total_capacity_mw": 406.9,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.4055,
+      "fuel_herfindahl": 0.3194,
+      "wdi_elec_access_pct": 20.5,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 165.0,
+        "Oil": 139.9,
+        "Gas": 72.0,
+        "Geothermal": 30.0
+      }
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "plant_count": 236,
+      "total_capacity_mw": 41350.5,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.4051,
+      "fuel_herfindahl": 0.3178,
+      "wdi_elec_access_pct": 99.8,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1018.06940422163,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 16750.1,
+        "Coal": 14125.0,
+        "Gas": 7734.0,
+        "Solar": 1616.4,
+        "Oil": 915.0,
+        "Wind": 188.0,
+        "Biomass": 22.0
+      }
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "plant_count": 48,
+      "total_capacity_mw": 3720.1,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.3875,
+      "fuel_herfindahl": 0.315,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 466.718993611413,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 1441.7,
+        "Oil": 1205.0,
+        "Coal": 900.0,
+        "Wind": 129.0,
+        "Solar": 44.4
+      }
+    },
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "plant_count": 39,
+      "total_capacity_mw": 37211.9,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.3813,
+      "fuel_herfindahl": 0.2769,
+      "wdi_elec_access_pct": null,
+      "wdi_elec_access_year": null,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {
+        "Coal": 14190.0,
+        "Gas": 11673.0,
+        "Nuclear": 5214.0,
+        "Hydro": 3825.5,
+        "Oil": 2000.0,
+        "Wind": 195.1,
+        "Solar": 114.3
+      }
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "plant_count": 123,
+      "total_capacity_mw": 20719.3,
+      "top_fuel": "Coal",
+      "top_fuel_share": 0.4214,
+      "fuel_herfindahl": 0.2528,
+      "wdi_elec_access_pct": 98.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 580.1360554135,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Coal": 8731.3,
+        "Gas": 3411.0,
+        "Hydro": 3401.1,
+        "Oil": 2056.1,
+        "Geothermal": 1848.2,
+        "Solar": 1196.4,
+        "Wind": 51.9,
+        "Biomass": 23.3
+      }
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "plant_count": 62,
+      "total_capacity_mw": 21455.0,
+      "top_fuel": "Hydro",
+      "top_fuel_share": 0.3724,
+      "fuel_herfindahl": 0.2347,
+      "wdi_elec_access_pct": 95.6,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 414.952130205765,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {
+        "Hydro": 7989.6,
+        "Oil": 4853.0,
+        "Coal": 3108.0,
+        "Gas": 2853.0,
+        "Nuclear": 1467.0,
+        "Solar": 678.4,
+        "Wind": 506.0
+      }
+    },
+    {
+      "iso3": "HKG",
+      "country": "Hong Kong SAR, China",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": 1517.85567374711,
+      "wdi_energy_use_year": 2023,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 95.9,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia, Fed. Sts.",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 86.9,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 81.3,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 100.0,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "plant_count": 0,
+      "total_capacity_mw": 0,
+      "top_fuel": null,
+      "top_fuel_share": null,
+      "fuel_herfindahl": null,
+      "wdi_elec_access_pct": 61.6,
+      "wdi_elec_access_year": 2023,
+      "wdi_energy_use_kgoe_per_capita": null,
+      "wdi_energy_use_year": null,
+      "fuel_mix_capacity_mw": {}
+    }
+  ],
+  "generated_at": "2026-06-19T19:08:19Z"
+}

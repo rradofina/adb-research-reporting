@@ -113,12 +113,12 @@ export const programs: ProgramEntry[] = [
   {
     id: 10,
     slug: "grid-reliability-heat",
-    title: "Grid reliability under heat",
+    title: "When the heat–reliability direction changes with the measure",
     status: "PP",
     summary:
-      "WRI Global Power Plant DB v1.3.0 + WDI electricity access for 39 ADB DMCs. 7,071 plants, 39 fuel-concentration profiles. Single-fuel grids: BTN 100% Hydro, BRN 100% Gas, NPL 95%, MNG 89% Coal, TJK 88% Hydro, KAZ 85% Coal. NOT yet a heat-stress reliability metric — that requires ERA5 × outage data.",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
-    href: "/program/grid-reliability-heat",
+      "The capacity-to-generation top five survives, but 15 exact-year heat–reliability correlations split 8 positive to 7 negative. Fuel concentration is structural exposure; a regional heat-vulnerability ranking is not supported.",
+    note: "PP construct-validation story; seven evidence figures and full reproduction trail.",
+    href: "/grid-reliability-heat",
   },
   {
     id: 11,

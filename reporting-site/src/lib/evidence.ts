@@ -88,7 +88,7 @@ export function loadEvidenceManifest(slug: string): Promise<EvidenceManifest | n
   if (!cache.has(slug)) {
     cache.set(
       slug,
-      fetch(`/programs/${slug}/manifest.json`)
+      fetch(`/programs/${slug}/manifest.json`, { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
         .catch(() => null),
     );

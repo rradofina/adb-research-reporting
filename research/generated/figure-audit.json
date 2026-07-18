@@ -4,8 +4,8 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 7,
-    "hero_only": 9,
+    "with_multiple_figures": 8,
+    "hero_only": 8,
     "with_no_visual": 2,
     "working_papers_with_figure_references": 6
   },
@@ -583,13 +583,37 @@
     },
     {
       "slug": "port-hinterland-friction",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 8,
+      "evidence_figure_count": 7,
       "has_hero": true,
-      "generated_data_object_count": 6,
+      "generated_data_object_count": 12,
       "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/port-cppi-distributions",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/port-cppi-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/port-cppi-time-series",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/port-hinterland-friction-thumbnail",
           "formats": [
@@ -597,6 +621,38 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/port-proxy-vs-cppi",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/port-rank-inversion",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/port-source-alignment-funnel",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/port-two-gate-validation",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
       "article_references": []

@@ -82,8 +82,10 @@ end-to-end.
   top five remains {BTN, BRN, NPL, MNG, TJK}, but the aligned heat-reliability
   evidence splits direction and does not support a regional vulnerability
   ranking. Article: `articles/single-fuel-grid-cluster.md`.
-- **port-hinterland-friction** — 43 ADB DMCs; top-5 set {CHN, IND,
-  IDN, THA, VNM} stable. Article:
+- **port-hinterland-friction** — inherited national top five rejected:
+  only IDN overlaps with the main observed CPPI-disadvantage top five,
+  and overlap remains 0–2 across 20 specifications. The port-to-inland
+  leg awaits the official LPI 2.0 shipment file. Article:
   `articles/port-friction-trade-volume-cluster.md`.
 - **social-protection-shock-coverage** — 43 ADB DMCs; top-5 set
   {BGD, LAO, MMR, PAK, PHL} stable. Article:

@@ -1,0 +1,21 @@
+year,min_calls,aggregation,eligible_dmc_count,direct_disadvantage_top5,overlap_with_inherited_top5
+2024,0,median_cppi,14,"['BGD', 'GEO', 'MYS', 'PHL', 'BRN']",0
+2024,0,q25_cppi,14,"['BGD', 'GEO', 'MYS', 'PHL', 'IDN']",1
+2024,24,median_cppi,14,"['BGD', 'GEO', 'PHL', 'BRN', 'KHM']",0
+2024,24,q25_cppi,14,"['BGD', 'GEO', 'PHL', 'MYS', 'IDN']",1
+2024,48,median_cppi,13,"['BGD', 'GEO', 'PHL', 'KHM', 'THA']",1
+2024,48,q25_cppi,13,"['BGD', 'GEO', 'PHL', 'THA', 'IDN']",2
+2024,72,median_cppi,13,"['BGD', 'GEO', 'PHL', 'KHM', 'THA']",1
+2024,72,q25_cppi,13,"['BGD', 'GEO', 'PHL', 'THA', 'IDN']",2
+2025,0,median_cppi,14,"['BGD', 'GEO', 'BRN', 'IDN', 'PHL']",1
+2025,0,q25_cppi,14,"['BGD', 'GEO', 'PHL', 'IDN', 'BRN']",1
+2025,0,call_weighted_cppi,14,"['BGD', 'GEO', 'PHL', 'BRN', 'KHM']",0
+2025,24,median_cppi,14,"['BGD', 'GEO', 'BRN', 'IDN', 'PHL']",1
+2025,24,q25_cppi,14,"['BGD', 'GEO', 'PHL', 'IDN', 'BRN']",1
+2025,24,call_weighted_cppi,14,"['BGD', 'GEO', 'PHL', 'BRN', 'KHM']",0
+2025,48,median_cppi,13,"['BGD', 'GEO', 'IDN', 'PHL', 'KHM']",1
+2025,48,q25_cppi,13,"['BGD', 'GEO', 'PHL', 'IDN', 'THA']",2
+2025,48,call_weighted_cppi,13,"['BGD', 'GEO', 'PHL', 'KHM', 'IDN']",1
+2025,72,median_cppi,13,"['BGD', 'GEO', 'PHL', 'IDN', 'KHM']",1
+2025,72,q25_cppi,13,"['BGD', 'GEO', 'PHL', 'IDN', 'THA']",2
+2025,72,call_weighted_cppi,13,"['BGD', 'GEO', 'PHL', 'KHM', 'IDN']",1

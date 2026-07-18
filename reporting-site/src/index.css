@@ -6710,6 +6710,31 @@
     border-bottom-color: var(--accent);
   }
 
+  @media (max-width: 640px) {
+    .site-header-row {
+      align-items: stretch;
+      gap: 0.5rem;
+      padding-block: 0.75rem 0.5rem;
+    }
+
+    .site-brand,
+    .site-nav {
+      width: 100%;
+    }
+
+    .site-nav {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 0.25rem;
+    }
+
+    .site-nav-link {
+      padding: 0.45rem 0.2rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
   .site-main {
     flex: 1 1 auto;
     padding-block: var(--layout-page-pad-block);

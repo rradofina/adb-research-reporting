@@ -1,25 +1,25 @@
 {
   "program": "port-hinterland-friction",
   "permanent_url": "/port-hinterland-friction?view=evidence",
-  "generated_at": "2026-07-18T13:13:46.571Z",
+  "generated_at": "2026-07-18T13:48:13.655Z",
   "hero": {
     "png": "generated/charts/port-hinterland-friction-thumbnail.png",
     "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
     "json": "generated/charts/port-hinterland-friction-thumbnail.json",
-    "title": "Volume of imports versus logistics performance",
-    "caption": "China $3.11 T (LPI 3.70) and India $857B (LPI 3.40) dominate imports volume; Cambodia (LPI 2.40) and Kazakhstan have the weakest logistics. Volume-leaders and logistics-laggards are not the same DMCs.",
-    "headline_number": "China $3.11 T imports · LPI 3.70",
-    "visual_form": "bubble scatter (LPI × imports, log-imports axis)",
-    "source": "WB LPI 2023 + WDI NE.IMP.GNFS.CD",
+    "title": "Trade volume did not predict observed port delay",
+    "caption": "Only Indonesia remains in the inherited top five after replacing trade scale and LPI perception with observed 2025 CPPI vessel-time performance. China moves from rank 1 to 12 and India from 2 to 10.",
+    "headline_number": "1 of 5 retained",
+    "visual_form": "rank-inversion slopegraph",
+    "source": "World Bank CPPI 2020–2025 + committed WDI imports/LPI panel",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:27:14+00:00",
+    "generated_at": "2026-07-18T13:32:05+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639",
-      "svg": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+      "png": "a1f9b08c71e49a7451dce4b8d770487ceb44e50f62c92e237290b0c73926205c",
+      "svg": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
     }
   },
   "artifacts": [
@@ -34,13 +34,23 @@
       "attestation_chain": null
     },
     {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1073,
+      "size_human": "1.0 KB",
+      "mtime": "2026-07-18T13:43:39.668Z",
+      "sha256": "37df42f3e4e7e9c3aa946ee5cb7ea8418ce8c3d44c2d1c250644d9c1ee0f67fd",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 2091,
-      "size_human": "2.0 KB",
-      "mtime": "2026-04-27T03:38:02.801Z",
-      "sha256": "0d2ad83db19645341a946330107e441b764ade23d8ec723d118fe60b166c7b8c",
+      "size": 2841,
+      "size_human": "2.8 KB",
+      "mtime": "2026-07-18T13:38:42.610Z",
+      "sha256": "a8313fc66fc30b669faec27e92a918e1a0db5827ea0b6ad8ef4748e697a73020",
       "attestation_chain": "ai-first"
     },
     {
@@ -122,26 +132,156 @@
       "mtime": "2026-04-26T03:26:01.956Z",
       "sha256": "f69033a0f310fa5b5abdbba2d81e10f35bdf6f2b3469c6733d70df3801bfa65c",
       "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 751,
+      "size_human": "751 B",
+      "mtime": "2026-07-18T13:43:39.668Z",
+      "sha256": "9ae9e943f9969e1238a71c8ae2c1f40a6600f665d511b3ff8e44fae49b8ffdb6",
+      "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/port-cppi-distributions.png",
+      "size": 141115,
+      "size_human": "137.8 KB",
+      "sha256": "f882b5c9a8329e14c79facbe51673fcd4948c9f65e828474e3c9d6587d11f1eb"
+    },
+    {
+      "file": "generated/charts/port-cppi-distributions.svg",
+      "size": 89490,
+      "size_human": "87.4 KB",
+      "sha256": "9a75b81d8063b4bd759f0a84a401afc45b155b1cace4c0e5ba19a7ec2afd508b"
+    },
+    {
+      "file": "generated/charts/port-cppi-sensitivity.png",
+      "size": 113623,
+      "size_human": "111.0 KB",
+      "sha256": "5f433599953aedc28b11b67586e8264b032c8fcbd0b5f9a677a64817a2663d81"
+    },
+    {
+      "file": "generated/charts/port-cppi-sensitivity.svg",
+      "size": 86693,
+      "size_human": "84.7 KB",
+      "sha256": "634c3e7a70dad1806196e034ba27b39fa65de4b69f54fa2237d1108393dc0b7c"
+    },
+    {
+      "file": "generated/charts/port-cppi-time-series.png",
+      "size": 209724,
+      "size_human": "204.8 KB",
+      "sha256": "3e38fbe275def8baaa2610669ecbd23859f2c6ed012e35fa6265b796a146ecaf"
+    },
+    {
+      "file": "generated/charts/port-cppi-time-series.svg",
+      "size": 100073,
+      "size_human": "97.7 KB",
+      "sha256": "6246ad79cd8ba01037d92c3c1f66a75785ff038d2597d02af099c5b688460111"
+    },
+    {
       "file": "generated/charts/port-hinterland-friction-thumbnail.json",
-      "size": 1165,
+      "size": 1142,
       "size_human": "1.1 KB",
-      "sha256": "3040b24e22587bbc67da8f122914a61ec1e26fde906243f9e70e22d2d0f24397"
+      "sha256": "e3bfa23f4b707fad9a74b27fa771e8ded0bd74e23cf549ada7a256ade388a49d"
     },
     {
       "file": "generated/charts/port-hinterland-friction-thumbnail.png",
-      "size": 134916,
-      "size_human": "131.8 KB",
-      "sha256": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639"
+      "size": 155267,
+      "size_human": "151.6 KB",
+      "sha256": "a1f9b08c71e49a7451dce4b8d770487ceb44e50f62c92e237290b0c73926205c"
     },
     {
       "file": "generated/charts/port-hinterland-friction-thumbnail.svg",
-      "size": 164644,
-      "size_human": "160.8 KB",
-      "sha256": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+      "size": 112592,
+      "size_human": "110.0 KB",
+      "sha256": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
+    },
+    {
+      "file": "generated/charts/port-proxy-vs-cppi.png",
+      "size": 180195,
+      "size_human": "176.0 KB",
+      "sha256": "02542ec972c3db4ec69e72e15e0d84dec4ea7398feae114f19139207639c0781"
+    },
+    {
+      "file": "generated/charts/port-proxy-vs-cppi.svg",
+      "size": 103481,
+      "size_human": "101.1 KB",
+      "sha256": "166aea3761947fcaeb85794ba326e87b1fafa6b31756dcb0d5c9d9a1cf92cb00"
+    },
+    {
+      "file": "generated/charts/port-rank-inversion.png",
+      "size": 259802,
+      "size_human": "253.7 KB",
+      "sha256": "6dbe9e335bd9a4180e5b09edd3f93b323befa4c42700255c86009f2b7cb76263"
+    },
+    {
+      "file": "generated/charts/port-rank-inversion.svg",
+      "size": 84579,
+      "size_human": "82.6 KB",
+      "sha256": "2d18236ecd00b9fa29acbdc0702f86d8aba93760dfdc9b65d89c4ff512e43d62"
+    },
+    {
+      "file": "generated/charts/port-source-alignment-funnel.png",
+      "size": 112152,
+      "size_human": "109.5 KB",
+      "sha256": "965f11a7b46a85288f430d19eacabcf3148f628c8e51d4a5597ac986f004a7b7"
+    },
+    {
+      "file": "generated/charts/port-source-alignment-funnel.svg",
+      "size": 76963,
+      "size_human": "75.2 KB",
+      "sha256": "f4c47e2c5ba5de2dc1afec065d15e399904ba2d94fd972681580971c604163dd"
+    },
+    {
+      "file": "generated/charts/port-two-gate-validation.png",
+      "size": 150352,
+      "size_human": "146.8 KB",
+      "sha256": "4245bcb4608c797399cb9ffa659ecfd369794f4c39dd70dbc7ba6a1a141ccfc5"
+    },
+    {
+      "file": "generated/charts/port-two-gate-validation.svg",
+      "size": 81251,
+      "size_human": "79.3 KB",
+      "sha256": "2f67f3bd87c35f322d81035a67b1e2446b515d5346e8813179feca267f3ec9dc"
+    },
+    {
+      "file": "generated/port-cppi-construct-validation.json",
+      "size": 8742,
+      "size_human": "8.5 KB",
+      "sha256": "5617630b94b0f341ad9ee102617c5e6241c409f0c4607a369542c24b761fd820"
+    },
+    {
+      "file": "generated/port-cppi-country-diagnostics.csv",
+      "size": 2655,
+      "size_human": "2.6 KB",
+      "sha256": "bcf1c21d6e440259f66b5aa01c06e4ca109e5e224782c1ae3b7556ecdc451045"
+    },
+    {
+      "file": "generated/port-cppi-ports.csv",
+      "size": 9752,
+      "size_human": "9.5 KB",
+      "sha256": "b83ab497c493e8e596a95192b11481f1142f2cf62ce020155a8d04b4652f2eb8"
+    },
+    {
+      "file": "generated/port-cppi-sensitivity.csv",
+      "size": 1379,
+      "size_human": "1.3 KB",
+      "sha256": "7d1b643b93215cfac1fc4c4db23456e36e6319d7a81a08be41bdfdfde3febbc6"
+    },
+    {
+      "file": "generated/port-cppi-source-ledger.json",
+      "size": 999,
+      "size_human": "999 B",
+      "sha256": "da8ec70574be957a83b378b40837f186df3307cb3c4f12eca0ffed4f732095ac"
+    },
+    {
+      "file": "generated/port-figure-dossier-summary.json",
+      "size": 343,
+      "size_human": "343 B",
+      "sha256": "008850dee22cfb2773d21ec65672d5b0a30ae5c9e9eb72bea80537f4b05080ed"
     },
     {
       "file": "generated/port-hinterland-friction-adb-panel.csv",
@@ -189,7 +329,7 @@
   "articles": [
     {
       "slug": "port-friction-trade-volume-cluster",
-      "title": "Five large coastal economies hold the top of the port-friction-exposure ranking",
+      "title": "Trade volume did not predict observed port delay",
       "attestation_chain": "ai-first"
     }
   ],
@@ -288,20 +428,32 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
+    "reproduce": "/programs/port-hinterland-friction/REPRODUCE.md",
     "deck": null,
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/port-hinterland-friction"

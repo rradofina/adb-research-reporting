@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T13:13:47.102Z",
+  "generated_at": "2026-07-18T13:48:14.045Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -145,20 +145,20 @@
         "png": "generated/charts/port-hinterland-friction-thumbnail.png",
         "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
         "json": "generated/charts/port-hinterland-friction-thumbnail.json",
-        "title": "Volume of imports versus logistics performance",
-        "caption": "China $3.11 T (LPI 3.70) and India $857B (LPI 3.40) dominate imports volume; Cambodia (LPI 2.40) and Kazakhstan have the weakest logistics. Volume-leaders and logistics-laggards are not the same DMCs.",
-        "headline_number": "China $3.11 T imports · LPI 3.70",
-        "visual_form": "bubble scatter (LPI × imports, log-imports axis)",
-        "source": "WB LPI 2023 + WDI NE.IMP.GNFS.CD",
+        "title": "Trade volume did not predict observed port delay",
+        "caption": "Only Indonesia remains in the inherited top five after replacing trade scale and LPI perception with observed 2025 CPPI vessel-time performance. China moves from rank 1 to 12 and India from 2 to 10.",
+        "headline_number": "1 of 5 retained",
+        "visual_form": "rank-inversion slopegraph",
+        "source": "World Bank CPPI 2020–2025 + committed WDI imports/LPI panel",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T20:27:14+00:00",
+        "generated_at": "2026-07-18T13:32:05+00:00",
         "dimensions": {
           "width": 1600,
           "height": 900
         },
         "sha256": {
-          "png": "d7d2b7c224b8e4b8272c78e0599dc84de4c46da579c98bc1ac2b54216e110639",
-          "svg": "31b425e0e81af848e545a6ab40f812b3948811264663d3ac59fd61deb3178885"
+          "png": "a1f9b08c71e49a7451dce4b8d770487ceb44e50f62c92e237290b0c73926205c",
+          "svg": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
         }
       }
     },

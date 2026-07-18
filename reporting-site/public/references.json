@@ -659,6 +659,30 @@
   },
   {
     "type": "techreport",
+    "key": "worldbank2025cppi",
+    "author": "World Bank",
+    "title": "The Container Port Performance Index 2020--2025: Technical Annex and Standardized Series",
+    "institution": "World Bank",
+    "year": "2026",
+    "url": "https://www.worldbank.org/en/topic/transport/publication/cppi",
+    "note": "Retrieved 2026-07-18. Port-level standardized vessel-time scores; country aggregates in this repository are research diagnostics, not official World Bank rankings.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"The Container Port Performance Index 2020--2025: Technical Annex and Standardized Series.\" World Bank"
+  },
+  {
+    "type": "misc",
+    "key": "worldbank2026lpi2",
+    "author": "World Bank",
+    "title": "Logistics Performance Index 2.0: Methodology",
+    "year": "2026",
+    "howpublished": "World Bank Logistics Performance Index website",
+    "url": "https://lpi.worldbank.org/en/about/methodology",
+    "note": "Retrieved 2026-07-18. Documents observed shipment indicators for 2023--2024, including port turnaround and corridor components for landlocked economies.",
+    "short": "World Bank 2026",
+    "long": "World Bank (2026) \"Logistics Performance Index 2.0: Methodology.\""
+  },
+  {
+    "type": "techreport",
     "key": "unctad2024rmt",
     "author": "United Nations Conference on Trade and Development",
     "title": "Review of Maritime Transport 2024",

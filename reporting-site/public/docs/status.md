@@ -12,7 +12,7 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `port-hinterland-friction` — rotated in 2026-07-18 after grid reliability closed its seven-figure construct-validation story. The highest-leverage move is to reshape the claim: test whether the committed trade-volume/LPI cluster survives contact with a direct public port or hinterland-friction object before investing in publication polish. |
+| Active flagship | `port-hinterland-friction` — the direct World Bank CPPI test retains only one of the inherited top five in the main specification and at most two across 20 variants. Publication is paused at a named source wall: the new LPI 2.0 port-exit-to-LLDC corridor data sit behind an interactive Cloudflare challenge that requires owner action. |
 | Per-program board | `port-hinterland-friction/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
@@ -63,10 +63,11 @@ overrides priority by editing this list.
    generation concentration retain the same top five, but 15 aligned
    heat-reliability tests split direction and 10 intervals include zero.
    Reopen only for service-territory or event-level outage data.
-8. **`port-hinterland-friction`** — **active flagship.** The inherited top-five
-   trade-volume cluster {CHN, IND, IDN, THA, VNM} must now be tested against a
-   direct port or hinterland-friction object; its imports-cap sensitivity is
-   inert and cannot support a robustness claim.
+8. **`port-hinterland-friction`** — **active flagship; named source wall.** The
+   direct CPPI test retains only Indonesia from the inherited top five in the
+   main specification and zero to two members across 20 variants. The next
+   eligible object is World Bank LPI 2.0 port-exit-to-LLDC corridor time; its
+   interactive download is Cloudflare-blocked in this environment.
 9. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,
    PHL} stable.
 10. **`water-stress-crop-diversification`** — top-4 narrowing {AFG, AZE,

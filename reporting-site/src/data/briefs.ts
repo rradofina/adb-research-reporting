@@ -105,7 +105,7 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "access-services",
     articleSlug: "access-stress-pilot-cluster",
     domain: "Access",
-    finish: "screening-result",
+    finish: "prepared-pipeline",
     question:
       "Which pilot DMCs show the strongest mismatch between mapped amenities and population-weighted service load?",
     output:
@@ -371,24 +371,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "port-hinterland-friction",
     articleSlug: "port-friction-trade-volume-cluster",
     domain: "Trade",
-    finish: "publication-ready",
+    finish: "screening-result",
     question:
-      "Which economies combine large import exposure with logistics-performance friction?",
+      "Does a national imports × LPI screen agree with observed port-time disadvantage?",
     output:
-      "China, India, Indonesia, Thailand, and Viet Nam hold the top friction-exposure set.",
-    chartTitle: "Port-hinterland friction exposure",
-    sourceNote: "World Bank Logistics Performance Index and WDI import values.",
+      "No. Only Indonesia overlaps between the inherited and observed-port top fives in the main test.",
+    chartTitle: "National proxy versus observed port time",
+    sourceNote: "World Bank CPPI 2020–2025 annex, WDI imports, and LPI.",
     caveat:
-      "LPI is perception-based, and landlocked economies have a different mechanism.",
+      "CPPI measures vessel time inside the port boundary, not the port-to-inland journey.",
     nextStep:
-      "Split coastal and landlocked mechanisms and add port, road, and inland-node data.",
+      "Join the official LPI 2.0 shipment file before making any hinterland claim.",
     granularity: {
-      currentUnit: "Country-level imports and LPI friction",
-      targetUnit: "Port, inland node, corridor, road/rail segment, province",
+      currentUnit: "Port-level CPPI with diagnostic country summaries",
+      targetUnit: "Port-to-inland shipment corridor and destination",
       gap:
-        "LPI is national and perception-based; inland logistics paths are not represented.",
+        "CPPI stops at the port boundary; the official shipment-corridor file is not yet joined.",
       upgradeData:
-        "Port locations/calls, AIS or port statistics, OSM/Overture roads and rail, customs/corridor time data, and inland city nodes.",
+        "World Bank LPI 2.0 shipment indicators, including port turnaround and port-exit-to-destination corridor lead time.",
     },
   },
   "public-service-data-quality": {

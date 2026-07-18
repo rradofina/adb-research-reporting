@@ -1,0 +1,14 @@
+{
+  "program": "port-hinterland-friction",
+  "attestation_chain": "ai-first",
+  "figure_count": 7,
+  "figures": [
+    "port-two-gate-validation",
+    "port-rank-inversion",
+    "port-proxy-vs-cppi",
+    "port-cppi-distributions",
+    "port-cppi-sensitivity",
+    "port-source-alignment-funnel",
+    "port-cppi-time-series"
+  ]
+}

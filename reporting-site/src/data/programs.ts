@@ -133,11 +133,11 @@ export const programs: ProgramEntry[] = [
   {
     id: 12,
     slug: "port-hinterland-friction",
-    title: "Port-hinterland trade friction",
+    title: "Trade volume did not predict observed port delay",
     status: "PP",
     summary:
-      "China $3.11 T (LPI 3.70 of 5) and India $857 B (LPI 3.40) of annual imports together carry most of the region's friction-weighted trade. Bangladesh LPI 2.60 and Kazakhstan 2.70 are the weakest logistics among the coastal-access DMCs. Landlocked DMCs (AFG, UZB, KGZ, TJK, LAO, MNG) have a structurally different story.",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
+      "Only Indonesia overlaps between the inherited imports × LPI top five and the main 2025 CPPI-disadvantage top five. Across 20 year, call-threshold, and aggregation specifications, overlap remains zero to two; CPPI still stops at the port boundary.",
+    note: "PP construct validation complete; the official LPI 2.0 shipment file is required before any hinterland claim.",
     href: "/program/port-hinterland-friction",
   },
   {

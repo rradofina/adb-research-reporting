@@ -73,10 +73,11 @@ Tajikistan — depend on a single fuel for 80%+ of capacity. Mixed
 subtypes: three hydro-dominant, one gas, one coal. Fragility
 mechanism differs by subtype; the article does not aggregate them. → [/findings/single-fuel-grid-cluster](/findings/single-fuel-grid-cluster)
 
-**Port-Hinterland Friction.** Five large coastal economies — China,
-India, Indonesia, Thailand, Vietnam — hold the top of the friction-
-exposure index. The signal is "trade volume × logistics-performance
-gap"; LPI is perception-based, flagged. → [/findings/port-friction-trade-volume-cluster](/findings/port-friction-trade-volume-cluster)
+**Port-Hinterland Friction — corrected 2026-07-18.** The original
+trade-volume × LPI top five failed validation against observed CPPI
+vessel-time data: only Indonesia remains in the main direct-measure
+top five. The national proxy ranking is retired; the hinterland leg
+remains unresolved. → [/findings/port-friction-trade-volume-cluster](/findings/port-friction-trade-volume-cluster)
 
 **Social-Protection Readiness.** Five DMCs — Bangladesh, Lao PDR,
 Myanmar, Pakistan, Philippines — hold the top-5 shock-payment-

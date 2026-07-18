@@ -1,0 +1,362 @@
+{
+  "program": "port-hinterland-friction",
+  "analysis": "CPPI construct validation of inherited imports x LPI screen",
+  "main_specification": {
+    "year": 2025,
+    "minimum_calls_per_port": 48,
+    "country_diagnostic": "median CPPI across eligible ports; lower values indicate greater observed port-time disadvantage"
+  },
+  "summary": {
+    "source_port_rows": 426,
+    "adb_dmc_port_rows_with_2025_score": 77,
+    "adb_dmcs_with_2025_score": 16,
+    "common_rankable_dmcs_main_spec": 13,
+    "common_ports_main_spec": 65,
+    "inherited_top5": [
+      "CHN",
+      "IND",
+      "IDN",
+      "VNM",
+      "THA"
+    ],
+    "main_direct_disadvantage_top5": [
+      "BGD",
+      "GEO",
+      "IDN",
+      "PHL",
+      "KHM"
+    ],
+    "main_overlap_count": 1,
+    "main_overlap_members": [
+      "IDN"
+    ],
+    "variant_count": 20,
+    "variant_overlap_range": [
+      0,
+      2
+    ],
+    "variant_with_zero_overlap_count": 4,
+    "correlations": [
+      {
+        "direct_metric": "median_cppi",
+        "interpretation": "negative means the inherited friction score rises as observed port performance improves",
+        "matched_dmc_count": 13,
+        "spearman_with_observed_disadvantage": -0.3554,
+        "bootstrap_ci95": [
+          -0.7944,
+          0.2104
+        ],
+        "bootstrap_draws": 2000
+      },
+      {
+        "direct_metric": "q25_cppi",
+        "interpretation": "negative means the inherited friction score rises as observed port performance improves",
+        "matched_dmc_count": 13,
+        "spearman_with_observed_disadvantage": -0.2645,
+        "bootstrap_ci95": [
+          -0.7552,
+          0.2938
+        ],
+        "bootstrap_draws": 2000
+      },
+      {
+        "direct_metric": "call_weighted_cppi",
+        "interpretation": "negative means the inherited friction score rises as observed port performance improves",
+        "matched_dmc_count": 13,
+        "spearman_with_observed_disadvantage": -0.5675,
+        "bootstrap_ci95": [
+          -0.8332,
+          -0.1136
+        ],
+        "bootstrap_draws": 2000
+      }
+    ],
+    "claim_decision": "Reject the inherited national friction ranking. It is not a port or hinterland measure, and its ordering does not align with observed CPPI port-time disadvantage.",
+    "supported_replacement": "The public CPPI object reveals within-economy port heterogeneity and a measurement mismatch: trade scale plus LPI perception cannot stand in for observed port time.",
+    "remaining_hinterland_wall": "CPPI ends at the port boundary; no port-to-inland origin-destination time, cost, reliability, or network impedance is estimated."
+  },
+  "sensitivity_variants": [
+    {
+      "year": 2024,
+      "min_calls": 0,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "MYS",
+        "PHL",
+        "BRN"
+      ],
+      "overlap_with_inherited_top5": 0
+    },
+    {
+      "year": 2024,
+      "min_calls": 0,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "MYS",
+        "PHL",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2024,
+      "min_calls": 24,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "BRN",
+        "KHM"
+      ],
+      "overlap_with_inherited_top5": 0
+    },
+    {
+      "year": 2024,
+      "min_calls": 24,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "MYS",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2024,
+      "min_calls": 48,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "KHM",
+        "THA"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2024,
+      "min_calls": 48,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "THA",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 2
+    },
+    {
+      "year": 2024,
+      "min_calls": 72,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "KHM",
+        "THA"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2024,
+      "min_calls": 72,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "THA",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 2
+    },
+    {
+      "year": 2025,
+      "min_calls": 0,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "BRN",
+        "IDN",
+        "PHL"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 0,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "IDN",
+        "BRN"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 0,
+      "aggregation": "call_weighted_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "BRN",
+        "KHM"
+      ],
+      "overlap_with_inherited_top5": 0
+    },
+    {
+      "year": 2025,
+      "min_calls": 24,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "BRN",
+        "IDN",
+        "PHL"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 24,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "IDN",
+        "BRN"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 24,
+      "aggregation": "call_weighted_cppi",
+      "eligible_dmc_count": 14,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "BRN",
+        "KHM"
+      ],
+      "overlap_with_inherited_top5": 0
+    },
+    {
+      "year": 2025,
+      "min_calls": 48,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "IDN",
+        "PHL",
+        "KHM"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 48,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "IDN",
+        "THA"
+      ],
+      "overlap_with_inherited_top5": 2
+    },
+    {
+      "year": 2025,
+      "min_calls": 48,
+      "aggregation": "call_weighted_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "KHM",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 72,
+      "aggregation": "median_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "IDN",
+        "KHM"
+      ],
+      "overlap_with_inherited_top5": 1
+    },
+    {
+      "year": 2025,
+      "min_calls": 72,
+      "aggregation": "q25_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "IDN",
+        "THA"
+      ],
+      "overlap_with_inherited_top5": 2
+    },
+    {
+      "year": 2025,
+      "min_calls": 72,
+      "aggregation": "call_weighted_cppi",
+      "eligible_dmc_count": 13,
+      "direct_disadvantage_top5": [
+        "BGD",
+        "GEO",
+        "PHL",
+        "KHM",
+        "IDN"
+      ],
+      "overlap_with_inherited_top5": 1
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T13:31:58Z"
+}

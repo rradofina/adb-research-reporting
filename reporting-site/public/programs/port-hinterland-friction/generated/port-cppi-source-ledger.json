@@ -1,0 +1,16 @@
+{
+  "program": "port-hinterland-friction",
+  "source": "World Bank Container Port Performance Index 2020-2025 annex",
+  "source_url": "https://openknowledge.worldbank.org/bitstreams/9cf20807-7dcd-4de7-9de2-fdb2d0589a73/download",
+  "landing_page": "https://www.worldbank.org/en/topic/transport/publication/cppi",
+  "methodology_url": "https://thedocs.worldbank.org/en/doc/aac122f6df85534428d66a7b9af4b7f6-0400012026/original/CPPI-Methodology-Note.pdf",
+  "retrieved_on": "2026-07-18",
+  "fetch_mode": "cache",
+  "cache_path": ".cache\\cppi-construct-validation\\world-bank-cppi-2020-2025-annex.xlsx",
+  "bytes": 136871,
+  "sha256": "ea648e81b5d406c0a43ce79c0b306551dc1067c25d78717463e761545b328385",
+  "sheet": "Annex",
+  "interpretation": "Higher CPPI is better observed container-port performance relative to the 2024 reference distribution. The index measures vessel time in port, not inland travel.",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T13:31:58Z"
+}

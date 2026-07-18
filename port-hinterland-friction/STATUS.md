@@ -3,10 +3,11 @@
 `attestation_chain: ai-first` · Last updated: 2026-07-18
 
 - **Active flagship:** Yes.
-- **Stage:** L4 construct validation and claim reshaping.
-- **Inherited result:** The trade-volume/LPI composite selects {CHN, IND, IDN, THA, VNM}, but that is not yet a direct measure of port or hinterland friction.
-- **Claim problem:** The imports-cap perturbation never binds in the observed range, so part of the inherited sensitivity claim is mechanically empty.
-- **Highest-leverage move:** Test a named public port-performance, route-time, or freight-friction object against the inherited cluster before building the publication dossier.
-- **First visual:** A direct-friction-versus-trade-volume plot with source coverage and disagreement made visible.
-- **Stop condition:** If two qualified direct-source passes leave claim-enabling coverage at zero, publish the observability gap or defer; do not scan-grind.
+- **Stage:** L4 construct validation; source-unlock wall reached.
+- **Finding:** In the 2025 CPPI main test, only Indonesia remains in the inherited {CHN, IND, IDN, THA, VNM} top five; across 20 specifications the overlap ranges from zero to two.
+- **Claim decision:** Retire the imports × survey-LPI friction ranking. The call-weighted association with observed port-time disadvantage is -0.57 (95% bootstrap interval -0.83 to -0.11).
+- **Reader progress:** Seven evidence figures and a new hero now show the rank inversion, port heterogeneity, sensitivity, and source boundary.
+- **Current wall:** World Bank LPI 2.0 names observed port-exit-to-LLDC corridor time, but the interactive data endpoint is behind a Cloudflare challenge in this environment.
+- **Next move:** Owner supplies the LPI 2.0 download or clears the interactive challenge; then join the 2023–2024 corridor indicators before publication packaging.
+- **Stop condition:** Do not substitute another national proxy or rescan portals; either use the named LPI 2.0 object or publish the CPPI construct failure with the hinterland layer explicitly unresolved.
 - **Human-final wall:** Owner-led source and domain review under Constitution §18.5.

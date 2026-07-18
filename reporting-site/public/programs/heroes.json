@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T11:32:38.269Z",
+  "generated_at": "2026-07-18T12:35:59.540Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -99,20 +99,20 @@
         "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
         "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
         "json": "generated/charts/disaster-recovery-lag-thumbnail.json",
-        "title": "Recorded disasters per year, 2000–2025",
-        "caption": "China 25.6 EM-DAT-recorded disasters per year, 1.77 B person-event exposures (may double-count people across events). India, Philippines, Bangladesh follow.",
-        "headline_number": "China 25.6 recorded disasters per year",
-        "visual_form": "horizontal ranked bar (events per year, person-events as secondary)",
-        "source": "EM-DAT (CRED) 2000–2025",
+        "title": "A disaster-recovery ranking fails two validity gates",
+        "caption": "3 of five burden metrics replace the claimed CHN–IND top two; 0 of seven Haiyan centroids return one recovery month across all variants.",
+        "headline_number": "3/5 burden metrics fail; 0/7 recovery centroids stable",
+        "visual_form": "two-stage construct-validation gate",
+        "source": "EM-DAT; GDIS; World Bank Light Every Night",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T18:43:12+00:00",
+        "generated_at": "2026-07-18T12:35:58+00:00",
         "dimensions": {
           "width": 1600,
           "height": 900
         },
         "sha256": {
-          "png": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708",
-          "svg": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+          "png": "d095054864141bfbe6993556fb06afe06ea8a1cfb8e872e1f8c9881791df7d2c",
+          "svg": "c1dcb95af493ae8966670707917b79408beb77808086654a638809d24a5c2e90"
         }
       }
     },

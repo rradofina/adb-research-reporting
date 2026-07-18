@@ -250,22 +250,22 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Disaster",
     finish: "publication-ready",
     question:
-      "Which economies remain at the top of disaster burden across alternative burden metrics?",
+      "Can public disaster records and daily nighttime radiance support a stable recovery-month measure?",
     output:
-      "China and India remain the top two across events per year, total affected, and damage-adjusted views.",
-    chartTitle: "Disaster events per year",
-    sourceNote: "EM-DAT country profiles, 2000-2025 burden layer.",
+      "No. Three of five burden metrics replace the inherited top two, while zero of seven Haiyan centroids retain one recovery month across 54 variants.",
+    chartTitle: "Two-stage recovery construct validation",
+    sourceNote: "EM-DAT, GDIS, World Bank Light Every Night VIIRS-DNB, NOAA, and Natural Earth.",
     caveat:
-      "This is disaster burden, not recovery lag; recovery curves require event-timestamped indicator data.",
+      "GDIS centroids are administrative approximations; nighttime radiance is not welfare, reconstruction, or a causal recovery outcome.",
     nextStep:
-      "Estimate post-event recovery curves using night lights, economic indicators, or service restoration data.",
+      "Join verified event footprints, longer baselines, comparison areas, and independent service or household recovery outcomes.",
     granularity: {
-      currentUnit: "Country-level EM-DAT burden, 2000-2025",
+      currentUnit: "Country-level burden plus seven GDIS administrative centroids for one Haiyan pilot",
       targetUnit: "Event footprint, affected municipality, nightlight grid, service-restoration area",
       gap:
-        "Current result is disaster burden, not recovery lag; event geographies and recovery trajectories are missing.",
+        "Administrative centroids do not represent impact footprints, and the daily series has thin valid baselines.",
       upgradeData:
-        "GDIS/geocoded EM-DAT, VIIRS/Black Marble nightlights, admin boundaries, and service/economic time series.",
+        "Verified hazard or damage footprints, longer VIIRS baselines, settlement masks, electricity or facility restoration, and household outcomes.",
     },
   },
   "flood-market-access": {

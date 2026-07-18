@@ -1,59 +1,50 @@
-# Literature review — Disaster Recovery Lag
+# Related literature and contribution
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first`
 
-## 1. Search record
+## Disaster records are valuable but consequence measures differ
 
-Queries (2026-04-26):
-1. `EM-DAT methodology threshold under-reporting`
-2. `Sendai Framework disaster-loss accounting per-capita`
-3. `disaster recovery lag indicator GDP slow-onset`
-4. `UCLouvain CRED EM-DAT validation`
+EM-DAT provides a widely used public disaster table with event timing,
+classification, location strings, and reported human and economic impacts
+[@cred2024emdat]. Those fields do not form a single interchangeable severity
+scale. Counts describe frequency; affected totals mix exposure and reporting;
+deaths emphasize mortality; reported damage depends on asset values and
+assessment capacity. The Sendai monitoring framework accordingly distinguishes
+multiple disaster-loss indicators rather than treating them as one recovery
+measure [@undrr2015sendai].
 
-Tier-A: *Nature Climate Change*, *Environmental Research Letters*,
-*Climatic Change*, *Disasters*. Tier-B: UNDRR, GFDRR, CRED.
-Tier-C: HDX disaster-event databases.
+## Geocoding improves the unit but not the footprint
 
-## 2. Verified entries
+GDIS connects EM-DAT disaster numbers to subnational administrative polygons
+and centroids for 39,953 locations and 9,924 disasters from 1960–2018
+[@rosvold2021gdis]. This enables spatial joins that country profiles cannot.
+The authors explicitly caution that administrative polygons are crude
+approximations of actual impact zones. The present audit takes that warning as
+a testable design constraint rather than a footnote.
 
-- **`cred2024emdat`** — CRED EM-DAT International Disaster Database
-  (vintage 2025). **Primary data source.**
-- **`undrr2015sendai`** — Sendai Framework for Disaster Risk
-  Reduction 2015–2030. **Per-capita accounting standard.**
+## Night lights can reveal outages, but validity is event-specific
 
-## 3. Synthesis
+Daily VIIRS-DNB products provide much higher temporal resolution than older
+annual lights composites. The World Bank's Light Every Night archive republishes
+analysis-ready daily and monthly nighttime-light products through public cloud
+storage [@worldbank2026light]. Black Marble processing adds atmospheric,
+terrain, lunar, cloud, and quality information needed for daily comparisons
+[@roman2018blackmarble].
 
-Two established facts:
+Prior World Bank analysis tested VIIRS night lights against earthquakes,
+floods, and typhoons in five Southeast Asian countries and found that short-run
+signal quality varies by event and specification [@skoufias2021viirs]. That is
+the closest methodological precedent for this package: nighttime radiance is a
+candidate measurement channel whose performance must be validated, not an
+automatic welfare or recovery outcome.
 
-1. **EM-DAT is the canonical multi-country disaster-loss database
-   for cross-DMC comparison** [@cred2024emdat] but uses thresholds
-   (≥10 deaths or ≥100 affected or declared emergency) that
-   under-count small recurrent events.
-2. **Sendai Framework** [@undrr2015sendai] is the policy framework
-   for cross-country disaster-loss accounting with per-capita
-   normalization as the standard.
+## Contribution
 
-## 4. Gap
-
-EM-DAT publishes per-DMC totals; the metric-robust top-2 finding
-(CHN and IND hold the top regardless of events / affected /
-damage-USD-adjusted) has not been published as a sensitivity-
-gate result for ADB DMCs.
-
-## 5. Risk of redundancy
-
-CRED publishes annual disaster summaries that include CHN and IND
-prominently. The marginal contribution is the metric-robust
-top-2 set claim, not the discovery that big countries have many
-disasters.
-
-## 6. First testable claim
-
-> Across the 38 ADB DMCs in EM-DAT 2000–2025, China and India
-> persistently rank in the top two of the disaster-burden ranking,
-> regardless of whether the metric is events-per-year,
-> total-affected, or total-damage-USD-adjusted.
-
-## 7. §18 attestation
-
-`ai-first`. 2026-04-27.
+This study joins three literatures that are often kept separate: disaster
+burden accounting, event geocoding, and high-frequency nighttime lights. Its
+contribution is a two-stage falsification design. It first shows that an
+aggregate burden headline fails when the outcome definition changes. It then
+tests a direct recovery-month construction with a frozen daily-orbit design,
+explicit missingness, ±50% sensitivity, and a geometry audit. The negative
+validation result identifies the next evidence requirement: event footprints,
+longer baselines, and independent recovery outcomes.

@@ -74,9 +74,10 @@ end-to-end.
 - **migration-displacement-signals** — 44 ADB DMCs; top-5 set {IND,
   CHN, BGD, AFG, PHL} stable across emigrant-stock and net-migrant
   definitions. Article: `articles/emigrant-stock-corridor-concentration.md`.
-- **disaster-recovery-lag** — 38 ADB DMCs; metric-robust top-2 = {CHN,
-  IND} stable across events/affected/damage. Article:
-  `articles/disaster-burden-cluster.md`.
+- **disaster-recovery-lag** — the inherited CHN–IND burden headline is
+  retired: three of five metrics replace at least one member. A 108-orbit
+  Typhoon Haiyan pilot yields zero of seven GDIS centroids with one recovery
+  month across 54 variants. Article: `articles/disaster-burden-cluster.md`.
 - **grid-reliability-heat** — 40 ADB DMCs; top-5 single-fuel set
   {BTN, BRN, MNG, NPL, TJK} stable. Article:
   `articles/single-fuel-grid-cluster.md`.

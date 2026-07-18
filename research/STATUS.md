@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `disaster-recovery-lag` — rotated in 2026-07-18 after climate-health closed its eight-figure construct-validation story. The highest-leverage move is to reshape the recovery-lag claim because the current burden metrics disagree and no recovery-time outcome has yet been computed. |
-| Per-program board | `disaster-recovery-lag/STATUS.md` |
+| Active flagship | `grid-reliability-heat` — rotated in 2026-07-18 after disaster recovery closed its eight-figure construct-validation story. The highest-leverage move is to reshape the heat-reliability claim because the committed data measure annual generation concentration and heterogeneous reliability proxies, not a joint heat-outage outcome. |
+| Per-program board | `grid-reliability-heat/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `climate-health-workdays` — eight-figure PP dossier closed 2026-07-18; the proxy shares at most one top-three economy with direct heat-work-loss data in all 21 aligned tests. |
+| Previous flagship | `disaster-recovery-lag` — eight-figure PP dossier closed 2026-07-18; three of five burden metrics change the inherited top two and zero of seven Haiyan centroids retain one recovery month across 54 variants. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -55,12 +55,14 @@ overrides priority by editing this list.
    tests, the old PM2.5/employment proxy shares at most one top-three economy
    with direct Lancet heat-work-loss data. Reopen only for an observed labor
    outcome or claim-changing validation source.
-6. **`disaster-recovery-lag`** — **active flagship.** Metric-falsification shows the
-   original {CHN, IND} top-two is not robust: it holds for affected and
-   damage, but changes under events/year, deaths, and events per million.
-   It still lacks an actual recovery-lag metric.
-7. **`grid-reliability-heat`** — top-5 single-fuel set {BTN, BRN, MNG,
-   NPL, TJK} stable.
+6. **`disaster-recovery-lag`** — *current issue closed.* Three of five burden
+   metrics change the inherited top two, and a 108-orbit Haiyan pilot yields
+   zero stable recovery months across seven centroids and 54 variants. Reopen
+   only for verified footprints, longer baselines, or independent outcomes.
+7. **`grid-reliability-heat`** — **active flagship.** The top-five annual fuel-
+   concentration set survives a capacity-to-generation recompute, while the
+   available public reliability proxies differ in year and method. It still
+   lacks an aligned heat–outage outcome.
 8. **`port-hinterland-friction`** — top-5 trade-volume cluster {CHN,
    IND, IDN, THA, VNM} stable.
 9. **`social-protection-shock-coverage`** — top-5 {BGD, LAO, MMR, PAK,

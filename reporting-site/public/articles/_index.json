@@ -38,6 +38,38 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "disaster-burden-cluster",
+    "title": "A disaster-recovery ranking fails two validity gates",
+    "subtitle": "Country burden changes with the metric, while a 108-orbit Haiyan pilot yields no centroid with one recovery month across 54 variants.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "disaster-recovery-lag",
+    "maturity": "PP",
+    "topics": [
+      "disaster-recovery",
+      "nighttime-lights",
+      "measurement-validity",
+      "GDIS"
+    ],
+    "geographies": [
+      "PHL",
+      "Asia-Pacific"
+    ],
+    "abstract": "This paper tests whether public disaster records and daily nighttime radiance support a defensible recovery-month measure. The inherited China–India disaster-burden top two fails under three of five metrics. A direct Typhoon Haiyan pilot then extracts 108 fixed VIIRS-DNB orbits for seven GDIS administrative centroids, evaluates 54 recovery specifications per centroid, and finds no centroid with one stable recovery month. Only one centroid has four valid pre-event baseline months. A 2,881-centroid geometry screen also finds three gross country mismatches. The public archive is accessible; the proposed recovery construct is not yet validated.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-18",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "disaster-burden-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "emigrant-stock-corridor-concentration",
     "title": "The top five migrant origins have zero overlap after population normalization",
     "subtitle": "Absolute emigrant stock measures diaspora scale; dividing the same stock by resident population moves Samoa and Tonga to the top and exposes Afghanistan as a forced-displacement exception.",
@@ -293,37 +325,6 @@
     "updated_at": "",
     "doi": "",
     "file": "coastal-informal-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "disaster-burden-cluster",
-    "title": "Two DMCs hold the top of every disaster-burden ranking — China and India",
-    "subtitle": "Across events-per-year, total-affected, and damage-USD-adjusted, the top-2 set is stable. The top-5 is metric-sensitive.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "disaster-recovery-lag",
-    "maturity": "PP",
-    "topics": [
-      "disaster-burden",
-      "EM-DAT",
-      "structural-exposure"
-    ],
-    "geographies": [
-      "CHN",
-      "IND"
-    ],
-    "abstract": "EM-DAT 2000-2025 records 1,767 disaster events across 38 of the 50 ADB regional DMCs. Across events-per-year, total-affected, and total-damage-USD-adjusted, two economies — China and India — persistently hold the top two positions. The top-5 set is metric- sensitive and cannot be claimed; the headline is the metric-robust top-2. The article reports both absolute and per-capita figures. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "disaster-burden-cluster.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
@@ -770,6 +771,28 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "disaster-recovery-lag",
+    "title": "When a disaster-recovery ranking fails its measurement test",
+    "subtitle": "",
+    "kind": "policy-brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "disaster-recovery-lag",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "migration-displacement-signals-brief",
     "title": "The leading migrant origins change when population enters the denominator",
     "subtitle": "A one-page brief on why absolute diaspora scale, population-normalized stock, and forced displacement should be read as separate evidence objects.",
@@ -943,6 +966,28 @@
     "file": "climate-health-workdays-blog.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "disaster-recovery-lag",
+    "title": "The archive worked. The recovery measure did not.",
+    "subtitle": "",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "disaster-recovery-lag",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
     "review_external_chain": "",
     "review_internal_chain": ""
   },
@@ -1122,6 +1167,28 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "disaster-recovery-lag",
+    "title": "Disaster recovery construct validation — social copy",
+    "subtitle": "",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "disaster-recovery-lag",
+    "maturity": "",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "migration-displacement-signals-social",
     "title": "Migration denominator — social card",
     "subtitle": "A concise summary of the zero-overlap finding.",
@@ -1288,6 +1355,36 @@
     "file": "climate-health-workdays-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "disaster-recovery-lag-deck",
+    "title": "\"A disaster-recovery ranking fails two validity gates\"",
+    "subtitle": "\"Metric falsification and a 108-orbit Typhoon Haiyan pilot — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "disaster-recovery-lag",
+    "maturity": "PP",
+    "topics": [
+      "disaster-recovery",
+      "nighttime-lights",
+      "measurement-validity",
+      "GDIS"
+    ],
+    "geographies": [
+      "PHL",
+      "Asia-Pacific"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "disaster-recovery-lag-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE",
     "review_external_chain": "",
     "review_internal_chain": ""
   },

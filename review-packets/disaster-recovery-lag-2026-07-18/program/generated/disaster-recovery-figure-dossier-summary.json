@@ -1,0 +1,26 @@
+{
+  "program": "disaster-recovery-lag",
+  "logical_figures": 8,
+  "finding": "The original burden ranking fails its metric kill rule, while the GDIS x Light Every Night Haiyan pilot yields no centroid with one recovery month across 54 variants.",
+  "key_counts": {
+    "burden_metrics_firing_kill_rule": 3,
+    "burden_metrics_tested": 5,
+    "scheduled_orbits": 108,
+    "affected_centroids": 7,
+    "centroids_with_four_valid_baseline_months": 1,
+    "centroids_stable_all_variants": 0,
+    "gdis_viirs_rows_audited": 2881,
+    "gdis_gross_geometry_mismatches": 3
+  },
+  "figures": [
+    "disaster-two-stage-validity-gate",
+    "disaster-metric-rank-disagreement",
+    "disaster-per-capita-inversion",
+    "disaster-source-ladder",
+    "disaster-haiyan-observation-coverage",
+    "disaster-haiyan-main-series",
+    "disaster-haiyan-sensitivity",
+    "disaster-gdis-geometry-audit"
+  ],
+  "attestation_chain": "ai-first"
+}

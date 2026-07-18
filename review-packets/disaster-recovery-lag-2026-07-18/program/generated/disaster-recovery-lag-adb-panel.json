@@ -1,0 +1,925 @@
+{
+  "program": "disaster-recovery-lag",
+  "claim_scope": "Hypothesis-stage structural-burden layer for 2000–2025. Per-DMC counts and impacts from EM-DAT (CRED) via the HDX mirror. NOT yet a recovery-lag metric — that requires indicator-recovery-curve analysis around event timestamps.",
+  "framing_rule": "Burden frequency, not country fragility ranking.",
+  "sources": {
+    "emdat": {
+      "name": "EM-DAT — The International Disaster Database (CRED, UCLouvain)",
+      "url": "https://data.humdata.org/dataset/emdat-country-profiles",
+      "license": "EM-DAT terms; non-commercial open access",
+      "vintage": "2026-04-24",
+      "retrieved_at": "2026-04-25",
+      "rows_total": 6499,
+      "rows_in_filter": 1767
+    }
+  },
+  "rows": [
+    {
+      "iso3": "CHN",
+      "country": "China",
+      "total_events_2000_2025": 665,
+      "total_affected": 1771174061,
+      "total_deaths": 115612,
+      "total_damage_usd_adj": 715643381558.0,
+      "events_per_year": 25.58,
+      "type_distribution": {
+        "Drought": 27,
+        "Earthquake": 114,
+        "Flood": 225,
+        "Mass movement (wet)": 62,
+        "Storm": 218,
+        "Infestation": 1,
+        "Extreme temperature": 9,
+        "Wildfire": 5,
+        "Mass movement (dry)": 3,
+        "Glacial lake outburst flood": 1
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 87564,
+        "affected": 47369797
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "total_events_2000_2025": 408,
+      "total_affected": 46989450,
+      "total_deaths": 189700,
+      "total_damage_usd_adj": 33904319326.0,
+      "events_per_year": 15.69,
+      "type_distribution": {
+        "Wildfire": 6,
+        "Earthquake": 82,
+        "Flood": 215,
+        "Mass movement (wet)": 60,
+        "Volcanic activity": 33,
+        "Drought": 3,
+        "Storm": 9
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 165708,
+        "affected": 532898
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "total_events_2000_2025": 404,
+      "total_affected": 1146651046,
+      "total_deaths": 90743,
+      "total_damage_usd_adj": 162630948683.0,
+      "events_per_year": 15.54,
+      "type_distribution": {
+        "Drought": 5,
+        "Flood": 205,
+        "Mass movement (wet)": 33,
+        "Extreme temperature": 35,
+        "Storm": 109,
+        "Earthquake": 11,
+        "Mass movement (dry)": 1,
+        "Wildfire": 2,
+        "Glacial lake outburst flood": 3
+      },
+      "biggest_event": {
+        "year": 2001,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 20005,
+        "affected": 6321812
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "total_events_2000_2025": 386,
+      "total_affected": 247376088,
+      "total_deaths": 25811,
+      "total_damage_usd_adj": 33142454780.0,
+      "events_per_year": 14.85,
+      "type_distribution": {
+        "Mass movement (dry)": 1,
+        "Volcanic activity": 18,
+        "Flood": 109,
+        "Mass movement (wet)": 17,
+        "Storm": 209,
+        "Drought": 4,
+        "Earthquake": 27,
+        "Extreme temperature": 1
+      },
+      "biggest_event": {
+        "year": 2013,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 7415,
+        "affected": 17944571
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "VNM",
+      "country": "Viet Nam",
+      "total_events_2000_2025": 200,
+      "total_affected": 49724762,
+      "total_deaths": 5867,
+      "total_damage_usd_adj": 30490164301.0,
+      "events_per_year": 7.69,
+      "type_distribution": {
+        "Flood": 86,
+        "Mass movement (wet)": 5,
+        "Storm": 102,
+        "Drought": 5,
+        "Wildfire": 1,
+        "Extreme temperature": 1
+      },
+      "biggest_event": {
+        "year": 2000,
+        "type": "Flood",
+        "subtype": "Riverine flood",
+        "deaths": 496,
+        "affected": 5025007
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "total_events_2000_2025": 159,
+      "total_affected": 102890514,
+      "total_deaths": 89835,
+      "total_damage_usd_adj": 55559165731.0,
+      "events_per_year": 6.12,
+      "type_distribution": {
+        "Extreme temperature": 13,
+        "Earthquake": 18,
+        "Flood": 89,
+        "Mass movement (wet)": 15,
+        "Storm": 20,
+        "Mass movement (dry)": 1,
+        "Drought": 1,
+        "Infestation": 1,
+        "Wildfire": 1
+      },
+      "biggest_event": {
+        "year": 2005,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 73338,
+        "affected": 5128309
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "total_events_2000_2025": 158,
+      "total_affected": 37013554,
+      "total_deaths": 15121,
+      "total_damage_usd_adj": 466835903.0,
+      "events_per_year": 6.08,
+      "type_distribution": {
+        "Drought": 6,
+        "Earthquake": 22,
+        "Extreme temperature": 7,
+        "Flood": 92,
+        "Mass movement (wet)": 23,
+        "Storm": 8
+      },
+      "biggest_event": {
+        "year": 2025,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 2226,
+        "affected": 2716872
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "total_events_2000_2025": 146,
+      "total_affected": 181508696,
+      "total_deaths": 11714,
+      "total_damage_usd_adj": 15133477144.0,
+      "events_per_year": 5.62,
+      "type_distribution": {
+        "Earthquake": 6,
+        "Flood": 46,
+        "Extreme temperature": 15,
+        "Storm": 72,
+        "Mass movement (wet)": 6,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2007,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 4275,
+        "affected": 8978766
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "THA",
+      "country": "Thailand",
+      "total_events_2000_2025": 131,
+      "total_affected": 87693689,
+      "total_deaths": 11543,
+      "total_damage_usd_adj": 69165431042.0,
+      "events_per_year": 5.24,
+      "type_distribution": {
+        "Flood": 76,
+        "Storm": 37,
+        "Drought": 8,
+        "Mass movement (wet)": 2,
+        "Earthquake": 4,
+        "Wildfire": 1,
+        "Extreme temperature": 3
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 8345,
+        "affected": 67007
+      },
+      "years_covered": 25
+    },
+    {
+      "iso3": "MYS",
+      "country": "Malaysia",
+      "total_events_2000_2025": 81,
+      "total_affected": 3495667,
+      "total_deaths": 438,
+      "total_damage_usd_adj": 4597738246.0,
+      "events_per_year": 3.52,
+      "type_distribution": {
+        "Flood": 69,
+        "Storm": 5,
+        "Mass movement (wet)": 3,
+        "Earthquake": 2,
+        "Wildfire": 1,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 80,
+        "affected": 5063
+      },
+      "years_covered": 23
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "total_events_2000_2025": 80,
+      "total_affected": 15158926,
+      "total_deaths": 14396,
+      "total_damage_usd_adj": 8565566146.0,
+      "events_per_year": 3.08,
+      "type_distribution": {
+        "Flood": 38,
+        "Mass movement (wet)": 17,
+        "Extreme temperature": 7,
+        "Drought": 3,
+        "Earthquake": 7,
+        "Storm": 5,
+        "Wildfire": 1,
+        "Glacial lake outburst flood": 2
+      },
+      "biggest_event": {
+        "year": 2015,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 8969,
+        "affected": 5642150
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "total_events_2000_2025": 80,
+      "total_affected": 20787609,
+      "total_deaths": 37995,
+      "total_damage_usd_adj": 5747500945.0,
+      "events_per_year": 3.08,
+      "type_distribution": {
+        "Flood": 53,
+        "Storm": 17,
+        "Drought": 5,
+        "Earthquake": 1,
+        "Mass movement (wet)": 4
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 35399,
+        "affected": 1019306
+      },
+      "years_covered": 26
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "total_events_2000_2025": 62,
+      "total_affected": 10444213,
+      "total_deaths": 144754,
+      "total_damage_usd_adj": 9457641871.0,
+      "events_per_year": 2.7,
+      "type_distribution": {
+        "Flood": 30,
+        "Earthquake": 5,
+        "Storm": 13,
+        "Mass movement (wet)": 11,
+        "Extreme temperature": 2,
+        "Mass movement (dry)": 1
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 138366,
+        "affected": 2420000
+      },
+      "years_covered": 23
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "total_events_2000_2025": 54,
+      "total_affected": 3810654,
+      "total_deaths": 1333,
+      "total_damage_usd_adj": 252501461.0,
+      "events_per_year": 2.35,
+      "type_distribution": {
+        "Earthquake": 12,
+        "Volcanic activity": 8,
+        "Mass movement (wet)": 13,
+        "Flood": 15,
+        "Storm": 4,
+        "Mass movement (dry)": 1,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2024,
+        "type": "Mass movement (wet)",
+        "subtype": "Landslide (wet)",
+        "deaths": 693,
+        "affected": 7849
+      },
+      "years_covered": 23
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "total_events_2000_2025": 58,
+      "total_affected": 6419959,
+      "total_deaths": 350,
+      "total_damage_usd_adj": 1890418432.0,
+      "events_per_year": 2.32,
+      "type_distribution": {
+        "Drought": 2,
+        "Earthquake": 14,
+        "Flood": 28,
+        "Mass movement (wet)": 10,
+        "Storm": 1,
+        "Extreme temperature": 3
+      },
+      "biggest_event": {
+        "year": 2010,
+        "type": "Flood",
+        "subtype": "Riverine flood",
+        "deaths": 75,
+        "affected": 8622
+      },
+      "years_covered": 25
+    },
+    {
+      "iso3": "MNG",
+      "country": "Mongolia",
+      "total_events_2000_2025": 30,
+      "total_affected": 5606015,
+      "total_deaths": 205,
+      "total_damage_usd_adj": 239045027.0,
+      "events_per_year": 2.0,
+      "type_distribution": {
+        "Drought": 1,
+        "Storm": 10,
+        "Flood": 11,
+        "Extreme temperature": 7,
+        "Mass movement (wet)": 1
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Storm",
+        "subtype": "Blizzard/Winter storm",
+        "deaths": 52,
+        "affected": 0
+      },
+      "years_covered": 15
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "total_events_2000_2025": 9,
+      "total_affected": 132293,
+      "total_deaths": 50,
+      "total_damage_usd_adj": 294168944.0,
+      "events_per_year": 1.8,
+      "type_distribution": {
+        "Drought": 1,
+        "Earthquake": 3,
+        "Mass movement (wet)": 1,
+        "Flood": 3,
+        "Extreme temperature": 1
+      },
+      "biggest_event": {
+        "year": 2000,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 31,
+        "affected": 3294
+      },
+      "years_covered": 5
+    },
+    {
+      "iso3": "FJI",
+      "country": "Fiji",
+      "total_events_2000_2025": 28,
+      "total_affected": 1505376,
+      "total_deaths": 154,
+      "total_damage_usd_adj": 1346365249.0,
+      "events_per_year": 1.75,
+      "type_distribution": {
+        "Storm": 20,
+        "Flood": 7,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2016,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 47,
+        "affected": 545558
+      },
+      "years_covered": 16
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao PDR",
+      "total_events_2000_2025": 32,
+      "total_affected": 4501961,
+      "total_deaths": 322,
+      "total_damage_usd_adj": 920693743.0,
+      "events_per_year": 1.68,
+      "type_distribution": {
+        "Flood": 19,
+        "Storm": 10,
+        "Drought": 1,
+        "Earthquake": 1,
+        "Extreme temperature": 1
+      },
+      "biggest_event": {
+        "year": 2018,
+        "type": "Flood",
+        "subtype": "Flood (General)",
+        "deaths": 136,
+        "affected": 13100
+      },
+      "years_covered": 19
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "total_events_2000_2025": 26,
+      "total_affected": 1153288,
+      "total_deaths": 44,
+      "total_damage_usd_adj": 697425172.0,
+      "events_per_year": 1.62,
+      "type_distribution": {
+        "Volcanic activity": 9,
+        "Storm": 12,
+        "Earthquake": 3,
+        "Flood": 2
+      },
+      "biggest_event": {
+        "year": 2024,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 14,
+        "affected": 80265
+      },
+      "years_covered": 16
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "total_events_2000_2025": 34,
+      "total_affected": 16105372,
+      "total_deaths": 1076,
+      "total_damage_usd_adj": 2010385788.0,
+      "events_per_year": 1.48,
+      "type_distribution": {
+        "Flood": 21,
+        "Drought": 4,
+        "Storm": 8,
+        "Extreme temperature": 1
+      },
+      "biggest_event": {
+        "year": 2000,
+        "type": "Flood",
+        "subtype": "Riverine flood",
+        "deaths": 347,
+        "affected": 3448053
+      },
+      "years_covered": 23
+    },
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyzstan",
+      "total_events_2000_2025": 26,
+      "total_affected": 2192014,
+      "total_deaths": 240,
+      "total_damage_usd_adj": 23072964.0,
+      "events_per_year": 1.44,
+      "type_distribution": {
+        "Extreme temperature": 3,
+        "Mass movement (wet)": 8,
+        "Flood": 6,
+        "Earthquake": 6,
+        "Storm": 2,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 74,
+        "affected": 4197
+      },
+      "years_covered": 18
+    },
+    {
+      "iso3": "SLB",
+      "country": "Solomon Islands",
+      "total_events_2000_2025": 20,
+      "total_affected": 326834,
+      "total_deaths": 189,
+      "total_damage_usd_adj": 39834550.0,
+      "events_per_year": 1.43,
+      "type_distribution": {
+        "Storm": 10,
+        "Earthquake": 4,
+        "Flood": 5,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2007,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 52,
+        "affected": 2384
+      },
+      "years_covered": 14
+    },
+    {
+      "iso3": "BTN",
+      "country": "Bhutan",
+      "total_events_2000_2025": 7,
+      "total_affected": 21530,
+      "total_deaths": 234,
+      "total_damage_usd_adj": 0.0,
+      "events_per_year": 1.4,
+      "type_distribution": {
+        "Flood": 3,
+        "Earthquake": 3,
+        "Storm": 1
+      },
+      "biggest_event": {
+        "year": 2000,
+        "type": "Flood",
+        "subtype": "Riverine flood",
+        "deaths": 200,
+        "affected": 1000
+      },
+      "years_covered": 5
+    },
+    {
+      "iso3": "GEO",
+      "country": "Georgia",
+      "total_events_2000_2025": 25,
+      "total_affected": 1300622,
+      "total_deaths": 80,
+      "total_damage_usd_adj": 1137156292.0,
+      "events_per_year": 1.32,
+      "type_distribution": {
+        "Drought": 1,
+        "Storm": 4,
+        "Earthquake": 2,
+        "Flood": 17,
+        "Mass movement (wet)": 1
+      },
+      "biggest_event": {
+        "year": 2015,
+        "type": "Flood",
+        "subtype": "Flash flood",
+        "deaths": 40,
+        "affected": 10320
+      },
+      "years_covered": 19
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "total_events_2000_2025": 10,
+      "total_affected": 288039,
+      "total_deaths": 49,
+      "total_damage_usd_adj": 29534702.0,
+      "events_per_year": 1.25,
+      "type_distribution": {
+        "Flood": 5,
+        "Storm": 2,
+        "Drought": 2,
+        "Earthquake": 1
+      },
+      "biggest_event": {
+        "year": 2021,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 41,
+        "affected": 143670
+      },
+      "years_covered": 8
+    },
+    {
+      "iso3": "KAZ",
+      "country": "Kazakhstan",
+      "total_events_2000_2025": 21,
+      "total_affected": 387552,
+      "total_deaths": 124,
+      "total_damage_usd_adj": 354634967.0,
+      "events_per_year": 1.24,
+      "type_distribution": {
+        "Flood": 14,
+        "Extreme temperature": 2,
+        "Earthquake": 2,
+        "Mass movement (wet)": 1,
+        "Drought": 1,
+        "Wildfire": 1
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Mass movement (wet)",
+        "subtype": "Mudslide",
+        "deaths": 48,
+        "affected": 0
+      },
+      "years_covered": 17
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "total_events_2000_2025": 12,
+      "total_affected": 225189,
+      "total_deaths": 17,
+      "total_damage_usd_adj": 411050632.0,
+      "events_per_year": 1.2,
+      "type_distribution": {
+        "Storm": 9,
+        "Earthquake": 1,
+        "Drought": 1,
+        "Volcanic activity": 1
+      },
+      "biggest_event": {
+        "year": 2009,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 9,
+        "affected": 507
+      },
+      "years_covered": 10
+    },
+    {
+      "iso3": "MHL",
+      "country": "Marshall Islands",
+      "total_events_2000_2025": 8,
+      "total_affected": 66280,
+      "total_deaths": 0,
+      "total_damage_usd_adj": 6485086.0,
+      "events_per_year": 1.14,
+      "type_distribution": {
+        "Flood": 2,
+        "Drought": 4,
+        "Storm": 2
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Flood",
+        "subtype": "Coastal flood",
+        "deaths": 0,
+        "affected": 600
+      },
+      "years_covered": 7
+    },
+    {
+      "iso3": "FSM",
+      "country": "Micronesia, Fed. Sts.",
+      "total_events_2000_2025": 9,
+      "total_affected": 267032,
+      "total_deaths": 53,
+      "total_damage_usd_adj": 15430321.0,
+      "events_per_year": 1.12,
+      "type_distribution": {
+        "Storm": 6,
+        "Flood": 1,
+        "Drought": 2
+      },
+      "biggest_event": {
+        "year": 2002,
+        "type": "Storm",
+        "subtype": "Tropical cyclone",
+        "deaths": 47,
+        "affected": 1623
+      },
+      "years_covered": 8
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "total_events_2000_2025": 11,
+      "total_affected": 436615,
+      "total_deaths": 9,
+      "total_damage_usd_adj": 315234680.0,
+      "events_per_year": 1.1,
+      "type_distribution": {
+        "Drought": 1,
+        "Flood": 2,
+        "Extreme temperature": 1,
+        "Storm": 6,
+        "Mass movement (wet)": 1
+      },
+      "biggest_event": {
+        "year": 2024,
+        "type": "Flood",
+        "subtype": "Flash flood",
+        "deaths": 4,
+        "affected": 429
+      },
+      "years_covered": 10
+    },
+    {
+      "iso3": "KIR",
+      "country": "Kiribati",
+      "total_events_2000_2025": 3,
+      "total_affected": 1805,
+      "total_deaths": 0,
+      "total_damage_usd_adj": 0.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Flood": 2,
+        "Storm": 1
+      },
+      "biggest_event": {
+        "year": 2008,
+        "type": "Flood",
+        "subtype": "Coastal flood",
+        "deaths": 0,
+        "affected": 85
+      },
+      "years_covered": 3
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "total_events_2000_2025": 4,
+      "total_affected": 31983,
+      "total_deaths": 102,
+      "total_damage_usd_adj": 780720897.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Earthquake": 1,
+        "Flood": 2,
+        "Storm": 1
+      },
+      "biggest_event": {
+        "year": 2004,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 102,
+        "affected": 27214
+      },
+      "years_covered": 4
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "total_events_2000_2025": 7,
+      "total_affected": 18287,
+      "total_deaths": 170,
+      "total_damage_usd_adj": 365739431.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Flood": 1,
+        "Storm": 4,
+        "Earthquake": 1,
+        "Drought": 1
+      },
+      "biggest_event": {
+        "year": 2009,
+        "type": "Earthquake",
+        "subtype": "Tsunami",
+        "deaths": 148,
+        "affected": 5584
+      },
+      "years_covered": 7
+    },
+    {
+      "iso3": "TKM",
+      "country": "Turkmenistan",
+      "total_events_2000_2025": 1,
+      "total_affected": 0,
+      "total_deaths": 11,
+      "total_damage_usd_adj": 0.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Earthquake": 1
+      },
+      "biggest_event": {
+        "year": 2000,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 11,
+        "affected": 0
+      },
+      "years_covered": 1
+    },
+    {
+      "iso3": "TUV",
+      "country": "Tuvalu",
+      "total_events_2000_2025": 4,
+      "total_affected": 20317,
+      "total_deaths": 0,
+      "total_damage_usd_adj": 0.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Drought": 2,
+        "Storm": 2
+      },
+      "biggest_event": {
+        "year": 2011,
+        "type": "Drought",
+        "subtype": "Drought",
+        "deaths": 0,
+        "affected": 0
+      },
+      "years_covered": 4
+    },
+    {
+      "iso3": "UZB",
+      "country": "Uzbekistan",
+      "total_events_2000_2025": 6,
+      "total_affected": 671817,
+      "total_deaths": 30,
+      "total_damage_usd_adj": 91082724.0,
+      "events_per_year": 1.0,
+      "type_distribution": {
+        "Drought": 1,
+        "Flood": 3,
+        "Earthquake": 1,
+        "Mass movement (wet)": 1
+      },
+      "biggest_event": {
+        "year": 2011,
+        "type": "Earthquake",
+        "subtype": "Ground movement",
+        "deaths": 13,
+        "affected": 86
+      },
+      "years_covered": 6
+    },
+    {
+      "iso3": "BRN",
+      "country": "Brunei Darussalam",
+      "total_events_2000_2025": 0,
+      "total_affected": 0,
+      "total_deaths": 0,
+      "total_damage_usd_adj": 0.0,
+      "events_per_year": 0.0,
+      "type_distribution": {},
+      "biggest_event": null,
+      "years_covered": 0
+    }
+  ],
+  "generated_at": "2026-06-19T18:41:11Z"
+}

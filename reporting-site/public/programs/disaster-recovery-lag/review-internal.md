@@ -1,27 +1,36 @@
-# Internal review — Disaster Recovery Lag
+# Internal methods review
 
-`attestation_chain: ai-first`. §18 AI critique-pass. 2026-04-26. **closed**.
+`attestation_chain: ai-first`
 
-## Critique-pass
+## Verdict
 
-1. **CHN + IND dominate by population, not by intensity.** Affected-
-   population scales with population baseline. Per-capita normalization
-   would shift the top-2 dramatically (Pacific small islands likely top).
-2. **The program name is "recovery lag" but the data is exposure.**
-   Recovery requires post-event indicator-recovery analysis (the named
-   question); this artifact reports burden, not recovery. Article must
-   be precise.
-3. **EM-DAT under-reports small events.** $1M damage threshold and
-   100-affected threshold mean small DMC events miss the database.
+Pass for an AI-first construct-validation publication; fail for a recovery
+ranking or causal recovery estimate.
 
-## Responses
+## Checks
 
-1. Article body adds: "the top-2 reflect absolute burden; per-capita
-   shifts the picture to Pacific small-island vulnerability (deferred
-   to §18.5 upgrade-pass)."
-2. Article body re-titles the metric "structural disaster burden,
-   2000–2025" rather than recovery lag. The recovery-lag analysis is
-   a separate pipeline step.
-3. Documented in `limitations.md`.
+- The original burden kill rule is applied rather than rewritten after seeing
+  results.
+- The direct pilot question, sample, dates, quality rules, main specification,
+  positive rule, and ±50% sensitivity are frozen and recorded.
+- Every public number is emitted by a committed script and generated artifact.
+- Missing scheduled orbits remain explicit; dates are not opportunistically
+  substituted.
+- The analysis distinguishes access, observation coverage, construct validity,
+  and welfare interpretation.
+- The three gross geometry flags are disclosed and not generalized into a
+  claim that all remaining centroids are correct.
+- Candidate recovery months are subordinated to the failed stability result.
+- Nighttime radiance is never labelled welfare, reconstruction, or causal
+  service restoration.
 
-## Closed 2026-04-26. §18 AI critique-pass.
+## Remaining weaknesses
+
+The Manila reference is not a counterfactual; baseline coverage is thin;
+centroid windows do not approximate event footprints consistently; no
+independent recovery outcome is joined; and the case does not establish
+transportability across events.
+
+## Required label
+
+`PP` / `ai-first`. Human-final review remains owner-led under §18.5.

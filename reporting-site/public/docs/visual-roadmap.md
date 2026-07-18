@@ -9,7 +9,7 @@ problem. The deterministic audit at `research/generated/figure-audit.json`
 counts logical figures after collapsing PNG/SVG duplicates. At the 2026-07-18
 snapshot, 11 programs have only a hero thumbnail, five have multiple figures,
 and two have no generated visual. PSDQ, remittance, access-services, migration,
-and climate-health now have multi-figure research stories.
+climate-health, and disaster recovery now have multi-figure research stories.
 
 The next work is therefore program-specific figure building from committed data
 objects. The table names the highest-value visual sequence; it does not authorize
@@ -22,7 +22,7 @@ new claims or imply that every planned chart is currently supportable.
 | `access-services` | 5 | Current-issue figure spine complete: hero, Philippine registry rank shifts, map-completeness scatter, eight-economy registry-readiness wall, and Cambodia source/vintage disagreement. Add another view only for a current crosswalk, travel-time, facility-capability, or utilization result. |
 | `migration-displacement-signals` | 6 | Current-issue figure spine complete: hero, absolute-to-population rank inversion, population-share profile, corridor-threshold sensitivity, forced-displacement composition, and source-observability matrix. Add another view only for a new denominator, vintage, validation source, or annual-flow object. |
 | `climate-health-workdays` | 8 | Current-issue figure spine complete: hero, proxy-versus-heat rank disagreement, 21-test sensitivity matrix, direct 2024 heat profile, rate-versus-scale scatter, worker-denominator repair, sector composition, and source coverage. Add another view only for an observed labor outcome or claim-changing validation source. |
-| `disaster-recovery-lag` | 1 | Metric-rank stability matrix; event-frequency distribution; affected/deaths/damage comparison; recovery-source coverage; population-normalized falsification. |
+| `disaster-recovery-lag` | 8 | Current-issue figure spine complete: two-stage validity gate, five-metric rank disagreement, per-capita inversion, source ladder, Haiyan observation coverage, main series, 54-variant sensitivity, and GDIS geometry audit. Add another view only for a verified footprint or independent recovery outcome. |
 | `grid-reliability-heat` | 1 | Generation concentration against outage proxies; capacity-to-generation concentration shifts; fuel-mix small multiples; proxy coverage matrix; low-generation-coverage sensitivity. |
 | `port-hinterland-friction` | 1 | LPI against observed freight proxies; baseline-to-proxy rank shifts; source-vintage matrix; coverage by transport mode; sensitivity to trade-volume weighting. |
 | `water-stress-crop-diversification` | 1 | Internal-to-available-water denominator shifts; stress against crop diversity; crop-concentration decomposition; rank sensitivity; source coverage. |

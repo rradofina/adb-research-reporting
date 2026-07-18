@@ -1,64 +1,51 @@
-# Pre-registration — Disaster Recovery Lag
+# Pre-registration and claim-reshape record
 
-`attestation_chain: ai-first`
+`attestation_chain: ai-first` · Frozen 2026-07-18 before the full daily-orbit extraction
 
-Status: **§18 AI-first frozen — 2026-04-26.**
+## Why the original claim was retired
 
-## 1. Claim sentence
+The inherited claim named China and India as a metric-stable disaster-burden
+top two. Its recorded kill rule required retraction if any alternative metric
+changed at least one member. Events per year, total deaths, and events per
+million all trigger that rule. The public article therefore does not preserve
+the old headline.
 
-> Across the 38 ADB DMCs in EM-DAT 2000–2025, two economies — China
-> and India — persistently rank in the top two of the disaster-burden
-> ranking, regardless of whether the metric is events-per-year,
-> total-affected, or total-damage-USD-adjusted.
+## Research question
 
-The headline is the **top-2 set** stability across alternative metrics.
-This is a structural-burden signal, not a country-quality ranking
-(§13.3).
+Can GDIS administrative centroids joined to public daily VIIRS-DNB radiance
+produce a stable recovery month for Typhoon Haiyan under reasonable choices of
+spatial window, reducer, recovery threshold, and persistence?
 
-## 2. Falsification condition
+## Frozen pilot
 
-Retracted if the top-2 set composition changes by ≥ 1 entry under any
-alternative metric (events, affected, damage).
+- Event: Typhoon Haiyan, GDIS disaster number `2013-0433`, 8 November 2013.
+- Units: seven GDIS administrative centroids—Aklan, Capiz, Cebu, Iloilo,
+  Leyte, Palawan, and Samar.
+- Window: May 2013–October 2014; six scheduled dates per month, 108 in all.
+- Quality: valid radiance, confidently clear, nighttime, no stray light,
+  lightning, or no-data flag.
+- Main specification: 50 km square half-width, mean radiance, same-orbit Manila
+  reference, 90% of the pre-event baseline, sustained for two months.
+- Valid month: at least two paired nights and 25 valid pixels per window.
 
-## 3. Population in scope
+## Positive rule
 
-50 ADB regional DMCs. EM-DAT 2000–2025 has at least one event for 38;
-12 small/quiet DMCs have zero recorded events.
+The construct validates only if at least three centroids have four or more
+valid baseline months, an identified main-specification recovery month, and
+the same month under every radius, reducer, threshold, and persistence variant.
 
-## 4. Time window
+## Required sensitivity
 
-EM-DAT vintage 2026-04-24, 2000–2025.
+Radius 25/50/75 km and persistence one/two/three months implement the required
+±50% tests. Reducer varies between mean and p75; threshold varies among
+80/90/100%. The cross-product yields 54 variants per centroid.
 
-## 5. Metric
+## Decision labels
 
-Three alternative rankings: events-per-year, total-affected,
-total-damage-USD (CPI-adjusted). The headline is set-stability across
-these three.
+- **Validated:** the positive rule passes.
+- **Not validated:** the rule fails, but the source remains potentially usable
+  after better footprints, baselines, or auxiliary outcomes.
+- **Infeasible:** public extraction cannot be completed.
 
-## 6. Pre-specified arbitrary numerics
-
-| Parameter | Value | Sensitivity range |
-|---|---|---|
-| Time window | 2000–2025 | Test against 2010–2025 (deferred §18.5) |
-| Damage CPI base year | 2024 | (deterministic) |
-| Top-N for set claim | 2 | (claim narrowed to top-2 because top-5 is metric-sensitive) |
-
-## 7. Sources
-
-EM-DAT (CRED, UCLouvain), HDX mirror retrieval 2026-04-24. Non-
-commercial open access. Pinned in `versions.json`.
-
-## 8. Decision rule
-
-Positive: top-2 set identical across all three metrics. Per
-`sensitivity-runs.json`, common top-2 = `[CHN, IND]` — **positive**.
-
-## 9. Stopping rule
-
-Stops when each in-scope DMC has at least one EM-DAT event in window
-or is documented zero.
-
-## 10. §18 attestation
-
-Frozen by §18 AI-first 2026-04-26. `attestation_chain: ai-first`.
-Upgrade-eligible.
+The observed outcome is **not validated**. This label was fixed before the
+reader-facing narrative was written.

@@ -1,37 +1,50 @@
-# Disaster Recovery Lag
+# Disaster recovery measurement — construct validation
 
-## Research Question
+`attestation_chain: ai-first`
 
-Which places appear to recover slowly after disasters, even when national GDP or
-headline reconstruction indicators rebound?
+This program asks a narrower and more defensible question than its inherited
+title implied: can public disaster records and daily nighttime radiance support
+a stable, subnational recovery-month measure?
 
-## Why This Is Unconventional
+## Finding
 
-Disaster recovery is often measured through losses and aid flows. This track
-looks for lagging recovery signals in public geospatial and socioeconomic data.
+They do not yet support that measure. The original China–India burden headline
+fails its own metric-switch rule: three of five burden metrics replace at least
+one member of the claimed top two. A direct Typhoon Haiyan pilot then produces
+no GDIS centroid with one recovery month across 54 reasonable specifications.
+Only Samar has four valid pre-event baseline months in the main specification.
 
-## Available Data
+This is a measurement finding, not evidence that recovery did not occur.
+Country burden is not recovery; administrative centroids are not impact
+footprints; radiance is not welfare; and a detected return in light is not a
+causal estimate of reconstruction.
 
-- EM-DAT disaster events and impacts
-- IDMC displacement data
-- VIIRS nighttime lights as a proxy benchmark
-- GHSL built-up change
-- World Bank WDI macro and poverty indicators
-- OpenStreetMap road and service restoration proxies where edit history is useful
+## Evidence spine
 
-## First Pipeline
+1. `scripts/deepen-metric-falsification.py` tests the inherited burden claim.
+2. `scripts/audit-recovery-source-readiness.py` establishes the GDIS × Black
+   Marble overlap and its data-access limits.
+3. `scripts/build-recovery-construct-evidence.py` extracts 108 fixed public
+   World Bank Light Every Night orbits for seven Haiyan centroids.
+4. `scripts/audit-gdis-geometry.py` screens 2,881 candidate centroids for gross
+   country-polygon mismatch.
+5. `scripts/build-figure-dossier.py` and `scripts/build-thumbnail.py` generate
+   every public visual from committed evidence.
 
-1. Select recent major disaster events in ADB economies.
-2. Build before/after proxy panels using lights, settlement, and population data.
-3. Compare recovery proxies with event severity and socioeconomic exposure.
+The main pilot uses a 50 km window, mean valid radiance, a same-orbit Manila
+reference, a 90% recovery threshold, and two-month persistence. Sensitivity
+tests 25/50/75 km, mean/p75, 80/90/100%, and one/two/three months.
 
-## Outputs
+## Read next
 
-- `generated/disaster-recovery-lag-pilots.csv`
-- Event-level recovery-lag dashboard
-- Caveat register for proxy interpretation
+- `paper-charter.md` — question, contribution, decision rule, non-claims
+- `results.md` — empirical results
+- `sensitivity.md` — 54-variant stability test
+- `coverage.md` — source and observation availability
+- `limitations.md` — what the evidence cannot establish
+- `literature.md` — related research and contribution
+- `REPRODUCE.md` — deterministic rebuild
 
-## Reproducibility Notes
-
-Proxy recovery is not a welfare measure. Treat it as a triage layer until
-validated against household, infrastructure, or official recovery data.
+The current issue is complete as an AI-first construct-validation package.
+Human-final review and any claims using event footprints or welfare outcomes
+remain owner-led under Constitution §18.5.

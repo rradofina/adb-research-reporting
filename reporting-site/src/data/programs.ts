@@ -83,12 +83,12 @@ export const programs: ProgramEntry[] = [
   {
     id: 7,
     slug: "disaster-recovery-lag",
-    title: "Disaster recovery lag",
+    title: "Disaster recovery measurement",
     status: "PP",
     summary:
-      "EM-DAT (CRED) burden layer 2000–2025 for 38 ADB DMCs. CHN: 25.6 events/yr, 1.77B affected. IND: 15.5/yr, 1.15B. PHL: 14.9/yr. IDN: 15.7/yr. NOT yet a recovery-lag metric — that requires event-timestamped indicator-recovery curves.",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
-    href: "/program/disaster-recovery-lag",
+      "The inherited burden top-two fails under three of five metrics. A 108-orbit Typhoon Haiyan pilot then yields zero of seven GDIS centroids with one recovery month across 54 variants. Public access scales; the recovery construct is not yet validated.",
+    note: "AI-first construct-validation package. Nighttime radiance is a proxy, not welfare or causal recovery.",
+    href: "/disaster-recovery-lag",
   },
   {
     id: 8,

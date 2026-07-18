@@ -54,12 +54,12 @@
     },
     {
       "slug": "disaster-recovery-lag",
-      "title": "Deepened result",
+      "title": "Deepened results",
       "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
-      "artifact": "disaster-recovery-lag-metric-falsification.json",
-      "finding": "The pre-registered falsification condition fires under three of the five metrics. The top-2 set is [CHN, IND] only on total affected and total damage — and those are exactly the two axes the program's own critique flags as inflated by…"
+      "artifact": "disaster-recovery-gdis-geometry-audit.json",
+      "finding": "attestation_chain: ai-first"
     },
     {
       "slug": "flood-market-access",

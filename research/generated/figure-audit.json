@@ -4,10 +4,10 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 5,
-    "hero_only": 11,
+    "with_multiple_figures": 6,
+    "hero_only": 10,
     "with_no_visual": 2,
-    "working_papers_with_figure_references": 4
+    "working_papers_with_figure_references": 5
   },
   "programs": [
     {
@@ -394,13 +394,61 @@
     },
     {
       "slug": "disaster-recovery-lag",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 9,
+      "evidence_figure_count": 8,
       "has_hero": true,
-      "generated_data_object_count": 5,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 11,
+      "working_paper_figure_references": 8,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/disaster-gdis-geometry-audit",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-haiyan-main-series",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-haiyan-observation-coverage",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-haiyan-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-metric-rank-disagreement",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-per-capita-inversion",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/disaster-recovery-lag-thumbnail",
           "formats": [
@@ -408,9 +456,40 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/disaster-source-ladder",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/disaster-two-stage-validity-gate",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/disaster-burden-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/disaster-recovery-lag/generated/charts/disaster-two-stage-validity-gate.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-metric-rank-disagreement.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-per-capita-inversion.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-source-ladder.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-haiyan-observation-coverage.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-haiyan-main-series.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-haiyan-sensitivity.svg",
+            "/programs/disaster-recovery-lag/generated/charts/disaster-gdis-geometry-audit.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "grid-reliability-heat",

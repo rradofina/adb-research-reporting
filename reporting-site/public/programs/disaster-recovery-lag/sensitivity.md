@@ -1,33 +1,33 @@
-# Sensitivity — Disaster Recovery Lag
+# Sensitivity — the recovery month moves
 
 `attestation_chain: ai-first`
 
-Run 2026-04-26 by `scripts/batch-sensitivity.py`. Per `CONSTITUTION.md` §6.6.
+The pilot evaluates 54 specifications for each of seven Haiyan centroids:
 
-## 1. Test matrix
+- spatial half-width: 25, 50, or 75 km;
+- reducer: mean or 75th percentile;
+- recovery threshold: 80%, 90%, or 100% of baseline; and
+- persistence: one, two, or three consecutive months.
 
-| Metric | Top-2 |
-|---|---|
-| Events-per-year | CHN, IND |
-| Total affected | CHN, IND |
-| Total damage USD-adjusted | CHN, IND |
+The 25/50/75 km and one/two/three-month ranges are the required ±50% tests
+around the 50 km and two-month main choices.
 
-**Common top-2 across all three metrics: `[CHN, IND]`.** Honest
-narrowing: the top-5 set is metric-sensitive; only the top-2 is
-metric-robust.
+| Centroid | Main result | Distinct outcomes | Variants with no recovery |
+|---|---:|---:|---:|
+| Aklan | 2014-03 | 3 | 12/54 |
+| Capiz | none | 4 | 30/54 |
+| Cebu | none | 3 | 44/54 |
+| Iloilo | none | 6 | 24/54 |
+| Leyte | none | 7 | 25/54 |
+| Palawan | 2014-09 | 7 | 13/54 |
+| Samar | 2014-06 | 4 | 12/54 |
 
-## 2. Replication ranges
+No centroid has a single outcome across the matrix. The instability is not
+confined to one arbitrary threshold: changing spatial support, summary
+statistic, or persistence can each alter the detected month. Negative raw
+radiance after background subtraction also makes ratios around dark baselines
+volatile. The series figure clips values only for display; the calculations use
+the unmodified source values.
 
-Top-2 set: identical across all three alternative metrics.
-
-## 3. TODO (§18.5 upgrade-pass)
-
-- Per-event recovery-curve analysis (the program's named question)
-  requires post-event indicator-recovery data joined to EM-DAT
-  timestamps. Not implemented.
-- Time-window subsampling (2010–2025 vs 2000–2025).
-
-## 4. §18 attestation
-
-Sensitivity run complete. Critical failures resolved (top-5 narrowed
-to top-2). Reviewer chain: §18 AI-first.
+The decision is therefore unchanged under every reasonable reading: the pilot
+does not validate a stable recovery-month construct.

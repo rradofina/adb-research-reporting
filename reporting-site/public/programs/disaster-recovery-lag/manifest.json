@@ -1,25 +1,25 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/disaster-recovery-lag?view=evidence",
-  "generated_at": "2026-07-18T11:32:37.830Z",
+  "generated_at": "2026-07-18T12:35:58.880Z",
   "hero": {
     "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
     "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
     "json": "generated/charts/disaster-recovery-lag-thumbnail.json",
-    "title": "Recorded disasters per year, 2000–2025",
-    "caption": "China 25.6 EM-DAT-recorded disasters per year, 1.77 B person-event exposures (may double-count people across events). India, Philippines, Bangladesh follow.",
-    "headline_number": "China 25.6 recorded disasters per year",
-    "visual_form": "horizontal ranked bar (events per year, person-events as secondary)",
-    "source": "EM-DAT (CRED) 2000–2025",
+    "title": "A disaster-recovery ranking fails two validity gates",
+    "caption": "3 of five burden metrics replace the claimed CHN–IND top two; 0 of seven Haiyan centroids return one recovery month across all variants.",
+    "headline_number": "3/5 burden metrics fail; 0/7 recovery centroids stable",
+    "visual_form": "two-stage construct-validation gate",
+    "source": "EM-DAT; GDIS; World Bank Light Every Night",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T18:43:12+00:00",
+    "generated_at": "2026-07-18T12:35:58+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708",
-      "svg": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+      "png": "d095054864141bfbe6993556fb06afe06ea8a1cfb8e872e1f8c9881791df7d2c",
+      "svg": "c1dcb95af493ae8966670707917b79408beb77808086654a638809d24a5c2e90"
     }
   },
   "artifacts": [
@@ -27,40 +27,60 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1188,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.345Z",
-      "sha256": "4f5247c81ddfbcc3e931b69aa597e9f3479258ff9287ccd5d119491af013658d",
-      "attestation_chain": null
+      "size": 2368,
+      "size_human": "2.3 KB",
+      "mtime": "2026-07-18T12:24:04.706Z",
+      "sha256": "a73bf80dece5b7dfba4b22db032e1938a8a13f98926da7585f01aad4f36c7564",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1530,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T12:24:04.723Z",
+      "sha256": "552dcc2560ced51e41ea008a4a89ea51189a27617f969e11eec2343196f52f95",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1599,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T12:24:04.721Z",
+      "sha256": "899b008a3f5a7ed54f0e579fdbf5cac666ab9894c6ba5519713c52d2ee5a1f37",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1984,
-      "size_human": "1.9 KB",
-      "mtime": "2026-04-27T03:37:39.789Z",
-      "sha256": "5532c692bd50adcd5e474054e8944425b58dea733ca2ea1d1b423334a733fed8",
+      "size": 2681,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T12:25:08.134Z",
+      "sha256": "acd8807a999852d3d3d9ac3cd13dbdf997550c907f2d6f192035b0cb62edb575",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1892,
-      "size_human": "1.8 KB",
-      "mtime": "2026-04-26T03:23:49.787Z",
-      "sha256": "46ba464b2e347843a03a22738c43af4dcb83f0808e96f84a777a04d5bea51221",
+      "size": 2209,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T12:24:04.708Z",
+      "sha256": "9309580cb4ee77b36dcdd65efbe8161c79755f9ffc25558aff7a7587f39439e4",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 920,
-      "size_human": "920 B",
-      "mtime": "2026-04-26T03:23:56.565Z",
-      "sha256": "a3f79f4d7c3b31dfcbe1ba8f36fd36d58ca8e4b7ec2850ba935aaed24d2c7ac0",
+      "size": 1311,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T12:24:04.713Z",
+      "sha256": "2a97c6ff643a2c537f6cd0b3fb3a6badfd05a920d2def622c63e7f9731582870",
       "attestation_chain": "ai-first"
     },
     {
@@ -77,71 +97,219 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 433,
-      "size_human": "433 B",
-      "mtime": "2026-04-26T03:23:59.946Z",
-      "sha256": "c2c1c101310f3bed6ca6a2477ea3a5cd8562827631370256f8c076da3896251d",
+      "size": 1665,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T12:24:04.715Z",
+      "sha256": "695dd751c5a5250db3f336f5ae35bf46c049c06d1279ac8049302a91714ce7f9",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 683,
-      "size_human": "683 B",
-      "mtime": "2026-04-26T03:24:27.897Z",
-      "sha256": "7315b4d0b858358ccd7d10baad75d6d13e61770591d1e7020a1db2020a4d551a",
+      "size": 2791,
+      "size_human": "2.7 KB",
+      "mtime": "2026-07-18T12:24:04.709Z",
+      "sha256": "af1b4a736779874b399c63ce4c942d2385e53b211c90de2d53e82adb47e615da",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 1146,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-26T03:24:07.560Z",
-      "sha256": "dcd1fea6f29263d04a911019c368e6ac4cef446c54804eb8786c69d2c361c99d",
+      "size": 1366,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T12:29:05.860Z",
+      "sha256": "bdb87c1703dd91ac2b4783bcd37296be153c20c2f9f10fb0d512505addff5ad7",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1708,
+      "size": 1777,
       "size_human": "1.7 KB",
-      "mtime": "2026-04-26T03:24:17.635Z",
-      "sha256": "da0206fb8b22c4c475d92bc1dc38a98b3d7462cc8d36403c3c1a13fea95a113c",
+      "mtime": "2026-07-18T12:29:05.861Z",
+      "sha256": "9761ef1170e9269596e4b9b6bff9044299f43bd8f4cf3f5d36b8326b78f3c436",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 1068,
+      "size": 1986,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T12:24:04.717Z",
+      "sha256": "d0012aea152a91b44d29052947a67eefdcc0c2a041da9905da37c6dc987ed8b2",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1070,
       "size_human": "1.0 KB",
-      "mtime": "2026-04-26T03:24:23.505Z",
-      "sha256": "d6813b8ede922fc81ee992c6dea9529e9ce90bee257b4a2197c0e9ed0729ad93",
+      "mtime": "2026-07-18T12:24:04.724Z",
+      "sha256": "a0b27d9f5608aabe5281778d3e7fa0f241f7964a7e5701726e4e5f040e101d9e",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/disaster-gdis-geometry-audit.png",
+      "size": 127339,
+      "size_human": "124.4 KB",
+      "sha256": "cb9256dc37d38f75f1015f3acbffaaf1b56f75571f179a8b3546c22bac7a1c1e"
+    },
+    {
+      "file": "generated/charts/disaster-gdis-geometry-audit.svg",
+      "size": 84357,
+      "size_human": "82.4 KB",
+      "sha256": "050a8fe2d6b22fd27ae8b4b64bdd7dd4285c5127e9dd414a179aa21ac7c1ea47"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-main-series.png",
+      "size": 350184,
+      "size_human": "342.0 KB",
+      "sha256": "eaa886485a36b2daf8f2cca514006d6562a383f69a7dca7e8b0f8c73c60a2b00"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-main-series.svg",
+      "size": 113658,
+      "size_human": "111.0 KB",
+      "sha256": "0f6bb4c48d046cbfee07689080e28a97370bb72e45bd4fca6b71e7fe3e62dfb5"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-observation-coverage.png",
+      "size": 121374,
+      "size_human": "118.5 KB",
+      "sha256": "427c0eb8b9d88158bec119978986538f44a6c719fbb5a2bce12b65760619f9fb"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-observation-coverage.svg",
+      "size": 104680,
+      "size_human": "102.2 KB",
+      "sha256": "4740ed6b261eb61ddcac33ea44786f58ad7d36bc4da93e34daf7844fbc0f303c"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-sensitivity.png",
+      "size": 142713,
+      "size_human": "139.4 KB",
+      "sha256": "4cb37f9ad83000ea5b4de6efff1212c3ba4b661c68cceed85f84b04bd8f125f1"
+    },
+    {
+      "file": "generated/charts/disaster-haiyan-sensitivity.svg",
+      "size": 97647,
+      "size_human": "95.4 KB",
+      "sha256": "203f68feb517606ea6935bbfb56bbf859228f0fff14bd8b38b338aa84e899942"
+    },
+    {
+      "file": "generated/charts/disaster-metric-rank-disagreement.png",
+      "size": 146159,
+      "size_human": "142.7 KB",
+      "sha256": "52196a494ada543474693f30de0d9392d02fc1745995e079d5ccc81d4973f962"
+    },
+    {
+      "file": "generated/charts/disaster-metric-rank-disagreement.svg",
+      "size": 92070,
+      "size_human": "89.9 KB",
+      "sha256": "3ee4a4884baed65420d569b8d5f843dd65cdeb9ff7c5b0589548860848744955"
+    },
+    {
+      "file": "generated/charts/disaster-per-capita-inversion.png",
+      "size": 98415,
+      "size_human": "96.1 KB",
+      "sha256": "d7926a2f3f78d80ce808afa1573343750a44c4d7add01a8939c6af1a877f13f6"
+    },
+    {
+      "file": "generated/charts/disaster-per-capita-inversion.svg",
+      "size": 73864,
+      "size_human": "72.1 KB",
+      "sha256": "8c0497c4b8cf8ae4f81f9285cc8d1d8dd41d7533c43f3f60e723ccf3797cbc29"
+    },
+    {
       "file": "generated/charts/disaster-recovery-lag-thumbnail.json",
-      "size": 1114,
-      "size_human": "1.1 KB",
-      "sha256": "4e56dda34e41ea89adb111ca4beaba1d57cc345e8144aefd4881c08fceeda087"
+      "size": 1187,
+      "size_human": "1.2 KB",
+      "sha256": "f5d20b6ac1ce7b6f382467967d587a9ac78c0c064554ff9180ca529a65ebdec6"
     },
     {
       "file": "generated/charts/disaster-recovery-lag-thumbnail.png",
-      "size": 129478,
-      "size_human": "126.4 KB",
-      "sha256": "ff556b8a0f56b5d3341c45efbf1499dbdaf36036aa85e7f98d273af503b74708"
+      "size": 72284,
+      "size_human": "70.6 KB",
+      "sha256": "d095054864141bfbe6993556fb06afe06ea8a1cfb8e872e1f8c9881791df7d2c"
     },
     {
       "file": "generated/charts/disaster-recovery-lag-thumbnail.svg",
-      "size": 135199,
-      "size_human": "132.0 KB",
-      "sha256": "8d8a818cdfdc4fe857e39865781013d4e14625d6f46f0b60a7ea9539adc2625e"
+      "size": 79450,
+      "size_human": "77.6 KB",
+      "sha256": "c1dcb95af493ae8966670707917b79408beb77808086654a638809d24a5c2e90"
+    },
+    {
+      "file": "generated/charts/disaster-source-ladder.png",
+      "size": 160050,
+      "size_human": "156.3 KB",
+      "sha256": "dbbe3fed2db873abdae9a14b8ac15c6f18ea07bbb1fa90454377fba69aeaa698"
+    },
+    {
+      "file": "generated/charts/disaster-source-ladder.svg",
+      "size": 99710,
+      "size_human": "97.4 KB",
+      "sha256": "3920ec625225de9698bf137b4c785cea96f20016306d4e30f143502569ecb761"
+    },
+    {
+      "file": "generated/charts/disaster-two-stage-validity-gate.png",
+      "size": 125538,
+      "size_human": "122.6 KB",
+      "sha256": "f9585ca06b00976c7218431a952c1b02e9ed16614ab36c1298062826bfceb465"
+    },
+    {
+      "file": "generated/charts/disaster-two-stage-validity-gate.svg",
+      "size": 72841,
+      "size_human": "71.1 KB",
+      "sha256": "a0927ecfa361172d78c17c73a1cd6a159fb44339ea479e07e9e4afac528a8bad"
+    },
+    {
+      "file": "generated/disaster-recovery-figure-dossier-summary.json",
+      "size": 950,
+      "size_human": "950 B",
+      "sha256": "79696f3f4822584d7c6dff92d6150730354270ce1337e516fc286add9f342017"
+    },
+    {
+      "file": "generated/disaster-recovery-gdis-geometry-audit.csv",
+      "size": 235184,
+      "size_human": "229.7 KB",
+      "sha256": "d2952e66e637f95aef657f2ed336eb75f794e33af37064598f6fe31baf55f374"
+    },
+    {
+      "file": "generated/disaster-recovery-gdis-geometry-audit.json",
+      "size": 2131,
+      "size_human": "2.1 KB",
+      "sha256": "a20ba750cc976828357d30a8b1fbd89ebc8e81a416fd1a434b7cec40c2f4e66c"
+    },
+    {
+      "file": "generated/disaster-recovery-haiyan-construct-validation.json",
+      "size": 840038,
+      "size_human": "820.3 KB",
+      "sha256": "ae6805ea91d21410dbbf94a35c0dccce9ece0944c8b5498b9623623106c9630f"
+    },
+    {
+      "file": "generated/disaster-recovery-haiyan-monthly-pilot.csv",
+      "size": 61412,
+      "size_human": "60.0 KB",
+      "sha256": "1b842d363fed224f3bd9c06141068ed853dbc642d2bab05143ee92b3dea3f33a"
+    },
+    {
+      "file": "generated/disaster-recovery-haiyan-nightly-pilot.csv",
+      "size": 2872781,
+      "size_human": "2.74 MB",
+      "sha256": "c1ef1243f3f562800fc298c7e03740c37cfb8868b82c18eb354d002d84ff7c61"
+    },
+    {
+      "file": "generated/disaster-recovery-haiyan-source-ledger.csv",
+      "size": 45713,
+      "size_human": "44.6 KB",
+      "sha256": "57010cca13a555bb0046505e203a0f91db4ce8777765119ac811b44e2306f40f"
     },
     {
       "file": "generated/disaster-recovery-lag-adb-panel.csv",
@@ -189,7 +357,7 @@
   "articles": [
     {
       "slug": "disaster-burden-cluster",
-      "title": "Two DMCs hold the top of every disaster-burden ranking — China and India",
+      "title": "A disaster-recovery ranking fails two validity gates",
       "attestation_chain": "ai-first"
     }
   ],
@@ -200,6 +368,11 @@
       "available": true,
       "state": "present",
       "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
         {
           "key": "readme",
           "file": "README.md",
@@ -263,7 +436,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -288,21 +461,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/disaster-recovery-lag/REPRODUCE.md",
+    "deck": "/programs/disaster-recovery-lag/disaster-recovery-lag-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/disaster-recovery-lag"
   }

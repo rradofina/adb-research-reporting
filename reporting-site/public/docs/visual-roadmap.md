@@ -7,10 +7,9 @@
 The current site has a visual-distribution problem, not merely a styling
 problem. The deterministic audit at `research/generated/figure-audit.json`
 counts logical figures after collapsing PNG/SVG duplicates. At the 2026-07-18
-snapshot, 12 programs have only a hero thumbnail, four have multiple figures,
-and two have no generated visual. PSDQ, remittance, and access-services now
-have multi-figure research stories; migration now joins them with a complete
-denominator-and-construct figure spine.
+snapshot, 11 programs have only a hero thumbnail, five have multiple figures,
+and two have no generated visual. PSDQ, remittance, access-services, migration,
+and climate-health now have multi-figure research stories.
 
 The next work is therefore program-specific figure building from committed data
 objects. The table names the highest-value visual sequence; it does not authorize
@@ -22,7 +21,7 @@ new claims or imply that every planned chart is currently supportable.
 | `remittance-resilience` | 4 | Current-issue figure spine complete: hero, dependence-cost scatter, quote-mean versus flow-weighted cost comparison, and top-five matched-flow coverage. Add another view only if a distinct corridor distribution or new source changes the claim. |
 | `access-services` | 5 | Current-issue figure spine complete: hero, Philippine registry rank shifts, map-completeness scatter, eight-economy registry-readiness wall, and Cambodia source/vintage disagreement. Add another view only for a current crosswalk, travel-time, facility-capability, or utilization result. |
 | `migration-displacement-signals` | 6 | Current-issue figure spine complete: hero, absolute-to-population rank inversion, population-share profile, corridor-threshold sensitivity, forced-displacement composition, and source-observability matrix. Add another view only for a new denominator, vintage, validation source, or annual-flow object. |
-| `climate-health-workdays` | 1 | PM2.5 against observed exposed workers; published-to-observed denominator correction; heat-change small multiples; source coverage; cap sensitivity. |
+| `climate-health-workdays` | 8 | Current-issue figure spine complete: hero, proxy-versus-heat rank disagreement, 21-test sensitivity matrix, direct 2024 heat profile, rate-versus-scale scatter, worker-denominator repair, sector composition, and source coverage. Add another view only for an observed labor outcome or claim-changing validation source. |
 | `disaster-recovery-lag` | 1 | Metric-rank stability matrix; event-frequency distribution; affected/deaths/damage comparison; recovery-source coverage; population-normalized falsification. |
 | `grid-reliability-heat` | 1 | Generation concentration against outage proxies; capacity-to-generation concentration shifts; fuel-mix small multiples; proxy coverage matrix; low-generation-coverage sensitivity. |
 | `port-hinterland-friction` | 1 | LPI against observed freight proxies; baseline-to-proxy rank shifts; source-vintage matrix; coverage by transport mode; sensitivity to trade-volume weighting. |

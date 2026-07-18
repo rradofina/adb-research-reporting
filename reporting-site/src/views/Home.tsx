@@ -54,6 +54,7 @@ const publicReportLabels: Record<ShowcaseReadiness, string> = {
   prototype: "Prototype",
   "l3-candidate": "Evidence package",
   "evidence-audit": "Evidence audit",
+  "portfolio-proof": "Portfolio proof",
   "owner-gated": "Needs validation",
 };
 

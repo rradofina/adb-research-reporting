@@ -1,0 +1,169 @@
+{
+  "program": "climate-health-workdays",
+  "analysis": "PM2.5 proxy versus heat-related potential work-hours-loss construct validation",
+  "attestation_chain": "ai-first",
+  "retrieved_at": "2026-07-18",
+  "license": "CC BY-NC-SA 4.0",
+  "roster_dmcs": 44,
+  "latest_heat_year": 2024,
+  "latest_outdoor_worker_year": 2024,
+  "latest_heat_dmcs": 43,
+  "latest_outdoor_worker_dmcs": 42,
+  "missing_latest_heat_dmcs": [
+    "TWN"
+  ],
+  "missing_latest_outdoor_worker_dmcs": [
+    "HKG",
+    "TWN"
+  ],
+  "aligned_years": [
+    2018,
+    2019,
+    2020
+  ],
+  "aligned_year_count": 3,
+  "rankable_dmcs_per_aligned_year": [
+    34
+  ],
+  "parameter_variants": 7,
+  "aligned_year_parameter_tests": 21,
+  "top3_overlap_max_across_tests": 1,
+  "top3_zero_overlap_tests": 16,
+  "top3_one_overlap_tests": 5,
+  "baseline_year_summaries": [
+    {
+      "year": 2018,
+      "rankable_dmcs": 34,
+      "proxy_top3": [
+        "IND",
+        "AFG",
+        "BGD"
+      ],
+      "heat_top3": [
+        "KHM",
+        "PAK",
+        "MMR"
+      ],
+      "top3_overlap_count": 0,
+      "proxy_top5": [
+        "IND",
+        "AFG",
+        "BGD",
+        "PAK",
+        "TJK"
+      ],
+      "heat_top5": [
+        "KHM",
+        "PAK",
+        "MMR",
+        "IND",
+        "THA"
+      ],
+      "top5_overlap_count": 2,
+      "spearman_proxy_vs_heat": 0.119
+    },
+    {
+      "year": 2019,
+      "rankable_dmcs": 34,
+      "proxy_top3": [
+        "IND",
+        "AFG",
+        "BGD"
+      ],
+      "heat_top3": [
+        "KHM",
+        "MMR",
+        "THA"
+      ],
+      "top3_overlap_count": 0,
+      "proxy_top5": [
+        "IND",
+        "AFG",
+        "BGD",
+        "PAK",
+        "TJK"
+      ],
+      "heat_top5": [
+        "KHM",
+        "MMR",
+        "THA",
+        "BGD",
+        "IND"
+      ],
+      "top5_overlap_count": 2,
+      "spearman_proxy_vs_heat": 0.1193
+    },
+    {
+      "year": 2020,
+      "rankable_dmcs": 34,
+      "proxy_top3": [
+        "IND",
+        "AFG",
+        "BGD"
+      ],
+      "heat_top3": [
+        "KHM",
+        "MMR",
+        "THA"
+      ],
+      "top3_overlap_count": 0,
+      "proxy_top5": [
+        "IND",
+        "AFG",
+        "BGD",
+        "PAK",
+        "TJK"
+      ],
+      "heat_top5": [
+        "KHM",
+        "MMR",
+        "THA",
+        "PAK",
+        "IND"
+      ],
+      "top5_overlap_count": 2,
+      "spearman_proxy_vs_heat": 0.1685
+    }
+  ],
+  "india_2024_potential_heat_lost_hours_millions": 247386.115,
+  "india_2024_potential_heat_lost_hours_billions": 247.386,
+  "india_2024_lancet_outdoor_workers_millions": 293.15,
+  "india_total_population_proxy_outdoor_workers_millions": 798.6,
+  "india_wdi_repaired_outdoor_workers_millions": 320.67,
+  "afghanistan_latest_aligned_proxy_rank": 2,
+  "afghanistan_latest_aligned_heat_rank": 28,
+  "cambodia_latest_aligned_proxy_rank": 15,
+  "cambodia_latest_aligned_heat_rank": 1,
+  "claim": "Across all 21 aligned year-and-parameter tests, the WDI PM2.5 proxy shares at most one of its top three economies with the Lancet Countdown heat-related potential work-hours-loss measure.",
+  "non_claims": [
+    "Potential work hours lost are modelled capacity losses, not observed absences or causal estimates from this study.",
+    "The analysis tests construct agreement; it does not rank economy performance or policy quality.",
+    "Lancet sector shares are national averages applied within grids and omit informal unpaid work.",
+    "The PM2.5 and heat pathways are distinct health and productivity mechanisms."
+  ],
+  "source_files": [
+    {
+      "dataset": "potential_hours",
+      "path": "climate-health-workdays/.cache/lancet-countdown-2025/Indicator-1.1.3_PWHL_Data-Download_2025.xlsx",
+      "url": "https://lancetcountdown.org/wp-content/uploads/2025/10/Indicator-1.1.3_PWHL_Data-Download_2025-Lancet-Countdown-Report_v2-1.xlsx",
+      "sha256": "36d16d2ba3acb43e333fca86f6873b558f9ea4816ea97c740bb5b85c228413cb",
+      "bytes": 1510290,
+      "retrieved_at": "2026-07-18",
+      "license": "CC BY-NC-SA 4.0",
+      "source_sector_total_unit": "thousands of potential work hours",
+      "normalized_sector_total_unit": "potential work hours",
+      "unit_conversion": "multiply source sector totals by 1,000",
+      "per_employed_person_field": "TotalSunWHLpp (hours)"
+    },
+    {
+      "dataset": "outdoor_workers",
+      "path": "climate-health-workdays/.cache/lancet-countdown-2025/Indicator-1.1.3_Workers_Data-Download_2025.xlsx",
+      "url": "https://lancetcountdown.org/wp-content/uploads/2025/10/Indicator-1.1.3_Workers_Data-Download_2025-Lancet-Countdown-Report.xlsx",
+      "sha256": "5fad256ea6f85d7e23c0fb7c68f578ceec64b2443cd75a62266d140b5d767c64",
+      "bytes": 339133,
+      "retrieved_at": "2026-07-18",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ],
+  "unit_note": "Lancet sector totals are published in thousands of hours and converted to hours; TotalSunWHLpp is retained as hours per employed person."
+}

@@ -46,6 +46,7 @@ export type ShowcaseReadiness =
   | "prototype"
   | "l3-candidate"
   | "evidence-audit"
+  | "portfolio-proof"
   | "owner-gated";
 
 export interface ShowcaseReportQuality {
@@ -275,26 +276,26 @@ export const showcaseReports: ShowcaseReport[] = [
   },
   {
     id: 14,
-    title: "When Heat Workday Loss Collapses to Labor Share",
-    shortTitle: "Climate-health sensitivity repair",
+    title: "When a Stable Proxy Measures the Wrong Construct",
+    shortTitle: "Climate-health construct test",
     href: "/showcase/climate-health-measurement-repair",
     status: "verified",
     statusLabel: "Evidence audit",
-    deck: "A PM2.5 cap saturation check is paired with an observed WDI labor-denominator repair and a CCKP heat-source wall before any workday-loss language is reused.",
-    evidencePath: "climate-health-workdays/generated/climate-health-workdays-denominator-source-audit.json",
-    visual: "Cap-sensitivity lanes plus observed denominator and heat-source wall",
-    sourceNote: "WDI PM2.5 and sector employment, WDI employment-to-population/population/age-share denominators, and World Bank CCKP national tasmax metadata",
+    deck: "Aligned annual WDI and Lancet Countdown data show that the inherited PM2.5 × employment proxy does not recover the direct heat-related potential work-hours-loss ordering.",
+    evidencePath: "climate-health-workdays/generated/climate-health-construct-validation.json",
+    visual: "Rank disagreement, 21-test sensitivity matrix, direct heat profile, and outcome-source wall",
+    sourceNote: "World Bank WDI and Lancet Countdown 2025 indicator 1.1.3 potential-hours and outdoor-worker workbooks",
     audit: {
       kind: "sensitivity-lanes",
       programSlug: "climate-health-workdays",
-      dataUrl: "/programs/climate-health-workdays/generated/climate-health-workdays-denominator-source-audit.json",
-      csvUrl: "/programs/climate-health-workdays/generated/climate-health-labor-denominator-observed.csv",
-      question: "When the PM2.5 cap saturates, does the index become a labor-share ranking?",
-      finding: "At the tighter cap, 12 rankable DMCs saturate; the observed WDI denominator repair cuts India from 798.6M to 320.67M outdoor workers and keeps the heat join at zero.",
-      method: "Recompute the pressure index under the baseline and tighter PM2.5 cap, fetch public WDI employment-to-population/population/age-share denominators, derive employed 15+ outdoor workers, then query CCKP national tasmax source readiness.",
-      readerPayoff: "The repair turns a workday-loss headline into a measurement note: cap choice, denominator choice, and heat-source readiness have to be visible before the claim can grow.",
-      nonClaim: "This is not a causal estimate of lost workdays and does not observe gridded worker heat exposure, work hours, WBGT, or productivity loss.",
-      downloadLabel: "Download climate-health audit JSON",
+      dataUrl: "/programs/climate-health-workdays/generated/climate-health-construct-validation.json",
+      csvUrl: "/programs/climate-health-workdays/generated/climate-health-proxy-heat-comparison.csv",
+      question: "Does an internally stable PM2.5 × employment proxy recover the direct heat-work-loss construct?",
+      finding: "Across 21 aligned tests, top-three overlap never exceeds one economy; 16 tests have zero overlap and five have one.",
+      method: "Align annual WDI proxy inputs with Lancet heat-loss rates for 34 economies in 2018–2020, compare ranks, and vary every arbitrary proxy choice by ±50%.",
+      readerPayoff: "The page distinguishes internal stability from external construct validity and replaces a country list with a measurement decision.",
+      nonClaim: "Potential work hours lost are modelled capacity losses, not observed absence, output, or a policy-performance rank; PM2.5 remains a separate pathway.",
+      downloadLabel: "Download construct-validation JSON",
     },
   },
   {
@@ -518,9 +519,9 @@ export const showcaseReportDepth: Record<number, ShowcaseReportDepth> = {
     limitation: "The current artifact confirms source visibility only; it contains no road graph, geocoded market join, raster overlay, route, or access-loss estimate.",
   },
   14: {
-    operationalUse: "Help health and labor teams see when cap choice, worker denominator choice, and heat-source readiness change what a workday-loss proxy can honestly mean.",
-    falsifier: "If gridded worker heat exposure, hours-worked denominators, and observed lost-workday outcomes keep the same priority set after the denominator repair, the measurement warning narrows.",
-    limitation: "The denominator is now repaired with public WDI fields, but the index is still not a causal lost-workday estimate and does not observe worker heat exposure.",
+    operationalUse: "Help health and labor teams distinguish a stable screen from a valid heat-labor construct before using ranks for planning.",
+    falsifier: "If an observed exposure-outcome panel shows the proxy predicts labor outcomes as well as the heat construct under a frozen design, the rejection must be reconsidered.",
+    limitation: "The direct heat measure remains modelled potential capacity loss, and this package joins no observed absence, hours, output, or labor-supply outcome.",
   },
   15: {
     operationalUse: "Show food-price analysts whether the vulnerability screen is driven by countries with both public indicators.",
@@ -647,11 +648,11 @@ export const showcaseReportQuality: Record<number, ShowcaseReportQuality> = {
     nextUpgrade: "Build a one-DMC flooded-network pilot from the visible source stack, or demote the proxy to a source-method caution note.",
   },
   14: {
-    readiness: "evidence-audit",
-    readinessLabel: "Evidence audit",
-    qaSummary: "Artifact route shows cap saturation, replaces the assumed denominator band with observed WDI employed-15+ outdoor worker counts for 34/34 rankable DMCs, and verifies CCKP national tasmax source readiness while keeping worker heat joins at zero.",
-    publicationGap: "Needs gridded heat or WBGT, worker-location or hours-worked denominators, and observed lost-workday outcomes before workday-loss interpretation.",
-    nextUpgrade: "Build one DMC heat-work-hours pilot using gridded heat, sectoral work schedules, and a defensible worker denominator; keep the current page as a measurement repair until then.",
+    readiness: "portfolio-proof",
+    readinessLabel: "Portfolio proof",
+    qaSummary: "The route exposes the 34-economy aligned rank comparison, all 21 parameter tests, 2024 direct heat profile, worker-denominator repair, and the unjoined outcome gap.",
+    publicationGap: "Needs an observed absenteeism, hours, output, or labor-supply object before advancing from potential capacity to realized labor effects.",
+    nextUpgrade: "Freeze a one- or two-economy workplace or subnational exposure-outcome design; do not reopen the national proxy ranking.",
   },
   15: {
     readiness: "evidence-audit",

@@ -4,10 +4,10 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 4,
-    "hero_only": 12,
+    "with_multiple_figures": 5,
+    "hero_only": 11,
     "with_no_visual": 2,
-    "working_papers_with_figure_references": 3
+    "working_papers_with_figure_references": 4
   },
   "programs": [
     {
@@ -279,13 +279,29 @@
     },
     {
       "slug": "climate-health-workdays",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 8,
+      "evidence_figure_count": 7,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 10,
+      "working_paper_figure_references": 7,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/climate-construct-rank-disagreement",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/climate-construct-sensitivity",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/climate-health-workdays-thumbnail",
           "formats": [
@@ -293,9 +309,88 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/climate-heat-loss-profile-2024",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/climate-heat-loss-rate-vs-scale",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/climate-heat-loss-sector-composition",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/climate-source-coverage",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/climate-worker-denominator-repair",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/workday-loss-pressure-cluster.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/climate-health-workdays/generated/charts/climate-construct-rank-disagreement.png",
+            "/programs/climate-health-workdays/generated/charts/climate-source-coverage.png",
+            "/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.png",
+            "/programs/climate-health-workdays/generated/charts/climate-heat-loss-profile-2024.png",
+            "/programs/climate-health-workdays/generated/charts/climate-heat-loss-rate-vs-scale.png",
+            "/programs/climate-health-workdays/generated/charts/climate-heat-loss-sector-composition.png",
+            "/programs/climate-health-workdays/generated/charts/climate-worker-denominator-repair.png"
+          ]
+        },
+        {
+          "article": "articles/_blog/climate-health-workdays.md",
+          "tier": "blog",
+          "references": [
+            "/programs/climate-health-workdays/generated/charts/climate-construct-rank-disagreement.svg",
+            "/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.svg",
+            "/programs/climate-health-workdays/generated/charts/climate-heat-loss-profile-2024.svg",
+            "/programs/climate-health-workdays/generated/charts/climate-heat-loss-rate-vs-scale.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/climate-health-workdays.md",
+          "tier": "brief",
+          "references": [
+            "/programs/climate-health-workdays/generated/charts/climate-construct-rank-disagreement.svg",
+            "/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/climate-health-workdays.md",
+          "tier": "social",
+          "references": [
+            "/programs/climate-health-workdays/generated/charts/climate-health-workdays-thumbnail.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "disaster-recovery-lag",

@@ -1,45 +1,51 @@
-# Results — Climate-Health Workday Loss
+# Results — Climate-health labor capacity
 
-`attestation_chain: ai-first`
+`attestation_chain: ai-first` · PP · 2026-07-18
 
-Status: **§18 AI-first Screening Result — 2026-04-26.** Sensitivity
-at ±50% complete; headline narrowed to top-3 (set-stable across all
-perturbations) per pre-registration §8 decision rule. Internal and
-external reviews closed under §18.
+## Primary result
 
----
+Across 21 aligned year-and-parameter tests, the WDI PM2.5 × employment proxy
+shares at most one of its top three economies with the Lancet Countdown 2025
+indicator 1.1.3 heat-loss measure.
 
-## 1. Headline
+| Result | Value |
+|---|---:|
+| Aligned years | 3 |
+| Economies per year | 34 |
+| Proxy specifications | 7 |
+| Year × specification tests | 21 |
+| Zero-overlap tests | 16 |
+| One-overlap tests | 5 |
+| Maximum top-three overlap | 1/3 |
 
-Three ADB DMCs — **Afghanistan, India, Bangladesh** — persistently
-rank in the top three of the workday-loss pressure index, across every
-±50 percent perturbation of the index's three arbitrary parameters
-(industry-share weight, PM2.5 floor, PM2.5 cap).
+## Baseline annual comparison
 
-The fourth and fifth positions in the top five (typically PAK and
-TJK) shift with parameters; the top-three set is the headline.
+| Year | Proxy top three | Heat top three | Shared | Spearman ρ |
+|---:|---|---|---:|---:|
+| 2018 | India, Afghanistan, Bangladesh | Cambodia, Pakistan, Myanmar | 0 | 0.119 |
+| 2019 | India, Afghanistan, Bangladesh | Cambodia, Myanmar, Thailand | 0 | 0.119 |
+| 2020 | India, Afghanistan, Bangladesh | Cambodia, Myanmar, Thailand | 0 | 0.169 |
 
-## 2. Headline-supporting tables
+In 2020, Afghanistan moves from proxy rank 2 to heat rank 28; Cambodia moves
+from proxy rank 15 to heat rank 1. These are construct disagreements, not
+economy-performance judgments.
 
-| Rank | ISO3 | DMC | Index | Agri % | Industry % | PM2.5 µg/m³ |
-|---|---|---|---|---|---|---|
-| 1 | AFG | Afghanistan | 55.7 | 51.5 | 19.0 | 46.1 |
-| 2 | IND | India | 53.1 | (latest WDI) | (latest WDI) | (latest WDI) |
-| 3 | BGD | Bangladesh | 44.6 | (latest WDI) | (latest WDI) | (latest WDI) |
+## Direct 2024 heat profile
 
-Source: `generated/climate-health-workdays-adb-panel.json`. Sensitivity
-in `sensitivity-runs.json`.
+The heat workbook covers 43 of 44 roster economies. Cambodia records 573
+modelled potential hours lost per employed person, India 419, and Pakistan 413.
+India has the largest aggregate estimate at about 247.4 billion potential
+hours. Rate and aggregate scale answer different questions.
 
-## 3. Sensitivity
+## Denominator correction
 
-| Metric | Baseline | Across suite |
-|---|---|---|
-| Top-3 set | AFG, IND, BGD | identical (0 entries change) |
-| Top-5 set | + PAK, TJK | 4th-5th shift; top-3 stable |
+The inherited total-population worker calculation is 5.09 times the Lancet
+modelled outdoor-worker estimate for Afghanistan, 2.72 for India, and 2.61 for
+Bangladesh. Using employed people aged 15+ changes the ratios to 0.94, 1.09,
+and 1.06.
 
-## 4. Reproduction
+## Decision
 
-```bash
-python climate-health-workdays/scripts/process-climate-health.py
-python climate-health-workdays/scripts/sensitivity.py
-```
+Retire the old workday-loss-pressure ranking. Publish the negative external-
+validation result. Keep PM2.5 and heat as separate pathways, and label the
+Lancet values as modelled potential capacity loss rather than observed absence.

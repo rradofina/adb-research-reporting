@@ -1,25 +1,25 @@
 {
   "program": "climate-health-workdays",
   "permanent_url": "/climate-health-workdays?view=evidence",
-  "generated_at": "2026-07-18T10:36:07.464Z",
+  "generated_at": "2026-07-18T11:32:37.809Z",
   "hero": {
     "png": "generated/charts/climate-health-workdays-thumbnail.png",
     "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
     "json": "generated/charts/climate-health-workdays-thumbnail.json",
-    "title": "Outdoor-labor share × annual PM2.5 exposure",
-    "caption": "India 55% of employment in agri + industry, country-mean PM2.5 at 48 µg/m³ — nearly 10× the WHO 5 µg/m³ guideline. Bubble area = population × outdoor-labor share, NOT a working-age labor-force count.",
-    "headline_number": "India 55% outdoor employment",
-    "visual_form": "bubble scatter (PM2.5 × outdoor share, area = pop × outdoor share)",
-    "source": "WDI PM2.5 + employment + population",
+    "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
+    "caption": "The two aligned 2020 top threes have zero overlap. Across all 21 aligned year-and-parameter tests, overlap never exceeds one economy.",
+    "headline_number": "0 of 3 economies overlap in 2020",
+    "visual_form": "paired ranked lists (PM2.5 proxy versus heat-related potential work-hours loss)",
+    "source": "WDI + Lancet Countdown 2025 indicator 1.1.3",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:26:56+00:00",
+    "generated_at": "2026-07-18T11:18:40+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42",
-      "svg": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+      "png": "bce16af09a9922d4a3549f8d96de32368c34b218099c118f3f9b0dada34665e2",
+      "svg": "e623ad014e0fdff2013aa09a13a16ed240bedd996a6260db98aa1e6604274d19"
     }
   },
   "artifacts": [
@@ -27,121 +27,259 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1429,
-      "size_human": "1.4 KB",
-      "mtime": "2026-04-24T08:05:49.332Z",
-      "sha256": "ac06a2d0bdc3a6fd6d12577041b2d78193797595c780154f13014d8bac9acf30",
-      "attestation_chain": null
+      "size": 1612,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T11:30:59.686Z",
+      "sha256": "ef38ebd1c1e347cb4831f724f87c86a4244f91cb276e4da82554f8b31c94b9d0",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1829,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T11:04:56.771Z",
+      "sha256": "d791f330a788fcc67d0b82cd9a2f3bf83c3990338b2cfc49a6b57d9d25989a06",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1989,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T11:32:23.662Z",
+      "sha256": "227cf61fdfddfaab228d763a12fadb29be586eeb000fc7e5e4b19d9d9495b71b",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 3046,
-      "size_human": "3.0 KB",
-      "mtime": "2026-04-27T03:37:12.798Z",
-      "sha256": "88c3645b2a684884a202dec057475dc7cccf738359e9b992e22a1ce0c0ce8760",
+      "size": 4671,
+      "size_human": "4.6 KB",
+      "mtime": "2026-07-18T11:05:36.896Z",
+      "sha256": "f5f61c11f276500f1ca0c7bcb1fe6e4041967c3673698bf694dd23eef7fdb18d",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 3230,
-      "size_human": "3.2 KB",
-      "mtime": "2026-04-26T02:22:32.419Z",
-      "sha256": "d20404e3802da3ad7a73344f8e320611776d874296d36915da463218555ad5e5",
+      "size": 1897,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T11:30:59.687Z",
+      "sha256": "c18b31d4a07581babbaefc243ad5f003af1cdc65589d7cecaba5f766a9dc1f01",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 2330,
-      "size_human": "2.3 KB",
-      "mtime": "2026-04-26T02:22:48.083Z",
-      "sha256": "cb34c87d3cf7815ad0db4a29811bb997c495a00f7ab355fb85f26726268cd6e4",
+      "size": 1094,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T11:30:59.689Z",
+      "sha256": "6f9be4ed63b9faf251420074a5a019de4d96c22bffcccdaefb8b5edca0051084",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
       "file": "sensitivity-runs.json",
       "label": "Sensitivity-run output",
-      "size": 9074,
-      "size_human": "8.9 KB",
-      "mtime": "2026-04-26T02:21:47.528Z",
-      "sha256": "af1cac728526e874e8620747e6f4950eb29d193c4d53ea8eccbafa0156c63240",
+      "size": 9400,
+      "size_human": "9.2 KB",
+      "mtime": "2026-07-18T11:18:33.895Z",
+      "sha256": "f87bc78bf7e2186ad1f06c4c68d58094bee3a0330c4c0c30b3c74634b8decab8",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 1062,
-      "size_human": "1.0 KB",
-      "mtime": "2026-04-26T02:22:55.936Z",
-      "sha256": "c5a76205bd6c2174c92f9dee3c3b8810135579ac14691494cc51d12dfe3b57dd",
+      "size": 1503,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T11:05:36.898Z",
+      "sha256": "1436b72d18c066158bd46ebd57b0fc4091834980b219568e1cdb7ea7bd23da21",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 1507,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T02:23:58.444Z",
-      "sha256": "c085ff48fa5ea9d0e44e52fba79bcc8c705df2d52ddb985533be47f1ae02c5a7",
+      "size": 1933,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T11:30:59.688Z",
+      "sha256": "8f36d53a5ea613e5703bd397cd94086f9654d22827d5c4c4f00b443fe4d7a196",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 2638,
-      "size_human": "2.6 KB",
-      "mtime": "2026-04-26T02:23:14.511Z",
-      "sha256": "fd0924bcdf388c7a01c6d50a7e77ddcb0244e57c007a2c6e57aa253827f19e6a",
+      "size": 1475,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T11:30:59.689Z",
+      "sha256": "b0faa74dd964bd7ec3cbf92f1a745248e48ef5f4c00ff9aae59f377c8b5975d9",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 3719,
-      "size_human": "3.6 KB",
-      "mtime": "2026-04-26T02:23:36.504Z",
-      "sha256": "e3de3533f3e412dc48de674944ac4711230960ad378f5592404fd2abffc9a77d",
+      "size": 1819,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T11:07:31.740Z",
+      "sha256": "8592d9549e37c96b0369962e79ec05c34708d2891b47608dfa08577979b44216",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 2410,
-      "size_human": "2.4 KB",
-      "mtime": "2026-04-26T02:23:50.073Z",
-      "sha256": "1f4a1a7d36169b2ed8336dc671ad3b7f9149bb7968a5dfb7ad9e0b62d2481ee6",
+      "size": 1513,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T11:06:28.304Z",
+      "sha256": "f73a4f31612f2a1b03c8018f475215ee78863b4359b59061c1502288a4399b41",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1229,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T11:32:23.664Z",
+      "sha256": "d2717af8dd9bcd90da40990857327da697ef7f3c4b2abf840fd77f21e492c77f",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/climate-construct-rank-disagreement.png",
+      "size": 336675,
+      "size_human": "328.8 KB",
+      "sha256": "6da62880082ea1ac093c5c88017d29a4b62dea615b814a9f8bfe67d11c599130"
+    },
+    {
+      "file": "generated/charts/climate-construct-rank-disagreement.svg",
+      "size": 111531,
+      "size_human": "108.9 KB",
+      "sha256": "d10b5de27fea1113d26fdef983c29238af96f25cba3d8343bf745ffa86801060"
+    },
+    {
+      "file": "generated/charts/climate-construct-sensitivity.png",
+      "size": 129041,
+      "size_human": "126.0 KB",
+      "sha256": "eb7d9609ed820d56c8a46b04f715ce4629d5203f9bf0538bb6a6bdd3dd50d027"
+    },
+    {
+      "file": "generated/charts/climate-construct-sensitivity.svg",
+      "size": 85855,
+      "size_human": "83.8 KB",
+      "sha256": "ee536d8add6eae0497f10431cbe485327961f0511303608b4f111cc6b1f9963d"
+    },
+    {
       "file": "generated/charts/climate-health-workdays-thumbnail.json",
-      "size": 1213,
-      "size_human": "1.2 KB",
-      "sha256": "b1d6d9f746c693fb6aed89975ae70e7d32ffc3647facff923b652fd20fc21aca"
+      "size": 1140,
+      "size_human": "1.1 KB",
+      "sha256": "ba4dad56cb00840538019b3c4a2f7eb69cf25f97c01e467d1d2a2374e936f667"
     },
     {
       "file": "generated/charts/climate-health-workdays-thumbnail.png",
-      "size": 145516,
-      "size_human": "142.1 KB",
-      "sha256": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42"
+      "size": 99570,
+      "size_human": "97.2 KB",
+      "sha256": "bce16af09a9922d4a3549f8d96de32368c34b218099c118f3f9b0dada34665e2"
     },
     {
       "file": "generated/charts/climate-health-workdays-thumbnail.svg",
-      "size": 182313,
-      "size_human": "178.0 KB",
-      "sha256": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+      "size": 103848,
+      "size_human": "101.4 KB",
+      "sha256": "5707df001d40ea2795136bd30a1cd08b700117390a384ce1fcb223872aeb2d3c"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-profile-2024.png",
+      "size": 151303,
+      "size_human": "147.8 KB",
+      "sha256": "a457dd632042c53d0f2f6563aa8a7f13b174aaff1bc4ca5568ced7ca4d4ce837"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-profile-2024.svg",
+      "size": 92437,
+      "size_human": "90.3 KB",
+      "sha256": "86cee027ade9c3a93506977a96405b96cb77f41ef5a42935dda7aec3b249f3d1"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-rate-vs-scale.png",
+      "size": 191710,
+      "size_human": "187.2 KB",
+      "sha256": "a9d4fb3cd61ca26bc57ba07174163a7bf0c4b29bd81bc2f7e64244ab9ec1ed2a"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-rate-vs-scale.svg",
+      "size": 132216,
+      "size_human": "129.1 KB",
+      "sha256": "e9ac36470470f6ba215bbdf1e8fe783545b7fc82a83eb5df636fca7ca44d5f1d"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-sector-composition.png",
+      "size": 175304,
+      "size_human": "171.2 KB",
+      "sha256": "7ab58afaa6b6695585738d0c1baa5fa9156f7ceaaf171434d05dcba72a274231"
+    },
+    {
+      "file": "generated/charts/climate-heat-loss-sector-composition.svg",
+      "size": 108748,
+      "size_human": "106.2 KB",
+      "sha256": "1f7c24f03b25c9f1cc1be65587a1d9cf8f3f2bed0ac90ba0ecdff55a3a841860"
+    },
+    {
+      "file": "generated/charts/climate-source-coverage.png",
+      "size": 133318,
+      "size_human": "130.2 KB",
+      "sha256": "e5305c280ed4dffa935d74eafc7e0655d9ca229bd2f974fbdbcd795eec9772ba"
+    },
+    {
+      "file": "generated/charts/climate-source-coverage.svg",
+      "size": 87929,
+      "size_human": "85.9 KB",
+      "sha256": "120a01025116c652059f137fbd60de46dc78b4770a7be84db37b94084d230b13"
+    },
+    {
+      "file": "generated/charts/climate-worker-denominator-repair.png",
+      "size": 118833,
+      "size_human": "116.0 KB",
+      "sha256": "acc2395e3ccb6c036f8ec7f8f0774d7a8c975a976744e1893470d27b50f7d6a0"
+    },
+    {
+      "file": "generated/charts/climate-worker-denominator-repair.svg",
+      "size": 80428,
+      "size_human": "78.5 KB",
+      "sha256": "a00fe47b891b8ecd7e167143ac543f566035ba876754059acebfa07a4a03119f"
+    },
+    {
+      "file": "generated/climate-health-construct-validation.json",
+      "size": 5089,
+      "size_human": "5.0 KB",
+      "sha256": "68ec241cfef7b26e86f95b314e8a82ce231645c7ea16211c7e3b9f55261cda7a"
+    },
+    {
+      "file": "generated/climate-health-figure-dossier-summary.json",
+      "size": 1017,
+      "size_human": "1017 B",
+      "sha256": "d26714d186dd40ef139074c676ec8875620530fee4d41ad68ca29464f147f2fb"
+    },
+    {
+      "file": "generated/climate-health-heat-workloss-panel.csv",
+      "size": 7599,
+      "size_human": "7.4 KB",
+      "sha256": "a59157e72b1672556d58563469803a0e21225cf498b003bed70077f017b76708"
+    },
+    {
+      "file": "generated/climate-health-heat-workloss-panel.json",
+      "size": 42707,
+      "size_human": "41.7 KB",
+      "sha256": "98fbd2c32ef7487a4a31bcede19c484794bc59302d1ef1595c8277c9f4a79a2c"
     },
     {
       "file": "generated/climate-health-labor-denominator-observed.csv",
@@ -160,6 +298,12 @@
       "size": 158160,
       "size_human": "154.5 KB",
       "sha256": "3b1757b44b86f40e2f87de6a62502a924caf33275cc369df82de3443518ea281"
+    },
+    {
+      "file": "generated/climate-health-proxy-heat-comparison.csv",
+      "size": 7239,
+      "size_human": "7.1 KB",
+      "sha256": "7bf3ec543fcf6b8a8c0955e6f80fc455a3bb96d888c3a2c735e775750362782c"
     },
     {
       "file": "generated/climate-health-workdays-adb-panel.csv",
@@ -189,7 +333,7 @@
   "articles": [
     {
       "slug": "workday-loss-pressure-cluster",
-      "title": "Three DMCs persistently top the workday-loss pressure cluster",
+      "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
       "attestation_chain": "ai-first"
     }
   ],
@@ -200,6 +344,11 @@
       "available": true,
       "state": "present",
       "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
         {
           "key": "readme",
           "file": "README.md",
@@ -263,7 +412,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -288,21 +437,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/climate-health-workdays/REPRODUCE.md",
+    "deck": "/programs/climate-health-workdays/climate-health-workdays-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/climate-health-workdays"
   }

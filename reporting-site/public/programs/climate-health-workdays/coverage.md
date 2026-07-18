@@ -1,33 +1,34 @@
-# Coverage — Climate-Health Workday Loss
+# Coverage — Climate-health labor capacity
 
-`attestation_chain: ai-first`
+`attestation_chain: ai-first` · refreshed 2026-07-18
 
-Last refresh: 2026-04-26.
+## Analysis roster
 
----
+The committed roster contains 44 economies. It is an analysis panel, not an
+authoritative current list of all ADB developing members.
 
-## DMCs in scope
+| Layer | Coverage | Missing or withheld | Use |
+|---|---:|---|---|
+| WDI proxy, aligned 2018–2020 | 34/44 each year | 10 rows lack at least one annual input | Construct comparison only |
+| Lancet heat-loss estimate, 2024 | 43/44 | Taipei,China | Direct potential-capacity profile |
+| Lancet outdoor-worker estimate, 2024 | 42/44 | Hong Kong, China; Taipei,China | Scale context and denominator comparison |
+| Observed absence or hours-worked outcome joined | 0/44 | Not assembled in this issue | Open validation gap |
 
-44 ADB regional DMCs (WDI publishes for these economies on the required indicators).
+## Common construct-test sample
 
-## DMCs covered
+Annual alignment is possible for 2018, 2019, and 2020. Every year has the same
+34 rankable economies. No latest-available-year substitution is used in the
+construct comparison.
 
-| Coverage | Count | Notes |
-|---|---|---|
-| All 4 inputs (agri%, industry%, PM2.5, pop) | 34 | Index computable. |
-| Missing PM2.5 only | ~6 | Pacific microstates not in WDI PM2.5 series. |
-| Missing both employment series | ~3 | Small-island microstates with thin labor data. |
+## Interpretation of missingness
 
-## Top 3 most-pressure-exposed (set is stable per `sensitivity.md`)
+The zero observed-outcome count means this package does not join an outcome; it
+does not assert that no economy publishes any labor data. The two absent Lancet
+rows are reported as source coverage, not imputed. No proxy or regional average
+is used to fill them.
 
-| Rank | ISO3 | DMC | agri % | industry % | PM2.5 µg/m³ | Index |
-|---|---|---|---|---|---|---|
-| 1 | AFG | Afghanistan | 51.5 | 19.0 | 46.1 | 55.7 |
-| 2 | IND | India | (latest) | (latest) | (latest) | 53.1 |
-| 3 | BGD | Bangladesh | (latest) | (latest) | (latest) | 44.6 |
+## License boundary
 
-## DMCs not covered
-
-Pacific microstates (KIR, NRU, NIU, TUV, COK, PLW, MHL, FSM): WDI
-PM2.5 series is sparse. The §18.5 upgrade-pass uses ACAG-V6 PM2.5
-gridded raster (Earth-Engine-backed) to fill these.
+Lancet workbooks are recorded as CC BY-NC-SA 4.0. WDI and World Bank portal
+data follow their source terms. Downstream reuse must preserve attribution and
+the most restrictive applicable license.

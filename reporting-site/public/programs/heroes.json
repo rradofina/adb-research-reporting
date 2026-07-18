@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T10:36:07.897Z",
+  "generated_at": "2026-07-18T11:32:38.269Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -76,20 +76,20 @@
         "png": "generated/charts/climate-health-workdays-thumbnail.png",
         "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
         "json": "generated/charts/climate-health-workdays-thumbnail.json",
-        "title": "Outdoor-labor share × annual PM2.5 exposure",
-        "caption": "India 55% of employment in agri + industry, country-mean PM2.5 at 48 µg/m³ — nearly 10× the WHO 5 µg/m³ guideline. Bubble area = population × outdoor-labor share, NOT a working-age labor-force count.",
-        "headline_number": "India 55% outdoor employment",
-        "visual_form": "bubble scatter (PM2.5 × outdoor share, area = pop × outdoor share)",
-        "source": "WDI PM2.5 + employment + population",
+        "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
+        "caption": "The two aligned 2020 top threes have zero overlap. Across all 21 aligned year-and-parameter tests, overlap never exceeds one economy.",
+        "headline_number": "0 of 3 economies overlap in 2020",
+        "visual_form": "paired ranked lists (PM2.5 proxy versus heat-related potential work-hours loss)",
+        "source": "WDI + Lancet Countdown 2025 indicator 1.1.3",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T20:26:56+00:00",
+        "generated_at": "2026-07-18T11:18:40+00:00",
         "dimensions": {
           "width": 1600,
           "height": 900
         },
         "sha256": {
-          "png": "0ee8bb52af3a8971302f3de337b29d1abaa2e62ddb95e63161fc2cb52e6b5c42",
-          "svg": "c774841772272071d35b91d70ba3482db394a53df52efc8b11539e3193aceef7"
+          "png": "bce16af09a9922d4a3549f8d96de32368c34b218099c118f3f9b0dada34665e2",
+          "svg": "e623ad014e0fdff2013aa09a13a16ed240bedd996a6260db98aa1e6604274d19"
         }
       }
     },

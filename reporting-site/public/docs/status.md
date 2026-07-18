@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `climate-health-workdays` — rotated in 2026-07-18 after migration-displacement-signals closed its six-figure denominator and construct story. The highest-leverage move is to reshape the workday-loss claim because the committed index contains national PM2.5 and employment structure but no heat or observed workday loss. |
-| Per-program board | `climate-health-workdays/STATUS.md` |
+| Active flagship | `disaster-recovery-lag` — rotated in 2026-07-18 after climate-health closed its eight-figure construct-validation story. The highest-leverage move is to reshape the recovery-lag claim because the current burden metrics disagree and no recovery-time outcome has yet been computed. |
+| Per-program board | `disaster-recovery-lag/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `migration-displacement-signals` — six-figure PP dossier closed 2026-07-18; the absolute and population-share top fives have zero overlap, so the old intensity headline is retired. |
+| Previous flagship | `climate-health-workdays` — eight-figure PP dossier closed 2026-07-18; the proxy shares at most one top-three economy with direct heat-work-loss data in all 21 aligned tests. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -51,11 +51,11 @@ overrides priority by editing this list.
    and population-share top fives have zero overlap; Afghanistan is the
    forced-displacement-majority exception at share rank six. Reopen only for a
    claim-changing denominator, vintage, validation source, or annual-flow object.
-5. **`climate-health-workdays`** — **active flagship.** The top-three proxy set
-   is stable, but the current index contains national PM2.5 and employment
-   structure—not heat or observed workday loss. Reshape the claim before
-   building its figure spine.
-6. **`disaster-recovery-lag`** — metric-falsification deepening shows the
+5. **`climate-health-workdays`** — *current issue closed.* Across 21 aligned
+   tests, the old PM2.5/employment proxy shares at most one top-three economy
+   with direct Lancet heat-work-loss data. Reopen only for an observed labor
+   outcome or claim-changing validation source.
+6. **`disaster-recovery-lag`** — **active flagship.** Metric-falsification shows the
    original {CHN, IND} top-two is not robust: it holds for affected and
    damage, but changes under events/year, deaths, and events per million.
    It still lacks an actual recovery-lag metric.
@@ -159,6 +159,16 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (climate-health construct validation closed; rotation):** The
+  PM2.5/employment proxy shares at most one top-three economy with Lancet heat-
+  related potential work-hours loss in all 21 aligned tests; 16 tests have zero
+  overlap. The package now contains all nine research sections, eight evidence
+  visuals, a direct 2024 heat profile, denominator repair, publication ladder,
+  ten-slide deck, and review packet. Manifest and governance gates, citations,
+  versions, typecheck, production build, deck render, and 1280/375 browser QA
+  passed. Rotated to `disaster-recovery-lag` because its burden metrics already
+  falsify the named recovery construct and claim reshaping beats another rank.
 
 - **2026-07-18 (migration denominator story closed; rotation):** The 44-economy
   stock audit shows zero overlap between the absolute and population-share top

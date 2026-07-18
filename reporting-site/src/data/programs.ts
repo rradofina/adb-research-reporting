@@ -63,11 +63,11 @@ export const programs: ProgramEntry[] = [
   {
     id: 5,
     slug: "climate-health-workdays",
-    title: "Climate-health workday loss",
+    title: "When a stable proxy measures the wrong construct",
     status: "PP",
     summary:
-      "India's employment is 55 % outdoor (agri + industry); its country-mean annual PM2.5 is 48 µg/m³, nearly 10× the WHO 5 µg/m³ guideline. Pakistan, Bangladesh, Afghanistan, China sit on the same outdoor-labor × PM2.5 frontier. The panel's exposure proxy multiplies population by outdoor-labor share (not labor-force) — read it as a frontier, not a worker count. Heat exposure (CCKP tasmax) not yet included.",
-    note: "Demoted PR → PP on 2026-05-07: original advancement was single composite-index screening only; awaits the new program loop.",
+      "Across 21 aligned year-and-parameter tests, the inherited PM2.5 × employment proxy shares at most one of its top three economies with the Lancet Countdown heat-related potential work-hours-loss measure. Sixteen tests have zero overlap; five have one.",
+    note: "PP construct-validation issue rebuilt 2026-07-18. Potential hours are modelled capacity losses, not observed absence; heat and PM2.5 remain separate pathways.",
     href: "/program/climate-health-workdays",
   },
   {

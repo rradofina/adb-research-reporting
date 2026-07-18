@@ -9,6 +9,7 @@ const readinessLabel: Record<ShowcaseReadiness, string> = {
   prototype: "Prototype evidence",
   "l3-candidate": "Evidence package",
   "evidence-audit": "Evidence audit",
+  "portfolio-proof": "Portfolio proof",
   "owner-gated": "Owner-gated source note",
 };
 

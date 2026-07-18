@@ -1,76 +1,80 @@
-# Literature review — Climate-Health Workday Loss
+# Literature review — Climate-health labor capacity
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · refreshed 2026-07-18
 
-## 1. Search record
+## Search question
 
-Queries (2026-04-26):
-1. `Lancet Countdown labor capacity loss heat indicator`
-2. `WHO PM2.5 ambient air quality guidelines 2021`
-3. `Park Behrer Goodman heat learning PNAS`
-4. `van Donkelaar ACAG-V6 satellite PM2.5 1km`
-5. `outdoor labor exposure climate productivity LMIC`
+What evidence defines heat-related labor-capacity loss, what observed studies
+link heat or PM2.5 to worker outcomes, and can national PM2.5 exposure stand in
+for a heat-work-loss construct?
 
-Tier-A: *The Lancet*, *Nature Climate Change*, *Environmental
-Research Letters*, *American Economic Journal: Economic Policy*.
-Tier-B: WHO publications, IIASA, Health Effects Institute (HEI).
-Tier-C: WB CCKP technical notes, ADB climate-and-health briefs.
+## Search record
 
-## 2. Verified entries
+Searches covered:
 
-- **`romanello2024lancet`** — Romanello et al. (2024). The 2024
-  Lancet Countdown report. *The Lancet* 404(10465):1847–1896.
-  doi:10.1016/S0140-6736(24)01822-1. **Indicator 1.1.4
-  (heat-related labor capacity loss) is the established framework
-  for hidden-workday-loss claims.**
-- **`who2021aqg`** — WHO 2021 ambient AQ guidelines. **The
-  5 µg/m³ annual mean PM2.5 guideline used as the floor.**
-- **`park2020heat`** — Park, Behrer, Goodman (2020). Heat and
-  learning. *AEJ: Economic Policy* 12(2):306–339.
-  doi:10.1257/pol.20180612. **Empirical thresholds at 27–32°C;
-  cited in the related school-heat program as evidence the linear
-  ramp is the wrong functional form.**
-- **`vandonkelaar2021monthly`** — van Donkelaar et al. (2021).
-  ACAG-V6 satellite-derived 1-km gridded PM2.5. *EST*
-  55(22):15287–15300. **The §18.5 upgrade-pass for subnational
-  exposure.**
+1. `Lancet Countdown 2025 indicator 1.1.3 change labour capacity method`
+2. `ILO heat stress labour productivity working hours lost`
+3. `temperature productivity absenteeism Indian manufacturing`
+4. `PM2.5 labor productivity industrial workers China`
+5. `WBGT sector workload potential work hours lost`
+6. `World Bank CCKP wet bulb tasmax heat index metadata`
 
-## 3. Synthesis
+Tier A comprises peer-reviewed causal or measurement studies and the Lancet
+Countdown indicator documentation. Tier B comprises ILO, WHO, and World Bank
+method and policy reports. Tier C comprises contextual or future-data sources
+used to delimit, not establish, the claim.
 
-Three established facts:
+## Evidence map
 
-1. **Heat reduces outdoor labor productivity.** The Lancet
-   Countdown framework [@romanello2024lancet] quantifies this at
-   the country-population level annually.
-2. **PM2.5 exposure causes premature mortality and labor-capacity
-   loss.** WHO 2021 [@who2021aqg] tightened the annual mean
-   guideline to 5 µg/m³.
-3. **Country-mean PM2.5 conceals dramatic within-country
-   variance.** ACAG-V6 [@vandonkelaar2021monthly] documents this
-   globally at 1-km resolution.
-4. **Heat-learning thresholds are non-linear.** Park et al. 2020
-   [@park2020heat] show effects emerging around 27°C, not 25°C.
+| Evidence object | What it establishes | What it does not establish here |
+|---|---|---|
+| Lancet Countdown 2025 indicator 1.1.3 [@lancetcountdown2025labour] | A documented WBGT-, workload-, employment-, and population-based estimate of potential heat-related work hours lost | Observed absence, output, wages, or the effect of a specific intervention |
+| Lancet Countdown annual report [@romanello2024lancet] | Broader climate-and-health indicator framing and annual monitoring context | Validation of this paper's former PM2.5 proxy |
+| ILO warmer-planet report [@ilo2019warmerplanet] | Heat stress as a labor-capacity and decent-work problem, with sector and exposure differences | A country-specific observed outcome for this panel |
+| ILO Heat at Work [@ilo2024heatatwork] | Occupational-health mechanisms and workplace policy responses | A single universal exposure-response function |
+| Indian manufacturing study [@somanathan2021temperature] | Selected firm and worker evidence that hotter days reduce productivity and increase absenteeism | Regional transportability without workplace and adaptation data |
+| Chinese industrial-town study [@he2019pollution] | A separate severe-air-pollution labor-productivity pathway | PM2.5 as a substitute for WBGT or heat-capacity loss |
+| WHO air-quality guideline [@who2021aqg] | Health-based PM2.5 guideline context | A work-hour-loss coefficient |
+| CCKP metadata [@worldbankcckp2026] | Public temperature, heat-index, wet-bulb, and extreme-heat variables | A joined labor outcome or worker-level exposure |
+| ACAG PM2.5 surface [@vandonkelaar2021monthly] | High-resolution national and subnational PM2.5 exposure potential | Heat exposure or labor capacity |
 
-## 4. Gap
+## Synthesis
 
-No published cross-ADB-DMC PM2.5-only outdoor-labor pressure index
-with sensitivity-tested rank stability. The Lancet Countdown
-publishes country-level indicators but not the joint-with-outdoor-
-labor product across the ADB regional roster specifically.
+### Heat capacity is an exposure × workload construct
 
-## 5. Risk of redundancy
+The direct heat-labor framework combines meteorological heat stress with the
+physical demands and exposure conditions of work. The Lancet Countdown uses
+WBGT and distinguishes services, manufacturing, agriculture in sun, and
+construction in sun. This is conceptually different from multiplying a
+national PM2.5 average by broad employment shares.
 
-Lancet Countdown 1.1.4 supersedes any composite PM2.5-only index
-for actionable policy. This program's value is in the set-stability
-claim (top-3 robust across ±50%), not in the index itself.
+### Modelled capacity and observed labor behavior are different layers
 
-## 6. First testable claim
+Potential work hours lost translate heat exposure into a physiological
+capacity estimate under documented assumptions. Firm and worker studies can
+observe output or absence, but their estimates depend on workplace technology,
+contracts, cooling, management, acclimatization, and behavior. The two layers
+are complementary; neither should be relabeled as the other.
 
-> Three ADB DMCs — Afghanistan, India, Bangladesh — persistently
-> rank in the top three of the workday-loss pressure index, across
-> every ±50% perturbation of three arbitrary parameters.
+### PM2.5 remains important, but as its own mechanism
 
-## 7. §18 attestation
+The air-pollution literature supports research on worker productivity and
+health. It does not justify using PM2.5 as a heat surrogate. A credible joint
+study would specify whether the pathways are additive, interactive, or
+separately identified and would join relevant outcomes. This paper therefore
+does not create a heat-plus-PM2.5 composite.
 
-Same structure as remittance literature.md §7. AI-first,
-upgrade-eligible.
+## Gap and contribution
+
+The gap is not the absence of another regional index. It is the absence of an
+explicit external validation of the inherited proxy against a direct heat-
+labor measure. This paper fills that narrow gap for 34 aligned economies over
+2018–2020 and documents the negative result under 21 proxy specifications.
+
+## Redundancy test
+
+The direct Lancet indicator supersedes the old proxy for heat-related potential
+work-hours-loss claims. The remaining contribution is the construct-validation
+lesson, denominator repair, and transparent separation between potential
+capacity loss and observed outcomes. A future paper should proceed only with a
+new outcome data object.

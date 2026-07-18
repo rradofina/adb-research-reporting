@@ -112,6 +112,44 @@
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
   },
   {
+    "slug": "workday-loss-pressure-cluster",
+    "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
+    "subtitle": "Across 21 aligned year-and-parameter tests, the proxy shares at most one of its top three economies with the Lancet Countdown measure of heat-related potential work hours lost.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "climate-health-workdays",
+    "maturity": "PP",
+    "topics": [
+      "climate-health",
+      "labor-capacity",
+      "heat",
+      "PM2.5",
+      "measurement"
+    ],
+    "geographies": [
+      "KHM",
+      "IND",
+      "PAK",
+      "MMR",
+      "THA",
+      "AFG",
+      "BGD"
+    ],
+    "abstract": "An inherited regional screen multiplied national PM2.5 exposure by an agriculture-plus-industry employment share and presented the resulting order as workday-loss pressure. This paper tests whether that proxy recovers a direct heat-labor construct. Annual World Development Indicators inputs are aligned with the Lancet Countdown 2025 indicator 1.1.3 estimate of heat-related potential work hours lost for 34 economies in 2018, 2019, and 2020. The baseline top threes have zero overlap in all three years; full-rank Spearman correlations range from 0.12 to 0.17. Re-estimating the proxy under ±50% changes to its industry weight, PM2.5 floor, and PM2.5 cap produces 21 year-and-parameter tests. Sixteen have zero top-three overlap and five have one. None has more than one. The result rejects the proxy as a substitute for the heat-work-loss measure; it does not reject a separate PM2.5-productivity pathway. The direct 2024 heat data cover 43 of 44 economies in the analysis roster, but remain a model of potential capacity loss rather than observed absence or hours worked. The paper therefore replaces the country-ranking story with a construct-validation result and leaves outcome validation open.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "workday-loss-pressure-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "about-the-lab",
     "title": "About the Development Blindspots Lab",
     "subtitle": "A research operation that measures what official data misses, on a Constitution that binds every program.",
@@ -221,40 +259,6 @@
     "updated_at": "2026-05-05",
     "doi": "",
     "file": "measurement-gap-philippines-bangladesh.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
-  },
-  {
-    "slug": "workday-loss-pressure-cluster",
-    "title": "Three DMCs persistently top the workday-loss pressure cluster",
-    "subtitle": "Afghanistan, India, Bangladesh hold the top three positions across every parameter perturbation; the fourth and fifth shift.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "climate-health-workdays",
-    "maturity": "PP",
-    "topics": [
-      "climate-health",
-      "PM2.5",
-      "outdoor-labor"
-    ],
-    "geographies": [
-      "AFG",
-      "IND",
-      "BGD",
-      "PAK",
-      "TJK"
-    ],
-    "abstract": "The workday-loss pressure index combines outdoor-labor share (agriculture + half-weighted industry employment) with PM2.5 exposure pressure. Across 34 rankable ADB DMCs, three economies — Afghanistan, India, Bangladesh — sit in the top three of the ranking and remain there in every row of a ±50 percent sensitivity suite on the index's three arbitrary parameters. The fourth and fifth positions shift with PM2.5-cap perturbations; the headline is committed to the stable top three. The index is PM2.5-only; heat exposure (the Lancet Countdown's labor-capacity-loss framework) is the §18.5 upgrade-pass. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-04-26",
-    "doi": "",
-    "file": "workday-loss-pressure-cluster.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
@@ -728,6 +732,44 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "climate-health-workdays-brief",
+    "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
+    "subtitle": "A one-page construct check across 34 economies and 21 aligned tests.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "climate-health-workdays",
+    "maturity": "PP",
+    "topics": [
+      "climate-health",
+      "labor-capacity",
+      "heat",
+      "PM2.5",
+      "measurement"
+    ],
+    "geographies": [
+      "KHM",
+      "IND",
+      "PAK",
+      "MMR",
+      "THA",
+      "AFG",
+      "BGD"
+    ],
+    "abstract": "The inherited PM2.5 × employment proxy and the Lancet Countdown heat- related potential work-hours-loss measure have zero top-three overlap in every baseline aligned year. Across 21 year-and-parameter tests, overlap never exceeds one economy. The proxy is retired as a heat-loss substitute.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "climate-health-workdays-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "migration-displacement-signals-brief",
     "title": "The leading migrant origins change when population enters the denominator",
     "subtitle": "A one-page brief on why absolute diaspora scale, population-normalized stock, and forced displacement should be read as separate evidence objects.",
@@ -861,6 +903,44 @@
     "updated_at": "",
     "doi": "",
     "file": "access-services-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "climate-health-workdays-blog",
+    "title": "A stable climate-health proxy can still measure the wrong thing",
+    "subtitle": "Direct heat-labor data overturn the inherited PM2.5 workday-loss ranking.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "climate-health-workdays",
+    "maturity": "PP",
+    "topics": [
+      "climate-health",
+      "labor-capacity",
+      "heat",
+      "PM2.5",
+      "measurement"
+    ],
+    "geographies": [
+      "KHM",
+      "IND",
+      "PAK",
+      "MMR",
+      "THA",
+      "AFG",
+      "BGD"
+    ],
+    "abstract": "A PM2.5 × employment proxy kept the same leading economies under parameter changes, but failed an external test against the Lancet Countdown heat- related potential work-hours-loss measure. The episode shows why internal sensitivity cannot substitute for construct validation.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "climate-health-workdays-blog.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1005,6 +1085,43 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "climate-health-workdays-social",
+    "title": "Climate-health construct validation — social card",
+    "subtitle": "A concise summary of the 21-test disagreement.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "climate-health-workdays",
+    "maturity": "PP",
+    "topics": [
+      "climate-health",
+      "labor-capacity",
+      "heat",
+      "PM2.5",
+      "measurement"
+    ],
+    "geographies": [
+      "KHM",
+      "IND",
+      "MMR",
+      "THA",
+      "AFG",
+      "BGD"
+    ],
+    "abstract": "Across 21 aligned tests, a PM2.5 × employment proxy shares at most one of its top three economies with a direct heat-related labor-capacity measure.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "climate-health-workdays-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "migration-displacement-signals-social",
     "title": "Migration denominator — social card",
     "subtitle": "A concise summary of the zero-overlap finding.",
@@ -1133,6 +1250,42 @@
     "updated_at": "",
     "doi": "",
     "file": "access-services-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "climate-health-workdays-deck",
+    "title": "\"A stable proxy can still measure the wrong thing\"",
+    "subtitle": "\"Climate-health construct validation across 34 economies — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "climate-health-workdays",
+    "maturity": "PP",
+    "topics": [
+      "climate-health",
+      "labor-capacity",
+      "heat",
+      "PM2.5",
+      "measurement"
+    ],
+    "geographies": [
+      "KHM",
+      "IND",
+      "PAK",
+      "MMR",
+      "THA",
+      "AFG",
+      "BGD"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "climate-health-workdays-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

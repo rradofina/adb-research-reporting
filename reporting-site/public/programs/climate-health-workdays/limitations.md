@@ -1,69 +1,39 @@
-# Limitations — Climate-Health Workday Loss
+# Limitations — Climate-health labor capacity
 
-`attestation_chain: ai-first`
+`attestation_chain: ai-first` · 2026-07-18
 
-Status: §18 AI-finalized 2026-04-26.
+## Outcome gap
 
----
+The Lancet measure estimates potential physiological work capacity under heat.
+It does not observe absence, hours worked, output, wages, income, or adaptation.
+This package joins none of those outcomes.
 
-## 1. What this result cannot establish
+## Model assumptions
 
-- The index does not measure actual workday loss. It measures a
-  proxy combining outdoor-labor share with PM2.5 pressure.
-- The result does not include heat exposure. The Lancet Countdown
-  framework's labor-capacity-loss indicator is heat-driven; the
-  current pipeline is PM2.5-only.
-- The result does not produce a country deficiency ranking. The
-  headline is the top-3 set, treated as a measurement-pressure
-  cluster, not a policy-failure ranking.
+The heat method combines gridded WBGT, population, national employment shares,
+and sector workload. National sector shares are applied within grids. Informal
+unpaid work, individual schedules, rest, shade, cooling, acclimatization, and
+workplace technology are not directly observed.
 
-## 2. Source-side limitations
+## Comparison scope
 
-- WDI EN.ATM.PM25.MC.M3 is a national mean. In large-area DMCs (IND,
-  CHN, IDN) it conceals dramatic within-country variance.
-- Pacific microstates and selected low-monitor-density DMCs (AFG,
-  MMR, KHM, LAO, TLS) have imputed PM2.5 values; the §18.5
-  upgrade-pass replaces these with ACAG-V6 satellite surface.
-- WDI employment series for small economies are noisy.
+The common annual window is 2018–2020 with 34 economies. Rank agreement can
+test whether two measures order rows similarly; it cannot validate their
+levels or estimate causality.
 
-## 3. Method-side limitations
+## Spatial aggregation
 
-- The 5 µg/m³ floor is WHO-anchored; the 45 µg/m³ cap is heuristic.
-  The sensitivity suite shows the top-3 set is robust; the top-5
-  shifts under cap perturbation.
-- The 0.5 industry weight is split-the-difference for mixed
-  indoor/outdoor industry work.
+National PM2.5 and national heat summaries conceal subnational exposure. A
+subnational extension also requires compatible employment, workload,
+adaptation, and outcome data; a finer climate raster alone is insufficient.
 
-## 4. DMC-coverage limitations
+## Source coverage and license
 
-10 of the 44 ADB DMCs are not rankable due to missing inputs;
-documented in `coverage.md`.
+The 2024 heat workbook omits Taipei,China; the outdoor-worker workbook also
+omits Hong Kong, China. Lancet workbooks are recorded as CC BY-NC-SA 4.0.
 
-## 5. Synthesized reviewer objections quoted verbatim
+## Interpretation boundary
 
-(per `review-external.md` §4 and `CONSTITUTION.md` §18.4)
-
-### 5.1 From C-1 (Lancet Countdown), synthesized
-
-> Using PM2.5 alone — without heat — produces an incomplete pressure
-> measure. The article must label the index as the PM2.5-only subset.
-
-### 5.2 From C-3 (Dalhousie ACAG-V6), synthesized
-
-> WDI EN.ATM.PM25.MC.M3 is derived from monitor-station data with
-> coverage gaps. ACAG-V6 satellite-derived 1-km gridded estimate
-> fills the gaps; the upgrade-pass is required for any human-final
-> attestation.
-
-### 5.3 From C-5 (WB DECDG), synthesized
-
-> PM2.5 monitor density correlates with HDI. Low-HDI DMCs have very
-> few stations and the national mean is interpolated. AFG #1 carries
-> an "imputed input" caveat.
-
-## 6. Banned framings
-
-- This result does **not** rank DMCs as deficient.
-- The headline is the top-3 measurement-pressure cluster, not a
-  ranking.
-- §13.3 framing observed throughout.
+The negative construct result does not deny a PM2.5-productivity mechanism.
+It rejects PM2.5 × employment as a substitute for the heat-work-loss measure.
+No economy is labeled deficient, resilient, or well governed from these data.

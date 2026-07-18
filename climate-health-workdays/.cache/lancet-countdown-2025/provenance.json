@@ -1,0 +1,27 @@
+{
+  "retrieved_at": "2026-07-18",
+  "sources": [
+    {
+      "dataset": "potential_hours",
+      "path": "climate-health-workdays/.cache/lancet-countdown-2025/Indicator-1.1.3_PWHL_Data-Download_2025.xlsx",
+      "url": "https://lancetcountdown.org/wp-content/uploads/2025/10/Indicator-1.1.3_PWHL_Data-Download_2025-Lancet-Countdown-Report_v2-1.xlsx",
+      "sha256": "36d16d2ba3acb43e333fca86f6873b558f9ea4816ea97c740bb5b85c228413cb",
+      "bytes": 1510290,
+      "retrieved_at": "2026-07-18",
+      "license": "CC BY-NC-SA 4.0",
+      "source_sector_total_unit": "thousands of potential work hours",
+      "normalized_sector_total_unit": "potential work hours",
+      "unit_conversion": "multiply source sector totals by 1,000",
+      "per_employed_person_field": "TotalSunWHLpp (hours)"
+    },
+    {
+      "dataset": "outdoor_workers",
+      "path": "climate-health-workdays/.cache/lancet-countdown-2025/Indicator-1.1.3_Workers_Data-Download_2025.xlsx",
+      "url": "https://lancetcountdown.org/wp-content/uploads/2025/10/Indicator-1.1.3_Workers_Data-Download_2025-Lancet-Countdown-Report.xlsx",
+      "sha256": "5fad256ea6f85d7e23c0fb7c68f578ceec64b2443cd75a62266d140b5d767c64",
+      "bytes": 339133,
+      "retrieved_at": "2026-07-18",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  ]
+}

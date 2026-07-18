@@ -202,22 +202,22 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Health",
     finish: "program-prospectus",
     question:
-      "Which DMCs combine high outdoor-labor exposure with above-guideline PM2.5 pressure?",
+      "Does the inherited PM2.5 × employment proxy recover a direct heat-related labor-capacity signal?",
     output:
-      "Afghanistan, India, and Bangladesh are stable across the pressure-index sensitivity suite.",
-    chartTitle: "Workday-loss pressure index",
-    sourceNote: "WDI employment structure and PM2.5 exposure; WHO guideline used for excess exposure framing.",
+      "No. Across 21 aligned tests, top-three overlap is never greater than one economy; 16 tests have zero overlap.",
+    chartTitle: "Proxy versus heat-work-loss construct agreement",
+    sourceNote: "Aligned World Bank WDI inputs and Lancet Countdown 2025 indicator 1.1.3 country workbooks.",
     caveat:
-      "This version is PM2.5-only; heat exposure is not yet integrated into the headline.",
+      "Potential work hours lost are modelled capacity losses, not recorded absence, output, or a causal estimate from this study.",
     nextStep:
-      "Add heat-work-hour loss using climate grids and occupational heat-stress functions.",
+      "Join observed absenteeism, hours, output, or labor-supply data to compatible workplace or subnational heat exposure.",
     granularity: {
-      currentUnit: "Country-level WDI outdoor labor share and PM2.5 exposure",
-      targetUnit: "District/grid cell, occupational group, heat-exposure zone",
+      currentUnit: "Aligned country-year rank comparison, 34 economies in 2018–2020",
+      targetUnit: "Workplace or subnational exposure-outcome panel by sector and time",
       gap:
-        "PM2.5 is currently a country mean; heat-work-hour loss and subnational labor exposure are not integrated.",
+        "The direct heat measure is modelled and no observed labor outcome is joined.",
       upgradeData:
-        "PM2.5 grids, ERA5/CMIP heat, labor-force shares, WorldPop, and occupation/sector data.",
+        "Observed absence, hours, output, or labor supply; workplace adaptation; WBGT or heat-index exposure; aligned employment and sector data.",
     },
   },
   "coastal-informal-risk": {

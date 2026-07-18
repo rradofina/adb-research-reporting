@@ -1,0 +1,21 @@
+{
+  "program": "climate-health-workdays",
+  "attestation_chain": "ai-first",
+  "finding": "Across all 21 aligned year-and-parameter tests, the WDI PM2.5 proxy shares at most one of its top three economies with the Lancet Countdown heat-related potential work-hours-loss measure.",
+  "source_inputs": [
+    "generated\\climate-health-construct-validation.json",
+    "generated\\climate-health-heat-workloss-panel.csv",
+    "generated\\climate-health-proxy-heat-comparison.csv",
+    "sensitivity-runs.json"
+  ],
+  "figures": [
+    "climate-construct-rank-disagreement",
+    "climate-construct-sensitivity",
+    "climate-heat-loss-profile-2024",
+    "climate-heat-loss-rate-vs-scale",
+    "climate-worker-denominator-repair",
+    "climate-heat-loss-sector-composition",
+    "climate-source-coverage"
+  ],
+  "non_claim": "The dossier does not interpret modelled potential work-hours loss as observed absence, does not combine PM2.5 and heat into a new index, and does not rank policy performance."
+}

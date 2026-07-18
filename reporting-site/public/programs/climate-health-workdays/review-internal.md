@@ -1,73 +1,26 @@
-# Internal review — Climate-Health Workday Loss
+# Internal review — Climate-health labor capacity
 
-`attestation_chain: ai-first`
+`attestation_chain: ai-first` · critique pass 2026-07-18
 
-Reviewer: §18 AI critique-pass.
-Date: 2026-04-26.
-Status: **closed**.
+## Decision
 
----
+**Accept as PP after claim replacement.** The old pressure-cluster claim is not
+accepted. The construct-validation result is supported by committed scripts,
+aligned data, required sensitivity, and explicit limits.
 
-## 1. What was reviewed
+## Critical checks
 
-`pre-registration.md`, `sensitivity.md`, `sensitivity-runs.json`,
-`coverage.md`, `generated/*`, the article.
+| Check | Finding | Resolution |
+|---|---|---|
+| Construct | PM2.5 and WBGT heat loss are different mechanisms | Replace ranking with validation failure; do not combine them |
+| Vintage | Latest-value joins could create artificial disagreement | Use common annual 2018–2020 rows only |
+| Units | Lancet sector totals are thousands of hours | Convert ×1,000 in the evidence pipeline and regenerate |
+| Outcome | Potential loss could be mistaken for absence | Repeat modelled-potential label in title support, charts, method, and limits |
+| Denominator | Total population was used as workers | Repair with employed people aged 15+ and keep old value only as error evidence |
+| Ranking ethics | Country order could imply performance | Frame as construct disagreement and planning units, not grades |
+| License | Lancet terms are more restrictive than the article license | Record source license and require downstream compliance |
 
-## 2. Critique-pass — issues raised
+## Remaining limitation
 
-### 2.1 The "outdoor labor" proxy is coarse
-
-`agri% + 0.5 × industry%` is a rough proxy. Industry includes both
-outdoor (construction, mining) and indoor (manufacturing) work; the
-0.5 weight is split-the-difference. Sensitivity at ±50% on this
-weight is included; the headline survives.
-
-### 2.2 PM2.5-only ignores heat
-
-The program README anticipates heat exposure as a dimension. The
-current pipeline uses PM2.5 alone. The article must not present this
-as the full "climate-health workday loss" pressure — it is the
-pollution-only subset. Heat is the §18.5 upgrade-pass.
-
-### 2.3 Country-mean PM2.5 hides huge within-country variance
-
-WDI EN.ATM.PM25.MC.M3 is a national mean. India's actual PM2.5
-distribution ranges from ~10 µg/m³ in the south to >100 µg/m³ in the
-Indo-Gangetic Plain. The country-mean understates exposure for the
-populated north and overstates for the south. Subnational analysis
-via ACAG-V6 (Dalhousie) or Earth Engine is the upgrade-pass.
-
-### 2.4 The 5/45 PM2.5 ramp is WHO-anchored but not universal
-
-The PM2.5 floor (5) is the WHO 2021 ambient AQ guideline. The cap (45)
-is roughly WHO interim target 2 + margin. A reviewer at WHO Air
-Quality team might reasonably argue for a different cap (e.g., the
-35 µg/m³ interim target 2 itself, or the 25 IT-3). The sensitivity
-suite tests ±50% (22.5 and 67.5) and the headline narrows accordingly.
-
-### 2.5 Top-3 is honest but small
-
-A 3-economy claim is narrower than the typical top-5 in screening
-articles. The honest answer to "what does the data robustly show?"
-is the top-3. Reviewers may request the top-5 with explicit
-sensitivity-shift labels rather than the narrowed top-3 — the
-article reports both.
-
-## 3. Owner-equivalent responses
-
-3.1: accepted as a known limitation. Documented in `limitations.md`.
-3.2: heat-exposure dimension is the §18.5 upgrade-pass; the article
-explicitly labels the current index as the PM2.5-only subset.
-3.3: subnational PM2.5 is in the upgrade-pass list.
-3.4: WHO-team objection synthesized in `review-external.md`.
-3.5: article reports both top-3 (claim) and top-5 (with sensitivity
-disclosure).
-
-## 4. §18 attestation
-
-| Field | Value |
-|---|---|
-| Comments addressed | yes |
-| Date closed | 2026-04-26 |
-| Reviewer chain | §18 AI critique-pass |
-| Upgrade-eligible | yes |
+No observed labor outcome is joined. This is a stated stopping condition, not
+a hidden omission. It prevents progression beyond PP without a new data object.

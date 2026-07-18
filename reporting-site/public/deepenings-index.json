@@ -27,12 +27,12 @@
     },
     {
       "slug": "climate-health-workdays",
-      "title": "Deepened result",
+      "title": "Deepened results",
       "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
       "artifact": "climate-health-workdays-deepening.json",
-      "finding": "The index is labor-share-driven, and the exposure count is inflated by non-workers."
+      "finding": "attestation_chain: ai-first · 2026-07-18"
     },
     {
       "slug": "coastal-informal-risk",

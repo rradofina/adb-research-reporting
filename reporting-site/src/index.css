@@ -8702,7 +8702,18 @@
     max-width: var(--measure-research);
   }
 
+  /* Evidence-packet documents are nested inside the prose container. Give
+     their narrative text the same generous editorial measure as the paper,
+     while leaving figures and tables on the full evidence canvas. */
+  .research-story-section .research-story-document > :is(p, ul, ol, blockquote) {
+    max-width: var(--measure-research);
+  }
+
   .research-story-section .prose-article > :is(h1, h2, h3, h4) {
+    max-width: 34ch;
+  }
+
+  .research-story-section .research-story-document > :is(h1, h2, h3, h4) {
     max-width: 34ch;
   }
 

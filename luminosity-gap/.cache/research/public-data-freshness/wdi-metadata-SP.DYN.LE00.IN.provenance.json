@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SP.DYN.LE00.IN?format=json",
+  "retrieved_at": "2026-07-18T21:11:07+00:00",
+  "raw_bytes": 969,
+  "raw_sha256": "a39cb6fddfbbb953053690366243dffe77a266c4deae79c46ce5a06da9f5fc31",
+  "compressed_bytes": 475,
+  "compressed_sha256": "b5852a36bc3ce44140350d2207a5f00ddcd07ca1eee857efb81f64cac192dc3e",
+  "attestation_chain": "ai-first"
+}

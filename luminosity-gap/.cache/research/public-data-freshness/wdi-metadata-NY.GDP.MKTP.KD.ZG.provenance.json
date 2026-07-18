@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/NY.GDP.MKTP.KD.ZG?format=json",
+  "retrieved_at": "2026-07-18T21:11:15+00:00",
+  "raw_bytes": 909,
+  "raw_sha256": "ed7703d841d4dde2d1cb858f0dd53229fe3e841f72abb17dbc8c950ad20c88ce",
+  "compressed_bytes": 545,
+  "compressed_sha256": "0ba6da26d02727f5bd91da6a15d10aba38e13a99c3d58d3f34ca74c3273d6efd",
+  "attestation_chain": "ai-first"
+}

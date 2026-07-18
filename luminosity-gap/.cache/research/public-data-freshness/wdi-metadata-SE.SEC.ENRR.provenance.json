@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SE.SEC.ENRR?format=json",
+  "retrieved_at": "2026-07-18T21:11:11+00:00",
+  "raw_bytes": 1107,
+  "raw_sha256": "eec553a1bd5742b286200a0a8b461f396409e1bb323ef4dcfae40e0ba012565e",
+  "compressed_bytes": 634,
+  "compressed_sha256": "98f3aea3424162f728ab5ca7246fc6e96a0628800a083f3a77508c38ed711b81",
+  "attestation_chain": "ai-first"
+}

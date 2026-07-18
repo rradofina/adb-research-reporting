@@ -1,0 +1,104 @@
+{
+  "program": "public-data-freshness",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T21:28:42+00:00",
+  "figure_count": 12,
+  "figures": [
+    {
+      "number": 1,
+      "role": "coverage",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-01-coverage-funnel.png",
+        "svg": "generated/charts/public-data-freshness-01-coverage-funnel.svg"
+      }
+    },
+    {
+      "number": 2,
+      "role": "production context",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-02-indicator-production-age.png",
+        "svg": "generated/charts/public-data-freshness-02-indicator-production-age.svg"
+      }
+    },
+    {
+      "number": 3,
+      "role": "hero decomposition",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-03-domain-clock-decomposition.png",
+        "svg": "generated/charts/public-data-freshness-03-domain-clock-decomposition.svg"
+      }
+    },
+    {
+      "number": 4,
+      "role": "main result",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-04-classification-matrix.png",
+        "svg": "generated/charts/public-data-freshness-04-classification-matrix.svg"
+      }
+    },
+    {
+      "number": 5,
+      "role": "construct",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-05-two-clock-construct.png",
+        "svg": "generated/charts/public-data-freshness-05-two-clock-construct.svg"
+      }
+    },
+    {
+      "number": 6,
+      "role": "heterogeneity and falsification",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-06-domain-concentration.png",
+        "svg": "generated/charts/public-data-freshness-06-domain-concentration.svg"
+      }
+    },
+    {
+      "number": 7,
+      "role": "limitation",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-07-missing-versus-old.png",
+        "svg": "generated/charts/public-data-freshness-07-missing-versus-old.svg"
+      }
+    },
+    {
+      "number": 8,
+      "role": "coverage equity diagnostic",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-08-pacific-group-diagnostic.png",
+        "svg": "generated/charts/public-data-freshness-08-pacific-group-diagnostic.svg"
+      }
+    },
+    {
+      "number": 9,
+      "role": "set-size sensitivity",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-09-indicator-set-sensitivity.png",
+        "svg": "generated/charts/public-data-freshness-09-indicator-set-sensitivity.svg"
+      }
+    },
+    {
+      "number": 10,
+      "role": "threshold sensitivity",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-10-threshold-sensitivity.png",
+        "svg": "generated/charts/public-data-freshness-10-threshold-sensitivity.svg"
+      }
+    },
+    {
+      "number": 11,
+      "role": "alternative-specification falsification",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-11-alternative-specifications.png",
+        "svg": "generated/charts/public-data-freshness-11-alternative-specifications.svg"
+      }
+    },
+    {
+      "number": 12,
+      "role": "claim gate",
+      "paths": {
+        "png": "generated/charts/public-data-freshness-12-claim-gate.png",
+        "svg": "generated/charts/public-data-freshness-12-claim-gate.svg"
+      }
+    }
+  ]
+}

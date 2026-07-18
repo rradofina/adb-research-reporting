@@ -1,0 +1,61 @@
+{
+  "program": "public-data-freshness",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T21:28:35+00:00",
+  "freeze_commit": "fc9f170",
+  "snapshot_year": 2026,
+  "reference_cap": 2025,
+  "roster_n": 42,
+  "indicator_counts": {
+    "lower": 9,
+    "baseline": 18,
+    "upper": 27
+  },
+  "retrieved_indicator_response_count": 27,
+  "valid_indicator_count": 26,
+  "retrieval_failures": [
+    {
+      "code": "EN.ATM.CO2E.PC",
+      "error": "WDI returned no observation table; the frozen code is unavailable or archived"
+    }
+  ],
+  "primary": {
+    "possible_cells": 756,
+    "observed_cells": 709,
+    "missing_cells": 47,
+    "observed_share": 0.937831,
+    "missing_share": 0.062169,
+    "absolute_review_cells": 212,
+    "relative_review_cells": 74,
+    "disagreement_cells": 138,
+    "production_cycle_only_cells": 138,
+    "absolute_review_share_observed": 0.299013,
+    "relative_review_share_observed": 0.104372,
+    "disagreement_share_observed": 0.19464,
+    "production_cycle_only_share_absolute": 0.650943,
+    "calendar_age_years_median": 2,
+    "calendar_age_years_q1": 1.0,
+    "calendar_age_years_q3": 3.0,
+    "production_age_years_median": 1,
+    "production_age_years_q1": 1.0,
+    "production_age_years_q3": 2.0,
+    "relative_lag_years_median": 0,
+    "relative_lag_years_q1": 0.0,
+    "relative_lag_years_q3": 1.0
+  },
+  "decision_gate": {
+    "required_disagreement_share": 0.1,
+    "set_disagreement_shares_9_18_27": [
+      0.247887,
+      0.19464,
+      0.201789
+    ],
+    "primary_pass": true,
+    "all_set_sizes_pass": true,
+    "minimum_coverage_pass": true,
+    "leave_one_domain_out_minimum": 0.09221,
+    "single_domain_dependence": true,
+    "decision": "reshape_to_domain_concentrated_claim"
+  },
+  "non_claim": "This is an economy-by-indicator measurement and coverage diagnostic. It is not a rating of an economy, statistical office, data quality, or formal dissemination timeliness."
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:16+00:00",
+  "raw_bytes": 4145343,
+  "raw_sha256": "a532c07489ce66c17c76d5f0ffcc0ceb196facceda18aec8a77c69d3a0f8d811",
+  "compressed_bytes": 153346,
+  "compressed_sha256": "5acb8e7d4ab4e1994ab36669ffc809b1f2a9ad83cbe41e9c56ba7dadf00cc028",
+  "attestation_chain": "ai-first"
+}

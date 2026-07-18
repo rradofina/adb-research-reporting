@@ -717,6 +717,38 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "public-data-freshness-two-clocks",
+    "title": "A data year has two clocks",
+    "subtitle": "In a frozen 18-indicator WDI panel, 19.5% of observed cells change review status when calendar age is separated from indicator-wide production cadence—but environment carries the cross-domain boundary.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "public-data-freshness",
+    "maturity": "SR",
+    "topics": [
+      "public data",
+      "statistical systems",
+      "data timeliness",
+      "WDI",
+      "data visualization"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Development dashboards often label a cell by its latest reference year. That age combines two quantities: the production age shared by an indicator and the economy-specific lag from that indicator's frontier. In a prospectively frozen panel of 42 ADB developing member economies and 18 World Development Indicators, 138 of 709 observed cells (19.5%) change three-year review status when calendar age is replaced by relative lag. All 138 are calendar-only flags, equal to 65.1% of absolute review cells. The finding survives frozen 9-, 18-, and 27-indicator sets but is highly threshold-dependent and falls to 9.2% when environment is removed. The supported conclusion is domain-aware: dashboards should show calendar age, indicator frontier, relative lag, and missingness separately. The study does not rate economies, statistical offices, data quality, or compliance with formal release standards.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "access-services-brief",
     "title": "The facility map changes the Philippine regional rank",
     "subtitle": "A one-page brief on why an eight-economy OSM screen should be used for source validation, not service-access ranking.",
@@ -1002,6 +1034,36 @@
     "updated_at": "",
     "doi": "",
     "file": "migration-displacement-signals-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "public-data-freshness-two-clocks-brief",
+    "title": "Show both clocks on public data",
+    "subtitle": "A two-page evidence brief for domain-aware freshness review.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "public-data-freshness",
+    "maturity": "PP",
+    "topics": [
+      "public data",
+      "data timeliness",
+      "monitoring"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Calendar age and indicator-relative lag disagree for 19.5% of observed baseline WDI cells at a three-year rule, but environment carries the cross-domain decision boundary.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks-brief.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -1457,6 +1519,36 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "public-data-freshness-two-clocks-blog",
+    "title": "When “three years old” tells only half the story",
+    "subtitle": "A better way to show data freshness without hiding age or missingness.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "public-data-freshness",
+    "maturity": "PP",
+    "topics": [
+      "public data",
+      "data visualization",
+      "statistical systems"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "A WDI cell's calendar age combines the production cycle of its indicator and its distance from that indicator's frontier.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "public-service-data-quality-blog",
     "title": "Two maps, two answers — and the gap between them is not random",
     "subtitle": "Why OpenStreetMap and the official health-facility registry disagree about the same country, and why the disagreement is systematic in a way planners should care about.",
@@ -1887,6 +1979,35 @@
     "updated_at": "",
     "doi": "",
     "file": "migration-displacement-signals-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "public-data-freshness-two-clocks-social",
+    "title": "One data year, two clocks",
+    "subtitle": "Social copy derived from the public-data-freshness study.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "public-data-freshness",
+    "maturity": "PP",
+    "topics": [
+      "public data",
+      "monitoring"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "A latest-year label combines indicator production age and economy-specific relative lag.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -2338,6 +2459,36 @@
     "updated_at": "",
     "doi": "",
     "file": "migration-displacement-signals-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "public-data-freshness-two-clocks-slides",
+    "title": "A data year has two clocks",
+    "subtitle": "Eight slides on domain-aware freshness review in WDI dashboards.",
+    "kind": "slides",
+    "tier": "slides",
+    "status": "draft",
+    "program": "public-data-freshness",
+    "maturity": "PP",
+    "topics": [
+      "public data",
+      "monitoring",
+      "data visualization"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Eight-slide presentation of the public-data-freshness study.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks-slides.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

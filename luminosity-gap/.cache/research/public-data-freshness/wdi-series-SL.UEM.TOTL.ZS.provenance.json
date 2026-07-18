@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SL.UEM.TOTL.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:11+00:00",
+  "raw_bytes": 4407416,
+  "raw_sha256": "58e82de86f5fd81f0630fabfdc40d10fd067cb6d14192b545b8c9cc027825a4f",
+  "compressed_bytes": 97736,
+  "compressed_sha256": "79a2c00c92724c2bf49d273a3e230d9a14403110c2b17d5d149950d3dba20188",
+  "attestation_chain": "ai-first"
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:13+00:00",
+  "raw_bytes": 4088470,
+  "raw_sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c",
+  "compressed_bytes": 139976,
+  "compressed_sha256": "e084b1788800f18573e55acd638033833ba00c46ae56e744bb664638a995e9ef",
+  "attestation_chain": "ai-first"
+}

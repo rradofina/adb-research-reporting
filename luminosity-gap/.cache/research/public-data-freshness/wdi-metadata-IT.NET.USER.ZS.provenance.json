@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/IT.NET.USER.ZS?format=json",
+  "retrieved_at": "2026-07-18T21:11:13+00:00",
+  "raw_bytes": 629,
+  "raw_sha256": "6e6fc76f94bda17bd30c3303f1e8965698c93d344c26a556ea6ee18a86c3cc32",
+  "compressed_bytes": 392,
+  "compressed_sha256": "da471ec97cd513980dab0a567233eef7f93bb803787c19be3f1c2f9d07d91fa8",
+  "attestation_chain": "ai-first"
+}

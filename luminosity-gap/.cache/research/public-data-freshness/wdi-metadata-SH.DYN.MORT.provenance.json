@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SH.DYN.MORT?format=json",
+  "retrieved_at": "2026-07-18T21:11:10+00:00",
+  "raw_bytes": 1099,
+  "raw_sha256": "d6b4f172d2c2b36198d3a0977b21c17740566801f9fd75dda99c82a517f1e3c4",
+  "compressed_bytes": 496,
+  "compressed_sha256": "2e5783400691cda7c82cee5ebb2ff28b35591495737edf2b7514b9159c738131",
+  "attestation_chain": "ai-first"
+}

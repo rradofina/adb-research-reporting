@@ -1,64 +1,70 @@
 # Public data freshness blind spots
 
-`attestation_chain: ai-first` · Active flagship · Mode A review
+`attestation_chain: ai-first` · Screening Result · Mode A review complete
 
-**Status:** Hypothesis with a qualified L2 hook. The expanded L3 test is
-prospectively frozen but has not yet run.
+## Finding
+
+At the prospectively frozen three-year rule, calendar age and lag from the
+indicator's global production frontier send **138 of 709 observed baseline
+cells (19.5%)** to different review states. All 138 are calendar-only flags,
+equal to 65.1% of the absolute review queue.
+
+The pre-specified domain falsifier narrows the claim. Removing environment and
+climate lowers disagreement to 9.2%, below the 10% gate. The supported result
+is domain-concentrated: relative clocks materially change review queues where
+indicators share slower production cycles, not uniformly across development
+data.
+
+![The baseline two-clock classification matrix.](/programs/public-data-freshness/generated/charts/public-data-freshness-04-classification-matrix.svg)
 
 ## Research question
 
-How often does a development-data cell that looks old by calendar year cease to
-look economy-specifically delayed after the indicator's own global production
+How often does a WDI economy × indicator cell that looks old by calendar year
+cease to look economy-specifically delayed after the indicator's own source
 frontier is taken into account?
 
-## Why this belongs in the factory
+## Why it matters
 
-ADB country teams, ERDI data producers, and dashboard users routinely combine
-indicators with different production cycles. A 2020 PM2.5 estimate and a 2023
-electricity-access estimate can both be the latest available observations for
-their respective series. Showing only the reference year can therefore mix two
-different phenomena: an indicator-wide production lag and an economy-specific
-publication gap. The program tests whether separating those quantities changes
-which cells deserve review. It does not score national statistical systems.
+Cross-domain dashboards routinely compare indicators with different production
+cycles. A single latest-year badge mixes the age of the underlying observation
+with the economy's lag from what the source currently reports elsewhere. This
+study separates those quantities without replacing them with a composite
+score.
 
-## Qualified hook card
+## Evidence design
 
-| Field | Decision |
+| Element | Frozen choice |
 |---|---|
-| Source object | World Bank WDI public API; economy × indicator × reference-year observations, retrieved as a pinned snapshot. ADB *Basic Statistics 2026* supplies the regional policy-domain frame, not the empirical values. |
-| First visual | Economy-by-indicator heatmap that decomposes calendar age into indicator-wide production age and economy-specific relative lag. |
-| Possible claim | A material share of calendar-old WDI cells in the ADB developing-member sample reflects indicator-wide production cycles rather than economy-specific relative delay. |
-| Decision user | ADB/ERDI dashboard designers and country teams deciding which data cells need a freshness warning or source follow-up. |
-| Falsifier | Classification disagreement stays below 10% under the 9-, 18-, and 27-indicator sets and the 1.5-, 3-, and 4.5-year thresholds. |
-| Landscape gap | Existing work measures statistical-system performance, indicator-level WDI suitability, aggregate data availability, or macro-series dissemination. It does not expose this two-part age decomposition at the ADB economy × cross-domain indicator cell used by a dashboard reader. |
-| Stop condition | Defer the program if the decomposition adds little classification information, if results reverse across the pre-specified indicator sets, or if source metadata cannot distinguish observed from missing cells without unsupported assumptions. |
+| Unit | Economy × indicator cell |
+| Population | 42 WDI-compatible ADB developing member economies |
+| Indicator sets | 9 lower, 18 baseline, 27 upper; balanced across nine domains |
+| Source vintage | Public WDI API retrieved 2026-07-19, capped at 2025 |
+| Primary rule | Share of observed baseline cells whose calendar and relative three-year review flags disagree |
+| Gate | At least 10%, with set-size, threshold, frontier, vintage, and domain-deletion tests |
+| Result | Baseline passes; single-domain dependence triggers claim reshaping |
 
-## Prospective indicator design
+## Full research package
 
-The baseline has 18 indicators: two pre-selected indicators in each of nine
-policy domains. Sensitivity uses one per domain (9; −50%) and three per domain
-(27; +50%). Selection is frozen in `pre-registration.md`; later results cannot
-swap codes to improve the story.
+- `paper-charter.md` and `pre-registration.md` freeze the question, indicator
+  sets, estimands, sensitivities, and falsifiers before the expanded pull.
+- `literature.md` and `literature-prisma.md` document the related-evidence
+  landscape and the cell-level gap addressed here.
+- `coverage.md`, `results.md`, `sensitivity.md`, and `limitations.md` provide
+  the data, findings, robustness checks, and inference boundaries.
+- `review-internal.md` and `review-external.md` preserve the AI-first critique
+  and adversarial objections without claiming external endorsement.
+- `upgrade-gap.md` records the conclusion and the next claim-changing data
+  object.
+- `REPRODUCE.md` documents the pinned-cache and live-refresh workflows.
+- `generated/` contains the row-level panel, summaries, source inventory,
+  sensitivity outputs, and 12 PNG/SVG figure pairs.
 
-## Public data plan
+## Publication surfaces
 
-| Source | Role | Unit | Access and license | Retrieval plan |
-|---|---|---|---|---|
-| World Bank WDI API | Values, reference years, source notes, global frontier | Economy × indicator × year | Public API; World Bank open-data terms | One cached JSON response per frozen indicator, with URL, retrieval time, byte count, and SHA-256 |
-| World Bank WDI monitoring framework | Method precedent and indicator-level comparison | Indicator | Public technical note and monitoring download | Pin publication/vintage in source inventory |
-| ADB Basic Statistics 2026 | External policy-domain relevance frame | Regional publication and metadata | Public CSV/metadata; CC BY 3.0 IGO | Cache the published CSV and dataset metadata |
-
-## First testable claim
-
-Across the baseline 18-indicator matrix, at least 10% of observed cells change
-review status when freshness is classified relative to the indicator's global
-production frontier rather than by calendar age alone.
-
-## Falsification condition
-
-The claim is retracted if disagreement is below 10% in the baseline and both
-indicator-set sensitivity runs, or if the direction is driven by a single
-domain whose exclusion removes the result.
+The working paper leads with the finding and integrates the evidence figures
+into the story. Brief, blog, slide, and social variants preserve the same
+claim boundary. The evidence page exposes the complete research packet for
+readers who want methodology and audit detail.
 
 ## Reproduce
 
@@ -67,11 +73,13 @@ python public-data-freshness/scripts/build-freshness-panel.py
 python public-data-freshness/scripts/build-figure-dossier.py
 ```
 
-The commands become operative only after the frozen pipeline is committed.
+Use `--refresh` on the first command only when intentionally creating a new
+WDI source vintage. Vercel is the publication layer; the committed central
+research cache and generated evidence files are the research store.
 
-## Current gate
+## Non-claims
 
-The program remains Hypothesis until the expanded pipeline runs from the
-committed freeze, the evidence packet is complete, and the claim survives its
-pre-specified sensitivities. The completed L2 sprint remains at
-`research/topic-sprints/wdi-data-freshness-sprint.md`.
+This is a WDI measurement and coverage diagnostic. It does not rate an
+economy, national statistical office, indicator quality, or formal
+dissemination timeliness. Missing is not stale; old is not wrong; relative to
+frontier is not equivalent to on-time against an official release calendar.

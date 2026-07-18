@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SH.XPD.CHEX.GD.ZS?format=json",
+  "retrieved_at": "2026-07-18T21:11:08+00:00",
+  "raw_bytes": 733,
+  "raw_sha256": "cb5e886f95a04557929a38257085e6a03e98006e38e78c2e33d872ab84fc0f05",
+  "compressed_bytes": 439,
+  "compressed_sha256": "83a2b2ce2ab5846d484b9825713163bfa8308835856c964ffbec56d8f82a100a",
+  "attestation_chain": "ai-first"
+}

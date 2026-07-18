@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+  "retrieved_at": "2026-07-18T21:11:04+00:00",
+  "raw_bytes": 113590,
+  "raw_sha256": "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c",
+  "compressed_bytes": 9940,
+  "compressed_sha256": "3852e7ca4f1badff7358603fcf2193be7511b102c13bacf8b164ed05f222ca5f",
+  "attestation_chain": "ai-first"
+}

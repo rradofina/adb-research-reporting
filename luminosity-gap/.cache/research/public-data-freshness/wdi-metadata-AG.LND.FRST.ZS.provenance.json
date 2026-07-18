@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/AG.LND.FRST.ZS?format=json",
+  "retrieved_at": "2026-07-18T21:11:15+00:00",
+  "raw_bytes": 879,
+  "raw_sha256": "706587ee22b05b930a1e745e4f104d6c895f46b827f5209655405764b85c7145",
+  "compressed_bytes": 476,
+  "compressed_sha256": "35400d5135970207bef63972b98a3a598f8e7cf3f504e8031c0aa319d568a55b",
+  "attestation_chain": "ai-first"
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/FP.CPI.TOTL.ZG?format=json",
+  "retrieved_at": "2026-07-18T21:11:16+00:00",
+  "raw_bytes": 632,
+  "raw_sha256": "df9371a3b6c01e55a3f28991e62e1b1ebbe0cd2a7da94456be9938c7a2962233",
+  "compressed_bytes": 394,
+  "compressed_sha256": "12692b86ee9eac8e725f4c9d3d8e20ac251f32eceecd3e9418629add8e5e3e67",
+  "attestation_chain": "ai-first"
+}

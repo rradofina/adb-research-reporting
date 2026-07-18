@@ -1,86 +1,112 @@
-# Results — {program-title}
+# Results
 
-Status: **{screening-result | publication-ready}**. The maturity label is
-applied by the human owner per `CONSTITUTION.md` §7. AI must not advance
-the label.
+`attestation_chain: ai-first` · 2026-07-19
 
-Frozen pre-registration: `pre-registration.md` (commit hash {hash}).
+## The calendar clock overstates review need in selected domains
 
----
+At the prospectively frozen three-year rule, **138 of 709 observed baseline
+cells (19.5%) change review status** when calendar age is replaced by lag from
+the indicator's own global production frontier. Every disagreement is a cell
+that looks old on the calendar but remains within three years of its
+indicator's frontier.
 
-## 1. Headline finding
+![The two review clocks agree on 571 cells and disagree on 138. All disagreement is calendar-only.](/programs/public-data-freshness/generated/charts/public-data-freshness-04-classification-matrix.svg)
 
-A single sentence. No hedges, no narrative. The claim from
-`pre-registration.md` §1 with the empirical answer attached.
+The broad result passes the 10% decision rule, but its pre-specified
+leave-one-domain-out test narrows the claim. Removing environment and climate
+reduces disagreement to 9.2%. The defensible finding is therefore not that all
+development data need a relative clock. It is that a single calendar-age rule
+can create many avoidable review flags in domains whose indicators are
+released on a common slower cycle.
 
-> *{finding}*
+## One age decomposes into two quantities
 
-## 2. Headline-supporting tables and figures
+For each economy × indicator cell:
 
-Tables and figures referenced from `generated/`. Every cell traces to
-either a row in `obs.*` or a script output in `generated/`.
+`calendar age = indicator-wide production age + economy-specific relative lag`
 
-| Number | Caption | Source |
-|---|---|---|
-| Table 1 | … | `generated/{slug}-table-1.csv` |
-| Figure 1 | … | `generated/{slug}-figure-1.svg` |
+The baseline contains 756 possible cells from 42 economies and 18 indicators.
+Of these, 709 are observed and 47 are missing. Median calendar age is two
+years; median indicator-wide production age is one year; median relative lag
+is zero.
 
-## 3. Sensitivity
+![Calendar age combines a common production cycle and an economy-specific relative lag.](/programs/public-data-freshness/generated/charts/public-data-freshness-05-two-clock-construct.svg)
 
-Headline replication ranges from `sensitivity.md` §2. Critical failures
-resolved per §6.6.
+The absolute rule flags 212 observed cells. The source-relative rule flags 74.
+The remaining 138—**65.1% of all calendar-old review cells**—are old only
+because the indicator frontier itself is old.
 
-| Metric | Baseline | Min across sensitivity suite | Max across sensitivity suite |
-|---|---|---|---|
+![Domain-level decomposition of absolute review cells into production-cycle-only and relative-delay components.](/programs/public-data-freshness/generated/charts/public-data-freshness-03-domain-clock-decomposition.svg)
 
-## 4. Limitations
+## The difference is concentrated, not universal
 
-Bullet list of what this result cannot establish. Reviewer objections
-that the owner could not resolve are quoted verbatim with the reviewer's
-permission, per §9.3.
+Environment and climate contributes 80 of the 138 disagreements; health
+contributes 40; education contributes 11. Five other domains contribute two
+or none. All 80 observed environment cells in the baseline are three calendar
+years old, yet none trails its indicator frontier by three years.
 
-- *{limitation}*
+![Environment, health, and education account for nearly all two-clock disagreement.](/programs/public-data-freshness/generated/charts/public-data-freshness-06-domain-concentration.svg)
 
-## 5. Comparison to literature
+Poverty and inequality shows the opposite pattern. It has the oldest median
+calendar age—five years—but only five disagreements because 51 cells are also
+at least three years behind their indicator frontier. A relative clock does
+not make those observations current; it separates shared production cadence
+from economy-specific lag.
 
-How this result fits the cited literature. BibTeX keys only — no bare URLs.
+## Missing is not old
 
-> Cites: `key1`, `key2`, `key3`.
+The baseline observes 93.8% of possible cells. Missingness is highest in labor
+and social conditions (16.7%) and poverty and inequality (13.1%). Those cells
+are not assigned an age and are never counted as fresh.
 
-## 6. Reproduction
+![Each domain's missing share is shown separately from its observed old share.](/programs/public-data-freshness/generated/charts/public-data-freshness-07-missing-versus-old.svg)
 
-A clean clone of this repository at the frozen commit hash reproduces
-the headline finding by running:
+Pacific small-island economies have a 15.7% missing share, compared with 2.4%
+for the rest of the roster. Their disagreement share among observed cells is
+similar—20.9% versus 19.0%. The stronger group difference is therefore
+coverage, not the two-clock classification.
 
-```bash
-{command}
-```
+![Grouped coverage and disagreement diagnostics for Pacific small-island economies and the rest of the roster.](/programs/public-data-freshness/generated/charts/public-data-freshness-08-pacific-group-diagnostic.svg)
 
-Hash check (per `manifest.sha256`):
+## The headline survives set size but not every assumption
 
-```bash
-{verification command}
-```
+Disagreement remains above the 10% gate in the frozen 9-, 18-, and
+27-indicator sets: 24.8%, 19.5%, and 20.2%. The 27-indicator upper set has
+1,006 observed cells; one frozen indicator code is archived and is retained
+as a 42-cell source failure rather than replaced.
 
-## 7. Banned-words check
+![The result remains above the decision line in all three frozen indicator sets.](/programs/public-data-freshness/generated/charts/public-data-freshness-09-indicator-set-sensitivity.svg)
 
-Run on every commit by `scripts/check-banned-words.mjs`. Latest pass:
-{date}.
+The magnitude is highly threshold-dependent. Disagreement is 52.6% at the
+effective two-year cutoff, 19.5% at three years, and 0.7% at five years. A
+dashboard should therefore expose the rule, not present “stale” as an inherent
+property of a cell.
 
-## 8. DMC framing check
+![The disagreement share changes sharply under the required plus-or-minus 50 percent threshold test.](/programs/public-data-freshness/generated/charts/public-data-freshness-10-threshold-sensitivity.svg)
 
-Run on every commit by `scripts/check-dmc-framing.mjs`. Latest pass:
-{date}.
+Using an ADB-DMC rather than global frontier leaves the baseline result
+unchanged. Removing 2025 from the source vintage raises disagreement modestly
+to 21.6%. Removing environment lowers it to 9.2%, which triggers the frozen
+single-domain falsifier and reshapes the claim.
 
-## 9. Owner attestation
+![Alternative frontier, source-vintage, and domain-deletion specifications.](/programs/public-data-freshness/generated/charts/public-data-freshness-11-alternative-specifications.svg)
 
-| Field | Value |
-|---|---|
-| Pre-registration frozen before pipeline run | *(yes / no)* |
-| Pipeline reproduces from clean clone | *(yes / no)* |
-| Sensitivity suite complete | *(yes / no)* |
-| Banned-words check passing | *(yes / no)* |
-| DMC-framing check passing | *(yes / no)* |
-| Internal review complete | *(yes / no)* |
-| External red-team complete | *(yes / no)* |
-| Date attested | YYYY-MM-DD |
+## Interpretation
+
+A calendar year remains useful, but it cannot perform two jobs at once. For
+cross-domain dashboards, a review flag should show both the latest reference
+year and the indicator frontier. Relative lag can help triage source follow-up;
+calendar age preserves the user's need to know how old the underlying
+phenomenon is.
+
+The analysis does not rate economies, statistical offices, or data quality. It
+does not identify why an indicator is produced slowly, whether a formal
+release deadline was missed, or whether an old value is unfit for a particular
+decision.
+
+![The evidence supports a domain-aware dashboard rule, not a general quality score.](/programs/public-data-freshness/generated/charts/public-data-freshness-12-claim-gate.svg)
+
+The result extends work on WDI fitness for monitoring, statistical performance,
+data deprivation, and dissemination gaps by making the source-wide production
+cycle visible at the cell a dashboard reader actually sees [@welch2024wdi]
+[@dang2023spi] [@serajuddin2015deprivation] [@jolliffe2023valuable].

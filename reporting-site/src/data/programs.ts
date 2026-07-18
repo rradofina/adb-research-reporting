@@ -197,11 +197,11 @@ export const programs: ProgramEntry[] = [
     id: 18,
     slug: "public-data-freshness",
     title: "A data year has two clocks",
-    status: "H",
+    status: "SR",
     summary:
-      "A prospectively frozen WDI study will test whether calendar age and indicator-relative lag send materially different economy-by-indicator cells for review across 42 ADB developing member economies.",
+      "At a three-year rule, calendar age and indicator-relative lag disagree for 138 of 709 observed WDI cells; environment carries the cross-domain decision boundary.",
     note:
-      "Active AI-first flagship at Hypothesis. The nine-indicator L2 hook is qualified; the 9/18/27-indicator L3 result has not yet run.",
+      "AI-first Screening Result. Set-size tests pass, threshold dependence is large, and the claim is narrowed by the pre-specified domain-deletion falsifier.",
     href: "/public-data-freshness",
   },
 ];

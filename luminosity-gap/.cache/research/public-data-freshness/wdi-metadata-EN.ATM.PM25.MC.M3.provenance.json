@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/EN.ATM.PM25.MC.M3?format=json",
+  "retrieved_at": "2026-07-18T21:11:16+00:00",
+  "raw_bytes": 1195,
+  "raw_sha256": "c6a8abe3aa5bbdaa57df11d1375b4d98d82cfc5f3ee02af04f1e9e3f8d2651aa",
+  "compressed_bytes": 685,
+  "compressed_sha256": "5906742286ff26ea3af4a7ce6d67926bb98be65cfe7764e034c6f6d44425f6dc",
+  "attestation_chain": "ai-first"
+}

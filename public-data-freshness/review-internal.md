@@ -1,47 +1,44 @@
-# Internal review — {program-title}
+# Internal critique pass
 
-Reviewer: {supervisor name}
-Date: YYYY-MM-DD
-Status: **{open | closed}**
+`attestation_chain: ai-first` · AI critique under Constitution §18 · 2026-07-19
 
-Per `CONSTITUTION.md` §9.2. Internal review precedes external red-team
-review and is required for any program advancing past Screening Result.
+## Strongest supported claim
 
----
+At a visible three-year rule, calendar age and indicator-relative lag assign
+different review status to a material share of observed cells, but the
+disagreement is concentrated in environment, health, and education.
 
-## 1. What was reviewed
+## Main threats
 
-- `literature.md` (commit {hash})
-- `pre-registration.md` (commit {hash})
-- `sensitivity.md` (commit {hash})
-- `results.md` (commit {hash})
-- `generated/*` (commit {hash})
+1. **Broad-claim temptation:** the baseline and all set-size runs pass 10%, but
+   removing environment drops the result to 9.2%. A generic claim about all
+   cross-domain data would fail the pre-registration.
+2. **Relative-is-better fallacy:** a source-relative clock can prevent shared
+   production cadence from being misread as economy-specific delay, but it can
+   also normalize a genuinely old indicator. Both ages must remain visible.
+3. **Threshold arbitrariness:** disagreement varies from 52.6% to 0.7% across
+   the required cutoff test. The three-year value cannot be naturalized.
+4. **Aggregator attribution:** WDI lag cannot be assigned to a national
+   statistical office without tracing the original source.
+5. **Missingness concealment:** lower Pacific coverage could disappear if the
+   story reports only shares among observed cells.
+6. **Visual overload:** 12 figures earn space only when they carry a distinct
+   finding, limitation, sensitivity, or decision boundary.
 
-## 2. Comments — verbatim from reviewer
+## Changes made after critique
 
-(quoted verbatim; do not paraphrase)
+- Replaced the broad headline with a domain-concentrated finding.
+- Led with the 138-cell classification matrix, then showed the decomposition
+  and domain falsifier before secondary diagnostics.
+- Kept calendar age, production age, relative lag, and missingness visually
+  separate.
+- Added the threshold rule directly to sensitivity copy and figure captions.
+- Reported grouped Pacific coverage without naming country winners or losers.
+- Retained the archived indicator failure and Cloudflare wall as source facts.
 
-> *{comment 1}*
+## Verdict
 
-## 3. Owner responses — written
-
-(item-by-item, addressing each comment above)
-
-> *{response 1}*
-
-## 4. Unresolved items
-
-If any reviewer objection cannot be resolved in this program's scope, it
-moves to `results.md` §4 (Limitations) verbatim.
-
-| Comment | Reason unresolved | Treatment |
-|---|---|---|
-
-## 5. Owner attestation
-
-| Field | Value |
-|---|---|
-| All comments addressed in writing | *(yes / no)* |
-| Unresolved items documented in `results.md` §4 | *(yes / no)* |
-| Date closed | YYYY-MM-DD |
-| Commit hash | *(hash)* |
+Proceed as an AI-first Screening Result measurement study. The evidence is
+reproducible and decision-relevant, but the claim must remain domain-aware and
+the threshold must remain visible. Do not promote it to a statistical-capacity
+score, formal timeliness assessment, or country ranking.

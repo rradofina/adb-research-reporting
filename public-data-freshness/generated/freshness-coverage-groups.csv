@@ -1,0 +1,3 @@
+pacific_small_island,possible_cells,observed_cells,missing_cells,observed_share,missing_share,absolute_review_cells,relative_review_cells,disagreement_cells,production_cycle_only_cells,absolute_review_share_observed,relative_review_share_observed,disagreement_share_observed,production_cycle_only_share_absolute,calendar_age_years_median,calendar_age_years_q1,calendar_age_years_q3,production_age_years_median,production_age_years_q1,production_age_years_q3,relative_lag_years_median,relative_lag_years_q1,relative_lag_years_q3
+False,540,527,13,0.975926,0.024074,147,47,100,100,0.278937,0.089184,0.189753,0.680272,2,1.0,3.0,1,1.0,2.0,0,0.0,1.0
+True,216,182,34,0.842593,0.157407,65,27,38,38,0.357143,0.148352,0.208791,0.584615,2.0,2.0,3.0,1.0,1.0,2.0,0.0,0.0,1.0

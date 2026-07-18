@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.NAHC?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:09+00:00",
+  "raw_bytes": 4328689,
+  "raw_sha256": "6a220fd96590b3b15998b1556b82d6a41e35e0ebbe8a32fee285a3627521c2d8",
+  "compressed_bytes": 61109,
+  "compressed_sha256": "a20e7fcf7d5c0a949e17b055bd1aae57435f35babb2311b7754f8037af9d2b5d",
+  "attestation_chain": "ai-first"
+}

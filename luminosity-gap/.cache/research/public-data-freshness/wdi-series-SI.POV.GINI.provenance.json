@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:07+00:00",
+  "raw_bytes": 3331619,
+  "raw_sha256": "2cd7412267bc876a97aa35242b01f6e5328058927dc308f733ebfdf51e702256",
+  "compressed_bytes": 63464,
+  "compressed_sha256": "54b7074d01b7792244fb72d7620f0329d362939ee12a2ed885e0f34d65c65758",
+  "attestation_chain": "ai-first"
+}

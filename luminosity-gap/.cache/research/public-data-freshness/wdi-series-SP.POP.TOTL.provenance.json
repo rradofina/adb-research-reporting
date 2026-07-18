@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:05+00:00",
+  "raw_bytes": 3512353,
+  "raw_sha256": "21816454b5ea6e6b7a602aa7e1b10d8d275bf2bb59f38f882477e4d1ed3b09ab",
+  "compressed_bytes": 149685,
+  "compressed_sha256": "f4970bb02ed232d974c259f4cda17b03dabeb271c1f22529a9cd9e22b1e51773",
+  "attestation_chain": "ai-first"
+}

@@ -12,17 +12,17 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-data-freshness` — the qualified WDI L2 hook is now the next source-first program prospectus. |
+| Active flagship | `public-data-freshness` — publication and verification pass for the narrowed two-clock result. |
 | Per-program board | `public-data-freshness/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
 | Previous flagship | `digital-performance` — the Ookla-first dependency was retired; exact-year ITU data yield a 14.3-point median 2024 availability–use difference across 34 observed cases. |
 
-The new flagship was selected from a completed L2 sprint rather than by
-reopening a closed issue. Its named source objects are the WDI public API and
-monitoring framework, with ADB *Basic Statistics 2026* supplying the external
-regional domain frame. It remains Hypothesis until the expanded prospective
-test runs. `mpi-nighttime-lights` continues on its owner/coauthor-led path.
+The expanded WDI panel changes review status for 138 of 709 observed baseline
+cells, but the pre-specified environment deletion lowers disagreement to 9.2%
+and rejects a broad cross-domain reading. The publication now leads with this
+domain-concentrated finding, explicit threshold dependence, and lower Pacific
+coverage. `mpi-nighttime-lights` continues on its owner/coauthor-led path.
 
 ## Next-up queue
 
@@ -30,10 +30,10 @@ Ordering by Mode-A readiness (cheapest path to "ai-first finished for
 current issue" under the publication ladder + review loop). The owner
 overrides priority by editing this list.
 
-0. **`public-data-freshness`** — *active flagship; H with qualified L2 hook.*
-   The frozen L3 design tests whether calendar-age and source-relative clocks
-   send materially different WDI economy × indicator cells for review. Next:
-   run the 9/18/27-indicator panel and apply the prospective 10% falsifier.
+0. **`public-data-freshness`** — *active flagship; SR publication close.*
+   The frozen 9/18/27 panel passes the primary gate, while the domain-deletion
+   falsifier narrows the result. Next: finish gates, browser QA, and commit;
+   then rotate rather than scan another generic data portal.
 1. **`air-monitoring`** — *Mode-A issue closed
    for the public-evidence absence package.* Completed 2026-07-07:
    `results.md`, `coverage.md`, `sensitivity.md`, `limitations.md`, article,

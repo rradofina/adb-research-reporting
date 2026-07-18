@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SI.POV.DDAY?format=json",
+  "retrieved_at": "2026-07-18T21:11:06+00:00",
+  "raw_bytes": 1287,
+  "raw_sha256": "ad5ff599e5d33978cbd5fe9b9f96bac98ea150dafb64fcf5066dac11369ef389",
+  "compressed_bytes": 608,
+  "compressed_sha256": "e33415d34302894b4879d8b0dd26f96da02e00b8b39d85c2ddf022825333ee56",
+  "attestation_chain": "ai-first"
+}

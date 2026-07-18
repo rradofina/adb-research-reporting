@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SE.ADT.LITR.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:11+00:00",
+  "raw_bytes": 4256060,
+  "raw_sha256": "7312c53c6fbbe0584576f2909e516bca6bbc24e8c7e56a65bea3bc44f8374d80",
+  "compressed_bytes": 76524,
+  "compressed_sha256": "2d91278be0e1f5cc339c16a27a67b205f2198fb9ca934a3cffe4865310344ca1",
+  "attestation_chain": "ai-first"
+}

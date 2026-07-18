@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:06+00:00",
+  "raw_bytes": 3989201,
+  "raw_sha256": "92f0ed5499d007fc24bcaee40b48dc3ec3b788e3fb33bc352a4cf9dfe8638fe9",
+  "compressed_bytes": 147626,
+  "compressed_sha256": "5f51dd5fb138b895ae3df29c1202763cc491e657549084426508721d3218b45a",
+  "attestation_chain": "ai-first"
+}

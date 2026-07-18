@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/EN.ATM.CO2E.PC?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:14+00:00",
+  "raw_bytes": 128,
+  "raw_sha256": "531cfc2a89937bfd09e7b2a4aeac3a5c55b79767ee4dd60ae770fd3629115f38",
+  "compressed_bytes": 130,
+  "compressed_sha256": "27ed4c03138c3cbe7210bd87f74d3c3f78d2429f7668fb77247ddb8e84f17556",
+  "attestation_chain": "ai-first"
+}

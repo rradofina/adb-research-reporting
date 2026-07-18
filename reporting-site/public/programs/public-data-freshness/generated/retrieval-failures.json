@@ -1,0 +1,9 @@
+{
+  "failures": [
+    {
+      "code": "EN.ATM.CO2E.PC",
+      "error": "WDI returned no observation table; the frozen code is unavailable or archived"
+    }
+  ],
+  "generated_at": "2026-07-18T21:28:35+00:00"
+}

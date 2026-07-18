@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SI.POV.GINI?format=json",
+  "retrieved_at": "2026-07-18T21:11:08+00:00",
+  "raw_bytes": 1494,
+  "raw_sha256": "e377bf82b38024748153880ff90c0106a0ef0fd8cb04761146cc60a2609cab3d",
+  "compressed_bytes": 688,
+  "compressed_sha256": "7f075b1abed030d8ae2cbb66b30b61b19b1f350e43983f46b746cba56d8485f3",
+  "attestation_chain": "ai-first"
+}

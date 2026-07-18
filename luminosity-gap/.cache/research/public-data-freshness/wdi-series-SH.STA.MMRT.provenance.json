@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.MMRT?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:09+00:00",
+  "raw_bytes": 4331482,
+  "raw_sha256": "d19e18021c680f5f910b13c9d9f93d4219824cc5b0f44350e1b69e8840b07c73",
+  "compressed_bytes": 79043,
+  "compressed_sha256": "b8451fe6949b21f54e0b4994400e33d3e1a1230b1074e37b9b49ceb318cd6aed",
+  "attestation_chain": "ai-first"
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SL.EMP.VULN.ZS?format=json",
+  "retrieved_at": "2026-07-18T21:11:13+00:00",
+  "raw_bytes": 710,
+  "raw_sha256": "90d35cc318e27a10b106f9f1c530152f17b6cb5476201aa1f82c0491a4988307",
+  "compressed_bytes": 436,
+  "compressed_sha256": "5eaa5f3c40e1bef9b0da858be9dbd03241958065769a65d73ba721b210f7febe",
+  "attestation_chain": "ai-first"
+}

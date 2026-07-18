@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/SL.TLF.CACT.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:12+00:00",
+  "raw_bytes": 4868796,
+  "raw_sha256": "23be12c81f6148a97e3a206a8f1b6a2b4103bde82de90faaaf5c7bb739ecb203",
+  "compressed_bytes": 111093,
+  "compressed_sha256": "70ab536bbd8aaf959e96fca0b488dbaedda982deba746f0346e84b1041403dc7",
+  "attestation_chain": "ai-first"
+}

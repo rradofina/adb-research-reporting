@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SH.STA.MMRT?format=json",
+  "retrieved_at": "2026-07-18T21:11:10+00:00",
+  "raw_bytes": 1158,
+  "raw_sha256": "a61c460e477953049512663ff8355f6af8a976d5f4df3143ddbf51524cf9cd5b",
+  "compressed_bytes": 630,
+  "compressed_sha256": "96565523c39c3aae62a59fee0ee9afa69e3b3a204327560d02c531a611efd5b4",
+  "attestation_chain": "ai-first"
+}

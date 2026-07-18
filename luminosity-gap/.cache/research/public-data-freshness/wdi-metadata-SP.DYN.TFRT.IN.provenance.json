@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/SP.DYN.TFRT.IN?format=json",
+  "retrieved_at": "2026-07-18T21:11:08+00:00",
+  "raw_bytes": 777,
+  "raw_sha256": "3aec8c45c5a8e7a80b9d797bf4553e4130a3b6c2116c61b81ca1d4ebda3c040d",
+  "compressed_bytes": 460,
+  "compressed_sha256": "ab31f387383041e1d7600228de03ae92c27860495b366f2d686e9006f084292a",
+  "attestation_chain": "ai-first"
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/NE.TRD.GNFS.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:16+00:00",
+  "raw_bytes": 3622353,
+  "raw_sha256": "44b01eb1a06d091e026651546c94888c77dc7e4950a19661d4c4d9153e8fa67d",
+  "compressed_bytes": 174440,
+  "compressed_sha256": "832b22da511357cd28ff453d5d6731aac5bae3d0d50a007d207bdd83c9a6f182",
+  "attestation_chain": "ai-first"
+}

@@ -2,8 +2,8 @@
   {
     "file": "constitution.md",
     "source": "CONSTITUTION.md",
-    "size": 72121,
-    "size_human": "70.4 KB"
+    "size": 72172,
+    "size_human": "70.5 KB"
   },
   {
     "file": "operating-rules.md",
@@ -74,7 +74,7 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 227016,
+    "size": 226998,
     "size_human": "221.7 KB"
   },
   {
@@ -104,13 +104,13 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 139251,
-    "size_human": "136.0 KB"
+    "size": 140972,
+    "size_human": "137.7 KB"
   },
   {
     "file": "manifest.sha256",
     "source": "manifest.sha256",
-    "size": 85343,
-    "size_human": "83.3 KB"
+    "size": 101149,
+    "size_human": "98.8 KB"
   }
 ]

@@ -1,62 +1,60 @@
-# Limitations — {program-title}
+# Limitations
 
-Per `CONSTITUTION.md` §6.5 and §9.3. This file is included verbatim in
-the published artifact's Limitations section. Reviewer objections that
-the owner could not resolve are quoted verbatim, with the reviewer's
-permission.
+`attestation_chain: ai-first` · 2026-07-19
 
----
+## What this result cannot establish
 
-## 1. What this result cannot establish
+- It does not measure statistical capacity, institutional performance, data
+  quality, accuracy, or compliance with a formal release standard.
+- It cannot explain whether a lag originates with an economy, source agency,
+  modeled-estimate cycle, revision policy, or WDI ingestion.
+- It does not show that an older observation is unfit for a specific decision
+  or that a newer observation is fit.
+- It does not estimate policy effects or welfare consequences.
 
-Bullet list of out-of-scope claims, alternative explanations not ruled
-out, and inferences this result does not support.
+## Source limitations
 
-- *{limitation}*
+- WDI is an aggregator. Its latest available reference year can differ from
+  the latest release at the original producer.
+- Historical WDI observations and metadata can be revised after the pinned
+  2026 retrieval.
+- The archived `EN.ATM.CO2E.PC` code creates 42 missing upper-set cells. The
+  frozen design prohibits substituting a more convenient code after results.
+- The ADB *Basic Statistics 2026* download was blocked by a Cloudflare
+  challenge to noninteractive clients. It is used only as a context frame, not
+  as an empirical input.
 
-## 2. Source-side limitations
+## Method limitations
 
-Limitations rooted in the upstream data source: missing values, biased
-sampling, version drift, license restrictions on derivative use.
+- The three-year review cutoff is an interpretability choice. Its required
+  ±50% test ranges from 52.6% disagreement at two effective years to 0.7% at
+  five; “stale” is therefore rule-dependent.
+- The indicator sets are balanced across nine domains but are not a random
+  sample of WDI. They support a transparent stress test, not a census of all
+  development indicators.
+- The global frontier can be set by a value that is estimated, modeled, or
+  revised. Relative lag is a triage signal, not proof of producer delay.
+- Domain deletion shows that environment drives the pass/fail boundary. The
+  result must remain domain-concentrated.
 
-- *{limitation}*
+## Coverage limitations
 
-## 3. Method-side limitations
+- Forty-seven of 756 baseline cells are missing and excluded from observed-
+  cell shares. Missing is not fresh or old.
+- Pacific small-island economies have materially lower observed coverage
+  (84.3%) than the other roster economies (97.6%). Comparisons of observed
+  cells cannot erase that selection difference.
+- The grouped Pacific diagnostic does not explain why values are missing and
+  cannot be promoted into an economy ranking.
 
-Limitations rooted in the methodology choices: arbitrary numerics
-(referenced from `pre-registration.md` §6), aggregation choices,
-modeling assumptions.
+## AI-first review boundary
 
-- *{limitation}*
+The external red-team is an AI synthesis under Constitution §18.4. No
+individual reviewer was contacted and no external endorsement is claimed.
 
-## 4. DMC-coverage limitations
+## Explicit non-claims
 
-DMCs in scope but not covered by this result, with reasons. From
-`coverage.md`.
-
-- *{ISO3}*: {reason}
-
-## 5. Reviewer objections quoted verbatim
-
-Per `review-external.md` §5 and §6 — every unresolved reviewer objection
-appears here verbatim, with the reviewer's permission.
-
-### 5.1 From {Reviewer name}
-
-> *{objection}*
-
-### 5.2 From {Reviewer name}
-
-> *{objection}*
-
-## 6. Banned framings — explicit non-claims
-
-Per `CONSTITUTION.md` §13.3 and §14. This result is not framed as DMC
-deficiency; the framing is measurement gap, coverage gap, or
-observability gap. The program does not produce a country-ranking
-headline.
-
-- This result does **not** rank DMCs.
-- This result does **not** describe DMCs as deficient.
-- This result does **not** support causal inference from a screening
-  signal alone.
+This result does **not** rank developing member economies, describe them as
+deficient, or claim that a source-relative clock is a universal replacement
+for calendar age. The recommended presentation keeps both clocks and a
+separate missing state.

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/NV.AGR.TOTL.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:15+00:00",
+  "raw_bytes": 4359169,
+  "raw_sha256": "ded2fd5dd3447677c4908fc2ec85ef98b4d7f9ad2b6440372c50e5f640fa9a73",
+  "compressed_bytes": 175623,
+  "compressed_sha256": "e3b290ca8de3a534e4d6dfa43f343b21599010de6b795e80d9ce58c9af253439",
+  "attestation_chain": "ai-first"
+}

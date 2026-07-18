@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/country/all/indicator/GC.DOD.TOTL.GD.ZS?format=json&per_page=20000",
+  "retrieved_at": "2026-07-18T21:11:17+00:00",
+  "raw_bytes": 4000610,
+  "raw_sha256": "c23d7be39d3eb2ca87358a2451dc722fa8d0ac0ac89a8ceefa578fac9e1766d5",
+  "compressed_bytes": 76158,
+  "compressed_sha256": "57b058b6567ce688ce3402e72276d78861bc0c6fc67e5085a8f0f0994381cd36",
+  "attestation_chain": "ai-first"
+}

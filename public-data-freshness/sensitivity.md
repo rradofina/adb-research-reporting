@@ -1,54 +1,67 @@
-# Sensitivity — {program-title}
+# Sensitivity and falsification
 
-Governed by `CONSTITUTION.md` §6.6. Every arbitrary numeric in
-`pre-registration.md` §6 is tested at ±50%. The program does not
-advance past Screening Result without a complete sensitivity table.
+`attestation_chain: ai-first` · 2026-07-19
 
-Status: **{not run | in progress | complete}**
+## Primary gate
 
----
+At the frozen three-year threshold, 138 of 709 observed baseline cells change
+review classification: **19.5%**, above the pre-specified 10% gate. The source
+retrieval and minimum-coverage gates also pass.
 
-## 1. Test matrix
+## Indicator-set size: required ±50% test
 
-| Parameter | Pre-registered value | Test at -50% | Test at +50% | Result delta vs. baseline | Decision-rule preserved? |
-|---|---|---|---|---|---|
-| {name} | {v} | {0.5v} | {1.5v} | {delta} | {yes / no} |
+| Frozen set | Indicators | Observed cells | Disagreement cells | Share |
+|---|---:|---:|---:|---:|
+| Lower | 9 | 355 | 88 | 24.8% |
+| Baseline | 18 | 709 | 138 | 19.5% |
+| Upper | 27 | 1,006 | 203 | 20.2% |
 
-A row that flips the decision rule (changes the answer to the claim) is a
-**critical sensitivity failure**. The claim cannot advance to
-Publication-ready until either (a) the parameter is removed from the
-pipeline, (b) the parameter is replaced with a non-arbitrary
-specification, or (c) the claim is restricted to the parameter range
-where the decision rule survives.
+All three sets remain above 10%. Indicator-set size does not reverse the
+decision, though the upper set's coverage is lower because one frozen code is
+archived.
 
----
+## Review threshold: required ±50% test
 
-## 2. Replication ranges
+The literal 1.5-, 3-, and 4.5-year rules correspond to effective integer-year
+cutoffs of 2, 3, and 5.
 
-For each metric, the range of plausible values across the sensitivity
-suite. Reported in the publication's results table per §10.
+| Literal rule | Effective cutoff | Disagreement cells | Share |
+|---:|---:|---:|---:|
+| 1.5 years | 2 years | 373 | 52.6% |
+| 3.0 years | 3 years | 138 | 19.5% |
+| 4.5 years | 5 years | 5 | 0.7% |
 
-| Metric | Baseline | Min across sensitivity suite | Max across sensitivity suite |
-|---|---|---|---|
+This is a critical sensitivity. The existence of a two-clock difference is
+stable, but its magnitude is not. Any operational dashboard must display its
+chosen cutoff and should allow users to inspect the underlying ages.
 
----
+## Frontier and source-vintage checks
 
-## 3. Robustness checks beyond ±50%
+| Specification | Disagreement share |
+|---|---:|
+| Global WDI frontier, cap 2025 | 19.5% |
+| ADB-DMC frontier, cap 2025 | 19.5% |
+| Global WDI frontier, cap 2024 | 21.6% |
 
-Additional checks that go beyond the §6.6 minimum:
+The global-versus-DMC frontier choice does not affect the baseline result for
+this snapshot. Removing the newest reference year raises disagreement by 2.1
+percentage points.
 
-- {leave-one-out by DMC}
-- {alternative source cross-validation}
-- {time-window subsampling}
-- {seed sensitivity for any randomized component}
+## Leave-one-domain-out falsifier
 
----
+The minimum leave-one-domain-out result is **9.2%** when environment and
+climate is removed. That falls below the 10% gate and triggers the frozen
+single-domain-dependence condition. The broad cross-domain claim is therefore
+rejected and replaced by a domain-concentrated conclusion.
 
-## 4. Owner attestation
+Removing health yields 15.6%; removing any other domain yields between 20.3%
+and 22.0%. Environment accounts for 80 disagreements, health 40, education 11,
+poverty 5, and external/public finance 2.
 
-| Field | Value |
-|---|---|
-| Sensitivity suite run | *(yes / no)* |
-| Date run | YYYY-MM-DD |
-| Critical failures resolved | *(yes / no — if no, list)* |
-| Commit hash | *(hash)* |
+## Classification logic
+
+There are no relative-only review cells at the baseline threshold. This is
+mechanical: relative lag cannot exceed calendar age when the indicator
+frontier is no later than the snapshot year. The analysis therefore measures
+how much an absolute rule can over-flag relative to the source frontier; it
+does not establish that the relative rule is sufficient for every use case.

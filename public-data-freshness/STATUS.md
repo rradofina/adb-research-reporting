@@ -2,16 +2,20 @@
 
 `attestation_chain: ai-first` · Last updated: 2026-07-19
 
-- **Decision:** Promote the qualified WDI freshness hook from L2 triage into a
-  new flagship prospectus; do not reopen a closed program without new data.
-- **Stage:** L3 framing and prospective design freeze, still Hypothesis.
-- **Move:** Deepen evidence, justified by two named claim-changing objects:
-  the WDI monitoring framework and ADB *Basic Statistics 2026* domain frame.
-- **Question:** Does separating indicator-wide production age from
-  economy-specific relative lag materially change which WDI cells need review?
-- **Prior evidence:** The L2 matrix covers 42 developing member economies and
-  nine indicators, but its arbitrary indicator set cannot support a headline.
-- **Next output:** Run the frozen 9/18/27-indicator panel, build the figure
-  spine, and apply the 10% disagreement falsifier before drafting an article.
-- **Limit:** The result can audit one public aggregator; it cannot rate a
-  national statistical office, explain delays, or establish policy effects.
+- **Finding:** At a three-year rule, calendar age and indicator-relative lag
+  disagree for 138 of 709 observed baseline cells (19.5%).
+- **Decision:** Reshape the broad claim: removing environment lowers
+  disagreement to 9.2%, below the frozen 10% gate.
+- **Stage:** AI-first Screening Result; full evidence packet and publication
+  ladder prepared for gate and browser verification.
+- **Reader value:** A dashboard can distinguish shared production cadence from
+  economy-specific lag without hiding calendar age or missingness.
+- **Coverage:** 709 of 756 baseline cells observed across 42 economies and 18
+  indicators; Pacific small-island coverage is lower than elsewhere.
+- **Sensitivity:** Set-size tests pass; the threshold test is large, so the
+  cutoff must remain visible.
+- **Source limit:** One frozen upper-set WDI code is archived; the ADB context
+  CSV is behind a documented Cloudflare challenge and supplies no panel value.
+- **Stop:** Do not take another generic portal scan. The next upgrade requires
+  formal producer release calendars and ingestion dates.
+- **Next move:** Publish, verify, commit, then rotate to the next flagship.

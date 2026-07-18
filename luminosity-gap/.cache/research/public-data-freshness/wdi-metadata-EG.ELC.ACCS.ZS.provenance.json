@@ -1,0 +1,9 @@
+{
+  "url": "https://api.worldbank.org/v2/indicator/EG.ELC.ACCS.ZS?format=json",
+  "retrieved_at": "2026-07-18T21:11:13+00:00",
+  "raw_bytes": 812,
+  "raw_sha256": "b97baf3b8af89e755fb51e00bf690940fddff51d8af3dbf32849662ece66559b",
+  "compressed_bytes": 467,
+  "compressed_sha256": "eaac7a8e5e2f751d1a53f6fe8f646bb8c37700572f8521abc747430c0ed87904",
+  "attestation_chain": "ai-first"
+}

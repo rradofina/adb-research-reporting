@@ -11,7 +11,7 @@
   "script": "port-hinterland-friction/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-07-18T13:32:05+00:00",
+  "generated_at": "2026-07-18T22:32:14+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -22,6 +22,6 @@
   },
   "sha256": {
     "png": "a1f9b08c71e49a7451dce4b8d770487ceb44e50f62c92e237290b0c73926205c",
-    "svg": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
+    "svg": "c99d79af9580897645b3dfe99006b5401b14bbe583ac936a18b8c4f2b4597011"
   }
 }

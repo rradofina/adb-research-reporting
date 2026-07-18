@@ -111,7 +111,7 @@ the divergence *is* the observability gap this program should be about.
 freight realities. Kazakhstan (LPI 2.7, index 0.39, rank 11) and Uzbekistan
 (LPI 2.6, index 0.31, rank 12) are **landlocked**: their binding friction is
 transit-country dependence and border-crossing delay across third
-sovereigns, not a domestic port (`sensitivity.md` §18.5 TODO; C-3). China is
+sovereigns, not a domestic port (`sensitivity.md`; C-3). China is
 a coastal manufacturing hub whose friction, if any, is congestion and
 inland distribution. These are different physical processes — one is a
 border/transit problem, the other a throughput/distribution problem —

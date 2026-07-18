@@ -1,7 +1,7 @@
 {
   "program": "port-hinterland-friction",
   "permanent_url": "/port-hinterland-friction?view=evidence",
-  "generated_at": "2026-07-18T22:24:29.548Z",
+  "generated_at": "2026-07-18T22:42:42.753Z",
   "hero": {
     "png": "generated/charts/port-hinterland-friction-thumbnail.png",
     "svg": "generated/charts/port-hinterland-friction-thumbnail.svg",
@@ -12,14 +12,14 @@
     "visual_form": "rank-inversion slopegraph",
     "source": "World Bank CPPI 2020–2025 + committed WDI imports/LPI panel",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-07-18T13:32:05+00:00",
+    "generated_at": "2026-07-18T22:32:14+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
       "png": "a1f9b08c71e49a7451dce4b8d770487ceb44e50f62c92e237290b0c73926205c",
-      "svg": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
+      "svg": "c99d79af9580897645b3dfe99006b5401b14bbe583ac936a18b8c4f2b4597011"
     }
   },
   "artifacts": [
@@ -41,6 +41,86 @@
       "size_human": "1.0 KB",
       "mtime": "2026-07-18T13:43:39.668Z",
       "sha256": "37df42f3e4e7e9c3aa946ee5cb7ea8418ce8c3d44c2d1c250644d9c1ee0f67fd",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1218,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T22:29:04.980Z",
+      "sha256": "44096ea329aaa39091aca1dc76613f65f900d03f62569d8d78d940bf67366068",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "literature_summary",
+      "file": "literature-summary.md",
+      "label": "Reader literature summary",
+      "size": 1351,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T22:29:04.981Z",
+      "sha256": "ffb00503c27d99a9761d5add49c96b513e7a065c8b8191570bbd41668d3684dd",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "data_summary",
+      "file": "data-summary.md",
+      "label": "Reader data summary",
+      "size": 1295,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T22:29:04.981Z",
+      "sha256": "5b6320012e6d7f83be9c55dbd6b7b4623a7ccab47e0295d2daf7ca2c093c52d6",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "method_summary",
+      "file": "method-summary.md",
+      "label": "Reader method summary",
+      "size": 1256,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T22:29:04.982Z",
+      "sha256": "0b4cb79882bdb2c17b338d33e312e60e3847ac44e5c16bbc6d7826170b525c1f",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results_summary",
+      "file": "results-summary.md",
+      "label": "Reader results summary",
+      "size": 2090,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T22:29:04.982Z",
+      "sha256": "f4b5d16d8db62f435aaca21e25ecd7bc9e29917d3c1c292fe57701c6c373722a",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "robustness_summary",
+      "file": "robustness-summary.md",
+      "label": "Reader robustness summary",
+      "size": 1250,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T22:29:04.984Z",
+      "sha256": "534daefda4a349f5effcbf9d29f29e67e3857eeca38e69d931ea0e74aaec2a76",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations_summary",
+      "file": "limitations-summary.md",
+      "label": "Reader limitations summary",
+      "size": 1173,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T22:29:04.985Z",
+      "sha256": "07ed87b58c37ac0e1a2d9de4ce7d5d7dd5d8452bbf6da8531819ac57398a3121",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduction_summary",
+      "file": "reproduction-summary.md",
+      "label": "Reader reproduction summary",
+      "size": 1055,
+      "size_human": "1.0 KB",
+      "mtime": "2026-07-18T22:29:04.989Z",
+      "sha256": "728edc24e02126f8b67e01a09102f7cdf22b794a6c4ef82ab97c910804a89941",
       "attestation_chain": "ai-first"
     },
     {
@@ -67,10 +147,10 @@
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 567,
-      "size_human": "567 B",
-      "mtime": "2026-04-26T03:25:37.819Z",
-      "sha256": "84f40e4b8c4148ca3e8906c89a5b2f4e7b707b1b311897339797b3fe9b9338a9",
+      "size": 1745,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T22:31:30.086Z",
+      "sha256": "394255caec8048c9e5f30c7f8948b6105d4f73220463ab05e1b360ac23b49186",
       "attestation_chain": "ai-first"
     },
     {
@@ -134,6 +214,16 @@
       "attestation_chain": "ai-first"
     },
     {
+      "key": "conclusion",
+      "file": "conclusion.md",
+      "label": "Conclusion and next evidence upgrade",
+      "size": 947,
+      "size_human": "947 B",
+      "mtime": "2026-07-18T22:29:04.986Z",
+      "sha256": "f81b15d68c897fb7fa58aa2118246eec614a748350c009db1ed6b6214c3d0632",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "upgrade_gap",
       "file": "upgrade-gap.md",
       "label": "Upgrade-gap memo",
@@ -155,7 +245,7 @@
       "file": "generated/charts/port-cppi-distributions.svg",
       "size": 89490,
       "size_human": "87.4 KB",
-      "sha256": "9a75b81d8063b4bd759f0a84a401afc45b155b1cace4c0e5ba19a7ec2afd508b"
+      "sha256": "d90185f780a5e06e6a55bbe3a92c0a5c63e834906539df4b9a9999e0d58effde"
     },
     {
       "file": "generated/charts/port-cppi-sensitivity.png",
@@ -167,7 +257,7 @@
       "file": "generated/charts/port-cppi-sensitivity.svg",
       "size": 86693,
       "size_human": "84.7 KB",
-      "sha256": "634c3e7a70dad1806196e034ba27b39fa65de4b69f54fa2237d1108393dc0b7c"
+      "sha256": "b0be45a7cd3760ac42c598ab1e8c79b69b7dfc6add2e1f0efeacc8dd9e3421b8"
     },
     {
       "file": "generated/charts/port-cppi-time-series.png",
@@ -179,13 +269,13 @@
       "file": "generated/charts/port-cppi-time-series.svg",
       "size": 100073,
       "size_human": "97.7 KB",
-      "sha256": "6246ad79cd8ba01037d92c3c1f66a75785ff038d2597d02af099c5b688460111"
+      "sha256": "73f307d6afba3906846804e08453e62e9ea47074158813d89f016fa4af711ebb"
     },
     {
       "file": "generated/charts/port-hinterland-friction-thumbnail.json",
       "size": 1142,
       "size_human": "1.1 KB",
-      "sha256": "e3bfa23f4b707fad9a74b27fa771e8ded0bd74e23cf549ada7a256ade388a49d"
+      "sha256": "98065120eea02e9e97ddfce655f80b9d26b77f56adac47a2853dc380fd376637"
     },
     {
       "file": "generated/charts/port-hinterland-friction-thumbnail.png",
@@ -197,7 +287,7 @@
       "file": "generated/charts/port-hinterland-friction-thumbnail.svg",
       "size": 112592,
       "size_human": "110.0 KB",
-      "sha256": "795a7329a562eead9e96fd6885862a1914854fd7503196e16f6d9025e2e2e89d"
+      "sha256": "c99d79af9580897645b3dfe99006b5401b14bbe583ac936a18b8c4f2b4597011"
     },
     {
       "file": "generated/charts/port-proxy-vs-cppi.png",
@@ -209,7 +299,7 @@
       "file": "generated/charts/port-proxy-vs-cppi.svg",
       "size": 103481,
       "size_human": "101.1 KB",
-      "sha256": "166aea3761947fcaeb85794ba326e87b1fafa6b31756dcb0d5c9d9a1cf92cb00"
+      "sha256": "ccb983acf87c05d4749230f01a15a508f6f2eebb12526f2a5416900fd5c1b277"
     },
     {
       "file": "generated/charts/port-rank-inversion.png",
@@ -221,7 +311,7 @@
       "file": "generated/charts/port-rank-inversion.svg",
       "size": 84579,
       "size_human": "82.6 KB",
-      "sha256": "2d18236ecd00b9fa29acbdc0702f86d8aba93760dfdc9b65d89c4ff512e43d62"
+      "sha256": "f5acd258aafaef565a15062ad2118d3a38556824758842be83fffd52181abe69"
     },
     {
       "file": "generated/charts/port-source-alignment-funnel.png",
@@ -233,7 +323,7 @@
       "file": "generated/charts/port-source-alignment-funnel.svg",
       "size": 76963,
       "size_human": "75.2 KB",
-      "sha256": "f4c47e2c5ba5de2dc1afec065d15e399904ba2d94fd972681580971c604163dd"
+      "sha256": "f64487c22514d9d01669291b384d86b877457a9747e41a90c4b04b4d2a7732f1"
     },
     {
       "file": "generated/charts/port-two-gate-validation.png",
@@ -245,13 +335,13 @@
       "file": "generated/charts/port-two-gate-validation.svg",
       "size": 81251,
       "size_human": "79.3 KB",
-      "sha256": "2f67f3bd87c35f322d81035a67b1e2446b515d5346e8813179feca267f3ec9dc"
+      "sha256": "7a3faf2ef735701c7394a1ec7b1fc8e362cd804b03ef8b1c42e41d6422d1e431"
     },
     {
       "file": "generated/port-cppi-construct-validation.json",
       "size": 8742,
       "size_human": "8.5 KB",
-      "sha256": "5617630b94b0f341ad9ee102617c5e6241c409f0c4607a369542c24b761fd820"
+      "sha256": "65ac6d55847410f3a9ee50a8fcbb98d248385393ad098d41bd5433b58fca2373"
     },
     {
       "file": "generated/port-cppi-country-diagnostics.csv",
@@ -275,7 +365,7 @@
       "file": "generated/port-cppi-source-ledger.json",
       "size": 999,
       "size_human": "999 B",
-      "sha256": "da8ec70574be957a83b378b40837f186df3307cb3c4f12eca0ffed4f732095ac"
+      "sha256": "9f09adde6cdebc865af6529919e4e5e8a9dbf537b5c87a9efa9501d15e78bb14"
     },
     {
       "file": "generated/port-figure-dossier-summary.json",
@@ -341,9 +431,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
         }
       ]
     },
@@ -354,9 +444,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "literature",
-          "file": "literature.md",
-          "label": "Literature review"
+          "key": "literature_summary",
+          "file": "literature-summary.md",
+          "label": "Reader literature summary"
         }
       ]
     },
@@ -367,9 +457,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "coverage",
-          "file": "coverage.md",
-          "label": "Coverage"
+          "key": "data_summary",
+          "file": "data-summary.md",
+          "label": "Reader data summary"
         }
       ]
     },
@@ -380,9 +470,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "preregistration",
-          "file": "pre-registration.md",
-          "label": "Pre-registration"
+          "key": "method_summary",
+          "file": "method-summary.md",
+          "label": "Reader method summary"
         }
       ]
     },
@@ -393,9 +483,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "results",
-          "file": "results.md",
-          "label": "Results"
+          "key": "results_summary",
+          "file": "results-summary.md",
+          "label": "Reader results summary"
         }
       ]
     },
@@ -403,12 +493,12 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "sensitivity",
-          "file": "sensitivity.md",
-          "label": "Sensitivity suite"
+          "key": "robustness_summary",
+          "file": "robustness-summary.md",
+          "label": "Reader robustness summary"
         }
       ]
     },
@@ -419,9 +509,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "limitations",
-          "file": "limitations.md",
-          "label": "Limitations"
+          "key": "limitations_summary",
+          "file": "limitations-summary.md",
+          "label": "Reader limitations summary"
         }
       ]
     },
@@ -432,9 +522,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "upgrade_gap",
-          "file": "upgrade-gap.md",
-          "label": "Upgrade-gap memo"
+          "key": "conclusion",
+          "file": "conclusion.md",
+          "label": "Conclusion and next evidence upgrade"
         }
       ]
     },
@@ -445,16 +535,16 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "reproduce",
-          "file": "REPRODUCE.md",
-          "label": "Reproducibility guide"
+          "key": "reproduction_summary",
+          "file": "reproduction-summary.md",
+          "label": "Reader reproduction summary"
         }
       ]
     }
   ],
   "resources": {
     "reproduce": "/programs/port-hinterland-friction/REPRODUCE.md",
-    "deck": null,
+    "deck": "/programs/port-hinterland-friction/port-hinterland-friction-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/port-hinterland-friction"
   }

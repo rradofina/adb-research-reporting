@@ -1,7 +1,7 @@
 {
   "program": "migration-displacement-signals",
   "analysis": "emigrant stock denominator switch plus UNHCR forced-displacement corridor-type audit",
-  "claim_scope": "Deepening of the absolute emigrant-stock screen. Recomputes the ranking on emigrant stock divided by origin population. Numerator: UN DESA International Migrant Stock 2024 emigrant_stock_2024 (committed panel). Denominator: World Bank WDI SP.POP.TOTL mid-year 2024, read from an on-disk sibling-program cache (school-heat-disruption). Measurement/observability framing per CONSTITUTION.md §13.3, not a fragility or 'migrates-too-much' ranking. Share withheld where WDI reports no population for the economy. UNHCR corridor-type data are used only as a forced-displacement falsifier; they do not classify labor/family migration and do not turn the share ranking into a welfare claim.",
+  "claim_scope": "Denominator-switch audit of the absolute emigrant-stock screen. Recomputes the ranking on emigrant stock divided by origin population. Numerator: UN DESA International Migrant Stock 2024 emigrant_stock_2024 (committed panel). Denominator: World Bank WDI SP.POP.TOTL mid-year 2024 from a fixed public API query with a program-local cache. Measurement/observability framing per CONSTITUTION.md §13.3, not a fragility or 'migrates-too-much' ranking. Share withheld where WDI reports no population for the economy. UNHCR corridor-type data are used only as a forced-displacement falsifier; they do not classify labor/family migration and do not turn the share ranking into a welfare claim.",
   "sources": {
     "numerator": {
       "name": "UN DESA International Migrant Stock 2024",
@@ -14,8 +14,17 @@
       "indicator": "SP.POP.TOTL",
       "year": "2024",
       "license": "CC BY 4.0",
-      "via_on_disk": "school-heat-disruption/.cache/wdi_pop.json",
-      "wall_note": "WDI population not committed in this program's own .cache/; read from sibling-program cache on disk. No network."
+      "retrieval": {
+        "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&date=2024&per_page=20000",
+        "cache_path": ".cache\\wdi-population-2024.json",
+        "bytes": 53371,
+        "sha256": "d6e16192cdf34009fffa8dfa042362b36c96690d86bc7e68c4b0d2de3d9e66ec",
+        "fetch_mode": "live",
+        "indicator": "SP.POP.TOTL",
+        "year": "2024",
+        "lastupdated": "2026-07-13",
+        "retrieved_at": "2026-07-18T10:22:09Z"
+      }
     }
   },
   "absolute_top5": [
@@ -178,10 +187,10 @@
       "iso3": "GEO",
       "country": "Georgia",
       "emigrant_stock_2024": 496486,
-      "population_total": 3699557,
+      "population_total": 3812518,
       "population_year": "2024",
-      "emigrant_share_of_population": 0.134201,
-      "emigrant_pct_of_population": 13.42,
+      "emigrant_share_of_population": 0.130225,
+      "emigrant_pct_of_population": 13.02,
       "rank_absolute": 23,
       "rank_share": 10
     },
@@ -548,13 +557,13 @@
     }
   ],
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:26:49Z",
+  "generated_at": "2026-07-18T10:22:09Z",
   "corridor_type_falsifier": {
     "program": "migration-displacement-signals",
     "analysis": "corridor-type forced-displacement audit for emigrant-stock denominator switch",
     "claim_scope": "Source-readiness and falsifier audit. UNHCR forced-displacement stocks identify the refugee/asylum/international-protection component of UN DESA emigrant-stock origins. This does not identify labor, family, student, or temporary work corridors, and it is not a welfare or fragility ranking.",
     "year": 2024,
-    "retrieved_at": "2026-06-19T19:26:49Z",
+    "retrieved_at": "2026-07-18T10:22:09Z",
     "source": {
       "name": "UNHCR Refugee Data Finder population API",
       "url": "https://api.unhcr.org/population/v1/population/",
@@ -1169,15 +1178,15 @@
         "emigrant_stock_2024": 496486,
         "rank_absolute": 23,
         "rank_share": 10,
-        "emigrant_pct_of_population": 13.42,
-        "population_total": 3699557,
+        "emigrant_pct_of_population": 13.02,
+        "population_total": 3812518,
         "forced_abroad_2024": 51564,
         "refugees_abroad_2024": 16554,
         "asylum_seekers_abroad_2024": 35010,
         "other_people_in_need_protection_abroad_2024": 0,
         "forced_abroad_share_of_emigrant_stock": 0.1039,
         "forced_abroad_pct_of_emigrant_stock": 10.4,
-        "forced_abroad_pct_of_population": 1.39,
+        "forced_abroad_pct_of_population": 1.35,
         "idps_in_origin_context_2024": 299172,
         "classification": "substantial forced-displacement component",
         "in_absolute_top5": false,
@@ -3974,6 +3983,6 @@
       }
     ],
     "attestation_chain": "ai-first",
-    "generated_at": "2026-06-19T19:26:49Z"
+    "generated_at": "2026-07-18T10:22:09Z"
   }
 }

@@ -1,0 +1,140 @@
+{
+  "program": "migration-displacement-signals",
+  "attestation_chain": "ai-first",
+  "source_inputs": [
+    "generated\\migration-per-population-deepening.json",
+    "generated\\migration-displacement-adb-panel.json",
+    "generated\\migration-corridor-type-forced-displacement.json",
+    "sensitivity-runs.json"
+  ],
+  "panel_rows": 44,
+  "population_denominator_rows": 41,
+  "withheld_denominators": [
+    {
+      "iso3": "TWN",
+      "country": "Taiwan",
+      "emigrant_stock_2024": 832507,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    },
+    {
+      "iso3": "COK",
+      "country": "Cook Islands",
+      "emigrant_stock_2024": 20288,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    },
+    {
+      "iso3": "NIU",
+      "country": "Niue",
+      "emigrant_stock_2024": 4955,
+      "reason": "no SP.POP.TOTL value in WDI cache (WDI does not report this economy)"
+    }
+  ],
+  "absolute_top5": [
+    "IND",
+    "CHN",
+    "BGD",
+    "AFG",
+    "PHL"
+  ],
+  "population_share_top5": [
+    "WSM",
+    "TON",
+    "ARM",
+    "NRU",
+    "FJI"
+  ],
+  "top5_overlap_count": 0,
+  "top5_overlap_share": 0.0,
+  "top_n_sensitivity": [
+    {
+      "top_n": 3,
+      "absolute": [
+        "IND",
+        "CHN",
+        "BGD"
+      ],
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM"
+      ],
+      "overlap": [],
+      "overlap_count": 0,
+      "overlap_share": 0.0,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    },
+    {
+      "top_n": 5,
+      "absolute": [
+        "IND",
+        "CHN",
+        "BGD",
+        "AFG",
+        "PHL"
+      ],
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM",
+        "NRU",
+        "FJI"
+      ],
+      "overlap": [],
+      "overlap_count": 0,
+      "overlap_share": 0.0,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    },
+    {
+      "top_n": 8,
+      "absolute": [
+        "IND",
+        "CHN",
+        "BGD",
+        "AFG",
+        "PHL",
+        "PAK",
+        "MMR",
+        "IDN"
+      ],
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM",
+        "NRU",
+        "FJI",
+        "AFG",
+        "HKG",
+        "PLW"
+      ],
+      "overlap": [
+        "AFG"
+      ],
+      "overlap_count": 1,
+      "overlap_share": 0.125,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    }
+  ],
+  "afghanistan_forced_abroad_pct_of_emigrant_stock": 81.7,
+  "share_top5_forced_displacement_majority": [],
+  "finding": "The absolute and population-share top fives have zero overlap. Afghanistan, the near-rank exception at share rank six, is a forced-displacement-majority origin; the population-share top five is not.",
+  "non_claim": "The dossier does not estimate current migration flows, migration propensity, labor-migration purpose, internal displacement, welfare, or causal drivers.",
+  "figures": [
+    "migration-rank-inversion",
+    "migration-population-share-profile",
+    "migration-corridor-concentration",
+    "migration-forced-displacement-composition",
+    "migration-source-observability"
+  ]
+}

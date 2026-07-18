@@ -7,7 +7,16 @@ committed here.
 
 - `undesa_migrant_stock_2024_destination.xlsx` — UN DESA International
   Migrant Stock 2024 destination-origin workbook used by
-  `scripts/process-migration.py`.
+  `scripts/process-migration.py`. Download from the official UN DESA
+  International Migrant Stock page:
+  `https://www.un.org/development/desa/pd/content/international-migrant-stock`.
+
+## WDI population denominator
+
+`scripts/deepen-per-population.py` fetches the fixed public query
+`SP.POP.TOTL`, year 2024, all economies and caches the raw response as
+`.cache/wdi-population-2024.json`. The generated JSON records the URL, response
+size, SHA-256, WDI update field, fetch mode, and retrieval timestamp.
 
 ## UNHCR forced-displacement corridor audit
 

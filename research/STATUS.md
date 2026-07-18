@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `migration-displacement-signals` — rotated in 2026-07-18 after access-services closed its five-figure denominator-falsification story. The highest-leverage move is to reshape the absolute emigrant-stock headline around the committed zero-overlap population-normalized result, then build the figure spine from existing data objects. |
-| Per-program board | `migration-displacement-signals/STATUS.md` |
+| Active flagship | `climate-health-workdays` — rotated in 2026-07-18 after migration-displacement-signals closed its six-figure denominator and construct story. The highest-leverage move is to reshape the workday-loss claim because the committed index contains national PM2.5 and employment structure but no heat or observed workday loss. |
+| Per-program board | `climate-health-workdays/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `access-services` — five-figure PP dossier closed 2026-07-18; official registries reorder 16 of 17 Philippine ranks, so the old access-ranking headline is retired. |
+| Previous flagship | `migration-displacement-signals` — six-figure PP dossier closed 2026-07-18; the absolute and population-share top fives have zero overlap, so the old intensity headline is retired. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -47,12 +47,14 @@ overrides priority by editing this list.
    package now leads with map observability, not the retired eight-economy
    access rank. Reopen only for a claim-changing facility source or owner-led
    travel-time/human-final work.
-4. **`migration-displacement-signals`** — **active flagship.** The committed
-   population-normalized deepening has zero overlap with the legacy absolute
-   emigrant-stock top five. Reshape the claim around this denominator switch
-   and build the figure spine before adding new data.
-5. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
-   2.5-cap sensitivity flagged top-5 → top-3 honest narrowing.
+4. **`migration-displacement-signals`** — *current issue closed.* The absolute
+   and population-share top fives have zero overlap; Afghanistan is the
+   forced-displacement-majority exception at share rank six. Reopen only for a
+   claim-changing denominator, vintage, validation source, or annual-flow object.
+5. **`climate-health-workdays`** — **active flagship.** The top-three proxy set
+   is stable, but the current index contains national PM2.5 and employment
+   structure—not heat or observed workday loss. Reshape the claim before
+   building its figure spine.
 6. **`disaster-recovery-lag`** — metric-falsification deepening shows the
    original {CHN, IND} top-two is not robust: it holds for affected and
    damage, but changes under events/year, deaths, and events per million.
@@ -157,6 +159,16 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (migration denominator story closed; rotation):** The 44-economy
+  stock audit shows zero overlap between the absolute and population-share top
+  fives; the result persists at top 3 and top 8. Afghanistan is the distinct
+  forced-displacement-majority case at share rank six (81.7%). The completed
+  package has all nine research sections, a new hero, five evidence figures,
+  brief/blog/social/slide sources, a nine-slide PPTX, and a review packet.
+  Pipelines, gates, versions, TypeScript, production build, and desktop/mobile
+  QA passed. Rotated to `climate-health-workdays` because its workday-loss name
+  outruns a PM2.5/employment proxy and claim reshaping beats decorative polish.
 
 - **2026-07-18 (access-services claim reshape closed; rotation):** Official
   registry substitution reorders 16 of 17 Philippine regional ranks; OSM

@@ -346,22 +346,25 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     domain: "Migration",
     finish: "publication-ready",
     question:
-      "Which DMCs combine large emigrant stocks with concentrated destination corridors?",
+      "How much does the leading-origin set change when the same emigrant stock is divided by resident population?",
     output:
-      "India, China, Bangladesh, Afghanistan, and the Philippines remain the top emigrant-stock group.",
-    chartTitle: "Emigrant stock, 2024",
-    sourceNote: "UN DESA International Migrant Stock 2024.",
+      "The absolute and population-share top fives have zero overlap; Afghanistan is the separate forced-displacement-majority exception at population-share rank six.",
+    chartTitle: "Absolute versus population-normalized emigrant-stock rank",
+    sourceNote:
+      "UN DESA International Migrant Stock 2024, WDI 2024 population, and UNHCR Refugee Data Finder 2024.",
     caveat:
-      "Migrant stock is not a flow, and Afghanistan is a refugee-driven case that needs separate treatment.",
+      "The ratio compares cumulative stock with a resident-population snapshot; it is not a current flow, migration propensity, labor-purpose, welfare, or causal estimate.",
     nextStep:
-      "Add corridor-level change over time and displacement-specific series from UNHCR or IDMC.",
+      "Build a purpose-specific annual-flow panel from documented deployment or visa data and test whether its ordering separates from the stock ordering.",
     granularity: {
-      currentUnit: "Country-level emigrant stock and destination concentration",
-      targetUnit: "Origin province, bilateral corridor, displacement location, destination cluster",
+      currentUnit:
+        "Country-level absolute stock, stock relative to resident population, and UNHCR protection-category crosswalk",
+      targetUnit:
+        "Annual purpose-specific bilateral flow, subnational origin, and destination corridor",
       gap:
-        "Stock data are not flows and do not identify subnational origin or displacement mechanism.",
+        "Stock data do not identify current departures, labor purpose, repeat movers, or subnational origin.",
       upgradeData:
-        "UN DESA bilateral stock, UNHCR/IDMC/IOM displacement series, census or microdata origin fields, and corridor histories.",
+        "Public deployment, visa-class, return, census-transition, or disclosure-reviewed household migration data.",
     },
   },
   "port-hinterland-friction": {

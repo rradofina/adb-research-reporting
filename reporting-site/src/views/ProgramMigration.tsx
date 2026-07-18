@@ -37,16 +37,16 @@ export default function ProgramMigration() {
       <div className="flex items-start justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Program #11 · migration-displacement-signals</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight">International migrant stock by ADB DMC.</h1>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight">Legacy stock table — choose the denominator before interpreting rank.</h1>
           <p className="mt-3 max-w-3xl text-ink-700 leading-relaxed">
-            2024 bilateral migrant-stock data from UN DESA Population
-            Division, filtered to individual-country corridors only
-            (regional aggregates excluded). Per DMC: immigrants (in),
-            emigrants (out), net stock, and top 5 corridor partners in
-            each direction.
+            This retained diagnostic exposes the UN DESA 2024 bilateral stock
+            rows behind the research page. Absolute stock measures diaspora
+            scale, not current migration intensity. The current paper adds the
+            WDI resident-population denominator and a UNHCR forced-displacement
+            crosswalk before interpreting any leading set.
           </p>
         </div>
-        <div className="shrink-0"><MaturityChip status="H" /></div>
+        <div className="shrink-0"><MaturityChip status="PP" /></div>
       </div>
 
       <section className="mt-10 flex items-center gap-3 flex-wrap">
@@ -106,7 +106,7 @@ export default function ProgramMigration() {
           <li>Numbers include both economic migrants and refugees where the host country's census classification does not disaggregate.</li>
           <li>"Net" = immigrants − emigrants. Positive = net destination; negative = net origin.</li>
           <li>Corridors exclude regional aggregates; only country-to-country rows are summed. Minor rollup differences vs. UN headline totals expected.</li>
-          <li>See the matrix page for combined-program vulnerability ranking.</li>
+          <li>The current research result is the denominator switch, not this table's absolute ordering.</li>
         </ul>
       </section>
     </div>

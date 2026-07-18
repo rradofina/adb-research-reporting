@@ -1,38 +1,27 @@
-# Migration and Displacement Signals
+# Migration and displacement signals
 
-## Research Question
+`attestation_chain: ai-first`
 
-Can public data detect early signals of climate-linked mobility pressure before
-formal displacement statistics appear?
+This program studies how the interpretation of international migrant stock
+changes with the denominator and with migration type. The current issue uses
+three public objects:
 
-## Why This Is Unconventional
+1. UN DESA International Migrant Stock 2024 origin-destination stock;
+2. World Bank WDI 2024 resident population; and
+3. UNHCR Refugee Data Finder 2024 forced-displacement categories.
 
-Displacement data is often event-based and retrospective. This track screens for
-slow-onset pressure by combining climate trends, exposure, job structure, and
-settlement growth.
+The main result is a denominator switch: the absolute and population-share
+top fives have zero overlap. Afghanistan is the near-rank exception, but its
+emigrant stock is forced-displacement-majority in the UNHCR crosswalk.
 
-## Available Data
+Start with:
 
-- IDMC displacement statistics
-- EM-DAT disaster events
-- World Bank WDI migration and labor indicators
-- World Bank CCKP climate indicators
-- GHSL built-up/population change
-- WorldPop population grids
+- `paper-charter.md` — question, audience, claim, and stopping rule;
+- `results.md` — full chart-led result;
+- `limitations.md` — stock, denominator, source, and interpretation limits;
+- `REPRODUCE.md` — refresh and figure-only commands; and
+- `generated/migration-figure-dossier-summary.json` — compact machine-readable
+  finding and figure manifest.
 
-## First Pipeline
-
-1. Build national exposure-and-mobility pressure indicators.
-2. Add settlement-growth shifts around major cities or hazard zones.
-3. Compare public signals with known IDMC/EM-DAT displacement records.
-
-## Outputs
-
-- `generated/migration-displacement-signals-adb-screen.csv`
-- Mobility-pressure candidate ranking
-- Validation table against known disaster displacement events
-
-## Reproducibility Notes
-
-This cannot infer individual migration decisions. Treat outputs as early-warning
-screening, not causal attribution.
+The program does not estimate current migration flows, migration propensity,
+labor-migration purpose, internal displacement, welfare, or causal drivers.

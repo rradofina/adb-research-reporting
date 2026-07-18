@@ -38,6 +38,46 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "emigrant-stock-corridor-concentration",
+    "title": "The top five migrant origins have zero overlap after population normalization",
+    "subtitle": "Absolute emigrant stock measures diaspora scale; dividing the same stock by resident population moves Samoa and Tonga to the top and exposes Afghanistan as a forced-displacement exception.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "migration-displacement-signals",
+    "maturity": "PP",
+    "topics": [
+      "migration",
+      "migrant-stock",
+      "population-denominator",
+      "forced-displacement"
+    ],
+    "geographies": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL",
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "abstract": "Rankings of international migrant origins often lead with absolute emigrant stock. This paper tests whether that ordering can be interpreted as migration intensity in a 44-economy program panel. UN DESA International Migrant Stock 2024 is ranked first as an absolute count and then divided by World Bank WDI 2024 resident population. The absolute top five—India, China, Bangladesh, Afghanistan, and the Philippines—has zero overlap with the population-share top five—Samoa, Tonga, Armenia, Nauru, and Fiji. India moves from absolute rank 1 to share rank 36; China moves from rank 2 to 39. Samoa and Tonga exceed 50% on the stock-to-resident- population measure. The result survives top-N choices of 3, 5, and 8 and material-overlap thresholds of 25%, 50%, and 75%. A 44-origin UNHCR crosswalk then tests whether the share leaders are forced-displacement cases. None is forced-displacement-majority. Afghanistan is the near-rank exception at share rank 6, but UNHCR forced-displacement stock equals 81.7% of its UN DESA emigrant stock. The paper therefore retires the absolute-stock intensity headline. It treats absolute scale, population-normalized stock, and forced displacement as distinct evidence objects and does not infer current flows, migration propensity, labor- migration purpose, welfare, or causal drivers.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "emigrant-stock-corridor-concentration.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "remittance-corridors-vulnerability-cluster",
     "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
     "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
@@ -181,40 +221,6 @@
     "updated_at": "2026-05-05",
     "doi": "",
     "file": "measurement-gap-philippines-bangladesh.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
-  },
-  {
-    "slug": "emigrant-stock-corridor-concentration",
-    "title": "Five DMCs hold the top of UN DESA's emigrant-stock ranking — and the corridor concentration splits the cluster in two",
-    "subtitle": "India, China, Bangladesh, Afghanistan, Philippines stable across direction-of-definition; three of the five concentrate over half their emigration in three corridors, two diversify.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "migration-displacement-signals",
-    "maturity": "PP",
-    "topics": [
-      "migration",
-      "emigrant-stock",
-      "corridor-concentration"
-    ],
-    "geographies": [
-      "IND",
-      "CHN",
-      "BGD",
-      "AFG",
-      "PHL"
-    ],
-    "abstract": "UN DESA International Migrant Stock 2024 reports cumulative foreign- born populations by country. Across the 44 ADB regional DMCs published in the 2024 vintage, five economies — India, China, Bangladesh, Afghanistan, Philippines — sit in the top five of the emigrant-stock ranking. The same five hold the top five when ranked by net migrant stock (emigrant minus immigrant). A second pattern splits the cluster: three of the five (Bangladesh, Afghanistan, Philippines) concentrate more than 50 percent of their emigration in their top-3 destination corridors; India and China have substantially more diversified destination profiles. Afghanistan's 80 percent concentration is refugee-driven and not comparable to labor-migration concentration. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-04-26",
-    "doi": "",
-    "file": "emigrant-stock-corridor-concentration.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
@@ -722,6 +728,46 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "migration-displacement-signals-brief",
+    "title": "The leading migrant origins change when population enters the denominator",
+    "subtitle": "A one-page brief on why absolute diaspora scale, population-normalized stock, and forced displacement should be read as separate evidence objects.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "migration-displacement-signals",
+    "maturity": "PP",
+    "topics": [
+      "migration",
+      "migrant-stock",
+      "population-denominator",
+      "forced-displacement"
+    ],
+    "geographies": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL",
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "abstract": "The five largest origin stocks in a 44-economy program panel have zero overlap with the five highest stocks relative to resident population. Afghanistan, at population-share rank six, is the distinct forced- displacement case. The evidence supports separate readings of scale, population-relative stock, and displacement—not a single migration rank.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "migration-displacement-signals-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "public-service-data-quality-brief",
     "title": "When the public map disagrees with the official registry",
     "subtitle": "A one-page brief on the measurement gap between OpenStreetMap health facilities and the Philippine and Bangladeshi national registries.",
@@ -815,6 +861,46 @@
     "updated_at": "",
     "doi": "",
     "file": "access-services-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "migration-displacement-signals-blog",
+    "title": "A migration ranking can reverse when the denominator changes",
+    "subtitle": "The same 2024 migrant-stock data tell different stories about diaspora scale and population-relative stock.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "migration-displacement-signals",
+    "maturity": "PP",
+    "topics": [
+      "migration",
+      "migrant-stock",
+      "population-denominator",
+      "forced-displacement"
+    ],
+    "geographies": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL",
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "abstract": "India and China lead a 44-economy panel by absolute emigrant stock, but Samoa and Tonga lead once the same stock is divided by resident population. The two top-five sets have zero overlap. Afghanistan is the separate forced- displacement case. The result shows why a migration chart must name both its denominator and the construct it measures.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "migration-displacement-signals-blog.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -919,6 +1005,46 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "migration-displacement-signals-social",
+    "title": "Migration denominator — social card",
+    "subtitle": "A concise summary of the zero-overlap finding.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "migration-displacement-signals",
+    "maturity": "PP",
+    "topics": [
+      "migration",
+      "migrant-stock",
+      "population-denominator",
+      "forced-displacement"
+    ],
+    "geographies": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL",
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "abstract": "The five largest origin stocks have zero overlap with the five highest stocks relative to resident population. Afghanistan is the distinct forced-displacement case.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "migration-displacement-signals-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "public-service-data-quality-social",
     "title": "PSDQ — social card",
     "subtitle": "Tweet-length summary of the OSM-vs-registry measurement gap finding for ADB DMCs.",
@@ -1007,6 +1133,44 @@
     "updated_at": "",
     "doi": "",
     "file": "access-services-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "migration-displacement-signals-deck",
+    "title": "\"The migration leaders change when population enters the denominator\"",
+    "subtitle": "\"A 44-economy stock audit — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "migration-displacement-signals",
+    "maturity": "PP",
+    "topics": [
+      "migration",
+      "migrant-stock",
+      "population-denominator",
+      "forced-displacement"
+    ],
+    "geographies": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL",
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "migration-displacement-signals-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

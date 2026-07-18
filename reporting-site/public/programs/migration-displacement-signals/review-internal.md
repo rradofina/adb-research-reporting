@@ -1,63 +1,84 @@
-# Internal review — Migration & Displacement Signals
+# Internal review — Migration and displacement signals
 
 `attestation_chain: ai-first`
 
-Reviewer: §18 AI critique-pass. Date: 2026-04-26. Status: **closed**.
+Reviewer: §18 AI critique-pass. Date: 2026-07-18. Status: **closed for the
+current PP issue**.
 
----
+## Critiques and responses
 
-## 1. Critique-pass — issues raised
+### 1. The denominator claim was discovered before the new rule was frozen
 
-### 1.1 Stock is not flow
+**Critique.** Calling the denominator module pre-registered would overstate
+the design. The zero-overlap result was already visible in the deepening.
 
-UN DESA stock is the cumulative population of foreign-born persons.
-The article's "emigration" framing reads as flow; readers may infer
-recent migration when the data is multi-decade stock. The article
-must be precise: the 18.5M India figure is *people of Indian origin
-currently abroad*, not *migrants leaving in 2024*.
+**Response.** Accepted. `pre-registration.md` preserves the 2026-04-26 legacy
+module and labels the 2026-07-18 module retrospective claim reshaping. The new
+rule governs future refreshes and the publication rewrite; it is not presented
+as prospective evidence.
 
-### 1.2 Top-3 destination share is sensitive to corridor definition
+### 2. Stock divided by current population is not a migration rate
 
-The "top-3 destinations" depends on whether refugees, second-generation,
-and naturalized counts are included in the receiving-country tally.
-UN DESA's methodology folds in all foreign-born regardless of legal
-status; this conflates economic migration with refugee flows for AFG
-specifically.
+**Critique.** The numerator accumulated across years, while the denominator is
+a 2024 snapshot. Calling the quotient intensity or propensity would be
+misleading.
 
-### 1.3 AFG 80% concentration reflects refugee corridor
+**Response.** Accepted. Public copy consistently uses “stock relative to
+resident population” or “population-share measure.” Current flow and
+propensity are explicit non-claims.
 
-Afghanistan's 80% top-3-destination concentration is driven by
-Iran + Pakistan, both of which received large Afghan refugee
-populations. This is not "diversified labor migration"; it is a
-displaced-population pattern. The article's framing must distinguish.
+### 3. Missing Pacific denominators can change the share top five
 
-### 1.4 IND and CHN diversification is structural
+**Critique.** Cook Islands and Niue are precisely the kind of small economies
+likely to rank highly. Withholding them may understate the Pacific pattern and
+can alter membership.
 
-IND's destinations span GCC labor migration + US/UK skilled migration
-+ regional South Asia. CHN's span US/Canada/Australia + Hong Kong/
-Macau + Asia. The "diversified" reading is correct but the underlying
-migration types are different. The article should not present
-diversification as comparable across IND and CHN.
+**Response.** Accepted. Coverage, figures, paper, and limitations name all
+three withheld rows. The paper does not claim the observed share ordering is
+complete. It claims only that the old absolute top five has zero overlap with
+the observed share top five among valid denominators.
 
-### 1.5 BGD top-3 includes India and Saudi Arabia
+### 4. UNHCR and UN DESA are not mutually exhaustive categories
 
-BGD's 65% concentration is largely India + Saudi + UAE. The India
-number is partly historical (post-1971 partition); not all
-contemporary economic migration. Article should note.
+**Critique.** Subtracting UNHCR forced-displacement stock from UN DESA stock
+does not identify labor migration. Reference dates, definitions, and coverage
+also differ.
 
-## 2. Owner-equivalent responses
+**Response.** Accepted. The residual is labeled “other or unclassified migrant
+stock.” The method lists included and excluded UNHCR categories and does not
+claim a full partition.
 
-All accepted. Article body now distinguishes:
-- Stock vs flow framing
-- Refugee-driven vs labor-driven concentration (AFG flagged as
-  refugee-corridor)
-- Different diversification mechanisms across IND vs CHN
-- Historical legacy in BGD-IND corridor
+### 5. Zero set overlap does not prove the absolute ranking is only population
 
-## 3. §18 attestation
+**Critique.** The rank inversion shows denominator sensitivity, but it does
+not decompose the contribution of population size, source systems, history,
+or mobility opportunities.
 
-| Field | Value |
-|---|---|
-| Comments addressed | yes |
-| Date closed | 2026-04-26 |
-| Reviewer chain | §18 AI critique-pass |
+**Response.** Accepted. The previous “largely a population ranking” language
+was removed. The conclusion is limited to the fact that absolute stock cannot
+be interpreted as population-relative stock.
+
+### 6. The 44-economy roster is not a current authoritative DMC list
+
+**Critique.** Public copy previously said 50 DMCs and then incorrectly named
+six Pacific economies as absent, even though they existed in the panel.
+
+**Response.** Accepted. The current package refers to a 44-economy program
+panel and explicitly states that the hard-coded analysis roster is not an
+authoritative current list of all ADB developing members.
+
+### 7. Corridor concentration can distract from the actual finding
+
+**Critique.** The old paper centered a 50% split that changes under the
+required threshold suite.
+
+**Response.** Accepted. Corridor concentration is now Figure 3 and a secondary
+description. The chart shows top-2/top-3/top-5 values and the 25%/50%/75%
+interpretation is stated directly.
+
+## Closure decision
+
+The claim changed shape, the false legacy sensitivity sentence was removed,
+the coverage contradiction was corrected, and every public number now traces
+to the refreshed scripts and generated artifacts. No maturity promotion is
+claimed; human-final review remains owner-led under §18.5.

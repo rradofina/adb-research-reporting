@@ -1,276 +1,175 @@
-# Deep questions — Migration & Displacement Signals
+# Deep questions — Migration and displacement signals
 
 `attestation_chain: ai-first`
 
-This is an AI-generated research agenda, not a finding. It asks the
-questions the screening result did not. Per `CONSTITUTION.md` §13.3 the
-framing is a measurement-and-observability gap in what UN DESA's stock
-matrix can resolve — never a ranking of which DMC migrates "too much."
-Each question is meant to be specific enough to be answered, falsifiable,
-and tied to a named public dataset, not a generic prompt. Where a question
-would dissolve or rename the headline, it says so.
+This is a forward research agenda, not a finding. It begins after the
+2026-07-18 denominator and construct audit. Questions are ordered by their
+ability to change a claim or create a more decision-relevant public data
+object. They do not rank which developing member economy migrates "too much."
 
----
+## 0. What the completed issue establishes
 
-## 0. Where the screen currently stops
+The 44-economy program panel supports three narrower statements:
 
-The result is: five ADB DMCs — India, China, Bangladesh, Afghanistan,
-Philippines — hold the top five of the UN DESA 2024 emigrant-stock ranking
-[@undesa2024migrant], the same five hold it under net-migrant stock
-(5/5 overlap), and within that set three (BGD 65%, AFG 80%, PHL 55%)
-concentrate over half their emigrant stock in three destination corridors
-while two (IND 45%, CHN 49%) do not. That is a **set-stability property of
-a ranking, plus a concentration split, over one vintage of one bilateral
-stock matrix**. It is not yet a statement about migration *flow*, about
-*displacement*, or about any household. The single deepest crack is already
-in `limitations.md`: the metric is a cumulative foreign-born **stock**, it
-folds **refugees** into the same number as **labor migrants**, and
-Afghanistan's 7,528,994 is overwhelmingly displaced people, not workers.
-Everything below is the distance between the screen and a finding.
+1. The absolute emigrant-stock top five—India, China, Bangladesh,
+   Afghanistan, and the Philippines—has zero overlap with the population-
+   share top five—Samoa, Tonga, Armenia, Nauru, and Fiji.
+2. The denominator result is stable at top 3, top 5, and top 8; Afghanistan
+   is the only shared origin at top 8.
+3. Afghanistan is a different construct: UNHCR forced-displacement stock is
+   81.7% of its UN DESA emigrant stock, while no population-share top-five
+   origin reaches 25%.
 
-## 1. Questions that could falsify or hollow out the result
+The paper therefore retires the absolute-stock intensity headline. The
+remaining research must not reopen that question without a genuinely new
+denominator, vintage, or validation source.
 
-**1.1 — The denominator question (the keystone).** The headline ranks
-*absolute* emigrant stock, and the top four — IND (18.5M), CHN (11.7M),
-BGD (8.7M), and just below, PAK (6.9M) — are four of the most populous
-economies in scope. India's 18.5M is **1.3 percent** of its population;
-China's 11.7M is **0.8 percent**; Afghanistan's 7.5M is roughly **18
-percent**; Tonga's 53,237 is over **half** the resident nation. **If we
-re-rank by emigrant stock as a share of origin population — UN DESA stock
-over a UN WPP or national-census denominator — does the IND/CHN/BGD/AFG/PHL
-set survive at all, or does it collapse into a small-island ranking
-(Tonga, Samoa, the Cook Islands)?** The companion article
-`per-capita-shifts-the-cluster.md` already shows per-capita reordering for
-a sister program. If absolute stock is mostly a population proxy, the top-5
-"finding" is partly a finding about who is big, and the per-capita cut is
-the real object. This is the single question most likely to make or break
-the headline, and both numerator and denominator are public.
+## 1. Questions that could still change the descriptive finding
 
-**1.2 — The stock-is-not-a-flow question.** UN DESA measures cumulative
-foreign-born accumulated over decades; KNOMAD's Migration and Development
-Brief [@ratha2024migration] tracks annual flow. India's 18.5M is "people of
-Indian origin currently abroad," not 2024 departures. **If we rank ADB DMCs
-by recent flow instead — net annual emigration from national emigration
-clearance / labor-deployment registries (e.g. the Philippine POEA/DMW
-deployment series, Bangladesh BMET, Nepal DoFE), or a flow-consistent UN
-DESA inter-vintage difference (2020→2024) — does the same five hold?** A
-country whose stock is large but whose flow has slowed sits in a completely
-different policy situation from one still sending. The screen cannot tell a
-*legacy diaspora* from an *active corridor*, yet that is the distinction a
-labor-migration desk most needs.
+### 1.1 Missing small-economy denominators
 
-**1.3 — The refugee-vs-labor merge question.** Afghanistan's top two
-destinations are Iran (3,752,317) and Pakistan (1,923,453) — **75.4
-percent** of its emigrant stock in its two immediate neighbors, **80.2
-percent** in three. These are post-1979 and post-2021 *displaced*
-populations, not labor migrants. Myanmar's largest corridors — Thailand
-(1.7M) and Bangladesh (1.25M, the Rohingya) — are the same phenomenon.
-**If we net out the UNHCR refugee-and-asylum-seeker stock and the IOM DTM
-displacement counts from each DMC's UN DESA emigrant total, does
-Afghanistan stay in the top five, and does the "80% concentration" survive
-as anything other than a displacement footprint?** The screen reports one
-number for two categorically different phenomena; UNHCR and DTM are exactly
-the datasets that would separate them.
+WDI does not provide the 2024 denominator used here for Taipei,China, Cook
+Islands, or Niue. Cook Islands and Niue could matter at the upper tail.
 
-**1.4 — The is-"displacement-signals"-even-the-right-name question.** The
-program is titled *Migration & **Displacement** Signals*, yet
-`limitations.md` concedes UN DESA "measures international migration only"
-and that internal displacement is deferred to the §18.5 upgrade-pass. IDMC
-GRID [@idmc2024grid] reports millions of conflict- and disaster-IDPs inside
-Afghanistan, Myanmar, and Pakistan who **never cross a border** and so
-appear nowhere in this panel. **Does the headline measure displacement at
-all, or only the internationally-resident, border-crossing residue of it —
-and is the program name therefore over-claiming the construct the data can
-support?** This is a naming/observability gap: the most acute displacement
-may be the part the stock matrix structurally cannot see.
+**Question:** With authoritative national statistical office or UN WPP
+denominators, do either Cook Islands or Niue enter the observed population-
+share top five?
 
-**1.5 — The single-vintage question.** The entire result rests on the 2024
-vintage; `sensitivity.md` explicitly defers re-ranking against the UN DESA
-2020 and 2015 releases to the upgrade-pass, and the synthesized C-2 (UN
-DESA) objection in `review-external.md` warns that the 2024 methodology
-"revised regional aggregates and reweighted some Pacific economies."
-**Re-rank the top-5 set using the 2020 and 2015 vintages: is the
-five-economy set a stable structural fact, or an artifact of one release's
-revised weighting?** A set-stability claim that has only ever been tested
-across two *definitions* in one *vintage* has not yet been tested across
-time at all.
+**Decision rule:** Revise the named top-five set if either enters; retain the
+zero-overlap claim only if the absolute and completed-denominator sets still
+share no origin.
 
-## 2. Questions about the mechanism — *why* the gap exists
+### 1.2 Vintage stability
 
-**2.1 — Why does the corridor concentrate? Three different machines.** The
-split (BGD/AFG/PHL high, IND/CHN low) is reported as one pattern but is
-almost certainly three mechanisms wearing one threshold. Afghanistan's 80%
-is *forced proximity*: refugees flee to the nearest safe border (Iran,
-Pakistan). Bangladesh's 65% is *bilateral labor agreements plus a partition
-legacy*: Saudi Arabia (2.36M) and the UAE under GCC kafala recruitment, but
-its second corridor is India (2,293,959) — the largest single bilateral
-stock in the whole panel and substantially a post-1971 legacy, not
-contemporary work. The Philippines' 55% is *policy-built skilled corridors*
-to the US (2.26M) and Canada (835,779). **Which of forced-proximity,
-bilateral-labor-agreement, and policy-built-skilled-corridor produces each
-DMC's concentration — and does a single "concentration" number conflate a
-humanitarian emergency with a managed nursing pipeline?** The World Bank
-bilateral migration matrix plus UNHCR origin-destination data are what
-would separate the machines.
+The current comparison uses the 2024 UN DESA stock release and a 2024
+population denominator.
 
-**2.2 — Why is the matrix nearly blind on the inbound side for some DMCs?**
-Afghanistan reports an immigrant stock of only 72,948 against 7,528,994
-emigrants — a **103:1** ratio — and only *three* reported origin partners
-(Pakistan 69,788, Tajikistan 3,011, Uzbekistan 149). The Philippines is
-similar at **101:1** (68,921 in, 6,988,383 out). **Is that near-total
-inbound blankness a real absence of in-migration, or a data-production gap
-where origin economies that send to Afghanistan/the Philippines simply do
-not enumerate their nationals there?** A matrix that records 149 Uzbeks in
-Afghanistan to the unit but cannot see returnees or transit populations is
-telling us as much about *who keeps registers* as about who moves.
+**Question:** Do the population-share leaders and the denominator reversal
+persist in the 2015 and 2020 stock vintages using matched-year denominators?
 
-**2.3 — Why does the bilateral matrix under-count exactly the corridors
-that matter most?** The synthesized C-4 (WorldPop/KEMRI) objection in
-`review-external.md` warns that intra-South-Asia and intra-GCC undocumented
-labor is systematically under-reported. The reported BGD/PAK/NPL → GCC
-corridors are precisely the kafala-system corridors where undocumented and
-overstayer populations are largest and least enumerated. **If the
-under-count is concentrated in the high-concentration DMCs' headline
-corridors, is the true concentration even *higher* than 65–80% — or does
-the undercount sit in the smaller corridors, inflating the measured
-concentration?** The direction of the bias is not neutral, and KNOMAD's
-corridor estimates plus destination labor-force surveys would sign it.
+**Value:** A multi-vintage panel would distinguish a structural ranking
+difference from a single-release result [@undesa2024migrant].
 
-## 3. Questions that would make it decision-grade
+### 1.3 Independent stock validation
 
-**3.1 — A real estimand instead of a rank.** Replace "holds the top five"
-with a quantity an ADB country team can act on: *of each DMC's emigrant
-stock, how many are working-age labor migrants in active corridors versus
-displaced persons versus legacy diaspora?* For Afghanistan that is the
-difference between a 7.5M labor-remittance base and a 7.5M humanitarian
-caseload. Decompose the UN DESA stock by joining UNHCR (refugee share), DTM
-(recent displacement), and destination labor-force surveys (employed
-working-age share). The decomposition, not the rank, is what determines
-whether the right instrument is a remittance-cost intervention or a
-protection response.
+UN DESA harmonizes heterogeneous censuses and registers. The reported
+bilateral cells are not 44 equally precise observations.
 
-**3.2 — Who specifically, and is the corridor a lifeline or an exposure?**
-A national stock hides the incidence. Nepal's 663,518 in India and 502,596
-in Malaysia are dominated by specific hill and Terai districts; Bangladesh's
-GCC corridor draws from particular upazilas. **Which sub-national origin
-communities carry the corridor, and are those the same communities that are
-climate- or disaster-exposed (a join with this repo's
-disaster-recovery-lag and flood-market-access programs)?** A household whose
-sole income is one GCC corridor and which sits in a flood-exposed district
-is the real unit of concern, and it is invisible at the 8.7M national
-total. DHS/LSMS origin-side microdata and census migration modules are the
-source.
+**Question:** For Samoa, Tonga, Afghanistan, India, and China, how closely do
+destination censuses, OECD DIOC, or other official bilateral sources reproduce
+the UN DESA total and leading corridors?
 
-**3.3 — The single-destination cliff.** The concentration metric counts
-the *top three* together, but the sharper risk is dependence on *one*
-destination. Afghanistan has 3,752,317 people in Iran alone (~50% of its
-entire emigrant stock); the Kyrgyz and Tajik corridors run overwhelmingly
-to a single destination (Russia: 333,664 of Kyrgyzstan's 540,573;
-415,676 of Tajikistan's 514,478). **Compute a Herfindahl index of each
-DMC's emigrant stock across destinations: who is one destination-economy
-shock — an Iranian expulsion order, a Russian labor-market collapse, a Gulf
-nationalization drive — away from a mass forced return?** That is a more
-defensible "displacement signal" than a top-3 sum, it is computable
-directly from the panel already committed, and it is the question a
-contingency planner actually asks. (The remittance-resilience program needs
-this same Herfindahl on the inflow side; one computation serves both.)
+**Decision rule:** Report source disagreement and an uncertainty range when an
+independent total or corridor differs enough to change a rank or concentration
+label.
 
-## 4. Frontier questions
+## 2. Questions that require a different migration object
 
-**4.1 — Validate the stock against an independent border-crossing count.**
-UN DESA's bilateral cells are themselves modeled estimates harmonized from
-heterogeneous national censuses of differing vintage. **Do the headline
-corridors reconcile with an independent source — destination-country census
-microdata (IPUMS International), the OECD DIOC database for OECD
-destinations, or UNHCR's operational registration for the Afghan and
-Rohingya corridors?** If the Iran→Afghanistan or India→Bangladesh cell
-diverges by millions across independent sources, the "80%" and "65%" are
-estimates with an error bar wide enough to swallow the concentration split.
+### 2.1 Current flow rather than cumulative stock
 
-**4.2 — Reciprocity as a data-quality test.** The panel contains mirror
-pairs: India records 2,293,959 Bangladesh-born residents and Bangladesh
-records 2,293,959 of its people in India — identical, because UN DESA
-harmonizes them, which means the cell is a *reconciled estimate*, not two
-independent observations. But the Afghanistan↔Tajikistan pair shows
-asymmetry worth probing (Afghanistan reports 3,011 Tajiks; the Afghan stock
-in Tajikistan is 12,467). **Where origin- and destination-reported stocks
-disagree before harmonization, which side is the screen trusting, and does
-the choice move any headline corridor?** Reciprocity gaps are the
-canonical bilateral-matrix quality diagnostic.
+**Question:** Which origins have the largest recent outflows relative to
+resident population, using public annual deployment, visa, border, or census-
+transition series?
 
-**4.3 — The corridor as it moves over time.** UN DESA is a five-yearly
-snapshot, but the corridors are dynamic: did the Afghan stock in Pakistan
-and Iran jump between the 2020 and 2024 vintages (capturing the post-2021
-exodus), and did Pakistan's 2023 deportation drive of Afghans show up as a
-*fall* by the next release? **Is each headline corridor growing, stable, or
-reversing — and does the 2024 snapshot freeze a corridor mid-collapse or
-mid-surge?** Inter-vintage differencing plus the IOM DTM flow-monitoring
-time series turns a static rank into a trajectory.
+This is not an upgrade to the existing stock ratio. It is a new study with a
+flow numerator, explicit reference period, and coverage rules. Candidate public
+objects include Philippine DMW deployment, Bangladesh BMET, Nepal DoFE, Pacific
+labor-mobility program releases, and destination-country visa statistics
+[@adb2018pacificlabour]. Cross-country comparability must be tested before
+ranking.
 
-**4.4 — A coding-provenance audit of the long tail.** The panel contains a
-geographically implausible artifact: "Guinea" (West Africa, code 324)
-appears as a top-five *destination* for Tonga (901), and as a trace
-destination for Nauru (15), Palau (7), and Micronesia (1) — Pacific →
-Guinea is not a real corridor and is almost certainly a numeric
-country-code collision (e.g. with Guam or another territory) in the source.
-Destination names also carry unexplained asterisks ("United States of
-America\*", "Australia\*"). **How many cells in the matrix are affected by
-code-mapping artifacts, and what do the asterisk flags denote in UN DESA's
-codebook — estimated, footnoted, or territory-adjusted values?** None of
-this touches the top-5 headline, but it is exactly the kind of provenance
-defect a reproducibility audit (§11) must surface before any human-final
-claim.
+### 2.2 Migration purpose
 
-## 5. The question we are most afraid to ask
+The UNHCR join identifies defined protection categories but cannot rename the
+residual labor migration.
 
-**Is the top-5 emigrant-stock set measuring a migration phenomenon, or is
-it an index of population size crossed with which countries keep good
-diaspora registers?** The per-capita re-rank in §1.1 already shows the
-absolute ranking is largely a population ranking (IND 1.3%, CHN 0.8% of
-population, versus Tonga 50.7%, Samoa 54.7%). And the construct itself is
-internally split: the same metric calls Afghanistan's 7.5M of mostly
-refugees and the Philippines' 7.0M of mostly contract workers the same kind
-of thing. The honest test: name the independent outcome this ranking must
-predict — origin-country remittance receipts as a share of GDP, return-
-migration episodes during a destination shock, protection caseloads, or
-labor-deployment volume — and check whether it does. If the "emigrant
-stock" rank predicts remittance dependence no better than population does,
-and predicts displacement risk no better than the UNHCR caseload does, then
-it is a triage label assembled from one convenient public matrix, and it
-should keep that name rather than borrow the word "displacement."
+**Question:** For selected corridors, what shares are temporary labor, family,
+student, permanent, return, and protection movements?
 
-## 6. What answering these would take
+**Required evidence:** Visa-class or deployment records with a common time
+unit, explicit stock/flow status, and documented coverage. A partial purpose
+classification should remain corridor-specific rather than being extrapolated
+to all 44 origins.
 
-| Question | Data it needs | Public? |
-|---|---|---|
-| 1.1 per-capita re-rank | UN DESA stock ÷ UN WPP or national-census population | yes |
-| 1.2 stock-vs-flow | UN DESA inter-vintage diff; POEA/DMW, BMET, DoFE deployment series | mostly |
-| 1.3 refugee net-out | UNHCR refugee/asylum statistics; IOM DTM | yes |
-| 1.4 internal displacement | IDMC GRID [@idmc2024grid] | yes |
-| 1.5 vintage stability | UN DESA 2015 + 2020 vintages [@undesa2024migrant] | yes |
-| 2.1 / 2.3 corridor mechanism | World Bank bilateral migration matrix; KNOMAD [@ratha2024migration]; destination labor-force surveys | mostly |
-| 3.2 sub-national incidence | DHS / LSMS origin modules; national census migration tables | mostly |
-| 3.3 destination Herfindahl | the committed UN DESA panel itself | yes |
-| 4.1 / 4.2 independent validation | IPUMS International; OECD DIOC; UNHCR registration | mostly |
-| 4.3 corridor dynamics | UN DESA vintage series + IOM DTM flow monitoring | yes |
+### 2.3 Internal displacement
 
-Most of the keystone work is blocked only by *not having reached for the
-data* — the per-capita re-rank, the destination Herfindahl, and the vintage
-re-rank all run on data already in hand or one public download away. They
-sit in the §18.5 upgrade-pass pile, which is really the deep-research
-backlog.
+The present panel covers people living outside their origin economy. It does
+not observe people displaced within national borders.
 
-## 7. Keystone
+**Question:** How do cross-border UNHCR stocks and IDMC internal-displacement
+stocks differ in scale and trajectory for Afghanistan, Myanmar, Pakistan, and
+other conflict- or disaster-affected origins [@idmc2024grid]?
 
-Answer **1.1 (per-capita re-rank)** first. It is the cheapest — both the UN
-DESA stock and a population denominator are already public, and the
-companion `per-capita-shifts-the-cluster.md` shows the machinery exists —
-and it is the question that could either dissolve the headline (if the
-absolute top-5 is mostly a population ranking that vanishes once normalized)
-or sharpen it (if a defensible normalized signal survives, the contribution
-moves from "big countries are big" to a real structural fact). Run **3.3
-(destination Herfindahl)** alongside it, since it costs only a pass over the
-committed panel and immediately reframes "concentration" as the
-single-destination cliff that matters for displacement. Everything else —
-the refugee net-out, the vintage stability, the independent validation — is
-worth more once those two are settled.
+This would be a displacement paper, not another migrant-stock ranking.
+
+## 3. Corridor questions with operational value
+
+### 3.1 Single-destination dependence
+
+The inherited top-three threshold is sensitive. A destination Herfindahl index
+or largest-corridor share may better represent concentration.
+
+**Question:** Which origin stocks are most concentrated in one destination,
+and does the result survive top-one share, Herfindahl, and entropy measures?
+
+**Use:** Prioritize scenario analysis for destination-policy or labor-market
+shocks. Do not label concentration vulnerability without return, income, or
+household dependence evidence.
+
+### 3.2 Corridor trajectories
+
+**Question:** Which large bilateral stocks are growing, stable, or declining
+across matched UN DESA vintages, and which changes reconcile with public flow or
+registration series?
+
+Inter-vintage differences are not automatically flows. Reclassification,
+coverage, mortality, and naturalization can also change the stock.
+
+### 3.3 Subnational incidence
+
+National origin totals cannot show which households or districts carry a
+corridor.
+
+**Question:** For one origin with public census or household migration fields,
+which subnational areas are connected to the leading corridor, and how does
+that geography relate to remittance dependence, recruitment costs, or shock
+exposure?
+
+This requires disclosure-aware microdata or published subnational tables and
+should begin with one country, not a 44-economy promise.
+
+## 4. Source-quality questions
+
+### 4.1 Code and territory audit
+
+**Question:** Do destination codes, territory assignments, or footnote markers
+create implausible long-tail corridors or double counts?
+
+Audit the UN DESA codebook and the program parser before using long-tail cells
+for corridor mechanism claims. A suspicious row is a provenance issue, not a
+fact about the origin economy.
+
+### 4.2 Denominator comparability
+
+The stock numerator can span decades; WDI population is a mid-year resident
+snapshot.
+
+**Question:** How do resident population, population born in origin, and
+working-age population denominators change the interpretation for selected
+economies?
+
+Each denominator answers a different question. No composite should collapse
+them into a single headline score.
+
+## 5. Highest-leverage next move
+
+Build **one purpose-specific annual-flow panel** for a small set of origins with
+public, documented deployment or visa data. Start with the data object and a
+rough stock-versus-flow visual. The first test is comparability: common period,
+coverage of exits versus contracts, treatment of repeat movers, and whether
+destinations classify purpose consistently.
+
+If comparability fails, publish the source-disagreement or observability gap.
+Do not return to another absolute-stock ranking pass. If it succeeds, ask a new
+falsifiable question: **does the population-normalized stock ordering predict
+the recent labor-flow ordering, or do the two constructs separate?**

@@ -123,11 +123,11 @@ export const programs: ProgramEntry[] = [
   {
     id: 11,
     slug: "migration-displacement-signals",
-    title: "Migration and displacement signals",
+    title: "When the migration denominator changes the leading set",
     status: "PP",
     summary:
-      "UN DESA International Migrant Stock 2024 per ADB DMC. IND 18.5M emigrants (top dest UAE, US); CHN 11.7M; BGD 8.7M; AFG 7.5M (Iran, Pakistan); PHL 7.0M (US, Canada); PAK 6.9M (Saudi, UAE); MMR 4.3M (Thailand).",
-    note: "Demoted PR → PP on 2026-05-07; awaits the new program loop.",
+      "The absolute and population-share top fives have zero overlap. Samoa, Tonga, Armenia, Nauru, and Fiji replace India, China, Bangladesh, Afghanistan, and the Philippines; Afghanistan is the near-rank exception, but UNHCR forced-displacement stock equals 81.7% of its UN DESA emigrant stock.",
+    note: "PP issue rebuilt around the denominator switch; stock, flow, and migration-purpose limits are explicit.",
     href: "/program/migration-displacement-signals",
   },
   {

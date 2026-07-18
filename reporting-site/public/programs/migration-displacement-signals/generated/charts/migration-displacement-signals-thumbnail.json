@@ -1,17 +1,18 @@
 {
   "program": "migration-displacement-signals",
-  "title": "Five origins, 53M emigrants, Gulf and US destinations",
-  "caption": "India 18.5M \u00b7 China 11.7M \u00b7 Bangladesh 8.7M \u00b7 Afghanistan 7.5M \u00b7 Philippines 7.0M \u2014 the stable top-5 emigrant-origin cluster (UN DESA 2024). Top-9 destinations capture 91% of these flows.",
-  "headline_number": "18.5M emigrants from India",
-  "visual_form": "chord diagram (5 ADB DMC origins \u00d7 top-9 destinations)",
-  "source": "UN DESA International Migrant Stock 2024 (CC BY 3.0 IGO)",
+  "title": "The leading origins change when population enters the denominator",
+  "caption": "The absolute and population-share top fives have zero overlap. Afghanistan is the near-rank exception, but its stock is forced-displacement-majority.",
+  "headline_number": "0 of 5 economies appear in both top fives",
+  "visual_form": "paired ranked lists (absolute stock versus stock divided by population)",
+  "source": "UN DESA 2024 + WDI 2024 + UNHCR 2024",
   "inputs": [
-    "generated/migration-displacement-adb-panel.json"
+    "generated/migration-per-population-deepening.json",
+    "generated/migration-corridor-type-forced-displacement.json"
   ],
   "script": "migration-displacement-signals/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T20:26:44+00:00",
+  "generated_at": "2026-07-18T10:22:54+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +22,7 @@
     "svg": "migration-displacement-signals-thumbnail.svg"
   },
   "sha256": {
-    "png": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9",
-    "svg": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+    "png": "ef5750d72ba54767893aa9cb89039870b8e7809fe85abab9ef0725cb710b51d6",
+    "svg": "dac3bf5a508c909ba455dfc16c59e0e7a184a2988ac307355830e089a7560c57"
   }
 }

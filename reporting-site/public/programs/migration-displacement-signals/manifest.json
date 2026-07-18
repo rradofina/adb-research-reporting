@@ -1,25 +1,25 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/migration-displacement-signals?view=evidence",
-  "generated_at": "2026-07-18T09:46:52.224Z",
+  "generated_at": "2026-07-18T10:36:07.444Z",
   "hero": {
     "png": "generated/charts/migration-displacement-signals-thumbnail.png",
     "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
     "json": "generated/charts/migration-displacement-signals-thumbnail.json",
-    "title": "Five origins, 53M emigrants, Gulf and US destinations",
-    "caption": "India 18.5M · China 11.7M · Bangladesh 8.7M · Afghanistan 7.5M · Philippines 7.0M — the stable top-5 emigrant-origin cluster (UN DESA 2024). Top-9 destinations capture 91% of these flows.",
-    "headline_number": "18.5M emigrants from India",
-    "visual_form": "chord diagram (5 ADB DMC origins × top-9 destinations)",
-    "source": "UN DESA International Migrant Stock 2024 (CC BY 3.0 IGO)",
+    "title": "The leading origins change when population enters the denominator",
+    "caption": "The absolute and population-share top fives have zero overlap. Afghanistan is the near-rank exception, but its stock is forced-displacement-majority.",
+    "headline_number": "0 of 5 economies appear in both top fives",
+    "visual_form": "paired ranked lists (absolute stock versus stock divided by population)",
+    "source": "UN DESA 2024 + WDI 2024 + UNHCR 2024",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T20:26:44+00:00",
+    "generated_at": "2026-07-18T10:22:54+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9",
-      "svg": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+      "png": "ef5750d72ba54767893aa9cb89039870b8e7809fe85abab9ef0725cb710b51d6",
+      "svg": "dac3bf5a508c909ba455dfc16c59e0e7a184a2988ac307355830e089a7560c57"
     }
   },
   "artifacts": [
@@ -27,121 +27,211 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1149,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-24T08:05:49.338Z",
-      "sha256": "d172ccf99306c6be147c57c608b80e3115a0e47537d3583ace5baa68810c516e",
-      "attestation_chain": null
+      "size": 1182,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T10:05:53.042Z",
+      "sha256": "4f39f10324ff43ad8380f545eeca62cd4c116a3dbd0c4e75e25effacbfa10472",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1384,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T10:05:53.045Z",
+      "sha256": "bae25604eafde64775cdbe845d00fb4bec2197dd74881fb4cc81c46bcf03dc6d",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 2381,
+      "size_human": "2.3 KB",
+      "mtime": "2026-07-18T09:58:08.923Z",
+      "sha256": "095dccb6d0905117095a8171a1b0146973c8db2b35175416fb1361863b0da8eb",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 2463,
-      "size_human": "2.4 KB",
-      "mtime": "2026-04-27T03:37:27.293Z",
-      "sha256": "ed29bb04de2aae0ac713d5cb96b27b319a9d59035badb87ec85c0f0198ae2aa3",
+      "size": 5310,
+      "size_human": "5.2 KB",
+      "mtime": "2026-07-18T10:03:29.555Z",
+      "sha256": "fd54da3d32be43611f826a76171ca52f9a5a4083ffa8b2dac487cdfb8ce54426",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 3069,
-      "size_human": "3.0 KB",
-      "mtime": "2026-04-26T02:24:24.790Z",
-      "sha256": "87623606a9d893c5855f2f0d993203f7dee8fc82f38036cea17bc2874af8b558",
+      "size": 3248,
+      "size_human": "3.2 KB",
+      "mtime": "2026-07-18T10:03:29.558Z",
+      "sha256": "a4e16a63a4d329552d9a20b01c4392ceeadcd059f13e98674c5db534895c7925",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 2007,
-      "size_human": "2.0 KB",
-      "mtime": "2026-04-26T02:24:36.762Z",
-      "sha256": "3deef836308176336a2c061e12601ee64aca1de233ed9aa22833b04276e846e6",
+      "size": 1774,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T10:05:10.298Z",
+      "sha256": "67e4dccf997c21495547a5dc511fdfd3b024243bca81e972bb88240e7792dd95",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
       "file": "sensitivity-runs.json",
       "label": "Sensitivity-run output",
-      "size": 4881,
-      "size_human": "4.8 KB",
-      "mtime": "2026-04-26T02:21:47.634Z",
-      "sha256": "62c5d1d938b32e1542652983bc444f911fa625d9b3b93958c9748cc0678eb60f",
+      "size": 5245,
+      "size_human": "5.1 KB",
+      "mtime": "2026-07-18T10:22:49.418Z",
+      "sha256": "faf48c72d2d630b9ba7a0556291c62a37874bcfc3106d4b6140c5551bb7951a6",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 734,
-      "size_human": "734 B",
-      "mtime": "2026-04-26T02:24:42.092Z",
-      "sha256": "36a0541998403bc340f16d145b4604665ac2379bbe3b173ec760bd3b56b30037",
+      "size": 2543,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-18T10:03:29.556Z",
+      "sha256": "fdd7c3bde1c9e20de3cae33938d22d69fcc3f2135e3078f53f6cedc7317debe1",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 1232,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-26T02:25:38.570Z",
-      "sha256": "d345a80423f8463fcd5271b004b7b2f53e07a6973f7b77a9af61b2d2cfef0be0",
+      "size": 6578,
+      "size_human": "6.4 KB",
+      "mtime": "2026-07-18T10:04:51.616Z",
+      "sha256": "94b3a7e73a334a828a97a95a6be7b3cc9dd0d6937d5fccabe01ebbf99a54f4dc",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 2270,
-      "size_human": "2.2 KB",
-      "mtime": "2026-04-26T02:24:56.803Z",
-      "sha256": "13b98a02139ddbef36edd408515c62f3e85f4ded03ec1b8b7f4fe471660715b7",
+      "size": 3630,
+      "size_human": "3.5 KB",
+      "mtime": "2026-07-18T10:10:26.593Z",
+      "sha256": "75bdccef961b5d0921728ad4327972ff6cc22c2581830b2e6490bd3f75cc0b20",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 3813,
-      "size_human": "3.7 KB",
-      "mtime": "2026-04-26T02:25:18.700Z",
-      "sha256": "c7650fcac461471476839b4589cb9d61643639854d4a055b6600c1fcea4a7f4c",
+      "size": 3842,
+      "size_human": "3.8 KB",
+      "mtime": "2026-07-18T10:10:26.594Z",
+      "sha256": "9db43ec30dfca8e62cfc9941dcdf5ed16f607f1ed2101302c7fd25521b9ec138",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 2645,
-      "size_human": "2.6 KB",
-      "mtime": "2026-04-26T02:25:31.619Z",
-      "sha256": "a3072d140e7e4d116365f4abb92620f23a15f227bacc03af327c3328a2f171fb",
+      "size": 3400,
+      "size_human": "3.3 KB",
+      "mtime": "2026-07-18T10:04:51.619Z",
+      "sha256": "0e35ad4f2d62d93b4bdab29988fdda442fdc1f571348418ea5c83dd048acefbf",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1315,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T10:05:53.045Z",
+      "sha256": "9ddf3c07f07d94ecc83c186c2601f559ba9c3de325b3e97ae57d1043eca0ae8a",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
+      "file": "generated/charts/migration-corridor-concentration.png",
+      "size": 187490,
+      "size_human": "183.1 KB",
+      "sha256": "6098b269eb17050b2b9c4ff65aba7c1a3368ad111b5ef258cef0c343c32f979b"
+    },
+    {
+      "file": "generated/charts/migration-corridor-concentration.svg",
+      "size": 85528,
+      "size_human": "83.5 KB",
+      "sha256": "91ea0247cf2d26034373302f00c36b20b8c510815d7290afa1a3f35f3e81a784"
+    },
+    {
       "file": "generated/charts/migration-displacement-signals-thumbnail.json",
-      "size": 1226,
+      "size": 1251,
       "size_human": "1.2 KB",
-      "sha256": "4c768305ad65520dd76843aad3c17a5c10f726870c5bc65204d0369146543ff5"
+      "sha256": "efd667d07f2a82678a7943288d72dbcfa95edbce12fbe5c64fdc5dadace4c28b"
     },
     {
       "file": "generated/charts/migration-displacement-signals-thumbnail.png",
-      "size": 354739,
-      "size_human": "346.4 KB",
-      "sha256": "cc1b065bccb0097a95f98bf0cd3e86041dcefec5582d14ce5c87ab844433fdb9"
+      "size": 115048,
+      "size_human": "112.4 KB",
+      "sha256": "ef5750d72ba54767893aa9cb89039870b8e7809fe85abab9ef0725cb710b51d6"
     },
     {
       "file": "generated/charts/migration-displacement-signals-thumbnail.svg",
-      "size": 101196,
-      "size_human": "98.8 KB",
-      "sha256": "2d1d0cbeeebeb28945a8e2f97b36de180c37d724736cdc18007061027145be23"
+      "size": 123513,
+      "size_human": "120.6 KB",
+      "sha256": "b563c392a76df311e1ac51b393e4d1236f41d7c0304d0b40a23f383455a241e1"
+    },
+    {
+      "file": "generated/charts/migration-forced-displacement-composition.png",
+      "size": 142220,
+      "size_human": "138.9 KB",
+      "sha256": "b056b2e71b18a7f7951cf1d30f5764b8e2501e3112f958a37a1309a69206a221"
+    },
+    {
+      "file": "generated/charts/migration-forced-displacement-composition.svg",
+      "size": 93845,
+      "size_human": "91.6 KB",
+      "sha256": "c784a7fdc782931275e786109165f83d9cb904fc78f75d2369559365a8af1c8f"
+    },
+    {
+      "file": "generated/charts/migration-population-share-profile.png",
+      "size": 152100,
+      "size_human": "148.5 KB",
+      "sha256": "b88f6189ef135a8f8011c067667edddcef99737ffd26d8c798ffea8cffe252c5"
+    },
+    {
+      "file": "generated/charts/migration-population-share-profile.svg",
+      "size": 92511,
+      "size_human": "90.3 KB",
+      "sha256": "d1d8cb9202881016d5d1e9187ba65ffd0b4f1f5bdd1a49a08324b1030b4dd78a"
+    },
+    {
+      "file": "generated/charts/migration-rank-inversion.png",
+      "size": 309996,
+      "size_human": "302.7 KB",
+      "sha256": "5a51fa8dbf3cc809264f88b225dd2f4acab45349ab19c5f0c750d72d8a46e010"
+    },
+    {
+      "file": "generated/charts/migration-rank-inversion.svg",
+      "size": 98198,
+      "size_human": "95.9 KB",
+      "sha256": "92c1e984577e4f09fc9b612e5e702cb99ec9a9dba43ca1d6cada0d142300b4bc"
+    },
+    {
+      "file": "generated/charts/migration-source-observability.png",
+      "size": 116497,
+      "size_human": "113.8 KB",
+      "sha256": "d8f8dbca47939eceaca104eb3eeff460f2928665e3b499c43957605f7292ca2a"
+    },
+    {
+      "file": "generated/charts/migration-source-observability.svg",
+      "size": 78612,
+      "size_human": "76.8 KB",
+      "sha256": "3487c9ed15eecf45c7edcc908e6cb021633244197e2fe08dfdd3fc1161ddf934"
     },
     {
       "file": "generated/migration-corridor-type-forced-displacement-corridors.csv",
@@ -153,19 +243,19 @@
       "file": "generated/migration-corridor-type-forced-displacement-country.csv",
       "size": 5948,
       "size_human": "5.8 KB",
-      "sha256": "6797170609488c1e351bc534f4ffa4c15d317f2e47a6cd1beb02999c127d4f29"
+      "sha256": "6ff9eb3fa756466ca7c9e61d1ba4fb5f25d02e8c31602ca30597fb9ac61377dd"
     },
     {
       "file": "generated/migration-corridor-type-forced-displacement.json",
       "size": 120395,
       "size_human": "117.6 KB",
-      "sha256": "84c085134c89bd5be7435f44941354e26e8bf0ab3ce8fbcaa7b9b93c545b0eab"
+      "sha256": "f020dd9b7cfcd2520e1242056b1c876b8322f9c9f13579fa4f6401db281210b1"
     },
     {
       "file": "generated/migration-denominator-corridor-type-audit.json",
-      "size": 143298,
-      "size_human": "139.9 KB",
-      "sha256": "f751c8ccb5cf7f5b2d53d9ca1d377de00bec9f605852288ef234fd90d43d949d"
+      "size": 143598,
+      "size_human": "140.2 KB",
+      "sha256": "dabb5f57fbab83136fe2599930fdbe7a244e38f5cbfd74756fb88e95f7149e2f"
     },
     {
       "file": "generated/migration-displacement-adb-panel.csv",
@@ -177,25 +267,31 @@
       "file": "generated/migration-displacement-adb-panel.json",
       "size": 77117,
       "size_human": "75.3 KB",
-      "sha256": "eefc611eb2b3266e2e3a06fd276ecec2c70dc7180b71d67f06096970470e9b77"
+      "sha256": "4e8e764d53ed11224f432f123cd361ac18e5a96ef1e1fbb951d9eb04a98c397d"
+    },
+    {
+      "file": "generated/migration-figure-dossier-summary.json",
+      "size": 3425,
+      "size_human": "3.3 KB",
+      "sha256": "35c48553d3a828cc4cb2b95a367000b9186be866f3be9716c2c9da46f521807a"
     },
     {
       "file": "generated/migration-per-population-deepening.csv",
       "size": 1995,
       "size_human": "1.9 KB",
-      "sha256": "ce788acefc05575ded39c3a0c3e1b843e7cce0ac28f92986b9296b0200a2f4ab"
+      "sha256": "9e281a3686e85db151ede876366f726edba8e5f336b034800fe7968fd0ec6fa5"
     },
     {
       "file": "generated/migration-per-population-deepening.json",
-      "size": 15833,
-      "size_human": "15.5 KB",
-      "sha256": "e180195e518abf13f9fbf5338de6c1365818fefae07b9c192b2625fdf6ee8150"
+      "size": 16133,
+      "size_human": "15.8 KB",
+      "sha256": "32004108249e9e443b0d34a0b12c05d567c43f5040325e77010296157af29697"
     }
   ],
   "articles": [
     {
       "slug": "emigrant-stock-corridor-concentration",
-      "title": "Five DMCs hold the top of UN DESA's emigrant-stock ranking — and the corridor concentration splits the cluster in two",
+      "title": "The top five migrant origins have zero overlap after population normalization",
       "attestation_chain": "ai-first"
     }
   ],
@@ -206,6 +302,11 @@
       "available": true,
       "state": "present",
       "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        },
         {
           "key": "readme",
           "file": "README.md",
@@ -269,7 +370,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,21 +395,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/migration-displacement-signals/REPRODUCE.md",
+    "deck": "/programs/migration-displacement-signals/migration-displacement-signals-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/migration-displacement-signals"
   }

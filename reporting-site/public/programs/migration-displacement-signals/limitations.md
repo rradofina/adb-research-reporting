@@ -1,76 +1,70 @@
-# Limitations — Migration & Displacement Signals
+# Limitations — Migration and displacement signals
 
 `attestation_chain: ai-first`
 
-Status: §18 AI-finalized 2026-04-26.
+Last updated: 2026-07-18.
 
----
+## Construct limits
 
-## 1. What this result cannot establish
+- **Stock is not flow.** UN DESA reports people residing abroad at the stock
+  reference date, accumulated over multiple years. The analysis does not
+  measure 2024 departures, returns, or net flows.
+- **Share is not propensity.** Dividing stock by resident population does not
+  estimate an individual's likelihood of moving. Migration requires both
+  aspirations and the capability to move.
+- **Residual is not labor migration.** After subtracting the UNHCR forced-
+  displacement component, the remainder still combines labor, family,
+  student, temporary, historical, and unclassified migration.
+- **International is not internal displacement.** IDPs remain within the
+  origin economy and are excluded from the emigrant-stock comparison.
 
-- **Stock vs flow.** UN DESA measures cumulative foreign-born stock.
-  The headline does not measure annual migration flow.
-- **Refugee vs labor.** UN DESA collapses refugees, labor migrants,
-  family reunification, students, second-generation into a single
-  stock. AFG's 7.5M is dominated by refugees / displaced; the
-  article does not present this as labor migration.
-- **Internal displacement.** UN DESA measures international
-  migration only. IDMC GRID is the source for internal
-  displacement; this program does not yet integrate it (§18.5
-  upgrade-pass).
-- **No country-quality ranking.** Per Constitution §13.3 the
-  framing is structural-pressure, not deficiency.
+## Source limits
 
-## 2. Source-side limitations
+- UN DESA combines censuses, registers, surveys, and extrapolations. The 2024
+  release fully reassessed only a subset of global country and area series;
+  cross-economy source quality is not uniform [@undesa2024migrant].
+- WDI `SP.POP.TOTL` has no 2024 denominator for Taipei,China, Cook Islands,
+  or Niue in the fixed query. These rows are withheld rather than imputed.
+- UNHCR categories have specific legal and statistical definitions. They are
+  appropriate for identifying a forced-displacement component but not for
+  classifying all migration purposes [@unhcr2024methodology].
+- Small published counts and cross-source totals can differ because the
+  source concepts, reference dates, and confidentiality practices differ.
 
-- UN DESA bilateral matrices have under-reporting in informal
-  corridors: intra-South-Asia, intra-GCC, undocumented labor.
-- Pacific small-state stocks include large historical-diaspora
-  populations (cumulative across decades) and conflate with
-  contemporary circulating migration (PALM, RSE).
-- 6 of 50 DMCs not published in UN DESA 2024.
+## Coverage limits
 
-## 3. Method-side limitations
+The panel contains 44 economies hard-coded in the program pipeline. It is an
+analysis roster, not an authoritative current inventory of every ADB
+developing member. Results generalize only to the included rows and the 41
+economies with valid population denominators.
 
-- The 50% top-3-destination-concentration threshold is heuristic.
-- The top-5 set claim depends on the metric definition (raw stock vs
-  net migrant); both definitions yield the same set, so the claim
-  survives.
+Cook Islands and Niue are plausible high-share Pacific rows but lack WDI
+denominators. Their exclusion could change the composition of the population-
+share top five. It does not rescue the old absolute top five, but the paper
+does not claim the observed share ordering is complete.
 
-## 4. DMC-coverage limitations
+## Method limits
 
-NIU, COK, NRU, TUV, KIR, MHL not published. Documented in
-`coverage.md`.
+- Top-N is arbitrary. The analysis tests 3, 5, and 8.
+- The material-overlap and forced-displacement thresholds are arbitrary. Each
+  is tested at 25%, 50%, and 75%.
+- The rank comparison gives equal weight to a one-position and a thirty-
+  position move when classifying set membership.
+- Population normalization can magnify small numerator or denominator errors
+  in small economies.
+- A single 2024 cross-section cannot establish vintage stability. The UN DESA
+  2020 and 2015 matrices would be a separate temporal analysis.
 
-## 5. Synthesized reviewer objections quoted verbatim
+## Interpretation limits
 
-(per `review-external.md` §4 and `CONSTITUTION.md` §18.4)
+No ranking is labeled better, worse, vulnerable, excessive, or successful.
+The results do not estimate welfare, fiscal effects, brain drain, remittance
+benefits, climate causation, or migration-policy performance. They support a
+measurement choice and a source-upgrade queue.
 
-### 5.1 From C-1 (KNOMAD), synthesized
+## What would support a stronger next issue
 
-> "Emigrant stock" is cumulative. UN DESA collapses all migration
-> purposes into a single stock figure. The article must be explicit
-> that the headline counts stock, not flow.
-
-### 5.2 From C-3 (IZA), synthesized
-
-> The headline does not separate labor migration from refugee
-> displacement. AFG's 7.5M emigrant stock is overwhelmingly
-> refugees and post-2021 displaced.
-
-### 5.3 From C-4 (WorldPop / KEMRI), synthesized
-
-> Bilateral migration matrices under-report informal corridors.
-> Concentration figures for IND, BGD, NPL may understate the
-> actual concentration in informal corridors.
-
-### 5.4 From C-6 (IDMC), synthesized
-
-> The article does not engage with internal displacement.
-> Internal displacement requires IDMC GRID data; out of scope here.
-
-## 6. Banned framings
-
-- This result does **not** rank DMCs as deficient.
-- The headline is set-stability + corridor-concentration split, not
-  ranking.
+Comparable annual flows, national deployment registers, visa-class records,
+student-mobility data, return migration, and IDMC internal-displacement data
+would allow the stock to be decomposed into policy-relevant movement types.
+Those inputs require a new research object and prospective decision rules.

@@ -1,49 +1,50 @@
-# Sensitivity — Migration & Displacement Signals
+# Sensitivity — Migration and displacement signals
 
 `attestation_chain: ai-first`
 
-Run on 2026-04-26 by `scripts/sensitivity.py`. Run artifact:
-`sensitivity-runs.json`. Per Constitution §6.6.
+Run on 2026-07-18 by `scripts/sensitivity.py`; machine-readable results are
+in `sensitivity-runs.json`.
 
----
+## Denominator-switch suite
 
-## 1. Test matrix
+| Top-N | Absolute vs population-share overlap | Overlap share | Material change at 25% / 50% / 75% |
+|---:|---:|---:|---|
+| 3 | 0/3 | 0.0% | yes / yes / yes |
+| 5 | 0/5 | 0.0% | yes / yes / yes |
+| 8 | 1/8 | 12.5% | yes / yes / yes |
 
-| Parameter | Pre-registered | Variant | Top-5 set change | Decision-rule preserved? |
-|---|---|---|---|---|
-| Top-N for set claim | 5 | 3 (top-3) | 0 entries (subset) | yes |
-| Top-N for set claim | 5 | 8 (top-8) | superset; top-5 unchanged | yes |
-| Migration metric | emigrant stock | net migrant stock | 0 entries change (same 5 economies) | yes |
-| Migration metric | emigrant stock | emigrant share of total | substantial shift (small DMCs with high share) | n/a — different question |
-| Top-N for corridor concentration | 3 | 2 | concentration figures lower; pattern preserved | yes |
-| Top-N for corridor concentration | 3 | 5 | concentration figures higher; pattern preserved | yes |
-| Concentration threshold | 50% | 25%, 75% | 25%: all 5 above; 75%: only AFG above | partial |
+The baseline rule reshapes the headline when top-five overlap is at most 50%.
+The result passes even the stricter 25% threshold at every tested N.
 
-## 2. Replication ranges
+## Forced-displacement threshold suite
 
-| Metric | Baseline | Across suite |
-|---|---|---|
-| Top-5 emigrant-stock set | IND, CHN, BGD, AFG, PHL | identical across emigrant-stock and net-migrant rankings |
-| Top-3 corridor concentration | BGD 65%, AFG 80%, PHL 55%, IND 45%, CHN 49% | range 45%–80%; ordering stable |
+| Majority threshold | Afghanistan at or above | Population-share top-five economies at or above |
+|---:|---|---|
+| 25% | yes | none |
+| 50% | yes | none |
+| 75% | yes | none |
 
-## 3. Robustness checks beyond ±50%
+Afghanistan's UNHCR forced-displacement component is 81.7% of its UN DESA
+emigrant stock. The largest value among the population-share top five is 5.7%
+for Armenia.
 
-Completed:
-- **Direction-of-definition switch** (emigrant stock ↔ net migrant
-  stock): top-5 set identical (5/5 overlap).
+## Corridor-concentration suite
 
-TODO (deferred to §18.5 upgrade-pass):
-- **Vintage stability**: re-rank using UN DESA 2020 and 2015 vintages;
-  confirm whether the top-5 set is stable across releases.
-- **Sub-national exposure**: ADB DMC migrant stock disaggregated by
-  ADM1 to test whether the pattern is country-level or
-  region-concentrated.
+| Origin | Top 2 | Top 3 | Top 5 |
+|---|---:|---:|---:|
+| India | 34.6% | 45.2% | 60.4% |
+| China | 42.6% | 49.5% | 62.5% |
+| Bangladesh | 53.5% | 65.3% | 78.4% |
+| Afghanistan | 75.4% | 80.2% | 87.2% |
+| Philippines | 44.4% | 55.2% | 67.8% |
 
-## 4. Owner attestation
+At the top-three definition, every origin clears 25%, three clear 50%, and
+only Afghanistan clears 75%. The inherited concentration classification is
+therefore threshold-sensitive and remains secondary.
 
-| Field | Value |
-|---|---|
-| Sensitivity suite run | yes (2026-04-26) |
-| Critical failures resolved | yes (no failures) |
-| Reviewer chain | §18 AI-first |
-| Upgrade-eligible | yes |
+## Interpretation
+
+The denominator-switch and Afghanistan construct results are robust to the
+required arbitrary-choice suite. The corridor-concentration split is not.
+This is why the public headline leads with zero overlap and the forced-
+displacement exception rather than with a 50% corridor threshold.

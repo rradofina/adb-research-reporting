@@ -1,185 +1,38 @@
-# Deepened result — emigrant stock as a share of population, not an absolute count
+# Evidence appendix — denominator and corridor-type audit
 
 `attestation_chain: ai-first`
 
-This answers the keystone in `deep-questions.md` §1.1 (and the §5 "question
-we are most afraid to ask") with a real recomputation. Every number below is
-produced by `scripts/deepen-per-population.py` from data already on disk: the
-numerator is the committed program panel's `emigrant_stock_2024` (UN DESA
-International Migrant Stock 2024, CC BY 3.0 IGO); the denominator is World
-Bank WDI `SP.POP.TOTL` (Population, total) mid-year 2024, CC BY 4.0. No new
-data, no network, no AI-supplied figures. Per CONSTITUTION.md §13.3 this is a
-measurement/observability framing — what the stock matrix can and cannot
-resolve about migration *intensity* — not a ranking of which DMC migrates
-"too much."
+This appendix points to the machine-readable objects behind the current
+research result. Reader-facing interpretation and figures are in `results.md`.
 
-Artifact: `generated/migration-per-population-deepening.{json,csv}`.
+## Denominator switch
 
-**Denominator wall-note.** WDI `SP.POP.TOTL` is not committed inside this
-program's own `.cache/`. The script reads the same indicator from a sibling
-program's on-disk cache (`school-heat-disruption/.cache/wdi_pop.json`, World
-Bank API vintage `lastupdated 2026-04-08`). This is on-disk public data
-re-read locally; there is no network call. Mirroring the pull into this
-program's `.cache/` is a future tidy-up, not a number change.
+`generated/migration-per-population-deepening.json` joins the committed UN
+DESA origin-stock panel to a fixed World Bank WDI `SP.POP.TOTL` query for
+2024. It contains 41 ranked rows and three explicit withheld rows. Its top-five
+sets are:
 
-## The question
+- absolute stock: IND, CHN, BGD, AFG, PHL;
+- stock divided by population: WSM, TON, ARM, NRU, FJI; and
+- overlap: none.
 
-The headline ranks *absolute* emigrant stock, and its top five — India,
-China, Bangladesh, Afghanistan, Philippines — are five of the most populous
-economies in scope. The deep question: is that a migration-intensity
-finding, or mostly a population ranking that dissolves once each DMC's
-emigrant stock is divided by its own population? India's 18.5M is 1.3% of its
-people; Tonga's 53k is over half its resident nation. If absolute stock is
-largely a population proxy, the top-5 "finding" is partly a finding about who
-is big, and the per-capita cut is the real object.
+## Forced-displacement crosswalk
 
-## What the recomputation shows — absolute vs. share, side by side
+`generated/migration-corridor-type-forced-displacement.json` records the
+44-origin UNHCR query, per-origin source hashes, categories included and
+excluded, country rows, and leading forced-displacement corridors. Afghanistan
+is the only forced-displacement-majority origin at the 50% rule.
 
-The headline top-5 **does not survive on the share measure at all** — the
-overlap between the two top-5 sets is **zero**. The same five economies that
-top the absolute ranking sit between rank 6 and rank 39 once normalized:
+`generated/migration-denominator-corridor-type-audit.json` combines the two
+objects for the public evidence route. It does not classify the residual
+migrant stock as labor migration.
 
-| Absolute rank | DMC | Emigrant stock | % of population | Share rank |
-|---|---|---:|---:|---:|
-| 1 | India | 18,533,845 | 1.28% | #36 |
-| 2 | China | 11,701,619 | 0.83% | #39 |
-| 3 | Bangladesh | 8,706,947 | 5.02% | #25 |
-| 4 | Afghanistan | 7,528,994 | 17.65% | #6 |
-| 5 | Philippines | 6,988,383 | 6.03% | #23 |
+## Decision sensitivity
 
-The share ranking is an entirely different set of economies — small Pacific
-and Caucasus states whose absolute counts are tiny:
+`sensitivity-runs.json` tests top-N at 3, 5, and 8; material-overlap thresholds
+at 25%, 50%, and 75%; the forced-displacement majority threshold at the same
+three values; and corridor concentration at top 2, 3, and 5 destinations.
 
-| Share rank | DMC | Emigrant stock | Population (2024) | % of population | Absolute rank |
-|---|---|---:|---:|---:|---:|
-| 1 | Samoa | 119,313 | 218,019 | 54.73% | #27 |
-| 2 | Tonga | 53,237 | 104,175 | 51.10% | #30 |
-| 3 | Armenia | 637,604 | 3,033,500 | 21.02% | #20 |
-| 4 | Nauru | 2,484 | 11,947 | 20.79% | #39 |
-| 5 | Fiji | 181,025 | 928,784 | 19.49% | #25 |
-| 6 | Afghanistan | 7,528,994 | 42,647,492 | 17.65% | #4 |
-| 7 | Hong Kong SAR | 1,240,250 | 7,524,100 | 16.48% | #15 |
-
-At the bottom of the share ranking sit precisely the large-population
-economies the headline elevates: China at 0.83% of population (share-rank
-#39, from absolute-rank #2) and India at 1.28% (share-rank #36, from
-absolute-rank #1).
-
-Absolute top-5: **IND, CHN, BGD, AFG, PHL**. Share top-5: **WSM, TON, ARM,
-NRU, FJI**. Dropped on share: **all five** of IND, CHN, BGD, AFG, PHL.
-Entered on share: WSM, TON, ARM, NRU, FJI.
-
-## The finding — the absolute headline is largely a population ranking
-
-Re-ranking on intensity rather than count collapses the absolute top-5
-completely. Four of the five headline economies (India 1.28%, China 0.83%,
-Bangladesh 5.02%, Philippines 6.03%) are at or below the panel's median share
-despite topping the absolute list, because they are big, not because an
-unusually large fraction of their people are abroad. The economies where
-emigration is structurally largest *relative to the resident population* —
-Samoa (54.7%), Tonga (51.1%), Armenia, Nauru, Fiji — are nowhere near the
-absolute top-5. The absolute screen is, to first order, an index of
-population size crossed with which economies keep diaspora registers, not a
-measure of migration intensity.
-
-**Afghanistan is the one partial exception, and it is the wrong kind.** It is
-the single DMC that is high on *both* measures — absolute-rank #4 and
-share-rank #6 (17.65% of population). But Afghanistan's 7.5M is overwhelmingly
-displaced people in Iran and Pakistan, not labor migrants (see the
-stock-not-flow and refugee caveats below). So the one economy whose absolute
-prominence partly survives normalization survives it for a displacement
-reason the metric cannot, on its own, name — which sharpens rather than
-rescues the headline.
-
-## What this does and does not settle
-
-- **Settles:** the absolute top-5 emigrant-stock ranking is not a
-  migration-intensity ranking. On emigrant stock as a share of origin
-  population the set {IND, CHN, BGD, AFG, PHL} has zero members in the top
-  five; it is replaced by a small-island/Caucasus ordering led by Samoa
-  (54.7%) and Tonga (51.1%). The per-capita cut, not the absolute rank, is
-  the object that carries a structural signal. This confirms the §1.1
-  conjecture and the §5 fear directly.
-- **Does not settle — stock is not a flow.** Both the numerator and the
-  reordered ranking are cumulative foreign-born *stock* accumulated over
-  decades, not 2024 departures. Samoa's 54.7% is a multi-generational
-  diaspora (New Zealand, Australia, the US), not a current outflow rate. A
-  high-share economy with a frozen diaspora and one with an active corridor
-  look identical here. Separating them needs a flow series (UN DESA
-  inter-vintage differencing, or national deployment registers) and is
-  deferred.
-- **Does not settle — refugee vs. labor conflation persists under
-  normalization.** Dividing by population does nothing to separate displaced
-  people from workers. Afghanistan's 17.65% share is mostly the Iran/Pakistan
-  displacement footprint; Samoa's 54.7% is labor-and-family migration. The
-  share metric calls both "emigrant intensity." Netting out UNHCR
-  refugee/asylum stock and IOM DTM displacement is the next pass and is
-  blocked only on reaching for those datasets.
-- **The Afghanistan displacement caveat specifically.** Afghanistan is the
-  only economy whose absolute prominence partly persists on the share
-  measure. Reading that as "high labor-migration intensity" would be wrong:
-  it is a humanitarian caseload expressed as a fraction of population, and it
-  is the clearest case where the construct's refugee/labor merge changes the
-  policy meaning of the number.
-- **Honestly bounded — withheld for missing denominator.** Three DMCs have no
-  `SP.POP.TOTL` value in the WDI cache and are withheld from the share
-  ranking rather than placed on a fabricated denominator: Taiwan (TWN,
-  emigrant stock 832,507), Cook Islands (COK, 20,288), and Niue (NIU, 4,955).
-  WDI does not report population for these economies. Cook Islands and Niue
-  are themselves small high-emigration Pacific states, so their absence
-  *understates* how thoroughly the share ranking is dominated by small
-  islands — the withheld set would, if anything, reinforce the finding, not
-  reverse it.
-- **Honestly bounded — denominator vintage.** Population is mid-year 2024
-  WDI, matched to the UN DESA 2024 stock vintage; no DMC required the
-  documented 2023 fallback. The reordering has only been tested on one
-  vintage of each input; vintage stability (UN DESA 2015/2020) remains the
-  separate §1.5 question.
-
-## Corridor-type forced-displacement check
-
-The next source question is whether the denominator switch mixes unlike
-mobility types. `scripts/audit-corridor-type-forced-displacement.py` adds a
-public UNHCR Refugee Data Finder crosswalk for 2024. For each UN DESA origin
-in the program panel, the script queries UNHCR origin-asylum stock rows and
-sums three international forced-displacement fields: refugees,
-asylum-seekers, and other people in need of international protection. IDPs are
-kept as origin-country context but excluded from the emigrant-stock comparison
-because they are not abroad.
-
-The audit queries 44 origins, finds 41 with at least one forced-displacement
-abroad row, and identifies 1 forced-displacement-majority origin:
-Afghanistan. UNHCR forced-displacement stock abroad is 6,151,318 for
-Afghanistan, or 81.7% of its UN DESA emigrant stock. The top two public
-forced-displacement corridors are Afghanistan to the Islamic Republic of Iran
-(3,477,082) and Afghanistan to Pakistan (1,758,574). This confirms that the
-one absolute-top-five economy that partly survives the population denominator
-is not the same kind of signal as Samoa, Tonga, Armenia, Nauru, or Fiji.
-
-The source layer also prevents overcorrection. The share top five is not a
-forced-displacement-majority set: Samoa (0.4% forced-displacement share of
-UN DESA emigrant stock), Tonga (3.3%), Armenia (5.7%), Nauru (0.9%), and Fiji
-(1.9%) remain mainly diaspora-stock observations in the public data, not
-refugee-stock observations. For the absolute top five, Afghanistan is the
-exception; India (1.3%), China (2.9%), Bangladesh (1.6%), and the Philippines
-(0.1%) are low forced-displacement-share rows in this UNHCR comparison.
-
-This still does not classify labor, family, student, or temporary-work
-corridors. It is a negative and positive source test: public UNHCR data can
-name the forced-displacement component, but a labor/family split still needs
-national deployment registers, visa-class statistics, or corridor-specific
-administrative data.
-
-Artifacts:
-
-- `generated/migration-denominator-corridor-type-audit.json`
-- `generated/migration-corridor-type-forced-displacement.json`
-- `generated/migration-corridor-type-forced-displacement-country.csv`
-- `generated/migration-corridor-type-forced-displacement-corridors.csv`
-
-## Reproduce
-
-```bash
-python migration-displacement-signals/scripts/deepen-per-population.py
-python migration-displacement-signals/scripts/audit-corridor-type-forced-displacement.py
-```
+The denominator-switch conclusion and Afghanistan construct exception survive
+the suite. The corridor-concentration classification does not, so it remains
+secondary.

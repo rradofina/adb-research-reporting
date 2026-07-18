@@ -1,270 +1,227 @@
 {
-  "generated_at": "2026-04-26T02:21:47.633862Z",
   "program": "migration-displacement-signals",
-  "headline": "Five ADB DMCs persistently rank in the top five emigrant-stock economies regardless of metric choice (raw stock vs net stock); the corridor concentration in their top-3 destinations exceeds 50 percent in every case.",
-  "runs": [
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-07-18T10:22:49Z",
+  "source_inputs": [
+    "generated\\migration-displacement-adb-panel.json",
+    "generated\\migration-per-population-deepening.json",
+    "generated\\migration-corridor-type-forced-displacement.json"
+  ],
+  "primary_question": "How much does the leading-origin set change when UN DESA 2024 emigrant stock is divided by WDI 2024 origin population?",
+  "decision_rule": "Reshape the absolute-stock headline if the absolute and population-share top-five sets overlap by at most 50 percent.",
+  "top_n_variants": [
+    3,
+    5,
+    8
+  ],
+  "overlap_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "denominator_switch": [
     {
-      "label": "baseline_emigrant_stock_top5",
-      "metric": "emigrant_stock_2024",
-      "top5": [
-        [
-          "IND",
-          "India",
-          18533845
-        ],
-        [
-          "CHN",
-          "China",
-          11701619
-        ],
-        [
-          "BGD",
-          "Bangladesh",
-          8706947
-        ],
-        [
-          "AFG",
-          "Afghanistan",
-          7528994
-        ],
-        [
-          "PHL",
-          "Philippines",
-          6988383
-        ]
-      ]
-    },
-    {
-      "label": "top_n_minus50_top3",
-      "metric": "emigrant_stock_2024",
       "top_n": 3,
-      "top3": [
-        [
-          "IND",
-          "India",
-          18533845
-        ],
-        [
-          "CHN",
-          "China",
-          11701619
-        ],
-        [
-          "BGD",
-          "Bangladesh",
-          8706947
-        ]
-      ]
+      "absolute": [
+        "IND",
+        "CHN",
+        "BGD"
+      ],
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM"
+      ],
+      "overlap": [],
+      "overlap_count": 0,
+      "overlap_share": 0.0,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
     },
     {
-      "label": "top_n_plus50_top8",
-      "metric": "emigrant_stock_2024",
+      "top_n": 5,
+      "absolute": [
+        "IND",
+        "CHN",
+        "BGD",
+        "AFG",
+        "PHL"
+      ],
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM",
+        "NRU",
+        "FJI"
+      ],
+      "overlap": [],
+      "overlap_count": 0,
+      "overlap_share": 0.0,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    },
+    {
       "top_n": 8,
-      "top8": [
-        [
-          "IND",
-          "India",
-          18533845
-        ],
-        [
-          "CHN",
-          "China",
-          11701619
-        ],
-        [
-          "BGD",
-          "Bangladesh",
-          8706947
-        ],
-        [
-          "AFG",
-          "Afghanistan",
-          7528994
-        ],
-        [
-          "PHL",
-          "Philippines",
-          6988383
-        ],
-        [
-          "PAK",
-          "Pakistan",
-          6915057
-        ],
-        [
-          "MMR",
-          "Myanmar",
-          4320462
-        ],
-        [
-          "IDN",
-          "Indonesia",
-          3745148
-        ]
-      ]
-    },
-    {
-      "label": "metric_net_migrant_stock_top5",
-      "metric": "net_migrant_stock_2024 (most-negative first)",
-      "top5": [
-        [
-          "IND",
-          "India",
-          -14187444
-        ],
-        [
-          "CHN",
-          "China",
-          -10136606
-        ],
-        [
-          "AFG",
-          "Afghanistan",
-          -7456046
-        ],
-        [
-          "PHL",
-          "Philippines",
-          -6919462
-        ],
-        [
-          "BGD",
-          "Bangladesh",
-          -6246694
-        ]
-      ]
-    },
-    {
-      "label": "metric_emigrant_share_top5",
-      "metric": "emigrant / (emigrant + immigrant)",
-      "top5": [
-        [
-          "AFG",
-          "Afghanistan",
-          0.9904
-        ],
-        [
-          "PHL",
-          "Philippines",
-          0.9902
-        ],
-        [
-          "MMR",
-          "Myanmar",
-          0.9843
-        ],
-        [
-          "TON",
-          "Tonga",
-          0.9816
-        ],
-        [
-          "LKA",
-          "Sri Lanka",
-          0.9747
-        ]
-      ]
-    },
-    {
-      "label": "corridor_concentration_top5_dmc",
-      "method": "share of emigrant stock captured by top-N destinations, per top-5 emigrant DMC",
-      "n_2": [
-        [
-          "IND",
-          0.3461
-        ],
-        [
-          "CHN",
-          0.4255
-        ],
-        [
-          "BGD",
-          0.5348
-        ],
-        [
-          "AFG",
-          0.7539
-        ],
-        [
-          "PHL",
-          0.4435
-        ]
-      ],
-      "n_3": [
-        [
-          "IND",
-          0.4515
-        ],
-        [
-          "CHN",
-          0.4947
-        ],
-        [
-          "BGD",
-          0.6525
-        ],
-        [
-          "AFG",
-          0.8015
-        ],
-        [
-          "PHL",
-          0.5516
-        ]
-      ],
-      "n_5": [
-        [
-          "IND",
-          0.6041
-        ],
-        [
-          "CHN",
-          0.6254
-        ],
-        [
-          "BGD",
-          0.7838
-        ],
-        [
-          "AFG",
-          0.8721
-        ],
-        [
-          "PHL",
-          0.6783
-        ]
-      ]
-    },
-    {
-      "label": "set_stability_check",
-      "baseline_top5": [
-        "AFG",
-        "BGD",
-        "CHN",
+      "absolute": [
         "IND",
-        "PHL"
-      ],
-      "net_migrant_top5": [
-        "AFG",
-        "BGD",
         "CHN",
-        "IND",
-        "PHL"
-      ],
-      "emigrant_share_top5": [
+        "BGD",
         "AFG",
-        "LKA",
-        "MMR",
         "PHL",
-        "TON"
+        "PAK",
+        "MMR",
+        "IDN"
       ],
-      "intersection_baseline_and_net": [
+      "population_share": [
+        "WSM",
+        "TON",
+        "ARM",
+        "NRU",
+        "FJI",
         "AFG",
-        "BGD",
-        "CHN",
-        "IND",
-        "PHL"
-      ]
+        "HKG",
+        "PLW"
+      ],
+      "overlap": [
+        "AFG"
+      ],
+      "overlap_count": 1,
+      "overlap_share": 0.125,
+      "material_change_at_threshold": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
     }
-  ]
+  ],
+  "baseline_decision": {
+    "absolute_top5": [
+      "IND",
+      "CHN",
+      "BGD",
+      "AFG",
+      "PHL"
+    ],
+    "population_share_top5": [
+      "WSM",
+      "TON",
+      "ARM",
+      "NRU",
+      "FJI"
+    ],
+    "overlap_count": 0,
+    "overlap_share": 0.0,
+    "reshape": true
+  },
+  "forced_displacement_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "forced_displacement_sensitivity": {
+    "afghanistan_share": 0.817,
+    "population_share_top5": {
+      "WSM": 0.0041,
+      "TON": 0.0329,
+      "ARM": 0.0571,
+      "NRU": 0.0093,
+      "FJI": 0.0189
+    },
+    "threshold_runs": [
+      {
+        "threshold": 0.25,
+        "afghanistan_at_or_above": true,
+        "share_top5_at_or_above": []
+      },
+      {
+        "threshold": 0.5,
+        "afghanistan_at_or_above": true,
+        "share_top5_at_or_above": []
+      },
+      {
+        "threshold": 0.75,
+        "afghanistan_at_or_above": true,
+        "share_top5_at_or_above": []
+      }
+    ]
+  },
+  "corridor_concentration": {
+    "top_n_variants": [
+      2,
+      3,
+      5
+    ],
+    "rows": [
+      {
+        "iso3": "IND",
+        "country": "India",
+        "top_2": 0.3461,
+        "top_3": 0.4515,
+        "top_5": 0.6041
+      },
+      {
+        "iso3": "CHN",
+        "country": "China",
+        "top_2": 0.4255,
+        "top_3": 0.4947,
+        "top_5": 0.6254
+      },
+      {
+        "iso3": "BGD",
+        "country": "Bangladesh",
+        "top_2": 0.5348,
+        "top_3": 0.6525,
+        "top_5": 0.7838
+      },
+      {
+        "iso3": "AFG",
+        "country": "Afghanistan",
+        "top_2": 0.7539,
+        "top_3": 0.8015,
+        "top_5": 0.8721
+      },
+      {
+        "iso3": "PHL",
+        "country": "Philippines",
+        "top_2": 0.4435,
+        "top_3": 0.5516,
+        "top_5": 0.6783
+      }
+    ],
+    "threshold_runs": [
+      {
+        "threshold": 0.25,
+        "origins_at_or_above_top3_share": [
+          "IND",
+          "CHN",
+          "BGD",
+          "AFG",
+          "PHL"
+        ]
+      },
+      {
+        "threshold": 0.5,
+        "origins_at_or_above_top3_share": [
+          "BGD",
+          "AFG",
+          "PHL"
+        ]
+      },
+      {
+        "threshold": 0.75,
+        "origins_at_or_above_top3_share": [
+          "AFG"
+        ]
+      }
+    ],
+    "interpretation": "The top-three corridor split is descriptive and threshold-sensitive; it is not the primary denominator-switch finding."
+  },
+  "finding": "The absolute and population-share top fives have zero overlap. The overlap remains zero at top three and rises only to one of eight at top eight. Afghanistan remains a forced-displacement-majority origin even at the 75 percent threshold; no population-share top-five economy reaches 25 percent.",
+  "non_claim": "The suite does not measure current migration flows, migration propensity, welfare, labor-migration purpose, internal displacement, or causal drivers."
 }

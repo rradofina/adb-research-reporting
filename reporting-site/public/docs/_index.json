@@ -62,8 +62,8 @@
   {
     "file": "visual-roadmap.md",
     "source": "research/VISUAL-ROADMAP.md",
-    "size": 5223,
-    "size_human": "5.1 KB"
+    "size": 5443,
+    "size_human": "5.3 KB"
   },
   {
     "file": "factory.md",
@@ -74,8 +74,8 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 220905,
-    "size_human": "215.7 KB"
+    "size": 221758,
+    "size_human": "216.6 KB"
   },
   {
     "file": "wip-register.md",
@@ -104,8 +104,8 @@
   {
     "file": "versions.json",
     "source": "versions.json",
-    "size": 124324,
-    "size_human": "121.4 KB"
+    "size": 124667,
+    "size_human": "121.7 KB"
   },
   {
     "file": "manifest.sha256",

@@ -195,7 +195,14 @@ export default function Topic({ slug }: { slug: string }) {
         return;
       }
       const stripped = stripFrontmatter(body);
-      const rendered = await marked.parse(stripped);
+      // Quarto consumes standalone image sizing attributes such as
+      // `{width=91%}` when it builds the PPTX. Strip those generated layout
+      // tokens from the browser-only slide source before Marked attaches them
+      // to the image paragraph as visible text.
+      const previewSource = view === "slides"
+        ? stripped.replace(/\{(?:width|height)=[^}]+\}\s*$/gm, "")
+        : stripped;
+      const rendered = await marked.parse(previewSource);
       const raw = typeof rendered === "string" ? rendered : "";
       // Quarto slide sources use paths relative to articles/_slides so the
       // PPTX builder can read local chart files. In the topic route those same
@@ -203,10 +210,11 @@ export default function Topic({ slug }: { slug: string }) {
       // them only for the slide-source preview; the markdown and deck build
       // keep their deterministic local paths.
       const webReady = view === "slides"
-        ? raw.replace(
-            /src="\.\.\/\.\.\/([^/]+)\/generated\//g,
-            'src="/programs/$1/generated/',
-          )
+        ? raw
+            .replace(
+              /src="\.\.\/\.\.\/([^/]+)\/generated\//g,
+              'src="/programs/$1/generated/',
+            )
         : raw;
       const refIndex = byKey(refs);
       const { html: resolved, cited } = resolveCitations(webReady, refIndex);
@@ -489,7 +497,14 @@ function ResearchStory({
                 .trim();
               const rendered = await marked.parse(withoutFrontmatter);
               const raw = typeof rendered === "string" ? rendered : "";
-              const { html, cited } = resolveCitations(raw, refIndex);
+              // Program story artifacts keep generated figures relative to
+              // the program directory so they remain portable in the repo.
+              // Resolve those paths against the public program mount here.
+              const webReady = raw.replace(
+                /src="generated\//g,
+                `src="/programs/${slug}/generated/`,
+              );
+              const { html, cited } = resolveCitations(webReady, refIndex);
               return `<div class="research-story-document">${html}${renderReferenceList(cited)}</div>`;
             }),
           );

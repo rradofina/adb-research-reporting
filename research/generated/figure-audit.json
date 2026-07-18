@@ -4,10 +4,10 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 3,
-    "hero_only": 13,
+    "with_multiple_figures": 4,
+    "hero_only": 12,
     "with_no_visual": 2,
-    "working_papers_with_figure_references": 2
+    "working_papers_with_figure_references": 3
   },
   "programs": [
     {
@@ -180,13 +180,21 @@
     },
     {
       "slug": "migration-displacement-signals",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 6,
+      "evidence_figure_count": 5,
       "has_hero": true,
-      "generated_data_object_count": 6,
-      "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "generated_data_object_count": 7,
+      "working_paper_figure_references": 5,
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/migration-corridor-concentration",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/migration-displacement-signals-thumbnail",
           "formats": [
@@ -194,9 +202,80 @@
             "svg"
           ],
           "role": "hero"
+        },
+        {
+          "file": "charts/migration-forced-displacement-composition",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/migration-population-share-profile",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/migration-rank-inversion",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/migration-source-observability",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/emigrant-stock-corridor-concentration.md",
+          "tier": "working-paper",
+          "references": [
+            "/programs/migration-displacement-signals/generated/charts/migration-rank-inversion.png",
+            "/programs/migration-displacement-signals/generated/charts/migration-population-share-profile.png",
+            "/programs/migration-displacement-signals/generated/charts/migration-corridor-concentration.png",
+            "/programs/migration-displacement-signals/generated/charts/migration-forced-displacement-composition.png",
+            "/programs/migration-displacement-signals/generated/charts/migration-source-observability.png"
+          ]
+        },
+        {
+          "article": "articles/_blog/migration-displacement-signals.md",
+          "tier": "blog",
+          "references": [
+            "/programs/migration-displacement-signals/generated/charts/migration-rank-inversion.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-population-share-profile.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-forced-displacement-composition.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-corridor-concentration.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-source-observability.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/migration-displacement-signals.md",
+          "tier": "brief",
+          "references": [
+            "/programs/migration-displacement-signals/generated/charts/migration-rank-inversion.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-population-share-profile.svg",
+            "/programs/migration-displacement-signals/generated/charts/migration-forced-displacement-composition.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/migration-displacement-signals.md",
+          "tier": "social",
+          "references": [
+            "/programs/migration-displacement-signals/generated/charts/migration-rank-inversion.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "climate-health-workdays",

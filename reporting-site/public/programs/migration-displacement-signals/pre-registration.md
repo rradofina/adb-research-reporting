@@ -1,87 +1,79 @@
-# Pre-registration — Migration & Displacement Signals
+# Pre-registration and claim-reshape record — Migration and displacement signals
 
 `attestation_chain: ai-first`
 
-Status: **§18 AI-first frozen — 2026-04-26.**
+Last updated: 2026-07-18.
 
----
+## Status
 
-## 1. Claim sentence
+The 2026-04-26 module was frozen before the original absolute-stock analysis.
+It tested whether the same five economies appeared under raw and net migrant
+stock and whether a 50% corridor-concentration split held. That module remains
+part of the audit trail, but its headline is retired because the later
+population denominator test asks the more relevant intensity question and
+produces a disjoint set.
 
-> Five ADB DMCs — India, China, Bangladesh, Afghanistan, Philippines —
-> persistently rank in the top five emigrant-stock economies in UN DESA
-> 2024, regardless of whether ranked by raw emigrant stock or by net
-> migrant stock (emigrant minus immigrant). Three of the five —
-> Bangladesh, Afghanistan, Philippines — concentrate over 50 percent
-> of their emigration in their top-3 destination corridors; India and
-> China have more diversified destination profiles.
+The denominator-switch module below is **retrospective claim reshaping**, not
+a claim that was pre-registered before the population-normalized result was
+seen. Its rules were frozen on 2026-07-18 before the new figures, paper, and
+publication ladder were written. They govern future refreshes of this issue.
 
-The two-part claim is intentional: a **set-stability** finding for
-the top-5 economies, plus a **corridor-concentration split** within
-that set. Per Constitution §6.4 no composite-index headline; the
-headline is two structural facts about the data, not a ranking.
+## Research question
 
-## 2. Falsification condition
+How much does the identity of the leading emigrant-origin economies change
+when UN DESA 2024 emigrant stock is divided by WDI 2024 origin population,
+and does UNHCR forced-displacement evidence change the interpretation of the
+population-share leaders?
 
-The claim is retracted if either:
-- (a) The top-5 emigrant-stock set changes by more than 1 entry under
-  alternative direction-of-migration definitions (raw stock, net
-  stock, emigrant share of total stock).
-- (b) Any of BGD, AFG, PHL has a top-3 destination share **below** 50%,
-  or any of IND, CHN has a top-3 destination share **above** 50%.
+## Population and sources
 
-## 3. Population in scope
+- 44-economy committed program panel.
+- UN DESA International Migrant Stock 2024 origin-destination matrix.
+- World Bank WDI `SP.POP.TOTL`, 2024.
+- UNHCR Refugee Data Finder 2024 origin-asylum population rows.
 
-50 ADB regional DMCs. UN DESA 2024 publishes for 44 of them; 6 are
-not in the publication (some Pacific microstates).
+## Primary measures
 
-## 4. Time window
+- Absolute emigrant stock.
+- Emigrant stock divided by origin resident population.
+- Top-N set overlap: intersection count divided by N.
+- UNHCR international forced-displacement stock divided by UN DESA emigrant
+  stock.
 
-UN DESA International Migrant Stock 2024 (vintage 2024). Earlier
-vintages (2020, 2015) used as historical-stability check.
+## Decision rule and arbitrary numerics
 
-## 5. Primary metrics
+| Choice | Baseline | −50% / +50% or threshold suite |
+|---|---:|---|
+| Leading-set size | 5 | 3 and 8 |
+| Material-overlap threshold | 50% | 25% and 75% |
+| Forced-displacement-majority threshold | 50% | 25% and 75% |
+| Corridor count | top 3 | top 2 and top 5 |
+| Corridor concentration threshold | 50% | 25% and 75% |
 
-- **Emigrant stock** — total persons born in DMC, currently resident
-  abroad, 2024.
-- **Net migrant stock** — immigrant stock minus emigrant stock, 2024.
-- **Top-N destination concentration** — share of emigrant stock
-  captured by the top-N destination corridors (N ∈ {2, 3, 5}).
+Reshape the absolute-stock headline when the absolute and population-share
+top-five sets overlap by at most 50%. Treat corridor concentration as a
+secondary descriptive result if its classification changes across the 25%,
+50%, and 75% thresholds.
 
-## 6. Pre-specified arbitrary numerics
+## Missing-data rule
 
-| Parameter | Value | Reason | Sensitivity range |
-|---|---|---|---|
-| Top-N for set claim | 5 | Convention | 3 to 8 (sets shift somewhat) |
-| Top-N for corridor concentration | 3 | Standard policy framing | 2 to 5 |
-| Concentration threshold | 50% | Halfway-mark heuristic | 25% to 75% |
+An economy without a reported 2024 WDI population denominator is withheld
+from the population-share ranking. No regional mean, neighboring-economy
+value, or model-supplied population is permitted.
 
-## 7. Primary sources
+## Forced-displacement rule
 
-UN DESA International Migrant Stock 2024 (CC BY 3.0 IGO). Pinned in
-`versions.json`.
+The numerator includes UNHCR refugees, asylum-seekers, and other people in
+need of international protection located outside the origin. IDPs, returnees,
+stateless populations, and host-community fields are excluded from the
+emigrant-stock comparison. The residual is “other or unclassified migrant
+stock,” never “labor migration.”
 
-## 8. Decision rule
+## Falsification and stopping
 
-- **Positive**: top-5 set stable across emigrant-stock vs net-migrant
-  ranking, AND the BGD/AFG/PHL > 50% and IND/CHN ≤ 50% pattern holds.
-- **Mixed**: one or the other but not both.
-- **Negative**: neither.
-
-Per `sensitivity-runs.json`: top-5 set is identical across raw and net
-definitions (5/5 overlap). Corridor concentrations: BGD 65%, AFG 80%,
-PHL 55% (all > 50%); IND 45%, CHN 49% (both ≤ 50%). **Positive.**
-
-## 9. Stopping rule
-
-Stops when each in-scope DMC has UN DESA 2024 data or is documented
-as not-published.
-
-## 10. Attestation (§18)
-
-| Field | Value |
-|---|---|
-| Frozen by | §18 AI-first under §18.1 |
-| Date | 2026-04-26 |
-| Attestation chain | `ai-first` |
-| §18.5 upgrade-eligible | yes |
+The zero-overlap headline is withdrawn if a source refresh produces any
+shared member at top five. The broader denominator-sensitive conclusion is
+withdrawn if overlap exceeds 50%. This issue stops after the stock,
+denominator, forced-displacement, and source-limit story is published. A flow
+or migration-purpose analysis requires a new data object and a new prospective
+pre-registration.

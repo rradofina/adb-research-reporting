@@ -1,66 +1,100 @@
-# Literature review — Migration & Displacement Signals
+# Literature review — Migration and displacement signals
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first`
 
-## 1. Search record
+Last verified: 2026-07-18. This review supports the denominator-switch paper,
+not the retired absolute-stock ranking.
 
-Queries (2026-04-26):
-1. `UN DESA International Migrant Stock 2024 methodology`
-2. `Clemens "Economics and Emigration" JEP`
-3. `IDMC GRID internal displacement methodology`
-4. `KNOMAD migration brief corridor concentration`
-5. `bilateral migrant stock LMIC under-reporting informal`
+## Search and verification record
 
-Tier-A: *JEP*, *Journal of Population Economics*, *Demography*.
-Tier-B: KNOMAD, IDMC, IZA migration cluster. Tier-C: ANU
-Devpolicy Pacific labor mobility studies.
+The review searched three linked literatures: bilateral migrant-stock
+measurement, the interpretation of migration relative to origin population,
+and the separation of voluntary and forced mobility. Search strings included
+`International Migrant Stock 2024 origin methodology`, `bilateral migrant
+stock harmonization`, `migration aspirations capabilities`, `Pacific labor
+mobility Samoa Tonga`, and `UNHCR refugee statistics methodology`. Each cited
+source below was checked at the publisher, DOI, or official data page.
 
-## 2. Verified entries
+Tier A covers peer-reviewed measurement and migration theory. Tier B covers
+the official data producers. Tier C covers Asia and Pacific operational
+context. The review does not claim exhaustiveness across every national
+migration register.
 
-- **`undesa2024migrant`** — UN DESA Population Division (2024).
-  International Migrant Stock 2024. **Primary data source.**
-- **`idmc2024grid`** — IDMC Global Report on Internal Displacement
-  2024. **§18.5 upgrade-pass source for IDPs.**
-- **`clemens2011economics`** — Clemens, M.A. (2011). Economics
-  and Emigration. JEP 25(3):83–106. doi:10.1257/jep.25.3.83.
-  **Foundational welfare-of-migration framing.**
-- **`ratha2024migration`** — KNOMAD MDB-39. Aggregate flows.
+## What the measurement literature establishes
 
-## 3. Synthesis
+UN DESA defines an origin migrant stock as people originating from an economy
+who reside abroad. The 2024 release covers 1990–2024 and 233 countries and
+areas, but only 60 received a full reassessment; other estimates extrapolate
+from the 2020 edition [@undesa2024migrant]. The associated report describes
+origin stock as a diaspora or transnational-population measure and explicitly
+distinguishes absolute diaspora size from its share of the origin population
+[@undesa2024sustainablemigration]. This makes the denominator a substantive
+choice, not a formatting choice.
 
-Three established facts:
+Bilateral matrices combine censuses, population registers, and other national
+sources. Harmonization and missing-data adjustments affect comparability
+across economies and vintages [@ozden2011where]. The stock measures the
+population present at a point in time; it is not an annual flow. UN DESA's
+separate flow database is narrower and warns that national flow definitions
+are difficult to compare. The current paper therefore does not infer current
+departures by differencing the stock.
 
-1. **Stock vs flow.** UN DESA [@undesa2024migrant] measures
-   cumulative foreign-born; KNOMAD tracks annual flows
-   [@ratha2024migration]. They answer different questions.
-2. **Welfare effects of migration are large and ambiguous.**
-   Clemens 2011 [@clemens2011economics] reviews the trillion-
-   dollar question.
-3. **International ≠ internal.** UN DESA covers international
-   only; IDMC GRID [@idmc2024grid] is the canonical IDP source.
+WDI `SP.POP.TOTL` is a mid-year de facto resident-population estimate
+[@worldbank2024population]. Dividing origin stock by resident population
+answers how large the cumulative population abroad is relative to the
+population currently resident at origin. It does not estimate an individual
+probability of migration, and the numerator and denominator are not a closed
+population accounting identity.
 
-## 4. Gap
+## Why observed stock is not migration pressure
 
-No published joint set-stability + corridor-concentration analysis
-for ADB DMCs. UN DESA publishes the bilateral matrix; the
-corridor-concentration split (3 above 50%, 2 below) is a derivative
-finding not tabulated elsewhere.
+Migration reflects both aspirations and the capability to move. Constraints,
+networks, policy, income, and forced movement can produce large or small
+stocks for different reasons [@dehaas2021aspirations]. Welfare gains from
+mobility can also be substantial [@clemens2011economics]. A high stock share
+therefore cannot be read as deficiency, distress, or excessive migration.
 
-## 5. Risk of redundancy
+This caution is especially important in small Pacific economies. ADB's labor-
+market review documents high skilled-emigration rates, small domestic labor
+markets, and structured regional mobility pathways [@adb2018pacificlabour].
+Pacific labor schemes and older diaspora networks also produce cumulative and
+circulating forms of mobility that a single stock cannot separate
+[@anu2023palm]. The Samoa and Tonga rows are consequently treated as diaspora-
+scale observations, not current outflow rates.
 
-KNOMAD publishes corridor analysis quarterly. The marginal
-contribution here is the stable-set claim (5 ADB DMCs hold the
-top-5 across alternative direction-of-definition tests) plus the
-within-set corridor-concentration split.
+## Forced displacement is a different construct
 
-## 6. First testable claim
+UN DESA's migrant-stock concept includes people regardless of motive or legal
+status. UNHCR separately reports end-year stocks of refugees, asylum-seekers,
+other people in need of international protection, and internally displaced
+people under defined categories [@unhcr2024methodology]. This paper sums only
+the international forced-displacement categories when comparing with UN DESA
+origin stock. IDPs are excluded because they remain inside the origin economy.
+IDMC remains the relevant source for a dedicated internal-displacement study
+[@idmc2024grid].
 
-> Five ADB DMCs — India, China, Bangladesh, Afghanistan,
-> Philippines — persistently rank in the top five emigrant-stock
-> economies in UN DESA 2024, regardless of metric (raw stock vs
-> net migrant stock). Three of the five concentrate over 50% of
-> emigration in their top-3 destination corridors.
+## What this paper adds
 
-## 7. §18 attestation
+The contribution is not a new migration estimator. It is an auditable
+construct check for a 44-economy program panel:
 
-`ai-first`. 2026-04-27.
+1. compare the leading absolute-stock and population-share sets;
+2. expose missing population denominators rather than impute them;
+3. test the top-N and overlap decision choices;
+4. use UNHCR to identify the forced-displacement component without labeling
+   the residual as labor migration; and
+5. retain corridor concentration only as a secondary description whose
+   threshold sensitivity is visible.
+
+The result aligns with the broader literature's warning that diaspora size,
+migration intensity, current flow, and forced displacement are different
+policy objects. Its marginal value is the reproducible rank and source audit,
+not a claim that the denominator-switch phenomenon is theoretically unknown.
+
+## Remaining literature gap
+
+A stronger next issue needs comparable annual flows or administrative
+migration-purpose data for selected Pacific, Caucasus, South Asian, and
+Afghanistan corridors. Those sources would allow the analysis to distinguish
+labor, family, student, temporary, refugee, and return movements. Until that
+object exists, the paper stops at stock measurement and source observability.

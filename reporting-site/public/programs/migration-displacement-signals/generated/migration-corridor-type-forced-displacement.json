@@ -3,7 +3,7 @@
   "analysis": "corridor-type forced-displacement audit for emigrant-stock denominator switch",
   "claim_scope": "Source-readiness and falsifier audit. UNHCR forced-displacement stocks identify the refugee/asylum/international-protection component of UN DESA emigrant-stock origins. This does not identify labor, family, student, or temporary work corridors, and it is not a welfare or fragility ranking.",
   "year": 2024,
-  "retrieved_at": "2026-06-19T19:26:49Z",
+  "retrieved_at": "2026-07-18T10:22:09Z",
   "source": {
     "name": "UNHCR Refugee Data Finder population API",
     "url": "https://api.unhcr.org/population/v1/population/",
@@ -618,15 +618,15 @@
       "emigrant_stock_2024": 496486,
       "rank_absolute": 23,
       "rank_share": 10,
-      "emigrant_pct_of_population": 13.42,
-      "population_total": 3699557,
+      "emigrant_pct_of_population": 13.02,
+      "population_total": 3812518,
       "forced_abroad_2024": 51564,
       "refugees_abroad_2024": 16554,
       "asylum_seekers_abroad_2024": 35010,
       "other_people_in_need_protection_abroad_2024": 0,
       "forced_abroad_share_of_emigrant_stock": 0.1039,
       "forced_abroad_pct_of_emigrant_stock": 10.4,
-      "forced_abroad_pct_of_population": 1.39,
+      "forced_abroad_pct_of_population": 1.35,
       "idps_in_origin_context_2024": 299172,
       "classification": "substantial forced-displacement component",
       "in_absolute_top5": false,
@@ -3423,5 +3423,5 @@
     }
   ],
   "attestation_chain": "ai-first",
-  "generated_at": "2026-06-19T19:26:49Z"
+  "generated_at": "2026-07-18T10:22:09Z"
 }

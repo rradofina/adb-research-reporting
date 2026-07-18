@@ -321,6 +321,14 @@ divisions at every threshold tested.
 No row in the suite flips the §8 decision rule in either DMC. The
 headline pattern survives every parameter perturbation tried.
 
+![Sensitivity range plot. The Philippines remains between 14.5 and 17.9 percent and Bangladesh between 11.6 and 11.8 percent across completed runs; both ranges remain well below the 30 percent fit-for-planning screen.](/programs/public-service-data-quality/generated/charts/psdq-sensitivity-range.svg)
+
+The visual distance to the planning screen matters more than the small
+within-country movements. It shows that the headline is not produced by
+one clinical-tier definition. The offline polygon-dilation test remains
+incomplete, so the figure summarizes completed runs rather than claiming
+that every pre-registered perturbation has been executed.
+
 | Test | Philippines result | Bangladesh result | Interpretation |
 |---|---:|---:|---|
 | Country clinical-tier OSM/registry ratio | 14.5% to 17.9% | 11.6% to 11.8% | Always below the 30% planning screen |
@@ -334,6 +342,19 @@ of arbitrary thresholds.
 # What this result cannot establish
 
 The full list is in `limitations.md`. The most important non-claims:
+
+The Bangladesh public-source review organized 40 targeted rows, but 39
+still end at a human or source-owner wall and 0 are AI-actionable
+closures. That boundary is itself evidence: additional automated passes
+would document the same blockage rather than validate facility identity
+or location.
+
+![Validation-path infographic. Forty targeted public-source rows lead to 39 rows at a human or source-owner wall and zero AI-actionable closures.](/programs/public-service-data-quality/generated/charts/psdq-validation-wall.svg)
+
+The infographic does not depict an attrition rate or a facility-quality
+failure rate. It shows permission to make a row-level claim: public
+evidence improved the queue, but did not authorize closure,
+same-facility reclassification, or coordinate correction.
 
 - The result does not establish that OSM is "wrong" relative to a
   ground truth. It establishes that OSM and the registry disagree

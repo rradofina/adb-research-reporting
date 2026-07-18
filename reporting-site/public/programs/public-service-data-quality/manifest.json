@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/public-service-data-quality?view=evidence",
-  "generated_at": "2026-07-18T08:01:07.551Z",
+  "generated_at": "2026-07-18T08:39:55.167Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -480,6 +480,30 @@
       "size": 4342308,
       "size_human": "4.14 MB",
       "sha256": "396abcdb5d4e344ce1213b4357f7d35a87fc2b9f400d353b3e485b01310cd6de"
+    },
+    {
+      "file": "generated/charts/psdq-sensitivity-range.png",
+      "size": 114279,
+      "size_human": "111.6 KB",
+      "sha256": "fc06da99637d64a9ddd49878118d227bc7ed8d4332bbbb42e6b0f7b2cafea82c"
+    },
+    {
+      "file": "generated/charts/psdq-sensitivity-range.svg",
+      "size": 80210,
+      "size_human": "78.3 KB",
+      "sha256": "68b4dafaf3feb24b060833ddc8ba359937bf95503e0a40381949f6359e591004"
+    },
+    {
+      "file": "generated/charts/psdq-validation-wall.png",
+      "size": 121231,
+      "size_human": "118.4 KB",
+      "sha256": "821c56d739ea5cb38b6c6bd20fa78f1ffa469c714d85a41e04708b0fb40ed4d5"
+    },
+    {
+      "file": "generated/charts/psdq-validation-wall.svg",
+      "size": 75770,
+      "size_human": "74.0 KB",
+      "sha256": "046d007d81667d65853b3aa8aaccdd269d3d4cd632fd87a75b4fd20be22695fc"
     },
     {
       "file": "generated/charts/public-service-data-quality-thumbnail.json",
@@ -966,6 +990,12 @@
       "size": 43502,
       "size_human": "42.5 KB",
       "sha256": "ce0e8463668dabb1b2bb0fea7f41fd3d103a931eea6b61347150828bcf6d2e9e"
+    },
+    {
+      "file": "generated/psdq-figure-dossier-summary.json",
+      "size": 1484,
+      "size_human": "1.4 KB",
+      "sha256": "863bc8968e9e0cda5369609276b12445203fa149ba9d9838e9f7cbcdfd45a586"
     },
     {
       "file": "generated/psdq-phl-admin3-open-buildings-context-summary.json",

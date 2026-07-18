@@ -50,20 +50,20 @@
   {
     "file": "data-architecture.md",
     "source": "research/DATA-ARCHITECTURE.md",
-    "size": 7153,
+    "size": 7151,
     "size_human": "7.0 KB"
   },
   {
     "file": "visual-research.md",
     "source": "research/VISUAL-RESEARCH-STANDARD.md",
-    "size": 6002,
+    "size": 6001,
     "size_human": "5.9 KB"
   },
   {
     "file": "visual-roadmap.md",
     "source": "research/VISUAL-ROADMAP.md",
-    "size": 4942,
-    "size_human": "4.8 KB"
+    "size": 4979,
+    "size_human": "4.9 KB"
   },
   {
     "file": "factory.md",
@@ -74,8 +74,8 @@
   {
     "file": "status.md",
     "source": "research/STATUS.md",
-    "size": 218668,
-    "size_human": "213.5 KB"
+    "size": 219156,
+    "size_human": "214.0 KB"
   },
   {
     "file": "wip-register.md",

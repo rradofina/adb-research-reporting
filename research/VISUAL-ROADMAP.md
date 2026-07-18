@@ -17,7 +17,7 @@ new claims or imply that every planned chart is currently supportable.
 
 | Program | Current logical figures | Highest-value next visual sequence |
 |---|---:|---|
-| `public-service-data-quality` | 4 | ADM1 capture-ratio distribution; registry-to-OSM comparison; repair/unresolved funnel; poverty-context relationship clearly labeled non-causal; source-disagreement sensitivity. |
+| `public-service-data-quality` | 6 | Current-issue figure spine complete: hero, two ADM1 disagreement maps, non-causal poverty context, sensitivity range, and validation-wall infographic. Add another view only if a new public source changes the claim. |
 | `remittance-resilience` | 3 | Quote-mean to flow-weighted rank slopegraph; corridor-cost distributions; flow-coverage uncertainty; specification stability; origin-destination network. |
 | `migration-displacement-signals` | 1 | Origin-destination network; absolute-to-population-normalized rank shifts; forced-displacement share scatter; destination concentration; denominator sensitivity. |
 | `climate-health-workdays` | 1 | PM2.5 against observed exposed workers; published-to-observed denominator correction; heat-change small multiples; source coverage; cap sensitivity. |

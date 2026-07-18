@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `public-service-data-quality` — **presentation refactor closed 2026-07-07**: the PSDQ showcase now reads one generated evidence ledger instead of stacked wall sections. The ledger indexes 28 summary artifacts and keeps the supported finding narrow: Bangladesh registry-map disagreement is visible, while row repair ends at 39 human/source-owner wall rows and 0 AI-actionable closures. See `public-service-data-quality/STATUS.md`. |
-| Per-program board | `public-service-data-quality/STATUS.md` |
+| Active flagship | `remittance-resilience` — rotated in 2026-07-18 for the next figure-spine pass. Its repaired L3 flow-weighting result is closed under Mode A; the next reader move is to place the existing flow-weighting evidence inside the canonical paper and add only distinct coverage or sensitivity figures supported by committed data. |
+| Per-program board | `remittance-resilience/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `air-monitoring` — evidence-gap package closed 2026-07-07; further work only for a named §6.7-qualified source. |
+| Previous flagship | `public-service-data-quality` — six-figure PR dossier closed 2026-07-18; row repair remains at the human/source-owner wall. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -37,7 +37,7 @@ overrides priority by editing this list.
    allowed only for a named §6.7-qualified source that plausibly contains
    station-level calibration, inspection, current status, same-station
    crosswalk, or method-grade records; otherwise rotate after commit.
-2. **`remittance-resilience`** — L3 flow-weighting repair closed under Mode A
+2. **`remittance-resilience`** — **active flagship.** L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
    five-economy set but changes order to KGZ, NPL, VUT, WSM, TON.
@@ -158,6 +158,15 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (PSDQ figure dossier closed; rotation):** The PSDQ working
+  paper now embeds five evidence figures and the program has six logical
+  figures including its hero. New committed-data visuals show the completed
+  sensitivity ranges against the planning screen and the 40 → 39 → 0
+  public-source validation wall. The package now meets the PR figure-spine
+  lower bound without reopening the owner-only row-validation wall. Rotated
+  the active flagship to `remittance-resilience` for the next inline-evidence
+  pass; no claim or maturity label changed.
 
 - **2026-07-18 (visual-research critique):** The first deterministic figure
   audit found 14 of 18 programs are hero-only, two have multiple logical

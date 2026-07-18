@@ -5,30 +5,28 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to remittance-resilience.
 
-Last updated: 2026-06-19.
+Last updated: 2026-07-18.
 
 ## Current
 
 | Field | Value |
 |---|---|
 | Maturity label | PP (demoted from SR-under-§18 on 2026-05-07; **ai-first finished for current issue** as of 2026-05-12 under Mode A, reopened for a repair/deepening pass after the 2026-05-29 median-cost audit; promotion to higher labels requires §18.5 owner-led steps) |
-| Active stage | L3 parser repair and flow-weighting module formalized; L4 review packet rebuilt and browser/gate verified |
-| Active flagship | **Yes**, as of 2026-05-12 (rotated in from PSDQ) |
+| Active stage | L4 inline-evidence and figure-spine pass; underlying L3 parser repair and flow-weighting module remain closed and verified |
+| Active flagship | **Yes**, rotated in from PSDQ on 2026-07-18 for the next presentation pass |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | Pending (will mint at `/program/remittance-resilience/evidence` once the ladder is complete and gates pass) |
 
 ## Current output target
 
-Repair and sharpen the remittance-resilience package so it no longer reads as
-a generic "fragility index" result. The current repaired version fixes the RPW
-negative-cost normalization defect, regenerates the panel/sensitivity/median
-artifacts, promotes the public KNOMAD corridor-flow work into a formal L3
-sensitivity module, and ships a verified showcase prototype at
-`/showcase/remittance-flow-weighting`. The current reader-facing claim is:
-repaired baseline five, common sensitivity core of four, Nepal cap-sensitive,
-same top-five set after public flow weighting but changed order and low
-matched-flow coverage caveats.
+Build the next reader-facing figure spine around the repaired result, beginning
+with the existing public KNOMAD flow-weighting visual and its coverage caveat.
+The current claim remains: repaired baseline five, common sensitivity core of
+four, Nepal cap-sensitive, and the same top-five set after public flow weighting
+but with changed order and low matched-flow coverage caveats. This is a
+presentation pass, not a maturity promotion or a return to the retired generic
+"fragility index" headline.
 
 ## Last completed
 
@@ -225,16 +223,16 @@ matched-flow coverage caveats.
 
 ## Next focused work
 
-Remittance can now be treated as closed for this L3 repair issue under Mode A
-unless a later contradiction audit finds a new defect. Continue the showcase
-goal with the next L3 candidate:
-
-1. **PSDQ source disagreement** if the next loop should deepen the most mature
-   existing program spine.
-2. **Air-monitoring observability** if the next loop should prioritize a strong
-   public-source visual hook with a concrete station-inventory upgrade.
-3. **Access map-completeness** if the next loop should extend official-registry
-   joins and turn the source audit into a planning note.
+1. Create `figure-plan.md` from the shared visual contract and classify the
+   existing hero, fragility scatter, and flow-weighting sprint by research role.
+2. Embed the existing flow-weighting visual inside the canonical working paper
+   at the rank-vs-set finding, with the matched-flow coverage caveat beside it.
+3. Inspect committed panel, sensitivity, median, and corridor-match outputs for
+   one distinct coverage or robustness figure. Do not add a second country
+   ranking that restates the same result.
+4. Re-run the figure audit and close the pass when every accepted visual changes
+   what a reader can infer; then rotate rather than reopening the closed parser
+   or human-final walls.
 
 ## Current blockers
 

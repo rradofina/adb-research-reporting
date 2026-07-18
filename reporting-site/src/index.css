@@ -47,15 +47,16 @@
     --chip-warn-fg: var(--signal-warn);
     --chip-ok-bg: rgba(90, 130, 39, 0.12);
     --chip-ok-fg: var(--sage);
-    --layout-site-max: 1200px;
+    --layout-site-max: 1480px;
     --layout-pad-inline: 1.5rem;
     --layout-pad-inline-lg: 2.5rem;
     --measure-prose: 68ch;
     --measure-page: 68ch;
+    --measure-research: 86ch;
     --measure-wide-copy: 1050px;
     --measure-topic-title: 56rem;
     --measure-topic-subtitle: 48rem;
-    --layout-topic-sidebar: 320px;
+    --layout-topic-sidebar: 300px;
     --layout-header-height: 4rem;
     --layout-page-pad-block: 2.5rem;
     --layout-page-pad-block-lg: 3.5rem;
@@ -98,7 +99,7 @@
     --space-topic-tabs-gap-end: 2rem;
     --space-topic-tab-block: 0.75rem;
     --space-topic-tab-inline: 1rem;
-    --space-topic-grid-gap: 2.5rem;
+    --space-topic-grid-gap: clamp(2.75rem, 4vw, 4rem);
     --space-topic-panel: 1.5rem;
     --space-loading-block: 3rem;
     --radius-interactive: 0.25rem;
@@ -8630,9 +8631,10 @@
     gap: var(--space-topic-grid-gap);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1180px) {
     .topic-grid {
       grid-template-columns: minmax(0, 1fr) var(--layout-topic-sidebar);
+      align-items: start;
     }
   }
 
@@ -8642,6 +8644,26 @@
 
   .topic-body-narrow {
     max-width: var(--measure-page);
+  }
+
+  /* Research pages use a wider evidence canvas than ordinary documents.
+     Text retains an editorial reading measure while charts, figures, and
+     tables can use the full main column. */
+  .research-story-section .prose-article {
+    max-width: 100%;
+  }
+
+  .research-story-section .prose-article > :is(p, ul, ol, blockquote) {
+    max-width: var(--measure-research);
+  }
+
+  .research-story-section .prose-article > :is(h1, h2, h3, h4) {
+    max-width: 34ch;
+  }
+
+  .research-story-section .prose-article > p:has(> img),
+  .research-story-section .prose-article > p:has(> picture) {
+    max-width: 100%;
   }
 
   .topic-body-pending {
@@ -8848,10 +8870,15 @@
     margin-top: var(--gap-footer);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1180px) {
+    .topic-sidebar {
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--rule-soft);
+    }
+
     .sidebar-stack {
       position: sticky;
-      top: var(--gap-footer);
+      top: calc(var(--layout-header-height) + 1.5rem);
     }
   }
 
@@ -9743,8 +9770,8 @@
      renderer doesn't get class names. */
   .prose-article {
     font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-    font-size: 1.075rem;
-    line-height: 1.72;
+    font-size: clamp(1.075rem, 0.18vw + 1.035rem, 1.15rem);
+    line-height: 1.78;
     color: var(--ink);
   }
   .prose-article > h1 {
@@ -9774,7 +9801,7 @@
     color: var(--ink);
   }
   .prose-article > p {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.55rem;
   }
   /* Drop cap retired for ADB corporate identity. */
   .prose-article > ul,
@@ -9845,6 +9872,42 @@
     font-weight: 600;
   }
 
+  .prose-article table {
+    margin: 1.8rem 0 2rem;
+    border-top: 1.5px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .prose-article table th {
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink);
+    font-weight: 600;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .prose-article table td {
+    padding: 0.58rem 0.8rem;
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  .prose-article table tbody tr + tr td {
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  @media (min-width: 721px) {
+    .research-story-section .prose-article table {
+      display: table;
+      width: 100%;
+      table-layout: auto;
+    }
+  }
+
   /* Mobile-safe rendered markdown for Evidence and Article bodies.
      Wide tables scroll inside their column instead of expanding the page;
      long inline file paths in <code> wrap at any character; embedded
@@ -9856,6 +9919,19 @@
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
+  }
+
+  @media (max-width: 720px) {
+    .prose-article table {
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .prose-article table th,
+    .prose-article table td {
+      white-space: nowrap;
+    }
   }
   .prose-article :not(pre) > code,
   .ed-paper-body :not(pre) > code {

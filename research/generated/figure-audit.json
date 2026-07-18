@@ -12,11 +12,11 @@
   "programs": [
     {
       "slug": "public-service-data-quality",
-      "logical_figure_count": 4,
-      "evidence_figure_count": 3,
+      "logical_figure_count": 6,
+      "evidence_figure_count": 5,
       "has_hero": true,
-      "generated_data_object_count": 83,
-      "working_paper_figure_references": 3,
+      "generated_data_object_count": 84,
+      "working_paper_figure_references": 5,
       "status": "multiple-figures",
       "figures": [
         {
@@ -44,6 +44,22 @@
           "role": "evidence"
         },
         {
+          "file": "charts/psdq-sensitivity-range",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/psdq-validation-wall",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
           "file": "charts/public-service-data-quality-thumbnail",
           "formats": [
             "png",
@@ -59,7 +75,9 @@
           "references": [
             "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm1.svg",
             "/programs/public-service-data-quality/generated/charts/psdq-choropleth-bgd-adm1.svg",
-            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm3-poverty.svg"
+            "/programs/public-service-data-quality/generated/charts/psdq-choropleth-phl-adm3-poverty.svg",
+            "/programs/public-service-data-quality/generated/charts/psdq-sensitivity-range.svg",
+            "/programs/public-service-data-quality/generated/charts/psdq-validation-wall.svg"
           ]
         },
         {

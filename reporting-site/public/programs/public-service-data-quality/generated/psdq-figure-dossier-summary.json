@@ -1,0 +1,50 @@
+{
+  "program": "public-service-data-quality",
+  "attestation_chain": "ai-first",
+  "source_inputs": [
+    "sensitivity-runs.json",
+    "generated\\evidence-ledger.json"
+  ],
+  "sensitivity_figure": {
+    "planning_screen": 0.3,
+    "countries": [
+      {
+        "country": "Philippines",
+        "baseline": 0.17118635002139496,
+        "minimum": 0.14485505442530947,
+        "maximum": 0.178743961352657,
+        "completed_runs": 9
+      },
+      {
+        "country": "Bangladesh",
+        "baseline": 0.1178193769648471,
+        "minimum": 0.11602054457187082,
+        "maximum": 0.11847966661876706,
+        "completed_runs": 10
+      }
+    ]
+  },
+  "validation_wall_figure": {
+    "stages": [
+      {
+        "value": 40,
+        "label": "Targeted public-\nsource rows",
+        "note": "Evidence gathered and organized",
+        "color": "#007DB8"
+      },
+      {
+        "value": 39,
+        "label": "Human/source-\nowner wall",
+        "note": "Identity or location still unresolved",
+        "color": "#B07D12"
+      },
+      {
+        "value": 0,
+        "label": "AI-actionable\nclosures",
+        "note": "No row may be closed or reclassified",
+        "color": "#002569"
+      }
+    ]
+  },
+  "non_claim": "The ratios are source-disagreement diagnostics, not facility quality, service access, or proof that either source is ground truth. The validation path is not human review and does not authorize row closure."
+}

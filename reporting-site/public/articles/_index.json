@@ -1,5 +1,39 @@
 [
   {
+    "slug": "remittance-corridors-vulnerability-cluster",
+    "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
+    "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "remittance-resilience",
+    "maturity": "PP",
+    "topics": [
+      "remittances",
+      "corridor-cost",
+      "fragility-screen"
+    ],
+    "geographies": [
+      "KGZ",
+      "NPL",
+      "TON",
+      "VUT",
+      "WSM"
+    ],
+    "abstract": "The repaired remittance-corridor stress screen combines a country- level dependence axis (WDI personal-remittances-as-percent-of-GDP) with destination-aggregated transfer-cost evidence from World Bank Remittance Prices Worldwide Q1 2025. The parser now treats negative already-percentage RPW quotes as percentages rather than multiplying them by 100. In the repaired baseline, Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu form the top-five screen. Across the full +/-50 percent sensitivity suite, the common core is narrower: Kyrgyz Republic, Tonga, Vanuatu, and Samoa appear in every row, while Nepal is cap-sensitive when the dependence cap is halved. A public KNOMAD bilateral-flow L3 module keeps the same five-economy set but changes the order, moving Nepal higher after flow weighting. The article reports the set, the narrower sensitivity core, and the limitations the screen cannot establish — household-level exposure, resilience proper, and transaction-volume incidence. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "remittance-corridors-vulnerability-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
+  },
+  {
     "slug": "about-the-lab",
     "title": "About the Development Blindspots Lab",
     "subtitle": "A research operation that measures what official data misses, on a Constitution that binds every program.",
@@ -81,40 +115,6 @@
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
     "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "remittance-corridors-vulnerability-cluster",
-    "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
-    "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "remittance-resilience",
-    "maturity": "PP",
-    "topics": [
-      "remittances",
-      "corridor-cost",
-      "fragility-screen"
-    ],
-    "geographies": [
-      "KGZ",
-      "NPL",
-      "TON",
-      "VUT",
-      "WSM"
-    ],
-    "abstract": "The repaired remittance-corridor stress screen combines a country- level dependence axis (WDI personal-remittances-as-percent-of-GDP) with destination-aggregated transfer-cost evidence from World Bank Remittance Prices Worldwide Q1 2025. The parser now treats negative already-percentage RPW quotes as percentages rather than multiplying them by 100. In the repaired baseline, Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu form the top-five screen. Across the full +/-50 percent sensitivity suite, the common core is narrower: Kyrgyz Republic, Tonga, Vanuatu, and Samoa appear in every row, while Nepal is cap-sensitive when the dependence cap is halved. A public KNOMAD bilateral-flow L3 module keeps the same five-economy set but changes the order, moving Nepal higher after flow weighting. The article reports the set, the narrower sensitivity core, and the limitations the screen cannot establish — household-level exposure, resilience proper, and transaction-volume incidence. Published under CONSTITUTION.md §18 (AI-First Operating Mode) — the literature, pre-registration, internal review, and red-team review are AI-attested rather than human-attested. The article is upgrade- eligible to a human-final attestation chain.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-06-17",
-    "doi": "",
-    "file": "remittance-corridors-vulnerability-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
   },
   {
     "slug": "measurement-gap-philippines-bangladesh",

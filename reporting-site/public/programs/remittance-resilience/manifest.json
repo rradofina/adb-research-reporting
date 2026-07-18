@@ -1,7 +1,7 @@
 {
   "program": "remittance-resilience",
   "permanent_url": "/remittance-resilience?view=evidence",
-  "generated_at": "2026-07-18T08:39:55.201Z",
+  "generated_at": "2026-07-18T08:56:00.535Z",
   "hero": {
     "png": "generated/charts/remittance-resilience-thumbnail.png",
     "svg": "generated/charts/remittance-resilience-thumbnail.svg",
@@ -32,6 +32,16 @@
       "mtime": "2026-06-17T12:28:42.335Z",
       "sha256": "fb563ddad83c06435847f809bee9df75746294fe47728cfd30f34f8803d29cc3",
       "attestation_chain": null
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1366,
+      "size_human": "1.3 KB",
+      "mtime": "2026-07-18T08:55:31.742Z",
+      "sha256": "966dafd2892481ec082abfdaca56c67f091c271fb94bc34688613308a9a27e0a",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
@@ -122,9 +132,31 @@
       "mtime": "2026-06-17T13:03:19.654Z",
       "sha256": "c3833e260a5c1e9d97f1c580caaabbec92976a0045a05ecabe4e8297051d1a78",
       "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1402,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T08:55:31.742Z",
+      "sha256": "c415b7f4becaaac88298468f8ebe5cf005732dd7d26e15b457b45936eb9c05e8",
+      "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
+    {
+      "file": "generated/charts/remittance-flow-coverage-top5.png",
+      "size": 159950,
+      "size_human": "156.2 KB",
+      "sha256": "238332753f1a5f05060be038d53e2582ddaff1eb4784a040163317cf83efd6d4"
+    },
+    {
+      "file": "generated/charts/remittance-flow-coverage-top5.svg",
+      "size": 93744,
+      "size_human": "91.5 KB",
+      "sha256": "15d96e8d74433dff6997ba0a7c2d97fc26d1190c24c8865520edb861a5800897"
+    },
     {
       "file": "generated/charts/remittance-flow-weighting-sprint.png",
       "size": 153261,
@@ -166,6 +198,12 @@
       "size": 905684,
       "size_human": "884.5 KB",
       "sha256": "01c4f42c79e755e24c2ca869389a243f9f7a68118cc3587a44cd6f657077bdaa"
+    },
+    {
+      "file": "generated/remittance-figure-dossier-summary.json",
+      "size": 1962,
+      "size_human": "1.9 KB",
+      "sha256": "854032c3d3a05f34e6c3b82639a942d3ae7335de4a244d05d781933e63c770cc"
     },
     {
       "file": "generated/remittance-flow-weighting-sprint.csv",
@@ -306,20 +344,32 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
+    "reproduce": "/programs/remittance-resilience/REPRODUCE.md",
     "deck": "/programs/remittance-resilience/remittance-resilience-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/remittance-resilience"

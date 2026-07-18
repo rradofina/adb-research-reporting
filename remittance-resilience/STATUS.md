@@ -12,24 +12,32 @@ Last updated: 2026-07-18.
 | Field | Value |
 |---|---|
 | Maturity label | PP (demoted from SR-under-§18 on 2026-05-07; **ai-first finished for current issue** as of 2026-05-12 under Mode A, reopened for a repair/deepening pass after the 2026-05-29 median-cost audit; promotion to higher labels requires §18.5 owner-led steps) |
-| Active stage | L4 inline-evidence and figure-spine pass; underlying L3 parser repair and flow-weighting module remain closed and verified |
-| Active flagship | **Yes**, rotated in from PSDQ on 2026-07-18 for the next presentation pass |
+| Active stage | L4 figure spine closed; underlying L3 parser repair and flow-weighting module remain closed and verified |
+| Active flagship | **No**, rotated to `access-services` after the verified 2026-07-18 presentation pass |
 | Review mode | Mode A — AI-only review, default under §18 ACTIVE |
 | Attestation chain | `ai-first` |
 | Permanent archive | Pending (will mint at `/program/remittance-resilience/evidence` once the ladder is complete and gates pass) |
 
 ## Current output target
 
-Build the next reader-facing figure spine around the repaired result, beginning
-with the existing public KNOMAD flow-weighting visual and its coverage caveat.
-The current claim remains: repaired baseline five, common sensitivity core of
-four, Nepal cap-sensitive, and the same top-five set after public flow weighting
-but with changed order and low matched-flow coverage caveats. This is a
-presentation pass, not a maturity promotion or a return to the retired generic
-"fragility index" headline.
+Closed for the current issue. The reader-facing package now reports the
+repaired baseline five, common sensitivity core of four, Nepal's cap
+sensitivity, flow-weighted rank movement, and matched-flow coverage caveat in
+one nine-section research story. This was a presentation pass, not a maturity
+promotion or a return to the retired generic "fragility index" headline.
 
 ## Last completed
 
+- **2026-07-18 (four-figure research story):** Classified the figure roles in
+  `figure-plan.md`, placed the existing flow-weighting comparison in the
+  working paper, added a source-support chart from the committed L3 output,
+  and materialized the conclusion and reproduction guide so the public
+  research package exposes all nine standard sections. Four of the repaired
+  baseline five exceed the pre-registered 25%
+  matched-flow warning; Kyrgyz Republic covers 13.8%. The recurring set is
+  still the finding, while Kyrgyz Republic's exact rank is a validation
+  target. This improves the reader's inference without changing the PP label,
+  claim scope, or owner-only walls.
 - **2026-06-17 (flow-weighting L3 formalization + packet rebuild):**
   Promoted the 2026-06-16 flow-weighting sprint into formal L3 evidence via
   `flow-weighting-l3-module.md` and `pre-registration.md` §12. The decision
@@ -223,16 +231,9 @@ presentation pass, not a maturity promotion or a return to the retired generic
 
 ## Next focused work
 
-1. Create `figure-plan.md` from the shared visual contract and classify the
-   existing hero, fragility scatter, and flow-weighting sprint by research role.
-2. Embed the existing flow-weighting visual inside the canonical working paper
-   at the rank-vs-set finding, with the matched-flow coverage caveat beside it.
-3. Inspect committed panel, sensitivity, median, and corridor-match outputs for
-   one distinct coverage or robustness figure. Do not add a second country
-   ranking that restates the same result.
-4. Re-run the figure audit and close the pass when every accepted visual changes
-   what a reader can infer; then rotate rather than reopening the closed parser
-   or human-final walls.
+No further AI-first work is scheduled. Reopen only if a new public corridor
+distribution or source changes the claim, or for the owner-led §18.5
+human-final steps below.
 
 ## Current blockers
 

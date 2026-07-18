@@ -1,0 +1,55 @@
+{
+  "program": "remittance-resilience",
+  "attestation_chain": "ai-first",
+  "source_input": "generated\\remittance-flow-weighting-sprint.json",
+  "low_coverage_threshold": 0.25,
+  "baseline_top_five_coverage": [
+    {
+      "iso3": "KGZ",
+      "country": "Kyrgyz Republic",
+      "flow_coverage_share": 0.1375,
+      "matched_rpw_corridors": 1,
+      "rpw_corridors_observed": 1,
+      "low_coverage_flag": true,
+      "evidence_confidence_label": "Thin top-five row"
+    },
+    {
+      "iso3": "VUT",
+      "country": "Vanuatu",
+      "flow_coverage_share": 0.5509,
+      "matched_rpw_corridors": 1,
+      "rpw_corridors_observed": 2,
+      "low_coverage_flag": false,
+      "evidence_confidence_label": "One matched corridor"
+    },
+    {
+      "iso3": "TON",
+      "country": "Tonga",
+      "flow_coverage_share": 0.5592,
+      "matched_rpw_corridors": 2,
+      "rpw_corridors_observed": 2,
+      "low_coverage_flag": false,
+      "evidence_confidence_label": "Ranked with caveat"
+    },
+    {
+      "iso3": "WSM",
+      "country": "Samoa",
+      "flow_coverage_share": 0.6842,
+      "matched_rpw_corridors": 2,
+      "rpw_corridors_observed": 2,
+      "low_coverage_flag": false,
+      "evidence_confidence_label": "Ranked with caveat"
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "flow_coverage_share": 0.8623,
+      "matched_rpw_corridors": 7,
+      "rpw_corridors_observed": 8,
+      "low_coverage_flag": false,
+      "evidence_confidence_label": "Broadly observed ranked row"
+    }
+  ],
+  "finding": "Four repaired baseline top-five economies clear the module's 25 percent warning threshold; Kyrgyz Republic does not, with one matched corridor covering 13.75 percent of estimated inbound flow.",
+  "non_claim": "Matched-flow coverage is a source-support diagnostic. It is not household exposure, transaction coverage, corridor validation, or a country-performance measure."
+}

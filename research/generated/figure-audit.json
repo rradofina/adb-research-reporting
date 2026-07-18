@@ -105,13 +105,21 @@
     },
     {
       "slug": "remittance-resilience",
-      "logical_figure_count": 3,
-      "evidence_figure_count": 2,
+      "logical_figure_count": 4,
+      "evidence_figure_count": 3,
       "has_hero": true,
-      "generated_data_object_count": 3,
-      "working_paper_figure_references": 1,
+      "generated_data_object_count": 4,
+      "working_paper_figure_references": 3,
       "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/remittance-flow-coverage-top5",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/remittance-flow-weighting-sprint",
           "formats": [
@@ -142,7 +150,9 @@
           "article": "articles/remittance-corridors-vulnerability-cluster.md",
           "tier": "working-paper",
           "references": [
-            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg"
+            "/programs/remittance-resilience/generated/charts/remittance-fragility-scatter.svg",
+            "/programs/remittance-resilience/generated/charts/remittance-flow-weighting-sprint.svg",
+            "/programs/remittance-resilience/generated/charts/remittance-flow-coverage-top5.svg"
           ]
         },
         {

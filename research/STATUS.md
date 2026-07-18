@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `remittance-resilience` — rotated in 2026-07-18 for the next figure-spine pass. Its repaired L3 flow-weighting result is closed under Mode A; the next reader move is to place the existing flow-weighting evidence inside the canonical paper and add only distinct coverage or sensitivity figures supported by committed data. |
-| Per-program board | `remittance-resilience/STATUS.md` |
+| Active flagship | `access-services` — rotated in 2026-07-18 after remittance closed its four-figure story. The highest-leverage move is to reshape the legacy access-ranking claim around the committed OSM-versus-registry disagreement, then build the article figure spine from those data objects. |
+| Per-program board | `access-services/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `public-service-data-quality` — six-figure PR dossier closed 2026-07-18; row repair remains at the human/source-owner wall. |
+| Previous flagship | `remittance-resilience` — four-figure PP dossier closed 2026-07-18; exact KGZ rank remains a validation target because priced corridors cover 13.8% of estimated inbound flow. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -37,12 +37,12 @@ overrides priority by editing this list.
    allowed only for a named §6.7-qualified source that plausibly contains
    station-level calibration, inspection, current status, same-station
    crosswalk, or method-grade records; otherwise rotate after commit.
-2. **`remittance-resilience`** — **active flagship.** L3 flow-weighting repair closed under Mode A
+2. **`remittance-resilience`** — *current figure-spine issue closed.* L3 flow-weighting repair closed under Mode A
    in commit `225d4d2`. Repaired baseline top five are KGZ, WSM, TON, NPL,
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
    five-economy set but changes order to KGZ, NPL, VUT, WSM, TON.
    Human-final remains §18.5 owner-led.
-3. **`access-services`** — 8-DMC climate-adjusted access pilot done;
+3. **`access-services`** — **active flagship.** 8-DMC climate-adjusted access pilot done;
    top-4 narrowing {BGD, KHM, LAO, PAK} stable. Travel-time isochrones
    are §18.5 owner-gated, so AI-doable depth is bounded — clean Mode A
    finish.
@@ -71,8 +71,7 @@ overrides priority by editing this list.
     composite; index needs reformulation before ladder build.
 13. **`flood-market-access`** — top-4 {AFG, CHN, IDN, IND} stable; GLOFAS
     modeled-extent is §18.5 owner-gated.
-14. **`public-service-data-quality`** — *current active flagship for L4
-    presentation; issue closed 2026-07-07.* The showcase now uses generated
+14. **`public-service-data-quality`** — *current presentation issue closed.* The showcase now uses generated
     `psdq-evidence-ledger.{json,csv}` instead of stacked walls. Substantive
     source repair remains owner-only source-owner contact or human location
     validation for source-repair, same-facility, priority/lower-priority
@@ -158,6 +157,17 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (remittance figure spine closed; rotation):** The working
+  paper now embeds three evidence figures and the program has four logical
+  figures including its hero. The existing flow-weighting comparison makes
+  the rank change visible; a new committed-data coverage chart shows that
+  four baseline members exceed the 25% warning while Kyrgyz Republic covers
+  13.8%. The standardized package now exposes all nine research sections.
+  The result is still the recurring set, not a validated exact rank. Gates,
+  production build, and 1280/375 browser QA passed. Rotated to
+  `access-services` because its committed registry disagreements already
+  support a stronger measurement claim than the legacy access ranking.
 
 - **2026-07-18 (PSDQ figure dossier closed; rotation):** The PSDQ working
   paper now embeds five evidence figures and the program has six logical

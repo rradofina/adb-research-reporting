@@ -12,11 +12,11 @@ Last updated: 2026-07-18.
 
 | Field | Value |
 |---|---|
-| Active flagship | `access-services` — rotated in 2026-07-18 after remittance closed its four-figure story. The highest-leverage move is to reshape the legacy access-ranking claim around the committed OSM-versus-registry disagreement, then build the article figure spine from those data objects. |
-| Per-program board | `access-services/STATUS.md` |
+| Active flagship | `migration-displacement-signals` — rotated in 2026-07-18 after access-services closed its five-figure denominator-falsification story. The highest-leverage move is to reshape the absolute emigrant-stock headline around the committed zero-overlap population-normalized result, then build the figure spine from existing data objects. |
+| Per-program board | `migration-displacement-signals/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `remittance-resilience` — four-figure PP dossier closed 2026-07-18; exact KGZ rank remains a validation target because priced corridors cover 13.8% of estimated inbound flow. |
+| Previous flagship | `access-services` — five-figure PP dossier closed 2026-07-18; official registries reorder 16 of 17 Philippine ranks, so the old access-ranking headline is retired. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -42,15 +42,15 @@ overrides priority by editing this list.
    and VUT; the public KNOMAD flow-weighting L3 module keeps the same
    five-economy set but changes order to KGZ, NPL, VUT, WSM, TON.
    Human-final remains §18.5 owner-led.
-3. **`access-services`** — **active flagship.** 8-DMC climate-adjusted access pilot done;
-   top-4 narrowing {BGD, KHM, LAO, PAK} stable. Travel-time isochrones
-   are §18.5 owner-gated, so AI-doable depth is bounded — clean Mode A
-   finish.
-4. **`migration-displacement-signals`** — top-5 emigrant-stock cluster
-   {IND, CHN, BGD, AFG, PHL} stable across alternative definitions;
-   article exists at
-   `articles/emigrant-stock-corridor-concentration.md`; same gap as
-   remittance-resilience.
+3. **`access-services`** — *current issue closed.* The official Philippine
+   registry reorders 16 of 17 regional facility-load ranks and the public
+   package now leads with map observability, not the retired eight-economy
+   access rank. Reopen only for a claim-changing facility source or owner-led
+   travel-time/human-final work.
+4. **`migration-displacement-signals`** — **active flagship.** The committed
+   population-normalized deepening has zero overlap with the legacy absolute
+   emigrant-stock top five. Reshape the claim around this denominator switch
+   and build the figure spine before adding new data.
 5. **`climate-health-workdays`** — top-3 set {AFG, IND, BGD} stable; PM
    2.5-cap sensitivity flagged top-5 → top-3 honest narrowing.
 6. **`disaster-recovery-lag`** — metric-falsification deepening shows the
@@ -157,6 +157,18 @@ by leaving the board in a state the next session can read.
 3. Update `research/wip-register.md` only if a maturity label changed.
 
 ## Current operational notes
+
+- **2026-07-18 (access-services claim reshape closed; rotation):** Official
+  registry substitution reorders 16 of 17 Philippine regional ranks; OSM
+  capture and apparent load have Spearman rho -0.81. Bangladesh changes 6 of
+  8 ranks, while only those two economies have comparable registry corrections
+  in the pilot. The old access-ranking headline is retired. The public package
+  now contains all nine research sections, a new hero, four evidence figures,
+  brief/blog/social/slide sources, a PPTX, and a review packet. Gates, version
+  checks, TypeScript, production build, and 1280/375 browser QA passed; the
+  slide-preview asset path found during QA was repaired and the build rerun.
+  Rotated to `migration-displacement-signals` because its committed per-capita
+  deepening already overturns the current absolute-stock headline.
 
 - **2026-07-18 (remittance figure spine closed; rotation):** The working
   paper now embeds three evidence figures and the program has four logical

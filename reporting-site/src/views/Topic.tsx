@@ -197,8 +197,19 @@ export default function Topic({ slug }: { slug: string }) {
       const stripped = stripFrontmatter(body);
       const rendered = await marked.parse(stripped);
       const raw = typeof rendered === "string" ? rendered : "";
+      // Quarto slide sources use paths relative to articles/_slides so the
+      // PPTX builder can read local chart files. In the topic route those same
+      // paths would resolve under /<program>/generated and break. Normalize
+      // them only for the slide-source preview; the markdown and deck build
+      // keep their deterministic local paths.
+      const webReady = view === "slides"
+        ? raw.replace(
+            /src="\.\.\/\.\.\/([^/]+)\/generated\//g,
+            'src="/programs/$1/generated/',
+          )
+        : raw;
       const refIndex = byKey(refs);
-      const { html: resolved, cited } = resolveCitations(raw, refIndex);
+      const { html: resolved, cited } = resolveCitations(webReady, refIndex);
       const finalHtml = resolved + renderReferenceList(cited);
       bodyCache.current.set(key, finalHtml);
       if (!cancelled) {

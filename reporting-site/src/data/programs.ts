@@ -27,10 +27,10 @@ export const programs: ProgramEntry[] = [
   {
     id: 1,
     slug: "access-services",
-    title: "Climate-adjusted access to services",
-    status: "SR",
+    title: "When the facility map changes the rank",
+    status: "PP",
     summary:
-      "104 ADM1 units across 8 ADB DMCs (PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS) computed as a national-and-ADM1 screening index from World Bank WDI, CCKP, geoBoundaries, WorldPop stats, PSA OpenSTAT, and OSM/Overpass. Not yet a travel-time raster.",
+      "Official clinical registries reorder 16 of 17 Philippine regional facility-load ranks and 6 of 8 Bangladesh division ranks built from OSM points. The eight-economy panel is retained as a map-observability and source-validation queue, not a service-access or DMC-performance ranking.",
     href: "/program/access-services",
   },
   {

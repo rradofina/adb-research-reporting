@@ -1,53 +1,66 @@
-# Literature review — Access to Services
+# Literature review — Access services
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first`. Updated and source-verified 2026-07-18.
 
-## 1. Search record
+## Research traditions
 
-Queries (2026-04-27):
-1. `Macharia travel-time isochrone health-facility access`
-2. `OpenRouteService AccessMod LMIC service-access`
-3. `KEMRI WorldPop facility-access raster`
-4. `UN-Habitat access-to-services SDG indicator`
+### 1. Geographic access is a travel-time problem
 
-Tier-A: *Lancet Global Health*, *Population Health Metrics*,
-*BMJ Global Health*. Tier-B: KEMRI–Wellcome, WorldPop, HeiGIT.
-Tier-C: WHO Public Health Mapping bulletins.
+Health-facility access studies commonly combine geolocated facilities,
+population, transport networks, terrain, travel-mode assumptions, and modeled
+travel time. Macharia et al. demonstrate catchment allocation from travel time
+and facility choice rather than a simple population-to-point ratio
+[@macharia2017travel]. The implication for this program is direct: facility
+load can be a screening statistic, but it is not a geographic access measure.
 
-## 2. Verified entries
+### 2. Facility master lists are statistical infrastructure
 
-- **`macharia2017travel`** — Macharia et al. (2017). Travel-time-
-  isochrone allocation methodology. *Malaria Journal* 16.
-  doi:10.1186/s12936-017-2009-3. **Methodology baseline for
-  the §18.5 upgrade-pass.**
-- **`south2021reproducible`** — South et al. (2021).
-  afri-healthsites toolchain. **Methodology template.**
-- **`herfort2023osm`** — Herfort et al. (2023). OSM completeness
-  inequalities; relevant for the OSM-coverage caveat.
-- **`geoboundaries2024`** — geoBoundaries gbOpen ADM1 polygons.
+Reproducible facility-data work depends on current, geocoded, documented
+source lists and transparent reconciliation across ministries, research
+datasets, and open mapping [@south2021reproducible]. More recent work treats
+comprehensive and openly usable health-facility databases as core public-data
+infrastructure, while emphasizing provider coverage, temporal currency,
+services, capacity, and stable identifiers [@macharia2025mapping]. A point
+count without those properties is not an interchangeable denominator.
 
-## 3. Synthesis
+### 3. OSM coverage is uneven
 
-1. **Travel-time isochrones are the standard access measure**
-   [@macharia2017travel] — facility count is a coarse proxy.
-2. **OSM amenity counts under-count official registries** (PSDQ
-   finding for PHL/BGD); the access-stress signal inherits the
-   under-count.
-3. **Reproducible-data toolchains exist** [@south2021reproducible]
-   for cross-country health-facility comparison.
+Large-scale assessments of OSM show substantial geographic inequalities in
+coverage and warn analysts to assess bias before drawing comparisons from the
+map [@herfort2023osm]. This is not a generic footnote here. It is the mechanism
+tested by the Philippine registry join: regional OSM capture varies from 6.45%
+to 63.53%, and the resulting load ranks change when the denominator changes.
 
-## 4. Gap
+### 4. Boundaries and crosswalks are part of measurement
 
-No published 8-DMC-pilot pop-weighted access-stress ranking with
-aggregation-stability testing. The top-4 set finding is the
-marginal contribution within the pilot scope.
+Open ADM1 boundaries make reproducible spatial joins possible
+[@geoboundaries2024], but administrative changes can still break longitudinal
+comparisons. The unmatched Cambodia row, Tbong Khmum, is not a missing health
+system; it is a boundary-vintage problem because the 2010 facility source
+predates the province.
 
-## 5. First testable claim
+## What this paper adds
 
-> Among the 8 ADB DMCs in the pilot, four — Bangladesh, Cambodia,
-> Lao PDR, Pakistan — persistently hold the top-4 country-level
-> access-stress positions across alternative country aggregations.
+The contribution is not another access index. It is a falsification test for
+an inherited open-map screen:
 
-## 7. §18 attestation
+1. verify that the apparent Philippine worst-region statistic is exactly the
+   population divided by the OSM point count;
+2. replace that denominator with the official clinical registry at the same
+   subnational level;
+3. measure rank movement and the association between OSM capture and apparent
+   load;
+4. expose where comparable registry joins are unavailable; and
+5. use Cambodia to show why a second public source can reveal disagreement
+   without providing current validation.
 
-`ai-first`. 2026-04-27. Pilot scope; 8/50 DMCs.
+The result supports a narrower and more useful research object: a
+map-observability and source-validation queue that precedes travel-time access
+analysis.
+
+## Evidence gap
+
+The upgrade path is not a larger composite or more economies on the same OSM
+denominator. It is a versioned, provider-scoped facility crosswalk followed by
+travel-time, capability, and utilization layers. Until those objects exist,
+service-access and welfare language remains outside the evidence.

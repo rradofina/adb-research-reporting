@@ -1,56 +1,76 @@
 {
   "program": "access-services",
   "permanent_url": "/access-services?view=evidence",
-  "generated_at": "2026-07-18T08:56:00.808Z",
+  "generated_at": "2026-07-18T09:46:52.500Z",
   "hero": {
     "png": "generated/charts/access-services-thumbnail.png",
     "svg": "generated/charts/access-services-thumbnail.svg",
     "json": "generated/charts/access-services-thumbnail.json",
-    "title": "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
-    "caption": "104 ADM1 units across 8 DMCs · ranked by population per OSM-tagged health amenity in each DMC's worst-served region. Numbers are OSM-coverage gaps, not actual facility counts — OSM under-counts the official registry by 5–10× per PSDQ.",
-    "headline_number": "Oddar Meanchey, Cambodia 319 k people / OSM-tagged amenity",
-    "visual_form": "horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
-    "source": "WDI + geoBoundaries + WorldPop + OSM Overpass",
+    "title": "The facility map changes the regional rank",
+    "caption": "Official clinical registry counts reorder 16 of 17 Philippine regional people-per-facility ranks. The eight-economy OSM screen is retained only as a map-observability and source-validation queue.",
+    "headline_number": "16 of 17 Philippine regional ranks change",
+    "visual_form": "diverging bars (largest Philippine rank shifts after registry substitution)",
+    "source": "PSA 2020 + DOH NHFR v2.0 + OSM",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T18:45:30+00:00",
+    "generated_at": "2026-07-18T09:43:55+00:00",
     "dimensions": {
       "width": 1600,
       "height": 900
     },
     "sha256": {
-      "png": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437",
-      "svg": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+      "png": "7795ebab4d7aa0e5266c2ce375a0ce7f4a14eb3791625781892f2cf6965ec810",
+      "svg": "c4937d09c64cd72e5c20f69ecb7e353049fef0fe2e9e84eed7c31f69a46dfa4d"
     }
   },
   "artifacts": [
     {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1091,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-18T09:27:06.245Z",
+      "sha256": "e897374f96b5f6b0eaeb2593ba9f2271696ae12311b6917cf0d83b8cc5c3ee1e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1816,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T09:27:06.243Z",
+      "sha256": "28c1309e0546e8b2df790b780c9b2240a8a2a71c542191598657eb84db9075ea",
+      "attestation_chain": "ai-first"
+    },
+    {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1950,
-      "size_human": "1.9 KB",
-      "mtime": "2026-04-27T03:43:16.491Z",
-      "sha256": "139ce6edaed1c3c98787f4d2a9c703345394d84d0e6d45237c563651b21992a2",
+      "size": 3104,
+      "size_human": "3.0 KB",
+      "mtime": "2026-07-18T09:44:11.482Z",
+      "sha256": "8f61ebbef3360c1b0d129987fd1163248b035fd8a17afe388525e8a68d9e58dc",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1175,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-26T16:56:42.375Z",
-      "sha256": "242293aeaf8da38e6f1cf67ce14d26595572526855ba8f7b5be81ac9441da1a9",
+      "size": 2595,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-18T09:44:11.482Z",
+      "sha256": "d82307462ef1ed5036f1c776b947af8179379516ad32678560cb34a9bbbc67c0",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 566,
-      "size_human": "566 B",
-      "mtime": "2026-04-26T16:56:47.218Z",
-      "sha256": "262d41b97fb0f59759ff7a9a1fae7a3807dac889d9b2b3649ebee0fdc9f7b708",
+      "size": 1394,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T09:44:11.483Z",
+      "sha256": "8d77f388f540155b64a486a0b0cd654404c21fa61324deb48ea4baeffac54c91",
       "attestation_chain": "ai-first"
     },
     {
@@ -67,50 +87,60 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 498,
-      "size_human": "498 B",
-      "mtime": "2026-04-26T16:56:50.724Z",
-      "sha256": "9755f59cb0059bc6fea715de98f7c3d0b2683303a5d5ae37d889efcc3afb0c48",
+      "size": 2124,
+      "size_human": "2.1 KB",
+      "mtime": "2026-07-18T09:44:11.480Z",
+      "sha256": "80e53fd25515297793293ac6bb15ae4d87ba4a83b2f3a4be42da7c8ba435afe3",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 644,
-      "size_human": "644 B",
-      "mtime": "2026-04-26T16:57:15.519Z",
-      "sha256": "d9f51f06f689665bf9b81e9898ed60938e0e33627eb94c5b99da96d405db15d0",
+      "size": 3300,
+      "size_human": "3.2 KB",
+      "mtime": "2026-07-18T09:30:33.975Z",
+      "sha256": "7a516f16379dc3fe63c496e7ad32e16954c4fddc4a4ce19c91b2557730e74bfc",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 734,
-      "size_human": "734 B",
-      "mtime": "2026-04-26T16:56:55.324Z",
-      "sha256": "c629f6e51a530188e4a6831f3350d568e28aca13ae4c938a390fd3a75a1d66ad",
+      "size": 2231,
+      "size_human": "2.2 KB",
+      "mtime": "2026-07-18T09:28:13.559Z",
+      "sha256": "8c659dbb5ce29f7eb196af42fe2d73567f7654bd900d729859c2df9ad1f32d87",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1598,
-      "size_human": "1.6 KB",
-      "mtime": "2026-04-26T16:57:07.417Z",
-      "sha256": "8e3744f7d93623a6aecef5c4baaf96c343c8a5a1fd4096961ea2c40a8b77bc2e",
+      "size": 2818,
+      "size_human": "2.8 KB",
+      "mtime": "2026-07-18T09:28:13.560Z",
+      "sha256": "9864e97c673e2aa31ff13c4e63b21ea8038f8d2f3a24b93cf3c289d1f75b6c1e",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 678,
-      "size_human": "678 B",
-      "mtime": "2026-04-26T16:57:11.704Z",
-      "sha256": "8dc5b682321af3745b7213d554210d20995f0862fd75045aeab00782adf12721",
+      "size": 1768,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T09:44:11.481Z",
+      "sha256": "c6e03b58e0a1dd354dc4fbb89a793526e6d5b56623d5eff9563d259a35a760a4",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "upgrade_gap",
+      "file": "upgrade-gap.md",
+      "label": "Upgrade-gap memo",
+      "size": 1395,
+      "size_human": "1.4 KB",
+      "mtime": "2026-07-18T09:27:06.246Z",
+      "sha256": "9e474c6124f74378400d1621d380e92556ac6c417ea1cbca6bbaff1db7985c02",
       "attestation_chain": "ai-first"
     }
   ],
@@ -132,6 +162,12 @@
       "size": 3901,
       "size_human": "3.8 KB",
       "sha256": "6ddc1d7522f986ab93f6313dd8d4bb3098a47176cd4b29d51380afb5271c0cb9"
+    },
+    {
+      "file": "generated/access-figure-dossier-summary.json",
+      "size": 2208,
+      "size_human": "2.2 KB",
+      "sha256": "bd71ac1bd2741073b2cd19999310fe8fbaa59baafcf3d8bf08935ea1260c584f"
     },
     {
       "file": "generated/access-osm-completeness-deepening-phl.csv",
@@ -158,28 +194,76 @@
       "sha256": "f3aa05ff388e39b1aba43ae15006bd0a1d859d16c7b53f787c852139f2d3ba42"
     },
     {
+      "file": "generated/charts/access-cambodia-source-disagreement.png",
+      "size": 152298,
+      "size_human": "148.7 KB",
+      "sha256": "041244349f8bfaa7f5bf251b0b9960baa0c7ff3890a7d1ef7749e6e42bd57ea0"
+    },
+    {
+      "file": "generated/charts/access-cambodia-source-disagreement.svg",
+      "size": 99432,
+      "size_human": "97.1 KB",
+      "sha256": "6c7661c331474e1e535f487e52e421389b78ed64be5cc2666176c8d1af69e69d"
+    },
+    {
+      "file": "generated/charts/access-cross-economy-registry-readiness.png",
+      "size": 171562,
+      "size_human": "167.5 KB",
+      "sha256": "1496dfb1c82db7a67a20e9fdc5cfba540e36bfecba066fe750273de205f5c6f3"
+    },
+    {
+      "file": "generated/charts/access-cross-economy-registry-readiness.svg",
+      "size": 108075,
+      "size_human": "105.5 KB",
+      "sha256": "96c20547427345e27bc240d76721801f3d3ddfa53ba72d0e467b608509922a8c"
+    },
+    {
+      "file": "generated/charts/access-phl-completeness-signal.png",
+      "size": 163222,
+      "size_human": "159.4 KB",
+      "sha256": "65007b49df2ed39a5af056892f10ec7392f9634615e1139f970a3e99a93c9cca"
+    },
+    {
+      "file": "generated/charts/access-phl-completeness-signal.svg",
+      "size": 102944,
+      "size_human": "100.5 KB",
+      "sha256": "96788cb67a172d5de491e5bcdcd8331ecf9fdbfb1c23e157c1de68de0ce038d6"
+    },
+    {
+      "file": "generated/charts/access-phl-rank-shift.png",
+      "size": 184731,
+      "size_human": "180.4 KB",
+      "sha256": "e3a9c2004ab5bbb03f99085499d9eb56695431ccf825f4b4006f10b44f4d6e9e"
+    },
+    {
+      "file": "generated/charts/access-phl-rank-shift.svg",
+      "size": 109938,
+      "size_human": "107.4 KB",
+      "sha256": "3bc98904a71a76993a7b1e66fea1be4e0e30c4e0fdbcc3f0b030728ef4e14524"
+    },
+    {
       "file": "generated/charts/access-services-thumbnail.json",
-      "size": 1220,
-      "size_human": "1.2 KB",
-      "sha256": "fa21946e27decbb7124bab1c585350fad347fc53a06ec345658c0cb3a2ec3bce"
+      "size": 1144,
+      "size_human": "1.1 KB",
+      "sha256": "789e2942b36ebcb0c06511661d8ed06cce7dfd6d6481dc07658cc69c0b74d458"
     },
     {
       "file": "generated/charts/access-services-thumbnail.png",
-      "size": 112840,
-      "size_human": "110.2 KB",
-      "sha256": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437"
+      "size": 94093,
+      "size_human": "91.9 KB",
+      "sha256": "7795ebab4d7aa0e5266c2ce375a0ce7f4a14eb3791625781892f2cf6965ec810"
     },
     {
       "file": "generated/charts/access-services-thumbnail.svg",
-      "size": 126873,
-      "size_human": "123.9 KB",
-      "sha256": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+      "size": 108888,
+      "size_human": "106.3 KB",
+      "sha256": "5e44002537ffe0381bd2c0418a57698408e9f4e5ab8079081a32393321c67f65"
     }
   ],
   "articles": [
     {
       "slug": "access-stress-pilot-cluster",
-      "title": "Four pilot DMCs hold the top of the access-stress ranking — Bangladesh, Cambodia, Lao PDR, Pakistan",
+      "title": "Official registries reorder 16 of 17 Philippine regional facility-load ranks",
       "attestation_chain": "ai-first"
     }
   ],
@@ -187,9 +271,15 @@
     {
       "key": "background",
       "title": "Research problem and background",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
+        }
+      ]
     },
     {
       "key": "literature",
@@ -247,7 +337,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -272,21 +362,33 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "upgrade_gap",
+          "file": "upgrade-gap.md",
+          "label": "Upgrade-gap memo"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
-    "deck": null,
+    "reproduce": "/programs/access-services/REPRODUCE.md",
+    "deck": "/programs/access-services/access-services-deck.pptx",
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/access-services"
   }

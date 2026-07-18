@@ -1,0 +1,74 @@
+{
+  "program": "access-services",
+  "attestation_chain": "ai-first",
+  "source_inputs": [
+    "generated\\access-osm-completeness-deepening.json",
+    "generated\\access-cambodia-health-facility-source-audit.json"
+  ],
+  "claim_reshape_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "rank_change_sensitivity": {
+    "PHL": {
+      "changed": 16,
+      "total": 17,
+      "share": 0.9412,
+      "threshold_results": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    },
+    "BGD": {
+      "changed": 6,
+      "total": 8,
+      "share": 0.75,
+      "threshold_results": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    },
+    "KHM": {
+      "changed": 21,
+      "total": 24,
+      "share": 0.875,
+      "threshold_results": {
+        "0.25": true,
+        "0.50": true,
+        "0.75": true
+      }
+    }
+  },
+  "identity_check": {
+    "access_phl_worst_adm1": "ARMM",
+    "access_phl_worst_ppf": 68678,
+    "psdq_armm_pop_over_osm": 68678,
+    "match": true
+  },
+  "phl_completeness_relationship": {
+    "n_regions": 17,
+    "pearson_r_level": -0.4281,
+    "pearson_r2_level": 0.1833,
+    "pearson_r_loglog": -0.733,
+    "pearson_r2_loglog": 0.5372,
+    "spearman_rho": -0.8105,
+    "capture_best": {
+      "region": "NCR",
+      "ratio": 0.6353
+    },
+    "capture_worst": {
+      "region": "ARMM",
+      "ratio": 0.0645
+    }
+  },
+  "registry_join_readiness": {
+    "pilot_economies": 8,
+    "comparable_registry_corrections": 2
+  },
+  "finding": "Official clinical registry counts reorder 16 of 17 Philippine regional load ranks. The OSM denominator is therefore suitable for map-observability triage, not a service-access ranking.",
+  "supporting_source_disagreement": "Bangladesh registry counts reorder 6 of 8 divisions. Cambodia's 2010 public-facility inventory reorders 21 of 24 joined provinces, but its source-vintage and provider-scope mismatch prevents interpretation as current completeness or access validation.",
+  "non_claim": "The dossier does not measure travel time, service capacity, utilization, quality, affordability, household access, or welfare."
+}

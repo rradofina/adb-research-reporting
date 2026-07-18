@@ -1,0 +1,92 @@
+layer,raw_province_name,normalized_province_name,rows
+health_center,Banteay Mean Chey,Banteay Meanchey,7
+health_center,Banteay Meanchey,Banteay Meanchey,48
+health_center,Battambang,Battambang,74
+health_center,Kampong Cham,Kampong Cham,134
+health_center,Kampong Chhnang,Kampong Chhnang,34
+health_center,Kampong Speu,Kampong Speu,47
+health_center,Kampong Spueu,Kampong Speu,3
+health_center,Kampong Thom,Kampong Thom,50
+health_center,Kampot,Kampot,48
+health_center,Kandal,Kandal,89
+health_center,Kaoh Kong,Koh Kong,4
+health_center,Kep,Kep,4
+health_center,Koh Kong,Koh Kong,8
+health_center,Kratie,Kratie,26
+health_center,Mondul Kiri,Mondulkiri,6
+health_center,Oddar Mean chey,Oddar Meanchey,1
+health_center,Oddar Meanchey,Oddar Meanchey,12
+health_center,Pailin,Pailin,5
+health_center,Phnom Penh,Phnom Penh,17
+health_center,Preah Vihear,Preah Vihear,13
+health_center,Prey Veng,Prey Veng,90
+health_center,Pursat,Pursat,32
+health_center,Ratanak Kiri,Ratanakiri Province,10
+health_center,Siemreap,Siem Reap,64
+health_center,Sihanoukville,Preah Sihanouk,12
+health_center,Stung  Treng,Stung Treng,2
+health_center,Stung Treng,Stung Treng,8
+health_center,Svay Rieng,Svay Rieng,37
+health_center,Takeo,Takeo,71
+health_post,Banteay Meanchey,Banteay Meanchey,11
+health_post,Battam Bang,Battambang,3
+health_post,Kampong Chhnang,Kampong Chhnang,3
+health_post,Koh Kong,Koh Kong,3
+health_post,Kratie,Kratie,11
+health_post,Mondul Kiri,Mondulkiri,10
+health_post,Oddor Meanchey,Oddar Meanchey,2
+health_post,Preah Vihear,Preah Vihear,18
+health_post,Pursat,Pursat,3
+health_post,Ratanak Kiri,Ratanakiri Province,14
+health_post,Siem Reap,Siem Reap,5
+health_post,Sihaknouk Vill,Preah Sihanouk,1
+health_post,Stung Treng,Stung Treng,3
+health_post,Takeo,Takeo,2
+operational_district,Banteay Meanchey,Banteay Meanchey,4
+operational_district,Battambang,Battambang,5
+operational_district,Kampong Cham,Kampong Cham,10
+operational_district,Kampong Chhnang,Kampong Chhnang,3
+operational_district,Kampong Speu,Kampong Speu,3
+operational_district,Kampong Thom,Kampong Thom,3
+operational_district,Kampot,Kampot,4
+operational_district,Kandal,Kandal,8
+operational_district,Kep,Kep,1
+operational_district,Koh Kong,Koh Kong,2
+operational_district,Kratie,Kratie,2
+operational_district,Mondul Kiri,Mondulkiri,1
+operational_district,Oddar Meanchey,Oddar Meanchey,1
+operational_district,Pailin,Pailin,1
+operational_district,Phnom Penh,Phnom Penh,4
+operational_district,Preah Vihear,Preah Vihear,1
+operational_district,Prey Veng,Prey Veng,7
+operational_district,Pursat,Pursat,2
+operational_district,Ratanak Kiri,Ratanakiri Province,1
+operational_district,Siemreap,Siem Reap,4
+operational_district,Sihanoukville,Preah Sihanouk,1
+operational_district,Stung Treng,Stung Treng,1
+operational_district,Svay Rieng,Svay Rieng,3
+operational_district,Takeo,Takeo,5
+referral_hospital,Banteay Meanchey,Banteay Meanchey,5
+referral_hospital,Battambang,Battambang,4
+referral_hospital,Kampong Cham,Kampong Cham,11
+referral_hospital,Kampong Chhnang,Kampong Chhnang,2
+referral_hospital,Kampong Speu,Kampong Speu,3
+referral_hospital,Kampong Thom,Kampong Thom,3
+referral_hospital,Kampot,Kampot,4
+referral_hospital,Kandal,Kandal,5
+referral_hospital,Kep,Kep,1
+referral_hospital,Koh Kong,Koh Kong,2
+referral_hospital,Kratie,Kratie,2
+referral_hospital,Mondul Kiri,Mondulkiri,1
+referral_hospital,Oddar Meanchey,Oddar Meanchey,2
+referral_hospital,Pailin,Pailin,1
+referral_hospital,Phnom Penh,Phnom Penh,5
+referral_hospital,Preah Vihear,Preah Vihear,1
+referral_hospital,Prey Veng,Prey Veng,7
+referral_hospital,Pursat,Pursat,2
+referral_hospital,Ratanak Kiri,Ratanakiri Province,1
+referral_hospital,Siemreap,Siem Reap,4
+referral_hospital,Sihanoukville,Preah Sihanouk,1
+referral_hospital,Stung Treng,Stung Treng,1
+referral_hospital,Svay Rieng,Svay Rieng,3
+referral_hospital,Takeo,Takeo,5

@@ -4,8 +4,8 @@
   "definition": "One logical figure per basename; PNG/SVG/JPEG/WebP exports count once.",
   "summary": {
     "programs": 18,
-    "with_multiple_figures": 2,
-    "hero_only": 14,
+    "with_multiple_figures": 3,
+    "hero_only": 13,
     "with_no_visual": 2,
     "working_papers_with_figure_references": 2
   },
@@ -420,13 +420,45 @@
     },
     {
       "slug": "access-services",
-      "logical_figure_count": 1,
-      "evidence_figure_count": 0,
+      "logical_figure_count": 5,
+      "evidence_figure_count": 4,
       "has_hero": true,
-      "generated_data_object_count": 5,
+      "generated_data_object_count": 6,
       "working_paper_figure_references": 0,
-      "status": "hero-only",
+      "status": "multiple-figures",
       "figures": [
+        {
+          "file": "charts/access-cambodia-source-disagreement",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/access-cross-economy-registry-readiness",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/access-phl-completeness-signal",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
+        {
+          "file": "charts/access-phl-rank-shift",
+          "formats": [
+            "png",
+            "svg"
+          ],
+          "role": "evidence"
+        },
         {
           "file": "charts/access-services-thumbnail",
           "formats": [
@@ -436,7 +468,30 @@
           "role": "hero"
         }
       ],
-      "article_references": []
+      "article_references": [
+        {
+          "article": "articles/_blog/access-services.md",
+          "tier": "blog",
+          "references": [
+            "/programs/access-services/generated/charts/access-phl-rank-shift.svg",
+            "/programs/access-services/generated/charts/access-phl-completeness-signal.svg"
+          ]
+        },
+        {
+          "article": "articles/_brief/access-services.md",
+          "tier": "brief",
+          "references": [
+            "/programs/access-services/generated/charts/access-phl-rank-shift.svg"
+          ]
+        },
+        {
+          "article": "articles/_social/access-services.md",
+          "tier": "social",
+          "references": [
+            "/programs/access-services/generated/charts/access-phl-rank-shift.svg"
+          ]
+        }
+      ]
     },
     {
       "slug": "air-monitoring",

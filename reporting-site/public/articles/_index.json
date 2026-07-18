@@ -1,5 +1,43 @@
 [
   {
+    "slug": "access-stress-pilot-cluster",
+    "title": "Official registries reorder 16 of 17 Philippine regional facility-load ranks",
+    "subtitle": "The eight-economy OSM screen is a map-observability triage, not a service-access ranking; only two pilot economies have comparable registry corrections.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "access-services",
+    "maturity": "PP",
+    "topics": [
+      "access",
+      "health-facilities",
+      "OSM",
+      "data-quality"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD",
+      "KHM",
+      "PAK",
+      "NPL",
+      "LKA",
+      "LAO",
+      "TLS"
+    ],
+    "abstract": "An inherited eight-economy screen divided subnational population by OpenStreetMap health-facility points and presented the result as access stress. This paper tests the denominator before extending that claim. In the Philippines, replacing OSM counts with the official clinical registry reorders 16 of 17 regional people-per-facility ranks. OSM capture ranges from 6.45% to 63.53% of registry counts and is strongly negatively associated with apparent OSM facility load (Spearman rho = -0.81). Bangladesh registry counts reorder 6 of 8 division ranks. Only those two economies have comparable registry corrections in the committed eight-economy module. A Cambodia audit also reorders 21 of 24 joined province ranks, but compares a 2010 public-provider inventory with 2026 OSM and is therefore evidence of source disagreement rather than a current completeness rate. The previous access-ranking headline is retired. The retained research object is a map-observability and source- validation queue that should precede travel-time, capacity, and utilization analysis. Published under CONSTITUTION.md §18 AI-First Operating Mode.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-27",
+    "updated_at": "2026-07-18",
+    "doi": "",
+    "file": "access-stress-pilot-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "remittance-corridors-vulnerability-cluster",
     "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
     "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
@@ -215,39 +253,6 @@
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
     "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
-  },
-  {
-    "slug": "access-stress-pilot-cluster",
-    "title": "Four pilot DMCs hold the top of the access-stress ranking — Bangladesh, Cambodia, Lao PDR, Pakistan",
-    "subtitle": "8-DMC pilot of OSM-amenity-vs-population access stress. Top-4 stable across alternative country aggregations. Travel-time isochrones are the upgrade-pass.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "access-services",
-    "maturity": "SR",
-    "topics": [
-      "access",
-      "OSM",
-      "public-services"
-    ],
-    "geographies": [
-      "BGD",
-      "KHM",
-      "LAO",
-      "PAK"
-    ],
-    "abstract": "An 8-DMC pilot (PHL, BGD, PAK, NPL, LKA, KHM, LAO, TLS) of country- level access-stress, derived from ADM1 OSM amenity counts vs population (national census + WorldPop). Four economies — Bangladesh, Cambodia, Lao PDR, Pakistan — hold the top-4 country positions across alternative aggregation choices (population- weighted ADM1 mean vs maximum-ADM1 people-per-health-facility). Top-5 is aggregation-sensitive. Honest narrowing. The pilot does not extend to the 42 other ADB DMCs; that's the §18.5 upgrade- pass scope. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-27",
-    "updated_at": "",
-    "doi": "",
-    "file": "access-stress-pilot-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
   },
   {
     "slug": "coastal-informal-cluster",
@@ -684,6 +689,39 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "access-services-brief",
+    "title": "The facility map changes the Philippine regional rank",
+    "subtitle": "A one-page brief on why an eight-economy OSM screen should be used for source validation, not service-access ranking.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "access-services",
+    "maturity": "PP",
+    "topics": [
+      "access",
+      "health-facilities",
+      "OSM",
+      "data-quality"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD",
+      "KHM"
+    ],
+    "abstract": "Official clinical registry counts reorder 16 of 17 Philippine regional people-per-facility ranks built from OSM health points. Bangladesh shows the same problem in 6 of 8 divisions. The inherited eight-economy screen is therefore a map-observability triage, not a service-access ranking.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "access-services-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "public-service-data-quality-brief",
     "title": "When the public map disagrees with the official registry",
     "subtitle": "A one-page brief on the measurement gap between OpenStreetMap health facilities and the Philippine and Bangladeshi national registries.",
@@ -744,6 +782,39 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "access-services-blog",
+    "title": "Before ranking access, check whether the map contains the facilities",
+    "subtitle": "A Philippine registry comparison turns an open-map access screen into a more honest source-validation tool.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "access-services",
+    "maturity": "PP",
+    "topics": [
+      "access",
+      "health-facilities",
+      "OSM",
+      "data-quality"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD",
+      "KHM"
+    ],
+    "abstract": "Replacing OSM health-point counts with official registry counts changes 16 of 17 Philippine regional facility-load ranks. The result does not create a new access index. It shows why map completeness must be tested before open facility points are used for comparative service-access claims.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "access-services-blog.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
@@ -816,6 +887,38 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "access-services-social",
+    "title": "Access services — social card",
+    "subtitle": "Tweet-length summary of the registry-denominator finding.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "access-services",
+    "maturity": "PP",
+    "topics": [
+      "access",
+      "health-facilities",
+      "OSM"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD",
+      "KHM"
+    ],
+    "abstract": "Official registry counts reorder 16 of 17 Philippine regional facility-load ranks built from OSM points. The map is useful for source triage, not an access ranking.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "access-services-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "public-service-data-quality-social",
     "title": "PSDQ — social card",
     "subtitle": "Tweet-length summary of the OSM-vs-registry measurement gap finding for ADB DMCs.",
@@ -873,6 +976,37 @@
     "updated_at": "",
     "doi": "",
     "file": "remittance-resilience-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "access-services-deck",
+    "title": "\"Before ranking access, check the facility map\"",
+    "subtitle": "\"Official registries reshape an eight-economy OSM screen — AI-first under §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "access-services",
+    "maturity": "PP",
+    "topics": [
+      "access",
+      "health-facilities",
+      "OSM",
+      "data-quality"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD",
+      "KHM"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "access-services-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",

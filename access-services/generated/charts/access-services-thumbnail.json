@@ -1,17 +1,17 @@
 {
   "program": "access-services",
-  "title": "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
-  "caption": "104 ADM1 units across 8 DMCs \u00b7 ranked by population per OSM-tagged health amenity in each DMC's worst-served region. Numbers are OSM-coverage gaps, not actual facility counts \u2014 OSM under-counts the official registry by 5\u201310\u00d7 per PSDQ.",
-  "headline_number": "Oddar Meanchey, Cambodia 319 k people / OSM-tagged amenity",
-  "visual_form": "horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
-  "source": "WDI + geoBoundaries + WorldPop + OSM Overpass",
+  "title": "The facility map changes the regional rank",
+  "caption": "Official clinical registry counts reorder 16 of 17 Philippine regional people-per-facility ranks. The eight-economy OSM screen is retained only as a map-observability and source-validation queue.",
+  "headline_number": "16 of 17 Philippine regional ranks change",
+  "visual_form": "diverging bars (largest Philippine rank shifts after registry substitution)",
+  "source": "PSA 2020 + DOH NHFR v2.0 + OSM",
   "inputs": [
-    "generated/access-services-adb-panel.csv"
+    "generated/access-osm-completeness-deepening.json"
   ],
   "script": "access-services/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T18:45:30+00:00",
+  "generated_at": "2026-07-18T09:43:55+00:00",
   "dimensions": {
     "width": 1600,
     "height": 900
@@ -21,7 +21,7 @@
     "svg": "access-services-thumbnail.svg"
   },
   "sha256": {
-    "png": "8f03201f61b3b1053b8e2a4e393127904f549fe91708ef6c79a6fc5aea6c6437",
-    "svg": "27c6ffee140ba46d462ada3a746ff60a954b010d197781665b19085d2262cfde"
+    "png": "7795ebab4d7aa0e5266c2ce375a0ce7f4a14eb3791625781892f2cf6965ec810",
+    "svg": "c4937d09c64cd72e5c20f69ecb7e353049fef0fe2e9e84eed7c31f69a46dfa4d"
   }
 }

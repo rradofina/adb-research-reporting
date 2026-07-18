@@ -1,0 +1,425 @@
+{
+  "program": "access-services",
+  "analysis": "OSM-completeness correction of the access screen (deepening of §1.1, §1.2)",
+  "claim_scope": "Deepening of the OSM-amenity access screen. Joins the access panel's OSM facility numerator to PSDQ's official-registry capture rates per ADM1 for the two DMCs with a registry join (PHL, BGD), and recomputes people-per-facility on the registry denominator. Triage screen (CONSTITUTION.md §6.4), not an access ranking; service-access measurement/observability-gap framing (§13.3).",
+  "sources": {
+    "access_panel": "access-services/generated/access-services-adb-panel.json (OSM Overpass; geoBoundaries gbOpen ADM1; PSA 2020 + WorldPop 2024; retrieved 2026-04-23)",
+    "psdq_phl": "public-service-data-quality/generated/public-service-data-quality-PHL.json (DOH NHFR v2.0; OSM Overpass; retrieved 2026-04-25)",
+    "psdq_bgd": "public-service-data-quality/generated/public-service-data-quality-BGD.json (DGHS Facility Registry; OSM Overpass; retrieved 2026-04-25)",
+    "license": "OSM ODbL; geoBoundaries CC BY 4.0; registries public-disclosure"
+  },
+  "identity_check": {
+    "access_phl_worst_adm1": "ARMM",
+    "access_phl_worst_ppf": 68678,
+    "psdq_armm_pop_over_osm": 68678,
+    "match": true
+  },
+  "phl_national_clinical_capture": 0.1712,
+  "bgd_national_clinical_capture": 0.1178,
+  "phl_internal_contradiction": {
+    "n_regions": 17,
+    "pearson_r_level": -0.4281,
+    "pearson_r2_level": 0.1833,
+    "pearson_r_loglog": -0.733,
+    "pearson_r2_loglog": 0.5372,
+    "spearman_rho": -0.8105,
+    "capture_best": {
+      "region": "NCR",
+      "ratio": 0.6353
+    },
+    "capture_worst": {
+      "region": "ARMM",
+      "ratio": 0.0645
+    }
+  },
+  "phl_correction": {
+    "worst_on_osm": {
+      "region": "ARMM",
+      "ppf": 68678
+    },
+    "worst_on_osm_registry_corrected_ppf": 4427,
+    "worst_on_registry": {
+      "region": "NCR",
+      "ppf": 7831
+    },
+    "n_adm1_rank_changed": 16,
+    "n_adm1_total": 17
+  },
+  "phl_rows": [
+    {
+      "admin1_name": "NCR",
+      "population_2020": 13484462,
+      "osm_health": 1094,
+      "registry_clinical": 1722,
+      "capture_ratio": 0.6353,
+      "osm_people_per_facility": 12326,
+      "registry_people_per_facility": 7831,
+      "scaled_people_per_facility": 7831,
+      "rank_osm": 15,
+      "rank_registry": 1,
+      "rank_shift": 14
+    },
+    {
+      "admin1_name": "Ilocos Region",
+      "population_2020": 5301139,
+      "osm_health": 307,
+      "registry_clinical": 2715,
+      "capture_ratio": 0.1131,
+      "osm_people_per_facility": 17268,
+      "registry_people_per_facility": 1953,
+      "scaled_people_per_facility": 1953,
+      "rank_osm": 11,
+      "rank_registry": 13,
+      "rank_shift": -2
+    },
+    {
+      "admin1_name": "Cagayan Valley",
+      "population_2020": 3685744,
+      "osm_health": 168,
+      "registry_clinical": 2319,
+      "capture_ratio": 0.0724,
+      "osm_people_per_facility": 21939,
+      "registry_people_per_facility": 1589,
+      "scaled_people_per_facility": 1588,
+      "rank_osm": 7,
+      "rank_registry": 16,
+      "rank_shift": -9
+    },
+    {
+      "admin1_name": "Central Luzon",
+      "population_2020": 12422172,
+      "osm_health": 1139,
+      "registry_clinical": 3533,
+      "capture_ratio": 0.3224,
+      "osm_people_per_facility": 10906,
+      "registry_people_per_facility": 3516,
+      "scaled_people_per_facility": 3516,
+      "rank_osm": 17,
+      "rank_registry": 4,
+      "rank_shift": 13
+    },
+    {
+      "admin1_name": "Bicol Region",
+      "population_2020": 6082165,
+      "osm_health": 267,
+      "registry_clinical": 3183,
+      "capture_ratio": 0.0839,
+      "osm_people_per_facility": 22780,
+      "registry_people_per_facility": 1911,
+      "scaled_people_per_facility": 1911,
+      "rank_osm": 6,
+      "rank_registry": 15,
+      "rank_shift": -9
+    },
+    {
+      "admin1_name": "Western Visayas",
+      "population_2020": 7954723,
+      "osm_health": 308,
+      "registry_clinical": 2820,
+      "capture_ratio": 0.1092,
+      "osm_people_per_facility": 25827,
+      "registry_people_per_facility": 2821,
+      "scaled_people_per_facility": 2820,
+      "rank_osm": 3,
+      "rank_registry": 8,
+      "rank_shift": -5
+    },
+    {
+      "admin1_name": "Central Visayas",
+      "population_2020": 8081988,
+      "osm_health": 323,
+      "registry_clinical": 3260,
+      "capture_ratio": 0.0991,
+      "osm_people_per_facility": 25022,
+      "registry_people_per_facility": 2479,
+      "scaled_people_per_facility": 2480,
+      "rank_osm": 5,
+      "rank_registry": 10,
+      "rank_shift": -5
+    },
+    {
+      "admin1_name": "Eastern Visayas",
+      "population_2020": 4547150,
+      "osm_health": 338,
+      "registry_clinical": 1479,
+      "capture_ratio": 0.2285,
+      "osm_people_per_facility": 13453,
+      "registry_people_per_facility": 3074,
+      "scaled_people_per_facility": 3074,
+      "rank_osm": 14,
+      "rank_registry": 6,
+      "rank_shift": 8
+    },
+    {
+      "admin1_name": "Zamboanga Peninsula",
+      "population_2020": 3875576,
+      "osm_health": 125,
+      "registry_clinical": 1571,
+      "capture_ratio": 0.0796,
+      "osm_people_per_facility": 31005,
+      "registry_people_per_facility": 2467,
+      "scaled_people_per_facility": 2468,
+      "rank_osm": 2,
+      "rank_registry": 11,
+      "rank_shift": -9
+    },
+    {
+      "admin1_name": "Northern Mindanao",
+      "population_2020": 5022768,
+      "osm_health": 253,
+      "registry_clinical": 1986,
+      "capture_ratio": 0.1274,
+      "osm_people_per_facility": 19853,
+      "registry_people_per_facility": 2529,
+      "scaled_people_per_facility": 2529,
+      "rank_osm": 9,
+      "rank_registry": 9,
+      "rank_shift": 0
+    },
+    {
+      "admin1_name": "Davao Region",
+      "population_2020": 5243536,
+      "osm_health": 376,
+      "registry_clinical": 1646,
+      "capture_ratio": 0.2284,
+      "osm_people_per_facility": 13946,
+      "registry_people_per_facility": 3186,
+      "scaled_people_per_facility": 3185,
+      "rank_osm": 13,
+      "rank_registry": 5,
+      "rank_shift": 8
+    },
+    {
+      "admin1_name": "Soccsksargen",
+      "population_2020": 4360974,
+      "osm_health": 173,
+      "registry_clinical": 1475,
+      "capture_ratio": 0.1173,
+      "osm_people_per_facility": 25208,
+      "registry_people_per_facility": 2957,
+      "scaled_people_per_facility": 2957,
+      "rank_osm": 4,
+      "rank_registry": 7,
+      "rank_shift": -3
+    },
+    {
+      "admin1_name": "Caraga",
+      "population_2020": 2804788,
+      "osm_health": 149,
+      "registry_clinical": 1458,
+      "capture_ratio": 0.1022,
+      "osm_people_per_facility": 18824,
+      "registry_people_per_facility": 1924,
+      "scaled_people_per_facility": 1924,
+      "rank_osm": 10,
+      "rank_registry": 14,
+      "rank_shift": -4
+    },
+    {
+      "admin1_name": "ARMM",
+      "population_2020": 4944800,
+      "osm_health": 72,
+      "registry_clinical": 1117,
+      "capture_ratio": 0.0645,
+      "osm_people_per_facility": 68678,
+      "registry_people_per_facility": 4427,
+      "scaled_people_per_facility": 4430,
+      "rank_osm": 1,
+      "rank_registry": 2,
+      "rank_shift": -1
+    },
+    {
+      "admin1_name": "CAR",
+      "population_2020": 1797660,
+      "osm_health": 146,
+      "registry_clinical": 1238,
+      "capture_ratio": 0.1179,
+      "osm_people_per_facility": 12313,
+      "registry_people_per_facility": 1452,
+      "scaled_people_per_facility": 1452,
+      "rank_osm": 16,
+      "rank_registry": 17,
+      "rank_shift": -1
+    },
+    {
+      "admin1_name": "Calabarzon",
+      "population_2020": 16195042,
+      "osm_health": 1004,
+      "registry_clinical": 4396,
+      "capture_ratio": 0.2284,
+      "osm_people_per_facility": 16131,
+      "registry_people_per_facility": 3684,
+      "scaled_people_per_facility": 3684,
+      "rank_osm": 12,
+      "rank_registry": 3,
+      "rank_shift": 9
+    },
+    {
+      "admin1_name": "Mimaropa",
+      "population_2020": 3228558,
+      "osm_health": 159,
+      "registry_clinical": 1474,
+      "capture_ratio": 0.1079,
+      "osm_people_per_facility": 20305,
+      "registry_people_per_facility": 2190,
+      "scaled_people_per_facility": 2191,
+      "rank_osm": 8,
+      "rank_registry": 12,
+      "rank_shift": -4
+    }
+  ],
+  "bgd_rows": [
+    {
+      "admin1_name": "Barisal",
+      "capture_ratio": 0.0625,
+      "osm_people_per_facility": 61625,
+      "registry_people_per_facility": 3850,
+      "rank_osm": 3,
+      "rank_registry": 8,
+      "rank_shift": -5
+    },
+    {
+      "admin1_name": "Chittagong",
+      "capture_ratio": 0.0903,
+      "osm_people_per_facility": 65960,
+      "registry_people_per_facility": 5956,
+      "rank_osm": 2,
+      "rank_registry": 3,
+      "rank_shift": -1
+    },
+    {
+      "admin1_name": "Dhaka",
+      "capture_ratio": 0.2007,
+      "osm_people_per_facility": 35006,
+      "registry_people_per_facility": 7025,
+      "rank_osm": 8,
+      "rank_registry": 2,
+      "rank_shift": 6
+    },
+    {
+      "admin1_name": "Khulna",
+      "capture_ratio": 0.1052,
+      "osm_people_per_facility": 43951,
+      "registry_people_per_facility": 4625,
+      "rank_osm": 7,
+      "rank_registry": 7,
+      "rank_shift": 0
+    },
+    {
+      "admin1_name": "Rajshani",
+      "capture_ratio": 0.0951,
+      "osm_people_per_facility": 57494,
+      "registry_people_per_facility": 5470,
+      "rank_osm": 4,
+      "rank_registry": 6,
+      "rank_shift": -2
+    },
+    {
+      "admin1_name": "Rangpur",
+      "capture_ratio": 0.1027,
+      "osm_people_per_facility": 54838,
+      "registry_people_per_facility": 5630,
+      "rank_osm": 6,
+      "rank_registry": 5,
+      "rank_shift": 1
+    },
+    {
+      "admin1_name": "Sylhet",
+      "capture_ratio": 0.0781,
+      "osm_people_per_facility": 94376,
+      "registry_people_per_facility": 7371,
+      "rank_osm": 1,
+      "rank_registry": 1,
+      "rank_shift": 0
+    },
+    {
+      "admin1_name": "Mymensingh",
+      "capture_ratio": 0.0983,
+      "osm_people_per_facility": 57375,
+      "registry_people_per_facility": 5639,
+      "rank_osm": 5,
+      "rank_registry": 4,
+      "rank_shift": 1
+    }
+  ],
+  "bgd_internal_contradiction": {
+    "pearson_r_level": -0.6771,
+    "pearson_r2_level": 0.4585
+  },
+  "cluster_worst_adm1_corrected": [
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "worst_adm1_name": "Balochistan",
+      "osm_worst_people_per_facility": 149776,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "worst_adm1_name": "Sylhet",
+      "osm_worst_people_per_facility": 94376,
+      "capture_ratio_applied": 0.1178,
+      "corrected_people_per_facility": 11117,
+      "correction_source": "BGD national clinical (PSDQ)"
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "worst_adm1_name": "Oddar Meanchey",
+      "osm_worst_people_per_facility": 319413,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    },
+    {
+      "iso3": "LAO",
+      "country": "Lao People's Democratic Republic",
+      "worst_adm1_name": "Bolikhamsai",
+      "osm_worst_people_per_facility": 44845,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    },
+    {
+      "iso3": "LKA",
+      "country": "Sri Lanka",
+      "worst_adm1_name": "Sabaragamuwa Province",
+      "osm_worst_people_per_facility": 32311,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "worst_adm1_name": "Province 1",
+      "osm_worst_people_per_facility": 30123,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "worst_adm1_name": "ARMM",
+      "osm_worst_people_per_facility": 68678,
+      "capture_ratio_applied": 0.1712,
+      "corrected_people_per_facility": 11758,
+      "correction_source": "PHL national clinical (PSDQ)"
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "worst_adm1_name": "Liquiçá",
+      "osm_worst_people_per_facility": 10184,
+      "capture_ratio_applied": null,
+      "corrected_people_per_facility": null,
+      "correction_source": "no registry join in PSDQ"
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T18:19:46Z"
+}

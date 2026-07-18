@@ -48,18 +48,18 @@ export default function ProgramAccessServices() {
             Program #1 · access-services
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight">
-            Climate-adjusted access to services — ADM1 screening
+            Legacy map-observability screen — not an access ranking
           </h1>
           <p className="mt-3 max-w-3xl text-ink-700 leading-relaxed">
-            National and ADM1 screening index for 104 units across 8 ADB
-            DMCs. Built from World Bank WDI, CCKP, geoBoundaries, WorldPop
-            stats, PSA OpenSTAT, and OSM/Overpass. Not yet a travel-time
-            raster model — this is the triage layer that decides where the
-            heavier raster work is worth running.
+            This retained diagnostic shows the original 104-unit screen across
+            8 ADB DMCs. Official-registry checks materially reorder the apparent
+            facility-load ranks, so the composite below must be used only to
+            identify map and source-validation needs. It does not measure access,
+            capacity, utilization, travel time, or country performance.
           </p>
         </div>
         <div className="shrink-0">
-          <MaturityChip status="SR" />
+          <MaturityChip status="PP" />
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function ProgramAccessServices() {
             ))}
           </select>
           <span className="text-xs text-ink-500 ml-auto tabular">
-            Showing {filtered.length} ADM1 units — ranked by access-stress index (highest first).
+            Showing {filtered.length} ADM1 units — ordered by the retired diagnostic score.
           </span>
         </div>
 
@@ -92,7 +92,7 @@ export default function ProgramAccessServices() {
                 <th className="text-right">OSM health</th>
                 <th className="text-right">OSM schools</th>
                 <th className="text-right">OSM markets</th>
-                <th className="text-right">Stress index</th>
+                <th className="text-right">Legacy triage score</th>
                 <th>Bottleneck</th>
               </tr>
             </thead>

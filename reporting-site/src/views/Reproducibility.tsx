@@ -32,10 +32,9 @@ export default function Reproducibility() {
       <section className="mt-10">
         <h2 className="text-xs uppercase tracking-[0.2em] text-ink-500">Rerun commands</h2>
         <pre className="mt-3 bg-ink-900 text-ink-50 rounded-md p-5 text-xs overflow-x-auto font-mono">
-{`# Program 1 — Climate-adjusted access to services
-cd luminosity-gap
-npm install
-npm run research:access
+{`# Program 1 — Facility-map observability and registry validation
+python access-services/scripts/build-figure-dossier.py
+python access-services/scripts/build-thumbnail.py
 
 # Program 2 — Measured digital development gap
 npm run research:ookla

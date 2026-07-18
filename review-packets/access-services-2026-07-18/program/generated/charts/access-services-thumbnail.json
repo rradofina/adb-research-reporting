@@ -1,0 +1,27 @@
+{
+  "program": "access-services",
+  "title": "The facility map changes the regional rank",
+  "caption": "Official clinical registry counts reorder 16 of 17 Philippine regional people-per-facility ranks. The eight-economy OSM screen is retained only as a map-observability and source-validation queue.",
+  "headline_number": "16 of 17 Philippine regional ranks change",
+  "visual_form": "diverging bars (largest Philippine rank shifts after registry substitution)",
+  "source": "PSA 2020 + DOH NHFR v2.0 + OSM",
+  "inputs": [
+    "generated/access-osm-completeness-deepening.json"
+  ],
+  "script": "access-services/scripts/build-thumbnail.py",
+  "attestation_chain": "ai-first",
+  "constitution_ref": "CONSTITUTION.md \u00a718",
+  "generated_at": "2026-07-18T09:34:17+00:00",
+  "dimensions": {
+    "width": 1600,
+    "height": 900
+  },
+  "files": {
+    "png": "access-services-thumbnail.png",
+    "svg": "access-services-thumbnail.svg"
+  },
+  "sha256": {
+    "png": "7795ebab4d7aa0e5266c2ce375a0ce7f4a14eb3791625781892f2cf6965ec810",
+    "svg": "e8712517d53f03187b4dad67cb5c3c6c369e7a289edc6ddc32b0249fee9889f5"
+  }
+}

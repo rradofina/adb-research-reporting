@@ -1,19 +1,13 @@
-"""Access-services hero — 8-DMC ADM1 climate-adjusted access.
+"""Build the access-services research hero from committed registry evidence."""
 
-The honest single-axis story (§6.4 demotion of composite) is that
-the panel covers 104 ADM1 units across 8 ADB DMCs (PHL, BGD, PAK,
-NPL, LKA, KHM, LAO, TLS). The pilot ranks DMC-level worst-ADM1
-exposure — Lao PDR has a single ADM1 (Phongsali) where ~76,000
-people share each health facility. Visual: horizontal bar of
-worst_adm1_people_per_health_facility per DMC.
-"""
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import pandas as pd
+
 
 PROGRAM_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = PROGRAM_ROOT.parent
@@ -23,103 +17,101 @@ import thumbnail_lib as tl  # noqa: E402
 PROGRAM_SLUG = "access-services"
 GEN = PROGRAM_ROOT / "generated"
 CHARTS = GEN / "charts"
-PANEL_CSV = GEN / "access-services-adb-panel.csv"
-
-
-def _fmt(v: float) -> str:
-    if v >= 1e6:
-        return f"{v/1e6:.1f} M"
-    if v >= 1e3:
-        return f"{v/1e3:.0f} k"
-    return f"{v:.0f}"
+SOURCE = GEN / "access-osm-completeness-deepening.json"
 
 
 def main() -> int:
-    df = tl.read_panel_csv(PANEL_CSV)
-    df = df[df["worst_adm1_people_per_health_facility"].notna()].copy()
-    df = df.sort_values("worst_adm1_people_per_health_facility", ascending=True)
-    total_units = int(df["n_adm1_units"].sum())
-    total_pop = float(df["total_population"].sum())
-    print(f"Panel: {len(df)} DMCs, {total_units} ADM1 units, {total_pop/1e6:.0f}M total pop")
-
-    headline_row = df.iloc[-1]
-    headline_country = headline_row["country"]
-    headline_value = float(headline_row["worst_adm1_people_per_health_facility"])
-    headline_unit = headline_row["worst_adm1_name"]
-    print(f"Headline: {headline_country} ({headline_unit}) {headline_value:,.0f} people / health facility")
+    source = json.loads(SOURCE.read_text(encoding="utf-8"))
+    correction = source["phl_correction"]
+    rows = source["phl_rows"]
+    largest = sorted(rows, key=lambda row: abs(row["rank_shift"]), reverse=True)[:8]
+    largest = sorted(largest, key=lambda row: row["rank_shift"])
 
     tl.editorial_style()
     fig = plt.figure(figsize=(tl.FIG_WIDTH_IN, tl.FIG_HEIGHT_IN), dpi=tl.FIG_DPI)
-    fig.text(0.04, 0.94,
-             "Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
-             fontsize=25, fontweight="semibold", color=tl.COLOR_INK,
-             ha="left", va="top")
-    fig.text(0.04, 0.88,
-             f"For each pilot DMC, the population per OSM-tagged health "
-             f"amenity in its worst-served ADM1 region. "
-             f"{total_units} ADM1 units, {total_pop/1e6:.0f} M people in panel. "
-             f"OSM tag coverage under-counts the official health "
-             f"registry by 5–10× per the PSDQ program — read these as "
-             f"OSM-coverage gaps, not facility counts.",
-             fontsize=11.5, color=tl.COLOR_INK_MUTED, ha="left", va="top",
-             wrap=True)
-    fig.text(0.96, 0.94, _fmt(headline_value),
-             fontsize=64, fontweight="bold", color=tl.COLOR_INK,
-             ha="right", va="top")
-    fig.text(0.96, 0.85,
-             f"people per OSM-tagged health amenity\n"
-             f"in {headline_unit}, {headline_country}",
-             fontsize=12, color=tl.COLOR_INK_MUTED, ha="right", va="top")
+    fig.text(
+        0.04, 0.94,
+        "The facility map changes the regional rank",
+        fontsize=27, fontweight="semibold", color=tl.COLOR_INK,
+        ha="left", va="top",
+    )
+    fig.text(
+        0.04, 0.865,
+        "Replacing OSM health-point counts with the Philippine official clinical registry "
+        "reorders nearly every regional people-per-facility rank. The inherited eight-economy "
+        "screen is a map-observability triage, not a service-access ranking.",
+        fontsize=12, color=tl.COLOR_INK_MUTED, ha="left", va="top", wrap=True,
+    )
+    fig.text(
+        0.955, 0.94,
+        f"{correction['n_adm1_rank_changed']}/{correction['n_adm1_total']}",
+        fontsize=66, fontweight="bold", color=tl.COLOR_INK,
+        ha="right", va="top",
+    )
+    fig.text(
+        0.955, 0.84,
+        "Philippine regional ranks change",
+        fontsize=12, color=tl.COLOR_INK_MUTED, ha="right", va="top",
+    )
 
-    ax = fig.add_axes([0.20, 0.13, 0.74, 0.62])
-    cmap = plt.get_cmap("viridis_r")
-    vmax = float(df["worst_adm1_people_per_health_facility"].max())
-    colors = [cmap(0.15 + 0.75 * v / vmax)
-              for v in df["worst_adm1_people_per_health_facility"]]
-    bars = ax.barh(df["country"], df["worst_adm1_people_per_health_facility"],
-                   color=colors, edgecolor="white", linewidth=0.8, height=0.72)
-    for bar, val, name in zip(bars, df["worst_adm1_people_per_health_facility"],
-                              df["worst_adm1_name"]):
+    ax = fig.add_axes([0.24, 0.15, 0.69, 0.57])
+    labels = [row["admin1_name"] for row in largest]
+    shifts = [row["rank_shift"] for row in largest]
+    colors = ["#A63D40" if shift < 0 else tl.COLOR_HIGHLIGHT for shift in shifts]
+    bars = ax.barh(labels, shifts, color=colors, height=0.62, alpha=0.92)
+    ax.axvline(0, color=tl.COLOR_INK, linewidth=1.1)
+    for bar, row in zip(bars, largest, strict=True):
+        shift = row["rank_shift"]
         ax.annotate(
-            f"{_fmt(val)} · {name}",
-            xy=(val, bar.get_y() + bar.get_height() / 2),
-            xytext=(6, 0), textcoords="offset points",
-            ha="left", va="center",
-            fontsize=10, color=tl.COLOR_INK, fontweight="semibold",
+            f"{row['rank_osm']} → {row['rank_registry']}",
+            xy=(shift, bar.get_y() + bar.get_height() / 2),
+            xytext=(6 if shift >= 0 else -6, 0),
+            textcoords="offset points",
+            ha="left" if shift >= 0 else "right",
+            va="center",
+            fontsize=10.5,
+            color=tl.COLOR_INK,
+            fontweight="semibold",
         )
-    ax.set_xlim(0, vmax * 1.45)
-    ax.set_xticks([])
-    ax.set_yticks(range(len(df)))
-    ax.set_yticklabels(df["country"], fontsize=10, color=tl.COLOR_INK)
-    ax.tick_params(left=False)
-    ax.spines["bottom"].set_visible(False)
-    ax.spines["left"].set_color(tl.COLOR_INK_SOFT)
+    ax.set_xlim(-11, 16)
+    ax.set_xlabel("Rank movement after registry substitution", color=tl.COLOR_INK_MUTED)
+    ax.tick_params(axis="y", length=0, labelsize=10.5)
+    ax.tick_params(axis="x", colors=tl.COLOR_INK_MUTED)
+    ax.grid(axis="x", color=tl.COLOR_INK_SOFT, alpha=0.22, linewidth=0.8)
+    ax.set_axisbelow(True)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
 
     tl.draw_footer(
         fig,
         source=(
-            "World Bank WDI, geoBoundaries ADM1, WorldPop population, "
-            "OpenStreetMap Overpass health-amenities; PSA OpenSTAT, CCKP. "
-            "Eight-DMC pilot — pending travel-time-isochrone integration "
-            "(§18.5 owner-gated)."
+            "Philippine PSA 2020 population; DOH NHFR v2.0 official clinical registry; "
+            "OpenStreetMap health points. Counts retrieved in 2026. Rank movement is a "
+            "denominator test, not travel-time, capacity, quality, utilization, or welfare."
         ),
         program_slug=PROGRAM_SLUG,
     )
     tl.save_thumbnail(
-        fig, program_slug=PROGRAM_SLUG, out_dir=CHARTS,
-        title="Worst-ADM1 OSM-tagged-facility coverage, eight DMC pilot",
+        fig,
+        program_slug=PROGRAM_SLUG,
+        out_dir=CHARTS,
+        title="The facility map changes the regional rank",
         caption=(
-            f"{total_units} ADM1 units across 8 DMCs · ranked by "
-            f"population per OSM-tagged health amenity in each DMC's "
-            f"worst-served region. Numbers are OSM-coverage gaps, not "
-            f"actual facility counts — OSM under-counts the official "
-            f"registry by 5–10× per PSDQ."
+            "Official clinical registry counts reorder 16 of 17 Philippine regional "
+            "people-per-facility ranks. The eight-economy OSM screen is retained only "
+            "as a map-observability and source-validation queue."
         ),
-        headline_number=f"{headline_unit}, {headline_country} {_fmt(headline_value)} people / OSM-tagged amenity",
-        source="WDI + geoBoundaries + WorldPop + OSM Overpass",
-        inputs=["generated/access-services-adb-panel.csv"],
+        headline_number="16 of 17 Philippine regional ranks change",
+        source="PSA 2020 + DOH NHFR v2.0 + OSM",
+        inputs=["generated/access-osm-completeness-deepening.json"],
         script=f"{PROGRAM_SLUG}/scripts/build-thumbnail.py",
-        visual_form="horizontal bar (worst-ADM1 OSM-tagged coverage per DMC)",
+        visual_form="diverging bars (largest Philippine rank shifts after registry substitution)",
+    )
+    svg_path = CHARTS / f"{PROGRAM_SLUG}-thumbnail.svg"
+    svg_text = svg_path.read_text(encoding="utf-8")
+    svg_path.write_text(
+        "\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n",
+        encoding="utf-8",
     )
     plt.close(fig)
     return 0

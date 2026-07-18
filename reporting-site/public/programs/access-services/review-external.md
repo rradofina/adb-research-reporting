@@ -44,3 +44,27 @@ PSDQ for PHL/BGD); (c) sectoral disaggregation.
 ## §18.4 non-claim
 
 No individual reviewer was contacted.
+
+## 2026-07-18 red-team synthesis addendum
+
+The completed source tests resolve the central objection by changing the
+claim, not by defending the proxy.
+
+- **Travel-time measurement position:** accepted. The paper now states that
+  population per point is not access and places travel-time modeling in the
+  upgrade gap [@macharia2017travel].
+- **Facility-master-list position:** accepted. Current, geocoded,
+  provider-scoped and versioned facility sources are treated as necessary
+  infrastructure, not an optional robustness check [@south2021reproducible;
+  @macharia2025mapping].
+- **OSM data-quality position:** accepted and tested. The Philippine
+  completeness ratio is associated with the apparent load, and official
+  registry substitution reorders 16 of 17 ranks [@herfort2023osm].
+- **Multidimensional-access position:** accepted. Education and market points
+  are removed from the research claim rather than blended into a headline
+  composite.
+
+Remaining red-team objection: even an official registry does not measure
+availability, capacity, quality, or use. The paper accepts this and stops at
+denominator falsification. No individual reviewer was contacted; all positions
+remain AI synthesis under §18.4.

@@ -1,7 +1,7 @@
 {
   "program": "coastal-informal-risk",
   "permanent_url": "/coastal-informal-risk?view=evidence",
-  "generated_at": "2026-07-18T22:04:18.239Z",
+  "generated_at": "2026-07-18T22:24:29.987Z",
   "hero": {
     "png": "generated/charts/coastal-informal-risk-thumbnail.png",
     "svg": "generated/charts/coastal-informal-risk-thumbnail.svg",
@@ -444,11 +444,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },

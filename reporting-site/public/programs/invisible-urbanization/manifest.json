@@ -1,7 +1,7 @@
 {
   "program": "invisible-urbanization",
   "permanent_url": "/invisible-urbanization?view=evidence",
-  "generated_at": "2026-07-18T22:04:18.548Z",
+  "generated_at": "2026-07-18T22:24:30.267Z",
   "hero": {
     "png": "generated/charts/invisible-urbanization-thumbnail.png",
     "svg": "generated/charts/invisible-urbanization-thumbnail.svg",
@@ -444,11 +444,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },

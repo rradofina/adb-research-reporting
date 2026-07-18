@@ -1,7 +1,7 @@
 {
   "program": "public-data-freshness",
   "permanent_url": "/public-data-freshness?view=evidence",
-  "generated_at": "2026-07-18T22:04:19.146Z",
+  "generated_at": "2026-07-18T22:24:30.848Z",
   "hero": null,
   "artifacts": [
     {
@@ -383,11 +383,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },
@@ -427,11 +422,6 @@
           "key": "preregistration",
           "file": "pre-registration.md",
           "label": "Pre-registration"
-        },
-        {
-          "key": "scoring",
-          "file": "scoring.md",
-          "label": "Scoring rubric"
         }
       ]
     },

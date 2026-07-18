@@ -23,7 +23,9 @@ submission or peer-reviewed claim beyond the current issue.
 - `scoring.md` — §3.3 rubric, 24/30 (pending owner sign-off)
 - `results.md` — Philippines pilot screening result, ranked ADM1 disagreement
 - `upgrade-gap.md` — current blockers and source-gate decisions before human-final or next-country extension
-- `pipeline.ts` — TypeScript scaffold (PHL + BGD implemented in scripts/, IND/IDN/NPL TODO)
+- `pipeline.ts` — original TypeScript scaffold; the current-issue PHL + BGD
+  implementation lives in `scripts/`, while IND/IDN/NPL are outside the
+  bounded two-pilot result
 - `scripts/fetch-nhfr.sh` — pages through DOH NHFR JWT-issued API (PHL)
 - `scripts/process-disagreement.py` — single-country PHL processing
 - `scripts/process-multi-country.py` — multi-country processing (PHL + BGD); produces summary

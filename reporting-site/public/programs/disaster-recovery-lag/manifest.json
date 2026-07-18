@@ -1,7 +1,7 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/disaster-recovery-lag?view=evidence",
-  "generated_at": "2026-07-18T22:04:17.462Z",
+  "generated_at": "2026-07-18T22:24:29.409Z",
   "hero": {
     "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
     "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
@@ -372,11 +372,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },

@@ -62,8 +62,8 @@ the reviewer's permission.
 - **BGD division-level granularity.** Bangladesh has 8 divisions (the
   upper administrative tier); the comparable PHL granularity is 17
   regions. A fairer cross-country granularity would be ADM2 (PHL
-  provinces vs. BGD districts). ADM2 is TODO and is not in the SR → PR
-  gate request.
+  provinces vs. BGD districts). That comparison is outside the bounded
+  current-issue result and would require a separately frozen upgrade.
 
 ## 3. Method-side limitations
 
@@ -74,13 +74,14 @@ the reviewer's permission.
   on the gradient, not just a p-value.
 - **No HDI control.** The pre-registered claim refers to "low-HDI
   ADM1 units." The current pipeline uses rural-share as a proxy (PSA
-  2020 census). Subnational HDI from `globaldatalab.org/shdi` is the
-  more direct quantity and is TODO for the publication-grade rerun.
-- **Sensitivity to OSM-Overpass query window.** Strict ADM1-polygon
-  clip at dilate=0 km is the baseline. A buffer of 1–5 km would
-  redistribute facilities across boundaries and shift per-ADM1 counts.
-  The dilate-buffer sensitivity row in `sensitivity.md` is TODO and
-  requires a live Overpass rerun.
+  2020 census). Subnational HDI would be the more direct quantity, so the
+  public claim is limited to the observed rural-share gradient and does not
+  assert an HDI result.
+- **Sensitivity to OSM-Overpass vintage.** Strict ADM1-polygon membership is
+  the current estimand. A positive boundary buffer or a different map vintage
+  would answer a new geographic-assignment or replication question and needs a
+  newly pinned OpenStreetMap snapshot; neither is implied by the current
+  result.
 
 ## 4. DMC-coverage limitations
 

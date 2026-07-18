@@ -52,6 +52,13 @@ const ARTIFACTS = [
   { key: "reproduce", file: "REPRODUCE.md", label: "Reproducibility guide" },
   { key: "source_action", file: "SOURCE-ACTION.md", label: "Source action packet" },
   { key: "paper_charter", file: "paper-charter.md", label: "Paper charter" },
+  { key: "literature_summary", file: "literature-summary.md", label: "Reader literature summary" },
+  { key: "data_summary", file: "data-summary.md", label: "Reader data summary" },
+  { key: "method_summary", file: "method-summary.md", label: "Reader method summary" },
+  { key: "results_summary", file: "results-summary.md", label: "Reader results summary" },
+  { key: "robustness_summary", file: "robustness-summary.md", label: "Reader robustness summary" },
+  { key: "limitations_summary", file: "limitations-summary.md", label: "Reader limitations summary" },
+  { key: "reproduction_summary", file: "reproduction-summary.md", label: "Reader reproduction summary" },
   { key: "literature", file: "literature.md", label: "Literature review" },
   { key: "scoring", file: "scoring.md", label: "Scoring rubric" },
   { key: "preregistration", file: "pre-registration.md", label: "Pre-registration" },
@@ -209,17 +216,21 @@ function syncProgram(slug) {
   const byKey = new Map(included.map((artifact) => [artifact.key, artifact]));
   const storySpecs = [
     { key: "background", title: "Research problem and background", candidates: ["paper_charter", "readme"] },
-    { key: "literature", title: "Related literature and evidence gap", candidates: ["literature"] },
-    { key: "data", title: "Data sources and coverage", candidates: ["coverage", "source_action"] },
-    { key: "method", title: "Methodology and claim test", candidates: ["preregistration", "scoring"] },
-    { key: "results", title: "Results", candidates: ["results"] },
-    { key: "robustness", title: "Sensitivity and robustness", candidates: ["sensitivity"] },
-    { key: "limitations", title: "Limitations and what this does not mean", candidates: ["limitations"] },
+    { key: "literature", title: "Related literature and evidence gap", candidates: ["literature_summary", "literature"] },
+    { key: "data", title: "Data sources and coverage", candidates: ["data_summary", "coverage", "source_action"] },
+    { key: "method", title: "Methodology and claim test", candidates: ["method_summary", "preregistration", "scoring"] },
+    { key: "results", title: "Results", candidates: ["results_summary", "results"] },
+    { key: "robustness", title: "Sensitivity and robustness", candidates: ["robustness_summary", "sensitivity"] },
+    { key: "limitations", title: "Limitations and what this does not mean", candidates: ["limitations_summary", "limitations"] },
     { key: "conclusion", title: "Conclusion and next evidence upgrade", candidates: ["conclusion", "upgrade_gap"] },
-    { key: "reproduce", title: "Reproduce the analysis", candidates: ["reproduce"] },
+    { key: "reproduce", title: "Reproduce the analysis", candidates: ["reproduction_summary", "reproduce"] },
   ];
   const story = storySpecs.map((section) => {
-    const artifacts = section.candidates.map((key) => byKey.get(key)).filter(Boolean);
+    // The first available candidate is the reader-facing source of record.
+    // Full audit documents remain downloadable through `artifacts`, but are
+    // not concatenated into the public narrative when a concise summary exists.
+    const preferredArtifact = section.candidates.map((key) => byKey.get(key)).find(Boolean);
+    const artifacts = preferredArtifact ? [preferredArtifact] : [];
     const hasDraftMarker = artifacts.some((artifact) => {
       if (!artifact.file.endsWith(".md")) return false;
       const text = fs.readFileSync(path.join(dir, artifact.file), "utf8");

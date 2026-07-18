@@ -1,7 +1,7 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/migration-displacement-signals?view=evidence",
-  "generated_at": "2026-07-18T22:04:17.294Z",
+  "generated_at": "2026-07-18T22:24:29.229Z",
   "hero": {
     "png": "generated/charts/migration-displacement-signals-thumbnail.png",
     "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
@@ -306,11 +306,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },

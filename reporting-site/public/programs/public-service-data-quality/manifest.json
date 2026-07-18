@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/public-service-data-quality?view=evidence",
-  "generated_at": "2026-07-18T22:04:17.033Z",
+  "generated_at": "2026-07-18T22:24:29.071Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -27,10 +27,10 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 46791,
-      "size_human": "45.7 KB",
-      "mtime": "2026-06-19T05:30:22.152Z",
-      "sha256": "69bfe4c114b47d5c7282ca206f0cbdd50460e5661ebeb6b8d9e4a0d3e5d857f3",
+      "size": 46874,
+      "size_human": "45.8 KB",
+      "mtime": "2026-07-18T22:13:38.044Z",
+      "sha256": "ae55c537e0076c1f7e628e293a61901aec7725a6c72047502ee22eb04078344e",
       "attestation_chain": null
     },
     {
@@ -51,6 +51,86 @@
       "size_human": "6.4 KB",
       "mtime": "2026-05-05T14:21:20.342Z",
       "sha256": "bd763bbd155be8af52cd05ea64ddf2b96a204f3e4635f8b2f22da216f92ca743",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "paper_charter",
+      "file": "paper-charter.md",
+      "label": "Paper charter",
+      "size": 1613,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T22:12:22.802Z",
+      "sha256": "cf2931479bbd9fe220e8e9d97a747ca1706de2b639b1233e45a966be329fa5e8",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "literature_summary",
+      "file": "literature-summary.md",
+      "label": "Reader literature summary",
+      "size": 1766,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T22:19:16.369Z",
+      "sha256": "5f0b14252368e291c0fee488f4c489c3e6057347456ce04eed86e7ac2add36f9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "data_summary",
+      "file": "data-summary.md",
+      "label": "Reader data summary",
+      "size": 2086,
+      "size_human": "2.0 KB",
+      "mtime": "2026-07-18T22:19:16.370Z",
+      "sha256": "dccc0bdd1e952b086abe15fbcd19d2017417e5a4cfce80f18cbc734d23036190",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "method_summary",
+      "file": "method-summary.md",
+      "label": "Reader method summary",
+      "size": 1762,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T22:12:22.802Z",
+      "sha256": "cd429c578397782847c84a4000b110609479ce6b5009c0c5b7dbeed1407bd334",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "results_summary",
+      "file": "results-summary.md",
+      "label": "Reader results summary",
+      "size": 2509,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-18T22:18:41.219Z",
+      "sha256": "6de9c62ac29b226a141b0832599fe89575eda7bece405eaa292008bfb67bca38",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "robustness_summary",
+      "file": "robustness-summary.md",
+      "label": "Reader robustness summary",
+      "size": 1857,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T22:20:13.415Z",
+      "sha256": "651699f31fc1ba1b619c8f5d98783edf5492511be17949afb43f4940968156e3",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "limitations_summary",
+      "file": "limitations-summary.md",
+      "label": "Reader limitations summary",
+      "size": 1897,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T22:20:13.416Z",
+      "sha256": "75500ad1fdcb33e9c1ec670ffebceb08df63b7530466d0bd580f3d48ab7ac454",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduction_summary",
+      "file": "reproduction-summary.md",
+      "label": "Reader reproduction summary",
+      "size": 1522,
+      "size_human": "1.5 KB",
+      "mtime": "2026-07-18T22:12:22.805Z",
+      "sha256": "2ce3dbf1b3f2b85db316e7dba88ac95c2ca33d082219f93c057b013add34e9fa",
       "attestation_chain": "ai-first"
     },
     {
@@ -87,11 +167,11 @@
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 5277,
-      "size_human": "5.2 KB",
-      "mtime": "2026-04-25T14:03:42.507Z",
-      "sha256": "d7cf08652578c7ed73da2d65e4d460be8a9fd39b11bd6de794f6ed04bf570c30",
-      "attestation_chain": null
+      "size": 5597,
+      "size_human": "5.5 KB",
+      "mtime": "2026-07-18T22:14:05.627Z",
+      "sha256": "3ba874143f9d1486031953ca246b3fc77047ba068e62580ab0531ad6ded45b46",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
@@ -107,10 +187,10 @@
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 1974,
-      "size_human": "1.9 KB",
-      "mtime": "2026-04-25T13:36:30.089Z",
-      "sha256": "533d35d8b4c9ba1ddce59a67b8823c2c8d87f85899518a24348292e32b847ac0",
+      "size": 2507,
+      "size_human": "2.4 KB",
+      "mtime": "2026-07-18T22:14:15.779Z",
+      "sha256": "50a2781798031d97495d64508e8da03b938b5f8f37cb3ce5b9e14499de87832e",
       "attestation_chain": null
     },
     {
@@ -417,10 +497,20 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 10738,
-      "size_human": "10.5 KB",
-      "mtime": "2026-05-07T03:31:29.831Z",
-      "sha256": "8ac5d2ea407f31981937748e3a59c102ac6cd626fd05d6ef26070fd031c0f1e0",
+      "size": 10837,
+      "size_human": "10.6 KB",
+      "mtime": "2026-07-18T22:14:05.628Z",
+      "sha256": "3a7ce665f8d5e5c3d0b2a0a31ded9476e48b731ae0aa57e2160e870f0b644ab9",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "conclusion",
+      "file": "conclusion.md",
+      "label": "Conclusion and next evidence upgrade",
+      "size": 1261,
+      "size_human": "1.2 KB",
+      "mtime": "2026-07-18T22:12:22.803Z",
+      "sha256": "f1c408b237dba4aab17cf0e3c85840bacc03715c48849d41c3d2232e9e370d38",
       "attestation_chain": "ai-first"
     },
     {
@@ -1094,12 +1184,12 @@
       "key": "background",
       "title": "Research problem and background",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
+          "key": "paper_charter",
+          "file": "paper-charter.md",
+          "label": "Paper charter"
         }
       ]
     },
@@ -1110,9 +1200,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "literature",
-          "file": "literature.md",
-          "label": "Literature review"
+          "key": "literature_summary",
+          "file": "literature-summary.md",
+          "label": "Reader literature summary"
         }
       ]
     },
@@ -1120,17 +1210,12 @@
       "key": "data",
       "title": "Data sources and coverage",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "coverage",
-          "file": "coverage.md",
-          "label": "Coverage"
-        },
-        {
-          "key": "source_action",
-          "file": "SOURCE-ACTION.md",
-          "label": "Source action packet"
+          "key": "data_summary",
+          "file": "data-summary.md",
+          "label": "Reader data summary"
         }
       ]
     },
@@ -1138,17 +1223,12 @@
       "key": "method",
       "title": "Methodology and claim test",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "preregistration",
-          "file": "pre-registration.md",
-          "label": "Pre-registration"
-        },
-        {
-          "key": "scoring",
-          "file": "scoring.md",
-          "label": "Scoring rubric"
+          "key": "method_summary",
+          "file": "method-summary.md",
+          "label": "Reader method summary"
         }
       ]
     },
@@ -1159,9 +1239,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "results",
-          "file": "results.md",
-          "label": "Results"
+          "key": "results_summary",
+          "file": "results-summary.md",
+          "label": "Reader results summary"
         }
       ]
     },
@@ -1169,12 +1249,12 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "sensitivity",
-          "file": "sensitivity.md",
-          "label": "Sensitivity suite"
+          "key": "robustness_summary",
+          "file": "robustness-summary.md",
+          "label": "Reader robustness summary"
         }
       ]
     },
@@ -1182,12 +1262,12 @@
       "key": "limitations",
       "title": "Limitations and what this does not mean",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
-          "key": "limitations",
-          "file": "limitations.md",
-          "label": "Limitations"
+          "key": "limitations_summary",
+          "file": "limitations-summary.md",
+          "label": "Reader limitations summary"
         }
       ]
     },
@@ -1198,9 +1278,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "upgrade_gap",
-          "file": "upgrade-gap.md",
-          "label": "Upgrade-gap memo"
+          "key": "conclusion",
+          "file": "conclusion.md",
+          "label": "Conclusion and next evidence upgrade"
         }
       ]
     },
@@ -1211,9 +1291,9 @@
       "state": "present",
       "artifacts": [
         {
-          "key": "reproduce",
-          "file": "REPRODUCE.md",
-          "label": "Reproducibility guide"
+          "key": "reproduction_summary",
+          "file": "reproduction-summary.md",
+          "label": "Reader reproduction summary"
         }
       ]
     }

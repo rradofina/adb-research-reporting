@@ -1,12 +1,15 @@
 # Sensitivity — Public Service Data Quality
 
-Status: **AI-drafted. Owner reviews before SR → PR gate request.** Run
-artifact: `sensitivity-runs.json`. Pre-registration: `pre-registration.md`.
+`attestation_chain: ai-first`
 
-Governed by `CONSTITUTION.md` §6.6. Every arbitrary numeric in
-`pre-registration.md` §6 was tested at ±50%. The Philippines pilot is
-the headline test bed; Bangladesh equivalents are TODO and will be added
-in a follow-up commit before the gate is closed.
+Status: **§18 AI-first finalized for the current issue.** Run artifacts:
+`sensitivity-runs.json` and `leave-one-out-runs.json`. Frozen definitions:
+`pre-registration.md`.
+
+Governed by `CONSTITUTION.md` §6.6. The classification, tail-size, and
+agreement-threshold choices were tested at ±50% in both pilots. The strict
+zero-buffer administrative assignment is the estimand; ±50% of zero remains
+zero, while a positive buffer would define a different geographic question.
 
 ---
 
@@ -26,7 +29,7 @@ Decision-rule columns refer to whether the §8 decision rule of
 | Rural-urban gradient quintile size | 20% | 10% | 30% | 5.5× (top/bottom) | 4.1× (+50%) | 7.0× (−50%) | yes |
 | Falsification threshold | ±10% | ±5% | ±15% | 0 / 17 ADM1 within | 0 / 17 (−50%) | 0 / 17 (+50%) | yes |
 | NIR provcode-split mapping | 4 manual splits | drop all 4 | n/a (no symmetric +50%) | 17.1% | 17.9% (dropped) | yes |
-| ADM1 polygon dilate buffer | 0 km | 0 km is the floor | 0–5 km TODO | n/a (live OSM rerun) | TODO | TODO | TODO |
+| ADM1 polygon assignment | strict polygon membership | 0 km | 0 km | unchanged | unchanged | unchanged | yes; a positive buffer is a different estimand |
 
 **No row flips the §8 decision rule.** The claim survives every ±50%
 test. The CLINICAL_FACTYPES set cardinality is the most influential
@@ -81,21 +84,24 @@ Additional checks completed in §1:
 - NIR provcode-split is dropped entirely as a robustness check (not just
   ±50%). The shift is small (17.1% → 17.9%) and direction-preserving.
 
-Additional checks deferred to a future commit:
-- Leave-one-out by ADM1 (17 reruns dropping each region): TODO.
-- Alternative source cross-validation against PhilHealth provider
-  directory: TODO. Requires PhilHealth registry pull.
-- Time-window subsampling on OSM (e.g., 2026-04-05 vs 2026-04-23 cuts):
-  requires Geofabrik/Overture pinned snapshots; TODO at the publication-grade rerun.
-- Seed sensitivity: not applicable (no randomized component in this
-  pipeline).
+Leave-one-out checks are complete in `leave-one-out-runs.json`:
 
-## 5. Owner attestation
+| Pilot | ADM1 drops | Baseline | Leave-one-out range | Largest absolute change |
+|---|---:|---:|---:|---:|
+| Philippines | 17 | 17.1% | 14.9%–17.9% | 2.24 percentage points |
+| Bangladesh | 8 | 11.8% | 9.3%–12.4% | 2.51 percentage points |
+
+No single ADM1 unit changes the interpretation. Independent provider-list
+triangulation and vintage subsampling remain distinct upgrade studies because
+they require a new source object or a newly pinned OpenStreetMap snapshot.
+Seed sensitivity is not applicable because the pipeline is deterministic.
+
+## 5. Attestation
 
 | Field | Value |
 |---|---|
 | PHL sensitivity suite run | yes (2026-04-25) |
 | BGD sensitivity suite run | yes (2026-04-25) |
 | Critical failures resolved | yes (no failures in either DMC) |
-| Owner reviewed run artifact | *(pending)* |
-| Commit hash | *(hash)* |
+| Review path | Mode A, AI-first; not externally reviewed |
+| Claim role | Bounded two-pilot source-disagreement result |

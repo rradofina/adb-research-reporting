@@ -382,10 +382,10 @@ same-facility reclassification, or coordinate correction.
   derived `healthsites.io`) is the methodological standard. Adding
   `healthsites.io` and DHIS2 (where deployed) as the third leg is
   the §18.5 upgrade-pass step before any human-final attestation.
-- The result does not yet cover India or Indonesia. The
-  pre-registration scopes this gate to PHL + BGD only. India (HMIS)
-  and Indonesia (SATUSEHAT) pipelines remain TODO until their public or
-  owner-provisioned facility-registry paths pass the source gate.
+- The result does not cover India or Indonesia. The current issue is bounded
+  to PHL + BGD. India (HMIS) and Indonesia (SATUSEHAT) remain outside it until
+  a separately registered public or owner-provisioned facility-registry route
+  passes the source gate.
 - The headline aggregation unit remains ADM1: PHL regions and BGD
   divisions. The upgrade pass now adds PHL ADM3 and BGD upazila context,
   but those lower-level screens are still inspection layers. They are

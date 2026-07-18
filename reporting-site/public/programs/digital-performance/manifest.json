@@ -1,7 +1,7 @@
 {
   "program": "digital-performance",
   "permanent_url": "/digital-performance?view=evidence",
-  "generated_at": "2026-07-18T22:04:18.974Z",
+  "generated_at": "2026-07-18T22:24:30.741Z",
   "hero": {
     "png": "generated/charts/digital-performance-thumbnail.png",
     "svg": "generated/charts/digital-performance-thumbnail.svg",
@@ -388,11 +388,6 @@
           "key": "paper_charter",
           "file": "paper-charter.md",
           "label": "Paper charter"
-        },
-        {
-          "key": "readme",
-          "file": "README.md",
-          "label": "Overview"
         }
       ]
     },
@@ -432,11 +427,6 @@
           "key": "preregistration",
           "file": "pre-registration.md",
           "label": "Pre-registration"
-        },
-        {
-          "key": "scoring",
-          "file": "scoring.md",
-          "label": "Scoring rubric"
         }
       ]
     },

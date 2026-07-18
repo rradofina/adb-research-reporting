@@ -64,7 +64,7 @@
     {
       "slug": "flood-market-access",
       "title": "Deepened result",
-      "outcome": "computed + frontier wall",
+      "outcome": "computed",
       "has_script": true,
       "has_artifact": true,
       "artifact": "flood-decompose-deepening.json",

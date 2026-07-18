@@ -105,6 +105,11 @@ end-to-end.
   Nepal coarse-rice spike cells, of which 17 follow locally dry rainfall at one
   month; dry alignment remains a minority in all 81 threshold runs. Article:
   `articles/food-price-joint-qualifier.md`.
+- **flood-market-access** — national flood-event × rural-population proxy
+  retired. The Sylhet event pilot joins observed flood water, historical roads,
+  mapped marketplaces, and WorldPop; the base model disconnects 345,718 people
+  and all 54 variants remain between 38.92% and 43.45%. Article:
+  `articles/flood-market-access-cluster.md`.
 
 ### Prepared Pipeline (other)
 
@@ -153,6 +158,7 @@ promotion)*
 | 2026-05-07 | school-heat-disruption | SR → PP | (this commit) | ai-first | Same demotion reason |
 | 2026-07-18 | water-stress-crop-diversification | PP construct-validation issue closed | (this commit) | ai-first | Inherited country ranking rejected; full paper and nine-figure evidence spine built |
 | 2026-07-19 | food-price-climate-transmission | PP construct-validation issue closed | (this commit) | ai-first | Annual qualifier and old price-wave method retired; corrected 12-market Nepal paper and ten-figure evidence spine built |
+| 2026-07-19 | flood-market-access | PP construct-validation issue closed | (this commit) | ai-first | National proxy retired; one-event Sylhet route object, full paper, ten-figure evidence spine, and 54-run sensitivity grid built |
 
 ---
 

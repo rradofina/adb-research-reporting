@@ -1,42 +1,43 @@
-# External red-team review — Flood Market Access
+# Owner-led review brief — Sylhet observed-flood route pilot
 
-`attestation_chain: ai-first`. §18.4 AI synthesis. Closed 2026-04-26.
+`attestation_chain: ai-first` · No external reviewer contacted
 
-**No individual reviewer was contacted.**
+## Review decision requested
 
-## Roster
+Should the issue remain a PP construct-validation pilot, or is there sufficient
+human-verified source and domain evidence to advance it under Constitution
+§18.5?
 
-| ID | Institution | Synthesized from |
-|---|---|---|
-| C-1 | CRED EM-DAT | Threshold limitations |
-| C-2 | GLOFAS / ECMWF | Modeled flood-extent methodology |
-| C-3 | World Bank Rural Roads | Market-access proxy frameworks |
-| C-4 | ANU Devpolicy / Pacific flood vulnerability | Per-capita exposure |
+## Please verify
 
-## Objections
+1. **UNOSAT interpretation:** confirm that the downloaded flood and analysis
+   shapefiles are the intended layers for product 3888 and that the 144.5 km²
+   versus “about 134 km²” disagreement is represented fairly.
+2. **Passability model:** judge whether any-water-plus-buffer removal is
+   acceptable as a stress-test counterfactual and not as observed closure.
+3. **Market inventory:** compare the eight deduplicated OSM destinations with a
+   local or official market registry, including informal markets and event-day
+   operation.
+4. **Boundary:** assess whether restricting roads and markets to the UNOSAT
+   footprint is appropriate or whether a larger, fully observed flood surface is
+   needed to represent outbound bypasses.
+5. **Population:** confirm the WorldPop product, vintage, license, and use of the
+   unconstrained raster.
+6. **OpenStreetMap:** verify ODbL attribution and the historical Overpass query.
+7. **Claim language:** confirm that “modeled disconnection” is never shortened
+   to closure, isolation, impact, or welfare loss without qualification.
 
-**C-1 (CRED).** EM-DAT counts events meeting thresholds. Small
-recurrent floods are under-counted. Article should note that
-"flood frequency" means "qualifying-event frequency," not all flooding.
+## Reproduce before review
 
-**C-2 (GLOFAS).** Modeled flood-extent (GLOFAS, FATHOM) provides
-exposure layers; observed events alone undercount. §18.5 upgrade-pass.
+```powershell
+python flood-market-access/scripts/build-sylhet-route-pilot.py
+python flood-market-access/scripts/build-figure-dossier.py
+```
 
-**C-3 (WB Rural Roads).** "Market access" requires road density and
-all-weather road share. WDI doesn't expose these consistently. The
-current artifact uses rural-share as a coarse proxy.
+Expected base result: 345,718 modeled people disconnected, 41.24% of
+baseline-accessible population; 38.92%–43.45% across 54 variants.
 
-**C-4 (Pacific).** Per-capita affected populations in single Pacific
-flood events (e.g., 2009 PNG, 2016 FJI) exceed any large-country
-share but are absorbed by the absolute-frequency metric.
+## Hard wall
 
-## Responses
-
-All accepted. Documented in limitations.md. §18.5 upgrade-pass:
-(a) GLOFAS modeled-extent integration; (b) all-weather road density
-from WB rural-roads + OSM; (c) per-capita affected as alternative
-metric.
-
-## §18.4 non-claim
-
-No individual reviewer was contacted.
+Reviewer identity and outreach require owner action. This repository records the
+brief but does not name, contact, or simulate an external reviewer.

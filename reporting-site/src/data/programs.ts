@@ -93,12 +93,12 @@ export const programs: ProgramEntry[] = [
   {
     id: 8,
     slug: "flood-market-access",
-    title: "Flood-driven service and market isolation",
-    status: "SR",
+    title: "Flooded routes to market in Sylhet",
+    status: "PP",
     summary:
-      "EM-DAT flood events × WDI rural share × population proxy across 41 ADB DMCs. Stable top-4: India, China, Indonesia, Afghanistan. Road-network disruption remains the upgrade-pass.",
-    note: "Screening result only; not yet an all-weather road or market-access model.",
-    href: "/program/flood-market-access/evidence",
+      "Under a mechanical road-cut stress test, 345,718 modeled people—41.24% of the baseline-accessible population—lose a route to eight mapped marketplaces; the share stays 38.92%–43.45% across 54 variants.",
+    note: "PP construct validation. Water intersection is not observed closure, and the OSM market inventory is not independently validated.",
+    href: "/flood-market-access",
   },
   {
     id: 9,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T17:20:08.117Z",
+  "generated_at": "2026-07-18T18:39:53.145Z",
   "heroes": [
     {
       "slug": "public-service-data-quality",
@@ -283,20 +283,20 @@
         "png": "generated/charts/flood-market-access-thumbnail.png",
         "svg": "generated/charts/flood-market-access-thumbnail.svg",
         "json": "generated/charts/flood-market-access-thumbnail.json",
-        "title": "Four economies absorb the flood-event burden",
-        "caption": "India 9.0/yr · China 8.6/yr · Indonesia 8.2/yr · Afghanistan 3.7/yr — stable top-4 across ±50 % sensitivity.",
-        "headline_number": "China 9.0 flood events/yr",
-        "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
-        "source": "EM-DAT 2000–2025 + WDI rural share",
+        "title": "Flood water cuts modeled market access for about 346,000 people",
+        "caption": "In the Sylhet base specification, 41.24% of baseline-accessible covered population loses a modeled route to an OSM-mapped marketplace.",
+        "headline_number": "345,718 · 41.24%",
+        "visual_form": "routed-access finding card",
+        "source": "flood-market-access/generated/flood-sylhet-route-pilot.json",
         "attestation_chain": "ai-first",
-        "generated_at": "2026-05-19T15:41:26+00:00",
+        "generated_at": "2026-07-18T18:29:34.226756+00:00",
         "dimensions": {
-          "width": 1600,
-          "height": 900
+          "width": 2570,
+          "height": 1472
         },
         "sha256": {
-          "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
-          "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+          "png": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815",
+          "svg": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
         }
       }
     },

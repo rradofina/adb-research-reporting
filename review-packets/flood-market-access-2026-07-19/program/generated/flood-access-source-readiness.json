@@ -1,0 +1,950 @@
+{
+  "program": "flood-market-access",
+  "analysis": "flood market-access source-readiness audit",
+  "claim_scope": "Source-readiness wall for the road, market, population, and observed-flood layers needed after the index decomposition. Public metadata/index pages are visible for all four required layer families, but the analysis-ready routed access object remains uncomputed. This is not a flood-market-access, road-isolation, market-service, or access-loss estimate.",
+  "retrieved_at": "2026-06-19T20:02:12Z",
+  "sources": {
+    "hdx_wfp_package_api": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+    "geofabrik_asia": "https://download.geofabrik.de/asia.html",
+    "geofabrik_australia_oceania": "https://download.geofabrik.de/australia-oceania.html",
+    "worldpop_wpgp": "https://www.worldpop.org/rest/data/pop/wpgp",
+    "global_flood_database_project": "https://global-flood-database.cloudtostreet.ai/",
+    "global_flood_database_earth_engine_catalog": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+    "nasa_nrt_global_flood_products": "https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products",
+    "nasa_cmr_collections": "https://cmr.earthdata.nasa.gov/search/collections.json"
+  },
+  "summary": {
+    "access_source_layers_checked": 4,
+    "road_extract_total_pbf_links_visible": 109,
+    "road_extract_latest_pbf_links_visible": 65,
+    "market_package_resources": 1,
+    "market_csv_resources": 1,
+    "market_csv_size_mb": 225.8,
+    "market_csv_header_fields": [
+      "adm0_id",
+      "adm0_name",
+      "adm1_id",
+      "adm1_name",
+      "mkt_id",
+      "mkt_name",
+      "cm_id",
+      "cm_name",
+      "cur_id",
+      "cur_name",
+      "pt_id",
+      "pt_name",
+      "um_id",
+      "um_name",
+      "mp_month",
+      "mp_year",
+      "mp_price",
+      "mp_commoditysource"
+    ],
+    "market_coordinate_fields_visible_in_sample_header": false,
+    "worldpop_dataset_rows": 5221,
+    "worldpop_panel_rows": 861,
+    "worldpop_panel_iso_with_rows": 41,
+    "worldpop_latest_year": 2020,
+    "gfd_earth_engine_dataset_id_visible": true,
+    "gfd_earth_engine_event_count_parsed": 913,
+    "gfd_earth_engine_period_2000_2018_visible": true,
+    "nasa_nrt_modis_viirs_flood_products_visible": true,
+    "cmr_flood_discovery_entries": 4,
+    "road_graph_built": false,
+    "market_points_joined": false,
+    "population_grid_downloaded": false,
+    "observed_flood_footprint_downloaded": false,
+    "flooded_edges_cut": false,
+    "routed_travel_time_computed": false,
+    "population_weighted_access_loss_estimated": false,
+    "analysis_ready_network_join": false,
+    "headline_top4": [
+      "IND",
+      "IDN",
+      "CHN",
+      "AFG"
+    ],
+    "per_capita_top4": [
+      "MHL",
+      "FSM",
+      "KIR",
+      "VUT"
+    ],
+    "dropped_per_capita": [
+      "IND",
+      "IDN",
+      "CHN",
+      "AFG"
+    ],
+    "owner_gated_or_unfinished_steps": [
+      "No Geofabrik/OSM extract is downloaded and no routable graph or bridge-edge table is built.",
+      "The WFP CSV resource is visible, but only a header sample is inspected; market coordinates are not confirmed or geocoded.",
+      "No WorldPop raster is downloaded and no settlement/population weight is computed.",
+      "Observed flood-footprint catalogs are visible, but no MODIS/SAR/event raster is downloaded or exported.",
+      "No road edges are cut by a flood footprint, no market routes are recomputed, and no access-loss estimate is produced."
+    ]
+  },
+  "source_rows": [
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract indexes",
+      "source_url": "https://download.geofabrik.de/asia.html; https://download.geofabrik.de/australia-oceania.html",
+      "key_id": "Asia and Australia-Oceania .osm.pbf extract indexes",
+      "public_metadata_reachable": true,
+      "candidate_links": 109,
+      "sample_data_links": 65,
+      "status": "extract indexes reachable; no road graph or travel-time engine built",
+      "notes": "109 unique .osm.pbf links are visible, including 65 latest extract links; none are downloaded or routed."
+    },
+    {
+      "layer_role": "market_locations",
+      "source_name": "HDX/WFP Global Food Prices Database",
+      "source_url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+      "key_id": "12d7c8e3-eff9-4db0-93b7-726825c4fe9a",
+      "public_metadata_reachable": true,
+      "candidate_links": 1,
+      "sample_data_links": 1,
+      "status": "market-price CSV resource visible; full file and geocoded market points not joined",
+      "notes": "Package has 1 resource(s), 1 CSV resource(s), main CSV size 225.8 MB, and header fields adm0_id, adm0_name, adm1_id, adm1_name, mkt_id, mkt_name, cm_id, cm_name. Coordinate fields visible in the sampled header: False."
+    },
+    {
+      "layer_role": "population_weight",
+      "source_name": "WorldPop gridded population dataset catalog",
+      "source_url": "https://www.worldpop.org/rest/data/pop/wpgp",
+      "key_id": "wpgp",
+      "public_metadata_reachable": true,
+      "candidate_links": 5221,
+      "sample_data_links": 861,
+      "status": "dataset catalog reachable; no population raster downloaded or zonal weight computed",
+      "notes": "5221 WorldPop dataset rows are visible; 861 rows cover 41 economies in the flood panel; latest listed year is 2020."
+    },
+    {
+      "layer_role": "observed_flood_footprint",
+      "source_name": "Global Flood Database and NASA NRT flood-product metadata",
+      "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+      "key_id": "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+      "public_metadata_reachable": true,
+      "candidate_links": 8,
+      "sample_data_links": 0,
+      "status": "public catalog pages reachable; no event raster, SAR/MODIS mask, or network overlay downloaded",
+      "notes": "Earth Engine catalog exposes dataset ID=True, event count parsed=913, period flag 2000-2018=True; NASA NRT MODIS/VIIRS page visible=True; CMR flood-discovery entries=4."
+    },
+    {
+      "layer_role": "analysis_ready_access_join",
+      "source_name": "Road x market x population x observed-flood network overlay",
+      "source_url": "",
+      "key_id": "not_computed",
+      "public_metadata_reachable": false,
+      "candidate_links": 0,
+      "sample_data_links": 0,
+      "status": "not joined",
+      "notes": "No OSM extract, WFP market table, WorldPop raster, or flood-footprint layer is joined into a routed access-loss estimate."
+    }
+  ],
+  "geofabrik_detail": {
+    "total_pbf_links": 109,
+    "latest_pbf_links": 65,
+    "sample_latest_links": [
+      "https://download.geofabrik.de/asia-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/afghanistan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/armenia-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/azerbaijan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/bangladesh-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/bhutan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/cambodia-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/china-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/east-timor-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/india-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/indonesia-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/iran-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/iraq-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/japan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/jordan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/kazakhstan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/kyrgyzstan-latest.osm.pbf",
+      "https://download.geofabrik.de/asia/laos-latest.osm.pbf"
+    ]
+  },
+  "wfp_detail": {
+    "package_title": "Global Food Prices Database (WFP)",
+    "resource_id": "12d7c8e3-eff9-4db0-93b7-726825c4fe9a",
+    "resource_name": "Global Food Prices Database (WFP)",
+    "resource_url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+    "resource_size_bytes": 225787557,
+    "resource_size_mb": 225.8,
+    "csv_resource_count": 1,
+    "header_fields": [
+      "adm0_id",
+      "adm0_name",
+      "adm1_id",
+      "adm1_name",
+      "mkt_id",
+      "mkt_name",
+      "cm_id",
+      "cm_name",
+      "cur_id",
+      "cur_name",
+      "pt_id",
+      "pt_name",
+      "um_id",
+      "um_name",
+      "mp_month",
+      "mp_year",
+      "mp_price",
+      "mp_commoditysource"
+    ],
+    "geocoded_fields_visible_in_sample_header": false,
+    "head_content_length": "225787557",
+    "range_content_range": "bytes 0-4095/225787557"
+  },
+  "worldpop_detail": {
+    "dataset_rows": 5221,
+    "panel_rows": 861,
+    "panel_iso_with_rows": 41,
+    "panel_iso_list_with_rows": [
+      "AFG",
+      "ARM",
+      "AZE",
+      "BGD",
+      "BRN",
+      "BTN",
+      "CHN",
+      "FJI",
+      "FSM",
+      "GEO",
+      "HKG",
+      "IDN",
+      "IND",
+      "KAZ",
+      "KGZ",
+      "KHM",
+      "KIR",
+      "LAO",
+      "LKA",
+      "MDV",
+      "MHL",
+      "MMR",
+      "MNG",
+      "MYS",
+      "NPL",
+      "NRU",
+      "PAK",
+      "PHL",
+      "PLW",
+      "PNG",
+      "SLB",
+      "THA",
+      "TJK",
+      "TKM",
+      "TLS",
+      "TON",
+      "TUV",
+      "UZB",
+      "VNM",
+      "VUT",
+      "WSM"
+    ],
+    "latest_year": 2020,
+    "sample_panel_rows": [
+      {
+        "id": "1339",
+        "title": "The spatial distribution of population in 2000, Lao Peoples Democratic Republic",
+        "popyear": "2000",
+        "iso3": "LAO"
+      },
+      {
+        "id": "1340",
+        "title": "The spatial distribution of population in 2000, Sri Lanka",
+        "popyear": "2000",
+        "iso3": "LKA"
+      },
+      {
+        "id": "1342",
+        "title": "The spatial distribution of population in 2000, Nepal",
+        "popyear": "2000",
+        "iso3": "NPL"
+      },
+      {
+        "id": "1344",
+        "title": "The spatial distribution of population in 2000, Philippines",
+        "popyear": "2000",
+        "iso3": "PHL"
+      },
+      {
+        "id": "1352",
+        "title": "The spatial distribution of population in 2000, Afghanistan",
+        "popyear": "2000",
+        "iso3": "AFG"
+      }
+    ]
+  },
+  "flood_footprint_detail": {
+    "gfd_cloud_page_reachable": true,
+    "earth_engine_catalog_reachable": true,
+    "earth_engine_dataset_id_visible": true,
+    "earth_engine_event_count_parsed": 913,
+    "earth_engine_period_2000_2018_visible": true,
+    "nasa_nrt_page_reachable": true,
+    "nasa_nrt_modis_viirs_flood_products_visible": true,
+    "cmr_keyword_url": "https://cmr.earthdata.nasa.gov/search/collections.json?keyword=Dartmouth+Flood+Observatory&page_size=10",
+    "cmr_keyword_entry_count": 4,
+    "cmr_keyword_entries": [
+      {
+        "id": "C2232848552-CEOS_EXTRA",
+        "short_name": "5fc22275-7f8d-4af0-82cc-7964849aa878",
+        "title": "Physical exposition to flood",
+        "data_center": "CEOS_EXTRA"
+      },
+      {
+        "id": "C1214614443-SCIOPS",
+        "short_name": "Dartmouth_Wetlands",
+        "title": "Wetlands Monitoring with QuikSCAT",
+        "data_center": "SCIOPS"
+      },
+      {
+        "id": "C2232848956-CEOS_EXTRA",
+        "short_name": "c5064da0-ce61-47fc-b17f-c837bd2847be",
+        "title": "Flood events",
+        "data_center": "CEOS_EXTRA"
+      },
+      {
+        "id": "C3550186069-ESDIS",
+        "short_name": "CIESIN_CHRR_NDH_FLOOD_HFD",
+        "title": "Global Flood Hazard Frequency and Distribution",
+        "data_center": "ESDIS"
+      }
+    ]
+  },
+  "sample_link_rows": [
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/afghanistan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/armenia-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/azerbaijan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/bangladesh-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/bhutan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/cambodia-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/china-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/east-timor-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/india-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/indonesia-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/iran-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/iraq-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/japan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/jordan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/kazakhstan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/kyrgyzstan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/laos-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/lebanon-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/malaysia-singapore-brunei-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/maldives-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/mongolia-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/myanmar-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/nepal-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/north-korea-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/pakistan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/philippines-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/sea-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/south-korea-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/sri-lanka-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/syria-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/taiwan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/tajikistan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/thailand-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/turkmenistan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/uzbekistan-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/vietnam-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "road_network",
+      "source_name": "Geofabrik OpenStreetMap extract index",
+      "href": "https://download.geofabrik.de/asia/yemen-latest.osm.pbf",
+      "rel_or_label": "latest .osm.pbf extract",
+      "file_type": "pbf",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "market_locations",
+      "source_name": "HDX/WFP Global Food Prices Database",
+      "href": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+      "rel_or_label": "Global Food Prices Database (WFP)",
+      "file_type": "csv",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "population_weight",
+      "source_name": "WorldPop REST dataset list",
+      "href": "https://www.worldpop.org/rest/data/pop/wpgp",
+      "rel_or_label": "wpgp population dataset API",
+      "file_type": "json",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "observed_flood_footprint",
+      "source_name": "Observed flood-footprint candidate metadata",
+      "href": "https://global-flood-database.cloudtostreet.ai/",
+      "rel_or_label": "Global Flood Database project page",
+      "file_type": "html/json",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "observed_flood_footprint",
+      "source_name": "Observed flood-footprint candidate metadata",
+      "href": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+      "rel_or_label": "Earth Engine catalog: GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+      "file_type": "html/json",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "observed_flood_footprint",
+      "source_name": "Observed flood-footprint candidate metadata",
+      "href": "https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products",
+      "rel_or_label": "NASA NRT Global Flood Products",
+      "file_type": "html/json",
+      "selected_for_analysis": false
+    },
+    {
+      "layer_role": "observed_flood_footprint",
+      "source_name": "Observed flood-footprint candidate metadata",
+      "href": "https://cmr.earthdata.nasa.gov/search/collections.json?keyword=Dartmouth+Flood+Observatory&page_size=10",
+      "rel_or_label": "NASA CMR keyword search: Dartmouth Flood Observatory",
+      "file_type": "json",
+      "selected_for_analysis": false
+    }
+  ],
+  "cache_records": [
+    {
+      "url": "https://download.geofabrik.de/asia.html",
+      "cache_path": ".cache\\flood-access-source-readiness\\geofabrik_asia.html",
+      "bytes": 29923,
+      "sha256": "b72e3b0362e4653c72024d5d191007b8bed68366b717fc89264743399b8cb707",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:02:15 GMT",
+        "Server": "Apache",
+        "Last-Modified": "Fri, 19 Jun 2026 20:00:06 GMT",
+        "ETag": "\"74e3-654a0bd3fea22\"",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "29923",
+        "Vary": "Accept-Encoding",
+        "Content-Type": "text/html",
+        "Cache-Status": "download-proxy11;detail=match",
+        "Via": "1.1 download-proxy11 (squid/6.14)",
+        "Connection": "close"
+      },
+      "query_type": "geofabrik_extract_index",
+      "region": "Asia"
+    },
+    {
+      "url": "https://download.geofabrik.de/australia-oceania.html",
+      "cache_path": ".cache\\flood-access-source-readiness\\geofabrik_oceania.html",
+      "bytes": 25127,
+      "sha256": "76d0afbf89573d311935a036ea8bacc8d99b77d9975af23fad5db7657bea6929",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:02:16 GMT",
+        "Server": "Apache",
+        "Last-Modified": "Fri, 19 Jun 2026 20:00:11 GMT",
+        "ETag": "\"6227-654a0bd841380\"",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "25127",
+        "Vary": "Accept-Encoding",
+        "Content-Type": "text/html",
+        "Cache-Status": "download-proxy11;detail=match",
+        "Via": "1.1 download-proxy11 (squid/6.14)",
+        "Connection": "close"
+      },
+      "query_type": "geofabrik_extract_index",
+      "region": "Australia-Oceania"
+    },
+    {
+      "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+      "cache_path": ".cache\\flood-access-source-readiness\\hdx_wfp_food_prices_package.json",
+      "bytes": 18531,
+      "sha256": "80645f068a3c6e5f32cb2ec2f6f3cf9e3f3956cb519a349967fa8a2fd4b89548",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:02:17 GMT",
+        "Content-Type": "application/json;charset=utf-8",
+        "Content-Length": "18531",
+        "Connection": "close",
+        "Vary": "Cookie",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Access-Control-Allow-Origin": "*",
+        "Server": "data.humdata.org",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload; always;",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Robots-Tag": "index, follow",
+        "X-Nginx-Cache": "MISS",
+        "X-Nginx-Backend": "http://ckan-api:5000 (10.99.5.39:5000)"
+      },
+      "query_type": "hdx_package_show",
+      "package_id": "wfp-food-prices"
+    },
+    {
+      "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "x-amz-id-2": "VNjPTDPSjnohdWDV8KHLe0LAcmbcgEGzX6L4ekK8GvzwZbsypU0RhfNpD4cWzGxjFpGVEb/F1ouXdJCKM656xO4v0exzM13Q",
+        "x-amz-request-id": "34AWSFXE9VP6V9QH",
+        "Date": "Fri, 19 Jun 2026 20:02:20 GMT",
+        "Last-Modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+        "ETag": "\"fdb868ff70ca3598ddde0130eb0cbdd7\"",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-version-id": "q_79YtUuHnxLPyn3Imly60cjQYlzGlRC",
+        "Accept-Ranges": "bytes",
+        "Content-Type": "text/csv",
+        "Content-Length": "225787557",
+        "Server": "AmazonS3",
+        "Connection": "close"
+      },
+      "query_type": "wfp_csv_head",
+      "cache_path": ""
+    },
+    {
+      "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv",
+      "cache_path": ".cache\\flood-access-source-readiness\\wfpvam_foodprices_header_sample.csv",
+      "bytes": 4096,
+      "sha256": "06325943333a61982be8d20e2f74b9edbb3967e513520d85bfdc75f7abee2466",
+      "status_code": 206,
+      "fetch_mode": "live",
+      "response_headers": {
+        "x-amz-id-2": "CrdSKWhj7NFqXYg5nmK7uHkYw2HVYf7CYee0SsUJCtS3qguHIGD+mK1PVabRJb0p1FJYCkAAr+RJ2bln5y6D5jBR20FHh768",
+        "x-amz-request-id": "2A08X1HJQ6A7142Q",
+        "Date": "Fri, 19 Jun 2026 20:02:22 GMT",
+        "Last-Modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+        "ETag": "\"fdb868ff70ca3598ddde0130eb0cbdd7\"",
+        "x-amz-server-side-encryption": "AES256",
+        "x-amz-version-id": "q_79YtUuHnxLPyn3Imly60cjQYlzGlRC",
+        "Accept-Ranges": "bytes",
+        "Content-Range": "bytes 0-4095/225787557",
+        "Content-Type": "text/csv",
+        "Content-Length": "4096",
+        "Server": "AmazonS3",
+        "Connection": "close"
+      },
+      "range_request": "bytes=0-4095",
+      "query_type": "wfp_csv_range_header_sample"
+    },
+    {
+      "url": "https://www.worldpop.org/rest/data/pop/wpgp",
+      "cache_path": ".cache\\flood-access-source-readiness\\worldpop_wpgp.json",
+      "bytes": 594757,
+      "sha256": "3215107e5d5ca3dbf61d285839f8971ec61d106695468d71e407cdf0576e2f6f",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Date": "Fri, 19 Jun 2026 20:02:22 GMT",
+        "Server": "Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.5",
+        "X-Powered-By": "PHP/8.0.30",
+        "#01": "[21:02:22 73404600 SQL QUERY      ] SELECT `id`,`rest` FROM `project` WHERE `alias` = \"pop\" LIMIT 1",
+        "#02": "[21:02:22 73519000 SQL QUERY      ] SELECT id FROM `category` WHERE `alias` = \"wpgp\" LIMIT 1",
+        "#03": "[21:02:22 73602100 SQL QUERY      ] SELECT g.id, g.title, g.popyear, c.iso3 FROM gdata g LEFT JOIN country c ON g.country_id = c.id WHERE g.category_id = 29 AND g.public = 'Y'",
+        "Content-Encoding": "none",
+        "Connection": "close",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json"
+      },
+      "query_type": "worldpop_population_dataset_list"
+    },
+    {
+      "url": "https://global-flood-database.cloudtostreet.ai/",
+      "cache_path": ".cache\\flood-access-source-readiness\\global_flood_database_cloudtostreet.html",
+      "bytes": 2369,
+      "sha256": "4b9f27511e9b4912d6a78a5f8a6803c7d5a817b54b071a6e7b5156e2ba38b20d",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "vary": "Accept-Encoding",
+        "x-cloud-trace-context": "7eb08398212c8b5c9008e6c9e2980051;o=1",
+        "date": "Fri, 19 Jun 2026 20:02:24 GMT",
+        "server": "Google Frontend",
+        "Content-Length": "2369",
+        "Connection": "close"
+      },
+      "query_type": "global_flood_database_site"
+    },
+    {
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+      "cache_path": ".cache\\flood-access-source-readiness\\global_flood_database_earth_engine_catalog.html",
+      "bytes": 107846,
+      "sha256": "6714b5d87cbfa33d02f1cf8cdfdab6a01f38f867e66578918e15fca3f9e4a83b",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "last-modified": "Wed, 06 May 2026 18:50:49 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "vary": "Cookie",
+        "content-security-policy": "base-uri 'self'; object-src 'none'; script-src 'strict-dynamic' 'unsafe-inline' https: http: 'nonce-+Yi4hoQwUN+k3nbQ1LaWbGRt1YHYn7' 'unsafe-eval'; frame-ancestors 'self' https://codeassist.google.com https://code-assist-free-tier.corp.google.com; report-uri https://csp.withgoogle.com/csp/devsite/v2",
+        "strict-transport-security": "max-age=63072000; includeSubdomains; preload",
+        "x-xss-protection": "0",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache, must-revalidate",
+        "expires": "0",
+        "pragma": "no-cache",
+        "x-cloud-trace-context": "26e4e0a07abe23a713aae5b07cd693fe",
+        "date": "Fri, 19 Jun 2026 20:02:24 GMT",
+        "server": "Google Frontend",
+        "Content-Length": "107846",
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Connection": "close"
+      },
+      "query_type": "earth_engine_data_catalog",
+      "dataset_id": "GLOBAL_FLOOD_DB/MODIS_EVENTS/V1"
+    },
+    {
+      "url": "https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products",
+      "cache_path": ".cache\\flood-access-source-readiness\\nasa_nrt_global_flood_products.html",
+      "bytes": 158360,
+      "sha256": "1e9794be204bbec4947ba5647ddcb965a6b59eb829b24563da49f13112ccc34f",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Content-Length": "158360",
+        "Connection": "close",
+        "Date": "Fri, 19 Jun 2026 20:02:25 GMT",
+        "Server": "ServerTokens ProductOnly",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "X-Powered-By": "PHP/8.3.24",
+        "Cache-Control": "max-age=21600, public",
+        "X-Drupal-Dynamic-Cache": "HIT",
+        "Content-language": "en",
+        "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+        "Last-Modified": "Fri, 19 Jun 2026 20:02:25 GMT",
+        "ETag": "\"1781899345\"",
+        "Vary": "Cookie,Accept-Encoding",
+        "X-Generator": "Drupal 10 (https://www.drupal.org)",
+        "X-Request-Id": "rJtF1FdcVMeEKByJIEpbVhMkHAYLyLymQMUa72-WwgavVkYMjAqCmQ==",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 b272c1f126011069f9ff56625304953e.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "LAX54-P8",
+        "X-Amz-Cf-Id": "rJtF1FdcVMeEKByJIEpbVhMkHAYLyLymQMUa72-WwgavVkYMjAqCmQ=="
+      },
+      "query_type": "nasa_nrt_global_flood_products"
+    },
+    {
+      "url": "https://cmr.earthdata.nasa.gov/search/collections.json?keyword=Dartmouth+Flood+Observatory&page_size=10",
+      "cache_path": ".cache\\flood-access-source-readiness\\cmr_dartmouth_flood_observatory_collections.json",
+      "bytes": 10588,
+      "sha256": "05c7b6ecf3efe8e62c84be2aa5f65448ef39684cbfc561747824d6431943e2b1",
+      "status_code": 200,
+      "fetch_mode": "live",
+      "response_headers": {
+        "Content-Type": "application/json;charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Date": "Fri, 19 Jun 2026 20:02:26 GMT",
+        "Server": "ServerTokens ProductOnly",
+        "Vary": "Accept-Encoding",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Access-Control-Allow-Origin": "*",
+        "X-XSS-Protection": "1; mode=block",
+        "CMR-Request-Id": "f83ef444-9d89-466d-b560-2a2ed2f7e5b0",
+        "Content-SHA1": "9c32387d515ad6b955a12af899ed4a890dcbceb2",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "CMR-Search-After": "[0.6,0.0,1072828800000,\"4 - gridded model output\",\"CIESIN_CHRR_NDH_FLOOD_HFD\",\"1.0\",3550186069,4]",
+        "CMR-Hits": "4",
+        "Access-Control-Expose-Headers": "CMR-Hits, CMR-Request-Id, X-Request-Id, CMR-Scroll-Id, CMR-Search-After, CMR-Timed-Out, CMR-Shapefile-Original-Point-Count, CMR-Shapefile-Simplified-Point-Count",
+        "X-Content-Type-Options": "nosniff",
+        "CMR-Took": "129",
+        "X-Request-Id": "ckrxLmCYp_2qxsRXALqhbsWfHyLaEd-cVxxO_MgrxxMB28yaO6C9vA==",
+        "Content-MD5": "af20490ac9c65b8992abce2d04dcf5cb",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 00d27e43937ab924f4e5b4a79619d08a.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "LAX53-P6",
+        "X-Amz-Cf-Id": "ckrxLmCYp_2qxsRXALqhbsWfHyLaEd-cVxxO_MgrxxMB28yaO6C9vA=="
+      },
+      "query_type": "cmr_keyword_search",
+      "keyword": "Dartmouth Flood Observatory"
+    }
+  ],
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-06-19T20:02:12Z"
+}

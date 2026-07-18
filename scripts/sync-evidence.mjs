@@ -152,6 +152,7 @@ const ARTIFACTS = [
   { key: "review_internal", file: "review-internal.md", label: "Internal review" },
   { key: "review_external", file: "review-external.md", label: "External red-team review" },
   { key: "limitations", file: "limitations.md", label: "Limitations" },
+  { key: "conclusion", file: "conclusion.md", label: "Conclusion and next evidence upgrade" },
   { key: "upgrade_gap", file: "upgrade-gap.md", label: "Upgrade-gap memo" },
   { key: "sr_to_pr", file: "SR-to-PR.md", label: "Gate request — SR → PR" },
 ];
@@ -213,7 +214,7 @@ function syncProgram(slug) {
     { key: "results", title: "Results", candidates: ["results"] },
     { key: "robustness", title: "Sensitivity and robustness", candidates: ["sensitivity"] },
     { key: "limitations", title: "Limitations and what this does not mean", candidates: ["limitations"] },
-    { key: "conclusion", title: "Conclusion and next evidence upgrade", candidates: ["upgrade_gap"] },
+    { key: "conclusion", title: "Conclusion and next evidence upgrade", candidates: ["conclusion", "upgrade_gap"] },
     { key: "reproduce", title: "Reproduce the analysis", candidates: ["reproduce"] },
   ];
   const story = storySpecs.map((section) => {

@@ -1,42 +1,80 @@
-# Pre-registration — Flood Market Access
+# Design record — Sylhet observed-flood route pilot
 
-`attestation_chain: ai-first`. §18 frozen 2026-04-26. **Honest top-4
-narrowing.**
+`attestation_chain: ai-first` · Recorded 2026-07-19
 
-## 1. Claim
+This file occupies the factory's pre-registration slot, but it is **not a
+prospective registration**. Source qualification and exploratory computation
+preceded this record. It freezes the published construct, sensitivity grid,
+claim limits, and decision rules so later presentation work cannot improve the
+story by silently changing the model.
 
-> Four ADB DMCs — India, China, Indonesia, Afghanistan — persistently
-> hold the top-4 flood-market-access pressure index positions across
-> alternative metric formulations (full index, flood-events-only,
-> rural × floods).
+## Question
 
-## 2. Falsification
+Within the 26 June 2024 UNOSAT analysis footprint in Sylhet, how much modeled
+population loses a road-network route to an OpenStreetMap-mapped marketplace if
+every road segment intersecting satellite-detected flood water is treated as
+unavailable?
 
-Top-4 set composition changes by ≥ 1 entry under any alternative
-metric.
+## Unit and population
 
-## 3. Population
+- Origin unit: positive WorldPop 2020 raster cell inside the UNOSAT footprint.
+- Destination unit: historical OSM `amenity=marketplace` object inside the same
+  footprint, deduplicated spatially and snapped to the road graph.
+- Network unit: historical OSM road segment whose full geometry lies inside the
+  UNOSAT footprint.
+- Headline denominator: modeled population within the road-snap threshold that
+  has a baseline route to at least one mapped marketplace.
 
-41 ADB DMCs with WDI rural + population + EM-DAT flood data.
+## Base specification
 
-## 5. Metric
+| Choice | Base | Required sensitivity |
+|---|---:|---:|
+| Road set | Core motorized road classes | Broad set adds `service` and `track` |
+| Flood buffer around detected water | 20 m | 10 m, 30 m |
+| Population-to-road snap limit | 1,000 m | 500 m, 1,500 m |
+| Market-object deduplication radius | 100 m | 50 m, 150 m |
 
-`index = (rural_pct / 100) × annual_flood_events × log10(population)`
-where annual_flood_events = EM-DAT flood subset 2000-2025 / 25.
-Triage only.
+The full Cartesian grid contains 54 variants. All arbitrary numeric choices are
+tested at ±50%, as required by the Constitution.
 
-## 6. Arbitrary
+## Outcomes
 
-| Param | Value | Range |
-|---|---|---|
-| Time window | 2000-2025 (25 years) | (deferred §18.5) |
-| Combine operator | multiplicative | tested vs flood-events-only and rural × floods |
+Primary:
 
-## 8. Decision rule
+1. population with a baseline route but no post-cut route;
+2. that population as a share of baseline-accessible population.
 
-Common top-4 across all 3 metric formulations: `[AFG, CHN, IDN, IND]`.
-**Positive (top-4 narrowing).** Top-5 is metric-sensitive.
+Diagnostics:
 
-## 10. §18
+- population coverage at the road-snap gate;
+- graph nodes, edges, and intersecting-edge length;
+- queried, footprint-filtered, deduplicated, and snapped market counts;
+- road-set comparison;
+- travel-time summaries among the surviving connected population.
 
-`ai-first`. 2026-04-26.
+## Decision rules
+
+- **Advance the routed-access construct** if all 54 variants produce positive
+  disconnection and the road-set alternative does not reverse the finding.
+- **Narrow to a source-boundary result** if the estimate is driven by one
+  arbitrary numeric setting or by destinations outside the observed footprint.
+- **Retire the access label** if no road, market, flood, and population join can
+  be computed from traceable public objects.
+- Never convert modeled disconnection into observed closure, behavior, income,
+  food security, or welfare loss.
+
+## Known structural assumptions
+
+Every water-intersecting segment is removed. Flood depth, vehicle class,
+bridge elevation, road surface, drainage, one-way restrictions, congestion,
+boats, temporary crossings, market operating status, and household destination
+choice are not observed. The analysis therefore tests a route construct under a
+transparent counterfactual; it does not reconstruct actual travel on 26 June.
+
+## Publication decision
+
+The construct advances as a **PP construct-validation pilot**. The base result
+is 345,718 modeled people disconnected, or 41.24% of baseline-accessible
+population. The 54-variant range is 38.92%–43.45%. The next maturity step
+requires passability and destination validation, not more polish on the same
+model.

@@ -12,11 +12,11 @@ Last updated: 2026-07-19.
 
 | Field | Value |
 |---|---|
-| Active flagship | `flood-market-access` — decide whether the stable national proxy should be retired, reshaped as a source-readiness finding, or tested with one routed road–market–flood object. |
-| Per-program board | `flood-market-access/STATUS.md` |
+| Active flagship | `invisible-urbanization` — replace the WDI growth-from-low-base proxy with one public built-up-surface × administrative-classification object, or publish the measurement gap and rotate. |
+| Per-program board | `invisible-urbanization/STATUS.md` |
 | Operating mode | §18 ACTIVE (AI-First) |
 | Default review mode | Mode A (AI-only); see `research/factory.md` |
-| Previous flagship | `food-price-climate-transmission` — the annual qualifier and old price-wave method were retired; 17 of 152 corrected Nepal rice-price spike cells follow locally dry rainfall at one month. |
+| Previous flagship | `flood-market-access` — the national proxy was retired; a Sylhet routed-access pilot finds 41.24% modeled disconnection across a 38.92%–43.45% sensitivity band. |
 
 The active flagship is the only program that may be advanced this session.
 Rotation reason recorded in the operational notes below. Programs in the
@@ -86,16 +86,19 @@ overrides priority by editing this list.
     The corrected Nepal panel leaves 17 of 152 coarse-rice spike cells aligned
     with prior-month local dryness; dry alignment remains a minority in all 81
     threshold runs. Reopen only for a recorded-event, multi-commodity panel.
-13. **`flood-market-access`** — **active flagship.** The stable national top
-    four is still a proxy; choose between one public routed-network pilot and a
-    publication-grade source-readiness finding before adding another audit wall.
+13. **`flood-market-access`** — *construct-validation issue closed.* The
+    national proxy is retired; the Sylhet route object finds 345,718 modeled
+    people disconnected, with a 38.92%–43.45% range across 54 variants. Reopen
+    only for observed passability, audited markets, or travel/market outcomes.
 14. **`public-service-data-quality`** — *current presentation issue closed.* The showcase now uses generated
     `psdq-evidence-ledger.{json,csv}` instead of stacked walls. Substantive
     source repair remains owner-only source-owner contact or human location
     validation for source-repair, same-facility, priority/lower-priority
     name-conflict, and facility-level zero-OSM rows.
-15. **`invisible-urbanization`** — settlement growth vs admin urban
-    boundaries; pipeline ready.
+15. **`invisible-urbanization`** — **active flagship.** The WDI scalar sweep is
+    arithmetically invariant and contains no built-up surface. Build one public
+    settlement-growth × administrative-classification object before improving
+    the narrative.
 16. **`coastal-informal-risk`** — informal coastal settlements vs
     storm-surge exposure; pipeline ready.
 17. **`digital-performance`** — broadband coverage vs official

@@ -1,5 +1,38 @@
 [
   {
+    "slug": "flood-market-access-cluster",
+    "title": "Flood water cuts modeled market access for about 346,000 people in the Sylhet pilot",
+    "subtitle": "An observed flood footprint, historical road graph, eight mapped markets, and 54 sensitivity variants replace a national proxy that never measured access.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [
+      "flood",
+      "roads",
+      "market-access",
+      "network-analysis",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Bangladesh",
+      "Sylhet"
+    ],
+    "abstract": "This paper tests whether public data can support a route-based flood-access claim rather than a broad national exposure proxy. It joins the UNOSAT satellite-detected flood footprint for Sylhet on 26 June 2024 with a historical OpenStreetMap road and marketplace snapshot dated 25 June 2024 and WorldPop 2020 population. The base stress test treats every core-road segment intersecting detected water plus 20 metres as unavailable. Of 838,224 modeled people with a baseline route to one of eight mapped marketplaces, 345,718 lose all modeled routes, or 41.24%. The disconnected share remains 38.92%–43.45% across 54 variants covering two road definitions and ±50% changes to the flood buffer, population snap, and market deduplication radius. The result is a construct-validation pilot, not an observed closure or welfare estimate. Its main limits are the all-intersecting road-cut assumption, an unaudited market inventory, a 2020 modeled population surface, and the analysis boundary. The next study requires depth- or field-calibrated passability and independently validated destinations.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-19",
+    "doi": "",
+    "file": "flood-market-access-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "owner-led review pending; no external contact",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "food-price-joint-qualifier",
     "title": "Only one in nine corrected Nepal rice-price spikes followed locally dry rainfall",
     "subtitle": "A 12-market construct validation retires both the inherited annual DMC qualifier and an earlier price-wave method; the remaining result is a coincidence screen, not climate attribution.",
@@ -519,39 +552,6 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "flood-market-access-cluster",
-    "title": "Four DMCs hold the top of the flood-rural-exposure ranking — India, China, Indonesia, Afghanistan",
-    "subtitle": "EM-DAT 2000-2025 flood subset × rural share × log-population. Honest top-4 narrowing because top-5 is metric-sensitive.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "flood-market-access",
-    "maturity": "SR",
-    "topics": [
-      "flood",
-      "rural-exposure",
-      "market-access"
-    ],
-    "geographies": [
-      "IND",
-      "CHN",
-      "IDN",
-      "AFG"
-    ],
-    "abstract": "Across 41 ADB DMCs with WDI rural + population data and EM-DAT 2000-2025 flood-event records, four economies — India, China, Indonesia, Afghanistan — hold the top-4 flood-rural-exposure index positions across every alternative metric formulation tested (full index, flood-events-only, rural × floods). Top-5 is metric-sensitive; honest narrowing to top-4. The \"market access\" element is rural-share × flood-frequency — a proxy for rural exposure to flood events, not actual road-network disruption. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "",
-    "doi": "",
-    "file": "flood-market-access-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "invisible-urbanization-cluster",
     "title": "Five rural-base DMCs hold the top of the urban-growth signal — PNG, Solomon Islands, Afghanistan, Lao PDR, Bangladesh",
     "subtitle": "Growth-from-a-low-urban-base. Stable across multiplier perturbations. GHSL Built-up Surface integration is the upgrade-pass.",
@@ -779,6 +779,38 @@
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "flood-market-access-cluster-brief",
+    "title": "A Sylhet flood-route stress test disconnects about 346,000 people from mapped markets",
+    "subtitle": "The route result survives 54 variants, but closure and destination validation remain open.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [
+      "flood",
+      "roads",
+      "market-access",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Bangladesh",
+      "Sylhet"
+    ],
+    "abstract": "Under a mechanical road-cut rule, 345,718 modeled people lose a route to one of eight mapped marketplaces; the share stays 38.92%–43.45% across 54 variants.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "flood-market-access-cluster-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },
@@ -1127,6 +1159,38 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "flood-market-access-cluster-blog",
+    "title": "The map found the bug—and the flood-route finding survived",
+    "subtitle": "A visual-first Sylhet pilot replaced a stable national proxy with a real route object.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [
+      "flood",
+      "roads",
+      "market-access",
+      "research-methods"
+    ],
+    "geographies": [
+      "Bangladesh",
+      "Sylhet"
+    ],
+    "abstract": "Mapping the first routed result exposed roads and markets outside the observed flood-analysis footprint; correcting the graph barely changed the conclusion.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "flood-market-access-cluster-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "food-price-joint-qualifier-blog",
     "title": "A stable country screen was still the wrong food-price story",
     "subtitle": "Correcting the Nepal market-price outcome turns a climate narrative into a sharper measurement finding.",
@@ -1463,6 +1527,28 @@
     "updated_at": "",
     "doi": "",
     "file": "disaster-recovery-lag.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "flood-market-access-cluster-social",
+    "title": "Flooded routes to market in Sylhet",
+    "subtitle": "",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [],
+    "geographies": [],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "flood-market-access-cluster-social.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "",
     "review_external_chain": "",
@@ -1810,6 +1896,36 @@
     "file": "disaster-recovery-lag-deck.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "flood-market-access-cluster-deck",
+    "title": "\"Flood water cuts modeled market access for about 346,000 people\"",
+    "subtitle": "\"Sylhet observed-flood route pilot · AI-first §18\"",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [
+      "flood",
+      "roads",
+      "market-access",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Bangladesh",
+      "Sylhet"
+    ],
+    "abstract": "",
+    "authors": [],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "flood-market-access-cluster-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "",
     "review_internal_chain": ""
   },

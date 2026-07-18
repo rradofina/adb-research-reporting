@@ -274,24 +274,24 @@ export const BRIEF_DETAILS: Record<string, BriefDetail> = {
     slug: "flood-market-access",
     articleSlug: "flood-market-access-cluster",
     domain: "Access",
-    finish: "screening-result",
+    finish: "construct-validation",
     question:
-      "Which rural populations are most exposed to recurrent flood events in the current public-data proxy?",
+      "Within the observed 26 June 2024 Sylhet flood footprint, how much modeled population loses a road route to a mapped marketplace under a transparent road-cut rule?",
     output:
-      "India, China, Indonesia, and Afghanistan hold the stable top-4 flood-rural-exposure set.",
-    chartTitle: "Flood-rural exposure index",
-    sourceNote: "EM-DAT flood subset, WDI rural share, and WDI population.",
+      "The base model disconnects 345,718 people, or 41.24% of the baseline-accessible covered population; all 54 variants remain between 38.92% and 43.45%.",
+    chartTitle: "Sylhet modeled market-route disconnection",
+    sourceNote: "UNOSAT product 3888, historical OpenStreetMap roads and marketplaces, and WorldPop 2020.",
     caveat:
-      "The current measure is not road-network disruption or market isolation.",
+      "Every water-intersecting segment is modeled unavailable; road closure, market operation, destination choice, and welfare are not observed.",
     nextStep:
-      "Join modeled flood extent to road networks, market locations, and service catchments.",
+      "Validate road and bridge passability, audit formal and informal markets, add multiple event times, and join observed travel or market outcomes.",
     granularity: {
-      currentUnit: "Country-level flood events by rural population proxy",
-      targetUnit: "Flooded road segment, market catchment, settlement/village, municipality",
+      currentUnit: "WorldPop cell × historical road graph × mapped marketplace inside one UNOSAT event footprint",
+      targetUnit: "Validated road/bridge state × operating market × origin × event time",
       gap:
-        "No road-network disruption, market isolation, or flood-extent join exists yet.",
+        "Passability and destination completeness are unvalidated, and the population surface predates the event.",
       upgradeData:
-        "Global Flood Database or JRC water/flood layers, OSM/Overture/GRIP roads, market/service POIs, and WorldPop.",
+        "Road depth or field closure observations, bridge elevations, official and informal market registries, travel modes, market operation, prices, and household or trader outcomes.",
     },
   },
   "food-price-climate-transmission": {

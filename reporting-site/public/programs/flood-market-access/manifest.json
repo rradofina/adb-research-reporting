@@ -1,25 +1,25 @@
 {
   "program": "flood-market-access",
   "permanent_url": "/flood-market-access?view=evidence",
-  "generated_at": "2026-07-18T17:20:07.654Z",
+  "generated_at": "2026-07-18T18:39:52.889Z",
   "hero": {
     "png": "generated/charts/flood-market-access-thumbnail.png",
     "svg": "generated/charts/flood-market-access-thumbnail.svg",
     "json": "generated/charts/flood-market-access-thumbnail.json",
-    "title": "Four economies absorb the flood-event burden",
-    "caption": "India 9.0/yr · China 8.6/yr · Indonesia 8.2/yr · Afghanistan 3.7/yr — stable top-4 across ±50 % sensitivity.",
-    "headline_number": "China 9.0 flood events/yr",
-    "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
-    "source": "EM-DAT 2000–2025 + WDI rural share",
+    "title": "Flood water cuts modeled market access for about 346,000 people",
+    "caption": "In the Sylhet base specification, 41.24% of baseline-accessible covered population loses a modeled route to an OSM-mapped marketplace.",
+    "headline_number": "345,718 · 41.24%",
+    "visual_form": "routed-access finding card",
+    "source": "flood-market-access/generated/flood-sylhet-route-pilot.json",
     "attestation_chain": "ai-first",
-    "generated_at": "2026-05-19T15:41:26+00:00",
+    "generated_at": "2026-07-18T18:29:34.226756+00:00",
     "dimensions": {
-      "width": 1600,
-      "height": 900
+      "width": 2570,
+      "height": 1472
     },
     "sha256": {
-      "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
-      "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+      "png": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815",
+      "svg": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
     }
   },
   "artifacts": [
@@ -27,121 +27,249 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 1263,
-      "size_human": "1.2 KB",
-      "mtime": "2026-04-24T08:05:49.333Z",
-      "sha256": "d97f7dffd9057b68f5448cbd05e8f40751554d7e3ce548c011b18b7196dba4da",
-      "attestation_chain": null
+      "size": 2630,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T18:13:56.333Z",
+      "sha256": "25032c028c4fd28971fae2e67dcce9f0e7832c915b49179877f90071586e8483",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "reproduce",
+      "file": "REPRODUCE.md",
+      "label": "Reproducibility guide",
+      "size": 1824,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T18:13:56.334Z",
+      "sha256": "21669b5898cbca56881c071347c8379273cfe2af4d0018637e436bcfcac8729e",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 1610,
-      "size_human": "1.6 KB",
-      "mtime": "2026-04-27T03:43:04.292Z",
-      "sha256": "68c5446592ea9dd1a0ba2aea201981c747857ea6b34474ff6ac3689e07cf7f61",
+      "size": 4785,
+      "size_human": "4.7 KB",
+      "mtime": "2026-07-18T18:15:39.531Z",
+      "sha256": "38e8d9213f2208ef408a98f0eae0c0fd329b51bcfe438fad3f549b9163b3ba77",
       "attestation_chain": "ai-first"
     },
     {
       "key": "preregistration",
       "file": "pre-registration.md",
       "label": "Pre-registration",
-      "size": 1106,
-      "size_human": "1.1 KB",
-      "mtime": "2026-04-26T11:21:52.995Z",
-      "sha256": "3c6c2e919a7b35c3d480dfc7cda4840d01071b5abc2909e4a239997377128541",
+      "size": 3423,
+      "size_human": "3.3 KB",
+      "mtime": "2026-07-18T18:13:56.332Z",
+      "sha256": "e11c75b74928ee704d7e4c67543f23e3d2c6532f00b46213265be996836d68c6",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity",
       "file": "sensitivity.md",
       "label": "Sensitivity suite",
-      "size": 686,
-      "size_human": "686 B",
-      "mtime": "2026-04-26T11:21:58.268Z",
-      "sha256": "25c5b4e26a2f4a25b541dcb134625f509b5be8a0c17f34ba3180b43d5e039e40",
+      "size": 1844,
+      "size_human": "1.8 KB",
+      "mtime": "2026-07-18T18:14:14.375Z",
+      "sha256": "8d1560cfb1a92dfa7a528ef455c0ad6e426d99e8e5f58c379c6d664a580482cf",
       "attestation_chain": "ai-first"
     },
     {
       "key": "sensitivity_runs",
       "file": "sensitivity-runs.json",
       "label": "Sensitivity-run output",
-      "size": 3763,
-      "size_human": "3.7 KB",
-      "mtime": "2026-04-26T11:20:16.402Z",
-      "sha256": "dd359ee7583c3bb99561f6f47f3c78aeecf8e0e0a157fec9b15e053d0443dca0",
+      "size": 71412,
+      "size_human": "69.7 KB",
+      "mtime": "2026-07-18T18:28:50.834Z",
+      "sha256": "f16efdae049ef98a7ea7f0abd80773be1c0e1b4d7486f745909df736f552c01c",
       "attestation_chain": null
     },
     {
       "key": "coverage",
       "file": "coverage.md",
       "label": "Coverage",
-      "size": 361,
-      "size_human": "361 B",
-      "mtime": "2026-04-26T11:22:00.830Z",
-      "sha256": "78da55e40d5974108680d225a15eac0beae810f866de0fcafb3306f4a71756ff",
+      "size": 1757,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-18T18:14:14.376Z",
+      "sha256": "cd5b79d1264e73f2ad138ea2ff7b3660b33e9453ab9c3265dc193fa4efaa3273",
       "attestation_chain": "ai-first"
     },
     {
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 532,
-      "size_human": "532 B",
-      "mtime": "2026-04-26T11:22:21.203Z",
-      "sha256": "918ceec607f162819435464c81b35359b229abd782b648c696caba141618b05a",
+      "size": 3754,
+      "size_human": "3.7 KB",
+      "mtime": "2026-07-18T18:13:56.336Z",
+      "sha256": "0c7c97051e85d66adbcb2400881b5bf0dd4095d6bf41e9886557834c75358ed8",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_internal",
       "file": "review-internal.md",
       "label": "Internal review",
-      "size": 842,
-      "size_human": "842 B",
-      "mtime": "2026-04-26T11:22:06.154Z",
-      "sha256": "c50eb5ea65e857f7bbb1f0e8f99002e41094a382b79fea59e497ec3042468933",
+      "size": 2666,
+      "size_human": "2.6 KB",
+      "mtime": "2026-07-18T18:15:39.532Z",
+      "sha256": "1a6b88f70361fdaa97df6d3d06609e6d82a8f1e83ca3c20c614af9f64751ef8c",
       "attestation_chain": "ai-first"
     },
     {
       "key": "review_external",
       "file": "review-external.md",
       "label": "External red-team review",
-      "size": 1493,
-      "size_human": "1.5 KB",
-      "mtime": "2026-04-26T11:22:15.286Z",
-      "sha256": "ca3228fba3d376416f503d414a45f250f52a26155c239105c17cbc5e5d95fbbc",
+      "size": 1899,
+      "size_human": "1.9 KB",
+      "mtime": "2026-07-18T18:15:39.534Z",
+      "sha256": "f1c44c32a47237cb4e202fe2b84d0fb64812afd3c225b2042843252d00897faf",
       "attestation_chain": "ai-first"
     },
     {
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 530,
-      "size_human": "530 B",
-      "mtime": "2026-04-26T11:22:18.419Z",
-      "sha256": "f068040e02c9d8816de5408f8e756c9d2679a6f86790f1fddb7d451724fd086a",
+      "size": 2792,
+      "size_human": "2.7 KB",
+      "mtime": "2026-07-18T18:13:56.344Z",
+      "sha256": "6c8083ab8169f8269b12a81c220bfee16edaee38908cbf8a7de941e031a8d32e",
+      "attestation_chain": "ai-first"
+    },
+    {
+      "key": "conclusion",
+      "file": "conclusion.md",
+      "label": "Conclusion and next evidence upgrade",
+      "size": 1666,
+      "size_human": "1.6 KB",
+      "mtime": "2026-07-18T18:35:06.847Z",
+      "sha256": "59a55af12fd4c1f0e4822d70302e7f26d9bde88418e46091b8427ad61e9405c3",
       "attestation_chain": "ai-first"
     }
   ],
   "generated_files": [
     {
       "file": "generated/charts/flood-market-access-thumbnail.json",
-      "size": 1068,
-      "size_human": "1.0 KB",
-      "sha256": "f193b33f1da9b507b73dee180f97fd9953a05168724ddbf91bbb70d0e493cf23"
+      "size": 1718,
+      "size_human": "1.7 KB",
+      "sha256": "db0013b8a9c70aa62f983b8b2c9409107e8baa05bf8113a5b4ba4916ed6fd969"
     },
     {
       "file": "generated/charts/flood-market-access-thumbnail.png",
-      "size": 196259,
-      "size_human": "191.7 KB",
-      "sha256": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24"
+      "size": 125486,
+      "size_human": "122.5 KB",
+      "sha256": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815"
     },
     {
       "file": "generated/charts/flood-market-access-thumbnail.svg",
-      "size": 1103798,
-      "size_human": "1.05 MB",
-      "sha256": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
+      "size": 58873,
+      "size_human": "57.5 KB",
+      "sha256": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-access-split.png",
+      "size": 191037,
+      "size_human": "186.6 KB",
+      "sha256": "cc03de193ae3e4a8d8c87368a8ad10245e8e0f42735373ce8cf55ac500964e7c"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-access-split.svg",
+      "size": 103243,
+      "size_human": "100.8 KB",
+      "sha256": "819bbd3a50348ce0ceb6acff1547a242ebc9a38881062572466a4cf73f63667d"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-claim-gates.png",
+      "size": 161189,
+      "size_human": "157.4 KB",
+      "sha256": "19b0d0786d68b5d43baef3b4aad2f5e75c33df3d9a724cab6b689ee33619e017"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-claim-gates.svg",
+      "size": 83073,
+      "size_human": "81.1 KB",
+      "sha256": "d7f8b2e91ad987f5365133f3ea267bf586cc08a25118871df69ba23fc32a5fa1"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-coverage-funnel.png",
+      "size": 162556,
+      "size_human": "158.7 KB",
+      "sha256": "172daa23763258b0bbbf62d76ca797fd5e33b67bb7d96b11695888eeb484f318"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-coverage-funnel.svg",
+      "size": 87526,
+      "size_human": "85.5 KB",
+      "sha256": "53a4c751e938b8b5b1046ae41ff3768df14ea431145c5f8d473602adb731f803"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-market-gate.png",
+      "size": 175289,
+      "size_human": "171.2 KB",
+      "sha256": "4d8c687d958228b41dc43d18fc749b2528f4966b4fba46271e8e771c03e9318e"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-market-gate.svg",
+      "size": 102823,
+      "size_human": "100.4 KB",
+      "sha256": "a3f75b012cbcba18533abb8441d936540d2fdfd46b7a578ea1fca43a414ec9f9"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-road-set.png",
+      "size": 182688,
+      "size_human": "178.4 KB",
+      "sha256": "36503721f34dce0eae9d123789695d4ef1f97ca54bc3eaa4cbf449411fda50d1"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-road-set.svg",
+      "size": 100304,
+      "size_human": "98.0 KB",
+      "sha256": "715dc65021141368fa2002395f355d07068f12fedf12d65228c1522221cd5609"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-route-map.png",
+      "size": 1342954,
+      "size_human": "1.28 MB",
+      "sha256": "1d0c371ebc3827c71b1dd6e0599ac2c1f32e671b306ccc99138514cc630c53f4"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-route-map.svg",
+      "size": 16223099,
+      "size_human": "15.47 MB",
+      "sha256": "1bb4af69564900f512ffea5c1eadcbf34806a24b05d43712f6c110e920f4a752"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-sensitivity.png",
+      "size": 228747,
+      "size_human": "223.4 KB",
+      "sha256": "cb49c55e275525d1ee3a77567a91784d2784f4b1ff370a5d63f9ce3727672ee5"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-sensitivity.svg",
+      "size": 117268,
+      "size_human": "114.5 KB",
+      "sha256": "5bb3a71cdc9fabe853387ae4d5349d38cc0cf08615d1c2459c8add15c8bd5dc9"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-source-disagreement.png",
+      "size": 227166,
+      "size_human": "221.8 KB",
+      "sha256": "fb23c04c0c1dd9b08fb09cc2e3d9254ec3bd3e9bc68f9a640b154022cb43436a"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-source-disagreement.svg",
+      "size": 124436,
+      "size_human": "121.5 KB",
+      "sha256": "3233d20204f631653ff7ad011a88667bb709a5f74f0604a154b53cacb61f82a1"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-survivor-selection.png",
+      "size": 167130,
+      "size_human": "163.2 KB",
+      "sha256": "08df4f2235d6d0473bd5131b95c74c889a8bfd6a3c9dd01074285f76e364669c"
+    },
+    {
+      "file": "generated/charts/flood-sylhet-survivor-selection.svg",
+      "size": 89055,
+      "size_human": "87.0 KB",
+      "sha256": "706e70094b9bdbb46c199203e46594943be979aea535f6299fc338da96e6f9b7"
     },
     {
       "file": "generated/flood-access-source-readiness-links.csv",
@@ -190,12 +318,30 @@
       "size": 12486,
       "size_human": "12.2 KB",
       "sha256": "447562ca8692b8ae789309f5091688212c84946807028854de025b23d4f420b1"
+    },
+    {
+      "file": "generated/flood-sylhet-markets.csv",
+      "size": 27134,
+      "size_human": "26.5 KB",
+      "sha256": "5bebbd00d0412084eb2e59b348fcf3b3b1aa38ecc5a73f2d9d1bdac14dc79470"
+    },
+    {
+      "file": "generated/flood-sylhet-route-pilot.json",
+      "size": 76359,
+      "size_human": "74.6 KB",
+      "sha256": "be82658d5a65c3a52f8bc0c69c8c3a6d612cb6994c2eb5c01c3572bb3059c492"
+    },
+    {
+      "file": "generated/flood-sylhet-route-sensitivity.csv",
+      "size": 10084,
+      "size_human": "9.8 KB",
+      "sha256": "da48bddcfc29116f8154c18bae05bfe8af28f75bbcdb1ef34b58141b754b70b1"
     }
   ],
   "articles": [
     {
       "slug": "flood-market-access-cluster",
-      "title": "Four DMCs hold the top of the flood-rural-exposure ranking — India, China, Indonesia, Afghanistan",
+      "title": "Flood water cuts modeled market access for about 346,000 people in the Sylhet pilot",
       "attestation_chain": "ai-first"
     }
   ],
@@ -269,7 +415,7 @@
       "key": "robustness",
       "title": "Sensitivity and robustness",
       "available": true,
-      "state": "draft",
+      "state": "present",
       "artifacts": [
         {
           "key": "sensitivity",
@@ -294,20 +440,32 @@
     {
       "key": "conclusion",
       "title": "Conclusion and next evidence upgrade",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "conclusion",
+          "file": "conclusion.md",
+          "label": "Conclusion and next evidence upgrade"
+        }
+      ]
     },
     {
       "key": "reproduce",
       "title": "Reproduce the analysis",
-      "available": false,
-      "state": "missing",
-      "artifacts": []
+      "available": true,
+      "state": "present",
+      "artifacts": [
+        {
+          "key": "reproduce",
+          "file": "REPRODUCE.md",
+          "label": "Reproducibility guide"
+        }
+      ]
     }
   ],
   "resources": {
-    "reproduce": null,
+    "reproduce": "/programs/flood-market-access/REPRODUCE.md",
     "deck": null,
     "reviewer_packet": null,
     "repository": "https://github.com/rradofina/adb-research-reporting/tree/main/flood-market-access"

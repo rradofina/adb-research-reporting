@@ -44,7 +44,7 @@ const DOMAIN_MAP: Record<string, { domain: string; description: string }> = {
   },
   "flood-market-access": {
     domain: "Access",
-    description: "Flood-driven service and market isolation, beyond inundation.",
+    description: "Observed flood water, historical roads, mapped markets, and population joined into a routed access pilot.",
   },
   "food-price-climate-transmission": {
     domain: "Food",

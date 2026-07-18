@@ -1,48 +1,92 @@
-# Literature review — Flood Market Access
+# Related literature — flooded roads and destination access
 
-`attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
+`attestation_chain: ai-first` · Search refreshed 2026-07-19
 
-## 1. Search record
+## Search scope
 
-Queries (2026-04-27):
-1. `GLOFAS global flood awareness streamflow Alfieri`
-2. `EM-DAT flood subset under-reporting small events`
-3. `rural roads flood disruption market access LMIC`
+The review targeted four questions: whether observed flood footprints improve
+on broad hazard proxies; whether service access is more informative than generic
+network connectivity; how open road and POI data are used in data-scarce places;
+and which omissions prevent a routed model from becoming a decision-grade
+closure or welfare estimate.
 
-Tier-A: *Hydrology and Earth System Sciences*, *Nature*, *Science*.
-Tier-B: ECMWF, GFDRR, IFPRI rural-roads literature. Tier-C: HDX
-flood-event archives.
+Primary articles and official source documentation were searched using terms
+including `flood road network accessibility`, `population service access flood`,
+`OpenStreetMap POI completeness`, `satellite observed flood exposure`, and
+`Sylhet flood road`. The purpose was to locate the pilot's contribution boundary,
+not to claim an exhaustive systematic review.
 
-## 2. Verified entries
+## Evidence spine
 
-- **`alfieri2013glofas`** — Alfieri et al. (2013). GLOFAS — global
-  ensemble streamflow forecasting. *HESS*.
-  doi:10.5194/hess-17-1161-2013. **Modeled flood-extent /
-  streamflow-forecast; the §18.5 upgrade-pass.**
-- **`cred2024emdat`** — EM-DAT (CRED). Threshold-based event
-  database; under-counts small recurrent floods.
+### From flood exposure to routed access
 
-## 3. Synthesis
+Satellite observations address a major weakness of flood-risk work that relies
+only on modeled hazard. Tellman and coauthors use satellite imagery to estimate
+observed inundation and population exposure across hundreds of large events
+[@tellman2021satellitefloods]. UNOSAT product 3888 provides the corresponding
+event object for this pilot: a 26 June 2024 SAOCOM-1A water footprint and
+potentially affected roads, explicitly labeled preliminary and not field
+validated [@unosat2024sylhet].
 
-1. **EM-DAT counts events meeting thresholds** [@cred2024emdat]
-   (≥10 deaths or ≥100 affected); recurrent small floods are
-   under-counted, especially for rural DMCs.
-2. **Modeled flood extent (GLOFAS)** [@alfieri2013glofas] provides
-   exposure layers ahead of events; observed-event databases
-   undercount.
+Observed water does not itself establish service isolation. Loreti and
+coauthors argue that the ability to reach relevant towns is more informative
+for flood response than generic giant-component connectivity
+[@loreti2022localaccess]. Miller similarly models flood-conditioned road access
+through time, showing the value of linking inundation to destinations rather
+than treating water exposure as the outcome [@miller2022temporalaccess]. These
+studies justify the pilot's move from a national flood-frequency proxy to an
+origin–network–destination object.
 
-## 4. Gap
+### Population-centered infrastructure analysis
 
-No published cross-ADB-DMC flood-rural-exposure ranking robust
-across alternative metric formulations. The top-4 set finding
-(AFG, CHN, IDN, IND) is the marginal contribution.
+Tariverdi and coauthors frame road criticality in terms of the population and
+services supported, using open data and explicit disrupted-network scenarios
+[@tariverdi2023accessibility]. Their Manila application reports population that
+loses complete access to higher health services under a depth-defined flood
+scenario. The present pilot adopts the same population-centered logic but is
+methodologically weaker on passability: it has detected water, not depth or
+observed closure. It is also narrower in destination scope, using mapped
+marketplaces rather than a validated service system.
 
-## 5. First testable claim
+### Open roads and destination data
 
-> Four ADB DMCs — India, China, Indonesia, Afghanistan — persistently
-> hold the top-4 flood-rural-exposure index across alternative
-> metric formulations.
+OpenStreetMap provides the historical roads and market objects. The Overpass
+`date` setting reconstructs database state at a specified ISO timestamp
+[@openstreetmap2024overpass]. Global research finds high aggregate OSM road
+coverage, but that does not validate local completeness
+[@barringtonleigh2017osm]. POI research is still more cautionary: coverage,
+category, geometry, temporality, and the social process of mapping can all alter
+downstream accessibility results [@psyllidis2022poi]. The eight routed markets
+in this pilot must therefore be read as mapped destinations, not a census of
+operating markets.
 
-## 7. §18 attestation
+WorldPop supplies a common population weighting surface [@wood2014worldpop;
+@worldpop2020bangladesh]. The chosen 2020 unconstrained product maintains rural
+coverage but can distribute population into uninhabited cells and predates the
+event. This supports a population-weighted diagnostic, not an event-day count of
+people present.
 
-`ai-first`. 2026-04-27. Honest top-4 narrowing.
+## What this pilot adds
+
+The contribution is not a new theory of flood accessibility. It is an auditable
+construct-validation object for one DMC event:
+
+1. an observed flood footprint and analysis boundary;
+2. a historical, date-aligned open road and market graph;
+3. a population-weighted baseline and post-cut route comparison;
+4. a full ±50% sensitivity grid and a road-class alternative;
+5. explicit source disagreement, destination coverage, and survivor-selection
+   diagnostics.
+
+That combination is useful because it demonstrates what the public-data stack
+can support now and where it stops. It does not establish actual road closure,
+market function, travel behavior, food-price transmission, or welfare loss.
+
+## Research gap after this issue
+
+The next claim-enabling study is not another proxy ranking. It needs observed or
+depth-calibrated road passability, independently validated market destinations,
+multiple event times, and observed travel or market outcomes. Those additions
+would permit estimates of duration, rerouting, destination substitution, and
+possibly economic effects. Without them, the correct output remains a
+construct-validation pilot with a bounded access claim.

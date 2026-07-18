@@ -602,6 +602,114 @@ function buildCoastalModel(report: ShowcaseReport, data: JsonValue): AuditModel 
 }
 
 function buildFloodModel(report: ShowcaseReport, data: JsonValue): AuditModel {
+  if (data.headline && data.base_result) {
+    const headline = data.headline || {};
+    const base = data.base_result || {};
+    const event = data.event || {};
+    const method = data.method || {};
+    const sourceTrail = sourceFacts(report, data);
+    safeRows(data.sources).forEach((source) => {
+      sourceTrail.push({
+        label: String(source.role || "Source"),
+        value: `${formatNumber(source.bytes)} bytes; SHA-256 ${String(source.sha256 || "not recorded")}`,
+      });
+    });
+
+    const rows = [
+      {
+        key: "population-access",
+        label: "Population with a mapped-market route",
+        sublabel: "covered population inside the analysis footprint",
+        leftText: "before the mechanical edge cut",
+        rightText: "after the mechanical edge cut",
+        leftValue: formatNumber(base.baseline_accessible_population),
+        rightValue: formatNumber(base.post_flood_accessible_population),
+        note: `${formatNumber(base.disconnected_population)} modeled disconnected`,
+        status: "flag",
+        intensity: 92,
+      },
+      {
+        key: "road-edges",
+        label: "Core-road graph edges",
+        sublabel: "historical OSM snapshot",
+        leftText: "eligible before cut",
+        rightText: "remaining after cut",
+        leftValue: formatNumber(base.graph_edges),
+        rightValue: formatNumber(numberValue(base.graph_edges) - numberValue(base.cut_edges)),
+        note: `${formatNumber(base.cut_edges)} edges (${formatFlexible(base.cut_edge_length_km, 1)} km) intersect observed flood water`,
+        status: "flag",
+        intensity: 76,
+      },
+      {
+        key: "market-gate",
+        label: "Mapped market destinations",
+        sublabel: "inside the UNOSAT analysis footprint",
+        leftText: "raw OSM market objects",
+        rightText: "deduplicated and routable",
+        leftValue: formatNumber(base.markets_raw),
+        rightValue: formatNumber(base.markets_functioning),
+        note: "Destination completeness and actual household choice remain unvalidated",
+        status: "flag",
+        intensity: 60,
+      },
+    ] as RankRow[];
+
+    return {
+      kind: report.audit!.kind,
+      stats: [
+        { value: `${formatFlexible(headline.base_disconnected_share_pct, 2)}%`, label: "modeled disconnected" },
+        { value: formatNumber(headline.base_disconnected_population), label: "people disconnected" },
+        { value: `${formatFlexible(headline.sensitivity_disconnected_share_min_pct, 2)}-${formatFlexible(headline.sensitivity_disconnected_share_max_pct, 2)}%`, label: "54-variant range" },
+        { value: `${formatFlexible(headline.base_population_coverage_pct, 2)}%`, label: "population snap coverage" },
+      ],
+      chartTitle: "The route result is stable; the decision claim is not yet licensed.",
+      chartDeck: "Observed flood water is joined to historical roads, mapped marketplaces, and population, then all intersecting road edges are treated as unavailable.",
+      leftLabel: "Baseline graph",
+      rightLabel: "Mechanical flood-edge cut",
+      rows,
+      componentCards: [
+        {
+          key: "flood-object",
+          value: `${formatFlexible(event.satellite_detected_flood_km2, 1)} km²`,
+          label: "Downloaded flood vector",
+          note: `UNOSAT product ${String(event.unosat_product_id || "3888")}; ${String(event.field_validation || "not field validated")}.`,
+          status: "survived",
+        },
+        {
+          key: "sensitivity",
+          value: formatNumber(headline.variant_count),
+          label: "Sensitivity variants",
+          note: "Flood buffer, population snap, and market deduplication vary by ±50%; core and broad road sets are tested.",
+          status: "survived",
+        },
+        {
+          key: "passability",
+          value: "open",
+          label: "Road-passability gate",
+          note: "Flood intersection is not an observed closure, bridge failure, or passability record.",
+          status: "dropped",
+        },
+        {
+          key: "destination",
+          value: "open",
+          label: "Market-destination gate",
+          note: "OSM marketplaces are mapped destinations, not an official inventory or observed trip choice.",
+          status: "dropped",
+        },
+      ],
+      readouts: [
+        { label: "Analysis footprint", value: `${formatFlexible(event.analysis_extent_km2, 1)} km²` },
+        { label: "Population in footprint", value: formatNumber(base.population_in_analysis_extent) },
+        { label: "Functioning mapped markets", value: formatNumber(base.markets_functioning) },
+        { label: "All variants positive", value: String(headline.all_variants_positive_disconnection) },
+        { label: "Sensitivity design", value: String(method.sensitivity?.numeric_parameters_tested_at_plus_minus_50_pct) },
+      ],
+      sourceFacts: sourceTrail,
+      caveats: unique(baseCaveats(report, data).concat(strings(method.non_claims))),
+      generatedAt: data.generated_at,
+    };
+  }
+
   const rowsAll = safeRows(data.rows);
   const readiness = data.access_source_readiness || {};
   const sourceSummary = readiness.summary || {};

@@ -122,19 +122,25 @@ export const INDICATORS: IndicatorDef[] = [
   },
   {
     programSlug: "flood-market-access",
-    programTitle: "Flood-rural exposure",
+    programTitle: "Sylhet flood-route access",
     programNumber: 8,
     domain: "Access",
-    unit: "index",
+    unit: "% disconnected",
     higherIsWorse: true,
-    metricLabel: "Flood-rural exposure",
+    metricLabel: "Modeled market disconnection",
     sentenceTemplate: (v, r) =>
-      `Flood-rural exposure ${v.toFixed(1)} — ${r?.annual_flood_events?.toFixed?.(1) ?? "—"} flood events/year and ${r?.rural_pct?.toFixed?.(1) ?? "—"}% rural population.`,
+      `In the Sylhet construct-validation pilot, ${v.toFixed(1)}% of baseline-accessible covered population is disconnected after mechanically removing flood-intersecting road edges (${Math.round(r?.disconnected_population ?? 0).toLocaleString()} people).`,
     href: "/program/flood-market-access/evidence",
     accent: "sage",
     source: {
-      path: "/programs/flood-market-access/generated/flood-market-access-adb-panel.json",
-      extract: fromArrayOfRows("rows", "iso3", "flood_market_access_index"),
+      path: "/programs/flood-market-access/generated/flood-sylhet-route-pilot.json",
+      extract: (json: any) => [{
+        iso3: "BGD",
+        value: typeof json?.headline?.base_disconnected_share_pct === "number"
+          ? json.headline.base_disconnected_share_pct
+          : null,
+        raw: json?.base_result,
+      }],
     },
   },
   {

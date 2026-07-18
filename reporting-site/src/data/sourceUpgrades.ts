@@ -168,17 +168,16 @@ export const SOURCE_UPGRADES: SourceUpgrade[] = [
   {
     slug: "flood-market-access",
     betterSource:
-      "Google Groundsource flood events; Google Flood Forecasting API/GRRR where approved; Global Flood Database or JRC Global Surface Water; Overture/Geofabrik roads; markets and service POIs; WorldPop and Google Open Buildings settlement grids.",
+      "Observed road-closure or passability records; bridge and road-surface attributes; official market registries and opening status; household or trader destination evidence; contemporaneous population and travel observations.",
     betterUnit:
-      "Flooded road segment, settlement, market catchment, municipality, and facility catchment.",
+      "Flooded road segment, settlement cell, validated market destination, observed trip, and market catchment.",
     priority: "P1",
     rationale:
-      "The current flood-rural proxy is country-level. The real ADB-relevant story is which road segments and markets become unreachable.",
+      "The Sylhet pilot now computes the road-market-flood route object. Decision-grade targeting still depends on validating whether intersected roads were impassable and whether mapped marketplaces represent actual destinations.",
     sourceLinks: [
-      { label: "Global Flood Database", href: "https://global-flood-database.cloudtostreet.ai/" },
-      { label: "JRC Global Surface Water", href: "https://global-surface-water.appspot.com/" },
-      { label: "Google Groundsource flood events", href: "https://doi.org/10.5281/zenodo.18647054" },
-      { label: "Google Flood Forecasting API", href: "https://developers.google.com/flood-forecasting" },
+      { label: "UNOSAT Sylhet flood product", href: "https://unosat.org/products/3888" },
+      { label: "WorldPop Bangladesh 2020", href: "https://doi.org/10.5258/SOTON/WP00645" },
+      { label: "OpenStreetMap Overpass QL", href: "https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL" },
     ],
   },
   {

@@ -1,40 +1,59 @@
-# Flooded Market Access
+# Flooded routes to market in Sylhet
 
-## Research Question
+`attestation_chain: ai-first` · PP construct-validation pilot
 
-Which regions lose practical access to markets, clinics, and schools when
-routine flooding disrupts roads, not just when settlements are directly
-inundated?
+## Finding
 
-## Why This Is Unconventional
+When every core-road segment intersecting the UNOSAT flood footprint plus a
+20 m buffer is treated as unavailable, 345,718 modeled people lose a network
+route to an OSM-mapped marketplace. That is 41.24% of the 838,224 people with a
+baseline route in the covered population. Across 54 required sensitivity
+variants, the share remains between 38.92% and 43.45%.
 
-Flood maps often show water exposure. This track studies service isolation:
-places that may stay dry but become economically disconnected because bridges,
-roads, and market links fail.
+This is a routed-access result. It replaces the program's former national
+`rural share × flood events × log(population)` ranking, which did not contain a
+road, a market, or a route.
 
-## Available Data
+![Map of the Sylhet flood footprint, roads, and mapped markets](generated/charts/flood-sylhet-route-map.png)
 
-- JRC Global Surface Water
-- Fathom or open flood-hazard proxies where licensing allows
-- OpenStreetMap roads, bridges, schools, clinics, and markets
-- WorldPop population grids
-- geoBoundaries ADM1/ADM2 geometries
-- World Bank CCKP precipitation change indicators
+## What was joined
 
-## First Pipeline
+- UNOSAT product 3888: SAOCOM-1A satellite-detected water in Sylhet on
+  26 June 2024 and the published analysis footprint.
+- Historical OpenStreetMap through an Overpass `date` query for 25 June 2024:
+  roads and `amenity=marketplace` objects.
+- WorldPop Bangladesh 2020 unconstrained population at approximately 100 m.
 
-1. Select Bangladesh, Philippines, Cambodia, and Pakistan as first pilots.
-2. Build OSM road/service graph extracts.
-3. Penalize road segments crossing flood-prone pixels.
-4. Compare baseline versus flood-penalized service access.
+Raw public files are checksum-recorded and cached outside git. The committed
+script downloads them when absent and regenerates the derived tables.
 
-## Outputs
+## Reproduce
 
-- `generated/flood-market-access-pilots.csv`
-- ADM1/ADM2 service-isolation ranking
-- Reproducible road and flood-source manifest
+```powershell
+python flood-market-access/scripts/build-sylhet-route-pilot.py
+python flood-market-access/scripts/build-figure-dossier.py
+```
 
-## Reproducibility Notes
+Expected core runtime is about two minutes on the development machine after
+source caching. The figure dossier adds about 40 seconds. See `REPRODUCE.md` for
+dependencies, outputs, and failure checks.
 
-Keep raw rasters outside git. Commit only source URLs, raster metadata, clipped
-summary tables, and scripts that reproduce the clipping.
+## Research package
+
+- `results.md` — finding-led results and interpretation
+- `literature.md` — related evidence and contribution boundary
+- `pre-registration.md` — retrospective design freeze and decision rules
+- `sensitivity.md` — full ±50% and road-set robustness
+- `coverage.md` — population, graph, and destination denominators
+- `limitations.md` — closure, POI, population, and boundary limits
+- `review-internal.md` — adversarial methods review
+- `review-external.md` — owner-led review brief; no external contact made
+- `NEGATIVE-RESULT.md` — retired national proxy and why it failed
+- `generated/` — committed machine-readable results and figure outputs
+
+## Claim boundary
+
+The pilot does not observe road closure, flood depth, travel behavior, market
+functionality, displacement, prices, food security, or welfare. It is not a
+Bangladesh-wide estimate. The 41.24% result is conditional on a mechanical road
+cut and on the completeness of eight routed OSM marketplace destinations.

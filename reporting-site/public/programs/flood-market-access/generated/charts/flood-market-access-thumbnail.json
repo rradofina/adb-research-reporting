@@ -1,27 +1,42 @@
 {
-  "program": "flood-market-access",
-  "title": "Four economies absorb the flood-event burden",
-  "caption": "India 9.0/yr \u00b7 China 8.6/yr \u00b7 Indonesia 8.2/yr \u00b7 Afghanistan 3.7/yr \u2014 stable top-4 across \u00b150 % sensitivity.",
-  "headline_number": "China 9.0 flood events/yr",
-  "visual_form": "Asia-Pacific map (top-4 highlighted, color = events/yr)",
-  "source": "EM-DAT 2000\u20132025 + WDI rural share",
-  "inputs": [
-    "generated/flood-market-access-adb-panel.csv"
-  ],
-  "script": "flood-market-access/scripts/build-thumbnail.py",
   "attestation_chain": "ai-first",
+  "program": "flood-market-access",
+  "title": "Flood water cuts modeled market access for about 346,000 people",
+  "caption": "In the Sylhet base specification, 41.24% of baseline-accessible covered population loses a modeled route to an OSM-mapped marketplace.",
+  "headline_number": "345,718 \u00b7 41.24%",
+  "visual_form": "routed-access finding card",
+  "headline": "About 346,000 people lose modeled market access in the Sylhet flood-route pilot",
+  "metric": {
+    "disconnected_population": 345718.245,
+    "disconnected_share_pct": 41.244,
+    "variant_range_pct": [
+      38.921,
+      43.448
+    ]
+  },
+  "source": "flood-market-access/generated/flood-sylhet-route-pilot.json",
+  "inputs": [
+    "generated/flood-sylhet-route-pilot.json",
+    "generated/flood-sylhet-route-sensitivity.csv"
+  ],
+  "script": "flood-market-access/scripts/build-figure-dossier.py",
   "constitution_ref": "CONSTITUTION.md \u00a718",
-  "generated_at": "2026-05-19T15:41:26+00:00",
+  "generated_at": "2026-07-18T18:29:34.226756+00:00",
   "dimensions": {
-    "width": 1600,
-    "height": 900
+    "width": 2570,
+    "height": 1472
   },
   "files": {
     "png": "flood-market-access-thumbnail.png",
     "svg": "flood-market-access-thumbnail.svg"
   },
   "sha256": {
-    "png": "cfd4f4cc5f8ba61fd230bbba25514a86ffb34021065dfc876660eb3ce214ab24",
-    "svg": "d8598eda0b7767fa8be9f0ff5733290227e4f97c55f6fb57f7ac4f38f53f635d"
-  }
+    "png": "0eedf51f4d6b2a55f14f4df1003570d01137666589af376d91b90764de0aa815",
+    "svg": "ab891224919f8f9ac1b7ec7ece2e5be91238da03c3900fec6ff65fd2273f1296"
+  },
+  "outputs": {
+    "png": "flood-market-access/generated/charts/flood-market-access-thumbnail.png",
+    "svg": "flood-market-access/generated/charts/flood-market-access-thumbnail.svg"
+  },
+  "nonclaim": "Mechanical all-intersecting-road-segments-unavailable model, not observed road closure or welfare loss."
 }

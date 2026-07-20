@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ShowcaseEvidenceAudit from "@/views/ShowcaseEvidenceAudit";
 import { showcaseReports } from "@/data/showcaseReports";
 
@@ -17,6 +18,20 @@ export function generateStaticParams() {
     .filter((slug): slug is string => Boolean(slug))
     .filter((slug) => !EXPLICIT_SHOWCASE_ROUTES.has(slug))
     .map((reportSlug) => ({ reportSlug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ reportSlug: string }>;
+}): Promise<Metadata> {
+  const { reportSlug } = await params;
+  const report = showcaseReports.find((r) => r.href === `/showcase/${reportSlug}`);
+  if (!report) return {};
+  return {
+    title: report.title,
+    description: report.deck,
+  };
 }
 
 export default async function Page({

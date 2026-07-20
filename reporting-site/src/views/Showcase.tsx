@@ -216,6 +216,15 @@ export default function Showcase() {
 
   return (
     <article className="showcase-page">
+      <div className="showcase-index-band">
+        <p>
+          <strong>Featured exploration.</strong> This page walks one evidence
+          sprint end to end.
+        </p>
+        <a href="#showcase-library">
+          Browse all {showcaseReports.length} report surfaces →
+        </a>
+      </div>
       <header className="showcase-hero">
         <div className="showcase-hero-copy">
           <p className="kicker kicker-crimson">Public-data evidence note</p>
@@ -373,7 +382,7 @@ export default function Showcase() {
 
       <ShowcaseQualityPanel reportId={1} />
 
-      <section className="showcase-section">
+      <section className="showcase-section" id="showcase-library">
         <div className="showcase-section-copy">
           <p className="kicker">Evidence library</p>
           <h2>

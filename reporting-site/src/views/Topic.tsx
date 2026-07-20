@@ -319,7 +319,11 @@ export default function Topic({ slug }: { slug: string }) {
       </nav>
 
       {view === "paper" && manifest?.story ? (
-        <ResearchPackageIndex story={manifest.story} />
+        <ResearchPackageIndex
+          story={manifest.story}
+          shortRead={tiers.blog ? "blog" : tiers.brief ? "brief" : null}
+          onOpenShortRead={setView}
+        />
       ) : null}
 
       {/* Two-column layout. min-w-0 on grid items lets them shrink below
@@ -462,7 +466,15 @@ function splitNarrativeForHero(html: string, condense = false) {
   return { before: "", after: html };
 }
 
-function ResearchPackageIndex({ story }: { story: ResearchStorySection[] }) {
+function ResearchPackageIndex({
+  story,
+  shortRead,
+  onOpenShortRead,
+}: {
+  story: ResearchStorySection[];
+  shortRead: "blog" | "brief" | null;
+  onOpenShortRead: (view: "blog" | "brief") => void;
+}) {
   const availableCount = story.filter((section) => section.available).length;
   const completeCount = story.filter((section) => section.state === "present").length;
   return (
@@ -474,6 +486,15 @@ function ResearchPackageIndex({ story }: { story: ResearchStorySection[] }) {
           {availableCount} of {story.length} standard sections have a file; {completeCount} contain no template markers.
           The article, chart, method, literature, limitations, and reproduction trail are kept in one reader journey.
         </p>
+        {shortRead ? (
+          <button
+            type="button"
+            className="research-story-shortread"
+            onClick={() => onOpenShortRead(shortRead)}
+          >
+            Short on time? Open the {shortRead === "blog" ? "blog post" : "one-page brief"} →
+          </button>
+        ) : null}
       </div>
       <ol aria-label="Research section availability">
         {story.map((section) => (

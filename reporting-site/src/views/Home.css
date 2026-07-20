@@ -24,10 +24,15 @@
 .home-hero-media {
   position: absolute;
   inset: 0;
+  /* The chart PNG carries its own large headline text; the near-opaque
+     overlay plus blur keeps it as texture instead of a competing h1. The
+     slight scale hides the blur's transparent edge fringe. */
   background:
-    linear-gradient(90deg, rgba(5, 21, 36, 0.98), rgba(0, 79, 116, 0.9) 54%, rgba(6, 30, 51, 0.94)),
+    linear-gradient(90deg, rgba(5, 21, 36, 0.99), rgba(0, 79, 116, 0.965) 54%, rgba(6, 30, 51, 0.975)),
     url("/programs/public-service-data-quality/generated/charts/public-service-data-quality-thumbnail.png") center / cover no-repeat;
   opacity: 0.96;
+  filter: blur(10px);
+  transform: scale(1.05);
 }
 
 .home-hero::after {
@@ -185,6 +190,15 @@
   grid-row: span 4;
 }
 
+/* The figure keeps its fixed-aspect top crop (title and headline tiles);
+   centering the copy in the remaining height keeps the tall card from
+   reading as dead space below the text. */
+.home-finding-card-primary .home-finding-copy {
+  align-content: center;
+  gap: 0.55rem;
+  padding: 1rem;
+}
+
 .home-finding-card-noimage {
   grid-template-rows: minmax(0, 1fr);
   background:
@@ -196,6 +210,9 @@
   aspect-ratio: 16 / 8.6;
   display: block;
   object-fit: cover;
+  /* Generated chart PNGs carry their title and headline tiles at the top;
+     a centered crop shows the empty middle of tall figures instead. */
+  object-position: top;
   border-bottom: 1px solid var(--rule-soft);
 }
 
@@ -315,7 +332,9 @@
 
 .home-issue-status-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* Track count follows the rendered cards (Retired is hidden at zero), so
+     a fixed repeat(5) would leave a dead trailing column. */
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
   gap: 0;
   border: 1px solid var(--rule);
   background: #ffffff;
@@ -323,9 +342,10 @@
 
 .home-issue-status {
   display: grid;
-  align-content: space-between;
-  min-height: 8.6rem;
-  padding: 0.75rem;
+  align-content: start;
+  gap: 0.7rem;
+  min-height: 6.4rem;
+  padding: 0.85rem 0.75rem;
   border-right: 1px solid var(--rule-soft);
 }
 
@@ -547,9 +567,9 @@
 
 .home-topic-card {
   display: grid;
-  grid-template-rows: auto auto minmax(4.8rem, auto) auto;
+  grid-template-rows: auto minmax(4.8rem, auto) auto;
   gap: 0.65rem;
-  min-height: 15.25rem;
+  min-height: 11.5rem;
   padding: 0.9rem;
   border: 1px solid var(--rule-soft);
   border-top: 0.35rem solid var(--accent);
@@ -558,16 +578,6 @@
   background: #ffffff;
   text-decoration: none;
   transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-}
-
-.home-topic-card img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-  margin: -0.9rem -0.9rem 0;
-  width: calc(100% + 1.8rem);
-  border-bottom: 1px solid var(--rule-soft);
 }
 
 .home-topic-card-green {
@@ -783,7 +793,7 @@
 
   .home-hero-media {
     background:
-      linear-gradient(180deg, rgba(5, 21, 36, 0.98), rgba(0, 79, 116, 0.94)),
+      linear-gradient(180deg, rgba(5, 21, 36, 0.99), rgba(0, 79, 116, 0.97)),
       url("/programs/public-service-data-quality/generated/charts/public-service-data-quality-thumbnail.png") center / cover no-repeat;
   }
 
@@ -900,6 +910,14 @@
   }
 }
 
+/* Secondary hero cards render without an image (the thumbnails were
+   illegible at that size), so their copy takes the full card width. The
+   three-class selector outranks the two-class media-query layouts below. */
+.home-hero-findings .home-finding-card-noimage:not(.home-finding-card-primary) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
 @media (max-width: 560px) {
   .home-topic-grid,
   .home-visual-grid {
@@ -934,6 +952,19 @@
   .home-finding-card:not(.home-finding-card-primary) img {
     height: 100%;
     aspect-ratio: auto;
+  }
+
+  /* Only the primary card still carries an image; at phone width it stacks
+     full-width instead of shrinking into an illegible side thumbnail. */
+  .home-hero-findings .home-finding-card-primary {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .home-hero-findings .home-finding-card-primary img {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .home-finding-copy {
@@ -982,8 +1013,8 @@
 }
 
 .home-institutional .home-topic-card {
-  grid-template-rows: auto auto minmax(4.8rem, auto) auto;
-  min-height: 15.25rem;
+  grid-template-rows: auto minmax(4.8rem, auto) auto;
+  min-height: 11.5rem;
   padding: 0.9rem;
 }
 

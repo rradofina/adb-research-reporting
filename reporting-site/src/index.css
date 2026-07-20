@@ -270,6 +270,26 @@
     line-height: 1.65;
   }
 
+  .research-story-shortread {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-left: 0.25rem solid var(--accent);
+    background: var(--paper-deep);
+    color: var(--accent-strong);
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .research-story-shortread:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   @media (min-width: 900px) {
     .research-story-status {
       grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr);
@@ -10017,6 +10037,64 @@
     border-top: 1px solid var(--rule-soft);
     margin: 2.5rem 0;
   }
+
+  /* Evidence-packet documents are injected inside .prose-article wrapped in
+     a .research-story-document div, so the direct-child selectors above
+     never reach their elements. Mirror the article typography one level
+     down; without this the research tab renders as unstyled body text. */
+  .research-story-document > h1 {
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .research-story-document > h2 {
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .research-story-document > h3,
+  .research-story-document > h4 {
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.18rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .research-story-document > p {
+    margin-bottom: 1.55rem;
+  }
+  .research-story-document > ul,
+  .research-story-document > ol {
+    margin: 0 0 1.4rem 1.6rem;
+  }
+  .research-story-document > ul > li,
+  .research-story-document > ol > li {
+    margin-bottom: 0.45rem;
+  }
+  .research-story-document > ul > li {
+    list-style-type: square;
+  }
+  .research-story-document > blockquote {
+    margin: 1.6rem 0;
+    padding-left: 1.2rem;
+    border-left: 2px solid var(--crimson);
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .research-story-document > hr {
+    border: 0;
+    border-top: 1px solid var(--rule-soft);
+    margin: 2.5rem 0;
+  }
   .prose-article em {
     font-style: italic;
   }
@@ -10176,6 +10254,47 @@
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
+  }
+
+  /* The Explorations nav lands on a single featured story; this band keeps
+     the full report library reachable without scrolling the whole page. */
+  .showcase-index-band {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: -2.25rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--rule);
+    border-left: 0.25rem solid var(--accent);
+    background: var(--paper-deep);
+  }
+
+  .showcase-index-band p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .showcase-index-band strong {
+    color: var(--ink);
+  }
+
+  .showcase-index-band a {
+    color: var(--accent-strong);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .showcase-index-band a:hover {
+    color: var(--accent);
+  }
+
+  #showcase-library {
+    scroll-margin-top: 6rem;
   }
 
   .showcase-hero {

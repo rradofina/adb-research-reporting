@@ -16,6 +16,7 @@ import {
   issueHeldBackCount,
   issueHoldBackNotes,
   issueStatusCards,
+  issueTotal,
 } from "../data/issueClosure";
 import {
   getShowcaseReportQuality,
@@ -300,14 +301,16 @@ export default function Home() {
           </div>
           <div className="home-assurance" aria-label="Research standard">
             <span>Maturity labels visible</span>
-            <span>attestation_chain: ai-first</span>
+            <span>AI-first attestation</span>
             <span>Generated visuals only</span>
             <span>Audit trail linked</span>
           </div>
         </div>
         <div className="home-hero-findings" aria-label="Featured research findings">
           {findingTopics.map((topic, index) => {
-            const image = heroPath(topic.programSlug, topic.hero);
+            // Only the primary card is large enough for a generated chart to
+            // stay legible; the secondary cards read better as typography.
+            const image = index === 0 ? heroPath(topic.programSlug, topic.hero) : null;
             const attestation = topic.hero?.attestation_chain || "ai-first";
             return (
               <Link
@@ -339,7 +342,7 @@ export default function Home() {
       <section className="home-issue-closure" aria-labelledby="home-issue-closure-title">
         <div className="home-issue-closure-copy">
           <p className="home-section-kicker">Program register · {ISSUE_CLOSURE_AS_OF}</p>
-          <h2 id="home-issue-closure-title">All eighteen topics have one authoritative maturity label.</h2>
+          <h2 id="home-issue-closure-title">All {issueTotal} registered programs carry one authoritative maturity label.</h2>
           <p>
             {issueClosureDeck} Research outputs are separated from in-progress
             tracks so the catalogue never implies that every registered idea
@@ -397,28 +400,16 @@ export default function Home() {
         </div>
 
         <div className="home-topic-grid">
-          {standardTopics.map((topic) => {
-            const topicImage = heroPath(topic.programSlug, topic.hero);
-            return (
-              <Link href={topic.href}
-                className={`home-topic-card home-topic-card-${topic.tone}`}
-                key={topic.href}
-              >
-                {topicImage && (
-                  <img
-                    src={topicImage}
-                    alt={topic.hero?.title || topic.question}
-                    loading="lazy"
-                    width={topic.hero?.dimensions?.width || 1600}
-                    height={topic.hero?.dimensions?.height || 900}
-                  />
-                )}
-                <span>{topic.label}</span>
-                <h3>{topic.question}</h3>
-                <b>{topic.publicStage}</b>
-              </Link>
-            );
-          })}
+          {standardTopics.map((topic) => (
+            <Link href={topic.href}
+              className={`home-topic-card home-topic-card-${topic.tone}`}
+              key={topic.href}
+            >
+              <span>{topic.label}</span>
+              <h3>{topic.question}</h3>
+              <b>{topic.publicStage}</b>
+            </Link>
+          ))}
         </div>
       </section>
 

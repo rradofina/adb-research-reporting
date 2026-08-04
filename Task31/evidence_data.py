@@ -249,15 +249,16 @@ EVIDENCE = [
     },
     {
         "id": "E05", "category": "Economic shock", "study": "World Bank (2023b)",
-        "year": 2023, "source": "Sri Lanka Development Update and poverty assessment", "geography": "Sri Lanka",
+        "year": 2023, "source": "Sri Lanka Development Update: Time to Reset", "geography": "Sri Lanka",
         "subregion": "South Asia", "population": "Households and workers", "shock": "Debt, balance-of-payments, inflation, and recession crisis",
         "welfare_indicator": "Poverty, jobs, living costs, and nutrition",
-        "estimate": "Poverty rose from 13.1% in 2021 to 25.0% in 2022; roughly 2.5 million more people became poor, about 500,000 jobs were lost, and the cost of living rose about 65% for poor households",
+        "estimate": "Poverty rose from 13.1% in 2021 to 25.0% in 2022 at the $3.65 2017 PPP line, adding about 2.5 million poor people; an estimated half a million industry and services jobs were lost, with annual average inflation of 46.4% in 2022",
         "methodology": "Household survey nowcasting, labour indicators, and macro-poverty simulation",
         "identification": "Observed crisis period with modelled poverty update",
         "limitations": "The pandemic, policy errors, global prices, and debt crisis are jointly determined; no single-shock causal decomposition",
         "confidence": "High", "evidence_type": "Country poverty nowcast",
-        "url": "https://www.worldbank.org/en/news/speech/2023/07/19/towards-sri-lanka-s-recovery-green-resilient-inclusive-development", "doi": ""
+        "locator": "p. 14, paragraphs 15-16",
+        "url": "https://documents.worldbank.org/curated/en/099052823154030000/pdf/P1795590b753e0063080da06d77c1b4cbe5.pdf", "doi": ""
     },
     {
         "id": "E06", "category": "Economic shock", "study": "World Bank (2024a)",
@@ -517,11 +518,12 @@ EVIDENCE = [
         "year": 2015, "source": "Nepal Earthquake Post-Disaster Needs Assessment", "geography": "Nepal",
         "subregion": "South Asia", "population": "About 8 million affected people", "shock": "2015 earthquakes",
         "welfare_indicator": "Deaths, damage, economic loss, recovery need, and poverty",
-        "estimate": "About 8,970 deaths; $5.15 billion damage and $1.9 billion economic losses; poverty rose an estimated 2.5-3.5 percentage points, or 0.7-1.0 million people",
+        "estimate": "Over 8,790 casualties and 22,300 injuries, with the lives of about 8 million people affected; total recovery needs of US$6.7 billion; World Bank simulations project an additional 2.5-3.5 percent of Nepalis pushed into poverty in FY 2015-2016, translating into at least 700,000 additional poor",
         "methodology": "Sector-by-sector PDNA and poverty simulation",
         "identification": "Post-disaster accounting",
-        "limitations": "Rapid assessment and simultaneous trade disruption; asset damage is not consumption-equivalent welfare",
+        "limitations": "Rapid assessment and simultaneous trade disruption; asset damage is not consumption-equivalent welfare. The widely cited US$5.15 billion damage / US$1.9 billion loss split is not carried in Volume A: Key Findings, which reports total recovery needs instead; that split requires the volume that carries it before it may be quoted",
         "confidence": "High", "evidence_type": "Post-disaster needs assessment",
+        "locator": "Vol. A: Key Findings, pp. 13, 18, 22-23",
         "url": "https://www.worldbank.org/content/dam/Worldbank/document/SAR/nepal/PDNA%20Volume%20A%20Final.pdf", "doi": ""
     },
     {
@@ -570,7 +572,7 @@ EVIDENCE = [
         "identification": "Difference-in-differences-style exposure design",
         "limitations": "Relatively small exposed sample and a single exceptional event; external validity beyond herding households is limited",
         "confidence": "Medium", "evidence_type": "Quasi-experimental child panel",
-        "url": "https://doi.org/10.1016/j.worlddev.2016.07.005", "doi": "10.1016/j.worlddev.2016.07.005"
+        "url": "https://doi.org/10.1016/j.worlddev.2016.05.005", "doi": "10.1016/j.worlddev.2016.05.005"
     },
     {
         "id": "N20", "category": "Environmental/climate shock", "study": "Skoufias et al. (2013)",

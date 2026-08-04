@@ -1,0 +1,1295 @@
+{
+  "run_utc": "2026-08-04T15:31:11+00:00",
+  "records": [
+    {
+      "id": "C01",
+      "study": "Asian Development Bank (2021a)",
+      "source": "ADB report",
+      "estimate": "6.0%-9.5% of regional GDP in 2020 and 3.6%-6.3% in 2021",
+      "url": "https://www.adb.org/publications/macroeconomic-impact-covid-19-developing-asia",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "C02",
+      "study": "Asian Development Bank (2021b)",
+      "source": "Key Indicators for Asia and the Pacific 2021",
+      "estimate": "75-80 million additional people in extreme poverty in 2020; roughly 170-180 million additional people below the broader poverty line",
+      "url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "C03",
+      "study": "International Labour Organization (2020)",
+      "source": "Asia-Pacific Employment and Social Outlook 2020",
+      "estimate": "81 million jobs lost in 2020; working-hour losses pushed an additional 22-25 million workers into working poverty",
+      "url": "https://www.ilo.org/publications/asia-pacific-employment-and-social-outlook-2020-navigating-crisis-towards",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "81": [
+          null
+        ],
+        "22": [
+          null
+        ],
+        "25": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C04",
+      "study": "Egger et al. (2021)",
+      "source": "Science Advances",
+      "estimate": "Income fell in 8%-87% of samples (median about 70%); employment fell 5%-49% (median 30%); 9%-87% missed or reduced meals (median 45%)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "8": [
+          null
+        ],
+        "87": [
+          null
+        ],
+        "70": [
+          null
+        ],
+        "49": [
+          null
+        ],
+        "30": [
+          null
+        ],
+        "9": [
+          null
+        ],
+        "45": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C05",
+      "study": "World Bank (2021a)",
+      "source": "Uneven Recovery: East Asia and Pacific Economic Update",
+      "estimate": "32 million people were prevented from escaping poverty; children in the bottom two-fifths were up to 20 percentage points less likely to be engaged in learning; microenterprise sales fell about one-third",
+      "url": "https://www.worldbank.org/en/region/eap/publication/uneven-recovery-east-asia-and-pacific-economic-update-april-2021",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "32": [
+          null
+        ],
+        "20": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C06",
+      "study": "World Bank (2021b)",
+      "source": "Long COVID: East Asia and Pacific Economic Update",
+      "estimate": "Average annual earnings loss of about $524 per student in 2017 PPP, or 3.8%; estimated loss reaches 9.3% in ASEAN-5 and 7.9% in small East Asian economies",
+      "url": "https://documents1.worldbank.org/curated/en/138851632895977756/pdf/World-Bank-East-Asia-and-Pacific-Economic-Update-Long-COVID.pdf",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "524": [
+          39
+        ],
+        "3.8": [
+          14,
+          39,
+          46,
+          47
+        ],
+        "9.3": [
+          39
+        ],
+        "7.9": [
+          39
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
+      "source_kind": "pdf"
+    },
+    {
+      "id": "C07",
+      "study": "Yarrow et al. (2020)",
+      "source": "World Bank",
+      "estimate": "Roughly 0.5 year of learning or 16 PISA reading points lost; $222.4 billion in lifetime income, equivalent to 19.9% of 2019 GDP",
+      "url": "https://www.worldbank.org/en/country/indonesia/publication/estimates-of-covid-19-impacts-on-learning-and-earning-in-indonesia-how-to-turn-the-tide",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "0.5": null,
+        "16": [
+          null
+        ],
+        "222.4": [
+          null
+        ],
+        "19.9": [
+          null
+        ]
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 0.5.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C08",
+      "study": "World Bank (2023a)",
+      "source": "Collapse and Recovery: How COVID-19 Eroded Human Capital and What to Do About It",
+      "estimate": "Learning poverty rose from about 60% to 78%; current students may lose up to 14.4% of future earnings; every 30 days of closure was associated with about 32 days of learning loss",
+      "url": "https://www.worldbank.org/en/news/press-release/2023/02/16/covid-19-s-impact-on-south-asia-s-youth-could-last-generations",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "60": [
+          null
+        ],
+        "78": [
+          null
+        ],
+        "14.4": [
+          null
+        ],
+        "30": [
+          null
+        ],
+        "32": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C09",
+      "study": "Osendarp et al. (2021)",
+      "source": "Nature Food",
+      "estimate": "Moderate 2020-2022 scenario: 9.3 million additional wasted children, 2.6 million additional stunted children, 168,000 additional under-five deaths, and $29.7 billion in future productivity losses",
+      "url": "https://www.nature.com/articles/s43016-021-00319-4",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "9.3": null,
+        "2.6": null,
+        "168000": null,
+        "29.7": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C10",
+      "study": "UNICEF (2021)",
+      "source": "Direct and Indirect Effects of COVID-19 on South Asia",
+      "estimate": "Service disruptions may have contributed to about 228,000 additional child deaths and 11,000 additional maternal deaths in 2020",
+      "url": "https://www.unicef.org/press-releases/disruptions-health-services-due-covid-19-may-have-contributed-additional-239000",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "C11",
+      "study": "COVID-19 Mental Disorders Collaborators (2021)",
+      "source": "The Lancet",
+      "estimate": "53.2 million additional major-depressive-disorder cases (+27.6%) and 76.2 million additional anxiety cases (+25.6%) in 2020; females and younger people bore larger increases",
+      "url": "https://doi.org/10.1016/S0140-6736(21)02143-7",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "53.2": null,
+        "27.6": null,
+        "76.2": null,
+        "25.6": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C12",
+      "study": "COVID-19 Excess Mortality Collaborators (2022)",
+      "source": "The Lancet",
+      "estimate": "18.2 million global excess deaths in 2020-2021 versus 5.94 million reported COVID deaths; India 4.07 million, Indonesia 736,000, Pakistan 664,000",
+      "url": "https://doi.org/10.1016/S0140-6736(21)02796-3",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "18.2": null,
+        "5.94": null,
+        "4.07": null,
+        "736000": null,
+        "664000": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C13",
+      "study": "World Health Organization (2022)",
+      "source": "WHO global excess mortality estimates",
+      "estimate": "14.9 million excess deaths in 2020-2021; 84% were concentrated in South-East Asia, Europe, and the Americas; 57% were male and mortality was concentrated among older adults",
+      "url": "https://www.who.int/news/item/05-05-2022-14.9-million-excess-deaths-were-associated-with-the-covid-19-pandemic-in-2020-and-2021",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "14.9": [
+          null
+        ],
+        "84": [
+          null
+        ],
+        "57": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C14",
+      "study": "Kugler et al. (2023)",
+      "source": "World Development",
+      "estimate": "Women were 8 percentage points more likely than men to stop work; youth 4 points more likely than older adults; low-education and urban workers each about 4 and 3 points more likely",
+      "url": "https://doi.org/10.1016/j.worlddev.2023.106331",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "8": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C15",
+      "study": "O'Driscoll et al. (2021)",
+      "source": "Nature",
+      "estimate": "IFR rose from 0.001% at ages 5-9 to 8.29% at age 80+; among those 80+, estimated IFR was 10.83% for men and 5.76% for women",
+      "url": "https://www.nature.com/articles/s41586-020-2918-0",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "0.001": null,
+        "9": null,
+        "8.29": null,
+        "80": null,
+        "10.83": null,
+        "5.76": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "C16",
+      "study": "Asian Development Bank (2022a)",
+      "source": "Southeast Asia Development Symposium report",
+      "estimate": "4.7 million additional people in extreme poverty and 9.3 million jobs lost in 2021 versus a no-COVID baseline",
+      "url": "https://www.adb.org/news/covid-19-pushed-4-7-million-more-people-southeast-asia-extreme-poverty-2021-countries-are-well",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "4.7": [
+          null
+        ],
+        "9.3": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E01",
+      "study": "Headey and Ruel (2023)",
+      "source": "Nature Communications",
+      "estimate": "A 5% rise in real food prices over the previous three months increased wasting risk 9% and severe wasting 14%; the increase was 15% for asset-poor children and 6% for non-poor children",
+      "url": "https://www.nature.com/articles/s41467-023-41543-9",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "9": null,
+        "14": null,
+        "15": null,
+        "6": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E02",
+      "study": "International Monetary Fund (2022)",
+      "source": "Regional Economic Outlook: Asia and Pacific",
+      "estimate": "Projected 2022 inflation raised relative poverty about 1 percentage point in Cambodia and Viet Nam and 0.2 point in China; a severe combined price shock roughly doubled the effects",
+      "url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "0.2": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E03",
+      "study": "World Bank (2022a)",
+      "source": "Reforms for Recovery: East Asia and Pacific Economic Update",
+      "estimate": "Inflation eroded household purchasing power by about 2% in Viet Nam and 11% in Mongolia across the country cases examined",
+      "url": "https://www.worldbank.org/en/publication/reforms-for-recovery-east-asia-and-pacific-economic-update-october-2022",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "11": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E04",
+      "study": "United Nations Development Programme (2022a)",
+      "source": "Addressing the Cost-of-Living Crisis in Developing Countries",
+      "estimate": "About 71 million people could be pushed into poverty within three months; Asian hotspots included Armenia, Pakistan, Sri Lanka, and Uzbekistan",
+      "url": "https://www.undp.org/publications/addressing-cost-living-crisis-developing-countries-poverty-and-vulnerability-projections-and-policy-responses",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "E05",
+      "study": "World Bank (2023b)",
+      "source": "Sri Lanka Development Update: Time to Reset",
+      "estimate": "Poverty rose from 13.1% in 2021 to 25.0% in 2022 at the $3.65 2017 PPP line, adding about 2.5 million poor people; an estimated half a million industry and services jobs were lost, with annual average inflation of 46.4% in 2022",
+      "url": "https://documents.worldbank.org/curated/en/099052823154030000/pdf/P1795590b753e0063080da06d77c1b4cbe5.pdf",
+      "existing_locator": "p. 14, paragraphs 15-16",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "13.1": [
+          12,
+          14
+        ],
+        "25.0": [
+          14,
+          18
+        ],
+        "3.65": [
+          7,
+          14
+        ],
+        "2.5": [
+          12,
+          13,
+          14,
+          18
+        ],
+        "46.4": [
+          14,
+          18
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
+      "source_kind": "pdf"
+    },
+    {
+      "id": "E06",
+      "study": "World Bank (2024a)",
+      "source": "Lao PDR Economic Monitor and Household Welfare Monitoring",
+      "estimate": "With 39% inflation in 2023 and nominal wages up 5.7%, real wages fell about 33%; in 2024 low-income real per-capita income fell 6.9%, and 36.2% of low-income households faced moderate or severe food insecurity",
+      "url": "https://www.worldbank.org/en/country/lao/brief/monitoring-the-impact-of-covid-19-in-lao-pdr",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "39": null,
+        "5.7": null,
+        "33": null,
+        "6.9": [
+          null
+        ],
+        "36.2": [
+          null
+        ]
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 39, 5.7, 33.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E07",
+      "study": "World Bank (2017)",
+      "source": "Mongolia poverty update",
+      "estimate": "National poverty rose from 21.6% in 2014 to 29.6% in 2016; rural poverty increased by 10.1 percentage points",
+      "url": "https://www.worldbank.org/en/news/press-release/2017/10/17/2016-poverty-rate-in-mongolia-estimated-at-296-percent",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "21.6": [
+          null
+        ],
+        "29.6": [
+          null
+        ],
+        "10.1": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E08",
+      "study": "United Nations Development Programme (2022b)",
+      "source": "Afghanistan Socio-Economic Outlook",
+      "estimate": "GDP contracted about 20% in 2020-2021, a one-year loss near $5 billion; the basic food basket rose about 35%; excluding women from work could cost up to $1 billion or 5% of GDP",
+      "url": "https://www.undp.org/publications/afghanistan-august-2021-socio-economic-snapshot",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "E09",
+      "study": "World Bank (2024b)",
+      "source": "Myanmar Economic Monitor and Poverty Assessment",
+      "estimate": "Poverty reached 32.1%, with about 7 million more poor people than before COVID-19; GDP remained roughly 9% below its 2019 level",
+      "url": "https://www.worldbank.org/en/news/press-release/2024/06/12/threat-to-livelihoods-deepens-as-myanmar-economic-outlook-remains-weak",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {
+        "32.1": null,
+        "7": [
+          null
+        ],
+        "19": [
+          null
+        ],
+        "9": [
+          null
+        ]
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 32.1.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "E10",
+      "study": "Chodorow-Reich et al. (2020)",
+      "source": "Quarterly Journal of Economics",
+      "estimate": "District-level cash shortages reduced employment and night-light output by at least 2 percentage points in 2016 Q4 and bank credit by about 2 points; effects dissipated over subsequent months",
+      "url": "https://academic.oup.com/qje/article/135/1/57/5567189",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "NO_TOKENS",
+      "notes": [
+        "Estimate carries no distinctive numeric token to screen."
+      ]
+    },
+    {
+      "id": "E11",
+      "study": "Abiad et al. (2018)",
+      "source": "ADB Economics Working Paper",
+      "estimate": "Tariffs implemented at the time were estimated to reduce China's GDP by about 1% over two to three years and US GDP by about 0.2%, with mixed trade-diversion gains elsewhere in developing Asia",
+      "url": "https://www.adb.org/publications/impact-trade-conflict-developing-asia",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "E12",
+      "study": "International Monetary Fund (2019)",
+      "source": "IMF Annual Report trade-conflict scenario",
+      "estimate": "The tariff conflict was estimated to lower long-run global GDP by about 0.4% ($340 billion in 2018 dollars); China's 2019 GDP level by about 1.6% and US GDP by about 1%",
+      "url": "https://www.imf.org/external/pubs/ft/ar/2019/eng/spotlight/making-the-case-for-trade/index.htm",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:35+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "N01",
+      "study": "Hallegatte et al. (2017)",
+      "source": "World Bank, Unbreakable",
+      "estimate": "$520 billion in annual global consumption-equivalent wellbeing losses and 26 million people pushed into extreme poverty each year; resilience policies could cut wellbeing losses about 20%",
+      "url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:36+00:00",
+      "tokens": {
+        "520": [
+          15,
+          19,
+          99,
+          108,
+          142,
+          161
+        ],
+        "26": [
+          14,
+          17,
+          38,
+          55,
+          68,
+          70,
+          71,
+          81,
+          87,
+          92,
+          94,
+          95,
+          118,
+          120,
+          146,
+          182,
+          198
+        ],
+        "20": [
+          18,
+          19,
+          21,
+          22,
+          26,
+          32,
+          41,
+          43,
+          44,
+          45,
+          46,
+          47,
+          49,
+          54,
+          56,
+          57,
+          58,
+          61,
+          62,
+          63,
+          65,
+          79,
+          84,
+          93,
+          95,
+          106,
+          108,
+          110,
+          111,
+          127,
+          133,
+          134,
+          137,
+          138,
+          141,
+          152,
+          154,
+          159,
+          161,
+          162,
+          176,
+          177,
+          178,
+          180,
+          181,
+          189,
+          192,
+          193,
+          194,
+          198,
+          199
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
+      "source_kind": "pdf"
+    },
+    {
+      "id": "N02",
+      "study": "Asian Development Bank (2024)",
+      "source": "Asia-Pacific Climate Report 2024",
+      "estimate": "Under a high-end emissions pathway, regional GDP could be 17% lower by 2070 and 41% lower by 2100; a Paris-aligned pathway limits the 2100 loss to around 11%; up to 300 million people face coastal-inundation risk",
+      "url": "https://www.adb.org/climate-report/editions/2024",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:36+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "N03",
+      "study": "ESCAP (2023)",
+      "source": "Asia-Pacific Disaster Report 2023",
+      "estimate": "At 1.5 degrees C warming, annualized losses could reach $953 billion or 3.0% of regional GDP; at 2 degrees C they approach $1 trillion or 3.1%",
+      "url": "https://www.unescap.org/kp/2023/asia-pacific-disaster-report-2023",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:37+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "N04",
+      "study": "World Bank (2025)",
+      "source": "East Asia and Pacific Economic Update climate analysis",
+      "estimate": "Without adaptation, Viet Nam's GDP could be 12%-14.5% lower by 2050, with $400-$523 billion cumulative losses; current cyclone losses average about 0.8% of GDP annually; in atoll economies annual disaster losses already reach 3%-7% of GDP",
+      "url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:37+00:00",
+      "tokens": {
+        "12": [
+          6,
+          7,
+          13,
+          26,
+          27,
+          28,
+          29,
+          35,
+          40,
+          47,
+          50,
+          51,
+          53,
+          60,
+          64,
+          74,
+          78,
+          79,
+          86,
+          90,
+          98,
+          99,
+          114
+        ],
+        "14.5": [
+          86
+        ],
+        "2050": [
+          29,
+          32,
+          85,
+          86,
+          87,
+          94,
+          106
+        ],
+        "400": [
+          86
+        ],
+        "523": [
+          86
+        ],
+        "0.8": [
+          22,
+          31,
+          36,
+          47,
+          75,
+          77,
+          86,
+          88,
+          90,
+          100
+        ],
+        "7": [
+          6,
+          7,
+          21,
+          22,
+          23,
+          24,
+          26,
+          27,
+          34,
+          45,
+          47,
+          55,
+          56,
+          58,
+          60,
+          64,
+          65,
+          74,
+          77,
+          78,
+          86,
+          87,
+          90,
+          92,
+          99,
+          102,
+          105,
+          109,
+          114
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
+      "source_kind": "pdf"
+    },
+    {
+      "id": "N05",
+      "study": "Mani et al. (2018)",
+      "source": "World Bank, South Asia's Hotspots",
+      "estimate": "In a carbon-intensive scenario, climate change could reduce India's GDP by 2.8% and depress living standards for nearly half its population by 2050",
+      "url": "https://www.worldbank.org/en/news/press-release/2018/06/28/climate-change-depress-living-standards-india-says-new-world-bank-report",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:37+00:00",
+      "tokens": {
+        "2.8": [
+          null
+        ],
+        "2050": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N06",
+      "study": "Burke, Hsiang, and Miguel (2015)",
+      "source": "Nature",
+      "estimate": "Unmitigated warming was estimated to make global income about 23% lower in 2100 than in a world without climate change",
+      "url": "https://www.nature.com/articles/nature15725",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:37+00:00",
+      "tokens": {
+        "23": null,
+        "2100": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N07",
+      "study": "Diffenbaugh and Burke (2019)",
+      "source": "Proceedings of the National Academy of Sciences",
+      "estimate": "Warming increased population-weighted between-country inequality by about 25%; estimated GDP-per-capita losses were about 31% for India, 27% for Indonesia, and 12% for Bangladesh relative to a no-warming counterfactual",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:38+00:00",
+      "tokens": {
+        "25": [
+          null
+        ],
+        "31": [
+          null
+        ],
+        "27": [
+          null
+        ],
+        "12": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N08",
+      "study": "Carleton et al. (2022)",
+      "source": "Quarterly Journal of Economics",
+      "estimate": "Under high emissions, net mortality costs including adaptation were valued at about 3.2% of global GDP in 2100; the mortality partial social cost of carbon was $36.6 per tCO2",
+      "url": "https://academic.oup.com/qje/article/137/4/2037/6571943",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:38+00:00",
+      "tokens": {},
+      "status": "INACCESSIBLE",
+      "notes": [
+        "Could not fetch source (HTTP 403)."
+      ]
+    },
+    {
+      "id": "N09",
+      "study": "Vicedo-Cabrera et al. (2021)",
+      "source": "Nature Climate Change",
+      "estimate": "About 37% of warm-season heat-related deaths were attributable to anthropogenic climate change in 1991-2018; estimates across included Asian countries ranged roughly from 21.3% in China to 67.7% in Kuwait",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611104/",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:39+00:00",
+      "tokens": {
+        "37": [
+          null
+        ],
+        "21.3": null,
+        "67.7": null
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 21.3, 67.7.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N10",
+      "study": "Somanathan et al. (2021)",
+      "source": "Journal of Political Economy",
+      "estimate": "Annual plant output fell about 2% per 1 degree C increase; daily microdata show lower worker productivity and greater absenteeism, with climate control mitigating losses",
+      "url": "https://www.journals.uchicago.edu/doi/10.1086/713733",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:39+00:00",
+      "tokens": {},
+      "status": "NO_TOKENS",
+      "notes": [
+        "Estimate carries no distinctive numeric token to screen."
+      ]
+    },
+    {
+      "id": "N11",
+      "study": "Im, Pal, and Eltahir (2017)",
+      "source": "Science Advances",
+      "estimate": "Under business-as-usual emissions, late-century extremes approach or exceed the 35 degrees C survivability threshold; about 4% of South Asia's population could face exceedances and roughly 75% could face dangerous wet-bulb temperatures above 31 degrees C",
+      "url": "https://www.science.org/doi/10.1126/sciadv.1603322",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:39+00:00",
+      "tokens": {
+        "35": [
+          null
+        ],
+        "75": [
+          null
+        ],
+        "31": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N12",
+      "study": "Rentschler, Salhab, and Jafino (2022)",
+      "source": "Nature Communications",
+      "estimate": "1.81 billion people were directly exposed globally; 1.24 billion lived in South and East Asia, including 395 million in China and 390 million in India; 170 million exposed people lived in extreme poverty",
+      "url": "https://www.nature.com/articles/s41467-022-30727-4",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:41+00:00",
+      "tokens": {
+        "1.81": null,
+        "1.24": null,
+        "395": null,
+        "390": null,
+        "170": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N13",
+      "study": "Tellman et al. (2021)",
+      "source": "Nature",
+      "estimate": "Between 255 million and 290 million people were directly affected; the share of global population in observed flood footprints grew about 20%-24% from 2000 to 2015",
+      "url": "https://www.nature.com/articles/s41586-021-03695-w",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:41+00:00",
+      "tokens": {
+        "255": null,
+        "290": null,
+        "20": null,
+        "24": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N14",
+      "study": "Government of Pakistan et al. (2022)",
+      "source": "Pakistan Floods 2022 Post-Disaster Needs Assessment",
+      "estimate": "$14.9 billion in damage and $15.2 billion in economic losses; poverty projected to rise 3.7-4.0 percentage points, adding 8.4-9.1 million poor people; 1,730 deaths",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099910201032325572",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:42+00:00",
+      "tokens": {
+        "14.9": null,
+        "15.2": null,
+        "3.7": null,
+        "4.0": null,
+        "8.4": null,
+        "9.1": null,
+        "1730": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N15",
+      "study": "Government of Nepal (2015)",
+      "source": "Nepal Earthquake Post-Disaster Needs Assessment",
+      "estimate": "Over 8,790 casualties and 22,300 injuries, with the lives of about 8 million people affected; total recovery needs of US$6.7 billion; World Bank simulations project an additional 2.5-3.5 percent of Nepalis pushed into poverty in FY 2015-2016, translating into at least 700,000 additional poor",
+      "url": "https://www.worldbank.org/content/dam/Worldbank/document/SAR/nepal/PDNA%20Volume%20A%20Final.pdf",
+      "existing_locator": "Vol. A: Key Findings, pp. 13, 18, 22-23",
+      "retrieved_utc": "2026-08-04T15:28:42+00:00",
+      "tokens": {
+        "8790": [
+          13
+        ],
+        "22300": [
+          13
+        ],
+        "8": [
+          13,
+          21,
+          29,
+          32,
+          34,
+          42,
+          51,
+          52,
+          53,
+          56,
+          76,
+          77,
+          88,
+          97,
+          105,
+          106,
+          107
+        ],
+        "6.7": [
+          22,
+          23,
+          94
+        ],
+        "2.5": [
+          18,
+          49,
+          50,
+          94,
+          100
+        ],
+        "3.5": [
+          18,
+          100
+        ],
+        "700000": [
+          18
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
+      "source_kind": "pdf"
+    },
+    {
+      "id": "N16",
+      "study": "Government of Vanuatu (2015)",
+      "source": "Tropical Cyclone Pam Post-Disaster Needs Assessment",
+      "estimate": "About $450 million in damage and losses, equivalent to 64% of GDP; roughly 65,000 people displaced and livelihoods of at least 80% of the rural population compromised",
+      "url": "https://www.worldbank.org/en/results/2024/06/07/improving-lives-and-building-resilience-in-vanuatu",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:45+00:00",
+      "tokens": {
+        "450": [
+          null
+        ],
+        "64": [
+          null
+        ],
+        "65000": null,
+        "80": null
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 65000, 80.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N17",
+      "study": "Government of Fiji (2016)",
+      "source": "Tropical Cyclone Winston Post-Disaster Needs Assessment",
+      "estimate": "44 deaths and about $1.38 billion in damage and losses, equivalent to 31% of GDP; 30,369 houses were damaged or destroyed and about 62% of the population was affected",
+      "url": "https://www.worldbank.org/en/news/press-release/2016/06/30/world-bank-commits-50m-to-support-fijis-long-term-cyclone-winston-recovery",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:46+00:00",
+      "tokens": {
+        "44": [
+          null
+        ],
+        "1.38": [
+          null
+        ],
+        "31": [
+          null
+        ],
+        "30369": null,
+        "62": null
+      },
+      "status": "PARTIAL",
+      "notes": [
+        "Not present in source: 30369, 62.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N18",
+      "study": "World Bank (2022b)",
+      "source": "Tonga Hunga Tonga-Hunga Ha'apai GRADE assessment",
+      "estimate": "$90.4 million in direct damage, equivalent to about 18.5% of GDP",
+      "url": "https://www.worldbank.org/en/news/press-release/2022/02/14/tonga-volcanic-eruption-and-tsunami-world-bank-disaster-assessment-report-estimates-damages-at-us-90m",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:46+00:00",
+      "tokens": {
+        "90.4": [
+          null
+        ],
+        "18.5": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N19",
+      "study": "Groppo and Kraehnert (2016)",
+      "source": "World Development",
+      "estimate": "Children exposed in utero or infancy in severely affected districts had height-for-age z-scores about 1.67 standard deviations lower in the preferred interaction estimate; 10.3 million livestock died",
+      "url": "https://doi.org/10.1016/j.worlddev.2016.05.005",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:47+00:00",
+      "tokens": {
+        "1.67": null,
+        "10.3": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N20",
+      "study": "Skoufias et al. (2013)",
+      "source": "World Bank, Disquiet on the Weather Front",
+      "estimate": "Drought exposure reduced household food consumption by about 4%",
+      "url": "https://www.worldbank.org/en/country/philippines/publication/disquiet-on-the-weather-front-the-welfare-impacts-of-climatic-variability-in-the-rural-philippines",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:47+00:00",
+      "tokens": {},
+      "status": "NO_TOKENS",
+      "notes": [
+        "Estimate carries no distinctive numeric token to screen."
+      ]
+    },
+    {
+      "id": "N21",
+      "study": "India State-Level Disease Burden Initiative Air Pollution Collaborators (2021)",
+      "source": "The Lancet Planetary Health",
+      "estimate": "1.67 million deaths in 2019 (17.8% of all deaths) were attributable to air pollution; output losses were $36.8 billion, or 1.36% of GDP",
+      "url": "https://doi.org/10.1016/S2542-5196(20)30298-9",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:47+00:00",
+      "tokens": {
+        "1.67": null,
+        "17.8": null,
+        "36.8": null,
+        "1.36": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N22",
+      "study": "Ebenstein et al. (2017)",
+      "source": "Proceedings of the National Academy of Sciences",
+      "estimate": "A 10 microgram/m3 increase in PM10 reduced life expectancy by about 0.64 year; meeting China's Class I standard was estimated to save 3.7 billion life-years",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5625887/",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:47+00:00",
+      "tokens": {
+        "0.64": [
+          null
+        ],
+        "3.7": [
+          null
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N23",
+      "study": "Koplitz et al. (2016)",
+      "source": "Environmental Research Letters",
+      "estimate": "About 100,300 premature deaths were estimated across the three countries, more than 90,000 in Indonesia",
+      "url": "https://doi.org/10.1088/1748-9326/11/9/094023",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:48+00:00",
+      "tokens": {
+        "100300": null,
+        "90000": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    },
+    {
+      "id": "N24",
+      "study": "Johnston et al. (2021)",
+      "source": "Nature Sustainability",
+      "estimate": "Smoke exposure was associated with 417 excess deaths, 1,124 cardiovascular and 2,027 respiratory hospital admissions, 1,305 asthma emergency visits, and A$1.95 billion in health costs",
+      "url": "https://www.nature.com/articles/s41893-020-00610-5",
+      "existing_locator": "",
+      "retrieved_utc": "2026-08-04T15:28:49+00:00",
+      "tokens": {
+        "417": null,
+        "1124": null,
+        "1305": null,
+        "1.95": null
+      },
+      "status": "NOT_FOUND",
+      "notes": [
+        "No quoted figure appears in the fetched source.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
+      ],
+      "source_kind": "html"
+    }
+  ]
+}

@@ -1,0 +1,1593 @@
+{
+  "run_utc": "2026-08-04T15:28:26+00:00",
+  "evidence": [
+    {
+      "id": "C01",
+      "study": "Asian Development Bank (2021a)",
+      "recorded_source": "ADB report",
+      "recorded_year": 2021,
+      "doi": "",
+      "url": "https://www.adb.org/publications/macroeconomic-impact-covid-19-developing-asia",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "C02",
+      "study": "Asian Development Bank (2021b)",
+      "recorded_source": "Key Indicators for Asia and the Pacific 2021",
+      "recorded_year": 2021,
+      "doi": "",
+      "url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "C03",
+      "study": "International Labour Organization (2020)",
+      "recorded_source": "Asia-Pacific Employment and Social Outlook 2020",
+      "recorded_year": 2020,
+      "doi": "",
+      "url": "https://www.ilo.org/publications/asia-pacific-employment-and-social-outlook-2020-navigating-crisis-towards",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C04",
+      "study": "Egger et al. (2021)",
+      "recorded_source": "Science Advances",
+      "recorded_year": 2021,
+      "doi": "10.1126/sciadv.abe0997",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Falling living standards during the COVID-19 crisis: Quantitative evidence from nine developing countries",
+        "journal": "Science Advances",
+        "year": 2021,
+        "first_authors": [
+          "Egger",
+          "Miguel",
+          "Warren"
+        ]
+      }
+    },
+    {
+      "id": "C05",
+      "study": "World Bank (2021a)",
+      "recorded_source": "Uneven Recovery: East Asia and Pacific Economic Update",
+      "recorded_year": 2021,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/region/eap/publication/uneven-recovery-east-asia-and-pacific-economic-update-april-2021",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C06",
+      "study": "World Bank (2021b)",
+      "recorded_source": "Long COVID: East Asia and Pacific Economic Update",
+      "recorded_year": 2021,
+      "doi": "",
+      "url": "https://documents1.worldbank.org/curated/en/138851632895977756/pdf/World-Bank-East-Asia-and-Pacific-Economic-Update-Long-COVID.pdf",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C07",
+      "study": "Yarrow et al. (2020)",
+      "recorded_source": "World Bank",
+      "recorded_year": 2020,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/country/indonesia/publication/estimates-of-covid-19-impacts-on-learning-and-earning-in-indonesia-how-to-turn-the-tide",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C08",
+      "study": "World Bank (2023a)",
+      "recorded_source": "Collapse and Recovery: How COVID-19 Eroded Human Capital and What to Do About It",
+      "recorded_year": 2023,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2023/02/16/covid-19-s-impact-on-south-asia-s-youth-could-last-generations",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C09",
+      "study": "Osendarp et al. (2021)",
+      "recorded_source": "Nature Food",
+      "recorded_year": 2021,
+      "doi": "10.1038/s43016-021-00319-4",
+      "url": "https://www.nature.com/articles/s43016-021-00319-4",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "The COVID-19 crisis will exacerbate maternal and child undernutrition and child mortality in low- and middle-income countries",
+        "journal": "Nature Food",
+        "year": 2021,
+        "first_authors": [
+          "Osendarp",
+          "Akuoku",
+          "Black"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "study": "UNICEF (2021)",
+      "recorded_source": "Direct and Indirect Effects of COVID-19 on South Asia",
+      "recorded_year": 2021,
+      "doi": "",
+      "url": "https://www.unicef.org/press-releases/disruptions-health-services-due-covid-19-may-have-contributed-additional-239000",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "C11",
+      "study": "COVID-19 Mental Disorders Collaborators (2021)",
+      "recorded_source": "The Lancet",
+      "recorded_year": 2021,
+      "doi": "10.1016/S0140-6736(21)02143-7",
+      "url": "https://doi.org/10.1016/S0140-6736(21)02143-7",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Institutional author; no surname check applicable."
+      ],
+      "crossref": {
+        "title": "Global prevalence and burden of depressive and anxiety disorders in 204 countries and territories in 2020 due to the COVID-19 pandemic",
+        "journal": "The Lancet",
+        "year": 2021,
+        "first_authors": [
+          "Santomauro",
+          "Mantilla Herrera",
+          "Shadid"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "study": "COVID-19 Excess Mortality Collaborators (2022)",
+      "recorded_source": "The Lancet",
+      "recorded_year": 2022,
+      "doi": "10.1016/S0140-6736(21)02796-3",
+      "url": "https://doi.org/10.1016/S0140-6736(21)02796-3",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Institutional author; no surname check applicable."
+      ],
+      "crossref": {
+        "title": "Estimating excess mortality due to the COVID-19 pandemic: a systematic analysis of COVID-19-related mortality, 2020\u201321",
+        "journal": "The Lancet",
+        "year": 2022,
+        "first_authors": [
+          "Wang",
+          "Paulson",
+          "Pease"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "study": "World Health Organization (2022)",
+      "recorded_source": "WHO global excess mortality estimates",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.who.int/news/item/05-05-2022-14.9-million-excess-deaths-were-associated-with-the-covid-19-pandemic-in-2020-and-2021",
+      "retrieved_utc": "2026-08-04T15:28:26+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "C14",
+      "study": "Kugler et al. (2023)",
+      "recorded_source": "World Development",
+      "recorded_year": 2023,
+      "doi": "10.1016/j.worlddev.2023.106331",
+      "url": "https://doi.org/10.1016/j.worlddev.2023.106331",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "How did the COVID-19 crisis affect different types of workers in the developing world?",
+        "journal": "World Development",
+        "year": 2023,
+        "first_authors": [
+          "Kugler",
+          "Viollaz",
+          "Duque"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "study": "O'Driscoll et al. (2021)",
+      "recorded_source": "Nature",
+      "recorded_year": 2021,
+      "doi": "10.1038/s41586-020-2918-0",
+      "url": "https://www.nature.com/articles/s41586-020-2918-0",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Year recorded as 2021, Crossref issue year 2020 (online-first / issue-date offset; within tolerance)."
+      ],
+      "crossref": {
+        "title": "Age-specific mortality and immunity patterns of SARS-CoV-2",
+        "journal": "Nature",
+        "year": 2020,
+        "first_authors": [
+          "O\u2019Driscoll",
+          "Ribeiro Dos Santos",
+          "Wang"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "study": "Asian Development Bank (2022a)",
+      "recorded_source": "Southeast Asia Development Symposium report",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.adb.org/news/covid-19-pushed-4-7-million-more-people-southeast-asia-extreme-poverty-2021-countries-are-well",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "E01",
+      "study": "Headey and Ruel (2023)",
+      "recorded_source": "Nature Communications",
+      "recorded_year": 2023,
+      "doi": "10.1038/s41467-023-41543-9",
+      "url": "https://www.nature.com/articles/s41467-023-41543-9",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Food inflation and child undernutrition in low and middle income countries",
+        "journal": "Nature Communications",
+        "year": 2023,
+        "first_authors": [
+          "Headey",
+          "Ruel"
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "study": "International Monetary Fund (2022)",
+      "recorded_source": "Regional Economic Outlook: Asia and Pacific",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E03",
+      "study": "World Bank (2022a)",
+      "recorded_source": "Reforms for Recovery: East Asia and Pacific Economic Update",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/publication/reforms-for-recovery-east-asia-and-pacific-economic-update-october-2022",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E04",
+      "study": "United Nations Development Programme (2022a)",
+      "recorded_source": "Addressing the Cost-of-Living Crisis in Developing Countries",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.undp.org/publications/addressing-cost-living-crisis-developing-countries-poverty-and-vulnerability-projections-and-policy-responses",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "E05",
+      "study": "World Bank (2023b)",
+      "recorded_source": "Sri Lanka Development Update: Time to Reset",
+      "recorded_year": 2023,
+      "doi": "",
+      "url": "https://documents.worldbank.org/curated/en/099052823154030000/pdf/P1795590b753e0063080da06d77c1b4cbe5.pdf",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E06",
+      "study": "World Bank (2024a)",
+      "recorded_source": "Lao PDR Economic Monitor and Household Welfare Monitoring",
+      "recorded_year": 2024,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/country/lao/brief/monitoring-the-impact-of-covid-19-in-lao-pdr",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E07",
+      "study": "World Bank (2017)",
+      "recorded_source": "Mongolia poverty update",
+      "recorded_year": 2017,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2017/10/17/2016-poverty-rate-in-mongolia-estimated-at-296-percent",
+      "retrieved_utc": "2026-08-04T15:28:27+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E08",
+      "study": "United Nations Development Programme (2022b)",
+      "recorded_source": "Afghanistan Socio-Economic Outlook",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.undp.org/publications/afghanistan-august-2021-socio-economic-snapshot",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "E09",
+      "study": "World Bank (2024b)",
+      "recorded_source": "Myanmar Economic Monitor and Poverty Assessment",
+      "recorded_year": 2024,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2024/06/12/threat-to-livelihoods-deepens-as-myanmar-economic-outlook-remains-weak",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "E10",
+      "study": "Chodorow-Reich et al. (2020)",
+      "recorded_source": "Quarterly Journal of Economics",
+      "recorded_year": 2020,
+      "doi": "10.1093/qje/qjz027",
+      "url": "https://academic.oup.com/qje/article/135/1/57/5567189",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Year recorded as 2020, Crossref issue year 2019 (online-first / issue-date offset; within tolerance)."
+      ],
+      "crossref": {
+        "title": "Cash and the Economy: Evidence from India\u2019s Demonetization*",
+        "journal": "The Quarterly Journal of Economics",
+        "year": 2019,
+        "first_authors": [
+          "Chodorow-Reich",
+          "Gopinath",
+          "Mishra"
+        ]
+      }
+    },
+    {
+      "id": "E11",
+      "study": "Abiad et al. (2018)",
+      "recorded_source": "ADB Economics Working Paper",
+      "recorded_year": 2018,
+      "doi": "10.22617/WPS189770-2",
+      "url": "https://www.adb.org/publications/impact-trade-conflict-developing-asia",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "The Impact of Trade Conflict on Developing Asia",
+        "journal": "ADB Economics Working Paper Series",
+        "year": 2018,
+        "first_authors": [
+          "Abiad",
+          "Baris",
+          "Barnabe"
+        ]
+      }
+    },
+    {
+      "id": "E12",
+      "study": "International Monetary Fund (2019)",
+      "recorded_source": "IMF Annual Report trade-conflict scenario",
+      "recorded_year": 2019,
+      "doi": "",
+      "url": "https://www.imf.org/external/pubs/ft/ar/2019/eng/spotlight/making-the-case-for-trade/index.htm",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "N01",
+      "study": "Hallegatte et al. (2017)",
+      "recorded_source": "World Bank, Unbreakable",
+      "recorded_year": 2017,
+      "doi": "",
+      "url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N02",
+      "study": "Asian Development Bank (2024)",
+      "recorded_source": "Asia-Pacific Climate Report 2024",
+      "recorded_year": 2024,
+      "doi": "",
+      "url": "https://www.adb.org/climate-report/editions/2024",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "N03",
+      "study": "ESCAP (2023)",
+      "recorded_source": "Asia-Pacific Disaster Report 2023",
+      "recorded_year": 2023,
+      "doi": "",
+      "url": "https://www.unescap.org/kp/2023/asia-pacific-disaster-report-2023",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 403,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL returned 403 (bot-blocked); manual confirmation required."
+      ]
+    },
+    {
+      "id": "N04",
+      "study": "World Bank (2025)",
+      "recorded_source": "East Asia and Pacific Economic Update climate analysis",
+      "recorded_year": 2025,
+      "doi": "",
+      "url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N05",
+      "study": "Mani et al. (2018)",
+      "recorded_source": "World Bank, South Asia's Hotspots",
+      "recorded_year": 2018,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2018/06/28/climate-change-depress-living-standards-india-says-new-world-bank-report",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N06",
+      "study": "Burke, Hsiang, and Miguel (2015)",
+      "recorded_source": "Nature",
+      "recorded_year": 2015,
+      "doi": "10.1038/nature15725",
+      "url": "https://www.nature.com/articles/nature15725",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Global non-linear effect of temperature on economic production",
+        "journal": "Nature",
+        "year": 2015,
+        "first_authors": [
+          "Burke",
+          "Hsiang",
+          "Miguel"
+        ]
+      }
+    },
+    {
+      "id": "N07",
+      "study": "Diffenbaugh and Burke (2019)",
+      "recorded_source": "Proceedings of the National Academy of Sciences",
+      "recorded_year": 2019,
+      "doi": "10.1073/pnas.1816020116",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Global warming has increased global economic inequality",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "year": 2019,
+        "first_authors": [
+          "Diffenbaugh",
+          "Burke"
+        ]
+      }
+    },
+    {
+      "id": "N08",
+      "study": "Carleton et al. (2022)",
+      "recorded_source": "Quarterly Journal of Economics",
+      "recorded_year": 2022,
+      "doi": "10.1093/qje/qjac020",
+      "url": "https://academic.oup.com/qje/article/137/4/2037/6571943",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Valuing the Global Mortality Consequences of Climate Change Accounting for Adaptation Costs and Benefits",
+        "journal": "The Quarterly Journal of Economics",
+        "year": 2022,
+        "first_authors": [
+          "Carleton",
+          "Jina",
+          "Delgado"
+        ]
+      }
+    },
+    {
+      "id": "N09",
+      "study": "Vicedo-Cabrera et al. (2021)",
+      "recorded_source": "Nature Climate Change",
+      "recorded_year": 2021,
+      "doi": "10.1038/s41558-021-01058-x",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611104/",
+      "retrieved_utc": "2026-08-04T15:28:28+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "The burden of heat-related mortality attributable to recent human-induced climate change",
+        "journal": "Nature Climate Change",
+        "year": 2021,
+        "first_authors": [
+          "Vicedo-Cabrera",
+          "Scovronick",
+          "Sera"
+        ]
+      }
+    },
+    {
+      "id": "N10",
+      "study": "Somanathan et al. (2021)",
+      "recorded_source": "Journal of Political Economy",
+      "recorded_year": 2021,
+      "doi": "10.1086/713733",
+      "url": "https://www.journals.uchicago.edu/doi/10.1086/713733",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "The Impact of Temperature on Productivity and Labor Supply: Evidence from Indian Manufacturing",
+        "journal": "Journal of Political Economy",
+        "year": 2021,
+        "first_authors": [
+          "Somanathan",
+          "Somanathan",
+          "Sudarshan"
+        ]
+      }
+    },
+    {
+      "id": "N11",
+      "study": "Im, Pal, and Eltahir (2017)",
+      "recorded_source": "Science Advances",
+      "recorded_year": 2017,
+      "doi": "10.1126/sciadv.1603322",
+      "url": "https://www.science.org/doi/10.1126/sciadv.1603322",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Deadly heat waves projected in the densely populated agricultural regions of South Asia",
+        "journal": "Science Advances",
+        "year": 2017,
+        "first_authors": [
+          "Im",
+          "Pal",
+          "Eltahir"
+        ]
+      }
+    },
+    {
+      "id": "N12",
+      "study": "Rentschler, Salhab, and Jafino (2022)",
+      "recorded_source": "Nature Communications",
+      "recorded_year": 2022,
+      "doi": "10.1038/s41467-022-30727-4",
+      "url": "https://www.nature.com/articles/s41467-022-30727-4",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Flood exposure and poverty in 188 countries",
+        "journal": "Nature Communications",
+        "year": 2022,
+        "first_authors": [
+          "Rentschler",
+          "Salhab",
+          "Jafino"
+        ]
+      }
+    },
+    {
+      "id": "N13",
+      "study": "Tellman et al. (2021)",
+      "recorded_source": "Nature",
+      "recorded_year": 2021,
+      "doi": "10.1038/s41586-021-03695-w",
+      "url": "https://www.nature.com/articles/s41586-021-03695-w",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Satellite imaging reveals increased proportion of population exposed to floods",
+        "journal": "Nature",
+        "year": 2021,
+        "first_authors": [
+          "Tellman",
+          "Sullivan",
+          "Kuhn"
+        ]
+      }
+    },
+    {
+      "id": "N14",
+      "study": "Government of Pakistan et al. (2022)",
+      "recorded_source": "Pakistan Floods 2022 Post-Disaster Needs Assessment",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099910201032325572",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N15",
+      "study": "Government of Nepal (2015)",
+      "recorded_source": "Nepal Earthquake Post-Disaster Needs Assessment",
+      "recorded_year": 2015,
+      "doi": "",
+      "url": "https://www.worldbank.org/content/dam/Worldbank/document/SAR/nepal/PDNA%20Volume%20A%20Final.pdf",
+      "retrieved_utc": "2026-08-04T15:28:29+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N16",
+      "study": "Government of Vanuatu (2015)",
+      "recorded_source": "Tropical Cyclone Pam Post-Disaster Needs Assessment",
+      "recorded_year": 2015,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/results/2024/06/07/improving-lives-and-building-resilience-in-vanuatu",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N17",
+      "study": "Government of Fiji (2016)",
+      "recorded_source": "Tropical Cyclone Winston Post-Disaster Needs Assessment",
+      "recorded_year": 2016,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2016/06/30/world-bank-commits-50m-to-support-fijis-long-term-cyclone-winston-recovery",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N18",
+      "study": "World Bank (2022b)",
+      "recorded_source": "Tonga Hunga Tonga-Hunga Ha'apai GRADE assessment",
+      "recorded_year": 2022,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/news/press-release/2022/02/14/tonga-volcanic-eruption-and-tsunami-world-bank-disaster-assessment-report-estimates-damages-at-us-90m",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N19",
+      "study": "Groppo and Kraehnert (2016)",
+      "recorded_source": "World Development",
+      "recorded_year": 2016,
+      "doi": "10.1016/j.worlddev.2016.05.005",
+      "url": "https://doi.org/10.1016/j.worlddev.2016.05.005",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Extreme Weather Events and Child Height: Evidence from Mongolia",
+        "journal": "World Development",
+        "year": 2016,
+        "first_authors": [
+          "Groppo",
+          "Kraehnert"
+        ]
+      }
+    },
+    {
+      "id": "N20",
+      "study": "Skoufias et al. (2013)",
+      "recorded_source": "World Bank, Disquiet on the Weather Front",
+      "recorded_year": 2013,
+      "doi": "",
+      "url": "https://www.worldbank.org/en/country/philippines/publication/disquiet-on-the-weather-front-the-welfare-impacts-of-climatic-variability-in-the-rural-philippines",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "url_status": 200,
+        "url_error": null
+      },
+      "status": "NEEDS_LOCATOR",
+      "notes": [
+        "URL serves; no DOI. Page/table locator still required."
+      ]
+    },
+    {
+      "id": "N21",
+      "study": "India State-Level Disease Burden Initiative Air Pollution Collaborators (2021)",
+      "recorded_source": "The Lancet Planetary Health",
+      "recorded_year": 2021,
+      "doi": "10.1016/S2542-5196(20)30298-9",
+      "url": "https://doi.org/10.1016/S2542-5196(20)30298-9",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Institutional author; no surname check applicable."
+      ],
+      "crossref": {
+        "title": "Health and economic impact of air pollution in the states of India: the Global Burden of Disease Study 2019",
+        "journal": "The Lancet Planetary Health",
+        "year": 2021,
+        "first_authors": [
+          "Pandey",
+          "Brauer",
+          "Cropper"
+        ]
+      }
+    },
+    {
+      "id": "N22",
+      "study": "Ebenstein et al. (2017)",
+      "recorded_source": "Proceedings of the National Academy of Sciences",
+      "recorded_year": 2017,
+      "doi": "10.1073/pnas.1616784114",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5625887/",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "New evidence on the impact of sustained exposure to air pollution on life expectancy from China\u2019s Huai River Policy",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "year": 2017,
+        "first_authors": [
+          "Ebenstein",
+          "Fan",
+          "Greenstone"
+        ]
+      }
+    },
+    {
+      "id": "N23",
+      "study": "Koplitz et al. (2016)",
+      "recorded_source": "Environmental Research Letters",
+      "recorded_year": 2016,
+      "doi": "10.1088/1748-9326/11/9/094023",
+      "url": "https://doi.org/10.1088/1748-9326/11/9/094023",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [],
+      "crossref": {
+        "title": "Public health impacts of the severe haze in Equatorial Asia in September\u2013October 2015: demonstration of a new framework for informing fire management strategies to reduce downwind smoke exposure",
+        "journal": "Environmental Research Letters",
+        "year": 2016,
+        "first_authors": [
+          "Koplitz",
+          "Mickley",
+          "Marlier"
+        ]
+      }
+    },
+    {
+      "id": "N24",
+      "study": "Johnston et al. (2021)",
+      "recorded_source": "Nature Sustainability",
+      "recorded_year": 2021,
+      "doi": "10.1038/s41893-020-00610-5",
+      "url": "https://www.nature.com/articles/s41893-020-00610-5",
+      "retrieved_utc": "2026-08-04T15:28:30+00:00",
+      "checks": {
+        "journal": true,
+        "year": true,
+        "first_author": true
+      },
+      "status": "VERIFIED",
+      "notes": [
+        "Year recorded as 2021, Crossref issue year 2020 (online-first / issue-date offset; within tolerance)."
+      ],
+      "crossref": {
+        "title": "Unprecedented health costs of smoke-related PM2.5 from the 2019\u201320 Australian megafires",
+        "journal": "Nature Sustainability",
+        "year": 2020,
+        "first_authors": [
+          "Johnston",
+          "Borchers-Arriagada",
+          "Morgan"
+        ]
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "R01",
+      "reference": "Abiad, A., Arao, R. M., Dagli, S., Ferrarini, B., Noy, I., Osewe, P. L., Pagaduan, J., Park, D., and Platitas, R. (2021). The economic impact of the COVID-19 outbreak on developing Asia. In Macroeconomic Impact of COVID-19 in Developing Asia. Asian Development Bank.",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R02",
+      "reference": "Abiad, A., Baris, K., Bernabe, J. A., Bertulfo, D. J., Camingue-Romance, S., Feliciano, P. N., Mariasingham, M. J., and Mercer-Blackman, V. (2018). The Impact of Trade Conflict on Developing Asia. ADB Economics Working Paper No. 566. https://doi.org/10.22617/WPS189770-2",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.22617/WPS189770-2",
+      "crossref_title": "The Impact of Trade Conflict on Developing Asia"
+    },
+    {
+      "id": "R03",
+      "reference": "Asian Development Bank. (2021a). Macroeconomic Impact of COVID-19 in Developing Asia. Manila: ADB.",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R04",
+      "reference": "Asian Development Bank. (2021b). Key Indicators for Asia and the Pacific 2021. Manila: ADB.",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R05",
+      "reference": "Asian Development Bank. (2022a). Southeast Asia Rising from the Pandemic. Manila: ADB.",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R06",
+      "reference": "Asian Development Bank. (2024). Asia-Pacific Climate Report 2024: Catalyzing Finance and Policy Solutions. Manila: ADB.",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R07",
+      "reference": "Burke, M., Hsiang, S. M., and Miguel, E. (2015). Global non-linear effect of temperature on economic production. Nature, 527, 235-239. https://doi.org/10.1038/nature15725",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/nature15725",
+      "crossref_title": "Global non-linear effect of temperature on economic production"
+    },
+    {
+      "id": "R08",
+      "reference": "Carleton, T., Jina, A., Delgado, M., Greenstone, M., Houser, T., Hsiang, S., Hultgren, A., Kopp, R. E., McCusker, K. E., Nath, I., Rising, J., Rode, A., Seo, H. K., Viaene, A., Yuan, J., and Zhang, A. T. (2022). Valuing the global mortality consequences of climate change accounting for adaptation costs and benefits. Quarterly Journal of Economics, 137(4), 2037-2105. https://doi.org/10.1093/qje/qjac020",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1093/qje/qjac020",
+      "crossref_title": "Valuing the Global Mortality Consequences of Climate Change Accounting for Adaptation Costs and Benefits"
+    },
+    {
+      "id": "R09",
+      "reference": "Chodorow-Reich, G., Gopinath, G., Mishra, P., and Narayanan, A. (2020). Cash and the economy: Evidence from India's demonetization. Quarterly Journal of Economics, 135(1), 57-103. https://doi.org/10.1093/qje/qjz027",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1093/qje/qjz027",
+      "crossref_title": "Cash and the Economy: Evidence from India\u2019s Demonetization*"
+    },
+    {
+      "id": "R10",
+      "reference": "COVID-19 Excess Mortality Collaborators. (2022). Estimating excess mortality due to the COVID-19 pandemic: A systematic analysis of COVID-19-related mortality, 2020-21. The Lancet, 399, 1513-1536. https://doi.org/10.1016/S0140-6736(21)02796-3",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1016/S0140-6736(21)02796-3",
+      "crossref_title": "Estimating excess mortality due to the COVID-19 pandemic: a systematic analysis of COVID-19-related mortality, 2020\u201321"
+    },
+    {
+      "id": "R11",
+      "reference": "COVID-19 Mental Disorders Collaborators. (2021). Global prevalence and burden of depressive and anxiety disorders in 204 countries and territories in 2020 due to the COVID-19 pandemic. The Lancet, 398, 1700-1712. https://doi.org/10.1016/S0140-6736(21)02143-7",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1016/S0140-6736(21)02143-7",
+      "crossref_title": "Global prevalence and burden of depressive and anxiety disorders in 204 countries and territories in 2020 due to the COVID-19 pandemic"
+    },
+    {
+      "id": "R12",
+      "reference": "Diffenbaugh, N. S., and Burke, M. (2019). Global warming has increased global economic inequality. Proceedings of the National Academy of Sciences, 116(20), 9808-9813. https://doi.org/10.1073/pnas.1816020116",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1073/pnas.1816020116",
+      "crossref_title": "Global warming has increased global economic inequality"
+    },
+    {
+      "id": "R13",
+      "reference": "Ebenstein, A., Fan, M., Greenstone, M., He, G., and Zhou, M. (2017). New evidence on the impact of sustained exposure to air pollution on life expectancy from China's Huai River Policy. Proceedings of the National Academy of Sciences, 114(39), 10384-10389. https://doi.org/10.1073/pnas.1616784114",
+      "retrieved_utc": "2026-08-04T15:28:31+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1073/pnas.1616784114",
+      "crossref_title": "New evidence on the impact of sustained exposure to air pollution on life expectancy from China\u2019s Huai River Policy"
+    },
+    {
+      "id": "R14",
+      "reference": "Egger, D., Miguel, E., Warren, S. S., Shenoy, A., Collins, E., Karlan, D., Parkerson, D., et al. (2021). Falling living standards during the COVID-19 crisis: Quantitative evidence from nine developing countries. Science Advances, 7(6), eabe0997. https://doi.org/10.1126/sciadv.abe0997",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1126/sciadv.abe0997",
+      "crossref_title": "Falling living standards during the COVID-19 crisis: Quantitative evidence from nine developing countries"
+    },
+    {
+      "id": "R15",
+      "reference": "ESCAP. (2023). Asia-Pacific Disaster Report 2023: Seizing the Moment. Bangkok: United Nations Economic and Social Commission for Asia and the Pacific.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R16",
+      "reference": "Government of Fiji. (2016). Fiji Post-Disaster Needs Assessment: Tropical Cyclone Winston. Suva.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R17",
+      "reference": "Government of Nepal, National Planning Commission. (2015). Nepal Earthquake 2015: Post Disaster Needs Assessment. Kathmandu.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R18",
+      "reference": "Government of Pakistan, Asian Development Bank, European Union, United Nations, and World Bank. (2022). Pakistan Floods 2022: Post-Disaster Needs Assessment. Islamabad.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R19",
+      "reference": "Government of Vanuatu. (2015). Vanuatu Post-Disaster Needs Assessment: Tropical Cyclone Pam. Port Vila.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R20",
+      "reference": "Groppo, V., and Kraehnert, K. (2016). Extreme weather events and child height: Evidence from Mongolia. World Development, 86, 59-78. https://doi.org/10.1016/j.worlddev.2016.07.005",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1016/j.worlddev.2016.07.005",
+      "crossref_title": "The short-term impacts of development-induced displacement on wealth and subjective well-being in the Brazilian Amazon"
+    },
+    {
+      "id": "R21",
+      "reference": "Hallegatte, S., Vogt-Schilb, A., Bangalore, M., and Rozenberg, J. (2017). Unbreakable: Building the Resilience of the Poor in the Face of Natural Disasters. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R22",
+      "reference": "Headey, D., and Ruel, M. (2023). Food inflation and child undernutrition in low and middle income countries. Nature Communications, 14, 5761. https://doi.org/10.1038/s41467-023-41543-9",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41467-023-41543-9",
+      "crossref_title": "Food inflation and child undernutrition in low and middle income countries"
+    },
+    {
+      "id": "R23",
+      "reference": "Im, E.-S., Pal, J. S., and Eltahir, E. A. B. (2017). Deadly heat waves projected in the densely populated agricultural regions of South Asia. Science Advances, 3(8), e1603322. https://doi.org/10.1126/sciadv.1603322",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1126/sciadv.1603322",
+      "crossref_title": "Deadly heat waves projected in the densely populated agricultural regions of South Asia"
+    },
+    {
+      "id": "R24",
+      "reference": "India State-Level Disease Burden Initiative Air Pollution Collaborators. (2021). Health and economic impact of air pollution in the states of India: The Global Burden of Disease Study 2019. The Lancet Planetary Health, 5(1), e25-e38. https://doi.org/10.1016/S2542-5196(20)30298-9",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1016/S2542-5196(20)30298-9",
+      "crossref_title": "Health and economic impact of air pollution in the states of India: the Global Burden of Disease Study 2019"
+    },
+    {
+      "id": "R25",
+      "reference": "International Labour Organization. (2020). Asia-Pacific Employment and Social Outlook 2020: Navigating the Crisis towards a Human-Centred Future of Work. Bangkok: ILO.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R26",
+      "reference": "International Monetary Fund. (2019). Making the case for trade. IMF Annual Report 2019. Washington, DC: IMF.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R27",
+      "reference": "International Monetary Fund. (2022). Regional Economic Outlook: Asia and Pacific - Sailing into Headwinds. Washington, DC: IMF.",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R28",
+      "reference": "Johnston, F. H., Borchers-Arriagada, N., Morgan, G. G., Jalaludin, B., Palmer, A. J., Williamson, G. J., and Bowman, D. M. J. S. (2021). Unprecedented health costs of smoke-related PM2.5 from the 2019-20 Australian megafires. Nature Sustainability, 4, 42-47. https://doi.org/10.1038/s41893-020-00610-5",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41893-020-00610-5",
+      "crossref_title": "Unprecedented health costs of smoke-related PM2.5 from the 2019\u201320 Australian megafires"
+    },
+    {
+      "id": "R29",
+      "reference": "Koplitz, S. N., Mickley, L. J., Marlier, M. E., Buonocore, J. J., Kim, P. S., Liu, T., Sulprizio, M. P., DeFries, R. S., Jacob, D. J., Schwartz, J., Pongsiri, M., and Myers, S. S. (2016). Public health impacts of the severe haze in Equatorial Asia in September-October 2015. Environmental Research Letters, 11(9), 094023. https://doi.org/10.1088/1748-9326/11/9/094023",
+      "retrieved_utc": "2026-08-04T15:28:32+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1088/1748-9326/11/9/094023",
+      "crossref_title": "Public health impacts of the severe haze in Equatorial Asia in September\u2013October 2015: demonstration of a new framework for informing fire management strategies to reduce downwind smoke exposure"
+    },
+    {
+      "id": "R30",
+      "reference": "Kugler, M., Viollaz, M., Duque, D., Gaddis, I., Newhouse, D., Palacios-Lopez, A., and Weber, M. (2023). How did the COVID-19 crisis affect different types of workers in the developing world? World Development, 170, 106331. https://doi.org/10.1016/j.worlddev.2023.106331",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1016/j.worlddev.2023.106331",
+      "crossref_title": "How did the COVID-19 crisis affect different types of workers in the developing world?"
+    },
+    {
+      "id": "R31",
+      "reference": "Mani, M., Bandyopadhyay, S., Chonabayashi, S., Markandya, A., and Mosier, T. (2018). South Asia's Hotspots: The Impact of Temperature and Precipitation Changes on Living Standards. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R32",
+      "reference": "O'Driscoll, M., Ribeiro Dos Santos, G., Wang, L., Cummings, D. A. T., Azman, A. S., Paireau, J., Fontanet, A., Cauchemez, S., and Salje, H. (2021). Age-specific mortality and immunity patterns of SARS-CoV-2. Nature, 590, 140-145. https://doi.org/10.1038/s41586-020-2918-0",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41586-020-2918-0",
+      "crossref_title": "Age-specific mortality and immunity patterns of SARS-CoV-2"
+    },
+    {
+      "id": "R33",
+      "reference": "Osendarp, S., Akuoku, J. K., Black, R. E., Headey, D., Ruel, M., Scott, N., Shekar, M., Walker, N., Flory, A., Haddad, L., Laborde, D., Stegmuller, A., Thomas, M., and Heidkamp, R. (2021). The COVID-19 crisis will exacerbate maternal and child undernutrition and child mortality in low- and middle-income countries. Nature Food, 2, 476-484. https://doi.org/10.1038/s43016-021-00319-4",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s43016-021-00319-4",
+      "crossref_title": "The COVID-19 crisis will exacerbate maternal and child undernutrition and child mortality in low- and middle-income countries"
+    },
+    {
+      "id": "R34",
+      "reference": "Rentschler, J., Salhab, M., and Jafino, B. A. (2022). Flood exposure and poverty in 188 countries. Nature Communications, 13, 3527. https://doi.org/10.1038/s41467-022-30727-4",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41467-022-30727-4",
+      "crossref_title": "Flood exposure and poverty in 188 countries"
+    },
+    {
+      "id": "R35",
+      "reference": "Sen, A. (1999). Development as Freedom. Oxford: Oxford University Press.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R36",
+      "reference": "Skoufias, E., Katayama, R., Essama-Nssah, B., and Cusolito, A. (2013). Disquiet on the Weather Front: The Welfare Impacts of Climatic Variability in the Rural Philippines. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R37",
+      "reference": "Somanathan, E., Somanathan, R., Sudarshan, A., and Tewari, M. (2021). The impact of temperature on productivity and labor supply: Evidence from Indian manufacturing. Journal of Political Economy, 129(6), 1797-1827. https://doi.org/10.1086/713733",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1086/713733",
+      "crossref_title": "The Impact of Temperature on Productivity and Labor Supply: Evidence from Indian Manufacturing"
+    },
+    {
+      "id": "R38",
+      "reference": "Tellman, B., Sullivan, J. A., Kuhn, C., Kettner, A. J., Doyle, C. S., Brakenridge, G. R., Erickson, T. A., and Slayback, D. A. (2021). Satellite imaging reveals increased proportion of population exposed to floods. Nature, 596, 80-86. https://doi.org/10.1038/s41586-021-03695-w",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41586-021-03695-w",
+      "crossref_title": "Satellite imaging reveals increased proportion of population exposed to floods"
+    },
+    {
+      "id": "R39",
+      "reference": "UNICEF. (2021). Direct and Indirect Effects of COVID-19 Pandemic and Response in South Asia. Kathmandu: UNICEF Regional Office for South Asia.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R40",
+      "reference": "United Nations Development Programme. (1990). Human Development Report 1990. New York: Oxford University Press.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R41",
+      "reference": "United Nations Development Programme. (2022a). Addressing the Cost-of-Living Crisis in Developing Countries: Poverty and Vulnerability Projections and Policy Responses. New York: UNDP.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R42",
+      "reference": "United Nations Development Programme. (2022b). Afghanistan Socio-Economic Outlook 2021-2022. Kabul: UNDP.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R43",
+      "reference": "Vicedo-Cabrera, A. M., Scovronick, N., Sera, F., Roye, D., Schneider, R., Tobias, A., Astrom, C., et al. (2021). The burden of heat-related mortality attributable to recent human-induced climate change. Nature Climate Change, 11, 492-500. https://doi.org/10.1038/s41558-021-01058-x",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "RESOLVED",
+      "notes": [],
+      "doi": "10.1038/s41558-021-01058-x",
+      "crossref_title": "The burden of heat-related mortality attributable to recent human-induced climate change"
+    },
+    {
+      "id": "R44",
+      "reference": "World Bank. (2017). Mongolia Poverty Update 2016. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R45",
+      "reference": "World Bank. (2021a). Uneven Recovery: East Asia and Pacific Economic Update, April 2021. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R46",
+      "reference": "World Bank. (2021b). Long COVID: East Asia and Pacific Economic Update, October 2021. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R47",
+      "reference": "World Bank. (2022a). Reforms for Recovery: East Asia and Pacific Economic Update, October 2022. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R48",
+      "reference": "World Bank. (2022b). Preliminary Assessment of Hunga Tonga-Hunga Ha'apai Volcanic Eruption and Tsunami in Tonga Using the GRADE Methodology. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R49",
+      "reference": "World Bank. (2023a). Collapse and Recovery: How COVID-19 Eroded Human Capital and What to Do About It. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R50",
+      "reference": "World Bank. (2023b). Sri Lanka Development Update: Mobilizing Tax Revenue for a Better Future. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R51",
+      "reference": "World Bank. (2024a). Lao People's Democratic Republic Economic Monitor and Household Welfare Monitoring. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R52",
+      "reference": "World Bank. (2024b). Myanmar Economic Monitor: Livelihoods under Threat. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R53",
+      "reference": "World Bank. (2025). East Asia and Pacific Economic Update, April 2025: The Hard Road to Growth. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R54",
+      "reference": "World Health Organization. (2022). Global Excess Deaths Associated with the COVID-19 Pandemic, 2020-2021. Geneva: WHO.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    },
+    {
+      "id": "R55",
+      "reference": "Yarrow, N., Masood, E., and Afkar, R. (2020). Estimates of COVID-19 Impacts on Learning and Earning in Indonesia: How to Turn the Tide. Washington, DC: World Bank.",
+      "retrieved_utc": "2026-08-04T15:28:33+00:00",
+      "status": "NO_DOI",
+      "notes": [
+        "Reference carries no DOI; identity not machine-checkable."
+      ]
+    }
+  ]
+}

@@ -16,13 +16,12 @@ export default async function ReviewsPage() {
     <div className="review-page">
       <header className="review-hero">
         <div className="review-eyebrow">Evidence reviews · §2.7 track</div>
-        <h1>Reviews, and how much of each one has been checked</h1>
+        <h1>Evidence reviews</h1>
         <p className="review-commission">
-          A review synthesises published studies rather than computing its own
-          numbers, so it cannot satisfy the repository&rsquo;s
-          committed-script rule. §2.7 holds it to the equivalent standard
-          instead: verified source identity, plus a page locator someone has
-          actually read. Each review below reports how far it has got.
+          Syntheses of published evidence on shocks, welfare, and policy across
+          Asia and the Pacific. Each review links a page showing exactly which
+          of its figures have been checked against the source, and which have
+          not.
         </p>
       </header>
 
@@ -32,32 +31,27 @@ export default async function ReviewsPage() {
           <code>python review-factory/new_review.py &lt;slug&gt;</code>.
         </p>
       ) : (
-        <ul className="review-list">
+        <ul className="da-cards">
           {reviews.map((review) => (
-            <li className="review-card" key={review.slug}>
+            <li className="da-card" key={review.slug}>
+              {review.hero_href && (
+                <Link href={`/reviews/${review.slug}`}>
+                  <img src={review.hero_href} alt="" />
+                </Link>
+              )}
+              <p className="da-kicker">{review.content_type}</p>
               <h2>
-                <Link href={`/reviews/${review.slug}`}>{review.title}</Link>
+                <Link href={`/reviews/${review.slug}`}>
+                  {review.headline || review.title}
+                </Link>
               </h2>
-              <p>
-                {review.commissioned_by
-                  ? `Commissioned by ${review.commissioned_by} · `
-                  : ""}
-                {review.commissioned_date} · attestation{" "}
-                {review.attestation_chain} · maturity {review.maturity}
-              </p>
-              <ul className="review-counts">
-                <li className="review-count">
-                  <b>{review.counts.citable}</b>
-                  <span>citable of {review.counts.records}</span>
-                </li>
-                <li className="review-count">
-                  <b>{review.counts.provisional}</b>
-                  <span>screened, not read</span>
-                </li>
-                <li className="review-count">
-                  <b>{review.counts.unread}</b>
-                  <span>source not retrievable</span>
-                </li>
+              <p>{review.standfirst}</p>
+              <ul className="da-tags">
+                {review.topics?.map((topic) => (
+                  <li className="da-tag" key={topic}>
+                    {topic}
+                  </li>
+                ))}
               </ul>
             </li>
           ))}

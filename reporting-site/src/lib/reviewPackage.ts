@@ -60,6 +60,14 @@ export interface ReviewPackage {
   schema_version: number;
   slug: string;
   title: string;
+  content_type: string;
+  headline: string;
+  standfirst: string;
+  topics: string[];
+  countries: string[];
+  hero_image: string;
+  hero_caption: string;
+  hero_href?: string | null;
   commissioned_by: string;
   commissioned_date: string;
   attestation_chain: string;
@@ -79,6 +87,11 @@ export interface ReviewPackage {
 export interface ReviewIndexEntry {
   slug: string;
   title: string;
+  content_type: string;
+  headline: string;
+  standfirst: string;
+  topics: string[];
+  hero_href?: string | null;
   commissioned_by: string;
   commissioned_date: string;
   attestation_chain: string;

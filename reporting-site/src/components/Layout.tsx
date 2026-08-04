@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               Reviews
             </Link>
             <Link href="/review" className={navClass(pathname, "/review")}>
-              Review
+              Review desk
             </Link>
             <Link href="/showcase" className={navClass(pathname, "/showcase")}>
               Explorations

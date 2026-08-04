@@ -4,11 +4,25 @@
   "title": "Welfare Losses from Aggregate Socioeconomic and Environmental Shocks in Asia and the Pacific",
   "commissioned_by": "Arturo Martinez Jr.",
   "commissioned_date": "2026-08-04",
+  "content_type": "Evidence Review",
+  "headline": "What the Region's Shocks Actually Cost, and Which Losses Last",
+  "standfirst": "COVID-19, price and debt crises, and climate disasters each damaged welfare differently. Comparing them honestly means refusing to add deaths, lost schooling, and lost output into a single number.",
+  "topics": [
+    "Climate Change",
+    "Poverty",
+    "Health",
+    "Economics"
+  ],
+  "countries": [
+    "Regional \u2014 Asia and the Pacific"
+  ],
+  "hero_image": "figures/figure_2_comparative_magnitude.png",
+  "hero_caption": "Comparative magnitude of selected welfare losses, shown in four panels because the units are not commensurate.",
   "attestation_chain": "ai-first",
   "maturity": "unlabeled",
   "citable": false,
   "citable_blocker": "SOURCE-QUEUE.md \u2014 3 wrong URLs, 26 unreachable sources, coverage gaps",
-  "generated_at": "2026-08-04T16:11:33+00:00",
+  "generated_at": "2026-08-04T16:24:53+00:00",
   "counts": {
     "records": 52,
     "citable": 2,

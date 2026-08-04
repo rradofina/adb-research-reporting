@@ -120,6 +120,16 @@ def build(review) -> dict:
         "title": review.title,
         "commissioned_by": review.manifest.get("commissioned_by", ""),
         "commissioned_date": review.manifest.get("commissioned_date", ""),
+        # Development Asia card grammar. The academic title stays as `title`;
+        # `headline` and `standfirst` are what a practitioner scans, and the
+        # content-type label is the first thing on the card.
+        "content_type": review.manifest.get("content_type", "Evidence Review"),
+        "headline": review.manifest.get("headline") or review.title,
+        "standfirst": review.manifest.get("standfirst", ""),
+        "topics": review.manifest.get("topics", []),
+        "countries": review.manifest.get("countries", []),
+        "hero_image": review.manifest.get("hero_image", ""),
+        "hero_caption": review.manifest.get("hero_caption", ""),
         "attestation_chain": review.manifest.get("attestation_chain", "ai-first"),
         "maturity": review.manifest.get("maturity", "unlabeled"),
         "citable": bool(review.manifest.get("citable")),

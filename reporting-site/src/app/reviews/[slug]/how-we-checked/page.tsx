@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ReviewArticle from "@/components/reviews/ReviewArticle";
+import ReviewShell from "@/components/reviews/ReviewShell";
 import "@/components/reviews/reviews.css";
 import { loadReview, loadReviewArtifacts, reviewSlugs } from "@/lib/reviewPackage";
 
@@ -16,14 +16,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const review = await loadReview(slug);
-  if (!review) return { title: "Evidence review" };
+  if (!review) return { title: "How we checked this" };
   return {
-    title: review.headline || review.title,
-    description: review.standfirst,
+    title: `How we checked: ${review.headline || review.title}`,
+    description: `${review.counts.citable} of ${review.counts.records} figures have a verified source and a page someone has read.`,
   };
 }
 
-export default async function ReviewPage({
+export default async function HowWeCheckedPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -32,5 +32,5 @@ export default async function ReviewPage({
   const review = await loadReview(slug);
   if (!review) notFound();
   const artifacts = await loadReviewArtifacts(slug);
-  return <ReviewArticle review={review} artifacts={artifacts} />;
+  return <ReviewShell review={review} artifacts={artifacts} />;
 }

@@ -11,5 +11,19 @@
   "attestation_chain": "ai-first",
   "maturity": "unlabeled",
   "citable": false,
-  "citable_blocker": "SOURCE-QUEUE.md — 3 wrong URLs, 26 unreachable sources, coverage gaps"
+  "citable_blocker": "SOURCE-QUEUE.md \u2014 3 wrong URLs, 26 unreachable sources, coverage gaps",
+  "content_type": "Evidence Review",
+  "topics": [
+    "Climate Change",
+    "Poverty",
+    "Health",
+    "Economics"
+  ],
+  "countries": [
+    "Regional \u2014 Asia and the Pacific"
+  ],
+  "headline": "What the Region's Shocks Actually Cost, and Which Losses Last",
+  "standfirst": "COVID-19, price and debt crises, and climate disasters each damaged welfare differently. Comparing them honestly means refusing to add deaths, lost schooling, and lost output into a single number.",
+  "hero_image": "figures/figure_2_comparative_magnitude.png",
+  "hero_caption": "Comparative magnitude of selected welfare losses, shown in four panels because the units are not commensurate."
 }

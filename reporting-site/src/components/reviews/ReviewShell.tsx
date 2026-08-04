@@ -47,16 +47,16 @@ export default function ReviewShell({
 
   return (
     <div className="review-page">
-      <Link href="/reviews" className="review-back">
-        ← Evidence reviews
+      <Link href={`/reviews/${review.slug}`} className="review-back">
+        ← Back to the review
       </Link>
 
       <header className="review-hero">
         <div className="review-eyebrow">
-          Evidence review · attestation {review.attestation_chain} · maturity{" "}
-          {review.maturity}
+          How we checked this · attestation {review.attestation_chain} ·
+          maturity {review.maturity}
         </div>
-        <h1>{review.title}</h1>
+        <h1>How we checked: {review.headline || review.title}</h1>
         <p className="review-commission">
           {review.commissioned_by
             ? `Commissioned by ${review.commissioned_by} · `

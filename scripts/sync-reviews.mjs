@@ -109,9 +109,29 @@ for (const review of reviews) {
     JSON.stringify(files, null, 2),
   );
 
+  // Hero image lives in the review folder; copy it so the card and article
+  // can show it without reaching outside public/.
+  if (pkg.hero_image) {
+    const heroSrc = path.join(review.root, pkg.hero_image);
+    if (fs.existsSync(heroSrc)) {
+      const heroName = path.basename(heroSrc);
+      fs.copyFileSync(heroSrc, path.join(dest, heroName));
+      pkg.hero_href = `/reviews/${review.slug}/${heroName}`;
+      fs.writeFileSync(
+        path.join(dest, "review-package.json"),
+        JSON.stringify(pkg, null, 2),
+      );
+    }
+  }
+
   index.push({
     slug: review.slug,
     title: pkg.title,
+    content_type: pkg.content_type,
+    headline: pkg.headline,
+    standfirst: pkg.standfirst,
+    topics: pkg.topics,
+    hero_href: pkg.hero_href ?? null,
     commissioned_by: pkg.commissioned_by,
     commissioned_date: pkg.commissioned_date,
     attestation_chain: pkg.attestation_chain,

@@ -11,10 +11,10 @@ analysis.
 
 | State | Count | What it means |
 |---|---|---|
-| Locator confirmed | 15 | Every quoted figure was read in the source's own prose; the supporting sentence is quoted in `locators.json` |
-| Read, partly unsupported | 5 | Most figures confirmed, but at least one could not be found in reachable text — see the per-row note |
+| Locator confirmed | 22 | Every quoted figure was read in the source's own prose; the supporting sentence is quoted in `locators.json` |
+| Read, partly unsupported | 7 | Most figures confirmed, but at least one could not be found in reachable text — see the per-row note |
 | Register URL wrong | 3 | The cited document exists, but the recorded URL points somewhere else |
-| Unreachable | 26 | Paywalled, bot-blocked, or landing-page-only; no lawful open-access copy found |
+| Unreachable | 18 | Paywalled, bot-blocked, or landing-page-only; no lawful open-access copy found |
 | Qualitative | 3 | Estimate carries no numeric token to screen |
 
 Reading the located pages produced a third class of defect, distinct from the
@@ -81,7 +81,14 @@ Not access problems; genuine holes against the commissioning brief.
   | Economic Development and Cultural Change | 521 | 89 |
 
   This settles a question the register could not answer on its own: the gap is
-  a search failure, not an absent literature. The workbook's Search Log sheet
+  a search failure, not an absent literature. Three records have since been
+  added from that literature and verified — `N25` (Journal of Development
+  Economics: heat in pregnancy raises Indian infant mortality by about two
+  deaths per 1,000 births), `N26` and `N27` (Economic Development and Cultural
+  Change: monsoon rainfall and child nutrition in Nepal; the 2014 Bangladesh
+  flood, migration, and remittances). Each was built from text actually read,
+  never from recall. **JDE and EDCC are now represented; AER, REStat, JEEM,
+  JHE and QJE remain at zero**, and their candidates are closed access. The workbook's Search Log sheet
   lists "JDE; World Development; QJE; JPE; REStat; JEEM; JHE" as an economics
   channel that was searched. Six of those seven yielded nothing. Either the
   search did not actually run against them or it ran badly; the log should be

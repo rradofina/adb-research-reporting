@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Verification run (UTC): 2026-08-04T16:35:29+00:00
+Verification run (UTC): 2026-08-04T17:26:43+00:00
 Verifier: `verify_citations.py` against Crossref REST API.
 
 This gate checks **citation identity** — that each DOI resolves to a real
@@ -14,7 +14,7 @@ marked `NEEDS_LOCATOR` still require a page/table locator.
 
 | Status | Count | Meaning |
 |---|---|---|
-| VERIFIED | 22 | DOI resolves; journal, year, first author all match |
+| VERIFIED | 25 | DOI resolves; journal, year, first author all match |
 | MISMATCH | 0 | DOI resolves but recorded metadata disagrees |
 | UNRESOLVED | 0 | DOI does not resolve — treat as unsupported |
 | NEEDS_LOCATOR | 30 | No DOI; URL serves; locator still required |
@@ -24,9 +24,9 @@ marked `NEEDS_LOCATOR` still require a page/table locator.
 
 | Status | Count |
 |---|---|
-| RESOLVED | 22 |
+| RESOLVED | 25 |
 | UNRESOLVED | 0 |
-| NO_DOI | 33 |
+| NO_DOI | 32 |
 
 ## Records requiring action
 

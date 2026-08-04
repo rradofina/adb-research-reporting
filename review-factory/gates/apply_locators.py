@@ -69,8 +69,15 @@ def main() -> int:
     ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
 
     written = kept = 0
-    for row in ledger["records"]:
-        rid = row["id"]
+
+    # Walk every record, not only rows the screen produced. A locator written
+    # by hand into the register is the strongest evidence there is — someone
+    # read the source — and it must not depend on the screen having run since
+    # the record was added.
+    ledger_rows = {r["id"]: r for r in ledger["records"]}
+    for rid in records:
+        row = ledger_rows.get(rid, {"id": rid, "status": "NOT_SCREENED",
+                                    "tokens": {}})
         prior = existing.get(rid, {})
         if prior.get("confirmed"):
             kept += 1

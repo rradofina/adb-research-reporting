@@ -8,7 +8,7 @@ Last updated: 2026-08-05.
 |---|---|
 | Active flagship | `Task31` — commissioned welfare-loss evidence review, first artifact of the §2.7 review track |
 | Stage | 15 of 52 figures read and citable; reader surface rebuilt subject-first |
-| Highest-leverage move | **Backfill the six economics journals the search missed** — the literature is measured and present (AER 493, JDE 383, JEEM 380 on-topic works since 2015). Then the owner's naming decision. |
+| Highest-leverage move | **Owner naming decision** (see queue 1). JDE and EDCC are now represented; the remaining five economics journals have only closed-access candidates and need ADB Library access, the same wall as the other 18 sources. |
 | Per-program board | `research/STATUS.md` |
 | Operating mode | §18 ACTIVE; Mode A review |
 | Previous flagship | `public-data-freshness` — orphan text slides removed and the source visually checked as a nine-slide, seven-figure PPTX. |
@@ -21,10 +21,10 @@ verified-identity-plus-locator rule governs instead. Six gates in
 `review-factory/gates/` enforce it: verify_citations, resolve_fulltext,
 locate_estimates, extract_context, apply_locators, validate_register.
 
-Task31 state: citations 22/22 DOIs resolve (gate exits 0). Locators: 19
-confirmed by reading the source prose, 7 read but partly unsupported, 18
-unread because no lawful copy served readable text. **19 of 52 figures are
-citable under §2.7.**
+Task31 state: 55 records; citations 25/25 DOIs resolve (gate exits 0).
+Locators: 22 confirmed by reading the source prose, 7 read but partly
+unsupported, 18 unread because no lawful copy served readable text. **22 of 55
+figures are citable under §2.7.**
 
 Four defects found and corrected, each invisible to the five pre-existing
 gates: two transposed figures (8,970 for 8,790; "65%" from the "$3.65" poverty

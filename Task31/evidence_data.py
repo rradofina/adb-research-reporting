@@ -634,6 +634,46 @@ EVIDENCE = [
         "confidence": "High", "evidence_type": "Peer-reviewed health valuation",
         "url": "https://www.nature.com/articles/s41893-020-00610-5", "doi": "10.1038/s41893-020-00610-5"
     },
+    {
+        "id": "N25", "category": "Environmental/climate shock", "study": "Banerjee and Maharaj (2019)",
+        "year": 2019, "source": "Journal of Development Economics", "geography": "Rural India",
+        "subregion": "South Asia", "population": "Infants exposed in utero", "shock": "Extreme heat during pregnancy",
+        "welfare_indicator": "Infant mortality",
+        "estimate": "About 2 additional children die as infants per 1,000 births following high temperature during pregnancy; the relationship holds in rural India only",
+        "methodology": "Temperature exposure during gestation linked to infant survival, with phased programme rollout used for identification",
+        "identification": "Quasi-experimental; employment-guarantee and community-health-worker rollouts exploited as adaptation margins",
+        "limitations": "Mechanism is inferred rather than directly measured (reduced yields, wages, and diarrhoeal disease); the estimate is rural and may not transfer to urban exposure. Only the health-worker programme modified the temperature-mortality relationship; the employment guarantee did not",
+        "confidence": "High", "evidence_type": "Quasi-experimental cohort",
+        "locator": "accepted manuscript p. 1 (abstract)",
+        "url": "https://uoe.figshare.com/articles/Heat_infant_mortality_and_adaptation_Evidence_from_India/29762129",
+        "doi": "10.1016/j.jdeveco.2019.102378"
+    },
+    {
+        "id": "N26", "category": "Environmental/climate shock", "study": "Tiwari, Jacoby, and Skoufias (2016)",
+        "year": 2016, "source": "Economic Development and Cultural Change", "geography": "Rural Nepal",
+        "subregion": "South Asia", "population": "Children aged 0-60 months", "shock": "Monsoon rainfall shocks",
+        "welfare_indicator": "Child weight-for-height and height",
+        "estimate": "A 10% increase in monsoon rainfall above historic norms raises weight-for-height by 0.13 standard deviations, combining a negative disease-environment effect of at most 0.04 SD with an income effect as high as 0.17 SD; the height gain is transitory and dissipates by age 5",
+        "methodology": "Rainfall-shock timing interacted with agricultural seasonality to isolate income from disease channels",
+        "identification": "Quasi-experimental use of monsoon timing",
+        "limitations": "Identifies the income channel for a rainfall surplus rather than a drought deficit; the height effect is explicitly transitory, so this record does not support a long-run human-capital claim",
+        "confidence": "High", "evidence_type": "Quasi-experimental anthropometric study",
+        "locator": "abstract",
+        "url": "https://doi.org/10.1086/689308", "doi": "10.1086/689308"
+    },
+    {
+        "id": "N27", "category": "Environmental/climate shock", "study": "Giannelli and Canessa (2021)",
+        "year": 2021, "source": "Economic Development and Cultural Change", "geography": "Rural Bangladesh",
+        "subregion": "South Asia", "population": "Rural households across the wealth distribution", "shock": "August-September 2014 flood",
+        "welfare_indicator": "Income, expenditure, nutrition, and migration",
+        "estimate": "Most-affected households saw significant drops in income and expenditure; internal migration rose 7 percentage points among low-wealth households and international migration 3 points among high-wealth households; remittances to poorer households offset roughly 40% of the decline in farm self-employment income and half the decline in food expenditure",
+        "methodology": "Georeferenced flood mapping matched to a household panel; difference-in-differences with fixed effects",
+        "identification": "Difference-in-differences on geographic flood exposure",
+        "limitations": "Coping capacity is stratified by pre-shock wealth, so the averages conceal that the poorest substitute internal migration for the international migration only wealthier households can afford",
+        "confidence": "High", "evidence_type": "Quasi-experimental household panel",
+        "locator": "abstract",
+        "url": "https://doi.org/10.1086/713939", "doi": "10.1086/713939"
+    },
 ]
 
 
@@ -693,6 +733,9 @@ REFERENCES = [
     "World Bank. (2025). East Asia and Pacific Economic Update, April 2025: The Hard Road to Growth. Washington, DC: World Bank.",
     "World Health Organization. (2022). Global Excess Deaths Associated with the COVID-19 Pandemic, 2020-2021. Geneva: WHO.",
     "Yarrow, N., Masood, E., and Afkar, R. (2020). Estimates of COVID-19 Impacts on Learning and Earning in Indonesia: How to Turn the Tide. Washington, DC: World Bank."
+    'Banerjee, R., and Maharaj, R. (2019). Heat, infant mortality, and adaptation: Evidence from India. Journal of Development Economics. https://doi.org/10.1016/j.jdeveco.2019.102378',
+    'Giannelli, G. C., and Canessa, E. (2021). After the Flood: Migration and Remittances as Coping Strategies of Rural Bangladeshi Households. Economic Development and Cultural Change. https://doi.org/10.1086/713939',
+    'Tiwari, S., Jacoby, H. G., and Skoufias, E. (2016). Monsoon Babies: Rainfall Shocks and Child Nutrition in Nepal. Economic Development and Cultural Change. https://doi.org/10.1086/689308',
 ]
 
 

@@ -4,7 +4,7 @@
     "confirmed": false,
     "fetched_url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
     "locator": "p. 7, 13, 37, 48, 49, 54, 63, 69",
-    "note": "The 75-80 million extreme-poverty figure is confirmed verbatim at p.13. The '170-180 million below the broader poverty line' claim was not located; row stays provisional. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [
       7,
       13,
@@ -101,7 +101,7 @@
       322,
       332
     ],
-    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+    "retrieved_utc": "2026-08-04T16:57:53+00:00"
   },
   "C03": {
     "basis": "read",
@@ -243,9 +243,9 @@
     "confirmed": false,
     "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10505228/fullTextXML",
     "locator": "in full text (unpaginated source)",
-    "note": "The core result is confirmed verbatim: 'a 5 percent increase in the real price of food increases the risk of wasting by 9 percent and severe wasting by 14 percent'. The 15%/6% asset-poor split was not located \u2014 the screen's '15' matched a citation range '15-22'. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+    "retrieved_utc": "2026-08-04T16:58:04+00:00"
   },
   "E02": {
     "basis": "screen",
@@ -376,7 +376,7 @@
     "confirmed": false,
     "fetched_url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
     "locator": "p. 6, 7, 13, 21, 22, 23, 24, 26",
-    "note": "Viet Nam 12-14.5% by 2050, $400-523 billion, and 0.8% of GDP typhoon losses confirmed verbatim at p.86. The atoll-economy 3-7% figure was not located. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [
       6,
       7,
@@ -427,7 +427,7 @@
       109,
       114
     ],
-    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+    "retrieved_utc": "2026-08-04T16:58:19+00:00"
   },
   "N07": {
     "basis": "read",
@@ -524,5 +524,26 @@
     "note": "PNAS: 'a 10-ug/m3 increase in PM10 reduces life expectancy by 0.64 years ... bringing all of China into compliance with its Class I standards for PM10 would save 3.7 billion life-years'.",
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
+  },
+  "N25": {
+    "basis": "register",
+    "confirmed": true,
+    "locator": "accepted manuscript p. 1 (abstract)",
+    "note": "Locator hand-verified against the source text.",
+    "retrieved_utc": "2026-08-04T17:27:14+00:00"
+  },
+  "N26": {
+    "basis": "register",
+    "confirmed": true,
+    "locator": "abstract",
+    "note": "Locator hand-verified against the source text.",
+    "retrieved_utc": "2026-08-04T17:27:14+00:00"
+  },
+  "N27": {
+    "basis": "register",
+    "confirmed": true,
+    "locator": "abstract",
+    "note": "Locator hand-verified against the source text.",
+    "retrieved_utc": "2026-08-04T17:27:14+00:00"
   }
 }

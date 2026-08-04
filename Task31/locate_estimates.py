@@ -45,10 +45,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html as html_module
 import json
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -60,6 +62,19 @@ HERE = Path(__file__).resolve().parent
 CACHE = HERE / ".cache" / "sources"
 LEDGER_PATH = HERE / "locator_ledger.json"
 REPORT_PATH = HERE / "locator_report.md"
+FULLTEXT_MAP = HERE / "fulltext_map.json"
+
+
+def load_fulltext_map() -> dict:
+    """Open-access full-text locations found by resolve_fulltext.py.
+
+    Preferring these over the register's own URL is what separates "the
+    screen could not read the study" from "the study does not contain this
+    number". Without it, every paywalled record reads as a false alarm.
+    """
+    if FULLTEXT_MAP.exists():
+        return json.loads(FULLTEXT_MAP.read_text(encoding="utf-8"))
+    return {}
 
 BROWSER_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -68,6 +83,8 @@ BROWSER_UA = (
 TIMEOUT = 90
 MAX_BYTES = 60 * 1024 * 1024
 WORKERS = 4
+
+FULLTEXT: dict = {}
 
 # Numbers too generic to carry information: years, small counts, and the
 # ubiquitous 0/1/2. Matching these produces noise, not evidence.
@@ -111,13 +128,35 @@ def cache_path(url: str) -> Path:
     return CACHE / hashlib.sha256(url.encode()).hexdigest()[:20]
 
 
-def fetch(url: str) -> tuple[bytes | None, str | None]:
-    """Fetch with an on-disk cache so re-runs are free. Never raises."""
+# A research article's full text runs tens of thousands of characters. A
+# publisher block page, cookie wall, or abstract stub runs a few thousand.
+# Screening a stub and reporting NOT_FOUND would blame the review for the
+# publisher's bot defences — the exact false alarm this tool must never make.
+MIN_FULLTEXT_CHARS = 8000
+
+
+def fetch(url: str, referer: str | None = None) -> tuple[bytes | None, str | None]:
+    """Fetch with an on-disk cache so re-runs are free. Never raises.
+
+    Sends a full browser header set: several publishers reject a bare
+    User-Agent with 403 while serving the same URL normally.
+    """
     CACHE.mkdir(parents=True, exist_ok=True)
     cp = cache_path(url)
     if cp.exists():
         return cp.read_bytes(), None
-    req = urllib.request.Request(url, headers={"User-Agent": BROWSER_UA})
+    headers = {
+        "User-Agent": BROWSER_UA,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                  "application/pdf;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "identity",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+    }
+    if referer:
+        headers["Referer"] = referer
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
             data = resp.read(MAX_BYTES)
@@ -147,6 +186,92 @@ def pdf_pages(data: bytes) -> list[str] | None:
     return pages if any(p.strip() for p in pages) else None
 
 
+def discover_pdf_links(data: bytes, base_url: str) -> list[str]:
+    """Find PDF links on a landing page, best candidates first.
+
+    Institutional sources — ADB, World Bank, government PDNAs — are usually
+    cited by their landing page, which carries only a summary. The document
+    itself sits one link away. Following that link is the difference between
+    screening a press blurb and screening the assessment.
+    """
+    text = data.decode("utf-8", errors="ignore")
+    raw = re.findall(r"""["'\(]([^"'\)\s]+?\.pdf(?:\?[^"'\)\s]*)?)["'\)]""",
+                     text, re.I)
+    seen, out = set(), []
+    for href in raw:
+        url = urllib.parse.urljoin(base_url, html_module.unescape(href))
+        if url in seen:
+            continue
+        seen.add(url)
+        out.append(url)
+    # Prefer links that look like the main document over annexes and briefs.
+    def rank(u: str) -> tuple[int, int]:
+        low = u.lower()
+        penalty = sum(k in low for k in
+                      ("annex", "appendix", "summary", "brief", "flyer",
+                       "cover", "press", "errata"))
+        bonus = sum(k in low for k in
+                    ("full", "report", "main", "volume", "vol", "final",
+                     "assessment", "update", "monitor"))
+        return (penalty, -bonus)
+    out.sort(key=rank)
+    return out[:4]
+
+
+VERIFIED_TITLES: dict = {}
+
+
+def load_verified_titles() -> dict:
+    """Crossref titles captured by verify_citations.py, keyed by record id.
+
+    The register has no title field — it carries an author-year `study` and a
+    journal-or-report `source`. For a journal article that makes `source`
+    ("Nature Sustainability") useless as an identity anchor: a figshare
+    supplement for the same article matches it perfectly. The Crossref title
+    is the only strong anchor we have, so use it wherever verification
+    produced one.
+    """
+    path = HERE / "verification_ledger.json"
+    if not path.exists():
+        return {}
+    out = {}
+    for e in json.loads(path.read_text(encoding="utf-8")).get("evidence", []):
+        title = (e.get("crossref") or {}).get("title")
+        if title:
+            out[e["id"]] = title
+    return out
+
+
+def document_matches(pages: list[str], rec: dict) -> bool:
+    """Does this fetched document actually look like the cited work?
+
+    Following a PDF link off a landing page is only safe if we check where it
+    landed. A publications page links siblings, annexes, and unrelated
+    reports; grabbing one and screening it would report the review's figures
+    as missing from a document it never cited. That is the same silent
+    wrong-source failure as a transposed DOI (record N19), arrived at from the
+    other direction, so it gets the same treatment: compare identity, never
+    assume the link was right.
+    """
+    head = normalize_words(" ".join(pages[:4]))
+    stop = {"the", "of", "and", "for", "in", "on", "a", "an", "to", "report",
+            "update", "review", "assessment", "economic", "world", "bank",
+            "nature", "science", "lancet", "journal", "development"}
+    anchor = VERIFIED_TITLES.get(rec["id"]) or rec["source"]
+    title_words = {w for w in normalize_words(anchor).split()
+                   if len(w) > 3 and w not in stop}
+    # Fewer than two distinctive words is not an identity claim. Refusing here
+    # costs coverage; accepting would let any sibling document through.
+    if len(title_words) < 2:
+        return False
+    hits = sum(1 for w in title_words if w in head)
+    return hits / len(title_words) >= 0.5
+
+
+def normalize_words(text: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", text.lower()))
+
+
 def html_text(data: bytes) -> str:
     text = data.decode("utf-8", errors="ignore")
     text = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", text)
@@ -174,17 +299,68 @@ def screen(rec: dict) -> dict:
         entry["notes"].append("Estimate carries no distinctive numeric token to screen.")
         return entry
 
-    url = rec.get("url", "")
+    ft = (FULLTEXT or {}).get(rec["id"], {})
+    url = ft.get("url") or rec.get("url", "")
+    entry["fetched_url"] = url
+    entry["fulltext_route"] = ft.get("route", "register-url")
+    if ft.get("url"):
+        entry["notes"].append(
+            f"Screened against open-access full text via {ft['route']}"
+            f" ({ft.get('oa_status', 'oa')})."
+        )
+    elif ft.get("route") == "closed":
+        entry["notes"].append(
+            "No lawful open-access copy exists; screened against the "
+            "register URL, which may be a landing page only."
+        )
     if not url:
         entry["status"] = "INACCESSIBLE"
         entry["notes"].append("No URL recorded.")
         return entry
 
-    data, err = fetch(url)
+    referer = f"https://doi.org/{rec['doi']}" if rec.get("doi") else None
+    data, err = fetch(url, referer=referer)
+    if data is None and ft.get("url") and rec.get("url"):
+        # The open-access copy was blocked; fall back to the register URL so a
+        # blocked publisher does not silently downgrade the record.
+        entry["notes"].append(
+            f"Open-access copy at {url} was blocked ({err}); fell back to the "
+            "register URL."
+        )
+        url = rec["url"]
+        entry["fetched_url"] = url
+        entry["fulltext_route"] = "register-url-fallback"
+        data, err = fetch(url, referer=referer)
     if data is None:
         entry["status"] = "INACCESSIBLE"
         entry["notes"].append(f"Could not fetch source ({err}).")
         return entry
+
+    # A landing page below the full-text bar: follow its PDF links before
+    # giving up, because the document itself is usually one hop away.
+    # Only for gray literature. A journal article's full text comes from the
+    # OA resolver; a publisher page's PDF links are supplements and siblings,
+    # so following them finds the wrong document (record N24 landed on a
+    # figshare supplement this way).
+    if (not rec.get("doi") and data[:5] != b"%PDF-"
+            and len(html_text(data)) < MIN_FULLTEXT_CHARS):
+        for cand in discover_pdf_links(data, url):
+            cdata, cerr = fetch(cand, referer=url)
+            if cdata and cdata[:5] == b"%PDF-":
+                cpages = pdf_pages(cdata)
+                if not (cpages and sum(len(t) for t in cpages) >= MIN_FULLTEXT_CHARS):
+                    continue
+                if not document_matches(cpages, rec):
+                    entry.setdefault("rejected_candidates", []).append(cand)
+                    continue
+                entry["notes"].append(
+                    f"Landing page carried no full text; followed its PDF "
+                    f"link to {cand}."
+                )
+                data = cdata
+                entry["fetched_url"] = cand
+                entry["fulltext_route"] = "landing-page-pdf"
+                break
 
     pages = pdf_pages(data) if data[:5] == b"%PDF-" else None
     if pages is not None:
@@ -197,8 +373,33 @@ def screen(rec: dict) -> dict:
             entry["notes"].append("PDF has no extractable text layer (scanned image).")
             return entry
         corpus = [(None, strip_separators(html_text(data)))]
-        kind = "html"
+        # Europe PMC serves JATS XML; tag-stripping yields the real article
+        # body, not a landing page, so it counts as full text.
+        kind = "xml" if ft.get("kind") == "xml" else "html"
     entry["source_kind"] = kind
+
+    corpus_chars = sum(len(t) for _, t in corpus)
+    entry["corpus_chars"] = corpus_chars
+
+    # An OA resolver can land on a supplement, dataset, or sibling report
+    # rather than the article itself. Screening that would blame the review
+    # for the resolver's mistake.
+    if (kind == "pdf" and entry.get("fulltext_route") == "unpaywall"
+            and not document_matches([t for _, t in corpus], rec)):
+        entry["status"] = "INACCESSIBLE"
+        entry["notes"].append(
+            "Open-access copy does not identify as the cited work — likely a "
+            "supplement or sibling document. Not screened."
+        )
+        return entry
+    if corpus_chars < MIN_FULLTEXT_CHARS:
+        entry["status"] = "INACCESSIBLE"
+        entry["notes"].append(
+            f"Retrieved only {corpus_chars} characters — an abstract stub, "
+            "cookie wall, or bot-block page rather than the document. Not "
+            "screened; absence here would be an artefact of the fetch."
+        )
+        return entry
 
     found = 0
     for tok in tokens:
@@ -218,7 +419,7 @@ def screen(rec: dict) -> dict:
         entry["status"] = "NOT_FOUND"
         entry["notes"].append("No quoted figure appears in the fetched source.")
 
-    if kind == "html":
+    if kind == "html" and not ft.get("url"):
         entry["notes"].append(
             "Source is an HTML landing page, not the document itself; a "
             "negative result here may reflect the page, not the study."
@@ -298,6 +499,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--id", help="Screen a single record id.")
     args = parser.parse_args()
+
+    global FULLTEXT, VERIFIED_TITLES
+    FULLTEXT = load_fulltext_map()
+    VERIFIED_TITLES = load_verified_titles()
 
     records = evidence_data.EVIDENCE
     if args.id:

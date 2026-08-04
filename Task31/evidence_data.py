@@ -268,7 +268,7 @@ EVIDENCE = [
         "estimate": "With 39% inflation in 2023 and nominal wages up 5.7%, real wages fell about 33%; in 2024 low-income real per-capita income fell 6.9%, and 36.2% of low-income households faced moderate or severe food insecurity",
         "methodology": "Repeated nationally oriented household phone surveys plus macro price and wage data",
         "identification": "Descriptive crisis monitoring",
-        "limitations": "Phone-survey representativeness and attribution among depreciation, debt, and prices",
+        "limitations": "Phone-survey representativeness and attribution among depreciation, debt, and prices. The recorded URL is a COVID-monitoring brief that does not carry the Economic Monitor's wage and income tables; the locator screen could not reach the cited figures. Source URL must be replaced before these figures are quoted (CONSTITUTION.md §2.7).",
         "confidence": "Medium", "evidence_type": "High-frequency household survey",
         "url": "https://www.worldbank.org/en/country/lao/brief/monitoring-the-impact-of-covid-19-in-lao-pdr", "doi": ""
     },
@@ -365,7 +365,7 @@ EVIDENCE = [
         "estimate": "Under a high-end emissions pathway, regional GDP could be 17% lower by 2070 and 41% lower by 2100; a Paris-aligned pathway limits the 2100 loss to around 11%; up to 300 million people face coastal-inundation risk",
         "methodology": "Integrated sectoral damage modelling with macroeconomic aggregation",
         "identification": "Long-run scenario comparison",
-        "limitations": "Deep uncertainty in climate, adaptation, tipping points, and damage functions; not a forecast",
+        "limitations": "Deep uncertainty in climate, adaptation, tipping points, and damage functions; not a forecast. The recorded URL is the report's landing page, not the report PDF; the US$300 billion adaptation-finance figure could not be located in reachable text. Source URL must be replaced before that figure is quoted (CONSTITUTION.md §2.7).",
         "confidence": "Medium", "evidence_type": "Integrated assessment scenario",
         "url": "https://www.adb.org/climate-report/editions/2024", "doi": ""
     },
@@ -534,7 +534,7 @@ EVIDENCE = [
         "estimate": "About $450 million in damage and losses, equivalent to 64% of GDP; roughly 65,000 people displaced and livelihoods of at least 80% of the rural population compromised",
         "methodology": "Sectoral PDNA",
         "identification": "Post-disaster accounting",
-        "limitations": "GDP ratio is a flow-stock comparison and does not measure distribution or lifetime welfare",
+        "limitations": "GDP ratio is a flow-stock comparison and does not measure distribution or lifetime welfare. The recorded URL is a 2024 World Bank results story, not the 2015 Post-Disaster Needs Assessment it cites; the displacement and rural-livelihood figures could not be located. Source URL must be replaced before these figures are quoted (CONSTITUTION.md §2.7).",
         "confidence": "High", "evidence_type": "Post-disaster needs assessment",
         "url": "https://www.worldbank.org/en/results/2024/06/07/improving-lives-and-building-resilience-in-vanuatu", "doi": ""
     },

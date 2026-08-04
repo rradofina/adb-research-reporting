@@ -1,0 +1,384 @@
+{
+  "C01": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C02": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C03": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C04": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "10.1126/sciadv.abe0997",
+    "oa_status": "gold",
+    "url": "https://www.science.org/doi/pdf/10.1126/sciadv.abe0997?download=true",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C05": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C06": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C07": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C08": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C09": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "10.1038/s43016-021-00319-4",
+    "oa_status": "bronze",
+    "url": "https://www.nature.com/articles/s43016-021-00319-4.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C10": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C11": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "10.1016/S0140-6736(21)02143-7",
+    "oa_status": "hybrid",
+    "url": "http://www.thelancet.com/article/S0140673621021437/pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C12": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "10.1016/S0140-6736(21)02796-3",
+    "oa_status": "hybrid",
+    "url": "http://www.thelancet.com/article/S0140673621027963/pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C13": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "C14": {
+    "retrieved_utc": "2026-08-04T15:42:33+00:00",
+    "doi": "10.1016/j.worlddev.2023.106331",
+    "oa_status": "green",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10284455/pdf/main.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C15": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "10.1038/s41586-020-2918-0",
+    "oa_status": "bronze",
+    "url": "https://www.nature.com/articles/s41586-020-2918-0.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "C16": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E01": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "10.1038/s41467-023-41543-9",
+    "oa_status": "gold",
+    "url": "https://www.nature.com/articles/s41467-023-41543-9.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "E02": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E03": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E04": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E05": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E06": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E07": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E08": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E09": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "E10": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "10.1093/qje/qjz027",
+    "oa_status": "closed",
+    "route": "closed",
+    "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
+  },
+  "E11": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "10.22617/WPS189770-2",
+    "oa_status": "hybrid",
+    "url": "https://www.adb.org/sites/default/files/publication/471496/ewp-566-impact-trade-conflict-asia.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "E12": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N01": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N02": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N03": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N04": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N05": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N06": {
+    "retrieved_utc": "2026-08-04T15:42:34+00:00",
+    "doi": "10.1038/nature15725",
+    "oa_status": "green",
+    "url": "https://escholarship.org/uc/item/3g72r0zv",
+    "kind": "html",
+    "route": "unpaywall"
+  },
+  "N07": {
+    "retrieved_utc": "2026-08-04T15:42:35+00:00",
+    "doi": "10.1073/pnas.1816020116",
+    "oa_status": "bronze",
+    "url": "https://www.pnas.org/content/pnas/116/20/9808.full.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N08": {
+    "retrieved_utc": "2026-08-04T15:42:35+00:00",
+    "doi": "10.1093/qje/qjac020",
+    "oa_status": "green",
+    "url": "http://www.nber.org/papers/w27599.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N09": {
+    "retrieved_utc": "2026-08-04T15:42:35+00:00",
+    "doi": "10.1038/s41558-021-01058-x",
+    "oa_status": "bronze",
+    "url": "https://www.nature.com/articles/s41558-021-01058-x.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N10": {
+    "retrieved_utc": "2026-08-04T15:42:35+00:00",
+    "doi": "10.1086/713733",
+    "oa_status": "hybrid",
+    "url": "https://doi.org/10.1086/713733",
+    "kind": "html",
+    "route": "unpaywall"
+  },
+  "N11": {
+    "retrieved_utc": "2026-08-04T15:42:35+00:00",
+    "doi": "10.1126/sciadv.1603322",
+    "oa_status": "gold",
+    "url": "https://advances.sciencemag.org/content/advances/3/8/e1603322.full.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N12": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "10.1038/s41467-022-30727-4",
+    "oa_status": "gold",
+    "url": "https://www.nature.com/articles/s41467-022-30727-4.pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N13": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "10.1038/s41586-021-03695-w",
+    "oa_status": "closed",
+    "route": "closed",
+    "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
+  },
+  "N14": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N15": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N16": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N17": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N18": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N19": {
+    "retrieved_utc": "2026-08-04T15:42:36+00:00",
+    "doi": "10.1016/j.worlddev.2016.05.005",
+    "oa_status": "closed",
+    "route": "closed",
+    "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
+  },
+  "N20": {
+    "retrieved_utc": "2026-08-04T15:42:37+00:00",
+    "doi": "",
+    "route": "none",
+    "oa_status": "NO_DOI",
+    "note": "Institutional or gray-literature source; use register URL."
+  },
+  "N21": {
+    "retrieved_utc": "2026-08-04T15:42:37+00:00",
+    "doi": "10.1016/S2542-5196(20)30298-9",
+    "oa_status": "gold",
+    "url": "http://www.thelancet.com/article/S2542519620302989/pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N22": {
+    "retrieved_utc": "2026-08-04T15:42:37+00:00",
+    "doi": "10.1073/pnas.1616784114",
+    "oa_status": "closed",
+    "route": "closed",
+    "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
+  },
+  "N23": {
+    "retrieved_utc": "2026-08-04T15:42:37+00:00",
+    "doi": "10.1088/1748-9326/11/9/094023",
+    "oa_status": "gold",
+    "url": "https://iopscience.iop.org/article/10.1088/1748-9326/11/9/094023/pdf",
+    "kind": "pdf",
+    "route": "unpaywall"
+  },
+  "N24": {
+    "retrieved_utc": "2026-08-04T15:42:38+00:00",
+    "doi": "10.1038/s41893-020-00610-5",
+    "oa_status": "green",
+    "url": "https://figshare.com/articles/journal_contribution/Unprecedented_health_costs_of_smoke-related_PM2_5_from_the_2019_20_Australian_megafires/22992434",
+    "kind": "html",
+    "route": "unpaywall"
+  }
+}

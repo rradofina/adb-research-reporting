@@ -1,0 +1,300 @@
+/* §2.7 evidence-review reader surface.
+   The visual job here is unusual: the page must make a reader's trust
+   *proportional to the evidence*, not maximal. So provenance state is not a
+   footnote or a badge in the corner — it is the second thing on the page,
+   and every figure in the register carries its own status. */
+
+/* The site's global stylesheet lays out `header` and top-level page wrappers
+   on a grid. These blocks opt out explicitly rather than inheriting a
+   two-column hero that pushes the title into a narrow right rail. */
+.review-page,
+.review-page .review-hero,
+.review-page .review-standing {
+  display: block;
+}
+
+.review-page {
+  --rv-ink: #101720;
+  --rv-muted: #5b6675;
+  --rv-line: #dfe4ea;
+  --rv-bg-soft: #f6f8fa;
+  --rv-pass: #1a7f4b;
+  --rv-partial: #9a6b09;
+  --rv-fail: #a8322f;
+  --rv-accent: #17365d;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1rem 5rem;
+  color: var(--rv-ink);
+}
+
+/* ---- header ---- */
+
+.review-back {
+  display: inline-block;
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--rv-muted);
+  text-decoration: none;
+}
+.review-back:hover { color: var(--rv-accent); text-decoration: underline; }
+
+.review-hero {
+  border-bottom: 2px solid var(--rv-ink);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.review-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rv-muted);
+  margin-bottom: 0.6rem;
+}
+
+.review-hero h1 {
+  font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+  line-height: 1.18;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.015em;
+  /* The global stylesheet caps h1 near 277px, which breaks a long review
+     title into a narrow column. Display type wants a wider measure than
+     body copy, not a narrower one. */
+  max-width: 15em;
+}
+
+.review-commission {
+  font-size: 0.95rem;
+  color: var(--rv-muted);
+  margin: 0;
+}
+
+/* ---- the citability band: the point of the page ---- */
+
+.review-standing {
+  border: 1px solid var(--rv-line);
+  border-left: 4px solid var(--rv-partial);
+  border-radius: 4px;
+  background: var(--rv-bg-soft);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+.review-standing.is-clear { border-left-color: var(--rv-pass); }
+
+.review-standing h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.review-standing p {
+  margin: 0 0 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--rv-ink);
+  max-width: 62ch;
+}
+
+.review-counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-count {
+  background: #fff;
+  border: 1px solid var(--rv-line);
+  border-radius: 3px;
+  padding: 0.6rem 0.7rem;
+}
+.review-count b {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.review-count span {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--rv-muted);
+  margin-top: 0.2rem;
+  line-height: 1.3;
+}
+
+/* ---- gates ---- */
+
+.review-gates {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-bottom: 2.5rem;
+}
+.review-gates th,
+.review-gates td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--rv-line);
+}
+.review-gates th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rv-muted); }
+
+.gate-pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+.gate-pill.pass    { background: #e6f4ec; color: var(--rv-pass); }
+.gate-pill.partial { background: #fdf3dd; color: var(--rv-partial); }
+.gate-pill.fail    { background: #fbeaea; color: var(--rv-fail); }
+
+/* ---- register table ---- */
+
+.review-section-title {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.review-section-note {
+  font-size: 0.88rem;
+  color: var(--rv-muted);
+  max-width: 62ch;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.review-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--rv-line);
+  border-radius: 4px;
+  margin-bottom: 2.5rem;
+}
+
+.review-register {
+  width: 100%;
+  min-width: 54rem;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+.review-register th {
+  position: sticky;
+  top: 0;
+  background: var(--rv-bg-soft);
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rv-muted);
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--rv-line);
+  white-space: nowrap;
+}
+.review-register td {
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--rv-line);
+  vertical-align: top;
+  line-height: 1.45;
+}
+.review-register tr:last-child td { border-bottom: 0; }
+.review-register .col-id { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--rv-muted); }
+.review-register .col-estimate { min-width: 22rem; }
+.review-register .col-locator { min-width: 11rem; font-size: 0.78rem; }
+
+.status-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: 0.05rem;
+}
+.status-dot.citable    { background: var(--rv-pass); }
+.status-dot.provisional{ background: var(--rv-partial); }
+.status-dot.unread     { background: #b7bfc9; }
+
+.status-label { font-size: 0.75rem; white-space: nowrap; }
+.status-note  { display: block; color: var(--rv-muted); font-size: 0.74rem; margin-top: 0.2rem; }
+
+/* ---- downloads ---- */
+
+.review-downloads {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem;
+}
+.review-download {
+  border: 1px solid var(--rv-line);
+  border-radius: 4px;
+  padding: 0.75rem 0.85rem;
+}
+.review-download a { font-weight: 600; text-decoration: none; color: var(--rv-accent); }
+.review-download a:hover { text-decoration: underline; }
+.review-download span { display: block; font-size: 0.74rem; color: var(--rv-muted); margin-top: 0.25rem; }
+.review-download code { font-size: 0.68rem; word-break: break-all; color: var(--rv-muted); }
+
+/* ---- prose ---- */
+
+.review-prose {
+  max-width: 40rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.review-prose h2 { font-size: 1.25rem; margin: 2.2rem 0 0.6rem; letter-spacing: -0.01em; }
+.review-prose h3 { font-size: 1.02rem; margin: 1.6rem 0 0.4rem; }
+.review-prose p  { margin: 0 0 1rem; }
+.review-prose table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0; }
+.review-prose th, .review-prose td { border: 1px solid var(--rv-line); padding: 0.4rem 0.5rem; text-align: left; }
+
+.review-nonclaim {
+  border-top: 1px solid var(--rv-line);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--rv-muted);
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+/* ---- index cards ---- */
+
+.review-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.review-card {
+  border: 1px solid var(--rv-line);
+  border-radius: 4px;
+  padding: 1.1rem 1.25rem;
+}
+.review-card h2 { font-size: 1.1rem; margin: 0 0 0.35rem; }
+.review-card h2 a { color: var(--rv-ink); text-decoration: none; }
+.review-card h2 a:hover { color: var(--rv-accent); text-decoration: underline; }
+.review-card p { margin: 0 0 0.7rem; font-size: 0.88rem; color: var(--rv-muted); }
+
+@media (max-width: 640px) {
+  .review-register { min-width: 44rem; }
+  .review-counts { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .review-page {
+    --rv-ink: #e8edf3;
+    --rv-muted: #97a3b2;
+    --rv-line: #2b3440;
+    --rv-bg-soft: #161c24;
+    --rv-accent: #8fb6e8;
+    --rv-pass: #58c98d;
+    --rv-partial: #dcae4a;
+    --rv-fail: #e88b88;
+  }
+  .review-count, .review-download { background: #121820; }
+  .gate-pill.pass    { background: #16301f; }
+  .gate-pill.partial { background: #322914; }
+  .gate-pill.fail    { background: #331b1b; }
+}

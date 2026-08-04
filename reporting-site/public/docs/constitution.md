@@ -61,6 +61,48 @@ ours, and does not serve as a cited source. See `docs/AI_TRANSPARENCY.md`.
 A weak result reported honestly is worth more than a strong result that cannot
 be defended. Null and boring findings are legitimate outputs.
 
+### 2.7 Two provenance tracks: primary analysis and evidence review
+§2.2 governs **primary analysis**, where the source is a dataset and we compute
+the number ourselves. It cannot govern an **evidence review**, where the source
+is a published study and the number was computed by another team: no committed
+script can recompute someone else's estimate, so "trace to a committed script"
+is unsatisfiable by construction rather than merely inconvenient.
+
+A review is therefore held to the equivalent obligation, not a weaker one.
+Every number in a review output must trace to:
+
+- **(a) verified identity** — the cited work resolves and its journal,
+  publication year, and first author match the evidence register, established
+  by a committed verification script, not by inspection;
+- **(b) a locator** — the page, table, or paragraph inside that work where the
+  number appears;
+- **(c) a recorded retrieval timestamp.**
+
+A record holding (a) but not (b) may sit in the evidence register marked
+`NEEDS_LOCATOR`. It may **not** appear in a headline, abstract, table, figure,
+annotated bibliography, or synthesis sentence until (b) exists. Holding
+neither, it does not appear at all.
+
+Three rules follow, and none of them are optional:
+
+1. **Gray literature still needs a locator.** Institutional sources often have
+   no DOI. A resolving URL establishes that a document exists; it does not
+   establish that the document says what we claim. URL plus locator, or the
+   record stays out of the synthesis.
+2. **Finding a number is not verifying it.** A screen that locates a figure in
+   a source establishes *where to read*, not that the reading is right. A
+   number can sit in an unrelated table on the same page. Only reading the
+   surrounding text closes a row.
+3. **A resolving citation can still be the wrong citation.** A transposed DOI
+   digit resolves cleanly to a real paper by different authors on a different
+   topic. Identity checks must compare metadata, never merely confirm that the
+   link works.
+
+The failure this clause exists to prevent is silent and specific: a review that
+reads as rigorous, cites real papers, and attributes numbers to them that they
+do not contain. That failure is invisible to every gate we had before this
+clause, and it is the characteristic failure mode of AI-drafted synthesis.
+
 ---
 
 ## 3. Problem Selection
@@ -735,6 +777,21 @@ not forced backward by a rule change unless the amendment explicitly says so.
 
 ### 16.1 Changelog
 
+- **2026-08-04** — Amendment: added §2.7 "Two provenance tracks: primary
+  analysis and evidence review". Rationale: the Task 31 welfare-loss review
+  is a commissioned artifact whose sources are published studies rather than
+  datasets, so §2.2's "every number traces to a committed script" is
+  unsatisfiable by construction — not evaded, but inapplicable. The review was
+  produced entirely outside the governance stack because the stack had no slot
+  for it. §2.7 creates that slot and makes it stricter, not looser: a review
+  number is citable only with machine-verified source identity *and* a page
+  locator, and may sit in the register but not in any headline, table, figure,
+  or synthesis sentence while the locator is missing. Verification of the
+  first such artifact found the failure mode this clause targets — a
+  transposed DOI digit resolving cleanly to a different paper (N19), and an
+  estimate attributing "about 65%" to a source whose only "65" was the "$3.65"
+  poverty line (E05). Both passed every gate the repository had at the time.
+  No §18 change; no weakening of §2.1, §2.2, or the non-suspendable set.
 - **2026-07-07** — Amendment: added §6.7 "Stopping rule and claim
   reshaping" and four §14 taste entries (artifact-counting, third-pass
   grinding, process-enumerating pages). Companion documents

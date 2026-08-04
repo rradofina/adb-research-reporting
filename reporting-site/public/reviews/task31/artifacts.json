@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Asia_Pacific_Welfare_Losses_Evidence_Register_2026.xlsx",
+    "ext": "XLSX",
+    "bytes": 70555,
+    "sha256": "a1769869b737c8d3bf612ef1915c9d775872e9e93f3442b157e8b2d4f7f6a32c",
+    "href": "/reviews/task31/artifacts/Asia_Pacific_Welfare_Losses_Evidence_Register_2026.xlsx"
+  },
+  {
+    "name": "Asia_Pacific_Welfare_Losses_Review_2026.docx",
+    "ext": "DOCX",
+    "bytes": 1032934,
+    "sha256": "e7aa169f669b8a4d6adec3f2a526b3c31e308ef277907b7b18ed33581e0ed553",
+    "href": "/reviews/task31/artifacts/Asia_Pacific_Welfare_Losses_Review_2026.docx"
+  },
+  {
+    "name": "Asia_Pacific_Welfare_Losses_Review_2026.html",
+    "ext": "HTML",
+    "bytes": 1622859,
+    "sha256": "9223a37020202f90abcb1a6fd6960b8859c4fe0d2151e735e9a82a63ec632539",
+    "href": "/reviews/task31/artifacts/Asia_Pacific_Welfare_Losses_Review_2026.html"
+  },
+  {
+    "name": "Asia_Pacific_Welfare_Losses_Review_2026.pdf",
+    "ext": "PDF",
+    "bytes": 1074559,
+    "sha256": "416e6363ce4b96a49841efe94525dd12cc971a7c447638c7c576035e991cd9bf",
+    "href": "/reviews/task31/artifacts/Asia_Pacific_Welfare_Losses_Review_2026.pdf"
+  }
+]

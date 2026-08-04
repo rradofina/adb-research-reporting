@@ -43,6 +43,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Link href="/explore" className={navClass(pathname, "/explore")}>
               Explore
             </Link>
+            <Link href="/reviews" className={navClass(pathname, "/reviews")}>
+              Reviews
+            </Link>
             <Link href="/review" className={navClass(pathname, "/review")}>
               Review
             </Link>

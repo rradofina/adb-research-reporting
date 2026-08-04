@@ -56,11 +56,14 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-import evidence_data
+# --- factory bootstrap -------------------------------------------------------
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from factory import load as load_review  # noqa: E402
 
-HERE = Path(__file__).resolve().parent
-LEDGER_PATH = HERE / "verification_ledger.json"
-REPORT_PATH = HERE / "verification_report.md"
+
+REVIEW = None  # set in main()
+LEDGER_PATH: Path = None  # bound by _bind_paths()
+REPORT_PATH: Path = None  # bound by _bind_paths()
 
 # Crossref asks that automated clients identify themselves; doing so also puts
 # the request in the faster "polite pool".
@@ -77,6 +80,19 @@ INSTITUTIONAL_MARKERS = (
     "institute", "commission", "secretariat", "programme", "program",
     "ministry", "agency", "council", "network", "collaborators", "group",
 )
+
+
+
+def _bind_paths() -> None:
+    """Point every artifact path at the loaded review's folder.
+
+    Gate outputs belong beside the review they describe, not beside the
+    factory that produced them — otherwise two reviews overwrite each other's
+    ledgers and the audit trail silently becomes one review's.
+    """
+    global LEDGER_PATH, REPORT_PATH
+    LEDGER_PATH = REVIEW.root / "verification_ledger.json"
+    REPORT_PATH = REVIEW.root / "verification_report.md"
 
 
 def utc_now() -> str:
@@ -389,9 +405,15 @@ def build_report(ledger: dict) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--review", help="Review slug (auto when only one).")
     parser.add_argument("--offline", action="store_true",
                         help="Re-render the report from an existing ledger.")
     args = parser.parse_args()
+
+    global REVIEW
+    REVIEW = load_review(args.review)
+    _bind_paths()
+    records_all = REVIEW.load_records()
 
     if args.offline:
         if not LEDGER_PATH.exists():
@@ -400,13 +422,13 @@ def main() -> int:
         ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))
     else:
         run_utc = utc_now()
-        print(f"Verifying {len(evidence_data.EVIDENCE)} evidence records...", flush=True)
+        print(f"Verifying {len(records_all)} evidence records...", flush=True)
         with ThreadPoolExecutor(max_workers=WORKERS) as pool:
-            ev = list(pool.map(verify_record, evidence_data.EVIDENCE))
-        print(f"Verifying {len(evidence_data.REFERENCES)} reference entries...", flush=True)
+            ev = list(pool.map(verify_record, records_all))
+        print(f"Verifying {len(REVIEW.references())} reference entries...", flush=True)
         with ThreadPoolExecutor(max_workers=WORKERS) as pool:
             refs = list(pool.map(lambda p: verify_reference(*p),
-                                 enumerate(evidence_data.REFERENCES, start=1)))
+                                 enumerate(REVIEW.references(), start=1)))
         ledger = {"run_utc": run_utc, "evidence": ev, "references": refs}
         LEDGER_PATH.write_text(json.dumps(ledger, indent=2), encoding="utf-8")
 

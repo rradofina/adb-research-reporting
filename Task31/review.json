@@ -1,0 +1,15 @@
+{
+  "slug": "task31",
+  "title": "Welfare Losses from Aggregate Socioeconomic and Environmental Shocks in Asia and the Pacific",
+  "commissioned_by": "Arturo Martinez Jr.",
+  "commissioned_date": "2026-08-04",
+  "evidence_module": "evidence_data",
+  "manuscript": "review_manuscript.md",
+  "protocol": "review_protocol.md",
+  "source_queue": "SOURCE-QUEUE.md",
+  "artifacts_dir": "outputs/task31_welfare_review_20260804",
+  "attestation_chain": "ai-first",
+  "maturity": "unlabeled",
+  "citable": false,
+  "citable_blocker": "SOURCE-QUEUE.md — 3 wrong URLs, 26 unreachable sources, coverage gaps"
+}

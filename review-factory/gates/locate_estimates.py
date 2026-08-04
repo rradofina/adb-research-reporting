@@ -56,13 +56,16 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-import evidence_data
+# --- factory bootstrap -------------------------------------------------------
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from factory import load as load_review  # noqa: E402
 
-HERE = Path(__file__).resolve().parent
-CACHE = HERE / ".cache" / "sources"
-LEDGER_PATH = HERE / "locator_ledger.json"
-REPORT_PATH = HERE / "locator_report.md"
-FULLTEXT_MAP = HERE / "fulltext_map.json"
+
+REVIEW = None  # set in main()
+CACHE: Path = None  # bound by _bind_paths()
+LEDGER_PATH: Path = None  # bound by _bind_paths()
+REPORT_PATH: Path = None  # bound by _bind_paths()
+FULLTEXT_MAP: Path = None  # bound by _bind_paths()
 
 
 def load_fulltext_map() -> dict:
@@ -90,6 +93,21 @@ FULLTEXT: dict = {}
 # ubiquitous 0/1/2. Matching these produces noise, not evidence.
 GENERIC = {str(y) for y in range(1990, 2036)} | {"0", "1", "2", "3", "4", "5",
                                                  "10", "100", "1000"}
+
+
+
+def _bind_paths() -> None:
+    """Point every artifact path at the loaded review's folder.
+
+    Gate outputs belong beside the review they describe, not beside the
+    factory that produced them — otherwise two reviews overwrite each other's
+    ledgers and the audit trail silently becomes one review's.
+    """
+    global CACHE, LEDGER_PATH, REPORT_PATH, FULLTEXT_MAP
+    CACHE = REVIEW.root / ".cache" / "sources"
+    LEDGER_PATH = REVIEW.root / "locator_ledger.json"
+    REPORT_PATH = REVIEW.root / "locator_report.md"
+    FULLTEXT_MAP = REVIEW.root / "fulltext_map.json"
 
 
 def utc_now() -> str:
@@ -231,7 +249,7 @@ def load_verified_titles() -> dict:
     is the only strong anchor we have, so use it wherever verification
     produced one.
     """
-    path = HERE / "verification_ledger.json"
+    path = REVIEW.root / "verification_ledger.json"
     if not path.exists():
         return {}
     out = {}
@@ -497,14 +515,20 @@ def build_report(ledger: dict) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--review", help="Review slug (auto when only one).")
     parser.add_argument("--id", help="Screen a single record id.")
     args = parser.parse_args()
+
+    global REVIEW
+    REVIEW = load_review(args.review)
+    _bind_paths()
+    records_all = REVIEW.load_records()
 
     global FULLTEXT, VERIFIED_TITLES
     FULLTEXT = load_fulltext_map()
     VERIFIED_TITLES = load_verified_titles()
 
-    records = evidence_data.EVIDENCE
+    records = records_all
     if args.id:
         records = [r for r in records if r["id"] == args.id]
         if not records:

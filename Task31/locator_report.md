@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Screen run (UTC): 2026-08-04T16:00:58+00:00
+Screen run (UTC): 2026-08-04T16:07:53+00:00
 Screener: `locate_estimates.py`.
 
 This screen fetches each source and looks for the numbers the review

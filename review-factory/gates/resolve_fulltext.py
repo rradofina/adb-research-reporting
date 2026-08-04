@@ -52,10 +52,13 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-import evidence_data
+# --- factory bootstrap -------------------------------------------------------
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from factory import load as load_review  # noqa: E402
 
-HERE = Path(__file__).resolve().parent
-MAP_PATH = HERE / "fulltext_map.json"
+
+REVIEW = None  # set in main()
+MAP_PATH: Path = None  # bound by _bind_paths()
 
 EMAIL = "rradofina@gmail.com"
 UA = f"ADB-Research-FulltextResolver/1.0 (mailto:{EMAIL})"
@@ -69,6 +72,18 @@ EPMC_FULLTEXT = (
 )
 TIMEOUT = 45
 WORKERS = 5
+
+
+
+def _bind_paths() -> None:
+    """Point every artifact path at the loaded review's folder.
+
+    Gate outputs belong beside the review they describe, not beside the
+    factory that produced them — otherwise two reviews overwrite each other's
+    ledgers and the audit trail silently becomes one review's.
+    """
+    global MAP_PATH
+    MAP_PATH = REVIEW.root / "fulltext_map.json"
 
 
 def utc_now() -> str:
@@ -147,10 +162,16 @@ def resolve(rec: dict) -> tuple[str, dict]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--review", help="Review slug (auto when only one).")
     parser.add_argument("--id", help="Resolve a single record id.")
     args = parser.parse_args()
 
-    records = evidence_data.EVIDENCE
+    global REVIEW
+    REVIEW = load_review(args.review)
+    _bind_paths()
+    records_all = REVIEW.load_records()
+
+    records = records_all
     if args.id:
         records = [r for r in records if r["id"] == args.id]
         if not records:

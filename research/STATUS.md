@@ -21,9 +21,9 @@ verified-identity-plus-locator rule governs instead. Six gates in
 `review-factory/gates/` enforce it: verify_citations, resolve_fulltext,
 locate_estimates, extract_context, apply_locators, validate_register.
 
-Task31 state: 55 records; citations 25/25 DOIs resolve (gate exits 0).
-Locators: 22 confirmed by reading the source prose, 7 read but partly
-unsupported, 18 unread because no lawful copy served readable text. **22 of 55
+Task31 state: 57 records; citations 25/25 DOIs resolve (gate exits 0).
+Locators: 24 confirmed by reading the source prose, 7 read but partly
+unsupported, 18 unread because no lawful copy served readable text. **24 of 57
 figures are citable under §2.7.**
 
 Four defects found and corrected, each invisible to the five pre-existing
@@ -40,8 +40,9 @@ copy — repository, PubMed Central, publisher — before calling a source
 unreadable.
 
 Open gaps beyond locators: 10 of the 18 journals named in the commissioning
-brief have zero records, including the development-economics core (JDE, AER,
-REStat, EDCC) and all three field journals; Central Asia rests on one record.
+brief still have zero records — AER, REStat, JEEM, JHE and QJE — and every
+candidate found for them is closed access. JDE and EDCC are now represented.
+Central and West Asia holds five records, up from three.
 
 ## Decision and queue
 

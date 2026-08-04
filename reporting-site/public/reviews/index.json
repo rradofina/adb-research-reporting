@@ -17,15 +17,15 @@
     "attestation_chain": "ai-first",
     "maturity": "unlabeled",
     "citable": false,
-    "citable_blocker": "SOURCE-QUEUE.md — 22 of 55 figures read and confirmed; 7 read but partly unsupported, 3 wrong URLs, 18 sources with no lawful readable copy, and five economics journals still unsearched",
+    "citable_blocker": "SOURCE-QUEUE.md — 24 of 57 figures read and confirmed; 7 read but partly unsupported, 3 wrong URLs, 18 sources with no lawful readable copy, five economics journals closed-access",
     "counts": {
-      "records": 55,
-      "citable": 22,
+      "records": 57,
+      "citable": 24,
       "provisional": 7,
       "unread": 26,
       "identity_by_doi": 25,
       "schema_blocking": 0
     },
-    "generated_at": "2026-08-04T17:28:59+00:00"
+    "generated_at": "2026-08-04T17:34:11+00:00"
   }
 ]

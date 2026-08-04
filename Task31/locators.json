@@ -292,6 +292,20 @@
     ],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
+  "E13": {
+    "basis": "register",
+    "confirmed": true,
+    "locator": "pp. 11-12",
+    "note": "Locator hand-verified against the source text.",
+    "retrieved_utc": "2026-08-04T17:32:50+00:00"
+  },
+  "E14": {
+    "basis": "register",
+    "confirmed": true,
+    "locator": "pp. 7, 9, 10",
+    "note": "Locator hand-verified against the source text.",
+    "retrieved_utc": "2026-08-04T17:32:50+00:00"
+  },
   "N01": {
     "basis": "screen",
     "confirmed": false,

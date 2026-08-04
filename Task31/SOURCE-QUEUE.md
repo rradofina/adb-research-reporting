@@ -11,7 +11,7 @@ analysis.
 
 | State | Count | What it means |
 |---|---|---|
-| Locator confirmed | 22 | Every quoted figure was read in the source's own prose; the supporting sentence is quoted in `locators.json` |
+| Locator confirmed | 24 | Every quoted figure was read in the source's own prose; the supporting sentence is quoted in `locators.json` |
 | Read, partly unsupported | 7 | Most figures confirmed, but at least one could not be found in reachable text — see the per-row note |
 | Register URL wrong | 3 | The cited document exists, but the recorded URL points somewhere else |
 | Unreachable | 18 | Paywalled, bot-blocked, or landing-page-only; no lawful open-access copy found |
@@ -95,8 +95,14 @@ Not access problems; genuine holes against the commissioning brief.
   corrected to say which, because a log that claims coverage the register does
   not show is worse than no log.
 
-- **Central Asia rests on one record.** The brief asks for it as a named
-  subregion for comparison. One record cannot support a subregional comparison.
+- **Central and West Asia now holds five records** (`E07`, `E08`, `E13`, `E14`,
+  `N19`), up from the three it had when this queue was written. Two were added
+  and verified from open World Bank sources: Uzbekistan remittance dependence
+  with a counterfactual poverty simulation, and the Kyrgyz Republic's exposure
+  to the 2014-15 regional slowdown. Both are simulations or accounting
+  exercises rather than causal estimates, and the manuscript says so. The
+  subregion still lacks primary post-shock household measurement, which is a
+  data gap in the region rather than a search failure here.
 
 ## Standing rule
 

@@ -674,6 +674,38 @@ EVIDENCE = [
         "locator": "abstract",
         "url": "https://doi.org/10.1086/713939", "doi": "10.1086/713939"
     },
+    {
+        "id": "E13", "category": "Economic shock", "study": "Seitz (2019)",
+        "year": 2019, "source": "World Bank, International Migration and Household Well-Being: Evidence from Uzbekistan",
+        "geography": "Uzbekistan", "subregion": "Central and West Asia",
+        "population": "Households with and without international migrants",
+        "shock": "Weak local labour markets and dependence on migration income",
+        "welfare_indicator": "Poverty, household income composition, and subjective wellbeing",
+        "estimate": "Remittances account for 11% of household income in the poorest quintile and about 8% in the richest; removing remittance income from consumption raises the poverty rate 7.2 percentage points, from 9.6% to 16.8%, and even if every migrant returned and earned their home-province median wage the rate would still rise 2.6 points",
+        "methodology": "Panel survey (Listening to the Citizens of Uzbekistan) linked to administrative records, with counterfactual poverty simulation",
+        "identification": "Household panel with fixed effects for time-invariant respondent and location characteristics; the poverty figures are simulated counterfactuals, not observed outcomes",
+        "limitations": "The counterfactual removes remittances without allowing labour-market or price adjustment, so it bounds rather than estimates the effect. The migration decision is not exogenous, though the panel controls for fixed unobservables",
+        "confidence": "Medium", "evidence_type": "Household panel with counterfactual simulation",
+        "locator": "pp. 11-12",
+        "url": "https://documents.worldbank.org/curated/en/902731561151905908/pdf/International-Migration-and-Household-Well-Being-Evidence-from-Uzbekistan.pdf",
+        "doi": ""
+    },
+    {
+        "id": "E14", "category": "Economic shock", "study": "World Bank (2015)",
+        "year": 2015, "source": "Kyrgyz Republic Economic Update: Adjusting to a Challenging Regional Economic Environment",
+        "geography": "Kyrgyz Republic", "subregion": "Central and West Asia",
+        "population": "Remittance-receiving households and the wider economy",
+        "shock": "Regional slowdown transmitted through migrant labour demand and remittances",
+        "welfare_indicator": "Remittance income, transfers, growth, and poverty",
+        "estimate": "Remittances fell 3% year-on-year in dollar terms in 2014 after growing 8% in 2013, and lower remittances more than offset higher public grants, cutting transfers from 31% of GDP in 2013 to 29.1%; growth was projected to fall to 1.7% in 2015 against national absolute poverty of 37.0% in 2013",
+        "methodology": "Country economic update combining national accounts, balance-of-payments, and household poverty statistics",
+        "identification": "Observed macro deterioration attributed to a regional shock; no counterfactual decomposition",
+        "limitations": "The remittance decline is partly an exchange-rate effect rather than a volume effect, which the source states explicitly; poverty is a 2013 baseline and not a post-shock measurement, so this record documents transmission rather than a realised welfare loss",
+        "confidence": "Medium", "evidence_type": "Country macro-poverty update",
+        "locator": "pp. 7, 9, 10",
+        "url": "https://documents.worldbank.org/curated/en/741101611290294918/pdf/Kyrgyz-Republic-Economic-Update-Adjusting-to-a-Challenging-Regional-Economic-Environment.pdf",
+        "doi": ""
+    },
 ]
 
 
@@ -736,6 +768,8 @@ REFERENCES = [
     'Banerjee, R., and Maharaj, R. (2019). Heat, infant mortality, and adaptation: Evidence from India. Journal of Development Economics. https://doi.org/10.1016/j.jdeveco.2019.102378',
     'Giannelli, G. C., and Canessa, E. (2021). After the Flood: Migration and Remittances as Coping Strategies of Rural Bangladeshi Households. Economic Development and Cultural Change. https://doi.org/10.1086/713939',
     'Tiwari, S., Jacoby, H. G., and Skoufias, E. (2016). Monsoon Babies: Rainfall Shocks and Child Nutrition in Nepal. Economic Development and Cultural Change. https://doi.org/10.1086/689308',
+    'Seitz, W. (2019). International Migration and Household Well-Being: Evidence from Uzbekistan. Policy Research Working Paper. World Bank. https://documents.worldbank.org/curated/en/902731561151905908',
+    'World Bank (2015). Kyrgyz Republic Economic Update: Adjusting to a Challenging Regional Economic Environment. https://documents.worldbank.org/curated/en/741101611290294918',
 ]
 
 

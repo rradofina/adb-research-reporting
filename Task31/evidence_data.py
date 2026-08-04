@@ -422,10 +422,10 @@ EVIDENCE = [
         "year": 2019, "source": "Proceedings of the National Academy of Sciences", "geography": "Global, with country results for Asia",
         "subregion": "Global; Asia country estimates", "population": "National populations", "shock": "Historical anthropogenic warming, 1961-2010",
         "welfare_indicator": "GDP per capita and between-country inequality",
-        "estimate": "Warming increased population-weighted between-country inequality by about 25%; estimated GDP-per-capita losses were about 31% for India, 27% for Indonesia, and 12% for Bangladesh relative to a no-warming counterfactual",
+        "estimate": "Warming increased population-weighted between-country inequality by about 25%; per-capita GDP was reduced 17%-31% at the poorest four deciles of the population-weighted country distribution, and the 18 countries with the lowest cumulative per-capita emissions had a median impact of about -27% relative to a no-warming counterfactual",
         "methodology": "Detection-and-attribution climate simulations combined with nonlinear temperature-growth response",
         "identification": "Historical climate-attribution counterfactual",
-        "limitations": "Depends on contested growth response and cumulative counterfactual; estimates are not household consumption losses",
+        "limitations": "Depends on contested growth response and cumulative counterfactual; estimates are not household consumption losses. The previously recorded country figures (31% India, 27% Indonesia, 12% Bangladesh) are not supported by this paper: Indonesia and Bangladesh appear nowhere in its text, and the 31% and 27% figures are a decile range and a low-emitter median respectively, not country estimates (CONSTITUTION.md §2.7)",
         "confidence": "Medium", "evidence_type": "Attribution model",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/", "doi": "10.1073/pnas.1816020116"
     },

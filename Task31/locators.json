@@ -1,10 +1,10 @@
 {
   "C03": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40asia/%40ro-bangkok/%40sro-bangkok/documents/publication/wcms_764084.pdf",
-    "locator": "p. 4, 5, 7, 8, 14, 15, 20, 31",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "p. 5",
+    "note": "ILO p.5: 'estimated loss of 81 million jobs in 2020 over pre-crisis trends and an additional 22 million to 25 million employed persons pushed into the realm of extreme poverty'.",
     "pages": [
       4,
       5,
@@ -46,96 +46,96 @@
       92,
       94
     ],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C04": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
     "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "note": "Income (8-87%, median 70%) and employment (5-49%, median 30%) confirmed verbatim in Results. The meals figure (9-87%, median 45%) was not located in the fetched text; row stays provisional until it is. (\u00a72.7 rule 2)",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C05": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.worldbank.org/en/region/eap/publication/uneven-recovery-east-asia-and-pacific-economic-update-april-2021",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "WB: '32 million people were prevented from escaping poverty' and 'children of households in the bottom two-fifths ... are 20 percentage points less likely to be engaged in learning than children of the top one-fifth'. The screen's page hit for '20' was coincidental; the claim is nonetheless supported verbatim.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C06": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://documents1.worldbank.org/curated/en/138851632895977756/pdf/World-Bank-East-Asia-and-Pacific-Economic-Update-Long-COVID.pdf",
-    "locator": "p. 14, 39, 46, 47",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "p. 39 (also p. 14)",
+    "note": "WB p.39: 'about US$524 (in 2017 PPP dollars) in yearly earnings ... a reduction of 3.8 percent ... larger in the ASEAN-5 and small East Asian economies, estimated at 9.3 and 7.9 percent'.",
     "pages": [
       14,
       39,
       46,
       47
     ],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C08": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.worldbank.org/en/news/press-release/2023/02/16/covid-19-s-impact-on-south-asia-s-youth-could-last-generations",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "WB: 'for every 30 days of school closures, students lost about 32 days of learning ... learning poverty - already 60 percent before the pandemic - ... an estimated 78 percent of 10-year-olds in South Asia ... could lose up to 14.4 percent of their future earnings'. Note the 78% is South Asia specifically.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C10": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.unicef.org/press-releases/disruptions-health-services-due-covid-19-may-have-contributed-additional-239000",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "UNICEF: 'an estimated 228,000 additional child deaths in 2020 ... Around 11,000 additional maternal deaths are also expected'.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:37+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C13": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.who.int/news/item/05-05-2022-14.9-million-excess-deaths-were-associated-with-the-covid-19-pandemic-in-2020-and-2021",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "WHO: '14.9 million excess deaths ... in 2020 and 2021'; 'Most of the excess deaths (84%) are concentrated in South-East Asia, Europe, and the Americas'; '57% male, 43% female' and higher among older adults.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:39+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "C16": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.adb.org/news/covid-19-pushed-4-7-million-more-people-southeast-asia-extreme-poverty-2021-countries-are-well",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "ADB: 'pushed 4.7 million people in Southeast Asia into extreme poverty in 2021, as 9.3 million jobs disappeared, compared with a baseline no-COVID scenario'.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:39+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "E02": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
     "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "note": "The screen's '0.2' matched a GDP growth table, not the poverty claim. Not confirmed. (\u00a72.7 rule 2)",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:39+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "E03": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://thedocs.worldbank.org/en/doc/8e4c5a79dfa409f331a1a09845b3e691-0070012022/related/Slideshow-EAP-Economic-Update-October-2022.pdf",
     "locator": "p. 15, 21",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "note": "The screen's '11' matched 'THB 11.1bn' in a subsidy chart, not the Mongolia purchasing-power claim. Not confirmed. (\u00a72.7 rule 2)",
     "pages": [
       15,
       21
     ],
-    "retrieved_utc": "2026-08-04T16:05:39+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "E05": {
     "basis": "register",
@@ -145,11 +145,11 @@
     "retrieved_utc": "2026-08-04T16:08:45+00:00"
   },
   "E11": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.adb.org/sites/default/files/publication/471496/ewp-566-impact-trade-conflict-asia.pdf",
-    "locator": "p. 6, 7, 19, 27, 32, 38, 44",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "p. 6",
+    "note": "ADB WP p.6: 'A full escalation ... would shave 1% off PRC GDP and 0.2% off US GDP. The rest of developing Asia could see small net gains thanks to trade redirection'.",
     "pages": [
       6,
       7,
@@ -159,14 +159,14 @@
       38,
       44
     ],
-    "retrieved_utc": "2026-08-04T16:05:43+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N01": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
     "locator": "p. 14, 15, 17, 18, 19, 21, 22, 26",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "note": "$520 billion (p.15) and 26 million (p.14) confirmed verbatim. The 'resilience policies cut wellbeing losses about 20%' claim is not confirmed - the screen's '20' matched 'bottom 20 percent', a different quantity. (\u00a72.7 rule 2)",
     "pages": [
       14,
       15,
@@ -238,14 +238,14 @@
       198,
       199
     ],
-    "retrieved_utc": "2026-08-04T16:05:45+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N04": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
     "locator": "p. 6, 7, 13, 21, 22, 23, 24, 26",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "note": "Viet Nam 12-14.5% by 2050, $400-523 billion, and 0.8% of GDP typhoon losses confirmed at p.86. The atoll-economy 3-7% figure was not located; row stays provisional. (\u00a72.7 rule 2)",
     "pages": [
       6,
       7,
@@ -296,23 +296,23 @@
       109,
       114
     ],
-    "retrieved_utc": "2026-08-04T16:05:47+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N07": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "PNAS: '~25% increase in population-weighted between-country inequality'; 'per capita GDP has been reduced 17-31% at the poorest four deciles'; low-emitter countries 'median impact of -27%'. Estimate corrected first: the prior country attributions were unsupported.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:53+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N08": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "http://www.nber.org/papers/w27599.pdf",
-    "locator": "p. 3, 6, 10, 12, 13, 16, 20, 21",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "p. 3",
+    "note": "QJE p.3: 'valued at roughly 3.2% of global GDP in 2100 under a high emissions scenario ... mortality-related damages of $36.6'.",
     "pages": [
       3,
       6,
@@ -340,16 +340,16 @@
       43,
       48
     ],
-    "retrieved_utc": "2026-08-04T16:05:53+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N11": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.science.org/doi/10.1126/sciadv.1603322",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "Science Advances: 'a wet-bulb temperature of 35C can be considered an upper limit on human survivability'; 'a small fraction of the South Asian population (~4%) is projected to experience TWmax exceeding 35C by 2100 ... approximately 75% of the population is projected to experience TWmax exceeding 31C'.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:05:55+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N15": {
     "basis": "register",
@@ -359,21 +359,21 @@
     "retrieved_utc": "2026-08-04T16:08:45+00:00"
   },
   "N18": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://www.worldbank.org/en/news/press-release/2022/02/14/tonga-volcanic-eruption-and-tsunami-world-bank-disaster-assessment-report-estimates-damages-at-us-90m",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "WB: 'an estimated US$90.4M (TOP 208 million) in damages - the equivalent of approximately 18.5% of Tonga's Gross Domestic Product'.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:06:03+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
   "N22": {
-    "basis": "screen",
-    "confirmed": false,
+    "basis": "read",
+    "confirmed": true,
     "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5625887/",
-    "locator": "in full text (unpaginated source)",
-    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
+    "locator": "in full text",
+    "note": "PNAS: 'a 10-ug/m3 increase in PM10 reduces life expectancy by 0.64 years ... bringing all of China into compliance with its Class I standards for PM10 would save 3.7 billion life-years'.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:06:06+00:00"
+    "retrieved_utc": "2026-08-04T16:35:08+00:00"
   }
 }

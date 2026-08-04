@@ -2,7 +2,7 @@
 
 `attestation_chain: ai-first`
 
-Verification run (UTC): 2026-08-04T16:05:13+00:00
+Verification run (UTC): 2026-08-04T16:35:29+00:00
 Verifier: `verify_citations.py` against Crossref REST API.
 
 This gate checks **citation identity** — that each DOI resolves to a real

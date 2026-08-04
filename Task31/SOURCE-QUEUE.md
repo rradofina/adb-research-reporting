@@ -11,10 +11,25 @@ analysis.
 
 | State | Count | What it means |
 |---|---|---|
-| Locator confirmed | 20 | Every quoted figure was found in the source's full text, with page numbers in `locator_ledger.json` |
+| Locator confirmed | 15 | Every quoted figure was read in the source's own prose; the supporting sentence is quoted in `locators.json` |
+| Read, partly unsupported | 5 | Most figures confirmed, but at least one could not be found in reachable text — see the per-row note |
 | Register URL wrong | 3 | The cited document exists, but the recorded URL points somewhere else |
 | Unreachable | 26 | Paywalled, bot-blocked, or landing-page-only; no lawful open-access copy found |
 | Qualitative | 3 | Estimate carries no numeric token to screen |
+
+Reading the located pages produced a third class of defect, distinct from the
+transposed figures found earlier: **country attributions the source never
+makes.** Record N07 credited Diffenbaugh and Burke (2019) with per-capita GDP
+losses of 31% for India, 27% for Indonesia, and 12% for Bangladesh. Indonesia
+and Bangladesh appear nowhere in that paper; the 31% is a decile range and the
+27% a low-emitter median. Corrected in the register and the manuscript.
+
+Two rows also show why a located figure is not a verified one, in both
+directions. In `C05` the screen matched "20" against "20 years" — a
+coincidence — yet the claim turned out to be supported verbatim elsewhere. In
+`N01` the screen matched "20" against "bottom 20 percent", and the resilience
+claim it was supposed to support is *not* in the text. Same signal, opposite
+truths; only reading separates them.
 
 Citation identity is separately clean: 22 of 22 DOIs resolve with matching
 journal, year, and first author (`verify_citations.py` exits 0).

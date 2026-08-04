@@ -70,6 +70,7 @@ EPMC_SEARCH = (
 EPMC_FULLTEXT = (
     "https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML"
 )
+OPENALEX_WORK = "https://api.openalex.org/works/doi:{doi}"
 TIMEOUT = 45
 WORKERS = 5
 
@@ -115,9 +116,17 @@ def head_ok(url: str) -> bool:
 
 
 def resolve(rec: dict) -> tuple[str, dict]:
+    """Collect every lawful open-access candidate, best first.
+
+    Deliberately does not pick a winner. A resolver cannot know which URL will
+    actually serve: Unpaywall's "best" location is frequently a publisher PDF
+    that returns a bot-block page, while a PubMed Central or repository copy of
+    the same paper serves fine. Only fetching finds out, so this hands the
+    locator an ordered list and lets it try them in turn.
+    """
     rid = rec["id"]
     doi = (rec.get("doi") or "").strip()
-    entry: dict = {"retrieved_utc": utc_now(), "doi": doi}
+    entry: dict = {"retrieved_utc": utc_now(), "doi": doi, "candidates": []}
 
     if not doi:
         entry["route"] = "none"
@@ -125,38 +134,53 @@ def resolve(rec: dict) -> tuple[str, dict]:
         entry["note"] = "Institutional or gray-literature source; use register URL."
         return rid, entry
 
+    seen: set[str] = set()
+
+    def add(url: str | None, kind: str, source: str, rank: int) -> None:
+        if not url:
+            return
+        url = url.strip()
+        if not url or url in seen or url.rstrip(">.").endswith(doi):
+            return
+        seen.add(url)
+        entry["candidates"].append(
+            {"url": url, "kind": kind, "source": source, "rank": rank})
+
+    # Repository copies first: they are the ones that reliably serve.
+    oa = get_json(OPENALEX_WORK.format(doi=urllib.parse.quote(doi)))
+    if oa:
+        for loc in (oa.get("locations") or []):
+            if not loc.get("is_oa"):
+                continue
+            src = ((loc.get("source") or {}).get("display_name") or "").lower()
+            repo = ("pubmed central" in src or "pmc" in src
+                    or "repository" in src or "eprints" in src
+                    or "hdl.handle" in (loc.get("landing_page_url") or ""))
+            add(loc.get("pdf_url"), "pdf", src, 0 if repo else 2)
+            add(loc.get("landing_page_url"), "html", src, 1 if repo else 3)
+
     up = get_json(UNPAYWALL.format(doi=urllib.parse.quote(doi, safe="/.:-_()")))
     if up:
-        entry["oa_status"] = up.get("oa_status") or ("gold" if up.get("is_oa") else "closed")
-        loc = up.get("best_oa_location") or {}
-        pdf = loc.get("url_for_pdf")
-        landing = loc.get("url")
-        for cand, kind in ((pdf, "pdf"), (landing, "html")):
-            if cand and head_ok(cand):
-                entry.update({"url": cand, "kind": kind, "route": "unpaywall"})
-                return rid, entry
+        entry["oa_status"] = up.get("oa_status") or (
+            "gold" if up.get("is_oa") else "closed")
+        for loc in (up.get("oa_locations") or [up.get("best_oa_location") or {}]):
+            add(loc.get("url_for_pdf"), "pdf", "unpaywall", 2)
+            add(loc.get("url"), "html", "unpaywall", 3)
 
     epmc = get_json(EPMC_SEARCH.format(doi=urllib.parse.quote(doi)))
     if epmc:
-        results = (epmc.get("resultList") or {}).get("result") or []
-        for r in results:
-            pmcid = r.get("pmcid")
-            if pmcid and r.get("inEPMC") == "Y":
-                url = EPMC_FULLTEXT.format(pmcid=pmcid)
-                if head_ok(url):
-                    entry.update({
-                        "url": url, "kind": "xml", "route": "europepmc",
-                        "pmcid": pmcid,
-                    })
-                    entry.setdefault("oa_status", "epmc")
-                    return rid, entry
+        for r in (epmc.get("resultList") or {}).get("result") or []:
+            if r.get("pmcid") and r.get("inEPMC") == "Y":
+                add(EPMC_FULLTEXT.format(pmcid=r["pmcid"]), "xml",
+                    "europepmc", 0)
 
-    entry.setdefault("oa_status", "closed")
-    entry["route"] = "closed"
-    entry["note"] = (
-        "No lawful open-access copy found. Stays on the manual queue; its "
-        "figures remain barred from headline use under §2.7."
-    )
+    entry["candidates"].sort(key=lambda c: c["rank"])
+    entry["route"] = "candidates" if entry["candidates"] else "closed"
+    if not entry["candidates"]:
+        entry.setdefault("oa_status", "closed")
+        entry["note"] = (
+            "No lawful open-access copy found. Stays on the manual queue; its "
+            "figures remain barred from headline use under §2.7.")
     return rid, entry
 
 

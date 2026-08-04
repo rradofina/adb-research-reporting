@@ -61,8 +61,15 @@ def source_text(path: Path) -> list[tuple[int | None, str]]:
     return [(None, re.sub(r"\s+", " ", text))]
 
 
+# Must match locate_estimates.strip_separators exactly, or the context
+# extractor cannot find the passage the locator found — notably in Lancet
+# titles, which set decimals with a middle dot.
+DECIMAL_MARKS = "·•∙"
+
+
 def strip_sep(text: str) -> str:
-    return re.sub(r"(?<=\d)[,  ](?=\d)", "", text)
+    text = re.sub(r"(?<=\d)[,  ](?=\d)", "", text)
+    return re.sub(rf"(?<=\d)[{DECIMAL_MARKS}](?=\d)", ".", text)
 
 
 def main() -> int:

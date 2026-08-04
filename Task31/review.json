@@ -11,7 +11,7 @@
   "attestation_chain": "ai-first",
   "maturity": "unlabeled",
   "citable": false,
-  "citable_blocker": "SOURCE-QUEUE.md \u2014 15 of 52 figures read and confirmed; 5 read but partly unsupported, 3 wrong URLs, 26 sources unreachable",
+  "citable_blocker": "SOURCE-QUEUE.md \u2014 19 of 52 figures read and confirmed; 7 read but partly unsupported, 3 wrong URLs, 18 sources with no lawful readable copy, and six economics journals the search missed",
   "content_type": "Evidence Review",
   "topics": [
     "Climate Change",

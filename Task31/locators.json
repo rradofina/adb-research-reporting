@@ -1,4 +1,108 @@
 {
+  "C02": {
+    "basis": "screen",
+    "confirmed": false,
+    "fetched_url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
+    "locator": "p. 7, 13, 37, 48, 49, 54, 63, 69",
+    "note": "The 75-80 million extreme-poverty figure is confirmed verbatim at p.13. The '170-180 million below the broader poverty line' claim was not located; row stays provisional. (\u00a72.7 rule 2)",
+    "pages": [
+      7,
+      13,
+      37,
+      48,
+      49,
+      54,
+      63,
+      69,
+      83,
+      86,
+      87,
+      88,
+      90,
+      91,
+      92,
+      93,
+      94,
+      97,
+      100,
+      101,
+      102,
+      104,
+      106,
+      109,
+      110,
+      114,
+      118,
+      132,
+      138,
+      150,
+      151,
+      152,
+      156,
+      159,
+      161,
+      166,
+      173,
+      174,
+      176,
+      196,
+      199,
+      201,
+      202,
+      204,
+      206,
+      208,
+      209,
+      211,
+      214,
+      218,
+      219,
+      221,
+      222,
+      223,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      234,
+      240,
+      242,
+      243,
+      245,
+      248,
+      249,
+      250,
+      251,
+      255,
+      258,
+      259,
+      269,
+      286,
+      287,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      300,
+      302,
+      303,
+      304,
+      308,
+      309,
+      313,
+      315,
+      321,
+      322,
+      332
+    ],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+  },
   "C03": {
     "basis": "read",
     "confirmed": true,
@@ -51,11 +155,11 @@
   "C04": {
     "basis": "screen",
     "confirmed": false,
-    "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7864564/fullTextXML",
     "locator": "in full text (unpaginated source)",
-    "note": "Income (8-87%, median 70%) and employment (5-49%, median 30%) confirmed verbatim in Results. The meals figure (9-87%, median 45%) was not located in the fetched text; row stays provisional until it is. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:35:08+00:00"
+    "retrieved_utc": "2026-08-04T16:57:53+00:00"
   },
   "C05": {
     "basis": "read",
@@ -98,6 +202,15 @@
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
+  "C11": {
+    "basis": "read",
+    "confirmed": true,
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8500697/fullTextXML",
+    "locator": "in full text (Lancet, PMC8500697)",
+    "note": "Lancet: 'an additional 53.2 million (44.8 to 62.9) cases of major depressive disorder globally (an increase of 27.6% [25.1 to 30.3]) ... an additional 76.2 million (64.3 to 90.6) cases of anxiety disorders globally (an increase of 25.6% [23.2 to 28.0])'. Reachable only after folding the Lancet middle-dot decimal mark.",
+    "pages": [],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+  },
   "C13": {
     "basis": "read",
     "confirmed": true,
@@ -106,6 +219,15 @@
     "note": "WHO: '14.9 million excess deaths ... in 2020 and 2021'; 'Most of the excess deaths (84%) are concentrated in South-East Asia, Europe, and the Americas'; '57% male, 43% female' and higher among older adults.",
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
+  },
+  "C14": {
+    "basis": "read",
+    "confirmed": true,
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10284455/fullTextXML",
+    "locator": "in full text",
+    "note": "World Development: 'women were 8 percentage points more likely than men to stop working ... a 4 percentage point gap between youth and older workers ... a 4 percentage point gap between workers with low and high levels of education ... a 3 percentage point gap' by locality.",
+    "pages": [],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
   },
   "C16": {
     "basis": "read",
@@ -116,26 +238,35 @@
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
+  "E01": {
+    "basis": "screen",
+    "confirmed": false,
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10505228/fullTextXML",
+    "locator": "in full text (unpaginated source)",
+    "note": "The core result is confirmed verbatim: 'a 5 percent increase in the real price of food increases the risk of wasting by 9 percent and severe wasting by 14 percent'. The 15%/6% asset-poor split was not located \u2014 the screen's '15' matched a citation range '15-22'. (\u00a72.7 rule 2)",
+    "pages": [],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+  },
   "E02": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
     "locator": "in full text (unpaginated source)",
-    "note": "The screen's '0.2' matched a GDP growth table, not the poverty claim. Not confirmed. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [],
-    "retrieved_utc": "2026-08-04T16:35:08+00:00"
+    "retrieved_utc": "2026-08-04T16:58:05+00:00"
   },
   "E03": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://thedocs.worldbank.org/en/doc/8e4c5a79dfa409f331a1a09845b3e691-0070012022/related/Slideshow-EAP-Economic-Update-October-2022.pdf",
     "locator": "p. 15, 21",
-    "note": "The screen's '11' matched 'THB 11.1bn' in a subsidy chart, not the Mongolia purchasing-power claim. Not confirmed. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [
       15,
       21
     ],
-    "retrieved_utc": "2026-08-04T16:35:08+00:00"
+    "retrieved_utc": "2026-08-04T16:58:05+00:00"
   },
   "E05": {
     "basis": "register",
@@ -166,7 +297,7 @@
     "confirmed": false,
     "fetched_url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
     "locator": "p. 14, 15, 17, 18, 19, 21, 22, 26",
-    "note": "$520 billion (p.15) and 26 million (p.14) confirmed verbatim. The 'resilience policies cut wellbeing losses about 20%' claim is not confirmed - the screen's '20' matched 'bottom 20 percent', a different quantity. (\u00a72.7 rule 2)",
+    "note": "Provisional. The screen found these figures on these pages; \u00a72.7 rule 2 requires a reading of the surrounding text before the record may be cited.",
     "pages": [
       14,
       15,
@@ -238,14 +369,14 @@
       198,
       199
     ],
-    "retrieved_utc": "2026-08-04T16:35:08+00:00"
+    "retrieved_utc": "2026-08-04T16:58:18+00:00"
   },
   "N04": {
     "basis": "screen",
     "confirmed": false,
     "fetched_url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
     "locator": "p. 6, 7, 13, 21, 22, 23, 24, 26",
-    "note": "Viet Nam 12-14.5% by 2050, $400-523 billion, and 0.8% of GDP typhoon losses confirmed at p.86. The atoll-economy 3-7% figure was not located; row stays provisional. (\u00a72.7 rule 2)",
+    "note": "Viet Nam 12-14.5% by 2050, $400-523 billion, and 0.8% of GDP typhoon losses confirmed verbatim at p.86. The atoll-economy 3-7% figure was not located. (\u00a72.7 rule 2)",
     "pages": [
       6,
       7,
@@ -296,7 +427,7 @@
       109,
       114
     ],
-    "retrieved_utc": "2026-08-04T16:35:08+00:00"
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
   },
   "N07": {
     "basis": "read",
@@ -351,6 +482,15 @@
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
   },
+  "N12": {
+    "basis": "read",
+    "confirmed": true,
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9240081/fullTextXML",
+    "locator": "in full text",
+    "note": "Nature Communications: '1.81 billion people (23% of world population) are directly exposed to 1-in-100-year floods. Of these, 1.24 billion are located in South and East Asia, where China (395 million) and India (390 million) ... Of the 170 million facing high flood risk and extreme poverty'.",
+    "pages": [],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
+  },
   "N15": {
     "basis": "register",
     "confirmed": true,
@@ -366,6 +506,15 @@
     "note": "WB: 'an estimated US$90.4M (TOP 208 million) in damages - the equivalent of approximately 18.5% of Tonga's Gross Domestic Product'.",
     "pages": [],
     "retrieved_utc": "2026-08-04T16:35:08+00:00"
+  },
+  "N21": {
+    "basis": "read",
+    "confirmed": true,
+    "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7805008/fullTextXML",
+    "locator": "in full text (PMC7805008)",
+    "note": "Lancet Planetary Health: '1.67 million ... deaths were attributable to air pollution in India in 2019, accounting for 17.8% ... of the total deaths'; 'This total loss of $36.8 billion ... was 1.36% of India's gross domestic product'.",
+    "pages": [],
+    "retrieved_utc": "2026-08-04T17:14:43+00:00"
   },
   "N22": {
     "basis": "read",

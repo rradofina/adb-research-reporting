@@ -1,5 +1,5 @@
 {
-  "run_utc": "2026-08-04T16:07:53+00:00",
+  "run_utc": "2026-08-04T17:03:52+00:00",
   "records": [
     {
       "id": "C01",
@@ -8,14 +8,17 @@
       "estimate": "6.0%-9.5% of regional GDP in 2020 and 3.6%-6.3% in 2021",
       "url": "https://www.adb.org/publications/macroeconomic-impact-covid-19-developing-asia",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
         "Retrieved only 5340 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
       ],
       "fetched_url": "https://www.adb.org/publications/macroeconomic-impact-covid-19-developing-asia",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
+      "rejected_candidates": [
+        "https://www.adb.org/sites/default/files/publication/696296/adbi-wp1251.pdf"
+      ],
       "source_kind": "html",
       "corpus_chars": 5340
     },
@@ -26,14 +29,163 @@
       "estimate": "75-80 million additional people in extreme poverty in 2020; roughly 170-180 million additional people below the broader poverty line",
       "url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
-      "notes": [
-        "Could not fetch source (HTTP 403)."
-      ],
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
+      "tokens": {
+        "75": [
+          13,
+          37,
+          48,
+          49,
+          83,
+          86,
+          87,
+          88,
+          90,
+          93,
+          94,
+          97,
+          101,
+          102,
+          109,
+          110,
+          118,
+          132,
+          138,
+          150,
+          151,
+          152,
+          156,
+          159,
+          161,
+          174,
+          176,
+          199,
+          201,
+          204,
+          209,
+          211,
+          218,
+          219,
+          222,
+          223,
+          225,
+          227,
+          228,
+          229,
+          230,
+          234,
+          242,
+          245,
+          250,
+          251,
+          258,
+          259,
+          269,
+          286,
+          287,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          302,
+          303,
+          304,
+          308,
+          322
+        ],
+        "80": [
+          7,
+          13,
+          37,
+          49,
+          54,
+          63,
+          69,
+          83,
+          87,
+          88,
+          90,
+          91,
+          92,
+          93,
+          94,
+          97,
+          100,
+          101,
+          102,
+          104,
+          109,
+          110,
+          114,
+          152,
+          159,
+          161,
+          173,
+          176,
+          196,
+          199,
+          202,
+          206,
+          209,
+          218,
+          219,
+          221,
+          226,
+          234,
+          240,
+          242,
+          245,
+          248,
+          249,
+          255,
+          258,
+          259,
+          290,
+          291,
+          293,
+          297,
+          302,
+          303,
+          304,
+          309,
+          321,
+          332
+        ],
+        "170": [
+          106,
+          204,
+          227,
+          242,
+          249,
+          294,
+          315,
+          322
+        ],
+        "180": [
+          166,
+          208,
+          214,
+          227,
+          243,
+          245,
+          249,
+          259,
+          300,
+          304,
+          313,
+          322
+        ]
+      },
+      "status": "LOCATED",
+      "notes": [],
       "fetched_url": "https://www.adb.org/sites/default/files/publication/720461/ki2021.pdf",
-      "fulltext_route": "none"
+      "fulltext_route": "register-url",
+      "source_kind": "pdf",
+      "corpus_chars": 1842092
     },
     {
       "id": "C03",
@@ -42,7 +194,7 @@
       "estimate": "81 million jobs lost in 2020; working-hour losses pushed an additional 22-25 million workers into working poverty",
       "url": "https://www.ilo.org/publications/asia-pacific-employment-and-social-outlook-2020-navigating-crisis-towards",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
       "tokens": {
         "81": [
           5,
@@ -124,7 +276,7 @@
       "estimate": "Income fell in 8%-87% of samples (median about 70%); employment fell 5%-49% (median 30%); 9%-87% missed or reduced meals (median 45%)",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
       "tokens": {
         "8": [
           null
@@ -150,13 +302,12 @@
       },
       "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Open-access copy at https://www.science.org/doi/pdf/10.1126/sciadv.abe0997?download=true was blocked (HTTP 403); fell back to the register URL."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7864564/",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7864564/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 75411
+      "corpus_chars": 69605
     },
     {
       "id": "C05",
@@ -165,7 +316,7 @@
       "estimate": "32 million people were prevented from escaping poverty; children in the bottom two-fifths were up to 20 percentage points less likely to be engaged in learning; microenterprise sales fell about one-third",
       "url": "https://www.worldbank.org/en/region/eap/publication/uneven-recovery-east-asia-and-pacific-economic-update-april-2021",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
       "tokens": {
         "32": [
           null
@@ -179,7 +330,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.worldbank.org/en/region/eap/publication/uneven-recovery-east-asia-and-pacific-economic-update-april-2021",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 8882
     },
@@ -190,7 +341,7 @@
       "estimate": "Average annual earnings loss of about $524 per student in 2017 PPP, or 3.8%; estimated loss reaches 9.3% in ASEAN-5 and 7.9% in small East Asian economies",
       "url": "https://documents1.worldbank.org/curated/en/138851632895977756/pdf/World-Bank-East-Asia-and-Pacific-Economic-Update-Long-COVID.pdf",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:53+00:00",
       "tokens": {
         "524": [
           39
@@ -211,7 +362,7 @@
       "status": "LOCATED",
       "notes": [],
       "fetched_url": "https://documents1.worldbank.org/curated/en/138851632895977756/pdf/World-Bank-East-Asia-and-Pacific-Economic-Update-Long-COVID.pdf",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "pdf",
       "corpus_chars": 137690
     },
@@ -222,14 +373,14 @@
       "estimate": "Roughly 0.5 year of learning or 16 PISA reading points lost; $222.4 billion in lifetime income, equivalent to 19.9% of 2019 GDP",
       "url": "https://www.worldbank.org/en/country/indonesia/publication/estimates-of-covid-19-impacts-on-learning-and-earning-in-indonesia-how-to-turn-the-tide",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:57:57+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
         "Retrieved only 4432 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
       ],
       "fetched_url": "https://www.worldbank.org/en/country/indonesia/publication/estimates-of-covid-19-impacts-on-learning-and-earning-in-indonesia-how-to-turn-the-tide",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "rejected_candidates": [
         "https://documents1.worldbank.org/curated/en/184651597383628008/pdf/Main-Report.pdf",
         "https://documents1.worldbank.org/curated/en/211871597656902862/pdf/Estimates-of-COVID-19-Impacts-on-Learning-and-Earning-in-Indonesia-How-to-Turn-the-Tide.pdf"
@@ -244,7 +395,7 @@
       "estimate": "Learning poverty rose from about 60% to 78%; current students may lose up to 14.4% of future earnings; every 30 days of closure was associated with about 32 days of learning loss",
       "url": "https://www.worldbank.org/en/news/press-release/2023/02/16/covid-19-s-impact-on-south-asia-s-youth-could-last-generations",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:58:03+00:00",
       "tokens": {
         "60": [
           null
@@ -267,7 +418,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.worldbank.org/en/news/press-release/2023/02/16/covid-19-s-impact-on-south-asia-s-youth-could-last-generations",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 9999
     },
@@ -278,17 +429,12 @@
       "estimate": "Moderate 2020-2022 scenario: 9.3 million additional wasted children, 2.6 million additional stunted children, 168,000 additional under-five deaths, and $29.7 billion in future productivity losses",
       "url": "https://www.nature.com/articles/s43016-021-00319-4",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:58:03+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Screened against open-access full text via unpaywall (bronze).",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.nature.com/articles/s43016-021-00319-4.pdf",
-      "fulltext_route": "unpaywall",
-      "source_kind": "html",
-      "corpus_chars": 228
+        "No lawful copy served readable text. Tried: nature food: stub (228 chars); register-url: stub (228 chars)"
+      ]
     },
     {
       "id": "C10",
@@ -297,7 +443,7 @@
       "estimate": "Service disruptions may have contributed to about 228,000 additional child deaths and 11,000 additional maternal deaths in 2020",
       "url": "https://www.unicef.org/press-releases/disruptions-health-services-due-covid-19-may-have-contributed-additional-239000",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
+      "retrieved_utc": "2026-08-04T16:58:03+00:00",
       "tokens": {
         "228000": [
           null
@@ -311,7 +457,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.unicef.org/press-releases/disruptions-health-services-due-covid-19-may-have-contributed-additional-239000",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 9728
     },
@@ -322,18 +468,29 @@
       "estimate": "53.2 million additional major-depressive-disorder cases (+27.6%) and 76.2 million additional anxiety cases (+25.6%) in 2020; females and younger people bore larger increases",
       "url": "https://doi.org/10.1016/S0140-6736(21)02143-7",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:37+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:03+00:00",
+      "tokens": {
+        "53.2": [
+          null
+        ],
+        "27.6": [
+          null
+        ],
+        "76.2": [
+          null
+        ],
+        "25.6": [
+          null
+        ]
+      },
+      "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (hybrid).",
-        "Open-access copy at http://www.thelancet.com/article/S0140673621021437/pdf was blocked (HTTP 403); fell back to the register URL.",
-        "Retrieved only 13 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://doi.org/10.1016/S0140-6736(21)02143-7",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8500697/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 13
+      "corpus_chars": 73334
     },
     {
       "id": "C12",
@@ -342,18 +499,29 @@
       "estimate": "18.2 million global excess deaths in 2020-2021 versus 5.94 million reported COVID deaths; India 4.07 million, Indonesia 736,000, Pakistan 664,000",
       "url": "https://doi.org/10.1016/S0140-6736(21)02796-3",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:38+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
+      "tokens": {
+        "18.2": [
+          null
+        ],
+        "5.94": [
+          null
+        ],
+        "4.07": [
+          null
+        ],
+        "736000": null,
+        "664000": null
+      },
+      "status": "PARTIAL",
       "notes": [
-        "Screened against open-access full text via unpaywall (hybrid).",
-        "Open-access copy at http://www.thelancet.com/article/S0140673621027963/pdf was blocked (HTTP 403); fell back to the register URL.",
-        "Retrieved only 13 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Not present in source: 736000, 664000.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://doi.org/10.1016/S0140-6736(21)02796-3",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8912932/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 13
+      "corpus_chars": 118310
     },
     {
       "id": "C13",
@@ -362,7 +530,7 @@
       "estimate": "14.9 million excess deaths in 2020-2021; 84% were concentrated in South-East Asia, Europe, and the Americas; 57% were male and mortality was concentrated among older adults",
       "url": "https://www.who.int/news/item/05-05-2022-14.9-million-excess-deaths-were-associated-with-the-covid-19-pandemic-in-2020-and-2021",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
       "tokens": {
         "14.9": [
           null
@@ -379,7 +547,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.who.int/news/item/05-05-2022-14.9-million-excess-deaths-were-associated-with-the-covid-19-pandemic-in-2020-and-2021",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 9231
     },
@@ -390,17 +558,21 @@
       "estimate": "Women were 8 percentage points more likely than men to stop work; youth 4 points more likely than older adults; low-education and urban workers each about 4 and 3 points more likely",
       "url": "https://doi.org/10.1016/j.worlddev.2023.106331",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
+      "tokens": {
+        "8": [
+          null
+        ]
+      },
+      "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (green).",
-        "Retrieved only 82 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Reached via europepmc after 1 blocked or stub response(s).",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10284455/pdf/main.pdf",
-      "fulltext_route": "unpaywall",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10284455/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 82
+      "corpus_chars": 82190
     },
     {
       "id": "C15",
@@ -409,17 +581,12 @@
       "estimate": "IFR rose from 0.001% at ages 5-9 to 8.29% at age 80+; among those 80+, estimated IFR was 10.83% for men and 5.76% for women",
       "url": "https://www.nature.com/articles/s41586-020-2918-0",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Screened against open-access full text via unpaywall (bronze).",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.nature.com/articles/s41586-020-2918-0.pdf",
-      "fulltext_route": "unpaywall",
-      "source_kind": "html",
-      "corpus_chars": 228
+        "No lawful copy served readable text. Tried: nature: stub (228 chars); register-url: stub (228 chars)"
+      ]
     },
     {
       "id": "C16",
@@ -428,7 +595,7 @@
       "estimate": "4.7 million additional people in extreme poverty and 9.3 million jobs lost in 2021 versus a no-COVID baseline",
       "url": "https://www.adb.org/news/covid-19-pushed-4-7-million-more-people-southeast-asia-extreme-poverty-2021-countries-are-well",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
       "tokens": {
         "4.7": [
           null
@@ -442,7 +609,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.adb.org/news/covid-19-pushed-4-7-million-more-people-southeast-asia-extreme-poverty-2021-countries-are-well",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 12492
     },
@@ -453,17 +620,30 @@
       "estimate": "A 5% rise in real food prices over the previous three months increased wasting risk 9% and severe wasting 14%; the increase was 15% for asset-poor children and 6% for non-poor children",
       "url": "https://www.nature.com/articles/s41467-023-41543-9",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:04+00:00",
+      "tokens": {
+        "9": [
+          null
+        ],
+        "14": [
+          null
+        ],
+        "15": [
+          null
+        ],
+        "6": [
+          null
+        ]
+      },
+      "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Reached via europepmc after 1 blocked or stub response(s).",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://www.nature.com/articles/s41467-023-41543-9.pdf",
-      "fulltext_route": "unpaywall",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10505228/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 228
+      "corpus_chars": 63934
     },
     {
       "id": "E02",
@@ -472,7 +652,7 @@
       "estimate": "Projected 2022 inflation raised relative poverty about 1 percentage point in Cambodia and Viet Nam and 0.2 point in China; a severe combined price shock roughly doubled the effects",
       "url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:05+00:00",
       "tokens": {
         "0.2": [
           null
@@ -483,7 +663,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.elibrary.imf.org/abstract/book/9798400220517/CH001.xml",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 141687
     },
@@ -494,7 +674,7 @@
       "estimate": "Inflation eroded household purchasing power by about 2% in Viet Nam and 11% in Mongolia across the country cases examined",
       "url": "https://www.worldbank.org/en/publication/reforms-for-recovery-east-asia-and-pacific-economic-update-october-2022",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:05+00:00",
       "tokens": {
         "11": [
           15,
@@ -517,14 +697,12 @@
       "estimate": "About 71 million people could be pushed into poverty within three months; Asian hotspots included Armenia, Pakistan, Sri Lanka, and Uzbekistan",
       "url": "https://www.undp.org/publications/addressing-cost-living-crisis-developing-countries-poverty-and-vulnerability-projections-and-policy-responses",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:39+00:00",
+      "retrieved_utc": "2026-08-04T16:58:05+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Could not fetch source (HTTP 403)."
-      ],
-      "fetched_url": "https://www.undp.org/publications/addressing-cost-living-crisis-developing-countries-poverty-and-vulnerability-projections-and-policy-responses",
-      "fulltext_route": "none"
+        "No lawful copy served readable text. Tried: register-url: HTTP 403"
+      ]
     },
     {
       "id": "E05",
@@ -533,7 +711,7 @@
       "estimate": "Poverty rose from 13.1% in 2021 to 25.0% in 2022 at the $3.65 2017 PPP line, adding about 2.5 million poor people; an estimated half a million industry and services jobs were lost, with annual average inflation of 46.4% in 2022",
       "url": "https://documents.worldbank.org/curated/en/099052823154030000/pdf/P1795590b753e0063080da06d77c1b4cbe5.pdf",
       "existing_locator": "p. 14, paragraphs 15-16",
-      "retrieved_utc": "2026-08-04T16:05:40+00:00",
+      "retrieved_utc": "2026-08-04T16:58:06+00:00",
       "tokens": {
         "13.1": [
           12,
@@ -561,7 +739,7 @@
       "status": "LOCATED",
       "notes": [],
       "fetched_url": "https://documents.worldbank.org/curated/en/099052823154030000/pdf/P1795590b753e0063080da06d77c1b4cbe5.pdf",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "pdf",
       "corpus_chars": 51316
     },
@@ -572,7 +750,7 @@
       "estimate": "With 39% inflation in 2023 and nominal wages up 5.7%, real wages fell about 33%; in 2024 low-income real per-capita income fell 6.9%, and 36.2% of low-income households faced moderate or severe food insecurity",
       "url": "https://www.worldbank.org/en/country/lao/brief/monitoring-the-impact-of-covid-19-in-lao-pdr",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:41+00:00",
+      "retrieved_utc": "2026-08-04T16:58:11+00:00",
       "tokens": {
         "39": [
           6
@@ -599,16 +777,12 @@
       "estimate": "National poverty rose from 21.6% in 2014 to 29.6% in 2016; rural poverty increased by 10.1 percentage points",
       "url": "https://www.worldbank.org/en/news/press-release/2017/10/17/2016-poverty-rate-in-mongolia-estimated-at-296-percent",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:42+00:00",
+      "retrieved_utc": "2026-08-04T16:58:11+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Retrieved only 6892 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.worldbank.org/en/news/press-release/2017/10/17/2016-poverty-rate-in-mongolia-estimated-at-296-percent",
-      "fulltext_route": "none",
-      "source_kind": "html",
-      "corpus_chars": 6892
+        "No lawful copy served readable text. Tried: register-url: stub (6893 chars)"
+      ]
     },
     {
       "id": "E08",
@@ -617,14 +791,12 @@
       "estimate": "GDP contracted about 20% in 2020-2021, a one-year loss near $5 billion; the basic food basket rose about 35%; excluding women from work could cost up to $1 billion or 5% of GDP",
       "url": "https://www.undp.org/publications/afghanistan-august-2021-socio-economic-snapshot",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:42+00:00",
+      "retrieved_utc": "2026-08-04T16:58:11+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Could not fetch source (HTTP 403)."
-      ],
-      "fetched_url": "https://www.undp.org/publications/afghanistan-august-2021-socio-economic-snapshot",
-      "fulltext_route": "none"
+        "No lawful copy served readable text. Tried: register-url: HTTP 403"
+      ]
     },
     {
       "id": "E09",
@@ -633,16 +805,12 @@
       "estimate": "Poverty reached 32.1%, with about 7 million more poor people than before COVID-19; GDP remained roughly 9% below its 2019 level",
       "url": "https://www.worldbank.org/en/news/press-release/2024/06/12/threat-to-livelihoods-deepens-as-myanmar-economic-outlook-remains-weak",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:43+00:00",
+      "retrieved_utc": "2026-08-04T16:58:12+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Retrieved only 6324 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.worldbank.org/en/news/press-release/2024/06/12/threat-to-livelihoods-deepens-as-myanmar-economic-outlook-remains-weak",
-      "fulltext_route": "none",
-      "source_kind": "html",
-      "corpus_chars": 6324
+        "No lawful copy served readable text. Tried: register-url: stub (6324 chars)"
+      ]
     },
     {
       "id": "E10",
@@ -651,7 +819,7 @@
       "estimate": "District-level cash shortages reduced employment and night-light output by at least 2 percentage points in 2016 Q4 and bank credit by about 2 points; effects dissipated over subsequent months",
       "url": "https://academic.oup.com/qje/article/135/1/57/5567189",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:43+00:00",
+      "retrieved_utc": "2026-08-04T16:58:13+00:00",
       "tokens": {},
       "status": "NO_TOKENS",
       "notes": [
@@ -665,7 +833,7 @@
       "estimate": "Tariffs implemented at the time were estimated to reduce China's GDP by about 1% over two to three years and US GDP by about 0.2%, with mixed trade-diversion gains elsewhere in developing Asia",
       "url": "https://www.adb.org/publications/impact-trade-conflict-developing-asia",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:43+00:00",
+      "retrieved_utc": "2026-08-04T16:58:13+00:00",
       "tokens": {
         "0.2": [
           6,
@@ -679,10 +847,10 @@
       },
       "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (hybrid)."
+        "Reached via adb economics working paper series after 1 blocked or stub response(s)."
       ],
       "fetched_url": "https://www.adb.org/sites/default/files/publication/471496/ewp-566-impact-trade-conflict-asia.pdf",
-      "fulltext_route": "unpaywall",
+      "fulltext_route": "adb economics working paper series",
       "source_kind": "pdf",
       "corpus_chars": 101970
     },
@@ -693,14 +861,12 @@
       "estimate": "The tariff conflict was estimated to lower long-run global GDP by about 0.4% ($340 billion in 2018 dollars); China's 2019 GDP level by about 1.6% and US GDP by about 1%",
       "url": "https://www.imf.org/external/pubs/ft/ar/2019/eng/spotlight/making-the-case-for-trade/index.htm",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:44+00:00",
+      "retrieved_utc": "2026-08-04T16:58:18+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Could not fetch source (HTTP 403)."
-      ],
-      "fetched_url": "https://www.imf.org/external/pubs/ft/ar/2019/eng/spotlight/making-the-case-for-trade/index.htm",
-      "fulltext_route": "none"
+        "No lawful copy served readable text. Tried: register-url: HTTP 403"
+      ]
     },
     {
       "id": "N01",
@@ -709,7 +875,7 @@
       "estimate": "$520 billion in annual global consumption-equivalent wellbeing losses and 26 million people pushed into extreme poverty each year; resilience policies could cut wellbeing losses about 20%",
       "url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:45+00:00",
+      "retrieved_utc": "2026-08-04T16:58:18+00:00",
       "tokens": {
         "520": [
           15,
@@ -795,7 +961,7 @@
       "status": "LOCATED",
       "notes": [],
       "fetched_url": "https://documents1.worldbank.org/curated/en/512241480487839624/pdf/Unbreakable-building-the-resilience-of-the-poor-in-the-face-of-natural-disasters.pdf",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "pdf",
       "corpus_chars": 466655
     },
@@ -806,7 +972,7 @@
       "estimate": "Under a high-end emissions pathway, regional GDP could be 17% lower by 2070 and 41% lower by 2100; a Paris-aligned pathway limits the 2100 loss to around 11%; up to 300 million people face coastal-inundation risk",
       "url": "https://www.adb.org/climate-report/editions/2024",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:46+00:00",
+      "retrieved_utc": "2026-08-04T16:58:19+00:00",
       "tokens": {
         "17": [
           null
@@ -831,7 +997,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.adb.org/climate-report/editions/2024",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 18142
     },
@@ -842,14 +1008,12 @@
       "estimate": "At 1.5 degrees C warming, annualized losses could reach $953 billion or 3.0% of regional GDP; at 2 degrees C they approach $1 trillion or 3.1%",
       "url": "https://www.unescap.org/kp/2023/asia-pacific-disaster-report-2023",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:46+00:00",
+      "retrieved_utc": "2026-08-04T16:58:19+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Could not fetch source (HTTP 403)."
-      ],
-      "fetched_url": "https://www.unescap.org/kp/2023/asia-pacific-disaster-report-2023",
-      "fulltext_route": "none"
+        "No lawful copy served readable text. Tried: register-url: HTTP 403"
+      ]
     },
     {
       "id": "N04",
@@ -858,7 +1022,7 @@
       "estimate": "Without adaptation, Viet Nam's GDP could be 12%-14.5% lower by 2050, with $400-$523 billion cumulative losses; current cyclone losses average about 0.8% of GDP annually; in atoll economies annual disaster losses already reach 3%-7% of GDP",
       "url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:47+00:00",
+      "retrieved_utc": "2026-08-04T16:58:19+00:00",
       "tokens": {
         "12": [
           6,
@@ -950,7 +1114,7 @@
       "status": "LOCATED",
       "notes": [],
       "fetched_url": "https://documents1.worldbank.org/curated/en/099060225123042542/pdf/P507415-4906ec00-764d-4ab1-9c19-01903aec0692.pdf",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "pdf",
       "corpus_chars": 266041
     },
@@ -961,16 +1125,12 @@
       "estimate": "In a carbon-intensive scenario, climate change could reduce India's GDP by 2.8% and depress living standards for nearly half its population by 2050",
       "url": "https://www.worldbank.org/en/news/press-release/2018/06/28/climate-change-depress-living-standards-india-says-new-world-bank-report",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:52+00:00",
+      "retrieved_utc": "2026-08-04T16:58:31+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Retrieved only 4153 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.worldbank.org/en/news/press-release/2018/06/28/climate-change-depress-living-standards-india-says-new-world-bank-report",
-      "fulltext_route": "none",
-      "source_kind": "html",
-      "corpus_chars": 4153
+        "No lawful copy served readable text. Tried: register-url: stub (4153 chars)"
+      ]
     },
     {
       "id": "N06",
@@ -979,49 +1139,46 @@
       "estimate": "Unmitigated warming was estimated to make global income about 23% lower in 2100 than in a world without climate change",
       "url": "https://www.nature.com/articles/nature15725",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:53+00:00",
+      "retrieved_utc": "2026-08-04T16:58:31+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Screened against open-access full text via unpaywall (green).",
-        "Retrieved only 1 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://escholarship.org/uc/item/3g72r0zv",
-      "fulltext_route": "unpaywall",
-      "source_kind": "html",
-      "corpus_chars": 1
+        "No lawful copy served readable text. Tried: escholarship (california digital library): stub (1 chars); register-url: stub (228 chars)"
+      ]
     },
     {
       "id": "N07",
       "study": "Diffenbaugh and Burke (2019)",
       "source": "Proceedings of the National Academy of Sciences",
-      "estimate": "Warming increased population-weighted between-country inequality by about 25%; estimated GDP-per-capita losses were about 31% for India, 27% for Indonesia, and 12% for Bangladesh relative to a no-warming counterfactual",
+      "estimate": "Warming increased population-weighted between-country inequality by about 25%; per-capita GDP was reduced 17%-31% at the poorest four deciles of the population-weighted country distribution, and the 18 countries with the lowest cumulative per-capita emissions had a median impact of about -27% relative to a no-warming counterfactual",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:53+00:00",
+      "retrieved_utc": "2026-08-04T16:58:32+00:00",
       "tokens": {
         "25": [
+          null
+        ],
+        "17": [
           null
         ],
         "31": [
           null
         ],
-        "27": [
+        "18": [
           null
         ],
-        "12": [
+        "27": [
           null
         ]
       },
       "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (bronze).",
-        "Open-access copy at https://www.pnas.org/content/pnas/116/20/9808.full.pdf was blocked (HTTP 403); fell back to the register URL."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6525504/",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6525504/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 46117
+      "corpus_chars": 42659
     },
     {
       "id": "N08",
@@ -1030,7 +1187,7 @@
       "estimate": "Under high emissions, net mortality costs including adaptation were valued at about 3.2% of global GDP in 2100; the mortality partial social cost of carbon was $36.6 per tCO2",
       "url": "https://academic.oup.com/qje/article/137/4/2037/6571943",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:53+00:00",
+      "retrieved_utc": "2026-08-04T16:58:33+00:00",
       "tokens": {
         "3.2": [
           3,
@@ -1074,9 +1231,7 @@
         ]
       },
       "status": "LOCATED",
-      "notes": [
-        "Screened against open-access full text via unpaywall (green)."
-      ],
+      "notes": [],
       "fetched_url": "http://www.nber.org/papers/w27599.pdf",
       "fulltext_route": "unpaywall",
       "source_kind": "pdf",
@@ -1089,17 +1244,24 @@
       "estimate": "About 37% of warm-season heat-related deaths were attributable to anthropogenic climate change in 1991-2018; estimates across included Asian countries ranged roughly from 21.3% in China to 67.7% in Kuwait",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611104/",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:54+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:51+00:00",
+      "tokens": {
+        "37": [
+          null
+        ],
+        "21.3": null,
+        "67.7": null
+      },
+      "status": "PARTIAL",
       "notes": [
-        "Screened against open-access full text via unpaywall (bronze).",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Reached via pubmed central after 3 blocked or stub response(s).",
+        "Not present in source: 21.3, 67.7.",
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://www.nature.com/articles/s41558-021-01058-x.pdf",
-      "fulltext_route": "unpaywall",
+      "fetched_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7611104",
+      "fulltext_route": "pubmed central",
       "source_kind": "html",
-      "corpus_chars": 228
+      "corpus_chars": 70305
     },
     {
       "id": "N10",
@@ -1108,7 +1270,7 @@
       "estimate": "Annual plant output fell about 2% per 1 degree C increase; daily microdata show lower worker productivity and greater absenteeism, with climate control mitigating losses",
       "url": "https://www.journals.uchicago.edu/doi/10.1086/713733",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:55+00:00",
+      "retrieved_utc": "2026-08-04T16:58:59+00:00",
       "tokens": {},
       "status": "NO_TOKENS",
       "notes": [
@@ -1122,7 +1284,7 @@
       "estimate": "Under business-as-usual emissions, late-century extremes approach or exceed the 35 degrees C survivability threshold; about 4% of South Asia's population could face exceedances and roughly 75% could face dangerous wet-bulb temperatures above 31 degrees C",
       "url": "https://www.science.org/doi/10.1126/sciadv.1603322",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:55+00:00",
+      "retrieved_utc": "2026-08-04T16:58:59+00:00",
       "tokens": {
         "35": [
           null
@@ -1136,13 +1298,12 @@
       },
       "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Open-access copy at https://advances.sciencemag.org/content/advances/3/8/e1603322.full.pdf was blocked (HTTP 403); fell back to the register URL."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://www.science.org/doi/10.1126/sciadv.1603322",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5540239/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 53753
+      "corpus_chars": 40993
     },
     {
       "id": "N12",
@@ -1151,17 +1312,32 @@
       "estimate": "1.81 billion people were directly exposed globally; 1.24 billion lived in South and East Asia, including 395 million in China and 390 million in India; 170 million exposed people lived in extreme poverty",
       "url": "https://www.nature.com/articles/s41467-022-30727-4",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:57+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:58:59+00:00",
+      "tokens": {
+        "1.81": [
+          null
+        ],
+        "1.24": [
+          null
+        ],
+        "395": [
+          null
+        ],
+        "390": [
+          null
+        ],
+        "170": [
+          null
+        ]
+      },
+      "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://www.nature.com/articles/s41467-022-30727-4.pdf",
-      "fulltext_route": "unpaywall",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9240081/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 228
+      "corpus_chars": 56217
     },
     {
       "id": "N13",
@@ -1170,17 +1346,12 @@
       "estimate": "Between 255 million and 290 million people were directly affected; the share of global population in observed flood footprints grew about 20%-24% from 2000 to 2015",
       "url": "https://www.nature.com/articles/s41586-021-03695-w",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:57+00:00",
+      "retrieved_utc": "2026-08-04T16:59:00+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "No lawful open-access copy exists; screened against the register URL, which may be a landing page only.",
-        "Retrieved only 228 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.nature.com/articles/s41586-021-03695-w",
-      "fulltext_route": "closed",
-      "source_kind": "html",
-      "corpus_chars": 228
+        "No lawful copy served readable text. Tried: register-url: stub (228 chars)"
+      ]
     },
     {
       "id": "N14",
@@ -1189,16 +1360,12 @@
       "estimate": "$14.9 billion in damage and $15.2 billion in economic losses; poverty projected to rise 3.7-4.0 percentage points, adding 8.4-9.1 million poor people; 1,730 deaths",
       "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099910201032325572",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:05:58+00:00",
+      "retrieved_utc": "2026-08-04T16:59:00+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Retrieved only 5595 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099910201032325572",
-      "fulltext_route": "none",
-      "source_kind": "html",
-      "corpus_chars": 5595
+        "No lawful copy served readable text. Tried: register-url: stub (5595 chars)"
+      ]
     },
     {
       "id": "N15",
@@ -1207,7 +1374,7 @@
       "estimate": "Over 8,790 casualties and 22,300 injuries, with the lives of about 8 million people affected; total recovery needs of US$6.7 billion; World Bank simulations project an additional 2.5-3.5 percent of Nepalis pushed into poverty in FY 2015-2016, translating into at least 700,000 additional poor",
       "url": "https://www.worldbank.org/content/dam/Worldbank/document/SAR/nepal/PDNA%20Volume%20A%20Final.pdf",
       "existing_locator": "Vol. A: Key Findings, pp. 13, 18, 22-23",
-      "retrieved_utc": "2026-08-04T16:05:58+00:00",
+      "retrieved_utc": "2026-08-04T16:59:00+00:00",
       "tokens": {
         "8790": [
           13
@@ -1257,7 +1424,7 @@
       "status": "LOCATED",
       "notes": [],
       "fetched_url": "https://www.worldbank.org/content/dam/Worldbank/document/SAR/nepal/PDNA%20Volume%20A%20Final.pdf",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "pdf",
       "corpus_chars": 362910
     },
@@ -1268,7 +1435,7 @@
       "estimate": "About $450 million in damage and losses, equivalent to 64% of GDP; roughly 65,000 people displaced and livelihoods of at least 80% of the rural population compromised",
       "url": "https://www.worldbank.org/en/results/2024/06/07/improving-lives-and-building-resilience-in-vanuatu",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:02+00:00",
+      "retrieved_utc": "2026-08-04T16:59:22+00:00",
       "tokens": {
         "450": [
           null
@@ -1285,7 +1452,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.worldbank.org/en/results/2024/06/07/improving-lives-and-building-resilience-in-vanuatu",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 10273
     },
@@ -1296,16 +1463,12 @@
       "estimate": "44 deaths and about $1.38 billion in damage and losses, equivalent to 31% of GDP; 30,369 houses were damaged or destroyed and about 62% of the population was affected",
       "url": "https://www.worldbank.org/en/news/press-release/2016/06/30/world-bank-commits-50m-to-support-fijis-long-term-cyclone-winston-recovery",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:03+00:00",
+      "retrieved_utc": "2026-08-04T16:59:22+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Retrieved only 5492 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://www.worldbank.org/en/news/press-release/2016/06/30/world-bank-commits-50m-to-support-fijis-long-term-cyclone-winston-recovery",
-      "fulltext_route": "none",
-      "source_kind": "html",
-      "corpus_chars": 5492
+        "No lawful copy served readable text. Tried: register-url: stub (5493 chars)"
+      ]
     },
     {
       "id": "N18",
@@ -1314,7 +1477,7 @@
       "estimate": "$90.4 million in direct damage, equivalent to about 18.5% of GDP",
       "url": "https://www.worldbank.org/en/news/press-release/2022/02/14/tonga-volcanic-eruption-and-tsunami-world-bank-disaster-assessment-report-estimates-damages-at-us-90m",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:03+00:00",
+      "retrieved_utc": "2026-08-04T16:59:22+00:00",
       "tokens": {
         "90.4": [
           null
@@ -1328,7 +1491,7 @@
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://www.worldbank.org/en/news/press-release/2022/02/14/tonga-volcanic-eruption-and-tsunami-world-bank-disaster-assessment-report-estimates-damages-at-us-90m",
-      "fulltext_route": "none",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 9253
     },
@@ -1339,17 +1502,12 @@
       "estimate": "Children exposed in utero or infancy in severely affected districts had height-for-age z-scores about 1.67 standard deviations lower in the preferred interaction estimate; 10.3 million livestock died",
       "url": "https://doi.org/10.1016/j.worlddev.2016.05.005",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:03+00:00",
+      "retrieved_utc": "2026-08-04T16:59:23+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "No lawful open-access copy exists; screened against the register URL, which may be a landing page only.",
-        "Retrieved only 13 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://doi.org/10.1016/j.worlddev.2016.05.005",
-      "fulltext_route": "closed",
-      "source_kind": "html",
-      "corpus_chars": 13
+        "No lawful copy served readable text. Tried: register-url: stub (13 chars)"
+      ]
     },
     {
       "id": "N20",
@@ -1358,7 +1516,7 @@
       "estimate": "Drought exposure reduced household food consumption by about 4%",
       "url": "https://www.worldbank.org/en/country/philippines/publication/disquiet-on-the-weather-front-the-welfare-impacts-of-climatic-variability-in-the-rural-philippines",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:04+00:00",
+      "retrieved_utc": "2026-08-04T16:59:23+00:00",
       "tokens": {},
       "status": "NO_TOKENS",
       "notes": [
@@ -1372,18 +1530,29 @@
       "estimate": "1.67 million deaths in 2019 (17.8% of all deaths) were attributable to air pollution; output losses were $36.8 billion, or 1.36% of GDP",
       "url": "https://doi.org/10.1016/S2542-5196(20)30298-9",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:04+00:00",
-      "tokens": {},
-      "status": "INACCESSIBLE",
+      "retrieved_utc": "2026-08-04T16:59:23+00:00",
+      "tokens": {
+        "1.67": [
+          null
+        ],
+        "17.8": [
+          null
+        ],
+        "36.8": [
+          null
+        ],
+        "1.36": [
+          null
+        ]
+      },
+      "status": "LOCATED",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Open-access copy at http://www.thelancet.com/article/S2542519620302989/pdf was blocked (HTTP 403); fell back to the register URL.",
-        "Retrieved only 13 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
+        "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
-      "fetched_url": "https://doi.org/10.1016/S2542-5196(20)30298-9",
-      "fulltext_route": "register-url-fallback",
+      "fetched_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7805008/fullTextXML",
+      "fulltext_route": "europepmc",
       "source_kind": "html",
-      "corpus_chars": 13
+      "corpus_chars": 75403
     },
     {
       "id": "N22",
@@ -1392,7 +1561,7 @@
       "estimate": "A 10 microgram/m3 increase in PM10 reduced life expectancy by about 0.64 year; meeting China's Class I standard was estimated to save 3.7 billion life-years",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5625887/",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:06+00:00",
+      "retrieved_utc": "2026-08-04T16:59:23+00:00",
       "tokens": {
         "0.64": [
           null
@@ -1403,11 +1572,11 @@
       },
       "status": "LOCATED",
       "notes": [
-        "No lawful open-access copy exists; screened against the register URL, which may be a landing page only.",
+        "Reached via register-url after 1 blocked or stub response(s).",
         "Source is an HTML landing page, not the document itself; a negative result here may reflect the page, not the study."
       ],
       "fetched_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5625887/",
-      "fulltext_route": "closed",
+      "fulltext_route": "register-url",
       "source_kind": "html",
       "corpus_chars": 47986
     },
@@ -1418,17 +1587,12 @@
       "estimate": "About 100,300 premature deaths were estimated across the three countries, more than 90,000 in Indonesia",
       "url": "https://doi.org/10.1088/1748-9326/11/9/094023",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:07+00:00",
+      "retrieved_utc": "2026-08-04T16:59:25+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Screened against open-access full text via unpaywall (gold).",
-        "Retrieved only 386 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://iopscience.iop.org/article/10.1088/1748-9326/11/9/094023/pdf",
-      "fulltext_route": "unpaywall",
-      "source_kind": "html",
-      "corpus_chars": 386
+        "No lawful copy served readable text. Tried: environmental research letters: stub (386 chars); columbia academic commons (columbia university): stub (1324 chars); register-url: stub (386 chars)"
+      ]
     },
     {
       "id": "N24",
@@ -1437,17 +1601,12 @@
       "estimate": "Smoke exposure was associated with 417 excess deaths, 1,124 cardiovascular and 2,027 respiratory hospital admissions, 1,305 asthma emergency visits, and A$1.95 billion in health costs",
       "url": "https://www.nature.com/articles/s41893-020-00610-5",
       "existing_locator": "",
-      "retrieved_utc": "2026-08-04T16:06:07+00:00",
+      "retrieved_utc": "2026-08-04T16:59:26+00:00",
       "tokens": {},
       "status": "INACCESSIBLE",
       "notes": [
-        "Screened against open-access full text via unpaywall (green).",
-        "Retrieved only 3983 characters \u2014 an abstract stub, cookie wall, or bot-block page rather than the document. Not screened; absence here would be an artefact of the fetch."
-      ],
-      "fetched_url": "https://figshare.com/articles/journal_contribution/Unprecedented_health_costs_of_smoke-related_PM2_5_from_the_2019_20_Australian_megafires/22992434",
-      "fulltext_route": "unpaywall",
-      "source_kind": "html",
-      "corpus_chars": 3983
+        "No lawful copy served readable text. Tried: figshare: stub (3985 chars); register-url: stub (228 chars)"
+      ]
     }
   ]
 }

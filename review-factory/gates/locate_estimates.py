@@ -131,15 +131,27 @@ def estimate_tokens(estimate: str) -> list[str]:
     return out
 
 
-def strip_separators(text: str) -> str:
-    """Drop thousands separators so '8,970' in a source matches '8970'.
+# The Lancet family sets decimals with a middle dot — "18·2 million", not
+# "18.2 million". Matching "18.2" against that text fails, and the screen then
+# reports every figure in a Lancet paper as absent from a Lancet paper.
+DECIMAL_MARKS = "·•∙"
 
-    `estimate_tokens` already strips commas from the estimate string; without
-    the same treatment on the source side, every comma-formatted figure reads
-    as absent. That produces false alarms, which is the most damaging error
-    this screen can make — it teaches the reader to distrust real findings.
+
+def strip_separators(text: str) -> str:
+    """Normalize numeric typography so a figure matches however it is set.
+
+    Two conventions defeat a naive match, and both produce false alarms — the
+    most damaging error this screen can make, because it teaches a reader to
+    distrust findings that are in fact correct:
+
+        thousands separators   "8,970"  must match  "8970"
+        decimal marks          "18·2"   must match  "18.2"
+
+    `estimate_tokens` already strips commas from the estimate side; the source
+    side needs the same treatment plus decimal-mark folding.
     """
-    return re.sub(r"(?<=\d)[,  ](?=\d)", "", text)
+    text = re.sub(r"(?<=\d)[,  ](?=\d)", "", text)
+    return re.sub(rf"(?<=\d)[{DECIMAL_MARKS}](?=\d)", ".", text)
 
 
 def cache_path(url: str) -> Path:
@@ -318,41 +330,52 @@ def screen(rec: dict) -> dict:
         return entry
 
     ft = (FULLTEXT or {}).get(rec["id"], {})
-    url = ft.get("url") or rec.get("url", "")
-    entry["fetched_url"] = url
-    entry["fulltext_route"] = ft.get("route", "register-url")
-    if ft.get("url"):
-        entry["notes"].append(
-            f"Screened against open-access full text via {ft['route']}"
-            f" ({ft.get('oa_status', 'oa')})."
-        )
-    elif ft.get("route") == "closed":
-        entry["notes"].append(
-            "No lawful open-access copy exists; screened against the "
-            "register URL, which may be a landing page only."
-        )
-    if not url:
+    referer = f"https://doi.org/{rec['doi']}" if rec.get("doi") else None
+
+    # Try every lawful copy in turn. A publisher block on one host says
+    # nothing about whether a repository copy of the same paper serves, and
+    # stopping at the first failure was silently marking readable papers
+    # unreadable.
+    attempts: list[tuple[str, str]] = [
+        (c["url"], c.get("source") or ft.get("route", "oa"))
+        for c in (ft.get("candidates") or [])
+    ]
+    if rec.get("url"):
+        attempts.append((rec["url"], "register-url"))
+    if not attempts:
         entry["status"] = "INACCESSIBLE"
         entry["notes"].append("No URL recorded.")
         return entry
 
-    referer = f"https://doi.org/{rec['doi']}" if rec.get("doi") else None
-    data, err = fetch(url, referer=referer)
-    if data is None and ft.get("url") and rec.get("url"):
-        # The open-access copy was blocked; fall back to the register URL so a
-        # blocked publisher does not silently downgrade the record.
-        entry["notes"].append(
-            f"Open-access copy at {url} was blocked ({err}); fell back to the "
-            "register URL."
-        )
-        url = rec["url"]
-        entry["fetched_url"] = url
-        entry["fulltext_route"] = "register-url-fallback"
-        data, err = fetch(url, referer=referer)
+    data = None
+    tried: list[str] = []
+    for cand_url, source in attempts:
+        cdata, cerr = fetch(cand_url, referer=referer)
+        if cdata is None:
+            tried.append(f"{source}: {cerr}")
+            continue
+        # Reject stubs here so a block page does not consume the attempt.
+        if cdata[:5] != b"%PDF-" and len(html_text(cdata)) < MIN_FULLTEXT_CHARS:
+            if not discover_pdf_links(cdata, cand_url) or rec.get("doi"):
+                tried.append(f"{source}: stub ({len(html_text(cdata))} chars)")
+                continue
+        data = cdata
+        url = cand_url
+        entry["fetched_url"] = cand_url
+        entry["fulltext_route"] = source
+        break
+
     if data is None:
         entry["status"] = "INACCESSIBLE"
-        entry["notes"].append(f"Could not fetch source ({err}).")
+        entry["notes"].append(
+            "No lawful copy served readable text. Tried: " + "; ".join(tried[:6])
+        )
         return entry
+    if tried:
+        entry["notes"].append(
+            f"Reached via {entry['fulltext_route']} after {len(tried)} "
+            "blocked or stub response(s)."
+        )
 
     # A landing page below the full-text bar: follow its PDF links before
     # giving up, because the document itself is usually one hop away.

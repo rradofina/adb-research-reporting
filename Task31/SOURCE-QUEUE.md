@@ -63,14 +63,31 @@ be resolved by guessing: a source we cannot read is a source we cannot cite.
 
 Not access problems; genuine holes against the commissioning brief.
 
-- **Ten of the eighteen named journals have zero records**, including the
-  development-economics core (Journal of Development Economics, American
-  Economic Review, Review of Economics and Statistics, Economic Development and
-  Cultural Change) and all three field journals (Climate Change Economics,
-  JEEM, Journal of Health Economics), plus Nature Human Behaviour, Lancet
-  Public Health, and Science proper. The workbook's search log claims these
-  channels were searched; the register shows no yield, and one of those two
-  statements needs correcting.
+- **Ten of the eighteen named journals have zero records**, and the literature
+  is demonstrably there. Measured against OpenAlex on 2026-08-05, papers
+  published 2015 onward in those journals whose title or abstract mentions
+  shock, welfare, poverty, climate, disaster, pandemic, or inflation:
+
+  | Journal | 2015+ works | on-topic |
+  |---|---:|---:|
+  | American Economic Review | 2,708 | 493 |
+  | Journal of Development Economics | 1,556 | 383 |
+  | Journal of Environmental Economics and Management | 1,199 | 380 |
+  | The Lancet Public Health | 1,640 | 303 |
+  | Review of Economics and Statistics | 1,216 | 284 |
+  | Climate Change Economics | 338 | 255 |
+  | Nature Human Behaviour | 2,495 | 239 |
+  | Journal of Health Economics | 1,078 | 179 |
+  | Economic Development and Cultural Change | 521 | 89 |
+
+  This settles a question the register could not answer on its own: the gap is
+  a search failure, not an absent literature. The workbook's Search Log sheet
+  lists "JDE; World Development; QJE; JPE; REStat; JEEM; JHE" as an economics
+  channel that was searched. Six of those seven yielded nothing. Either the
+  search did not actually run against them or it ran badly; the log should be
+  corrected to say which, because a log that claims coverage the register does
+  not show is worse than no log.
+
 - **Central Asia rests on one record.** The brief asks for it as a named
   subregion for comparison. One record cannot support a subregional comparison.
 

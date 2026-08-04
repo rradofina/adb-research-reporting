@@ -1,384 +1,808 @@
 {
   "C01": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C02": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C03": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C04": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "10.1126/sciadv.abe0997",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7864564/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "http://hdl.handle.net/10419/232271",
+        "kind": "html",
+        "source": "econstor (econstor)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7864564",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "https://www.science.org/doi/pdf/10.1126/sciadv.abe0997?download=true",
+        "kind": "pdf",
+        "source": "science advances",
+        "rank": 2
+      },
+      {
+        "url": "https://research.wur.nl/en/publications/falling-living-standards-during-the-covid-19-crisis-quantitative-",
+        "kind": "html",
+        "source": "socio-environmental systems modeling",
+        "rank": 3
+      },
+      {
+        "url": "https://escholarship.org/uc/item/95c6n64q",
+        "kind": "html",
+        "source": "escholarship (california digital library)",
+        "rank": 3
+      }
+    ],
     "oa_status": "gold",
-    "url": "https://www.science.org/doi/pdf/10.1126/sciadv.abe0997?download=true",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C05": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C06": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C07": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C08": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C09": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "10.1038/s43016-021-00319-4",
+    "candidates": [
+      {
+        "url": "https://www.nature.com/articles/s43016-021-00319-4.pdf",
+        "kind": "pdf",
+        "source": "nature food",
+        "rank": 2
+      }
+    ],
     "oa_status": "bronze",
-    "url": "https://www.nature.com/articles/s43016-021-00319-4.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C10": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C11": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "10.1016/S0140-6736(21)02143-7",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8500697/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8500697",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "http://hdl.handle.net/11573/1578785",
+        "kind": "html",
+        "source": "iris research product catalog (sapienza university of rome)",
+        "rank": 1
+      },
+      {
+        "url": "http://www.thelancet.com/article/S0140673621021437/pdf",
+        "kind": "pdf",
+        "source": "the lancet",
+        "rank": 2
+      },
+      {
+        "url": "https://doi.org/10.1016/s0140-6736(21)02143-7",
+        "kind": "html",
+        "source": "the lancet",
+        "rank": 3
+      }
+    ],
     "oa_status": "hybrid",
-    "url": "http://www.thelancet.com/article/S0140673621021437/pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C12": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "10.1016/S0140-6736(21)02796-3",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8912932/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "http://hdl.handle.net/11573/1621634",
+        "kind": "html",
+        "source": "iris research product catalog (sapienza university of rome)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8912932",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "http://www.thelancet.com/article/S0140673621027963/pdf",
+        "kind": "pdf",
+        "source": "the lancet",
+        "rank": 2
+      },
+      {
+        "url": "https://doi.org/10.1016/s0140-6736(21)02796-3",
+        "kind": "html",
+        "source": "the lancet",
+        "rank": 3
+      }
+    ],
     "oa_status": "hybrid",
-    "url": "http://www.thelancet.com/article/S0140673621027963/pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C13": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "C14": {
-    "retrieved_utc": "2026-08-04T16:05:29+00:00",
+    "retrieved_utc": "2026-08-04T16:45:28+00:00",
     "doi": "10.1016/j.worlddev.2023.106331",
+    "candidates": [
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10284455/pdf/main.pdf",
+        "kind": "pdf",
+        "source": "pubmed central",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10284455/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10284455",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      }
+    ],
     "oa_status": "green",
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10284455/pdf/main.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C15": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:30+00:00",
     "doi": "10.1038/s41586-020-2918-0",
+    "candidates": [
+      {
+        "url": "https://www.nature.com/articles/s41586-020-2918-0.pdf",
+        "kind": "pdf",
+        "source": "nature",
+        "rank": 2
+      }
+    ],
     "oa_status": "bronze",
-    "url": "https://www.nature.com/articles/s41586-020-2918-0.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "C16": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:30+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E01": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:30+00:00",
     "doi": "10.1038/s41467-023-41543-9",
+    "candidates": [
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10505228/pdf/41467_2023_Article_41543.pdf",
+        "kind": "pdf",
+        "source": "pubmed central",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10505228/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10505228",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "https://hdl.handle.net/10568/131975",
+        "kind": "html",
+        "source": "cgspace a repository of agricultural research outputs (consultative group for international agricultural research)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.nature.com/articles/s41467-023-41543-9.pdf",
+        "kind": "pdf",
+        "source": "nature communications",
+        "rank": 2
+      },
+      {
+        "url": "http://cdm15738.contentdm.oclc.org/cdm/ref/collection/p15738coll5/id/8886",
+        "kind": "html",
+        "source": "ifpri e-brary (international food policy research institute)",
+        "rank": 3
+      },
+      {
+        "url": "https://doaj.org/article/713130d2101747168c531e68861a50cd",
+        "kind": "html",
+        "source": "doaj (doaj: directory of open access journals)",
+        "rank": 3
+      },
+      {
+        "url": "http://ebrary.ifpri.org/cdm/ref/collection/p15738coll5/id/8886",
+        "kind": "html",
+        "source": "international food policy research institute (international food policy research institute)",
+        "rank": 3
+      }
+    ],
     "oa_status": "gold",
-    "url": "https://www.nature.com/articles/s41467-023-41543-9.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "E02": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E03": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E04": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E05": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E06": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E07": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E08": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E09": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "E10": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "10.1093/qje/qjz027",
+    "candidates": [],
     "oa_status": "closed",
     "route": "closed",
     "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
   },
   "E11": {
-    "retrieved_utc": "2026-08-04T16:05:30+00:00",
+    "retrieved_utc": "2026-08-04T16:45:31+00:00",
     "doi": "10.22617/WPS189770-2",
+    "candidates": [
+      {
+        "url": "http://hdl.handle.net/10419/203408",
+        "kind": "html",
+        "source": "econstor (econstor)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.adb.org/sites/default/files/publication/471496/ewp-566-impact-trade-conflict-asia.pdf",
+        "kind": "pdf",
+        "source": "adb economics working paper series",
+        "rank": 2
+      },
+      {
+        "url": "https://doi.org/10.22617/wps189770-2",
+        "kind": "html",
+        "source": "adb economics working paper series",
+        "rank": 3
+      }
+    ],
     "oa_status": "hybrid",
-    "url": "https://www.adb.org/sites/default/files/publication/471496/ewp-566-impact-trade-conflict-asia.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "E12": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N01": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N02": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N03": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N04": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N05": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N06": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:32+00:00",
     "doi": "10.1038/nature15725",
+    "candidates": [
+      {
+        "url": "https://escholarship.org/uc/item/3g72r0zv",
+        "kind": "html",
+        "source": "escholarship (california digital library)",
+        "rank": 3
+      }
+    ],
     "oa_status": "green",
-    "url": "https://escholarship.org/uc/item/3g72r0zv",
-    "kind": "html",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N07": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:33+00:00",
     "doi": "10.1073/pnas.1816020116",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6525504/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6525504",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "https://www.pnas.org/content/pnas/116/20/9808.full.pdf",
+        "kind": "pdf",
+        "source": "proceedings of the national academy of sciences",
+        "rank": 2
+      }
+    ],
     "oa_status": "bronze",
-    "url": "https://www.pnas.org/content/pnas/116/20/9808.full.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N08": {
-    "retrieved_utc": "2026-08-04T16:05:31+00:00",
+    "retrieved_utc": "2026-08-04T16:45:33+00:00",
     "doi": "10.1093/qje/qjac020",
+    "candidates": [
+      {
+        "url": "http://www.nber.org/papers/w27599.pdf",
+        "kind": "pdf",
+        "source": "unpaywall",
+        "rank": 2
+      }
+    ],
     "oa_status": "green",
-    "url": "http://www.nber.org/papers/w27599.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N09": {
-    "retrieved_utc": "2026-08-04T16:05:32+00:00",
+    "retrieved_utc": "2026-08-04T16:45:33+00:00",
     "doi": "10.1038/s41558-021-01058-x",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7611104/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "http://hdl.handle.net/2158/1243377",
+        "kind": "html",
+        "source": "florence research (university of florence)",
+        "rank": 1
+      },
+      {
+        "url": "http://hdl.handle.net/2318/1847848",
+        "kind": "html",
+        "source": "institutional research information system university of turin (university of turin)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7611104",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "http://hdl.handle.net/10400.18/7899",
+        "kind": "html",
+        "source": "portuguese national funding agency for science, research and technology (rcaap project by fct)",
+        "rank": 1
+      },
+      {
+        "url": "http://hdl.handle.net/10029/625128",
+        "kind": "html",
+        "source": "data archiving and networked services (dans)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.nature.com/articles/s41558-021-01058-x.pdf",
+        "kind": "pdf",
+        "source": "nature climate change",
+        "rank": 2
+      },
+      {
+        "url": "https://bura.brunel.ac.uk/handle/2438/23673",
+        "kind": "html",
+        "source": "brunel university research archive (bura) (brunel university london)",
+        "rank": 3
+      },
+      {
+        "url": "https://ibn.idsi.md/vizualizare_articol/132523",
+        "kind": "html",
+        "source": "",
+        "rank": 3
+      }
+    ],
     "oa_status": "bronze",
-    "url": "https://www.nature.com/articles/s41558-021-01058-x.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N10": {
-    "retrieved_utc": "2026-08-04T16:05:32+00:00",
+    "retrieved_utc": "2026-08-04T16:45:34+00:00",
     "doi": "10.1086/713733",
+    "candidates": [
+      {
+        "url": "https://knowledge.uchicago.edu/communities/centers-and-institutes/",
+        "kind": "html",
+        "source": "open mind",
+        "rank": 3
+      },
+      {
+        "url": "https://doi.org/10.6082/9kb3j-d5792",
+        "kind": "html",
+        "source": "university of chicago",
+        "rank": 3
+      },
+      {
+        "url": "https://doi.org/10.6082/tnepc-d1018",
+        "kind": "html",
+        "source": "university of chicago",
+        "rank": 3
+      }
+    ],
     "oa_status": "hybrid",
-    "url": "https://doi.org/10.1086/713733",
-    "kind": "html",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N11": {
-    "retrieved_utc": "2026-08-04T16:05:32+00:00",
+    "retrieved_utc": "2026-08-04T16:45:34+00:00",
     "doi": "10.1126/sciadv.1603322",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5540239/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "http://hdl.handle.net/1721.1/113642",
+        "kind": "html",
+        "source": "dspace@mit (massachusetts institute of technology)",
+        "rank": 1
+      },
+      {
+        "url": "https://advances.sciencemag.org/content/advances/3/8/e1603322.full.pdf",
+        "kind": "pdf",
+        "source": "science advances",
+        "rank": 2
+      }
+    ],
     "oa_status": "gold",
-    "url": "https://advances.sciencemag.org/content/advances/3/8/e1603322.full.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N12": {
-    "retrieved_utc": "2026-08-04T16:05:32+00:00",
+    "retrieved_utc": "2026-08-04T16:45:35+00:00",
     "doi": "10.1038/s41467-022-30727-4",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9240081/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9240081",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "https://www.nature.com/articles/s41467-022-30727-4.pdf",
+        "kind": "pdf",
+        "source": "nature communications",
+        "rank": 2
+      }
+    ],
     "oa_status": "gold",
-    "url": "https://www.nature.com/articles/s41467-022-30727-4.pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N13": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "10.1038/s41586-021-03695-w",
+    "candidates": [],
     "oa_status": "closed",
     "route": "closed",
     "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
   },
   "N14": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N15": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N16": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N17": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N18": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N19": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "10.1016/j.worlddev.2016.05.005",
+    "candidates": [],
     "oa_status": "closed",
     "route": "closed",
     "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
   },
   "N20": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "",
+    "candidates": [],
     "route": "none",
     "oa_status": "NO_DOI",
     "note": "Institutional or gray-literature source; use register URL."
   },
   "N21": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:36+00:00",
     "doi": "10.1016/S2542-5196(20)30298-9",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7805008/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      },
+      {
+        "url": "http://europepmc.org/pmc/articles/PMC7805008",
+        "kind": "html",
+        "source": "europe pmc (pubmed central)",
+        "rank": 1
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7805008",
+        "kind": "html",
+        "source": "pubmed central",
+        "rank": 1
+      },
+      {
+        "url": "http://www.thelancet.com/article/S2542519620302989/pdf",
+        "kind": "pdf",
+        "source": "the lancet planetary health",
+        "rank": 2
+      },
+      {
+        "url": "https://doi.org/10.1016/s2542-5196(20)30298-9",
+        "kind": "html",
+        "source": "the lancet planetary health",
+        "rank": 3
+      },
+      {
+        "url": "https://doaj.org/article/daf693fd3a3d444b9df48695cb72a342",
+        "kind": "html",
+        "source": "doaj (doaj: directory of open access journals)",
+        "rank": 3
+      }
+    ],
     "oa_status": "gold",
-    "url": "http://www.thelancet.com/article/S2542519620302989/pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N22": {
-    "retrieved_utc": "2026-08-04T16:05:33+00:00",
+    "retrieved_utc": "2026-08-04T16:45:37+00:00",
     "doi": "10.1073/pnas.1616784114",
+    "candidates": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5625887/fullTextXML",
+        "kind": "xml",
+        "source": "europepmc",
+        "rank": 0
+      }
+    ],
     "oa_status": "closed",
-    "route": "closed",
-    "note": "No lawful open-access copy found. Stays on the manual queue; its figures remain barred from headline use under \u00a72.7."
+    "route": "candidates"
   },
   "N23": {
-    "retrieved_utc": "2026-08-04T16:05:34+00:00",
+    "retrieved_utc": "2026-08-04T16:45:38+00:00",
     "doi": "10.1088/1748-9326/11/9/094023",
+    "candidates": [
+      {
+        "url": "https://iopscience.iop.org/article/10.1088/1748-9326/11/9/094023/pdf",
+        "kind": "pdf",
+        "source": "environmental research letters",
+        "rank": 2
+      },
+      {
+        "url": "https://doi.org/10.7916/d8sq90q7",
+        "kind": "html",
+        "source": "columbia academic commons (columbia university)",
+        "rank": 3
+      }
+    ],
     "oa_status": "gold",
-    "url": "https://iopscience.iop.org/article/10.1088/1748-9326/11/9/094023/pdf",
-    "kind": "pdf",
-    "route": "unpaywall"
+    "route": "candidates"
   },
   "N24": {
-    "retrieved_utc": "2026-08-04T16:05:34+00:00",
+    "retrieved_utc": "2026-08-04T16:45:38+00:00",
     "doi": "10.1038/s41893-020-00610-5",
+    "candidates": [
+      {
+        "url": "https://figshare.com/articles/journal_contribution/Unprecedented_health_costs_of_smoke-related_PM2_5_from_the_2019_20_Australian_megafires/22992434",
+        "kind": "html",
+        "source": "figshare",
+        "rank": 3
+      }
+    ],
     "oa_status": "green",
-    "url": "https://figshare.com/articles/journal_contribution/Unprecedented_health_costs_of_smoke-related_PM2_5_from_the_2019_20_Australian_megafires/22992434",
-    "kind": "html",
-    "route": "unpaywall"
+    "route": "candidates"
   }
 }

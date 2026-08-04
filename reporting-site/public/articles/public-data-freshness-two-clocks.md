@@ -27,6 +27,7 @@ abstract: >
   with formal release standards.
 doi:
 published_at: 2026-07-19
+updated_at: 2026-07-31
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
@@ -34,13 +35,32 @@ review_external_chain: ai-synthesis under §18.4; no individual contacted
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The finding
+# When a dashboard says “latest: 2022,” what is it really saying?
+
+A development dashboard often paints a cell by its latest reference year.
+That single label answers a policy question—how old is the phenomenon being
+described?—but not a source-management question: does this economy trail what
+the indicator currently makes possible?
+
+Consider two indicators in a 2026 snapshot. If an environmental series has a
+global frontier of 2023, every economy observed at that frontier has a
+three-year-old value but zero relative lag. If a poverty series has a 2025
+frontier and an economy's latest value is 2020, the value is six years old and
+five years behind the source frontier. Both ages matter; they imply different
+follow-up.
+
+This paper tests that distinction on a prospectively frozen panel of ADB
+developing member economies and World Development Indicators. It asks whether
+two transparent age definitions would send the same economy × indicator cell
+for review.
+
+# What we found
 
 A latest-year label can make an economy-specific data gap look larger than it
-is when an entire indicator is produced slowly. At a prospectively frozen
-three-year review rule, **138 of 709 observed economy × indicator cells
-(19.5%) change status** when calendar age is replaced by lag from the
-indicator's own global production frontier.
+is when an entire indicator is produced slowly. At a three-year review rule,
+**138 of 709 observed economy × indicator cells (19.5%) change status** when
+calendar age is replaced by lag from the indicator's own global production
+frontier.
 
 All 138 disagreements go in one direction: the cell looks old on the calendar
 but remains within three years of its indicator frontier. They account for
@@ -55,21 +75,18 @@ therefore narrower: **calendar-only review flags are common in selected
 domains with shared production cycles, not uniformly across development
 data.**
 
-# Why one year label is doing two jobs
+Median calendar age is two years. Median indicator production age is one year,
+and median relative lag is zero. At three years, the absolute rule flags 212
+observed cells while the relative rule flags 74. Because the source frontier
+cannot be later than the 2026 snapshot, relative lag cannot exceed calendar
+age: 497 cells pass both rules, 74 fail both, and 138 fail only the calendar
+rule.
 
-A dashboard reader often sees “latest value: 2022.” That label can answer a
-policy question—how old is the phenomenon being described? It cannot by
-itself answer a source-management question—does this economy trail what the
-indicator currently makes possible?
+![Across domains, the calendar review queue separates into common production-cycle flags and economy-specific relative-delay flags.](/programs/public-data-freshness/generated/charts/public-data-freshness-03-domain-clock-decomposition.svg)
 
-Consider two indicators in a 2026 snapshot. If an environmental series has a
-global frontier of 2023, every economy observed at that frontier has a
-three-year-old value but zero relative lag. If a poverty series has a 2025
-frontier and an economy's latest value is 2020, the value is six years old and
-five years behind the source frontier. Both ages matter, but they imply
-different follow-up.
+# Why the two clocks disagree — and where
 
-The study makes that distinction explicit:
+The study makes the distinction explicit:
 
 `calendar age = indicator-wide production age + economy-specific relative lag`
 
@@ -78,97 +95,6 @@ The study makes that distinction explicit:
 The first component is common to an indicator. The second varies across
 economies within it. A calendar threshold can therefore generate a source-
 wide review queue even when no observed economy trails the frontier.
-
-# How this fits the evidence base
-
-This paper sits between work on statistical-system performance and work on the
-fitness of specific public datasets. The World Bank's Statistical Performance
-Indicators evaluate systems across data use, services, products, sources, and
-infrastructure [@dang2023spi]. Research on data deprivation and SDG monitoring
-shows that availability, frequency, and recency constrain what can be known
-[@serajuddin2015deprivation] [@jolliffe2023valuable] [@mahler2023enough]. IMF
-and UN initiatives likewise treat timeliness and coverage as central parts of
-the data agenda [@imf2023dgi] [@un2026sdgreport].
-
-The closest methodological precedent assesses WDI indicators for monitoring
-fitness and warns that headline availability can conceal differences in
-coverage, update patterns, and comparability [@welch2024wdi]. Work on what
-sits behind international indicators and on the institutional foundations of
-the data revolution further cautions against treating an aggregator cell as a
-transparent fact [@quast2025behind] [@fischer2025datarevolution].
-
-The gap addressed here is more operational. A dashboard does not display an
-entire statistical system; it displays one economy × indicator cell. The
-paper tests whether two transparent age definitions would send the same cell
-for review. It adds no composite score and makes no country ranking.
-
-# Data: a frozen cross-domain WDI panel
-
-The prospective design was committed before the expanded source pull. It
-contains 42 WDI-compatible ADB developing member economies and nine policy
-domains. The lower set selects one pre-declared indicator per domain; the
-18-indicator baseline selects two; the upper set selects three.
-
-The baseline produces 756 possible cells. The public WDI API supplies 709
-observed latest values through 2025; 47 cells are missing. The upper set has
-1,006 observed of 1,134 possible cells. One frozen carbon-emissions code is
-archived in the WDI response and remains a disclosed 42-cell source failure
-rather than being replaced after results were known.
-
-![The frozen design expands from 355 observed lower-set cells to 709 baseline and 1,006 upper-set cells.](/programs/public-data-freshness/generated/charts/public-data-freshness-01-coverage-funnel.svg)
-
-Every raw response is cached with its request URL, retrieval timestamp, byte
-count, and SHA-256 digest. Each analytical row carries its indicator response
-hash. ADB *Basic Statistics 2026* supplies the cross-domain policy context,
-not the empirical panel values [@adb2026basicstatistics]. Its direct download
-was blocked by a Cloudflare challenge to noninteractive clients in this run;
-that access wall is recorded rather than bypassed or filled from memory.
-
-# Methodology: classify, compare, then try to break the claim
-
-For economy *i*, indicator *j*, and the 2026 snapshot:
-
-- `latest_year(i,j)` is the latest non-null WDI reference year through 2025;
-- `global_frontier(j)` is the latest non-null year across all economies in the
-  same WDI response;
-- `calendar_age(i,j) = 2026 - latest_year(i,j)`;
-- `production_age(j) = 2026 - global_frontier(j)`; and
-- `relative_lag(i,j) = global_frontier(j) - latest_year(i,j)`.
-
-At the baseline three-year cutoff, an absolute review flag is
-`calendar_age >= 3`; a relative review flag is `relative_lag >= 3`. Missing
-cells are excluded from both shares and reported separately. No value is
-carried forward, interpolated, backfilled, or imputed.
-
-The primary estimand is the share of observed baseline cells whose flags
-disagree. The prospective gate requires at least 10%. It also requires the
-9- and 27-indicator runs not both to fall below 10%, sufficient source
-retrieval, and at least half of possible baseline cells observed.
-
-The design then tries to falsify the result four ways: a ±50% indicator-set
-test; a ±50% threshold test with literal 1.5, 3, and 4.5 years; a global versus
-ADB-DMC frontier; a 2024 source cap; and nine leave-one-domain-out runs. The
-thresholds map to effective integer-year cutoffs of two, three, and five.
-
-# Results: the calendar queue is almost three times the relative queue
-
-Median calendar age is two years. Median indicator production age is one year,
-and median relative lag is zero. At three years, the absolute rule flags 212
-observed cells while the relative rule flags 74.
-
-![Across domains, the calendar review queue separates into common production-cycle flags and economy-specific relative-delay flags.](/programs/public-data-freshness/generated/charts/public-data-freshness-03-domain-clock-decomposition.svg)
-
-Because the source frontier cannot be later than the 2026 snapshot, relative
-lag cannot exceed calendar age. The classification matrix therefore contains
-no relative-only cases: 497 cells pass both rules, 74 fail both, and 138 fail
-only the calendar rule.
-
-The result changes the workflow. An absolute flag asks whether the value may
-be too old for the intended decision. A relative flag asks whether source
-follow-up should focus on this economy rather than the indicator's production
-cycle. The second can triage the first; it cannot replace it.
-
-# The broad pattern is carried by three domains
 
 Environment and climate contributes 80 of the 138 disagreements, health 40,
 and education 11. Poverty and inequality contributes five, external and
@@ -188,11 +114,10 @@ is not explained by a shared frontier.
 
 ![Indicator production ages reveal why equal calendar thresholds behave differently across series.](/programs/public-data-freshness/generated/charts/public-data-freshness-02-indicator-production-age.svg)
 
-# Missingness is a separate result
-
-The panel observes 93.8% of baseline cells. Missingness is highest in labor
-and social conditions (16.7%) and poverty and inequality (13.1%). Those cells
-are neither fresh nor old because no latest value exists through the cap.
+Missingness is a separate result. The panel observes 93.8% of baseline cells.
+Missingness is highest in labor and social conditions (16.7%) and poverty and
+inequality (13.1%). Those cells are neither fresh nor old because no latest
+value exists through the cap.
 
 ![Missing cells are shown separately from observed cells that cross the calendar-age rule.](/programs/public-data-freshness/generated/charts/public-data-freshness-07-missing-versus-old.svg)
 
@@ -208,7 +133,77 @@ That comparison is descriptive. It neither ranks economies nor explains why
 an observation is absent. It reinforces a design requirement: a freshness
 interface needs an explicit missing state.
 
-# Sensitivity: stable set-size result, unstable cutoff magnitude
+# What this means for dashboard design
+
+An absolute flag asks whether the value may be too old for the intended
+decision. A relative flag asks whether source follow-up should focus on this
+economy rather than the indicator's production cycle. The second can triage
+the first; it cannot replace it.
+
+A cross-domain dashboard should present four states, not one freshness badge:
+
+1. **Latest reference year** — how old the observed phenomenon is.
+2. **Indicator frontier** — the latest year present in the pinned source.
+3. **Relative lag** — how far the economy trails that frontier.
+4. **Missing** — no observed value through the stated cap.
+
+The interface should display the review cutoff and let the reader inspect the
+raw years. A relative flag can prioritize indicator-specific source checks. An
+absolute flag can preserve decision-specific caution. Neither is a measure of
+accuracy or institutional performance.
+
+![The supported output is a domain-aware review interface with explicit limits, not a composite score.](/programs/public-data-freshness/generated/charts/public-data-freshness-12-claim-gate.svg)
+
+This presentation is consistent with broader calls for interoperable,
+well-documented, and use-oriented statistical systems [@adb2024sdmx]
+[@adb2025statisticalcapacity] [@lokshin2022highways]. Its contribution is
+deliberately small enough to audit: expose the two clocks already embedded in
+the data rather than compressing them into another index.
+
+The World Bank's Statistical Performance Indicators evaluate systems across
+data use, services, products, sources, and infrastructure [@dang2023spi].
+Research on data deprivation and SDG monitoring shows that availability,
+frequency, and recency constrain what can be known
+[@serajuddin2015deprivation] [@jolliffe2023valuable] [@mahler2023enough]. IMF
+and UN initiatives likewise treat timeliness and coverage as central parts of
+the data agenda [@imf2023dgi] [@un2026sdgreport]. The closest methodological
+precedent assesses WDI indicators for monitoring fitness and warns that
+headline availability can conceal differences in coverage, update patterns,
+and comparability [@welch2024wdi]. Work on what sits behind international
+indicators and on the institutional foundations of international data systems
+further cautions against treating an aggregator cell as a transparent fact
+[@quast2025behind] [@fischer2025datarevolution].
+
+The gap addressed here is more operational. A dashboard does not display an
+entire statistical system; it displays one economy × indicator cell. The
+paper tests whether two transparent age definitions would send the same cell
+for review. It adds no composite score and makes no country ranking.
+
+# What this does not say
+
+WDI is an aggregator, and its frontier may not equal the original producer's
+latest release. A frontier can be set by an estimate, model, or later revision.
+The analysis cannot assign a lag to a national statistical office, determine
+whether a formal deadline was missed, or judge a value's fitness for a policy
+decision.
+
+The indicator sets are balanced across nine domains but are not a random
+sample of WDI. The three-year cutoff is an interpretability rule, and the
+sensitivity analysis shows that its choice matters greatly. Forty-seven
+baseline cells are missing; the observed-cell result cannot represent them.
+Pacific small-island coverage is lower, so group comparisons must keep that
+denominator visible.
+
+The paper rejects its broadest possible reading. The evidence does not show
+that relative clocks materially change review queues in every domain. It shows
+where they do and why. The appropriate response is not to declare old
+environmental data current or to score economies by lag.
+
+Finally, the internal critique and external red-team are AI-first reviews
+under Constitution §18. No individual external reviewer was contacted and no
+external endorsement is claimed.
+
+# What would change this finding
 
 The classification difference remains above the decision line across the
 frozen indicator sets. Disagreement is 24.8% for 9 indicators, 19.5% for 18,
@@ -234,71 +229,52 @@ domain-deletion test is decisive: removing environment lowers disagreement to
 
 ![Frontier and vintage choices are stable, but deleting environment crosses the prospective decision boundary.](/programs/public-data-freshness/generated/charts/public-data-freshness-11-alternative-specifications.svg)
 
-The paper therefore rejects its broadest possible reading. The evidence does
-not show that relative clocks materially change review queues in every domain.
-It shows where they do and why.
-
-# What the result changes for data products
-
-A cross-domain dashboard should present four states, not one freshness badge:
-
-1. **Latest reference year** — how old the observed phenomenon is.
-2. **Indicator frontier** — the latest year present in the pinned source.
-3. **Relative lag** — how far the economy trails that frontier.
-4. **Missing** — no observed value through the stated cap.
-
-The interface should display the review cutoff and let the reader inspect the
-raw years. A relative flag can prioritize indicator-specific source checks. An
-absolute flag can preserve decision-specific caution. Neither is a measure of
-accuracy or institutional performance.
-
-![The supported output is a domain-aware review interface with explicit limits, not a composite score.](/programs/public-data-freshness/generated/charts/public-data-freshness-12-claim-gate.svg)
-
-This presentation is consistent with broader calls for interoperable,
-well-documented, and use-oriented statistical systems [@adb2024sdmx]
-[@adb2025statisticalcapacity] [@lokshin2022highways]. Its contribution is
-deliberately small enough to audit: expose the two clocks already embedded in
-the data rather than compressing them into another index.
-
-# Limitations
-
-WDI is an aggregator, and its frontier may not equal the original producer's
-latest release. A frontier can be set by an estimate, model, or later revision.
-The analysis cannot assign a lag to a national statistical office, determine
-whether a formal deadline was missed, or judge a value's fitness for a policy
-decision.
-
-The indicator sets are balanced across nine domains but are not a random
-sample of WDI. The three-year cutoff is an interpretability rule, and the
-sensitivity analysis shows that its choice matters greatly. Forty-seven
-baseline cells are missing; the observed-cell result cannot represent them.
-Pacific small-island coverage is lower, so group comparisons must keep that
-denominator visible.
-
-Finally, the internal critique and external red-team are AI-first reviews
-under Constitution §18. No individual external reviewer was contacted and no
-external endorsement is claimed.
-
-# Conclusion
-
-A data year has two clocks because a latest observation reflects both the
-indicator's production cycle and the economy's position within that cycle. In
-this frozen WDI panel, separating those quantities removes 138 of 212 calendar-
-only review flags at a three-year rule. But the pre-specified falsifier shows
-that this is a domain-concentrated result, led by environment.
-
-The appropriate response is not to declare old environmental data current or
-to score economies by lag. It is to build a more honest review surface: show
-calendar age, source frontier, relative lag, missingness, and the chosen rule.
-The next evidence upgrade is a machine-readable join between formal producer
+In short: separating calendar age from relative lag removes 138 of 212
+calendar-only review flags at a three-year rule, but the pre-specified
+falsifier shows this is a domain-concentrated result led by environment. The
+next evidence upgrade is a machine-readable join between formal producer
 release calendars and aggregator ingestion dates. Until that exists, the two
 clocks should guide triage without pretending to diagnose cause.
 
-# Reproduce the analysis
+# How we measured this
 
-The full source pull, row-level panel, sensitivity suite, figure dossier,
-provenance hashes, literature review, limitations, and AI-first review records
-are committed with the program.
+The prospective design was committed before the expanded source pull. It
+contains 42 WDI-compatible ADB developing member economies and nine policy
+domains. The lower set selects one pre-declared indicator per domain; the
+18-indicator baseline selects two; the upper set selects three. The baseline
+produces 756 possible cells. The public WDI API supplies 709 observed latest
+values through 2025; 47 cells are missing. The upper set has 1,006 observed of
+1,134 possible cells. One frozen carbon-emissions code is archived in the WDI
+response and remains a disclosed 42-cell source failure rather than being
+replaced after results were known.
+
+![The frozen design expands from 355 observed lower-set cells to 709 baseline and 1,006 upper-set cells.](/programs/public-data-freshness/generated/charts/public-data-freshness-01-coverage-funnel.svg)
+
+For economy *i*, indicator *j*, and the 2026 snapshot: `latest_year(i,j)` is
+the latest non-null WDI reference year through 2025; `global_frontier(j)` is
+the latest non-null year across all economies in the same WDI response;
+`calendar_age(i,j) = 2026 - latest_year(i,j)`; `production_age(j) = 2026 -
+global_frontier(j)`; and `relative_lag(i,j) = global_frontier(j) -
+latest_year(i,j)`. At the baseline three-year cutoff, an absolute review flag
+is `calendar_age >= 3`; a relative review flag is `relative_lag >= 3`. Missing
+cells are excluded from both shares and reported separately. No value is
+carried forward, interpolated, backfilled, or imputed.
+
+The primary estimand is the share of observed baseline cells whose flags
+disagree. The prospective gate requires at least 10%. It also requires the
+9- and 27-indicator runs not both to fall below 10%, sufficient source
+retrieval, and at least half of possible baseline cells observed. The design
+then tries to falsify the result: a ±50% indicator-set test; a ±50% threshold
+test with literal 1.5, 3, and 4.5 years; a global versus ADB-DMC frontier; a
+2024 source cap; and nine leave-one-domain-out runs. The thresholds map to
+effective integer-year cutoffs of two, three, and five.
+
+Every raw response is cached with its request URL, retrieval timestamp, byte
+count, and SHA-256 digest. Each analytical row carries its indicator response
+hash. ADB *Basic Statistics 2026* supplies the cross-domain policy context,
+not the empirical panel values [@adb2026basicstatistics]. Its direct download
+was blocked by a Cloudflare challenge to noninteractive clients in this run;
+that access wall is recorded rather than bypassed or filled from memory.
 
 ```powershell
 python public-data-freshness/scripts/build-freshness-panel.py
@@ -306,4 +282,8 @@ python public-data-freshness/scripts/build-figure-dossier.py
 ```
 
 A live source refresh uses `--refresh` and creates a new WDI vintage that must
-be compared against the committed response digests.
+be compared against the committed response digests. Inspect the full evidence
+object at
+[/program/public-data-freshness/evidence](/program/public-data-freshness/evidence).
+
+`attestation_chain: ai-first`

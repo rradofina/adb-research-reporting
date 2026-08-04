@@ -1,7 +1,7 @@
 ---
 slug: coastal-informal-cluster
 title: 90.9 million more people in low-elevation urban centres
-subtitle: A direct GHS-UCDB measurement study replaces an inherited national proxy with named-city evidence—and narrows the claim from “informal risk” to recorded exposure growth.
+subtitle: Named-city GHS-UCDB evidence replaces an inherited national proxy—and narrows the claim from “informal risk” to recorded low-elevation exposure growth, not flood probability or informality.
 kind: working-paper
 status: draft
 attestation_chain: ai-first
@@ -22,6 +22,7 @@ abstract: >
   probability, loss, informality, deprivation, protection, or policy failure.
 doi:
 published_at: 2026-07-19
+updated_at: 2026-07-31
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
@@ -29,19 +30,12 @@ review_external_chain: ai-synthesis under §18.4; no individual contacted
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The finding
+# Cities that sit low, and grow
 
-The population recorded below 10 metres in 1,334 reporting urban centres
-across 24 ADB developing economies increased by **90.9 million** between 2000
-and 2020. Shanghai added 12.0 million, Bangkok 8.1 million, and Dhaka 7.3
-million inside the low-elevation part of their fixed urban-centre footprints.
-
-![Largest centre-level changes in population recorded below 10 metres, 2000–2020.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.svg)
-
-This is an exposure-growth result. It is not a count of people who will flood,
-a damage estimate, or a ranking of informal settlements.
-
-# Why the old research object had to be retired
+Coastal cities concentrate people and infrastructure where elevation leaves
+little buffer. A planner looking at the region needs a plain first number: how
+many more people now live in the low-elevation parts of named urban centres
+than two decades ago?
 
 The program inherited a country score that multiplied total population, urban
 share, and slum share, then retained economies manually marked coastal. Most
@@ -60,7 +54,29 @@ including population and built-up surface below 5 metres and between 5 and 10
 metres [@jrc2026ucdb]. The database is designed for comparable analysis of
 named urban centres and multi-temporal attributes [@melchiorri2024ucdb].
 
-# The unit is a centre, not a country score
+# What we found: more people below ten metres
+
+The population recorded below 10 metres in 1,334 reporting urban centres
+across 24 ADB developing economies increased by **90.9 million** between 2000
+and 2020. Shanghai added 12.0 million, Bangkok 8.1 million, and Dhaka 7.3
+million inside the low-elevation part of their fixed urban-centre footprints.
+
+![Largest centre-level changes in population recorded below 10 metres, 2000–2020.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-01-growth-hero.svg)
+
+This is an exposure-growth result. It is not a count of people who will flood,
+a damage estimate, or a ranking of informal settlements.
+
+Among 924 centres with positive population below 10 metres in at least one
+endpoint, 775 increased and 149 decreased. The median change was +12,330
+people. Khulna records the largest decline, about 231,000 people.
+
+![Number of positive-endpoint centres with increases and decreases.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-09-change-direction.svg)
+
+A decline is not evidence of managed retreat. Because historical values are
+calculated inside a fixed 2025 boundary, changes can reflect population
+redistribution within the footprint as well as broader demographic processes.
+
+# Why the unit is a centre: concentration and rank reverse
 
 For each matched centre, the primary measure adds the population below 5
 metres to the population between 5 and 10 metres. It compares 2000 with 2020
@@ -78,8 +94,6 @@ The top ten account for **52.1%**.
 
 ![Cumulative concentration of positive centre-level change.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-10-growth-concentration.svg)
 
-# The spatial object changes the ranking
-
 The inherited top five economies were Pakistan, the Philippines, China,
 Bangladesh, and Myanmar. When the centre-level changes are aggregated for
 context, the top five are China, India, Bangladesh, Thailand, and Viet Nam.
@@ -94,20 +108,6 @@ performance league table.
 
 ![Top ten economy aggregates of reported centre-level change.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-04-economy-aggregation.svg)
 
-# Growth is widespread but not universal
-
-Among 924 centres with positive population below 10 metres in at least one
-endpoint, 775 increased and 149 decreased. The median change was +12,330
-people. Khulna records the largest decline, about 231,000 people.
-
-![Number of positive-endpoint centres with increases and decreases.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-09-change-direction.svg)
-
-A decline is not evidence of managed retreat. Because historical values are
-calculated inside a fixed 2025 boundary, changes can reflect population
-redistribution within the footprint as well as broader demographic processes.
-
-# A second quantity supports the settlement interpretation
-
 Population change and built-up-surface change below 10 metres have a
 centre-level correlation of **0.85**. The association is consistent with
 physical settlement growth or intensification in the same elevation zone.
@@ -116,8 +116,6 @@ physical settlement growth or intensification in the same elevation zone.
 
 The correlation does not identify building quality, tenure, drainage,
 protection, or causation. Large centres also influence both axes.
-
-# A falling share can still mean more exposed people
 
 Absolute and proportional exposure do not always move together. In **255
 centres**, the population below 10 metres increased while its share of the
@@ -130,12 +128,10 @@ For policy communication, this is a useful warning. A declining percentage can
 coexist with a larger number of people in the exposure zone because the total
 centre population is changing too.
 
-# The finding survives alternative definitions
-
-The 10-metre LECZ follows the foundational definition used in the coastal
-settlement literature [@mcgranahan2007rising]. A stricter 5-metre cut reduces
-the 2000–2020 increase from 90.9 million to 34.6 million, but it does not change
-the direction.
+The finding also survives alternative definitions. The 10-metre LECZ follows
+the foundational definition used in the coastal settlement literature
+[@mcgranahan2007rising]. A stricter 5-metre cut reduces the 2000–2020 increase
+from 90.9 million to 34.6 million, but it does not change the direction.
 
 ![Five-metre and ten-metre results.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-05-elevation-sensitivity.svg)
 
@@ -146,40 +142,7 @@ positive.
 
 ![Ten-, twenty-, and thirty-year sensitivity.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-06-window-sensitivity.svg)
 
-# The denominator is the most important limitation
-
-The source contains 5,347 centres whose country label matches the coastal-DMC
-roster. Only 1,334 report the complete 2000–2020 LECZ block. Another 4,013 leave
-the entire block blank.
-
-The documentation identifies the fields and their source but does not define a
-blank as zero. The analysis therefore does not fill those blanks. It retains
-410 reported zero cases, analyzes 1,334 reported cases, and uses the 924
-positive-endpoint cases for the centre-change distribution.
-
-![Source and analytic coverage funnel.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.svg)
-
-This makes the 90.9 million a reporting-subset total, not an estimate for all
-ADB developing economies. It also exposes a small-island gap. Micronesia,
-Kiribati, the Marshall Islands, Nauru, Palau, and Tuvalu have no eligible
-separate urban centre in the matched object. Hong Kong, China is not separable
-from the source's China assignment.
-
-# Why this is not yet a coastal-risk or informality paper
-
-The Low Elevation Coastal Zone is a useful screening geography, but elevation
-does not specify storm surge, waves, river flooding, subsidence, relative sea
-level, or defence standards. Coastal risk emerges from the interaction of
-hazard, exposure, vulnerability, and adaptation [@ipcc2022coastalcities].
-
-Nor can population and built-up surface establish informal settlement. Earth
-observation can support deprived-area mapping, but tenure, service access,
-housing durability, crowding, and local context require other evidence
-[@kuffer2018slumindicator].
-
-![What the research object supports and what it does not identify.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg)
-
-# What this changes for the next study
+# What this means for the next city study
 
 The contribution is a better research queue, not a finished vulnerability
 index. The direct object identifies centres where low-elevation settlement
@@ -197,7 +160,62 @@ the honest conclusion is narrower: the population recorded in low-elevation
 parts of reporting urban centres grew substantially, and that growth is
 concentrated in a small number of named cities.
 
-# Reproduce and inspect
+# What this does not say
+
+The Low Elevation Coastal Zone is a useful screening geography, but elevation
+does not specify storm surge, waves, river flooding, subsidence, relative sea
+level, or defence standards. Coastal risk emerges from the interaction of
+hazard, exposure, vulnerability, and adaptation [@ipcc2022coastalcities].
+
+Nor can population and built-up surface establish informal settlement. Earth
+observation can support deprived-area mapping, but tenure, service access,
+housing durability, crowding, and local context require other evidence
+[@kuffer2018slumindicator].
+
+![What the research object supports and what it does not identify.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-12-method-and-claim-gate.svg)
+
+The denominator is the most important coverage limit. The source contains
+5,347 centres whose country label matches the coastal-DMC roster. Only 1,334
+report the complete 2000–2020 LECZ block. Another 4,013 leave the entire block
+blank.
+
+The documentation identifies the fields and their source but does not define a
+blank as zero. The analysis therefore does not fill those blanks. It retains
+410 reported zero cases, analyzes 1,334 reported cases, and uses the 924
+positive-endpoint cases for the centre-change distribution.
+
+![Source and analytic coverage funnel.](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.svg)
+
+This makes the 90.9 million a reporting-subset total, not an estimate for all
+ADB developing economies. It also exposes a small-island gap. Micronesia,
+Kiribati, the Marshall Islands, Nauru, Palau, and Tuvalu have no eligible
+separate urban centre in the matched object. Hong Kong, China is not separable
+from the source's China assignment.
+
+# What would change this finding
+
+Verified local relative sea-level, storm-surge, and subsidence surfaces for
+named centres would turn exposure growth into a hazard-qualified map.
+Coastal protection and drainage information, dated administrative and planning
+boundaries, and locally validated tenure, services, housing, or deprivation
+data would open risk and informality questions the present object cannot
+answer. Population and built-up uncertainty checks would also tighten the
+centre-level trajectories.
+
+Until those layers are joined, the honest conclusion stays where the data
+support it: recorded low-elevation population grew substantially in the
+reporting subset, growth is concentrated, and the inherited national proxy was
+not a substitute for spatial measurement.
+
+# How we measured this
+
+GHS-UCDB supplies the urban-centre panel. For each matched centre,
+low-elevation population is the sum of population below five metres and between
+five and ten metres, compared for the study endpoints inside the same
+urban-centre footprint; built-up surface is computed the same way. Blanks are
+not imputed as zero. Economy aggregates are context only and are not a
+performance league table. Elevation and window variants check direction, not a
+new headline.
 
 The source checksums, protocol deviation, derived centre panel, sensitivity
 runs, 12-figure dossier, and reviews are available in the

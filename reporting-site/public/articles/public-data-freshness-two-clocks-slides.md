@@ -1,7 +1,7 @@
 ---
 slug: public-data-freshness-two-clocks-slides
 title: A data year has two clocks
-subtitle: Nine slides on domain-aware freshness review in WDI dashboards.
+subtitle: Calendar age and indicator lag disagree often enough that freshness review must separate them.
 kind: slides
 status: draft
 attestation_chain: ai-first
@@ -12,18 +12,18 @@ topics: [public data, monitoring, data visualization]
 program: public-data-freshness
 maturity: PP
 abstract: Nine-slide presentation of the public-data-freshness study.
-published_at: 2026-07-19
+published_at: 2026-07-31
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# 1 — Decision question
+# 1 — Is the economy late, or is the indicator slow?
 
 When a dashboard says a value is old, is the economy behind—or is the whole
 indicator produced on a slower cycle?
 
-# 2 — Main finding
+# 2 — The two clocks disagree in almost one in five cells
 
 At three years, calendar age and indicator-relative lag disagree for **138 of
 709 observed cells (19.5%)**.
@@ -47,7 +47,7 @@ follow-up. Neither measures accuracy.
 
 ![Domain decomposition.](/programs/public-data-freshness/generated/charts/public-data-freshness-03-domain-clock-decomposition.svg)
 
-# 5 — The finding is concentrated
+# 5 — Environment drives most of the disagreement
 
 Environment contributes 80 disagreements; health 40; education 11.
 
@@ -74,7 +74,7 @@ Disagreement at effective cutoffs:
 
 ![Threshold sensitivity.](/programs/public-data-freshness/generated/charts/public-data-freshness-10-threshold-sensitivity.svg)
 
-# 8 — Product rule and boundary
+# 8 — Show both clocks; never score the economy
 
 Show latest year, indicator frontier, relative lag, missingness, and the chosen
 cutoff. Do not turn them into an economy score.

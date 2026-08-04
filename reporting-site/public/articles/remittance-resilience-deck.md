@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-deck
 title: "Five DMCs in the repaired remittance corridor-cost set"
-subtitle: "A repaired baseline, narrower sensitivity core, and flow-weighted corridor-cost check — ADB DMCs, AI-first under §18"
+subtitle: "High remittance dependence meets high published corridor cost — a triage screen for ADB DMCs, AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [KGZ, NPL, TON, VUT, WSM]
 topics: [remittances, corridor-cost, fragility-screen]
 program: remittance-resilience
 maturity: PP
-date: "2026-05-12"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 2
@@ -22,11 +22,11 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The question
+# Two indicators, usually read apart
 
 ## Two indicators, read separately today
 
-A planner deciding where corridor-cost interventions should go has two
+A planner deciding where corridor-cost work should go first has two
 public indicators:
 
 - **WDI: personal remittances received, % GDP** — macro dependence.
@@ -40,7 +40,7 @@ axes** — high dependence *and* high cost — do not announce themselves.
 This deck reports a joint screen for ADB developing member economies.
 It carries an `ai-first` attestation chain under `CONSTITUTION.md` §18.
 
-# The headline
+# Who sits in the joint high-high set
 
 ## Five DMCs sit in the repaired baseline top five
 
@@ -54,13 +54,13 @@ It carries an `ai-first` attestation chain under `CONSTITUTION.md` §18.
 
 **The set is a triage signal. The rank inside the set is not a policy result.**
 
-# The picture
+# What the chart shows
 
 ## The repaired chart separates the sensitivity core from cap-sensitive Nepal
 
 ![Dot-plot of 21 rankable ADB DMCs in dependence x cost space. Red bubbles mark KGZ, TON, VUT, WSM, the four-economy sensitivity core. Nepal is highlighted separately as the repaired baseline top-five member that is cap-sensitive but remains in median-cost and flow-weighted top-five checks. Bubble size = RPW corridors observed. Pre-registered caps (25% dependence, 15% cost) and SDG 10.c.1 reference (3% cost) shown as reference lines.](../../remittance-resilience/generated/charts/remittance-fragility-scatter.png){width=85%}
 
-# Robustness
+# How stable is the set?
 
 ## The repaired sensitivity result narrows the common core
 
@@ -72,11 +72,10 @@ Per `CONSTITUTION.md` §6.6, every arbitrary numeric was tested at ±50%:
 - Pakistan enters that row, which is why the old all-row top-five claim
   is superseded.
 
-**The repair strengthens the measurement note: report the five-economy
-baseline and flow-weighted set, but do not claim all-row top-five
-stability for all five.**
+**Report the five-economy baseline and flow-weighted set, but do not claim
+all-row top-five stability for all five.**
 
-# Three patterns inside the set
+# Three different corridor stories
 
 ## Three different corridor stories
 
@@ -109,9 +108,9 @@ It does **not** tell a planner:
 The repaired set is useful because it points to harder data: corridor
 flow validation, provider use, and household receipt concentration.
 
-# Honest limits
+# What this deck does not claim
 
-## What this deck does NOT claim
+## Limits a careful reader should keep in view
 
 - It does **not** measure resilience. The program name is a legacy;
   the screen measures *exposure* to corridor-cost stress combined with
@@ -127,7 +126,7 @@ flow validation, provider use, and household receipt concentration.
   FX friction and is excluded from the headline cluster.
 - It is **not** human-final. Under §18, this artifact is AI-attested.
 
-# Reproducibility
+# Where the numbers come from
 
 ## Every number traces to a committed script
 

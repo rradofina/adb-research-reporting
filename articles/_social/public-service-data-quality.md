@@ -1,7 +1,7 @@
 ---
 slug: public-service-data-quality-social
-title: PSDQ — social card
-subtitle: Tweet-length summary of the OSM-vs-registry measurement gap finding for ADB DMCs.
+title: Two maps, two answers
+subtitle: OpenStreetMap captures 17.1% of Philippine and 11.8% of Bangladeshi clinical-tier health facilities in the official registries—and the gap is larger in rural and conflict-affected regions.
 kind: social
 tier: social
 status: draft
@@ -22,6 +22,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Tweet-length post (≤ 280 chars)
@@ -31,7 +32,7 @@ dmc_framing_check: passing
 > in the official registry. The gap concentrates in rural and
 > conflict-affected regions — exactly where additional access matters most.
 
-*Character count: 252 / 280.*
+*Character count: 276 / 280.*
 
 # Chart
 

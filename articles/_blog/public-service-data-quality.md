@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: public-service-data-quality-blog
 title: Two maps, two answers — and the gap between them is not random
 subtitle: Why OpenStreetMap and the official health-facility registry disagree about the same country, and why the disagreement is systematic in a way planners should care about.
@@ -29,7 +30,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # Two maps, two answers
 
 Imagine asking two reasonable, well-informed people for the same number —

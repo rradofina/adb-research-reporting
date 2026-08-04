@@ -2,6 +2,13 @@
 
 `attestation_chain: ai-first` · Finalized 2026-07-19 under §18
 
+A mobile network can cover almost everyone while many people still do not go
+online. The literature treats network availability, internet use, barriers to
+adoption, and the conversion of digital engagement into outcomes as related
+but separate objects. What remains thin is an exact-year availability-versus-use
+crosswalk for ADB developing member economies with source provenance and a
+sample-floor check.
+
 ## Search protocol and scope
 
 This is a focused, reproducible framing review rather than a claim of exhaustive

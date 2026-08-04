@@ -1,7 +1,7 @@
 ---
 slug: migration-displacement-signals-social
-title: Migration denominator — social card
-subtitle: A concise summary of the zero-overlap finding.
+title: A migration ranking can reverse when the denominator changes
+subtitle: The five largest origin stocks have zero overlap with the five highest stocks relative to resident population.
 kind: social
 tier: social
 status: draft
@@ -20,6 +20,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post

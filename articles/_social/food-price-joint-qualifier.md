@@ -1,7 +1,7 @@
 ---
 slug: food-price-joint-qualifier-social
-title: Nepal rice-price construct validation — social card
-subtitle: Only 17 of 152 corrected price spikes followed locally dry rainfall.
+title: Only 17 of 152 corrected rice-price spikes followed local dryness
+subtitle: Only 17 of 152 corrected Nepal coarse-rice spike cells followed locally dry rainfall—and dry alignment stays a minority in all 81 threshold runs.
 kind: social
 tier: social
 status: draft
@@ -18,6 +18,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post
@@ -25,7 +26,7 @@ dmc_framing_check: passing
 > Correcting the price outcome leaves 152 coarse-rice spike cells across 12
 > Nepal markets. Only 17 follow locally dry rainfall at a one-month lag. Dry
 > alignment remains a minority in all 81 ±50% threshold runs. This is a
-> construct-validation finding—not a climate-effect estimate.
+> coincidence count—not a climate-effect estimate.
 
 # Expanded post
 

@@ -1,7 +1,7 @@
 ---
 slug: climate-health-workdays-brief
 title: The PM2.5 proxy does not recover the heat-work-loss signal
-subtitle: A one-page construct check across 34 economies and 21 aligned tests.
+subtitle: Across 34 economies and 21 aligned tests, the pollution-and-employment proxy never recovers the heat-related work-hours-loss top three, so it is retired as a heat-loss substitute.
 kind: brief
 tier: brief
 status: draft
@@ -13,6 +13,7 @@ geographies: [KHM, IND, PAK, MMR, THA, AFG, BGD]
 topics: [climate-health, labor-capacity, heat, PM2.5, measurement]
 program: climate-health-workdays
 maturity: PP
+updated_at: 2026-07-31
 abstract: >
   The inherited PM2.5 × employment proxy and the Lancet Countdown heat-
   related potential work-hours-loss measure have zero top-three overlap in
@@ -24,28 +25,17 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The decision problem
+# What we found
 
-An internally stable proxy can still measure the wrong construct. The former
-regional screen multiplied agriculture plus half of industry employment by a
-national PM2.5 transformation and called the result workday-loss pressure. It
-contained no heat exposure or labor outcome.
+An internally stable proxy can still measure the wrong construct. The former regional screen multiplied agriculture plus half of industry employment by a national PM2.5 transformation and called the result workday-loss pressure. It contained no heat exposure or labor outcome.
 
-# The external construct test
-
-Annual WDI inputs are aligned with the Lancet Countdown 2025 indicator 1.1.3
-estimate of heat-related potential work hours lost. Thirty-four economies are
-comparable in 2018, 2019, and 2020.
+Annual WDI inputs are aligned with the Lancet Countdown 2025 indicator 1.1.3 estimate of heat-related potential work hours lost. Thirty-four economies are comparable in 2018, 2019, and 2020.
 
 ![The 2020 proxy and heat top threes do not overlap.](/programs/climate-health-workdays/generated/charts/climate-construct-rank-disagreement.svg)
 
-The baseline top threes have zero overlap in every year. Spearman correlations
-across all 34 ranks range from 0.12 to 0.17.
+The baseline top threes have zero overlap in every year. Spearman correlations across all 34 ranks range from 0.12 to 0.17.
 
-# The decision survives the required sensitivity
-
-The proxy is recomputed under ±50% changes to its industry weight, PM2.5 floor,
-and PM2.5 cap. Across seven specifications and three years:
+The proxy is recomputed under ±50% changes to its industry weight, PM2.5 floor, and PM2.5 cap. Across seven specifications and three years:
 
 - 16 tests share 0 of 3 top economies;
 - 5 share 1 of 3; and
@@ -53,21 +43,18 @@ and PM2.5 cap. Across seven specifications and three years:
 
 ![Every year-and-parameter cell has zero or one shared top-three economy.](/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.svg)
 
-# What replaces the ranking
+# What this means
 
-Use the direct heat measure for potential heat-related labor-capacity questions
-and retain PM2.5 as a separate health and productivity pathway. Do not combine
-them into a new composite.
+Use the direct heat measure for potential heat-related labor-capacity questions and retain PM2.5 as a separate health and productivity pathway. Do not combine them into a new composite.
 
-The 2024 heat workbook covers 43 of 44 roster economies. Cambodia has the
-highest rate at 573 modelled potential hours per employed person; India has the
-largest aggregate estimate at about 247.4 billion hours. Rate and scale answer
-different planning questions.
+The 2024 heat workbook covers 43 of 44 roster economies. Cambodia has the highest rate at 573 modelled potential hours per employed person; India has the largest aggregate estimate at about 247.4 billion hours. Rate and scale answer different planning questions.
 
-# The limit
+# What this does not say
 
-The Lancet measure is modelled potential capacity loss, not recorded absence,
-hours worked, output, or a causal estimate from this study. The next research
-object must join observed labor outcomes and compatible exposure data.
+The Lancet measure is modelled potential capacity loss, not recorded absence, hours worked, output, or a causal estimate from this study. The next research object must join observed labor outcomes and compatible exposure data.
+
+# Where the evidence lives
+
+Program evidence: `/program/climate-health-workdays/evidence`. Charts under `climate-health-workdays/generated/charts/`. Pipeline and sensitivity live in the program folder.
 
 — `attestation_chain: ai-first`; maturity PP.

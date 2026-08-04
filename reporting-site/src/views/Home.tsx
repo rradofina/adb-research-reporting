@@ -287,11 +287,11 @@ export default function Home() {
         <div className="home-hero-media" aria-hidden="true" />
         <div className="home-hero-content">
           <p className="home-eyebrow">Research findings</p>
-          <h1 id="home-title">Public evidence findings</h1>
+          <h1 id="home-title">What public data can and cannot yet prove</h1>
           <p className="home-lede">
             Start with the strongest public-source results. Each card states
-            what the evidence can carry, what it cannot yet say, and where a
-            reader can inspect the generated packet.
+            the finding a practitioner can retell, what the evidence still
+            cannot support, and where to open the full paper and packet.
           </p>
           <div className="home-actions" aria-label="Primary paths">
             <Link href={primaryFinding?.href ?? "/research"}>
@@ -342,11 +342,11 @@ export default function Home() {
       <section className="home-issue-closure" aria-labelledby="home-issue-closure-title">
         <div className="home-issue-closure-copy">
           <p className="home-section-kicker">Program register · {ISSUE_CLOSURE_AS_OF}</p>
-          <h2 id="home-issue-closure-title">All {issueTotal} registered programs carry one authoritative maturity label.</h2>
+          <h2 id="home-issue-closure-title">All {issueTotal} registered programs carry one clear finish label.</h2>
           <p>
-            {issueClosureDeck} Research outputs are separated from in-progress
-            tracks so the catalogue never implies that every registered idea
-            is already a complete paper.
+            {issueClosureDeck} Finished papers stay separate from screens still
+            in progress, so the catalogue never implies that every registered
+            idea is already ready to cite.
           </p>
         </div>
         <div className="home-issue-status-grid" aria-label="Current issue classification">

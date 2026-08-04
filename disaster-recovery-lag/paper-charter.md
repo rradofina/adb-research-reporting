@@ -2,11 +2,11 @@
 
 `attestation_chain: ai-first` · Last updated 2026-07-18
 
-## Decision audience
-
-Disaster-risk analysts, remote-sensing researchers, recovery-program teams,
-and statistical offices deciding whether public night-light data are ready for
-a subnational recovery indicator.
+After a major storm, planners want a calendar month when night lights
+"recover." Disaster-risk analysts, remote-sensing researchers, and recovery
+teams need to know whether country disaster records, place centroids, and
+daily public night-light radiance can produce that month stably enough to use
+as a subnational recovery indicator.
 
 ## Research question
 

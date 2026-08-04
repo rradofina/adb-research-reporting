@@ -1,7 +1,7 @@
 ---
 slug: sp-shock-readiness-cluster-social
-title: Social-protection construct validation — social card
-subtitle: The stable top five fails its own value order.
+title: A stable formula can still rank the wrong records
+subtitle: Only 3 of 5 economies in the published shock-payment top five survive the panel's own value order—and 0 comparable delivery outcomes are joined.
 kind: social
 tier: social
 status: draft
@@ -18,6 +18,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post

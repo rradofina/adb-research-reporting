@@ -1,7 +1,7 @@
 {
   "program": "digital-performance",
   "permanent_url": "/digital-performance?view=evidence",
-  "generated_at": "2026-07-18T23:38:07.253Z",
+  "generated_at": "2026-08-04T15:10:13.963Z",
   "hero": {
     "png": "generated/charts/digital-performance-thumbnail.png",
     "svg": "generated/charts/digital-performance-thumbnail.svg",
@@ -57,10 +57,10 @@
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 8487,
-      "size_human": "8.3 KB",
-      "mtime": "2026-07-18T20:45:37.253Z",
-      "sha256": "cde589eff330be5e9ba603d21d30a9952cf83edcf90dfb1222818da383490463",
+      "size": 8895,
+      "size_human": "8.7 KB",
+      "mtime": "2026-07-31T08:50:56.015Z",
+      "sha256": "706b249ccdfe43fce28cc7fb52505d3414c13c6de9e5827d635ad43348ed3a8c",
       "attestation_chain": "ai-first"
     },
     {

@@ -1,7 +1,7 @@
 ---
 slug: school-heat-honest-narrowing-social
-title: School-heat construct validation — social card
-subtitle: Cambodia led the proxy but ranked last in the observed heatwave subset.
+title: A heat proxy is not a school-disruption result
+subtitle: Cambodia led the proxy but ranked last among six ADB economies where UNICEF named heatwave as the major 2024 disruption hazard.
 kind: social
 tier: social
 status: draft
@@ -18,6 +18,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post

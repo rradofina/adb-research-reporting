@@ -1,6 +1,6 @@
 # Food-price climate transmission — operating status
 
-`attestation_chain: ai-first` · Last updated: 2026-07-19
+`attestation_chain: ai-first` · Last updated: 2026-07-31
 
 - **Finding:** After correcting the price outcome, 17 of 152 Nepal coarse-rice
   spike cells follow locally dry rainfall at one month; the other 135 do not.
@@ -16,3 +16,6 @@
   access and common-driver controls, and a pre-specified panel design.
 - **Progress test:** The claim changed shape and the reader is better off: a
   mechanism-implying ranking became a reproducible measurement boundary.
+- **2026-07-31 editorial pass:** working-paper article restructured to the
+  Development Asia reader arc (`research/style-guide.md` §7); no number,
+  figure, citation, claim, or maturity change; gates and build re-passed.

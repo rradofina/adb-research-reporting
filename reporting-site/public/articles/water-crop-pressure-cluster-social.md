@@ -1,7 +1,7 @@
 ---
 slug: water-crop-pressure-cluster-social
-title: Water-crop construct validation — social card
-subtitle: The stable top four does not survive direct water and crop measures.
+title: A stable water-crop score can still measure the wrong things
+subtitle: The inherited top four is the raw top four in only 2 of 7 runs; direct water retains 2 of 4 members and direct crop concentration retains 0 of 4.
 kind: social
 tier: social
 status: draft
@@ -18,6 +18,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post

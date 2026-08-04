@@ -1,7 +1,7 @@
 ---
 slug: water-crop-pressure-cluster-deck
 title: "The stable top four does not survive its own constructs"
-subtitle: "Water × crop construct validation — AI-first under §18"
+subtitle: "Water and crop pressure rankings change when the proxies change — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [ADB DMCs]
 topics: [water, agriculture, crop-diversification, measurement]
 program: water-stress-crop-diversification
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -22,7 +22,7 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The claim fails three construct gates
+# The claim fails three independent checks
 
 ![](../../water-stress-crop-diversification/generated/charts/water-three-gate-validity.png){width=100%}
 
@@ -54,7 +54,7 @@ dmc_framing_check: passing
 
 ![](../../water-stress-crop-diversification/generated/charts/water-diagnostic-sensitivity-membership.png){width=100%}
 
-# Retire the ranking; build the shared unit
+# Drop the ranking; build the shared unit
 
 ![](../../water-stress-crop-diversification/generated/charts/water-next-data-object.png){width=100%}
 

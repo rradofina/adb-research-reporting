@@ -1,7 +1,7 @@
 ---
 title: "Low-elevation urban growth is concentrated"
 slug: coastal-informal-cluster-slides
-subtitle: "From an inherited national proxy to a direct urban-centre exposure object"
+subtitle: "Most of the low-elevation urban population gain sits in a short list of named centres"
 program: coastal-informal-risk
 attestation_chain: ai-first
 maturity: PP
@@ -27,7 +27,7 @@ Only China and Bangladesh appear in both top-five economy sets.
 
 ![Proxy comparison](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-03-proxy-falsification.png){width=88%}
 
-# 4 · A second quantity corroborates the pattern
+# 4 · Built-up change tells the same story
 
 Population and built-up change below 10 metres correlate at 0.85.
 
@@ -59,7 +59,7 @@ No blank is converted to zero.
 
 ![Coverage funnel](/programs/coastal-informal-risk/generated/charts/coastal-informal-risk-11-coverage-funnel.png){width=88%}
 
-# 9 · Claim gate
+# 9 · What this object measures
 
 The object measures exposure growth. It does not identify flood loss,
 informality, deprivation, protection, or policy quality.

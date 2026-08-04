@@ -1,6 +1,10 @@
 # Disaster recovery measurement — operating status
 
-`attestation_chain: ai-first` · Last updated: 2026-07-18
+`attestation_chain: ai-first` · Last updated: 2026-07-31
+
+- **Editorial (2026-07-31 Phase 5):** Program research-story openings rewritten to reader voice; no number, figure, citation, claim, or maturity change.
+
+- **2026-07-31:** Editorial pass to the reader arc; no number, figure, citation, claim, or maturity change; gates and build re-passed.
 
 - **Decision:** Retire the country burden ranking as a recovery result. Three of five burden metrics change the inherited top two, and zero of seven Haiyan centroids retain one recovery month across 54 variants.
 - **Completed:** Full nine-section research package, 108-orbit public extraction, ±50% sensitivity, 2,881-centroid geometry screen, eight-figure story, brief/blog/social/deck ladder, and review packet.

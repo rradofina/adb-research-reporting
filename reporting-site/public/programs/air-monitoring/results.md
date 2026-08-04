@@ -4,17 +4,20 @@
 
 ## Main finding
 
-The audit reaches the station-discovery and denominator stages, then stops. It
-finds 24 economies in the source-discovery frame, official station routes in 9,
-239 official station rows audited for monitor-grade evidence, 44
-official/OpenAQ identity candidates, and 831 denominator joins. It verifies 0
-same-station rows, 0 complete monitor-grade rows, 0 station-radius-ready
-economies, and 0 allowed coverage-claim rows.
+Public station routes are visible, but the quality chain never closes. Across
+a 24-economy discovery frame the packet finds official station routes in 9
+economies, 239 official station rows checked for monitor-grade evidence, 44
+official/OpenAQ identity candidates, and 831 denominator joins. Not one
+station completes the chain: the packet verifies **0** same-station
+confirmations, **0** complete monitor-grade rows, **0**
+station-radius-ready economies, and **0** rows allowed to support a
+coverage claim.
 
 ![The analysis stops at station identity](generated/charts/air-monitoring-claim-ladder.svg)
 
 The counts use different units and are not an attrition rate. Together they
-show where the claim-permission sequence stops.
+show where public discovery stops short of verifiable station-level quality
+evidence.
 
 ## Source routes exist, but the public crosswalk does not
 

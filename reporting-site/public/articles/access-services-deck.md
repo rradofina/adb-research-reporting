@@ -1,7 +1,7 @@
 ---
 slug: access-services-deck
 title: "Before ranking access, check the facility map"
-subtitle: "Official registries reshape an eight-economy OSM screen — AI-first under §18"
+subtitle: "Official registries reorder Philippine ranks built from OpenStreetMap — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [PHL, BGD, KHM]
 topics: [access, health-facilities, OSM, data-quality]
 program: access-services
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 2
@@ -22,28 +22,28 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The question
+# Can an open facility map measure service access?
 
-## Does an open facility map support a service-access rank?
+## Does an open facility map support a service-access screen?
 
-The inherited pilot divides ADM1 population by OSM service points across eight
-ADB developing member economies.
+An eight-economy pilot divides ADM1 population by OpenStreetMap service
+points across ADB developing member economies.
 
 - Public and reproducible.
-- Useful for discovering possible data gaps.
-- But the map denominator may vary with mapping effort.
+- Useful for spotting places where the map may be thin.
+- But the denominator can track mapping effort, not only service supply.
 
-**Test the denominator before extending the access story.**
+**Test the map before treating the rank as access.**
 
 `attestation_chain: ai-first`; current maturity PP.
 
-# The main finding
+# What happens when the official count replaces OSM
 
 ## Official registry counts reorder 16 of 17 Philippine ranks
 
 ![Diverging bars show Philippine rank movement after official clinical registry counts replace OSM health-point counts.](../../access-services/generated/charts/access-phl-rank-shift.png){width=88%}
 
-# Why the rank changes
+# Why the ranks move so far
 
 ## Map capture is associated with apparent facility load
 
@@ -51,9 +51,9 @@ ADB developing member economies.
 
 - OSM capture: **6.45% in ARMM to 63.53% in NCR**.
 - Spearman rho with apparent OSM load: **-0.81**.
-- Descriptive source signal—not causal evidence.
+- A source pattern—not causal evidence of access.
 
-# The eight-economy boundary
+# How far the eight-economy screen can travel
 
 ## Only two pilot economies have comparable registry corrections
 
@@ -71,7 +71,7 @@ Missing correction means **no comparable join**, not zero facilities.
 - 2010 public providers versus 2026 OSM and broader tags.
 - Report disagreement, not current completeness.
 
-# What the screen can do
+# What the screen is good for
 
 ## Use it as a source-validation queue
 
@@ -85,7 +85,7 @@ The panel can prioritize:
 It cannot rank travel time, capacity, quality, utilization, affordability,
 household access, welfare, or DMC performance.
 
-# The next evidence object
+# What access measurement needs next
 
 ## Build access from validated inputs
 
@@ -98,7 +98,7 @@ household access, welfare, or DMC performance.
 **The old access-ranking headline is retired. The map-observability finding is
 the result.**
 
-# Reproducibility and attestation
+# Where the numbers come from
 
 ## Every displayed number traces to committed evidence
 
@@ -111,4 +111,3 @@ the result.**
 The package is `attestation_chain: ai-first` under §18. No individual external
 reviewer was contacted. Human-final requires owner re-attestation and named
 domain/country/statistical review.
-

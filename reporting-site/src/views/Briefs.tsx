@@ -85,20 +85,19 @@ export default function Briefs() {
     <div className="reveal">
       <header className="grid grid-cols-12 gap-6 mb-12">
         <div className="col-span-12 lg:col-span-8">
-          <Kicker variant="crimson">Research Briefs - status and chart view</Kicker>
+          <Kicker variant="crimson">Research briefs</Kicker>
           <h1 className="masthead-display text-[clamp(2.6rem,6vw,5rem)] mt-3">
             Every topic,{" "}
             <span className="display-italic" style={{ color: "var(--crimson)" }}>
-              plainly
+              in one page
             </span>
             .
           </h1>
           <p className="lede mt-6 max-w-[62ch]">
-            One research brief per topic: finish state, main claim, chart,
-            source stack, caveat, current unit, target policy unit, and next
-            step. Country screens are treated as triage; the serious research
-            path is province, district, municipality, grid, facility, corridor,
-            and road-segment granularity. Register snapshot as of{" "}
+            One brief per topic: the finding, the chart, what it cannot yet
+            say, and the next evidence object. Country screens are triage;
+            policy-grade work usually needs province, district, facility,
+            corridor, or road-segment units. Register snapshot as of{" "}
             {ISSUE_CLOSURE_AS_OF}: {issueClosureDeck}
           </p>
         </div>

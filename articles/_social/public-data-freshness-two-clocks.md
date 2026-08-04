@@ -1,7 +1,7 @@
 ---
 slug: public-data-freshness-two-clocks-social
 title: One data year, two clocks
-subtitle: Social copy derived from the public-data-freshness study.
+subtitle: In a 42-economy × 18-indicator WDI panel, calendar age and relative lag disagree for 138 of 709 observed cells at a three-year cutoff.
 kind: social
 status: draft
 attestation_chain: ai-first
@@ -16,6 +16,7 @@ published_at: 2026-07-19
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Primary post
@@ -28,7 +29,7 @@ far it sits behind the indicator's source frontier.
 In a frozen 42-economy × 18-indicator WDI panel, those rules disagree for 138
 of 709 observed cells (19.5%) at a three-year cutoff. But the result is
 concentrated: environment accounts for 80 disagreements, and removing it
-pushes the result below the study's decision gate.
+pushes the result below the study's decision line.
 
 The dashboard lesson is not to hide calendar age. Show latest year, indicator
 frontier, relative lag, missingness, and the cutoff—separately.

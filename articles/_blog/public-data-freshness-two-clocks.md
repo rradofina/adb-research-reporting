@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: public-data-freshness-two-clocks-blog
 title: When “three years old” tells only half the story
 subtitle: A better way to show data freshness without hiding age or missingness.
@@ -19,7 +20,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # Two red cells can mean different things
 
 Imagine a dashboard marks every value older than three years in red. An

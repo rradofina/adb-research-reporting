@@ -1,13 +1,13 @@
 ---
 title: "When urbanization depends on the definition"
 slug: invisible-urbanization-cluster-slides
-subtitle: "GHSL–WDI measurement gaps, administrative scale, and classification dynamics"
+subtitle: "National urban shares and a harmonized grid can diverge without either being an error"
 program: invisible-urbanization
 attestation_chain: ai-first
 maturity: PP
 ---
 
-# 1 · Finding
+# 1 · A large definition gap
 
 **20.0 percentage points**
 

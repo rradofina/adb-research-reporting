@@ -4,11 +4,12 @@
 
 Last updated: 2026-07-18.
 
-## Decision audience
-
-Climate-health analysts, labor and social-sector teams, national statistics
-offices, and development practitioners deciding whether a screening proxy is
-fit to support heat-and-work claims.
+Heat can cut what workers can physiologically do on a given day. A convenient
+national screen that multiplies outdoor air pollution by outdoor-employment
+share is easy to build from public tables—but climate-health analysts, labor
+teams, and statistics offices need to know whether that screen recovers the
+same economies as a purpose-built heat–labor measure before treating it as a
+heat-and-work signal.
 
 ## One research question
 

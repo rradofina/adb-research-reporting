@@ -1,7 +1,7 @@
 ---
 slug: flood-market-access-cluster-blog
 title: The map found the bug—and the flood-route finding survived
-subtitle: A visual-first Sylhet pilot replaced a stable national proxy with a real route object.
+subtitle: In Sylhet, 345,718 modeled people—41.24% of those with a baseline market route—lose that route under a flood road-cut stress test, and the share stays 38.92%–43.45% across 54 variants.
 kind: blog
 tier: blog
 status: draft
@@ -19,6 +19,7 @@ references: [unosat2024sylhet, loreti2022localaccess, psyllidis2022poi]
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # The old result was stable—and still not access
@@ -63,7 +64,7 @@ observed closure, and eight mapped markets are not a complete market registry.
 No sensitivity grid can validate a missing road-depth observation or an
 unmapped destination.
 
-![The destination inventory is a visible claim gate](/programs/flood-market-access/generated/charts/flood-sylhet-market-gate.svg)
+![The destination inventory is a visible limit on what the routes can claim](/programs/flood-market-access/generated/charts/flood-sylhet-market-gate.svg)
 
 The honest conclusion is therefore narrow: the public data support a stable
 routed-access stress test. They do not support an operational closure map,
@@ -73,7 +74,7 @@ food-security attribution, or welfare estimate.
 
 The next useful work is field- or depth-calibrated passability and an audited
 market inventory, followed by multiple event times and observed travel or
-market outcomes. The research factory should scale by reusing this event-object
+market outcomes. Later work should scale by reusing this event-object
 schema—not by generating hundreds of topic-first essays.
 
 — `attestation_chain: ai-first`; maturity PP; no individual external reviewer was contacted.

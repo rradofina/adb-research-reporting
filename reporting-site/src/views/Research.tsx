@@ -117,18 +117,18 @@ export default function Research() {
     <div className="reveal">
       <header className="grid grid-cols-12 gap-6 mb-12">
         <div className="col-span-12 md:col-span-8">
-          <Kicker variant="crimson">Index — programs</Kicker>
+          <Kicker variant="crimson">Research index</Kicker>
           <h1 className="masthead-display text-[clamp(2.6rem,6vw,4.6rem)] mt-3">
-            Eighteen programs.{" "}
+            Eighteen measurement gaps.{" "}
             <span className="display-italic" style={{ color: "var(--crimson)" }}>
               Clear status.
             </span>
           </h1>
           <p className="lede mt-6 max-w-[60ch]">
-            Each program targets a different measurement gap, but the
-            reader should never have to guess whether it is publication-ready,
-            screening-only, pipeline-only, or still a hypothesis. Program
-            register snapshot as of {ISSUE_CLOSURE_AS_OF}:{" "}
+            Each program answers a different question about what public data
+            can show — and you should never have to guess whether the answer
+            is publication-ready, screening-only, pipeline-only, or still a
+            hypothesis. Register snapshot as of {ISSUE_CLOSURE_AS_OF}:{" "}
             {issueClosureDeck}
           </p>
           <Link href="/briefs"

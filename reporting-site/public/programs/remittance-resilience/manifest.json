@@ -1,7 +1,7 @@
 {
   "program": "remittance-resilience",
   "permanent_url": "/remittance-resilience?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.109Z",
+  "generated_at": "2026-08-04T15:10:11.721Z",
   "hero": {
     "png": "generated/charts/remittance-resilience-thumbnail.png",
     "svg": "generated/charts/remittance-resilience-thumbnail.svg",
@@ -27,11 +27,11 @@
       "key": "readme",
       "file": "README.md",
       "label": "Overview",
-      "size": 4571,
-      "size_human": "4.5 KB",
-      "mtime": "2026-06-17T12:28:42.335Z",
-      "sha256": "fb563ddad83c06435847f809bee9df75746294fe47728cfd30f34f8803d29cc3",
-      "attestation_chain": null
+      "size": 3240,
+      "size_human": "3.2 KB",
+      "mtime": "2026-07-31T08:52:02.848Z",
+      "sha256": "6ef7bd937c193859fd5ff944463c05baaefa6039c8ce7ef1252145ceb59a05bf",
+      "attestation_chain": "ai-first"
     },
     {
       "key": "reproduce",
@@ -47,10 +47,10 @@
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 4372,
-      "size_human": "4.3 KB",
-      "mtime": "2026-04-27T03:36:53.170Z",
-      "sha256": "cdfe684e08a4a35d487e48572fd17c855aebce4dc243ef189032d9ddf4f07034",
+      "size": 4637,
+      "size_human": "4.5 KB",
+      "mtime": "2026-07-31T08:51:45.474Z",
+      "sha256": "416a7188ee8801b73d6abbd03274bcb286c90e090873c0e11b09d1b65fefc87b",
       "attestation_chain": "ai-first"
     },
     {
@@ -97,10 +97,10 @@
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 4120,
-      "size_human": "4.0 KB",
-      "mtime": "2026-06-17T12:28:01.542Z",
-      "sha256": "bc2ec8f22a94d148627e64fc36c65a4e1104d8fae0194bcc0debe37012959683",
+      "size": 3979,
+      "size_human": "3.9 KB",
+      "mtime": "2026-07-31T08:52:02.848Z",
+      "sha256": "4ff3eb6d8d381d1ba6d7195d20d00d04511ff7c66c9445ccef27b08feb5a9a05",
       "attestation_chain": "ai-first"
     },
     {
@@ -127,10 +127,10 @@
       "key": "limitations",
       "file": "limitations.md",
       "label": "Limitations",
-      "size": 5629,
-      "size_human": "5.5 KB",
-      "mtime": "2026-06-17T13:03:19.654Z",
-      "sha256": "c3833e260a5c1e9d97f1c580caaabbec92976a0045a05ecabe4e8297051d1a78",
+      "size": 5485,
+      "size_human": "5.4 KB",
+      "mtime": "2026-07-31T08:50:13.034Z",
+      "sha256": "6d292cc21f32d520eb5d96a701207f20e7a6f1ada0af4455eb0a16452763c280",
       "attestation_chain": "ai-first"
     },
     {
@@ -245,7 +245,7 @@
   "articles": [
     {
       "slug": "remittance-corridors-vulnerability-cluster",
-      "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
+      "title": "Five economies where remittance dependence and transfer costs stack up",
       "attestation_chain": "ai-first"
     }
   ],

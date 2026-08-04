@@ -1,7 +1,7 @@
 ---
 slug: digital-availability-use-gap-social
 title: Network available ≠ Internet used
-subtitle: Social copy derived from the digital-performance measurement study.
+subtitle: In 2024, reported 4G coverage exceeded internet use by a median 14.3 percentage points across 34 ADB developing member economies.
 kind: social
 status: draft
 attestation_chain: ai-first
@@ -16,9 +16,12 @@ published_at: 2026-07-19
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Primary post
+
+Network rollout is not internet adoption.
 
 Reported 4G availability exceeded internet use by a median **14.3 percentage
 points** across 34 ADB developing member economies with exact-year ITU data in

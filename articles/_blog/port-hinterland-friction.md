@@ -1,10 +1,12 @@
 ---
 title: A national proxy failed when vessel time entered the test
+subtitle: Only Indonesia remains in both the inherited trade-logistics top five and the weaker observed port-time set.
 slug: port-friction-trade-volume-cluster-blog
 program: port-hinterland-friction
 attestation_chain: ai-first
 maturity: PP
 status: draft
+updated_at: 2026-07-31
 ---
 
 # A national proxy failed when vessel time entered the test
@@ -17,7 +19,7 @@ called the result port-hinterland friction.
 
 The screen was reproducible. Its label was not yet validated.
 
-## A direct port-time check
+## Vessel time reorders the leaders
 
 The World Bank Container Port Performance Index (CPPI) supplies the missing
 port-side object: standardized vessel-time performance at individual ports
@@ -62,7 +64,7 @@ World Bank LPI 2.0 identifies the qualified next source: observed shipment
 indicators for 2023–2024, including corridor lead time for landlocked economies
 [@worldbank2026lpi2]. That interactive file is behind an access challenge in
 this environment. Rather than insert another proxy, the study leaves the
-hinterland gate visibly open.
+inland corridor step visibly open until that shipment evidence is available.
 
 The practical lesson is methodological: validate a composite label against a
 direct object before polishing its ranking. A negative construct test can save

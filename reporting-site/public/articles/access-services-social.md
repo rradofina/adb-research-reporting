@@ -1,7 +1,7 @@
 ---
 slug: access-services-social
-title: Access services — social card
-subtitle: Tweet-length summary of the registry-denominator finding.
+title: Before ranking access, check whether the map contains the facilities
+subtitle: Official registry counts reorder 16 of 17 Philippine regional facility-load ranks built from open map points.
 kind: social
 tier: social
 status: draft
@@ -20,6 +20,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Tweet-length post (<= 280 chars)
@@ -29,7 +30,7 @@ dmc_framing_check: passing
 > eight-economy screen is useful for source validation—not service-access or
 > country-performance ranking.
 
-*Character count: 265 / 280.*
+*Character count: 250 / 280.*
 
 # Chart
 
@@ -45,5 +46,4 @@ dmc_framing_check: passing
 # Attestation
 
 `attestation_chain: ai-first`; maturity PP. The result is a
-map-observability finding, not a service-access or welfare estimate.
-
+map-completeness finding, not a service-access or welfare estimate.

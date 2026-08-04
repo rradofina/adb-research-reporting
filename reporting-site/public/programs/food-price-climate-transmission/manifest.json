@@ -1,7 +1,7 @@
 {
   "program": "food-price-climate-transmission",
   "permanent_url": "/food-price-climate-transmission?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.648Z",
+  "generated_at": "2026-08-04T15:10:12.803Z",
   "hero": {
     "png": "generated/charts/food-price-climate-transmission-thumbnail.png",
     "svg": "generated/charts/food-price-climate-transmission-thumbnail.svg",
@@ -359,7 +359,7 @@
   "articles": [
     {
       "slug": "food-price-joint-qualifier",
-      "title": "Only one in nine corrected Nepal rice-price spikes followed locally dry rainfall",
+      "title": "Only one in nine Nepal rice-price spikes followed locally dry rainfall",
       "attestation_chain": "ai-first"
     }
   ],

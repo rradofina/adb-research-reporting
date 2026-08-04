@@ -2,8 +2,14 @@
 
 `attestation_chain: ai-first`
 
-Last verified: 2026-07-18. This review supports the denominator-switch paper,
-not the retired absolute-stock ranking.
+Last verified: 2026-07-18.
+
+Absolute diaspora size and diaspora size relative to the resident population
+are different policy objects. The literature on bilateral migrant-stock
+measurement, population-normalized migration intensity, and forced versus
+broader mobility is large; the gap this study fills is whether those objects
+produce the same origin leaders in the program panel—not a new absolute
+stock ranking.
 
 ## Search and verification record
 

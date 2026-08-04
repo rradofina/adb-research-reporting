@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: school-heat-honest-narrowing-blog
 title: A heat proxy is not a school-disruption result
 subtitle: Cambodia led the formula, but the first direct outcome check reverses the story.
@@ -20,7 +21,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # The headline was stronger than the evidence
 
 An inherited school-heat index ranked Cambodia first by combining the number

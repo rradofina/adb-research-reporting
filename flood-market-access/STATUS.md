@@ -1,6 +1,6 @@
 # Flood-market access — operating status
 
-`attestation_chain: ai-first` · Last updated: 2026-07-19
+`attestation_chain: ai-first` · Last updated: 2026-07-31
 
 - **Finding:** In the Sylhet base stress test, 345,718 modeled people—41.24% of
   baseline-accessible population—lose a route to eight OSM-mapped markets.
@@ -14,6 +14,8 @@
   food-security effect, or welfare loss.
 - **Next gate:** Field- or depth-calibrated passability plus an independently
   audited market inventory.
+- **Editorial pass (2026-07-31):** Working paper restructured to Development
+  Asia reader arc; claims and numbers unchanged.
 - **Progress test:** The claim changed shape and the reader is better off: a
   proxy ranking became a reproducible route object with visible validity gates.
 - **Deck verification:** The 10-slide PPTX renders nine evidence figures with

@@ -1,7 +1,7 @@
 {
   "program": "public-service-data-quality",
   "permanent_url": "/public-service-data-quality?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.061Z",
+  "generated_at": "2026-08-04T15:10:11.662Z",
   "hero": {
     "png": "generated/charts/public-service-data-quality-thumbnail.png",
     "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
@@ -545,7 +545,7 @@
       "file": "generated/charts/psdq-choropleth-bgd-adm1.svg",
       "size": 141689,
       "size_human": "138.4 KB",
-      "sha256": "71897ffbaf9da64a63021186898a401f8fc2f44053b4f5a5085f8765dda6f1ad"
+      "sha256": "e83d90a5dcdc060090335a11f85799f9a33f552ee8578502ad394e387a418206"
     },
     {
       "file": "generated/charts/psdq-choropleth-phl-adm1.png",
@@ -557,7 +557,7 @@
       "file": "generated/charts/psdq-choropleth-phl-adm1.svg",
       "size": 1076300,
       "size_human": "1.03 MB",
-      "sha256": "bfecd58d489f39bd580cce3415417890fbf747236d1cce84801bdb36799a48c9"
+      "sha256": "2bf9f4dc76a7bce3326d8bc926a3a3fa1d618cb7db8adab75b3fcafae19045ae"
     },
     {
       "file": "generated/charts/psdq-choropleth-phl-adm3-poverty.png",
@@ -569,7 +569,7 @@
       "file": "generated/charts/psdq-choropleth-phl-adm3-poverty.svg",
       "size": 4342308,
       "size_human": "4.14 MB",
-      "sha256": "396abcdb5d4e344ce1213b4357f7d35a87fc2b9f400d353b3e485b01310cd6de"
+      "sha256": "6a3708a3d1cf1d2eccce8fa8428540ff7297ab7f3e44b89b2a843001dd75ac3f"
     },
     {
       "file": "generated/charts/psdq-sensitivity-range.png",
@@ -1175,7 +1175,7 @@
   "articles": [
     {
       "slug": "measurement-gap-philippines-bangladesh",
-      "title": "The OSM-vs-registry gap in Philippine and Bangladeshi health facilities",
+      "title": "Two maps of the same health system disagree — and not at random",
       "attestation_chain": "ai-first"
     }
   ],

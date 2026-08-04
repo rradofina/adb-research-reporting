@@ -1,7 +1,7 @@
 ---
 slug: sp-shock-readiness-cluster-deck
 title: "The stable top five was fixed by a missing-data rule"
-subtitle: "Social-protection construct validation — AI-first under §18"
+subtitle: "A social-protection composite ranking does not survive its own measurement choices — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [ADB DMCs]
 topics: [social-protection, payments, measurement]
 program: social-protection-shock-coverage
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -22,7 +22,7 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The claim fails three validity gates
+# The published set fails three independent checks
 
 ![](../../social-protection-shock-coverage/generated/charts/sp-three-gate-validity.png){width=100%}
 
@@ -57,7 +57,7 @@ dmc_framing_check: passing
 
 ![](../../social-protection-shock-coverage/generated/charts/sp-source-alignment-funnel.png){width=100%}
 
-# Retire the ranking; specify the next data object
+# Drop the ranking; specify the payment object
 
 The next study begins with an event-level public table:
 

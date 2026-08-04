@@ -1,37 +1,11 @@
 # Remittance Resilience Gaps (Program 14)
 
-**Status (2026-06-17):** Program Prospectus / ai-first repair pass in
-progress. The earlier "finished for current issue" surface has been
-reopened because the RPW parser repair and corridor-flow-weighting L3 module
-changed the honest reader-facing claim. Human-final review is still required
-before any external submission or peer-reviewed claim.
-
-## Files
-
-- `scripts/process-remittance.py` — pulls RPW + WDI, computes the repaired
-  dependence x observed-cost panel
-- `scripts/sensitivity.py` — reruns the +/-50 percent sensitivity suite
-- `scripts/deepen-median-cost.py` — recomputes the screen using robust
-  median cost measures
-- `scripts/sprint-flow-weighted-cost.py` — joins RPW corridors to public
-  World Bank/KNOMAD bilateral remittance-flow estimates as the formal L3
-  flow-weighting sensitivity module
-- `.cache/rpw_dataset_2011_2025_q1.xlsx` — World Bank Remittance Prices
-  Worldwide Q1 2025 dataset
-- `.cache/wdi_remittance_pct_gdp.json` — WDI
-  `BX.TRF.PWKR.DT.GD.ZS`
-- `.cache/WB-KNOMAD-bilateral-remittance-matrix-2021.xlsx` — public
-  bilateral remittance-flow matrix used in the flow-weighting module
-- `flow-weighting-l3-module.md` — coverage gate, decision rule, result, and
-  non-claims for the flow-weighted sensitivity check
-- `generated/remittance-resilience-adb-panel.{json,csv}`
-- `generated/remittance-median-deepening.{json,csv}`
-- `generated/remittance-flow-weighting-sprint.{json,csv}`
-
-## Repaired Headline
+`attestation_chain: ai-first`
 
 Across the 21 ADB developing member economies with both WDI remittance/GDP
-and RPW Q1 2025 destination-cost data, the repaired baseline top five are:
+and RPW Q1 2025 destination-cost data, high dependence and high publicly
+quoted inbound costs concentrate in a small set. The repaired baseline top
+five are:
 
 | Rank | DMC | Dependence (% GDP) | Mean cost % | Fragility | RPW corridors |
 |---|---|---:|---:|---:|---:|
@@ -41,10 +15,11 @@ and RPW Q1 2025 destination-cost data, the repaired baseline top five are:
 | 4 | NPL — Nepal | 26.23 | 7.31 | 48.7 | 8 |
 | 5 | VUT — Vanuatu | 18.75 | 9.54 | 47.7 | 2 |
 
-The common top-five set across the full repaired sensitivity suite is
-**KGZ, TON, VUT, and WSM**. Nepal is cap-sensitive in one sensitivity row
-but remains in both median-cost top-five checks and in the flow-weighted top
-five. The flow-weighted top-five order is **KGZ, NPL, VUT, WSM, TON**.
+The common top-five set across the full repaired +/-50 percent sensitivity
+suite is **KGZ, TON, VUT, and WSM**. Nepal is cap-sensitive in one
+sensitivity row but remains in both median-cost top-five checks and in the
+flow-weighted top five. The flow-weighted top-five order is
+**KGZ, NPL, VUT, WSM, TON**.
 
 ## Method Summary
 

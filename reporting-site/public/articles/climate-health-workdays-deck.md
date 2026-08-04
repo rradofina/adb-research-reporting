@@ -1,7 +1,7 @@
 ---
 slug: climate-health-workdays-deck
 title: "A stable proxy can still measure the wrong thing"
-subtitle: "Climate-health construct validation across 34 economies — AI-first under §18"
+subtitle: "Across 34 economies, a pollution-based labor proxy does not recover documented heat-work loss — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [KHM, IND, PAK, MMR, THA, AFG, BGD]
 topics: [climate-health, labor-capacity, heat, PM2.5, measurement]
 program: climate-health-workdays
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -41,7 +41,7 @@ a national PM2.5 pressure transformation.
 
 ![](../../climate-health-workdays/generated/charts/climate-construct-sensitivity.png){width=100%}
 
-# The direct heat rate identifies a different profile
+# Direct heat loss points to a different profile
 
 ![](../../climate-health-workdays/generated/charts/climate-heat-loss-profile-2024.png){width=100%}
 
@@ -57,7 +57,7 @@ a national PM2.5 pressure transformation.
 
 ![](../../climate-health-workdays/generated/charts/climate-worker-denominator-repair.png){width=100%}
 
-# The outcome-validation gap remains open
+# Observed labor outcomes are still missing
 
 ![](../../climate-health-workdays/generated/charts/climate-source-coverage.png){width=100%}
 

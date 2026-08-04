@@ -1,6 +1,10 @@
 # Digital performance — operating status
 
-`attestation_chain: ai-first` · Last updated: 2026-07-19
+`attestation_chain: ai-first` · Last updated: 2026-07-31
+
+- **Editorial (2026-07-31 Phase 5):** Program research-story openings rewritten to reader voice; no number, figure, citation, claim, or maturity change.
+
+- **2026-07-31:** Editorial pass to the reader arc; no number, figure, citation, claim, or maturity change; gates and build re-passed.
 
 - **Finding:** In 2024, reported 4G/LTE coverage exceeds internet use by a
   median 14.3 percentage points across 34 exact-year observed ADB developing

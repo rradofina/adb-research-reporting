@@ -32,7 +32,7 @@ abstract: >
   construct-validation result and leaves outcome validation open.
 doi:
 published_at: 2026-04-26
-updated_at: 2026-07-18
+updated_at: 2026-07-31
 references:
   - lancetcountdown2025labour
   - romanello2024lancet
@@ -50,7 +50,25 @@ review_external_chain: ai-synthesis under §18.4
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The finding
+# When heat cuts working hours, does a pollution proxy find the same places?
+
+Heat and air pollution can both affect work, but through different exposure
+pathways and measurement designs. A planner who sees a stable national ranking
+labeled “workday-loss pressure” needs to know whether the ranking recovers a
+heat-labor construct—or only the internal behavior of an air-pollution
+employment score.
+
+The inherited analysis had found that Afghanistan, India, and Bangladesh
+remained in its top three when three arbitrary parameters were varied by ±50%.
+That result established internal rank stability. It did not establish validity
+against heat exposure, labor capacity, or observed work outcomes.
+
+This paper asks a deliberately narrow question: can a simple national
+proxy—agriculture employment plus half of industry employment, multiplied by a
+PM2.5 pressure transformation—recover the cross-economy signal in a
+purpose-built heat-related potential work-hours-loss measure?
+
+# What we found
 
 The inherited PM2.5-employment proxy does not reproduce the ordering from a
 direct heat-related labor-capacity measure. Across all 21 aligned
@@ -74,24 +92,29 @@ pollution is harmless to workers, and it does not identify an economy with
 better or worse labor policy. It shows that a national PM2.5-employment product
 cannot be named or interpreted as a heat-work-loss measure.
 
-# The research question
+The baseline top threes have zero overlap in 2018, 2019, and 2020. Full-rank
+Spearman correlations are 0.119, 0.119, and 0.169. The proxy's top three stays
+India, Afghanistan, and Bangladesh. The heat top three is Cambodia, Pakistan,
+and Myanmar in 2018, then Cambodia, Myanmar, and Thailand in 2019 and 2020.
 
-Can a simple national proxy—agriculture employment plus half of industry
-employment, multiplied by a PM2.5 pressure transformation—recover the
-cross-economy signal in a purpose-built heat-related potential work-hours-loss
-measure?
+The largest rank reversals clarify what the aggregate statistic means.
+Afghanistan is second on the proxy in 2020 but 28th on heat-related potential
+hours lost per employed person. Cambodia is 15th on the proxy and first on the
+heat measure. Neither rank is a performance grade; the contrast identifies a
+construct mismatch.
 
-The question matters because a stable proxy ranking can look persuasive even
-when it is stable for the wrong construct. The inherited analysis had found
-that Afghanistan, India, and Bangladesh remained in its top three when three
-arbitrary parameters were varied by ±50%. That result established internal
-rank stability. It did not establish validity against heat exposure, labor
-capacity, or observed work outcomes.
+## ±50% changes do not restore agreement
 
-# Background and related evidence
+No one-at-a-time parameter change produces more than one shared top-three
+economy. Sixteen of the 21 year-and-parameter cells have zero overlap; five
+have one.
 
-Heat and air pollution can both affect work, but through different exposure
-pathways and measurement designs.
+![A 3 by 7 matrix shows zero or one shared top-three economy in every test.](/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.png)
+
+*Figure 3. Top-three overlap under the baseline and ±50% changes to each
+arbitrary proxy parameter. Source: committed aligned WDI and Lancet data.*
+
+# Why the constructs diverge
 
 The Lancet Countdown labor-capacity indicator uses wet-bulb globe temperature,
 which combines temperature, humidity, solar radiation, and wind, with sector-
@@ -117,123 +140,6 @@ literature does not make PM2.5 a substitute for WBGT, sector workload, or heat-
 related capacity loss. Combining the pathways without an identified model
 would obscure rather than clarify them.
 
-The contribution here is therefore narrow: an out-of-sample construct check of
-an existing regional proxy against a direct, documented heat-labor data object.
-
-# Data
-
-## The proxy
-
-The inherited screen uses annual World Development Indicators:
-
-- agriculture employment as a share of total employment,
-- industry employment as a share of total employment, and
-- national annual mean PM2.5 exposure.
-
-For aligned annual testing, the three series must be present for the same
-economy and year. Thirty-four economies meet that condition in each of 2018,
-2019, and 2020.
-
-## The direct heat construct
-
-The Lancet Countdown 2025 country workbook provides annual estimates from
-1990 through 2024. This paper uses four sector components—services,
-manufacturing, agriculture in sun, and construction in sun—and the published
-total potential work-hours-loss rate per employed person. The companion
-workbook provides modelled outdoor-worker counts from 2000 through 2024
-[@lancetcountdown2025labour].
-
-The workbook stores sector totals in thousands of hours. The committed pipeline
-converts them to hours before aggregation and retains the workbook's published
-per-employed-person rate. In 2024, the heat-loss workbook covers 43 of 44
-economies in the analysis roster; Taipei,China is absent. The outdoor-worker
-workbook covers 42; Hong Kong, China and Taipei,China are absent.
-
-The roster is an analysis panel, not an authoritative current list of all ADB
-developing members.
-
-![Coverage expands with the heat source, while observed outcome validation remains open.](/programs/climate-health-workdays/generated/charts/climate-source-coverage.png)
-
-*Figure 2. Source coverage in the 44-economy analysis roster. Zero observed
-outcomes means none is joined in this package; it does not mean no economy
-publishes labor outcomes.*
-
-# Method
-
-## 1. Reconstruct the inherited proxy
-
-For economy *i* in year *t*:
-
-`outdoor employment share = agriculture share + w × industry share`
-
-`PM2.5 pressure = clamp((PM2.5 − floor) ÷ cap, 0, 1)`
-
-`proxy = outdoor employment share × PM2.5 pressure`
-
-The baseline uses an industry weight of 0.5, PM2.5 floor of 5 µg/m³,
-and PM2.5 cap of 45 µg/m³. The resulting number is a triage score only.
-
-## 2. Align years and economies
-
-The construct test retains only economy-year rows observed in all three WDI
-inputs and the Lancet heat series. The common window is 2018–2020, with 34
-economies in every year. This avoids comparing a latest-available-year proxy
-with a different heat vintage.
-
-## 3. Compare ranks and leading sets
-
-Within each year, both measures are ranked from highest to lowest. The primary
-comparison is overlap between their top-three sets. A secondary diagnostic is
-the Spearman rank correlation across all 34 rows.
-
-The decision rule is intentionally demanding: if any aligned test produces
-top-three overlap above one economy, the headline must be weakened. If the
-baseline top threes are usually disjoint and no sensitivity run exceeds one,
-the proxy is rejected as a substitute for the heat construct.
-
-## 4. Test the arbitrary proxy choices
-
-Each of the proxy's three numeric choices is varied independently by ±50%:
-
-| Choice | Baseline | −50% | +50% |
-|---|---:|---:|---:|
-| Industry weight | 0.50 | 0.25 | 0.75 |
-| PM2.5 floor, µg/m³ | 5.0 | 2.5 | 7.5 |
-| PM2.5 cap, µg/m³ | 45.0 | 22.5 | 67.5 |
-
-Together with the baseline, seven specifications are applied to each of three
-years, producing 21 tests.
-
-# Results
-
-## The disagreement is present in every baseline year
-
-The baseline top threes have zero overlap in 2018, 2019, and 2020. Full-rank
-Spearman correlations are 0.119, 0.119, and 0.169. The proxy's top three stays
-India, Afghanistan, and Bangladesh. The heat top three is Cambodia, Pakistan,
-and Myanmar in 2018, then Cambodia, Myanmar, and Thailand in 2019 and 2020.
-
-The largest rank reversals clarify what the aggregate statistic means.
-Afghanistan is second on the proxy in 2020 but 28th on heat-related potential
-hours lost per employed person. Cambodia is 15th on the proxy and first on the
-heat measure. Neither rank is a performance grade; the contrast identifies a
-construct mismatch.
-
-## ±50% changes do not restore agreement
-
-No one-at-a-time parameter change produces more than one shared top-three
-economy. Sixteen of the 21 year-and-parameter cells have zero overlap; five
-have one.
-
-![A 3 by 7 matrix shows zero or one shared top-three economy in every test.](/programs/climate-health-workdays/generated/charts/climate-construct-sensitivity.png)
-
-*Figure 3. Top-three overlap under the baseline and ±50% changes to each
-arbitrary proxy parameter. Source: committed aligned WDI and Lancet data.*
-
-The negative result is stronger than the inherited internal-stability result.
-The proxy can keep naming the same economies and still fail to recover the
-external construct it was implicitly asked to represent.
-
 ## The direct 2024 heat profile answers two different scale questions
 
 The 2024 per-employed-person measure is highest for Cambodia at 573 potential
@@ -258,8 +164,6 @@ not be collapsed into one priority score.
 2024. Bubble area represents the Lancet modelled outdoor-worker count. The
 vertical axis is logarithmic.*
 
-## Sector composition explains part of the construct difference
-
 Agriculture and construction account for 76%–96% of modelled potential heat-
 loss hours among the ten highest per-worker rows. The Lancet method distinguishes
 sector workload and sun exposure. The inherited proxy instead combines all
@@ -269,8 +173,6 @@ agriculture with a half-weighted industry share and then scales by PM2.5.
 
 *Figure 6. Sector shares of 2024 modelled potential hours for the ten highest
 per-employed-person rows. National sector shares are applied within grids.*
-
-## The old worker denominator was also overstated
 
 The inherited screen multiplied a labor-sector share by total population when
 producing an exposed-worker count. Relative to the Lancet modelled outdoor-
@@ -283,13 +185,16 @@ employed people aged 15+ brings the three ratios to 0.94, 1.09, and 1.06.
 *Figure 7. Calculated outdoor-worker count divided by the Lancet modelled
 count. The comparison source is itself modelled, not a census benchmark.*
 
-# Interpretation
+# What this means for climate-labor work
 
 Three lessons follow.
 
 First, internal sensitivity is necessary but not sufficient. A stable ranking
 shows that a result is not driven by small changes to selected parameters. It
-does not show that the metric represents the intended concept.
+does not show that the metric represents the intended concept. The negative
+result is stronger than the inherited internal-stability result: the proxy can
+keep naming the same economies and still fail to recover the external construct
+it was implicitly asked to represent.
 
 Second, heat and PM2.5 should remain separate evidence objects. A heat-capacity
 model should be used for potential heat-related labor loss. A PM2.5 analysis
@@ -303,7 +208,12 @@ total potential hours can indicate the aggregate scale of modelled capacity at
 risk. Neither alone identifies adaptation effectiveness, welfare loss, or the
 value of a specific intervention.
 
-# Limitations
+The old top-three pressure-cluster headline is retired. Its stability described
+the behavior of a PM2.5-employment score, not agreement with heat-related labor
+capacity. Once the score is tested against a documented direct construct, the
+leading sets separate and the full-rank associations remain weak.
+
+# What this does not say
 
 The Lancet Countdown measure is a model, not an observed labor outcome. It
 uses gridded weather and population, national employment shares applied across
@@ -325,29 +235,89 @@ possible functional forms. That is acceptable for the present decision: even
 the inherited function's plausible perturbations fail to recover the direct
 heat construct.
 
+In 2024, the heat-loss workbook covers 43 of 44 economies in the analysis
+roster; Taipei,China is absent. The outdoor-worker workbook covers 42;
+Hong Kong, China and Taipei,China are absent. The roster is an analysis panel,
+not an authoritative current list of all ADB developing members. The values
+remain a model of potential capacity loss rather than observed absence or hours
+worked.
+
+![Coverage expands with the heat source, while observed outcome validation remains open.](/programs/climate-health-workdays/generated/charts/climate-source-coverage.png)
+
+*Figure 2. Source coverage in the 44-economy analysis roster. Zero observed
+outcomes means none is joined in this package; it does not mean no economy
+publishes labor outcomes.*
+
 Finally, the Lancet workbooks are distributed under CC BY-NC-SA 4.0. This
 repository records the retrieval date, source URLs, file hashes, and license;
 reuse must preserve the source terms.
 
-# Conclusion
-
-The old top-three pressure-cluster headline is retired. Its stability described
-the behavior of a PM2.5-employment score, not agreement with heat-related labor
-capacity. Once the score is tested against a documented direct construct, the
-leading sets separate and the full-rank associations remain weak.
-
-The publishable result is therefore not another country list. It is a research-
-design lesson with operational consequences: validate a proxy against the
-construct it names, keep different mechanisms separate, use the correct worker
-denominator, and expose the distance between potential capacity loss and
-observed labor outcomes.
+# What would change this finding
 
 The next evidence step is not another proxy refinement. It is a pre-specified
 join to observed absenteeism, hours worked, output, or labor-supply data for a
 small set of economies with compatible subnational heat exposure and workplace
-information.
+information. Until that object exists, the proxy should not be renamed or
+interpreted as heat-related work-hour loss.
 
-# Reproduce the analysis
+# How we measured this
+
+The inherited screen uses annual World Development Indicators: agriculture
+employment as a share of total employment, industry employment as a share of
+total employment, and national annual mean PM2.5 exposure. For aligned annual
+testing, the three series must be present for the same economy and year.
+Thirty-four economies meet that condition in each of 2018, 2019, and 2020.
+
+The Lancet Countdown 2025 country workbook provides annual estimates from
+1990 through 2024. This paper uses four sector components—services,
+manufacturing, agriculture in sun, and construction in sun—and the published
+total potential work-hours-loss rate per employed person. The companion
+workbook provides modelled outdoor-worker counts from 2000 through 2024
+[@lancetcountdown2025labour]. The workbook stores sector totals in thousands of
+hours; the pipeline converts them to hours before aggregation.
+
+## 1. Reconstruct the inherited proxy
+
+For economy *i* in year *t*:
+
+`outdoor employment share = agriculture share + w × industry share`
+
+`PM2.5 pressure = clamp((PM2.5 − floor) ÷ cap, 0, 1)`
+
+`proxy = outdoor employment share × PM2.5 pressure`
+
+The baseline uses an industry weight of 0.5, PM2.5 floor of 5 µg/m³,
+and PM2.5 cap of 45 µg/m³. The resulting number is a triage score only.
+
+## 2. Align years and economies
+
+The construct test retains only economy-year rows observed in all three WDI
+inputs and the Lancet heat series. The common window is 2018–2020, with 34
+economies in every year.
+
+## 3. Compare ranks and leading sets
+
+Within each year, both measures are ranked from highest to lowest. The primary
+comparison is overlap between their top-three sets. A secondary diagnostic is
+the Spearman rank correlation across all 34 rows.
+
+The decision rule is intentionally demanding: if any aligned test produces
+top-three overlap above one economy, the headline must be weakened. If the
+baseline top threes are usually disjoint and no sensitivity run exceeds one,
+the proxy is rejected as a substitute for the heat construct.
+
+## 4. Test the arbitrary proxy choices
+
+Each of the proxy's three numeric choices is varied independently by ±50%:
+
+| Choice | Baseline | −50% | +50% |
+|---|---:|---:|---:|
+| Industry weight | 0.50 | 0.25 | 0.75 |
+| PM2.5 floor, µg/m³ | 5.0 | 2.5 | 7.5 |
+| PM2.5 cap, µg/m³ | 45.0 | 22.5 | 67.5 |
+
+Together with the baseline, seven specifications are applied to each of three
+years, producing 21 tests.
 
 ```powershell
 python climate-health-workdays/scripts/process-climate-health.py

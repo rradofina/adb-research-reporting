@@ -2,11 +2,6 @@
 
 `attestation_chain: ai-first`
 
-Status: §18 AI-finalized 2026-04-26. Updated 2026-06-17 to incorporate
-the parser repair and the public KNOMAD flow-weighting L3 module.
-
----
-
 ## 1. What this result cannot establish
 
 - The fragility index does not measure resilience. It measures

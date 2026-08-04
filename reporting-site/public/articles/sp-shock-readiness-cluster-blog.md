@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: sp-shock-readiness-cluster-blog
 title: A stable social-protection score can still rank the wrong records
 subtitle: The published top five changes when the panel's own missing-data rule is applied consistently.
@@ -20,7 +21,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # The reassuring result was answering the wrong question
 
 The first version of this research combined three national indicators: poverty,

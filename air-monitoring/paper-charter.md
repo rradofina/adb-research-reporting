@@ -2,22 +2,23 @@
 
 `attestation_chain: ai-first`
 
-This charter is a report-framing artifact, not a finding. It converts the
-current evidence package into the paper/report primitives needed before the
-program moves further up the publication ladder.
+A national PM2.5 figure can appear on a dashboard even when the public
+ground-monitor trail is thin, model-dependent, or not auditable at station
+level. ADB country teams, national statistics offices, environment agencies,
+and health ministries need to know whether that figure is supported by
+public station evidence they can actually inspect.
+
+The decision problem is not "which economy is worst." It is where a
+monitoring investment, data-sharing agreement, or station documentation
+request would most improve the public evidence base for PM2.5 measurement.
 
 ## 1. Policy/statistical problem
 
-ADB country teams, national statistics offices, environment agencies, and
-health ministries need to know whether air-quality exposure statistics are
-supported by public ground-monitor evidence. A national PM2.5 value can be
-available even when the public station trail is thin, model-dependent, or not
-auditable at station level.
-
-The decision problem is not "which economy is worst." The decision problem is:
-where would a monitoring investment, data-sharing agreement, or station
-documentation request most improve the public evidence base for PM2.5
-measurement?
+Air-quality exposure statistics are only as strong as the public monitor
+evidence behind them. National series, open station maps, and regulator
+portals each answer a different question; none by itself proves that a named
+station is the same physical monitor, currently operating to a verified
+grade, or ready for a population-coverage claim.
 
 ## 2. Measurement blind spot
 

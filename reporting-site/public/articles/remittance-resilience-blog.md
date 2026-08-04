@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-blog
 title: Five economies stay in the flow-weighted remittance corridor-cost set
-subtitle: A repaired set-and-measurement result for ADB developing member economies whose remittance dependence meets high observed corridor costs.
+subtitle: Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa sit where remittance dependence meets high observed corridor costs—and four of them hold across the full sensitivity suite.
 kind: blog
 tier: blog
 status: draft
@@ -30,6 +30,7 @@ references:
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Two indicators that point in similar directions
@@ -51,7 +52,7 @@ figure. But a planner deciding where corridor-cost interventions
 should go first wants to know where the two stack up *together* — and
 that requires a joint view.
 
-# The numbers, as a set
+# Where dependence and cost stack together
 
 When you build a joint screen across the 21 ADB developing member
 economies with both axes observed, five economies sit in the repaired
@@ -118,10 +119,9 @@ the flow, diversification of sources, household ability to absorb a
 shock — requires a different program and different data (LSMS, DHS,
 central-bank flow series).
 
-# What's next
+# Where the evidence lives
 
-The full working paper and public tiers are being repaired around the
-new parser and flow-weighting artifacts. They document the method, the
+The full working paper and public tiers document the method, the
 sensitivity suite, the limitations, and the upgrade path to a
 human-final attestation at
 `articles/remittance-corridors-vulnerability-cluster.md`. The

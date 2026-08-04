@@ -2,13 +2,11 @@
 
 `attestation_chain: ai-first`
 
-Status: **PP — denominator-switch research result**, refreshed 2026-07-18.
-
 ## Finding
 
-The leading origin economies depend completely on whether migrant stock is
-read as an absolute count or relative to the resident population. The
-absolute top five—India, China, Bangladesh, Afghanistan, and the
+Which origin economies look largest depends completely on whether migrant
+stock is read as an absolute count or relative to the resident population.
+The absolute top five—India, China, Bangladesh, Afghanistan, and the
 Philippines—has **zero overlap** with the population-share top five—Samoa,
 Tonga, Armenia, Nauru, and Fiji.
 

@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: migration-displacement-signals-blog
 title: A migration ranking can reverse when the denominator changes
 subtitle: The same 2024 migrant-stock data tell different stories about diaspora scale and population-relative stock.
@@ -24,7 +25,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # One stock, two questions
 
 International migration data often arrive as a league table. Sort economies

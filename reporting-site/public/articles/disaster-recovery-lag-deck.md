@@ -1,7 +1,7 @@
 ---
 slug: disaster-recovery-lag-deck
 title: "A disaster-recovery ranking fails two validity gates"
-subtitle: "Metric falsification and a 108-orbit Typhoon Haiyan pilot — AI-first under §18"
+subtitle: "Metric choice and a 108-orbit Typhoon Haiyan pilot both block a recovery claim — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [PHL, Asia-Pacific]
 topics: [disaster-recovery, nighttime-lights, measurement-validity, GDIS]
 program: disaster-recovery-lag
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -34,7 +34,7 @@ dmc_framing_check: passing
 
 ![](../../disaster-recovery-lag/generated/charts/disaster-per-capita-inversion.png){width=100%}
 
-# Public access is only one gate
+# Public access is only one requirement
 
 ![](../../disaster-recovery-lag/generated/charts/disaster-source-ladder.png){width=100%}
 

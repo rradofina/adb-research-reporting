@@ -5,7 +5,9 @@ Repository-level focus and process rules live in `research/STATUS.md`,
 `research/factory.md`, and `CLAUDE.md`. This file holds only what is
 specific to remittance-resilience.
 
-Last updated: 2026-07-18.
+Last updated: 2026-07-31.
+
+- **Editorial (2026-07-31 Phase 5):** Program research-story openings rewritten to reader voice; no number, figure, citation, claim, or maturity change.
 
 ## Current
 
@@ -27,6 +29,10 @@ one nine-section research story. This was a presentation pass, not a maturity
 promotion or a return to the retired generic "fragility index" headline.
 
 ## Last completed
+
+- **2026-07-31 (editorial pass):** Working-paper article restructured to the
+  Development Asia reader arc (`research/style-guide.md` §7); no number,
+  figure, citation, claim, or maturity change; gates and build re-passed.
 
 - **2026-07-18 (four-figure research story):** Classified the figure roles in
   `figure-plan.md`, placed the existing flow-weighting comparison in the

@@ -1,7 +1,7 @@
 ---
 slug: digital-availability-use-gap-slides
 title: The network is present. Use still lags.
-subtitle: A nine-slide evidence deck on availability and use across ADB developing member economies.
+subtitle: Reported mobile broadband coverage exceeds internet use in most ADB developing member economies — AI-first under §18.
 kind: slides
 status: draft
 attestation_chain: ai-first
@@ -12,13 +12,13 @@ topics: [digital inclusion, connectivity monitoring]
 program: digital-performance
 maturity: PP
 abstract: Nine-slide presentation of the exact-year ITU availability-use study.
-published_at: 2026-07-19
+published_at: 2026-07-31
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# 1 — Decision question
+# 1 — Is coverage the same as use?
 
 When reported 4G/LTE availability is high, are people actually using the
 Internet at the same rate?
@@ -26,7 +26,7 @@ Internet at the same rate?
 **Why it matters:** rollout, adoption, affordability, and quality require
 different interventions.
 
-# 2 — Main finding
+# 2 — Coverage exceeds use almost everywhere
 
 In 2024, reported 4G availability exceeds internet use in **31 of 34**
 exact-year ADB developing member cases.
@@ -73,7 +73,7 @@ and does not measure devices, skills, trust, content, or perceived value.
 
 ![Affordability diagnostic.](/programs/digital-performance/generated/charts/digital-performance-06-affordability-association.svg){width=85%}
 
-# 7 — The next data priority is within-economy visibility
+# 7 — The next priority is within-economy visibility
 
 Only ten headline cases also have same-year urban and rural use rates.
 
@@ -82,7 +82,7 @@ for a regional mechanism claim.
 
 ![Urban-rural diagnostic.](/programs/digital-performance/generated/charts/digital-performance-07-urban-rural-use-gap.svg)
 
-# 8 — Operational interpretation and reproduction
+# 8 — What to do with the two clocks
 
 1. Put availability and use side by side.
 2. Show year, source, method, and missing denominator.

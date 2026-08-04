@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: digital-availability-use-gap-blog
 title: A signal can reach you before the Internet does
 subtitle: Why connectivity dashboards need separate measures for network availability and actual use.
@@ -20,7 +21,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # The bars on a phone are not the same as being online
 
 Imagine a mobile network reaches your village. The map turns from grey to

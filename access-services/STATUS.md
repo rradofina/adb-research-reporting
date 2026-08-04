@@ -2,7 +2,9 @@
 
 `attestation_chain: ai-first`
 
-Last updated: 2026-07-18.
+Last updated: 2026-07-31.
+
+- **2026-07-31:** Editorial pass to the reader arc; no number, figure, citation, claim, or maturity change; gates and build re-passed.
 
 ## Current
 

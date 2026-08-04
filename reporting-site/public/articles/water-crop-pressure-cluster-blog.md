@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: water-crop-pressure-cluster-blog
 title: A stable water-crop score can still measure the wrong things
 subtitle: Direct water stress and harvested-area concentration do not reproduce the inherited four-country story.
@@ -21,7 +22,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # The saved runs did not support the published set
 
 The first version of this research multiplied three national indicators:

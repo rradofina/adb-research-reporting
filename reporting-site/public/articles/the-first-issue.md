@@ -1,7 +1,7 @@
 ---
 slug: the-first-issue
 title: "Vol. I, № 04: The first issue of the Blindspots Lab"
-subtitle: "Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind."
+subtitle: "Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18 — read each headline with that label."
 kind: blog
 status: draft
 attestation_chain: ai-first
@@ -25,7 +25,7 @@ abstract: >
   readers should know about §18 attested research before they cite it.
 doi:
 published_at: 2026-04-26
-updated_at: 2026-07-07
+updated_at: 2026-07-31
 references: []
 license: CC BY 4.0
 banned_words_check: passing
@@ -34,17 +34,17 @@ review_external_chain: ai-synthesis under §18.4
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# What's in the issue
+# What a first-time reader should take from this issue
 
-Seven current-issue finished programs, each with a permanent self-hosted
-evidence packet at `/program/{slug}/evidence` and a working-paper
-article in this hub. The full issue register now has an honest label for
-all eighteen topics: seven finished, eight screening-only, one
-prospectus, one prepared pipeline, and one hypothesis. All under §18 —
-AI-attested rather than human-attested. Read each headline with that
-label.
+This issue is a public map of what the lab can and cannot yet claim.
+Eighteen topics sit under one Constitution. Seven carry finished
+current-issue packets; eight are screening-only signals; one is a
+program prospectus; one is prepared pipeline; one remains hypothesis.
+All of them carry `attestation_chain: ai-first`. The useful habit is
+simple: read the finding, then read the label, then open the evidence
+page before you cite a number.
 
-## The seven finished current-issue programs
+# The seven finished current-issue programs
 
 **Public Service Data Quality.** OpenStreetMap captures 17.1% of the
 Philippines clinical-tier health-facility registry and 11.8% of the
@@ -86,7 +86,7 @@ All five named economies have documented COVID-19 cash-transfer responses;
 zero comparable delivery outcomes are joined. The ranking is retired. →
 [/findings/sp-shock-readiness-cluster](/findings/sp-shock-readiness-cluster)
 
-## The remaining Screening-Result screens
+# The remaining Screening-Result screens
 
 **Water-Crop Pressure — corrected 2026-07-18.** The published set is the raw
 top four in only two of seven runs. Direct available-water stress retains two
@@ -138,33 +138,29 @@ the stable top-4 flood-rural-exposure set. The current measure is
 flood exposure plus rural population, not road-network disruption or
 market isolation. → [/findings/flood-market-access-cluster](/findings/flood-market-access-cluster)
 
-## The one Program Prospectus
+# What is held back on purpose
 
-**Climate-Health Workdays.** Three DMCs — Afghanistan, India,
-Bangladesh — top the PM2.5 workday-pressure screen across every
-parameter row. Top-5 narrowed honestly because the PM2.5-cap parameter
-shifts the 4th and 5th positions. It is a Program Prospectus, not a
-finished issue paper: the PM2.5 layer is computed, but the heat layer
-and true workday-loss interpretation remain upgrade-pass work. →
+**Climate-Health Workdays** is a Program Prospectus, not a finished
+issue paper. Three DMCs — Afghanistan, India, Bangladesh — top the
+PM2.5 workday-pressure screen across every parameter row. Top-5
+narrowed honestly because the PM2.5-cap parameter shifts the 4th and
+5th positions. The PM2.5 layer is computed; the heat layer and true
+workday-loss interpretation remain upgrade-pass work. →
 [/findings/workday-loss-pressure-cluster](/findings/workday-loss-pressure-cluster)
 
-## The one Prepared-Pipeline hold-back
-
-**Digital Performance.** Stays at Prepared Pipeline. The Ookla Q1 2026
+**Digital Performance** stays at Prepared Pipeline. The Ookla Q1 2026
 manifest and DuckDB SQL are committed for Philippines and Bangladesh
 pilots, but the parquet aggregation has not been run. No speed,
 latency, or coverage claim should appear until those files are fetched
 and aggregated.
 
-## The one Hypothesis hold-back
-
-**MPI × Nighttime Lights.** Remains a Hypothesis in this repository.
+**MPI × Nighttime Lights** remains a Hypothesis in this repository.
 OPHI MPI 2024 parsing is present, but the nighttime-lights ingestion,
 zonal statistics, and coauthored external track are not reconciled here.
 No MPI-light interpretation should be folded into this issue until that
 lineage is brought back into the repo or explicitly retired.
 
-## What §18 means for any reader
+# What §18 means before you cite a number
 
 Every program in this issue carries `attestation_chain: ai-first`.
 That label means:
@@ -196,7 +192,7 @@ A reader who wants `human-final` work can look at the §18.5 upgrade-
 pass scope in each program's `review-external.md` §5 — it lists
 exactly what conversion would require.
 
-## What stayed under non-suspendable rules
+# What the Constitution still refuses to suspend
 
 §18 does not suspend everything. The following gates apply equally
 under §18:
@@ -215,9 +211,7 @@ under §18:
 - **Taste heuristics in full** — banned words checked, no composite-
   index headline, no causal language from screening signals.
 
-## Four §16 amendments shipped this issue
-
-This issue has four Constitutional amendments. They are public:
+# Four §16 amendments shipped with this issue
 
 1. **§18 — AI-First Operating Mode** added 2026-04-25. The
    foundation of every "ai-first" attestation in this issue.
@@ -234,7 +228,7 @@ This issue has four Constitutional amendments. They are public:
    documented public-evidence absence as a first-class result where the
    lab is measuring observability gaps.
 
-## What is not in this issue
+# What is not in this issue
 
 One program remains at Hypothesis in this repository:
 mpi-nighttime-lights. The track is live only as a reconciled external
@@ -250,4 +244,4 @@ issue claims still operate at country level. ADM1 / ADM2 deferred to
 per-program upgrade-passes unless the program's evidence packet already
 states a lower valid unit.
 
-— Raymond Adofina · 2026-07-07 · `attestation_chain: ai-first`
+— Raymond Adofina · 2026-07-31 · `attestation_chain: ai-first`

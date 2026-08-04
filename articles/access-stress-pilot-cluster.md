@@ -32,7 +32,7 @@ abstract: >
   Operating Mode.
 doi:
 published_at: 2026-04-27
-updated_at: 2026-07-18
+updated_at: 2026-07-31
 references:
   - herfort2023osm
   - south2021reproducible
@@ -46,7 +46,7 @@ review_external_chain: ai-synthesis under §18.4
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The question
+# Where the map tempts the wrong question
 
 Open map data are attractive for regional screening. They are public,
 geocoded, reproducible, and available in places where official facility lists
@@ -69,86 +69,7 @@ subnational level, how much of the apparent load ranking survives?** The
 answer determines whether the pilot can be read as access evidence or only as
 a queue for source validation.
 
-# What this paper adds
-
-The contribution is a claim correction supported by four linked tests.
-
-1. **Identity test.** The Philippine worst-region value in the inherited
-   access panel—68,678 people per point in ARMM—is exactly reproduced as
-   population divided by the OSM count in the sibling public-service-data-
-   quality evidence. This confirms that the suspected denominator is the one
-   driving the published statistic.
-2. **Registry substitution.** The Philippine OSM denominator is replaced with
-   DOH NHFR v2.0 clinical-facility counts for all 17 regions. The same
-   comparison is repeated for all 8 Bangladesh divisions using the DGHS
-   Facility Registry.
-3. **Completeness signal.** Regional OSM capture—the OSM clinical count divided
-   by the official registry count—is compared with apparent OSM load. This
-   tests whether places with thinner map capture also look artificially worse.
-4. **Source-readiness audit.** The analysis records where a comparable
-   registry correction exists across the eight-economy pilot and uses a 2010
-   Cambodia public-facility source to demonstrate why a second public dataset
-   can expose disagreement without validating current access.
-
-The resulting output is not a better access index. It is a defensible stopping
-rule: validate the facility layer before using it for comparative access work.
-
-# The data
-
-The legacy panel covers 104 ADM1 units in eight ADB developing member
-economies: the Philippines, Bangladesh, Pakistan, Nepal, Sri Lanka, Cambodia,
-the Lao People's Democratic Republic, and Timor-Leste. It combines population,
-geoBoundaries ADM1 polygons, and 2026 OSM amenity extractions. Those rows remain
-useful for locating potential source problems, but they no longer support the
-headline rank.
-
-The main comparison uses Philippine 2020 census population and DOH National
-Health Facility Registry v2.0 clinical-facility counts, joined at the regional
-level. The supporting Bangladesh comparison uses its public DGHS Facility
-Registry. Reproducible facility-data research emphasizes the importance of
-documented, geocoded source reconciliation [@south2021reproducible], while
-current facility-database work highlights provider scope, temporal currency,
-services, capacity, and stable identifiers as necessary attributes
-[@macharia2025mapping]. These registries are therefore more authoritative for
-the denominator test, but they still do not measure full service access.
-
-The Cambodia audit joins 24 of 25 access-panel provinces to a public
-HDX/MoH/OCHA inventory containing 956 health centers, 89 health posts, and 76
-referral hospitals. The source describes 2010 public facilities. OSM is from
-2026 and may include other provider types. Tbong Khmum is unmatched because
-the source predates the province. These facts make Cambodia a source-vintage
-case study, not a registry validation equivalent to the Philippine and
-Bangladesh modules.
-
-# Method
-
-For each joined ADM1, the paper computes two descriptive ratios:
-
-```text
-OSM load      = population / OSM-tagged health points
-registry load = population / official clinical facilities
-```
-
-Regions are ranked from the largest people-per-facility ratio to the smallest
-within each source. The analysis counts how many rank positions differ after
-registry substitution and reports the actual movements. It also computes
-Pearson correlations in levels and logs and Spearman rank correlation between
-OSM capture and OSM-based apparent load in the Philippines.
-
-The post-hoc public decision rule retires access-ranking language if at least
-50% of joined ranks change. Because that threshold is arbitrary, it is tested
-at minus and plus 50%: 25%, 50%, and 75%. The Philippine result exceeds every
-threshold. This rule was formalized after the registry deepening and is labeled
-post-hoc claim reshaping; it is not represented as an ex ante confirmation.
-
-This method deliberately stops before travel-time modeling. Geographic access
-research uses facility location, population, routable networks, terrain, and
-transport assumptions to estimate catchments and travel time
-[@macharia2017travel]. None of those objects is present here. Uneven OSM
-coverage is itself a documented global source of comparative bias
-[@herfort2023osm], which is why denominator validity comes first.
-
-# The finding
+# What we found: the registry reorders almost every Philippine rank
 
 Replacing OSM counts with the official clinical registry reorders **16 of 17
 Philippine regional ranks**. NCR moves from rank 15 on the OSM ratio to rank 1
@@ -175,7 +96,43 @@ Bangladesh provides a supporting check: **6 of 8 division ranks change** when
 DGHS registry counts replace OSM points. Dhaka moves from 8 to 2; Barisal moves
 from 3 to 8. The result reaches the 75% upper sensitivity threshold exactly.
 
-# What the eight-economy screen can still do
+# Why the ranks move: capture, not a better access index
+
+The contribution is a claim correction supported by four linked tests.
+
+1. **Identity test.** The Philippine worst-region value in the inherited
+   access panel—68,678 people per point in ARMM—is exactly reproduced as
+   population divided by the OSM count in the sibling public-service-data-
+   quality evidence. This confirms that the suspected denominator is the one
+   driving the published statistic.
+2. **Registry substitution.** The Philippine OSM denominator is replaced with
+   DOH NHFR v2.0 clinical-facility counts for all 17 regions. The same
+   comparison is repeated for all 8 Bangladesh divisions using the DGHS
+   Facility Registry.
+3. **Completeness signal.** Regional OSM capture—the OSM clinical count divided
+   by the official registry count—is compared with apparent OSM load. This
+   tests whether places with thinner map capture also look artificially worse.
+4. **Source-readiness audit.** The analysis records where a comparable
+   registry correction exists across the eight-economy pilot and uses a 2010
+   Cambodia public-facility source to demonstrate why a second public dataset
+   can expose disagreement without validating current access.
+
+The resulting output is not a better access index. It is a defensible stopping
+rule: validate the facility layer before using it for comparative access work.
+Reproducible facility-data research emphasizes the importance of documented,
+geocoded source reconciliation [@south2021reproducible], while current
+facility-database work highlights provider scope, temporal currency, services,
+capacity, and stable identifiers as necessary attributes
+[@macharia2025mapping]. These registries are therefore more authoritative for
+the denominator test, but they still do not measure full service access.
+
+Uneven OSM coverage is itself a documented global source of comparative bias
+[@herfort2023osm], which is why denominator validity comes first. Geographic
+access research uses facility location, population, routable networks, terrain,
+and transport assumptions to estimate catchments and travel time
+[@macharia2017travel]. None of those objects is present here.
+
+# What this means for anyone reading the eight-economy screen
 
 Only the Philippines and Bangladesh have comparable registry corrections in
 the committed cross-economy module. Pakistan, Nepal, Sri Lanka, Cambodia, the
@@ -198,8 +155,6 @@ of overmapping. It is evidence that provider scope, urban change, tagging, and
 source vintage can dominate the comparison. The only defensible Cambodia
 conclusion is source disagreement.
 
-# Robustness and interpretation
-
 The old aggregation sensitivity remains part of the audit trail, but it no
 longer supports the public claim. Switching from a population-weighted mean to
 the worst ADM1 value tests a summary choice while preserving the OSM
@@ -218,7 +173,7 @@ remain triage devices under the Constitution and are not the headline. No
 country-quality, DMC-performance, welfare, or resource-allocation rank is
 produced.
 
-# Limitations
+# What this does not say
 
 The denominator test is necessary but not sufficient for access research.
 Official registries may be incomplete, stale, or inconsistent; OSM and registry
@@ -233,15 +188,7 @@ quality, affordability, utilization, or household outcomes. The paper does not
 estimate any of those constructs. Its maturity remains PP and its attestation
 chain remains AI-first. No named external reviewer was contacted.
 
-# Conclusion
-
-The inherited screen asked which economies appeared most stressed. The more
-important first question was whether the map could support that comparison.
-For the Philippines, the answer is no: the official registry changes 16 of 17
-regional ranks, and uneven OSM capture is strongly associated with the
-apparent load. Bangladesh points in the same direction. The eight-economy
-screen should therefore be read as a **map-observability and source-validation
-queue**, not as service-access evidence.
+# What would change this finding
 
 The next research object is a versioned facility crosswalk for every pilot
 economy, followed by travel-time surfaces and facility capability. Only then
@@ -249,7 +196,53 @@ should the program ask who can reach which service, under what conditions, and
 with what consequences. The absence of those layers is not a reason to add
 another proxy; it is the boundary of the current finding.
 
-# Reproduction
+Comparable current registry joins for the six pilot economies that lack them
+would also change how far the corrected rank can travel. Until those joins
+exist, the honest reading stays narrow: the inherited screen asked which
+economies appeared most stressed, and the more important first question was
+whether the map could support that comparison. For the Philippines, the answer
+is no: the official registry changes 16 of 17 regional ranks, and uneven OSM
+capture is strongly associated with the apparent load. The eight-economy
+screen should therefore be read as a **map-observability and source-validation
+queue**, not as service-access evidence.
+
+# How we measured this
+
+The legacy panel covers 104 ADM1 units in eight ADB developing member
+economies: the Philippines, Bangladesh, Pakistan, Nepal, Sri Lanka, Cambodia,
+the Lao People's Democratic Republic, and Timor-Leste. It combines population,
+geoBoundaries ADM1 polygons, and 2026 OSM amenity extractions. Those rows remain
+useful for locating potential source problems, but they no longer support the
+headline rank.
+
+The main comparison uses Philippine 2020 census population and DOH National
+Health Facility Registry v2.0 clinical-facility counts, joined at the regional
+level. The supporting Bangladesh comparison uses its public DGHS Facility
+Registry. The Cambodia audit joins 24 of 25 access-panel provinces to a public
+HDX/MoH/OCHA inventory containing 956 health centers, 89 health posts, and 76
+referral hospitals. The source describes 2010 public facilities; OSM is from
+2026 and may include other provider types. Tbong Khmum is unmatched because
+the source predates the province.
+
+For each joined ADM1, the paper computes two descriptive ratios:
+
+```text
+OSM load      = population / OSM-tagged health points
+registry load = population / official clinical facilities
+```
+
+Regions are ranked from the largest people-per-facility ratio to the smallest
+within each source. The analysis counts how many rank positions differ after
+registry substitution and reports the actual movements. It also computes
+Pearson correlations in levels and logs and Spearman rank correlation between
+OSM capture and OSM-based apparent load in the Philippines.
+
+The post-hoc public decision rule retires access-ranking language if at least
+50% of joined ranks change. Because that threshold is arbitrary, it is tested
+at minus and plus 50%: 25%, 50%, and 75%. The Philippine result exceeds every
+threshold. This rule was formalized after the registry deepening and is labeled
+post-hoc claim reshaping; it is not represented as an ex ante confirmation.
+This method deliberately stops before travel-time modeling.
 
 ```powershell
 python access-services/scripts/deepen-osm-completeness.py

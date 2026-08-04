@@ -1,7 +1,7 @@
 {
   "program": "disaster-recovery-lag",
   "permanent_url": "/disaster-recovery-lag?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.282Z",
+  "generated_at": "2026-08-04T15:10:12.022Z",
   "hero": {
     "png": "generated/charts/disaster-recovery-lag-thumbnail.png",
     "svg": "generated/charts/disaster-recovery-lag-thumbnail.svg",
@@ -47,10 +47,10 @@
       "key": "paper_charter",
       "file": "paper-charter.md",
       "label": "Paper charter",
-      "size": 1599,
-      "size_human": "1.6 KB",
-      "mtime": "2026-07-18T12:24:04.721Z",
-      "sha256": "899b008a3f5a7ed54f0e579fdbf5cac666ab9894c6ba5519713c52d2ee5a1f37",
+      "size": 1723,
+      "size_human": "1.7 KB",
+      "mtime": "2026-07-31T08:50:40.460Z",
+      "sha256": "d4ad5dc5d2fedd56555fc487d72716818c5fb896483c75fa7a9dac73269d03ac",
       "attestation_chain": "ai-first"
     },
     {

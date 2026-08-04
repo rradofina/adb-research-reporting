@@ -4,7 +4,9 @@ This is the per-program operating state for `air-monitoring`. Repository-level
 focus and process rules live in `research/STATUS.md`, `research/factory.md`,
 and `CLAUDE.md`.
 
-Last updated: 2026-07-19.
+Last updated: 2026-07-31.
+
+- **Editorial (2026-07-31 Phase 5):** Program research-story openings rewritten to reader voice; no number, figure, citation, claim, or maturity change.
 
 ## Current
 
@@ -32,6 +34,17 @@ same-station crosswalk, or method-grade records. Do not run another generic
 source scan.
 
 ## Last completed
+
+- **2026-07-31:** Restructured the working-paper article
+  `articles/pm25-observability-gap-cluster.md` to the Development Asia
+  reader arc now codified in `research/style-guide.md` §7 (owner-directed
+  editorial-flow upgrade). The body now opens in the reader's world, uses
+  story-led headings, interprets every number in a sentence, moves stage
+  rules and ledger schema language to a closing "How we measured this"
+  section, and keeps every figure, number, citation, nonclaim, maturity
+  label, and `attestation_chain` unchanged. No claim, source, or maturity
+  change. Verification passed: five repository gates, article sync, and the
+  reporting-site production build.
 
 - **2026-07-19:** Rebuilt the closed absence result as a complete research
   publication without another source scan. Added `README.md`, `REPRODUCE.md`,

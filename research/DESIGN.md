@@ -3,7 +3,9 @@
 This file governs the reporting site and every public surface. It has the
 same standing as `research/factory.md`: AI assistants follow it without
 being asked. Language rules live in `research/style-guide.md`; this file
-covers structure, layout, and visual presentation.
+covers structure, layout, and visual presentation. The editorial arc for
+article bodies — the Development Asia reader arc — lives in
+`research/style-guide.md` §7 and governs every reader-tier writeup.
 
 ## The principle
 

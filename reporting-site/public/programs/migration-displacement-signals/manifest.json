@@ -1,7 +1,7 @@
 {
   "program": "migration-displacement-signals",
   "permanent_url": "/migration-displacement-signals?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.161Z",
+  "generated_at": "2026-08-04T15:10:11.798Z",
   "hero": {
     "png": "generated/charts/migration-displacement-signals-thumbnail.png",
     "svg": "generated/charts/migration-displacement-signals-thumbnail.svg",
@@ -47,20 +47,20 @@
       "key": "paper_charter",
       "file": "paper-charter.md",
       "label": "Paper charter",
-      "size": 2381,
-      "size_human": "2.3 KB",
-      "mtime": "2026-07-18T09:58:08.923Z",
-      "sha256": "095dccb6d0905117095a8171a1b0146973c8db2b35175416fb1361863b0da8eb",
+      "size": 2603,
+      "size_human": "2.5 KB",
+      "mtime": "2026-07-31T08:50:13.035Z",
+      "sha256": "ed088e6a84d8c69b24f5b19d54a1da93fc3c440c20c92022ca5ef8b6b15657d3",
       "attestation_chain": "ai-first"
     },
     {
       "key": "literature",
       "file": "literature.md",
       "label": "Literature review",
-      "size": 5310,
-      "size_human": "5.2 KB",
-      "mtime": "2026-07-18T10:03:29.555Z",
-      "sha256": "fd54da3d32be43611f826a76171ca52f9a5a4083ffa8b2dac487cdfb8ce54426",
+      "size": 5609,
+      "size_human": "5.5 KB",
+      "mtime": "2026-07-31T08:51:45.474Z",
+      "sha256": "014f3c3f4cadcd4485df5019eea89bc4d621d23606c134832bd37ad4aee89a54",
       "attestation_chain": "ai-first"
     },
     {
@@ -107,10 +107,10 @@
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 6578,
+      "size": 6508,
       "size_human": "6.4 KB",
-      "mtime": "2026-07-18T10:04:51.616Z",
-      "sha256": "94b3a7e73a334a828a97a95a6be7b3cc9dd0d6937d5fccabe01ebbf99a54f4dc",
+      "mtime": "2026-07-31T08:50:13.033Z",
+      "sha256": "e9ef9ecc91f9ee993f6fe5f8737768deeb8b4a8a5887bae845fc5a5c18ce6026",
       "attestation_chain": "ai-first"
     },
     {

@@ -38,16 +38,15 @@ export default function Articles() {
 
   return (
     <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Publishing layer</p>
+      <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Findings library</p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight">
-        Articles, research briefs, and working papers.
+        Working papers, briefs, and shorter reads.
       </h1>
       <p className="mt-3 max-w-3xl text-ink-700 leading-relaxed">
-        Long-form research output. Each article is backed by Supabase
-        (<code className="font-mono">pub.article</code>) and cites
-        indicator values directly from <code className="font-mono">obs.*</code> —
-        every number traces to a source dataset and a retrieval timestamp
-        per Constitution §11.
+        Long-form research for practitioners and reviewers. Every number
+        traces to a public source, a committed script, and a retrieval
+        timestamp — so a reader can check the claim without trusting the
+        pipeline on faith.
       </p>
 
       {error && (

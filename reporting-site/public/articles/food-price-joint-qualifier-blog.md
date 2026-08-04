@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: food-price-joint-qualifier-blog
 title: A stable country screen was still the wrong food-price story
 subtitle: Correcting the Nepal market-price outcome turns a climate narrative into a sharper measurement finding.
@@ -20,7 +21,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # The annual screen looked stable—but measured the wrong thing
 
 An inherited food-price screen found Lao PDR and Pakistan in the top ranks of

@@ -1,7 +1,7 @@
 ---
 slug: public-service-data-quality-deck
 title: "Where OpenStreetMap and the official health-facility registry disagree"
-subtitle: "ADB DMC measurement-gap evidence — Philippines and Bangladesh pilots, AI-first under §18"
+subtitle: "Two ADB economies, two public maps, and a systematic gap planners should not ignore — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [PHL, BGD]
 topics: [measurement-gap, public-service-data-quality, OSM, health-facility-registry]
 program: public-service-data-quality
 maturity: PR
-date: "2026-05-07"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 2
@@ -22,26 +22,26 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The question
+# Why facility counts disagree
 
 ## Two maps of the same country, two answers
 
 When a planner asks *how many health facilities serve this district*, two
 reasonable public sources answer differently:
 
-- **OpenStreetMap** — volunteer-edited, open, frequently used in
-  spatial-analysis pipelines.
-- **The official national registry** — administrative record kept by
-  the health ministry, used for licensing and reporting.
+- **OpenStreetMap** — volunteer-edited, open, and often fed into spatial
+  analysis.
+- **The official national registry** — the health ministry’s administrative
+  record for licensing and reporting.
 
 Both are public. Both are used. They disagree, and the disagreement is
 **systematic**, not random.
 
-This deck reports the first methodologically careful version of that
-finding for two ADB developing member economies. It carries an
-`ai-first` attestation chain under `CONSTITUTION.md` §18.
+This deck is the first careful version of that finding for two ADB developing
+member economies. It carries an `ai-first` attestation chain under
+`CONSTITUTION.md` §18.
 
-# The headline
+# How much of the registry OSM captures
 
 ## OpenStreetMap captures a small share of the official registry
 
@@ -53,7 +53,7 @@ finding for two ADB developing member economies. It carries an
 Both ratios fall below the 30% fit-for-planning threshold from the
 methodological literature on African MOH systems.
 
-# The pattern
+# Where the gap is largest
 
 ## Philippines — 9.8× rural-urban gradient
 
@@ -69,22 +69,22 @@ than ±10%.
 Dhaka **20.1%** → Barisal **6.2%**. Different country, different
 registry, different volunteer community, **same direction** of gradient.
 
-# Robustness
+# Does the pattern hold when the rules change?
 
 ## The pattern survives every parameter at ±50%
 
 Per `CONSTITUTION.md` §6.6, every arbitrary numeric was tested at ±50%:
 
-- **Factype set cardinality** (PHL 19→10 or 19→28; BGD keyword sets):
+- **Which facility types count** (PHL 19→10 or 19→28; BGD keyword sets):
   ratio range 14.5%–17.3% (PHL), 11.6%–11.8% (BGD).
 - **Rural-urban gradient quintile size** (20%→10% or 20%→30%): gradient
   ranges 4.0×–7.0× (PHL), 2.18×–3.21× (BGD).
-- **Falsification threshold** (±5%, ±10%, ±15%): zero of 17 PHL ADM1
+- **How tight “agreement” is defined** (±5%, ±10%, ±15%): zero of 17 PHL ADM1
   units within tolerance at any threshold.
 
 **No row flips the §8 decision rule in either country.**
 
-# The granularity upgrade
+# What finer geography shows
 
 ## Philippines — at city/municipality level (1,632 of 1,642)
 
@@ -93,7 +93,7 @@ Per `CONSTITUTION.md` §6.6, every arbitrary numeric was tested at ±50%:
 Owner-downloaded PSA 2023 SAE workbook + PSA OpenSTAT direct estimates.
 **10 polygons remain explicitly source-missing rather than imputed.**
 
-# Why this matters for project preparation
+# Why this matters for planners
 
 ## Project pipelines that read OSM alone misread service supply
 
@@ -105,15 +105,15 @@ planner reading the registry alone. The miscount is not uniform:
 
 So OSM-only denominators systematically under-state facility density
 **exactly where additional access most matters**. This is a
-methodological finding about data infrastructure, not a quality
+measurement finding about data infrastructure, not a quality
 judgment about countries.
 
 The same logic applies to schools, markets, and other public-service
 amenities visible in OpenStreetMap.
 
-# Honest limits
+# What this deck does not claim
 
-## What this deck does NOT claim
+## Limits a careful reader should keep in view
 
 - It does **not** claim OSM is wrong. Without a third independent
   source we cannot adjudicate which map is closer to ground truth.
@@ -128,7 +128,7 @@ amenities visible in OpenStreetMap.
   external reviewers (Macharia, Zipf, PIDS, BIDS) are pre-conditions
   for a human-final upgrade.
 
-# Reproducibility
+# Where the numbers come from
 
 ## Every number traces to a committed script
 

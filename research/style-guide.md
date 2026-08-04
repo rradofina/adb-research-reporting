@@ -119,7 +119,64 @@ In any program README:
 
 ---
 
-## 7. Failure mode
+## 7. Article flow — the reader arc (added 2026-07-31)
+
+**Principle.** An article is written for the reader's question, not the
+pipeline's audit trail. The model is the editorial arc used by Development
+Asia (ADB's knowledge platform): a standfirst a busy practitioner can
+retell, story-led sections in plain language, and a closing "so what."
+Rigor lives in the frontmatter, the evidence page, and a methods box — not
+in the reader's path. An article whose body reads like a compliance report
+has failed even if every gate passes.
+
+**The arc.** Every reader-tier article (working paper body, brief, blog)
+follows this order:
+
+1. **Standfirst.** The `subtitle` is one or two sentences a reader can
+   retell: what was found, where, and why it matters. Never a methods
+   note ("A 24-economy audit stops before…" is a methods note).
+2. **Open in the reader's world.** The first section sets a concrete
+   scene or question a practitioner actually has — a place, a stake, a
+   decision that depends on the answer. It never opens with the
+   apparatus ("the audited packet", "the ledger verifies").
+3. **What we found.** Numbers appear inside sentences that interpret
+   them. "0 same-station joins" is a recitation; "not one station could
+   be publicly confirmed as the same physical monitor in both sources"
+   is a finding.
+4. **Why it happens / a close-up.** One section that makes the pattern
+   tangible — a named example, a gradient, a mechanism.
+5. **What this means for the reader.** The practitioner "so what": what a
+   planner, analyst, or program officer should do differently.
+6. **What this does not say.** Limitations stay mandatory and appear
+   before the close — written as reader guidance, not as a legal list.
+7. **What would change this finding.** The named public evidence that
+   would narrow or overturn it (§6.7 stopping rule, reader-facing).
+8. **How we measured this.** Three to five plain sentences plus the
+   reproduce commands and the evidence-page link. Everything deeper —
+   stage rules, retrieval states, ledger schemas — belongs on the
+   evidence page, not in the body.
+
+**Sentence-level rules.**
+
+- Section headings carry the argument: a reader who reads only the
+  headings gets the story. Process labels ("Methodology and claim
+  test", "Data and coverage") are not headings on the reader tier.
+- One idea per section; paragraphs of two to four sentences.
+- Coined internal terms ("claim-permission ladder", "nonclaim
+  geometry", "monitor-grade closure") never reach the reader tier
+  without a plain-language rendering first — and by default they stay
+  off it entirely.
+- The honesty machinery (maturity label, `attestation_chain`,
+  nonclaims) is untouched by this section: it is surfaced in
+  frontmatter and near the headline, exactly as before. The arc changes
+  how the body reads, never what it claims.
+
+This section governs new articles immediately and existing articles as
+they are next touched. §1–§4 checks apply unchanged.
+
+---
+
+## 8. Failure mode
 
 A check failure on any of §1, §2, §3, §4 blocks the PR. The author
 either:

@@ -2,8 +2,12 @@
 
 `attestation_chain: ai-first`. §18 AI-finalized 2026-04-27.
 
-Per `CONSTITUTION.md` §4 + §5 + §18.1. Tier-A/B/C systematic scan
-completed under §18 ACTIVE; bibliography in `/references.bib`.
+What happens when remittances fund a large share of national income while
+publicly quoted corridor costs stay high? Existing work measures corridor
+costs, macro dependence, and counter-cyclical resilience separately; fewer
+studies ask which ADB developing member economies sit at the high-dependence,
+high-cost corner of publicly observed corridors. Bibliography entries live in
+`/references.bib`.
 
 ---
 

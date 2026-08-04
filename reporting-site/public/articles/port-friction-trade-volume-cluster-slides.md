@@ -1,7 +1,7 @@
 ---
 title: "Trade volume did not predict observed port delay"
 slug: port-friction-trade-volume-cluster-slides
-subtitle: "A direct CPPI construct test for an inherited national logistics screen"
+subtitle: "A national logistics screen fails when tested against observed port time"
 program: port-hinterland-friction
 attestation_chain: ai-first
 maturity: PP

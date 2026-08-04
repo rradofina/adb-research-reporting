@@ -1,0 +1,162 @@
+[
+  {
+    "route": "/",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\home-1280.png"
+  },
+  {
+    "route": "/",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\home-375.png"
+  },
+  {
+    "route": "/research",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\research-1280.png"
+  },
+  {
+    "route": "/research",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\research-375.png"
+  },
+  {
+    "route": "/briefs",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\briefs-1280.png"
+  },
+  {
+    "route": "/briefs",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\briefs-375.png"
+  },
+  {
+    "route": "/air-monitoring",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\air-monitoring-1280.png"
+  },
+  {
+    "route": "/air-monitoring",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\air-monitoring-375.png"
+  },
+  {
+    "route": "/public-service-data-quality",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\public-service-data-quality-1280.png"
+  },
+  {
+    "route": "/public-service-data-quality",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\public-service-data-quality-375.png"
+  },
+  {
+    "route": "/findings/pm25-observability-gap-cluster",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\findings_pm25-observability-gap-cluster-1280.png"
+  },
+  {
+    "route": "/findings/pm25-observability-gap-cluster",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\findings_pm25-observability-gap-cluster-375.png"
+  },
+  {
+    "route": "/findings/measurement-gap-philippines-bangladesh",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\findings_measurement-gap-philippines-bangladesh-1280.png"
+  },
+  {
+    "route": "/findings/measurement-gap-philippines-bangladesh",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\findings_measurement-gap-philippines-bangladesh-375.png"
+  },
+  {
+    "route": "/about",
+    "width": 1280,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 1280,
+    "clientW": 1280,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\about-1280.png"
+  },
+  {
+    "route": "/about",
+    "width": 375,
+    "status": "ok",
+    "overflow": false,
+    "scrollW": 375,
+    "clientW": 375,
+    "errors": [],
+    "shot": "C:\\Users\\Raymond\\AppData\\Local\\Temp\\grok-goal-bf3445ea3889\\implementer\\qa\\about-375.png"
+  }
+]

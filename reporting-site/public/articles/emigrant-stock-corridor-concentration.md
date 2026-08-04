@@ -1,7 +1,7 @@
 ---
 slug: emigrant-stock-corridor-concentration
 title: The top five migrant origins have zero overlap after population normalization
-subtitle: Absolute emigrant stock measures diaspora scale; dividing the same stock by resident population moves Samoa and Tonga to the top and exposes Afghanistan as a forced-displacement exception.
+subtitle: Rank emigrant stock by headcount and India and China lead; divide by resident population and Samoa and Tonga take the top — the absolute top five and the share top five share no members, and only Afghanistan is forced-displacement-majority.
 kind: working-paper
 status: draft
 attestation_chain: ai-first
@@ -34,7 +34,7 @@ abstract: >
   migration purpose, welfare, or causal drivers.
 doi:
 published_at: 2026-04-26
-updated_at: 2026-07-18
+updated_at: 2026-07-31
 references:
   - undesa2024migrant
   - undesa2024sustainablemigration
@@ -53,113 +53,35 @@ review_external_chain: ai-synthesis under §18.4
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The measurement question
+# When emigration counts hide their denominator
 
-International migration statistics invite a simple ranking: count how many
-people from each origin live abroad, then sort from largest to smallest. The
-result is easy to communicate. It is also easy to overinterpret.
+Count how many people from each origin live abroad, sort largest to
+smallest, and India, China, Bangladesh, Afghanistan, and the Philippines
+lead. That order is easy to communicate. It is also easy to overread as
+migration intensity — as if the largest diasporas were the places where
+emigration bites hardest relative to the population still at home.
 
-UN DESA origin stock measures a cumulative population abroad. Large origins
-can have large diaspora counts even when that stock is small relative to the
-population still resident at origin. Small economies can show the opposite
-pattern. A ranking that does not name its denominator can therefore answer a
-different policy question from the one readers assume.
+UN DESA origin stock measures a cumulative population abroad, sometimes
+called a diaspora or transnational population
+[@undesa2024sustainablemigration]. Large origins can post large counts even
+when that stock is small relative to residents; small economies can show the
+opposite. An order that does not name its denominator can answer a
+different policy question from the one readers assume. Bilateral stock
+matrices also combine census, register, and other national evidence whose
+definitions and coverage need harmonization [@ozden2011where].
 
-The inherited version of this paper led with five large absolute origin
-stocks: India, China, Bangladesh, Afghanistan, and the Philippines. It showed
-that the set remained stable when the same stock was compared with a net-
-stock ordering. That test changed the direction convention but did not test
-population scale.
+This paper asks a sharper question for a 44-economy program panel: how much
+does the identity of the leading origins change when UN DESA 2024 emigrant
+stock is divided by WDI 2024 resident population, and does UNHCR
+forced-displacement evidence change how the population-share leaders should
+be read?
 
-This paper asks a sharper question: **how much does the identity of the
-leading origins change when UN DESA 2024 emigrant stock is divided by WDI
-2024 resident population, and does UNHCR forced-displacement evidence change
-the interpretation of the population-share leaders?**
+# What we found
 
-# Why the denominator matters
-
-UN DESA describes origin migrant stock as people from an origin who reside
-abroad, sometimes referred to as a diaspora or transnational population
-[@undesa2024sustainablemigration]. The measure is a stock at a reference date,
-not the number who left during that year. Bilateral stock matrices combine
-census, register, and other national evidence whose definitions and coverage
-require harmonization [@ozden2011where].
-
-Dividing the stock by resident population does not convert it into a flow. It
-changes the comparison from **diaspora size** to **cumulative stock abroad
-relative to the origin population**. That is useful, but still narrower than
-migration propensity. Migration depends on the aspiration and capability to
-move, policy, resources, networks, and forced circumstances
-[@dehaas2021aspirations]. A high or low share is not a welfare judgment.
-
-The distinction is operationally important in the Pacific. Small labor
-markets, high skilled-emigration rates, formal labor pathways, circulation,
-and older diaspora networks can all contribute to large stocks relative to
-resident populations [@adb2018pacificlabour; @anu2023palm]. Those mechanisms
-cannot be separated by the stock alone.
-
-# Data and coverage
-
-The analysis uses three public sources.
-
-1. **UN DESA International Migrant Stock 2024.** The origin-destination matrix
-   supplies the numerator and destination corridors [@undesa2024migrant].
-2. **World Bank WDI `SP.POP.TOTL`.** The fixed 2024 query supplies the mid-year
-   de facto resident-population denominator [@worldbank2024population].
-3. **UNHCR Refugee Data Finder 2024.** Origin-asylum rows identify refugees,
-   asylum-seekers, and other people in need of international protection
-   abroad [@unhcr2024methodology].
-
-The committed program panel contains 44 economies. UN DESA stock is present
-for all 44. WDI provides a 2024 denominator for 41. Taipei,China, Cook Islands,
-and Niue are withheld from the population-share ranking because no value is
-reported in the fixed WDI query. The UNHCR pipeline queries all 44 origins and
-finds at least one positive forced-abroad row for 41.
-
-These counts describe an analysis roster, not an authoritative current list
-of every ADB developing member. They also describe different source functions:
-a missing positive UNHCR row is not equivalent to a missing WDI denominator.
-
-# Method
-
-The method has four sequential steps.
-
-## 1. Rank absolute origin stock
-
-For each program economy, sum UN DESA 2024 destination rows by origin. Sort
-the resulting emigrant stock from largest to smallest.
-
-## 2. Add the resident-population denominator
-
-Join the origin code to WDI `SP.POP.TOTL` for 2024 and calculate:
-
-`emigrant stock ÷ resident population × 100`.
-
-Rows without a denominator are withheld. The analysis then ranks the 41
-valid rows by this percentage.
-
-## 3. Compare the leading sets
-
-At the baseline top-N of five, calculate the intersection count and divide by
-five. Reshape the absolute-stock headline when overlap is at most 50%. Test
-top-N at 3, 5, and 8 and the material-overlap threshold at 25%, 50%, and 75%.
-
-## 4. Test the forced-displacement component
-
-For each origin, sum UNHCR refugees, asylum-seekers, and other people in need
-of international protection located outside the origin. Divide that sum by
-UN DESA emigrant stock. IDPs are excluded because they remain inside the
-origin economy. The forced-displacement-majority rule is 50%, tested at 25%
-and 75%.
-
-The residual is labeled other or unclassified migrant stock. It is not
-labeled labor migration.
-
-# Result 1: the top five is replaced completely
-
-The absolute top five is India, China, Bangladesh, Afghanistan, and the
-Philippines. The population-share top five is Samoa, Tonga, Armenia, Nauru,
-and Fiji. The intersection is empty.
+The absolute top five and the population-share top five share **zero**
+members. Absolute leaders are India, China, Bangladesh, Afghanistan, and the
+Philippines. Population-share leaders are Samoa, Tonga, Armenia, Nauru, and
+Fiji.
 
 ![Rank inversion between absolute stock and stock divided by population](/programs/migration-displacement-signals/generated/charts/migration-rank-inversion.png)
 
@@ -169,15 +91,19 @@ WDI 2024 population. Three rows without a WDI denominator are withheld.
 Stock is cumulative, not an annual flow.*
 
 India's 18.5 million origin stock is 1.28% of resident population and moves
-from absolute rank 1 to share rank 36. China's 11.7 million is 0.83% and moves
-from rank 2 to 39. Bangladesh moves from 3 to 25, and the Philippines from 5
-to 23. Afghanistan moves from 4 to 6 and becomes the near-rank exception.
+from absolute rank 1 to share rank 36. China's 11.7 million is 0.83% and
+moves from rank 2 to 39. Bangladesh moves from 3 to 25, and the Philippines
+from 5 to 23. Afghanistan moves from 4 to 6 and becomes the near-rank
+exception.
 
-This does not mean the absolute counts are wrong. They answer a scale
-question. It means they cannot carry an intensity interpretation without a
-denominator.
+That does not mean the absolute counts are wrong. They answer a scale
+question. They cannot carry an intensity interpretation without a
+denominator. The absolute top five was India, China, Bangladesh,
+Afghanistan, and the Philippines; the population-share top five is Samoa,
+Tonga, Armenia, Nauru, and Fiji — a complete replacement at the baseline
+top-N of five.
 
-# Result 2: the population-share leaders are small and medium economies
+# Samoa and Tonga sit above half their resident population
 
 Samoa's 119,313 people in the origin stock equal 54.73% of its resident
 population. Tonga's 53,237 equal 51.10%. Armenia, Nauru, and Fiji follow at
@@ -189,16 +115,26 @@ population. Tonga's 53,237 equal 51.10%. Armenia, Nauru, and Fiji follow at
 bars describe cumulative stock relative to the population at origin; they do
 not estimate departures in 2024.*
 
-The Pacific rows require careful interpretation. The numerator can include
-older diaspora waves, family mobility, labor schemes, study, and other
-movements. The stock cannot reveal which mechanism dominates or whether the
-corridor is currently growing.
+The Pacific rows need careful reading. The numerator can include older
+diaspora waves, family mobility, labor schemes, study, and other movements.
+Small labor markets, high skilled-emigration rates, formal labor pathways,
+circulation, and older diaspora networks can all contribute to large stocks
+relative to resident populations [@adb2018pacificlabour; @anu2023palm]. The
+stock alone cannot separate those mechanisms or say whether a corridor is
+currently growing. Dividing stock by resident population also does not turn
+a stock into a flow: it changes the comparison from diaspora size to
+cumulative stock abroad relative to the origin population — still narrower
+than migration propensity, which depends on aspiration, capability, policy,
+resources, networks, and forced circumstances [@dehaas2021aspirations].
 
-# Result 3: corridor concentration is descriptive, not decisive
+# Afghanistan is a different mobility object
 
-The original paper also compared the share of each large absolute origin's
-stock in its top destinations. At top three, India records 45.2%, China 49.5%,
-Bangladesh 65.3%, Afghanistan 80.2%, and the Philippines 55.2%.
+Corridor concentration among the large absolute origins is useful context
+but too choice-sensitive to carry the paper. At top three destinations,
+India records 45.2% of origin stock, China 49.5%, Bangladesh 65.3%,
+Afghanistan 80.2%, and the Philippines 55.2%. Every origin clears a 25%
+threshold, three clear 50%, and only Afghanistan clears 75%; the count also
+rises materially when five rather than three destinations are included.
 
 ![Corridor concentration across top two, three, and five destinations](/programs/migration-displacement-signals/generated/charts/migration-corridor-concentration.png)
 
@@ -206,20 +142,13 @@ Bangladesh 65.3%, Afghanistan 80.2%, and the Philippines 55.2%.
 destinations. The 50% line is heuristic; the corridors combine migration
 purposes and historical periods.*
 
-Every origin clears a 25% threshold, three clear 50%, and only Afghanistan
-clears 75%. The count also rises materially when five rather than three
-destinations are included. Corridor concentration remains useful context, but
-its classification is too choice-sensitive to carry the paper.
-
-# Result 4: Afghanistan is a different mobility object
-
-The UNHCR crosswalk shows why Afghanistan cannot be read like the population-
-share leaders. Its selected international forced-displacement stock is
-6,151,318, equal to 81.7% of the UN DESA emigrant stock. Iran and Pakistan
-are the two largest forced-displacement destinations in the public crosswalk.
-
-None of the population-share top five is forced-displacement-majority. Their
-UNHCR components range from 0.4% for Samoa to 5.7% for Armenia.
+The UNHCR crosswalk shows why Afghanistan cannot be read like the
+population-share leaders. Its selected international forced-displacement
+stock is 6,151,318, equal to 81.7% of the UN DESA emigrant stock. Iran and
+Pakistan are the two largest forced-displacement destinations in the public
+crosswalk. None of the population-share top five is
+forced-displacement-majority: their UNHCR components range from 0.4% for
+Samoa to 5.7% for Armenia.
 
 ![Forced-displacement composition for Afghanistan and the population-share top five](/programs/migration-displacement-signals/generated/charts/migration-forced-displacement-composition.png)
 
@@ -229,43 +158,9 @@ residual is other or unclassified stock, not a labor-migration estimate.*
 
 Afghanistan remains above the majority rule at 25%, 50%, and 75%. Every
 population-share top-five economy remains below 25%. The construct exception
-therefore survives the required threshold sensitivity.
+survives the required threshold sensitivity.
 
-# Source observability
-
-The result is only as strong as the joined source layers. UN DESA supplies
-the common stock object. WDI supplies the denominator for 41 rows. UNHCR
-identifies one part of migration purpose but cannot classify the residual.
-
-![Coverage of the three joined migration evidence layers](/programs/migration-displacement-signals/generated/charts/migration-source-observability.png)
-
-*Figure 5. Source observability across the 44-economy program panel. Missing
-population denominators and the limits of forced-displacement classification
-remain visible.*
-
-The chart is not a generic data inventory. It explains why the paper can make
-a denominator and forced-displacement claim but cannot make a flow or labor-
-migration claim.
-
-# Robustness
-
-The denominator result is stable across the required arbitrary choices:
-
-| Top-N | Shared members | Overlap |
-|---:|---:|---:|
-| 3 | 0 | 0.0% |
-| 5 | 0 | 0.0% |
-| 8 | 1 | 12.5% |
-
-Every run satisfies the material-change decision at 25%, 50%, and 75%.
-Afghanistan remains above every forced-displacement threshold, while no
-population-share top-five economy reaches even 25%.
-
-The analysis does not test vintage stability. Repeating the comparison for
-UN DESA 2015 and 2020 would answer a separate temporal question and should be
-pre-specified before the next issue.
-
-# What the finding means
+# What this means for anyone reading origin rankings
 
 The evidence supports three different operational readings.
 
@@ -278,44 +173,94 @@ The evidence supports three different operational readings.
 - Add **migration-purpose evidence** before describing a row as labor,
   family, student, temporary, or forced movement.
 
-These readings can guide source selection, country diagnostics, and the design
-of a future flow study. They do not establish which economy has too much or
-too little migration.
+These readings can guide source selection, country diagnostics, and the
+design of a future flow study. They do not establish which economy has too
+much or too little migration. High or low shares are not welfare judgments.
 
-# What the finding does not mean
+The result is only as strong as the joined source layers. UN DESA supplies
+the common stock object for all 44 panel economies. WDI provides a 2024
+denominator for 41 economies; Taipei,China, Cook Islands, and Niue are
+withheld from the population-share ranking because no value is reported in
+the fixed WDI query. WDI supplies the denominator for 41 rows in the joined
+panel. UNHCR identifies one part of migration purpose for 41 origins with at
+least one positive forced-abroad row, but cannot classify the residual.
 
-The paper does not estimate current migration flow, an individual's migration
-probability, welfare effects, brain drain, remittance benefits, climate-
-related migration, internal displacement, or causal drivers. High stock
-shares can coexist with very different policies and development outcomes.
-Migration can also create substantial gains for migrants and origin and
-destination economies [@clemens2011economics].
+![Coverage of the three joined migration evidence layers](/programs/migration-displacement-signals/generated/charts/migration-source-observability.png)
 
-The population-share ranking is incomplete because three program economies
-lack WDI denominators. Cook Islands and Niue could plausibly enter the upper
-tail if authoritative denominators were added. That uncertainty does not
-restore the absolute top five, but it prevents treating the observed share
-ordering as a complete regional league table.
+*Figure 5. Source observability across the 44-economy program panel. Missing
+population denominators and the limits of forced-displacement classification
+remain visible.*
 
-# Conclusion
+These counts describe an analysis roster, not an authoritative current list
+of every ADB developing member. A missing positive UNHCR row is not
+equivalent to a missing WDI denominator. The chart explains why the paper
+can make a denominator and forced-displacement claim but cannot make a flow
+or labor-migration claim.
 
-The inherited absolute-stock intensity story is falsified. The same public
-stock object produces a disjoint leading set when population enters the
-denominator. The strongest interpretation is not that one ranking is right
-and the other wrong, but that they answer different questions and should not
-share a headline.
+# What this does not say
 
-The UNHCR crosswalk adds the second necessary distinction. Afghanistan is
-close to the population-share leaders, but its stock is predominantly a
-forced-displacement object. Samoa, Tonga, Armenia, Nauru, and Fiji are not.
-Even then, the remaining stock cannot be called labor migration.
+The paper does not estimate current migration flow, an individual's
+migration probability, welfare effects, brain drain, remittance benefits,
+climate-related migration, internal displacement, or causal drivers. High
+stock shares can coexist with very different policies and development
+outcomes. Migration can also create substantial gains for migrants and
+origin and destination economies [@clemens2011economics].
 
-This issue therefore stops at a defensible measurement correction: name the
-denominator, separate forced displacement where the source permits, expose
-missing rows, and reserve current-flow or migration-purpose claims for a new
-public data object.
+The residual after the UNHCR forced-displacement share is other or
+unclassified migrant stock — not a labor-migration estimate. IDPs are
+excluded from the UNHCR crosswalk because they remain inside the origin
+economy. The population-share ranking is incomplete because three program
+economies lack WDI denominators; Cook Islands and Niue could plausibly enter
+the upper tail if authoritative denominators were added. That uncertainty
+does not restore the absolute top five, but it prevents treating the
+observed share ordering as a complete regional league table.
 
-# Reproduce the analysis
+The analysis does not test vintage stability. Repeating the comparison for
+UN DESA 2015 and 2020 would answer a separate temporal question and should
+be pre-specified before the next issue.
+
+# What would change this finding
+
+The denominator result is already stable across the required arbitrary
+choices:
+
+| Top-N | Shared members | Overlap |
+|---:|---:|---:|
+| 3 | 0 | 0.0% |
+| 5 | 0 | 0.0% |
+| 8 | 1 | 12.5% |
+
+Every run satisfies the material-change decision at 25%, 50%, and 75%.
+Afghanistan remains above every forced-displacement threshold, while no
+population-share top-five economy reaches even 25%.
+
+What would reopen or reshape the finding is a new public data object, not
+another absolute-stock ranking: authoritative resident-population
+denominators for Cook Islands and Niue; matched stock vintages with a
+pre-specified temporal test; independent stock validation; or a
+purpose-specific annual deployment or visa-flow panel with a comparability
+gate. Until those objects exist, the defensible stop is a measurement
+correction — name the denominator, separate forced displacement where the
+source permits, expose missing rows, and reserve current-flow or
+migration-purpose claims for better-aligned data.
+
+# How we measured this
+
+UN DESA International Migrant Stock 2024 supplies the origin-destination
+numerator and destination corridors for all 44 panel economies
+[@undesa2024migrant]. World Bank WDI `SP.POP.TOTL` for 2024 supplies the
+mid-year de facto resident-population denominator
+[@worldbank2024population]. UNHCR Refugee Data Finder 2024 supplies
+origin-asylum rows for refugees, asylum-seekers, and other people in need of
+international protection abroad [@unhcr2024methodology]. Absolute origin stock is ranked first by summing UN DESA 2024 destination
+rows by origin. Stock is then joined to WDI `SP.POP.TOTL` for 2024 and
+scored as `emigrant stock ÷ resident population × 100`; rows without a
+denominator are withheld and the analysis ranks the 41 valid rows by this
+percentage. At the baseline top-N of five, the absolute-stock headline is
+reshaped when overlap is at most 50%. Leading sets are compared at top-N of
+3, 5, and 8 against material-overlap thresholds of 25%, 50%, and 75%. UNHCR
+forced-abroad stock is divided by UN DESA emigrant stock with a 50%
+forced-displacement-majority rule tested at 25% and 75%.
 
 ```powershell
 python migration-displacement-signals/scripts/deepen-per-population.py
@@ -332,4 +277,4 @@ Full source and cache instructions are in
 Permanent evidence route:
 [/program/migration-displacement-signals/evidence](/program/migration-displacement-signals/evidence).
 
-— Raymond Adofina · 2026-07-18 · `attestation_chain: ai-first`
+— Raymond Adofina · 2026-07-31 · `attestation_chain: ai-first`

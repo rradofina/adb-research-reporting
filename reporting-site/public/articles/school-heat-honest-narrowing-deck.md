@@ -1,7 +1,7 @@
 ---
 slug: school-heat-honest-narrowing-deck
 title: "Cambodia led the proxy—but ranked last in the observed heatwave subset"
-subtitle: "AI-first construct validation · §18"
+subtitle: "A school-heat proxy ranking reverses when observed heatwave counts enter — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [ADB DMCs]
 topics: [education, heat, school-disruption, construct-validation]
 program: school-heat-disruption
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -22,7 +22,7 @@ banned_words_check: passing
 dmc_framing_check: passing
 ---
 
-# The inherited claim fails three validity gates
+# The proxy screen fails three independent checks
 
 ![](../../school-heat-disruption/generated/charts/school-three-gate-validity.png){width=100%}
 
@@ -54,6 +54,6 @@ dmc_framing_check: passing
 
 ![](../../school-heat-disruption/generated/charts/school-enrollment-share-proxy.png){width=100%}
 
-# Retire the ranking; build the school-day object
+# Drop the ranking; measure school days lost
 
 ![](../../school-heat-disruption/generated/charts/school-next-data-object.png){width=100%}

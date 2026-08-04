@@ -24,6 +24,7 @@ abstract: >
   affordability incidence, or causal effects.
 doi:
 published_at: 2026-07-19
+updated_at: 2026-07-31
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
@@ -31,21 +32,13 @@ review_external_chain: ai-synthesis under §18.4; no individual contacted
 review_internal_chain: ai-critique-pass under §18
 ---
 
-# The finding
+# When the signal reaches further than the user
 
 Mobile networks can reach a population before the population uses the
-Internet. Across 34 ADB developing member economies with exact-year ITU data
-in 2024, reported 4G/LTE coverage exceeds internet use by a median of **14.3
-percentage points**. The difference is positive in 31 cases.
-
-![Reported 4G availability exceeds internet use in 31 of 34 observed economies in 2024. The chart shows the exact-year percentage-point difference and retains three negative values as source-disagreement diagnostics.](/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg)
-
-The result is a warning about measurement, not a ranking of digital success.
-Coverage means living within range of a reported 4G/LTE signal. Use means
-having used the Internet from any location in the previous three months. The
-two indicators answer different questions.
-
-# Why the old research plan was looking at the wrong population
+Internet. A ministry tracking digital inclusion often sees coverage percentages
+near the ceiling and still faces households that do not go online. Before asking
+how fast tested connections are, the first question is simpler: do official
+network availability and actual use coincide?
 
 The inherited program was designed around roughly 2.6 GB of global Ookla
 Speedtest tiles. That source can answer a useful question: how a connection
@@ -53,35 +46,23 @@ performed for a device and user who generated a test. It cannot observe people
 who did not connect, lacked a suitable device, rationed data, or never ran a
 test.
 
-The study therefore works backward from the decision question. Before asking
-how fast tested connections are, it asks whether official network availability
-and actual use coincide. This follows the broader literature, which separates
-infrastructure from affordability, devices, skills, safety, and meaningful use
-[@itu2022globalconnectivity] [@worldbank2016digitaldividends].
+The study therefore works backward from the decision question. This follows the
+broader literature, which separates infrastructure from affordability, devices,
+skills, safety, and meaningful use [@itu2022globalconnectivity]
+[@worldbank2016digitaldividends].
 
-# Two official indicators, matched without carrying values across years
+# What we found: high coverage frequently coexists with much lower use
 
-The public ITU DataHub supplies both objects [@itu2026datahub].
+Across 34 ADB developing member economies with exact-year ITU data in 2024,
+reported 4G/LTE coverage exceeds internet use by a median of **14.3 percentage
+points**. The difference is positive in 31 cases.
 
-1. `i271GA` reports the percentage of the population within range of at least
-   a 4G/LTE signal, whether or not they subscribe or use it.
-2. `i99H` reports the percentage of individuals who used the Internet from any
-   location in the previous three months.
+![Reported 4G availability exceeds internet use in 31 of 34 observed economies in 2024. The chart shows the exact-year percentage-point difference and retains three negative values as source-disagreement diagnostics.](/programs/digital-performance/generated/charts/digital-performance-01-availability-use-gap-hero.svg)
 
-The pipeline joins only the same economy and calendar year. It never carries a
-value forward or imputes a missing economy. The prospective headline rule
-selects the latest year through 2024 with pairs for at least half of the
-44-economy repository roster. That rule selects 2024 with 34 cases.
-
-![Both source components behind each 2024 difference. A long connector can reflect high coverage, low use, or both.](/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg)
-
-The primary estimand is `4G coverage minus internet use`, in percentage points.
-It is deliberately called an availability–use measurement gap. Unlike the
-GSMA person-level concept of a mobile usage gap [@gsma2024mobileconnectivity],
-this aggregate subtraction cannot identify the number of people who are both
-covered and offline.
-
-# High coverage frequently coexists with much lower use
+The result is a warning about measurement, not a ranking of digital success.
+Coverage means living within range of a reported 4G/LTE signal. Use means
+having used the Internet from any location in the previous three months. The
+two indicators answer different questions.
 
 The 2024 median coverage value is 98.0%; median use is 82.2%. Some of the
 largest differences sit near the coverage ceiling:
@@ -99,7 +80,9 @@ Kiribati (-27.4), Nauru (-4.0), and Kazakhstan (-1.8) go in the other
 direction. Negative values are not deleted: they flag source, definition, or
 estimation differences that require country-level review.
 
-# The difference narrowed—but not everywhere
+![Both source components behind each 2024 difference. A long connector can reflect high coverage, low use, or both.](/programs/digital-performance/generated/charts/digital-performance-02-components-dumbbell.svg)
+
+# Why the gap moves unevenly—and what one price basket cannot explain
 
 Annual medians suggest that reported 4G availability expanded ahead of use
 during the earlier years. The cross-sectional membership changes, so the chart
@@ -115,8 +98,6 @@ A balanced 2018–2024 comparison keeps 28 economies. Its median gap narrows by
 The regional direction is encouraging, but it is not a shared trajectory. A
 single mean or median would conceal the 12 economies moving the other way.
 
-# One price basket cannot explain the pattern
-
 The ITU 5 GB mobile-data basket is available for 32 of the 34 headline cases.
 Its association with the availability–use difference is weak: Spearman 0.16
 and Pearson 0.20.
@@ -130,8 +111,6 @@ unimportant. A national stylized basket is not household affordability, and
 skills, devices, local content, trust, perceived value, and geography remain
 unmeasured [@zhang2013internetconsumption] [@zhou2011ruralsouthasia].
 
-# The strongest secondary signal has the weakest coverage
-
 Only ten headline economies also report same-year urban and rural internet-use
 rates. Their urban-minus-rural use difference moves closely with the national
 availability–use difference: Spearman 0.93.
@@ -141,8 +120,6 @@ availability–use difference: Spearman 0.93.
 This is a useful hypothesis and a weak basis for generalization. The sample is
 small and selected by reporting availability. The evidence supports expanding
 comparable location-disaggregated surveys, not declaring an ADB-wide mechanism.
-
-# Robustness and source limits are part of the story
 
 Varying the headline sample floor by ±50% does not change the year, sample, or
 median. The 25%, 50%, and 75% roster floors all select 2024, 34 economies, and
@@ -156,13 +133,7 @@ strings identify ITU estimates have a 15.8-point median; the other 28 have a
 State reports, estimates, and nowcasts, and the underlying series can be
 revised [@itu2024factsfigures].
 
-Five roster economies never form an exact-year pair during 2012–2024, and ten
-are absent from the 2024 headline. The analysis reports those denominators
-instead of treating the full roster as observed.
-
-![Exact-year coverage-and-use pair availability. Grey means missing, not zero.](/programs/digital-performance/generated/charts/digital-performance-10-pair-availability-heatmap.svg)
-
-# What the result changes
+# What this means for monitoring
 
 For monitoring, the immediate change is simple:
 
@@ -181,11 +152,57 @@ skills, welfare, or causal policy effects. Its contribution is narrower and
 useful: it shows that rollout and use are not interchangeable progress
 indicators, and it gives researchers a reproducible way to keep them separate.
 
-# Reproduce the analysis
+# What this does not say
 
-The committed scripts fetch public ITU responses, store raw objects in the
-ignored cache, record retrieval URLs and SHA-256 digests, build the 391-row
-exact-year panel, and render 12 evidence figures.
+The primary estimand is `4G coverage minus internet use`, in percentage points.
+It is deliberately called an availability–use measurement gap. Unlike the
+GSMA person-level concept of a mobile usage gap [@gsma2024mobileconnectivity],
+this aggregate subtraction cannot identify the number of people who are both
+covered and offline.
+
+Five roster economies never form an exact-year pair during 2012–2024, and ten
+are absent from the 2024 headline. The analysis reports those denominators
+instead of treating the full roster as observed.
+
+![Exact-year coverage-and-use pair availability. Grey means missing, not zero.](/programs/digital-performance/generated/charts/digital-performance-10-pair-availability-heatmap.svg)
+
+The study measures a difference between official availability and use
+indicators. It does not identify covered non-users, service quality,
+affordability incidence, device ownership, skills, trust, welfare, or causal
+effects. Negative differences are diagnostics, not deleted outliers. A national
+price basket is not household affordability, and an urban–rural diagnostic on
+ten economies is not an ADB-wide mechanism.
+
+# What would change this finding
+
+Independent household, device, skills, non-use-barrier, or
+distribution-sensitive affordability evidence would let the program move from
+the aggregate measurement gap to diagnosis. Same-year urban and rural use rates
+for more of the headline set would test whether the urban–rural association
+survives outside the ten reporting cases. Speed-test layers remain useful only
+as performance conditional on testing, with measurement deserts reported
+alongside speed—not as a substitute for people who never connect.
+
+Until those objects arrive, the honest reading stays narrow: reported
+availability and reported use answer different questions, and the two should
+not be treated as interchangeable progress indicators.
+
+# How we measured this
+
+The public ITU DataHub supplies both objects [@itu2026datahub].
+
+1. `i271GA` reports the percentage of the population within range of at least
+   a 4G/LTE signal, whether or not they subscribe or use it.
+2. `i99H` reports the percentage of individuals who used the Internet from any
+   location in the previous three months.
+
+The pipeline joins only the same economy and calendar year. It never carries a
+value forward or imputes a missing economy. The prospective headline rule
+selects the latest year through 2024 with pairs for at least half of the
+44-economy repository roster. That rule selects 2024 with 34 cases. The
+committed scripts fetch public ITU responses, store raw objects in the ignored
+cache, record retrieval URLs and SHA-256 digests, build the 391-row exact-year
+panel, and render 12 evidence figures.
 
 ```powershell
 python digital-performance/scripts/build-coverage-use-gap.py --refresh
@@ -195,3 +212,5 @@ python digital-performance/scripts/build-figure-dossier.py
 The evidence packet includes the full methodology, literature review,
 coverage table, sensitivity suite, limitations, internal critique, external
 red-team synthesis, and reproduction guide.
+
+— `attestation_chain: ai-first`

@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: climate-health-workdays-blog
 title: A stable climate-health proxy can still measure the wrong thing
 subtitle: Direct heat-labor data overturn the inherited PM2.5 workday-loss ranking.
@@ -23,7 +24,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # Stability is not validity
 
 The first version of this research looked reassuring. A simple score combined

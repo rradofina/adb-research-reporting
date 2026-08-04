@@ -1,98 +1,30 @@
 [
   {
-    "slug": "flood-market-access-cluster",
-    "title": "Flood water cuts modeled market access for about 346,000 people in the Sylhet pilot",
-    "subtitle": "An observed flood footprint, historical road graph, eight mapped markets, and 54 sensitivity variants replace a national proxy that never measured access.",
-    "kind": "working-paper",
+    "slug": "about-the-lab",
+    "title": "About the Development Blindspots Lab",
+    "subtitle": "We measure what official data misses across ADB developing member economies — public sources only, every number from a committed script, every claim under an explicit Constitution.",
+    "kind": "blog",
     "tier": "working-paper",
     "status": "draft",
-    "program": "flood-market-access",
-    "maturity": "PP",
+    "program": "meta",
+    "maturity": "H",
     "topics": [
-      "flood",
-      "roads",
-      "market-access",
-      "network-analysis",
-      "construct-validation"
+      "governance",
+      "methodology"
     ],
-    "geographies": [
-      "Bangladesh",
-      "Sylhet"
-    ],
-    "abstract": "This paper tests whether public data can support a route-based flood-access claim rather than a broad national exposure proxy. It joins the UNOSAT satellite-detected flood footprint for Sylhet on 26 June 2024 with a historical OpenStreetMap road and marketplace snapshot dated 25 June 2024 and WorldPop 2020 population. The base stress test treats every core-road segment intersecting detected water plus 20 metres as unavailable. Of 838,224 modeled people with a baseline route to one of eight mapped marketplaces, 345,718 lose all modeled routes, or 41.24%. The disconnected share remains 38.92%–43.45% across 54 variants covering two road definitions and ±50% changes to the flood buffer, population snap, and market deduplication radius. The result is a construct-validation pilot, not an observed closure or welfare estimate. Its main limits are the all-intersecting road-cut assumption, an unaudited market inventory, a 2020 modeled population surface, and the analysis boundary. The next study requires depth- or field-calibrated passability and independently validated destinations.",
+    "geographies": [],
+    "abstract": "The Blindspots Lab studies the difference between official data and reality across Asian Development Bank developing member economies. Public data only. Every empirical number traces to a committed script. The current issue uses Constitution §18 AI-first attestation, with source lineage, sensitivity checks, caveats, and status labels made explicit. This first article describes what binds the lab and why it exists.",
     "authors": [
       "Raymond Adofina"
     ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-07-19",
+    "published_at": "2026-04-25",
+    "updated_at": "2026-07-31",
     "doi": "",
-    "file": "flood-market-access-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "owner-led review pending; no external contact",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "food-price-joint-qualifier",
-    "title": "Only one in nine corrected Nepal rice-price spikes followed locally dry rainfall",
-    "subtitle": "A 12-market construct validation retires both the inherited annual DMC qualifier and an earlier price-wave method; the remaining result is a coincidence screen, not climate attribution.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "food-price-climate-transmission",
-    "maturity": "PP",
-    "topics": [
-      "food-price",
-      "climate",
-      "market-prices",
-      "construct-validation"
-    ],
-    "geographies": [
-      "Nepal"
-    ],
-    "abstract": "This paper tests whether an inherited annual country screen can support a climate-to-food-price research claim and whether a public Nepal market-month object offers a better-aligned alternative. The annual screen intersects headline CPI inflation with agricultural raw-material imports; it excludes Nepal from its top 10 and cannot identify a commodity, event, market, or mechanism. The Nepal object joins WFP coarse-rice retail prices in 12 markets to NASA POWER monthly point rainfall for 2019–2025. Correcting the price outcome from distance to a full-sample calendar-month median to year-on-year log change reduces flagged spike cells from 259 to 152 and broad wave months from 25 to 10. Under the main thresholds, 17 of 152 spike cells follow locally dry rainfall at a one-month lag. Dry alignment remains a minority in all 81 ±50% threshold combinations, but wave and cluster counts are unstable. Annual headline CPI and median market rice-price change have a five-year Spearman correlation of +0.21 (exact permutation p=0.73), too little evidence and too much construct mismatch for validation. The result is a measurement audit and replication boundary: observed hazard events, multiple commodities, market access, and macro controls are required before estimating transmission.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-27",
-    "updated_at": "2026-07-19",
-    "doi": "",
-    "file": "food-price-joint-qualifier.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "pm25-observability-gap-cluster",
-    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
-    "subtitle": "A 24-economy audit stops before station-radius coverage because public same-station identity and monitor-grade evidence do not close.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "published",
-    "program": "air-monitoring",
-    "maturity": "SR",
-    "topics": [
-      "air-quality",
-      "PM2.5",
-      "public-data-quality",
-      "measurement-audit"
-    ],
-    "geographies": [
-      "regional"
-    ],
-    "abstract": "Public dashboards and aggregators expose station locations and measurements, but a station-radius coverage claim requires a traceable chain from physical station identity to current monitor-grade evidence. This study consolidates 64 committed public-source summaries across a 24-economy discovery frame. It audits 239 official station rows, checks 44 official/OpenAQ identity candidates, and computes 831 denominator joins as nonclaim geometry. It verifies 0 same-station rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and 0 allowed coverage claims. The result is a bounded public-data absence, not evidence that QA records do not exist and not an estimate of monitor coverage, exposure, or regulator performance.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-07-07",
-    "updated_at": "2026-07-19",
-    "doi": "",
-    "file": "pm25-observability-gap-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
+    "file": "about-the-lab.md",
+    "attestation_chain": "",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
   },
   {
     "slug": "access-stress-pilot-cluster",
@@ -124,12 +56,76 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-27",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "access-stress-pilot-cluster.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "coastal-informal-cluster",
+    "title": "90.9 million more people in low-elevation urban centres",
+    "subtitle": "Named-city GHS-UCDB evidence replaces an inherited national proxy—and narrows the claim from “informal risk” to recorded low-elevation exposure growth, not flood probability or informality.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "coastal-informal-risk",
+    "maturity": "PP",
+    "topics": [
+      "coastal cities",
+      "low elevation",
+      "urban growth",
+      "GHSL",
+      "measurement"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Across 1,334 GHS-UCDB urban centres with reported low-elevation fields in 24 ADB developing economies, population recorded below 10 metres increased from 237.3 million in 2000 to 328.2 million in 2020. The net increase of 90.9 million is concentrated: Shanghai, Bangkok, and Dhaka lead, and the top ten centres account for 52.1% of positive change. A stricter 5-metre definition and 10-, 20-, and 30-year windows preserve the direction. The object measures change inside fixed 2025 urban-centre footprints; it does not identify flood probability, loss, informality, deprivation, protection, or policy failure.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "coastal-informal-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "digital-availability-use-gap",
+    "title": "The network is present. Use still lags.",
+    "subtitle": "Exact-year ITU data show a 14.3-point median difference between reported 4G availability and internet use across 34 ADB developing member cases in 2024.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "digital-performance",
+    "maturity": "SR",
+    "topics": [
+      "digital inclusion",
+      "mobile coverage",
+      "internet use",
+      "affordability",
+      "statistical measurement"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "In 2024, reported 4G/LTE population coverage exceeds internet use in 31 of 34 ADB developing member economies with exact-year ITU observations. The median difference is 14.3 percentage points; median coverage is 98.0% and median use is 82.2%. A balanced 28-economy comparison shows the median gap narrowing by 5.9 points from 2018 to 2024, but 12 economies widen. A 5 GB mobile-data price basket has only a weak cross-sectional association with the gap, while an urban-rural use diagnostic is strong but covers only ten economies. The study measures a difference between official availability and use indicators; it does not identify covered non-users, service quality, affordability incidence, or causal effects.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "digital-availability-use-gap.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
@@ -156,7 +152,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-18",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "disaster-burden-cluster.md",
     "attestation_chain": "ai-first",
@@ -167,7 +163,7 @@
   {
     "slug": "emigrant-stock-corridor-concentration",
     "title": "The top five migrant origins have zero overlap after population normalization",
-    "subtitle": "Absolute emigrant stock measures diaspora scale; dividing the same stock by resident population moves Samoa and Tonga to the top and exposes Afghanistan as a forced-displacement exception.",
+    "subtitle": "Rank emigrant stock by headcount and India and China lead; divide by resident population and Samoa and Tonga take the top — the absolute top five and the share top five share no members, and only Afghanistan is forced-displacement-majority.",
     "kind": "working-paper",
     "tier": "working-paper",
     "status": "draft",
@@ -196,7 +192,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "emigrant-stock-corridor-concentration.md",
     "attestation_chain": "ai-first",
@@ -205,9 +201,332 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "flood-market-access-cluster",
+    "title": "Flood water cuts modeled market access for about 346,000 people in the Sylhet pilot",
+    "subtitle": "An observed flood footprint, historical road graph, eight mapped markets, and 54 sensitivity variants replace a national proxy that never measured access — 345,718 modeled people lose every route in the base Sylhet stress test.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "flood-market-access",
+    "maturity": "PP",
+    "topics": [
+      "flood",
+      "roads",
+      "market-access",
+      "network-analysis",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Bangladesh",
+      "Sylhet"
+    ],
+    "abstract": "This paper tests whether public data can support a route-based flood-access claim rather than a broad national exposure proxy. It joins the UNOSAT satellite-detected flood footprint for Sylhet on 26 June 2024 with a historical OpenStreetMap road and marketplace snapshot dated 25 June 2024 and WorldPop 2020 population. The base stress test treats every core-road segment intersecting detected water plus 20 metres as unavailable. Of 838,224 modeled people with a baseline route to one of eight mapped marketplaces, 345,718 lose all modeled routes, or 41.24%. The disconnected share remains 38.92%–43.45% across 54 variants covering two road definitions and ±50% changes to the flood buffer, population snap, and market deduplication radius. The result is a construct-validation pilot, not an observed closure or welfare estimate. Its main limits are the all-intersecting road-cut assumption, an unaudited market inventory, a 2020 modeled population surface, and the analysis boundary. The next study requires depth- or field-calibrated passability and independently validated destinations.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "flood-market-access-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "owner-led review pending; no external contact",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "food-price-joint-qualifier",
+    "title": "Only one in nine Nepal rice-price spikes followed locally dry rainfall",
+    "subtitle": "In 12 Nepali markets over 2020–2025, only 17 of 152 large coarse-rice price jumps followed an unusually dry month. Whatever drove the 2023–24 price wave, local dryness was not the common trigger — and this dataset cannot yet say what was.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "food-price-climate-transmission",
+    "maturity": "PP",
+    "topics": [
+      "food-price",
+      "climate",
+      "market-prices",
+      "construct-validation"
+    ],
+    "geographies": [
+      "Nepal"
+    ],
+    "abstract": "This paper tests whether an inherited annual country screen can support a climate-to-food-price research claim and whether a public Nepal market-month object offers a better-aligned alternative. The annual screen intersects headline CPI inflation with agricultural raw-material imports; it excludes Nepal from its top 10 and cannot identify a commodity, event, market, or mechanism. The Nepal object joins WFP coarse-rice retail prices in 12 markets to NASA POWER monthly point rainfall for 2019–2025. Correcting the price outcome from distance to a full-sample calendar-month median to year-on-year log change reduces flagged spike cells from 259 to 152 and broad wave months from 25 to 10. Under the main thresholds, 17 of 152 spike cells follow locally dry rainfall at a one-month lag. Dry alignment remains a minority in all 81 ±50% threshold combinations, but wave and cluster counts are unstable. Annual headline CPI and median market rice-price change have a five-year Spearman correlation of +0.21 (exact permutation p=0.73), too little evidence and too much construct mismatch for validation. The result is a measurement audit and replication boundary: observed hazard events, multiple commodities, market access, and macro controls are required before estimating transmission.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-27",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "food-price-joint-qualifier.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "invisible-urbanization-cluster",
+    "title": "One urban share can be 20 points from another",
+    "subtitle": "A GHSL–WDI measurement study across ADB developing economies shows why definition, administrative scale, and reclassification change the urban story.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "invisible-urbanization",
+    "maturity": "PP",
+    "topics": [
+      "urbanization",
+      "statistical definitions",
+      "GHSL",
+      "administrative classification"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Across 40 ADB developing-economy cases with both measures in 2020, the median absolute difference between the GHSL standardized urban share and the WDI national-definition share is 20.0 percentage points. The difference persists across 1975–2020 and runs in both directions. A second diagnostic shows that the share of urban-cell population inside rural-classified units rises as administrative units become finer. Unit transitions explain why the embedded stock can fall even while persistently rural units gain urban population. The study measures definition and aggregation effects; it does not establish legal misclassification or service neglect.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "invisible-urbanization-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "joint-vulnerability-cluster",
+    "title": "Five economies sit in five or more measurement-gap clusters — Bangladesh, Afghanistan, India, China, Pakistan",
+    "subtitle": "Across sixteen program screens, Bangladesh appears in eight top-N sets — more than any other economy. The pattern is set membership, not a composite score, and it concentrates in South and Southeast Asia.",
+    "kind": "brief",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "SR",
+    "topics": [
+      "meta-analysis",
+      "joint-vulnerability",
+      "cross-program"
+    ],
+    "geographies": [
+      "BGD",
+      "AFG",
+      "IND",
+      "CHN",
+      "PAK",
+      "PHL",
+      "LAO",
+      "MMR"
+    ],
+    "abstract": "A cross-program meta-finding across the lab's 16 SR/PR programs. Each program publishes a stable top-N set of ADB DMCs that survives its +/-50 percent sensitivity gate. When the 16 sets are intersected, one economy — Bangladesh — appears in 8 of 16. Afghanistan appears in 6. India, China, and Pakistan each appear in 5. The brief reports the joint-vulnerability cluster as a deliberately narrow, set-based meta-finding. Per Constitution §6.4, the brief does NOT publish a composite vulnerability score; the headline is set membership. Published under §18 (AI-First).",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-27",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "joint-vulnerability-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "measurement-gap-philippines-bangladesh",
+    "title": "Two maps of the same health system disagree — and not at random",
+    "subtitle": "OpenStreetMap shows 17.1 percent of the Philippines' official clinical-tier facility registry and 11.8 percent of Bangladesh's, and the gap is widest exactly where planners need maps most. Any workflow that mixes the two sources needs a reconciliation step first.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "public-service-data-quality",
+    "maturity": "PR",
+    "topics": [
+      "measurement-gap",
+      "public-service-data-quality",
+      "OSM",
+      "health-facility-registry"
+    ],
+    "geographies": [
+      "PHL",
+      "BGD"
+    ],
+    "abstract": "OpenStreetMap captures 17.1 percent of the Philippine clinical-tier national health-facility registry and 11.8 percent of the Bangladeshi one — both pilots well below the 30-percent fit-for-planning threshold of Macharia and colleagues 2025. The gap is steep within the Philippines: a 9.8x best-to-worst gradient across 17 administrative regions (63.5 percent in NCR, 6.5 percent in BARMM) and a 5.5x gradient between the top and bottom rural-share quintiles. The Bangladesh division-level gradient is directionally consistent but illustrative only (N=8). No administrative unit in either country agrees within 10 percent; the pattern survives every parameter in a plus-or-minus 50 percent sensitivity suite. The upgrade pass adds a Philippine ADM3 Open Buildings denominator, Bangladeshi facility-buffer and road-context layers, and an owner-downloaded official Philippines PSA Small Area Estimates poverty overlay — keeping 10 source-missing ADM3 rows and 8 unresolved BARMM facility records explicit and non-imputed. Published under CONSTITUTION.md §18 (AI-First Operating Mode): the literature, pre-registration, internal review, and red-team review are AI-attested. The article is upgrade-eligible to a human-final attestation chain via §18.5.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-25",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "measurement-gap-philippines-bangladesh.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
+  },
+  {
+    "slug": "per-capita-shifts-the-cluster",
+    "title": "Population-weighted indices conceal Pacific vulnerability — the per-capita reanalysis",
+    "subtitle": "When flood and coastal screens are recomputed per million people, the top-5 flips from large South Asian economies to Pacific small-island states. Same data, different scaling, different operational question.",
+    "kind": "brief",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "SR",
+    "topics": [
+      "meta-analysis",
+      "per-capita",
+      "Pacific",
+      "vulnerability"
+    ],
+    "geographies": [
+      "MHL",
+      "KIR",
+      "FSM",
+      "FJI",
+      "SLB",
+      "TUV"
+    ],
+    "abstract": "The lab's headline cluster — Bangladesh, Afghanistan, India, China, Pakistan — is partly an absolute-scale artifact. Programs whose index includes log10(population) or absolute event counts surface large-population economies. When the same data is recomputed per-capita, an entirely different top-5 emerges: Pacific small- island states (Marshall Islands, Kiribati, FSM, Fiji, Solomon Islands) for flood exposure; Tuvalu enters the coastal cluster. This brief documents the population-weighting artifact, distinguishes programs that are scale-invariant by construction (remittance- resilience top-5 set is identical under absolute and per-capita rankings) from those that are not (flood, coastal, disaster). The policy implication is not \"the cluster is wrong\" — both rankings answer real questions — but a reader citing the lab must say which question. Published under §18 (AI-First).",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-27",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "per-capita-shifts-the-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-blog",
+    "title": "A station dot is not yet a coverage claim",
+    "subtitle": "Across 24 economies, public monitor routes are visible—but not one station completes the chain needed for a verified population-coverage claim.",
+    "kind": "blog",
+    "tier": "blog",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "open-data",
+      "measurement"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Public monitoring routes are easier to find than public station-level quality evidence. The study documents exactly where the chain breaks.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-blog.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-brief",
+    "title": "Public station visibility does not validate monitoring coverage",
+    "subtitle": "The 24-economy public-source audit reaches station discovery and denominator geometry, then stops at identity and monitor-grade evidence—so publish the observability gap, not a coverage estimate.",
+    "kind": "brief",
+    "tier": "brief",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "The public-source packet audits 239 official station rows and 44 identity candidates but verifies no same-station joins, complete monitor-grade rows, station-radius-ready economies, or allowed coverage claims.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-brief.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster-social",
+    "title": "Public monitor routes are visible. Verified coverage evidence is not.",
+    "subtitle": "Across 24 economies, 239 official station rows and 44 identity candidates yield 0 allowed population-coverage claims.",
+    "kind": "social",
+    "tier": "social",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "A public-data audit finds station and denominator context but no verified same-station, complete-grade, or claim-ready rows.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-social.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
+    "slug": "pm25-observability-gap-cluster",
+    "title": "A station on the map is not proof of a working monitor",
+    "subtitle": "Public dashboards across 24 Asian economies show where air-quality stations sit. No public record confirms, for even one station, that the dot is a currently calibrated regulator-grade monitor — so coverage claims have to wait.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Public dashboards and aggregators expose station locations and measurements, but a station-radius coverage claim requires a traceable chain from physical station identity to current monitor-grade evidence. This study consolidates 64 committed public-source summaries across a 24-economy discovery frame. It audits 239 official station rows, checks 44 official/OpenAQ identity candidates, and computes 831 station-to-area joins that stay context until stations are verified. It verifies 0 same-station rows, 0 complete monitor-grade rows, 0 station-radius-ready economies, and 0 allowed coverage claims. The result is a bounded public-data absence, not evidence that QA records do not exist and not an estimate of monitor coverage, exposure, or regulator performance.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-07",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
     "slug": "port-friction-trade-volume-cluster",
     "title": "Trade volume did not predict observed port delay",
-    "subtitle": "Only one economy remains in the inherited top five after the national trade/LPI screen is tested against World Bank vessel-time data.",
+    "subtitle": "After testing the inherited imports × logistics-score screen against World Bank vessel-time data, only Indonesia remains in both top fives — and the strongest association points the wrong way.",
     "kind": "working-paper",
     "tier": "working-paper",
     "status": "draft",
@@ -228,7 +547,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "port-friction-trade-volume-cluster.md",
     "attestation_chain": "ai-first",
@@ -237,9 +556,69 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
+    "slug": "public-data-freshness-two-clocks",
+    "title": "A data year has two clocks",
+    "subtitle": "In a frozen 18-indicator WDI panel, 19.5% of observed cells change review status when calendar age is separated from indicator-wide production cadence—but environment carries the cross-domain boundary.",
+    "kind": "working-paper",
+    "tier": "working-paper",
+    "status": "published",
+    "program": "public-data-freshness",
+    "maturity": "SR",
+    "topics": [
+      "public data",
+      "statistical systems",
+      "data timeliness",
+      "WDI",
+      "data visualization"
+    ],
+    "geographies": [
+      "ADB developing economies"
+    ],
+    "abstract": "Development dashboards often label a cell by its latest reference year. That age combines two quantities: the production age shared by an indicator and the economy-specific lag from that indicator's frontier. In a prospectively frozen panel of 42 ADB developing member economies and 18 World Development Indicators, 138 of 709 observed cells (19.5%) change three-year review status when calendar age is replaced by relative lag. All 138 are calendar-only flags, equal to 65.1% of absolute review cells. The finding survives frozen 9-, 18-, and 27-indicator sets but is highly threshold-dependent and falls to 9.2% when environment is removed. The supported conclusion is domain-aware: dashboards should show calendar age, indicator frontier, relative lag, and missingness separately. The study does not rate economies, statistical offices, data quality, or compliance with formal release standards.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-07-19",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "public-data-freshness-two-clocks.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "reading-the-program-register",
+    "title": "How to read the program register",
+    "subtitle": "Four maturity labels tell you what a program may claim — and what it still may not. Read the label with the attestation chain, not as a quality ranking.",
+    "kind": "brief",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "H",
+    "topics": [
+      "governance",
+      "methodology",
+      "claim-maturity"
+    ],
+    "geographies": [],
+    "abstract": "Each program in the lab carries a maturity label — Hypothesis, Prepared Pipeline, Screening Result, and finished for issue (internal PR code). The labels look ordinal but are categorical: each transition has required artifacts, and the attestation chain states whether the current label is AI-first, human-final, or mixed. This brief explains what the labels promise and, more importantly, what they do not.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-25",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "reading-the-program-register.md",
+    "attestation_chain": "",
+    "constitution_ref": "",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "remittance-corridors-vulnerability-cluster",
-    "title": "Five DMCs remain in the remittance-corridor stress screen after repair",
-    "subtitle": "The repaired baseline top five are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; the common full-suite sensitivity core narrows to Kyrgyz Republic, Tonga, Vanuatu, and Samoa.",
+    "title": "Five economies where remittance dependence and transfer costs stack up",
+    "subtitle": "Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu top the joint stress screen — and four of them stay on top under every perturbation tried. Nepal's seat depends on a single threshold choice.",
     "kind": "working-paper",
     "tier": "working-paper",
     "status": "draft",
@@ -262,7 +641,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "remittance-corridors-vulnerability-cluster.md",
     "attestation_chain": "ai-first",
@@ -293,7 +672,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "school-heat-honest-narrowing.md",
     "attestation_chain": "ai-first",
@@ -325,7 +704,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-18",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "single-fuel-grid-cluster.md",
     "attestation_chain": "ai-first",
@@ -356,9 +735,37 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "sp-shock-readiness-cluster.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "ai-synthesis under §18.4",
+    "review_internal_chain": "ai-critique-pass under §18"
+  },
+  {
+    "slug": "the-first-issue",
+    "title": "\"Vol. I, № 04: The first issue of the Blindspots Lab\"",
+    "subtitle": "\"Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18 — read each headline with that label.\"",
+    "kind": "blog",
+    "tier": "working-paper",
+    "status": "draft",
+    "program": "meta",
+    "maturity": "PR",
+    "topics": [
+      "governance",
+      "methodology",
+      "first-issue"
+    ],
+    "geographies": [],
+    "abstract": "This is the first issue of The Blindspots Lab. Seven programs cross to finished-for-current-issue status under Constitution §18 (AI-First Operating Mode). Eight more sit at Screening Result with explicit honest narrowings or triage-only screens. One — climate-health-workdays — is a Program Prospectus because the PM2.5 layer is computed but the heat layer remains an upgrade. One — digital-performance — stays at Prepared Pipeline because the Ookla parquet aggregation has not yet been run. One — mpi-nighttime-lights — remains at Hypothesis until the external track is reconciled. The article introduces the finished issue findings, the screening results, the held-back tracks, and what readers should know about §18 attested research before they cite it.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "2026-04-26",
+    "updated_at": "2026-07-31",
+    "doi": "",
+    "file": "the-first-issue.md",
     "attestation_chain": "ai-first",
     "constitution_ref": "§18 ACTIVE 2026-04-25",
     "review_external_chain": "ai-synthesis under §18.4",
@@ -387,7 +794,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "water-crop-pressure-cluster.md",
     "attestation_chain": "ai-first",
@@ -425,7 +832,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-04-26",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "workday-loss-pressure-cluster.md",
     "attestation_chain": "ai-first",
@@ -434,447 +841,9 @@
     "review_internal_chain": "ai-critique-pass under §18"
   },
   {
-    "slug": "about-the-lab",
-    "title": "About the Development Blindspots Lab",
-    "subtitle": "A research operation that measures what official data misses, on a Constitution that binds every program.",
-    "kind": "blog",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "H",
-    "topics": [
-      "governance",
-      "methodology"
-    ],
-    "geographies": [],
-    "abstract": "The Blindspots Lab studies the difference between official data and reality across Asian Development Bank developing member economies. Public data only. Every empirical number traces to a committed script. The current issue uses Constitution §18 AI-first attestation, with source lineage, sensitivity checks, caveats, and status labels made explicit. This first article describes what binds the lab and why it exists.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-25",
-    "updated_at": "2026-07-07",
-    "doi": "",
-    "file": "about-the-lab.md",
-    "attestation_chain": "",
-    "constitution_ref": "",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "reading-the-program-register",
-    "title": "How to read the program register",
-    "subtitle": "A short note on the four claim-maturity tiers, the gate requirements, and what the labels actually mean.",
-    "kind": "brief",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "H",
-    "topics": [
-      "governance",
-      "methodology",
-      "claim-maturity"
-    ],
-    "geographies": [],
-    "abstract": "Each program in the lab carries a maturity label — Hypothesis, Prepared Pipeline, Screening Result, and finished for issue (internal PR code). The labels look ordinal but are categorical: each transition has required artifacts, and the attestation chain states whether the current label is AI-first, human-final, or mixed. This brief explains what the labels promise and, more importantly, what they do not.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-25",
-    "updated_at": "2026-07-07",
-    "doi": "",
-    "file": "reading-the-program-register.md",
-    "attestation_chain": "",
-    "constitution_ref": "",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "the-first-issue",
-    "title": "\"Vol. I, № 04: The first issue of the Blindspots Lab\"",
-    "subtitle": "\"Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18. Read with that in mind.\"",
-    "kind": "blog",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "PR",
-    "topics": [
-      "governance",
-      "methodology",
-      "first-issue"
-    ],
-    "geographies": [],
-    "abstract": "This is the first issue of The Blindspots Lab. Seven programs cross to finished-for-current-issue status under Constitution §18 (AI-First Operating Mode). Eight more sit at Screening Result with explicit honest narrowings or triage-only screens. One — climate-health-workdays — is a Program Prospectus because the PM2.5 layer is computed but the heat layer remains an upgrade. One — digital-performance — stays at Prepared Pipeline because the Ookla parquet aggregation has not yet been run. One — mpi-nighttime-lights — remains at Hypothesis until the external track is reconciled. The article introduces the finished issue findings, the screening results, the held-back tracks, and what readers should know about §18 attested research before they cite it.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-26",
-    "updated_at": "2026-07-07",
-    "doi": "",
-    "file": "the-first-issue.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "measurement-gap-philippines-bangladesh",
-    "title": "The OSM-vs-registry gap in Philippine and Bangladeshi health facilities",
-    "subtitle": "OpenStreetMap covers 17.1 percent of the Philippine national health-facility registry and 11.8 percent of the Bangladeshi one — both well below the 30 percent fit-for-planning threshold. The current upgrade drills below ADM1 into Philippine city/municipality and Bangladeshi upazila views, keeping source gaps explicit.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "public-service-data-quality",
-    "maturity": "PR",
-    "topics": [
-      "measurement-gap",
-      "public-service-data-quality",
-      "OSM",
-      "health-facility-registry"
-    ],
-    "geographies": [
-      "PHL",
-      "BGD"
-    ],
-    "abstract": "OpenStreetMap captures 17.1 percent of the Philippine clinical-tier national health-facility registry and 11.8 percent of the Bangladeshi one — both pilots well below the 30-percent fit-for-planning threshold of Macharia and colleagues 2025. The gap is steep within the Philippines: a 9.8x best-to-worst gradient across 17 administrative regions (63.5 percent in NCR, 6.5 percent in BARMM) and a 5.5x gradient between the top and bottom rural-share quintiles. The Bangladesh division-level gradient is directionally consistent but illustrative only (N=8). No administrative unit in either country agrees within 10 percent; the pattern survives every parameter in a plus-or-minus 50 percent sensitivity suite. The upgrade pass adds a Philippine ADM3 Open Buildings denominator, Bangladeshi facility-buffer and road-context layers, and an owner-downloaded official Philippines PSA Small Area Estimates poverty overlay — keeping 10 source-missing ADM3 rows and 8 unresolved BARMM facility records explicit and non-imputed. Published under CONSTITUTION.md §18 (AI-First Operating Mode): the literature, pre-registration, internal review, and red-team review are AI-attested. The article is upgrade-eligible to a human-final attestation chain via §18.5.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-25",
-    "updated_at": "2026-05-05",
-    "doi": "",
-    "file": "measurement-gap-philippines-bangladesh.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18 (§9.1 + §9.2)"
-  },
-  {
-    "slug": "coastal-informal-cluster",
-    "title": "90.9 million more people in low-elevation urban centres",
-    "subtitle": "A direct GHS-UCDB measurement study replaces an inherited national proxy with named-city evidence—and narrows the claim from “informal risk” to recorded exposure growth.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "coastal-informal-risk",
-    "maturity": "PP",
-    "topics": [
-      "coastal cities",
-      "low elevation",
-      "urban growth",
-      "GHSL",
-      "measurement"
-    ],
-    "geographies": [
-      "ADB developing economies"
-    ],
-    "abstract": "Across 1,334 GHS-UCDB urban centres with reported low-elevation fields in 24 ADB developing economies, population recorded below 10 metres increased from 237.3 million in 2000 to 328.2 million in 2020. The net increase of 90.9 million is concentrated: Shanghai, Bangkok, and Dhaka lead, and the top ten centres account for 52.1% of positive change. A stricter 5-metre definition and 10-, 20-, and 30-year windows preserve the direction. The object measures change inside fixed 2025 urban-centre footprints; it does not identify flood probability, loss, informality, deprivation, protection, or policy failure.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-07-19",
-    "updated_at": "",
-    "doi": "",
-    "file": "coastal-informal-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "digital-availability-use-gap",
-    "title": "The network is present. Use still lags.",
-    "subtitle": "Exact-year ITU data show a 14.3-point median difference between reported 4G availability and internet use across 34 ADB developing member cases in 2024.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "published",
-    "program": "digital-performance",
-    "maturity": "SR",
-    "topics": [
-      "digital inclusion",
-      "mobile coverage",
-      "internet use",
-      "affordability",
-      "statistical measurement"
-    ],
-    "geographies": [
-      "ADB developing economies"
-    ],
-    "abstract": "In 2024, reported 4G/LTE population coverage exceeds internet use in 31 of 34 ADB developing member economies with exact-year ITU observations. The median difference is 14.3 percentage points; median coverage is 98.0% and median use is 82.2%. A balanced 28-economy comparison shows the median gap narrowing by 5.9 points from 2018 to 2024, but 12 economies widen. A 5 GB mobile-data price basket has only a weak cross-sectional association with the gap, while an urban-rural use diagnostic is strong but covers only ten economies. The study measures a difference between official availability and use indicators; it does not identify covered non-users, service quality, affordability incidence, or causal effects.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-07-19",
-    "updated_at": "",
-    "doi": "",
-    "file": "digital-availability-use-gap.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "invisible-urbanization-cluster",
-    "title": "One urban share can be 20 points from another",
-    "subtitle": "A GHSL–WDI measurement study across ADB developing economies shows why definition, administrative scale, and reclassification change the urban story.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "invisible-urbanization",
-    "maturity": "PP",
-    "topics": [
-      "urbanization",
-      "statistical definitions",
-      "GHSL",
-      "administrative classification"
-    ],
-    "geographies": [
-      "ADB developing economies"
-    ],
-    "abstract": "Across 40 ADB developing-economy cases with both measures in 2020, the median absolute difference between the GHSL standardized urban share and the WDI national-definition share is 20.0 percentage points. The difference persists across 1975–2020 and runs in both directions. A second diagnostic shows that the share of urban-cell population inside rural-classified units rises as administrative units become finer. Unit transitions explain why the embedded stock can fall even while persistently rural units gain urban population. The study measures definition and aggregation effects; it does not establish legal misclassification or service neglect.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-07-19",
-    "updated_at": "",
-    "doi": "",
-    "file": "invisible-urbanization-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "joint-vulnerability-cluster",
-    "title": "Five economies sit in five or more measurement-gap clusters — Bangladesh, Afghanistan, India, China, Pakistan",
-    "subtitle": "A cross-program meta-finding from the lab's first issue. Twelve DMCs appear in two or more program top-N sets; one — Bangladesh — appears in eight of sixteen.",
-    "kind": "brief",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "SR",
-    "topics": [
-      "meta-analysis",
-      "joint-vulnerability",
-      "cross-program"
-    ],
-    "geographies": [
-      "BGD",
-      "AFG",
-      "IND",
-      "CHN",
-      "PAK",
-      "PHL",
-      "LAO",
-      "MMR"
-    ],
-    "abstract": "A cross-program meta-finding across the lab's 16 SR/PR programs. Each program publishes a stable top-N set of ADB DMCs that survives its +/-50 percent sensitivity gate. When the 16 sets are intersected, one economy — Bangladesh — appears in 8 of 16. Afghanistan appears in 6. India, China, and Pakistan each appear in 5. The brief reports the joint-vulnerability cluster as a deliberately narrow, set-based meta-finding. Per Constitution §6.4, the brief does NOT publish a composite vulnerability score; the headline is set membership. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-27",
-    "updated_at": "",
-    "doi": "",
-    "file": "joint-vulnerability-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "per-capita-shifts-the-cluster",
-    "title": "Population-weighted indices conceal Pacific vulnerability — the per-capita reanalysis",
-    "subtitle": "When flood-event and coastal indices are recomputed per million population, the top-5 cluster flips from large South-Asian economies to Pacific small-island states. Same data, different scaling, different policy frame.",
-    "kind": "brief",
-    "tier": "working-paper",
-    "status": "draft",
-    "program": "meta",
-    "maturity": "SR",
-    "topics": [
-      "meta-analysis",
-      "per-capita",
-      "Pacific",
-      "vulnerability"
-    ],
-    "geographies": [
-      "MHL",
-      "KIR",
-      "FSM",
-      "FJI",
-      "SLB",
-      "TUV"
-    ],
-    "abstract": "The lab's headline cluster — Bangladesh, Afghanistan, India, China, Pakistan — is partly an absolute-scale artifact. Programs whose index includes log10(population) or absolute event counts surface large-population economies. When the same data is recomputed per-capita, an entirely different top-5 emerges: Pacific small- island states (Marshall Islands, Kiribati, FSM, Fiji, Solomon Islands) for flood exposure; Tuvalu enters the coastal cluster. This brief documents the population-weighting artifact, distinguishes programs that are scale-invariant by construction (remittance- resilience top-5 set is identical under absolute and per-capita rankings) from those that are not (flood, coastal, disaster). The policy implication is not \"the cluster is wrong\" — both rankings answer real questions — but a reader citing the lab must say which question. Published under §18 (AI-First).",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-04-27",
-    "updated_at": "",
-    "doi": "",
-    "file": "per-capita-shifts-the-cluster.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
-    "slug": "pm25-observability-gap-cluster-blog",
-    "title": "A station dot is not yet a coverage claim",
-    "subtitle": "What a 24-economy public-source audit learned by refusing to turn visible monitor routes into unverified population coverage.",
-    "kind": "blog",
-    "tier": "blog",
-    "status": "draft",
-    "program": "air-monitoring",
-    "maturity": "SR",
-    "topics": [
-      "air-quality",
-      "PM2.5",
-      "open-data",
-      "measurement"
-    ],
-    "geographies": [
-      "regional"
-    ],
-    "abstract": "Public monitoring routes are easier to find than public station-level quality evidence. The study documents exactly where the chain breaks.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "",
-    "updated_at": "",
-    "doi": "",
-    "file": "pm25-observability-gap-cluster-blog.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "pm25-observability-gap-cluster-brief",
-    "title": "Public station visibility does not validate monitoring coverage",
-    "subtitle": "The 24-economy audit reaches station discovery and denominator geometry, then stops at identity and monitor-grade evidence.",
-    "kind": "brief",
-    "tier": "brief",
-    "status": "draft",
-    "program": "air-monitoring",
-    "maturity": "SR",
-    "topics": [
-      "air-quality",
-      "PM2.5",
-      "public-data-quality",
-      "measurement-audit"
-    ],
-    "geographies": [
-      "regional"
-    ],
-    "abstract": "The public-source packet audits 239 official station rows and 44 identity candidates but verifies no same-station joins, complete monitor-grade rows, station-radius-ready economies, or allowed coverage claims.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "",
-    "updated_at": "",
-    "doi": "",
-    "file": "pm25-observability-gap-cluster-brief.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "pm25-observability-gap-cluster-deck",
-    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
-    "subtitle": "Air-monitoring public QA observability · AI-first §18",
-    "kind": "deck",
-    "tier": "slides",
-    "status": "draft",
-    "program": "air-monitoring",
-    "maturity": "SR",
-    "topics": [
-      "air-quality",
-      "PM2.5",
-      "public-data-quality",
-      "measurement-audit"
-    ],
-    "geographies": [
-      "regional"
-    ],
-    "abstract": "Nine evidence-led slides show why the public-source audit withholds a station-radius coverage claim.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "",
-    "updated_at": "",
-    "doi": "",
-    "file": "pm25-observability-gap-cluster-deck.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "pm25-observability-gap-cluster-social",
-    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
-    "subtitle": "24 economies · 239 official station rows · 44 identity candidates · 0 allowed coverage claims",
-    "kind": "social",
-    "tier": "social",
-    "status": "draft",
-    "program": "air-monitoring",
-    "maturity": "SR",
-    "topics": [
-      "air-quality",
-      "PM2.5",
-      "public-data-quality"
-    ],
-    "geographies": [
-      "regional"
-    ],
-    "abstract": "A public-data audit finds station and denominator context but no verified same-station, complete-grade, or claim-ready rows.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "",
-    "updated_at": "",
-    "doi": "",
-    "file": "pm25-observability-gap-cluster-social.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "",
-    "review_internal_chain": ""
-  },
-  {
-    "slug": "public-data-freshness-two-clocks",
-    "title": "A data year has two clocks",
-    "subtitle": "In a frozen 18-indicator WDI panel, 19.5% of observed cells change review status when calendar age is separated from indicator-wide production cadence—but environment carries the cross-domain boundary.",
-    "kind": "working-paper",
-    "tier": "working-paper",
-    "status": "published",
-    "program": "public-data-freshness",
-    "maturity": "SR",
-    "topics": [
-      "public data",
-      "statistical systems",
-      "data timeliness",
-      "WDI",
-      "data visualization"
-    ],
-    "geographies": [
-      "ADB developing economies"
-    ],
-    "abstract": "Development dashboards often label a cell by its latest reference year. That age combines two quantities: the production age shared by an indicator and the economy-specific lag from that indicator's frontier. In a prospectively frozen panel of 42 ADB developing member economies and 18 World Development Indicators, 138 of 709 observed cells (19.5%) change three-year review status when calendar age is replaced by relative lag. All 138 are calendar-only flags, equal to 65.1% of absolute review cells. The finding survives frozen 9-, 18-, and 27-indicator sets but is highly threshold-dependent and falls to 9.2% when environment is removed. The supported conclusion is domain-aware: dashboards should show calendar age, indicator frontier, relative lag, and missingness separately. The study does not rate economies, statistical offices, data quality, or compliance with formal release standards.",
-    "authors": [
-      "Raymond Adofina"
-    ],
-    "published_at": "2026-07-19",
-    "updated_at": "",
-    "doi": "",
-    "file": "public-data-freshness-two-clocks.md",
-    "attestation_chain": "ai-first",
-    "constitution_ref": "§18 ACTIVE 2026-04-25",
-    "review_external_chain": "ai-synthesis under §18.4; no individual contacted",
-    "review_internal_chain": "ai-critique-pass under §18"
-  },
-  {
     "slug": "access-services-brief",
     "title": "The facility map changes the Philippine regional rank",
-    "subtitle": "A one-page brief on why an eight-economy OSM screen should be used for source validation, not service-access ranking.",
+    "subtitle": "Official clinical registries reorder almost every Philippine regional facility-load rank built from OSM points, so the eight-economy map is a source-validation queue, not a service-access ranking.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -896,7 +865,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "access-services-brief.md",
     "attestation_chain": "ai-first",
@@ -907,7 +876,7 @@
   {
     "slug": "climate-health-workdays-brief",
     "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
-    "subtitle": "A one-page construct check across 34 economies and 21 aligned tests.",
+    "subtitle": "Across 34 economies and 21 aligned tests, the pollution-and-employment proxy never recovers the heat-related work-hours-loss top three, so it is retired as a heat-loss substitute.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -934,7 +903,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "climate-health-workdays-brief.md",
     "attestation_chain": "ai-first",
@@ -945,7 +914,7 @@
   {
     "slug": "coastal-informal-cluster-brief",
     "title": "Low-elevation urban growth is concentrated in named centres",
-    "subtitle": "",
+    "subtitle": "Named urban centres concentrate most of the low-elevation population gain across the reporting GHS-UCDB subset, so city-level joins beat an imputed national proxy for deeper coastal analysis.",
     "kind": "blog",
     "tier": "brief",
     "status": "draft",
@@ -956,7 +925,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "coastal-informal-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -967,7 +936,7 @@
   {
     "slug": "digital-availability-use-gap-brief",
     "title": "Network availability is not internet use",
-    "subtitle": "A two-page evidence brief for connectivity monitoring across ADB developing member economies.",
+    "subtitle": "Reported mobile broadband coverage routinely exceeds internet use in exact-year ADB developing member cases, so coverage alone is not an adoption measure for connectivity monitoring.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -985,7 +954,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "digital-availability-use-gap-brief.md",
     "attestation_chain": "ai-first",
@@ -996,7 +965,7 @@
   {
     "slug": "disaster-recovery-lag",
     "title": "When a disaster-recovery ranking fails its measurement test",
-    "subtitle": "",
+    "subtitle": "Country burden rankings and a GDIS-centroid night-light pilot fail as recovery indicators once alternative burden metrics and multi-specification recovery-month tests are applied.",
     "kind": "policy-brief",
     "tier": "brief",
     "status": "draft",
@@ -1007,7 +976,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
@@ -1018,7 +987,7 @@
   {
     "slug": "flood-market-access-cluster-brief",
     "title": "A Sylhet flood-route stress test disconnects about 346,000 people from mapped markets",
-    "subtitle": "The route result survives 54 variants, but closure and destination validation remain open.",
+    "subtitle": "A mechanical road-cut rule inside an observed flood footprint disconnects a large share of baseline market-route population; the share stays narrow across 54 variants, while closure and destination validation remain open.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1039,7 +1008,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "flood-market-access-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -1050,7 +1019,7 @@
   {
     "slug": "food-price-joint-qualifier-brief",
     "title": "Local dryness preceded only one in nine corrected Nepal rice-price spikes",
-    "subtitle": "The stable result is a measurement boundary, not a climate-effect estimate.",
+    "subtitle": "After correcting the market-price outcome, local dryness is a minority near-term signature of large coarse-rice price increases, so the stable result is a measurement boundary, not a climate-effect estimate.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1070,7 +1039,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "food-price-joint-qualifier-brief.md",
     "attestation_chain": "ai-first",
@@ -1081,7 +1050,7 @@
   {
     "slug": "grid-reliability-heat",
     "title": "A plausible heat-reliability story fails its regional measurement test",
-    "subtitle": "",
+    "subtitle": "Exact-year heat–reliability correlations change direction with the heat measure and reliability outcome, so fuel concentration remains a structural-exposure screen while a regional heat-vulnerability ranking does not.",
     "kind": "policy-brief",
     "tier": "brief",
     "status": "draft",
@@ -1092,7 +1061,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "grid-reliability-heat.md",
     "attestation_chain": "ai-first",
@@ -1103,7 +1072,7 @@
   {
     "slug": "invisible-urbanization-cluster-brief",
     "title": "When urbanization depends on the definition",
-    "subtitle": "",
+    "subtitle": "Harmonized grid urban shares and national-definition urban shares diverge widely across ADB developing-economy cases, so every urban percentage needs the definition stated before comparison or targeting.",
     "kind": "blog",
     "tier": "brief",
     "status": "draft",
@@ -1114,7 +1083,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "invisible-urbanization-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -1125,7 +1094,7 @@
   {
     "slug": "migration-displacement-signals-brief",
     "title": "The leading migrant origins change when population enters the denominator",
-    "subtitle": "A one-page brief on why absolute diaspora scale, population-normalized stock, and forced displacement should be read as separate evidence objects.",
+    "subtitle": "Absolute diaspora scale, population-normalized stock, and forced displacement answer different questions—so they must be read as separate evidence objects, not collapsed into a single migration rank.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1154,7 +1123,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "migration-displacement-signals-brief.md",
     "attestation_chain": "ai-first",
@@ -1165,7 +1134,7 @@
   {
     "slug": "port-friction-trade-volume-cluster-brief",
     "title": "Trade volume did not predict observed port delay",
-    "subtitle": "",
+    "subtitle": "An inherited imports-and-logistics screen fails against observed container-port time: only one economy remains in the old top five, so the ranking is retired as a port-delay measure while the hinterland gate stays open.",
     "kind": "blog",
     "tier": "brief",
     "status": "draft",
@@ -1176,7 +1145,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "port-friction-trade-volume-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -1187,7 +1156,7 @@
   {
     "slug": "public-data-freshness-two-clocks-brief",
     "title": "Show both clocks on public data",
-    "subtitle": "A two-page evidence brief for domain-aware freshness review.",
+    "subtitle": "Calendar age and indicator-relative lag disagree often enough that one calendar-age badge cannot decide both staleness and source-frontier distance—environment carries most of the boundary.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1206,7 +1175,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-data-freshness-two-clocks-brief.md",
     "attestation_chain": "ai-first",
@@ -1217,7 +1186,7 @@
   {
     "slug": "public-service-data-quality-brief",
     "title": "When the public map disagrees with the official registry",
-    "subtitle": "A one-page brief on the measurement gap between OpenStreetMap health facilities and the Philippine and Bangladeshi national registries.",
+    "subtitle": "OpenStreetMap and national clinical-tier registries disagree systematically—especially in rural and low-density units—so project preparation cannot read service supply from the map alone.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1238,7 +1207,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-service-data-quality-brief.md",
     "attestation_chain": "ai-first",
@@ -1249,7 +1218,7 @@
   {
     "slug": "remittance-resilience-brief",
     "title": "Five DMCs remain in the repaired remittance corridor-cost set",
-    "subtitle": "A one-page brief on the repaired baseline top-five set, the narrower sensitivity core, and the flow-weighted corridor-cost check.",
+    "subtitle": "After the RPW parser repair, five economies form the baseline joint remittance-dependence and inbound-cost set, with a four-economy sensitivity core—a triage signal, not a country ranking or household exposure estimate.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1272,7 +1241,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "remittance-resilience-brief.md",
     "attestation_chain": "ai-first",
@@ -1283,7 +1252,7 @@
   {
     "slug": "school-heat-honest-narrowing-brief",
     "title": "The school-heat ranking fails its first outcome check",
-    "subtitle": "Cambodia led the proxy but ranked sixth of six by affected-student count in the heatwave-major subset.",
+    "subtitle": "The proxy that put Cambodia first does not preserve that order among heatwave-major ADB rows in UNICEF's annex, so the national school-heat ranking is retired as a construct-validation failure.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1303,7 +1272,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "school-heat-honest-narrowing-brief.md",
     "attestation_chain": "ai-first",
@@ -1314,7 +1283,7 @@
   {
     "slug": "sp-shock-readiness-cluster-brief",
     "title": "The shock-payment “top five” fails its own ranking rule",
-    "subtitle": "A one-page construct check of missing data, proxy choice, and observed COVID-19 responses.",
+    "subtitle": "The named shock-payment-readiness set fails its own value order and the COVID-19 response source has no comparable delivery outcome—so publish a construct-validation failure, not a prioritization list.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1333,7 +1302,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "sp-shock-readiness-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -1344,7 +1313,7 @@
   {
     "slug": "water-crop-pressure-cluster-brief",
     "title": "The water-crop “top four” fails direct measurement",
-    "subtitle": "A one-page construct check of the ranking rule, water denominator, crop proxy, and source coverage.",
+    "subtitle": "The inherited four-country agricultural water-risk set is not a persistent raw top four under its own sensitivity rule, and direct water and crop measures do not reproduce it—so the ranking is retired for targeting.",
     "kind": "brief",
     "tier": "brief",
     "status": "draft",
@@ -1364,7 +1333,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "water-crop-pressure-cluster-brief.md",
     "attestation_chain": "ai-first",
@@ -1397,7 +1366,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "access-services-blog.md",
     "attestation_chain": "ai-first",
@@ -1435,7 +1404,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "climate-health-workdays-blog.md",
     "attestation_chain": "ai-first",
@@ -1446,7 +1415,7 @@
   {
     "slug": "coastal-informal-cluster-blog",
     "title": "The coastal story changed when the data became spatial",
-    "subtitle": "",
+    "subtitle": "Across 1,334 urban centres, low-elevation population grew by 90.9 million from 2000 to 2020—and only two of the old top five economies remain.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1457,7 +1426,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "coastal-informal-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1486,7 +1455,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "digital-availability-use-gap-blog.md",
     "attestation_chain": "ai-first",
@@ -1497,7 +1466,7 @@
   {
     "slug": "disaster-recovery-lag",
     "title": "The archive worked. The recovery measure did not.",
-    "subtitle": "",
+    "subtitle": "Public night-light access scaled for Typhoon Haiyan, but no recovery definition stabilized across the tested variants.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1508,7 +1477,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
@@ -1519,7 +1488,7 @@
   {
     "slug": "flood-market-access-cluster-blog",
     "title": "The map found the bug—and the flood-route finding survived",
-    "subtitle": "A visual-first Sylhet pilot replaced a stable national proxy with a real route object.",
+    "subtitle": "In Sylhet, 345,718 modeled people—41.24% of those with a baseline market route—lose that route under a flood road-cut stress test, and the share stays 38.92%–43.45% across 54 variants.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1540,7 +1509,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "flood-market-access-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1571,7 +1540,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "food-price-joint-qualifier-blog.md",
     "attestation_chain": "ai-first",
@@ -1582,7 +1551,7 @@
   {
     "slug": "grid-reliability-heat",
     "title": "When a good electricity-risk hypothesis meets the wrong data",
-    "subtitle": "",
+    "subtitle": "Fuel concentration holds under a stronger generation test, but public heat and reliability series do not support one regional ranking.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1593,7 +1562,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "grid-reliability-heat.md",
     "attestation_chain": "ai-first",
@@ -1604,7 +1573,7 @@
   {
     "slug": "invisible-urbanization-cluster-blog",
     "title": "The same country can have two very different urban shares",
-    "subtitle": "",
+    "subtitle": "Across 40 ADB-economy cases in 2020, a standardized urban measure and national definitions differ by a median 20.0 percentage points.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1615,7 +1584,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "invisible-urbanization-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1655,7 +1624,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "migration-displacement-signals-blog.md",
     "attestation_chain": "ai-first",
@@ -1666,7 +1635,7 @@
   {
     "slug": "port-friction-trade-volume-cluster-blog",
     "title": "A national proxy failed when vessel time entered the test",
-    "subtitle": "",
+    "subtitle": "Only Indonesia remains in both the inherited trade-logistics top five and the weaker observed port-time set.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1677,7 +1646,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "port-friction-trade-volume-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1707,7 +1676,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-data-freshness-two-clocks-blog.md",
     "attestation_chain": "ai-first",
@@ -1739,7 +1708,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-service-data-quality-blog.md",
     "attestation_chain": "ai-first",
@@ -1750,7 +1719,7 @@
   {
     "slug": "remittance-resilience-blog",
     "title": "Five economies stay in the flow-weighted remittance corridor-cost set",
-    "subtitle": "A repaired set-and-measurement result for ADB developing member economies whose remittance dependence meets high observed corridor costs.",
+    "subtitle": "Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa sit where remittance dependence meets high observed corridor costs—and four of them hold across the full sensitivity suite.",
     "kind": "blog",
     "tier": "blog",
     "status": "draft",
@@ -1773,7 +1742,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "remittance-resilience-blog.md",
     "attestation_chain": "ai-first",
@@ -1804,7 +1773,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "school-heat-honest-narrowing-blog.md",
     "attestation_chain": "ai-first",
@@ -1834,7 +1803,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "sp-shock-readiness-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1865,7 +1834,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "water-crop-pressure-cluster-blog.md",
     "attestation_chain": "ai-first",
@@ -1875,8 +1844,8 @@
   },
   {
     "slug": "access-services-social",
-    "title": "Access services — social card",
-    "subtitle": "Tweet-length summary of the registry-denominator finding.",
+    "title": "Before ranking access, check whether the map contains the facilities",
+    "subtitle": "Official registry counts reorder 16 of 17 Philippine regional facility-load ranks built from open map points.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -1897,7 +1866,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "access-services-social.md",
     "attestation_chain": "ai-first",
@@ -1907,8 +1876,8 @@
   },
   {
     "slug": "climate-health-workdays-social",
-    "title": "Climate-health construct validation — social card",
-    "subtitle": "A concise summary of the 21-test disagreement.",
+    "title": "A stable proxy can still measure the wrong thing",
+    "subtitle": "Across 21 aligned tests, a PM2.5 × employment screen shares at most one of three leading economies with a direct heat-work measure.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -1934,7 +1903,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "climate-health-workdays-social.md",
     "attestation_chain": "ai-first",
@@ -1945,7 +1914,7 @@
   {
     "slug": "coastal-informal-cluster-social",
     "title": "90.9 million more people below 10 metres",
-    "subtitle": "",
+    "subtitle": "Across 1,334 urban centres, low-elevation population grew by 90.9 million from 2000 to 2020—and only two of the old top five economies remain.",
     "kind": "blog",
     "tier": "social",
     "status": "draft",
@@ -1956,7 +1925,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "coastal-informal-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -1967,7 +1936,7 @@
   {
     "slug": "digital-availability-use-gap-social",
     "title": "Network available ≠ Internet used",
-    "subtitle": "Social copy derived from the digital-performance measurement study.",
+    "subtitle": "In 2024, reported 4G coverage exceeded internet use by a median 14.3 percentage points across 34 ADB developing member economies.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -1984,7 +1953,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "digital-availability-use-gap-social.md",
     "attestation_chain": "ai-first",
@@ -1994,8 +1963,8 @@
   },
   {
     "slug": "disaster-recovery-lag",
-    "title": "Disaster recovery construct validation — social copy",
-    "subtitle": "",
+    "title": "The archive worked. The recovery measure did not.",
+    "subtitle": "Public night-light access scaled for Typhoon Haiyan, but no recovery definition stabilized across 54 variants.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2006,7 +1975,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "disaster-recovery-lag.md",
     "attestation_chain": "ai-first",
@@ -2017,7 +1986,7 @@
   {
     "slug": "flood-market-access-cluster-social",
     "title": "Flooded routes to market in Sylhet",
-    "subtitle": "",
+    "subtitle": "345,718 modeled people—41.24% of those with a baseline market route—lose that route under a flood road-cut stress test.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2028,7 +1997,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "flood-market-access-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -2038,8 +2007,8 @@
   },
   {
     "slug": "food-price-joint-qualifier-social",
-    "title": "Nepal rice-price construct validation — social card",
-    "subtitle": "Only 17 of 152 corrected price spikes followed locally dry rainfall.",
+    "title": "Only 17 of 152 corrected rice-price spikes followed local dryness",
+    "subtitle": "Only 17 of 152 corrected Nepal coarse-rice spike cells followed locally dry rainfall—and dry alignment stays a minority in all 81 threshold runs.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2059,7 +2028,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "food-price-joint-qualifier-social.md",
     "attestation_chain": "ai-first",
@@ -2070,7 +2039,7 @@
   {
     "slug": "grid-reliability-heat",
     "title": "The heat-reliability direction changes with the measure",
-    "subtitle": "",
+    "subtitle": "The same five economies stay fuel-concentrated, but 15 heat–reliability correlations split 8 positive and 7 negative.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2081,7 +2050,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "grid-reliability-heat.md",
     "attestation_chain": "ai-first",
@@ -2092,7 +2061,7 @@
   {
     "slug": "invisible-urbanization-cluster-social",
     "title": "Urbanization depends on the definition",
-    "subtitle": "",
+    "subtitle": "Across 40 ADB-economy cases in 2020, GHSL and WDI urban shares differ by a median absolute 20.0 percentage points.",
     "kind": "blog",
     "tier": "social",
     "status": "draft",
@@ -2103,7 +2072,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "invisible-urbanization-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -2113,8 +2082,8 @@
   },
   {
     "slug": "migration-displacement-signals-social",
-    "title": "Migration denominator — social card",
-    "subtitle": "A concise summary of the zero-overlap finding.",
+    "title": "A migration ranking can reverse when the denominator changes",
+    "subtitle": "The five largest origin stocks have zero overlap with the five highest stocks relative to resident population.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2143,7 +2112,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "migration-displacement-signals-social.md",
     "attestation_chain": "ai-first",
@@ -2154,7 +2123,7 @@
   {
     "slug": "port-friction-trade-volume-cluster-social",
     "title": "Trade scale did not predict observed port delay",
-    "subtitle": "",
+    "subtitle": "Only one economy remains in the inherited top five when tested against World Bank vessel-time data; overlap stays 0–2 across 20 specifications.",
     "kind": "blog",
     "tier": "social",
     "status": "draft",
@@ -2165,7 +2134,7 @@
     "abstract": "",
     "authors": [],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "port-friction-trade-volume-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -2176,7 +2145,7 @@
   {
     "slug": "public-data-freshness-two-clocks-social",
     "title": "One data year, two clocks",
-    "subtitle": "Social copy derived from the public-data-freshness study.",
+    "subtitle": "In a 42-economy × 18-indicator WDI panel, calendar age and relative lag disagree for 138 of 709 observed cells at a three-year cutoff.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2194,7 +2163,7 @@
       "Raymond Adofina"
     ],
     "published_at": "2026-07-19",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-data-freshness-two-clocks-social.md",
     "attestation_chain": "ai-first",
@@ -2204,8 +2173,8 @@
   },
   {
     "slug": "public-service-data-quality-social",
-    "title": "PSDQ — social card",
-    "subtitle": "Tweet-length summary of the OSM-vs-registry measurement gap finding for ADB DMCs.",
+    "title": "Two maps, two answers",
+    "subtitle": "OpenStreetMap captures 17.1% of Philippine and 11.8% of Bangladeshi clinical-tier health facilities in the official registries—and the gap is larger in rural and conflict-affected regions.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2224,7 +2193,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "public-service-data-quality-social.md",
     "attestation_chain": "ai-first",
@@ -2234,8 +2203,8 @@
   },
   {
     "slug": "remittance-resilience-social",
-    "title": "Remittance-resilience — social card",
-    "subtitle": "Tweet-length summary of the repaired remittance corridor-cost weighting result for ADB DMCs.",
+    "title": "Five economies sit where remittance dependence meets high corridor cost",
+    "subtitle": "Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa stay in the flow-weighted top five; four hold across the full ±50% sensitivity suite.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2257,7 +2226,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "remittance-resilience-social.md",
     "attestation_chain": "ai-first",
@@ -2267,8 +2236,8 @@
   },
   {
     "slug": "school-heat-honest-narrowing-social",
-    "title": "School-heat construct validation — social card",
-    "subtitle": "Cambodia led the proxy but ranked last in the observed heatwave subset.",
+    "title": "A heat proxy is not a school-disruption result",
+    "subtitle": "Cambodia led the proxy but ranked last among six ADB economies where UNICEF named heatwave as the major 2024 disruption hazard.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2288,7 +2257,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "school-heat-honest-narrowing-social.md",
     "attestation_chain": "ai-first",
@@ -2298,8 +2267,8 @@
   },
   {
     "slug": "sp-shock-readiness-cluster-social",
-    "title": "Social-protection construct validation — social card",
-    "subtitle": "The stable top five fails its own value order.",
+    "title": "A stable formula can still rank the wrong records",
+    "subtitle": "Only 3 of 5 economies in the published shock-payment top five survive the panel's own value order—and 0 comparable delivery outcomes are joined.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2318,7 +2287,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "sp-shock-readiness-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -2328,8 +2297,8 @@
   },
   {
     "slug": "water-crop-pressure-cluster-social",
-    "title": "Water-crop construct validation — social card",
-    "subtitle": "The stable top four does not survive direct water and crop measures.",
+    "title": "A stable water-crop score can still measure the wrong things",
+    "subtitle": "The inherited top four is the raw top four in only 2 of 7 runs; direct water retains 2 of 4 members and direct crop concentration retains 0 of 4.",
     "kind": "social",
     "tier": "social",
     "status": "draft",
@@ -2349,7 +2318,7 @@
       "Raymond Adofina"
     ],
     "published_at": "",
-    "updated_at": "",
+    "updated_at": "2026-07-31",
     "doi": "",
     "file": "water-crop-pressure-cluster-social.md",
     "attestation_chain": "ai-first",
@@ -2358,9 +2327,40 @@
     "review_internal_chain": ""
   },
   {
+    "slug": "pm25-observability-gap-cluster-deck",
+    "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+    "subtitle": "Why a public air-monitoring audit withholds population coverage — AI-first under §18",
+    "kind": "deck",
+    "tier": "slides",
+    "status": "draft",
+    "program": "air-monitoring",
+    "maturity": "SR",
+    "topics": [
+      "air-quality",
+      "PM2.5",
+      "public-data-quality",
+      "measurement-audit"
+    ],
+    "geographies": [
+      "regional"
+    ],
+    "abstract": "Nine evidence-led slides show why the public-source audit withholds a station-radius coverage claim.",
+    "authors": [
+      "Raymond Adofina"
+    ],
+    "published_at": "",
+    "updated_at": "",
+    "doi": "",
+    "file": "pm25-observability-gap-cluster-deck.md",
+    "attestation_chain": "ai-first",
+    "constitution_ref": "§18 ACTIVE 2026-04-25",
+    "review_external_chain": "",
+    "review_internal_chain": ""
+  },
+  {
     "slug": "access-services-deck",
     "title": "\"Before ranking access, check the facility map\"",
-    "subtitle": "\"Official registries reshape an eight-economy OSM screen — AI-first under §18\"",
+    "subtitle": "\"Official registries reorder Philippine ranks built from OpenStreetMap — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2390,8 +2390,8 @@
   },
   {
     "slug": "air-monitoring",
-    "title": "\"Public monitor routes are visible. Claim-ready QA evidence is not.\"",
-    "subtitle": "\"Air-monitoring public QA observability · AI-first §18\"",
+    "title": "\"Public monitor routes are visible. Claim-ready quality evidence is not.\"",
+    "subtitle": "\"Why a public air-monitoring audit withholds population coverage — AI-first under §18\"",
     "kind": "blog",
     "tier": "slides",
     "status": "draft",
@@ -2413,7 +2413,7 @@
   {
     "slug": "climate-health-workdays-deck",
     "title": "\"A stable proxy can still measure the wrong thing\"",
-    "subtitle": "\"Climate-health construct validation across 34 economies — AI-first under §18\"",
+    "subtitle": "\"Across 34 economies, a pollution-based labor proxy does not recover documented heat-work loss — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2449,7 +2449,7 @@
   {
     "slug": "coastal-informal-cluster-slides",
     "title": "\"Low-elevation urban growth is concentrated\"",
-    "subtitle": "\"From an inherited national proxy to a direct urban-centre exposure object\"",
+    "subtitle": "\"Most of the low-elevation urban population gain sits in a short list of named centres\"",
     "kind": "blog",
     "tier": "slides",
     "status": "draft",
@@ -2471,7 +2471,7 @@
   {
     "slug": "digital-availability-use-gap-slides",
     "title": "The network is present. Use still lags.",
-    "subtitle": "A nine-slide evidence deck on availability and use across ADB developing member economies.",
+    "subtitle": "Reported mobile broadband coverage exceeds internet use in most ADB developing member economies — AI-first under §18.",
     "kind": "slides",
     "tier": "slides",
     "status": "draft",
@@ -2488,7 +2488,7 @@
     "authors": [
       "Raymond Adofina"
     ],
-    "published_at": "2026-07-19",
+    "published_at": "2026-07-31",
     "updated_at": "",
     "doi": "",
     "file": "digital-availability-use-gap-slides.md",
@@ -2500,7 +2500,7 @@
   {
     "slug": "disaster-recovery-lag-deck",
     "title": "\"A disaster-recovery ranking fails two validity gates\"",
-    "subtitle": "\"Metric falsification and a 108-orbit Typhoon Haiyan pilot — AI-first under §18\"",
+    "subtitle": "\"Metric choice and a 108-orbit Typhoon Haiyan pilot both block a recovery claim — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2530,7 +2530,7 @@
   {
     "slug": "flood-market-access-cluster-deck",
     "title": "\"Flood water cuts modeled market access for about 346,000 people\"",
-    "subtitle": "\"Sylhet observed-flood route pilot · AI-first §18\"",
+    "subtitle": "\"An observed Sylhet flood footprint disconnects about two in five baseline-accessible residents — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2560,7 +2560,7 @@
   {
     "slug": "food-price-joint-qualifier-deck",
     "title": "\"Only one in nine corrected rice-price spikes followed locally dry rainfall\"",
-    "subtitle": "\"Nepal market-month construct validation · AI-first §18\"",
+    "subtitle": "\"Nepal market-month rice spikes rarely line up with local dryness — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2589,7 +2589,7 @@
   {
     "slug": "grid-reliability-heat-deck",
     "title": "\"A plausible heat-reliability story fails its regional measurement test\"",
-    "subtitle": "\"Generation concentration survives; the heat-outage direction does not — AI-first under §18\"",
+    "subtitle": "\"Fuel concentration is stable; a directional heat–outage link is not — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2618,7 +2618,7 @@
   {
     "slug": "invisible-urbanization-cluster-slides",
     "title": "\"When urbanization depends on the definition\"",
-    "subtitle": "\"GHSL–WDI measurement gaps, administrative scale, and classification dynamics\"",
+    "subtitle": "\"National urban shares and a harmonized grid can diverge without either being an error\"",
     "kind": "blog",
     "tier": "slides",
     "status": "draft",
@@ -2640,7 +2640,7 @@
   {
     "slug": "migration-displacement-signals-deck",
     "title": "\"The migration leaders change when population enters the denominator\"",
-    "subtitle": "\"A 44-economy stock audit — AI-first under §18\"",
+    "subtitle": "\"A 44-economy stock audit — absolute and population-relative leaders answer different questions — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2678,7 +2678,7 @@
   {
     "slug": "port-friction-trade-volume-cluster-slides",
     "title": "\"Trade volume did not predict observed port delay\"",
-    "subtitle": "\"A direct CPPI construct test for an inherited national logistics screen\"",
+    "subtitle": "\"A national logistics screen fails when tested against observed port time\"",
     "kind": "blog",
     "tier": "slides",
     "status": "draft",
@@ -2700,7 +2700,7 @@
   {
     "slug": "public-data-freshness-two-clocks-slides",
     "title": "A data year has two clocks",
-    "subtitle": "Nine slides on domain-aware freshness review in WDI dashboards.",
+    "subtitle": "Calendar age and indicator lag disagree often enough that freshness review must separate them.",
     "kind": "slides",
     "tier": "slides",
     "status": "draft",
@@ -2718,7 +2718,7 @@
     "authors": [
       "Raymond Adofina"
     ],
-    "published_at": "2026-07-19",
+    "published_at": "2026-07-31",
     "updated_at": "",
     "doi": "",
     "file": "public-data-freshness-two-clocks-slides.md",
@@ -2730,7 +2730,7 @@
   {
     "slug": "public-service-data-quality-deck",
     "title": "\"Where OpenStreetMap and the official health-facility registry disagree\"",
-    "subtitle": "\"ADB DMC measurement-gap evidence — Philippines and Bangladesh pilots, AI-first under §18\"",
+    "subtitle": "\"Two ADB economies, two public maps, and a systematic gap planners should not ignore — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2760,7 +2760,7 @@
   {
     "slug": "remittance-resilience-deck",
     "title": "\"Five DMCs in the repaired remittance corridor-cost set\"",
-    "subtitle": "\"A repaired baseline, narrower sensitivity core, and flow-weighted corridor-cost check — ADB DMCs, AI-first under §18\"",
+    "subtitle": "\"High remittance dependence meets high published corridor cost — a triage screen for ADB DMCs, AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2792,7 +2792,7 @@
   {
     "slug": "school-heat-honest-narrowing-deck",
     "title": "\"Cambodia led the proxy—but ranked last in the observed heatwave subset\"",
-    "subtitle": "\"AI-first construct validation · §18\"",
+    "subtitle": "\"A school-heat proxy ranking reverses when observed heatwave counts enter — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2821,7 +2821,7 @@
   {
     "slug": "sp-shock-readiness-cluster-deck",
     "title": "\"The stable top five was fixed by a missing-data rule\"",
-    "subtitle": "\"Social-protection construct validation — AI-first under §18\"",
+    "subtitle": "\"A social-protection composite ranking does not survive its own measurement choices — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",
@@ -2849,7 +2849,7 @@
   {
     "slug": "water-crop-pressure-cluster-deck",
     "title": "\"The stable top four does not survive its own constructs\"",
-    "subtitle": "\"Water × crop construct validation — AI-first under §18\"",
+    "subtitle": "\"Water and crop pressure rankings change when the proxies change — AI-first under §18\"",
     "kind": "deck",
     "tier": "slides",
     "status": "draft",

@@ -1,9 +1,11 @@
 ---
 title: Urbanization depends on the definition
+subtitle: Across 40 ADB-economy cases in 2020, GHSL and WDI urban shares differ by a median absolute 20.0 percentage points.
 slug: invisible-urbanization-cluster-social
 program: invisible-urbanization
 attestation_chain: ai-first
 platforms: [LinkedIn, X]
+updated_at: 2026-07-31
 ---
 
 # Social copy

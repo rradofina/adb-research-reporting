@@ -1,7 +1,7 @@
 ---
 slug: grid-reliability-heat-deck
 title: "A plausible heat-reliability story fails its regional measurement test"
-subtitle: "Generation concentration survives; the heat-outage direction does not — AI-first under §18"
+subtitle: "Fuel concentration is stable; a directional heat–outage link is not — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [Asia-Pacific]
 topics: [grid, heat, reliability, measurement]
 program: grid-reliability-heat
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1

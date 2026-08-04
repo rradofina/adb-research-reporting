@@ -1,7 +1,7 @@
 ---
 slug: climate-health-workdays-social
-title: Climate-health construct validation — social card
-subtitle: A concise summary of the 21-test disagreement.
+title: A stable proxy can still measure the wrong thing
+subtitle: Across 21 aligned tests, a PM2.5 × employment screen shares at most one of three leading economies with a direct heat-work measure.
 kind: social
 tier: social
 status: draft
@@ -19,6 +19,7 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Short post
@@ -31,7 +32,7 @@ dmc_framing_check: passing
 # Expanded post
 
 > The old climate-health screen kept naming India, Afghanistan, and Bangladesh
-> when its settings changed. But an external construct test changed the story.
+> when its settings changed. A direct heat measure changed the story.
 >
 > In aligned 2020 data, the Lancet Countdown heat-related potential work-hours-
 > loss top three are Cambodia, Myanmar, and Thailand: zero overlap. Across 21

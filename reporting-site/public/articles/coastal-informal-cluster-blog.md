@@ -1,8 +1,10 @@
 ---
 title: The coastal story changed when the data became spatial
+subtitle: Across 1,334 urban centres, low-elevation population grew by 90.9 million from 2000 to 2020—and only two of the old top five economies remain.
 slug: coastal-informal-cluster-blog
 program: coastal-informal-risk
 attestation_chain: ai-first
+updated_at: 2026-07-31
 ---
 
 # The coastal story changed when the data became spatial
@@ -10,6 +12,8 @@ attestation_chain: ai-first
 The first version of this research ranked countries using population, urban
 share, and mostly imputed slum shares. It sounded coastal, but the formula had
 no elevation or settlement footprint.
+
+# Spatial exposure reorders the story
 
 Replacing it with GHS-UCDB changes the story. Across 1,334 reporting urban
 centres, the population below 10 metres grew by 90.9 million from 2000 to 2020.
@@ -20,9 +24,13 @@ Only two of the old top five economies remain after the centre-level changes
 are aggregated. That is a construct lesson: a national proxy and a spatial
 exposure object answer different questions.
 
+# The direction holds, with one important denominator result
+
 The result is robust in direction below 5 metres and over 10-, 20-, and
 30-year windows. It also has an important denominator result: 255 centres
 gained low-elevation population while the share living there fell.
+
+# Exposure is not flood risk or informality
 
 But the claim stops at exposure. Elevation is not flood probability, and
 satellite-derived settlement is not informality. The next step is local: add

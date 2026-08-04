@@ -1,6 +1,8 @@
 # Coastal low-elevation urban growth — operating status
 
-`attestation_chain: ai-first` · Last updated: 2026-07-19
+`attestation_chain: ai-first` · Last updated: 2026-07-31
+
+- **2026-07-31:** Editorial pass to the reader arc; no number, figure, citation, claim, or maturity change; gates and build re-passed.
 
 - **Finding:** Population recorded below 10 metres increased by 90.9 million
   across 1,334 reporting urban centres from 2000 to 2020; ten centres account

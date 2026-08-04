@@ -4,11 +4,12 @@
 
 Last updated: 2026-07-18.
 
-## Decision audience
-
-Migration analysts, Pacific operations teams, national statistics offices,
-and development practitioners deciding which origin economies require a
-stock, flow, or forced-displacement evidence lens.
+When a dashboard ranks origin economies by how many people live abroad, the
+list looks stable and familiar. Change the denominator from absolute stock to
+stock divided by resident population, and the leaders can reverse. Migration
+analysts, Pacific operations teams, and national statistics offices need to
+know which lens—stock, flow, or forced displacement—the number actually
+supports before they treat a ranking as a priority signal.
 
 ## One research question
 

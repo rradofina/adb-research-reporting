@@ -1,7 +1,7 @@
 ---
 slug: migration-displacement-signals-deck
 title: "The migration leaders change when population enters the denominator"
-subtitle: "A 44-economy stock audit — AI-first under §18"
+subtitle: "A 44-economy stock audit — absolute and population-relative leaders answer different questions — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [IND, CHN, BGD, AFG, PHL, WSM, TON, ARM, NRU, FJI]
 topics: [migration, migrant-stock, population-denominator, forced-displacement]
 program: migration-displacement-signals
 maturity: PP
-date: "2026-07-18"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -24,14 +24,14 @@ dmc_framing_check: passing
 
 # One stock measure cannot answer two migration questions
 
-The inherited 44-economy panel ranks UN DESA 2024 emigrant stock by origin.
+A 44-economy panel ranks UN DESA 2024 emigrant stock by origin.
 
-- Useful for diaspora-scale and service-population questions.
+- Useful for diaspora scale and service-population questions.
 - Not a current flow, migration rate, or individual propensity.
 - Test: divide the same stock by WDI 2024 resident population.
 
-**Distinguish scale, population-relative stock, and forced displacement before
-interpreting an origin ranking.**
+**Separate scale, population-relative stock, and forced displacement before
+reading an origin ranking.**
 
 `attestation_chain: ai-first`; current maturity PP.
 
@@ -43,7 +43,7 @@ interpreting an origin ranking.**
 
 ![](../../migration-displacement-signals/generated/charts/migration-population-share-profile.png){width=91%}
 
-# The result survives every ranking choice tested
+# The leaders barely overlap under every ranking width tested
 
 - **Top 3:** no shared origins; 0% overlap.
 - **Top 5:** no shared origins; 0% overlap.
@@ -65,7 +65,7 @@ The result remains material at overlap thresholds of **25%, 50%, and 75%**.
 
 ![](../../migration-displacement-signals/generated/charts/migration-source-observability.png){width=91%}
 
-# Use the denominator that matches the decision
+# Match the denominator to the decision
 
 1. Use absolute stock for diaspora scale and service populations.
 2. Use stock relative to resident population for population-relative exposure.

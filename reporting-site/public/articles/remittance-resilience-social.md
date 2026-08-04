@@ -1,7 +1,7 @@
 ---
 slug: remittance-resilience-social
-title: Remittance-resilience — social card
-subtitle: Tweet-length summary of the repaired remittance corridor-cost weighting result for ADB DMCs.
+title: Five economies sit where remittance dependence meets high corridor cost
+subtitle: Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa stay in the flow-weighted top five; four hold across the full ±50% sensitivity suite.
 kind: social
 tier: social
 status: draft
@@ -22,16 +22,17 @@ abstract: >
 license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
+updated_at: 2026-07-31
 ---
 
 # Tweet-length post (≤ 280 chars)
 
-> Remittance screen repair: KGZ, NPL, TON, VUT, WSM stay in the
-> flow-weighted top five, but only KGZ, TON, VUT, WSM are common across
-> the full +/-50% sensitivity suite. Nepal moves up after flow
-> weighting. Triage tool, not a country ranking.
+> Where remittance dependence meets high corridor cost: KGZ, NPL, TON,
+> VUT, WSM stay in the flow-weighted top five. Only KGZ, TON, VUT, WSM
+> hold across the full +/-50% suite; Nepal is cap-sensitive. Triage tool,
+> not a country ranking.
 
-*Character count: 265 / 280.*
+*Character count: 232 / 280.*
 
 # Chart
 

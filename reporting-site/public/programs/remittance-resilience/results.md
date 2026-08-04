@@ -2,33 +2,27 @@
 
 `attestation_chain: ai-first`
 
-Status: **Repair/deepening result — 2026-06-17.** The RPW cost parser
-has been repaired, the panel and sensitivity suite have been regenerated,
-and the corridor-flow-weighting L3 module has been run against public
-World Bank/KNOMAD bilateral remittance-flow estimates. This is a triage
-result, not a country ranking or household exposure estimate.
-
----
-
 ## 1. Headline
 
-The repaired baseline screen places five ADB developing member economies
-in the top five of the remittance-dependence x observed inbound-cost
-triage measure:
+Where remittances are a large share of the economy and publicly quoted
+inbound transfer costs remain high, five ADB developing member economies
+lead the dependence × observed-cost screen:
 
 **Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu.**
 
-The stronger statement is narrower than the old one. After the parser
-repair, the common top-five set across the full +/-50 percent sensitivity
-suite is:
+That five-economy baseline is a triage result, not a country ranking or
+household exposure estimate. After the RPW cost parser repair, a full
++/-50 percent sensitivity suite, and the corridor-flow-weighting L3 check
+against public World Bank/KNOMAD bilateral remittance-flow estimates, the
+common top-five set across every sensitivity row is narrower:
 
 **Kyrgyz Republic, Tonga, Vanuatu, and Samoa.**
 
 Nepal is cap-sensitive in the dependence-cap-minus-50 row, where Pakistan
 enters the top five. Nepal nevertheless remains in the top five under the
-median-cost and flow-weighted checks. The evidence should therefore be
-reported as a repaired five-economy baseline and flow-weighted set, plus a
-four-economy sensitivity core.
+median-cost and flow-weighted checks. The honest report is therefore a
+repaired five-economy baseline and flow-weighted set, plus a four-economy
+sensitivity core.
 
 ## 2. Repaired Baseline Table
 

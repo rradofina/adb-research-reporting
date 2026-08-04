@@ -1,7 +1,7 @@
 ---
 slug: food-price-joint-qualifier-deck
 title: "Only one in nine corrected rice-price spikes followed locally dry rainfall"
-subtitle: "Nepal market-month construct validation · AI-first §18"
+subtitle: "Nepal market-month rice spikes rarely line up with local dryness — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [Nepal]
 topics: [food-price, climate, market-prices, construct-validation]
 program: food-price-climate-transmission
 maturity: PP
-date: "2026-07-19"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -54,6 +54,6 @@ dmc_framing_check: passing
 
 ![](../../food-price-climate-transmission/generated/charts/food-price-source-alignment-funnel.png){width=100%}
 
-# Attribution gates remain closed
+# Cause remains unproven
 
 ![](../../food-price-climate-transmission/generated/charts/food-price-claim-gates.png){width=100%}

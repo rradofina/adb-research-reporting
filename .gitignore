@@ -71,3 +71,6 @@ Thumbs.db
 !luminosity-gap/scripts/**/*.log
 
 .vercel
+
+# --- Task31 review render intermediates (regenerable from build_*.py) -------
+Task31/tmp/

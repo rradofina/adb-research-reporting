@@ -1,7 +1,7 @@
 {
   "program": "air-monitoring",
   "permanent_url": "/air-monitoring?view=evidence",
-  "generated_at": "2026-07-18T23:38:07.195Z",
+  "generated_at": "2026-08-04T15:10:13.812Z",
   "hero": {
     "png": "generated/charts/air-monitoring-thumbnail.png",
     "svg": "generated/charts/air-monitoring-thumbnail.svg",
@@ -47,10 +47,10 @@
       "key": "paper_charter",
       "file": "paper-charter.md",
       "label": "Paper charter",
-      "size": 6769,
-      "size_human": "6.6 KB",
-      "mtime": "2026-07-01T09:51:38.250Z",
-      "sha256": "291fb6404fb2e5d782880a1aea9526e7155613aca3812f4d771899b5f24aee95",
+      "size": 6909,
+      "size_human": "6.7 KB",
+      "mtime": "2026-07-31T08:50:13.036Z",
+      "sha256": "b39de7b7c4beaf3e7748024fb1622b6468c711630b4097506531973b15cdcf92",
       "attestation_chain": "ai-first"
     },
     {
@@ -107,10 +107,10 @@
       "key": "results",
       "file": "results.md",
       "label": "Results",
-      "size": 4171,
-      "size_human": "4.1 KB",
-      "mtime": "2026-07-18T22:02:41.343Z",
-      "sha256": "36b5201f3357c544a9e574e5b58808fe91830a1ef25782dcba8af0f029c1f55a",
+      "size": 4297,
+      "size_human": "4.2 KB",
+      "mtime": "2026-07-31T08:51:45.474Z",
+      "sha256": "5078649eb84489e161c6ead353038ff2d7a12ff2956e336bcb8871d453bfaf02",
       "attestation_chain": "ai-first"
     },
     {
@@ -1768,12 +1768,12 @@
     },
     {
       "slug": "pm25-observability-gap-cluster-social",
-      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+      "title": "Public monitor routes are visible. Verified coverage evidence is not.",
       "attestation_chain": "ai-first"
     },
     {
       "slug": "pm25-observability-gap-cluster",
-      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+      "title": "A station on the map is not proof of a working monitor",
       "attestation_chain": "ai-first"
     }
   ],

@@ -1,4 +1,5 @@
 ---
+updated_at: 2026-07-31
 slug: access-services-blog
 title: Before ranking access, check whether the map contains the facilities
 subtitle: A Philippine registry comparison turns an open-map access screen into a more honest source-validation tool.
@@ -23,7 +24,6 @@ license: CC BY 4.0
 banned_words_check: passing
 dmc_framing_check: passing
 ---
-
 # A simple ratio with a difficult denominator
 
 Population divided by health-facility points is easy to understand. A large

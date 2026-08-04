@@ -1,7 +1,7 @@
 ---
 slug: flood-market-access-cluster-deck
 title: "Flood water cuts modeled market access for about 346,000 people"
-subtitle: "Sylhet observed-flood route pilot · AI-first §18"
+subtitle: "An observed Sylhet flood footprint disconnects about two in five baseline-accessible residents — AI-first under §18"
 kind: deck
 tier: slides
 status: draft
@@ -12,7 +12,7 @@ geographies: [Bangladesh, Sylhet]
 topics: [flood, roads, market-access, construct-validation]
 program: flood-market-access
 maturity: PP
-date: "2026-07-19"
+date: "2026-07-31"
 format:
   pptx:
     slide-level: 1
@@ -34,7 +34,7 @@ dmc_framing_check: passing
 
 ![](../../flood-market-access/generated/charts/flood-sylhet-sensitivity.png){width=100%}
 
-# The headline denominator passes three visible gates
+# The headline denominator passes three visible checks
 
 ![](../../flood-market-access/generated/charts/flood-sylhet-coverage-funnel.png){width=100%}
 
@@ -54,6 +54,6 @@ dmc_framing_check: passing
 
 ![](../../flood-market-access/generated/charts/flood-sylhet-survivor-selection.png){width=100%}
 
-# Passability and destination validation remain open
+# Road passability and market identity remain open
 
 ![](../../flood-market-access/generated/charts/flood-sylhet-claim-gates.png){width=100%}

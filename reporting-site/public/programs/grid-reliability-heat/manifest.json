@@ -1,7 +1,7 @@
 {
   "program": "grid-reliability-heat",
   "permanent_url": "/grid-reliability-heat?view=evidence",
-  "generated_at": "2026-07-18T23:38:06.334Z",
+  "generated_at": "2026-08-04T15:10:12.129Z",
   "hero": {
     "png": "generated/charts/grid-reliability-heat-thumbnail.png",
     "svg": "generated/charts/grid-reliability-heat-thumbnail.svg",
@@ -47,10 +47,10 @@
       "key": "paper_charter",
       "file": "paper-charter.md",
       "label": "Paper charter",
-      "size": 823,
-      "size_human": "823 B",
-      "mtime": "2026-07-18T13:00:26.437Z",
-      "sha256": "2ac65f5b8425eb6b640bf74cb3968153a71380e8c8033131b51093d25699523a",
+      "size": 1115,
+      "size_human": "1.1 KB",
+      "mtime": "2026-07-31T08:50:40.460Z",
+      "sha256": "df75958ee3a7938d5206050c3e9760615b6b9ed4387cc37fd9737169272a997d",
       "attestation_chain": "ai-first"
     },
     {

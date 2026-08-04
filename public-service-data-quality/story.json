@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "slug": "public-service-data-quality",
+  "family": "observability",
+  "default_shell": "workbench",
+  "attestation_chain": "ai-first",
+  "maturity": "PR",
+  "title": "Two maps of the same health system disagree — and not at random",
+  "subtitle": "OpenStreetMap recovers 17.1% of Philippine and 11.8% of Bangladeshi clinical-tier facilities in official registries.",
+  "finding": "OpenStreetMap captures 17.1% of the Philippine clinical-tier national health-facility registry and 11.8% of the Bangladeshi registry. Both pilots sit well below a 30% fit-for-planning threshold, with a consistent rural–urban gradient.",
+  "finding_short": "PHL 17.1% and BGD 11.8% clinical-tier OSM match rates.",
+  "limits": [
+    "Registry–map disagreement, not corrected facility locations or service access.",
+    "Does not measure quality of care, utilization, or population coverage.",
+    "Poverty-context rows multiply a gap proxy by incidence only where SAE joined—not affected population."
+  ],
+  "key_messages": [
+    "Both PHL and BGD show material OSM under-count of official clinical facilities.",
+    "Worst ADM1 match rates fall to about 6% in BARMM and Barisal.",
+    "The pattern is a map-observability finding, not a health-system performance ranking."
+  ],
+  "metrics": [
+    { "value": "17.1%", "label": "PHL OSM / clinical registry", "detail": "6,401 of 44,267 active facilities" },
+    { "value": "11.8%", "label": "BGD OSM / clinical registry", "detail": "3,298 of 39,421 active facilities" },
+    { "value": "6.5%", "label": "PHL worst ADM1 (BARMM)", "detail": "rural–urban gradient" },
+    { "value": "30%", "label": "planning threshold reference", "detail": "both pilots below it" }
+  ],
+  "hero": {
+    "png": "generated/charts/public-service-data-quality-thumbnail.png",
+    "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
+    "title": "Where the official health-facility map goes dark",
+    "caption": "OpenStreetMap recovers only 17% of Philippine and 12% of Bangladeshi clinical-tier facilities in the official registries.",
+    "source": "DOH NHFR (PHL), DGHS Facility Registry (BGD), OpenStreetMap"
+  },
+  "figures": [
+    {
+      "id": "hero",
+      "role": "main result",
+      "title": "Two-up choropleth",
+      "caption": "PHL ADM1 and BGD ADM1 clinical-tier match rates.",
+      "svg": "generated/charts/public-service-data-quality-thumbnail.svg",
+      "png": "generated/charts/public-service-data-quality-thumbnail.png"
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "When two maps disagree",
+      "body": "Access maps often treat OpenStreetMap facility points as if they were the service network. Official registries tell a different story. The research object is source disagreement, not a finished access index."
+    },
+    {
+      "id": "finding",
+      "title": "Cross-country headline",
+      "body": "In the Philippines, OSM holds 17.1% of clinical-tier NHFR facilities (range 6.5% BARMM to 63.5% NCR). In Bangladesh, OSM holds 11.8% of DGHS facilities (range 6.2% Barisal to 20.1% Dhaka). Both patterns show a rural–urban gradient."
+    },
+    {
+      "id": "method",
+      "title": "How match is defined",
+      "body": "Clinical-tier active facilities in each official registry are compared to OSM health features under a documented spatial and class filter. ±50% sensitivity is complete for both pilots with no critical failures under the committed gates."
+    },
+    {
+      "id": "poverty",
+      "title": "Poverty context is a join, not a welfare claim",
+      "body": "A Philippines ADM3 poverty-context table joins official SAE incidence to the existing gap proxy. It is not affected population, demand, or welfare loss."
+    },
+    {
+      "id": "status",
+      "title": "Maturity",
+      "body": "Publication-ready package pending owner-only Zenodo DOI. Internal and external red-team reviews are closed under §18 AI-first attestation."
+    }
+  ],
+  "workbench_columns": [
+    { "key": "source", "label": "Official source" },
+    { "key": "active", "label": "Active facilities" },
+    { "key": "osm", "label": "OSM" },
+    { "key": "match", "label": "OSM/clinical" },
+    { "key": "worst", "label": "Worst ADM1" },
+    { "key": "best", "label": "Best ADM1" }
+  ],
+  "workbench_rows": [
+    {
+      "id": "PHL",
+      "label": "Philippines",
+      "values": {
+        "source": "DOH NHFR v2.0",
+        "active": "44,267",
+        "osm": "6,401",
+        "match": "17.1%",
+        "worst": "BARMM 6.5%",
+        "best": "NCR 63.5%"
+      },
+      "pattern": "under-count",
+      "note": "Strong rural–urban gradient; map-observability object retained."
+    },
+    {
+      "id": "BGD",
+      "label": "Bangladesh",
+      "values": {
+        "source": "DGHS Facility Registry",
+        "active": "39,421",
+        "osm": "3,298",
+        "match": "11.8%",
+        "worst": "Barisal 6.2%",
+        "best": "Dhaka 20.1%"
+      },
+      "pattern": "under-count",
+      "note": "Independent second pilot supports the same pattern."
+    }
+  ],
+  "zeros_and_gates": [
+    { "label": "PHL match vs 30% threshold", "status": "fail", "value": "17.1%" },
+    { "label": "BGD match vs 30% threshold", "status": "fail", "value": "11.8%" },
+    { "label": "±50% sensitivity (both DMCs)", "status": "pass", "value": "no critical failures" },
+    { "label": "Service-access ranking", "status": "non-claim", "value": "retired / not claimed" }
+  ],
+  "downloads": [
+    { "label": "Topic (classic UI)", "href": "/public-service-data-quality?view=classic" },
+    { "label": "Evidence packet", "href": "/public-service-data-quality?view=evidence" }
+  ],
+  "authors": ["Raymond Adofina"],
+  "published_at": "2026-04-25",
+  "updated_at": "2026-07-31",
+  "sources": ["DOH NHFR", "DGHS Facility Registry", "OpenStreetMap", "PSA SAE (PHL poverty join)"],
+  "non_claim": "This measures registry–map disagreement and map observability. It does not correct locations, rank health systems, or estimate access, utilization, or welfare.",
+  "generated_at": "2026-08-04",
+  "generated_from": [
+    "articles/measurement-gap-philippines-bangladesh.md",
+    "public-service-data-quality/results.md"
+  ]
+}

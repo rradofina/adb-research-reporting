@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "slug": "public-data-freshness",
+  "family": "observability",
+  "default_shell": "product",
+  "attestation_chain": "ai-first",
+  "maturity": "SR",
+  "title": "A data year has two clocks",
+  "subtitle": "Calendar age and lag from an indicator's production frontier send different cells to review.",
+  "finding": "At a three-year rule, 138 of 709 observed cells (19.5%) change review status when calendar age is replaced by lag from the indicator's own global production frontier—all of them calendar-only flags.",
+  "finding_short": "19.5% of observed cells change review status when the second clock is used.",
+  "limits": [
+    "Does not rate economies, statistical offices, data quality, or formal release standards.",
+    "Threshold-dependent: disagreement is 52.6% at two effective years and 0.7% at five.",
+    "Removing environment and climate drops disagreement to 9.2%, below the 10% gate—so the claim stays domain-concentrated."
+  ],
+  "key_messages": [
+    "A latest-year label mixes shared production age with economy-specific lag.",
+    "All 138 disagreements are calendar-only; none are relative-only at the baseline rule.",
+    "Environment, health, and education account for nearly all disagreement; the cross-domain claim does not hold."
+  ],
+  "metrics": [
+    { "value": "19.5%", "label": "observed cells that change review status", "detail": "138 of 709 at the three-year rule" },
+    { "value": "65.1%", "label": "of calendar-old cells are production-cycle only", "detail": "138 of 212 absolute-review cells" },
+    { "value": "9.2%", "label": "disagreement after environment removal", "detail": "fails the 10% cross-domain gate" },
+    { "value": "42×18", "label": "economies × indicators in baseline", "detail": "709 observed of 756 possible cells" }
+  ],
+  "hero": {
+    "png": "generated/charts/public-data-freshness-04-classification-matrix.png",
+    "svg": "generated/charts/public-data-freshness-04-classification-matrix.svg",
+    "title": "Two clocks, one classification matrix",
+    "caption": "The two review clocks agree on 571 observed cells and disagree on 138. All disagreement is calendar-only.",
+    "source": "WDI panel, freeze commit fc9f170; authors' classification"
+  },
+  "figures": [
+    {
+      "id": "fig-04",
+      "role": "main result",
+      "title": "Classification matrix",
+      "caption": "Agreement and calendar-only disagreement at the baseline three-year rule.",
+      "svg": "generated/charts/public-data-freshness-04-classification-matrix.svg",
+      "png": "generated/charts/public-data-freshness-04-classification-matrix.png"
+    },
+    {
+      "id": "fig-05",
+      "role": "construct",
+      "title": "Two-clock construct",
+      "caption": "Calendar age = indicator-wide production age + economy-specific relative lag.",
+      "svg": "generated/charts/public-data-freshness-05-two-clock-construct.svg",
+      "png": "generated/charts/public-data-freshness-05-two-clock-construct.png"
+    },
+    {
+      "id": "fig-03",
+      "role": "decomposition",
+      "title": "Domain clock decomposition",
+      "caption": "Absolute review cells split into production-cycle-only and relative-delay components.",
+      "svg": "generated/charts/public-data-freshness-03-domain-clock-decomposition.svg",
+      "png": "generated/charts/public-data-freshness-03-domain-clock-decomposition.png"
+    },
+    {
+      "id": "fig-06",
+      "role": "heterogeneity",
+      "title": "Domain concentration",
+      "caption": "Environment, health, and education account for nearly all two-clock disagreement.",
+      "svg": "generated/charts/public-data-freshness-06-domain-concentration.svg",
+      "png": "generated/charts/public-data-freshness-06-domain-concentration.png"
+    },
+    {
+      "id": "fig-10",
+      "role": "sensitivity",
+      "title": "Threshold sensitivity",
+      "caption": "Disagreement share changes sharply under the required ±50% threshold test.",
+      "svg": "generated/charts/public-data-freshness-10-threshold-sensitivity.svg",
+      "png": "generated/charts/public-data-freshness-10-threshold-sensitivity.png"
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "The problem with a single age label",
+      "body": "A development dashboard often paints a cell by its latest reference year. That single label answers how old the phenomenon is, but not whether the economy trails what the indicator currently makes possible."
+    },
+    {
+      "id": "finding",
+      "title": "What the panel shows",
+      "body": "In a prospectively frozen panel of 42 ADB developing member economies and 18 World Development Indicators, 138 of 709 observed cells (19.5%) change three-year review status when calendar age is replaced by lag from the indicator's own global production frontier. All 138 are calendar-only flags."
+    },
+    {
+      "id": "concentration",
+      "title": "Why the claim narrows",
+      "body": "Environment and climate contributes 80 of the 138 disagreements; health 40; education 11. Removing environment drops disagreement to 9.2%, below the 10% decision gate. The supported conclusion is domain-aware."
+    },
+    {
+      "id": "method",
+      "title": "How the clocks are defined",
+      "body": "Calendar age equals indicator-wide production age plus economy-specific relative lag. The absolute rule flags cells with calendar age at least three years; the relative rule flags cells three or more years behind the indicator's global frontier."
+    },
+    {
+      "id": "sensitivity",
+      "title": "What survives and what does not",
+      "body": "Disagreement stays above 10% in frozen 9-, 18-, and 27-indicator sets. Magnitude is highly threshold-dependent. Domain deletion reshapes interpretation, not the construct distinction."
+    }
+  ],
+  "workbench_columns": [
+    { "key": "observed", "label": "Observed" },
+    { "key": "missing", "label": "Missing" },
+    { "key": "absolute_review", "label": "Absolute review" },
+    { "key": "relative_review", "label": "Relative review" },
+    { "key": "disagreement", "label": "Disagreement" }
+  ],
+  "workbench_rows": [
+    {
+      "id": "env",
+      "label": "Environment and climate",
+      "values": { "observed": 80, "missing": 4, "absolute_review": 80, "relative_review": 0, "disagreement": 80 },
+      "pattern": "production-cycle only",
+      "note": "All observed cells are calendar-old; none trail the frontier by three years."
+    },
+    {
+      "id": "health",
+      "label": "Health",
+      "values": { "observed": 80, "missing": 4, "absolute_review": 40, "relative_review": 0, "disagreement": 40 },
+      "pattern": "production-cycle only",
+      "note": "Half of observed cells are calendar-old and source-current at the rule."
+    },
+    {
+      "id": "edu",
+      "label": "Education",
+      "values": { "observed": 82, "missing": 2, "absolute_review": 19, "relative_review": 8, "disagreement": 11 },
+      "pattern": "mixed",
+      "note": "Both clocks flag some cells; 11 disagreements remain production-cycle only."
+    },
+    {
+      "id": "pov",
+      "label": "Poverty and inequality",
+      "values": { "observed": 73, "missing": 11, "absolute_review": 56, "relative_review": 51, "disagreement": 5 },
+      "pattern": "relative lag dominates",
+      "note": "Oldest median calendar age (5 years); most old cells also trail the frontier."
+    },
+    {
+      "id": "labor",
+      "label": "Labor and social conditions",
+      "values": { "observed": 70, "missing": 14, "absolute_review": 0, "relative_review": 0, "disagreement": 0 },
+      "pattern": "coverage gap",
+      "note": "Highest missing share (16.7%); missing is not old."
+    },
+    {
+      "id": "finance",
+      "label": "External and public finance",
+      "values": { "observed": 79, "missing": 5, "absolute_review": 10, "relative_review": 8, "disagreement": 2 },
+      "pattern": "mostly aligned",
+      "note": "Small residual disagreement only."
+    },
+    {
+      "id": "infra",
+      "label": "Infrastructure and digital access",
+      "values": { "observed": 82, "missing": 2, "absolute_review": 6, "relative_review": 6, "disagreement": 0 },
+      "pattern": "aligned",
+      "note": "Both clocks agree on the review set."
+    },
+    {
+      "id": "econ",
+      "label": "Economy and structure",
+      "values": { "observed": 81, "missing": 3, "absolute_review": 1, "relative_review": 1, "disagreement": 0 },
+      "pattern": "aligned",
+      "note": "Almost no review pressure at three years."
+    },
+    {
+      "id": "demo",
+      "label": "Demography",
+      "values": { "observed": 82, "missing": 2, "absolute_review": 0, "relative_review": 0, "disagreement": 0 },
+      "pattern": "aligned",
+      "note": "No three-year review flags on either clock."
+    }
+  ],
+  "zeros_and_gates": [
+    { "label": "Primary disagreement gate (≥10%)", "status": "pass", "value": "19.5%" },
+    { "label": "All frozen set sizes ≥10%", "status": "pass", "value": "9 / 18 / 27 indicators" },
+    { "label": "Leave-one-domain-out minimum", "status": "reshape", "value": "9.2% without environment" },
+    { "label": "Economy ranking", "status": "non-claim", "value": "not estimated" }
+  ],
+  "downloads": [
+    { "label": "Working paper", "href": "/public-data-freshness?view=paper" },
+    { "label": "Evidence packet", "href": "/public-data-freshness?view=evidence" },
+    { "label": "Panel summary JSON", "href": "/programs/public-data-freshness/generated/freshness-summary.json" },
+    { "label": "Domain summary CSV", "href": "/programs/public-data-freshness/generated/freshness-domain-summary.csv" }
+  ],
+  "authors": ["Raymond Adofina"],
+  "published_at": "2026-07-19",
+  "updated_at": "2026-07-31",
+  "sources": ["World Development Indicators (frozen retrieval)", "ADB developing member economy roster"],
+  "non_claim": "This is an economy-by-indicator measurement and coverage diagnostic. It is not a rating of an economy, statistical office, data quality, or formal dissemination timeliness.",
+  "generated_at": "2026-08-04",
+  "generated_from": [
+    "articles/public-data-freshness-two-clocks.md",
+    "public-data-freshness/results.md",
+    "public-data-freshness/limitations.md",
+    "public-data-freshness/generated/freshness-summary.json"
+  ]
+}

@@ -273,6 +273,13 @@ function syncProgram(slug) {
     walkAndCopy(generatedDir, path.join(dest, "generated"), "");
   }
 
+  // Reader-shell story package (explore / future Topic shells). Optional.
+  // Source of truth lives in the program folder so it survives re-sync.
+  const storyPackageSrc = path.join(dir, "story.json");
+  if (fs.existsSync(storyPackageSrc)) {
+    fs.copyFileSync(storyPackageSrc, path.join(dest, "story.json"));
+  }
+
   // Look for any article in articles/ that references this program
   const articlesDir = path.join(REPO_ROOT, "articles");
   const articles = [];

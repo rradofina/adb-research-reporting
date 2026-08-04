@@ -30,6 +30,9 @@ import {
 import { programs } from "../data/programs";
 import { MaturityChip } from "../lib/claimTiers";
 import { RemittanceMapHero } from "../components/charts/RemittanceMapHero";
+import StoryShellRouter from "../components/shells/StoryShellRouter";
+import type { ShellId, StoryPackage } from "../components/shells/types";
+import { isShellId, loadStoryPackage } from "../lib/storyPackage";
 
 marked.setOptions({ gfm: true, breaks: false });
 
@@ -84,11 +87,14 @@ export default function Topic({ slug }: { slug: string }) {
   const router = useRouter();
   const search = useSearchParams();
   const requestedView = isView(search?.get("view")) ? (search?.get("view") as View) : null;
+  const forceClassic = search?.get("view") === "classic";
+  const requestedShell = search?.get("shell");
 
   const [tiers, setTiers] = useState<Record<View, ArticleMeta | undefined>>({} as any);
   const [bodyHtml, setBodyHtml] = useState<string>("");
   const [bodyLoading, setBodyLoading] = useState(false);
   const [manifest, setManifest] = useState<EvidenceManifest | null>(null);
+  const [storyPackage, setStoryPackage] = useState<StoryPackage | null>(null);
   const [missing, setMissing] = useState(false);
   const [metadataLoaded, setMetadataLoaded] = useState(false);
 
@@ -111,9 +117,14 @@ export default function Topic({ slug }: { slug: string }) {
     let cancelled = false;
     setMissing(false);
     setMetadataLoaded(false);
+    setStoryPackage(null);
     bodyCache.current.clear();
     (async () => {
-      const [index, m] = await Promise.all([loadArticleIndex(), loadEvidenceManifest(slug)]);
+      const [index, m, story] = await Promise.all([
+        loadArticleIndex(),
+        loadEvidenceManifest(slug),
+        loadStoryPackage(slug),
+      ]);
       const forSlug = index.filter((a) => a.program === slug);
       if (forSlug.length === 0 && !programEntry) {
         if (!cancelled) {
@@ -130,6 +141,7 @@ export default function Topic({ slug }: { slug: string }) {
       if (!cancelled) {
         setTiers(buckets);
         setManifest(m);
+        setStoryPackage(story);
         setMetadataLoaded(true);
       }
     })();
@@ -256,6 +268,22 @@ export default function Topic({ slug }: { slug: string }) {
         </Link>
       </div>
     );
+  }
+
+  // Surgical shell cutover: when a story package exists, the default reader
+  // surface is Product / Workbench / Chapter. Classic tabbed UI remains at
+  // ?view=classic (and for tabs that require the old chrome).
+  if (
+    metadataLoaded &&
+    storyPackage &&
+    !forceClassic &&
+    (!requestedView || requestedView === "paper" || requestedView === "overview")
+  ) {
+    const shell: ShellId =
+      (isShellId(requestedShell || "") && (requestedShell as ShellId)) ||
+      storyPackage.default_shell ||
+      "product";
+    return <StoryShellRouter story={storyPackage} shell={shell} base="topic" />;
   }
 
   function setView(v: View) {

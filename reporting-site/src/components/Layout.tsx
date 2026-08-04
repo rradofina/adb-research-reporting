@@ -40,6 +40,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Link href="/research" className={navClass(pathname, "/research")}>
               Research
             </Link>
+            <Link href="/explore" className={navClass(pathname, "/explore")}>
+              Explore
+            </Link>
             <Link href="/review" className={navClass(pathname, "/review")}>
               Review
             </Link>
@@ -70,9 +73,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       <footer className="site-footer">
         <div className="site-shell site-footer-row">
           <div className="site-footer-copy">
-            Development Evidence Lab presents public-data measurement research
-            on Asian Development Bank developing member economies. AI assistance
-            is disclosed and empirical values trace to committed scripts.
+            Development Evidence Lab measures what public data can and cannot
+            yet prove across Asian Development Bank developing member economies.
+            AI assistance is disclosed; every empirical value traces to a
+            committed script.
           </div>
           <div className="site-footer-links">
             <Link href="/review">Review desk</Link>

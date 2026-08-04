@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "slug": "climate-health-workdays",
+  "family": "invalidation",
+  "default_shell": "product",
+  "attestation_chain": "ai-first",
+  "maturity": "PP",
+  "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
+  "subtitle": "Across 21 aligned year-and-parameter tests, top-three overlap with Lancet heat-loss never exceeds one economy.",
+  "finding": "Across 21 aligned year-and-parameter tests, the WDI PM2.5 × employment proxy shares at most one of its top three economies with the Lancet Countdown heat-related potential work-hours-loss measure. Sixteen tests have zero overlap; five have one.",
+  "finding_short": "Maximum top-three overlap with heat loss is 1 of 3 economies.",
+  "limits": [
+    "Potential hours are modelled capacity losses, not observed absence from work.",
+    "Heat and PM2.5 remain separate pathways; the result does not rank economy performance.",
+    "The inherited total-population worker calculation inflated outdoor-worker denominators by up to 5×."
+  ],
+  "key_messages": [
+    "The proxy’s top three never match the heat top three in 2018–2020 annual tests.",
+    "Sixteen of twenty-one specification tests show zero top-three overlap.",
+    "Retire the old workday-loss-pressure ranking; keep PM2.5 and heat separate."
+  ],
+  "metrics": [
+    { "value": "0/3", "label": "2020 top-three overlap", "detail": "proxy vs heat" },
+    { "value": "16", "label": "zero-overlap tests", "detail": "of 21 year × specification tests" },
+    { "value": "1/3", "label": "maximum overlap", "detail": "never higher across 21 tests" },
+    { "value": "573", "label": "Cambodia hours / worker (2024 heat)", "detail": "modelled potential hours lost" }
+  ],
+  "hero": {
+    "png": "generated/charts/climate-health-workdays-thumbnail.png",
+    "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
+    "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
+    "caption": "The two aligned 2020 top threes have zero overlap. Across all 21 aligned year-and-parameter tests, overlap never exceeds one economy.",
+    "source": "WDI PM2.5 and employment; Lancet Countdown 2025 indicator 1.1.3"
+  },
+  "figures": [
+    {
+      "id": "hero",
+      "role": "main result",
+      "title": "Proxy vs heat top threes",
+      "caption": "Zero overlap in the 2020 aligned comparison.",
+      "svg": "generated/charts/climate-health-workdays-thumbnail.svg",
+      "png": "generated/charts/climate-health-workdays-thumbnail.png"
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "An inherited ranking that needed a construct test",
+      "body": "An inherited regional screen multiplied national PM2.5 exposure by an agriculture-plus-industry employment share and presented the resulting order as workday-loss pressure. That is only defensible if the proxy recovers a heat-work-loss signal."
+    },
+    {
+      "id": "finding",
+      "title": "External validation fails",
+      "body": "Across three aligned years, seven proxy specifications, and 21 tests, maximum top-three overlap with Lancet heat loss is one economy. In 2020 the proxy top three are India, Afghanistan, and Bangladesh; the heat top three are Cambodia, Myanmar, and Thailand."
+    },
+    {
+      "id": "method",
+      "title": "What was compared",
+      "body": "The proxy uses WDI PM2.5 and employment shares. The heat measure is Lancet Countdown potential work hours lost. Tests are pre-specified year and parameter alignments, not a search for a flattering specification."
+    },
+    {
+      "id": "denominator",
+      "title": "Denominator correction",
+      "body": "The inherited total-population worker calculation is 5.09 times the Lancet outdoor-worker estimate for Afghanistan, 2.72 for India, and 2.61 for Bangladesh. Employed people aged 15+ bring those ratios near one."
+    },
+    {
+      "id": "decision",
+      "title": "Decision",
+      "body": "Retire the old workday-loss-pressure ranking. Publish the negative external-validation result. Keep PM2.5 and heat as separate pathways."
+    }
+  ],
+  "workbench_columns": [
+    { "key": "proxy_top", "label": "Proxy top three" },
+    { "key": "heat_top", "label": "Heat top three" },
+    { "key": "shared", "label": "Shared" },
+    { "key": "rho", "label": "Spearman ρ" }
+  ],
+  "workbench_rows": [
+    {
+      "id": "2018",
+      "label": "2018",
+      "values": {
+        "proxy_top": "India, Afghanistan, Bangladesh",
+        "heat_top": "Cambodia, Pakistan, Myanmar",
+        "shared": 0,
+        "rho": 0.119
+      },
+      "pattern": "zero overlap",
+      "note": "Construct disagreement, not performance ranking."
+    },
+    {
+      "id": "2019",
+      "label": "2019",
+      "values": {
+        "proxy_top": "India, Afghanistan, Bangladesh",
+        "heat_top": "Cambodia, Myanmar, Thailand",
+        "shared": 0,
+        "rho": 0.119
+      },
+      "pattern": "zero overlap",
+      "note": "Stable proxy trio; heat order shifts regionally."
+    },
+    {
+      "id": "2020",
+      "label": "2020",
+      "values": {
+        "proxy_top": "India, Afghanistan, Bangladesh",
+        "heat_top": "Cambodia, Myanmar, Thailand",
+        "shared": 0,
+        "rho": 0.169
+      },
+      "pattern": "zero overlap",
+      "note": "Afghanistan proxy rank 2 vs heat rank 28; Cambodia proxy 15 vs heat 1."
+    }
+  ],
+  "zeros_and_gates": [
+    { "label": "Max top-three overlap", "status": "fail", "value": "1/3 across 21 tests" },
+    { "label": "Zero-overlap tests", "status": "pass", "value": "16 of 21" },
+    { "label": "Old ranking retained", "status": "reshape", "value": "retired" },
+    { "label": "Observed work absence", "status": "non-claim", "value": "not measured" }
+  ],
+  "downloads": [
+    { "label": "Topic (classic UI)", "href": "/climate-health-workdays?view=classic" },
+    { "label": "Evidence packet", "href": "/climate-health-workdays?view=evidence" }
+  ],
+  "authors": ["Raymond Adofina"],
+  "published_at": "2026-07-18",
+  "updated_at": "2026-07-31",
+  "sources": ["WDI", "Lancet Countdown 2025 indicator 1.1.3"],
+  "non_claim": "Potential hours are modelled capacity losses, not observed absence. The result is a construct-validation finding, not an economy ranking.",
+  "generated_at": "2026-08-04",
+  "generated_from": [
+    "articles/workday-loss-pressure-cluster.md",
+    "climate-health-workdays/results.md"
+  ]
+}

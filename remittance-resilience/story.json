@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "slug": "remittance-resilience",
+  "family": "distribution",
+  "default_shell": "product",
+  "attestation_chain": "ai-first",
+  "maturity": "PP",
+  "title": "Five economies where remittance dependence and transfer costs stack up",
+  "subtitle": "Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu lead a dependence × observed-cost screen—with a four-economy sensitivity core.",
+  "finding": "After RPW cost-parser repair, the baseline top five by joint remittance dependence and mean corridor cost are Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu; Tonga reaches 42.6% of GDP. The common top-five set across every ±50% sensitivity row is KGZ, TON, VUT, and WSM.",
+  "finding_short": "Tonga 42.6% of GDP; five-economy baseline with a four-economy sensitivity core.",
+  "limits": [
+    "Triage screen, not a household exposure estimate or country performance ranking.",
+    "Nepal is cap-sensitive: under dependence-cap-minus-50, Pakistan enters the top five.",
+    "Corridor costs are publicly quoted RPW means; flow-weighted order can change within the same five."
+  ],
+  "key_messages": [
+    "High remittance dependence and high observed transfer costs stack in a small set of ADB DMCs.",
+    "Repair of the RPW cost parser and flow-weighting keep four economies in every sensitivity top five.",
+    "All five baseline economies sit above the SDG 10.c.1 3% cost reference line."
+  ],
+  "metrics": [
+    { "value": "42.6%", "label": "Tonga remittances / GDP", "detail": "highest dependence in the baseline five" },
+    { "value": "5", "label": "baseline top economies", "detail": "KGZ, WSM, TON, NPL, VUT" },
+    { "value": "4", "label": "sensitivity core", "detail": "common top five across every ±50% row" },
+    { "value": "3%+", "label": "cost vs SDG 10.c.1", "detail": "all five mean costs above the 3% line" }
+  ],
+  "hero": {
+    "png": "generated/charts/remittance-resilience-thumbnail.png",
+    "svg": "generated/charts/remittance-resilience-thumbnail.svg",
+    "title": "Five economies where remittances are the economy",
+    "caption": "Tonga 42.6%, Kyrgyz Republic 26.6%, Nepal 26.2%, Samoa 24.0%, Vanuatu 18.8%—all carry remittance cost above the SDG 10.c.1 3% reference line in the repaired baseline.",
+    "source": "World Bank WDI + Remittance Prices Worldwide Q1 2025"
+  },
+  "figures": [
+    {
+      "id": "hero",
+      "role": "main result",
+      "title": "Dependence map",
+      "caption": "Asia-Pacific map with five cluster economies highlighted.",
+      "svg": "generated/charts/remittance-resilience-thumbnail.svg",
+      "png": "generated/charts/remittance-resilience-thumbnail.png"
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Why dependence and cost are read together",
+      "body": "Remittance dependence alone does not describe household friction. Public corridor prices show whether large flows also face high quoted transfer costs. The screen multiplies those axes only as triage."
+    },
+    {
+      "id": "finding",
+      "title": "Repaired baseline",
+      "body": "After RPW cost normalization repair, the baseline top five are Kyrgyz Republic (26.6% GDP, 10.5% mean cost), Samoa, Tonga (42.6% GDP), Nepal, and Vanuatu. All five mean costs exceed the SDG 10.c.1 3% reference."
+    },
+    {
+      "id": "sensitivity",
+      "title": "What stays stable",
+      "body": "Across the ±50% sensitivity suite the common top-five set is KGZ, TON, VUT, and WSM. Nepal drops only in the dependence-cap-minus-50 row, where Pakistan enters. Median-cost and KNOMAD flow-weighted checks keep the same five economies with reordered ranks."
+    },
+    {
+      "id": "method",
+      "title": "How the screen is built",
+      "body": "Dependence is WDI personal remittances as percent of GDP. Costs are destination-aggregated RPW corridor quotes with a repaired percent-vs-fraction rule. Flow weighting uses public World Bank/KNOMAD bilateral estimates."
+    },
+    {
+      "id": "nonclaim",
+      "title": "What is not claimed",
+      "body": "The page measures public corridor-cost exposure against macro dependence. It does not estimate household resilience, welfare loss, or policy adequacy."
+    }
+  ],
+  "workbench_columns": [
+    { "key": "dependence", "label": "Dependence % GDP" },
+    { "key": "mean_cost", "label": "Mean cost %" },
+    { "key": "fragility", "label": "Fragility" },
+    { "key": "corridors", "label": "RPW corridors" },
+    { "key": "vs_sdg", "label": "vs SDG 3%" }
+  ],
+  "workbench_rows": [
+    {
+      "id": "KGZ",
+      "label": "Kyrgyz Republic",
+      "values": { "dependence": 26.58, "mean_cost": 10.54, "fragility": 70.3, "corridors": 1, "vs_sdg": "3.5x" },
+      "pattern": "sensitivity core",
+      "note": "Highest mean cost in the baseline five."
+    },
+    {
+      "id": "WSM",
+      "label": "Samoa",
+      "values": { "dependence": 24.01, "mean_cost": 7.96, "fragility": 51.0, "corridors": 2, "vs_sdg": "2.7x" },
+      "pattern": "sensitivity core",
+      "note": "Stable across ±50% and flow-weighted checks."
+    },
+    {
+      "id": "TON",
+      "label": "Tonga",
+      "values": { "dependence": 42.61, "mean_cost": 7.57, "fragility": 50.5, "corridors": 2, "vs_sdg": "2.5x" },
+      "pattern": "sensitivity core",
+      "note": "Highest dependence share in the sample."
+    },
+    {
+      "id": "NPL",
+      "label": "Nepal",
+      "values": { "dependence": 26.23, "mean_cost": 7.31, "fragility": 48.7, "corridors": 8, "vs_sdg": "2.4x" },
+      "pattern": "cap-sensitive",
+      "note": "Drops under dependence-cap-minus-50; rises under flow weighting."
+    },
+    {
+      "id": "VUT",
+      "label": "Vanuatu",
+      "values": { "dependence": 18.75, "mean_cost": 9.54, "fragility": 47.7, "corridors": 2, "vs_sdg": "3.2x" },
+      "pattern": "sensitivity core",
+      "note": "High cost relative to dependence share."
+    }
+  ],
+  "zeros_and_gates": [
+    { "label": "RPW cost parser repair", "status": "pass", "value": "fractional rule applied" },
+    { "label": "±50% common top-five core", "status": "pass", "value": "KGZ, TON, VUT, WSM" },
+    { "label": "Max top-five entry change", "status": "pass", "value": "1 entry (pre-registered)" },
+    { "label": "Household resilience estimate", "status": "non-claim", "value": "not estimated" }
+  ],
+  "downloads": [
+    { "label": "Topic (classic UI)", "href": "/remittance-resilience?view=classic" },
+    { "label": "Evidence packet", "href": "/remittance-resilience?view=evidence" },
+    { "label": "Panel JSON", "href": "/programs/remittance-resilience/generated/remittance-resilience-adb-panel.json" }
+  ],
+  "authors": ["Raymond Adofina"],
+  "published_at": "2026-06-17",
+  "updated_at": "2026-07-31",
+  "sources": ["World Bank WDI", "Remittance Prices Worldwide", "KNOMAD bilateral flows"],
+  "non_claim": "This is a public corridor-cost and macro-dependence triage. It is not a household resilience, welfare, or policy-adequacy rating.",
+  "generated_at": "2026-08-04",
+  "generated_from": [
+    "articles/remittance-corridors-vulnerability-cluster.md",
+    "remittance-resilience/results.md",
+    "reporting-site/public/programs/remittance-resilience/manifest.json"
+  ]
+}

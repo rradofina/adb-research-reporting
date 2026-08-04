@@ -1,0 +1,2121 @@
+{
+  "generated_at": "2026-08-04T16:38:58.555Z",
+  "sectors": [
+    {
+      "name": "Data and Measurement",
+      "slug": "data-and-measurement",
+      "count": 63,
+      "slugs": [
+        "about-the-lab",
+        "access-stress-pilot-cluster",
+        "coastal-informal-cluster",
+        "digital-availability-use-gap",
+        "disaster-burden-cluster",
+        "emigrant-stock-corridor-concentration",
+        "flood-market-access-cluster",
+        "food-price-joint-qualifier",
+        "measurement-gap-philippines-bangladesh",
+        "pm25-observability-gap-cluster-blog",
+        "pm25-observability-gap-cluster-brief",
+        "pm25-observability-gap-cluster-social",
+        "pm25-observability-gap-cluster",
+        "port-friction-trade-volume-cluster",
+        "public-data-freshness-two-clocks",
+        "reading-the-program-register",
+        "school-heat-honest-narrowing",
+        "single-fuel-grid-cluster",
+        "sp-shock-readiness-cluster",
+        "the-first-issue",
+        "water-crop-pressure-cluster",
+        "workday-loss-pressure-cluster",
+        "access-services-brief",
+        "climate-health-workdays-brief",
+        "flood-market-access-cluster-brief",
+        "food-price-joint-qualifier-brief",
+        "migration-displacement-signals-brief",
+        "public-data-freshness-two-clocks-brief",
+        "public-service-data-quality-brief",
+        "school-heat-honest-narrowing-brief",
+        "sp-shock-readiness-cluster-brief",
+        "water-crop-pressure-cluster-brief",
+        "access-services-blog",
+        "climate-health-workdays-blog",
+        "food-price-joint-qualifier-blog",
+        "migration-displacement-signals-blog",
+        "public-data-freshness-two-clocks-blog",
+        "public-service-data-quality-blog",
+        "school-heat-honest-narrowing-blog",
+        "sp-shock-readiness-cluster-blog",
+        "water-crop-pressure-cluster-blog",
+        "access-services-social",
+        "climate-health-workdays-social",
+        "food-price-joint-qualifier-social",
+        "migration-displacement-signals-social",
+        "public-data-freshness-two-clocks-social",
+        "public-service-data-quality-social",
+        "school-heat-honest-narrowing-social",
+        "sp-shock-readiness-cluster-social",
+        "water-crop-pressure-cluster-social",
+        "pm25-observability-gap-cluster-deck",
+        "access-services-deck",
+        "climate-health-workdays-deck",
+        "disaster-recovery-lag-deck",
+        "flood-market-access-cluster-deck",
+        "food-price-joint-qualifier-deck",
+        "grid-reliability-heat-deck",
+        "migration-displacement-signals-deck",
+        "public-data-freshness-two-clocks-slides",
+        "public-service-data-quality-deck",
+        "school-heat-honest-narrowing-deck",
+        "sp-shock-readiness-cluster-deck",
+        "water-crop-pressure-cluster-deck"
+      ]
+    },
+    {
+      "name": "Social Development",
+      "slug": "social-development",
+      "count": 24,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "digital-availability-use-gap",
+        "emigrant-stock-corridor-concentration",
+        "flood-market-access-cluster",
+        "sp-shock-readiness-cluster",
+        "access-services-brief",
+        "digital-availability-use-gap-brief",
+        "flood-market-access-cluster-brief",
+        "migration-displacement-signals-brief",
+        "sp-shock-readiness-cluster-brief",
+        "access-services-blog",
+        "digital-availability-use-gap-blog",
+        "flood-market-access-cluster-blog",
+        "migration-displacement-signals-blog",
+        "sp-shock-readiness-cluster-blog",
+        "access-services-social",
+        "digital-availability-use-gap-social",
+        "migration-displacement-signals-social",
+        "sp-shock-readiness-cluster-social",
+        "access-services-deck",
+        "digital-availability-use-gap-slides",
+        "flood-market-access-cluster-deck",
+        "migration-displacement-signals-deck",
+        "sp-shock-readiness-cluster-deck"
+      ]
+    },
+    {
+      "name": "Climate Change",
+      "slug": "climate-change",
+      "count": 23,
+      "slugs": [
+        "disaster-burden-cluster",
+        "flood-market-access-cluster",
+        "food-price-joint-qualifier",
+        "school-heat-honest-narrowing",
+        "single-fuel-grid-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "flood-market-access-cluster-brief",
+        "food-price-joint-qualifier-brief",
+        "school-heat-honest-narrowing-brief",
+        "climate-health-workdays-blog",
+        "flood-market-access-cluster-blog",
+        "food-price-joint-qualifier-blog",
+        "school-heat-honest-narrowing-blog",
+        "climate-health-workdays-social",
+        "food-price-joint-qualifier-social",
+        "school-heat-honest-narrowing-social",
+        "climate-health-workdays-deck",
+        "disaster-recovery-lag-deck",
+        "flood-market-access-cluster-deck",
+        "food-price-joint-qualifier-deck",
+        "grid-reliability-heat-deck",
+        "school-heat-honest-narrowing-deck"
+      ]
+    },
+    {
+      "name": "Health",
+      "slug": "health",
+      "count": 14,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "measurement-gap-philippines-bangladesh",
+        "workday-loss-pressure-cluster",
+        "access-services-brief",
+        "climate-health-workdays-brief",
+        "public-service-data-quality-brief",
+        "access-services-blog",
+        "climate-health-workdays-blog",
+        "public-service-data-quality-blog",
+        "access-services-social",
+        "climate-health-workdays-social",
+        "access-services-deck",
+        "climate-health-workdays-deck",
+        "public-service-data-quality-deck"
+      ]
+    },
+    {
+      "name": "Economics",
+      "slug": "economics",
+      "count": 12,
+      "slugs": [
+        "coastal-informal-cluster",
+        "food-price-joint-qualifier",
+        "port-friction-trade-volume-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "food-price-joint-qualifier-brief",
+        "climate-health-workdays-blog",
+        "food-price-joint-qualifier-blog",
+        "climate-health-workdays-social",
+        "food-price-joint-qualifier-social",
+        "climate-health-workdays-deck",
+        "food-price-joint-qualifier-deck"
+      ]
+    },
+    {
+      "name": "Agriculture",
+      "slug": "agriculture",
+      "count": 10,
+      "slugs": [
+        "food-price-joint-qualifier",
+        "water-crop-pressure-cluster",
+        "food-price-joint-qualifier-brief",
+        "water-crop-pressure-cluster-brief",
+        "food-price-joint-qualifier-blog",
+        "water-crop-pressure-cluster-blog",
+        "food-price-joint-qualifier-social",
+        "water-crop-pressure-cluster-social",
+        "food-price-joint-qualifier-deck",
+        "water-crop-pressure-cluster-deck"
+      ]
+    },
+    {
+      "name": "Environment",
+      "slug": "environment",
+      "count": 10,
+      "slugs": [
+        "pm25-observability-gap-cluster-blog",
+        "pm25-observability-gap-cluster-brief",
+        "pm25-observability-gap-cluster-social",
+        "pm25-observability-gap-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "climate-health-workdays-blog",
+        "climate-health-workdays-social",
+        "pm25-observability-gap-cluster-deck",
+        "climate-health-workdays-deck"
+      ]
+    },
+    {
+      "name": "Transport",
+      "slug": "transport",
+      "count": 10,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "flood-market-access-cluster",
+        "port-friction-trade-volume-cluster",
+        "access-services-brief",
+        "flood-market-access-cluster-brief",
+        "access-services-blog",
+        "flood-market-access-cluster-blog",
+        "access-services-social",
+        "access-services-deck",
+        "flood-market-access-cluster-deck"
+      ]
+    },
+    {
+      "name": "Finance Sector Development",
+      "slug": "finance-sector-development",
+      "count": 9,
+      "slugs": [
+        "remittance-corridors-vulnerability-cluster",
+        "remittance-resilience-brief",
+        "sp-shock-readiness-cluster-brief",
+        "remittance-resilience-blog",
+        "sp-shock-readiness-cluster-blog",
+        "remittance-resilience-social",
+        "sp-shock-readiness-cluster-social",
+        "remittance-resilience-deck",
+        "sp-shock-readiness-cluster-deck"
+      ]
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "count": 5,
+      "slugs": [
+        "school-heat-honest-narrowing",
+        "school-heat-honest-narrowing-brief",
+        "school-heat-honest-narrowing-blog",
+        "school-heat-honest-narrowing-social",
+        "school-heat-honest-narrowing-deck"
+      ]
+    },
+    {
+      "name": "ICT",
+      "slug": "ict",
+      "count": 5,
+      "slugs": [
+        "digital-availability-use-gap",
+        "digital-availability-use-gap-brief",
+        "digital-availability-use-gap-blog",
+        "digital-availability-use-gap-social",
+        "digital-availability-use-gap-slides"
+      ]
+    },
+    {
+      "name": "Water",
+      "slug": "water",
+      "count": 5,
+      "slugs": [
+        "water-crop-pressure-cluster",
+        "water-crop-pressure-cluster-brief",
+        "water-crop-pressure-cluster-blog",
+        "water-crop-pressure-cluster-social",
+        "water-crop-pressure-cluster-deck"
+      ]
+    },
+    {
+      "name": "Energy",
+      "slug": "energy",
+      "count": 2,
+      "slugs": [
+        "single-fuel-grid-cluster",
+        "grid-reliability-heat-deck"
+      ]
+    },
+    {
+      "name": "Urban Development",
+      "slug": "urban-development",
+      "count": 2,
+      "slugs": [
+        "coastal-informal-cluster",
+        "invisible-urbanization-cluster"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "count": 25,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "emigrant-stock-corridor-concentration",
+        "flood-market-access-cluster",
+        "joint-vulnerability-cluster",
+        "measurement-gap-philippines-bangladesh",
+        "workday-loss-pressure-cluster",
+        "access-services-brief",
+        "climate-health-workdays-brief",
+        "flood-market-access-cluster-brief",
+        "migration-displacement-signals-brief",
+        "public-service-data-quality-brief",
+        "access-services-blog",
+        "climate-health-workdays-blog",
+        "flood-market-access-cluster-blog",
+        "migration-displacement-signals-blog",
+        "public-service-data-quality-blog",
+        "access-services-social",
+        "climate-health-workdays-social",
+        "migration-displacement-signals-social",
+        "public-service-data-quality-social",
+        "access-services-deck",
+        "climate-health-workdays-deck",
+        "flood-market-access-cluster-deck",
+        "migration-displacement-signals-deck",
+        "public-service-data-quality-deck"
+      ]
+    },
+    {
+      "iso3": "PHL",
+      "name": "Philippines",
+      "count": 18,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "disaster-burden-cluster",
+        "emigrant-stock-corridor-concentration",
+        "joint-vulnerability-cluster",
+        "measurement-gap-philippines-bangladesh",
+        "access-services-brief",
+        "migration-displacement-signals-brief",
+        "public-service-data-quality-brief",
+        "access-services-blog",
+        "migration-displacement-signals-blog",
+        "public-service-data-quality-blog",
+        "access-services-social",
+        "migration-displacement-signals-social",
+        "public-service-data-quality-social",
+        "access-services-deck",
+        "disaster-recovery-lag-deck",
+        "migration-displacement-signals-deck",
+        "public-service-data-quality-deck"
+      ]
+    },
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "count": 11,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "joint-vulnerability-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "migration-displacement-signals-brief",
+        "climate-health-workdays-blog",
+        "migration-displacement-signals-blog",
+        "climate-health-workdays-social",
+        "migration-displacement-signals-social",
+        "climate-health-workdays-deck",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "IND",
+      "name": "India",
+      "count": 11,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "joint-vulnerability-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "migration-displacement-signals-brief",
+        "climate-health-workdays-blog",
+        "migration-displacement-signals-blog",
+        "climate-health-workdays-social",
+        "migration-displacement-signals-social",
+        "climate-health-workdays-deck",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "NPL",
+      "name": "Nepal",
+      "count": 11,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "food-price-joint-qualifier",
+        "remittance-corridors-vulnerability-cluster",
+        "food-price-joint-qualifier-brief",
+        "remittance-resilience-brief",
+        "food-price-joint-qualifier-blog",
+        "remittance-resilience-blog",
+        "food-price-joint-qualifier-social",
+        "remittance-resilience-social",
+        "food-price-joint-qualifier-deck",
+        "remittance-resilience-deck"
+      ]
+    },
+    {
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "count": 10,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "workday-loss-pressure-cluster",
+        "access-services-brief",
+        "climate-health-workdays-brief",
+        "access-services-blog",
+        "climate-health-workdays-blog",
+        "access-services-social",
+        "climate-health-workdays-social",
+        "access-services-deck",
+        "climate-health-workdays-deck"
+      ]
+    },
+    {
+      "iso3": "WSM",
+      "name": "Samoa",
+      "count": 10,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "remittance-corridors-vulnerability-cluster",
+        "migration-displacement-signals-brief",
+        "remittance-resilience-brief",
+        "migration-displacement-signals-blog",
+        "remittance-resilience-blog",
+        "migration-displacement-signals-social",
+        "remittance-resilience-social",
+        "migration-displacement-signals-deck",
+        "remittance-resilience-deck"
+      ]
+    },
+    {
+      "iso3": "TON",
+      "name": "Tonga",
+      "count": 10,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "remittance-corridors-vulnerability-cluster",
+        "migration-displacement-signals-brief",
+        "remittance-resilience-brief",
+        "migration-displacement-signals-blog",
+        "remittance-resilience-blog",
+        "migration-displacement-signals-social",
+        "remittance-resilience-social",
+        "migration-displacement-signals-deck",
+        "remittance-resilience-deck"
+      ]
+    },
+    {
+      "iso3": "CHN",
+      "name": "China",
+      "count": 6,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "joint-vulnerability-cluster",
+        "migration-displacement-signals-brief",
+        "migration-displacement-signals-blog",
+        "migration-displacement-signals-social",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "FJI",
+      "name": "Fiji",
+      "count": 6,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "per-capita-shifts-the-cluster",
+        "migration-displacement-signals-brief",
+        "migration-displacement-signals-blog",
+        "migration-displacement-signals-social",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "count": 6,
+      "slugs": [
+        "joint-vulnerability-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "climate-health-workdays-blog",
+        "climate-health-workdays-social",
+        "climate-health-workdays-deck"
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "count": 6,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "joint-vulnerability-cluster",
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "climate-health-workdays-blog",
+        "climate-health-workdays-deck"
+      ]
+    },
+    {
+      "iso3": "ARM",
+      "name": "Armenia",
+      "count": 5,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "migration-displacement-signals-brief",
+        "migration-displacement-signals-blog",
+        "migration-displacement-signals-social",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyz Republic",
+      "count": 5,
+      "slugs": [
+        "remittance-corridors-vulnerability-cluster",
+        "remittance-resilience-brief",
+        "remittance-resilience-blog",
+        "remittance-resilience-social",
+        "remittance-resilience-deck"
+      ]
+    },
+    {
+      "iso3": "NRU",
+      "name": "Nauru",
+      "count": 5,
+      "slugs": [
+        "emigrant-stock-corridor-concentration",
+        "migration-displacement-signals-brief",
+        "migration-displacement-signals-blog",
+        "migration-displacement-signals-social",
+        "migration-displacement-signals-deck"
+      ]
+    },
+    {
+      "iso3": "THA",
+      "name": "Thailand",
+      "count": 5,
+      "slugs": [
+        "workday-loss-pressure-cluster",
+        "climate-health-workdays-brief",
+        "climate-health-workdays-blog",
+        "climate-health-workdays-social",
+        "climate-health-workdays-deck"
+      ]
+    },
+    {
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "count": 5,
+      "slugs": [
+        "remittance-corridors-vulnerability-cluster",
+        "remittance-resilience-brief",
+        "remittance-resilience-blog",
+        "remittance-resilience-social",
+        "remittance-resilience-deck"
+      ]
+    },
+    {
+      "iso3": "LAO",
+      "name": "Lao PDR",
+      "count": 2,
+      "slugs": [
+        "access-stress-pilot-cluster",
+        "joint-vulnerability-cluster"
+      ]
+    },
+    {
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "count": 1,
+      "slugs": [
+        "access-stress-pilot-cluster"
+      ]
+    },
+    {
+      "iso3": "TUV",
+      "name": "Tuvalu",
+      "count": 1,
+      "slugs": [
+        "per-capita-shifts-the-cluster"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "slug": "about-the-lab",
+      "title": "About the Development Blindspots Lab",
+      "subtitle": "We measure what official data misses across ADB developing member economies — public sources only, every number from a committed script, every claim under an explicit Constitution.",
+      "program": "meta",
+      "tier": "working-paper",
+      "maturity": "H",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "access-stress-pilot-cluster",
+      "title": "Official registries reorder 16 of 17 Philippine regional facility-load ranks",
+      "subtitle": "The eight-economy OSM screen is a map-observability triage, not a service-access ranking; only two pilot economies have comparable registry corrections.",
+      "program": "access-services",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Health",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD",
+        "KHM",
+        "LAO",
+        "LKA",
+        "NPL",
+        "PAK",
+        "PHL"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "coastal-informal-cluster",
+      "title": "90.9 million more people in low-elevation urban centres",
+      "subtitle": "Named-city GHS-UCDB evidence replaces an inherited national proxy—and narrows the claim from “informal risk” to recorded low-elevation exposure growth, not flood probability or informality.",
+      "program": "coastal-informal-risk",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Economics",
+        "Urban Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "digital-availability-use-gap",
+      "title": "The network is present. Use still lags.",
+      "subtitle": "Exact-year ITU data show a 14.3-point median difference between reported 4G availability and internet use across 34 ADB developing member cases in 2024.",
+      "program": "digital-performance",
+      "tier": "working-paper",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "ICT",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "disaster-burden-cluster",
+      "title": "A disaster-recovery ranking fails two validity gates",
+      "subtitle": "Country burden changes with the metric, while a 108-orbit Haiyan pilot yields no centroid with one recovery month across 54 variants.",
+      "program": "disaster-recovery-lag",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement"
+      ],
+      "countries": [
+        "PHL"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "emigrant-stock-corridor-concentration",
+      "title": "The top five migrant origins have zero overlap after population normalization",
+      "subtitle": "Rank emigrant stock by headcount and India and China lead; divide by resident population and Samoa and Tonga take the top — the absolute top five and the share top five share no members, and only Afghanistan is forced-displacement-majority.",
+      "program": "migration-displacement-signals",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [
+        "AFG",
+        "ARM",
+        "BGD",
+        "CHN",
+        "FJI",
+        "IND",
+        "NRU",
+        "PHL",
+        "TON",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "flood-market-access-cluster",
+      "title": "Flood water cuts modeled market access for about 346,000 people in the Sylhet pilot",
+      "subtitle": "An observed flood footprint, historical road graph, eight mapped markets, and 54 sensitivity variants replace a national proxy that never measured access — 345,718 modeled people lose every route in the base Sylhet stress test.",
+      "program": "flood-market-access",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "food-price-joint-qualifier",
+      "title": "Only one in nine Nepal rice-price spikes followed locally dry rainfall",
+      "subtitle": "In 12 Nepali markets over 2020–2025, only 17 of 152 large coarse-rice price jumps followed an unusually dry month. Whatever drove the 2023–24 price wave, local dryness was not the common trigger — and this dataset cannot yet say what was.",
+      "program": "food-price-climate-transmission",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Climate Change",
+        "Data and Measurement",
+        "Economics"
+      ],
+      "countries": [
+        "NPL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "invisible-urbanization-cluster",
+      "title": "One urban share can be 20 points from another",
+      "subtitle": "A GHSL–WDI measurement study across ADB developing economies shows why definition, administrative scale, and reclassification change the urban story.",
+      "program": "invisible-urbanization",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Urban Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "joint-vulnerability-cluster",
+      "title": "Five economies sit in five or more measurement-gap clusters — Bangladesh, Afghanistan, India, China, Pakistan",
+      "subtitle": "Across sixteen program screens, Bangladesh appears in eight top-N sets — more than any other economy. The pattern is set membership, not a composite score, and it concentrates in South and Southeast Asia.",
+      "program": "meta",
+      "tier": "working-paper",
+      "maturity": "SR",
+      "sectors": [],
+      "countries": [
+        "AFG",
+        "BGD",
+        "CHN",
+        "IND",
+        "LAO",
+        "MMR",
+        "PAK",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "measurement-gap-philippines-bangladesh",
+      "title": "Two maps of the same health system disagree — and not at random",
+      "subtitle": "OpenStreetMap shows 17.1 percent of the Philippines' official clinical-tier facility registry and 11.8 percent of Bangladesh's, and the gap is widest exactly where planners need maps most. Any workflow that mixes the two sources needs a reconciliation step first.",
+      "program": "public-service-data-quality",
+      "tier": "working-paper",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement",
+        "Health"
+      ],
+      "countries": [
+        "BGD",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "per-capita-shifts-the-cluster",
+      "title": "Population-weighted indices conceal Pacific vulnerability — the per-capita reanalysis",
+      "subtitle": "When flood and coastal screens are recomputed per million people, the top-5 flips from large South Asian economies to Pacific small-island states. Same data, different scaling, different operational question.",
+      "program": "meta",
+      "tier": "working-paper",
+      "maturity": "SR",
+      "sectors": [],
+      "countries": [
+        "FJI",
+        "TUV"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-blog",
+      "title": "A station dot is not yet a coverage claim",
+      "subtitle": "Across 24 economies, public monitor routes are visible—but not one station completes the chain needed for a verified population-coverage claim.",
+      "program": "air-monitoring",
+      "tier": "blog",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "Environment"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-brief",
+      "title": "Public station visibility does not validate monitoring coverage",
+      "subtitle": "The 24-economy public-source audit reaches station discovery and denominator geometry, then stops at identity and monitor-grade evidence—so publish the observability gap, not a coverage estimate.",
+      "program": "air-monitoring",
+      "tier": "brief",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "Environment"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-social",
+      "title": "Public monitor routes are visible. Verified coverage evidence is not.",
+      "subtitle": "Across 24 economies, 239 official station rows and 44 identity candidates yield 0 allowed population-coverage claims.",
+      "program": "air-monitoring",
+      "tier": "social",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "Environment"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "pm25-observability-gap-cluster",
+      "title": "A station on the map is not proof of a working monitor",
+      "subtitle": "Public dashboards across 24 Asian economies show where air-quality stations sit. No public record confirms, for even one station, that the dot is a currently calibrated regulator-grade monitor — so coverage claims have to wait.",
+      "program": "air-monitoring",
+      "tier": "working-paper",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "Environment"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "port-friction-trade-volume-cluster",
+      "title": "Trade volume did not predict observed port delay",
+      "subtitle": "After testing the inherited imports × logistics-score screen against World Bank vessel-time data, only Indonesia remains in both top fives — and the strongest association points the wrong way.",
+      "program": "port-hinterland-friction",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Economics",
+        "Transport"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "public-data-freshness-two-clocks",
+      "title": "A data year has two clocks",
+      "subtitle": "In a frozen 18-indicator WDI panel, 19.5% of observed cells change review status when calendar age is separated from indicator-wide production cadence—but environment carries the cross-domain boundary.",
+      "program": "public-data-freshness",
+      "tier": "working-paper",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "reading-the-program-register",
+      "title": "How to read the program register",
+      "subtitle": "Four maturity labels tell you what a program may claim — and what it still may not. Read the label with the attestation chain, not as a quality ranking.",
+      "program": "meta",
+      "tier": "working-paper",
+      "maturity": "H",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "remittance-corridors-vulnerability-cluster",
+      "title": "Five economies where remittance dependence and transfer costs stack up",
+      "subtitle": "Kyrgyz Republic, Samoa, Tonga, Nepal, and Vanuatu top the joint stress screen — and four of them stay on top under every perturbation tried. Nepal's seat depends on a single threshold choice.",
+      "program": "remittance-resilience",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Finance Sector Development"
+      ],
+      "countries": [
+        "KGZ",
+        "NPL",
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "school-heat-honest-narrowing",
+      "title": "Cambodia led the school-heat proxy—but ranked last by observed heatwave disruption",
+      "subtitle": "The “first in every perturbation” claim is false; among six ADB economies where heatwave was the major 2024 disruption hazard, the proxy’s rank correlation with affected-student counts is +0.03, compared with +0.94 for child population alone.",
+      "program": "school-heat-disruption",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Education"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "single-fuel-grid-cluster",
+      "title": "A plausible heat-reliability story fails its regional measurement test",
+      "subtitle": "The generation-mix result survives a better denominator; the heat-outage direction changes with the proxy.",
+      "program": "grid-reliability-heat",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Energy"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "sp-shock-readiness-cluster",
+      "title": "The “stable top five” was fixed by a missing-data rule",
+      "subtitle": "Two omitted economies outrank the published tail, every named economy had a documented COVID-19 cash-transfer response, and no comparable delivery outcome is joined.",
+      "program": "social-protection-shock-coverage",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "the-first-issue",
+      "title": "\"Vol. I, № 04: The first issue of the Blindspots Lab\"",
+      "subtitle": "\"Seven programs finished for the current issue, eight at Screening Result, one at Program Prospectus, one at Prepared Pipeline, and one at Hypothesis. Every gate is AI-attested under Constitution §18 — read each headline with that label.\"",
+      "program": "meta",
+      "tier": "working-paper",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "water-crop-pressure-cluster",
+      "title": "The “stable top four” does not survive its own water and crop measures",
+      "subtitle": "The published set is the raw top four in only two of seven runs; direct water stress retains two members, direct crop concentration none, and the most crop-concentrated visible economies lack water observations.",
+      "program": "water-stress-crop-diversification",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Data and Measurement",
+        "Water"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "workday-loss-pressure-cluster",
+      "title": "The PM2.5 employment proxy does not recover the heat-work-loss signal",
+      "subtitle": "Across 21 aligned year-and-parameter tests, the proxy shares at most one of its top three economies with the Lancet Countdown measure of heat-related potential work hours lost.",
+      "program": "climate-health-workdays",
+      "tier": "working-paper",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Economics",
+        "Environment",
+        "Health"
+      ],
+      "countries": [
+        "AFG",
+        "BGD",
+        "IND",
+        "KHM",
+        "MMR",
+        "PAK",
+        "THA"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "access-services-brief",
+      "title": "The facility map changes the Philippine regional rank",
+      "subtitle": "Official clinical registries reorder almost every Philippine regional facility-load rank built from OSM points, so the eight-economy map is a source-validation queue, not a service-access ranking.",
+      "program": "access-services",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Health",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD",
+        "KHM",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "climate-health-workdays-brief",
+      "title": "The PM2.5 proxy does not recover the heat-work-loss signal",
+      "subtitle": "Across 34 economies and 21 aligned tests, the pollution-and-employment proxy never recovers the heat-related work-hours-loss top three, so it is retired as a heat-loss substitute.",
+      "program": "climate-health-workdays",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Economics",
+        "Environment",
+        "Health"
+      ],
+      "countries": [
+        "AFG",
+        "BGD",
+        "IND",
+        "KHM",
+        "MMR",
+        "PAK",
+        "THA"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "coastal-informal-cluster-brief",
+      "title": "Low-elevation urban growth is concentrated in named centres",
+      "subtitle": "Named urban centres concentrate most of the low-elevation population gain across the reporting GHS-UCDB subset, so city-level joins beat an imputed national proxy for deeper coastal analysis.",
+      "program": "coastal-informal-risk",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "digital-availability-use-gap-brief",
+      "title": "Network availability is not internet use",
+      "subtitle": "Reported mobile broadband coverage routinely exceeds internet use in exact-year ADB developing member cases, so coverage alone is not an adoption measure for connectivity monitoring.",
+      "program": "digital-performance",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "ICT",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "title": "When a disaster-recovery ranking fails its measurement test",
+      "subtitle": "Country burden rankings and a GDIS-centroid night-light pilot fail as recovery indicators once alternative burden metrics and multi-specification recovery-month tests are applied.",
+      "program": "disaster-recovery-lag",
+      "tier": "brief",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "flood-market-access-cluster-brief",
+      "title": "A Sylhet flood-route stress test disconnects about 346,000 people from mapped markets",
+      "subtitle": "A mechanical road-cut rule inside an observed flood footprint disconnects a large share of baseline market-route population; the share stays narrow across 54 variants, while closure and destination validation remain open.",
+      "program": "flood-market-access",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "food-price-joint-qualifier-brief",
+      "title": "Local dryness preceded only one in nine corrected Nepal rice-price spikes",
+      "subtitle": "After correcting the market-price outcome, local dryness is a minority near-term signature of large coarse-rice price increases, so the stable result is a measurement boundary, not a climate-effect estimate.",
+      "program": "food-price-climate-transmission",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Climate Change",
+        "Data and Measurement",
+        "Economics"
+      ],
+      "countries": [
+        "NPL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "title": "A plausible heat-reliability story fails its regional measurement test",
+      "subtitle": "Exact-year heat–reliability correlations change direction with the heat measure and reliability outcome, so fuel concentration remains a structural-exposure screen while a regional heat-vulnerability ranking does not.",
+      "program": "grid-reliability-heat",
+      "tier": "brief",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "invisible-urbanization-cluster-brief",
+      "title": "When urbanization depends on the definition",
+      "subtitle": "Harmonized grid urban shares and national-definition urban shares diverge widely across ADB developing-economy cases, so every urban percentage needs the definition stated before comparison or targeting.",
+      "program": "invisible-urbanization",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "migration-displacement-signals-brief",
+      "title": "The leading migrant origins change when population enters the denominator",
+      "subtitle": "Absolute diaspora scale, population-normalized stock, and forced displacement answer different questions—so they must be read as separate evidence objects, not collapsed into a single migration rank.",
+      "program": "migration-displacement-signals",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [
+        "AFG",
+        "ARM",
+        "BGD",
+        "CHN",
+        "FJI",
+        "IND",
+        "NRU",
+        "PHL",
+        "TON",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "port-friction-trade-volume-cluster-brief",
+      "title": "Trade volume did not predict observed port delay",
+      "subtitle": "An inherited imports-and-logistics screen fails against observed container-port time: only one economy remains in the old top five, so the ranking is retired as a port-delay measure while the hinterland gate stays open.",
+      "program": "port-hinterland-friction",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "public-data-freshness-two-clocks-brief",
+      "title": "Show both clocks on public data",
+      "subtitle": "Calendar age and indicator-relative lag disagree often enough that one calendar-age badge cannot decide both staleness and source-frontier distance—environment carries most of the boundary.",
+      "program": "public-data-freshness",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "public-service-data-quality-brief",
+      "title": "When the public map disagrees with the official registry",
+      "subtitle": "OpenStreetMap and national clinical-tier registries disagree systematically—especially in rural and low-density units—so project preparation cannot read service supply from the map alone.",
+      "program": "public-service-data-quality",
+      "tier": "brief",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement",
+        "Health"
+      ],
+      "countries": [
+        "BGD",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "remittance-resilience-brief",
+      "title": "Five DMCs remain in the repaired remittance corridor-cost set",
+      "subtitle": "After the RPW parser repair, five economies form the baseline joint remittance-dependence and inbound-cost set, with a four-economy sensitivity core—a triage signal, not a country ranking or household exposure estimate.",
+      "program": "remittance-resilience",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Finance Sector Development"
+      ],
+      "countries": [
+        "KGZ",
+        "NPL",
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "school-heat-honest-narrowing-brief",
+      "title": "The school-heat ranking fails its first outcome check",
+      "subtitle": "The proxy that put Cambodia first does not preserve that order among heatwave-major ADB rows in UNICEF's annex, so the national school-heat ranking is retired as a construct-validation failure.",
+      "program": "school-heat-disruption",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Education"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "sp-shock-readiness-cluster-brief",
+      "title": "The shock-payment “top five” fails its own ranking rule",
+      "subtitle": "The named shock-payment-readiness set fails its own value order and the COVID-19 response source has no comparable delivery outcome—so publish a construct-validation failure, not a prioritization list.",
+      "program": "social-protection-shock-coverage",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Finance Sector Development",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "water-crop-pressure-cluster-brief",
+      "title": "The water-crop “top four” fails direct measurement",
+      "subtitle": "The inherited four-country agricultural water-risk set is not a persistent raw top four under its own sensitivity rule, and direct water and crop measures do not reproduce it—so the ranking is retired for targeting.",
+      "program": "water-stress-crop-diversification",
+      "tier": "brief",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Data and Measurement",
+        "Water"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "access-services-blog",
+      "title": "Before ranking access, check whether the map contains the facilities",
+      "subtitle": "A Philippine registry comparison turns an open-map access screen into a more honest source-validation tool.",
+      "program": "access-services",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Health",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD",
+        "KHM",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "climate-health-workdays-blog",
+      "title": "A stable climate-health proxy can still measure the wrong thing",
+      "subtitle": "Direct heat-labor data overturn the inherited PM2.5 workday-loss ranking.",
+      "program": "climate-health-workdays",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Economics",
+        "Environment",
+        "Health"
+      ],
+      "countries": [
+        "AFG",
+        "BGD",
+        "IND",
+        "KHM",
+        "MMR",
+        "PAK",
+        "THA"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "coastal-informal-cluster-blog",
+      "title": "The coastal story changed when the data became spatial",
+      "subtitle": "Across 1,334 urban centres, low-elevation population grew by 90.9 million from 2000 to 2020—and only two of the old top five economies remain.",
+      "program": "coastal-informal-risk",
+      "tier": "blog",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "digital-availability-use-gap-blog",
+      "title": "A signal can reach you before the Internet does",
+      "subtitle": "Why connectivity dashboards need separate measures for network availability and actual use.",
+      "program": "digital-performance",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "ICT",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "title": "The archive worked. The recovery measure did not.",
+      "subtitle": "Public night-light access scaled for Typhoon Haiyan, but no recovery definition stabilized across the tested variants.",
+      "program": "disaster-recovery-lag",
+      "tier": "blog",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "flood-market-access-cluster-blog",
+      "title": "The map found the bug—and the flood-route finding survived",
+      "subtitle": "In Sylhet, 345,718 modeled people—41.24% of those with a baseline market route—lose that route under a flood road-cut stress test, and the share stays 38.92%–43.45% across 54 variants.",
+      "program": "flood-market-access",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "food-price-joint-qualifier-blog",
+      "title": "A stable country screen was still the wrong food-price story",
+      "subtitle": "Correcting the Nepal market-price outcome turns a climate narrative into a sharper measurement finding.",
+      "program": "food-price-climate-transmission",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Climate Change",
+        "Data and Measurement",
+        "Economics"
+      ],
+      "countries": [
+        "NPL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "title": "When a good electricity-risk hypothesis meets the wrong data",
+      "subtitle": "Fuel concentration holds under a stronger generation test, but public heat and reliability series do not support one regional ranking.",
+      "program": "grid-reliability-heat",
+      "tier": "blog",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "invisible-urbanization-cluster-blog",
+      "title": "The same country can have two very different urban shares",
+      "subtitle": "Across 40 ADB-economy cases in 2020, a standardized urban measure and national definitions differ by a median 20.0 percentage points.",
+      "program": "invisible-urbanization",
+      "tier": "blog",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "migration-displacement-signals-blog",
+      "title": "A migration ranking can reverse when the denominator changes",
+      "subtitle": "The same 2024 migrant-stock data tell different stories about diaspora scale and population-relative stock.",
+      "program": "migration-displacement-signals",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [
+        "AFG",
+        "ARM",
+        "BGD",
+        "CHN",
+        "FJI",
+        "IND",
+        "NRU",
+        "PHL",
+        "TON",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "port-friction-trade-volume-cluster-blog",
+      "title": "A national proxy failed when vessel time entered the test",
+      "subtitle": "Only Indonesia remains in both the inherited trade-logistics top five and the weaker observed port-time set.",
+      "program": "port-hinterland-friction",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "public-data-freshness-two-clocks-blog",
+      "title": "When “three years old” tells only half the story",
+      "subtitle": "A better way to show data freshness without hiding age or missingness.",
+      "program": "public-data-freshness",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "public-service-data-quality-blog",
+      "title": "Two maps, two answers — and the gap between them is not random",
+      "subtitle": "Why OpenStreetMap and the official health-facility registry disagree about the same country, and why the disagreement is systematic in a way planners should care about.",
+      "program": "public-service-data-quality",
+      "tier": "blog",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement",
+        "Health"
+      ],
+      "countries": [
+        "BGD",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "remittance-resilience-blog",
+      "title": "Five economies stay in the flow-weighted remittance corridor-cost set",
+      "subtitle": "Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa sit where remittance dependence meets high observed corridor costs—and four of them hold across the full sensitivity suite.",
+      "program": "remittance-resilience",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Finance Sector Development"
+      ],
+      "countries": [
+        "KGZ",
+        "NPL",
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "school-heat-honest-narrowing-blog",
+      "title": "A heat proxy is not a school-disruption result",
+      "subtitle": "Cambodia led the formula, but the first direct outcome check reverses the story.",
+      "program": "school-heat-disruption",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Education"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "sp-shock-readiness-cluster-blog",
+      "title": "A stable social-protection score can still rank the wrong records",
+      "subtitle": "The published top five changes when the panel's own missing-data rule is applied consistently.",
+      "program": "social-protection-shock-coverage",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Finance Sector Development",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "water-crop-pressure-cluster-blog",
+      "title": "A stable water-crop score can still measure the wrong things",
+      "subtitle": "Direct water stress and harvested-area concentration do not reproduce the inherited four-country story.",
+      "program": "water-stress-crop-diversification",
+      "tier": "blog",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Data and Measurement",
+        "Water"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "access-services-social",
+      "title": "Before ranking access, check whether the map contains the facilities",
+      "subtitle": "Official registry counts reorder 16 of 17 Philippine regional facility-load ranks built from open map points.",
+      "program": "access-services",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Health",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD",
+        "KHM",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "climate-health-workdays-social",
+      "title": "A stable proxy can still measure the wrong thing",
+      "subtitle": "Across 21 aligned tests, a PM2.5 × employment screen shares at most one of three leading economies with a direct heat-work measure.",
+      "program": "climate-health-workdays",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Economics",
+        "Environment",
+        "Health"
+      ],
+      "countries": [
+        "AFG",
+        "BGD",
+        "IND",
+        "KHM",
+        "MMR",
+        "THA"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "coastal-informal-cluster-social",
+      "title": "90.9 million more people below 10 metres",
+      "subtitle": "Across 1,334 urban centres, low-elevation population grew by 90.9 million from 2000 to 2020—and only two of the old top five economies remain.",
+      "program": "coastal-informal-risk",
+      "tier": "social",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "digital-availability-use-gap-social",
+      "title": "Network available ≠ Internet used",
+      "subtitle": "In 2024, reported 4G coverage exceeded internet use by a median 14.3 percentage points across 34 ADB developing member economies.",
+      "program": "digital-performance",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "ICT",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "disaster-recovery-lag",
+      "title": "The archive worked. The recovery measure did not.",
+      "subtitle": "Public night-light access scaled for Typhoon Haiyan, but no recovery definition stabilized across 54 variants.",
+      "program": "disaster-recovery-lag",
+      "tier": "social",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "flood-market-access-cluster-social",
+      "title": "Flooded routes to market in Sylhet",
+      "subtitle": "345,718 modeled people—41.24% of those with a baseline market route—lose that route under a flood road-cut stress test.",
+      "program": "flood-market-access",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "food-price-joint-qualifier-social",
+      "title": "Only 17 of 152 corrected rice-price spikes followed local dryness",
+      "subtitle": "Only 17 of 152 corrected Nepal coarse-rice spike cells followed locally dry rainfall—and dry alignment stays a minority in all 81 threshold runs.",
+      "program": "food-price-climate-transmission",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Climate Change",
+        "Data and Measurement",
+        "Economics"
+      ],
+      "countries": [
+        "NPL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "grid-reliability-heat",
+      "title": "The heat-reliability direction changes with the measure",
+      "subtitle": "The same five economies stay fuel-concentrated, but 15 heat–reliability correlations split 8 positive and 7 negative.",
+      "program": "grid-reliability-heat",
+      "tier": "social",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "invisible-urbanization-cluster-social",
+      "title": "Urbanization depends on the definition",
+      "subtitle": "Across 40 ADB-economy cases in 2020, GHSL and WDI urban shares differ by a median absolute 20.0 percentage points.",
+      "program": "invisible-urbanization",
+      "tier": "social",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "migration-displacement-signals-social",
+      "title": "A migration ranking can reverse when the denominator changes",
+      "subtitle": "The five largest origin stocks have zero overlap with the five highest stocks relative to resident population.",
+      "program": "migration-displacement-signals",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [
+        "AFG",
+        "ARM",
+        "BGD",
+        "CHN",
+        "FJI",
+        "IND",
+        "NRU",
+        "PHL",
+        "TON",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "port-friction-trade-volume-cluster-social",
+      "title": "Trade scale did not predict observed port delay",
+      "subtitle": "Only one economy remains in the inherited top five when tested against World Bank vessel-time data; overlap stays 0–2 across 20 specifications.",
+      "program": "port-hinterland-friction",
+      "tier": "social",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "public-data-freshness-two-clocks-social",
+      "title": "One data year, two clocks",
+      "subtitle": "In a 42-economy × 18-indicator WDI panel, calendar age and relative lag disagree for 138 of 709 observed cells at a three-year cutoff.",
+      "program": "public-data-freshness",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "public-service-data-quality-social",
+      "title": "Two maps, two answers",
+      "subtitle": "OpenStreetMap captures 17.1% of Philippine and 11.8% of Bangladeshi clinical-tier health facilities in the official registries—and the gap is larger in rural and conflict-affected regions.",
+      "program": "public-service-data-quality",
+      "tier": "social",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [
+        "BGD",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "remittance-resilience-social",
+      "title": "Five economies sit where remittance dependence meets high corridor cost",
+      "subtitle": "Kyrgyz Republic, Nepal, Tonga, Vanuatu, and Samoa stay in the flow-weighted top five; four hold across the full ±50% sensitivity suite.",
+      "program": "remittance-resilience",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Finance Sector Development"
+      ],
+      "countries": [
+        "KGZ",
+        "NPL",
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "school-heat-honest-narrowing-social",
+      "title": "A heat proxy is not a school-disruption result",
+      "subtitle": "Cambodia led the proxy but ranked last among six ADB economies where UNICEF named heatwave as the major 2024 disruption hazard.",
+      "program": "school-heat-disruption",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Education"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "sp-shock-readiness-cluster-social",
+      "title": "A stable formula can still rank the wrong records",
+      "subtitle": "Only 3 of 5 economies in the published shock-payment top five survive the panel's own value order—and 0 comparable delivery outcomes are joined.",
+      "program": "social-protection-shock-coverage",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Finance Sector Development",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "water-crop-pressure-cluster-social",
+      "title": "A stable water-crop score can still measure the wrong things",
+      "subtitle": "The inherited top four is the raw top four in only 2 of 7 runs; direct water retains 2 of 4 members and direct crop concentration retains 0 of 4.",
+      "program": "water-stress-crop-diversification",
+      "tier": "social",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Data and Measurement",
+        "Water"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "pm25-observability-gap-cluster-deck",
+      "title": "Public monitor routes are visible. Claim-ready QA evidence is not.",
+      "subtitle": "Why a public air-monitoring audit withholds population coverage — AI-first under §18",
+      "program": "air-monitoring",
+      "tier": "slides",
+      "maturity": "SR",
+      "sectors": [
+        "Data and Measurement",
+        "Environment"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "access-services-deck",
+      "title": "\"Before ranking access, check the facility map\"",
+      "subtitle": "\"Official registries reorder Philippine ranks built from OpenStreetMap — AI-first under §18\"",
+      "program": "access-services",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Health",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD",
+        "KHM",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "air-monitoring",
+      "title": "\"Public monitor routes are visible. Claim-ready quality evidence is not.\"",
+      "subtitle": "\"Why a public air-monitoring audit withholds population coverage — AI-first under §18\"",
+      "program": null,
+      "tier": "slides",
+      "maturity": "",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "climate-health-workdays-deck",
+      "title": "\"A stable proxy can still measure the wrong thing\"",
+      "subtitle": "\"Across 34 economies, a pollution-based labor proxy does not recover documented heat-work loss — AI-first under §18\"",
+      "program": "climate-health-workdays",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Economics",
+        "Environment",
+        "Health"
+      ],
+      "countries": [
+        "AFG",
+        "BGD",
+        "IND",
+        "KHM",
+        "MMR",
+        "PAK",
+        "THA"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "coastal-informal-cluster-slides",
+      "title": "\"Low-elevation urban growth is concentrated\"",
+      "subtitle": "\"Most of the low-elevation urban population gain sits in a short list of named centres\"",
+      "program": "coastal-informal-risk",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "digital-availability-use-gap-slides",
+      "title": "The network is present. Use still lags.",
+      "subtitle": "Reported mobile broadband coverage exceeds internet use in most ADB developing member economies — AI-first under §18.",
+      "program": "digital-performance",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "ICT",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "disaster-recovery-lag-deck",
+      "title": "\"A disaster-recovery ranking fails two validity gates\"",
+      "subtitle": "\"Metric choice and a 108-orbit Typhoon Haiyan pilot both block a recovery claim — AI-first under §18\"",
+      "program": "disaster-recovery-lag",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement"
+      ],
+      "countries": [
+        "PHL"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "flood-market-access-cluster-deck",
+      "title": "\"Flood water cuts modeled market access for about 346,000 people\"",
+      "subtitle": "\"An observed Sylhet flood footprint disconnects about two in five baseline-accessible residents — AI-first under §18\"",
+      "program": "flood-market-access",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Social Development",
+        "Transport"
+      ],
+      "countries": [
+        "BGD"
+      ],
+      "regional": true
+    },
+    {
+      "slug": "food-price-joint-qualifier-deck",
+      "title": "\"Only one in nine corrected rice-price spikes followed locally dry rainfall\"",
+      "subtitle": "\"Nepal market-month rice spikes rarely line up with local dryness — AI-first under §18\"",
+      "program": "food-price-climate-transmission",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Climate Change",
+        "Data and Measurement",
+        "Economics"
+      ],
+      "countries": [
+        "NPL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "grid-reliability-heat-deck",
+      "title": "\"A plausible heat-reliability story fails its regional measurement test\"",
+      "subtitle": "\"Fuel concentration is stable; a directional heat–outage link is not — AI-first under §18\"",
+      "program": "grid-reliability-heat",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Energy"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "invisible-urbanization-cluster-slides",
+      "title": "\"When urbanization depends on the definition\"",
+      "subtitle": "\"National urban shares and a harmonized grid can diverge without either being an error\"",
+      "program": "invisible-urbanization",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "migration-displacement-signals-deck",
+      "title": "\"The migration leaders change when population enters the denominator\"",
+      "subtitle": "\"A 44-economy stock audit — absolute and population-relative leaders answer different questions — AI-first under §18\"",
+      "program": "migration-displacement-signals",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Social Development"
+      ],
+      "countries": [
+        "AFG",
+        "ARM",
+        "BGD",
+        "CHN",
+        "FJI",
+        "IND",
+        "NRU",
+        "PHL",
+        "TON",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "port-friction-trade-volume-cluster-slides",
+      "title": "\"Trade volume did not predict observed port delay\"",
+      "subtitle": "\"A national logistics screen fails when tested against observed port time\"",
+      "program": "port-hinterland-friction",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [],
+      "countries": [],
+      "regional": false
+    },
+    {
+      "slug": "public-data-freshness-two-clocks-slides",
+      "title": "A data year has two clocks",
+      "subtitle": "Calendar age and indicator lag disagree often enough that freshness review must separate them.",
+      "program": "public-data-freshness",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "public-service-data-quality-deck",
+      "title": "\"Where OpenStreetMap and the official health-facility registry disagree\"",
+      "subtitle": "\"Two ADB economies, two public maps, and a systematic gap planners should not ignore — AI-first under §18\"",
+      "program": "public-service-data-quality",
+      "tier": "slides",
+      "maturity": "PR",
+      "sectors": [
+        "Data and Measurement",
+        "Health"
+      ],
+      "countries": [
+        "BGD",
+        "PHL"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "remittance-resilience-deck",
+      "title": "\"Five DMCs in the repaired remittance corridor-cost set\"",
+      "subtitle": "\"High remittance dependence meets high published corridor cost — a triage screen for ADB DMCs, AI-first under §18\"",
+      "program": "remittance-resilience",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Finance Sector Development"
+      ],
+      "countries": [
+        "KGZ",
+        "NPL",
+        "TON",
+        "VUT",
+        "WSM"
+      ],
+      "regional": false
+    },
+    {
+      "slug": "school-heat-honest-narrowing-deck",
+      "title": "\"Cambodia led the proxy—but ranked last in the observed heatwave subset\"",
+      "subtitle": "\"A school-heat proxy ranking reverses when observed heatwave counts enter — AI-first under §18\"",
+      "program": "school-heat-disruption",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Climate Change",
+        "Data and Measurement",
+        "Education"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "sp-shock-readiness-cluster-deck",
+      "title": "\"The stable top five was fixed by a missing-data rule\"",
+      "subtitle": "\"A social-protection composite ranking does not survive its own measurement choices — AI-first under §18\"",
+      "program": "social-protection-shock-coverage",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Data and Measurement",
+        "Finance Sector Development",
+        "Social Development"
+      ],
+      "countries": [],
+      "regional": true
+    },
+    {
+      "slug": "water-crop-pressure-cluster-deck",
+      "title": "\"The stable top four does not survive its own constructs\"",
+      "subtitle": "\"Water and crop pressure rankings change when the proxies change — AI-first under §18\"",
+      "program": "water-stress-crop-diversification",
+      "tier": "slides",
+      "maturity": "PP",
+      "sectors": [
+        "Agriculture",
+        "Data and Measurement",
+        "Water"
+      ],
+      "countries": [],
+      "regional": true
+    }
+  ]
+}

@@ -37,20 +37,24 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Link href="/" className={navClass(pathname, "/")}>
               Home
             </Link>
-            <Link href="/research" className={navClass(pathname, "/research")}>
-              Research
+            {/* Subject-first, the way a knowledge platform is navigated.
+                Process surfaces (Explore, Review desk, Explorations) still
+                exist and are reachable from About and the footer; they are
+                how the work is made, not what a reader came for. */}
+            <Link href="/topics" className={navClass(pathname, "/topics")}>
+              Topics
             </Link>
-            <Link href="/explore" className={navClass(pathname, "/explore")}>
-              Explore
+            <Link
+              href="/countries"
+              className={navClass(pathname, "/countries")}
+            >
+              Countries
             </Link>
             <Link href="/reviews" className={navClass(pathname, "/reviews")}>
               Reviews
             </Link>
-            <Link href="/review" className={navClass(pathname, "/review")}>
-              Review desk
-            </Link>
-            <Link href="/showcase" className={navClass(pathname, "/showcase")}>
-              Explorations
+            <Link href="/research" className={navClass(pathname, "/research")}>
+              All research
             </Link>
             <Link href="/about" className={navClass(pathname, "/about")}>
               About

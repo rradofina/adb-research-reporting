@@ -56,12 +56,12 @@ export const programs: ProgramEntry[] = [
   {
     id: 4,
     slug: "invisible-urbanization",
-    title: "Invisible urbanization",
-    status: "SR",
+    title: "Urbanization depends on the definition",
+    status: "PP",
     summary:
-      "WDI urban-growth-from-rural-base screening across 41 ADB DMCs. Stable top signal: Papua New Guinea, Solomon Islands, Afghanistan, Lao PDR, and Bangladesh. GHSL built-up-surface integration remains the upgrade-pass.",
-    note: "Screening result only; satellite built-up-surface validation not yet done.",
-    href: "/program/invisible-urbanization/evidence",
+      "Across 40 complete ADB developing-economy cases in 2020, GHSL's standardized urban share and WDI's national-definition share differ by a median absolute 19.98 percentage points. GHSL is higher in 33 cases and WDI in seven; the gap does not converge across GHSL epochs from 1975 to 2020.",
+    note: "PP measurement study. The inherited WDI growth-from-rural-base ranking was retired on 2026-07-19; this is a construct difference, not legal misclassification or a performance ranking.",
+    href: "/program/invisible-urbanization",
   },
   {
     id: 5,

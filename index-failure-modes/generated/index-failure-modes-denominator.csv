@@ -1,0 +1,5 @@
+program,construct,absolute_measure,absolute_top,normalized_measure,normalized_top,overlap_count
+migration-displacement-signals,migrant and displaced stock,"UN DESA emigrant stock, absolute",IND|CHN|BGD|AFG|PHL,emigrant stock as a share of population,WSM|TON|ARM|NRU|FJI,0
+disaster-recovery-lag,disaster exposure,EM-DAT qualifying events per year,CHN|IDN|IND|PHL|VNM,EM-DAT events per million population,TUV|MHL|TON|FSM|VUT,0
+flood-market-access,rural flood exposure of market access,"inherited national composite, size terms retained",IND|IDN|CHN|AFG,same composite expressed per million population,MHL|FSM|KIR|VUT,0
+water-stress-crop-diversification,crop concentration,inherited water-crop pressure ranking,,direct crop Herfindahl concentration,TUV|KIR|FSM|NRU|VUT,0

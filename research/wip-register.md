@@ -58,6 +58,13 @@ Last updated: 2026-07-19.
   internet use, retains negative values and source diagnostics, and passes the
   ±50% sample-floor check. Article:
   `articles/digital-availability-use-gap.md`.
+- **public-data-freshness** — moved from Hypothesis on 2026-08-05; this entry
+  was stale, still reading "the expanded pipeline has not yet run" after the
+  pipeline had run and closed. At a three-year rule, calendar age and
+  indicator-relative lag disagree for 138 of 709 observed baseline cells
+  (19.5%); deleting the environment domain lowers disagreement to 9.2% and
+  narrows the claim. `CONSTITUTION.md` §15 already carried SR with a 27/30
+  score and the complete ladder.
 
 ### Prepared Pipeline
 
@@ -126,11 +133,20 @@ end-to-end.
 *(see `CONSTITUTION.md` §15 program register; cross-check on every
 promotion)*
 
+- **index-failure-modes** — cross-program synthesis of the twelve
+  construct-validation tests this repository ran on orderings it had built
+  itself. In five programs the ±50% parameter suite certified a leading set as
+  stable and a later construct check rejected the same set, 5 of 5, with the
+  certified and tested sets verified identical in four. Reads only committed
+  generated artifacts; measures nothing about any economy directly. The
+  2026-08-05 literature check found the denominator and construct-overlap
+  results to be settled method and the degenerate-sweep result to be a local
+  implementation defect; only the robustness-versus-validity pairing is an open
+  candidate. Unlabeled and deliberately absent from the public site. No
+  article.
+
 ### Hypothesis
 
-- **public-data-freshness** — active flagship with a qualified L2 WDI heatmap,
-  finalized literature landscape, 27/30 prospectus score, and prospectively
-  frozen 9/18/27-indicator design. The expanded pipeline has not yet run.
 - **mpi-nighttime-lights** — owner/coauthor-led path; no AI-led promotion.
 
 ### Retired
@@ -173,6 +189,7 @@ promotion)*
 | 2026-07-19 | flood-market-access | PP construct-validation issue closed | (this commit) | ai-first | National proxy retired; one-event Sylhet route object, full paper, ten-figure evidence spine, and 54-run sensitivity grid built |
 | 2026-07-19 | invisible-urbanization | PP measurement issue closed | (this commit) | ai-first | Inherited proxy retired; GHSL–WDI definition gap, administrative-scale and transition diagnostics, full paper, and 11-figure evidence spine built |
 | 2026-07-19 | digital-performance | PP → SR under §18 | (this commit) | ai-first | Full program loop completed: exact-year ITU result, source custody, scoring 26/30, ±50% sensitivity, critiques, paper, evidence surface, and 12-figure dossier |
+| 2026-08-05 | index-failure-modes | new program, unlabeled | (this commit) | ai-first | Cross-program synthesis of twelve committed construct-validation tests; 5 of 5 certified-stable sets later rejected; literature check recorded and deflationary for four of five results; no public surface |
 
 ---
 
@@ -181,3 +198,15 @@ promotion)*
 `scripts/check-wip.mjs` reads this file and `CONSTITUTION.md` §15 and
 exits non-zero if the counts diverge or if the cap is exceeded. CI runs
 this on every PR.
+
+**Correction, 2026-08-05.** Until this date the sentence above was false. The
+gate read this file for the PR/SR counts and opened `CONSTITUTION.md` only to
+test whether §18 was ACTIVE; it never parsed the §15 program table and so could
+not detect a divergence. Four §15 rows had drifted: access-services,
+invisible-urbanization, and flood-market-access still carried SR labels whose
+claim text was the exact top-N ranking each program had already retired, and
+air-monitoring's row still carried a superseded top-five. The public site's
+program table had been seeded from those rows. In the other direction, this
+file's Hypothesis entry for public-data-freshness was stale. The gate now parses
+§15, compares the maturity of every program listed in both files, and fails on
+any divergence — which is what closed all five.

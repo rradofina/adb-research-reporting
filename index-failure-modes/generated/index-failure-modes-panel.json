@@ -1,0 +1,658 @@
+{
+  "program": "index-failure-modes",
+  "analysis": "Cross-program synthesis of twelve construct-validation tests this repository ran against rankings it had itself built",
+  "attestation_chain": "ai-first",
+  "generated_at": "2026-08-05T08:39:52Z",
+  "license": "CC BY-NC-SA 4.0",
+  "input_kind": "committed generated artifacts of this repository, not external data",
+  "robustness_versus_validity_mode": {
+    "pairs": [
+      {
+        "program": "port-hinterland-friction",
+        "certified_stable_set": [
+          "CHN",
+          "IDN",
+          "IND",
+          "THA",
+          "VNM"
+        ],
+        "sensitivity_run_labels": [
+          "baseline",
+          "imp_norm_minus50",
+          "imp_norm_plus50",
+          "imp_cap_minus50",
+          "imp_cap_plus50"
+        ],
+        "sensitivity_run_count": 5,
+        "construct_tested_set": [
+          "CHN",
+          "IND",
+          "IDN",
+          "VNM",
+          "THA"
+        ],
+        "certified_equals_tested": true,
+        "certified_subset_of_tested": true,
+        "direct_measure": "observed CPPI port-time disadvantage, 2025",
+        "surviving_members": 1,
+        "certified_set_size": 5,
+        "provenance": [
+          {
+            "artifact": "port-hinterland-friction/sensitivity-runs.json",
+            "pointer": "common_top5_across_runs"
+          },
+          {
+            "artifact": "port-hinterland-friction/generated/port-cppi-construct-validation.json",
+            "pointer": "summary.inherited_top5"
+          }
+        ]
+      },
+      {
+        "program": "social-protection-shock-coverage",
+        "certified_stable_set": [
+          "BGD",
+          "LAO",
+          "MMR",
+          "PAK",
+          "PHL"
+        ],
+        "sensitivity_run_labels": [
+          "baseline_sp_weight_0.5",
+          "sp_weight_minus50",
+          "sp_weight_plus50"
+        ],
+        "sensitivity_run_count": 3,
+        "construct_tested_set": [
+          "BGD",
+          "LAO",
+          "MMR",
+          "PAK",
+          "PHL"
+        ],
+        "certified_equals_tested": true,
+        "certified_subset_of_tested": true,
+        "direct_measure": "documented COVID-19 response breadth",
+        "surviving_members": 0,
+        "certified_set_size": 5,
+        "provenance": [
+          {
+            "artifact": "social-protection-shock-coverage/sensitivity-runs.json",
+            "pointer": "common_top5_across_runs"
+          },
+          {
+            "artifact": "social-protection-shock-coverage/generated/social-protection-covid-response-validation.json",
+            "pointer": "summary.headline_five"
+          }
+        ]
+      },
+      {
+        "program": "water-stress-crop-diversification",
+        "certified_stable_set": [
+          "AFG",
+          "AZE",
+          "PAK",
+          "TKM"
+        ],
+        "sensitivity_run_labels": [
+          "baseline",
+          "w_cap_minus50",
+          "w_cap_plus50",
+          "w_max_minus50",
+          "w_max_plus50",
+          "yield_base_minus50",
+          "yield_base_plus50"
+        ],
+        "sensitivity_run_count": 7,
+        "construct_tested_set": [
+          "AFG",
+          "AZE",
+          "PAK",
+          "TKM"
+        ],
+        "certified_equals_tested": true,
+        "certified_subset_of_tested": true,
+        "direct_measure": "SDG available-water stress",
+        "surviving_members": 2,
+        "certified_set_size": 4,
+        "provenance": [
+          {
+            "artifact": "water-stress-crop-diversification/sensitivity-runs.json",
+            "pointer": "common_top5_across_runs"
+          },
+          {
+            "artifact": "water-stress-crop-diversification/generated/water-construct-validation.json",
+            "pointer": "summary.published_set"
+          }
+        ]
+      },
+      {
+        "program": "coastal-informal-risk",
+        "certified_stable_set": [
+          "BGD",
+          "CHN",
+          "MMR",
+          "PAK",
+          "PHL"
+        ],
+        "sensitivity_run_labels": [
+          "baseline_slum_imputed_10pct",
+          "slum_imputed_minus50_5pct",
+          "slum_imputed_plus50_15pct"
+        ],
+        "sensitivity_run_count": 3,
+        "construct_tested_set": [
+          "PAK",
+          "PHL",
+          "CHN",
+          "BGD",
+          "MMR"
+        ],
+        "certified_equals_tested": true,
+        "certified_subset_of_tested": true,
+        "direct_measure": "observed urban-centre population change below 10 m",
+        "surviving_members": 2,
+        "certified_set_size": 5,
+        "provenance": [
+          {
+            "artifact": "coastal-informal-risk/sensitivity-runs.json",
+            "pointer": "common_top5_across_runs"
+          },
+          {
+            "artifact": "coastal-informal-risk/generated/coastal-lecz-growth-diagnostics.json",
+            "pointer": "proxy_falsification.inherited_top5_economies"
+          }
+        ]
+      },
+      {
+        "program": "school-heat-disruption",
+        "certified_stable_set": [
+          "KHM"
+        ],
+        "sensitivity_run_labels": [
+          "baseline",
+          "tmax_floor_minus50",
+          "tmax_floor_plus50",
+          "tmax_cap_minus50",
+          "tmax_cap_plus50",
+          "ptr_cap_minus50",
+          "ptr_cap_plus50"
+        ],
+        "sensitivity_run_count": 7,
+        "construct_tested_set": [
+          "KHM",
+          "BGD",
+          "IND",
+          "PHL",
+          "PAK"
+        ],
+        "certified_equals_tested": false,
+        "certified_subset_of_tested": true,
+        "direct_measure": "UNICEF 2024 affected-student count",
+        "surviving_members": null,
+        "certified_set_size": 1,
+        "provenance": [
+          {
+            "artifact": "school-heat-disruption/sensitivity-runs.json",
+            "pointer": "common_top5_across_runs"
+          },
+          {
+            "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+            "pointer": "summary.old_top5"
+          },
+          {
+            "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+            "pointer": "summary.cambodia_old_index_rank"
+          },
+          {
+            "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+            "pointer": "summary.cambodia_heatwave_affected_rank"
+          }
+        ],
+        "certified_rank": 1,
+        "direct_rank": 6
+      }
+    ],
+    "pairs_tested": 5,
+    "pairs_where_suite_certified_stability": 5,
+    "pairs_where_construct_check_rejected": 5,
+    "interpretation": "In every program where both tests ran on the same leading set, the \u00b150% parameter suite reported the set stable and the construct check then rejected it. Parameter robustness and construct validity are independent properties; passing the first carries no information about the second."
+  },
+  "literature_position": {
+    "checked_on": "2026-08-05",
+    "denominator_mode": "SETTLED. That absolute and per-capita or per-GDP orderings of disaster and vulnerability measures diverge, and that small island states rise sharply under normalization, is established in the SIDS vulnerability literature and in the Multidimensional Vulnerability Index work. This synthesis confirms it inside one region and adds no new claim.",
+    "construct_overlap_mode": "SETTLED. Ravallion's mashup-index critique (World Bank Research Observer, 2012) already argues that composite orderings with freely set moving parts carry little construct warrant. The tally here is a confirmation, not a contribution.",
+    "degenerate_sensitivity_mode": "KNOWN METHOD, LOCAL DEFECT. The composite-indicator literature (Saltelli, Saisana) already prescribes perturbing components independently rather than scaling an aggregate. One program here applied a shared scalar and read the guaranteed null as robustness. That is an implementation defect in this repository, not a finding about the literature.",
+    "robustness_versus_validity_mode": "OPEN. That robustness and validity are distinct is textbook. A controlled within-repository demonstration in which the identical certified set is rejected in every paired case is not something the search located, and is the only mode here with a candidate contribution.",
+    "observation_capture_mode": "PARTLY SETTLED. OpenStreetMap completeness bias is documented. The specific rank inversion and its magnitude in this panel were not located in the search and remain a local result."
+  },
+  "denominator_mode": {
+    "cases": [
+      {
+        "program": "migration-displacement-signals",
+        "construct": "migrant and displaced stock",
+        "absolute_measure": "UN DESA emigrant stock, absolute",
+        "normalized_measure": "emigrant stock as a share of population",
+        "absolute_top": [
+          "IND",
+          "CHN",
+          "BGD",
+          "AFG",
+          "PHL"
+        ],
+        "normalized_top": [
+          "WSM",
+          "TON",
+          "ARM",
+          "NRU",
+          "FJI"
+        ],
+        "provenance": [
+          {
+            "artifact": "migration-displacement-signals/generated/migration-figure-dossier-summary.json",
+            "pointer": "absolute_top5"
+          },
+          {
+            "artifact": "migration-displacement-signals/generated/migration-figure-dossier-summary.json",
+            "pointer": "population_share_top5"
+          },
+          {
+            "artifact": "migration-displacement-signals/generated/migration-figure-dossier-summary.json",
+            "pointer": "top5_overlap_count"
+          }
+        ],
+        "committed_overlap_field": 0,
+        "overlap_members": [],
+        "overlap_count": 0
+      },
+      {
+        "program": "disaster-recovery-lag",
+        "construct": "disaster exposure",
+        "absolute_measure": "EM-DAT qualifying events per year",
+        "normalized_measure": "EM-DAT events per million population",
+        "absolute_top": [
+          "CHN",
+          "IDN",
+          "IND",
+          "PHL",
+          "VNM"
+        ],
+        "normalized_top": [
+          "TUV",
+          "MHL",
+          "TON",
+          "FSM",
+          "VUT"
+        ],
+        "provenance": [
+          {
+            "artifact": "disaster-recovery-lag/generated/disaster-recovery-lag-metric-falsification.json",
+            "pointer": "metrics_top5"
+          }
+        ],
+        "committed_overlap_field": null,
+        "overlap_members": [],
+        "overlap_count": 0
+      },
+      {
+        "program": "flood-market-access",
+        "construct": "rural flood exposure of market access",
+        "absolute_measure": "inherited national composite, size terms retained",
+        "normalized_measure": "same composite expressed per million population",
+        "absolute_top": [
+          "IND",
+          "IDN",
+          "CHN",
+          "AFG"
+        ],
+        "normalized_top": [
+          "MHL",
+          "FSM",
+          "KIR",
+          "VUT"
+        ],
+        "provenance": [
+          {
+            "artifact": "flood-market-access/generated/flood-decompose-deepening.json",
+            "pointer": "b_strip_size_terms"
+          }
+        ],
+        "committed_overlap_field": null,
+        "spearman_absolute_vs_normalized": 0.1267,
+        "overlap_members": [],
+        "overlap_count": 0
+      },
+      {
+        "program": "water-stress-crop-diversification",
+        "construct": "crop concentration",
+        "absolute_measure": "inherited water-crop pressure ranking",
+        "normalized_measure": "direct crop Herfindahl concentration",
+        "absolute_top": null,
+        "normalized_top": [
+          "TUV",
+          "KIR",
+          "FSM",
+          "NRU",
+          "VUT"
+        ],
+        "provenance": [
+          {
+            "artifact": "water-stress-crop-diversification/generated/water-construct-validation.json",
+            "pointer": "summary.crop_hhi_top5"
+          },
+          {
+            "artifact": "water-stress-crop-diversification/generated/water-construct-validation.json",
+            "pointer": "summary.published_vs_crop_hhi_top5"
+          }
+        ],
+        "committed_overlap_field": 0,
+        "overlap_members": null,
+        "overlap_count": 0
+      }
+    ],
+    "cases_tested": 4,
+    "cases_with_zero_overlap": 4
+  },
+  "degenerate_sensitivity_mode": {
+    "sweep_all_spearman_equal_one": true,
+    "sweep_total_rank_inversions": 0,
+    "sweep_any_top5_change": false,
+    "independent_per_row_shock_to_break_top5": 0.0075,
+    "per_row_shock_boundary_pair": [
+      "BGD",
+      "VUT"
+    ],
+    "repo_mandated_sweep": "\u00b150% uniform multiplier (CONSTITUTION \u00a76.6)",
+    "uniform_sweep_rank_preserving_demonstration": true,
+    "provenance": [
+      {
+        "artifact": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+        "pointer": "multiplier_sweep_is_rank_preserving.all_spearman_equal_one"
+      },
+      {
+        "artifact": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+        "pointer": "multiplier_sweep_is_rank_preserving.total_rank_inversions_across_sweep"
+      },
+      {
+        "artifact": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+        "pointer": "multiplier_sweep_is_rank_preserving.any_top5_change_across_sweep"
+      },
+      {
+        "artifact": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+        "pointer": "genuine_falsification_not_run.input_shock_fraction_to_break_top5_boundary"
+      },
+      {
+        "artifact": "invisible-urbanization/generated/invisible-urbanization-tautology.json",
+        "pointer": "genuine_falsification_not_run.top5_boundary_pair"
+      }
+    ]
+  },
+  "observation_capture_mode": {
+    "program": "access-services",
+    "economy": "Philippines",
+    "units": 17,
+    "spearman_capture_vs_apparent_load": -0.8105,
+    "capture_best_region": {
+      "region": "NCR",
+      "ratio": 0.6353
+    },
+    "capture_worst_region": {
+      "region": "ARMM",
+      "ratio": 0.0645
+    },
+    "worst_on_osm_region": {
+      "region": "ARMM",
+      "ppf": 68678
+    },
+    "worst_on_osm_people_per_facility": 68678,
+    "worst_on_osm_registry_corrected_people_per_facility": 4427,
+    "overstatement_factor": 15.51,
+    "worst_on_registry_region": {
+      "region": "NCR",
+      "ppf": 7831
+    },
+    "ranks_changed": 16,
+    "ranks_total": 17,
+    "provenance": [
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_internal_contradiction.spearman_rho"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_internal_contradiction.n_regions"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_internal_contradiction.capture_best"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_internal_contradiction.capture_worst"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_correction.worst_on_osm"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_correction.worst_on_osm_registry_corrected_ppf"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_correction.worst_on_registry"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_correction.n_adm1_rank_changed"
+      },
+      {
+        "artifact": "access-services/generated/access-osm-completeness-deepening.json",
+        "pointer": "phl_correction.n_adm1_total"
+      }
+    ]
+  },
+  "size_capture_mode": {
+    "program": "school-heat-disruption",
+    "outcome": "UNICEF 2024 climate-related school disruption, students affected",
+    "rows": [
+      {
+        "role": "proxy",
+        "label": "Old index vs all-climate affected count",
+        "n": 19,
+        "spearman": 0.5842,
+        "bootstrap_ci95": [
+          0.1391,
+          0.8401
+        ]
+      },
+      {
+        "role": "demographic_control",
+        "label": "Child population vs all-climate affected count",
+        "n": 19,
+        "spearman": 0.793,
+        "bootstrap_ci95": [
+          0.4521,
+          0.9486
+        ]
+      }
+    ],
+    "control_beats_proxy": true,
+    "margin": 0.2088,
+    "shared_n": 19,
+    "provenance": [
+      {
+        "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+        "pointer": "correlations"
+      }
+    ],
+    "note": "The same artifact carries a heatwave-only pair with a far larger apparent margin. That pair has n=6 and a bootstrap interval spanning the whole range, so it is recorded in the source program and deliberately not used here."
+  },
+  "construct_overlap_mode": {
+    "comparisons": [
+      {
+        "program": "port-hinterland-friction",
+        "comparison": "imports \u00d7 survey LPI versus observed CPPI port-time disadvantage",
+        "set_size": 5,
+        "overlap": 1,
+        "variant_count": 20,
+        "variant_overlap_range": [
+          0,
+          2
+        ],
+        "provenance": [
+          {
+            "artifact": "port-hinterland-friction/generated/port-cppi-construct-validation.json",
+            "pointer": "summary.main_overlap_count"
+          },
+          {
+            "artifact": "port-hinterland-friction/generated/port-cppi-construct-validation.json",
+            "pointer": "summary.variant_overlap_range"
+          },
+          {
+            "artifact": "port-hinterland-friction/generated/port-cppi-construct-validation.json",
+            "pointer": "summary.variant_count"
+          }
+        ]
+      },
+      {
+        "program": "water-stress-crop-diversification",
+        "comparison": "published water-crop ranking versus SDG available-water stress",
+        "set_size": 5,
+        "overlap": 2,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "water-stress-crop-diversification/generated/water-construct-validation.json",
+            "pointer": "summary.published_vs_available_water_top5.count"
+          }
+        ]
+      },
+      {
+        "program": "water-stress-crop-diversification",
+        "comparison": "published water-crop ranking versus direct crop concentration",
+        "set_size": 5,
+        "overlap": 0,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "water-stress-crop-diversification/generated/water-construct-validation.json",
+            "pointer": "summary.published_vs_crop_hhi_top5.count"
+          }
+        ]
+      },
+      {
+        "program": "social-protection-shock-coverage",
+        "comparison": "named stable five versus the panel's own value order",
+        "set_size": 5,
+        "overlap": 3,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "social-protection-shock-coverage/generated/social-protection-covid-response-validation.json",
+            "pointer": "summary.headline_value_overlap"
+          }
+        ]
+      },
+      {
+        "program": "social-protection-shock-coverage",
+        "comparison": "named stable five versus documented response breadth",
+        "set_size": 5,
+        "overlap": 0,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "social-protection-shock-coverage/generated/social-protection-covid-response-validation.json",
+            "pointer": "summary.headline_breadth_overlap"
+          }
+        ]
+      },
+      {
+        "program": "coastal-informal-risk",
+        "comparison": "inherited national coastal proxy versus observed urban-centre change",
+        "set_size": 5,
+        "overlap": 2,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "coastal-informal-risk/generated/coastal-lecz-growth-diagnostics.json",
+            "pointer": "proxy_falsification.economy_top5_overlap_count"
+          }
+        ]
+      },
+      {
+        "program": "school-heat-disruption",
+        "comparison": "inherited school-heat proxy versus observed affected-student count",
+        "set_size": 5,
+        "overlap": 4,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+            "pointer": "summary.old_top5"
+          },
+          {
+            "artifact": "school-heat-disruption/generated/school-construct-validation.json",
+            "pointer": "summary.old_vs_direct_count_top5_overlap"
+          }
+        ]
+      },
+      {
+        "program": "migration-displacement-signals",
+        "comparison": "absolute migrant stock versus population-share stock",
+        "set_size": 5,
+        "overlap": 0,
+        "variant_count": null,
+        "variant_overlap_range": null,
+        "provenance": [
+          {
+            "artifact": "migration-displacement-signals/generated/migration-figure-dossier-summary.json",
+            "pointer": "top5_overlap_count"
+          }
+        ]
+      },
+      {
+        "program": "climate-health-workdays",
+        "comparison": "PM2.5 \u00d7 employment proxy versus Lancet heat work-hour loss",
+        "set_size": 3,
+        "overlap": 1,
+        "variant_count": 21,
+        "variant_overlap_range": [
+          0,
+          1
+        ],
+        "zero_overlap_tests": 16,
+        "provenance": [
+          {
+            "artifact": "climate-health-workdays/generated/climate-health-construct-validation.json",
+            "pointer": "top3_overlap_max_across_tests"
+          },
+          {
+            "artifact": "climate-health-workdays/generated/climate-health-construct-validation.json",
+            "pointer": "top3_zero_overlap_tests"
+          },
+          {
+            "artifact": "climate-health-workdays/generated/climate-health-construct-validation.json",
+            "pointer": "aligned_year_parameter_tests"
+          }
+        ]
+      }
+    ],
+    "comparison_count": 9,
+    "overlap_min": 0,
+    "overlap_max": 4,
+    "overlap_median": 1,
+    "comparisons_with_zero_overlap": 3
+  },
+  "non_claims": [
+    "This synthesis introduces no new measurement of any economy. Every value is read from an artifact a program script already committed.",
+    "It does not establish that composite rankings fail in general. The sample is twelve tests this lab ran on rankings this lab built, and it is not a random sample of published indices.",
+    "Zero overlap between an absolute and a normalized leading set is a statement about the two measures, not evidence that either one is the correct basis for an allocation decision.",
+    "The correlation comparison uses one program at n=19 and is descriptive; it is not a model of school disruption."
+  ]
+}

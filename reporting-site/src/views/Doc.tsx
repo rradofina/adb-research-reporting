@@ -154,7 +154,7 @@ export default function Doc({ name }: DocProps) {
       if (info.file.endsWith(".md")) {
         const rendered = await marked.parse(text);
         if (!cancelled) {
-          setBody(typeof rendered === "string" ? rendered : "");
+          setBody(typeof rendered === "string" ? wrapTables(rendered) : "");
           setLoading(false);
         }
       } else {
@@ -216,6 +216,18 @@ export default function Doc({ name }: DocProps) {
         />
       )}
     </article>
+  );
+}
+
+// Governance documents carry wide tables — the §15 program register and the
+// scoring rubric are the widest. Rendered bare they push the page body sideways
+// at 375 px, which `research/DESIGN.md` forbids: wide content scrolls inside its
+// own container, never the page. Wrapping keeps `display: table` intact, so
+// column alignment survives, unlike the `display: block` workaround.
+function wrapTables(html: string): string {
+  return html.replace(
+    /<table[\s\S]*?<\/table>/g,
+    (table) => `<div class="doc-table-scroll">${table}</div>`,
   );
 }
 

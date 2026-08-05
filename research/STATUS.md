@@ -2,6 +2,23 @@
 
 Last updated: 2026-08-05.
 
+## Portfolio finding, 2026-08-05
+
+Twelve of the eighteen programs closed with the same finding: a ranking the lab
+built did not survive its own construct check. That is one finding restated
+twelve times, and no reader outside the lab has a stake in any of them. The
+problem is claim shape, not presentation.
+
+The failures are worth more as a sample than as twelve confessions.
+`index-failure-modes/` reads the committed construct-validation artifacts and
+finds that in **5 of 5** paired cases the ±50% parameter suite certified a
+leading set as stable and a later construct check rejected the same set — with
+the certified and tested sets verified identical in four. Parameter robustness
+carries no information about construct validity. The 2026-08-05 literature
+check was deflationary on the other four results and is recorded per result;
+only this pairing is an open candidate. The program is PP, has no public
+surface, and should not get one until it earns a hero visual.
+
 ## Current focus
 
 | Field | Value |
@@ -67,6 +84,29 @@ claim.
    without owner direction.
 4. **Next flagship** — select a new public data object with a rough visual and
    falsifiable claim; do not start from a broad topic essay.
+5. **`index-failure-modes` next step — owner call.** Either give the
+   robustness-versus-validity result a hero visual and a public page, or close
+   it as a methods note. Do not present the other four results as findings.
+6. **§6.6 wording — owner decision.** The suite tests parameter stability only,
+   and stability was not evidence of validity in any of the five paired cases.
+   Whether §6.6 should say so is a §16 amendment and owner-only.
+
+## Label corrections, 2026-08-05
+
+Four `CONSTITUTION.md` §15 rows carried claims their own programs had retired.
+access-services, invisible-urbanization, and flood-market-access were still
+labeled SR with the exact top-N ranking each had retired in July;
+air-monitoring's row still carried a superseded top five. The public program
+table had been seeded from those rows, so the site was publishing retired
+rankings as live headline claims. All four rows are corrected, three demoted to
+PP to match `research/wip-register.md`. In the other direction the register's
+Hypothesis entry for public-data-freshness was stale and is now SR, matching
+§15.
+
+The divergence survived because `scripts/check-wip.mjs` never parsed §15,
+although the register's closing section claimed it did. The gate now parses the
+table, compares every program listed in both files, and fails on divergence.
+That false sentence is corrected in place.
 
 All AI-eligible programs expose 9 of 9 standard sections and a built deck.
 `port-hinterland-friction` remains closed at the port boundary until the

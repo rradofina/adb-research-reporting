@@ -1,0 +1,6 @@
+program,certified_stable_set,certified_set_size,sensitivity_runs,direct_measure,surviving_members,certified_equals_tested
+port-hinterland-friction,CHN|IDN|IND|THA|VNM,5,5,"observed CPPI port-time disadvantage, 2025",1,True
+social-protection-shock-coverage,BGD|LAO|MMR|PAK|PHL,5,3,documented COVID-19 response breadth,0,True
+water-stress-crop-diversification,AFG|AZE|PAK|TKM,4,7,SDG available-water stress,2,True
+coastal-informal-risk,BGD|CHN|MMR|PAK|PHL,5,3,observed urban-centre population change below 10 m,2,True
+school-heat-disruption,KHM,1,7,UNICEF 2024 affected-student count,,False

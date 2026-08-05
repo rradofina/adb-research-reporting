@@ -8622,6 +8622,22 @@
     max-width: none;
   }
 
+  /* Wide governance tables scroll inside their own box so the page body never
+     scrolls horizontally at mobile widths (research/DESIGN.md). */
+  .doc-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Bare source URLs in the governance documents are single unbreakable tokens
+     and are wider than a 375 px viewport. Break them rather than let one link
+     push the whole page sideways. */
+  .doc-body a,
+  .topic-body a {
+    overflow-wrap: anywhere;
+  }
+
   .loading-message {
     padding-block: var(--space-loading-block);
     color: var(--ink-faint);

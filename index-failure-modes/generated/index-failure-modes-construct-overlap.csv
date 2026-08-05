@@ -1,0 +1,10 @@
+program,comparison,set_size,overlap,artifact
+port-hinterland-friction,imports × survey LPI versus observed CPPI port-time disadvantage,5,1,port-hinterland-friction/generated/port-cppi-construct-validation.json
+water-stress-crop-diversification,published water-crop ranking versus SDG available-water stress,5,2,water-stress-crop-diversification/generated/water-construct-validation.json
+water-stress-crop-diversification,published water-crop ranking versus direct crop concentration,5,0,water-stress-crop-diversification/generated/water-construct-validation.json
+social-protection-shock-coverage,named stable five versus the panel's own value order,5,3,social-protection-shock-coverage/generated/social-protection-covid-response-validation.json
+social-protection-shock-coverage,named stable five versus documented response breadth,5,0,social-protection-shock-coverage/generated/social-protection-covid-response-validation.json
+coastal-informal-risk,inherited national coastal proxy versus observed urban-centre change,5,2,coastal-informal-risk/generated/coastal-lecz-growth-diagnostics.json
+school-heat-disruption,inherited school-heat proxy versus observed affected-student count,5,4,school-heat-disruption/generated/school-construct-validation.json
+migration-displacement-signals,absolute migrant stock versus population-share stock,5,0,migration-displacement-signals/generated/migration-figure-dossier-summary.json
+climate-health-workdays,PM2.5 × employment proxy versus Lancet heat work-hour loss,3,1,climate-health-workdays/generated/climate-health-construct-validation.json
